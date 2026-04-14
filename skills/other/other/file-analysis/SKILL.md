@@ -1,7 +1,7 @@
 ---
 name: file-analysis
 description: 'Map file structure and organization for downstream review and refactoring workflows'
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 category: workspace-ops
 tags:

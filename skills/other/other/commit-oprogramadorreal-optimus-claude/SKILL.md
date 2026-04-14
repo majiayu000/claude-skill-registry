@@ -134,6 +134,5 @@ If a feature branch was created, inform the user: "You are now on `<branch-name>
 
 Otherwise, recommend the next step based on readiness:
 - If a pull request is needed → `/optimus:pr` to create or update a PR
-- If validation is needed → `/optimus:verify` to validate end-to-end
 
 Tell the user: **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.

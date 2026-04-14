@@ -1,48 +1,46 @@
 ---
 name: create-doc
-description: "Create documentation based on user needs. Use when writing guides, API docs, architecture docs, or any project documentation."
+description: "Use when the user wants to save knowledge as a file so others don't have to rediscover it — \"turn this into a doc\", \"write this up\", \"document how X works\", \"we figured this out and want to capture it\", \"nobody should have to figure this out again\". Covers any request to create or update durable written artifacts: onboarding guides, runbooks, ADRs, API docs, architecture notes, postmortems, changelogs, setup guides. The trigger: user wants knowledge captured in a file for future reference, not just a conversation. Do NOT use when still making decisions (→ give-plan), just asking for explanation without a file (→ ask), or writing code (→ cook)."
 argument-hint: doc-topic
 ---
 
-## Role
-
-You are a documentation writer. Create docs based on what the user needs documented.
+ultrathink
 
 ## Process
 
-### 1. Understand What to Document
-- Topic provided → use it
-- No topic → infer from conversation context
-- Unclear → ask user
+Check conversation context and skip completed steps.
 
-### 2. Check Existing Docs
-- Check `docs/` for related documents
-- Related doc exists → update it instead of creating new
+### 1. Identify the doc job
+Figure out the document type, audience, purpose, whether to update an existing doc or create new, and what source material it draws from. If any of these would materially change the output and are unclear, ask.
 
-### 3. Write Document
+If the request is still evaluating options, stop and discuss — drafting docs before a decision is made locks in the wrong answer.
 
-**IMPORTANT: All docs MUST be saved in the `docs/` directory at project root. NEVER create doc files elsewhere.**
+If the doc type is a recognized structured format (runbook, ADR, postmortem, onboarding guide, API/architecture doc), read `references/doc-types.md` now — it has the required sections for each type.
 
-Use `date +%Y%m%d%H%M` for timestamp.
-Create: `docs/{timestamp}-{topic-slug}.md`
+### 2. Ground in evidence
+Before writing factual claims, read relevant sources — existing docs, code, config, tickets, PRs, prior discussion. Don't present guesses as fact. Label uncertain details explicitly, or collect them in an "Open questions" section rather than hedging every sentence.
 
-Write naturally — adapt structure to content. If the topic maps to a well-known document type (ADR, RFC, runbook, changelog, API doc, postmortem, etc.), follow its core layout in a lean way — just the essential sections, skip ceremony.
+### 3. Choose destination
+Prefer updating the canonical existing doc when one exists.
 
-Good docs are:
-- Concise (bullets over prose)
-- Actionable (what to do next)
-- Contextual (why this matters)
-- Findable (clear title, good slug)
+For new documents:
+- Reuse any existing doc home that fits (ADR directory, changelog, README section, project docs tree)
+- Fall back to `docs/` only when no clearer home exists
+- Keep docs near the code they explain when the repo follows that pattern
+- Use timestamped filenames only for event-like docs (postmortems, incident notes)
 
-### 4. Confirm
-- Document path
-- What was captured
+When you need a fresh timestamp, use `date +%Y%m%d%H%M%S`.
 
-## Constraints
+### 4. Outline first when substantial
+For large or structurally ambiguous docs, propose a title and section outline before drafting. For small or routine docs, write directly.
 
-- Document facts, not speculation
-- Update existing docs when relevant
-- Don't duplicate content already in other docs
+### 5. Write the artifact
+Write the file at the path from Step 3 — don't paste in chat without creating the file. Adapt structure to the document type (ADRs, runbooks, postmortems, API docs, etc.) and include only sections that earn their keep.
+
+A strong document is accurate, concise, audience-aware, scannable, explicit about *why* something matters, and clear about what is current behavior vs. decision vs. open question. Write for the intended reader, not for completeness theater. Prefer concrete repo-specific details over generic filler. When sources conflict, name the conflict instead of quietly picking one.
+
+### 6. Report and stop
+Report the path, whether you updated or created, what was captured, and any assumptions or gaps. Do not drift into implementation unless explicitly asked.
 
 ## Topic
 

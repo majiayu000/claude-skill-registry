@@ -64,7 +64,7 @@ TodoWrite format (mandatory):
 - `Generate documentation updates`
 - `Apply accepted low-risk repairs`
 - `Sync agents and merge all evidence`
-- `Run bounded refinement loop`
+- `Run refinement (MANDATORY in ALL modes when Codex available — do NOT skip)`
 - `Compute verdict and write review output`
 - `Verify runtime cleanup and self-check`
 
@@ -108,6 +108,7 @@ Phase policy:
 - `cleanup_phase = PHASE_9_SELF_CHECK`
 - `self_check_phase = PHASE_9_SELF_CHECK`
 - `agent_resolve_before = [PHASE_6_MERGE]`
+- `required_phases_when_codex_available = [PHASE_7_REFINEMENT]`
 
 ## Parallelism Rules
 
@@ -248,21 +249,30 @@ node shared/scripts/evaluation-runtime/cli.mjs sync-agent --skill ln-310 --ident
 
 ### Phase 7: Refinement
 
-Run `ln-316-review-refinement-worker` with perspective order per `refinement_perspectives.md`:
-1. `generic_quality`
-2. `dry_run_executor`
-3. `new_dev_tester`
-4. `adversarial_reviewer`
-5. `final_sweep`
+> **NEVER SKIP THIS PHASE.** Phase 7 applies to ALL modes: `story`, `plan_review`, `context`.
+> The ONLY valid skip reason is Codex unavailable in health check.
+> Mode is NOT a skip reason. Complexity is NOT a skip reason. Time is NOT a skip reason.
+> If you are about to checkpoint Phase 7 without running ln-316 — STOP. You are making an error.
 
-Refinement launches Codex via `agent_runner.mjs` (NOT Claude sub-agents).
+| Mode | Phase 7 required? | Skip allowed? |
+|------|-------------------|---------------|
+| `story` | YES | NO (only if Codex unavailable) |
+| `plan_review` | YES | NO (only if Codex unavailable) |
+| `context` | YES | NO (only if Codex unavailable) |
+
+Phase 7 is MANDATORY when Codex is available. The coordinator MUST NOT checkpoint Phase 7 without a recorded `review-refinement` worker summary from ln-316. The runtime `advance` command will reject the transition if Codex was available in health check but no refinement summary exists.
+
+Run `ln-316-review-refinement-worker`. Refinement uses a 2-stage state machine:
+- Stage 1: 3 parallel Codex sessions (dry_run_executor, new_dev_tester, adversarial_reviewer)
+- Stage 2: 1 sequential Codex session (final_sweep) after merging Stage 1 results
 
 Rules:
-- sequential only
-- bounded loop (max 5 iterations)
-- no quality-based skip when Codex is available
+- all 4 perspectives are mandatory
+- Stage 1 runs in parallel, Stage 2 runs after Stage 1 merge
+- each perspective = independent Codex process via `agent_runner.mjs` (NOT Claude sub-agents)
 - every launched process requires cleanup evidence
 - refinement trace is mandatory
+- wait for Codex results via Claude `Monitor` tool with 2-minute cycles
 
 ### Phase 8: Approval
 
@@ -352,7 +362,7 @@ Recommended payload fields:
 - [ ] Docs, repair, merge, refinement, and approval executed sequentially
 - [ ] All required worker summaries recorded
 - [ ] All required agents resolved before merge
-- [ ] Refinement executed in fixed order or explicitly justified as skipped
+- [ ] Refinement executed when Codex available; SKIPPED only when Codex unavailable in health check
 - [ ] Cleanup evidence recorded and verified
 - [ ] `evaluation-coordinator` summary written
 - [ ] Runtime completed successfully

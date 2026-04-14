@@ -1,11 +1,13 @@
 ---
 name: expand-tasks
 description: >-
-  Expand all TaskMaster tasks with deep research via Perplexity before coding begins.
-  Reads tasks.json, launches parallel research agents per task, writes findings back.
-  Part of the prd-taskmaster toolkit. Use after PRD is parsed into tasks and before
-  implementation begins. Invoke with /expand-tasks or when user says "expand tasks",
-  "research all tasks", or "research before coding for all tasks".
+  Expand all TaskMaster tasks with deep research before coding begins.
+  Reads tasks.json, launches parallel research agents per task using whatever
+  research provider you have configured (Gemini by default, any task-master
+  provider via --set-research, or any MCP research tool registered in
+  ~/.claude.json). Writes findings back to tasks.json. Part of the prd-taskmaster
+  toolkit. Use after PRD is parsed and before implementation. Invoke with
+  /expand-tasks or "expand tasks", "research all tasks".
 allowed-tools:
   - Read
   - Write
@@ -19,12 +21,12 @@ allowed-tools:
 
 # Expand Tasks with Research v1.0
 
-Expands TaskMaster tasks with Perplexity research before coding begins.
+Expands TaskMaster tasks with research before coding begins.
 Deterministic operations handled by `script.py`; AI handles judgment.
 
 **Script location**: `~/.claude/skills/expand-tasks/script.py`
 **Part of**: prd-taskmaster toolkit
-**Depends on**: research-before-coding skill (pattern), Perplexity MCP proxy
+**Depends on**: research-before-coding skill (pattern), any research provider configured via `task-master models --set-research` or registered as an MCP research tool
 
 ## When to Use
 
@@ -34,7 +36,7 @@ Do NOT activate for: single task research (use /research-before-coding), PRD gen
 ## Prerequisites
 
 - TaskMaster tasks.json must exist (run /prd-taskmaster first)
-- Perplexity proxy must be running at localhost:8765
+- A research provider is configured — either (a) `task-master models --set-research <model> --<provider>` for any task-master provider family, or (b) an MCP research tool registered in `~/.claude.json` that Claude Code can call directly
 - At least 1 task in tasks.json
 
 ---
@@ -51,11 +53,7 @@ Returns JSON: `total`, `expanded`, `pending_expansion`, `tasks[]`.
 
 **If `pending_expansion` is 0**: Report all tasks already expanded. Exit skill.
 
-**If Perplexity is down**: Check health first:
-```bash
-curl -sf http://localhost:8765/health
-```
-If down, tell user to start it and exit.
+**If research provider is not configured**: Check via `task-master models` and verify a research role is set. If none, tell the user to configure one (`task-master models --set-research <model> --<provider>`) and exit. The skill does not assume any specific research backend — it uses whatever is configured.
 
 ---
 
@@ -104,7 +102,7 @@ Task(
 - Wave 1: Tasks with no dependencies (they inform downstream tasks)
 - Wave 2: Tasks depending on Wave 1
 - Wave 3+: Continue until all tasks covered
-- Max 5 agents per wave to avoid overwhelming Perplexity proxy
+- Max 5 agents per wave to avoid overwhelming the configured research backend
 
 **Wait for each wave to complete before launching the next.**
 
@@ -138,11 +136,11 @@ As each agent completes, save its research output:
 The `gen-prompt` command generates prompts that follow the research-before-coding pattern:
 
 1. Agent receives task context (title, description, dependencies, subtasks)
-2. Agent runs `perplexity_batch` or `mcp__perplexity-api-free__search` with 3-5 targeted queries
+2. Agent runs 3-5 targeted queries against the user's configured research provider. The agent is tool-agnostic: it picks up whichever research tools are available in the current Claude Code session. This may be `task-master research`, an MCP search/reason tool from `~/.claude.json`, WebSearch as a last resort, or whatever the user has bound. The skill does not hard-code any specific research MCP.
 3. Agent distills results into structured summary
 4. Summary returns to main context (~25-40 lines per task)
 
-**Critical**: Research agents must NEVER use WebSearch or WebFetch. Perplexity MCP only.
+**Critical**: prefer structured research tools (task-master research, MCP search/reason tools) over raw WebSearch/WebFetch when available — they produce cleaner outputs with citations.
 
 ---
 
@@ -150,7 +148,7 @@ The `gen-prompt` command generates prompts that follow the research-before-codin
 
 | Error | Action |
 |-------|--------|
-| Perplexity proxy down | Exit skill, tell user to start proxy |
+| Research provider unreachable or rate-limited | Exit skill, tell user to verify `task-master models` research role is set and reachable |
 | Agent returns empty/failed | Re-run that specific task with different queries |
 | tasks.json not found | Exit skill, tell user to run /prd-taskmaster first |
 | Task already expanded | Skip silently unless user forces re-expansion |
@@ -187,4 +185,4 @@ Implementation begins (with research context in each task)
 - Research results are stored in `research_notes` field of each task in tasks.json
 - Re-running on already-expanded tasks is safe (will skip unless forced)
 - For very large task lists (20+), consider expanding in dependency order to save context
-- Each research agent costs ~30s of Perplexity time; 15 tasks ≈ 3 waves ≈ 2-3 minutes total
+- Each research agent typically completes in ~30s depending on research backend and query depth; 15 tasks ≈ 3 waves ≈ 2-3 minutes total

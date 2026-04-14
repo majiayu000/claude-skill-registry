@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# ruff: noqa: E402
 """
 Complete sync and download pipeline.
 
@@ -23,12 +24,13 @@ Environment:
 
 import argparse
 import asyncio
+import hashlib
 import json
 import logging
 import os
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 # Add parent to path for imports
@@ -37,9 +39,10 @@ ROOT_DIR = SCRIPT_DIR.parent
 sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(SCRIPT_DIR))
 
-from crawler.skillsmp_sync import SkillsMPSync
 from discover_by_topic import GitHubTopicDiscovery
-from utils import normalize_name, ensure_unique_dir, build_skill_key, build_legal_metadata
+from utils import build_legal_metadata, build_skill_key, ensure_unique_dir, normalize_name
+
+from crawler.skillsmp_sync import SkillsMPSync
 
 
 def sanitize_category(category: str) -> str:
@@ -69,6 +72,9 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+ACQUISITION_MANIFEST_VERSION = 1
+DEFAULT_MANIFEST_PATH = ROOT_DIR / "sources" / "acquisition_manifest.json"
+DEFAULT_LEARNING_PRIORS_PATH = ROOT_DIR / "sources" / "learning" / "discovery_priors.json"
 
 
 def _source_count(path: Path) -> int:
@@ -84,6 +90,232 @@ def _source_count(path: Path) -> int:
     if isinstance(skills, list):
         return len(skills)
     return 0
+
+
+def _ordered_unique(values: list[str]) -> list[str]:
+    ordered = []
+    seen = set()
+    for value in values:
+        normalized = (value or "").strip()
+        if not normalized or normalized in seen:
+            continue
+        seen.add(normalized)
+        ordered.append(normalized)
+    return ordered
+
+
+def build_manifest_key(repo: str, path: str, name: str, category: str) -> str:
+    """Build a stable key for acquisition manifest lookups."""
+    return build_skill_key(repo, path, name=name, category=sanitize_category(category))
+
+
+def load_acquisition_manifest(path: Path) -> dict[str, dict]:
+    """Load acquisition manifest entries keyed by skill key."""
+    if not path.exists():
+        return {}
+
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        logger.warning("Failed to parse acquisition manifest %s: %s", path, exc)
+        return {}
+
+    raw_entries = payload.get("entries", payload) if isinstance(payload, dict) else {}
+    if not isinstance(raw_entries, dict):
+        return {}
+
+    entries: dict[str, dict] = {}
+    for raw_key, raw_entry in raw_entries.items():
+        if not isinstance(raw_entry, dict):
+            continue
+        repo = (raw_entry.get("repo") or "").strip()
+        branch = (raw_entry.get("branch") or "").strip()
+        relative_path = (raw_entry.get("relative_path") or "").strip().strip("/")
+        if not repo or not branch or not relative_path:
+            continue
+        entries[str(raw_key)] = {
+            "repo": repo,
+            "branch": branch,
+            "relative_path": relative_path,
+            "updated_at": raw_entry.get("updated_at", ""),
+        }
+    return entries
+
+
+def save_acquisition_manifest(path: Path, entries: dict[str, dict]) -> None:
+    """Persist acquisition manifest to disk."""
+    payload = {
+        "version": ACQUISITION_MANIFEST_VERSION,
+        "updated_at": datetime.utcnow().isoformat() + "Z",
+        "total_count": len(entries),
+        "entries": entries,
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def utc_now() -> datetime:
+    """Return timezone-aware UTC now."""
+    return datetime.now(timezone.utc)
+
+
+def to_utc_iso(ts: datetime) -> str:
+    """Serialize timezone-aware datetime to UTC ISO 8601 with Z suffix."""
+    return ts.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def parse_utc_iso(value: str) -> datetime | None:
+    """Parse UTC ISO string used by this pipeline."""
+    if not value:
+        return None
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(timezone.utc)
+    except Exception:
+        return None
+
+
+def load_learning_priors(path: Path) -> dict:
+    """Load learning priors JSON with minimal defaults."""
+    if path.exists():
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            if isinstance(payload, dict):
+                payload.setdefault("version", 1)
+                payload.setdefault("repo_priors", {})
+                payload.setdefault("topic_yield", {})
+                payload.setdefault("query_yield", {})
+                payload.setdefault("negative_cache", {})
+                return payload
+        except Exception as exc:
+            logger.warning("Failed to parse learning priors %s: %s", path, exc)
+
+    return {
+        "version": 1,
+        "repo_priors": {},
+        "topic_yield": {},
+        "query_yield": {},
+        "negative_cache": {},
+    }
+
+
+def save_learning_priors(path: Path, priors: dict) -> None:
+    """Persist learning priors JSON."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(priors, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def not_found_cooldown_hours(failure_count: int) -> int:
+    """Return cooldown window for repeated not_found failures."""
+    if failure_count <= 1:
+        return 24
+    if failure_count == 2:
+        return 72
+    return 168
+
+
+def is_negative_cache_active(entry: dict | None, now_utc: datetime) -> bool:
+    """True when a negative-cache entry is still inside cooldown."""
+    if not entry:
+        return False
+    reason = (entry.get("reason") or "").strip()
+    if reason != "not_found":
+        return False
+    cooldown_until = parse_utc_iso(str(entry.get("cooldown_until") or ""))
+    if not cooldown_until:
+        return False
+    return now_utc < cooldown_until
+
+
+def prune_negative_cache(negative_cache: dict, now_utc: datetime) -> int:
+    """Drop stale negative-cache entries that expired more than 30 days ago."""
+    removed = 0
+    retention_cutoff = now_utc - timedelta(days=30)
+    for key in list(negative_cache.keys()):
+        entry = negative_cache.get(key)
+        if not isinstance(entry, dict):
+            del negative_cache[key]
+            removed += 1
+            continue
+        cooldown_until = parse_utc_iso(str(entry.get("cooldown_until") or ""))
+        last_seen = parse_utc_iso(str(entry.get("last_seen_at") or ""))
+        anchor = cooldown_until or last_seen
+        if anchor and anchor < retention_cutoff:
+            del negative_cache[key]
+            removed += 1
+    return removed
+
+
+def filter_pending_skills(
+    skills: list[dict],
+    existing: set[str],
+    negative_cache: dict,
+    now_utc: datetime,
+) -> tuple[list[dict], dict[str, int], list[tuple[dict, str]]]:
+    """Filter out ineligible pending skills before download."""
+    filtered: list[dict] = []
+    skipped = {"existing": 0, "no_repo": 0, "cooldown_not_found": 0}
+    skipped_rows: list[tuple[dict, str]] = []
+
+    for skill in skills:
+        key = skill_key(skill)
+        if key in existing:
+            skipped["existing"] += 1
+            continue
+
+        repo = (skill.get("repo") or "").strip()
+        if not repo:
+            skipped["no_repo"] += 1
+            skipped_rows.append((skill, "no_repo_prefilter"))
+            continue
+
+        if is_negative_cache_active(negative_cache.get(key), now_utc):
+            skipped["cooldown_not_found"] += 1
+            skipped_rows.append((skill, "cooldown_not_found"))
+            continue
+
+        filtered.append(skill)
+
+    return filtered, skipped, skipped_rows
+
+
+def build_branch_probe_order(
+    repo: str,
+    preferred_branch_by_repo: dict[str, str],
+    manifest_entry: dict | None,
+    default_branches: tuple[str, ...],
+) -> list[str]:
+    """Build branch probe order with manifest hint first, then learned preference."""
+    candidates = []
+    if manifest_entry and manifest_entry.get("branch"):
+        candidates.append(str(manifest_entry.get("branch")))
+    preferred = preferred_branch_by_repo.get(repo)
+    if preferred:
+        candidates.append(preferred)
+    candidates.extend(default_branches)
+    return _ordered_unique(candidates)
+
+
+def build_relative_probe_order(relative_candidates: list[str], manifest_entry: dict | None) -> list[str]:
+    """Build relative-path probe order with manifest hint first."""
+    candidates = []
+    if manifest_entry and manifest_entry.get("relative_path"):
+        candidates.append(str(manifest_entry.get("relative_path")).strip("/"))
+    candidates.extend(relative_candidates)
+    return _ordered_unique(candidates)
+
+
+def select_shard_skills(skills: list[dict], shard_count: int, shard_index: int) -> list[dict]:
+    """Select a deterministic shard subset from skills."""
+    if shard_count <= 1:
+        return list(skills)
+    selected = []
+    for skill in skills:
+        key = skill_key(skill)
+        digest = hashlib.sha1(key.encode("utf-8")).hexdigest()
+        bucket = int(digest, 16) % shard_count
+        if bucket == shard_index:
+            selected.append(skill)
+    return selected
 
 
 def sync_skillsmp(output_path: str, max_skills: int = 50000, keep_on_empty: bool = True) -> int:
@@ -217,6 +449,12 @@ async def download_skills(
     output_dir: Path,
     github_token: str = "",
     max_pending: int = 0,
+    manifest_path: Path | None = None,
+    shard_count: int = 1,
+    shard_index: int = 0,
+    failure_report_path: Path | None = None,
+    observations_output_path: Path | None = None,
+    learning_priors_path: Path | None = None,
 ) -> dict:
     """Download skills using optimized downloader."""
     logger.info("=" * 60)
@@ -224,8 +462,9 @@ async def download_skills(
     logger.info("=" * 60)
 
     # Import here to avoid circular imports
-    import aiohttp
     from collections import defaultdict
+
+    import aiohttp
 
     GITHUB_RAW_BASE = "https://raw.githubusercontent.com"
     BRANCHES = ("main", "master")
@@ -239,6 +478,13 @@ async def download_skills(
 
     skills = registry.get("skills", [])
     logger.info(f"Total skills in registry: {len(skills)}")
+    manifest_file = manifest_path or DEFAULT_MANIFEST_PATH
+    manifest_entries = load_acquisition_manifest(manifest_file)
+    logger.info(
+        "Acquisition manifest loaded: %s entries from %s",
+        len(manifest_entries),
+        manifest_file,
+    )
 
     # Check existing (across all categories)
     exclude = {".git", ".github-skills", ".template", ".templates", ".attic"}
@@ -255,9 +501,35 @@ async def download_skills(
 
     logger.info(f"Already downloaded: {len(existing)}")
 
-    # Filter pending by repo/path key
-    pending = [s for s in skills if skill_key(s) not in existing]
-    logger.info(f"To download: {len(pending)}")
+    priors_file = learning_priors_path or DEFAULT_LEARNING_PRIORS_PATH
+    learning_priors = load_learning_priors(priors_file)
+    negative_cache = learning_priors.setdefault("negative_cache", {})
+    learning_state = {"dirty": False}
+
+    cache_pruned = prune_negative_cache(negative_cache, utc_now())
+    if cache_pruned:
+        learning_state["dirty"] = True
+        logger.info("Negative cache pruned: %s stale entries removed", cache_pruned)
+
+    pending_all, pending_skipped, pending_skipped_rows = filter_pending_skills(
+        skills,
+        existing,
+        negative_cache,
+        utc_now(),
+    )
+    logger.info(
+        "To download (before sharding): %s | prefilter no_repo=%s cooldown_not_found=%s",
+        len(pending_all),
+        pending_skipped["no_repo"],
+        pending_skipped["cooldown_not_found"],
+    )
+    pending = select_shard_skills(pending_all, shard_count=shard_count, shard_index=shard_index)
+    logger.info(
+        "Shard selection: index=%s count=%s pending=%s",
+        shard_index,
+        shard_count,
+        len(pending),
+    )
 
     if max_pending and max_pending > 0:
         pending = pending[:max_pending]
@@ -265,16 +537,67 @@ async def download_skills(
 
     if not pending:
         logger.info("Nothing to download!")
-        return {"downloaded": 0, "failed": 0, "total": len(existing)}
+        if learning_state["dirty"] or not priors_file.exists():
+            learning_priors["updated_at"] = to_utc_iso(utc_now())
+            save_learning_priors(priors_file, learning_priors)
+            logger.info(
+                "Discovery learning priors saved: %s entries in negative cache",
+                len(learning_priors.get("negative_cache", {})),
+            )
+        if observations_output_path:
+            observations_output_path.parent.mkdir(parents=True, exist_ok=True)
+            with observations_output_path.open("w", encoding="utf-8") as handle:
+                for skipped_skill, skipped_reason in pending_skipped_rows:
+                    handle.write(
+                        json.dumps(
+                            {
+                                "timestamp": to_utc_iso(utc_now()),
+                                "shard_count": shard_count,
+                                "shard_index": shard_index,
+                                "name": (skipped_skill.get("name") or "").strip(),
+                                "repo": (skipped_skill.get("repo") or "").strip(),
+                                "path": (skipped_skill.get("path") or "").strip(),
+                                "category": sanitize_category(skipped_skill.get("category", "other")),
+                                "candidate_key": skill_key(skipped_skill),
+                                "outcome": "skipped",
+                                "failure_reason": skipped_reason,
+                                "attempts": 0,
+                                "manifest_hit": False,
+                                "resolved_branch": "",
+                                "resolved_relative_path": "",
+                            },
+                            ensure_ascii=False,
+                        )
+                        + "\n"
+                    )
+        return {
+            "downloaded": 0,
+            "failed": 0,
+            "total": len(existing),
+            "shard_count": shard_count,
+            "shard_index": shard_index,
+            "pending_before_shard": len(pending_all),
+            "prefiltered_no_repo": pending_skipped["no_repo"],
+            "skipped_cooldown_not_found": pending_skipped["cooldown_not_found"],
+        }
 
     stats = {
         "downloaded": 0,
         "failed": 0,
         "skipped": len(existing),
         "url_attempts": 0,
+        "manifest_hits": 0,
+        "manifest_misses": 0,
+        "shard_count": shard_count,
+        "shard_index": shard_index,
+        "pending_before_shard": len(pending_all),
+        "prefiltered_no_repo": pending_skipped["no_repo"],
+        "skipped_cooldown_not_found": pending_skipped["cooldown_not_found"],
     }
     failures = defaultdict(list)
+    observations: list[dict] = []
     preferred_branch_by_repo = {}
+    manifest_state = {"dirty": False}
 
     headers = {"User-Agent": "Claude-Skills-Registry/3.0"}
     if github_token:
@@ -347,11 +670,37 @@ async def download_skills(
         add(".claude/SKILL.md")
         return ordered
 
-    def branch_order(repo: str) -> list[str]:
-        preferred = preferred_branch_by_repo.get(repo)
-        if preferred in BRANCHES:
-            return [preferred] + [b for b in BRANCHES if b != preferred]
-        return list(BRANCHES)
+    def add_observation(
+        skill: dict,
+        *,
+        outcome: str,
+        failure_reason: str = "",
+        attempts: int = 0,
+        manifest_hit: bool = False,
+        branch: str = "",
+        relative_path: str = "",
+    ) -> None:
+        observations.append(
+            {
+                "timestamp": datetime.utcnow().isoformat() + "Z",
+                "shard_count": shard_count,
+                "shard_index": shard_index,
+                "name": (skill.get("name") or "").strip(),
+                "repo": (skill.get("repo") or "").strip(),
+                "path": (skill.get("path") or "").strip(),
+                "category": sanitize_category(skill.get("category", "other")),
+                "candidate_key": skill_key(skill),
+                "outcome": outcome,
+                "failure_reason": failure_reason,
+                "attempts": attempts,
+                "manifest_hit": manifest_hit,
+                "resolved_branch": branch,
+                "resolved_relative_path": relative_path,
+            }
+        )
+
+    for skipped_skill, skipped_reason in pending_skipped_rows:
+        add_observation(skipped_skill, outcome="skipped", failure_reason=skipped_reason)
 
     async def try_download(session: aiohttp.ClientSession, skill: dict) -> bool:
         name = (skill.get("name") or "").strip() or "unknown"
@@ -359,16 +708,29 @@ async def download_skills(
         normalized_name = normalize_name(name)
         repo = normalize_repo(skill.get("repo", ""))
         path = normalize_repo_path(skill.get("path", ""), repo)
+        category = sanitize_category(skill.get("category", "other"))
+        candidate_key = skill_key(skill)
 
         if not repo:
             failures["no_repo"].append(name)
+            add_observation(skill, outcome="failed", failure_reason="no_repo")
             return False
 
+        manifest_key = build_manifest_key(repo, path, name, category)
+        manifest_entry = manifest_entries.get(manifest_key)
+        if manifest_entry:
+            stats["manifest_hits"] += 1
+        else:
+            stats["manifest_misses"] += 1
+
         relative_candidates = build_relative_candidates(path, name, normalized_name)
+        relative_candidates = build_relative_probe_order(relative_candidates, manifest_entry)
         attempts = 0
 
         async with semaphore:
-            for branch in branch_order(repo):
+            for branch in build_branch_probe_order(
+                repo, preferred_branch_by_repo, manifest_entry, BRANCHES
+            ):
                 for relative_path in relative_candidates:
                     url = f"{GITHUB_RAW_BASE}/{repo}/{branch}/{relative_path}"
                     attempts += 1
@@ -378,7 +740,6 @@ async def download_skills(
                                 content = await resp.text()
                                 if content and len(content) > 50 and ("---" in content[:50] or "#" in content[:100]):
                                     # Valid content - save under category with normalized name
-                                    category = sanitize_category(skill.get("category", "other"))
                                     category_dir = output_dir / category
                                     category_dir.mkdir(parents=True, exist_ok=True)
                                     key = build_skill_key(repo, path, name=name, category=category)
@@ -414,11 +775,36 @@ async def download_skills(
                                         encoding="utf-8"
                                     )
                                     preferred_branch_by_repo[repo] = branch
+                                    manifest_entries[manifest_key] = {
+                                        "repo": repo,
+                                        "branch": branch,
+                                        "relative_path": relative_path,
+                                        "updated_at": datetime.utcnow().isoformat() + "Z",
+                                    }
+                                    manifest_state["dirty"] = True
                                     stats["url_attempts"] += attempts
+                                    if candidate_key in negative_cache:
+                                        del negative_cache[candidate_key]
+                                        learning_state["dirty"] = True
+                                    add_observation(
+                                        skill,
+                                        outcome="downloaded",
+                                        attempts=attempts,
+                                        manifest_hit=manifest_entry is not None,
+                                        branch=branch,
+                                        relative_path=relative_path,
+                                    )
                                     return True
                             elif resp.status == 403:
                                 failures["rate_limited"].append(name)
                                 stats["url_attempts"] += attempts
+                                add_observation(
+                                    skill,
+                                    outcome="failed",
+                                    failure_reason="rate_limited",
+                                    attempts=attempts,
+                                    manifest_hit=manifest_entry is not None,
+                                )
                                 return False
                     except asyncio.TimeoutError:
                         continue
@@ -427,6 +813,27 @@ async def download_skills(
 
             failures["not_found"].append(name)
             stats["url_attempts"] += attempts
+            now_utc = utc_now()
+            entry = negative_cache.get(candidate_key)
+            prev_count = int((entry or {}).get("count") or 0)
+            count = prev_count + 1
+            cooldown_hours = not_found_cooldown_hours(count)
+            negative_cache[candidate_key] = {
+                "reason": "not_found",
+                "count": count,
+                "last_seen_at": to_utc_iso(now_utc),
+                "cooldown_until": to_utc_iso(now_utc + timedelta(hours=cooldown_hours)),
+                "repo": repo,
+                "path": path,
+            }
+            learning_state["dirty"] = True
+            add_observation(
+                skill,
+                outcome="failed",
+                failure_reason="not_found",
+                attempts=attempts,
+                manifest_hit=manifest_entry is not None,
+            )
             return False
 
     start_time = time.time()
@@ -458,6 +865,13 @@ async def download_skills(
 
     # Final count
     final_count = sum(1 for _ in output_dir.rglob("SKILL.md"))
+    if manifest_state["dirty"] or not manifest_file.exists():
+        save_acquisition_manifest(manifest_file, manifest_entries)
+        logger.info(
+            "Acquisition manifest saved: %s entries to %s",
+            len(manifest_entries),
+            manifest_file,
+        )
 
     logger.info("=" * 60)
     logger.info("DOWNLOAD COMPLETE")
@@ -467,6 +881,25 @@ async def download_skills(
     logger.info(f"URL attempts: {stats['url_attempts']}")
     logger.info(f"Total skills: {final_count}")
 
+    if learning_state["dirty"] or not priors_file.exists():
+        learning_priors["updated_at"] = to_utc_iso(utc_now())
+        save_learning_priors(priors_file, learning_priors)
+        logger.info(
+            "Discovery learning priors saved: %s entries in negative cache",
+            len(learning_priors.get("negative_cache", {})),
+        )
+
+    if observations_output_path:
+        observations_output_path.parent.mkdir(parents=True, exist_ok=True)
+        with observations_output_path.open("w", encoding="utf-8") as handle:
+            for row in observations:
+                handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+        logger.info(
+            "Discovery observations saved to %s (%s rows)",
+            observations_output_path,
+            len(observations),
+        )
+
     # Save failure report
     failure_report = {
         "timestamp": datetime.now().isoformat(),
@@ -474,7 +907,7 @@ async def download_skills(
         "failure_reasons": {k: len(v) for k, v in failures.items()},
         "failures": dict(failures),
     }
-    report_path = output_dir.parent / "failure_report.json"
+    report_path = failure_report_path or (output_dir.parent / "failure_report.json")
     with open(report_path, "w") as f:
         json.dump(failure_report, f, indent=2)
     logger.info(f"Failure report saved to {report_path}")
@@ -571,7 +1004,49 @@ def main():
         action="store_true",
         help="Exit non-zero when download-only mode records failures but no successful downloads",
     )
+    parser.add_argument(
+        "--acquisition-manifest",
+        default="sources/acquisition_manifest.json",
+        help="Path to acquisition manifest JSON (relative to repo root unless absolute)",
+    )
+    parser.add_argument(
+        "--disable-acquisition-manifest",
+        action="store_true",
+        help="Disable manifest hints for path/branch probing",
+    )
+    parser.add_argument(
+        "--shard-count",
+        type=int,
+        default=1,
+        help="Total number of shards for deterministic pending partitioning",
+    )
+    parser.add_argument(
+        "--shard-index",
+        type=int,
+        default=0,
+        help="Current shard index (0-based)",
+    )
+    parser.add_argument(
+        "--failure-report",
+        default="failure_report.json",
+        help="Failure report output path (relative to repo root unless absolute)",
+    )
+    parser.add_argument(
+        "--observations-output",
+        default="sources/learning/discovery_observations.jsonl",
+        help="Download observation JSONL output path (relative to repo root unless absolute)",
+    )
+    parser.add_argument(
+        "--learning-priors",
+        default="sources/learning/discovery_priors.json",
+        help="Learning priors JSON path (relative to repo root unless absolute)",
+    )
     args = parser.parse_args()
+
+    if args.shard_count <= 0:
+        raise SystemExit("--shard-count must be >= 1")
+    if args.shard_index < 0 or args.shard_index >= args.shard_count:
+        raise SystemExit("--shard-index must be in [0, --shard-count)")
 
     # Paths
     script_dir = Path(__file__).parent
@@ -580,6 +1055,28 @@ def main():
     registry_path = registry_dir / "registry.json"
     output_dir = registry_dir / "skills"
     skillsmp_path = sources_dir / "skillsmp.json"
+    manifest_path_arg = Path(args.acquisition_manifest)
+    if args.disable_acquisition_manifest:
+        acquisition_manifest = None
+    elif manifest_path_arg.is_absolute():
+        acquisition_manifest = manifest_path_arg
+    else:
+        acquisition_manifest = registry_dir / manifest_path_arg
+    failure_report_arg = Path(args.failure_report)
+    if failure_report_arg.is_absolute():
+        failure_report = failure_report_arg
+    else:
+        failure_report = registry_dir / failure_report_arg
+    observations_output_arg = Path(args.observations_output)
+    if observations_output_arg.is_absolute():
+        observations_output = observations_output_arg
+    else:
+        observations_output = registry_dir / observations_output_arg
+    learning_priors_arg = Path(args.learning_priors)
+    if learning_priors_arg.is_absolute():
+        learning_priors = learning_priors_arg
+    else:
+        learning_priors = registry_dir / learning_priors_arg
 
     github_token = os.environ.get("GITHUB_TOKEN", "")
 
@@ -630,6 +1127,12 @@ def main():
                 output_dir,
                 github_token,
                 max_pending=args.max_pending,
+                manifest_path=acquisition_manifest,
+                shard_count=args.shard_count,
+                shard_index=args.shard_index,
+                failure_report_path=failure_report,
+                observations_output_path=observations_output,
+                learning_priors_path=learning_priors,
             )
         )
         if args.fail_on_empty_download and should_fail_on_empty_download(stats):

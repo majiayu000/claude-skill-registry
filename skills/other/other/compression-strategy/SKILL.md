@@ -1,7 +1,7 @@
 ---
 name: compression-strategy
 description: 'Analyze current context and recommend compression strategies for bloated or quota-heavy sessions'
-version: 1.7.1
+version: 1.8.4
 globs:
 alwaysApply: false
 progressive_loading: true

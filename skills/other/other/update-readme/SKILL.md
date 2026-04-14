@@ -1,7 +1,7 @@
 ---
 name: update-readme
 description: 'Refresh README structure and content using repo context from git-workspace-review'
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 category: artifact-generation
 tags:

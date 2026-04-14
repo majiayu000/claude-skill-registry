@@ -1,7 +1,7 @@
 ---
 name: feature-review
 description: 'Review and prioritize features using RICE, WSJF, or Kano scoring frameworks, then create GitHub issues for suggestions.'
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 category: workflow-methodology
 tags:
@@ -266,7 +266,7 @@ Create `.feature-review.yaml` in project root:
 
 ```yaml
 # .feature-review.yaml
-version: 1
+version: 1.8.4
 
 # Scoring weights (must sum to 1.0)
 weights:

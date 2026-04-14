@@ -1,11 +1,7 @@
 ---
 name: skill-authoring
-description: 'Guide to effective Claude Code skill authoring using TDD methodology
-  and persuasion principles. Use when creating new skills, improving compliance, or
-  validating quality before deployment. Do not use for evaluating existing skills
-  (use skills-eval) or analyzing architecture (use modular-skills). Follow the Iron
-  Law: write a failing test before writing any skill.'
-version: 1.7.1
+description: 'Guide to creating Claude Code skills using TDD methodology and persuasion principles. Use for new skill development.'
+version: 1.8.4
 alwaysApply: false
 category: skill-development
 tags:
@@ -26,6 +22,7 @@ modules:
 dependencies:
 - modular-skills
 estimated_tokens: 1500
+model_hint: standard
 ---
 # Skill Authoring Guide
 

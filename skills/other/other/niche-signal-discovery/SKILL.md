@@ -1,7 +1,7 @@
 ---
 name: niche-signal-discovery
 disable-model-invocation: true
-description: "Discover niche first-party signals that differentiate Closed Won vs Closed Lost accounts for ICP analysis. Use when the user provides won/lost customer domain lists and wants differential signals (website content, job listings, tech stack, maturity markers) to build account scoring models and prospecting criteria. Triggers: ICP analysis, niche signals, won vs lost analysis, differential signals, signal discovery, ICP signal report, account scoring signals, lead scoring, first-party signals, buyer signals. Before reading this file, first read gtm-meta-skill to understand the Deepline CLI tool and how to use it. Then read this file for guidance on the task."
+description: 'Discover niche first-party signals that differentiate Closed Won vs Closed Lost accounts for ICP analysis. Use when the user provides won/lost customer domain lists and wants differential signals (website content, job listings, tech stack, maturity markers) to build account scoring models and prospecting criteria. Triggers: ICP analysis, niche signals, won vs lost analysis, differential signals, signal discovery, ICP signal report, account scoring signals, lead scoring, first-party signals, buyer signals. Before reading this file, first read gtm-meta-skill to understand the Deepline CLI tool and how to use it. Then read this file for guidance on the task.'
 ---
 
 # Niche Signal Discovery
@@ -12,7 +12,7 @@ Discover differential signals between Closed Won and Closed Lost accounts by ext
 
 - **Deepline CLI** — All enrichment runs through `deepline enrich`. No separate API keys for exa/crustdata/apollo etc.
 - **Python 3** stdlib only — no pip dependencies for any shipped script.
-- **Credits** — ~6 credits/company for enrichment. Step 7 contact discovery is additional. **Always get user approval before paid steps.**
+- **Credits** — ~0.47 credits/company (serper 0.02 + firecrawl 0.05 + crustdata 0.40). Step 7 contact discovery is additional. **Always get user approval before paid steps.**
 
 ## Deepline-First Principle
 
@@ -58,7 +58,7 @@ Highest → lowest confidence:
 
 ## What NOT to use for scoring
 
-CRM fields populated by AE activity — catalyst note count, OCR-derived counts (`number_of_champions_c`, `number_of_decision_makers_c`), MEDDPICC picklists, any "did the AE do X on this opp" field — correlate with win-rate as **engagement artifacts, not causal signals**. They get filled in *after* the AE decides an opp is worth working. **Never use them as scoring inputs.** On one real run, catalyst notes showed "109x lift" — almost made the TL;DR before we caught the direction of causality.
+CRM fields populated by AE activity — catalyst note count, OCR-derived counts (`number_of_champions_c`, `number_of_decision_makers_c`), MEDDPICC picklists, any "did the AE do X on this opp" field — correlate with win-rate as **engagement artifacts, not causal signals**. They get filled in _after_ the AE decides an opp is worth working. **Never use them as scoring inputs.** On one real run, catalyst notes showed "109x lift" — almost made the TL;DR before we caught the direction of causality.
 
 Rule of thumb: every scoring input must be observable BEFORE the AE touches the account. Read `references/scoring-pitfalls.md` for the full list and the "safer alternative read" for loss-reason data.
 
@@ -132,19 +132,43 @@ Create three JSON files in `output/{{company}}/`:
 
 ## Step 2: Deepline enrichment
 
-**Never scrape just the homepage.** Use `exa_search` with `contents.text` to discover AND scrape ~8 pages per domain in one call.
+**Never scrape just the homepage.** Use Serper to discover relevant pages, Firecrawl to extract content.
 
-Generate the exa query dynamically based on the target's product category — see `gtm-meta-skill` for query variants by buyer type (back-office, developer, creative, sales).
+**Step 2a - Discover pages with Serper (0.02 credits/company):**
 
 ```bash
 deepline enrich \
   --input output/{{company}}-icp-input.csv \
-  --output output/{{company}}-enriched.csv \
-  --with '{"alias":"website","tool":"exa_search","payload":{"query":"{{exa-query}}","numResults":8,"type":"auto","includeDomains":["{{domain}}"],"contents":{"text":{"maxCharacters":3000,"verbosity":"compact","includeSections":["body"]}}}}' \
-  --with '{"alias":"jobs","tool":"crustdata_job_listings","payload":{"companyDomains":"{{domain}}","limit":50}}'
+  --output output/{{company}}-discovered.csv \
+  --with '{"alias":"pages","tool":"serper_google_search","payload":{"query":"site:{{domain}} product OR features OR integrations OR customers OR security OR pricing OR careers OR about"}}' \
+  --json
 ```
 
-**Cost:** ~5 credits/company (exa) + ~1 credit (crustdata) = **~6 credits/company**. Get user approval first.
+Adapt the query by vertical: add `compliance OR audit` for back-office, `documentation OR api` for developer tools, `portfolio OR workflow` for creative tools.
+
+**Step 2b - Scrape top 5 pages with Firecrawl (0.05 credits/company):**
+
+Extract URLs from Serper results, then scrape each:
+
+```bash
+deepline enrich \
+  --input output/{{company}}-urls.csv \
+  --output output/{{company}}-scraped.csv \
+  --with '{"alias":"content","tool":"firecrawl_scrape","payload":{"url":"{{url}}"}}' --json
+```
+
+Aggregate scraped pages back into one row per domain, formatted as `{"data":{"results":[{url, title, text}]}}` for the analysis script.
+
+**Step 2c - Job listings with Crustdata (0.40 credits/company):**
+
+```bash
+deepline enrich \
+  --input output/{{company}}-aggregated.csv \
+  --output output/{{company}}-enriched.csv \
+  --with '{"alias":"jobs","tool":"crustdata_job_listings","payload":{"companyDomains":["{{domain}}"]}}' --json
+```
+
+**Total cost: ~0.47 credits/company.** Get user approval first. Example: "60 companies x 0.47 = ~28 credits."
 
 ## Step 3: Quality gate
 
@@ -167,6 +191,7 @@ deepline playground output/{{company}}-enriched.csv
 ```
 
 **Red flags:**
+
 - Keyword in <10% of enriched companies → too niche, broaden
 - Keyword in >90% → too generic, refine
 - Product-category keywords appear frequently in Won → wrong product category, those companies are competitors not buyers
@@ -201,6 +226,7 @@ The script computes substring-match presence, Laplace-smoothed lift, source brea
 ## Step 6: Signal interpretation
 
 **Read `references/signal-interpretation.md`** before writing interpretation columns. Key rules:
+
 - Website content mentioning what the target sells = competitor signal (not buyer)
 - Job listings = highest-intent buyer signal
 - Same keyword means different things on product page vs careers page vs blog
@@ -222,20 +248,21 @@ python3 scripts/find_contacts.py --input prospects_actionable.csv --output top10
 ```
 
 When `--contacts` is on, the orchestrator runs a 3-phase chain via Deepline:
+
 1. `company_to_contact_by_role_waterfall` (free, mature companies)
 2. **`exa_search_people` fallback for any company Phase 1 missed** — mandatory. On the run that motivated this, Phase 1 returned 0 contacts on all 10 top prospects (small/non-US industrial); Exa found 15 real contacts at 6 of those 10 in the same pass.
-3. `person_linkedin_only_to_email_waterfall` with **apex-domain validation** — providers return stale addresses (`@orbitalatk.com` for someone now at X-Bow, personal Gmails, wrong-company false positives). Mismatched apex → publish "(email not found)", keep the raw value in `raw_email` for auditing.
+3. `name_and_domain_to_email_waterfall` with `linkedin_url` supplied and **apex-domain validation** — providers return stale addresses (`@orbitalatk.com` for someone now at X-Bow, personal Gmails, wrong-company false positives). Mismatched apex → publish "(email not found)", keep the raw value in `raw_email` for auditing.
 
 **Read `references/step-7-prospects.md`** for the required vs. optional output fields, the prospect-card skeleton, the Phase 2 Exa guardrails (title parsing + company-match filter), and the "10 is a ceiling, not a floor" guidance.
 
 ## Enrichment data structure
 
-After unwrap, each enriched row has:
+After enrichment, each row has:
 
-- `website` cell → JSON with `data.results[]`, each item: `{text, url, title}`
-- `jobs` cell → JSON with `data.listings[]`, each item: `{title, description, url, category}` (note: `title` not `job_title`)
+- `website` column → JSON: `{"data":{"results":[{text, url, title}]}}` (aggregated from Firecrawl scrapes)
+- `jobs` column → JSON: `{"result":{"listings":[{title, description, url}]}}` (Crustdata format - note `result` not `data`, `title` not `job_title`)
 
-`scripts/analyze_signals.py` auto-detects these columns; override with `--website-col N --jobs-col N` if your CSV uses different column names.
+`scripts/analyze_signals.py` auto-detects `__dl_full_result__` columns; override with `--website-col N --jobs-col N` for other column names.
 
 ## Common pitfalls (top 6 — full list in references/pitfalls.md)
 
@@ -269,4 +296,5 @@ After unwrap, each enriched row has:
 
 ## Changelog
 
+- **2026-04-13** — Switched Step 2 from exa_search (~5 credits) to Serper + Firecrawl (~0.07 credits) for website content. Total: ~0.47/company (was ~6). Fixed analyze_signals.py to handle Crustdata's `{"result":{"listings":[]}}` wrapper. Verified E2E on 15 companies.
 - **2026-04-07** — Added Step 1.0.5 (dedupe with apex helper), Step 7 (top 10 prospects required, contacts optional via `--contacts`/`--no-contacts`), `references/scoring-pitfalls.md` warning about confirmation-biased CRM fields, mandatory citation rule. Shipped `scripts/dedupe_utils.py` + `scripts/find_contacts.py`. Aggressively trimmed inline detail to references — moved Step 3 quality gate, Step 5 quality rules, Common Pitfalls (items 7-15), and Proven Signal Patterns into `references/`. SKILL.md went from 650 to ~250 lines via progressive disclosure.

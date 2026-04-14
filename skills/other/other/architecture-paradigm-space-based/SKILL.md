@@ -1,7 +1,7 @@
 ---
 name: architecture-paradigm-space-based
 description: 'Apply data-grid architecture for high-traffic stateful workloads with in-memory processing and linear scalability.'
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 category: architectural-pattern
 tags:
@@ -61,15 +61,3 @@ estimated_tokens: 800
   - **Mitigation**: The orchestration of a data grid requires mature automation. Invest in production-grade tooling and automation early in the process.
 - **Cost**:
   - **Mitigation**: In-memory grids can be resource-intensive. Implement aggressive monitoring of utilization and auto-scaling policies to manage costs effectively.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

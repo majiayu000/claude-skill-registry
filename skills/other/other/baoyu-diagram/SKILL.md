@@ -1,7 +1,7 @@
 ---
 name: baoyu-diagram
-description: Generates publication-ready SVG diagrams — flowcharts, sequence/protocol diagrams, structural/architecture diagrams, and illustrative intuition diagrams — by writing real SVG code directly following a cohesive design system. Supports both single-diagram mode (topic-based) and multi-diagram mode (analyze article content and generate multiple diagrams at identified positions). Use whenever the user asks to "draw a flowchart", "draw a sequence diagram", "show the OAuth / TCP / auth protocol", "make an architecture diagram", "explain how X works visually", "illustrate this article with diagrams", "为文章画图解", "画流程图", "画时序图", "画架构图", "画示意图", "画图解", or wants clean, embeddable vector diagrams for articles, WeChat posts, slides, or docs. Output is one or more self-contained .svg files that render correctly in light and dark mode anywhere they are embedded.
-version: 1.1.0
+description: Generates publication-ready SVG diagrams from source material — flowcharts, sequence/protocol diagrams, structural/architecture diagrams, and illustrative intuition diagrams — by writing real SVG code directly following a cohesive design system. Analyzes input material to recommend diagram type(s), splitting strategy, and optional overview diagram, then generates after one-time confirmation. Use whenever the user asks to "draw a flowchart", "draw a sequence diagram", "show the OAuth / TCP / auth protocol", "make an architecture diagram", "explain how X works visually", "draw a diagram for this", "画流程图", "画时序图", "画架构图", "画示意图", "画图", or wants clean, embeddable vector diagrams for articles, WeChat posts, slides, or docs. Output is one or more self-contained .svg files that render correctly in light and dark mode anywhere they are embedded.
+version: 1.2.0
 metadata:
   openclaw:
     homepage: https://github.com/JimLiu/baoyu-skills#baoyu-diagram
@@ -11,25 +11,23 @@ metadata:
 
 Write **real SVG code** directly, following a consistent design system, the output is self-contained `.svg` files (embedded styles, auto dark-mode), editable by humans, scales to any size without quality loss, and embeds cleanly into articles, WeChat posts, slide decks, Notion, and markdown.
 
-When given article or document content, the skill analyzes structure, identifies concepts that benefit from diagramming, and generates multiple diagrams — each with its own type, layout plan, and SVG. When given a single topic, it generates one diagram.
+When given source material (topic descriptions, documents, technical specs, pasted content), the skill analyzes what diagrams would best convey the material, recommends diagram type(s) and whether the content should be split into multiple focused diagrams, confirms the plan once, then generates all diagrams.
 
 This is not an image-generation skill — it does not call any LLM image model. Claude writes the SVG node-by-node, doing the layout math by hand so every diagram honors the rules in `references/`.
 
 ## Usage
 
-### Single-diagram mode
-
 ```bash
-# Prompt for the topic if no argument given
-/baoyu-diagram
-
-# Plain-text description
+# Topic string — skill analyzes and proposes a plan
 /baoyu-diagram "how JWT authentication works"
 
-# Path to a markdown file as source content (single diagram about one topic)
-/baoyu-diagram path/to/content.md --mode single
+# File path — skill reads, analyzes, and proposes a plan
+/baoyu-diagram path/to/content.md
 
-# Force a specific diagram type
+# Pasted content — prompts for input if no argument given
+/baoyu-diagram
+
+# Force a specific diagram type (skips type recommendation)
 /baoyu-diagram "transformer attention"    --type illustrative
 /baoyu-diagram "Kubernetes architecture"  --type structural
 /baoyu-diagram "CI/CD pipeline"           --type flowchart
@@ -41,41 +39,13 @@ This is not an image-generation skill — it does not call any LLM image model. 
 /baoyu-diagram "build pipeline" --out docs/build-pipeline.svg
 ```
 
-### Multi-diagram mode
-
-```bash
-# Analyze article and generate diagrams at identified positions
-/baoyu-diagram path/to/article.md
-
-# With density control
-/baoyu-diagram path/to/article.md --density balanced
-/baoyu-diagram path/to/article.md --density per-section --lang zh
-
-# Force multi mode on pasted content
-/baoyu-diagram --mode multi
-```
-
-### Mode detection
-
-| Signal | Mode |
-|--------|------|
-| File path to `.md` / `.txt` (unless `--mode single`) | **Multi** |
-| Multi-paragraph pasted content (unless `--mode single`) | **Multi** |
-| Short quoted topic string (under ~100 chars, no markdown structure) | **Single** |
-| `--type` given | **Single** (forces) |
-| `--out` given | **Single** (forces) |
-| `--mode single` or `--mode multi` | Forced by flag |
-| Ambiguous | Ask with AskUserQuestion |
-
 ## Options
 
 | Option | Values |
 |--------|--------|
-| `--type` | `flowchart`, `sequence`, `structural`, `illustrative`, `class`, `auto` (default — route on verb). Forces single-diagram mode. |
+| `--type` | `flowchart`, `sequence`, `structural`, `illustrative`, `class`, `auto` (default — route on verb). When specified, forces this type for all diagrams — skips type recommendation. |
 | `--lang` | `en`, `zh`, `ja`, `ko`, ... (default: match the user's language) |
-| `--out` | Output file path (default: `diagram/{slug}/diagram.svg`). Forces single-diagram mode. |
-| `--density` | `minimal` (1-2), `balanced` (3-5, default), `per-section`, `rich` (6+). Multi-diagram mode only. |
-| `--mode` | `single`, `multi`, `auto` (default). Override automatic mode detection. |
+| `--out` | Output file path. When set, the skill generates exactly one diagram at this path — analysis produces a single-diagram plan focused on the most important aspect of the material. |
 
 ## Diagram types
 
@@ -140,34 +110,47 @@ Cycles, ERDs, and gantt charts are **out of scope for v1**. For cycles, draw the
 
 ## Workflow
 
-### Step 1: Detect mode and capture input
+### Step 1: Capture input
 
-Read the user's prompt, content file, or pasted content. Determine the mode:
+Read the user's prompt, content file, or pasted content. Note any flags (`--type`, `--lang`, `--out`).
 
-| Signal | Mode |
-|--------|------|
-| Short topic string, `--type` given, or `--out` given | **Single** |
-| File path to `.md` / `.txt`, or multi-paragraph pasted content | **Multi** |
-| `--mode single` or `--mode multi` | Forced by flag |
-| Ambiguous (medium-length text, unclear if topic or content) | Ask with AskUserQuestion |
+| Input | Action |
+|-------|--------|
+| File path to `.md` / `.txt` | Read the file as source material |
+| Pasted content or topic string | Capture as source material |
+| No input at all | Ask with AskUserQuestion |
 
-**Single mode** → jump to Step 5.
+If `--out` is given, the skill will generate exactly one diagram at that path — the analysis in Step 2 produces a single-diagram plan focused on the most important aspect of the material.
 
-**Multi mode** → continue to Step 2.
+### Step 2: Analyze material and produce plan
 
-If input is a file path, read the file. If input is pasted content, note it for saving later. If no input at all, ask for it with AskUserQuestion.
+Analyze the source material and make three decisions:
 
-### Step 2: Analyze content (multi-diagram mode)
+#### Decision A: Type routing
 
-Analyze the article or document for diagramming opportunities. For each section or concept cluster, determine:
+For the input material, determine which diagram type(s) are appropriate using the routing table in "Diagram types."
 
-| Analysis | Output |
-|----------|--------|
-| Content structure | Sections, subsections, key transitions |
-| Core concepts | 2-8 concepts that benefit from visual explanation |
-| Diagram positions | Where in the article each diagram belongs (anchored to specific paragraphs or headings) |
-| Per-position type signal | What verb/need drives each diagram (→ routing table in "Diagram types") |
-| Per-position complexity | Simple (3-4 nodes) vs. complex (poster/subsystem) |
+| Situation | Action |
+|-----------|--------|
+| Only one type makes sense (clear verb signal, or `--type` given) | That type is the recommendation. No choice needed. |
+| Multiple types could each produce a useful diagram from the same material | List the candidates with a one-sentence rationale for each. The user picks in Step 3. |
+
+#### Decision B: Content splitting
+
+Assess whether the material should produce one diagram or multiple sub-diagrams.
+
+**Single diagram** when:
+- Material is focused on one concept, one mechanism, one process
+- Named elements count is manageable (under ~6 for flowchart, under ~4 actors for sequence, under ~3 containers for structural)
+- One "After seeing this diagram, the reader understands ___" sentence covers the whole material
+
+**Multiple sub-diagrams** when:
+- Material covers 2+ independent mechanisms or processes
+- Named element count exceeds comfortable limits for one diagram type
+- Material has natural subsections that each deserve visual treatment
+- Different parts of the material map to different diagram types
+
+For each sub-diagram, determine: focus area, recommended type, named elements, and the "reader understands ___" sentence.
 
 **What to diagram:**
 - Core mechanisms the reader needs to *understand* (→ illustrative)
@@ -179,61 +162,106 @@ Analyze the article or document for diagramming opportunities. For each section 
 
 **What NOT to diagram:**
 - Simple lists — a bullet list is already visual enough
-- Concepts already shown in an existing image or figure in the article
+- Concepts already shown in an existing image or figure
 - Purely emotional or narrative passages with no underlying mechanism
 - Content that is a single sentence or trivially simple
 - Decorative filler — every diagram must earn its place with a concrete reader need
 
-**Output**: A list of N candidate diagram positions, each with: section anchor, tentative type, named elements, and the "After seeing this diagram, the reader understands ___" sentence.
+#### Decision C: Overview diagram
 
-### Step 3: Confirm settings (multi-diagram mode)
+When the plan includes multiple sub-diagrams, assess whether an additional overview diagram that shows the big picture is worthwhile.
 
-**ONE AskUserQuestion, max 3 questions. Q1 required. Q2 required unless `--density` given.**
+| Situation | Decision |
+|-----------|----------|
+| Sub-diagrams are parts of a coherent system, seeing how they relate adds value | Include an overview diagram (typically structural or illustrative) |
+| Sub-diagrams cover independent topics that don't form a coherent whole | Skip the overview |
+| Material is simple enough that sub-diagrams already cover everything | Skip the overview |
 
-| Q | When to ask | Options |
-|---|-------------|---------|
-| **Q1: Diagram positions** | Always | Show the N candidate positions with tentative types. "I identified N positions for diagrams: [numbered list with section anchor + type + one-line purpose]. Adjust, add, or remove?" |
-| **Q2: Density** | No `--density` flag | minimal (1-2 core concepts only), balanced (3-5 major concepts, Recommended), per-section (one per section/chapter), rich (6+ comprehensive) |
-| **Q3: Language** | Article language ≠ user's language or `--lang` | Which language for diagram labels? |
+#### Plan output
 
-After confirmation, finalize the list of diagrams to generate. If the user adjusts positions or types, update accordingly.
+Save the plan as `outline.md` (for multiple diagrams) or hold in memory (for single diagram).
 
-### Step 4: Generate outline (multi-diagram mode)
+**Single-diagram plan format:**
 
-Save `outline.md` with YAML frontmatter and per-diagram entries:
+```markdown
+## Diagram Plan
+**Material**: [source description]
+**Diagrams**: 1
+**Type**: [type] (rationale)
+**Named elements**: [list]
+**Reader need**: "After seeing this diagram, the reader understands ___"
+**Slug**: [slug]
+```
+
+**Multi-diagram plan format:**
 
 ```yaml
 ---
-article: path/to/article.md    # or "pasted content"
-slug: article-topic-slug
-density: balanced
-diagram_count: 4
+material: [source description]
+slug: [material-slug]
+diagram_count: N
 language: en
 ---
 ```
 
-Per-diagram entry format:
+Per-diagram entry:
 
 ```markdown
-## Diagram 1
-**Position**: [section name / paragraph anchor, e.g. "Section 2, after 'Authentication is the first step...'"]
-**Purpose**: [why this diagram helps the reader]
-**Type**: [flowchart | sequence | structural | illustrative | class]
-**Named elements**: [list of actors, components, states, or concepts]
+## Diagram 1: [focus area]
+**Type**: [type] (rationale)
+**Named elements**: [list]
 **Reader need**: "After seeing this diagram, the reader understands ___"
 **Slug**: [2-4 kebab-case words]
 **Filename**: 01-{type}-{slug}/diagram.svg
+
+## Diagram 2: [focus area]
+...
+
+## Overview diagram (if applicable)
+**Type**: [structural/illustrative]
+**Purpose**: Shows how diagrams 1-N relate as parts of a larger system
+**Named elements**: [high-level elements]
+**Slug**: overview-[slug]
+**Filename**: overview-{type}-{slug}/diagram.svg
 ```
 
-**Requirements**:
-- Each position justified by a concrete reader need (the "After seeing this..." sentence)
+Requirements:
+- Each diagram justified by a concrete reader need (the "After seeing this..." sentence)
 - Type chosen per the routing table, not arbitrarily
-- Count matches the confirmed density
 - If input was pasted content, also save it as `source-{slug}.md` in the output directory
 
-Save to `diagram/{article-slug}/outline.md`.
+### Step 3: Confirm plan (one-time)
 
-### Step 5: Load shared references
+**Maximum 1 AskUserQuestion call for the entire workflow.** This is the only confirmation step — no further questions during generation.
+
+| Plan shape | Confirmation |
+|------------|-------------|
+| Single diagram, obvious type (`--type` given, or clear verb signal) | **No confirmation.** Announce the type in one sentence and proceed to Step 4. |
+| Single diagram, ambiguous type (multiple types viable) | **Lightweight.** "The material could work as [type A] (rationale) or [type B] (rationale). Which do you prefer?" |
+| Multiple diagrams | **Full plan.** Show the numbered list of all planned diagrams with their types and purposes, plus overview if applicable. User can adjust (add/remove diagrams, change types, toggle overview) in one response. |
+
+Language question: only include if material language differs from user's language and `--lang` is not given.
+
+Example full plan confirmation:
+
+```
+I analyzed the material and recommend N diagrams [+ an overview]:
+
+1. [Focus area] — [type] — "Reader understands ___"
+2. [Focus area] — [type] — "Reader understands ___"
+3. [Focus area] — [type] — "Reader understands ___"
+[Overview: [type] — "Shows how 1-N relate as a system"]
+
+Adjust the plan? (add/remove diagrams, change types, skip/add overview)
+```
+
+After confirmation (or after skipping confirmation for obvious plans), the plan is locked. Proceed to generation.
+
+Save the finalized plan:
+- Multiple diagrams: `diagram/{material-slug}/outline.md`
+- Single diagram: plan is saved as `plan.md` beside the SVG in Step 5g
+
+### Step 4: Load shared references
 
 **Always read**:
 - `references/design-system.md` — philosophy, typography, color palette, hard rules
@@ -241,15 +269,15 @@ Save to `diagram/{article-slug}/outline.md`.
 - `references/layout-math.md` — text-width estimation, viewBox sizing, arrow routing
 - `references/pitfalls.md` — the pre-save checklist
 
-Per-type reference files are loaded inside the generation loop (Step 6b) since each diagram may have a different type.
+Per-type reference files are loaded inside the generation loop (Step 5b) since each diagram may have a different type.
 
-### Step 6: Per-diagram generation loop
+### Step 5: Per-diagram generation loop
 
-For each diagram (single iteration in single mode, N iterations in multi mode):
+For each diagram in the confirmed plan (1 to N, overview diagram generated last):
 
-#### 6a: Capture intent
+#### 5a: Capture intent
 
-**Single mode**: Read the user's prompt. Extract these five things from the source:
+Read the current diagram's plan entry. Extract or refine these five things from the source material:
 
 1. **Named elements** — list every distinct actor, component, service, state, or phase explicitly named. Count them. If the count is 6+, plan multiple diagrams rather than cramming everything into one (see `flowchart.md` → "Planning before you write SVG").
 
@@ -258,21 +286,17 @@ For each diagram (single iteration in single mode, N iterations in multi mode):
    - Containment ("X is inside Y", zones, hierarchies) → structural signal
    - Multi-actor message exchange (A sends to B, B replies to C) → sequence signal
    - Mechanism ("how does X produce Y") → illustrative signal
-   More than one type present? Pick the dominant one, or plan two diagrams.
+   More than one type present? Pick the dominant one, or flag for the plan.
 
 3. **What the reader needs** — complete this sentence before routing: *"After seeing this diagram, the reader understands ___."* If you can't finish it, the topic is underspecified — ask.
 
-4. **Label preview** — for each element name, count the characters. Latin titles >30 chars (CJK >16) will overflow a 180-wide box and need shortening. Draft the abbreviated form now, before layout math, so Step 6d uses real labels.
+4. **Label preview** — for each element name, count the characters. Latin titles >30 chars (CJK >16) will overflow a 180-wide box and need shortening. Draft the abbreviated form now, before layout math, so Step 5d uses real labels.
 
-5. **Language** — CJK vs. Latin. Affects text-width multipliers in Step 6d (15 px/char vs. 8 px/char for titles). Mixed content (CJK labels with some Latin terms) counts as CJK.
+5. **Language** — CJK vs. Latin. Affects text-width multipliers in Step 5d (15 px/char vs. 8 px/char for titles). Mixed content (CJK labels with some Latin terms) counts as CJK.
 
-**Multi mode**: Most of this was already done in Steps 2/4. Read the current diagram's outline entry. Refine the named elements and label preview now, for this specific diagram.
+#### 5b: Load type reference
 
-#### 6b: Route type and load type reference
-
-**Single mode**: Match the user's phrasing to the routing table in "Diagram types". If `--type` is given, use it. Otherwise route on the verb. When genuinely ambiguous between flowchart and illustrative, default to **illustrative**. Tell the user which type you picked and why, in one sentence.
-
-**Multi mode**: The type was already determined in the outline. Load the matching reference file now.
+The type was determined in the plan. Load the matching reference file.
 
 **Read the one that matches the type**:
 - `references/flowchart.md`
@@ -285,22 +309,33 @@ For each diagram (single iteration in single mode, N iterations in multi mode):
 - `references/glyphs.md` — the shared glyph library, tool card icon set, operator icons, and dark-mode rules
 
 **Read on demand for diagram type extensions:**
-- `references/flowchart-poster.md` — when ≥3 poster-mode triggers fire in Step 6d (topic has a short name, named phases, parallel candidates, a loop termination mechanic, overflow annotations, or a footer quote)
+- `references/flowchart-poster.md` — when ≥3 poster-mode triggers fire in Step 5d (topic has a short name, named phases, parallel candidates, a loop termination mechanic, overflow annotations, or a footer quote)
 - `references/flowchart-phase-bands.md` — when the prompt describes a multi-phase sequential operation where each phase contains parallel tools or steps and outcomes propagate between phases
 - `references/structural-network.md` — when drawing network topology: zone containers, wired/wireless device connectivity, security zones
 - `references/structural-matrix.md` — when drawing a comparison matrix: feature table, ✓/✗ cells, side-by-side grid
 
-#### 6c: Check patterns library
+#### 5c: Check patterns library
 
-If the topic matches a known AI-system pattern, there is a pre-cooked starter plan in `references/patterns/`. Scan `references/patterns/README.md` for a pattern name that matches. If one matches, load that pattern file and use its mermaid reference + baoyu SVG plan as the starting point for Step 6d.
+If the topic matches a known AI-system pattern, there is a pre-cooked starter plan in `references/patterns/`. Scan `references/patterns/README.md` for a pattern name that matches. If one matches, load that pattern file and use its mermaid reference + baoyu SVG plan as the starting point for Step 5d.
 
-If nothing matches, skip and plan from scratch in Step 6d. Do not force a near-miss.
+If nothing matches, skip and plan from scratch in Step 5d. Do not force a near-miss.
 
-#### 6d: Plan on paper
+#### 5d: Plan on paper
 
 Before writing any SVG, draft a short layout plan. Do the math once, correctly, so the SVG comes out right on the first pass.
 
-**6d-i. Extract structure from the source** — don't just transcribe bullets into boxes. Read the source looking for these elements. Not every element will be present, but every present element should land in the diagram:
+**5d-0. Draft the Mermaid sketch first** — write a Mermaid code block that captures the **structural intent** of the diagram: which nodes exist, how they connect, what direction they flow, and any grouping (subgraphs). This is the single source of truth for *what* to draw; everything after it (coordinates, widths, arrows) answers *how*.
+
+Rules for the Mermaid sketch:
+- Use the Mermaid dialect that best matches the diagram type: `flowchart TD/LR` for flowcharts, `sequenceDiagram` for sequence, `classDiagram` for class, `flowchart` with subgraphs for structural/illustrative.
+- Include every node, every edge, every label, and every subgraph/container. If a node won't appear in the Mermaid, it won't appear in the SVG.
+- Edge labels must match the final SVG labels — write them now, not later.
+- Keep it concise: the sketch is a structural contract, not a rendering. Mermaid can't express baoyu's visual design (colors, rounded rects, dark mode), so don't try — those come in 5d-ii and 5e.
+- For patterns that have a Mermaid reference in `references/patterns/`, start from that reference and adapt it to the specific topic.
+
+Save the Mermaid block in the plan file. When writing SVG in Step 5e, **cross-check every node and edge against this Mermaid sketch** — if the sketch has it, the SVG must have it; if the SVG adds something the sketch doesn't have, update the sketch first.
+
+**5d-i. Extract structure from the source** — don't just transcribe bullets into boxes. Read the source looking for these elements. Not every element will be present, but every present element should land in the diagram:
 
 - **Mechanism name** — does the topic have a short, nameable identity (Autoreason, AutoResearch, OAuth, JWT auth, Reflexion loop)? If yes, that's a candidate `.title`.
 - **Framing question** — does the source contain a "why does this exist" sentence? That's a candidate subtitle.
@@ -314,7 +349,7 @@ Before writing any SVG, draft a short layout plan. Do the math once, correctly, 
 
 Write the answers to these in the plan file. If ≥3 of them land, you're building a **poster flowchart** — load `references/flowchart-poster.md` and follow its coordinate budget. Otherwise, it's a simple flowchart and the linear-top-down pattern applies.
 
-**6d-ii. Draft the layout:**
+**5d-ii. Draft the layout:**
 
 1. **List the nodes / regions / shapes** with their full label text (title + optional subtitle).
    - Simple flowchart: ≤5 nodes.
@@ -333,11 +368,13 @@ Write the answers to these in the plan file. If ≥3 of them land, you're buildi
 5. **Map arrows** and verify none cross an unrelated box. Use L-bends where a straight line would collide. (Sequence messages are always straight horizontal lines — no L-bends. Fan-out candidates converge to a common `ymid` channel just above the judge box.)
 6. **Compute viewBox height**: `H = max_y + 20` where `max_y` is the bottom of the lowest element. Poster flowcharts routinely reach H=800–950 — don't force them to be compact.
 
-Save this plan:
-- **Single mode**: `diagram/{slug}/plan.md`
-- **Multi mode**: `diagram/{article-slug}/NN-{type}-{slug}/plan.md`
+Save this plan (including the Mermaid sketch from 5d-0):
+- One diagram: `diagram/{slug}/plan.md`
+- Multiple diagrams: `diagram/{material-slug}/NN-{type}-{slug}/plan.md`
 
-#### 6e: Write the SVG
+#### 5e: Write the SVG
+
+**Start from the Mermaid sketch in the plan.** Walk the sketch node-by-node, edge-by-edge, and translate each element into SVG using the coordinates and widths computed in 5d-ii. The Mermaid sketch is the structural checklist — every node and edge in it must appear in the SVG. If you find yourself adding an element that isn't in the sketch, stop and update the sketch first so the plan stays authoritative.
 
 Emit a single `<svg width="100%" viewBox="0 0 680 H">` element. Copy the `<style>` + `<defs>` block from `svg-template.md` **verbatim** — don't abbreviate or edit the color ramp definitions. Then add visual elements in z-order:
 
@@ -353,7 +390,9 @@ Typography rules:
 - Sentence case everywhere — "User login" not "User Login"
 - Every `<text>` element gets a class (`t`, `ts`, or `th`) — never hardcode fill colors on text
 
-#### 6f: Run the pre-save checklist
+#### 5f: Run the pre-save checklist
+
+**Mermaid–SVG consistency check** (run before the pitfalls checklist): re-read the Mermaid sketch from the plan. For every node in the sketch, confirm the SVG has a corresponding `<rect>` + `<text>`. For every edge, confirm a `<path>` or `<line>` connects the correct pair. Missing elements are bugs — fix them before continuing.
 
 Walk through every item in `references/pitfalls.md`. The top failures to catch every time:
 
@@ -369,25 +408,19 @@ Walk through every item in `references/pitfalls.md`. The top failures to catch e
 
 If any item fails, fix the SVG before saving. Don't rationalize past a failure — the checklist exists because these bugs are silent: the SVG is valid but looks wrong when rendered.
 
-#### 6g: Save and report progress
+#### 5g: Save and report progress
 
 Save the SVG and plan:
-- **Single mode**: `diagram/{slug}/plan.md` + `diagram.svg`
-- **Multi mode**: `diagram/{article-slug}/NN-{type}-{slug}/plan.md` + `diagram.svg`
+- One diagram: `diagram/{slug}/plan.md` + `diagram.svg`
+- Multiple diagrams: `diagram/{material-slug}/NN-{type}-{slug}/plan.md` + `diagram.svg`
 
 **Backup rule**: if `diagram.svg` already exists at the target path, rename the existing one to `diagram-backup-YYYYMMDD-HHMMSS.svg` before writing the new file — never overwrite prior work silently.
 
-**Multi mode progress**: after each diagram, report progress: "Generated 2/4: 02-illustrative-jwt-token-structure".
+**Multiple diagrams progress**: after each diagram, report progress: "Generated 2/4: 02-illustrative-jwt-token-structure".
 
-### Step 7: Finalize (multi-diagram mode)
+### Step 6: Report
 
-If input was a file path, insert `![description](relative-path/NN-{type}-{slug}/diagram.svg)` at each identified position in the article. Compute the relative path based on the article location vs. the diagram output directory.
-
-If input was pasted content, skip insertion — the diagrams are generated and the outline records positions, but there's no source file to modify.
-
-### Step 8: Report
-
-**Single mode** — tell the user in 4-6 lines:
+**One diagram** — tell the user in 4-6 lines:
 - Diagram type picked (and one-sentence why)
 - Node count / complexity
 - viewBox dimensions
@@ -395,49 +428,52 @@ If input was pasted content, skip insertion — the diagrams are generated and t
 - Output file path
 - One suggestion for how to preview it (e.g., "Open in Chrome for light/dark check")
 
-**Multi mode**:
+**Multiple diagrams**:
 
 ```
-Article Diagram Generation Complete!
+Diagram Generation Complete!
 
-Article: [path or "pasted content"]
-Density: [level] | Language: [lang]
-Diagrams: X/N generated
+Material: [source description]
+Language: [lang]
+Diagrams: X generated
 
-Positions:
-- 01-sequence-jwt-auth-flow → After "Authentication is the first step..."
-- 02-illustrative-jwt-token-structure → After "The token structure..."
-- 03-flowchart-token-refresh → After "When the token expires..."
-- 04-structural-microservice-auth → After "In a microservices architecture..."
+Results:
+- 01-sequence-jwt-auth-flow — "Reader understands the auth handshake"
+- 02-illustrative-jwt-token-structure — "Reader understands token anatomy"
+- 03-flowchart-token-refresh — "Reader understands the refresh cycle"
+[- overview-structural-jwt-system — "Reader sees how all parts connect"]
 
-Output: diagram/{article-slug}/
+Output: diagram/{material-slug}/
 Preview: Open any .svg in Chrome for light/dark check
 ```
 
 ## Output structure
 
-### Single-diagram mode
+### One diagram
 
 ```
-diagram/{topic-slug}/
-├── source-{slug}.md          # optional: user's input content if provided
-├── plan.md                   # layout sketch from Step 6d
+diagram/{slug}/
+├── source-{slug}.md          # optional: saved input material
+├── plan.md                   # layout sketch from Step 5d
 └── diagram.svg               # final output
 ```
 
-### Multi-diagram mode
+### Multiple diagrams
 
 ```
-diagram/{article-slug}/
-├── source-{slug}.md          # saved input content (file copy or pasted content)
-├── outline.md                # frontmatter + all diagram entries from Step 4
+diagram/{material-slug}/
+├── source-{slug}.md          # saved input material
+├── outline.md                # plan from Step 2 with all diagram entries
 ├── 01-{type}-{slug}/
 │   ├── plan.md               # layout sketch for this diagram
 │   └── diagram.svg           # final SVG
 ├── 02-{type}-{slug}/
 │   ├── plan.md
 │   └── diagram.svg
-└── 03-{type}-{slug}/
+├── 03-{type}-{slug}/
+│   ├── plan.md
+│   └── diagram.svg
+└── overview-{type}-{slug}/   # optional: overview diagram
     ├── plan.md
     └── diagram.svg
 ```
@@ -446,22 +482,22 @@ diagram/{article-slug}/
 - **Backup rule**: if `diagram.svg` already exists at the target path, rename the existing one to `diagram-backup-YYYYMMDD-HHMMSS.svg` before writing the new file.
 - **Plan**: always save `plan.md` beside the SVG so the next iteration can re-read it.
 - **Source**: if the user pasted source content, save it as `source-{slug}.md` in the output directory.
-- **Numbering**: NN prefix (01, 02, ...) matches the outline order, which matches article position order.
-- **Outline**: in multi mode, always save `outline.md` from Step 4 so the generation can be resumed or individual diagrams can be regenerated.
+- **Numbering**: NN prefix (01, 02, ...) matches the plan order.
+- **Outline**: when generating multiple diagrams, always save `outline.md` from Step 2 so the generation can be resumed or individual diagrams can be regenerated.
 
 ## Modification
 
 | Action | Steps |
 |--------|-------|
-| **Regenerate one diagram** (multi mode) | Re-read `outline.md` → find the entry → re-run Step 6 for that diagram only → update the SVG |
-| **Add a diagram** (multi mode) | Identify position → add entry to `outline.md` → run Step 6 for the new entry → insert into article |
-| **Remove a diagram** (multi mode) | Delete the `NN-{type}-{slug}/` directory → remove entry from `outline.md` → remove `![...]` from article |
-| **Change type** (single or multi) | Update the outline entry or re-run with `--type` → regenerate |
+| **Regenerate one diagram** | Re-read `outline.md` → find the entry → re-run Step 5 for that diagram only → update the SVG |
+| **Add a diagram** | Identify focus area → add entry to `outline.md` → run Step 5 for the new entry |
+| **Remove a diagram** | Delete the `NN-{type}-{slug}/` directory → remove entry from `outline.md` |
+| **Change type** | Update the plan entry or re-run with `--type` → regenerate |
 
 ## Core principles
 
 - **Draw the mechanism, not a diagram about the mechanism** (illustrative). **Draw the sequence, not the architecture** (flowchart). **Draw the containment, not the flow** (structural). **Draw the conversation, not the steps** (sequence). Picking the wrong type is the single biggest failure mode — more harmful than any layout bug.
-- **One design system, always.** No `--style` flag, no alternate themes, no per-topic visual variants. The cohesive look across every diagram is the product — if a reader sees two baoyu diagrams in different articles, they should feel they came from the same hand. Any request to "use a different style" is a request to break this principle; push back and ask what the underlying need is instead. In multi-diagram mode, all diagrams in a run share the same design system — no per-diagram style overrides.
+- **One design system, always.** No `--style` flag, no alternate themes, no per-topic visual variants. The cohesive look across every diagram is the product — if a reader sees two baoyu diagrams in different articles, they should feel they came from the same hand. Any request to "use a different style" is a request to break this principle; push back and ask what the underlying need is instead. All diagrams in a run share the same design system — no per-diagram style overrides.
 - **Self-contained output.** Every SVG carries its own styles and dark-mode rules. The reader should never need to edit anything after pasting it into their article.
 - **Math before markup.** SVG has no auto-layout. Every coordinate is hand-computed. A diagram that "almost fits" has a bug — fix the math, don't nudge pixels.
 - **Color encodes meaning, not position.** Five steps in a flowchart are not five colors. All five are gray unless one specific step deserves emphasis — in which case it gets the accent color.

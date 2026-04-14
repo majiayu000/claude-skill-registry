@@ -206,12 +206,12 @@ Run the full provisioning procedure from the reference: health check (run test s
 **If test infrastructure was NOT detected:**
 
 Use `AskUserQuestion` — header "Test Infrastructure", question "No test framework was detected. Would you like to install one?":
-- **Yes (strongly recommended)** — "Install test framework and coverage tooling — strongly recommended. Multiple optimus skills depend on test infrastructure: `/optimus:tdd` is non-functional without it, `/optimus:code-review` and `/optimus:refactor` lose **deep mode** and **deep harness**, and `/optimus:verify` loses automated checks."
+- **Yes (strongly recommended)** — "Install test framework and coverage tooling — strongly recommended. Multiple optimus skills depend on test infrastructure: `/optimus:tdd` is non-functional without it, `/optimus:code-review` and `/optimus:refactor` lose **deep mode** and **deep harness**."
 - **No** — "Skip test infrastructure setup — some optimus skills will have reduced functionality"
 
 If the user chooses **Yes**: follow the "Framework and Coverage Tooling Installation" section of the reference (consult `$CLAUDE_PLUGIN_ROOT/skills/init/references/test-framework-recommendations.md`, ask user approval for specific framework, install, then run health check). After installation, run the full Optimus Infrastructure Provisioning from the reference (testing.md, CLAUDE.md refs, README section, .gitignore).
 
-If the user chooses **No**: skip all test infrastructure provisioning. In Step 7 summary, include: "⚠ Test infrastructure was not installed — `/optimus:tdd` will not work, and `/optimus:code-review`, `/optimus:refactor`, and `/optimus:verify` will have reduced functionality. Re-run `/optimus:init` to install test infrastructure later."
+If the user chooses **No**: skip all test infrastructure provisioning. In Step 7 summary, include: "⚠ Test infrastructure was not installed — `/optimus:tdd` will not work, and `/optimus:code-review` and `/optimus:refactor` will have reduced functionality. Re-run `/optimus:init` to install test infrastructure later."
 
 ## Step 6: Create Documentation Files
 
@@ -223,10 +223,17 @@ If the user chooses **No**: skip all test infrastructure provisioning. In Step 7
 | File | Template | Create when ANY of these are true |
 |------|----------|-----------------------------------|
 | `styling.md` | `$CLAUDE_PLUGIN_ROOT/skills/init/templates/docs/styling.md` | Manifest lists a UI framework (react, vue, angular, svelte, solid) OR lists CSS tooling (tailwindcss, styled-components, sass, less, postcss) OR `.css`/`.scss`/`.less` files exist in `src/` OR manifest is `pubspec.yaml` with Flutter SDK dependency (Flutter apps are UI applications with theme, widget, and styling conventions) |
-| `architecture.md` | `$CLAUDE_PLUGIN_ROOT/skills/init/templates/docs/architecture.md` | Project has 3+ top-level source directories (excluding config, tests, docs, build output) OR uses recognized pattern directories (controllers/, services/, repositories/, handlers/, models/) |
+| `architecture.md` | See template selection below | Project has 3+ top-level source directories (excluding config, tests, docs, build output) OR uses recognized pattern directories (controllers/, services/, repositories/, handlers/, models/) OR **skill authoring detected** in Step 1 |
 | `skill-writing-guidelines.md` | `$CLAUDE_PLUGIN_ROOT/skills/init/templates/docs/skill-writing-guidelines.md` | **Skill authoring detected** in Step 1: a directory named `skills/`, `agents/`, `prompts/`, `commands/`, or `instructions/` exists (at the repo root or, in monorepos, at any subproject root), contains ≥2 subdirectories, and **every** such subdirectory contains a file named `SKILL.md`, `AGENT.md`, `PROMPT.md`, `COMMAND.md`, or `INSTRUCTION.md` (case-insensitive). This signals the project authors markdown instructions for an AI agent as part of its stack. |
 
+**`architecture.md` template selection:** The output file is always `architecture.md`, but the source template varies based on detection:
+- Skill authoring NOT detected → use `$CLAUDE_PLUGIN_ROOT/skills/init/templates/docs/architecture.md` (code-only)
+- Skill authoring detected AND project also has code components (recognized pattern directories, `src/`/`lib/` with source files, or non-markdown source files in top-level directories outside the skill-authoring dirs) → use `$CLAUDE_PLUGIN_ROOT/skills/init/templates/docs/architecture-hybrid.md` (hybrid)
+- Skill authoring detected AND no code components (pure skill-authoring project) → use `$CLAUDE_PLUGIN_ROOT/skills/init/templates/docs/architecture-skill-authoring.md` (skill-authoring)
+
 Use each template as a skeleton — fill in all placeholders with actual project details (framework names, commands, directory paths, conventions). Don't leave any `[placeholder]` text in the final output.
+
+**`architecture.md` install semantics:** When the file does not exist, write it from the selected template variant, filling in all placeholders. When it **already exists**, use review-and-propose behavior (same semantics as `testing.md`, plus variant-switching): read the existing content, compare against the appropriate template variant for the detected project type, propose any additions or corrections via the normal audit flow, and preserve user-added sections. Never silently overwrite. If the existing file was generated from a different template variant (e.g., code-only template but project now detects as skill-authoring), propose restructuring to match the correct variant while preserving any user-customized content.
 
 **`skill-writing-guidelines.md` install semantics:** Unlike `coding-guidelines.md` (verbatim template, silent overwrite), `skill-writing-guidelines.md` is a skill-authoring project's project-specific lens for reviewing markdown instruction files and is expected to be customized by maintainers. When the file does not exist, write it from the template, replacing `[PROJECT NAME]`. When it **already exists**, use review-and-propose behavior (same semantics as `testing.md`): read the existing content, compare against the template, propose any additions or corrections via the normal audit flow, and preserve user-added sections. Never silently overwrite.
 
@@ -316,13 +323,13 @@ After the table, include conditional warnings:
 
 If test infrastructure was installed from scratch in Step 5b (no pre-existing test framework — the user chose "Yes" to install one), include a strong warning:
 
-> ⚠ **Important:** Test framework was installed but the project has no test files yet. The test command will pass with 0 tests — this is a false safety net. Other optimus skills (`/optimus:code-review` deep mode and deep harness, `/optimus:refactor` deep mode and deep harness, `/optimus:verify`) rely on tests to validate changes. **Run `/optimus:unit-test` next** to write initial tests and establish real coverage.
+> ⚠ **Important:** Test framework was installed but the project has no test files yet. The test command will pass with 0 tests — this is a false safety net. Other optimus skills (`/optimus:code-review` deep mode and deep harness, `/optimus:refactor` deep mode and deep harness) rely on tests to validate changes. **Run `/optimus:unit-test` next** to write initial tests and establish real coverage.
 
 If the user declined test infrastructure in Step 5b, include:
 
-> ⚠ **Note:** Test infrastructure was not installed — `/optimus:tdd` will not work, and `/optimus:code-review`, `/optimus:refactor`, and `/optimus:verify` will have reduced functionality. Re-run `/optimus:init` to install test infrastructure later.
+> ⚠ **Note:** Test infrastructure was not installed — `/optimus:tdd` will not work, and `/optimus:code-review` and `/optimus:refactor` will have reduced functionality. Re-run `/optimus:init` to install test infrastructure later.
 
-**Next step:** If the project's root `README.md` lacks a development setup section (no heading matching the patterns defined in `$CLAUDE_PLUGIN_ROOT/skills/init/references/readme-section-detection.md`), recommend running `/optimus:dev-setup` first to ensure the project has comprehensive human-readable setup instructions, then `/optimus:unit-test` to write tests. Otherwise, recommend `/optimus:unit-test` directly.
+**Next step:** If the project root has no `HOW-TO-RUN.md` (or the existing one looks stale compared to the current project state), recommend running `/optimus:how-to-run` first to generate a developer-facing onboarding doc, then `/optimus:unit-test` to write tests. Otherwise, recommend `/optimus:unit-test` directly.
 
 Tell the user: **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.
 

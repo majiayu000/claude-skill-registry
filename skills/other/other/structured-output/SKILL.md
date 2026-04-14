@@ -1,11 +1,7 @@
 ---
 name: structured-output
-description: 'Consult this skill when formatting final review deliverables. Use when
-  formatting final review outputs, ensuring consistent deliverable structure, making
-  findings comparable across reviews. Do not use when capturing evidence during analysis
-  - use proof-of-work. DO NOT use when: reviewing changes - use diff-analysis or
-  review-core first.'
-version: 1.7.1
+description: 'Format final review deliverables with consistent structure for comparable findings across reviews'
+version: 1.8.4
 alwaysApply: false
 category: output-patterns
 tags:
@@ -132,15 +128,3 @@ Before finalizing:
 - Todos completed with formatted deliverable.
 - Output follows selected template structure.
 - Stakeholders can act on findings without clarification.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

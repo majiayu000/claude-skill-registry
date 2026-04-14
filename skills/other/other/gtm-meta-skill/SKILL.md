@@ -1,6 +1,6 @@
 ---
 name: gtm-meta-skill
-description: "Use this skill for GTM prospecting, enrichment, qualification, and outbound workflows, especially when users mention Deepline, CSV processing, lead/account/contact research, waterfall enrichment, email or LinkedIn lookup, personalization, scoring, or campaign activation. Route CSV-heavy and provider-driven requests through this skill, then rely on linked sub-docs and provider playbooks for execution details. Available providers: adyntel, ai_ark, apify, apollo, attio, bettercontact, builtwith, cloudflare, crustdata, customer_db, dataforseo, deepline_native, deeplineagent, dropleads, exa, firecrawl, forager, fullenrich, generic_http, heyreach, hubspot, hunter, icypeas, instantly, ipqs, leadmagic, lemlist, openwebninja, parallel, peopledatalabs, prospeo, salesforce, serper, slack, smartlead, snowflake, trestle, zerobounce."
+description: "Use this skill for GTM prospecting, enrichment, qualification, and outbound workflows, especially when users mention Deepline, CSV processing, lead/account/contact research, waterfall enrichment, email or LinkedIn lookup, personalization, scoring, or campaign activation. Route CSV-heavy and provider-driven requests through this skill, then rely on linked sub-docs and provider playbooks for execution details. Available providers: adyntel, ai_ark, apify, apollo, attio, bettercontact, builtwith, cloudflare, contactout, crustdata, customer_db, dataforseo, datagma, deepline_native, deeplineagent, dropleads, exa, firecrawl, forager, fullenrich, generic_http, heyreach, hubspot, hunter, icypeas, instantly, ipqs, leadmagic, lemlist, lusha, openwebninja, parallel, peopledatalabs, prospeo, rocketreach, salesforce, serper, slack, smartlead, snowflake, theirstack, trestle, wiza, zerobounce."
 ---
 
 # GTM Meta Skill
@@ -220,6 +220,10 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Summary: Use cloudflare_crawl to crawl websites and extract content as markdown, HTML, or JSON. Returns partial results on timeout — check timedOut field. Browser rendering is enabled by default.
   Last reviewed: 2026-03-11
 
+- [contactout playbook](provider-playbooks/contactout.md)
+  Summary: Use for LinkedIn → email/phone enrichment. Run contactout_check_email_status first (free) to confirm data exists before spending credits on enrich.
+  Last reviewed: 2026-03-25
+
 - [crustdata playbook](provider-playbooks/crustdata.md)
   Summary: Start with free autocomplete and default to fuzzy contains operators `(.)` for higher recall. Use ISO-3 country codes, prefer crunchbase_categories over linkedin_industries for niche verticals, and use employee_count_range for filtering instead of employee_metrics.latest_count.
   Last reviewed: 2026-02-11
@@ -227,6 +231,10 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
 - [dataforseo playbook](provider-playbooks/dataforseo.md)
   Summary: Use DataForSEO for native SEO and content-analysis endpoints. Most tools are generated directly from the docs catalog, so prefer regeneration over hand edits.
   Last reviewed: 2026-04-08
+
+- [datagma playbook](provider-playbooks/datagma.md)
+  Summary: Use for real-time person enrichment with phone + job-change signals. Pass linkedin URL as the primary identifier for best results; fall back to email or fullName+domain.
+  Last reviewed: 2026-03-31
 
 - [deepline_native playbook](provider-playbooks/deepline_native.md)
   Summary: Launcher actions wait for completion and return final payloads with job_id; search_contact uses the search budget while enrichment-style actions use the higher enrichment budget.
@@ -292,6 +300,10 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Summary: List campaign inventory first and push contacts in small batches with post-write stat checks.
   Last reviewed: 2026-03-01
 
+- [lusha playbook](provider-playbooks/lusha.md)
+  Summary: Use for B2B email + direct dial enrichment by LinkedIn URL, email, or name+company. Also supports company enrichment by domain and prospecting search with department/seniority/industry filters.
+  Last reviewed: 2026-03-31
+
 - [openwebninja playbook](provider-playbooks/openwebninja.md)
   Summary: Use the namespace to choose the product: jsearch for jobs, glassdoor for employer/job market data, localbusiness for Google Maps business data.
   Last reviewed: 2026-04-08
@@ -308,6 +320,10 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Summary: Use enrich-person for individual contacts, search-person for prospecting with 30+ filters, and search-company for account-level lists.
   Last reviewed: 2026-02-28
 
+- [rocketreach playbook](provider-playbooks/rocketreach.md)
+  Summary: Use for email + phone lookup by LinkedIn URL or name+company. Falls after dropleads in waterfall. "premium" lookup_type unlocks more phone numbers.
+  Last reviewed: 2026-03-25
+
 - [salesforce playbook](provider-playbooks/salesforce.md)
   Summary: Use field inspection before custom writes, object-specific create/update/delete tools for standard CRM records, and list tools for incremental reads with pagination handoff.
   Last reviewed: 2026-03-20
@@ -320,9 +336,17 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Summary: List campaigns first, then push leads with Smartlead field names and confirm campaign stats afterward.
   Last reviewed: 2026-03-05
 
+- [theirstack playbook](provider-playbooks/theirstack.md)
+  Summary: Use theirstack_catalog_keywords (free) to validate tech slug names before paid searches. Prefer company_technology_slug_and for precision; company_technology_slug_or for recall.
+  Last reviewed: 2026-03-08
+
 - [trestle playbook](provider-playbooks/trestle.md)
   Summary: Final validation gate after phone enrichment. Confirms line type, activity, and that the phone actually belongs to the named contact.
   Last reviewed: 2026-04-06
+
+- [wiza playbook](provider-playbooks/wiza.md)
+  Summary: Use for LinkedIn → email/phone enrichment. Wiza charges 1 credit for profile-only, 2 for email, and 5 for phone reveals. Accepts Sales Navigator URLs unlike ContactOut.
+  Last reviewed: 2026-03-25
 
 - [zerobounce playbook](provider-playbooks/zerobounce.md)
   Summary: Use as final email validation gate before outbound sends. Check sub_status for granular failure reasons. Use batch for 5+ emails.
@@ -339,10 +363,10 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
 Set up a descriptive project-local working directory as your first action:
 
 ```bash
-WORKDIR="tmp/<descriptive-task-slug>" && mkdir -p "$WORKDIR" && echo "$WORKDIR"
+WORKDIR="deepline/data/<descriptive-task-slug>" && mkdir -p "$WORKDIR" && echo "$WORKDIR"
 ```
 
-The slug must describe the task (e.g. `tmp/yc-cmo-outbound`, `tmp/acme-email-waterfall`). Do NOT use random names like `mktemp` generates — the user needs to find these files later. See [enriching-and-researching.md](enriching-and-researching.md) for full details.
+The slug must describe the task (e.g. `deepline/data/yc-cmo-outbound`, `deepline/data/acme-email-waterfall`). Do NOT use random names like `mktemp` generates — the user needs to find these files later. See [enriching-and-researching.md](enriching-and-researching.md) for full details.
 
 ### 3.3 Output policy and User Interaction Pattern
 
@@ -458,8 +482,9 @@ Approve full run?
 ### 4.5 Billing commands
 
 ```bash
-deepline billing balance
-deepline billing limit
+deepline billing balance  # Show current credit balance
+deepline billing usage    # Show recent billing activity and grouped recent usage
+deepline billing limit    # Show the current monthly billing cap
 ```
 
 When credits at zero, link to https://code.deepline.com/dashboard/billing to top up.
@@ -470,7 +495,7 @@ When credits at zero, link to https://code.deepline.com/dashboard/billing to top
 **Reminder: you should have already read the relevant sub-doc from Section 2 before reaching this point. If you haven't, go back and read it now. This section is a quick-reference summary, NOT a substitute for the sub-docs.**
 
 - **Search / discovery** → You MUST have [finding-companies-and-contacts.md](finding-companies-and-contacts.md) open. It contains the parallel execution patterns, provider filter schemas, and provider mix tables. Start with `deepline tools search <intent>` and execute field-matched provider calls in parallel; when the `deepline-list-builder` subagent is available, use subagent-based parallel search orchestration as the preferred pattern. Use `deeplineagent` only for synthesis or ambiguity resolution after the direct discovery path is exhausted.
-- **Enrich / waterfall / coalesce** → You MUST have [enriching-and-researching.md](enriching-and-researching.md) open. It contains `deepline enrich` syntax, waterfall column patterns, and coalescing logic. Default waterfall order: dropleads → hunter → leadmagic → deepline_native → crustdata → peopledatalabs.
+- **Enrich / waterfall / coalesce** → You MUST have [enriching-and-researching.md](enriching-and-researching.md) open. It contains `deepline enrich` syntax, play routing guidance, waterfall column patterns, and coalescing logic. Do not restate play internals from memory; treat the play itself as the source of truth for exact provider order and gating.
 - **Custom signals / messaging** → Read [enriching-and-researching.md](enriching-and-researching.md) (custom signals section). Use `run_javascript` for deterministic transforms/template logic and `deeplineagent` for AI work. Start from `prompts.json`.
 - **Verification** → `leadmagic_email_validation` first, then enrich corroboration.
 - **LinkedIn scraping** → Apify actors, by far the best. Use deepline tools get apify_run_actor_sync to see the available actors or search for more.

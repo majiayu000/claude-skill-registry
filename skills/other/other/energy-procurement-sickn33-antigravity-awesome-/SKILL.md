@@ -201,3 +201,8 @@ Use this skill when you need to **design, audit, or optimise an energy procureme
 - Evaluating fixed vs. index vs. block-and-index contracts, PPAs, or VPPAs.
 - Reducing demand charges, managing capacity tags, or planning DR and battery investments.
 - Preparing RFPs, supplier negotiations, or executive decision memos about multi-site energy strategy, risk, and sustainability tradeoffs.
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

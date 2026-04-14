@@ -1,0 +1,24 @@
+{
+  "name": "holydocs",
+  "description": "Create and configure HolyDocs documentation projects. Covers docs.json schema, 38 MDX components, 11 themes, 13 CLI commands, OpenAPI integration, and AI features.",
+  "repo": "seangeng/holydocs-skills",
+  "path": "holydocs",
+  "github_branch": "main",
+  "category": "documents",
+  "tags": [
+    "documentation",
+    "holydocs",
+    "mdx",
+    "docs-as-code"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "holydocs",
+  "author": "seangeng",
+  "source_url": "https://github.com/seangeng/holydocs-skills/blob/main/holydocs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seangeng/holydocs-skills/blob/main/holydocs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

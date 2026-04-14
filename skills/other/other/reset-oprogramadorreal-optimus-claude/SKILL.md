@@ -116,7 +116,7 @@ These files have ALL content filled in by init from project analysis — no temp
 | `.claude/docs/testing.md` | *(no comment — check heading)* First line: `# Testing` | `Test Runner`, `Running Tests`, `Test Structure`, `Writing Tests`, `Workflow`, `Coverage` |
 | `.claude/docs/skill-writing-guidelines.md` | *(no comment — check heading)* First line: `# Skill-writing guidelines for` | `Foundation`, `Writing Style`, `Degrees of Freedom`, `Description Quality (frontmatter)`, `Progressive Disclosure`, `Directory Layout`, `Shared References`, `Workflows and Feedback Loops`, `Common Patterns`, `Evaluation and Iteration`, `Anti-patterns`, `Documentation` |
 | `.claude/docs/styling.md` | *(no comment — check heading)* First line: `# Styling` | `Stack`, `Conventions`, `File Organization`, `Adding New Components` |
-| `.claude/docs/architecture.md` | *(no comment — check heading)* First line: `# Architecture` | `Overview`, `Directory Map`, `Data Flow`, `Key Patterns`, `Dependencies Between Modules` |
+| `.claude/docs/architecture.md` | *(no comment — check heading)* First line: `# Architecture` | ANY of these heading sets: (1) code-only: `Overview`, `Directory Map`, `Data Flow`, `Key Patterns`, `Dependencies Between Modules` (2) skill-authoring: `Overview`, `Directory Map`, `Skill Organization`, `Agent Boundaries`, `Reference Hierarchy`, `Orchestration Patterns` (3) hybrid: `Overview`, `Directory Map`, `Code Architecture`, `Skill Architecture` |
 
 For CLAUDE.md: check if line 1 matches the template comment. Also check for monorepo variant: `<!-- Keep this file, .claude/docs/, and subproject CLAUDE.md files updated when project structure changes -->`.
 

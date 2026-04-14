@@ -6,7 +6,7 @@
   "category": "other",
   "source": "github.com/wshobson/agents",
   "dir_name": "k8s-manifest-generator",
-  "downloaded_at": "2026-04-13T01:56:51.776277Z",
+  "downloaded_at": "2026-04-14T01:55:34.185526Z",
   "author": "wshobson",
   "source_url": "https://github.com/wshobson/agents/blob/main/plugins/kubernetes-operations/skills/k8s-manifest-generator/SKILL.md",
   "license": "NOASSERTION",

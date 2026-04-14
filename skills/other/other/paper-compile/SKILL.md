@@ -136,6 +136,16 @@ pdfinfo main.pdf | grep Pages
 # open main.pdf
 ```
 
+**Visual review (automated):**
+If the compiled PDF exists, read it directly to check visual presentation:
+- Figure quality: readable labels, legible text, distinguishable colors
+- Layout: no orphaned section headers, no awkward page breaks
+- Figures appear near their first text reference (not pages away)
+- Tables: aligned columns, consistent decimal precision
+- No overfull content visibly extending past margins
+
+This is a quick visual scan, not a full review — the improvement loop does deeper visual review.
+
 **Automated checks:**
 
 - [ ] PDF file exists and is > 100KB (not empty/corrupt)

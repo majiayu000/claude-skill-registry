@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19698,
-  "updated_at": "2026-04-13T02:08:32.688827Z",
+  "count": 19699,
+  "updated_at": "2026-04-14T02:09:02.857096Z",
   "skills": [
     {
       "name": "fix",
@@ -213526,6 +213526,24 @@
       "stars": 0,
       "install": "psh355q-ui/szdi57465yt/backend/ai/skills/analysis/emergency-news-agent",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "supabase-reliability-patterns",

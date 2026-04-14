@@ -1,7 +1,7 @@
 ---
 name: spec-writing
 description: 'Create clear, testable specifications from feature descriptions with user stories, acceptance criteria, and success metrics.'
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 category: specification
 tags:

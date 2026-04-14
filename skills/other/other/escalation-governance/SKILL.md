@@ -1,7 +1,7 @@
 ---
 name: escalation-governance
 description: 'Assess whether to escalate models. Use when evaluating reasoning depth.'
-version: 1.8.1
+version: 1.8.4
 alwaysApply: false
 category: agent-workflow
 tags:
@@ -271,16 +271,3 @@ Effort controls do NOT replace the escalation governance
 framework: they provide an additional axis. The Iron Law
 still applies: investigate before changing either model
 or effort level.
-
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

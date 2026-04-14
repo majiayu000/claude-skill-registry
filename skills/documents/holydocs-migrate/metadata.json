@@ -1,0 +1,25 @@
+{
+  "name": "holydocs-migrate",
+  "description": "Migrate documentation from Mintlify, GitBook, Docusaurus, ReadMe, or VuePress to HolyDocs with automatic component and config conversion.",
+  "repo": "seangeng/holydocs-skills",
+  "path": "holydocs-migrate",
+  "github_branch": "main",
+  "category": "documents",
+  "tags": [
+    "migration",
+    "mintlify",
+    "gitbook",
+    "docusaurus",
+    "holydocs"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "holydocs-migrate",
+  "author": "seangeng",
+  "source_url": "https://github.com/seangeng/holydocs-skills/blob/main/holydocs-migrate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seangeng/holydocs-skills/blob/main/holydocs-migrate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -15,7 +15,19 @@ Determine what to review:
 - If a **file list or directory** was provided, review those files directly.
 - If **neither** was provided, default to diffing against the repository's default branch (detect via `gh repo view --json defaultBranchRef --jq '.defaultBranchRef.name'`).
 
-## Step 2: Run Six Reviews in Parallel
+## Step 2: Compose the Peer-Review Prompt
+
+Read the SKILL.md of each review skill listed below and extract their review criteria and "what to look for" sections:
+
+- `/review-test-coverage`
+- `/review-correctness`
+- `/review-security`
+- `/review-quality`
+- `/review-api-usage`
+
+Compose a single comprehensive review prompt covering all dimensions with the diff command from Step 1. Be verbose about what to check so the peer reviewer has full context. Structure the prompt using `<task>`, `<dig_deeper_nudge>`, and `<structured_output_contract>` XML tags, consistent with the `/peer-review` interface.
+
+## Step 3: Run Six Reviews in Parallel
 
 Launch six Agent tool calls in a single message so they run concurrently (`model: "opus"`, do not set `run_in_background`). Each agent's prompt includes the scope from Step 1 and instructs it to invoke its assigned skill via the Skill tool:
 
@@ -24,11 +36,9 @@ Launch six Agent tool calls in a single message so they run concurrently (`model
 - `/review-security`
 - `/review-quality`
 - `/review-api-usage`
-- `/peer-review`
+- `/peer-review` — pass the pre-composed prompt from Step 2
 
-For the `/peer-review` agent, the Agent tool call prompt instructs the subagent to: (1) read the SKILL.md of every other review skill listed above, (2) extract their review criteria and "what to look for" sections, (3) compose a single comprehensive review prompt covering all dimensions with the diff command from Step 1, being verbose about what to check, and (4) invoke `/peer-review` via the Skill tool with the composed prompt.
-
-## Step 3: Aggregate Combined Findings
+## Step 4: Aggregate Combined Findings
 
 Wait for all six agents to complete. Aggregate their findings with attribution (reviewer name, file path, description).
 

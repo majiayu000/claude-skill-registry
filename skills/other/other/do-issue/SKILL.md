@@ -1,11 +1,7 @@
 ---
 name: do-issue
-description: 'Uses subagents for parallel execution with code review gates between
-  batches. Use when addressing issues systematically, multiple related issues
-  need fixing, tasks can be parallelized across subagents, quality gates needed between
-  task batches. Do not use when single simple fix - just implement directly. DO NOT
-  use when: issue needs clarification - comment first to clarify scope.'
-version: 1.7.1
+description: 'Parallel subagent execution with code review gates between task batches for issue resolution'
+version: 1.8.4
 alwaysApply: false
 category: workflow-automation
 tags:

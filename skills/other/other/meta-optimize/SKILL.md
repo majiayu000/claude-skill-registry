@@ -23,7 +23,7 @@ Inspired by Meta-Harness (Lee et al., 2026): the key insight is that harness des
 | Default parameters | `difficulty: medium`, `MAX_ROUNDS: 4`, `threshold: 6/10` | Yes |
 | Convergence rules | When to stop the review loop, retry counts | Yes |
 | Workflow ordering | Skill chain sequence within a workflow | Yes |
-| Artifact schemas | What fields go in EXPERIMENT_LOG.md, IDEA_REPORT.md | Cautious |
+| Artifact schemas | What fields go in EXPERIMENT_LOG.md, idea-stage/IDEA_REPORT.md | Cautious |
 | MCP bridge config | Which reviewer model, routing rules | No (infra) |
 
 **Not optimized**: The research artifacts themselves (papers, code, experiments). That's what the regular workflows do.
@@ -240,3 +240,10 @@ This skill is NOT part of the standard W1→W1.5→W2→W3→W4 pipeline. It is 
 ## Acknowledgements
 
 Inspired by [Meta-Harness](https://arxiv.org/abs/2603.28052) (Lee et al., 2026) — end-to-end optimization of model harnesses via filesystem-based experience access and agentic code search.
+
+## Output Protocols
+
+> Follow these shared protocols for all output files:
+> - **[Output Versioning Protocol](../shared-references/output-versioning.md)** — write timestamped file first, then copy to fixed name
+> - **[Output Manifest Protocol](../shared-references/output-manifest.md)** — log every output to MANIFEST.md
+> - **[Output Language Protocol](../shared-references/output-language.md)** — respect the project's language setting

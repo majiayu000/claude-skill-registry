@@ -63,9 +63,13 @@ Check whether any shell file was edited during Step 4. Any edit to any file coun
 - **Structural edits** (added or removed shells, changed `Produces`/`Consumes`/`Covers Spec Requirements` wiring, changed frontmatter `depends_on`, added or removed spec requirement coverage) — run `/refine-plan-shells` again via the Skill tool, passing the spec slug. If the round contains both structural and prose-only edits, treat it as structural and re-run automatically.
 - **Prose-only edits only** (reworded implementation steps in place, fixed stale examples, clarified existing text without changing meaning) — output a summary of what changed, then use `AskUserQuestion` to ask whether to run one more round or stop here. Do not silently continue or silently stop.
 
+**If changes were made but you believe re-running is unnecessary**, use `AskUserQuestion` to ask for skip permission. Do not skip silently.
+
 **If this is iteration 3 and changes were still made**, the hard cap is reached. This replaces the classification gate above. Output a summary of what is still changing and whether it is structural or prose-only. Then use `AskUserQuestion` to offer three options: continue for another iteration, stop here and accept the shells as-is, or escalate to `/consult-oracle` for a different perspective on the remaining issues.
 
 The re-invocation is a full, fresh run of this skill. Every step (1-5) executes with its own task tracking and skill invocations.
+
+Check your task list for remaining tasks and proceed.
 
 ## Rules
 

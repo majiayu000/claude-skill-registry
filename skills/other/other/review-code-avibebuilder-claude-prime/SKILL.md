@@ -1,87 +1,72 @@
 ---
 name: review-code
-description: "Review code for quality and issues. Use when reviewing diffs, PRs, branches, or staged changes against project conventions."
+description: "Review code for quality, correctness, and fit. Use when the user wants judgment on code that already exists — their own changes, a teammate's patch, a PR, branch, commit, diff, staged changes, or one or more files to look over. Activate on requests like review, look over, sanity check, critique, code review, or 'is this good?' The key signal is that the user wants evaluation of existing code and its tradeoffs, not implementation, debugging, or explanation. This skill works independently, but when plans, specs, task artifacts, or prior discussion exist, use them to understand why the code exists before judging it."
 argument-hint: what-to-review
 ---
 
-Think harder.
-
-## Role
-
-You are a code reviewer. Critique code thoroughly — don't fix or implement. Understand the WHY behind changes before judging them.
+ultrathink
 
 ## Process
 
-### 1. Gather Changes
+Critique only — no fixes or implementation. Understand *why* the code exists before judging it.
 
-Be smart about where changes come from based on `<target>` and conversation state:
+### 1. Identify the review target
 
-- If `<target>` specifies a PR, branch, commit range, or files — use git accordingly
-- If changes were just made in the current conversation (Edit/Write calls), use that context directly — no need for git diff
-- Otherwise, fall back to working changes via git diff
+Prefer in order: explicit `<target>`, changes made in this conversation, working diff. If unclear, ask.
 
-Categorize changed files by domain/purpose to structure the review.
+Then gather enough context (PR/issue text, plans, surrounding code) to avoid misreads. Don't turn every review into archaeology — if a missing detail would materially change judgment, ask briefly.
 
-### 2. Understand Intent
+### 2. Match depth to risk
 
-Before judging code, understand WHY it was written. Check:
+- **Quick** — small, local, low-risk; keep output brief
+- **Standard** — normal feature or refactor
+- **Deep** — risky, cross-cutting, security-sensitive, or surprising
 
-- What was discussed in this conversation — tasks, constraints, trade-offs
-- Project documentation — explore broadly for docs, plans, architecture files, project references relevant to the changed areas
-- Loaded skills and rules that explain project patterns
+### 3. Review flow first, then details
 
-If after exploring there's genuinely no context and the changes are ambiguous, ask the user briefly rather than guessing.
+Understand how important parts work before commenting line by line. Focus on load-bearing logic, edge cases, scope drift, and intentional tradeoffs.
 
-### 3. Build Rubric
+### 4. Report
 
-Build a custom rubric for THESE changes — not a generic checklist. Extract specific conventions from loaded skills/rules/project references, frame as review dimensions. Always include scope and correctness.
+For each finding: file path + line, why it matters, severity.
 
-### 4. Review
+- **Critical** — correctness, safety, broken edge cases, scope violations. Requires evidence in the code — speculative failure modes belong in Questions.
+- **Suggestion** — non-blocking improvements
+- **Question** — missing context or unconfirmable concerns
 
-For each rubric dimension, review against loaded conventions:
+If something looks odd but context supports it, acknowledge rather than flag.
 
-- **Understand the code, not just the diff** — read the surrounding implementation before raising issues. The diff alone is never the full picture. If you're unsure how something works, go read it first.
-- **File path and line reference** for every issue
-- Explain WHY it matters (reference the specific convention)
-- Weigh findings against understood intent — if something looks odd but aligns with a known constraint or intentional trade-off, acknowledge it rather than flagging it
-- Be exhaustive — report every real issue found
-
-Always check:
-- Scope — unrelated changes? debug leftovers?
-- Correctness — edge cases, null safety, error handling, security
-
-### 5. Output
+### 5. Output format
 
 ```
-## Code Review: [brief scope description]
+## Code Review: [scope]
 
 **Verdict: {Approve | Request Changes | Reject}**
 
 ### Inferred Intent
-[1-2 sentences: what you understand these changes are trying to achieve and why]
+[Only when context supports it]
 
 ### Critical Issues (Must Fix)
-- `path/to/file:line` — concise description. Why: [convention or correctness reference]
+- `path/to/file:line` — concise description. Why: [reason]
 
 ### Suggestions (Nice to Have)
 - `path/to/file:line` — concise description
 
 ### Questions
-- Clarification needed on intent or trade-offs?
+- [Clarifications on intent or tradeoffs]
 
 ### Summary
-[1-2 sentences on overall quality and main concern]
+[1-2 sentences]
 ```
 
-Include sections that have content. Drop empty ones. Always include Verdict, Inferred Intent, and Summary.
+Include only sections with content. Always include Verdict and Summary.
 
-## Constraints
+## Boundaries
 
-- Critique only — NO fixes, NO "let me fix that"
-- Ground feedback in project conventions and business context, not generic advice
-- Be honest, not sycophantic
-- Do NOT invent issues that aren't there
-- Do NOT flag intentional trade-offs as issues when context explains them
+- Read surrounding code when the diff alone is misleading.
+- Deliberate decisions (inline comments, user-stated tradeoffs) are not defects — raise as Question only with concrete evidence.
+- Don't judge by personal preference when project fit explains the choice.
+- Name the right approach ("needs parameterized queries") but don't write corrected code.
 
 ## Target
 

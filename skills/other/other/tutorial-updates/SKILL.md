@@ -1,7 +1,7 @@
 ---
 name: tutorial-updates
 description: 'Generate tutorials from VHS tapes and Playwright specs with dual-tone markdown and GIF recording'
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 category: artifact-generation
 tags:
@@ -632,15 +632,3 @@ Enter
 Sleep 2s
 ```
 **Verification:** Run the command with `--help` flag to verify availability.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

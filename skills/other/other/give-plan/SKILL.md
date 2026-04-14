@@ -1,64 +1,56 @@
 ---
 name: give-plan
-description: "Create detailed implementation plan. Use when planning multi-file changes, architectural work, or complex features before implementation."
+description: "Use when the user wants a written, reviewable plan or spec produced before coding starts. Triggers on: mapping out changes without implementing, thinking through risks of upgrades or migrations, evaluating approaches before committing to one, writing specs for team review, phasing work into stages, or any request that explicitly defers coding ('don't implement yet', 'before we build'). The distinguishing signal is that the user wants a plan artifact — not implementation, not a conversational answer. MUST activates inside Claude's native plan mode to have a better planning behavior."
 argument-hint: what-to-plan
 ---
 
-Ultrathink.
+ultrathink
 
-## Role
+## Core contract
 
-You are a strategic planner. Create actionable implementation plans — not implementation.
+Figure out the right approach, write a plan the user can inspect, and **stop**. Planning is not approval to implement — wait for explicit go-ahead before writing any code.
+
+- Clarify only what would materially change the plan.
+- Read the codebase before making claims. Distinguish confirmed facts, inferences, and unknowns — never hide uncertainty.
+- Optimize for reviewability over momentum.
+
+If already in native plan mode, this skill shapes *how* to plan; plan mode provides the workflow structure and must follow this skill guidelines.
 
 ## Process
 
 Check conversation context and skip completed steps.
 
-### 1. Research (if needed)
-- Execute `/research` to gather more needed context
-- Skip if sufficient context is already available 
+### 1. Clarify the planning goal
+What kind of plan? Scoped implementation, phased feature, migration/rollout, architecture decision, or spec artifact. Ask only the questions that matter.
 
-### 2. Plan
+### 2. Ground in evidence
+Read relevant files and search the codebase before proposing changes. Be explicit about what's confirmed from code vs. inferred vs. unknown.
 
-**IMPORTANT: All plans MUST be saved in the `plans/` directory at project root. NEVER create plan files elsewhere.**
+### 3. Choose the right altitude
+- **Small change** → concise plan with touchpoints and validation
+- **Multi-file feature** → phased plan with dependencies
+- **Architecture choice** → options, tradeoffs, recommendation
+- **Migration / rollout** → sequencing, rollback, validation checkpoints
 
-Create a progressive disclosure structure:
+Don't force every request into the same template.
 
-```
-plans/YYYYMMDDHHmm-{plan-name}/
-  plan.md           # Overview (<80 lines)
-  phase-01-*.md     # First phase details
-  phase-02-*.md     # Second phase details
-  ...
-```
+### 4. Write the plan artifact
+Save plans in `plans/` at the project root. Use `date +%Y%m%d%H%M%S` for timestamps.
 
-Use `date +%Y%m%d%H%M` for timestamp.
+- `plans/YYYYMMDDHHMMSS-{plan-name}.md` for most simple plans
+- `plans/YYYYMMDDHHMMSS-{plan-name}/plan.md` + separate phase files only when each phase warrants independent reading/editing
 
-### 3. Review
-Present plan to user for approval. NO implementation until explicit approval.
+A strong plan covers: problem summary, recommended approach, phases/workstreams, affected files/modules/systems, dependencies and sequencing, validation strategy, risks and mitigations, assumptions and open questions, non-goals when useful.
 
-## plan.md Template
+### 5. Present and stop
+Summarize the recommendation, call out risks/assumptions/unknowns, clarify what needs user confirmation, then wait. Do not drift into coding.
 
-Keep under 80 lines:
-- Problem summary (what we're solving)
-- Solution approach (high-level how)
-- Phase list with status
-- Success criteria
-- Key risks and mitigations
+## Boundaries
 
-## phase-XX.md Template
-
-Each phase file includes:
-- Overview and dependencies
-- Requirements and implementation steps
-- Success criteria
-- Risks
-
-## Constraints
-
-- NO implementation code in plans
-- Break large plans into independently deliverable phases
-- Be honest about complexity and risks
+- **Prose, not code** — describe *what* changes in prose (name the file, the concept); never include executable syntax (function bodies, JSX, SQL, migration scripts, shell commands). "Illustrative" snippets are still implementation code.
+- **Right-sized artifacts** — don't force heavyweight structure onto small work; don't leave plans so abstract they name no touchpoints or validation path.
+- **Every plan needs a validation path** — how will you know the implementation succeeded?
+- Name concrete files, interfaces, and systems where possible. Surface tradeoffs instead of hiding them.
 
 ## Request
 

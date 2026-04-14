@@ -153,15 +153,12 @@ Rules:
 
 ### Phase 6: Refinement
 
-Refinement order:
-1. `generic_quality`
-2. `dry_run_executor`
-3. `new_dev_tester`
-4. `adversarial_reviewer`
-5. `final_sweep`
+Refinement uses a 2-stage state machine (see `ln-316-review-refinement-worker`):
+- Stage 1 (parallel): `dry_run_executor`, `new_dev_tester`, `adversarial_reviewer`
+- Stage 2 (after merge): `final_sweep`
 
 Rules:
-- sequential only
+- Stage 1 runs in parallel, Stage 2 after merge
 - cleanup evidence required for spawned processes
 - no research skipping
 

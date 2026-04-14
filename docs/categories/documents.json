@@ -1,8 +1,8 @@
 {
   "category": "documents",
   "code": "doc",
-  "count": 3269,
-  "updated_at": "2026-04-13T02:08:32.940119Z",
+  "count": 3272,
+  "updated_at": "2026-04-14T02:09:03.148401Z",
   "skills": [
     {
       "name": "docs-review",
@@ -21388,6 +21388,24 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "holydocs-migrate",
+      "description": "Migrate documentation from Mintlify, GitBook, Docusaurus, ReadMe, or VuePress to HolyDocs with automatic component and config conversion.",
+      "repo": "seangeng/holydocs-skills",
+      "path": "holydocs-migrate",
+      "branch": "main",
+      "category": "documents",
+      "tags": [
+        "migration",
+        "mintlify",
+        "gitbook",
+        "docusaurus",
+        "holydocs"
+      ],
+      "stars": 0,
+      "install": "seangeng/holydocs-skills/holydocs-migrate",
+      "source": "Community Skills"
+    },
+    {
       "name": "username-generator",
       "description": "Generate clever, witty, and original usernames based on user input keywords or theme. Scope: Outputs markdown bullet list of 20 usernames (unless specified), each ≤ 20 characters, using only alphanume",
       "repo": "warpcode/dotfiles",
@@ -25315,6 +25333,23 @@
       "stars": 0,
       "install": "AlexBaum-ai/NEURM/.claude/skills/web-researcher",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "holydocs",
+      "description": "Create and configure HolyDocs documentation projects. Covers docs.json schema, 38 MDX components, 11 themes, 13 CLI commands, OpenAPI integration, and AI features.",
+      "repo": "seangeng/holydocs-skills",
+      "path": "holydocs",
+      "branch": "main",
+      "category": "documents",
+      "tags": [
+        "documentation",
+        "holydocs",
+        "mdx",
+        "docs-as-code"
+      ],
+      "stars": 0,
+      "install": "seangeng/holydocs-skills/holydocs",
+      "source": "Community Skills"
     },
     {
       "name": "budget-mastery",
@@ -31118,6 +31153,24 @@
       "stars": 0,
       "install": "MuhammedAlkhudiry/ai-concise-guidelines/output/opencode/skills/api-handoff",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "holydocs-writing",
+      "description": "Best practices for writing high-quality documentation with HolyDocs. Covers Diataxis framework, component patterns, writing style, and SEO optimization.",
+      "repo": "seangeng/holydocs-skills",
+      "path": "holydocs-writing",
+      "branch": "main",
+      "category": "documents",
+      "tags": [
+        "documentation",
+        "writing",
+        "style-guide",
+        "seo",
+        "best-practices"
+      ],
+      "stars": 0,
+      "install": "seangeng/holydocs-skills/holydocs-writing",
+      "source": "Community Skills"
     },
     {
       "name": "dominacion-lenguaje-pictografico",

@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 9502,
-  "updated_at": "2026-04-13T02:08:32.591415Z",
+  "count": 9503,
+  "updated_at": "2026-04-14T02:09:02.741599Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -74443,6 +74443,23 @@
       "stars": 0,
       "install": "fgarofalo56/Suppercharge_Microsoft_Fabric/.github/skills/ssh-server-admin/SKILL.md",
       "source": "github.com/fgarofalo56/Suppercharge_Microsoft_Fabric"
+    },
+    {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "repo": "alonw0/web-asset-generator",
+      "path": "skills/web-asset-generator/SKILL.md",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "stars": 0,
+      "install": "alonw0/web-asset-generator/skills/web-asset-generator/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "grpo",

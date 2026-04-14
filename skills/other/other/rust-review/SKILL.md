@@ -1,7 +1,7 @@
 ---
 name: rust-review
 description: 'Rust code audit: unsafe blocks, ownership patterns, and Cargo dependency security scanning'
-version: 1.7.1
+version: 1.8.4
 globs: "**/*.rs"
 alwaysApply: false
 category: code-review

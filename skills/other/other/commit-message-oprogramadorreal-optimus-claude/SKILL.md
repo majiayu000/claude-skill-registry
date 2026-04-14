@@ -32,6 +32,5 @@ In a multi-repo workspace, present each repo's commit message under a heading wi
 Recommend the next step based on readiness:
 - If the user wants to commit now → `/optimus:commit` to commit (and optionally push)
 - If the feature is ready → `/optimus:pr` to create a pull request
-- If validation is needed first → `/optimus:verify` to validate end-to-end
 
 Tell the user: **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.

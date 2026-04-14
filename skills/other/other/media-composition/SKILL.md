@@ -1,7 +1,7 @@
 ---
 name: media-composition
 description: Combine media assets (GIFs, videos) into composite tutorials with vertical/horizontal
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
   layouts.
 category: media-generation
@@ -324,15 +324,3 @@ combine:
 - [ ] Combined output file exists and has non-zero size
 - [ ] Output dimensions and duration logged
 - [ ] Temporary files cleaned up
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

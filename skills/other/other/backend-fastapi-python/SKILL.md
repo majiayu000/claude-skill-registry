@@ -1,34 +1,46 @@
 ---
 name: backend-fastapi-python
-description: "FastAPI backend in Python conventions and patterns. Use this skill when building REST APIs, working with databases, implementing authentication, creating service layers or anything related to backend. Covers stateless services, response wrappers, and dependency chains."
+description: "Use this skill for any Python backend work in this project: building FastAPI endpoints, writing service functions, defining Pydantic/SQLModel schemas, running Alembic migrations, or debugging 422 errors. Essential for authentication and authorization patterns — setting up get_current_user, is_superuser checks, admin-only guards, role-based access, and dependency injection chains like Depends(). Also covers middleware, background tasks, async SQLAlchemy sessions, ORM relationship loading, and request/response design. Activate whenever the question involves Python API code, FastAPI patterns, or backend architecture in this codebase. Not for frontend, Docker, CI/CD, or infrastructure."
 ---
 
 # Backend FastAPI Python
 
-Conventions for FastAPI applications using SQLModel, pydantic-settings, and async SQLAlchemy.
+Project-specific conventions for FastAPI with SQLModel, pydantic-settings, and async SQLAlchemy.
 
-## Core Principles (See detailed in references)
+## Architecture Decisions
 
-### Key Conventions
+1. **Services are stateless functions** — Not classes. First param is `db: AsyncSession`.
+2. **Generic response wrapper** — Always use `ApiResponse[T]` for consistency.
+3. **Dependencies chain** — `get_current_user` -> `require_auth` -> `require_admin`.
+4. **Module-scoped config** — Each module can have its own `{module}_config.py`.
+5. **Error codes for frontend** — `AppException(status, message, error_code)`.
 
-1. **Services are stateless functions** - Not classes. First param is `db: AsyncSession`
-2. **Generic response wrapper** - Always use `ApiResponse[T]` for consistency
-3. **Dependencies chain** - `get_current_user` → `require_auth` → `require_admin`
-4. **Module-scoped config** - Each module can have its own `{module}_config.py`
-5. **Error codes for frontend** - `AppException(status, message, error_code)`
+## Gotchas
+
+- SQLModel `Relationship()` fields are NOT included in API responses by default. You must explicitly add them to `model_config` or use a separate response schema with those fields.
+- `AsyncSession.refresh()` does not load relationships. After commit, re-query with `.options(selectinload(...))` if you need related objects.
+- Pydantic V2 uses `model_validator` not `validator`. The `@validator` decorator is V1 and will break silently or raise deprecation warnings.
+- `Depends()` in FastAPI creates a NEW instance per request — don't store state in dependency return values expecting it to persist.
+- Background tasks (`BackgroundTasks`) run AFTER the response is sent. If they fail, the client already got a 200. Use proper task queues (Celery, ARQ) for anything that must not silently fail.
+- Alembic `--autogenerate` misses: table renames (generates drop+create), index changes on existing columns, and `Enum` type modifications in PostgreSQL. Always review generated migrations.
+- `async def` endpoints block the event loop if you call sync I/O inside them. Use `run_in_executor` for sync libraries or define the endpoint as `def` (FastAPI runs sync endpoints in a threadpool).
+- `HTTPException` from FastAPI and `HTTPException` from Starlette are different classes. Importing the wrong one causes middleware to miss exception handlers.
+- SQLAlchemy's `lazy="selectin"` on relationships causes N+1 queries in async sessions. Use explicit `selectinload()` in queries instead.
+- `Optional[str] = None` in query params makes the field optional. `str = None` also works but loses type information — prefer the explicit `Optional` form.
+- When using `response_model`, FastAPI filters OUT any fields not in the model. If your response is missing data, check that the response model includes all fields, not just the ORM model.
 
 ## References
 
-| Topic | Reference |
-|-------|-----------|
-| Project Layout | [file-structure.md](./references/file-structure.md) |
-| Configuration | [configuration.md](./references/configuration.md) |
-| Database | [database.md](./references/database.md) |
-| Models | [models.md](./references/models.md) |
-| Schemas | [schemas.md](./references/schemas.md) |
-| Routing | [routing.md](./references/routing.md) |
-| Services | [services.md](./references/services.md) |
-| Dependencies | [dependencies.md](./references/dependencies.md) |
-| Middleware | [middleware.md](./references/middleware.md) |
-| Error Handling | [error-handling.md](./references/error-handling.md) |
-| Auth (Example) | [auth.md](./references/auth.md) |
+| When you need... | Read |
+|------------------|------|
+| Directory layout | [file-structure.md](./references/file-structure.md) |
+| Settings and env vars | [configuration.md](./references/configuration.md) |
+| Database sessions and connections | [database.md](./references/database.md) |
+| ORM models | [models.md](./references/models.md) |
+| Request/response schemas | [schemas.md](./references/schemas.md) |
+| Router and endpoint patterns | [routing.md](./references/routing.md) |
+| Service layer patterns | [services.md](./references/services.md) |
+| Dependency injection | [dependencies.md](./references/dependencies.md) |
+| Middleware setup | [middleware.md](./references/middleware.md) |
+| Error handling | [error-handling.md](./references/error-handling.md) |
+| Auth flow example | [auth.md](./references/auth.md) |

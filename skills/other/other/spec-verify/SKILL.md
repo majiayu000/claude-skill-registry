@@ -148,11 +148,11 @@ CODEX_COMPANION=$(ls ~/.claude/plugins/cache/openai-codex/codex/*/scripts/codex-
 PROJECT_ROOT="${CLAUDE_PROJECT_ROOT:-$(pwd)}"
 ```
 
-2. Launch adversarial review in background from the project root using `--scope working-tree` (reviews all uncommitted changes regardless of staging state — works in both worktree and non-worktree mode). **⛔ Use synchronous Bash (NOT `run_in_background`)** — the companion's `--background` flag already makes it non-blocking and returns the job ID immediately to stdout:
+2. Launch adversarial review in background using `--scope working-tree` (reviews all uncommitted changes regardless of staging state — works in both worktree and non-worktree mode). **⛔ Use `Bash(run_in_background=true)`** — the companion's `--background` flag is a no-op for reviews (only works for `task`), so we use Claude Code's background bash instead:
 ```bash
-cd "$PROJECT_ROOT" && node "$CODEX_COMPANION" adversarial-review --background --scope working-tree "Challenge this implementation: <plan summary/goal>. Plan: <plan-path>. Focus on: wrong approach, missing edge cases, security gaps, untested paths, and design choices that could fail under load."
+cd "$PROJECT_ROOT" && node "$CODEX_COMPANION" adversarial-review --scope working-tree "Challenge this implementation: <plan summary/goal>. Plan: <plan-path>. Focus on: wrong approach, missing edge cases, security gaps, untested paths, and design choices that could fail under load."
 ```
-Parse the job ID from stdout (format: `review-XXXXXXXX-YYYYYY`). **Do NOT wait** — proceed to Step 3.2 immediately.
+**Do NOT wait** — proceed to Step 3.2 immediately. You'll be notified when the background bash completes.
 
 ### Step 3.2: Automated Checks
 
@@ -208,26 +208,20 @@ For each fix: implement → run relevant tests → log "Fixed: [title]"
 
 #### Collect Codex Results (if launched)
 
-**If Codex was launched in Step 3.1**, collect its results now:
+**⛔ MANDATORY — NEVER skip or defer the Codex review.** If Codex was launched in Step 3.1, you MUST collect and act on its results before proceeding past Step 3.4. The Codex review runs as a `Bash(run_in_background=true)` — you will be automatically notified when it completes.
 
-**⛔ Use the companion's built-in wait — do NOT use `sleep` loops or poll output files manually.**
-
-1. Wait for completion (this blocks until Codex finishes or times out — no sleep needed):
+**⛔ If the notification hasn't arrived yet:** You MUST wait. Do NOT proceed to Phase B, do NOT say "still running, moving on." Read the output file to check completion status:
 ```bash
-node "$CODEX_COMPANION" status <jobId> --wait --timeout-ms 300000 --json
+# Check if the Codex background bash has completed
+cat <output_file_path> | tail -5
 ```
+If the output contains a `# Codex Adversarial Review` header with a `Verdict:` line, it's done. If not, wait and check again.
 
-2. **Handle status:**
-   - `waitTimedOut: true` → Log "Codex review timed out — skipping" and continue.
-   - `job.status` is `"cancelled"` or exit code non-zero → Log "Codex review failed: <failureMessage>" and continue.
-   - `job.status` is `"completed"` → fetch the full result:
+1. **When the notification arrives**, read the background bash output. The companion prints the full review to stdout. **Filter out `[codex]` prefixed log lines** — the actual review content is the non-prefixed lines. Use `ctx_execute_file` to extract only non-`[codex]` lines.
 
-3. Get review findings:
-```bash
-node "$CODEX_COMPANION" result <jobId> --json
-```
+2. **Parse the output:** Look for the `# Codex Adversarial Review` section. Extract `Verdict:` and `Findings:` lines. Map severities: `[high]` / `[critical]` → must_fix, `[medium]` / `[low]` → should_fix. Fix all must_fix/should_fix.
 
-4. Parse the result JSON — look for `verdict`, `findings`, `details`. Map severities: critical/high → must_fix, medium/low → should_fix. Fix all must_fix/should_fix.
+3. **If the background bash timed out or failed** (exit code non-zero): Re-launch synchronously (not in background) and wait for results. Only skip if the second attempt also fails.
 
 **Report:**
 ```
@@ -310,16 +304,18 @@ List what was **NOT** verified and why. Include in the verification report (Step
 
 #### 3.9a: Resolve Browser Tool
 
-**3-tier priority** (see `browser-automation.md`): Chrome → playwright-cli → agent-browser.
+**4-tier priority** (see `browser-automation.md`): Chrome → Chrome DevTools MCP → playwright-cli → agent-browser.
 
 1. **Claude Code Chrome:** Check if `mcp__claude-in-chrome__*` tools are in your available/deferred tools list. If available, use Chrome for all E2E steps below. Load tools via `ToolSearch(query="select:mcp__claude-in-chrome__<tool>")`. No session isolation needed.
 
-2. **playwright-cli (preferred CLI fallback):** If Chrome is not available, use playwright-cli for thorough E2E — it provides the most reliable element targeting.
+2. **Chrome DevTools MCP:** If Chrome extension is unavailable, check for `mcp__plugin_chrome-devtools-mcp_chrome-devtools__*` tools. Load via `ToolSearch(query="chrome-devtools-mcp", max_results=30)`. Use `take_snapshot()` for a11y tree with uids, `click(uid=...)` / `fill(uid=...)` for interaction.
+
+3. **playwright-cli (CLI fallback):** If neither Chrome tool is available, use playwright-cli for thorough E2E.
 ```bash
 playwright-cli -s=$PILOT_SESSION_ID open <url>
 ```
 
-3. **agent-browser (lightweight fallback):** If neither Chrome nor playwright-cli is available:
+4. **agent-browser (lightweight fallback):** If none of the above are available:
 ```bash
 AB_SESSION="${PILOT_SESSION_ID:-default}"
 agent-browser --session "$AB_SESSION" open <url>
@@ -356,6 +352,7 @@ TaskCreate(subject="TS-NNN: [name]", description="[priority] | [preconditions]")
 1. `TaskUpdate → in_progress`
 2. Execute each step using the resolved browser tool:
    - **Chrome:** `navigate` to open pages, `read_page` after interactions, `computer`/`form_input` per the step's action
+   - **Chrome DevTools MCP:** `navigate_page` to open pages, `take_snapshot` after interactions, `click(uid=...)`/`fill(uid=...)` per the step's action
    - **playwright-cli:** `open`/`goto` to navigate, `snapshot` after interactions, `click`/`fill`/`press` per the step's action (refs are bare: `e1` not `@e1`)
    - **agent-browser:** `open`/`goto` to navigate, `snapshot -i` after interactions, `click`/`fill`/`press` per the step's action (refs use `@`: `@e1`)
    - Verify the expected result by reading the page output
@@ -385,7 +382,7 @@ After all scenarios are executed, append to the plan file:
 #### 3.9e: Close Browser
 
 ```bash
-# Chrome: no explicit close needed (tab remains open)
+# Chrome / Chrome DevTools MCP: no explicit close needed
 # playwright-cli: playwright-cli -s=$PILOT_SESSION_ID close
 # agent-browser: agent-browser --session "$AB_SESSION" close
 ```

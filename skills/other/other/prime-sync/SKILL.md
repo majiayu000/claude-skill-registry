@@ -1,15 +1,10 @@
 ---
 name: prime-sync
-description: Sync Claude config between prime repo and target projects (push from prime or pull from target)
+description: "Syncs Claude config between prime repo and target projects. Trigger on 'sync', 'prime-sync', 'push config', 'pull config', 'update prime', 'sync claude config'. Push mode deploys to targets; pull mode imports changes back."
 argument-hint: "[<target-project-path>] (push mode only, optional in pull mode)"
-disable-model-invocation: true
 ---
 
 Ultrathink.
-
-## Role
-
-You are a sync orchestrator. Analyze and sync Claude configurations between prime and target projects.
 
 ## Mode Detection
 
@@ -24,23 +19,22 @@ Detect operating mode before anything else:
 Source = CWD (prime repo). Target = resolved project path.
 
 **State file:** `.claude/prime-projects.json`
+
+Tracks known target paths, last sync time, and version. Shape:
 ```json
-{
-  "projects": [
-    { "path": "/absolute/path", "lastSynced": "2025-12-30T10:30:00Z", "version": "1.4.2" }
-  ]
-}
+{ "projects": [{ "path": "/absolute/path", "lastSynced": "2025-12-30T10:30:00Z", "version": "1.4.2" }] }
 ```
+Create as `{ "projects": [] }` if missing.
 
 **Resolution flow:**
-1. **Argument provided** → Use path directly, save to state after sync
-2. **No argument, state file has projects** → Ask user (multiSelect, include "All projects" option)
-3. **No argument, no state file** → Ask user for path
+1. **Argument provided** → Use that path, then record it after a successful sync
+2. **No argument, known projects exist** → Ask the user which project(s) to sync, including an **All projects** option
+3. **No argument, no known projects** → Ask the user for a path
 
 **State file management:**
-- Create `.claude/` if needed
-- Update `lastSynced` and `version` after successful sync
-- No duplicate paths
+- Create `.claude/` only if you need to persist the state file
+- Update the synced project's time/version only after a successful sync
+- Keep one entry per absolute path
 
 ## Pull Mode — Clone Prime
 
@@ -58,29 +52,24 @@ No state file in pull mode — the target project is self-contained.
 
 ## Process
 
-Check conversation context and skip completed steps.
-
 ### 1. Validate Target
-- Check path exists and is a valid project
+- Check that the target path exists, is a directory, and is not the same location as the source repo
+- Treat a valid target as a project root where writing `.claude/` is appropriate
 - Read versions from target (`.claude/.prime-version`) and prime (`VERSION`)
 
-If invalid → abort with error.
+If the path fails those checks, abort and explain why.
 
 ### 2. Parallel Analysis
 
 **Change Detection**:
-- Detect git changes in prime's `.claude/` based on version state
-- If `NO_VERSION` or `SAME_VERSION` → uncommitted changes only
-- If `DIFFERENT_VERSION` → diff from tag to HEAD + uncommitted (warn if tag missing)
-- Categorize: commands, agents, hooks, settings, skills, starter-skills
+- Detect relevant changes in prime's `.claude/` based on the target's recorded version state
+- If the target has no recorded version, or already matches the current prime version, sync only uncommitted prime changes
+- If the target is on an older prime version, diff from that version tag to `HEAD` and include uncommitted changes; warn if the tag is missing
+- Categorize changes into commands, agents, hooks, settings, skills, and starter-skills
 
-**Stack Detection** (only if skills or starter-skills changed):
-- For each changed skill/starter, check if target has matching stack indicators
-- Only scan indicators relevant to that skill/starter
+**Stack Detection** (only if skills or starter-skills changed): check target for stack indicators relevant to each changed skill/starter.
 
-**File Comparison**:
-- Compare each changed file with target
-- Detect: NEW, UPDATE, IDENTICAL, CONFLICT
+**File Comparison**: compare each changed file with target. Detect: NEW, UPDATE, IDENTICAL, CONFLICT.
 
 ### 3. Build Sync Plan
 Aggregate results and present:
@@ -94,10 +83,10 @@ IRRELEVANT (skip, wrong stack): ...
 **GATE**: User approves sync plan.
 
 ### 4. Handle Conflicts
-For each conflict, show diff and ask user:
-- **Overwrite** — Replace with prime version
-- **Skip** — Keep target version
-- **Merge** — Show full diff for selection
+For each conflict, show the relevant diff and ask the user how to proceed:
+- **Overwrite** — Replace the target copy with the prime version
+- **Skip** — Leave the target copy unchanged
+- **Merge** — Surface the full diff and let the user choose which parts to keep before writing anything
 
 ### 5. Execute Sync
 1. Create `.claude/` in target if needed
@@ -116,15 +105,18 @@ Version: X.X.X → written to .prime-version
 Push mode only: update state file (`lastSynced` timestamp + `version`).
 Pull mode only: clean up `/tmp/claude-prime-sync-*` clone directory.
 
+## Gotchas
+
+- **`prime-sync` stays in prime** — do not copy this skill into target projects.
+- **Push and pull keep different state** — state file is push-only; pull mode treats the target as self-contained.
+- **Version history can be incomplete** — if the expected tag is missing, warn and continue with that uncertainty explicit.
+
 ## Constraints
 
-- NEVER sync `prime-sync` skill — it belongs only in prime repo
-- NEVER touch: `project/`, `.mcp.json`, `settings.local.json` in target
-- NEVER modify target project's source code or run commands in target
-- NEVER sync without user approval at the gate
-- NEVER lose project history — append to state file, no duplicates (push mode)
-- ALWAYS clean up `/tmp` clone after sync, even on failure (pull mode)
-- NEVER use state file in pull mode — target is self-contained
+- NEVER modify the target project's source code
+- NEVER sync without user approval at the plan gate
+- In push mode, preserve one state entry per target path and update it only after success
+- In pull mode, always clean up the temporary clone, even on failure
 
 ## Target Path
 

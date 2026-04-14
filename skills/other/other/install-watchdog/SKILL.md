@@ -5,7 +5,7 @@ description: >
   scheduler. Creates a launchd plist (macOS) or systemd timer
   (Linux) that checks every 5 minutes if egregore needs
   relaunching.
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 category: setup
 tools:

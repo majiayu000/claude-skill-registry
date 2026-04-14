@@ -1,13 +1,7 @@
 ---
 name: architecture-paradigm-layered
-description: 'Consult this skill when implementing layered patterns or enforcing layer
-  boundaries. Use when building traditional applications with clear boundaries, working
-  with moderate-sized teams, needing familiar and well-understood patterns, compliance
-  requirements demand clear separation. Do not use when selecting from multiple paradigms
-  - use architecture-paradigms first. DO NOT use when: high scalability needs independent
-  component scaling. DO NOT use when: teams need independent deployment cycles - use
-  microservices.'
-version: 1.7.1
+description: 'Layered (n-tier) architecture with enforced layer boundaries and separation of concerns.'
+version: 1.8.4
 alwaysApply: false
 category: architectural-pattern
 tags:
@@ -38,7 +32,6 @@ estimated_tokens: 700
 - [Key Deliverables](#key-deliverables)
 - [Technology Guidance](#technology-guidance)
 - [Risks & Mitigations](#risks-mitigations)
-- [Troubleshooting](#troubleshooting)
 
 # The Layered (N-Tier) Architecture Paradigm
 
@@ -98,15 +91,3 @@ estimated_tokens: 700
   - **Mitigation**: For features that span multiple layers, strict adherence can lead to excessive "pass-through" code and increased latency. In such cases, consider using a Façade pattern to provide a more direct interface where appropriate.
 - **"Leaky" Layers**:
   - **Mitigation**: Developers may be tempted to bypass architectural rules for expediency, which degrades the architecture. Treat all architectural violations as build-breaking failures or critical issues in code review.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

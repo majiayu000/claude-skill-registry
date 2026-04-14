@@ -19,9 +19,10 @@ license: MIT
 
 ## Purpose
 
-- run iterative refinement after merge using **Codex** (external agent via `agent_runner.mjs`)
-- keep refinement sequential and bounded
-- record refinement trace and cleanup evidence for every iteration
+- run 2-stage refinement after merge using **Codex** (external agent via `agent_runner.mjs`)
+- Stage 1: 3 parallel independent Codex sessions (dry_run_executor, new_dev_tester, adversarial_reviewer)
+- Stage 2: 1 sequential Codex session (final_sweep) after merging Stage 1 results
+- record refinement trace and cleanup evidence for every Codex session
 
 **Critical: refinement launches Codex externally. Do NOT use Claude Agent() sub-agents.**
 
@@ -38,70 +39,110 @@ Required manifest fields:
 
 Recommended `phase_order`:
 1. `PHASE_0_CONFIG`
-2. `PHASE_1_ITERATION_LOOP`
-3. `PHASE_2_WRITE_SUMMARY`
-4. `PHASE_3_SELF_CHECK`
+2. `PHASE_1_STAGE1_PARALLEL`
+3. `PHASE_2_STAGE2_FINAL_SWEEP`
+4. `PHASE_3_WRITE_SUMMARY`
+5. `PHASE_4_SELF_CHECK`
 
-## Perspective Order
+## Refinement State Machine
 
-Iteration order matches `refinement_perspectives.md`:
-1. `generic_quality` (iter 1)
-2. `dry_run_executor` (iter 2)
-3. `new_dev_tester` (iter 3)
-4. `adversarial_reviewer` (iter 4)
-5. `final_sweep` (iter 5)
+### Critical: Independent Sessions
 
-No step may run in parallel with another refinement step.
+Each perspective MUST be a separate `node agent_runner.mjs --agent codex` invocation.
+Do NOT combine multiple perspectives into a single Codex prompt or session.
+Each iter{N}/ subdirectory = independent Codex process with its own PID.
 
-## Codex Iteration Loop (max 5 iterations)
+### Perspective Classification
 
-For each iteration:
+| Stage | Perspective | Execution | Purpose |
+|-------|------------|-----------|---------|
+| 1 | `dry_run_executor` | parallel | Catch unexecutable steps, sequencing errors |
+| 1 | `new_dev_tester` | parallel | Catch implicit knowledge gaps, undefined terms |
+| 1 | `adversarial_reviewer` | parallel | Catch guaranteed failures, silent corruption |
+| 2 | `final_sweep` | after merge | Catch regressions and drift from Stage 1 fixes |
+
+All 4 perspectives are MANDATORY. `generic_quality` is not included — it is covered by the Phase 2 Codex review (`review_base.md` + mode template).
+
+### Stage 1: Parallel Specialized Reviews
 
 1. **Build artifact:** Read current state of reviewed artifact (Story+Tasks / plan file / context docs).
-2. **Select perspective:** Load from `refinement_perspectives.md` matching the iteration number.
-3. **Build prompt:** Fill `iterative_refinement.md` placeholders (`{artifact_type}`, `{artifact_content}`, `{project_context}`, `{review_perspective}`, `{iteration_number}`, `{max_iterations}`, `{previous_findings_summary}`).
-4. **Save prompt:** `.hex-skills/agent-review/refinement/{identifier}/iter{N}/prompt.md`
-5. **Launch Codex:**
-   ```
-   node shared/agents/agent_runner.mjs --agent codex \
-     --prompt-file .hex-skills/agent-review/refinement/{identifier}/iter{N}/prompt.md \
-     --output-file .hex-skills/agent-review/refinement/{identifier}/iter{N}/result.md \
-     --cwd {project_dir}
-   ```
-6. **Monitor (observation only):**
-   ```
-   Monitor(command="tail -f {agent_log} | grep --line-buffered -E 'Phase|ERROR|DONE'",
-           timeout_ms=1800000,
-           description="codex refinement iter {N}")
-   ```
-   Fallback: if Monitor unavailable, use `Bash(run_in_background=true)`.
-7. **Wait:** Minimum 1 minute between checks. Result ready when file has `<!-- END_AGENT_REVIEW_RESULT -->` marker.
-8. **Parse result:** Extract JSON from `## Structured Data` section.
-9. **Architecture Gate:** Before applying each accepted fix, verify: "Does this implement the correct architecture directly, without backward compatibility shims?" Reject fixes that introduce compat layers.
-10. **Kill after parse:** Extract pid, run `node shared/agents/agent_runner.mjs --verify-dead {pid}`. MANDATORY on Windows. Never kill before result accepted.
-11. **Evaluate exit criteria** (in order):
-    a. Codex failed/timed out → exit: `ERROR`
-    b. 2 consecutive perspectives returned APPROVED → exit: `CONVERGED`
-    c. `iteration == 5` → exit: `MAX_ITER`
-    d. Current perspective APPROVED or all-LOW → proceed to next
-    e. Any MEDIUM/HIGH suggestions → apply accepted fixes, proceed to next
-12. **Build `{previous_findings_summary}`** for next iteration.
+2. **For EACH of 3 perspectives, in parallel:**
+   a. Load perspective from `refinement_perspectives.md` matching the perspective name.
+   b. Build prompt: fill `iterative_refinement.md` placeholders (`{artifact_type}`, `{artifact_content}`, `{project_context}`, `{review_perspective}`, `{iteration_number}`, `{max_iterations}`, `{previous_findings_summary}`).
+   c. Save prompt to `.hex-skills/agent-review/refinement/{identifier}/iter{N}/prompt.md`
+      - iter1/ = dry_run_executor
+      - iter2/ = new_dev_tester
+      - iter3/ = adversarial_reviewer
+   d. Launch independent Codex process:
+      ```
+      node shared/agents/agent_runner.mjs --agent codex \
+        --prompt-file .hex-skills/agent-review/refinement/{identifier}/iter{N}/prompt.md \
+        --output-file .hex-skills/agent-review/refinement/{identifier}/iter{N}/result.md \
+        --cwd {project_dir}
+      ```
+3. **Wait for ALL 3** via Claude `Monitor` tool (see Waiting section below).
+4. **Parse results** from each completed session: extract JSON from `## Structured Data` section.
+5. **Merge findings:** deduplicate by (area, issue), keep higher confidence.
+6. **Classify:** HIGH (impact_percent >= 20%), MEDIUM (10-19%), LOW (< 10%).
+7. **Architecture Gate** on each accepted fix: "Does this implement the correct architecture directly, without backward compatibility shims?"
+8. **Apply accepted fixes.**
+9. **Kill all 3 processes:** `node agent_runner.mjs --verify-dead {pid}` per session. MANDATORY on Windows.
+10. **Record cleanup evidence** per `cleanup_evidence_contract.md` for each session.
+11. **Build `{previous_findings_summary}`** for Stage 2.
 
-### Bounded Cheap Lane
+If ALL 3 Codex sessions fail → EXIT(ERROR), skip Stage 2.
+If some fail → continue with available results, record partial errors.
 
-After iteration 1: if no HIGH severity findings AND max remaining risk = LOW, exit with `CONVERGED_LOW_IMPACT`. This prevents wasting Codex calls on low-risk artifacts.
+### Stage 2: Final Sweep
 
-### Fresh Session Rule
+1. **Build artifact:** Read post-fix state after Stage 1.
+2. **Load `final_sweep`** perspective from `refinement_perspectives.md`.
+3. **Build prompt** with `{previous_findings_summary}` from Stage 1.
+4. **Save prompt** to `.hex-skills/agent-review/refinement/{identifier}/iter4/prompt.md`.
+5. **Launch Codex** (single independent session).
+6. **Wait** via Claude `Monitor` tool.
+7. **Parse result,** apply any accepted fixes (Architecture Gate on each).
+8. **Kill process,** record cleanup evidence.
 
-NEVER use `--resume-session` in refinement. Each iteration = new Codex session in its own `iter{N}/` subdirectory. Phase 2 session data pollutes context window.
+### Waiting for Codex via Claude `Monitor` Tool (MANDATORY)
+
+`Monitor` is a built-in Claude Code tool that streams filtered shell output as conversation events.
+
+For EACH launched Codex process:
+
+```
+Monitor(
+  command="tail -f {agent_log} | grep --line-buffered -E 'Phase|ERROR|DONE'",
+  timeout_ms=120000,
+  description="codex refinement {perspective_name}"
+)
+```
+
+After each Monitor cycle (2 minutes):
+- Check result file for `<!-- END_AGENT_REVIEW_RESULT -->` marker.
+- Marker present → parse result, proceed.
+- Marker absent, log growing → launch next Monitor cycle.
+- Marker absent, log stale >3 min → run Liveness Protocol (see `agent_review_workflow.md`).
+
+Do NOT use `sleep`, `Bash(run_in_background=true)`, or manual stat-polling as primary wait mechanism.
+Fallback: `Bash(run_in_background=true)` ONLY when Monitor is unavailable (Bedrock/Vertex/Foundry runtimes).
 
 ### Process Cleanup
 
-After each Codex call:
+After each Codex call (both stages):
 1. Extract `pid` from runner stdout or metadata.
 2. Run `node shared/agents/agent_runner.mjs --verify-dead {pid}`.
 3. Record cleanup evidence per `cleanup_evidence_contract.md`.
 4. Codex processes accumulate on Windows if not killed.
+
+### Exit States
+
+| State | Meaning |
+|-------|---------|
+| `COMPLETED` | Both stages done, all results merged |
+| `PARTIAL_ERROR` | Stage 1 had failures but Stage 2 completed |
+| `ERROR` | All Stage 1 Codex sessions failed (Stage 2 skipped) |
+| `SKIPPED` | Codex unavailable in health check |
 
 ## Summary
 
@@ -114,20 +155,24 @@ Payload must include:
 - `warnings`
 
 Prefer these fields:
-- `iterations` (int: actual count completed)
-- `exit_reason` (enum: `CONVERGED`, `CONVERGED_LOW_IMPACT`, `MAX_ITER`, `ERROR`, `SKIPPED`)
-- `applied` (int: total suggestions applied across all iterations)
+- `stages_completed` (int: 1 or 2)
+- `exit_reason` (enum: `COMPLETED`, `PARTIAL_ERROR`, `ERROR`, `SKIPPED`)
+- `applied` (int: total suggestions applied across all stages)
 - `architecture_gate_rejections` (count)
+- `stage1_perspectives` (list of completed perspective names)
+- `stage1_failed` (list of failed perspective names)
 - `metadata.refinement_trace`
 
 ## Definition of Done
 
-- [ ] All required refinement steps executed or justified as skipped
-- [ ] Codex launched via `agent_runner.mjs` (not Claude sub-agents)
+- [ ] Stage 1: all 3 Codex sessions launched in parallel
+- [ ] Stage 2: final_sweep launched after Stage 1 merge
+- [ ] All Codex launched via `agent_runner.mjs` (not Claude sub-agents)
+- [ ] Claude `Monitor` tool used for waiting (2-min cycles)
 - [ ] Refinement trace recorded per `refinement_trace_contract.md`
-- [ ] Cleanup evidence recorded for launched processes
+- [ ] Cleanup evidence recorded for all launched processes
 - [ ] `review-refinement` summary written
 - [ ] Self-check passed
 
-**Version:** 1.0.0
-**Last Updated:** 2026-04-10
+**Version:** 2.0.0
+**Last Updated:** 2026-04-13

@@ -1,6 +1,6 @@
 ---
 name: frontend-design
-description: "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when making design decisions, building web components, choosing color palettes, selecting typography, designing charts, or researching visual patterns. Queries design database for inspiration."
+description: "Builds distinctive, production-grade UIs that avoid generic AI aesthetics. Use whenever the user wants to build, restyle, or give visual direction to any interface — pages, dashboards, landing pages, components, onboarding flows, mobile screens, or design systems — even without an explicit 'design' request. Also triggers for: picking an aesthetic direction, improving the look of a dull/generic existing page, adding visual personality, or choosing colors/typography. Includes a bundled design intelligence database for concrete guidance across web (React, Next.js, Vue, Tailwind) and mobile (React Native, Flutter, SwiftUI)."
 ---
 
 This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.
@@ -40,69 +40,68 @@ Interpret creatively and make unexpected choices that feel genuinely designed fo
 
 ## Design Intelligence
 
-Query a remote design knowledge base for styles, colors, typography, charts, and framework guidelines.
+Use the bundled design search tooling when you need concrete guidance that should shape implementation rather than generic inspiration.
+
+Reach for `scripts/search.py` when you need any of the following:
+- a style direction that fits a product category or audience
+- a color system, typography pairing, or chart recommendation
+- UX or accessibility guidance for a specific interface problem
+- stack-specific frontend advice for React, Next.js, Vue, Tailwind, and other supported stacks
+- a full design-system recommendation grounded in the bundled dataset
+
+Skip the search when the user already gave a precise visual direction and the implementation path is obvious.
+
+### Search Workflow
+
+1. Start with the smallest query that captures the product or interface type.
+2. Use auto-detection first; add `--domain` only when you know what kind of answer you need.
+3. Add `--stack` when framework-specific implementation details matter.
+4. Synthesize the retrieved guidance into one cohesive direction instead of pasting disconnected search results into the final answer.
 
 ### Quick Start
 
 ```bash
-# Search any domain (auto-detected)
+# Auto-detect the best domain from a concise query
 python3 scripts/search.py "glassmorphism dark mode"
 
-# Search specific domain
+# Ask for a specific kind of guidance
 python3 scripts/search.py "healthcare saas" --domain colors
 
-# Framework-specific guidelines
+# Add framework context when implementation details matter
 python3 scripts/search.py "responsive layout" --stack html-tailwind
 ```
 
-### Search Domains
+### High-Value Defaults
 
-| Domain | Query Examples |
-|--------|----------------|
-| styles | "glassmorphism", "brutalism", "bento grids" |
-| colors | "healthcare", "fintech", "e-commerce" |
-| typography | "modern tech", "elegant serif", "playful" |
-| charts | "time series", "comparison", "distribution" |
-| products | "saas dashboard", "landing page" |
-| landing | "hero + features", "pricing", "funnel" |
-| ux | "navigation", "forms", "accessibility" |
-| icons | "navigation", "action", "status" |
-| react-performance | "memo", "suspense", "waterfall" |
-| ui-reasoning | "SaaS", "e-commerce", "fintech" |
-| web-interface | "aria", "form control", "semantic" |
+Treat these as strong defaults, not blind rules:
+- Prefer SVG icon systems over emoji so the UI feels product-grade and stylistically consistent.
+- Keep clickable elements obviously interactive, including pointer cues where the platform expects them.
+- Protect readability first; contrast and hierarchy matter more than visual gimmicks.
+- In light mode, translucent surfaces need enough opacity to stay legible.
+- Floating elements look more intentional when they breathe instead of touching viewport edges.
+- Prefer hover treatments that preserve layout stability unless movement is a deliberate part of the concept.
 
-### Stacks
+### References
 
-`--stack` options: `html-tailwind`, `react`, `nextjs`, `astro`, `vue`, `nuxtjs`, `nuxt-ui`, `svelte`, `swiftui`, `react-native`, `flutter`, `shadcn`, `jetpack-compose`
+- `references/design-system-generation.md` — use when the user wants a full design-system recommendation assembled from multiple search domains
+- `references/quality-checklist.md` — use as the final self-critique pass before delivering UI work
 
-### Design System Generation
+## Gotchas
 
-For comprehensive design system recommendations, follow the multi-domain search orchestration workflow.
-
-> See [references/design-system-generation.md](./references/design-system-generation.md)
-
-### Critical Rules
-
-1. **No Emoji Icons** - Use SVG icons (Heroicons, Lucide, Simple Icons)
-2. **Cursor Pointer** - All clickable elements must have `cursor-pointer`
-3. **4.5:1 Contrast** - WCAG minimum for text readability
-4. **Glass Cards** - Use `bg-white/80` or higher opacity in light mode
-5. **Floating Navbar** - Add spacing (`top-4 left-4 right-4`), not edge-to-edge
-6. **Hover Stability** - Color/opacity transitions, not scale transforms
-
-### Pre-Delivery Checklist
-
-> See [references/quality-checklist.md](./references/quality-checklist.md)
-
-## References
-
-| Reference | Content |
-|-----------|---------|
-| [quality-checklist.md](./references/quality-checklist.md) | Visual, interaction, accessibility checks |
-| [design-system-generation.md](./references/design-system-generation.md) | Multi-domain search orchestration for design system generation |
+- **Defaulting to safe choices**: Inter font + blue primary + white background is AI slop. Be distinctive.
+- **Using search as decoration**: Retrieved guidance should change the design system or implementation decisions, not just add buzzwords.
+- **Inconsistent design system**: Don't mix unrelated tokens or visual languages. Commit to one system throughout.
+- **Ignoring contrast ratios**: WCAG AA minimum. Beautiful but unreadable is a failure.
+- **Purple gradients**: The #1 AI cliché. Avoid unless specifically requested.
+- **Interaction polish gaps**: Missing hover/focus states or weak affordances make even strong visuals feel unfinished.
 
 ## Data Source
 
 Remote: [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/main/src/ui-ux-pro-max/data)
+
+Available domains include styles, colors, typography, charts, products, landing, ux, icons, ui-reasoning, and web-interface. Supported stacks include html-tailwind, react, nextjs, astro, vue, nuxtjs, nuxt-ui, svelte, swiftui, react-native, flutter, shadcn, and jetpack-compose.
+
+Search uses a cached BM25 ranking script over the remote dataset, so prefer concise, concrete queries over long prompt-like paragraphs.
+
 
 Remember: Claude is capable of extraordinary creative work. Don't hold back, show what can truly be created when thinking outside the box and committing fully to a distinctive vision.

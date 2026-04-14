@@ -25,6 +25,10 @@ These are NOT intentional deception — they are failure modes of optimizing age
 
 This follows `shared-references/reviewer-independence.md` and `shared-references/experiment-integrity.md`.
 
+## Constants
+
+- **REVIEWER_BACKEND = `codex`** — Default: Codex MCP (xhigh). Override with `— reviewer: oracle-pro` for GPT-5.4 Pro via Oracle MCP. See `shared-references/reviewer-routing.md`.
+
 ## Workflow
 
 ### Step 1: Collect Artifacts (Executor — Claude)

@@ -221,6 +221,6 @@ In a multi-repo workspace where multiple repos were processed, show a combined s
 | `repo-name` | title | URL |
 ```
 
-Recommend running `/optimus:verify` to prove the feature works, then `/optimus:code-review` for static quality review before merging.
+Recommend running `/optimus:code-review` for quality review before merging.
 
 Tell the user: **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.

@@ -1,7 +1,7 @@
 ---
 name: release-health-gates
 description: 'Standardize release approvals with GitHub-aware checklists and deployment gate validation'
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 category: governance
 tags:
@@ -64,15 +64,3 @@ Standardize release approvals by expressing gates as GitHub-aware checklists. En
 - Any blocking gates have waiver approvals recorded.
 - Deployment PR contains embedded Release Gate snippet.
 - Rollout scorecard saved for post-release retrospective.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

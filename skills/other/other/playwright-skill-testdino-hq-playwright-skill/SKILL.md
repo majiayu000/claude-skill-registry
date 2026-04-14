@@ -1,6 +1,6 @@
 ---
 name: playwright-skill
-description: Battle-tested Playwright patterns for E2E, API, component, visual, accessibility, and security testing. Covers locators, fixtures, POM, network mocking, auth flows, debugging, CI/CD (GitHub Actions, GitLab, CircleCI, Azure, Jenkins), framework recipes (React, Next.js, Vue, Angular), and migration guides from Cypress/Selenium. TypeScript and JavaScript.
+description: Battle-tested Playwright patterns for writing, debugging, and scaling reliable test suites. Use when you need guidance for E2E, API, component, visual, accessibility, or security testing, plus CI/CD, CLI automation, page objects, and migration from Cypress or Selenium. TypeScript and JavaScript.
 license: MIT
 metadata:
   author: testdino.com
@@ -12,6 +12,8 @@ metadata:
 > Opinionated, production-tested Playwright guidance — every pattern includes when (and when *not*) to use it.
 
 **50+ reference guides** covering the full Playwright surface: selectors, assertions, fixtures, page objects, network mocking, auth, visual regression, accessibility, API testing, CI/CD, debugging, and more — with TypeScript and JavaScript examples throughout.
+
+Playwright 1.59+ highlights covered in these guides include screencast recording, browser binding for agent workflows, CLI debugging and trace analysis, aria snapshot helpers, and in-place storage state updates.
 
 ## Security Trust Boundary
 

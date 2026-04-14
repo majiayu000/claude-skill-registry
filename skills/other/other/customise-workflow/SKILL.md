@@ -108,7 +108,7 @@ python3 <skill-dir>/script.py show-config
   "provider": {
     "main": "gemini-cli|claude-code|anthropic|openai|openrouter|ollama|...",
     "model_main": "gemini-3-pro-preview|sonnet|gpt-4o|...",
-    "research": "perplexity|gemini-cli|...",
+    "research": "gemini-cli|perplexity|...",
     "model_research": "sonar-pro|gemini-3-pro-preview|...",
     "fallback": "gemini-cli|claude-code|...",
     "model_fallback": "gemini-3-flash-preview|haiku|..."

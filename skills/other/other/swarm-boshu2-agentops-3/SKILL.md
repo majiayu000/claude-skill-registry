@@ -80,6 +80,10 @@ Task description: <description>")
 
 Inject the discovered file list back into the task manifest before spawning workers.
 
+### Step 1.6: Advisory Bead Clustering
+
+When tasks come from bd and `scripts/bd-cluster.sh` exists, run `scripts/bd-cluster.sh --json 2>/dev/null || true` before Step 2. Summarize any clusters as consolidation hints only; never run `--apply` here, and keep Step 2's file-manifest and dependency gates authoritative.
+
 ### Step 2: Pre-Spawn Conflict Check
 
 **Pre-Spawn Friction Gates:** Before spawning workers, execute all 5 friction gates (base sync, file manifest, dependency graph, misalignment breaker, wave cap). See `references/pre-spawn-friction-gates.md`.

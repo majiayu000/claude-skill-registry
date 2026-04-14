@@ -1,8 +1,15 @@
 ---
 name: smart-sourcing
 description: Select optimal information sources for tool calls and file reads, balancing accuracy with token efficiency.
-version: 1.7.1
-alwaysApply: true
+version: 1.8.4
+alwaysApply: false
+usage_patterns:
+- "research"
+- "source"
+- "citation"
+- "verify claim"
+- "web search"
+- "fetch"
 category: optimization
 tags:
 - sourcing

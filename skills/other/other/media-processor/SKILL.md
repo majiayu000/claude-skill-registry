@@ -1,257 +1,74 @@
 ---
 name: media-processor
-description: "Process multimedia content — audio transcription, video analysis, PDF data extraction, image generation. Use for deeper image analysis when implementing from UI designs, analyzing charts for data, reading dense screenshots, or studying artworks and visual references."
+description: "Specialized visual and multimedia processing tools. Use this skill whenever a task involves complex visual content — UI mockups, dense screenshots, design images, charts, artwork — where precise details like spacing, hex colors, font sizes, and component hierarchy need to be extracted accurately. Also use for: reviewing or auditing existing UI against designs, comparing screenshots for visual regressions, transcribing audio/video, extracting data from PDFs with complex layouts, and generating images. Trigger whenever the user wants to implement from a design, review or compare UI screenshots, analyze visual details precisely, describe artwork or aesthetic content, or process any media file (audio, video, PDF)."
 ---
 
 # Media Processor
 
-Process audio, images, videos, documents, and generate images using Google Gemini's multimodal API. Unified interface for all multimedia content understanding and generation.
+Specialized tools for extracting precise visual details (exact colors, spacing, hierarchy), processing audio/video, and generating images.
 
-## Core Capabilities
+## Tools
 
-### Image Understanding
-- Image captioning and description
-- Object detection with bounding boxes (2.0+)
-- Pixel-level segmentation (2.5+)
-- Visual question answering
-- Multi-image comparison (up to 3,600 images)
-- OCR and text extraction
+All scripts live in `scripts/` relative to this skill's directory. They auto-select the best model per task and handle retries, large file uploads, and error reporting.
 
-### Video Analysis
-- Scene detection and summarization
-- Video Q&A with temporal understanding
-- Transcription with visual descriptions
-- YouTube URL support
-- Long video processing (up to 6 hours)
-- Frame-level analysis
+| Script | Purpose |
+|--------|---------|
+| `gemini_batch_process.py` | Analyze images, transcribe audio/video, extract data from PDFs |
+| `image_gen.py` | Generate and edit images (paid plan required) |
+| `document_converter.py` | Convert PDF, DOCX, XLSX, PPTX to Markdown; extract page ranges and images |
 
-### Document Extraction
-- Native PDF vision processing (up to 1,000 pages)
-- Table and form extraction
-- Chart and diagram analysis
-- Multi-page document understanding
-- Structured data output (JSON schema)
-- Format conversion (PDF to HTML/JSON)
+Requires `GEMINI_API_KEY` in environment or `.env` in this skill's directory. Run any script with `--help` for setup details and available parameters.
 
-### Image Generation
-- Text-to-image generation
-- High-quality generation variant (`generate-hq`) for detailed outputs
-- Image editing and modification
-- Multi-image composition (up to 3 images)
-- Iterative refinement
-- Multiple aspect ratios (1:1, 16:9, 9:16, 4:3, 3:4)
-- Controllable style and quality
+**Quick start — image analysis:**
+```bash
+python <skill-dir>/scripts/gemini_batch_process.py \
+  --files <image-path> \
+  --task analyze \
+  --prompt "<tailored prompt>" \
+  --output <output-path>.md
+```
 
-### Audio Processing
-- Transcription with timestamps (up to 9.5 hours)
-- Audio summarization and analysis
-- Speech understanding and speaker identification
-- Music and environmental sound analysis
-- Text-to-speech generation with controllable voice
+## Prompt Quality Matters
 
-## Supported Tasks
+The prompt sent to the processing model is the single biggest factor in output quality. Tailor prompts to what the task actually needs — generic prompts produce generic results.
 
-| Task | Description |
-|------|-------------|
-| `transcribe` | Audio/video transcription with timestamps |
-| `analyze` | Image, video, or audio analysis with custom prompts |
-| `extract` | Structured data extraction from PDFs and documents |
-| `generate` | Text-to-image generation |
-| `generate-hq` | High-quality image generation with enhanced detail |
+**What makes a good analysis prompt:**
+- Ask for the specific details the task requires (hex colors, spacing in px, component hierarchy) rather than "describe this image"
+- Structure the ask as a numbered list — the model mirrors the structure back, making output easy to parse
+- Name the desired output format ("as a markdown table", "as JSON", "as a component tree")
+- Include implementation context when relevant ("for React with Tailwind") so the model emphasizes useful details
 
-See [model routing](./references/model-routing.md) for model selection per task.
+**Example prompt patterns:**
+
+UI implementation: *"Extract component hierarchy, layout type, exact hex colors, typography (sizes/weights), spacing in px, interactive states, icons and decorative elements"*
+
+Chart data: *"Extract chart type, axes with units, every data point with exact values, legend entries with colors. Output as a markdown table"*
+
+Design review: *"Compare this screenshot against the design. Flag differences in spacing, colors, alignment, missing elements, and visual inconsistencies. Note exact values for each discrepancy"*
 
 ## Pasted Images
 
-When user pastes images in chat, they are auto-saved to:
+When a user pastes images in chat, they are auto-saved to:
 ```
 $CLAUDE_DIR/image-cache/<current_session_id>/<image_number>.png
 ```
-Example: Image #1 → `$CLAUDE_DIR/image-cache/<session_id>/1.png`
+Use `ls "$CLAUDE_DIR/image-cache/"` to discover the session ID, then list its contents to find available images.
 
-**To process pasted images**, find files in this directory and pass them to the scripts. Use `ls "$CLAUDE_DIR/image-cache/"` to discover the current session ID, then list its contents for available images.
+## Model Overrides
 
-## Quick Start
+Scripts auto-select models per task (see [model-routing.md](./references/model-routing.md)). Override with `--model <model-id>` when the default isn't enough — for example, `--model gemini-3.1-pro-preview` for complex visual analysis where the pro model catches more detail than flash.
 
-### Prerequisites
+## References
 
-**API Key Setup**: Supports both Google AI Studio and Vertex AI.
-
-Set `GEMINI_API_KEY` via environment or `.claude/skills/media-processor/.env`.
-
-**Get API key**: https://aistudio.google.com/apikey
-
-**For Vertex AI**:
-```bash
-export GEMINI_USE_VERTEX=true
-export VERTEX_PROJECT_ID=your-gcp-project-id
-export VERTEX_LOCATION=us-central1  # Optional
-```
-
-**Install SDK**:
-```bash
-pip install google-genai python-dotenv pillow
-```
-
-### Common Patterns
-
-**Transcribe Audio**:
-```bash
-python scripts/gemini_batch_process.py \
-  --files audio.mp3 \
-  --task transcribe
-```
-
-**Analyze Image**:
-```bash
-python scripts/gemini_batch_process.py \
-  --files image.jpg \
-  --task analyze \
-  --prompt "Describe this image" \
-  --output docs/assets/<output-name>.md
-```
-
-**Process Video**:
-```bash
-python scripts/gemini_batch_process.py \
-  --files video.mp4 \
-  --task analyze \
-  --prompt "Summarize key points with timestamps" \
-  --output docs/assets/<output-name>.md
-```
-
-**Extract from PDF**:
-```bash
-python scripts/gemini_batch_process.py \
-  --files document.pdf \
-  --task extract \
-  --prompt "Extract table data as JSON" \
-  --output docs/assets/<output-name>.md \
-  --format json
-```
-
-**Generate Image**:
-```bash
-python scripts/image_gen.py \
-  --prompt "A futuristic city at sunset" \
-  --output docs/assets/<output-file-name>.png \
-  --aspect-ratio 16:9
-```
-
-**Generate High-Quality Image**:
-```bash
-python scripts/image_gen.py \
-  --prompt "Detailed architectural blueprint of a modern house" \
-  --output docs/assets/<output-file-name>.png \
-  --mode generate-hq
-```
-
-**Edit an Existing Image**:
-```bash
-python scripts/image_gen.py \
-  --prompt "Make the sky sunset colors" \
-  --input photo.jpg \
-  --output docs/assets/edited.png
-```
-
-**Convert Documents to Markdown**:
-```bash
-# Convert to PDF
-python scripts/document_converter.py \
-  --input document.docx \
-  --output docs/assets/document.md
-
-# Extract pages
-python scripts/document_converter.py \
-  --input large.pdf \
-  --output docs/assets/chapter1.md \
-  --pages 1-20
-```
-
-## Supported Formats
-
-### Audio
-- WAV, MP3, AAC, FLAC, OGG Vorbis, AIFF
-- Max 9.5 hours per request
-- Auto-downsampled to 16 Kbps mono
-
-### Images
-- PNG, JPEG, WEBP, HEIC, HEIF
-- Max 3,600 images per request
-- Resolution: <=384px = 258 tokens, larger = tiled
-
-### Video
-- MP4, MPEG, MOV, AVI, FLV, MPG, WebM, WMV, 3GPP
-- Max 6 hours (low-res) or 2 hours (default)
-- YouTube URLs supported (public only)
-
-### Documents
-- PDF only for vision processing
-- Max 1,000 pages
-- TXT, HTML, Markdown supported (text-only)
-
-### Size Limits
-- **Inline**: <20MB total request
-- **File API**: 2GB per file, 20GB project quota
-- **Retention**: 48 hours auto-delete
-
-## Reference Navigation
-
-For detailed implementation guidance, see:
-
-| Reference | Description |
+| Reference | When to read |
 |-----------|-------------|
-| [audio-processing.md](./references/audio-processing.md) | Transcription, analysis, TTS, timestamps, multi-speaker |
-| [vision-understanding.md](./references/vision-understanding.md) | Captioning, detection, segmentation, OCR, multi-image |
-| [video-analysis.md](./references/video-analysis.md) | Scene detection, YouTube, timestamps, long video |
-| [image-generation.md](./references/image-generation.md) | Text-to-image, editing, composition, aspect ratios |
-| [model-routing.md](./references/model-routing.md) | Model selection per task, pricing, context windows |
-| [document-extraction.md](./references/document-extraction.md) | PDF processing, table extraction, structured output |
-| [media-optimization.md](./references/media-optimization.md) | ffmpeg recipes for compressing/resizing before upload |
+| [api-gotchas.md](./references/api-gotchas.md) | Before using image generation, video processing, or raw API calls — prevents common failures |
+| [model-routing.md](./references/model-routing.md) | When choosing or overriding the default model for a task |
+| [media-optimization.md](./references/media-optimization.md) | When files are too large to upload — ffmpeg compression recipes |
 
-## Scripts Overview
+## Gotchas
 
-All scripts support unified API key detection and error handling:
-
-**gemini_batch_process.py**: Batch process multiple media files
-- Supports file-based modalities (audio, image, video, PDF)
-- Tasks: transcribe, analyze, extract
-- Progress tracking and error recovery
-- Output formats: JSON, Markdown, CSV
-- Rate limiting and retry logic
-- Dry-run mode
-
-**image_gen.py**: Generate images from text prompts
-- Modes: generate (standard) and generate-hq (high quality)
-- Image editing with optional input image
-- Aspect ratio control
-- Retry logic and error handling
-
-**document_converter.py**: Convert documents to PDF
-- Convert DOCX, XLSX, PPTX to PDF
-- Extract page ranges
-- Optimize PDFs for Gemini
-- Extract images from PDFs
-- Batch conversion support
-
-Run any script with `--help` for detailed usage.
-
-## Error Handling
-
-Common errors and solutions:
-- **400**: Invalid format/size - validate before upload
-- **401**: Invalid API key - check configuration
-- **403**: Permission denied - verify API key restrictions
-- **404**: File not found - ensure file uploaded and active
-- **429**: Rate limit exceeded - implement exponential backoff
-- **500**: Server error - retry with backoff
-
-## Resources
-
-- [Audio API Docs](https://ai.google.dev/gemini-api/docs/audio)
-- [Image API Docs](https://ai.google.dev/gemini-api/docs/image-understanding)
-- [Video API Docs](https://ai.google.dev/gemini-api/docs/video-understanding)
-- [Document API Docs](https://ai.google.dev/gemini-api/docs/document-processing)
-- [Image Gen Docs](https://ai.google.dev/gemini-api/docs/image-generation)
-- [Get API Key](https://aistudio.google.com/apikey)
-- [Pricing](https://ai.google.dev/pricing)
+- **Rate limits** — scripts retry up to 3 times with backoff. If still rate-limited after retries, stop and ask the user to check their API key quota or provide a new key.
+- **Model IDs change** — Google frequently rotates preview model IDs. If you get a 404, the model was likely superseded — check the [models page](https://ai.google.dev/gemini-api/docs/models) for current IDs.
+- **Safety filters** — the API may refuse some content. Report clearly to the user rather than retrying.
+- **Large files auto-upload** — files >20MB automatically use the File API (2GB max, 48h retention). No action needed.

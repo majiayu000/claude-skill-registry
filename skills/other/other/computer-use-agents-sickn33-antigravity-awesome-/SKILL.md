@@ -2149,7 +2149,6 @@ Message: Consider adding max_cost_per_task to prevent expensive runaway tasks.
 - user needs multi-agent coordination -> multi-agent-orchestration (Multiple computer use agents working together)
 
 ## When to Use
-
 - User mentions or implies: computer use
 - User mentions or implies: desktop automation agent
 - User mentions or implies: screen control AI
@@ -2160,3 +2159,8 @@ Message: Consider adding max_cost_per_task to prevent expensive runaway tasks.
 - User mentions or implies: browser agent
 - User mentions or implies: visual agent
 - User mentions or implies: RPA with AI
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

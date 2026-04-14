@@ -11,29 +11,57 @@ metadata:
 
 Delegate coding tasks to Google's Jules AI agent on GitHub repositories.
 
+## Environment Variables
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `JULES_API_KEY` | For API auth | API key from [jules.google.com/settings](https://jules.google.com/settings) |
+
 ## Setup (Run Before First Command)
 
-### 1. Install CLI
+Two auth paths are available. Use **Path 1** for interactive use, **Path 2** for headless/agent use.
+
+### Path 1: CLI (Interactive)
+
+#### 1. Install CLI
 ```bash
 which jules || npm install -g @google/jules
 ```
 
-### 2. Check Auth
+#### 2. Check Auth
 ```bash
 jules remote list --repo
 ```
 If fails → tell user to run `jules login` (or `--no-launch-browser` for headless)
 
-### 3. Auto-Detect Repo
+### Path 2: API Key (Headless / Agent Use)
+
+#### 1. Get API Key
+Get key from [jules.google.com/settings](https://jules.google.com/settings) (3-key limit per account).
+
+#### 2. Set Environment Variable
+```bash
+export JULES_API_KEY="your-api-key"
+```
+
+#### 3. Verify
+```bash
+curl -s -H "x-goog-api-key: $JULES_API_KEY" \
+  "https://jules.googleapis.com/v1alpha/sessions?pageSize=1" | head -20
+```
+
+### Common Setup (Both Paths)
+
+#### Auto-Detect Repo
 ```bash
 git remote get-url origin 2>/dev/null | sed -E 's#.*(github\.com)[/:]([^/]+/[^/.]+)(\.git)?#\2#'
 ```
 If not GitHub or not in git repo → ask user for `--repo owner/repo`
 
-### 4. Verify Repo Connected
+#### Verify Repo Connected
 Check repo is in `jules remote list --repo`. If not → direct to https://jules.google.com
 
-## Commands
+## Commands (CLI)
 
 ### Create Tasks
 ```bash
@@ -62,6 +90,66 @@ LATEST=$(jules remote list --session 2>/dev/null | awk 'NR==2 {print $1}')
 jules remote pull --session $LATEST
 ```
 
+## Commands (API)
+
+### Create a Task
+```bash
+curl -s -X POST "https://jules.googleapis.com/v1alpha/sessions" \
+  -H "x-goog-api-key: $JULES_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Fix auth bug",
+    "prompt": "Fix the authentication timeout issue in src/auth.ts",
+    "sourceContext": {
+      "repository": "owner/repo",
+      "branchName": "main"
+    },
+    "automationMode": "AUTO_CREATE_PR",
+    "requirePlanApproval": false
+  }'
+```
+
+Key fields:
+- `prompt` — The task description (required)
+- `sourceContext.repository` — GitHub `owner/repo` (required)
+- `sourceContext.branchName` — Target branch (default: repo default)
+- `automationMode` — `"AUTO_CREATE_PR"` to auto-create PRs, omit for manual
+- `title` — Display name for the session
+- `requirePlanApproval` — `true` to pause for plan review before execution
+
+### List Sessions
+```bash
+curl -s -H "x-goog-api-key: $JULES_API_KEY" \
+  "https://jules.googleapis.com/v1alpha/sessions?pageSize=10"
+```
+
+### Get Session Status
+```bash
+curl -s -H "x-goog-api-key: $JULES_API_KEY" \
+  "https://jules.googleapis.com/v1alpha/sessions/SESSION_ID"
+```
+
+### Poll Until Complete (API)
+```bash
+SESSION_ID="<id>"
+while true; do
+  STATE=$(curl -s -H "x-goog-api-key: $JULES_API_KEY" \
+    "https://jules.googleapis.com/v1alpha/sessions/$SESSION_ID" \
+    | python3 -c "import sys,json; print(json.load(sys.stdin).get('state','UNKNOWN'))")
+  case "$STATE" in
+    COMPLETED)
+      echo "Done!"
+      break ;;
+    FAILED)
+      echo "Failed. Check: https://jules.google.com/session/$SESSION_ID"
+      break ;;
+    *)
+      echo "State: $STATE - waiting 30s..."
+      sleep 30 ;;
+  esac
+done
+```
+
 ## Smart Context Injection
 
 Enrich prompts with current context for better results:
@@ -73,9 +161,21 @@ RECENT_COMMITS=$(git log --oneline -5 | tr '\n' '; ')
 STAGED=$(git diff --cached --name-only | tr '\n' ', ')
 ```
 
-**Use when creating tasks:**
+**Use when creating tasks (CLI):**
 ```bash
 jules new --repo owner/repo "Fix the bug in auth module. Context: branch=$BRANCH, recently modified: $RECENT_FILES"
+```
+
+**Use when creating tasks (API):**
+```bash
+curl -s -X POST "https://jules.googleapis.com/v1alpha/sessions" \
+  -H "x-goog-api-key: $JULES_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d "{
+    \"prompt\": \"Fix the bug in auth module. Context: branch=$BRANCH, recently modified: $RECENT_FILES\",
+    \"sourceContext\": {\"repository\": \"owner/repo\", \"branchName\": \"$BRANCH\"},
+    \"automationMode\": \"AUTO_CREATE_PR\"
+  }"
 ```
 
 ## Template Prompts
@@ -127,7 +227,7 @@ git push -u origin "jules/$SESSION_ID"
 gh pr create --title "$TASK_DESC" --body "Automated changes from Jules session $SESSION_ID"
 ```
 
-## Poll Until Complete
+## Poll Until Complete (CLI)
 
 Wait for session to finish:
 
@@ -198,3 +298,4 @@ Create in repo root to improve Jules results:
 - **No CLI cancel** → Use web UI to cancel
 - **GitHub only** → GitLab/Bitbucket not supported
 - **AGENTS.md** → Jules reads from repo root for context
+- **API vs CLI** → Use API (`JULES_API_KEY`) for headless/agent automation; use CLI for interactive sessions

@@ -18,7 +18,6 @@ Find exploitable vulnerabilities in GitHub Actions workflows. Every finding MUST
 This skill encodes attack patterns from real GitHub Actions exploits — not generic CI/CD theory.
 
 ## When to Use
-
 - You are reviewing GitHub Actions workflows for exploitable security issues.
 - The task requires tracing a concrete attack path from an external attacker to workflow execution or secret exposure.
 - You need a security review of workflow files, composite actions, or workflow-related scripts with evidence-based findings only.
@@ -192,3 +191,8 @@ If any link is broken, mark MEDIUM (needs verification) or drop the finding.
 ````
 
 If no findings: "No exploitable vulnerabilities identified. All workflows reviewed and cleared."
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

@@ -1,7 +1,7 @@
 ---
 name: war-room
 description: "Convene a multi-LLM expert panel to pressure-test high-stakes decisions and build consensus through structured deliberation."
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 # Custom metadata (not used by Claude for matching):
 model_preference: claude-opus-4

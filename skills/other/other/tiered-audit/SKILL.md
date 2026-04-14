@@ -1,7 +1,7 @@
 ---
 name: tiered-audit
 description: 'Audit a codebase using three escalation tiers: git history analysis, targeted deep-dives, and full codebase review with gating.'
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 category: audit
 tags:

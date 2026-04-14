@@ -1,6 +1,6 @@
 ---
 name: deepline-quickstart
-description: "Run a quick Deepline demo recipe to show the user how Deepline works."
+description: 'Run a quick Deepline demo recipe to show the user how Deepline works.'
 disable-model-invocation: false
 ---
 
@@ -34,7 +34,7 @@ deepline session output --csv <path> --label "Label for the table"
 ## Recipe 1 — Find CTOs at NY startups
 
 **Goal:** Find 5 CTOs at startups in New York with verified emails and LinkedIn profiles.
-**Data sources:** Dropleads (people search) + waterfall email enrichment via `person_linkedin_only_to_email_waterfall`.
+**Data sources:** Dropleads (people search) + waterfall email enrichment via `person_linkedin_to_email_waterfall`.
 
 **Steps:**
 
@@ -59,27 +59,28 @@ Note the output CSV path from the result.
 
 ### Step 2 — Waterfall enrich emails
 
-First, prep the name and LinkedIn columns the play expects:
+First, prep the name, LinkedIn, and domain columns the play expects:
 
 ```bash
 deepline enrich --input <csv_from_step_1> --in-place \
   --with '{"alias":"first_name","tool":"run_javascript","payload":{"code":"return (row[\"fullName\"]||\"\").trim().split(\" \")[0]||null;"}}' \
   --with '{"alias":"last_name","tool":"run_javascript","payload":{"code":"const parts=(row[\"fullName\"]||\"\").trim().split(\" \"); return parts.slice(1).join(\" \")||null;"}}' \
-  --with '{"alias":"linkedin_url","tool":"run_javascript","payload":{"code":"return row[\"linkedinUrl\"]||null;"}}'
+  --with '{"alias":"linkedin_url","tool":"run_javascript","payload":{"code":"return row[\"linkedinUrl\"]||null;"}}' \
+  --with '{"alias":"domain","tool":"run_javascript","payload":{"code":"const raw=row[\"companyDomain\"]||row[\"companyWebsite\"]||row[\"website\"]||null; if(!raw) return null; return String(raw).replace(/^https?:\\/\\//, \"\").replace(/^www\\./, \"\").replace(/\\/.*$/, \"\").trim()||null;"}}'
 ```
 
 Then run the waterfall play:
 
 ```bash
 deepline enrich --input <csv_from_step_1> --in-place \
-  --with '{"alias":"email","tool":"person_linkedin_only_to_email_waterfall","payload":{"linkedin_url":"{{linkedin_url}}","first_name":"{{first_name}}","last_name":"{{last_name}}"}}'
+  --with '{"alias":"email","tool":"person_linkedin_to_email_waterfall","payload":{"linkedin_url":"{{linkedin_url}}","first_name":"{{first_name}}","last_name":"{{last_name}}","domain":"{{domain}}"}}'
 ```
 
 Register the output CSV after this step.
 
 ### Step 3 — Display results
 
-Show a summary table: name, company, email, LinkedIn URL. Tell the user emails were filled via waterfall enrichment across Dropleads, Deepline Native, Crustdata, and PDL. Mention they can go deeper — phone, firmographics, job change signals — with `/gtm-meta-skill`.
+Show a summary table: name, company, email, LinkedIn URL. Tell the user emails were filled via the dedicated LinkedIn-to-email waterfall. Mention they can go deeper — phone, firmographics, job change signals — with `/gtm-meta-skill`.
 
 ### Fallback (if Step 1 errors)
 
@@ -90,7 +91,7 @@ deepline tools execute apollo_search_people_with_match --payload '{
   "person_titles": ["CTO", "Chief Technology Officer"],
   "person_seniorities": ["c_suite"],
   "person_locations": ["New York, New York, United States"],
-  "organization_num_employees_ranges": ["1,200"],
+  "organization_num_employees_ranges": ["1-200"],
   "include_similar_titles": true,
   "per_page": 5,
   "page": 1
@@ -100,4 +101,5 @@ deepline tools execute apollo_search_people_with_match --payload '{
 ### Last resort
 
 If all commands fail, tell the user, then invoke `/gtm-meta-skill`:
+
 > Find 5 CTOs at startups in New York with their emails and LinkedIn profiles.

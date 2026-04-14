@@ -162,6 +162,10 @@ If any task is missing its file manifest, auto-generate it before Step 2:
 
 Once all tasks have manifests, proceed to Step 2 where the Pre-Spawn Conflict Check enforces file ownership.
 
+### Step 1.6: Advisory Bead Clustering
+
+When tasks come from bd and `scripts/bd-cluster.sh` exists, run `scripts/bd-cluster.sh --json 2>/dev/null || true` before Step 2. Summarize any clusters as consolidation hints only; never run `--apply` here, and keep Step 2's file-manifest and dependency gates authoritative.
+
 ### Step 2: Identify Wave
 
 **Pre-Spawn Friction Gates:** Before spawning workers, execute all 6 friction gates (base sync, file manifest, dependency graph, misalignment breaker, wave cap, base-SHA ancestry). See `references/pre-spawn-friction-gates.md`.

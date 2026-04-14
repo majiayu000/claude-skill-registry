@@ -1,8 +1,8 @@
 {
   "category": "testing",
   "code": "tst",
-  "count": 6730,
-  "updated_at": "2026-04-13T02:08:34.277461Z",
+  "count": 6732,
+  "updated_at": "2026-04-14T02:09:04.715160Z",
   "skills": [
     {
       "name": "frontend-testing",
@@ -34779,6 +34779,23 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "playwright-skill",
+      "description": "Browser automation with Playwright - Claude writes and executes custom scripts",
+      "repo": "lackeyjb/playwright-skill",
+      "path": "skills/playwright-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "playwright",
+        "browser",
+        "automation",
+        "testing"
+      ],
+      "stars": 0,
+      "install": "lackeyjb/playwright-skill/skills/playwright-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "specification-writer",
       "description": "Use this skill proactively to write and revise feature specifications",
       "repo": "JohnStrunk/CommonCast",
@@ -52642,6 +52659,24 @@
       "stars": 0,
       "install": "chrislemke/stoffy/.claude/skills/african-ubuntu",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "ios-simulator-skill",
+      "description": "iOS Simulator automation for testing with semantic navigation and Xcode integration",
+      "repo": "conorluddy/ios-simulator-skill",
+      "path": "ios-simulator-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "ios",
+        "simulator",
+        "xcode",
+        "testing",
+        "mobile"
+      ],
+      "stars": 0,
+      "install": "conorluddy/ios-simulator-skill/ios-simulator-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "dom-reader",

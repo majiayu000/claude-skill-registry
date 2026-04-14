@@ -9,6 +9,10 @@ description: This skill should be used when building web components, pages, arti
 
 Build frontend interfaces that are unmistakably *designed*, not generated. Every interface should feel like a specific designer made specific choices for a specific context.
 
+## Context Protocol
+
+Before designing, check for `.design-context.md` in the project root. If absent and this is a new project, run `/shape` for a full design brief — or ask the user directly: who uses this, what should it feel like, what should it NOT look like. Don't infer audience from code — code tells you what was built, not who it's for.
+
 ## Creative Direction
 
 Name the conceptual direction before coding—"Bloomberg Terminal," "medical journal," "zine collage," "VHS dreamworld." The name anchors every subsequent decision.
@@ -25,9 +29,13 @@ Typography carries the design's voice—it should have weight you can feel. Defa
 
 Massive editorial typography—oversized display type at 6xl-9xl, ghost numbers behind content, typographic strikethrough—signals authority. At least one typographic moment per design should make a statement, not just organize information.
 
+Treat Inter, Roboto, Arial, Open Sans, Lato, and Montserrat as the model's reflexive defaults—skip them entirely. Typefaces like Fraunces, Playfair Display, DM Sans, and Space Grotesk are genuinely well-made, but they've become the second reflex: what the model reaches for when told to avoid defaults. The goal is a typeface that belongs to *this* project and no other—dig into foundry catalogs (Pangram Pangram, Velvetyne, ABC Dinamo, Future Fonts, Klim) until you find one recognizable in silhouette.
+
 ## Color
 
 Color sets the room's temperature. Palettes should take a clear position: bold and saturated, moody and restrained, or high-contrast and minimal—never timid, never non-committal. Lead with a dominant color, punctuate with sharp accents. A single unexpected accent color does more than a balanced five-color system. Never pure black—pure black creates harsh contrast that flattens depth. Use rich off-blacks (zinc-950, deep navy). Tint shadows to the background hue. Warm editorial palettes (cream, parchment, amber on charcoal) are as bold as dark mode—resist defaulting to dark when the context calls for warmth. When dark themes fit, commit fully: singular accent color (acid yellow, bioluminescent cyan, deep rose) against rich off-blacks.
+
+Use OKLCH not HSL—it's perceptually uniform. Tint neutrals toward brand hue (even 0.005 chroma). Derive theme from viewing context: trading terminal → dark, hospital portal → light, children's app → light, motorcycle forum at 9pm → dark. Don't default to either—the correct theme is the one the actual user wants in their actual context.
 
 ## Motion
 
@@ -52,6 +60,10 @@ Instead: distinctive fonts that take a position. Bold, committed palettes. Asymm
 
 Resist the first satisfying idea. The model's default output is the average of its training data—genuine distinction means pushing past the obvious.
 
+Two CSS patterns are absolute bans on cards, callouts, and alerts:
+- On cards/callouts/alerts, never use `border-left:` or `border-right:` with width > 1px as an accent stripe (the single most overused AI design tell—rewrite with background tints, full borders, or no indicator at all)
+- Never use `background-clip: text` combined with any gradient background (gradient text is decorative, not meaningful—use solid color, emphasize with weight or size instead)
+
 ## Craft
 
 Match implementation complexity to the aesthetic vision. Maximalist designs demand elaborate code. Minimalist designs demand obsessive restraint. Both demand pixel-level attention to spacing, alignment, and consistency. Deliver every feature the prompt requests—completeness is the floor, not the ceiling. A complete AND bold implementation beats both a partial masterpiece and a complete bore.
@@ -62,11 +74,11 @@ Claude is capable of extraordinary, award-worthy creative work. The person who s
 
 After building, run these refinement passes in order:
 
-1. **Audit**: Check against `references/anti-patterns.md` + domain-specific impeccable refs below. Score 5 dimensions (a11y, performance, responsive, theming, anti-patterns) 0-4 each. Tag issues P0-P3 per `references/heuristics-scoring.md`.
-2. **Critique**: UX review using `references/heuristics-scoring.md` (Nielsen's 10 heuristics, score 0-4 each, /40). Assess cognitive load via `references/cognitive-load.md` (8-item checklist). Test with 2-3 personas from `references/personas.md`. Run the AI Slop Test: if someone said "AI made this," would they believe it immediately? If yes, fix it.
+1. **Audit** (or `/design-audit`): Check against `references/anti-patterns.md` + domain-specific impeccable refs below. Score 5 dimensions (a11y, performance, responsive, theming, anti-patterns) 0-4 each. Tag issues P0-P3 per `references/heuristics-scoring.md`.
+2. **Critique** (or `/design-critique`): UX review using `references/heuristics-scoring.md` (Nielsen's 10 heuristics, score 0-4 each, /40). Assess cognitive load via `references/cognitive-load.md` (8-item checklist). Test with 2-3 personas from `references/personas.md`. Run the AI Slop Test: if someone said "AI made this," would they believe it immediately? If yes, fix it.
 3. **Normalize**: Align with project design system if `.design-context.md` or `DESIGN.md` exists in project root. Treat their tokens (colors, fonts, spacing) as materials, not a recipe—creative direction from above still leads.
-4. **Harden**: Test edge cases -- long text overflow, RTL, empty states, error states, i18n, keyboard navigation.
-5. **Polish**: Final pass -- alignment, spacing, interaction states, transitions, micro-copy. Every pixel intentional.
+4. **Harden**: Test edge cases—long text overflow, RTL, empty states, error states, i18n, keyboard navigation.
+5. **Polish** (or `/design-polish`): Final pass—alignment, spacing, interaction states, transitions, micro-copy. Every pixel intentional.
 
 ## References
 

@@ -1,7 +1,7 @@
 ---
 name: doc-consolidation
 description: 'Merge report and analysis artifacts into permanent docs, then delete source files'
-version: 1.7.1
+version: 1.8.4
 globs: "**/*.md"
 alwaysApply: false
 category: documentation

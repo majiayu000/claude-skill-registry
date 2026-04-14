@@ -69,7 +69,7 @@ done > /tmp/paper_full_text.txt
 
 ### Step 2: Round 1 Review
 
-Send the full paper text to GPT-5.4 xhigh:
+Send the full paper text AND compiled PDF to GPT-5.4 xhigh:
 
 ```
 mcp__codex__codex:
@@ -78,8 +78,12 @@ mcp__codex__codex:
   prompt: |
     You are reviewing a [VENUE] paper. Please provide a detailed, structured review.
 
-    ## Full Paper Text:
-    [paste concatenated sections]
+    ## Paper Files:
+    - LaTeX source: [list all section .tex files]
+    - Compiled PDF: paper/main.pdf
+    - Figures: [list figure files]
+
+    Read BOTH the LaTeX source (for content/logic) AND the compiled PDF (for visual presentation).
 
     ## Review Instructions
     Please act as a senior ML reviewer ([VENUE] level). Provide:
@@ -89,10 +93,16 @@ mcp__codex__codex:
     4. **Weaknesses** (bullet list, ranked: CRITICAL > MAJOR > MINOR)
     5. **For each CRITICAL/MAJOR weakness**: A specific, actionable fix
     6. **Missing References** (if any)
-    7. **Verdict**: Ready for submission? Yes / Almost / No
+    7. **Visual Review** (from the PDF):
+       - Figure quality: readable? labels legible? colors distinguishable in grayscale?
+       - Figure-caption alignment: does each caption match its figure?
+       - Layout: orphaned headers, awkward page breaks, figures far from references?
+       - Table formatting: aligned columns, consistent decimals, bold for best results?
+       - Visual consistency: same color scheme across all figures?
+    8. **Verdict**: Ready for submission? Yes / Almost / No
 
     Focus on: theoretical rigor, claims vs evidence alignment, writing clarity,
-    self-containedness, notation consistency.
+    self-containedness, notation consistency, AND visual presentation quality.
 ```
 
 Save the threadId for Round 2.
@@ -137,6 +147,9 @@ Parse the review and implement fixes by severity:
 | Notation confusion | Rename conflicting symbols globally, add Notation paragraph |
 | Missing references | Add to `references.bib`, cite in appropriate locations |
 | Theory-practice gap | Explicitly frame theory as idealized; add synthetic validation subsection |
+| Proof gap (theory papers) | Run `/proof-checker` if PROOF_AUDIT.md doesn't exist yet; fix FATAL/CRITICAL issues |
+| Writing clutter / passive voice | Apply sciwrite 5-pass audit: clutter extraction → active voice → sentence architecture → keyword consistency → numerical integrity. See `paper-write` Step 5 |
+| Keyword inconsistency | The "Banana Rule": if Methods says "obese group", Results must not say "heavier group". Extract key terms, verify consistency across all sections |
 
 ### Step 4: Recompile Round 1
 

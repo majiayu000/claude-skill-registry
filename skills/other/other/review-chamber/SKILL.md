@@ -1,7 +1,7 @@
 ---
 name: review-chamber
 description: Capture and retrieve PR review knowledge in project memory palaces.
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 usage_patterns:
 - capture-review: After PR review completion, capture significant findings

@@ -1,7 +1,7 @@
 ---
 name: architecture-paradigm-hexagonal
 description: 'Hexagonal (Ports and Adapters) architecture isolating domain logic from infrastructure.'
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 category: architectural-pattern
 tags:
@@ -62,15 +62,3 @@ estimated_tokens: 1200
   - **Mitigation**: If a port's interface exposes details about the transport layer (e.g., HTTP headers), it is a "leaky abstraction." Refactor these interfaces to use domain-centric Data Transfer Objects (DTOs) instead.
 - **Adapter Drift**:
   - **Mitigation**: An adapter can become out-of-sync with the external technology it represents (e.g., database schema changes). Schedule regular, automated validation of adapters, such as verifying that SQL migrations still align with the expectations of the persistence port.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

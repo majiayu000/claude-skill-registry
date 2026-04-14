@@ -170,6 +170,27 @@ Invoke `/paper-compile` to build the PDF:
 Shall I proceed with the improvement loop?
 ```
 
+### Phase 4.5: Proof Verification (theory papers only)
+
+**Skip this phase if the paper contains no theorems, lemmas, or proofs.**
+
+```
+if paper contains \begin{theorem} or \begin{lemma} or \begin{proof}:
+    Run /proof-checker "paper/"
+    This invokes GPT-5.4 xhigh to:
+    - Verify all proof steps (hypothesis discharge, interchange justification, etc.)
+    - Check for logic gaps, quantifier errors, missing domination conditions
+    - Attempt counterexamples on key lemmas
+    - Generate PROOF_AUDIT.md with issue list + severity
+
+    If FATAL or CRITICAL issues found:
+        Fix before proceeding to improvement loop
+    If only MAJOR/MINOR:
+        Proceed, improvement loop may address remaining issues
+else:
+    skip — no proofs, no action
+```
+
 ### Phase 5: Auto Improvement Loop
 
 Invoke `/auto-paper-improvement-loop` to polish the paper:
@@ -236,6 +257,13 @@ Invoke `/auto-paper-improvement-loop` to polish the paper:
 - [ ] Add any missing manual figures
 - [ ] Submit to [venue] via OpenReview / CMT / HotCRP
 ```
+
+## Output Protocols
+
+> Follow these shared protocols for all output files:
+> - **[Output Versioning Protocol](../shared-references/output-versioning.md)** — write timestamped file first, then copy to fixed name
+> - **[Output Manifest Protocol](../shared-references/output-manifest.md)** — log every output to MANIFEST.md
+> - **[Output Language Protocol](../shared-references/output-language.md)** — note: paper-writing always outputs English LaTeX for venue submission
 
 ## Key Rules
 

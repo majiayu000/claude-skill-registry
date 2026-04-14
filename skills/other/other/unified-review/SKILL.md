@@ -1,11 +1,7 @@
 ---
 name: unified-review
-description: 'Use this skill when orchestrating multiple review types. Use when general
-  review needed without knowing which specific skill applies, full multi-domain review
-  desired, integrated reporting needed. Do not use when specific review type known
-  - use bug-review, test-review, etc. DO NOT use when: architecture-only focus - use
-  architecture-review.'
-version: 1.7.1
+description: 'Orchestrate multiple review types into a single multi-domain review with integrated reporting'
+version: 1.8.4
 alwaysApply: false
 category: orchestration
 tags:
@@ -38,6 +34,7 @@ orchestrates:
 - pensive:test-review
 - pensive:makefile-review
 - pensive:math-review
+- imbue:justify
 ---
 ## Table of Contents
 
@@ -110,6 +107,7 @@ Intelligently selects and executes appropriate review skills based on codebase a
 | Mathematical algorithms | math-review, bug-review | Numerical computation |
 | Architecture docs/ADRs | architecture-review, api-review | System design |
 | General code quality | bug-review, test-review | Default review |
+| Post-implementation audit | imbue:justify | High add/delete ratio, test changes, new abstractions |
 
 ## Workflow
 

@@ -1,17 +1,7 @@
 ---
 name: document-conversion
-description: >-
-  Universal document-to-markdown conversion with tiered
-  fallback. Wraps MCP markitdown when available, degrades
-  to native Claude Code tools, then informs the user.
-
-  document conversion, markitdown, pdf, docx, pptx, format
-
-  Use when: any workflow needs to convert files or URLs
-  to markdown for LLM consumption
-
-  DO NOT use when: content is already markdown or plain text
-version: 1.7.1
+description: 'Document-to-markdown conversion with tiered fallback: MCP markitdown, native tools, or user notice'
+version: 1.8.4
 alwaysApply: false
 category: infrastructure
 tags:

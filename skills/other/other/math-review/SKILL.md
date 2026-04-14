@@ -1,10 +1,7 @@
 ---
 name: math-review
-description: 'Use this skill for mathematical code verification. Use when reviewing
-  math-heavy code, verifying algorithm correctness, checking numerical stability,
-  aligning with mathematical standards. Do not use when general algorithm review -
-  use architecture-review. DO NOT use when: performance optimization - use parseltongue:python-performance.'
-version: 1.7.1
+description: 'Verify math-heavy code for algorithm correctness, numerical stability, and standards alignment'
+version: 1.8.4
 alwaysApply: false
 category: specialized
 tags:
@@ -164,15 +161,3 @@ Approve / Approve with actions / Block
 ## Exit Criteria
 
 - Context synced, requirements mapped, derivations verified, stability assessed, evidence logged with citations
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

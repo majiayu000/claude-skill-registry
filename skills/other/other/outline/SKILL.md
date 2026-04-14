@@ -120,6 +120,7 @@ python3 scripts/outline.py read <id> --json
 | OUTLINE_API_KEY | Yes | - | Your Outline API token |
 | OUTLINE_API_URL | No | https://app.getoutline.com/api | API URL |
 | OUTLINE_TIMEOUT | No | 30 | Request timeout (seconds) |
+| OUTLINE_VERIFY_SSL | No | true | Set to `false` to skip SSL verification (for self-hosted instances with self-signed certs) |
 
 ## Troubleshooting
 
@@ -128,6 +129,7 @@ python3 scripts/outline.py read <id> --json
 | API key not configured | Set OUTLINE_API_KEY environment variable |
 | Authentication failed | Verify API key is valid and not expired |
 | Connection timeout | Check OUTLINE_API_URL and network connectivity |
+| SSL certificate error | Set `OUTLINE_VERIFY_SSL=false` for self-signed certs |
 | Document not found | Verify document ID is correct |
 | Permission denied | Check API token has required permissions |
 

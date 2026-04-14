@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-13T02:08:32.130403Z",
+  "updated_at": "2026-04-14T02:09:02.206155Z",
   "categories": [
     {
       "name": "adb-meta-automation",
@@ -57,6 +57,11 @@
       "count": 2
     },
     {
+      "name": "business",
+      "code": "oth",
+      "count": 1
+    },
+    {
       "name": "business-monetization",
       "code": "oth",
       "count": 1
@@ -84,7 +89,7 @@
     {
       "name": "data",
       "code": "dat",
-      "count": 46565
+      "count": 46566
     },
     {
       "name": "data-access",
@@ -94,7 +99,7 @@
     {
       "name": "design",
       "code": "des",
-      "count": 9502
+      "count": 9503
     },
     {
       "name": "design-principles",
@@ -104,7 +109,7 @@
     {
       "name": "development",
       "code": "dev",
-      "count": 19698
+      "count": 19699
     },
     {
       "name": "development-code",
@@ -119,7 +124,7 @@
     {
       "name": "devops",
       "code": "ops",
-      "count": 5322
+      "count": 5323
     },
     {
       "name": "docs",
@@ -134,7 +139,7 @@
     {
       "name": "documents",
       "code": "doc",
-      "count": 3269
+      "count": 3272
     },
     {
       "name": "domains",
@@ -204,7 +209,12 @@
     {
       "name": "marketing",
       "code": "mkt",
-      "count": 453
+      "count": 454
+    },
+    {
+      "name": "messaging",
+      "code": "oth",
+      "count": 1
     },
     {
       "name": "meta",
@@ -219,7 +229,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 130868
+      "count": 131000
     },
     {
       "name": "performance",
@@ -229,7 +239,7 @@
     {
       "name": "personal-development",
       "code": "oth",
-      "count": 11
+      "count": 12
     },
     {
       "name": "planning",
@@ -249,7 +259,7 @@
     {
       "name": "productivity",
       "code": "pro",
-      "count": 1980
+      "count": 1985
     },
     {
       "name": "programming-languages",
@@ -334,7 +344,7 @@
     {
       "name": "testing",
       "code": "tst",
-      "count": 6730
+      "count": 6732
     },
     {
       "name": "testing-methodologies",

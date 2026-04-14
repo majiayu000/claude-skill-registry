@@ -6,7 +6,7 @@ description: >-
   session and merges new findings into it. Use after a
   /tome:research session completes to explore areas of
   interest.
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 category: research
 tags:

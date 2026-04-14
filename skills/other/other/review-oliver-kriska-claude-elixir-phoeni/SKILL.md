@@ -30,82 +30,57 @@ explain issues — do NOT create tasks or fix anything.
 
 ### Step 1: Identify Changed Files and Prepare Directories
 
-**CRITICAL**: Create output dirs BEFORE spawning agents — agents
-cannot create directories and will fail repeatedly on writes.
+**CRITICAL**: Create output dirs BEFORE spawning agents — agents cannot
+create directories and writes will fail.
 
-Determine SLUG from the most recent plan directory (use Glob on `.claude/plans/*/`), default to `"review"`.
-Run `mkdir -p ".claude/plans/${SLUG}/reviews" ".claude/plans/${SLUG}/summaries"` and `mkdir -p .claude/reviews`.
+1. Determine SLUG via Glob on `.claude/plans/*/` (default: `"review"`)
+2. Run `mkdir -p ".claude/plans/${SLUG}/reviews" ".claude/plans/${SLUG}/summaries" .claude/reviews`
+3. Run `git diff --name-only HEAD~5` and `git diff --name-only main`
+4. Save the diff base for pre-existing detection in Step 3b
 
-Then run `git diff --name-only HEAD~5` and `git diff --name-only main` to identify changed files. Save the diff base for pre-existing detection in Step 3b.
+### Step 1b: Load Plan Context and Prior Reviews
 
-### Step 1b: Load Plan Context (Scratchpad)
+- Read `.claude/plans/${SLUG}/scratchpad.md` for planning decisions and rationale
+- Pass relevant decisions to agents as WHY-context (eliminates session archaeology)
+- Check `.claude/plans/${SLUG}/reviews/` for prior output; if present, include a
+  consolidated summary as "PRIOR FINDINGS" with: "Focus on NEW issues. Mark
+  still-present issues as PERSISTENT."
 
-If reviewing a plan, read `.claude/plans/${SLUG}/scratchpad.md` for
-planning decisions, rationale, and handoff notes. Include relevant
-decisions in each agent's prompt so they have context about WHY
-code was written a certain way. This eliminates session archaeology.
+### Step 2: Spawn Review Agents (MANDATORY)
 
-### Step 1c: Check Prior Reviews
+**NEVER** spawn the same agent role twice per review. One pass per role.
+**NEVER** analyze code yourself — use the Agent tool only. Zero agents = failure.
 
-If `.claude/plans/${SLUG}/reviews/` has prior output, include consolidated
-summary in each agent's prompt as "PRIOR FINDINGS" with instruction:
-"Focus on NEW issues. Mark still-present issues as PERSISTENT."
-
-### Step 2: Create Task List and Spawn Review Agents (MANDATORY)
-
-**NEVER spawn the same agent role twice in one review.** If reviewing
-a plan, scope ALL agents to the plan's changed files in a single pass.
-Do NOT run a scoped review followed by a broader review — one pass per role.
-
-**Create a Claude Code task per agent** (TaskCreate + TaskUpdate to in_progress) BEFORE spawning.
-Spawn agents using the Agent tool — do NOT analyze code yourself.
-
-**For `/phx:review` or `/phx:review all` — select agents dynamically
-based on the diff, then spawn selected agents in ONE message (parallel):**
-
-| Agent | subagent_type | When to spawn |
-|-------|---------------|---------------|
-| Elixir Reviewer | `elixir-phoenix:elixir-reviewer` | **Always** |
-| Iron Law Judge | `elixir-phoenix:iron-law-judge` | Only if >200 lines changed AND auth/LiveView/Oban files in diff. **Skip** if PostToolUse hooks already verified all files (hooks check Iron Laws on every Edit/Write) |
-| Verification Runner | `elixir-phoenix:verification-runner` | Only if `mix test` has NOT been run in this session. **Skip** if `/phx:work` just passed all verification tiers |
-| Security Analyzer | `elixir-phoenix:security-analyzer` | Auth/session/password/token files changed |
-| Testing Reviewer | `elixir-phoenix:testing-reviewer` | Test files changed OR new public functions |
-| Oban Specialist | `elixir-phoenix:oban-specialist` | Worker files changed (*_worker.ex) |
-| Deploy Validator | `elixir-phoenix:deployment-validator` | Dockerfile/fly.toml/runtime.exs changed |
-
-**Agent count**: Min 1, max 5. For <200 lines changed: spawn only
-elixir-reviewer + security-analyzer (if auth files). Log selection
-rationale in review output.
-Spawn with `mode: "bypassPermissions"` and `run_in_background: true`.
-
-**For focused reviews — spawn the specified agent only:**
-
-| Argument | subagent_type |
-|----------|---------------|
-| `test` | `elixir-phoenix:testing-reviewer` |
-| `security` | `elixir-phoenix:security-analyzer` |
-| `oban` | `elixir-phoenix:oban-specialist` |
-| `deploy` | `elixir-phoenix:deployment-validator` |
-| `iron-laws` | `elixir-phoenix:iron-law-judge` |
-
-Zero agents spawned = skill failure.
-
-### Step 2b: Scope Agents to the Diff (MANDATORY)
-
-Include `git diff --name-only` in each agent's prompt. Add instruction:
-"Focus on NEW code from the diff. Pre-existing issues get one line:
-'Pre-existing: {file}:{line} — {brief}'. Do NOT deep-analyze unchanged files."
+1. Create a Claude Code task per agent via `TaskCreate` and `TaskUpdate` to `in_progress`
+2. For `/phx:review` or `/phx:review all`: select agents dynamically per the
+   selection table in `${CLAUDE_SKILL_DIR}/references/agent-spawning.md`
+3. For focused reviews (`test|security|oban|deploy|iron-laws`): spawn only the
+   matching specialist from the focused mode table in the same reference
+4. Spawn in ONE message with `mode: "bypassPermissions"` and `run_in_background: true`
+5. **MANDATORY**: pass explicit `output_file` per-agent (mapping in the reference)
+6. Include the CRITICAL prompt block: write by turn ~12, chat body ≤300 words
+7. Scope every agent to the diff: pass `git diff --name-only` output with
+   "Focus on NEW code. Pre-existing: one-line `{file}:{line} — {brief}`. Do
+   NOT deep-analyze unchanged files."
 
 ### Step 3: Collect and Compress Findings
 
-Wait for ALL agents to FULLY complete. **Do NOT report status
-until every agent completes.** Mark each agent's Claude Code task
-as `completed` via `TaskUpdate` as it finishes.
+Wait for ALL agents to complete. **Do NOT report status until every agent
+completes.** Mark each task `completed` via `TaskUpdate` as it finishes.
 
-**Verification-runner fallback**: If it fails/times out, run directly:
+**Missing file fallback** — after each agent finishes, verify its expected
+`output_file` exists. If missing (turn exhaustion, error):
+
+1. Append to `.claude/plans/{slug}/scratchpad.md`:
+   `[HH:MM] WARN: {agent} did not write {expected_path} — extracting from message`
+2. Parse findings from the agent's return message as fallback
+3. Mark the section in the final review with
+   `⚠️ EXTRACTED FROM AGENT MESSAGE (see scratchpad)` — never silent
+
+**Verification-runner fallback** — if it times out, run directly:
 `mix compile --warnings-as-errors && mix format --check-formatted $(git diff --name-only HEAD~5 | grep '\.exs\?$' | tr '\n' ' ') && mix credo --strict && mix test`
 
-**For 4+ agents:** Spawn `elixir-phoenix:context-supervisor` to compress output:
+**Context supervision** — for 4+ agents, spawn `elixir-phoenix:context-supervisor`:
 
 ```
 Prompt: "Compress review agent output.
@@ -118,8 +93,7 @@ Prompt: "Compress review agent output.
     flag same code, keep iron-law-judge finding."
 ```
 
-**For focused reviews (1 agent):** Skip supervisor, read
-agent output directly.
+Skip the supervisor for focused (1-agent) reviews — read output directly.
 
 ### Step 3b: Filter Findings (Anti-Noise)
 

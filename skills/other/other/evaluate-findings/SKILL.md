@@ -5,7 +5,7 @@ description: "Critically assess external feedback (code reviews, AI reviewers, P
 
 # Evaluate Findings
 
-Assess external feedback (code reviews, AI suggestions, PR comments) with adversarial verification. Triage findings into binary verdicts. Do not apply fixes.
+Assess external feedback (code reviews, AI suggestions, PR comments) with adversarial verification. Triage findings into actionable verdicts. Do not apply fixes.
 
 ## Step 1: Assess Each Finding
 
@@ -19,7 +19,20 @@ For each finding:
    - Pre-existing issues in earlier commits on the same feature branch are in-scope by default — the entire branch is one coherent unit of work.
    - Out-of-scope findings that are genuinely useful and have low blast radius should be accepted. Only skip out-of-scope findings when the change is disproportionate to the current work.
 4. **Verify the claim** against the actual code — does the issue genuinely exist?
-5. **Assign a verdict and confidence:**
+5. **Assess severity:**
+
+   | Severity | Meaning |
+   |----------|---------|
+   | **Critical** | Drop everything. Blocking release or operations. |
+   | **High** | Urgent. Should be addressed in the next cycle. |
+   | **Medium** | Normal. To be fixed eventually. |
+   | **Low** | Nice to have. Minor improvement. |
+
+   If the upstream reviewer already assigned a priority (P0-P3), map it: P0→Critical, P1→High, P2→Medium, P3→Low. Then re-assess based on what the actual code reveals. The upstream level is a starting point, not a binding constraint. When the re-assessed severity differs from the upstream level, note the change and the reason.
+
+   If the finding has no upstream priority, assess severity from scratch.
+
+6. **Assign a verdict and confidence:**
 
 | Verdict | Criteria |
 |---------|----------|
@@ -72,9 +85,9 @@ The subagent returns per finding:
 
 Merge subagent results with the initial assessment:
 
-- **Confirmed**: verdict stands. Note the evidence source.
-- **Disputed**: if originally Apply, downgrade to Skip or Escalate. Show both perspectives.
-- **Inconclusive**: verdict stands, note the uncertainty.
+- **Confirmed**: verdict and severity stand. Note the evidence source.
+- **Disputed**: if originally Apply, downgrade to Skip or Escalate. Re-assess severity if the evidence changes the impact picture. Show both perspectives.
+- **Inconclusive**: verdict and severity stand, note the uncertainty.
 
 Findings not investigated by the subagent keep their original verdict.
 
@@ -84,13 +97,20 @@ For Apply findings, document the issue and location. For Escalate findings, note
 
 Summarize the evaluated findings in a table:
 
-| File | Issue | Verdict | Investigated |
-|------|-------|---------|--------------|
+| File | Issue | Source | Severity | Verdict |
+|------|-------|--------|----------|---------|
+
+When Step 2 ran (any finding was investigated by the Devil's Advocate subagent), add an Investigated column:
+
+| File | Issue | Source | Severity | Verdict | Investigated |
+|------|-------|--------|----------|---------|--------------|
 
 Where Investigated shows:
 - *(empty)* — not investigated by subagent
 - **Confirmed** (source) — subagent found supporting evidence
 - **Disputed: [reason]** — subagent found counter-evidence
+
+For findings whose severity was re-assessed from the upstream level, append the change in the Severity cell (e.g., "High (was Medium)").
 
 For disputed findings, add a callout below the table showing both perspectives. For each finding, indicate scope in the Issue column (e.g., "Pre-existing:" prefix).
 

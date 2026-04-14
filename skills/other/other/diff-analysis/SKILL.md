@@ -1,7 +1,7 @@
 ---
 name: diff-analysis
 description: 'Analyze changesets with risk scoring, categorization by type/impact, and release note preparation'
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 category: analysis-methods
 tags:

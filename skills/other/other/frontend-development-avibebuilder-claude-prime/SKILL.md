@@ -1,57 +1,66 @@
 ---
 name: frontend-development
-description: "Frontend implementation patterns, conventions, and tooling. Use this skill when creating components, building pages, implementing forms, fetching data, styling UI, organizing frontend code, or configuring frontend tooling (Biome, ESLint, Prettier, linting, formatting). Covers file structure, component patterns, state management, data fetching, and code quality tools."
+description: "Use this skill for ANY work involving React, Next.js, TypeScript, or Tailwind in the browser layer. This includes building components and pages, but equally covers debugging and fixing frontend issues: CSS/Tailwind classes not applying, form validation behavior, hydration mismatches between server and client renders, styling bugs, layout shifts, and rendering problems. Also use for refactoring components (e.g., splitting Server vs Client Components), data fetching patterns, state management, bundle optimization, and frontend tooling. If the problem involves what users see or interact with in a web browser — whether building, fixing, or refactoring — use this skill. Not for backend APIs, databases, infrastructure, or DevOps."
 ---
 
 # Frontend Development
 
-Active workflow knowledge for building frontend applications with React, Next.js, TypeScript, Tailwind, and frontend tooling (Biome, ESLint, Prettier).
+Project-specific patterns for React/Next.js/TypeScript frontend work.
 
-##  Core Principles (See detailed in references)
+## Architecture Decisions
 
-### 1. Server-First Architecture
-Start with Server Components. Only add `'use client'` when you need interactivity, state, or browser APIs. Keep client boundaries as small as possible—extract only the interactive leaf, not the entire page.
+### Server-First Boundaries
+Start with Server Components. Only add `'use client'` when you need interactivity, state, or browser APIs. Extract only the interactive leaf — not the entire page or section.
 
-### 2. Colocation Over Centralization
-Keep code close to where it's used. Types, hooks, and utilities that serve one feature live in that feature's directory. Only truly shared code goes in global directories. This reduces cognitive load and makes features self-contained.
+### Colocation Over Centralization
+Types, hooks, and utilities that serve one feature live in that feature's directory. Only truly shared code goes in global directories.
 
-### 3. Searchable, Specific Naming
-Every file should be findable with a single grep. Use `login-form.tsx` not `form.tsx`. Use `user-profile-types.ts` not `types.ts`. Generic names create needle-in-haystack problems at scale.
+### Composition Over Customization
+Compose existing components rather than adding props/variants. shadcn/ui components are meant to be copied and modified. Build up from primitives.
 
-### 4. Composition Over Customization
-Prefer composing existing components over adding props/variants. shadcn/ui components are meant to be copied and modified—don't fight against this. Build up from primitives rather than configuring monoliths.
+### Data Flows Down, Events Flow Up
+Server fetches data and passes it as props. Client components handle interactions and call server actions. Never fetch in client components what could be fetched on the server.
 
-### 5. Data Flows Down, Events Flow Up
-Server fetches data and passes it as props. Client components handle interactions and call server actions or mutations. Never fetch in client components what could be fetched on the server.
+## Gotchas
+
+- `'use client'` does NOT mean "runs only in the browser" — it runs on the server during SSR too. It means "include in the client bundle." Putting secrets or DB calls in a `'use client'` file will leak them.
+- Importing a Server Component into a Client Component makes it a Client Component. The boundary propagates DOWN. Pass server content as `children` props instead.
+- `useEffect` with empty deps fires AFTER paint — use `useLayoutEffect` for DOM measurements that affect layout, but never in Server Components.
+- Next.js `fetch()` caches by default in App Router. Add `{ cache: 'no-store' }` or `revalidate: 0` for data that must be fresh. Forgetting this causes stale data bugs that only appear in production.
+- Tailwind classes are purged at build time — dynamically constructed class names like `` bg-${color}-500 `` will be missing. Use complete class names or safelist them.
+- `key` prop on mapped elements must be stable and unique. Using array index as key causes subtle bugs when list items are reordered, inserted, or deleted.
+- `useSearchParams()` requires a `<Suspense>` boundary in Next.js App Router or the entire page becomes client-rendered.
+- shadcn/ui components are source code, not a library. After `npx shadcn-ui add`, the component lives in YOUR codebase — modify it directly, don't wrap it.
+- React Hook Form's `register()` returns a ref — don't also pass your own `ref` to the same input without merging them.
+- `async` Server Components that throw `redirect()` or `notFound()` must NOT be wrapped in try/catch — these work by throwing special errors that Next.js catches upstream.
 
 ## Quick Start
 
-1. **Check file structure first** - Does the project use Next.js App Router or plain React?
-2. **Identify the feature boundary** - What feature does this work belong to?
-3. **Start with Server Component** - Only add `'use client'` when you hit a wall
-4. **Name files specifically** - Would grep find this file uniquely?
-5. **Match existing patterns** - Look at 2-3 similar files before creating new ones
+1. **Check file structure** — App Router or plain React? Check references below.
+2. **Identify the feature boundary** — What feature does this work belong to?
+3. **Start with Server Component** — Only add `'use client'` when you hit a wall
+4. **Name files specifically** — `login-form.tsx` not `form.tsx`. Must be grep-findable.
+5. **Match existing patterns** — Read 2-3 similar files before creating new ones
 
 ## References
 
-| Topic | Entry Point |
-|-------|-------------|
-| **Conventions** | [conventions.md](./references/conventions.md) |
-| **Next.js** | [overview.md](./references/nextjs/overview.md) |
-| **React** | [overview.md](./references/react/overview.md) |
-| **TypeScript** | [typescript.md](./references/typescript.md) |
-| **shadcn/ui + Dice UI** | [shadcn.md](./references/shadcn.md) |
-| **Tailwind** | [tailwind.md](./references/tailwind.md) |
-| **Data Fetching** | [overview.md](./references/data-fetching/overview.md) |
-| **Biome** | [biome.md](./references/biome.md) |
-| **Browser Testing** | Use browser skill to verify frontend work in a real browser |
+| When you need... | Read |
+|------------------|------|
+| File naming, imports, exports | [conventions.md](./references/conventions.md) |
+| Next.js App Router patterns | [overview.md](./references/nextjs/overview.md) |
+| React component patterns | [overview.md](./references/react/overview.md) |
+| TypeScript project patterns | [typescript.md](./references/typescript.md) |
+| shadcn/ui + Dice UI usage | [shadcn.md](./references/shadcn.md) |
+| Tailwind configuration | [tailwind.md](./references/tailwind.md) |
+| Data fetching (tRPC, TanStack, axios) | [overview.md](./references/data-fetching/overview.md) |
+| Biome/linter config | [biome.md](./references/biome.md) |
 
 ## Official Resources
 
-For framework knowledge beyond project-specific patterns, use `/docs-seeker` or consult:
+For general framework docs beyond project-specific patterns, consult:
 
-| Framework | Documentation |
-|-----------|--------------|
+| Framework | URL |
+|-----------|-----|
 | Next.js | https://nextjs.org/docs |
 | React | https://react.dev |
 | TypeScript | https://www.typescriptlang.org/docs |

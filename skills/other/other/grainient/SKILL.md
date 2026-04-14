@@ -1,12 +1,12 @@
 ---
 name: grainient
-description: "16 composable dark-mode visual effects as reusable single-file HTML pages: WebGL2 shader gradients (aurora/nebula via GLSL simplex noise FBM), cinematic vignette overlays, 9-layer box shadow systems, Lenis-style smooth scroll (vanilla JS lerp), spring animations (cubic-bezier presets), hover-zoom reveals, vertical ticker marquees, glassmorphism (backdrop-filter blur tiers), 3D perspective card flips, bento grids, gradient CTAs, SVG gradient icons, inset borders, grid pattern overlays, custom scrollbars, and responsive clamp typography. Dark-mode-first with lime green (#C2F13C) accent, --grn-* CSS custom property system. This skill should be used when building dark-mode landing pages, product showcases, SaaS marketing sites, or any UI needing cinematic depth, glow effects, or dark-on-dark elevation."
+description: "Recreate grainient.supply's 16 visual effects as reusable single-file HTML pages: WebGL shader gradients (aurora/nebula), cinematic vignette overlays, 9-layer box shadow systems, Lenis-style smooth scroll, spring animations, hover-zoom reveals, vertical ticker marquees, glassmorphism, 3D card flips, bento grids, gradient CTAs, SVG gradient icons, inset borders, grid pattern overlays, custom scrollbars, and responsive clamp typography. Dark-mode-first with lime green (#C2F13C) accent. This skill should be used when building dark-mode landing pages, product showcases, SaaS marketing sites, or any UI needing cinematic depth, glow effects, or the grainient visual language."
 argument-hint: [--mode hero|bento|ticker|page|catalog] [description or effect name]
 ---
 
 # Grainient Effects Skill
 
-16 composable dark-mode effects spanning WebGL2 shaders, CSS surfaces, JS-driven motion, and layout patterns. Single-file HTML output, no build step, no framework dependencies.
+Recreate the visual vocabulary of [grainient.supply](https://grainient.supply/) — 16 composable dark-mode effects spanning WebGL shaders, CSS surfaces, JS-driven motion, and layout patterns. No Framer dependency. Single-file HTML output.
 
 ## Quick Start
 
@@ -191,8 +191,8 @@ Load on-demand when implementing specific effects:
 ## Cross-Skill Relationships
 
 - **rocaille-shader**: Cross-ref for Three.js shader path. Grainient owns CSS/surface effects, not shader pipelines.
-- **minoan-frontend-design**: Broader creative direction. Grainient provides the dark-mode cinematic vocabulary.
+- **minoan-frontend-design**: Broader creative direction. Grainient provides grainient.supply's specific vocabulary.
 
 ## Attribution
 
-Techniques derived from the Framer/WebGL dark-mode SaaS landing page pattern. Underlying technologies reimplemented from first principles: WebGL2 + GLSL simplex noise (Inigo Quilez), Lenis-style smooth scroll (vanilla JS), Framer Motion spring presets (CSS cubic-bezier approximations), glassmorphism (CSS backdrop-filter), multi-layer box shadow elevation (dark-on-dark depth).
+Effects deconstructed from [grainient.supply](https://grainient.supply/) (Framer, Apr 2026). Technologies: UnicornStudio (WebGL), Lenis (smooth scroll), Framer Motion (spring animations), @shadergradient/react (shader gradient subdomain).

@@ -1,7 +1,7 @@
 ---
 name: code-refinement
 description: 'Improve code quality: duplication, efficiency, clean code, architectural fit, and error handling'
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 category: code-quality
 tags:
@@ -35,6 +35,7 @@ modules:
 - modules/algorithm-efficiency.md
 - modules/clean-code-checks.md
 - modules/architectural-fit.md
+- modules/insight-generation.md
 ---
 ## Table of Contents
 

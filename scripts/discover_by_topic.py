@@ -8,6 +8,7 @@ import os
 import json
 import time
 import logging
+from collections import defaultdict
 import requests
 from datetime import datetime
 from pathlib import Path
@@ -65,6 +66,54 @@ class GitHubTopicDiscovery:
 
         self.discovered_repos = set()
         self.skills = []
+        self.repo_candidates = {}
+        self.path_candidates = {}
+        self.topic_stats = defaultdict(
+            lambda: {"repo_hits": 0, "repo_selected": 0, "downloaded_skills": 0}
+        )
+        self.code_query_stats = defaultdict(
+            lambda: {"repo_hits": 0, "path_hits": 0, "downloaded_skills": 0}
+        )
+
+    def _ensure_repo_candidate(self, repo: str) -> dict:
+        candidate = self.repo_candidates.get(repo)
+        if candidate is None:
+            candidate = {
+                "candidate_level": "repo",
+                "repo": repo,
+                "topics": [],
+                "code_queries": [],
+                "topic_hits": 0,
+                "code_hits": 0,
+                "max_stars": 0,
+                "selected_for_scan": False,
+                "downloaded_skills": 0,
+            }
+            self.repo_candidates[repo] = candidate
+        return candidate
+
+    def _ensure_path_candidate(self, repo: str, path: str) -> dict:
+        key = f"{repo}:{path}"
+        candidate = self.path_candidates.get(key)
+        if candidate is None:
+            candidate = {
+                "candidate_level": "path",
+                "repo": repo,
+                "path": path,
+                "code_queries": [],
+                "discovered_via_code_search": False,
+                "discovered_via_repo_scan": False,
+                "downloaded": False,
+            }
+            self.path_candidates[key] = candidate
+        return candidate
+
+    @staticmethod
+    def _append_unique(items: list[str], value: str) -> bool:
+        if value in items:
+            return False
+        items.append(value)
+        return True
 
     @staticmethod
     def _is_skill_md_path(path: str) -> bool:
@@ -127,9 +176,15 @@ class GitHubTopicDiscovery:
 
                 for repo in items:
                     full_name = repo['full_name']
+                    stars = int(repo.get('stargazers_count') or 0)
+                    candidate = self._ensure_repo_candidate(full_name)
+                    candidate["topic_hits"] += 1
+                    candidate["max_stars"] = max(candidate["max_stars"], stars)
+                    if self._append_unique(candidate["topics"], topic):
+                        self.topic_stats[topic]["repo_hits"] += 1
                     if full_name not in self.discovered_repos:
                         self.discovered_repos.add(full_name)
-                        logger.info(f"  Found: {full_name} ({repo.get('stargazers_count', 0)} stars)")
+                        logger.info(f"  Found: {full_name} ({stars} stars)")
                         if self.max_repos and len(self.discovered_repos) >= self.max_repos:
                             logger.info(
                                 f"Reached max repos limit ({self.max_repos}) during topic discovery"
@@ -177,6 +232,15 @@ class GitHubTopicDiscovery:
                     path = item['path']
                     if not self._is_skill_md_path(path):
                         continue
+
+                    candidate = self._ensure_repo_candidate(repo)
+                    candidate["code_hits"] += 1
+                    if self._append_unique(candidate["code_queries"], query):
+                        self.code_query_stats[query]["repo_hits"] += 1
+                    path_candidate = self._ensure_path_candidate(repo, path)
+                    path_candidate["discovered_via_code_search"] = True
+                    if self._append_unique(path_candidate["code_queries"], query):
+                        self.code_query_stats[query]["path_hits"] += 1
 
                     if repo not in self.discovered_repos:
                         self.discovered_repos.add(repo)
@@ -286,7 +350,95 @@ class GitHubTopicDiscovery:
 
         return False
 
-    def run(self, output_dir='skills', output_json='sources/discovered.json'):
+    def _write_candidates_jsonl(self, output_path: str, discovered_at: str, repos_to_scan: list[str]) -> int:
+        path = Path(output_path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        selected = set(repos_to_scan)
+        written = 0
+        with path.open("w", encoding="utf-8") as handle:
+            for repo in sorted(self.repo_candidates):
+                item = dict(self.repo_candidates[repo])
+                item["discovered_at"] = discovered_at
+                item["candidate_key"] = f"repo:{repo}"
+                item["selected_for_scan"] = repo in selected
+                handle.write(json.dumps(item, ensure_ascii=False) + "\n")
+                written += 1
+            for key in sorted(self.path_candidates):
+                item = dict(self.path_candidates[key])
+                item["discovered_at"] = discovered_at
+                item["candidate_key"] = f"path:{item['repo']}:{item['path']}"
+                handle.write(json.dumps(item, ensure_ascii=False) + "\n")
+                written += 1
+        return written
+
+    def _update_priors(self, priors_path: str, discovered_at: str, repos_to_scan: list[str]) -> None:
+        path = Path(priors_path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        if path.exists():
+            try:
+                priors = json.loads(path.read_text(encoding="utf-8"))
+            except Exception:
+                priors = {}
+        else:
+            priors = {}
+
+        repo_priors = priors.setdefault("repo_priors", {})
+        topic_yield = priors.setdefault("topic_yield", {})
+        query_yield = priors.setdefault("query_yield", {})
+        priors["version"] = 1
+        priors["runs"] = int(priors.get("runs", 0)) + 1
+        priors["updated_at"] = discovered_at
+
+        selected = set(repos_to_scan)
+        for repo, record in self.repo_candidates.items():
+            repo_state = repo_priors.setdefault(
+                repo,
+                {
+                    "seen_runs": 0,
+                    "selected_runs": 0,
+                    "downloaded_skills": 0,
+                    "topic_hits": 0,
+                    "code_hits": 0,
+                    "max_stars": 0,
+                    "last_seen_at": "",
+                },
+            )
+            repo_state["seen_runs"] += 1
+            if repo in selected:
+                repo_state["selected_runs"] += 1
+            repo_state["downloaded_skills"] += int(record.get("downloaded_skills") or 0)
+            repo_state["topic_hits"] += int(record.get("topic_hits") or 0)
+            repo_state["code_hits"] += int(record.get("code_hits") or 0)
+            repo_state["max_stars"] = max(repo_state["max_stars"], int(record.get("max_stars") or 0))
+            repo_state["last_seen_at"] = discovered_at
+
+        for topic, stats in self.topic_stats.items():
+            topic_state = topic_yield.setdefault(
+                topic,
+                {"repo_hits": 0, "repo_selected": 0, "downloaded_skills": 0},
+            )
+            topic_state["repo_hits"] += int(stats.get("repo_hits") or 0)
+            topic_state["repo_selected"] += int(stats.get("repo_selected") or 0)
+            topic_state["downloaded_skills"] += int(stats.get("downloaded_skills") or 0)
+
+        for query, stats in self.code_query_stats.items():
+            query_state = query_yield.setdefault(
+                query,
+                {"repo_hits": 0, "path_hits": 0, "downloaded_skills": 0},
+            )
+            query_state["repo_hits"] += int(stats.get("repo_hits") or 0)
+            query_state["path_hits"] += int(stats.get("path_hits") or 0)
+            query_state["downloaded_skills"] += int(stats.get("downloaded_skills") or 0)
+
+        path.write_text(json.dumps(priors, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+    def run(
+        self,
+        output_dir='skills',
+        output_json='sources/discovered.json',
+        candidates_output='sources/learning/discovery_candidates.jsonl',
+        priors_output='sources/learning/discovery_priors.json',
+    ):
         """Run full discovery pipeline"""
         output_dir = Path(output_dir)
         output_dir.mkdir(parents=True, exist_ok=True)
@@ -310,23 +462,36 @@ class GitHubTopicDiscovery:
         logger.info(f"Scanning {len(repos_to_scan)} repositories for SKILL.md files")
 
         for repo in repos_to_scan:
+            repo_candidate = self._ensure_repo_candidate(repo)
+            repo_candidate["selected_for_scan"] = True
+            for topic in repo_candidate["topics"]:
+                self.topic_stats[topic]["repo_selected"] += 1
             logger.info(f"Scanning {repo}...")
             skill_files = self.get_skill_files_from_repo(repo)
 
             for skill in skill_files:
+                path_candidate = self._ensure_path_candidate(repo, skill["path"])
+                path_candidate["discovered_via_repo_scan"] = True
                 if self.download_skill(repo, skill['path'], output_dir):
                     downloaded += 1
                     self.skills.append({
                         'repo': repo,
                         'path': skill['path'],
                     })
+                    repo_candidate["downloaded_skills"] += 1
+                    path_candidate["downloaded"] = True
+                    for topic in repo_candidate["topics"]:
+                        self.topic_stats[topic]["downloaded_skills"] += 1
+                    for query in repo_candidate["code_queries"]:
+                        self.code_query_stats[query]["downloaded_skills"] += 1
                     logger.info(f"  ✓ Downloaded: {skill['path']}")
 
         # Save discovery results
+        discovered_at = datetime.utcnow().isoformat() + 'Z'
         Path(output_json).parent.mkdir(parents=True, exist_ok=True)
         with open(output_json, 'w', encoding='utf-8') as f:
             json.dump({
-                'discovered_at': datetime.utcnow().isoformat() + 'Z',
+                'discovered_at': discovered_at,
                 'total_repos': len(self.discovered_repos),
                 'total_skills': len(self.skills),
                 'scanned_repos': len(repos_to_scan),
@@ -341,10 +506,19 @@ class GitHubTopicDiscovery:
                 'skills': self.skills,
             }, f, indent=2, ensure_ascii=False)
 
+        candidates_written = self._write_candidates_jsonl(
+            candidates_output,
+            discovered_at,
+            repos_to_scan,
+        )
+        self._update_priors(priors_output, discovered_at, repos_to_scan)
+
         logger.info(f"\n=== Summary ===")
         logger.info(f"Repositories discovered: {len(self.discovered_repos)}")
         logger.info(f"Skills downloaded: {downloaded}")
+        logger.info(f"Candidate records written: {candidates_written}")
         logger.info(f"Results saved to: {output_json}")
+        logger.info(f"Priors saved to: {priors_output}")
 
         return self.skills
 
@@ -385,6 +559,16 @@ def main():
         default=2.0,
         help='Delay (seconds) between GitHub API requests (default: 2.0)',
     )
+    parser.add_argument(
+        '--candidates-output',
+        default='sources/learning/discovery_candidates.jsonl',
+        help='JSONL output path for candidate-level discovery events',
+    )
+    parser.add_argument(
+        '--priors-output',
+        default='sources/learning/discovery_priors.json',
+        help='JSON output path for aggregated discovery priors',
+    )
 
     args = parser.parse_args()
 
@@ -396,7 +580,12 @@ def main():
         skip_code_search=args.skip_code_search,
         request_delay=args.request_delay,
     )
-    discoverer.run(output_dir=args.output, output_json=args.json)
+    discoverer.run(
+        output_dir=args.output,
+        output_json=args.json,
+        candidates_output=args.candidates_output,
+        priors_output=args.priors_output,
+    )
 
 
 if __name__ == '__main__':

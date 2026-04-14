@@ -1,150 +1,52 @@
 ---
 name: docs-seeker
-description: "Fetch up-to-date library and framework documentation into AI context. Use when looking up docs, finding feature-specific references, or discovering documentation sources for any library, framework, or tool."
+description: "Fetch up-to-date documentation for any library, framework, API, or service into context. Use when the user wants to look up API references, check function signatures or required fields, find feature-specific docs, or verify how an external tool actually works. Triggers for queries about third-party libraries like Stripe, SQLAlchemy, Tailwind, FastAPI, shadcn, Drizzle, Hono, Better Auth — any time the answer lives in official docs rather than in the project codebase. Use this instead of guessing from trained knowledge, which is stale."
 ---
 
-Think harder.
+## Why fetch instead of recall
 
-## Role
+Trained knowledge rots. Library APIs rename fields, deprecate hooks, restructure auth flows, and change defaults between minor versions. Answering from memory is how you get confidently wrong code. Replace memory with retrieval — cheaply, from sources designed for AI consumption.
 
-You are a documentation hunter. Fetch the most relevant, up-to-date docs into context using the fastest available source.
+## The source hierarchy (and why)
 
-## Source Priority Chain
+Prefer sources in this order. The ranking is about *signal per token*, not just availability.
 
-Try sources in this order — stop at the first that works:
+1. **`llms.txt` on the official docs site** — hand-curated by the project, AI-optimized, token-dense, always current. This is the ideal source when it exists. Try `{official-docs-url}/llms.txt` first for any library with a docs site; many projects ship one even if they don't advertise it. If `llms.txt` is just an index of links, follow the most relevant ones. `llms-full.txt` exists on some sites and contains the full corpus — only reach for it when the user explicitly wants comprehensive docs, since it's large.
 
-| Priority | Source | Speed | When to use |
-|----------|--------|-------|-------------|
-| 1 | Direct llms.txt | Fastest | Library has known official llms.txt |
-| 2 | Context7 | Fast | Any library with a GitHub repo |
-| 3 | GitMCP | Fast | Any GitHub repo (URL swap) |
-| 4 | WebSearch | Slower | Last resort fallback |
+2. **Context7** — a mirror that ingests GitHub repos and exposes them at `https://context7.com/{org}/{repo}/llms.txt`, with optional `?topic={keyword}` filtering. Use this when the project has no official `llms.txt`, or when you want to scope to one feature. The `{org}/{repo}` path mirrors GitHub exactly — derive it from the user's `package.json`, imports, lockfile, or the project's GitHub URL rather than guessing. For docs sites without a clear repo, Context7 also hosts `https://context7.com/websites/{normalized-path}/llms.txt`.
 
-## URL Patterns
+3. **GitMCP** — any GitHub repo is accessible by swapping `github.com` → `gitmcp.io` in the URL. Useful when Context7 doesn't have the repo indexed, or when you need source-of-truth README/examples straight from the repo.
 
-**Direct llms.txt:**
-```
-{official-site}/llms.txt
-{official-site}/llms-full.txt
-```
+4. **WebSearch** — last resort. Slower, noisier, and you'll spend tokens filtering results. Only fall here when the three structured sources all miss. When you do search, query for `"{library} llms.txt"` first — it often surfaces an official or community-maintained one.
 
-**Context7 (GitHub repos):**
-```
-https://context7.com/{org}/{repo}/llms.txt
-https://context7.com/{org}/{repo}/llms.txt?topic={keyword}
-```
+On any 404, timeout, or empty response: move to the next tier immediately. Never retry a failed source.
 
-**Context7 (websites):**
-```
-https://context7.com/websites/{normalized-path}/llms.txt
-```
+## Topic scoping
 
-**GitMCP (any GitHub repo):**
-```
-Replace github.com → gitmcp.io in any repo URL
-https://gitmcp.io/{org}/{repo}
-```
+When the user's query targets a specific feature (e.g., "shadcn date picker", "Next.js middleware", "Stripe webhooks"), append `?topic={keyword}` to the Context7 URL to narrow the fetch. Pick a short root keyword that captures the feature — judgment call, no rigid rules. The goal is fewer tokens, higher relevance. If the topic URL returns nothing useful, drop the topic and try the general URL.
 
-## Known Direct llms.txt Sites
+## Reading the docs you find
 
-| Library | URL |
-|---------|-----|
-| Astro | https://docs.astro.build/llms.txt |
-| Drizzle | https://orm.drizzle.team/llms.txt |
-| Hono | https://hono.dev/llms.txt |
-| Langchain | https://python.langchain.com/llms.txt |
-| Next.js | https://nextjs.org/llms.txt |
-| Remix | https://remix.run/llms.txt |
-| Stripe | https://docs.stripe.com/llms.txt |
-| Supabase | https://supabase.com/llms.txt |
-| SvelteKit | https://svelte.dev/llms.txt |
-| Tailwind CSS | https://tailwindcss.com/llms.txt |
-| Vercel | https://vercel.com/llms.txt |
+Once you have URLs, the question is how to read them without polluting the main context.
 
-When a site isn't listed, try `{official-docs-url}/llms.txt` before falling back — many sites support it.
+- **A handful of small pages, or content the orchestrator clearly needs verbatim**: read directly with `WebFetch`. Fast, simple, no overhead.
+- **Many pages, or large pages where you only need specific answers**: fan out to parallel subagents, each reading a subset and returning a condensed summary. This protects the main context window from doc bloat and parallelizes I/O. Use judgment on fan-out count — a couple for moderate sets, more for large ones. The tradeoff is latency/tokens vs. main-context pollution; lean toward subagents whenever the raw docs would be noisy relative to what the orchestrator actually needs.
 
-## Known Repository Mappings
+When delegating to subagents, tell them exactly what question to answer and what to return (e.g., "return the exact signature and required fields for `stripe.webhooks.constructEvent`, plus any version notes") — not "summarize these docs". Specific asks give specific answers.
 
-| Query term | Context7 path |
-|------------|---------------|
-| next.js / nextjs | vercel/next.js |
-| astro | withastro/astro |
-| remix | remix-run/remix |
-| shadcn / shadcn/ui | shadcn-ui/ui |
-| better-auth | better-auth/better-auth |
-| drizzle | drizzle-team/drizzle-orm |
-| hono | honojs/hono |
-| tanstack query | TanStack/query |
-| tanstack router | TanStack/router |
-| zustand | pmndrs/zustand |
-| zod | colinhacks/zod |
-| trpc | trpc/trpc |
-| prisma | prisma/prisma |
-| playwright | microsoft/playwright |
-| langchain | langchain-ai/langchain |
-| fastapi | fastapi/fastapi |
+## Version awareness
 
-## Topic Keyword Extraction
+Before fetching, check what version the project actually uses — `package.json`, `requirements.txt`, `go.mod`, lockfiles. Fetching the latest docs when the project is pinned two majors behind is a common way to hand back wrong answers. If a version-specific doc path exists (e.g., `/v2/llms.txt`, `/docs/4.x/`), prefer it.
 
-When the query targets a specific feature, extract a topic keyword:
+## Gotchas
 
-- Lowercase the keyword
-- Use the root word: "date picker" → `date`, "caching strategies" → `caching`
-- Drop generic suffixes: "OAuth setup" → `oauth`
-- Max 20 characters
-
-**Examples:**
-```
-"shadcn date picker"       → topic=date,   path=shadcn-ui/ui
-"Next.js middleware"        → topic=middleware, path=vercel/next.js
-"Better Auth OAuth"         → topic=oauth,  path=better-auth/better-auth
-"Stripe webhooks"           → topic=webhook, path=stripe (direct site)
-```
-
-## Process
-
-1. **Identify** the library/framework from the query
-2. **Try direct llms.txt** if the site is in the known list (or guess `{docs-url}/llms.txt`)
-3. **Try Context7 with topic** if the query targets a specific feature
-4. **Try Context7 general** if no topic or topic URL 404s
-5. **Try GitMCP** if the GitHub repo is known
-6. **WebSearch** `"{library} llms.txt"` as last resort
-7. **Read docs** with WebFetch — deploy parallel subagents for large sets
-
-## Reading Strategy
-
-| URLs returned | Strategy |
-|---------------|----------|
-| 1-3 URLs | Read directly with WebFetch |
-| 4-7 URLs | Launch 3 parallel subagents |
-| 8+ URLs | Launch 5-7 parallel subagents |
-
-When distributing to agents, categorize URLs:
-- **Critical**: Getting started, core API, main concepts
-- **Important**: Guides, configuration, common patterns
-- **Supplementary**: Advanced topics, edge cases, migration
-
-## Fallback Chain
-
-```
-Topic URL (404?) → General URL (404?) → Direct site llms.txt (404?) → GitMCP (404?) → WebSearch
-```
-
-- On 404: move to next source immediately
-- On timeout: move to next source immediately
-- On empty response: move to next source immediately
-- Never retry a failed source
-
-## Edge Cases
-
-- **Version-specific docs**: Search `"{library} v{version} llms.txt"` or try `/{version}/llms.txt`
-- **Multi-language docs**: Try `llms-{lang}.txt` (e.g., `llms-es.txt`), fall back to English
-- **Framework + plugins**: Focus on core first, ask user which plugins matter
+- **Don't fabricate.** If every source misses, say so clearly and ask the user for a URL or a different approach. A made-up API signature is worse than "I couldn't find it."
+- **Don't over-fetch.** The orchestrator asked a question; pull what answers it, not the entire manual. Every token you add competes for attention downstream.
+- **Don't trust your own cache.** If you recall that a library's docs live at a certain URL, verify — sites reorganize. A fresh fetch beats a confident memory.
+- **Report what you used.** When you hand results back, note which source succeeded (llms.txt / Context7 / GitMCP / WebSearch) and the URLs fetched. This lets the orchestrator judge freshness and lets the user follow up.
 
 ## Constraints
 
-- Use WebFetch to read URLs — not MCP servers
-- Topic detection is your job — apply judgment, no regex needed
-- Prefer llms.txt over llms-full.txt unless the user wants comprehensive docs
-- Always report which source succeeded and how many docs were fetched
-- If all sources fail, say so clearly — don't fabricate documentation
+- Use `WebFetch` to read URLs. Do not invoke MCP servers for this.
+- Prefer `llms.txt` over `llms-full.txt` unless comprehensive docs are explicitly requested.
+- Never retry a failed source — move down the tier list.

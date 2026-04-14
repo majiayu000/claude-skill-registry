@@ -412,7 +412,9 @@ If any rule row has an empty Justification column, mark the plan output as **INC
 
 #### File-Level Dependency Matrix (Mandatory)
 
-Before assigning issues to waves, build a file-conflict matrix. For EACH issue, list which files it modifies. If any file appears in 2+ same-wave issues, either:
+Before assigning issues to waves, build a file-conflict matrix. For EACH issue, list every touched file it modifies or regenerates, not just the primary source files. The inventory must include tests, docs, schemas, fixtures, runtime copies, generated references, parity manifests, hash markers, lockfiles, and other generated artifacts. If an exact generated path is not known yet, assign the smallest owning glob to the issue and replace it with concrete paths before worker dispatch.
+
+If any file appears in 2+ same-wave issues, either:
 - **Serialize** them (move one to a later wave), or
 - **Merge** them into a single issue assigned to one worker.
 

@@ -5,7 +5,7 @@ description: 'Standardized error handling patterns with classification, recovery
 
 
   error handling, error recovery, graceful degradation, resilience.'
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 category: infrastructure
 tags:
@@ -176,15 +176,3 @@ dependencies: [leyline:error-patterns]
 - Appropriate recovery attempted
 - User-actionable message provided
 - Error logged for debugging
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

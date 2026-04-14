@@ -1,7 +1,7 @@
 ---
 name: digital-garden-cultivator
 description: 'Cultivate digital gardens: manage notes, link structures, knowledge bases, and garden health'
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 category: cultivation
 tags:

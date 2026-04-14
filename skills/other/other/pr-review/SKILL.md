@@ -1,7 +1,7 @@
 ---
 name: pr-review
 description: 'Scope-focused PR review with requirements validation and backlog triage'
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 category: review
 tags:
@@ -33,6 +33,7 @@ modules:
 - modules/pr-hygiene.md
 - modules/version-validation.md
 - modules/pr-hygiene.md
+- modules/insight-generation.md
 dependencies:
 - leyline:git-platform
 - sanctum:shared

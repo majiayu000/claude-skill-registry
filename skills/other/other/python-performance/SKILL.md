@@ -1,7 +1,7 @@
 ---
 name: python-performance
 description: 'Python performance profiling and optimization: bottleneck detection, memory tuning, benchmarking'
-version: 1.7.1
+version: 1.8.4
 globs: "**/*.py"
 alwaysApply: false
 category: performance

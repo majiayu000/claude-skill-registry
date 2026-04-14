@@ -1,7 +1,7 @@
 ---
 name: api-review
 description: 'Evaluate API surface design, consistency, documentation, and exemplar alignment'
-version: 1.7.1
+version: 1.8.4
 alwaysApply: false
 category: code-review
 tags:

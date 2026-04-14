@@ -1,72 +1,57 @@
 ---
 name: fix
-description: "Debug and fix issues. Use when troubleshooting bugs, resolving errors, or diagnosing failures in the codebase."
+description: "Fix bugs and broken behavior when there is enough evidence to act on a repair path. Use for errors, crashes, incorrect results, API failures (500, 404, 403), CORS problems, database exceptions, broken rendering, duplicated or wrong data, off-by-one mistakes, timezone/date bugs, broken forms, config-caused runtime failures, and regressions. Trigger when the user wants the bug repaired and the conversation already contains a clear failing area, a reproducible failing test, a concrete error path, or a prior diagnosis to implement. Do NOT use for new features, pure explanation, architecture discussion, broad research, or bug reports where the main need is figuring out why the behavior happens — use diagnose for that."
 argument-hint: issue
 ---
 
 Think harder.
-
-## Role
-
-You are a root cause fixer. Assess evidence, fix what's clear, and escalate to `/debug` when it's not.
+Remove the cause with the smallest change that actually proves the behavior is corrected. Do not make the symptom disappear by force and call that done.
 
 ## Process
 
 Check conversation context and skip completed steps.
 
-### 1. Triage
+### 1. Read the bug, then choose the lane
 
-Assess whether there is enough evidence to fix directly:
+Read the symptom, expected behavior, errors, logs, failing tests, and any prior diagnosis. Separate confirmed facts from guesses. Then route:
 
-| Signal | Action |
-|--------|--------|
-| Clear error message + obvious code bug (typo, wrong variable, missing null check) | Fix directly — skip to step 3 |
-| Code looks correct but behavior is wrong | Invoke `/debug` first |
-| Vague symptoms, no clear error path | Invoke `/debug` first |
-| Diagnosis already exists in context (from prior `/debug`) | Use existing diagnosis — proceed to step 2 |
+| Situation | Action |
+|-----------|--------|
+| Clear root cause or one strongly evidenced failing area | Stay in `/fix` |
+| One narrow check would remove the last uncertainty | Do that check inside `/fix`, then commit to a lane |
+| Multiple plausible causes, unclear failing area, or needs runtime instrumentation | Switch to `/diagnose` first |
+| Bug is understood but multiple defensible fixes with real tradeoffs | Switch to `/discuss` |
 
-**If you're about to guess, stop and debug instead.**
+If you're about to add a speculative guard or workaround because the cause is still fuzzy, you're in the wrong lane. If evidence is insufficient, switch to `/diagnose` instead of guessing.
 
-### 2. Plan (if needed)
+**GATE**: If a plan was requested or produced, wait for user approval before implementation.
 
-- Execute `/give-plan` for multi-file or architectural fixes
-- Skip for obvious single-file bug fixes or simple tasks
+### 1.5 Reboot after 3 failed fix attempts
 
-**GATE**: User approves fix approach before implementation.
+After 3 substantive fix attempts that haven't resolved the bug, stop thrashing. Write a handoff note covering: bug context, confirmed evidence, files checked, each failed approach and why it failed, open questions, and most likely next diagnostic branch. Start a fresh Claude session with the handoff note (or give it to the user to paste). Repeated failures signal contaminated context or narrowed reasoning — a clean window gets fresh judgment. Let stop and enjoy the world, you just did the best thing bro!
 
-### 3. Fix
+### 2. Repair the cause
 
-- Apply minimal fix that addresses the root cause
-- Change only what's necessary
-- Follow existing code patterns
-- Do NOT remove any `#region agent log` instrumentation
+- Apply the smallest change that removes the root cause — correct the bad state transition, condition, query, or data flow rather than masking the symptom at the crash site
+- **Call-stack upstream rule**: When a function crashes on bad data (undefined, null, wrong type), trace back to where that data was produced or passed — fix the caller, not the victim. The crashing function's contract is intact; guarding inside it leaves the caller free to pass bad data everywhere else. Example: `applyDiscount(cart, coupon)` crashes when `coupon` is undefined → fix goes where `coupon` was looked up, not inside `applyDiscount`
+- Follow existing code patterns, keep scope tight, preserve debugging instrumentation until verification is complete
 
-### 4. Verify
+### 3. Verify with matching evidence
 
-Two-layer verification:
+Prove three things: (1) the reported failure is gone, (2) the changed path was actually exercised, (3) nearby behavior did not regress.
 
-- Execute `/test` to verify tests pass
-- If debug instrumentation exists: ask user to reproduce → read debug logs → confirm the runtime behavior has changed
-- **For frontend/UI fixes**: may use browser skill to verify
+Pick verification that matches the failure mode — a passing but unrelated check is not proof:
+- **Tests exist for this bug**: use `/test` to run them
+- **Gap worth covering**: add/update a test, then `/test`
+- **API/CLI bug**: reproduce the request, inspect output
+- **Frontend bug**: use `agent-browser` to verify; for visual criteria, capture and use `/media-processor`
+- **Type/schema/config**: run the focused checker that proves the fix
 
-**GATE**: Tests pass AND runtime evidence confirms fix (if instrumentation exists).
+### 4. Clean up
 
-### 5. Cleanup
+Remove temporary debugging artifacts (throwaway scripts, temp logs, `#region agent log` blocks from `/diagnose`) once verification passes. Keep durable tests and intentional logging.
 
-Review instrumentation left from debugging:
-
-- Search for all `#region agent log` / `#endregion` blocks
-- Remove temporary debug logs
-- If any reveal valuable observability gaps → suggest converting to proper logging (user decides)
-- Stop debug server if running
-- Delete debug log files
-
-## Constraints
-
-- Fix the actual cause, not symptoms
-- NO workarounds that mask problems
-- Don't refactor unrelated code
-- If evidence is insufficient, invoke `/debug` — don't guess
+**GATE**: Do not call the bug fixed until the evidence matches the report.
 
 ## Issue
 

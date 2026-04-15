@@ -41,7 +41,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `principles`, `cod
      - **DRY (1.1-1.10):** `audit_workspace(path=scan_path, verbosity="full")` -- each returned clone group = DRY candidate. Use clone kind and hotspot context for severity triage. Fall back to grep patterns if unavailable.
      - **KISS inheritance:** `find_implementations(symbol)` for abstract classes -- count implementations (1 = KISS candidate). Trace inheritance depth via graph.
      - **Complexity:** `audit_workspace(path=scan_path, verbosity="full")` -- use returned hotspots to pre-identify complex functions for KISS/quality analysis.
-     - **Outline-first read:** `outline(path)` before reading large source files -- understand structure before analyzing principles.
+     - **Outline-first read:** `outline(file_path)` before reading large source files -- understand structure before analyzing principles.
    - Follow step-by-step detection from `detection_patterns.md`
    - Apply exclusions from `detection_patterns.md#exclusions`
 4) **Analyze context per candidate (Layer 2)**

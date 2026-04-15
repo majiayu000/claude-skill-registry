@@ -127,7 +127,7 @@ Read `$CLAUDE_PLUGIN_ROOT/skills/tdd/references/tdd-worktree-orchestration.md` a
 ### Decompose into behaviors
 
 Break the user's description into small, individually testable behaviors. Each behavior should be:
-- **Observable** — it has a clear expected output or side effect
+- **Observable** — has a clear expected output or side effect; phrase as "When [input/action], then [outcome]" so success criteria are unambiguous (e.g., "handle errors" becomes "When the API returns 404, then return null and log a warning")
 - **Independent** — it can be tested and implemented without the other behaviors being done yet
 - **Small** — one test, one assertion focus (a test may have supporting assertions, but tests one thing)
 

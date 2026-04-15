@@ -99,7 +99,7 @@ Present the draft to the user. Use `AskUserQuestion` to offer three paths:
 
 After approval:
 
-> The spec is ready at the resolved spec path. To break it into plan shells, run `/draft-plan-shells`.
+> The spec is ready at the resolved spec path. To break it into shells, run `/draft-shells`.
 
 ## Rules
 

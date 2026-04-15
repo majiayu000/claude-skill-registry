@@ -38,11 +38,11 @@ Invoke the idea discovery pipeline:
 
 This internally runs: `/research-lit` → `/idea-creator` → `/novelty-check` → `/research-review`
 
-**Output:** `IDEA_REPORT.md` with ranked, validated, pilot-tested ideas.
+**Output:** `idea-stage/IDEA_REPORT.md` with ranked, validated, pilot-tested ideas.
 
 **🚦 Gate 1 — Human Checkpoint:**
 
-After `IDEA_REPORT.md` is generated, **pause and present the top ideas to the user**:
+After `idea-stage/IDEA_REPORT.md` is generated, **pause and present the top ideas to the user**:
 
 ```
 📋 Idea Discovery complete. Top ideas:
@@ -59,7 +59,7 @@ Recommended: Idea 1. Shall I proceed with implementation?
 - **Pick a different idea** → proceed with their choice.
 - **Request changes** (e.g., "combine Idea 1 and 3", "focus more on X") → update the idea prompt with user feedback, re-run `/idea-discovery` with refined constraints, and present again.
 - **Reject all ideas** → collect feedback on what's missing, re-run Stage 1 with adjusted research direction. Repeat until the user commits to an idea.
-- **Stop here** → save current state to `IDEA_REPORT.md` for future reference.
+- **Stop here** → save current state to `idea-stage/IDEA_REPORT.md` for future reference.
 
 **If AUTO_PROCEED=true:** Present the top ideas, wait 10 seconds for user input. If no response, auto-select the #1 ranked idea (highest pilot signal + novelty confirmed) and proceed to Stage 2. Log: `"AUTO_PROCEED: selected Idea 1 — [title]"`.
 
@@ -69,7 +69,7 @@ Recommended: Idea 1. Shall I proceed with implementation?
 
 Once the user confirms which idea to pursue:
 
-1. **Read the idea details** from `IDEA_REPORT.md` (hypothesis, experimental design, pilot code)
+1. **Read the idea details** from `idea-stage/IDEA_REPORT.md` (hypothesis, experimental design, pilot code) *(fall back to `./IDEA_REPORT.md` if not found)*
 
 2. **Implement the full experiment**:
    - Extend pilot code to full scale (multi-seed, full dataset, proper baselines)
@@ -119,7 +119,7 @@ Once initial results are in, start the autonomous improvement loop:
 3. Deploy fixes, collect new results
 4. Re-review → repeat until score ≥ 6/10 or 4 rounds reached
 
-**Output:** `AUTO_REVIEW.md` with full review history and final assessment.
+**Output:** `review-stage/AUTO_REVIEW.md` with full review history and final assessment.
 
 ### Stage 5: Final Summary
 
@@ -148,6 +148,13 @@ After the auto-review loop completes, write a final status report:
 ## Files Changed
 - [list of key files created/modified]
 ```
+
+## Output Protocols
+
+> Follow these shared protocols for all output files:
+> - **[Output Versioning Protocol](../../shared-references/output-versioning.md)** — write timestamped file first, then copy to fixed name
+> - **[Output Manifest Protocol](../../shared-references/output-manifest.md)** — log every output to MANIFEST.md
+> - **[Output Language Protocol](../../shared-references/output-language.md)** — respect the project's language setting
 
 ## Key Rules
 

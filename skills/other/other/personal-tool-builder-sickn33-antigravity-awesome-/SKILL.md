@@ -776,7 +776,6 @@ Workflow:
 Works well with: `micro-saas-launcher`, `browser-extension-builder`, `workflow-automation`, `backend`
 
 ## When to Use
-
 - User mentions or implies: build a tool
 - User mentions or implies: personal tool
 - User mentions or implies: scratch my itch
@@ -785,3 +784,8 @@ Works well with: `micro-saas-launcher`, `browser-extension-builder`, `workflow-a
 - User mentions or implies: local app
 - User mentions or implies: automate my
 - User mentions or implies: build for myself
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

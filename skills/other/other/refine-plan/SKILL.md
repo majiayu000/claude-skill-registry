@@ -1,81 +1,105 @@
 ---
 name: refine-plan
-description: "Iteratively review and revise an implementation plan until no new findings survive evaluation. Runs /review-plan, /evaluate-findings, /apply-findings, then re-runs itself until stable. Use when the user asks to \"refine the plan\", \"refine this plan\", \"iterate on the plan\", \"tighten the plan\", or \"improve the plan\"."
+description: "Iteratively review and revise a planning artifact until no new findings survive evaluation. Supports plans, shells, and specs. Use when the user asks to \"refine the plan\", \"refine the shells\", \"refine this spec\", \"iterate on the plan\", \"iterate on the shells\", \"tighten the plan\", \"tighten the shells\", \"tighten the spec\", \"improve the plan\", \"improve the shells\", or \"improve the spec\"."
 ---
 
 # Refine Plan
 
-Loop the plan review pipeline over a plan file until no new findings are accepted. Writes back to the plan file in place.
+Loop the review pipeline over a planning artifact until no new findings are accepted. Writes back to the artifact file(s) in place. Supports plans, shells, and specs.
 
 ## Task Tracking
 
 At the start of every invocation (including re-runs from Step 5), use `TaskCreate` to create a task for each step:
 
-1. Resolve the plan file
+1. Resolve the artifact
 2. Run `/review-plan` skill
 3. Run `/evaluate-findings` skill
 4. Run `/apply-findings` skill
 5. Re-run `/refine-plan` skill if changed
 
-## Step 1: Resolve the Plan File
+## Step 1: Resolve the Artifact
 
-Determine which plan file to refine using these rules in order:
+### Determine Artifact Type
 
-1. **Explicit path** — If an absolute or relative path was passed, use it
-2. **Explicit slug** — If a slug was passed (e.g., `add-image-cache`), resolve to `.turbo/plans/<slug>.md`
-3. **Single file** — Glob `.turbo/plans/*.md`, excluding shell files (see shell detection below). If exactly one non-shell file exists, use it
-4. **Most recent** — If multiple non-shell files exist, use the most recently modified
-5. **Legacy fallback** — If `.turbo/plans/` does not exist but `.turbo/plan.md` exists, use it
-6. **Nothing found** — If no plan file exists, tell the user to run `/turboplan` (for a new task) or `/pick-next-plan-shell` (for existing shells) and stop
+1. **Explicit argument** — If the user specified a type (e.g., "refine plan", "refine shells", "refine spec"), use it
+2. **Conversation context** — Infer from conversation (e.g., if `/draft-plan` just ran, type is plan)
+3. **Auto-detect** — Check `.turbo/` for existing artifacts. If multiple types exist, use `AskUserQuestion`
 
-If multiple files exist and the most-recent choice is non-obvious (e.g., several plans were modified within the same minute), use `AskUserQuestion` to let the user pick from the candidates.
+### Resolve the Artifact File(s)
 
-### Shell Detection
+#### Plan
 
-Read the file's YAML frontmatter. A file is a **draft shell** when it has `type: shell` and `status: draft`.
+1. **Explicit path** — use it
+2. **Explicit slug** — resolve to `.turbo/plans/<slug>.md`
+3. **Single file** — Glob `.turbo/plans/*.md`. If exactly one file exists, use it
+4. **Most recent** — most recently modified file
+5. **Legacy fallback** — `.turbo/plan.md` if `.turbo/plans/` does not exist
+6. **Nothing found** — tell the user to run `/turboplan` (for a new task) or `/pick-next-shell` (for existing shells) and stop
 
-If the resolved file is a draft shell, halt with:
+#### Shells
 
-> `<path>` is a draft shell that needs expansion first. Run `/pick-next-plan-shell` to expand and implement it.
+1. **Explicit spec slug** — Glob `.turbo/shells/<slug>-*.md`
+2. **Explicit spec path** — derive slug from filename, glob as above
+3. **Single spec** — Glob `.turbo/specs/*.md`. If exactly one, derive slug and glob for shells
+4. **Most recent spec** — most recently modified spec, derive slug and glob
+5. **Nothing found** — tell the user to run `/draft-shells` first and stop
 
-State the resolved plan path before continuing.
+For shells, read each shell file and extract from its YAML frontmatter: `spec` (source spec path) and `depends_on`. Verify the source spec exists. State the spec path, number of shells, and each shell's filename.
+
+#### Spec
+
+1. **Explicit path** — use it
+2. **Explicit slug** — resolve to `.turbo/specs/<slug>.md`
+3. **Single file** — Glob `.turbo/specs/*.md`. If exactly one, use it
+4. **Most recent** — most recently modified
+5. **Legacy fallback** — `.turbo/spec.md` if `.turbo/specs/` does not exist
+6. **Nothing found** — tell the user to run `/draft-spec` first and stop
+
+If multiple candidates exist and the choice is non-obvious, use `AskUserQuestion`.
+
+State the resolved path(s) before continuing.
 
 ## Step 2: Run `/review-plan` Skill
 
-Run the `/review-plan` skill on the resolved plan file. Pass the full plan text.
+Run the `/review-plan` skill on the resolved artifact.
 
-Always run this step even if the plan looks polished.
+Always run this step even if the artifact looks polished.
 
 ## Step 3: Run `/evaluate-findings` Skill
 
 Run the `/evaluate-findings` skill on the review findings from Step 2.
 
-If zero actionable findings survive evaluation, skip to the end and report the plan as stable.
-
 ## Step 4: Run `/apply-findings` Skill
 
-Run the `/apply-findings` skill on the evaluated results. The target file is the plan file resolved in Step 1. Apply accepted findings by editing the plan in place.
+Run the `/apply-findings` skill on the evaluated results.
 
 ## Step 5: Re-run `/refine-plan` Skill if Changed
 
-Check whether the plan file was edited during Step 4. Any edit counts.
+Check whether the artifact file(s) were edited during Step 4. Any edit counts.
 
-**If changes were made**, classify what Step 4 edited:
+The iteration number below refers to the `/refine-plan` run currently executing Step 5. It is not the iteration number of a prospective re-run. Iteration 1 is the initial run; iteration 2 is the first auto-re-run; iteration 3 is the second auto-re-run; iteration 4 and beyond exist only when the user opts in at the hard-cap ask. Iterations 1 and 2 always follow the classification gate (they never trigger the hard cap at their own Step 5, even when the auto-re-run they spawn would be iteration 3). The hard cap fires at the end of iteration 3 and every iteration thereafter.
 
-- **Structural edits** (added or removed steps, new or removed design decisions, rewired dependencies between steps, changed testing strategy) — run `/refine-plan` again via the Skill tool, passing the resolved plan path. If the round contains both structural and prose-only edits, treat it as structural and re-run automatically.
+**Iterations 1 and 2, if changes were made**, classify what Step 4 edited:
+
+- **Structural edits** — run `/refine-plan` again via the Skill tool, passing the artifact type and resolved path. If the round contains both structural and prose-only edits, treat it as structural and re-run automatically.
 - **Prose-only edits only** (reworded sentences in place, fixed stale examples, clarified existing text without changing meaning) — output a summary of what changed, then use `AskUserQuestion` to ask whether to run one more round or stop here. Do not silently continue or silently stop.
 
-**If changes were made but you believe re-running is unnecessary**, use `AskUserQuestion` to ask for skip permission. Do not skip silently.
+**Iterations 1 and 2, if changes were made but you believe re-running is unnecessary**, use `AskUserQuestion` to ask for skip permission. Do not skip silently.
 
-**If this is iteration 3 and changes were still made**, the hard cap is reached. This replaces the classification gate above. Output a summary of what is still changing and whether it is structural or prose-only. Then use `AskUserQuestion` to offer three options: continue for another iteration, stop here and accept the plan as-is, or escalate to `/consult-oracle` for a different perspective on the remaining issues.
+**Iteration 3 or later, if Step 4 of this run made changes**, the hard cap is reached. This replaces the classification gate above for iteration 3 and every iteration after it. Output a summary of what is still changing and whether it is structural or prose-only. Then use `AskUserQuestion` to offer three options: continue for another iteration, stop here and accept the artifact as-is, or escalate to `/consult-oracle` for a different perspective on the remaining issues.
 
 The re-invocation is a full, fresh run of this skill. Every step (1-5) executes with its own task tracking and skill invocations.
 
 Check your task list for remaining tasks and proceed.
 
+### Structural Edit Examples by Type
+
+- **Plan** — added or removed steps, new or removed design decisions, rewired dependencies between steps, changed testing strategy
+- **Shells** — added or removed shells, changed Produces/Consumes/Covers Spec Requirements wiring, changed frontmatter `depends_on`, added or removed spec requirement coverage
+- **Spec** — added or removed sections, new or removed requirements, rewired cross-references, changed acceptance criteria
+
 ## Rules
 
-- Every step must run in every iteration. `/evaluate-findings` is a judgment gate that must run before `/apply-findings` touches the plan. Each step must invoke its designated skill via the Skill tool.
+- Every step must run in every iteration. `/evaluate-findings` is a judgment gate that must run before `/apply-findings` touches the artifact. Each step must invoke its designated skill via the Skill tool.
 - Re-invocations from Step 5 are full runs with fresh task tracking and complete skill invocations.
-- The plan file is the only file that should change.
-- If `/review-plan` returns no findings on the first pass, report the plan as stable and stop.
+- The artifact file(s) are the only files that should change. For shells, do not modify the source spec.

@@ -141,7 +141,7 @@ Assess whether the material should produce one diagram or multiple sub-diagrams.
 
 **Single diagram** when:
 - Material is focused on one concept, one mechanism, one process
-- Named elements count is manageable (under ~6 for flowchart, under ~4 actors for sequence, under ~3 containers for structural)
+- Named elements count is manageable (under ~6 for flowchart, under ~4 actors for sequence, under ~3 containers for structural — but architecture diagrams may have 10–20 elements in a single diagram; see Step 5a item 6, "Architecture enrichment")
 - One "After seeing this diagram, the reader understands ___" sentence covers the whole material
 
 **Multiple sub-diagrams** when:
@@ -279,7 +279,7 @@ For each diagram in the confirmed plan (1 to N, overview diagram generated last)
 
 Read the current diagram's plan entry. Extract or refine these five things from the source material:
 
-1. **Named elements** — list every distinct actor, component, service, state, or phase explicitly named. Count them. If the count is 6+, plan multiple diagrams rather than cramming everything into one (see `flowchart.md` → "Planning before you write SVG").
+1. **Named elements** — list every distinct actor, component, service, state, or phase explicitly named. Count them. If the count is 6+ for simple flowcharts, plan multiple diagrams rather than cramming everything into one (see `flowchart.md` → "Planning before you write SVG"). **Exception**: structural architecture diagrams (microservices, cloud topologies, system designs) routinely need 10–20 named elements in a single diagram — services, databases, gateways, message buses, clients. 10 is the minimum where splitting is unnecessary; enriched diagrams (item 6 below) typically reach ≥12. Do not split an architecture diagram just because the element count is high; instead, see "Architecture enrichment" (item 6 below) and `structural.md` → "Full architecture layout".
 
 2. **Relationship type** — for each interaction between elements, classify it:
    - Sequential steps / order of operations → flowchart signal
@@ -293,6 +293,22 @@ Read the current diagram's plan entry. Extract or refine these five things from 
 4. **Label preview** — for each element name, count the characters. Latin titles >30 chars (CJK >16) will overflow a 180-wide box and need shortening. Draft the abbreviated form now, before layout math, so Step 5d uses real labels.
 
 5. **Language** — CJK vs. Latin. Affects text-width multipliers in Step 5d (15 px/char vs. 8 px/char for titles). Mixed content (CJK labels with some Latin terms) counts as CJK.
+
+6. **Architecture enrichment** — when the type is **structural** and the topic is an architecture or infrastructure diagram ("microservices architecture", "Kubernetes cluster", "cloud topology", "system design"), actively expand the named elements beyond what the user literally wrote. The user's prompt is a **seed**, not a complete spec. A bare "microservices architecture" should produce a diagram with ≥12 named elements, not 5 generic boxes. Apply these enrichment rules:
+
+   - **Multiple client types**: if the system serves end users, show ≥2 clients (Web app + Mobile app, or Browser + CLI). Each with a tech subtitle (React SPA, iOS/Android).
+   - **Gateway details**: technology name (Kong, Nginx, Envoy), responsibilities (rate limiting, auth/routing), port (:443). Not just "API Gateway".
+   - **Per-service specifics**: each microservice gets a technology and port subtitle (Go :8081, Java :8082, Python :8083, Node.js :8084). The reader should learn the tech stack from the diagram.
+   - **Database per service**: each service connects to its own data store. Show the databases as a separate column or tier (PostgreSQL, MongoDB, Elasticsearch, Redis) with role subtitles (Users DB, Orders DB, Cache/Queue).
+   - **Message bus / event bus**: if services communicate asynchronously, show messaging infrastructure (Kafka, RabbitMQ, Event Bus) as small labeled connector pills between the services that use them.
+   - **Auth service**: when JWT/OAuth is mentioned or implied, separate it from business services as a distinct component with protocol subtitle (OAuth 2.0 / JWT).
+   - **Color categories**: architecture diagrams with ≥3 component types trigger the structural architecture exception (see `design-system.md` rule 9). Assign one ramp per category: services=teal, databases=purple, gateways=coral, message buses=amber. Mandatory legend.
+   - **Summary panel** (optional): a bottom section with 2–3 columns summarizing key architecture principles (Client Applications, Microservices, Infrastructure). Add when the diagram has ≥10 named elements.
+   - **Title + subtitle**: architecture diagrams always get a `.title` at the top with the architecture name and a `.ts` subtitle describing the approach (e.g., "Domain-driven design", "Event-driven microservices").
+
+   The enrichment principle: **a reader should learn something specific from the diagram**. "User service / Go :8081" teaches more than "User service / Accounts & profiles". Technology choices, ports, and protocols are the details that make an architecture diagram useful rather than decorative.
+
+   Skip enrichment for non-architecture structural diagrams (biological containment, CPU caches, file systems) — those benefit from simplicity, not tech details.
 
 #### 5b: Load type reference
 

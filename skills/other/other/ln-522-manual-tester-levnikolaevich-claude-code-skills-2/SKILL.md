@@ -6,6 +6,8 @@ license: MIT
 
 > **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
 
+**MANDATORY READ:** Load `shared/references/ci_tool_detection.md` — compact output flags, pipefail, and failure-artifact policy for bash/curl/Puppeteer scripts.
+
 ## Inputs
 
 | Input | Required | Source | Description |

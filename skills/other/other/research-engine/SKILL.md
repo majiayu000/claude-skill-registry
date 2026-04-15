@@ -37,7 +37,7 @@ bash build.sh  # Uses template.tex and html-template.html
 ```
 
 ### Stage 6: Publish
-Commit, tag, merge to main, push, create GitHub release, FTP sync to tibsfox.com.
+Commit, tag, merge to main, push, create GitHub release, FTP sync to configured remote host.
 
 ## Quality Standards
 

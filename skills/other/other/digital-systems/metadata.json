@@ -1,0 +1,17 @@
+{
+  "name": "digital-systems",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "examples/skills/technology/digital-systems/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "digital-systems",
+  "downloaded_at": "2026-04-15T01:27:27.215556Z",
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/technology/digital-systems/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/technology/digital-systems/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

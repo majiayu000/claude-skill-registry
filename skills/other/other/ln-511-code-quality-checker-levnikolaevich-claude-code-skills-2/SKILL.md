@@ -125,11 +125,11 @@ Formula: `Code Quality Score = 100 - metric_penalties - issue_penalties`
 1) **Resolve storyId:** Run Story Resolution Chain per guide (status filter: [In Progress, To Review]).
 2) Load Story (full) and Done implementation tasks (full descriptions) via Linear; skip tasks with label "tests".
 3) **Collect changed files** (`changed_files[]`):
-   **MANDATORY READ:** `shared/references/git_scope_detection.md`
+   **MANDATORY READ:** Load `shared/references/git_scope_detection.md`
    - IF invoked by ln-510: use `changed_files[]` from coordinator context → proceed to Enrich step in guide
    - IF invoked standalone: run full algorithm from guide
 4) **Two-Layer Detection (MANDATORY):**
-   **MANDATORY READ:** `shared/references/two_layer_detection.md`
+   **MANDATORY READ:** Load `shared/references/two_layer_detection.md`
    All threshold-based findings require Layer 2 context analysis. Layer 1 finding without Layer 2 = NOT a valid finding. Before reporting any metric violation, ask: "Is this violation intentional or justified by design?" See Exception column in metrics below.
 
 5) **Calculate code metrics:**
@@ -169,8 +169,8 @@ Formula: `Code Quality Score = 100 - metric_penalties - issue_penalties`
    - ORM queries added
 
 7) **Analyze code for static issues (assign prefixes):**
-   **MANDATORY READ:** `shared/references/clean_code_checklist.md`, `shared/references/destructive_operation_safety.md`
-   - For large code files, use `outline(path)` before targeted reads.
+   **MANDATORY READ:** Load `shared/references/clean_code_checklist.md`, `shared/references/destructive_operation_safety.md`
+   - For large code files, use `outline(file_path)` before targeted reads.
    - SEC-: hardcoded creds, unvalidated input, SQL injection, race conditions
    - SEC-DESTR-: unguarded destructive operations — use code-level guards table from destructive_operation_safety.md (loaded above). Check all 5 guard categories (DB, FS, MIG, ENV, FORCE).
    - MNT-: DRY violations (MNT-DRY-: duplicate logic), dead code (MNT-DC-: per checklist), complex conditionals, poor naming

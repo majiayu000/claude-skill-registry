@@ -44,31 +44,25 @@ If missing, use `AskUserQuestion` to ask whether to create one before proceeding
 
 ## Step 3: Launch All Analysis Skills
 
-Launch all Agent tool calls in parallel (`model: "opus"`, do not set `run_in_background`). Batch across multiple messages if the total exceeds what can be launched at once.
+Run all analysis skills in parallel.
 
 ### Partitioned Skills
 
-For each skill below, launch **one agent per partition** with the partition's file list:
+For each skill below, run **one instance per partition** with the partition's file list. Pass `(skip peer review)` annotations through to `/review-code` as an opt-out so it runs internal reviews only — `/peer-review` is scheduled as its own row to avoid duplicate codex runs.
 
 | Skill | Scope |
 |---|---|
-| `/review-correctness` | File list |
-| `/review-security` | File list |
-| `/review-api-usage` | File list |
-| `/review-quality` | File list |
+| `/review-code` with `correctness` (skip peer review) | File list |
+| `/review-code` with `security` (skip peer review) | File list |
+| `/review-code` with `api-usage` (skip peer review) | File list |
+| `/review-code` with `quality` (skip peer review) | File list |
 | `/peer-review` | File list |
-
-Each agent's prompt includes the partition's file list and instructs it to invoke its assigned skill via the Skill tool.
-
-For the `/peer-review` agent, the Agent tool call prompt instructs the subagent to: (1) read the SKILL.md of every other partitioned skill listed above, (2) extract their review criteria and "what to look for" sections, (3) compose a single comprehensive review prompt covering all dimensions with the file list, being verbose about what to check, and (4) invoke `/peer-review` via the Skill tool with the composed prompt.
 
 ### Project-Wide Skills
 
-Launch one Agent tool call each. Each agent's prompt instructs it to invoke its assigned skill via the Skill tool:
-
 | Skill | Notes |
 |---|---|
-| `/review-test-coverage` | Project-wide |
+| `/review-code` with `coverage` (skip peer review) | Project-wide |
 | `/review-dependencies` | Project-wide |
 | `/review-tooling` | Project-wide |
 | `/review-agentic-setup` | Project-wide |
@@ -114,19 +108,19 @@ Write `.turbo/audit.md` using the template below. Populate the dashboard by coun
 ## Detailed Findings
 
 ### Correctness
-<findings from /review-correctness>
+<findings from /review-code correctness>
 
 ### Security
-<findings from /review-security>
+<findings from /review-code security>
 
 ### API Usage
-<findings from /review-api-usage>
+<findings from /review-code api-usage>
 
 ### Code Quality
-<findings from /review-quality>
+<findings from /review-code quality>
 
 ### Test Coverage
-<findings from /review-test-coverage>
+<findings from /review-code coverage>
 
 ### Dependencies
 <findings from /review-dependencies>

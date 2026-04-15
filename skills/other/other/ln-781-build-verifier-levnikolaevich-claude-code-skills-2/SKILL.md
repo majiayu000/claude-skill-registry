@@ -7,6 +7,8 @@ model: claude-haiku-4-5
 
 > **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
 
+**MANDATORY READ:** Load `shared/references/ci_tool_detection.md` — build command registry, exit-code preservation, and compact output rules.
+
 # ln-781-build-verifier
 
 **Type:** L3 Worker
@@ -130,6 +132,8 @@ Return structured results to orchestrator.
 4. **Report all projects** - include both successful and failed builds
 
 ---
+
+**Monitor (2.1.98+):** For build/restore commands expected >30s, use `Monitor`. Fallback: `Bash(run_in_background=true)`.
 
 ## Definition of Done
 

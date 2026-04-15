@@ -191,6 +191,25 @@ else:
     skip — no proofs, no action
 ```
 
+### Phase 4.7: Paper Claim Audit
+
+**Skip if no result files exist (e.g., survey/position papers with no experiments).**
+
+```
+if results/*.json or results/*.csv or outputs/*.json exist:
+    Run /paper-claim-audit "paper/"
+    Fresh zero-context reviewer compares every number in the paper
+    against raw result files. Catches rounding inflation, best-seed
+    cherry-pick, config mismatch, delta errors.
+
+    If FAIL:
+        Fix mismatched numbers before improvement loop
+    If WARN:
+        Proceed, but flag for manual verification
+else:
+    skip — no experimental results to verify
+```
+
 ### Phase 5: Auto Improvement Loop
 
 Invoke `/auto-paper-improvement-loop` to polish the paper:

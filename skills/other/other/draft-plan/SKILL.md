@@ -94,7 +94,6 @@ Create `.turbo/plans/` if it does not exist. Write the plan to `.turbo/plans/<sl
 
 ````markdown
 ---
-type: plan
 status: draft
 ---
 

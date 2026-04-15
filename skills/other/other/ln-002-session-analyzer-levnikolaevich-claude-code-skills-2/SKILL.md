@@ -85,10 +85,15 @@ echo "## Codex"
 CODEX_LATEST=$(stat -c '%Y %n' ~/.codex/sessions/????/??/??/rollout-*.jsonl 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2-)
 [ -n "$CODEX_LATEST" ] && echo "  $CODEX_LATEST ($(wc -l < "$CODEX_LATEST") lines)" || echo "  No sessions found"
 
-echo "## Gemini"
-# JSON path (Linux/macOS) or protobuf path (Windows)
-GEMINI_LATEST=$(stat -c '%Y %n' ~/.gemini/tmp/*/chats/session-*.json ~/.gemini/antigravity/implicit/*.pb 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2-)
-[ -n "$GEMINI_LATEST" ] && echo "  $GEMINI_LATEST (note: .pb files are protobuf, not grep-parseable)" || echo "  No sessions found"
+echo "## Gemini CLI"
+# JSON sessions only (Linux/macOS/Windows)
+GEMINI_LATEST=$(stat -c '%Y %n' ~/.gemini/tmp/*/chats/session-*.json 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2-)
+[ -n "$GEMINI_LATEST" ] && echo "  $GEMINI_LATEST" || echo "  No sessions found"
+
+echo "## Antigravity"
+# Antigravity stores implicit sessions as protobuf under ~/.gemini/antigravity/implicit/*.pb
+ANTIGRAVITY_LATEST=$(stat -c '%Y %n' ~/.gemini/antigravity/implicit/*.pb 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2-)
+[ -n "$ANTIGRAVITY_LATEST" ] && echo "  $ANTIGRAVITY_LATEST (note: .pb files are protobuf, not grep-parseable)" || echo "  No sessions found"
 ```
 
 ### Extract raw data from JSONL session

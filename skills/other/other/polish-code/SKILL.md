@@ -38,15 +38,13 @@ Stage all changes made in this step before continuing.
 
 ## Step 4: Run `/review-code` Skill
 
-Run the `/review-code` skill. The diff command is `git diff --cached`.
+Run the `/review-code` skill on the staged changes. The diff command is `git diff --cached`.
 
 Always run this step even if Step 3 made no changes.
 
 ## Step 5: Run `/evaluate-findings` Skill
 
 Run the `/evaluate-findings` skill on the results from Steps 3 and 4.
-
-If zero actionable findings survive evaluation, skip to Step 7.
 
 ## Step 6: Run `/apply-findings` Skill
 
@@ -64,14 +62,16 @@ If any test fails, fix the issues and stage the fixes.
 
 Check whether any file was edited during Steps 6-7. Earlier changes do not trigger a re-run because `/review-code` already reviewed them. Any post-review edit counts, regardless of how small or mechanical it seems.
 
-**If post-review changes were made**, classify what Steps 6-7 edited:
+The iteration number below refers to the `/polish-code` run currently executing Step 8. It is not the iteration number of a prospective re-run. Iteration 1 is the initial run; iteration 2 is the first auto-re-run; iteration 3 is the second auto-re-run; iteration 4 and beyond exist only when the user opts in at the hard-cap ask. Iterations 1 and 2 always follow the classification gate (they never trigger the hard cap at their own Step 8, even when the auto-re-run they spawn would be iteration 3). The hard cap fires at the end of iteration 3 and every iteration thereafter.
+
+**Iterations 1 and 2, if post-review changes were made**, classify what Steps 6-7 edited:
 
 - **Structural edits** (fixed bugs, new or removed functions, changed function signatures, moved code between files, changed control flow, added or removed dependencies, corrected a stale or wrong comment that was itself a documentation bug) — run `/polish-code` again using the Skill tool. Scope the diff command to only the files modified in Steps 6-7: use `git diff --cached -- <file1> <file2> ...` as the diff command for `/simplify-code` and `/review-code`. Smoke test scope remains unchanged (full feature scope, not file-narrowed). If the round contains both structural and in-place edits, treat it as structural and re-run automatically.
 - **In-place edits only** (renamed local variables without changing behavior, reformatted, adjusted whitespace, edited neutral comments) — output a summary of what changed, then use `AskUserQuestion` to ask whether to run one more round or stop here. Do not silently continue or silently stop.
 
-**If post-review changes were made but you believe re-running is unnecessary**, use `AskUserQuestion` to ask for skip permission. Do not skip silently.
+**Iterations 1 and 2, if post-review changes were made but you believe re-running is unnecessary**, use `AskUserQuestion` to ask for skip permission. Do not skip silently.
 
-**If this is iteration 3 and post-review changes were still made**, the hard cap is reached. This replaces the classification gate above. Output a summary of what is still changing and whether it is structural or in-place. Then use `AskUserQuestion` to offer three options: continue for another iteration, stop here and accept the current state, or escalate to `/consult-oracle` for a different perspective on the remaining issues.
+**Iteration 3 or later, if Steps 6-7 of this run made post-review changes**, the hard cap is reached. This replaces the classification gate above for iteration 3 and every iteration after it. Output a summary of what is still changing and whether it is structural or in-place. Then use `AskUserQuestion` to offer three options: continue for another iteration, stop here and accept the current state, or escalate to `/consult-oracle` for a different perspective on the remaining issues.
 
 The re-invocation is a full, fresh run of this skill. Every step (1-8) executes with its own task tracking and skill invocations. "Scoped to modified files" only affects the diff command passed to `/simplify-code` and `/review-code`. It does not affect which steps run or whether skills are invoked.
 

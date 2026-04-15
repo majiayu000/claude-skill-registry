@@ -1,0 +1,17 @@
+{
+  "name": "helium-mcp",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/helium-mcp/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "helium-mcp",
+  "downloaded_at": "2026-04-15T01:48:09.435992Z",
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/helium-mcp/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/helium-mcp/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

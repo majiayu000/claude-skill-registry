@@ -3,11 +3,15 @@ name: paper-design
 description: >
   This skill should be used when designing UI in Paper Design (app.paper.design),
   reading or writing Paper documents via MCP, converting Paper designs to React/Tailwind
-  code, importing HTML/CSS into Paper, syncing design tokens, or choosing between Paper
-  and Pencil for a design task. Triggers on Paper, paper.design, DOM-based design,
+  code, importing HTML/CSS into Paper, syncing design tokens, choosing between Paper
+  and Pencil for a design task, or reaching for Paper Shaders
+  (@paper-design/shaders-react) — the standalone React shader library shipped by the
+  Paper team. Triggers on Paper, paper.design, DOM-based design,
   design-to-code, HTML-to-design, Paper MCP, Paper artboard, prototype,
-  mockup, layout, export design, convert design. Pairs with minoan-frontend-design
-  for creative direction and shadcn for component library.
+  mockup, layout, export design, convert design, Paper Shaders, shaders-react,
+  mesh gradient, halftone dots, halftone CMYK, fluted glass, liquid metal, god rays,
+  paper texture, gem smoke, grain gradient, dithering shader, pulsing border.
+  Pairs with minoan-frontend-design for creative direction and shadcn for component library.
 argument-hint: "[artboard name, action, or 'health-check']"
 ---
 
@@ -20,6 +24,14 @@ Paper Desktop must be running before starting Claude Code. The app auto-starts a
 ## Paper vs Pencil
 
 Use Paper for design-to-code, code-to-design, and rapid prototyping (native DOM). Use Pencil for reusable design systems, existing `.pen` files, and presentations. Full comparison: `references/paper-vs-pencil.md`
+
+## Paper Shaders
+
+Paper also ships a standalone React shader library — `@paper-design/shaders-react` — used independently of the MCP workflow. Install with `npm i @paper-design/shaders-react` and import named components like `MeshGradient`, `FlutedGlass`, `LiquidMetal`, `HalftoneCMYK`, `GodRays`. 30+ shaders across three categories (Image Filters, Logo Animations, Effects). Zero dependencies beyond React.
+
+Reach for Paper Shaders when the goal is to *use* a designer-tuned effect as a React component with named props. Reach for `threejs-particle-canvas`, `grainient`, or `rocaille-shader` when the goal is custom particle systems, grainient.supply-style page aesthetics, or pointer-reactive DOM distortion — those skills have different strengths. Shaders authored in Paper-the-tool export as the matching React component via `get_jsx`; prop names map 1:1 onto the sliders in each shader panel.
+
+Full catalog, per-category tables, and integration notes: `references/shaders.md`.
 
 ## Workflow
 
@@ -54,7 +66,7 @@ Call `get_screenshot` after every write operation to verify visual results. DOM 
 
 ### 4. Export
 
-**Design to code:** `get_jsx` exports a node as React + Tailwind JSX. Post-process if the project uses plain CSS. Combine with `get_computed_styles` to extract design tokens (colors, spacing, typography). Check `get_font_family_info` to verify font availability before shipping.
+**Design to code:** `get_jsx` exports a node as React + Tailwind JSX. Post-process if the project uses plain CSS. Combine with `get_computed_styles` to extract design tokens (colors, spacing, typography). Check `get_font_family_info` to verify font availability before shipping. In Paper itself, `Alt T` copies the selection as Tailwind JSX and `Alt R` copies it as React CSS — useful when the user is driving Paper manually and pasting directly into code without an MCP round trip.
 
 **Responsive variants:** `duplicate_nodes` to clone a desktop artboard, then resize and adjust layout for tablet/mobile breakpoints.
 
@@ -74,3 +86,8 @@ Consult `references/` on demand:
 - `tool-reference.md` — All 21 MCP tools with usage patterns and gotchas. Read for any Paper MCP operation.
 - `workflow-patterns.md` — 7 detailed workflow recipes. Read when starting a multi-step design task.
 - `paper-vs-pencil.md` — Decision matrix across 10 dimensions. Read when choosing between design tools.
+- `shaders.md` — Catalog of 30+ Paper Shaders (`@paper-design/shaders-react`) with categories, common props, and integration notes. Read when installing, selecting, or exporting a shader.
+
+## Troubleshooting
+
+When MCP tools return connection errors or hallucinate parameters, the first fix is to restart the Claude Code session — long-running sessions are the most common failure mode, and Paper Desktop itself can stay running. Verify the local MCP endpoint with `python3 scripts/health-check.py`. Keep Paper Desktop current via `About > Check for updates`; Mar 10, 2026 was the first shipping build, and prop names on shaders like `FlutedGlass` have changed between releases.

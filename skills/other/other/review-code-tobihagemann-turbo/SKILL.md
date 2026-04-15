@@ -1,50 +1,73 @@
 ---
 name: review-code
-description: "Full code review: launches `/review-test-coverage`, `/review-correctness`, `/review-security`, `/review-quality`, `/review-api-usage`, and `/peer-review` in parallel and returns combined findings. Use when the user asks to \"review my code\", \"full code review\", \"review my changes\", or wants a comprehensive code review."
+description: "Review code for bugs, security vulnerabilities, quality issues, API misuse, or test coverage gaps by running internal reviews and a peer review in parallel and returning combined findings. Single-concern with a type argument, or full review with no argument. Use when the user asks to \"review my code\", \"full code review\", \"review my changes\", \"check for bugs\", \"scan for bugs\", \"review correctness\", \"security audit\", \"find vulnerabilities\", \"review security\", \"check for duplication\", \"review quality\", \"check API usage\", \"verify against docs\", \"find untested code\", or \"review test coverage\"."
 ---
 
 # Review Code
 
-Run six AI code reviews in parallel and return combined findings.
+Review code against type-specific criteria. Runs internal reviews and `/peer-review` in parallel by default. Returns combined structured findings.
+
+**Types:** `correctness`, `security`, `quality`, `api-usage`, `coverage`
+
+With a type argument, runs a single-concern internal review plus the peer review. With no type argument, runs all five internal reviews plus the peer review.
 
 ## Step 1: Determine the Scope
 
 Determine what to review:
 
-- If a specific **diff command** was provided (e.g., `git diff --cached`), use that.
-- If a **file list or directory** was provided, review those files directly.
-- If **neither** was provided, default to diffing against the repository's default branch (detect via `gh repo view --json defaultBranchRef --jq '.defaultBranchRef.name'`).
+- If a specific **diff command** was provided (e.g., `git diff --cached`, `git diff main...HEAD`), use that.
+- If a **file list or directory** was provided, review those files directly (read the full files, not a diff).
+- If **neither** was provided, default to diffing against the repository's default branch (detect via `gh repo view --json defaultBranchRef --jq '.defaultBranchRef.name'`). If there are no changes against the default branch, use `AskUserQuestion` to ask what to review.
 
-## Step 2: Compose the Peer-Review Prompt
+## Step 2: Run Reviews in Parallel
 
-Read the SKILL.md of each review skill listed below and extract their review criteria and "what to look for" sections:
+Read the reference file(s) for the active type(s):
 
-- `/review-test-coverage`
-- `/review-correctness`
-- `/review-security`
-- `/review-quality`
-- `/review-api-usage`
+- **Correctness** — [references/correctness-review.md](references/correctness-review.md)
+- **Security** — [references/security-review.md](references/security-review.md)
+- **Quality** — [references/quality-review.md](references/quality-review.md)
+- **API usage** — [references/api-usage-review.md](references/api-usage-review.md)
+- **Coverage** — [references/coverage-review.md](references/coverage-review.md)
 
-Compose a single comprehensive review prompt covering all dimensions with the diff command from Step 1. Be verbose about what to check so the peer reviewer has full context. Structure the prompt using `<task>`, `<dig_deeper_nudge>`, and `<structured_output_contract>` XML tags, consistent with the `/peer-review` interface.
+Full review activates all five types; a single-concern argument activates one. Skip peer review when the caller asked (e.g., "without peer review", "no peer", "internal only").
 
-## Step 3: Run Six Reviews in Parallel
+Use the Agent tool to launch all agents below in a single message (`model: "opus"`, do not set `run_in_background`) so they run concurrently. For full review that is six Agent tool calls (five internal + one peer); for single-concern it is two (one internal + one peer).
 
-Launch six Agent tool calls in a single message so they run concurrently (`model: "opus"`, do not set `run_in_background`). Each agent's prompt includes the scope from Step 1 and instructs it to invoke its assigned skill via the Skill tool:
+- **Internal Agent (one per active type):** Launch a separate Agent tool call for each active type. Pass the scope and the type's reference file content; the subagent applies the criteria and returns findings in the output format below.
+- **Peer review Agent (unless skipping):** Instruct the subagent to invoke `/peer-review` via the Skill tool with a prompt embedding the "What to Review", determination criteria, priority levels, and verdict label from every active reference file, structured with `<task>`, `<dig_deeper_nudge>`, and `<structured_output_contract>` XML tags.
 
-- `/review-test-coverage`
-- `/review-correctness`
-- `/review-security`
-- `/review-quality`
-- `/review-api-usage`
-- `/peer-review` — pass the pre-composed prompt from Step 2
-
-## Step 4: Aggregate Combined Findings
-
-Wait for all six agents to complete. Aggregate their findings with attribution (reviewer name, file path, description).
+Aggregate findings with attribution (reviewer: "internal" or "peer"; type; file path). Present them in the output format below.
 
 Check your task list for remaining tasks and proceed.
 
+## Output Format
+
+Return findings as a numbered list. For each finding:
+
+```
+### [P<N>] <title (imperative, ≤80 chars)>
+
+**File:** `<file path>` (lines <start>-<end>)
+**Reviewer:** <internal | peer> (<type>)
+
+<one paragraph explaining the issue and its impact>
+```
+
+The reference file may specify additional metadata fields (e.g., `**Category:**`, `**Library:**`, `**Docs:**`). Include them between the `**Reviewer:**` line and the paragraph.
+
+After all findings, add an overall verdict per active type using the label from each reference file. For single-concern, that is one verdict block; for full review, five. After the per-type verdicts, add a single combined `## Peer Review Verdict` block summarizing what codex returned.
+
+```
+## Overall Verdict — <type>
+
+**<Verdict Label>:** <status>
+
+<1-3 sentence assessment>
+```
+
+If there are no qualifying findings for a type, state so under that type's verdict block and explain briefly.
+
 ## Rules
 
-- If any reviewer is unavailable or returns malformed output, proceed with findings from the remaining reviewers.
-- Present findings in file order to minimize context switching.
+- Present findings grouped by priority.
+- In full code review mode, present findings in file order to minimize context switching.

@@ -1,6 +1,6 @@
 ---
 name: ln-161-skill-creator
-description: "Creates .claude/commands from procedural doc sections. Use when transforming documentation prose into executable skill files."
+description: "Creates slash commands from procedural doc sections. Use when transforming documentation prose into executable commands."
 license: MIT
 ---
 
@@ -11,7 +11,7 @@ license: MIT
 **Type:** L3 Worker (standalone-capable)
 **Category:** 1XX Documentation Pipeline
 
-Creates `.claude/commands/*.md` files from procedural documentation sections. It converts procedural prose into imperative command instructions without changing the source docs.
+Creates `.claude/commands/*.md` slash command files from procedural documentation sections. It converts procedural prose into imperative command instructions without changing the source docs.
 
 ---
 

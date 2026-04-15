@@ -68,6 +68,8 @@ If the description is longer than ~3 sentences (e.g., a pasted spec, ticket, or 
 
 ### Clarifying questions
 
+Before asking questions, identify your key assumptions about scope, constraints, and expected behavior. Surface them in your reply text before the first `AskUserQuestion` call so the user can correct or confirm them.
+
 Ask up to **3 clarifying questions** to fill critical gaps — one per `AskUserQuestion` call, prefer multiple-choice options. Focus on:
 - Constraints the user hasn't mentioned (performance, compatibility, security)
 - Scope boundaries (what's in, what's explicitly out)

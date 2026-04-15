@@ -284,3 +284,8 @@ npx @veritasacta/verify audit.json --bundle
 - [Cedar Policy Language](https://www.cedarpolicy.com/) — AWS open-source policy engine
 - [IETF Draft: Signed Receipts](https://datatracker.ietf.org/doc/draft-farley-acta-signed-receipts/) — Receipt format specification
 - [@veritasacta/verify](https://www.npmjs.com/package/@veritasacta/verify) — Apache-2.0 verifier, works offline
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

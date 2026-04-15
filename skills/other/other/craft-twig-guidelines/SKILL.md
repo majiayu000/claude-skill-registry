@@ -27,8 +27,8 @@ Use `WebFetch` on specific doc pages when something isn't covered here.
 
 ## Variable Naming
 
-Single-word, descriptive, lowercase. No camelCase in Twig unless absolutely
-unavoidable.
+Single-word, descriptive, lowercase preferred. When multi-word is needed, use
+camelCase.
 
 ```twig
 {# Correct #}
@@ -36,19 +36,25 @@ unavoidable.
 {% set image = entry.heroImage.one() %}
 {% set items = navigation.links.all() %}
 {% set element = props.get('url') ? 'a' : 'span' %}
+{% set buttonText = entry.callToAction %}
+{% set containerClass = 'max-w-3xl' %}
 
-{# Wrong #}
-{% set heroHeading = entry.title %}
-{% set heroImg = entry.heroImage.one() %}
-{% set navItems = navigation.links.all() %}
+{# Wrong — abbreviations #}
 {% set el = props.get('url') ? 'a' : 'span' %}
+{% set btn = entry.callToAction %}
+{% set nav = navigation.links.all() %}
+
+{# Wrong — snake_case #}
+{% set button_text = entry.callToAction %}
+{% set container_class = 'max-w-3xl' %}
 ```
 
 No abbreviations: `element` not `el`, `button` not `btn`, `navigation` not `nav`,
 `description` not `desc`.
 
-If you need a multi-word variable, reconsider whether you're over-specifying.
-If truly unavoidable, use snake_case over camelCase: `hero_image` over `heroImage`.
+Prefer single-word names when context makes the meaning clear (e.g. `heading`
+inside a component is better than `sectionHeading`). But multi-word camelCase is
+perfectly fine when needed for clarity.
 
 ## Null Handling
 
@@ -296,7 +302,7 @@ is fine for production.
 ## Common Pitfalls
 
 1. **`???` operator without the plugin** — requires `nystudio107/craft-empty-coalesce` or `nystudio107/craft-seomatic`. Check `composer.json` before using. Default to `??`.
-2. **camelCase variables** — `iconPosition` → just `position`. Single descriptive words.
+2. **snake_case variables** — use camelCase: `heroImage` not `hero_image`.
 3. **Missing `only`** — silent variable leaking, invisible coupling.
 4. **`{%- minify -%}`** — deprecated. Use `{%-` whitespace control.
 5. **Abbreviations** — `el`, `btn`, `nav`, `desc`, `ctr` → spell it out.

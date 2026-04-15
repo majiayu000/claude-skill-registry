@@ -28,6 +28,11 @@ metadata:
 
 `agent-sheet` is a local spreadsheet CLI for agents. Prefer it when the task needs real workbook structure, formulas, sheet lifecycle, import/export handoff, or a safe shell roundtrip instead of plain CSV cleanup or ad-hoc `xlsx` library use.
 
+Current product reality:
+
+- treat `agent-sheet` as a **local-first editor**
+- do not rely on it as a direct remote-origin editor
+
 ## Use it for
 
 - resolving a workbook and keeping the target explicit with `--entry-id`
@@ -58,10 +63,14 @@ metadata:
 - treat `write table --sheet <name>` as an A1-anchored table write with header semantics
 - verify shell roundtrips with structure plus sample rows, not row count alone
 - use `sheet list` or `inspect workbook` for sheet existence and handoff verification
+- treat `persist` success as a closed dirty-state boundary
+- treat local read-only commands as pure reads; they should not require a follow-up `persist`
 
 ## Highest-signal gotchas
 
 - imported local entries can be healthy even when later `file info` shows `unitId: null`; keep operating on `entryId`
+- do not use `agent-sheet` as the tool for “user directly edits origin workbook”; that actor should be a real remote user in the browser
+- a read-only `script js` after daemon restart can reconcile snapshot state without fabricating a local batch
 - `file info` is metadata only; it does not prove sheet count, sheet names, or formula state
 - do not run `init` inside an already initialized workspace tree; nested workspace refusal is expected
 - non-English sheet names work, but quote the full A1 range string in the shell

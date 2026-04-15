@@ -18,7 +18,7 @@ Executes rework for a single task marked To Rework and hands it back for review.
 - Apply fixes per feedback, keep KISS/YAGNI, and align with guides/Technical Approach.
 - Update only this task: To Rework -> In Progress -> To Review; no other tasks touched.
 
-**Hex-line acceleration (if available):** Use `outline(path)` before reading large code files. Use `read_file()` for discovery and `read_file(edit_ready=true, verbosity="full")` before any edit that needs `revision` and checksums. After edits: `edit_file(base_revision=rev)` → `verify(checksums)`. Use `changes()` to show what was fixed.
+**Hex-line acceleration (if available):** Use `outline(file_path)` before reading large code files. Use `read_file()` for discovery and `read_file(edit_ready=true, verbosity="full")` before any edit that needs `revision` and checksums. After edits: `edit_file(base_revision=rev)` → `verify(checksums)`. Use `changes()` to show what was fixed.
 ## Inputs
 
 Use `read_file()` and `edit_file()` as the primary path for code/config/script/test files during rework. Keep `read_file()` discovery-first by default; request `edit_ready=true, verbosity="full"` only when you are about to reuse its revision/checksum protocol. Built-in Read/Edit are fallback only when hex-line is unavailable.

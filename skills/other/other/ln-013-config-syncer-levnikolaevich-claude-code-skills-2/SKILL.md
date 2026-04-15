@@ -1,6 +1,6 @@
 ---
 name: ln-013-config-syncer
-description: "Use when syncing skills, MCP settings, defaults, and hooks from Claude Code to Gemini CLI and Codex CLI with symlink support for Gemini and install-based sync for Codex."
+description: "Use when syncing skills, MCP settings, defaults, and hooks from Claude Code to Gemini CLI, Codex CLI, and Google Antigravity. Verifies language-analyzer providers for synced MCP servers match the project's languages."
 license: MIT
 ---
 
@@ -26,7 +26,7 @@ Shared MCP servers still come from Claude. Codex top-level execution defaults ar
 
 | Direction | Content |
 |-----------|---------|
-| **Input** | OS info, `disabled` flags per agent, `targets` (`gemini` / `codex` / `both`), `dry_run` flag, optional `runId`, optional `summaryArtifactPath` |
+| **Input** | OS info, `disabled` flags per agent, `targets` (`gemini` / `codex` / `antigravity` / `both` / `all`), `dry_run` flag, optional `auto_install_providers` flag, optional `runId`, optional `summaryArtifactPath` |
 | **Output** | Structured summary envelope with `payload.status` = `completed` / `skipped` / `error`, plus per-target sync outcomes in `changes` / `detail` |
 
 If `summaryArtifactPath` is provided, write the same summary JSON there. If not provided, return the summary inline and remain fully standalone. If `runId` is not provided, generate a standalone `run_id` before emitting the summary envelope.
@@ -41,6 +41,7 @@ Phase profile:
 3. `PHASE_2_SYNC_SKILLS_MAPPING`
 4. `PHASE_3_SYNC_MCP_SETTINGS`
 5. `PHASE_4_SYNC_HOOKS_AND_POLICY`
+5a. `PHASE_4A_MCP_PROVIDER_CHECK`
 6. `PHASE_5_WRITE_SUMMARY`
 7. `PHASE_6_SELF_CHECK`
 
@@ -60,6 +61,8 @@ Payload fields:
 - `targets`
 - `skills_mapping`
 - `mcp_sync`
+- `antigravity_sync`
+- `mcp_providers`
 - `hook_sync`
 - `gemini_policy`
 - `codex_execution_defaults`
@@ -282,6 +285,40 @@ decision = "allow"
 priority = 200
 ```
 
+### Phase 4a: MCP Provider Check (language analyzers)
+
+**MANDATORY READ:** Load `references/mcp_provider_requirements.md`.
+
+Runs once per project invocation after MCP sync, regardless of how many targets were synced. Goal: ensure every MCP server referenced in any synced config has its language-analyzer providers available for the languages the project actually uses.
+
+1. **Enumerate MCP servers.** Union of `mcpServers` across all target configs (Claude, Codex, Gemini, Antigravity). Deduplicate by name.
+2. **Detect project languages.** Probe in order, cheapest first: `pyproject.toml`, `package.json`, `tsconfig.json`, `Cargo.toml`, `go.mod`, `*.csproj`. Use `mcp__hex-line__inspect_path` to probe; do not shell out.
+3. **Look up provider requirements.** Read `references/mcp_provider_requirements.md`. For `hex-graph`, the requirement is "delegate to `mcp__hex-graph__install_graph_providers`". MCPs not listed in the reference are reported as `not_applicable` and skipped.
+4. **Run provider check.** Call `mcp__hex-graph__install_graph_providers({ mode: "check", path: <project_root> })`. Surface the reported missing providers and their install commands (e.g., pip `basedpyright`, `rustup component add rust-analyzer`, `go install gopls`). Do NOT auto-install unless the caller passed `auto_install_providers=true`; then call the same tool with `mode: "install"`.
+5. **Record result.** Write into `environment_state.json` under `mcp_providers: { <server>: { <language>: "installed" | "missing" | "skipped" | "not_applicable" } }` (top-level, not per-agent — the MCP is shared across targets in this project).
+
+**Scope guard:** never install project-level dependencies (do not write to `pyproject.toml` / `package.json`). `install_graph_providers` itself is contract-bound: *"never installs runtimes or project dependencies."* Basedpyright's canonical distribution is pip (`basedpyright` on PyPI); npm is a fallback for projects that cannot use pypi.
+
+## Antigravity Target (supplementary, runs alongside Phase 2 and Phase 3)
+
+Google Antigravity loads skills from two roots per the official docs:
+- Global: `~/.gemini/antigravity/skills/`
+- Workspace: `<workspace>/.agents/skills/`
+
+Both roots may be active simultaneously. For the Antigravity target this skill:
+
+| Condition | Action |
+|-----------|--------|
+| `disabled: true` | SKIP, report `disabled` |
+| `~/.gemini/antigravity/` directory not present | SKIP, report `antigravity not detected` |
+| Global skills link `~/.gemini/antigravity/skills` missing | Create junction/symlink to the active source (same strategy as Gemini CLI) |
+| Workspace root `<project>/.agents/skills` requested and missing | Create junction/symlink per project, record `workspace_skills_root` in env state |
+| MCP config location unknown | Probe order: `~/.gemini/antigravity/settings.json` → `~/.gemini/antigravity/config.json` → `<workspace>/.agents/settings.json`. If none found, read from env var `ANTIGRAVITY_CONFIG` and emit a clear error when it is unset |
+| MCP config found | Merge `mcpServers` using the same Claude→target rules as Gemini (JSON format) |
+
+Antigravity does not ship a separate CLI binary at the time of writing; `ln-011-agent-installer` treats it as detect-only.
+
+
 ### Phase 5: Verify & Report
 
 Verify:
@@ -358,6 +395,9 @@ Config Sync:
 - [ ] Final report table displayed
 - [ ] Structured summary returned
 - [ ] Summary artifact written to the managed or standalone runtime path
+- [ ] Antigravity global skill root linked (or SKIPPED with reason)
+- [ ] Antigravity workspace skill root materialized when requested
+- [ ] MCP provider check run with result recorded in `mcp_providers`
 
 ---
 

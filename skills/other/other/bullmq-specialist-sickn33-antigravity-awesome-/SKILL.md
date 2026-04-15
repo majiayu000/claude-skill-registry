@@ -380,7 +380,6 @@ Workflow:
 Works well with: `redis-specialist`, `backend`, `nextjs-app-router`, `email-systems`, `ai-workflow-automation`, `performance-hunter`
 
 ## When to Use
-
 - User mentions or implies: bullmq
 - User mentions or implies: bull queue
 - User mentions or implies: redis queue
@@ -391,3 +390,8 @@ Works well with: `redis-specialist`, `backend`, `nextjs-app-router`, `email-syst
 - User mentions or implies: worker process
 - User mentions or implies: job scheduling
 - User mentions or implies: async processing
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

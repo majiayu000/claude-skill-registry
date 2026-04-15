@@ -86,9 +86,9 @@ Use `hex-line` as the primary path for code files and `hex-graph` as the primary
    d) Assign confidence score (0-100). Only proceed if confidence >=90
 
    **Hex-line acceleration (if available):** IF hex-line MCP server is available:
-   - Use `outline(path)` and discovery-first `read_file()` before manual cleanup edits. Re-read with `edit_ready=true, verbosity="full"` only when you need revision/checksums for `edit_file`.
+   - Use `outline(file_path)` and discovery-first `read_file()` before manual cleanup edits. Re-read with `edit_ready=true, verbosity="full"` only when you need revision/checksums for `edit_file`.
    - **Batch cleanup:** When fixing >3 files with same pattern (e.g., unused import removal), use `bulk_replace(dry_run=true)` to preview, then `bulk_replace()` to apply.
-   - **Verified edits:** After each fix, `verify(path, checksums)` to confirm no stale state.
+   - **Verified edits:** After each fix, `verify(file_path, checksums)` to confirm no stale state.
    - **Semantic dead-code check:** Use `find_references()` before deleting exports, wrappers, aliases, or shims.
    - Fall back to per-file Edit or Grep only if the relevant MCP is unavailable.
 4) **Apply fixes with per-fix keep/discard (autoresearch pattern):**

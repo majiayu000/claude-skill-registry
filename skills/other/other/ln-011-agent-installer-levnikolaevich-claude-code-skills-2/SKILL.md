@@ -1,6 +1,6 @@
 ---
 name: ln-011-agent-installer
-description: "Installs or updates Codex CLI, Gemini CLI, and Claude Code. Use when CLI agents need installation or update."
+description: "Installs or updates Codex CLI, Gemini CLI, Claude Code, and detects Google Antigravity IDE. Use when CLI agents need installation or update."
 license: MIT
 model: claude-sonnet-4-6
 ---
@@ -69,6 +69,7 @@ Payload fields:
 | Codex | `npm i -g @openai/codex` | `codex --version` |
 | Gemini | `npm i -g @google/gemini-cli` | `gemini --version` |
 | Claude | `claude update` | `claude --version` |
+| Antigravity | _manual install via IDE_ (no CLI) | detect `~/.gemini/antigravity/` directory presence |
 
 ---
 

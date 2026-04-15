@@ -17,8 +17,8 @@ description: Analyzes Rails applications and generates comprehensive upgrade rep
 
 ## Dependencies
 
-- **rails-load-defaults skill** ([github.com/ombulabs/claude-code_rails-load-defaults-skill](https://github.com/ombulabs/claude-code_rails-load-defaults-skill)) — Handles incremental `load_defaults` updates with tiered risk assessment (Tier 1: low-risk, Tier 2: needs codebase grep, Tier 3: requires human review). Must be installed for Step 2 of the upgrade workflow.
-- **dual-boot skill** ([github.com/ombulabs/claude-code_dual-boot-skill](https://github.com/ombulabs/claude-code_dual-boot-skill)) — Sets up and manages dual-boot environments using the `next_rails` gem. Covers setup, `NextRails.next?` code patterns, CI configuration, and post-upgrade cleanup. Must be installed for Step 4 of the upgrade workflow.
+- **dual-boot skill** ([github.com/ombulabs/claude-code_dual-boot-skill](https://github.com/ombulabs/claude-code_dual-boot-skill)) — Sets up and manages dual-boot environments using the `next_rails` gem. Covers setup, `NextRails.next?` code patterns, CI configuration, and post-upgrade cleanup. Must be installed for Step 2 of the upgrade workflow.
+- **rails-load-defaults skill** ([github.com/ombulabs/claude-code_rails-load-defaults-skill](https://github.com/ombulabs/claude-code_rails-load-defaults-skill)) — Handles incremental `load_defaults` updates with tiered risk assessment (Tier 1: low-risk, Tier 2: needs codebase grep, Tier 3: requires human review). Used as the final step after the Rails version upgrade is complete.
 
 ---
 
@@ -55,7 +55,7 @@ When proposing code fixes that must work with both the current and target Rails 
 
 ---
 
-## Core Workflow (5-Step Process)
+## Core Workflow (7-Step Process)
 
 ### Step 0: Verify Latest Patch Version (MANDATORY PRE-STEP)
 - **CRITICAL:** Before any upgrade work begins, verify the app is on the latest patch release of its current Rails series
@@ -79,12 +79,14 @@ When proposing code fixes that must work with both the current and target Rails 
 - Record test count and coverage as baseline metrics
 - See `workflows/test-suite-verification-workflow.md` for details
 
-### Step 2: Verify load_defaults Matches Current Rails Version
-- **CRITICAL:** Check if `load_defaults` in `config/application.rb` matches the current Rails gem version
-- **DELEGATE** to the `rails-load-defaults` skill for detection and incremental update
-- That skill handles tiered, per-config updates with test runs between each change
-- If `load_defaults` matches current Rails version → Proceed to Step 3
-- **DEPENDENCY:** Requires the [rails-load-defaults skill](https://github.com/ombulabs/claude-code_rails-load-defaults-skill)
+### Step 2: Set Up Dual-Boot with next_rails (EARLY SETUP)
+- **DELEGATE** to the `dual-boot` skill for setup and initialization
+- That skill handles:
+  - Checking if Gemfile.next already exists (to avoid duplicate next? method)
+  - Adding next_rails gem and running next_rails --init
+  - Installing dependencies for both Rails versions
+  - Configuring the Gemfile with if next? conditionals
+- **DEPENDENCY:** Requires the [dual-boot skill](https://github.com/ombulabs/claude-code_dual-boot-skill)
 
 ### Step 3: Run Breaking Changes Detection (DIRECT)
 - **Claude runs detection checks directly** using Grep, Glob, and Read tools
@@ -96,6 +98,19 @@ When proposing code fixes that must work with both the current and target Rails 
 ### Step 4: Generate Reports Based on Findings
 - **Comprehensive Upgrade Report**: Breaking changes analysis with OLD vs NEW code examples, custom code warnings with ⚠️ flags, step-by-step migration plan, testing checklist and rollback plan
 - **app:update Preview Report**: Shows exact configuration file changes (OLD vs NEW), lists new files to be created, impact assessment (HIGH/MEDIUM/LOW)
+
+### Step 5: Implement Changes & Upgrade Rails Version
+- Fix breaking changes identified in the reports
+- Use `NextRails.next?` for code that must work with both versions (DELEGATE to dual-boot skill for patterns)
+- Update Gemfile to target Rails version
+- Run test suite against both versions during the transition
+- Deploy and verify
+
+### Step 6: Align load_defaults to New Version (FINAL STEP)
+- **DELEGATE** to the `rails-load-defaults` skill for detection and incremental update
+- That skill handles tiered, per-config updates with test runs between each change
+- This is done AFTER the Rails version upgrade is complete, as the last step
+- **DEPENDENCY:** Requires the [rails-load-defaults skill](https://github.com/ombulabs/claude-code_rails-load-defaults-skill)
 
 ---
 
@@ -202,7 +217,6 @@ If user requests a multi-hop upgrade (e.g., 5.2 → 8.1):
 
 ### Workflow Guides (Load when generating deliverables)
 - `workflows/test-suite-verification-workflow.md` - **MANDATORY FIRST STEP** - How to run and verify test suite
-- **EXTERNAL DEPENDENCY:** `rails-load-defaults` skill - **MANDATORY SECOND STEP** - Verify and update load_defaults to match Rails version (https://github.com/ombulabs/claude-code_rails-load-defaults-skill)
 - `workflows/direct-detection-workflow.md` - How to run breaking change detection directly
 - `workflows/upgrade-report-workflow.md` - How to generate upgrade reports
 - `workflows/app-update-preview-workflow.md` - How to generate app:update previews
@@ -211,8 +225,11 @@ If user requests a multi-hop upgrade (e.g., 5.2 → 8.1):
 - `examples/simple-upgrade.md` - Single-hop upgrade example
 - `examples/multi-hop-upgrade.md` - Multi-hop upgrade example
 
+### External Dependencies
+- **dual-boot skill** - Dual-boot setup and management with next_rails (Step 2) (https://github.com/ombulabs/claude-code_dual-boot-skill)
+- **rails-load-defaults skill** - Incremental load_defaults alignment (Step 6, final step) (https://github.com/ombulabs/claude-code_rails-load-defaults-skill)
+
 ### Reference Materials
-- **EXTERNAL DEPENDENCY:** `dual-boot` skill - Dual-boot setup and management with next_rails (https://github.com/ombulabs/claude-code_dual-boot-skill)
 - `reference/deprecation-warnings.md` - Finding and fixing deprecations
 - `reference/staying-current.md` - Keeping up with Rails releases
 - `reference/breaking-changes-by-version.md` - Quick lookup
@@ -269,23 +286,7 @@ When user requests an upgrade, follow this workflow:
    - Proceed to Step 2
 ```
 
-### Step 2: Detect Current Version & Verify load_defaults (BLOCKING STEP)
-```
-⚠️  THIS STEP MAY BLOCK THE UPGRADE
-
-1. Read Gemfile to find current Rails gem version
-2. Read config/application.rb for load_defaults version
-3. Compare rails_gem_version with load_defaults_version
-4. If load_defaults_version < rails_gem_version:
-   - DELEGATE to the rails-load-defaults skill for incremental update
-   - That skill walks through each config change one at a time, grouped by risk tier
-   - Tests are re-run between each change
-   - Do NOT proceed until load_defaults matches the current Rails version
-5. If load_defaults_version == rails_gem_version:
-   - Proceed to Step 3
-```
-
-### Step 3: Set Up Dual-Boot with next_rails (IF NOT ALREADY SET UP)
+### Step 2: Set Up Dual-Boot with next_rails (EARLY SETUP)
 ```
 DELEGATE to the dual-boot skill for setup and initialization.
 That skill handles:
@@ -295,14 +296,14 @@ That skill handles:
 - Configuring the Gemfile with if next? conditionals
 ```
 
-### Step 4: Validate Upgrade Path
+### Step 3: Validate Upgrade Path
 ```
 1. Check if upgrade is single-hop or multi-hop
 2. If multi-hop, explain sequential requirement
 3. Plan individual hops
 ```
 
-### Step 5: Run Breaking Changes Detection (DIRECT)
+### Step 4: Run Breaking Changes Detection (DIRECT)
 ```
 Claude runs detection directly using tools - NO script generation needed
 
@@ -316,7 +317,7 @@ Claude runs detection directly using tools - NO script generation needed
 5. Compile all findings into structured data
 ```
 
-### Step 6: Load Report Resources & Generate Reports
+### Step 5: Load Report Resources & Generate Reports
 ```
 1. Read: templates/upgrade-report-template.md
 2. Read: templates/app-update-preview-template.md
@@ -332,12 +333,24 @@ Claude runs detection directly using tools - NO script generation needed
 - **Input:** Actual config files + findings
 - **Output:** Preview with real file paths and changes
 
-### Step 7: Present Reports & Offer Help
+### Step 6: Present Reports & Implement Changes
 ```
 1. Present Comprehensive Upgrade Report first
 2. Present app:update Preview Report second
-3. Explain next steps
-4. Offer to help implement changes
+3. Implement breaking change fixes using NextRails.next? for dual-boot code
+4. Update Gemfile to target Rails version
+5. Run test suite against both versions
+6. Deploy and verify
+```
+
+### Step 7: Align load_defaults (FINAL STEP)
+```
+⚠️  THIS STEP HAPPENS AFTER THE UPGRADE IS COMPLETE
+
+1. DELEGATE to the rails-load-defaults skill
+2. That skill walks through each config change one at a time, grouped by risk tier
+3. Tests are re-run between each change
+4. Consolidates into config/application.rb when done
 ```
 
 ---
@@ -393,14 +406,9 @@ Before starting ANY upgrade:
 4. If tests FAIL → STOP and help fix tests first
 5. If tests PASS → Record baseline and proceed
 
-**Action - Step 2 (MANDATORY: Verify load_defaults):**
-1. Read Gemfile.lock for current Rails gem version
-2. Read config/application.rb for load_defaults version
-3. If load_defaults < Rails gem version:
-   - INFORM user: "Your app uses Rails X.Y but load_defaults is set to X.Z"
-   - DELEGATE to the `rails-load-defaults` skill for incremental, tiered update
-   - That skill handles per-config analysis, test runs, and risk assessment
-4. If load_defaults matches → Proceed to Step 3
+**Action - Step 2 (Set Up Dual-Boot):**
+1. DELEGATE to the `dual-boot` skill for setup
+2. Set up next_rails, Gemfile.next, and dual-boot CI
 
 **Action - Step 3 (Run Detection Directly):**
 1. Validate upgrade path
@@ -415,7 +423,15 @@ Before starting ANY upgrade:
 3. Generate Comprehensive Upgrade Report (using direct findings)
 4. Generate app:update Preview (using actual config files)
 5. Present both reports to user
-6. Offer to help implement changes
+
+**Action - Step 5 (Implement & Upgrade):**
+1. Fix breaking changes using `NextRails.next?` for dual-boot code
+2. Update Gemfile to target Rails version
+3. Run tests against both versions, deploy and verify
+
+**Action - Step 6 (Align load_defaults - FINAL):**
+1. DELEGATE to the `rails-load-defaults` skill
+2. Walk through each config incrementally after the upgrade is complete
 
 ### Pattern 2: Multi-Hop Request
 **User says:** "Help me upgrade from Rails 5.2 to 8.1"
@@ -430,18 +446,17 @@ Before starting ANY upgrade:
 2. If tests fail → STOP and fix first
 3. If tests pass → Proceed with planning
 
-**Action - Step 2 (MANDATORY: Verify load_defaults):**
-1. Check if load_defaults matches current Rails version
-2. If mismatched → Recommend updating load_defaults FIRST
-3. For multi-hop: Ensure load_defaults is current before starting
+**Action - Step 2 (Set Up Dual-Boot):**
+1. DELEGATE to the `dual-boot` skill for setup (if not already set up)
+2. Dual-boot stays active throughout the multi-hop process
 
 **Action - Step 3 (Plan & Execute):**
 1. Explain sequential requirement
 2. Calculate hops: 5.2 → 6.0 → 6.1 → 7.0 → 7.1 → 7.2 → 8.0 → 8.1
 3. Reference: `reference/multi-hop-strategy.md`
-4. Follow Pattern 1 for FIRST hop (5.2 → 6.0)
+4. Follow Pattern 1 Steps 3-5 for FIRST hop (5.2 → 6.0)
 5. After first hop complete, repeat for next hops
-6. **IMPORTANT:** After each hop, ensure load_defaults is updated before next hop
+6. **IMPORTANT:** After each hop, align load_defaults to the new version before starting the next hop
 
 ### Pattern 3: Breaking Changes Analysis Only
 **User says:** "What breaking changes affect my app for Rails 8.0?"
@@ -454,11 +469,7 @@ Before starting ANY upgrade:
 2. If tests fail → Warn user and recommend fixing first
 3. If tests pass → Proceed with analysis
 
-**Action - Step 2 (MANDATORY: Verify load_defaults):**
-1. Check load_defaults alignment
-2. If mismatched → Recommend updating first
-
-**Action - Step 3 (Run Detection):**
+**Action - Step 2 (Run Detection):**
 1. Load: `workflows/direct-detection-workflow.md`
 2. Run detection directly using tools
 3. Present findings summary
@@ -497,17 +508,17 @@ Before delivering, verify:
 1. **ALWAYS Verify Latest Patch First** (MANDATORY - ensure app is on latest patch of current series before any version hop)
 2. **ALWAYS Run Test Suite** (MANDATORY - no exceptions, no upgrade work until tests pass)
 3. **Block on Failing Tests** (if tests fail, STOP and help fix them before any upgrade work)
-4. **ALWAYS Verify load_defaults** (MANDATORY - check if load_defaults matches current Rails version)
-5. **Recommend Updating load_defaults First** (if behind current Rails, update load_defaults BEFORE upgrading to next version)
-6. **Run Detection Directly** (use Grep/Glob/Read tools - no script generation needed)
-7. **Always Use Actual Findings** (no generic examples in reports)
-8. **Always Flag Custom Code** (with ⚠️ warnings based on detected issues)
-9. **Always Use Templates** (for consistency)
-10. **Always Check Quality** (before delivery)
-11. **Load Workflows as Needed** (don't hold everything in memory)
-12. **Sequential Process is Critical** (patch check → tests → load_defaults check → detection → reports)
-13. **Follow FastRuby.io Methodology** (incremental upgrades, assessment first)
-14. **Always Use `NextRails.next?` for Dual-Boot Code** (NEVER use `respond_to?` for version branching. DELEGATE to the `dual-boot` skill for patterns and setup.)
+4. **Set Up Dual-Boot Early** (dual-boot is Step 2, right after tests pass - run both versions during the entire transition)
+5. **Run Detection Directly** (use Grep/Glob/Read tools - no script generation needed)
+6. **Always Use Actual Findings** (no generic examples in reports)
+7. **Always Flag Custom Code** (with ⚠️ warnings based on detected issues)
+8. **Always Use Templates** (for consistency)
+9. **Always Check Quality** (before delivery)
+10. **Load Workflows as Needed** (don't hold everything in memory)
+11. **Sequential Process is Critical** (patch check → tests → dual-boot → detection → reports → implement → load_defaults)
+12. **Follow FastRuby.io Methodology** (incremental upgrades, assessment first)
+13. **Always Use `NextRails.next?` for Dual-Boot Code** (NEVER use `respond_to?` for version branching. DELEGATE to the `dual-boot` skill for patterns and setup.)
+14. **Align load_defaults Last** (load_defaults update happens AFTER the Rails version upgrade is complete, as the final step)
 
 ---
 
@@ -520,14 +531,14 @@ A successful upgrade assistance session:
 ✅ **Ran test suite** (Step 1 - MANDATORY)
 ✅ **Verified all tests pass** (blocked if tests failed)
 ✅ **Recorded baseline metrics** (test count, coverage)
-✅ **Checked load_defaults alignment** (Step 2 - MANDATORY)
-✅ **Recommended load_defaults update if behind** (asked user before proceeding)
-✅ **Updated load_defaults if user agreed** (re-ran tests after update)
+✅ **Set up dual-boot** (Step 2 - early, before upgrading)
 ✅ **Ran detection directly** (using Grep/Glob/Read tools - no script)
 ✅ **Generated Comprehensive Upgrade Report** using actual findings
 ✅ **Generated app:update Preview** using actual config files
 ✅ Used user's actual code from findings (not generic examples)
 ✅ Flagged all custom code with ⚠️ warnings based on detected issues
+✅ **Implemented changes and upgraded Rails version**
+✅ **Aligned load_defaults** (final step, after upgrade is complete)
 ✅ Provided clear next steps
 ✅ Offered to help implement changes
 

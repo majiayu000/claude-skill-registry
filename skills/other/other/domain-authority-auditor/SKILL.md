@@ -1,15 +1,16 @@
 ---
 name: domain-authority-auditor
 description: '40-item CITE domain audit: citation, impact, trust, entity scoring with veto checks. 域名权威/网站可信度'
-version: "6.0.0"
+version: "8.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 when_to_use: "Use when auditing domain trust and authority. Runs CITE 40-item scoring with veto checks. Also when the user asks about domain credibility or citation trustworthiness."
 argument-hint: "<domain>"
+class: auditor
 metadata:
   author: aaron-he-zhu
-  version: "6.0.0"
+  version: "8.0.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -98,7 +99,7 @@ Use this when domain credibility or citation trustworthiness is in question — 
 1. **Full 40-Item Audit**: Scores every CITE check item as Pass/Partial/Fail
 2. **Dimension Scoring**: Calculates scores for all 4 dimensions (0-100 each)
 3. **Weighted Totals**: Applies domain-type-specific weights for CITE Score
-4. **Veto Detection**: Flags critical manipulation signals (T03, T05, T09)
+4. **Critical Issue Detection**: Flags critical manipulation signals that cap the score
 5. **Priority Ranking**: Identifies Top 5 improvements sorted by impact
 6. **Action Plan**: Generates specific, actionable improvement steps
 7. **Cross-Reference**: Optionally pairs with CORE-EEAT for combined diagnosis
@@ -135,7 +136,7 @@ Run full 120-item assessment on [domain]: CITE domain audit + CORE-EEAT content 
 
 ## Skill Contract
 
-**Gate verdict**: **TRUSTED** (no veto items, scores above threshold) / **CAUTIOUS** (issues found but no veto) / **UNTRUSTED** (veto item T03, T05, or T09 failed). Always state the verdict prominently at the top of the report.
+**Gate verdict**: **TRUSTED** (no critical issues, scores above threshold) / **CAUTIOUS** (issues found but none critical) / **UNTRUSTED** (a critical trust issue failed — see "Critical Issue to Fix" in the report). Always state the verdict prominently at the top of the report using plain language, not item IDs.
 
 **Expected output**: a CITE audit report, a citation-trust verdict, and a short handoff summary ready for `memory/audits/domain/`.
 
@@ -187,16 +188,16 @@ When a user requests a domain authority audit:
 | T | 25% | 20% | 25% | **35%** | 25% | 25% | 20% |
 | E | 20% | 25% | 20% | 25% | **30%** | 20% | 15% |
 
-#### Veto Check (Emergency Brake)
+#### Critical Trust Check (Emergency Brake)
 
-| Veto Item | Status | Action |
-|-----------|--------|--------|
-| T03: Link-Traffic Coherence | ✅ Pass / ⚠️ VETO | [If VETO: "Audit backlink profile; disavow toxic links"] |
-| T05: Backlink Profile Uniqueness | ✅ Pass / ⚠️ VETO | [If VETO: "Flag as manipulation network; investigate link sources"] |
-| T09: Penalty & Deindex History | ✅ Pass / ⚠️ VETO | [If VETO: "Address penalty first; all other optimization is futile"] |
+| Check | Status | Action |
+|-------|--------|--------|
+| Link profile matches real traffic | ✅ Pass / ⚠️ CRITICAL | [If CRITICAL: "Audit backlink profile; disavow toxic links"] |
+| Backlink profile is unique to this domain | ✅ Pass / ⚠️ CRITICAL | [If CRITICAL: "Flag as manipulation network; investigate link sources"] |
+| No Google penalties or deindexing | ✅ Pass / ⚠️ CRITICAL | [If CRITICAL: "Address penalty first; all other optimization is futile"] |
 ```
 
-If any veto item triggers, flag it prominently at the top of the report. CITE Score is capped at 39 (Poor) regardless of other scores.
+If any critical trust check triggers, flag it prominently at the top of the report using plain language. CITE Score is capped per [Runbook §2](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/auditor-runbook.md).
 
 ### Step 2: C + I Audit (20 items)
 
@@ -254,6 +255,285 @@ Same format for Trust and Eminence dimensions.
 ```
 
 **Note**: Some items require specialized data (C05-C08 AI citation data, I01 knowledge graph queries, T04-T05 IP/profile analysis). Score what is observable; mark unverifiable items as "N/A — requires [data source]" and exclude from dimension average.
+
+<!-- runbook-sync start: source_sha256=fbd3f05fbd9285973f3f5bf7252c40f5474c2e5a21217b5055e4eda469a84856 block_sha256=bc95b8993b94f099b1ce8f62d667c14fea504059fc4d2e860e420d358094e0be -->
+## §1 · Handoff Schema (authoritative)
+
+Every auditor-class handoff MUST follow this shape:
+
+```yaml
+status: DONE | DONE_WITH_CONCERNS | BLOCKED | NEEDS_INPUT
+objective: "what was audited"
+key_findings:
+  - title: short issue name
+    severity: veto | high | medium | low
+    evidence: direct quote or data point
+evidence_summary: URLs / data points reviewed
+open_loops: blockers or missing inputs
+recommended_next_skill: primary next move
+
+# Cap-related fields — AUDITOR-CLASS ONLY
+cap_applied: true | false        # REQUIRED for auditors
+raw_overall_score: <number>      # REQUIRED for auditors; score before cap
+final_overall_score: <number>    # REQUIRED for auditors; score after cap
+```
+
+### Backward compatibility (v7.1.0 → v7.2.0 deprecation window)
+
+Downstream skills consuming handoffs must treat the cap-related fields as **optional with documented defaults** during the deprecation window. If absent, apply these defaults:
+
+- `cap_applied: false` (assume no cap when field missing)
+- `raw_overall_score: <use final_overall_score>` (treat as equal)
+- `final_overall_score: <use the overall score from the audit, whatever field name>`
+
+This prevents breakage when an audit produced before the upgrade is consumed by a skill after the upgrade. A consuming skill MUST never error on missing cap fields during the deprecation window. After v7.2.0, fields become required for all auditor-class producers; consumers may then treat absence as a BLOCKED upstream.
+
+### Non-auditor skills
+
+Non-auditor skill handoffs follow [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) as-is. Cap-related fields do not apply. Non-auditors never emit `cap_applied` / `raw_overall_score` / `final_overall_score`.
+
+---
+
+## §2 · Critical Fail Cap — Decision Table and Worked Examples
+
+> **How to use this section in Step 4.5**: re-read Worked Example 1 below **before** computing your own cap. Mirror its "Before cap / Veto check / After cap / Handoff" format literally. Walk the decision table (4 rows) to identify which scenario matches your input. Count veto failures across all dimensions (not per-dimension). Apply the cap rule — it is a ceiling, not a floor.
+
+**Rule summary**: when any veto item fails, cap the affected dimension and the overall score at **60/100**. Show raw and capped side by side in the internal report. Set `cap_applied: true` in handoff.
+
+**Veto items**:
+- CORE-EEAT: T04, C01, R10 — see [core-eeat-benchmark.md §Veto Items](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/core-eeat-benchmark.md)
+- CITE: T03, T05, T09 — see [cite-domain-rating.md §Veto Items](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/cite-domain-rating.md)
+
+### Decision table
+
+| Scenario | Affected dimension behavior | Overall score behavior | Handoff status |
+|---|---|---|---|
+| **0 veto fails** | no cap | no cap | `cap_applied: false` |
+| **1 veto fails; raw dim > 60** | `min(raw_dim, 60)` → capped down to 60 | `min(raw_overall, 60)` | `cap_applied: true` |
+| **1 veto fails; raw dim ≤ 60** | unchanged (no raise, no lower) | `min(raw_overall, 60)` | `cap_applied: true` |
+| **2+ veto fails** | `status: BLOCKED`, do NOT emit capped scores | `raw_overall_score` retained for record | `cap_applied: false`, reason in `open_loops` |
+
+**Cap target**: always the post-penalty final dimension value, never the raw pre-penalty value. If non-veto items already penalized the dimension, compute the post-penalty number first, then apply the veto cap to that.
+
+### Worked example 1 — single veto, raw dim above cap (classic case)
+
+```
+Before cap:
+  Dimensions: C=75 O=77 R=80 E=75 Exp=78 Ept=77 A=77 T=85
+  Sum = 624; raw_overall = 624 / 8 = 78 (exact)
+
+Veto check: T04 failed (affiliate links without disclosure)
+
+After cap:
+  T dimension: 85 → 60 (capped down because raw > 60)
+  Overall: 78 → 60 (capped at 60 because any veto forces overall cap)
+
+Handoff:
+  cap_applied: true
+  raw_overall_score: 78
+  final_overall_score: 60
+  key_findings:
+    - title: "Missing affiliate disclosure"
+      severity: veto
+      evidence: "No disclosure banner; 3 affiliate links detected in body"
+```
+
+### Worked example 2 — single veto, raw dim already below cap
+
+```
+Before cap:
+  Dimensions: C=55 O=75 R=88 E=80 Exp=80 Ept=75 A=82 T=85
+  raw_overall = 77.5
+
+Veto check: C01 failed (clickbait — title doesn't match content)
+
+After cap:
+  C dimension: 55 → 55 (unchanged; cap is a ceiling, not a floor)
+  Overall: 77 → 60 (overall still capped because veto present)
+
+Handoff:
+  cap_applied: true
+  raw_overall_score: 77
+  final_overall_score: 60
+  key_findings:
+    - title: "Title promises something the page doesn't deliver"
+      severity: veto
+      evidence: "Title: '10 Free Tools'; body delivers 3 free tools and 7 paid"
+```
+
+**Important**: the C dimension number in the internal report stays 55. It is NOT raised to 60. The cap is a ceiling only.
+
+### Worked example 3 — 2+ veto fails (BLOCKED path)
+
+```
+Before cap:
+  Dimensions: C=75 O=77 R=80 E=75 Exp=78 Ept=77 A=77 T=85
+  Sum = 624; raw_overall = 624 / 8 = 78 (exact)
+
+Veto check: T04 AND R10 both failed
+
+Resolution:
+  status: BLOCKED
+  Do NOT compute capped scores.
+  raw_overall_score retained for record; final_overall_score omitted.
+
+Handoff:
+  status: BLOCKED
+  cap_applied: false
+  raw_overall_score: 78
+  # final_overall_score intentionally omitted
+  open_loops:
+    - "2 veto items failed: T04 (affiliate disclosure) and R10 (data inconsistency)"
+    - "Multi-veto cap calibration pending v7.3; page requires manual review before re-scoring"
+  key_findings:
+    - title: "Missing affiliate disclosure"
+      severity: veto
+      evidence: "..."
+    - title: "Data points contradict each other"
+      severity: veto
+      evidence: "..."
+```
+
+**Why BLOCKED, not "capped at 40"**: the 40-tier cap number is unvalidated. Blocking forces manual review, which is more honest than publishing an eyeballed number. Calibration trigger: 30+ real multi-veto audits in `memory/audits/`. Review date: 2026-07-10 via `/seo:p2-review`.
+
+**Note on dimension vs count**: the 2+ veto threshold counts **total veto failures across all dimensions**, not per-dimension. Example 3 shows T04 (Trust dim) + R10 (Referenceability dim) on different dimensions, but T03 + T09 both on the Trust dimension would also trigger BLOCKED. The veto count is dimension-agnostic.
+
+---
+
+## §3 · Guardrail Negatives (windowed positive reframes)
+
+These signals are POSITIVE under stated conditions. Award points, do not deduct. **Conditions are explicit — unconditional positive reframes cause false negatives.**
+
+| Signal | Treat as positive WHEN | Example flag rule |
+|---|---|---|
+| Year marker in title/body | Year is within `[current_year − 2, current_year]` | "2026" in 2026: freshness positive. "2020" in 2026: R-dimension concern, review for staleness — do NOT award freshness |
+| Numbered list ("5 best", "Top 10", "3 steps") | Always | CTR positive, counts toward O-dimension structure |
+| Qualifier ("Open-Source", "Self-Hosted", "Free", "Local-First") | Always | Narrow intent, counts toward E-dimension exclusivity |
+| Short acronym ("SEO", "AI", "CRM", "API") | Always | Never apply length or stop-word filter to these tokens |
+| Homepage brand-first title ("Acme \| AI Workflow") | The page IS the homepage | Correct pattern; do not flag under C01 |
+| Inner-page keyword-first title ("AI Workflow for Teams — Acme") | The page is NOT the homepage | Correct pattern; do not flag under C01 |
+
+### Exception path
+
+If the content is explicitly evergreen or the context contradicts a positive reframe, state the exception in the finding's `evidence` field. For example:
+
+> "Year 2024 appears in title. Content is labeled 'evergreen guide' and aims for 2+ year longevity; the 2024 stamp will date the page unnecessarily. Flagged for R dimension."
+
+### Current year reference
+
+The windowed year rule depends on the date at audit time, not a hardcoded year in this file. Evaluate `current_year` dynamically when applying §3.
+
+---
+
+## §4 · Artifact Gate Checklist (7-item self-check)
+
+Before emitting the handoff, the auditor verifies:
+
+- [ ] `status` is one of the 4 enum values (DONE / DONE_WITH_CONCERNS / BLOCKED / NEEDS_INPUT)
+- [ ] `key_findings` is an array (may be empty)
+- [ ] Every finding has `title` + `severity` + `evidence`
+- [ ] `cap_applied` is explicitly set (true or false) — auditor-class requirement
+- [ ] `raw_overall_score` present (auditor-class requirement; may equal `final_overall_score`)
+- [ ] `final_overall_score` present UNLESS `status == BLOCKED`
+- [ ] `evidence_summary` non-empty
+- [ ] `recommended_next_skill` present
+
+If any check fails, force `status: BLOCKED` with `open_loops: ["artifact_gate_failed: <which check>"]`.
+
+> **Reliability note**: v7.2.0 adds a PostToolUse hook that re-validates this checklist outside the self-check loop, in a clean LLM context. Self-check is first line of defense (~35% reliable); external hook is second line (~85%). Together: ~95%. Until the hook ships, rely on self-check with awareness that it is not robust against the auditor's own output bias.
+
+---
+
+## §5 · User-Facing Translation Layer
+
+Before rendering to the user, translate internal language. This respects [skill-contract.md §Response Presentation Norms](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) which forbids internal jargon in user output.
+
+### Forbidden in user-visible output
+
+- Veto item IDs (T04, C01, R10, T03, T05, T09, and any future IDs)
+- Phrases combining "dimension" or "capped at" with raw numbers
+- Internal field names: `cap_applied`, `raw_overall_score`, `final_overall_score`, `gap_type`
+- Raw score deltas like "82 → 60" as the primary presentation
+
+### Required pattern when cap is applied
+
+```markdown
+**Overall Score: 60/100**  *(capped due to 1 critical issue)*
+
+**Critical issue to fix:**
+- Missing affiliate disclosure on your product review
+  *(search engines and AI engines treat unsigned affiliate content as low-trust)*
+
+**Fix this one item and your score rises to approximately 78.**
+```
+
+### Required pattern when status is BLOCKED (multi-veto)
+
+```markdown
+**Status: Cannot score yet** — 2 critical issues need attention first.
+
+1. Missing affiliate disclosure on your product review
+2. Data points contradict each other (prices in intro section don't match the comparison table)
+
+Fix these, then rerun the audit for a score.
+```
+
+### Cross-version context (rerun after upgrade)
+
+Before rendering the score to the user, check `memory/audits/` for any prior audit of the same URL (by `target` field match). If a prior audit exists AND the new `final_overall_score` differs from the prior `final_overall_score` by more than 10 points, AND the prior audit was produced by a Runbook version earlier than the current one, **prepend a one-line explainer** to the user output.
+
+**Version detection logic** (process in order):
+1. If prior archive has `runbook_version` field → compare directly
+2. If prior archive is **missing** the `runbook_version` field entirely → treat as pre-v7.1.0 (this is the common upgrade case — always trigger the explainer)
+3. Never use `cap_applied: false` as a version proxy — it is ambiguous between "old audit" and "new clean audit"
+
+Explainer template:
+
+```markdown
+> **Note**: This page scored {prior_score} under an older scoring rule. Under v7.1.0's Critical Issue rule, one trust item now caps the score at {final}. The page content is unchanged — only the scoring rule changed.
+```
+
+If no prior audit exists, skip this rule silently. Never invent a prior score.
+
+**Why**: users whose rerun drops 82 → 60 without explanation file bug reports. The inline note preserves trust by separating "content quality changed" from "rule changed".
+
+### Escape hatch for explicit user requests (still no IDs, ever)
+
+If a user explicitly asks for "raw scoring details", "which veto items failed", or "why is my score lower", translate to plain language rather than leak IDs or refuse. The escape hatch means "explain more", not "bypass the translation layer". Provide the underlying mechanism in marketer terms:
+
+**Single-veto escape hatch example**:
+
+✅ "The most-critical trust dimension on your page was reduced to the minimum because one trust item failed — specifically, affiliate links without a disclosure banner. Once you add the disclosure, the full score is restored."
+
+❌ "T04 failed, raw T=85, capped to 60" (contains veto ID and raw/capped delta)
+
+❌ "I can't share that information" (refuses a legitimate request, damages trust)
+
+For the BLOCKED case (2+ critical issues), the "Required pattern when status is BLOCKED" template above is the only required user-facing pattern. No separate escape hatch is needed — the template itself provides the plain-language explanation.
+
+### Open_loops field translation (internal vs user-facing)
+
+The `open_loops` field in the handoff YAML is **internal state for downstream skills** (content-refresher, seo-content-writer consume it to pick the next fix). It MAY contain raw veto IDs and internal phrasing because the consumer is another skill, not a user.
+
+However, if a user request ever surfaces `open_loops` to the user directly — for example, "show me all pending issues" or "what's still open on this page" — the surfacing skill MUST translate each open_loops entry to plain language using the Never-say → Always-say mapping below before rendering. The raw open_loops array never reaches a user's screen.
+
+### Never say → Always say (plain-language mapping)
+
+| Internal | User-facing |
+|---|---|
+| "T04 failed" | "Missing affiliate disclosure" |
+| "C01 veto triggered" | "Title doesn't match what the page delivers" |
+| "R10 failure" | "Data on the page contradicts itself" |
+| "T03 failed" | "HTTPS security is not fully enforced" |
+| "T05 failed" | "No published editorial or review policy" |
+| "T09 failed" | "Reviews show authenticity concerns" |
+| "cap_applied: true" | "capped due to N critical issue(s)" |
+| "raw_overall_score: 78" | "your score rises to approximately 78 once this is fixed" |
+| "dimension capped at 60" | (never expose; describe the underlying fix instead) |
+
+---
+
+<!-- runbook-sync end -->
 
 ### Step 4: Scoring & Report
 
@@ -340,6 +620,14 @@ For a complete assessment, pair this CITE audit with a CORE-EEAT content audit:
 - For competitor benchmarking: use `competitor-analysis` with CITE scores
 - For tracking progress: run `/seo:report` with CITE score trends
 ```
+
+### Step 4.5: Apply Scoring Runbook
+
+Execute in order, referring to the `## Scoring Runbook (authoritative)` block earlier in this file:
+
+1. **Cap Enforcement** (Runbook §2): walk the decision table. Identify which scenario matches your input (0 veto, 1 veto above cap, 1 veto below cap, or 2+ veto). Apply the cap rule — remember it's a ceiling, not a floor. Set `cap_applied` in the handoff. For CITE, single-veto fails also raise a **Manipulation Alert** entry in `open_loops`.
+2. **Artifact Gate Self-Check** (Runbook §4): run the 7-item checklist. If any item fails, force `status: BLOCKED` with reason in `open_loops`.
+3. **User-Facing Translation** (Runbook §5): translate internal language before rendering the user-facing report. Veto IDs (T03, T05, T09), raw-vs-capped deltas, and internal field names must not appear in the rendered output. The handoff YAML retains the raw values for downstream consumers; the user sees plain-language findings and a single score with the explanatory sentence.
 
 ### Save Results
 

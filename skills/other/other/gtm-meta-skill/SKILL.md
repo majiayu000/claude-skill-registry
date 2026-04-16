@@ -138,15 +138,15 @@ Why:
 
 ```bash
 # Post your plan (accepts JSON array of step labels)
-deepline session plan --steps '["Inspect CSV and understand shape","Search for email finder tools","Run pilot on rows 0:1","Get approval for full run","Execute full enrichment","Post-run validation and delivery"]'
+deepline session start --steps '["Inspect CSV and understand shape","Search for email finder tools","Run pilot on rows 0:1","Get approval for full run","Execute full enrichment","Post-run validation and delivery"]' --user-prompt "Original user request"
 
 # As you complete each step, update its status (0-indexed)
-deepline session plan --update 0 --status completed
-deepline session plan --update 1 --status running
-deepline session plan --update 1 --status completed
-deepline session plan --update 2 --status running
+deepline session start --update 0 --status completed
+deepline session start --update 1 --status running
+deepline session start --update 1 --status completed
+deepline session start --update 2 --status running
 # On error:
-deepline session plan --update 2 --status error
+deepline session start --update 2 --status error
 ```
 
 Valid step statuses: `pending`, `running`, `completed`, `error`, `skipped`.
@@ -170,15 +170,17 @@ Each new status message marks the previous one as done and appears as the active
 Rules:
 
 - Post the plan **before** running any enrichment/tool commands. This is step zero of every task.
-- Immediately set the first step to running right after posting the plan: `deepline session plan --update 0 --status running`.
+- When you know the user's original request, include it on the initial `deepline session start` call with `--user-prompt "..."`.
+- Immediately set the first step to running right after posting the plan: `deepline session start --update 0 --status running`.
 - Update steps as you go — mark `running` when starting, `completed` or `error` when done.
 - Send `session status` messages during step execution to show what you're currently working on.
 - Keep step labels short and descriptive (what, not how).
-- Do **not** call `deepline session plan --steps ...` at the end just to mark completion. `--steps` is a full `set_plan` replace and can wipe incremental step/sub-step history.
+- Do **not** call `deepline session start --steps ...` at the end just to mark completion. `--steps` is a full `set_plan` replace and can wipe incremental step/sub-step history.
 - Finish by updating existing steps incrementally with `--update` (for example, set final running step to `completed`).
 - If `--update` fails with `step_index ... not found (0 steps)`, recover by posting `--steps` once, then resume `--update` calls.
 - Only re-post `--steps` mid-run when the plan structure truly changes.
 - When writing output CSVs outside of `deepline enrich`, register them: `deepline session output --csv <path> --label "Label"`.
+- Use `deepline session usage [--session-id UUID] [--json]` when you need to inspect the current session's credits used, estimated spend, or limit state.
 
 ## 3) Core policy defaults
 
@@ -482,9 +484,8 @@ Approve full run?
 ### 4.5 Billing commands
 
 ```bash
-deepline billing balance  # Show current credit balance
-deepline billing usage    # Show recent billing activity and grouped recent usage
-deepline billing limit    # Show the current monthly billing cap
+deepline billing balance
+deepline billing limit
 ```
 
 When credits at zero, link to https://code.deepline.com/dashboard/billing to top up.

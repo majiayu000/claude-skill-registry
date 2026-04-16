@@ -207,6 +207,38 @@ Before drafting the front matter, re-read the one-sentence contribution from `PA
 - Implementation details, hyperparameter tables
 - Additional visualizations
 
+### Step 3.5: Theory Paper Consistency Pass (theory papers only)
+
+Run this pass after drafting all sections and before building the bibliography.
+
+**Trigger heuristic:** treat the paper as theory-heavy if `PAPER_PLAN.md` labels it as theory/analysis, or if the drafted sections contain 5 or more formal result environments (`\begin{theorem}`, `\begin{lemma}`, `\begin{proposition}`, `\begin{corollary}`).
+
+**Proof source search:** search the workspace for any standalone full-proof source file whose name or contents indicate a canonical proof version (`proof`, `appendix`, `full`, `complete`, `supplement`, `supplementary`). If such a file exists, prompt the user exactly:
+
+`Inline full proofs from {file}? [Y/n]`
+
+Default to `Y`.
+
+If the user accepts:
+- import the full theorem/lemma statement plus proof block into the appendix source (`A_appendix.tex` or the appendix file named by the plan)
+- use the main-body theorem statement as the canonical public statement; the appendix copy must match it unless the main-body statement is being revised in the same pass
+- do **not** leave placeholders such as "see supplementary proof document" or "proof omitted for brevity"
+- preserve theorem labels, equation labels, and proof structure exactly
+- keep the main body proof sketches short, but never let the appendix be a sketch-only placeholder when a full proof source exists
+
+If no standalone full-proof source exists:
+- use proof sketches only when they are actually written as proof sketches, not placeholders
+- do not fabricate an external proof document reference
+
+**Restatement audit:**
+- Compare every theorem/lemma/proposition statement that is restated in the appendix against the main-body version
+- Do not diff proof bodies; only audit statements, hypotheses, case splits, quantifiers, domains, notation, variable names, and terminology for defined objects
+- Treat `stationary` vs `terminal`, changed assumption names, or missing case splits as mismatches unless explicitly documented
+- If the appendix needs different wording, add an explicit notation bridge instead of silently renaming concepts
+- Resolve all mismatches before Step 4
+
+**Empirical motivation:** in our April 2026 NeurIPS run, the default behavior generated `"see supplementary proof document"` placeholders in the appendix. We had to manually pull 1264 lines of full proofs from a standalone `proof_dllm_full.tex` file. Without this pass, theory papers ship with sketch-only appendices that fail at theory venues.
+
 ### Step 4: Build Bibliography
 
 **CRITICAL: Only include entries that are actually cited in the paper.**
@@ -257,6 +289,100 @@ import re
 ```
 
 This prevents bib bloat (e.g., 948 lines → 215 lines in testing).
+
+**Enforced Bib Hygiene Validation** — run immediately after the filtered `references.bib` is written.
+
+```bash
+python3 - <<'PY'
+import io, json, re, sys, urllib.parse, urllib.request
+from pathlib import Path
+
+try:
+    import bibtexparser
+except ImportError:
+    sys.exit("Missing dependency: pip install bibtexparser")
+
+ROOT = Path("paper")
+tex_paths = [ROOT / "main.tex", *sorted((ROOT / "sections").glob("*.tex"))]
+tex = "\n".join(p.read_text(errors="ignore") for p in tex_paths if p.exists())
+
+cited = set()
+for m in re.finditer(r'\\cite[a-zA-Z]*\{([^}]*)\}', tex):
+    cited.update(k.strip() for k in m.group(1).split(',') if k.strip())
+
+with (ROOT / "references.bib").open() as fh:
+    bib = bibtexparser.load(fh)
+
+entries = {e["ID"]: e for e in bib.entries}
+dead = sorted(set(entries) - cited)
+if dead:
+    print("DEAD ENTRIES:")
+    for key in dead:
+        print("  ", key)
+
+def norm(s):
+    return re.sub(r'[^a-z0-9]+', ' ', (s or '').lower()).strip()
+
+def dblp_hits(title):
+    q = urllib.parse.quote(title)
+    url = f"https://dblp.org/search/publ/api?q={q}&format=json&h=3"
+    with urllib.request.urlopen(url, timeout=20) as r:
+        data = json.load(r)
+    return [h.get("info", {}) for h in data.get("result", {}).get("hits", {}).get("hit", [])]
+
+def crossref_entry(doi):
+    req = urllib.request.Request(f"https://doi.org/{doi}", headers={"Accept": "application/x-bibtex"})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        parsed = bibtexparser.loads(r.read().decode("utf-8", "ignore"))
+    return parsed.entries[0] if parsed.entries else {}
+
+for key in sorted(cited & set(entries)):
+    e = entries[key]
+    title = e.get("title", "").strip("{}")
+    hits = dblp_hits(title) if title else []
+    hit = hits[0] if hits else None
+    source = "DBLP"
+    if hit is None and e.get("doi"):
+        try:
+            hit = crossref_entry(e["doi"])
+            source = "CrossRef"
+        except Exception:
+            hit = None
+    if hit is None:
+        print(f"VERIFY {key}: no DBLP/CrossRef hit")
+        continue
+
+    issues = []
+    year_a = str(e.get("year", "")).strip()
+    year_b = str(hit.get("year", "")).strip()
+    if year_a and year_b and year_a != year_b:
+        issues.append(f"year {year_a} != {year_b}")
+
+    venue_a = e.get("journal") or e.get("booktitle") or ""
+    venue_b = hit.get("journal") or hit.get("booktitle") or hit.get("venue") or ""
+    if norm(venue_a) and norm(venue_b) and norm(venue_a) != norm(venue_b):
+        issues.append(f"venue {venue_a} != {venue_b}")
+
+    authors_a = [norm(a) for a in re.split(r'\s+and\s+', e.get("author", "")) if a.strip()]
+    authors_b = [norm(a) for a in re.split(r'\s+and\s+', hit.get("author", "")) if a.strip()]
+    if authors_a and authors_b and authors_a[:2] != authors_b[:2]:
+        issues.append("author list differs")
+
+    if issues:
+        print(f"MISMATCH {key} ({source}): " + "; ".join(issues))
+PY
+```
+
+If `DEAD ENTRIES` is printed, remove those keys from `references.bib` before continuing.
+If `VERIFY` or `MISMATCH` is printed, do not invent metadata:
+- prefer DBLP when it returns a clear hit
+- if DBLP misses and a DOI is available, fall back to CrossRef
+- if both disagree or still cannot verify, keep the entry only with a `% [VERIFY]` marker
+- uncited entries must be deleted, not left behind as dead bibliography bloat
+
+**Citation reachability rule:** an entry is dead if its key does not appear in any `\cite...{}` command in `paper/main.tex` or any `paper/sections/*.tex` file.
+
+**Empirical motivation:** in our April 2026 NeurIPS run, 3 dead bib entries (`bresler2015`, `sedd2024`, `wainwright2008`) sat in `references.bib` for 5+ improvement rounds, and a `codd2025` entry had `year = {2026}` (key/year mismatch). Neither was flagged by the existing automated cleaning.
 
 **Citation verification rules (from claude-scholar + Imbad0202):**
 1. Every BibTeX entry must have: author, title, year, venue/journal

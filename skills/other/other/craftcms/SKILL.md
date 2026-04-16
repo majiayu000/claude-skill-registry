@@ -53,8 +53,16 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Configure preview for a Next.js front-end" → read `headless.md`
 - "Set up Pest tests for a plugin" → read `testing.md`
 - "Write a test for a controller action" → read `testing.md`
-- "Configure Redis for caching and sessions" → read `configuration.md`
-- "Set up environment variables for production" → read `configuration.md`
+- "Configure Redis for caching and sessions" → read `config-app.md`
+- "Set up environment variables for production" → read `config-bootstrap.md`
+- "Find a GeneralConfig setting" → read `config-general.md`
+- "Configure mail transport / SMTP" → read `config-app.md`
+- "Set up custom URL routes" → read `config-bootstrap.md`
+- "Configure search to find short words" → read `config-app.md`
+- "Set up GraphQL tokens and schemas" → read `headless.md` + `config-general.md`
+- "Set up caching for a high-traffic site" → read `caching.md`
+- "Register custom permissions for my plugin" → read `permissions.md`
+- "Check user permissions in templates" → read `permissions.md`
 
 | Task | Read |
 |------|------|
@@ -74,7 +82,11 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 | GraphQL types, queries, mutations, directives, schema components, resolvers | `references/graphql.md` |
 | Plugin Vite: VitePluginService, CP asset bundles, HMR, TypeScript, Vue in CP | `references/plugin-vite.md` |
 | Headless & hybrid: headlessMode, GraphQL API, CORS, preview tokens, front-end frameworks | `references/headless.md` |
-| Configuration: general.php, .env vars, app.php overrides, Redis, custom config, priority order | `references/configuration.md` |
+| GeneralConfig: all 130+ settings, categories, interactions, dangerous defaults | `references/config-general.md` |
+| App config: cache, session, queue, mutex, mailer/SMTP, search, logging, CORS, DB replicas, web/console split | `references/config-app.md` |
+| Config bootstrap: env vars, aliases, priority order, fluent API, custom.php, db.php, routes.php, htmlpurifier | `references/config-bootstrap.md` |
+| Caching: template cache tag, data cache, static caching (Blitz), CDN, layered strategy, invalidation | `references/caching.md` |
+| Permissions: built-in handles, user groups, custom registration, Twig/PHP checking, authorization events, strategies | `references/permissions.md` |
 
 ## Plugin vs Module Differences
 

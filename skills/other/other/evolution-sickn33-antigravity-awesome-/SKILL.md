@@ -12,7 +12,6 @@ source: community
 This skill enables makepad-skills to self-improve continuously during development.
 
 ## When to Use
-
 - You are maintaining `makepad-skills` and want the skill library to improve itself during development.
 - You need the workflow for deciding when a new pattern should become a skill update or hook-driven evolution.
 - You are working on self-correction, self-validation, or version adaptation for the skill set.
@@ -422,3 +421,8 @@ If yes to any, evolve the appropriate skill!
 - [makepad-skills repository](https://github.com/ZhangHanDong/makepad-skills)
 - [Makepad documentation](https://github.com/makepad/makepad)
 - [Project Robius](https://github.com/project-robius)
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

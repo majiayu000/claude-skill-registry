@@ -13,6 +13,8 @@ compatibility: >-
 metadata:
   author: open-agreements
   version: "0.2.1"
+catalog_group: Agreement Drafting And Filling
+catalog_order: 40
 ---
 
 # services-agreement

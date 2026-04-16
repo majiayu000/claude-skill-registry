@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 9504,
-  "updated_at": "2026-04-15T02:05:51.440033Z",
+  "count": 9505,
+  "updated_at": "2026-04-16T02:11:08.972857Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -46419,6 +46419,23 @@
       ],
       "stars": 0,
       "install": "Minara-AI/excalidraw-skill/skill",
+      "source": "Community Skills"
+    },
+    {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "repo": "alonw0/web-asset-generator",
+      "path": "skills/web-asset-generator/SKILL.md",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "stars": 0,
+      "install": "alonw0/web-asset-generator/skills/web-asset-generator/SKILL.md",
       "source": "Community Skills"
     },
     {

@@ -34,25 +34,16 @@ Spawn a subagent with the feedback items and all available context. Instruct it 
 
 ### Run `/peer-review` Skill
 
-Spawn a subagent whose prompt includes the feedback items, all available context, and the following review prompt, and instructs it to invoke `/peer-review` via the Skill tool:
+Spawn a subagent whose prompt includes the feedback items and all available context, and instructs it to invoke `/peer-review` via the Skill tool. Describe the request in natural language:
 
-```
-<task>
-Interpret the following third-party feedback items. For each item, determine: what the author most likely wants changed and why, whether the suggestion is technically sound, and where the phrasing is ambiguous enough to support multiple valid readings.
-</task>
-
-<dig_deeper_nudge>
-Do not take feedback at face value. Check whether the author's stated concern matches the code reality. Look for cases where the reviewer misread the code, confused two similar constructs, or applied a general rule that does not fit this specific context.
-</dig_deeper_nudge>
-
-<structured_output_contract>
-For each feedback item, return:
-1. Intent — what the author most likely wants changed and why (one to two sentences)
-2. Correctness — whether the suggestion is technically sound. If not, explain what the reviewer likely misunderstood, with evidence from the code
-3. Ambiguity — if the intent supports multiple valid readings, list each reading and which has stronger evidence
-4. Confidence — high (clear intent, sound suggestion), medium (likely intent but some uncertainty), or low (genuinely ambiguous or likely incorrect)
-</structured_output_contract>
-```
+- **Material** — the listed third-party feedback items and their surrounding context.
+- **Task** — for each item, determine what the author most likely wants changed and why, whether the suggestion is technically sound, and where the phrasing is ambiguous enough to support multiple valid readings.
+- **Skepticism guidance** — do not take feedback at face value. Check whether the author's stated concern matches the code reality. Look for cases where the reviewer misread the code, confused two similar constructs, or applied a general rule that does not fit this specific context.
+- **Output format** — for each feedback item, return:
+  1. Intent — what the author most likely wants changed and why (one to two sentences)
+  2. Correctness — whether the suggestion is technically sound. If not, explain what the reviewer likely misunderstood, with evidence from the code
+  3. Ambiguity — if the intent supports multiple valid readings, list each reading and which has stronger evidence
+  4. Confidence — high (clear intent, sound suggestion), medium (likely intent but some uncertainty), or low (genuinely ambiguous or likely incorrect)
 
 ## Step 3: Reconciliation
 

@@ -15,7 +15,7 @@ Run a high-confidence demo recipe to show the user what Deepline can do. Pick th
 Follow this pattern for every recipe:
 
 1. **Tell the user what you're about to do** — explain the goal and which data source(s) you'll use, before running anything.
-2. **Register a plan** with `deepline session plan --steps '[...]'` matching the recipe steps.
+2. **Register a session start** with `deepline session start --steps '[...]'` matching the recipe steps. If you have the user's original request text, include it with `--user-prompt "..."` so opted-in prompt telemetry is preserved.
 3. **For each step**: mark it running, send a live status message describing what's happening, run the command, then mark it completed (or error on failure).
 4. **Register output** with `deepline session output --csv <path> --label "..."` after any CSV is produced.
 5. **Tell the user the results** — summarize what came back, where it came from, and what they can do next.
@@ -23,10 +23,11 @@ Follow this pattern for every recipe:
 ### Session commands reference
 
 ```bash
-deepline session plan --steps '["Step 1", "Step 2"]'
-deepline session plan --update <i> --status running|completed|error|skipped
+deepline session start --steps '["Step 1", "Step 2"]' --user-prompt "Original user request"
+deepline session start --update <i> --status running|completed|error|skipped
 deepline session status --message "What's happening right now..."
 deepline session output --csv <path> --label "Label for the table"
+deepline session usage [--session-id UUID] [--json]
 ```
 
 ---
@@ -91,7 +92,7 @@ deepline tools execute apollo_search_people_with_match --payload '{
   "person_titles": ["CTO", "Chief Technology Officer"],
   "person_seniorities": ["c_suite"],
   "person_locations": ["New York, New York, United States"],
-  "organization_num_employees_ranges": ["1-200"],
+  "organization_num_employees_ranges": ["1,200"],
   "include_similar_titles": true,
   "per_page": 5,
   "page": 1

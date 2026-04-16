@@ -48,7 +48,22 @@ Architecture decisions are driven by quality attributes, not pattern shopping. E
 2. **Understand Constraints** — ask: Team size/experience? Timeline? Existing systems to integrate? Regulatory requirements? Operational maturity (CI/CD, monitoring)? Gate: constraints list documented.
 3. **Map Team Structure (Conway's Law)** — ask: How many teams? Communication patterns? Does proposed architecture match org chart? Gate: team-architecture alignment confirmed.
 4. **Select Development Paradigm** — identify primary language(s) from constraints, then: FP-native (Haskell|F#|Scala|Clojure|Elixir) → recommend Functional; OOP-native (Java|C#|Go) → recommend OOP; Multi-paradigm (TypeScript|Kotlin|Python|Rust|Swift) → present both, let user choose. After confirmation, ask user permission to write paradigm to project CLAUDE.md: FP: `This project follows the **functional programming** paradigm. Use @nw-functional-software-crafter for implementation.` OOP: `This project follows the **object-oriented** paradigm. Use @nw-software-crafter for implementation.` Default if user declines/unsure: OOP. Gate: paradigm selected and optionally written to CLAUDE.md.
-5. **Recommend Architecture Based on Drivers** — recommend based on quality attribute priorities|constraints|paradigm from steps 1-4. Default: modular monolith with dependency inversion (ports-and-adapters). Overrides require evidence. If functional paradigm: apply types-first design, composition pipelines, pure core / effect shell, effect boundaries as ports, immutable state — in architecture document only, no code snippets. Gate: architecture pattern selected with written rationale.
+5. **Reuse Analysis (MANDATORY — RCA F-1 fix)** — before designing ANY new component, search the existing codebase for components with overlapping responsibilities. For each overlap, decide "extend existing" or "justify new". Output a table:
+
+   ```
+   | Existing Component | File | Overlap | Decision | Justification |
+   |-------------------|------|---------|----------|---------------|
+   | WorkflowExecutor | src/des/application/zero_trust/workflow_executor.py | Phase iteration, gate eval | EXTEND | Adding dispatch branch is ~15 LOC vs 200 LOC new class |
+   ```
+
+   Rules:
+   - If the design creates a new class that does something an existing class already does (iterate phases, evaluate gates, dispatch agents, handle retry), the default is EXTEND, not CREATE NEW.
+   - CREATE NEW requires evidence that extending is impossible or creates unacceptable coupling (not just "it's complex").
+   - "The existing class has too many dependencies" is NOT a valid justification — simplify the existing class instead (see F-4: strategy pattern extraction).
+   - The reviewer MUST verify this table exists and challenge every "CREATE NEW" decision.
+   - Gate: Reuse Analysis table present with zero unjustified CREATE NEW decisions.
+
+6. **Recommend Architecture Based on Drivers** — recommend based on quality attribute priorities|constraints|paradigm from steps 1-5. Default: modular monolith with dependency inversion (ports-and-adapters). Overrides require evidence. If functional paradigm: apply types-first design, composition pipelines, pure core / effect shell, effect boundaries as ports, immutable state — in architecture document only, no code snippets. Gate: architecture pattern selected with written rationale.
 6. **Stress Analysis** (HIDDEN — `--residuality` flag only) — when activated: apply complexity-science-based stress analysis (stressors|attractors|residues|incidence matrix|resilience modifications) using the `stress-analysis` skill. When not activated: skip entirely, do not mention. Gate: activated only when flag present.
 7. **Produce Deliverables** — write architecture document with component boundaries|tech stack|integration patterns. Produce C4 System Context diagram (Mermaid) — mandatory. Produce C4 Container diagram (Mermaid) — mandatory. Produce C4 Component diagrams (Mermaid) — only for complex subsystems. Write ADRs for significant decisions. Gate: mandatory C4 diagrams present, ADRs written.
 
@@ -130,7 +145,7 @@ Context files: see Prior Wave Consultation above.
 - [ ] Business drivers and constraints gathered before architecture selection
 - [ ] Existing system analyzed before design (codebase search performed)
 - [ ] Integration points with existing components documented
-- [ ] Reuse vs. new component decisions justified
+- [ ] **Reuse Analysis table present** with every overlapping component listed (HARD GATE — reviewer blocks without this)
 - [ ] Architecture supports all business requirements
 - [ ] Technology stack selected with clear rationale
 - [ ] Development paradigm selected and (optionally) written to project CLAUDE.md
@@ -158,6 +173,11 @@ Before completing DESIGN, produce `docs/feature/{feature-id}/design/wave-decisio
 - Pattern: {e.g., modular monolith with ports-and-adapters}
 - Paradigm: {OOP|FP}
 - Key components: {list top-level components}
+
+## Reuse Analysis
+| Existing Component | File | Overlap | Decision | Justification |
+|-------------------|------|---------|----------|---------------|
+| {component} | {path} | {what overlaps} | EXTEND/CREATE NEW | {evidence} |
 
 ## Technology Stack
 - {language/framework}: {rationale}

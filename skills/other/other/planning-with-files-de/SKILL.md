@@ -2,7 +2,7 @@
 name: planning-with-files-de
 description: "Manus-artiges Dateiplanungssystem zur Organisation und Verfolgung des Fortschritts komplexer Aufgaben. Erstellt task_plan.md, findings.md und progress.md. Wird verwendet, wenn der Benutzer plant, zerlegt oder organisiert: mehrstufige Projekte, Forschungsaufgaben oder Arbeiten mit über 5 Tool-Aufrufen. Unterstützt automatische Sitzungswiederherstellung nach /clear. Auslöser: Aufgabenplanung, Projektplanung, Arbeitsplan erstellen, Aufgaben analysieren, Projekt organisieren, Fortschritt verfolgen, Mehrstufige Planung, Hilf mir bei der Planung, Projekt zerlegen"
 user-invocable: true
-allowed-tools: "Read, Write, Edit, Bash, Glob, Grep"
+allowed-tools: "Read Write Edit Bash Glob Grep"
 hooks:
   UserPromptSubmit:
     - hooks:
@@ -23,7 +23,7 @@ hooks:
         - type: command
           command: "export SD=\"${CLAUDE_PLUGIN_ROOT:-$HOME/.claude/plugins/planning-with-files-de}/scripts\"; powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$SD/check-complete.ps1\" 2>/dev/null || sh \"$SD/check-complete.sh\""
 metadata:
-  version: "2.33.0"
+  version: "2.34.0"
 ---
 
 # Dateiplanungssystem

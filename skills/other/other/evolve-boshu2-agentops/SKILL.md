@@ -1,6 +1,6 @@
 ---
 name: evolve
-description: 'Goal-driven v2 autonomous improvement loop. Runs the post-mortem, repo analysis, next-work selection, plan/pre-mortem, implementation, validation, and repeat cadence through $rpi and ao evolve. Also pulls from open beads when goals all pass and accepts ordered roadmaps via --queue. Use when you want to "improve", "iterate", "fix issues", "work through tasks", "evolve", "check goal fitness", "run improvement loop", "pick up next work", "postmortem and continue", or "run roadmap".'
+description: 'Goal-driven v2 autonomous improvement loop. Runs the post-mortem, repo analysis, next-work selection, plan/pre-mortem, implementation, validation, and repeat cadence through $rpi and ao evolve. Also pulls from open beads when goals all pass. Use when you want to "improve", "iterate", "fix issues", "work through tasks", "evolve", "check goal fitness", "run improvement loop", "pick up next work", or "postmortem and continue".'
 ---
 
 
@@ -20,7 +20,6 @@ and repeat until a kill switch, max-cycle cap, regression breaker, or real
 dormancy stops the run.
 
 Always-on autonomous loop over `$rpi`. Work selection order:
-0. **Pinned work queue** (`--queue=<file>` or inline roadmap — see `references/pinned-queue.md`)
 1. **Harvested `.agents/rpi/next-work.jsonl` work** (freshest concrete follow-up)
 2. **Open ready beads work** (`bd ready`)
 3. **Failing goals and directive gaps** (`ao goals measure`)
@@ -42,8 +41,6 @@ $evolve --compile             # Mine → Defrag warmup before first cycle
 $evolve --compile --max-cycles=5  # Warm knowledge base then run 5 cycles
 $evolve --test-first         # Default strict-quality $rpi execution path
 $evolve --no-test-first      # Explicit opt-out from test-first mode
-$evolve --queue=.agents/evolve/roadmap.md           # Process ordered roadmap
-$evolve --queue=.agents/evolve/roadmap.md --test-first  # Roadmap with strict quality
 ```
 
 ## Delineation vs $dream
@@ -67,7 +64,6 @@ Dream owns the knowledge compounding layer; `$evolve` owns the code compounding 
 | `--compile` | off | Run `ao mine` + `ao defrag` warmup before cycle 1 |
 | `--test-first` | on | Pass strict-quality defaults through to `$rpi` |
 | `--no-test-first` | off | Explicitly disable test-first passthrough to `$rpi` |
-| `--queue=<file>` | none | Process items from ordered markdown queue file sequentially before fitness-driven selection |
 
 ## Execution Steps
 
@@ -143,26 +139,14 @@ fi
 # Circuit breaker: stop if last productive cycle was >60 minutes ago
 LAST_PRODUCTIVE_TS=$(grep -v '"idle"\|"unchanged"' .agents/evolve/cycle-history.jsonl 2>/dev/null \
   | tail -1 | jq -r '.timestamp // empty')
-# Consecutive failure breaker (pinned queue mode)
-if [ -n "$QUEUE_FILE" ]; then
-  CONSEC_FAILURES=$(awk '/"result"\s*:\s*"(regressed|unchanged)"/{streak++; next} {streak=0} END{print streak+0}' \
-    .agents/evolve/cycle-history.jsonl 2>/dev/null)
-  if [ "$CONSEC_FAILURES" -ge 5 ]; then
-    echo "CIRCUIT BREAKER: 5 consecutive failures in pinned queue mode. Stopping."
+# Time-based circuit breaker
+if [ -n "$LAST_PRODUCTIVE_TS" ]; then
+  NOW_EPOCH=$(date +%s)
+  LAST_EPOCH=$(date -j -f "%Y-%m-%dT%H:%M:%S%z" "$LAST_PRODUCTIVE_TS" +%s 2>/dev/null \
+    || date -d "$LAST_PRODUCTIVE_TS" +%s 2>/dev/null || echo 0)
+  if [ "$LAST_EPOCH" -gt 1000000000 ] && [ $((NOW_EPOCH - LAST_EPOCH)) -ge 3600 ]; then
+    echo "CIRCUIT BREAKER: No productive work in 60+ minutes. Stopping."
     # go to Teardown
-  fi
-fi
-
-# Time-based circuit breaker: skip when pinned queue has items remaining
-if [ -z "$QUEUE_FILE" ] || [ "$QUEUE_INDEX" -ge "$QUEUE_TOTAL" ]; then
-  if [ -n "$LAST_PRODUCTIVE_TS" ]; then
-    NOW_EPOCH=$(date +%s)
-    LAST_EPOCH=$(date -j -f "%Y-%m-%dT%H:%M:%S%z" "$LAST_PRODUCTIVE_TS" +%s 2>/dev/null \
-      || date -d "$LAST_PRODUCTIVE_TS" +%s 2>/dev/null || echo 0)
-    if [ "$LAST_EPOCH" -gt 1000000000 ] && [ $((NOW_EPOCH - LAST_EPOCH)) -ge 3600 ]; then
-      echo "CIRCUIT BREAKER: No productive work in 60+ minutes. Stopping."
-      # go to Teardown
-    fi
   fi
 fi
 
@@ -187,51 +171,7 @@ if [ -f .agents/evolve/cycle-history.jsonl ]; then
 fi
 ```
 
-Parse flags: `--max-cycles=N` (default unlimited), `--dry-run`, `--beads-only`, `--skip-baseline`, `--quality`, `--compile`, `--queue=<file>`.
-
-### Step 0.1: Parse Pinned Queue (--queue only)
-
-Skip if `--queue` was not passed.
-
-If the `--queue` value is not a file path (file does not exist), auto-write the value to `.agents/evolve/roadmap.md` and use that file. This enables inline/prompt-based roadmaps.
-
-Parse the queue file as an ordered markdown checklist:
-
-```bash
-if [ -n "$QUEUE_FILE" ] && [ -f "$QUEUE_FILE" ]; then
-  QUEUE_ITEMS=()
-  declare -A QUEUE_BLOCKERS
-  declare -A QUEUE_LINES  # preserve full line per item ID for freeform prompts
-  while IFS= read -r line; do
-    ITEM_ID=$(echo "$line" | sed -n 's/.*`\([^`]*\)`.*/\1/p' | head -1)
-    BLOCKER=$(echo "$line" | sed -n 's/.*blocker:[[:space:]]*`\([^`]*\)`.*/\1/p')
-    if [ -n "$ITEM_ID" ]; then
-      QUEUE_ITEMS+=("$ITEM_ID")
-      QUEUE_LINES["$ITEM_ID"]="$line"
-    fi
-    [ -n "$BLOCKER" ] && QUEUE_BLOCKERS["$ITEM_ID"]="$BLOCKER"
-  done < <(grep -E '^\s*[0-9]+\.' "$QUEUE_FILE")
-  QUEUE_TOTAL=${#QUEUE_ITEMS[@]}
-fi
-
-# Initialize tracking arrays
-PINNED_COMPLETED=()
-PINNED_ESCALATED='[]'
-
-# Resume from persisted state
-if [ -f .agents/evolve/pinned-queue-state.json ]; then
-  QUEUE_INDEX=$(jq -r '.current_index // 0' .agents/evolve/pinned-queue-state.json)
-  # Restore completed items array
-  mapfile -t PINNED_COMPLETED < <(jq -r '.completed[]? // empty' .agents/evolve/pinned-queue-state.json 2>/dev/null)
-  # Load escalated items (both IDs for skip-check and full JSON for state persistence)
-  ESCALATED_IDS=$(jq -r '.escalated[]?.id // empty' .agents/evolve/pinned-queue-state.json 2>/dev/null)
-  PINNED_ESCALATED=$(jq -c '.escalated // []' .agents/evolve/pinned-queue-state.json 2>/dev/null)
-else
-  QUEUE_INDEX=0
-fi
-```
-
-See `references/pinned-queue.md` for format specification, blocker syntax, and state schema.
+Parse flags: `--max-cycles=N` (default unlimited), `--dry-run`, `--beads-only`, `--skip-baseline`, `--quality`, `--compile`.
 
 Track cycle-level execution state:
 
@@ -253,20 +193,12 @@ evolve_state = {
   program_stop_conditions: <ordered cycle done criteria>,
   generator_empty_streak: <consecutive passes where all generator layers returned nothing>,
   last_selected_source: <harvested|beads|goal|directive|testing|validation|bug-hunt|drift|feature>,
-  claimed_work: <null or queue reference being worked>,
-  queue_refresh_count: <incremented after every $rpi cycle>,
-  pinned_queue: <parsed items array or null>,
-  pinned_queue_file: <path or null>,
-  pinned_queue_index: <current 0-based position>,
-  pinned_queue_completed: <array of completed item IDs>,
-  pinned_queue_escalated: <array of escalated items with reasons>,
-  unblock_depth: <current nesting depth, 0 when not unblocking>,
-  unblock_failures: <consecutive failures on current item>,
-  unblock_chain: <stack of blocker IDs being resolved>
+  claimed_work: <null or work reference being worked>,
+  queue_refresh_count: <incremented after every $rpi cycle>
 }
 ```
 
-Persist `evolve_state` to `.agents/evolve/session-state.json` at each cycle boundary, after queue claims, after queue release/finalize, and during teardown. `cycle-history.jsonl` remains the canonical cycle ledger; `session-state.json` carries resume-only state that has not yet earned a committed cycle entry.
+Persist `evolve_state` to `.agents/evolve/session-state.json` at each cycle boundary, after work claims, after release/finalize, and during teardown. `cycle-history.jsonl` remains the canonical cycle ledger; `session-state.json` carries resume-only state that has not yet earned a committed cycle entry.
 
 ### Step 0.2: Compile Warmup (--compile only)
 
@@ -351,36 +283,6 @@ When a repo-local program contract exists, apply a scope filter before Step 4:
 - prefer harvested, beads, goals, and generated work that can plausibly land within mutable scope
 - if the selected item is inherently out of scope, escalate it or convert it into durable follow-up work instead of invoking `$rpi` and hoping discovery widens scope
 
-**Step 3.0: Pinned work queue** (only when `--queue` is set)
-
-If a pinned queue exists and `QUEUE_INDEX < QUEUE_TOTAL`:
-
-1. Read the current item and set tracking variables:
-   ```bash
-   CURRENT_ITEM=${QUEUE_ITEMS[$QUEUE_INDEX]}
-   CURRENT_LINE=${QUEUE_LINES[$CURRENT_ITEM]}
-   ```
-2. Skip if this item ID is in the escalated list (log skip reason, advance index, re-enter Step 3.0)
-3. Check for declared blocker: `QUEUE_BLOCKERS[$CURRENT_ITEM]`
-4. If blocker exists AND blocker is not yet resolved (not in `pinned_queue_completed`):
-   - Set `UNBLOCK_TARGET` to the blocker
-   - Set `UNBLOCK_DEPTH=0` (increments before each deeper nesting)
-   - Proceed to Step 4 with the blocker as the work item
-5. If no blocker (or blocker already resolved):
-   - Proceed to Step 4 with the queue item as the work item
-
-**Item-to-prompt mapping:**
-- If item ID matches a bead (`bd show $CURRENT_ITEM` succeeds), use: `$rpi "Land $CURRENT_ITEM: $(bd show $CURRENT_ITEM --json | jq -r .title)" --auto --max-cycles=1`
-- Otherwise, use the preserved full queue line: `$rpi "${QUEUE_LINES[$CURRENT_ITEM]}" --auto --max-cycles=1`
-
-**Escalation cascade guard:** When an item is escalated (skipped), check if subsequent items declare the escalated item as a `blocker:`. If so, those dependent items are also marked escalated. This prevents attempting work that depends on a skipped item.
-
-When pinned queue is active, skip Steps 3.1-3.7 (and 3.0q-3.6q in quality mode) entirely. The queue IS the work source. `--quality` in pinned queue mode affects `$rpi` invocations (via `--quality` passthrough) but does not change the work selection ladder — the queue always takes priority.
-
-When pinned queue is exhausted (`QUEUE_INDEX >= QUEUE_TOTAL`):
-- Fall through to normal selection (Steps 3.1-3.7)
-- This enables fitness-driven work after roadmap completion
-
 **Step 3.1: Harvested work first**
 
 Read `.agents/rpi/next-work.jsonl` and pick the highest-value unconsumed item for this repo. Prefer:
@@ -388,7 +290,7 @@ Read `.agents/rpi/next-work.jsonl` and pick the highest-value unconsumed item fo
 - already-harvested concrete implementation work before process work
 - higher severity before lower severity
 
-When evolve picks a queue item, **claim it first**:
+When evolve picks a harvested item, **claim it first**:
 - set `claim_status: "in_progress"`
 - set `claimed_by: "evolve:cycle-N"`
 - set `claimed_at: "<timestamp>"`
@@ -506,18 +408,14 @@ See `references/quality-mode.md` for scoring and full details.
 IDLE_STREAK=$(awk '/"result"\s*:\s*"(idle|unchanged)"/{streak++; next} {streak=0} END{print streak+0}' \
   .agents/evolve/cycle-history.jsonl 2>/dev/null)
 
-# Pinned queue mode: never consider stagnation while queue has items
-if [ -n "$QUEUE_FILE" ] && [ "$QUEUE_INDEX" -lt "$QUEUE_TOTAL" ]; then
-  # Queue not exhausted — skip stagnation check, return to Step 3.0
-  :
-elif [ "$GENERATOR_EMPTY_STREAK" -ge 2 ] && [ "$IDLE_STREAK" -ge 2 ]; then
-  # Queue layers are empty AND producer layers were empty for the 3rd consecutive pass — STOP
-  echo "Stagnation reached after repeated empty queue + generator passes. Dormancy is the last-resort outcome."
+if [ "$GENERATOR_EMPTY_STREAK" -ge 2 ] && [ "$IDLE_STREAK" -ge 2 ]; then
+  # Work layers are empty AND producer layers were empty for the 3rd consecutive pass — STOP
+  echo "Stagnation reached after repeated empty work + generator passes. Dormancy is the last-resort outcome."
   # go to Teardown — do NOT log another idle entry
 fi
 ```
 
-If the queue layers were empty but a generator pass has not been exhausted 3 times yet, persist the new generator streak in `session-state.json` and loop back to Step 1. Empty pre-cycle queues are not a stop reason by themselves.
+If the work layers were empty but a generator pass has not been exhausted 3 times yet, persist the new generator streak in `session-state.json` and loop back to Step 1. Empty pre-cycle work sources are not a stop reason by themselves.
 
 A cycle is idle only if NO work source returned actionable work and every generator layer also came up empty. A cycle that targeted an oscillating goal and skipped it counts as idle only after the remaining ladder was exhausted.
 
@@ -525,64 +423,11 @@ If `--dry-run`: report what would be worked on and go to Teardown.
 
 ### Step 4: Execute
 
-**4.1: Blocker Resolution (pinned queue only)**
-
-If `UNBLOCK_TARGET` is set (from Step 3.0), enter the blocker resolution sub-loop:
-
-```text
-unblock_loop:
-  if UNBLOCK_DEPTH > 2:
-    ESCALATE: "Blocker chain too deep (>2 levels). Item: $ITEM_ID, chain: $UNBLOCK_CHAIN"
-    Write escalation to .agents/evolve/escalated.md (item, reason, cycle, chain)
-    Mark item as escalated in pinned-queue-state.json
-    Run escalation cascade: check if subsequent queue items declare this item as blocker
-    Advance QUEUE_INDEX to next non-escalated item
-    Return to Step 3
-
-  Run: $rpi "Unblock: land $UNBLOCK_TARGET as minimum unblocker" --auto --max-cycles=1
-
-  if unblock succeeded:
-    Close/update blocker bead if applicable (bd close $UNBLOCK_TARGET)
-    Add UNBLOCK_TARGET to pinned_queue_completed
-    Clear UNBLOCK_TARGET, reset UNBLOCK_DEPTH to 0
-    UNBLOCK_FAILURES=0
-    Persist queue state (atomic write)
-    Return to Step 3.0 to re-check the original item (blocker now resolved)
-
-  if unblock failed:
-    UNBLOCK_FAILURES++
-    if UNBLOCK_FAILURES >= 3:
-      ESCALATE: "3 consecutive unblock failures on $UNBLOCK_TARGET"
-      Write escalation to .agents/evolve/escalated.md
-      Mark item as escalated in pinned-queue-state.json
-      Run escalation cascade for dependent items
-      Advance QUEUE_INDEX to next non-escalated item
-      Return to Step 3
-
-    Dynamic blocker detection — scan $rpi failure output for:
-      - bead IDs mentioned in error context (bd show $ID succeeds)
-      - dependency keywords ("blocked by", "requires", "depends on")
-      - import/build failures pointing to missing prerequisites
-    if deeper_blocker found AND UNBLOCK_DEPTH < 2:
-      UNBLOCK_DEPTH++
-      Push current UNBLOCK_TARGET to UNBLOCK_CHAIN
-      Set UNBLOCK_TARGET = deeper_blocker
-      goto unblock_loop
-    else:
-      Retry with narrowed scope: $rpi "Unblock $UNBLOCK_TARGET" --auto --max-cycles=1 --quality
-      (--quality forces pre-mortem on the unblock attempt for better diagnosis)
-      goto unblock_loop
-```
-
-Kill switch is checked at the top of EVERY sub-`$rpi` invocation (inherited from `$rpi`'s own kill switch check). See `references/pinned-queue.md` for full protocol details.
-
-**4.2: Normal Execution**
-
 Primary engine: use `$rpi` for any implementation-quality work. Every `$rpi` call MUST run all 3 phases (discovery → implementation → validation). `$implement` and `$crank` are allowed only when a bead already contains execution-ready scope and skipping discovery is clearly the better path.
 
 If a repo-local `PROGRAM.md` contract is active, `$rpi` will load it automatically. `$evolve` must compose with that behavior, not bypass it:
 - Do not select work that is obviously outside mutable scope.
-- If a queue item, bead, or goal would require edits under immutable scope, escalate it or convert it into durable follow-up work instead of launching `$rpi`.
+- If a bead or goal would require edits under immutable scope, escalate it or convert it into durable follow-up work instead of launching `$rpi`.
 - When work is plausibly in scope but still uncertain, let `$rpi` discovery validate the fit and surface a scope escape explicitly.
 
 For a **harvested item, failing goal, directive gap, testing improvement, validation tightening task, bug-hunt result, drift finding, or feature suggestion**:
@@ -599,7 +444,7 @@ Or for an epic with children: `Invoke $crank {epic_id}`.
 
 **CRITICAL:** `$rpi --auto` runs hands-free through all 3 phases. Do NOT intervene, ask questions, or pause between phases. Wait for `$rpi` to return its completion marker, then proceed to Step 5.
 
-If Step 3 created durable work instead of executing it immediately, re-enter Step 3 and let the newly-created queue/bead item win through the normal selection order.
+If Step 3 created durable work instead of executing it immediately, re-enter Step 3 and let the newly-created bead item win through the normal selection order.
 
 ### Step 5: Regression Gate
 
@@ -650,8 +495,8 @@ git revert --no-commit ${CYCLE_START_SHA}..HEAD && git commit -m "revert: evolve
 ```
 Set outcome to "regressed".
 
-Queue finalization after the regression gate:
-- **success:** finalize any claimed queue item with `consumed: true`, `consumed_by`, and `consumed_at`; clear transient claim fields
+Work finalization after the regression gate:
+- **success:** finalize any claimed work item with `consumed: true`, `consumed_by`, and `consumed_at`; clear transient claim fields
 - **failure/regression:** clear `claim_status`, `claimed_by`, and `claimed_at`; keep `consumed: false`; record the release in `session-state.json`
 
 After the cycle's `$post-mortem` finishes, immediately re-read `.agents/rpi/next-work.jsonl` before selecting the next item. Never assume the queue state from before the cycle.
@@ -675,13 +520,6 @@ if [ "$QUALITY_MODE" = "true" ]; then
   QUALITY_SCORE_ARGS=(--quality-score "$QUALITY_SCORE")
 fi
 
-# Pinned queue fields (appended to cycle entry when active)
-QUEUE_ARGS=()
-if [ -n "$QUEUE_FILE" ]; then
-  QUEUE_ARGS=(--queue-item "${CURRENT_ITEM:-}" --queue-index "$QUEUE_INDEX" --queue-total "$QUEUE_TOTAL")
-  [ -n "$UNBLOCK_TARGET" ] && QUEUE_ARGS+=(--unblock-target "$UNBLOCK_TARGET" --unblock-depth "$UNBLOCK_DEPTH")
-fi
-
 ENTRY_JSON="$(
   bash scripts/evolve-log-cycle.sh \
     --cycle "$CYCLE" \
@@ -691,8 +529,7 @@ ENTRY_JSON="$(
     --cycle-start-sha "$CYCLE_START_SHA" \
     --goals-passing "$PASSING" \
     --goals-total "$TOTAL" \
-    "${QUALITY_SCORE_ARGS[@]}" \
-    "${QUEUE_ARGS[@]}"
+    "${QUALITY_SCORE_ARGS[@]}"
 )"
 OUTCOME="$(printf '%s\n' "$ENTRY_JSON" | jq -r '.result')"
 REAL_CHANGES=$(git diff --name-only "${CYCLE_START_SHA}..HEAD" -- ':!.agents/**' ':!GOALS.yaml' ':!GOALS.md' \
@@ -715,19 +552,6 @@ else
 fi
 
 PRODUCTIVE_THIS_SESSION=$((PRODUCTIVE_THIS_SESSION + 1))
-
-# Advance pinned queue after successful cycle (not unblock sub-cycles)
-if [ -n "$QUEUE_FILE" ] && [ -z "$UNBLOCK_TARGET" ] && [ "$OUTCOME" != "regressed" ] && [ "$OUTCOME" != "failed" ]; then
-  PINNED_COMPLETED+=("$CURRENT_ITEM")
-  QUEUE_INDEX=$((QUEUE_INDEX + 1))
-  # Persist queue state (atomic write via temp file)
-  TMP=$(mktemp .agents/evolve/pinned-queue-state.XXXXXX.json)
-  jq -n --arg file "$QUEUE_FILE" --argjson idx "$QUEUE_INDEX" \
-    --argjson completed "$(printf '%s\n' "${PINNED_COMPLETED[@]}" | jq -R . | jq -s .)" \
-    --argjson escalated "$PINNED_ESCALATED" \
-    '{queue_file: $file, current_index: $idx, completed: $completed, in_progress: null, escalated: $escalated, unblock_chain: []}' \
-    > "$TMP" && jq . "$TMP" >/dev/null 2>&1 && mv "$TMP" .agents/evolve/pinned-queue-state.json
-fi
 ```
 
 **IDLE cycles** (nothing found even after generator layers):
@@ -789,15 +613,6 @@ Remaining unconsumed: H high, M medium
 Stop reason: stagnation | circuit-breaker | max-cycles | kill-switch
 ```
 
-In pinned queue mode, the report includes:
-```
-## $evolve Complete (pinned queue mode)
-Queue: X/Y items completed | Unblocked: U items | Escalated: E items
-Cycles: N | Productive: P | Regressed: R (reverted)
-Stop reason: queue-complete | escalated | circuit-breaker | kill-switch
-Remaining items: [list of uncompleted item IDs]
-```
-
 ## Examples
 
 **User says:** `$evolve --max-cycles=5`
@@ -815,12 +630,6 @@ Remaining items: [list of uncompleted item IDs]
 **User says:** `$evolve`
 **What happens:** See `references/examples.md` for a worked overnight flow that moves through beads -> harvested work -> goals -> testing -> bug hunt -> feature suggestion before dormancy is considered.
 
-**User says:** `$evolve --queue=.agents/evolve/roadmap.md --test-first`
-**What happens:** Evolve processes each item in the roadmap sequentially. When an item is blocked (e.g., `rig-difc` blocked by `rig-8z29`), evolve auto-lands `rig-8z29` via sub-`$rpi` first, then resumes `rig-difc`. After all queue items complete, evolve falls through to fitness-driven selection. If a blocker chain exceeds 2 levels or fails 3 times, the item is escalated and evolve moves to the next one.
-
-**User says:** `$evolve --queue=.agents/evolve/roadmap.md --max-cycles=20`
-**What happens:** Evolve processes the roadmap but caps at 20 total cycles (including unblock sub-cycles). If the queue isn't finished, queue state is persisted to `.agents/evolve/pinned-queue-state.json` for resume in the next session.
-
 See `references/examples.md` for detailed walkthroughs.
 
 ## Troubleshooting
@@ -830,10 +639,7 @@ See `references/examples.md` for detailed walkthroughs.
 | Loop exits immediately | Remove `~/.config/evolve/KILL` or `.agents/evolve/STOP` |
 | Stagnation after repeated empty passes | Queue layers and producer layers were empty across multiple passes — dormancy is the fallback outcome |
 | `ao goals measure` hangs | Use `--timeout 30` flag or `--beads-only` to skip |
-| Regression gate reverts | Review reverted changes, narrow scope, re-run; claimed queue items must be released back to available state |
-| Blocker chain too deep (>2 levels) | Reduce blocker dependencies or manually land the deepest blocker before resuming |
-| Queue item escalated after 3 failures | Review the item scope, simplify, or manually unblock; check `.agents/evolve/escalated.md` for details |
-| Queue state lost after compaction | Recover from `.agents/evolve/pinned-queue-state.json` — evolve auto-loads this on restart |
+| Regression gate reverts | Review reverted changes, narrow scope, re-run; claimed work items must be released back to available state |
 
 See `references/cycle-history.md` for advanced troubleshooting.
 
@@ -848,7 +654,6 @@ See `references/cycle-history.md` for advanced troubleshooting.
 - `references/artifacts.md` — Generated files registry
 - `references/oscillation.md` — Oscillation detection and quarantine
 - `references/quality-mode.md` — Quality-first mode: scoring, priority cascade, artifacts
-- `references/pinned-queue.md` — Pinned queue format, blocker resolution, state persistence
 
 ## See Also
 
@@ -871,7 +676,6 @@ See `references/cycle-history.md` for advanced troubleshooting.
 - [references/oscillation.md](references/oscillation.md)
 - [references/parallel-execution.md](references/parallel-execution.md)
 - [references/quality-mode.md](references/quality-mode.md)
-- [references/pinned-queue.md](references/pinned-queue.md)
 - [references/teardown.md](references/teardown.md)
 
 ## Local Resources
@@ -885,7 +689,6 @@ See `references/cycle-history.md` for advanced troubleshooting.
 - [references/goals-schema.md](references/goals-schema.md)
 - [references/oscillation.md](references/oscillation.md)
 - [references/parallel-execution.md](references/parallel-execution.md)
-- [references/pinned-queue.md](references/pinned-queue.md)
 - [references/quality-mode.md](references/quality-mode.md)
 - [references/teardown.md](references/teardown.md)
 

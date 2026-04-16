@@ -118,6 +118,19 @@ BA: "I need to ask stakeholders."
 - **When** = event/action (user action, system trigger)
 - **Then** = outcome (observable results, state changes)
 
+### Scenario Titles: Business Outcomes Only
+
+Scenario titles describe WHAT the user achieves, never HOW the system implements it.
+
+| BAD (implementation) | GOOD (business outcome) |
+|---|---|
+| FileWatcher triggers TreeView refresh | Dashboard updates in real-time |
+| Observer writes state.json on event | Wave progress is captured when a phase completes |
+| Debounce prevents rapid writes | Rapid progress changes render smoothly |
+| Atomic write prevents partial reads | Dashboard always sees consistent data |
+
+**Rule**: If the title contains a class name, method name, file name, or protocol detail, rewrite it as the user-observable outcome.
+
 ### Example Translation
 
 Example card: "Balance $500, transfer $300 -> succeeds"

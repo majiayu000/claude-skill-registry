@@ -72,6 +72,9 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Embed a YouTube/Vimeo video as an asset" → read `plugins/embedded-assets.md`
 - "Configure email delivery via SES" → read `plugins/amazon-ses.md` + `third-party-integration.md`
 - "Build a language switcher" → read `multi-site-patterns.md`
+- "Add login/registration to the front end" → read `auth-flows.md`
+- "Build a user profile edit page" → read `auth-flows.md`
+- "Set up password reset flow" → read `auth-flows.md`
 - "Set up hreflang tags" → read `multi-site-patterns.md`
 - "Plan a multi-language site architecture" → read `multi-site-patterns.md`
 - "Add live search without JavaScript" → read `plugins/sprig.md`
@@ -94,6 +97,7 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 | `references/twig-collections.md` | `collect()` method reference: creating, accessing, transforming, filtering, sorting, slicing, arrow functions |
 | `references/third-party-integration.md` | Script loading order, CMP (UserCentrics/CookieBot), GTM/sGTM data layer, analytics (Fathom/Plausible), AWS SES transport, n8n webhooks, Blitz compatibility, full head template example |
 | `references/multi-site-patterns.md` | Language switchers, hreflang tags, site architectures (subfolder/domain/subdomain/multi-brand), cross-site queries, static translations, site-specific templates, multi-site forms, site detection |
+| `references/auth-flows.md` | Front-end authentication: login, registration, password reset, set new password, edit profile, email verification, access control tags, user session helpers, GeneralConfig auth settings |
 
 ### Plugin References
 

@@ -13,6 +13,8 @@ compatibility: >-
 metadata:
   author: open-agreements
   version: "0.2.0"
+catalog_group: Editing And Client Workflows
+catalog_order: 10
 ---
 
 # edit-docx-agreement

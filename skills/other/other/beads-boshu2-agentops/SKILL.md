@@ -35,6 +35,9 @@ Graph-based issue tracker that survives conversation compaction.
 - Treat live `bd` reads as authoritative. Use `bd show`, `bd ready`, `bd list`, and `bd export` to inspect current tracker state. Do not treat `.beads/issues.jsonl` as the primary decision source when live `bd` data is available.
 - Treat `.beads/issues.jsonl` as a git-friendly export artifact. If the repo tracks `.beads/issues.jsonl` and you mutate tracker state, refresh it explicitly with `bd export -o .beads/issues.jsonl`.
 - After closing or materially updating a child issue, reconcile the open parent in the same session. Update stale "remaining gap" notes immediately, and close the parent when the child resolved the parent's last real gap.
+- Before closing a child issue, include scoped closure proof in the `bd close --reason` text.
+  Name the touched files or explicit no-file evidence artifact, validation command(s), and parent
+  reconciliation outcome. Do not use generic closure reasons such as "done" or "implemented" for child beads.
 - If `bd ready` returns a broad umbrella issue, do not implement directly against vague parent wording. First narrow the remaining gap into an execution-ready child issue, then land the child and reconcile the parent.
 - Normalize stale queue items instead of silently skipping them. Rewrite broad or partially absorbed beads to the actual remaining gap.
 - Use this post-mutation sequence when tracker state changed:

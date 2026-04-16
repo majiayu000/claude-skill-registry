@@ -16,7 +16,6 @@ Lightweight Google Drive integration with standalone OAuth authentication. No MC
 > **Requires Google Workspace account.** Personal Gmail accounts are not supported.
 
 ## When to Use
-
 - You need to search, list, upload, download, move, or organize Google Drive files and folders.
 - The task requires direct Drive read/write automation through local scripts in a Workspace account.
 - You want file-level Drive operations without introducing an MCP server dependency.
@@ -139,3 +138,8 @@ Tokens stored securely using the system keyring:
 Service name: `google-drive-skill-oauth`
 
 Automatically refreshes expired tokens using Google's cloud function.
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

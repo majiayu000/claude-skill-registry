@@ -1,0 +1,17 @@
+{
+  "name": "inclusive-physical-education",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "examples/skills/physical-education/inclusive-physical-education/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "inclusive-physical-education",
+  "downloaded_at": "2026-04-16T01:31:57.969204Z",
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/physical-education/inclusive-physical-education/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/physical-education/inclusive-physical-education/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

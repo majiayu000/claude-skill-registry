@@ -87,8 +87,8 @@ These are process scaffolding — valuable during delivery, disposable after:
 
 1. **List remaining files** — List all files still in `docs/feature/{feature-id}/` after migration. Gate: list produced.
 2. **Present for approval** — Show the exact list to the user and request approval. Gate: user explicitly approves.
-3. **Remove workspace** — On approval: `rm -rf docs/feature/{feature-id}/`. Gate: directory removed.
-4. **Remove parent if empty** — If `docs/feature/` directory is now empty, remove it too. Gate: no empty parent directory remains.
+3. **Preserve workspace** — `docs/feature/{feature-id}/` is NOT deleted. The wave matrix derives status from this directory. Removing it would make finalized features disappear from the matrix. The evolution doc in `docs/evolution/` is the summary; the feature directory is the history. Gate: directory preserved, session markers removed.
+4. **Clean session artifacts only** — Remove `.nwave/des/deliver-session.json`, `.develop-progress.json`, and any temp files. Do NOT remove wave artifacts (discuss/, design/, distill/, deliver/). Gate: session markers removed, wave artifacts intact.
 
 **NEVER delete without user approval.** Show exactly what will be removed.
 

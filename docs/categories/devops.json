@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5324,
-  "updated_at": "2026-04-15T02:05:51.786770Z",
+  "count": 5325,
+  "updated_at": "2026-04-16T02:11:09.312055Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -63027,6 +63027,24 @@
       "stars": 0,
       "install": "EmberwildGameBible/The_Emberwild_Archive-/.codex/skills/family-recipe-lore",
       "source": "GitHub Search API"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "incident-analysis",

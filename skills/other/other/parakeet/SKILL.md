@@ -121,6 +121,28 @@ When this skill is invoked:
    ${PARAKEET_HOME:-~/Programming/parakeet-dictate}/.venv/bin/python check_setup.py
    ```
 
+## 3. Server Mode (OpenAI-Compatible STT for Takopi)
+
+An OpenAI-compatible transcription server for integration with Takopi and other
+API clients. Exposes `POST /v1/audio/transcriptions` wrapping the NeMo CLI.
+
+```bash
+uv run --with fastapi,uvicorn,python-multipart \
+  ~/.claude/skills/parakeet/scripts/parakeet_server.py --port 8384
+```
+
+Takopi config (`~/.takopi/takopi.toml`):
+```toml
+voice_transcription_base_url = "http://localhost:8384/v1"
+voice_transcription_api_key = "local"
+voice_transcription_model = "parakeet-tdt-0.6b"
+```
+
+Endpoints: `/v1/audio/transcriptions` (POST, multipart), `/v1/models` (GET),
+`/health` (GET). Supports `response_format`: `json`, `text`, `verbose_json`.
+Accepts `.wav`, `.mp3`, `.m4a`, `.flac`, `.ogg`, `.aac`, `.oga`, `.webm`.
+50 MB upload limit. 120s transcription timeout.
+
 ## Model Caches
 
 | System | Cache Location | Size | Engine |

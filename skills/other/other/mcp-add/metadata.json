@@ -1,0 +1,17 @@
+{
+  "name": "mcp-add",
+  "repo": "luiseiman/dotforge",
+  "path": "skills/mcp-add/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/luiseiman/dotforge",
+  "dir_name": "mcp-add",
+  "downloaded_at": "2026-04-16T01:46:56.306066Z",
+  "author": "luiseiman",
+  "source_url": "https://github.com/luiseiman/dotforge/blob/main/skills/mcp-add/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/luiseiman/dotforge/blob/main/skills/mcp-add/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

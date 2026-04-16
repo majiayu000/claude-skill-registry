@@ -5,34 +5,43 @@ description: "Run an independent peer review via codex. Use when the user asks t
 
 # Peer Review
 
-Independent peer review via codex. Runs `/codex-exec` in read-only mode with a review prompt built from the input material.
+Independent peer review via codex. Translates a natural-language review request into a codex-specific prompt so invocations stay implementation-agnostic.
 
-## Step 1: Determine What to Review
+## Step 1: Understand the Request
 
-Determine what to review from the input material (passed in via the task prompt when invoked as a sub-Agent) or from conversation context. If neither provides reviewable material, use `AskUserQuestion` to ask what to review.
+Identify from the invoking prompt or conversation context:
 
-## Step 2: Run `/codex-exec` Skill
+- **Material** — the code scope, artifact text, feedback items, or other content under review
+- **Criteria** — reference file paths codex should read directly, inline criteria text, or the material's own domain conventions
+- **Dimensions** — one review concern (single-pass) or multiple independent concerns (fan-out, one per dimension)
+- **Skepticism guidance** — any material-specific instruction for pushing past surface findings; optional
+- **Output format** — finding layout, priority scale, or verdict labels; optional
 
-Invoke `/codex-exec` via the Skill tool in read-only mode with a review prompt tailored to the material. Include the output format in a `<structured_output_contract>` tag:
+If no reviewable material is available, stop and state that material is required.
 
-```
-<structured_output_contract>
-For each issue, return:
+## Step 2: Build the Codex Prompt
 
-### [P<N>] <title (imperative, ≤80 chars)>
+Assemble the prompt using codex's XML tag conventions (see `/codex-exec` Prompt Shaping):
 
-**File:** `<file path>` or **Section:** <location>
+- **`<task>`** — the scope or material, criteria pointers (file paths codex should read, or inline criteria), and any needed context. When multiple independent dimensions are specified, wrap the dimension list with explicit parallel fan-out instructions so codex delegates each dimension to a separate `spawn_agent` sub-agent and waits for all before synthesizing. See `/codex-exec` [references/parallel-execution.md](../codex-exec/references/parallel-execution.md) for the pattern.
 
-<one paragraph explaining the issue and its impact>
+- **`<dig_deeper_nudge>`** — the skepticism guidance from the request if provided; otherwise the default: "Do not stop at surface-level findings. Check for second-order failures, transformation-chain bypasses, and cases where the material relies on unstated assumptions."
 
-Use priorities: P0 (fundamentally flawed), P1 (significant gap), P2 (moderate issue), P3 (minor improvement).
-After all findings, add an Overall Verdict section with a 1-3 sentence assessment.
-If no issues, state that it looks sound.
-</structured_output_contract>
-```
+- **`<structured_output_contract>`** — the output format from the request if provided. Otherwise use the default, which aligns with the finding shape internal reviews emit so findings can be concatenated without transformation:
 
-When the prompt covers **multiple review dimensions** (e.g., correctness, security, quality, API usage), wrap the task list with parallel fan-out instructions so codex delegates each dimension to a separate sub-agent. See `/codex-exec` [references/parallel-execution.md](../codex-exec/references/parallel-execution.md) for details on codex parallel execution.
+  ```
+  ### [P<N>] <title (imperative, ≤80 chars)>
 
-## Step 3: Output Findings
+  **File:** `<file path>` (lines <start>-<end>) or **Section:** <location>
+  **Reviewer:** peer (<dimension>)
 
-Output the codex findings.
+  <one paragraph explaining the issue and its impact>
+  ```
+
+  The `(lines <start>-<end>)` slot is optional; include it when reviewing code, omit for section references. Include the `(<dimension>)` parenthetical whenever the request identifies a dimension label (covers both single- and multi-dimension cases); omit only for undifferentiated reviews where no dimension was named. Default priority scale: P0 (fundamentally flawed or blocking), P1 (significant gap or urgent), P2 (moderate issue), P3 (minor improvement). End with an Overall Verdict block containing a 1–3 sentence assessment. If there are no issues, state that the material looks sound.
+
+## Step 3: Run `/codex-exec` Skill
+
+Invoke `/codex-exec` via the Skill tool in read-only mode with the assembled prompt. Output the findings codex returns.
+
+Check your task list for remaining tasks and proceed.

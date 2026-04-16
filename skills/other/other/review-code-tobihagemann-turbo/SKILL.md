@@ -17,7 +17,7 @@ Determine what to review:
 
 - If a specific **diff command** was provided (e.g., `git diff --cached`, `git diff main...HEAD`), use that.
 - If a **file list or directory** was provided, review those files directly (read the full files, not a diff).
-- If **neither** was provided, default to diffing against the repository's default branch (detect via `gh repo view --json defaultBranchRef --jq '.defaultBranchRef.name'`). If there are no changes against the default branch, use `AskUserQuestion` to ask what to review.
+- If **neither** was provided, default to diffing against the repository's default branch (detect via `gh repo view --json defaultBranchRef --jq '.defaultBranchRef.name'`). If there are no changes against the default branch, stop and state that there is nothing to review.
 
 ## Step 2: Run Reviews in Parallel
 
@@ -29,12 +29,12 @@ Read the reference file(s) for the active type(s):
 - **API usage** — [references/api-usage-review.md](references/api-usage-review.md)
 - **Coverage** — [references/coverage-review.md](references/coverage-review.md)
 
-Full review activates all five types; a single-concern argument activates one. Skip peer review when the caller asked (e.g., "without peer review", "no peer", "internal only").
+Full review activates all five types; a single-concern argument activates one. Skip peer review when instructed (e.g., "without peer review", "no peer", "internal only").
 
 Use the Agent tool to launch all agents below in a single message (`model: "opus"`, do not set `run_in_background`) so they run concurrently. For full review that is six Agent tool calls (five internal + one peer); for single-concern it is two (one internal + one peer).
 
 - **Internal Agent (one per active type):** Launch a separate Agent tool call for each active type. Pass the scope and the type's reference file content; the subagent applies the criteria and returns findings in the output format below.
-- **Peer review Agent (unless skipping):** Instruct the subagent to invoke `/peer-review` via the Skill tool with a prompt embedding the "What to Review", determination criteria, priority levels, and verdict label from every active reference file, structured with `<task>`, `<dig_deeper_nudge>`, and `<structured_output_contract>` XML tags.
+- **Peer review Agent (unless skipping):** Instruct the subagent to invoke `/peer-review` via the Skill tool with a request describing: (a) the scope to review; (b) each active type as a separate review dimension so they are reviewed independently; (c) for each dimension, the criteria live in `~/.claude/skills/review-code/references/<type>-review.md` — the reviewer should read that file directly, use its priority scale and verdict label, and include any extra metadata fields it specifies (e.g., `**Category:**`, `**Library:**`, `**Docs:**`) between the `**Reviewer:**` line and the paragraph.
 
 Aggregate findings with attribution (reviewer: "internal" or "peer"; type; file path). Present them in the output format below.
 
@@ -55,7 +55,7 @@ Return findings as a numbered list. For each finding:
 
 The reference file may specify additional metadata fields (e.g., `**Category:**`, `**Library:**`, `**Docs:**`). Include them between the `**Reviewer:**` line and the paragraph.
 
-After all findings, add an overall verdict per active type using the label from each reference file. For single-concern, that is one verdict block; for full review, five. After the per-type verdicts, add a single combined `## Peer Review Verdict` block summarizing what codex returned.
+After all findings, add an overall verdict per active type using the label from each reference file. For single-concern, that is one verdict block; for full review, five. After the per-type verdicts, add a single combined `## Peer Review Verdict` block summarizing what the peer review returned.
 
 ```
 ## Overall Verdict — <type>

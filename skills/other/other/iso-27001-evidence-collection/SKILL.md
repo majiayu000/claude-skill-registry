@@ -17,6 +17,8 @@ metadata:
     - ISO 27001:2022
     - SOC 2 Type II
     - NIST SP 800-53 Rev 5
+catalog_group: Compliance And Audit
+catalog_order: 30
 ---
 
 # ISO 27001 Evidence Collection

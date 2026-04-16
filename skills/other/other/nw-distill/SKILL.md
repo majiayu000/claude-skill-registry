@@ -171,6 +171,11 @@ Before handing off to reviewers, self-check each item:
 - [ ] 7. **Mandate 7**: All scaffolds include `__SCAFFOLD__` marker (or language equivalent)
 - [ ] 8. **Mandate 7**: All scaffold methods raise assertion error (not NotImplementedError)
 - [ ] 9. **Mandate 7**: Tests are RED (not BROKEN) when run against scaffolds
+- [ ] 11. **F-001**: At least one `@real-io @adapter-integration` scenario per driven adapter (synthetic data misses format mismatches)
+- [ ] 12. **F-002**: `capsys` used in `@when` step, NOT in `@then` step (capsys is step-scoped in pytest-bdd)
+- [ ] 13. **F-005**: `@when` steps import ONLY from `des.application.*` or `des.domain.*` — NEVER from `des.adapters.driven.*`. Run `python scripts/hooks/check_driving_port_boundary.py` to verify.
+- [ ] 14. **F-004**: Timing assertions in `.feature` files use budget >= 200ms (flaky under parallel load)
+- [ ] 15. **F-003**: BDD imports after `sys.path` manipulation have `# noqa` markers (ruff strips them otherwise)
 
 ## Scenario Writing Guidelines
 

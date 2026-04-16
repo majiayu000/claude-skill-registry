@@ -12,6 +12,8 @@ compatibility: >-
 metadata:
   author: open-agreements
   version: "0.2.2"
+catalog_group: Agreement Drafting And Filling
+catalog_order: 20
 ---
 
 # nda

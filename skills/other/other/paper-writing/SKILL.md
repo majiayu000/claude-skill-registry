@@ -1,6 +1,6 @@
 ---
 name: paper-writing
-description: "Workflow 3: Full paper writing pipeline. Orchestrates paper-plan → paper-figure → paper-write → paper-compile → auto-paper-improvement-loop to go from a narrative report to a polished, submission-ready PDF. Use when user says \"写论文全流程\", \"write paper pipeline\", \"从报告到PDF\", \"paper writing\", or wants the complete paper generation workflow."
+description: "Workflow 3: Full paper writing pipeline. Orchestrates paper-plan → paper-figure → figure-spec/paper-illustration/mermaid-diagram → paper-write → paper-compile → auto-paper-improvement-loop to go from a narrative report to a polished, submission-ready PDF. Use when user says \"写论文全流程\", \"write paper pipeline\", \"从报告到PDF\", \"paper writing\", or wants the complete paper generation workflow."
 argument-hint: [narrative-report-path-or-topic]
 allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob, Agent, Skill, mcp__codex__codex, mcp__codex__codex-reply
 ---
@@ -29,8 +29,9 @@ In this hybrid pack, the pipeline itself is unchanged, but `paper-plan` and `pap
 - **REVIEWER_MODEL = `gpt-5.4`** — Model used via Codex MCP for plan review, figure review, writing review, and improvement loop.
 - **AUTO_PROCEED = true** — Auto-continue between phases. Set `false` to pause and wait for user approval after each phase.
 - **HUMAN_CHECKPOINT = false** — When `true`, the improvement loop (Phase 5) pauses after each round's review to let you see the score and provide custom modification instructions. When `false` (default), the loop runs fully autonomously. Passed through to `/auto-paper-improvement-loop`.
+- **ILLUSTRATION = `figurespec`** — Architecture/illustration generator for Phase 2b: `figurespec` (default, deterministic JSON→SVG via `/figure-spec`, best for architecture/workflow/topology), `gemini` (AI-generated via `/paper-illustration`, best for qualitative method illustrations; needs `GEMINI_API_KEY`), `mermaid` (Mermaid syntax via `/mermaid-diagram`, free, best for flowcharts), or `false` (skip Phase 2b, manual only).
 
-> Override inline: `/paper-writing "NARRATIVE_REPORT.md" — venue: NeurIPS, human checkpoint: true`
+> Override inline: `/paper-writing "NARRATIVE_REPORT.md" — venue: NeurIPS, illustration: gemini, human checkpoint: true`
 > IEEE example: `/paper-writing "NARRATIVE_REPORT.md" — venue: IEEE_JOURNAL`
 
 ## Inputs
@@ -95,13 +96,57 @@ Invoke `/paper-figure` to generate data-driven plots and tables:
 
 **Output:** `figures/` directory with PDFs, generation scripts, and LaTeX snippets.
 
-> **Scope:** Auto-generates ~60% of figures (data plots, comparison tables). Architecture diagrams, pipeline figures, and qualitative result grids must be created manually and placed in `figures/` before proceeding. See `/paper-figure` SKILL.md for details.
+> **Scope:** `paper-figure` covers data plots and comparison tables. Architecture diagrams, pipeline figures, and method illustrations are handled in Phase 2b below.
+
+#### Phase 2b: Architecture & Illustration Generation
+
+**Skip this step entirely if `illustration: false`.**
+
+If the paper plan includes architecture diagrams, pipeline figures, audit cascades, or method illustrations, invoke the appropriate generator based on the `illustration` parameter:
+
+**When `illustration: figurespec`** (default) — invoke `/figure-spec`:
+```
+/figure-spec "[architecture/workflow description from PAPER_PLAN.md]"
+```
+- Deterministic JSON → SVG vector rendering (editable, reproducible)
+- Best for: system architecture, workflow pipelines, audit cascades, layered topology
+- Output: `figures/*.svg` + `figures/*.pdf` (via rsvg-convert) + `figures/specs/*.json`
+- No external API, runs fully local
+
+**When `illustration: gemini`** — invoke `/paper-illustration`:
+```
+/paper-illustration "[method description from PAPER_PLAN.md or NARRATIVE_REPORT.md]"
+```
+- Claude plans → Gemini optimizes → Nano Banana Pro renders → Claude reviews (score ≥ 9)
+- Best for: qualitative method illustrations, natural-style diagrams, result grids
+- Output: `figures/ai_generated/*.png`
+- Requires `GEMINI_API_KEY` environment variable
+
+**When `illustration: mermaid`** — invoke `/mermaid-diagram`:
+```
+/mermaid-diagram "[method description from PAPER_PLAN.md]"
+```
+- Generates Mermaid syntax diagrams (flowchart, sequence, class, state, etc.)
+- Best for: lightweight flowcharts, state machines, simple sequence diagrams
+- Output: `figures/*.mmd` + `figures/*.png`
+- Free, no API key needed
+
+**When `illustration: false`** — skip entirely. All non-data figures must be created manually (draw.io, Figma, TikZ) and placed in `figures/` before Phase 3.
+
+**Choosing the right mode:**
+- Formal architecture / workflow / topology figures → `figurespec` (default)
+- Method concept illustrations with natural style → `gemini`
+- Quick flowchart / state machine → `mermaid`
+- Full manual control → `false`
+
+These are complementary, not mutually exclusive: you can run multiple generators for different figures in the same paper by re-invoking with different `illustration` overrides.
 
 **Checkpoint:** List generated vs manual figures.
 
 ```
 📊 Figures complete:
-- Auto-generated: [list]
+- Data plots (auto, Phase 2): [list]
+- Architecture/illustrations (auto, Phase 2b, mode=<illustration>): [list]
 - Manual (need your input): [list]
 - LaTeX snippets: figures/latex_includes.tex
 
@@ -233,7 +278,38 @@ Invoke `/auto-paper-improvement-loop` to polish the paper:
 
 **Output:** Three PDFs for comparison + `PAPER_IMPROVEMENT_LOG.md`.
 
-**Format check** (included in improvement loop Step 8): After final recompilation, auto-detect and fix overfull hboxes (content exceeding margins), verify page count vs venue limit, and ensure compact formatting. Any overfull > 10pt is fixed before generating the final PDF.
+**Format check** (included in improvement loop Step 8): After final recompilation, auto-detect and fix overfull hboxes (content exceeding margins), verify page count vs venue limit, and ensure compact formatting. Location-aware thresholds: any main-body overfull blocks completion regardless of size; appendix overfulls block only if >10pt; bibliography overfulls block only if >20pt.
+
+### Phase 5.5: Final Paper Claim Audit (MANDATORY submission gate)
+
+After `/auto-paper-improvement-loop` finishes, **rerun** `/paper-claim-audit` before the final report whenever the paper contains numeric claims and machine-readable raw result files exist.
+
+Use the same detectors as Phase 4.7:
+- numeric-claim regex over `paper/main.tex` and `paper/sections/*.tex`
+- raw-evidence file search in `results/`, `outputs/`, `experiments/`, and `figures/` for `.json`, `.jsonl`, `.csv`, `.tsv`, `.yaml`, or `.yml`
+
+This phase is **mandatory** if both detectors are positive. It blocks the final report.
+If numeric claims exist but no raw result files are found, stop and warn the user before declaring the paper complete.
+If no numeric claims exist, skip.
+
+```bash
+NUMERIC_CLAIMS=$(rg -n -e '[0-9]+(\.[0-9]+)?\s*(%|\\%|±|\\pm|x|×)' \
+  -e '(accuracy|BLEU|F1|AUC|mAP|top-1|top-5|error|loss|perplexity|speedup|improvement)' \
+  paper/main.tex paper/sections 2>/dev/null || true)
+
+RAW_RESULT_FILES=$(find results outputs experiments figures -type f \
+  \( -name '*.json' -o -name '*.jsonl' -o -name '*.csv' -o -name '*.tsv' -o -name '*.yaml' -o -name '*.yml' \) 2>/dev/null | head -200)
+
+if [ -n "$NUMERIC_CLAIMS" ] && [ -n "$RAW_RESULT_FILES" ]; then
+    Run /paper-claim-audit "paper/"
+    If FAIL:
+        Fix mismatched numbers before the final report
+elif [ -n "$NUMERIC_CLAIMS" ]; then
+    Stop and warn: the paper contains numeric claims but no raw evidence files were found
+fi
+```
+
+**Empirical motivation:** in our April 2026 NeurIPS run, the final paper claimed `w ∈ {0,1,2,3}` for the width-tradeoff experiment but the raw JSON had `w ∈ {0,1,2,3,4,5}`. The crossing-point tolerance was claimed as `0.05%` but the actual relative error was `0.0577%`. Both were caught only after manual `paper-claim-audit` invocation in the final round; the improvement loop did not detect them.
 
 ### Phase 6: Final Report
 

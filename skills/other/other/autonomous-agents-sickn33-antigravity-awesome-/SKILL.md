@@ -1065,7 +1065,6 @@ Message: Destructive action without rollback capability. Save state before modif
 Works well with: `agent-tool-builder`, `agent-memory-systems`, `multi-agent-orchestration`, `agent-evaluation`
 
 ## When to Use
-
 - User mentions or implies: autonomous agent
 - User mentions or implies: autogpt
 - User mentions or implies: babyagi
@@ -1078,3 +1077,8 @@ Works well with: `agent-tool-builder`, `agent-memory-systems`, `multi-agent-orch
 - User mentions or implies: langgraph
 - User mentions or implies: agentic ai
 - User mentions or implies: agent planning
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

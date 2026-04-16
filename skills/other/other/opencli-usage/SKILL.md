@@ -84,7 +84,7 @@ Type legend: 🌐 = Browser (needs Chrome login) · ✅ = Public API (no browser
 | **facebook** | 🌐 | `feed` `profile` `search` `friends` `groups` `events` `notifications` `memories` `add-friend` `join-group` |
 | **gemini** | 🌐 | `ask` `new` `image` `deep-research` `deep-research-result` |
 | **google** | ✅ | `news` `search` `suggest` `trends` |
-| **grok** | 🌐 | `ask` |
+| **grok** | 🌐 | `ask` `image` |
 | **hackernews** | ✅ | `top` `new` `best` `ask` `show` `jobs` `search` `user` |
 | **hf** | ✅ | `top` |
 | **hupu** | 🌐 | `hot` `search` `detail` `like` `unlike` `reply` `mentions` |
@@ -127,13 +127,17 @@ Type legend: 🌐 = Browser (needs Chrome login) · ✅ = Public API (no browser
 | **xiaoe** | 🌐 | `courses` `catalog` `content` `detail` `play-url` |
 | **xiaohongshu** | 🌐 | `search` `notifications` `feed` `user` `note` `comments` `download` `publish` `creator-notes` `creator-note-detail` `creator-notes-summary` `creator-profile` `creator-stats` |
 | **xiaoyuzhou** | ✅ | `podcast` `podcast-episodes` `episode` |
+| **nowcoder** | ✅🌐 | Public: `hot` `trending` `topics` `recommend` `creators` `companies` `jobs` · Browser: `search` `suggest` `experience` `referral` `salary` `papers` `practice` `notifications` `detail` |
+| **xiaoyuzhou** | ✅ | `podcast` `podcast-episodes` `episode` `download` `transcript*` |
 | **xueqiu** | 🌐 | `hot-stock` `stock` `watchlist` `feed` `hot` `search` `comments` `earnings-date` `fund-holdings` `fund-snapshot` |
 | **yahoo-finance** | 🌐 | `quote` |
 | **yollomi** | 🌐 | `models` `generate` `video` `upload` `remove-bg` `edit` `background` `face-swap` `object-remover` `restore` `try-on` `upscale` |
-| **youtube** | 🌐 | `search` `video` `transcript` |
+| **youtube** | 🌐 | `search` `video` `transcript` `comments` `channel` `playlist` `feed` `history` `watch-later` `subscriptions` `like` `unlike` `subscribe` `unsubscribe` |
 | **yuanbao** | 🌐 | `new` `ask` |
 | **zhihu** | 🌐 | `hot` `search` `question` |
 | **zsxq** | 🌐 | `groups` `dynamics` `topics` `topic` `search` |
+
+`*` `opencli xiaoyuzhou transcript` requires local Xiaoyuzhou credentials in `~/.opencli/xiaoyuzhou.json`.
 
 ### Desktop Apps (CDP/Electron)
 

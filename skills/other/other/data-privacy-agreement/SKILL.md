@@ -13,6 +13,8 @@ compatibility: >-
 metadata:
   author: open-agreements
   version: "0.2.0"
+catalog_group: Agreement Drafting And Filling
+catalog_order: 60
 ---
 
 # data-privacy-agreement

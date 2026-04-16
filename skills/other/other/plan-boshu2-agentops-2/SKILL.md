@@ -408,7 +408,24 @@ Group issues by dependencies for parallel execution:
 Unchecked rules: 0
 ```
 
-If any rule row has an empty Justification column, mark the plan output as **INCOMPLETE** and do not proceed to Step 6 until all rows are filled.
+If any rule row has an empty Justification column, mark the plan output as **INCOMPLETE** and do not proceed to Step 5.5 until all rows are filled.
+
+### Step 5.5: File Dependency Matrix (MANDATORY)
+
+Before writing the plan document, produce an explicit file-level dependency matrix mapping each task to every file it reads or writes. This matrix is the input to the swarm pre-spawn conflict check — without it, handoff to `$swarm` is blocked.
+
+| Task | File | Access | Notes |
+|------|------|--------|-------|
+| task-1 | cli/cmd/ao/foo.go | write | New function |
+| task-1 | cli/cmd/ao/foo_test.go | write | New test |
+| task-2 | cli/internal/bar/bar.go | read  | Calls Foo() |
+| task-2 | cli/cmd/ao/foo.go | read  | Caller |
+
+Rules:
+- Every `write` cell is an ownership claim. Two tasks claiming `write` on the same file in the same wave MUST be serialized (`blockedBy`) or merged into one task.
+- `read` does not conflict with other reads but DOES conflict with a concurrent `write` in the same wave.
+- Include tests, docs, schemas, fixtures, generated artifacts, and Codex companion files — not just primary sources.
+- Cross-reference: the swarm skill's local-mode reference (Pre-Spawn Conflict Check) consumes this matrix.
 
 #### File-Level Dependency Matrix (Mandatory)
 

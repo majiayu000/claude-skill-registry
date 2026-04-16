@@ -196,6 +196,7 @@ Fill in batch-specific parameters below and dispatch:
 > Project: `<projectName>`
 > Languages: `<languages>`
 > Batch index: `<batchIndex>`
+> Skill directory (for bundled scripts): `<SKILL_DIR>`
 > Write output to: `$PROJECT_ROOT/.understand-anything/intermediate/batch-<batchIndex>.json`
 >
 > Pre-resolved import data for this batch (use this for all import edge creation — do NOT re-resolve imports from source):

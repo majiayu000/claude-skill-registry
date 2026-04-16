@@ -212,3 +212,8 @@ Use this skill when you need to **design or adjust production schedules and cons
 - Sequencing jobs, balancing lines, and optimising changeovers in discrete or batch manufacturing.
 - Responding to disruptions (machine breakdowns, shortages, quality holds, absenteeism) while protecting the bottleneck and customer commitments.
 - Building scheduling rules, KPIs, and communication patterns between planning, production, maintenance, and quality teams.
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

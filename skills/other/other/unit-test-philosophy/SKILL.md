@@ -8,6 +8,8 @@ description: >-
   src, integration-tests, and workspace packages.
 metadata:
   short-description: Open Agreements testing philosophy
+catalog_group: Developer Workflows
+catalog_order: 20
 ---
 
 # Unit Test Philosophy (Open Agreements)

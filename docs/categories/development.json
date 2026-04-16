@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19700,
-  "updated_at": "2026-04-15T02:05:51.555104Z",
+  "count": 19701,
+  "updated_at": "2026-04-16T02:11:09.085169Z",
   "skills": [
     {
       "name": "fix",
@@ -164664,6 +164664,24 @@
       "stars": 0,
       "install": "leobrival/topographic-studio-plugins/development/zettelkasten-methodology",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "polymarket",

@@ -11,6 +11,8 @@ license: MIT
 metadata:
   author: open-agreements
   version: "0.1.0"
+catalog_group: Editing And Client Workflows
+catalog_order: 30
 ---
 
 # Delaware Franchise Tax

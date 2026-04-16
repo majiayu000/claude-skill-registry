@@ -1,6 +1,6 @@
 ---
 name: evolve
-description: Goal-driven v2 autonomous improvement loop. Runs the post-mortem, repo analysis, next-work selection, plan/pre-mortem, implementation, validation, and repeat cadence through /rpi and ao evolve. Also pulls from open beads when goals all pass and accepts ordered roadmaps via --queue. Use when you want to "improve", "iterate", "fix issues", "work through tasks", "evolve", "check goal fitness", "run improvement loop", "pick up next work", "postmortem and continue", or "run roadmap".
+description: Goal-driven v2 autonomous improvement loop. Runs the post-mortem, repo analysis, next-work selection, plan/pre-mortem, implementation, validation, and repeat cadence through /rpi and ao evolve. Also pulls from open beads when goals all pass. Use when you want to "improve", "iterate", "fix issues", "work through tasks", "evolve", "check goal fitness", "run improvement loop", "pick up next work", or "postmortem and continue".
 skill_api_version: 1
 user-invocable: true
 context:
@@ -21,9 +21,6 @@ metadata:
     - improve everything
     - autonomous improvement
     - run until done
-    - roadmap
-    - run queue
-    - pinned queue
     - postmortem and continue
     - analyze repo and keep going
 output_contract: "code changes, GOALS.md fitness deltas"
@@ -45,7 +42,6 @@ and repeat until a kill switch, max-cycle cap, regression breaker, or real
 dormancy stops the run.
 
 Always-on autonomous loop over `/rpi`. Work selection order:
-0. **Pinned work queue** (`--queue=<file>` or inline roadmap — see `references/pinned-queue.md`)
 1. **Harvested `.agents/rpi/next-work.jsonl` work** (freshest concrete follow-up)
 2. **Open ready beads work** (`bd ready`)
 3. **Failing goals and directive gaps** (`ao goals measure`)
@@ -73,8 +69,6 @@ Always-on autonomous loop over `/rpi`. Work selection order:
 /evolve --compile --max-cycles=5 # Warm knowledge base then run 5 cycles
 /evolve --test-first         # Default strict-quality /rpi execution path
 /evolve --no-test-first      # Explicit opt-out from test-first mode
-/evolve --queue=.agents/evolve/roadmap.md           # Process ordered roadmap
-/evolve --queue=.agents/evolve/roadmap.md --test-first  # Roadmap with strict quality
 ```
 
 ## Delineation vs /dream
@@ -98,7 +92,6 @@ Dream owns the knowledge compounding layer; `/evolve` owns the code compounding 
 | `--compile` | off | Run `ao mine` + `ao defrag` warmup before cycle 1 |
 | `--test-first` | on | Pass strict-quality defaults through to `/rpi` |
 | `--no-test-first` | off | Explicitly disable test-first passthrough to `/rpi` |
-| `--queue=<file>` | none | Process items from ordered markdown queue file sequentially before fitness-driven selection |
 | `--no-lifecycle` | off | Skip lifecycle work generators in Steps 3.4-3.6 (/test, /deps, /perf, /refactor). Falls back to manual scanning. |
 
 ## Execution Steps
@@ -130,17 +123,13 @@ Then load the repo-local autodev program contract when it exists. The execution 
 - If the program file exists but is structurally invalid, stop or downgrade with an explicit warning before cycle 1. Do not silently ignore a broken operator contract.
 - When a program contract exists, prefer work that can land wholly inside mutable scope. Do not silently widen scope around immutable files.
 
-Recover cycle number, queue/generator streaks, and the last claimed work item from disk (survives context compaction). Initialize `CYCLE` from `cycle-history.jsonl`, recover `IDLE_STREAK`, `GENERATOR_EMPTY_STREAK`, `LAST_SELECTED_SOURCE`, and `CLAIMED_WORK_REF` from `session-state.json`.
+Recover cycle number, generator streaks, and the last claimed work item from disk (survives context compaction). Initialize `CYCLE` from `cycle-history.jsonl`, recover `IDLE_STREAK`, `GENERATOR_EMPTY_STREAK`, `LAST_SELECTED_SOURCE`, and `CLAIMED_WORK_REF` from `session-state.json`.
 
-**Circuit breakers:** Time-based (60 min no productive work) and consecutive failure (5 in queue mode). See `references/roadmap-queue-patterns.md` for queue-specific circuit breakers.
+**Circuit breakers:** Time-based (60 min no productive work).
 
 **Oscillation quarantine:** Pre-populate quarantine list from cycle history (scan for goals with 3+ improved-to-fail transitions). See `references/oscillation.md`.
 
-Parse flags: `--max-cycles=N` (default unlimited), `--dry-run`, `--beads-only`, `--skip-baseline`, `--quality`, `--compile`, `--queue=<file>`.
-
-### Step 0.1: Parse Pinned Queue (--queue only)
-
-Skip if `--queue` was not passed. Read `references/roadmap-queue-patterns.md` for the full queue parsing, state persistence, and resume protocol. See also `references/pinned-queue.md` for format specification and blocker syntax.
+Parse flags: `--max-cycles=N` (default unlimited), `--dry-run`, `--beads-only`, `--skip-baseline`, `--quality`, `--compile`.
 
 Track cycle-level execution state:
 
@@ -162,20 +151,12 @@ evolve_state = {
   program_stop_conditions: <ordered cycle done criteria>,
   generator_empty_streak: <consecutive passes where all generator layers returned nothing>,
   last_selected_source: <harvested|beads|goal|directive|testing|validation|bug-hunt|drift|feature>,
-  claimed_work: <null or queue reference being worked>,
-  queue_refresh_count: <incremented after every /rpi cycle>,
-  pinned_queue: <parsed items array or null>,
-  pinned_queue_file: <path or null>,
-  pinned_queue_index: <current 0-based position>,
-  pinned_queue_completed: <array of completed item IDs>,
-  pinned_queue_escalated: <array of escalated items with reasons>,
-  unblock_depth: <current nesting depth, 0 when not unblocking>,
-  unblock_failures: <consecutive failures on current item>,
-  unblock_chain: <stack of blocker IDs being resolved>
+  claimed_work: <null or work reference being worked>,
+  queue_refresh_count: <incremented after every /rpi cycle>
 }
 ```
 
-Persist `evolve_state` to `.agents/evolve/session-state.json` at each cycle boundary, after queue claims, after queue release/finalize, and during teardown. `cycle-history.jsonl` remains the canonical cycle ledger; `session-state.json` carries resume-only state that has not yet earned a committed cycle entry.
+Persist `evolve_state` to `.agents/evolve/session-state.json` at each cycle boundary, after work claims, after release/finalize, and during teardown. `cycle-history.jsonl` remains the canonical cycle ledger; `session-state.json` carries resume-only state that has not yet earned a committed cycle entry.
 
 ### Step 0.2: Compile Warmup (--compile only)
 
@@ -207,10 +188,6 @@ When a repo-local program contract exists, apply a scope filter before Step 4:
 - candidate work that clearly requires immutable-scope edits is not eligible for direct execution
 - prefer harvested, beads, goals, and generated work that can plausibly land within mutable scope
 - if the selected item is inherently out of scope, escalate it or convert it into durable follow-up work instead of invoking `/rpi` and hoping discovery widens scope
-
-**Step 3.0: Pinned work queue** (only when `--queue` is set)
-
-Read `references/roadmap-queue-patterns.md` for the full pinned queue work selection protocol (item-to-prompt mapping, escalation cascade, blocker detection). When pinned queue is active, skip Steps 3.1-3.7 entirely. When exhausted, fall through to normal selection.
 
 **Step 3.1: Harvested work first**
 
@@ -339,18 +316,14 @@ See `references/quality-mode.md` for scoring and full details.
 IDLE_STREAK=$(awk '/"result"\s*:\s*"(idle|unchanged)"/{streak++; next} {streak=0} END{print streak+0}' \
   .agents/evolve/cycle-history.jsonl 2>/dev/null)
 
-# Pinned queue mode: never consider stagnation while queue has items
-if [ -n "$QUEUE_FILE" ] && [ "$QUEUE_INDEX" -lt "$QUEUE_TOTAL" ]; then
-  # Queue not exhausted — skip stagnation check, return to Step 3.0
-  :
-elif [ "$GENERATOR_EMPTY_STREAK" -ge 2 ] && [ "$IDLE_STREAK" -ge 2 ]; then
-  # Queue layers are empty AND producer layers were empty for the 3rd consecutive pass — STOP
-  echo "Stagnation reached after repeated empty queue + generator passes. Dormancy is the last-resort outcome."
+if [ "$GENERATOR_EMPTY_STREAK" -ge 2 ] && [ "$IDLE_STREAK" -ge 2 ]; then
+  # Work layers are empty AND producer layers were empty for the 3rd consecutive pass — STOP
+  echo "Stagnation reached after repeated empty work + generator passes. Dormancy is the last-resort outcome."
   # go to Teardown — do NOT log another idle entry
 fi
 ```
 
-If the queue layers were empty but a generator pass has not been exhausted 3 times yet, persist the new generator streak in `session-state.json` and loop back to Step 1. Empty pre-cycle queues are not a stop reason by themselves.
+If the work layers were empty but a generator pass has not been exhausted 3 times yet, persist the new generator streak in `session-state.json` and loop back to Step 1. Empty pre-cycle work sources are not a stop reason by themselves.
 
 A cycle is idle only if NO work source returned actionable work and every generator layer also came up empty. A cycle that targeted an oscillating goal and skipped it counts as idle only after the remaining ladder was exhausted.
 
@@ -358,17 +331,11 @@ If `--dry-run`: report what would be worked on and go to Teardown.
 
 ### Step 4: Execute
 
-**4.1: Blocker Resolution (pinned queue only)**
-
-If `UNBLOCK_TARGET` is set (from Step 3.0), enter the blocker resolution sub-loop. Read `references/roadmap-queue-patterns.md` for the full blocker resolution protocol (depth limits, escalation cascade, retry logic, dynamic blocker detection).
-
-**4.2: Normal Execution**
-
 Primary engine: `/rpi` for implementation-quality work (all 3 phases mandatory). `/implement` or `/crank` only when a bead has execution-ready scope.
 
 If a repo-local `PROGRAM.md` contract is active, `/rpi` will load it automatically. `/evolve` must compose with that behavior, not bypass it:
 - Do not select work that is obviously outside mutable scope.
-- If a queue item, bead, or goal would require edits under immutable scope, escalate it or convert it into durable follow-up work instead of launching `/rpi`.
+- If a bead or goal would require edits under immutable scope, escalate it or convert it into durable follow-up work instead of launching `/rpi`.
 - When work is plausibly in scope but still uncertain, let `/rpi` discovery validate the fit and surface a scope escape explicitly.
 
 For a **harvested item, failing goal, directive gap, testing improvement, validation tightening task, bug-hunt result, drift finding, or feature suggestion**:
@@ -383,7 +350,7 @@ Fallback: /implement {issue_id}
 ```
 Or for an epic with children: `Invoke /crank {epic_id}`.
 
-If Step 3 created durable work instead of executing it immediately, re-enter Step 3 and let the newly-created queue/bead item win through the normal selection order.
+If Step 3 created durable work instead of executing it immediately, re-enter Step 3 and let the newly-created bead item win through the normal selection order.
 
 ### Step 5: Regression Gate
 
@@ -398,13 +365,13 @@ Treat program `stop_conditions` as per-cycle done criteria. Do not mark claimed 
 
 If not `--beads-only`, re-measure fitness to `fitness-latest-post.json` and detect regressions. The AgentOps CLI is required for fitness measurement. Read `references/fitness-scoring.md` for the full measurement, regression detection, and revert procedure.
 
-Queue finalization after the regression gate: claim it first, then keep `consumed: false` until the /rpi cycle succeeds. After the cycle's `/post-mortem` finishes, immediately re-read `.agents/rpi/next-work.jsonl` before selecting the next item. Read `references/knowledge-loop-integration.md` for full claim/release semantics.
+Work finalization after the regression gate: claim it first, then keep `consumed: false` until the /rpi cycle succeeds. After the cycle's `/post-mortem` finishes, immediately re-read `.agents/rpi/next-work.jsonl` before selecting the next item. Read `references/knowledge-loop-integration.md` for full claim/release semantics.
 
 ### Step 6: Log Cycle + Commit
 
 Two paths: productive cycles get committed, idle cycles are local-only.
 
-**PRODUCTIVE cycles** (result is improved, regressed, or harvested): compute quality score (if `--quality`), build queue args (if `--queue`), log via `scripts/evolve-log-cycle.sh`, commit if real changes exist. See `references/roadmap-queue-patterns.md` for queue advancement logic and `references/quality-mode.md` for scoring.
+**PRODUCTIVE cycles** (result is improved, regressed, or harvested): compute quality score (if `--quality`), log via `scripts/evolve-log-cycle.sh`, commit if real changes exist. See `references/quality-mode.md` for scoring.
 
 **IDLE cycles** (nothing found even after generator layers): log via `evolve-log-cycle.sh` with `--result "unchanged"`. No git add, no commit.
 
@@ -447,12 +414,6 @@ Read `references/knowledge-loop-integration.md` for the full teardown learning e
 **User says:** `/evolve`
 **What happens:** See `references/examples.md` for a worked overnight flow that moves through beads -> harvested work -> goals -> testing -> bug hunt -> feature suggestion before dormancy is considered.
 
-**User says:** `/evolve --queue=.agents/evolve/roadmap.md --test-first`
-**What happens:** Evolve processes each item in the roadmap sequentially. When an item is blocked (e.g., `rig-difc` blocked by `rig-8z29`), evolve auto-lands `rig-8z29` via sub-`/rpi` first, then resumes `rig-difc`. After all queue items complete, evolve falls through to fitness-driven selection. If a blocker chain exceeds 2 levels or fails 3 times, the item is escalated and evolve moves to the next one.
-
-**User says:** `/evolve --queue=.agents/evolve/roadmap.md --max-cycles=20`
-**What happens:** Evolve processes the roadmap but caps at 20 total cycles (including unblock sub-cycles). If the queue isn't finished, queue state is persisted to `.agents/evolve/pinned-queue-state.json` for resume in the next session.
-
 See `references/examples.md` for detailed walkthroughs.
 
 ## Troubleshooting
@@ -462,10 +423,7 @@ See `references/examples.md` for detailed walkthroughs.
 | Loop exits immediately | Remove `~/.config/evolve/KILL` or `.agents/evolve/STOP` |
 | Stagnation after repeated empty passes | Queue layers and producer layers were empty across multiple passes — dormancy is the fallback outcome |
 | `ao goals measure` hangs | Use `--timeout 30` flag or `--beads-only` to skip |
-| Regression gate reverts | Review reverted changes, narrow scope, re-run; claimed queue items must be released back to available state |
-| Blocker chain too deep (>2 levels) | Reduce blocker dependencies or manually land the deepest blocker before resuming |
-| Queue item escalated after 3 failures | Review the item scope, simplify, or manually unblock; check `.agents/evolve/escalated.md` for details |
-| Queue state lost after compaction | Recover from `.agents/evolve/pinned-queue-state.json` — evolve auto-loads this on restart |
+| Regression gate reverts | Review reverted changes, narrow scope, re-run; claimed work items must be released back to available state |
 
 See `references/cycle-history.md` for advanced troubleshooting.
 
@@ -480,7 +438,6 @@ See `references/cycle-history.md` for advanced troubleshooting.
 - `references/artifacts.md` — Generated files registry
 - `references/oscillation.md` — Oscillation detection and quarantine
 - `references/quality-mode.md` — Quality-first mode: scoring, priority cascade, artifacts
-- `references/pinned-queue.md` — Pinned queue format, blocker resolution, state persistence
 
 ## See Also
 
@@ -505,8 +462,6 @@ See `references/cycle-history.md` for advanced troubleshooting.
 - [references/parallel-execution.md](references/parallel-execution.md)
 - [references/quality-mode.md](references/quality-mode.md)
 - [references/autonomous-execution.md](references/autonomous-execution.md)
-- [references/pinned-queue.md](references/pinned-queue.md)
 - [references/teardown.md](references/teardown.md)
 - [references/fitness-scoring.md](references/fitness-scoring.md)
-- [references/roadmap-queue-patterns.md](references/roadmap-queue-patterns.md)
 - [references/knowledge-loop-integration.md](references/knowledge-loop-integration.md)

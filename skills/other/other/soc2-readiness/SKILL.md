@@ -18,6 +18,8 @@ metadata:
     - SOC 2 Type II
     - NIST SP 800-53 Rev 5
     - ISO 27001:2022
+catalog_group: Compliance And Audit
+catalog_order: 10
 ---
 
 # SOC 2 Readiness Assessment

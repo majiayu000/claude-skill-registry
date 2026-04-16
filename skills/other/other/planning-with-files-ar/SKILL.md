@@ -2,7 +2,7 @@
 name: planning-with-files-ar
 description: "نظام تخطيط الملفات بنمط Manus لتنظيم وتتبع تقدم المهام المعقدة. ينشئ ملفات task_plan.md و findings.md و progress.md. يُستخدم عند طلب التخطيط أو تحليل المهام أو تنظيم المشاريع أو تتبع التقدم أو الخطط متعددة الخطوات. يدعم الاستعادة التلقائية للجلسة بعد /clear. كلمات التشغيل: تخطيط المهام، إدارة المشاريع، خطة العمل، تحليل المهام، تنظيم المشروع، تتبع التقدم، خطة متعددة الخطوات، ساعدني في التخطيط، تحليل المشروع"
 user-invocable: true
-allowed-tools: "Read, Write, Edit, Bash, Glob, Grep"
+allowed-tools: "Read Write Edit Bash Glob Grep"
 hooks:
   UserPromptSubmit:
     - hooks:
@@ -23,7 +23,7 @@ hooks:
         - type: command
           command: "export SD=\"${CLAUDE_PLUGIN_ROOT:-$HOME/.claude/plugins/planning-with-files-ar}/scripts\"; powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$SD/check-complete.ps1\" 2>/dev/null || sh \"$SD/check-complete.sh\""
 metadata:
-  version: "2.33.0"
+  version: "2.34.0"
 ---
 
 # نظام تخطيط الملفات

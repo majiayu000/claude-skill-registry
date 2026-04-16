@@ -171,7 +171,7 @@ Handle non-implementation tasks first:
 - **Refactoring task** → tell the user: "Recommend running `/optimus:refactor` to restructure the code. **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch."
 - **Test-only task** → tell the user: "Recommend running `/optimus:unit-test` to write tests for existing code. **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch."
 
-For implementation tasks, assess complexity from the Components table in the design doc:
+For implementation tasks, assess complexity from the Components table in the design doc. If the Components table lists zero code components or the Goal names a written artifact (research note, audit report, investigation write-up), the deliverable is **prose** — use the Medium-to-large branch below but follow the "Prose deliverable" note on the execution prompt.
 
 ### Small (1–2 components, <5 behaviors implied)
 
@@ -210,9 +210,37 @@ The plan should include:
 ## Scope
 - Focus on: [components from the design doc]
 - Out of scope: [from the design doc's Out of Scope section]
+
+## How this conversation should run
+Treat this conversation as a review loop — validate the plan against the actual codebase and iterate with me. When I say I'm done iterating, acknowledge but do not write yet — plan mode is read-only. I will then toggle plan mode off and send a short follow-up message (e.g. "go"). On that follow-up, append a "Refined plan" section to `<design-doc-path>` to capture the refined plan, and stop. I will start a fresh conversation to run `/optimus:tdd`.
 ```
 ````
 
-Tell the user: "Start a new Claude Code conversation in **plan mode** and paste the prompt above. Once the plan is approved, run `/optimus:tdd` to build it test-first — it will auto-detect the design doc."
+When emitting both the plan-mode prompt above and the execution prompt below, substitute `<design-doc-path>` with the actual path from Step 5 so each pasted block is self-contained.
 
-Tell the user: **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.
+Tell the user:
+
+> 1. Start a fresh Claude Code conversation in **plan mode** (CLI: press `Shift+Tab` until the mode indicator shows plan mode; other clients: use the equivalent toggle). Paste the prompt above.
+> 2. Iterate with Claude. **Do not approve the plan** — approval executes immediately and skips `/optimus:tdd`'s Red-Green-Refactor discipline. When you're satisfied, tell Claude you're done iterating; Claude will acknowledge. Then toggle plan mode off using the same control **and send a short follow-up message (e.g. "go")** — Claude will append a "Refined plan" section to `<design-doc-path>` in response.
+> 3. Start a **second fresh conversation** and paste the execution prompt below.
+
+Then emit the **execution prompt** as a second copyable block, pre-filled from the design doc:
+
+````
+```
+## Goal
+Run `/optimus:tdd` to implement the refined plan in `<design-doc-path>` test-first.
+
+## Starting Hints
+- Design doc (with "Refined plan" section): <design-doc-path>
+- Components from the design: [list component names from the Components table]
+
+## Scope
+- Focus on: [components from the design doc]
+- Out of scope: [from the design doc's Out of Scope section]
+```
+````
+
+**Prose deliverable:** if the design produces a written artifact rather than code, replace the execution prompt above with one that instructs Claude directly — e.g. `Execute the refined plan in <design-doc-path> to produce <deliverable-path>.` — and note that `/optimus:tdd` does **not** apply. After `<deliverable-path>` is produced, recommend `/optimus:commit` to commit the artifact.
+
+See `$CLAUDE_PLUGIN_ROOT/references/skill-handoff.md` for the full handoff convention and why plan mode is used review-only.

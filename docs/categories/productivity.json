@@ -1,8 +1,8 @@
 {
   "category": "productivity",
   "code": "pro",
-  "count": 1990,
-  "updated_at": "2026-04-15T02:05:53.367313Z",
+  "count": 1995,
+  "updated_at": "2026-04-16T02:11:10.861548Z",
   "skills": [
     {
       "name": "commit-helper",
@@ -12837,6 +12837,28 @@
       "source": "downloaded"
     },
     {
+      "name": "deep-research",
+      "description": "Deep research with NotebookLM + web search. Domain boost, source credibility scoring, and post-research artifact generation (podcast, video, slides, quiz).",
+      "repo": "Chris1220-cmd/deep-research-skill",
+      "path": "SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "research",
+        "deep-research",
+        "notebooklm",
+        "perplexity",
+        "gemini",
+        "domain-boost",
+        "academic",
+        "maritime",
+        "legal"
+      ],
+      "stars": 0,
+      "install": "Chris1220-cmd/deep-research-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "state-persistence",
       "description": "Use when saving workflow state to Serena MCP memory at research, planning, execution, or completion stages - enables resuming work later with /cc:resume command",
       "repo": "seanGSISG/crispy-claude",
@@ -13668,6 +13690,22 @@
       "source": "Community Skills"
     },
     {
+      "name": "professional-business-writing",
+      "description": "Professional business writing assistant - removes AI patterns, maintains authority and clarity.",
+      "repo": "b33kman/professional-business-writing-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "professional-writing",
+        "business-writing",
+        "writing-assistant"
+      ],
+      "stars": 0,
+      "install": "b33kman/professional-business-writing-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "detecting-format-string",
       "description": "Detects format string vulnerabilities by identifying unsafe printf family function calls with user-controlled format strings. Use when analyzing logging, error handling, or investigating memory disclo",
       "repo": "waiwai24/BinaryX-Agent",
@@ -14101,6 +14139,26 @@
       "stars": 0,
       "install": "alexisbeaulieu97/home/agents/claude/skills/claude-tools",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "confluence-to-agent-knowledge-base",
+      "description": "Turn any Confluence Cloud instance into a private, searchable AI knowledge base on GitHub with access-tiered repos. Interactive 6-phase walkthrough using the Atlassian MCP connector.",
+      "repo": "miningstore/confluence-to-agent-knowledge-base",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "confluence",
+        "knowledge-base",
+        "atlassian",
+        "mcp",
+        "wiki",
+        "search",
+        "knowledge-management"
+      ],
+      "stars": 0,
+      "install": "miningstore/confluence-to-agent-knowledge-base/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "assistant",
@@ -21246,6 +21304,22 @@
       "source": "downloaded"
     },
     {
+      "name": "skill-seekers",
+      "description": "Convert docs, repos, PDFs into Claude Skills with conflict detection",
+      "repo": "yusufkaraaslan/Skill_Seekers",
+      "path": "skills/skill-seekers/SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "converter",
+        "skills",
+        "documentation"
+      ],
+      "stars": 0,
+      "install": "yusufkaraaslan/Skill_Seekers/skills/skill-seekers/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "scraper-qa",
       "description": "Use this skill when implementing, modifying, or fixing ANY scraper, discovery, or extraction code in the packages/scrapers directory. Triggers for tasks involving SmartDiscoveryAgent, SmartDishFinderA",
       "repo": "cgjen-box/planted-website",
@@ -22005,6 +22079,24 @@
       "stars": 0,
       "install": "LerianStudio/ring/pm-team/skills/using-pm-team",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "humanizar-texto-es",
+      "description": "Rewrite Spanish AI-generated text to sound naturally human-written using 11 simultaneous linguistic techniques.",
+      "repo": "ToniPerea/humanizar-texto-es",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "spanish",
+        "ai-detection",
+        "text-rewriting",
+        "nlp",
+        "research"
+      ],
+      "stars": 0,
+      "install": "ToniPerea/humanizar-texto-es/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "taskwarrior",

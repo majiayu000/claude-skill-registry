@@ -256,10 +256,37 @@ docs/evolution/
 
 Roadmap review (1 review, max 2 attempts)|Per-step 5-phase TDD (PREPARE→RED_ACCEPTANCE→RED_UNIT→GREEN→COMMIT)|Paradigm-appropriate crafter|L1-L4 refactoring (Phase 3)|Adversarial review + Testing Theater detection (Phase 4)|Mutation ≥80% if per-feature (Phase 5)|Integrity verification (Phase 6)|All tests passing per phase
 
+## Design Compliance Check (MANDATORY — RCA F-2 fix)
+
+After each crafter step's COMMIT, verify the files modified match the DESIGN specification:
+
+1. Read `docs/feature/{feature-id}/design/architecture-design.md` "Changes Per File" table
+2. Compare against `git diff --name-only` for the crafter's commit
+3. If the crafter created a NEW file not listed in the design table: **STOP and flag**
+   - A new file means a new component — this may be duplication of an existing component
+   - Check the DESIGN's Reuse Analysis table (F-1) — if the new file's class overlaps an existing component, the crafter must extend the existing component instead
+   - Do NOT proceed to the next step until resolved
+4. If the crafter modified files not in the design table: acceptable (tests, config) but flag for review
+
+This gate prevents the pattern where crafters create parallel implementations instead of extending existing components (see RCA `docs/analysis/rca-systematic-duplication-despite-design.md`).
+
+## Wave Completion Enforcement (MANDATORY — RCA F-3 fix)
+
+A feature CANNOT be marked COMPLETE unless ALL waves in its scope have been executed:
+
+- DISTILL must have produced acceptance test files (`.feature` + `test_*.py`)
+- All acceptance tests must be GREEN (no "DESIGNED, DISTILL needed" allowed at close)
+- Old code paths superseded by new components must be DELETED (no fallback coexistence)
+- The scaffold marker `__SCAFFOLD__ = True` must not exist in any production file
+
+Violating this rule creates dead code, dual paths, and accumulated technical debt.
+
 ## Success Criteria
 
 - [ ] Roadmap created and approved
 - [ ] All steps COMMIT/PASS (5-phase TDD)
+- [ ] **Design compliance verified** per step (F-2 — no unauthorized new files)
+- [ ] **Wave sequence complete** (F-3 — no "DISTILL needed" at close)
 - [ ] L1-L4 refactoring complete (Phase 3)
 - [ ] Adversarial review passed (Phase 4)
 - [ ] Mutation gate ≥80% or skipped per strategy (Phase 5)

@@ -13,6 +13,8 @@ compatibility: >-
 metadata:
   author: open-agreements
   version: "0.1.0"
+catalog_group: Developer Workflows
+catalog_order: 10
 ---
 
 # recipe-quality-audit

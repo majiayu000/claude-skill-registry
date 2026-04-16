@@ -218,7 +218,6 @@ Fix action: Use path.basename() and generate safe name
 - storing file metadata -> postgres-wizard (Database schema)
 
 ## When to Use
-
 - User mentions or implies: file upload
 - User mentions or implies: S3
 - User mentions or implies: R2
@@ -226,3 +225,8 @@ Fix action: Use path.basename() and generate safe name
 - User mentions or implies: multipart
 - User mentions or implies: image upload
 - User mentions or implies: cloud storage
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

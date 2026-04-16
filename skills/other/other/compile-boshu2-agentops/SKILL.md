@@ -28,7 +28,22 @@ in context windows. The wiki IS the retrieval layer.
 
 ## Pluggable Compute Backend
 
-When running headless, set `AGENTOPS_COMPILE_RUNTIME` to `ollama` or `openai` for the compilation backend.
+Set `AGENTOPS_COMPILE_RUNTIME` to pick the LLM backend:
+
+| Value | Backend | Notes |
+|-------|---------|-------|
+| `ollama` | Ollama API | Needs `OLLAMA_HOST` (default `http://localhost:11434`). |
+| `openai` | OpenAI-compatible | Needs `OPENAI_API_KEY`. |
+
+When unset, `ao compile` attempts to auto-detect a local CLI backend. If none
+is available, headless compile fails fast with an actionable error.
+
+### Large-corpus batching
+
+`ao compile --batch-size N` caps changed files per LLM prompt (default 25),
+so a 2000+ file corpus splits into batches instead of one giant prompt.
+Pair with `--max-batches N` to cap work per invocation; remaining files are
+picked up on the next run.
 
 ## Execution Steps
 
@@ -353,6 +368,7 @@ For unattended runs, `bash skills-codex/compile/scripts/compile.sh` supports:
 
 ## Reference Documents
 
+- [references/phases.md](references/phases.md) — full per-phase procedure (mine → grow → compile → lint → defrag → report)
 - [references/confidence-scoring.md](references/confidence-scoring.md)
 - [references/flywheel-diagnostics.md](references/flywheel-diagnostics.md)
 - [references/knowledge-synthesis-patterns.md](references/knowledge-synthesis-patterns.md)

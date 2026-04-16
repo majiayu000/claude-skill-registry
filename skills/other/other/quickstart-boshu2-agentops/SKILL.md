@@ -19,6 +19,7 @@ git rev-parse --is-inside-work-tree >/dev/null 2>&1 && echo "GIT=true" || echo "
 command -v ao >/dev/null && echo "AO=true" || echo "AO=false"
 command -v bd >/dev/null && echo "BD=true" || echo "BD=false"
 [ -d .agents ] && echo "AGENTS=true" || echo "AGENTS=false"
+[ -d "$HOME/.agents" ] && echo "GLOBAL_AGENTS=true" || echo "GLOBAL_AGENTS=false"
 [ -n "${CODEX_THREAD_ID:-}" ] || [ "${CODEX_INTERNAL_ORIGINATOR_OVERRIDE:-}" = "Codex Desktop" ] && echo "CODEX=true" || echo "CODEX=false"
 ```
 
@@ -46,7 +47,8 @@ Match the first row that applies. Output only that message — nothing else.
 
 | Condition | Message |
 |-----------|---------|
-| GIT=false | "⚠ Not in a git repo. Run `git init` first." |
+| GIT=false + AO=true + GLOBAL_AGENTS=true | "🗂  You're outside a git repo but have a global corpus at `~/.agents`. Global knowledge workflow:\n  1. `$harvest` — scan all `.agents/` across your repos and promote artifacts into `~/.agents/learnings/`\n  2. `$compile` — mine, synthesize, and write an interlinked wiki into `.agents/compiled/` (runs from cwd; set `AGENTOPS_COMPILE_RUNTIME=ollama` or `openai` and the matching API key/host)\n  3. `$knowledge-activation` — turn the compiled corpus into playbooks, a belief book, and runtime briefings for future sessions\n  4. `$status` — flywheel health snapshot\nIf instead you want to start a fresh repo-local project here, `git init` first." |
+| GIT=false | "⚠ Not in a git repo. Run `git init` first.\n  (If you meant to work against your global `~/.agents` corpus, run `$quickstart` from a dir with `.agents/` or see `$harvest`, `$compile`, `$knowledge-activation`.)" |
 | AO=false + CODEX=true | "📦 Install ao CLI first:\n  brew tap boshu2/agentops https://github.com/boshu2/homebrew-agentops\n  brew install agentops\n  ao init && ao seed\nThen: `$rpi \"a small goal\"` to run your first cycle.\nCodex CLI v0.115.0+ uses native hooks by default after install; older versions fall back to `ao codex ensure-start`." |
 | AO=false | "📦 Install ao CLI first:\n  brew tap boshu2/agentops https://github.com/boshu2/homebrew-agentops\n  brew install agentops\n  ao init --hooks && ao seed\nThen: `$rpi \"a small goal\"` to run your first cycle." |
 | AGENTS=false + CODEX=true | "🌱 ao is installed but not initialized here.\n  Run `$bootstrap` to set up GOALS.md, PRODUCT.md, .agents/, and hooks.\n  Or manually: `ao init && ao seed`\nThen: `$rpi \"a small goal\"` to run your first cycle.\nCodex CLI v0.115.0+ uses native hooks by default after install; older versions fall back to `ao codex ensure-start`." |

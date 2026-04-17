@@ -1,6 +1,6 @@
 ---
 name: pretext
-description: Create text effects impossible with CSS alone — kinetic typography, flowing text around animated obstacles, calligrams, shrinkwrap chat bubbles, typographic ASCII art, glyph path animation, variable font waves, glyph morphing, and illuminated manuscripts. This skill should be used when building single-file HTML pages with advanced text layout, proportional character measurement, per-glyph SVG rendering, text-on-path, animated text reflow, or letter art. Powered by @chenglou/pretext + opentype.js. All output is a single HTML file with zero build step.
+description: Create text effects impossible with CSS alone — kinetic typography, flowing text around animated obstacles, calligrams, shrinkwrap chat bubbles, typographic ASCII art, glyph path animation, variable font waves, glyph morphing, illuminated manuscripts. Single-file HTML output, zero build step. Powered by @chenglou/pretext + opentype.js. Triggers on text effects, kinetic typography, text animation, calligram, glyph art, typography art.
 argument-hint: [effect description or category]
 ---
 

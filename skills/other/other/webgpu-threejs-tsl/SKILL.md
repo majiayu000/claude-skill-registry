@@ -1,6 +1,6 @@
 ---
 name: webgpu-threejs-tsl
-description: This skill should be used when learning or referencing WebGPU APIs, TSL syntax, node materials, WGSL integration, compute shaders, or post-processing in Three.js. Triggers on "how do I write a TSL shader", "WebGPU renderer setup", "node material", "WGSL function", "GPU compute". For generating complete particle canvases, spinners, or tunnels, use threejs-particle-canvas instead. For GLSL shaders, use rocaille-shader.
+description: Reference WebGPU APIs, TSL syntax, node materials, WGSL integration, compute shaders, and post-processing in Three.js. For complete particle canvases use threejs-particle-canvas; for GLSL shaders use rocaille-shader. Triggers on TSL shader, WebGPU renderer, node material, WGSL, GPU compute, WebGPU setup.
 ---
 
 # WebGPU Three.js with TSL

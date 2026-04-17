@@ -1,17 +1,12 @@
 ---
 name: paper-design
 description: >
-  This skill should be used when designing UI in Paper Design (app.paper.design),
-  reading or writing Paper documents via MCP, converting Paper designs to React/Tailwind
-  code, importing HTML/CSS into Paper, syncing design tokens, choosing between Paper
-  and Pencil for a design task, or reaching for Paper Shaders
-  (@paper-design/shaders-react) — the standalone React shader library shipped by the
-  Paper team. Triggers on Paper, paper.design, DOM-based design,
-  design-to-code, HTML-to-design, Paper MCP, Paper artboard, prototype,
-  mockup, layout, export design, convert design, Paper Shaders, shaders-react,
-  mesh gradient, halftone dots, halftone CMYK, fluted glass, liquid metal, god rays,
-  paper texture, gem smoke, grain gradient, dithering shader, pulsing border.
-  Pairs with minoan-frontend-design for creative direction and shadcn for component library.
+  Design and prototype in Paper Design (app.paper.design) — read/write designs via MCP,
+  convert to React/Tailwind code, import HTML/CSS, sync design tokens. Also covers
+  Paper Shaders (@paper-design/shaders-react) — 30+ shader React components (mesh gradient,
+  fluted glass, liquid metal, god rays, halftone, grain gradient, pulsing border).
+  Pairs with minoan-frontend-design for creative direction. Triggers on Paper Design,
+  paper.design, design-to-code, artboard, Paper Shaders, Paper MCP, prototype.
 argument-hint: "[artboard name, action, or 'health-check']"
 ---
 

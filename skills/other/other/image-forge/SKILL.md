@@ -1,6 +1,6 @@
 ---
 name: image-forge
-description: Precision image editing using ImageMagick 7, sips, rembg, and Pillow with intelligent routing to AI semantic editing (Gemini/nano-banana-pro) for content-aware operations. This skill should be used when performing any image manipulation task including cropping, resizing, compositing, annotating, format conversion, color adjustment, batch processing, montage creation, or when combining deterministic edits with AI-powered semantic edits.
+description: Edit images with precision using ImageMagick 7, sips, rembg, and Pillow — with intelligent routing to AI semantic editing (Gemini/nano-banana-pro) for content-aware operations. Covers cropping, resizing, compositing, annotating, format conversion, color adjustment, batch processing, and montage creation. Triggers on image editing, crop, resize, composite, annotate, remove background, format conversion.
 ---
 
 # Image Forge

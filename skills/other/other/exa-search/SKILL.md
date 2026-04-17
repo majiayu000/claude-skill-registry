@@ -1,6 +1,6 @@
 ---
 name: exa-search
-description: Advanced Exa AI search with 5 specialized scripts for neural web search, content extraction, similar page discovery, quick research with citations, and async pro research with structured output. This skill should be used when performing web searches, extracting content from URLs, finding similar pages, or conducting AI-powered research. Provides full access to all Exa API endpoints including /search, /contents, /findSimilar, /answer, and /research/v1.
+description: Search the web with Exa AI — neural search, content extraction, similar page discovery, quick research with citations, and async pro research with structured output. Covers all Exa endpoints (/search, /contents, /findSimilar, /answer, /research/v1). Triggers on web search, find pages, similar pages, research with citations, Exa, neural search.
 ---
 
 # Exa Search Skill

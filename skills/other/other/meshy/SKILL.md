@@ -1,6 +1,6 @@
 ---
 name: meshy
-description: "Generate 3D models from text or images via 5 providers: Meshy (text-to-3D, texturing, batch), fal.ai Hunyuan3D Pro (high-fidelity image-to-3D with PBR, $0.225), WaveSpeedAI Rapid (budget image-to-3D at $0.0225), Trellis 2 (poly count control), and Local Depth (free offline ONNX depth maps + mesh, from waydeeper). This skill should be used when creating 3D assets, converting images to 3D models, generating depth maps, generating GLB files, texturing existing models, running batch 3D pipelines, or previewing models in the GLB viewer."
+description: "Generate 3D models from text or images via 5 providers: Meshy (text-to-3D, texturing, batch), fal.ai Hunyuan3D Pro ($0.225, PBR), WaveSpeedAI Rapid ($0.0225, bulk), Trellis 2 (poly control), and Local Depth (free offline ONNX depth maps + mesh). Includes GLB viewer. Triggers on 3D model, image to 3D, GLB, depth map, text to 3D, texturing, 3D asset, Meshy, Hunyuan."
 ---
 
 # 3D Model Generation (Multi-Provider)

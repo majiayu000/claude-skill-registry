@@ -1,6 +1,6 @@
 ---
 name: design-polish
-description: "Final quality pass fixing alignment, spacing, consistency, interaction states, and micro-details before shipping. This skill should be used when the user mentions polish, finishing touches, pre-launch review, something looks off, final pass, or wants to go from good to great."
+description: "Final quality pass fixing alignment, spacing, consistency, interaction states, and micro-details before shipping. Executes changes (unlike design-audit and design-critique which are report-only). Triggers on polish, finishing touches, final pass, something looks off, pre-launch, good to great."
 argument-hint: "[target]"
 ---
 

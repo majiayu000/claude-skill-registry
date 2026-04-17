@@ -1,6 +1,6 @@
 ---
 name: skill-optimizer
-description: Guide for creating and reviewing skills. This skill should be used when users want to create a new skill, review an existing skill for quality, or optimize a skill that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.
+description: Guide creating and reviewing skills that extend Claude with specialized knowledge, workflows, or tool integrations. Covers SKILL.md structure, frontmatter quality, trigger design, eval pipelines, and packaging. Triggers on create a skill, review this skill, new skill, optimize skill, skill quality.
 ---
 
 # Skill Creator

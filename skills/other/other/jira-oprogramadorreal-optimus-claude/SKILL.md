@@ -1,11 +1,21 @@
 ---
-description: Fetches and optimizes context from a JIRA issue for AI-assisted development. Searches assigned issues or fetches by key. Distills title, description, acceptance criteria, sprint context, and comments into a structured task description. Analyzes the codebase to surface missing criteria, scope, and risks. Optionally improves the JIRA issue itself. Use before /optimus:tdd, /optimus:brainstorm, or /optimus:branch to pull task context from JIRA.
+description: Fetches and optimizes context from a JIRA issue for AI-assisted development. Searches assigned issues or fetches by key. Distills title, description, acceptance criteria, sprint context, and comments into a structured task description. Analyzes the codebase to surface missing criteria, scope, and risks. Optionally enriches the JIRA issue with a structured analysis comment. Use before /optimus:tdd, /optimus:brainstorm, or /optimus:branch to pull task context from JIRA.
 disable-model-invocation: true
 ---
 
 # JIRA Context
 
-Fetch a JIRA issue, distill it into an optimized task description for Claude Code, analyze the codebase to surface missing criteria, scope, and risks, and optionally improve the issue's description in JIRA. The skill works with any JIRA MCP server (Atlassian Rovo or community servers like sooperset/mcp-atlassian) and guides first-time setup when no server is configured.
+Fetch a JIRA issue, distill it into a structured task for Claude Code, analyze the codebase to surface missing criteria, scope, and risks, and optionally enrich the issue in JIRA. The skill works with any JIRA MCP server (Atlassian Rovo or community servers like sooperset/mcp-atlassian) and guides first-time setup when no server is configured.
+
+## Safety
+
+Steps 1–4 are READ-ONLY. No MCP write tool may be called until Step 5, and only after explicit user confirmation. The only write operation this skill performs is adding a comment (see Tool Name Resolution table in `jira-context-extraction.md` for the server-specific tool name) — do not call any other write tool. See `jira-context-extraction.md` section "MCP Safety" for the full tool classification.
+
+## Language
+
+All content written back to JIRA (comments) MUST preserve the original language used in the JIRA issue. Do not translate JIRA content into English when writing to JIRA.
+
+All local artifacts (`docs/jira/*.md`) and all Claude Code output to the user MUST be in English, regardless of the source language. Translate as needed when distilling the structured task and producing local files.
 
 ## Step 1: Detect JIRA MCP Server
 
@@ -21,7 +31,7 @@ Two modes based on whether the user provided an issue key inline.
 ### Direct fetch
 
 If the user provided an issue key inline (e.g., `/optimus:jira PROJ-123`):
-1. Validate format — must match `[A-Z][A-Z0-9]+-\d+` (e.g., `PROJ-123`, `AB-1`)
+1. Validate format — must match `^[A-Z][A-Z0-9]+-\d+$` (entire input, no extra characters — e.g., `PROJ-123`, `AB-1`)
 2. If valid → proceed to Step 3 with this key
 3. If invalid → inform the user and use `AskUserQuestion` to request a corrected key
 
@@ -111,61 +121,30 @@ Read `$CLAUDE_PLUGIN_ROOT/skills/jira/references/jira-codebase-analysis.md` and 
 
 Present the **Impact Summary** to the user.
 
-Use `AskUserQuestion` — header "Codebase impact", question "How would you like to use these findings?":
-- **Update JIRA and local context** — "Add suggested criteria to the JIRA issue and enrich the local task file"
-- **Update local context only** — "Add findings to `docs/jira/<ISSUE-KEY>.md` but don't touch JIRA"
+Check whether the detected MCP server has a comment tool (see Tool Name Resolution table in `jira-context-extraction.md`). If no comment tool is available, present only "Update local context only" and "Skip". Otherwise, present all three options. Use `AskUserQuestion` — header "Codebase impact", question "How would you like to use these findings?":
+- **Update JIRA and local context** (only if a comment tool is available) — "Enrich `docs/jira/<ISSUE-KEY>.md` and post an analysis comment to the JIRA issue"
+- **Update local context only** — "Enrich `docs/jira/<ISSUE-KEY>.md` only"
 - **Skip** — "Proceed without changes"
 
-If **Update JIRA and local context**: update the `docs/jira/<ISSUE-KEY>.md` file following the **Task File Update** procedure in the reference, then proceed to Step 6 — include the suggested criteria from the codebase analysis if the user chooses to improve the JIRA description.
+### If Update JIRA and local context
 
-If **Update local context only**: update the `docs/jira/<ISSUE-KEY>.md` file following the **Task File Update** procedure. Proceed to Step 6.
+1. Update the `docs/jira/<ISSUE-KEY>.md` file following the **Task File Update** procedure in the reference. The local file is always updated first — it is the single source of truth.
 
-If **Skip**: proceed to Step 6.
+2. Post a structured JIRA comment using the add-comment tool from the Tool Name Resolution table in `jira-context-extraction.md` (`addCommentToJiraIssue` for Rovo). Derive the comment content from the sections just written to the local file, following the **JIRA Comment Format** in `jira-codebase-analysis.md`. If the JIRA issue is not in English, translate the derived content into the issue's original language before posting (see Language section above).
 
-## Step 6: Improve JIRA Issue (optional)
+3. If the comment tool call fails at runtime (e.g., tool was listed but is unavailable), inform the user and skip the JIRA write — the local file update still applies.
 
-Use `AskUserQuestion` — header "Improve issue", question "Would you like to improve this JIRA issue's description? This adds structured acceptance criteria and better formatting directly in JIRA.":
-- **Improve description** — "Update the JIRA issue with the structured content above"
-- **Skip** — "Keep the JIRA issue as-is"
+4. Report success or failure. No further confirmation needed — comments are append-only and non-destructive. Proceed to Step 6.
 
-If **Skip** → if the user chose "Update JIRA and local context" in Step 5, warn: "Note: the codebase-suggested criteria will not be added to JIRA. They are still saved in your local task file." Then proceed to Step 7.
+### If Update local context only
 
-If **Improve description**:
+Update the `docs/jira/<ISSUE-KEY>.md` file following the **Task File Update** procedure. Proceed to Step 6.
 
-1. Generate an improved description for the JIRA issue:
-   - Preserve the original description's intent and content
-   - Add structured acceptance criteria (if not already present)
-   - If the user chose "Update JIRA and local context" in Step 5, merge the suggested criteria from the codebase analysis into the acceptance criteria section
-   - Improve formatting (headers, lists, clear sections)
-   - Do not remove any information from the original
+### If Skip
 
-2. Present a before/after comparison to the user:
+Proceed to Step 6.
 
-```
-## Proposed JIRA Update: [Issue Key]
-
-### Current Description
-[Original description, truncated to 1000 chars if longer]
-
-### Proposed Description
-[Improved description]
-
-### Changes
-- [What was added/restructured — e.g., "Added 5 acceptance criteria",
-  "Restructured into Goal/Criteria/Notes sections",
-  "Merged 2 codebase-informed criteria from impact analysis"]
-```
-
-3. Use `AskUserQuestion` — header "Confirm update", question "Apply this update to the JIRA issue?":
-   - **Apply** — "Update the JIRA issue now"
-   - **Edit first** — "Let me adjust the proposed description"
-   - **Cancel** — "Don't update the JIRA issue"
-
-4. If **Apply**: use the MCP update tool to write the improved description. Report success or failure.
-5. If **Edit first**: let the user describe changes, regenerate, and re-confirm.
-6. If **Cancel**: proceed to Step 7 without writing.
-
-## Step 7: Recommend Next Step
+## Step 6: Recommend Next Step
 
 First, handle tech debt and refactoring tickets separately — they have a fixed route:
 
@@ -204,10 +183,11 @@ Risks sections here.]
 [If Step 5 ran, add key files identified in the impact summary]
 
 ## What to Figure Out
-1. Which existing files and modules need to be modified or extended?
-2. What's the right implementation sequence given the acceptance criteria?
-3. Are there existing patterns in the codebase to follow or reuse?
-4. What are the risks or edge cases not covered by the acceptance criteria?
+1. What approach best balances simplicity with the task's requirements? Consider at least 2 alternatives briefly before committing.
+2. Which existing files and modules need to be modified or extended?
+3. What's the right implementation sequence given the acceptance criteria?
+4. Are there existing patterns in the codebase to follow or reuse?
+5. What are the risks or edge cases not covered by the acceptance criteria?
 
 ## Plan Deliverable
 The plan should include:

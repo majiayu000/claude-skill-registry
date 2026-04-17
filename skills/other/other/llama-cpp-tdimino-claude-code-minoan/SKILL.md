@@ -1,6 +1,6 @@
 ---
 name: llama-cpp
-description: Secondary local LLM inference engine via llama.cpp. This skill should be used when running GGUF models directly, loading LoRA adapters for Kothar, benchmarking inference speed, or serving models via llama-server. Includes dedicated Qwen 3.5 serve scripts (9B dense with F16 option, 35B MoE) with asymmetric KV cache and thinking mode. Complements Ollama (which remains primary for RLAMA and general use).
+description: "Run GGUF models directly, load LoRA adapters, benchmark inference speed, and serve models via llama-server using llama.cpp. Includes Qwen 3.5 serve scripts (9B dense + F16, 35B MoE) with asymmetric KV cache and thinking mode. Secondary to Ollama; use when needing direct model control or LoRA hot-loading. Triggers on 'llama.cpp', 'GGUF', 'LoRA adapter', 'benchmark inference', 'llama-server'."
 user-invocable: false
 ---
 

@@ -43,6 +43,14 @@ Evaluate current diamond state and recommend next action.
    - Report any critical or warning-level findings
    - This catches silent canvas degradation before it affects progression decisions
 
+6b. **Check metric snapshot freshness** (v0.14; L0/L1/L2/L5 only):
+   - If the current diamond scale is L0, L1, L2, or L5 AND `.claude/jit-tooling/active-metrics.yml` exists:
+     - For each `status: active` source, find the newest file in `.claude/evals/metrics/<source>/`.
+     - If the newest snapshot is >7 days old (or missing entirely), flag as a warning and recommend `/metrics-pull`.
+     - If `active-metrics.yml` is missing, recommend `/metrics-detect` (softer — info-level, not a gate).
+   - Rationale: evidence loops for Purpose/Strategy/Opportunity/Market depend on external signal freshness. A stale snapshot silently anchors confidence.
+   - Do NOT block progression on stale snapshots — this is a NUDGE, not a gate.
+
 7. **Check corrections.md**:
    - Any relevant past mistakes to avoid?
 
@@ -81,7 +89,7 @@ Evaluate current diamond state and recommend next action.
 
 12. **Report harness thickness** (informational):
     - Count: total skills, active guardrails, mandatory reads, hooks, theory gates
-    - Current: 42 skills, 32 guardrails, 4 mandatory reads, 5 hook layers, 12 gates
+    - Current: 44 skills, 32 guardrails, 4 mandatory reads, 5 hook layers, 12 gates
     - If thickness has increased since last assess, note it
     - This is observability, not a gate — purely informational
     - *Source: Pachaar ("scaffolding should decrease as models improve")*

@@ -17,6 +17,20 @@ Return complete YAML feedback to calling agent for display to user.
 
 ---
 
+## Dimension 0: Elevator Pitch Test (BLOCKING, checked first)
+
+Every user story MUST contain an `### Elevator Pitch` subsection with three lines: Before / After / Decision enabled. The reviewer checks these invariants:
+
+1. **Presence**: the section exists with all three lines. Missing → **BLOCKING**.
+2. **Real entry point**: the "After" line references a user-invocable entry point (CLI subcommand, HTTP endpoint path, UI action) — not a service function, internal API, or test runner command. Internal-only → **BLOCKING**.
+3. **Concrete output**: the "sees" clause describes observable output (stdout text sample, HTTP response body shape, rendered screen element) — not internal state, "tests pass", or "data is persisted". Internal state → **BLOCKING**.
+4. **Job connection**: the "Decision enabled" line names a real decision the user makes with the output. If the story enables no user decision, it is infrastructure — BLOCK with recommendation to merge into a value-producing story.
+5. **Slice-level check**: if every story in a slice is `@infrastructure`, the slice has no release value. **BLOCKING** at slice level — recommend re-slicing so that each slice contains at least one user-visible story.
+
+Return this dimension first in the YAML feedback. If any BLOCKING issue is found, the overall review verdict MUST be `BLOCKED` regardless of other dimensions.
+
+---
+
 ## Dimension 1: Confirmation Bias Detection
 
 ### Technology Bias

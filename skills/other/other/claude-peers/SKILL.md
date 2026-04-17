@@ -1,6 +1,6 @@
 ---
 name: claude-peers
-description: "Peer discovery, messaging, and lifecycle management for AI coding agents (Claude Code, Codex CLI) on the same machine. This skill should be used when coordinating work across multiple agent sessions, delegating tasks between Claude and Codex, killing or stopping peer sessions, or when the user mentions peers, agents, cross-session communication, or inter-agent messaging."
+description: "Discover, message, and coordinate AI coding agents (Claude Code, Codex CLI) running on the same machine via a shared Unix socket broker backed by SQLite. Supports cross-session task delegation, peer summaries, and session lifecycle management. Triggers on 'peer agents', 'cross-session communication', 'message Codex', 'inter-agent messaging', 'coordinate agents'."
 user-invocable: false
 ---
 

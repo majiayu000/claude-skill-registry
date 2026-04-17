@@ -119,6 +119,8 @@ After launch feedback is captured (L5 → L2 loop), update the cycle record in `
 
 1. Find the cycle record for this leaf (created by `/retrospective` at delivery completion)
 2. Add **actual** market outcomes: user metrics, adoption data, NPS/CSAT, revenue impact
+   - **Source this data from `/metrics-pull`** where possible (v0.14): 24-48h after launch to capture the bump, then weekly for the first month. Snapshots live at `.claude/evals/metrics/<source>/*.json`. This replaces manual "I checked the dashboard" reports with timestamped evidence.
+   - If `active-metrics.yml` has no configured source for the relevant channel, run `/metrics-detect` first.
 3. Update the calibration section: compare predicted value/usability risk against actual market reception
 4. If market signals contradict the original L2 opportunity assumptions, note this as calibration data
 

@@ -1,6 +1,6 @@
 ---
 name: resend
-description: "Send emails via the Resend API. Supports text and HTML content, multiple recipients, CC/BCC, reply-to, and file attachments. Single Python script with stdin pipe support for body content. This skill should be used when sending transactional or notification emails."
+description: "Send transactional or notification emails via the Resend API — text and HTML content, multiple recipients, CC/BCC, reply-to, and file attachments. Single Python script with stdin pipe support. Triggers on 'send email', 'transactional email', 'email notification', 'Resend API', 'send via Resend'."
 ---
 
 # Resend Email Skill

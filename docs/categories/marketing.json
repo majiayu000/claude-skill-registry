@@ -1,8 +1,8 @@
 {
   "category": "marketing",
   "code": "mkt",
-  "count": 456,
-  "updated_at": "2026-04-16T02:11:09.415182Z",
+  "count": 457,
+  "updated_at": "2026-04-17T02:08:26.647741Z",
   "skills": [
     {
       "name": "social-media",
@@ -3876,6 +3876,25 @@
       "stars": 0,
       "install": "Soborbo/claudeskills/heading-tree",
       "source": "downloaded"
+    },
+    {
+      "name": "social-reply-bot",
+      "description": "AI-powered Reddit & X auto-reply bot. Finds relevant posts, generates genuine Claude-powered replies that naturally mention your product. Includes karma warmup and lead tracking.",
+      "repo": "mguozhen/social-bot",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "marketing",
+      "tags": [
+        "reddit",
+        "twitter",
+        "social-media",
+        "ai-replies",
+        "growth",
+        "browser-automation"
+      ],
+      "stars": 0,
+      "install": "mguozhen/social-bot/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "check-meta",

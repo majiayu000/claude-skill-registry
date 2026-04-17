@@ -1,6 +1,6 @@
 ---
 name: sprite-forge
-description: "Generate game sprites, SVG characters, ASCII art, animated mascots, and isometric turnarounds from images or descriptions. Covers 5 output modes: SVG characters (Gemini code-gen or pixel-art rects), game sprite sheets (with atlas metadata), 8-way isometric turnarounds (chongdashu pipeline), ASCII/Unicode terminal art, and GSAP-animated mascots. This skill should be used when creating pixel art, sprite sheets, walk cycles, character turnarounds, SVG icons, ASCII art, or animated mascots. Triggers on: sprite, pixel art, SVG character, ASCII art, mascot, sprite sheet, isometric, walk cycle, turnaround, game asset, character animation."
+description: "Generate game sprites, SVG characters, ASCII art, animated mascots, and isometric turnarounds from images or descriptions. Five output modes: SVG characters, game sprite sheets with atlas metadata, 8-way isometric turnarounds, ASCII/Unicode terminal art, GSAP-animated mascots. Triggers on sprite, pixel art, SVG character, ASCII art, mascot, sprite sheet, isometric, walk cycle, turnaround, game asset."
 argument-hint: "[description or image path] [--mode svg|sprite|isometric|ascii|mascot]"
 ---
 

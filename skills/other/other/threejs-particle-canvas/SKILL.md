@@ -1,6 +1,6 @@
 ---
 name: threejs-particle-canvas
-description: "Generate interactive Three.js canvases in four modes: (1) Narrative canvas — particle phase cycles with geodesic lattices. (2) Spinner/loader — parametric curve particle trails via WebGPU + TSL. (3) Infinite Gallery Tunnel — scroll-driven procedural corridor with walled images. (4) Living Specimens — glTF creatures with behavior physics. Ships a shared Phosphor Vigil FX module (feedback trails, CRT composite, scanlines, chromatic aberration) that is importable standalone into any Three.js scene. Output is self-contained HTML. This skill should be used when creating particle WebGL art, ambient 3D canvases, spinners, loaders, infinite scroll galleries, tunnel flythroughs, animated glTF specimens, or when adding a CRT post-processing pipeline to an existing Three.js project."
+description: "Generate interactive Three.js particle canvases in four modes: narrative phase cycles, WebGPU spinner/loaders, infinite gallery tunnels, animated glTF specimens. Ships a reusable Phosphor Vigil FX post-processing module (CRT composite, scanlines, chromatic aberration). Self-contained HTML output. Triggers on particle system, ambient 3D canvas, WebGL art, spinner, loader, infinite tunnel, glTF animation, CRT post-processing."
 argument-hint: [concept or narrative theme]
 ---
 

@@ -60,6 +60,15 @@ Audit the canvas knowledge base for quality, consistency, and completeness. The 
    - Suggest refresh actions: "Evidence in [file] is [N] days old. Run `/user-interview` or `/log-evidence` to refresh."
    - Note: corrections and patterns do NOT decay — process learnings are timeless
 
+7b. **Check metric snapshot freshness** (v0.14):
+   - If `.claude/jit-tooling/active-metrics.yml` exists, for each `status: active` source:
+     - Find the newest snapshot in `.claude/evals/metrics/<source>/`.
+     - If >7 days old: warning ("[source] snapshot is [N] days old — run `/metrics-pull` to refresh").
+     - If >30 days old: critical (evidence this stale is worse than no metric reference — anchors old state).
+     - If missing entirely: info-level ("No snapshots yet for [source]. Run `/metrics-pull`.").
+   - Also check per-adapter freshness: for each adapter file in `.claude/jit-tooling/metrics-adapters/`, if `last_known_working` is >180 days old, flag as warning suggesting regeneration via `metrics-adapters/GENERATING.md`.
+   - Source: v0.14 metrics harvesting. Metric evidence has a faster staleness curve than interview evidence because the underlying data changes continuously.
+
 8. **Check cross-reference integrity** (leaf lifecycle):
    - Every GIST idea with `source_leaf_id` → verify that leaf exists in `opportunities.yml` (and not in `archived-solutions.yml` without the GIST being shelved)
    - Every service entry with `gist_id` → verify that GIST idea exists

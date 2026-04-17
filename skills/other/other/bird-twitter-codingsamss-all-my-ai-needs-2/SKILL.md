@@ -8,8 +8,10 @@ description: "Default X/Twitter read skill for this environment (browser login s
 Read X/Twitter content using the Bird CLI tool. This skill only exposes read-only operations to avoid account suspension risks.
 
 Default routing note for this machine:
-- If user asks to read/search/browse X content, prefer this skill first
-- Use `xitter` only when official API or write actions are explicitly needed
+- If user asks to read/search/browse X content, ALWAYS try this skill first.
+- Do NOT default to `curl` scraping, third-party mirrors (fx/vx/nitter), or ad-hoc HTTP parsing when Bird is available.
+- Use `xitter` only when official API or write actions are explicitly needed.
+- Only fall back to non-Bird methods if Bird auth/command execution is unavailable, and explicitly state the fallback reason.
 
 ## When to Use This Skill
 
@@ -223,6 +225,16 @@ When in doubt, check command-specific help first:
 ```bash
 HTTP_PROXY=http://127.0.0.1:7897 HTTPS_PROXY=http://127.0.0.1:7897 bird --cookie-source chrome --timeout 15000 <command> --help
 ```
+
+## Practical Notes for Bookmark / Curation Work
+
+- For bookmark triage, prefer `bird ... bookmarks -n <N> --plain` first to quickly scan authors, dates, and candidate URLs.
+- Then enrich only shortlisted items with `bird read <tweet-url> --json`.
+- Prefer `--json` over `--json-full` for long article-style tweets during batch analysis. In real sessions, `--json-full` can become very large (full `_raw` payload / article blocks) and may get truncated by wrappers or downstream JSON parsers.
+- If you truly need `--json-full` for a long X Article in a scripted workflow, redirect stdout to a temporary file first, then parse that file locally. This avoids wrapper output caps corrupting JSON mid-payload.
+- Use `--json-full` only when you specifically need raw article block structure, expanded metadata, or deep URL extraction from `_raw`.
+- For article tweets, `bird read <tweet-url> --json` often exposes enough fields (for example `article.title`) to decide whether the item is already curated in a knowledge base.
+- When `--json-full` includes `_raw.article.article_results.result.rest_id`, you can construct a stable X Article URL as `https://x.com/i/article/<rest_id>` and share that as the longform original.
 
 ## Important Notes
 

@@ -1,0 +1,17 @@
+{
+  "name": "claude-skills",
+  "repo": "foryourhealth111-pixel/Vibe-Skills",
+  "path": "bundled/skills/claude-skills/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/foryourhealth111-pixel/Vibe-Skills",
+  "dir_name": "claude-skills",
+  "downloaded_at": "2026-04-17T01:38:52.146944Z",
+  "author": "foryourhealth111-pixel",
+  "source_url": "https://github.com/foryourhealth111-pixel/Vibe-Skills/blob/main/bundled/skills/claude-skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/foryourhealth111-pixel/Vibe-Skills/blob/main/bundled/skills/claude-skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

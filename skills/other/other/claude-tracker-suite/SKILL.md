@@ -1,6 +1,6 @@
 ---
 name: claude-tracker-suite
-description: "Claude Code session management suite: search sessions by topic/ID, resume crashed sessions, spawn new sessions (interactive or headless), monitor live sessions, detect projects, auto-summarize new sessions, and bootstrap new setups. This skill should be used when searching past sessions, checking running sessions, resuming work, spawning new sessions, or bootstrapping a new machine."
+description: "Manage Claude Code sessions — search by topic or ID, resume crashed sessions, spawn interactive or headless sessions, monitor live sessions, auto-summarize, and bootstrap new machine setups. Triggers on resume session, find session, list sessions, spawn session, session history, what was I working on."
 argument-hint: [query or --id <prefix>]
 allowed-tools: Bash(claude-tracker*), Bash(node ~/.claude/skills/claude-tracker-suite/scripts/*), Bash(~/.claude/skills/claude-tracker-suite/scripts/*.sh), Bash(python3 ~/.claude/scripts/*), Read, Grep, Glob, Edit, Write, Skill
 ---

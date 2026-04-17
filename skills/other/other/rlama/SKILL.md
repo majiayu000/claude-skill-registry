@@ -1,6 +1,6 @@
 ---
 name: rlama
-description: Local RAG system management with RLAMA. Create semantic knowledge bases from local documents (PDF, MD, code, etc.), query them using natural language, and manage document lifecycles. This skill should be used when building local knowledge bases, searching personal documents, or performing document Q&A. Runs 100% locally with Ollama - no cloud, no data leaving your machine.
+description: "Build and query fully local RAG knowledge bases from documents (PDF, MD, code, etc.) using RLAMA and Ollama — no cloud, no data leaving the machine. Triggers on 'local knowledge base', 'search documents', 'document Q&A', 'RAG query', 'ingest files', 'semantic search'."
 allowed-tools: Bash(rlama:*), Read
 ---
 

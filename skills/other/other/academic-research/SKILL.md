@@ -1,6 +1,6 @@
 ---
 name: academic-research
-description: This skill should be used for academic paper search, literature reviews, and research synthesis. Combines Exa MCP (research_paper category, arxiv.org filtering) with arxiv-mcp-server for paper discovery, download, and deep analysis. Use when searching for papers, conducting literature reviews, analyzing research trends, or synthesizing findings across multiple papers.
+description: Search academic papers, build literature reviews, and synthesize research findings — combines Exa MCP (research_paper category, arxiv filtering) with arxiv-mcp-server for paper discovery, download, and deep analysis. Triggers on academic paper, literature review, research synthesis, arxiv, find papers, scholarly search.
 ---
 
 # Academic Research

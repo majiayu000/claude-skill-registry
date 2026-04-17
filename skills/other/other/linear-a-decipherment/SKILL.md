@@ -1,6 +1,6 @@
 ---
 name: linear-a-decipherment
-description: "Computational analysis of Linear A inscriptions using Cyrus H. Gordon's Semitic hypothesis. This skill should be used when working with Linear A transliterations, Minoan language decipherment, inscription analysis, sign frequency or co-occurrence statistics, consonantal skeleton extraction, Proto-Semitic root comparison, Gordon lexicon lookups, libation formula patterns, or preparing training data for ML decipherment models. Triggers: Linear A, Linear B projection, Minoan script, GORILA corpus, HT/ZA/PK tablets, Semitic cognates, transliteration analysis, sign values, syllabary, undeciphered scripts, computational epigraphy, Phaistos, Hagia Triada, lashon ha-kretan."
+description: "Analyze Linear A inscriptions computationally via Gordon's Semitic hypothesis — sign frequency, co-occurrence stats, consonantal skeleton extraction, Proto-Semitic root comparison, Gordon lexicon lookup, libation formula patterns, and ML training data prep. Triggers on Linear A, Minoan script, GORILA corpus, HT/ZA/PK tablets, Semitic cognates, sign values, Phaistos, Hagia Triada, lashon ha-kretan."
 ---
 
 # Linear A Decipherment

@@ -1,9 +1,16 @@
 ---
 name: ddev
-description: "DDEV local development environment for Craft CMS projects. Covers config.yaml settings (project type, PHP/Node versions, database, docroot), shorthand commands (ddev composer, ddev craft, ddev npm), add-ons (Redis, Mailpit), custom commands (.ddev/commands/), Vite dev server exposure (web_extra_exposed_ports, web_extra_daemons), database import/export, Xdebug toggling, and troubleshooting. Triggers on: ddev start, ddev craft, ddev composer, ddev ssh, ddev import-db, ddev xdebug, .ddev/config.yaml, web_extra_exposed_ports, web_extra_daemons, ddev add-on, ddev poweroff, ddev describe. Use when running DDEV commands, configuring local environments, or troubleshooting container issues."
+description: "DDEV local development environment for Craft CMS projects. Covers config.yaml settings (project type, PHP/Node versions, database, docroot), shorthand commands (ddev composer, ddev craft, ddev npm), add-ons (Redis, Mailpit), custom commands (.ddev/commands/), Vite dev server exposure (web_extra_exposed_ports, web_extra_daemons), database import/export, Xdebug toggling, and troubleshooting. Triggers on: ddev start, ddev craft, ddev composer, ddev ssh, ddev import-db, ddev xdebug, .ddev/config.yaml, web_extra_exposed_ports, web_extra_daemons, ddev add-on, ddev poweroff, ddev describe, Docker, local environment, environment variables, .env, Vite dev server, HMR, database backup, database restore, PHP version, Node version. Always use when running any DDEV command, configuring local development environments, setting up new Craft projects locally, troubleshooting container issues, or when the user mentions DDEV, Docker, local dev, or environment setup — even if they don't explicitly ask about DDEV."
 ---
 
 # DDEV for Craft CMS Development
+
+## Companion Skills — Always Load Together
+
+When this skill triggers, also load:
+
+- **`craftcms`** — Plugin/module development. Required when DDEV commands involve Craft CLI (`ddev craft make`, `ddev craft migrate`, `ddev craft project-config`).
+- **`craft-php-guidelines`** — PHP coding standards. Required when DDEV commands involve code quality tooling (`ddev composer check-cs`, `ddev composer phpstan`, `ddev craft pest/test`).
 
 ## Documentation
 

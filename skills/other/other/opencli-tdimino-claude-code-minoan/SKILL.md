@@ -1,6 +1,6 @@
 ---
 name: opencli
-description: "Universal CLI for 80+ websites, desktop apps, and browser automation via Chrome session reuse. This skill should be used when interacting with Twitter/X, Reddit, YouTube, HackerNews, Instagram, TikTok, Facebook, LinkedIn, Spotify, Amazon, or any supported site from the CLI; when automating browser actions on any website via the operate command; when registering or discovering local CLI tools; or when creating new website adapters. Zero LLM cost, deterministic structured output (JSON/YAML/CSV/table/markdown)."
+description: "Interact with 80+ websites and desktop apps from the CLI via Chrome session reuse — zero LLM cost, deterministic JSON/YAML/CSV output. Covers Twitter/X, Reddit, YouTube, HN, Instagram, Spotify, Amazon, LinkedIn, and more; also automates browser actions and registers local CLI tools. Triggers on 'opencli', 'CLI for website', 'scrape without API', 'browser automation', 'operate command'."
 ---
 
 # OpenCLI — Universal Website & Browser CLI

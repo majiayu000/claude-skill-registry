@@ -1,6 +1,6 @@
 ---
 name: craftcms
-description: "Craft CMS 5 plugin and module development — extending Craft. Covers the full extend surface: elements, element queries, services, models, records, project config, controllers, CP templates, migrations, queue jobs, console commands, field types, native fields, events, behaviors, Twig extensions, utilities, widgets, filesystems, debugging, testing, and GraphQL. Triggers on: beforePrepare(), afterSave(), defineSources(), defineTableAttributes(), attributeHtml(), MemoizableArray, getConfig(), handleChanged, $allowAnonymous, $enableCsrfValidation, BaseNativeField, EVENT_DEFINE_NATIVE_FIELDS, FieldLayoutBehavior, EVENT_REGISTER, EVENT_DEFINE, EVENT_BEFORE, EVENT_AFTER, CraftVariable, registerTwigExtension, DefineConsoleActionsEvent, PHPStan, Pest. Always use when writing, editing, or reviewing any Craft CMS plugin or module code."
+description: "Craft CMS 5 plugin and module development — extending Craft. Covers the full extend surface: elements, element queries, services, models, records, project config, controllers, CP templates, migrations, queue jobs, console commands, field types, native fields, events, behaviors, Twig extensions, utilities, widgets, filesystems, debugging, testing, and GraphQL. Triggers on: beforePrepare(), afterSave(), defineSources(), defineTableAttributes(), attributeHtml(), MemoizableArray, getConfig(), handleChanged, $allowAnonymous, $enableCsrfValidation, BaseNativeField, EVENT_DEFINE_NATIVE_FIELDS, FieldLayoutBehavior, EVENT_REGISTER, EVENT_DEFINE, EVENT_BEFORE, EVENT_AFTER, CraftVariable, registerTwigExtension, DefineConsoleActionsEvent, PHPStan, Pest, plugin development, module development, custom element type, custom field type, webhook, API endpoint, queue job, migration, CP section, control panel, Craft plugin, Craft module, extending Craft, element action, element exporter, element condition, dashboard widget, utility page. Always use when writing, editing, or reviewing any Craft CMS plugin or module code — even when the user asks about plugin architecture, Craft internals, or extending Craft without naming specific APIs."
 ---
 
 # Craft CMS 5 — Extending (Plugins & Modules)
@@ -44,7 +44,7 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Add a settings page with form fields" → read `controllers.md` + `cp.md` + `architecture.md`
 - "Register a custom field type" → read `fields.md` + `events.md`
 - "Fix PHPStan errors" → read `quality.md`
-- "Add a dashboard widget" → read `events.md` (Widget Types section)
+- "Add a dashboard widget" → read `cp.md` (Dashboard Widgets) + `events.md` (Widget Types section)
 - "Expose template variables for plugin users" → read `events.md` (Twig Extensions section)
 - "Attach custom methods to entries" → read `events.md` (Behaviors section)
 - "Build a CP utility page" → read `events.md` (Utilities section) + `cp.md`
@@ -63,6 +63,16 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Set up caching for a high-traffic site" → read `caching.md`
 - "Register custom permissions for my plugin" → read `permissions.md`
 - "Check user permissions in templates" → read `permissions.md`
+- "Set up plugin editions / feature gating" → read `architecture.md` (Plugin Editions section)
+- "Upgrade a plugin from Craft 4 to 5" → read `quality.md` (Rector section)
+- "Set up CI for a Craft plugin" → read `quality.md` (CI/CD Integration section)
+- "Create sections or fields in a migration" → read `migrations.md` (Content Migrations section)
+- "Set up database read replicas" → read `config-app.md` (Database Replicas section)
+- "Register a module in app.php" → read `config-app.md` (Module Registration section)
+- "Create a custom validator" → read `architecture.md` (Custom Validators section)
+- "Create a custom filesystem type" → read `events.md` (Filesystem Types section)
+- "Build a custom condition rule for an element index" → read `cp.md` (Condition Builders section)
+- "Set up pre-commit hooks for code quality" → read `quality.md` (Pre-Commit Hooks section)
 
 | Task | Read |
 |------|------|

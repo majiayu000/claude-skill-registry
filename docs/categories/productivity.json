@@ -1,8 +1,8 @@
 {
   "category": "productivity",
   "code": "pro",
-  "count": 1995,
-  "updated_at": "2026-04-16T02:11:10.861548Z",
+  "count": 2000,
+  "updated_at": "2026-04-17T02:08:28.145509Z",
   "skills": [
     {
       "name": "commit-helper",
@@ -23796,6 +23796,28 @@
       "source": "Community Skills"
     },
     {
+      "name": "deep-research",
+      "description": "Deep research with NotebookLM + web search. Domain boost, source credibility scoring, and post-research artifact generation (podcast, video, slides, quiz).",
+      "repo": "Chris1220-cmd/deep-research-skill",
+      "path": "SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "research",
+        "deep-research",
+        "notebooklm",
+        "perplexity",
+        "gemini",
+        "domain-boost",
+        "academic",
+        "maritime",
+        "legal"
+      ],
+      "stars": 0,
+      "install": "Chris1220-cmd/deep-research-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "implementing-from-task",
       "description": "测试中, 用户明确指定执行 implementing-from-task 时候才执行, 其余情况一律不执行",
       "repo": "taptap/claude-plugins-marketplace",
@@ -24497,6 +24519,26 @@
       "stars": 0,
       "install": "sunholo-data/ailang/productivity/ailang-post-release-tasks",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "confluence-to-agent-knowledge-base",
+      "description": "Turn any Confluence Cloud instance into a private, searchable AI knowledge base on GitHub with access-tiered repos. Interactive 6-phase walkthrough using the Atlassian MCP connector.",
+      "repo": "miningstore/confluence-to-agent-knowledge-base",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "confluence",
+        "knowledge-base",
+        "atlassian",
+        "mcp",
+        "wiki",
+        "search",
+        "knowledge-management"
+      ],
+      "stars": 0,
+      "install": "miningstore/confluence-to-agent-knowledge-base/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "task-orchestrator",
@@ -25610,6 +25652,22 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "skill-seekers",
+      "description": "Convert docs, repos, PDFs into Claude Skills with conflict detection",
+      "repo": "yusufkaraaslan/Skill_Seekers",
+      "path": "skills/skill-seekers/SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "converter",
+        "skills",
+        "documentation"
+      ],
+      "stars": 0,
+      "install": "yusufkaraaslan/Skill_Seekers/skills/skill-seekers/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "draft-initialization",
       "description": "Initialize fiction draft cycles following the Spec-Kit workflow (idea → clarify → plan → tasks). Use when creating new drafts, planning rewrites, breaking down episodes, or structuring story changes.",
       "repo": "keberle/fiction-kit-rebound-specialist",
@@ -25929,6 +25987,22 @@
       "stars": 0,
       "install": "usadamasa/kubectl-localmesh/.claude/skills/go-taskfile-workflow",
       "source": "downloaded"
+    },
+    {
+      "name": "professional-business-writing",
+      "description": "Professional business writing assistant - removes AI patterns, maintains authority and clarity.",
+      "repo": "b33kman/professional-business-writing-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "professional-writing",
+        "business-writing",
+        "writing-assistant"
+      ],
+      "stars": 0,
+      "install": "b33kman/professional-business-writing-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "date-validation",
@@ -26675,6 +26749,24 @@
       "stars": 0,
       "install": "zazu-22/ff_data_analytics/.claude/_archive_skills/sprint-1-executor",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "humanizar-texto-es",
+      "description": "Rewrite Spanish AI-generated text to sound naturally human-written using 11 simultaneous linguistic techniques.",
+      "repo": "ToniPerea/humanizar-texto-es",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "spanish",
+        "ai-detection",
+        "text-rewriting",
+        "nlp",
+        "research"
+      ],
+      "stars": 0,
+      "install": "ToniPerea/humanizar-texto-es/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "shell-scripting",

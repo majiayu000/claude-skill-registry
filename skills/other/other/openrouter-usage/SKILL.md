@@ -1,6 +1,6 @@
 ---
 name: openrouter-usage
-description: Query OpenRouter API costs, credits, and usage breakdown by model, provider, and date. This skill should be used when checking API spending, auditing costs, or generating usage reports for the last 30 days.
+description: Query OpenRouter API costs, credits, and usage breakdown by model, provider, and date for the last 30 days. Triggers on API spending, check costs, openrouter usage, how much have I spent.
 ---
 
 # OpenRouter Usage

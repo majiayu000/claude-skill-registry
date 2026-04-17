@@ -1,6 +1,6 @@
 ---
 name: disc-forge
-description: Burn Red Book audio CDs or MP3 data CDs on macOS from Hoodrat HDD or local music files via cdrdao. Audio CDs carry CD-Text from ID3 tags; MP3 data CDs carry ~700 MB of files with ISO9660+Joliet. This skill should be used when the user asks to burn a CD, burn an album, make an audio CD or MP3 disc, burn a soundtrack for the car, or create a mixtape disc. Handles full-album burns and cherry-picked playlists.
+description: "Burn Red Book audio CDs or MP3 data CDs on macOS via cdrdao, sourcing from Hoodrat HDD or local files. Audio CDs carry CD-Text from ID3 tags; MP3 discs use ISO9660+Joliet (~700 MB). Handles full-album burns and cherry-picked playlists. Triggers on 'burn CD', 'burn album', 'make audio CD', 'mixtape disc', 'soundtrack for the car'."
 argument-hint: "--source <path|host:/path> --name <name> [--mp3-disc] [--speed N] [--gaps] [--dry-run]"
 ---
 

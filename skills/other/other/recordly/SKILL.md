@@ -1,6 +1,6 @@
 ---
 name: recordly
-description: "Install, launch, and use Recordly — a free, open-source Screen Studio alternative for polished screen recordings with auto-zooms, cursor animations, webcam overlays, styled backgrounds, and timeline editing. Also includes Slant, a browser-based 3D perspective renderer with 12 animation presets, HDRI reflections, and MP4/GIF export. This skill should be used when recording screen demos, polishing raw screen recordings, creating product walkthroughs, post-processing recordings from feature-video, or rendering 3D perspective views of screen recordings. Triggers on: screen recording, demo video, Recordly, OpenScreen, screen capture polish, product demo, walkthrough video, 3D perspective, slant, screen angle."
+description: "Polish screen recordings with Recordly (open-source Screen Studio alternative) — auto-zooms, cursor animations, webcam overlays, styled backgrounds, timeline editing. Also includes Slant: browser-based 3D perspective renderer with 12 animation presets and MP4/GIF export. Triggers on screen recording, demo video, Recordly, screen capture polish, product walkthrough, 3D perspective, Slant."
 argument-hint: "[install | launch | open <file> | slant]"
 ---
 

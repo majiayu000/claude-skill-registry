@@ -1,6 +1,6 @@
 ---
 name: classical-887
-description: "This skill should be used when checking what's playing on WRHV 88.7 FM (Classical WMHT) in the Hudson Valley, fetching recent tracks, building playlist reports, searching for pieces, creating/renaming Spotify playlists from radio tracks, auditing/cleaning up Spotify playlists, exporting playlist tracks to JSON, or reviewing playlist operation history."
+description: "Check what's playing on WRHV 88.7 FM (Classical WMHT), fetch recent tracks, build playlist reports, search for pieces, and create or manage Spotify playlists from radio tracks. Triggers on 'Classical 887', 'WRHV', 'what's playing', 'classical radio', 'Hudson Valley radio', 'Spotify playlist from radio'."
 ---
 
 # Classical 887

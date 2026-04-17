@@ -1,6 +1,6 @@
 ---
 name: codex-orchestrator
-description: Orchestrate OpenAI Codex CLI with specialized subagents for code review, debugging, architecture analysis, security audits, refactoring, and documentation. This skill should be used when delegating focused development tasks to Codex subagents (gpt-5.4, gpt-5.4-pro, gpt-5-mini) via AGENTS.md persona injection.
+description: "Spawn specialized OpenAI Codex CLI subagents for code review, debugging, architecture analysis, security audits, refactoring, and documentation via AGENTS.md persona injection (gpt-5.4, gpt-5.4-pro, gpt-5-mini). Triggers on 'delegate to Codex', 'Codex subagent', 'code review agent', 'security audit', 'refactor with Codex'."
 ---
 
 # Codex Orchestrator

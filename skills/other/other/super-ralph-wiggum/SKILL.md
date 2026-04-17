@@ -1,6 +1,6 @@
 ---
 name: super-ralph-wiggum
-description: Super Ralph Wiggum - autonomous iteration loops with templates, PRD support, progress tracking, and browser testing. This skill should be used when running Claude Code in autonomous loops for test coverage improvement, PRD-based feature development, documentation generation, dataset creation, lint fixing, code cleanup, or framework migrations. Combines the plugin's in-session loop mechanism with specialized templates and best practices from Geoffrey Huntley, Ryan Carson, and AI Hero.
+description: Run Claude Code in autonomous iteration loops until task completion — PRD-based feature development, test coverage improvement, lint fixing, documentation generation, dataset creation, or framework migrations. Uses in-session loop mechanism with specialized templates. Triggers on autonomous loop, iterate until done, run until passing, keep going until, ralph, PRD execution.
 ---
 
 # Super Ralph Wiggum

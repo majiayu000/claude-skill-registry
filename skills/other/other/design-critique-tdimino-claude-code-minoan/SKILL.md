@@ -1,6 +1,6 @@
 ---
 name: design-critique
-description: "Evaluate design from a UX perspective with quantitative scoring, anti-pattern detection, persona-based testing, and actionable feedback. This skill should be used when the user asks to review, critique, evaluate, or give feedback on a design or component, or says 'UX review,' 'design feedback,' or 'how does this look.'"
+description: "Evaluate design from a UX perspective with Nielsen's heuristics scoring, anti-pattern detection, persona-based testing, and actionable feedback. Report-only. Triggers on critique, UX review, design feedback, how does this look, evaluate the design, component review."
 argument-hint: "[area (feature, page, component...)]"
 ---
 

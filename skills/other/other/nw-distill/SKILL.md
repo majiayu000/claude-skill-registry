@@ -32,7 +32,8 @@ Before writing any scenario, read SSOT and feature delta artifacts.
 2. **Read Architecture Brief** — Read `docs/product/architecture/brief.md`. Identify driving ports (from `## For Acceptance Designer` section) for `@driving_port` tagged scenarios. Gate: file read or marked missing.
 3. **Read KPI Contracts** — Read `docs/product/kpi-contracts.yaml`. Identify behaviors needing `@kpi` tagged scenarios (soft gate — warn if missing, proceed). Gate: file read or marked missing.
 4. **Read DISCUSS Artifacts** — Read `docs/feature/{feature-id}/discuss/user-stories.md` (scope boundary and embedded acceptance criteria), `story-map.md` (walking skeleton priority and release slicing), and `wave-decisions.md` (quick check for upstream changes). Gate: files read or marked missing.
-5. **Read SPIKE Findings** (if spike was run) — Read `docs/feature/{feature-id}/spike/findings.md`. Check what assumptions were validated, what failed, performance measurements. Update acceptance criteria if spike findings contradict DISCUSS. Gate: file read if present, marked as not found if absent.
+5. **Read SPIKE Findings** (if spike was run) — Read `docs/feature/{feature-id}/spike/findings.md` and `docs/feature/{feature-id}/spike/wave-decisions.md`. Check what assumptions were validated, what failed, performance measurements, and the **promotion decision** (PROMOTE / DISCARD / PIVOT). Update acceptance criteria if spike findings contradict DISCUSS. Gate: files read if present, marked as not found if absent.
+5b. **Read Walking Skeleton** (only if SPIKE promoted a walking skeleton) — Read the existing `tests/{test-type-path}/{feature-id}/acceptance/walking-skeleton.feature` and the `src/` modules it exercises. The walking skeleton is **already committed and green** — your job in DISTILL is to build **additional** scenarios and integration tests on top of it, not to rewrite it. Identify the driving adapter it uses, the e2e path it exercises, and the scenarios it does NOT yet cover (happy-path variants, error paths, adapter integration). Gate: walking-skeleton.feature read, scenario tagged `@walking_skeleton` confirmed green, or marked as not found.
 6. **Read DEVOPS Artifacts** — Read `docs/feature/{feature-id}/devops/wave-decisions.md`. Check for infrastructure constraints affecting tests. Gate: file read or marked missing.
 7. **Check Migration Gate** — If `docs/product/` does not exist but `docs/feature/` has existing features, STOP. Guide the user to `docs/guides/migrating-to-ssot-model/README.md`. If greenfield, prior waves should have bootstrapped `docs/product/` already. Gate: migration confirmed or greenfield confirmed.
 8. **Reconcile Assumptions** — Check whether any acceptance test assumptions contradict prior wave decisions or SPIKE findings. Use `wave-decisions.md` and `spike/findings.md` files to detect upstream changes. Gate: zero contradictions or contradictions listed for user resolution.
@@ -179,8 +180,13 @@ Before handing off to reviewers, self-check each item:
 
 ## Scenario Writing Guidelines
 
-### Walking Skeleton First
-Create user-centric walking skeleton scenarios before milestone features. Walking skeleton scenarios exercise the end-to-end path through driving ports with minimal business logic. Features only; optional for bugs.
+### Walking Skeleton First (or inherited from SPIKE)
+
+If SPIKE ran and **PROMOTED** a walking skeleton, DISTILL inherits it: do NOT rewrite it, do NOT add duplicate scenarios, do NOT change its `@walking_skeleton` tag. Your job is to add the next layer of scenarios (additional happy paths, error paths, adapter integration) that build on the skeleton's established driving adapter and e2e path.
+
+If SPIKE was skipped or did not promote, DISTILL creates the walking skeleton scenarios itself, before milestone features. Walking skeleton scenarios exercise the end-to-end path through driving adapters (real user-facing entry → real driven adapters → real user-visible output) with minimal business logic. Features only; optional for bugs.
+
+Either way, there is exactly ONE walking skeleton scenario per feature marked `@walking_skeleton`, and it must be green before DISTILL hand-off.
 
 ### One-at-a-Time Strategy
 Tag non-skeleton scenarios with @skip/@pending for one-at-a-time implementation. Each scenario maps to one TDD cycle in DELIVER. The crafter enables one scenario at a time.
@@ -317,11 +323,11 @@ src/{production-path}/
   {module}.py               # RED scaffold stubs (Mandate 7)
 
 docs/feature/{feature-id}/distill/
-  test-scenarios.md
-  walking-skeleton.md
-  acceptance-review.md
+  walking-skeleton.md   (notes only — the .feature file is the SSOT)
   wave-decisions.md
 ```
+
+Note: `test-scenarios.md` and `acceptance-review.md` are NOT produced — the `.feature` file under `tests/{test-type-path}/{feature-id}/acceptance/` is the scenario SSOT, and reviewer output is ephemeral (lives in PR comments / retrospective, not as a committed artifact).
 
 Bug fix regression tests:
 ```

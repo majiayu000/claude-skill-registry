@@ -464,7 +464,6 @@ Workflow:
 Works well with: `nextjs-app-router`, `vercel-deployment`, `supabase-backend`, `email-systems`, `ai-agents-architect`, `stripe-integration`
 
 ## When to Use
-
 - User mentions or implies: inngest
 - User mentions or implies: serverless background job
 - User mentions or implies: event-driven workflow
@@ -473,3 +472,8 @@ Works well with: `nextjs-app-router`, `vercel-deployment`, `supabase-backend`, `
 - User mentions or implies: vercel background job
 - User mentions or implies: scheduled function
 - User mentions or implies: fan out
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

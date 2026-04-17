@@ -8,10 +8,12 @@ description: "Twig coding standards and conventions for Craft CMS 5 templates. C
 Coding conventions for Twig templates in Craft CMS 5 projects. These apply to
 all Twig code — atomic components, views, layouts, builders, partials.
 
-## Companion Skills — Load as Needed
+## Companion Skills — Always Load Together
 
-- **`craft-site`** — Template architecture and component patterns. Load when creating or editing components, layouts, views, or builders.
-- **`craft-content-modeling`** — Content architecture. Load when template code involves element queries, field access, or section decisions.
+When this skill triggers, also load:
+
+- **`craft-site`** — Template architecture and component patterns. Required when creating or editing components, layouts, views, or builders.
+- **`craft-content-modeling`** — Content architecture. Required when template code involves element queries, field access, or section decisions.
 
 For Twig **architecture** patterns (atomic design, routing, builders), see the
 `craft-site` skill. For PHP coding standards, see `craft-php-guidelines`.

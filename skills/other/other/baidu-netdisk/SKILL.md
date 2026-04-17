@@ -1,8 +1,8 @@
 ---
-name: baidu-netdisk
+name: baidu-drive
 description: >-
-  百度网盘(Baidu Netdisk)文件管理 — 上传、下载、转存、分享、搜索、移动、复制、重命名、创建文件夹。
-  TRIGGER: 用户提及"百度网盘/bdpan/网盘/云盘/baidu drive"并涉及文件操作。
+  百度网盘(Baidu Drive)文件管理 — 上传、下载、转存、分享、搜索、移动、复制、重命名、创建文件夹。
+  TRIGGER: 用户提及"百度网盘/bdpan/网盘/云盘/baidu drive/Baidu Drive"并涉及文件操作。
   DO NOT TRIGGER: 非文件存储操作，或使用其他云盘服务时。
 allowed-tools: Bash, Read, Glob, Grep, AskUserQuestion
 argument-hint: "[操作指令]"
@@ -12,7 +12,7 @@ argument-hint: "[操作指令]"
 
 百度网盘文件管理工具，所有操作限制在 `/apps/bdpan/` 目录内。适配 Claude Code、DuClaw、OpenClaw 等。
 
-> 内测阶段，使用注意事项详见 [reference/notes.md](./reference/notes.md)
+> 使用注意事项详见 [reference/notes.md](./reference/notes.md)
 
 ## 触发规则
 

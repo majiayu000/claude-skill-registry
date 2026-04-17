@@ -1,6 +1,6 @@
 ---
 name: minoan-frontend-design
-description: This skill should be used when building web components, pages, artifacts, posters, or applications (websites, landing pages, dashboards, React components, HTML/CSS layouts, or styling/beautifying any web UI), including editorial heroes with hover-reactive depth-parallax busts or statues (Astryx pattern) and pointer-reactive fluid effects over DOM sections. Creates distinctive, production-grade frontend interfaces with high design quality that avoids generic AI aesthetics.
+description: Build distinctive, production-grade frontend interfaces — websites, landing pages, dashboards, React components, HTML/CSS layouts, editorial heroes with depth-parallax (Astryx pattern), pointer-reactive fluid effects. Avoids generic AI aesthetics. Triggers on web UI, styling, beautify, frontend design, dashboard, landing page, React component, editorial hero.
 ---
 
 <!-- Creative core: syncretic-v3 (eval/skills/syncretic-v3.md). See eval/skills/INDEX.md for lineage. -->

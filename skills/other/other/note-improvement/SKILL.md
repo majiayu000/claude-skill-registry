@@ -16,9 +16,18 @@ Find the nearest `.git` directory or project root. The improvements file lives a
 Gather from context or `$ARGUMENTS`:
 
 - **What**: One-line summary of the improvement
+- **Type**: One of `trivial`, `investigate`, or `standard` — see criteria below
+- **Category**: One of `refactor`, `performance`, `reliability`, `readability`, `testing`, `docs`, `dx` (developer experience), or `feature`
 - **Where**: File path(s) and/or area of the codebase affected
 - **Why**: Brief rationale — what's the benefit?
-- **Category**: One of `refactor`, `performance`, `reliability`, `readability`, `testing`, `docs`, `dx` (developer experience), or `feature`
+
+### Type criteria
+
+- **trivial** — A direct fix: typo, rename, obvious one-liner, small localized cleanup with clear scope. No investigation or plan needed.
+- **investigate** — A symptom, not a fix: unclear root cause, performance question, intermittent bug, "something feels off". Needs dedicated root-cause analysis before any change.
+- **standard** — Everything else: clear-scope work that warrants planning (multi-file refactor, test additions, feature work).
+
+When the criteria above do not clearly select one value, use `AskUserQuestion` to confirm. Default to `standard` if the user declines to choose.
 
 ## Step 3: Append to File
 
@@ -35,12 +44,13 @@ Out-of-scope improvement opportunities captured during work sessions. Review per
 **Entry format:**
 
 ```markdown
-### [one-line summary]
+### <one-line summary>
 
-- **Category**: [category]
-- **Where**: `[file path or area]`
-- **Why**: [brief rationale]
-- **Noted**: [YYYY-MM-DD]
+- **Type**: <trivial | investigate | standard>
+- **Category**: <category>
+- **Where**: `<file path or area>`
+- **Why**: <brief rationale>
+- **Noted**: <YYYY-MM-DD>
 ```
 
 Append the new entry at the end of the file.
@@ -51,7 +61,7 @@ Tell the user the improvement was noted and where the file is.
 
 ## Rules
 
-- Do not duplicate — before appending, check if a similar improvement already exists. If it does, update the existing entry instead.
+- Do not duplicate — before appending, check if a similar improvement already exists. If it does, update the existing entry instead. If the existing entry predates the Type field, add a Type line while updating.
 - Keep entries concise — 3-5 lines max per entry. These are backlog items, not specs.
 - Do not act on the improvement — only record it. The user decides when to address it.
 - Do not create the `.turbo/` directory if the project doesn't have one — ask the user where to put the file instead.

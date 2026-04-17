@@ -1,6 +1,6 @@
 ---
 name: component-gallery
-description: "Encyclopedic access to UI component patterns and design system implementations from component.gallery (60 components, 95 design systems, 2,676+ real-world examples). This skill should be used when researching how specific UI components are implemented across production design systems, comparing component patterns before building, finding alternative component names, or grounding frontend decisions in real-world precedent. Pairs with minoan-frontend-design for research-then-build workflows."
+description: "Research UI component patterns across 60 component types and 95 production design systems (2,676+ examples from component.gallery). Compare implementations, find alternative component names, ground frontend decisions in real-world precedent. Pairs with minoan-frontend-design for research-then-build workflows. Triggers on component patterns, how do others implement X, design system research, component comparison."
 allowed-tools: Bash(component-gallery:*), Read, Grep, Glob
 ---
 

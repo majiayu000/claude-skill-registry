@@ -1,6 +1,6 @@
 ---
 name: openplanter
-description: "Dataset investigation and entity resolution using OpenPlanter methodology. This skill should be used when cross-referencing heterogeneous datasets, performing entity resolution, building evidence chains with confidence tiers, or conducting structured investigations requiring epistemic discipline."
+description: "Investigate datasets and resolve entities using OpenPlanter methodology — cross-reference heterogeneous sources, build Admiralty/ACH confidence-tiered evidence chains, and apply OSINT tradecraft. Triggers on entity resolution, cross-reference datasets, evidence chain, OSINT investigation, structured investigation."
 argument-hint: "[workspace-path or investigation-query]"
 ---
 

@@ -123,6 +123,18 @@ After classifying project_type (and dogfood status), inform the user of threshol
 
 Tell the user: "I've set up [canvas name] for tracking your delivery metrics. When you reach L4, run `/dora-check` to assess delivery health."
 
+**Metric source detection** (v0.14): After the tech-stack conversation and canvas setup, detect which **external metric sources** apply to this product — GitHub, Plausible, Stripe, app stores, support channels, etc. These feed L0/L1/L2/L5 evidence loops (replacing manual "I checked the dashboard" reports).
+
+Follow `.claude/jit-tooling/metrics-detector.md`:
+1. Scan for signals (git remote, SDK installs, env vars).
+2. Ask the user about things the repo can't reveal: deployed product URL, payment processor, app stores, support channels.
+3. Confirm each candidate source. For novel sources with no adapter, follow `metrics-adapters/GENERATING.md`.
+4. Write `.claude/jit-tooling/active-metrics.yml`.
+
+Tell the user: "I've configured N metric source(s) in `active-metrics.yml`. Run `/metrics-pull` whenever you want a fresh snapshot — I'll also remind you before `/diamond-assess` at L0/L1/L2/L5 if the latest is >7 days old."
+
+If the user prefers to defer this: skip, note in the interview summary, and suggest `/metrics-detect` later.
+
 ## After the Interview: What Happens Next
 
 The interview creates an **L0 Purpose diamond** in Discover phase. Here's the bridge to ongoing work:

@@ -934,7 +934,6 @@ Workflow:
 Works well with: `vercel-deployment`, `nextjs-app-router`, `redis-specialist`, `email-systems`, `supabase-backend`, `cloudflare-workers`
 
 ## When to Use
-
 - User mentions or implies: qstash
 - User mentions or implies: upstash queue
 - User mentions or implies: serverless cron
@@ -942,3 +941,8 @@ Works well with: `vercel-deployment`, `nextjs-app-router`, `redis-specialist`, `
 - User mentions or implies: message queue serverless
 - User mentions or implies: vercel cron
 - User mentions or implies: delayed message
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

@@ -1,6 +1,6 @@
 ---
 name: architecture-md-builder
-description: "Build comprehensive ARCHITECTURE.md files for any repository following matklad's canonical guidelines. This skill should be used when creating codebase documentation that serves as a map for developers and AI agents, auditing existing repos for architectural understanding, or when users ask to 'document the architecture', 'create an architecture.md', or 'map this codebase'. Produces bird's eye views, ASCII/Mermaid diagrams, codemaps, invariants, and layer boundaries."
+description: "Build comprehensive ARCHITECTURE.md files following matklad's canonical guidelines — bird's-eye views, ASCII/Mermaid diagrams, codemaps, invariants, and layer boundaries. Triggers on document the architecture, create ARCHITECTURE.md, map this codebase, architectural overview."
 ---
 
 # Architecture.md Builder

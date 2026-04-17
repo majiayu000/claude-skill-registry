@@ -187,7 +187,33 @@ This means a single `heroImage` Assets field can be placed in a Blog Post, a Ser
 
 **The rule: reuse field definitions via instances. Only create a new field when the type or settings differ** (e.g., different allowed volumes, different source restrictions, different character limits). Don't create `blogHeroImage`, `serviceHeroImage`, `projectHeroImage` — create one `heroImage` and instance it.
 
-Multi-instance fields (most field types) can even appear **multiple times in the same layout** with different handles. Each instance stores its data independently, keyed by the layout element UID in the JSON content column.
+### Multi-Instance vs Single-Instance Fields
+
+A field's `isMultiInstance()` method controls whether it can appear **multiple times in the same layout** with different handles. This is determined by `dbType()` — fields that return `null` are single-instance.
+
+| Category | Field Types | Multi-Instance | Reusable Across Layouts |
+|----------|-------------|:--------------:|:-----------------------:|
+| **Relational** | Entries, Assets, Categories, Tags, Users | Yes | Yes |
+| **Simple** | Plain Text, Number, Email, URL, Color, Lightswitch, Money, Range, Time, Date/Time | Yes | Yes |
+| **Option** | Dropdown, Checkboxes, Multi-Select, Radio Buttons, Button Group | Yes | Yes |
+| **Structured** | Table, Link, Icon, Country | Yes | Yes |
+| **Nested element** | Matrix, Content Block, Addresses | **No** | Yes (with caveats) |
+
+**Single-instance caveats:** Matrix, Content Block, and Addresses fields CAN be reused across different entry types (placed in multiple field layouts), but they can only appear **once per layout** and their configuration is fully shared — changing the entry types or settings on a Matrix field affects every entry type using it. Reuse these when contexts genuinely share the same structure. Create separate fields when different contexts need different nested entry types or settings.
+
+## Adding Fields to an Entry Type — Reuse-First Workflow
+
+Before proposing any field in a content model change, you MUST:
+
+1. **Enumerate the existing field pool.** Read `config/project/fields/` (or CP Settings → Fields). List every field with its type, handle, and key settings.
+2. **For each proposed field, classify into one of three categories:**
+   - **Reuse** — existing field with matching type and compatible settings. Instance it into the layout; optionally override label, handle, instructions, or required.
+   - **Reuse with settings review** — existing field of the correct type but slightly different settings (e.g., different allowed volumes, different character limit). Propose whether settings can be unified so one definition serves both contexts. Flag this as a decision for the user.
+   - **Create new** — no existing field matches by type or functional purpose. Justify why a new field is needed.
+3. **For single-instance fields** (Matrix, Content Block, Addresses) — if an existing field shares the same nested structure, reuse it. If the contexts need different nested entry types or settings, creating a new field is justified — note the shared-config caveat in your reasoning.
+4. **Present the plan as a table** — one row per proposed field, showing the reuse decision, the existing field being reused (if applicable), and the rationale for any new field. Do not create a new field without this table.
+
+Creating a field that duplicates an existing field's functionality is the most common content modeling mistake — it pollutes the global pool, confuses editors, and makes future refactoring harder.
 
 ## Entrification — Migrating Legacy Content
 
@@ -232,6 +258,7 @@ For the full decision table, nested entry type patterns, and the CKEditor chunks
 ## Common Pitfalls
 
 - **Over-using Matrix** — if content needs its own URL, independent querying, or permissions, it should be a separate section with an Entries relation field, not a Matrix block.
+- **Creating new fields without checking the global pool** — before adding any field, run the Reuse-First Workflow above. Enumerate existing fields via `config/project/fields/` and default to reusing via instance. The only justification for a new field is a different type or genuinely incompatible settings.
 - **Vague or reserved field handles** — `image`, `text`, `link` are too generic (and `link` is actually reserved). For every field handle in a content model, follow this check: (1) is the handle in the reserved list? If yes, use a synonym from the table. (2) Is the handle too generic for the global field pool? If yes, add domain context: `featuredImage`, `bodyContent`, `primaryLink`. (3) Don't over-specify — `blogFeaturedImage` creates a new field when you could instance `featuredImage` with a label override.
 - **Not planning multi-site from the start** — propagation method, field translation methods, and site settings must be configured before content exists. Changing propagation later resaves all entries.
 - **Using categories/tags/globals in new projects** — new creation is disabled in Craft 5 CP and they will be removed in Craft 6. Use entries instead.
@@ -249,6 +276,8 @@ For the full decision table, nested entry type patterns, and the CKEditor chunks
 Read the relevant reference file(s) for your task.
 
 **Task examples:**
+- "Add fields to an existing entry type" → Reuse-First Workflow in this SKILL.md
+- "Modify an entry type's field layout" → Reuse-First Workflow in this SKILL.md
 - "Plan a blog content architecture" → read `content-patterns.md`
 - "Which field type should I use for X?" → read `field-types.md`
 - "Set up relatedTo queries" → read `relations-and-eager-loading.md`

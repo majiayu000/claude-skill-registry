@@ -1,6 +1,6 @@
 ---
 name: scrapling
-description: Local Python web scraping with anti-bot bypass, adaptive element tracking, and stealth browser automation. This skill should be used when scraping pages behind Cloudflare or anti-bot protection, extracting specific elements with CSS/XPath selectors, stealth fetching with TLS impersonation, local scraping without API keys, or when adaptive element tracking is needed to survive site redesigns. Complements the firecrawl skill (cloud API) with 100% local execution.
+description: Scrape pages locally with anti-bot bypass, TLS impersonation, and adaptive element tracking — no API keys, no cloud. Handles Cloudflare protection, CSS/XPath element extraction, and survives site redesigns. Complements firecrawl (cloud) with 100% local execution. Triggers on Cloudflare bypass, anti-bot scraping, stealth fetch, local scraping, Scrapling.
 ---
 
 # Scrapling -- Local Stealth Web Scraping

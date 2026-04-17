@@ -1,11 +1,10 @@
 ---
 name: shadcn
 description: >
-  This skill should be used when adding shadcn/ui components, initializing shadcn
-  projects, building custom registries, theming with Tailwind v4 OKLCH colors,
-  or customizing installed components. Also use when working with components.json,
-  presets, monorepo setup, or shadcn CLI commands. Pairs with minoan-frontend-design
-  for creative direction.
+  Install, customize, and compose shadcn/ui components with design-system awareness.
+  Covers CLI v4, custom registries, Tailwind v4 OKLCH theming, components.json,
+  presets, and monorepo setup. Pairs with minoan-frontend-design for creative direction.
+  Triggers on shadcn, install component, shadcn theme, OKLCH colors, custom registry.
 argument-hint: "[component-name or command]"
 ---
 

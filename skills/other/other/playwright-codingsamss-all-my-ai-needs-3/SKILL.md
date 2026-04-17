@@ -91,9 +91,23 @@ Snapshot again after:
 
 Refs can go stale. When a command fails due to a missing ref, snapshot again.
 
+## Troubleshooting: extension bridge failures
+
+If `playwright-ext` fails with `Extension connection timeout`:
+
+1. Check whether Chrome opened `chrome-extension://.../connect.html`.
+2. If the page shows `Invalid token provided`, the extension token in config does not match the installed extension session token (or has expired/rotated).
+3. Reconfigure the MCP server with the correct `PLAYWRIGHT_MCP_EXTENSION_TOKEN`.
+4. Important: if you changed token/config mid-conversation, existing MCP connections can stay stale. Start a fresh Hermes process/session (or restart) before judging whether the fix worked.
+5. Validate in two layers:
+   - `hermes mcp test playwright-ext` verifies server startup and tool discovery only.
+   - Execute a real bridge tool call (for example `mcp_playwright_ext_browser_tabs` in a fresh session) to verify extension handshake actually works.
+6. If browser-side bridge is unavailable, do not keep retrying blindly; switch to non-browser methods when the task does not require UI interaction.
+
 ## Guardrails
 
 - Do not position Playwright as the default first hop when Scrapling or PinchTab can solve the task more cheaply.
+- For repository understanding tasks (e.g., "what is this GitHub repo about"), prefer non-browser methods first (`git clone` + README/metadata inspection). Only escalate to Playwright if page interaction is actually required.
 - Always snapshot before referencing element ids like `e12`.
 - Re-snapshot when refs seem stale.
 - Prefer explicit commands over `eval` and `run-code` unless needed.

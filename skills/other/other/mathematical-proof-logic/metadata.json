@@ -1,0 +1,17 @@
+{
+  "name": "mathematical-proof-logic",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "examples/skills/logic/mathematical-proof-logic/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "mathematical-proof-logic",
+  "downloaded_at": "2026-04-17T01:29:41.356730Z",
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/logic/mathematical-proof-logic/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/logic/mathematical-proof-logic/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

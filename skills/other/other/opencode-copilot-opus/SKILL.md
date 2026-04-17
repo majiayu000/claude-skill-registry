@@ -57,8 +57,11 @@ Read `references/troubleshooting.md` when any opencode command fails.
 Key fast fixes:
 
 1. Cache permission error: set `XDG_CACHE_HOME=/tmp`.
-2. Local config schema error: set `XDG_CONFIG_HOME=/tmp` (safe mode).
+2. Local config schema error: if `~/.config/opencode/opencode.json` has unsupported keys (e.g. `skills`), create a clean config copy and point `XDG_CONFIG_HOME` to it.
 3. Wrong provider/model: use `github-copilot/claude-opus-4.6`.
+4. GitHub Copilot `ECONNRESET` / `api.githubcopilot.com` network failures: run with
+   `HTTP_PROXY=http://127.0.0.1:7897 HTTPS_PROXY=http://127.0.0.1:7897`.
+5. If safe mode (`OPENCODE_SAFE_MODE=1`, `XDG_CONFIG_HOME=/tmp`) triggers `Cannot find module ... opencode-*-auth`, rerun with `OPENCODE_SAFE_MODE=0` and a clean explicit `XDG_CONFIG_HOME`.
 
 ## Safety Notes
 

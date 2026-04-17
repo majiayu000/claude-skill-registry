@@ -1,6 +1,6 @@
 ---
 name: twitter
-description: "Twitter/X integration with three modes: official API v2 search/research via x-search (pay-per-use, $0.005/read), session-based posting/reading via bird CLI (free, browser cookies), and bookmark archival via Smaug. This skill should be used when searching tweets, researching topics on X, posting, monitoring accounts, or archiving bookmarks."
+description: "Search, post, monitor, and archive on Twitter/X via three modes: official API v2 search via x-search (pay-per-use, $0.005/read), session-based posting/reading via bird CLI (free, browser cookies), and bookmark archival via Smaug. Triggers on 'search tweets', 'post to X', 'monitor account', 'archive bookmarks', 'research topic on Twitter'."
 ---
 
 # Twitter/X — Dual-Mode Integration

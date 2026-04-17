@@ -1,6 +1,6 @@
 ---
 name: linkedin-export
-description: Parse, search, analyze, and ingest LinkedIn GDPR data exports. This skill should be used when working with LinkedIn data — searching messages, analyzing connections, exporting to Markdown, or ingesting into RLAMA for semantic search. Requires a LinkedIn GDPR data export ZIP file.
+description: "Parse, search, analyze, and ingest LinkedIn GDPR data exports into structured JSON or RLAMA for semantic search. Covers messages, connections, profile data, and Markdown export. Requires a LinkedIn GDPR ZIP file. Triggers on 'LinkedIn data', 'search messages', 'analyze connections', 'LinkedIn export', 'GDPR download'."
 ---
 
 # LinkedIn Export Skill

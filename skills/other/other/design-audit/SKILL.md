@@ -1,6 +1,6 @@
 ---
 name: design-audit
-description: "Run technical quality checks across accessibility, performance, responsive design, theming, and anti-patterns. Generates a scored report with P0-P3 severity ratings. This skill should be used when the user wants an accessibility check, performance audit, technical quality review, or says 'audit the design,' 'check accessibility,' or 'technical review.'"
+description: "Run technical quality checks across accessibility, performance, responsive design, theming, and anti-patterns. Generate a scored report with P0-P3 severity ratings. Report-only — documents issues for other skills to fix. Triggers on audit the design, check accessibility, technical review, performance audit, a11y check."
 argument-hint: "[area (feature, page, component...)]"
 ---
 

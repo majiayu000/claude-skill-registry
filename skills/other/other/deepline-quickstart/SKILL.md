@@ -92,7 +92,7 @@ deepline tools execute apollo_search_people_with_match --payload '{
   "person_titles": ["CTO", "Chief Technology Officer"],
   "person_seniorities": ["c_suite"],
   "person_locations": ["New York, New York, United States"],
-  "organization_num_employees_ranges": ["1,200"],
+  "organization_num_employees_ranges": ["1-200"],
   "include_similar_titles": true,
   "per_page": 5,
   "page": 1

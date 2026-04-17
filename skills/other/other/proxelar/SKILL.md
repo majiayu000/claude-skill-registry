@@ -1,6 +1,6 @@
 ---
 name: proxelar
-description: "This skill should be used when intercepting, inspecting, or modifying HTTP/HTTPS traffic between applications and APIs. Use when debugging API calls, capturing LLM request/response pairs for eval datasets, mocking API endpoints, injecting headers (CORS, auth), adding artificial latency for timeout testing, blocking telemetry, or giving agents network-layer visibility into running applications. Triggers on 'proxy', 'intercept traffic', 'inspect requests', 'mock API', 'capture API calls', 'MITM', 'network debug', 'HTTP inspection'."
+description: "Intercept, inspect, and modify HTTP/HTTPS traffic via a Rust MITM proxy with Lua scripting hooks. Supports API debugging, LLM call capture for evals, endpoint mocking, CORS/auth header injection, latency simulation, and telemetry blocking. Triggers on 'proxy', 'intercept traffic', 'inspect requests', 'mock API', 'capture API calls', 'MITM', 'network debug', 'HTTP inspection'."
 ---
 
 # Proxelar

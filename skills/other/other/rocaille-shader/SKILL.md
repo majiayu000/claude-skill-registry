@@ -1,6 +1,6 @@
 ---
 name: rocaille-shader
-description: Generate Rocaille-style domain warping shaders with sinusoidal displacement, mouse-reactive liquid logo effects on image/SVG textures, depth-map parallax displacement heroes (Astryx-style hover-reactive statues/busts), and stable fluid simulations over live DOM elements (fluid-dom). This skill should be used when building WebGL/GLSL visualizations, shader art, procedural backgrounds, organic swirling light effects, applying a rippling liquid hover effect to a logo or hero image, creating an editorial hero with a hover-reactive 3D-look bust or statue via depth-map parallax, or wrapping DOM sections in a pointer-reactive Navier-Stokes fluid distortion. Trigger phrases: depth parallax, hover-reactive depth map, statue hero, fluid sim, stable fluid, WebGL-Fluid-Simulation, pointer-reactive fluid.
+description: Generate Rocaille-style domain warping shaders, mouse-reactive liquid logo effects, depth-map parallax heroes (Astryx-style hover-reactive statues), and stable fluid simulations over live DOM. Four modes — rocaille, liquid-logo, astryx-statue, fluid-dom. Triggers on shader art, depth parallax, hover-reactive depth map, statue hero, fluid sim, liquid logo, WebGL visualization, procedural background, pointer-reactive fluid.
 argument-hint: [--mode rocaille|liquid-logo|astryx-statue|fluid-dom] [warp-count] [color-mode] [format]
 ---
 

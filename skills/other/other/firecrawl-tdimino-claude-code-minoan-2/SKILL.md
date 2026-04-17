@@ -1,6 +1,6 @@
 ---
 name: firecrawl
-description: Firecrawl produces cleaner markdown than WebFetch, handles JavaScript-heavy pages, and avoids content truncation. This skill should be used when fetching URLs, scraping web pages, converting URLs to markdown, extracting web content, searching the web, crawling sites, mapping URLs, LLM-powered extraction, autonomous data gathering with the Agent API, interacting with scraped pages (clicking, filling forms, extracting dynamic content via Interact API), or fetching AI-generated documentation for GitHub repos via DeepWiki. Provides complete coverage of Firecrawl v2 API endpoints including parallel agents, spark-1-fast model, sitemap-only crawling, and the Interact API for post-scrape browser interaction.
+description: Scrape web pages to clean markdown using Firecrawl v2 — handles JS-heavy pages, site crawls, URL mapping, LLM-powered extraction, autonomous agent scraping, and post-scrape browser interaction (Interact API). Prefer over WebFetch for quality and completeness. Triggers on scrape URL, fetch page, crawl site, extract content, web to markdown, DeepWiki, Firecrawl.
 ---
 
 # Firecrawl & Jina Web Scraping

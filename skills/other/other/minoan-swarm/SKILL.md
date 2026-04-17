@@ -1,6 +1,6 @@
 ---
 name: minoan-swarm
-description: Orchestrate Claude Code Agent Teams with Minoan-Semitic naming. This skill should be used when planning or launching multi-agent teams to tackle project phases, features, or complex tasks in parallel. It auto-discovers project context (CLAUDE.md, roadmaps, plans, issues) and generates named team configurations with structured task lists and file ownership.
+description: Orchestrate multi-agent Claude Code teams with Minoan-Semitic naming — auto-discover project context (CLAUDE.md, roadmaps, plans, issues) and generate named team configurations with structured task lists and file ownership. Triggers on parallel workstreams, agent teams, multi-agent, spawn agents, swarm, minoan-swarm.
 ---
 
 # Minoan Swarm

@@ -1,6 +1,6 @@
 ---
 name: image-well
-description: "Multi-source image search and download aggregator. Searches 12 image APIs in parallel (Openverse, Pexels, Pixabay, Met Museum, NASA, Rijksmuseum, Wikimedia Commons, Unsplash, Smithsonian, Europeana, Iconify, Pollinations AI). This skill should be used when searching for images, downloading stock photos, finding public domain artwork, sourcing museum images, searching for CC-licensed images, downloading NASA photos, finding icons, or when any project needs images from multiple sources at once. Supports license filtering, presets (military, museum, stock), cached results, and bulk download with metadata sidecars."
+description: "Search and download images from 12 APIs in parallel (Openverse, Pexels, Pixabay, Met Museum, NASA, Rijksmuseum, Wikimedia Commons, Unsplash, Smithsonian, Europeana, Iconify, Pollinations AI). Supports license filtering, presets (military, museum, stock), cached results, and bulk download with metadata sidecars. Triggers on find images, stock photos, public domain artwork, museum images, CC-licensed, NASA photos, icons."
 ---
 
 # Image Well

@@ -1,6 +1,6 @@
 ---
 name: test-harness-auditor
-description: "This skill should be used when auditing a repo's test, lint, type-check, static analysis, build, and debug infrastructure for AI coding agents. Use when entering a new repo, when asked to 'audit tests', 'audit harness', 'check test infrastructure', 'lint audit', 'what testing tools are configured', or when a repo has no .claude/lint-rules.json. Generates optimized configs for the lint-on-write hook."
+description: "Audit a repo's test, lint, type-check, static analysis, build, and debug infrastructure for AI coding agents. Generate scored reports and optimized configs for the lint-on-write hook. Triggers on audit tests, test harness, lint setup, check test infrastructure, entering a new repo."
 argument-hint: "[path]"
 user-invocable: true
 allowed-tools:

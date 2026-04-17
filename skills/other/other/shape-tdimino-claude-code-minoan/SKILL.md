@@ -1,6 +1,6 @@
 ---
 name: shape
-description: "Plan the UX and UI for a feature before writing code. Runs a structured discovery interview, then produces a design brief that guides implementation. This skill should be used during the planning phase to establish design direction, constraints, and strategy before any code is written. Use when the user says 'plan the design,' 'design brief,' 'shape the UX,' or 'before we build.'"
+description: "Plan the UX and UI for a feature before writing code. Run a structured discovery interview, then produce a design brief (.design-context.md) that guides implementation. Establishes design direction, constraints, and strategy before any code is written. Triggers on plan the design, design brief, shape the UX, before we build, design discovery."
 argument-hint: "[feature to shape]"
 ---
 

@@ -87,6 +87,7 @@ Progress a diamond through phases with full theory gate validation. At delivery 
     - Report in plain language: "Can't mark this done yet because [reason]."
     - List each failed item with its suggested skill
     - Do not progress. Stay in current phase.
+    - At **L0 / L1 / L2 / L5** diamonds, if the Evidence gate is "Insufficient Evidence" and `.claude/jit-tooling/active-metrics.yml` is configured, suggest `/metrics-pull` as one route to strengthen external signal. If `active-metrics.yml` is missing, suggest `/metrics-detect` first. (v0.14: `external_data` from snapshots satisfies the Evidence gate's behavioral-data criterion but does NOT replace `external_human` requirements at L2 Develop->Deliver.)
 
 11. **Always communicate in plain language**:
     - Use status-translations.md for all state descriptions

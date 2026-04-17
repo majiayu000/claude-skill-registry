@@ -49,6 +49,7 @@ SKILL.md is the routing layer — it tells you WHERE to go, not HOW to execute. 
 | **Finding companies, finding people, building lead lists, prospecting, portfolio/VC sourcing, contact finding at known companies, coverage completion at scale**                                                                                                                                                                                                                   | [finding-companies-and-contacts.md](finding-companies-and-contacts.md) | Provider filter schemas, parallel execution patterns, provider mix tables, role-based search rules, subagent orchestration, at-scale coverage completion, portfolio/VC shortcuts, contact finding patterns.                                                                                                                          |
 | **Researching companies or people, understanding what they build, figuring out use cases, personalizing based on mission/product/industry, enriching a CSV, adding data columns, waterfall enrichment, finding emails/phones/LinkedIn, coalescing data, custom signals, `run_javascript` / `deeplineagent` steps, Apify actors — any task that adds or transforms row-level data** | [enriching-and-researching.md](enriching-and-researching.md)           | `deepline enrich` syntax and all flags. Waterfall patterns with fallback chains. `run_javascript` / `deeplineagent` routing. Multi-pass pipeline patterns (research pass → generation pass). Coalescing patterns. Email/phone/LinkedIn waterfall orders. Custom signal buckets. Apify actor selection. GTM definitions and defaults. |
 | **Writing cold emails, personalizing outreach, lead scoring, qualification, sequence design, campaign copy, inspecting CSVs in Playground.** If the task also requires researching companies/people to inform the writing, read [enriching-and-researching.md](enriching-and-researching.md) too — it has the multi-pass pipeline pattern.                                         | [writing-outreach.md](writing-outreach.md)                             | Prompt templates from `prompts.json`. Scoring rubrics. Email length/tone/structure rules. Personalization patterns. Qualification frameworks. Playground inspection commands.                                                                                                                                                        |
+| **Building or modifying a cloud workflow** (`deepline workflows apply`), designing step sequences, data contracts, triggers (webhook/cron/API), waterfall blocks, expectations, deploy/verify cycles, or debugging a failing workflow run. This is NOT the same as a GTM enrichment workflow — cloud workflows are persisted automations with triggers. | [references/cloud-workflow-builder.md](references/cloud-workflow-builder.md) | Schema for WorkflowApplyInput, Command, and Waterfall blocks. Placeholder resolution rules. run_javascript environment. Spec template. Deploy/verify/iterate loop. Execution modes (smoke_test, dry_run). Disabled steps. Poll+dispatch and fanout patterns. |
 
 If you are hand-authoring enrich columns instead of using a native play, jump straight to the "Handmade step shape quick reference" section in [enriching-and-researching.md](enriching-and-researching.md). That section spells out the exact runtime contract for `run_javascript`, `extract_js`, `result`, and persisted `matched_result`.
 
@@ -61,6 +62,7 @@ When a recipe matches: **follow it step-by-step as your execution plan.** Recipe
 | Recipe                          | Use when...                                                                                                                                |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | `build-tam.md`                  | Building a total addressable market list or large company list from ICP criteria                                                           |
+| `clay-to-deepline.md`           | Converting a Clay table into local Deepline enrich scripts (extraction, mapping, parity validation)                                       |
 | `linkedin-url-lookup.md`        | Resolving a person's LinkedIn profile URL from their name and company with strict identity validation                                      |
 | `portfolio-prospecting.md`      | Finding companies backed by a specific investor or accelerator, then finding contacts and building personalized outbound                   |
 | `small-business-prospecting.md` | Finding local small businesses or storefront/service-area companies using Maps-style search. Doctors, services business, restaurants, etc. |
@@ -222,10 +224,6 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Summary: Use cloudflare_crawl to crawl websites and extract content as markdown, HTML, or JSON. Returns partial results on timeout — check timedOut field. Browser rendering is enabled by default.
   Last reviewed: 2026-03-11
 
-- [contactout playbook](provider-playbooks/contactout.md)
-  Summary: Use for LinkedIn → email/phone enrichment. Run contactout_check_email_status first (free) to confirm data exists before spending credits on enrich.
-  Last reviewed: 2026-03-25
-
 - [crustdata playbook](provider-playbooks/crustdata.md)
   Summary: Start with free autocomplete and default to fuzzy contains operators `(.)` for higher recall. Use ISO-3 country codes, prefer crunchbase_categories over linkedin_industries for niche verticals, and use employee_count_range for filtering instead of employee_metrics.latest_count.
   Last reviewed: 2026-02-11
@@ -233,10 +231,6 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
 - [dataforseo playbook](provider-playbooks/dataforseo.md)
   Summary: Use DataForSEO for native SEO and content-analysis endpoints. Most tools are generated directly from the docs catalog, so prefer regeneration over hand edits.
   Last reviewed: 2026-04-08
-
-- [datagma playbook](provider-playbooks/datagma.md)
-  Summary: Use for real-time person enrichment with phone + job-change signals. Pass linkedin URL as the primary identifier for best results; fall back to email or fullName+domain.
-  Last reviewed: 2026-03-31
 
 - [deepline_native playbook](provider-playbooks/deepline_native.md)
   Summary: Launcher actions wait for completion and return final payloads with job_id; search_contact uses the search budget while enrichment-style actions use the higher enrichment budget.
@@ -321,10 +315,6 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
 - [prospeo playbook](provider-playbooks/prospeo.md)
   Summary: Use enrich-person for individual contacts, search-person for prospecting with 30+ filters, and search-company for account-level lists.
   Last reviewed: 2026-02-28
-
-- [rocketreach playbook](provider-playbooks/rocketreach.md)
-  Summary: Use for email + phone lookup by LinkedIn URL or name+company. Falls after dropleads in waterfall. "premium" lookup_type unlocks more phone numbers.
-  Last reviewed: 2026-03-25
 
 - [salesforce playbook](provider-playbooks/salesforce.md)
   Summary: Use field inspection before custom writes, object-specific create/update/delete tools for standard CRM records, and list tools for incremental reads with pagination handoff.
@@ -484,8 +474,9 @@ Approve full run?
 ### 4.5 Billing commands
 
 ```bash
-deepline billing balance
-deepline billing limit
+deepline billing balance  # Show current credit balance
+deepline billing usage    # Show recent billing activity and grouped recent usage
+deepline billing limit    # Show the current monthly billing cap
 ```
 
 When credits at zero, link to https://code.deepline.com/dashboard/billing to top up.

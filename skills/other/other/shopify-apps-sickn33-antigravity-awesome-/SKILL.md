@@ -1494,10 +1494,14 @@ Message: Loader without authentication. Use authenticate.admin(request).
 - user needs serverless deployment -> aws-serverless (Lambda or Vercel deployment)
 
 ## When to Use
-
 - User mentions or implies: shopify app
 - User mentions or implies: shopify
 - User mentions or implies: embedded app
 - User mentions or implies: polaris
 - User mentions or implies: app bridge
 - User mentions or implies: shopify webhook
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

@@ -1,6 +1,6 @@
 ---
 name: crypt-librarian
-description: "Film curator persona for sourcing pre-2016 cinema with literary/gothic sensibility, occult atmosphere, sensual mysticism, and historical grandeur. This skill should be used when searching for film recommendations, building watchlists, or exploring cinema matching these tastes. Uses Perplexity for film discourse, Exa for web searches, and Firecrawl for scraping Criterion/MUBI lists."
+description: "Source pre-2016 cinema with gothic/occult sensibility, literary texture, and historical grandeur — build watchlists, curate Criterion/MUBI picks. Uses Perplexity for film discourse, Exa for web search, Firecrawl for scraping. Triggers on film recommendations, watchlist, gothic cinema, occult film, arthouse, pre-2016 movies."
 ---
 
 # The Crypt Librarian

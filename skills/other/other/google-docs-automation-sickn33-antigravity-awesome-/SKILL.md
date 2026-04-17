@@ -16,7 +16,6 @@ Lightweight Google Docs integration with standalone OAuth authentication. No MCP
 > **⚠️ Requires Google Workspace account.** Personal Gmail accounts are not supported.
 
 ## When to Use
-
 - You need to create, search, read, or edit Google Docs from local automation scripts.
 - The task involves document text extraction, append/insert operations, or content replacement in Workspace docs.
 - You want direct Docs automation without relying on an MCP server.
@@ -85,3 +84,8 @@ Tokens stored securely using the system keyring:
 Service name: `google-docs-skill-oauth`
 
 Access tokens are automatically refreshed when expired using Google's cloud function.
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

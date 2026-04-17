@@ -88,7 +88,7 @@ When reading a feature to answer "what's next?", check for these wave artifacts 
 | DISCUSS | `docs/feature/{id}/discuss/user-stories.md` | User stories written |
 | DESIGN | `docs/feature/{id}/design/wave-decisions.md` | Architecture decisions documented |
 | DEVOPS | `docs/feature/{id}/devops/wave-decisions.md` | CI/CD and deployment decisions documented |
-| DISTILL | `docs/feature/{id}/distill/test-scenarios.md` | BDD test scenarios written |
+| DISTILL | `tests/{test-type-path}/{id}/acceptance/*.feature` | BDD test scenarios written (the .feature file is the SSOT) |
 | DELIVER | `docs/feature/{id}/deliver/roadmap.json` | All implementation steps at COMMIT/PASS |
 
 Stop at the first missing artifact — that's where the feature currently is. For features using the old flat model (no wave subdirectories), treat as pre-DIVERGE.

@@ -2,6 +2,7 @@
 name: prime-sync
 description: "Syncs Claude config between prime repo and target projects. Trigger on 'sync', 'prime-sync', 'push config', 'pull config', 'update prime', 'sync claude config'. Push mode deploys to targets; pull mode imports changes back."
 argument-hint: "[<target-project-path>] (push mode only, optional in pull mode)"
+disable-model-invocation: true
 ---
 
 Ultrathink.

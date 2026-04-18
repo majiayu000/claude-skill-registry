@@ -20,7 +20,7 @@ Self-correcting implementation loop from the n-trax pattern.
 
 **Step 2: Validate**
 - Software: Run tests, linter, type checker, security scan, accessibility checks (if UI).
-  - **Security validation (OWASP)**: Check input validation, output encoding, parameterized queries, no hardcoded secrets, authentication/authorization patterns, dependency vulnerabilities. Reference OWASP Top 10 for each check.
+  - **Security validation (OWASP)**: Check input validation, output encoding, parameterized queries, no hardcoded secrets, authentication/authorization patterns, dependency vulnerabilities. Reference OWASP Top 10:2025 categories for each check.
 - Content: Review against learning objectives/editorial standards, check accessibility (captions, alt text), fact-check claims.
 - AI tool: Run eval test cases, red-team testing, bias assessment.
 - Service: Walk through the service blueprint end-to-end, verify documentation completeness.
@@ -74,7 +74,7 @@ The validate step in the reflexion loop should use the appropriate verification 
 
 **Order**: Always attempt rules-based → computational → inferential. Only escalate to the next mode when the previous mode cannot verify the property in question.
 
-*Source: Pachaar (Anatomy of an Agent Harness — three-mode verification taxonomy)*
+*Source: Trivedy (Anatomy of an Agent Harness, LangChain blog). Three-mode taxonomy adapted from Böckeler (Harness Engineering, martinfowler.com — computational vs inferential distinction). Note: harnesses continue to matter even as models improve — they engineer systems around model intelligence, not just patch deficiencies.*
 
 ## Rules
 - Each iteration must show measurable improvement over the previous.

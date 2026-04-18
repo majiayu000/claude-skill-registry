@@ -30,14 +30,37 @@ Between each pair of collaborating teams:
 - **Facilitating**: Helping another team learn (enabling teams do this)
 
 ### 4. Conway's Law Check
+
+Conway's Law (1968): "Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization's **communication** structure." Note: it's communication structures, not org chart hierarchy — two teams in the same org with poor communication will still produce fragmented systems.
+
+**Inverse Conway Maneuver** (James Lewis, popularized by Skelton & Pais): Deliberately design team communication structures to match the desired system architecture, rather than letting architecture drift to match existing teams.
+
 - Does architecture mirror team structure intentionally?
 - Do team boundaries align with security boundaries?
 - Do team APIs match system APIs?
+- If architecture doesn't match team structure: is the mismatch intentional or a Conway's Law drift?
+
+### 4b. Fracture Planes (Skelton & Pais)
+
+When a team's cognitive load exceeds capacity, use fracture planes to identify the cleanest split point. The fracture plane that aligns with the most criteria wins:
+
+| Fracture Plane | Description |
+|---|---|
+| Business domain | DDD bounded context boundary |
+| Regulatory compliance | Different compliance requirements = different teams |
+| Change cadence | Fast-moving vs stable components |
+| Team location | Co-located vs distributed |
+| Technology | Different tech stacks |
+| User personas | Different user segments |
+| Risk | High-risk vs low-risk components |
+
+*Source: Skelton & Pais (Team Topologies, Chapter 6)*
 
 ### 5. Recommendations
 - Teams without clear type -> needs redesign
 - Collaboration lasting > 1 quarter -> should evolve to X-as-a-Service
 - Stream-aligned team with > 2 cross-team dependencies -> architecture needs decoupling
+- Cognitive load exceeding capacity -> use fracture planes to identify split point
 
 ### 5. Bounded Context Alignment (DDD)
 If the product has multiple domains or services:

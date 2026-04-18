@@ -967,7 +967,6 @@ Message: Consider adding noise handling for real-world audio quality.
 Works well with: `agent-tool-builder`, `multi-agent-orchestration`, `llm-architect`, `backend`
 
 ## When to Use
-
 - User mentions or implies: voice agent
 - User mentions or implies: speech to text
 - User mentions or implies: text to speech
@@ -981,3 +980,8 @@ Works well with: `agent-tool-builder`, `multi-agent-orchestration`, `llm-archite
 - User mentions or implies: tts
 - User mentions or implies: stt
 - User mentions or implies: asr
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

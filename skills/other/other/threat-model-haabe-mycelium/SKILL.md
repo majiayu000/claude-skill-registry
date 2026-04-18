@@ -64,6 +64,28 @@ STRIDE threat modeling for secure design.
    3. [next priority]
    ```
 
+## OWASP Top 10 for LLM Applications (2025)
+
+For AI-powered products (`product_type: ai_tool` or any product using LLM components), extend the STRIDE analysis with LLM-specific threats:
+
+| # | Threat | Description |
+|---|--------|-------------|
+| LLM01 | Prompt Injection | Manipulating model via crafted inputs (direct or indirect) |
+| LLM02 | Sensitive Information Disclosure | Model leaking training data, PII, or system prompts |
+| LLM03 | Supply Chain Vulnerabilities | Compromised model weights, training data, or plugins |
+| LLM04 | Data and Model Poisoning | Corrupting training/fine-tuning data to alter behavior |
+| LLM05 | Improper Output Handling | Trusting LLM output without validation (enables injection downstream) |
+| LLM06 | Excessive Agency | Granting LLM too many permissions, functions, or autonomy |
+| LLM07 | System Prompt Leakage | Extraction of system-level instructions via adversarial prompts |
+| LLM08 | Vector and Embedding Weaknesses | Manipulating RAG pipelines via poisoned embeddings |
+| LLM09 | Misinformation | Model generating false but plausible content (hallucination in high-stakes contexts) |
+| LLM10 | Unbounded Consumption | Resource exhaustion via expensive queries, denial-of-wallet attacks |
+
+*Source: OWASP Top 10 for LLM Applications v2025.1 (genai.owasp.org). Updated from v1.1 (2023) — new entries: System Prompt Leakage (LLM07), Vector and Embedding Weaknesses (LLM08), Misinformation (LLM09), Unbounded Consumption (LLM10).*
+
+For each LLM component in the threat model, assess all 10 threats. Use alongside STRIDE — STRIDE covers system-level threats, OWASP LLM covers model-level threats.
+
 ## Theory Citations
-- STRIDE: Microsoft threat modeling methodology
-- OWASP: Threat modeling guidance
+- STRIDE: Microsoft threat modeling methodology (Shostack)
+- OWASP Top 10:2025: Web application security risks
+- OWASP Top 10 for LLM Applications v2025: AI/LLM-specific security risks

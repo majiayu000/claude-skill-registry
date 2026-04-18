@@ -77,8 +77,18 @@ Update `canvas/opportunities.yml` — write `four_risks` and `ice_score` per sol
 Update `canvas/gist.yml` with idea ICE scores and confidence levels.
 
 ## Theory Citations
-- Gilad: Evidence-Guided (confidence-backed prioritization)
+- Ellis: ICE scoring (Impact × Confidence × Ease — Sean Ellis invented the ICE framework as part of growth methodology)
+- Gilad: Evidence-Guided (Confidence Meter — the evidence-grading layer on top of Ellis's ICE, mapping evidence types to confidence levels)
 - Torres: Continuous Discovery Habits (OST leaves as unit of evaluation)
 - Torres: Product Trio (three perspectives feeding risk assessment)
 - Cagan: Inspired (Four Risks as structured evaluation)
 - Kahneman: Thinking, Fast and Slow (bias in estimation)
+- Kahneman, Sibony & Sunstein: Noise (2021) — unwanted variability in judgment (see Noise Check below)
+
+### Noise Check (Kahneman, Sibony & Sunstein, 2021)
+
+ICE scores are susceptible to **noise** — unwanted variability where different sessions or assessors produce different scores for the same evidence. Unlike bias (systematic skew in one direction), noise is random scatter.
+
+**Detection**: Re-score the same evidence independently (different session or assessor) and compare. If scores diverge by >1 point on any dimension, investigate why before proceeding.
+
+**Mitigation**: Use structured assessment criteria (the Four Risks inputs above), apply scores independently before discussion, and anchor to evidence types rather than gut feel.

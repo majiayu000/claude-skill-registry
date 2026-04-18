@@ -46,9 +46,10 @@ Plot each assumption on:
 ## Step 4: Define Success Criteria
 
 Before running the test, write:
-- **Hypothesis** (Lean UX format, preferred for desirability/usability):
-  "We believe [outcome] will be achieved for [users] if they successfully [change/action]."
-  For feasibility/viability: "We believe [assumption] because [rationale]."
+- **Hypothesis** (Gothelf Lean UX format):
+  "We believe that [doing this/building this feature] for [these people] will achieve [this outcome]. We will know we are right when we see [this measurable signal]."
+  The fourth clause ("we will know when") is critical — it defines success criteria upfront.
+  *Source: Gothelf & Seiden, Lean UX (2013, 3rd ed. 2021). The 4-part format evolved across editions.*
 - **Method**: Which test type and how
 - **Success looks like**: Specific, measurable outcome (e.g., ">60% of survey respondents say X")
 - **Failure looks like**: What would make us abandon this assumption

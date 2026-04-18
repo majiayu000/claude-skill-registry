@@ -1,64 +1,104 @@
 ---
 name: transformer
-description: Use when rewriting a skill so a reasoning model follows it more reliably or with less prompt scaffolding.
-argument-hint: <path to skill.md or skill name>
+description: Use when rewriting an existing skill so Opus 4.7 (or any frontier reasoning model) executes it with better judgment, less scaffolding, and tighter calibration. Do NOT trigger for new skills from scratch (use skill-creator) or for prompt artifacts (use prompt).
+argument-hint: <path to SKILL.md or skill name>
 ---
 
 input = $ARGUMENTS
 
-Rewrite the target skill so a reasoning model executes it with better judgment, not just different formatting.
+Rewrite the target skill so Opus 4.7 executes it with better judgment — not just different wording. The drafting craft is governed by `~/.claude/skills/prompt/SKILL.md` (inlined below); this skill adds only what's specific to transforming existing skills.
 
-## What This Is
+## Resolve input
 
-Skills fail reasoning models in two opposite ways:
+Path first. If no file at `$input`, try `~/.claude/skills/$input/SKILL.md`, then `./.claude/skills/$input/SKILL.md`. HALT and ask if neither resolves — don't guess.
 
-1. **Over-proceduralized** — numbered checklists the model follows mechanically, stopping it from noticing anything not on the list. Scaffolding competes with the model's own chain-of-thought.
-2. **Under-specified** — abstract principles without concrete anchoring. The model understands the philosophy but is slow and uncertain about what to actually *do*.
+## Classify each element
 
-The target is the middle: **motivated structure**. Steps exist where the model genuinely needs them. Each step carries its *why*. Everything the model can reason through on its own is stripped.
+**Strip — content a reasoning model handles natively:**
+- Reasoning scaffolding for problems it solves unaided.
+- Phantom constraints ("write clean code", "be careful", "be thorough").
+- Restated CLAUDE.md doctrine.
+- Cadence scaffolding ("every N tool calls, summarize") — Opus 4.7 emits progress updates natively; external scaffolding impedes.
 
-## Classify Before Cutting
+**Keep — domain knowledge the model cannot infer:**
+- **Orchestration.** Approval gates, agent coordination, conditional phases. Protocol, not scaffolding.
+- **Calibration.** Statements countering pretraining bias — "you'll want to skip this step — don't"; "this tier is 50% of savings". **Highest-value lines in any skill.** Never strip.
+- **Templates & contracts.** Output formats, tool-call shapes, approval signals.
+- **Domain facts the model can't infer.** Library quirks, protocol behaviors, tool gotchas. Phrase positively ("python-pptx: apply formatting before closing the run"), not as things to avoid — negatives prime the forbidden behavior. LLM-output patterns are not domain facts; reframe them as positive invariants in the relevant section.
+- **Domain taxonomies.** Non-obvious expertise compressed into categories.
 
-Read the entire skill. Before changing anything, classify each element:
+**Litmus test.** Would removing this cause wrong output, skipped coordination, or silent regression? Keep. Would a reasoning model arrive here unaided? Strip.
 
-**Strip** — reasoning scaffolding the model handles natively:
-- Steps telling it how to think about problems it already reasons through
-- Phantom constraints it already follows (e.g., "write clean code")
-- Redundant restatements of project-level conventions (CLAUDE.md covers these)
+## Both-directions guardrail
 
-**Keep and compress** — things the model genuinely can't know:
-- **Orchestration** — approval gates, multi-agent coordination, conditional phases. Protocol, not scaffolding.
-- **Domain knowledge** — tiers, taxonomies, heuristic catalogs. These look like checklists but encode non-obvious expertise. Compress if verbose; don't flatten into prose.
-- **Calibration** — statements countering pretraining bias ("you'll want to skip this step — don't", "this tier accounts for 50% of savings"). Highest-value lines in any skill. Never strip.
-- **Templates & contracts** — output formats, teammate prompts, tool restrictions. The model wouldn't produce these without being told.
-- **Failure modes** — specific ways the model will go wrong on *this* task. "Watch out for X" is worth more than paragraphs of positive instruction. Anti-examples showing wrong output are especially high-value.
+Under-specification is the twin failure of over-scaffolding. If the target is principle-only — abstract rules with no anchoring — ADD:
 
-**The litmus test:** Would removing this cause the model to do the wrong thing, skip something, or coordinate incorrectly? Keep it. Would a reasoning model arrive here on its own? Strip it.
+- At least one example or anti-example showing the core judgment call.
+- 2–3 domain facts the model can't infer, phrased positively.
+- Explicit invariants, XML-tagged when load-bearing.
 
-## What Good Looks Like
+The verdict "nothing to cut, much to add" is valid. A rewrite that removes more than it adds is not automatically better.
 
-A well-transformed skill has these qualities:
+## Worked transformation
 
-- **Layered** — intent and scope up top, then principles, then specifics. Not a flat rule list.
-- **Motivated** — every constraint carries a sentence of *why*, so the model adapts in novel situations instead of pattern-matching.
-- **Concrete** — at least one input/output example or anti-example showing the skill's core judgment call. Abstract principles without anchoring produce uncertain behavior.
-- **Failure-aware** — names the 2-3 ways the model is most likely to go wrong on this specific task. Generic warnings ("be careful") do nothing; specific ones ("python-pptx silently drops formatting when...") change behavior.
-- **Appropriately trusting** — constrains where the model's defaults are genuinely wrong; gives freedom where its instincts are solid. Over-control produces worse results than under-control.
+**Before** — over-scaffolded:
 
-## Rewriting Principles
+    ## Investigation
+    1. Open the file
+    2. Read all of it carefully
+    3. Make a list of all the functions
+    4. Identify what they do
+    5. Think about which ones might have bugs
+    6. For each suspected bug:
+       - Write a hypothesis
+       - Test it
+       - Confirm or reject
+    7. Document findings
+    8. Suggest fixes
+    9. Present them to the user
+    10. Iterate based on feedback
 
-- **Motivate constraints.** Explain *why* so the model applies the principle in novel situations.
-- **Trust in context.** Don't restate what project-level config already specifies.
-- **Resist over-specification.** Each instruction competes for attention. Keep only what wouldn't be obvious without the skill.
-- **Positive directives over negative framing.** "Use direct tool calls for simple lookups" beats "don't over-engineer" — negative framing primes the behavior it describes.
-- **Add failure modes, not just principles.** Where will the model go wrong? Name it. A concrete anti-pattern is the highest-density instruction you can write.
+**After** — calibrated:
+
+    Read the target file completely before hypothesizing — hypotheses
+    from partial reads miss cross-function invariants. For each suspected
+    bug: state the hypothesis, name the exact test that would confirm or
+    reject it, run that test before proceeding.
+
+**Diagnosis.** Steps 1–5 are reasoning a 4.7 model does unaided. Step 6's structure is the only load-bearing content, and it gets a calibration line explaining *why* read-fully-first. Steps 7–10 are user-owned workflow, not skill content.
+
+## Calibration
+
+Internalize before drafting:
+
+- You will want to rewrite every line. Don't. Changes in voice without changes in structure are noise.
+- Flat rule lists feel clean; they train the model to pattern-match instead of reason.
+- Your first instinct will be a checklist. The target is likely *under*-specified in calibration, *over*-specified in steps. Compress steps, add calibration.
+- Domain facts and calibration statements are tiny per line but load-bearing. Don't cut them to hit a length target.
 
 ## Process
 
-Read the skill completely. Understand its purpose and the failure modes it prevents. Draft the rewrite. **Present to user for feedback before writing** — transformation is a judgment call, not a mechanical operation.
+1. Resolve `$input` to a SKILL.md path.
+2. Read the target completely.
+3. Classify every element — strip / keep / add-missing.
+4. Draft the rewrite.
+5. **Present via AskUserQuestion. Do not write the file until the user approves.** Skill rewrites are silent by default; regressions are hard to diff after the fact. This gate is non-negotiable.
+6. On approval, write.
 
-## Prompt Design Philosophy
+## Prompt design philosophy
 
-Apply these principles when crafting the rewritten skill:
+Drafting craft is authoritative in the prompt skill — do not restate below. Inlined so it's in context while you draft:
 
 !`cat ~/.claude/skills/prompt/SKILL.md`
+
+## Opus 4.7 migration guide
+
+Target-model behavior reference — what changed in 4.7 vs. prior Claude versions. Inlined so calibration decisions are grounded in documented shifts, not guesses:
+
+!`cat ~/.claude/skills/transformer/opus-4.7-migration-guide.md`
+
+## Opus 4.7 — what's new
+
+New-capability reference — what 4.7 can now do unaided (often justifying scaffolding removal):
+
+!`cat ~/.claude/skills/transformer/opus-4.7-whats-new.md`

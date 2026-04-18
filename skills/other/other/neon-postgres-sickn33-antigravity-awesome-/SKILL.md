@@ -604,7 +604,6 @@ Message: HTTP driver with transaction. Use Pool from @neondatabase/serverless.
 - user needs deployment -> vercel-deployment (Environment variables, preview databases)
 
 ## When to Use
-
 - User mentions or implies: neon database
 - User mentions or implies: serverless postgres
 - User mentions or implies: database branching
@@ -613,3 +612,8 @@ Message: HTTP driver with transaction. Use Pool from @neondatabase/serverless.
 - User mentions or implies: connection pooling
 - User mentions or implies: preview environments
 - User mentions or implies: database per preview
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

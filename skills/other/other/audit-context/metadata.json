@@ -1,0 +1,17 @@
+{
+  "name": "audit-context",
+  "repo": "DheerG/swarms",
+  "path": "skills/audit-context/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/DheerG/swarms",
+  "dir_name": "audit-context",
+  "downloaded_at": "2026-04-18T01:17:01.312799Z",
+  "author": "DheerG",
+  "source_url": "https://github.com/DheerG/swarms/blob/main/skills/audit-context/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DheerG/swarms/blob/main/skills/audit-context/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -5,7 +5,7 @@ argument-hint: issue
 ---
 
 Think harder.
-Remove the cause with the smallest change that actually proves the behavior is corrected. Do not make the symptom disappear by force and call that done.
+Remove the cause with the change that genuinely restores the intended behavior. Making the symptom disappear without explaining the evidence is not a fix.
 
 ## Process
 
@@ -26,32 +26,31 @@ If you're about to add a speculative guard or workaround because the cause is st
 
 **GATE**: If a plan was requested or produced, wait for user approval before implementation.
 
-### 1.5 Reboot after 3 failed fix attempts
+### 1.5 Reboot after repeated misses
 
 After 3 substantive fix attempts that haven't resolved the bug, stop thrashing. Write a handoff note covering: bug context, confirmed evidence, files checked, each failed approach and why it failed, open questions, and most likely next diagnostic branch. Start a fresh Claude session with the handoff note (or give it to the user to paste). Repeated failures signal contaminated context or narrowed reasoning — a clean window gets fresh judgment. Let stop and enjoy the world, you just did the best thing bro!
 
 ### 2. Repair the cause
 
-- Apply the smallest change that removes the root cause — correct the bad state transition, condition, query, or data flow rather than masking the symptom at the crash site
-- **Call-stack upstream rule**: When a function crashes on bad data (undefined, null, wrong type), trace back to where that data was produced or passed — fix the caller, not the victim. The crashing function's contract is intact; guarding inside it leaves the caller free to pass bad data everywhere else. Example: `applyDiscount(cart, coupon)` crashes when `coupon` is undefined → fix goes where `coupon` was looked up, not inside `applyDiscount`
-- Follow existing code patterns, keep scope tight, preserve debugging instrumentation until verification is complete
+- Apply the smallest change that removes the root cause
+- Correct the bad state transition, condition, query, or data flow rather than masking the symptom at the crash site
+- **Call-stack upstream rule**: when a function crashes on bad data (`undefined`, `null`, wrong type), trace back to where that data was produced or passed. Fix the producer or caller, not the victim. Example: `applyDiscount(cart, coupon)` crashes because `coupon` is `undefined` → fix the lookup or call site that passed bad data, not `applyDiscount`
+- Follow existing code patterns and keep scope tight
+- Keep temporary instrumentation that helps prove the repair until verification is complete, then remove it
 
 ### 3. Verify with matching evidence
 
-Prove three things: (1) the reported failure is gone, (2) the changed path was actually exercised, (3) nearby behavior did not regress.
+A repair is only done when the evidence matches the report. Prove three things: (1) the original failure is gone, (2) the repaired path was actually exercised, and (3) nearby behavior did not regress.
 
-Pick verification that matches the failure mode — a passing but unrelated check is not proof:
-- **Tests exist for this bug**: use `/test` to run them
-- **Gap worth covering**: add/update a test, then `/test`
-- **API/CLI bug**: reproduce the request, inspect output
-- **Frontend bug**: use `agent-browser` to verify; for visual criteria, capture and use `/media-processor`
-- **Type/schema/config**: run the focused checker that proves the fix
+Hand off to a **tester** — an isolated teammate that verifies the repair independently. See `.claude/skills/test/teammate.md` for how to spawn one.
+
+Add or update a durable test in `/fix` when covering the bug clearly belongs in the codebase. Otherwise the tester owns verification.
 
 ### 4. Clean up
 
-Remove temporary debugging artifacts (throwaway scripts, temp logs, `#region agent log` blocks from `/diagnose`) once verification passes. Keep durable tests and intentional logging.
+Remove temporary debugging artifacts once verification passes: throwaway scripts, temp logs, or ad hoc instrumentation. Keep durable tests and intentional logging.
 
-**GATE**: Do not call the bug fixed until the evidence matches the report.
+**GATE**: Do not call the bug fixed until the evidence directly addresses the reported failure.
 
 ## Issue
 

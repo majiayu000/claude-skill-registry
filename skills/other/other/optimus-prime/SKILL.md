@@ -1,77 +1,82 @@
 ---
 name: optimus-prime
 argument-hint: additional-context
-description: "Bootstraps Claude Code configuration for a project. Trigger on 'prime this project', 'set up claude', 'configure claude for this repo', 'bootstrap', 'prime', 'optimus-prime'. Detects stack, copies starter skills, generates CLAUDE.md and project-specific rules."
+description: "Generates a Claude Code configuration tailored to a specific project. Use whenever the user wants to prime a project, set up claude for a repo, bootstrap claude config, or re-prime/refresh an already-primed project (for example after `/prime-sync` pulled new starter content). Triggers on 'prime', 'prime this project', 'optimus-prime', 're-prime', 'refresh claude config', 'regenerate CLAUDE.md', 'set up claude for this repo'. Deeply analyzes the real codebase and builds project-specific skills, rules, and CLAUDE.md — not generic boilerplate. For ongoing config health checks and proposal review, use `self-evolve` instead."
+disable-model-invocation: true
 ---
 
 Ultrathink.
 
-## Context Assessment
+## Mission
 
-Before starting, check:
-- `.claude/rules/` has path-scoped files **besides `_apply-all.md`**? → Ask if user wants to reconfigure (`_apply-all.md` is a boilerplate default and should not be touched)
-- `./CLAUDE.md` exists? → Ask if user wants to regenerate
+Generate a Claude configuration that fits the specific project. Every skill, rule, and CLAUDE.md entry must exist because this project needs it — not because a template included it. Analyze the real codebase deeply, understand its conventions and patterns, and build a config that makes Claude work well here.
 
-Wait for user confirmation before proceeding.
+## Modes
 
-## Quick Start
+- **Fresh prime** — no claude config yet. Build from scratch.
+- **Re-prime** — claude config already exists. Preserve intentional project work, refresh what is stale or generic, fill gaps.
 
-1. Analyze project codebase
-2. Copy matching starter skills, create skills for uncovered stacks via `/skill-creator`
-3. Identify `.claude/rules/` guardrails (optional — zero rules is valid)
-4. Generate `./CLAUDE.md` — only guide what Claude doesn't do by default
-5. Offer `CLAUDE.local.md` setup (gitignored personal preferences)
-6. Clean up and verify
+Default to re-prime whenever meaningful existing config is found. Never overwrite it wholesale without user approval.
 
-## Core Philosophy
+## Flow
 
-1. **Lean knowledge system** — CLAUDE.md (always-on context) + Skills (domain knowledge) + Rules (guardrails, auto-attach). On-demand refs point to wherever docs already live.
-2. **Guide, don't template** — Claude generates good CLAUDE.md natively. Augment with reference pointers and project-specific context it wouldn't discover on its own.
-3. **LLM-driven analysis** — Claude explores codebase, not scripts
-4. **Leverage existing tools** — Use `/skill-creator` to autonomously create and optimize skills (with eval-driven iteration), and `docs-seeker` for documentation research
+1. **Analyze** the repo deeply — stack, conventions, boundaries, docs, existing config. See [analysis-checklist.md](./references/analysis-checklist.md).
+2. **Propose** findings using the Output Format below. Do not touch meaningful files before approval.
+3. **Create skills** via `/skill-creator` — every skill must go through skill-creator to ensure quality and project fit. Starters in `.claude/starter-skills/` are reference input to accelerate creation, not templates to copy.
+4. **Generate or refine CLAUDE.md** — lean, high-signal, always-on context only. Point to docs/READMEs for detail.
+5. **Rules only if needed** — apply the rule test. Zero rules is valid.
+6. **Offer CLAUDE.local.md** — personal preferences (role, sandbox URLs, preferred test data, workflow quirks), gitignored.
+7. **Clean up** — delete `.claude/starter-skills/` after processing. Keep protected skills. Confirm all deletions.
+8. **Verify** — references resolve, stack claims match evidence, config is project-specific not generic.
+9. **Offer skill optimization** — after everything is set up, offer two paths: description optimization only (fast) or full optimization with evals loop + self-improve (recommended — battle-tests skills before the user depends on them).
 
-## Decision Matrix
+Full step-by-step in [setup-project.md](./references/setup-project.md).
 
-| Detected | Where | Rule Test |
-|----------|-------|-----------|
-| General framework/library | Skill via `/skill-creator` | — |
-| Project-specific constraint (wrong code even with skill) | `.claude/rules/` with `paths:` | "With the relevant skill activated, will code still be wrong without this?" → Yes |
-| Always-on project context (identity, commands, stack) | `CLAUDE.md` | — |
-| Detailed architecture/domain docs (human) | `docs/`, READMEs — referenced from CLAUDE.md | — |
-| Agent-optimized references (optional) | `.claude/project/` — only when human docs are too verbose for agents | — |
+## Placement Decision Matrix
 
-**Rules are optional.** "Important" ≠ "must auto-attach." Only create rules for things skills can't cover.
+Every piece of knowledge must earn its place. Use this to decide where it belongs:
 
-## Output Structure
+| Detected need | Where it belongs | Test |
+|---|---|---|
+| General framework/library knowledge | Skill (via `/skill-creator`) | Would a reusable skill teach this across projects? |
+| Project-specific constraint that still produces wrong code with the right skill loaded | `.claude/rules/<name>.md` with `paths:` | With the relevant skill activated, will code still be wrong without this? |
+| Identity, commands, stack, key architecture, reference pointers | `CLAUDE.md` | Should this be always-on for most tasks in this repo? |
+| Detailed architecture or domain explanations | Existing `docs/`, READMEs — referenced from CLAUDE.md | Valuable but too detailed for always-on? |
+| Dense agent-oriented reference material - referenced from CLAUDE.md | `.claude/project/` (optional) | Do agents need a tighter reference than the human docs provide? |
 
-```
-./CLAUDE.md                       # Always-on project context
-./CLAUDE.local.md                 # Personal preferences (gitignored, optional)
-.claude/rules/
-└── <name>.md                     # Path-scoped guardrails (auto-attached, optional)
-```
+## Principles
 
-## Gotchas
+- **Fit the project, not a template.** Every skill, rule, and CLAUDE.md entry must exist because this specific project needs it. Generic boilerplate degrades context quality.
+- **Repo evidence is the source of truth.** Verify conventions from actual source files, configs, and docs. Do not assert what you haven't confirmed.
+- **Lean context, high signal.** Follow the context engineering philosophy — load only what's needed, when it's needed. CLAUDE.md carries always-on essentials. Skills load on demand. Rules auto-attach by path.
+- **Rules are optional and path-scoped.** Only create a rule when the rule test passes. Do **not** modify `_apply-all.md` — it is a universal boilerplate rule from prime, not project config.
+- **Reuse over duplication.** If the project has strong docs, point to them. Do not re-author parallel agent docs unless existing material is too noisy or incomplete.
 
-- **Over-ruling existing conventions**: Don't overwrite project rules the team already has in place.
-- **Copying starters verbatim**: Starter skills need project-specific customization. Generic starters are unhelpful.
-- **Forgetting to delete starters**: After processing, starter-skills/ directory must be removed from the target.
-- **Modifying _apply-all.md in target**: These are universal rules from prime. Don't change them during priming.
+## Output Format
 
-## Constraints
+Before making non-trivial changes, report findings in this shape:
 
-- Rules auto-attach: do NOT reference them in CLAUDE.md
-- On-demand references point to wherever docs already live (`docs/`, READMEs, etc.) — no prescribed directory
+### Current State
+What Claude config already exists; what the repo evidence says about stack, tooling, and conventions.
+
+### Proposed Changes
+What to create, update, keep, or remove — including which skills to build and what each should cover.
+
+### Files to Touch
+Concrete file list with short purpose notes.
+
+Include these only when non-empty:
+- **Decisions Needing User Input** — overwrites, deletions, or major structural changes
+- **Risks / Assumptions** — inferred facts that still need verification
+
+After approval, implement and finish with a short summary of what changed and any follow-ups.
 
 ## References
 
 | Reference | Content |
-|-----------|---------|
-| [analysis-checklist.md](./references/analysis-checklist.md) | What to look for in projects |
-
-## Workflows
-
-- [Full Setup](./workflows/setup-project.md) — Complete project setup flow (default workflow)
+|---|---|
+| [analysis-checklist.md](./references/analysis-checklist.md) | What to inspect during repo + existing-config review |
+| [setup-project.md](./references/setup-project.md) | Fresh-prime / re-prime step-by-step workflow |
 
 ## Additional Context (Optional)
 

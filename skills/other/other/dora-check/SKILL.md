@@ -17,11 +17,13 @@ Assess delivery health using product-type-appropriate metrics. Check `product_ty
 
 ## Software Products
 
-Assess delivery health using Forsgren's four DORA metrics AND LinearB's APEX AI-era metrics.
+Assess delivery health using Forsgren's five DORA metrics AND LinearB's APEX AI-era metrics.
 
 ## Part 1: DORA Metrics (Forsgren)
 
-Gather current metrics from CI/CD, deployment logs, incident records:
+Gather current metrics from CI/CD, deployment logs, incident records.
+
+*Note: DORA expanded from 4 to 5 metrics. "MTTR" was renamed to "Failed Deployment Recovery Time" (FDRT) for precision — the original name was ambiguous with other mean-time-to-X metrics. "Reliability" was added as the 5th metric in the 2024 State of DevOps report.*
 
 **Deployment Frequency**: How often does code reach production?
 - Elite: On-demand (multiple deploys/day)
@@ -41,11 +43,21 @@ Gather current metrics from CI/CD, deployment logs, incident records:
 - Medium: 31-45%
 - Low: 46-100%
 
-**Mean Time to Recovery**: Time to restore service after failure?
+**Failed Deployment Recovery Time (FDRT)**: Time to restore service after a failed deployment?
 - Elite: Less than one hour
 - High: Less than one day
 - Medium: Between one day and one week
 - Low: More than one week
+
+*Formerly "Mean Time to Recovery (MTTR)." Renamed for precision — FDRT measures recovery from failed deployments specifically, not all incidents.*
+
+**Reliability**: Does the software meet or exceed its reliability targets?
+- Elite: Meets or exceeds targets
+- High: Slightly below targets
+- Medium: Moderately below targets
+- Low: Significantly below targets
+
+*Added in DORA 2024. Measures operational reliability via SLOs/SLIs. Connects to SRE metrics in Part 3.*
 
 ## Part 2: APEX Metrics (LinearB)
 
@@ -64,7 +76,7 @@ Assess the four APEX pillars to detect AI-era delivery problems:
 - Rework rate: % of ALL code rewritten within 21 days?
 - Are delivery estimates getting more or less reliable with AI?
 
-### E — Efficiency (The Shifting Bottleneck)
+### E — Flow Efficiency (The Shifting Bottleneck)
 - End-to-end cycle time: is it actually decreasing?
 - Review wait time: are PRs waiting longer before first review?
 - AI review wait ratio: do AI PRs wait longer than human PRs? (Benchmark: 4.6x — LinearB 2026)
@@ -87,14 +99,15 @@ Assess the four APEX pillars to detect AI-era delivery problems:
 | Deploy freq | ... | ... | ... | ... |
 | Lead time | ... | ... | ... | ... |
 | Change fail rate | ... | ... | ... | ... |
-| MTTR | ... | ... | ... | ... |
+| FDRT | ... | ... | ... | ... |
+| Reliability | ... | ... | ... | ... |
 
 ### APEX Metrics (AI-Era)
 | Pillar | Status | Key Signal |
 |--------|--------|-----------|
 | AI Leverage | ... | AI acceptance rate: ...% |
 | Predictability | ... | Planning accuracy: ...%, Rework rate: ...% |
-| Efficiency | ... | Cycle time: ..., Review wait: ... |
+| Flow Efficiency | ... | Cycle time: ..., Review wait: ... |
 | Developer Experience | ... | Satisfaction: ..., Burnout: ... |
 
 ### Shifting Bottleneck Check
@@ -260,7 +273,7 @@ Update `canvas/service-metrics.yml` with current measurements and `last_measured
 ---
 
 ## Theory Citations
-- Forsgren, Humble, Kim: Accelerate (DORA metrics)
+- Forsgren, Humble, Kim: Accelerate (DORA metrics -- 5 metrics including Reliability and FDRT naming from 2024 report)
 - LinearB: APEX Framework (AI-era delivery measurement)
 - Beyer, Jones, Petoff, Murphy: Site Reliability Engineering (error budgets, SLIs/SLOs)
 - Smart: BVSSH (holistic flow optimization — APEX X maps to Happier)

@@ -1,6 +1,6 @@
 ---
 name: intent-detection
-description: "Route ambiguous work requests to the correct /phx: workflow. Use when intent is unclear, mixed (bug + refactor), or user asks \"how to approach this\"."
+description: "Route ambiguous Phoenix/LiveView/Ecto work requests to the correct /phx: workflow. Use when intent is unclear, mixed (bug fix vs. refactor), or scope is ambiguous."
 effort: medium
 user-invocable: false
 ---

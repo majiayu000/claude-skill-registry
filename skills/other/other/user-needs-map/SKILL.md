@@ -37,12 +37,18 @@ From interviews, observations, support tickets, and behavioral data, extract dis
 - Separate needs from solutions: "I need to know my order status" not "I need email notifications"
 
 ### 3. Score Needs (Importance vs Satisfaction)
+
+*Source: Ulwick (Outcome-Driven Innovation) for opportunity scoring. Allen's contribution is the dependency mapping (steps 6-7), not the scoring method.*
+
 For each need:
 - **Importance** (1-10): How critical is this to the user?
 - **Current satisfaction** (1-10): How well do existing solutions meet this need?
 - **Underserved score**: importance - current_satisfaction (higher = bigger opportunity)
 
 ### 4. Classify Need States
+
+*Source: Ulwick (ODI) opportunity landscape.*
+
 - **Met**: Current solutions adequately address this (satisfaction >= 7)
 - **Underserved**: Need exists, current solutions are poor (importance high, satisfaction low)
 - **Overserved**: Too much effort on needs users don't care about (importance low, satisfaction high)
@@ -71,7 +77,8 @@ Before mapping needs, run `/bias-check`. Key biases:
 - **Projection bias**: Assuming users need what YOU would need
 
 ## Theory Citations
-- Allen: User Needs Mapping (methodology, connection to Wardley and Team Topologies)
+- Allen: User Needs Mapping (dependency mapping from needs to capabilities to components, connection to Wardley and Team Topologies)
+- Ulwick: Outcome-Driven Innovation (Importance/Satisfaction scoring and need state classification)
 - Christensen: Jobs to be Done (functional/emotional/social dimensions)
 - Wardley: Value chain mapping (needs as anchor points)
 - Skelton: Team Topologies (needs informing team boundaries)

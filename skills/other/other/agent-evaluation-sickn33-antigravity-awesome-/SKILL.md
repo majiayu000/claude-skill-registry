@@ -1123,9 +1123,13 @@ Workflow:
 Works well with: `multi-agent-orchestration`, `agent-communication`, `autonomous-agents`
 
 ## When to Use
-
 - User mentions or implies: agent testing
 - User mentions or implies: agent evaluation
 - User mentions or implies: benchmark agents
 - User mentions or implies: agent reliability
 - User mentions or implies: test agent
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

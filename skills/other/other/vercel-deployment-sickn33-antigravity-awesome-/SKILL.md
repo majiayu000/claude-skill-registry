@@ -667,7 +667,6 @@ Workflow:
 Works well with: `nextjs-app-router`, `supabase-backend`
 
 ## When to Use
-
 - User mentions or implies: vercel
 - User mentions or implies: deploy
 - User mentions or implies: deployment
@@ -676,3 +675,8 @@ Works well with: `nextjs-app-router`, `supabase-backend`
 - User mentions or implies: environment variables
 - User mentions or implies: edge function
 - User mentions or implies: serverless function
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

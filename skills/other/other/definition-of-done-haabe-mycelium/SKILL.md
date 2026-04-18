@@ -36,7 +36,7 @@ DoD checklist enforcement.
 - [ ] No hardcoded secrets
 - [ ] Authentication/authorization verified
 - [ ] Dependency scan clean (no high/critical vulnerabilities)
-- [ ] OWASP Top 10 addressed for this feature
+- [ ] OWASP Top 10:2025 addressed for this feature
 
 ### Accessibility
 - [ ] Semantic HTML used correctly

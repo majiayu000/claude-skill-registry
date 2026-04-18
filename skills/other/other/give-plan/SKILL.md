@@ -34,11 +34,14 @@ Read relevant files and search the codebase before proposing changes. Be explici
 
 Don't force every request into the same template.
 
-### 4. Write the plan artifact
-Save plans in `plans/` at the project root. Use `date +%Y%m%d%H%M%S` for timestamps.
+### 4. Write the plan (right-size the artifact)
+Match artifact to plan size — don't force `plans/*.md` on small scoped changes.
 
-- `plans/YYYYMMDDHHMMSS-{plan-name}.md` for most simple plans
-- `plans/YYYYMMDDHHMMSS-{plan-name}/plan.md` + separate phase files only when each phase warrants independent reading/editing
+- **Inline prose** — small single-file tweaks, quick scoped edits, brief decisions. Present the plan in the response and stop.
+- **`plans/YYYYMMDDHHMMSS-{plan-name}.md`** — multi-file features, migrations, architecture decisions, anything that benefits from review or history.
+- **`plans/YYYYMMDDHHMMSS-{plan-name}/plan.md` + phase files** — large multi-phase work where each phase warrants independent reading/editing.
+
+Use `date +%Y%m%d%H%M%S` for timestamps.
 
 A strong plan covers: problem summary, recommended approach, phases/workstreams, affected files/modules/systems, dependencies and sequencing, validation strategy, risks and mitigations, assumptions and open questions, non-goals when useful.
 

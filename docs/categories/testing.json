@@ -1,8 +1,8 @@
 {
   "category": "testing",
   "code": "tst",
-  "count": 6738,
-  "updated_at": "2026-04-17T02:08:28.190079Z",
+  "count": 6740,
+  "updated_at": "2026-04-18T01:57:54.053726Z",
   "skills": [
     {
       "name": "frontend-testing",
@@ -52135,6 +52135,24 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "ios-simulator-skill",
+      "description": "iOS Simulator automation for testing with semantic navigation and Xcode integration",
+      "repo": "conorluddy/ios-simulator-skill",
+      "path": "ios-simulator-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "ios",
+        "simulator",
+        "xcode",
+        "testing",
+        "mobile"
+      ],
+      "stars": 0,
+      "install": "conorluddy/ios-simulator-skill/ios-simulator-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "shopify-api-patterns",
       "description": "Common Shopify Admin GraphQL API patterns for product queries, metafield operations, webhooks, and bulk operations. Auto-invoked when working with Shopify API integration.",
       "repo": "sarojpunde/shopify-dev-toolkit-claude-plugins",
@@ -76772,6 +76790,23 @@
       "stars": 0,
       "install": "jeremylongshore/claude-code-plugins-plus-skills/planned-skills/generated/10-performance-testing/stress-test-config",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "playwright-skill",
+      "description": "Browser automation with Playwright - Claude writes and executes custom scripts",
+      "repo": "lackeyjb/playwright-skill",
+      "path": "skills/playwright-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "playwright",
+        "browser",
+        "automation",
+        "testing"
+      ],
+      "stars": 0,
+      "install": "lackeyjb/playwright-skill/skills/playwright-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "code-templates",

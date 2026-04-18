@@ -16,11 +16,11 @@ If the request is clear, start. If it's ambiguous or multi-faceted, ask clarifyi
 
 ## The loop
 
-### 1. Break into tasks (skip for simple requests)
+### 1. Break into tasks only when it helps
 
-For simple, single-concern requests — just implement, verify, and move on. No tasks needed.
+For a small single-concern request, just implement, verify, and continue.
 
-For multi-step or collaboration work, use `tasks.py` to track progress:
+For multi-step work or collaboration, use `tasks.py` to track concrete outcomes:
 
 ```
 tasks.py --task-file <slug> add "<description>" "<expected outcome>"
@@ -33,35 +33,33 @@ For other commands, run `tasks.py --help`. Each task needs a clear `expected` fi
 
 ### 2. Implement → Verify → Review → Next
 
-Pick the next unblocked task, implement it, verify it, then review what changed before moving on.
+Pick the next unblocked task, make the change, then hand off to a **tester** and (for risky work) a **reviewer** — isolated teammates that judge the change independently. See `.claude/skills/test/teammate.md` and `.claude/skills/review-code/teammate.md` for how to spawn them.
 
-**Verification is flexible** — pick the method that actually proves the task works:
+`/cook` owns implementation. The tester owns verification. Give the tester:
+- the user-visible claim or acceptance criteria
+- the files or behavior you changed
+- the most likely regression surface
+- any constraints that matter
 
-| Situation | Verification approach |
-|-----------|----------------------|
-| Project has relevant tests | Run them |
-| You added new behavior | Write tests in the project's test framework |
-| UI/frontend change | Use `agent-browser` to verify the rendered result; if acceptance depends on visual fit or comparison against a screenshot/mockup, capture the result and use `/media-processor` before calling it done |
-| Logic with no test coverage | Write a quick temporary verification script to exercise the code path, then discard it unless it clearly belongs in the repo |
-| API endpoint | Call it and check the response |
-| Type/schema change | Run the type checker |
+You can still add durable tests, fixtures, or stable selectors when they belong to the product change itself. Do not stuff temporary verification tactics into `/cook` just to get through one run.
 
-**Before running any verification command, confirm your changes are actually on disk.** Run `git diff --stat` — it should list the files you modified. If it shows nothing when you expected changes, your Write/Edit calls didn't execute — retry them before proceeding. Lint and type checks pass on unchanged files too, so a clean result on unmodified code is a vacuous pass, not evidence the feature works.
+Before invoking verification, confirm the edits actually landed on disk. If the change you expect is missing from the diff, fix that first; a passing check against unchanged code is worthless evidence.
 
-Never mark a task done on faith. Verification proves the behavior works. Review checks whether the change is correct and scoped. For risky or non-trivial tasks, run `/review-code` before marking done. If repeated verification fails without the failure mode changing, reassess your approach or ask the user.
-And don't forget to update tasks progress.
+Do not mark a task done on confidence alone. The tester proves the behavior. The reviewer checks that the implementation is correct, scoped, and aligned with the repo. For risky or non-trivial work, spawn a reviewer before marking the task complete.
 
-### 3. Final review
+Update task status as you go so the execution trail stays trustworthy.
 
-After completing all tasks, always review the full change set before declaring the work done. This final pass catches cross-task issues, scope drift, and things that looked fine locally but are weaker in combination. Use `/review-code` for the final review.
+### 3. Review the whole change set
+
+After the task list is complete, review the combined diff before declaring success. Cross-task issues often appear only in the final aggregate: mismatched assumptions, naming drift, incomplete ripple updates, or verification that was too narrow. Spawn a reviewer for this final pass.
 
 ### 4. Report
 
 When done, summarize:
-- What changed (files + brief description)
-- How you verified each piece
-- Decisions you made and why
-- Anything the user should follow up on
+- what changed
+- how each claim was verified
+- decisions that materially shaped the implementation
+- any follow-up the user should know about
 
 ## Request
 

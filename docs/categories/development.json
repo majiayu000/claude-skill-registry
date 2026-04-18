@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19702,
-  "updated_at": "2026-04-17T02:08:26.309862Z",
+  "count": 19703,
+  "updated_at": "2026-04-18T01:57:52.206387Z",
   "skills": [
     {
       "name": "fix",
@@ -92073,6 +92073,24 @@
       "stars": 0,
       "install": "yurake/skills/dev/commit-push",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "memory-linker",

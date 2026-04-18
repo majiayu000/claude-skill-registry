@@ -15,7 +15,19 @@ When scope is `(none)`, or when pending proposals exist and user says "ok":
 ```bash
 python3 .claude/hooks/self-improve/self_improve_db.py resolve list
 ```
-Show each proposal with its rationale. Ask the user to approve or reject each.
+
+### Step 0: Consolidate before showing
+
+User attention is finite — showing 12 proposals when 4 are duplicates, 3 already exist in rules, and 2 are noise wastes their focus on what matters. Before presenting anything, read the existing config (`.claude/rules/`, CLAUDE.md, CLAUDE.local.md, active skills) to understand what's already there. Then filter: proposals already covered by existing rules, duplicates of each other, and low-value noise that wouldn't improve agent behavior. Merge proposals addressing the same pattern into one entry with the clearest rationale.
+
+Tell the user what you filtered: "Showing X of Y proposals (Z filtered)."
+
+After user finishes reviewing visible proposals, batch-reject the filtered ones:
+```bash
+python3 .claude/hooks/self-improve/self_improve_db.py resolve <id1>,<id2>,... rejected
+```
+
+For each shown proposal, ask the user to approve or reject.
 
 ### Step 1: Classify — where does it belong?
 
@@ -54,7 +66,7 @@ Use the proposal's `rationale` to construct a minimal replay prompt that would t
 ### Step 5: Resolve
 
 ```bash
-python3 .claude/hooks/self-improve/self_improve_db.py resolve <id> approved  # or rejected
+python3 .claude/hooks/self-improve/self_improve_db.py resolve <id>[,<id>,...] approved  # or rejected
 ```
 
 ### Step 6: Confirm

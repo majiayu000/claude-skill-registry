@@ -1,0 +1,17 @@
+{
+  "name": "quality-gates",
+  "repo": "Kanevry/session-orchestrator",
+  "path": "skills/quality-gates/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Kanevry/session-orchestrator",
+  "dir_name": "quality-gates-kanevry-session-orchestrator",
+  "downloaded_at": "2026-04-18T01:19:23.502921Z",
+  "author": "Kanevry",
+  "source_url": "https://github.com/Kanevry/session-orchestrator/blob/main/skills/quality-gates/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kanevry/session-orchestrator/blob/main/skills/quality-gates/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

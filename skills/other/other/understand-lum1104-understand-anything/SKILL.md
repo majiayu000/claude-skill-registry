@@ -29,6 +29,17 @@ Determine whether to run a full analysis or incremental update.
      - Verify the resolved path exists and is a directory (run `test -d <path>`). If it does not exist or is not a directory, report an error to the user and **STOP**.
      - Set `PROJECT_ROOT` to the resolved absolute path.
    - If no directory path argument is found, set `PROJECT_ROOT` to the current working directory.
+1.5. **Ensure the plugin is built.** Later phases invoke Node scripts that import `@understand-anything/core`. On a fresh install `packages/core/dist/` does not exist yet — build once. This skill file lives at `<PLUGIN_ROOT>/skills/understand/SKILL.md`, so the plugin root is two directories above it.
+
+   ```bash
+   PLUGIN_ROOT="<two directories above this SKILL.md>"
+   if [ ! -f "$PLUGIN_ROOT/packages/core/dist/index.js" ]; then
+     cd "$PLUGIN_ROOT" && (pnpm install --frozen-lockfile 2>/dev/null || pnpm install) && pnpm --filter @understand-anything/core build
+   fi
+   ```
+
+   If `pnpm` is missing, report to the user: "Install Node.js ≥ 22 and pnpm ≥ 10, then re-run `/understand`."
+
 2. Get the current git commit hash:
    ```bash
    git rev-parse HEAD

@@ -173,8 +173,9 @@ theory_gates_status:
 ```
 
 1. **Tell the user**: "Interview complete. I've created your L0 Purpose diamond and populated the initial canvas files."
-2. **Suggest next step**: "Run `/diamond-assess` to see your starting state and what to work on next."
-3. **The typical flow from here**:
+2. **Render the journey map**: Follow `.claude/engine/wayfinding.md` to render the "You Are Here" map. Use the post-interview intro: "Welcome to your product journey. Here's the map:" This is the user's first view of the full L0→L5 structure — it builds the mental model they'll carry forward.
+3. **Suggest next step**: "Run `/diamond-assess` to see your starting state and what to work on next."
+4. **The typical flow from here**:
    - `/diamond-progress` to advance L0 through its phases
    - L0 spawns L1 (Strategy) when purpose is solid -- unless project type is solo_hobby (skip L1, go to L2)
    - L1 spawns L2 (Opportunity) when landscape is mapped

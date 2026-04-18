@@ -43,15 +43,33 @@ For each dimension, assess current state:
 - Evidence: [cite specific metrics or observations]
 
 ### Happier
+Smart's Happier covers four stakeholders: **customers, colleagues, citizens, and climate**. "Not 'more for less' at any human or climatic cost."
+
+**Colleagues:**
 - [ ] Team working at sustainable pace? No chronic overtime? (XP -- Beck)
 - [ ] AI tools helping or adding cognitive load? (APEX DevX)
 - [ ] No signs of burnout?
 - [ ] Team has autonomy and purpose?
-- [ ] Users expressing satisfaction?
 - [ ] Learning happening continuously?
+
+**Customers:**
+- [ ] Users expressing satisfaction?
+- [ ] Customer advocacy high? (Not just retained — actively recommending?)
+
+**Citizens:**
+- [ ] Positive societal impact? (Open knowledge sharing, accessibility, inclusivity)
+- [ ] No harm to communities or vulnerable groups?
+
+**Climate:**
+- [ ] Compute/token usage proportionate to value delivered? (Not brute-forcing with retries)
+- [ ] Waste prevented? (Projects killed before unnecessary code, discovery before delivery)
+- [ ] Sustainable resource usage patterns?
+
 - Evidence: [cite specific metrics or observations]
 
-### CALMS Culture Assessment (Humble)
+### CALMS Culture Assessment (Willis & Humble)
+
+*CALMS originated as CAMS (Culture, Automation, Measurement, Sharing) coined by Damon Edwards and John Willis at DevOpsDays Mountainview 2010. Jez Humble added the L (Lean) to create CALMS.*
 
 Assess the five cultural dimensions that explain WHY DORA outcomes are what they are:
 
@@ -93,5 +111,5 @@ Overall: [summary and recommended actions]
 
 ## Theory Citations
 - Smart: Sooner Safer Happier (BVSSH framework)
-- Humble: CALMS (DevOps culture assessment -- explains WHY DORA outcomes are what they are)
+- Willis & Humble: CALMS (Willis coined CAMS at DevOpsDays 2010, Humble added Lean -- explains WHY DORA outcomes are what they are)
 - Forsgren: Accelerate (metrics alignment)

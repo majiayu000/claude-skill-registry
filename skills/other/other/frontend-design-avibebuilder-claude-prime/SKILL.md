@@ -83,7 +83,7 @@ Treat these as strong defaults, not blind rules:
 
 ### References
 
-- `references/design-system-generation.md` — use when the user wants a full design-system recommendation assembled from multiple search domains
+- `references/design-system-generation.md` — use when the user wants a full design-system or style-guide recommendation for a project type (e.g. "SaaS dashboard", "e-commerce luxury", "fintech app") assembled from multiple search domains
 - `references/quality-checklist.md` — use as the final self-critique pass before delivering UI work
 
 ## Gotchas

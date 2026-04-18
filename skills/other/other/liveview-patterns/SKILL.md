@@ -1,6 +1,6 @@
 ---
 name: liveview-patterns
-description: "LiveView patterns — PubSub, uploads, components, forms, assign_async, streams. Use when building LiveView features or debugging handle_event lifecycle."
+description: "Build LiveView: async data (assign_async), PubSub (check connected?), phx-change events, form components/modals/uploads, streams for lists, live_patch. Use when handling interactions, debugging events, or tracking Presence."
 effort: medium
 user-invocable: false
 paths:

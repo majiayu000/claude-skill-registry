@@ -23,12 +23,6 @@ The commit message is the only artifact that survives rebases, squashes, and fil
 - Capture *intent*, not *implementation* — the diff shows what changed, the message explains why
 - If you can't write a focused message, the commit probably contains unrelated changes — split it
 
-## Irreversible Operations
+## Push
 
-These operations rewrite shared history or destroy local state. Always confirm with the user before executing, even if they seem implied by the task:
-
-- `git push --force` (rewrites remote history others may have pulled)
-- `git reset --hard` (destroys uncommitted work permanently)
-- Amending pushed commits (rewrites history for anyone who pulled)
-- Deleting remote branches (may destroy others' work-in-progress)
-- Rebasing shared branches (rewrites history for all collaborators)
+Push after every commit unless told otherwise.

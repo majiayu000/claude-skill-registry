@@ -24,9 +24,10 @@ Privacy by Design assessment.
    - [ ] Privacy controls are core features, not add-ons
    - [ ] Architecture supports data minimization
 
-4. **Full Functionality**: Privacy without trade-offs?
+4. **Positive-Sum, not Zero-Sum** (originally "Full Functionality"): Privacy without trade-offs?
    - [ ] Privacy features don't degrade user experience
    - [ ] Not a false choice between privacy and functionality
+   - [ ] Avoid false dichotomies: privacy vs. security, privacy vs. business value
 
 5. **End-to-End Security**: Data protected throughout its lifecycle?
    - [ ] Encryption at rest and in transit

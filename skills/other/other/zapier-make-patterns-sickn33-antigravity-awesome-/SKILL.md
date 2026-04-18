@@ -804,7 +804,6 @@ Recommended fix:
 Works well with: `workflow-automation`, `agent-tool-builder`, `backend`, `api-designer`
 
 ## When to Use
-
 - User mentions or implies: zapier
 - User mentions or implies: make
 - User mentions or implies: integromat
@@ -815,3 +814,8 @@ Works well with: `workflow-automation`, `agent-tool-builder`, `backend`, `api-de
 - User mentions or implies: workflow automation
 - User mentions or implies: connect apps
 - User mentions or implies: automate
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

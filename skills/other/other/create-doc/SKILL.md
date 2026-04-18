@@ -23,11 +23,10 @@ Before writing factual claims, read relevant sources — existing docs, code, co
 ### 3. Choose destination
 Prefer updating the canonical existing doc when one exists.
 
-For new documents:
-- Reuse any existing doc home that fits (ADR directory, changelog, README section, project docs tree)
-- Fall back to `docs/` only when no clearer home exists
-- Keep docs near the code they explain when the repo follows that pattern
-- Use timestamped filenames only for event-like docs (postmortems, incident notes)
+For new documents, MUST default to `docs/` at the repo root (create it if missing). Only deviate when:
+- A more specific existing doc home clearly fits (ADR directory, changelog, README section, established project docs tree) — use it
+- The repo already follows a convention of keeping docs next to the code they explain — match that
+- The doc is event-like (postmortem, incident note) — use a timestamped filename
 
 When you need a fresh timestamp, use `date +%Y%m%d%H%M%S`.
 

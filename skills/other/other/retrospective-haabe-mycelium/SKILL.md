@@ -80,7 +80,7 @@ This decision log entry ensures the calibration data is auditable alongside othe
 - **Value**: Did we deliver actual user value?
 - **Sooner**: Was our flow efficient?
 - **Safer**: Did we maintain security and trust?
-- **Happier**: How is team satisfaction?
+- **Happier**: How is team satisfaction? Customer advocacy? Societal impact? Was compute usage proportionate to value (not wasteful)?
 
 ## Root Cause Analysis (when "What Didn't Go Well" surfaces a significant problem)
 
@@ -104,7 +104,7 @@ Problem ◄───────────────├─ Product (canvas, 
 3. Drill into sub-causes until you reach actionable items
 4. Vote/rank the most likely root causes for investigation
 
-*Category set adapted for product development from Ishikawa's 6M manufacturing categories.*
+Ishikawa's original 6M manufacturing categories: Man (Manpower), Machine, Method, Material, Measurement, Mother Nature (Environment). Adapted for product development as: Man→People, Machine→Platform, Method→Process, Material→Product (inputs to the work), Measurement→Principles (what we measure against), Mother Nature→Pressures (external forces).
 
 ### 5 Whys (Toyoda)
 
@@ -116,11 +116,33 @@ For the top-ranked cause from the fishbone, ask "why?" five times:
 4. Why? → [deeper]
 5. Why? → [root cause — usually systemic]
 
-**Stop rule**: Stop when you reach something you can change systemically (a guardrail, a gate, a process step), not just a one-time fix.
+**Stop rule**: Stop when ANY of these conditions are met:
+- You reach something you can **change systemically** (a guardrail, gate, or process step)
+- Asking "why" again would require **speculation** rather than verifiable fact
+- You reach a cause **outside your sphere of influence** (an escalation point, not a dead end)
+- The answer would be **the same regardless** of asking "why" (you've hit bedrock)
 
 **Anti-pattern**: Stopping at "human error" — that's never the root cause. Ask why the system allowed the error.
 
 *Source: Ishikawa (cause-and-effect diagrams), Toyoda/Ohno (5 Whys), adapted for agentic product development.*
+
+### Waste Identification (Ohno — 7 Wastes / TIMWOOD)
+
+Before root cause analysis, identify which waste category the problem falls into:
+
+| Waste | Product Development Form | Detection |
+|---|---|---|
+| **T**ransportation | Handoffs between people/teams | Count handoffs in the value stream |
+| **I**nventory | WIP, unshipped code, unmerged branches | Check WIP limits, branch age |
+| **M**otion | Context switching, tool switching | Track focus time vs fragmented time |
+| **W**aiting | Blocked tasks, review queues, approval delays | Measure wait-to-work ratio |
+| **O**verproduction | Features nobody asked for | Compare shipped features to validated needs (YAGNI) |
+| **O**verprocessing | Gold-plating, excessive ceremony | "Would removing this step reduce value?" |
+| **D**efects | Bugs, corrections, rework | Track defect escape rate |
+
+Also watch for: **Muri** (overburden → BVSSH Happier / sustainable pace) and **Mura** (unevenness → delivery cadence variation).
+
+*Source: Ohno (Toyota Production System). Mapped to product development via Poppendieck (Lean Software Development).*
 
 ## Blameless Post-Mortem Format (SRE)
 

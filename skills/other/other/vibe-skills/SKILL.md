@@ -5,6 +5,72 @@ description: Vibe Code Orchestrator (VCO) is a governed runtime entry that freez
 
 # Vibe Governed Runtime
 
+## Canonical Bootstrap
+
+If the user invoked `/vibe`, `$vibe`, or `vibe`, enter canonical `vibe` first and do nothing else first.
+
+Bootstrap sequence:
+
+1. Resolve `skill_root` as the directory that contains this `SKILL.md`.
+2. Resolve `workspace_root` as the current user task working root. This is where governed artifacts should be written when the user is working outside the Vibe installation itself.
+3. Resolve the current host adapter id. Use `codex` in Codex, `claude-code` in Claude Code, and `opencode` in OpenCode.
+4. Launch the proof-complete canonical entry before reading repo files, protocol docs, prior run folders, or writing any runtime artifact.
+
+POSIX / bash launch:
+
+```bash
+PYTHONPATH="<skill_root>/apps/vgo-cli/src" \
+python3 -m vgo_cli.main canonical-entry \
+  --repo-root "<skill_root>" \
+  --artifact-root "<workspace_root>" \
+  --host-id "<host_id>" \
+  --entry-id "vibe" \
+  --prompt "<full user request>"
+```
+
+Windows PowerShell launch:
+
+```powershell
+$env:PYTHONPATH = "<skill_root>/apps/vgo-cli/src"
+python -m vgo_cli.main canonical-entry `
+  --repo-root "<skill_root>" `
+  --artifact-root "<workspace_root>" `
+  --host-id "<host_id>" `
+  --entry-id "vibe" `
+  --prompt "<full user request>"
+```
+
+If `python` is unavailable in Windows PowerShell, use the same invocation with `py -3` instead, for example:
+
+```powershell
+$env:PYTHONPATH = "<skill_root>/apps/vgo-cli/src"
+py -3 -m vgo_cli.main canonical-entry `
+  --repo-root "<skill_root>" `
+  --artifact-root "<workspace_root>" `
+  --host-id "<host_id>" `
+  --entry-id "vibe" `
+  --prompt "<full user request>"
+```
+
+Discoverable wrapper ids still enter canonical `vibe`; only the bounded stop changes:
+
+- `vibe-want` -> add `--requested-stage-stop requirement_doc`
+- `vibe-how` -> add `--requested-stage-stop xl_plan --requested-grade-floor XL`
+- `vibe` and `vibe-do-it` -> add `--requested-stage-stop phase_cleanup`
+
+Hard rules:
+
+- Do not inspect the repo, protocol docs, or prior run outputs before canonical launch returns, except to resolve `skill_root` and current host id.
+- Do not use the Vibe installation root as the governed artifact root when the user asked you to work in another workspace or repository.
+- Do not manually create `outputs/runtime/vibe-sessions/<run-id>/`, `docs/requirements/`, or `docs/plans/` as a substitute for launch.
+- Do not simulate `skeleton_check`, `deep_interview`, `requirement_doc`, `xl_plan`, `plan_execute`, or `phase_cleanup` in chat or shell before canonical launch completes.
+- Do not treat `scripts/runtime/Invoke-VibeCanonicalEntry.ps1` alone as proof-complete canonical entry; it is a bridge used by the canonical launcher, not the canonical launcher itself.
+- Do not claim canonical vibe entry from reading this file, wrapper text, bootstrap text, or old artifacts.
+- Canonical launch claims require `host-launch-receipt.json`, `runtime-input-packet.json`, `governance-capsule.json`, and `stage-lineage.json`.
+- If canonical launch cannot run or cannot emit the required truth artifacts, report `blocked` with the concrete failure reason. Do not silently continue in ordinary mode.
+
+Everything below this bootstrap section is reference material to follow only after successful canonical launch.
+
 `vibe` is a host-syntax-neutral skill contract.
 
 `/vibe`, `$vibe`, and agent-invoked `vibe` all mean the same thing: enter the same governed runtime, not different runtime authorities.
@@ -94,6 +160,7 @@ Use this when the system should still ask the user high-value questions, confirm
 That means:
 
 - governed `vibe` runs must surface bounded specialist recommendations and must treat router-selected specialist skills as route truth or executable recommendation candidates
+- direct specialist handling should stay in the current host session by default; do not create hidden specialist sub-sessions unless policy explicitly opts back into that bridge path
 - runtime-selected skill remains `vibe` for governed entry
 - eligible specialist help must auto-promote into bounded native-mode assistance by default
 - specialist help must preserve the specialist skill's own workflow, inputs, outputs, and validation style

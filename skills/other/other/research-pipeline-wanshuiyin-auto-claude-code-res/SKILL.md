@@ -92,16 +92,25 @@ Once the user confirms which idea to pursue:
 
 ### Stage 3: Deploy Experiments (Workflow 2 — Part 1)
 
-Deploy the full-scale experiments:
+Deploy the full-scale experiments. **Route by job count**:
 
+**Small batch (≤5 jobs)** — direct deployment:
 ```
 /run-experiment [experiment command]
 ```
+
+**Large batch (≥10 jobs, multi-seed sweeps, teacher→student chains)** — use the queue scheduler:
+```
+/experiment-queue [grid spec or manifest]
+```
+
+`experiment-bridge` (Workflow 1.5) auto-routes based on milestone job count. For pipeline runs with multi-seed sweeps from the start, you can override globally with `--- batch: queue` to force `/experiment-queue` for all milestones.
 
 **What this does:**
 - Check GPU availability on configured servers
 - Sync code to remote server
 - Launch experiments in screen sessions with proper CUDA_VISIBLE_DEVICES
+- For `/experiment-queue`: also OOM retry, stale-screen cleanup, phase dependencies, crash-safe state
 - Verify experiments started successfully
 
 **Monitor progress:**

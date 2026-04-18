@@ -76,6 +76,16 @@ Audit the canvas knowledge base for quality, consistency, and completeness. The 
    - Every go-to-market `feedback_loop` entry with `source_leaf_id` → verify leaf exists
    - Flag broken references as warnings ("Zombie Solution" anti-pattern)
 
+8b. **Check scenario health** (Hoskins):
+   - If `canvas/scenarios.yml` exists:
+     - Every scenario must have all four Hoskins elements populated (persona, means, motive, simulation) — flag incomplete scenarios
+     - Every scenario must have `lifecycle.born_at` set — flag if missing (orphan scenario with no origin)
+     - Every scenario with `confidence > 0.5` must have evidence sources — flag unsupported confidence
+     - Every scenario referenced in `lifecycle.designed_against[]` → verify the solution exists in `opportunities.yml` or `gist.yml`
+     - Every scenario referenced in `lifecycle.tested_against[]` → verify test date is not in the future
+     - Flag scenarios with `status: draft` older than 30 days (stale draft — either promote or discard)
+   - If `canvas/scenarios.yml` does NOT exist but project_type requires it (per canvas-guidance.yml): flag as warning
+
 9. **Check for boilerplate content**:
    - Flag canvas files where >50% of content matches the template defaults from canvas-guidance.yml
    - Flag files with placeholder text ("TBD", "TODO", "fill in later", "placeholder")

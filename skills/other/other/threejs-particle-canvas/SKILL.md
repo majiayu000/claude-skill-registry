@@ -1,6 +1,6 @@
 ---
 name: threejs-particle-canvas
-description: "Generate interactive Three.js particle canvases in four modes: narrative phase cycles, WebGPU spinner/loaders, infinite gallery tunnels, animated glTF specimens. Ships a reusable Phosphor Vigil FX post-processing module (CRT composite, scanlines, chromatic aberration). Self-contained HTML output. Triggers on particle system, ambient 3D canvas, WebGL art, spinner, loader, infinite tunnel, glTF animation, CRT post-processing."
+description: "Generate interactive Three.js canvases in five modes: narrative particle phase cycles, WebGPU spinner/loaders, infinite gallery tunnels, animated glTF specimens, vinyl showcase with webcam reflection. Ships a reusable Phosphor Vigil FX post-processing module (CRT composite, scanlines, chromatic aberration). Self-contained HTML output. Triggers on particle system, ambient 3D canvas, WebGL art, spinner, loader, infinite tunnel, glTF animation, CRT post-processing, vinyl record, webcam reflection, 3D product showcase."
 argument-hint: [concept or narrative theme]
 ---
 
@@ -113,6 +113,8 @@ Key patterns:
 | Mode 3 full source | `assets/tunnel-gallery-source.html` |
 | Mode 4 specimen architecture, behavior physics, glTF | `references/specimen-patterns.md` |
 | Mode 4 full source | `assets/butterfly-specimen-source.html` |
+| Mode 5 vinyl showcase architecture, all 6 systems | `references/vinyl-showcase-patterns.md` |
+| Mode 5 OMMA source (81KB, unminified) | `references/vinyl-bundle-annotated.js` |
 | Shared Phosphor Vigil FX pipeline | `references/phosphor-vigil-fx.md` |
 | Shared FX module (importable standalone) | `assets/phosphor-vigil.js` |
 
@@ -225,6 +227,46 @@ Example: `/threejs-particle-canvas butterfly — three emerald and amber moths c
 Template defaults to Three.js's `Parrot.glb` (stable jsdelivr URL, CC0). Swap `modelUrl` for any rigged glTF/glb — butterfly, bird, fish, jellyfish. Adjust `scales` per-model since the same scale value gives very different results across source sizes.
 
 See `references/specimen-patterns.md` for the full physics and rendering pipeline.
+
+## Mode 5: Vinyl Showcase
+
+A photorealistic vinyl record reflecting the user's webcam via `CubeCamera` environment mapping, with procedural groove/scratch canvas textures, scroll-driven keyframe animation, drag-to-scratch interaction, and optional vinyl audio (crackle, wow/flutter, reverse playback). All effects via `MeshPhysicalMaterial` — no custom GLSL. Distilled from [OMMA's 3D Vinyl with Camera Reflection](https://omma.build/p/3d-vinyl-with-camera-reflection-e4598h).
+
+Example: `/threejs-particle-canvas vinyl showcase — MINOAN MYSTERY label, cool palette, deep grooves`
+
+### Generator
+
+```bash
+python3 ~/.claude/skills/threejs-particle-canvas/scripts/vinyl_showcase_generator.py \
+  --label-text "MINOAN MYSTERY" --label-style cool --groove-preset deep \
+  --scratch-intensity heavy --audio crackle-only --theme dark -o output.html
+```
+
+### Config
+
+| Flag | Options | Default | Effect |
+|---|---|---|---|
+| `--label-text` | any string | `"VINYL"` | Main text on A/B side labels |
+| `--label-subtitle` | any string | `""` | Secondary text below main label |
+| `--label-style` | `warm` / `cool` / `monochrome` | `warm` | Radial gradient palette |
+| `--groove-preset` | `fine` / `standard` / `deep` | `standard` | Groove count, depth, width |
+| `--scratch-intensity` | `none` / `light` / `heavy` | `heavy` | Surface scratch density |
+| `--sections` | 1–5 | 3 | Scroll keyframes |
+| `--audio` | `none` / `crackle-only` / `full` | `crackle-only` | Audio engine scope |
+| `--audio-url` | MP3 URL | — | Music for `--audio full` |
+| `--theme` | `dark` / `light` | `dark` | Page theme |
+
+### Signature moment
+
+**The first webcam reflection.** When the camera connects and the viewer sees their face reflected in the vinyl — warped by grooves, tinted by iridescent labels — that is the moment.
+
+### Validation
+
+```bash
+python3 ~/.claude/skills/threejs-particle-canvas/scripts/validate_vinyl.py output.html
+```
+
+See `references/vinyl-showcase-patterns.md` for the full 6-system technical breakdown (camera pipeline, procedural textures, material stack, scroll keyframes, drag interaction, audio engine).
 
 ## Shared FX: Phosphor Vigil
 

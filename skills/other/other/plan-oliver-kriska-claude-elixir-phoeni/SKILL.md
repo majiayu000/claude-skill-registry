@@ -1,6 +1,6 @@
 ---
 name: phx:plan
-description: Plan multi-step Phoenix features with specialist agents. Use when building new domains, multi-file features, or creating plans from review findings. Use --existing to enhance a plan.
+description: "Plan features spanning multiple domains: billing (Stripe), auth (RBAC), real-time (Presence), webhooks, jobs (Oban). Use when designing interconnected systems or converting review findings into tasks."
 effort: high
 argument-hint: <feature description OR path to review/plan file>
 ---

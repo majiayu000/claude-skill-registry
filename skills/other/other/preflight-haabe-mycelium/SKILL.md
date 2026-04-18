@@ -14,6 +14,7 @@ Pre-delivery validation checklist. Run before every implementation task.
 - [ ] patterns.md reviewed for applicable patterns
 - [ ] Current diamond phase is Develop or Deliver
 - [ ] Acceptance criteria are clear and measurable
+- [ ] Scenarios linked: `canvas/scenarios.yml` has scenarios for this solution, and acceptance criteria trace back to scenario success/failure states (Hoskins)
 
 ### Scope
 - [ ] This is the smallest vertical slice that delivers value

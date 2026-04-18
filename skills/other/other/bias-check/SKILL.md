@@ -43,7 +43,7 @@ Pre-research and pre-decision bias review.
    ### Proceed? [Yes / Yes with caution / Pause and address]
    ```
 
-6. **System-level bias diagnosis** (NUDGE):
+6. **System-level bias diagnosis** (Meza):
    Before attributing resistance or poor outcomes to cognitive bias, check if the "bias" is actually a rational response to a badly designed system. Ask:
 
    | Phase | System Question | If Yes: Fix the System, Not the Person |
@@ -56,7 +56,9 @@ Pre-research and pre-decision bias review.
 
    If 2+ phases point to systemic causes, the primary intervention is system redesign, not individual debiasing. Update the bias briefing output above to flag the system-level root cause.
 
-   *Source: Meza (The Bias Gap -- aimforbehavior.com)*
+   The 5 phases above are a systemic diagnostic inspired by behavioral design models (COM-B, Fogg Behavior Model), not a named framework. They are prompts for investigation, not rigid steps.
+
+   *Source: Robert Meza (The Bias Gap — diagnostic tool, aimforbehavior.com). Not to be confused with Thaler & Sunstein's "Nudge" theory.*
 
 ## When to Surface This Skill
 
@@ -73,4 +75,4 @@ Record bias check in `canvas/opportunities.yml` under `bias_checks` section with
 - Kahneman: Thinking, Fast and Slow (System 1/System 2)
 - Shotton: The Choice Factory (behavioral biases in decision-making)
 - Torres: Continuous Discovery Habits (bias in research)
-- Meza: The Bias Gap (systemic bias reframing -- when "bias" is a rational response to a badly designed system)
+- Robert Meza: The Bias Gap (systemic bias reframing -- when "bias" is a rational response to a badly designed system)

@@ -24,12 +24,18 @@ Build and maintain Opportunity Solution Trees from research evidence.
    - Before structuring, ensure each opportunity has been examined from **all three trio perspectives** (product, design, engineering). Product lens sees user value; design lens sees experience gaps; engineering lens sees technical constraints or enablers.
    - Classify each opportunity's **Cynefin domain** (clear/complicated/complex). Complex-domain opportunities must produce probes (experiments), not fully-designed solutions. See `engine/cynefin-routing.md`.
 
-5. **For each leaf opportunity**, generate solution ideas:
+5. **For each leaf opportunity**, check scenario coverage:
+   - Does `canvas/scenarios.yml` have at least one scenario illustrating this opportunity?
+   - If not: extract one from the research evidence. Use Hoskins' four elements: Persona (who), Means (how they interact), Motive (why — link to JTBD), Simulation (the full narrative).
+   - Scenarios should emerge from interview stories, not be invented. If no interview data exists for this opportunity, flag it as an evidence gap.
+
+6. **For each leaf opportunity**, generate solution ideas:
    - Multiple solutions per opportunity.
    - Solutions can be simple experiments, not just features.
    - Include "do nothing" as an option when appropriate.
+   - Each solution should reference which scenarios it addresses.
 
-6. **For each solution leaf**, assess the Four Risks (Torres Product Trio):
+7. **For each solution leaf**, assess the Four Risks (Torres Product Trio):
    - **Value** (product lens): Is there evidence users want/need this?
    - **Usability** (design lens): Can users figure out how to use it?
    - **Feasibility** (engineering lens): Can we build it within constraints?
@@ -37,7 +43,7 @@ Build and maintain Opportunity Solution Trees from research evidence.
    Each risk must have its own evidence — a combined statement fails.
    Write `four_risks` per solution in `canvas/opportunities.yml`.
 
-7. **For each solution**, identify riskiest assumptions from the Four Risks:
+8. **For each solution**, identify riskiest assumptions from the Four Risks:
    - Which risk dimension has the least evidence?
    - What is the cheapest way to test that assumption?
    - Tag each assumption with its `risk_dimension` (value|usability|feasibility|viability).
@@ -64,6 +70,7 @@ Build and maintain Opportunity Solution Trees from research evidence.
 **Always update `canvas/opportunities.yml`** with the OST contents after building or updating. This is the single source of truth for the opportunity space.
 
 Also update:
+- `canvas/scenarios.yml` if scenarios were created or refined (step 5)
 - `canvas/user-needs.yml` if new needs were identified
 - `canvas/jobs-to-be-done.yml` if JTBD dimensions surfaced during mapping
 
@@ -76,5 +83,6 @@ Flow: Opportunity (research) -> Solution hypothesis (Lean UX) -> Assumption test
 ## Theory Citations
 - Torres: Continuous Discovery Habits (OST methodology)
 - Christensen: Competing Against Luck (JTBD informing opportunities)
-- Gilad: Evidence Guided (ICE scoring for solutions)
+- Ellis: ICE scoring. Gilad: Evidence-Guided (Confidence Meter for solutions)
 - Gothelf: Lean UX (hypothesis-driven solution framing)
+- Hoskins: Scenarios as connective primitive (persona + means + motive + simulation). Source: "Attention to Users Is All You Need" (SAP talk, April 2026)

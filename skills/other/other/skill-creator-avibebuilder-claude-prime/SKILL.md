@@ -99,6 +99,7 @@ These word counts are approximate and you can feel free to go longer if needed.
 - Keep SKILL.md under 500 lines; if you're approaching this limit, add an additional layer of hierarchy along with clear pointers about where the model using the skill should go next to follow up.
 - Reference files clearly from SKILL.md with guidance on when to read them
 - For large reference files (>300 lines), include a table of contents
+- **Routing lives at the parent.** "When to use" conditions go in the SKILL.md reference table — not inside the spoke file. By the time the agent reads a "## When to Use" section, it's already paid the load cost. Reference files cover HOW; parent covers WHEN.
 
 **Domain organization**: When a skill supports multiple domains/frameworks, organize by variant:
 ```

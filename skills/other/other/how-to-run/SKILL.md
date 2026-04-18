@@ -54,9 +54,13 @@ Print a **Context Summary** from the agent's Context Detection Results:
 - **Hardware / OS requirements** (GPU, USB/serial, OS version — only if detected)
 - **Dev workflow signals** (Docker-based, Makefile-based, script-based, process runner, etc.)
 
-Give the user a chance to correct misdetections before proceeding.
+Use `AskUserQuestion` — header "Context review", question "Does this capture the project correctly?":
+- **Looks good** — "Proceed with detected context"
+- **Correct first** — "Some details are wrong or missing"
 
-**Unsupported-Stack Fallback.** If the agent reported `Unsupported-Stack Fallback → Triggered: yes`, read `$CLAUDE_PLUGIN_ROOT/skills/init/references/unsupported-stack-fallback.md` and run its 5-step procedure here, using the agent's reported **Detected language(s)** and **Evidence** as input. Use `WebSearch` for step 2 (research); enforce the step 3 validation rules before presenting any command; use `AskUserQuestion` for step 4 (approval). Commands approved here feed Step 4 content generation as if from a recognized stack; commands skipped (search failed or user declined) render as `"not found"` in the affected sections.
+If "Correct first": use `AskUserQuestion` — header "Corrections", question "What should be changed?" (free text). Apply the corrections to the Context Detection Results in memory, recomputing the `Unsupported-Stack Fallback → Triggered` flag if the correction changes the detected language or stack, and re-print the updated Context Summary. Re-confirm.
+
+**Unsupported-Stack Fallback.** If the Context Detection Results show `Unsupported-Stack Fallback → Triggered: yes`, read `$CLAUDE_PLUGIN_ROOT/skills/init/references/unsupported-stack-fallback.md` and run its 5-step procedure here, using the reported **Detected language(s)** and **Evidence** as input. Use `WebSearch` for step 2 (research); enforce the step 3 validation rules before presenting any command; use `AskUserQuestion` for step 4 (approval). Commands approved here feed Step 4 content generation as if from a recognized stack; commands skipped (search failed or user declined) render as `"not found"` in the affected sections.
 
 **LLM-knowledge fallback (how-to-run only).** If WebSearch is unavailable or returns no results for the detected language, use general knowledge to propose standard install/build/run/test commands for that language. Mark these commands as "inferred (not web-verified)" when presenting them for user approval in step 4. If the user declines, treat as a graceful skip.
 
@@ -153,7 +157,7 @@ If no files were modified (skip or no-action path), skip verification and procee
 
 - Read back the modified or created `HOW-TO-RUN.md`.
 - **Verify:** all commands use the correct package manager prefix, prerequisite versions match manifest constraints, build-system commands correspond to the detected build files, submodule paths in `HOW-TO-RUN.md` actually exist in `.gitmodules`, sibling-repo paths actually appear in build/CI files, directory paths match the actual filesystem, external service names match docker-compose service definitions, environment variable names match `.env.example`.
-- **Re-validate detector-sourced tokens** in the written file: every package identifier in `HOW-TO-RUN.md` must still match `^[A-Za-z0-9][A-Za-z0-9._+:@/-]{0,99}$` with no `://`, `.`, `..`, or empty path segments after splitting on `/` or `:`; the project name must match `^[A-Za-z0-9._ -]{1,64}$` or be exactly `(unknown)`; hardware/OS mentions must correspond to a canonical token from the detector's Task 0d search lists. Reject any line that echoes free-text prose harvested from `README.md`/`CONTRIBUTING.md`/`docs/*` outside fenced code blocks the skill itself generated.
+- **Re-validate detector-sourced tokens** in the written file: every package identifier in `HOW-TO-RUN.md` must still match `^[A-Za-z0-9][A-Za-z0-9._+:@/-]{0,99}$` with no `://`, `.`, `..`, or empty path segments after splitting on `/` or `:`; the project name must match `^[A-Za-z0-9._ -]{1,64}$` or be exactly `(unknown)`; hardware/OS mentions must correspond to a canonical token from the detector's Task 0d search lists. Reject any line, outside fenced code blocks the skill itself generated, that echoes free-text prose — whether taken from `README.md`/`CONTRIBUTING.md`/`docs/*` or supplied by the user in the Step 1 "Corrections" response.
 - **If any check fails:** show the correction to the user, wait for approval, apply it, then re-verify.
 
 **Report** to the user: what was created or updated in `HOW-TO-RUN.md`, which sections were included, and any aspects that were intentionally skipped (with reason).

@@ -42,9 +42,24 @@ Create immediately after each interview:
 - Surprises (things you didn't expect)
 - JTBD dimensions observed (functional/emotional/social)
 - Biases to watch for in interpretation
+- **Scenarios extracted** (see below)
+
+### Scenario Extraction (Hoskins)
+
+Interviews are where scenarios are born. After each interview, look for narratives that contain Hoskins' four elements:
+
+1. **Persona**: The interviewee's role, context, constraints, goals — captured naturally in the conversation
+2. **Means**: How they interact with existing tools/processes — captured in "walk me through" questions
+3. **Motive**: Why they're doing this — captured in JTBD dimensions (functional, emotional, social)
+4. **Simulation**: The story itself — the "last time you tried to..." narrative IS the simulation
+
+Draft a scenario entry for `canvas/scenarios.yml` from any interview story that is rich enough. Not every interview produces a scenario — only extract when all four elements are present. A partial story is an opportunity, not a scenario.
+
+*Source: Hoskins, "Attention to Users Is All You Need" (SAP talk, April 2026) — "Scenarios are the fundamental primitive of product thinking."*
 
 ## Output
 - Update canvas/opportunities.yml with new evidence
 - Update canvas/user-needs.yml
 - Update canvas/jobs-to-be-done.yml
+- Update canvas/scenarios.yml with extracted scenarios (if four elements present)
 - Add snapshot to product-journal.md

@@ -52,7 +52,11 @@ Use biases ETHICALLY to help users understand value:
 ## Canvas Output
 Update `canvas/go-to-market.yml` with tier classification and launch plan.
 
-## Ethical Engagement Design (Eyal -- Hook Model)
+## Ethical Engagement Design (Eyal -- Hook Model + Indistractable)
+
+Eyal's work spans two complementary books: **Hooked** (2014) provides the Hook Model for building habit-forming products; **Indistractable** (2019) provides the user-side framework for managing attention. The Manipulation Matrix below bridges both — ethical engagement design means building hooks that users would choose even with full information.
+
+The Hook Model is most relevant at L3 (Solution design) for engagement architecture, not just L5 (Market). Apply during solution design when the product requires recurring usage.
 
 For products that need user retention, design engagement ethically using the Hook Canvas:
 
@@ -101,15 +105,21 @@ If `/bias-check` reveals significant biases, address them before finalizing the 
    **AI tool**: task success rate, retention, DAU, refund rate, user feedback
    **Service**: client satisfaction (NPS/CSAT), referral rate, retention, delivery lead time feedback
 
-2. **Evaluate against L2 assumptions**:
+2. **Validate scenarios against reality** (Hoskins):
+   - For each scenario in `canvas/scenarios.yml` linked to this launch: did the persona's story play out?
+   - Update `lifecycle.validated_in_market`: confirmed, partial, or invalidated
+   - Invalidated scenarios are the most valuable learning — they reveal where the user model was wrong
+
+3. **Evaluate against L2 assumptions**:
    - Do the signals confirm the L2 opportunity we solved for?
    - Are there NEW needs we didn't anticipate?
    - Did users "hire" the product for a different job than expected? (JTBD)
+   - Do real user stories suggest NEW scenarios not in `canvas/scenarios.yml`?
 
-3. **Feed back into discovery**:
-   - If signals confirm: update confidence scores, celebrate validated learning
-   - If signals reveal NEW opportunities: **spawn a new L2 Opportunity diamond** with market evidence as the starting data
-   - If signals contradict: flag for diamond regression, update corrections.md
+4. **Feed back into discovery**:
+   - If signals confirm: update confidence scores, mark scenarios as `validated`, celebrate validated learning
+   - If signals reveal NEW opportunities: **spawn a new L2 Opportunity diamond** with market evidence as the starting data. Create new scenarios from real user stories.
+   - If signals contradict: flag for diamond regression, mark scenarios as `invalidated`, update corrections.md
 
 This closes the full Mycelium loop: Purpose -> Strategy -> Discovery -> Solution -> Delivery -> **Market -> Discovery**.
 

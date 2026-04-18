@@ -78,6 +78,7 @@ Progress a diamond through phases with full theory gate validation. At delivery 
 
 9. **If progressing**:
    - Update diamond state in active.yml.
+   - **Render the updated journey map**: Follow `.claude/engine/wayfinding.md` to show the user where they've moved to. This makes the transition visible — the user sees their position shift on the map.
    - Log transition in decision-log.md. If threshold was adapted, include: "Threshold adapted from [base] to [effective] because project_type=[type]. Would increase with [action]."
    - Update product-journal.md.
    - Identify if child diamonds should be spawned.
@@ -168,33 +169,35 @@ Check `product_type` from `diamonds/active.yml` to determine which auto-checks a
 **BVSSH Quick-Check (Smart -- Fix 6)**:
 - Prompt the user/agent with product-type-appropriate questions:
 
+  Happier covers four stakeholders (Smart): **customers, colleagues, citizens, and climate**.
+
   **Software:**
   - "Better: Did code quality improve or degrade?"
   - "Value: Did we deliver measurable user value?"
   - "Sooner: Was deployment flow efficient? Any unnecessary delays?"
   - "Safer: Did we maintain security, reliability, and trust?"
-  - "Happier: How is developer/team satisfaction?"
+  - "Happier: How is developer/team satisfaction? User advocacy? Was compute usage proportionate to value delivered?"
 
   **Content (course, publication, media):**
   - "Better: Did content quality and learning outcomes improve?"
   - "Value: Will this content help the audience accomplish their goal?"
   - "Sooner: Was production cadence maintained? Any bottlenecks?"
   - "Safer: Is the content accurate, accessible, and free from harm?"
-  - "Happier: How is creator satisfaction? Audience sentiment?"
+  - "Happier: How is creator satisfaction? Audience sentiment? Positive societal contribution?"
 
   **AI tool:**
   - "Better: Did eval scores improve? Is output quality higher?"
   - "Value: Does the tool reliably help users accomplish their task?"
   - "Sooner: Was the prompt/model iteration cycle efficient?"
   - "Safer: Are safety scores acceptable? Bias assessed? Regulatory status current?"
-  - "Happier: How is the builder's satisfaction? User feedback positive?"
+  - "Happier: How is the builder's satisfaction? User feedback positive? Token/compute usage proportionate (not brute-force waste)?"
 
   **Service offering:**
   - "Better: Did delivery quality improve? Client satisfaction up?"
   - "Value: Did the client get measurable value from the engagement?"
   - "Sooner: Was delivery lead time acceptable? Any waiting waste?"
   - "Safer: Were commitments met? Trust maintained? No scope creep harm?"
-  - "Happier: How is your satisfaction as a service provider? Client sentiment?"
+  - "Happier: How is your satisfaction as a service provider? Client sentiment? Sustainable resource usage?"
 - Record in bvssh-health.yml assessment_history
 - **REVIEW**: Must answer all 5 (even briefly) before completing
 

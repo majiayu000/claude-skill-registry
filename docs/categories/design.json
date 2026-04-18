@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 9506,
-  "updated_at": "2026-04-17T02:08:26.195715Z",
+  "count": 9507,
+  "updated_at": "2026-04-18T01:57:52.094783Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -100454,6 +100454,23 @@
       "stars": 0,
       "install": "aborruso/ai-commons/design/python-modern-cli-aborruso-ai-commons",
       "source": "local"
+    },
+    {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "repo": "alonw0/web-asset-generator",
+      "path": "skills/web-asset-generator/SKILL.md",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "stars": 0,
+      "install": "alonw0/web-asset-generator/skills/web-asset-generator/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "frontend-design-fix-svelte",

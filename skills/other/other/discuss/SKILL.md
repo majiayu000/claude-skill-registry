@@ -42,7 +42,6 @@ Don't force every discussion into the same pros/cons template. Match the lens to
 - Explain the real pros, cons, and tradeoffs of each viable option
 - Challenge weak assumptions and explain why you're pushing back
 - End with a recommendation: "I think X is the right call because..."
-- Name what would have to be true for your recommendation to be wrong — if you can't articulate a credible failure condition, you probably haven't thought hard enough
 
 ### 6. Synthesize
 - Land on a direction with clear rationale

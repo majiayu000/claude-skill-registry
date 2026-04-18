@@ -172,15 +172,25 @@ If sanity fails → **auto-debug before giving up** (max 3 attempts):
 
 ### Phase 4: Deploy Full Experiments
 
-Deploy experiments following the plan's milestone order:
+Deploy experiments following the plan's milestone order. **Route by job count**:
 
+**Small batch (≤5 jobs per milestone)** → use `/run-experiment` directly:
 ```
 /run-experiment [experiment commands]
 ```
 
+**Large batch (≥10 jobs, multi-seed sweeps, or phase dependencies)** → use `/experiment-queue` for proper orchestration:
+```
+/experiment-queue [grid spec or manifest]
+```
+
+Auto-routing rule: if any milestone in `EXPERIMENT_PLAN.md` declares ≥10 jobs (e.g., `seeds: [42, 200, 201, ...]` × `N: [64, 128, 256]` × `n: [50K, 150K, 500K, 652K]` = 36 jobs) or declares teacher→student phase dependencies, route that milestone to `/experiment-queue`. Otherwise use `/run-experiment`.
+
+`/experiment-queue` adds: OOM-aware retry with backoff, stale-screen cleanup, wave-transition race prevention, phase dependency enforcement, crash-safe state persistence in `queue_state.json`. See `skills/experiment-queue/SKILL.md` for the manifest YAML format.
+
 For each milestone:
-1. Deploy experiments in parallel (up to MAX_PARALLEL_RUNS)
-2. Use `/monitor-experiment` to track progress
+1. Deploy experiments in parallel (up to MAX_PARALLEL_RUNS for `/run-experiment`, or `max_parallel` from manifest for `/experiment-queue`)
+2. Use `/monitor-experiment` to track progress (reads from queue_state.json if `/experiment-queue` is active)
 3. Collect results as experiments complete
 
 **🚦 Checkpoint (if AUTO_DEPLOY = false):**

@@ -7,47 +7,71 @@ description: "OWASP secure design review for code and architecture. Checks input
 
 Language-agnostic security review based on OWASP Secure by Design.
 
-## Checklist (OWASP Top 10)
+## Checklist (OWASP Top 10:2025)
 
-### 1. Injection Prevention
-- [ ] All user input validated (type, length, range, format)
-- [ ] Parameterized queries for ALL data access (never string concatenation)
-- [ ] Input allowlisting preferred over denylisting
+*Updated to OWASP Top 10:2025 (released January 2025). Previous 2021 edition had different groupings.*
 
-### 2. Authentication
-- [ ] Passwords hashed with bcrypt/argon2 (never MD5/SHA1)
-- [ ] Session IDs regenerated on login
-- [ ] Multi-factor authentication available for sensitive operations
-
-### 3. Sensitive Data
-- [ ] Data encrypted at rest and in transit (TLS 1.2+)
-- [ ] No secrets in code, logs, or error messages
-- [ ] PII identified and classified in threat model
-
-### 4. Access Control
+### A01:2025 — Broken Access Control
 - [ ] Least privilege enforced (users get minimum permissions needed)
 - [ ] Authorization checked on EVERY request (not just the first)
 - [ ] CORS restrictive (not `*`)
+- [ ] Directory listing disabled
+- [ ] Rate limiting on API/controller access
 
-### 5. Security Misconfiguration
+### A02:2025 — Cryptographic Failures
+- [ ] Data encrypted at rest and in transit (TLS 1.2+)
+- [ ] No secrets in code, logs, or error messages
+- [ ] PII identified and classified in threat model
+- [ ] Passwords hashed with bcrypt/argon2 (never MD5/SHA1)
+- [ ] Cryptographic algorithms current (no deprecated ciphers)
+
+### A03:2025 — Injection
+- [ ] All user input validated (type, length, range, format)
+- [ ] Parameterized queries for ALL data access (never string concatenation)
+- [ ] Input allowlisting preferred over denylisting
+- [ ] Output encoded based on context (HTML, JS, URL, CSS — covers XSS)
+- [ ] Content Security Policy configured
+
+### A04:2025 — Insecure Design
+- [ ] Threat modeling performed (STRIDE — see /threat-model)
+- [ ] Secure design patterns used (defense in depth, fail secure)
+- [ ] Business logic abuse cases considered
+- [ ] Security requirements defined alongside functional requirements
+
+### A05:2025 — Security Misconfiguration
 - [ ] Default credentials changed
 - [ ] Unnecessary features/ports disabled
 - [ ] Security headers set (CSP, HSTS, X-Frame-Options, X-Content-Type-Options)
+- [ ] Error handling does not expose stack traces
 
-### 6. XSS Prevention
-- [ ] Output encoded based on context (HTML, JS, URL, CSS)
-- [ ] Content Security Policy configured
-- [ ] User-generated content sanitized
-
-### 7. Dependencies
+### A06:2025 — Vulnerable and Outdated Components
 - [ ] Dependency audit run (no known critical vulnerabilities)
 - [ ] Dependencies pinned to specific versions
 - [ ] Automated scanning in CI
+- [ ] Unused dependencies removed
 
-### 8. Logging & Monitoring
+### A07:2025 — Identification and Authentication Failures
+- [ ] Session IDs regenerated on login
+- [ ] Multi-factor authentication available for sensitive operations
+- [ ] Credential stuffing protections (rate limiting, account lockout)
+- [ ] Password strength requirements enforced
+
+### A08:2025 — Software and Data Integrity Failures
+- [ ] CI/CD pipeline integrity verified (no unsigned code execution)
+- [ ] Deserialization inputs validated
+- [ ] Software supply chain reviewed (SBOMs for critical dependencies)
+- [ ] Auto-update mechanisms use signed packages
+
+### A09:2025 — Security Logging and Monitoring Failures
 - [ ] Security events logged (login attempts, auth failures, access denials)
 - [ ] No sensitive data in logs
 - [ ] Alerting on anomalous patterns
+- [ ] Logs tamper-resistant (append-only or forwarded to SIEM)
+
+### A10:2025 — Server-Side Request Forgery (SSRF)
+- [ ] URL inputs validated and allowlisted
+- [ ] Internal network access restricted from user-supplied URLs
+- [ ] Response content not returned directly to users without sanitization
 
 ## Stack-Specific Tools
 Consult `.claude/jit-tooling/security-scanning.md` for tool selection per stack.

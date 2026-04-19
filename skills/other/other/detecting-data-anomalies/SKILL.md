@@ -1,10 +1,8 @@
 ---
 name: detecting-data-anomalies
 description: |
-  Process identify anomalies and outliers in datasets using machine learning algorithms.
-  Use when analyzing data for unusual patterns, outliers, or unexpected deviations from normal behavior.
-  Trigger with phrases like "detect anomalies", "find outliers", or "identify unusual patterns".
-  
+  Investigate outliers, rare events, spikes, and suspicious records in datasets.
+  Use as an explicit anomaly-analysis helper when you want concrete anomaly-detection workflow guidance, not generic data validation or end-to-end ML ownership.
 allowed-tools: Read, Bash(python:*), Grep, Glob
 version: 1.0.0
 author: Jeremy Longshore <jeremy@intentsolutions.io>
@@ -13,56 +11,31 @@ license: MIT
 
 # Detecting Data Anomalies
 
-## Overview
+## Positioning
 
-This skill provides automated assistance for the described functionality.
+Treat this skill as an explicit/manual helper.
+In governed ML routing, anomaly-detection ownership normally belongs to `anomaly-detector`.
 
-## Prerequisites
+## When to Use
 
-Before using this skill, ensure you have:
-- Dataset in accessible format (CSV, JSON, or database)
-- Python environment with scikit-learn or similar ML libraries
-- Understanding of data distribution and expected patterns
-- Sufficient data volume for statistical significance
-- Knowledge of domain-specific normal behavior
-- Data preprocessing capabilities for cleaning and scaling
+Use this skill when:
+- Reviewing outlier transactions, fraud candidates, sensor spikes, or rare failures
+- Comparing isolation forest, one-class SVM, LOF, or threshold-based anomaly workflows
+- Turning suspicious records into a shortlist for human inspection
 
-## Instructions
+## Not For / Boundaries
 
-1. Load dataset using Read tool
-2. Inspect data structure and identify relevant features
-3. Clean data by handling missing values and inconsistencies
-4. Normalize or scale features as appropriate for algorithm
-5. Split temporal data if time-series analysis is needed
-1. Apply selected algorithm using Bash tool
-2. Generate anomaly scores for each data point
-3. Classify points as normal or anomalous based on threshold
-4. Extract characteristics of identified anomalies
+- Null/duplicate/schema/range validation: use `data-quality-checker`
+- Full model training or end-to-end pipeline ownership: use `training-machine-learning-models`
+- Publication-grade figure production: use `scientific-visualization`
 
+## Typical Outputs
 
-See `{baseDir}/references/implementation.md` for detailed implementation guide.
+- Candidate anomaly-detection methods and thresholds
+- A review checklist for false positives and false negatives
+- Suggested tables or plots for the suspicious subset
 
-## Output
+## Related Skills
 
-- Total data points analyzed
-- Number of anomalies detected
-- Contamination rate (percentage of anomalies)
-- Algorithm used and configuration parameters
-- Confidence scores for detected anomalies
-- Record identifier and timestamp (if applicable)
-
-## Error Handling
-
-See `{baseDir}/references/errors.md` for comprehensive error handling.
-
-## Examples
-
-See `{baseDir}/references/examples.md` for detailed examples.
-
-## Resources
-
-- Isolation Forest documentation and implementation examples
-- One-Class SVM for novelty detection
-- Local Outlier Factor (LOF) for density-based detection
-- Autoencoder-based anomaly detection for deep learning approaches
-- scikit-learn anomaly detection module
+- `anomaly-detector` as the governed routed owner
+- `creating-data-visualizations` after anomalies are identified

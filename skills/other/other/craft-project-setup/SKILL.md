@@ -11,7 +11,7 @@ Scaffold Claude Code configuration for Craft CMS projects. Generates a `CLAUDE.m
 
 This skill generates configuration that references other skills. It does not load them at activation, but the generated CLAUDE.md and rules will guide users toward:
 
-- **`craftcms`** + **`craft-php-guidelines`** — for plugin and module projects
+- **`craftcms`** + **`craft-php-guidelines`** + **`craft-garnish`** — for plugin and module projects (craft-garnish when plugin has CP JavaScript/asset bundles)
 - **`craft-site`** + **`craft-twig-guidelines`** + **`craft-content-modeling`** — for site projects
 - **`ddev`** — for all project types (DDEV commands in generated config)
 
@@ -147,4 +147,4 @@ These are invisible in rendered markdown and do not affect Claude's behavior. Th
 - Never overwrite an existing CLAUDE.md without asking. If one exists, offer to merge or replace.
 - Never overwrite existing `.claude/rules/` files without asking.
 - Detect as much as possible from existing files — minimize questions.
-- The generated config should reference the Craft CMS skills (`craftcms`, `craft-site`, `craft-php-guidelines`, etc.) in comments so the user knows what's available.
+- The generated config should reference the Craft CMS skills (`craftcms`, `craft-site`, `craft-php-guidelines`, `craft-garnish`, etc.) in comments so the user knows what's available.

@@ -43,13 +43,64 @@ Progressive onboarding through structured discovery conversation.
 17. Ask: "What's the team structure? How do decisions get made?"
 18. Ask: "What are the immediate priorities?"
 
+### Phase 5b: Constraints (Brown)
+
+Surface the constraints that will shape solution space. These are often the most critical missing context during handovers.
+
+19. Ask: "What can't change? Any legacy systems, platform limitations, or technical choices that are locked in?"
+20. Ask: "Who has to approve what? What are the decision-making boundaries and political dynamics?"
+21. Ask: "What rules apply? Regulatory requirements, compliance obligations, SLAs, data handling restrictions?"
+
+Store constraints in `purpose.yml` under a `constraints` section:
+
+```yaml
+constraints:
+  technical:
+    - description: "..."
+      source_class: internal_stakeholder
+  political:
+    - description: "..."
+      source_class: internal_stakeholder
+  regulatory:
+    - description: "..."
+      source_class: internal_stakeholder
+```
+
+These feed directly into Cagan's feasibility and viability risk assessments at L3. Tag all constraint entries as `internal_stakeholder` — they are the stakeholder's understanding of constraints, which may be incomplete or outdated.
+
+*Source: Brown (three lines of questioning: domain/audience/constraints), Cagan (feasibility/viability risks).*
+
+### Phase 5c: Closing
+
+22. Ask: "Is there anything important that I didn't ask about?"
+
+This catch-all question surfaces what the stakeholder considers most important but wasn't covered by the structured phases. Log the answer with high priority for follow-up — unprompted disclosures tend to be the most revealing.
+
+*Source: Brown (EightShapes), NNGroup (stakeholder interview best practices).*
+
+## Evidence Classification
+
+**All `/interview` outputs are stakeholder beliefs, not validated evidence.** This is a stakeholder interview — the founder/PM is sharing their mental model of the product, users, and market.
+
+When writing canvas entries from interview answers:
+- Tag evidence as `source_class: internal_stakeholder`
+- Claims about users (Phase 2) are **organizational mythology** (Brown) — what the stakeholder believes about users, not observed behavior. These count toward L0 confidence but do NOT satisfy L2's `external_human` requirement.
+- Mark user-related claims with `validated: false` to create natural pressure for real user research.
+- The wayfinding map after interview should note: "Based on stakeholder perspective. Confidence increases with external validation."
+
+This classification ensures the evidence gate correctly distinguishes between "the founder told us" and "we observed users doing this."
+
+*Source: Brown (organizational mythology), Torres (assumptions are beliefs that may or may not be true), Spool (secondhand research fails to produce the same benefits as firsthand observation).*
+
 ## Output
 
 - Purpose statement
 - JTBD map per user type
 - North star metric + input metrics
 - Strategic context summary
+- Constraints map (technical, political, regulatory)
 - Initial opportunity areas (from what was shared, not assumed)
+- All outputs tagged `source_class: internal_stakeholder`
 
 ## Phase 6: Project Classification (NEW in v0.2)
 
@@ -187,6 +238,10 @@ theory_gates_status:
 
 - Sinek: Start with Why (purpose)
 - Christensen: Jobs to Be Done
-- Torres: Continuous Discovery Habits (opportunity identification)
+- Torres: Continuous Discovery Habits (opportunity identification, assumption mapping)
 - Wardley: Wardley Mapping (landscape)
-- Cagan: Empowered (vision, strategy)
+- Cagan: Empowered (vision, strategy, four risks)
+- Brown: The Delicate Art of Interviewing Stakeholders (three mindsets, three lines of questioning, organizational mythology)
+- Hall: Just Enough Research (stakeholder interviews as dual-agenda conversations)
+- Spool: User Exposure Hours (secondhand research vs firsthand observation)
+- NNGroup: Stakeholder interview best practices (closing question)

@@ -44,8 +44,9 @@ If no server is active, ask for a representative schema excerpt or table list an
   - browser -> backend API -> MotherDuck
 - **Embedded Dives** are acceptable when:
   - the requirement is read-only
-  - the product just needs a live dashboard surface
+  - the product needs a live Dive surface shipped into an app
   - app-side policy and UX control are limited
+  - a backend can create embed sessions and keep admin tokens server-side
 - **DuckDB-Wasm** is acceptable only for small, browser-side, read-only workloads.
 - **Single shared tenant_id filtering** is the fallback, not the recommendation.
 

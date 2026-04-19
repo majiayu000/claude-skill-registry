@@ -1,230 +1,106 @@
 ---
 name: security
-description: Security audit workflow - vulnerability scan → verification
+description: Security audit workflow - OWASP Top 10, input validation, auth, secret detection, vulnerability scan
 ---
 
-# /security - Security Audit Workflow
+# Security Patterns
 
-Dedicated security analysis for sensitive code.
+## OWASP Top 10 (2021) Checklist
 
-## When to Use
+| # | Vulnerability | Prevention |
+|---|--------------|------------|
+| A01 | Broken Access Control | RBAC, resource-level auth, CORS |
+| A02 | Cryptographic Failures | Encrypt at rest/transit, no PII in logs |
+| A03 | Injection (SQL/NoSQL/XSS/OS) | Parameterized queries, output encoding, CSP |
+| A04 | Insecure Design | Threat modeling, secure design patterns |
+| A05 | Security Misconfiguration | Hardened defaults, no debug in prod |
+| A06 | Vulnerable Components | npm audit, dependency scan, CVE tracking |
+| A07 | Auth Failures | Rate limiting, MFA, secure session |
+| A08 | Data Integrity Failures | Input validation, signed updates, CI/CD security |
+| A09 | Logging & Monitoring Failures | Audit log, alert on anomaly |
+| A10 | SSRF | URL allowlist, network segmentation |
 
-- "Security audit"
-- "Check for vulnerabilities"
-- "Is this secure?"
-- "Review authentication code"
-- "Check for injection attacks"
-- Before handling auth, payments, user data
-- After adding security-sensitive features
+## Input Validation
 
-## Workflow Overview
+```typescript
+import { z } from 'zod';
 
-```
-┌─────────┐    ┌───────────┐
-│  aegis  │───▶│ arbiter  │
-│         │    │           │
-└─────────┘    └───────────┘
-  Security       Verify
-  audit          fixes
-```
+const UserInput = z.object({
+  email: z.string().email().max(255),
+  name: z.string().min(1).max(100).regex(/^[\w\s-]+$/),
+  age: z.number().int().min(0).max(150),
+});
 
-## Agent Sequence
-
-| # | Agent | Role | Output |
-|---|-------|------|--------|
-| 1 | **aegis** | Comprehensive security scan | Vulnerability report |
-| 2 | **arbiter** | Verify fixes, run security tests | Verification report |
-
-## Why Dedicated Security?
-
-The `/review` workflow focuses on code quality. Security needs:
-- Specialized vulnerability patterns
-- Dependency scanning
-- Secret detection
-- OWASP Top 10 checks
-- Authentication/authorization review
-
-## Execution
-
-### Phase 1: Security Audit
-
-```
-Task(
-  subagent_type="aegis",
-  prompt="""
-  Security audit: [SCOPE]
-
-  Scan for:
-
-  **Injection Attacks:**
-  - SQL injection
-  - Command injection
-  - XSS (Cross-Site Scripting)
-  - LDAP injection
-
-  **Authentication/Authorization:**
-  - Broken authentication
-  - Session management issues
-  - Privilege escalation
-  - Insecure direct object references
-
-  **Data Protection:**
-  - Sensitive data exposure
-  - Hardcoded secrets/credentials
-  - Insecure cryptography
-  - Missing encryption
-
-  **Configuration:**
-  - Security misconfigurations
-  - Default credentials
-  - Verbose error messages
-  - Missing security headers
-
-  **Dependencies:**
-  - Known vulnerable packages
-  - Outdated dependencies
-  - Supply chain risks
-
-  Output: Detailed report with:
-  - Severity (CRITICAL/HIGH/MEDIUM/LOW)
-  - Location (file:line)
-  - Description
-  - Remediation steps
-  """
-)
+// Parameterized query (SQL injection prevention)
+const user = await db.query('SELECT * FROM users WHERE id = $1', [userId]);
 ```
 
-### Phase 2: Verification (After Fixes)
+## Auth Best Practices
 
-```
-Task(
-  subagent_type="arbiter",
-  prompt="""
-  Verify security fixes: [SCOPE]
+```typescript
+// Password hashing
+import bcrypt from 'bcryptjs';
+const hash = await bcrypt.hash(password, 12);
+const valid = await bcrypt.compare(password, hash);
 
-  Run:
-  - Security-focused tests
-  - Dependency audit (npm audit, pip audit)
-  - Re-check reported vulnerabilities
-  - Verify fixes don't introduce regressions
+// JWT with expiry
+const token = jwt.sign({ userId: user.id, role: user.role }, secret, { expiresIn: '24h' });
 
-  Output: Verification report
-  """
-)
+// Rate limiting on auth endpoints
+const authLimiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 5 });
+app.use('/api/auth', authLimiter);
 ```
 
-## Security Scopes
+## Secret Detection
 
-### Full Codebase
-```
-User: /security
-→ Scan entire codebase
-```
-
-### Specific Area
-```
-User: /security authentication
-→ Focus on auth-related code
+```bash
+# Git hooks ile secret engelleme
+grep -rn "sk-\|pk_\|ghp_\|xoxb-\|AKIA" --include="*.ts" --include="*.js" src/
+grep -rn "password\s*=\s*['\"]" --include="*.ts" src/
 ```
 
-### Single File
-```
-User: /security src/api/auth.py
-→ Deep dive on one file
-```
+## Security Headers
 
-### Dependencies Only
-```
-User: /security --deps
-→ Only dependency vulnerabilities
+```typescript
+import helmet from 'helmet';
+app.use(helmet());
+// Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, etc.
 ```
 
-## Example
+## Anti-Patterns
+
+| Anti-Pattern | Cozum |
+|-------------|-------|
+| Hardcoded secrets | Environment variables |
+| SQL string concat | Parameterized queries |
+| No CORS config | Whitelist origins |
+| Debug mode in prod | NODE_ENV check |
+| No rate limiting | express-rate-limit |
+
+## Pentest Methodology (Overview)
+
+Detayli rehber icin: `pentest-methodology` skill
+
+5-faz pipeline: Recon > Vuln Analysis > Exploitation > Verification > Report
+
+### Proof Levels
+
+| Level | Tanim |
+|-------|-------|
+| L1 - Theoretical | Potansiyel risk, exploit edilmemis |
+| L2 - Demonstrated | Bypass/leak gosterildi |
+| L3 - Exploited | Tam exploit, veri erisimi |
+| L4 - Chained | Birden fazla vuln zincirlendi |
+
+### Source-to-Sink Taint Tracing
+
+Kullanici input'unun (source) tehlikeli fonksiyona (sink) ulasip ulasamadigini kontrol et:
 
 ```
-User: /security the payment processing code
+Source: req.body, req.query, req.params, req.headers, cookies
+Sink: db.query(), eval(), exec(), res.redirect(), innerHTML
 
-Claude: Starting /security audit for payment code...
-
-Phase 1: Security audit...
-[Spawns aegis]
-
-┌─────────────────────────────────────────────────────────────┐
-│ Security Audit Report                                       │
-├─────────────────────────────────────────────────────────────┤
-│ Scope: src/services/payment/                                │
-│ Files scanned: 12                                           │
-│ Lines analyzed: 2,847                                       │
-├─────────────────────────────────────────────────────────────┤
-│ CRITICAL (1)                                                │
-│ ──────────                                                  │
-│ [C1] SQL Injection in payment.py:89                         │
-│      query = f"SELECT * FROM orders WHERE id = {order_id}"  │
-│      Fix: Use parameterized queries                         │
-│                                                             │
-│ HIGH (2)                                                    │
-│ ────────                                                    │
-│ [H1] Hardcoded API key in stripe_client.py:12               │
-│      STRIPE_KEY = "sk_live_..."                             │
-│      Fix: Move to environment variable                      │
-│                                                             │
-│ [H2] Missing input validation in refund.py:45               │
-│      amount = request.json['amount']  # No validation       │
-│      Fix: Validate amount is positive number                │
-│                                                             │
-│ MEDIUM (1)                                                  │
-│ ──────────                                                  │
-│ [M1] Verbose error messages in error_handler.py:23          │
-│      return {"error": str(e)}  # Leaks internal details     │
-│      Fix: Return generic message, log details internally    │
-│                                                             │
-│ LOW (0)                                                     │
-│ ───────                                                     │
-│ None                                                        │
-├─────────────────────────────────────────────────────────────┤
-│ Summary: 1 critical, 2 high, 1 medium, 0 low                │
-│ Status: BLOCKING - Fix critical issues before release       │
-└─────────────────────────────────────────────────────────────┘
-
-Fix the critical and high issues, then run:
-/security --verify
+Kontrol: Source ile Sink arasinda sanitizasyon/validasyon var mi?
 ```
 
-### After Fixes
-
-```
-User: /security --verify
-
-Claude: Phase 2: Verifying fixes...
-[Spawns arbiter]
-
-✅ C1: SQL injection fixed - using parameterized queries
-✅ H1: API key moved to environment variable
-✅ H2: Input validation added
-✅ M1: Error messages sanitized
-
-All security tests passing.
-Security audit: PASSED
-```
-
-## OWASP Top 10 Coverage
-
-| Risk | Checked |
-|------|---------|
-| A01 Broken Access Control | ✅ |
-| A02 Cryptographic Failures | ✅ |
-| A03 Injection | ✅ |
-| A04 Insecure Design | ✅ |
-| A05 Security Misconfiguration | ✅ |
-| A06 Vulnerable Components | ✅ |
-| A07 Auth Failures | ✅ |
-| A08 Data Integrity Failures | ✅ |
-| A09 Logging Failures | ✅ |
-| A10 SSRF | ✅ |
-
-## Flags
-
-- `--deps`: Dependencies only
-- `--verify`: Re-run after fixes
-- `--owasp`: Explicit OWASP Top 10 report
-- `--secrets`: Focus on secret detection
+Bu yaklasimi her code review'da auth/data islerinde kullan.

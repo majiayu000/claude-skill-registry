@@ -1,0 +1,17 @@
+{
+  "name": "design-taste-frontend",
+  "repo": "Natively-AI-assistant/natively-cluely-ai-assistant",
+  "path": ".agents/skills/design-taste-frontend/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Natively-AI-assistant/natively-cluely-ai-assistant",
+  "dir_name": "design-taste-frontend",
+  "downloaded_at": "2026-04-19T01:29:38.663716Z",
+  "author": "Natively-AI-assistant",
+  "source_url": "https://github.com/Natively-AI-assistant/natively-cluely-ai-assistant/blob/main/.agents/skills/design-taste-frontend/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Natively-AI-assistant/natively-cluely-ai-assistant/blob/main/.agents/skills/design-taste-frontend/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

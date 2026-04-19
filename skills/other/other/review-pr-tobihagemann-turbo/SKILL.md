@@ -1,11 +1,11 @@
 ---
 name: review-pr
-description: "Review a pull request by fetching PR comments and running a comprehensive code review with evaluation. Use when the user asks to \"review PR\", \"review pull request\", \"review this PR\", \"check PR before merging\", or \"full PR review\"."
+description: "Review a pull request by fetching PR comments, running a comprehensive code review, evaluating findings, and dispatching to implementation. Use when the user asks to \"review PR\", \"review pull request\", \"review this PR\", \"check PR before merging\", or \"full PR review\"."
 ---
 
 # Review PR
 
-Fetch PR context, run a comprehensive code review, and evaluate findings.
+Fetch PR context, run a comprehensive code review, evaluate findings, and dispatch accepted findings to implementation.
 
 ## Task Tracking
 
@@ -15,6 +15,7 @@ At the start, use `TaskCreate` to create a task for each step:
 2. Detect base branch
 3. Run `/review-code` skill
 4. Run `/evaluate-findings` skill
+5. Run `/resolve-findings` skill
 
 ## Step 1: Run `/fetch-pr-comments` Skill
 
@@ -32,7 +33,11 @@ Run the `/review-code` skill. The diff command is `git diff <base-branch>...HEAD
 
 Run the `/evaluate-findings` skill on the combined results from Step 3. Include any unresolved PR comments from Step 1 as additional findings for evaluation.
 
-If zero actionable findings survive evaluation, report that the code looks clean and stop. Otherwise, present the evaluated findings to the user.
+## Step 5: Run `/resolve-findings` Skill
+
+If zero actionable findings survive evaluation, report that the code looks clean and stop.
+
+Otherwise, run the `/resolve-findings` skill on the accepted findings from Step 4.
 
 ## Rules
 

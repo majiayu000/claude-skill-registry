@@ -1,8 +1,8 @@
 {
   "category": "marketing",
   "code": "mkt",
-  "count": 458,
-  "updated_at": "2026-04-18T01:57:52.538354Z",
+  "count": 459,
+  "updated_at": "2026-04-19T02:07:58.992530Z",
   "skills": [
     {
       "name": "social-media",
@@ -3926,6 +3926,25 @@
       "stars": 0,
       "install": "leobrival/serum-plugins-official/marketing/check-meta",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "social-reply-bot",
+      "description": "AI-powered Reddit & X auto-reply bot. Finds relevant posts, generates genuine Claude-powered replies that naturally mention your product. Includes karma warmup and lead tracking.",
+      "repo": "mguozhen/social-bot",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "marketing",
+      "tags": [
+        "reddit",
+        "twitter",
+        "social-media",
+        "ai-replies",
+        "growth",
+        "browser-automation"
+      ],
+      "stars": 0,
+      "install": "mguozhen/social-bot/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "marketing",

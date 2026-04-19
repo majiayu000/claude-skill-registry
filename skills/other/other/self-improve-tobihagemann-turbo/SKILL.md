@@ -27,6 +27,8 @@ If `~/.turbo/repo/` exists, identify which installed skills are turbo skills:
 - Any skill in `~/.claude/skills/` that has a matching directory in `~/.turbo/repo/skills/` is a turbo skill
 - Skills only in `~/.claude/skills/` (no match in the repo) are user/project skills
 
+**Verification rule (mandatory before routing in Step 4):** For every candidate skill that is about to be routed as turbo, confirm with a fresh `test -d ~/.turbo/repo/skills/<name>` check that the skill actually lives in the turbo repo. Do not rely on remembered listings from earlier in the session, filename hits in grep output, or assumptions based on where a SKILL.md was read from. A miss here mislabels a user/project skill as turbo, triggers the contribution flow unnecessarily, and can introduce session-specific content into a shared skill — so the check is not optional.
+
 **Exception:** If the current project IS the turbo repo (i.e., the working directory contains this skill collection), route turbo skill changes directly to `skills/` in the project directory. Skip the installed-copy indirection and the contribution flow.
 
 ## Step 2: Identify Session Skills and Scan for Lessons
@@ -74,7 +76,7 @@ Assign each surviving lesson to exactly one destination.
 
 | Destination | Criteria |
 |---|---|
-| **Existing turbo skill** | Lesson would improve a turbo skill's instructions, supporting files, or reference materials, add a missing edge case, correct its workflow, or refine its trigger conditions. Route to any turbo skill whose *domain* covers the lesson — not just the skill worked on in this session. Changes go to the installed copy at `~/.claude/skills/`. If `repoMode` is `"fork"` or `"source"`, also apply to `~/.turbo/repo/` and flag for contribution (see Step 6). |
+| **Existing turbo skill** | Lesson would improve a turbo skill's instructions, supporting files, or reference materials, add a missing edge case, correct its workflow, or refine its trigger conditions. Route to any turbo skill whose *domain* covers the lesson — not just the skill worked on in this session. **Before routing here, run `test -d ~/.turbo/repo/skills/<name>`; if the directory does not exist, route to the Existing user/project skill destination instead.** Changes go to the installed copy at `~/.claude/skills/`. If `repoMode` is `"fork"` or `"source"`, also apply to `~/.turbo/repo/` and flag for contribution (see Step 6). |
 | **Existing user/project skill** | Same criteria as above, but for non-turbo skills. Changes go to the skill file directly. No contribution flow. |
 | **New skill** | A cohesive body of knowledge emerged that deserves its own on-demand context. The test: would this knowledge be too large for a CLAUDE.md section, and should it only be loaded when relevant? See the skill categories table below. |
 | **Project CLAUDE.md / AGENTS.md** | Intentional project decisions: conventions, architecture, stack choices, build setup, module boundaries. Also factual corrections to CLAUDE.md content (wrong commands, outdated paths, incorrect conventions) — fix these directly, do not defer to Project improvements. |

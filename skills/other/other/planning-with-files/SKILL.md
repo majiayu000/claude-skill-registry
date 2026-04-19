@@ -21,9 +21,9 @@ hooks:
   Stop:
     - hooks:
         - type: command
-          command: "export SD=\"${CLAUDE_PLUGIN_ROOT:-$HOME/.claude/plugins/planning-with-files}/scripts\"; powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$SD/check-complete.ps1\" 2>/dev/null || sh \"$SD/check-complete.sh\""
+          command: "powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"& (Get-ChildItem -Path (Join-Path ~ '.claude/plugins/cache') -Filter check-complete.ps1 -Recurse -EA 0 | Select-Object -First 1).FullName\" 2>/dev/null || sh \"$(ls $HOME/.claude/plugins/cache/*/*/*/scripts/check-complete.sh 2>/dev/null | head -1)\" 2>/dev/null || true"
 metadata:
-  version: "2.34.0"
+  version: "2.34.1"
 ---
 
 # Planning with Files

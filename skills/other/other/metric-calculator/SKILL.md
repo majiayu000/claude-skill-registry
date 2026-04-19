@@ -1,9 +1,8 @@
 ---
 name: metric-calculator
 description: |
-  Metric Calculator - Auto-activating skill for Data Analytics.
-  Triggers on: metric calculator, metric calculator
-  Part of the Data Analytics skill category.
+  Compute well-defined metrics from existing formulas, datasets, or test outputs.
+  Use as an explicit/manual helper when the metric definition is already known, not for choosing the overall analysis owner or dashboard strategy.
 allowed-tools: Read, Write, Edit, Bash, Grep
 version: 1.0.0
 license: MIT
@@ -12,31 +11,30 @@ author: Jeremy Longshore <jeremy@intentsolutions.io>
 
 # Metric Calculator
 
-## Purpose
+## Positioning
 
-This skill provides automated assistance for metric calculator tasks within the Data Analytics domain.
+Treat this skill as an explicit/manual helper for narrow metric-computation work.
 
 ## When to Use
 
-This skill activates automatically when you:
-- Mention "metric calculator" in your request
-- Ask about metric calculator patterns or best practices
-- Need help with data analytics skills covering sql queries, data visualization, statistical analysis, and business intelligence.
+Use this skill when:
+- Calculating a named business, statistical, or QA metric from available data
+- Converting raw counts into rates, ratios, deltas, or scorecards
+- Verifying that a metric formula is implemented consistently across outputs
 
-## Capabilities
+## Not For / Boundaries
 
-- Provides step-by-step guidance for metric calculator
-- Follows industry best practices and patterns
-- Generates production-ready code and configurations
-- Validates outputs against common standards
+- Model evaluation strategy selection: use `evaluating-machine-learning-models`
+- Full regression or causal analysis ownership: use `performing-regression-analysis`
+- Chart design or presentation decisions: use `creating-data-visualizations`
 
-## Example Triggers
+## Typical Outputs
 
-- "Help me with metric calculator"
-- "Set up metric calculator"
-- "How do I implement metric calculator?"
+- Metric definitions and formulas
+- Reproducible calculation steps
+- Sanity checks for units, denominators, and aggregation scope
 
 ## Related Skills
 
-Part of the **Data Analytics** skill category.
-Tags: sql, analytics, visualization, statistics, bi
+- `evaluating-machine-learning-models` for ML benchmark metrics
+- `creating-data-visualizations` after the numbers are finalized

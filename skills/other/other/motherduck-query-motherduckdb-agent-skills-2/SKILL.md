@@ -19,6 +19,7 @@ Use this skill when executing SQL queries for analytics, aggregations, transform
 - Always use fully qualified `"database"."schema"."table"` names.
 - Filter early, aggregate early, and prefer serving tables or summaries for repeated reads.
 - Keep SQL obvious, multi-line, and explicit about grain, filters, and output shape.
+- Treat DDL, DML, `ATTACH`, `DETACH`, and lifecycle commands such as `SHUTDOWN` as writes. Use MCP `query_rw` only when the user explicitly asks for the change and confirms it.
 - Tag long-lived integrations with `custom_user_agent` when the connection path supports it.
 
 ## Workflow

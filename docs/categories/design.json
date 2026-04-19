@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 9507,
-  "updated_at": "2026-04-18T01:57:52.094783Z",
+  "count": 9508,
+  "updated_at": "2026-04-19T02:07:58.522582Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -76711,6 +76711,23 @@
       "stars": 0,
       "install": "tzf1003/ChatKali/design/kali-tools-tzf1003-chatkali-570ccc0b",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "repo": "alonw0/web-asset-generator",
+      "path": "skills/web-asset-generator/SKILL.md",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "stars": 0,
+      "install": "alonw0/web-asset-generator/skills/web-asset-generator/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "justfile-style",

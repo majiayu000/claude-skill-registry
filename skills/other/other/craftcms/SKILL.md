@@ -1,6 +1,6 @@
 ---
 name: craftcms
-description: "Craft CMS 5 plugin and module development — extending Craft. Covers the full extend surface: elements, element queries, services, models, records, project config, controllers, CP templates, migrations, queue jobs, console commands, field types, native fields, events, behaviors, Twig extensions, utilities, widgets, filesystems, debugging, testing, and GraphQL. Triggers on: beforePrepare(), afterSave(), defineSources(), defineTableAttributes(), attributeHtml(), MemoizableArray, getConfig(), handleChanged, $allowAnonymous, $enableCsrfValidation, BaseNativeField, EVENT_DEFINE_NATIVE_FIELDS, FieldLayoutBehavior, EVENT_REGISTER, EVENT_DEFINE, EVENT_BEFORE, EVENT_AFTER, CraftVariable, registerTwigExtension, DefineConsoleActionsEvent, PHPStan, Pest, plugin development, module development, custom element type, custom field type, webhook, API endpoint, queue job, migration, CP section, control panel, Craft plugin, Craft module, extending Craft, element action, element exporter, element condition, dashboard widget, utility page. Always use when writing, editing, or reviewing any Craft CMS plugin or module code — even when the user asks about plugin architecture, Craft internals, or extending Craft without naming specific APIs."
+description: "Craft CMS 5 plugin and module development — extending Craft. Covers the full extend surface: elements, element queries, services, models, records, project config, controllers, CP templates, migrations, queue jobs, console commands, field types, native fields, events, behaviors, Twig extensions, utilities, widgets, filesystems, debugging, testing, and GraphQL. Triggers on: beforePrepare(), afterSave(), defineSources(), defineTableAttributes(), attributeHtml(), MemoizableArray, getConfig(), handleChanged, $allowAnonymous, $enableCsrfValidation, BaseNativeField, EVENT_DEFINE_NATIVE_FIELDS, FieldLayoutBehavior, EVENT_REGISTER, EVENT_DEFINE, EVENT_BEFORE, EVENT_AFTER, CraftVariable, registerTwigExtension, DefineConsoleActionsEvent, PHPStan, Pest, plugin development, module development, custom element type, custom field type, webhook, API endpoint, queue job, migration, CP section, control panel, Craft plugin, Craft module, extending Craft, element action, element exporter, element condition, dashboard widget, utility page, GraphQL, GraphQL types, GraphQL mutations, GraphQL schema, headless, headless CMS, front-end framework, Rector, Craft 4 to 5, upgrade plugin, CI/CD, continuous integration, GitHub Actions, GitLab CI, custom validator, validation rules, defineRules. Always use when writing, editing, or reviewing any Craft CMS plugin or module code — even when the user asks about plugin architecture, Craft internals, or extending Craft without naming specific APIs."
 ---
 
 # Craft CMS 5 — Extending (Plugins & Modules)
@@ -15,6 +15,7 @@ When this skill triggers, also load:
 
 - **`craft-php-guidelines`** — PHPDoc standards, section headers, naming conventions, class organization, ECS/PHPStan, verification checklist. Required for any PHP code.
 - **`ddev`** — All commands run through DDEV. Required for running ECS, PHPStan, scaffolding, and tests.
+- **`craft-garnish`** — When working on CP JavaScript, asset bundles, or interactive CP components. Covers Garnish's class system, UI widgets (Modal, HUD, DisclosureMenu, Select), drag system, and the Craft.* JS class pattern.
 
 ## Documentation
 
@@ -48,7 +49,9 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Expose template variables for plugin users" → read `events.md` (Twig Extensions section)
 - "Attach custom methods to entries" → read `events.md` (Behaviors section)
 - "Build a CP utility page" → read `events.md` (Utilities section) + `cp.md`
-- "Set up Vite for a plugin's CP assets" → read `plugin-vite.md`
+- "Set up Vite for a plugin's CP assets" → read `plugin-vite.md` + load `craft-garnish` skill
+- "Add drag-to-reorder or interactive JS to a CP page" → load `craft-garnish` skill
+- "Write CP JavaScript for a custom field type" → read `fields.md` + load `craft-garnish` skill
 - "Build a headless Craft API" → read `headless.md` + `graphql.md`
 - "Configure preview for a Next.js front-end" → read `headless.md`
 - "Set up Pest tests for a plugin" → read `testing.md`
@@ -80,7 +83,7 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 | Element index: sources, table/card attributes, sort, conditions, actions, exporters, sidebar, metadata | `references/element-index.md` |
 | Services, models, records, project config, MemoizableArray, events, API clients, custom validators | `references/architecture.md` |
 | Controllers: CP CRUD, webhooks, API endpoints, action routing, authorization | `references/controllers.md` |
-| CP templates, form macros, admin changes, VueAdminTable, asset bundles, CP layout, permissions | `references/cp.md` |
+| CP templates, form macros, admin changes, VueAdminTable, asset bundles, CP layout, permissions. For CP JavaScript interactions, also load `craft-garnish` skill. | `references/cp.md` |
 | Database migrations, Install.php, foreign keys, indexes, idempotency, deployment | `references/migrations.md` |
 | Queue jobs, BaseJob, TTR, retry, progress, batch jobs, site context | `references/queue-jobs.md` |
 | Console commands, arguments, options, progress bars, output helpers, resave actions | `references/console-commands.md` |

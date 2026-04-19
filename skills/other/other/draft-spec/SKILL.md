@@ -15,7 +15,8 @@ At the start, use `TaskCreate` to create a task for each step:
 2. Consult task-specific skills and docs
 3. Deep-dive discussion
 4. Draft the spec
-5. Present and finalize
+5. Resolve open questions
+6. Present and finalize
 
 ## Step 1: Capture the Vision and Pick a Slug
 
@@ -89,7 +90,21 @@ Synthesize the consulted skill and doc context plus the entire discussion into `
 
 Create the `.turbo/specs/` directory if it does not exist. Accept a different output path if the user provides one.
 
-## Step 5: Present and Finalize
+## Step 5: Resolve Open Questions
+
+If the spec's Open Questions section is empty, contains "None," or does not exist, skip this step.
+
+For each open question:
+
+1. Analyze the question against the spec, prior discussion, and consulted-docs context from Step 2. State the trade-offs of the leading options in plain text so the user can see the reasoning.
+2. Use `AskUserQuestion` to offer 2-3 concrete resolution options with short descriptions, plus a **Defer to implementation** option (leaves the question in Open Questions to be surfaced again when shells are expanded). Mark the strongest option "(Recommended)" and place it first.
+3. Fold the chosen answer into the relevant spec section and remove the question from Open Questions.
+
+If the user selects "Other" and provides a freeform answer, accept it and proceed.
+
+Default to resolving. Defer only when the answer genuinely needs codebase or pattern-survey context that is not yet available. If every question resolves, replace the Open Questions section with "None."
+
+## Step 6: Present and Finalize
 
 Present the draft to the user. Use `AskUserQuestion` to offer three paths:
 

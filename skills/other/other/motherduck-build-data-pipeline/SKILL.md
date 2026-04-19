@@ -43,6 +43,7 @@ If no server is active, ask for source shape and target shape before drafting th
 - raw landing before curation
 - explicit raw -> staging -> analytics boundaries
 - bulk ingest paths over row-by-row writes
+- DuckDB 1.5+ clients for write/delete-heavy jobs that depend on concurrent checkpoint behavior
 - native MotherDuck storage unless DuckLake is explicitly required
 
 ## Workflow

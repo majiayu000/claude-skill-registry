@@ -1,7 +1,7 @@
 ---
 name: autonomous-builder
 version: "1.0.0"
-description: "Full-stack autonomous software development agent: handles design, implementation, testing, and deployment end-to-end. Auto-activates for project creation, feature development, bug fixing, code refactoring, or when user requests 'build', 'create', 'implement', 'develop', 'fix', or 'refactor' any software project."
+description: "Full-stack software development agent for design, implementation, testing, and deployment. Use when the user explicitly asks for end-to-end project creation, feature development, bug fixing, or code refactoring."
 user-invocable: true
 allowed-tools:
   - Read
@@ -91,12 +91,13 @@ PLAN -> BUILD -> TEST -> DEBUG -> DEPLOY -> (REPEAT)
 
 ## When to Use This Skill
 
-Trigger when:
-- User requests "build", "create", "implement", "develop" any software
-- User wants to "fix" or "debug" a project
-- User needs "refactoring" or "modernization"
-- Starting a new project from requirements
-- Continuing an incomplete project
+Use this skill when the user explicitly wants this agent to own an end-to-end build or major refactor, such as:
+- Starting a new project from a full specification
+- Continuing a previously initialized `.builder/` project
+- Driving a broad feature build across multiple implementation steps
+- Performing an explicit refactor or modernization effort across the codebase
+
+Use stage assistants or other routed specialists for narrow bug fixes, one-off debugging, or scoped edits that do not need full lifecycle ownership.
 
 ## Not For / Boundaries
 
@@ -238,9 +239,9 @@ def on_feature_complete(feature_id: str, state: ProjectState):
 └── supervisor.json      # Self-supervision config
 ```
 
-### Skill Scheduling & Auto-Dispatch
+### Skill Recommendations & Router Handoff
 
-**⚠️ Enables automatic skill discovery and invocation**
+**⚠️ Skill discovery is advisory. The host router remains the only main-route authority.**
 
 ```markdown
 ON PROJECT INITIALIZATION:
@@ -252,7 +253,7 @@ ON PROJECT INITIALIZATION:
 3. For each feature:
    - Analyze feature requirements
    - Match against skill catalog
-   - Add recommended_skills to feature definition
+   - Add recommended_skills to feature definition as router-handoff suggestions
 
 DURING IMPLEMENTATION:
 
@@ -260,18 +261,18 @@ DURING IMPLEMENTATION:
    - Check step's invoke_skill field
    - Or analyze step for skill match
 
-2. Auto-invoke skill:
-   - Use Skill tool with skill: {skill_name}
-   - Execute with skill's guidance
-   - Continue with enhanced capabilities
+2. Request router-approved handoff:
+   - Propose the matched skill to the host router or current route authority
+   - Use the Skill tool only after that router-authorized handoff or an explicit user request
+   - Continue with the returned guidance once the handoff is granted
 
-3. Log skill usage to state.json
+3. Log router-approved skill usage to state.json
 ```
 
-**Task-to-Skill Mapping (Auto-applied):**
+**Task-to-Skill Mapping (Recommended):**
 
-| Task Type | Auto-Invoked Skills |
-|-----------|---------------------|
+| Task Type | Recommended Skills |
+|-----------|--------------------|
 | Code review | `code-reviewer`, `code-review-excellence` |
 | Data analysis | `exploratory-data-analysis`, `statistical-analysis` |
 | Visualization | `data-artist`, `matplotlib`, `plotly` |
@@ -295,13 +296,13 @@ DURING IMPLEMENTATION:
     {"skill": "data-artist", "phase": "implementation"}
   ],
   "skill_dispatch_schedule": [
-    {"step": 1, "action": "Explore data", "invoke_skill": "exploratory-data-analysis"},
-    {"step": 2, "action": "Create charts", "invoke_skill": "data-artist"}
+    {"step": 1, "action": "Explore data", "invoke_skill": "exploratory-data-analysis", "router_handoff_required": true},
+    {"step": 2, "action": "Create charts", "invoke_skill": "data-artist", "router_handoff_required": true}
   ]
 }
 ```
 
-**Setup**: Place `Claude_Skills_中文指南.md` in workspace root. Skills will be auto-discovered and dispatched.
+**Setup**: Place `Claude_Skills_中文指南.md` in workspace root. Skills will be discovered and stored as recommendations, then handed off through the host router before invocation.
 
 ### MCP Auto-Integration & Human-like Computer Control
 
@@ -1259,4 +1260,3 @@ Before marking project complete:
 3. [ ] No uncommitted changes
 4. [ ] Documentation generated
 5. [ ] State archived to `.builder/archive/`
-

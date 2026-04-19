@@ -1,9 +1,8 @@
 ---
 name: confusion-matrix-generator
 description: |
-  Confusion Matrix Generator - Auto-activating skill for ML Training.
-  Triggers on: confusion matrix generator, confusion matrix generator
-  Part of the ML Training skill category.
+  Inspect classifier errors with confusion matrices after predictions already exist.
+  Use for per-class error analysis, threshold tradeoffs, and label-confusion diagnosis; not for regression metrics or full model training ownership.
 allowed-tools: Read, Write, Edit, Bash(python:*), Bash(pip:*)
 version: 1.0.0
 license: MIT
@@ -14,29 +13,28 @@ author: Jeremy Longshore <jeremy@intentsolutions.io>
 
 ## Purpose
 
-This skill provides automated assistance for confusion matrix generator tasks within the ML Training domain.
+Use this skill when the user already has classification outputs and needs to understand where the model is getting confused.
 
 ## When to Use
 
-This skill activates automatically when you:
-- Mention "confusion matrix generator" in your request
-- Ask about confusion matrix generator patterns or best practices
-- Need help with machine learning training skills covering data preparation, model training, hyperparameter tuning, and experiment tracking.
+Use this skill when:
+- Breaking down false positives and false negatives by class
+- Comparing thresholds or class weights for a classification model
+- Explaining which classes are systematically confused with one another
 
-## Capabilities
+## Not For / Boundaries
 
-- Provides step-by-step guidance for confusion matrix generator
-- Follows industry best practices and patterns
-- Generates production-ready code and configurations
-- Validates outputs against common standards
+- Regression evaluation: use `evaluating-machine-learning-models`
+- Leakage audits: use `ml-data-leakage-guard`
+- End-to-end training runs: use `training-machine-learning-models`
 
-## Example Triggers
+## Typical Outputs
 
-- "Help me with confusion matrix generator"
-- "Set up confusion matrix generator"
-- "How do I implement confusion matrix generator?"
+- Confusion matrix tables or heatmaps
+- Per-class precision/recall breakdowns
+- Actionable notes on thresholding, relabeling, or class balancing
 
 ## Related Skills
 
-Part of the **ML Training** skill category.
-Tags: ml, training, pytorch, tensorflow, sklearn
+- `evaluating-machine-learning-models` for the broader metric suite
+- `feature-importance-analyzer` when the next question is why a class fails

@@ -1,9 +1,8 @@
 ---
 name: data-quality-checker
 description: |
-  Data Quality Checker - Auto-activating skill for Data Pipelines.
-  Triggers on: data quality checker, data quality checker
-  Part of the Data Pipelines skill category.
+  Validate dataset completeness and basic correctness before downstream analysis.
+  Use for nulls, duplicates, schema drift, range checks, and column-level sanity reviews; not for anomaly detection or ML evaluation.
 allowed-tools: Read, Write, Edit, Bash, Grep
 version: 1.0.0
 license: MIT
@@ -14,29 +13,28 @@ author: Jeremy Longshore <jeremy@intentsolutions.io>
 
 ## Purpose
 
-This skill provides automated assistance for data quality checker tasks within the Data Pipelines domain.
+Use this skill when the user needs to know whether the dataset is trustworthy enough to continue.
 
 ## When to Use
 
-This skill activates automatically when you:
-- Mention "data quality checker" in your request
-- Ask about data quality checker patterns or best practices
-- Need help with data pipeline skills covering etl, data transformation, workflow orchestration, and streaming data processing.
+Use this skill when:
+- Checking null rates, duplicates, invalid categories, or out-of-range values
+- Verifying schemas after ETL or data ingestion
+- Producing a pre-modeling data sanity checklist
 
-## Capabilities
+## Not For / Boundaries
 
-- Provides step-by-step guidance for data quality checker
-- Follows industry best practices and patterns
-- Generates production-ready code and configurations
-- Validates outputs against common standards
+- Rare-event or fraud detection: use `anomaly-detector`
+- Model metrics and benchmark comparisons: use `evaluating-machine-learning-models`
+- Report authoring and presentation polish: use `scientific-reporting`
 
-## Example Triggers
+## Typical Outputs
 
-- "Help me with data quality checker"
-- "Set up data quality checker"
-- "How do I implement data quality checker?"
+- Data quality scorecards
+- Column-level issue summaries
+- Recommended cleaning priorities before modeling or reporting
 
 ## Related Skills
 
-Part of the **Data Pipelines** skill category.
-Tags: etl, airflow, spark, streaming, data-engineering
+- `anomaly-detector` after the basic data checks pass
+- `structured-content-storage` if the dataset and outputs need stricter organization

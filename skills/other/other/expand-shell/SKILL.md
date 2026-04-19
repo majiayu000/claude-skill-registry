@@ -14,7 +14,9 @@ Use `TaskCreate` to create a task for each step:
 1. Load the shell and verify consumes
 2. Run `/survey-patterns` skill (shell-focused)
 3. Escalate the shell's open questions
-4. Write the plan and delete the shell
+4. Write the plan
+5. Verify the plan against the shell
+6. Delete the shell
 
 ## Step 1: Load the Shell and Verify Consumes
 
@@ -79,7 +81,7 @@ Do **not** escalate other questions. If you identify a new question while readin
 
 If the shell's Open Questions field is empty or contains "None," skip this step entirely and proceed to Step 4.
 
-## Step 4: Write the Plan and Delete the Shell
+## Step 4: Write the Plan
 
 Expand the shell into a full plan using:
 
@@ -127,7 +129,7 @@ spec: <spec path from original shell frontmatter>
 - `<path/to/file2>` — <why it matters>
 ````
 
-After the plan file is written successfully, delete the source shell at `.turbo/shells/<shell-slug>.md`. The plan carries `spec` forward as provenance. `depends_on` and the structural contract (Produces, Consumes, Covers) are locked in at expansion and do not need to persist on the plan.
+The plan carries `spec` forward as provenance. `depends_on` and the structural contract (Produces, Consumes, Covers) are locked in at expansion and do not need to persist on the plan.
 
 State the plan path before proceeding.
 
@@ -138,6 +140,22 @@ State the plan path before proceeding.
 - **Context Files**: Curate the minimum set needed to become productive. Do not dump every file touched — only the ones that anchor understanding.
 - **Scope**: Plan content describes what to build. Do not include task tracking, skill loading, test commands, or commit instructions — those are execution-wrapper concerns.
 
+## Step 5: Verify the Plan Against the Shell
+
+Re-read the shell at `.turbo/shells/<shell-slug>.md` and the drafted plan at `.turbo/plans/<shell-slug>.md`. Confirm the plan honors the shell's structural contract by checking each item below:
+
+- **Produces** — Every artifact listed in the shell's Produces is created by at least one Implementation Step in the plan.
+- **Consumes** — Every dependency listed in the shell's Consumes is referenced in the Implementation Steps, Context Files, or Pattern Survey.
+- **Covers** — Every spec requirement listed in the shell's Covers is addressed by the Implementation Steps.
+- **Context fidelity** — The plan's Context preserves the intent of the shell's Context (verbatim or lightly edited, not reinterpreted).
+- **Scope** — The plan does not add artifacts or responsibilities beyond the shell's Produces. Scope creep belongs in a new shell, not this plan.
+
+If every item passes, proceed to Step 6. If any item fails, revise the plan to close the gap and re-verify before proceeding. Do not delete the shell while any check is failing.
+
+## Step 6: Delete the Shell
+
+Delete the source shell at `.turbo/shells/<shell-slug>.md`. The plan is now the authoritative artifact for this work.
+
 Check your task list for remaining tasks and proceed.
 
 ## Rules
@@ -145,6 +163,6 @@ Check your task list for remaining tasks and proceed.
 - Never proceed past Step 1 if Consumes verification fails.
 - The shell's structural contract (Produces, Consumes, Covers) is authoritative. If the pattern survey reveals conflicts, note them in the plan's Context or Verification sections rather than altering the contract.
 - The plan file is the only output. Do not write code, scaffolding, or other project files.
-- Delete the source shell only after the plan file has been written successfully. Never delete before.
+- Delete the source shell only after the plan file has been written successfully and Step 5 verification has passed. Never delete before.
 - Do not run `/review-plan` or any review skills here.
 - Do not embed task tracking, skill loading, or `/finalize` invocation in the plan file.

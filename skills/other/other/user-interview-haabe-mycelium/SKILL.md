@@ -30,10 +30,20 @@ Discover opportunities through customer stories. Source: Torres (CDH), Kahneman,
 - "What features would you want?" (solution-space, not problem-space)
 
 ## During Interview
+
+### Three Mindsets (Brown)
+- **Curiosity**: Ask from genuine interest. "Walk me through..." not "What are your pain points?"
+- **Skepticism**: Probe beneath surface responses. "Why does your team call this a 'power user'?" Challenge assumptions without being adversarial.
+- **Humility**: "Can you say that again so I get it right?" Don't assume immediate comprehension.
+
+**Master the pause**: Wait 3-5 seconds after each response before your next question. Silence often prompts the real insight.
+
+### Listening
 - Listen for hiring/firing language (JTBD)
 - Note emotional reactions (tone, hesitation, enthusiasm)
 - Follow up on surprises -- "That's interesting, tell me more about..."
 - Don't pitch or defend -- you're here to learn, not sell
+- Watch for the **say-do gap**: people describe intended behavior, not actual behavior. Ask the same question multiple ways to cross-check.
 
 ## Post-Interview Snapshot
 Create immediately after each interview:
@@ -56,6 +66,14 @@ Interviews are where scenarios are born. After each interview, look for narrativ
 Draft a scenario entry for `canvas/scenarios.yml` from any interview story that is rich enough. Not every interview produces a scenario — only extract when all four elements are present. A partial story is an opportunity, not a scenario.
 
 *Source: Hoskins, "Attention to Users Is All You Need" (SAP talk, April 2026) — "Scenarios are the fundamental primitive of product thinking."*
+
+### Closing
+
+Always end with: **"Is there anything else you'd like to share that I didn't ask about?"**
+
+This is where the most surprising insights surface. The interviewee has been primed by the structured questions and now has permission to surface what's actually on their mind.
+
+*Source: Brown (EightShapes), NNGroup, IxDF.*
 
 ## Output
 - Update canvas/opportunities.yml with new evidence

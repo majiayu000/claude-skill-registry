@@ -1,6 +1,6 @@
 ---
 name: knowledge-steward
-description: "AI工作经验知识库管理。当用户说'保存到Obsidian'、'记录这个'、'save this insight'、'memo this'、'capture this'时自动激活。将对话中的提示词、模式、问题修复、想法和效率优化保存到Obsidian知识库，并自动同步到GitHub。"
+description: "AI工作经验知识库管理。适用于用户明确要求'保存到Obsidian'、'记录这个'、'save this insight'、'memo this'、'capture this'等知识沉淀场景。将对话中的提示词、模式、问题修复、想法和效率优化保存到Obsidian知识库，并自动同步到GitHub。"
 ---
 
 # Knowledge Steward Skill
@@ -9,7 +9,7 @@ description: "AI工作经验知识库管理。当用户说'保存到Obsidian'、
 
 ## When to Use This Skill
 
-当用户想要保存以下内容时自动激活：
+当用户想要保存以下内容时使用此技能：
 
 - **提示词复盘**：发现某个Prompt效果惊人地好或差时
   - 触发词："保存这个提示词"、"save this prompt"、"记录这个Prompt"

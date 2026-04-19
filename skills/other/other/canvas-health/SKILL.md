@@ -43,6 +43,9 @@ Audit the canvas knowledge base for quality, consistency, and completeness. The 
    - Every canvas file with `evidence_type:` should have it set to one of: `interview`, `survey`, `analytics`, `experiment`, `speculation`, `assumption`, `mocked_persona`
    - Flag unknown evidence types
    - Flag `evidence_type: interview` when only mocked personas were used (honesty check)
+   - Every `source_class:` value should be one of: `external_human`, `external_data`, `internal_stakeholder`, `internal_desk`, `internal_simulated` — flag unknown values
+   - Flag `internal_stakeholder` evidence with confidence > 0.5 that has `validated: false` or no `validated` field — stakeholder beliefs should not carry high confidence without external validation (Brown: organizational mythology)
+   - Flag L2 opportunity canvas entries where ALL evidence is `internal_stakeholder` or `internal_desk` — no external human voice heard (Spool: secondhand research insufficient)
 
 6. **Check for orphaned references**:
    - Canvas files that reference other canvas files (e.g., jobs-to-be-done.yml referencing opportunities.yml) -- verify the referenced file exists

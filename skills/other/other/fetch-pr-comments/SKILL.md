@@ -9,34 +9,23 @@ Fetch unresolved review comments and top-level review body comments from a GitHu
 
 ## Step 1: Fetch Comments
 
-Fetch review threads and top-level review body comments from the PR:
+Auto-detect owner, repo, and PR number from current branch if not provided. Then run `scripts/fetch-pr-data.sh`, which handles full pagination (reviews, review threads, inner comment pages for long threads) and emits a single merged JSON document:
 
 ```bash
-gh api graphql -f query='
-query($owner: String!, $repo: String!, $pr: Int!) {
-  repository(owner: $owner, name: $repo) {
-    pullRequest(number: $pr) {
-      title url
-      reviewThreads(first: 100) {
-        nodes {
-          id isResolved isOutdated
-          comments(first: 50) {
-            nodes { author { login } body path line originalLine diffHunk }
-          }
-        }
-      }
-      reviews(first: 50) {
-        nodes {
-          author { login }
-          body state
-        }
-      }
-    }
-  }
-}' -f owner='{owner}' -f repo='{repo}' -F pr={pr_number}
+bash <skill-dir>/scripts/fetch-pr-data.sh <owner> <repo> <pr_number>
 ```
 
-Auto-detect owner, repo, and PR number from current branch if not provided. Filter review threads to unresolved only. Filter reviews to those with a non-empty body, excluding `PENDING` state (unsubmitted drafts).
+Output shape:
+
+```jsonc
+{
+  "meta":          { "title", "url", "headRefName", "baseRefName" },
+  "reviewThreads": [ { "id", "isResolved", "isOutdated", "comments": { "nodes": [ { "author", "body", "path", "line", "originalLine", "diffHunk" } ] } } ],
+  "reviews":       [ { "author", "body", "state" } ]
+}
+```
+
+Filter review threads to unresolved only. Filter reviews to those with a non-empty body, excluding `PENDING` state (unsubmitted drafts).
 
 ## Step 2: Present Results
 

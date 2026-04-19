@@ -16,11 +16,12 @@ Use this skill when establishing database connectivity from any application, scr
 
 ## Default Posture
 
-- Start with the PG endpoint for backend applications that want PostgreSQL wire compatibility.
+- Start with the PG endpoint for backend applications, BI tools, and serverless runtimes that want PostgreSQL wire compatibility.
+- For BI tools, treat the PG endpoint as the compatibility path for Power BI and Tableau Cloud when current docs list them as supported.
 - Use the native DuckDB API only when you need local files, hybrid local/cloud execution, or direct DuckDB control.
 - Use `md:` workspace connections for multi-database exploration, bootstrap flows, and temporary validation environments.
 - Start with one connection. Add pooling or read scaling only when real concurrent-read pressure exists.
-- Treat `custom_user_agent` watermarking as a native DuckDB pattern, not a PG endpoint pattern.
+- Use native DuckDB `custom_user_agent` where supported; for PG endpoint clients, prefer the client's `application_name` setting when available.
 
 ## Workflow
 

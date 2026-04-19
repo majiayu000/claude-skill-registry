@@ -74,8 +74,8 @@ After running, compare prediction to reality. The gap between prediction and out
 - Record raw results
 - Update confidence level (Gilad's meter: 0.1 -> 0.9)
 - Update ICE score for the solution
-- If assumption validated: move to next riskiest assumption. **Update confidence** in the relevant canvas entry (opportunities.yml, diamonds/active.yml) to reflect the validated assumption — typically +0.1 to +0.15.
-- If assumption invalidated: pivot the solution or explore alternatives. **Decrease confidence** by 0.1-0.2 to reflect the failed assumption.
+- If assumption validated: move to next riskiest assumption. **Update confidence** in the relevant canvas entry (opportunities.yml, diamonds/active.yml) to reflect the validated assumption — typically +0.1 to +0.15. **If the validated assumption originated from a stakeholder interview** (`source_class: internal_stakeholder` with `validated: false`): set `validated: true` in the provenance block. This resolves the organizational mythology flag (Brown) — the stakeholder belief is now confirmed by external evidence.
+- If assumption invalidated: pivot the solution or explore alternatives. **Decrease confidence** by 0.1-0.2 to reflect the failed assumption. **If the invalidated assumption was a stakeholder belief**: update the canvas entry to reflect reality, not the stakeholder's original claim. Note the divergence in the decision log — the gap between belief and reality is a learning.
 - Log in canvas/opportunities.yml under the solution's experiments
 - **Always update diamonds/active.yml** confidence to match the test outcome
 

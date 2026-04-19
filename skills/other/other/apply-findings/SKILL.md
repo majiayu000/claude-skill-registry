@@ -20,6 +20,7 @@ Group Apply findings by file path and apply in file order to minimize context sw
 1. Read the full function or logical block at the referenced location
 2. Verify the finding still applies to the current code
 3. Make the fix
+4. If the finding renames an identifier, search the file for all occurrences of the old name before marking the fix complete. The cited location is often only one of several references.
 
 If a finding references code that has changed since it was generated (e.g., by a prior fix in this same run), re-assess whether it still applies. Skip if the code has diverged.
 

@@ -36,8 +36,8 @@ This skill follows the proven FastRuby.io upgrade methodology:
 
 **Key Resources:**
 - **DELEGATE** to the `dual-boot` skill for dual-boot setup with `next_rails` (see Dependencies)
-- See `reference/deprecation-warnings.md` for managing deprecations
-- See `reference/staying-current.md` for maintaining upgrades over time
+- See `references/deprecation-warnings.md` for managing deprecations
+- See `references/staying-current.md` for maintaining upgrades over time
 
 ---
 
@@ -61,8 +61,8 @@ When proposing code fixes that must work with both the current and target Rails 
 - **CRITICAL:** Before any upgrade work begins, verify the app is on the latest patch release of its current Rails series
 - Read `Gemfile.lock` to find the exact current Rails version (e.g., `3.2.19`)
 - Compare against the latest patch for that series:
-  - **EOL series (≤ 6.1):** Use the static table in `reference/multi-hop-strategy.md`
-  - **Active series (≥ 7.0):** Query the RubyGems API at runtime (see `reference/multi-hop-strategy.md` for commands)
+  - **EOL series (≤ 7.1):** Use the static table in `references/multi-hop-strategy.md`
+  - **Active series (≥ 7.2):** Query the RubyGems API at runtime (see `references/multi-hop-strategy.md` for commands)
 - If the app is NOT on the latest patch:
   - Inform user: "Your app is on Rails X.Y.Z but the latest patch is X.Y.W — you should upgrade to the latest patch first"
   - Guide user through updating the Gemfile and running `bundle update rails`
@@ -82,10 +82,10 @@ When proposing code fixes that must work with both the current and target Rails 
 ### Step 2: Set Up Dual-Boot with next_rails (EARLY SETUP)
 - **DELEGATE** to the `dual-boot` skill for setup and initialization
 - That skill handles:
-  - Checking if Gemfile.next already exists (to avoid duplicate next? method)
+  - Checking if Gemfile.next already exists (to avoid duplicate `next?` method)
   - Adding next_rails gem and running next_rails --init
   - Installing dependencies for both Rails versions
-  - Configuring the Gemfile with if next? conditionals
+  - Configuring the Gemfile with `if next?` conditionals
 - **DEPENDENCY:** Requires the [dual-boot skill](https://github.com/ombulabs/claude-code_dual-boot-skill)
 
 ### Step 3: Run Breaking Changes Detection (DIRECT)
@@ -104,6 +104,7 @@ When proposing code fixes that must work with both the current and target Rails 
 - Use `NextRails.next?` for code that must work with both versions (DELEGATE to dual-boot skill for patterns)
 - Update Gemfile to target Rails version
 - Run test suite against both versions during the transition
+- Do not fix deprecations printed by the next version, these will be addressed later before the next upgrade
 - Deploy and verify
 
 ### Step 6: Align load_defaults to New Version (FINAL STEP)
@@ -230,12 +231,12 @@ If user requests a multi-hop upgrade (e.g., 5.2 → 8.1):
 - **rails-load-defaults skill** - Incremental load_defaults alignment (Step 6, final step) (https://github.com/ombulabs/claude-code_rails-load-defaults-skill)
 
 ### Reference Materials
-- `reference/deprecation-warnings.md` - Finding and fixing deprecations
-- `reference/staying-current.md` - Keeping up with Rails releases
-- `reference/breaking-changes-by-version.md` - Quick lookup
-- `reference/multi-hop-strategy.md` - Multi-version planning
-- `reference/testing-checklist.md` - Comprehensive testing
-- `reference/gem-compatibility.md` - Common gem version requirements
+- `references/deprecation-warnings.md` - Finding and fixing deprecations
+- `references/staying-current.md` - Keeping up with Rails releases
+- `references/breaking-changes-by-version.md` - Quick lookup
+- `references/multi-hop-strategy.md` - Multi-version planning
+- `references/testing-checklist.md` - Comprehensive testing
+- `references/gem-compatibility.md` - Common gem version requirements
 
 ### Detection Pattern Resources
 - `detection-scripts/patterns/rails-*.yml` - Version-specific patterns for direct detection
@@ -256,8 +257,8 @@ When user requests an upgrade, follow this workflow:
 
 1. Read Gemfile.lock to find exact current Rails version (e.g., 3.2.19)
 2. Compare against latest patch for that series:
-   - EOL series (≤ 6.1): use static table in reference/multi-hop-strategy.md
-   - Active series (≥ 7.0): query RubyGems API (see reference/multi-hop-strategy.md for commands)
+   - EOL series (≤ 6.1): use static table in references/multi-hop-strategy.md
+   - Active series (≥ 7.0): query RubyGems API (see references/multi-hop-strategy.md for commands)
 3. If current version < latest patch:
    - INFORM user: "Your app is on Rails X.Y.Z but the latest patch is X.Y.W"
    - Guide through Gemfile update and bundle update rails
@@ -290,10 +291,10 @@ When user requests an upgrade, follow this workflow:
 ```
 DELEGATE to the dual-boot skill for setup and initialization.
 That skill handles:
-- Checking if Gemfile.next already exists (to avoid duplicate next? method)
+- Checking if Gemfile.next already exists (to avoid duplicate `next?` method)
 - Adding next_rails gem and running next_rails --init
 - Installing dependencies for both Rails versions
-- Configuring the Gemfile with if next? conditionals
+- Configuring the Gemfile with `if next?` conditionals
 ```
 
 ### Step 3: Validate Upgrade Path
@@ -337,7 +338,7 @@ Claude runs detection directly using tools - NO script generation needed
 ```
 1. Present Comprehensive Upgrade Report first
 2. Present app:update Preview Report second
-3. Implement breaking change fixes using NextRails.next? for dual-boot code
+3. Implement breaking change fixes using `NextRails.next?` for dual-boot code
 4. Update Gemfile to target Rails version
 5. Run test suite against both versions
 6. Deploy and verify
@@ -382,7 +383,7 @@ Before starting ANY upgrade:
 - [ ] Plan merge strategy
 
 ### 5. Deprecation Warnings
-- [ ] Run app with `RAILS_DEPRECATION_WARNINGS=1`
+- [ ] Run app with Rails deprecations turned on (configured in config/environment files)
 - [ ] Address existing deprecation warnings
 - [ ] Enable verbose deprecations in test environment
 
@@ -395,7 +396,7 @@ Before starting ANY upgrade:
 
 **Action - Step 0 (MANDATORY: Verify Latest Patch):**
 1. Read `Gemfile.lock` for exact Rails version
-2. Compare against latest patch for that series (see `reference/multi-hop-strategy.md`)
+2. Compare against latest patch for that series (see `references/multi-hop-strategy.md`)
 3. If not on latest patch → Guide user through patch upgrade first
 4. If on latest patch → Proceed to Step 1
 
@@ -453,7 +454,7 @@ Before starting ANY upgrade:
 **Action - Step 3 (Plan & Execute):**
 1. Explain sequential requirement
 2. Calculate hops: 5.2 → 6.0 → 6.1 → 7.0 → 7.1 → 7.2 → 8.0 → 8.1
-3. Reference: `reference/multi-hop-strategy.md`
+3. Reference: `references/multi-hop-strategy.md`
 4. Follow Pattern 1 Steps 3-5 for FIRST hop (5.2 → 6.0)
 5. After first hop complete, repeat for next hops
 6. **IMPORTANT:** After each hop, align load_defaults to the new version before starting the next hop

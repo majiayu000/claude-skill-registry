@@ -13,6 +13,7 @@ Use this skill when you need exact DuckDB syntax, function behavior, or a quick 
 
 - Prefer current DuckDB SQL docs for language features and function semantics.
 - Use current MotherDuck SQL docs for MotherDuck-only commands such as shares, secrets, snapshots, and Dive operations.
+- Check MotherDuck version-lifecycle docs for newly released DuckDB features before promising they are available in MotherDuck.
 - If the connection path matters, verify behavior against the current Postgres-endpoint docs before promising server-mode support.
 
 ## Default Posture
@@ -20,6 +21,7 @@ Use this skill when you need exact DuckDB syntax, function behavior, or a quick 
 - Write DuckDB SQL, not PostgreSQL SQL, even when the client connects through the Postgres endpoint.
 - Use fully qualified `"database"."schema"."table"` names once more than one database or share is in scope.
 - Prefer DuckDB-native constructs when they simplify the query: `GROUP BY ALL`, `QUALIFY`, `UNION BY NAME`, `arg_max`, `EXCLUDE`, and `REPLACE`.
+- For DuckDB 1.5-era syntax such as `MERGE INTO`, `FILL()`, or new type support, verify current MotherDuck support before adding it to production guidance.
 - Check whether the statement depends on local files, extension install/load, temporary-table behavior, or other client-only features before claiming it will work in MotherDuck.
 - Treat MotherDuck SQL as an additional surface on top of DuckDB SQL, not a replacement for it.
 

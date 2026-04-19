@@ -1,7 +1,7 @@
 ---
 name: swarmvault
 description: "Use SwarmVault when the user needs a local-first knowledge vault that writes durable markdown, graph, search, dashboard, review, and MCP artifacts to disk from books, notes, transcripts, exports, datasets, slide decks, files, URLs, code, and recurring source workflows."
-version: "0.11.0"
+version: "1.1.0"
 metadata: '{"openclaw":{"requires":{"anyBins":["swarmvault","vault"]},"install":[{"id":"node","kind":"node","package":"@swarmvaultai/cli","bins":["swarmvault","vault"],"label":"Install SwarmVault CLI (npm)"}],"emoji":"🗃️","homepage":"https://www.swarmvault.ai/docs"}}'
 ---
 
@@ -44,7 +44,7 @@ For onboarding, examples, command references, or troubleshooting, read the bundl
 - Use `source add` for recurring files, directories, public GitHub repo roots, and docs hubs. Use `ingest` and `add` for deliberate one-off inputs.
 - When the vault lives in a git repo, `ingest|compile|query --commit` can commit `wiki/` and `state/` changes immediately after the run.
 - The default heuristic provider is a valid local/offline starting point. Add a model provider only when the user wants richer synthesis quality or optional capabilities such as embeddings, vision, image generation, or audio transcription. The recommended fully-local setup is Ollama + Gemma: `ollama pull gemma4` then set `providers.llm` to `{ type: "ollama", model: "gemma4" }` and point `tasks.compileProvider`, `tasks.queryProvider`, and `tasks.lintProvider` at it.
-- Audio ingest needs `tasks.audioProvider` to resolve to a provider that exposes `audio` capability. YouTube transcript ingest does not need a provider. Set `graph.communityResolution` when the user wants to pin community clustering instead of using the adaptive default.
+- Audio ingest needs `tasks.audioProvider` to resolve to a provider that exposes `audio` capability. For a fully local setup, run `swarmvault provider setup --local-whisper --apply` — installs the `local-whisper` provider, downloads a whisper.cpp ggml model into `~/.swarmvault/models/`, and points `tasks.audioProvider` at it. YouTube transcript ingest does not need a provider. Set `graph.communityResolution` when the user wants to pin community clustering instead of using the adaptive default.
 - If an OpenAI-compatible backend cannot satisfy structured generation, reduce its declared capabilities instead of forcing every task through it.
 - Keep raw sources immutable. Put corrections in schema, new sources, or saved outputs rather than manually rewriting generated provenance.
 

@@ -21,9 +21,9 @@ hooks:
   Stop:
     - hooks:
         - type: command
-          command: "export SD=\"${FACTORY_PROJECT_DIR:-.factory/skills/planning-with-files}/scripts\"; sh \"$SD/check-complete.sh\" 2>/dev/null || true"
+          command: "SD=\"${FACTORY_PROJECT_DIR:-.factory/skills/planning-with-files}/scripts\"; sh \"$SD/check-complete.sh\" 2>/dev/null || true"
 metadata:
-  version: "2.34.0"
+  version: "2.34.1"
 ---
 
 # Planning with Files

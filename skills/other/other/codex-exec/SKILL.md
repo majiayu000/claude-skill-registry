@@ -33,6 +33,14 @@ codex exec "task description" < /dev/null
 
 The piped form (`cat context.txt | codex exec "..."`) is safe — `cat` closes the pipe after the file, sending EOF.
 
+## Synchronous Execution
+
+Run codex as a foreground Bash call. Do not pass `run_in_background: true`, and do not pair `codex exec` with `Monitor` inside a subagent.
+
+Inside a subagent, `Monitor` only delivers events that arrive during the current turn. Once the subagent emits final text and returns, any further events are dropped. Backgrounding codex and then waiting idle on `Monitor` produces a false-complete: the subagent returns `"Waiting for codex to finish"` before codex has produced anything.
+
+If codex is slow, pass a generous Bash `timeout` on the call itself (e.g., `timeout 3600 codex exec ...`) and wait synchronously. Background execution of codex only works when the invoking agent is the main agent, not a subagent.
+
 ## Permission Levels
 
 | Level | Flag | When to Use |

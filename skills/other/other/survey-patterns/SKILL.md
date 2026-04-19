@@ -29,8 +29,9 @@ The subagent covers all three categories (Analogous Features, Reusable Utilities
 
 Output the subagent's report verbatim. Do not reformat or re-synthesize — `references/pattern-surveyor.md` specifies the exact output format the subagent produces.
 
+Check your task list for remaining tasks and proceed.
+
 ## Rules
 
 - Do not write files.
-- Absolute file paths only.
 - Do not propose implementation steps.

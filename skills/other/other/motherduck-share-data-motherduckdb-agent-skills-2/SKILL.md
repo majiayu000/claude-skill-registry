@@ -29,6 +29,7 @@ Use this skill when you need to distribute a MotherDuck database without copying
 - Default internal sharing to `ACCESS ORGANIZATION`, `VISIBILITY DISCOVERABLE`, and `UPDATE AUTOMATIC`.
 - Use `UPDATE MANUAL` when the recipient needs a stable snapshot or versioned delivery.
 - Use `ACCESS RESTRICTED` or `VISIBILITY HIDDEN` when distribution should stay tightly controlled.
+- For write-heavy publishers, current clients with DuckDB 1.5+ reduce checkpoint blocking during share-update workflows; verify client versions before relying on concurrent checkpoint behavior.
 - Never treat a share as row-level security. Shares operate at database granularity.
 
 ## Workflow

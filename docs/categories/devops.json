@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5327,
-  "updated_at": "2026-04-18T01:57:52.434545Z",
+  "count": 5328,
+  "updated_at": "2026-04-19T02:07:58.882843Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -43015,6 +43015,24 @@
       "stars": 0,
       "install": "rdimascio/supabase-marketplace/plugins/database-operations/.claude/skills/setup-rls",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "deploying-production-migrations",

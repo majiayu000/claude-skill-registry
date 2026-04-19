@@ -1,7 +1,8 @@
 ---
 name: engineering-features-for-machine-learning
 description: |
-  Execute create, select, and transform features to improve machine learning model performance. Handles feature scaling, encoding, and importance analysis. Use when asked to "engineer features" or "select features". Trigger with relevant phrases based on skill purpose.
+  Create, encode, transform, and select features before model fitting.
+  Use when the user needs feature engineering decisions or implementation, not final training ownership or leakage auditing.
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash(cmd:*)
 version: 1.0.0
 author: Jeremy Longshore <jeremy@intentsolutions.io>
@@ -9,79 +10,31 @@ license: MIT
 ---
 # Feature Engineering Toolkit
 
-This skill provides automated assistance for feature engineering toolkit tasks.
+Use this skill when the main question is how to improve or restructure the input features.
 
 ## Overview
 
-
-This skill provides automated assistance for feature engineering toolkit tasks.
-This skill enables Claude to leverage the feature-engineering-toolkit plugin to enhance machine learning models. It automates the process of creating new features, selecting the most relevant ones, and transforming existing features to better suit the model's needs. Use this skill to improve the accuracy, efficiency, and interpretability of machine learning models.
-
-## How It Works
-
-1. **Analyzing Requirements**: Claude analyzes the user's request and identifies the specific feature engineering task required.
-2. **Generating Code**: Claude generates Python code using the feature-engineering-toolkit plugin to perform the requested task. This includes data validation and error handling.
-3. **Executing Task**: The generated code is executed, creating, selecting, or transforming features as requested.
-4. **Providing Insights**: Claude provides performance metrics and insights related to the feature engineering process, such as the importance of newly created features or the impact of transformations on model performance.
+This skill covers feature creation, encoding, scaling coordination, and feature selection before the model is finalized.
 
 ## When to Use This Skill
 
-This skill activates when you need to:
-- Create new features from existing data to improve model accuracy.
-- Select the most relevant features from a dataset to reduce model complexity and improve efficiency.
-- Transform features to better suit the assumptions of a machine learning model (e.g., scaling, normalization, encoding).
+- Creating derived variables, interaction terms, bins, encodings, or date-based features
+- Selecting or pruning features before training
+- Reworking feature representations to fit model assumptions or data geometry
 
-## Examples
+## Not For / Boundaries
 
-### Example 1: Improving Model Accuracy
+- Full training runs and benchmark ownership: use `training-machine-learning-models`
+- Post-hoc interpretation of a trained model: use `feature-importance-analyzer`
+- Leak checking across the preprocessing order: use `ml-data-leakage-guard`
 
-User request: "Create new features from the existing 'age' and 'income' columns to improve the accuracy of a customer churn prediction model."
+## Typical Outputs
 
-The skill will:
-1. Generate code to create interaction terms between 'age' and 'income' (e.g., age * income, age / income).
-2. Execute the code and evaluate the impact of the new features on model performance.
+- Candidate feature set changes
+- Implementation notes for encoders, scalers, and selectors
+- Rationale for what to keep, drop, or combine
 
-### Example 2: Reducing Model Complexity
+## Related Skills
 
-User request: "Select the top 10 most important features from the dataset to reduce the complexity of a fraud detection model."
-
-The skill will:
-1. Generate code to calculate feature importance using a suitable method (e.g., Random Forest, SelectKBest).
-2. Execute the code and select the top 10 features based on their importance scores.
-
-## Best Practices
-
-- **Data Validation**: Always validate the input data to ensure it is clean and consistent before performing feature engineering.
-- **Feature Scaling**: Scale numerical features to prevent features with larger ranges from dominating the model.
-- **Encoding Categorical Features**: Encode categorical features appropriately (e.g., one-hot encoding, label encoding) to make them suitable for machine learning models.
-
-## Integration
-
-This skill integrates with the feature-engineering-toolkit plugin, providing a seamless way to create, select, and transform features for machine learning models. It can be used in conjunction with other Claude Code skills to build complete machine learning pipelines.
-
-## Prerequisites
-
-- Appropriate file access permissions
-- Required dependencies installed
-
-## Instructions
-
-1. Invoke this skill when the trigger conditions are met
-2. Provide necessary context and parameters
-3. Review the generated output
-4. Apply modifications as needed
-
-## Output
-
-The skill produces structured output relevant to the task.
-
-## Error Handling
-
-- Invalid input: Prompts for correction
-- Missing dependencies: Lists required components
-- Permission errors: Suggests remediation steps
-
-## Resources
-
-- Project documentation
-- Related skills and commands
+- `data-normalization-tool` for scaling-only questions
+- `ml-data-leakage-guard` before accepting the engineered pipeline

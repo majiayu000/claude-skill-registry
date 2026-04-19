@@ -42,7 +42,7 @@ This is a lightweight framework-agnostic convention for organizing SQL transform
 3. Create the project directory structure with SQL files and manifest.
 4. Author each model as a standalone SQL file. Use explicit types, nullability, comments, and fully qualified names. Decide between a table, CTAS rebuild, or view based on freshness and cost.
 5. Fill in the manifest with model metadata: name, path, stage, materialization, database, and `depends_on` references.
-6. Run the models against the warehouse and verify the resulting tables match expected grain and row counts.
+6. Run the models against the warehouse and verify the resulting tables match expected grain and row counts. If MCP is the runner, DDL or CTAS execution uses `query_rw` only after explicit user approval; the default deliverable remains checked-in SQL files plus the manifest.
 
 ## Expected Project Structure
 

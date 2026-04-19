@@ -1,11 +1,11 @@
 ---
 name: implement-improvements
-description: "Plan and implement improvements from the .turbo/improvements.md backlog after validating them against the current codebase. Routes each entry by type to a direct fix, a dedicated investigation, or full planning. Use when the user asks to \"implement improvements\", \"work on improvements\", \"address improvements\", \"process improvement backlog\", \"tackle improvements\", or \"implement noted improvements\"."
+description: "Validate improvements from .turbo/improvements.md and run one lane based on the user's choice: trivial fixes, investigation, or standard planning. One lane per session. Use when the user asks to \"implement improvements\", \"work on improvements\", \"address improvements\", \"process improvement backlog\", \"tackle improvements\", or \"implement noted improvements\"."
 ---
 
 # Implement Improvements
 
-Validate and implement improvements from `.turbo/improvements.md`, routing each entry by its type.
+Validate improvements from `.turbo/improvements.md` and run one lane per session: trivial, investigate, or standard. Mixing lanes in a single run tangles commits, so the skill processes exactly one lane each time. Entries outside the chosen lane or category filter stay in the backlog for future runs.
 
 ## Task Tracking
 
@@ -13,15 +13,9 @@ At the start, use `TaskCreate` to create a task for each step:
 
 1. Read the backlog
 2. Validate and classify
-3. Report findings
-4. Run `/implement` skill for trivial fixes
-5. Run `/investigate` skill for investigate entries
-6. Run `/implement` skill for investigate fixes
-7. Clean up improvements backlog
-8. Run `/commit-staged` skill
-9. Run `/turboplan` skill for standard entries
-
-Step 4 is skipped if no trivial entries survive validation. Step 5 is skipped if no investigate entries survive validation. Step 6 is skipped if no investigate entries survive or if Step 5 produced no actionable fixes. Steps 7–8 are skipped if nothing was implemented in Steps 4 or 6 AND no stale entries were confirmed for removal in Step 3. Step 9 is skipped if no standard entries survive.
+3. Report, confirm, and prune stale
+4. Run the chosen lane
+5. Prune working-set entries from the backlog
 
 ## Step 1: Read the Backlog
 
@@ -65,22 +59,24 @@ For any Active entry without a Type field, infer one on the fly. Base the classi
 
 Do not ask the user to pick. If genuinely ambiguous, default to `standard`.
 
-## Step 3: Report Findings
+## Step 3: Report, Confirm, and Prune Stale
 
-Present a summary grouped by type and status:
+Present a summary grouped by type and status. Include each entry's category inline and a category tally across active entries so the user can narrow the working set by theme:
 
 ```
 ## Improvement Backlog Status
 
 ### Active (N)
+Categories: refactor (N), performance (N), testing (N), docs (N)
+
 **Trivial (N)**
-- [summary] — [one-line reason it's still relevant]
+- [summary] (category) — [one-line reason it's still relevant]
 
 **Investigate (N)**
-- [summary] — [one-line reason it's still relevant]
+- [summary] (category) — [one-line reason it's still relevant]
 
 **Standard (N)**
-- [summary] — [one-line reason it's still relevant]
+- [summary] (category) — [one-line reason it's still relevant]
 
 ### Stale (N)
 - [summary] — [one-line reason it's stale]
@@ -89,54 +85,37 @@ Present a summary grouped by type and status:
 - [summary] — [what's ambiguous]
 ```
 
-If there are more than 10 active improvements, suggest splitting into multiple sessions.
-
 Use `AskUserQuestion` to confirm:
-1. Which active improvements to implement (default: all; suggest a subset if splitting)
-2. Whether to remove stale entries from the backlog
-3. Resolution for any unclear items
+1. Which lane to run: trivial, investigate, or standard (if only one lane has active entries, default to it)
+2. Category filter (default: all)
+3. Whether to remove stale entries from the backlog
+4. Resolution for any unclear items
 
-## Step 4: Run `/implement` Skill for Trivial Fixes
+If the user confirmed stale removal, edit `.turbo/improvements.md` to delete the stale entries.
 
-Skip if no trivial entries were confirmed. Otherwise, in the turn that invokes `/implement`, write out each trivial fix as an explicit bullet: summary + files + change description. If a trivial entry turns out to need broader scope or deeper analysis during implementation, stop and re-classify it as `investigate` or `standard`. Then run the `/implement` skill. `/implement` loads `/code-style`, applies the fixes directly, and runs `/finalize` to review, test, and commit.
+Compute the **working set**: active entries matching the confirmed lane and category filter, after unclear resolution. If the working set is empty, stop.
 
-## Step 5: Run `/investigate` Skill for Investigate Entries
+## Step 4: Run the Chosen Lane
 
-Skip if no investigate entries were confirmed. Otherwise:
+Read the reference file for the confirmed lane and follow its phases:
 
-Before starting the loop, use `TaskCreate` to add one sub-task per investigate entry (e.g., `Investigate: <summary>`). Mark each sub-task `in_progress` before the corresponding `/investigate` run and `completed` after.
+- **Trivial lane** — [references/trivial-lane.md](references/trivial-lane.md)
+- **Investigate lane** — [references/investigate-lane.md](references/investigate-lane.md)
+- **Standard lane** — [references/standard-lane.md](references/standard-lane.md)
 
-For each investigate entry, run the `/investigate` skill. In the problem statement passed to `/investigate`, include the entry's summary and rationale, then append a note that this is an improvement-backlog entry likely to be a symptom and that `/investigate` should run `/consult-codex` even if only 1–2 hypotheses surface initially.
+State the chosen lane before handing off to the reference file.
 
-If `/investigate` surfaces complexity that exceeds a single-session fix (multi-subsystem change, architectural decision), stop that entry and move it to the standard batch for Step 9 instead.
+## Step 5: Prune Working-Set Entries from the Backlog
 
-## Step 6: Run `/implement` Skill for Investigate Fixes
+Edit `.turbo/improvements.md` to delete the working-set entries that the lane processed. "Processed" means:
 
-Skip if Step 5 produced no actionable fixes. Otherwise, in the turn that invokes `/implement`, write out each investigation's concluded fix as an explicit bullet: summary + files + change description. This is especially important here because `/investigate`'s earlier output has likely displaced continuation context. Then run the `/implement` skill. `/implement` loads `/code-style`, applies the fixes scoped to what the investigations concluded, and runs `/finalize`.
+- **Trivial lane** — entries whose fixes were applied
+- **Investigate lane** — entries whose concluded fixes were applied
+- **Standard lane** — entries now captured in the plan file produced by `/turboplan`
 
-## Step 7: Clean Up Improvements Backlog
+Keep any entries the lane re-classified mid-flight (trivial → investigate/standard, or investigate → standard). These stay in the backlog for a future run. Delete the file if no entries remain.
 
-Skip if nothing was implemented in Steps 4 or 6 AND no stale entries were confirmed for removal in Step 3.
+## Rules
 
-Otherwise, edit `.turbo/improvements.md` to remove entries that are now done:
-
-- Trivial and investigate entries implemented in Steps 4 and 6
-- Stale entries the user confirmed removing in Step 3
-
-Leave standard entries in place so `/implement-plan` can execute them in a fresh session. Delete the file if no entries remain.
-
-Stage `.turbo/improvements.md` (or its deletion) so Step 8 can commit it.
-
-## Step 8: Run `/commit-staged` Skill
-
-Skip if Step 7 was skipped. Otherwise, run the `/commit-staged` skill to commit the backlog cleanup as a chore commit.
-
-## Step 9: Run `/turboplan` Skill for Standard Entries
-
-Skip if no standard entries were confirmed. Otherwise, run the `/turboplan` skill with the standard entries as the task description. Include planning constraints:
-
-- **Synergies** — Group improvements that touch the same files or areas
-- **Dependencies** — Order so foundational changes come first
-- **Conflicts** — Flag if two improvements contradict each other
-
-`/turboplan` produces a plan file and halts. The user runs `/implement-plan` in a fresh session.
+- `.turbo/` is gitignored. Edits to `.turbo/improvements.md` are local-only and do not need to be staged or committed.
+- If the user selected a lane, do not secondarily run another lane in the same session. Other active entries stay in the backlog for a future run.

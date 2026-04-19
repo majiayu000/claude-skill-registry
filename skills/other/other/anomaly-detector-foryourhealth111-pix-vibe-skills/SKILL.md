@@ -1,9 +1,8 @@
 ---
 name: anomaly-detector
 description: |
-  Anomaly Detector - Auto-activating skill for Data Analytics.
-  Triggers on: anomaly detector, anomaly detector
-  Part of the Data Analytics skill category.
+  Detect outliers, spikes, rare events, and abnormal records in tabular or time-series data.
+  Use when the task is anomaly detection or suspicious-pattern review, not generic data-quality linting or full ML pipeline ownership.
 allowed-tools: Read, Write, Edit, Bash, Grep
 version: 1.0.0
 license: MIT
@@ -14,29 +13,28 @@ author: Jeremy Longshore <jeremy@intentsolutions.io>
 
 ## Purpose
 
-This skill provides automated assistance for anomaly detector tasks within the Data Analytics domain.
+Use this skill when the user needs to identify abnormal rows, drift, spikes, or rare-event behavior in data.
 
 ## When to Use
 
-This skill activates automatically when you:
-- Mention "anomaly detector" in your request
-- Ask about anomaly detector patterns or best practices
-- Need help with data analytics skills covering sql queries, data visualization, statistical analysis, and business intelligence.
+Use this skill when:
+- Investigating outlier transactions, sensor spikes, fraud candidates, or rare failures
+- Comparing statistical, distance-based, or density-based anomaly detection approaches
+- Setting anomaly thresholds and reviewing false positives or false negatives
 
-## Capabilities
+## Not For / Boundaries
 
-- Provides step-by-step guidance for anomaly detector
-- Follows industry best practices and patterns
-- Generates production-ready code and configurations
-- Validates outputs against common standards
+- Generic schema/null/range validation: use `data-quality-checker`
+- Publication-grade figure polishing: use `scientific-visualization`
+- End-to-end supervised model training: use `training-machine-learning-models`
 
-## Example Triggers
+## Typical Outputs
 
-- "Help me with anomaly detector"
-- "Set up anomaly detector"
-- "How do I implement anomaly detector?"
+- Candidate anomaly rules or model choices
+- Thresholding and review workflow
+- Follow-up plots or tables showing suspicious records
 
 ## Related Skills
 
-Part of the **Data Analytics** skill category.
-Tags: sql, analytics, visualization, statistics, bi
+- `data-quality-checker` for dataset sanity checks before anomaly review
+- `creating-data-visualizations` for general charts after anomalies are identified

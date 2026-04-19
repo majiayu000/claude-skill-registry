@@ -109,4 +109,5 @@ Check your task list for remaining tasks and proceed.
 - If the dev server fails to start, report the error and stop.
 - Keep tests focused on the determined scope.
 - Use the Monitor tool to tail app logs for errors or warnings while verifying, so backend failures surface alongside UI checks.
+- After the last UI interaction, perform one additional log read or status check before reporting. Pending `Monitor` events that arrive after the agent emits final text are dropped, so the extra action gives them time to land. Matters most when this skill runs inside a subagent (e.g., from `/polish-code`).
 - To diagnose failures, run the `/investigate` skill on the smoke test report.

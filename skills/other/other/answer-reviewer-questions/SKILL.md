@@ -33,7 +33,7 @@ _Grounding: derived from current code_
 
 Include the `_Grounding:_` line only when `/recall-reasoning` returned no transcript. Omit it when the answer is grounded in recalled reasoning.
 
-Check your task list for remaining tasks and proceed.
+Then use the TaskList tool and proceed to any remaining task.
 
 ## Rules
 

@@ -66,4 +66,4 @@ Wait for all four agents to complete. Aggregate their findings, then apply each 
 
 When done, briefly summarize what was fixed (or confirm the code was already clean).
 
-Check your task list for remaining tasks and proceed.
+Then use the TaskList tool and proceed to any remaining task.

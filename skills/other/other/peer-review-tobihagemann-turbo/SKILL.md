@@ -44,4 +44,4 @@ Assemble the prompt using codex's XML tag conventions (see `/codex-exec` Prompt 
 
 Invoke `/codex-exec` via the Skill tool in read-only mode with the assembled prompt. Output the findings codex returns.
 
-Check your task list for remaining tasks and proceed.
+Then use the TaskList tool and proceed to any remaining task.

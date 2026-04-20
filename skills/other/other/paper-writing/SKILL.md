@@ -311,6 +311,38 @@ fi
 
 **Empirical motivation:** in our April 2026 NeurIPS run, the final paper claimed `w ∈ {0,1,2,3}` for the width-tradeoff experiment but the raw JSON had `w ∈ {0,1,2,3,4,5}`. The crossing-point tolerance was claimed as `0.05%` but the actual relative error was `0.0577%`. Both were caught only after manual `paper-claim-audit` invocation in the final round; the improvement loop did not detect them.
 
+### Phase 5.8: Citation Audit (submission gate)
+
+After the final paper-claim-audit passes, run `/citation-audit` to verify every `\cite{...}` along three axes: existence, metadata correctness, and context appropriateness. This is the fourth and final layer of the evidence-and-claim assurance stack (`experiment-audit` → `result-to-claim` → `paper-claim-audit` → `citation-audit`).
+
+```
+if paper/references.bib (or paper.bib) exists and contains entries cited from sec/*.tex:
+    Run /citation-audit "paper/"
+    Fresh cross-family reviewer (gpt-5.4 via Codex MCP) with web/DBLP/arXiv lookup
+    verifies each entry:
+      (i)   EXISTENCE — paper resolves at claimed arXiv ID / DOI / venue
+      (ii)  METADATA — author names, year, venue, title match canonical sources
+      (iii) CONTEXT — cited paper actually establishes the claim it supports
+
+    Output:
+      - CITATION_AUDIT.md (human-readable per-entry verdict report)
+      - CITATION_AUDIT.json (machine-readable verdict ledger)
+      - Per-entry verdicts: KEEP / FIX / REPLACE / REMOVE
+
+    If any REPLACE or REMOVE verdicts:
+        Surface to user for human approval — never auto-modify content claims
+    If only FIX verdicts (metadata corrections):
+        Apply with user confirmation, then recompile
+    If all KEEP:
+        Pass — bibliography clean for submission
+else:
+    skip — no bib file or no citations
+```
+
+**Why this is the most diagnostic of the four audit layers:** wildly fake citations are easy to spot. The dangerous failure mode is a real paper used to support a claim it does not actually establish (wrong-context citations) — these slip past metadata-only checks and damage submission credibility. Run cost is wall-clock heavy (web lookup per entry); run once per submission, not per save.
+
+**Empirical motivation:** in our April 2026 ARIS technical-report run, two real papers (`madaan2023selfrefine`, `liu2023reviewergpt`) were cited in contexts they did not actually support, and one entry (`hidden2025aiscientistpitfalls`) had `author = "Anonymous"` because the metadata had not been resolved. None were caught by the improvement loop or numeric claim audit; only fresh web-lookup review surfaced them.
+
 ### Phase 6: Final Report
 
 ```markdown
@@ -329,6 +361,8 @@ fi
 | 3. LaTeX Writing | ✅ | paper/sections/*.tex ([N] sections, [M] citations) |
 | 4. Compilation | ✅ | paper/main.pdf ([X] pages) |
 | 5. Improvement | ✅ | [score0]/10 → [score2]/10 |
+| 5.5 Final Claim Audit | ✅/SKIP | PAPER_CLAIM_AUDIT.{md,json} |
+| 5.8 Citation Audit | ✅/SKIP | CITATION_AUDIT.{md,json} |
 
 ## Improvement Scores
 | Round | Score | Key Changes |
@@ -343,6 +377,8 @@ fi
 - paper/main_round1.pdf — After round 1
 - paper/main_round2.pdf — After round 2
 - paper/PAPER_IMPROVEMENT_LOG.md — Full review log
+- paper/PAPER_CLAIM_AUDIT.{md,json} — Numerical claim verification (if Phase 5.5 ran)
+- paper/CITATION_AUDIT.{md,json} — Bibliography verification (if Phase 5.8 ran)
 
 ## Remaining Issues (if any)
 - [items from final review that weren't addressed]

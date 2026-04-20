@@ -1,7 +1,15 @@
 ---
 name: Linear
 description: Managing Linear issues, projects, and teams. Use when working with Linear tasks, creating issues, updating status, querying projects, or managing team workflows.
-version: 2.6.1
+version: 3.2.0
+author: Ryan Smith <ryan@smithhorn.ca>
+tags:
+  - linear
+  - issue-tracking
+  - project-management
+  - mcp
+  - graphql
+  - workflow
 allowed-tools:
   - mcp__linear
   - WebFetch(domain:linear.app)
@@ -169,7 +177,34 @@ See [Project Management Commands](#project-management-commands) for full referen
 
 **When creating a Linear issue, always complete these three steps — even if the user doesn't mention them.**
 
-1. **Detailed description.** Include what the change is, why it's needed, and acceptance criteria or scope. If the user provides only a title, infer and write the description yourself.
+1. **Detailed description with Acceptance Criteria.** Every issue description MUST include an `## Acceptance Criteria` section with at least 2 concrete, testable checklist items. See [docs/issue-template.md](docs/issue-template.md) for the canonical template plus a populated full example. The CLI `create-issue` / `create-sub-issue` will reject descriptions missing this structure; for MCP `save_issue` callers, validate the draft first with `npm run ops -- validate-description --stdin` (see below). If the user provides only a title, draft the description yourself using the template below.
+
+   **Depth — default to the full six-section template.** Unless the user's phrasing clearly signals brevity (*"quick issue"*, *"one-liner"*, *"just the AC"*, *"brief"*, *"terse"*, *"minimum"*, *"short"*), structure the body as **Context → Problem → Proposal → Acceptance Criteria → Verification → Out of scope**. The 120-char / 2-item floor is what the validator *rejects*, not what reviewers *want*. If the user gives you only a title, draft a verbose body from the full template — ask follow-up questions rather than shipping the floor. For trivial changes (typo fix, one-line config tweak), collapsing `Problem` into `Context` and dropping `Verification` is fine when the AC is self-evidently testable — collapse deliberately, not by default.
+
+   ```markdown
+   ## Context
+   **Title:** <title>
+
+   <What is changing and why. 2-4 sentences. Link prior issues, docs, or incidents that motivate this.>
+
+   ## Problem
+   <What specifically is broken, missing, or insufficient today. Name the file, flow, or behavior.>
+
+   ## Proposal
+   <What you intend to do about it. High-level approach, not implementation line-by-line.>
+
+   ## Acceptance Criteria
+   - [ ] <Concrete, testable outcome>
+   - [ ] <Concrete, testable outcome>
+
+   ## Verification
+   <How the AC will actually be checked. Manual steps, test command, or review instruction.>
+
+   ## Out of Scope
+   - <What this issue does NOT cover — redirect to the follow-up or explain why it's deferred>
+   ```
+
+   Print the template on demand with: `npm run ops -- create-issue --template`. See [docs/issue-template.md](docs/issue-template.md) for a fully populated example.
 
 2. **Labels.** Apply from the [label taxonomy](docs/labels.md):
    - Exactly ONE type label (`feature`, `bug`, `refactor`, `chore`, `spike`)
@@ -180,7 +215,19 @@ See [Project Management Commands](#project-management-commands) for full referen
 
 **When updating** an existing issue, preserve existing labels and project — only add missing labels or correct misassigned ones.
 
-> **MCP tools too.** If using `save_issue` or other MCP tools instead of the CLI, these rules still apply. Populate the description, labels, and project fields in the API call.
+> **MCP tools.** Before calling `mcp__linear__save_issue` (or any MCP issue-create tool), pipe the draft description through `validate-description --stdin` and only call `save_issue` if it exits 0:
+>
+> ```bash
+> echo "$DRAFT_BODY" | npm run ops -- validate-description --stdin
+> # exit 0 → safe to call save_issue
+> # exit 5 → fix the description; re-pipe; try again
+> ```
+>
+> The CLI already gates this for `create-issue` / `create-sub-issue`. MCP has no server-side gate — this pre-flight + the retroactive `npm run lint-issues` audit are the only enforcement for the MCP path. For longer drafts in a file, use `--file <path>` instead of `--stdin`.
+>
+> **Depth ≠ validation.** Validation passing (exit 0) only means the 120-char / 2-AC floor is met. Structure the body as the full six-section template (Context → Problem → Proposal → AC → Verification → Out of Scope) unless the user explicitly asked for brevity — see bullet #1 above.
+>
+> **Enforcement model.** CLI + SDK paths are hard-gated; the MCP path is instruction + audit. A PreToolUse hook that intercepts `save_issue` was considered and rejected: it only fires when Claude Code is the runtime, install is per-user, and the payload shape is harness-version-dependent. Run `npm run lint-issues -- --since 24h` locally or in CI to catch instruction-layer drift retroactively.
 
 ---
 
@@ -204,11 +251,31 @@ See [Project Management Commands](#project-management-commands) for full referen
    npm run ops -- project-status "Phase X: Feature Name" planned
    ```
 
-3. **Create issues directly in the project**:
+3. **Create issues directly in the project** (use `--template` to print the canonical template first, or pass a multi-line description via heredoc):
    ```bash
-   npm run ops -- create-issue "Phase X: Feature Name" "Parent task" "Implement the core feature with integration tests and documentation. Acceptance: all API endpoints return correct responses, test coverage >80%." --labels feature,backend
-   npm run ops -- create-sub-issue ENG-XXX "Sub-task 1" "Set up database schema and migrations for the new feature tables."
-   npm run ops -- create-sub-issue ENG-XXX "Sub-task 2" "Add API endpoint handlers with input validation and error responses."
+   # Print the template to seed your description
+   npm run ops -- create-issue --template
+
+   # Create the issue with a template-shaped description
+   npm run ops -- create-issue "Phase X: Feature Name" "Parent task" "$(cat <<'EOF'
+   ## Context
+   Implement the core feature with integration tests and documentation.
+
+   ## Acceptance Criteria
+   - [ ] All API endpoints return correct responses
+   - [ ] Test coverage >80% on new modules
+   EOF
+   )" --labels feature,backend
+
+   npm run ops -- create-sub-issue ENG-XXX "Sub-task 1" "$(cat <<'EOF'
+   ## Context
+   Set up database schema and migrations for the new feature tables.
+
+   ## Acceptance Criteria
+   - [ ] Migration runs cleanly on a fresh database
+   - [ ] Rollback migration restores prior schema
+   EOF
+   )"
    ```
 
 4. **Update project state when work begins**:

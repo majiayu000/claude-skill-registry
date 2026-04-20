@@ -140,7 +140,7 @@ Files to read in full before starting implementation:
 - **Context Files**: Curate the minimum set needed to become productive. Do not dump every file touched — only the ones that anchor understanding.
 - **Scope**: Plan content describes what to build. Do not embed task tracking, skill loading, `/finalize` invocation, test commands, or commit instructions in the plan content — those are execution-wrapper concerns.
 
-Check your task list for remaining tasks and proceed.
+Then use the TaskList tool and proceed to any remaining task.
 
 ## Rules
 

@@ -25,6 +25,15 @@ output_contract: ".agents/rpi/YYYY-MM-DD-*.md"
 > **Quick Ref:** One command, full lifecycle. `/discovery` → `/crank` → `/validation`. Thin wrapper that delegates to phase orchestrators.
 **YOU MUST EXECUTE THIS WORKFLOW. Do not just describe it.**
 **THREE-PHASE RULE + FULLY AUTONOMOUS.** Read `references/autonomous-execution.md` — it defines the mandatory 3-phase lifecycle, autonomous execution rules, anti-patterns, and phase completion logging. Unless `--interactive` is set, RPI runs hands-free. Do NOT stop after Phase 2. Do NOT ask the user anything between phases.
+
+## Strict Delegation Contract (default)
+
+RPI delegates via `Skill(skill="discovery", ...)`, `Skill(skill="crank", ...)`, `Skill(skill="validation", ...)` as **separate tool invocations**. Strict delegation is the **default** — there is no `--full` flag because strict delegation is always on.
+
+**Anti-pattern to reject:** compressing phases into one pass, substituting `Agent()` for `Skill()`, skipping `/validation`. See [`../shared/references/strict-delegation-contract.md`](../shared/references/strict-delegation-contract.md) for the full contract, rationalizations to reject, supported compression escapes (`--quick`, `--fast-path`, `--from=<phase>`, `--no-retro`, `--no-forge`, `--no-budget`), and detection rules.
+
+A live compression was observed 2026-04-19; see [`.agents/learnings/2026-04-19-orchestrator-compression-anti-pattern.md`](../../.agents/learnings/2026-04-19-orchestrator-compression-anti-pattern.md).
+
 ## Quick Start
 Run `/rpi "<goal>"` for the full lifecycle. For resume, loop, fast-path, and deep examples, read `references/examples.md`.
 ## Lifecycle Ownership
@@ -170,7 +179,7 @@ Read `references/error-handling.md` for failure semantics.
 |------|---------|-------------|
 | `--from=<phase>` | `discovery` | Start from `discovery`, `implementation`, or `validation` |
 | `--discovery-artifact=<path>` | unset | With `--from=implementation`, use a pre-computed discovery artifact (e.g., a `/council` validation report or hand-written plan) as the Phase 2 handoff instead of running Phase 1. Validates the path exists, extracts scope/risks into an execution packet, and proceeds to `/crank`. See [Discovery Artifact Mode](#discovery-artifact-mode). |
-| `--interactive` | off | Human gates in discovery |
+| `--interactive` | off | Human gates in discovery (research + plan) and validation (Gate 1, Gate 2). Does NOT affect pre-mortem or vibe council autonomy. |
 | `--auto` | on | Fully autonomous (no human gates). Inverse of `--interactive`. Passed through to `/discovery` and `/plan`. |
 | `--loop` | off | Post-mortem FAIL triggers new cycle |
 | `--max-cycles=<n>` | `3` | Max cycles when `--loop` enabled (default 3) |

@@ -1,405 +1,296 @@
 ---
 name: ux-audit
-description: "Dogfood web apps — browse as a real user, notice friction, document findings. Adopts a user persona, tracks emotional friction (trust, anxiety, confusion), counts click efficiency, tests resilience (mid-form navigation, back button, refresh), and asks 'would I come back?'. Produces ranked audit reports. Trigger with 'ux audit', 'dogfood this', 'ux walkthrough', 'qa test', 'test the app', or 'check all pages'."
+description: "Exhaustive UX audit of a web app. Walks every thread a real user would follow, tests every interactive element, runs scenario battery (keyboard-only, heavy data, destructive actions, second user, interrupted workflow, wrong turn, returning user, first contact), produces ranked findings with screenshots, then offers a fix-and-verify loop. Requires a persona. Trigger with 'ux audit', 'dogfood this', 'audit the app', 'qa sweep', 'exhaustive test', 'check all pages'."
 compatibility: claude-code-only
 ---
 
 # UX Audit
 
-Dogfood web apps by browsing them as a real user would — with their goals, their patience, and their context. Goes beyond "does it work?" to "is it good?" by tracking emotional friction (trust, anxiety, confusion), counting click efficiency, testing resilience, and asking the ultimate question: "would I come back?" Uses Chrome MCP (for authenticated apps with your session) or Playwright for browser automation. Produces structured audit reports with findings ranked by impact.
+Exhaustively audit a web app from the perspective of a real user. Two lenses, combined:
 
-## Browser Tool Detection
+- **Flow lens** — walk the 3–5 real tasks a user would do ("threads"). Count clicks, mark dead ends, screenshot every state change.
+- **Element lens** — after threads, sweep every interactive element not already hit. Forms, menus, toggles, edge data volumes.
 
-Before starting any mode, detect available browser tools:
+Then run an eight-scenario battery (first contact, interrupted workflow, wrong turn recovery, returning user, keyboard only, heavy data, destructive confidence, second user) and close with a fix-and-verify loop for critical findings.
 
-1. **Chrome MCP** (`mcp__claude-in-chrome__*`) — preferred for authenticated apps. Uses the user's logged-in Chrome session, so OAuth/cookies just work.
-2. **Playwright MCP** (`mcp__plugin_playwright_playwright__*`) — for public apps or parallel sessions.
-3. **playwright-cli** — for scripted flows and sub-agent browser tasks.
+This is the thorough one. There is no quick mode. If the user wants a targeted check ("audit the dashboard"), scope the audit to that area — but within that area, still go exhaustive. Runtime is unbounded: assume a long-running session, write findings to the report incrementally, don't batch.
 
-If none are available, inform the user and suggest installing Chrome MCP or Playwright.
+## Setup
 
-See [references/browser-tools.md](references/browser-tools.md) for tool-specific commands.
+Four things before any browsing. Stop if any fail.
 
-## URL Resolution
+### 1. Browser tool
 
-If the user didn't provide a URL, find one automatically. **Prefer the deployed/live version** — that's what real users see.
+| Target | Tool | Why |
+|--------|------|-----|
+| **Authenticated app** (internal tools, client apps) | Chrome MCP | Uses your real logged-in Chrome session — OAuth, cookies, RBAC just work |
+| **Public site** (marketing, competitor, unauthed) | Playwright MCP | No login needed |
+| **Neither available** | **Stop** | Ask the user to connect Chrome MCP or install Playwright |
 
-1. **Check wrangler.jsonc** for custom domains or `routes`:
-   ```bash
-   grep -E '"pattern"|"custom_domain"' wrangler.jsonc 2>/dev/null
-   ```
-   If found, use the production URL (e.g. `https://app.example.com`).
+Do **not** silently fall back to a fresh Playwright session for an authenticated app — the audit is worthless if you can't log in. If Chrome MCP isn't connected, stop and say: *"Open Chrome, click Connect in the Claude extension, then rerun."*
 
-2. **Check for deployed URL** in CLAUDE.md, README, or package.json `homepage` field.
+See [references/browser-tools.md](references/browser-tools.md) for commands.
 
-3. **Fall back to local dev server** — check if one is already running:
-   ```bash
-   lsof -i :5173 -i :3000 -i :8787 -t 2>/dev/null
-   ```
-   If running, use `http://localhost:{port}`.
+### 2. URL
 
-4. **Ask the user** as a last resort.
+Prefer the deployed/live version — that's what real users see.
 
-**Why live over local**: The live site has real data, real auth, real network latency, real CDN behaviour, and real CORS/CSP policies. Testing locally misses deployment-specific issues (missing env vars, broken asset paths, CORS errors, slow API responses). The UX audit should test what the user actually experiences.
+1. Check `wrangler.jsonc` for `pattern` or `custom_domain`
+2. Check CLAUDE.md, README, `package.json` `homepage` field
+3. Fall back to `lsof -i :5173 -i :3000 -i :8787 -t` for a running dev server
+4. Ask the user
 
-**When local is better**: The user explicitly says "test localhost", or the feature isn't deployed yet.
+Live site has real auth, real latency, real CDN and CORS behaviour. Local misses deployment-specific bugs (missing env vars, broken asset paths, CORS, slow APIs). Only use local if the user asks or the feature isn't deployed.
 
-## Depth Levels
+### 3. Viewport
 
-Control how thorough the audit is. Pass as an argument: `/ux-audit quick`, `/ux-audit thorough`, or default to standard.
+Pin the window at the start:
 
-| Depth | Duration | Autonomy | What it covers |
-|-------|----------|----------|---------------|
-| **quick** | 5-10 min | Interactive | One user flow, happy path only. Spot check after a change. |
-| **standard** | 20-40 min | Semi-autonomous | Full walkthrough + QA sweep of main pages. Default. |
-| **thorough** | 1-3 hours | Fully autonomous | Multiple personas, all pages, all modes combined. Overnight mode. |
-| **exhaustive** | 4-8+ hours | Fully autonomous | Every interactive element on every page. Every button clicked, every dialog opened, every form filled, every state triggered. Leave nothing untested. |
-
-### Exhaustive Mode
-
-The exhaustive mode goes beyond thorough. Thorough tests workflows and pages. Exhaustive tests **every single interactive element** in the application.
-
-For each page discovered:
-1. **Inventory all interactive elements** — buttons, links, inputs, selects, checkboxes, toggles, tabs, accordions, modals triggers, dropdowns, context menus, drag handles, sliders
-2. **Click/interact with every one** — open every dialog, expand every accordion, select every tab, toggle every switch, trigger every dropdown
-3. **Screenshot each state** — default, hover, active, open, closed, expanded, collapsed, selected, error
-4. **Test every form** — fill with valid data, submit. Fill with invalid data, submit. Leave empty, submit. Test every field individually.
-5. **Test every combination** — if there are filters, test each filter value. If there are tabs, test each tab. If there are sort options, test each sort.
-6. **Dark mode + light mode** — every page, every dialog, every state in both modes
-7. **Three viewport widths** — 1280px, 768px, 375px for every page and dialog
-8. **Keyboard navigation** — tab through every page, verify focus order, test Enter/Space/Escape on every interactive element
-9. **Right-click/context menus** — if the app has custom context menus, test every option in every context
-10. **Edge states** — what happens with 0 items, 1 item, 100 items, 1000 items? What happens with very long text in every field?
-11. **Concurrent tabs** — open the same page in two tabs, interact in both, check for conflicts
-12. **Every error path** — trigger every validation error, every 404, every permission denied, every timeout
-
-**Progress tracking**: This mode generates a LOT of findings. Write findings to the report incrementally — don't hold everything in memory. Update `docs/ux-audit-exhaustive-YYYY-MM-DD.md` after each page is complete.
-
-**Element inventory format** (per page):
 ```
-/clients — 47 interactive elements
-  [x] "Add Client" button — opens modal ✓, form submits ✓, validation ✓
-  [x] Search input — filters correctly ✓, clear button works ✓, empty search ✓
-  [x] Sort dropdown — all 4 options work ✓, persists on navigation ✗ (BUG)
-  [x] Client row click — navigates to detail ✓
-  [x] Star button — toggles ✓, persists on refresh ✓
-  [ ] Pagination — next ✓, prev ✓, page numbers ✓, items per page ✗ (not tested - no data)
-  ...
+width: 1440, height: 900
 ```
 
-### Thorough Mode: Overnight Workflow
+This is the standard MacBook resolution and the audit's baseline. Responsive sweep (below) also tests 1280, 1024, 768, 375. **Do not go above 2000px wide** — it breaks the harness.
 
-The thorough mode is designed to run unattended. Kick it off at end of day, review the report in the morning. The user should NOT need to find issues themselves — this mode catches everything.
+### 4. Persona
 
-**Mindset**: Don't run through a checklist. Think about the real person who will use this app every day. What are the threads of their workday? How will they move through the system? Will they understand what they're looking at? Will the app teach them how to use it through its design, or will they be guessing? Read [references/workflow-comprehension.md](references/workflow-comprehension.md) before starting.
+The audit needs a persona. Without one, findings drift toward generic "looks fine". Source in order:
 
-1. **Discover all routes** — read router config, crawl navigation, build complete page inventory
-2. **Identify workflow threads** — what are the 3-5 real tasks a user does in a day? Map them before testing individual pages. See [references/workflow-comprehension.md](references/workflow-comprehension.md).
-3. **Create a task list** — track progress across the audit
-4. **Visual & layout sweep** (every page):
-   - Screenshot at 1280px, 1024px, 768px, 375px widths
-   - Screenshot in light mode and dark mode
-   - Run JS overflow detection on each page (see below)
-   - Check for clipped text, overlapping elements, broken grids
-   - Compare sidebar + content alignment across all pages
-4. **Workflow thread testing** — follow each identified thread end to end:
-   - Does the next step suggest itself at every point?
-   - Can the user leave and come back without losing their place?
-   - Do transitions between pages preserve context (filters, selections)?
-   - Do nav labels match how a user would describe their work?
-   - After creating/saving/deleting, does the app take them somewhere logical?
-5. **UX Walkthrough x3 personas**:
-   - First-time user (non-technical, time-poor, first visit)
-   - Power user (daily user, knows the app, looking for efficiency)
-   - Mobile user (phone, touch targets, small viewport)
-6. **Full QA sweep** — every page, all CRUD, all states (empty, error, loading, populated)
-7. **Resilience testing** — every form: bad data, mid-navigation, back button, refresh, double-submit
-8. **Accessibility basics** — heading hierarchy, alt text, focus order, colour contrast
-9. **Console error sweep** — check browser console on every page for JS errors, failed network requests, deprecation warnings
-10. **Wayfinding & comprehension check** — on each page: do I know where I am? Can I get back? Does the heading tell me what I can do here? Are visual cues guiding me to the right action?
-11. **Scenario tests** — run all six from [references/scenario-tests.md](references/scenario-tests.md):
-    - New hire onboarding (can you figure out the app with zero guidance?)
-    - Interrupted workflow (start a task, close the tab, come back — what survived?)
-    - Wrong turn recovery (go to the wrong page, how many clicks to get back on track?)
-    - Day two (repeat the same tasks — is it faster? are there shortcuts?)
-    - Explain it to a colleague (write a 2-min guide for each workflow — gaps = UX failures)
-    - What changed? (log in after creating data — can you tell what needs attention?)
-12. **Screenshot everything** — save to `.jez/screenshots/ux-audit/` (numbered chronologically)
-13. **Comprehensive report** — `docs/ux-audit-thorough-YYYY-MM-DD.md` with issue counts by severity
-14. **Summary** — top 5 critical issues, workflow gaps, scenario test results, "one thing to fix first"
+1. **Argument** — if the user provided one ("ux audit as a busy insurance broker")
+2. **Project personas** — read `.jez/personas/default.md` and `.jez/personas/<app-name>.md` if they exist
+3. **Ask** — if neither, ask one question: *"Who uses this app and what are they trying to get done?"*
 
-#### Automated Layout Detection (JS Injection)
+Capture: role, tech comfort, time pressure, emotional state, device context. A good persona predicts what they'd miss ("A receptionist between phone calls won't scroll below the fold").
 
-On each page, inject JavaScript via the browser tool to programmatically detect layout issues:
+### 5. Screenshot post-processing
 
-```javascript
-// Detect elements overflowing their parent
-document.querySelectorAll('*').forEach(el => {
-  const r = el.getBoundingClientRect();
-  const p = el.parentElement?.getBoundingClientRect();
-  if (p && (r.left < p.left - 1 || r.right > p.right + 1)) {
-    console.warn('OVERFLOW:', el.tagName, el.className, 'extends beyond parent');
-  }
-});
+On Retina Macs, Chrome captures screenshots at 2× the logical viewport — a 1440×900 window produces a 2880×1800 PNG. That's larger than the vision pipeline needs and wastes context. Downsize screenshots after each capture phase:
 
-// Detect text clipped by containers
-document.querySelectorAll('h1,h2,h3,h4,p,span,a,button,label').forEach(el => {
-  if (el.scrollWidth > el.clientWidth + 2 || el.scrollHeight > el.clientHeight + 2) {
-    console.warn('CLIPPED:', el.tagName, el.textContent?.slice(0,50));
-  }
-});
-
-// Detect elements with zero or negative visibility
-document.querySelectorAll('*').forEach(el => {
-  const s = getComputedStyle(el);
-  const r = el.getBoundingClientRect();
-  if (r.width > 0 && r.height > 0 && r.left + r.width < 0) {
-    console.warn('OFF-SCREEN LEFT:', el.tagName, el.className);
-  }
-});
-
-// Detect low contrast text (rough check)
-document.querySelectorAll('h1,h2,h3,p,span,a,li,td,th,label,button').forEach(el => {
-  const s = getComputedStyle(el);
-  if (s.color === s.backgroundColor || s.opacity === '0') {
-    console.warn('INVISIBLE TEXT:', el.tagName, el.textContent?.slice(0,30));
-  }
-});
+```bash
+img-process batch ./screenshots --action optimise --max-width 1440
 ```
 
-Read console output after injection. Each warning is a potential finding to screenshot and investigate.
+The `optimise` action is idempotent — no-op if already ≤ 1440px, downsize otherwise. Safe to run unconditionally, on every folder, at any point. At minimum, run it after each thread traversal and after the responsive sweep.
 
-#### Responsive Breakpoint Sweep
+Playwright MCP users can set `deviceScaleFactor: 1` in the browser context to sidestep this entirely — screenshots match viewport 1:1. Chrome MCP has no equivalent flag, so post-process instead.
 
-For each page, resize the viewport through standard breakpoints and screenshot:
+## Discovery
 
-| Width | What it represents | Check for |
-|-------|-------------------|-----------|
-| 1280px | Desktop (standard) | Baseline layout, sidebar + content |
-| 1024px | Small desktop / tablet landscape | Nav collapse point, grid reflow |
-| 768px | Tablet portrait | Sidebar behaviour, stacked layout |
-| 375px | Mobile | Everything stacked, touch targets, no horizontal scroll |
+### Sitemap crawl
 
-If the layout changes between breakpoints (sidebar collapses, grid reduces columns), screenshot the transition point too.
+Build the complete page inventory before auditing any page.
 
-#### Console Error Sweep
+1. **Router config** — read the app's route definitions (React Router, TanStack Router, Next.js app dir)
+2. **Nav crawl** — click through every section and sub-section of the sidebar/menu
+3. **Deep links** — URLs in CLAUDE.md, docs, or a prior audit report
 
-On each page, read the browser console for:
-- **JS errors** (TypeError, ReferenceError, etc.) — severity: High
-- **Failed network requests** (404, 500, CORS) — severity: High
-- **React/framework warnings** (key props, deprecated APIs) — severity: Medium
-- **CSP violations** — severity: Medium
-- **Deprecation warnings** — severity: Low
+One line per route, with purpose: `/app/clients — list of clients, search, add new`.
 
-#### Network Error Detection (thorough + exhaustive)
+### Thread inventory
 
-**Critical**: Visual browsing misses API failures that the UI hides. Data-fetching libraries (TanStack Query, SWR) swallow HTTP errors and show empty/loading states instead of error messages. A component showing "No results found" might actually be getting a 403 — but the UI looks normal.
+Identify 3–5 real tasks that make up a user's day. These are the spines of the audit.
 
-Monitor network responses throughout the entire audit session. If using Playwright, attach a response listener before browsing starts:
+Examples:
+- **Insurance broker app**: renew a policy, create a new client, work through today's queue
+- **Project management**: morning triage, update a task, send a client summary
+- **SEO tool**: check latest crawl, diagnose a regression, export a report
 
-```javascript
-// Inject into page or use Playwright's page.on('response')
-// Collect all non-2xx API responses
-const networkErrors = [];
-// After each page navigation, check for failed fetch/XHR requests
-// by reading the browser's network log or console output
+How to find them:
+- Ask the user if they know the app's use cases
+- Read CLAUDE.md / README for "what this app does"
+- Infer from top-level nav — each major section usually maps to a thread
+
+Write them down. They structure the traversal phase.
+
+### Element inventory
+
+For each route as you reach it, list every interactive element:
+
+```
+/app/clients — 31 elements
+  Buttons: Add Client, Import, Export, Filter, Sort (5)
+  Inputs: Search
+  Table: row-click ×N, star toggle ×N, action menu ×N
+  Pagination: Next, Prev, page numbers, items-per-page
 ```
 
-If using Chrome MCP, use `read_network_requests` to check for failed API calls after each page visit.
+This inventory powers the coverage metric. After the audit you can say *"tested 29 of 31 elements on /app/clients; 2 pagination controls not reached due to data volume"*. Coverage becomes arithmetic, not a vibe.
 
-**What to collect**: URL, HTTP status, method, the page you were on when it happened.
+Build inventories lazily — per-page as you traverse, not all up-front.
 
-**Severity mapping**:
-| Status | Severity | What it usually means |
-|--------|----------|----------------------|
-| 500+ | Critical | Server error — something is broken |
-| 403 | High | Permission error OR route collision (static route shadowed by `/:param`) |
-| 404 | Medium | Missing endpoint — may be a renamed/removed API route |
-| 401 | Low | Expected for unauthenticated probes, but flag if it happens on authenticated pages |
-| CORS error | High | API endpoint missing CORS headers — feature broken in production |
+## Thread Traversal (primary phase)
 
-**What this catches that visual browsing misses**:
-- Route collisions (e.g. `GET /api/boards/users` shadowed by `GET /api/boards/:boardId`)
-- Endpoints that fail silently (TanStack Query shows empty data instead of error)
-- CORS issues only visible in production
-- Auth middleware rejecting valid sessions
-- Missing endpoints after refactoring
+For each thread:
 
-**Report format**: Group by status code in a "Network Errors" section:
-```markdown
-## Network Errors (detected during browsing)
+1. **Start from the app entry point** — not mid-thread. Real users land at `/` or `/dashboard`.
+2. **Walk as the persona** — if they'd skim, skim. If they'd misread a label, misread it. Note the hesitations.
+3. **Screenshot every state change** — default → hover/focus → active → after click → after load → confirmation. Meaningful transitions, not every pixel movement. With modern context windows and sub-agent review, don't scrimp — the filmstrip is the evidence.
+4. **Track the cost**:
+   - Click count from entry to completion
+   - Decision points (moments you stopped to think)
+   - Dead ends (wrong paths and backtracks)
+   - Interrupt recovery (close the tab at step 3, return at step 4 — did state survive?)
+5. **Hand screenshots to a sub-agent for review** — at the end of each thread, dispatch: *"Here are 42 screenshots from Thread 2 (Create Client). Flag every moment of: unclear next action, broken visual hierarchy, lost context, confusing copy, missing feedback, anxiety, or 'did that work?'. Return structured findings."* The sub-agent returns a list; you stay focused on driving the browser.
 
-### 403 Forbidden (2 endpoints)
-- `GET /api/boards/users` on /app/boards/123 — likely route collision with /:boardId
-- `POST /api/settings/theme` on /app/settings — permission check failing
+At the end of each thread, answer three questions (as the persona):
+- **Did it end clearly?** Did I know the task was done?
+- **Would I come back?** Confidence, trust, momentum.
+- **One thing to make this twice as easy?** Often the most actionable insight in the report.
 
-### 500 Internal Server Error (1 endpoint)
-- `GET /api/reports/summary` on /app/dashboard — server error
-```
+See [references/walkthrough-checklist.md](references/walkthrough-checklist.md) for per-screen evaluation prompts and [references/workflow-comprehension.md](references/workflow-comprehension.md) for wayfinding, mental model, and page-to-page continuity.
 
-### Autonomy by Depth
+## Element Exhaustion (completeness phase)
 
-| Action | quick | standard | thorough |
-|--------|-------|----------|----------|
-| Navigate pages | Just do it | Just do it | Just do it |
-| Take screenshots | Key moments | Friction points | Every page + every issue |
-| Fill forms with test data | Ask first | Ask first | Just do it (obviously fake data) |
-| Click delete/destructive | Ask first | Ask first | Ask first (only exception) |
-| Submit forms | Ask first | Brief confirmation | Just do it (test data only) |
-| Write report file | Just do it | Brief confirmation | Just do it |
+For each route, work the inventory. Skip elements already exercised by thread traversal.
 
-## Operating Modes
+| Element type | Test |
+|--------------|------|
+| Button | Click, screenshot result. If it opens a modal → test the modal. If it triggers an action → verify feedback. |
+| Link | Follow it. Destination matches the label? |
+| Input | Valid, invalid, empty, very long, special characters (`O'Brien`, `café`, emoji, `<script>`). |
+| Select / dropdown | Every option. Verify behaviour per option. |
+| Toggle / checkbox | On, off. Persistence on refresh? |
+| Tab | Every tab. URL updates? Back button works? |
+| Accordion | Expand, collapse. State saves? |
+| Menu / context menu | Every item. Right-click for context menus. |
+| Drag handle | Drag to new position. Drag to invalid target. |
+| Pagination | Next, prev, jump, items-per-page. |
 
-### Mode 1: UX Walkthrough (Dogfooding)
+For **every form**:
+- Valid data → verify creation/update/confirmation
+- Invalid data → field-level error, form state preserved
+- Empty submit → required-field marking
+- Tab through fields → focus order logical
 
-**When**: "ux walkthrough", "walk through the app", "is the app intuitive?", "ux audit", "dogfood this"
+For **every list/table**, test at these volumes if data permits:
+- 0 items (empty state)
+- 1 item (pluralisation edge case)
+- 100 items (pagination)
+- 1000+ items (virtualisation, search, filter performance)
 
-This is the highest-value mode. You are **dogfooding** the app — using it as a real user would, with their goals, their constraints, and their patience level. Not a mechanical checklist pass, but genuinely trying to get a job done.
+Write findings to the report as you go. Don't hold them in memory.
 
-#### Step 1: Adopt a User Persona
+## Responsive Sweep
 
-Ask the user two questions:
-- **Task scenario**: What does the user need to accomplish? (e.g., "Create a new patient and book them for surgery")
-- **Who is the user?**: What's their context? (e.g., "A busy receptionist between phone calls, on a desktop, moderate tech comfort")
+For each route:
 
-If the user doesn't specify a persona, adopt a reasonable default: a non-technical person who is time-poor, mildly distracted, and using this app for the first time today.
+| Width | Mode | Why |
+|-------|------|-----|
+| 1440px | light | Baseline (matches audit viewport) |
+| 1280px | light | Standard desktop |
+| 1024px | light | Tablet landscape / nav collapse point |
+| 768px | light | Tablet portrait / stacked layout |
+| 375px | light | Mobile / touch targets |
+| 1440px | dark | Dark mode baseline |
+| 375px | dark | Dark mode mobile |
 
-#### Step 2: Approach with Fresh Eyes
+On any page that breaks at an intermediate width, screenshot the transition point.
 
-Navigate to the app's entry point. From here, attempt the task with **no prior knowledge of the UI**. Adopt the persona's mindset:
-- Don't use browser dev tools or read source code to figure out where things are
-- Don't assume labels mean what a developer intended — read them literally
-- If something is confusing, don't power through — note it as friction
-- If you feel uncertain about what a button will do, that's a finding
+Run the automated layout-detection JS (overflow, clipping, invisible text) at each width — snippets in [references/walkthrough-checklist.md](references/walkthrough-checklist.md). Read console output after injection; every warning is a potential finding.
 
-#### Step 3: Evaluate Each Screen
+## Scenario Battery
 
-At each screen, evaluate against the walkthrough checklist (see [references/walkthrough-checklist.md](references/walkthrough-checklist.md)). Key questions to hold in mind:
+Eight scenarios. All eight, always. They catch what screen-by-screen testing misses. Full protocols in [references/scenario-tests.md](references/scenario-tests.md).
 
-**Layout**: Is all text fully visible? Nothing clipped or overlapping? Spacing consistent?
-**Comprehension**: Do I understand what this page is for and what I can do here? Do the labels make sense to a non-developer?
-**Wayfinding**: Do I know where I am in the app? Can I get back to where I came from? Does the nav show my location?
-**Flow**: Does this page connect naturally to the last one? Is the next step obvious without thinking?
-**Trust**: Do I feel confident this will do what I expect? Am I afraid I'll break something?
-**Efficiency**: How many clicks/steps is this taking? Is there a shorter path?
-**Recovery**: If I make a mistake right now, can I get back?
+1. **First Contact** — figure out the app with zero prior knowledge, then write a 2-minute plain-English guide to each thread. Gaps in the guide are UX gaps.
+2. **Interrupted Workflow** — start a task, close the tab, refresh, navigate away mid-form. Does state survive?
+3. **Wrong Turn Recovery** — deliberately click the wrong thing. How many clicks to get back on track? What context is lost?
+4. **Returning User** — repeat a thread already done. Faster the second time? Shortcuts available? On the dashboard, can you tell what changed since last visit?
+5. **Keyboard Only** — unplug the mouse. Can every thread complete keyboard-only? Focus visible? Tab order logical? Escape closes?
+6. **Heavy Data** — seed with 500+ records. Lists virtualise? Search returns the right thing? Filters narrow meaningfully?
+7. **Destructive Confidence** — for every delete, send, publish, pay, share: is consent clear? Does confirm copy tell you what's about to happen? Undo available?
+8. **Second User** — log in as a restricted role (viewer not editor, client not staff). Read-only views coherent? Permissions errors make sense?
 
-#### Step 4: Count the Cost
+## Passive Error Sweeps
 
-Track the effort required to complete the task:
-- **Click count**: How many clicks from start to finish?
-- **Decision points**: How many times did I have to stop and think?
-- **Dead ends**: Did I go down a wrong path and have to backtrack?
-- **Time impression**: Does this feel fast or tedious?
+Run these throughout, not as a dedicated phase.
 
-#### Step 5: Test Resilience
+### Console errors
 
-After completing the main task, test what happens when things go wrong:
-- Navigate away mid-form — is data preserved?
-- Submit with missing/bad data — are error messages helpful and specific?
-- Use the back button — does the app handle it gracefully?
-- Refresh the page — does state survive?
+On every page load, check the browser console:
+- JS errors (TypeError, ReferenceError) — **High**
+- Framework warnings (key props, deprecated APIs) — **Medium**
+- CSP violations — **Medium**
+- Deprecation warnings — **Low**
 
-#### Step 6: Ask the Big Questions
+### Network errors
 
-After completing (or failing) the task, reflect as the persona:
-- **Would I come back?** Or would I look for an alternative?
-- **Could I teach a colleague to use this?** In under 2 minutes?
-- **What's the one thing that would make this twice as easy?**
+Monitor network responses across the entire session. Visual browsing misses API failures — TanStack Query and SWR swallow errors and show empty/loading states instead. A "No results found" might actually be a 403.
 
-#### Step 7: Document and Report
+| Status | Severity | Usual cause |
+|--------|----------|-------------|
+| 500+ | **Critical** | Server error |
+| 403 | **High** | Permissions or route collision (static shadowed by `/:param`) |
+| 404 | **Medium** | Missing endpoint |
+| 401 | **Low** | Expected unauthenticated; flag on authenticated pages |
+| CORS | **High** | Missing headers — production-only failure |
 
-Take screenshots at friction points. Compile findings into a UX audit report.
-Write report to `docs/ux-audit-YYYY-MM-DD.md` using the template from [references/report-template.md](references/report-template.md)
+Chrome MCP: use `read_network_requests` after each page. Playwright: attach `page.on('response')` before browsing starts.
 
-**Severity levels**:
-- **Critical** — blocks the user from completing their task
-- **High** — causes confusion or significant friction
-- **Medium** — suboptimal but the user can work around it
-- **Low** — polish and minor improvements
+## Report
 
-### Mode 2: QA Sweep
+Write to `docs/ux-audit-YYYY-MM-DD.md` as you go. If `.jez/artifacts/` exists, use `.jez/artifacts/ux-audit-YYYY-MM-DD.md` instead.
 
-**When**: "qa test", "test all pages", "check everything works", "qa sweep"
+Structure in [references/report-template.md](references/report-template.md):
+- Summary
+- Coverage metrics (threads walked, elements tested, inventoried coverage %)
+- Findings by severity (Critical → Low) with screenshot refs
+- Per-thread results
+- Scenario battery results
+- Network + console error inventory
+- What works well
+- Priority recommendations
 
-Systematic mechanical testing of all pages and features.
+**Severity:**
+- **Critical** — user cannot complete the task
+- **High** — confusion, friction, trust damage
+- **Medium** — suboptimal, workable
+- **Low** — polish
 
-1. **Discover pages**: Read the app's router config, sitemap, or manually navigate the sidebar/menu to find all routes
-2. **Create a task list** of areas to test (group by feature area)
-3. **For each page/feature**:
-   - Page renders without errors
-   - Data displays correctly (tables, lists, details)
-   - Forms submit successfully (create)
-   - Records can be edited (update)
-   - Delete operations work with confirmation
-   - Validation fires on bad input
-   - Empty states display correctly
-   - Error states are handled
-4. **Cross-cutting concerns**:
-   - Dark mode: all elements visible, no contrast issues
-   - Mobile viewport (375px): layout doesn't break, touch targets adequate
-   - Search and filters: return correct results
-   - Notifications: display and can be dismissed
-5. Produce a **QA sweep summary table**:
+## Fix-and-Verify Loop
 
-   | Page | Status | Issues |
-   |------|--------|--------|
-   | /patients | Pass | — |
-   | /patients/new | Fail | Form validation missing on email |
+After writing the report, offer the loop:
 
-6. Write report to `docs/qa-sweep-YYYY-MM-DD.md`
+*"Found N critical and M high issues. Fix them now and re-verify?"*
 
-### Mode 3: Targeted Check
+If yes:
+1. Group findings by file/area
+2. Patch each one
+3. Re-walk just the affected slice (not the whole app)
+4. Update the report: mark finding `✓ fixed`, `✗ still present`, or `⚠ new issue found`
+5. Close with a "fixed in this session" summary
 
-**When**: "check [feature]", "test [page]", "verify [component] works"
+Closes the loop inside one session instead of waiting for a second audit pass tomorrow.
 
-Focused testing of a specific area.
+## Cross-reference with ux-extract
 
-1. Navigate to the specific page or feature
-2. Test thoroughly — all states, edge cases, error paths
-3. Report findings inline (no separate file unless user requests)
+If a pattern library exists at `.jez/artifacts/ux-extracts/<ref>.md` or `docs/ux-extracts/<ref>.md`, read it before starting and use it as the bar. Findings can then say:
 
-## When to Use
+> *"Empty state on /app/clients shows no CTA. Reference (claude.ai) shows 3 keyboard shortcuts + 'New chat' button in the same position."*
 
-| Scenario | Mode | Depth |
-|----------|------|-------|
-| Just changed a page, quick sanity check | Targeted Check | quick |
-| After building a feature, before showing users | UX Walkthrough | standard |
-| Before a release, verify nothing is broken | QA Sweep | standard |
-| Quick check on a specific page after changes | Targeted Check | quick |
-| Periodic UX health check | UX Walkthrough | standard |
-| Client demo prep | QA Sweep + UX Walkthrough | standard |
-| End-of-day comprehensive test, review in morning | All modes combined | thorough |
-| Pre-launch full audit with evidence | All modes combined | thorough |
-| Test literally everything before a client demo | Every element on every page | exhaustive |
-| Weekend-long complete app certification | Every element, state, viewport, mode | exhaustive |
+Graceful if absent — the audit still works without a reference.
 
-**Skip this skill for**: API-only services, CLI tools, unit/integration tests (use test frameworks), performance testing.
+## Autonomy
 
-## Autonomy Rules
+- **Just do it**: Navigate, screenshot, read pages, inject layout-detection JS, submit forms with obviously-fake test data, write the report file, dispatch screenshot-review sub-agents
+- **Ask first**: Destructive actions (delete, send, publish, pay). For Destructive Confidence testing, ask once before running that scenario
+- **Stop and confirm**: Anything that emails/notifies external people
 
-Default rules (standard depth). See "Autonomy by Depth" table above for quick/thorough overrides.
-
-- **Just do it**: Navigate pages, take screenshots, read page content, evaluate usability
-- **Brief confirmation**: Before starting a full QA sweep (can be lengthy), before writing report files
-- **Ask first**: Before submitting forms with real data, before clicking delete/destructive actions
-
-## Tips
-
-- Chrome MCP is ideal for authenticated apps — it uses your real session
-- For long QA sweeps, use the task list to track progress across pages
-- Take screenshots at key friction points — they make the report actionable
-- Run UX walkthrough before QA sweep — finding "buttons work but users are confused" is more valuable than "all buttons work"
-- Stay in persona throughout — if you catch yourself thinking "a developer would know to..." stop. The user isn't a developer.
-- Every hesitation is a finding. If you paused to figure out what to click, that's friction worth reporting.
-- The "one thing to make it twice as easy" is often the most actionable insight in the whole report
-
-## Reference Files
+## Reference files
 
 | When | Read |
 |------|------|
-| Before starting thorough mode — understand the user's world | [references/workflow-comprehension.md](references/workflow-comprehension.md) |
-| Evaluating each screen during walkthrough | [references/walkthrough-checklist.md](references/walkthrough-checklist.md) |
-| Running the six scenario tests | [references/scenario-tests.md](references/scenario-tests.md) |
-| Writing the audit report | [references/report-template.md](references/report-template.md) |
-| Browser tool commands and selection | [references/browser-tools.md](references/browser-tools.md) |
+| Per-screen evaluation questions | [references/walkthrough-checklist.md](references/walkthrough-checklist.md) |
+| Workflow threads, wayfinding, mental model alignment, page-to-page continuity | [references/workflow-comprehension.md](references/workflow-comprehension.md) |
+| Full protocol for each of the 8 scenarios | [references/scenario-tests.md](references/scenario-tests.md) |
+| Report format and severity rubrics | [references/report-template.md](references/report-template.md) |
+| Browser tool commands and viewport notes | [references/browser-tools.md](references/browser-tools.md) |
+
+## Tips
+
+- **Thread first, elements second.** If time is short, threads tell you more.
+- **Sub-agents for screenshot review.** Don't drive the browser and analyse 200 screenshots in one loop.
+- **Write findings incrementally.** The report file is cheaper memory than your context.
+- **Stay in persona.** If you catch yourself thinking "a developer would know…" stop. Your persona doesn't.
+- **Every hesitation is a finding.** If you paused to figure out what to click, that's friction worth reporting.
+- **Coverage is arithmetic.** Inventoried ÷ tested. Publish the ratio in the report.

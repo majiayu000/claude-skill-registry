@@ -53,6 +53,10 @@ Delegate to the `nano-banana-pro` skill when the edit requires understanding ima
 - Generate new image from scratch
 - Content-aware fill after object removal
 
+**Nano Banana regenerates, it does not edit.** Every call re-rolls the entire frame, even when the prompt asks to preserve regions verbatim. Expect ~40% of pixels to drift outside the target area — measured empirically, not hypothesized. For surgical regional edits (change the face, keep everything else identical), use the hybrid pattern in `references/compositing.md` § Surgical Regional Edits: let NB produce a drifted reference, then composite only the target region onto the pristine original with a feathered alpha mask.
+
+Nano Banana also supports only discrete aspect ratios (1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9). For inputs at other ratios (e.g. 3:1 panoramics), see `references/recipes.md` § Aspect Ratio Padding for the pad-generate-crop recipe.
+
 ### Tier 3: Vision Analysis (Claude Read tool)
 
 Use the Read tool to inspect images before/after edits:
@@ -253,6 +257,7 @@ magick in.jpg -resize '800x600>' out.jpg
 6. **`-alpha off` is permanent in IM7** — Use `-alpha deactivate`/`-alpha activate` for temporary toggle
 7. **Inspect before editing** — Run `image_info.py` first to know dimensions, format, alpha state
 8. **Pipeline for multi-step** — Use `image_pipeline.py` instead of chaining shell commands
+9. **Nano Banana drifts the whole frame** — Never trust NB to leave regions unchanged. For regional edits, use the surgical composite pattern (see `compositing.md` § Surgical Regional Edits). Verify with `magick compare -metric AE -fuzz 5% before after diff.png` — low AE means clean, ~40%+ means full regeneration.
 
 ## References
 

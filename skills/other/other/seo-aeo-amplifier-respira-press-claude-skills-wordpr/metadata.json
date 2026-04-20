@@ -1,0 +1,17 @@
+{
+  "name": "seo-aeo-amplifier",
+  "repo": "respira-press/claude-skills-wordpress",
+  "path": "skills/seo-aeo-amplifier/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/respira-press/claude-skills-wordpress",
+  "dir_name": "seo-aeo-amplifier-respira-press-claude-skills-wordpr",
+  "downloaded_at": "2026-04-20T01:49:59.019881Z",
+  "author": "respira-press",
+  "source_url": "https://github.com/respira-press/claude-skills-wordpress/blob/main/skills/seo-aeo-amplifier/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/respira-press/claude-skills-wordpress/blob/main/skills/seo-aeo-amplifier/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

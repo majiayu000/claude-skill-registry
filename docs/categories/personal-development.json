@@ -1,9 +1,30 @@
 {
   "category": "personal-development",
   "code": "oth",
-  "count": 17,
-  "updated_at": "2026-04-19T02:08:00.529223Z",
+  "count": 18,
+  "updated_at": "2026-04-20T02:09:25.036847Z",
   "skills": [
+    {
+      "name": "satori",
+      "description": "Clinically informed wisdom companion blending clinical psychology and eight philosophical traditions into a structured thinking partner.",
+      "repo": "MetcalfSolutions/Satori",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "personal-development",
+      "tags": [
+        "mental-health",
+        "psychology",
+        "wisdom",
+        "philosophy",
+        "ifs",
+        "stoicism",
+        "jungian",
+        "conversation"
+      ],
+      "stars": 0,
+      "install": "MetcalfSolutions/Satori/SKILL.md",
+      "source": "Community Skills"
+    },
     {
       "name": "satori",
       "description": "Clinically informed wisdom companion blending clinical psychology and eight philosophical traditions into a structured thinking partner.",

@@ -1,0 +1,17 @@
+{
+  "name": "woocommerce-health-check",
+  "repo": "respira-press/claude-skills-wordpress",
+  "path": "skills/woocommerce-health-check/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/respira-press/claude-skills-wordpress",
+  "dir_name": "woocommerce-health-check-respira-press-claude-skills-wordpr",
+  "downloaded_at": "2026-04-20T01:50:02.305477Z",
+  "author": "respira-press",
+  "source_url": "https://github.com/respira-press/claude-skills-wordpress/blob/main/skills/woocommerce-health-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/respira-press/claude-skills-wordpress/blob/main/skills/woocommerce-health-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -40,7 +40,7 @@ If the commit fails due to a pre-commit hook (formatter, linter), fix the issues
 - **Create PR** — run the `/create-pr` skill
 - **Update PR** — run the `/update-pr` skill
 
-Check your task list for remaining tasks and proceed.
+Then use the TaskList tool and proceed to any remaining task.
 
 ## Rules
 

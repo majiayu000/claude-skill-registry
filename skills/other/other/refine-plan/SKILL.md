@@ -90,7 +90,7 @@ The iteration number below refers to the `/refine-plan` run currently executing 
 
 The re-invocation is a full, fresh run of this skill. Every step (1-5) executes with its own task tracking and skill invocations.
 
-Check your task list for remaining tasks and proceed.
+Then use the TaskList tool and proceed to any remaining task.
 
 ### Structural Edit Examples by Type
 

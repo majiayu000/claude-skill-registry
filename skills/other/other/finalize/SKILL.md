@@ -61,7 +61,7 @@ Use `AskUserQuestion` to let the user choose: ship as a single commit/PR, or spl
 - **Ship** — run the `/ship` skill
 - **Split** — run the `/split-and-ship` skill
 
-Check your task list for remaining tasks and proceed.
+Then use the TaskList tool and proceed to any remaining task.
 
 ## Rules
 

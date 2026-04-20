@@ -11,28 +11,27 @@ metadata:
 
 Generate elegant cover images for articles with 5-dimensional customization.
 
-## Usage
+## User Input Tools
 
-```bash
-# Auto-select dimensions based on content
-/baoyu-cover-image path/to/article.md
+When this skill prompts the user, follow this tool-selection rule (priority order):
 
-# Quick mode: skip confirmation
-/baoyu-cover-image article.md --quick
+1. **Prefer built-in user-input tools** exposed by the current agent runtime — e.g., `AskUserQuestion`, `request_user_input`, `clarify`, `ask_user`, or any equivalent.
+2. **Fallback**: if no such tool exists, emit a numbered plain-text message and ask the user to reply with the chosen number/answer for each question.
+3. **Batching**: if the tool supports multiple questions per call, combine all applicable questions into a single call; if only single-question, ask them one at a time in priority order.
 
-# Specify dimensions
-/baoyu-cover-image article.md --type conceptual --palette warm --rendering flat-vector
+Concrete `AskUserQuestion` references below are examples — substitute the local equivalent in other runtimes.
 
-# Style presets (shorthand for palette + rendering)
-/baoyu-cover-image article.md --style blueprint
+## Image Generation Tools
 
-# With reference images
-/baoyu-cover-image article.md --ref style-ref.png
+When this skill needs to render an image:
 
-# Direct content input
-/baoyu-cover-image --palette mono --aspect 1:1 --quick
-[paste content]
-```
+- **Use whatever image-generation tool or skill is available** in the current runtime — e.g., Codex `imagegen`, Hermes `image_generate`, `baoyu-imagine`, or any equivalent the user has installed.
+- **If multiple are available**, ask the user **once** at the start which to use (batch with any other initial questions).
+- **If none are available**, tell the user and ask how to proceed.
+
+**Prompt file requirement (hard)**: write each image's full, final prompt to a standalone file under `prompts/` (naming: `NN-{type}-[slug].md`) BEFORE invoking any backend. The backend receives the prompt file (or its content); the file is the reproducibility record and lets you switch backends without regenerating prompts.
+
+Concrete tool names (`imagegen`, `image_generate`, `baoyu-imagine`) above are examples — substitute the local equivalents under the same rule.
 
 ## Options
 
@@ -130,21 +129,13 @@ Analyze + Save Refs → [Output Dir] → [Confirm: 6 Dimensions] → Prompt → 
 
 ### Step 0: Load Preferences ⛔ BLOCKING
 
-Check EXTEND.md existence (priority: project → user):
-```bash
-# macOS, Linux, WSL, Git Bash
-test -f .baoyu-skills/baoyu-cover-image/EXTEND.md && echo "project"
-test -f "${XDG_CONFIG_HOME:-$HOME/.config}/baoyu-skills/baoyu-cover-image/EXTEND.md" && echo "xdg"
-test -f "$HOME/.baoyu-skills/baoyu-cover-image/EXTEND.md" && echo "user"
-```
+Check EXTEND.md in priority order — the first one found wins:
 
-```powershell
-# PowerShell (Windows)
-if (Test-Path .baoyu-skills/baoyu-cover-image/EXTEND.md) { "project" }
-$xdg = if ($env:XDG_CONFIG_HOME) { $env:XDG_CONFIG_HOME } else { "$HOME/.config" }
-if (Test-Path "$xdg/baoyu-skills/baoyu-cover-image/EXTEND.md") { "xdg" }
-if (Test-Path "$HOME/.baoyu-skills/baoyu-cover-image/EXTEND.md") { "user" }
-```
+| Priority | Path | Scope |
+|----------|------|-------|
+| 1 | `.baoyu-skills/baoyu-cover-image/EXTEND.md` | Project |
+| 2 | `${XDG_CONFIG_HOME:-$HOME/.config}/baoyu-skills/baoyu-cover-image/EXTEND.md` | XDG |
+| 3 | `$HOME/.baoyu-skills/baoyu-cover-image/EXTEND.md` | User home |
 
 | Result | Action |
 |--------|--------|
@@ -196,12 +187,13 @@ Save to `prompts/cover.md`. Template: [references/workflow/prompt-template.md](r
 ### Step 4: Generate Image
 
 1. **Backup existing** `cover.png` if regenerating
-2. **Check image generation skills**; if multiple, ask preference
-3. **Process references** from prompt frontmatter:
+2. **Select backend** via the `## Image Generation Tools` rule at the top: use whatever is available; if multiple, ask the user once. Do this once per session before any generation.
+3. **Write the full final prompt** to `prompts/01-cover-[slug].md` (hard requirement) BEFORE invoking the backend.
+4. **Process references** from prompt frontmatter:
    - `direct` usage → pass via `--ref` (use ref-capable backend)
    - `style`/`palette` → extract traits, append to prompt
-4. **Generate**: Call skill with prompt file, output path, aspect ratio
-5. On failure: auto-retry once
+5. **Generate**: Call the chosen backend with the prompt file, output path, aspect ratio
+6. On failure: auto-retry once
 
 ### Step 5: Completion Report
 

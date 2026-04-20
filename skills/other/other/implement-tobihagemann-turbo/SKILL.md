@@ -27,4 +27,4 @@ Apply the change described by the current context — the user request, a prior 
 
 Run the `/finalize` skill.
 
-Check your task list for remaining tasks and proceed.
+Then use the TaskList tool and proceed to any remaining task.

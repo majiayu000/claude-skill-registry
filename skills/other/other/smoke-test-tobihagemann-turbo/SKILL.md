@@ -100,7 +100,7 @@ Overall: X/Y passed
 
 If any test failed, include the relevant snapshot, screenshot, or output showing the failure.
 
-Check your task list for remaining tasks and proceed.
+Then use the TaskList tool and proceed to any remaining task.
 
 ## Rules
 

@@ -26,7 +26,7 @@ If a finding references code that has changed since it was generated (e.g., by a
 
 ## Step 3: Handle Escalated Findings
 
-For findings with Escalate verdict, use `AskUserQuestion` to present the trade-offs and let the user decide:
+For findings with Escalate verdict, use `AskUserQuestion` to present the trade-offs and let the user decide. Include your technical recommendation alongside the options. When options differ on both scope/intent adherence (what the task was scoped to do) and technical merit (what's engineering-wise better), state both axes explicitly — don't silently fold scope concerns into the technical recommendation.
 
 - **Apply** — make the change
 - **Skip** — leave as-is
@@ -43,7 +43,7 @@ Do not surface findings skipped as false positives or subjective preferences. Fo
 
 Summarize what was applied, what was escalated, and what was skipped.
 
-Check your task list for remaining tasks and proceed.
+Then use the TaskList tool and proceed to any remaining task.
 
 ## Rules
 

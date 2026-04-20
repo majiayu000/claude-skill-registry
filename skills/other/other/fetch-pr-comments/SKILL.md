@@ -85,7 +85,7 @@ For each file with unresolved threads, show:
 - For threads with multiple comments, show each comment with its author
 - If there are zero unresolved threads and zero review body comments, say so and stop
 
-Check your task list for remaining tasks and proceed.
+Then use the TaskList tool and proceed to any remaining task.
 
 ## Rules
 

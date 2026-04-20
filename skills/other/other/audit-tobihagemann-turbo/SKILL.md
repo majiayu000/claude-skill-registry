@@ -55,7 +55,8 @@ For each skill below, run **one instance per partition** with the partition's fi
 | `/review-code` with `correctness` (skip peer review) | File list |
 | `/review-code` with `security` (skip peer review) | File list |
 | `/review-code` with `api-usage` (skip peer review) | File list |
-| `/review-code` with `quality` (skip peer review) | File list |
+| `/review-code` with `consistency` (skip peer review) | File list |
+| `/review-code` with `simplicity` (skip peer review) | File list |
 | `/peer-review` | File list |
 
 ### Project-Wide Skills
@@ -91,7 +92,8 @@ Write `.turbo/audit.md` using the template below. Populate the dashboard by coun
 | Correctness | <Pass/Warn/Fail> | <N> | <N> |
 | Security | <Pass/Warn/Fail> | <N> | <N> |
 | API Usage | <Pass/Warn/Fail> | <N> | <N> |
-| Code Quality | <Pass/Warn/Fail> | <N> | <N> |
+| Consistency | <Pass/Warn/Fail> | <N> | <N> |
+| Simplicity | <Pass/Warn/Fail> | <N> | <N> |
 | Test Coverage | <Pass/Warn/Fail> | <N> | <N> |
 | Dependencies | <Pass/Warn/Fail> | <N> | <N> |
 | Tooling | <Pass/Warn/Fail> | <N> | <N> |
@@ -116,8 +118,11 @@ Write `.turbo/audit.md` using the template below. Populate the dashboard by coun
 ### API Usage
 <findings from /review-code api-usage>
 
-### Code Quality
-<findings from /review-code quality>
+### Consistency
+<findings from /review-code consistency>
+
+### Simplicity
+<findings from /review-code simplicity>
 
 ### Test Coverage
 <findings from /review-code coverage>
@@ -158,5 +163,5 @@ Convert the markdown report into a styled, interactive HTML page.
 ## Rules
 
 - If any skill is unavailable or fails, proceed with findings from the remaining skills and note the failure in the report.
-- `/peer-review` covers all concerns (correctness, security, quality). Distribute its findings into their matching category sections. Deduplicate findings that overlap with the specialized reviewers.
+- `/peer-review` covers all concerns (correctness, security, api-usage, consistency, simplicity, coverage). Distribute its findings into their matching category sections. Deduplicate findings that overlap with the specialized reviewers.
 - Does not modify source code, stage files, or commit.

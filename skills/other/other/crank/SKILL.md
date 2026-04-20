@@ -285,6 +285,8 @@ Run `scripts/bd-audit.sh --json` (beads mode only) before wave execution to avoi
 
 This catches stale cross-references that the plan missed. Grep for each key term being modified across the codebase. Matches outside the planned file set indicate scope gaps — add those files to the epic or document as tech debt.
 
+> *(orchestrator-owned: this scan is intentionally inline, not a `Skill()` delegation. Do NOT spawn a worker for this check.)*
+
 ### Step 3b: SPEC WAVE (--test-first only)
 
 **Skip if `--test-first` is NOT set or if no spec-eligible issues exist.**
@@ -496,6 +498,8 @@ if [[ "$SLOP_COUNT" -gt 0 ]]; then
 fi
 ```
 
+> *(orchestrator-owned: this pre-scan grep + wc is an inline gate decision, not worker-delegated. The orchestrator checks slop presence to decide whether to spawn a de-sloppify worker. Do NOT move pattern matching into a separate `Skill()` call.)*
+
 ### Step 6.9: Pre-Vibe Lifecycle Checks
 
 Skip if `--no-lifecycle` is set.
@@ -566,6 +570,8 @@ Example: `PLAN_FILE=$(ls -t .agents/plans/*.md 2>/dev/null | head -1)` then extr
 
 **Opt-out:** `--no-scope-check` flag.
 
+> *(orchestrator-owned: this gate runs file-existence checks, grep patterns, and verification commands directly. Do NOT delegate acceptance-criterion validation to workers — the orchestrator evaluates closure readiness before emitting `<promise>DONE</promise>`.)*
+
 ### Step 9: Report Completion
 
 Tell the user:
@@ -621,6 +627,14 @@ Read `references/worker-verb-disambiguation.md` for the verb clarification table
 Common failure modes: no ready issues, repeated wave gate failures, missing files from workers, bad RED-gate output, or TaskList/beads mismatches. See `references/troubleshooting.md` for fixes and command-level recovery steps.
 
 ---
+
+## Inline Work Policy
+
+Most `/crank` steps delegate worker execution via `/swarm` or `Skill()`. A small number of steps are **orchestrator-owned** by design — these are inline gates, scans, and bookkeeping that must stay in the orchestrator's context to make a downstream decision. Orchestrator-owned steps are marked with a `*(orchestrator-owned: …)*` admonition in the body (see STEP 3a.3, STEP 6.5 slop-scan, STEP 8.7).
+
+**Do NOT convert orchestrator-owned steps into `Skill()` or `/swarm` delegations** — they are intentionally inline. Every other step (SPEC wave, TEST wave, IMPL wave, vibe, lifecycle checks) should delegate via the documented `Skill(...)` call or `/swarm` invocation.
+
+If unsure whether a step is orchestrator-owned or delegatable, the default is **delegate**. Only steps marked with the admonition above are exempt.
 
 ## Reference Documents
 

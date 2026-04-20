@@ -46,8 +46,22 @@ Before reading STATE.md contents, validate the branch field:
 1. **STATE.md exists** — read it and inspect the `status` field:
    - `status: active` — previous session crashed or was interrupted. Use the AskUserQuestion tool to present: "Found unfinished session from [started_at]. [N] waves completed. Resume or start fresh?" with options to resume the previous plan or start a new session.
    - `status: paused` — session was intentionally paused. Use AskUserQuestion to offer resuming from the pause point or starting fresh.
-   - `status: completed` — previous session ended cleanly. Note the summary for context (what was done, what was deferred) but continue with normal initialization.
+   - `status: completed` — previous session ended cleanly. Note the summary for context (what was done, what was deferred), then **reset STATE.md to idle** before any new session state is written (see "Idle Reset" below). Continue with normal initialization.
 2. **STATE.md does not exist** — first session or persistence was previously off. Continue normally.
+
+### Idle Reset (completed-branch only)
+
+When (and only when) the prior `status` is `completed`, rewrite STATE.md to a clean idle state before Phase 1b (Initialize STATE.md) runs. This prevents the next agent from reading a stale "completed" banner at session-start, while preserving the prior session's record in a demoted archive block.
+
+Reset rules — applies ONLY on the `completed` branch. Do NOT perform this reset on `active` or `paused`; those paths stay user-interactive via AskUserQuestion.
+
+1. Set frontmatter `status: idle`.
+2. Clear `current-wave` (set to `0`).
+3. Move the existing `## Wave History` body into a new `## Previous Session` archive section (retain the record, but demote it below the new session's live state). Remove the original `## Wave History` section — wave-executor will recreate it on the next wave.
+4. Clear `## Deviations` (leave the heading with an empty body so the schema is preserved).
+5. Leave other frontmatter fields (`schema-version`, `session-type`, `branch`, `issues`, `started_at`, `total-waves`) intact until Phase 1b overwrites them with the new session's values.
+
+Rationale: `/close` intentionally keeps STATE.md as a record so the next session-start can read it. This reset completes that contract by demoting the record before new session state is written, so a fresh session never appears "already completed".
 
 Also read `<state-dir>/STATUS.md` if it exists for additional project-level context.
 

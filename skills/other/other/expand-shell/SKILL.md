@@ -156,7 +156,7 @@ If every item passes, proceed to Step 6. If any item fails, revise the plan to c
 
 Delete the source shell at `.turbo/shells/<shell-slug>.md`. The plan is now the authoritative artifact for this work.
 
-Check your task list for remaining tasks and proceed.
+Then use the TaskList tool and proceed to any remaining task.
 
 ## Rules
 

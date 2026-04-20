@@ -41,7 +41,7 @@ For each group:
 2. Check out the last created branch
 3. Output a summary table: group name, branch, PR URL, and base branch
 
-Check your task list for remaining tasks and proceed.
+Then use the TaskList tool and proceed to any remaining task.
 
 ## Rules
 

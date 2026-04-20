@@ -147,7 +147,7 @@ Hypotheses tested:
 Escalation: [none | oracle]
 ```
 
-Check your task list for remaining tasks and proceed.
+Then use the TaskList tool and proceed to any remaining task.
 
 ## Rules
 

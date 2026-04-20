@@ -1,6 +1,6 @@
 ---
 name: baoyu-infographic
-description: Generates professional infographics with 21 layout types and 21 visual styles. Analyzes content, recommends layout×style combinations, and generates publication-ready infographics. Use when user asks to create "infographic", "信息图", "visual summary", "可视化", or "高密度信息大图".
+description: Generate professional infographics with 21 layout types and 21 visual styles. Analyzes content, recommends layout×style combinations, and generates publication-ready infographics. Use when user asks to create "infographic", "信息图", "visual summary", "可视化", or "高密度信息大图".
 version: 1.56.1
 metadata:
   openclaw:
@@ -11,15 +11,58 @@ metadata:
 
 Two dimensions: **layout** (information structure) × **style** (visual aesthetics). Freely combine any layout with any style.
 
-## Usage
+## User Input Tools
 
-```bash
-/baoyu-infographic path/to/content.md
-/baoyu-infographic path/to/content.md --layout hierarchical-layers --style technical-schematic
-/baoyu-infographic path/to/content.md --aspect portrait --lang zh
-/baoyu-infographic path/to/content.md --aspect 3:4
-/baoyu-infographic  # then paste content
+When this skill prompts the user, follow this tool-selection rule (priority order):
+
+1. **Prefer built-in user-input tools** exposed by the current agent runtime — e.g., `AskUserQuestion`, `request_user_input`, `clarify`, `ask_user`, or any equivalent.
+2. **Fallback**: if no such tool exists, emit a numbered plain-text message and ask the user to reply with the chosen number/answer for each question.
+3. **Batching**: if the tool supports multiple questions per call, combine all applicable questions into a single call; if only single-question, ask them one at a time in priority order.
+
+Concrete `AskUserQuestion` references below are examples — substitute the local equivalent in other runtimes.
+
+## Image Generation Tools
+
+When this skill needs to render an image:
+
+- **Use whatever image-generation tool or skill is available** in the current runtime — e.g., Codex `imagegen`, Hermes `image_generate`, `baoyu-imagine`, or any equivalent the user has installed.
+- **If multiple are available**, ask the user **once** at the start which to use (batch with any other initial questions).
+- **If none are available**, tell the user and ask how to proceed.
+
+**Prompt file requirement (hard)**: write each image's full, final prompt to a standalone file under `prompts/` (naming: `NN-{type}-[slug].md`) BEFORE invoking any backend. The backend receives the prompt file (or its content); the file is the reproducibility record and lets you switch backends without regenerating prompts.
+
+Concrete tool names (`imagegen`, `image_generate`, `baoyu-imagine`) above are examples — substitute the local equivalents under the same rule.
+
+## Reference Images
+
+Users may supply reference images to guide style, palette, composition, or subject.
+
+**Intake**: Accept via `--ref <files...>` or when the user provides file paths / pastes images in conversation.
+- File path(s) → copy to `refs/NN-ref-{slug}.{ext}` alongside the output
+- Pasted image with no path → ask the user for the path (per the User Input Tools rule above), or extract style traits verbally as a text fallback
+- No reference → skip this section
+
+**Usage modes** (per reference):
+
+| Usage | Effect |
+|-------|--------|
+| `direct` | Pass the file to the backend as a reference image |
+| `style` | Extract style traits (line treatment, texture, mood) and append to the prompt body |
+| `palette` | Extract hex colors from the image and append to the prompt body |
+
+**Record in `prompts/infographic.md` frontmatter** when refs exist:
+
+```yaml
+references:
+  - ref_id: 01
+    filename: 01-ref-brand.png
+    usage: direct
 ```
+
+**At generation time**:
+- Verify each referenced file exists on disk
+- If `usage: direct` AND the chosen backend accepts reference images (e.g., `baoyu-imagine` via `--ref`) → pass the file via the backend's ref parameter
+- Otherwise → embed extracted `style`/`palette` traits in the prompt text
 
 ## Options
 
@@ -29,8 +72,9 @@ Two dimensions: **layout** (information structure) × **style** (visual aestheti
 | `--style` | 21 options (see Style Gallery), default: craft-handmade |
 | `--aspect` | Named: landscape (16:9), portrait (9:16), square (1:1). Custom: any W:H ratio (e.g., 3:4, 4:3, 2.35:1) |
 | `--lang` | en, zh, ja, etc. |
+| `--ref <files...>` | Reference images (file paths) for style / palette / composition / subject guidance |
 
-## Layout Gallery
+## Layout Gallery (21)
 
 | Layout | Best For |
 |--------|----------|
@@ -56,9 +100,9 @@ Two dimensions: **layout** (information structure) × **style** (visual aestheti
 | `circular-flow` | Cycles, recurring processes |
 | `dense-modules` | High-density modules, data-rich guides |
 
-Full definitions: `references/layouts/<layout>.md`
+Full definitions live at `references/layouts/<layout>.md`.
 
-## Style Gallery
+## Style Gallery (21)
 
 | Style | Description |
 |-------|-------------|
@@ -84,7 +128,7 @@ Full definitions: `references/layouts/<layout>.md`
 | `retro-pop-grid` | 1970s retro pop art, Swiss grid, thick outlines |
 | `hand-drawn-edu` | Macaron pastels, hand-drawn wobble, stick figures |
 
-Full definitions: `references/styles/<style>.md`
+Full definitions live at `references/styles/<style>.md`.
 
 ## Recommended Combinations
 
@@ -108,13 +152,11 @@ Full definitions: `references/styles/<style>.md`
 | Educational Diagram | `hub-spoke` + `hand-drawn-edu` |
 | Process Tutorial | `linear-progression` + `hand-drawn-edu` |
 
-Default: `bento-grid` + `craft-handmade`
+Default combination: `bento-grid` + `craft-handmade`.
 
 ## Keyword Shortcuts
 
-When user input contains these keywords, **auto-select** the associated layout and offer associated styles as top recommendations in Step 3. Skip content-based layout inference for matched keywords.
-
-If a shortcut has **Prompt Notes**, append them to the generated prompt (Step 5) as additional style instructions.
+When the user's input contains these keywords, auto-select the layout and promote the listed styles to the top of Step 3 recommendations. Skip content-based layout inference for matched keywords. Append any `Prompt Notes` to the Step 5 prompt.
 
 | User Keyword | Layout | Recommended Styles | Default Aspect | Prompt Notes |
 |--------------|--------|--------------------|----------------|--------------|
@@ -146,40 +188,20 @@ Slug: 2-4 words kebab-case from topic. Conflict: append `-YYYYMMDD-HHMMSS`.
 
 **1.1 Load Preferences (EXTEND.md)**
 
-Check EXTEND.md existence (priority order):
+Check EXTEND.md in priority order — the first one found wins:
 
-```bash
-# macOS, Linux, WSL, Git Bash
-test -f .baoyu-skills/baoyu-infographic/EXTEND.md && echo "project"
-test -f "${XDG_CONFIG_HOME:-$HOME/.config}/baoyu-skills/baoyu-infographic/EXTEND.md" && echo "xdg"
-test -f "$HOME/.baoyu-skills/baoyu-infographic/EXTEND.md" && echo "user"
-```
+| Priority | Path | Scope |
+|----------|------|-------|
+| 1 | `.baoyu-skills/baoyu-infographic/EXTEND.md` | Project |
+| 2 | `${XDG_CONFIG_HOME:-$HOME/.config}/baoyu-skills/baoyu-infographic/EXTEND.md` | XDG |
+| 3 | `$HOME/.baoyu-skills/baoyu-infographic/EXTEND.md` | User home |
 
-```powershell
-# PowerShell (Windows)
-if (Test-Path .baoyu-skills/baoyu-infographic/EXTEND.md) { "project" }
-$xdg = if ($env:XDG_CONFIG_HOME) { $env:XDG_CONFIG_HOME } else { "$HOME/.config" }
-if (Test-Path "$xdg/baoyu-skills/baoyu-infographic/EXTEND.md") { "xdg" }
-if (Test-Path "$HOME/.baoyu-skills/baoyu-infographic/EXTEND.md") { "user" }
-```
+| Result | Action |
+|--------|--------|
+| Found | Read, parse, display a one-line summary |
+| Not found | Ask the user with `AskUserQuestion` (see `references/config/first-time-setup.md`) |
 
-┌────────────────────────────────────────────────────┬───────────────────┐
-│                        Path                        │     Location      │
-├────────────────────────────────────────────────────┼───────────────────┤
-│ .baoyu-skills/baoyu-infographic/EXTEND.md          │ Project directory │
-├────────────────────────────────────────────────────┼───────────────────┤
-│ $HOME/.baoyu-skills/baoyu-infographic/EXTEND.md    │ User home         │
-└────────────────────────────────────────────────────┴───────────────────┘
-
-┌───────────┬───────────────────────────────────────────────────────────────────────────┐
-│  Result   │                                  Action                                   │
-├───────────┼───────────────────────────────────────────────────────────────────────────┤
-│ Found     │ Read, parse, display summary                                              │
-├───────────┼───────────────────────────────────────────────────────────────────────────┤
-│ Not found │ Ask user with AskUserQuestion (see references/config/first-time-setup.md) │
-└───────────┴───────────────────────────────────────────────────────────────────────────┘
-
-**EXTEND.md Supports**: Preferred layout/style | Default aspect ratio | Custom style definitions | Language preference
+**EXTEND.md supports**: preferred layout/style, default aspect ratio, custom style definitions, language preference.
 
 Schema: `references/config/preferences-schema.md`
 
@@ -219,15 +241,13 @@ See `references/structured-content-template.md` for detailed format.
 
 ### Step 4: Confirm Options
 
-Use **single AskUserQuestion call** with multiple questions to confirm all options together:
+Ask the user to confirm the questions below following the [User Input Tools](#user-input-tools) rule at the top of this file (batch into one call if the runtime supports multiple questions; otherwise ask one at a time in priority order).
 
-| Question | When | Options |
-|----------|------|---------|
-| **Combination** | Always | 3+ layout×style combos with rationale |
-| **Aspect** | Always | Named presets (landscape/portrait/square) or custom W:H ratio (e.g., 3:4, 4:3, 2.35:1) |
-| **Language** | Only if source ≠ user language | Language for text content |
-
-**Important**: Do NOT split into separate AskUserQuestion calls. Combine all applicable questions into one call.
+| Priority | Question | When | Options |
+|----------|----------|------|---------|
+| 1 | **Combination** | Always | 3+ layout×style combos with rationale |
+| 2 | **Aspect** | Always | Named presets (landscape/portrait/square) or custom W:H ratio (e.g., 3:4, 4:3, 2.35:1) |
+| 3 | **Language** | Only if source ≠ user language | Language for text content |
 
 ### Step 5: Generate Prompt → `prompts/infographic.md`
 
@@ -246,11 +266,12 @@ Combine:
 
 ### Step 6: Generate Image
 
-1. Select available image generation skill (ask user if multiple)
-2. **Check for existing file**: Before generating, check if `infographic.png` exists
+1. Select the backend via the `## Image Generation Tools` rule at the top: use whatever is available; if multiple, ask the user once. Do this once per session.
+2. Ensure the full final prompt is persisted at `prompts/infographic.md` (already written in Step 5) BEFORE invoking the backend — the file is the reproducibility record.
+3. **Check for existing file**: Before generating, check if `infographic.png` exists
    - If exists: Rename to `infographic-backup-YYYYMMDD-HHMMSS.png`
-3. Call with prompt file and output path
-4. On failure, auto-retry once
+4. Call the chosen backend with the prompt file and output path
+5. On failure, auto-retry once
 
 ### Step 7: Output Summary
 

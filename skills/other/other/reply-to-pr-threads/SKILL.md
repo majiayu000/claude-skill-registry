@@ -82,7 +82,7 @@ mutation($threadId: ID!, $body: String!) {
 
 Substitute `THREAD_ID` with the thread's id and `REPLY_BODY` with the drafted reply text for each post. Report what was posted and what was skipped (due to auto-resolution between re-fetch and posting).
 
-Check your task list for remaining tasks and proceed.
+Then use the TaskList tool and proceed to any remaining task.
 
 ## Rules
 

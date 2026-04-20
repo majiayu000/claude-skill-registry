@@ -15,6 +15,16 @@ metadata:
 
 Three-mode translation skill: **quick** for direct translation, **normal** for analysis-informed translation, **refined** for full publication-quality workflow with review and polish.
 
+## User Input Tools
+
+When this skill prompts the user, follow this tool-selection rule (priority order):
+
+1. **Prefer built-in user-input tools** exposed by the current agent runtime — e.g., `AskUserQuestion`, `request_user_input`, `clarify`, `ask_user`, or any equivalent.
+2. **Fallback**: if no such tool exists, emit a numbered plain-text message and ask the user to reply with the chosen number/answer for each question.
+3. **Batching**: if the tool supports multiple questions per call, combine all applicable questions into a single call; if only single-question, ask them one at a time in priority order.
+
+Concrete `AskUserQuestion` references below are examples — substitute the local equivalent in other runtimes.
+
 ## Script Directory
 
 Scripts in `scripts/` subdirectory. `{baseDir}` = this SKILL.md's directory path. Resolve `${BUN_X}` runtime: if `bun` installed → `bun`; if `npx` available → `npx -y bun`; else suggest installing bun. Replace `{baseDir}` and `${BUN_X}` with actual values.
@@ -26,36 +36,22 @@ Scripts in `scripts/` subdirectory. `{baseDir}` = this SKILL.md's directory path
 
 ## Preferences (EXTEND.md)
 
-Check EXTEND.md existence (priority order):
+Check EXTEND.md in priority order — the first one found wins:
 
-```bash
-# macOS, Linux, WSL, Git Bash
-test -f .baoyu-skills/baoyu-translate/EXTEND.md && echo "project"
-test -f "${XDG_CONFIG_HOME:-$HOME/.config}/baoyu-skills/baoyu-translate/EXTEND.md" && echo "xdg"
-test -f "$HOME/.baoyu-skills/baoyu-translate/EXTEND.md" && echo "user"
-```
-
-```powershell
-# PowerShell (Windows)
-if (Test-Path .baoyu-skills/baoyu-translate/EXTEND.md) { "project" }
-$xdg = if ($env:XDG_CONFIG_HOME) { $env:XDG_CONFIG_HOME } else { "$HOME/.config" }
-if (Test-Path "$xdg/baoyu-skills/baoyu-translate/EXTEND.md") { "xdg" }
-if (Test-Path "$HOME/.baoyu-skills/baoyu-translate/EXTEND.md") { "user" }
-```
-
-| Path | Location |
-|------|----------|
-| `.baoyu-skills/baoyu-translate/EXTEND.md` | Project directory |
-| `$HOME/.baoyu-skills/baoyu-translate/EXTEND.md` | User home |
+| Priority | Path | Scope |
+|----------|------|-------|
+| 1 | `.baoyu-skills/baoyu-translate/EXTEND.md` | Project |
+| 2 | `${XDG_CONFIG_HOME:-$HOME/.config}/baoyu-skills/baoyu-translate/EXTEND.md` | XDG |
+| 3 | `$HOME/.baoyu-skills/baoyu-translate/EXTEND.md` | User home |
 
 | Result | Action |
 |--------|--------|
-| Found | Read, parse, apply settings. On first use in session, briefly remind: "Using preferences from [path]. You can edit EXTEND.md to customize glossary, audience, etc." |
+| Found | Read, parse, apply. On first use in session, briefly remind: "Using preferences from [path]. You can edit EXTEND.md to customize glossary, audience, etc." |
 | Not found | **MUST** run first-time setup (see below) — do NOT silently use defaults |
 
-**EXTEND.md Supports**: Default target language | Default mode | Target audience | Custom glossaries (inline or file path) | Translation style | Chunk settings
+**EXTEND.md supports**: default target language, default mode, target audience, custom glossaries (inline or file path), translation style, chunk settings.
 
-Schema: [references/config/extend-schema.md](references/config/extend-schema.md)
+Schema: [references/config/extend-schema.md](references/config/extend-schema.md).
 
 ### First-Time Setup (BLOCKING)
 
@@ -113,19 +109,6 @@ Custom style descriptions are also accepted, e.g., `--style "poetic and lyrical"
 > Translation saved. To further review and polish, reply "继续润色" or "refine".
 
 If user responds, continue with review → polish steps (same as refined mode Steps 4-6 in refined-workflow.md) on the existing output.
-
-## Usage
-
-```
-/translate [--mode quick|normal|refined] [--from <lang>] [--to <lang>] [--audience <audience>] [--style <style>] [--glossary <file>] <source>
-```
-
-- `<source>`: File path, URL, or inline text
-- `--from`: Source language (auto-detect if omitted)
-- `--to`: Target language (from EXTEND.md or default `zh-CN`)
-- `--audience`: Target reader profile (from EXTEND.md or default `general`)
-- `--style`: Translation style (from EXTEND.md or default `storytelling`)
-- `--glossary`: Additional glossary file to merge with EXTEND.md glossary
 
 **Audience presets**:
 

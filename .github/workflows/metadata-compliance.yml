@@ -23,19 +23,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install jsonschema
+          pip install jsonschema pyyaml
 
       - name: Build changed files list
         if: github.event_name == 'pull_request' || github.event.inputs.scan_scope != 'full'
@@ -75,7 +75,7 @@ jobs:
 
       - name: Upload compliance artifacts
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: metadata-compliance
           path: |

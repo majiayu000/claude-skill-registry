@@ -68,12 +68,12 @@ jobs:
           echo "data_sha=$data_sha" >> "$GITHUB_OUTPUT"
 
       - name: Checkout main
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Checkout pinned core
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: ${{ steps.refs.outputs.core_repo }}
           ref: ${{ steps.refs.outputs.core_sha }}
@@ -82,7 +82,7 @@ jobs:
           fetch-depth: 1
 
       - name: Checkout pinned data
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: ${{ steps.refs.outputs.data_repo }}
           ref: ${{ steps.refs.outputs.data_sha }}

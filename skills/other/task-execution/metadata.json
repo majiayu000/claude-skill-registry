@@ -5,5 +5,12 @@
   "source": "github.com/sequenzia/claude-alchemy",
   "downloaded_at": "2026-01-31T02:15:58.704711Z",
   "dir_name": "task-execution",
-  "category": "other"
+  "category": "other",
+  "author": "sequenzia",
+  "source_url": "https://github.com/sequenzia/claude-alchemy/blob/main/claude-tools/prd-tools/skills/task-execution/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Stephen Sequenzia",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

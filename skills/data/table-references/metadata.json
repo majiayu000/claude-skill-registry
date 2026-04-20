@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/cuioss/plan-marshall",
-  "dir_name": "table-references"
+  "dir_name": "table-references",
+  "author": "cuioss",
+  "source_url": "https://github.com/cuioss/plan-marshall",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 Oliver Wolff",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

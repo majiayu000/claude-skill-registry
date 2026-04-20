@@ -11,5 +11,12 @@
   "stars": 0,
   "dir_name": "structuring-innovation-intake",
   "github_path": ".claude/skills/structuring-innovation-intake",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Poll-The-People",
+  "source_url": "https://github.com/Poll-The-People/customgpt-claude-code/blob/main/.claude/skills/structuring-innovation-intake/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CustomGPT.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

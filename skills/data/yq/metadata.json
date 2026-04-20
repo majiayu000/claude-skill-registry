@@ -5,5 +5,12 @@
   "source": "github.com/Ven0m0/claude-config",
   "downloaded_at": "2026-02-04T04:37:43.822575Z",
   "dir_name": "yq",
-  "category": "data"
+  "category": "data",
+  "author": "Ven0m0",
+  "source_url": "https://github.com/Ven0m0/claude-config/blob/main/claude/skills/context-efficient-tools/yq/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

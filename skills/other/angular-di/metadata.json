@@ -5,5 +5,12 @@
   "source": "github.com/analogjs/angular-skills",
   "downloaded_at": "2026-01-29T03:03:27.401747Z",
   "dir_name": "angular-di",
-  "category": "other"
+  "category": "other",
+  "author": "analogjs",
+  "source_url": "https://github.com/analogjs/angular-skills/blob/main/skills/angular-di/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Brandon Roberts",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

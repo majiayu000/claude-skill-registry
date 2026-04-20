@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:05.282074Z",
   "github_path": "plugins/dot-claude/skills/analyzing-source",
   "github_branch": "main",
-  "dir_name": "analyzing-source"
+  "dir_name": "analyzing-source",
+  "author": "Sawyer-Middeleer",
+  "source_url": "https://github.com/Sawyer-Middeleer/dot-claude/blob/main/plugins/dot-claude/skills/analyzing-source/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sawyer Middeleer",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

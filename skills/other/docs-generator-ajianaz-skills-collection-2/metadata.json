@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/ajianaz/skills-collection",
-  "dir_name": "docs-generator-ajianaz-skills-collection-2"
+  "dir_name": "docs-generator-ajianaz-skills-collection-2",
+  "author": "ajianaz",
+  "source_url": "https://github.com/ajianaz/skills-collection/blob/main/skills/docs-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024 Anaz S. Aji",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

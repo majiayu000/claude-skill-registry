@@ -5,5 +5,12 @@
   "description": "Méthodologie TDD/BDD pour refactoring sûr et systématique. MANDATORY pour code improvement. À utiliser lors de refactoring, amélioration de code, ou quand l'utilisateur mentionne \"refactor\", \"améliore",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:57.345793Z",
-  "dir_name": "refactoring-best-practices"
+  "dir_name": "refactoring-best-practices",
+  "author": "RomualdP",
+  "source_url": "https://github.com/RomualdP/hoki",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RomualdP/hoki",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

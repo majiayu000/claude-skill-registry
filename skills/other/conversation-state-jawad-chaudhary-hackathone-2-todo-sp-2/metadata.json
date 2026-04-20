@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/Jawad-Chaudhary/Hackathone-2-TODO-Spec-Driven-Development",
-  "dir_name": "conversation-state-jawad-chaudhary-hackathone-2-todo-sp-2"
+  "dir_name": "conversation-state-jawad-chaudhary-hackathone-2-todo-sp-2",
+  "author": "Jawad-Chaudhary",
+  "source_url": "https://github.com/Jawad-Chaudhary/Hackathone-2-TODO-Spec-Driven-Development/blob/main/Phase03/.claude/skills/conversation-state/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Jawad-Chaudhary/Hackathone-2-TODO-Spec-Driven-Development/blob/main/Phase03/.claude/skills/conversation-state/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

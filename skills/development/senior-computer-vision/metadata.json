@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:35.265755Z",
   "github_path": "cli-tool/components/skills/development/senior-computer-vision",
   "github_branch": "main",
-  "dir_name": "senior-computer-vision"
+  "dir_name": "senior-computer-vision",
+  "author": "davila7",
+  "source_url": "https://github.com/davila7/claude-code-templates/blob/main/cli-tool/components/skills/development/senior-computer-vision/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel (San) Ávila",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Generates descriptive commit messages from git diffs. Use when writing commits or reviewing staged changes.",
   "source": "GitHub Search API",
   "downloaded_at": "2026-01-08T03:20:47.165970Z",
-  "dir_name": "simple"
+  "dir_name": "simple",
+  "author": "monicajeon28",
+  "source_url": "https://github.com/monicajeon28/GMcruise",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/monicajeon28/GMcruise",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

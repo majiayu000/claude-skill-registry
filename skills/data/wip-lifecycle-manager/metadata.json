@@ -5,5 +5,12 @@
   "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
   "downloaded_at": "2026-01-27T01:26:53.447451Z",
   "dir_name": "wip-lifecycle-manager",
-  "category": "data"
+  "category": "data",
+  "author": "JaveedIshaq",
+  "source_url": "https://github.com/JaveedIshaq/ai-workflow-orchestrator/blob/main/skills/ballee/wip-lifecycle-manager/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Antoine Schaller",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   "stars": 0,
   "dir_name": "model-skill",
   "github_path": ".claude/skills/model-skill",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "maneeshanif",
+  "source_url": "https://github.com/maneeshanif/cli-todo-app-speckit/blob/main/.claude/skills/model-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 maneeshanif",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

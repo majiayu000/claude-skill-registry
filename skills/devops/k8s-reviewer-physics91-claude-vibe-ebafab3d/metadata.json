@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/k8s-reviewer",
   "github_branch": "main",
-  "dir_name": "k8s-reviewer-physics91-claude-vibe-ebafab3d"
+  "dir_name": "k8s-reviewer-physics91-claude-vibe-ebafab3d",
+  "author": "physics91",
+  "source_url": "https://github.com/physics91/claude-vibe/blob/main/skills/k8s-reviewer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/physics91/claude-vibe/blob/main/skills/k8s-reviewer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

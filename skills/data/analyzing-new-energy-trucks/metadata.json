@@ -11,5 +11,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "analyzing-new-energy-trucks"
+  "dir_name": "analyzing-new-energy-trucks",
+  "author": "alongor666",
+  "source_url": "https://github.com/alongor666/weekly_report",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alongor666/weekly_report",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

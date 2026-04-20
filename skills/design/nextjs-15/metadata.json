@@ -5,5 +5,12 @@
   "description": "Modern React framework for building full-stack web applications with App Router, Server Components, and optimized performance",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:08:26.769877Z",
-  "dir_name": "nextjs-15"
+  "dir_name": "nextjs-15",
+  "author": "SlanyCukr",
+  "source_url": "https://github.com/SlanyCukr/riot-api-project",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SlanyCukr/riot-api-project",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

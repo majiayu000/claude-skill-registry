@@ -5,5 +5,12 @@
   "source": "github.com/qmu/workaholic",
   "downloaded_at": "2026-01-31T03:22:00.273538Z",
   "dir_name": "feat-20260128-001720",
-  "category": "other"
+  "category": "other",
+  "author": "qmu",
+  "source_url": "https://github.com/qmu/workaholic/blob/main/.workaholic/tickets/archive/feat-20260128-001720/20260128003239-remove-block-commands-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/qmu/workaholic/blob/main/.workaholic/tickets/archive/feat-20260128-001720/20260128003239-remove-block-commands-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

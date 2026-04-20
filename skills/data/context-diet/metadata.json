@@ -9,5 +9,12 @@
   ],
   "stars": 4,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "context-diet"
+  "dir_name": "context-diet",
+  "author": "jamesjlundin",
+  "source_url": "https://github.com/jamesjlundin/full-stack-web-and-mobile-template",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 James Lundin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

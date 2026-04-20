@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:42.654494Z",
   "github_path": "plugins/essential/core/skills/using-core",
   "github_branch": "main",
-  "dir_name": "using-core-pproenca-dot-claude-old-3a9087b9"
+  "dir_name": "using-core-pproenca-dot-claude-old-3a9087b9",
+  "author": "pproenca",
+  "source_url": "https://github.com/pproenca/dot-claude-old/blob/main/plugins/essential/core/skills/using-core/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pproenca/dot-claude-old/blob/main/plugins/essential/core/skills/using-core/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

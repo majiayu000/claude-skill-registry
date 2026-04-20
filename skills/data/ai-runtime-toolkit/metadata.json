@@ -5,5 +5,12 @@
   "description": "AI Runtime工具装备系统，支持8个内部专业工具和10+个外部CLI工具的整合管理，提供工具发现、执行和配置功能，遵循整合优于创造的设计理念",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:13.938242Z",
-  "dir_name": "ai-runtime-toolkit"
+  "dir_name": "ai-runtime-toolkit",
+  "author": "Dwsy",
+  "source_url": "https://github.com/Dwsy/ai-runtime",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Dwsy/ai-runtime",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -10,5 +10,12 @@
   "stars": 20,
   "github_path": ".claude/skills/managing-github-ci",
   "github_branch": "main",
-  "dir_name": "managing-github-ci-saleor-configurator"
+  "dir_name": "managing-github-ci-saleor-configurator",
+  "author": "saleor",
+  "source_url": "https://github.com/saleor/configurator/blob/main/.claude/skills/managing-github-ci/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2024-2025, Saleor Commerce",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

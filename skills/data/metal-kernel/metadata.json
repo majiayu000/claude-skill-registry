@@ -5,5 +5,12 @@
   "source": "github.com/pytorch/pytorch",
   "downloaded_at": "2026-02-04T02:41:29.977290Z",
   "dir_name": "metal-kernel",
-  "category": "data"
+  "category": "data",
+  "author": "pytorch",
+  "source_url": "https://github.com/pytorch/pytorch/blob/main/.claude/skills/metal-kernel/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2016-     Facebook, Inc            (Adam Paszke)",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

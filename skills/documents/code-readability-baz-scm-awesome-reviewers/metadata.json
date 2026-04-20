@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:49.558142Z",
   "github_path": "_skills/code-readability",
   "github_branch": "main",
-  "dir_name": "code-readability-baz-scm-awesome-reviewers"
+  "dir_name": "code-readability-baz-scm-awesome-reviewers",
+  "author": "baz-scm",
+  "source_url": "https://github.com/baz-scm/awesome-reviewers/blob/main/_skills/code-readability/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/baz-scm/awesome-reviewers/blob/main/_skills/code-readability/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

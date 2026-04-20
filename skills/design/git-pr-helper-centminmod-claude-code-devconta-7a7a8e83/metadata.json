@@ -10,5 +10,12 @@
   "stars": 10,
   "github_path": ".claude/skills/git-pr-helper",
   "github_branch": "main",
-  "dir_name": "git-pr-helper-centminmod-claude-code-devconta-7a7a8e83"
+  "dir_name": "git-pr-helper-centminmod-claude-code-devconta-7a7a8e83",
+  "author": "centminmod",
+  "source_url": "https://github.com/centminmod/claude-code-devcontainers/blob/main/.claude/skills/git-pr-helper/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/centminmod/claude-code-devcontainers/blob/main/.claude/skills/git-pr-helper/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

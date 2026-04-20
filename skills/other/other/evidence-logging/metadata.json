@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/athola/claude-night-market",
   "dir_name": "evidence-logging",
-  "downloaded_at": "2026-02-15T01:20:26.383370Z"
+  "downloaded_at": "2026-02-15T01:20:26.383370Z",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/imbue/skills/evidence-logging/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

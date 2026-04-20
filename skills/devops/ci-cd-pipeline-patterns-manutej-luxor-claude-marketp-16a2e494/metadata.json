@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:37.430108Z",
   "github_path": "plugins/luxor-devops-suite/skills/ci-cd-pipeline-patterns",
   "github_branch": "main",
-  "dir_name": "ci-cd-pipeline-patterns-manutej-luxor-claude-marketp-16a2e494"
+  "dir_name": "ci-cd-pipeline-patterns-manutej-luxor-claude-marketp-16a2e494",
+  "author": "manutej",
+  "source_url": "https://github.com/manutej/luxor-claude-marketplace/blob/main/plugins/luxor-devops-suite/skills/ci-cd-pipeline-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/manutej/luxor-claude-marketplace/blob/main/plugins/luxor-devops-suite/skills/ci-cd-pipeline-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

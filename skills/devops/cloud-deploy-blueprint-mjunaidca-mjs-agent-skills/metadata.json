@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:33.110294Z",
   "github_path": "docs/taskflow-vault/skills/engineering/cloud-deploy-blueprint",
   "github_branch": "main",
-  "dir_name": "cloud-deploy-blueprint-mjunaidca-mjs-agent-skills"
+  "dir_name": "cloud-deploy-blueprint-mjunaidca-mjs-agent-skills",
+  "author": "mjunaidca",
+  "source_url": "https://github.com/mjunaidca/mjs-agent-skills/blob/main/docs/taskflow-vault/skills/engineering/cloud-deploy-blueprint/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mjunaidca/mjs-agent-skills/blob/main/docs/taskflow-vault/skills/engineering/cloud-deploy-blueprint/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

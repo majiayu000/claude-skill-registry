@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:25.734477Z",
   "github_path": "allegro-monitor",
   "github_branch": "main",
-  "dir_name": "allegro-monitor-nexty5870-clawdis-allegro-skil"
+  "dir_name": "allegro-monitor-nexty5870-clawdis-allegro-skil",
+  "author": "nexty5870",
+  "source_url": "https://github.com/nexty5870/clawdis-allegro-skill/blob/main/allegro-monitor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Clawdis Community",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

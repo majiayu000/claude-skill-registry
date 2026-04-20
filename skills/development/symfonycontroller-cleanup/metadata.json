@@ -5,5 +5,12 @@
   "description": "Refactor fat controllers into lean controllers by extracting business logic to services, handlers, and dedicated classes",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:30.619165Z",
-  "dir_name": "symfonycontroller-cleanup"
+  "dir_name": "symfonycontroller-cleanup",
+  "author": "MakFly",
+  "source_url": "https://github.com/MakFly/superpowers-symfony",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

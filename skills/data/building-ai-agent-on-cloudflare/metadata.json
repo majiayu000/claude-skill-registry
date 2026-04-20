@@ -5,5 +5,12 @@
   "source": "github.com/cloudflare/skills",
   "downloaded_at": "2026-02-01T03:42:33.544957Z",
   "dir_name": "building-ai-agent-on-cloudflare",
-  "category": "data"
+  "category": "data",
+  "author": "cloudflare",
+  "source_url": "https://github.com/cloudflare/skills/blob/main/skills/building-ai-agent-on-cloudflare/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cloudflare/skills/blob/main/skills/building-ai-agent-on-cloudflare/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

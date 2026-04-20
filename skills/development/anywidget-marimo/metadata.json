@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "anywidget-marimo"
+  "dir_name": "anywidget-marimo",
+  "author": "nikhil-vytla",
+  "source_url": "https://github.com/nikhil-vytla/hatch",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nikhil-vytla/hatch",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

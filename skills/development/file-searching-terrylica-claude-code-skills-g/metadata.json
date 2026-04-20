@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:14.325406Z",
   "github_path": "skills/github-issues/file-searching",
   "github_branch": "main",
-  "dir_name": "file-searching-terrylica-claude-code-skills-g"
+  "dir_name": "file-searching-terrylica-claude-code-skills-g",
+  "author": "terrylica",
+  "source_url": "https://github.com/terrylica/claude-code-skills-github-issues/blob/main/skills/github-issues/file-searching/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Terry Li",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

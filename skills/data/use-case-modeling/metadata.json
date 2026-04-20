@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:45.739415Z",
   "dir_name": "use-case-modeling",
   "github_path": "docs/99-claude/skills/use-case-modeling",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "daishiman",
+  "source_url": "https://github.com/daishiman/AIWorkflowOrchestrator/blob/main/docs/99-claude/skills/use-case-modeling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/daishiman/AIWorkflowOrchestrator/blob/main/docs/99-claude/skills/use-case-modeling/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

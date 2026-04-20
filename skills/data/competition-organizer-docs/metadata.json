@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "competition-organizer-docs"
+  "dir_name": "competition-organizer-docs",
+  "author": "wodsmith",
+  "source_url": "https://github.com/wodsmith/thewodapp",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 WODsmith LLC",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

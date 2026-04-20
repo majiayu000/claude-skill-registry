@@ -5,5 +5,12 @@
   "source": "github.com/nimeshgurung/artifact-hub-collections",
   "downloaded_at": "2026-01-29T08:42:17.429950Z",
   "dir_name": "regulatory-affairs-head",
-  "category": "data"
+  "category": "data",
+  "author": "nimeshgurung",
+  "source_url": "https://github.com/nimeshgurung/artifact-hub-collections/blob/main/skills/raw/alirezarezvani/claude-skills/ra-qm-team/regulatory-affairs-head/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nimeshgurung/artifact-hub-collections/blob/main/skills/raw/alirezarezvani/claude-skills/ra-qm-team/regulatory-affairs-head/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:51.422950Z",
   "github_path": "statistical-research/skills/implementation/algorithm-designer",
   "github_branch": "main",
-  "dir_name": "algorithm-designer-data-wise-claude-plugins"
+  "dir_name": "algorithm-designer-data-wise-claude-plugins",
+  "author": "Data-Wise",
+  "source_url": "https://github.com/Data-Wise/claude-plugins/blob/main/statistical-research/skills/implementation/algorithm-designer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Data-Wise",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

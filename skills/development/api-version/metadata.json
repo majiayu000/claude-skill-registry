@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/api-version",
   "github_branch": "main",
-  "dir_name": "api-version"
+  "dir_name": "api-version",
+  "author": "sgcarstrends",
+  "source_url": "https://github.com/sgcarstrends/sgcarstrends/blob/main/.claude/skills/api-version/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SG Cars Trends",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/omerakben/omer-akben",
   "downloaded_at": "2026-02-04T02:33:51.825786Z",
   "dir_name": "canvas-types",
-  "category": "data"
+  "category": "data",
+  "author": "omerakben",
+  "source_url": "https://github.com/omerakben/omer-akben/blob/main/.claude/skills/canvas-types/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/omerakben/omer-akben/blob/main/.claude/skills/canvas-types/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

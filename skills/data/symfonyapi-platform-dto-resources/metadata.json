@@ -5,5 +5,12 @@
   "description": "Create API Platform resources using pure DTOs without Doctrine entities, enabling clean API design decoupled from database schema",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:30.494889Z",
-  "dir_name": "symfonyapi-platform-dto-resources"
+  "dir_name": "symfonyapi-platform-dto-resources",
+  "author": "MakFly",
+  "source_url": "https://github.com/MakFly/superpowers-symfony",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

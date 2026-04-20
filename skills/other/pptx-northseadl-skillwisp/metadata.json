@@ -9,5 +9,12 @@
   "github_path": "skills/@anthropic/pptx",
   "github_branch": "main",
   "dir_name": "pptx-northseadl-skillwisp",
-  "downloaded_at": "2026-02-05T01:44:58.854038Z"
+  "downloaded_at": "2026-02-05T01:44:58.854038Z",
+  "author": "northseadl",
+  "source_url": "https://github.com/northseadl/skillwisp/blob/main/skills/@anthropic/pptx/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 SkillWisp",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

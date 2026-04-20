@@ -5,5 +5,12 @@
   "source": "github.com/EarthmanWeb/claude-flow-plugin",
   "downloaded_at": "2026-02-04T05:00:09.127502Z",
   "dir_name": "v3-security-overhaul",
-  "category": "data"
+  "category": "data",
+  "author": "EarthmanWeb",
+  "source_url": "https://github.com/EarthmanWeb/claude-flow-plugin/blob/main/v3/@claude-flow/mcp/.claude/skills/v3-security-overhaul/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 ruvnet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

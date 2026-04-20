@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/angular-v21-development",
   "github_branch": "main",
-  "dir_name": "angular-v21-development-nekorush14-nekorush14-dev"
+  "dir_name": "angular-v21-development-nekorush14-nekorush14-dev",
+  "author": "nekorush14",
+  "source_url": "https://github.com/nekorush14/nekorush14.dev/blob/main/.claude/skills/angular-v21-development/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nekorush14/nekorush14.dev/blob/main/.claude/skills/angular-v21-development/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

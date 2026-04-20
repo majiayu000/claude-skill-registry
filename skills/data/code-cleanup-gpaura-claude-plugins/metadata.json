@@ -5,5 +5,12 @@
   "source": "github.com/gpaura/claude_plugins",
   "downloaded_at": "2026-02-04T05:13:47.567424Z",
   "dir_name": "code-cleanup-gpaura-claude-plugins",
-  "category": "data"
+  "category": "data",
+  "author": "gpaura",
+  "source_url": "https://github.com/gpaura/claude_plugins/blob/main/skills/code-cleanup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gpaura/claude_plugins/blob/main/skills/code-cleanup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

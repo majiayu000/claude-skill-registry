@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:01.175125Z",
   "github_path": ".claude/skills/ux-spacing-layout",
   "github_branch": "main",
-  "dir_name": "ux-spacing-layout"
+  "dir_name": "ux-spacing-layout",
+  "author": "matthewharwood",
+  "source_url": "https://github.com/matthewharwood/fantasy-phonics/blob/main/.claude/skills/ux-spacing-layout/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) HTML5 Boilerplate",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

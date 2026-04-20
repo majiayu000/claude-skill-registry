@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:52.415339Z",
   "github_path": "Dev/i18n/pt/Symfony/skills/async",
   "github_branch": "main",
-  "dir_name": "async"
+  "dir_name": "async",
+  "author": "TheBeardedBearSAS",
+  "source_url": "https://github.com/TheBeardedBearSAS/claude-craft/blob/main/Dev/i18n/pt/Symfony/skills/async/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 TheBeardedCTO",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

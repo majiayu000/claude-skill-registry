@@ -7,5 +7,12 @@
   "dir_name": "schema-markup-generator-aaron-he-zhu-seo-geo-claude-skill",
   "category": "other",
   "github_path": "build/schema-markup-generator",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/schema-markup-generator/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/schema-markup-generator/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

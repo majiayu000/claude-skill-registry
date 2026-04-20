@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/behavioral-modes",
   "github_branch": "main",
-  "dir_name": "behavioral-modes"
+  "dir_name": "behavioral-modes",
+  "author": "xenitV1",
+  "source_url": "https://github.com/xenitV1/claude-code-maestro/blob/main/skills/behavioral-modes/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 xenitV1 (https://github.com/xenitV1)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

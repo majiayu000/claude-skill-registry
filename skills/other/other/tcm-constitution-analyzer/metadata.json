@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/huifer/WellAlly-health",
   "dir_name": "tcm-constitution-analyzer",
-  "downloaded_at": "2026-02-15T07:32:05.661174Z"
+  "downloaded_at": "2026-02-15T07:32:05.661174Z",
+  "author": "huifer",
+  "source_url": "https://github.com/huifer/WellAlly-health/blob/main/skills/tcm-constitution-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 WellAlly Tech",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

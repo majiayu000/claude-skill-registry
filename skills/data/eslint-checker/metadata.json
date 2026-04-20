@@ -5,5 +5,12 @@
   "source": "github.com/jmagly/ai-writing-guide",
   "downloaded_at": "2026-01-27T02:20:14.888190Z",
   "dir_name": "eslint-checker",
-  "category": "data"
+  "category": "data",
+  "author": "jmagly",
+  "source_url": "https://github.com/jmagly/ai-writing-guide/blob/main/agentic/code/frameworks/sdlc-complete/extensions/javascript/skills/eslint-checker/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Joe Magly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

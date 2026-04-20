@@ -5,5 +5,12 @@
   "source": "github.com/proffesor-for-testing/agentic-qe",
   "downloaded_at": "2026-02-04T02:40:55.340523Z",
   "dir_name": "v3-qe-agentic-flow-integration",
-  "category": "data"
+  "category": "data",
+  "author": "proffesor-for-testing",
+  "source_url": "https://github.com/proffesor-for-testing/agentic-qe/blob/main/v2/docs/internal/archived-v3-development-skills/v3-qe-agentic-flow-integration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Agentic QE Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

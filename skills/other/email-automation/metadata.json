@@ -9,5 +9,12 @@
   "github_path": "email-automation",
   "github_branch": "master",
   "dir_name": "email-automation",
-  "downloaded_at": "2026-02-05T01:45:00.245790Z"
+  "downloaded_at": "2026-02-05T01:45:00.245790Z",
+  "author": "aAAaqwq",
+  "source_url": "https://github.com/aAAaqwq/AGI-Super-Skills/blob/master/email-automation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 AGI Super Team Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

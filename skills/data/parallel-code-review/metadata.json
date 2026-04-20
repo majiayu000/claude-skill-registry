@@ -5,5 +5,12 @@
   "source": "github.com/otrebu/all-agents",
   "downloaded_at": "2026-01-29T02:39:27.989237Z",
   "dir_name": "parallel-code-review",
-  "category": "data"
+  "category": "data",
+  "author": "otrebu",
+  "source_url": "https://github.com/otrebu/all-agents/blob/main/.claude/skills/parallel-code-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/otrebu/all-agents/blob/main/.claude/skills/parallel-code-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "optimizing-large-skills-athola-claude-night-market-b80f4ad2",
   "category": "other",
   "github_path": "plugins/conserve/skills/optimizing-large-skills",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/conserve/skills/optimizing-large-skills/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Async message handling with Symfony Messenger; configure transports (RabbitMQ, Redis, Doctrine); implement handlers, middleware, and retry strategies",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:31.493968Z",
-  "dir_name": "symfonysymfony-messenger"
+  "dir_name": "symfonysymfony-messenger",
+  "author": "MakFly",
+  "source_url": "https://github.com/MakFly/superpowers-symfony",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

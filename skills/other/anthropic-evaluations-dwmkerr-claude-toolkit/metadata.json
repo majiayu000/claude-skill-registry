@@ -7,5 +7,12 @@
   "dir_name": "anthropic-evaluations-dwmkerr-claude-toolkit",
   "category": "other",
   "github_path": "plugins/toolkit/skills/anthropic-evaluations",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "dwmkerr",
+  "source_url": "https://github.com/dwmkerr/claude-toolkit/blob/main/plugins/toolkit/skills/anthropic-evaluations/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dave Kerr",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

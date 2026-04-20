@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "airparser-api",
   "github_path": ".claude/skills/airparser-api",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "guillempuche",
+  "source_url": "https://github.com/guillempuche/transports-pau-automatizaciones/blob/main/.claude/skills/airparser-api/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/guillempuche/transports-pau-automatizaciones/blob/main/.claude/skills/airparser-api/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

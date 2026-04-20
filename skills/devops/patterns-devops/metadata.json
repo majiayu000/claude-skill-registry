@@ -5,5 +5,12 @@
   "description": "로컬 CI부터 배포까지 DevOps 패턴을 제공합니다. Justfile, E2E 테스트, CI/CD 파이프라인, Docker, 배포 자동화가 필요할 때 사용하세요.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:57.853950Z",
-  "dir_name": "patterns-devops"
+  "dir_name": "patterns-devops",
+  "author": "ssiumha",
+  "source_url": "https://github.com/ssiumha/dots",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ssiumha/dots",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

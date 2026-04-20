@@ -10,5 +10,12 @@
   "stars": 2,
   "github_path": "skills/frontend-builder",
   "github_branch": "main",
-  "dir_name": "frontend-builder"
+  "dir_name": "frontend-builder",
+  "author": "daffy0208",
+  "source_url": "https://github.com/daffy0208/ai-dev-standards/blob/main/skills/frontend-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AI Dev Standards Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "hawk-view-results-tbroadley-dotfiles-5fbc129e",
   "category": "other",
   "github_path": "claude/skills/hawk-view-results",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "tbroadley",
+  "source_url": "https://github.com/tbroadley/dotfiles/blob/main/claude/skills/hawk-view-results/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tbroadley/dotfiles/blob/main/claude/skills/hawk-view-results/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

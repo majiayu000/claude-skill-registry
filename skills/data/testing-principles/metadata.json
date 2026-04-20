@@ -5,5 +5,12 @@
   "source": "github.com/shinpr/claude-code-workflows",
   "downloaded_at": "2026-02-04T03:42:42.841085Z",
   "dir_name": "testing-principles",
-  "category": "data"
+  "category": "data",
+  "author": "shinpr",
+  "source_url": "https://github.com/shinpr/claude-code-workflows/blob/main/skills/testing-principles/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Shinsuke Kagawa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

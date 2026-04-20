@@ -5,5 +5,12 @@
   "description": "Iteration 7 of Multiplicity Cascade - Self-creating chaos engines",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:11:07.622280Z",
-  "dir_name": "autopoietic-chaos"
+  "dir_name": "autopoietic-chaos",
+  "author": "agentgptsmith",
+  "source_url": "https://github.com/agentgptsmith/MonadFramework",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agentgptsmith/MonadFramework",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

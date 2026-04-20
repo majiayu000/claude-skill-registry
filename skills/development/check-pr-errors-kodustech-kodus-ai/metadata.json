@@ -7,5 +7,12 @@
   "stars": 870,
   "source": "github.com/kodustech/kodus-ai",
   "downloaded_at": "2026-01-24T16:16:07.414499Z",
-  "dir_name": "check-pr-errors-kodustech-kodus-ai"
+  "dir_name": "check-pr-errors-kodustech-kodus-ai",
+  "author": "kodustech",
+  "source_url": "https://github.com/kodustech/kodus-ai/blob/main/.codex/skills/check-pr-errors/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kodustech/kodus-ai/blob/main/.codex/skills/check-pr-errors/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

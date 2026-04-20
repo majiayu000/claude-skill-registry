@@ -5,5 +5,12 @@
   "source": "github.com/mitsuhiko/agent-stuff",
   "downloaded_at": "2026-02-02T04:22:20.653786Z",
   "dir_name": "openscad",
-  "category": "data"
+  "category": "data",
+  "author": "mitsuhiko",
+  "source_url": "https://github.com/mitsuhiko/agent-stuff/blob/main/skills/openscad/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mitsuhiko/agent-stuff/blob/main/skills/openscad/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

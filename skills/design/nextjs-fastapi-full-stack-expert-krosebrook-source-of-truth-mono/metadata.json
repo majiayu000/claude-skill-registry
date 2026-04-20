@@ -5,5 +5,12 @@
   "description": "Expert guidance for building full-stack applications with Next.js frontend and FastAPI backend. Use when integrating React/Next.js with Python FastAPI, building API routes, or implementing SSR/SSG wit",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:19.013823Z",
-  "dir_name": "nextjs-fastapi-full-stack-expert-krosebrook-source-of-truth-mono"
+  "dir_name": "nextjs-fastapi-full-stack-expert-krosebrook-source-of-truth-mono",
+  "author": "Krosebrook",
+  "source_url": "https://github.com/Krosebrook/source-of-truth-monorepo",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Krosebrook/source-of-truth-monorepo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

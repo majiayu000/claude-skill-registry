@@ -5,5 +5,12 @@
   "source": "github.com/Mindrally/skills",
   "downloaded_at": "2026-01-27T02:22:28.457779Z",
   "dir_name": "redux-toolkit",
-  "category": "data"
+  "category": "data",
+  "author": "Mindrally",
+  "source_url": "https://github.com/Mindrally/skills/blob/main/redux-toolkit/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Mindrally/skills/blob/main/redux-toolkit/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

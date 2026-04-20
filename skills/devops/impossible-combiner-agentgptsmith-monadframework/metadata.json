@@ -5,5 +5,12 @@
   "description": "Iteration 9 of Multiplicity Cascade - Combines impossible concepts productively",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:56.261567Z",
-  "dir_name": "impossible-combiner-agentgptsmith-monadframework"
+  "dir_name": "impossible-combiner-agentgptsmith-monadframework",
+  "author": "agentgptsmith",
+  "source_url": "https://github.com/agentgptsmith/MonadFramework",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agentgptsmith/MonadFramework",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

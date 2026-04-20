@@ -5,5 +5,12 @@
   "source": "github.com/technicalpickles/pickled-claude-plugins",
   "downloaded_at": "2026-02-04T01:56:46.682279Z",
   "dir_name": "working-with-mcp",
-  "category": "data"
+  "category": "data",
+  "author": "technicalpickles",
+  "source_url": "https://github.com/technicalpickles/pickled-claude-plugins/blob/main/plugins/mcpproxy/skills/working-with-mcp/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josh Nichols",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

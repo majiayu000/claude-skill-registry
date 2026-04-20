@@ -9,5 +9,12 @@
   "github_path": "skills/@anthropic/theme-factory",
   "github_branch": "main",
   "dir_name": "theme-factory-northseadl-skillwisp",
-  "downloaded_at": "2026-02-05T01:44:58.719635Z"
+  "downloaded_at": "2026-02-05T01:44:58.719635Z",
+  "author": "northseadl",
+  "source_url": "https://github.com/northseadl/skillwisp/blob/main/skills/@anthropic/theme-factory/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 SkillWisp",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

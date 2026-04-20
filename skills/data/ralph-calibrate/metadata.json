@@ -5,5 +5,12 @@
   "source": "github.com/otrebu/all-agents",
   "downloaded_at": "2026-02-04T05:12:01.368048Z",
   "dir_name": "ralph-calibrate",
-  "category": "data"
+  "category": "data",
+  "author": "otrebu",
+  "source_url": "https://github.com/otrebu/all-agents/blob/main/.claude/skills/ralph-calibrate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/otrebu/all-agents/blob/main/.claude/skills/ralph-calibrate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

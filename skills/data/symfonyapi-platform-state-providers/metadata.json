@@ -5,5 +5,12 @@
   "description": "Master API Platform State Providers and Processors to decouple data retrieval and persistence from entities, enabling clean architecture and custom data sources",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:30.576394Z",
-  "dir_name": "symfonyapi-platform-state-providers"
+  "dir_name": "symfonyapi-platform-state-providers",
+  "author": "MakFly",
+  "source_url": "https://github.com/MakFly/superpowers-symfony",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

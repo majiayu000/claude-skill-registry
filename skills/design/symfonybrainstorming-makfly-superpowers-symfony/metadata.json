@@ -5,5 +5,12 @@
   "description": "Structured brainstorming techniques for Symfony projects - explore requirements, identify components, and plan architecture collaboratively",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:30.607092Z",
-  "dir_name": "symfonybrainstorming-makfly-superpowers-symfony"
+  "dir_name": "symfonybrainstorming-makfly-superpowers-symfony",
+  "author": "MakFly",
+  "source_url": "https://github.com/MakFly/superpowers-symfony",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

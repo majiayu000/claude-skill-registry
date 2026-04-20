@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/malob/nix-config",
-  "dir_name": "ai-sdk-docs-malob-nix-config-2"
+  "dir_name": "ai-sdk-docs-malob-nix-config-2",
+  "author": "malob",
+  "source_url": "https://github.com/malob/nix-config/blob/main/configs/claude/plugins/ai-sdk/skills/ai-sdk-docs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2020 Malo Bourgon",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

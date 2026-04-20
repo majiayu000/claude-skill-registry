@@ -5,5 +5,12 @@
   "description": "Test authenticated routes in the your project using cookie-based authentication. Use this skill when testing API endpoints, validating route functionality, or debugging authentication issues. Includes",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:35.059142Z",
-  "dir_name": "aiwfroute-tester"
+  "dir_name": "aiwfroute-tester",
+  "author": "moonklabs",
+  "source_url": "https://github.com/moonklabs/aiwf",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 aiwf",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

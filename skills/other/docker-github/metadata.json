@@ -5,5 +5,12 @@
   "source": "github.com/michsindlinger/agent-os-extended",
   "downloaded_at": "2026-01-30T01:30:06.419350Z",
   "dir_name": "docker-github",
-  "category": "other"
+  "category": "other",
+  "author": "michsindlinger",
+  "source_url": "https://github.com/michsindlinger/agent-os-extended/blob/main/agent-os/templates/skills/devops/docker-github/Skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/michsindlinger/agent-os-extended/blob/main/agent-os/templates/skills/devops/docker-github/Skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "Use when creating or modifying domain entities with static expressions, computed properties, field tracking, and validation methods.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:48.579383Z",
-  "dir_name": "entity-development"
+  "dir_name": "entity-development",
+  "author": "duc01226",
+  "source_url": "https://github.com/duc01226/EasyPlatform",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Dang Phuoc Duc",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

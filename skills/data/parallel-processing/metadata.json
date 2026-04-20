@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/kamushadenes/nix",
-  "dir_name": "parallel-processing"
+  "dir_name": "parallel-processing",
+  "author": "kamushadenes",
+  "source_url": "https://github.com/kamushadenes/nix",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kamushadenes/nix",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

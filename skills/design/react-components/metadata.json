@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:14.637774Z",
   "github_path": ".claude/skills/react-components",
   "github_branch": "main",
-  "dir_name": "react-components"
+  "dir_name": "react-components",
+  "author": "MUmerRazzaq",
+  "source_url": "https://github.com/MUmerRazzaq/fast-next-todo/blob/main/.claude/skills/react-components/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MUmerRazzaq/fast-next-todo/blob/main/.claude/skills/react-components/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

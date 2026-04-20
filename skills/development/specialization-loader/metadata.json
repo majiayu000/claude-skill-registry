@@ -10,5 +10,12 @@
   "stars": 2,
   "github_path": ".claude/skills/specialization-loader",
   "github_branch": "main",
-  "dir_name": "specialization-loader"
+  "dir_name": "specialization-loader",
+  "author": "mehdic",
+  "source_url": "https://github.com/mehdic/bazinga/blob/main/.claude/skills/specialization-loader/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Mehdi C",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -9,5 +9,12 @@
   ],
   "stars": 281,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "analyse-issue"
+  "dir_name": "analyse-issue",
+  "author": "monarch-initiative",
+  "source_url": "https://github.com/monarch-initiative/mondo",
+  "license": "CC-BY-4.0",
+  "copyright": "copyright and certain other rights. Our licenses are",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

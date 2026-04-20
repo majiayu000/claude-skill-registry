@@ -7,5 +7,12 @@
   "dir_name": "oral-health-analyzer-huifer-wellally-health-4abd0748",
   "category": "other",
   "github_path": ".claude/skills/oral-health-analyzer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "huifer",
+  "source_url": "https://github.com/huifer/WellAlly-health/blob/main/.claude/skills/oral-health-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 WellAlly Tech",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

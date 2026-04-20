@@ -5,5 +5,12 @@
   "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
   "downloaded_at": "2026-02-04T02:27:24.730968Z",
   "dir_name": "optimization-phase",
-  "category": "data"
+  "category": "data",
+  "author": "Sjdjdiejdrirhdkjej",
+  "source_url": "https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/optimization-phase/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/optimization-phase/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

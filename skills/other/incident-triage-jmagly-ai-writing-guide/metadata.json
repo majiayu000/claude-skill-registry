@@ -7,5 +7,12 @@
   "dir_name": "incident-triage-jmagly-ai-writing-guide",
   "category": "other",
   "github_path": "plugins/sdlc/skills/incident-triage",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jmagly",
+  "source_url": "https://github.com/jmagly/ai-writing-guide/blob/main/plugins/sdlc/skills/incident-triage/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Joe Magly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

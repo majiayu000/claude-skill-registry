@@ -10,5 +10,12 @@
   ],
   "stars": 14,
   "source": "local",
-  "dir_name": "personal-material-search"
+  "dir_name": "personal-material-search",
+  "author": "alchaincyf",
+  "source_url": "https://github.com/alchaincyf/glm-claude",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 GLM Claude Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/SanctifiedOps/solana-skills",
   "downloaded_at": "2026-01-27T01:45:20.938023Z",
   "dir_name": "solana-account-model",
-  "category": "other"
+  "category": "other",
+  "author": "SanctifiedOps",
+  "source_url": "https://github.com/SanctifiedOps/solana-skills/blob/main/skills/core-dev/solana-account-model/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SanctifiedOps",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

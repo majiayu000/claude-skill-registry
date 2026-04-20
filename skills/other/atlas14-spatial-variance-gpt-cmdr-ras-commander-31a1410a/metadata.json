@@ -7,5 +7,12 @@
   "dir_name": "atlas14-spatial-variance-gpt-cmdr-ras-commander-31a1410a",
   "category": "other",
   "github_path": ".claude/skills/atlas14-spatial-variance",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "gpt-cmdr",
+  "source_url": "https://github.com/gpt-cmdr/ras-commander/blob/main/.claude/skills/atlas14-spatial-variance/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024 William M. Katzenmeyer",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:17.985081Z",
   "github_path": "skills/deployment/ci-cd-agent",
   "github_branch": "main",
-  "dir_name": "ci-cd-agent-unicorn-radium-7330dcae"
+  "dir_name": "ci-cd-agent-unicorn-radium-7330dcae",
+  "author": "Unicorn",
+  "source_url": "https://github.com/Unicorn/Radium/blob/main/skills/deployment/ci-cd-agent/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Unicorn/Radium/blob/main/skills/deployment/ci-cd-agent/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

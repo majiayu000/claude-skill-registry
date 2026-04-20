@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:19.079686Z",
   "github_path": "skills/patterns/dark-mode",
   "github_branch": "main",
-  "dir_name": "dark-mode-dylantarre-design-system-skills"
+  "dir_name": "dark-mode-dylantarre-design-system-skills",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/design-system-skills/blob/main/skills/patterns/dark-mode/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

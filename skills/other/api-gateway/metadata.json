@@ -9,5 +9,12 @@
   "github_path": "skills/@itsmostafa/api-gateway",
   "github_branch": "main",
   "dir_name": "api-gateway",
-  "downloaded_at": "2026-02-05T01:44:58.815295Z"
+  "downloaded_at": "2026-02-05T01:44:58.815295Z",
+  "author": "northseadl",
+  "source_url": "https://github.com/northseadl/skillwisp/blob/main/skills/@itsmostafa/api-gateway/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 SkillWisp",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

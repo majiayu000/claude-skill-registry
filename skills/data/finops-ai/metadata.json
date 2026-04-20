@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/frankxai/ai-architect",
-  "dir_name": "finops-ai"
+  "dir_name": "finops-ai",
+  "author": "frankxai",
+  "source_url": "https://github.com/frankxai/ai-architect",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/frankxai/ai-architect",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "analyze-thread"
+  "dir_name": "analyze-thread",
+  "author": "fatbobman",
+  "source_url": "https://github.com/fatbobman/mail-mcp-bridge",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Fatbobman (Xu Yang)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

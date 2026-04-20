@@ -9,5 +9,12 @@
   "github_path": "skills/delegating-work",
   "github_branch": "main",
   "dir_name": "delegating-work-refoundai-lenny-skills",
-  "downloaded_at": "2026-02-05T05:41:55.446309Z"
+  "downloaded_at": "2026-02-05T05:41:55.446309Z",
+  "author": "RefoundAI",
+  "source_url": "https://github.com/RefoundAI/lenny-skills/blob/main/skills/delegating-work/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Refound AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

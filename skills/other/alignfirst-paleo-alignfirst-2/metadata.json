@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/paleo/alignfirst",
-  "dir_name": "alignfirst-paleo-alignfirst-2"
+  "dir_name": "alignfirst-paleo-alignfirst-2",
+  "author": "paleo",
+  "source_url": "https://github.com/paleo/alignfirst/blob/main/skills/alignfirst/SKILL.md",
+  "license": "CC0-1.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/paleo/alignfirst/blob/main/skills/alignfirst/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

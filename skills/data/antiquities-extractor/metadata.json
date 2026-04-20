@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "antiquities-extractor",
   "github_path": "",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "shawngraham",
+  "source_url": "https://github.com/shawngraham/claude_antiquities_extractor_skill",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shawngraham/claude_antiquities_extractor_skill",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
-  "dir_name": "meteor-sync-specialist-javeedishaq-ai-workflow-orchestr-2"
+  "dir_name": "meteor-sync-specialist-javeedishaq-ai-workflow-orchestr-2",
+  "author": "JaveedIshaq",
+  "source_url": "https://github.com/JaveedIshaq/ai-workflow-orchestrator/blob/main/skills/ballee/meteor-sync-specialist/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Antoine Schaller",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

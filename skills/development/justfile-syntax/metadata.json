@@ -5,5 +5,12 @@
   "description": "Justfile 편집 시 인덴트/문법 규칙을 제공합니다. justfile, Justfile, 레시피 편집 시 자동으로 사용하세요.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:57.860210Z",
-  "dir_name": "justfile-syntax"
+  "dir_name": "justfile-syntax",
+  "author": "ssiumha",
+  "source_url": "https://github.com/ssiumha/dots",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ssiumha/dots",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

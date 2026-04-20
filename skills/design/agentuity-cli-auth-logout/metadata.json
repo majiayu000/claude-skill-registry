@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:32.320989Z",
   "github_path": "training-v1/concierge-ts-v1/.agents/skills/agentuity-cli-auth-logout",
   "github_branch": "main",
-  "dir_name": "agentuity-cli-auth-logout"
+  "dir_name": "agentuity-cli-auth-logout",
+  "author": "agentuity",
+  "source_url": "https://github.com/agentuity/examples/blob/main/training-v1/concierge-ts-v1/.agents/skills/agentuity-cli-auth-logout/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 Agentuity, Inc.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

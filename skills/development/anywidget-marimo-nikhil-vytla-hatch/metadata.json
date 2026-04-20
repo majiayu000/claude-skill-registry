@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:35.924670Z",
   "github_path": "lightweight-labeling-tool/.claude/skills/anywidget-marimo",
   "github_branch": "main",
-  "dir_name": "anywidget-marimo-nikhil-vytla-hatch"
+  "dir_name": "anywidget-marimo-nikhil-vytla-hatch",
+  "author": "nikhil-vytla",
+  "source_url": "https://github.com/nikhil-vytla/hatch/blob/main/lightweight-labeling-tool/.claude/skills/anywidget-marimo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nikhil-vytla/hatch/blob/main/lightweight-labeling-tool/.claude/skills/anywidget-marimo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

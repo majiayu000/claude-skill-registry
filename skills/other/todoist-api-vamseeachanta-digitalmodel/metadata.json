@@ -5,5 +5,12 @@
   "source": "github.com/vamseeachanta/digitalmodel",
   "downloaded_at": "2026-02-02T04:04:40.791637Z",
   "dir_name": "todoist-api-vamseeachanta-digitalmodel",
-  "category": "other"
+  "category": "other",
+  "author": "vamseeachanta",
+  "source_url": "https://github.com/vamseeachanta/digitalmodel/blob/main/.claude/skills/productivity/todoist-api/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Vamsee Achanta",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

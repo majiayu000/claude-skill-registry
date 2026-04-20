@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:14.596643Z",
   "github_path": "skills/github-stars-analyzer",
   "github_branch": "main",
-  "dir_name": "github-stars-analyzer"
+  "dir_name": "github-stars-analyzer",
+  "author": "chaorenex1",
+  "source_url": "https://github.com/chaorenex1/coding-workflow/blob/main/skills/github-stars-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 chaorenex1",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

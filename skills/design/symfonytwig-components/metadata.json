@@ -5,5 +5,12 @@
   "description": "Build reusable UI components with Symfony UX Twig Components and Live Components for reactive interfaces",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:31.777543Z",
-  "dir_name": "symfonytwig-components"
+  "dir_name": "symfonytwig-components",
+  "author": "MakFly",
+  "source_url": "https://github.com/MakFly/superpowers-symfony",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

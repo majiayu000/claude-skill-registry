@@ -7,5 +7,12 @@
   "dir_name": "codex-sdk-starter",
   "category": "other",
   "github_path": ".codex/skills/codex-sdk-starter",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "CleanExpo",
+  "source_url": "https://github.com/CleanExpo/Unite-Hub/blob/main/.codex/skills/codex-sdk-starter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CleanExpo/Unite-Hub/blob/main/.codex/skills/codex-sdk-starter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

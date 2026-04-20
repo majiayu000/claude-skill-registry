@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/inclusion-criteria",
   "github_branch": "main",
-  "dir_name": "inclusion-criteria"
+  "dir_name": "inclusion-criteria",
+  "author": "astoreyai",
+  "source_url": "https://github.com/astoreyai/ai_scientist/blob/main/skills/inclusion-criteria/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/astoreyai/ai_scientist/blob/main/skills/inclusion-criteria/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

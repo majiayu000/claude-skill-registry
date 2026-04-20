@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:06:31.285048Z",
   "github_path": "",
   "github_branch": "main",
-  "dir_name": "anki-shren207-awesome-anki"
+  "dir_name": "anki-shren207-awesome-anki",
+  "author": "shren207",
+  "source_url": "https://github.com/shren207/awesome-anki",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shren207/awesome-anki",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

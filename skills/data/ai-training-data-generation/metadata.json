@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "ai-training-data-generation",
   "github_path": ".claude/skills/ai-training-data-generation",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "findinfinitelabs",
+  "source_url": "https://github.com/findinfinitelabs/chuuk/blob/main/.claude/skills/ai-training-data-generation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Chris Lundy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

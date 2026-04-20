@@ -5,5 +5,12 @@
   "source": "github.com/SalesforceCommerceCloud/b2c-developer-tooling",
   "downloaded_at": "2026-01-31T01:29:37.038345Z",
   "dir_name": "b2c-custom-job-steps",
-  "category": "data"
+  "category": "data",
+  "author": "SalesforceCommerceCloud",
+  "source_url": "https://github.com/SalesforceCommerceCloud/b2c-developer-tooling/blob/main/plugins/b2c/skills/b2c-custom-job-steps/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright (c) 2024 Salesforce, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

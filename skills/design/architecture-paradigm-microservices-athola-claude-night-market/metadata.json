@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:46.928453Z",
   "github_path": "plugins/archetypes/skills/architecture-paradigm-microservices",
   "github_branch": "main",
-  "dir_name": "architecture-paradigm-microservices-athola-claude-night-market"
+  "dir_name": "architecture-paradigm-microservices-athola-claude-night-market",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/archetypes/skills/architecture-paradigm-microservices/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

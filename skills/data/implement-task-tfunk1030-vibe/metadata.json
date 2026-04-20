@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/tfunk1030/vibe",
-  "dir_name": "implement-task-tfunk1030-vibe"
+  "dir_name": "implement-task-tfunk1030-vibe",
+  "author": "tfunk1030",
+  "source_url": "https://github.com/tfunk1030/vibe",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tfunk1030/vibe",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:28.627642Z",
   "github_path": "session/skills/stash",
   "github_branch": "main",
-  "dir_name": "stash-jongwony-cc-plugin"
+  "dir_name": "stash-jongwony-cc-plugin",
+  "author": "jongwony",
+  "source_url": "https://github.com/jongwony/cc-plugin/blob/main/session/skills/stash/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jongwony/cc-plugin/blob/main/session/skills/stash/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

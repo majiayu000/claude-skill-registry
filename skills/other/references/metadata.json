@@ -5,5 +5,12 @@
   "source": "github.com/daishiman/AIWorkflowOrchestrator",
   "downloaded_at": "2026-01-22T01:26:12.946056Z",
   "dir_name": "references",
-  "category": "other"
+  "category": "other",
+  "author": "daishiman",
+  "source_url": "https://github.com/daishiman/AIWorkflowOrchestrator/blob/main/docs/99-claude/skills/database-seeding/references/legacy-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/daishiman/AIWorkflowOrchestrator/blob/main/docs/99-claude/skills/database-seeding/references/legacy-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

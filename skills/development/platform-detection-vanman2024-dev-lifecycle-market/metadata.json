@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:27.166158Z",
   "github_path": "plugins/deployment/skills/platform-detection",
   "github_branch": "main",
-  "dir_name": "platform-detection-vanman2024-dev-lifecycle-market"
+  "dir_name": "platform-detection-vanman2024-dev-lifecycle-market",
+  "author": "vanman2024",
+  "source_url": "https://github.com/vanman2024/dev-lifecycle-marketplace/blob/main/plugins/deployment/skills/platform-detection/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vanman2024/dev-lifecycle-marketplace/blob/main/plugins/deployment/skills/platform-detection/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

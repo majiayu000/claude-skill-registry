@@ -7,5 +7,12 @@
   "dir_name": "always-init-danielmiessler-paiplugin",
   "category": "other",
   "github_path": "skills/always-init",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "danielmiessler",
+  "source_url": "https://github.com/danielmiessler/PAIPlugin/blob/main/skills/always-init/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel Miessler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

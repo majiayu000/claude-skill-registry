@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:24:54.031882Z",
   "github_path": ".claude/skills/model-evaluation-benchmark",
   "github_branch": "main",
-  "dir_name": "model-evaluation-benchmark"
+  "dir_name": "model-evaluation-benchmark",
+  "author": "rysweet",
+  "source_url": "https://github.com/rysweet/AzureHayMaker/blob/main/.claude/skills/model-evaluation-benchmark/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ryan Sweet / Microsoft",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/modu-ai/cc-plugins",
-  "dir_name": "moai-platform-appintoss-modu-ai-cc-plugins-2"
+  "dir_name": "moai-platform-appintoss-modu-ai-cc-plugins-2",
+  "author": "modu-ai",
+  "source_url": "https://github.com/modu-ai/cc-plugins/blob/main/plugins/moai-platform-appintoss/skills/moai-platform-appintoss/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/modu-ai/cc-plugins/blob/main/plugins/moai-platform-appintoss/skills/moai-platform-appintoss/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -9,5 +9,12 @@
   "github_path": "skills/enterprise-sales",
   "github_branch": "main",
   "dir_name": "enterprise-sales-refoundai-lenny-skills",
-  "downloaded_at": "2026-02-05T05:41:55.448748Z"
+  "downloaded_at": "2026-02-05T05:41:55.448748Z",
+  "author": "RefoundAI",
+  "source_url": "https://github.com/RefoundAI/lenny-skills/blob/main/skills/enterprise-sales/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Refound AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

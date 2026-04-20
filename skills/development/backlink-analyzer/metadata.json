@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:10.643663Z",
   "github_path": "monitor/backlink-analyzer",
   "github_branch": "main",
-  "dir_name": "backlink-analyzer"
+  "dir_name": "backlink-analyzer",
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/backlink-analyzer/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/backlink-analyzer/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

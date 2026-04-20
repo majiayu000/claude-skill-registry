@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:16.073851Z",
   "github_path": "plugins/vibes/skills/tagline-creation-strategies",
   "github_branch": "main",
-  "dir_name": "tagline-creation-strategies-mike-coulbourn-claude-vibes"
+  "dir_name": "tagline-creation-strategies-mike-coulbourn-claude-vibes",
+  "author": "mike-coulbourn",
+  "source_url": "https://github.com/mike-coulbourn/claude-vibes/blob/main/plugins/vibes/skills/tagline-creation-strategies/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Mike Coulbourn",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

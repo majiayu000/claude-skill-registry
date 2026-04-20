@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:50.905221Z",
   "github_path": "plugins/attune/skills/workflow-setup",
   "github_branch": "main",
-  "dir_name": "workflow-setup"
+  "dir_name": "workflow-setup",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/attune/skills/workflow-setup/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

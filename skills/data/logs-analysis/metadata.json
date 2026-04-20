@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:19.189020Z",
   "dir_name": "logs-analysis",
   "github_path": "plugins/sosreport/skills/logs-analysis",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "openshift-eng",
+  "source_url": "https://github.com/openshift-eng/ai-helpers/blob/main/plugins/sosreport/skills/logs-analysis/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/openshift-eng/ai-helpers/blob/main/plugins/sosreport/skills/logs-analysis/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

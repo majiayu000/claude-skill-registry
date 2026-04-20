@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/daffy0208/ai-dev-standards",
-  "dir_name": "template-daffy0208-ai-dev-standards-2"
+  "dir_name": "template-daffy0208-ai-dev-standards-2",
+  "author": "daffy0208",
+  "source_url": "https://github.com/daffy0208/ai-dev-standards/blob/main/skills/_TEMPLATE/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AI Dev Standards Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

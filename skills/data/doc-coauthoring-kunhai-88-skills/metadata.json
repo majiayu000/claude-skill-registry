@@ -5,5 +5,12 @@
   "source": "github.com/kunhai-88/skills",
   "downloaded_at": "2026-02-04T05:17:26.190763Z",
   "dir_name": "doc-coauthoring-kunhai-88-skills",
-  "category": "data"
+  "category": "data",
+  "author": "kunhai-88",
+  "source_url": "https://github.com/kunhai-88/skills/blob/main/doc-coauthoring/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "policy-as-code-liauw-media-codeassist",
   "category": "other",
   "github_path": "skills/platform-engineering/policy-as-code",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "liauw-media",
+  "source_url": "https://github.com/liauw-media/CodeAssist/blob/main/skills/platform-engineering/policy-as-code/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/liauw-media/CodeAssist/blob/main/skills/platform-engineering/policy-as-code/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

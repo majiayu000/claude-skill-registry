@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:42.592937Z",
   "github_path": "plugins/domain/shell/skills/google-shell-style",
   "github_branch": "main",
-  "dir_name": "google-shell-style-pproenca-dot-claude-old"
+  "dir_name": "google-shell-style-pproenca-dot-claude-old",
+  "author": "pproenca",
+  "source_url": "https://github.com/pproenca/dot-claude-old/blob/main/plugins/domain/shell/skills/google-shell-style/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pproenca/dot-claude-old/blob/main/plugins/domain/shell/skills/google-shell-style/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

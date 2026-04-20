@@ -7,5 +7,12 @@
   "dir_name": "icon-lookup-malob-nix-config-5d898033",
   "category": "other",
   "github_path": "configs/claude/plugins/pua-unicode/skills/icon-lookup",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "malob",
+  "source_url": "https://github.com/malob/nix-config/blob/main/configs/claude/plugins/pua-unicode/skills/icon-lookup/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2020 Malo Bourgon",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

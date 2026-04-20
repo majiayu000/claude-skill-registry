@@ -5,5 +5,12 @@
   "source": "github.com/pianzhu/my-claude-skills",
   "downloaded_at": "2026-01-29T08:46:25.446562Z",
   "dir_name": "ralph-pianzhu-my-claude-skills",
-  "category": "data"
+  "category": "data",
+  "author": "pianzhu",
+  "source_url": "https://github.com/pianzhu/my-claude-skills/blob/main/skill-en/ralph/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pianzhu/my-claude-skills/blob/main/skill-en/ralph/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

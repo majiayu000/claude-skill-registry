@@ -5,5 +5,12 @@
   "source": "github.com/manastalukdar/claude-devstudio",
   "downloaded_at": "2026-02-04T04:14:25.497940Z",
   "dir_name": "pipeline-monitor",
-  "category": "data"
+  "category": "data",
+  "author": "manastalukdar",
+  "source_url": "https://github.com/manastalukdar/claude-devstudio/blob/main/skills/pipeline-monitor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brenner Cruvinel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

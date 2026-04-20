@@ -5,5 +5,12 @@
   "source": "github.com/vamseeachanta/digitalmodel",
   "downloaded_at": "2026-02-02T04:04:42.650622Z",
   "dir_name": "python-pptx-vamseeachanta-digitalmodel",
-  "category": "other"
+  "category": "other",
+  "author": "vamseeachanta",
+  "source_url": "https://github.com/vamseeachanta/digitalmodel/blob/main/.claude/skills/office-docs/python-pptx/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Vamsee Achanta",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

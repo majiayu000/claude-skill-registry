@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:59.968452Z",
   "github_path": "frameworks/shared-skills/skills/software-crypto-web3",
   "github_branch": "main",
-  "dir_name": "software-crypto-web3"
+  "dir_name": "software-crypto-web3",
+  "author": "vasilyu1983",
+  "source_url": "https://github.com/vasilyu1983/AI-Agents-public/blob/main/frameworks/shared-skills/skills/software-crypto-web3/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Vasiliy Uvarov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

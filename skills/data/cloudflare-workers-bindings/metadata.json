@@ -5,5 +5,12 @@
   "description": "This skill should be used when the user asks about \"KV namespace\", \"R2 bucket\", \"D1 database\", \"Hyperdrive\", \"create binding\", \"list workers\", \"worker code\", \"storage binding\", \"database query\", \"obje",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:34.460742Z",
-  "dir_name": "cloudflare-workers-bindings"
+  "dir_name": "cloudflare-workers-bindings",
+  "author": "FlorinPopaCodes",
+  "source_url": "https://github.com/FlorinPopaCodes/claude-marketplace",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/FlorinPopaCodes/claude-marketplace",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

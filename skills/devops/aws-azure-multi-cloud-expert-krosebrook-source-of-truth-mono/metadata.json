@@ -5,5 +5,12 @@
   "description": "Expert guidance for deploying and managing applications across AWS and Azure cloud platforms. Use when deploying to AWS, Azure, managing cloud infrastructure, or implementing multi-cloud strategies.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:18.933818Z",
-  "dir_name": "aws-azure-multi-cloud-expert-krosebrook-source-of-truth-mono"
+  "dir_name": "aws-azure-multi-cloud-expert-krosebrook-source-of-truth-mono",
+  "author": "Krosebrook",
+  "source_url": "https://github.com/Krosebrook/source-of-truth-monorepo",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Krosebrook/source-of-truth-monorepo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

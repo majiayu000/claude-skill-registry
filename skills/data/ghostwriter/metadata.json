@@ -5,5 +5,12 @@
   "source": "github.com/cdeistopened/skill-stack",
   "downloaded_at": "2026-02-04T04:38:42.907657Z",
   "dir_name": "ghostwriter",
-  "category": "data"
+  "category": "data",
+  "author": "cdeistopened",
+  "source_url": "https://github.com/cdeistopened/skill-stack/blob/main/.claude/skills/ghostwriter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Wayne Sutton",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

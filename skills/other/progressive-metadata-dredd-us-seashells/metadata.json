@@ -7,5 +7,12 @@
   "dir_name": "progressive-metadata-dredd-us-seashells",
   "category": "other",
   "github_path": ".claude/skills/progressive-metadata",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "dredd-us",
+  "source_url": "https://github.com/dredd-us/seashells/blob/main/.claude/skills/progressive-metadata/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dredd-us/seashells/blob/main/.claude/skills/progressive-metadata/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

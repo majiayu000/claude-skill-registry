@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:48.009719Z",
   "github_path": ".claude/skills/frontend-angular-form",
   "github_branch": "main",
-  "dir_name": "angular-form-duc01226-easyplatform-66d5086d"
+  "dir_name": "angular-form-duc01226-easyplatform-66d5086d",
+  "author": "duc01226",
+  "source_url": "https://github.com/duc01226/EasyPlatform/blob/main/.claude/skills/frontend-angular-form/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Dang Phuoc Duc",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:28:04.768004Z",
   "github_path": "skills/ec2",
   "github_branch": "main",
-  "dir_name": "ec2-itsmostafa-aws-agent-skills"
+  "dir_name": "ec2-itsmostafa-aws-agent-skills",
+  "author": "itsmostafa",
+  "source_url": "https://github.com/itsmostafa/aws-agent-skills/blob/main/skills/ec2/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

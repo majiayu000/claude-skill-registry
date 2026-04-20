@@ -5,5 +5,12 @@
   "source": "github.com/autohandai/community-skills",
   "downloaded_at": "2026-02-04T03:54:17.836441Z",
   "dir_name": "tailwind-ui-patterns",
-  "category": "data"
+  "category": "data",
+  "author": "autohandai",
+  "source_url": "https://github.com/autohandai/community-skills/blob/main/tailwind-ui-patterns/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/autohandai/community-skills/blob/main/tailwind-ui-patterns/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

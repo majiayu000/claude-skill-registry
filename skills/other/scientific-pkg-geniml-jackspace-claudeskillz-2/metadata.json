@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/jackspace/ClaudeSkillz",
-  "dir_name": "scientific-pkg-geniml-jackspace-claudeskillz-2"
+  "dir_name": "scientific-pkg-geniml-jackspace-claudeskillz-2",
+  "author": "jackspace",
+  "source_url": "https://github.com/jackspace/ClaudeSkillz/blob/main/skills/scientific-pkg-geniml/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ClaudeSkillz Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

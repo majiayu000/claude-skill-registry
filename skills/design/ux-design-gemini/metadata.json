@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:16.608581Z",
   "github_path": "skills/ux-design-gemini",
   "github_branch": "main",
-  "dir_name": "ux-design-gemini"
+  "dir_name": "ux-design-gemini",
+  "author": "chaorenex1",
+  "source_url": "https://github.com/chaorenex1/coding-workflow/blob/main/skills/ux-design-gemini/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 chaorenex1",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

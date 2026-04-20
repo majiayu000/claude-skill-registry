@@ -7,5 +7,12 @@
   "dir_name": "ai-integration-sylin-org-koan-framework-4fe5c041",
   "category": "other",
   "github_path": ".claude/skills/ai-integration",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "sylin-org",
+  "source_url": "https://github.com/sylin-org/koan-framework/blob/main/.claude/skills/ai-integration/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sylin-org/koan-framework/blob/main/.claude/skills/ai-integration/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

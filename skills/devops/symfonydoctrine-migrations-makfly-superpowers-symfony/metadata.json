@@ -5,5 +5,12 @@
   "description": "Create and manage Doctrine migrations for schema versioning; handle migration dependencies, rollbacks, and production deployment",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:31.076876Z",
-  "dir_name": "symfonydoctrine-migrations-makfly-superpowers-symfony"
+  "dir_name": "symfonydoctrine-migrations-makfly-superpowers-symfony",
+  "author": "MakFly",
+  "source_url": "https://github.com/MakFly/superpowers-symfony",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

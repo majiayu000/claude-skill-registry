@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/design-system-starter",
   "github_branch": "main",
-  "dir_name": "design-system-starter"
+  "dir_name": "design-system-starter",
+  "author": "ArieGoldkin",
+  "source_url": "https://github.com/ArieGoldkin/ai-agent-hub/blob/main/skills/design-system-starter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Arie Goldkin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/TheOrcDev/8bitcn-ui",
-  "dir_name": "animation-performance-retro-theorcdev-8bitcn-ui-2"
+  "dir_name": "animation-performance-retro-theorcdev-8bitcn-ui-2",
+  "author": "TheOrcDev",
+  "source_url": "https://github.com/TheOrcDev/8bitcn-ui/blob/main/.claude/skills/animation-performance-retro/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 8bitcn",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

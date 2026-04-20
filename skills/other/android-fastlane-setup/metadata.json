@@ -5,5 +5,12 @@
   "source": "github.com/hitoshura25/claude-devtools",
   "downloaded_at": "2026-02-01T02:17:50.593562Z",
   "dir_name": "android-fastlane-setup",
-  "category": "other"
+  "category": "other",
+  "author": "hitoshura25",
+  "source_url": "https://github.com/hitoshura25/claude-devtools/blob/main/skills/android-fastlane-setup/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hitoshura25/claude-devtools/blob/main/skills/android-fastlane-setup/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

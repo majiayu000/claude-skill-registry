@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "analyze-m1-module-for-migration",
   "github_branch": "main",
-  "dir_name": "analyze-m1-module-for-migration-proxiblue-claude-skills-f790d8ea"
+  "dir_name": "analyze-m1-module-for-migration-proxiblue-claude-skills-f790d8ea",
+  "author": "ProxiBlue",
+  "source_url": "https://github.com/ProxiBlue/claude-skills/blob/main/analyze-m1-module-for-migration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ProxiBlue/claude-skills/blob/main/analyze-m1-module-for-migration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

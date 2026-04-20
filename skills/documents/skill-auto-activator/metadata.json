@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:22.613541Z",
   "github_path": "skills/skill-auto-activator",
   "github_branch": "main",
-  "dir_name": "skill-auto-activator"
+  "dir_name": "skill-auto-activator",
+  "author": "Tempuss",
+  "source_url": "https://github.com/Tempuss/agent-hub/blob/main/skills/skill-auto-activator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tempuss/agent-hub/blob/main/skills/skill-auto-activator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

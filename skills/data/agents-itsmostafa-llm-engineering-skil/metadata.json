@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/itsmostafa/llm-engineering-skills",
-  "dir_name": "agents-itsmostafa-llm-engineering-skil"
+  "dir_name": "agents-itsmostafa-llm-engineering-skil",
+  "author": "itsmostafa",
+  "source_url": "https://github.com/itsmostafa/llm-engineering-skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Mostafa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

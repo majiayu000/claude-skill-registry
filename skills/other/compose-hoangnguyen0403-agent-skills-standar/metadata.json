@@ -5,5 +5,12 @@
   "source": "github.com/HoangNguyen0403/agent-skills-standard",
   "downloaded_at": "2026-02-02T01:25:40.716263Z",
   "dir_name": "compose-hoangnguyen0403-agent-skills-standar",
-  "category": "other"
+  "category": "other",
+  "author": "HoangNguyen0403",
+  "source_url": "https://github.com/HoangNguyen0403/agent-skills-standard/blob/main/skills/android/compose/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HoangNguyen0403/agent-skills-standard/blob/main/skills/android/compose/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

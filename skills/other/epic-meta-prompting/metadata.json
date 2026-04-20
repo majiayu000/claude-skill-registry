@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/epic-meta-prompting",
   "github_branch": "main",
   "dir_name": "epic-meta-prompting",
-  "downloaded_at": "2026-02-05T01:44:16.319553Z"
+  "downloaded_at": "2026-02-05T01:44:16.319553Z",
+  "author": "Sjdjdiejdrirhdkjej",
+  "source_url": "https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/epic-meta-prompting/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/epic-meta-prompting/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

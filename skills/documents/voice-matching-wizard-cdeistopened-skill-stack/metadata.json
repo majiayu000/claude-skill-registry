@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/cdeistopened/skill-stack",
   "downloaded_at": "2026-01-24T16:15:08.696575Z",
-  "dir_name": "voice-matching-wizard-cdeistopened-skill-stack"
+  "dir_name": "voice-matching-wizard-cdeistopened-skill-stack",
+  "author": "cdeistopened",
+  "source_url": "https://github.com/cdeistopened/skill-stack/blob/main/.claude/skills/voice-matching-wizard/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Wayne Sutton",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

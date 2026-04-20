@@ -5,5 +5,12 @@
   "description": "Allra 데이터베이스 설계 및 QueryDSL 사용 규칙. Use when creating JPA entities, writing QueryDSL queries, or adding @Transactional annotations.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:52.172743Z",
-  "dir_name": "allra-database-schema"
+  "dir_name": "allra-database-schema",
+  "author": "Allra-Fintech",
+  "source_url": "https://github.com/Allra-Fintech/allra-ai-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Allra-Fintech/allra-ai-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

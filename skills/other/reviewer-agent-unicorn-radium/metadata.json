@@ -9,5 +9,12 @@
   "github_path": "skills/specialized/reviewer-agent",
   "github_branch": "main",
   "dir_name": "reviewer-agent-unicorn-radium",
-  "downloaded_at": "2026-02-05T01:45:48.957790Z"
+  "downloaded_at": "2026-02-05T01:45:48.957790Z",
+  "author": "Unicorn",
+  "source_url": "https://github.com/Unicorn/Radium/blob/main/skills/specialized/reviewer-agent/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Unicorn/Radium/blob/main/skills/specialized/reviewer-agent/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

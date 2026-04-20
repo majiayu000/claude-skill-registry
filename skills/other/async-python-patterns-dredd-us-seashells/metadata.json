@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/async-python-patterns",
   "github_branch": "master",
   "dir_name": "async-python-patterns-dredd-us-seashells",
-  "downloaded_at": "2026-02-05T01:44:13.307856Z"
+  "downloaded_at": "2026-02-05T01:44:13.307856Z",
+  "author": "dredd-us",
+  "source_url": "https://github.com/dredd-us/seashells/blob/master/.claude/skills/async-python-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dredd-us/seashells/blob/master/.claude/skills/async-python-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

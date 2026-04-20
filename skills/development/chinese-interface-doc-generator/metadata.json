@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:15.395333Z",
   "github_path": "skills/chinese-interface-doc-generator",
   "github_branch": "main",
-  "dir_name": "chinese-interface-doc-generator"
+  "dir_name": "chinese-interface-doc-generator",
+  "author": "chaorenex1",
+  "source_url": "https://github.com/chaorenex1/coding-workflow/blob/main/skills/chinese-interface-doc-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 chaorenex1",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

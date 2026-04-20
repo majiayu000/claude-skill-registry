@@ -5,5 +5,12 @@
   "source": "github.com/adaptyvbio/protein-design-skills",
   "downloaded_at": "2026-02-04T02:28:52.613293Z",
   "dir_name": "binder-design",
-  "category": "data"
+  "category": "data",
+  "author": "adaptyvbio",
+  "source_url": "https://github.com/adaptyvbio/protein-design-skills/blob/main/skills/binder-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Adaptyv",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

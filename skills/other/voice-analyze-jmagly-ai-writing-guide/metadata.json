@@ -7,5 +7,12 @@
   "dir_name": "voice-analyze-jmagly-ai-writing-guide",
   "category": "other",
   "github_path": "plugins/voice/skills/voice-analyze",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jmagly",
+  "source_url": "https://github.com/jmagly/ai-writing-guide/blob/main/plugins/voice/skills/voice-analyze/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Joe Magly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Mise en Production pour Motivia. Utilise ce skill quand l'utilisateur dit \"MEP\", \"mise en prod\", \"release\", \"prepare version\", \"changelog\", ou demande de préparer une nouvelle version. Gère le CHANGEL",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:09:34.571303Z",
-  "dir_name": "mep"
+  "dir_name": "mep",
+  "author": "WillFDA",
+  "source_url": "https://github.com/WillFDA/motivia",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/WillFDA/motivia",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

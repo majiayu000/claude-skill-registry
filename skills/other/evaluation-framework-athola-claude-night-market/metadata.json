@@ -5,5 +5,12 @@
   "source": "github.com/athola/claude-night-market",
   "downloaded_at": "2026-01-29T05:25:01.716352Z",
   "dir_name": "evaluation-framework-athola-claude-night-market",
-  "category": "other"
+  "category": "other",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/leyline/skills/evaluation-framework/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

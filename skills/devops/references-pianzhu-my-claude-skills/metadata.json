@@ -7,5 +7,12 @@
   "stars": 1,
   "source": "github.com/pianzhu/my-claude-skills",
   "downloaded_at": "2026-01-24T16:15:09.727561Z",
-  "dir_name": "references-pianzhu-my-claude-skills"
+  "dir_name": "references-pianzhu-my-claude-skills",
+  "author": "pianzhu",
+  "source_url": "https://github.com/pianzhu/my-claude-skills/blob/main/skills/hello-auditkit/references/type-skill.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pianzhu/my-claude-skills/blob/main/skills/hello-auditkit/references/type-skill.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

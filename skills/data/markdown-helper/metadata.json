@@ -5,5 +5,12 @@
   "source": "github.com/Interstellar-code/claud-skills",
   "downloaded_at": "2026-02-04T01:26:11.681574Z",
   "dir_name": "markdown-helper",
-  "category": "data"
+  "category": "data",
+  "author": "Interstellar-code",
+  "source_url": "https://github.com/Interstellar-code/claud-skills/blob/main/generic-claude-framework/skills/markdown-helper/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Interstellar-code/claud-skills/blob/main/generic-claude-framework/skills/markdown-helper/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "scientific-thinking-scientific-visualization",
   "category": "other",
   "github_path": "skills/scientific-thinking-scientific-visualization",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jackspace",
+  "source_url": "https://github.com/jackspace/ClaudeSkillz/blob/main/skills/scientific-thinking-scientific-visualization/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ClaudeSkillz Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

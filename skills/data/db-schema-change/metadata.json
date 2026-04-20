@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "db-schema-change",
   "github_path": ".claude/skills/db-schema-change",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jamesjlundin",
+  "source_url": "https://github.com/jamesjlundin/full-stack-web-and-mobile-template/blob/main/.claude/skills/db-schema-change/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 James Lundin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

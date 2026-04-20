@@ -7,5 +7,12 @@
   "dir_name": "downloads-organizer-ttmouse-skills",
   "category": "other",
   "github_path": "downloads-organizer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "ttmouse",
+  "source_url": "https://github.com/ttmouse/skills/blob/main/downloads-organizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ttmouse/skills/blob/main/downloads-organizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

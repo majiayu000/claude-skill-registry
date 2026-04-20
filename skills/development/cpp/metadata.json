@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:55.408639Z",
   "github_path": "programming-languages/cpp",
   "github_branch": "main",
-  "dir_name": "cpp"
+  "dir_name": "cpp",
+  "author": "miles990",
+  "source_url": "https://github.com/miles990/claude-software-skills/blob/main/programming-languages/cpp/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

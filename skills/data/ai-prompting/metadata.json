@@ -8,5 +8,12 @@
   ],
   "stars": 417,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "ai-prompting"
+  "dir_name": "ai-prompting",
+  "author": "jasonkneen",
+  "source_url": "https://github.com/jasonkneen/kiro",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jason Kneen",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

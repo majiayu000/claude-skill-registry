@@ -7,5 +7,12 @@
   "dir_name": "iteration-22-agentgptsmith-monadframework",
   "category": "other",
   "github_path": ".claude/skills/multiplicity/iteration_22",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "agentgptsmith",
+  "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/multiplicity/iteration_22/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/multiplicity/iteration_22/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

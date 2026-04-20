@@ -5,5 +5,12 @@
   "description": "{Brief description for Claude Code skill invocation. Include primary triggers and capabilities.}",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:29.833530Z",
-  "dir_name": "guru-id"
+  "dir_name": "guru-id",
+  "author": "finos",
+  "source_url": "https://github.com/finos/morphir-dotnet",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/finos/morphir-dotnet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "plugins/dot-claude/skills/creating-skills",
   "github_branch": "main",
-  "dir_name": "creating-skills-sawyer-middeleer-dot-claude"
+  "dir_name": "creating-skills-sawyer-middeleer-dot-claude",
+  "author": "Sawyer-Middeleer",
+  "source_url": "https://github.com/Sawyer-Middeleer/dot-claude/blob/main/plugins/dot-claude/skills/creating-skills/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sawyer Middeleer",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

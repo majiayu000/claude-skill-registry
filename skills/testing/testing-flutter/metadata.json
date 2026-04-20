@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:52.240805Z",
   "github_path": "Dev/i18n/de/Flutter/skills/testing-flutter",
   "github_branch": "main",
-  "dir_name": "testing-flutter"
+  "dir_name": "testing-flutter",
+  "author": "TheBeardedBearSAS",
+  "source_url": "https://github.com/TheBeardedBearSAS/claude-craft/blob/main/Dev/i18n/de/Flutter/skills/testing-flutter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 TheBeardedCTO",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

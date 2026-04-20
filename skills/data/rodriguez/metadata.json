@@ -5,5 +5,12 @@
   "source": "github.com/copyleftdev/sk1llz",
   "downloaded_at": "2026-01-27T03:45:09.122642Z",
   "dir_name": "rodriguez",
-  "category": "data"
+  "category": "data",
+  "author": "copyleftdev",
+  "source_url": "https://github.com/copyleftdev/sk1llz/blob/main/domains/security/threat-hunting/rodriguez/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/copyleftdev/sk1llz/blob/main/domains/security/threat-hunting/rodriguez/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

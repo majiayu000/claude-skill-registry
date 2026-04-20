@@ -7,5 +7,12 @@
   "dir_name": "architecture-diagramming-frankxai-ai-architect",
   "category": "other",
   "github_path": "skills/architecture-diagramming",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "frankxai",
+  "source_url": "https://github.com/frankxai/ai-architect/blob/main/skills/architecture-diagramming/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/frankxai/ai-architect/blob/main/skills/architecture-diagramming/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

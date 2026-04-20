@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:30.866047Z",
   "github_path": "plugins/metacognitive-guard/skills/metacognitive-guard",
   "github_branch": "main",
-  "dir_name": "metacognitive-guard"
+  "dir_name": "metacognitive-guard",
+  "author": "ANcpLua",
+  "source_url": "https://github.com/ANcpLua/ancplua-claude-plugins/blob/main/plugins/metacognitive-guard/skills/metacognitive-guard/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Alexander Nachtmann",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

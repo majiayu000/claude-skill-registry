@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "golang-style"
+  "dir_name": "golang-style",
+  "author": "fredrikaverpil",
+  "source_url": "https://github.com/fredrikaverpil/dotfiles",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Fredrik Averpil",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

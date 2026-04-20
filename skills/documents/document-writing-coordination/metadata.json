@@ -5,5 +5,12 @@
   "description": "This skill should be used when the user asks to \"coordinate document writing\", \"manage doc writers\", \"create a design document with multiple writers\", \"orchestrate documentation\", \"delegate doc sectio",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:33.921393Z",
-  "dir_name": "document-writing-coordination"
+  "dir_name": "document-writing-coordination",
+  "author": "ClementWalter",
+  "source_url": "https://github.com/ClementWalter/rookie-marketplace",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ClementWalter/rookie-marketplace",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

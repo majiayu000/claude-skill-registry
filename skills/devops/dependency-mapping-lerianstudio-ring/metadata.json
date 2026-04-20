@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:33.800102Z",
   "github_path": ".archive/pmo-team/skills/dependency-mapping",
   "github_branch": "main",
-  "dir_name": "dependency-mapping-lerianstudio-ring"
+  "dir_name": "dependency-mapping-lerianstudio-ring",
+  "author": "LerianStudio",
+  "source_url": "https://github.com/LerianStudio/ring/blob/main/.archive/pmo-team/skills/dependency-mapping/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LerianStudio/ring/blob/main/.archive/pmo-team/skills/dependency-mapping/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

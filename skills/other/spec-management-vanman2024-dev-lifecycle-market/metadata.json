@@ -7,5 +7,12 @@
   "dir_name": "spec-management-vanman2024-dev-lifecycle-market",
   "category": "other",
   "github_path": ".archive/old-numbered-plugins/03-planning/skills/spec-management",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "vanman2024",
+  "source_url": "https://github.com/vanman2024/dev-lifecycle-marketplace/blob/main/.archive/old-numbered-plugins/03-planning/skills/spec-management/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vanman2024/dev-lifecycle-marketplace/blob/main/.archive/old-numbered-plugins/03-planning/skills/spec-management/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

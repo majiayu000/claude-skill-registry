@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "multi-ai-orchestration",
   "github_branch": "main",
-  "dir_name": "multi-ai-orchestration-drsatsuma1-catherine-claude-ski"
+  "dir_name": "multi-ai-orchestration-drsatsuma1-catherine-claude-ski",
+  "author": "DrSatsuma1",
+  "source_url": "https://github.com/DrSatsuma1/catherine-claude-skills/blob/main/multi-ai-orchestration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DrSatsuma1/catherine-claude-skills/blob/main/multi-ai-orchestration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/dadbodgeoff/drift",
   "downloaded_at": "2026-02-04T05:24:02.257400Z",
   "dir_name": "snapshot-aggregation",
-  "category": "data"
+  "category": "data",
+  "author": "dadbodgeoff",
+  "source_url": "https://github.com/dadbodgeoff/drift/blob/main/skills/snapshot-aggregation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dadbodgeoff/drift/blob/main/skills/snapshot-aggregation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

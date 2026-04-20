@@ -5,5 +5,12 @@
   "source": "github.com/CleanExpo/Unite-Hub",
   "downloaded_at": "2026-02-02T03:09:51.311288Z",
   "dir_name": "ai-phill",
-  "category": "other"
+  "category": "other",
+  "author": "CleanExpo",
+  "source_url": "https://github.com/CleanExpo/Unite-Hub/blob/main/.claude/skills/ai-phill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CleanExpo/Unite-Hub/blob/main/.claude/skills/ai-phill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

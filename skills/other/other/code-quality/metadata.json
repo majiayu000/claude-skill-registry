@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/sequenzia/claude-alchemy",
   "dir_name": "code-quality",
-  "downloaded_at": "2026-02-15T01:37:38.320455Z"
+  "downloaded_at": "2026-02-15T01:37:38.320455Z",
+  "author": "sequenzia",
+  "source_url": "https://github.com/sequenzia/claude-alchemy/blob/main/plugins/tools/skills/code-quality/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Stephen Sequenzia",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

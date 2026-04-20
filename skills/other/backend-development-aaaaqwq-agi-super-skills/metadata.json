@@ -9,5 +9,12 @@
   "github_path": "backend-development",
   "github_branch": "main",
   "dir_name": "backend-development-aaaaqwq-agi-super-skills",
-  "downloaded_at": "2026-02-05T01:44:59.959613Z"
+  "downloaded_at": "2026-02-05T01:44:59.959613Z",
+  "author": "aAAaqwq",
+  "source_url": "https://github.com/aAAaqwq/AGI-Super-Skills/blob/main/backend-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 AGI Super Team Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

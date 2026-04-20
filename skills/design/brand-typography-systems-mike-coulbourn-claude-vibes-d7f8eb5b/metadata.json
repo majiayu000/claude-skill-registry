@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:15.715067Z",
   "github_path": "plugins/vibes/skills/brand-typography-systems",
   "github_branch": "main",
-  "dir_name": "brand-typography-systems-mike-coulbourn-claude-vibes-d7f8eb5b"
+  "dir_name": "brand-typography-systems-mike-coulbourn-claude-vibes-d7f8eb5b",
+  "author": "mike-coulbourn",
+  "source_url": "https://github.com/mike-coulbourn/claude-vibes/blob/main/plugins/vibes/skills/brand-typography-systems/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Mike Coulbourn",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

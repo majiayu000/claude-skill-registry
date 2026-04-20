@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:52.661367Z",
   "github_path": "plugins/edge-stack/skills/cloudflare-security-checker",
   "github_branch": "main",
-  "dir_name": "cloudflare-security-checker-hirefrank-hirefrank-marketplac"
+  "dir_name": "cloudflare-security-checker-hirefrank-hirefrank-marketplac",
+  "author": "hirefrank",
+  "source_url": "https://github.com/hirefrank/hirefrank-marketplace/blob/main/plugins/edge-stack/skills/cloudflare-security-checker/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Frank Harris",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:17.529053Z",
   "github_path": "skill-performance-profiler",
   "github_branch": "main",
-  "dir_name": "skill-performance-profiler-exploration-labs-nates-substack-skill-dc8308db"
+  "dir_name": "skill-performance-profiler-exploration-labs-nates-substack-skill-dc8308db",
+  "author": "Exploration-labs",
+  "source_url": "https://github.com/Exploration-labs/Nates-Substack-Skills/blob/main/skill-performance-profiler/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Exploration-labs/Nates-Substack-Skills/blob/main/skill-performance-profiler/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

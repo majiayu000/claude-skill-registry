@@ -7,5 +7,12 @@
   "dir_name": "multi-agent-programmer-zsutxz-claudelearning",
   "category": "other",
   "github_path": ".claude/skills/multi-agent-programmer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "zsutxz",
+  "source_url": "https://github.com/zsutxz/ClaudeLearning/blob/main/.claude/skills/multi-agent-programmer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Gomoku Game Project",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

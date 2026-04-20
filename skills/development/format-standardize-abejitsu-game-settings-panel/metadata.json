@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/format-standardize",
   "github_branch": "main",
-  "dir_name": "format-standardize-abejitsu-game-settings-panel"
+  "dir_name": "format-standardize-abejitsu-game-settings-panel",
+  "author": "AbeJitsu",
+  "source_url": "https://github.com/AbeJitsu/Game-Settings-Panel/blob/main/.claude/skills/format-standardize/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AbeJitsu/Game-Settings-Panel/blob/main/.claude/skills/format-standardize/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

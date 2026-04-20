@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/involvex/involvex-claude-marketplace",
-  "dir_name": "claudemem-search-involvex-involvex-claude-mark-2"
+  "dir_name": "claudemem-search-involvex-involvex-claude-mark-2",
+  "author": "involvex",
+  "source_url": "https://github.com/involvex/involvex-claude-marketplace/blob/main/plugins/code-analysis/skills/claudemem-search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/involvex/involvex-claude-marketplace/blob/main/plugins/code-analysis/skills/claudemem-search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

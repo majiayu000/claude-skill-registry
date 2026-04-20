@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:14.934202Z",
   "dir_name": "writing-queries",
   "github_path": "plugins/datapeeker/skills/writing-queries",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "tilmon-engineering",
+  "source_url": "https://github.com/tilmon-engineering/claude-skills/blob/main/plugins/datapeeker/skills/writing-queries/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tilmon Engineering",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

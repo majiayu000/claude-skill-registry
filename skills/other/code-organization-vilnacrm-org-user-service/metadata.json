@@ -7,5 +7,12 @@
   "dir_name": "code-organization-vilnacrm-org-user-service",
   "category": "other",
   "github_path": ".claude/skills/code-organization",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "VilnaCRM-Org",
+  "source_url": "https://github.com/VilnaCRM-Org/user-service/blob/main/.claude/skills/code-organization/SKILL.md",
+  "license": "CC0-1.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/VilnaCRM-Org/user-service/blob/main/.claude/skills/code-organization/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

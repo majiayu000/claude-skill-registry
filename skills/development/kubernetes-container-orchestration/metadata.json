@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/FlexNetOS/ripple-env",
-  "dir_name": "kubernetes-container-orchestration"
+  "dir_name": "kubernetes-container-orchestration",
+  "author": "FlexNetOS",
+  "source_url": "https://github.com/FlexNetOS/ripple-env",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Gustavo Widman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

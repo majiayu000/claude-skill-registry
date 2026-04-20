@@ -7,5 +7,12 @@
   "dir_name": "push-notifications-timequity-vibe-coder",
   "category": "other",
   "github_path": "skills/mobile/push-notifications",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "timequity",
+  "source_url": "https://github.com/timequity/vibe-coder/blob/main/skills/mobile/push-notifications/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 timequity",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

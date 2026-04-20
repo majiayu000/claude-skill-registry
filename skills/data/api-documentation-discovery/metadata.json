@@ -5,5 +5,12 @@
   "description": "Use when APIs fail repeatedly with version-related errors (method not found, wrong arguments, unknown flag) or when about to use library APIs with uncertain knowledge - guides finding current, accurat",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:08:46.127204Z",
-  "dir_name": "api-documentation-discovery"
+  "dir_name": "api-documentation-discovery",
+  "author": "technicalpickles",
+  "source_url": "https://github.com/technicalpickles/pickled-claude-plugins",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josh Nichols",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

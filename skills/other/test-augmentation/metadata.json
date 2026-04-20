@@ -7,5 +7,12 @@
   "dir_name": "test-augmentation",
   "category": "other",
   "github_path": ".claude/skills/test-augmentation",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "bitsoex",
+  "source_url": "https://github.com/bitsoex/bitso-java/blob/main/.claude/skills/test-augmentation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2015 Bitso SAPI de CV",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

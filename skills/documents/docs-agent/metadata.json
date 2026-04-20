@@ -5,5 +5,12 @@
   "description": "Maintains documentation files (README.md, .claude/claude.md, .claude/agent.md, API docs) for Unite-Hub. Ensures docs stay in sync with codebase changes. Uses Haiku model for cost-effective documentati",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:01:42.524802Z",
-  "dir_name": "docs-agent"
+  "dir_name": "docs-agent",
+  "author": "CleanExpo",
+  "source_url": "https://github.com/CleanExpo/Unite-Hub",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CleanExpo/Unite-Hub",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

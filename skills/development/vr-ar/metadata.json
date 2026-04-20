@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:52.779502Z",
   "github_path": "skills/game-development/vr-ar",
   "github_branch": "main",
-  "dir_name": "vr-ar"
+  "dir_name": "vr-ar",
+  "author": "xenitV1",
+  "source_url": "https://github.com/xenitV1/claude-code-maestro/blob/main/skills/game-development/vr-ar/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 xenitV1 (https://github.com/xenitV1)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

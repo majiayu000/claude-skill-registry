@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "analyzing-pricing",
   "github_branch": "main",
-  "dir_name": "analyzing-pricing-jesseotremblay-claude-skills-2dad8337"
+  "dir_name": "analyzing-pricing-jesseotremblay-claude-skills-2dad8337",
+  "author": "jesseotremblay",
+  "source_url": "https://github.com/jesseotremblay/claude-skills/blob/main/analyzing-pricing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jesseotremblay/claude-skills/blob/main/analyzing-pricing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

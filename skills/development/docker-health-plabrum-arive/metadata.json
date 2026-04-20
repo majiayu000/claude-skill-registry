@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/docker-health",
   "github_branch": "main",
-  "dir_name": "docker-health-plabrum-arive"
+  "dir_name": "docker-health-plabrum-arive",
+  "author": "Plabrum",
+  "source_url": "https://github.com/Plabrum/arive/blob/main/.claude/skills/docker-health/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Plabrum/arive/blob/main/.claude/skills/docker-health/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:30.917126Z",
   "github_path": "plugins/otelwiki/skills/otel-expert",
   "github_branch": "main",
-  "dir_name": "otel-expert-ancplua-ancplua-claude-plugi"
+  "dir_name": "otel-expert-ancplua-ancplua-claude-plugi",
+  "author": "ANcpLua",
+  "source_url": "https://github.com/ANcpLua/ancplua-claude-plugins/blob/main/plugins/otelwiki/skills/otel-expert/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Alexander Nachtmann",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

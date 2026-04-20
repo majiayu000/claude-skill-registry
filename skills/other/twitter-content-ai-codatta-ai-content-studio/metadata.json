@@ -7,5 +7,12 @@
   "dir_name": "twitter-content-ai-codatta-ai-content-studio",
   "category": "other",
   "github_path": "skills/twitter-content-ai",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "codatta",
+  "source_url": "https://github.com/codatta/ai-content-studio/blob/main/skills/twitter-content-ai/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Jessie Bot Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

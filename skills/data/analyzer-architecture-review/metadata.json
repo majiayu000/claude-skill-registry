@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "analyzer-architecture-review"
+  "dir_name": "analyzer-architecture-review",
+  "author": "ss49919201",
+  "source_url": "https://github.com/ss49919201/keeput",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Shinya Sakae",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

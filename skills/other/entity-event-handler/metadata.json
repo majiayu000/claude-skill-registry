@@ -5,5 +5,12 @@
   "source": "github.com/duc01226/EasyPlatform",
   "downloaded_at": "2026-01-14T03:30:56.279648Z",
   "dir_name": "entity-event-handler",
-  "category": "other"
+  "category": "other",
+  "author": "duc01226",
+  "source_url": "https://github.com/duc01226/EasyPlatform/blob/main/.github/skills/entity-event-handler/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Dang Phuoc Duc",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

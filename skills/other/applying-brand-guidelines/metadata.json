@@ -9,5 +9,12 @@
   "github_path": "skills/anthropics/applying-brand-guidelines",
   "github_branch": "main",
   "dir_name": "applying-brand-guidelines",
-  "downloaded_at": "2026-02-05T01:45:13.578961Z"
+  "downloaded_at": "2026-02-05T01:45:13.578961Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/anthropics/applying-brand-guidelines/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/anthropics/applying-brand-guidelines/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

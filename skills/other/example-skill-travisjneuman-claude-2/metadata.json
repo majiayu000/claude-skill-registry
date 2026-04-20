@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/travisjneuman/.claude",
-  "dir_name": "example-skill-travisjneuman-claude-2"
+  "dir_name": "example-skill-travisjneuman-claude-2",
+  "author": "travisjneuman",
+  "source_url": "https://github.com/travisjneuman/.claude/blob/main/templates/plugin-template/skills/example-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Travis Neuman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

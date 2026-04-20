@@ -9,5 +9,12 @@
   "github_path": "skills/media-relations",
   "github_branch": "main",
   "dir_name": "media-relations-refoundai-lenny-skills",
-  "downloaded_at": "2026-02-05T05:41:55.462705Z"
+  "downloaded_at": "2026-02-05T05:41:55.462705Z",
+  "author": "RefoundAI",
+  "source_url": "https://github.com/RefoundAI/lenny-skills/blob/main/skills/media-relations/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Refound AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

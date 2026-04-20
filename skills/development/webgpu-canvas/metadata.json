@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:01.212886Z",
   "github_path": ".claude/skills/webgpu-canvas",
   "github_branch": "main",
-  "dir_name": "webgpu-canvas"
+  "dir_name": "webgpu-canvas",
+  "author": "matthewharwood",
+  "source_url": "https://github.com/matthewharwood/fantasy-phonics/blob/main/.claude/skills/webgpu-canvas/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) HTML5 Boilerplate",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

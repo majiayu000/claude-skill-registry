@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/itsmostafa/llm-engineering-skills",
   "dir_name": "prompt-engineering-itsmostafa-llm-engineering-skil",
-  "downloaded_at": "2026-02-22T07:34:14.776653Z"
+  "downloaded_at": "2026-02-22T07:34:14.776653Z",
+  "author": "itsmostafa",
+  "source_url": "https://github.com/itsmostafa/llm-engineering-skills/blob/main/skills/prompt-engineering/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Mostafa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

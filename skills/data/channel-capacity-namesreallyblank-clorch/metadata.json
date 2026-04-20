@@ -5,5 +5,12 @@
   "source": "github.com/namesreallyblank/Clorch",
   "downloaded_at": "2026-01-29T05:36:31.966905Z",
   "dir_name": "channel-capacity-namesreallyblank-clorch",
-  "category": "data"
+  "category": "data",
+  "author": "namesreallyblank",
+  "source_url": "https://github.com/namesreallyblank/Clorch/blob/main/skills/math/information-theory/channel-capacity/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/namesreallyblank/Clorch/blob/main/skills/math/information-theory/channel-capacity/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

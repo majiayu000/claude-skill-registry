@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:57.465333Z",
   "github_path": "plugins/pm-domain-knowledge/skills/domain-knowledge",
   "github_branch": "main",
-  "dir_name": "domain-knowledge"
+  "dir_name": "domain-knowledge",
+  "author": "SmidigStorm",
+  "source_url": "https://github.com/SmidigStorm/storm-claude-marketplace/blob/main/plugins/pm-domain-knowledge/skills/domain-knowledge/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SmidigStorm/storm-claude-marketplace/blob/main/plugins/pm-domain-knowledge/skills/domain-knowledge/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

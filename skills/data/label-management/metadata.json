@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/terrylica/claude-code-skills-github-issues",
-  "dir_name": "label-management"
+  "dir_name": "label-management",
+  "author": "terrylica",
+  "source_url": "https://github.com/terrylica/claude-code-skills-github-issues",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Terry Li",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

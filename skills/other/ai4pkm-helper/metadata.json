@@ -5,5 +5,12 @@
   "source": "github.com/jykim/ai4pkm-vault",
   "downloaded_at": "2026-02-02T04:33:13.943617Z",
   "dir_name": "ai4pkm-helper",
-  "category": "other"
+  "category": "other",
+  "author": "jykim",
+  "source_url": "https://github.com/jykim/ai4pkm-vault/blob/main/.claude/skills/ai4pkm-helper/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jykim/ai4pkm-vault/blob/main/.claude/skills/ai4pkm-helper/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

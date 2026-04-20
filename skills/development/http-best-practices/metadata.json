@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:42.878843Z",
   "github_path": "docs/99-claude/skills/http-best-practices",
   "github_branch": "main",
-  "dir_name": "http-best-practices"
+  "dir_name": "http-best-practices",
+  "author": "daishiman",
+  "source_url": "https://github.com/daishiman/AIWorkflowOrchestrator/blob/main/docs/99-claude/skills/http-best-practices/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/daishiman/AIWorkflowOrchestrator/blob/main/docs/99-claude/skills/http-best-practices/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

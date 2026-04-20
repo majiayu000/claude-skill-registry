@@ -9,5 +9,12 @@
   "github_path": "skills/community-building",
   "github_branch": "main",
   "dir_name": "community-building-refoundai-lenny-skills",
-  "downloaded_at": "2026-02-05T05:43:12.258201Z"
+  "downloaded_at": "2026-02-05T05:43:12.258201Z",
+  "author": "RefoundAI",
+  "source_url": "https://github.com/RefoundAI/lenny-skills/blob/main/skills/community-building/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Refound AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/semantic-search",
   "github_branch": "main",
-  "dir_name": "semantic-search-pearlthoughts-codecompass"
+  "dir_name": "semantic-search-pearlthoughts-codecompass",
+  "author": "PearlThoughts",
+  "source_url": "https://github.com/PearlThoughts/CodeCompass/blob/main/.claude/skills/semantic-search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2024 PearlThoughts (https://pearlthoughts.com/)",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

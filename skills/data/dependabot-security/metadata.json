@@ -5,5 +5,12 @@
   "source": "github.com/bitsoex/bitso-java",
   "downloaded_at": "2026-01-29T02:50:01.041479Z",
   "dir_name": "dependabot-security",
-  "category": "data"
+  "category": "data",
+  "author": "bitsoex",
+  "source_url": "https://github.com/bitsoex/bitso-java/blob/main/.claude/skills/dependabot-security/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2015 Bitso SAPI de CV",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

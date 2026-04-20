@@ -5,5 +5,12 @@
   "source": "github.com/rysweet/AzureHayMaker",
   "downloaded_at": "2026-01-29T07:43:35.803460Z",
   "dir_name": "chemist-analyst-rysweet-azurehaymaker",
-  "category": "other"
+  "category": "other",
+  "author": "rysweet",
+  "source_url": "https://github.com/rysweet/AzureHayMaker/blob/main/.claude/skills/chemist-analyst/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ryan Sweet / Microsoft",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "forms-1-12-completeness-verification-reggiechan74-vp-real-estate-1d5bd1cf",
   "category": "other",
   "github_path": ".claude/skills/forms-1-12-completeness-verification",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "reggiechan74",
+  "source_url": "https://github.com/reggiechan74/vp-real-estate/blob/main/.claude/skills/forms-1-12-completeness-verification/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/reggiechan74/vp-real-estate/blob/main/.claude/skills/forms-1-12-completeness-verification/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

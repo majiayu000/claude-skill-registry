@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:20.556588Z",
   "dir_name": "ai-led-onboarding",
   "github_path": "caphtech-plugin/skills/ai-led-onboarding",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "CAPHTECH",
+  "source_url": "https://github.com/CAPHTECH/claude-marketplace/blob/main/caphtech-plugin/skills/ai-led-onboarding/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CAPHTECH/claude-marketplace/blob/main/caphtech-plugin/skills/ai-led-onboarding/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

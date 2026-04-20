@@ -5,5 +5,12 @@
   "description": "Cloodle design system tokens for colors, typography, spacing, and components. Use when styling Cloodle interfaces, creating CSS, or implementing consistent visual design across the platform.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:03.588746Z",
-  "dir_name": "cloodle-design-tokens-astoeffer-plugin-marketplace"
+  "dir_name": "cloodle-design-tokens-astoeffer-plugin-marketplace",
+  "author": "astoeffer",
+  "source_url": "https://github.com/astoeffer/plugin-marketplace",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/astoeffer/plugin-marketplace",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

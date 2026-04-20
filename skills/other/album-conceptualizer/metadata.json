@@ -5,5 +5,12 @@
   "source": "github.com/bitwize-music-studio/claude-ai-music-skills",
   "downloaded_at": "2026-02-02T02:52:29.934056Z",
   "dir_name": "album-conceptualizer",
-  "category": "other"
+  "category": "other",
+  "author": "bitwize-music-studio",
+  "source_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/album-conceptualizer/SKILL.md",
+  "license": "CC0-1.0",
+  "copyright": "Copyright and Related Rights in the Work and the meaning and intended legal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

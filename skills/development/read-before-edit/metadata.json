@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": ".claude/skills/read-before-edit",
   "github_branch": "main",
-  "dir_name": "read-before-edit"
+  "dir_name": "read-before-edit",
+  "author": "cityfish91159",
+  "source_url": "https://github.com/cityfish91159/maihouses/blob/main/.claude/skills/read-before-edit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cityfish91159/maihouses/blob/main/.claude/skills/read-before-edit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

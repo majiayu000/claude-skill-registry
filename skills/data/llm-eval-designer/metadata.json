@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:21.659187Z",
   "dir_name": "llm-eval-designer",
   "github_path": "caphtech-plugin/skills/llm-eval-designer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "CAPHTECH",
+  "source_url": "https://github.com/CAPHTECH/claude-marketplace/blob/main/caphtech-plugin/skills/llm-eval-designer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CAPHTECH/claude-marketplace/blob/main/caphtech-plugin/skills/llm-eval-designer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

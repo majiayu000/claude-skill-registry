@@ -5,5 +5,12 @@
   "source": "github.com/AsiaOstrich/universal-dev-standards",
   "downloaded_at": "2026-01-29T08:56:57.250036Z",
   "dir_name": "commit-standards-asiaostrich-universal-dev-standa",
-  "category": "other"
+  "category": "other",
+  "author": "AsiaOstrich",
+  "source_url": "https://github.com/AsiaOstrich/universal-dev-standards/blob/main/skills/commit-standards/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Universal Development Standards Contributors",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

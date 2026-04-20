@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/bfly123/claude_code_bridge",
   "dir_name": "ping-bfly123-claude-code-bridge-3",
-  "downloaded_at": "2026-02-15T06:33:16.919528Z"
+  "downloaded_at": "2026-02-15T06:33:16.919528Z",
+  "author": "bfly123",
+  "source_url": "https://github.com/bfly123/claude_code_bridge/blob/main/droid_skills/ping/SKILL.md.powershell/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

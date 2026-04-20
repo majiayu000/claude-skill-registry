@@ -10,5 +10,12 @@
   "stars": 5,
   "github_path": "skills/hanami-workflow",
   "github_branch": "main",
-  "dir_name": "hanami-workflow-ilude-claude-code-config-c7db7bc7"
+  "dir_name": "hanami-workflow-ilude-claude-code-config-c7db7bc7",
+  "author": "ilude",
+  "source_url": "https://github.com/ilude/claude-code-config/blob/main/skills/hanami-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilude/claude-code-config/blob/main/skills/hanami-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

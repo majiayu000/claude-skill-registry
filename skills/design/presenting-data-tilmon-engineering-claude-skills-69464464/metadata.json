@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:14.718971Z",
   "github_path": "plugins/datapeeker/skills/presenting-data",
   "github_branch": "main",
-  "dir_name": "presenting-data-tilmon-engineering-claude-skills-69464464"
+  "dir_name": "presenting-data-tilmon-engineering-claude-skills-69464464",
+  "author": "tilmon-engineering",
+  "source_url": "https://github.com/tilmon-engineering/claude-skills/blob/main/plugins/datapeeker/skills/presenting-data/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tilmon Engineering",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

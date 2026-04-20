@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/auth-helper",
   "github_branch": "main",
-  "dir_name": "auth-helper-marthaya-putra-my-flix"
+  "dir_name": "auth-helper-marthaya-putra-my-flix",
+  "author": "marthaya-putra",
+  "source_url": "https://github.com/marthaya-putra/my-flix/blob/main/.claude/skills/auth-helper/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/marthaya-putra/my-flix/blob/main/.claude/skills/auth-helper/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:19.296380Z",
   "github_path": "skills/tokens/color-scale",
   "github_branch": "main",
-  "dir_name": "color-scale-dylantarre-design-system-skills-69eea312"
+  "dir_name": "color-scale-dylantarre-design-system-skills-69eea312",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/design-system-skills/blob/main/skills/tokens/color-scale/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

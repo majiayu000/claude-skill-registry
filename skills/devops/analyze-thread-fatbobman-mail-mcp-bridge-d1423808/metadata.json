@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:50.589609Z",
   "github_path": "plugins/mail-attachment-analyzer/skills/analyze-thread",
   "github_branch": "main",
-  "dir_name": "analyze-thread-fatbobman-mail-mcp-bridge-d1423808"
+  "dir_name": "analyze-thread-fatbobman-mail-mcp-bridge-d1423808",
+  "author": "fatbobman",
+  "source_url": "https://github.com/fatbobman/mail-mcp-bridge/blob/main/plugins/mail-attachment-analyzer/skills/analyze-thread/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Fatbobman (Xu Yang)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

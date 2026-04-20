@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "angular-developer"
+  "dir_name": "angular-developer",
+  "author": "olehsvyrydov",
+  "source_url": "https://github.com/olehsvyrydov/AI-development-team",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/olehsvyrydov/AI-development-team",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

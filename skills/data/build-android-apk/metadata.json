@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/j4xie/my-prototype-logistics",
-  "dir_name": "build-android-apk"
+  "dir_name": "build-android-apk",
+  "author": "j4xie",
+  "source_url": "https://github.com/j4xie/my-prototype-logistics",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/j4xie/my-prototype-logistics",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

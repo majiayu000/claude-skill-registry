@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/billing-system-expert",
   "github_branch": "main",
-  "dir_name": "billing-system-expert-sanchay-t-influencer-platform--b70cb7a8"
+  "dir_name": "billing-system-expert-sanchay-t-influencer-platform--b70cb7a8",
+  "author": "Sanchay-T",
+  "source_url": "https://github.com/Sanchay-T/influencer-platform-app/blob/main/.claude/skills/billing-system-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sanchay-T/influencer-platform-app/blob/main/.claude/skills/billing-system-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "api-digest",
   "github_path": "skills/api-digest",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "serejaris",
+  "source_url": "https://github.com/serejaris/ris-claude-code/blob/main/skills/api-digest/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

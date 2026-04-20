@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:36.424684Z",
   "github_path": "plugins/luxor-backend-toolkit/skills/express-microservices-architecture",
   "github_branch": "main",
-  "dir_name": "express-microservices-architecture-manutej-luxor-claude-marketp"
+  "dir_name": "express-microservices-architecture-manutej-luxor-claude-marketp",
+  "author": "manutej",
+  "source_url": "https://github.com/manutej/luxor-claude-marketplace/blob/main/plugins/luxor-backend-toolkit/skills/express-microservices-architecture/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/manutej/luxor-claude-marketplace/blob/main/plugins/luxor-backend-toolkit/skills/express-microservices-architecture/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

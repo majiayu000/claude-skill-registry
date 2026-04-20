@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:52.136501Z",
   "dir_name": "communication-systems",
   "github_path": "domain-applications/communication-systems",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "miles990",
+  "source_url": "https://github.com/miles990/claude-software-skills/blob/main/domain-applications/communication-systems/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

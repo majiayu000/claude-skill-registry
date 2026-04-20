@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:30.133646Z",
   "github_path": ".claude/skills/validate-architecture",
   "github_branch": "main",
-  "dir_name": "validate-architecture"
+  "dir_name": "validate-architecture",
+  "author": "adolfoaranaes12",
+  "source_url": "https://github.com/adolfoaranaes12/BMAD-ENHANCED/blob/main/.claude/skills/validate-architecture/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adolfoaranaes12/BMAD-ENHANCED/blob/main/.claude/skills/validate-architecture/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

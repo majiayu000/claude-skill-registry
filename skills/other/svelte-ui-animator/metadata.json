@@ -5,5 +5,12 @@
   "source": "github.com/ajianaz/skills-collection",
   "downloaded_at": "2026-02-01T02:46:07.498976Z",
   "dir_name": "svelte-ui-animator",
-  "category": "other"
+  "category": "other",
+  "author": "ajianaz",
+  "source_url": "https://github.com/ajianaz/skills-collection/blob/main/skills/svelte-ui-animator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024 Anaz S. Aji",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

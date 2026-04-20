@@ -5,5 +5,12 @@
   "source": "github.com/liqiongyu/lenny_skills_plus",
   "downloaded_at": "2026-01-29T08:27:43.215181Z",
   "dir_name": "team-rituals",
-  "category": "data"
+  "category": "data",
+  "author": "liqiongyu",
+  "source_url": "https://github.com/liqiongyu/lenny_skills_plus/blob/main/skills/team-rituals/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/liqiongyu/lenny_skills_plus/blob/main/skills/team-rituals/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

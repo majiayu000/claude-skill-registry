@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:28:11.441093Z",
   "github_path": "skills/cognito",
   "github_branch": "main",
-  "dir_name": "cognito-itsmostafa-aws-agent-skills"
+  "dir_name": "cognito-itsmostafa-aws-agent-skills",
+  "author": "itsmostafa",
+  "source_url": "https://github.com/itsmostafa/aws-agent-skills/blob/main/skills/cognito/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

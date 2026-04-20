@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:14.265652Z",
   "github_path": "plugins/web-ui-design-guide/skills",
   "github_branch": "main",
-  "dir_name": "web-ui-design-guide-muheun-claude-code-marketpl-a6e537b6"
+  "dir_name": "web-ui-design-guide-muheun-claude-code-marketpl-a6e537b6",
+  "author": "muheun",
+  "source_url": "https://github.com/muheun/claude-code-marketplace/blob/main/plugins/web-ui-design-guide/skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/muheun/claude-code-marketplace/blob/main/plugins/web-ui-design-guide/skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

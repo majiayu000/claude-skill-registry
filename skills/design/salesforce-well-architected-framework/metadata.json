@@ -5,5 +5,12 @@
   "description": "This skill should be used when the user asks to \"design a package\", \"architect a solution\", \"check well architected\", \"validate against well architected framework\", \"review architecture\", or mentions ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:48.424137Z",
-  "dir_name": "salesforce-well-architected-framework"
+  "dir_name": "salesforce-well-architected-framework",
+  "author": "dangt85",
+  "source_url": "https://github.com/dangt85/sf-package-architect",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dangt85/sf-package-architect",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

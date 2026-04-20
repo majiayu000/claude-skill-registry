@@ -5,5 +5,12 @@
   "description": "Expert guidance for enterprise resource planning systems, business logic, domain modeling, and ERP integration patterns. Use when building ERP systems, implementing business workflows, or integrating ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:19.022352Z",
-  "dir_name": "enterprise-erp-consultant"
+  "dir_name": "enterprise-erp-consultant",
+  "author": "Krosebrook",
+  "source_url": "https://github.com/Krosebrook/source-of-truth-monorepo",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Krosebrook/source-of-truth-monorepo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

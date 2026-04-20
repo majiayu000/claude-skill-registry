@@ -5,5 +5,12 @@
   "source": "github.com/captjay98/livestockai",
   "downloaded_at": "2026-02-02T05:01:11.558768Z",
   "dir_name": "batch-centric-design",
-  "category": "other"
+  "category": "other",
+  "author": "captjay98",
+  "source_url": "https://github.com/captjay98/livestockai/blob/main/.kiro/skills/batch-centric-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/captjay98/livestockai/blob/main/.kiro/skills/batch-centric-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

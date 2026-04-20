@@ -7,5 +7,12 @@
   "dir_name": "crew-roles-modu-ai-cc-plugins",
   "category": "other",
   "github_path": "plugins/astory-blog-writers/skills/crew-roles",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "modu-ai",
+  "source_url": "https://github.com/modu-ai/cc-plugins/blob/main/plugins/astory-blog-writers/skills/crew-roles/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/modu-ai/cc-plugins/blob/main/plugins/astory-blog-writers/skills/crew-roles/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

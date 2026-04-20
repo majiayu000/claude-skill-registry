@@ -5,5 +5,12 @@
   "source": "github.com/AIDotNet/MoYuCode",
   "downloaded_at": "2026-01-29T08:25:28.066712Z",
   "dir_name": "ci-cd-generator-aidotnet-moyucode",
-  "category": "other"
+  "category": "other",
+  "author": "AIDotNet",
+  "source_url": "https://github.com/AIDotNet/MoYuCode/blob/main/skills/community/ci-cd-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AIDotNet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

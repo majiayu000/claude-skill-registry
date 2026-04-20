@@ -5,5 +5,12 @@
   "source": "github.com/nimeshgurung/artifact-hub-collections",
   "downloaded_at": "2026-01-29T08:42:20.297632Z",
   "dir_name": "isms-audit-expert",
-  "category": "other"
+  "category": "other",
+  "author": "nimeshgurung",
+  "source_url": "https://github.com/nimeshgurung/artifact-hub-collections/blob/main/skills/raw/alirezarezvani/claude-skills/ra-qm-team/isms-audit-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nimeshgurung/artifact-hub-collections/blob/main/skills/raw/alirezarezvani/claude-skills/ra-qm-team/isms-audit-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

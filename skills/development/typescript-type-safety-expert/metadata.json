@@ -5,5 +5,12 @@
   "description": "Expert guidance for advanced TypeScript type safety, generics, type inference, and compile-time validation. Use when implementing complex type systems, improving type safety, or eliminating runtime er",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:19.096529Z",
-  "dir_name": "typescript-type-safety-expert"
+  "dir_name": "typescript-type-safety-expert",
+  "author": "Krosebrook",
+  "source_url": "https://github.com/Krosebrook/source-of-truth-monorepo",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Krosebrook/source-of-truth-monorepo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/ajianaz/skills-collection",
   "downloaded_at": "2026-02-04T04:06:47.997720Z",
   "dir_name": "observability-monitor",
-  "category": "data"
+  "category": "data",
+  "author": "ajianaz",
+  "source_url": "https://github.com/ajianaz/skills-collection/blob/main/skills/observability-monitor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024 Anaz S. Aji",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

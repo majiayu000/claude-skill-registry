@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/agentuity/examples",
   "dir_name": "agentuity-cli-cloud-env-list-agentuity-examples",
-  "downloaded_at": "2026-02-15T06:07:56.383604Z"
+  "downloaded_at": "2026-02-15T06:07:56.383604Z",
+  "author": "agentuity",
+  "source_url": "https://github.com/agentuity/examples/blob/main/training-v1/concierge-ts-v1/.agents/skills/agentuity-cli-cloud-env-list/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 Agentuity, Inc.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

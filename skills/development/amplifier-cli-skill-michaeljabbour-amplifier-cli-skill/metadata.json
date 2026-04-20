@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/amplifier-cli-skill",
   "github_branch": "main",
-  "dir_name": "amplifier-cli-skill-michaeljabbour-amplifier-cli-skill"
+  "dir_name": "amplifier-cli-skill-michaeljabbour-amplifier-cli-skill",
+  "author": "michaeljabbour",
+  "source_url": "https://github.com/michaeljabbour/amplifier-cli-skill/blob/main/skills/amplifier-cli-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Michael Jabbour",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

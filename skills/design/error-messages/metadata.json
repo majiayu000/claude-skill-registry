@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:29:29.543832Z",
   "github_path": "skills/error-messages",
   "github_branch": "main",
-  "dir_name": "error-messages"
+  "dir_name": "error-messages",
+  "author": "githubnext",
+  "source_url": "https://github.com/githubnext/gh-aw/blob/main/skills/error-messages/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright GitHub, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

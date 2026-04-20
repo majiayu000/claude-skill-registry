@@ -9,5 +9,12 @@
   "github_path": "skills/team-rituals",
   "github_branch": "main",
   "dir_name": "team-rituals-refoundai-lenny-skills",
-  "downloaded_at": "2026-02-05T05:41:55.436311Z"
+  "downloaded_at": "2026-02-05T05:41:55.436311Z",
+  "author": "RefoundAI",
+  "source_url": "https://github.com/RefoundAI/lenny-skills/blob/main/skills/team-rituals/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Refound AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

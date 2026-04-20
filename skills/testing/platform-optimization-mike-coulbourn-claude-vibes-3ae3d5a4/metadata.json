@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:16.052317Z",
   "github_path": "plugins/vibes/skills/platform-optimization",
   "github_branch": "main",
-  "dir_name": "platform-optimization-mike-coulbourn-claude-vibes-3ae3d5a4"
+  "dir_name": "platform-optimization-mike-coulbourn-claude-vibes-3ae3d5a4",
+  "author": "mike-coulbourn",
+  "source_url": "https://github.com/mike-coulbourn/claude-vibes/blob/main/plugins/vibes/skills/platform-optimization/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Mike Coulbourn",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

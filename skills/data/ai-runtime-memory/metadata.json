@@ -5,5 +5,12 @@
   "description": "AI Runtime分层记忆系统，支持SQL风格的事件查询、时间线管理，以及记忆的智能固化和检索，用于项目历史追踪和经验传承",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:13.977640Z",
-  "dir_name": "ai-runtime-memory"
+  "dir_name": "ai-runtime-memory",
+  "author": "Dwsy",
+  "source_url": "https://github.com/Dwsy/ai-runtime",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Dwsy/ai-runtime",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "ai-consultation-jeffrigby-somepulp-agents",
   "category": "other",
   "github_path": "plugins/second-opinion/skills/ai-consultation",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jeffrigby",
+  "source_url": "https://github.com/jeffrigby/somepulp-agents/blob/main/plugins/second-opinion/skills/ai-consultation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Some Pulp LLC",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

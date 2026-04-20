@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:29.940096Z",
   "github_path": "stow/shared/.claude/skills/golang-style",
   "github_branch": "main",
-  "dir_name": "golang-style-fredrikaverpil-dotfiles"
+  "dir_name": "golang-style-fredrikaverpil-dotfiles",
+  "author": "fredrikaverpil",
+  "source_url": "https://github.com/fredrikaverpil/dotfiles/blob/main/stow/shared/.claude/skills/golang-style/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Fredrik Averpil",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

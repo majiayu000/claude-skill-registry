@@ -7,5 +7,12 @@
   "dir_name": "generic-react-ux-designer-travisjneuman-claude",
   "category": "other",
   "github_path": "skills/generic-react-ux-designer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "travisjneuman",
+  "source_url": "https://github.com/travisjneuman/.claude/blob/main/skills/generic-react-ux-designer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Travis Neuman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

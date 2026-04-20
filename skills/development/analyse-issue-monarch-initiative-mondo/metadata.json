@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/analyse-issue",
   "github_branch": "master",
-  "dir_name": "analyse-issue-monarch-initiative-mondo"
+  "dir_name": "analyse-issue-monarch-initiative-mondo",
+  "author": "monarch-initiative",
+  "source_url": "https://github.com/monarch-initiative/mondo/blob/master/.claude/skills/analyse-issue/SKILL.md",
+  "license": "CC-BY-4.0",
+  "copyright": "copyright and certain other rights. Our licenses are",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

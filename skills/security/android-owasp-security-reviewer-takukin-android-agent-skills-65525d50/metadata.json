@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "",
   "github_branch": "main",
-  "dir_name": "android-owasp-security-reviewer-takukin-android-agent-skills-65525d50"
+  "dir_name": "android-owasp-security-reviewer-takukin-android-agent-skills-65525d50",
+  "author": "TakukiN",
+  "source_url": "https://github.com/TakukiN/android_agent_skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TakukiN/android_agent_skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

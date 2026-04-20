@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:50.888078Z",
   "dir_name": "full-stack-development",
   "github_path": "_skills/full-stack-development",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "baz-scm",
+  "source_url": "https://github.com/baz-scm/awesome-reviewers/blob/main/_skills/full-stack-development/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/baz-scm/awesome-reviewers/blob/main/_skills/full-stack-development/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

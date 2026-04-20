@@ -5,5 +5,12 @@
   "source": "github.com/prowler-cloud/prowler",
   "downloaded_at": "2026-01-29T07:09:53.010552Z",
   "dir_name": "prowler-test-sdk-prowler-cloud-prowler-f5b9d0c4",
-  "category": "other"
+  "category": "other",
+  "author": "prowler-cloud",
+  "source_url": "https://github.com/prowler-cloud/prowler/blob/main/skills/prowler-test-sdk/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/prowler-cloud/prowler/blob/main/skills/prowler-test-sdk/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

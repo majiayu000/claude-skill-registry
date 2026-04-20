@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/kamushadenes/nix",
-  "dir_name": "rsls-fix-kamushadenes-nix-2"
+  "dir_name": "rsls-fix-kamushadenes-nix-2",
+  "author": "kamushadenes",
+  "source_url": "https://github.com/kamushadenes/nix/blob/main/home/common/ai/resources/claude-code/skills/rsls-fix/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kamushadenes/nix/blob/main/home/common/ai/resources/claude-code/skills/rsls-fix/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

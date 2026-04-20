@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:20.904701Z",
   "github_path": "plugins/component-health/skills/analyze-regressions",
   "github_branch": "main",
-  "dir_name": "analyze-regressions-openshift-eng-ai-helpers-1318e690"
+  "dir_name": "analyze-regressions-openshift-eng-ai-helpers-1318e690",
+  "author": "openshift-eng",
+  "source_url": "https://github.com/openshift-eng/ai-helpers/blob/main/plugins/component-health/skills/analyze-regressions/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/openshift-eng/ai-helpers/blob/main/plugins/component-health/skills/analyze-regressions/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

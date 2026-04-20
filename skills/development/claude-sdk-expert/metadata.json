@@ -5,5 +5,12 @@
   "description": "Build autonomous AI agents using Claude Agent SDK with computer use, tool calling, MCP integration, and production best practices for Anthropic models",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:11:11.030616Z",
-  "dir_name": "claude-sdk-expert"
+  "dir_name": "claude-sdk-expert",
+  "author": "frankxai",
+  "source_url": "https://github.com/frankxai/ai-architect",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/frankxai/ai-architect",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

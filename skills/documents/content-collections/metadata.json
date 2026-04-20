@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/content-collections",
   "github_branch": "main",
-  "dir_name": "content-collections"
+  "dir_name": "content-collections",
+  "author": "jackspace",
+  "source_url": "https://github.com/jackspace/ClaudeSkillz/blob/main/skills/content-collections/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ClaudeSkillz Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

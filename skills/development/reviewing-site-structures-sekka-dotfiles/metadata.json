@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:12.352502Z",
   "github_path": "home/.claude/skills/reviewing-site-structures",
   "github_branch": "main",
-  "dir_name": "reviewing-site-structures-sekka-dotfiles"
+  "dir_name": "reviewing-site-structures-sekka-dotfiles",
+  "author": "sekka",
+  "source_url": "https://github.com/sekka/dotfiles/blob/main/home/.claude/skills/reviewing-site-structures/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sekka/dotfiles/blob/main/home/.claude/skills/reviewing-site-structures/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

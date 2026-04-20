@@ -5,5 +5,12 @@
   "source": "github.com/cdeistopened/skill-stack",
   "downloaded_at": "2026-02-02T02:02:48.081536Z",
   "dir_name": "clifton-sellers-content-prompts",
-  "category": "other"
+  "category": "other",
+  "author": "cdeistopened",
+  "source_url": "https://github.com/cdeistopened/skill-stack/blob/main/.claude/skills/clifton-sellers-content-prompts/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Wayne Sutton",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

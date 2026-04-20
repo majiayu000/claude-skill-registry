@@ -7,5 +7,12 @@
   "dir_name": "twitter-to-obsidian-ttmouse-skills",
   "category": "other",
   "github_path": "twitter-to-obsidian",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "ttmouse",
+  "source_url": "https://github.com/ttmouse/skills/blob/main/twitter-to-obsidian/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ttmouse/skills/blob/main/twitter-to-obsidian/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

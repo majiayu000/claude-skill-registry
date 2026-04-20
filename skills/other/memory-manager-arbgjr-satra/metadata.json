@@ -7,5 +7,12 @@
   "dir_name": "memory-manager-arbgjr-satra",
   "category": "other",
   "github_path": ".claude/skills/memory-manager",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "arbgjr",
+  "source_url": "https://github.com/arbgjr/satra/blob/main/.claude/skills/memory-manager/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) [year] [fullname]",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

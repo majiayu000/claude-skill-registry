@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:49.524215Z",
   "github_path": ".github/skills/agents-md-guide",
   "github_branch": "main",
-  "dir_name": "agents-md-guide-raphaelmansuy-machine-learning-fea"
+  "dir_name": "agents-md-guide-raphaelmansuy-machine-learning-fea",
+  "author": "raphaelmansuy",
+  "source_url": "https://github.com/raphaelmansuy/machine-learning-feature-selection/blob/main/.github/skills/agents-md-guide/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/raphaelmansuy/machine-learning-feature-selection/blob/main/.github/skills/agents-md-guide/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

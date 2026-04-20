@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:34.000905Z",
   "dir_name": "api-field-descriptions",
   "github_path": "tw-team/skills/api-field-descriptions",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "LerianStudio",
+  "source_url": "https://github.com/LerianStudio/ring/blob/main/tw-team/skills/api-field-descriptions/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LerianStudio/ring/blob/main/tw-team/skills/api-field-descriptions/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

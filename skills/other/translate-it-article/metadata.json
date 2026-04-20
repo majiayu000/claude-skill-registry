@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/translate-it-article",
   "github_branch": "main",
   "dir_name": "translate-it-article",
-  "downloaded_at": "2026-02-05T01:45:38.900196Z"
+  "downloaded_at": "2026-02-05T01:45:38.900196Z",
+  "author": "zsutxz",
+  "source_url": "https://github.com/zsutxz/ClaudeLearning/blob/main/.claude/skills/translate-it-article/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Gomoku Game Project",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

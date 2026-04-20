@@ -5,5 +5,12 @@
   "source": "github.com/RKiding/Awesome-finance-skills",
   "downloaded_at": "2026-02-02T02:13:52.258829Z",
   "dir_name": "alphaear-news",
-  "category": "other"
+  "category": "other",
+  "author": "RKiding",
+  "source_url": "https://github.com/RKiding/Awesome-finance-skills/blob/main/skills/alphaear-news/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RKiding/Awesome-finance-skills/blob/main/skills/alphaear-news/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

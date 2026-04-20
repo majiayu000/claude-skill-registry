@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:14.213243Z",
   "github_path": "plugins/flutter-ui-design-guide/skills",
   "github_branch": "main",
-  "dir_name": "flutter-ui-design-guide-muheun-claude-code-marketpl"
+  "dir_name": "flutter-ui-design-guide-muheun-claude-code-marketpl",
+  "author": "muheun",
+  "source_url": "https://github.com/muheun/claude-code-marketplace/blob/main/plugins/flutter-ui-design-guide/skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/muheun/claude-code-marketplace/blob/main/plugins/flutter-ui-design-guide/skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/transcribe-audio",
   "github_branch": "main",
-  "dir_name": "transcribe-audio-barefootford-buttercut"
+  "dir_name": "transcribe-audio-barefootford-buttercut",
+  "author": "barefootford",
+  "source_url": "https://github.com/barefootford/buttercut/blob/main/.claude/skills/transcribe-audio/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Andrew Ford",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

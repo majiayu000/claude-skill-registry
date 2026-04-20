@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:34.692970Z",
   "github_path": "plugins/autonomy/skills/ending-an-iteration",
   "github_branch": "main",
-  "dir_name": "ending-an-iteration"
+  "dir_name": "ending-an-iteration",
+  "author": "tilmon-engineering",
+  "source_url": "https://github.com/tilmon-engineering/claude-skills/blob/main/plugins/autonomy/skills/ending-an-iteration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tilmon Engineering",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

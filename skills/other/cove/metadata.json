@@ -5,5 +5,12 @@
   "source": "github.com/serpro69/claude-starter-kit",
   "downloaded_at": "2026-02-02T01:27:11.053735Z",
   "dir_name": "cove",
-  "category": "other"
+  "category": "other",
+  "author": "serpro69",
+  "source_url": "https://github.com/serpro69/claude-starter-kit/blob/main/.github/templates/claude/skills/cove/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 - present; serpro69",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

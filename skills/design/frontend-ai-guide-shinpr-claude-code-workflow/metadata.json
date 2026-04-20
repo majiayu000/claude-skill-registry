@@ -10,5 +10,12 @@
   "stars": 44,
   "github_path": "skills/frontend-ai-guide",
   "github_branch": "main",
-  "dir_name": "frontend-ai-guide-shinpr-claude-code-workflow"
+  "dir_name": "frontend-ai-guide-shinpr-claude-code-workflow",
+  "author": "shinpr",
+  "source_url": "https://github.com/shinpr/claude-code-workflows/blob/main/skills/frontend-ai-guide/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Shinsuke Kagawa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

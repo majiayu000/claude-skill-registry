@@ -5,5 +5,12 @@
   "description": "Generate detailed style specification from SDS style entity and plan. Enforces blueprint tempo ranges, resolves tag conflicts using conflict matrix, and maximizes information density with minimal tags",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:09.576382Z",
-  "dir_name": "amcs-style-generator"
+  "dir_name": "amcs-style-generator",
+  "author": "miethe",
+  "source_url": "https://github.com/miethe/MeatyMusic",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/miethe/MeatyMusic",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

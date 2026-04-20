@@ -5,5 +5,12 @@
   "source": "github.com/adilkalam/orca",
   "downloaded_at": "2026-01-28T01:14:16.282266Z",
   "dir_name": "ios-knowledge-skill",
-  "category": "data"
+  "category": "data",
+  "author": "adilkalam",
+  "source_url": "https://github.com/adilkalam/orca/blob/main/skills/ios-knowledge-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ORCA-OS Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

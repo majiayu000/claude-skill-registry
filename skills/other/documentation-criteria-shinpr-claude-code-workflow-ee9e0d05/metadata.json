@@ -7,5 +7,12 @@
   "dir_name": "documentation-criteria-shinpr-claude-code-workflow-ee9e0d05",
   "category": "other",
   "github_path": "skills/documentation-criteria",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "shinpr",
+  "source_url": "https://github.com/shinpr/claude-code-workflows/blob/main/skills/documentation-criteria/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Shinsuke Kagawa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

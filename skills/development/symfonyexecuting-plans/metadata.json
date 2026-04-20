@@ -5,5 +5,12 @@
   "description": "Methodically execute implementation plans with TDD approach, incremental commits, and continuous validation",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:31.144657Z",
-  "dir_name": "symfonyexecuting-plans"
+  "dir_name": "symfonyexecuting-plans",
+  "author": "MakFly",
+  "source_url": "https://github.com/MakFly/superpowers-symfony",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

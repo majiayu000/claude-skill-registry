@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:05.210635Z",
   "github_path": "plugins/dot-claude/skills/correcting-mistakes",
   "github_branch": "main",
-  "dir_name": "correcting-mistakes-sawyer-middeleer-dot-claude-1c7f2cba"
+  "dir_name": "correcting-mistakes-sawyer-middeleer-dot-claude-1c7f2cba",
+  "author": "Sawyer-Middeleer",
+  "source_url": "https://github.com/Sawyer-Middeleer/dot-claude/blob/main/plugins/dot-claude/skills/correcting-mistakes/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sawyer Middeleer",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

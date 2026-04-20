@@ -7,5 +7,12 @@
   "dir_name": "parallel-execution-optimizer-sjdjdiejdrirhdkjej-claude-code-conducto",
   "category": "other",
   "github_path": ".claude/skills/parallel-execution-optimizer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Sjdjdiejdrirhdkjej",
+  "source_url": "https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/parallel-execution-optimizer/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/parallel-execution-optimizer/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

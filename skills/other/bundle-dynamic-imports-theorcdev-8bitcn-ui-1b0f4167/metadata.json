@@ -7,5 +7,12 @@
   "dir_name": "bundle-dynamic-imports-theorcdev-8bitcn-ui-1b0f4167",
   "category": "other",
   "github_path": ".claude/skills/bundle-dynamic-imports",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "TheOrcDev",
+  "source_url": "https://github.com/TheOrcDev/8bitcn-ui/blob/main/.claude/skills/bundle-dynamic-imports/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 8bitcn",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:51.063165Z",
   "github_path": "plugins/direct-spend-visualizer/skills",
   "github_branch": "main",
-  "dir_name": "direct-spend-visualizer-feed-mob-claude-code-marketpl"
+  "dir_name": "direct-spend-visualizer-feed-mob-claude-code-marketpl",
+  "author": "feed-mob",
+  "source_url": "https://github.com/feed-mob/claude-code-marketplace/blob/main/plugins/direct-spend-visualizer/skills/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Feedmob, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

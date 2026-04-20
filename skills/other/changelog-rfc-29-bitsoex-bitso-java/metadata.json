@@ -5,5 +5,12 @@
   "source": "github.com/bitsoex/bitso-java",
   "downloaded_at": "2026-01-29T05:58:28.208667Z",
   "dir_name": "changelog-rfc-29-bitsoex-bitso-java",
-  "category": "other"
+  "category": "other",
+  "author": "bitsoex",
+  "source_url": "https://github.com/bitsoex/bitso-java/blob/main/.claude/skills/changelog-rfc-29/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2015 Bitso SAPI de CV",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/wildcard/caro",
   "downloaded_at": "2026-02-02T04:57:09.072377Z",
   "dir_name": "ciso-product-manager",
-  "category": "other"
+  "category": "other",
+  "author": "wildcard",
+  "source_url": "https://github.com/wildcard/caro/blob/main/.claude/skills/ciso-product-manager/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

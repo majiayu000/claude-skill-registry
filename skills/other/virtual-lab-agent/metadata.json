@@ -5,5 +5,12 @@
   "source": "github.com/mdbabumiamssm/LLMs-Universal-Life-Science-and-Clinical-Skills-",
   "downloaded_at": "2026-01-30T01:07:22.128099Z",
   "dir_name": "virtual-lab-agent",
-  "category": "other"
+  "category": "other",
+  "author": "mdbabumiamssm",
+  "source_url": "https://github.com/mdbabumiamssm/LLMs-Universal-Life-Science-and-Clinical-Skills-/blob/main/Skills/Clinical/Virtual_Lab_Agent/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MD BABU MIA , PHD",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

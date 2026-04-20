@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/akshare",
   "github_branch": "main",
-  "dir_name": "akshare-arcanexis-alice-single"
+  "dir_name": "akshare-arcanexis-alice-single",
+  "author": "Arcanexis",
+  "source_url": "https://github.com/Arcanexis/Alice-Single/blob/main/skills/akshare/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Alice Agent Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

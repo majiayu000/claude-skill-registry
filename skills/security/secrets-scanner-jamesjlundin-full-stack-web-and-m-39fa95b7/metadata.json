@@ -10,5 +10,12 @@
   "stars": 4,
   "github_path": ".claude/skills/secrets-scanner",
   "github_branch": "main",
-  "dir_name": "secrets-scanner-jamesjlundin-full-stack-web-and-m-39fa95b7"
+  "dir_name": "secrets-scanner-jamesjlundin-full-stack-web-and-m-39fa95b7",
+  "author": "jamesjlundin",
+  "source_url": "https://github.com/jamesjlundin/full-stack-web-and-mobile-template/blob/main/.claude/skills/secrets-scanner/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 James Lundin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

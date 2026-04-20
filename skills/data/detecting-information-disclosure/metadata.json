@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "detecting-information-disclosure",
   "github_path": ".claude/skills/detecting-information-disclosure",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "waiwai24",
+  "source_url": "https://github.com/waiwai24/BinaryX-Agent/blob/main/.claude/skills/detecting-information-disclosure/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 waiwai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

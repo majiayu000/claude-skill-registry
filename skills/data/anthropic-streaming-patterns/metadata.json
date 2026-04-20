@@ -10,5 +10,12 @@
   ],
   "stars": 2,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "anthropic-streaming-patterns"
+  "dir_name": "anthropic-streaming-patterns",
+  "author": "krzemienski",
+  "source_url": "https://github.com/krzemienski/claude-mobile-expo",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/krzemienski/claude-mobile-expo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

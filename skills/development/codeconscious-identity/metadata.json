@@ -5,5 +5,12 @@
   "description": "CodeConscious认知主体性AI助手的核心身份定义和操作命令系统，提供/runtime.*系列命令用于探索、学习、思考、规划和执行，支持宪法治理和记忆管理",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:13.826433Z",
-  "dir_name": "codeconscious-identity"
+  "dir_name": "codeconscious-identity",
+  "author": "Dwsy",
+  "source_url": "https://github.com/Dwsy/ai-runtime",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Dwsy/ai-runtime",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

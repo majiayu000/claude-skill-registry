@@ -7,5 +7,12 @@
   "dir_name": "sentry-mgd34msu-goodvibes-gemini",
   "category": "other",
   "github_path": "skills/sentry",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "mgd34msu",
+  "source_url": "https://github.com/mgd34msu/goodvibes-gemini/blob/main/skills/sentry/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mgd34msu/goodvibes-gemini/blob/main/skills/sentry/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "stars": 1,
   "github_path": ".claude/skills/multi-agent-analysis",
   "github_branch": "main",
-  "dir_name": "multi-agent-analysis-dowwie-agent-framework-stud"
+  "dir_name": "multi-agent-analysis-dowwie-agent-framework-stud",
+  "author": "Dowwie",
+  "source_url": "https://github.com/Dowwie/agent_framework_study/blob/main/.claude/skills/multi-agent-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Dowwie/agent_framework_study/blob/main/.claude/skills/multi-agent-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

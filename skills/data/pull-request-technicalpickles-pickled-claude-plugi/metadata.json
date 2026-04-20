@@ -5,5 +5,12 @@
   "source": "github.com/technicalpickles/pickled-claude-plugins",
   "downloaded_at": "2026-02-04T01:56:45.854988Z",
   "dir_name": "pull-request-technicalpickles-pickled-claude-plugi",
-  "category": "data"
+  "category": "data",
+  "author": "technicalpickles",
+  "source_url": "https://github.com/technicalpickles/pickled-claude-plugins/blob/main/plugins/git/skills/pull-request/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josh Nichols",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/wade56754/AI_ad_spend02",
   "downloaded_at": "2026-01-29T07:59:09.647137Z",
   "dir_name": "ai-ad-be-gen-wade56754-ai-ad-spend02-922cacde",
-  "category": "other"
+  "category": "other",
+  "author": "wade56754",
+  "source_url": "https://github.com/wade56754/AI_ad_spend02/blob/main/.claude/skills/ai-ad-be-gen/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wade56754/AI_ad_spend02/blob/main/.claude/skills/ai-ad-be-gen/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/bitsoex/bitso-java",
   "downloaded_at": "2026-01-29T05:58:26.449260Z",
   "dir_name": "coderabbit-workflow-bitsoex-bitso-java",
-  "category": "other"
+  "category": "other",
+  "author": "bitsoex",
+  "source_url": "https://github.com/bitsoex/bitso-java/blob/main/.claude/skills/coderabbit-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2015 Bitso SAPI de CV",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

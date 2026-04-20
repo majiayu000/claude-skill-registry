@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:51.281113Z",
   "github_path": ".claude/skills/ANIMATOR",
   "github_branch": "main",
-  "dir_name": "animator-buoy-design-buoy-site-651a156b"
+  "dir_name": "animator-buoy-design-buoy-site-651a156b",
+  "author": "buoy-design",
+  "source_url": "https://github.com/buoy-design/buoy-site/blob/main/.claude/skills/ANIMATOR/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/buoy-design/buoy-site/blob/main/.claude/skills/ANIMATOR/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

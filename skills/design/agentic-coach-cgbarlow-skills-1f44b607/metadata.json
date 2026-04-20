@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "agentic-coach",
   "github_branch": "main",
-  "dir_name": "agentic-coach-cgbarlow-skills-1f44b607"
+  "dir_name": "agentic-coach-cgbarlow-skills-1f44b607",
+  "author": "cgbarlow",
+  "source_url": "https://github.com/cgbarlow/skills/blob/main/agentic-coach/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgbarlow/skills/blob/main/agentic-coach/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

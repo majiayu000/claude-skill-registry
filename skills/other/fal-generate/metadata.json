@@ -5,5 +5,12 @@
   "source": "github.com/sickn33/antigravity-awesome-skills",
   "downloaded_at": "2026-02-02T04:28:43.472777Z",
   "dir_name": "fal-generate",
-  "category": "other"
+  "category": "other",
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/fal-generate/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

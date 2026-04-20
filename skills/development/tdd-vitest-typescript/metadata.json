@@ -5,5 +5,12 @@
   "description": "Test-Driven Development (TDD) using Vitest and TypeScript. Use when the user requests help with TDD, writing tests before code, test-first development, Vitest test setup, TypeScript testing patterns, ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:27.075606Z",
-  "dir_name": "tdd-vitest-typescript"
+  "dir_name": "tdd-vitest-typescript",
+  "author": "Emz1998",
+  "source_url": "https://github.com/Emz1998/nexly-notes",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Emz1998/nexly-notes",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

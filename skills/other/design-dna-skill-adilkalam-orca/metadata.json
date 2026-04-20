@@ -7,5 +7,12 @@
   "dir_name": "design-dna-skill-adilkalam-orca",
   "category": "other",
   "github_path": "skills/design-dna-skill",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "adilkalam",
+  "source_url": "https://github.com/adilkalam/orca/blob/main/skills/design-dna-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ORCA-OS Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

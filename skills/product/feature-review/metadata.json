@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:47.481836Z",
   "github_path": "plugins/imbue/skills/feature-review",
   "github_branch": "main",
-  "dir_name": "feature-review"
+  "dir_name": "feature-review",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/imbue/skills/feature-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

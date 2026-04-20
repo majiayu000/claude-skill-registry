@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/compatibility-testing",
   "github_branch": "main",
-  "dir_name": "compatibility-testing-proffesor-for-testin-agentic-qe"
+  "dir_name": "compatibility-testing-proffesor-for-testin-agentic-qe",
+  "author": "proffesor-for-testing",
+  "source_url": "https://github.com/proffesor-for-testing/agentic-qe/blob/main/.claude/skills/compatibility-testing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Agentic QE Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

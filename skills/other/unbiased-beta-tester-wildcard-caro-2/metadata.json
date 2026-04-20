@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/wildcard/caro",
-  "dir_name": "unbiased-beta-tester-wildcard-caro-2"
+  "dir_name": "unbiased-beta-tester-wildcard-caro-2",
+  "author": "wildcard",
+  "source_url": "https://github.com/wildcard/caro/blob/main/.claude/skills/unbiased-beta-tester/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -9,5 +9,12 @@
   "github_path": "astrochart/skills/ui-ux-pro-max",
   "github_branch": "master",
   "dir_name": "ui-ux-pro-max-anhxuanpham-astro-chart",
-  "downloaded_at": "2026-02-05T05:48:38.634574Z"
+  "downloaded_at": "2026-02-05T05:48:38.634574Z",
+  "author": "anhxuanpham",
+  "source_url": "https://github.com/anhxuanpham/astro-chart/blob/master/astrochart/skills/ui-ux-pro-max/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anhxuanpham/astro-chart/blob/master/astrochart/skills/ui-ux-pro-max/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/austinjan/aaagent-rs",
   "downloaded_at": "2026-02-02T04:53:28.041340Z",
   "dir_name": "spec-ui-component",
-  "category": "other"
+  "category": "other",
+  "author": "austinjan",
+  "source_url": "https://github.com/austinjan/aaagent-rs/blob/main/.claude/skills/spec-ui-component/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 austinjan",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

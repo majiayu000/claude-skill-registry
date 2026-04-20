@@ -7,5 +7,12 @@
   "dir_name": "sns-itsmostafa-aws-agent-skills-a3d4bfa9",
   "category": "other",
   "github_path": "skills/sns",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "itsmostafa",
+  "source_url": "https://github.com/itsmostafa/aws-agent-skills/blob/main/skills/sns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

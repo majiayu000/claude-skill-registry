@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:19.612405Z",
   "github_path": "skills/priority-optimization-assistant",
   "github_branch": "main",
-  "dir_name": "priority-optimization-assistant"
+  "dir_name": "priority-optimization-assistant",
+  "author": "chaorenex1",
+  "source_url": "https://github.com/chaorenex1/coding-workflow/blob/main/skills/priority-optimization-assistant/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 chaorenex1",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

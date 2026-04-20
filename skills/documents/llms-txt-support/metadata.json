@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:57.935405Z",
   "github_path": "agentic/code/addons/doc-intelligence/skills/llms-txt-support",
   "github_branch": "main",
-  "dir_name": "llms-txt-support"
+  "dir_name": "llms-txt-support",
+  "author": "jmagly",
+  "source_url": "https://github.com/jmagly/ai-writing-guide/blob/main/agentic/code/addons/doc-intelligence/skills/llms-txt-support/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Joe Magly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

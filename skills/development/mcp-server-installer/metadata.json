@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:47.699373Z",
   "github_path": "py-plugin/skills/mcp-server-installer",
   "github_branch": "main",
-  "dir_name": "mcp-server-installer"
+  "dir_name": "mcp-server-installer",
+  "author": "daispacy",
+  "source_url": "https://github.com/daispacy/py-claude-marketplace/blob/main/py-plugin/skills/mcp-server-installer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/daispacy/py-claude-marketplace/blob/main/py-plugin/skills/mcp-server-installer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

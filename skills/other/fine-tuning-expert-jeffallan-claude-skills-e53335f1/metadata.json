@@ -7,5 +7,12 @@
   "dir_name": "fine-tuning-expert-jeffallan-claude-skills-e53335f1",
   "category": "other",
   "github_path": "skills/fine-tuning-expert",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Jeffallan",
+  "source_url": "https://github.com/Jeffallan/claude-skills/blob/main/skills/fine-tuning-expert/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

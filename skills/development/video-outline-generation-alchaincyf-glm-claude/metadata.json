@@ -11,5 +11,12 @@
   "stars": 14,
   "github_path": "skills/video-outline-generation",
   "github_branch": "main",
-  "dir_name": "video-outline-generation-alchaincyf-glm-claude"
+  "dir_name": "video-outline-generation-alchaincyf-glm-claude",
+  "author": "alchaincyf",
+  "source_url": "https://github.com/alchaincyf/glm-claude/blob/main/skills/video-outline-generation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 GLM Claude Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

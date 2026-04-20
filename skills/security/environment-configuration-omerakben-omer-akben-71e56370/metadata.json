@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:40.606216Z",
   "github_path": ".claude/skills/environment-configuration-skill",
   "github_branch": "main",
-  "dir_name": "environment-configuration-omerakben-omer-akben-71e56370"
+  "dir_name": "environment-configuration-omerakben-omer-akben-71e56370",
+  "author": "omerakben",
+  "source_url": "https://github.com/omerakben/omer-akben/blob/main/.claude/skills/environment-configuration-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/omerakben/omer-akben/blob/main/.claude/skills/environment-configuration-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

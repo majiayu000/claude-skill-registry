@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/deployment-procedures",
   "github_branch": "main",
-  "dir_name": "deployment-procedures"
+  "dir_name": "deployment-procedures",
+  "author": "xenitV1",
+  "source_url": "https://github.com/xenitV1/claude-code-maestro/blob/main/skills/deployment-procedures/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 xenitV1 (https://github.com/xenitV1)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:48.904826Z",
   "github_path": "plugins/sanctum/skills/file-analysis",
   "github_branch": "main",
-  "dir_name": "file-analysis"
+  "dir_name": "file-analysis",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/sanctum/skills/file-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:22.955584Z",
   "github_path": "plugins/titanium-toolkit/skills/devops-patterns",
   "github_branch": "main",
-  "dir_name": "devops-patterns-webdevtodayjason-titanium-plugins-96c13c11"
+  "dir_name": "devops-patterns-webdevtodayjason-titanium-plugins-96c13c11",
+  "author": "webdevtodayjason",
+  "source_url": "https://github.com/webdevtodayjason/titanium-plugins/blob/main/plugins/titanium-toolkit/skills/devops-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jason Brashear (Titanium Computing)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

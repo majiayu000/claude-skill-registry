@@ -7,5 +7,12 @@
   "dir_name": "doc-blueprint-arbgjr-satra-6ba997e8",
   "category": "other",
   "github_path": ".claude/skills/doc-blueprint",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "arbgjr",
+  "source_url": "https://github.com/arbgjr/satra/blob/main/.claude/skills/doc-blueprint/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) [year] [fullname]",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

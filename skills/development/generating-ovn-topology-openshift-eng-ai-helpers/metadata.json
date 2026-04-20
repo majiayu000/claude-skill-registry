@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:18.918615Z",
   "github_path": "plugins/openshift/skills/generating-ovn-topology",
   "github_branch": "main",
-  "dir_name": "generating-ovn-topology-openshift-eng-ai-helpers"
+  "dir_name": "generating-ovn-topology-openshift-eng-ai-helpers",
+  "author": "openshift-eng",
+  "source_url": "https://github.com/openshift-eng/ai-helpers/blob/main/plugins/openshift/skills/generating-ovn-topology/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/openshift-eng/ai-helpers/blob/main/plugins/openshift/skills/generating-ovn-topology/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

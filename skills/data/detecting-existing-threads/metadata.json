@@ -5,5 +5,12 @@
   "description": "Detects existing PR review threads to prevent duplicate comments. Use BEFORE posting any inline comments. Fetches resolved and open threads, then matches against planned findings.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:01:36.319876Z",
-  "dir_name": "detecting-existing-threads"
+  "dir_name": "detecting-existing-threads",
+  "author": "bitwarden",
+  "source_url": "https://github.com/bitwarden/ai-plugins",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bitwarden/ai-plugins",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

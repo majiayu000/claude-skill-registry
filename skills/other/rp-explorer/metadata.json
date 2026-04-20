@@ -7,5 +7,12 @@
   "dir_name": "rp-explorer",
   "category": "other",
   "github_path": ".claude/skills/rp-explorer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "tfunk1030",
+  "source_url": "https://github.com/tfunk1030/vibe/blob/main/.claude/skills/rp-explorer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tfunk1030/vibe/blob/main/.claude/skills/rp-explorer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

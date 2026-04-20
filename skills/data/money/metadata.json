@@ -5,5 +5,12 @@
   "source": "github.com/randysalars/dreamweaving",
   "downloaded_at": "2026-02-04T03:16:09.438698Z",
   "dir_name": "money",
-  "category": "data"
+  "category": "data",
+  "author": "randysalars",
+  "source_url": "https://github.com/randysalars/dreamweaving/blob/main/web-ui/src/content/money/why-ownership-beats-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/randysalars/dreamweaving/blob/main/web-ui/src/content/money/why-ownership-beats-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

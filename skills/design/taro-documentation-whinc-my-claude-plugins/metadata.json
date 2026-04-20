@@ -5,5 +5,12 @@
   "description": "This skill should be used when the user mentions \"Taro\" in any technical context, asks about \"Taro API\", \"Taro components\", \"Taro configuration\", \"Taro development\", \"Taro project\", \"mini program with",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:18.655949Z",
-  "dir_name": "taro-documentation-whinc-my-claude-plugins"
+  "dir_name": "taro-documentation-whinc-my-claude-plugins",
+  "author": "whinc",
+  "source_url": "https://github.com/whinc/my-claude-plugins",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/whinc/my-claude-plugins",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

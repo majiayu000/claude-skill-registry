@@ -5,5 +5,12 @@
   "source": "github.com/manastalukdar/claude-devstudio",
   "downloaded_at": "2026-02-02T03:11:49.779193Z",
   "dir_name": "owasp-check",
-  "category": "other"
+  "category": "other",
+  "author": "manastalukdar",
+  "source_url": "https://github.com/manastalukdar/claude-devstudio/blob/main/skills/owasp-check/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brenner Cruvinel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

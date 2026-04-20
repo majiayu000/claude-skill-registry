@@ -5,5 +5,12 @@
   "source": "github.com/ttmouse/skills",
   "downloaded_at": "2026-01-27T04:10:34.204963Z",
   "dir_name": "product-master",
-  "category": "data"
+  "category": "data",
+  "author": "ttmouse",
+  "source_url": "https://github.com/ttmouse/skills/blob/main/product-master/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ttmouse/skills/blob/main/product-master/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

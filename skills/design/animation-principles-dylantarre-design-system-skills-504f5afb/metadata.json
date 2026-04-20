@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:19.067962Z",
   "github_path": "skills/patterns/animation-principles",
   "github_branch": "main",
-  "dir_name": "animation-principles-dylantarre-design-system-skills-504f5afb"
+  "dir_name": "animation-principles-dylantarre-design-system-skills-504f5afb",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/design-system-skills/blob/main/skills/patterns/animation-principles/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "stars": 2,
   "github_path": ".claude/skills/websocket-integration-testing",
   "github_branch": "main",
-  "dir_name": "websocket-integration-testing-krzemienski-claude-mobile-expo-030adafc"
+  "dir_name": "websocket-integration-testing-krzemienski-claude-mobile-expo-030adafc",
+  "author": "krzemienski",
+  "source_url": "https://github.com/krzemienski/claude-mobile-expo/blob/main/.claude/skills/websocket-integration-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/krzemienski/claude-mobile-expo/blob/main/.claude/skills/websocket-integration-testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

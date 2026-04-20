@@ -7,5 +7,12 @@
   "dir_name": "mcp-developer",
   "category": "other",
   "github_path": "skills/mcp-developer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Jeffallan",
+  "source_url": "https://github.com/Jeffallan/claude-skills/blob/main/skills/mcp-developer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

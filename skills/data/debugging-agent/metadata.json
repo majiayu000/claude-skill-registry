@@ -5,5 +5,12 @@
   "source": "github.com/psh355q-ui/szdi57465yt",
   "downloaded_at": "2026-01-27T03:55:29.623731Z",
   "dir_name": "debugging-agent",
-  "category": "data"
+  "category": "data",
+  "author": "psh355q-ui",
+  "source_url": "https://github.com/psh355q-ui/szdi57465yt/blob/main/backend/ai/skills/system/debugging-agent/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/psh355q-ui/szdi57465yt/blob/main/backend/ai/skills/system/debugging-agent/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

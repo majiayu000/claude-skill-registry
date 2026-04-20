@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:27.498769Z",
   "github_path": "skills_all/ga4-privacy-compliance",
   "github_branch": "main",
-  "dir_name": "ga4-privacy-compliance-microck-ordinary-claude-skil"
+  "dir_name": "ga4-privacy-compliance-microck-ordinary-claude-skil",
+  "author": "Microck",
+  "source_url": "https://github.com/Microck/ordinary-claude-skills/blob/main/skills_all/ga4-privacy-compliance/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Microck",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

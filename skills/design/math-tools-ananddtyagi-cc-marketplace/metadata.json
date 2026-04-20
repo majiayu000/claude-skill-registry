@@ -5,5 +5,12 @@
   "description": "Deterministic mathematical computation using SymPy. Use for ANY math operation requiring exact/verified results - basic arithmetic, algebra (simplify, expand, factor, solve equations), calculus (deriv",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:16.459732Z",
-  "dir_name": "math-tools-ananddtyagi-cc-marketplace"
+  "dir_name": "math-tools-ananddtyagi-cc-marketplace",
+  "author": "ananddtyagi",
+  "source_url": "https://github.com/ananddtyagi/cc-marketplace",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ananddtyagi/cc-marketplace",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

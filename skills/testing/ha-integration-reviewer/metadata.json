@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:36.015079Z",
   "github_path": "src/ha-integration-reviewer",
   "github_branch": "main",
-  "dir_name": "ha-integration-reviewer"
+  "dir_name": "ha-integration-reviewer",
+  "author": "niracler",
+  "source_url": "https://github.com/niracler/skill/blob/main/src/ha-integration-reviewer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Niracler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

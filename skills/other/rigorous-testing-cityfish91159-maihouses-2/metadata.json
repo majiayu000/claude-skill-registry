@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/cityfish91159/maihouses",
-  "dir_name": "rigorous-testing-cityfish91159-maihouses-2"
+  "dir_name": "rigorous-testing-cityfish91159-maihouses-2",
+  "author": "cityfish91159",
+  "source_url": "https://github.com/cityfish91159/maihouses/blob/main/.claude/skills/rigorous_testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cityfish91159/maihouses/blob/main/.claude/skills/rigorous_testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

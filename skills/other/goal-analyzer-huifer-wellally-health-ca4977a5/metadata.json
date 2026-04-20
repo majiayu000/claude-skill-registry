@@ -7,5 +7,12 @@
   "dir_name": "goal-analyzer-huifer-wellally-health-ca4977a5",
   "category": "other",
   "github_path": ".claude/skills/goal-analyzer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "huifer",
+  "source_url": "https://github.com/huifer/WellAlly-health/blob/main/.claude/skills/goal-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 WellAlly Tech",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

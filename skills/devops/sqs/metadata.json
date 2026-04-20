@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:28:05.948761Z",
   "github_path": "skills/sqs",
   "github_branch": "main",
-  "dir_name": "sqs"
+  "dir_name": "sqs",
+  "author": "itsmostafa",
+  "source_url": "https://github.com/itsmostafa/aws-agent-skills/blob/main/skills/sqs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

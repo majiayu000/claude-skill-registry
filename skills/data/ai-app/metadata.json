@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/laguagu/claude-code-nextjs-skills",
-  "dir_name": "ai-app"
+  "dir_name": "ai-app",
+  "author": "laguagu",
+  "source_url": "https://github.com/laguagu/claude-code-nextjs-skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 laguagu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

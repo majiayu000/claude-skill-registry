@@ -5,5 +5,12 @@
   "source": "github.com/GolferGeek/orchestrator-ai",
   "downloaded_at": "2026-02-02T02:28:20.636467Z",
   "dir_name": "worktree-manager-skill",
-  "category": "other"
+  "category": "other",
+  "author": "GolferGeek",
+  "source_url": "https://github.com/GolferGeek/orchestrator-ai/blob/main/.claude/skills/worktree-manager-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024 GolferGeek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

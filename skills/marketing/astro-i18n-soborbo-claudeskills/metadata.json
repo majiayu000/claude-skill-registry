@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "astro-i18n",
   "github_branch": "main",
-  "dir_name": "astro-i18n-soborbo-claudeskills"
+  "dir_name": "astro-i18n-soborbo-claudeskills",
+  "author": "Soborbo",
+  "source_url": "https://github.com/Soborbo/claudeskills/blob/main/astro-i18n/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Soborbo/claudeskills/blob/main/astro-i18n/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

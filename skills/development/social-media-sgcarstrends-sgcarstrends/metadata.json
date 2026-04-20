@@ -7,5 +7,12 @@
   "stars": 14,
   "source": "github.com/sgcarstrends/sgcarstrends",
   "downloaded_at": "2026-01-24T16:15:53.239322Z",
-  "dir_name": "social-media-sgcarstrends-sgcarstrends"
+  "dir_name": "social-media-sgcarstrends-sgcarstrends",
+  "author": "sgcarstrends",
+  "source_url": "https://github.com/sgcarstrends/sgcarstrends/blob/main/.claude/skills/social-media/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SG Cars Trends",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

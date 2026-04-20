@@ -10,5 +10,12 @@
   "stars": 12,
   "github_path": "skills/prompt-engineer",
   "github_branch": "main",
-  "dir_name": "prompt-engineer"
+  "dir_name": "prompt-engineer",
+  "author": "Jeffallan",
+  "source_url": "https://github.com/Jeffallan/claude-skills/blob/main/skills/prompt-engineer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

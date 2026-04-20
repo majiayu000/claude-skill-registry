@@ -7,5 +7,12 @@
   "dir_name": "philosophy-compliance-workflow",
   "category": "other",
   "github_path": ".claude/skills/philosophy-compliance-workflow",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "rysweet",
+  "source_url": "https://github.com/rysweet/AzureHayMaker/blob/main/.claude/skills/philosophy-compliance-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ryan Sweet / Microsoft",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

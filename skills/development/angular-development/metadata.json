@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:37.718800Z",
   "github_path": "plugins/luxor-frontend-essentials/skills/angular-development",
   "github_branch": "main",
-  "dir_name": "angular-development"
+  "dir_name": "angular-development",
+  "author": "manutej",
+  "source_url": "https://github.com/manutej/luxor-claude-marketplace/blob/main/plugins/luxor-frontend-essentials/skills/angular-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/manutej/luxor-claude-marketplace/blob/main/plugins/luxor-frontend-essentials/skills/angular-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

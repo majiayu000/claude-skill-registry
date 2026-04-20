@@ -5,5 +5,12 @@
   "source": "github.com/RKiding/Awesome-finance-skills",
   "downloaded_at": "2026-02-04T02:12:37.349194Z",
   "dir_name": "alphaear-signal-tracker",
-  "category": "data"
+  "category": "data",
+  "author": "RKiding",
+  "source_url": "https://github.com/RKiding/Awesome-finance-skills/blob/main/skills/alphaear-signal-tracker/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RKiding/Awesome-finance-skills/blob/main/skills/alphaear-signal-tracker/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

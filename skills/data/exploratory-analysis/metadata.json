@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "exploratory-analysis"
+  "dir_name": "exploratory-analysis",
+  "author": "tilmon-engineering",
+  "source_url": "https://github.com/tilmon-engineering/claude-skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tilmon Engineering",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

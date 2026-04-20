@@ -10,5 +10,12 @@
   "stars": 12,
   "github_path": ".claude/skills/morphir-architect",
   "github_branch": "main",
-  "dir_name": "morphir-architect-finos-morphir-dotnet"
+  "dir_name": "morphir-architect-finos-morphir-dotnet",
+  "author": "finos",
+  "source_url": "https://github.com/finos/morphir-dotnet/blob/main/.claude/skills/morphir-architect/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/finos/morphir-dotnet/blob/main/.claude/skills/morphir-architect/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

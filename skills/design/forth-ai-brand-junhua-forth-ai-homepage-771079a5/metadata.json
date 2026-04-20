@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/forth-ai-brand",
   "github_branch": "main",
-  "dir_name": "forth-ai-brand-junhua-forth-ai-homepage-771079a5"
+  "dir_name": "forth-ai-brand-junhua-forth-ai-homepage-771079a5",
+  "author": "junhua",
+  "source_url": "https://github.com/junhua/forth-ai-homepage/blob/main/.claude/skills/forth-ai-brand/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/junhua/forth-ai-homepage/blob/main/.claude/skills/forth-ai-brand/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

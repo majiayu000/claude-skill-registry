@@ -11,5 +11,12 @@
   ],
   "stars": 5,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "claude-code-mechanism-selector"
+  "dir_name": "claude-code-mechanism-selector",
+  "author": "jaeyeom",
+  "source_url": "https://github.com/jaeyeom/experimental",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jaeyeom/experimental",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

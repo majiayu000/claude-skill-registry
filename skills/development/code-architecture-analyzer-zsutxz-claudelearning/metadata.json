@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/code-architecture-analyzer",
   "github_branch": "main",
-  "dir_name": "code-architecture-analyzer-zsutxz-claudelearning"
+  "dir_name": "code-architecture-analyzer-zsutxz-claudelearning",
+  "author": "zsutxz",
+  "source_url": "https://github.com/zsutxz/ClaudeLearning/blob/main/.claude/skills/code-architecture-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Gomoku Game Project",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Vector export/import, embedding caching, provider migration",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:01:18.388017Z",
-  "dir_name": "koan-vector-migration"
+  "dir_name": "koan-vector-migration",
+  "author": "sylin-org",
+  "source_url": "https://github.com/sylin-org/koan-framework",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sylin-org/koan-framework",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

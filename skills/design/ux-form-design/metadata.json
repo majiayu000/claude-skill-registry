@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/ux-form-design",
   "github_branch": "main",
-  "dir_name": "ux-form-design"
+  "dir_name": "ux-form-design",
+  "author": "matthewharwood",
+  "source_url": "https://github.com/matthewharwood/fantasy-phonics/blob/main/.claude/skills/ux-form-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) HTML5 Boilerplate",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

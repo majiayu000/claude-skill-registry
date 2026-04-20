@@ -10,5 +10,12 @@
   "stars": 44,
   "github_path": "skills/coding-principles",
   "github_branch": "main",
-  "dir_name": "coding-principles"
+  "dir_name": "coding-principles",
+  "author": "shinpr",
+  "source_url": "https://github.com/shinpr/claude-code-workflows/blob/main/skills/coding-principles/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Shinsuke Kagawa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

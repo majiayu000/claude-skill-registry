@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:32.865610Z",
   "github_path": "training-v1/concierge-ts-v1/.agents/skills/agentuity-cli-cloud-env-push",
   "github_branch": "main",
-  "dir_name": "agentuity-cli-cloud-env-push"
+  "dir_name": "agentuity-cli-cloud-env-push",
+  "author": "agentuity",
+  "source_url": "https://github.com/agentuity/examples/blob/main/training-v1/concierge-ts-v1/.agents/skills/agentuity-cli-cloud-env-push/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 Agentuity, Inc.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

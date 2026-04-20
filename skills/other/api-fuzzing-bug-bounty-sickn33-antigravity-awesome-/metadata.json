@@ -7,5 +7,12 @@
   "dir_name": "api-fuzzing-bug-bounty-sickn33-antigravity-awesome-",
   "category": "other",
   "github_path": "skills/api-fuzzing-bug-bounty",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/api-fuzzing-bug-bounty/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

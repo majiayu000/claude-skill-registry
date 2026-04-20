@@ -9,5 +9,12 @@
   "github_path": "Skills/Transcriptomics/small-rna-seq/mirdeep2-analysis",
   "github_branch": "main",
   "dir_name": "mirdeep2-analysis",
-  "downloaded_at": "2026-02-05T01:44:38.917025Z"
+  "downloaded_at": "2026-02-05T01:44:38.917025Z",
+  "author": "mdbabumiamssm",
+  "source_url": "https://github.com/mdbabumiamssm/LLMs-Universal-Life-Science-and-Clinical-Skills-/blob/main/Skills/Transcriptomics/small-rna-seq/mirdeep2-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MD BABU MIA , PHD",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

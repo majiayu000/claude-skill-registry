@@ -9,5 +9,12 @@
   "github_path": ".codex/skills/posit-open-source-create-release-checklist",
   "github_branch": "main",
   "dir_name": "posit-open-source-create-release-checklist",
-  "downloaded_at": "2026-02-05T01:45:01.599765Z"
+  "downloaded_at": "2026-02-05T01:45:01.599765Z",
+  "author": "emraher",
+  "source_url": "https://github.com/emraher/eerskills/blob/main/.codex/skills/posit-open-source-create-release-checklist/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/emraher/eerskills/blob/main/.codex/skills/posit-open-source-create-release-checklist/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "Implementation guide for creating well-formed Jira user stories with acceptance criteria",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:18.727011Z",
-  "dir_name": "create-jira-story"
+  "dir_name": "create-jira-story",
+  "author": "openshift-eng",
+  "source_url": "https://github.com/openshift-eng/ai-helpers",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/openshift-eng/ai-helpers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

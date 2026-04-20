@@ -5,5 +5,12 @@
   "source": "github.com/TheOrcDev/8bitcn-ui",
   "downloaded_at": "2026-02-04T02:03:17.747379Z",
   "dir_name": "rerender-lazy-state",
-  "category": "data"
+  "category": "data",
+  "author": "TheOrcDev",
+  "source_url": "https://github.com/TheOrcDev/8bitcn-ui/blob/main/.claude/skills/rerender-lazy-state/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 8bitcn",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

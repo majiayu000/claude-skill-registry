@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:34.270161Z",
   "github_path": "domain-applications/application-patterns",
   "github_branch": "main",
-  "dir_name": "application-patterns-miles990-claude-software-skil"
+  "dir_name": "application-patterns-miles990-claude-software-skil",
+  "author": "miles990",
+  "source_url": "https://github.com/miles990/claude-software-skills/blob/main/domain-applications/application-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

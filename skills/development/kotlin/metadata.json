@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:49.166178Z",
   "github_path": ".claude/skills/languages/kotlin",
   "github_branch": "main",
-  "dir_name": "kotlin"
+  "dir_name": "kotlin",
+  "author": "dralgorhythm",
+  "source_url": "https://github.com/dralgorhythm/claude-agentic-framework/blob/main/.claude/skills/languages/kotlin/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dralgorhythm/claude-agentic-framework/blob/main/.claude/skills/languages/kotlin/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

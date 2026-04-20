@@ -7,5 +7,12 @@
   "dir_name": "using-loaded-knowledge-adilkalam-orca",
   "category": "other",
   "github_path": "skills/using-loaded-knowledge",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "adilkalam",
+  "source_url": "https://github.com/adilkalam/orca/blob/main/skills/using-loaded-knowledge/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ORCA-OS Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

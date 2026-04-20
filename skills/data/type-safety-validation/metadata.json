@@ -5,5 +5,12 @@
   "source": "github.com/ArieGoldkin/ai-agent-hub",
   "downloaded_at": "2026-01-28T03:09:13.700866Z",
   "dir_name": "type-safety-validation",
-  "category": "data"
+  "category": "data",
+  "author": "ArieGoldkin",
+  "source_url": "https://github.com/ArieGoldkin/ai-agent-hub/blob/main/skills/type-safety-validation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Arie Goldkin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

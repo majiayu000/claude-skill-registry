@@ -5,5 +5,12 @@
   "description": "Triggers and monitors Jellyfin library scans, shows scan progress, displays newly added content, and verifies library statistics. Use this after adding new media, when content doesn't appear in Jellyf",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:08:56.019145Z",
-  "dir_name": "jellyfin-library-scan"
+  "dir_name": "jellyfin-library-scan",
+  "author": "theflysurfer",
+  "source_url": "https://github.com/theflysurfer/claude-skills-marketplace",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/theflysurfer/claude-skills-marketplace",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

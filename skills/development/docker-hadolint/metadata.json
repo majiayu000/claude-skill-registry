@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:52.470279Z",
   "github_path": "Dev/i18n/pt/Symfony/skills/docker-hadolint",
   "github_branch": "main",
-  "dir_name": "docker-hadolint"
+  "dir_name": "docker-hadolint",
+  "author": "TheBeardedBearSAS",
+  "source_url": "https://github.com/TheBeardedBearSAS/claude-craft/blob/main/Dev/i18n/pt/Symfony/skills/docker-hadolint/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 TheBeardedCTO",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "This skill should be used when the user asks to \"generate Rails code\", \"create a model\", \"create a controller\", \"add a migration\", \"write Rails tests\", \"set up background jobs\", \"configure Rails app\",",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:34.830299Z",
-  "dir_name": "rails-code-generation"
+  "dir_name": "rails-code-generation",
+  "author": "FlorinPopaCodes",
+  "source_url": "https://github.com/FlorinPopaCodes/claude-marketplace",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/FlorinPopaCodes/claude-marketplace",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:47.173604Z",
   "github_path": ".claude/skills/analyzer-architecture-review",
   "github_branch": "main",
-  "dir_name": "analyzer-architecture-review-ss49919201-keeput"
+  "dir_name": "analyzer-architecture-review-ss49919201-keeput",
+  "author": "ss49919201",
+  "source_url": "https://github.com/ss49919201/keeput/blob/main/.claude/skills/analyzer-architecture-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Shinya Sakae",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

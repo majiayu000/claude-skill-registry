@@ -7,5 +7,12 @@
   "dir_name": "custom-agents-githubnext-gh-aw",
   "category": "other",
   "github_path": "skills/custom-agents",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "githubnext",
+  "source_url": "https://github.com/githubnext/gh-aw/blob/main/skills/custom-agents/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright GitHub, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

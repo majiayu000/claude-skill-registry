@@ -5,5 +5,12 @@
   "source": "github.com/emraher/eerskills",
   "downloaded_at": "2026-02-04T02:58:25.938073Z",
   "dir_name": "cc-polymath-discover-ebpf",
-  "category": "data"
+  "category": "data",
+  "author": "emraher",
+  "source_url": "https://github.com/emraher/eerskills/blob/main/.claude/skills/cc-polymath-discover-ebpf/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/emraher/eerskills/blob/main/.claude/skills/cc-polymath-discover-ebpf/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T07:54:21.891026Z",
   "github_path": "",
   "github_branch": "main",
-  "dir_name": "allaymc-plugin-dev-allaymc-allayskill"
+  "dir_name": "allaymc-plugin-dev-allaymc-allayskill",
+  "author": "AllayMC",
+  "source_url": "https://github.com/AllayMC/AllaySkill",
+  "license": "LGPL-2.1",
+  "copyright": "Copyright (C) 1991, 1999 Free Software Foundation, Inc.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

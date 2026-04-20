@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/dependency-skill",
   "github_branch": "main",
-  "dir_name": "dependency-skill-maneeshanif-cli-todo-app-speckit-2bd3ed0f"
+  "dir_name": "dependency-skill-maneeshanif-cli-todo-app-speckit-2bd3ed0f",
+  "author": "maneeshanif",
+  "source_url": "https://github.com/maneeshanif/cli-todo-app-speckit/blob/main/.claude/skills/dependency-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 maneeshanif",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

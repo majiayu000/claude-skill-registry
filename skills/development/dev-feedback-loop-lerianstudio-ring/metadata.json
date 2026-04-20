@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:32.387394Z",
   "github_path": "dev-team/skills/dev-feedback-loop",
   "github_branch": "main",
-  "dir_name": "dev-feedback-loop-lerianstudio-ring"
+  "dir_name": "dev-feedback-loop-lerianstudio-ring",
+  "author": "LerianStudio",
+  "source_url": "https://github.com/LerianStudio/ring/blob/main/dev-team/skills/dev-feedback-loop/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LerianStudio/ring/blob/main/dev-team/skills/dev-feedback-loop/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "api-designer-daffy0208-ai-dev-standards-e6f0fbac",
   "category": "other",
   "github_path": "skills/api-designer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "daffy0208",
+  "source_url": "https://github.com/daffy0208/ai-dev-standards/blob/main/skills/api-designer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AI Dev Standards Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

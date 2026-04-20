@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:39.024775Z",
   "github_path": "plugin/skills/documenting-debugging-workflows",
   "github_branch": "main",
-  "dir_name": "documenting-debugging-workflows-cipherstash-cipherpowers"
+  "dir_name": "documenting-debugging-workflows-cipherstash-cipherpowers",
+  "author": "cipherstash",
+  "source_url": "https://github.com/cipherstash/cipherpowers/blob/main/plugin/skills/documenting-debugging-workflows/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cipherstash/cipherpowers/blob/main/plugin/skills/documenting-debugging-workflows/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

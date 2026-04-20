@@ -7,5 +7,12 @@
   "dir_name": "voice-create",
   "category": "other",
   "github_path": "plugins/voice/skills/voice-create",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jmagly",
+  "source_url": "https://github.com/jmagly/ai-writing-guide/blob/main/plugins/voice/skills/voice-create/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Joe Magly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/sequenzia/claude-alchemy",
   "dir_name": "create-tasks",
-  "downloaded_at": "2026-02-15T01:37:38.392955Z"
+  "downloaded_at": "2026-02-15T01:37:38.392955Z",
+  "author": "sequenzia",
+  "source_url": "https://github.com/sequenzia/claude-alchemy/blob/main/plugins/sdd/skills/create-tasks/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Stephen Sequenzia",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

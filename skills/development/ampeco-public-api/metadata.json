@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "ampeco-public-api"
+  "dir_name": "ampeco-public-api",
+  "author": "ampeco",
+  "source_url": "https://github.com/ampeco/claude-code-ampeco-public-api-skill",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 AMPECO",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

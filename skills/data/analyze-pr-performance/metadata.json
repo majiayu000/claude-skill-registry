@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 870,
   "source": "github.com/kodustech/kodus-ai",
-  "dir_name": "analyze-pr-performance"
+  "dir_name": "analyze-pr-performance",
+  "author": "kodustech",
+  "source_url": "https://github.com/kodustech/kodus-ai",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kodustech/kodus-ai",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

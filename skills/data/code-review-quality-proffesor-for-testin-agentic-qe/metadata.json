@@ -5,5 +5,12 @@
   "source": "github.com/proffesor-for-testing/agentic-qe",
   "downloaded_at": "2026-02-04T02:40:58.293322Z",
   "dir_name": "code-review-quality-proffesor-for-testin-agentic-qe",
-  "category": "data"
+  "category": "data",
+  "author": "proffesor-for-testing",
+  "source_url": "https://github.com/proffesor-for-testing/agentic-qe/blob/main/.claude/skills/code-review-quality/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Agentic QE Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -9,5 +9,12 @@
   "github_path": "skills/browser",
   "github_branch": "main",
   "dir_name": "browser-ajianaz-skills-collection",
-  "downloaded_at": "2026-02-05T01:44:19.510480Z"
+  "downloaded_at": "2026-02-05T01:44:19.510480Z",
+  "author": "ajianaz",
+  "source_url": "https://github.com/ajianaz/skills-collection/blob/main/skills/browser/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024 Anaz S. Aji",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

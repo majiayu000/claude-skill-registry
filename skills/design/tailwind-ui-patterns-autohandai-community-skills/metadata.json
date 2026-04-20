@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:59.124134Z",
   "github_path": "tailwind-ui-patterns",
   "github_branch": "main",
-  "dir_name": "tailwind-ui-patterns-autohandai-community-skills"
+  "dir_name": "tailwind-ui-patterns-autohandai-community-skills",
+  "author": "autohandai",
+  "source_url": "https://github.com/autohandai/community-skills/blob/main/tailwind-ui-patterns/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/autohandai/community-skills/blob/main/tailwind-ui-patterns/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

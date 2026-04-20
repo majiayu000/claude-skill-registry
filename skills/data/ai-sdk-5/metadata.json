@@ -5,5 +5,12 @@
   "source": "github.com/prowler-cloud/prowler",
   "downloaded_at": "2026-02-04T03:15:14.767257Z",
   "dir_name": "ai-sdk-5",
-  "category": "data"
+  "category": "data",
+  "author": "prowler-cloud",
+  "source_url": "https://github.com/prowler-cloud/prowler/blob/main/skills/ai-sdk-5/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/prowler-cloud/prowler/blob/main/skills/ai-sdk-5/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

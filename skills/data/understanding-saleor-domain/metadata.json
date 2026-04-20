@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:03.184597Z",
   "dir_name": "understanding-saleor-domain",
   "github_path": ".claude/skills/understanding-saleor-domain",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "saleor",
+  "source_url": "https://github.com/saleor/configurator/blob/main/.claude/skills/understanding-saleor-domain/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2024-2025, Saleor Commerce",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

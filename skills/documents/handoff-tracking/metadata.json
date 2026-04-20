@@ -5,5 +5,12 @@
   "description": "Create detailed handoff documents for session transitions. Captures task status,learnings, decisions, and next steps in a structured format that gets indexedfor future retrieval.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:32.242721Z",
-  "dir_name": "handoff-tracking"
+  "dir_name": "handoff-tracking",
+  "author": "LerianStudio",
+  "source_url": "https://github.com/LerianStudio/ring",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LerianStudio/ring",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

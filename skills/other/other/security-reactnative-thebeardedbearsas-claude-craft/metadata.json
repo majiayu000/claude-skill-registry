@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/TheBeardedBearSAS/claude-craft",
   "dir_name": "security-reactnative-thebeardedbearsas-claude-craft",
-  "downloaded_at": "2026-02-15T05:52:38.605888Z"
+  "downloaded_at": "2026-02-15T05:52:38.605888Z",
+  "author": "TheBeardedBearSAS",
+  "source_url": "https://github.com/TheBeardedBearSAS/claude-craft/blob/main/.claude/skills/security-reactnative/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 TheBeardedCTO",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

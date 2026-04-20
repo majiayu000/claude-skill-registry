@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/figma-implementation",
   "github_branch": "main",
-  "dir_name": "figma-implementation-toddmoy-protobox-966c0cc8"
+  "dir_name": "figma-implementation-toddmoy-protobox-966c0cc8",
+  "author": "toddmoy",
+  "source_url": "https://github.com/toddmoy/protobox/blob/main/.claude/skills/figma-implementation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/toddmoy/protobox/blob/main/.claude/skills/figma-implementation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

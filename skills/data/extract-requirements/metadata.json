@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "extract-requirements"
+  "dir_name": "extract-requirements",
+  "author": "PearlThoughts",
+  "source_url": "https://github.com/PearlThoughts/CodeCompass",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2024 PearlThoughts (https://pearlthoughts.com/)",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

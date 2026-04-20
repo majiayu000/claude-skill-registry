@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:26.569360Z",
   "github_path": ".archive/old-numbered-plugins/02-develop/skills/component-templates",
   "github_branch": "main",
-  "dir_name": "component-templates-vanman2024-dev-lifecycle-market"
+  "dir_name": "component-templates-vanman2024-dev-lifecycle-market",
+  "author": "vanman2024",
+  "source_url": "https://github.com/vanman2024/dev-lifecycle-marketplace/blob/main/.archive/old-numbered-plugins/02-develop/skills/component-templates/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vanman2024/dev-lifecycle-marketplace/blob/main/.archive/old-numbered-plugins/02-develop/skills/component-templates/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

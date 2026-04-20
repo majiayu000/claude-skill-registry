@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:17.550734Z",
   "dir_name": "youtube-harvester",
   "github_path": "plugins/reflex/skills/youtube-harvester",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "mindmorass",
+  "source_url": "https://github.com/mindmorass/reflex/blob/main/plugins/reflex/skills/youtube-harvester/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mindmorass/reflex/blob/main/plugins/reflex/skills/youtube-harvester/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

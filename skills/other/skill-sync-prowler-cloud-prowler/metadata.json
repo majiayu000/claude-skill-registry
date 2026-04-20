@@ -7,5 +7,12 @@
   "dir_name": "skill-sync-prowler-cloud-prowler",
   "category": "other",
   "github_path": "skills/skill-sync",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "prowler-cloud",
+  "source_url": "https://github.com/prowler-cloud/prowler/blob/main/skills/skill-sync/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/prowler-cloud/prowler/blob/main/skills/skill-sync/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

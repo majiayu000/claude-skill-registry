@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:18.042603Z",
   "dir_name": "get-release-dates",
   "github_path": "plugins/component-health/skills/get-release-dates",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "openshift-eng",
+  "source_url": "https://github.com/openshift-eng/ai-helpers/blob/main/plugins/component-health/skills/get-release-dates/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/openshift-eng/ai-helpers/blob/main/plugins/component-health/skills/get-release-dates/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

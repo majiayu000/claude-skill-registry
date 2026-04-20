@@ -5,5 +5,12 @@
   "source": "github.com/sgcarstrends/sgcarstrends",
   "downloaded_at": "2026-01-28T04:21:38.672864Z",
   "dir_name": "aws-monitoring",
-  "category": "other"
+  "category": "other",
+  "author": "sgcarstrends",
+  "source_url": "https://github.com/sgcarstrends/sgcarstrends/blob/main/.claude/skills/aws-monitoring/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SG Cars Trends",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

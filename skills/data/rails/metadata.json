@@ -5,5 +5,12 @@
   "source": "github.com/michsindlinger/agent-os-extended",
   "downloaded_at": "2026-01-30T01:30:01.130960Z",
   "dir_name": "rails",
-  "category": "data"
+  "category": "data",
+  "author": "michsindlinger",
+  "source_url": "https://github.com/michsindlinger/agent-os-extended/blob/main/agent-os/templates/skills/backend/rails/Skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/michsindlinger/agent-os-extended/blob/main/agent-os/templates/skills/backend/rails/Skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

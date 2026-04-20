@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:33.882254Z",
   "github_path": "docs/taskflow-vault/skills/engineering/kubernetes-essentials",
   "github_branch": "main",
-  "dir_name": "kubernetes-essentials-mjunaidca-mjs-agent-skills"
+  "dir_name": "kubernetes-essentials-mjunaidca-mjs-agent-skills",
+  "author": "mjunaidca",
+  "source_url": "https://github.com/mjunaidca/mjs-agent-skills/blob/main/docs/taskflow-vault/skills/engineering/kubernetes-essentials/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mjunaidca/mjs-agent-skills/blob/main/docs/taskflow-vault/skills/engineering/kubernetes-essentials/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

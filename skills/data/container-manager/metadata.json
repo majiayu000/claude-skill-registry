@@ -5,5 +5,12 @@
   "source": "github.com/TheSethRose/clawdbot-backup",
   "downloaded_at": "2026-02-02T04:55:21.799941Z",
   "dir_name": "container-manager",
-  "category": "data"
+  "category": "data",
+  "author": "TheSethRose",
+  "source_url": "https://github.com/TheSethRose/clawdbot-backup/blob/main/skills/container-manager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TheSethRose/clawdbot-backup/blob/main/skills/container-manager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

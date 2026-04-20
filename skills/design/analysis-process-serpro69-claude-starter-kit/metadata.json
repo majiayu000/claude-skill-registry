@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".github/templates/claude/skills/analysis-process",
   "github_branch": "main",
-  "dir_name": "analysis-process-serpro69-claude-starter-kit"
+  "dir_name": "analysis-process-serpro69-claude-starter-kit",
+  "author": "serpro69",
+  "source_url": "https://github.com/serpro69/claude-starter-kit/blob/main/.github/templates/claude/skills/analysis-process/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 - present; serpro69",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "stars": 3,
   "github_path": "skills/tech-debt-tracker",
   "github_branch": "main",
-  "dir_name": "tech-debt-tracker"
+  "dir_name": "tech-debt-tracker",
+  "author": "benreceveur",
+  "source_url": "https://github.com/benreceveur/claude-workflow-engine/blob/main/skills/tech-debt-tracker/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/benreceveur/claude-workflow-engine/blob/main/skills/tech-debt-tracker/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

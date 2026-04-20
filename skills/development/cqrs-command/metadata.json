@@ -5,5 +5,12 @@
   "description": "Use when creating or modifying a CQRS Command (Save, Create, Update, Delete) or command handler in .NET backend.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:48.586991Z",
-  "dir_name": "cqrs-command"
+  "dir_name": "cqrs-command",
+  "author": "duc01226",
+  "source_url": "https://github.com/duc01226/EasyPlatform",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Dang Phuoc Duc",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

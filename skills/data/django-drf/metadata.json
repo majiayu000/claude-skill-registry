@@ -5,5 +5,12 @@
   "source": "github.com/prowler-cloud/prowler",
   "downloaded_at": "2026-02-04T03:15:17.416910Z",
   "dir_name": "django-drf",
-  "category": "data"
+  "category": "data",
+  "author": "prowler-cloud",
+  "source_url": "https://github.com/prowler-cloud/prowler/blob/main/skills/django-drf/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/prowler-cloud/prowler/blob/main/skills/django-drf/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

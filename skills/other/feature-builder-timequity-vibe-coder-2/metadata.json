@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/timequity/vibe-coder",
-  "dir_name": "feature-builder-timequity-vibe-coder-2"
+  "dir_name": "feature-builder-timequity-vibe-coder-2",
+  "author": "timequity",
+  "source_url": "https://github.com/timequity/vibe-coder/blob/main/skills/feature-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 timequity",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "databases-mrgoonie-jackspace-claudeskillz-bd8c2aae",
   "category": "other",
   "github_path": "skills/databases_mrgoonie",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jackspace",
+  "source_url": "https://github.com/jackspace/ClaudeSkillz/blob/main/skills/databases_mrgoonie/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ClaudeSkillz Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

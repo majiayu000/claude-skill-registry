@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "amp-skill-creator"
+  "dir_name": "amp-skill-creator",
+  "author": "thurstonsand",
+  "source_url": "https://github.com/thurstonsand/ansiblonomicon",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/thurstonsand/ansiblonomicon",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -9,5 +9,12 @@
   "github_path": "skills/canvas-design",
   "github_branch": "main",
   "dir_name": "canvas-design-xsijie975-agents-skills",
-  "downloaded_at": "2026-02-05T05:43:57.399424Z"
+  "downloaded_at": "2026-02-05T05:43:57.399424Z",
+  "author": "XSIJIE975",
+  "source_url": "https://github.com/XSIJIE975/agents-skills/blob/main/skills/canvas-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/XSIJIE975/agents-skills/blob/main/skills/canvas-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

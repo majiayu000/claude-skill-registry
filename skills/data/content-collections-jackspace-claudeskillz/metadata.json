@@ -5,5 +5,12 @@
   "source": "github.com/jackspace/ClaudeSkillz",
   "downloaded_at": "2026-01-29T08:01:30.135001Z",
   "dir_name": "content-collections-jackspace-claudeskillz",
-  "category": "data"
+  "category": "data",
+  "author": "jackspace",
+  "source_url": "https://github.com/jackspace/ClaudeSkillz/blob/main/skills/content-collections/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ClaudeSkillz Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

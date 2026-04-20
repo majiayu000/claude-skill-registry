@@ -10,5 +10,12 @@
   "stars": 1,
   "github_path": "skills/validating-roadmap",
   "github_branch": "main",
-  "dir_name": "validating-roadmap-samjhecht-wrangler"
+  "dir_name": "validating-roadmap-samjhecht-wrangler",
+  "author": "samjhecht",
+  "source_url": "https://github.com/samjhecht/wrangler/blob/main/skills/validating-roadmap/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sam Hecht",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

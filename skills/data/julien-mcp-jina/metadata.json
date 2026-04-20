@@ -5,5 +5,12 @@
   "description": "Install Jina AI MCP for web scraping. Use when user needs Jina Reader for URL content extraction.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:08:54.946272Z",
-  "dir_name": "julien-mcp-jina"
+  "dir_name": "julien-mcp-jina",
+  "author": "theflysurfer",
+  "source_url": "https://github.com/theflysurfer/claude-skills-marketplace",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/theflysurfer/claude-skills-marketplace",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

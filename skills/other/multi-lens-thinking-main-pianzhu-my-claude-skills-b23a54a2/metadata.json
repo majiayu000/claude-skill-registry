@@ -7,5 +7,12 @@
   "dir_name": "multi-lens-thinking-main-pianzhu-my-claude-skills-b23a54a2",
   "category": "other",
   "github_path": "skills/multi-lens-thinking-main",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "pianzhu",
+  "source_url": "https://github.com/pianzhu/my-claude-skills/blob/main/skills/multi-lens-thinking-main/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pianzhu/my-claude-skills/blob/main/skills/multi-lens-thinking-main/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

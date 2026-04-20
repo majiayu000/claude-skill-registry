@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/claude-mobile-cost-tracking",
   "github_branch": "main",
-  "dir_name": "claude-mobile-cost-tracking-krzemienski-claude-mobile-expo-b7ef308d"
+  "dir_name": "claude-mobile-cost-tracking-krzemienski-claude-mobile-expo-b7ef308d",
+  "author": "krzemienski",
+  "source_url": "https://github.com/krzemienski/claude-mobile-expo/blob/main/.claude/skills/claude-mobile-cost-tracking/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/krzemienski/claude-mobile-expo/blob/main/.claude/skills/claude-mobile-cost-tracking/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "allaymc-plugin-dev"
+  "dir_name": "allaymc-plugin-dev",
+  "author": "AllayMC",
+  "source_url": "https://github.com/AllayMC/AllaySkill",
+  "license": "LGPL-2.1",
+  "copyright": "Copyright (C) 1991, 1999 Free Software Foundation, Inc.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

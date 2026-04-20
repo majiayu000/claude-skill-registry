@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:13.222283Z",
   "github_path": "cli-tool-development",
   "github_branch": "main",
-  "dir_name": "cli-tool-development"
+  "dir_name": "cli-tool-development",
+  "author": "autohandai",
+  "source_url": "https://github.com/autohandai/community-skills/blob/main/cli-tool-development/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/autohandai/community-skills/blob/main/cli-tool-development/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

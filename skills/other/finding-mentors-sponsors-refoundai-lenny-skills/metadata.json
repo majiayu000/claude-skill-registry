@@ -9,5 +9,12 @@
   "github_path": "skills/finding-mentors-sponsors",
   "github_branch": "main",
   "dir_name": "finding-mentors-sponsors-refoundai-lenny-skills",
-  "downloaded_at": "2026-02-05T05:43:12.303069Z"
+  "downloaded_at": "2026-02-05T05:43:12.303069Z",
+  "author": "RefoundAI",
+  "source_url": "https://github.com/RefoundAI/lenny-skills/blob/main/skills/finding-mentors-sponsors/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Refound AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

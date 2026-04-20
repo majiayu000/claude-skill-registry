@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/muzhicaomingwang/ai-ideas",
-  "dir_name": "obsidian-organize-muzhicaomingwang-ai-ideas-2"
+  "dir_name": "obsidian-organize-muzhicaomingwang-ai-ideas-2",
+  "author": "muzhicaomingwang",
+  "source_url": "https://github.com/muzhicaomingwang/ai-ideas/blob/main/.claude/skills/obsidian-organize/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/muzhicaomingwang/ai-ideas/blob/main/.claude/skills/obsidian-organize/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

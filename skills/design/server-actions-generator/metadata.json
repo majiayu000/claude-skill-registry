@@ -5,5 +5,12 @@
   "description": "Génère des Next.js Server Actions comme couche d'orchestration mince entre frontend et backend NestJS. À utiliser lors de la création d'actions, mutations, ou quand l'utilisateur mentionne \"server act",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:57.667237Z",
-  "dir_name": "server-actions-generator"
+  "dir_name": "server-actions-generator",
+  "author": "RomualdP",
+  "source_url": "https://github.com/RomualdP/hoki",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RomualdP/hoki",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:03.743682Z",
   "github_path": ".cursor/skills/gitAgent",
   "github_branch": "main",
-  "dir_name": "gitagent-zht7063-dev-configs"
+  "dir_name": "gitagent-zht7063-dev-configs",
+  "author": "zht7063",
+  "source_url": "https://github.com/zht7063/dev-configs/blob/main/.cursor/skills/gitAgent/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zht7063/dev-configs/blob/main/.cursor/skills/gitAgent/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

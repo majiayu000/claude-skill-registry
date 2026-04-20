@@ -5,5 +5,12 @@
   "description": "Orchestrator AI-specific Git conventions and standards. Branch naming, commit workflow, repository organization. CRITICAL: Follow conventional branch names, use conventional commits, maintain clean gi",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:57.245812Z",
-  "dir_name": "orchestrator-git-standards"
+  "dir_name": "orchestrator-git-standards",
+  "author": "GolferGeek",
+  "source_url": "https://github.com/GolferGeek/orchestrator-ai",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024 GolferGeek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/athola/claude-night-market",
-  "dir_name": "architecture-paradigm-space-based"
+  "dir_name": "architecture-paradigm-space-based",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

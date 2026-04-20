@@ -5,5 +5,12 @@
   "source": "github.com/forrestthewoods/anubis",
   "downloaded_at": "2026-02-04T03:24:43.654858Z",
   "dir_name": "kanban-management",
-  "category": "data"
+  "category": "data",
+  "author": "forrestthewoods",
+  "source_url": "https://github.com/forrestthewoods/anubis/blob/main/.claude/skills/kanban-management/SKILL.md",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/forrestthewoods/anubis/blob/main/.claude/skills/kanban-management/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

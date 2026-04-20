@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/mitsuhiko/agent-stuff",
-  "dir_name": "oebb-scotty-mitsuhiko-agent-stuff-2"
+  "dir_name": "oebb-scotty-mitsuhiko-agent-stuff-2",
+  "author": "mitsuhiko",
+  "source_url": "https://github.com/mitsuhiko/agent-stuff/blob/main/skills/oebb-scotty/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mitsuhiko/agent-stuff/blob/main/skills/oebb-scotty/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

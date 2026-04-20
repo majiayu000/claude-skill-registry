@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "architecture-pattern-selector",
   "github_path": "skills/architecture-pattern-selector",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "alirezarezvani",
+  "source_url": "https://github.com/alirezarezvani/claude-cto-team/blob/main/skills/architecture-pattern-selector/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Alireza Rezvani",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

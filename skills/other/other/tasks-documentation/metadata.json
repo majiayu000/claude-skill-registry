@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/duc01226/EasyPlatform",
   "dir_name": "tasks-documentation",
-  "downloaded_at": "2026-02-22T06:58:39.901553Z"
+  "downloaded_at": "2026-02-22T06:58:39.901553Z",
+  "author": "duc01226",
+  "source_url": "https://github.com/duc01226/EasyPlatform/blob/main/.claude/skills/tasks-documentation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Dang Phuoc Duc",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

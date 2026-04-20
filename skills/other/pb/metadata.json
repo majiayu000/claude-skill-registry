@@ -5,5 +5,12 @@
   "source": "github.com/astoeffer/plugin-marketplace",
   "downloaded_at": "2026-01-14T03:02:32.378598Z",
   "dir_name": "pb",
-  "category": "other"
+  "category": "other",
+  "author": "astoeffer",
+  "source_url": "https://github.com/astoeffer/plugin-marketplace/blob/main/plugins/plugin-builder/commands/pb/create-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/astoeffer/plugin-marketplace/blob/main/plugins/plugin-builder/commands/pb/create-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

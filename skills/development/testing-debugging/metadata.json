@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:49.885182Z",
   "github_path": "_skills/testing-debugging",
   "github_branch": "main",
-  "dir_name": "testing-debugging"
+  "dir_name": "testing-debugging",
+  "author": "baz-scm",
+  "source_url": "https://github.com/baz-scm/awesome-reviewers/blob/main/_skills/testing-debugging/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/baz-scm/awesome-reviewers/blob/main/_skills/testing-debugging/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

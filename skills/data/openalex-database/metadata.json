@@ -5,5 +5,12 @@
   "source": "github.com/davila7/claude-code-templates",
   "downloaded_at": "2026-02-04T02:29:15.303790Z",
   "dir_name": "openalex-database",
-  "category": "data"
+  "category": "data",
+  "author": "davila7",
+  "source_url": "https://github.com/davila7/claude-code-templates/blob/main/cli-tool/components/skills/scientific/openalex-database/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel (San) Ávila",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Serena智能代码分析工具使用指南，提供符号级代码探索、编辑和重构能力。",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:19.464019Z",
-  "dir_name": "serena-code"
+  "dir_name": "serena-code",
+  "author": "whtoo",
+  "source_url": "https://github.com/whtoo/How_to_implment_PL_in_Antlr4",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2023, whtoo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

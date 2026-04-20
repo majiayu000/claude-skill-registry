@@ -5,5 +5,12 @@
   "source": "github.com/ianwatts22/codex-config",
   "downloaded_at": "2026-02-04T03:04:00.641561Z",
   "dir_name": "flesh-out",
-  "category": "data"
+  "category": "data",
+  "author": "ianwatts22",
+  "source_url": "https://github.com/ianwatts22/codex-config/blob/main/skills/flesh-out/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ianwatts22/codex-config/blob/main/skills/flesh-out/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/paulinett1508-dev/SuperCartolaManagerv5",
   "downloaded_at": "2026-02-04T04:46:22.822956Z",
   "dir_name": "spec",
-  "category": "data"
+  "category": "data",
+  "author": "paulinett1508-dev",
+  "source_url": "https://github.com/paulinett1508-dev/SuperCartolaManagerv5/blob/main/.claude/skills/spec/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/paulinett1508-dev/SuperCartolaManagerv5/blob/main/.claude/skills/spec/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

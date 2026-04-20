@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/huifer/WellAlly-health",
-  "dir_name": "weightloss-analyzer-huifer-wellally-health-2"
+  "dir_name": "weightloss-analyzer-huifer-wellally-health-2",
+  "author": "huifer",
+  "source_url": "https://github.com/huifer/WellAlly-health/blob/main/.claude/skills/weightloss-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 WellAlly Tech",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

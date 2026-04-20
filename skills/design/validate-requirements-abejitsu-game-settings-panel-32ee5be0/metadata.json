@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/validate-requirements",
   "github_branch": "main",
-  "dir_name": "validate-requirements-abejitsu-game-settings-panel-32ee5be0"
+  "dir_name": "validate-requirements-abejitsu-game-settings-panel-32ee5be0",
+  "author": "AbeJitsu",
+  "source_url": "https://github.com/AbeJitsu/Game-Settings-Panel/blob/main/.claude/skills/validate-requirements/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AbeJitsu/Game-Settings-Panel/blob/main/.claude/skills/validate-requirements/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

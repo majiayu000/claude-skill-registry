@@ -5,5 +5,12 @@
   "source": "github.com/rysweet/AzureHayMaker",
   "downloaded_at": "2026-01-29T07:43:36.362703Z",
   "dir_name": "philosophy-compliance-workflow-rysweet-azurehaymaker-21bc80f2",
-  "category": "other"
+  "category": "other",
+  "author": "rysweet",
+  "source_url": "https://github.com/rysweet/AzureHayMaker/blob/main/.claude/skills/philosophy-compliance-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ryan Sweet / Microsoft",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

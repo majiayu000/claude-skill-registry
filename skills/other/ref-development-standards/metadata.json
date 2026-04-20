@@ -5,5 +5,12 @@
   "source": "github.com/cuioss/plan-marshall",
   "downloaded_at": "2026-02-02T01:11:14.603690Z",
   "dir_name": "ref-development-standards",
-  "category": "other"
+  "category": "other",
+  "author": "cuioss",
+  "source_url": "https://github.com/cuioss/plan-marshall/blob/main/marketplace/bundles/plan-marshall/skills/ref-development-standards/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 Oliver Wolff",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

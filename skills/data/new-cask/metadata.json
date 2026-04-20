@@ -5,5 +5,12 @@
   "source": "github.com/malob/nix-config",
   "downloaded_at": "2026-02-04T04:02:32.540591Z",
   "dir_name": "new-cask",
-  "category": "data"
+  "category": "data",
+  "author": "malob",
+  "source_url": "https://github.com/malob/nix-config/blob/main/configs/claude/plugins/homebrew/skills/new-cask/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2020 Malo Bourgon",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

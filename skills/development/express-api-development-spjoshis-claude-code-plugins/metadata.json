@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:00.150789Z",
   "github_path": "plugins/nodejs-development/skills/express-api-development",
   "github_branch": "main",
-  "dir_name": "express-api-development-spjoshis-claude-code-plugins"
+  "dir_name": "express-api-development-spjoshis-claude-code-plugins",
+  "author": "spjoshis",
+  "source_url": "https://github.com/spjoshis/claude-code-plugins/blob/main/plugins/nodejs-development/skills/express-api-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/spjoshis/claude-code-plugins/blob/main/plugins/nodejs-development/skills/express-api-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

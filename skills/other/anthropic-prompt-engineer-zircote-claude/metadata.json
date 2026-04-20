@@ -7,5 +7,12 @@
   "dir_name": "anthropic-prompt-engineer-zircote-claude",
   "category": "other",
   "github_path": "skills/anthropic-prompt-engineer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "zircote",
+  "source_url": "https://github.com/zircote/.claude/blob/main/skills/anthropic-prompt-engineer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zircote/.claude/blob/main/skills/anthropic-prompt-engineer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

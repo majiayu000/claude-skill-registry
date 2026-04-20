@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/autohandai/community-skills",
-  "dir_name": "document-writer-autohandai-community-skills-2"
+  "dir_name": "document-writer-autohandai-community-skills-2",
+  "author": "autohandai",
+  "source_url": "https://github.com/autohandai/community-skills/blob/main/document-writer/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/autohandai/community-skills/blob/main/document-writer/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/danielmiessler/Personal_AI_Infrastructure",
   "downloaded_at": "2026-02-02T04:38:21.434261Z",
   "dir_name": "src-danielmiessler-personal-ai-infrastr",
-  "category": "other"
+  "category": "other",
+  "author": "danielmiessler",
+  "source_url": "https://github.com/danielmiessler/Personal_AI_Infrastructure/blob/main/Packs/pai-telos-skill/src/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel Miessler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

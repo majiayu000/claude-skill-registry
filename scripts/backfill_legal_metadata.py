@@ -68,7 +68,11 @@ def skill_branch(metadata: dict[str, Any]) -> str:
 def extract_copyright_notice(license_text: str) -> str:
     for line in license_text.splitlines():
         text = line.strip()
-        if re.match(r"^(copyright|\(c\)|©)\b", text, flags=re.IGNORECASE):
+        if re.match(
+            r"^(copyright\s+(?:\(c\)|©|\d{4})|\(c\)\s+\d{4}|©\s*\d{4})(?=\s|$)",
+            text,
+            flags=re.IGNORECASE,
+        ):
             return text
     return ""
 

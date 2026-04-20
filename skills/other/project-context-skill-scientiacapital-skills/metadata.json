@@ -7,5 +7,12 @@
   "dir_name": "project-context-skill-scientiacapital-skills",
   "category": "other",
   "github_path": "stable/project-context-skill",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "ScientiaCapital",
+  "source_url": "https://github.com/ScientiaCapital/skills/blob/main/stable/project-context-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ScientiaCapital/skills/blob/main/stable/project-context-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

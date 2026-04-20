@@ -5,5 +5,12 @@
   "source": "github.com/pianzhu/my-claude-skills",
   "downloaded_at": "2026-01-29T08:46:26.113162Z",
   "dir_name": "nexus-prompt-engineer-en-pianzhu-my-claude-skills",
-  "category": "other"
+  "category": "other",
+  "author": "pianzhu",
+  "source_url": "https://github.com/pianzhu/my-claude-skills/blob/main/nexus-prompt-engineer-en/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pianzhu/my-claude-skills/blob/main/nexus-prompt-engineer-en/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

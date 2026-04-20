@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:45.328626Z",
   "github_path": "YCode.CLI/skills/ant-design-knowledge-base",
   "github_branch": "main",
-  "dir_name": "ant-design-knowledge-base-lyq-lin-ycode-cli"
+  "dir_name": "ant-design-knowledge-base-lyq-lin-ycode-cli",
+  "author": "lyq-lin",
+  "source_url": "https://github.com/lyq-lin/YCode.CLI/blob/main/YCode.CLI/skills/ant-design-knowledge-base/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) [year] [fullname]",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

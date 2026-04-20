@@ -5,5 +5,12 @@
   "source": "github.com/manastalukdar/claude-devstudio",
   "downloaded_at": "2026-01-29T05:29:30.995835Z",
   "dir_name": "cache-strategy-manastalukdar-claude-devstudio",
-  "category": "other"
+  "category": "other",
+  "author": "manastalukdar",
+  "source_url": "https://github.com/manastalukdar/claude-devstudio/blob/main/skills/cache-strategy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brenner Cruvinel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

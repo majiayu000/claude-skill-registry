@@ -5,5 +5,12 @@
   "source": "github.com/jackspace/ClaudeSkillz",
   "downloaded_at": "2026-01-29T02:09:09.838713Z",
   "dir_name": "scientific-pkg-rdkit",
-  "category": "data"
+  "category": "data",
+  "author": "jackspace",
+  "source_url": "https://github.com/jackspace/ClaudeSkillz/blob/main/skills/scientific-pkg-rdkit/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ClaudeSkillz Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

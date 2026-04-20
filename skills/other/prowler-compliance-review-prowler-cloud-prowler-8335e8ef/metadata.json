@@ -5,5 +5,12 @@
   "source": "github.com/prowler-cloud/prowler",
   "downloaded_at": "2026-01-29T07:09:52.672293Z",
   "dir_name": "prowler-compliance-review-prowler-cloud-prowler-8335e8ef",
-  "category": "other"
+  "category": "other",
+  "author": "prowler-cloud",
+  "source_url": "https://github.com/prowler-cloud/prowler/blob/main/skills/prowler-compliance-review/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/prowler-cloud/prowler/blob/main/skills/prowler-compliance-review/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

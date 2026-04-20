@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/eval-test-skill",
   "github_branch": "main",
-  "dir_name": "eval-test-skill-otrebu-all-agents"
+  "dir_name": "eval-test-skill-otrebu-all-agents",
+  "author": "otrebu",
+  "source_url": "https://github.com/otrebu/all-agents/blob/main/.claude/skills/eval-test-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/otrebu/all-agents/blob/main/.claude/skills/eval-test-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

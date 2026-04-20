@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:41.368372Z",
   "github_path": "software-design/data-design",
   "github_branch": "main",
-  "dir_name": "data-design-miles990-claude-software-skil-e8100f2c"
+  "dir_name": "data-design-miles990-claude-software-skil-e8100f2c",
+  "author": "miles990",
+  "source_url": "https://github.com/miles990/claude-software-skills/blob/main/software-design/data-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

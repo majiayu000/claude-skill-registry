@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/davila7/claude-code-templates",
-  "dir_name": "model-architecture-nanogpt"
+  "dir_name": "model-architecture-nanogpt",
+  "author": "davila7",
+  "source_url": "https://github.com/davila7/claude-code-templates",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel (San) Ávila",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

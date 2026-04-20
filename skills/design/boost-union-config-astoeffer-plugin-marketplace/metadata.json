@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:03.657491Z",
   "github_path": "plugins/cloodle-moodle-theming/skills/boost-union-config",
   "github_branch": "main",
-  "dir_name": "boost-union-config-astoeffer-plugin-marketplace"
+  "dir_name": "boost-union-config-astoeffer-plugin-marketplace",
+  "author": "astoeffer",
+  "source_url": "https://github.com/astoeffer/plugin-marketplace/blob/main/plugins/cloodle-moodle-theming/skills/boost-union-config/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/astoeffer/plugin-marketplace/blob/main/plugins/cloodle-moodle-theming/skills/boost-union-config/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "changelog-update-congdon1207-agents-md-6b45e72f",
   "category": "other",
   "github_path": ".claude/skills/changelog-update",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "CongDon1207",
+  "source_url": "https://github.com/CongDon1207/AGENTS.md/blob/main/.claude/skills/changelog-update/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CongDon1207/AGENTS.md/blob/main/.claude/skills/changelog-update/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

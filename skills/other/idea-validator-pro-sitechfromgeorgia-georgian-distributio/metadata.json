@@ -5,5 +5,12 @@
   "source": "github.com/sitechfromgeorgia/georgian-distribution-system",
   "downloaded_at": "2026-01-29T07:28:38.133152Z",
   "dir_name": "idea-validator-pro-sitechfromgeorgia-georgian-distributio",
-  "category": "other"
+  "category": "other",
+  "author": "sitechfromgeorgia",
+  "source_url": "https://github.com/sitechfromgeorgia/georgian-distribution-system/blob/main/.claude/skills/idea-validator-pro/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sitechfromgeorgia/georgian-distribution-system/blob/main/.claude/skills/idea-validator-pro/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

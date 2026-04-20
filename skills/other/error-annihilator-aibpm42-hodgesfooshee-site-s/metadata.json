@@ -7,5 +7,12 @@
   "dir_name": "error-annihilator-aibpm42-hodgesfooshee-site-s",
   "category": "other",
   "github_path": ".claude/skills/error-annihilator",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "AIBPM42",
+  "source_url": "https://github.com/AIBPM42/hodgesfooshee-site-spark/blob/main/.claude/skills/error-annihilator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AIBPM42/hodgesfooshee-site-spark/blob/main/.claude/skills/error-annihilator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

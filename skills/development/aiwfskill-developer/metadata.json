@@ -5,5 +5,12 @@
   "description": "Create and manage Claude Code skills following Anthropic best practices. Use when creating new skills, modifying skill-rules.json, understanding trigger patterns, working with hooks, debugging skill a",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:35.057202Z",
-  "dir_name": "aiwfskill-developer"
+  "dir_name": "aiwfskill-developer",
+  "author": "moonklabs",
+  "source_url": "https://github.com/moonklabs/aiwf",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 aiwf",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

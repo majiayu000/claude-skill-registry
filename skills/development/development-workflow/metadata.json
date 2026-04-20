@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:46.341542Z",
   "github_path": "plugins/abstract/docs/examples/modular-skills/complete-skills/development-workflow",
   "github_branch": "main",
-  "dir_name": "development-workflow"
+  "dir_name": "development-workflow",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/abstract/docs/examples/modular-skills/complete-skills/development-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

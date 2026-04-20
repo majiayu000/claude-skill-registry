@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:33.512196Z",
   "github_path": "pm-team/skills/pre-dev-subtask-creation",
   "github_branch": "main",
-  "dir_name": "pre-dev-subtask-creation-lerianstudio-ring"
+  "dir_name": "pre-dev-subtask-creation-lerianstudio-ring",
+  "author": "LerianStudio",
+  "source_url": "https://github.com/LerianStudio/ring/blob/main/pm-team/skills/pre-dev-subtask-creation/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LerianStudio/ring/blob/main/pm-team/skills/pre-dev-subtask-creation/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

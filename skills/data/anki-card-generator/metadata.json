@@ -5,5 +5,12 @@
   "source": "github.com/zhu-jl18/fish-claude",
   "downloaded_at": "2026-02-04T02:22:11.668415Z",
   "dir_name": "anki-card-generator",
-  "category": "data"
+  "category": "data",
+  "author": "zhu-jl18",
+  "source_url": "https://github.com/zhu-jl18/fish-claude/blob/main/skills/anki-card-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 makoMakoGo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/itsmostafa/aws-agent-skills",
   "downloaded_at": "2026-02-02T01:34:17.221746Z",
   "dir_name": "sqs-itsmostafa-aws-agent-skills-bed9b4ef",
-  "category": "other"
+  "category": "other",
+  "author": "itsmostafa",
+  "source_url": "https://github.com/itsmostafa/aws-agent-skills/blob/main/skills/sqs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

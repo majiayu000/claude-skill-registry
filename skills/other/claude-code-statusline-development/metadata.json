@@ -7,5 +7,12 @@
   "dir_name": "claude-code-statusline-development",
   "category": "other",
   "github_path": "plugins/toolkit/skills/claude-code-statusline-development",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "dwmkerr",
+  "source_url": "https://github.com/dwmkerr/claude-toolkit/blob/main/plugins/toolkit/skills/claude-code-statusline-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dave Kerr",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

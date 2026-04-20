@@ -5,5 +5,12 @@
   "source": "github.com/antfu/skills",
   "downloaded_at": "2026-01-29T06:41:24.998878Z",
   "dir_name": "vue-best-practices-antfu-skills",
-  "category": "other"
+  "category": "other",
+  "author": "antfu",
+  "source_url": "https://github.com/antfu/skills/blob/main/skills/vue-best-practices/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-PRESENT Anthony Fu <https://github.com/antfu>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

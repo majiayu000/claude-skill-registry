@@ -5,5 +5,12 @@
   "source": "github.com/AIDotNet/MoYuCode",
   "downloaded_at": "2026-01-29T08:25:26.851722Z",
   "dir_name": "file-watcher-aidotnet-moyucode",
-  "category": "other"
+  "category": "other",
+  "author": "AIDotNet",
+  "source_url": "https://github.com/AIDotNet/MoYuCode/blob/main/skills/tools/file-watcher/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AIDotNet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

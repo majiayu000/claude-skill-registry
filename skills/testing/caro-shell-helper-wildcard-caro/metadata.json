@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/caro-shell-helper",
   "github_branch": "main",
-  "dir_name": "caro-shell-helper-wildcard-caro"
+  "dir_name": "caro-shell-helper-wildcard-caro",
+  "author": "wildcard",
+  "source_url": "https://github.com/wildcard/caro/blob/main/.claude/skills/caro-shell-helper/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

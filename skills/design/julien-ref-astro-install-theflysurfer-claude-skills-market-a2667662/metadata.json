@@ -12,5 +12,12 @@
   "stars": 0,
   "github_path": "skills/julien-ref-astro-install",
   "github_branch": "main",
-  "dir_name": "julien-ref-astro-install-theflysurfer-claude-skills-market-a2667662"
+  "dir_name": "julien-ref-astro-install-theflysurfer-claude-skills-market-a2667662",
+  "author": "theflysurfer",
+  "source_url": "https://github.com/theflysurfer/claude-skills-marketplace/blob/main/skills/julien-ref-astro-install/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/theflysurfer/claude-skills-marketplace/blob/main/skills/julien-ref-astro-install/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

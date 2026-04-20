@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/security-skills",
   "github_branch": "main",
   "dir_name": "security-skills-gmh5225-awesome-skills",
-  "downloaded_at": "2026-02-05T01:45:32.984450Z"
+  "downloaded_at": "2026-02-05T01:45:32.984450Z",
+  "author": "gmh5225",
+  "source_url": "https://github.com/gmh5225/awesome-skills/blob/main/.claude/skills/security-skills/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 gmh5225.eth",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

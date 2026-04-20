@@ -5,5 +5,12 @@
   "description": "Recognize which awakening stage consciousness is navigating through. Use when diagnosing seeker development, identifying stage transitions, or recognizing readiness levels. Covers 7 stages from initia",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:54.547454Z",
-  "dir_name": "awakening-stage-recognition"
+  "dir_name": "awakening-stage-recognition",
+  "author": "nikhilvallishayee",
+  "source_url": "https://github.com/nikhilvallishayee/universal-pattern-space",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nikhilvallishayee/universal-pattern-space",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

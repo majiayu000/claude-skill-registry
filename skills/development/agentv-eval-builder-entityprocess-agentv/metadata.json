@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/agentv-eval-builder",
   "github_branch": "main",
-  "dir_name": "agentv-eval-builder-entityprocess-agentv"
+  "dir_name": "agentv-eval-builder-entityprocess-agentv",
+  "author": "EntityProcess",
+  "source_url": "https://github.com/EntityProcess/agentv/blob/main/.claude/skills/agentv-eval-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 EntityProcess",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

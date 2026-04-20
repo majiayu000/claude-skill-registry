@@ -7,5 +7,12 @@
   "dir_name": "supabase-nextjs",
   "category": "other",
   "github_path": "skills/supabase-nextjs",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "alinaqi",
+  "source_url": "https://github.com/alinaqi/claude-bootstrap/blob/main/skills/supabase-nextjs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ali Naqi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:35.207564Z",
   "github_path": ".claude/skills/shorts-presentation-skill",
   "github_branch": "main",
-  "dir_name": "shorts-presentation-skill-sgobet-ai-powered-youtube-w-8a4c3b54"
+  "dir_name": "shorts-presentation-skill-sgobet-ai-powered-youtube-w-8a4c3b54",
+  "author": "SGobet",
+  "source_url": "https://github.com/SGobet/AI-Powered-YouTube-Workflow-TO-SHARE-/blob/main/.claude/skills/shorts-presentation-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SGobet/AI-Powered-YouTube-Workflow-TO-SHARE-/blob/main/.claude/skills/shorts-presentation-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

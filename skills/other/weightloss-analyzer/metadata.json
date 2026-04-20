@@ -7,5 +7,12 @@
   "dir_name": "weightloss-analyzer",
   "category": "other",
   "github_path": ".claude/skills/weightloss-analyzer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "huifer",
+  "source_url": "https://github.com/huifer/WellAlly-health/blob/main/.claude/skills/weightloss-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 WellAlly Tech",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

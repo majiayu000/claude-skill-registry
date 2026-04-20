@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:46.152604Z",
   "github_path": "plugins/dev-tools/skills/working-with-mise",
   "github_branch": "main",
-  "dir_name": "working-with-mise"
+  "dir_name": "working-with-mise",
+  "author": "technicalpickles",
+  "source_url": "https://github.com/technicalpickles/pickled-claude-plugins/blob/main/plugins/dev-tools/skills/working-with-mise/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josh Nichols",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

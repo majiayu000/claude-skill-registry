@@ -5,5 +5,12 @@
   "source": "github.com/sgcarstrends/sgcarstrends",
   "downloaded_at": "2026-01-28T04:21:34.498792Z",
   "dir_name": "api-version",
-  "category": "data"
+  "category": "data",
+  "author": "sgcarstrends",
+  "source_url": "https://github.com/sgcarstrends/sgcarstrends/blob/main/.claude/skills/api-version/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SG Cars Trends",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

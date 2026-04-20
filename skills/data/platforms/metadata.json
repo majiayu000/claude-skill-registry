@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/gmh5225/awesome-skills",
-  "dir_name": "platforms"
+  "dir_name": "platforms",
+  "author": "gmh5225",
+  "source_url": "https://github.com/gmh5225/awesome-skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 gmh5225.eth",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

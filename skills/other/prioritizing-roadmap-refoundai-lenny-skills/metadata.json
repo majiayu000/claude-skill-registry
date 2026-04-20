@@ -9,5 +9,12 @@
   "github_path": "skills/prioritizing-roadmap",
   "github_branch": "main",
   "dir_name": "prioritizing-roadmap-refoundai-lenny-skills",
-  "downloaded_at": "2026-02-05T05:43:12.275161Z"
+  "downloaded_at": "2026-02-05T05:43:12.275161Z",
+  "author": "RefoundAI",
+  "source_url": "https://github.com/RefoundAI/lenny-skills/blob/main/skills/prioritizing-roadmap/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Refound AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

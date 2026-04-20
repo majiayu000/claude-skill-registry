@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:07.649606Z",
   "github_path": "lib/skills/dev-clarify",
   "github_branch": "main",
-  "dir_name": "dev-clarify-edwinhu-workflows"
+  "dir_name": "dev-clarify-edwinhu-workflows",
+  "author": "edwinhu",
+  "source_url": "https://github.com/edwinhu/workflows/blob/main/lib/skills/dev-clarify/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/edwinhu/workflows/blob/main/lib/skills/dev-clarify/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/brew-manager",
   "github_branch": "main",
-  "dir_name": "brew-manager-ruchernchong-dotfiles"
+  "dir_name": "brew-manager-ruchernchong-dotfiles",
+  "author": "ruchernchong",
+  "source_url": "https://github.com/ruchernchong/dotfiles/blob/main/.claude/skills/brew-manager/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Ru Chern Chong",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

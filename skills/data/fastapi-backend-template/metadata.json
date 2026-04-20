@@ -5,5 +5,12 @@
   "source": "github.com/rebyteai-template/rebyte-skills",
   "downloaded_at": "2026-01-27T03:35:54.158627Z",
   "dir_name": "fastapi-backend-template",
-  "category": "data"
+  "category": "data",
+  "author": "rebyteai-template",
+  "source_url": "https://github.com/rebyteai-template/rebyte-skills/blob/main/fastapi-backend-template/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rebyteai-template/rebyte-skills/blob/main/fastapi-backend-template/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

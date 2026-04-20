@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/vassovass/scl-v3",
-  "dir_name": "architecture-philosophy-vassovass-scl-v3-2"
+  "dir_name": "architecture-philosophy-vassovass-scl-v3-2",
+  "author": "vassovass",
+  "source_url": "https://github.com/vassovass/scl-v3/blob/main/.claude/skills/architecture-philosophy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vassovass/scl-v3/blob/main/.claude/skills/architecture-philosophy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

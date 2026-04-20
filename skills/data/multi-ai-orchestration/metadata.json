@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "multi-ai-orchestration"
+  "dir_name": "multi-ai-orchestration",
+  "author": "DrSatsuma1",
+  "source_url": "https://github.com/DrSatsuma1/catherine-claude-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DrSatsuma1/catherine-claude-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

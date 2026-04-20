@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "always-on"
+  "dir_name": "always-on",
+  "author": "MarioRicalde",
+  "source_url": "https://github.com/MarioRicalde/copilot-handoffs-simple-skills-number-processor",
+  "license": "MIT",
+  "copyright": "Copyright Mario Ricalde (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

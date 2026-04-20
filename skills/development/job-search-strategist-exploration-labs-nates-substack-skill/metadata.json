@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:17.506437Z",
   "github_path": "job-search-strategist",
   "github_branch": "main",
-  "dir_name": "job-search-strategist-exploration-labs-nates-substack-skill"
+  "dir_name": "job-search-strategist-exploration-labs-nates-substack-skill",
+  "author": "Exploration-labs",
+  "source_url": "https://github.com/Exploration-labs/Nates-Substack-Skills/blob/main/job-search-strategist/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Exploration-labs/Nates-Substack-Skills/blob/main/job-search-strategist/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

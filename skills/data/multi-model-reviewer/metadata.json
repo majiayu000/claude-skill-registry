@@ -5,5 +5,12 @@
   "source": "github.com/knowlet/pf-skills",
   "downloaded_at": "2026-02-04T01:17:02.590239Z",
   "dir_name": "multi-model-reviewer",
-  "category": "data"
+  "category": "data",
+  "author": "knowlet",
+  "source_url": "https://github.com/knowlet/pf-skills/blob/main/skills/multi-model-reviewer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/knowlet/pf-skills/blob/main/skills/multi-model-reviewer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

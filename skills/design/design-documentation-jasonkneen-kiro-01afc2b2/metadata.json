@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/design-documentation",
   "github_branch": "main",
-  "dir_name": "design-documentation-jasonkneen-kiro-01afc2b2"
+  "dir_name": "design-documentation-jasonkneen-kiro-01afc2b2",
+  "author": "jasonkneen",
+  "source_url": "https://github.com/jasonkneen/kiro/blob/main/skills/design-documentation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jason Kneen",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

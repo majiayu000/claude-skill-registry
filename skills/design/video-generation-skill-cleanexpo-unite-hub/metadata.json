@@ -5,5 +5,12 @@
   "description": "Design video concepts, scripts, shotlists, transitions, and editing notes for VEO, Gemini, and Nano Banana-based pipelines. Use when turning a marketing idea into concrete video assets.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:01:42.697933Z",
-  "dir_name": "video-generation-skill-cleanexpo-unite-hub"
+  "dir_name": "video-generation-skill-cleanexpo-unite-hub",
+  "author": "CleanExpo",
+  "source_url": "https://github.com/CleanExpo/Unite-Hub",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CleanExpo/Unite-Hub",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

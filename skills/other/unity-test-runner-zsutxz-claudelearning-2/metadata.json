@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/zsutxz/ClaudeLearning",
-  "dir_name": "unity-test-runner-zsutxz-claudelearning-2"
+  "dir_name": "unity-test-runner-zsutxz-claudelearning-2",
+  "author": "zsutxz",
+  "source_url": "https://github.com/zsutxz/ClaudeLearning/blob/main/.claude/skills/unity-test-runner/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Gomoku Game Project",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

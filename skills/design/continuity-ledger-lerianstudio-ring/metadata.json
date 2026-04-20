@@ -5,5 +5,12 @@
   "description": "Create or update continuity ledger for state preservation across /clear operations.Ledgers maintain session state externally, surviving context resets with full fidelity.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:32.242648Z",
-  "dir_name": "continuity-ledger-lerianstudio-ring"
+  "dir_name": "continuity-ledger-lerianstudio-ring",
+  "author": "LerianStudio",
+  "source_url": "https://github.com/LerianStudio/ring",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LerianStudio/ring",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

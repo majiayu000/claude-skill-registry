@@ -10,5 +10,12 @@
   ],
   "stars": 1,
   "source": "local",
-  "dir_name": "tool-interface-analysis"
+  "dir_name": "tool-interface-analysis",
+  "author": "Dowwie",
+  "source_url": "https://github.com/Dowwie/agent_framework_study",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Dowwie/agent_framework_study",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

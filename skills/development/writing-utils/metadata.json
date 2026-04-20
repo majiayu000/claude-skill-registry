@@ -5,5 +5,12 @@
   "description": "Use this skill when you need to write utility functions for the Next.js app",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:26.913630Z",
-  "dir_name": "writing-utils"
+  "dir_name": "writing-utils",
+  "author": "Emz1998",
+  "source_url": "https://github.com/Emz1998/nexly-notes",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Emz1998/nexly-notes",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/AIDotNet/MoYuCode",
   "downloaded_at": "2026-02-04T02:10:24.105295Z",
   "dir_name": "documentation-writer",
-  "category": "data"
+  "category": "data",
+  "author": "AIDotNet",
+  "source_url": "https://github.com/AIDotNet/MoYuCode/blob/main/skills/community/documentation-writer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AIDotNet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

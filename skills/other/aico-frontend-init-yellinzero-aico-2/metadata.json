@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/yellinzero/aico",
-  "dir_name": "aico-frontend-init-yellinzero-aico-2"
+  "dir_name": "aico-frontend-init-yellinzero-aico-2",
+  "author": "yellinzero",
+  "source_url": "https://github.com/yellinzero/aico/blob/main/.claude/skills/aico-frontend-init/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yellinzero/aico/blob/main/.claude/skills/aico-frontend-init/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "duroxide-orchestrations-affandar-toygres",
   "category": "other",
   "github_path": ".claude/skills/duroxide-orchestrations",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "affandar",
+  "source_url": "https://github.com/affandar/toygres/blob/main/.claude/skills/duroxide-orchestrations/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Affan Dar and contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

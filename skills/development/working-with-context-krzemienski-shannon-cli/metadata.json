@@ -11,5 +11,12 @@
   "stars": 1,
   "github_path": ".claude/skills/working-with-context",
   "github_branch": "main",
-  "dir_name": "working-with-context-krzemienski-shannon-cli"
+  "dir_name": "working-with-context-krzemienski-shannon-cli",
+  "author": "krzemienski",
+  "source_url": "https://github.com/krzemienski/shannon-cli/blob/main/.claude/skills/working-with-context/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/krzemienski/shannon-cli/blob/main/.claude/skills/working-with-context/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "document-processor-arbgjr-satra-9f26915e",
   "category": "other",
   "github_path": ".claude/skills/document-processor",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "arbgjr",
+  "source_url": "https://github.com/arbgjr/satra/blob/main/.claude/skills/document-processor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) [year] [fullname]",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

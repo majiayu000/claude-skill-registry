@@ -7,5 +7,12 @@
   "dir_name": "ios-testing-skill",
   "category": "other",
   "github_path": "skills/ios-testing-skill",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "adilkalam",
+  "source_url": "https://github.com/adilkalam/orca/blob/main/skills/ios-testing-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ORCA-OS Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

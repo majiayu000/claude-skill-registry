@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:19.669009Z",
   "github_path": "skills/tools/style-dictionary",
   "github_branch": "main",
-  "dir_name": "style-dictionary-dylantarre-design-system-skills-abdde21c"
+  "dir_name": "style-dictionary-dylantarre-design-system-skills-abdde21c",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/design-system-skills/blob/main/skills/tools/style-dictionary/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

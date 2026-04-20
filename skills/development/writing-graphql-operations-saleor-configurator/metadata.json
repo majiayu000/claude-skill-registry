@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:03.164873Z",
   "github_path": ".claude/skills/writing-graphql-operations",
   "github_branch": "main",
-  "dir_name": "writing-graphql-operations-saleor-configurator"
+  "dir_name": "writing-graphql-operations-saleor-configurator",
+  "author": "saleor",
+  "source_url": "https://github.com/saleor/configurator/blob/main/.claude/skills/writing-graphql-operations/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2024-2025, Saleor Commerce",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

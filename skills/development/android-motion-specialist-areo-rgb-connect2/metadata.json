@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/android-motion-specialist",
   "github_branch": "main",
-  "dir_name": "android-motion-specialist-areo-rgb-connect2"
+  "dir_name": "android-motion-specialist-areo-rgb-connect2",
+  "author": "Areo-RGB",
+  "source_url": "https://github.com/Areo-RGB/_connect2/blob/main/.claude/skills/android-motion-specialist/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Areo-RGB/_connect2/blob/main/.claude/skills/android-motion-specialist/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
     "execution"
   ],
   "stars": 0,
-  "dir_name": "x-execution"
+  "dir_name": "x-execution",
+  "author": "alavida-ai",
+  "source_url": "https://github.com/alavida-ai/vf-owwo",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alavida-ai/vf-owwo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

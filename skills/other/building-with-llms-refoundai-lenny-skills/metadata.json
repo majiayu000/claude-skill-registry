@@ -9,5 +9,12 @@
   "github_path": "skills/building-with-llms",
   "github_branch": "main",
   "dir_name": "building-with-llms-refoundai-lenny-skills",
-  "downloaded_at": "2026-02-05T05:43:12.274895Z"
+  "downloaded_at": "2026-02-05T05:43:12.274895Z",
+  "author": "RefoundAI",
+  "source_url": "https://github.com/RefoundAI/lenny-skills/blob/main/skills/building-with-llms/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Refound AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

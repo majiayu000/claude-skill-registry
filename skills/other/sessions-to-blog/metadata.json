@@ -7,5 +7,12 @@
   "dir_name": "sessions-to-blog",
   "category": "other",
   "github_path": "sessions-to-blog",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "lancenunes",
+  "source_url": "https://github.com/lancenunes/codex-skills/blob/main/sessions-to-blog/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lancenunes/codex-skills/blob/main/sessions-to-blog/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

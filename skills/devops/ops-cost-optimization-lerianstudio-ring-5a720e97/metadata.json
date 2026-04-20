@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:33.124614Z",
   "github_path": ".archive/ops-team/skills/ops-cost-optimization",
   "github_branch": "main",
-  "dir_name": "ops-cost-optimization-lerianstudio-ring-5a720e97"
+  "dir_name": "ops-cost-optimization-lerianstudio-ring-5a720e97",
+  "author": "LerianStudio",
+  "source_url": "https://github.com/LerianStudio/ring/blob/main/.archive/ops-team/skills/ops-cost-optimization/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LerianStudio/ring/blob/main/.archive/ops-team/skills/ops-cost-optimization/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:42.246517Z",
   "github_path": ".agents/skills/aoc-solution-review",
   "github_branch": "main",
-  "dir_name": "aoc-solution-review-krwenholz-adventofcode-2025"
+  "dir_name": "aoc-solution-review-krwenholz-adventofcode-2025",
+  "author": "krwenholz",
+  "source_url": "https://github.com/krwenholz/adventofcode-2025/blob/main/.agents/skills/aoc-solution-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Kyle Wenholz",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

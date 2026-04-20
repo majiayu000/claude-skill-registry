@@ -5,5 +5,12 @@
   "description": "Allra 백엔드 API 설계 및 패키지 구조 규칙. Use when creating REST APIs, DTOs, or organizing backend code structure.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:51.954697Z",
-  "dir_name": "allra-api-design"
+  "dir_name": "allra-api-design",
+  "author": "Allra-Fintech",
+  "source_url": "https://github.com/Allra-Fintech/allra-ai-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Allra-Fintech/allra-ai-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

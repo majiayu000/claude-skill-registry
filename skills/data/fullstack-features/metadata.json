@@ -5,5 +5,12 @@
   "source": "github.com/affandar/toygres",
   "downloaded_at": "2026-01-29T03:31:16.428622Z",
   "dir_name": "fullstack-features",
-  "category": "data"
+  "category": "data",
+  "author": "affandar",
+  "source_url": "https://github.com/affandar/toygres/blob/main/.claude/skills/fullstack-features/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Affan Dar and contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

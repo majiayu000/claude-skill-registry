@@ -9,5 +9,12 @@
   "github_path": ".agents/skills/rust-async-patterns",
   "github_branch": "main",
   "dir_name": "rust-async-patterns-pythoninthegrasses-lunchjs",
-  "downloaded_at": "2026-02-05T01:44:53.954125Z"
+  "downloaded_at": "2026-02-05T01:44:53.954125Z",
+  "author": "pythoninthegrasses",
+  "source_url": "https://github.com/pythoninthegrasses/lunchjs/blob/main/.agents/skills/rust-async-patterns/SKILL.md",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pythoninthegrasses/lunchjs/blob/main/.agents/skills/rust-async-patterns/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

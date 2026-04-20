@@ -5,5 +5,12 @@
   "source": "github.com/VilnaCRM-Org/user-service",
   "downloaded_at": "2026-02-04T04:40:23.684048Z",
   "dir_name": "api-platform-crud",
-  "category": "data"
+  "category": "data",
+  "author": "VilnaCRM-Org",
+  "source_url": "https://github.com/VilnaCRM-Org/user-service/blob/main/.claude/skills/api-platform-crud/SKILL.md",
+  "license": "CC0-1.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/VilnaCRM-Org/user-service/blob/main/.claude/skills/api-platform-crud/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

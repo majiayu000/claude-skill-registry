@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:17.744660Z",
   "github_path": "skills/core/arch-agent",
   "github_branch": "main",
-  "dir_name": "arch-agent-unicorn-radium-f91aced3"
+  "dir_name": "arch-agent-unicorn-radium-f91aced3",
+  "author": "Unicorn",
+  "source_url": "https://github.com/Unicorn/Radium/blob/main/skills/core/arch-agent/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Unicorn/Radium/blob/main/skills/core/arch-agent/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

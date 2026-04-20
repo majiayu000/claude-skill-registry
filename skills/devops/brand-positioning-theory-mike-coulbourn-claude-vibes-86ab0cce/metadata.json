@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:15.707333Z",
   "github_path": "plugins/vibes/skills/brand-positioning-theory",
   "github_branch": "main",
-  "dir_name": "brand-positioning-theory-mike-coulbourn-claude-vibes-86ab0cce"
+  "dir_name": "brand-positioning-theory-mike-coulbourn-claude-vibes-86ab0cce",
+  "author": "mike-coulbourn",
+  "source_url": "https://github.com/mike-coulbourn/claude-vibes/blob/main/plugins/vibes/skills/brand-positioning-theory/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Mike Coulbourn",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

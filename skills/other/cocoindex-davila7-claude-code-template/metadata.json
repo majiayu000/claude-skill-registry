@@ -9,5 +9,12 @@
   "github_path": "cli-tool/components/skills/development/cocoindex",
   "github_branch": "main",
   "dir_name": "cocoindex-davila7-claude-code-template",
-  "downloaded_at": "2026-02-05T05:43:12.344648Z"
+  "downloaded_at": "2026-02-05T05:43:12.344648Z",
+  "author": "davila7",
+  "source_url": "https://github.com/davila7/claude-code-templates/blob/main/cli-tool/components/skills/development/cocoindex/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel (San) Ávila",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -9,5 +9,12 @@
   "github_path": ".opencode/skill/sysinfo",
   "github_branch": "main",
   "dir_name": "sysinfo",
-  "downloaded_at": "2026-02-05T01:44:28.609376Z"
+  "downloaded_at": "2026-02-05T01:44:28.609376Z",
+  "author": "johnlindquist",
+  "source_url": "https://github.com/johnlindquist/script-kit-next/blob/main/.opencode/skill/sysinfo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/johnlindquist/script-kit-next/blob/main/.opencode/skill/sysinfo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/animation-designer",
   "github_branch": "main",
-  "dir_name": "animation-designer-daffy0208-ai-dev-standards"
+  "dir_name": "animation-designer-daffy0208-ai-dev-standards",
+  "author": "daffy0208",
+  "source_url": "https://github.com/daffy0208/ai-dev-standards/blob/main/skills/animation-designer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AI Dev Standards Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

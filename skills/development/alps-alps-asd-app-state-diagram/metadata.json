@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/alps",
   "github_branch": "master",
-  "dir_name": "alps-alps-asd-app-state-diagram"
+  "dir_name": "alps-alps-asd-app-state-diagram",
+  "author": "alps-asd",
+  "source_url": "https://github.com/alps-asd/app-state-diagram/blob/master/.claude/skills/alps/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Akihito Koriyama",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

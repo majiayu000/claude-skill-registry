@@ -9,5 +9,12 @@
   ],
   "stars": 21,
   "source": "local",
-  "dir_name": "ngrx-store"
+  "dir_name": "ngrx-store",
+  "author": "danielsogl",
+  "source_url": "https://github.com/danielsogl/copilot-workflow-demo",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/danielsogl/copilot-workflow-demo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

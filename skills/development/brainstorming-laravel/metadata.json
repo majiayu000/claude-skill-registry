@@ -5,5 +5,12 @@
   "description": "Use when creating or developing Laravel features, before writing code or implementation plans - refines rough ideas into fully-formed Laravel designs through collaborative questioning, alternative exp",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:07.956277Z",
-  "dir_name": "brainstorming-laravel"
+  "dir_name": "brainstorming-laravel",
+  "author": "iSerter",
+  "source_url": "https://github.com/iSerter/laravel-claude-agents",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ilyas Serter",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

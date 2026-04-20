@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:19.476062Z",
   "github_path": "skills/tokens/design-tokens-structure",
   "github_branch": "main",
-  "dir_name": "design-tokens-structure-dylantarre-design-system-skills"
+  "dir_name": "design-tokens-structure-dylantarre-design-system-skills",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/design-system-skills/blob/main/skills/tokens/design-tokens-structure/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

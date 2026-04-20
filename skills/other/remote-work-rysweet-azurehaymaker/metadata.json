@@ -7,5 +7,12 @@
   "dir_name": "remote-work-rysweet-azurehaymaker",
   "category": "other",
   "github_path": ".claude/skills/remote-work",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "rysweet",
+  "source_url": "https://github.com/rysweet/AzureHayMaker/blob/main/.claude/skills/remote-work/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ryan Sweet / Microsoft",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

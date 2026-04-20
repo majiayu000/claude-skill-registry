@@ -7,5 +7,12 @@
   "dir_name": "workflow-integration-sonar-cuioss-plan-marshall",
   "category": "other",
   "github_path": "marketplace/bundles/pm-workflow/skills/workflow-integration-sonar",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "cuioss",
+  "source_url": "https://github.com/cuioss/plan-marshall/blob/main/marketplace/bundles/pm-workflow/skills/workflow-integration-sonar/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 Oliver Wolff",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "marketing-psychology-kimny1143-claude-code-template",
   "category": "other",
   "github_path": ".claude/skills/marketing-psychology",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "kimny1143",
+  "source_url": "https://github.com/kimny1143/claude-code-template/blob/main/.claude/skills/marketing-psychology/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kimny1143/claude-code-template/blob/main/.claude/skills/marketing-psychology/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

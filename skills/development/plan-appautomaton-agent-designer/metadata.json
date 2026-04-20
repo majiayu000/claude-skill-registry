@@ -7,5 +7,12 @@
   "stars": 87,
   "source": "github.com/appautomaton/agent-designer",
   "downloaded_at": "2026-01-24T16:15:25.795386Z",
-  "dir_name": "plan-appautomaton-agent-designer"
+  "dir_name": "plan-appautomaton-agent-designer",
+  "author": "appautomaton",
+  "source_url": "https://github.com/appautomaton/agent-designer/blob/main/.codex/skills/plan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/appautomaton/agent-designer/blob/main/.codex/skills/plan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:52.560101Z",
   "github_path": "software-engineering/reliability-engineering",
   "github_branch": "main",
-  "dir_name": "reliability-engineering-miles990-claude-software-skil-96476d74"
+  "dir_name": "reliability-engineering-miles990-claude-software-skil-96476d74",
+  "author": "miles990",
+  "source_url": "https://github.com/miles990/claude-software-skills/blob/main/software-engineering/reliability-engineering/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

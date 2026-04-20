@@ -10,5 +10,12 @@
   "stars": 6,
   "github_path": "skills/prototype-to-production",
   "github_branch": "main",
-  "dir_name": "prototype-to-production"
+  "dir_name": "prototype-to-production",
+  "author": "ArieGoldkin",
+  "source_url": "https://github.com/ArieGoldkin/ai-agent-hub/blob/main/skills/prototype-to-production/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Arie Goldkin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:08.982314Z",
   "github_path": "skills/spreadsheet-analysis",
   "github_branch": "main",
-  "dir_name": "analyzing-spreadsheets-htuzel-claude-code-skills"
+  "dir_name": "analyzing-spreadsheets-htuzel-claude-code-skills",
+  "author": "htuzel",
+  "source_url": "https://github.com/htuzel/claude-code-skills/blob/main/skills/spreadsheet-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Claude Skill Hub contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

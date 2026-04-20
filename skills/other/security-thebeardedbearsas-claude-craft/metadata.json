@@ -7,5 +7,12 @@
   "dir_name": "security-thebeardedbearsas-claude-craft",
   "category": "other",
   "github_path": "Dev/i18n/pt/Flutter/skills/security-flutter",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "TheBeardedBearSAS",
+  "source_url": "https://github.com/TheBeardedBearSAS/claude-craft/blob/main/Dev/i18n/pt/Flutter/skills/security-flutter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 TheBeardedCTO",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

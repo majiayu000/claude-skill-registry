@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:44.715306Z",
   "dir_name": "ai-chapter-consolidate",
   "github_path": ".claude/skills/calypso/ai-chapter-consolidate",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "AbeJitsu",
+  "source_url": "https://github.com/AbeJitsu/Game-Settings-Panel/blob/main/.claude/skills/calypso/ai-chapter-consolidate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AbeJitsu/Game-Settings-Panel/blob/main/.claude/skills/calypso/ai-chapter-consolidate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

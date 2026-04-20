@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/detecting-privilege-escalation",
   "github_branch": "main",
-  "dir_name": "detecting-privilege-escalation-waiwai24-binaryx-agent-55adf717"
+  "dir_name": "detecting-privilege-escalation-waiwai24-binaryx-agent-55adf717",
+  "author": "waiwai24",
+  "source_url": "https://github.com/waiwai24/BinaryX-Agent/blob/main/.claude/skills/detecting-privilege-escalation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 waiwai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

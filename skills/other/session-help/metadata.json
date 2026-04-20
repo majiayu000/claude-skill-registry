@@ -5,5 +5,12 @@
   "source": "github.com/manastalukdar/claude-devstudio",
   "downloaded_at": "2026-02-02T03:11:55.613652Z",
   "dir_name": "session-help",
-  "category": "other"
+  "category": "other",
+  "author": "manastalukdar",
+  "source_url": "https://github.com/manastalukdar/claude-devstudio/blob/main/skills/session-help/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brenner Cruvinel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

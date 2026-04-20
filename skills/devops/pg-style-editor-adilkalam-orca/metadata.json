@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/pg-style-editor",
   "github_branch": "main",
-  "dir_name": "pg-style-editor-adilkalam-orca"
+  "dir_name": "pg-style-editor-adilkalam-orca",
+  "author": "adilkalam",
+  "source_url": "https://github.com/adilkalam/orca/blob/main/skills/pg-style-editor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ORCA-OS Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

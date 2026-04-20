@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/prowler-cloud/prowler",
-  "dir_name": "tailwind-4-prowler-cloud-prowler-2"
+  "dir_name": "tailwind-4-prowler-cloud-prowler-2",
+  "author": "prowler-cloud",
+  "source_url": "https://github.com/prowler-cloud/prowler/blob/main/skills/tailwind-4/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/prowler-cloud/prowler/blob/main/skills/tailwind-4/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

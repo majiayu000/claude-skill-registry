@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
-  "dir_name": "analysis-phase-sjdjdiejdrirhdkjej-claude-code-conducto-2"
+  "dir_name": "analysis-phase-sjdjdiejdrirhdkjej-claude-code-conducto-2",
+  "author": "Sjdjdiejdrirhdkjej",
+  "source_url": "https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/analysis-phase/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/analysis-phase/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

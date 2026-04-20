@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:17.373106Z",
   "github_path": "skills/core/doc-agent",
   "github_branch": "main",
-  "dir_name": "doc-agent-unicorn-radium"
+  "dir_name": "doc-agent-unicorn-radium",
+  "author": "Unicorn",
+  "source_url": "https://github.com/Unicorn/Radium/blob/main/skills/core/doc-agent/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Unicorn/Radium/blob/main/skills/core/doc-agent/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:51.532183Z",
   "github_path": "statistical-research/skills/implementation/simulation-architect",
   "github_branch": "main",
-  "dir_name": "simulation-architect-data-wise-claude-plugins"
+  "dir_name": "simulation-architect-data-wise-claude-plugins",
+  "author": "Data-Wise",
+  "source_url": "https://github.com/Data-Wise/claude-plugins/blob/main/statistical-research/skills/implementation/simulation-architect/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Data-Wise",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/RefoundAI/lenny-skills",
   "downloaded_at": "2026-02-04T03:57:47.545883Z",
   "dir_name": "personal-productivity-refoundai-lenny-skills",
-  "category": "data"
+  "category": "data",
+  "author": "RefoundAI",
+  "source_url": "https://github.com/RefoundAI/lenny-skills/blob/main/skills/personal-productivity/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Refound AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:14.935877Z",
   "github_path": "plugins/datapeeker/skills/understanding-data",
   "github_branch": "main",
-  "dir_name": "understanding-data-tilmon-engineering-claude-skills"
+  "dir_name": "understanding-data-tilmon-engineering-claude-skills",
+  "author": "tilmon-engineering",
+  "source_url": "https://github.com/tilmon-engineering/claude-skills/blob/main/plugins/datapeeker/skills/understanding-data/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tilmon Engineering",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

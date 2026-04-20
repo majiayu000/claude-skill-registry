@@ -7,5 +7,12 @@
   "dir_name": "animator-skill",
   "category": "other",
   "github_path": ".claude/skills/animator-skill",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "RainLib",
+  "source_url": "https://github.com/RainLib/AI-Storyboard/blob/main/.claude/skills/animator-skill/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

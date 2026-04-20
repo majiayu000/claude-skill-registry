@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:35.586798Z",
   "github_path": "skills/mlx",
   "github_branch": "main",
-  "dir_name": "mlx"
+  "dir_name": "mlx",
+  "author": "itsmostafa",
+  "source_url": "https://github.com/itsmostafa/llm-engineering-skills/blob/main/skills/mlx/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Mostafa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

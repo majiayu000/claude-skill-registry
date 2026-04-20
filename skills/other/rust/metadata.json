@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/rust",
   "github_branch": "main",
   "dir_name": "rust",
-  "downloaded_at": "2026-02-05T01:44:54.151122Z"
+  "downloaded_at": "2026-02-05T01:44:54.151122Z",
+  "author": "pythoninthegrasses",
+  "source_url": "https://github.com/pythoninthegrasses/lunchjs/blob/main/.claude/skills/rust/SKILL.md",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pythoninthegrasses/lunchjs/blob/main/.claude/skills/rust/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

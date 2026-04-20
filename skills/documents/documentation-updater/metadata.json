@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/documentation-updater",
   "github_branch": "main",
-  "dir_name": "documentation-updater"
+  "dir_name": "documentation-updater",
+  "author": "ruchernchong",
+  "source_url": "https://github.com/ruchernchong/dotfiles/blob/main/.claude/skills/documentation-updater/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Ru Chern Chong",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/TheBeardedBearSAS/claude-craft",
   "dir_name": "tooling-thebeardedbearsas-claude-craft-6",
-  "downloaded_at": "2026-02-15T05:52:32.289669Z"
+  "downloaded_at": "2026-02-15T05:52:32.289669Z",
+  "author": "TheBeardedBearSAS",
+  "source_url": "https://github.com/TheBeardedBearSAS/claude-craft/blob/main/Dev/i18n/fr/Flutter/skills/tooling/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 TheBeardedCTO",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

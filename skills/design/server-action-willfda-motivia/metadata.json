@@ -5,5 +5,12 @@
   "description": "Crée des Server Actions pour Motivia. Utilise ce skill quand l'utilisateur demande une action serveur, une mutation, un CRUD, ou une opération base de données. Suit le pattern next-safe-action avec ge",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:09:34.584590Z",
-  "dir_name": "server-action-willfda-motivia"
+  "dir_name": "server-action-willfda-motivia",
+  "author": "WillFDA",
+  "source_url": "https://github.com/WillFDA/motivia",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/WillFDA/motivia",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

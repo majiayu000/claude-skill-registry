@@ -5,5 +5,12 @@
   "source": "github.com/92Bilal26/TaskPilotAI",
   "downloaded_at": "2026-01-29T08:20:27.955510Z",
   "dir_name": "notebooklm-slides-92bilal26-taskpilotai",
-  "category": "data"
+  "category": "data",
+  "author": "92Bilal26",
+  "source_url": "https://github.com/92Bilal26/TaskPilotAI/blob/main/.claude/skills/notebooklm-slides/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/92Bilal26/TaskPilotAI/blob/main/.claude/skills/notebooklm-slides/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

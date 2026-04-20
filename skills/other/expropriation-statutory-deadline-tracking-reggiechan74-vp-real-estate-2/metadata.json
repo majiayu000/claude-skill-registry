@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/reggiechan74/vp-real-estate",
-  "dir_name": "expropriation-statutory-deadline-tracking-reggiechan74-vp-real-estate-2"
+  "dir_name": "expropriation-statutory-deadline-tracking-reggiechan74-vp-real-estate-2",
+  "author": "reggiechan74",
+  "source_url": "https://github.com/reggiechan74/vp-real-estate/blob/main/.claude/skills/expropriation-statutory-deadline-tracking/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/reggiechan74/vp-real-estate/blob/main/.claude/skills/expropriation-statutory-deadline-tracking/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

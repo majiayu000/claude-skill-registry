@@ -5,5 +5,12 @@
   "description": "Comprehensive SQLAlchemy skill for customer support tech enablement, covering ORM patterns, session management, query optimization, async operations, and PostgreSQL integration",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:37.270686Z",
-  "dir_name": "sqlalchemy-orm-expert"
+  "dir_name": "sqlalchemy-orm-expert",
+  "author": "manutej",
+  "source_url": "https://github.com/manutej/luxor-claude-marketplace",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/manutej/luxor-claude-marketplace",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

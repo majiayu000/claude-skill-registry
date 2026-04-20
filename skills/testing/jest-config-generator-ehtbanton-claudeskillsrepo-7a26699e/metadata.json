@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": "jest-config-generator",
   "github_branch": "main",
-  "dir_name": "jest-config-generator-ehtbanton-claudeskillsrepo-7a26699e"
+  "dir_name": "jest-config-generator-ehtbanton-claudeskillsrepo-7a26699e",
+  "author": "ehtbanton",
+  "source_url": "https://github.com/ehtbanton/ClaudeSkillsRepo/blob/main/jest-config-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ehtbanton/ClaudeSkillsRepo/blob/main/jest-config-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

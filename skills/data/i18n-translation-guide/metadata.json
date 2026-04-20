@@ -5,5 +5,12 @@
   "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
   "downloaded_at": "2026-01-27T01:26:53.579528Z",
   "dir_name": "i18n-translation-guide",
-  "category": "data"
+  "category": "data",
+  "author": "JaveedIshaq",
+  "source_url": "https://github.com/JaveedIshaq/ai-workflow-orchestrator/blob/main/skills/ballee/i18n-translation-guide/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Antoine Schaller",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

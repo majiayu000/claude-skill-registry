@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:26.265608Z",
   "github_path": "plugins/skills/agentic-structure",
   "github_branch": "main",
-  "dir_name": "agentic-structure"
+  "dir_name": "agentic-structure",
+  "author": "BackGwa",
+  "source_url": "https://github.com/BackGwa/Agentic-Structure/blob/main/plugins/skills/agentic-structure/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 강찬영",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

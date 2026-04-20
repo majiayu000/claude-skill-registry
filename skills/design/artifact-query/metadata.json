@@ -5,5 +5,12 @@
   "description": "Search the Artifact Index for relevant historical context using semanticfull-text search. Returns handoffs, plans, and continuity ledgers rankedby relevance using BM25.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:32.055592Z",
-  "dir_name": "artifact-query"
+  "dir_name": "artifact-query",
+  "author": "LerianStudio",
+  "source_url": "https://github.com/LerianStudio/ring",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LerianStudio/ring",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

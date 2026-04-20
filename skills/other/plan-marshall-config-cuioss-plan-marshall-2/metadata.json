@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/cuioss/plan-marshall",
-  "dir_name": "plan-marshall-config-cuioss-plan-marshall-2"
+  "dir_name": "plan-marshall-config-cuioss-plan-marshall-2",
+  "author": "cuioss",
+  "source_url": "https://github.com/cuioss/plan-marshall/blob/main/marketplace/bundles/plan-marshall/skills/manage-plan-marshall-config/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 Oliver Wolff",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

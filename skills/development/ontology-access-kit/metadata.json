@@ -10,5 +10,12 @@
   ],
   "stars": 14,
   "source": "local",
-  "dir_name": "ontology-access-kit"
+  "dir_name": "ontology-access-kit",
+  "author": "ai4curation",
+  "source_url": "https://github.com/ai4curation/curation-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ai4curation/curation-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

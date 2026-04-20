@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/dwmkerr/claude-toolkit",
-  "dir_name": "anthropic-evaluations"
+  "dir_name": "anthropic-evaluations",
+  "author": "dwmkerr",
+  "source_url": "https://github.com/dwmkerr/claude-toolkit",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dave Kerr",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

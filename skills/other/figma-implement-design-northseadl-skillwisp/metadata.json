@@ -9,5 +9,12 @@
   "github_path": "skills/@openai/figma-implement-design",
   "github_branch": "main",
   "dir_name": "figma-implement-design-northseadl-skillwisp",
-  "downloaded_at": "2026-02-05T01:44:58.719908Z"
+  "downloaded_at": "2026-02-05T01:44:58.719908Z",
+  "author": "northseadl",
+  "source_url": "https://github.com/northseadl/skillwisp/blob/main/skills/@openai/figma-implement-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 SkillWisp",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

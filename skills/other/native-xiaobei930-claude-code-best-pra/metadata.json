@@ -5,5 +5,12 @@
   "source": "github.com/xiaobei930/claude-code-best-practices",
   "downloaded_at": "2026-01-29T05:51:11.306440Z",
   "dir_name": "native-xiaobei930-claude-code-best-pra",
-  "category": "other"
+  "category": "other",
+  "author": "xiaobei930",
+  "source_url": "https://github.com/xiaobei930/claude-code-best-practices/blob/main/skills/native/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 xiaobei930",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

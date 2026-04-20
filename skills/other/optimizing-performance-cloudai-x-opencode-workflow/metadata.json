@@ -5,5 +5,12 @@
   "source": "github.com/CloudAI-X/opencode-workflow",
   "downloaded_at": "2026-01-29T08:23:16.771719Z",
   "dir_name": "optimizing-performance-cloudai-x-opencode-workflow",
-  "category": "other"
+  "category": "other",
+  "author": "CloudAI-X",
+  "source_url": "https://github.com/CloudAI-X/opencode-workflow/blob/main/skills/optimizing-performance/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 CloudAI-X",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

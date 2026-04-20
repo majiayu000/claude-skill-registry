@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:33.240638Z",
   "github_path": ".archive/ops-team/skills/ops-platform-onboarding",
   "github_branch": "main",
-  "dir_name": "ops-platform-onboarding-lerianstudio-ring"
+  "dir_name": "ops-platform-onboarding-lerianstudio-ring",
+  "author": "LerianStudio",
+  "source_url": "https://github.com/LerianStudio/ring/blob/main/.archive/ops-team/skills/ops-platform-onboarding/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LerianStudio/ring/blob/main/.archive/ops-team/skills/ops-platform-onboarding/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

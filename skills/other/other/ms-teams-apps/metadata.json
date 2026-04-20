@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/alinaqi/claude-bootstrap",
   "dir_name": "ms-teams-apps",
-  "downloaded_at": "2026-02-15T06:17:17.945176Z"
+  "downloaded_at": "2026-02-15T06:17:17.945176Z",
+  "author": "alinaqi",
+  "source_url": "https://github.com/alinaqi/claude-bootstrap/blob/main/skills/ms-teams-apps/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ali Naqi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

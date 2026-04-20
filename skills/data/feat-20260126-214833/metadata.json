@@ -5,5 +5,12 @@
   "source": "github.com/qmu/workaholic",
   "downloaded_at": "2026-01-31T03:21:58.313085Z",
   "dir_name": "feat-20260126-214833",
-  "category": "data"
+  "category": "data",
+  "author": "qmu",
+  "source_url": "https://github.com/qmu/workaholic/blob/main/.workaholic/tickets/archive/feat-20260126-214833/20260127021000-extract-story-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/qmu/workaholic/blob/main/.workaholic/tickets/archive/feat-20260126-214833/20260127021000-extract-story-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

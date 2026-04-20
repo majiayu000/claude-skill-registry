@@ -11,5 +11,12 @@
   "stars": 1,
   "github_path": "skills/threejs-graphics-optimizer",
   "github_branch": "main",
-  "dir_name": "threejs-graphics-optimizer"
+  "dir_name": "threejs-graphics-optimizer",
+  "author": "ovachiever",
+  "source_url": "https://github.com/ovachiever/droid-tings/blob/main/skills/threejs-graphics-optimizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Claude Skills Collection Contributors",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "oauth-automation"
+  "dir_name": "oauth-automation",
+  "author": "aixier",
+  "source_url": "https://github.com/aixier/n8n-automation-hub",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aixier/n8n-automation-hub",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

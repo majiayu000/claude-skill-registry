@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:39.636902Z",
   "github_path": ".claude/skills/branch-naming",
   "github_branch": "main",
-  "dir_name": "branch-naming"
+  "dir_name": "branch-naming",
+  "author": "forrestthewoods",
+  "source_url": "https://github.com/forrestthewoods/anubis/blob/main/.claude/skills/branch-naming/SKILL.md",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/forrestthewoods/anubis/blob/main/.claude/skills/branch-naming/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

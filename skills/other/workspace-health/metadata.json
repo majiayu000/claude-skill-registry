@@ -7,5 +7,12 @@
   "dir_name": "workspace-health",
   "category": "other",
   "github_path": "plugins/utils/skills/workspace-health",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jmagly",
+  "source_url": "https://github.com/jmagly/ai-writing-guide/blob/main/plugins/utils/skills/workspace-health/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Joe Magly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

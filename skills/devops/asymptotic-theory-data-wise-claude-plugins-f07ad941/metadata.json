@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:51.697464Z",
   "github_path": "statistical-research/skills/mathematical/asymptotic-theory",
   "github_branch": "main",
-  "dir_name": "asymptotic-theory-data-wise-claude-plugins-f07ad941"
+  "dir_name": "asymptotic-theory-data-wise-claude-plugins-f07ad941",
+  "author": "Data-Wise",
+  "source_url": "https://github.com/Data-Wise/claude-plugins/blob/main/statistical-research/skills/mathematical/asymptotic-theory/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Data-Wise",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/alinaqi/claude-bootstrap",
   "dir_name": "ui-testing",
-  "downloaded_at": "2026-02-15T06:17:16.582870Z"
+  "downloaded_at": "2026-02-15T06:17:16.582870Z",
+  "author": "alinaqi",
+  "source_url": "https://github.com/alinaqi/claude-bootstrap/blob/main/skills/ui-testing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ali Naqi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

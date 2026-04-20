@@ -10,5 +10,12 @@
   ],
   "stars": 15,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "design-prompt-optimizer-ttmouse-skills"
+  "dir_name": "design-prompt-optimizer-ttmouse-skills",
+  "author": "ttmouse",
+  "source_url": "https://github.com/ttmouse/skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ttmouse/skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

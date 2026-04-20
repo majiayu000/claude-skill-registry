@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/stack-selector",
   "github_branch": "main",
-  "dir_name": "stack-selector"
+  "dir_name": "stack-selector",
+  "author": "timequity",
+  "source_url": "https://github.com/timequity/vibe-coder/blob/main/skills/stack-selector/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 timequity",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

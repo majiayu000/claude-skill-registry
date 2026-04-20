@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:58.513929Z",
   "github_path": ".claude/skills/mcp-patterns",
   "github_branch": "main",
-  "dir_name": "mcp-patterns-youdotcom-oss-dx-toolkit"
+  "dir_name": "mcp-patterns-youdotcom-oss-dx-toolkit",
+  "author": "youdotcom-oss",
+  "source_url": "https://github.com/youdotcom-oss/dx-toolkit/blob/main/.claude/skills/mcp-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 You.com",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

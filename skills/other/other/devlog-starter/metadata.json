@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/Carl-312/devlog-starter",
   "dir_name": "devlog-starter",
-  "downloaded_at": "2026-02-22T04:51:21.267710Z"
+  "downloaded_at": "2026-02-22T04:51:21.267710Z",
+  "author": "Carl-312",
+  "source_url": "https://github.com/Carl-312/devlog-starter/blob/main/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AI Architect Lite Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

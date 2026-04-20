@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/ScientiaCapital/skills",
-  "dir_name": "workflow-enforcer"
+  "dir_name": "workflow-enforcer",
+  "author": "ScientiaCapital",
+  "source_url": "https://github.com/ScientiaCapital/skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ScientiaCapital/skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

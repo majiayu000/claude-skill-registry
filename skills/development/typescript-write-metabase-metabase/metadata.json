@@ -7,5 +7,12 @@
   "stars": 45687,
   "source": "github.com/metabase/metabase",
   "downloaded_at": "2026-01-24T16:16:03.322832Z",
-  "dir_name": "typescript-write-metabase-metabase"
+  "dir_name": "typescript-write-metabase-metabase",
+  "author": "metabase",
+  "source_url": "https://github.com/metabase/metabase/blob/main/.claude/skills/typescript-write/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/metabase/metabase/blob/main/.claude/skills/typescript-write/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

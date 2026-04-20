@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/shadcn-component",
   "github_branch": "main",
-  "dir_name": "shadcn-component-applelamps-xpic2"
+  "dir_name": "shadcn-component-applelamps-xpic2",
+  "author": "AppleLamps",
+  "source_url": "https://github.com/AppleLamps/xpic2/blob/main/.claude/skills/shadcn-component/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AppleLamps/xpic2/blob/main/.claude/skills/shadcn-component/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

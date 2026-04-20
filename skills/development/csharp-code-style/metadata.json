@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:39.387718Z",
   "github_path": "csharp-plugin/skills/csharp-code-style",
   "github_branch": "main",
-  "dir_name": "csharp-code-style"
+  "dir_name": "csharp-code-style",
+  "author": "creator-hian",
+  "source_url": "https://github.com/creator-hian/claude-code-plugins/blob/main/csharp-plugin/skills/csharp-code-style/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/creator-hian/claude-code-plugins/blob/main/csharp-plugin/skills/csharp-code-style/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

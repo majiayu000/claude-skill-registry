@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:58.928389Z",
   "github_path": "plugins/project-manager/skills/project-reporting",
   "github_branch": "main",
-  "dir_name": "project-reporting-spjoshis-claude-code-plugins"
+  "dir_name": "project-reporting-spjoshis-claude-code-plugins",
+  "author": "spjoshis",
+  "source_url": "https://github.com/spjoshis/claude-code-plugins/blob/main/plugins/project-manager/skills/project-reporting/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/spjoshis/claude-code-plugins/blob/main/plugins/project-manager/skills/project-reporting/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

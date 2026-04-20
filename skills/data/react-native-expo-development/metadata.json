@@ -11,5 +11,12 @@
   ],
   "stars": 2,
   "source": "local",
-  "dir_name": "react-native-expo-development"
+  "dir_name": "react-native-expo-development",
+  "author": "krzemienski",
+  "source_url": "https://github.com/krzemienski/claude-mobile-expo",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/krzemienski/claude-mobile-expo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

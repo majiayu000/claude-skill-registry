@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/hitoshura25/claude-devtools",
-  "dir_name": "android-e2e-testing-setup-hitoshura25-claude-devtools-2"
+  "dir_name": "android-e2e-testing-setup-hitoshura25-claude-devtools-2",
+  "author": "hitoshura25",
+  "source_url": "https://github.com/hitoshura25/claude-devtools/blob/main/skills/android-e2e-testing-setup/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hitoshura25/claude-devtools/blob/main/skills/android-e2e-testing-setup/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

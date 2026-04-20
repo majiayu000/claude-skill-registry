@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/ai-sdk-model-manager",
   "github_branch": "main",
-  "dir_name": "ai-sdk-model-manager-tambo-ai-tambo"
+  "dir_name": "ai-sdk-model-manager-tambo-ai-tambo",
+  "author": "tambo-ai",
+  "source_url": "https://github.com/tambo-ai/tambo/blob/main/.claude/skills/ai-sdk-model-manager/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Fractal Dynamics Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

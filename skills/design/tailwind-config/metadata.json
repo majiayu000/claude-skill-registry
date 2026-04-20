@@ -10,5 +10,12 @@
   "stars": 13,
   "github_path": ".claude/skills/tailwind-config",
   "github_branch": "main",
-  "dir_name": "tailwind-config"
+  "dir_name": "tailwind-config",
+  "author": "sgcarstrends",
+  "source_url": "https://github.com/sgcarstrends/sgcarstrends/blob/main/.claude/skills/tailwind-config/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SG Cars Trends",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

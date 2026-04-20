@@ -9,5 +9,12 @@
   "github_path": "Skills/Population_Genetics/epidemiological-genomics/pathogen-typing",
   "github_branch": "main",
   "dir_name": "pathogen-typing",
-  "downloaded_at": "2026-02-05T01:44:38.708142Z"
+  "downloaded_at": "2026-02-05T01:44:38.708142Z",
+  "author": "mdbabumiamssm",
+  "source_url": "https://github.com/mdbabumiamssm/LLMs-Universal-Life-Science-and-Clinical-Skills-/blob/main/Skills/Population_Genetics/epidemiological-genomics/pathogen-typing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MD BABU MIA , PHD",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

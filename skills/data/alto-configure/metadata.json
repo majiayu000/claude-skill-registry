@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/gonzaloetjo/alto",
-  "dir_name": "alto-configure"
+  "dir_name": "alto-configure",
+  "author": "gonzaloetjo",
+  "source_url": "https://github.com/gonzaloetjo/alto",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gonzaloetjo/alto",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

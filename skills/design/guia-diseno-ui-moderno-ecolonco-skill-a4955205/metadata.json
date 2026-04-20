@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": ".claude/skills/guia-diseno-ui-moderno",
   "github_branch": "main",
-  "dir_name": "guia-diseno-ui-moderno-ecolonco-skill-a4955205"
+  "dir_name": "guia-diseno-ui-moderno-ecolonco-skill-a4955205",
+  "author": "ecolonco",
+  "source_url": "https://github.com/ecolonco/skill/blob/main/.claude/skills/guia-diseno-ui-moderno/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ecolonco/skill/blob/main/.claude/skills/guia-diseno-ui-moderno/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

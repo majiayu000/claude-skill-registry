@@ -12,5 +12,12 @@
   "stars": 6,
   "github_path": "skills/react-server-components-framework",
   "github_branch": "main",
-  "dir_name": "react-server-components-framework-ariegoldkin-ai-agent-hub"
+  "dir_name": "react-server-components-framework-ariegoldkin-ai-agent-hub",
+  "author": "ArieGoldkin",
+  "source_url": "https://github.com/ArieGoldkin/ai-agent-hub/blob/main/skills/react-server-components-framework/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Arie Goldkin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

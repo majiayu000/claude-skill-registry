@@ -5,5 +5,12 @@
   "source": "github.com/datadrivenconstruction/DDC_Skills_for_AI_Agents_in_Construction",
   "downloaded_at": "2026-02-02T02:56:26.882062Z",
   "dir_name": "clash-detection-analysis",
-  "category": "other"
+  "category": "other",
+  "author": "datadrivenconstruction",
+  "source_url": "https://github.com/datadrivenconstruction/DDC_Skills_for_AI_Agents_in_Construction/blob/main/5_DDC_Innovative/clash-detection-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 DataDrivenConstruction",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

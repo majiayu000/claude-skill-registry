@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:39.928926Z",
   "github_path": "github-workflows/skills/organizing-with-labels",
   "github_branch": "main",
-  "dir_name": "organizing-with-labels"
+  "dir_name": "organizing-with-labels",
+  "author": "C0ntr0lledCha0s",
+  "source_url": "https://github.com/C0ntr0lledCha0s/claude-code-plugin-automations/blob/main/github-workflows/skills/organizing-with-labels/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 C0ntr0lledCha0s",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

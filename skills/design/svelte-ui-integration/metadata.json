@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/svelte-ui-integration",
   "github_branch": "main",
-  "dir_name": "svelte-ui-integration"
+  "dir_name": "svelte-ui-integration",
+  "author": "ajianaz",
+  "source_url": "https://github.com/ajianaz/skills-collection/blob/main/skills/svelte-ui-integration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024 Anaz S. Aji",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "skills-eval",
   "category": "other",
   "github_path": "plugins/abstract/skills/skills-eval",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/abstract/skills/skills-eval/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

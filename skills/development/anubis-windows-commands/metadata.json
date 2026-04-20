@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:24:31.299537Z",
   "github_path": ".claude/skills/anubis-windows-commands",
   "github_branch": "main",
-  "dir_name": "anubis-windows-commands"
+  "dir_name": "anubis-windows-commands",
+  "author": "forrestthewoods",
+  "source_url": "https://github.com/forrestthewoods/anubis/blob/main/.claude/skills/anubis-windows-commands/SKILL.md",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/forrestthewoods/anubis/blob/main/.claude/skills/anubis-windows-commands/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/SlanyCukr/riot-api-project",
   "downloaded_at": "2026-02-04T04:20:48.744579Z",
   "dir_name": "alembic",
-  "category": "data"
+  "category": "data",
+  "author": "SlanyCukr",
+  "source_url": "https://github.com/SlanyCukr/riot-api-project/blob/main/.claude/skills/backend/alembic/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SlanyCukr/riot-api-project/blob/main/.claude/skills/backend/alembic/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:56.013989Z",
   "github_path": "skills/julien-wordpress-structure-validator",
   "github_branch": "main",
-  "dir_name": "wordpress-structure-validator-theflysurfer-claude-skills-market-5d9ef9f9"
+  "dir_name": "wordpress-structure-validator-theflysurfer-claude-skills-market-5d9ef9f9",
+  "author": "theflysurfer",
+  "source_url": "https://github.com/theflysurfer/claude-skills-marketplace/blob/main/skills/julien-wordpress-structure-validator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/theflysurfer/claude-skills-marketplace/blob/main/skills/julien-wordpress-structure-validator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/wtthornton/HomeIQ",
   "downloaded_at": "2026-01-22T03:13:13.060079Z",
   "dir_name": "ops-wtthornton-homeiq-35b53b93",
-  "category": "other"
+  "category": "other",
+  "author": "wtthornton",
+  "source_url": "https://github.com/wtthornton/HomeIQ/blob/main/.claude/skills/ops/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Home Assistant Ingestor Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

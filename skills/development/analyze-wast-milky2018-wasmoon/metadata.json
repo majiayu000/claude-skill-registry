@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/analyze-wast",
   "github_branch": "main",
-  "dir_name": "analyze-wast-milky2018-wasmoon"
+  "dir_name": "analyze-wast-milky2018-wasmoon",
+  "author": "Milky2018",
+  "source_url": "https://github.com/Milky2018/wasmoon/blob/main/.claude/skills/analyze-wast/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Milky2018/wasmoon/blob/main/.claude/skills/analyze-wast/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

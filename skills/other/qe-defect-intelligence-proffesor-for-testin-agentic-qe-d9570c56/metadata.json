@@ -5,5 +5,12 @@
   "source": "github.com/proffesor-for-testing/agentic-qe",
   "downloaded_at": "2026-01-29T06:49:48.789230Z",
   "dir_name": "qe-defect-intelligence-proffesor-for-testin-agentic-qe-d9570c56",
-  "category": "other"
+  "category": "other",
+  "author": "proffesor-for-testing",
+  "source_url": "https://github.com/proffesor-for-testing/agentic-qe/blob/main/.claude/skills/qe-defect-intelligence/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Agentic QE Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

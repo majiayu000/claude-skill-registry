@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:40.605133Z",
   "github_path": ".github/skills/create-pr-azdo",
   "github_branch": "main",
-  "dir_name": "create-pr-azdo-oocx-tfplan2md-uat"
+  "dir_name": "create-pr-azdo-oocx-tfplan2md-uat",
+  "author": "oocx",
+  "source_url": "https://github.com/oocx/tfplan2md-uat/blob/main/.github/skills/create-pr-azdo/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 oocx",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

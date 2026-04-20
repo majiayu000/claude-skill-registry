@@ -5,5 +5,12 @@
   "source": "github.com/alinaqi/claude-bootstrap",
   "downloaded_at": "2026-02-02T03:52:33.878449Z",
   "dir_name": "android-kotlin-alinaqi-claude-bootstrap-721218b8",
-  "category": "other"
+  "category": "other",
+  "author": "alinaqi",
+  "source_url": "https://github.com/alinaqi/claude-bootstrap/blob/main/skills/android-kotlin/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ali Naqi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

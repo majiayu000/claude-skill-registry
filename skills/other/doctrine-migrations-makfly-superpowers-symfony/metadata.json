@@ -7,5 +7,12 @@
   "dir_name": "doctrine-migrations-makfly-superpowers-symfony",
   "category": "other",
   "github_path": "skills/doctrine-migrations",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "MakFly",
+  "source_url": "https://github.com/MakFly/superpowers-symfony/blob/main/skills/doctrine-migrations/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

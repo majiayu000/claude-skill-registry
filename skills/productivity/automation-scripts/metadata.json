@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:02.646973Z",
   "github_path": "tools-integrations/automation-scripts",
   "github_branch": "main",
-  "dir_name": "automation-scripts"
+  "dir_name": "automation-scripts",
+  "author": "miles990",
+  "source_url": "https://github.com/miles990/claude-software-skills/blob/main/tools-integrations/automation-scripts/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

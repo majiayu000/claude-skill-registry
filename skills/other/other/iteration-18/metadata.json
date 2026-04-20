@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/agentgptsmith/MonadFramework",
   "dir_name": "iteration-18",
-  "downloaded_at": "2026-02-15T06:07:10.765666Z"
+  "downloaded_at": "2026-02-15T06:07:10.765666Z",
+  "author": "agentgptsmith",
+  "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/multiplicity/iteration_18/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/multiplicity/iteration_18/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

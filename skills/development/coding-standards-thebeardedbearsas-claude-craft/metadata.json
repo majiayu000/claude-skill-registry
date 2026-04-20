@@ -7,5 +7,12 @@
   "stars": 74,
   "source": "github.com/TheBeardedBearSAS/claude-craft",
   "downloaded_at": "2026-01-24T16:15:29.238071Z",
-  "dir_name": "coding-standards-thebeardedbearsas-claude-craft"
+  "dir_name": "coding-standards-thebeardedbearsas-claude-craft",
+  "author": "TheBeardedBearSAS",
+  "source_url": "https://github.com/TheBeardedBearSAS/claude-craft/blob/main/Dev/i18n/de/Symfony/skills/coding-standards/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 TheBeardedCTO",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

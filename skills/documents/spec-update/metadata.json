@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:48.580883Z",
   "github_path": ".claude/skills/tasks-spec-update",
   "github_branch": "main",
-  "dir_name": "spec-update"
+  "dir_name": "spec-update",
+  "author": "duc01226",
+  "source_url": "https://github.com/duc01226/EasyPlatform/blob/main/.claude/skills/tasks-spec-update/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Dang Phuoc Duc",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

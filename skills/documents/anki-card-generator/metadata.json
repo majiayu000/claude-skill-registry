@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:35.967958Z",
   "github_path": "src/anki-card-generator",
   "github_branch": "main",
-  "dir_name": "anki-card-generator"
+  "dir_name": "anki-card-generator",
+  "author": "niracler",
+  "source_url": "https://github.com/niracler/skill/blob/main/src/anki-card-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Niracler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

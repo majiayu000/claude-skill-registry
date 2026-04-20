@@ -5,5 +5,12 @@
   "description": "Use when implementing UI components, design systems, or responsive layouts - verifies visual correctness through screenshot comparison and DevTools verification; prevents shipping broken UI",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:50.187449Z",
-  "dir_name": "frontend-visual-regression-testing-samjhecht-wrangler"
+  "dir_name": "frontend-visual-regression-testing-samjhecht-wrangler",
+  "author": "samjhecht",
+  "source_url": "https://github.com/samjhecht/wrangler",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sam Hecht",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

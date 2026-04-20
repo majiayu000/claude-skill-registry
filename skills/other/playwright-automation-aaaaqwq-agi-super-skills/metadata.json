@@ -9,5 +9,12 @@
   "github_path": "playwright-automation",
   "github_branch": "master",
   "dir_name": "playwright-automation-aaaaqwq-agi-super-skills",
-  "downloaded_at": "2026-02-05T01:45:00.429018Z"
+  "downloaded_at": "2026-02-05T01:45:00.429018Z",
+  "author": "aAAaqwq",
+  "source_url": "https://github.com/aAAaqwq/AGI-Super-Skills/blob/master/playwright-automation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 AGI Super Team Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

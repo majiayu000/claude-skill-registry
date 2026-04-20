@@ -7,5 +7,12 @@
   "stars": 6,
   "source": "github.com/mike-coulbourn/claude-vibes",
   "downloaded_at": "2026-01-24T16:15:13.689367Z",
-  "dir_name": "templates-mike-coulbourn-claude-vibes"
+  "dir_name": "templates-mike-coulbourn-claude-vibes",
+  "author": "mike-coulbourn",
+  "source_url": "https://github.com/mike-coulbourn/claude-vibes/blob/main/plugins/vibes/skills/skill-builder/templates/basic-skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Mike Coulbourn",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

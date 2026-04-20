@@ -7,5 +7,12 @@
   "dir_name": "elna-cantara-lib-electronic-compo-f5fb0f17",
   "category": "other",
   "github_path": ".claude/skills/manufacturers/elna",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Cantara",
+  "source_url": "https://github.com/Cantara/lib-electronic-components/blob/main/.claude/skills/manufacturers/elna/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cantara/lib-electronic-components/blob/main/.claude/skills/manufacturers/elna/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

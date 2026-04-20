@@ -7,5 +7,12 @@
   "dir_name": "query-performance-analysis",
   "category": "other",
   "github_path": ".claude/skills/query-performance-analysis",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "VilnaCRM-Org",
+  "source_url": "https://github.com/VilnaCRM-Org/user-service/blob/main/.claude/skills/query-performance-analysis/SKILL.md",
+  "license": "CC0-1.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/VilnaCRM-Org/user-service/blob/main/.claude/skills/query-performance-analysis/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/namesreallyblank/Clorch",
-  "dir_name": "categories-functors"
+  "dir_name": "categories-functors",
+  "author": "namesreallyblank",
+  "source_url": "https://github.com/namesreallyblank/Clorch",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/namesreallyblank/Clorch",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

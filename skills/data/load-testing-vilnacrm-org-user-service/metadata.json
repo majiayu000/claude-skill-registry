@@ -5,5 +5,12 @@
   "source": "github.com/VilnaCRM-Org/user-service",
   "downloaded_at": "2026-02-04T04:40:22.967549Z",
   "dir_name": "load-testing-vilnacrm-org-user-service",
-  "category": "data"
+  "category": "data",
+  "author": "VilnaCRM-Org",
+  "source_url": "https://github.com/VilnaCRM-Org/user-service/blob/main/.claude/skills/load-testing/SKILL.md",
+  "license": "CC0-1.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/VilnaCRM-Org/user-service/blob/main/.claude/skills/load-testing/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

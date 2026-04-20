@@ -5,5 +5,12 @@
   "source": "github.com/anhxuanpham/astro-chart",
   "downloaded_at": "2026-02-04T05:20:56.386030Z",
   "dir_name": "devops-anhxuanpham-astro-chart",
-  "category": "data"
+  "category": "data",
+  "author": "anhxuanpham",
+  "source_url": "https://github.com/anhxuanpham/astro-chart/blob/main/your-project/skills/devops/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anhxuanpham/astro-chart/blob/main/your-project/skills/devops/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

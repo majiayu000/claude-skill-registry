@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/cloud-deployment",
   "github_branch": "main",
-  "dir_name": "cloud-deployment"
+  "dir_name": "cloud-deployment",
+  "author": "MUmerRazzaq",
+  "source_url": "https://github.com/MUmerRazzaq/fast-next-todo/blob/main/.claude/skills/cloud-deployment/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MUmerRazzaq/fast-next-todo/blob/main/.claude/skills/cloud-deployment/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

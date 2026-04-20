@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "ai-image-generator",
   "github_path": "",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Lucent-Snow",
+  "source_url": "https://github.com/Lucent-Snow/ai-image-generator",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 AI Image Generator Skill Contributors",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

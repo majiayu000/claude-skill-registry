@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:34.052095Z",
   "github_path": "tw-team/skills/voice-and-tone",
   "github_branch": "main",
-  "dir_name": "voice-and-tone"
+  "dir_name": "voice-and-tone",
+  "author": "LerianStudio",
+  "source_url": "https://github.com/LerianStudio/ring/blob/main/tw-team/skills/voice-and-tone/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LerianStudio/ring/blob/main/tw-team/skills/voice-and-tone/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

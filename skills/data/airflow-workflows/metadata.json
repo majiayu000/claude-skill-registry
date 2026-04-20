@@ -5,5 +5,12 @@
   "source": "github.com/timequity/vibe-coder",
   "downloaded_at": "2026-02-01T05:04:25.694221Z",
   "dir_name": "airflow-workflows",
-  "category": "data"
+  "category": "data",
+  "author": "timequity",
+  "source_url": "https://github.com/timequity/vibe-coder/blob/main/skills/data/airflow-workflows/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 timequity",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

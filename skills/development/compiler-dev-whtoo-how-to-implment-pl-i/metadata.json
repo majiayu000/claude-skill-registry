@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/compiler-dev",
   "github_branch": "main",
-  "dir_name": "compiler-dev-whtoo-how-to-implment-pl-i"
+  "dir_name": "compiler-dev-whtoo-how-to-implment-pl-i",
+  "author": "whtoo",
+  "source_url": "https://github.com/whtoo/How_to_implment_PL_in_Antlr4/blob/main/.claude/skills/compiler-dev/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2023, whtoo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

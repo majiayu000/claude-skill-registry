@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "evaluating-paper-relevance"
+  "dir_name": "evaluating-paper-relevance",
+  "author": "kthorn",
+  "source_url": "https://github.com/kthorn/research-superpower",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Research Superpowers Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

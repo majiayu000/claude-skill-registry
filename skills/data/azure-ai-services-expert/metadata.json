@@ -5,5 +5,12 @@
   "description": "Build AI applications on Azure using Azure OpenAI, Cognitive Services, and ML services with enterprise patterns",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:11:10.785721Z",
-  "dir_name": "azure-ai-services-expert"
+  "dir_name": "azure-ai-services-expert",
+  "author": "frankxai",
+  "source_url": "https://github.com/frankxai/ai-architect",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/frankxai/ai-architect",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/jackspace/ClaudeSkillz",
   "downloaded_at": "2026-01-29T02:09:05.390327Z",
   "dir_name": "scientific-pkg-anndata",
-  "category": "other"
+  "category": "other",
+  "author": "jackspace",
+  "source_url": "https://github.com/jackspace/ClaudeSkillz/blob/main/skills/scientific-pkg-anndata/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ClaudeSkillz Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

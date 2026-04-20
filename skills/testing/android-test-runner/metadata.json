@@ -10,5 +10,12 @@
   ],
   "stars": 3,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "android-test-runner"
+  "dir_name": "android-test-runner",
+  "author": "xtone",
+  "source_url": "https://github.com/xtone/ai_development_tools",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/xtone/ai_development_tools",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

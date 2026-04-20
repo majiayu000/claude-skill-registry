@@ -5,5 +5,12 @@
   "source": "github.com/VictorSmaniotto/degestao",
   "downloaded_at": "2026-01-27T03:07:30.343884Z",
   "dir_name": "php-patterns",
-  "category": "data"
+  "category": "data",
+  "author": "VictorSmaniotto",
+  "source_url": "https://github.com/VictorSmaniotto/degestao/blob/main/.agent/skills/php-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/VictorSmaniotto/degestao/blob/main/.agent/skills/php-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

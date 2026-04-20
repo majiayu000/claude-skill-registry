@@ -7,5 +7,12 @@
   "dir_name": "hic-data-io",
   "category": "other",
   "github_path": "hi-c-analysis/hic-data-io",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/hi-c-analysis/hic-data-io/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

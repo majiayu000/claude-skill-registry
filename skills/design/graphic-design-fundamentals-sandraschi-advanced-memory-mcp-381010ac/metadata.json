@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:18.591846Z",
   "github_path": "skills/creative/graphic-design-fundamentals",
   "github_branch": "main",
-  "dir_name": "graphic-design-fundamentals-sandraschi-advanced-memory-mcp-381010ac"
+  "dir_name": "graphic-design-fundamentals-sandraschi-advanced-memory-mcp-381010ac",
+  "author": "sandraschi",
+  "source_url": "https://github.com/sandraschi/advanced-memory-mcp/blob/main/skills/creative/graphic-design-fundamentals/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Sandra Schipal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

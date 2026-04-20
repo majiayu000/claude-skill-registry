@@ -7,5 +7,12 @@
   "dir_name": "check-repository-pattern-async-io-pierre-mcp-server",
   "category": "other",
   "github_path": ".claude/skills/check-repository-pattern",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Async-IO",
+  "source_url": "https://github.com/Async-IO/pierre_mcp_server/blob/main/.claude/skills/check-repository-pattern/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Async-IO/pierre_mcp_server/blob/main/.claude/skills/check-repository-pattern/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

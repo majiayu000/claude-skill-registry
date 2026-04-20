@@ -5,5 +5,12 @@
   "description": "Use when discussing animation principles with users of unknown skill level, or when providing a balanced reference that works for any experience level",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:15.761400Z",
-  "dir_name": "animation-principles-universal-reference-dylantarre-animation-principles"
+  "dir_name": "animation-principles-universal-reference-dylantarre-animation-principles",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/animation-principles",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

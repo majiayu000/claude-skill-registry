@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/domain-modeling",
   "github_branch": "main",
-  "dir_name": "domain-modeling-thapaliyabikendra-ai-artifacts"
+  "dir_name": "domain-modeling-thapaliyabikendra-ai-artifacts",
+  "author": "thapaliyabikendra",
+  "source_url": "https://github.com/thapaliyabikendra/ai-artifacts/blob/main/.claude/skills/domain-modeling/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

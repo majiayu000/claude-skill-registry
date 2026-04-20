@@ -9,5 +9,12 @@
   "github_path": ".agents/skills/window-function-generator",
   "github_branch": "main",
   "dir_name": "window-function-generator-byteworthy-upstream",
-  "downloaded_at": "2026-02-05T01:44:24.503475Z"
+  "downloaded_at": "2026-02-05T01:44:24.503475Z",
+  "author": "byteworthy",
+  "source_url": "https://github.com/byteworthy/Upstream/blob/main/.agents/skills/window-function-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024-2026 ByteWorthy LLC. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

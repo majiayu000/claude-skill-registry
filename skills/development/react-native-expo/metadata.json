@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/react-native-expo",
   "github_branch": "main",
-  "dir_name": "react-native-expo"
+  "dir_name": "react-native-expo",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/react-native-expo/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

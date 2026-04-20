@@ -5,5 +5,12 @@
   "source": "github.com/oaustegard/claude-skills",
   "downloaded_at": "2026-02-04T04:01:31.248739Z",
   "dir_name": "creating-skill",
-  "category": "data"
+  "category": "data",
+  "author": "oaustegard",
+  "source_url": "https://github.com/oaustegard/claude-skills/blob/main/creating-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Oskar Austegard",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

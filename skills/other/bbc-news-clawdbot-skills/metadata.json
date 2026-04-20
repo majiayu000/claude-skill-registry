@@ -7,5 +7,12 @@
   "dir_name": "bbc-news-clawdbot-skills",
   "category": "other",
   "github_path": "skills/ddrayne/bbc-news",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "clawdbot",
+  "source_url": "https://github.com/clawdbot/skills/blob/main/skills/ddrayne/bbc-news/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/add-med-record",
   "github_branch": "main",
-  "dir_name": "add-med-record-andr81-pers-assist"
+  "dir_name": "add-med-record-andr81-pers-assist",
+  "author": "andr81",
+  "source_url": "https://github.com/andr81/pers-assist/blob/main/.claude/skills/add-med-record/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andr81/pers-assist/blob/main/.claude/skills/add-med-record/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

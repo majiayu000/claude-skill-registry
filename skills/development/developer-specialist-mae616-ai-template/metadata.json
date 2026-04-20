@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/developer-specialist",
   "github_branch": "main",
-  "dir_name": "developer-specialist-mae616-ai-template"
+  "dir_name": "developer-specialist-mae616-ai-template",
+  "author": "mae616",
+  "source_url": "https://github.com/mae616/ai-template/blob/main/.claude/skills/developer-specialist/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 AI Template Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/dengineproblem/agents-monorepo",
   "downloaded_at": "2026-02-04T01:33:07.583007Z",
   "dir_name": "executive-dashboard",
-  "category": "data"
+  "category": "data",
+  "author": "dengineproblem",
+  "source_url": "https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/executive-dashboard/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/executive-dashboard/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

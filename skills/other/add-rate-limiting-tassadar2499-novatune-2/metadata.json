@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/Tassadar2499/NovaTune",
-  "dir_name": "add-rate-limiting-tassadar2499-novatune-2"
+  "dir_name": "add-rate-limiting-tassadar2499-novatune-2",
+  "author": "Tassadar2499",
+  "source_url": "https://github.com/Tassadar2499/NovaTune/blob/main/.claude/skills/add-rate-limiting/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

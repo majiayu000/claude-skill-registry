@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "ai/files/skills/experts/quality-security/debugger",
   "github_branch": "main",
-  "dir_name": "debugger"
+  "dir_name": "debugger",
+  "author": "zenobi-us",
+  "source_url": "https://github.com/zenobi-us/dotfiles/blob/main/ai/files/skills/experts/quality-security/debugger/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2014 Zenobius Jiricek",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

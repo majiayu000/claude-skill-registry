@@ -5,5 +5,12 @@
   "source": "github.com/gtmagents/gtm-agents",
   "downloaded_at": "2026-02-04T03:12:24.173662Z",
   "dir_name": "brand-voice-glossary",
-  "category": "data"
+  "category": "data",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/brand-strategy/skills/brand-voice-glossary/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

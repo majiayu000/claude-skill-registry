@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:29.049013Z",
   "github_path": "codex/skills/select",
   "github_branch": "main",
-  "dir_name": "select-tkersey-dotfiles-d847c98c"
+  "dir_name": "select-tkersey-dotfiles-d847c98c",
+  "author": "tkersey",
+  "source_url": "https://github.com/tkersey/dotfiles/blob/main/codex/skills/select/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2015 Tim Kersey",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Use when implementing file-based routing in Expo with Expo Router. Covers app directory structure, navigation, layouts, dynamic routes, and deep linking.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:03.373376Z",
-  "dir_name": "jutsu-expoexpo-router-thebushidocollective-han"
+  "dir_name": "jutsu-expoexpo-router-thebushidocollective-han",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "검증된 스토리텔링 프레임워크를 활용한 창의적 서사 생성. 8가지 스토리 공식, 3막 구조, 캐릭터 아크, 장르별 서사 패턴 제공",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:43.524442Z",
-  "dir_name": "story-formula"
+  "dir_name": "story-formula",
+  "author": "nfbs2000",
+  "source_url": "https://github.com/nfbs2000/vibe-with-google-ai-divorce-agent-inflearn",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nfbs2000/vibe-with-google-ai-divorce-agent-inflearn",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

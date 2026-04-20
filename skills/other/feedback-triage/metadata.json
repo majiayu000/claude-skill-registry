@@ -7,5 +7,12 @@
   "dir_name": "feedback-triage",
   "category": "other",
   "github_path": "skills/feedback-triage",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "troykelly",
+  "source_url": "https://github.com/troykelly/codex-skills/blob/main/skills/feedback-triage/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/troykelly/codex-skills/blob/main/skills/feedback-triage/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

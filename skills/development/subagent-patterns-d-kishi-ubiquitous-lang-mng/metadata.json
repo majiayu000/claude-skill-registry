@@ -10,5 +10,12 @@
   "stars": 1,
   "github_path": ".claude/skills/subagent-patterns",
   "github_branch": "main",
-  "dir_name": "subagent-patterns-d-kishi-ubiquitous-lang-mng"
+  "dir_name": "subagent-patterns-d-kishi-ubiquitous-lang-mng",
+  "author": "d-kishi",
+  "source_url": "https://github.com/d-kishi/ubiquitous-lang-mng/blob/main/.claude/skills/subagent-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/d-kishi/ubiquitous-lang-mng/blob/main/.claude/skills/subagent-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

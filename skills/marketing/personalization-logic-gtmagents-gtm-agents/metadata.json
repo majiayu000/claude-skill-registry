@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:23.535677Z",
   "github_path": "plugins/lead-nurture-orchestration/skills/personalization-logic",
   "github_branch": "main",
-  "dir_name": "personalization-logic-gtmagents-gtm-agents"
+  "dir_name": "personalization-logic-gtmagents-gtm-agents",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/lead-nurture-orchestration/skills/personalization-logic/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

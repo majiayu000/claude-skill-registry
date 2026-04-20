@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:38.005256Z",
   "github_path": ".archive/skills/github-manage",
   "github_branch": "main",
-  "dir_name": "github-manage"
+  "dir_name": "github-manage",
+  "author": "matteocervelli",
+  "source_url": "https://github.com/matteocervelli/llms/blob/main/.archive/skills/github-manage/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Matteo Cervelli",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

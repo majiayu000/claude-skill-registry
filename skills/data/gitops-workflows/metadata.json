@@ -5,5 +5,12 @@
   "source": "github.com/NickCrew/claude-cortex",
   "downloaded_at": "2026-02-04T05:07:10.445398Z",
   "dir_name": "gitops-workflows",
-  "category": "data"
+  "category": "data",
+  "author": "NickCrew",
+  "source_url": "https://github.com/NickCrew/claude-cortex/blob/main/skills/gitops-workflows/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nicholas Ferguson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

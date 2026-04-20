@@ -7,5 +7,12 @@
   "stars": 4,
   "source": "github.com/jpoutrin/product-forge",
   "downloaded_at": "2026-01-24T16:15:15.407327Z",
-  "dir_name": "create-agent"
+  "dir_name": "create-agent",
+  "author": "jpoutrin",
+  "source_url": "https://github.com/jpoutrin/product-forge/blob/main/plugins/claude-code-dev/skills/create-agent/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 jpoutrin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

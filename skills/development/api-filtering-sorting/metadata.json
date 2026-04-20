@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/api-filtering-sorting",
   "github_branch": "main",
-  "dir_name": "api-filtering-sorting"
+  "dir_name": "api-filtering-sorting",
+  "author": "aj-geddes",
+  "source_url": "https://github.com/aj-geddes/useful-ai-prompts/blob/main/skills/api-filtering-sorting/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AJ Geddes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

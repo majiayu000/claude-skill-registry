@@ -5,5 +5,12 @@
   "description": "Trunk Based Development workflow - all development on main branch with small frequent commits, minimal branching, and continuous integration. Covers when branches are justified (exceptional cases only",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:44.044977Z",
-  "dir_name": "wow-practicing-trunk-based-development"
+  "dir_name": "wow-practicing-trunk-based-development",
+  "author": "wahidyankf",
+  "source_url": "https://github.com/wahidyankf/open-sharia-enterprise",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025-2026 wahidyankf",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

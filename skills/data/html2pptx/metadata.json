@@ -5,5 +5,12 @@
   "source": "github.com/bitwikiorg/skills.md",
   "downloaded_at": "2026-01-27T01:51:45.727372Z",
   "dir_name": "html2pptx",
-  "category": "data"
+  "category": "data",
+  "author": "bitwikiorg",
+  "source_url": "https://github.com/bitwikiorg/skills.md/blob/main/sources/anthropic/html2pptx/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 BITwiki",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:45.966439Z",
   "github_path": ".factory/skills/add-dag-node",
   "github_branch": "main",
-  "dir_name": "add-dag-node-afi-protocol-afi-reactor-e2790a82"
+  "dir_name": "add-dag-node-afi-protocol-afi-reactor-e2790a82",
+  "author": "AFI-Protocol",
+  "source_url": "https://github.com/AFI-Protocol/afi-reactor/blob/main/.factory/skills/add-dag-node/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AFI Research Institute",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

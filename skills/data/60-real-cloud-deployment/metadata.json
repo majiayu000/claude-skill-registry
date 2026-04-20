@@ -5,5 +5,12 @@
   "source": "github.com/panaversity/agentfactory",
   "downloaded_at": "2026-02-02T04:49:38.986311Z",
   "dir_name": "60-real-cloud-deployment",
-  "category": "data"
+  "category": "data",
+  "author": "panaversity",
+  "source_url": "https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/06-AI-Cloud-Native-Development/60-real-cloud-deployment/00-build-your-cloud-deployment-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/06-AI-Cloud-Native-Development/60-real-cloud-deployment/00-build-your-cloud-deployment-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "File templates for Claude Agent SDK project scaffolding. Used by /agent-sdk:agent-scaffold command.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:22.775709Z",
-  "dir_name": "agent-scaffold"
+  "dir_name": "agent-scaffold",
+  "author": "majesticlabs-dev",
+  "source_url": "https://github.com/majesticlabs-dev/majestic-marketplace",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Majestic Labs LLC",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

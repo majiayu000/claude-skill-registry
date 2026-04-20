@@ -5,5 +5,12 @@
   "source": "github.com/jzOcb/agent-guardrails",
   "downloaded_at": "2026-02-04T01:44:11.696829Z",
   "dir_name": "agent-guardrails",
-  "category": "data"
+  "category": "data",
+  "author": "jzOcb",
+  "source_url": "https://github.com/jzOcb/agent-guardrails/blob/main/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 jzOcb",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/TerryTong-Git/AstraBashControl-backup",
   "downloaded_at": "2026-02-02T04:44:54.515652Z",
   "dir_name": "academic-research-writing-terrytong-git-astrabashcontrol-bac",
-  "category": "other"
+  "category": "other",
+  "author": "TerryTong-Git",
+  "source_url": "https://github.com/TerryTong-Git/AstraBashControl-backup/blob/main/.claude/skills/academic-research-writing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 UK AI Security Institute",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

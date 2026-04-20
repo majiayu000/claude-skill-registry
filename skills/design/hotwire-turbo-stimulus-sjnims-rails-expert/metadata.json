@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:55.790836Z",
   "github_path": "plugins/rails-expert/skills/hotwire-turbo-stimulus",
   "github_branch": "main",
-  "dir_name": "hotwire-turbo-stimulus-sjnims-rails-expert"
+  "dir_name": "hotwire-turbo-stimulus-sjnims-rails-expert",
+  "author": "sjnims",
+  "source_url": "https://github.com/sjnims/rails-expert/blob/main/plugins/rails-expert/skills/hotwire-turbo-stimulus/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sjnims/rails-expert/blob/main/plugins/rails-expert/skills/hotwire-turbo-stimulus/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

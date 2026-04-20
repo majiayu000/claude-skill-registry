@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:35.071900Z",
   "github_path": "plugins/infrastructure/ansible-workflows/skills/ansible-role-design",
   "github_branch": "main",
-  "dir_name": "ansible-role-design-basher83-lunar-claude-403d4eaf"
+  "dir_name": "ansible-role-design-basher83-lunar-claude-403d4eaf",
+  "author": "basher83",
+  "source_url": "https://github.com/basher83/lunar-claude/blob/main/plugins/infrastructure/ansible-workflows/skills/ansible-role-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 basher83",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

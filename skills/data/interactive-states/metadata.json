@@ -5,5 +5,12 @@
   "source": "github.com/fusengine/agents",
   "downloaded_at": "2026-02-04T01:11:54.979805Z",
   "dir_name": "interactive-states",
-  "category": "data"
+  "category": "data",
+  "author": "fusengine",
+  "source_url": "https://github.com/fusengine/agents/blob/main/plugins/design-expert/skills/interactive-states/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Fusengine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

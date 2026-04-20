@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "admin-infra-digitalocean"
+  "dir_name": "admin-infra-digitalocean",
+  "author": "evolv3-ai",
+  "source_url": "https://github.com/evolv3-ai/vibe-skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

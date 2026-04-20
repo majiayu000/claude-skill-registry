@@ -5,5 +5,12 @@
   "description": "Complete guide to ActiveRecord query optimization, associations, scopes, and PostgreSQL-specific patterns. Use this skill when writing database queries, designing model associations, creating migratio",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:17.060931Z",
-  "dir_name": "activerecord-query-patterns"
+  "dir_name": "activerecord-query-patterns",
+  "author": "Kaakati",
+  "source_url": "https://github.com/Kaakati/rails-enterprise-dev",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kaakati/rails-enterprise-dev",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

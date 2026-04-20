@@ -5,5 +5,12 @@
   "source": "github.com/cornmanwtf/ABANG-COLEK",
   "downloaded_at": "2026-01-29T07:07:00.358639Z",
   "dir_name": "bundle-size-optimizer-cornmanwtf-abang-colek",
-  "category": "other"
+  "category": "other",
+  "author": "cornmanwtf",
+  "source_url": "https://github.com/cornmanwtf/ABANG-COLEK/blob/main/skills/maintenance-optimization/bundle-size-optimizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cornmanwtf/ABANG-COLEK/blob/main/skills/maintenance-optimization/bundle-size-optimizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

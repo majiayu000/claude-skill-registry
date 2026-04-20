@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:41.510874Z",
   "dir_name": "value-based-methods",
   "github_path": ".claude/skills/yzmir-deep-rl/skills/value-based-methods",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "tachyon-beep",
+  "source_url": "https://github.com/tachyon-beep/hamlet/blob/main/.claude/skills/yzmir-deep-rl/skills/value-based-methods/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 John",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

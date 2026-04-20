@@ -9,5 +9,12 @@
   "github_path": ".agents/skills/envoy-proxy-config",
   "github_branch": "main",
   "dir_name": "envoy-proxy-config",
-  "downloaded_at": "2026-02-05T01:44:23.257490Z"
+  "downloaded_at": "2026-02-05T01:44:23.257490Z",
+  "author": "byteworthy",
+  "source_url": "https://github.com/byteworthy/Upstream/blob/main/.agents/skills/envoy-proxy-config/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024-2026 ByteWorthy LLC. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

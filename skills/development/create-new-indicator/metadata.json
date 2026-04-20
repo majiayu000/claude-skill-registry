@@ -5,5 +5,12 @@
   "description": "Use this skill when you need to add a new Python indicator to AERA.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:26.255903Z",
-  "dir_name": "create-new-indicator"
+  "dir_name": "create-new-indicator",
+  "author": "CheekyCodexConjurer",
+  "source_url": "https://github.com/CheekyCodexConjurer/quant-lab",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CheekyCodexConjurer/quant-lab",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/bybren-llc/safe-agentic-workflow",
   "downloaded_at": "2026-01-29T06:10:10.834789Z",
   "dir_name": "orchestration-patterns",
-  "category": "other"
+  "category": "other",
+  "author": "bybren-llc",
+  "source_url": "https://github.com/bybren-llc/safe-agentic-workflow/blob/main/.claude/skills/orchestration-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 J. Scott Graham (@cheddarfox) / ByBren, LLC",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

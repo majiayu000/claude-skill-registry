@@ -5,5 +5,12 @@
   "description": "Skill creation guidelines and protocols for high-fidelity, token-efficient specialized capabilities. Provides routing patterns, component selection criteria, and skill structure templates. Includes pr",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:01:20.604028Z",
-  "dir_name": "prompt-guidelines-skills"
+  "dir_name": "prompt-guidelines-skills",
+  "author": "warpcode",
+  "source_url": "https://github.com/warpcode/dotfiles",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/warpcode/dotfiles",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "server-health"
+  "dir_name": "server-health",
+  "author": "djcyphers",
+  "source_url": "https://github.com/djcyphers/network-copilot-cli",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 DJ",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

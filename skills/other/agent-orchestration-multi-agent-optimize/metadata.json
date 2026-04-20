@@ -5,5 +5,12 @@
   "source": "github.com/Claude-Code-Community-Ireland/claude-code-resources",
   "downloaded_at": "2026-02-02T03:47:33.427323Z",
   "dir_name": "agent-orchestration-multi-agent-optimize",
-  "category": "other"
+  "category": "other",
+  "author": "Claude-Code-Community-Ireland",
+  "source_url": "https://github.com/Claude-Code-Community-Ireland/claude-code-resources/blob/main/skills/general/agent-orchestration-multi-agent-optimize/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Code Community Ireland",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

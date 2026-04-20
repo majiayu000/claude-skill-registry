@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/gtmagents/gtm-agents",
   "dir_name": "ab-testing-gtmagents-gtm-agents",
-  "downloaded_at": "2026-02-22T07:21:51.441508Z"
+  "downloaded_at": "2026-02-22T07:21:51.441508Z",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/email-marketing/skills/ab-testing/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

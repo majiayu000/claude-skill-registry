@@ -9,5 +9,12 @@
   "github_path": "skills/competitor-alternatives",
   "github_branch": "main",
   "dir_name": "competitor-alternatives-cgyudistira-code-agents",
-  "downloaded_at": "2026-02-05T05:34:10.357211Z"
+  "downloaded_at": "2026-02-05T05:34:10.357211Z",
+  "author": "cgyudistira",
+  "source_url": "https://github.com/cgyudistira/code-agents/blob/main/skills/competitor-alternatives/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

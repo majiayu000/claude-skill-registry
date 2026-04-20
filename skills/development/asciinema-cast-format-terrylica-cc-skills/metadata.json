@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:41.734923Z",
   "github_path": "plugins/asciinema-tools/skills/asciinema-cast-format",
   "github_branch": "main",
-  "dir_name": "asciinema-cast-format-terrylica-cc-skills"
+  "dir_name": "asciinema-cast-format-terrylica-cc-skills",
+  "author": "terrylica",
+  "source_url": "https://github.com/terrylica/cc-skills/blob/main/plugins/asciinema-tools/skills/asciinema-cast-format/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Terry Li",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

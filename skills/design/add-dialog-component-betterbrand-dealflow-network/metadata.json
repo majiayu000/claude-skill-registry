@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "add-dialog-component-betterbrand-dealflow-network"
+  "dir_name": "add-dialog-component-betterbrand-dealflow-network",
+  "author": "betterbrand",
+  "source_url": "https://github.com/betterbrand/dealflow-network",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/betterbrand/dealflow-network",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

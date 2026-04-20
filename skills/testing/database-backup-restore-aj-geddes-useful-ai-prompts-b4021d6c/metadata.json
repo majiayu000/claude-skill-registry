@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/database-backup-restore",
   "github_branch": "main",
-  "dir_name": "database-backup-restore-aj-geddes-useful-ai-prompts-b4021d6c"
+  "dir_name": "database-backup-restore-aj-geddes-useful-ai-prompts-b4021d6c",
+  "author": "aj-geddes",
+  "source_url": "https://github.com/aj-geddes/useful-ai-prompts/blob/main/skills/database-backup-restore/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AJ Geddes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

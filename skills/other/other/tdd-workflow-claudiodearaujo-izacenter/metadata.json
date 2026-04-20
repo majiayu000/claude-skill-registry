@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/claudiodearaujo/IzaCenter",
   "dir_name": "tdd-workflow-claudiodearaujo-izacenter",
-  "downloaded_at": "2026-02-15T06:45:41.700052Z"
+  "downloaded_at": "2026-02-15T06:45:41.700052Z",
+  "author": "claudiodearaujo",
+  "source_url": "https://github.com/claudiodearaujo/IzaCenter/blob/main/.gemini/skills/tdd-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/claudiodearaujo/IzaCenter/blob/main/.gemini/skills/tdd-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

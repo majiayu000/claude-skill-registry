@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:18.797541Z",
   "github_path": "skills/creative/technical-writing-editor",
   "github_branch": "main",
-  "dir_name": "technical-writing-editor-sandraschi-advanced-memory-mcp"
+  "dir_name": "technical-writing-editor-sandraschi-advanced-memory-mcp",
+  "author": "sandraschi",
+  "source_url": "https://github.com/sandraschi/advanced-memory-mcp/blob/main/skills/creative/technical-writing-editor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Sandra Schipal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

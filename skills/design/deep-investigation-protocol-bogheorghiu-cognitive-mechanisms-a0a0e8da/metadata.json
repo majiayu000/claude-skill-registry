@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:20.710675Z",
   "github_path": "research-toolkit/skills/deep-investigation-protocol",
   "github_branch": "main",
-  "dir_name": "deep-investigation-protocol-bogheorghiu-cognitive-mechanisms-a0a0e8da"
+  "dir_name": "deep-investigation-protocol-bogheorghiu-cognitive-mechanisms-a0a0e8da",
+  "author": "bogheorghiu",
+  "source_url": "https://github.com/bogheorghiu/cognitive-mechanisms/blob/main/research-toolkit/skills/deep-investigation-protocol/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bogheorghiu/cognitive-mechanisms/blob/main/research-toolkit/skills/deep-investigation-protocol/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

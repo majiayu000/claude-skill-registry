@@ -10,5 +10,12 @@
   "stars": 10,
   "github_path": ".claude/skills/requirements-extractor",
   "github_branch": "main",
-  "dir_name": "requirements-extractor-matteocervelli-llms"
+  "dir_name": "requirements-extractor-matteocervelli-llms",
+  "author": "matteocervelli",
+  "source_url": "https://github.com/matteocervelli/llms/blob/main/.claude/skills/requirements-extractor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Matteo Cervelli",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

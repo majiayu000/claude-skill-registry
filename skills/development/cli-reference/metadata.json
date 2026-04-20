@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:50.997274Z",
   "github_path": "plugins/claude-code-metaskill/skills/cli-reference",
   "github_branch": "main",
-  "dir_name": "cli-reference"
+  "dir_name": "cli-reference",
+  "author": "reggiechan74",
+  "source_url": "https://github.com/reggiechan74/claude-plugins/blob/main/plugins/claude-code-metaskill/skills/cli-reference/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Reggie Chan",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

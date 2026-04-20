@@ -7,5 +7,12 @@
   "dir_name": "meta-loop-orchestrator",
   "category": "other",
   "github_path": "skills/orchestration/meta-loop-orchestrator",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/context-cascade/blob/main/skills/orchestration/meta-loop-orchestrator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ruvnet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

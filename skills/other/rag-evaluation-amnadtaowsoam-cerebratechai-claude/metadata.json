@@ -7,5 +7,12 @@
   "dir_name": "rag-evaluation-amnadtaowsoam-cerebratechai-claude",
   "category": "other",
   "github_path": "52-ai-evaluation/rag-evaluation",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/cerebratechai-claude-skills/blob/main/52-ai-evaluation/rag-evaluation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

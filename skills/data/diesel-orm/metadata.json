@@ -5,5 +5,12 @@
   "source": "github.com/ngxtm/devkit",
   "downloaded_at": "2026-01-31T04:37:27.011301Z",
   "dir_name": "diesel-orm",
-  "category": "data"
+  "category": "data",
+  "author": "ngxtm",
+  "source_url": "https://github.com/ngxtm/devkit/blob/main/rules/rust/diesel-orm/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

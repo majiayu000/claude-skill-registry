@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:14.831760Z",
   "github_path": "research/skills/research-methods",
   "github_branch": "main",
-  "dir_name": "research-methods"
+  "dir_name": "research-methods",
+  "author": "IvanTorresEdge",
+  "source_url": "https://github.com/IvanTorresEdge/molcajete.ai/blob/main/research/skills/research-methods/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2025 Ivan Torres",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

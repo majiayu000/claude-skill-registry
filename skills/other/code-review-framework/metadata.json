@@ -7,5 +7,12 @@
   "dir_name": "code-review-framework",
   "category": "other",
   "github_path": ".claude/skills/code-review-framework",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "ricardoroche",
+  "source_url": "https://github.com/ricardoroche/ricardos-claude-code/blob/main/.claude/skills/code-review-framework/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ricardoroche/ricardos-claude-code/blob/main/.claude/skills/code-review-framework/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

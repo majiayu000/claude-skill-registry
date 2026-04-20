@@ -5,5 +5,12 @@
   "source": "github.com/pathvanasoftware/IOSStorageCleaner",
   "downloaded_at": "2026-01-30T03:33:06.599792Z",
   "dir_name": "scientific-uspto-database",
-  "category": "data"
+  "category": "data",
+  "author": "pathvanasoftware",
+  "source_url": "https://github.com/pathvanasoftware/IOSStorageCleaner/blob/main/.claude/skills/scientific-uspto-database/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pathvanasoftware/IOSStorageCleaner/blob/main/.claude/skills/scientific-uspto-database/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

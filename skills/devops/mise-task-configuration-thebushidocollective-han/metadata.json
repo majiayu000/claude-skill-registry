@@ -5,5 +5,12 @@
   "description": "Use when defining and configuring Mise tasks in mise.toml. Covers task definitions, dependencies, file tasks, and parallel execution.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:05.929163Z",
-  "dir_name": "mise-task-configuration-thebushidocollective-han"
+  "dir_name": "mise-task-configuration-thebushidocollective-han",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:45.786850Z",
   "github_path": "plugins/api-development/graphql-server-builder/skills/building-graphql-server",
   "github_branch": "main",
-  "dir_name": "building-graphql-server-jeremylongshore-claude-code-plugins--0b50fd0d"
+  "dir_name": "building-graphql-server-jeremylongshore-claude-code-plugins--0b50fd0d",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/api-development/graphql-server-builder/skills/building-graphql-server/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

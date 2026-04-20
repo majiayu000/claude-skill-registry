@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:55.322161Z",
   "github_path": "plugins/docs/skills/docs-director-skill",
   "github_branch": "main",
-  "dir_name": "docs-director-skill-fractary-claude-plugins"
+  "dir_name": "docs-director-skill-fractary-claude-plugins",
+  "author": "fractary",
+  "source_url": "https://github.com/fractary/claude-plugins/blob/main/plugins/docs/skills/docs-director-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fractary/claude-plugins/blob/main/plugins/docs/skills/docs-director-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

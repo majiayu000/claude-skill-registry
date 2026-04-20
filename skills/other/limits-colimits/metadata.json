@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/math/category-theory/limits-colimits",
   "github_branch": "main",
   "dir_name": "limits-colimits",
-  "downloaded_at": "2026-02-05T01:45:12.154608Z"
+  "downloaded_at": "2026-02-05T01:45:12.154608Z",
+  "author": "parcadei",
+  "source_url": "https://github.com/parcadei/Continuous-Claude-v3/blob/main/.claude/skills/math/category-theory/limits-colimits/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Cosimo Streppone",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

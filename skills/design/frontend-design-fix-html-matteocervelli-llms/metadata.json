@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:38.145808Z",
   "github_path": "frontend-design-system/skills/_archive/frontend-design-fix-html",
   "github_branch": "main",
-  "dir_name": "frontend-design-fix-html-matteocervelli-llms"
+  "dir_name": "frontend-design-fix-html-matteocervelli-llms",
+  "author": "matteocervelli",
+  "source_url": "https://github.com/matteocervelli/llms/blob/main/frontend-design-system/skills/_archive/frontend-design-fix-html/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Matteo Cervelli",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

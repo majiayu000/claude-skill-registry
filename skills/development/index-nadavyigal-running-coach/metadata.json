@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:32:02.042519Z",
   "github_path": ".claude/skills/running-coach-index",
   "github_branch": "main",
-  "dir_name": "index-nadavyigal-running-coach"
+  "dir_name": "index-nadavyigal-running-coach",
+  "author": "nadavyigal",
+  "source_url": "https://github.com/nadavyigal/Running-coach-/blob/main/.claude/skills/running-coach-index/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nadavyigal/Running-coach-/blob/main/.claude/skills/running-coach-index/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

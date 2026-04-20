@@ -5,5 +5,12 @@
   "source": "github.com/vasic-digital/SuperAgent",
   "downloaded_at": "2026-02-04T03:29:30.855132Z",
   "dir_name": "exa-common-errors",
-  "category": "data"
+  "category": "data",
+  "author": "vasic-digital",
+  "source_url": "https://github.com/vasic-digital/SuperAgent/blob/main/skills/plugins/saas-packs/exa-pack/exa-common-errors/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vasic-digital/SuperAgent/blob/main/skills/plugins/saas-packs/exa-pack/exa-common-errors/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

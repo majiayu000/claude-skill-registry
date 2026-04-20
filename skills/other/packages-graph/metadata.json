@@ -5,5 +5,12 @@
   "source": "github.com/leaderiop/hex-di",
   "downloaded_at": "2026-02-02T01:44:21.346627Z",
   "dir_name": "packages-graph",
-  "category": "other"
+  "category": "other",
+  "author": "leaderiop",
+  "source_url": "https://github.com/leaderiop/hex-di/blob/main/.claude/skills/packages-graph/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/leaderiop/hex-di/blob/main/.claude/skills/packages-graph/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

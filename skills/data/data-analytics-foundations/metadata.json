@@ -5,5 +5,12 @@
   "description": "Core data analytics concepts, Excel/Google Sheets fundamentals, and data collection techniques",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:44.135802Z",
-  "dir_name": "data-analytics-foundations"
+  "dir_name": "data-analytics-foundations",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-data-analyst",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

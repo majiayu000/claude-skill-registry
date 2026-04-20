@@ -5,5 +5,12 @@
   "source": "github.com/GPTomics/bioSkills",
   "downloaded_at": "2026-01-29T08:13:10.592815Z",
   "dir_name": "tree-manipulation-gptomics-bioskills-6c2770d9",
-  "category": "other"
+  "category": "other",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/phylogenetics/tree-manipulation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

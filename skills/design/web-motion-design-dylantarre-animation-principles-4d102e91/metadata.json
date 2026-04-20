@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:14.614040Z",
   "github_path": "skills/01-by-domain/web-motion-design",
   "github_branch": "main",
-  "dir_name": "web-motion-design-dylantarre-animation-principles-4d102e91"
+  "dir_name": "web-motion-design-dylantarre-animation-principles-4d102e91",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/animation-principles/blob/main/skills/01-by-domain/web-motion-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

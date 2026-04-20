@@ -5,5 +5,12 @@
   "description": "Semantic search across Zotero library using cite-assist v3 API for academic research",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:12.056600Z",
-  "dir_name": "cite-assist-research-donaldbraman-write-assist"
+  "dir_name": "cite-assist-research-donaldbraman-write-assist",
+  "author": "donaldbraman",
+  "source_url": "https://github.com/donaldbraman/write-assist",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/donaldbraman/write-assist",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

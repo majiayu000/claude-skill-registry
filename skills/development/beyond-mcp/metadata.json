@@ -7,5 +7,12 @@
   "stars": 12,
   "source": "github.com/basher83/lunar-claude",
   "downloaded_at": "2026-01-24T16:15:24.470339Z",
-  "dir_name": "beyond-mcp"
+  "dir_name": "beyond-mcp",
+  "author": "basher83",
+  "source_url": "https://github.com/basher83/lunar-claude/blob/main/docs/research/beyond-mcp/04-skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 basher83",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

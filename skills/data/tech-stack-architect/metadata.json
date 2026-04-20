@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/MacroMan5/claude-code-workflow-plugins",
-  "dir_name": "tech-stack-architect"
+  "dir_name": "tech-stack-architect",
+  "author": "MacroMan5",
+  "source_url": "https://github.com/MacroMan5/claude-code-workflow-plugins",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Therouxe",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:05.460062Z",
   "github_path": "jutsu/jutsu-lua/skills/lua-tables-patterns",
   "github_branch": "main",
-  "dir_name": "lua-tables-patterns-thebushidocollective-han"
+  "dir_name": "lua-tables-patterns-thebushidocollective-han",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han/blob/main/jutsu/jutsu-lua/skills/lua-tables-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

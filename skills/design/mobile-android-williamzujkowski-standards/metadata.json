@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:33.648791Z",
   "github_path": "skills/frontend/mobile-android",
   "github_branch": "main",
-  "dir_name": "mobile-android-williamzujkowski-standards"
+  "dir_name": "mobile-android-williamzujkowski-standards",
+  "author": "williamzujkowski",
+  "source_url": "https://github.com/williamzujkowski/standards/blob/main/skills/frontend/mobile-android/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Standards Project Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

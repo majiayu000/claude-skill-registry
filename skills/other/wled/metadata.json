@@ -5,5 +5,12 @@
   "source": "github.com/openclaw/skills",
   "downloaded_at": "2026-02-01T03:17:29.654067Z",
   "dir_name": "wled",
-  "category": "other"
+  "category": "other",
+  "author": "openclaw",
+  "source_url": "https://github.com/openclaw/skills/blob/main/skills/rowbotik/wled/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

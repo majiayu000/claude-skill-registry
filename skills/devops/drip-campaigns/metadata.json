@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:22.629286Z",
   "github_path": "plugins/email-marketing/skills/drip-campaigns",
   "github_branch": "main",
-  "dir_name": "drip-campaigns"
+  "dir_name": "drip-campaigns",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/email-marketing/skills/drip-campaigns/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

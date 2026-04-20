@@ -5,5 +5,12 @@
   "source": "github.com/adenhq/hive",
   "downloaded_at": "2026-02-02T02:13:04.383999Z",
   "dir_name": "setup-credentials",
-  "category": "other"
+  "category": "other",
+  "author": "adenhq",
+  "source_url": "https://github.com/adenhq/hive/blob/main/.claude/skills/setup-credentials/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

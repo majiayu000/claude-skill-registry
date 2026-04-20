@@ -5,5 +5,12 @@
   "description": "Interactive configuration wizard for the fractary-file plugin, guiding users through storage handler setup with validation",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:01:57.671350Z",
-  "dir_name": "file-config-wizard"
+  "dir_name": "file-config-wizard",
+  "author": "fractary",
+  "source_url": "https://github.com/fractary/claude-plugins",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fractary/claude-plugins",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

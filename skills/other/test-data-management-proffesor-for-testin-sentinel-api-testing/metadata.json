@@ -5,5 +5,12 @@
   "source": "github.com/proffesor-for-testing/sentinel-api-testing",
   "downloaded_at": "2026-01-29T07:07:41.274200Z",
   "dir_name": "test-data-management-proffesor-for-testin-sentinel-api-testing",
-  "category": "other"
+  "category": "other",
+  "author": "proffesor-for-testing",
+  "source_url": "https://github.com/proffesor-for-testing/sentinel-api-testing/blob/main/.claude/skills/test-data-management/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sentinel API Testing Platform",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

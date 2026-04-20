@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:48.208469Z",
   "github_path": "plugins/devops/infrastructure-as-code-generator/skills/generating-infrastructure-as-code",
   "github_branch": "main",
-  "dir_name": "generating-infrastructure-as-code-jeremylongshore-claude-code-plugins-"
+  "dir_name": "generating-infrastructure-as-code-jeremylongshore-claude-code-plugins-",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/devops/infrastructure-as-code-generator/skills/generating-infrastructure-as-code/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

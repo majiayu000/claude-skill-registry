@@ -10,5 +10,12 @@
   "stars": 15,
   "dir_name": "rapid-convergence",
   "github_path": ".claude/skills/rapid-convergence",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "yaleh",
+  "source_url": "https://github.com/yaleh/meta-cc/blob/main/.claude/skills/rapid-convergence/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 meta-cc contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

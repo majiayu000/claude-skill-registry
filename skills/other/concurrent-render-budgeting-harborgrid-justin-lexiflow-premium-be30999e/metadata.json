@@ -7,5 +7,12 @@
   "dir_name": "concurrent-render-budgeting-harborgrid-justin-lexiflow-premium-be30999e",
   "category": "other",
   "github_path": "frontend/.github-skills/concurrent-render-budgeting",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "harborgrid-justin",
+  "source_url": "https://github.com/harborgrid-justin/lexiflow-premium/blob/main/frontend/.github-skills/concurrent-render-budgeting/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/harborgrid-justin/lexiflow-premium/blob/main/frontend/.github-skills/concurrent-render-budgeting/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

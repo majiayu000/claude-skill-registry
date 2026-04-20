@@ -9,5 +9,12 @@
   "github_path": "plugins/claude-code-dev/skills/create-skill",
   "github_branch": "main",
   "dir_name": "create-skill-jpoutrin-product-forge",
-  "downloaded_at": "2026-02-05T01:44:46.710728Z"
+  "downloaded_at": "2026-02-05T01:44:46.710728Z",
+  "author": "jpoutrin",
+  "source_url": "https://github.com/jpoutrin/product-forge/blob/main/plugins/claude-code-dev/skills/create-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 jpoutrin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

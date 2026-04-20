@@ -10,5 +10,12 @@
   "stars": 4,
   "github_path": "claude_ctx_py/assets/skills/git-ops",
   "github_branch": "main",
-  "dir_name": "git-ops-nickcrew-claude-cortex"
+  "dir_name": "git-ops-nickcrew-claude-cortex",
+  "author": "NickCrew",
+  "source_url": "https://github.com/NickCrew/claude-cortex/blob/main/claude_ctx_py/assets/skills/git-ops/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nicholas Ferguson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

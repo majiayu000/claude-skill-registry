@@ -5,5 +5,12 @@
   "source": "github.com/4444J99/a-i--skills",
   "downloaded_at": "2026-01-31T04:19:46.399563Z",
   "dir_name": "location-ar-experience",
-  "category": "data"
+  "category": "data",
+  "author": "4444J99",
+  "source_url": "https://github.com/4444J99/a-i--skills/blob/main/skills/specialized/location-ar-experience/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

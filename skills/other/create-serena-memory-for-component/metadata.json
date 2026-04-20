@@ -9,5 +9,12 @@
   "github_path": ".codex/skills/create-serena-memory-for-component",
   "github_branch": "main",
   "dir_name": "create-serena-memory-for-component",
-  "downloaded_at": "2026-02-05T01:45:28.272963Z"
+  "downloaded_at": "2026-02-05T01:45:28.272963Z",
+  "author": "hzqst",
+  "source_url": "https://github.com/hzqst/metamod-fallguys/blob/main/.codex/skills/create-serena-memory-for-component/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 hzqst",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

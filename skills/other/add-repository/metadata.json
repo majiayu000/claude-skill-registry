@@ -5,5 +5,12 @@
   "source": "github.com/ROBOTIS-GIT/zenoh_ros2_sdk",
   "downloaded_at": "2026-02-02T04:15:31.922701Z",
   "dir_name": "add-repository",
-  "category": "other"
+  "category": "other",
+  "author": "ROBOTIS-GIT",
+  "source_url": "https://github.com/ROBOTIS-GIT/zenoh_ros2_sdk/blob/main/.claude/skills/add-repository/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

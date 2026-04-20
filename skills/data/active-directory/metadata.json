@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "active-directory",
   "github_path": "skills/active-directory",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "djcyphers",
+  "source_url": "https://github.com/djcyphers/network-copilot-cli/blob/main/skills/active-directory/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 DJ",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

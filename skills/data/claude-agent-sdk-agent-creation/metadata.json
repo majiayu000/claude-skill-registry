@@ -5,5 +5,12 @@
   "description": "Use when creating or configuring Claude AI agents using the Agent SDK. Covers agent initialization, configuration, and basic setup patterns.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:01.385406Z",
-  "dir_name": "claude-agent-sdk-agent-creation"
+  "dir_name": "claude-agent-sdk-agent-creation",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

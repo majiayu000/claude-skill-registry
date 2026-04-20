@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:39.982438Z",
   "github_path": ".github/skills/local-dev-serve-troubleshooting",
   "github_branch": "main",
-  "dir_name": "local-dev-serve-troubleshooting-localtaskrepo-lotar"
+  "dir_name": "local-dev-serve-troubleshooting-localtaskrepo-lotar",
+  "author": "localtaskrepo",
+  "source_url": "https://github.com/localtaskrepo/lotar/blob/main/.github/skills/local-dev-serve-troubleshooting/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ravi Gairola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:21.297678Z",
   "github_path": "skills/sciences/biology-comprehensive-guide",
   "github_branch": "main",
-  "dir_name": "biology-comprehensive-guide-sandraschi-advanced-memory-mcp"
+  "dir_name": "biology-comprehensive-guide-sandraschi-advanced-memory-mcp",
+  "author": "sandraschi",
+  "source_url": "https://github.com/sandraschi/advanced-memory-mcp/blob/main/skills/sciences/biology-comprehensive-guide/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Sandra Schipal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

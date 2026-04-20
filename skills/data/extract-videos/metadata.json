@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:00.408155Z",
   "dir_name": "extract-videos",
   "github_path": ".agent/skills/extract-videos",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "dparedesi",
+  "source_url": "https://github.com/dparedesi/YTScribe/blob/main/.agent/skills/extract-videos/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel Paredes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

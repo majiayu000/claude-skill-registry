@@ -9,5 +9,12 @@
   "github_path": "skills/plugins/saas-packs/clerk-pack/clerk-observability",
   "github_branch": "main",
   "dir_name": "clerk-observability-helixdevelopment-helixagent",
-  "downloaded_at": "2026-02-05T01:45:47.407498Z"
+  "downloaded_at": "2026-02-05T01:45:47.407498Z",
+  "author": "HelixDevelopment",
+  "source_url": "https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/plugins/saas-packs/clerk-pack/clerk-observability/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Milos Vasic",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

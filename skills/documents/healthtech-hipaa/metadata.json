@@ -5,5 +5,12 @@
   "description": "HIPAA establishes national standards for protecting patient health information (PHI). Enforced by HHS Office for Civil Rights.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:33.429759Z",
-  "dir_name": "healthtech-hipaa"
+  "dir_name": "healthtech-hipaa",
+  "author": "williamzujkowski",
+  "source_url": "https://github.com/williamzujkowski/standards",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Standards Project Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

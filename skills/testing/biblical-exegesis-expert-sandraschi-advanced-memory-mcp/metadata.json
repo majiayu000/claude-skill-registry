@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:20.780072Z",
   "github_path": "skills/philosophy/biblical-exegesis-expert",
   "github_branch": "main",
-  "dir_name": "biblical-exegesis-expert-sandraschi-advanced-memory-mcp"
+  "dir_name": "biblical-exegesis-expert-sandraschi-advanced-memory-mcp",
+  "author": "sandraschi",
+  "source_url": "https://github.com/sandraschi/advanced-memory-mcp/blob/main/skills/philosophy/biblical-exegesis-expert/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Sandra Schipal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

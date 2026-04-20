@@ -5,5 +5,12 @@
   "source": "github.com/DonNigami/eddication.io",
   "downloaded_at": "2026-02-04T02:01:02.859908Z",
   "dir_name": "4pl-director",
-  "category": "data"
+  "category": "data",
+  "author": "DonNigami",
+  "source_url": "https://github.com/DonNigami/eddication.io/blob/main/.claude/skills/4pl-director/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DonNigami/eddication.io/blob/main/.claude/skills/4pl-director/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

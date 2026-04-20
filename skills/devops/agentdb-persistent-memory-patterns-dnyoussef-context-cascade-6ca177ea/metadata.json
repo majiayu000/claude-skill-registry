@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:54.981181Z",
   "github_path": "skills/platforms/agentdb-persistent-memory-patterns",
   "github_branch": "main",
-  "dir_name": "agentdb-persistent-memory-patterns-dnyoussef-context-cascade-6ca177ea"
+  "dir_name": "agentdb-persistent-memory-patterns-dnyoussef-context-cascade-6ca177ea",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/context-cascade/blob/main/skills/platforms/agentdb-persistent-memory-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ruvnet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Select the correct Ollama base model (and adapters) based on task type, resource fit, and registry availability. Use to translate Modelfile FROM/ADAPTER decisions into agent behavior.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:28.263533Z",
-  "dir_name": "systemmodel-selector-cloudhabil-agi-server"
+  "dir_name": "systemmodel-selector-cloudhabil-agi-server",
+  "author": "Cloudhabil",
+  "source_url": "https://github.com/Cloudhabil/AGI-Server",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cloudhabil/AGI-Server",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

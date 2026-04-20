@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:42.298934Z",
   "github_path": "plugins/itp-hooks/skills/hooks-development",
   "github_branch": "main",
-  "dir_name": "hooks-development-terrylica-cc-skills"
+  "dir_name": "hooks-development-terrylica-cc-skills",
+  "author": "terrylica",
+  "source_url": "https://github.com/terrylica/cc-skills/blob/main/plugins/itp-hooks/skills/hooks-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Terry Li",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

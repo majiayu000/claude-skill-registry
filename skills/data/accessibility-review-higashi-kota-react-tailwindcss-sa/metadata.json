@@ -5,5 +5,12 @@
   "source": "github.com/Higashi-Kota/react-tailwindcss-sandbox",
   "downloaded_at": "2026-01-29T05:41:37.261965Z",
   "dir_name": "accessibility-review-higashi-kota-react-tailwindcss-sa",
-  "category": "data"
+  "category": "data",
+  "author": "Higashi-Kota",
+  "source_url": "https://github.com/Higashi-Kota/react-tailwindcss-sandbox/blob/main/.claude/skills/accessibility-review/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Higashi-Kota/react-tailwindcss-sandbox/blob/main/.claude/skills/accessibility-review/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

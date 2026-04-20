@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:43.640929Z",
   "github_path": "plugins/inspira-ui/skills/inspira-ui",
   "github_branch": "main",
-  "dir_name": "inspira-ui"
+  "dir_name": "inspira-ui",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/inspira-ui/skills/inspira-ui/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:40.615709Z",
   "github_path": ".claude/skills/axiom-system-archaeologist/skills/documenting-system-architecture",
   "github_branch": "main",
-  "dir_name": "documenting-system-architecture-tachyon-beep-hamlet"
+  "dir_name": "documenting-system-architecture-tachyon-beep-hamlet",
+  "author": "tachyon-beep",
+  "source_url": "https://github.com/tachyon-beep/hamlet/blob/main/.claude/skills/axiom-system-archaeologist/skills/documenting-system-architecture/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 John",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

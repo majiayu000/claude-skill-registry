@@ -7,5 +7,12 @@
   "dir_name": "prepare-dataset",
   "category": "other",
   "github_path": ".claude/skills/tier-2/prepare-dataset",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "mvillmow",
+  "source_url": "https://github.com/mvillmow/ProjectOdyssey/blob/main/.claude/skills/tier-2/prepare-dataset/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2025, ML Odyssey Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

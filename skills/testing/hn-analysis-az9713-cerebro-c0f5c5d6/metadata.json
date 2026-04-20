@@ -9,5 +9,12 @@
   "stars": 0,
   "github_path": ".claude/skills/hn-analysis",
   "github_branch": "main",
-  "dir_name": "hn-analysis-az9713-cerebro-c0f5c5d6"
+  "dir_name": "hn-analysis-az9713-cerebro-c0f5c5d6",
+  "author": "az9713",
+  "source_url": "https://github.com/az9713/cerebro/blob/main/.claude/skills/hn-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/az9713/cerebro/blob/main/.claude/skills/hn-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -10,5 +10,12 @@
   "stars": 25,
   "github_path": "skills/serverless-architecture",
   "github_branch": "main",
-  "dir_name": "serverless-architecture-aj-geddes-useful-ai-prompts-0d4e1845"
+  "dir_name": "serverless-architecture-aj-geddes-useful-ai-prompts-0d4e1845",
+  "author": "aj-geddes",
+  "source_url": "https://github.com/aj-geddes/useful-ai-prompts/blob/main/skills/serverless-architecture/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AJ Geddes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "sql-query-optimizer-jeremylongshore-claude-code-plugins--36fc311a",
   "category": "other",
   "github_path": "plugins/database/sql-query-optimizer/skills/optimizing-sql-queries",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/database/sql-query-optimizer/skills/optimizing-sql-queries/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

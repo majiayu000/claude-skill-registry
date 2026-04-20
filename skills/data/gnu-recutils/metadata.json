@@ -10,5 +10,12 @@
   "stars": 1,
   "dir_name": "gnu-recutils",
   "github_path": ".claude/skills/gnu-recutils",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "frizzle-chan",
+  "source_url": "https://github.com/frizzle-chan/mudd/blob/main/.claude/skills/gnu-recutils/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 frizzle-chan",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

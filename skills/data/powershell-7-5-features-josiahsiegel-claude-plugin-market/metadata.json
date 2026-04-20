@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
-  "dir_name": "powershell-7-5-features-josiahsiegel-claude-plugin-market"
+  "dir_name": "powershell-7-5-features-josiahsiegel-claude-plugin-market",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

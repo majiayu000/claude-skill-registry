@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/analyze-ci-failure-logs",
   "github_branch": "main",
-  "dir_name": "analyze-ci-failure-logs"
+  "dir_name": "analyze-ci-failure-logs",
+  "author": "mvillmow",
+  "source_url": "https://github.com/mvillmow/ProjectOdyssey/blob/main/.claude/skills/analyze-ci-failure-logs/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2025, ML Odyssey Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

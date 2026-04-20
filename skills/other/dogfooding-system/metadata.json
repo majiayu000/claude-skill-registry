@@ -7,5 +7,12 @@
   "dir_name": "dogfooding-system",
   "category": "other",
   "github_path": "skills/quality/dogfooding-system",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/context-cascade/blob/main/skills/quality/dogfooding-system/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ruvnet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

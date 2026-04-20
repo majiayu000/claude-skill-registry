@@ -5,5 +5,12 @@
   "source": "github.com/yu-iskw/meta-agent-skills",
   "downloaded_at": "2026-02-04T02:08:26.076002Z",
   "dir_name": "meta-agent-skills",
-  "category": "data"
+  "category": "data",
+  "author": "yu-iskw",
+  "source_url": "https://github.com/yu-iskw/meta-agent-skills/blob/main/skills/meta-agent-skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yu-iskw/meta-agent-skills/blob/main/skills/meta-agent-skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

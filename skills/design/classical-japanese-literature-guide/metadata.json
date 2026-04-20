@@ -5,5 +5,12 @@
   "description": "Expert in classical Japanese literature from Heian period to Edo period including 古文 grammar and literary analysis",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:19.374970Z",
-  "dir_name": "classical-japanese-literature-guide"
+  "dir_name": "classical-japanese-literature-guide",
+  "author": "sandraschi",
+  "source_url": "https://github.com/sandraschi/advanced-memory-mcp",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Sandra Schipal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

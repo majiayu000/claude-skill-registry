@@ -7,5 +7,12 @@
   "dir_name": "detector-anton-abyzov-specweave-9dc68c1f",
   "category": "other",
   "github_path": "plugins/specweave-ml/skills/anomaly-detector",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-ml/skills/anomaly-detector/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

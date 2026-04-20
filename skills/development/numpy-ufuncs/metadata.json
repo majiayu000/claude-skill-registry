@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/numpy-ufuncs",
   "github_branch": "main",
-  "dir_name": "numpy-ufuncs"
+  "dir_name": "numpy-ufuncs",
+  "author": "cuba6112",
+  "source_url": "https://github.com/cuba6112/skillfactory/blob/main/skills/numpy-ufuncs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cuba6112/skillfactory/blob/main/skills/numpy-ufuncs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

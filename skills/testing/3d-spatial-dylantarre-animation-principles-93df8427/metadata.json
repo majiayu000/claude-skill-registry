@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:14.236751Z",
   "github_path": "skills/01-by-domain/3d-spatial",
   "github_branch": "main",
-  "dir_name": "3d-spatial-dylantarre-animation-principles-93df8427"
+  "dir_name": "3d-spatial-dylantarre-animation-principles-93df8427",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/animation-principles/blob/main/skills/01-by-domain/3d-spatial/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

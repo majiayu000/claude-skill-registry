@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:54.294071Z",
   "github_path": "skills/orchestration/ralph-multimodel",
   "github_branch": "main",
-  "dir_name": "ralph-multimodel-dnyoussef-context-cascade"
+  "dir_name": "ralph-multimodel-dnyoussef-context-cascade",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/context-cascade/blob/main/skills/orchestration/ralph-multimodel/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ruvnet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

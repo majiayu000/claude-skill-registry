@@ -5,5 +5,12 @@
   "description": "Comprehensive CI/CD pipeline methodology with quality gates, release automation, smoke testing, observability, and performance tracking. Use when setting up CI/CD from scratch, build time over 5 minut",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:15.052001Z",
-  "dir_name": "cicd-optimization"
+  "dir_name": "cicd-optimization",
+  "author": "yaleh",
+  "source_url": "https://github.com/yaleh/meta-cc",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 meta-cc contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

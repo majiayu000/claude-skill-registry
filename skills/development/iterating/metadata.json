@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:55.013283Z",
   "github_path": "iterating",
   "github_branch": "main",
-  "dir_name": "iterating"
+  "dir_name": "iterating",
+  "author": "oaustegard",
+  "source_url": "https://github.com/oaustegard/claude-skills/blob/main/iterating/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Oskar Austegard",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

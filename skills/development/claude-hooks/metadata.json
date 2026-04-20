@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:26.950698Z",
   "github_path": "steve/skills/claude-hooks",
   "github_branch": "main",
-  "dir_name": "claude-hooks"
+  "dir_name": "claude-hooks",
+  "author": "89jobrien",
+  "source_url": "https://github.com/89jobrien/steve/blob/main/steve/skills/claude-hooks/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/89jobrien/steve/blob/main/steve/skills/claude-hooks/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

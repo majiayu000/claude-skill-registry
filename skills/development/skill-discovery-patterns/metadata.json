@@ -5,5 +5,12 @@
   "description": "How the Rails Enterprise Dev plugin discovers and uses project skills dynamically",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:17.049758Z",
-  "dir_name": "skill-discovery-patterns"
+  "dir_name": "skill-discovery-patterns",
+  "author": "Kaakati",
+  "source_url": "https://github.com/Kaakati/rails-enterprise-dev",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kaakati/rails-enterprise-dev",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

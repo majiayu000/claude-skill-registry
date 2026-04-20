@@ -5,5 +5,12 @@
   "description": "Find notes edited around the same time as a given note. Triggers on \"concurrent notes\", \"edited around same time\", \"what else was I working on\", \"contemporaneous\".",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:32.667591Z",
-  "dir_name": "show-concurrent"
+  "dir_name": "show-concurrent",
+  "author": "bencassie",
+  "source_url": "https://github.com/bencassie/flywheel",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bencassie/flywheel",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

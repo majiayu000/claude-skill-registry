@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/jest",
   "github_branch": "master",
   "dir_name": "jest-housegarofalo-claude-code-base",
-  "downloaded_at": "2026-02-05T01:44:38.135064Z"
+  "downloaded_at": "2026-02-05T01:44:38.135064Z",
+  "author": "HouseGarofalo",
+  "source_url": "https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/jest/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 HouseGarofalo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

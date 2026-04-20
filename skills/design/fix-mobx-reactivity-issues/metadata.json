@@ -5,5 +5,12 @@
   "description": "Diagnose and fix common MobX reactivity problems including components not updating, state changes not triggering re-renders, and async update issues. Use when UI doesn't respond to state changes, comp",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:11.808877Z",
-  "dir_name": "fix-mobx-reactivity-issues"
+  "dir_name": "fix-mobx-reactivity-issues",
+  "author": "biggs3d",
+  "source_url": "https://github.com/biggs3d/Tools",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/biggs3d/Tools",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

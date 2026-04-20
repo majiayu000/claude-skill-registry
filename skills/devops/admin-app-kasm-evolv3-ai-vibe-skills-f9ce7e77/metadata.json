@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/admin-app-kasm",
   "github_branch": "main",
-  "dir_name": "admin-app-kasm-evolv3-ai-vibe-skills-f9ce7e77"
+  "dir_name": "admin-app-kasm-evolv3-ai-vibe-skills-f9ce7e77",
+  "author": "evolv3-ai",
+  "source_url": "https://github.com/evolv3-ai/vibe-skills/blob/main/skills/admin-app-kasm/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

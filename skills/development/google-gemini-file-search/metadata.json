@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/google-gemini-file-search",
   "github_branch": "main",
-  "dir_name": "google-gemini-file-search"
+  "dir_name": "google-gemini-file-search",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/google-gemini-file-search/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

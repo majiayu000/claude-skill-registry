@@ -5,5 +5,12 @@
   "description": "Write a compact HANDOFF.md snapshot to restore context after session resets.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:25.507956Z",
-  "dir_name": "handoff-writer"
+  "dir_name": "handoff-writer",
+  "author": "CheekyCodexConjurer",
+  "source_url": "https://github.com/CheekyCodexConjurer/quant-lab",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CheekyCodexConjurer/quant-lab",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

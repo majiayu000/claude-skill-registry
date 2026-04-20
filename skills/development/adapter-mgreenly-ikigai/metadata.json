@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:20:21.663352Z",
   "github_path": ".claude/library/patterns/adapter",
   "github_branch": "main",
-  "dir_name": "adapter-mgreenly-ikigai"
+  "dir_name": "adapter-mgreenly-ikigai",
+  "author": "mgreenly",
+  "source_url": "https://github.com/mgreenly/ikigai/blob/main/.claude/library/patterns/adapter/SKILL.md",
+  "license": "MIT-0",
+  "copyright": "Copyright (c) 2025 Michael Greenly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

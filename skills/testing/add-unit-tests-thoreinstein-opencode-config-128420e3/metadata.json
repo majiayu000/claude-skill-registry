@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:00.036235Z",
   "github_path": "skill/add-unit-tests",
   "github_branch": "main",
-  "dir_name": "add-unit-tests-thoreinstein-opencode-config-128420e3"
+  "dir_name": "add-unit-tests-thoreinstein-opencode-config-128420e3",
+  "author": "thoreinstein",
+  "source_url": "https://github.com/thoreinstein/opencode-config/blob/main/skill/add-unit-tests/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jim Myers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

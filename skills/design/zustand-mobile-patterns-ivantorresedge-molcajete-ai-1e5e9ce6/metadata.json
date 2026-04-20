@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:16.442140Z",
   "github_path": "tech-stacks/js/react-native/skills/zustand-mobile-patterns",
   "github_branch": "main",
-  "dir_name": "zustand-mobile-patterns-ivantorresedge-molcajete-ai-1e5e9ce6"
+  "dir_name": "zustand-mobile-patterns-ivantorresedge-molcajete-ai-1e5e9ce6",
+  "author": "IvanTorresEdge",
+  "source_url": "https://github.com/IvanTorresEdge/molcajete.ai/blob/main/tech-stacks/js/react-native/skills/zustand-mobile-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2025 Ivan Torres",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

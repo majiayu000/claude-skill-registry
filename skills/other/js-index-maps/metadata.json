@@ -5,5 +5,12 @@
   "source": "github.com/bitwikiorg/skills.md",
   "downloaded_at": "2026-01-27T01:51:46.590239Z",
   "dir_name": "js-index-maps",
-  "category": "other"
+  "category": "other",
+  "author": "bitwikiorg",
+  "source_url": "https://github.com/bitwikiorg/skills.md/blob/main/sources/vercel/js_index_maps/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 BITwiki",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

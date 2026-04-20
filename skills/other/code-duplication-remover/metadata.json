@@ -5,5 +5,12 @@
   "source": "github.com/cornmanwtf/ABANG-COLEK",
   "downloaded_at": "2026-02-02T01:19:33.276569Z",
   "dir_name": "code-duplication-remover",
-  "category": "other"
+  "category": "other",
+  "author": "cornmanwtf",
+  "source_url": "https://github.com/cornmanwtf/ABANG-COLEK/blob/main/skills/maintenance-optimization/code-duplication-remover/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cornmanwtf/ABANG-COLEK/blob/main/skills/maintenance-optimization/code-duplication-remover/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

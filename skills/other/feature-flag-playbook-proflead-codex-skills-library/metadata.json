@@ -5,5 +5,12 @@
   "source": "github.com/proflead/codex-skills-library",
   "downloaded_at": "2026-01-29T07:40:18.147405Z",
   "dir_name": "feature-flag-playbook-proflead-codex-skills-library",
-  "category": "other"
+  "category": "other",
+  "author": "proflead",
+  "source_url": "https://github.com/proflead/codex-skills-library/blob/main/skills/backend/feature-flag-playbook/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/proflead/codex-skills-library/blob/main/skills/backend/feature-flag-playbook/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "skill-architect-erichowens-some-claude-skills-66bb2c41",
   "category": "other",
   "github_path": ".claude/skills/skill-architect",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/skill-architect/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

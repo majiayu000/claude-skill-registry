@@ -5,5 +5,12 @@
   "source": "github.com/dykyi-roman/awesome-claude-code",
   "downloaded_at": "2026-02-04T02:08:43.468680Z",
   "dir_name": "acc-create-object-pool",
-  "category": "data"
+  "category": "data",
+  "author": "dykyi-roman",
+  "source_url": "https://github.com/dykyi-roman/awesome-claude-code/blob/main/.claude/skills/acc-create-object-pool/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Dykyi Roman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

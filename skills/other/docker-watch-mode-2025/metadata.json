@@ -5,5 +5,12 @@
   "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
   "downloaded_at": "2026-02-02T01:30:48.871882Z",
   "dir_name": "docker-watch-mode-2025",
-  "category": "other"
+  "category": "other",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/azure-to-docker-master/skills/docker-watch-mode-2025/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Autonomous failure recovery and self-healing loop for tasks, benchmarks, or services. Use when a run fails, dependencies break, or the system must diagnose, remediate, and re-run safely under guardrai",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:24.688344Z",
-  "dir_name": "autonomy-recovery-loop-cloudhabil-agi-server"
+  "dir_name": "autonomy-recovery-loop-cloudhabil-agi-server",
+  "author": "Cloudhabil",
+  "source_url": "https://github.com/Cloudhabil/AGI-Server",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cloudhabil/AGI-Server",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

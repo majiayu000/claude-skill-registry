@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:16.007115Z",
   "github_path": "skills/05-by-animation-type/exit-animations",
   "github_branch": "main",
-  "dir_name": "exit-animations-dylantarre-animation-principles"
+  "dir_name": "exit-animations-dylantarre-animation-principles",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/animation-principles/blob/main/skills/05-by-animation-type/exit-animations/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

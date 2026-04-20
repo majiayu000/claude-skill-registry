@@ -5,5 +5,12 @@
   "description": "Comprehensive Ruby on Rails conventions, design patterns, and idiomatic code standards. Use this skill when writing any Rails code including controllers, models, services, or when making architectural",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:17.133498Z",
-  "dir_name": "rails-conventions-patterns"
+  "dir_name": "rails-conventions-patterns",
+  "author": "Kaakati",
+  "source_url": "https://github.com/Kaakati/rails-enterprise-dev",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kaakati/rails-enterprise-dev",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

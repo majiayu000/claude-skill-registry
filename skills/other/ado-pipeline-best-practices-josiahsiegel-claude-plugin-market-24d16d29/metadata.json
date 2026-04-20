@@ -5,5 +5,12 @@
   "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
   "downloaded_at": "2026-01-29T06:50:02.461511Z",
   "dir_name": "ado-pipeline-best-practices-josiahsiegel-claude-plugin-market-24d16d29",
-  "category": "other"
+  "category": "other",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/ado-master/skills/ado-pipeline-best-practices/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

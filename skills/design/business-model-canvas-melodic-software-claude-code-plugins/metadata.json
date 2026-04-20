@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:57.942356Z",
   "github_path": "plugins/business-analysis/skills/business-model-canvas",
   "github_branch": "main",
-  "dir_name": "business-model-canvas-melodic-software-claude-code-plugins"
+  "dir_name": "business-model-canvas-melodic-software-claude-code-plugins",
+  "author": "melodic-software",
+  "source_url": "https://github.com/melodic-software/claude-code-plugins/blob/main/plugins/business-analysis/skills/business-model-canvas/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Melodic Software",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:24.157737Z",
   "github_path": ".claude/skills/menu-verification",
   "github_branch": "main",
-  "dir_name": "menu-verification-cgjen-box-planted-website"
+  "dir_name": "menu-verification-cgjen-box-planted-website",
+  "author": "cgjen-box",
+  "source_url": "https://github.com/cgjen-box/planted-website/blob/main/.claude/skills/menu-verification/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgjen-box/planted-website/blob/main/.claude/skills/menu-verification/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

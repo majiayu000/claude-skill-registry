@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "mcp-server-enhancement",
   "github_path": ".claude/skills/mcp-server-enhancement",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "blueman82",
+  "source_url": "https://github.com/blueman82/ai-counsel/blob/main/.claude/skills/mcp-server-enhancement/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 blueman82",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

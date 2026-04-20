@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "advanced-re-analysis"
+  "dir_name": "advanced-re-analysis",
+  "author": "KevinMitchell-OSWP-CISSP",
+  "source_url": "https://github.com/KevinMitchell-OSWP-CISSP/EmberScale-Enhanced",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Kevin Mitchell",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

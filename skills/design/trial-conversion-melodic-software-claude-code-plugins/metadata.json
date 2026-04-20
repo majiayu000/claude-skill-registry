@@ -5,5 +5,12 @@
   "description": "Trial optimization and conversion patterns for SaaS. Covers trial design, activation metrics, conversion funnels, and win-back strategies.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:10.364864Z",
-  "dir_name": "trial-conversion-melodic-software-claude-code-plugins"
+  "dir_name": "trial-conversion-melodic-software-claude-code-plugins",
+  "author": "melodic-software",
+  "source_url": "https://github.com/melodic-software/claude-code-plugins",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Melodic Software",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

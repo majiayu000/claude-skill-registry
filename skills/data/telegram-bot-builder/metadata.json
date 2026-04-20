@@ -5,5 +5,12 @@
   "source": "github.com/Nguyenthang2292/Sovereign-IQ",
   "downloaded_at": "2026-02-04T05:08:39.894964Z",
   "dir_name": "telegram-bot-builder",
-  "category": "data"
+  "category": "data",
+  "author": "Nguyenthang2292",
+  "source_url": "https://github.com/Nguyenthang2292/Sovereign-IQ/blob/main/.claude/skills/telegram-bot-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Justinnguyen2292",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

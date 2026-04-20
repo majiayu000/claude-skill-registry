@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/a5c-ai/babysitter",
   "dir_name": "plantuml-renderer",
-  "downloaded_at": "2026-02-19T01:16:36.570223Z"
+  "downloaded_at": "2026-02-19T01:16:36.570223Z",
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/plugins/babysitter/skills/babysit/process/specializations/software-architecture/skills/plantuml-renderer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 A5C AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:07.924026Z",
   "github_path": "plugins/general/github-copilot-pr-review/skills/github-copilot-pr-review",
   "github_branch": "main",
-  "dir_name": "github-copilot-pr-review-smith6jt-cop-skills-registry"
+  "dir_name": "github-copilot-pr-review-smith6jt-cop-skills-registry",
+  "author": "smith6jt-cop",
+  "source_url": "https://github.com/smith6jt-cop/Skills_Registry/blob/main/plugins/general/github-copilot-pr-review/skills/github-copilot-pr-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/smith6jt-cop/Skills_Registry/blob/main/plugins/general/github-copilot-pr-review/skills/github-copilot-pr-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

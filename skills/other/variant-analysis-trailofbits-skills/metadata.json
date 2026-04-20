@@ -5,5 +5,12 @@
   "source": "github.com/trailofbits/skills",
   "downloaded_at": "2026-01-29T06:07:54.748146Z",
   "dir_name": "variant-analysis-trailofbits-skills",
-  "category": "other"
+  "category": "other",
+  "author": "trailofbits",
+  "source_url": "https://github.com/trailofbits/skills/blob/main/plugins/variant-analysis/skills/variant-analysis/SKILL.md",
+  "license": "CC-BY-SA-4.0",
+  "copyright": "copyright and certain other rights. Our licenses are",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

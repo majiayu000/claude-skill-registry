@@ -5,5 +5,12 @@
   "description": "Help and documentation for Craft-Coder plugin.Use when: user asks about available skills, commands, or how to use this plugin.Triggers: \"help\", \"what can you do\", \"craft help\", \"как пользоваться\".",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:09:01.220769Z",
-  "dir_name": "craft-coder-help"
+  "dir_name": "craft-coder-help",
+  "author": "timequity",
+  "source_url": "https://github.com/timequity/plugins",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/timequity/plugins",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

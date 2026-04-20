@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:06.517287Z",
   "github_path": "plugins/git/skills/push",
   "github_branch": "main",
-  "dir_name": "push"
+  "dir_name": "push",
+  "author": "melodic-software",
+  "source_url": "https://github.com/melodic-software/claude-code-plugins/blob/main/plugins/git/skills/push/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Melodic Software",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/calibrate",
   "github_branch": "master",
-  "dir_name": "calibrate-mburdo-knowledge-and-vibes-decefd34"
+  "dir_name": "calibrate-mburdo-knowledge-and-vibes-decefd34",
+  "author": "Mburdo",
+  "source_url": "https://github.com/Mburdo/knowledge_and_vibes/blob/master/.claude/skills/calibrate/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Knowledge & Vibes Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

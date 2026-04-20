@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "plugins/specweave-docs/skills/docusaurus",
   "github_branch": "main",
-  "dir_name": "docusaurus"
+  "dir_name": "docusaurus",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-docs/skills/docusaurus/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

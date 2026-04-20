@@ -9,5 +9,12 @@
   "github_path": "skills/scroll-experience",
   "github_branch": "main",
   "dir_name": "scroll-experience-cgyudistira-code-agents",
-  "downloaded_at": "2026-02-05T05:35:15.436343Z"
+  "downloaded_at": "2026-02-05T05:35:15.436343Z",
+  "author": "cgyudistira",
+  "source_url": "https://github.com/cgyudistira/code-agents/blob/main/skills/scroll-experience/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

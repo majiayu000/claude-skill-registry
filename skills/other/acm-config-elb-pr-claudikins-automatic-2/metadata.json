@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/elb-pr/claudikins-automatic-context-manager",
-  "dir_name": "acm-config-elb-pr-claudikins-automatic-2"
+  "dir_name": "acm-config-elb-pr-claudikins-automatic-2",
+  "author": "elb-pr",
+  "source_url": "https://github.com/elb-pr/claudikins-automatic-context-manager/blob/main/skills/acm-config/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 Ethan Lee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

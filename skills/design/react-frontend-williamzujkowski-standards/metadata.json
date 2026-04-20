@@ -5,5 +5,12 @@
   "description": "React frontend standards covering hooks (useState, useEffect, useContext, custom hooks), state management (Context API, Redux, Zustand), performance optimization (memoization, lazy loading, code split",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:33.649066Z",
-  "dir_name": "react-frontend-williamzujkowski-standards"
+  "dir_name": "react-frontend-williamzujkowski-standards",
+  "author": "williamzujkowski",
+  "source_url": "https://github.com/williamzujkowski/standards",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Standards Project Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

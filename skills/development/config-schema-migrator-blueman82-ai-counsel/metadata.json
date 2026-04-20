@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/config-schema-migrator",
   "github_branch": "main",
-  "dir_name": "config-schema-migrator-blueman82-ai-counsel"
+  "dir_name": "config-schema-migrator-blueman82-ai-counsel",
+  "author": "blueman82",
+  "source_url": "https://github.com/blueman82/ai-counsel/blob/main/.claude/skills/config-schema-migrator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 blueman82",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:05.346648Z",
   "github_path": "templates/ai-engineering/cost-latency-optimizer",
   "github_branch": "main",
-  "dir_name": "cost-latency-optimizer-patricio0312rev-skillset"
+  "dir_name": "cost-latency-optimizer-patricio0312rev-skillset",
+  "author": "patricio0312rev",
+  "source_url": "https://github.com/patricio0312rev/skillset/blob/main/templates/ai-engineering/cost-latency-optimizer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Patricio Marroquin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

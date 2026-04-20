@@ -5,5 +5,12 @@
   "description": "Master of low-and-slow BBQ, smoking techniques, rubs, and regional American BBQ styles",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:18.888317Z",
-  "dir_name": "bbq-and-smoking-expert-sandraschi-advanced-memory-mcp"
+  "dir_name": "bbq-and-smoking-expert-sandraschi-advanced-memory-mcp",
+  "author": "sandraschi",
+  "source_url": "https://github.com/sandraschi/advanced-memory-mcp",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Sandra Schipal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

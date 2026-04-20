@@ -5,5 +5,12 @@
   "source": "github.com/enuno/claude-command-and-control",
   "downloaded_at": "2026-02-04T03:33:35.417724Z",
   "dir_name": "arweave-bridge",
-  "category": "data"
+  "category": "data",
+  "author": "enuno",
+  "source_url": "https://github.com/enuno/claude-command-and-control/blob/main/skills-templates/arweave-bridge/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/enuno/claude-command-and-control/blob/main/skills-templates/arweave-bridge/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

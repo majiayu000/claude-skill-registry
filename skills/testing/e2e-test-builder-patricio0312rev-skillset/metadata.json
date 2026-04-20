@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:09.872246Z",
   "github_path": "templates/testing/e2e-test-builder",
   "github_branch": "main",
-  "dir_name": "e2e-test-builder-patricio0312rev-skillset"
+  "dir_name": "e2e-test-builder-patricio0312rev-skillset",
+  "author": "patricio0312rev",
+  "source_url": "https://github.com/patricio0312rev/skillset/blob/main/templates/testing/e2e-test-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Patricio Marroquin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

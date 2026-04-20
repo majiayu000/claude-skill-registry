@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/add-k8s-service",
   "github_branch": "main",
-  "dir_name": "add-k8s-service-shelken-home-ops"
+  "dir_name": "add-k8s-service-shelken-home-ops",
+  "author": "shelken",
+  "source_url": "https://github.com/shelken/home-ops/blob/main/.claude/skills/add-k8s-service/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shelken/home-ops/blob/main/.claude/skills/add-k8s-service/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:02.019657Z",
   "github_path": "planned-skills/generated/13-aws-skills/ecs-task-definition-creator",
   "github_branch": "main",
-  "dir_name": "ecs-task-definition-creator-jeremylongshore-claude-code-plugins--044ecf4a"
+  "dir_name": "ecs-task-definition-creator-jeremylongshore-claude-code-plugins--044ecf4a",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/planned-skills/generated/13-aws-skills/ecs-task-definition-creator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

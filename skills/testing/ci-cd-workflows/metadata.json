@@ -8,5 +8,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "ci-cd-workflows"
+  "dir_name": "ci-cd-workflows",
+  "author": "ai-debugger-inc",
+  "source_url": "https://github.com/ai-debugger-inc/aidb",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

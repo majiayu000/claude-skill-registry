@@ -11,5 +11,12 @@
   "stars": 25,
   "github_path": "skills/rate-limiting-implementation",
   "github_branch": "main",
-  "dir_name": "rate-limiting-implementation-aj-geddes-useful-ai-prompts"
+  "dir_name": "rate-limiting-implementation-aj-geddes-useful-ai-prompts",
+  "author": "aj-geddes",
+  "source_url": "https://github.com/aj-geddes/useful-ai-prompts/blob/main/skills/rate-limiting-implementation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AJ Geddes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

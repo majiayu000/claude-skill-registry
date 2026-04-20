@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:13.098469Z",
   "github_path": "planned-skills/generated/08-ml-deployment/model-registry-manager",
   "github_branch": "main",
-  "dir_name": "model-registry-manager"
+  "dir_name": "model-registry-manager",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/planned-skills/generated/08-ml-deployment/model-registry-manager/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

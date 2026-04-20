@@ -5,5 +5,12 @@
   "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
   "downloaded_at": "2026-01-29T06:20:38.647345Z",
   "dir_name": "langfuse-hello-world-jeremylongshore-claude-code-plugins-",
-  "category": "other"
+  "category": "other",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/langfuse-pack/skills/langfuse-hello-world/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

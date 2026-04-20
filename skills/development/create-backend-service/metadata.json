@@ -5,5 +5,12 @@
   "description": "Use this skill when adding new backend functionality (API endpoints + business logic).",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:26.265058Z",
-  "dir_name": "create-backend-service"
+  "dir_name": "create-backend-service",
+  "author": "CheekyCodexConjurer",
+  "source_url": "https://github.com/CheekyCodexConjurer/quant-lab",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CheekyCodexConjurer/quant-lab",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "feature-engineering-kit-dkyazzentwatwa-chatgpt-skills-7eeda90f",
   "category": "other",
   "github_path": "feature-engineering-kit",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "dkyazzentwatwa",
+  "source_url": "https://github.com/dkyazzentwatwa/chatgpt-skills/blob/main/feature-engineering-kit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dkyazzentwatwa/chatgpt-skills/blob/main/feature-engineering-kit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

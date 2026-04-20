@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:16.908253Z",
   "github_path": "skills/08-by-industry/e-commerce-retail",
   "github_branch": "main",
-  "dir_name": "e-commerce-retail-dylantarre-animation-principles-ee1fb8bf"
+  "dir_name": "e-commerce-retail-dylantarre-animation-principles-ee1fb8bf",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/animation-principles/blob/main/skills/08-by-industry/e-commerce-retail/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

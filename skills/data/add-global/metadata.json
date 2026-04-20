@@ -5,5 +5,12 @@
   "source": "github.com/Ariedam64/Gemini",
   "downloaded_at": "2026-01-29T04:05:39.628553Z",
   "dir_name": "add-global",
-  "category": "data"
+  "category": "data",
+  "author": "Ariedam64",
+  "source_url": "https://github.com/Ariedam64/Gemini/blob/main/.claude/skills/add-global/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Romann",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/shiiman/claude-code-plugins",
-  "dir_name": "apps-script-search-shiiman-claude-code-plugins-2"
+  "dir_name": "apps-script-search-shiiman-claude-code-plugins-2",
+  "author": "shiiman",
+  "source_url": "https://github.com/shiiman/claude-code-plugins/blob/main/plugins/shiiman-google/skills/apps-script-search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shiiman/claude-code-plugins/blob/main/plugins/shiiman-google/skills/apps-script-search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

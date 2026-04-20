@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:41.630202Z",
   "github_path": ".claude/skills/yzmir-deep-rl/skills/rl-evaluation",
   "github_branch": "main",
-  "dir_name": "rl-evaluation-tachyon-beep-hamlet-6c768a5a"
+  "dir_name": "rl-evaluation-tachyon-beep-hamlet-6c768a5a",
+  "author": "tachyon-beep",
+  "source_url": "https://github.com/tachyon-beep/hamlet/blob/main/.claude/skills/yzmir-deep-rl/skills/rl-evaluation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 John",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

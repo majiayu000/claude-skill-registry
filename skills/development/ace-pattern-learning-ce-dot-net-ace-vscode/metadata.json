@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:41.503997Z",
   "github_path": ".github/skills/ace-pattern-learning",
   "github_branch": "main",
-  "dir_name": "ace-pattern-learning-ce-dot-net-ace-vscode"
+  "dir_name": "ace-pattern-learning-ce-dot-net-ace-vscode",
+  "author": "ce-dot-net",
+  "source_url": "https://github.com/ce-dot-net/ace-vscode/blob/main/.github/skills/ace-pattern-learning/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Code Engine GmbH",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

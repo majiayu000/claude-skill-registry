@@ -5,5 +5,12 @@
   "source": "github.com/sunholo-data/ailang",
   "downloaded_at": "2026-01-29T06:03:46.653634Z",
   "dir_name": "builtin-developer-sunholo-data-ailang-6bd1d84f",
-  "category": "other"
+  "category": "other",
+  "author": "sunholo-data",
+  "source_url": "https://github.com/sunholo-data/ailang/blob/main/.claude/skills/builtin-developer/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

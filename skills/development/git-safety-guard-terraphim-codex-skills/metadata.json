@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:55.645558Z",
   "github_path": "skills/git-safety-guard",
   "github_branch": "main",
-  "dir_name": "git-safety-guard-terraphim-codex-skills"
+  "dir_name": "git-safety-guard-terraphim-codex-skills",
+  "author": "terraphim",
+  "source_url": "https://github.com/terraphim/codex-skills/blob/main/skills/git-safety-guard/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

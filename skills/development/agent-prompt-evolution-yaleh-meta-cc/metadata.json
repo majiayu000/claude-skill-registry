@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/agent-prompt-evolution",
   "github_branch": "main",
-  "dir_name": "agent-prompt-evolution-yaleh-meta-cc"
+  "dir_name": "agent-prompt-evolution-yaleh-meta-cc",
+  "author": "yaleh",
+  "source_url": "https://github.com/yaleh/meta-cc/blob/main/.claude/skills/agent-prompt-evolution/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 meta-cc contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

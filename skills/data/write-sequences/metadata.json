@@ -5,5 +5,12 @@
   "source": "github.com/GPTomics/bioSkills",
   "downloaded_at": "2026-01-29T03:17:26.927968Z",
   "dir_name": "write-sequences",
-  "category": "data"
+  "category": "data",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/sequence-io/write-sequences/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
   "downloaded_at": "2026-02-02T01:30:50.909967Z",
   "dir_name": "bash-master",
-  "category": "other"
+  "category": "other",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/bash-master/skills/bash-master/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

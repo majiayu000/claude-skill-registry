@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/doc-indexer",
   "github_branch": "main",
-  "dir_name": "doc-indexer"
+  "dir_name": "doc-indexer",
+  "author": "bodangren",
+  "source_url": "https://github.com/bodangren/git-workflow/blob/main/.claude/skills/doc-indexer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel Bo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

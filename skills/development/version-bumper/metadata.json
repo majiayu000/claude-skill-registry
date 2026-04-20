@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:48.811176Z",
   "github_path": "plugins/examples/jeremy-plugin-tool/skills/version-bumper",
   "github_branch": "main",
-  "dir_name": "version-bumper"
+  "dir_name": "version-bumper",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/examples/jeremy-plugin-tool/skills/version-bumper/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

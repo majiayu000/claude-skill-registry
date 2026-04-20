@@ -5,5 +5,12 @@
   "source": "github.com/mgd34msu/goodvibes-plugin",
   "downloaded_at": "2026-01-28T04:34:02.990935Z",
   "dir_name": "mcp-mastery",
-  "category": "data"
+  "category": "data",
+  "author": "mgd34msu",
+  "source_url": "https://github.com/mgd34msu/goodvibes-plugin/blob/main/plugins/goodvibes/skills/common/tooling/mcp-mastery/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 GoodVibes Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

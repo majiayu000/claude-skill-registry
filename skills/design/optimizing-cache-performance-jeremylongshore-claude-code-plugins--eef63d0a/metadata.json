@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:49.402054Z",
   "github_path": "plugins/performance/cache-performance-optimizer/skills/optimizing-cache-performance",
   "github_branch": "main",
-  "dir_name": "optimizing-cache-performance-jeremylongshore-claude-code-plugins--eef63d0a"
+  "dir_name": "optimizing-cache-performance-jeremylongshore-claude-code-plugins--eef63d0a",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/performance/cache-performance-optimizer/skills/optimizing-cache-performance/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

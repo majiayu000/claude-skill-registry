@@ -5,5 +5,12 @@
   "source": "github.com/devwinsoft/devian",
   "downloaded_at": "2026-02-02T03:50:00.221471Z",
   "dir_name": "27-bootstrap-resource-object",
-  "category": "data"
+  "category": "data",
+  "author": "devwinsoft",
+  "source_url": "https://github.com/devwinsoft/devian/blob/main/skills/devian-unity/30-unity-components/27-bootstrap-resource-object/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 maoshy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

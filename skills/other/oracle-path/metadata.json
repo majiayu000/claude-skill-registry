@@ -9,5 +9,12 @@
   "github_path": "skills/oracle-path",
   "github_branch": "main",
   "dir_name": "oracle-path",
-  "downloaded_at": "2026-02-05T05:45:46.440513Z"
+  "downloaded_at": "2026-02-05T05:45:46.440513Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/oracle-path/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

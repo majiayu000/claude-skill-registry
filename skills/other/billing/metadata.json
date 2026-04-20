@@ -7,5 +7,12 @@
   "dir_name": "billing",
   "category": "other",
   "github_path": ".claude/skills/billing",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "SylphxAI",
+  "source_url": "https://github.com/SylphxAI/flow/blob/main/.claude/skills/billing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SylphxAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

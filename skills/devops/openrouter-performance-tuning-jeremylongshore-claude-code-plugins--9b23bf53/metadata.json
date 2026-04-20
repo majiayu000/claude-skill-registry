@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:14.072357Z",
   "github_path": "plugins/saas-packs/openrouter-pack/skills/openrouter-performance-tuning",
   "github_branch": "main",
-  "dir_name": "openrouter-performance-tuning-jeremylongshore-claude-code-plugins--9b23bf53"
+  "dir_name": "openrouter-performance-tuning-jeremylongshore-claude-code-plugins--9b23bf53",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/openrouter-pack/skills/openrouter-performance-tuning/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

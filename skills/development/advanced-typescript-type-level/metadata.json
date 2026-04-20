@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/advanced-typescript-type-level",
   "github_branch": "main",
-  "dir_name": "advanced-typescript-type-level"
+  "dir_name": "advanced-typescript-type-level",
+  "author": "leaderiop",
+  "source_url": "https://github.com/leaderiop/hex-di/blob/main/.claude/skills/advanced-typescript-type-level/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/leaderiop/hex-di/blob/main/.claude/skills/advanced-typescript-type-level/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

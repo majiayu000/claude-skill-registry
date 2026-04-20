@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "channel-roadmap-kit"
+  "dir_name": "channel-roadmap-kit",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

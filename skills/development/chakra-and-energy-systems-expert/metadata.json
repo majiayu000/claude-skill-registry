@@ -5,5 +5,12 @@
   "description": "Expert in chakra systems, auras, energy healing modalities, and subtle body traditions from Hindu and Buddhist origins",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:20.525704Z",
-  "dir_name": "chakra-and-energy-systems-expert"
+  "dir_name": "chakra-and-energy-systems-expert",
+  "author": "sandraschi",
+  "source_url": "https://github.com/sandraschi/advanced-memory-mcp",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Sandra Schipal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

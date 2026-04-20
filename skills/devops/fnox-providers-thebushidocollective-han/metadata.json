@@ -5,5 +5,12 @@
   "description": "Use when configuring Fnox providers for encryption and secret storage. Covers age encryption, cloud providers (AWS, Azure, GCP), and password managers.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:04.060296Z",
-  "dir_name": "fnox-providers-thebushidocollective-han"
+  "dir_name": "fnox-providers-thebushidocollective-han",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

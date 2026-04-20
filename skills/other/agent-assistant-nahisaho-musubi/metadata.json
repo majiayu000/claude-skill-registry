@@ -5,5 +5,12 @@
   "source": "github.com/nahisaho/MUSUBI",
   "downloaded_at": "2026-01-29T05:44:55.977918Z",
   "dir_name": "agent-assistant-nahisaho-musubi",
-  "category": "other"
+  "category": "other",
+  "author": "nahisaho",
+  "source_url": "https://github.com/nahisaho/MUSUBI/blob/main/src/templates/agents/claude-code/skills/agent-assistant/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MUSUBI Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

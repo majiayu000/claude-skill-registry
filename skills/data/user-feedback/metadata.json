@@ -5,5 +5,12 @@
   "source": "github.com/mbtz/agent-skills",
   "downloaded_at": "2026-01-28T02:00:46.386599Z",
   "dir_name": "user-feedback",
-  "category": "data"
+  "category": "data",
+  "author": "mbtz",
+  "source_url": "https://github.com/mbtz/agent-skills/blob/main/skills/user-feedback/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Marius Holter Berntzen, https://github.com/mbtz",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

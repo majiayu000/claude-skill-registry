@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:00.039927Z",
   "github_path": "plugins/compliance-planning/skills/security-frameworks",
   "github_branch": "main",
-  "dir_name": "security-frameworks-melodic-software-claude-code-plugins-801ef7c4"
+  "dir_name": "security-frameworks-melodic-software-claude-code-plugins-801ef7c4",
+  "author": "melodic-software",
+  "source_url": "https://github.com/melodic-software/claude-code-plugins/blob/main/plugins/compliance-planning/skills/security-frameworks/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Melodic Software",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

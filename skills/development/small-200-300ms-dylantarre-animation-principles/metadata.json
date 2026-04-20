@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:18.191231Z",
   "github_path": "skills/10-by-time-scale/small-200-300ms",
   "github_branch": "main",
-  "dir_name": "small-200-300ms-dylantarre-animation-principles"
+  "dir_name": "small-200-300ms-dylantarre-animation-principles",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/animation-principles/blob/main/skills/10-by-time-scale/small-200-300ms/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

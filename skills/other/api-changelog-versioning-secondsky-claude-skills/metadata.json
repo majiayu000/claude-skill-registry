@@ -5,5 +5,12 @@
   "source": "github.com/secondsky/claude-skills",
   "downloaded_at": "2026-01-29T07:59:27.258924Z",
   "dir_name": "api-changelog-versioning-secondsky-claude-skills",
-  "category": "other"
+  "category": "other",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/api-changelog-versioning/skills/api-changelog-versioning/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

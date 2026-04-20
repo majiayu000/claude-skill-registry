@@ -7,5 +7,12 @@
   "dir_name": "when-creating-claude-hooks-use-hook-creator-dnyoussef-context-cascade",
   "category": "other",
   "github_path": "skills/foundry/when-creating-claude-hooks-use-hook-creator",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/context-cascade/blob/main/skills/foundry/when-creating-claude-hooks-use-hook-creator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ruvnet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

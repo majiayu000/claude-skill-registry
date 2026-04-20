@@ -5,5 +5,12 @@
   "description": "Use when implementing async/await, Task management, actors, or Combine reactive patterns in iOS applications.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:04.891923Z",
-  "dir_name": "ios-swift-concurrency-thebushidocollective-han"
+  "dir_name": "ios-swift-concurrency-thebushidocollective-han",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

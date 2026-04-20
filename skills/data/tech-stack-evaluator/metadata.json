@@ -5,5 +5,12 @@
   "source": "github.com/krzemienski/claude-code-skills-factory",
   "downloaded_at": "2026-02-04T05:21:45.198415Z",
   "dir_name": "tech-stack-evaluator",
-  "category": "data"
+  "category": "data",
+  "author": "krzemienski",
+  "source_url": "https://github.com/krzemienski/claude-code-skills-factory/blob/main/generated-skills/tech-stack-evaluator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Reza Rezvani",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

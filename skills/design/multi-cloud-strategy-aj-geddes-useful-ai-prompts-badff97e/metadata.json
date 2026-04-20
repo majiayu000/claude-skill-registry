@@ -11,5 +11,12 @@
   "stars": 25,
   "github_path": "skills/multi-cloud-strategy",
   "github_branch": "main",
-  "dir_name": "multi-cloud-strategy-aj-geddes-useful-ai-prompts-badff97e"
+  "dir_name": "multi-cloud-strategy-aj-geddes-useful-ai-prompts-badff97e",
+  "author": "aj-geddes",
+  "source_url": "https://github.com/aj-geddes/useful-ai-prompts/blob/main/skills/multi-cloud-strategy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AJ Geddes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

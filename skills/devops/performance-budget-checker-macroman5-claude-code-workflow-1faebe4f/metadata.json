@@ -11,5 +11,12 @@
   "stars": 1,
   "github_path": ".claude/skills/performance-budget-checker",
   "github_branch": "main",
-  "dir_name": "performance-budget-checker-macroman5-claude-code-workflow-1faebe4f"
+  "dir_name": "performance-budget-checker-macroman5-claude-code-workflow-1faebe4f",
+  "author": "MacroMan5",
+  "source_url": "https://github.com/MacroMan5/claude-code-workflow-plugins/blob/main/.claude/skills/performance-budget-checker/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Therouxe",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

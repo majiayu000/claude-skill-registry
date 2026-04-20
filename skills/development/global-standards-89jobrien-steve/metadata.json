@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:27.414292Z",
   "github_path": "steve/skills/global-standards",
   "github_branch": "main",
-  "dir_name": "global-standards-89jobrien-steve"
+  "dir_name": "global-standards-89jobrien-steve",
+  "author": "89jobrien",
+  "source_url": "https://github.com/89jobrien/steve/blob/main/steve/skills/global-standards/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/89jobrien/steve/blob/main/steve/skills/global-standards/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

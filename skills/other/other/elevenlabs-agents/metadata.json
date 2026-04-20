@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/jezweb/claude-skills",
   "dir_name": "elevenlabs-agents",
-  "downloaded_at": "2026-02-22T07:39:31.014533Z"
+  "downloaded_at": "2026-02-22T07:39:31.014533Z",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/elevenlabs-agents/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

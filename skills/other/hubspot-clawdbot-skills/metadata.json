@@ -7,5 +7,12 @@
   "dir_name": "hubspot-clawdbot-skills",
   "category": "other",
   "github_path": "skills/kwall1/hubspot",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "clawdbot",
+  "source_url": "https://github.com/clawdbot/skills/blob/main/skills/kwall1/hubspot/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

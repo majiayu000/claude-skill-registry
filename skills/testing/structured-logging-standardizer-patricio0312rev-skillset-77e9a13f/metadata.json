@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:08.558133Z",
   "github_path": "templates/performance/structured-logging-standardizer",
   "github_branch": "main",
-  "dir_name": "structured-logging-standardizer-patricio0312rev-skillset-77e9a13f"
+  "dir_name": "structured-logging-standardizer-patricio0312rev-skillset-77e9a13f",
+  "author": "patricio0312rev",
+  "source_url": "https://github.com/patricio0312rev/skillset/blob/main/templates/performance/structured-logging-standardizer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Patricio Marroquin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

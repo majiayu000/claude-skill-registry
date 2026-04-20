@@ -5,5 +5,12 @@
   "description": "コードベース分析から環境セットアップガイドドキュメントを生成。 パッケージマネージャ、必要なツール、環境変数、起動コマンドを検出。 トリガー: setup guide, environment setup, development environment, installation guide, getting started, prerequisites.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:23.648702Z",
-  "dir_name": "setting-up-docs"
+  "dir_name": "setting-up-docs",
+  "author": "thkt",
+  "source_url": "https://github.com/thkt/claude-config",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/thkt/claude-config",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

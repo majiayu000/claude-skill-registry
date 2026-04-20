@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:46.356452Z",
   "github_path": "plugins/community/jeremy-firestore/skills/firestore-operations-manager",
   "github_branch": "main",
-  "dir_name": "firestore-operations-manager"
+  "dir_name": "firestore-operations-manager",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/community/jeremy-firestore/skills/firestore-operations-manager/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

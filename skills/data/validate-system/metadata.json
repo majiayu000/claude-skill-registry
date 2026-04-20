@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:44.346816Z",
   "dir_name": "validate-system",
   "github_path": "00-system/skills/system/validate-system",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "abdullahbeam",
+  "source_url": "https://github.com/abdullahbeam/nexus-design-abdullah/blob/main/00-system/skills/system/validate-system/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/abdullahbeam/nexus-design-abdullah/blob/main/00-system/skills/system/validate-system/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

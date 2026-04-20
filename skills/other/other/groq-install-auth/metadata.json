@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/HelixDevelopment/HelixAgent",
   "dir_name": "groq-install-auth",
-  "downloaded_at": "2026-02-15T05:12:38.011328Z"
+  "downloaded_at": "2026-02-15T05:12:38.011328Z",
+  "author": "HelixDevelopment",
+  "source_url": "https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/plugins/saas-packs/groq-pack/groq-install-auth/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Milos Vasic",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

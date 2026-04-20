@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/anton-abyzov/specweave",
   "dir_name": "sync-setup",
-  "downloaded_at": "2026-02-22T06:18:48.581456Z"
+  "downloaded_at": "2026-02-22T06:18:48.581456Z",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave/skills/sync-setup/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

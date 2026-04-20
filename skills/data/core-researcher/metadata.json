@@ -5,5 +5,12 @@
   "source": "github.com/vamseeachanta/workspace-hub",
   "downloaded_at": "2026-01-28T01:05:20.785416Z",
   "dir_name": "core-researcher",
-  "category": "data"
+  "category": "data",
+  "author": "vamseeachanta",
+  "source_url": "https://github.com/vamseeachanta/workspace-hub/blob/main/.claude/skills/coordination/core/core-researcher/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vamseeachanta/workspace-hub/blob/main/.claude/skills/coordination/core/core-researcher/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

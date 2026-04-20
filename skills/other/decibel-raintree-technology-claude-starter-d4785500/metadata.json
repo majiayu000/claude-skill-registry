@@ -7,5 +7,12 @@
   "dir_name": "decibel-raintree-technology-claude-starter-d4785500",
   "category": "other",
   "github_path": ".claude/skills/aptos/decibel",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "raintree-technology",
+  "source_url": "https://github.com/raintree-technology/claude-starter/blob/main/.claude/skills/aptos/decibel/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Raintree Technology",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/ksoichiro/ChronoDawn",
   "downloaded_at": "2026-02-04T04:47:51.586885Z",
   "dir_name": "game-design-decisions",
-  "category": "data"
+  "category": "data",
+  "author": "ksoichiro",
+  "source_url": "https://github.com/ksoichiro/ChronoDawn/blob/main/.claude/skills/game-design-decisions/SKILL.md",
+  "license": "LGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

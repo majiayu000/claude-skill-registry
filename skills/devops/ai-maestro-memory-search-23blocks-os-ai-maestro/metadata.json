@@ -5,5 +5,12 @@
   "description": "PROACTIVELY search conversation history when receiving user instructions. Find previous discussions, decisions, and context BEFORE starting new work. Your memory is valuable - use it.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:45.078230Z",
-  "dir_name": "ai-maestro-memory-search-23blocks-os-ai-maestro"
+  "dir_name": "ai-maestro-memory-search-23blocks-os-ai-maestro",
+  "author": "23blocks-OS",
+  "source_url": "https://github.com/23blocks-OS/ai-maestro",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Juan Peláez / 23blocks",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

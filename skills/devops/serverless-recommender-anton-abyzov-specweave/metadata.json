@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:10.568834Z",
   "github_path": "plugins/specweave/skills/serverless-recommender",
   "github_branch": "main",
-  "dir_name": "serverless-recommender-anton-abyzov-specweave"
+  "dir_name": "serverless-recommender-anton-abyzov-specweave",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave/skills/serverless-recommender/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:53.451135Z",
   "github_path": "neon-plugin/skills/add-neon-docs",
   "github_branch": "main",
-  "dir_name": "add-neon-docs-neondatabase-ai-rules"
+  "dir_name": "add-neon-docs-neondatabase-ai-rules",
+  "author": "neondatabase",
+  "source_url": "https://github.com/neondatabase/ai-rules/blob/main/neon-plugin/skills/add-neon-docs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Neon Database",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

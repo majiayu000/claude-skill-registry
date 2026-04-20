@@ -9,5 +9,12 @@
   "github_path": "skills/benchmark_skills/toolathlon/multi-modal-travel-planner",
   "github_branch": "main",
   "dir_name": "multi-modal-travel-planner",
-  "downloaded_at": "2026-02-05T01:44:59.010336Z"
+  "downloaded_at": "2026-02-05T01:44:59.010336Z",
+  "author": "zjunlp",
+  "source_url": "https://github.com/zjunlp/SkillNet/blob/main/skills/benchmark_skills/toolathlon/multi-modal-travel-planner/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ZJUNLP",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

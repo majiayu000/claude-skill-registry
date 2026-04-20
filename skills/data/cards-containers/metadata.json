@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:16.758687Z",
   "dir_name": "cards-containers",
   "github_path": "skills/07-by-ui-element/cards-containers",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/animation-principles/blob/main/skills/07-by-ui-element/cards-containers/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

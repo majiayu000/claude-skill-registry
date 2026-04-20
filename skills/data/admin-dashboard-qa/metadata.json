@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "admin-dashboard-qa"
+  "dir_name": "admin-dashboard-qa",
+  "author": "cgjen-box",
+  "source_url": "https://github.com/cgjen-box/planted-website",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgjen-box/planted-website",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

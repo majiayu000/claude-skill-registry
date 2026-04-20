@@ -5,5 +5,12 @@
   "source": "github.com/orient-bot/orient",
   "downloaded_at": "2026-02-04T03:19:21.357813Z",
   "dir_name": "production-debugging",
-  "category": "data"
+  "category": "data",
+  "author": "orient-bot",
+  "source_url": "https://github.com/orient-bot/orient/blob/main/.claude/skills/production-debugging/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/orient-bot/orient/blob/main/.claude/skills/production-debugging/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "Use when someone needs a rapid overview of all 12 animation principles in under 5 minutes",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:15.466327Z",
-  "dir_name": "animation-principles-quick-start"
+  "dir_name": "animation-principles-quick-start",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/animation-principles",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

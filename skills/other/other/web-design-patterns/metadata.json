@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/jezweb/claude-skills",
   "dir_name": "web-design-patterns",
-  "downloaded_at": "2026-02-22T07:39:30.860345Z"
+  "downloaded_at": "2026-02-22T07:39:30.860345Z",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/web-design-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

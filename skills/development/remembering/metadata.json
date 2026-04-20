@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:55.044382Z",
   "github_path": "remembering",
   "github_branch": "main",
-  "dir_name": "remembering"
+  "dir_name": "remembering",
+  "author": "oaustegard",
+  "source_url": "https://github.com/oaustegard/claude-skills/blob/main/remembering/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Oskar Austegard",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

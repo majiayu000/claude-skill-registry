@@ -7,5 +7,12 @@
   "dir_name": "design-foundation-sanky369-vibe-building-skills",
   "category": "other",
   "github_path": "skills/frontend-design/design-foundation",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "sanky369",
+  "source_url": "https://github.com/sanky369/vibe-building-skills/blob/main/skills/frontend-design/design-foundation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sanky369/vibe-building-skills/blob/main/skills/frontend-design/design-foundation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

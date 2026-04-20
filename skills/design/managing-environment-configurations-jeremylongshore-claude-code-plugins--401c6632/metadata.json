@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:48.167939Z",
   "github_path": "plugins/devops/environment-config-manager/skills/managing-environment-configurations",
   "github_branch": "main",
-  "dir_name": "managing-environment-configurations-jeremylongshore-claude-code-plugins--401c6632"
+  "dir_name": "managing-environment-configurations-jeremylongshore-claude-code-plugins--401c6632",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/devops/environment-config-manager/skills/managing-environment-configurations/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

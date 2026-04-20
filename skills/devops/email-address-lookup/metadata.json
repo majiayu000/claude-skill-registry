@@ -5,5 +5,12 @@
   "description": "Email validation, breach check, and associated account discovery",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:39.705790Z",
-  "dir_name": "email-address-lookup"
+  "dir_name": "email-address-lookup",
+  "author": "babdulhakim2",
+  "source_url": "https://github.com/babdulhakim2/scolo-app",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/babdulhakim2/scolo-app",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

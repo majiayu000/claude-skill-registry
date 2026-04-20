@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:47.321003Z",
   "github_path": "plugins/skill-extractor/skills/extract-skill-from-conversation",
   "github_branch": "main",
-  "dir_name": "extract-skill-from-conversation"
+  "dir_name": "extract-skill-from-conversation",
+  "author": "rafaelcalleja",
+  "source_url": "https://github.com/rafaelcalleja/claude-market-place/blob/main/plugins/skill-extractor/skills/extract-skill-from-conversation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rafaelcalleja/claude-market-place/blob/main/plugins/skill-extractor/skills/extract-skill-from-conversation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "Composition API vs Options API",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:33.671226Z",
-  "dir_name": "vue-frontend"
+  "dir_name": "vue-frontend",
+  "author": "williamzujkowski",
+  "source_url": "https://github.com/williamzujkowski/standards",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Standards Project Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

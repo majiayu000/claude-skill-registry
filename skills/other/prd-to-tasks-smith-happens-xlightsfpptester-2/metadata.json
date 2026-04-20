@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/Smith-Happens/xlightsfpptester",
-  "dir_name": "prd-to-tasks-smith-happens-xlightsfpptester-2"
+  "dir_name": "prd-to-tasks-smith-happens-xlightsfpptester-2",
+  "author": "Smith-Happens",
+  "source_url": "https://github.com/Smith-Happens/xlightsfpptester/blob/main/skills/prd-to-tasks/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 TurboBeest",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

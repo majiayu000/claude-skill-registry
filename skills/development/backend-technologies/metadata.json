@@ -5,5 +5,12 @@
   "description": "Master backend development with Node.js, Python, Java, Go, Rust, API design, databases, and microservices. Use when building APIs, designing systems, or learning backend frameworks.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:46.660251Z",
-  "dir_name": "backend-technologies"
+  "dir_name": "backend-technologies",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-typescript",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:40.685272Z",
   "github_path": ".claude/skills/axiom-system-architect/skills/identifying-technical-debt",
   "github_branch": "main",
-  "dir_name": "identifying-technical-debt"
+  "dir_name": "identifying-technical-debt",
+  "author": "tachyon-beep",
+  "source_url": "https://github.com/tachyon-beep/hamlet/blob/main/.claude/skills/axiom-system-architect/skills/identifying-technical-debt/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 John",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

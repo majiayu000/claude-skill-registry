@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/adw-bootstrap",
   "github_branch": "main",
-  "dir_name": "adw-bootstrap-joshuaoliphant-claude-code-files"
+  "dir_name": "adw-bootstrap-joshuaoliphant-claude-code-files",
+  "author": "JoshuaOliphant",
+  "source_url": "https://github.com/JoshuaOliphant/claude_code_files/blob/main/skills/adw-bootstrap/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JoshuaOliphant/claude_code_files/blob/main/skills/adw-bootstrap/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

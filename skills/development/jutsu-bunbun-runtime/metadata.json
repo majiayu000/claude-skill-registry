@@ -5,5 +5,12 @@
   "description": "Use when working with Bun's runtime APIs including file I/O, HTTP servers, and native APIs. Covers modern JavaScript/TypeScript execution in Bun's fast runtime environment.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:01.284556Z",
-  "dir_name": "jutsu-bunbun-runtime"
+  "dir_name": "jutsu-bunbun-runtime",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

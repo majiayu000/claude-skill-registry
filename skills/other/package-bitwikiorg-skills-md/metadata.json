@@ -7,5 +7,12 @@
   "dir_name": "package-bitwikiorg-skills-md",
   "category": "other",
   "github_path": "sources/vercel/package",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "bitwikiorg",
+  "source_url": "https://github.com/bitwikiorg/skills.md/blob/main/sources/vercel/package/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 BITwiki",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:51.134745Z",
   "github_path": ".claude/skills/tier-2/extract-hyperparameters",
   "github_branch": "main",
-  "dir_name": "extract-hyperparameters-mvillmow-projectodyssey"
+  "dir_name": "extract-hyperparameters-mvillmow-projectodyssey",
+  "author": "mvillmow",
+  "source_url": "https://github.com/mvillmow/ProjectOdyssey/blob/main/.claude/skills/tier-2/extract-hyperparameters/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2025, ML Odyssey Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:11.949501Z",
   "github_path": "core/skills/git-find-fork",
   "github_branch": "main",
-  "dir_name": "git-find-fork"
+  "dir_name": "git-find-fork",
+  "author": "MatiasComercio",
+  "source_url": "https://github.com/MatiasComercio/agentic-config/blob/main/core/skills/git-find-fork/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Matias Comercio (mcomerciovazquez@gmail.com)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

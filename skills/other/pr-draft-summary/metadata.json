@@ -9,5 +9,12 @@
   "github_path": "skills/pr-draft-summary",
   "github_branch": "main",
   "dir_name": "pr-draft-summary",
-  "downloaded_at": "2026-02-05T05:44:36.203002Z"
+  "downloaded_at": "2026-02-05T05:44:36.203002Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/pr-draft-summary/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

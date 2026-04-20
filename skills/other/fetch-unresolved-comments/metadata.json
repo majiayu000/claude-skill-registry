@@ -7,5 +7,12 @@
   "dir_name": "fetch-unresolved-comments",
   "category": "other",
   "github_path": ".claude/skills/fetch-unresolved-comments",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "mlflow",
+  "source_url": "https://github.com/mlflow/mlflow/blob/main/.claude/skills/fetch-unresolved-comments/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2018 Databricks, Inc.  All rights reserved.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/__scientific-skills/matchms",
   "github_branch": "main",
   "dir_name": "matchms-pur3v4d3r-pur3-pkb-codebase-985baddc",
-  "downloaded_at": "2026-02-05T01:45:32.973149Z"
+  "downloaded_at": "2026-02-05T01:45:32.973149Z",
+  "author": "pur3v4d3r",
+  "source_url": "https://github.com/pur3v4d3r/pur3-pkb-codebase/blob/main/.claude/skills/__scientific-skills/matchms/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pur3v4d3r/pur3-pkb-codebase/blob/main/.claude/skills/__scientific-skills/matchms/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

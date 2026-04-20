@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:22.555068Z",
   "github_path": "plugins/edtech-growth/skills/student-success-scorecard",
   "github_branch": "main",
-  "dir_name": "student-success-scorecard-gtmagents-gtm-agents"
+  "dir_name": "student-success-scorecard-gtmagents-gtm-agents",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/edtech-growth/skills/student-success-scorecard/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

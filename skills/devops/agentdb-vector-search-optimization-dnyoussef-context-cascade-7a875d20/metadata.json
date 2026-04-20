@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:53.642269Z",
   "github_path": "skills/platforms/agentdb-vector-search-optimization",
   "github_branch": "main",
-  "dir_name": "agentdb-vector-search-optimization-dnyoussef-context-cascade-7a875d20"
+  "dir_name": "agentdb-vector-search-optimization-dnyoussef-context-cascade-7a875d20",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/context-cascade/blob/main/skills/platforms/agentdb-vector-search-optimization/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ruvnet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

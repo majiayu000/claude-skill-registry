@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "activecampaign-email-marketing"
+  "dir_name": "activecampaign-email-marketing",
+  "author": "Mateljan1",
+  "source_url": "https://github.com/Mateljan1/LBTA",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Mateljan1/LBTA",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

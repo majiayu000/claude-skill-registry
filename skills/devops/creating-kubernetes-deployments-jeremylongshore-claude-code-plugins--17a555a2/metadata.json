@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:48.648325Z",
   "github_path": "plugins/devops/kubernetes-deployment-creator/skills/creating-kubernetes-deployments",
   "github_branch": "main",
-  "dir_name": "creating-kubernetes-deployments-jeremylongshore-claude-code-plugins--17a555a2"
+  "dir_name": "creating-kubernetes-deployments-jeremylongshore-claude-code-plugins--17a555a2",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/devops/kubernetes-deployment-creator/skills/creating-kubernetes-deployments/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -9,5 +9,12 @@
   "stars": 4,
   "github_path": "plugins/commitlint/skills/commitlint",
   "github_branch": "main",
-  "dir_name": "commitlint"
+  "dir_name": "commitlint",
+  "author": "Jamie-BitFlight",
+  "source_url": "https://github.com/Jamie-BitFlight/claude_skills/blob/main/plugins/commitlint/skills/commitlint/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Jamie-BitFlight/claude_skills/blob/main/plugins/commitlint/skills/commitlint/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

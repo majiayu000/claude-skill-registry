@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/audit-coordinator",
   "github_branch": "main",
-  "dir_name": "audit-coordinator"
+  "dir_name": "audit-coordinator",
+  "author": "philoserf",
+  "source_url": "https://github.com/philoserf/claude-code-setup/blob/main/skills/audit-coordinator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Mark Ayers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

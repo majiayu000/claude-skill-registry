@@ -10,5 +10,12 @@
   ],
   "stars": 24,
   "source": "local",
-  "dir_name": "sync-builder-skill"
+  "dir_name": "sync-builder-skill",
+  "author": "NangoHQ",
+  "source_url": "https://github.com/NangoHQ/integration-templates",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NangoHQ/integration-templates",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

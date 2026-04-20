@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:00.228718Z",
   "github_path": "skill/incident",
   "github_branch": "main",
-  "dir_name": "incident-thoreinstein-opencode-config"
+  "dir_name": "incident-thoreinstein-opencode-config",
+  "author": "thoreinstein",
+  "source_url": "https://github.com/thoreinstein/opencode-config/blob/main/skill/incident/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jim Myers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

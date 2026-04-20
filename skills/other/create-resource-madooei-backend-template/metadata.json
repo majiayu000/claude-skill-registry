@@ -5,5 +5,12 @@
   "source": "github.com/madooei/backend-template",
   "downloaded_at": "2026-01-29T05:33:08.771054Z",
   "dir_name": "create-resource-madooei-backend-template",
-  "category": "other"
+  "category": "other",
+  "author": "madooei",
+  "source_url": "https://github.com/madooei/backend-template/blob/main/.claude/skills/create-resource/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/madooei/backend-template/blob/main/.claude/skills/create-resource/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

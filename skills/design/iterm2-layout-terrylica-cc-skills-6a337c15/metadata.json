@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:42.321726Z",
   "github_path": "plugins/iterm2-layout-config/skills/iterm2-layout",
   "github_branch": "main",
-  "dir_name": "iterm2-layout-terrylica-cc-skills-6a337c15"
+  "dir_name": "iterm2-layout-terrylica-cc-skills-6a337c15",
+  "author": "terrylica",
+  "source_url": "https://github.com/terrylica/cc-skills/blob/main/plugins/iterm2-layout-config/skills/iterm2-layout/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Terry Li",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

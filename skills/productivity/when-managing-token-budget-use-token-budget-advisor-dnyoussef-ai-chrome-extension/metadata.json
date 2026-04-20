@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:08.980581Z",
   "github_path": ".claude/skills/meta-tools/when-managing-token-budget-use-token-budget-advisor",
   "github_branch": "main",
-  "dir_name": "when-managing-token-budget-use-token-budget-advisor-dnyoussef-ai-chrome-extension"
+  "dir_name": "when-managing-token-budget-use-token-budget-advisor-dnyoussef-ai-chrome-extension",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/meta-tools/when-managing-token-budget-use-token-budget-advisor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

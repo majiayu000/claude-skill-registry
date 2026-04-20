@@ -7,5 +7,12 @@
   "dir_name": "after-erichowens-some-claude-skills",
   "category": "other",
   "github_path": "website/static/data/artifacts/single-skill/skill-coach/001-self-improvement/after",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/website/static/data/artifacts/single-skill/skill-coach/001-self-improvement/after/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

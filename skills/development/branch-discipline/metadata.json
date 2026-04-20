@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/branch-discipline",
   "github_branch": "main",
-  "dir_name": "branch-discipline"
+  "dir_name": "branch-discipline",
+  "author": "troykelly",
+  "source_url": "https://github.com/troykelly/claude-skills/blob/main/skills/branch-discipline/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/troykelly/claude-skills/blob/main/skills/branch-discipline/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

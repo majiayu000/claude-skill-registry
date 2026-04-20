@@ -10,5 +10,12 @@
   "stars": 2,
   "github_path": ".claude/skills/link-project",
   "github_branch": "main",
-  "dir_name": "link-project-whanyu1212-artifact-foundry"
+  "dir_name": "link-project-whanyu1212-artifact-foundry",
+  "author": "whanyu1212",
+  "source_url": "https://github.com/whanyu1212/artifact-foundry/blob/main/.claude/skills/link-project/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Hanyu Wu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

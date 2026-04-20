@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 16,
   "source": "github.com/hzqst/metamod-fallguys",
-  "dir_name": "add-private-function-with-signatures"
+  "dir_name": "add-private-function-with-signatures",
+  "author": "hzqst",
+  "source_url": "https://github.com/hzqst/metamod-fallguys",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 hzqst",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

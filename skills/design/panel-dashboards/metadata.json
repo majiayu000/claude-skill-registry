@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:36.869179Z",
   "github_path": "plugins/holoviz-expert/skills/panel-dashboards",
   "github_branch": "main",
-  "dir_name": "panel-dashboards"
+  "dir_name": "panel-dashboards",
+  "author": "cdcore09",
+  "source_url": "https://github.com/cdcore09/holoviz-claude/blob/main/plugins/holoviz-expert/skills/panel-dashboards/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2025, HoloViz Community",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

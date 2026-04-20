@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/editing-assistant",
   "github_branch": "main",
-  "dir_name": "editing-assistant"
+  "dir_name": "editing-assistant",
+  "author": "philoserf",
+  "source_url": "https://github.com/philoserf/claude-code-setup/blob/main/skills/editing-assistant/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Mark Ayers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

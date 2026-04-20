@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:49.166804Z",
   "github_path": ".claude/skills/plan-gap-analysis",
   "github_branch": "main",
-  "dir_name": "plan-gap-analysis"
+  "dir_name": "plan-gap-analysis",
+  "author": "d-o-hub",
+  "source_url": "https://github.com/d-o-hub/rust-self-learning-memory/blob/main/.claude/skills/plan-gap-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2019 Zachary Rice",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

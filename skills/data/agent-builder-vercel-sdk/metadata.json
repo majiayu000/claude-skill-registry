@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/guaderrama/administracion-ofi-hrms",
-  "dir_name": "agent-builder-vercel-sdk"
+  "dir_name": "agent-builder-vercel-sdk",
+  "author": "guaderrama",
+  "source_url": "https://github.com/guaderrama/administracion-ofi-hrms",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/guaderrama/administracion-ofi-hrms",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

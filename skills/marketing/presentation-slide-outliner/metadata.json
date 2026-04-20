@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:09.726572Z",
   "github_path": "planned-skills/generated/18-visual-content/presentation-slide-outliner",
   "github_branch": "main",
-  "dir_name": "presentation-slide-outliner"
+  "dir_name": "presentation-slide-outliner",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/planned-skills/generated/18-visual-content/presentation-slide-outliner/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

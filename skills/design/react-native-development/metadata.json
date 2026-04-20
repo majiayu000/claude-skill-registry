@@ -5,5 +5,12 @@
   "description": "React Native component development with TypeScript, Expo, and React Navigation. Use when creating UI components, screens, or implementing navigation flows.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:34.862442Z",
-  "dir_name": "react-native-development"
+  "dir_name": "react-native-development",
+  "author": "k002bill2",
+  "source_url": "https://github.com/k002bill2/LiveMetro",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/k002bill2/LiveMetro",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

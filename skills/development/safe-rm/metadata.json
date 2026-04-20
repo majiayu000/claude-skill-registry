@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:44.975195Z",
   "github_path": ".claude/skills/safe-rm",
   "github_branch": "main",
-  "dir_name": "safe-rm"
+  "dir_name": "safe-rm",
+  "author": "aspiers",
+  "source_url": "https://github.com/aspiers/ai-config/blob/main/.claude/skills/safe-rm/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

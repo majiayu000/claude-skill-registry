@@ -7,5 +7,12 @@
   "dir_name": "migration-patterns-bybren-llc-safe-agentic-workflo-56a434a5",
   "category": "other",
   "github_path": ".gemini/skills/migration-patterns",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "bybren-llc",
+  "source_url": "https://github.com/bybren-llc/safe-agentic-workflow/blob/main/.gemini/skills/migration-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 J. Scott Graham (@cheddarfox) / ByBren, LLC",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

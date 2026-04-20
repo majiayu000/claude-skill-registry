@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:14.633162Z",
   "github_path": "code-principles/skills/feature-slicing",
   "github_branch": "main",
-  "dir_name": "feature-slicing"
+  "dir_name": "feature-slicing",
+  "author": "IvanTorresEdge",
+  "source_url": "https://github.com/IvanTorresEdge/molcajete.ai/blob/main/code-principles/skills/feature-slicing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2025 Ivan Torres",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

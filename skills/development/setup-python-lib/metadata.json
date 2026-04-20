@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "setup-python-lib"
+  "dir_name": "setup-python-lib",
+  "author": "josh-gree",
+  "source_url": "https://github.com/josh-gree/my-claude-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/josh-gree/my-claude-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

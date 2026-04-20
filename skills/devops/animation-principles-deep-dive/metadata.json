@@ -5,5 +5,12 @@
   "description": "Use when someone needs comprehensive reference material on animation principles with technical depth and extensive context",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:15.513981Z",
-  "dir_name": "animation-principles-deep-dive"
+  "dir_name": "animation-principles-deep-dive",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/animation-principles",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

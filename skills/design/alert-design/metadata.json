@@ -5,5 +5,12 @@
   "description": "Design actionable alerts with appropriate severity and noise reduction",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:07.722770Z",
-  "dir_name": "alert-design"
+  "dir_name": "alert-design",
+  "author": "melodic-software",
+  "source_url": "https://github.com/melodic-software/claude-code-plugins",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Melodic Software",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

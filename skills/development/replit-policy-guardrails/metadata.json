@@ -7,5 +7,12 @@
   "stars": 1061,
   "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
   "downloaded_at": "2026-01-24T16:16:03.794872Z",
-  "dir_name": "replit-policy-guardrails"
+  "dir_name": "replit-policy-guardrails",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/replit-pack/skills/replit-policy-guardrails/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

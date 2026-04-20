@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:09.752812Z",
   "github_path": "plugins/specweave/skills/code-standards-analyzer",
   "github_branch": "main",
-  "dir_name": "code-standards-analyzer"
+  "dir_name": "code-standards-analyzer",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave/skills/code-standards-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

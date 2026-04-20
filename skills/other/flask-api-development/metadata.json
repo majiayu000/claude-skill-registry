@@ -9,5 +9,12 @@
   "github_path": "skills/flask-api-development",
   "github_branch": "main",
   "dir_name": "flask-api-development",
-  "downloaded_at": "2026-02-05T01:45:25.398046Z"
+  "downloaded_at": "2026-02-05T01:45:25.398046Z",
+  "author": "aj-geddes",
+  "source_url": "https://github.com/aj-geddes/useful-ai-prompts/blob/main/skills/flask-api-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AJ Geddes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

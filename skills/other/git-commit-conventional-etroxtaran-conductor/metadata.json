@@ -5,5 +5,12 @@
   "source": "github.com/EtroxTaran/conductor",
   "downloaded_at": "2026-01-29T05:18:47.915016Z",
   "dir_name": "git-commit-conventional-etroxtaran-conductor",
-  "category": "other"
+  "category": "other",
+  "author": "EtroxTaran",
+  "source_url": "https://github.com/EtroxTaran/conductor/blob/main/.claude/skills/git-commit-conventional/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 EtroxTaran",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

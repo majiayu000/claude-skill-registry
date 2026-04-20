@@ -9,5 +9,12 @@
   "github_path": "skills/data/m4-api",
   "github_branch": "main",
   "dir_name": "m4-api",
-  "downloaded_at": "2026-02-05T01:45:15.181698Z"
+  "downloaded_at": "2026-02-05T01:45:15.181698Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/data/m4-api/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:48.168007Z",
   "github_path": "plugins/devops/disaster-recovery-planner/skills/planning-disaster-recovery",
   "github_branch": "main",
-  "dir_name": "planning-disaster-recovery"
+  "dir_name": "planning-disaster-recovery",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/devops/disaster-recovery-planner/skills/planning-disaster-recovery/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

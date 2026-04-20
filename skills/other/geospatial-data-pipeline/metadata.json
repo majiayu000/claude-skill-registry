@@ -7,5 +7,12 @@
   "dir_name": "geospatial-data-pipeline",
   "category": "other",
   "github_path": ".claude/skills/geospatial-data-pipeline",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/geospatial-data-pipeline/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

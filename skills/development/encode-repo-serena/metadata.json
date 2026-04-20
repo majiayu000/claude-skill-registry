@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:27.924334Z",
   "github_path": ".claude/skills/encode-repo-serena",
   "github_branch": "main",
-  "dir_name": "encode-repo-serena"
+  "dir_name": "encode-repo-serena",
+  "author": "rjmurillo",
+  "source_url": "https://github.com/rjmurillo/ai-agents/blob/main/.claude/skills/encode-repo-serena/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

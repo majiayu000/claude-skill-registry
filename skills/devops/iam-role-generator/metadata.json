@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:12.679405Z",
   "github_path": "planned-skills/generated/13-aws-skills/iam-role-generator",
   "github_branch": "main",
-  "dir_name": "iam-role-generator"
+  "dir_name": "iam-role-generator",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/planned-skills/generated/13-aws-skills/iam-role-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

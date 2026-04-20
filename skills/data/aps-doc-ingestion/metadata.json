@@ -5,5 +5,12 @@
   "description": "Expert documentation generation for ingestion layers. Automatically detects connector types (REST API, Database, File, Streaming), documents authentication patterns, rate limiting strategies, and incr",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:23.788070Z",
-  "dir_name": "aps-doc-ingestion"
+  "dir_name": "aps-doc-ingestion",
+  "author": "treasure-data",
+  "source_url": "https://github.com/treasure-data/td-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/treasure-data/td-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

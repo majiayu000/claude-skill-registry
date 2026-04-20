@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/XessShare/BuildyourAI",
   "downloaded_at": "2026-01-24T16:15:38.122712Z",
-  "dir_name": "agent-7-skill-roadmaptracker"
+  "dir_name": "agent-7-skill-roadmaptracker",
+  "author": "XessShare",
+  "source_url": "https://github.com/XessShare/BuildyourAI/blob/main/claude/skills/Agent 7 - skill(RoadmapTracker)/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/XessShare/BuildyourAI/blob/main/claude/skills/Agent 7 - skill(RoadmapTracker)/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

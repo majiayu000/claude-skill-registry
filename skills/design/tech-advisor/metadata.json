@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:50.591286Z",
   "github_path": ".claude/skills/tech-advisor",
   "github_branch": "main",
-  "dir_name": "tech-advisor"
+  "dir_name": "tech-advisor",
+  "author": "vjrivmon",
+  "source_url": "https://github.com/vjrivmon/Setup-Software-IA/blob/main/.claude/skills/tech-advisor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Vicente Rivas Monferrer",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

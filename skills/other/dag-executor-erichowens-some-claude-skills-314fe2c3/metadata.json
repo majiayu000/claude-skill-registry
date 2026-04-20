@@ -7,5 +7,12 @@
   "dir_name": "dag-executor-erichowens-some-claude-skills-314fe2c3",
   "category": "other",
   "github_path": ".claude/skills/dag-executor",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/dag-executor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

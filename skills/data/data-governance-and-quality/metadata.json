@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:52.608063Z",
   "dir_name": "data-governance-and-quality",
   "github_path": ".claude/skills/_archive/data-governance-and-quality",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "alongor666",
+  "source_url": "https://github.com/alongor666/daylyreport/blob/main/.claude/skills/_archive/data-governance-and-quality/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alongor666/daylyreport/blob/main/.claude/skills/_archive/data-governance-and-quality/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

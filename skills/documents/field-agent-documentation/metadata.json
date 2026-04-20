@@ -5,5 +5,12 @@
   "description": "Comprehensive template and guidelines for documenting Field Agents including technical specifications, system prompts, tool specifications, user interactions, and standardized documentation structure",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:23.890162Z",
-  "dir_name": "field-agent-documentation"
+  "dir_name": "field-agent-documentation",
+  "author": "treasure-data",
+  "source_url": "https://github.com/treasure-data/td-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/treasure-data/td-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

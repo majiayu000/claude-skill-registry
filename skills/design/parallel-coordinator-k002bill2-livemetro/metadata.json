@@ -5,5 +5,12 @@
   "description": "Coordinate parallel agent execution using ACE Framework for LiveMetro React Native development. Use when implementing features with 3+ independent subtasks (UI + API + Firebase + Tests).",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:09:48.098670Z",
-  "dir_name": "parallel-coordinator-k002bill2-livemetro"
+  "dir_name": "parallel-coordinator-k002bill2-livemetro",
+  "author": "k002bill2",
+  "source_url": "https://github.com/k002bill2/LiveMetro",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/k002bill2/LiveMetro",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

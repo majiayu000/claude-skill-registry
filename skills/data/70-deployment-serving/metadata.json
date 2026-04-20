@@ -5,5 +5,12 @@
   "source": "github.com/panaversity/agentfactory",
   "downloaded_at": "2026-02-04T02:28:35.586169Z",
   "dir_name": "70-deployment-serving",
-  "category": "data"
+  "category": "data",
+  "author": "panaversity",
+  "source_url": "https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/07-Turing-LLMOps-Proprietary-Intelligence/70-deployment-serving/00-build-serving-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/07-Turing-LLMOps-Proprietary-Intelligence/70-deployment-serving/00-build-serving-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

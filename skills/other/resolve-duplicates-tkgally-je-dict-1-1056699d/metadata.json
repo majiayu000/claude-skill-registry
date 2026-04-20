@@ -5,5 +5,12 @@
   "source": "github.com/tkgally/je-dict-1",
   "downloaded_at": "2026-01-29T07:30:50.188418Z",
   "dir_name": "resolve-duplicates-tkgally-je-dict-1-1056699d",
-  "category": "other"
+  "category": "other",
+  "author": "tkgally",
+  "source_url": "https://github.com/tkgally/je-dict-1/blob/main/.claude/skills/resolve-duplicates/SKILL.md",
+  "license": "CC0-1.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tkgally/je-dict-1/blob/main/.claude/skills/resolve-duplicates/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

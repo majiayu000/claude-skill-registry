@@ -7,5 +7,12 @@
   "dir_name": "acm-handoff-elb-pr-claudikins-automatic",
   "category": "other",
   "github_path": "skills/acm-handoff",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "elb-pr",
+  "source_url": "https://github.com/elb-pr/claudikins-automatic-context-manager/blob/main/skills/acm-handoff/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 Ethan Lee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

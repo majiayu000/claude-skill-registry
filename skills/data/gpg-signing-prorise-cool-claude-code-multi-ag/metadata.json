@@ -5,5 +5,12 @@
   "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
   "downloaded_at": "2026-01-29T08:30:39.351607Z",
   "dir_name": "gpg-signing-prorise-cool-claude-code-multi-ag",
-  "category": "data"
+  "category": "data",
+  "author": "Prorise-cool",
+  "source_url": "https://github.com/Prorise-cool/Claude-Code-Multi-Agent/blob/main/.claude/skills/github-specialist/gpg-signing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Prorise-cool/Claude-Code-Multi-Agent/blob/main/.claude/skills/github-specialist/gpg-signing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

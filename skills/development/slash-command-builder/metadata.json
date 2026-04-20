@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/slash-command-builder",
   "github_branch": "main",
-  "dir_name": "slash-command-builder"
+  "dir_name": "slash-command-builder",
+  "author": "pr-pm",
+  "source_url": "https://github.com/pr-pm/prpm/blob/main/.claude/skills/slash-command-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 PRPM (Prompt Package Manager)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

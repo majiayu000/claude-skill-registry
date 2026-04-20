@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:47.190870Z",
   "dir_name": "onboard-external-telemetry",
   "github_path": ".claude-plugin/plugins/limacharlie-skills/skills/onboard-external-telemetry",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "tekgrunt",
+  "source_url": "https://github.com/tekgrunt/boot-test/blob/main/.claude-plugin/plugins/limacharlie-skills/skills/onboard-external-telemetry/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tekgrunt/boot-test/blob/main/.claude-plugin/plugins/limacharlie-skills/skills/onboard-external-telemetry/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

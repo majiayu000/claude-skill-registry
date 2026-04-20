@@ -8,5 +8,12 @@
     "pdfs"
   ],
   "stars": 0,
-  "dir_name": "process-pdfs"
+  "dir_name": "process-pdfs",
+  "author": "philoserf",
+  "source_url": "https://github.com/philoserf/claude-code-setup",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Mark Ayers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

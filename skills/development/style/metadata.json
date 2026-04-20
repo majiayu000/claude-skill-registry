@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:27.946258Z",
   "github_path": ".claude/library/style",
   "github_branch": "main",
-  "dir_name": "style"
+  "dir_name": "style",
+  "author": "mgreenly",
+  "source_url": "https://github.com/mgreenly/ikigai/blob/main/.claude/library/style/SKILL.md",
+  "license": "MIT-0",
+  "copyright": "Copyright (c) 2025 Michael Greenly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

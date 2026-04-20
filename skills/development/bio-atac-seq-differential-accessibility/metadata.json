@@ -7,5 +7,12 @@
   "stars": 108,
   "source": "github.com/GPTomics/bioSkills",
   "downloaded_at": "2026-01-24T16:15:57.889565Z",
-  "dir_name": "bio-atac-seq-differential-accessibility"
+  "dir_name": "bio-atac-seq-differential-accessibility",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/atac-seq/differential-accessibility/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

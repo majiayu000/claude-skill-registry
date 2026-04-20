@@ -5,5 +5,12 @@
   "source": "github.com/dorgonman/kano-agent-backlog-skill-demo",
   "downloaded_at": "2026-02-04T04:50:14.649909Z",
   "dir_name": "0200",
-  "category": "data"
+  "category": "data",
+  "author": "dorgonman",
+  "source_url": "https://github.com/dorgonman/kano-agent-backlog-skill-demo/blob/main/_kano/backlog/products/kano-agent-backlog-skill/items/task/0200/KABSD-TSK-0235_clarify-epic-feature-userstory-task-ticketing-guidance-in-skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 dorgon.chang(@dorgonman)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

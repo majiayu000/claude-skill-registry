@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:39.895382Z",
   "github_path": ".github/skills/api-contract-change-end-to-end",
   "github_branch": "main",
-  "dir_name": "api-contract-change-end-to-end-localtaskrepo-lotar"
+  "dir_name": "api-contract-change-end-to-end-localtaskrepo-lotar",
+  "author": "localtaskrepo",
+  "source_url": "https://github.com/localtaskrepo/lotar/blob/main/.github/skills/api-contract-change-end-to-end/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ravi Gairola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

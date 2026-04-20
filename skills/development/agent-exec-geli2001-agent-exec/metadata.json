@@ -7,5 +7,12 @@
   "stars": 1,
   "source": "github.com/GeLi2001/agent-exec",
   "downloaded_at": "2026-01-24T16:16:04.246547Z",
-  "dir_name": "agent-exec-geli2001-agent-exec"
+  "dir_name": "agent-exec-geli2001-agent-exec",
+  "author": "GeLi2001",
+  "source_url": "https://github.com/GeLi2001/agent-exec/blob/main/.codex/skills/agent-exec/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GeLi2001",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

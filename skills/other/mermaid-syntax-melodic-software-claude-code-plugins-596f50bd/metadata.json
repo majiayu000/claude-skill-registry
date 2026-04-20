@@ -7,5 +7,12 @@
   "dir_name": "mermaid-syntax-melodic-software-claude-code-plugins-596f50bd",
   "category": "other",
   "github_path": "plugins/visualization/skills/mermaid-syntax",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "melodic-software",
+  "source_url": "https://github.com/melodic-software/claude-code-plugins/blob/main/plugins/visualization/skills/mermaid-syntax/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Melodic Software",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

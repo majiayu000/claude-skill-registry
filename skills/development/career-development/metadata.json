@@ -5,5 +5,12 @@
   "description": "Data analyst career development, portfolio building, and professional growth strategies",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:44.154841Z",
-  "dir_name": "career-development"
+  "dir_name": "career-development",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-data-analyst",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

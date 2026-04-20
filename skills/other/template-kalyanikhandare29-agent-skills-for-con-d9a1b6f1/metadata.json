@@ -7,5 +7,12 @@
   "dir_name": "template-kalyanikhandare29-agent-skills-for-con-d9a1b6f1",
   "category": "other",
   "github_path": "template",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Kalyanikhandare29",
+  "source_url": "https://github.com/Kalyanikhandare29/Agent-Skills-for-Context-Engineering/blob/main/template/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Context Engineering Agent Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

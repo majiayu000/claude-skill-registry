@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:52.831777Z",
   "github_path": "skills/disciplined-validation",
   "github_branch": "main",
-  "dir_name": "disciplined-validation-terraphim-codex-skills-0237d6a3"
+  "dir_name": "disciplined-validation-terraphim-codex-skills-0237d6a3",
+  "author": "terraphim",
+  "source_url": "https://github.com/terraphim/codex-skills/blob/main/skills/disciplined-validation/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
   "dir_name": "tailwindcss-advanced-layouts",
-  "downloaded_at": "2026-02-22T05:14:39.166096Z"
+  "downloaded_at": "2026-02-22T05:14:39.166096Z",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/tailwindcss-master/skills/tailwindcss-advanced-layouts/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:20.158876Z",
   "github_path": "letta/benchmarks/trajectory-only/torch-tensor-parallelism",
   "github_branch": "main",
-  "dir_name": "torch-tensor-parallelism-letta-ai-skills-7a2383ba"
+  "dir_name": "torch-tensor-parallelism-letta-ai-skills-7a2383ba",
+  "author": "letta-ai",
+  "source_url": "https://github.com/letta-ai/skills/blob/main/letta/benchmarks/trajectory-only/torch-tensor-parallelism/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/letta-ai/skills/blob/main/letta/benchmarks/trajectory-only/torch-tensor-parallelism/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

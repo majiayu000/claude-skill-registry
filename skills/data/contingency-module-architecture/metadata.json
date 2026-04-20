@@ -5,5 +5,12 @@
   "source": "github.com/starwreckntx/IRP__METHODOLOGIES-",
   "downloaded_at": "2026-02-04T04:14:55.897652Z",
   "dir_name": "contingency-module-architecture",
-  "category": "data"
+  "category": "data",
+  "author": "starwreckntx",
+  "source_url": "https://github.com/starwreckntx/IRP__METHODOLOGIES-/blob/main/skills/contingency-module-architecture/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/starwreckntx/IRP__METHODOLOGIES-/blob/main/skills/contingency-module-architecture/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

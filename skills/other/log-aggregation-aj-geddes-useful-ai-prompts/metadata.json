@@ -5,5 +5,12 @@
   "source": "github.com/aj-geddes/useful-ai-prompts",
   "downloaded_at": "2026-01-29T05:48:02.848690Z",
   "dir_name": "log-aggregation-aj-geddes-useful-ai-prompts",
-  "category": "other"
+  "category": "other",
+  "author": "aj-geddes",
+  "source_url": "https://github.com/aj-geddes/useful-ai-prompts/blob/main/skills/log-aggregation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AJ Geddes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "d3-viz-doyajin174-myskills-73e4c3e5",
   "category": "other",
   "github_path": ".public/skills/d3-viz",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Doyajin174",
+  "source_url": "https://github.com/Doyajin174/myskills/blob/main/.public/skills/d3-viz/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Doyajin174/myskills/blob/main/.public/skills/d3-viz/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

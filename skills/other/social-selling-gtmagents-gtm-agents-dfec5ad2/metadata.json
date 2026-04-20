@@ -5,5 +5,12 @@
   "source": "github.com/gtmagents/gtm-agents",
   "downloaded_at": "2026-01-29T08:28:44.782443Z",
   "dir_name": "social-selling-gtmagents-gtm-agents-dfec5ad2",
-  "category": "other"
+  "category": "other",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/sales-prospecting/skills/social-selling/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

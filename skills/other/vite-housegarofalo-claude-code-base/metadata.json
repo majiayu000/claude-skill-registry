@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/vite",
   "github_branch": "master",
   "dir_name": "vite-housegarofalo-claude-code-base",
-  "downloaded_at": "2026-02-05T01:44:38.056235Z"
+  "downloaded_at": "2026-02-05T01:44:38.056235Z",
+  "author": "HouseGarofalo",
+  "source_url": "https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/vite/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 HouseGarofalo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

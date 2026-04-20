@@ -7,5 +7,12 @@
   "dir_name": "backfill-and-reconciliation-playbook-amnadtaowsoam-cerebratechai-claude",
   "category": "other",
   "github_path": "70-data-platform-governance/backfill-and-reconciliation-playbook",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/cerebratechai-claude-skills/blob/main/70-data-platform-governance/backfill-and-reconciliation-playbook/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/raintree-technology/claude-starter",
   "downloaded_at": "2026-01-29T08:58:04.555301Z",
   "dir_name": "claude-command-builder-raintree-technology-claude-starter",
-  "category": "other"
+  "category": "other",
+  "author": "raintree-technology",
+  "source_url": "https://github.com/raintree-technology/claude-starter/blob/main/templates/.claude/skills/anthropic/claude-command-builder/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Raintree Technology",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

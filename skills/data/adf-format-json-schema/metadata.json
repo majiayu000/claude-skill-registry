@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "adf-format-json-schema",
   "github_path": ".claude/skills/adf-format-json-schema",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "MacHu-GWU",
+  "source_url": "https://github.com/MacHu-GWU/atlas_doc_parser-project/blob/main/.claude/skills/adf-format-json-schema/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2023 Sanhe Hu <https://github.com/MacHu-GWU/atlas_doc_parser-project>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Proxy Pattern pattern for C development",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:24.211692Z",
-  "dir_name": "patternsproxy"
+  "dir_name": "patternsproxy",
+  "author": "mgreenly",
+  "source_url": "https://github.com/mgreenly/ikigai",
+  "license": "MIT-0",
+  "copyright": "Copyright (c) 2025 Michael Greenly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:15.196118Z",
   "github_path": "skills/03-by-role-persona/educator-teacher",
   "github_branch": "main",
-  "dir_name": "educator-teacher-dylantarre-animation-principles-492b2b8f"
+  "dir_name": "educator-teacher-dylantarre-animation-principles-492b2b8f",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/animation-principles/blob/main/skills/03-by-role-persona/educator-teacher/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

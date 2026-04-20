@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:10.058912Z",
   "github_path": ".claude/skills/workflow/when-using-advanced-swarm-use-swarm-advanced",
   "github_branch": "main",
-  "dir_name": "when-using-advanced-swarm-use-swarm-advanced"
+  "dir_name": "when-using-advanced-swarm-use-swarm-advanced",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/workflow/when-using-advanced-swarm-use-swarm-advanced/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

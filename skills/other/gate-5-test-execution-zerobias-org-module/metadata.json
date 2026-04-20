@@ -5,5 +5,12 @@
   "source": "github.com/zerobias-org/module",
   "downloaded_at": "2026-01-29T06:03:58.334168Z",
   "dir_name": "gate-5-test-execution-zerobias-org-module",
-  "category": "other"
+  "category": "other",
+  "author": "zerobias-org",
+  "source_url": "https://github.com/zerobias-org/module/blob/main/.claude/skills/gate-5-test-execution/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zerobias-org/module/blob/main/.claude/skills/gate-5-test-execution/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

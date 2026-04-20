@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/erichowens/some_claude_skills",
   "dir_name": "windows-3-1-web-designer",
-  "downloaded_at": "2026-02-15T07:07:46.560528Z"
+  "downloaded_at": "2026-02-15T07:07:46.560528Z",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/windows-3-1-web-designer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:23.926839Z",
   "github_path": "plugins/marketing-automation/skills/lifecycle-mapping",
   "github_branch": "main",
-  "dir_name": "lifecycle-mapping-gtmagents-gtm-agents-f6222b00"
+  "dir_name": "lifecycle-mapping-gtmagents-gtm-agents-f6222b00",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/marketing-automation/skills/lifecycle-mapping/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

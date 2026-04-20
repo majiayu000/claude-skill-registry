@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "add-opencode-model"
+  "dir_name": "add-opencode-model",
+  "author": "travisennis",
+  "source_url": "https://github.com/travisennis/acai-ts",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Travis Ennis",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

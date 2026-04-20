@@ -5,5 +5,12 @@
   "source": "github.com/moltbot/skills",
   "downloaded_at": "2026-01-29T05:14:27.270698Z",
   "dir_name": "okx-moltbot-skills-16c831f3",
-  "category": "other"
+  "category": "other",
+  "author": "moltbot",
+  "source_url": "https://github.com/moltbot/skills/blob/main/skills/0xterrybit/okx/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

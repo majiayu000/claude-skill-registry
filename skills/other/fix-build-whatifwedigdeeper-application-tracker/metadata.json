@@ -5,5 +5,12 @@
   "source": "github.com/WhatIfWeDigDeeper/application-tracker",
   "downloaded_at": "2026-01-29T06:11:00.823118Z",
   "dir_name": "fix-build-whatifwedigdeeper-application-tracker",
-  "category": "other"
+  "category": "other",
+  "author": "WhatIfWeDigDeeper",
+  "source_url": "https://github.com/WhatIfWeDigDeeper/application-tracker/blob/main/.claude/skills/fix-build/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 What If We Dig Deeper",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

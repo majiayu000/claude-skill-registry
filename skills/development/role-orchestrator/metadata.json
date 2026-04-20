@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:10.321848Z",
   "github_path": "plugins/specweave/skills/role-orchestrator",
   "github_branch": "main",
-  "dir_name": "role-orchestrator"
+  "dir_name": "role-orchestrator",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave/skills/role-orchestrator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

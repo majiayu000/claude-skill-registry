@@ -10,5 +10,12 @@
   "stars": 8,
   "github_path": ".claude/skills/review-pr-changes",
   "github_branch": "main",
-  "dir_name": "review-pr-changes"
+  "dir_name": "review-pr-changes",
+  "author": "mvillmow",
+  "source_url": "https://github.com/mvillmow/ProjectOdyssey/blob/main/.claude/skills/review-pr-changes/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2025, ML Odyssey Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

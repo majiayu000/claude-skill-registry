@@ -5,5 +5,12 @@
   "description": "Sustainability assessment and energy efficiency for software systems",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:09.024733Z",
-  "dir_name": "green-software"
+  "dir_name": "green-software",
+  "author": "melodic-software",
+  "source_url": "https://github.com/melodic-software/claude-code-plugins",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Melodic Software",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

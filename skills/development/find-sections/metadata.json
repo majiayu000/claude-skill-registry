@@ -5,5 +5,12 @@
   "description": "Find all sections across vault matching a heading pattern. Triggers on \"find sections\", \"notes with heading\", \"all X sections\", \"which notes have\".",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:11:00.255073Z",
-  "dir_name": "find-sections"
+  "dir_name": "find-sections",
+  "author": "bencassie",
+  "source_url": "https://github.com/bencassie/flywheel",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bencassie/flywheel",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

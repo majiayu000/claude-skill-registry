@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:15.889746Z",
   "github_path": "tech-stacks/js/react-native/skills/atomic-design-mobile",
   "github_branch": "main",
-  "dir_name": "atomic-design-mobile-ivantorresedge-molcajete-ai-d2f7bff1"
+  "dir_name": "atomic-design-mobile-ivantorresedge-molcajete-ai-d2f7bff1",
+  "author": "IvanTorresEdge",
+  "source_url": "https://github.com/IvanTorresEdge/molcajete.ai/blob/main/tech-stacks/js/react-native/skills/atomic-design-mobile/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2025 Ivan Torres",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

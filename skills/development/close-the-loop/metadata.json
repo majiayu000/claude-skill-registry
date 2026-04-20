@@ -5,5 +5,12 @@
   "description": "Force at least one feedback signal after code changes (static checks, logs, tests, UI); prefer local over CI.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:28.809048Z",
-  "dir_name": "close-the-loop"
+  "dir_name": "close-the-loop",
+  "author": "tkersey",
+  "source_url": "https://github.com/tkersey/dotfiles",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2015 Tim Kersey",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

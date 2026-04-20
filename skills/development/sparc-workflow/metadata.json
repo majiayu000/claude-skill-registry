@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:22.131008Z",
   "github_path": ".claude/skills/workspace-hub/sparc-workflow",
   "github_branch": "main",
-  "dir_name": "sparc-workflow"
+  "dir_name": "sparc-workflow",
+  "author": "vamseeachanta",
+  "source_url": "https://github.com/vamseeachanta/workspace-hub/blob/main/.claude/skills/workspace-hub/sparc-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vamseeachanta/workspace-hub/blob/main/.claude/skills/workspace-hub/sparc-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -9,5 +9,12 @@
   "github_path": "skills/doc-coauthoring",
   "github_branch": "main",
   "dir_name": "doc-coauthoring-cgyudistira-code-agents",
-  "downloaded_at": "2026-02-05T05:34:10.338296Z"
+  "downloaded_at": "2026-02-05T05:34:10.338296Z",
+  "author": "cgyudistira",
+  "source_url": "https://github.com/cgyudistira/code-agents/blob/main/skills/doc-coauthoring/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

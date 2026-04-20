@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:59.782440Z",
   "github_path": "examples/skills/minimal-example",
   "github_branch": "main",
-  "dir_name": "minimal-example-srprasanna-mcp-skill-hub-c12549fa"
+  "dir_name": "minimal-example-srprasanna-mcp-skill-hub-c12549fa",
+  "author": "srprasanna",
+  "source_url": "https://github.com/srprasanna/mcp-skill-hub/blob/main/examples/skills/minimal-example/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MCP Skills Server Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

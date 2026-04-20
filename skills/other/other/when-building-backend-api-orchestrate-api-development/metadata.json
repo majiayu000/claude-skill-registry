@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/DNYoussef/ai-chrome-extension",
   "dir_name": "when-building-backend-api-orchestrate-api-development",
-  "downloaded_at": "2026-02-22T04:54:47.643357Z"
+  "downloaded_at": "2026-02-22T04:54:47.643357Z",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/when-building-backend-api-orchestrate-api-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

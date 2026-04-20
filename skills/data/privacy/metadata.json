@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/SylphxAI/flow",
-  "dir_name": "privacy"
+  "dir_name": "privacy",
+  "author": "SylphxAI",
+  "source_url": "https://github.com/SylphxAI/flow",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SylphxAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

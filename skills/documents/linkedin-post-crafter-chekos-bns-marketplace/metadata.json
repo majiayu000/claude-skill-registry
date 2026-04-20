@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:26.930429Z",
   "github_path": "tdd-growth/skills/linkedin-post-crafter",
   "github_branch": "main",
-  "dir_name": "linkedin-post-crafter-chekos-bns-marketplace"
+  "dir_name": "linkedin-post-crafter-chekos-bns-marketplace",
+  "author": "chekos",
+  "source_url": "https://github.com/chekos/bns-marketplace/blob/main/tdd-growth/skills/linkedin-post-crafter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chekos/bns-marketplace/blob/main/tdd-growth/skills/linkedin-post-crafter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

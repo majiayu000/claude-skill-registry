@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:21.405138Z",
   "github_path": "skills/sciences/oceanography-specialist",
   "github_branch": "main",
-  "dir_name": "oceanography-specialist-sandraschi-advanced-memory-mcp-01ac61a9"
+  "dir_name": "oceanography-specialist-sandraschi-advanced-memory-mcp-01ac61a9",
+  "author": "sandraschi",
+  "source_url": "https://github.com/sandraschi/advanced-memory-mcp/blob/main/skills/sciences/oceanography-specialist/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Sandra Schipal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

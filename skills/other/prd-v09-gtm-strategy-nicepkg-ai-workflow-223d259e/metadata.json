@@ -5,5 +5,12 @@
   "source": "github.com/nicepkg/ai-workflow",
   "downloaded_at": "2026-01-29T05:19:48.149539Z",
   "dir_name": "prd-v09-gtm-strategy-nicepkg-ai-workflow-223d259e",
-  "category": "other"
+  "category": "other",
+  "author": "nicepkg",
+  "source_url": "https://github.com/nicepkg/ai-workflow/blob/main/workflows/marketing-pro-workflow/.claude/skills/prd-v09-gtm-strategy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 nicepkg",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

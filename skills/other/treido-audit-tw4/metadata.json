@@ -9,5 +9,12 @@
   "github_path": ".codex/audit/archive/OBSOLETE_claude_skills_2026-01-30/treido-audit-tw4",
   "github_branch": "main",
   "dir_name": "treido-audit-tw4",
-  "downloaded_at": "2026-02-05T01:44:39.829254Z"
+  "downloaded_at": "2026-02-05T01:44:39.829254Z",
+  "author": "w3bsuki",
+  "source_url": "https://github.com/w3bsuki/amazong/blob/main/.codex/audit/archive/OBSOLETE_claude_skills_2026-01-30/treido-audit-tw4/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/w3bsuki/amazong/blob/main/.codex/audit/archive/OBSOLETE_claude_skills_2026-01-30/treido-audit-tw4/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

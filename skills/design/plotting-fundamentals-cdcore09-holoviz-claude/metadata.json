@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:36.850618Z",
   "github_path": "plugins/holoviz-expert/skills/plotting-fundamentals",
   "github_branch": "main",
-  "dir_name": "plotting-fundamentals-cdcore09-holoviz-claude"
+  "dir_name": "plotting-fundamentals-cdcore09-holoviz-claude",
+  "author": "cdcore09",
+  "source_url": "https://github.com/cdcore09/holoviz-claude/blob/main/plugins/holoviz-expert/skills/plotting-fundamentals/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2025, HoloViz Community",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

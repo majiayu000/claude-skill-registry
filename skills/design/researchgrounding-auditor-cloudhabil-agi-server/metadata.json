@@ -5,5 +5,12 @@
   "description": "Audit outputs against provided sources, enforce grounding, and log an audit trail. Use when strict source fidelity is required.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:27.066831Z",
-  "dir_name": "researchgrounding-auditor-cloudhabil-agi-server"
+  "dir_name": "researchgrounding-auditor-cloudhabil-agi-server",
+  "author": "Cloudhabil",
+  "source_url": "https://github.com/Cloudhabil/AGI-Server",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cloudhabil/AGI-Server",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

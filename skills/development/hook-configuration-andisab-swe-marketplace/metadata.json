@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:31.120709Z",
   "github_path": "plugins/context-engineering/skills/hook-configuration",
   "github_branch": "main",
-  "dir_name": "hook-configuration-andisab-swe-marketplace"
+  "dir_name": "hook-configuration-andisab-swe-marketplace",
+  "author": "andisab",
+  "source_url": "https://github.com/andisab/swe-marketplace/blob/main/plugins/context-engineering/skills/hook-configuration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Andis A. Blukis",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

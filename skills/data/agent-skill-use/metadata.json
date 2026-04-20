@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "agent-skill-use",
   "github_path": ".claude/skills/agent-skill-use",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "ShunsukeHayashi",
+  "source_url": "https://github.com/ShunsukeHayashi/Miyabi/blob/main/.claude/skills/agent-skill-use/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ShunsukeHayashi/Miyabi/blob/main/.claude/skills/agent-skill-use/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -10,5 +10,12 @@
   "stars": 1,
   "github_path": "statistical-analyzer",
   "github_branch": "main",
-  "dir_name": "statistical-analyzer"
+  "dir_name": "statistical-analyzer",
+  "author": "dkyazzentwatwa",
+  "source_url": "https://github.com/dkyazzentwatwa/chatgpt-skills/blob/main/statistical-analyzer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dkyazzentwatwa/chatgpt-skills/blob/main/statistical-analyzer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

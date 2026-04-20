@@ -5,5 +5,12 @@
   "description": "Master modern web development with HTML, CSS, JavaScript, React, Vue, Angular, Next.js, TypeScript, and responsive design. Use when building web applications, optimizing UI performance, or learning fr",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:46.661771Z",
-  "dir_name": "frontend-technologies-pluginagentmarketpla-custom-plugin-typesc"
+  "dir_name": "frontend-technologies-pluginagentmarketpla-custom-plugin-typesc",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-typescript",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/parcadei/Continuous-Claude-v3",
   "downloaded_at": "2026-02-04T04:19:52.367959Z",
   "dir_name": "tldr-overview",
-  "category": "data"
+  "category": "data",
+  "author": "parcadei",
+  "source_url": "https://github.com/parcadei/Continuous-Claude-v3/blob/main/.claude/skills/tldr-overview/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Cosimo Streppone",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

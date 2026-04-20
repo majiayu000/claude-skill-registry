@@ -5,5 +5,12 @@
   "source": "github.com/vamseeachanta/workspace-hub",
   "downloaded_at": "2026-01-30T04:11:46.686327Z",
   "dir_name": "github-swarm-pr",
-  "category": "other"
+  "category": "other",
+  "author": "vamseeachanta",
+  "source_url": "https://github.com/vamseeachanta/workspace-hub/blob/main/.claude/skills/development/github/github-swarm-pr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vamseeachanta/workspace-hub/blob/main/.claude/skills/development/github/github-swarm-pr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

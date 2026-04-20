@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/jscraik/Agent-Skills",
-  "dir_name": "agent-browser-jscraik-agent-skills"
+  "dir_name": "agent-browser-jscraik-agent-skills",
+  "author": "jscraik",
+  "source_url": "https://github.com/jscraik/Agent-Skills",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

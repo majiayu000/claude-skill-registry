@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/accessibility-design-checklist",
   "github_branch": "main",
-  "dir_name": "accessibility-design-checklist-dengineproblem-agents-monorepo-ea0c33d9"
+  "dir_name": "accessibility-design-checklist-dengineproblem-agents-monorepo-ea0c33d9",
+  "author": "dengineproblem",
+  "source_url": "https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/accessibility-design-checklist/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/accessibility-design-checklist/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

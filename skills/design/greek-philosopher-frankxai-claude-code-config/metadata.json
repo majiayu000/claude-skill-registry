@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:42.100967Z",
   "github_path": "public/skills/greek-philosopher",
   "github_branch": "main",
-  "dir_name": "greek-philosopher-frankxai-claude-code-config"
+  "dir_name": "greek-philosopher-frankxai-claude-code-config",
+  "author": "frankxai",
+  "source_url": "https://github.com/frankxai/claude-code-config/blob/main/public/skills/greek-philosopher/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/frankxai/claude-code-config/blob/main/public/skills/greek-philosopher/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/vjrivmon/Setup-Software-IA",
   "downloaded_at": "2026-02-02T02:41:46.051112Z",
   "dir_name": "schema-markup",
-  "category": "other"
+  "category": "other",
+  "author": "vjrivmon",
+  "source_url": "https://github.com/vjrivmon/Setup-Software-IA/blob/main/.agents/skills/schema-markup/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Vicente Rivas Monferrer",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

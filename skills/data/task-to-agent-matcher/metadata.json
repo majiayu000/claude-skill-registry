@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/lexicalninja/my-little-scrum-team",
-  "dir_name": "task-to-agent-matcher"
+  "dir_name": "task-to-agent-matcher",
+  "author": "lexicalninja",
+  "source_url": "https://github.com/lexicalninja/my-little-scrum-team",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 lexicalninja",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

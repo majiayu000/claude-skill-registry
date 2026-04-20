@@ -5,5 +5,12 @@
   "source": "github.com/majiayu000/claude-skill-registry",
   "downloaded_at": "2026-01-30T03:47:33.444529Z",
   "dir_name": "moonbit-majiayu000-claude-skill-registr-10514908",
-  "category": "other"
+  "category": "other",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/moonbit/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

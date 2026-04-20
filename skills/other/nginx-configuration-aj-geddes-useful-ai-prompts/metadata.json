@@ -5,5 +5,12 @@
   "source": "github.com/aj-geddes/useful-ai-prompts",
   "downloaded_at": "2026-01-29T05:48:01.925372Z",
   "dir_name": "nginx-configuration-aj-geddes-useful-ai-prompts",
-  "category": "other"
+  "category": "other",
+  "author": "aj-geddes",
+  "source_url": "https://github.com/aj-geddes/useful-ai-prompts/blob/main/skills/nginx-configuration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AJ Geddes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

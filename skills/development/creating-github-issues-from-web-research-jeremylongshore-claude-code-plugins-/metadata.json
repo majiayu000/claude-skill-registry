@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:52.550238Z",
   "github_path": "plugins/skill-enhancers/web-to-github-issue/skills/creating-github-issues-from-web-research",
   "github_branch": "main",
-  "dir_name": "creating-github-issues-from-web-research-jeremylongshore-claude-code-plugins-"
+  "dir_name": "creating-github-issues-from-web-research-jeremylongshore-claude-code-plugins-",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/skill-enhancers/web-to-github-issue/skills/creating-github-issues-from-web-research/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

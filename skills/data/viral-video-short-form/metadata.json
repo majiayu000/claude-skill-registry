@@ -5,5 +5,12 @@
   "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
   "downloaded_at": "2026-02-04T03:37:51.919561Z",
   "dir_name": "viral-video-short-form",
-  "category": "data"
+  "category": "data",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/viral-video-master/skills/viral-video-short-form/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

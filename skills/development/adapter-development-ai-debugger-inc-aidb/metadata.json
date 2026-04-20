@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/adapter-development",
   "github_branch": "main",
-  "dir_name": "adapter-development-ai-debugger-inc-aidb"
+  "dir_name": "adapter-development-ai-debugger-inc-aidb",
+  "author": "ai-debugger-inc",
+  "source_url": "https://github.com/ai-debugger-inc/aidb/blob/main/.claude/skills/adapter-development/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

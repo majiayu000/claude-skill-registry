@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/tailwind-v4-shadcn",
   "github_branch": "main",
-  "dir_name": "tailwind-v4-shadcn"
+  "dir_name": "tailwind-v4-shadcn",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/tailwind-v4-shadcn/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

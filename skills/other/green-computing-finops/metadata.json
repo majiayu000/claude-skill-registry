@@ -5,5 +5,12 @@
   "source": "github.com/AmnadTaowsoam/CerebraSkills",
   "downloaded_at": "2026-01-31T01:11:39.002090Z",
   "dir_name": "green-computing-finops",
-  "category": "other"
+  "category": "other",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/CerebraSkills/blob/main/86-sustainable-ai/green-computing-finops/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

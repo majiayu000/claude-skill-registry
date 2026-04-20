@@ -7,5 +7,12 @@
   "dir_name": "product-manager-skill-404kidwiz-claude-supercode-ski",
   "category": "other",
   "github_path": "product-manager-skill",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "404kidwiz",
+  "source_url": "https://github.com/404kidwiz/claude-supercode-skills/blob/main/product-manager-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/404kidwiz/claude-supercode-skills/blob/main/product-manager-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

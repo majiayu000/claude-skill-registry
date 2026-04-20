@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:49.513584Z",
   "github_path": "plugins/databricks-engineering/skills/delta-sharing",
   "github_branch": "main",
-  "dir_name": "delta-sharing-vivekgana-databricks-platform--d9ae2b6d"
+  "dir_name": "delta-sharing-vivekgana-databricks-platform--d9ae2b6d",
+  "author": "vivekgana",
+  "source_url": "https://github.com/vivekgana/databricks-platform-marketplace/blob/main/plugins/databricks-engineering/skills/delta-sharing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Your Company",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

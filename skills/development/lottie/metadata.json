@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:58.018023Z",
   "github_path": "plugins/goodvibes/skills/webdev/skills/lottie",
   "github_branch": "main",
-  "dir_name": "lottie"
+  "dir_name": "lottie",
+  "author": "mgd34msu",
+  "source_url": "https://github.com/mgd34msu/goodvibes-plugin/blob/main/plugins/goodvibes/skills/webdev/skills/lottie/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 GoodVibes Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/AmnadTaowsoam/CerebraSkills",
   "downloaded_at": "2026-01-30T02:08:49.958656Z",
   "dir_name": "live-streaming",
-  "category": "other"
+  "category": "other",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/CerebraSkills/blob/main/37-video-streaming/live-streaming/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

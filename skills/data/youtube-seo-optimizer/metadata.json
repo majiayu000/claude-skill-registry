@@ -5,5 +5,12 @@
   "source": "github.com/nicepkg/ai-workflow",
   "downloaded_at": "2026-02-04T02:43:40.318244Z",
   "dir_name": "youtube-seo-optimizer",
-  "category": "data"
+  "category": "data",
+  "author": "nicepkg",
+  "source_url": "https://github.com/nicepkg/ai-workflow/blob/main/workflows/video-creator-workflow/.claude/skills/youtube-seo-optimizer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 nicepkg",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

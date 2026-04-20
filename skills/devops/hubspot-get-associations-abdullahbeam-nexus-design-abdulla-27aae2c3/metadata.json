@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:43.174110Z",
   "github_path": "00-system/skills/hubspot/hubspot-get-associations",
   "github_branch": "main",
-  "dir_name": "hubspot-get-associations-abdullahbeam-nexus-design-abdulla-27aae2c3"
+  "dir_name": "hubspot-get-associations-abdullahbeam-nexus-design-abdulla-27aae2c3",
+  "author": "abdullahbeam",
+  "source_url": "https://github.com/abdullahbeam/nexus-design-abdullah/blob/main/00-system/skills/hubspot/hubspot-get-associations/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/abdullahbeam/nexus-design-abdullah/blob/main/00-system/skills/hubspot/hubspot-get-associations/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

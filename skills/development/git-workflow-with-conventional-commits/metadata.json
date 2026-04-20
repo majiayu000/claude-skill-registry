@@ -5,5 +5,12 @@
   "description": "Automated Git workflow including staging, committing with Conventional Commits format, PR creation, and merging. Use when committing changes, creating PRs, or managing Git branches.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:32.417233Z",
-  "dir_name": "git-workflow-with-conventional-commits"
+  "dir_name": "git-workflow-with-conventional-commits",
+  "author": "ShunsukeHayashi",
+  "source_url": "https://github.com/ShunsukeHayashi/Miyabi",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ShunsukeHayashi/Miyabi",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

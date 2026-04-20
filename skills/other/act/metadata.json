@@ -5,5 +5,12 @@
   "source": "github.com/vinnie357/claude-skills",
   "downloaded_at": "2026-01-27T03:06:34.230205Z",
   "dir_name": "act",
-  "category": "other"
+  "category": "other",
+  "author": "vinnie357",
+  "source_url": "https://github.com/vinnie357/claude-skills/blob/main/github/skills/act/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Vinnie Mazza",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

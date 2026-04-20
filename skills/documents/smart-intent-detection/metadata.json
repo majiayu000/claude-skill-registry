@@ -5,5 +5,12 @@
   "description": "Automatic workflow suggestion and utility agent routing based on prompt analysis. Trigger keywords: auto-detect, intent, suggest, trigger, routing, workflow detection, utility agents, prompt analysis,",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:17.725159Z",
-  "dir_name": "smart-intent-detection"
+  "dir_name": "smart-intent-detection",
+  "author": "Kaakati",
+  "source_url": "https://github.com/Kaakati/rails-enterprise-dev",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kaakati/rails-enterprise-dev",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

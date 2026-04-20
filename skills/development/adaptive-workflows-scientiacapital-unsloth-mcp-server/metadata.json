@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:26.435094Z",
   "github_path": ".claude/skills/adaptive-workflows",
   "github_branch": "main",
-  "dir_name": "adaptive-workflows-scientiacapital-unsloth-mcp-server"
+  "dir_name": "adaptive-workflows-scientiacapital-unsloth-mcp-server",
+  "author": "ScientiaCapital",
+  "source_url": "https://github.com/ScientiaCapital/unsloth-mcp-server/blob/main/.claude/skills/adaptive-workflows/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

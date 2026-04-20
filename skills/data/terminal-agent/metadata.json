@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/jfarid27/open-eth-terminal",
-  "dir_name": "terminal-agent"
+  "dir_name": "terminal-agent",
+  "author": "jfarid27",
+  "source_url": "https://github.com/jfarid27/open-eth-terminal",
+  "license": "LGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

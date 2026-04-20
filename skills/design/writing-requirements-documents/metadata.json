@@ -11,5 +11,12 @@
   "stars": 1,
   "github_path": ".claude/skills/writing-requirements-documents",
   "github_branch": "main",
-  "dir_name": "writing-requirements-documents"
+  "dir_name": "writing-requirements-documents",
+  "author": "WesleyMFrederick",
+  "source_url": "https://github.com/WesleyMFrederick/cc-workflows/blob/main/.claude/skills/writing-requirements-documents/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/WesleyMFrederick/cc-workflows/blob/main/.claude/skills/writing-requirements-documents/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

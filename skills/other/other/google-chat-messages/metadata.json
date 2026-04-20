@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/jezweb/claude-skills",
   "dir_name": "google-chat-messages",
-  "downloaded_at": "2026-02-22T07:39:30.140992Z"
+  "downloaded_at": "2026-02-22T07:39:30.140992Z",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/google-chat-messages/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

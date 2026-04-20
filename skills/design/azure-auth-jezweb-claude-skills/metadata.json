@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:43.070709Z",
   "github_path": "skills/azure-auth",
   "github_branch": "main",
-  "dir_name": "azure-auth-jezweb-claude-skills"
+  "dir_name": "azure-auth-jezweb-claude-skills",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/azure-auth/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

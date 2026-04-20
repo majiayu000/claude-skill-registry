@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/AxelMrak/ai",
   "dir_name": "busybox-on-windows",
-  "downloaded_at": "2026-02-15T04:49:21.293832Z"
+  "downloaded_at": "2026-02-15T04:49:21.293832Z",
+  "author": "AxelMrak",
+  "source_url": "https://github.com/AxelMrak/ai/blob/main/skills/busybox-on-windows/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AxelMrak/ai/blob/main/skills/busybox-on-windows/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/zjunlp/SkillNet",
   "downloaded_at": "2026-02-04T02:27:36.908286Z",
   "dir_name": "scienceworld-substance-fetcher",
-  "category": "data"
+  "category": "data",
+  "author": "zjunlp",
+  "source_url": "https://github.com/zjunlp/SkillNet/blob/main/skills/benchmark_skills/scienceworld/scienceworld-substance-fetcher/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ZJUNLP",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

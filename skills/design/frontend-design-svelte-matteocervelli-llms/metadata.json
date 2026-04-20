@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:38.364696Z",
   "github_path": "frontend-design-system/skills/_archive/frontend-design-svelte",
   "github_branch": "main",
-  "dir_name": "frontend-design-svelte-matteocervelli-llms"
+  "dir_name": "frontend-design-svelte-matteocervelli-llms",
+  "author": "matteocervelli",
+  "source_url": "https://github.com/matteocervelli/llms/blob/main/frontend-design-system/skills/_archive/frontend-design-svelte/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Matteo Cervelli",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

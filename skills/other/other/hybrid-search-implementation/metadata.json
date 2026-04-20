@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/haxllo/repolens",
   "dir_name": "hybrid-search-implementation",
-  "downloaded_at": "2026-02-15T07:28:08.356703Z"
+  "downloaded_at": "2026-02-15T07:28:08.356703Z",
+  "author": "haxllo",
+  "source_url": "https://github.com/haxllo/repolens/blob/main/.gemini/skills/hybrid-search-implementation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/haxllo/repolens/blob/main/.gemini/skills/hybrid-search-implementation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

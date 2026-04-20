@@ -9,5 +9,12 @@
   "github_path": "skills/file-organizer",
   "github_branch": "main",
   "dir_name": "file-organizer-cgyudistira-code-agents",
-  "downloaded_at": "2026-02-05T05:35:15.428561Z"
+  "downloaded_at": "2026-02-05T05:35:15.428561Z",
+  "author": "cgyudistira",
+  "source_url": "https://github.com/cgyudistira/code-agents/blob/main/skills/file-organizer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

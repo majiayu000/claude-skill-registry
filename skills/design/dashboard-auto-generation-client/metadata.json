@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "dashboard-auto-generation-client"
+  "dir_name": "dashboard-auto-generation-client",
+  "author": "sellersessions",
+  "source_url": "https://github.com/sellersessions/Sub-Agents",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Seller Sessions",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

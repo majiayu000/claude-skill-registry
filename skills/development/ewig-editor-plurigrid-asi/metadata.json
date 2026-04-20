@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:29:44.018404Z",
   "github_path": "skills/ewig-editor",
   "github_branch": "main",
-  "dir_name": "ewig-editor-plurigrid-asi"
+  "dir_name": "ewig-editor-plurigrid-asi",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/ewig-editor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:33.797024Z",
   "github_path": ".claude/skills/unsloth-mcp-server",
   "github_branch": "main",
-  "dir_name": "unsloth-mcp-server-scientiacapital-unsloth-mcp-server"
+  "dir_name": "unsloth-mcp-server-scientiacapital-unsloth-mcp-server",
+  "author": "ScientiaCapital",
+  "source_url": "https://github.com/ScientiaCapital/unsloth-mcp-server/blob/main/.claude/skills/unsloth-mcp-server/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

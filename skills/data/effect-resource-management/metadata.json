@@ -5,5 +5,12 @@
   "source": "github.com/TheBushidoCollective/han",
   "downloaded_at": "2026-01-29T04:12:55.735730Z",
   "dir_name": "effect-resource-management",
-  "category": "data"
+  "category": "data",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han/blob/main/jutsu/jutsu-effect/skills/effect-resource-management/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/openclaw/skills",
   "downloaded_at": "2026-02-02T02:48:57.715017Z",
   "dir_name": "weread",
-  "category": "other"
+  "category": "other",
+  "author": "openclaw",
+  "source_url": "https://github.com/openclaw/skills/blob/main/skills/z233/weread/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

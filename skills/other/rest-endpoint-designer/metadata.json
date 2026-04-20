@@ -9,5 +9,12 @@
   "github_path": "skills/15-api-development/rest-endpoint-designer",
   "github_branch": "main",
   "dir_name": "rest-endpoint-designer",
-  "downloaded_at": "2026-02-05T01:45:12.190908Z"
+  "downloaded_at": "2026-02-05T01:45:12.190908Z",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/skills/15-api-development/rest-endpoint-designer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Build Vue 3 components that render a 3D skill tree using Three.js and OrbitControls. Use when asked to visualize skills as an interactive 3D constellation or to turn skills/INDEX.json into a Vue scene",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:22.063150Z",
-  "dir_name": "vue-threejs-skilltree"
+  "dir_name": "vue-threejs-skilltree",
+  "author": "Cloudhabil",
+  "source_url": "https://github.com/Cloudhabil/AGI-Server",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cloudhabil/AGI-Server",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

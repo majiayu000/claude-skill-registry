@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": ".claude/skills/parallel-swarm-implementation",
   "github_branch": "main",
-  "dir_name": "parallel-swarm-implementation"
+  "dir_name": "parallel-swarm-implementation",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/parallel-swarm-implementation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

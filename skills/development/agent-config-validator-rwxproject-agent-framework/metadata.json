@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/agent-config-validator",
   "github_branch": "main",
-  "dir_name": "agent-config-validator-rwxproject-agent-framework"
+  "dir_name": "agent-config-validator-rwxproject-agent-framework",
+  "author": "rwxproject",
+  "source_url": "https://github.com/rwxproject/agent-framework/blob/main/.claude/skills/agent-config-validator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 rwxproject",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

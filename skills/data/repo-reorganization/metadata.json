@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:28.203193Z",
   "dir_name": "repo-reorganization",
   "github_path": "plugins/maxfuse/repo-reorganization/skills/repo-reorganization",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "smith6jt-cop",
+  "source_url": "https://github.com/smith6jt-cop/Skills_Registry/blob/main/plugins/maxfuse/repo-reorganization/skills/repo-reorganization/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/smith6jt-cop/Skills_Registry/blob/main/plugins/maxfuse/repo-reorganization/skills/repo-reorganization/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

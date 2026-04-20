@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:29.522300Z",
   "github_path": "plugins/atlassian-integration/skills/atlassian-attachments",
   "github_branch": "main",
-  "dir_name": "atlassian-attachments-jpoutrin-product-forge"
+  "dir_name": "atlassian-attachments-jpoutrin-product-forge",
+  "author": "jpoutrin",
+  "source_url": "https://github.com/jpoutrin/product-forge/blob/main/plugins/atlassian-integration/skills/atlassian-attachments/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 jpoutrin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

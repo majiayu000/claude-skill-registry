@@ -5,5 +5,12 @@
   "source": "github.com/Nguyenthang2292/Sovereign-IQ",
   "downloaded_at": "2026-01-29T07:36:37.266199Z",
   "dir_name": "conversation-memory-nguyenthang2292-sovereign-iq",
-  "category": "other"
+  "category": "other",
+  "author": "Nguyenthang2292",
+  "source_url": "https://github.com/Nguyenthang2292/Sovereign-IQ/blob/main/.cursor/skills/conversation-memory/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Justinnguyen2292",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

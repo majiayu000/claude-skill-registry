@@ -5,5 +5,12 @@
   "source": "github.com/jgtolentino/insightpulse-odoo",
   "downloaded_at": "2026-02-04T04:36:08.428480Z",
   "dir_name": "project-portfolio-management",
-  "category": "data"
+  "category": "data",
+  "author": "jgtolentino",
+  "source_url": "https://github.com/jgtolentino/insightpulse-odoo/blob/main/docs/claude-code-skills/community/project-portfolio-management/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jgtolentino/insightpulse-odoo/blob/main/docs/claude-code-skills/community/project-portfolio-management/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

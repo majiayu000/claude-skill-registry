@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:23.177521Z",
   "dir_name": "compliance-briefing-kit",
   "github_path": "plugins/healthcare-marketing/skills/compliance-briefing-kit",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/healthcare-marketing/skills/compliance-briefing-kit/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

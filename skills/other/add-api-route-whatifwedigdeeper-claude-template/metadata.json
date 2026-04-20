@@ -7,5 +7,12 @@
   "dir_name": "add-api-route-whatifwedigdeeper-claude-template",
   "category": "other",
   "github_path": ".claude/skills/add-api-route",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "WhatIfWeDigDeeper",
+  "source_url": "https://github.com/WhatIfWeDigDeeper/claude-template/blob/main/.claude/skills/add-api-route/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 What If We Dig Deeper",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

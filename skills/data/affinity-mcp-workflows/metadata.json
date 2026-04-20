@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "affinity-mcp-workflows"
+  "dir_name": "affinity-mcp-workflows",
+  "author": "yaniv-golan",
+  "source_url": "https://github.com/yaniv-golan/affinity-sdk",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Yaniv",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

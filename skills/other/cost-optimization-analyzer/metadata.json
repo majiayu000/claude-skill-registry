@@ -5,5 +5,12 @@
   "source": "github.com/Brmbobo/Web2podcast",
   "downloaded_at": "2026-02-02T04:27:05.569596Z",
   "dir_name": "cost-optimization-analyzer",
-  "category": "other"
+  "category": "other",
+  "author": "Brmbobo",
+  "source_url": "https://github.com/Brmbobo/Web2podcast/blob/main/.claude/agents/enterprise-frontend-design/agents/skills/13-aws-skills/cost-optimization-analyzer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Brmbobo/Web2podcast/blob/main/.claude/agents/enterprise-frontend-design/agents/skills/13-aws-skills/cost-optimization-analyzer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

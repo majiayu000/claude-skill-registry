@@ -10,5 +10,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "dev-cli-development"
+  "dir_name": "dev-cli-development",
+  "author": "ai-debugger-inc",
+  "source_url": "https://github.com/ai-debugger-inc/aidb",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

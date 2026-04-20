@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:16.860438Z",
   "github_path": "skills/07-by-ui-element/universal-elements",
   "github_branch": "main",
-  "dir_name": "universal-elements-dylantarre-animation-principles-84183732"
+  "dir_name": "universal-elements-dylantarre-animation-principles-84183732",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/animation-principles/blob/main/skills/07-by-ui-element/universal-elements/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

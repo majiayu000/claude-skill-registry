@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:43.302286Z",
   "github_path": ".claude/skills/ff-analytics-team/ff-dynasty-strategy",
   "github_branch": "main",
-  "dir_name": "ff-dynasty-strategy-zazu-22-ff-data-analytics"
+  "dir_name": "ff-dynasty-strategy-zazu-22-ff-data-analytics",
+  "author": "zazu-22",
+  "source_url": "https://github.com/zazu-22/ff_data_analytics/blob/main/.claude/skills/ff-analytics-team/ff-dynasty-strategy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zazu-22/ff_data_analytics/blob/main/.claude/skills/ff-analytics-team/ff-dynasty-strategy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

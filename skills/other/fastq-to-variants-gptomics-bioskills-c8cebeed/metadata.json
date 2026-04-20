@@ -7,5 +7,12 @@
   "dir_name": "fastq-to-variants-gptomics-bioskills-c8cebeed",
   "category": "other",
   "github_path": "workflows/fastq-to-variants",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/workflows/fastq-to-variants/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

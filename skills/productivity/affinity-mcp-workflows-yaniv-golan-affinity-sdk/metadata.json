@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:38.775310Z",
   "github_path": "mcp/.claude-plugin/skills/affinity-mcp-workflows",
   "github_branch": "main",
-  "dir_name": "affinity-mcp-workflows-yaniv-golan-affinity-sdk"
+  "dir_name": "affinity-mcp-workflows-yaniv-golan-affinity-sdk",
+  "author": "yaniv-golan",
+  "source_url": "https://github.com/yaniv-golan/affinity-sdk/blob/main/mcp/.claude-plugin/skills/affinity-mcp-workflows/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Yaniv",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

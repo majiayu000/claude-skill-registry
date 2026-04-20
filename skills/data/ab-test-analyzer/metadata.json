@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:57.325484Z",
   "dir_name": "ab-test-analyzer",
   "github_path": "planned-skills/generated/12-data-analytics/ab-test-analyzer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/planned-skills/generated/12-data-analytics/ab-test-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

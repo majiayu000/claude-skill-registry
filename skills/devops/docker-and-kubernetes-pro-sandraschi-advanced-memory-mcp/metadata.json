@@ -5,5 +5,12 @@
   "description": "Container orchestration expert for Docker, Kubernetes, and cloud-native deployments",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:21.740241Z",
-  "dir_name": "docker-and-kubernetes-pro-sandraschi-advanced-memory-mcp"
+  "dir_name": "docker-and-kubernetes-pro-sandraschi-advanced-memory-mcp",
+  "author": "sandraschi",
+  "source_url": "https://github.com/sandraschi/advanced-memory-mcp",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Sandra Schipal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

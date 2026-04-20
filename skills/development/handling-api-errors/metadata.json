@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:45.217732Z",
   "github_path": "plugins/api-development/api-error-handler/skills/handling-api-errors",
   "github_branch": "main",
-  "dir_name": "handling-api-errors"
+  "dir_name": "handling-api-errors",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/api-development/api-error-handler/skills/handling-api-errors/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "dhh-coder-majesticlabs-dev-majestic-marketplace",
   "category": "other",
   "github_path": "plugins/majestic-rails/skills/dhh-coder",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "majesticlabs-dev",
+  "source_url": "https://github.com/majesticlabs-dev/majestic-marketplace/blob/main/plugins/majestic-rails/skills/dhh-coder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Majestic Labs LLC",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/juanlamadrid20/dbrx-multi-agent-retail-intelligence",
   "downloaded_at": "2026-02-02T03:10:04.956853Z",
   "dir_name": "synthetic-data-generation",
-  "category": "other"
+  "category": "other",
+  "author": "juanlamadrid20",
+  "source_url": "https://github.com/juanlamadrid20/dbrx-multi-agent-retail-intelligence/blob/main/.claude/skills/synthetic-data-generation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/juanlamadrid20/dbrx-multi-agent-retail-intelligence/blob/main/.claude/skills/synthetic-data-generation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

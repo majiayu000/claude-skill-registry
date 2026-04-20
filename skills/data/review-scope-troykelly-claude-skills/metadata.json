@@ -5,5 +5,12 @@
   "source": "github.com/troykelly/claude-skills",
   "downloaded_at": "2026-01-29T08:45:26.550750Z",
   "dir_name": "review-scope-troykelly-claude-skills",
-  "category": "data"
+  "category": "data",
+  "author": "troykelly",
+  "source_url": "https://github.com/troykelly/claude-skills/blob/main/skills/review-scope/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/troykelly/claude-skills/blob/main/skills/review-scope/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

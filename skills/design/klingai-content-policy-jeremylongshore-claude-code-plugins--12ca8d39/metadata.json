@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:09.669049Z",
   "github_path": "plugins/saas-packs/klingai-pack/skills/klingai-content-policy",
   "github_branch": "main",
-  "dir_name": "klingai-content-policy-jeremylongshore-claude-code-plugins--12ca8d39"
+  "dir_name": "klingai-content-policy-jeremylongshore-claude-code-plugins--12ca8d39",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/klingai-pack/skills/klingai-content-policy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "categorizing-bsky-accounts",
   "github_branch": "main",
-  "dir_name": "categorizing-bsky-accounts"
+  "dir_name": "categorizing-bsky-accounts",
+  "author": "oaustegard",
+  "source_url": "https://github.com/oaustegard/claude-skills/blob/main/categorizing-bsky-accounts/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Oskar Austegard",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

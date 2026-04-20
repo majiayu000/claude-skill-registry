@@ -7,5 +7,12 @@
   "dir_name": "sermon-features-expert-willsigmon-sigstack-site",
   "category": "other",
   "github_path": "claude/skills/sermon-features-expert",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "willsigmon",
+  "source_url": "https://github.com/willsigmon/sigstack-site/blob/main/claude/skills/sermon-features-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/willsigmon/sigstack-site/blob/main/claude/skills/sermon-features-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

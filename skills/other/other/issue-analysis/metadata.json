@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/ShunsukeHayashi/Miyabi",
   "dir_name": "issue-analysis",
-  "downloaded_at": "2026-02-15T05:46:54.109879Z"
+  "downloaded_at": "2026-02-15T05:46:54.109879Z",
+  "author": "ShunsukeHayashi",
+  "source_url": "https://github.com/ShunsukeHayashi/Miyabi/blob/main/packages/mcp-bundle/claude-plugins/miyabi-full/skills/issue-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ShunsukeHayashi/Miyabi/blob/main/packages/mcp-bundle/claude-plugins/miyabi-full/skills/issue-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

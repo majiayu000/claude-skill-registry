@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/beads-viewer",
   "github_branch": "master",
-  "dir_name": "beads-viewer"
+  "dir_name": "beads-viewer",
+  "author": "Mburdo",
+  "source_url": "https://github.com/Mburdo/knowledge_and_vibes/blob/master/.claude/skills/beads-viewer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Knowledge & Vibes Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

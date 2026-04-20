@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/nicepkg/ai-workflow",
-  "dir_name": "unknown-nicepkg-ai-workflow"
+  "dir_name": "unknown-nicepkg-ai-workflow",
+  "author": "nicepkg",
+  "source_url": "https://github.com/nicepkg/ai-workflow",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 nicepkg",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

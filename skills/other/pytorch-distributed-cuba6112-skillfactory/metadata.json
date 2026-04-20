@@ -7,5 +7,12 @@
   "dir_name": "pytorch-distributed-cuba6112-skillfactory",
   "category": "other",
   "github_path": "skills/pytorch-distributed",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "cuba6112",
+  "source_url": "https://github.com/cuba6112/skillfactory/blob/main/skills/pytorch-distributed/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cuba6112/skillfactory/blob/main/skills/pytorch-distributed/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

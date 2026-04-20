@@ -5,5 +5,12 @@
   "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
   "downloaded_at": "2026-01-28T04:03:31.899882Z",
   "dir_name": "adf-validation-rules",
-  "category": "data"
+  "category": "data",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/adf-master/skills/adf-validation-rules/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/cuba6112/skillfactory",
   "downloaded_at": "2026-01-29T08:24:35.923256Z",
   "dir_name": "numpy-random-cuba6112-skillfactory",
-  "category": "other"
+  "category": "other",
+  "author": "cuba6112",
+  "source_url": "https://github.com/cuba6112/skillfactory/blob/main/skills/numpy-random/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cuba6112/skillfactory/blob/main/skills/numpy-random/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -9,5 +9,12 @@
   "github_path": "skills/data/core-agent-browser",
   "github_branch": "main",
   "dir_name": "core-agent-browser",
-  "downloaded_at": "2026-02-05T01:45:23.877624Z"
+  "downloaded_at": "2026-02-05T01:45:23.877624Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/data/core-agent-browser/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

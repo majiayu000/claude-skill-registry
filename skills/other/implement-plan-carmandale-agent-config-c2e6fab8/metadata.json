@@ -5,5 +5,12 @@
   "source": "github.com/carmandale/agent-config",
   "downloaded_at": "2026-01-21T01:20:11.941720Z",
   "dir_name": "implement-plan-carmandale-agent-config-c2e6fab8",
-  "category": "other"
+  "category": "other",
+  "author": "carmandale",
+  "source_url": "https://github.com/carmandale/agent-config/blob/main/skills/cc3/implement-plan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/carmandale/agent-config/blob/main/skills/cc3/implement-plan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/basher83/lunar-claude",
   "downloaded_at": "2026-02-04T02:26:27.428851Z",
   "dir_name": "python-uv-scripts",
-  "category": "data"
+  "category": "data",
+  "author": "basher83",
+  "source_url": "https://github.com/basher83/lunar-claude/blob/main/plugins/devops/python-tools/skills/python-uv-scripts/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 basher83",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

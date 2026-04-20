@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:47.350621Z",
   "github_path": "skills/makefile-assistant",
   "github_branch": "main",
-  "dir_name": "makefile-assistant"
+  "dir_name": "makefile-assistant",
+  "author": "rafaelcalleja",
+  "source_url": "https://github.com/rafaelcalleja/claude-market-place/blob/main/skills/makefile-assistant/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rafaelcalleja/claude-market-place/blob/main/skills/makefile-assistant/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

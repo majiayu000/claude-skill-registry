@@ -5,5 +5,12 @@
   "description": "Expert documentation generation for golden layers. Detects SCD types, documents business rules, metric definitions, aggregation logic, and data quality scoring. Use when documenting golden layer table",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:23.744899Z",
-  "dir_name": "aps-doc-golden"
+  "dir_name": "aps-doc-golden",
+  "author": "treasure-data",
+  "source_url": "https://github.com/treasure-data/td-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/treasure-data/td-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/pr-pm/prpm",
-  "dir_name": "creating-opencode-agents-pr-pm-prpm-2"
+  "dir_name": "creating-opencode-agents-pr-pm-prpm-2",
+  "author": "pr-pm",
+  "source_url": "https://github.com/pr-pm/prpm/blob/main/.claude/skills/creating-opencode-agents/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 PRPM (Prompt Package Manager)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

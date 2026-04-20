@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:42.639360Z",
   "github_path": ".claude/skills/yzmir-deep-rl/skills/reward-shaping-engineering",
   "github_branch": "main",
-  "dir_name": "reward-shaping-engineering-tachyon-beep-hamlet-5c11a15a"
+  "dir_name": "reward-shaping-engineering-tachyon-beep-hamlet-5c11a15a",
+  "author": "tachyon-beep",
+  "source_url": "https://github.com/tachyon-beep/hamlet/blob/main/.claude/skills/yzmir-deep-rl/skills/reward-shaping-engineering/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 John",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

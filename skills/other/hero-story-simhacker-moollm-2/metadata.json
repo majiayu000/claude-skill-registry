@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/SimHacker/moollm",
-  "dir_name": "hero-story-simhacker-moollm-2"
+  "dir_name": "hero-story-simhacker-moollm-2",
+  "author": "SimHacker",
+  "source_url": "https://github.com/SimHacker/moollm/blob/main/skills/hero-story/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Don Hopkins, Leela AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

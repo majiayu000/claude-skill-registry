@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/MykhailoDmytriakha/my-preacher-helper",
-  "dir_name": "01-meta-chain-of-skills-150"
+  "dir_name": "01-meta-chain-of-skills-150",
+  "author": "MykhailoDmytriakha",
+  "source_url": "https://github.com/MykhailoDmytriakha/my-preacher-helper",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MykhailoDmytriakha/my-preacher-helper",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

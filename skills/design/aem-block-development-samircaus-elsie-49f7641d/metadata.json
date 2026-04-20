@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:03.207167Z",
   "github_path": ".agents/skills/aem-block-development",
   "github_branch": "main",
-  "dir_name": "aem-block-development-samircaus-elsie-49f7641d"
+  "dir_name": "aem-block-development-samircaus-elsie-49f7641d",
+  "author": "samircaus",
+  "source_url": "https://github.com/samircaus/elsie/blob/main/.agents/skills/aem-block-development/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

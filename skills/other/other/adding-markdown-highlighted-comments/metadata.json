@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/WesleyMFrederick/cc-workflows",
   "dir_name": "adding-markdown-highlighted-comments",
-  "downloaded_at": "2026-02-15T05:58:30.320735Z"
+  "downloaded_at": "2026-02-15T05:58:30.320735Z",
+  "author": "WesleyMFrederick",
+  "source_url": "https://github.com/WesleyMFrederick/cc-workflows/blob/main/.claude/skills/adding-markdown-highlighted-comments/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/WesleyMFrederick/cc-workflows/blob/main/.claude/skills/adding-markdown-highlighted-comments/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

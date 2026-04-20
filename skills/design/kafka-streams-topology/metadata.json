@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:08.799984Z",
   "github_path": "plugins/specweave-kafka-streams/skills/kafka-streams-topology",
   "github_branch": "main",
-  "dir_name": "kafka-streams-topology"
+  "dir_name": "kafka-streams-topology",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-kafka-streams/skills/kafka-streams-topology/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

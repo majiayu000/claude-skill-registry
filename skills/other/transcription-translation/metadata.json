@@ -7,5 +7,12 @@
   "dir_name": "transcription-translation",
   "category": "other",
   "github_path": "sequence-manipulation/transcription-translation",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/sequence-manipulation/transcription-translation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

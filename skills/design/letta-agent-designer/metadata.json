@@ -5,5 +5,12 @@
   "description": "Guide for designing effective Letta agents. This skill should be used when users need help choosing agent architectures, designing memory blocks, selecting models, or planning tool configurations for ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:17.126388Z",
-  "dir_name": "letta-agent-designer"
+  "dir_name": "letta-agent-designer",
+  "author": "letta-ai",
+  "source_url": "https://github.com/letta-ai/skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/letta-ai/skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

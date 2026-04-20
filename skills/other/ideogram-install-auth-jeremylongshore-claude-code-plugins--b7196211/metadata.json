@@ -7,5 +7,12 @@
   "dir_name": "ideogram-install-auth-jeremylongshore-claude-code-plugins--b7196211",
   "category": "other",
   "github_path": "plugins/saas-packs/ideogram-pack/skills/ideogram-install-auth",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/ideogram-pack/skills/ideogram-install-auth/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

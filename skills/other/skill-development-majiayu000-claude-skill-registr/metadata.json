@@ -9,5 +9,12 @@
   "github_path": "skills/skill-development",
   "github_branch": "main",
   "dir_name": "skill-development-majiayu000-claude-skill-registr",
-  "downloaded_at": "2026-02-05T05:45:06.307682Z"
+  "downloaded_at": "2026-02-05T05:45:06.307682Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/skill-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

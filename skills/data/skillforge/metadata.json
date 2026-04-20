@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/rjmurillo/ai-agents",
-  "dir_name": "skillforge"
+  "dir_name": "skillforge",
+  "author": "rjmurillo",
+  "source_url": "https://github.com/rjmurillo/ai-agents",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "micro-skill-creator",
   "category": "other",
   "github_path": ".claude/skills/micro-skill-creator",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/micro-skill-creator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

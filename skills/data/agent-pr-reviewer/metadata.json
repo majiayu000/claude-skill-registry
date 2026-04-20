@@ -5,5 +5,12 @@
   "source": "github.com/Smith-Happens/xlightsfpptester",
   "downloaded_at": "2026-02-02T03:17:37.759404Z",
   "dir_name": "agent-pr-reviewer",
-  "category": "data"
+  "category": "data",
+  "author": "Smith-Happens",
+  "source_url": "https://github.com/Smith-Happens/xlightsfpptester/blob/main/skills/agent-pr-reviewer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 TurboBeest",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

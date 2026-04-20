@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/__scientific-skills/matplotlib",
   "github_branch": "main",
   "dir_name": "matplotlib",
-  "downloaded_at": "2026-02-05T01:45:35.320304Z"
+  "downloaded_at": "2026-02-05T01:45:35.320304Z",
+  "author": "pur3v4d3r",
+  "source_url": "https://github.com/pur3v4d3r/pur3-pkb-codebase/blob/main/.claude/skills/__scientific-skills/matplotlib/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pur3v4d3r/pur3-pkb-codebase/blob/main/.claude/skills/__scientific-skills/matplotlib/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:47.675102Z",
   "github_path": "plugins/devops/ansible-playbook-creator/skills/creating-ansible-playbooks",
   "github_branch": "main",
-  "dir_name": "creating-ansible-playbooks-jeremylongshore-claude-code-plugins-"
+  "dir_name": "creating-ansible-playbooks-jeremylongshore-claude-code-plugins-",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/devops/ansible-playbook-creator/skills/creating-ansible-playbooks/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

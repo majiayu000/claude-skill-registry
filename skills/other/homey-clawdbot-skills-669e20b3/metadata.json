@@ -7,5 +7,12 @@
   "dir_name": "homey-clawdbot-skills-669e20b3",
   "category": "other",
   "github_path": "skills/maxsumrall/homey",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "clawdbot",
+  "source_url": "https://github.com/clawdbot/skills/blob/main/skills/maxsumrall/homey/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

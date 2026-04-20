@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:21.355302Z",
   "github_path": "plugins/copywriting/skills/message-architecture",
   "github_branch": "main",
-  "dir_name": "message-architecture"
+  "dir_name": "message-architecture",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/copywriting/skills/message-architecture/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

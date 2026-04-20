@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:33.670920Z",
   "dir_name": "store-lifecycle",
   "github_path": "skills/store-lifecycle",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "blueraai",
+  "source_url": "https://github.com/blueraai/bluera-knowledge/blob/main/skills/store-lifecycle/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2025 Chris Braddock",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

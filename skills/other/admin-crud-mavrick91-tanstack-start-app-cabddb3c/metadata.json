@@ -7,5 +7,12 @@
   "dir_name": "admin-crud-mavrick91-tanstack-start-app-cabddb3c",
   "category": "other",
   "github_path": ".claude/skills/admin-crud",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Mavrick91",
+  "source_url": "https://github.com/Mavrick91/tanstack-start-app/blob/main/.claude/skills/admin-crud/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Mavrick91/tanstack-start-app/blob/main/.claude/skills/admin-crud/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

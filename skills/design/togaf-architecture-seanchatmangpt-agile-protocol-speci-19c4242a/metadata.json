@@ -10,5 +10,12 @@
   "stars": 3,
   "github_path": ".claude/skills/togaf-architecture",
   "github_branch": "main",
-  "dir_name": "togaf-architecture-seanchatmangpt-agile-protocol-speci-19c4242a"
+  "dir_name": "togaf-architecture-seanchatmangpt-agile-protocol-speci-19c4242a",
+  "author": "seanchatmangpt",
+  "source_url": "https://github.com/seanchatmangpt/agile-protocol-specification/blob/main/.claude/skills/togaf-architecture/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Sean Chatman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

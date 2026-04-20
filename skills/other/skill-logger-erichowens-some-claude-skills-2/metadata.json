@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/erichowens/some_claude_skills",
-  "dir_name": "skill-logger-erichowens-some-claude-skills-2"
+  "dir_name": "skill-logger-erichowens-some-claude-skills-2",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/skill-logger/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

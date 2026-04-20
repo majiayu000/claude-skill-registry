@@ -7,5 +7,12 @@
   "dir_name": "episodic-memory-testing-d-o-hub-rust-self-learning-m-86fa387e",
   "category": "other",
   "github_path": ".claude/skills/episodic-memory-testing",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "d-o-hub",
+  "source_url": "https://github.com/d-o-hub/rust-self-learning-memory/blob/main/.claude/skills/episodic-memory-testing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2019 Zachary Rice",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:07.991500Z",
   "github_path": "plugins/specweave-confluent/skills/confluent-schema-registry",
   "github_branch": "main",
-  "dir_name": "confluent-schema-registry"
+  "dir_name": "confluent-schema-registry",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-confluent/skills/confluent-schema-registry/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

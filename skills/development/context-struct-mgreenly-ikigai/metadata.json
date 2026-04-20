@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:23:54.354289Z",
   "github_path": ".claude/library/patterns/context-struct",
   "github_branch": "main",
-  "dir_name": "context-struct-mgreenly-ikigai"
+  "dir_name": "context-struct-mgreenly-ikigai",
+  "author": "mgreenly",
+  "source_url": "https://github.com/mgreenly/ikigai/blob/main/.claude/library/patterns/context-struct/SKILL.md",
+  "license": "MIT-0",
+  "copyright": "Copyright (c) 2025 Michael Greenly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

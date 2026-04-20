@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/using-superpowers",
   "github_branch": "master",
   "dir_name": "using-superpowers-vinceh-recipe",
-  "downloaded_at": "2026-02-05T05:07:59.800496Z"
+  "downloaded_at": "2026-02-05T05:07:59.800496Z",
+  "author": "vinceh",
+  "source_url": "https://github.com/vinceh/recipe/blob/master/.claude/skills/using-superpowers/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vinceh/recipe/blob/master/.claude/skills/using-superpowers/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

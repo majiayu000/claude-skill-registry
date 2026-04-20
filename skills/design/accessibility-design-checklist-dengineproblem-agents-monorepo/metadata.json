@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "accessibility-design-checklist-dengineproblem-agents-monorepo"
+  "dir_name": "accessibility-design-checklist-dengineproblem-agents-monorepo",
+  "author": "dengineproblem",
+  "source_url": "https://github.com/dengineproblem/agents-monorepo",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dengineproblem/agents-monorepo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

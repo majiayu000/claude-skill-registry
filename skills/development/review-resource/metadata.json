@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:26.141207Z",
   "github_path": ".claude/skills/review-resource",
   "github_branch": "main",
-  "dir_name": "review-resource"
+  "dir_name": "review-resource",
+  "author": "madooei",
+  "source_url": "https://github.com/madooei/backend-template/blob/main/.claude/skills/review-resource/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/madooei/backend-template/blob/main/.claude/skills/review-resource/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

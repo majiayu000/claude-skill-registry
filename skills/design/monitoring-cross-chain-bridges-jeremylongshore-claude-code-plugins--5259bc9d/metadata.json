@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:46.368462Z",
   "github_path": "plugins/crypto/cross-chain-bridge-monitor/skills/monitoring-cross-chain-bridges",
   "github_branch": "main",
-  "dir_name": "monitoring-cross-chain-bridges-jeremylongshore-claude-code-plugins--5259bc9d"
+  "dir_name": "monitoring-cross-chain-bridges-jeremylongshore-claude-code-plugins--5259bc9d",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/crypto/cross-chain-bridge-monitor/skills/monitoring-cross-chain-bridges/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

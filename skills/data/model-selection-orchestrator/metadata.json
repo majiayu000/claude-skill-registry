@@ -5,5 +5,12 @@
   "description": "Select the best local Ollama model for a task and emit tuning presets. Use when choosing between reasoning, creative, fast, vision, synthesis, or pre-AGI modes based on available local models.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:30.265057Z",
-  "dir_name": "model-selection-orchestrator"
+  "dir_name": "model-selection-orchestrator",
+  "author": "Cloudhabil",
+  "source_url": "https://github.com/Cloudhabil/AGI-Server",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cloudhabil/AGI-Server",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

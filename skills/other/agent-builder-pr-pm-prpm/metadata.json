@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/agent-builder",
   "github_branch": "main",
   "dir_name": "agent-builder-pr-pm-prpm",
-  "downloaded_at": "2026-02-05T01:45:15.198824Z"
+  "downloaded_at": "2026-02-05T01:45:15.198824Z",
+  "author": "pr-pm",
+  "source_url": "https://github.com/pr-pm/prpm/blob/main/.claude/skills/agent-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 PRPM (Prompt Package Manager)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/vjrivmon/Setup-Software-IA",
   "downloaded_at": "2026-01-29T07:36:26.069467Z",
   "dir_name": "nielsen-visibility-vjrivmon-setup-software-ia",
-  "category": "other"
+  "category": "other",
+  "author": "vjrivmon",
+  "source_url": "https://github.com/vjrivmon/Setup-Software-IA/blob/main/.claude/skills/ux-ui/heuristics/nielsen-visibility/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Vicente Rivas Monferrer",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:35.379476Z",
   "github_path": ".claude/skills/python-type-hints-guide",
   "github_branch": "main",
-  "dir_name": "python-type-hints-guide-clostaunau-holiday-card"
+  "dir_name": "python-type-hints-guide-clostaunau-holiday-card",
+  "author": "clostaunau",
+  "source_url": "https://github.com/clostaunau/holiday-card/blob/main/.claude/skills/python-type-hints-guide/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/clostaunau/holiday-card/blob/main/.claude/skills/python-type-hints-guide/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

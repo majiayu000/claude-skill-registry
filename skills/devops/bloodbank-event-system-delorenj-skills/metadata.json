@@ -5,5 +5,12 @@
   "description": "Use this skill when facilitating communication between different systems in the 33GOD ecosystem. Every action in the pipeline is invoked by an event published by Bloodbank. Simiarly, every result is p",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:28.356218Z",
-  "dir_name": "bloodbank-event-system-delorenj-skills"
+  "dir_name": "bloodbank-event-system-delorenj-skills",
+  "author": "delorenj",
+  "source_url": "https://github.com/delorenj/skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/delorenj/skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

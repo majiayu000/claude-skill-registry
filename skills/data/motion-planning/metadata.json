@@ -5,5 +5,12 @@
   "source": "github.com/a5c-ai/babysitter",
   "downloaded_at": "2026-02-02T04:47:53.541426Z",
   "dir_name": "motion-planning",
-  "category": "data"
+  "category": "data",
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/plugins/babysitter/skills/babysit/process/specializations/robotics-simulation/skills/motion-planning/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 A5C AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

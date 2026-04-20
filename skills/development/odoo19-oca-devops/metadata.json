@@ -5,5 +5,12 @@
   "description": "Build enterprise-grade Odoo 19 ERP using OCA community modules instead of Enterprise licenses. Scaffold modules, vendor OCA dependencies, generate production Docker deployments, and deploy to DigitalO",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:12.645146Z",
-  "dir_name": "odoo19-oca-devops"
+  "dir_name": "odoo19-oca-devops",
+  "author": "jgtolentino",
+  "source_url": "https://github.com/jgtolentino/insightpulse-odoo",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jgtolentino/insightpulse-odoo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

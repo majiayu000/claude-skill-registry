@@ -9,5 +9,12 @@
   "github_path": "skills/obsidian-clipper-template-creator",
   "github_branch": "main",
   "dir_name": "obsidian-clipper-template-creator-cgyudistira-code-agents",
-  "downloaded_at": "2026-02-05T05:34:10.357917Z"
+  "downloaded_at": "2026-02-05T05:34:10.357917Z",
+  "author": "cgyudistira",
+  "source_url": "https://github.com/cgyudistira/code-agents/blob/main/skills/obsidian-clipper-template-creator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

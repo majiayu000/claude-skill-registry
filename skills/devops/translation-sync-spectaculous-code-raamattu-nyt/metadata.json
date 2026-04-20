@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/translation-sync",
   "github_branch": "main",
-  "dir_name": "translation-sync-spectaculous-code-raamattu-nyt"
+  "dir_name": "translation-sync-spectaculous-code-raamattu-nyt",
+  "author": "Spectaculous-Code",
+  "source_url": "https://github.com/Spectaculous-Code/raamattu-nyt/blob/main/.claude/skills/translation-sync/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Spectaculous-Code/raamattu-nyt/blob/main/.claude/skills/translation-sync/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

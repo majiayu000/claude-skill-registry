@@ -5,5 +5,12 @@
   "description": "Information theory (entropy/MI/TE) and causal inference for trading signals.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:18.416023Z",
-  "dir_name": "advanced-math-tradinginformation-causal"
+  "dir_name": "advanced-math-tradinginformation-causal",
+  "author": "keith-mvs",
+  "source_url": "https://github.com/keith-mvs/ordinis",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/keith-mvs/ordinis",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

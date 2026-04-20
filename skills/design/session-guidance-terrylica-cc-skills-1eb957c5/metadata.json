@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:44.869208Z",
   "github_path": "plugins/ralph/skills/session-guidance",
   "github_branch": "main",
-  "dir_name": "session-guidance-terrylica-cc-skills-1eb957c5"
+  "dir_name": "session-guidance-terrylica-cc-skills-1eb957c5",
+  "author": "terrylica",
+  "source_url": "https://github.com/terrylica/cc-skills/blob/main/plugins/ralph/skills/session-guidance/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Terry Li",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

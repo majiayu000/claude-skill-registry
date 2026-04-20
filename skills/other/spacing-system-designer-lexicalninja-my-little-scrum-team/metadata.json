@@ -7,5 +7,12 @@
   "dir_name": "spacing-system-designer-lexicalninja-my-little-scrum-team",
   "category": "other",
   "github_path": "skills/spacing-system-designer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "lexicalninja",
+  "source_url": "https://github.com/lexicalninja/my-little-scrum-team/blob/main/skills/spacing-system-designer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 lexicalninja",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

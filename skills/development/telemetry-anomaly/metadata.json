@@ -5,5 +5,12 @@
   "description": "Detect anomalies from live telemetry streams and propose remediation; use when asked to analyze SSE/WebSocket metrics for abnormal behavior.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:23.198278Z",
-  "dir_name": "telemetry-anomaly"
+  "dir_name": "telemetry-anomaly",
+  "author": "Cloudhabil",
+  "source_url": "https://github.com/Cloudhabil/AGI-Server",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cloudhabil/AGI-Server",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

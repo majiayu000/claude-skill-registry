@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:24.502411Z",
   "github_path": "plugins/pr-communications/skills/crisis-playbooks",
   "github_branch": "main",
-  "dir_name": "crisis-playbooks"
+  "dir_name": "crisis-playbooks",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/pr-communications/skills/crisis-playbooks/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

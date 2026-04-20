@@ -7,5 +7,12 @@
   "dir_name": "charting-vega-lite",
   "category": "other",
   "github_path": "charting-vega-lite",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "oaustegard",
+  "source_url": "https://github.com/oaustegard/claude-skills/blob/main/charting-vega-lite/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Oskar Austegard",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:23.565250Z",
   "github_path": "plugins/goodvibes/skills/webdev/frontend-core/web-components",
   "github_branch": "main",
-  "dir_name": "web-components-mgd34msu-goodvibes-plugin"
+  "dir_name": "web-components-mgd34msu-goodvibes-plugin",
+  "author": "mgd34msu",
+  "source_url": "https://github.com/mgd34msu/goodvibes-plugin/blob/main/plugins/goodvibes/skills/webdev/frontend-core/web-components/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 GoodVibes Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

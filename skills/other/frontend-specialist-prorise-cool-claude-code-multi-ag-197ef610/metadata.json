@@ -7,5 +7,12 @@
   "dir_name": "frontend-specialist-prorise-cool-claude-code-multi-ag-197ef610",
   "category": "other",
   "github_path": ".claude/skills/frontend-specialist",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Prorise-cool",
+  "source_url": "https://github.com/Prorise-cool/Claude-Code-Multi-Agent/blob/main/.claude/skills/frontend-specialist/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Prorise-cool/Claude-Code-Multi-Agent/blob/main/.claude/skills/frontend-specialist/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

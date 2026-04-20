@@ -9,5 +9,12 @@
   ],
   "stars": 6,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "adding-stacks"
+  "dir_name": "adding-stacks",
+  "author": "plvo",
+  "source_url": "https://github.com/plvo/create-faster",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 pelavo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

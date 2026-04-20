@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/creating-claude-commands",
   "github_branch": "main",
-  "dir_name": "creating-claude-commands"
+  "dir_name": "creating-claude-commands",
+  "author": "pr-pm",
+  "source_url": "https://github.com/pr-pm/prpm/blob/main/.claude/skills/creating-claude-commands/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 PRPM (Prompt Package Manager)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

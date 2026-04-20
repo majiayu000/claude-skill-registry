@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "implement-phases"
+  "dir_name": "implement-phases",
+  "author": "charlesjones-dev",
+  "source_url": "https://github.com/charlesjones-dev/claude-code-plugins-dev",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Charles Jones",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "add-platform-unsupervisedcom-deepwork",
   "category": "other",
   "github_path": ".claude/skills/add_platform",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Unsupervisedcom",
+  "source_url": "https://github.com/Unsupervisedcom/deepwork/blob/main/.claude/skills/add_platform/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Unsupervisedcom/deepwork/blob/main/.claude/skills/add_platform/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

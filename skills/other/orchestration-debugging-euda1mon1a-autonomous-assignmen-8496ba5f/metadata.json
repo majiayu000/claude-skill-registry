@@ -7,5 +7,12 @@
   "dir_name": "orchestration-debugging-euda1mon1a-autonomous-assignmen-8496ba5f",
   "category": "other",
   "github_path": ".claude/skills/ORCHESTRATION_DEBUGGING",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Euda1mon1a",
+  "source_url": "https://github.com/Euda1mon1a/Autonomous-Assignment-Program-Manager/blob/main/.claude/skills/ORCHESTRATION_DEBUGGING/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Euda1mon1a/Autonomous-Assignment-Program-Manager/blob/main/.claude/skills/ORCHESTRATION_DEBUGGING/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

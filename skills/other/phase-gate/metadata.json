@@ -7,5 +7,12 @@
   "dir_name": "phase-gate",
   "category": "other",
   "github_path": "skills/phase-gate",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Smith-Happens",
+  "source_url": "https://github.com/Smith-Happens/xlightsfpptester/blob/main/skills/phase-gate/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 TurboBeest",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

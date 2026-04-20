@@ -5,5 +5,12 @@
   "description": "BigQuery Object Tables를 활용한 비정형 데이터(오디오, 이미지 등) 분석 및 Audio Analytics Agent 구축 가이드. GCS 데이터 연동, 메타데이터 캐싱, AI 모델 통합, ADK 에이전트 구현 패턴을 다룹니다.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:35.114790Z",
-  "dir_name": "bigquery-object-table-agent"
+  "dir_name": "bigquery-object-table-agent",
+  "author": "nfbs2000",
+  "source_url": "https://github.com/nfbs2000/vibe-with-google-ai-divorce-agent-inflearn",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nfbs2000/vibe-with-google-ai-divorce-agent-inflearn",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

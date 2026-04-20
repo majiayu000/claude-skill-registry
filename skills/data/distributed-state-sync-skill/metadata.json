@@ -7,5 +7,12 @@
   "stars": 6,
   "source": "github.com/enuno/claude-command-and-control",
   "downloaded_at": "2026-01-24T16:15:13.986863Z",
-  "dir_name": "distributed-state-sync-skill"
+  "dir_name": "distributed-state-sync-skill",
+  "author": "enuno",
+  "source_url": "https://github.com/enuno/claude-command-and-control/blob/main/skills-templates/orchestration/distributed-state-sync-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/enuno/claude-command-and-control/blob/main/skills-templates/orchestration/distributed-state-sync-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

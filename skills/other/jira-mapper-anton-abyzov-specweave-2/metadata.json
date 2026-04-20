@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/anton-abyzov/specweave",
-  "dir_name": "jira-mapper-anton-abyzov-specweave-2"
+  "dir_name": "jira-mapper-anton-abyzov-specweave-2",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-jira/skills/jira-mapper/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

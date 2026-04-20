@@ -5,5 +5,12 @@
   "description": "Use when styling React Native components with StyleSheet, Flexbox layout, responsive design, and theming. Covers platform-specific styling and design systems.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:07.808021Z",
-  "dir_name": "jutsu-react-nativereact-native-styling"
+  "dir_name": "jutsu-react-nativereact-native-styling",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

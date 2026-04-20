@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
-  "dir_name": "lightning-2025-features-josiahsiegel-claude-plugin-market-2"
+  "dir_name": "lightning-2025-features-josiahsiegel-claude-plugin-market-2",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/salesforce-master/skills/lightning-2025-features/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

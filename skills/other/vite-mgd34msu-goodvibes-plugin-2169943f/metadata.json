@@ -7,5 +7,12 @@
   "dir_name": "vite-mgd34msu-goodvibes-plugin-2169943f",
   "category": "other",
   "github_path": "plugins/goodvibes/skills/webdev/testing/vitest",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "mgd34msu",
+  "source_url": "https://github.com/mgd34msu/goodvibes-plugin/blob/main/plugins/goodvibes/skills/webdev/testing/vitest/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 GoodVibes Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

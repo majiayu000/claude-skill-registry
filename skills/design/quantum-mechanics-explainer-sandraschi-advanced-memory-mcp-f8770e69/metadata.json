@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:21.455755Z",
   "github_path": "skills/sciences/quantum-mechanics-explainer",
   "github_branch": "main",
-  "dir_name": "quantum-mechanics-explainer-sandraschi-advanced-memory-mcp-f8770e69"
+  "dir_name": "quantum-mechanics-explainer-sandraschi-advanced-memory-mcp-f8770e69",
+  "author": "sandraschi",
+  "source_url": "https://github.com/sandraschi/advanced-memory-mcp/blob/main/skills/sciences/quantum-mechanics-explainer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Sandra Schipal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

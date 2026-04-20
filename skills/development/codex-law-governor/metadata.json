@@ -11,5 +11,12 @@
   "stars": 1,
   "github_path": "skills/codex-law-governor",
   "github_branch": "main",
-  "dir_name": "codex-law-governor"
+  "dir_name": "codex-law-governor",
+  "author": "starwreckntx",
+  "source_url": "https://github.com/starwreckntx/IRP__METHODOLOGIES-/blob/main/skills/codex-law-governor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/starwreckntx/IRP__METHODOLOGIES-/blob/main/skills/codex-law-governor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

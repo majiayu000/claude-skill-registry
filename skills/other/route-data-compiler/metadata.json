@@ -9,5 +9,12 @@
   "github_path": "skills/benchmark_skills/toolathlon/route-data-compiler",
   "github_branch": "main",
   "dir_name": "route-data-compiler",
-  "downloaded_at": "2026-02-05T01:44:58.962354Z"
+  "downloaded_at": "2026-02-05T01:44:58.962354Z",
+  "author": "zjunlp",
+  "source_url": "https://github.com/zjunlp/SkillNet/blob/main/skills/benchmark_skills/toolathlon/route-data-compiler/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ZJUNLP",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

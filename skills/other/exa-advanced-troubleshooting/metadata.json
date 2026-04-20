@@ -5,5 +5,12 @@
   "source": "github.com/Brmbobo/Web2podcast",
   "downloaded_at": "2026-01-31T04:41:41.032524Z",
   "dir_name": "exa-advanced-troubleshooting",
-  "category": "other"
+  "category": "other",
+  "author": "Brmbobo",
+  "source_url": "https://github.com/Brmbobo/Web2podcast/blob/main/.claude/agents/enterprise-frontend-design/agents/saas-packs/exa-pack/skills/exa-advanced-troubleshooting/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Brmbobo/Web2podcast/blob/main/.claude/agents/enterprise-frontend-design/agents/saas-packs/exa-pack/skills/exa-advanced-troubleshooting/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

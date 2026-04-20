@@ -5,5 +5,12 @@
   "source": "github.com/zjunlp/SkillNet",
   "downloaded_at": "2026-02-04T02:27:41.103324Z",
   "dir_name": "bigquery-historical-data-aggregator",
-  "category": "data"
+  "category": "data",
+  "author": "zjunlp",
+  "source_url": "https://github.com/zjunlp/SkillNet/blob/main/skills/benchmark_skills/toolathlon/bigquery-historical-data-aggregator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ZJUNLP",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/CANTAGESTUDIO/CosmicAtlasPacker",
   "downloaded_at": "2026-02-02T02:32:34.782134Z",
   "dir_name": "refactor-rename-for-clarity",
-  "category": "other"
+  "category": "other",
+  "author": "CANTAGESTUDIO",
+  "source_url": "https://github.com/CANTAGESTUDIO/CosmicAtlasPacker/blob/main/.factory/skills/refactor-rename-for-clarity/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CANTAGESTUDIO/CosmicAtlasPacker/blob/main/.factory/skills/refactor-rename-for-clarity/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "stars": 2,
   "github_path": ".claude/skills/skill-authoring-template",
   "github_branch": "main",
-  "dir_name": "skill-authoring-template-tesla0225-claude-skill-repoini"
+  "dir_name": "skill-authoring-template-tesla0225-claude-skill-repoini",
+  "author": "tesla0225",
+  "source_url": "https://github.com/tesla0225/claude_skill_repoinit/blob/main/.claude/skills/skill-authoring-template/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tesla0225/claude_skill_repoinit/blob/main/.claude/skills/skill-authoring-template/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

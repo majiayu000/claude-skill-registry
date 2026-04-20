@@ -5,5 +5,12 @@
   "source": "github.com/kishorkukreja/awesome-supply-chain",
   "downloaded_at": "2026-01-31T02:33:48.523795Z",
   "dir_name": "contract-management",
-  "category": "other"
+  "category": "other",
+  "author": "kishorkukreja",
+  "source_url": "https://github.com/kishorkukreja/awesome-supply-chain/blob/main/skills/contract-management/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kishorkukreja/awesome-supply-chain/blob/main/skills/contract-management/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

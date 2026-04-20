@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/aps-documentation",
   "github_branch": "main",
-  "dir_name": "aps-documentation"
+  "dir_name": "aps-documentation",
+  "author": "seanchatmangpt",
+  "source_url": "https://github.com/seanchatmangpt/agile-protocol-specification/blob/main/.claude/skills/aps-documentation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Sean Chatman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "ecs-majiayu000-claude-skill-registr-98b18cd3",
   "category": "other",
   "github_path": "skills/design/specs-creator",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/design/specs-creator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/oaustegard/claude-skills",
   "downloaded_at": "2026-02-02T02:42:54.140116Z",
   "dir_name": "developing-preact",
-  "category": "other"
+  "category": "other",
+  "author": "oaustegard",
+  "source_url": "https://github.com/oaustegard/claude-skills/blob/main/developing-preact/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Oskar Austegard",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

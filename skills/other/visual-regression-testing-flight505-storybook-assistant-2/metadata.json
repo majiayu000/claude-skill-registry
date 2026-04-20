@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/flight505/storybook-assistant",
-  "dir_name": "visual-regression-testing-flight505-storybook-assistant-2"
+  "dir_name": "visual-regression-testing-flight505-storybook-assistant-2",
+  "author": "flight505",
+  "source_url": "https://github.com/flight505/storybook-assistant/blob/main/skills/visual-regression-testing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Jesper Vang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

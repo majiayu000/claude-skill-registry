@@ -5,5 +5,12 @@
   "source": "github.com/secondsky/claude-skills",
   "downloaded_at": "2026-01-31T04:08:58.520797Z",
   "dir_name": "recommendation-system",
-  "category": "data"
+  "category": "data",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/recommendation-system/skills/recommendation-system/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

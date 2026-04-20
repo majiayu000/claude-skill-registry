@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:54.916185Z",
   "github_path": "installing-skills",
   "github_branch": "main",
-  "dir_name": "installing-skills"
+  "dir_name": "installing-skills",
+  "author": "oaustegard",
+  "source_url": "https://github.com/oaustegard/claude-skills/blob/main/installing-skills/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Oskar Austegard",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/erichowens/some_claude_skills",
   "downloaded_at": "2026-01-31T02:10:46.365638Z",
   "dir_name": "design-justice",
-  "category": "data"
+  "category": "data",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/design-justice/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

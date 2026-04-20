@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/Async-IO/pierre_mcp_server",
   "dir_name": "check-no-secrets",
-  "downloaded_at": "2026-02-15T04:46:17.329075Z"
+  "downloaded_at": "2026-02-15T04:46:17.329075Z",
+  "author": "Async-IO",
+  "source_url": "https://github.com/Async-IO/pierre_mcp_server/blob/main/.claude/skills/check-no-secrets/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Async-IO/pierre_mcp_server/blob/main/.claude/skills/check-no-secrets/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

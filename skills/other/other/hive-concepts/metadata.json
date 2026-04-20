@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/adenhq/hive",
   "dir_name": "hive-concepts",
-  "downloaded_at": "2026-02-15T06:06:00.600564Z"
+  "downloaded_at": "2026-02-15T06:06:00.600564Z",
+  "author": "adenhq",
+  "source_url": "https://github.com/adenhq/hive/blob/main/.claude/skills/hive-concepts/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

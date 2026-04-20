@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/home-network-admin",
   "github_branch": "master",
   "dir_name": "home-network-admin",
-  "downloaded_at": "2026-02-05T01:44:43.339561Z"
+  "downloaded_at": "2026-02-05T01:44:43.339561Z",
+  "author": "tdhopper",
+  "source_url": "https://github.com/tdhopper/dotfiles2.0/blob/master/.claude/skills/home-network-admin/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tdhopper/dotfiles2.0/blob/master/.claude/skills/home-network-admin/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

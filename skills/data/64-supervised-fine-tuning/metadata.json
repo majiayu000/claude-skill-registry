@@ -5,5 +5,12 @@
   "source": "github.com/panaversity/agentfactory",
   "downloaded_at": "2026-02-04T02:28:32.725012Z",
   "dir_name": "64-supervised-fine-tuning",
-  "category": "data"
+  "category": "data",
+  "author": "panaversity",
+  "source_url": "https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/07-Turing-LLMOps-Proprietary-Intelligence/64-supervised-fine-tuning/00-build-fine-tuning-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/07-Turing-LLMOps-Proprietary-Intelligence/64-supervised-fine-tuning/00-build-fine-tuning-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

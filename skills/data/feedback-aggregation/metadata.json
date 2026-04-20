@@ -5,5 +5,12 @@
   "source": "github.com/a5c-ai/babysitter",
   "downloaded_at": "2026-02-04T02:37:13.416512Z",
   "dir_name": "feedback-aggregation",
-  "category": "data"
+  "category": "data",
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/plugins/babysitter/skills/babysit/process/specializations/product-management/skills/feedback-aggregation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 A5C AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

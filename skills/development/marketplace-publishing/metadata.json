@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:09.497236Z",
   "github_path": "plugins/specweave-plugin-dev/skills/marketplace-publishing",
   "github_branch": "main",
-  "dir_name": "marketplace-publishing"
+  "dir_name": "marketplace-publishing",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-plugin-dev/skills/marketplace-publishing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

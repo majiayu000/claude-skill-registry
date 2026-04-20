@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/Brmbobo/Web2podcast",
   "dir_name": "posthog-performance-tuning",
-  "downloaded_at": "2026-02-15T04:53:30.531414Z"
+  "downloaded_at": "2026-02-15T04:53:30.531414Z",
+  "author": "Brmbobo",
+  "source_url": "https://github.com/Brmbobo/Web2podcast/blob/main/.claude/agents/enterprise-frontend-design/agents/saas-packs/posthog-pack/skills/posthog-performance-tuning/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Brmbobo/Web2podcast/blob/main/.claude/agents/enterprise-frontend-design/agents/saas-packs/posthog-pack/skills/posthog-performance-tuning/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

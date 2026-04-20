@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:02.241271Z",
   "github_path": "plugins/databricks-governance/skills/unity-catalog-governance",
   "github_branch": "main",
-  "dir_name": "unity-catalog-governance-vivekgana-databricks-platform--f0eb7d6c"
+  "dir_name": "unity-catalog-governance-vivekgana-databricks-platform--f0eb7d6c",
+  "author": "vivekgana",
+  "source_url": "https://github.com/vivekgana/databricks-platform-marketplace/blob/main/plugins/databricks-governance/skills/unity-catalog-governance/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Your Company",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:14.747112Z",
   "github_path": "src/skills/builtin/initializing-memory",
   "github_branch": "main",
-  "dir_name": "initializing-memory-letta-ai-letta-code"
+  "dir_name": "initializing-memory-letta-ai-letta-code",
+  "author": "letta-ai",
+  "source_url": "https://github.com/letta-ai/letta-code/blob/main/src/skills/builtin/initializing-memory/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/Agentient/vibekit",
   "downloaded_at": "2026-02-02T03:05:11.634583Z",
   "dir_name": "privacy-consent",
-  "category": "data"
+  "category": "data",
+  "author": "Agentient",
+  "source_url": "https://github.com/Agentient/vibekit/blob/main/plugins/security-tools/skills/privacy-consent/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Agentient/vibekit/blob/main/plugins/security-tools/skills/privacy-consent/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

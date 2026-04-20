@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:09.072711Z",
   "github_path": "planned-skills/generated/13-aws-skills/s3-bucket-policy-generator",
   "github_branch": "main",
-  "dir_name": "s3-bucket-policy-generator"
+  "dir_name": "s3-bucket-policy-generator",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/planned-skills/generated/13-aws-skills/s3-bucket-policy-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

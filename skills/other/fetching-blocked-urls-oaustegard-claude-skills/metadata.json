@@ -5,5 +5,12 @@
   "source": "github.com/oaustegard/claude-skills",
   "downloaded_at": "2026-01-29T07:52:47.974850Z",
   "dir_name": "fetching-blocked-urls-oaustegard-claude-skills",
-  "category": "other"
+  "category": "other",
+  "author": "oaustegard",
+  "source_url": "https://github.com/oaustegard/claude-skills/blob/main/fetching-blocked-urls/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Oskar Austegard",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

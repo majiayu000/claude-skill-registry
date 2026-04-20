@@ -5,5 +5,12 @@
   "source": "github.com/enuno/claude-command-and-control",
   "downloaded_at": "2026-01-29T05:46:59.688388Z",
   "dir_name": "turbo-sdk-enuno-claude-command-and-c",
-  "category": "other"
+  "category": "other",
+  "author": "enuno",
+  "source_url": "https://github.com/enuno/claude-command-and-control/blob/main/skills/turbo-sdk/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/enuno/claude-command-and-control/blob/main/skills/turbo-sdk/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

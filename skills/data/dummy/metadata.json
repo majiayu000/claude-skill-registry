@@ -5,5 +5,12 @@
   "source": "github.com/majiayu000/claude-skill-registry",
   "downloaded_at": "2026-01-28T02:30:06.136920Z",
   "dir_name": "dummy",
-  "category": "data"
+  "category": "data",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/data/dummy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

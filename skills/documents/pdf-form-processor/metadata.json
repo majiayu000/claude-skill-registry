@@ -5,5 +5,12 @@
   "description": "This skill should be used when the user asks to \"fill PDF form\", \"extract PDF fields\", \"process PDF forms\", \"analyze PDF structure\", or mentions working with fillable PDF documents.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:47.275160Z",
-  "dir_name": "pdf-form-processor"
+  "dir_name": "pdf-form-processor",
+  "author": "rafaelcalleja",
+  "source_url": "https://github.com/rafaelcalleja/claude-market-place",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rafaelcalleja/claude-market-place",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

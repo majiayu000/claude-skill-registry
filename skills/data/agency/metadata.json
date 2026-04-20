@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "agency",
   "github_path": "skills/agency",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "tobias-walle",
+  "source_url": "https://github.com/tobias-walle/agency/blob/main/skills/agency/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Agency",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

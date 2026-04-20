@@ -5,5 +5,12 @@
   "source": "github.com/dkyazzentwatwa/chatgpt-skills",
   "downloaded_at": "2026-02-02T01:26:40.731020Z",
   "dir_name": "ocr-document-processor",
-  "category": "other"
+  "category": "other",
+  "author": "dkyazzentwatwa",
+  "source_url": "https://github.com/dkyazzentwatwa/chatgpt-skills/blob/main/ocr-document-processor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dkyazzentwatwa/chatgpt-skills/blob/main/ocr-document-processor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

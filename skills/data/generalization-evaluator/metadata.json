@@ -5,5 +5,12 @@
   "description": "Cross-domain evaluation to estimate generality and detect blind spots. Use when asked to assess broad capability, compare models across domains, or identify missing skills.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:26.742165Z",
-  "dir_name": "generalization-evaluator"
+  "dir_name": "generalization-evaluator",
+  "author": "Cloudhabil",
+  "source_url": "https://github.com/Cloudhabil/AGI-Server",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cloudhabil/AGI-Server",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

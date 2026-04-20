@@ -5,5 +5,12 @@
   "description": "Run local system diagnostics and model benchmarks across CPU, memory, GPU, NPU, Docker, and Kubernetes; use when asked to benchmark, health-check, or collect environment diagnostics, and store a summa",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:28.438111Z",
-  "dir_name": "runtime-diagnostics"
+  "dir_name": "runtime-diagnostics",
+  "author": "Cloudhabil",
+  "source_url": "https://github.com/Cloudhabil/AGI-Server",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cloudhabil/AGI-Server",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

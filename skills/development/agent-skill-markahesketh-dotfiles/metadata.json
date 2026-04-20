@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:57.409624Z",
   "github_path": "home/.claude/skills/agent-skill",
   "github_branch": "main",
-  "dir_name": "agent-skill-markahesketh-dotfiles"
+  "dir_name": "agent-skill-markahesketh-dotfiles",
+  "author": "markahesketh",
+  "source_url": "https://github.com/markahesketh/dotfiles/blob/main/home/.claude/skills/agent-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Mark Hesketh",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

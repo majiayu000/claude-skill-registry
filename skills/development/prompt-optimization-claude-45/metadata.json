@@ -11,5 +11,12 @@
   "stars": 4,
   "github_path": "plugins/prompt-optimization-claude-45/skills/prompt-optimization-claude-45",
   "github_branch": "main",
-  "dir_name": "prompt-optimization-claude-45"
+  "dir_name": "prompt-optimization-claude-45",
+  "author": "Jamie-BitFlight",
+  "source_url": "https://github.com/Jamie-BitFlight/claude_skills/blob/main/plugins/prompt-optimization-claude-45/skills/prompt-optimization-claude-45/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Jamie-BitFlight/claude_skills/blob/main/plugins/prompt-optimization-claude-45/skills/prompt-optimization-claude-45/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

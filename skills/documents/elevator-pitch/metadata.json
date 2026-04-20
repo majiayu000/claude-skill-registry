@@ -5,5 +5,12 @@
   "description": "Create compelling 30/60/90-second elevator pitches using the Villain-Hero storytelling framework, customized for different investor types with psychological hooks, timing markers, and word-for-word sc",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:23.886831Z",
-  "dir_name": "elevator-pitch"
+  "dir_name": "elevator-pitch",
+  "author": "majesticlabs-dev",
+  "source_url": "https://github.com/majesticlabs-dev/majestic-marketplace",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Majestic Labs LLC",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

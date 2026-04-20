@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:46.742233Z",
   "github_path": "skills/knowledge-search",
   "github_branch": "main",
-  "dir_name": "knowledge-search-blueraai-bluera-knowledge-74aac7ac"
+  "dir_name": "knowledge-search-blueraai-bluera-knowledge-74aac7ac",
+  "author": "blueraai",
+  "source_url": "https://github.com/blueraai/bluera-knowledge/blob/main/skills/knowledge-search/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2025 Chris Braddock",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

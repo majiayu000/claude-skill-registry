@@ -5,5 +5,12 @@
   "description": "LSP-powered context extraction using cclsp MCP tools, Solargraph, and Sorbet for type-safe code generation. Trigger keywords: cclsp, LSP, context compilation, interface extraction, vocabulary, Guardia",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:31.884719Z",
-  "dir_name": "context-compilation-with-cclsp"
+  "dir_name": "context-compilation-with-cclsp",
+  "author": "Kaakati",
+  "source_url": "https://github.com/Kaakati/rails-enterprise-dev",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kaakati/rails-enterprise-dev",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

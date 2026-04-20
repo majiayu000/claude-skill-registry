@@ -7,5 +7,12 @@
   "dir_name": "output-style-authoring-philoserf-claude-code-setup",
   "category": "other",
   "github_path": "skills/output-style-authoring",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "philoserf",
+  "source_url": "https://github.com/philoserf/claude-code-setup/blob/main/skills/output-style-authoring/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Mark Ayers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

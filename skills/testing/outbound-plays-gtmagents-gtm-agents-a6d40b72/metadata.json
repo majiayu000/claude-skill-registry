@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:23.302979Z",
   "github_path": "plugins/intent-signal-orchestration/skills/outbound-plays",
   "github_branch": "main",
-  "dir_name": "outbound-plays-gtmagents-gtm-agents-a6d40b72"
+  "dir_name": "outbound-plays-gtmagents-gtm-agents-a6d40b72",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/intent-signal-orchestration/skills/outbound-plays/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

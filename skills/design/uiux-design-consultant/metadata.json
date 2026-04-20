@@ -5,5 +5,12 @@
   "description": "User experience and interface design expert for wireframing, user research, and design systems",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:18.821418Z",
-  "dir_name": "uiux-design-consultant"
+  "dir_name": "uiux-design-consultant",
+  "author": "sandraschi",
+  "source_url": "https://github.com/sandraschi/advanced-memory-mcp",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Sandra Schipal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

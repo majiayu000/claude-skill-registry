@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:13.825529Z",
   "github_path": "skills/unix-macos-engineer",
   "github_branch": "main",
-  "dir_name": "unix-macos-engineer"
+  "dir_name": "unix-macos-engineer",
+  "author": "petekp",
+  "source_url": "https://github.com/petekp/claude-code-setup/blob/main/skills/unix-macos-engineer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Pete Petrash",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

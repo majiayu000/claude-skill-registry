@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:22.123150Z",
   "github_path": "plugins/design-creative/skills/creative-brief-framework",
   "github_branch": "main",
-  "dir_name": "creative-brief-framework-gtmagents-gtm-agents-11828fd4"
+  "dir_name": "creative-brief-framework-gtmagents-gtm-agents-11828fd4",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/design-creative/skills/creative-brief-framework/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/abyssparanoia/rapid-go",
   "downloaded_at": "2026-02-04T01:24:35.011496Z",
   "dir_name": "add-domain-entity",
-  "category": "data"
+  "category": "data",
+  "author": "abyssparanoia",
+  "source_url": "https://github.com/abyssparanoia/rapid-go/blob/main/.claude/skills/add-domain-entity/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/abyssparanoia/rapid-go/blob/main/.claude/skills/add-domain-entity/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

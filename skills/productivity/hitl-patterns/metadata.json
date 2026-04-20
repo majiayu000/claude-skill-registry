@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/hitl-patterns",
   "github_branch": "main",
-  "dir_name": "hitl-patterns"
+  "dir_name": "hitl-patterns",
+  "author": "rwxproject",
+  "source_url": "https://github.com/rwxproject/agent-framework/blob/main/.claude/skills/hitl-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 rwxproject",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

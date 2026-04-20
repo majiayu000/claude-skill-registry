@@ -7,5 +7,12 @@
   "dir_name": "ai-video-production-master-erichowens-some-claude-skills",
   "category": "other",
   "github_path": ".claude/skills/ai-video-production-master",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/ai-video-production-master/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

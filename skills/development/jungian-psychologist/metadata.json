@@ -10,5 +10,12 @@
   "stars": 1,
   "github_path": ".claude/skills/jungian-psychologist",
   "github_branch": "main",
-  "dir_name": "jungian-psychologist"
+  "dir_name": "jungian-psychologist",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/jungian-psychologist/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

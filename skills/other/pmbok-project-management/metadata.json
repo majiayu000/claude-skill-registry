@@ -5,5 +5,12 @@
   "source": "github.com/jgtolentino/insightpulse-odoo",
   "downloaded_at": "2026-02-01T01:34:01.314255Z",
   "dir_name": "pmbok-project-management",
-  "category": "other"
+  "category": "other",
+  "author": "jgtolentino",
+  "source_url": "https://github.com/jgtolentino/insightpulse-odoo/blob/main/docs/claude-code-skills/community/pmbok-project-management/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jgtolentino/insightpulse-odoo/blob/main/docs/claude-code-skills/community/pmbok-project-management/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

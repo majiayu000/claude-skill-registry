@@ -7,5 +7,12 @@
   "dir_name": "story-validator",
   "category": "other",
   "github_path": "user-story-system/.claude/skills/story-validator",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "matteocervelli",
+  "source_url": "https://github.com/matteocervelli/llms/blob/main/user-story-system/.claude/skills/story-validator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Matteo Cervelli",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

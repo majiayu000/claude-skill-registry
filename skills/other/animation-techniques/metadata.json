@@ -5,5 +5,12 @@
   "source": "github.com/creatifcoding/gbg",
   "downloaded_at": "2026-02-02T04:25:57.076590Z",
   "dir_name": "animation-techniques",
-  "category": "other"
+  "category": "other",
+  "author": "creatifcoding",
+  "source_url": "https://github.com/creatifcoding/gbg/blob/main/packages/tmnl/.claude/skills/animation-techniques/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/creatifcoding/gbg/blob/main/packages/tmnl/.claude/skills/animation-techniques/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

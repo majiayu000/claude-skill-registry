@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/aerospace",
   "github_branch": "main",
-  "dir_name": "aerospace-whilp-dotfiles"
+  "dir_name": "aerospace-whilp-dotfiles",
+  "author": "whilp",
+  "source_url": "https://github.com/whilp/dotfiles/blob/main/.claude/skills/aerospace/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 wcm",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

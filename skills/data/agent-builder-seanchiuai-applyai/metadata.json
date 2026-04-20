@@ -5,5 +5,12 @@
   "source": "github.com/seanchiuai/applyai",
   "downloaded_at": "2026-02-04T04:58:56.042742Z",
   "dir_name": "agent-builder-seanchiuai-applyai",
-  "category": "data"
+  "category": "data",
+  "author": "seanchiuai",
+  "source_url": "https://github.com/seanchiuai/applyai/blob/main/.claude/skills/agent-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seanchiuai/applyai/blob/main/.claude/skills/agent-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

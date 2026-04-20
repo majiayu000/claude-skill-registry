@@ -5,5 +5,12 @@
   "description": "Set up Claude Code cloud/mobile environments for AILANG development. Use when starting a new cloud session, when tools are missing (Go, make, gh), or when user says \"setup cloud\", \"setup environment\",",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:28.475974Z",
-  "dir_name": "cloud-environment-setup"
+  "dir_name": "cloud-environment-setup",
+  "author": "sunholo-data",
+  "source_url": "https://github.com/sunholo-data/ailang",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

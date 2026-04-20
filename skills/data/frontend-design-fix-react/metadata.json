@@ -5,5 +5,12 @@
   "source": "github.com/matteocervelli/llms",
   "downloaded_at": "2026-02-04T02:42:44.904261Z",
   "dir_name": "frontend-design-fix-react",
-  "category": "data"
+  "category": "data",
+  "author": "matteocervelli",
+  "source_url": "https://github.com/matteocervelli/llms/blob/main/frontend-design-system/skills/_archive/frontend-design-fix-react/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Matteo Cervelli",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

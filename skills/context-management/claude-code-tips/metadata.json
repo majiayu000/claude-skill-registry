@@ -7,5 +7,12 @@
   "stars": 1,
   "source": "github.com/januff/claude-code-tips",
   "downloaded_at": "2026-01-24T16:15:03.382147Z",
-  "dir_name": "claude-code-tips"
+  "dir_name": "claude-code-tips",
+  "author": "januff",
+  "source_url": "https://github.com/januff/claude-code-tips/blob/main/Claude Code Tips/2025-12-26-handoff-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/januff/claude-code-tips/blob/main/Claude Code Tips/2025-12-26-handoff-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

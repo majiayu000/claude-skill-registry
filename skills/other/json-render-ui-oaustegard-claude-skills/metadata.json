@@ -5,5 +5,12 @@
   "source": "github.com/oaustegard/claude-skills",
   "downloaded_at": "2026-01-29T07:52:48.145701Z",
   "dir_name": "json-render-ui-oaustegard-claude-skills",
-  "category": "other"
+  "category": "other",
+  "author": "oaustegard",
+  "source_url": "https://github.com/oaustegard/claude-skills/blob/main/json-render-ui/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Oskar Austegard",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

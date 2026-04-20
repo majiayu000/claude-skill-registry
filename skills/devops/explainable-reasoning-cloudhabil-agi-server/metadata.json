@@ -5,5 +5,12 @@
   "description": "Produce transparent reasoning trails and decision explanations; use when asked to justify actions or audits.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:28.438165Z",
-  "dir_name": "explainable-reasoning-cloudhabil-agi-server"
+  "dir_name": "explainable-reasoning-cloudhabil-agi-server",
+  "author": "Cloudhabil",
+  "source_url": "https://github.com/Cloudhabil/AGI-Server",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cloudhabil/AGI-Server",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

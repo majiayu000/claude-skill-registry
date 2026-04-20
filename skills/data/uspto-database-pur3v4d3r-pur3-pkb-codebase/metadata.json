@@ -5,5 +5,12 @@
   "source": "github.com/pur3v4d3r/pur3-pkb-codebase",
   "downloaded_at": "2026-02-04T04:52:40.454031Z",
   "dir_name": "uspto-database-pur3v4d3r-pur3-pkb-codebase",
-  "category": "data"
+  "category": "data",
+  "author": "pur3v4d3r",
+  "source_url": "https://github.com/pur3v4d3r/pur3-pkb-codebase/blob/main/.claude/skills/__scientific-skills/uspto-database/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pur3v4d3r/pur3-pkb-codebase/blob/main/.claude/skills/__scientific-skills/uspto-database/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

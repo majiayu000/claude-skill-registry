@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
-  "dir_name": "firecrawl-load-scale-jeremylongshore-claude-code-plugins--2"
+  "dir_name": "firecrawl-load-scale-jeremylongshore-claude-code-plugins--2",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/firecrawl-pack/skills/firecrawl-load-scale/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

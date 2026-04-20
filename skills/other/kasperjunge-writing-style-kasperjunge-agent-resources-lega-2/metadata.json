@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/kasperjunge/agent-resources-legacy",
-  "dir_name": "kasperjunge-writing-style-kasperjunge-agent-resources-lega-2"
+  "dir_name": "kasperjunge-writing-style-kasperjunge-agent-resources-lega-2",
+  "author": "kasperjunge",
+  "source_url": "https://github.com/kasperjunge/agent-resources-legacy/blob/main/.claude/skills/kasperjunge-writing-style/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kasperjunge/agent-resources-legacy/blob/main/.claude/skills/kasperjunge-writing-style/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

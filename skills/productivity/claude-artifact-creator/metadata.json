@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/claude-artifact-creator",
   "github_branch": "main",
-  "dir_name": "claude-artifact-creator"
+  "dir_name": "claude-artifact-creator",
+  "author": "thapaliyabikendra",
+  "source_url": "https://github.com/thapaliyabikendra/ai-artifacts/blob/main/.claude/skills/claude-artifact-creator/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

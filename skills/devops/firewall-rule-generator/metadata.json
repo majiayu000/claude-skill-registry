@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:09.041379Z",
   "github_path": "planned-skills/generated/14-gcp-skills/firewall-rule-generator",
   "github_branch": "main",
-  "dir_name": "firewall-rule-generator"
+  "dir_name": "firewall-rule-generator",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/planned-skills/generated/14-gcp-skills/firewall-rule-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

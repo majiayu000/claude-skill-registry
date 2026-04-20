@@ -5,5 +5,12 @@
   "source": "github.com/oimiragieo/agent-studio",
   "downloaded_at": "2026-01-29T05:32:16.995726Z",
   "dir_name": "logging-module-usage-oimiragieo-agent-studio",
-  "category": "other"
+  "category": "other",
+  "author": "oimiragieo",
+  "source_url": "https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/logging-module-usage/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/logging-module-usage/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

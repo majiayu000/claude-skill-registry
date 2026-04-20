@@ -5,5 +5,12 @@
   "source": "github.com/tjmaynes/skills",
   "downloaded_at": "2026-02-04T04:46:11.269184Z",
   "dir_name": "morning-paper-generator",
-  "category": "data"
+  "category": "data",
+  "author": "tjmaynes",
+  "source_url": "https://github.com/tjmaynes/skills/blob/main/skills/morning-paper-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 tjmaynes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

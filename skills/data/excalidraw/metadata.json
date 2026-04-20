@@ -5,5 +5,12 @@
   "source": "github.com/vjrivmon/Setup-Software-IA",
   "downloaded_at": "2026-02-04T04:20:35.356959Z",
   "dir_name": "excalidraw",
-  "category": "data"
+  "category": "data",
+  "author": "vjrivmon",
+  "source_url": "https://github.com/vjrivmon/Setup-Software-IA/blob/main/.agents/skills/excalidraw/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Vicente Rivas Monferrer",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/illogical/InstructionLibrary",
   "dir_name": "filesystem-context-illogical-instructionlibrary",
-  "downloaded_at": "2026-02-15T07:35:02.758373Z"
+  "downloaded_at": "2026-02-15T07:35:02.758373Z",
+  "author": "illogical",
+  "source_url": "https://github.com/illogical/InstructionLibrary/blob/main/skills/filesystem-context/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/illogical/InstructionLibrary/blob/main/skills/filesystem-context/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "stars": 5,
   "github_path": ".claude/skills/global-api-design",
   "github_branch": "main",
-  "dir_name": "global-api-design"
+  "dir_name": "global-api-design",
+  "author": "leaderiop",
+  "source_url": "https://github.com/leaderiop/hex-di/blob/main/.claude/skills/global-api-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/leaderiop/hex-di/blob/main/.claude/skills/global-api-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

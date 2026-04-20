@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/ndif-team/skills",
-  "dir_name": "logit-lens"
+  "dir_name": "logit-lens",
+  "author": "ndif-team",
+  "source_url": "https://github.com/ndif-team/skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ndif-team/skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

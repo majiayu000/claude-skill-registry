@@ -5,5 +5,12 @@
   "source": "github.com/panaversity/agentfactory",
   "downloaded_at": "2026-01-29T05:43:36.319946Z",
   "dir_name": "49-docker-for-ai-services-panaversity-agentfactory",
-  "category": "data"
+  "category": "data",
+  "author": "panaversity",
+  "source_url": "https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/06-AI-Cloud-Native-Development/49-docker-for-ai-services/07-docker-image-builder-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/06-AI-Cloud-Native-Development/49-docker-for-ai-services/07-docker-image-builder-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

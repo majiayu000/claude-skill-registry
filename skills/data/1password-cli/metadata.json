@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "1password-cli"
+  "dir_name": "1password-cli",
+  "author": "research-developer",
+  "source_url": "https://github.com/research-developer/1password-cli-skill",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Preston Bourne",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

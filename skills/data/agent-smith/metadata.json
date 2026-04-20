@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:26.462890Z",
   "dir_name": "agent-smith",
   "github_path": "agent-smith-plugin/skills/agent-smith",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "slamb2k",
+  "source_url": "https://github.com/slamb2k/agent-smith/blob/main/agent-smith-plugin/skills/agent-smith/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/slamb2k/agent-smith/blob/main/agent-smith-plugin/skills/agent-smith/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

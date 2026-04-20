@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:11.747305Z",
   "github_path": "docs/claude-code-skills/community/mcp-complete-guide",
   "github_branch": "main",
-  "dir_name": "mcp-complete-guide"
+  "dir_name": "mcp-complete-guide",
+  "author": "jgtolentino",
+  "source_url": "https://github.com/jgtolentino/insightpulse-odoo/blob/main/docs/claude-code-skills/community/mcp-complete-guide/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jgtolentino/insightpulse-odoo/blob/main/docs/claude-code-skills/community/mcp-complete-guide/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

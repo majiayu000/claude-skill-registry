@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:28.160570Z",
   "github_path": "plugins/kintsugi/tile-snake-pattern-stitching/skills/tile-snake-pattern-stitching",
   "github_branch": "main",
-  "dir_name": "tile-snake-pattern-stitching-smith6jt-cop-skills-registry-959485a6"
+  "dir_name": "tile-snake-pattern-stitching-smith6jt-cop-skills-registry-959485a6",
+  "author": "smith6jt-cop",
+  "source_url": "https://github.com/smith6jt-cop/Skills_Registry/blob/main/plugins/kintsugi/tile-snake-pattern-stitching/skills/tile-snake-pattern-stitching/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/smith6jt-cop/Skills_Registry/blob/main/plugins/kintsugi/tile-snake-pattern-stitching/skills/tile-snake-pattern-stitching/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

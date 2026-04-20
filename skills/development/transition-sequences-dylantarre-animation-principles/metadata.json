@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:16.229324Z",
   "github_path": "skills/05-by-animation-type/transition-sequences",
   "github_branch": "main",
-  "dir_name": "transition-sequences-dylantarre-animation-principles"
+  "dir_name": "transition-sequences-dylantarre-animation-principles",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/animation-principles/blob/main/skills/05-by-animation-type/transition-sequences/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

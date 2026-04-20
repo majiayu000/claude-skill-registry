@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "alignment-values-north-star",
   "github_path": "skills/alignment-values-north-star",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "lyndonkl",
+  "source_url": "https://github.com/lyndonkl/claude/blob/main/skills/alignment-values-north-star/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lyndonkl/claude/blob/main/skills/alignment-values-north-star/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

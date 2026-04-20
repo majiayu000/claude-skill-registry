@@ -5,5 +5,12 @@
   "description": "Convert dense source-grounded content into a two-speaker dramatized script with persona roles, prosody cues, and interruptions. Use for audio-friendly overviews that stay faithful to cited material.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:25.300451Z",
-  "dir_name": "synthesisdialogue-dramatizer-cloudhabil-agi-server"
+  "dir_name": "synthesisdialogue-dramatizer-cloudhabil-agi-server",
+  "author": "Cloudhabil",
+  "source_url": "https://github.com/Cloudhabil/AGI-Server",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cloudhabil/AGI-Server",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

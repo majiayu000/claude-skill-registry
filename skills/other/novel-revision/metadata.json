@@ -7,5 +7,12 @@
   "dir_name": "novel-revision",
   "category": "other",
   "github_path": "skills/fiction/structure/novel-revision",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jwynia",
+  "source_url": "https://github.com/jwynia/agent-skills/blob/main/skills/fiction/structure/novel-revision/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jwynia/agent-skills/blob/main/skills/fiction/structure/novel-revision/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

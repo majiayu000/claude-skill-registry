@@ -7,5 +7,12 @@
   "dir_name": "prd-to-tasks-smith-happens-xlightsfpptester-308f6644",
   "category": "other",
   "github_path": "skills/prd-to-tasks",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Smith-Happens",
+  "source_url": "https://github.com/Smith-Happens/xlightsfpptester/blob/main/skills/prd-to-tasks/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 TurboBeest",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

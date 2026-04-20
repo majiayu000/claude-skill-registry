@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:18.605832Z",
   "github_path": "skills/11-by-principle-focus/timing-principle-mastery",
   "github_branch": "main",
-  "dir_name": "timing-principle-mastery-dylantarre-animation-principles-6fe790be"
+  "dir_name": "timing-principle-mastery-dylantarre-animation-principles-6fe790be",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/animation-principles/blob/main/skills/11-by-principle-focus/timing-principle-mastery/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

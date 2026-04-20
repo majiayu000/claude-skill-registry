@@ -5,5 +5,12 @@
   "source": "github.com/mvillmow/ProjectOdyssey",
   "downloaded_at": "2026-02-01T04:00:29.585541Z",
   "dir_name": "verify-pr-ready",
-  "category": "other"
+  "category": "other",
+  "author": "mvillmow",
+  "source_url": "https://github.com/mvillmow/ProjectOdyssey/blob/main/.claude/skills/verify-pr-ready/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2025, ML Odyssey Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

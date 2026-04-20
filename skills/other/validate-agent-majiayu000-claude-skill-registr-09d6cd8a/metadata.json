@@ -7,5 +7,12 @@
   "dir_name": "validate-agent-majiayu000-claude-skill-registr-09d6cd8a",
   "category": "other",
   "github_path": "skills/other/validate-agent",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/other/validate-agent/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

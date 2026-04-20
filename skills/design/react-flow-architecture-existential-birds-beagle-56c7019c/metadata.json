@@ -11,5 +11,12 @@
   "stars": 4,
   "github_path": "skills/react-flow-architecture",
   "github_branch": "main",
-  "dir_name": "react-flow-architecture-existential-birds-beagle-56c7019c"
+  "dir_name": "react-flow-architecture-existential-birds-beagle-56c7019c",
+  "author": "existential-birds",
+  "source_url": "https://github.com/existential-birds/beagle/blob/main/skills/react-flow-architecture/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

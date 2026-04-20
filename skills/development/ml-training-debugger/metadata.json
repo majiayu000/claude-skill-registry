@@ -7,5 +7,12 @@
   "stars": 2,
   "source": "github.com/DNYoussef/ai-chrome-extension",
   "downloaded_at": "2026-01-24T16:15:55.549576Z",
-  "dir_name": "ml-training-debugger"
+  "dir_name": "ml-training-debugger",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/ml-training-debugger/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

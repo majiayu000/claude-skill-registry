@@ -7,5 +7,12 @@
   "dir_name": "auditability",
   "category": "other",
   "github_path": "44-ai-governance/auditability",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/cerebratechai-claude-skills/blob/main/44-ai-governance/auditability/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

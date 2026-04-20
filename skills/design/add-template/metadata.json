@@ -9,5 +9,12 @@
   ],
   "stars": 230,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "add-template"
+  "dir_name": "add-template",
+  "author": "TonnyWong1052",
+  "source_url": "https://github.com/TonnyWong1052/UI-Prompt",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TonnyWong1052/UI-Prompt",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

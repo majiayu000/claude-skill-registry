@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/api-design-principles",
   "github_branch": "main",
-  "dir_name": "api-design-principles"
+  "dir_name": "api-design-principles",
+  "author": "thapaliyabikendra",
+  "source_url": "https://github.com/thapaliyabikendra/ai-artifacts/blob/main/.claude/skills/api-design-principles/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

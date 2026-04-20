@@ -7,5 +7,12 @@
   "dir_name": "revise-entries-tkgally-je-dict-1",
   "category": "other",
   "github_path": ".claude/skills/revise-entries",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "tkgally",
+  "source_url": "https://github.com/tkgally/je-dict-1/blob/main/.claude/skills/revise-entries/SKILL.md",
+  "license": "CC0-1.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tkgally/je-dict-1/blob/main/.claude/skills/revise-entries/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

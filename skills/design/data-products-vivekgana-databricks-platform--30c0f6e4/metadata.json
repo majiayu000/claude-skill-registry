@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:08.134140Z",
   "github_path": "plugins/databricks-engineering/skills/data-products",
   "github_branch": "main",
-  "dir_name": "data-products-vivekgana-databricks-platform--30c0f6e4"
+  "dir_name": "data-products-vivekgana-databricks-platform--30c0f6e4",
+  "author": "vivekgana",
+  "source_url": "https://github.com/vivekgana/databricks-platform-marketplace/blob/main/plugins/databricks-engineering/skills/data-products/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Your Company",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

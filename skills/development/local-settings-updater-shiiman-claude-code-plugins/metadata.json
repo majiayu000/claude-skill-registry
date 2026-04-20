@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:20.035033Z",
   "github_path": "plugins/shiiman-claude/skills/local-settings-updater",
   "github_branch": "main",
-  "dir_name": "local-settings-updater-shiiman-claude-code-plugins"
+  "dir_name": "local-settings-updater-shiiman-claude-code-plugins",
+  "author": "shiiman",
+  "source_url": "https://github.com/shiiman/claude-code-plugins/blob/main/plugins/shiiman-claude/skills/local-settings-updater/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shiiman/claude-code-plugins/blob/main/plugins/shiiman-claude/skills/local-settings-updater/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

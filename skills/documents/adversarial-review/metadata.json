@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/adversarial-review",
   "github_branch": "main",
-  "dir_name": "adversarial-review"
+  "dir_name": "adversarial-review",
+  "author": "seanchatmangpt",
+  "source_url": "https://github.com/seanchatmangpt/agile-protocol-specification/blob/main/.claude/skills/adversarial-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Sean Chatman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

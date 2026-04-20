@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "plugins/fastmcp-creator/skills/fastmcp-creator",
   "github_branch": "main",
-  "dir_name": "fastmcp-creator-jamie-bitflight-claude-skills"
+  "dir_name": "fastmcp-creator-jamie-bitflight-claude-skills",
+  "author": "Jamie-BitFlight",
+  "source_url": "https://github.com/Jamie-BitFlight/claude_skills/blob/main/plugins/fastmcp-creator/skills/fastmcp-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Jamie-BitFlight/claude_skills/blob/main/plugins/fastmcp-creator/skills/fastmcp-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

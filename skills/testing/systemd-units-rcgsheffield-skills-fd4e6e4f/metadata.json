@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/systemd-units",
   "github_branch": "main",
-  "dir_name": "systemd-units-rcgsheffield-skills-fd4e6e4f"
+  "dir_name": "systemd-units-rcgsheffield-skills-fd4e6e4f",
+  "author": "rcgsheffield",
+  "source_url": "https://github.com/rcgsheffield/skills/blob/main/skills/systemd-units/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 IT Services Research & Innovation team at the University of Sheffield",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

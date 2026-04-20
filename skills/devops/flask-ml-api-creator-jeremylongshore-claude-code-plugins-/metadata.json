@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:06.071801Z",
   "github_path": "planned-skills/generated/08-ml-deployment/flask-ml-api-creator",
   "github_branch": "main",
-  "dir_name": "flask-ml-api-creator-jeremylongshore-claude-code-plugins-"
+  "dir_name": "flask-ml-api-creator-jeremylongshore-claude-code-plugins-",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/planned-skills/generated/08-ml-deployment/flask-ml-api-creator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

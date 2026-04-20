@@ -5,5 +5,12 @@
   "source": "github.com/NammDev/Goads-Krea",
   "downloaded_at": "2026-01-29T07:53:56.708080Z",
   "dir_name": "creativity-nammdev-goads-krea",
-  "category": "other"
+  "category": "other",
+  "author": "NammDev",
+  "source_url": "https://github.com/NammDev/Goads-Krea/blob/main/.claude/skills/creativity/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NammDev/Goads-Krea/blob/main/.claude/skills/creativity/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

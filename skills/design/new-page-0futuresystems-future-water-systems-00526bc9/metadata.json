@@ -8,5 +8,12 @@
     "page"
   ],
   "stars": 0,
-  "dir_name": "new-page-0futuresystems-future-water-systems-00526bc9"
+  "dir_name": "new-page-0futuresystems-future-water-systems-00526bc9",
+  "author": "0futuresystems",
+  "source_url": "https://github.com/0futuresystems/future-water-systems",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/0futuresystems/future-water-systems",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

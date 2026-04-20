@@ -7,5 +7,12 @@
   "dir_name": "design-to-code",
   "category": "other",
   "github_path": "skills/design-to-code",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "flight505",
+  "source_url": "https://github.com/flight505/storybook-assistant/blob/main/skills/design-to-code/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Jesper Vang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

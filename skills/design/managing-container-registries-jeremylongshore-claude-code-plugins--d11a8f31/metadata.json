@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:48.165690Z",
   "github_path": "plugins/devops/container-registry-manager/skills/managing-container-registries",
   "github_branch": "main",
-  "dir_name": "managing-container-registries-jeremylongshore-claude-code-plugins--d11a8f31"
+  "dir_name": "managing-container-registries-jeremylongshore-claude-code-plugins--d11a8f31",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/devops/container-registry-manager/skills/managing-container-registries/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/ancoleman/ai-design-components",
   "downloaded_at": "2026-01-29T05:24:48.534937Z",
   "dir_name": "platform-engineering-ancoleman-ai-design-components",
-  "category": "other"
+  "category": "other",
+  "author": "ancoleman",
+  "source_url": "https://github.com/ancoleman/ai-design-components/blob/main/skills/platform-engineering/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Anton Coleman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

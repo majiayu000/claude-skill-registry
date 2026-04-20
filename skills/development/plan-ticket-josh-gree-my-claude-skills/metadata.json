@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/plan-ticket",
   "github_branch": "main",
-  "dir_name": "plan-ticket-josh-gree-my-claude-skills"
+  "dir_name": "plan-ticket-josh-gree-my-claude-skills",
+  "author": "josh-gree",
+  "source_url": "https://github.com/josh-gree/my-claude-skills/blob/main/skills/plan-ticket/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/josh-gree/my-claude-skills/blob/main/skills/plan-ticket/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

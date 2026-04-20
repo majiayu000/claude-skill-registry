@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:33.175951Z",
   "github_path": ".github/skills/writing-changelogs",
   "github_branch": "main",
-  "dir_name": "writing-changelogs-stabilefrisur-metapyle"
+  "dir_name": "writing-changelogs-stabilefrisur-metapyle",
+  "author": "stabilefrisur",
+  "source_url": "https://github.com/stabilefrisur/metapyle/blob/main/.github/skills/writing-changelogs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Stabile Frisur",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

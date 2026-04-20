@@ -7,5 +7,12 @@
   "dir_name": "world-runtime",
   "category": "other",
   "github_path": "skills/world-runtime",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/world-runtime/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

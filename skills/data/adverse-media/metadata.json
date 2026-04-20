@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:58.384939Z",
   "dir_name": "adverse-media",
   "github_path": "core/.claude/skills/adverse-media",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "babdulhakim2",
+  "source_url": "https://github.com/babdulhakim2/scolo-app/blob/main/core/.claude/skills/adverse-media/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/babdulhakim2/scolo-app/blob/main/core/.claude/skills/adverse-media/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

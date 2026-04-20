@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/interactive-planner",
   "github_branch": "main",
-  "dir_name": "interactive-planner"
+  "dir_name": "interactive-planner",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/interactive-planner/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

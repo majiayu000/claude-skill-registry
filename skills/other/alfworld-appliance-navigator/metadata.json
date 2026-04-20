@@ -9,5 +9,12 @@
   "github_path": "skills/benchmark_skills/alfworld/alfworld-appliance-navigator",
   "github_branch": "main",
   "dir_name": "alfworld-appliance-navigator",
-  "downloaded_at": "2026-02-05T01:44:58.998735Z"
+  "downloaded_at": "2026-02-05T01:44:58.998735Z",
+  "author": "zjunlp",
+  "source_url": "https://github.com/zjunlp/SkillNet/blob/main/skills/benchmark_skills/alfworld/alfworld-appliance-navigator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ZJUNLP",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

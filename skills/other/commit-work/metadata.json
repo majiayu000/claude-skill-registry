@@ -5,5 +5,12 @@
   "source": "github.com/softaworks/agent-toolkit",
   "downloaded_at": "2026-02-02T04:46:27.655998Z",
   "dir_name": "commit-work",
-  "category": "other"
+  "category": "other",
+  "author": "softaworks",
+  "source_url": "https://github.com/softaworks/agent-toolkit/blob/main/skills/commit-work/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Leonardo Flores",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

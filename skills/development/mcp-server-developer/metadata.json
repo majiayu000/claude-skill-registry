@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:21.811183Z",
   "github_path": ".cursor/skills/mcp-server-developer",
   "github_branch": "main",
-  "dir_name": "mcp-server-developer"
+  "dir_name": "mcp-server-developer",
+  "author": "sandraschi",
+  "source_url": "https://github.com/sandraschi/advanced-memory-mcp/blob/main/.cursor/skills/mcp-server-developer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Sandra Schipal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

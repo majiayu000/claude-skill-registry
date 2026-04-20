@@ -5,5 +5,12 @@
   "source": "github.com/younwony/younwony.github.io",
   "downloaded_at": "2026-01-29T07:12:50.840346Z",
   "dir_name": "guide-younwony-younwony-github-io",
-  "category": "other"
+  "category": "other",
+  "author": "younwony",
+  "source_url": "https://github.com/younwony/younwony.github.io/blob/main/.claude/skills/write/guide/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/younwony/younwony.github.io/blob/main/.claude/skills/write/guide/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "bug-bounty-program",
   "category": "other",
   "github_path": ".claude/skills/bug-bounty-program",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "dengineproblem",
+  "source_url": "https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/bug-bounty-program/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/bug-bounty-program/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

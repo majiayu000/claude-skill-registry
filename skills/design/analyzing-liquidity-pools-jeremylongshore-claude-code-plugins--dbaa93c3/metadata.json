@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:46.574387Z",
   "github_path": "plugins/crypto/liquidity-pool-analyzer/skills/analyzing-liquidity-pools",
   "github_branch": "main",
-  "dir_name": "analyzing-liquidity-pools-jeremylongshore-claude-code-plugins--dbaa93c3"
+  "dir_name": "analyzing-liquidity-pools-jeremylongshore-claude-code-plugins--dbaa93c3",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/crypto/liquidity-pool-analyzer/skills/analyzing-liquidity-pools/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/TheBushidoCollective/han",
   "downloaded_at": "2026-01-30T03:33:58.909171Z",
   "dir_name": "cpp-smart-pointers",
-  "category": "other"
+  "category": "other",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han/blob/main/jutsu/jutsu-cpp/skills/cpp-smart-pointers/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

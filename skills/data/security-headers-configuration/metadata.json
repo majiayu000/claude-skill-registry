@@ -5,5 +5,12 @@
   "source": "github.com/secondsky/claude-skills",
   "downloaded_at": "2026-01-29T03:11:06.083453Z",
   "dir_name": "security-headers-configuration",
-  "category": "data"
+  "category": "data",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/security-headers-configuration/skills/security-headers-configuration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

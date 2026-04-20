@@ -5,5 +5,12 @@
   "description": "Diagnose and repair embedding model availability and MSHR index health; use when embedding errors, dimension mismatches, or rebuild failures appear.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:32.811101Z",
-  "dir_name": "embedding-repair"
+  "dir_name": "embedding-repair",
+  "author": "Cloudhabil",
+  "source_url": "https://github.com/Cloudhabil/AGI-Server",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cloudhabil/AGI-Server",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

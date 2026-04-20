@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:43.530622Z",
   "github_path": ".claude/skills/ff-analytics-team/ff-statistical-methods",
   "github_branch": "main",
-  "dir_name": "ff-statistical-methods-zazu-22-ff-data-analytics"
+  "dir_name": "ff-statistical-methods-zazu-22-ff-data-analytics",
+  "author": "zazu-22",
+  "source_url": "https://github.com/zazu-22/ff_data_analytics/blob/main/.claude/skills/ff-analytics-team/ff-statistical-methods/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zazu-22/ff_data_analytics/blob/main/.claude/skills/ff-analytics-team/ff-statistical-methods/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

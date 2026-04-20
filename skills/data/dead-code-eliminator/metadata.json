@@ -5,5 +5,12 @@
   "source": "github.com/cornmanwtf/ABANG-COLEK",
   "downloaded_at": "2026-02-04T03:43:49.637317Z",
   "dir_name": "dead-code-eliminator",
-  "category": "data"
+  "category": "data",
+  "author": "cornmanwtf",
+  "source_url": "https://github.com/cornmanwtf/ABANG-COLEK/blob/main/skills/maintenance-optimization/dead-code-eliminator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cornmanwtf/ABANG-COLEK/blob/main/skills/maintenance-optimization/dead-code-eliminator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

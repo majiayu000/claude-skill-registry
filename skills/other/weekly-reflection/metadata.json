@@ -5,5 +5,12 @@
   "source": "github.com/davekilleen/Dex",
   "downloaded_at": "2026-02-02T02:06:49.546152Z",
   "dir_name": "weekly-reflection",
-  "category": "other"
+  "category": "other",
+  "author": "davekilleen",
+  "source_url": "https://github.com/davekilleen/Dex/blob/main/.claude/skills/_available/leadership/weekly-reflection/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/davekilleen/Dex/blob/main/.claude/skills/_available/leadership/weekly-reflection/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

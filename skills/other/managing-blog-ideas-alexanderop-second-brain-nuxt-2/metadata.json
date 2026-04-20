@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/alexanderop/second-brain-nuxt",
-  "dir_name": "managing-blog-ideas-alexanderop-second-brain-nuxt-2"
+  "dir_name": "managing-blog-ideas-alexanderop-second-brain-nuxt-2",
+  "author": "alexanderop",
+  "source_url": "https://github.com/alexanderop/second-brain-nuxt/blob/main/.claude/skills/managing-blog-ideas/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexanderop/second-brain-nuxt/blob/main/.claude/skills/managing-blog-ideas/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

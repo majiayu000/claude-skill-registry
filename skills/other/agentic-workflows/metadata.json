@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/agentic-workflows",
   "github_branch": "master",
   "dir_name": "agentic-workflows",
-  "downloaded_at": "2026-02-05T01:44:39.211806Z"
+  "downloaded_at": "2026-02-05T01:44:39.211806Z",
+  "author": "HouseGarofalo",
+  "source_url": "https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/agentic-workflows/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 HouseGarofalo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

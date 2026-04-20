@@ -5,5 +5,12 @@
   "description": "Use when gleam-Erlang interoperability including calling Erlang code from Gleam, using Erlang libraries, external functions, working with Erlang types, NIFs, and leveraging the BEAM ecosystem from Gle",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:04.778174Z",
-  "dir_name": "gleam-erlang-interop"
+  "dir_name": "gleam-erlang-interop",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:13.636334Z",
   "github_path": "archive/skills/go-api-gateway",
   "github_branch": "main",
-  "dir_name": "go-api-gateway-raphaelmansuy-k8s-agent-stack-1911cfcb"
+  "dir_name": "go-api-gateway-raphaelmansuy-k8s-agent-stack-1911cfcb",
+  "author": "raphaelmansuy",
+  "source_url": "https://github.com/raphaelmansuy/k8s-agent-stack/blob/main/archive/skills/go-api-gateway/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

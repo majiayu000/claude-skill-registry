@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:14.662289Z",
   "github_path": "plugins/saas-packs/skill-databases/windsurf/skills/windsurf-cicd-github-actions",
   "github_branch": "main",
-  "dir_name": "windsurf-cicd-github-actions-jeremylongshore-claude-code-plugins--f2d41976"
+  "dir_name": "windsurf-cicd-github-actions-jeremylongshore-claude-code-plugins--f2d41976",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/skill-databases/windsurf/skills/windsurf-cicd-github-actions/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

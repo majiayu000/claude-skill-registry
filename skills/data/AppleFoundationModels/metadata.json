@@ -5,5 +5,12 @@
   "source": "github.com/mosif16/codex-Skills",
   "downloaded_at": "2026-01-28T03:15:08.715919Z",
   "dir_name": "applefoundationmodels",
-  "category": "data"
+  "category": "data",
+  "author": "mosif16",
+  "source_url": "https://github.com/mosif16/codex-Skills/blob/main/skills/AppleFoundationModels/SKILL.MD",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mosif16/codex-Skills/blob/main/skills/AppleFoundationModels/SKILL.MD",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

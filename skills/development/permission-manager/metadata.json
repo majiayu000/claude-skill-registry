@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:59.514042Z",
   "github_path": "plugins/faber-cloud/skills/infra-permission-manager",
   "github_branch": "main",
-  "dir_name": "permission-manager"
+  "dir_name": "permission-manager",
+  "author": "fractary",
+  "source_url": "https://github.com/fractary/claude-plugins/blob/main/plugins/faber-cloud/skills/infra-permission-manager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fractary/claude-plugins/blob/main/plugins/faber-cloud/skills/infra-permission-manager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

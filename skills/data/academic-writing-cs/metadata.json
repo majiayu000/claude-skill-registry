@@ -9,5 +9,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "academic-writing-cs"
+  "dir_name": "academic-writing-cs",
+  "author": "SipengXie2024",
+  "source_url": "https://github.com/SipengXie2024/Helios-Writing",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SipengXie2024/Helios-Writing",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "Use when configuring GitLab CI/CD pipelines, defining stages, or setting up workflow rules. Covers pipeline structure, stage ordering, and execution flow.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:04.402195Z",
-  "dir_name": "gitlab-ci-pipeline-configuration"
+  "dir_name": "gitlab-ci-pipeline-configuration",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

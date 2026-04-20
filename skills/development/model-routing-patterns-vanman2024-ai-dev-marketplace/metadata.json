@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:24.102216Z",
   "github_path": "plugins/openrouter/skills/model-routing-patterns",
   "github_branch": "main",
-  "dir_name": "model-routing-patterns-vanman2024-ai-dev-marketplace"
+  "dir_name": "model-routing-patterns-vanman2024-ai-dev-marketplace",
+  "author": "vanman2024",
+  "source_url": "https://github.com/vanman2024/ai-dev-marketplace/blob/main/plugins/openrouter/skills/model-routing-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vanman2024/ai-dev-marketplace/blob/main/plugins/openrouter/skills/model-routing-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

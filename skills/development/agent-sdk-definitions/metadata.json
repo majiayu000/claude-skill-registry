@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:29.326197Z",
   "github_path": "plugins/goodvibes/skills/create/agent-sdk-definitions",
   "github_branch": "main",
-  "dir_name": "agent-sdk-definitions"
+  "dir_name": "agent-sdk-definitions",
+  "author": "mgd34msu",
+  "source_url": "https://github.com/mgd34msu/goodvibes-plugin/blob/main/plugins/goodvibes/skills/create/agent-sdk-definitions/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 GoodVibes Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

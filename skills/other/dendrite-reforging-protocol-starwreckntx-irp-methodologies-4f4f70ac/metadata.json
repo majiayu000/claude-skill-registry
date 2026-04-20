@@ -7,5 +7,12 @@
   "dir_name": "dendrite-reforging-protocol-starwreckntx-irp-methodologies-4f4f70ac",
   "category": "other",
   "github_path": "skills/dendrite-reforging-protocol",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "starwreckntx",
+  "source_url": "https://github.com/starwreckntx/IRP__METHODOLOGIES-/blob/main/skills/dendrite-reforging-protocol/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/starwreckntx/IRP__METHODOLOGIES-/blob/main/skills/dendrite-reforging-protocol/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

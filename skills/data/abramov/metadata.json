@@ -5,5 +5,12 @@
   "source": "github.com/copyleftdev/sk1llz",
   "downloaded_at": "2026-01-27T03:45:06.471377Z",
   "dir_name": "abramov",
-  "category": "data"
+  "category": "data",
+  "author": "copyleftdev",
+  "source_url": "https://github.com/copyleftdev/sk1llz/blob/main/languages/javascript/abramov/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

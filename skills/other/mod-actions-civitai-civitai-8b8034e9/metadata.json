@@ -7,5 +7,12 @@
   "dir_name": "mod-actions-civitai-civitai-8b8034e9",
   "category": "other",
   "github_path": ".claude/skills/mod-actions",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "civitai",
+  "source_url": "https://github.com/civitai/civitai/blob/main/.claude/skills/mod-actions/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "course-builder의 강의 섹션을 읽고 핵심 기술 내용을 추출하여 Gemini에서 고품질 슬라이드 이미지를 생성하기 위한 프롬프트를 작성합니다.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:42.056669Z",
-  "dir_name": "course-resource-creator"
+  "dir_name": "course-resource-creator",
+  "author": "nfbs2000",
+  "source_url": "https://github.com/nfbs2000/vibe-with-google-ai-divorce-agent-inflearn",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nfbs2000/vibe-with-google-ai-divorce-agent-inflearn",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

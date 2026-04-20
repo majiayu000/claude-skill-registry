@@ -5,5 +5,12 @@
   "source": "github.com/unfinishablemap/unfinishablemap",
   "downloaded_at": "2026-01-29T03:22:37.025509Z",
   "dir_name": "expand-topic",
-  "category": "data"
+  "category": "data",
+  "author": "unfinishablemap",
+  "source_url": "https://github.com/unfinishablemap/unfinishablemap/blob/main/.claude/skills/expand-topic/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Southgate AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

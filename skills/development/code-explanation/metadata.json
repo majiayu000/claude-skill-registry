@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "claude_ctx_py/assets/skills/code-explanation",
   "github_branch": "main",
-  "dir_name": "code-explanation"
+  "dir_name": "code-explanation",
+  "author": "NickCrew",
+  "source_url": "https://github.com/NickCrew/claude-cortex/blob/main/claude_ctx_py/assets/skills/code-explanation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nicholas Ferguson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

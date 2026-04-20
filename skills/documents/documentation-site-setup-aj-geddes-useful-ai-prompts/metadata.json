@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/documentation-site-setup",
   "github_branch": "main",
-  "dir_name": "documentation-site-setup-aj-geddes-useful-ai-prompts"
+  "dir_name": "documentation-site-setup-aj-geddes-useful-ai-prompts",
+  "author": "aj-geddes",
+  "source_url": "https://github.com/aj-geddes/useful-ai-prompts/blob/main/skills/documentation-site-setup/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AJ Geddes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

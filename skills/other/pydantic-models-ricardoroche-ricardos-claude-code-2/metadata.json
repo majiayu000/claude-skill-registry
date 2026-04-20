@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/ricardoroche/ricardos-claude-code",
-  "dir_name": "pydantic-models-ricardoroche-ricardos-claude-code-2"
+  "dir_name": "pydantic-models-ricardoroche-ricardos-claude-code-2",
+  "author": "ricardoroche",
+  "source_url": "https://github.com/ricardoroche/ricardos-claude-code/blob/main/.claude/skills/pydantic-models/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ricardoroche/ricardos-claude-code/blob/main/.claude/skills/pydantic-models/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

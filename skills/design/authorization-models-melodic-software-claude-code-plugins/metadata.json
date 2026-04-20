@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:10.401249Z",
   "github_path": "plugins/security/skills/authorization-models",
   "github_branch": "main",
-  "dir_name": "authorization-models-melodic-software-claude-code-plugins"
+  "dir_name": "authorization-models-melodic-software-claude-code-plugins",
+  "author": "melodic-software",
+  "source_url": "https://github.com/melodic-software/claude-code-plugins/blob/main/plugins/security/skills/authorization-models/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Melodic Software",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/Ryno-Crypto-Mining-Services/braiins-insights-mcp-server",
   "downloaded_at": "2026-01-29T05:43:48.340311Z",
   "dir_name": "researcher-role-skill-ryno-crypto-mining-s-braiins-insights-mcp",
-  "category": "data"
+  "category": "data",
+  "author": "Ryno-Crypto-Mining-Services",
+  "source_url": "https://github.com/Ryno-Crypto-Mining-Services/braiins-insights-mcp-server/blob/main/docs/claude/skills/researcher-role-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Ryno-Crypto-Mining-Services/braiins-insights-mcp-server/blob/main/docs/claude/skills/researcher-role-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

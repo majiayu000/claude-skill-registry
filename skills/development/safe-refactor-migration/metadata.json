@@ -5,5 +5,12 @@
   "description": "Plan and execute large refactors with shadow mode and rollback.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:25.734684Z",
-  "dir_name": "safe-refactor-migration"
+  "dir_name": "safe-refactor-migration",
+  "author": "CheekyCodexConjurer",
+  "source_url": "https://github.com/CheekyCodexConjurer/quant-lab",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CheekyCodexConjurer/quant-lab",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "llm-function-calling-amnadtaowsoam-cerebratechai-claude",
   "category": "other",
   "github_path": "06-ai-ml-production/llm-function-calling",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/cerebratechai-claude-skills/blob/main/06-ai-ml-production/llm-function-calling/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

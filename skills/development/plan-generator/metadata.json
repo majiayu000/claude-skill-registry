@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/nadavyigal/Running-coach-",
   "downloaded_at": "2026-01-24T16:15:49.163615Z",
-  "dir_name": "plan-generator"
+  "dir_name": "plan-generator",
+  "author": "nadavyigal",
+  "source_url": "https://github.com/nadavyigal/Running-coach-/blob/main/.codex/skills/plan-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nadavyigal/Running-coach-/blob/main/.codex/skills/plan-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

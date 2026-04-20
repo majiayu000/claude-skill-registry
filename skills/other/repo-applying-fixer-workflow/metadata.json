@@ -5,5 +5,12 @@
   "source": "github.com/wahidyankf/open-sharia-enterprise",
   "downloaded_at": "2026-01-17T03:27:13.893982Z",
   "dir_name": "repo-applying-fixer-workflow",
-  "category": "other"
+  "category": "other",
+  "author": "wahidyankf",
+  "source_url": "https://github.com/wahidyankf/open-sharia-enterprise/blob/main/.opencode/skill/repo-applying-fixer-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025-2026 wahidyankf",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

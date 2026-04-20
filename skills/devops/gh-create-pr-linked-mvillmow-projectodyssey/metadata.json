@@ -10,5 +10,12 @@
   "stars": 8,
   "github_path": ".claude/skills/gh-create-pr-linked",
   "github_branch": "main",
-  "dir_name": "gh-create-pr-linked-mvillmow-projectodyssey"
+  "dir_name": "gh-create-pr-linked-mvillmow-projectodyssey",
+  "author": "mvillmow",
+  "source_url": "https://github.com/mvillmow/ProjectOdyssey/blob/main/.claude/skills/gh-create-pr-linked/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2025, ML Odyssey Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

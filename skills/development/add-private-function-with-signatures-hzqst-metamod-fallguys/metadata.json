@@ -7,5 +7,12 @@
   "stars": 16,
   "source": "github.com/hzqst/metamod-fallguys",
   "downloaded_at": "2026-01-24T16:15:49.174216Z",
-  "dir_name": "add-private-function-with-signatures-hzqst-metamod-fallguys"
+  "dir_name": "add-private-function-with-signatures-hzqst-metamod-fallguys",
+  "author": "hzqst",
+  "source_url": "https://github.com/hzqst/metamod-fallguys/blob/main/.codex/skills/add-private-function-with-signatures/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 hzqst",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

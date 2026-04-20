@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/agentic-quality-engineering",
   "github_branch": "main",
-  "dir_name": "agentic-quality-engineering"
+  "dir_name": "agentic-quality-engineering",
+  "author": "proffesor-for-testing",
+  "source_url": "https://github.com/proffesor-for-testing/sentinel-api-testing/blob/main/.claude/skills/agentic-quality-engineering/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sentinel API Testing Platform",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

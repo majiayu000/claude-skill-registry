@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:45.118785Z",
   "github_path": "plugins/ai-ml/ollama-local-ai/skills/ollama-setup",
   "github_branch": "main",
-  "dir_name": "ollama-setup"
+  "dir_name": "ollama-setup",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/ai-ml/ollama-local-ai/skills/ollama-setup/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

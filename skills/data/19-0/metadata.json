@@ -5,5 +5,12 @@
   "source": "github.com/unclecatvn/agent-skills",
   "downloaded_at": "2026-02-04T04:51:03.293068Z",
   "dir_name": "19-0",
-  "category": "data"
+  "category": "data",
+  "author": "unclecatvn",
+  "source_url": "https://github.com/unclecatvn/agent-skills/blob/main/skills/odoo/19.0/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 UncleCat",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

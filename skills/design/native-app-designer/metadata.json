@@ -11,5 +11,12 @@
   "stars": 1,
   "github_path": ".claude/skills/native-app-designer",
   "github_branch": "main",
-  "dir_name": "native-app-designer"
+  "dir_name": "native-app-designer",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/native-app-designer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/nahisaho/MUSUBI",
-  "dir_name": "requirements-reviewer-nahisaho-musubi-2"
+  "dir_name": "requirements-reviewer-nahisaho-musubi-2",
+  "author": "nahisaho",
+  "source_url": "https://github.com/nahisaho/MUSUBI/blob/main/src/templates/agents/claude-code/skills/requirements-reviewer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MUSUBI Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

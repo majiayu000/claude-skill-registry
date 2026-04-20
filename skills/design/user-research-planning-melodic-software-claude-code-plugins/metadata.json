@@ -5,5 +5,12 @@
   "description": "Plan user research studies - method selection, participant recruitment, study design, and research questions for generative and evaluative research.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:14.769320Z",
-  "dir_name": "user-research-planning-melodic-software-claude-code-plugins"
+  "dir_name": "user-research-planning-melodic-software-claude-code-plugins",
+  "author": "melodic-software",
+  "source_url": "https://github.com/melodic-software/claude-code-plugins",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Melodic Software",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

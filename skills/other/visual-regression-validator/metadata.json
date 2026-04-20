@@ -7,5 +7,12 @@
   "dir_name": "visual-regression-validator",
   "category": "other",
   "github_path": "skills/visual-regression-validator",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Smith-Happens",
+  "source_url": "https://github.com/Smith-Happens/xlightsfpptester/blob/main/skills/visual-regression-validator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 TurboBeest",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

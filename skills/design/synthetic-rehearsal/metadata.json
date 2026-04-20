@@ -5,5 +5,12 @@
   "description": "Run autonomous simulations and synthetic user rehearsals for risk, crisis, or UX validation; use when asked to simulate scenarios, tabletop exercises, or agent-based modeling.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:29.090273Z",
-  "dir_name": "synthetic-rehearsal"
+  "dir_name": "synthetic-rehearsal",
+  "author": "Cloudhabil",
+  "source_url": "https://github.com/Cloudhabil/AGI-Server",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cloudhabil/AGI-Server",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

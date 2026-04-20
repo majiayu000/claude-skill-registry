@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:09.103984Z",
   "github_path": "plugins/requirements-elicitation/skills/interview-conducting",
   "github_branch": "main",
-  "dir_name": "interview-conducting-melodic-software-claude-code-plugins-debbc9bc"
+  "dir_name": "interview-conducting-melodic-software-claude-code-plugins-debbc9bc",
+  "author": "melodic-software",
+  "source_url": "https://github.com/melodic-software/claude-code-plugins/blob/main/plugins/requirements-elicitation/skills/interview-conducting/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Melodic Software",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "wrap-up",
   "category": "other",
   "github_path": ".agent/skills/wrap_up_gwexpy",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "tatsuki-washimi",
+  "source_url": "https://github.com/tatsuki-washimi/gwexpy/blob/main/.agent/skills/wrap_up_gwexpy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tatsuki Washimi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

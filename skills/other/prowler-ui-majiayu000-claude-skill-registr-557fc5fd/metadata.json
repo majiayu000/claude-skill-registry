@@ -5,5 +5,12 @@
   "source": "github.com/majiayu000/claude-skill-registry",
   "downloaded_at": "2026-02-02T04:36:17.867587Z",
   "dir_name": "prowler-ui-majiayu000-claude-skill-registr-557fc5fd",
-  "category": "other"
+  "category": "other",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/prowler-ui/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

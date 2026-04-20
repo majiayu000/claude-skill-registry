@@ -9,5 +9,12 @@
   "github_path": "plugins/typescript-experts/skills/add-mcp-tool",
   "github_branch": "main",
   "dir_name": "add-mcp-tool",
-  "downloaded_at": "2026-02-05T01:44:46.892821Z"
+  "downloaded_at": "2026-02-05T01:44:46.892821Z",
+  "author": "jpoutrin",
+  "source_url": "https://github.com/jpoutrin/product-forge/blob/main/plugins/typescript-experts/skills/add-mcp-tool/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 jpoutrin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

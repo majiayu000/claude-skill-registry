@@ -5,5 +5,12 @@
   "description": "Add tasks to daily note log with due dates. Triggers when user mentions creating a task with a deadline like \"add a task to do X by Y\" where Y is a due date. Only fires when a due date is provided.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:56.555919Z",
-  "dir_name": "add-task"
+  "dir_name": "add-task",
+  "author": "bencassie",
+  "source_url": "https://github.com/bencassie/flywheel",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bencassie/flywheel",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/Unsupervisedcom/deepwork",
-  "dir_name": "manual-tests-run-fire-tests-unsupervisedcom-deepwork"
+  "dir_name": "manual-tests-run-fire-tests-unsupervisedcom-deepwork",
+  "author": "Unsupervisedcom",
+  "source_url": "https://github.com/Unsupervisedcom/deepwork",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Unsupervisedcom/deepwork",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

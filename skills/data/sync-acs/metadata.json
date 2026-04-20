@@ -5,5 +5,12 @@
   "source": "github.com/anton-abyzov/specweave",
   "downloaded_at": "2026-02-04T04:41:17.297898Z",
   "dir_name": "sync-acs",
-  "category": "data"
+  "category": "data",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave/skills/sync-acs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

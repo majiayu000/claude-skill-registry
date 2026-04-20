@@ -5,5 +5,12 @@
   "source": "github.com/carmandale/agent-config",
   "downloaded_at": "2026-02-02T04:55:32.261417Z",
   "dir_name": "slb-carmandale-agent-config",
-  "category": "other"
+  "category": "other",
+  "author": "carmandale",
+  "source_url": "https://github.com/carmandale/agent-config/blob/main/skills/tools/slb/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/carmandale/agent-config/blob/main/skills/tools/slb/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

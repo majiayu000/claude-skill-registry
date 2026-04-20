@@ -5,5 +5,12 @@
   "source": "github.com/d-o-hub/rust-self-learning-memory",
   "downloaded_at": "2026-01-29T07:03:24.202708Z",
   "dir_name": "release-guard-d-o-hub-rust-self-learning-m",
-  "category": "other"
+  "category": "other",
+  "author": "d-o-hub",
+  "source_url": "https://github.com/d-o-hub/rust-self-learning-memory/blob/main/.claude/skills/release-guard/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2019 Zachary Rice",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

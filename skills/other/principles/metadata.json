@@ -7,5 +7,12 @@
   "dir_name": "principles",
   "category": "other",
   "github_path": ".claude/library/principles",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "mgreenly",
+  "source_url": "https://github.com/mgreenly/ikigai/blob/main/.claude/library/principles/SKILL.md",
+  "license": "MIT-0",
+  "copyright": "Copyright (c) 2025 Michael Greenly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

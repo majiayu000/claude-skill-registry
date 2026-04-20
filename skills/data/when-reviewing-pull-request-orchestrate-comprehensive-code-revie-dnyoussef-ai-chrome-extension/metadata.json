@@ -5,5 +5,12 @@
   "source": "github.com/DNYoussef/ai-chrome-extension",
   "downloaded_at": "2026-02-04T02:09:20.543647Z",
   "dir_name": "when-reviewing-pull-request-orchestrate-comprehensive-code-revie-dnyoussef-ai-chrome-extension",
-  "category": "data"
+  "category": "data",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/when-reviewing-pull-request-orchestrate-comprehensive-code-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "agent-messaging-23blocks-os-ai-maestro",
   "category": "other",
   "github_path": "skills/agent-messaging",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "23blocks-OS",
+  "source_url": "https://github.com/23blocks-OS/ai-maestro/blob/main/skills/agent-messaging/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Juan Peláez / 23blocks",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

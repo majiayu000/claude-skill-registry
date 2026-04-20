@@ -5,5 +5,12 @@
   "description": "Trace cryptocurrency wallet activity and blockchain transactions",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:52.630567Z",
-  "dir_name": "cryptocurrency-tracing"
+  "dir_name": "cryptocurrency-tracing",
+  "author": "babdulhakim2",
+  "source_url": "https://github.com/babdulhakim2/scolo-app",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/babdulhakim2/scolo-app",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

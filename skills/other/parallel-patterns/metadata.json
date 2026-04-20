@@ -5,5 +5,12 @@
   "source": "github.com/a5c-ai/babysitter",
   "downloaded_at": "2026-01-28T00:55:27.286598Z",
   "dir_name": "parallel-patterns",
-  "category": "other"
+  "category": "other",
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/plugins/babysitter/skills/babysit/process/specializations/gpu-programming/skills/parallel-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 A5C AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/oimiragieo/agent-studio",
   "downloaded_at": "2026-01-29T05:32:20.559695Z",
   "dir_name": "workflow-creator",
-  "category": "data"
+  "category": "data",
+  "author": "oimiragieo",
+  "source_url": "https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/workflow-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/workflow-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

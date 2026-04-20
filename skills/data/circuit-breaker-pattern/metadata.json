@@ -11,5 +11,12 @@
   "stars": 25,
   "dir_name": "circuit-breaker-pattern",
   "github_path": "skills/circuit-breaker-pattern",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "aj-geddes",
+  "source_url": "https://github.com/aj-geddes/useful-ai-prompts/blob/main/skills/circuit-breaker-pattern/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AJ Geddes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

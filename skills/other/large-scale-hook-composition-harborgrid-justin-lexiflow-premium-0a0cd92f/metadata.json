@@ -7,5 +7,12 @@
   "dir_name": "large-scale-hook-composition-harborgrid-justin-lexiflow-premium-0a0cd92f",
   "category": "other",
   "github_path": "frontend/.github-skills/large-scale-hook-composition",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "harborgrid-justin",
+  "source_url": "https://github.com/harborgrid-justin/lexiflow-premium/blob/main/frontend/.github-skills/large-scale-hook-composition/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/harborgrid-justin/lexiflow-premium/blob/main/frontend/.github-skills/large-scale-hook-composition/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:27.156090Z",
   "dir_name": "solid-queue-coder",
   "github_path": "plugins/majestic-rails/skills/solid-queue-coder",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "majesticlabs-dev",
+  "source_url": "https://github.com/majesticlabs-dev/majestic-marketplace/blob/main/plugins/majestic-rails/skills/solid-queue-coder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Majestic Labs LLC",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/aerospace-config",
   "github_branch": "main",
-  "dir_name": "aerospace-config-alexfazio-cc-skills"
+  "dir_name": "aerospace-config-alexfazio-cc-skills",
+  "author": "alexfazio",
+  "source_url": "https://github.com/alexfazio/cc-skills/blob/main/skills/aerospace-config/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexfazio/cc-skills/blob/main/skills/aerospace-config/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

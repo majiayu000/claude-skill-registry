@@ -11,5 +11,12 @@
   ],
   "stars": 8,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "chain-estimation-decision-storytelling"
+  "dir_name": "chain-estimation-decision-storytelling",
+  "author": "lyndonkl",
+  "source_url": "https://github.com/lyndonkl/claude",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lyndonkl/claude",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

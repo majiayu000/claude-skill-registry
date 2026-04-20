@@ -5,5 +5,12 @@
   "description": "Integrate and maintain the Instagram/Facebook social wall for case studies and blogs in this repo, including manual import workflows, Meta Graph API setup, compliance endpoints, and SEO/performance/se",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:11.603614Z",
-  "dir_name": "social-feed-integration"
+  "dir_name": "social-feed-integration",
+  "author": "0futuresystems",
+  "source_url": "https://github.com/0futuresystems/future-water-systems",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/0futuresystems/future-water-systems",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

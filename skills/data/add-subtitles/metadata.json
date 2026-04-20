@@ -5,5 +5,12 @@
   "source": "github.com/tpott/pub_musings",
   "downloaded_at": "2026-02-04T04:42:49.857585Z",
   "dir_name": "add-subtitles",
-  "category": "data"
+  "category": "data",
+  "author": "tpott",
+  "source_url": "https://github.com/tpott/pub_musings/blob/main/cc_plugins/skills/add-subtitles/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2018 tpott",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

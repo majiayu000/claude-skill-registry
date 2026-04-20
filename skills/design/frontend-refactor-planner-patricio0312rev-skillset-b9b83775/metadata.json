@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:08.385135Z",
   "github_path": "templates/frontend/frontend-refactor-planner",
   "github_branch": "main",
-  "dir_name": "frontend-refactor-planner-patricio0312rev-skillset-b9b83775"
+  "dir_name": "frontend-refactor-planner-patricio0312rev-skillset-b9b83775",
+  "author": "patricio0312rev",
+  "source_url": "https://github.com/patricio0312rev/skillset/blob/main/templates/frontend/frontend-refactor-planner/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Patricio Marroquin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

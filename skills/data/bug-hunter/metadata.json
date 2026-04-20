@@ -5,5 +5,12 @@
   "source": "github.com/nahisaho/MUSUBI",
   "downloaded_at": "2026-02-04T04:06:11.916031Z",
   "dir_name": "bug-hunter",
-  "category": "data"
+  "category": "data",
+  "author": "nahisaho",
+  "source_url": "https://github.com/nahisaho/MUSUBI/blob/main/src/templates/agents/claude-code/skills/bug-hunter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MUSUBI Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

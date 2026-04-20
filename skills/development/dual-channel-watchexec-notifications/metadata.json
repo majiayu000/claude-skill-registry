@@ -5,5 +5,12 @@
   "description": "Sends dual-channel notifications (Telegram + Pushover) on watchexec events with proper formatting. Use when monitoring file changes, process restarts, or setting up alerts.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:41.994413Z",
-  "dir_name": "dual-channel-watchexec-notifications"
+  "dir_name": "dual-channel-watchexec-notifications",
+  "author": "terrylica",
+  "source_url": "https://github.com/terrylica/cc-skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Terry Li",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

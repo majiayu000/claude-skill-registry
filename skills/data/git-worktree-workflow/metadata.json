@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/vamseeachanta/workspace-hub",
-  "dir_name": "git-worktree-workflow"
+  "dir_name": "git-worktree-workflow",
+  "author": "vamseeachanta",
+  "source_url": "https://github.com/vamseeachanta/workspace-hub",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vamseeachanta/workspace-hub",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

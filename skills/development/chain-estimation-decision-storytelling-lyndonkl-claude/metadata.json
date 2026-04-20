@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/chain-estimation-decision-storytelling",
   "github_branch": "main",
-  "dir_name": "chain-estimation-decision-storytelling-lyndonkl-claude"
+  "dir_name": "chain-estimation-decision-storytelling-lyndonkl-claude",
+  "author": "lyndonkl",
+  "source_url": "https://github.com/lyndonkl/claude/blob/main/skills/chain-estimation-decision-storytelling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lyndonkl/claude/blob/main/skills/chain-estimation-decision-storytelling/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

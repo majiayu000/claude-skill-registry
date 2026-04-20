@@ -10,5 +10,12 @@
   "stars": 25,
   "dir_name": "ml-model-explanation",
   "github_path": "skills/ml-model-explanation",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "aj-geddes",
+  "source_url": "https://github.com/aj-geddes/useful-ai-prompts/blob/main/skills/ml-model-explanation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AJ Geddes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

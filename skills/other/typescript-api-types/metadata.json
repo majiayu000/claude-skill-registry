@@ -5,5 +5,12 @@
   "source": "github.com/CoderMariusz/MonoPilot",
   "downloaded_at": "2026-02-02T02:41:55.160435Z",
   "dir_name": "typescript-api-types",
-  "category": "other"
+  "category": "other",
+  "author": "CoderMariusz",
+  "source_url": "https://github.com/CoderMariusz/MonoPilot/blob/main/.claude/skills/typescript-api-types/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CoderMariusz/MonoPilot/blob/main/.claude/skills/typescript-api-types/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/adding-new-metric",
   "github_branch": "main",
-  "dir_name": "adding-new-metric-onukura-oss-sustain-guard-c4302a1f"
+  "dir_name": "adding-new-metric-onukura-oss-sustain-guard-c4302a1f",
+  "author": "onukura",
+  "source_url": "https://github.com/onukura/oss-sustain-guard/blob/main/.claude/skills/adding-new-metric/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 OSS Sustain Guard Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

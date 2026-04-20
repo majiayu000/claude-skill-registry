@@ -7,5 +7,12 @@
   "stars": 1,
   "source": "github.com/adaptationio/Skrillz",
   "downloaded_at": "2026-01-24T16:15:32.226261Z",
-  "dir_name": "project-observability-analyzer"
+  "dir_name": "project-observability-analyzer",
+  "author": "adaptationio",
+  "source_url": "https://github.com/adaptationio/Skrillz/blob/main/.claude/skills/project-observability-analyzer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adaptationio/Skrillz/blob/main/.claude/skills/project-observability-analyzer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

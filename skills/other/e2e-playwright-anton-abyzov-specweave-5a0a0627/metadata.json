@@ -7,5 +7,12 @@
   "dir_name": "e2e-playwright-anton-abyzov-specweave-5a0a0627",
   "category": "other",
   "github_path": "plugins/specweave-testing/skills/e2e-playwright",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-testing/skills/e2e-playwright/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

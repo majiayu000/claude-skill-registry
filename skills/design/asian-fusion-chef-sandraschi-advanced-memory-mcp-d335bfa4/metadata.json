@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:18.893193Z",
   "github_path": "skills/culinary/asian-fusion-chef",
   "github_branch": "main",
-  "dir_name": "asian-fusion-chef-sandraschi-advanced-memory-mcp-d335bfa4"
+  "dir_name": "asian-fusion-chef-sandraschi-advanced-memory-mcp-d335bfa4",
+  "author": "sandraschi",
+  "source_url": "https://github.com/sandraschi/advanced-memory-mcp/blob/main/skills/culinary/asian-fusion-chef/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Sandra Schipal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

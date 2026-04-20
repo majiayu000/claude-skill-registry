@@ -10,5 +10,12 @@
   "stars": 0,
   "dir_name": "prompt-writer",
   "github_path": ".claude/skills/prompt-writer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "michael-h-patrianna",
+  "source_url": "https://github.com/michael-h-patrianna/animations/blob/main/.claude/skills/prompt-writer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Michael Haufschild",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

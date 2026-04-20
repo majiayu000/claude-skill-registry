@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:06.244365Z",
   "github_path": "jutsu/jutsu-nestjs/skills/nestjs-guards-interceptors",
   "github_branch": "main",
-  "dir_name": "nestjs-guards-interceptors-thebushidocollective-han"
+  "dir_name": "nestjs-guards-interceptors-thebushidocollective-han",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han/blob/main/jutsu/jutsu-nestjs/skills/nestjs-guards-interceptors/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

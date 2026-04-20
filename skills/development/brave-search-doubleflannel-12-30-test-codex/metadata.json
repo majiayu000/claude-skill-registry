@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/doubleflannel/12-30-test-codex-ip",
   "downloaded_at": "2026-01-24T16:15:06.337804Z",
-  "dir_name": "brave-search-doubleflannel-12-30-test-codex"
+  "dir_name": "brave-search-doubleflannel-12-30-test-codex",
+  "author": "doubleflannel",
+  "source_url": "https://github.com/doubleflannel/12-30-test-codex-ip/blob/main/skills/brave-search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/doubleflannel/12-30-test-codex-ip/blob/main/skills/brave-search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

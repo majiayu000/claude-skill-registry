@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:00.491069Z",
   "github_path": "planned-skills/generated/13-aws-skills/s3-lifecycle-config",
   "github_branch": "main",
-  "dir_name": "s3-lifecycle-config-jeremylongshore-claude-code-plugins--954a8a36"
+  "dir_name": "s3-lifecycle-config-jeremylongshore-claude-code-plugins--954a8a36",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/planned-skills/generated/13-aws-skills/s3-lifecycle-config/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

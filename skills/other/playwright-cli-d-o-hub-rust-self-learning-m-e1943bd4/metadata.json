@@ -5,5 +5,12 @@
   "source": "github.com/d-o-hub/rust-self-learning-memory",
   "downloaded_at": "2026-01-29T01:48:11.604927Z",
   "dir_name": "playwright-cli-d-o-hub-rust-self-learning-m-e1943bd4",
-  "category": "other"
+  "category": "other",
+  "author": "d-o-hub",
+  "source_url": "https://github.com/d-o-hub/rust-self-learning-memory/blob/main/.claude/skills/playwright-cli /SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2019 Zachary Rice",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

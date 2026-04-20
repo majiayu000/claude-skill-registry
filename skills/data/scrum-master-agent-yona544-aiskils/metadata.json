@@ -5,5 +5,12 @@
   "source": "github.com/Yona544/AIskils",
   "downloaded_at": "2026-01-29T08:26:39.021942Z",
   "dir_name": "scrum-master-agent-yona544-aiskils",
-  "category": "data"
+  "category": "data",
+  "author": "Yona544",
+  "source_url": "https://github.com/Yona544/AIskils/blob/main/generated-skills/scrum-master-agent/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Reza Rezvani",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

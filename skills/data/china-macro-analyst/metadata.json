@@ -5,5 +5,12 @@
   "source": "github.com/nicepkg/ai-workflow",
   "downloaded_at": "2026-02-04T02:43:37.709584Z",
   "dir_name": "china-macro-analyst",
-  "category": "data"
+  "category": "data",
+  "author": "nicepkg",
+  "source_url": "https://github.com/nicepkg/ai-workflow/blob/main/workflows/stock-trader-workflow/.claude/skills/china-macro-analyst/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 nicepkg",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

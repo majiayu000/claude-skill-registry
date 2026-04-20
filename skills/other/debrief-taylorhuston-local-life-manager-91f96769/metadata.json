@@ -7,5 +7,12 @@
   "dir_name": "debrief-taylorhuston-local-life-manager-91f96769",
   "category": "other",
   "github_path": ".claude/skills/debrief",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "TaylorHuston",
+  "source_url": "https://github.com/TaylorHuston/local-life-manager/blob/main/.claude/skills/debrief/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TaylorHuston/local-life-manager/blob/main/.claude/skills/debrief/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

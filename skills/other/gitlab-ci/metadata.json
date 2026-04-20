@@ -9,5 +9,12 @@
   "github_path": "skills/gitlab-ci",
   "github_branch": "main",
   "dir_name": "gitlab-ci",
-  "downloaded_at": "2026-02-05T05:45:46.404523Z"
+  "downloaded_at": "2026-02-05T05:45:46.404523Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/gitlab-ci/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

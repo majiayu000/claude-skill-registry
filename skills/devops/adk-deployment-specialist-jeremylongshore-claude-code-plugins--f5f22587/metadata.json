@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:44.552175Z",
   "github_path": "plugins/ai-ml/jeremy-adk-orchestrator/skills/adk-deployment-specialist",
   "github_branch": "main",
-  "dir_name": "adk-deployment-specialist-jeremylongshore-claude-code-plugins--f5f22587"
+  "dir_name": "adk-deployment-specialist-jeremylongshore-claude-code-plugins--f5f22587",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/ai-ml/jeremy-adk-orchestrator/skills/adk-deployment-specialist/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

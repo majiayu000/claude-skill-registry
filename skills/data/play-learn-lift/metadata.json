@@ -5,5 +5,12 @@
   "source": "github.com/SimHacker/moollm",
   "downloaded_at": "2026-02-02T04:06:54.089828Z",
   "dir_name": "play-learn-lift",
-  "category": "data"
+  "category": "data",
+  "author": "SimHacker",
+  "source_url": "https://github.com/SimHacker/moollm/blob/main/skills/play-learn-lift/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Don Hopkins, Leela AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

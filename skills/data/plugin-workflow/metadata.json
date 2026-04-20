@@ -9,5 +9,12 @@
   ],
   "stars": 47,
   "source": "local",
-  "dir_name": "plugin-workflow"
+  "dir_name": "plugin-workflow",
+  "author": "glittercowboy",
+  "source_url": "https://github.com/glittercowboy/plugin-freedom-system",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/glittercowboy/plugin-freedom-system",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

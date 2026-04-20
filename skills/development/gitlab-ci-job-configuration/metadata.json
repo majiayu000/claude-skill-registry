@@ -5,5 +5,12 @@
   "description": "Use when defining GitLab CI jobs, configuring scripts, setting up environments, or managing job dependencies. Covers job structure and execution options.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:04.308678Z",
-  "dir_name": "gitlab-ci-job-configuration"
+  "dir_name": "gitlab-ci-job-configuration",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

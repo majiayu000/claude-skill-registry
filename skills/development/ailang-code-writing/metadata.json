@@ -5,5 +5,12 @@
   "description": "Write and run AILANG code with correct syntax. Use when user asks to write AILANG programs, fix AILANG syntax errors, run AILANG code, or needs help with AILANG syntax. Includes version checking, synt",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:28.743273Z",
-  "dir_name": "ailang-code-writing"
+  "dir_name": "ailang-code-writing",
+  "author": "sunholo-data",
+  "source_url": "https://github.com/sunholo-data/ailang",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

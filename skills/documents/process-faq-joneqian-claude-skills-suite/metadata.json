@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:28.373501Z",
   "github_path": "output/process-faq",
   "github_branch": "main",
-  "dir_name": "process-faq-joneqian-claude-skills-suite"
+  "dir_name": "process-faq-joneqian-claude-skills-suite",
+  "author": "joneqian",
+  "source_url": "https://github.com/joneqian/claude-skills-suite/blob/main/output/process-faq/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Suite Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/pwa-expert",
   "github_branch": "main",
   "dir_name": "pwa-expert",
-  "downloaded_at": "2026-02-05T01:44:39.714177Z"
+  "downloaded_at": "2026-02-05T01:44:39.714177Z",
+  "author": "w3bsuki",
+  "source_url": "https://github.com/w3bsuki/amazong/blob/main/.claude/skills/pwa-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/w3bsuki/amazong/blob/main/.claude/skills/pwa-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:05.032905Z",
   "github_path": "src/templates/agents/claude-code/skills/design-reviewer",
   "github_branch": "main",
-  "dir_name": "design-reviewer"
+  "dir_name": "design-reviewer",
+  "author": "nahisaho",
+  "source_url": "https://github.com/nahisaho/MUSUBI/blob/main/src/templates/agents/claude-code/skills/design-reviewer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MUSUBI Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

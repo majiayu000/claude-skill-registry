@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/tatsuki-washimi/gwexpy",
-  "dir_name": "make-notebook"
+  "dir_name": "make-notebook",
+  "author": "tatsuki-washimi",
+  "source_url": "https://github.com/tatsuki-washimi/gwexpy",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tatsuki Washimi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

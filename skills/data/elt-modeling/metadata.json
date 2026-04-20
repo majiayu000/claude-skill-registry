@@ -5,5 +5,12 @@
   "source": "github.com/AmnadTaowsoam/CerebraSkills",
   "downloaded_at": "2026-01-31T01:11:33.006722Z",
   "dir_name": "elt-modeling",
-  "category": "data"
+  "category": "data",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/CerebraSkills/blob/main/53-data-engineering/elt-modeling/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

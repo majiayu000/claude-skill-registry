@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/michael-h-patrianna/animations",
   "downloaded_at": "2026-01-24T16:15:33.810478Z",
-  "dir_name": "agent-selection-michael-h-patrianna-animations"
+  "dir_name": "agent-selection-michael-h-patrianna-animations",
+  "author": "michael-h-patrianna",
+  "source_url": "https://github.com/michael-h-patrianna/animations/blob/main/.claude/skills/agent-selection/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Michael Haufschild",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

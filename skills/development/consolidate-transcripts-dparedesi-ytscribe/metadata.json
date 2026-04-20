@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:00.329323Z",
   "github_path": ".agent/skills/consolidate-transcripts",
   "github_branch": "main",
-  "dir_name": "consolidate-transcripts-dparedesi-ytscribe"
+  "dir_name": "consolidate-transcripts-dparedesi-ytscribe",
+  "author": "dparedesi",
+  "source_url": "https://github.com/dparedesi/YTScribe/blob/main/.agent/skills/consolidate-transcripts/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel Paredes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

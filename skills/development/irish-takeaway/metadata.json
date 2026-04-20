@@ -7,5 +7,12 @@
   "stars": 11,
   "source": "github.com/clawdbot/skills",
   "downloaded_at": "2026-01-24T16:15:26.748219Z",
-  "dir_name": "irish-takeaway"
+  "dir_name": "irish-takeaway",
+  "author": "clawdbot",
+  "source_url": "https://github.com/clawdbot/skills/blob/main/skills/cotyledonlab/irish-takeaway/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

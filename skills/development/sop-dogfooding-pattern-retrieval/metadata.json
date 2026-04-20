@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:48.895643Z",
   "github_path": "skills/quality/sop-dogfooding-pattern-retrieval",
   "github_branch": "main",
-  "dir_name": "sop-dogfooding-pattern-retrieval"
+  "dir_name": "sop-dogfooding-pattern-retrieval",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/context-cascade/blob/main/skills/quality/sop-dogfooding-pattern-retrieval/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ruvnet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

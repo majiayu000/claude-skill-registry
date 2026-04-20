@@ -9,5 +9,12 @@
   "github_path": "skills/plugins/saas-packs/vercel-pack/vercel-upgrade-migration",
   "github_branch": "main",
   "dir_name": "vercel-upgrade-migration-vasic-digital-superagent",
-  "downloaded_at": "2026-02-05T01:45:36.963703Z"
+  "downloaded_at": "2026-02-05T01:45:36.963703Z",
+  "author": "vasic-digital",
+  "source_url": "https://github.com/vasic-digital/SuperAgent/blob/main/skills/plugins/saas-packs/vercel-pack/vercel-upgrade-migration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vasic-digital/SuperAgent/blob/main/skills/plugins/saas-packs/vercel-pack/vercel-upgrade-migration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

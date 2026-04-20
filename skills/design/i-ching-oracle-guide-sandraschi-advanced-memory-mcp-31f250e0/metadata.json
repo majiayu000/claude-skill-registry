@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:20.795238Z",
   "github_path": "skills/nonsense/i-ching-oracle-guide",
   "github_branch": "main",
-  "dir_name": "i-ching-oracle-guide-sandraschi-advanced-memory-mcp-31f250e0"
+  "dir_name": "i-ching-oracle-guide-sandraschi-advanced-memory-mcp-31f250e0",
+  "author": "sandraschi",
+  "source_url": "https://github.com/sandraschi/advanced-memory-mcp/blob/main/skills/nonsense/i-ching-oracle-guide/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Sandra Schipal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

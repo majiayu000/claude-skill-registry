@@ -5,5 +5,12 @@
   "source": "github.com/danielmiessler/Personal_AI_Infrastructure",
   "downloaded_at": "2026-02-04T05:12:51.058153Z",
   "dir_name": "evals",
-  "category": "data"
+  "category": "data",
+  "author": "danielmiessler",
+  "source_url": "https://github.com/danielmiessler/Personal_AI_Infrastructure/blob/main/Releases/v2.4/.claude/skills/Evals/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel Miessler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

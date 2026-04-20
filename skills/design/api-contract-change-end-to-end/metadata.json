@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "api-contract-change-end-to-end"
+  "dir_name": "api-contract-change-end-to-end",
+  "author": "localtaskrepo",
+  "source_url": "https://github.com/localtaskrepo/lotar",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ravi Gairola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

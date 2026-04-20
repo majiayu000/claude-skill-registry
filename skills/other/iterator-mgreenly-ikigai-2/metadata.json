@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/mgreenly/ikigai",
-  "dir_name": "iterator-mgreenly-ikigai-2"
+  "dir_name": "iterator-mgreenly-ikigai-2",
+  "author": "mgreenly",
+  "source_url": "https://github.com/mgreenly/ikigai/blob/main/.claude/library/patterns/iterator/SKILL.md",
+  "license": "MIT-0",
+  "copyright": "Copyright (c) 2025 Michael Greenly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

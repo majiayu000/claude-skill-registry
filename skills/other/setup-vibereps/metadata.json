@@ -5,5 +5,12 @@
   "source": "github.com/Flow-Club/vibereps",
   "downloaded_at": "2026-01-28T04:44:31.906812Z",
   "dir_name": "setup-vibereps",
-  "category": "other"
+  "category": "other",
+  "author": "Flow-Club",
+  "source_url": "https://github.com/Flow-Club/vibereps/blob/main/.claude/skills/setup-vibereps/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Flow Club",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

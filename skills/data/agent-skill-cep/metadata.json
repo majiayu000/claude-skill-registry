@@ -5,5 +5,12 @@
   "source": "github.com/ktg-one/agent-skill-cep",
   "downloaded_at": "2026-01-27T03:01:57.473047Z",
   "dir_name": "agent-skill-cep",
-  "category": "data"
+  "category": "data",
+  "author": "ktg-one",
+  "source_url": "https://github.com/ktg-one/agent-skill-cep/blob/main/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Good AI Australia",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

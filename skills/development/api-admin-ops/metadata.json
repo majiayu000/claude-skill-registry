@@ -7,5 +7,12 @@
   "stars": 48,
   "source": "github.com/majiayu000/claude-skill-registry",
   "downloaded_at": "2026-01-24T16:15:09.002911Z",
-  "dir_name": "api-admin-ops"
+  "dir_name": "api-admin-ops",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/testing/api-admin-ops/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

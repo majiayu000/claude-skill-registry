@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:24.409493Z",
   "github_path": "plugins/personalization-engine/skills/decision-trees",
   "github_branch": "main",
-  "dir_name": "decision-trees-gtmagents-gtm-agents-463a352c"
+  "dir_name": "decision-trees-gtmagents-gtm-agents-463a352c",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/personalization-engine/skills/decision-trees/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

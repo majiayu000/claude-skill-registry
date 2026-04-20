@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:23.072550Z",
   "github_path": "plugins/financial-services/skills/financial-product-blueprint",
   "github_branch": "main",
-  "dir_name": "financial-product-blueprint-gtmagents-gtm-agents"
+  "dir_name": "financial-product-blueprint-gtmagents-gtm-agents",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/financial-services/skills/financial-product-blueprint/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

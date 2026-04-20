@@ -5,5 +5,12 @@
   "description": "YouTube 비디오에서 음성을 추출하여 스토리 작성에 활용하는 스킬. 비디오 다운로드, 오디오 추출, 자막 다운로드, 스토리 분석 및 템플릿 생성을 지원합니다. YouTube, 음성 추출, 오디오 다운로드, 자막, 스토리 분석 사용 시 활성화",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:11:01.065065Z",
-  "dir_name": "story-youtube-template"
+  "dir_name": "story-youtube-template",
+  "author": "nfbs2000",
+  "source_url": "https://github.com/nfbs2000/vibe-with-google-ai-divorce-agent-inflearn",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nfbs2000/vibe-with-google-ai-divorce-agent-inflearn",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

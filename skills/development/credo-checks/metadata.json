@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:01.997034Z",
   "github_path": "jutsu/jutsu-credo/skills/credo-checks",
   "github_branch": "main",
-  "dir_name": "credo-checks"
+  "dir_name": "credo-checks",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han/blob/main/jutsu/jutsu-credo/skills/credo-checks/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

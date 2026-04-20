@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/NoCodeify/aeo",
-  "dir_name": "content-strategist-nocodeify-aeo"
+  "dir_name": "content-strategist-nocodeify-aeo",
+  "author": "NoCodeify",
+  "source_url": "https://github.com/NoCodeify/aeo",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NoCodeify/aeo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

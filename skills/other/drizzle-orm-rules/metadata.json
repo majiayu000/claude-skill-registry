@@ -5,5 +5,12 @@
   "source": "github.com/oimiragieo/agent-studio",
   "downloaded_at": "2026-01-29T01:54:41.973211Z",
   "dir_name": "drizzle-orm-rules",
-  "category": "other"
+  "category": "other",
+  "author": "oimiragieo",
+  "source_url": "https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/drizzle-orm-rules/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/drizzle-orm-rules/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/proffesor-for-testing/sentinel-api-testing",
   "downloaded_at": "2026-02-04T02:39:45.845987Z",
   "dir_name": "test-automation-strategy",
-  "category": "data"
+  "category": "data",
+  "author": "proffesor-for-testing",
+  "source_url": "https://github.com/proffesor-for-testing/sentinel-api-testing/blob/main/.claude/skills/test-automation-strategy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sentinel API Testing Platform",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

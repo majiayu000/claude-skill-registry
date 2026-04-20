@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/admin-infra-oci",
   "github_branch": "main",
-  "dir_name": "admin-infra-oci-evolv3-ai-vibe-skills-f80c887e"
+  "dir_name": "admin-infra-oci-evolv3-ai-vibe-skills-f80c887e",
+  "author": "evolv3-ai",
+  "source_url": "https://github.com/evolv3-ai/vibe-skills/blob/main/skills/admin-infra-oci/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

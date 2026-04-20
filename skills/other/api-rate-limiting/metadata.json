@@ -5,5 +5,12 @@
   "source": "github.com/secondsky/claude-skills",
   "downloaded_at": "2026-02-02T02:14:08.510137Z",
   "dir_name": "api-rate-limiting",
-  "category": "other"
+  "category": "other",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/api-rate-limiting/skills/api-rate-limiting/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

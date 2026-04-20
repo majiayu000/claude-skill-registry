@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:53.463880Z",
   "dir_name": "neon-serverless",
   "github_path": "neon-plugin/skills/neon-serverless",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "neondatabase",
+  "source_url": "https://github.com/neondatabase/ai-rules/blob/main/neon-plugin/skills/neon-serverless/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Neon Database",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

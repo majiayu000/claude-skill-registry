@@ -7,5 +7,12 @@
   "dir_name": "supply-chain-security",
   "category": "other",
   "github_path": "plugins/security/skills/supply-chain-security",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "melodic-software",
+  "source_url": "https://github.com/melodic-software/claude-code-plugins/blob/main/plugins/security/skills/supply-chain-security/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Melodic Software",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/accessible-web-dev",
   "github_branch": "main",
-  "dir_name": "accessible-web-dev-rcgsheffield-skills"
+  "dir_name": "accessible-web-dev-rcgsheffield-skills",
+  "author": "rcgsheffield",
+  "source_url": "https://github.com/rcgsheffield/skills/blob/main/skills/accessible-web-dev/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 IT Services Research & Innovation team at the University of Sheffield",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

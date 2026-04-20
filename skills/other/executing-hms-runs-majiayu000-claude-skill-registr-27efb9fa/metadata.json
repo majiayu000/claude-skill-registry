@@ -9,5 +9,12 @@
   "github_path": "skills/executing-hms-runs",
   "github_branch": "main",
   "dir_name": "executing-hms-runs-majiayu000-claude-skill-registr-27efb9fa",
-  "downloaded_at": "2026-02-05T01:45:22.866526Z"
+  "downloaded_at": "2026-02-05T01:45:22.866526Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/executing-hms-runs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

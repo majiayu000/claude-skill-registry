@@ -9,5 +9,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "abi-codegen"
+  "dir_name": "abi-codegen",
+  "author": "sablier-labs",
+  "source_url": "https://github.com/sablier-labs/sdk",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) <year>  <name of author>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

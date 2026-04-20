@@ -7,5 +7,12 @@
   "dir_name": "test-notebooks",
   "category": "other",
   "github_path": ".agent/skills/test_notebooks",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "tatsuki-washimi",
+  "source_url": "https://github.com/tatsuki-washimi/gwexpy/blob/main/.agent/skills/test_notebooks/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tatsuki Washimi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

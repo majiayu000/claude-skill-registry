@@ -7,5 +7,12 @@
   "dir_name": "when-automating-workflows-use-hooks-automation",
   "category": "other",
   "github_path": "skills/orchestration/when-automating-workflows-use-hooks-automation",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/context-cascade/blob/main/skills/orchestration/when-automating-workflows-use-hooks-automation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ruvnet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

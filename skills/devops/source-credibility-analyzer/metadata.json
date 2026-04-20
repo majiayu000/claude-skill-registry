@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:49.351659Z",
   "github_path": "skills/research/source-credibility-analyzer",
   "github_branch": "main",
-  "dir_name": "source-credibility-analyzer"
+  "dir_name": "source-credibility-analyzer",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/context-cascade/blob/main/skills/research/source-credibility-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ruvnet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

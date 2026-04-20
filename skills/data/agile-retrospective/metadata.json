@@ -5,5 +5,12 @@
   "source": "github.com/CoderMariusz/MonoPilot",
   "downloaded_at": "2026-02-04T02:45:30.920950Z",
   "dir_name": "agile-retrospective",
-  "category": "data"
+  "category": "data",
+  "author": "CoderMariusz",
+  "source_url": "https://github.com/CoderMariusz/MonoPilot/blob/main/.claude/skills/agile-retrospective/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CoderMariusz/MonoPilot/blob/main/.claude/skills/agile-retrospective/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

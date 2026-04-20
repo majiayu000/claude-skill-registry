@@ -5,5 +5,12 @@
   "source": "github.com/romanmesicek/agent-skills",
   "downloaded_at": "2026-02-04T04:58:52.385285Z",
   "dir_name": "academic-research",
-  "category": "data"
+  "category": "data",
+  "author": "romanmesicek",
+  "source_url": "https://github.com/romanmesicek/agent-skills/blob/main/academic-research/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Roman Mesicek",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/nadavyigal/Running-coach-",
   "downloaded_at": "2026-02-04T04:12:53.730340Z",
   "dir_name": "product-manager-toolkit-nadavyigal-running-coach",
-  "category": "data"
+  "category": "data",
+  "author": "nadavyigal",
+  "source_url": "https://github.com/nadavyigal/Running-coach-/blob/main/.codex/skills/product/product-manager-toolkit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nadavyigal/Running-coach-/blob/main/.codex/skills/product/product-manager-toolkit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

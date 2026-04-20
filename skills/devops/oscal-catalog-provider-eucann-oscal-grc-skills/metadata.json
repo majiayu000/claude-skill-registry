@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:31.505089Z",
   "github_path": "skills/oscal-catalog-provider",
   "github_branch": "main",
-  "dir_name": "oscal-catalog-provider-eucann-oscal-grc-skills"
+  "dir_name": "oscal-catalog-provider-eucann-oscal-grc-skills",
+  "author": "euCann",
+  "source_url": "https://github.com/euCann/OSCAL-GRC-SKILLS/blob/main/skills/oscal-catalog-provider/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 euCann Development",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

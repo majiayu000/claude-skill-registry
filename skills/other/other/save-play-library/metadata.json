@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/gtmagents/gtm-agents",
   "dir_name": "save-play-library",
-  "downloaded_at": "2026-02-22T07:21:57.268909Z"
+  "downloaded_at": "2026-02-22T07:21:57.268909Z",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/customer-analytics/skills/save-play-library/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

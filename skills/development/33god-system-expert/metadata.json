@@ -10,5 +10,12 @@
   ],
   "stars": 4,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "33god-system-expert"
+  "dir_name": "33god-system-expert",
+  "author": "delorenj",
+  "source_url": "https://github.com/delorenj/skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/delorenj/skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

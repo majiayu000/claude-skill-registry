@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "minimal-example"
+  "dir_name": "minimal-example",
+  "author": "srprasanna",
+  "source_url": "https://github.com/srprasanna/mcp-skill-hub",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MCP Skills Server Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

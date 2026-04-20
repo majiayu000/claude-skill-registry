@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/BIsnake2001/ChromSkills",
-  "dir_name": "30-toolbased-hic-matrix-qc"
+  "dir_name": "30-toolbased-hic-matrix-qc",
+  "author": "BIsnake2001",
+  "source_url": "https://github.com/BIsnake2001/ChromSkills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BIsnake2001/ChromSkills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

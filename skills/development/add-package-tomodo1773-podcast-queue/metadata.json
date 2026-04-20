@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:32.230656Z",
   "github_path": ".claude/skills/add-package",
   "github_branch": "main",
-  "dir_name": "add-package-tomodo1773-podcast-queue"
+  "dir_name": "add-package-tomodo1773-podcast-queue",
+  "author": "Tomodo1773",
+  "source_url": "https://github.com/Tomodo1773/podcast-queue/blob/main/.claude/skills/add-package/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Tomodo1773",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

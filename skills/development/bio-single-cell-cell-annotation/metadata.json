@@ -7,5 +7,12 @@
   "stars": 48,
   "source": "github.com/majiayu000/claude-skill-registry",
   "downloaded_at": "2026-01-24T16:15:46.079928Z",
-  "dir_name": "bio-single-cell-cell-annotation"
+  "dir_name": "bio-single-cell-cell-annotation",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/other/cell-annotation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

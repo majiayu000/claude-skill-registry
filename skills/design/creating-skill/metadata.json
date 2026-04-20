@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "creating-skill",
   "github_branch": "main",
-  "dir_name": "creating-skill"
+  "dir_name": "creating-skill",
+  "author": "oaustegard",
+  "source_url": "https://github.com/oaustegard/claude-skills/blob/main/creating-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Oskar Austegard",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

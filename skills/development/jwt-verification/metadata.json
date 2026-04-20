@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/HasnainCodeHub/todo-evaluation",
   "downloaded_at": "2026-01-24T16:15:05.455257Z",
-  "dir_name": "jwt-verification"
+  "dir_name": "jwt-verification",
+  "author": "HasnainCodeHub",
+  "source_url": "https://github.com/HasnainCodeHub/todo-evaluation/blob/main/.claude/skills/jwt-verification/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HasnainCodeHub/todo-evaluation/blob/main/.claude/skills/jwt-verification/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

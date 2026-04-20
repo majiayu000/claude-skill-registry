@@ -5,5 +5,12 @@
   "description": "Auto-generate computed frontmatter fields like word_count, link_count, reading_time. Triggers on \"compute fields\", \"calculate metadata\", \"derived fields\".",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:39.650977Z",
-  "dir_name": "schema-compute"
+  "dir_name": "schema-compute",
+  "author": "bencassie",
+  "source_url": "https://github.com/bencassie/flywheel",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bencassie/flywheel",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

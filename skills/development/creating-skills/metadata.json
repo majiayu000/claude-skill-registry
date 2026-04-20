@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "src/skills/builtin/creating-skills",
   "github_branch": "main",
-  "dir_name": "creating-skills"
+  "dir_name": "creating-skills",
+  "author": "letta-ai",
+  "source_url": "https://github.com/letta-ai/letta-code/blob/main/src/skills/builtin/creating-skills/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

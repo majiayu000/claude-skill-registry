@@ -7,5 +7,12 @@
   "dir_name": "spark-sql-optimizer-jeremylongshore-claude-code-plugins-",
   "category": "other",
   "github_path": "planned-skills/generated/11-data-pipelines/spark-sql-optimizer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/planned-skills/generated/11-data-pipelines/spark-sql-optimizer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

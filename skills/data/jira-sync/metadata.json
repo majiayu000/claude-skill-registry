@@ -5,5 +5,12 @@
   "source": "github.com/anton-abyzov/specweave",
   "downloaded_at": "2026-02-04T04:41:07.966965Z",
   "dir_name": "jira-sync",
-  "category": "data"
+  "category": "data",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-jira/skills/jira-sync/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

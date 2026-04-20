@@ -5,5 +5,12 @@
   "description": "Analyze all frontmatter fields used across the vault. Triggers on \"frontmatter schema\", \"metadata fields\", \"what fields exist\", \"vault schema\".",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:33.200171Z",
-  "dir_name": "show-schema"
+  "dir_name": "show-schema",
+  "author": "bencassie",
+  "source_url": "https://github.com/bencassie/flywheel",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bencassie/flywheel",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/boshi-xixixi/TraeSkill",
   "downloaded_at": "2026-01-31T04:47:55.629869Z",
   "dir_name": "99-meta-customization",
-  "category": "data"
+  "category": "data",
+  "author": "boshi-xixixi",
+  "source_url": "https://github.com/boshi-xixixi/TraeSkill/blob/main/.trae/Skills/99_Meta_Customization/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 lishibo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "concept-forge-nickcrew-claude-cortex-9c87d1e8-2",
   "category": "other",
   "github_path": "claude_ctx_py/assets/skills/collaboration/concept_forge",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "NickCrew",
+  "source_url": "https://github.com/NickCrew/claude-cortex/blob/main/claude_ctx_py/assets/skills/collaboration/concept_forge/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nicholas Ferguson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

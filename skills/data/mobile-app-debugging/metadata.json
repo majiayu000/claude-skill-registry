@@ -5,5 +5,12 @@
   "source": "github.com/secondsky/claude-skills",
   "downloaded_at": "2026-01-28T01:54:36.152414Z",
   "dir_name": "mobile-app-debugging",
-  "category": "data"
+  "category": "data",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/mobile-app-debugging/skills/mobile-app-debugging/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

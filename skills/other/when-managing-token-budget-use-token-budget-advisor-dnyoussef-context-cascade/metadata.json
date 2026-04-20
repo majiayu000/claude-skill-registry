@@ -7,5 +7,12 @@
   "dir_name": "when-managing-token-budget-use-token-budget-advisor-dnyoussef-context-cascade",
   "category": "other",
   "github_path": "skills/foundry/meta-tools/when-managing-token-budget-use-token-budget-advisor",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/context-cascade/blob/main/skills/foundry/meta-tools/when-managing-token-budget-use-token-budget-advisor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ruvnet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

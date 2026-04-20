@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:25.372889Z",
   "github_path": "sales-skills/skills/call-analysis",
   "github_branch": "main",
-  "dir_name": "call-analysis-salesably-salesably-marketplac"
+  "dir_name": "call-analysis-salesably-salesably-marketplac",
+  "author": "Salesably",
+  "source_url": "https://github.com/Salesably/salesably-marketplace/blob/main/sales-skills/skills/call-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Salesably",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

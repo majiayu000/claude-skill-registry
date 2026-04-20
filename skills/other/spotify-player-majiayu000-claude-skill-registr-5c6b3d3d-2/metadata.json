@@ -9,5 +9,12 @@
   "github_path": "skills/spotify-player",
   "github_branch": "main",
   "dir_name": "spotify-player-majiayu000-claude-skill-registr-5c6b3d3d-2",
-  "downloaded_at": "2026-02-05T01:45:21.002660Z"
+  "downloaded_at": "2026-02-05T01:45:21.002660Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/spotify-player/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

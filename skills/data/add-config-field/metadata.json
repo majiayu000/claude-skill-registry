@@ -5,5 +5,12 @@
   "source": "github.com/martin-janci/claude-code-reviewer",
   "downloaded_at": "2026-02-04T04:38:39.176655Z",
   "dir_name": "add-config-field",
-  "category": "data"
+  "category": "data",
+  "author": "martin-janci",
+  "source_url": "https://github.com/martin-janci/claude-code-reviewer/blob/main/.claude/skills/add-config-field/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/martin-janci/claude-code-reviewer/blob/main/.claude/skills/add-config-field/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

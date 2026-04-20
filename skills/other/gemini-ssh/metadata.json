@@ -7,5 +7,12 @@
   "dir_name": "gemini-ssh",
   "category": "other",
   "github_path": ".claude/skills/gemini-ssh",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "oimiragieo",
+  "source_url": "https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/gemini-ssh/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/gemini-ssh/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

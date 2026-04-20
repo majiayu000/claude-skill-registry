@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:34.929347Z",
   "github_path": "plugins/infrastructure/ansible-workflows/skills/ansible-error-handling",
   "github_branch": "main",
-  "dir_name": "ansible-error-handling-basher83-lunar-claude-23bbaeac"
+  "dir_name": "ansible-error-handling-basher83-lunar-claude-23bbaeac",
+  "author": "basher83",
+  "source_url": "https://github.com/basher83/lunar-claude/blob/main/plugins/infrastructure/ansible-workflows/skills/ansible-error-handling/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 basher83",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

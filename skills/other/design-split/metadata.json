@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/design-split",
   "github_branch": "main",
   "dir_name": "design-split",
-  "downloaded_at": "2026-02-05T01:45:08.010621Z"
+  "downloaded_at": "2026-02-05T01:45:08.010621Z",
+  "author": "mae616",
+  "source_url": "https://github.com/mae616/ai-template/blob/main/.claude/skills/design-split/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 AI Template Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

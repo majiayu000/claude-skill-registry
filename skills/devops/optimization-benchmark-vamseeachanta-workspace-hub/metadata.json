@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:24.546496Z",
   "github_path": ".claude/skills/tools/optimization/optimization-benchmark",
   "github_branch": "main",
-  "dir_name": "optimization-benchmark-vamseeachanta-workspace-hub"
+  "dir_name": "optimization-benchmark-vamseeachanta-workspace-hub",
+  "author": "vamseeachanta",
+  "source_url": "https://github.com/vamseeachanta/workspace-hub/blob/main/.claude/skills/tools/optimization/optimization-benchmark/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vamseeachanta/workspace-hub/blob/main/.claude/skills/tools/optimization/optimization-benchmark/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

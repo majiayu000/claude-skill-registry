@@ -5,5 +5,12 @@
   "description": "Expert assistance for importing data to Treasure Data using the JavaScript SDK. Use this skill when users need help with browser-based event tracking, page analytics, client-side data collection, or i",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:24.015161Z",
-  "dir_name": "td-javascript-sdk"
+  "dir_name": "td-javascript-sdk",
+  "author": "treasure-data",
+  "source_url": "https://github.com/treasure-data/td-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/treasure-data/td-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

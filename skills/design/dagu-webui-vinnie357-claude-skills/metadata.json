@@ -5,5 +5,12 @@
   "description": "Guide for using the Dagu Web UI to manage, monitor, and execute workflows through the browser interface",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:09:28.638329Z",
-  "dir_name": "dagu-webui-vinnie357-claude-skills"
+  "dir_name": "dagu-webui-vinnie357-claude-skills",
+  "author": "vinnie357",
+  "source_url": "https://github.com/vinnie357/claude-skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Vinnie Mazza",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

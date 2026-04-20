@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/project-wizard",
   "github_branch": "master",
   "dir_name": "project-wizard-housegarofalo-claude-code-base",
-  "downloaded_at": "2026-02-05T01:44:39.056167Z"
+  "downloaded_at": "2026-02-05T01:44:39.056167Z",
+  "author": "HouseGarofalo",
+  "source_url": "https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/project-wizard/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 HouseGarofalo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

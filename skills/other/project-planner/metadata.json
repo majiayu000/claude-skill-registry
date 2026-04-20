@@ -5,5 +5,12 @@
   "source": "github.com/brixtonpham/claude-config",
   "downloaded_at": "2026-02-02T04:46:15.112614Z",
   "dir_name": "project-planner",
-  "category": "other"
+  "category": "other",
+  "author": "brixtonpham",
+  "source_url": "https://github.com/brixtonpham/claude-config/blob/main/skills/project-planner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brixtonpham/claude-config/blob/main/skills/project-planner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

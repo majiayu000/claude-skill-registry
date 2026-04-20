@@ -5,5 +5,12 @@
   "source": "github.com/devwinsoft/devian",
   "downloaded_at": "2026-02-01T03:37:47.177741Z",
   "dir_name": "01-singleton",
-  "category": "data"
+  "category": "data",
+  "author": "devwinsoft",
+  "source_url": "https://github.com/devwinsoft/devian/blob/main/skills/devian-unity/30-unity-components/01-singleton/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 maoshy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

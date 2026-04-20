@@ -5,5 +5,12 @@
   "source": "github.com/gtmagents/gtm-agents",
   "downloaded_at": "2026-02-02T02:59:22.333700Z",
   "dir_name": "api-style-guide",
-  "category": "other"
+  "category": "other",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/technical-writing/skills/api-style-guide/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:13.496586Z",
   "dir_name": "feature-importance-analyzer",
   "github_path": "planned-skills/generated/07-ml-training/feature-importance-analyzer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/planned-skills/generated/07-ml-training/feature-importance-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

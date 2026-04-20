@@ -5,5 +5,12 @@
   "description": "Run automated post-release workflow (eval baselines, dashboard, docs) for AILANG releases. Executes 46-benchmark suite (medium/hard/stretch) + full standard eval with validation and progress reporting",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:28.695316Z",
-  "dir_name": "ailang-post-release-tasks"
+  "dir_name": "ailang-post-release-tasks",
+  "author": "sunholo-data",
+  "source_url": "https://github.com/sunholo-data/ailang",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

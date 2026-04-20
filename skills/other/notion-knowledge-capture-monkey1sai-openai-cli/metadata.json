@@ -9,5 +9,12 @@
   "github_path": "skills/codex/notion-knowledge-capture",
   "github_branch": "main",
   "dir_name": "notion-knowledge-capture-monkey1sai-openai-cli",
-  "downloaded_at": "2026-02-05T01:44:14.879642Z"
+  "downloaded_at": "2026-02-05T01:44:14.879642Z",
+  "author": "monkey1sai",
+  "source_url": "https://github.com/monkey1sai/openai-cli/blob/main/skills/codex/notion-knowledge-capture/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/monkey1sai/openai-cli/blob/main/skills/codex/notion-knowledge-capture/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

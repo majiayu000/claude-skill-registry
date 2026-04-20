@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:25.403061Z",
   "github_path": "plugins/sales-calls/skills/call-analysis-framework",
   "github_branch": "main",
-  "dir_name": "call-analysis-framework"
+  "dir_name": "call-analysis-framework",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/sales-calls/skills/call-analysis-framework/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

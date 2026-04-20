@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/a5c-ai/babysitter",
   "dir_name": "api-key-manager",
-  "downloaded_at": "2026-02-17T01:14:43.962688Z"
+  "downloaded_at": "2026-02-17T01:14:43.962688Z",
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/plugins/babysitter/skills/babysit/process/specializations/sdk-platform-development/skills/api-key-manager/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 A5C AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

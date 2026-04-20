@@ -5,5 +5,12 @@
   "source": "github.com/DNYoussef/ai-chrome-extension",
   "downloaded_at": "2026-01-29T08:56:03.712955Z",
   "dir_name": "when-training-neural-networks-use-flow-nexus-neural-dnyoussef-ai-chrome-extension-e63ae9ad",
-  "category": "other"
+  "category": "other",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/platform/when-training-neural-networks-use-flow-nexus-neural/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

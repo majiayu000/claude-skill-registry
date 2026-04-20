@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:17.604707Z",
   "github_path": "skills/09-by-tool-framework/motion-one",
   "github_branch": "main",
-  "dir_name": "motion-one-dylantarre-animation-principles-8f21fa64"
+  "dir_name": "motion-one-dylantarre-animation-principles-8f21fa64",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/animation-principles/blob/main/skills/09-by-tool-framework/motion-one/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

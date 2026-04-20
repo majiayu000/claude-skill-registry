@@ -5,5 +5,12 @@
   "description": "나디오 12개 + 햄찌 6개 실제 작품 구조 분석 기반 템플릿. 나디오(5막 구조, 15-30분, 오디오 드라마, TTS 최적화) + 햄찌(3단계 구조, 3-5분, 일상 스토리, 직장인 공감). /references 디렉토리에 실제 작품 파일 포함. NADIO, 햄찌, audio drama, 오디오 드라마, 일상 스토리, 직장인 스토리, 스토리 구조, 템플",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:31.977245Z",
-  "dir_name": "story-template"
+  "dir_name": "story-template",
+  "author": "nfbs2000",
+  "source_url": "https://github.com/nfbs2000/vibe-with-google-ai-divorce-agent-inflearn",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nfbs2000/vibe-with-google-ai-divorce-agent-inflearn",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

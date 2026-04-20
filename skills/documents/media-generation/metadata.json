@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:09.126762Z",
   "github_path": "skills/documents/media-generation",
   "github_branch": "main",
-  "dir_name": "media-generation"
+  "dir_name": "media-generation",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/documents/media-generation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

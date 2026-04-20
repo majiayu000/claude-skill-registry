@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:31.316653Z",
   "github_path": "skills/risk-assessor",
   "github_branch": "main",
-  "dir_name": "risk-assessor-eucann-oscal-grc-skills-408be786"
+  "dir_name": "risk-assessor-eucann-oscal-grc-skills-408be786",
+  "author": "euCann",
+  "source_url": "https://github.com/euCann/OSCAL-GRC-SKILLS/blob/main/skills/risk-assessor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 euCann Development",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

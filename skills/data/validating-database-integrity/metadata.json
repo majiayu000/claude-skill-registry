@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:46.965770Z",
   "dir_name": "validating-database-integrity",
   "github_path": "plugins/database/data-validation-engine/skills/validating-database-integrity",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/database/data-validation-engine/skills/validating-database-integrity/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

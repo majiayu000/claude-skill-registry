@@ -7,5 +7,12 @@
   "dir_name": "juvix-intents-plurigrid-asi",
   "category": "other",
   "github_path": "skills/juvix-intents",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/juvix-intents/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

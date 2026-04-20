@@ -5,5 +5,12 @@
   "description": "Validates narration text, generates audio via ElevenLabs, and synchronizes timestamps.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:55.167561Z",
-  "dir_name": "course-dialog-builder"
+  "dir_name": "course-dialog-builder",
+  "author": "nfbs2000",
+  "source_url": "https://github.com/nfbs2000/vibe-with-google-ai-divorce-agent-inflearn",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nfbs2000/vibe-with-google-ai-divorce-agent-inflearn",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

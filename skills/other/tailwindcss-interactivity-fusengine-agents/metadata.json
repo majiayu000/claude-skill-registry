@@ -5,5 +5,12 @@
   "source": "github.com/fusengine/agents",
   "downloaded_at": "2026-01-29T06:06:11.406997Z",
   "dir_name": "tailwindcss-interactivity-fusengine-agents",
-  "category": "other"
+  "category": "other",
+  "author": "fusengine",
+  "source_url": "https://github.com/fusengine/agents/blob/main/plugins/tailwindcss/skills/tailwindcss-interactivity/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Fusengine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/ksoichiro/ChronoDawn",
-  "dir_name": "noise-settings-ksoichiro-chronodawn-2"
+  "dir_name": "noise-settings-ksoichiro-chronodawn-2",
+  "author": "ksoichiro",
+  "source_url": "https://github.com/ksoichiro/ChronoDawn/blob/main/.claude/skills/noise-settings/SKILL.md",
+  "license": "LGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

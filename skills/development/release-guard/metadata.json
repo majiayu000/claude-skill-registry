@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:26.456172Z",
   "github_path": ".claude/skills/release-guard",
   "github_branch": "main",
-  "dir_name": "release-guard"
+  "dir_name": "release-guard",
+  "author": "d-o-hub",
+  "source_url": "https://github.com/d-o-hub/rust-self-learning-memory/blob/main/.claude/skills/release-guard/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2019 Zachary Rice",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

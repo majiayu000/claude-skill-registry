@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:41.910018Z",
   "github_path": "plugins/devops-tools/skills/doppler-secret-validation",
   "github_branch": "main",
-  "dir_name": "doppler-secret-validation-terrylica-cc-skills"
+  "dir_name": "doppler-secret-validation-terrylica-cc-skills",
+  "author": "terrylica",
+  "source_url": "https://github.com/terrylica/cc-skills/blob/main/plugins/devops-tools/skills/doppler-secret-validation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Terry Li",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

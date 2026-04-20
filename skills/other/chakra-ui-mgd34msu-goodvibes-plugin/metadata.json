@@ -9,5 +9,12 @@
   "github_path": "plugins/goodvibes/skills/webdev/component-libraries/chakra-ui",
   "github_branch": "main",
   "dir_name": "chakra-ui-mgd34msu-goodvibes-plugin",
-  "downloaded_at": "2026-02-05T01:45:31.380807Z"
+  "downloaded_at": "2026-02-05T01:45:31.380807Z",
+  "author": "mgd34msu",
+  "source_url": "https://github.com/mgd34msu/goodvibes-plugin/blob/main/plugins/goodvibes/skills/webdev/component-libraries/chakra-ui/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 GoodVibes Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

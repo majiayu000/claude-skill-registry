@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:27.582804Z",
   "dir_name": "sales-templates",
   "github_path": "tdd-revenue/skills/sales-templates",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "chekos",
+  "source_url": "https://github.com/chekos/bns-marketplace/blob/main/tdd-revenue/skills/sales-templates/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chekos/bns-marketplace/blob/main/tdd-revenue/skills/sales-templates/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

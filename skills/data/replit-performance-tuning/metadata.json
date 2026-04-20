@@ -5,5 +5,12 @@
   "source": "github.com/Brmbobo/Web2podcast",
   "downloaded_at": "2026-02-04T02:18:33.158724Z",
   "dir_name": "replit-performance-tuning",
-  "category": "data"
+  "category": "data",
+  "author": "Brmbobo",
+  "source_url": "https://github.com/Brmbobo/Web2podcast/blob/main/.claude/agents/enterprise-frontend-design/agents/saas-packs/replit-pack/skills/replit-performance-tuning/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Brmbobo/Web2podcast/blob/main/.claude/agents/enterprise-frontend-design/agents/saas-packs/replit-pack/skills/replit-performance-tuning/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "add-rate-limiting",
   "category": "other",
   "github_path": ".claude/skills/add-rate-limiting",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Tassadar2499",
+  "source_url": "https://github.com/Tassadar2499/NovaTune/blob/main/.claude/skills/add-rate-limiting/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

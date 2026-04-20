@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "git-rewrite-history"
+  "dir_name": "git-rewrite-history",
+  "author": "MatiasComercio",
+  "source_url": "https://github.com/MatiasComercio/agentic-config",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Matias Comercio (mcomerciovazquez@gmail.com)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

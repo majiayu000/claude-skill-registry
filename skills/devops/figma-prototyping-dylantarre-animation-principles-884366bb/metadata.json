@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:17.593730Z",
   "github_path": "skills/09-by-tool-framework/figma-prototyping",
   "github_branch": "main",
-  "dir_name": "figma-prototyping-dylantarre-animation-principles-884366bb"
+  "dir_name": "figma-prototyping-dylantarre-animation-principles-884366bb",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/animation-principles/blob/main/skills/09-by-tool-framework/figma-prototyping/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

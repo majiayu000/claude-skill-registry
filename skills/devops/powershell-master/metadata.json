@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:56.243562Z",
   "github_path": "plugins/powershell-master/skills/powershell-2025-changes",
   "github_branch": "main",
-  "dir_name": "powershell-master"
+  "dir_name": "powershell-master",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/powershell-master/skills/powershell-2025-changes/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:18.501480Z",
   "github_path": "skills/11-by-principle-focus/straight-ahead-pose-mastery",
   "github_branch": "main",
-  "dir_name": "straight-ahead-pose-mastery-dylantarre-animation-principles-9727c782"
+  "dir_name": "straight-ahead-pose-mastery-dylantarre-animation-principles-9727c782",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/animation-principles/blob/main/skills/11-by-principle-focus/straight-ahead-pose-mastery/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

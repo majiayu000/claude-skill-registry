@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:05.512171Z",
   "dir_name": "performance-budget-setter",
   "github_path": "templates/architecture/performance-budget-setter",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "patricio0312rev",
+  "source_url": "https://github.com/patricio0312rev/skillset/blob/main/templates/architecture/performance-budget-setter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Patricio Marroquin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "stars": 0,
   "dir_name": "mermaid-diagram-patterns",
   "github_path": ".claude/skills/mermaid-diagram-patterns",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "thapaliyabikendra",
+  "source_url": "https://github.com/thapaliyabikendra/ai-artifacts/blob/main/.claude/skills/mermaid-diagram-patterns/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

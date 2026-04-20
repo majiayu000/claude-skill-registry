@@ -5,5 +5,12 @@
   "source": "github.com/ngxtm/devkit",
   "downloaded_at": "2026-01-29T05:49:17.384407Z",
   "dir_name": "styling",
-  "category": "data"
+  "category": "data",
+  "author": "ngxtm",
+  "source_url": "https://github.com/ngxtm/devkit/blob/main/rules/nextjs/styling/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

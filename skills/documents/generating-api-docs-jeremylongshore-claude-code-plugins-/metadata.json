@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:45.180611Z",
   "github_path": "plugins/api-development/api-documentation-generator/skills/generating-api-docs",
   "github_branch": "main",
-  "dir_name": "generating-api-docs-jeremylongshore-claude-code-plugins-"
+  "dir_name": "generating-api-docs-jeremylongshore-claude-code-plugins-",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/api-development/api-documentation-generator/skills/generating-api-docs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

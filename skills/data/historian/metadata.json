@@ -5,5 +5,12 @@
   "source": "github.com/Euda1mon1a/Autonomous-Assignment-Program-Manager",
   "downloaded_at": "2026-02-04T03:57:32.717050Z",
   "dir_name": "historian",
-  "category": "data"
+  "category": "data",
+  "author": "Euda1mon1a",
+  "source_url": "https://github.com/Euda1mon1a/Autonomous-Assignment-Program-Manager/blob/main/.claude/skills/historian/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Euda1mon1a/Autonomous-Assignment-Program-Manager/blob/main/.claude/skills/historian/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

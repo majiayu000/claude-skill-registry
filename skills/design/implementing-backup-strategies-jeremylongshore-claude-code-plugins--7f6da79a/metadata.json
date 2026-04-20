@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:48.009012Z",
   "github_path": "plugins/devops/backup-strategy-implementor/skills/implementing-backup-strategies",
   "github_branch": "main",
-  "dir_name": "implementing-backup-strategies-jeremylongshore-claude-code-plugins--7f6da79a"
+  "dir_name": "implementing-backup-strategies-jeremylongshore-claude-code-plugins--7f6da79a",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/devops/backup-strategy-implementor/skills/implementing-backup-strategies/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

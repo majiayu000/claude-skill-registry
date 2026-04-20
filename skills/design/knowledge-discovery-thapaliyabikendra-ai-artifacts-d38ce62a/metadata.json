@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/knowledge-discovery",
   "github_branch": "main",
-  "dir_name": "knowledge-discovery-thapaliyabikendra-ai-artifacts-d38ce62a"
+  "dir_name": "knowledge-discovery-thapaliyabikendra-ai-artifacts-d38ce62a",
+  "author": "thapaliyabikendra",
+  "source_url": "https://github.com/thapaliyabikendra/ai-artifacts/blob/main/.claude/skills/knowledge-discovery/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

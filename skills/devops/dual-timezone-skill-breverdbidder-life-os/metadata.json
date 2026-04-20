@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/dual-timezone-skill",
   "github_branch": "main",
-  "dir_name": "dual-timezone-skill-breverdbidder-life-os"
+  "dir_name": "dual-timezone-skill-breverdbidder-life-os",
+  "author": "breverdbidder",
+  "source_url": "https://github.com/breverdbidder/life-os/blob/main/.claude/skills/dual-timezone-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/breverdbidder/life-os/blob/main/.claude/skills/dual-timezone-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

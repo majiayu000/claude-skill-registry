@@ -7,5 +7,12 @@
   "dir_name": "multi-tenancy-advanced-amnadtaowsoam-cerebratechai-claude",
   "category": "other",
   "github_path": "17-domain-specific/multi-tenancy-advanced",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/cerebratechai-claude-skills/blob/main/17-domain-specific/multi-tenancy-advanced/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

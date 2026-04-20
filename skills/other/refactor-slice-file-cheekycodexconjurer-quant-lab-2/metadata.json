@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/CheekyCodexConjurer/quant-lab",
-  "dir_name": "refactor-slice-file-cheekycodexconjurer-quant-lab-2"
+  "dir_name": "refactor-slice-file-cheekycodexconjurer-quant-lab-2",
+  "author": "CheekyCodexConjurer",
+  "source_url": "https://github.com/CheekyCodexConjurer/quant-lab/blob/main/skills/refactor_slice_file/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CheekyCodexConjurer/quant-lab/blob/main/skills/refactor_slice_file/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

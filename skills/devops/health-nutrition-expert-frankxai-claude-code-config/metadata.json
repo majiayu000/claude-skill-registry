@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:42.361256Z",
   "github_path": "public/skills/health-nutrition-expert",
   "github_branch": "main",
-  "dir_name": "health-nutrition-expert-frankxai-claude-code-config"
+  "dir_name": "health-nutrition-expert-frankxai-claude-code-config",
+  "author": "frankxai",
+  "source_url": "https://github.com/frankxai/claude-code-config/blob/main/public/skills/health-nutrition-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/frankxai/claude-code-config/blob/main/public/skills/health-nutrition-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

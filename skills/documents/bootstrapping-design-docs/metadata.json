@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:33.929093Z",
   "github_path": "skillrena/bootstrapping-design-docs",
   "github_branch": "main",
-  "dir_name": "bootstrapping-design-docs"
+  "dir_name": "bootstrapping-design-docs",
+  "author": "SteveBronder",
+  "source_url": "https://github.com/SteveBronder/skillrena/blob/main/skillrena/bootstrapping-design-docs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SteveBronder/skillrena/blob/main/skillrena/bootstrapping-design-docs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/colingwuyu/optaic-trading",
   "downloaded_at": "2026-01-14T03:31:50.319450Z",
   "dir_name": "governance-patterns",
-  "category": "other"
+  "category": "other",
+  "author": "colingwuyu",
+  "source_url": "https://github.com/colingwuyu/optaic-trading/blob/main/.claude/skills/governance-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/colingwuyu/optaic-trading/blob/main/.claude/skills/governance-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

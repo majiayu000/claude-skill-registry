@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:15.816787Z",
   "github_path": "tech-stacks/js/react-native/skills/accessibility-mobile",
   "github_branch": "main",
-  "dir_name": "accessibility-mobile-ivantorresedge-molcajete-ai-fb5ec68a"
+  "dir_name": "accessibility-mobile-ivantorresedge-molcajete-ai-fb5ec68a",
+  "author": "IvanTorresEdge",
+  "source_url": "https://github.com/IvanTorresEdge/molcajete.ai/blob/main/tech-stacks/js/react-native/skills/accessibility-mobile/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2025 Ivan Torres",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

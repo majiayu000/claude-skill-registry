@@ -5,5 +5,12 @@
   "source": "github.com/GPTomics/bioSkills",
   "downloaded_at": "2026-02-02T04:43:46.192716Z",
   "dir_name": "imputation-qc",
-  "category": "other"
+  "category": "other",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/phasing-imputation/imputation-qc/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

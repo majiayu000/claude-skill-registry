@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "",
   "github_branch": "main",
-  "dir_name": "adb-android-control-hah23255-adb-android-control"
+  "dir_name": "adb-android-control-hah23255-adb-android-control",
+  "author": "hah23255",
+  "source_url": "https://github.com/hah23255/adb-android-control",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ADB Android Control Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

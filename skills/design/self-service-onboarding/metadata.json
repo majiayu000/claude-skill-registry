@@ -5,5 +5,12 @@
   "description": "SaaS onboarding patterns for user activation and time-to-value optimization. Covers signup flows, progressive disclosure, activation metrics, and onboarding UX.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:09.580148Z",
-  "dir_name": "self-service-onboarding"
+  "dir_name": "self-service-onboarding",
+  "author": "melodic-software",
+  "source_url": "https://github.com/melodic-software/claude-code-plugins",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Melodic Software",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

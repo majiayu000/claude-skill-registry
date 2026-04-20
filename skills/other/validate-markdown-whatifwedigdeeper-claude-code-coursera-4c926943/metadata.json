@@ -5,5 +5,12 @@
   "source": "github.com/WhatIfWeDigDeeper/claude-code-coursera",
   "downloaded_at": "2026-01-29T05:37:20.118030Z",
   "dir_name": "validate-markdown-whatifwedigdeeper-claude-code-coursera-4c926943",
-  "category": "other"
+  "category": "other",
+  "author": "WhatIfWeDigDeeper",
+  "source_url": "https://github.com/WhatIfWeDigDeeper/claude-code-coursera/blob/main/.claude/skills/validate-markdown/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 What If We Dig Deeper",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

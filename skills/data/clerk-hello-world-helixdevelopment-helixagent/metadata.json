@@ -5,5 +5,12 @@
   "source": "github.com/HelixDevelopment/HelixAgent",
   "downloaded_at": "2026-01-29T08:59:12.866284Z",
   "dir_name": "clerk-hello-world-helixdevelopment-helixagent",
-  "category": "data"
+  "category": "data",
+  "author": "HelixDevelopment",
+  "source_url": "https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/plugins/saas-packs/clerk-pack/clerk-hello-world/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Milos Vasic",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

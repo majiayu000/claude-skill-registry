@@ -5,5 +5,12 @@
   "source": "github.com/d-o-hub/rust-self-learning-memory",
   "downloaded_at": "2026-01-29T01:48:13.724776Z",
   "dir_name": "storage-sync",
-  "category": "data"
+  "category": "data",
+  "author": "d-o-hub",
+  "source_url": "https://github.com/d-o-hub/rust-self-learning-memory/blob/main/.claude/skills/storage-sync/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2019 Zachary Rice",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

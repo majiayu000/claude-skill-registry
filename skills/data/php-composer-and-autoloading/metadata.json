@@ -5,5 +5,12 @@
   "description": "Use when composer package management and PSR-4 autoloading including dependency management, autoload strategies, package creation, version constraints, and patterns for modern PHP project organization",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:06.917318Z",
-  "dir_name": "php-composer-and-autoloading"
+  "dir_name": "php-composer-and-autoloading",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

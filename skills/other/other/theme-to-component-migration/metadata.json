@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/Higashi-Kota/react-tailwindcss-sandbox",
   "dir_name": "theme-to-component-migration",
-  "downloaded_at": "2026-02-22T05:08:29.691740Z"
+  "downloaded_at": "2026-02-22T05:08:29.691740Z",
+  "author": "Higashi-Kota",
+  "source_url": "https://github.com/Higashi-Kota/react-tailwindcss-sandbox/blob/main/.claude/skills/theme-to-component-migration/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Higashi-Kota/react-tailwindcss-sandbox/blob/main/.claude/skills/theme-to-component-migration/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

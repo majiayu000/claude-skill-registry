@@ -5,5 +5,12 @@
   "source": "github.com/leefowlercu/agent-kit",
   "downloaded_at": "2026-01-29T05:34:22.438609Z",
   "dir_name": "op-secrets-updater-leefowlercu-agent-kit",
-  "category": "other"
+  "category": "other",
+  "author": "leefowlercu",
+  "source_url": "https://github.com/leefowlercu/agent-kit/blob/main/plugins/op-secrets-manager/skills/op-secrets-updater/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

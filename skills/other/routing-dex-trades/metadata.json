@@ -5,5 +5,12 @@
   "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
   "downloaded_at": "2026-01-30T01:00:46.660572Z",
   "dir_name": "routing-dex-trades",
-  "category": "other"
+  "category": "other",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/crypto/dex-aggregator-router/skills/routing-dex-trades/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

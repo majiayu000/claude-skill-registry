@@ -8,5 +8,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "discord-py"
+  "dir_name": "discord-py",
+  "author": "frizzle-chan",
+  "source_url": "https://github.com/frizzle-chan/mudd",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 frizzle-chan",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

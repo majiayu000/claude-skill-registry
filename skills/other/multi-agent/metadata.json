@@ -9,5 +9,12 @@
   "github_path": "skills/multi-agent",
   "github_branch": "main",
   "dir_name": "multi-agent",
-  "downloaded_at": "2026-02-05T01:45:35.353123Z"
+  "downloaded_at": "2026-02-05T01:45:35.353123Z",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-ai-agents/blob/main/skills/multi-agent/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

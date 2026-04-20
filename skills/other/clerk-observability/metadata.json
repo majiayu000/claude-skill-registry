@@ -9,5 +9,12 @@
   "github_path": "skills/plugins/saas-packs/clerk-pack/clerk-observability",
   "github_branch": "main",
   "dir_name": "clerk-observability",
-  "downloaded_at": "2026-02-05T05:48:56.206964Z"
+  "downloaded_at": "2026-02-05T05:48:56.206964Z",
+  "author": "vasic-digital",
+  "source_url": "https://github.com/vasic-digital/SuperAgent/blob/main/skills/plugins/saas-packs/clerk-pack/clerk-observability/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vasic-digital/SuperAgent/blob/main/skills/plugins/saas-packs/clerk-pack/clerk-observability/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

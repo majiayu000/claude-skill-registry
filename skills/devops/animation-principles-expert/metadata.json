@@ -5,5 +5,12 @@
   "description": "Use when someone has mastery of animation principles and wants to explore intentional rule-breaking, stylistic innovation, and pushing creative boundaries",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:15.554200Z",
-  "dir_name": "animation-principles-expert"
+  "dir_name": "animation-principles-expert",
+  "author": "dylantarre",
+  "source_url": "https://github.com/dylantarre/animation-principles",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Dylan Tarre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

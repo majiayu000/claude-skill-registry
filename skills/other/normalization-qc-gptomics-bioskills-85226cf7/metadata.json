@@ -7,5 +7,12 @@
   "dir_name": "normalization-qc-gptomics-bioskills-85226cf7",
   "category": "other",
   "github_path": "metabolomics/normalization-qc",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/metabolomics/normalization-qc/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

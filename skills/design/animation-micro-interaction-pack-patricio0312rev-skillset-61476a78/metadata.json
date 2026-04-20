@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:07.580338Z",
   "github_path": "templates/frontend/animation-micro-interaction-pack",
   "github_branch": "main",
-  "dir_name": "animation-micro-interaction-pack-patricio0312rev-skillset-61476a78"
+  "dir_name": "animation-micro-interaction-pack-patricio0312rev-skillset-61476a78",
+  "author": "patricio0312rev",
+  "source_url": "https://github.com/patricio0312rev/skillset/blob/main/templates/frontend/animation-micro-interaction-pack/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Patricio Marroquin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

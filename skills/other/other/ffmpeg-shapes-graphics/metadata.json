@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
   "dir_name": "ffmpeg-shapes-graphics",
-  "downloaded_at": "2026-02-22T05:14:37.288168Z"
+  "downloaded_at": "2026-02-22T05:14:37.288168Z",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/ffmpeg-master/skills/ffmpeg-shapes-graphics/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Use when building Android UIs with Jetpack Compose, managing state with remember/mutableStateOf, or implementing declarative UI patterns.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:00.714453Z",
-  "dir_name": "android-jetpack-compose"
+  "dir_name": "android-jetpack-compose",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

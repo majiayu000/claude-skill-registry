@@ -8,5 +8,12 @@
   ],
   "stars": 9,
   "source": "local",
-  "dir_name": "meta"
+  "dir_name": "meta",
+  "author": "whilp",
+  "source_url": "https://github.com/whilp/dotfiles",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 wcm",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

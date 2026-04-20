@@ -5,5 +5,12 @@
   "description": "TailAdmin dashboard UI framework patterns and Tailwind CSS classes. ALWAYS use this skill when: (1) Building any dashboard or admin panel interface, (2) Creating data tables, cards, charts, or metrics",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:17.485999Z",
-  "dir_name": "tailadmin-ui-patterns"
+  "dir_name": "tailadmin-ui-patterns",
+  "author": "Kaakati",
+  "source_url": "https://github.com/Kaakati/rails-enterprise-dev",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kaakati/rails-enterprise-dev",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

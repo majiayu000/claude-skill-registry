@@ -5,5 +5,12 @@
   "description": "Build comprehensive financial models with revenue projections, unit economics, P&L forecasts, scenario analysis, and investor-ready financial narratives for startups and growth companies.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:23.518978Z",
-  "dir_name": "financial-model"
+  "dir_name": "financial-model",
+  "author": "majesticlabs-dev",
+  "source_url": "https://github.com/majesticlabs-dev/majestic-marketplace",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Majestic Labs LLC",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

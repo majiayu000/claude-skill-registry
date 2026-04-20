@@ -5,5 +5,12 @@
   "source": "github.com/madeinoz67/madeinoz-knowledge-system",
   "downloaded_at": "2026-02-04T02:30:52.748419Z",
   "dir_name": "codebase-explorer-madeinoz67-madeinoz-knowledge-s",
-  "category": "data"
+  "category": "data",
+  "author": "madeinoz67",
+  "source_url": "https://github.com/madeinoz67/madeinoz-knowledge-system/blob/main/.claude/skills/codebase-explorer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Stephen Eaton",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

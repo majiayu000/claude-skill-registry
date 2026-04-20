@@ -5,5 +5,12 @@
   "description": "Guide users writing new pieces, revising drafts, planning structure, improving organization, making messages memorable, or applying expert writing techniques from McPhee, Zinsser, King, Pinker, Clark,",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:50.691153Z",
-  "dir_name": "writing-mentor"
+  "dir_name": "writing-mentor",
+  "author": "lyndonkl",
+  "source_url": "https://github.com/lyndonkl/claude",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lyndonkl/claude",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

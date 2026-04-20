@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:15.234162Z",
   "github_path": "tech-stacks/js/common/skills/dependency-security",
   "github_branch": "main",
-  "dir_name": "dependency-security"
+  "dir_name": "dependency-security",
+  "author": "IvanTorresEdge",
+  "source_url": "https://github.com/IvanTorresEdge/molcajete.ai/blob/main/tech-stacks/js/common/skills/dependency-security/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2025 Ivan Torres",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

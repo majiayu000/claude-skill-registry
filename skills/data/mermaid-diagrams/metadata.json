@@ -5,5 +5,12 @@
   "source": "github.com/softaworks/agent-toolkit",
   "downloaded_at": "2026-02-04T04:14:04.822805Z",
   "dir_name": "mermaid-diagrams",
-  "category": "data"
+  "category": "data",
+  "author": "softaworks",
+  "source_url": "https://github.com/softaworks/agent-toolkit/blob/main/skills/mermaid-diagrams/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Leonardo Flores",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

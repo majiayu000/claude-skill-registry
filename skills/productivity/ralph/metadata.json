@@ -7,5 +7,12 @@
   "stars": 6994,
   "source": "github.com/civitai/civitai",
   "downloaded_at": "2026-01-24T16:15:17.413925Z",
-  "dir_name": "ralph"
+  "dir_name": "ralph",
+  "author": "civitai",
+  "source_url": "https://github.com/civitai/civitai/blob/main/.claude/skills/ralph/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

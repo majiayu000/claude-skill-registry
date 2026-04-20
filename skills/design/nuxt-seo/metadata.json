@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:43.668585Z",
   "github_path": "plugins/nuxt-seo/skills/nuxt-seo",
   "github_branch": "main",
-  "dir_name": "nuxt-seo"
+  "dir_name": "nuxt-seo",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/nuxt-seo/skills/nuxt-seo/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

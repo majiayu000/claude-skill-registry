@@ -5,5 +5,12 @@
   "description": "Find knowledge clusters (groups of highly connected notes). Triggers on \"clusters\", \"knowledge clusters\", \"note clusters\", \"find clusters\".",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:11:05.408242Z",
-  "dir_name": "find-clusters"
+  "dir_name": "find-clusters",
+  "author": "bencassie",
+  "source_url": "https://github.com/bencassie/flywheel",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bencassie/flywheel",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

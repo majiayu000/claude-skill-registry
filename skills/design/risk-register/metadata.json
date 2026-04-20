@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:22.947329Z",
   "github_path": "plugins/enterprise-sales/skills/risk-register",
   "github_branch": "main",
-  "dir_name": "risk-register"
+  "dir_name": "risk-register",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/enterprise-sales/skills/risk-register/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

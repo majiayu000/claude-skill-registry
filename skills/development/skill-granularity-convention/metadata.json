@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:53.493402Z",
   "github_path": "rts-plugin-generator/skills/skill-granularity-convention",
   "github_branch": "main",
-  "dir_name": "skill-granularity-convention"
+  "dir_name": "skill-granularity-convention",
+  "author": "RevTechStudio",
+  "source_url": "https://github.com/RevTechStudio/rts-plugins/blob/main/rts-plugin-generator/skills/skill-granularity-convention/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RevTechStudio/rts-plugins/blob/main/rts-plugin-generator/skills/skill-granularity-convention/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

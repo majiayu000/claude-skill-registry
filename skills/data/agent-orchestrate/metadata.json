@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 9,
   "source": "github.com/hyperb1iss/sibyl",
-  "dir_name": "agent-orchestrate"
+  "dir_name": "agent-orchestrate",
+  "author": "hyperb1iss",
+  "source_url": "https://github.com/hyperb1iss/sibyl",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/pr-pm/prpm",
   "downloaded_at": "2026-01-29T06:02:54.601837Z",
   "dir_name": "typescript-hook-writer-pr-pm-prpm-26ffaf8e",
-  "category": "other"
+  "category": "other",
+  "author": "pr-pm",
+  "source_url": "https://github.com/pr-pm/prpm/blob/main/.claude/skills/typescript-hook-writer/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 PRPM (Prompt Package Manager)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

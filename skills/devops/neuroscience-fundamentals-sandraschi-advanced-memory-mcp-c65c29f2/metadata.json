@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:21.399648Z",
   "github_path": "skills/sciences/neuroscience-fundamentals",
   "github_branch": "main",
-  "dir_name": "neuroscience-fundamentals-sandraschi-advanced-memory-mcp-c65c29f2"
+  "dir_name": "neuroscience-fundamentals-sandraschi-advanced-memory-mcp-c65c29f2",
+  "author": "sandraschi",
+  "source_url": "https://github.com/sandraschi/advanced-memory-mcp/blob/main/skills/sciences/neuroscience-fundamentals/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Sandra Schipal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

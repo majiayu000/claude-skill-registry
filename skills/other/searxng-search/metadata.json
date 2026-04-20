@@ -9,5 +9,12 @@
   "github_path": "skills/builtin/searxng_search",
   "github_branch": "master",
   "dir_name": "searxng-search",
-  "downloaded_at": "2026-02-05T05:41:55.548836Z"
+  "downloaded_at": "2026-02-05T05:41:55.548836Z",
+  "author": "glwlg",
+  "source_url": "https://github.com/glwlg/X-bot/blob/master/skills/builtin/searxng_search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/glwlg/X-bot/blob/master/skills/builtin/searxng_search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

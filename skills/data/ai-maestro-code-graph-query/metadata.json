@@ -5,5 +5,12 @@
   "description": "PROACTIVELY query the code graph database to understand relationships and impact of changes. Use this skill WHEN READING any file to understand context, when searching for files, when exploring the co",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:45.070492Z",
-  "dir_name": "ai-maestro-code-graph-query"
+  "dir_name": "ai-maestro-code-graph-query",
+  "author": "23blocks-OS",
+  "source_url": "https://github.com/23blocks-OS/ai-maestro",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Juan Peláez / 23blocks",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/aufrank/agent-skills",
-  "dir_name": "parallelizing-with-worktrees"
+  "dir_name": "parallelizing-with-worktrees",
+  "author": "aufrank",
+  "source_url": "https://github.com/aufrank/agent-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aufrank/agent-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

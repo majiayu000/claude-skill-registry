@@ -10,5 +10,12 @@
   "stars": 1,
   "github_path": ".claude/skills/plan-adjuster",
   "github_branch": "main",
-  "dir_name": "plan-adjuster"
+  "dir_name": "plan-adjuster",
+  "author": "nadavyigal",
+  "source_url": "https://github.com/nadavyigal/Running-coach-/blob/main/.claude/skills/plan-adjuster/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nadavyigal/Running-coach-/blob/main/.claude/skills/plan-adjuster/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

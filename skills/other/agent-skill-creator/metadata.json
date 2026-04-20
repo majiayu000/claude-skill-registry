@@ -5,5 +5,12 @@
   "source": "github.com/illogical/InstructionLibrary",
   "downloaded_at": "2026-02-02T04:14:58.661359Z",
   "dir_name": "agent-skill-creator",
-  "category": "other"
+  "category": "other",
+  "author": "illogical",
+  "source_url": "https://github.com/illogical/InstructionLibrary/blob/main/skills/agent-skill-creator/SKILL.MD",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/illogical/InstructionLibrary/blob/main/skills/agent-skill-creator/SKILL.MD",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

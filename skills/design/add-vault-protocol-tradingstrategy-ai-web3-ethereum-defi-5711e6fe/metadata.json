@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:22:09.664735Z",
   "github_path": ".claude/skills/add-vault-protocol",
   "github_branch": "main",
-  "dir_name": "add-vault-protocol-tradingstrategy-ai-web3-ethereum-defi-5711e6fe"
+  "dir_name": "add-vault-protocol-tradingstrategy-ai-web3-ethereum-defi-5711e6fe",
+  "author": "tradingstrategy-ai",
+  "source_url": "https://github.com/tradingstrategy-ai/web3-ethereum-defi/blob/main/.claude/skills/add-vault-protocol/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2022-2026 Market Software Ltd.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

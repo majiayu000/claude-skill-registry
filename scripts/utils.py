@@ -3,12 +3,11 @@
 Shared utilities for skill registry scripts.
 """
 
-import re
 import hashlib
 import json
 import logging
+import re
 from pathlib import Path
-from typing import Optional
 from urllib.parse import urlparse
 
 import yaml
@@ -25,6 +24,7 @@ PERMISSIVE_LICENSES = {
     "CC0-1.0",
     "ISC",
     "MIT",
+    "MIT-0",
     "Unlicense",
 }
 
@@ -34,6 +34,7 @@ RESTRICTED_LICENSE_PATTERNS = (
     "GPL",
     "LGPL",
     "MPL",
+    "EUPL",
     "CC-BY-NC",
     "CC-BY-ND",
     "NONCOMMERCIAL",
@@ -159,11 +160,11 @@ def build_legal_metadata(
 
     if not permission_note:
         if distribution == "compatible":
-            permission_note = "Use according to upstream license terms and attribution requirements."
-        else:
             permission_note = (
-                "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse."
+                "Use according to upstream license terms and attribution requirements."
             )
+        else:
+            permission_note = "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse."
 
     if not copyright_text:
         if source_url:
@@ -207,9 +208,9 @@ def normalize_name(name: str) -> str:
     if not name:
         return "unknown"
     # Convert to lowercase, replace non-alphanumeric with hyphens
-    name = re.sub(r'[^a-z0-9]+', '-', name.lower())
+    name = re.sub(r"[^a-z0-9]+", "-", name.lower())
     # Strip leading/trailing hyphens, collapse consecutive hyphens
-    name = re.sub(r'-+', '-', name).strip('-')
+    name = re.sub(r"-+", "-", name).strip("-")
     # Max 64 chars
     return name[:64] if name else "unknown"
 
@@ -221,8 +222,8 @@ def normalize_category(category: str) -> str:
     """
     if not category:
         return "other"
-    name = re.sub(r'[^a-z0-9]+', '-', category.lower())
-    name = re.sub(r'-+', '-', name).strip('-')
+    name = re.sub(r"[^a-z0-9]+", "-", category.lower())
+    name = re.sub(r"-+", "-", name).strip("-")
     return name[:32] if name else "other"
 
 
@@ -252,7 +253,7 @@ def normalize_repo(repo: str) -> str:
     """Normalize GitHub repo to owner/repo format."""
     repo = (repo or "").strip()
     if repo.startswith("https://github.com/"):
-        repo = repo[len("https://github.com/"):]
+        repo = repo[len("https://github.com/") :]
     return repo.strip("/")
 
 
@@ -359,13 +360,77 @@ def ensure_unique_dir(parent: Path, base_name: str, key: str = "", repo: str = "
 
 # Category keywords used across multiple scripts for auto-detection.
 CATEGORY_KEYWORDS = {
-    "development": ["dev", "code", "programming", "api", "sdk", "framework", "build", "software", "compile", "debug", "refactor"],
-    "testing": ["test", "qa", "quality", "tdd", "jest", "pytest", "unittest", "integration", "e2e", "playwright", "cypress"],
+    "development": [
+        "dev",
+        "code",
+        "programming",
+        "api",
+        "sdk",
+        "framework",
+        "build",
+        "software",
+        "compile",
+        "debug",
+        "refactor",
+    ],
+    "testing": [
+        "test",
+        "qa",
+        "quality",
+        "tdd",
+        "jest",
+        "pytest",
+        "unittest",
+        "integration",
+        "e2e",
+        "playwright",
+        "cypress",
+    ],
     "devops": ["devops", "ci", "cd", "docker", "kubernetes", "deploy", "infra", "infrastructure"],
-    "security": ["security", "auth", "crypto", "vulnerability", "audit", "owasp", "pentest", "fuzzing"],
-    "documents": ["doc", "pdf", "word", "excel", "pptx", "xlsx", "docx", "markdown", "documentation"],
-    "data": ["data", "analytics", "sql", "database", "etl", "pipeline", "ml", "ai", "machine-learning", "visualization"],
-    "design": ["design", "ui", "ux", "css", "frontend", "component", "tailwind", "figma", "animation"],
+    "security": [
+        "security",
+        "auth",
+        "crypto",
+        "vulnerability",
+        "audit",
+        "owasp",
+        "pentest",
+        "fuzzing",
+    ],
+    "documents": [
+        "doc",
+        "pdf",
+        "word",
+        "excel",
+        "pptx",
+        "xlsx",
+        "docx",
+        "markdown",
+        "documentation",
+    ],
+    "data": [
+        "data",
+        "analytics",
+        "sql",
+        "database",
+        "etl",
+        "pipeline",
+        "ml",
+        "ai",
+        "machine-learning",
+        "visualization",
+    ],
+    "design": [
+        "design",
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind",
+        "figma",
+        "animation",
+    ],
     "productivity": ["productivity", "automation", "workflow", "task", "planning", "memory"],
     "product": ["product", "prd", "roadmap", "feature", "backlog", "user-research", "metrics"],
     "marketing": ["marketing", "seo", "content", "social", "campaign", "brand"],
@@ -405,8 +470,8 @@ def extract_description(content: str, max_length: int = 200) -> str:
         if line.startswith("#"):
             continue
         if line and not line.startswith("```") and len(line) > 20:
-            line = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', line)
-            line = re.sub(r'[*_`]', '', line)
+            line = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", line)
+            line = re.sub(r"[*_`]", "", line)
             return line[:max_length]
     return ""
 

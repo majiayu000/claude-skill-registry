@@ -5,5 +5,12 @@
   "source": "github.com/Spectaculous-Code/raamattu-nyt",
   "downloaded_at": "2026-02-04T01:09:29.238805Z",
   "dir_name": "docs-updater",
-  "category": "data"
+  "category": "data",
+  "author": "Spectaculous-Code",
+  "source_url": "https://github.com/Spectaculous-Code/raamattu-nyt/blob/main/Docs/claude-reports/docs-updater/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Spectaculous-Code/raamattu-nyt/blob/main/Docs/claude-reports/docs-updater/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -9,5 +9,12 @@
   ],
   "stars": 11,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "authentication-security"
+  "dir_name": "authentication-security",
+  "author": "williamzujkowski",
+  "source_url": "https://github.com/williamzujkowski/standards",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Standards Project Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

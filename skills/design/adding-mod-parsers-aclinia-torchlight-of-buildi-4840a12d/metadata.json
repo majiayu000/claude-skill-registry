@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:22:16.509305Z",
   "github_path": ".claude/skills/adding-mod-parsers",
   "github_branch": "main",
-  "dir_name": "adding-mod-parsers-aclinia-torchlight-of-buildi-4840a12d"
+  "dir_name": "adding-mod-parsers-aclinia-torchlight-of-buildi-4840a12d",
+  "author": "aclinia",
+  "source_url": "https://github.com/aclinia/torchlight-of-building/blob/main/.claude/skills/adding-mod-parsers/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 aclinia",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

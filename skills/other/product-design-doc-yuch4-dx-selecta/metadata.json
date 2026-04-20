@@ -7,5 +7,12 @@
   "dir_name": "product-design-doc-yuch4-dx-selecta",
   "category": "other",
   "github_path": ".claude/skills/product-design-doc",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "yuch4",
+  "source_url": "https://github.com/yuch4/dx-selecta/blob/main/.claude/skills/product-design-doc/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yuch4/dx-selecta/blob/main/.claude/skills/product-design-doc/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

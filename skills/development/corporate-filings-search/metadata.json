@@ -5,5 +5,12 @@
   "description": "Search SEC and state corporate filings for financial and regulatory information",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:41.371745Z",
-  "dir_name": "corporate-filings-search"
+  "dir_name": "corporate-filings-search",
+  "author": "babdulhakim2",
+  "source_url": "https://github.com/babdulhakim2/scolo-app",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/babdulhakim2/scolo-app",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

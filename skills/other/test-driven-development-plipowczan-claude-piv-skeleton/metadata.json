@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/test-driven-development",
   "github_branch": "main",
   "dir_name": "test-driven-development-plipowczan-claude-piv-skeleton",
-  "downloaded_at": "2026-02-05T01:45:40.659397Z"
+  "downloaded_at": "2026-02-05T01:45:40.659397Z",
+  "author": "plipowczan",
+  "source_url": "https://github.com/plipowczan/claude-piv-skeleton/blob/main/.claude/skills/test-driven-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude PIV Skeleton Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

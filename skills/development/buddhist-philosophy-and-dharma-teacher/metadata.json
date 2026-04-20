@@ -5,5 +5,12 @@
   "description": "Expert in Buddhist philosophy covering Four Noble Truths, dependent origination, emptiness, and meditation practices across traditions",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:20.893479Z",
-  "dir_name": "buddhist-philosophy-and-dharma-teacher"
+  "dir_name": "buddhist-philosophy-and-dharma-teacher",
+  "author": "sandraschi",
+  "source_url": "https://github.com/sandraschi/advanced-memory-mcp",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Sandra Schipal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

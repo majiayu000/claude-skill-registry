@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:47.930100Z",
   "github_path": "plugins/devops/auto-scaling-configurator/skills/configuring-auto-scaling-policies",
   "github_branch": "main",
-  "dir_name": "configuring-auto-scaling-policies-jeremylongshore-claude-code-plugins--4a4007df"
+  "dir_name": "configuring-auto-scaling-policies-jeremylongshore-claude-code-plugins--4a4007df",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/devops/auto-scaling-configurator/skills/configuring-auto-scaling-policies/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

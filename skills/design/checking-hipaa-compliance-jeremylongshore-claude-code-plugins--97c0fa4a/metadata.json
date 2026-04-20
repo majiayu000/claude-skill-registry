@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:52.083246Z",
   "github_path": "plugins/security/hipaa-compliance-checker/skills/checking-hipaa-compliance",
   "github_branch": "main",
-  "dir_name": "checking-hipaa-compliance-jeremylongshore-claude-code-plugins--97c0fa4a"
+  "dir_name": "checking-hipaa-compliance-jeremylongshore-claude-code-plugins--97c0fa4a",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/security/hipaa-compliance-checker/skills/checking-hipaa-compliance/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

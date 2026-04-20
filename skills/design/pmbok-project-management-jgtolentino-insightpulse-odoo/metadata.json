@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:11.745782Z",
   "github_path": "docs/claude-code-skills/community/pmbok-project-management",
   "github_branch": "main",
-  "dir_name": "pmbok-project-management-jgtolentino-insightpulse-odoo"
+  "dir_name": "pmbok-project-management-jgtolentino-insightpulse-odoo",
+  "author": "jgtolentino",
+  "source_url": "https://github.com/jgtolentino/insightpulse-odoo/blob/main/docs/claude-code-skills/community/pmbok-project-management/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jgtolentino/insightpulse-odoo/blob/main/docs/claude-code-skills/community/pmbok-project-management/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

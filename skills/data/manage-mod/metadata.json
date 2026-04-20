@@ -5,5 +5,12 @@
   "source": "github.com/shiiman/claude-code-plugins",
   "downloaded_at": "2026-01-28T01:59:46.129451Z",
   "dir_name": "manage-mod",
-  "category": "data"
+  "category": "data",
+  "author": "shiiman",
+  "source_url": "https://github.com/shiiman/claude-code-plugins/blob/main/plugins/shiiman-go/skills/manage-mod/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shiiman/claude-code-plugins/blob/main/plugins/shiiman-go/skills/manage-mod/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

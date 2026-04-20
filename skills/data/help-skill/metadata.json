@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/timequity/plugins",
-  "dir_name": "help-skill"
+  "dir_name": "help-skill",
+  "author": "timequity",
+  "source_url": "https://github.com/timequity/plugins",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/timequity/plugins",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

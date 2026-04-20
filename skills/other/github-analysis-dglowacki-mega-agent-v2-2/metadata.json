@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/dglowacki/mega-agent-v2",
-  "dir_name": "github-analysis-dglowacki-mega-agent-v2-2"
+  "dir_name": "github-analysis-dglowacki-mega-agent-v2-2",
+  "author": "dglowacki",
+  "source_url": "https://github.com/dglowacki/mega-agent-v2/blob/main/.claude/skills/github-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dglowacki/mega-agent-v2/blob/main/.claude/skills/github-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

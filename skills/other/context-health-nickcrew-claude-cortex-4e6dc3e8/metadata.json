@@ -7,5 +7,12 @@
   "dir_name": "context-health-nickcrew-claude-cortex-4e6dc3e8",
   "category": "other",
   "github_path": "claude_ctx_py/assets/skills/context-health",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "NickCrew",
+  "source_url": "https://github.com/NickCrew/claude-cortex/blob/main/claude_ctx_py/assets/skills/context-health/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nicholas Ferguson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

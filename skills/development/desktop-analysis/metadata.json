@@ -5,5 +5,12 @@
   "description": "Desktop analysis and reporting tools. Includes music analysis with popularity scoring and file statistics (count files, folders, and calculate total size).",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:29.862359Z",
-  "dir_name": "desktop-analysis"
+  "dir_name": "desktop-analysis",
+  "author": "MassLab-SII",
+  "source_url": "https://github.com/MassLab-SII/open-agent-skills",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

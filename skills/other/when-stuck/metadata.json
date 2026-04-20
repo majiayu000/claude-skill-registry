@@ -5,5 +5,12 @@
   "source": "github.com/brixtonpham/claude-config",
   "downloaded_at": "2026-01-29T08:50:39.875265Z",
   "dir_name": "when-stuck",
-  "category": "other"
+  "category": "other",
+  "author": "brixtonpham",
+  "source_url": "https://github.com/brixtonpham/claude-config/blob/main/skills/problem-solving/when-stuck/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brixtonpham/claude-config/blob/main/skills/problem-solving/when-stuck/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

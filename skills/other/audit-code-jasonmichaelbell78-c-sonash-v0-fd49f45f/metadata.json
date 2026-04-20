@@ -7,5 +7,12 @@
   "dir_name": "audit-code-jasonmichaelbell78-c-sonash-v0-fd49f45f",
   "category": "other",
   "github_path": ".claude/skills/audit-code",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jasonmichaelbell78-creator",
+  "source_url": "https://github.com/jasonmichaelbell78-creator/sonash-v0/blob/main/.claude/skills/audit-code/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

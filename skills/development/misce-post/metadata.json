@@ -7,5 +7,12 @@
   "stars": 48,
   "source": "github.com/majiayu000/claude-skill-registry",
   "downloaded_at": "2026-01-24T16:15:31.802829Z",
-  "dir_name": "misce-post"
+  "dir_name": "misce-post",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/data/misce-post/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

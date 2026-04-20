@@ -9,5 +9,12 @@
   "github_path": "skills/architecture-decision-records",
   "github_branch": "main",
   "dir_name": "architecture-decision-records-petekp-claude-code-setup",
-  "downloaded_at": "2026-02-05T01:45:10.669837Z"
+  "downloaded_at": "2026-02-05T01:45:10.669837Z",
+  "author": "petekp",
+  "source_url": "https://github.com/petekp/claude-code-setup/blob/main/skills/architecture-decision-records/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Pete Petrash",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

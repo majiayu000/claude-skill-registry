@@ -9,5 +9,12 @@
   "github_path": "skills/benchmark_skills/alfworld/alfworld-open-receptacle",
   "github_branch": "main",
   "dir_name": "alfworld-open-receptacle",
-  "downloaded_at": "2026-02-05T01:44:58.981649Z"
+  "downloaded_at": "2026-02-05T01:44:58.981649Z",
+  "author": "zjunlp",
+  "source_url": "https://github.com/zjunlp/SkillNet/blob/main/skills/benchmark_skills/alfworld/alfworld-open-receptacle/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ZJUNLP",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

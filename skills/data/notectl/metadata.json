@@ -5,5 +5,12 @@
   "source": "github.com/moltbot/skills",
   "downloaded_at": "2026-01-28T03:50:06.209172Z",
   "dir_name": "notectl",
-  "category": "data"
+  "category": "data",
+  "author": "moltbot",
+  "source_url": "https://github.com/moltbot/skills/blob/main/skills/rainbat/notectl/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

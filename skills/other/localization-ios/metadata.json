@@ -5,5 +5,12 @@
   "source": "github.com/Kaakati/rails-enterprise-dev",
   "downloaded_at": "2026-01-27T03:42:05.308020Z",
   "dir_name": "localization-ios",
-  "category": "other"
+  "category": "other",
+  "author": "Kaakati",
+  "source_url": "https://github.com/Kaakati/rails-enterprise-dev/blob/main/plugins/reactree-ios-dev/skills/localization-ios/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kaakati/rails-enterprise-dev/blob/main/plugins/reactree-ios-dev/skills/localization-ios/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

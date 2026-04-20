@@ -5,5 +5,12 @@
   "source": "github.com/plurigrid/asi",
   "downloaded_at": "2026-01-28T01:53:16.580012Z",
   "dir_name": "catsharp-sonification",
-  "category": "other"
+  "category": "other",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/catsharp-sonification/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

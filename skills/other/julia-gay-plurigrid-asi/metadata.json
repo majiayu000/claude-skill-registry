@@ -7,5 +7,12 @@
   "dir_name": "julia-gay-plurigrid-asi",
   "category": "other",
   "github_path": "skills/julia-gay",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/julia-gay/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

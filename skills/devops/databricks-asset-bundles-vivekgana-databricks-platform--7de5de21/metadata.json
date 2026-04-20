@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:55.077615Z",
   "github_path": "plugins/databricks-engineering/skills/databricks-asset-bundles",
   "github_branch": "main",
-  "dir_name": "databricks-asset-bundles-vivekgana-databricks-platform--7de5de21"
+  "dir_name": "databricks-asset-bundles-vivekgana-databricks-platform--7de5de21",
+  "author": "vivekgana",
+  "source_url": "https://github.com/vivekgana/databricks-platform-marketplace/blob/main/plugins/databricks-engineering/skills/databricks-asset-bundles/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Your Company",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

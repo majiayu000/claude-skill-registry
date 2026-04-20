@@ -7,5 +7,12 @@
   "dir_name": "threat-modeling-rjmurillo-ai-agents",
   "category": "other",
   "github_path": ".claude/skills/threat-modeling",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "rjmurillo",
+  "source_url": "https://github.com/rjmurillo/ai-agents/blob/main/.claude/skills/threat-modeling/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

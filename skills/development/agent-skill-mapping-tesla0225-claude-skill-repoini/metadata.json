@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/agent-skill-mapping",
   "github_branch": "main",
-  "dir_name": "agent-skill-mapping-tesla0225-claude-skill-repoini"
+  "dir_name": "agent-skill-mapping-tesla0225-claude-skill-repoini",
+  "author": "tesla0225",
+  "source_url": "https://github.com/tesla0225/claude_skill_repoinit/blob/main/.claude/skills/agent-skill-mapping/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tesla0225/claude_skill_repoinit/blob/main/.claude/skills/agent-skill-mapping/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

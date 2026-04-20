@@ -10,5 +10,12 @@
   "stars": 15,
   "github_path": ".claude/skills/knowledge-transfer",
   "github_branch": "main",
-  "dir_name": "knowledge-transfer-yaleh-meta-cc"
+  "dir_name": "knowledge-transfer-yaleh-meta-cc",
+  "author": "yaleh",
+  "source_url": "https://github.com/yaleh/meta-cc/blob/main/.claude/skills/knowledge-transfer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 meta-cc contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

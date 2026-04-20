@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:43.641428Z",
   "github_path": "plugins/design-review/skills/design-review",
   "github_branch": "main",
-  "dir_name": "design-review"
+  "dir_name": "design-review",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/design-review/skills/design-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

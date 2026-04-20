@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/operations/cicd-intelligent-recovery",
   "github_branch": "main",
-  "dir_name": "cicd-intelligent-recovery"
+  "dir_name": "cicd-intelligent-recovery",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/context-cascade/blob/main/skills/operations/cicd-intelligent-recovery/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ruvnet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

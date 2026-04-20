@@ -5,5 +5,12 @@
   "description": "Automatically manage agent lifecycle, proposals, and registry.",
   "source": "GitHub Search API",
   "downloaded_at": "2026-01-08T03:31:40.624894Z",
-  "dir_name": "agent-manager"
+  "dir_name": "agent-manager",
+  "author": "CheekyCodexConjurer",
+  "source_url": "https://github.com/CheekyCodexConjurer/quant-lab",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CheekyCodexConjurer/quant-lab",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

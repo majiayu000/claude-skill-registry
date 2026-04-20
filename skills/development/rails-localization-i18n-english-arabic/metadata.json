@@ -5,5 +5,12 @@
   "description": "Comprehensive internationalization skill for Ruby on Rails applications with proper English and Arabic translations, RTL support, pluralization rules, date/time formatting, and culturally appropriate ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:17.123629Z",
-  "dir_name": "rails-localization-i18n-english-arabic"
+  "dir_name": "rails-localization-i18n-english-arabic",
+  "author": "Kaakati",
+  "source_url": "https://github.com/Kaakati/rails-enterprise-dev",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kaakati/rails-enterprise-dev",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

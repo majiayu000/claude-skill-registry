@@ -5,5 +5,12 @@
   "description": "Create new AILANG releases with version bumps, changelog updates, git tags, and CI/CD verification. Use when user says \"ready to release\", \"create release\", mentions version numbers, or wants to publi",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:28.694050Z",
-  "dir_name": "ailang-release-manager"
+  "dir_name": "ailang-release-manager",
+  "author": "sunholo-data",
+  "source_url": "https://github.com/sunholo-data/ailang",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

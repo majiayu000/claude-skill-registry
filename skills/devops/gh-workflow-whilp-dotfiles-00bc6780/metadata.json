@@ -9,5 +9,12 @@
   "stars": 9,
   "github_path": ".claude/skills/gh-workflow",
   "github_branch": "main",
-  "dir_name": "gh-workflow-whilp-dotfiles-00bc6780"
+  "dir_name": "gh-workflow-whilp-dotfiles-00bc6780",
+  "author": "whilp",
+  "source_url": "https://github.com/whilp/dotfiles/blob/main/.claude/skills/gh-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 wcm",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

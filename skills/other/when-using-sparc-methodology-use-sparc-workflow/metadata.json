@@ -7,5 +7,12 @@
   "dir_name": "when-using-sparc-methodology-use-sparc-workflow",
   "category": "other",
   "github_path": "skills/delivery/when-using-sparc-methodology-use-sparc-workflow",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/context-cascade/blob/main/skills/delivery/when-using-sparc-methodology-use-sparc-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ruvnet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

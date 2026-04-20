@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/sanky369/vibe-building-skills",
-  "dir_name": "content-atomizer-sanky369-vibe-building-skills-2"
+  "dir_name": "content-atomizer-sanky369-vibe-building-skills-2",
+  "author": "sanky369",
+  "source_url": "https://github.com/sanky369/vibe-building-skills/blob/main/skills/marketing/content-atomizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sanky369/vibe-building-skills/blob/main/skills/marketing/content-atomizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

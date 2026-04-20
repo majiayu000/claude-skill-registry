@@ -7,5 +7,12 @@
   "dir_name": "neon-db-setup-maneeshanif-todo-spec-driven-cad02b8d",
   "category": "other",
   "github_path": ".claude/skills/neon-db-setup",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "maneeshanif",
+  "source_url": "https://github.com/maneeshanif/todo-spec-driven/blob/main/.claude/skills/neon-db-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/maneeshanif/todo-spec-driven/blob/main/.claude/skills/neon-db-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

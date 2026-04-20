@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:39.859464Z",
   "github_path": ".claude/skills/api-scaffolding/skills/dotnet-minimal-api-templates",
   "github_branch": "main",
-  "dir_name": "dotnet-minimal-api-templates-onesmartguy-next-level-real-esta"
+  "dir_name": "dotnet-minimal-api-templates-onesmartguy-next-level-real-esta",
+  "author": "onesmartguy",
+  "source_url": "https://github.com/onesmartguy/next-level-real-estate/blob/main/.claude/skills/api-scaffolding/skills/dotnet-minimal-api-templates/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/onesmartguy/next-level-real-estate/blob/main/.claude/skills/api-scaffolding/skills/dotnet-minimal-api-templates/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

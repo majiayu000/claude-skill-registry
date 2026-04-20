@@ -9,5 +9,12 @@
   "github_path": "skills/tool-design",
   "github_branch": "main",
   "dir_name": "tool-design-kalyanikhandare29-agent-skills-for-con",
-  "downloaded_at": "2026-02-05T01:45:38.688487Z"
+  "downloaded_at": "2026-02-05T01:45:38.688487Z",
+  "author": "Kalyanikhandare29",
+  "source_url": "https://github.com/Kalyanikhandare29/Agent-Skills-for-Context-Engineering/blob/main/skills/tool-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Context Engineering Agent Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

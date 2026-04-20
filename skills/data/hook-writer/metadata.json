@@ -5,5 +5,12 @@
   "source": "github.com/WalkerHi11/mediabuy-plugins",
   "downloaded_at": "2026-02-04T03:01:24.800882Z",
   "dir_name": "hook-writer",
-  "category": "data"
+  "category": "data",
+  "author": "WalkerHi11",
+  "source_url": "https://github.com/WalkerHi11/mediabuy-plugins/blob/main/.claude/skills/hook-writer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Media Buying Team",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

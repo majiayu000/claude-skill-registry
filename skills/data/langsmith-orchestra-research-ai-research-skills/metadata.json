@@ -5,5 +5,12 @@
   "source": "github.com/Orchestra-Research/AI-research-SKILLs",
   "downloaded_at": "2026-02-04T02:17:22.481380Z",
   "dir_name": "langsmith-orchestra-research-ai-research-skills",
-  "category": "data"
+  "category": "data",
+  "author": "Orchestra-Research",
+  "source_url": "https://github.com/Orchestra-Research/AI-research-SKILLs/blob/main/17-observability/langsmith/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude AI Research Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:30.378225Z",
   "github_path": ".claude/library/ctags",
   "github_branch": "main",
-  "dir_name": "ctags-mgreenly-ikigai"
+  "dir_name": "ctags-mgreenly-ikigai",
+  "author": "mgreenly",
+  "source_url": "https://github.com/mgreenly/ikigai/blob/main/.claude/library/ctags/SKILL.md",
+  "license": "MIT-0",
+  "copyright": "Copyright (c) 2025 Michael Greenly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

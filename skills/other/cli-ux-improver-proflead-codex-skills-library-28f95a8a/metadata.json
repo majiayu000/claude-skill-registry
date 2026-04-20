@@ -7,5 +7,12 @@
   "dir_name": "cli-ux-improver-proflead-codex-skills-library-28f95a8a",
   "category": "other",
   "github_path": "skills/frontend/cli-ux-improver",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "proflead",
+  "source_url": "https://github.com/proflead/codex-skills-library/blob/main/skills/frontend/cli-ux-improver/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/proflead/codex-skills-library/blob/main/skills/frontend/cli-ux-improver/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "memory-documentary-rjmurillo-ai-agents-935edf44",
   "category": "other",
   "github_path": ".claude/skills/memory-documentary",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "rjmurillo",
+  "source_url": "https://github.com/rjmurillo/ai-agents/blob/main/.claude/skills/memory-documentary/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

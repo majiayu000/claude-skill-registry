@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:20.122313Z",
   "dir_name": "brand-governance-os",
   "github_path": "plugins/brand-strategy/skills/brand-governance-os",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/brand-strategy/skills/brand-governance-os/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

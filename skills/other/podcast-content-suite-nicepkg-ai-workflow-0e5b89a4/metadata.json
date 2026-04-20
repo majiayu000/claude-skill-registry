@@ -5,5 +5,12 @@
   "source": "github.com/nicepkg/ai-workflow",
   "downloaded_at": "2026-01-29T05:19:49.053583Z",
   "dir_name": "podcast-content-suite-nicepkg-ai-workflow-0e5b89a4",
-  "category": "other"
+  "category": "other",
+  "author": "nicepkg",
+  "source_url": "https://github.com/nicepkg/ai-workflow/blob/main/workflows/content-creator-workflow/.claude/skills/podcast-content-suite/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 nicepkg",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

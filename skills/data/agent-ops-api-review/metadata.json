@@ -5,5 +5,12 @@
   "source": "github.com/weholt/script-cast",
   "downloaded_at": "2026-01-28T03:38:22.015824Z",
   "dir_name": "agent-ops-api-review",
-  "category": "data"
+  "category": "data",
+  "author": "weholt",
+  "source_url": "https://github.com/weholt/script-cast/blob/main/.github/skills/agent-ops-api-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/weholt/script-cast/blob/main/.github/skills/agent-ops-api-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/automatic-stateful-prompt-improver",
   "github_branch": "main",
-  "dir_name": "automatic-stateful-prompt-improver"
+  "dir_name": "automatic-stateful-prompt-improver",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/automatic-stateful-prompt-improver/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

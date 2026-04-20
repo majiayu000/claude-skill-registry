@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/aj-geddes/useful-ai-prompts",
   "dir_name": "stored-procedures",
-  "downloaded_at": "2026-02-15T06:12:31.342099Z"
+  "downloaded_at": "2026-02-15T06:12:31.342099Z",
+  "author": "aj-geddes",
+  "source_url": "https://github.com/aj-geddes/useful-ai-prompts/blob/main/skills/stored-procedures/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AJ Geddes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

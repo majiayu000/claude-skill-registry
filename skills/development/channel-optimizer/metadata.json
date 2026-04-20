@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/channel-optimizer",
   "github_branch": "main",
-  "dir_name": "channel-optimizer"
+  "dir_name": "channel-optimizer",
+  "author": "TobiasWooldridge",
+  "source_url": "https://github.com/TobiasWooldridge/WaveCap-SDR/blob/main/.claude/skills/channel-optimizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TobiasWooldridge/WaveCap-SDR/blob/main/.claude/skills/channel-optimizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

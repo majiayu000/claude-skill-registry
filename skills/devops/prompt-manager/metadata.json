@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:28.638269Z",
   "github_path": ".claude/skills/prompt-manager",
   "github_branch": "main",
-  "dir_name": "prompt-manager"
+  "dir_name": "prompt-manager",
+  "author": "sunholo-data",
+  "source_url": "https://github.com/sunholo-data/ailang/blob/main/.claude/skills/prompt-manager/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "copyright notice that is included in or attached to the work",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

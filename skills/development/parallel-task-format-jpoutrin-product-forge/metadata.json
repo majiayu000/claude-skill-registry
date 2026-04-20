@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:30.022415Z",
   "github_path": "plugins/product-design/skills/parallel-task-format",
   "github_branch": "main",
-  "dir_name": "parallel-task-format-jpoutrin-product-forge"
+  "dir_name": "parallel-task-format-jpoutrin-product-forge",
+  "author": "jpoutrin",
+  "source_url": "https://github.com/jpoutrin/product-forge/blob/main/plugins/product-design/skills/parallel-task-format/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 jpoutrin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

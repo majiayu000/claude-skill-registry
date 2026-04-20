@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:38.830003Z",
   "github_path": "plugins/affinity-sdk/.claude-plugin/skills/affinity-python-sdk",
   "github_branch": "main",
-  "dir_name": "affinity-python-sdk-yaniv-golan-affinity-sdk"
+  "dir_name": "affinity-python-sdk-yaniv-golan-affinity-sdk",
+  "author": "yaniv-golan",
+  "source_url": "https://github.com/yaniv-golan/affinity-sdk/blob/main/plugins/affinity-sdk/.claude-plugin/skills/affinity-python-sdk/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Yaniv",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

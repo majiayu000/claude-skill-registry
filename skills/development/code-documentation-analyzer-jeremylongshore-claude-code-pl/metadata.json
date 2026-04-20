@@ -7,5 +7,12 @@
   "stars": 1061,
   "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
   "downloaded_at": "2026-01-24T16:15:51.010612Z",
-  "dir_name": "code-documentation-analyzer-jeremylongshore-claude-code-pl"
+  "dir_name": "code-documentation-analyzer-jeremylongshore-claude-code-pl",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/planned-skills/generated/17-technical-docs/code-documentation-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

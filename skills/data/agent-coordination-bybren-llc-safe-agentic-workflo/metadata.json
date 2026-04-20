@@ -5,5 +5,12 @@
   "source": "github.com/bybren-llc/safe-agentic-workflow",
   "downloaded_at": "2026-01-29T02:51:55.761904Z",
   "dir_name": "agent-coordination-bybren-llc-safe-agentic-workflo",
-  "category": "data"
+  "category": "data",
+  "author": "bybren-llc",
+  "source_url": "https://github.com/bybren-llc/safe-agentic-workflow/blob/main/.claude/skills/agent-coordination/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 J. Scott Graham (@cheddarfox) / ByBren, LLC",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

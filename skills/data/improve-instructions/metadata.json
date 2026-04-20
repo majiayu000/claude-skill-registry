@@ -5,5 +5,12 @@
   "source": "github.com/philoserf/claude-code-setup",
   "downloaded_at": "2026-01-27T03:54:46.113097Z",
   "dir_name": "improve-instructions",
-  "category": "data"
+  "category": "data",
+  "author": "philoserf",
+  "source_url": "https://github.com/philoserf/claude-code-setup/blob/main/skills/improve-instructions/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Mark Ayers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

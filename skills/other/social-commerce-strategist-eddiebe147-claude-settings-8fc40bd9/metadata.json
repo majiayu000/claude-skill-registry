@@ -5,5 +5,12 @@
   "source": "github.com/eddiebe147/claude-settings",
   "downloaded_at": "2026-01-29T07:35:16.507861Z",
   "dir_name": "social-commerce-strategist-eddiebe147-claude-settings-8fc40bd9",
-  "category": "other"
+  "category": "other",
+  "author": "eddiebe147",
+  "source_url": "https://github.com/eddiebe147/claude-settings/blob/main/skills/social-commerce-strategist/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/eddiebe147/claude-settings/blob/main/skills/social-commerce-strategist/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

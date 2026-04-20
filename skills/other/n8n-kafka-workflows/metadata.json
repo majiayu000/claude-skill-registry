@@ -5,5 +5,12 @@
   "source": "github.com/anton-abyzov/specweave",
   "downloaded_at": "2026-01-29T03:07:04.165109Z",
   "dir_name": "n8n-kafka-workflows",
-  "category": "other"
+  "category": "other",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-n8n/skills/n8n-kafka-workflows/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

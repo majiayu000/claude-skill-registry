@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/add-wikipedia-references",
   "github_branch": "main",
-  "dir_name": "add-wikipedia-references-dsebastien-concept-cards"
+  "dir_name": "add-wikipedia-references-dsebastien-concept-cards",
+  "author": "dsebastien",
+  "source_url": "https://github.com/dsebastien/concept-cards/blob/main/.claude/skills/add-wikipedia-references/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sebastien Dubois",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

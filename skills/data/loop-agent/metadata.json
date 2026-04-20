@@ -5,5 +5,12 @@
   "source": "github.com/d-o-hub/rust-self-learning-memory",
   "downloaded_at": "2026-01-29T01:48:10.974733Z",
   "dir_name": "loop-agent",
-  "category": "data"
+  "category": "data",
+  "author": "d-o-hub",
+  "source_url": "https://github.com/d-o-hub/rust-self-learning-memory/blob/main/.opencode/skill/loop-agent/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2019 Zachary Rice",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

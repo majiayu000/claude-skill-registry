@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/admin-unix",
   "github_branch": "main",
-  "dir_name": "admin-unix-evolv3-ai-vibe-skills"
+  "dir_name": "admin-unix-evolv3-ai-vibe-skills",
+  "author": "evolv3-ai",
+  "source_url": "https://github.com/evolv3-ai/vibe-skills/blob/main/skills/admin-unix/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

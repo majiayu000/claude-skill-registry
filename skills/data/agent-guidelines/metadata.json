@@ -7,5 +7,12 @@
   "stars": 3,
   "source": "github.com/nextblock-cms/nextblock",
   "downloaded_at": "2026-01-24T16:15:34.180118Z",
-  "dir_name": "agent-guidelines"
+  "dir_name": "agent-guidelines",
+  "author": "nextblock-cms",
+  "source_url": "https://github.com/nextblock-cms/nextblock/blob/main/.agent/skills/agent-guidelines/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (C) 2025 NextBlock CMS",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

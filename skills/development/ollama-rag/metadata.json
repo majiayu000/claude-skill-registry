@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/ollama-rag",
   "github_branch": "main",
-  "dir_name": "ollama-rag"
+  "dir_name": "ollama-rag",
+  "author": "cuba6112",
+  "source_url": "https://github.com/cuba6112/skillfactory/blob/main/.claude/skills/ollama-rag/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cuba6112/skillfactory/blob/main/.claude/skills/ollama-rag/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

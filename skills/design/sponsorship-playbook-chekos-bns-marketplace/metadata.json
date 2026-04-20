@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:27.598518Z",
   "github_path": "tdd-revenue/skills/sponsorship-playbook",
   "github_branch": "main",
-  "dir_name": "sponsorship-playbook-chekos-bns-marketplace"
+  "dir_name": "sponsorship-playbook-chekos-bns-marketplace",
+  "author": "chekos",
+  "source_url": "https://github.com/chekos/bns-marketplace/blob/main/tdd-revenue/skills/sponsorship-playbook/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chekos/bns-marketplace/blob/main/tdd-revenue/skills/sponsorship-playbook/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

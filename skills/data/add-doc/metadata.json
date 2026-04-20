@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "add-doc"
+  "dir_name": "add-doc",
+  "author": "asterkin",
+  "source_url": "https://github.com/asterkin/claude-taew-py",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Asher Sterkin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Generates professional API documentation, user guides, and architectural documentation from code and specifications.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:27.765606Z",
-  "dir_name": "documentation-builder"
+  "dir_name": "documentation-builder",
+  "author": "ciscoittech",
+  "source_url": "https://github.com/ciscoittech/claude-agent-framework",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ciscoittech/claude-agent-framework",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

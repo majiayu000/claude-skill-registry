@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:29:33.738477Z",
   "github_path": "skills/fabric/ask/secure-by-design-questions",
   "github_branch": "main",
-  "dir_name": "secure-by-design-questions-tolgaio-neo-5f0371cc"
+  "dir_name": "secure-by-design-questions-tolgaio-neo-5f0371cc",
+  "author": "tolgaio",
+  "source_url": "https://github.com/tolgaio/neo/blob/main/skills/fabric/ask/secure-by-design-questions/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tolgaio/neo/blob/main/skills/fabric/ask/secure-by-design-questions/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

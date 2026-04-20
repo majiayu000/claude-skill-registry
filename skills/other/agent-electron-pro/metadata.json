@@ -9,5 +9,12 @@
   "github_path": "skills/agent-electron-pro",
   "github_branch": "main",
   "dir_name": "agent-electron-pro",
-  "downloaded_at": "2026-02-05T05:47:00.862050Z"
+  "downloaded_at": "2026-02-05T05:47:00.862050Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/agent-electron-pro/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

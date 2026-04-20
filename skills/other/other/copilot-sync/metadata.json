@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/fgarofalo56/Suppercharge_Microsoft_Fabric",
   "dir_name": "copilot-sync",
-  "downloaded_at": "2026-02-15T07:11:54.689294Z"
+  "downloaded_at": "2026-02-15T07:11:54.689294Z",
+  "author": "fgarofalo56",
+  "source_url": "https://github.com/fgarofalo56/Suppercharge_Microsoft_Fabric/blob/main/.github/skills/copilot-sync/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Francisco Garcia",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

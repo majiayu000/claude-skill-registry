@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": ".claude/skills/recognition-program-builder",
   "github_branch": "main",
-  "dir_name": "recognition-program-builder"
+  "dir_name": "recognition-program-builder",
+  "author": "dengineproblem",
+  "source_url": "https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/recognition-program-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/recognition-program-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/Flow-Club/vibereps",
   "downloaded_at": "2026-01-28T04:44:31.615935Z",
   "dir_name": "add-exercise",
-  "category": "data"
+  "category": "data",
+  "author": "Flow-Club",
+  "source_url": "https://github.com/Flow-Club/vibereps/blob/main/.claude/skills/add-exercise/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Flow Club",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

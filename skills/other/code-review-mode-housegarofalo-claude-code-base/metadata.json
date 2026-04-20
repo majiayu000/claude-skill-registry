@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/code-review-mode",
   "github_branch": "master",
   "dir_name": "code-review-mode-housegarofalo-claude-code-base",
-  "downloaded_at": "2026-02-05T01:44:39.194432Z"
+  "downloaded_at": "2026-02-05T01:44:39.194432Z",
+  "author": "HouseGarofalo",
+  "source_url": "https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/code-review-mode/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 HouseGarofalo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

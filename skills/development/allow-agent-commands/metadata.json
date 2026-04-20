@@ -7,5 +7,12 @@
   "stars": 8,
   "source": "github.com/aspiers/ai-config",
   "downloaded_at": "2026-01-24T16:15:52.455388Z",
-  "dir_name": "allow-agent-commands"
+  "dir_name": "allow-agent-commands",
+  "author": "aspiers",
+  "source_url": "https://github.com/aspiers/ai-config/blob/main/.claude/skills/allow-agent-commands/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

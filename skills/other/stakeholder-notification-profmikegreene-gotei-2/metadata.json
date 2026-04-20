@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/profmikegreene/gotei",
-  "dir_name": "stakeholder-notification-profmikegreene-gotei-2"
+  "dir_name": "stakeholder-notification-profmikegreene-gotei-2",
+  "author": "profmikegreene",
+  "source_url": "https://github.com/profmikegreene/gotei/blob/main/Gotei_Skills/stakeholder-notification/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/profmikegreene/gotei/blob/main/Gotei_Skills/stakeholder-notification/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

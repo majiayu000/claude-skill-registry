@@ -5,5 +5,12 @@
   "source": "github.com/NangoHQ/ai-ide-prompts",
   "downloaded_at": "2026-01-29T03:39:17.241838Z",
   "dir_name": "agent-builder-skill",
-  "category": "data"
+  "category": "data",
+  "author": "NangoHQ",
+  "source_url": "https://github.com/NangoHQ/ai-ide-prompts/blob/main/.claude/skills/agent-builder-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NangoHQ/ai-ide-prompts/blob/main/.claude/skills/agent-builder-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "Validate outputs using rule-based checks (required strings, regex, length, ranges). Use when you need deterministic verification or regression checks.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:28.092782Z",
-  "dir_name": "verification-harness-cloudhabil-agi-server"
+  "dir_name": "verification-harness-cloudhabil-agi-server",
+  "author": "Cloudhabil",
+  "source_url": "https://github.com/Cloudhabil/AGI-Server",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cloudhabil/AGI-Server",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

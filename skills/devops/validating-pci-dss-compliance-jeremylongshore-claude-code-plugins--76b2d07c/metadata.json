@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:52.305875Z",
   "github_path": "plugins/security/pci-dss-validator/skills/validating-pci-dss-compliance",
   "github_branch": "main",
-  "dir_name": "validating-pci-dss-compliance-jeremylongshore-claude-code-plugins--76b2d07c"
+  "dir_name": "validating-pci-dss-compliance-jeremylongshore-claude-code-plugins--76b2d07c",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/security/pci-dss-validator/skills/validating-pci-dss-compliance/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

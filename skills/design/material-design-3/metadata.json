@@ -5,5 +5,12 @@
   "description": "严格遵循Material Design 3配色规范的守护工具，提供Flutter应用界面配色最佳实践指南，确保UI一致性和可访问性",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:54.759588Z",
-  "dir_name": "material-design-3"
+  "dir_name": "material-design-3",
+  "author": "hunmer",
+  "source_url": "https://github.com/hunmer/Memento",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hunmer/Memento",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

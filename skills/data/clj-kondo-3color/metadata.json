@@ -5,5 +5,12 @@
   "source": "github.com/plurigrid/asi",
   "downloaded_at": "2026-01-30T02:20:23.372526Z",
   "dir_name": "clj-kondo-3color",
-  "category": "data"
+  "category": "data",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/ies/music-topos/.ruler/skills/clj-kondo-3color/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

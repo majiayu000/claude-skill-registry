@@ -7,5 +7,12 @@
   "stars": 423,
   "source": "github.com/team-attention/plugins-for-claude-natives",
   "downloaded_at": "2026-01-24T16:15:18.060675Z",
-  "dir_name": "session-analyzer-team-attention-plugins-for-cla"
+  "dir_name": "session-analyzer-team-attention-plugins-for-cla",
+  "author": "team-attention",
+  "source_url": "https://github.com/team-attention/plugins-for-claude-natives/blob/main/plugins/session-wrap/skills/session-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Team Attention",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

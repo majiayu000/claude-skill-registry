@@ -11,5 +11,12 @@
   "stars": 8,
   "github_path": ".claude/skills/phase-plan-generate",
   "github_branch": "main",
-  "dir_name": "phase-plan-generate"
+  "dir_name": "phase-plan-generate",
+  "author": "mvillmow",
+  "source_url": "https://github.com/mvillmow/ProjectOdyssey/blob/main/.claude/skills/phase-plan-generate/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2025, ML Odyssey Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

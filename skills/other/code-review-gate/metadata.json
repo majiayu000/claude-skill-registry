@@ -9,5 +9,12 @@
   "github_path": "skills/code-review-gate",
   "github_branch": "main",
   "dir_name": "code-review-gate",
-  "downloaded_at": "2026-02-05T05:44:36.108830Z"
+  "downloaded_at": "2026-02-05T05:44:36.108830Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/code-review-gate/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

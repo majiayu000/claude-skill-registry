@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:49.741971Z",
   "github_path": ".claude/skills/agent-automation-infrastructure",
   "github_branch": "main",
-  "dir_name": "agent-automation-infrastructure-ynotradio-site"
+  "dir_name": "agent-automation-infrastructure-ynotradio-site",
+  "author": "ynotradio",
+  "source_url": "https://github.com/ynotradio/site/blob/main/.claude/skills/agent-automation-infrastructure/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ynotradio/site/blob/main/.claude/skills/agent-automation-infrastructure/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

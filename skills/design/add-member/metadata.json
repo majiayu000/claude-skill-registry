@@ -9,5 +9,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "add-member"
+  "dir_name": "add-member",
+  "author": "talmolab",
+  "source_url": "https://github.com/talmolab/lab-website",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2020, Greene Laboratory",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/andrelandgraf/fullstackrecipes",
-  "dir_name": "better-auth-emails-andrelandgraf-fullstackrecipes-2"
+  "dir_name": "better-auth-emails-andrelandgraf-fullstackrecipes-2",
+  "author": "andrelandgraf",
+  "source_url": "https://github.com/andrelandgraf/fullstackrecipes/blob/main/.agents/skills/better-auth-emails/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andrelandgraf/fullstackrecipes/blob/main/.agents/skills/better-auth-emails/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

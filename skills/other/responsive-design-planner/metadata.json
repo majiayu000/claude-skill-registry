@@ -7,5 +7,12 @@
   "dir_name": "responsive-design-planner",
   "category": "other",
   "github_path": "skills/responsive-design-planner",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "lexicalninja",
+  "source_url": "https://github.com/lexicalninja/my-little-scrum-team/blob/main/skills/responsive-design-planner/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 lexicalninja",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

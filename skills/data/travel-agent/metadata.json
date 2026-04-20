@@ -5,5 +5,12 @@
   "source": "github.com/openclaw/skills",
   "downloaded_at": "2026-02-01T03:17:25.458697Z",
   "dir_name": "travel-agent",
-  "category": "data"
+  "category": "data",
+  "author": "openclaw",
+  "source_url": "https://github.com/openclaw/skills/blob/main/skills/aszelem/travel-agent/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

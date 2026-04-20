@@ -2,7 +2,7 @@
   "category": "testing",
   "code": "tst",
   "count": 6744,
-  "updated_at": "2026-04-20T02:09:25.096876Z",
+  "updated_at": "2026-04-20T08:17:31.240731Z",
   "skills": [
     {
       "name": "frontend-testing",
@@ -38491,12 +38491,12 @@
       "name": "kotlin-app-config",
       "description": "Sealed class configuration pattern for Kotlin applications with environment-specific settings",
       "repo": "navikt/copilot",
-      "path": "testing/kotlin-app-config",
+      "path": ".github/skills/kotlin-app-config",
       "branch": "main",
       "category": "testing",
       "tags": [],
       "stars": 0,
-      "install": "navikt/copilot/testing/kotlin-app-config",
+      "install": "navikt/copilot/.github/skills/kotlin-app-config",
       "source": "SkillsMP + GitHub Raw"
     },
     {

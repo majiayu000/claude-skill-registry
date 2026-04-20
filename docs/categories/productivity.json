@@ -1,8 +1,8 @@
 {
   "category": "productivity",
   "code": "pro",
-  "count": 2015,
-  "updated_at": "2026-04-20T02:09:25.050862Z",
+  "count": 2016,
+  "updated_at": "2026-04-20T08:17:31.202987Z",
   "skills": [
     {
       "name": "commit-helper",
@@ -19455,6 +19455,23 @@
       "stars": 0,
       "install": "letta-ai/skills/letta/benchmarks/trajectory-only/configure-git-webserver",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "sharable-link-share",
+      "description": "Publish HTML outputs to sharable.link and get a shareable URL, or remove a previously shared page via sharable.link's direct-download skill.",
+      "repo": "hembara/sharable-links-in-claude",
+      "path": ".claude/skills/share",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "sharing",
+        "publishing",
+        "html",
+        "links"
+      ],
+      "stars": 0,
+      "install": "hembara/sharable-links-in-claude/.claude/skills/share",
+      "source": "Community Skills"
     },
     {
       "name": "saga-orchestration",

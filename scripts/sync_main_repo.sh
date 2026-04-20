@@ -64,4 +64,11 @@ if [[ "$rebuild" -eq 1 ]]; then
   python "$main_dir/scripts/build_search_index.py" --skills-dir "$main_dir/skills" --output "$main_dir/docs"
 fi
 
+echo "Generating third-party notices..."
+python "$main_dir/scripts/check_metadata_compliance.py" \
+  --skills-dir "$main_dir/skills" \
+  --metadata-schema "$main_dir/schema/metadata.schema.json" \
+  --notices "$main_dir/THIRD_PARTY_NOTICES.md" \
+  --report-only
+
 echo "Done."

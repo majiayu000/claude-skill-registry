@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:19.864941Z",
   "github_path": ".github/skills/aksel-spacing",
   "github_branch": "main",
-  "dir_name": "aksel-spacing-navikt-copilot-1d95bb1e"
+  "dir_name": "aksel-spacing-navikt-copilot-1d95bb1e",
+  "author": "Nav",
+  "source_url": "https://github.com/navikt/copilot/blob/main/.github/skills/aksel-spacing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nav",
+  "permission_note": "MIT license permits reuse with attribution; preserve the copyright notice and MIT permission notice in copies or substantial portions.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

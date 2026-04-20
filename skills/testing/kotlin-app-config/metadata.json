@@ -6,5 +6,14 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "kotlin-app-config"
+  "dir_name": "kotlin-app-config",
+  "github_path": ".github/skills/kotlin-app-config",
+  "github_branch": "main",
+  "author": "Nav",
+  "source_url": "https://github.com/navikt/copilot/blob/main/.github/skills/kotlin-app-config/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nav",
+  "permission_note": "MIT license permits reuse with attribution; preserve the copyright notice and MIT permission notice in copies or substantial portions.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

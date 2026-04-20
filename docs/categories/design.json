@@ -2,7 +2,7 @@
   "category": "design",
   "code": "des",
   "count": 9509,
-  "updated_at": "2026-04-20T02:09:23.104937Z",
+  "updated_at": "2026-04-20T08:17:29.540278Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -109628,12 +109628,12 @@
       "name": "aksel-spacing",
       "description": "Responsive layout patterns using Aksel spacing tokens with Box, VStack, HStack, and HGrid",
       "repo": "navikt/copilot",
-      "path": "design/aksel-spacing",
+      "path": ".github/skills/aksel-spacing",
       "branch": "main",
       "category": "design",
       "tags": [],
       "stars": 0,
-      "install": "navikt/copilot/design/aksel-spacing",
+      "install": "navikt/copilot/.github/skills/aksel-spacing",
       "source": "SkillsMP + GitHub Raw"
     },
     {

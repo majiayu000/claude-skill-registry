@@ -16,10 +16,19 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 
 import jsonschema
-
 from utils import classify_license, is_valid_https_url, normalize_license, normalize_repo
 
 PLACEHOLDER_AUTHOR_VALUES = {"", "n/a", "na", "none", "null", "tbd", "unknown"}
+
+LICENSE_NOTICE_TEXTS = {
+    "MIT": [
+        'Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:',
+        "",
+        "The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.",
+        "",
+        'THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.',
+    ],
+}
 
 
 def load_schema(schema_path: Path) -> dict:
@@ -132,6 +141,10 @@ def validate_single_metadata(
     if len(permission_note) < 10:
         errors.append("permission_note must be descriptive (>= 10 characters)")
 
+    copyright_notice = str(raw.get("copyright", "")).strip()
+    if len(copyright_notice) < 5:
+        errors.append("copyright must be descriptive")
+
     declared_distribution = str(raw.get("distribution", "")).strip()
     normalized = normalize_license(raw.get("license", ""))
     detected_class = classify_license(normalized)
@@ -142,9 +155,7 @@ def validate_single_metadata(
         )
 
     if detected_class == "restricted" and declared_distribution != "restricted":
-        errors.append(
-            f'distribution must be "restricted" for license "{normalized}"'
-        )
+        errors.append(f'distribution must be "restricted" for license "{normalized}"')
 
     if detected_class == "compatible" and declared_distribution != "compatible":
         warnings.append(
@@ -156,9 +167,13 @@ def validate_single_metadata(
 
     entry = {
         "name": raw.get("name", ""),
+        "local_path": (
+            f"skills/{str(raw.get('category', '')).strip()}/{str(raw.get('dir_name', '')).strip()}"
+        ),
         "repo": repo,
         "author": author,
         "license": normalized,
+        "copyright": copyright_notice,
         "distribution": declared_distribution,
         "source_url": source_url,
         "permission_note": permission_note,
@@ -201,27 +216,46 @@ def write_notices(path: Path, rows: List[Dict], scanned_count: int) -> None:
             [
                 "## Entries",
                 "",
-                "| Skill | Repo | Author | License | Distribution | Source |",
-                "| --- | --- | --- | --- | --- | --- |",
+                "| Skill | Local path | Repo | Author | License | Copyright | Distribution | Source | Permission note |",
+                "| --- | --- | --- | --- | --- | --- | --- | --- | --- |",
             ]
         )
         for row in sorted(rows, key=lambda item: (item.get("repo", ""), item.get("name", ""))):
             name = str(row.get("name", "")).replace("|", "\\|")
+            local_path = str(row.get("local_path", "")).replace("|", "\\|")
             repo = str(row.get("repo", "")).replace("|", "\\|")
             author = str(row.get("author", "")).replace("|", "\\|")
             license_name = str(row.get("license", "")).replace("|", "\\|")
+            copyright_notice = str(row.get("copyright", "")).replace("|", "\\|")
             distribution = str(row.get("distribution", "")).replace("|", "\\|")
             source_url = str(row.get("source_url", ""))
+            permission_note = str(row.get("permission_note", "")).replace("|", "\\|")
             lines.append(
-                f"| {name} | {repo} | {author} | {license_name} | {distribution} | {source_url} |"
+                f"| {name} | {local_path} | {repo} | {author} | {license_name} | {copyright_notice} | {distribution} | {source_url} | {permission_note} |"
             )
         lines.append("")
+
+        license_names = sorted(
+            {
+                str(row.get("license", "")).strip()
+                for row in rows
+                if str(row.get("license", "")).strip() in LICENSE_NOTICE_TEXTS
+            }
+        )
+        if license_names:
+            lines.extend(["## License Texts", ""])
+            for license_name in license_names:
+                lines.extend([f"### {license_name}", ""])
+                lines.extend(LICENSE_NOTICE_TEXTS[license_name])
+                lines.append("")
 
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Validate skill metadata attribution/license compliance")
+    parser = argparse.ArgumentParser(
+        description="Validate skill metadata attribution/license compliance"
+    )
     parser.add_argument("--skills-dir", default="skills", help="Skills directory root")
     parser.add_argument(
         "--metadata-schema",
@@ -244,7 +278,9 @@ def main() -> int:
         action="store_true",
         help="Always exit 0 after generating report artifacts",
     )
-    parser.add_argument("--fail-on-warnings", action="store_true", help="Treat warnings as failures")
+    parser.add_argument(
+        "--fail-on-warnings", action="store_true", help="Treat warnings as failures"
+    )
     args = parser.parse_args()
 
     repo_root = Path.cwd().resolve()

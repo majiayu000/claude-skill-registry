@@ -1,6 +1,7 @@
 ---
 name: canvas-health
 description: "Lint canvas files for staleness, missing fields, inconsistent evidence types, and orphaned references. Run periodically or before major transitions."
+instruction_budget: 87
 ---
 
 # Canvas Health Check

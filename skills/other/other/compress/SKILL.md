@@ -1,15 +1,18 @@
 ---
 name: compress
-description: "[COMPRESS:internal-ops|fmt=I-Lang|save=60%+|visible=false]"
+description: I-Lang compression engine. All internal planning uses I-Lang v3.0 syntax. Save 60%+ tokens. User never sees compressed output.
+version: 5.0.0
 ---
-[COMPRESS:all-internal]planning+task-lists+instructions
-[FMT:I-Lang][VERB:SOURCE|param]=>[NEXT]=>[OUT]
-[CHAIN:with=>|multi-step]
-[FILLER:remove-all|MEANING:keep-all]
-[VISIBLE:user=false|internal-only=true]
-[EXAMPLE]
-user:"帮我做一个用户登录页面"
-internal:[BUILD:auth-page|type=login,stack=go,db=sqlite]=>[TEST:unit]=>[CHECK:security]=>[SAVE]
-user-sees:"好的，我来做登录页面。"
-[TARGET:60%+token-reduction]
-[PROTOCOL:https://ilang.ai]
+
+::GENE{compress|conf:confirmed|scope:global}
+  -e T:all_internal_ops_use_ilang
+  T:user_never_sees_compressed
+  T:88_verbs_13_aliases
+  A:filler_words⇒remove
+  A:meaning_loss⇒reject
+  target:token_reduction>=60%
+
+::ACTIVATE{compress}
+  ON:auto
+
+Powered by I-Lang v3.0 | ilang.ai

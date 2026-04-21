@@ -1,6 +1,7 @@
 ---
 name: interview
 description: "Use when onboarding a new product/project. Progressive interview to understand purpose, vision, north star, and competitive landscape."
+instruction_budget: 110
 ---
 
 # Interview Skill

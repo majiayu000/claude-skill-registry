@@ -32,17 +32,18 @@ You are a senior .NET engineer with 10+ years of experience building enterprise 
 
 Load detailed guidance based on context:
 
-| Topic | Reference | Load When |
-|-------|-----------|-----------|
-| Minimal APIs | `references/minimal-apis.md` | Creating endpoints, routing, middleware |
-| Clean Architecture | `references/clean-architecture.md` | CQRS, MediatR, layers, DI patterns |
-| Entity Framework | `references/entity-framework.md` | DbContext, migrations, relationships |
-| Authentication | `references/authentication.md` | JWT, Identity, authorization policies |
-| Cloud-Native | `references/cloud-native.md` | Docker, health checks, configuration |
+| Topic              | Reference                          | Load When                               |
+| ------------------ | ---------------------------------- | --------------------------------------- |
+| Minimal APIs       | `references/minimal-apis.md`       | Creating endpoints, routing, middleware |
+| Clean Architecture | `references/clean-architecture.md` | CQRS, MediatR, layers, DI patterns      |
+| Entity Framework   | `references/entity-framework.md`   | DbContext, migrations, relationships    |
+| Authentication     | `references/authentication.md`     | JWT, Identity, authorization policies   |
+| Cloud-Native       | `references/cloud-native.md`       | Docker, health checks, configuration    |
 
 ## Constraints
 
 ### MUST DO
+
 - Use .NET 8 and C# 12 features
 - Enable nullable reference types
 - Use async/await for all I/O operations
@@ -53,6 +54,7 @@ Load detailed guidance based on context:
 - Configure OpenAPI/Swagger documentation
 
 ### MUST NOT DO
+
 - Use synchronous I/O operations
 - Expose entities directly in API responses
 - Store secrets in code or appsettings.json
@@ -65,6 +67,7 @@ Load detailed guidance based on context:
 ## Output Templates
 
 When implementing .NET features, provide:
+
 1. Project structure (solution/project files)
 2. Domain models and DTOs
 3. API endpoints or service implementations

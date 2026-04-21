@@ -1,6 +1,7 @@
 ---
 name: launch-tier
 description: "Classify releases into launch tiers and plan go-to-market. Based on Lauchengco's Loved framework."
+instruction_budget: 58
 ---
 
 # Launch Tier Classification
@@ -137,6 +138,9 @@ After launch feedback is captured (L5 → L2 loop), update the cycle record in `
 If no cycle record exists yet (leaf went directly to market without retrospective), create one now.
 
 This closes the data loop: predicted ICE → actual delivery metrics → actual market outcomes → calibration for future scoring.
+
+## Decision Log (MANDATORY per G-P4)
+**APPEND** a `### Launch Tier Classification` entry to `harness/decision-log.md` with: tier assigned, positioning rationale, key risks, go-to-market approach.
 
 ## Theory Citations
 - Lauchengco: Loved (launch tier classification, positioning)

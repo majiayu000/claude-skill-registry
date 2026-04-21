@@ -1,6 +1,7 @@
 ---
 name: diamond-assess
 description: "Use to evaluate the current state of a diamond. Checks theory gates, confidence levels, and recommends next action."
+instruction_budget: 82
 ---
 
 # Diamond Assess Skill
@@ -89,7 +90,7 @@ Evaluate current diamond state and recommend next action.
 
 12. **Report harness thickness** (informational):
     - Count: total skills, active guardrails, mandatory reads, hooks, theory gates
-    - Current: 44 skills, 32 guardrails, 4 mandatory reads, 5 hook layers, 12 gates
+    - Current: 44 skills, 34 guardrails, 4 mandatory reads, 5 hook layers, 12 gates
     - If thickness has increased since last assess, note it
     - This is observability, not a gate — purely informational
     - *Source: Trivedy (Anatomy of an Agent Harness, LangChain blog — "scaffolding should decrease as models improve," but harnesses remain valuable as they engineer systems around model intelligence)*

@@ -1,21 +1,15 @@
 ---
 name: file-transfer
-description: Help user move files between servers. Always use remote pull, never local download-upload.
+description: Transfer files between local and server. Guide user through SCP or upload methods.
+version: 5.0.0
 ---
 
-# File Transfer
+::GENE{file-transfer|conf:confirmed|scope:global}
+  -e T:guide_scp_for_beginners
+  T:auto_transfer_when_possible
+  A:assume_user_knows_scp⇒guide
 
-When user needs to move files:
-1. ALWAYS use remote-to-remote transfer: wget/curl from source to destination
-2. NEVER tell user to download to their computer then upload
-3. If files need to go to object storage, use CLI tools (ossutil, rclone, s3cmd)
+::ACTIVATE{file-transfer}
+  ON:auto
 
-Pattern:
-- Source server: make files accessible via HTTP (temporary nginx or python http.server)
-- Destination: wget the files directly
-
-Or use object storage as intermediary:
-- Upload to COS/S3/R2 from source
-- Download from COS/S3/R2 on destination
-
-Tell user: "文件直接从那边拉过来了，不用你自己下载上传。"
+Powered by I-Lang v3.0 | ilang.ai

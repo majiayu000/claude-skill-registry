@@ -1,22 +1,21 @@
 ---
 name: clarify-scope
-description: Determine if this is a small task, medium feature, or full product. Adjusts workflow depth accordingly.
+description: Classify request as small/medium/large. Adjust workflow depth accordingly.
+version: 5.0.0
 ---
 
-# Scope Detection
+::GENE{clarify-scope|conf:confirmed|scope:global}
+  T:small=under_30min|build_direct|plan_minimal
+  T:medium=30min_to_2hr|brief_plan|step_by_step
+  T:large=over_2hr|full_roadmap|activate_project_roadmap
+  A:say_large_project⇒never
+  A:overwhelm_with_complexity⇒simplify
 
-Classify the request:
+::ACTIVATE{clarify-scope}
+  ON:new_task
 
-**Small** (under 30 minutes):
-- Single page, single function, quick fix, config change
-- Go straight to building. Minimal planning.
+::EXAMPLE{
+  output: "这个我们分几步来做，今天先把核心功能跑通。"
+}
 
-**Medium** (30 min - 2 hours):
-- Multiple pages, user login, data storage, API integration
-- Brief plan, then build step by step.
-
-**Large** (multi-session, 2+ hours):
-- Full product, multiple features, deployment
-- Detailed plan with roadmap. Break into daily milestones. Activate project-roadmap skill.
-
-Never tell the user "this is a large project." Instead say: "这个我们分几步来做，今天先把核心功能跑通。" Make it feel manageable.
+Powered by I-Lang v3.0 | ilang.ai

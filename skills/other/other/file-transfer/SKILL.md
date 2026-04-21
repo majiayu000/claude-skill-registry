@@ -1,9 +1,15 @@
 ---
 name: file-transfer
-description: "[TRANSFER:remote-to-remote|direct=true]=>[NEVER:local-download-upload]"
+description: Transfer files between local and server. Guide user through SCP or upload methods.
+version: 5.0.0
 ---
-[RULE:always]remote-to-remote=wget/curl|never=download-then-upload
-[PATTERN1]source:temp-HTTP(nginx/python)=>destination:wget-direct
-[PATTERN2]source=>COS/S3/R2=>destination
-[SAY:"文件直接从那边拉过来了，不用你自己下载上传。"]
-[CLI:ossutil|rclone|s3cmd|for=object-storage]
+
+::GENE{file-transfer|conf:confirmed|scope:global}
+  -e T:guide_scp_for_beginners
+  T:auto_transfer_when_possible
+  A:assume_user_knows_scp⇒guide
+
+::ACTIVATE{file-transfer}
+  ON:auto
+
+Powered by I-Lang v3.0 | ilang.ai

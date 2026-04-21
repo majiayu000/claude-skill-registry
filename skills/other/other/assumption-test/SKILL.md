@@ -1,6 +1,7 @@
 ---
 name: assumption-test
 description: "Design the smallest viable test to validate or invalidate a critical assumption. Based on Torres's assumption testing framework."
+instruction_budget: 24
 ---
 
 # Assumption Testing
@@ -72,7 +73,7 @@ After running, compare prediction to reality. The gap between prediction and out
 - Run the test
 - Compare results to your prediction from Step 5 — note where reality differed
 - Record raw results
-- Update confidence level (Gilad's meter: 0.1 -> 0.9)
+- Update confidence level (0.1 -> 0.9, adapted from Gilad's Confidence Meter)
 - Update ICE score for the solution
 - If assumption validated: move to next riskiest assumption. **Update confidence** in the relevant canvas entry (opportunities.yml, diamonds/active.yml) to reflect the validated assumption — typically +0.1 to +0.15. **If the validated assumption originated from a stakeholder interview** (`source_class: internal_stakeholder` with `validated: false`): set `validated: true` in the provenance block. This resolves the organizational mythology flag (Brown) — the stakeholder belief is now confirmed by external evidence.
 - If assumption invalidated: pivot the solution or explore alternatives. **Decrease confidence** by 0.1-0.2 to reflect the failed assumption. **If the invalidated assumption was a stakeholder belief**: update the canvas entry to reflect reality, not the stakeholder's original claim. Note the divergence in the decision log — the gap between belief and reality is a learning.

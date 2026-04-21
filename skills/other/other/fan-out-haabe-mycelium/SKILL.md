@@ -1,6 +1,7 @@
 ---
 name: fan-out
 description: "Parallel agent orchestration for OST exploration. Fan-out multiple solution explorations, fan-in results to compare and select winners."
+instruction_budget: 22
 ---
 
 # Fan-Out / Fan-In Orchestration

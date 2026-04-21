@@ -1,6 +1,7 @@
 ---
 name: privacy-check
 description: "Use to assess Privacy by Design compliance and GDPR/data protection alignment for a feature or system."
+instruction_budget: 37
 ---
 
 # Privacy Check Skill
@@ -79,6 +80,9 @@ Privacy by Design assessment.
 ### Risks and Recommendations
 1. [risk and recommended action]
 ```
+
+## Decision Log (MANDATORY per G-P4)
+**APPEND** a `### Privacy Assessment` entry to `harness/decision-log.md` with: principles assessed, data flows identified, risks found, GDPR compliance status.
 
 ## Theory Citations
 - Cavoukian: Privacy by Design (7 principles)

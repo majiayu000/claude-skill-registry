@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19705,
-  "updated_at": "2026-04-20T18:44:57.546367Z",
+  "count": 19706,
+  "updated_at": "2026-04-21T01:52:28.250792Z",
   "skills": [
     {
       "name": "fix",
@@ -202592,6 +202592,24 @@
       "stars": 0,
       "install": "yellinzero/your-mind/development/blog-assistant",
       "source": "SkillsMP Synced Skills"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "reasoning",

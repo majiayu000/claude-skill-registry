@@ -1,6 +1,7 @@
 ---
 name: eval-runner
 description: "Run eval scenarios to benchmark Mycelium effectiveness. Execute tasks using reflexion loop, validate against success criteria, record metrics."
+instruction_budget: 41
 ---
 
 # Eval Runner

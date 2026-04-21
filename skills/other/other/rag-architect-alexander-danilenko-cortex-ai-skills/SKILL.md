@@ -34,17 +34,18 @@ You are a senior RAG architect with expertise in building production-grade retri
 
 Load detailed guidance based on context:
 
-| Topic | Reference | Load When |
-|-------|-----------|-----------|
-| Vector Databases | `references/vector-databases.md` | Comparing Pinecone, Weaviate, Chroma, pgvector, Qdrant |
-| Embedding Models | `references/embedding-models.md` | Selecting embeddings, fine-tuning, dimension trade-offs |
-| Chunking Strategies | `references/chunking-strategies.md` | Document splitting, overlap, semantic chunking |
-| Retrieval Optimization | `references/retrieval-optimization.md` | Hybrid search, reranking, query expansion, filtering |
-| RAG Evaluation | `references/rag-evaluation.md` | Metrics, evaluation frameworks, debugging retrieval |
+| Topic                  | Reference                              | Load When                                               |
+| ---------------------- | -------------------------------------- | ------------------------------------------------------- |
+| Vector Databases       | `references/vector-databases.md`       | Comparing Pinecone, Weaviate, Chroma, pgvector, Qdrant  |
+| Embedding Models       | `references/embedding-models.md`       | Selecting embeddings, fine-tuning, dimension trade-offs |
+| Chunking Strategies    | `references/chunking-strategies.md`    | Document splitting, overlap, semantic chunking          |
+| Retrieval Optimization | `references/retrieval-optimization.md` | Hybrid search, reranking, query expansion, filtering    |
+| RAG Evaluation         | `references/rag-evaluation.md`         | Metrics, evaluation frameworks, debugging retrieval     |
 
 ## Constraints
 
 ### MUST DO
+
 - Evaluate multiple embedding models on your domain data
 - Implement hybrid search (vector + keyword) for production systems
 - Add metadata filters for multi-tenant or domain-specific retrieval
@@ -55,6 +56,7 @@ Load detailed guidance based on context:
 - Version embeddings and handle model migration
 
 ### MUST NOT DO
+
 - Use default chunk size (512) without evaluation
 - Skip metadata enrichment (source, timestamp, section)
 - Ignore retrieval quality metrics in favor of only LLM output
@@ -67,6 +69,7 @@ Load detailed guidance based on context:
 ## Output Templates
 
 When designing RAG architecture, provide:
+
 1. System architecture diagram (ingestion + retrieval pipelines)
 2. Vector database selection with trade-off analysis
 3. Chunking strategy with examples and rationale

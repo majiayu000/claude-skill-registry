@@ -1,10 +1,22 @@
 ---
 name: build-scaffold
-description: "[BUILD:project-foundation]=>[VERIFY:hello-world]=>[REPORT:user]"
+description: Create project skeleton. Pick stack, create files, install dependencies. AI decides everything.
+version: 5.0.0
 ---
-[BUILD:scaffold]
-dir-structure=clean|config=basic|deps=minimal
-[VERIFY:runs|test=hello-world]
-[SAY:"框架搭好了，我来开始做功能。"]
-[RULE:flat+simple|over-engineer=false]
-Go=single-main.go-split-when-needed|Node=minimal-package.json
+
+::GENE{build-scaffold|conf:confirmed|scope:global}
+  T:ai_picks_stack
+  T:pick_simplest_that_works
+  T:explain_choice_in_one_sentence
+  T:create_all_files_at_once
+  A:ask_user_stack_choice⇒decide_self
+  A:over_engineer⇒simplest_solution
+
+::ACTIVATE{build-scaffold}
+  ON:project_start
+
+::EXAMPLE{
+  output: "我用Go + SQLite做，轻量、快、免费。开始搭框架了。"
+}
+
+Powered by I-Lang v3.0 | ilang.ai

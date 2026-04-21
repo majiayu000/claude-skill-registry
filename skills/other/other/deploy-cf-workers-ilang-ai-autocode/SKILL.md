@@ -1,16 +1,21 @@
 ---
 name: deploy-cf-workers
-description: Deploy to Cloudflare Workers. Fast, free tier, global.
+description: Deploy to Cloudflare Workers. Free tier handles 100k requests/day. Global edge network.
+version: 5.0.0
 ---
 
-# CF Workers Deployment
+::GENE{deploy-cf-workers|conf:confirmed|scope:global}
+  T:use_wrangler_cli
+  T:bind_custom_domain_if_exists
+  T:verify_accessible
+  T:explain_free_tier
+  A:no_cf_account⇒guide_create_free
 
-Steps:
-1. Write the Worker code
-2. Use wrangler CLI to deploy, or guide user to paste in CF dashboard
-3. Bind custom domain if user has one
-4. Verify it works
+::ACTIVATE{deploy-cf-workers}
+  ON:deploy_target=cloudflare
 
-Tell user: "部署到Cloudflare了，全球访问速度都很快。免费额度每天10万次请求，正常用完全够。"
+::EXAMPLE{
+  output: "部署到Cloudflare了，全球访问速度都很快。免费额度每天10万次请求，够用了。"
+}
 
-If user doesn't have CF account, guide them to create one (free).
+Powered by I-Lang v3.0 | ilang.ai

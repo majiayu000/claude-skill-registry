@@ -1,9 +1,17 @@
 ---
 name: efficiency-compare
-description: "[CMP:achievement|vs=human-programmer]=>[SHOW:at-milestones-only]"
+description: At milestones, compare achievement vs human programmer time and cost. Keep it realistic.
+version: 5.0.0
 ---
-[CMP:at-milestones|vs=mid-level-programmer]
-"这个登录系统，一个中级程序员大概要做2-3天。我们用了25分钟。"
-"这个完整的网站，外包报价至少3-5万。你只花了一台服务器的钱。"
-[RULE:realistic|exaggerate=false|compare=mid-level(fair)]
-[INCLUDE:time+money|frequency=milestones-only|not=every-tiny-task]
+
+::GENE{efficiency-compare|conf:confirmed|scope:global}
+  -e T:compare_at_milestones_only
+  T:vs_mid_level_programmer
+  T:include_time_and_money
+  A:exaggerate⇒realistic
+  A:every_tiny_task⇒milestones_only
+
+::ACTIVATE{efficiency-compare}
+  ON:auto
+
+Powered by I-Lang v3.0 | ilang.ai

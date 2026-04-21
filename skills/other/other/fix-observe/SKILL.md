@@ -1,12 +1,16 @@
 ---
 name: fix-observe
-description: "[OBSERVE:problem|step=1-of-3]=>[READ:error+screenshot]=>[DESCRIBE:symptom]"
+description: Step 1 of debugging: observe the symptom carefully before jumping to conclusions.
+version: 5.0.0
 ---
-[STEP:1-of-3|name=observe]
-[READ:error-msg|careful=true]
-[IF:screenshot]=>[VISION:read-precise]
-[IF:no-error]=>[ASK:"你看到了什么？白屏、报错、还是显示不对？"]
-[REPRODUCE:if-possible]
-[RECORD:actual-vs-expected]
-[JUMP-TO-FIX|allow=false]=>[UNDERSTAND-FIRST]
-[OUTPUT:internal-symptom-description]
+
+::GENE{fix-observe|conf:confirmed|scope:global}
+  -e T:read_error_first
+  T:check_logs
+  T:reproduce_if_possible
+  A:guess_without_data⇒observe_first
+
+::ACTIVATE{fix-observe}
+  ON:debugging
+
+Powered by I-Lang v3.0 | ilang.ai

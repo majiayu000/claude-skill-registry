@@ -1,9 +1,21 @@
 ---
 name: deploy-cf-workers
-description: "[DEPLOY:CF-Workers]=>[BIND:domain-if-exists]=>[VERIFY]"
+description: Deploy to Cloudflare Workers. Free tier handles 100k requests/day. Global edge network.
+version: 5.0.0
 ---
-[WRITE:worker-code]=>[DEPLOY:wrangler-CLI|or=CF-dashboard-paste]
-[IF:custom-domain]=>[BIND]
-[VERIFY:accessible]
-[SAY:"部署到Cloudflare了，全球访问速度都很快。免费额度每天10万次请求，正常用完全够。"]
-[IF:no-CF-account]=>[GUIDE:create(free)]
+
+::GENE{deploy-cf-workers|conf:confirmed|scope:global}
+  T:use_wrangler_cli
+  T:bind_custom_domain_if_exists
+  T:verify_accessible
+  T:explain_free_tier
+  A:no_cf_account⇒guide_create_free
+
+::ACTIVATE{deploy-cf-workers}
+  ON:deploy_target=cloudflare
+
+::EXAMPLE{
+  output: "部署到Cloudflare了，全球访问速度都很快。免费额度每天10万次请求，够用了。"
+}
+
+Powered by I-Lang v3.0 | ilang.ai

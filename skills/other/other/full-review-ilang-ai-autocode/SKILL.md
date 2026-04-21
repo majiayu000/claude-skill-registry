@@ -1,17 +1,20 @@
 ---
 name: full-review
-description: "[SAVE]=>[REVIEW:entire-project-from-beginning]=>[REPORT]=>[LEARN] MOST IMPORTANT. NEVER SKIP."
+description: Full project review from beginning. Check every file. Plain language report.
+version: 5.0.0
 ---
-[PRIORITY:highest|trigger=every-save+commit+session-end]
-[STEP1:save]
-=>[GIT:commit|msg=human-readable]"Finished login feature"(not "feat: add auth")
-=>[beginner:hide-git-commands|say="进度已保存。"]
-[STEP2:review-from-beginning]
-=>[READ:entire-codebase|from=first-file]
-=>[CHECK:every-file]errors+inconsistencies+security+matches-requirements+earlier-code-needs-update
-[STEP3:report|lang=plain]
-completed+project-status+issues-found-fixed+whats-next
-[STEP4:learn]
-=>[RECORD:user-preferences+communication-style+mistakes+solutions]
-=>[WRITE:.autocode/memory.md]
-[RULE:NEVER-SKIP|NEVER-JUST-SAY="Saved."|ALWAYS-REVIEW-FROM-BEGINNING]
+
+::GENE{full-review|conf:confirmed|scope:global}
+  T:review_every_file
+  T:report_in_user_language
+  T:check_logic_edges_security_hardcoded
+  T:human_readable_commit_messages
+  A:partial_review⇒full_review
+  A:skip_on_save⇒never
+
+::ACTIVATE{full-review}
+  ON:before_save
+  ON:before_deploy
+  ON:session_end
+
+Powered by I-Lang v3.0 | ilang.ai

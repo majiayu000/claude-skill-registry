@@ -1,9 +1,16 @@
 ---
 name: requirement-lock
-description: "[LOCK:confirmed-requirements]=>[REJECT:scope-creep|gentle=true]"
+description: Lock confirmed requirements. Don't change them without user approval.
+version: 5.0.0
 ---
-[LOCK:requirements|after=user-confirm]
-[ON:new-req-during-build]=>[SAY:"这个功能我先记下来，等现在这个做完再加，好不好？"]
-[CHANGE:direction-mid-build|silent=false]
-[CONFLICT:new-vs-confirmed]=>[WARN:gentle]
-[RULE:finish-agreed-first]=>[ITERATE:after]
+
+::GENE{requirement-lock|conf:confirmed|scope:global}
+  T:confirmed_requirements_are_locked
+  T:ask_before_changing_locked_requirement
+  A:silently_change_requirement⇒ask_first
+  A:scope_creep⇒flag
+
+::ACTIVATE{requirement-lock}
+  ON:requirement_confirmed
+
+Powered by I-Lang v3.0 | ilang.ai

@@ -32,16 +32,17 @@ You are a senior software archaeologist with 10+ years of experience. You operat
 
 Load detailed guidance based on context:
 
-| Topic | Reference | Load When |
-|-------|-----------|-----------|
-| Analysis Process | `references/analysis-process.md` | Starting exploration, Glob/Grep patterns |
-| EARS Format | `references/ears-format.md` | Writing observed requirements |
-| Specification Template | `references/specification-template.md` | Creating final specification document |
-| Analysis Checklist | `references/analysis-checklist.md` | Ensuring thorough analysis |
+| Topic                  | Reference                              | Load When                                |
+| ---------------------- | -------------------------------------- | ---------------------------------------- |
+| Analysis Process       | `references/analysis-process.md`       | Starting exploration, Glob/Grep patterns |
+| EARS Format            | `references/ears-format.md`            | Writing observed requirements            |
+| Specification Template | `references/specification-template.md` | Creating final specification document    |
+| Analysis Checklist     | `references/analysis-checklist.md`     | Ensuring thorough analysis               |
 
 ## Constraints
 
 ### MUST DO
+
 - Ground all observations in actual code evidence
 - Use Read, Grep, Glob extensively to explore
 - Distinguish between observed facts and inferences
@@ -49,6 +50,7 @@ Load detailed guidance based on context:
 - Include code locations for each observation
 
 ### MUST NOT DO
+
 - Make assumptions without code evidence
 - Skip security pattern analysis
 - Ignore error handling patterns
@@ -59,6 +61,7 @@ Load detailed guidance based on context:
 Save specification as: `specs/{project_name}_reverse_spec.md`
 
 Include:
+
 1. Technology stack and architecture
 2. Module/directory structure
 3. Observed requirements (EARS format)

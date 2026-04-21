@@ -191,7 +191,7 @@ If the test **fails for the wrong reason** (import error, missing dependency, sy
 Report to the user:
 
 ```
-## 🔴 Red — [Behavior description]
+## Red — [Behavior description]
 
 Test: [test file path]:[test name]
 Status: FAILS ✓ (expected)
@@ -233,7 +233,7 @@ This gate proves two things: (1) the test genuinely catches the bug, and (2) the
 Report:
 
 ```
-## 🔒 Regression Gate — [Bug description]
+## Regression Gate — [Bug description]
 
 Test: [test file path]:[test name]
 Without fix: FAILS ✓ (test catches the bug)
@@ -250,7 +250,7 @@ If a lint or type-check command is configured in `CLAUDE.md` or the project mani
 Report to the user:
 
 ```
-## 🟢 Green — [Behavior description]
+## Green — [Behavior description]
 
 Test: [test file path]:[test name]
 Status: PASSES ✓
@@ -286,7 +286,7 @@ If a lint or type-check command was run in Step 5, run it here too — refactori
 Report to the user:
 
 ```
-## 🔄 Refactor — [Behavior description]
+## Refactor — [Behavior description]
 
 Changes: [brief description of what was cleaned up, or "No changes needed — code is clean"]
 All tests: passing ✓
@@ -342,7 +342,7 @@ If there are uncommitted changes (e.g., the user stopped mid-cycle before the au
 |---|----------|------|--------|
 | 1 | [description] | [test file]:[test name] | ✓ Complete |
 | 2 | [description] | [test file]:[test name] | ✓ Complete |
-| 3 | [description] | — | ⏸ Not started |
+| 3 | [description] | — | Not started |
 
 ### Stats
 - Cycles completed: [N] of [total]

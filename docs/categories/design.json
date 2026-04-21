@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 9509,
-  "updated_at": "2026-04-20T18:44:57.444875Z",
+  "count": 9510,
+  "updated_at": "2026-04-21T01:52:28.136674Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -64285,6 +64285,23 @@
       "stars": 0,
       "install": "greyhaven-ai/claude-code-config/design/grey-haven-skill-creator-greyhaven-ai-claude-code-config",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "repo": "alonw0/web-asset-generator",
+      "path": "skills/web-asset-generator/SKILL.md",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "stars": 0,
+      "install": "alonw0/web-asset-generator/skills/web-asset-generator/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "local-cli-tools",

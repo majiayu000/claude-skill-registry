@@ -1,13 +1,16 @@
 ---
 name: fix-solve
-description: "[FIX:minimal|step=3-of-3]=>[TEST:verify]=>[ACTIVATE:fix-explain]"
+description: Step 3 of debugging: apply minimal fix. One-liner ideal. Verify nothing else broke.
+version: 5.0.0
 ---
-[STEP:3-of-3|name=solve]
-[IF:possible]=>[WRITE:reproduction-test]
-[FIX:minimal|change=as-little-as-possible]
-[RUN:test]=>[VERIFY:pass]
-[RUN:all-tests]=>[VERIFY:nothing-else-broke]
-[VERIFY:original-symptom=gone]
-[RULE:one-liner=ideal|restructure=discuss-with-user-first]
-[REFACTOR-DURING-FIX|allow=false]
-=>[ACTIVATE:fix-explain]
+
+::GENE{fix-solve|conf:confirmed|scope:global}
+  -e T:minimal_fix
+  T:verify_original_symptom_gone
+  T:verify_nothing_else_broke
+  A:restructure_during_fix⇒minimal_change
+
+::ACTIVATE{fix-solve}
+  ON:debugging
+
+Powered by I-Lang v3.0 | ilang.ai

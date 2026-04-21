@@ -19,7 +19,6 @@ tools: [claude, cursor, codex, gemini]
 Part of [StyleSeed](https://github.com/bitjaru/styleseed), this skill audits UI code against the Toss seed's conventions instead of reviewing it as generic frontend work. It focuses on design-token discipline, component ergonomics, accessibility, mobile readiness, typography, and spacing consistency.
 
 ## When to Use
-
 - Use when a component or page should follow the StyleSeed Toss design language
 - Use when reviewing a UI-heavy PR for consistency and design-system violations
 - Use when the output looks "mostly fine" but feels off in subtle ways
@@ -84,3 +83,8 @@ Return:
 
 - [StyleSeed repository](https://github.com/bitjaru/styleseed)
 - [Source skill](https://github.com/bitjaru/styleseed/blob/main/seeds/toss/.claude/skills/ui-review/SKILL.md)
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

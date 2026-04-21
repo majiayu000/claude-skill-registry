@@ -1,7 +1,8 @@
 ---
 name: splitting-datasets
 description: |
-  Process split datasets into training, validation, and testing sets for ML model development. Use when requesting "split dataset", "train-test split", or "data partitioning". Trigger with relevant phrases based on skill purpose.
+  Split datasets into training, validation, and test partitions with the right stratification and temporal rules.
+  Use as a narrow preprocessing helper once the broader ML workflow is already chosen, not as the main route owner for an end-to-end ML task.
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash(cmd:*)
 version: 1.0.0
 author: Jeremy Longshore <jeremy@intentsolutions.io>
@@ -9,76 +10,30 @@ license: MIT
 ---
 # Dataset Splitter
 
-This skill provides automated assistance for dataset splitter tasks.
+## Positioning
 
-## Overview
+Treat this skill as a narrow helper for partition strategy.
 
-This skill automates the process of dividing a dataset into subsets for training, validating, and testing machine learning models. It ensures proper data preparation and facilitates robust model evaluation.
+## When to Use
 
-## How It Works
-
-1. **Analyze Request**: The skill analyzes the user's request to determine the dataset to be split and the desired proportions for each subset.
-2. **Generate Code**: Based on the request, the skill generates Python code utilizing standard ML libraries to perform the data splitting.
-3. **Execute Splitting**: The code is executed to split the dataset into training, validation, and testing sets according to the specified ratios.
-
-## When to Use This Skill
-
-This skill activates when you need to:
+Use this skill when:
 - Prepare a dataset for machine learning model training.
 - Create training, validation, and testing sets.
 - Partition data to evaluate model performance.
 
-## Examples
+## Not For / Boundaries
 
-### Example 1: Splitting a CSV file
+- Full preprocessing-pipeline ownership: use `preprocessing-data-with-automated-pipelines`
+- Leakage audits and prediction-time checks: use `ml-data-leakage-guard`
+- Model training and tuning after the split: use `training-machine-learning-models`
 
-User request: "Split the data in 'my_data.csv' into 70% training, 15% validation, and 15% testing sets."
+## Typical Outputs
 
-The skill will:
-1. Generate Python code to read the 'my_data.csv' file.
-2. Execute the code to split the data according to the specified proportions, creating 'train.csv', 'validation.csv', and 'test.csv' files.
+- Partition strategy with ratios, random seeds, and stratification rules
+- Notes on temporal or grouped split constraints
+- Handoff guidance for leakage review and downstream training
 
-### Example 2: Creating a Train-Test Split
+## Related Skills
 
-User request: "Create a train-test split of 'large_dataset.csv' with an 80/20 ratio."
-
-The skill will:
-1. Generate Python code to load 'large_dataset.csv'.
-2. Execute the code to split the dataset into 80% training and 20% testing sets, saving them as 'train.csv' and 'test.csv'.
-
-## Best Practices
-
-- **Data Integrity**: Verify that the splitting process maintains the integrity of the data, ensuring no data loss or corruption.
-- **Stratification**: Consider stratification when splitting imbalanced datasets to maintain class distributions in each subset.
-- **Randomization**: Ensure the splitting process is randomized to avoid bias in the resulting datasets.
-
-## Integration
-
-This skill can be integrated with other data processing and model training tools within the Claude Code ecosystem to create a complete machine learning workflow.
-
-## Prerequisites
-
-- Appropriate file access permissions
-- Required dependencies installed
-
-## Instructions
-
-1. Invoke this skill when the trigger conditions are met
-2. Provide necessary context and parameters
-3. Review the generated output
-4. Apply modifications as needed
-
-## Output
-
-The skill produces structured output relevant to the task.
-
-## Error Handling
-
-- Invalid input: Prompts for correction
-- Missing dependencies: Lists required components
-- Permission errors: Suggests remediation steps
-
-## Resources
-
-- Project documentation
-- Related skills and commands
+- `preprocessing-data-with-automated-pipelines` for the broader preprocessing sequence
+- `ml-data-leakage-guard` to verify the split does not leak future or test information

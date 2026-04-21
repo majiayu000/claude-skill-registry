@@ -1,6 +1,7 @@
 ---
 name: preflight
 description: "Use before starting delivery work. Pre-implementation validation checklist to ensure readiness."
+instruction_budget: 45
 ---
 
 # Preflight Skill

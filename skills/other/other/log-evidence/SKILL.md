@@ -1,6 +1,7 @@
 ---
 name: log-evidence
 description: "Record findings from completed offline human tasks (interviews, observations, outreach) back into the canvas. The re-entry point after /handoff."
+instruction_budget: 58
 ---
 
 # Log Evidence Skill

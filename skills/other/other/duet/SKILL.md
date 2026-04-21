@@ -25,6 +25,21 @@ This is the load-bearing principle. Everything below is mechanics.
 
 The agent's value-add is **compression**: turning a technical surface the user doesn't want to carry into a decision the user *does* want to carry.
 
+## VS-gated question protocol [MANDATORY]
+
+Run `odin:askme`'s VS + actor-critic protocol before every `AskUserQuestion` fire (Phase 1, Phase 2, Phase 3). Duet-specific deltas only — askme owns the canonical spec:
+
+- **Format (compressed visible):** Render numbered survivors only; no weakness/contradiction/oversight block:
+  ```
+  VS (N→M):
+  1. [Most likely] <hypothesis>
+  2. [Alt] <hypothesis>
+  ```
+- **Phase 2 short-circuit:** Exactly 1 survivor → skip the `AskUserQuestion`, execute silently.
+- **Phase 1 & Phase 3 exception:** Always fire `AskUserQuestion` regardless of survivor count — no short-circuit. Phase 1 needs scope/intent confirmation; Phase 3 needs explicit user consent.
+- **Cap:** >4 survivors → keep top-ranked (Recommended) + 3 most structurally distinct.
+- **Position:** VS block immediately precedes the `AskUserQuestion` call.
+
 ## When it applies
 
 Active from invocation or a trigger phrase until the user disengages ("go ahead on your own now", "full autonomy", "/duet off").
@@ -40,12 +55,18 @@ Does **not** apply to:
 
 ### Phase 1 — Intent elicitation (adaptive)
 
-At task start, fire one `AskUserQuestion` batch that builds a shared mental model:
+Before firing the elicitation batch, run the VS-gated question protocol (above) at askme's baseline tier — escalate to high-risk or architectural per askme's tier rules if the prompt warrants.
 
-- **Scope** — what's in, what's out.
-- **Goal** — the outcome that would make this succeed.
-- **Constraint** — the thing that must not break.
-- **Existing-pattern preference** — follow the repo's conventions, break from them, or start fresh.
+At task start, fire one `AskUserQuestion` batch with a single `multiSelect` question:
+
+- **Question:** "Which of these defaults should I override before starting?"
+- **Options** (agent commits to concrete values before firing):
+  - **Scope:** [concrete default, e.g. "touch only the files named in the prompt"]
+  - **Goal:** [concrete default, e.g. "minimal diff that satisfies the request"]
+  - **Constraint:** [concrete default, e.g. "no new dependencies"]
+  - **Pattern:** [concrete default, e.g. "follow nearest existing convention"]
+
+Unticked options mean "agent's default stands." For each ticked axis, immediately follow with a targeted question scoped to that axis so the user can supply the replacement value. `Other` remains the free-text escape for anything outside the list.
 
 Keep it to one batch. Deepen with a second batch *only if* the answers reveal real ambiguity or surface a new axis. If the task is already clearly scoped in the user's prompt, skip straight to Phase 2.
 
@@ -55,11 +76,12 @@ Use previews when the choice is visual — file-tree shapes, architecture sketch
 
 For every fork encountered during work:
 
-1. Identify 2–4 defensible paths.
+1. Run the VS-gated question protocol (above) to generate candidates. Survivors become the defensible paths (2–4, capped per the protocol). If exactly 1 survives, skip the fork.
 2. Frame each in **structural or taste terms first** — what it means for the outcome (shape, boundary, surface, density). Put the technical term in parens on first mention; drop it thereafter.
-3. Mark one option `(Recommended)` with a one-sentence rationale. Users can override; the recommendation is a default, not a verdict.
+3. Mark one option `(Recommended)` with a one-sentence rationale. Users can override; the recommendation is a default, not a verdict. If no defensible one-sentence rationale comes to mind, the choice isn't a real fork — execute the default silently and skip the question entirely.
 4. Attach a **concrete preview** if comparison is visual (ASCII layout, code diff ≤ 20 lines, directory tree, config snippet).
 5. Batch related decisions into one `AskUserQuestion` fire, so the user can see them together.
+6. Option lists must cover the defensible space. If you expect `Other` to be a realistic pick for more than ~10% of users on this prompt, the list is incomplete — add the missing option before firing.
 
 Between forks, execute quietly. The user does not need narration of mechanics.
 
@@ -73,6 +95,8 @@ Before any of these: **ask.**
 - Multi-file rewrites (> 5 files) or any refactor that would produce a review-bottleneck diff
 
 The checkpoint question is not a fork — it's a confirmation. Still uses `AskUserQuestion` so the user can say "hold, let me look first."
+
+Checkpoint confirmations also run the VS-gated protocol at askme's high-risk tier. A binary yes/hold question may still surface "hold and verify X first" as a candidate — that is exactly what the higher tier is for.
 
 ## Fork taxonomy
 
@@ -113,9 +137,8 @@ One option carries `(Recommended)` in its label with a < 1-sentence why.
 
 ## Batching rules
 
-- Group related decisions into one `AskUserQuestion` fire so the user sees the full shape at once.
-- Use `multiSelect: true` on a question when its options are genuinely independent (e.g. which feature-flags to enable).
-- Keep a question **single-select** when it carries `preview` on its options — previews render side-by-side only when one option can be chosen at a time.
+- When multiple forks are **orthogonal** (one pick does not constrain another), default to a **single `multiSelect` question** grouping all of them. This lets the user tick multiple answers in one pass.
+- Reserve single-select for forks that are genuinely mutually exclusive OR when a `preview` is attached (tool constraint: previews require `multiSelect: false` — previews render side-by-side only when one option can be chosen at a time).
 - **Never batch across a dependency**: if Q2's viable options depend on Q1's answer, split them into separate fires.
 - If you detect mid-batch that Q2's answer invalidates Q1, re-ask only the affected decision — don't re-ask the whole batch.
 

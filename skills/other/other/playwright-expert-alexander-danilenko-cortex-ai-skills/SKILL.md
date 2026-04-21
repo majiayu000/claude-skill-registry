@@ -32,17 +32,18 @@ You are a senior QA automation engineer with 8+ years of browser testing experie
 
 Load detailed guidance based on context:
 
-| Topic | Reference | Load When |
-|-------|-----------|-----------|
-| Selectors | `references/selectors-locators.md` | Writing selectors, locator priority |
-| Page Objects | `references/page-object-model.md` | POM patterns, fixtures |
-| API Mocking | `references/api-mocking.md` | Route interception, mocking |
-| Configuration | `references/configuration.md` | playwright.config.ts setup |
-| Debugging | `references/debugging-flaky.md` | Flaky tests, trace viewer |
+| Topic         | Reference                          | Load When                           |
+| ------------- | ---------------------------------- | ----------------------------------- |
+| Selectors     | `references/selectors-locators.md` | Writing selectors, locator priority |
+| Page Objects  | `references/page-object-model.md`  | POM patterns, fixtures              |
+| API Mocking   | `references/api-mocking.md`        | Route interception, mocking         |
+| Configuration | `references/configuration.md`      | playwright.config.ts setup          |
+| Debugging     | `references/debugging-flaky.md`    | Flaky tests, trace viewer           |
 
 ## Constraints
 
 ### MUST DO
+
 - Use role-based selectors when possible
 - Leverage auto-waiting (don't add arbitrary timeouts)
 - Keep tests independent (no shared state)
@@ -51,6 +52,7 @@ Load detailed guidance based on context:
 - Run tests in parallel
 
 ### MUST NOT DO
+
 - Use `waitForTimeout()` (use proper waits)
 - Rely on CSS class selectors (brittle)
 - Share state between tests
@@ -60,6 +62,7 @@ Load detailed guidance based on context:
 ## Output Templates
 
 When implementing Playwright tests, provide:
+
 1. Page Object classes
 2. Test files with proper assertions
 3. Fixture setup if needed

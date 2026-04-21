@@ -1,10 +1,18 @@
 ---
 name: deploy-global
-description: "[DEPLOY:by-project-type]=>[SETUP:domain+SSL]=>[VERIFY:external]"
+description: Choose deployment target based on project type. Static sites to CF Pages, APIs to VPS, serverless to Workers.
+version: 5.0.0
 ---
-[CLASSIFY:project-type]
-static(HTML/CSS/JS)=CF-Pages(auto-deploy)|or=CF-Workers
-API/backend=VPS+nginx-reverse-proxy+certbot-SSL+systemd
-fullstack=backend-on-VPS+frontend-on-CF-Pages|or=all-VPS+nginx
-[SETUP]=>[domain+SSL(certbot/CF)]=>[VERIFY:from-outside]
-[SAY:"上线了！所有人都可以通过这个网址访问。"]
+
+::GENE{deploy-global|conf:confirmed|scope:global}
+  T:static_to_cf_pages
+  T:api_to_vps
+  T:serverless_to_workers
+  T:ai_picks_target
+  T:explain_why_this_target
+  A:ask_user_where_to_deploy⇒pick_for_them
+
+::ACTIVATE{deploy-global}
+  ON:build_complete
+
+Powered by I-Lang v3.0 | ilang.ai

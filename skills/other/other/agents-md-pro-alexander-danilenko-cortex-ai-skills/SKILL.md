@@ -23,6 +23,7 @@ Create token-efficient AGENTS.md files that maximize clarity with minimal tokens
 ## Workflow Router
 
 Map user request to workflow:
+
 - Create → [workflows.md](references/workflows.md#create-workflow)
 - Optimize/condense → [workflows.md](references/workflows.md#optimize-workflow)
 - Update/refresh → [workflows.md](references/workflows.md#update-workflow)
@@ -31,6 +32,7 @@ Map user request to workflow:
 ## Quick Reference
 
 **Output template** - Standard repo:
+
 ```markdown
 # [Project] | [Tech Stack]
 ## COMMANDS
@@ -50,11 +52,13 @@ Format: `convention`
 ```
 
 **Line limits:**
+
 - Standard: ≤150 lines
 - Monorepo root: ≤50 lines
 - Sub-project: ≤100 lines
 
 **Target tokens:**
+
 - Standard: 500-800
 - Monorepo root: 300-400
 - Sub-project: 400-600
@@ -62,6 +66,7 @@ Format: `convention`
 ## Resources
 
 Load as needed:
+
 - **Workflows**: [workflows.md](references/workflows.md) - All 4 workflows with step-by-step procedures
 - **Optimization**: [optimization-patterns.md](references/optimization-patterns.md) - Token reduction techniques
 - **Validation**: [validation-rules.md](references/validation-rules.md) - Quality checklist and scoring

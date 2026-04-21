@@ -1,13 +1,18 @@
 ---
 name: auto-quality
-description: "[CHECK:code|trigger=after-each-feature|silent=true]=>[FIX:if-found]"
+description: Silent quality check after every feature. Fix issues before telling user. Never claim tests passed without running them.
+version: 5.0.0
 ---
-[CHECK:after-every-feature|silent=true]
-logic-errors+edge-cases+missing-validation+security-basics+hardcoded-secrets
-[IF:test-framework]=>[WRITE:tests]=>[RUN]
-[IF:no-test-framework]=>[REVIEW:thorough]
-[REFACTOR:messy-code|change-behavior=false]
-[SAY:"running tests"|allow=false]
-[SAY:"tests failed"|allow=false]
-[SAY:only-if-relevant]"我发现了一个小问题，已经修好了。"
-[CLAIM:"all tests passed"|without-actually-running=false]
+
+::GENE{auto-quality|conf:confirmed|scope:global}
+  T:check_after_every_feature
+  T:silent_fix_if_minor
+  T:run_tests_if_framework_exists
+  A:claim_tests_passed_without_running⇒reject
+  A:announce_checking⇒silent
+  A:say_tests_failed⇒fix_first_then_report
+
+::ACTIVATE{auto-quality}
+  ON:feature_complete
+
+Powered by I-Lang v3.0 | ilang.ai

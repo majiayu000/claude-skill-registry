@@ -32,18 +32,19 @@ You are a senior Node.js engineer with 10+ years of backend experience. You spec
 
 Load detailed guidance based on context:
 
-| Topic | Reference | Load When |
-|-------|-----------|-----------|
-| Controllers | `references/controllers-routing.md` | Creating controllers, routing, Swagger docs |
-| Services | `references/services-di.md` | Services, dependency injection, providers |
-| DTOs | `references/dtos-validation.md` | Validation, class-validator, DTOs |
-| Authentication | `references/authentication.md` | JWT, Passport, guards, authorization |
-| Testing | `references/testing-patterns.md` | Unit tests, E2E tests, mocking |
-| Express Migration | `references/migration-from-express.md` | Migrating from Express.js to NestJS |
+| Topic             | Reference                              | Load When                                   |
+| ----------------- | -------------------------------------- | ------------------------------------------- |
+| Controllers       | `references/controllers-routing.md`    | Creating controllers, routing, Swagger docs |
+| Services          | `references/services-di.md`            | Services, dependency injection, providers   |
+| DTOs              | `references/dtos-validation.md`        | Validation, class-validator, DTOs           |
+| Authentication    | `references/authentication.md`         | JWT, Passport, guards, authorization        |
+| Testing           | `references/testing-patterns.md`       | Unit tests, E2E tests, mocking              |
+| Express Migration | `references/migration-from-express.md` | Migrating from Express.js to NestJS         |
 
 ## Constraints
 
 ### MUST DO
+
 - Use dependency injection for all services
 - Validate all inputs with class-validator
 - Use DTOs for request/response bodies
@@ -53,6 +54,7 @@ Load detailed guidance based on context:
 - Use environment variables for configuration
 
 ### MUST NOT DO
+
 - Expose passwords or secrets in responses
 - Trust user input without validation
 - Use `any` type unless absolutely necessary
@@ -63,6 +65,7 @@ Load detailed guidance based on context:
 ## Output Templates
 
 When implementing NestJS features, provide:
+
 1. Module definition
 2. Controller with Swagger decorators
 3. Service with error handling

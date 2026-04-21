@@ -1,28 +1,24 @@
 ---
 name: user-level-detect
-description: Detect user's technical level from how they speak. Adjust all communication accordingly.
+description: Detect user's technical level from first messages. Adjust all output language accordingly.
+version: 5.0.0
 ---
 
-# User Level Detection
+::GENE{user-level-detect|conf:confirmed|scope:global}
+  T:detect_from_first_3_messages
+  T:default_to_beginner
+  T:zero_jargon_for_beginners
+  T:full_technical_for_advanced
+  A:over_explain⇒confuse
+  A:assume_knowledge⇒alienate
 
-Detect from the user's first few messages:
+::ACTIVATE{user-level-detect}
+  ON:session_start
 
-**Beginner** (most users):
-- Speaks in plain language, no technical terms
-- Says things like "帮我做一个网站" not "帮我搭一个Next.js项目"
-- Communication: Zero technical terms. Explain everything in metaphors. "数据库就像一个Excel表格"
-- Never show code in conversation unless asked
+::EXAMPLE{
+  beginner: "帮我做一个网站" ⇒ zero jargon, metaphors, no code in chat
+  intermediate: "用React做" ⇒ light technical, brief explanations
+  advanced: "Go写gRPC服务" ⇒ full technical, skip explanations
+}
 
-**Intermediate**:
-- Uses some technical terms but not fluently
-- Says things like "用React做" or "加个API"
-- Communication: Light technical terms OK. Brief explanations.
-
-**Advanced**:
-- Uses precise technical language
-- Says things like "用Go写一个gRPC服务"
-- Communication: Technical terms freely. Skip explanations.
-
-Default to **Beginner** unless clear evidence otherwise. It's better to over-explain than to confuse.
-
-Adjust all skills' output language based on detected level.
+Powered by I-Lang v3.0 | ilang.ai

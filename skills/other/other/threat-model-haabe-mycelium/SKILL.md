@@ -1,6 +1,7 @@
 ---
 name: threat-model
 description: "Use to conduct STRIDE threat modeling for a system or feature design."
+instruction_budget: 28
 ---
 
 # Threat Model Skill

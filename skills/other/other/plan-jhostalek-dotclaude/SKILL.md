@@ -6,28 +6,22 @@ argument-hint: [task description]
 
 task = $ARGUMENTS
 
-Create an executable implementation plan for this task.
+Produce the minimum artifact that prevents the executor from going wrong. The executor starts with an empty context window: they get this plan and the codebase, nothing else. Every ambiguity becomes a wrong guess they make confidently.
 
-## Core Constraint
-
-The executor starts with an empty context window. They get this plan and the codebase — nothing else. Every ambiguity becomes a wrong guess they make confidently.
-
-Match plan depth to task complexity — a 3-file bug fix needs a paragraph, not a document. The plan is the minimum artifact that prevents the executor from going wrong.
+Match depth to complexity. A 3-file bug fix needs a paragraph, not a document.
 
 ## Exploration
 
 Explore until you can articulate *why* one approach beats alternatives — then stop and write. If you can't articulate the tradeoffs, you haven't explored enough. If you're still reading files after the picture is clear, you've explored too much.
 
-Two dimensions, run in parallel:
+Two axes, pursued concurrently via read-only exploration teammates:
 
 - **Codebase** — existing implementations, patterns, conventions. Reference them so the executor follows established precedent.
-- **External** — web search for how others solved this. Libraries, vendor docs, open-source implementations. Learn from their experience before designing from scratch.
-
-Spawn read-only exploration teammates for parallel search.
+- **External** — web search for how others solved this. Libraries, vendor docs, open-source implementations. Borrow before inventing.
 
 ## Decomposition
 
-Choose based on task shape, not habit:
+Choose based on task shape, not habit. Default to vertical slice; switch when the task clearly fits another:
 
 | Strategy | When | Risk it mitigates |
 |----------|------|---------------------|
@@ -35,13 +29,9 @@ Choose based on task shape, not habit:
 | **Walking skeleton** | Uncertain integration path | Late-stage "it doesn't connect" — proves wiring first |
 | **Layer-by-layer** | Clear layers, different complexity zones | Allows parallel work; natural when data model drives everything |
 
-Default to vertical slice. Switch when task shape clearly fits another.
-
 ## Specificity
 
-The hard part of planning is identifying the *surface of change* — which files, which functions, which call sites. Once the surface is named, the edits are obvious.
-
-Name concrete files and functions in every step. Describe *what* changes and *why*. Reference precedent for the pattern to follow. Leave *how* to the executor — they need goals and constraints, not pseudocode.
+The hard part of planning is identifying the *surface of change* — which files, which functions, which call sites. Once the surface is named, the edits are obvious. Name concrete files and functions; describe *what* changes and *why*; reference precedent for the pattern to follow. Leave *how* to the executor — they need goals and constraints, not pseudocode.
 
 - **Under-specified:** `Add a rate limiter to the API.`
 - **Over-specified:** Pseudocode of the rate-limit check, variable names, HTTP status codes.

@@ -1,6 +1,7 @@
 ---
 name: service-check
 description: "Use to evaluate a service or feature against Downe's 15 principles of good services."
+instruction_budget: 52
 ---
 
 # Service Check Skill
@@ -94,6 +95,9 @@ Running at L3 catches service design issues BEFORE delivery, not after. A soluti
 Score: [X/15 Pass, Y/15 Partial, Z/15 Fail]
 Priority fixes: [top 3 items to address]
 ```
+
+## Decision Log (MANDATORY per G-P4)
+**APPEND** a `### Service Check` entry to `harness/decision-log.md` with: principles assessed, scores, priority fixes, overall service quality rating.
 
 ## Theory Citations
 - Downe: Good Services (15 principles)

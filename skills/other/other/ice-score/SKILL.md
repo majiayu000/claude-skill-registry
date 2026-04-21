@@ -1,6 +1,7 @@
 ---
 name: ice-score
 description: "Use to prioritize solutions or opportunities using ICE scoring with evidence-backed confidence."
+instruction_budget: 35
 ---
 
 # ICE Score Skill
@@ -33,7 +34,9 @@ For each solution, score three dimensions (1-10):
 - 4-6: Moderate value evidence, some usability unknowns
 - 7-10: Strong value evidence, low usability risk, clear viability
 
-**Confidence** — how well-tested are the risk assessments (Gilad's meter)?
+**Confidence** — how well-tested are the risk assessments?
+
+> *Scale note: Mycelium uses 0.0-1.0. Gilad's original Confidence Meter uses 0-10 non-linear (0.01=opinion, 1=anecdotal, 5=market data, 8=A/B test, 10=launch data). The non-linear penalty is preserved through evidence-class weighting.*
 - 1-3: Risk assessments based on gut feel or desk research
 - 4-6: Some direct evidence (interviews, analogues, small tests)
 - 7-10: Strong evidence (user tests, prototypes, data). Requires test-validated evidence.
@@ -92,3 +95,5 @@ ICE scores are susceptible to **noise** — unwanted variability where different
 **Detection**: Re-score the same evidence independently (different session or assessor) and compare. If scores diverge by >1 point on any dimension, investigate why before proceeding.
 
 **Mitigation**: Use structured assessment criteria (the Four Risks inputs above), apply scores independently before discussion, and anchor to evidence types rather than gut feel.
+
+**Noise audit procedure**: Score the same evidence independently twice (different session or different assessor). If ICE scores diverge by >1 point on any dimension, the gap is noise — investigate the scoring criteria before proceeding. For solo developers: re-score after a 24h break to detect temporal noise.

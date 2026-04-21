@@ -1,6 +1,7 @@
 ---
 name: handoff
 description: "Generate structured handoff materials for offline human tasks (interviews, observations, outreach). Creates actionable briefs with phone-friendly capture templates."
+instruction_budget: 47
 ---
 
 # Handoff Skill

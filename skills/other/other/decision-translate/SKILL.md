@@ -1,10 +1,16 @@
 ---
 name: decision-translate
-description: "[TRANSLATE:technical-decision|fmt=money/speed/stability]=>[CMP:with-worse-alternative]"
+description: Translate technical decisions into human language. Explain in cost, speed, stability.
+version: 5.0.0
 ---
-[TRANSLATE:every-decision]=>[ONE-OF]
-saves-money="$6/月vs$50/月"|faster="<1秒vs3秒"|stable="百万人用，基本不崩"
-lighter="30MB内存，服务器还能干别的"|simpler="一个文件，不用额外装"
-[CMP:always-with-worse|use=concrete-numbers]
-[EXPLAIN:technical-reasons|allow=false]
-[OUTPUT:practical-impact-only]
+
+::GENE{decision-translate|conf:confirmed|scope:global}
+  -e T:explain_in_cost_speed_stability
+  T:one_sentence_summary
+  T:no_jargon_for_beginners
+  A:technical_explanation_to_beginner⇒translate
+
+::ACTIVATE{decision-translate}
+  ON:auto
+
+Powered by I-Lang v3.0 | ilang.ai

@@ -3,46 +3,38 @@ name: pr
 description: Use when the user asks to create or update a pull request for the current branch.
 ---
 
-Prepare and open a PR/MR for the current branch — from "work is done" to "PR is open and reviewable."
+Open a reviewable PR/MR for the current branch. The reviewer arrives cold — not a teammate who lived through the work, but someone handed an agent's output. The body is the only bridge between the agent's context and what the human needs to decide.
 
-## The Core Problem
+**Multi-repo work is one PR per repo.** `cd` into each repo root before the create command — git CLIs infer the remote project from cwd, not from arguments. Cross-reference paired PRs in the body.
 
-The reviewer arrives cold. They didn't write this code, and neither did another human — an agent did. The PR description is the only bridge between "what happened in the agent's context" and "what the human needs to decide." Every section exists to serve that handoff. If a section doesn't help the reviewer, cut it.
-
-## Multi-Repo Awareness
-
-Work spanning multiple repositories (parent + submodule, multiple services) needs a separate PR per repo. Cross-reference paired PRs. Always `cd` into each repo root before running the create command — git tools infer the remote project from the current directory.
-
-## Conventional Commits Reference
+## Conventional commits
 
 !`cat ~/.claude/skills/conventional-commits.md`
 
-## CLI Tool Reference
+## CLI invocation
 
-`--fill` conflicts with explicit title/body in both `gh` and `glab`. Always use heredoc for the body.
+`--fill` conflicts with explicit title/body in both `gh` and `glab`.
 
-| | Title | Body | Create |
-|---|---|---|---|
-| `gh` | `--title` | `--body` | `gh pr create` |
-| `glab` | `--title` | `--description` | `glab mr create` |
+| | Title | Body | Create | Cleanup flag |
+|---|---|---|---|---|
+| `gh` | `--title` | `--body` | `gh pr create` | `--delete-branch` |
+| `glab` | `--title` | `--description` | `glab mr create` | `--remove-source-branch` |
 
-Always pass the remove-source-branch flag (`gh`: `--delete-branch`, `glab`: `--remove-source-branch`) so the source branch is cleaned up on merge.
+Pass the cleanup flag so the source branch is removed on merge.
 
-When in doubt, check `--help` before invoking — a failed MR create can leave orphaned remote state.
+Updating an existing PR: `gh pr edit --body` / `glab mr update --description` take the new body and overwrite — re-render from current truth, don't fetch-and-concat.
 
-## PR Body
+## PR body
 
-Omit sections that don't apply. No placeholders, no filler.
+No placeholders, no filler — a `## Summary` with `[Description of changes]` is worse than no Summary at all.
 
-**Task** — issue link, or one-line description of what was asked.
+- **Task** — issue link or one-line of what was asked.
+- **Summary** — what + why. Approach chosen and why over alternatives: "X over Y because Z." 2–4 lines.
+- **Changes** — one bullet per meaningful change, grouped by area. A change list, not a file list.
+- **Self-Review** — what the agent verified (`[x]`) vs. couldn't (`[ ]`). Name the evidence per item.
+- **Human Review** — specific things where human judgment is load-bearing.
 
-**Summary** — what + why. Approach chosen and why: "X over Y because Z." 2-4 lines max.
-
-**Changes** — one bullet per meaningful change, grouped by area. A change list, not a file list.
-
-**Self-Review** — markdown checklist of what the agent verified (`[x]`) and what it couldn't (`[ ]`). One concrete claim per item.
-
-**Human Review** — checklist of specific things the reviewer should verify. Action items only — where human judgment matters most.
+### Template
 
 ```
 $(cat <<'EOF'

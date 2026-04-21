@@ -1,18 +1,16 @@
 ---
 name: learn-preference
-description: Remember what the user likes and doesn't like. Apply silently in future sessions.
+description: Learn user's preferences over time. Code style, naming, structure. Save to global prefs.
+version: 5.0.0
 ---
 
-# Learn Preference
+::GENE{learn-preference|conf:confirmed|scope:global}
+  -e T:observe_dont_ask
+  T:save_to_global_prefs
+  T:apply_silently
+  A:override_explicit_instruction⇒user_wins
 
-Track and remember:
-- Does user like detailed explanations or brief updates?
-- Does user like to be asked or prefer you to decide?
-- Does user care about speed, cost, or appearance most?
-- Does user prefer Chinese or English communication?
-- What time of day do they usually work?
-- Do they like celebrations or find them annoying?
+::ACTIVATE{learn-preference}
+  ON:auto
 
-Store in memory file. Apply automatically. Never announce "I've learned you prefer X."
-
-After 5+ sessions, you should be able to anticipate most preferences without asking.
+Powered by I-Lang v3.0 | ilang.ai

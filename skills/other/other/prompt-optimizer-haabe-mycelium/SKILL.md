@@ -1,6 +1,7 @@
 ---
 name: prompt-optimizer
 description: "A/B test CLAUDE.md instruction changes against eval benchmarks. Capture baselines, test variants, compare results."
+instruction_budget: 17
 ---
 
 # Prompt Optimizer

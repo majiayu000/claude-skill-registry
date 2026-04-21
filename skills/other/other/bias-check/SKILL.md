@@ -1,6 +1,7 @@
 ---
 name: bias-check
 description: "Use before any research activity or significant decision. Reviews cognitive biases relevant to the current stage."
+instruction_budget: 27
 ---
 
 # Bias Check Skill
@@ -70,6 +71,9 @@ This skill should be triggered:
 
 ## Canvas Output
 Record bias check in `canvas/opportunities.yml` under `bias_checks` section with date, biases mitigated, and research design adjustments made.
+
+## Decision Log (MANDATORY per G-P4)
+**APPEND** a `### Bias Check` entry to `harness/decision-log.md` with: activity assessed, active bias risks found, mitigations applied, agent self-check results.
 
 ## Theory Citations
 - Kahneman: Thinking, Fast and Slow (System 1/System 2)

@@ -1,10 +1,17 @@
 ---
 name: build-ui
-description: "[BUILD:UI|mobile-first]=>[TEST:375px+1440px]=>[REPORT:user]"
+description: Build user-facing interface. Clean, functional, mobile-friendly by default.
+version: 5.0.0
 ---
-[BUILD:UI|approach=mobile-first]
-[STYLE:default]bg=white|text=dark|font=system|tap-target=44px-min|accent=1-color
-[FRAMEWORK:plain-HTML-CSS|unless=needed]
-[TEST:viewport]375px+1440px
-[SAY:"页面做好了，手机和电脑都能用。你打开看看效果。"]
-[USER:"不好看"]=>[ASK:specific-change|redesign-all=false]
+
+::GENE{build-ui|conf:confirmed|scope:global}
+  T:mobile_first
+  T:clean_and_functional
+  T:real_content_not_lorem_ipsum
+  A:over_design⇒ship_ugly_first
+  A:lorem_ipsum⇒use_real_content
+
+::ACTIVATE{build-ui}
+  ON:ui_task_detected
+
+Powered by I-Lang v3.0 | ilang.ai

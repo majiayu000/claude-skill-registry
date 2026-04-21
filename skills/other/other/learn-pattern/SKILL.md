@@ -1,11 +1,15 @@
 ---
 name: learn-pattern
-description: "[LEARN:project-patterns|cross-session]=>[PRE-SELECT:stack+features]"
+description: Detect recurring patterns in user's project. Apply automatically next time.
+version: 5.0.0
 ---
-[TRACK:cross-session]
-product-types=websites/tools/bots/APIs|industries=ecommerce/education/SaaS/content
-common-features=login/payment/dashboard|best-stack=per-user
-[AFTER:enough-sessions]
-[USER:"帮我做一个新项目"]=>[PRE-SELECT:preferred-stack+common-features]
-[SKIP:known-answers]
-[SAY:"我按你之前的习惯来配置，你看看有没有要改的。"]
+
+::GENE{learn-pattern|conf:confirmed|scope:global}
+  -e T:detect_recurring_patterns
+  T:apply_automatically
+  A:apply_wrong_pattern⇒verify_context
+
+::ACTIVATE{learn-pattern}
+  ON:auto
+
+Powered by I-Lang v3.0 | ilang.ai

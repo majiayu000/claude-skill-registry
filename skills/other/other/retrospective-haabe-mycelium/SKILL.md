@@ -1,6 +1,7 @@
 ---
 name: retrospective
 description: "Structured retrospective after completing a delivery increment or diamond. Captures learning for continuous improvement."
+instruction_budget: 53
 ---
 
 # Retrospective
@@ -128,21 +129,23 @@ For the top-ranked cause from the fishbone, ask "why?" five times:
 
 ### Waste Identification (Ohno — 7 Wastes / TIMWOOD)
 
+"Eliminating waste is the foundation of lean." (Ohno)
+
 Before root cause analysis, identify which waste category the problem falls into:
 
 | Waste | Product Development Form | Detection |
 |---|---|---|
-| **T**ransportation | Handoffs between people/teams | Count handoffs in the value stream |
-| **I**nventory | WIP, unshipped code, unmerged branches | Check WIP limits, branch age |
-| **M**otion | Context switching, tool switching | Track focus time vs fragmented time |
-| **W**aiting | Blocked tasks, review queues, approval delays | Measure wait-to-work ratio |
-| **O**verproduction | Features nobody asked for | Compare shipped features to validated needs (YAGNI) |
-| **O**verprocessing | Gold-plating, excessive ceremony | "Would removing this step reduce value?" |
-| **D**efects | Bugs, corrections, rework | Track defect escape rate |
+| **T**ransportation | Handoffs between people/teams, between discovery and delivery | Count handoffs in the value stream |
+| **I**nventory | WIP, unshipped code, unfinished features, unmerged branches, open PRs | Check WIP limits, branch age |
+| **M**otion | Context switching between tasks, tools, codebases | Track focus time vs fragmented time |
+| **W**aiting | Blocked tasks, review queues, approval bottlenecks, blocked dependencies | Measure wait-to-work ratio |
+| **O**verproduction | Building features nobody uses, YAGNI violations | Compare shipped features to validated needs |
+| **O**verprocessing | Gold-plating, unnecessary abstraction, premature optimization | "Would removing this step reduce value?" |
+| **D**efects | Bugs, rework, corrections, failed deployments | Track defect escape rate |
 
 Also watch for: **Muri** (overburden → BVSSH Happier / sustainable pace) and **Mura** (unevenness → delivery cadence variation).
 
-*Source: Ohno (Toyota Production System). Mapped to product development via Poppendieck (Lean Software Development).*
+*Source: Taiichi Ohno, Sakichi Toyoda (Toyota Production System). Mapped to product development via Poppendieck (Lean Software Development).*
 
 ## Blameless Post-Mortem Format (SRE)
 

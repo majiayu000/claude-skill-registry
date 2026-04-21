@@ -1,6 +1,7 @@
 ---
 name: team-shape
 description: "Assess team structure against Skelton's Team Topologies. Evaluate cognitive load, interaction modes, and Conway's Law alignment."
+instruction_budget: 26
 ---
 
 # Team Shape Assessment
@@ -53,6 +54,7 @@ When a team's cognitive load exceeds capacity, use fracture planes to identify t
 | Technology | Different tech stacks |
 | User personas | Different user segments |
 | Risk | High-risk vs low-risk components |
+| Performance isolation | Components with different scaling/latency requirements |
 
 *Source: Skelton & Pais (Team Topologies, Chapter 6)*
 
@@ -75,4 +77,23 @@ If the product has multiple domains or services:
 ### 6. Capability Gap Diagnosis (DASA)
 When DORA metrics indicate capability gaps, use the DASA DevOps Competency Framework's 12 skill areas to identify which team skills need development (e.g., courage, teambuilding, continuous improvement, business value optimization).
 
-Update canvas/team-shape.yml and canvas/bounded-contexts.yml with assessment results.
+## Bounded Agency (Skelton, 2025-2026)
+
+Skelton's "Infrastructure for Agency" framing describes how organizations should provide **boundaries that enable autonomy** rather than control that restricts it. Mycelium implements bounded agency for AI agents using the same structural principles:
+
+| Skelton concept | Mycelium mechanism |
+|---|---|
+| Boundaries that enable | Guardrails (BLOCK/REVIEW/NUDGE — constrain without micromanaging) |
+| Shared state | Canvas (single source of truth all agents read/write) |
+| Stable interfaces | Theory gates (predictable checkpoints with explicit pass/fail) |
+| Aligned domains | Diamonds (scoped units of work with clear ownership) |
+| Bounded workers | Fan-out agents (isolated worktrees, scoped mandate, report back) |
+
+Agency without boundaries produces chaos; boundaries without agency produces bureaucracy. The target is the middle.
+
+*Source: Skelton (Infrastructure for Agency, 2025-2026)*
+
+## Output
+
+- Update `canvas/team-shape.yml` and `canvas/bounded-contexts.yml` with assessment results.
+- **APPEND** a `### Team Shape Assessment` entry to `harness/decision-log.md` with: team types identified, cognitive load findings, Conway alignment, recommendations. (MANDATORY per G-P4)

@@ -1,6 +1,7 @@
 ---
 name: wardley-map
 description: "Create or update a Wardley Map of the value chain. Maps user needs, components, evolution stages, and strategic gameplay."
+instruction_budget: 10
 ---
 
 # Wardley Mapping
@@ -44,6 +45,9 @@ Strategic options based on the map:
 
 ## Output
 Update canvas/landscape.yml with components, evolution stages, movements, and gameplay options.
+
+## Decision Log (MANDATORY per G-P4)
+**APPEND** a `### Wardley Map Assessment` entry to `harness/decision-log.md` with: components mapped, evolution stages, strategic gameplay identified, recommendations.
 
 ## Connection to Other Frameworks
 - Evolution stage maps to Cynefin domain (use `/cynefin-classify`)

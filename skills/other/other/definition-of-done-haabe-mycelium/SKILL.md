@@ -1,6 +1,7 @@
 ---
 name: definition-of-done
 description: "Use to verify a feature/story meets all Definition of Done criteria before marking complete."
+instruction_budget: 53
 ---
 
 # Definition of Done Skill

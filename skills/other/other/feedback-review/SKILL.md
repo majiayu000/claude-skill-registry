@@ -1,6 +1,7 @@
 ---
 name: feedback-review
 description: "Aggregate feedback signals across all active loops. Reports health, trajectory, overdue checks, regression warnings, and Goodhart's Law violations."
+instruction_budget: 55
 ---
 
 # Feedback Review

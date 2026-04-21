@@ -1,6 +1,7 @@
 ---
 name: regulatory-review
 description: "Use to assess regulatory applicability for products that may fall under AI regulation (EU AI Act, Article 50 transparency)."
+instruction_budget: 42
 ---
 
 # Regulatory Review Skill

@@ -31,7 +31,7 @@ Read these reference files and provide their content to the agent as context bef
 - `$CLAUDE_PLUGIN_ROOT/skills/init/references/multi-repo-detection.md` — workspace detection
 - `$CLAUDE_PLUGIN_ROOT/skills/init/references/project-detection.md` — monorepo/single-project detection
 - `$CLAUDE_PLUGIN_ROOT/skills/init/references/tech-stack-detection.md` — manifest → tech stack + package manager
-- `$CLAUDE_PLUGIN_ROOT/skills/how-to-run/references/how-to-run-sections.md` — signal-to-section mapping, build-system signals, source-dependency signals, external services detection
+- `$CLAUDE_PLUGIN_ROOT/skills/how-to-run/references/how-to-run-sections.md` — signal-to-section mapping, build-system signals, source-dependency signals
 
 The detector only needs to set `Triggered: yes` when no manifest or build-system signal matches; it does NOT execute the fallback procedure. The procedure itself is loaded by the main SKILL context only when the trigger fires (see Step 1 Checkpoint).
 
@@ -41,7 +41,7 @@ Wait for the agent to complete. Use the agent's **Context Detection Results** to
 
 ### Step 1 Checkpoint
 
-Print a **Context Summary** from the agent's Context Detection Results:
+Print a **Context Summary** from the agent's Context Detection Results. For the External-service-default-endpoints bullet, read each config file the agent flagged as the service source (e.g., `docker-compose.yml`, `.env.example`, `appsettings.json`, `application.yml`) and derive the endpoint label yourself before printing — the detector does not produce this field.
 
 - **Build system & toolchain** (e.g., CMake >= 3.20 with MSVC, cargo, npm scripts, Gradle 8.x)
 - **Tech stack(s)** and **package manager(s)**
@@ -49,6 +49,7 @@ Print a **Context Summary** from the agent's Context Detection Results:
 - **Source dependencies** (git submodules from `.gitmodules`, sibling repos detected in build/CI files, CMake `FetchContent` / `ExternalProject`)
 - **SDKs & system packages** (Vulkan, CUDA, Qt, JDK, .NET SDK, MSVC Build Tools, etc. — only if detected)
 - **External services detected** (list with source — e.g., "PostgreSQL (docker-compose.yml), Redis (docker-compose.yml)")
+- **External service default endpoints** (per service: raw default endpoint from the referenced config file + one label — `local-endpoint` for `localhost` / empty / unknown, `remote-endpoint` for any other hostname/FQDN, `ambiguous` if the config file is missing or unreadable).
 - **Environment config files found** (`.env.example`, etc.)
 - **Runtime version constraints** (e.g., "Node.js >=18 (engines.node), Python >=3.11 (python_requires)")
 - **Hardware / OS requirements** (GPU, USB/serial, OS version — only if detected)
@@ -84,6 +85,13 @@ Wait for the agent to complete. Use the agent's **How-to-Run Audit Results** for
 
 Present findings as a table with status per aspect (use the classification from the How-to-Run Audit Results).
 
+For the **External Services** aspect, expand it into a sub-table with columns **Service | Recommended runtime | Alternative | Reason**:
+
+- Recommended runtime values: `Docker-preferred` / `Shared-cloud primary (<provider>)` / `Local install only`.
+- Alternative values: `Docker (offline)` / `Local install` / `—`.
+- Read `$CLAUDE_PLUGIN_ROOT/skills/how-to-run/references/external-services-docker.md` and produce one row per service by applying its Decision Heuristics to the Step 1 Checkpoint's endpoint labels.
+- Do not emit a per-service `AskUserQuestion` here — the reference file documents the single batched exception for rule 5's post-web-search re-confirmation (handled in Step 4).
+
 **If a `HOW-TO-RUN.md` already exists and all aspects are "Found & accurate":** Report to user — no action needed. Skip to Step 6 (report only).
 
 **If outdated items found:** Show current content vs proposed correction for each.
@@ -100,7 +108,12 @@ If user selects **Skip**, jump to Step 6 (report only).
 
 ## Step 4: Generate Content
 
-Read `$CLAUDE_PLUGIN_ROOT/skills/how-to-run/references/how-to-run-sections.md` for section templates and the signal-to-section mapping.
+Read these reference files before generating content:
+
+- `$CLAUDE_PLUGIN_ROOT/skills/how-to-run/references/how-to-run-sections.md` — section templates and signal-to-section mapping.
+- `$CLAUDE_PLUGIN_ROOT/skills/how-to-run/references/external-services-docker.md` — Docker-vs-local-vs-shared-cloud decision heuristics, web-search recipe, snippet templates, citation format, and registry allowlist for the External Services section.
+
+Before generating content, run `external-services-docker.md` §Web-Search Recipe for every Step 3 row whose Recommended runtime is **Docker-preferred** or whose Alternative is **Docker (offline)**. Apply §Decision Heuristics rule 5 for batched-downgrade prompts (a single `AskUserQuestion` summarising all downgraded services, before Step 5 writes the file).
 
 Generate only sections with at least one detected signal. Order is fixed; only inclusion varies. Full catalog:
 
@@ -108,7 +121,7 @@ Generate only sections with at least one detected signal. Order is fixed; only i
 2. **Toolchain & SDKs** — compiler, build-tool, language SDK, and domain SDK requirements. See *Additional Detection Hints* in `how-to-run-sections.md` for additional detection signals and the *Build System Detection* table below it for per-file extraction rules. Group per-OS install commands (Windows / macOS / Linux) when multiple OSes are plausible.
 3. **Source Dependencies** — git submodules (`git clone --recursive` or `git submodule update --init --recursive`), sibling repos that must be cloned alongside this one (list paths + clone URLs), CMake `FetchContent`/`ExternalProject` notes.
 4. **Installation** — clone command, language-level package install (correct PM and prefix), post-install steps (code generation, database migrations, asset compilation), vendored-dependency bootstrap (vcpkg, Conan).
-5. **External Services** — how to start required infrastructure. When `docker-compose.yml` / `compose.yml` exists, use `docker compose up -d` as the recommended approach. Otherwise describe manual setup. Include: what services are needed, how to start them, how to verify they're running, default ports from compose config. For credentials, note that the service uses defaults from docker-compose — never copy actual password values into the file.
+5. **External Services** — render per `how-to-run-sections.md` §External Services (Branch A/B/Hybrid); apply `external-services-docker.md` for per-service classification, snippets, web-search recipe, citations, allowlist, and sanitization (single source of truth for these rules). For env-var name slots use `<REQUIRED_ENV_VAR>` or the actual vendor-documented name; for value slots use `<placeholder>` or a vendor-documented constant. Substitute every template placeholder with the Step 4 WebFetch-derived values before writing the file: `<host-port>` and `<container-port>` with numeric ports, `<container-volume-path>` with the absolute volume mount path, and `<registry>/<name>:<stable-tag>` with the validated image reference. Substitute `<project-slug>` with the kebab-cased project name from the Step 1 Checkpoint and `<service-slug>` with the kebab-cased service name from the detector's External Services table — both lowercased, ASCII-only, with `[^A-Za-z0-9]+` collapsed to a single `-`, and any leading/trailing `-` trimmed. The literal `<REQUIRED_ENV_VAR>`/`<placeholder>` forms are the only placeholders permitted to remain unsubstituted (by design — they signal a required user action). Never copy real secrets and never use model-memory image names.
 6. **Environment Setup** — copy `.env.example` → `.env`, describe required variables (read from the example file), any service-specific configuration. Never include real secret values — only describe what each variable is for.
 7. **Build** — explicit compile/link command for compiled stacks (e.g., `cmake --build build --config Debug`). Omit for interpreted stacks where build is conflated with run.
 8. **Running in Development** — the primary dev command(s) OR the command to launch the produced binary OR the engine launcher. What URL/port to expect for web/server stacks, what window/output to expect for desktop/game stacks. For monorepos: how to run specific subprojects AND how to run everything together. For docker-only setups (Dockerfile + docker-compose + no obvious local-run scripts): Docker-based instructions as the primary path.
@@ -157,6 +170,9 @@ If no files were modified (skip or no-action path), skip verification and procee
 
 - Read back the modified or created `HOW-TO-RUN.md`.
 - **Verify:** all commands use the correct package manager prefix, prerequisite versions match manifest constraints, build-system commands correspond to the detected build files, submodule paths in `HOW-TO-RUN.md` actually exist in `.gitmodules`, sibling-repo paths actually appear in build/CI files, directory paths match the actual filesystem, external service names match docker-compose service definitions, environment variable names match `.env.example`.
+- **Verify External Services subsections** — re-apply every rule from `external-services-docker.md` §Citation Format (for every `- Source: [<title>](<url>)` line), §Web-Search Recipe step 4 and §Registry Allowlist (for every `docker run` snippet's image reference), §Web-Search Recipe step 5 (for every `-e`, `-p`, `-v`, and image-reference line — `- Source:` lines are governed by §Citation Format, not step 5's URL regex), and the Snippet Templates' env-var rule. Step-6-only additions:
+  - Stable-tag preference: no bare `:latest` when the cited vendor page listed a versioned tag.
+  - Volume-path slug check: every `-v` flag's left side must match `^[A-Za-z0-9][A-Za-z0-9._-]*-[A-Za-z0-9][A-Za-z0-9._-]*-data$` (the rendered `<project-slug>-<service-slug>-data` shape, with placeholders substituted by Step 5).
 - **Re-validate detector-sourced tokens** in the written file: every package identifier in `HOW-TO-RUN.md` must still match `^[A-Za-z0-9][A-Za-z0-9._+:@/-]{0,99}$` with no `://`, `.`, `..`, or empty path segments after splitting on `/` or `:`; the project name must match `^[A-Za-z0-9._ -]{1,64}$` or be exactly `(unknown)`; hardware/OS mentions must correspond to a canonical token from the detector's Task 0d search lists. Reject any line, outside fenced code blocks the skill itself generated, that echoes free-text prose — whether taken from `README.md`/`CONTRIBUTING.md`/`docs/*` or supplied by the user in the Step 1 "Corrections" response.
 - **If any check fails:** show the correction to the user, wait for approval, apply it, then re-verify.
 

@@ -211,7 +211,7 @@ Use `AskUserQuestion` — header "Test Infrastructure", question "No test framew
 
 If the user chooses **Yes**: follow the "Framework and Coverage Tooling Installation" section of the reference (consult `$CLAUDE_PLUGIN_ROOT/skills/init/references/test-framework-recommendations.md`, ask user approval for specific framework, install, then run health check). After installation, run the full Optimus Infrastructure Provisioning from the reference (testing.md, CLAUDE.md refs, README section, .gitignore).
 
-If the user chooses **No**: skip all test infrastructure provisioning. In Step 7 summary, include: "⚠ Test infrastructure was not installed — `/optimus:tdd` will not work, and `/optimus:code-review` and `/optimus:refactor` will have reduced functionality. Re-run `/optimus:init` to install test infrastructure later."
+If the user chooses **No**: skip all test infrastructure provisioning. In Step 7 summary, include: "Test infrastructure was not installed — `/optimus:tdd` will not work, and `/optimus:code-review` and `/optimus:refactor` will have reduced functionality. Re-run `/optimus:init` to install test infrastructure later."
 
 ## Step 6: Create Documentation Files
 
@@ -305,7 +305,7 @@ Run through this checklist. **Fix any failures before reporting to the user.**
 ```
 ---
 
-### ✅ Optimus Init Complete
+### Optimus Init Complete
 
 | Category | Details |
 |----------|---------|
@@ -321,20 +321,20 @@ Run through this checklist. **Fix any failures before reporting to the user.**
 
 **Broken-baseline reporting:** If the Step 5b health check recorded failing tests, apply the following to the summary:
 
-- **Test-infra row modifier:** append `— ⚠ baseline broken ([N] failing)` to the Test-infra value (e.g., `Pre-existing: jest — ⚠ baseline broken (12 failing)`). In monorepos, apply per subproject; in multi-repo workspaces, apply per repo.
+- **Test-infra row modifier:** append `— baseline broken ([N] failing)` to the Test-infra value (e.g., `Pre-existing: jest — baseline broken (12 failing)`). In monorepos, apply per subproject; in multi-repo workspaces, apply per repo.
 - **Post-table hint:** if any baseline is broken (single project, subproject, or repo), add this one-line hint immediately after the summary table:
 
-  > ⚠ **Baseline broken** — init does not fix failing tests by design. Ask Claude to triage the failing tests before running skills that need a green baseline.
+  > **Baseline broken** — init does not fix failing tests by design. Ask Claude to triage the failing tests before running skills that need a green baseline.
 
 After the table (and the broken-baseline hint, if present), include conditional warnings:
 
 If test infrastructure was installed from scratch in Step 5b (no pre-existing test framework — the user chose "Yes" to install one), include a strong warning:
 
-> ⚠ **Important:** Test framework was installed but the project has no test files yet. The test command will pass with 0 tests — this is a false safety net. Other optimus skills (`/optimus:code-review` deep mode and deep harness, `/optimus:refactor` deep mode and deep harness) rely on tests to validate changes. **Run `/optimus:unit-test` next** to write initial tests and establish real coverage.
+> **Important:** Test framework was installed but the project has no test files yet. The test command will pass with 0 tests — this is a false safety net. Other optimus skills (`/optimus:code-review` deep mode and deep harness, `/optimus:refactor` deep mode and deep harness) rely on tests to validate changes. **Run `/optimus:unit-test` next** to write initial tests and establish real coverage.
 
 If the user declined test infrastructure in Step 5b, include:
 
-> ⚠ **Note:** Test infrastructure was not installed — `/optimus:tdd` will not work, and `/optimus:code-review` and `/optimus:refactor` will have reduced functionality. Re-run `/optimus:init` to install test infrastructure later.
+> **Note:** Test infrastructure was not installed — `/optimus:tdd` will not work, and `/optimus:code-review` and `/optimus:refactor` will have reduced functionality. Re-run `/optimus:init` to install test infrastructure later.
 
 **Next step:** If the project root has no `HOW-TO-RUN.md` (or the existing one looks stale compared to the current project state), recommend running `/optimus:how-to-run` first to generate a developer-facing onboarding doc, then `/optimus:unit-test` to write tests. Otherwise, recommend `/optimus:unit-test` directly.
 

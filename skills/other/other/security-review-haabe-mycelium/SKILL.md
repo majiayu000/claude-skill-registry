@@ -1,6 +1,7 @@
 ---
 name: security-review
 description: "OWASP secure design review for code and architecture. Checks input validation, authentication, authorization, data protection."
+instruction_budget: 42
 ---
 
 # Security Review
@@ -31,6 +32,13 @@ Language-agnostic security review based on OWASP Secure by Design.
 - [ ] Input allowlisting preferred over denylisting
 - [ ] Output encoded based on context (HTML, JS, URL, CSS — covers XSS)
 - [ ] Content Security Policy configured
+
+### A03b:2025 — Software Supply Chain Failures *(new in 2025)*
+- [ ] SBOM (Software Bill of Materials) maintained for critical dependencies
+- [ ] Build integrity verified (reproducible builds, signed artifacts)
+- [ ] Dependency provenance checked (not just version, but source authenticity)
+- [ ] Transitive dependencies audited (not just direct)
+- [ ] Lock files committed and verified
 
 ### A04:2025 — Insecure Design
 - [ ] Threat modeling performed (STRIDE — see /threat-model)
@@ -72,6 +80,30 @@ Language-agnostic security review based on OWASP Secure by Design.
 - [ ] URL inputs validated and allowlisted
 - [ ] Internal network access restricted from user-supplied URLs
 - [ ] Response content not returned directly to users without sanitization
+
+### A10b:2025 — Mishandling of Exceptional Conditions *(new in 2025)*
+- [ ] All error paths explicitly handled (no silent failures)
+- [ ] Resource exhaustion scenarios addressed (memory, disk, connections)
+- [ ] Timeout and retry policies defined for all external calls
+- [ ] System fails closed (denies access on error, not grants)
+
+## OWASP Top 10 for LLM Applications (2025)
+
+*Apply for `ai_tool` product types. Source: owasp.org/www-project-top-10-for-large-language-model-applications*
+
+- [ ] **Prompt Injection**: User input cannot override system instructions (direct or indirect)
+- [ ] **Data Poisoning**: Training/fine-tuning data sources validated and auditable
+- [ ] **Insecure Output Handling**: LLM output sanitized before use in downstream systems (SQL, shell, HTML)
+- [ ] **Model Denial of Service**: Rate limiting and resource caps on inference requests
+- [ ] **Supply Chain**: Model provenance verified; third-party models/plugins audited
+- [ ] **Sensitive Information Disclosure**: PII/secrets not leaked in model responses; training data scrubbed
+- [ ] **Insecure Plugin/Tool Design**: Tool permissions follow least privilege; tool outputs validated
+- [ ] **Excessive Agency**: Model actions bounded; human-in-the-loop for destructive operations
+- [ ] **Overreliance**: Users informed of model limitations; confidence indicators provided
+- [ ] **Model Theft**: Model weights and fine-tuning data access-controlled
+
+## Decision Log (MANDATORY per G-P4)
+**APPEND** a `### Security Review` entry to `harness/decision-log.md` with: OWASP categories assessed, findings, risk ratings, remediation recommendations.
 
 ## Stack-Specific Tools
 Consult `.claude/jit-tooling/security-scanning.md` for tool selection per stack.

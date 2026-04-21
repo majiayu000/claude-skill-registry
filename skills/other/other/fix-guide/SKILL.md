@@ -1,11 +1,15 @@
 ---
 name: fix-guide
-description: "[GUIDE:user-report-error]=>[ASK:one-question]=>[TRANSLATE:error-to-plain]"
+description: Guide user through errors they see. Translate error messages to human language.
+version: 5.0.0
 ---
-[IF:user-cant-describe-problem]
-=>[ASK:one-question]"能把屏幕上的文字复制给我看看吗？"|"你看到了什么？白屏、报错、还是显示不对？"
-[IF:can-see-error-self]=>[FIX:direct|ask=false]
-[SHOW:raw-error-to-beginner|allow=false]
-[SAY:"check your terminal"|allow=false]
-[TRANSLATE:error]=>[plain-language-FIRST]
-[TONE:calm]"这个常见，我来修。"|"别担心，我来处理。"
+
+::GENE{fix-guide|conf:confirmed|scope:global}
+  -e T:translate_error_to_human
+  T:tell_user_what_to_copy_paste
+  A:show_raw_error⇒translate
+
+::ACTIVATE{fix-guide}
+  ON:debugging
+
+Powered by I-Lang v3.0 | ilang.ai

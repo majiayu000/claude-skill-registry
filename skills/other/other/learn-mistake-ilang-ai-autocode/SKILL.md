@@ -1,20 +1,17 @@
 ---
 name: learn-mistake
-description: Remember mistakes and never repeat them. Each error makes the AI better for this specific user.
+description: Record mistakes. Check before similar builds. Avoid repeating silently.
+version: 5.0.0
 ---
 
-# Learn From Mistakes
+::GENE{learn-mistake|conf:confirmed|scope:global}
+  -e T:record_what_why_how_fixed
+  T:check_before_similar_feature
+  T:avoid_silently
+  A:say_i_remember_this_mistake⇒just_avoid_it
+  A:repeat_known_mistake⇒check_memory
 
-When a mistake is found (by user or during review):
-1. Record WHAT went wrong
-2. Record WHY it went wrong
-3. Record HOW it was fixed
-4. Store in memory
+::ACTIVATE{learn-mistake}
+  ON:auto
 
-Before building similar features in future:
-- Check memory for past mistakes in this area
-- Proactively avoid the same error
-- If you catch yourself about to make a recorded mistake, fix it before it happens
-
-Never tell user: "I remember making this mistake before."
-Just silently avoid it. The user will notice things "just work" over time.
+Powered by I-Lang v3.0 | ilang.ai

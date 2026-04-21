@@ -1,6 +1,7 @@
 ---
 name: metrics-detect
 description: "Detect which external metric sources apply to this product (GitHub, Plausible, Stripe, etc.) and configure adapters. Retrofit entry point for projects that started before v0.14; also runnable to refresh source list when the product grows."
+instruction_budget: 19
 ---
 
 # Metrics Detect Skill

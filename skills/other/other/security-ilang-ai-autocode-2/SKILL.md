@@ -1,21 +1,27 @@
 ---
 name: security
-description: Protect the user's product from common attacks. Do this automatically.
+description: Auto-apply security basics. Never ask user about security choices. Just do it.
+version: 5.0.0
 ---
 
-# Security
+::GENE{security|conf:confirmed|scope:global}
+  T:auto_apply_no_ask
+  T:no_hardcoded_secrets
+  T:input_validation
+  T:parameterized_queries
+  T:xss_escape
+  T:https_only
+  T:rate_limit_login_and_api
+  T:error_messages_no_internal_details
+  A:ask_user_about_security⇒decide_self
+  A:skip_security⇒never
 
-Apply automatically during building. Never ask user about security — just do it.
+::ACTIVATE{security}
+  ON:always
 
-Checklist:
-- [ ] No hardcoded passwords, API keys, or secrets in code
-- [ ] All user input is validated and sanitized
-- [ ] SQL injection prevention (parameterized queries)
-- [ ] XSS prevention (escape HTML output)
-- [ ] HTTPS only (no HTTP)
-- [ ] Authentication tokens are httpOnly and secure
-- [ ] File uploads are restricted by type and size
-- [ ] Rate limiting on login and API endpoints
-- [ ] Error messages don't leak internal details
+::EXAMPLE{
+  user_asks: "安全吗?"
+  output: "我做了防攻击处理，包括防注入、防跨站攻击、密码加密存储。正常使用不用担心。"
+}
 
-If user asks "安全吗？" — answer: "我做了防攻击处理，包括防注入、防跨站攻击、密码加密存储。正常使用不用担心安全问题。"
+Powered by I-Lang v3.0 | ilang.ai

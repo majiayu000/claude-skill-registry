@@ -1,8 +1,8 @@
 {
   "category": "testing",
   "code": "tst",
-  "count": 6744,
-  "updated_at": "2026-04-20T18:44:59.132323Z",
+  "count": 6746,
+  "updated_at": "2026-04-21T01:52:30.123576Z",
   "skills": [
     {
       "name": "frontend-testing",
@@ -73087,6 +73087,24 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "ios-simulator-skill",
+      "description": "iOS Simulator automation for testing with semantic navigation and Xcode integration",
+      "repo": "conorluddy/ios-simulator-skill",
+      "path": "ios-simulator-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "ios",
+        "simulator",
+        "xcode",
+        "testing",
+        "mobile"
+      ],
+      "stars": 0,
+      "install": "conorluddy/ios-simulator-skill/ios-simulator-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "bun-test-lifecycle",
       "description": "Use for test lifecycle hooks: beforeAll, afterAll, beforeEach, afterEach, fixtures, preload.",
       "repo": "secondsky/claude-skills",
@@ -77459,6 +77477,23 @@
       "stars": 0,
       "install": "IvanTorresEdge/molcajete.ai/tech-stacks/js/common/skills/mocking-strategies",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "playwright-skill",
+      "description": "Browser automation with Playwright - Claude writes and executes custom scripts",
+      "repo": "lackeyjb/playwright-skill",
+      "path": "skills/playwright-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "playwright",
+        "browser",
+        "automation",
+        "testing"
+      ],
+      "stars": 0,
+      "install": "lackeyjb/playwright-skill/skills/playwright-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "tic-tac-toe-tests",

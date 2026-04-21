@@ -34,18 +34,19 @@ Load detailed guidance based on context:
 
 <!-- Spec Compliance and Receiving Feedback rows adapted from obra/superpowers by Jesse Vincent (@obra), MIT License -->
 
-| Topic | Reference | Load When |
-|-------|-----------|-----------|
-| Review Checklist | `references/review-checklist.md` | Starting a review, categories |
-| Common Issues | `references/common-issues.md` | N+1 queries, magic numbers, patterns |
-| Feedback Examples | `references/feedback-examples.md` | Writing good feedback |
-| Report Template | `references/report-template.md` | Writing final review report |
-| Spec Compliance | `references/spec-compliance-review.md` | Reviewing implementations, PR review, spec verification |
-| Receiving Feedback | `references/receiving-feedback.md` | Responding to review comments, handling feedback |
+| Topic              | Reference                              | Load When                                               |
+| ------------------ | -------------------------------------- | ------------------------------------------------------- |
+| Review Checklist   | `references/review-checklist.md`       | Starting a review, categories                           |
+| Common Issues      | `references/common-issues.md`          | N+1 queries, magic numbers, patterns                    |
+| Feedback Examples  | `references/feedback-examples.md`      | Writing good feedback                                   |
+| Report Template    | `references/report-template.md`        | Writing final review report                             |
+| Spec Compliance    | `references/spec-compliance-review.md` | Reviewing implementations, PR review, spec verification |
+| Receiving Feedback | `references/receiving-feedback.md`     | Responding to review comments, handling feedback        |
 
 ## Constraints
 
 ### MUST DO
+
 - Understand context before reviewing
 - Provide specific, actionable feedback
 - Include code examples in suggestions
@@ -55,6 +56,7 @@ Load detailed guidance based on context:
 - Check for security issues
 
 ### MUST NOT DO
+
 - Be condescending or rude
 - Nitpick style when linters exist
 - Block on personal preferences
@@ -65,6 +67,7 @@ Load detailed guidance based on context:
 ## Output Templates
 
 Code review report should include:
+
 1. Summary (overall assessment)
 2. Critical issues (must fix)
 3. Major issues (should fix)

@@ -10,6 +10,7 @@ allowed-tools:
   - Bash(git status:*)
   - Bash(git log:*)
   - Bash(ls *)
+  - Bash(mkdir:*)
   - Write
 ---
 
@@ -38,7 +39,7 @@ Check for `.claude/spec-workflow/config.yaml` in the project. If present, use co
 
 ```yaml
 paths:
-  specs: "./specs"  # Where to save output if --output not specified
+  specs: "./specs" # Where to save output if --output not specified
 ```
 
 If no config exists, default to `./specs/`.
@@ -50,12 +51,14 @@ This file contains permanent project context: stack, architecture rules, code co
 known constraints, and what "done" means for this project.
 
 When PROJECT.md is present:
+
 - Inject Architecture Rules into your exploration questions
 - Reference known constraints when evaluating feasibility
 - Use "Out of Scope" section to apply YAGNI ruthlessly
 - Frame questions in terms of the actual stack (e.g., "This project uses Firestore — should the new entity follow the soft-delete pattern already in use?")
 
 If PROJECT.md does **not** exist, offer to generate it:
+
 ```
 ⚠️ No PROJECT.md found at .claude/spec-workflow/PROJECT.md
    This file enriches all spec phases with permanent project context.
@@ -74,11 +77,14 @@ If `.claude/spec-workflow/philosophy/exploration.md` exists, read it and incorpo
 
 Before asking the user anything, gather codebase context:
 
+**Derive `{slug}`** from the feature topic using the same rule as `context-gatherer`:
+lowercase → strip punctuation → drop stop words (`a an the to for of in with from and or but is are was`) → first 6 significant words → join with hyphens → max 60 chars.
+
 1. Parse the feature topic/prompt for key terms (entities, actions, domain words)
-2. Grep/glob the codebase for files containing those terms — find the **5–10 most relevant files**
+2. Use the **Grep tool** (not bash grep) per term — `output_mode: "files_with_matches"`, `-i`, glob `*.{ts,tsx,js,swift,rs,py,go}` — find the **5–10 most relevant files**
 3. Read project context files: `CLAUDE.md`, `.claude/spec-workflow/PROJECT.md`, `README.md`, stack config
 4. Identify existing patterns, similar features, and related entities already in the codebase
-5. Save context to `.claude/feature-state/{slug}/context.md` (load if already exists)
+5. If `.claude/feature-state/{slug}/context.md` already exists, **load it** (skip re-scan); otherwise run `mkdir -p .claude/feature-state/{slug}` then write it with the Write tool
 6. Show a brief summary before the first question:
    ```
    📂 Context gathered — 7 related files found.
@@ -106,9 +112,10 @@ After saving `context.md`, run the **prompt-enricher** phase to ground the raw p
    - notify/push/email → notification edge cases
    - webhook/API/external → external integration edge cases
 5. Suggest scope boundaries (In Scope / Likely Out of Scope YAGNI / Deferred)
-6. Save to `.claude/feature-state/{slug}/enriched-prompt.md` (load if already exists)
+6. If `.claude/feature-state/{slug}/enriched-prompt.md` already exists, **load it** (skip re-enrichment); otherwise write it with the Write tool (directory already created in step 0.5 above)
 
 Use the enriched prompt as the **starting brief** for the first question:
+
 ```
 Based on what I found in the codebase, here's what we're working with:
 
@@ -149,6 +156,7 @@ This purpose of this step is to narrow down and clarify the idea, its purpose, c
 - Avoid feature creep - ruthlessly apply YAGNI (You Ain't Gonna Need It) to remove unnecessary features
 
 Adjust depth based on `--depth` argument:
+
 - `quick`: 2-3 key questions only
 - `normal`: 4-6 questions covering core aspects
 - `thorough`: 8+ questions, explore more alternatives

@@ -22,7 +22,7 @@ Route to one of four outcomes:
 | **Complex** | Spans multiple subsystems, requires multiple implementation sessions, or has architectural decisions that need a spec-level discussion before planning begins. | Read [references/complex-project-mode.md](references/complex-project-mode.md) and follow its steps. |
 | **Borderline** | Falls between two categories. | Use `AskUserQuestion` to confirm the route, then proceed as above. |
 
-State the chosen route before handing off to the reference file.
+State the chosen route before continuing with the reference file.
 
 ## Rules
 

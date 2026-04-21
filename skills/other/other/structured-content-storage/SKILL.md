@@ -1,6 +1,6 @@
 ---
 name: structured-content-storage
-description: "Enforces structured, highly documented storage for all code and data projects. Auto-activates for: machine learning scripts, data processing, code creation, script modification. Ensures clean directories, comprehensive comments, documentation files (README, data dictionaries, process descriptions, change logs)."
+description: "Enforces structured, highly documented storage for code and data projects. Use when working on machine learning scripts, data processing, code creation, or script modification that should preserve clear structure and documentation."
 ---
 
 # Structured Content Storage Skill
@@ -9,7 +9,7 @@ Ensures all created or processed content follows strict organizational and docum
 
 ## When to Use This Skill
 
-**AUTO-ACTIVATES** for any of these tasks:
+Use this skill for tasks like:
 - Writing machine learning training scripts
 - Creating data processing or data cleaning scripts
 - Developing any code that processes or transforms data

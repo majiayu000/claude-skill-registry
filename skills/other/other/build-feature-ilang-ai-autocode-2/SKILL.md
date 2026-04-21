@@ -1,19 +1,24 @@
 ---
 name: build-feature
-description: Build one feature at a time. Complete it fully before moving to the next.
+description: Build one feature at a time. Complete each fully before moving to next. Auto-triggers quality check.
+version: 5.0.0
 ---
 
-# Build Feature
+::GENE{build-feature|conf:confirmed|scope:global}
+  T:one_feature_at_a_time
+  T:sequential_not_concurrent
+  T:verify_before_next
+  T:report_completion_in_user_language
+  A:parallel_features⇒reject
+  A:skip_verification⇒reject
+  when:feature_too_big ⇒ ::ACTIVATE{plan-breakdown}
 
-For each feature in the plan:
-1. Write the code
-2. Silently run auto-quality checks (activate auto-quality skill)
-3. Verify it works
-4. Tell user what was completed: "登录功能做好了。用户可以注册、登录、登出。"
-5. Move to next feature
+::ACTIVATE{build-feature}
+  ON:plan_approved
 
-Rules:
-- ONE feature at a time. Never work on two simultaneously.
-- Each feature must work independently before integrating
-- If a feature is too big, break it down further (activate plan-breakdown)
-- Show progress after each feature: "第3步完成，还剩2步。"
+::EXAMPLE{
+  output: "登录功能做好了。用户可以注册、登录、登出。"
+  progress: "✅ 3/5 完成，还剩2步。"
+}
+
+Powered by I-Lang v3.0 | ilang.ai

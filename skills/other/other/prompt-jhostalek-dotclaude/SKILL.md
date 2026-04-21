@@ -24,6 +24,7 @@ Infer from `$task` when obvious. Ask only when blocking.
 - **Concept-first, examples-last.** Lead with what and why. Few-shot exemplars *inside* the prompt bias output toward the demonstrated shape — add only when principles demonstrably fail to generalize. Diagnostic contrasts used during drafting (mediocre → final) are a separate tool and don't count against this rule.
 - **Density discipline.** Every rule competes for attention. Include only what changes behavior from the target model's default. On reasoning models, extra rules cause over-triggering.
 - **Invariants as XML.** Wrap content the model must retrieve verbatim — output contracts, refusal boundaries, safety rules — in semantic tags: `<output_contract>`, `<security>`, `<refusal>`.
+- **Enumerations close silently.** A category list reads as a closed taxonomy to instruction-tuned models — borderline items get force-fit or skipped. For closed output spaces (enums, score bands), enumerate exhaustively. For open spaces, frame as *lenses* (axes of thought, not allowed types) with an explicit escape clause, or drop the list.
 </principles>
 
 ## Target-model branching

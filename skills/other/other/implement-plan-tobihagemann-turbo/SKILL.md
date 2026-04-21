@@ -1,6 +1,6 @@
 ---
 name: implement-plan
-description: "Execute an implementation plan file produced by /draft-plan, /turboplan, or /expand-shell. Runs pre-implementation prep, loads task-specific skills by matching plan content against available skill triggers, then hands off to /implement to execute the steps and finalize. Use when the user asks to \"implement plan\", \"implement the plan\", \"execute the plan\", \"run the plan\", \"implement plans/<slug>.md\", \"start implementing the plan\", or starts a fresh session to implement a previously drafted plan."
+description: "Execute an implementation plan file produced by /draft-plan, /turboplan, or /expand-shell. Runs pre-implementation prep, loads task-specific skills by matching plan content against available skill triggers, then runs /implement to execute the steps and finalize. Use when the user asks to \"implement plan\", \"implement the plan\", \"execute the plan\", \"run the plan\", \"implement plans/<slug>.md\", \"start implementing the plan\", or starts a fresh session to implement a previously drafted plan."
 ---
 
 # Implement Plan
@@ -67,7 +67,7 @@ If unsure, do not load. Do not load `/code-style` here — `/implement` will loa
 
 Before invoking `/implement`, use `TaskCreate` to add one sub-task per plan Implementation Step. Mark each sub-task `in_progress` before starting that step and `completed` after.
 
-In the turn that invokes `/implement`, write out the Implementation Steps in order and restate the plan's Verification section (the specific commands, smoke checks, or MCP tool invocations it lists). `/implement`'s middle step should work through each Implementation Step using the plan's `file_path:line_number` references and reusing the patterns surveyed in Step 2, then run the Verification section before handing off to `/finalize`. If any Verification check fails, halt and investigate before proceeding to commit. If a step cannot be completed (blocked by a dependency, unclear requirement, or environmental issue), halt and report; do not silently skip steps.
+In the turn that invokes `/implement`, write out the Implementation Steps in order and restate the plan's Verification section (the specific commands, smoke checks, or MCP tool invocations it lists). `/implement`'s middle step should work through each Implementation Step using the plan's `file_path:line_number` references and reusing the patterns surveyed in Step 2, then run the Verification section before running `/finalize`. If any Verification check fails, halt and investigate before proceeding to commit. If a step cannot be completed (blocked by a dependency, unclear requirement, or environmental issue), halt and report; do not silently skip steps.
 
 Then run the `/implement` skill. `/implement` loads `/code-style`, executes the Implementation Steps and Verification as written in the context, and runs `/finalize`.
 

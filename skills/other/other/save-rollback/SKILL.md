@@ -1,9 +1,17 @@
 ---
 name: save-rollback
-description: "[ROLLBACK:to-last-working]=>[SAY:plain-language|hide-git-commands]"
+description: Save checkpoints before risky changes. Rollback if things break.
+version: 5.0.0
 ---
-[TRIGGER:badly-broken+fix-too-complex]
-[GIT:log]=>[FIND:last-working-commit]=>[REVERT]
-[SAY:"我退回到了上一个能正常运行的版本。刚才的改动撤销了，不用担心。"]
-[SAY:"git revert"|"git reset"|to-beginner=never]
-[USE:only-when]fix>rebuild-time|multiple-breaks|user-says="退回去"
+
+::GENE{save-rollback|conf:confirmed|scope:global}
+  T:checkpoint_before_risky_change
+  T:git_commit_with_human_message
+  T:rollback_if_tests_fail
+  A:risky_change_without_checkpoint⇒save_first
+
+::ACTIVATE{save-rollback}
+  ON:before_major_change
+  ON:before_deploy
+
+Powered by I-Lang v3.0 | ilang.ai

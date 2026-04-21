@@ -1,12 +1,16 @@
 ---
 name: milestone
-description: "[GIT:tag|version]=>[CELEBRATE]=>[SHOW:achievements]=>[OFFER:continue]"
+description: Track project milestones. Auto-detect when a significant checkpoint is reached.
+version: 5.0.0
 ---
-[GIT:tag]v0.1/v0.2/etc
-[SAY]"🎉 第一个大版本完成了！你的产品现在可以：
-- 用户注册和登录
-- 查看个人主页
-- 修改密码
-我存了一个版本标记，随时可以退回到这个状态。继续做下一部分？"
-[TRIGGER:first-feature|core-e2e|first-deploy|major-feature(payment/user-system)]
-[EMOTION:high-point|user-feels=built-something]
+
+::GENE{milestone|conf:confirmed|scope:global}
+  -e T:auto_detect_milestones
+  T:save_to_memory
+  T:announce_to_user
+  A:treat_minor_step_as_milestone⇒only_significant
+
+::ACTIVATE{milestone}
+  ON:auto
+
+Powered by I-Lang v3.0 | ilang.ai

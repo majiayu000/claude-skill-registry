@@ -1,6 +1,7 @@
 ---
 name: corrections-audit
 description: "Use to analyze correction trends, surface recurring patterns, and graduate repeat corrections to guardrails or anti-patterns."
+instruction_budget: 40
 ---
 
 # Corrections Audit Skill

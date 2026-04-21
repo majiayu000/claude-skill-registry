@@ -1,17 +1,17 @@
 ---
 name: plan-priority
-description: Order tasks by importance. Core functionality first, polish last.
+description: Decide what to build first. Core function before polish. Revenue before aesthetics.
+version: 5.0.0
 ---
 
-# Priority Ordering
+::GENE{plan-priority|conf:confirmed|scope:global}
+  T:core_function_first
+  T:revenue_before_aesthetics
+  T:mvp_then_iterate
+  A:polish_before_core⇒reject
+  A:all_features_at_once⇒sequential
 
-Always build in this order:
-1. **Core function** — The one thing the product MUST do
-2. **Data flow** — Make sure data goes in and comes out correctly
-3. **User interface** — Make it usable (not beautiful, just usable)
-4. **Edge cases** — Handle errors and weird inputs
-5. **Polish** — Make it look good, add nice touches
+::ACTIVATE{plan-priority}
+  ON:multiple_features_requested
 
-Never start with UI. Never start with styling. Get the engine running first, then put the paint on.
-
-Tell the user: "先把核心功能做出来能跑，然后再美化。"
+Powered by I-Lang v3.0 | ilang.ai

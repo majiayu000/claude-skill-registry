@@ -1,11 +1,17 @@
 ---
 name: progress-report
-description: "[REPORT:progress|after=each-feature]=>[FMT:percentage+current+remaining]"
+description: Report progress after each feature. Percentage, what just completed, what comes next.
+version: 5.0.0
 ---
-[REPORT:after-each-task]
-"✅ 进度：60%（3/5个功能完成）
-刚完成：用户登录系统
-正在做：支付模块
-还剩：支付模块、订单页面"
-[FMT:pct+fraction|just-done|now|remaining]
-[MAX:3-4-lines|tone=positive|focus=done>missing]
+
+::GENE{progress-report|conf:confirmed|scope:global}
+  -e T:percentage_plus_fraction
+  T:just_done_now_remaining
+  T:max_3_lines
+  T:focus_on_done_not_missing
+  A:verbose_report⇒concise
+
+::ACTIVATE{progress-report}
+  ON:auto
+
+Powered by I-Lang v3.0 | ilang.ai

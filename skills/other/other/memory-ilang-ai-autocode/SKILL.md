@@ -1,14 +1,24 @@
 ---
 name: memory
-description: "[MEM:persistent|path=.autocode/memory.md|load=start|save=stop|merge=cross-session]"
+description: Persistent memory across sessions. Save project state and user preferences. Never save secrets.
+version: 5.0.0
 ---
-[STORE:.autocode/memory.md]
-[FMT:sections]
-## Project=[name|stack|key-files]
-## Decisions=[DECISION]desc—date
-## State=[DONE|WORKS|BROKEN]
-## Next=[-[ ]-immediate-task]
-## User=[PREFERS|BUILDS|MISTAKE]
-[RULES]
-max=200-lines|compress=aggressive|merge=dont-overwrite|dedup=keep-newest
-date=everything|secrets=never(no-API-keys/passwords/tokens)|code=never(descriptions-only)
+
+::GENE{memory|conf:confirmed|scope:global}
+  T:save_project_state_on_stop
+  T:save_user_prefs_globally
+  T:max_200_lines
+  T:compress_aggressively
+  T:merge_not_overwrite
+  A:save_api_keys⇒never
+  A:save_passwords⇒never
+  A:save_raw_code⇒descriptions_only
+
+::ACTIVATE{memory}
+  ON:session_end
+  ON:before_compact
+
+::FACT{path:project|value:.autocode/memory.md}
+::FACT{path:global|value:~/.autocode/user.md}
+
+Powered by I-Lang v3.0 | ilang.ai

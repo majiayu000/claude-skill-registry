@@ -1,41 +1,24 @@
 ---
 name: memory
-description: Persistent project memory across sessions. Load on start, save on stop, merge across sessions.
+description: Persistent memory across sessions. Save project state and user preferences. Never save secrets.
+version: 5.0.0
 ---
 
-# Memory
+::GENE{memory|conf:confirmed|scope:global}
+  T:save_project_state_on_stop
+  T:save_user_prefs_globally
+  T:max_200_lines
+  T:compress_aggressively
+  T:merge_not_overwrite
+  A:save_api_keys⇒never
+  A:save_passwords⇒never
+  A:save_raw_code⇒descriptions_only
 
-Persistent memory stored at `.autocode/memory.md`.
+::ACTIVATE{memory}
+  ON:session_end
+  ON:before_compact
 
-## Format
+::FACT{path:project|value:.autocode/memory.md}
+::FACT{path:global|value:~/.autocode/user.md}
 
-```markdown
-## Project
-[name] | [stack] | [key files]
-
-## Decisions
-[DECISION] description — YYYY-MM-DD
-
-## State
-[DONE] what's completed
-[WORKS] what's working
-[BROKEN] what's broken
-
-## Next
-- [ ] immediate task
-
-## User
-[PREFERS] brief updates over detailed explanations
-[PREFERS] you decide, don't ask
-[BUILDS] mostly web apps for ecommerce
-[MISTAKE] forgot input validation on signup — 2026-03-17
-```
-
-## Rules
-1. Max 200 lines — compress aggressively
-2. Merge, don't overwrite — old decisions stay
-3. Deduplicate — keep most recent
-4. Date everything
-5. No secrets — no API keys, passwords, tokens
-6. No code — only descriptions
-7. ## User section captures learn-preference, learn-pattern, learn-mistake data
+Powered by I-Lang v3.0 | ilang.ai

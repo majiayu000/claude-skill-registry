@@ -1,6 +1,7 @@
 ---
 name: gist-plan
 description: "GIST planning workflow. Structure goals into ideas, steps, and tasks using Gilad's evidence-guided framework."
+instruction_budget: 32
 ---
 
 # GIST Planning
@@ -23,10 +24,11 @@ Replace opinion-based roadmaps with evidence-guided planning. Source: Gilad (Evi
 - Never commit to an idea until evidence supports it
 
 ### 3. Score with ICE + Confidence Meter
-Use `/ice-score` to prioritize. Key insight from Gilad:
+Use `/ice-score` to prioritize. ICE scoring (Ellis; confidence dimension added by Gilad):
 - Confidence is NOT gut feel -- it maps to evidence levels
 - 0.1 = opinion only | 0.5 = data supports | 0.7 = tested | 0.9 = launched
 - Rescore after every experiment
+> *Mycelium uses 0.0-1.0 (adapted from Gilad's 0-10 non-linear Confidence Meter). See `/ice-score` for details.*
 
 ### 4. Design Steps (per top idea)
 - Steps are small, time-boxed activities that build evidence

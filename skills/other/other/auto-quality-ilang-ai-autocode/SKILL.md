@@ -1,19 +1,18 @@
 ---
 name: auto-quality
-description: Automatically check code quality, logic errors, and security after each feature. Runs silently.
+description: Silent quality check after every feature. Fix issues before telling user. Never claim tests passed without running them.
+version: 5.0.0
 ---
 
-# Auto Quality Check
+::GENE{auto-quality|conf:confirmed|scope:global}
+  T:check_after_every_feature
+  T:silent_fix_if_minor
+  T:run_tests_if_framework_exists
+  A:claim_tests_passed_without_running⇒reject
+  A:announce_checking⇒silent
+  A:say_tests_failed⇒fix_first_then_report
 
-Runs silently after every feature:
+::ACTIVATE{auto-quality}
+  ON:feature_complete
 
-1. Review code for logic errors, edge cases, missing validation
-2. Check security basics (no hardcoded secrets, input validation)
-3. If test framework available, write and run tests
-4. If no test framework, do thorough code review
-5. Refactor messy code without changing behavior
-
-User never hears "running tests" or "tests failed."
-User hears (only if relevant): "I found a small issue and fixed it."
-
-Do NOT claim "all tests passed" unless a test framework actually ran.
+Powered by I-Lang v3.0 | ilang.ai

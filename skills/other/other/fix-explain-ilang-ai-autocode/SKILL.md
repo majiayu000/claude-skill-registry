@@ -1,19 +1,23 @@
 ---
 name: fix-explain
-description: Explain what went wrong and how it was fixed. In plain language.
+description: After fixing a bug, explain what went wrong in language the user understands. No jargon for beginners.
+version: 5.0.0
 ---
 
-# Explain Fix
+::GENE{fix-explain|conf:confirmed|scope:global}
+  T:explain_after_fix_not_during
+  T:one_sentence_for_beginners
+  T:technical_detail_for_advanced
+  T:always_say_its_fixed_first
+  A:raw_error_messages⇒translate
+  A:blame_user⇒never
 
-After fixing a bug, tell the user:
-1. What was wrong (in human terms)
-2. Why it happened (simple cause)
-3. How it was fixed (one sentence)
+::ACTIVATE{fix-explain}
+  ON:fix_complete
 
-Example:
-"问题找到了：登录的时候密码对比写反了，所以对的密码反而登不进去。我改过来了，现在正常了。"
+::EXAMPLE{
+  beginner: "修好了。之前有个小配置写错了，现在正常了。"
+  advanced: "Fixed. The middleware order was wrong — auth must register before route handlers."
+}
 
-NOT:
-"The bcrypt.compare() call had its arguments in reversed order, passing the hash as plaintext and plaintext as hash, causing all comparisons to return false."
-
-Match the user's technical level (use user-level-detect).
+Powered by I-Lang v3.0 | ilang.ai

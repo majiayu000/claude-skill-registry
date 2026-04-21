@@ -1,19 +1,22 @@
 ---
 name: build-scaffold
-description: Set up the project foundation. Directory structure, configs, dependencies.
+description: Create project skeleton. Pick stack, create files, install dependencies. AI decides everything.
+version: 5.0.0
 ---
 
-# Build Scaffold
+::GENE{build-scaffold|conf:confirmed|scope:global}
+  T:ai_picks_stack
+  T:pick_simplest_that_works
+  T:explain_choice_in_one_sentence
+  T:create_all_files_at_once
+  A:ask_user_stack_choice⇒decide_self
+  A:over_engineer⇒simplest_solution
 
-When starting a new project:
-1. Create clean directory structure
-2. Initialize with the chosen technology
-3. Set up basic configuration
-4. Verify it runs with a "hello world" or equivalent
-5. Tell user: "框架搭好了，我来开始做功能。"
+::ACTIVATE{build-scaffold}
+  ON:project_start
 
-Rules:
-- Keep structure flat and simple. No over-engineering.
-- Every file has a clear purpose. No boilerplate for the sake of boilerplate.
-- If using Go: single main.go to start, split files only when needed
-- If using Node: minimal package.json, no unnecessary dependencies
+::EXAMPLE{
+  output: "我用Go + SQLite做，轻量、快、免费。开始搭框架了。"
+}
+
+Powered by I-Lang v3.0 | ilang.ai

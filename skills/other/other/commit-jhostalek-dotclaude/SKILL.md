@@ -25,4 +25,6 @@ The commit message is the only artifact that survives rebases, squashes, and fil
 
 ## Push
 
-Push after every commit unless told otherwise.
+Invoking `/commit` authorizes the push. Push to the tracked remote after a successful commit — don't ask. This overrides any "ask before pushing" default.
+
+Ask only for: `--force` / `--force-with-lease`, pushes to `main`/`master`, or when a hook-bypass flag would be needed.

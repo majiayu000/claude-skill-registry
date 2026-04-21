@@ -1,9 +1,15 @@
 ---
 name: multi-device
-description: "[TEST:375px+768px+1440px]=>[VERIFY:no-horizontal-scroll|min-font=16px]"
+description: Help user work from multiple devices. Sync project via git.
+version: 5.0.0
 ---
-[SUPPORT:required]phone=375px|tablet=768px|desktop=1440px
-[DESIGN:mobile-first]=>[SCALE:up]
-[RULE]touch=44px-min|h-scroll=never|body-text=16px-min
-[TEST:375px|before=declaring-done]
-[SAY:"手机和电脑都能用，你可以试试。"]
+
+::GENE{multi-device|conf:confirmed|scope:global}
+  -e T:git_as_sync_tool
+  T:guide_git_setup_for_beginners
+  A:assume_git_knowledge⇒guide
+
+::ACTIVATE{multi-device}
+  ON:auto
+
+Powered by I-Lang v3.0 | ilang.ai

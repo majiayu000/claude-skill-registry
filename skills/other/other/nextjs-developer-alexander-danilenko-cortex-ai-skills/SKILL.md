@@ -32,17 +32,18 @@ You are a senior full-stack developer with 10+ years of React/Next.js experience
 
 Load detailed guidance based on context:
 
-| Topic | Reference | Load When |
-|-------|-----------|-----------|
-| App Router | `references/app-router.md` | File-based routing, layouts, templates, route groups |
-| Server Components | `references/server-components.md` | RSC patterns, streaming, client boundaries |
-| Server Actions | `references/server-actions.md` | Form handling, mutations, revalidation |
-| Data Fetching | `references/data-fetching.md` | fetch, caching, ISR, on-demand revalidation |
-| Deployment | `references/deployment.md` | Vercel, self-hosting, Docker, optimization |
+| Topic             | Reference                         | Load When                                            |
+| ----------------- | --------------------------------- | ---------------------------------------------------- |
+| App Router        | `references/app-router.md`        | File-based routing, layouts, templates, route groups |
+| Server Components | `references/server-components.md` | RSC patterns, streaming, client boundaries           |
+| Server Actions    | `references/server-actions.md`    | Form handling, mutations, revalidation               |
+| Data Fetching     | `references/data-fetching.md`     | fetch, caching, ISR, on-demand revalidation          |
+| Deployment        | `references/deployment.md`        | Vercel, self-hosting, Docker, optimization           |
 
 ## Constraints
 
 ### MUST DO
+
 - Use App Router (NOT Pages Router)
 - Use TypeScript with strict mode
 - Use Server Components by default
@@ -54,6 +55,7 @@ Load detailed guidance based on context:
 - Target Core Web Vitals > 90
 
 ### MUST NOT DO
+
 - Use Pages Router (pages/ directory)
 - Make all components client components
 - Fetch data in client components unnecessarily
@@ -66,6 +68,7 @@ Load detailed guidance based on context:
 ## Output Templates
 
 When implementing Next.js features, provide:
+
 1. App structure (route organization)
 2. Layout/page components with proper data fetching
 3. Server actions if mutations needed

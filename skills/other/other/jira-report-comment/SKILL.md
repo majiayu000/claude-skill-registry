@@ -22,9 +22,11 @@ Determine the Jira issue key using this priority:
 
 1. If the user provided an issue key (e.g., "CX-4328"), use it directly.
 2. Otherwise, extract from the current branch name:
+
    ```bash
    git branch --show-current
    ```
+
    Parse the ticket ID using the pattern `[A-Z]+-[0-9]+` (e.g., `feature/ABC-1234-description` yields `ABC-1234`).
 3. If no key can be determined, ask the user.
 
@@ -45,7 +47,7 @@ Store the full file path in conversation context (e.g., `docs/jira-reports/2026-
 
 Retrieve the issue to understand what was requested. Try the Atlassian MCP tool first:
 
-```
+```text
 mcp__atlassian__getJiraIssue
   issueIdOrKey: "<ISSUE_KEY>"
 ```
@@ -53,6 +55,7 @@ mcp__atlassian__getJiraIssue
 If the MCP tool is unavailable or fails, ask the user to provide the issue context manually: "Atlassian MCP is not available. Please paste the issue text (title, description, acceptance criteria) or provide an XML export."
 
 Extract and note:
+
 - **Issue title** — what the ticket is about
 - **Description** — acceptance criteria, requirements, business context
 - **Issue type** — bug, story, task (shapes the report tone)
@@ -100,6 +103,7 @@ If the diff is very large (50+ files), focus on the stat summary and read only t
 ## Step 4: Analyze and Generate the Report
 
 Load the reference template:
+
 - **`references/report-template.md`** — read this now for the output structure
 
 Analyze the diffs with a **business lens**. Map every code change to a user-facing or system-facing outcome.
@@ -125,7 +129,7 @@ Analyze the diffs with a **business lens**. Map every code change to a user-faci
 
 Write the report content to the reserved file path (overwriting the empty placeholder):
 
-```
+```text
 Write tool -> file_path: <RESERVED_FILE_PATH>
               content: <REPORT_CONTENT>
 ```

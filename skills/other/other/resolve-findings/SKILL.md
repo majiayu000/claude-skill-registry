@@ -1,11 +1,11 @@
 ---
 name: resolve-findings
-description: "Choose an implementation path (trivial or standard) for evaluated findings and dispatch it. Trivial path applies fixes directly; standard path hands off to /turboplan. Use after /evaluate-findings has tagged findings and they need to be implemented, or when the user asks to \"resolve findings\", \"apply evaluated findings\", or \"dispatch findings to implementation\"."
+description: "Choose an implementation path (trivial or standard) for evaluated findings and dispatch it. Trivial path applies fixes directly; standard path runs /turboplan. Use after /evaluate-findings has tagged findings and they need to be implemented, or when the user asks to \"resolve findings\", \"apply evaluated findings\", or \"dispatch findings to implementation\"."
 ---
 
 # Resolve Findings
 
-Choose a path for evaluated findings and run it. Trivial path applies fixes directly; standard path hands off to `/turboplan`.
+Choose a path for evaluated findings and run it. Trivial path applies fixes directly; standard path runs `/turboplan`.
 
 ## Task Tracking
 
@@ -30,6 +30,6 @@ Read the reference file for the confirmed path and follow its phases:
 - **Trivial path** — [references/trivial-path.md](references/trivial-path.md)
 - **Standard path** — [references/standard-path.md](references/standard-path.md)
 
-State the chosen path before handing off to the reference file.
+State the chosen path before continuing with the reference file.
 
 Then use the TaskList tool and proceed to any remaining task.

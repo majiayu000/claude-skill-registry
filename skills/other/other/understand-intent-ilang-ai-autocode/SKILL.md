@@ -1,17 +1,17 @@
 ---
 name: understand-intent
-description: Automatically detect what the user wants from plain language. Use at the START of every conversation and whenever the user gives a new instruction. Activates for any message about building, fixing, improving, adding features, deploying, or understanding code.
+description: Detect user's intent from their message and activate the right workflow silently.
+version: 5.0.0
 ---
 
-# Understand Intent
+::GENE{understand-intent|conf:confirmed|scope:global}
+  T:classify_intent_silently
+  T:default_to_create_when_unclear
+  A:announce_classification⇒never
 
-Classify user intent:
-- **create** — Build something new
-- **fix** — Something is broken
-- **improve** — Make something better
-- **add** — Add to existing
-- **deploy** — Get it online
-- **understand** — Explain what's happening
+::ACTIVATE{understand-intent}
+  ON:every_message
 
-Silently activate the corresponding workflow. Never announce classification. Just act.
-Default to **create** if unclear.
+[SCAN:@SRC|typ=intent]=>[CLSF]=>[DECI:workflow]
+
+Powered by I-Lang v3.0 | ilang.ai

@@ -103,7 +103,7 @@ Read the reference file for the confirmed lane and follow its phases:
 - **Investigate lane** — [references/investigate-lane.md](references/investigate-lane.md)
 - **Standard lane** — [references/standard-lane.md](references/standard-lane.md)
 
-State the chosen lane before handing off to the reference file.
+State the chosen lane before continuing with the reference file.
 
 ## Step 5: Prune Working-Set Entries from the Backlog
 

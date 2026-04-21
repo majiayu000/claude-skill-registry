@@ -1,6 +1,7 @@
 ---
 name: mocked-persona-interview
 description: "Use when real user interviews aren't possible (solo/hobby/dogfood projects) but persona work is still needed. Enforces epistemic discipline: adversarial spectrum, pre-committed stop conditions, speculation tagging. NOT a substitute for /user-interview when real users are available."
+instruction_budget: 70
 ---
 
 # Mocked Persona Interview Skill

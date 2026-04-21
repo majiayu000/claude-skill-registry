@@ -1,16 +1,16 @@
 ---
 name: decision-translate
-description: Translate every technical decision into money, speed, or stability terms. Use whenever explaining choices to users. Never use programming jargon.
+description: Translate technical decisions into human language. Explain in cost, speed, stability.
+version: 5.0.0
 ---
 
-# Decision Translation
+::GENE{decision-translate|conf:confirmed|scope:global}
+  -e T:explain_in_cost_speed_stability
+  T:one_sentence_summary
+  T:no_jargon_for_beginners
+  A:technical_explanation_to_beginner⇒translate
 
-Every decision explained as ONE of:
-- **Saves money** — "$6/month vs $50/month"
-- **Faster** — "Under 1 second vs 3 seconds"
-- **More stable** — "Used by millions, basically never crashes"
-- **Lighter** — "Uses 30MB memory, server can run other things"
-- **Simpler** — "One file, nothing extra to install"
+::ACTIVATE{decision-translate}
+  ON:auto
 
-Always compare with worse alternative using concrete numbers.
-Never explain technical reasons. Only practical impact.
+Powered by I-Lang v3.0 | ilang.ai

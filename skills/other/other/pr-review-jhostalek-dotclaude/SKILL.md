@@ -6,34 +6,46 @@ argument-hint: [PR number, branch name, or local path]
 
 target = $ARGUMENTS
 
-If target is not provided, review the PR/MR of the current branch.
-If target is a local path or branch name (not a PR/MR number), use `git diff` directly.
+## Resolve the target
 
-## Review Philosophy
+- Empty → PR/MR of the current branch.
+- Number → that PR/MR on the current remote (use `gh` for GitHub, `glab` for GitLab).
+- Branch name or local path → diff against its merge base.
 
-Help the author ship better code — ask questions over directives, explain impact over citing rules, suggest concrete fixes. Gatekeeping tone erodes trust and misses the point.
+Read the PR description, linked issues, and commit messages before the diff — a review grounded only in diff lines misses when code drifts from stated intent. Pull CI status too; a failing pipeline is load-bearing context.
 
-## Review Dimensions
+## Stance
 
-Beyond correctness, these dimensions catch real bugs that diffs hide:
+Frame feedback as questions and impact; the author decides the fix. A reviewer who cites rules instead of explaining consequences trains authors to work around the review rather than with it.
 
-**Security** — Trace user-controlled data from source to sink: string concatenation in queries, user input reaching command execution or file paths, hardcoded secrets, missing authorization on new endpoints, removed input validation. Source-to-sink flow without sanitization is CRITICAL.
+## Dimensions
 
-**Breaking changes** — Modified signatures, removed exports, changed response shapes, new required fields, migrations without backward compatibility. The diff won't show broken callers — look for them.
+Correctness is table stakes — the diff shows bugs directly. These dimensions catch what the diff hides:
 
-**Performance** — Database queries inside loops (N+1), quadratic algorithms in hot paths, unbounded allocations, resource leaks, blocking operations in async contexts.
+**Security** — Trace user-controlled data from source to sink: SQL concatenation, input reaching command execution or file paths, hardcoded secrets, missing authorization on new endpoints, removed or weakened validation. Source-to-sink flow without sanitization is CRITICAL regardless of perceived exploitability.
 
-**Dependencies** — New dependencies: check license, maintenance status, known CVEs. Major version bumps may carry breaking API changes.
+**Breaking changes** — Modified signatures, removed exports, changed response shapes, new required fields, migrations without backward compatibility. Grep for callers of changed symbols — the diff cannot show consumers it doesn't touch.
 
-**Over-engineering** — LLM-generated code has a specific failure mode: unnecessary abstractions, helper functions used once, patterns for hypothetical flexibility. Flag explicitly — these are common and costly.
+**Performance** — N+1 queries, quadratic algorithms in hot paths, unbounded allocations, resource leaks, blocking operations in async contexts.
+
+**Dependencies** — New dependencies: license, maintenance status, known CVEs. Major version bumps may carry breaking API changes — read the changelog; version number alone is not evidence.
+
+**Tests** — Critical paths covered (auth, data integrity, payments), boundaries and failure paths exercised, assertions test outcomes not implementation. Missing tests for new branches are a gap; snapshot-only tests for logic-heavy code are usually a gap disguised as coverage.
+
+**Over-engineering** — LLM-generated code has a specific failure mode: unnecessary abstractions, helpers used once, patterns for hypothetical flexibility, premature configurability. Flag explicitly — common, costly, reviewers underweight them.
+
+## Severity
+
+- **CRITICAL** — security exposure, data loss or corruption, breaking change without migration, crash on normal input. Blocks merge.
+- **IMPORTANT** — correctness bug on uncommon paths, performance regression in a hot path, missing test for a critical branch, contract drift callers will hit.
+- **SUGGESTION** — clarity, naming, or structural wins. Author can defer.
+- **QUESTION** — intent or context unclear; author clarification needed before severity can be assigned.
 
 ## Output
 
 ### Findings
 
 Every CRITICAL and IMPORTANT finding includes *why it matters* and a *concrete fix suggestion*.
-
-Number findings sequentially for easy reference.
 
 ```
 1. [CRITICAL] file:line — Title
@@ -71,4 +83,4 @@ Number findings sequentially for easy reference.
 
 ## Submitting
 
-Only submit a review to the platform if the user explicitly asks — default is local report only.
+Default is local report only. Post to the platform only when the user explicitly asks.

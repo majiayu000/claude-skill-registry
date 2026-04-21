@@ -5,5 +5,12 @@
   "description": "Identify and flag unnecessary test artifacts and temporary files in pull requests. Use when reviewing pull requests to ensure only production-relevant files are committed.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:52.020613Z",
-  "dir_name": "pull-request-file-review"
+  "dir_name": "pull-request-file-review",
+  "author": "jack-michaud",
+  "source_url": "https://github.com/jack-michaud/faire",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jack Michaud",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

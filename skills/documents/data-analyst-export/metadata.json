@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:43.189580Z",
   "github_path": "plugins/ndf/skills/data-analyst-export",
   "github_branch": "main",
-  "dir_name": "data-analyst-export"
+  "dir_name": "data-analyst-export",
+  "author": "takemi-ohama",
+  "source_url": "https://github.com/takemi-ohama/ai-agent-marketplace/blob/main/plugins/ndf/skills/data-analyst-export/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 takemi-ohama",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

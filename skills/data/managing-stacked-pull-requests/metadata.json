@@ -5,5 +5,12 @@
   "description": "This skill teaches how to manage stacked PRs (pr1 → pr2 → pr3) after the base PR merges. Covers rebasing dependent PRs onto the updated base branch using cherry-pick workflow. Use this when you have a",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:27.589148Z",
-  "dir_name": "managing-stacked-pull-requests"
+  "dir_name": "managing-stacked-pull-requests",
+  "author": "johnnymo87",
+  "source_url": "https://github.com/johnnymo87/dotfiles",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2015 Jim Walker",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

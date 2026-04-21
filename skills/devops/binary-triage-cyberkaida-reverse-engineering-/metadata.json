@@ -7,5 +7,12 @@
   "stars": 506,
   "source": "github.com/cyberkaida/reverse-engineering-assistant",
   "downloaded_at": "2026-01-24T16:15:18.389512Z",
-  "dir_name": "binary-triage-cyberkaida-reverse-engineering-"
+  "dir_name": "binary-triage-cyberkaida-reverse-engineering-",
+  "author": "cyberkaida",
+  "source_url": "https://github.com/cyberkaida/reverse-engineering-assistant/blob/main/ReVa/skills/binary-triage/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2023 サイバーカイダ",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

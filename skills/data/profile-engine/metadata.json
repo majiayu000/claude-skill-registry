@@ -9,5 +9,12 @@
   ],
   "stars": 1,
   "source": "local",
-  "dir_name": "profile-engine"
+  "dir_name": "profile-engine",
+  "author": "legacy3",
+  "source_url": "https://github.com/legacy3/wowlab",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/legacy3/wowlab",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

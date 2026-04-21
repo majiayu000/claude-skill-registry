@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:46.384216Z",
   "dir_name": "web-security-standards",
   "github_path": "claude/marketplace/bundles/cui-utility-commands/skills/web-security-standards",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "cuioss",
+  "source_url": "https://github.com/cuioss/cui-llm-rules/blob/main/claude/marketplace/bundles/cui-utility-commands/skills/web-security-standards/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cuioss/cui-llm-rules/blob/main/claude/marketplace/bundles/cui-utility-commands/skills/web-security-standards/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

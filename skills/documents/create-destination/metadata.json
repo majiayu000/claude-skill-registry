@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/create-destination",
   "github_branch": "main",
-  "dir_name": "create-destination"
+  "dir_name": "create-destination",
+  "author": "elbwalker",
+  "source_url": "https://github.com/elbwalker/walkerOS/blob/main/skills/create-destination/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 elbWalker GmbH",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

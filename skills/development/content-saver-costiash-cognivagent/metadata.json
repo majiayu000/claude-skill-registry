@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:27.880382Z",
   "github_path": "app/agent/resources/.claude/skills/content-saver",
   "github_branch": "main",
-  "dir_name": "content-saver-costiash-cognivagent"
+  "dir_name": "content-saver-costiash-cognivagent",
+  "author": "costiash",
+  "source_url": "https://github.com/costiash/CognivAgent/blob/main/app/agent/resources/.claude/skills/content-saver/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2024 CognivAgent Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

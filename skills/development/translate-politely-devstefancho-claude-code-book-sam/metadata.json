@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "part-04/chapter-01/samples/skills/translate-politely",
   "github_branch": "main",
-  "dir_name": "translate-politely-devstefancho-claude-code-book-sam"
+  "dir_name": "translate-politely-devstefancho-claude-code-book-sam",
+  "author": "devstefancho",
+  "source_url": "https://github.com/devstefancho/claude-code-book-sample/blob/main/part-04/chapter-01/samples/skills/translate-politely/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/devstefancho/claude-code-book-sample/blob/main/part-04/chapter-01/samples/skills/translate-politely/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

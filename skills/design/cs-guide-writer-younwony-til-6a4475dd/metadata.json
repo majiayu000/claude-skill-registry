@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/cs-guide-writer",
   "github_branch": "main",
-  "dir_name": "cs-guide-writer-younwony-til-6a4475dd"
+  "dir_name": "cs-guide-writer-younwony-til-6a4475dd",
+  "author": "younwony",
+  "source_url": "https://github.com/younwony/TIL/blob/main/.claude/skills/cs-guide-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/younwony/TIL/blob/main/.claude/skills/cs-guide-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:26.608115Z",
   "github_path": ".github/skills/council-gate",
   "github_branch": "main",
-  "dir_name": "council-gate-amiable-dev-amiable-templates"
+  "dir_name": "council-gate-amiable-dev-amiable-templates",
+  "author": "amiable-dev",
+  "source_url": "https://github.com/amiable-dev/amiable-templates/blob/main/.github/skills/council-gate/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 Amiable Dev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

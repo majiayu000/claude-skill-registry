@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/ArvorCo/Relentless",
   "dir_name": "convert",
-  "downloaded_at": "2026-02-15T04:45:54.818034Z"
+  "downloaded_at": "2026-02-15T04:45:54.818034Z",
+  "author": "ArvorCo",
+  "source_url": "https://github.com/ArvorCo/Relentless/blob/main/.claude/skills/convert/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Arvor",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

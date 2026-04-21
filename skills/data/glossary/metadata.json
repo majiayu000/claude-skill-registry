@@ -5,5 +5,12 @@
   "source": "github.com/MetaMask/ocap-kernel",
   "downloaded_at": "2026-02-04T01:01:34.288542Z",
   "dir_name": "glossary",
-  "category": "data"
+  "category": "data",
+  "author": "MetaMask",
+  "source_url": "https://github.com/MetaMask/ocap-kernel/blob/main/.claude/skills/glossary/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Consensys Software Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

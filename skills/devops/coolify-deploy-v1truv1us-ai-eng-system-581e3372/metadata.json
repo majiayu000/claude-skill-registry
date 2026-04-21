@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/coolify-deploy",
   "github_branch": "main",
-  "dir_name": "coolify-deploy-v1truv1us-ai-eng-system-581e3372"
+  "dir_name": "coolify-deploy-v1truv1us-ai-eng-system-581e3372",
+  "author": "v1truv1us",
+  "source_url": "https://github.com/v1truv1us/ai-eng-system/blob/main/.claude/skills/coolify-deploy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 John Ferguson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

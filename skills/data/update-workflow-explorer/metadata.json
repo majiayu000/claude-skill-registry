@@ -5,5 +5,12 @@
   "source": "github.com/leeovery/claude-technical-workflows",
   "downloaded_at": "2026-02-04T02:32:35.701586Z",
   "dir_name": "update-workflow-explorer",
-  "category": "data"
+  "category": "data",
+  "author": "leeovery",
+  "source_url": "https://github.com/leeovery/claude-technical-workflows/blob/main/.claude/skills/update-workflow-explorer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Lee Overy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Nemotron-Personas-Japan (1M件) から最適ペルソナを選定し、Instagram実データで検証・統合する全自動ペルソナ分析Skill。Instagram分析、ペルソナ作成依頼時に自動起動。",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:09:39.355824Z",
-  "dir_name": "nemotron-instagram-persona-analyzer"
+  "dir_name": "nemotron-instagram-persona-analyzer",
+  "author": "YL08140921",
+  "source_url": "https://github.com/YL08140921/unson-os-market-research",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/YL08140921/unson-os-market-research",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

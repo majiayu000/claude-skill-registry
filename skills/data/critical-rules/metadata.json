@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "critical-rules"
+  "dir_name": "critical-rules",
+  "author": "andyngdz",
+  "source_url": "https://github.com/andyngdz/exogen",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Andy D. Nguyen",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

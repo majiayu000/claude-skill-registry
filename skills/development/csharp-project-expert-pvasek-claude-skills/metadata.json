@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/csharp-project-expert",
   "github_branch": "main",
-  "dir_name": "csharp-project-expert-pvasek-claude-skills"
+  "dir_name": "csharp-project-expert-pvasek-claude-skills",
+  "author": "pvasek",
+  "source_url": "https://github.com/pvasek/claude-skills/blob/main/skills/csharp-project-expert/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Pavel Vasek",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

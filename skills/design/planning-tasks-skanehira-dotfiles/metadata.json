@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:50.100826Z",
   "github_path": "claude/skills/planning-tasks",
   "github_branch": "main",
-  "dir_name": "planning-tasks-skanehira-dotfiles"
+  "dir_name": "planning-tasks-skanehira-dotfiles",
+  "author": "skanehira",
+  "source_url": "https://github.com/skanehira/dotfiles/blob/main/claude/skills/planning-tasks/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 skanehira",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/module-extractor",
   "github_branch": "main",
-  "dir_name": "module-extractor-omriwen-prism"
+  "dir_name": "module-extractor-omriwen-prism",
+  "author": "omriwen",
+  "source_url": "https://github.com/omriwen/PRISM/blob/main/.claude/skills/module-extractor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Omri",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

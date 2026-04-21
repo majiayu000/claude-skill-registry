@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/EdWrld/config.files",
-  "dir_name": "workflow-orchestrator-edwrld-config-files-2"
+  "dir_name": "workflow-orchestrator-edwrld-config-files-2",
+  "author": "EdWrld",
+  "source_url": "https://github.com/EdWrld/config.files/blob/main/skills/workflow-orchestrator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Edwrld",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

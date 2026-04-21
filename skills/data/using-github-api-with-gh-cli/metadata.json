@@ -5,5 +5,12 @@
   "description": "This skill teaches how to access GitHub's REST and GraphQL APIs via gh api for inline PR comments, review threads, and data not available through standard gh commands. Use this when you need PR review",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:27.616618Z",
-  "dir_name": "using-github-api-with-gh-cli"
+  "dir_name": "using-github-api-with-gh-cli",
+  "author": "johnnymo87",
+  "source_url": "https://github.com/johnnymo87/dotfiles",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2015 Jim Walker",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

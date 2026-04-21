@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:30:09.361488Z",
   "github_path": ".claude/skills/post-deploy-cleanup",
   "github_branch": "main",
-  "dir_name": "post-deploy-cleanup-matsuni-kk-agent-template-publi-5ebc3e47"
+  "dir_name": "post-deploy-cleanup-matsuni-kk-agent-template-publi-5ebc3e47",
+  "author": "matsuni-kk",
+  "source_url": "https://github.com/matsuni-kk/agent_template_public/blob/main/.claude/skills/post-deploy-cleanup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "© 2025 國松 憂魁 (Yukai Kunimatsu)",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

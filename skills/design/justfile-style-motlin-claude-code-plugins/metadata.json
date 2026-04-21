@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:12.674507Z",
   "github_path": "plugins/justfile/skills/justfile-style",
   "github_branch": "main",
-  "dir_name": "justfile-style-motlin-claude-code-plugins"
+  "dir_name": "justfile-style-motlin-claude-code-plugins",
+  "author": "motlin",
+  "source_url": "https://github.com/motlin/claude-code-plugins/blob/main/plugins/justfile/skills/justfile-style/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2024 Craig Motlin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Aggregate flat building elements into hierarchical construction documents with 4-level cost breakdown structure.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:12.271818Z",
-  "dir_name": "aggregation-and-export"
+  "dir_name": "aggregation-and-export",
+  "author": "MontassarbellahAbdallah",
+  "source_url": "https://github.com/MontassarbellahAbdallah/Construction_cost_estimation_system",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MontassarbellahAbdallah/Construction_cost_estimation_system",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -10,5 +10,12 @@
   "stars": 7,
   "github_path": "skills/council-orchestrator",
   "github_branch": "main",
-  "dir_name": "council-orchestrator-xrf9268-hue-llm-council-plugin"
+  "dir_name": "council-orchestrator-xrf9268-hue-llm-council-plugin",
+  "author": "xrf9268-hue",
+  "source_url": "https://github.com/xrf9268-hue/llm-council-plugin/blob/main/skills/council-orchestrator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/xrf9268-hue/llm-council-plugin/blob/main/skills/council-orchestrator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

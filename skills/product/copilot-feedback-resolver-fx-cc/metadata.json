@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:00.513713Z",
   "github_path": "plugins/fx-dev/skills/copilot-feedback-resolver",
   "github_branch": "main",
-  "dir_name": "copilot-feedback-resolver-fx-cc"
+  "dir_name": "copilot-feedback-resolver-fx-cc",
+  "author": "fx",
+  "source_url": "https://github.com/fx/cc/blob/main/plugins/fx-dev/skills/copilot-feedback-resolver/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Marian Rudzynski",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

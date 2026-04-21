@@ -5,5 +5,12 @@
   "source": "github.com/trkbt10/react-wireflow",
   "downloaded_at": "2026-01-27T03:20:45.227853Z",
   "dir_name": "inspector",
-  "category": "data"
+  "category": "data",
+  "author": "trkbt10",
+  "source_url": "https://github.com/trkbt10/react-wireflow/blob/main/skills/inspector/SKILL.md",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/trkbt10/react-wireflow/blob/main/skills/inspector/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

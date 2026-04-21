@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "css-expert"
+  "dir_name": "css-expert",
+  "author": "dannysmith",
+  "source_url": "https://github.com/dannysmith/claude-marketplace",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Danny Smith",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

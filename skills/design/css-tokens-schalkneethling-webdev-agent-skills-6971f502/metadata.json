@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "css-tokens",
   "github_branch": "main",
-  "dir_name": "css-tokens-schalkneethling-webdev-agent-skills-6971f502"
+  "dir_name": "css-tokens-schalkneethling-webdev-agent-skills-6971f502",
+  "author": "schalkneethling",
+  "source_url": "https://github.com/schalkneethling/webdev-agent-skills/blob/main/css-tokens/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Schalk Neethling",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "SQL for data analysis with exploratory analysis, advanced aggregations, statistical functions, outlier detection, and business insights. 50+ real-world analytics queries.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:38.561337Z",
-  "dir_name": "data-analysis-sql"
+  "dir_name": "data-analysis-sql",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-sql",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

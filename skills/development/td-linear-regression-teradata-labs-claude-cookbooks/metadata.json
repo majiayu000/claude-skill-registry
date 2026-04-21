@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:50.815726Z",
   "github_path": "skills/analytics/td-linear-regression",
   "github_branch": "main",
-  "dir_name": "td-linear-regression-teradata-labs-claude-cookbooks"
+  "dir_name": "td-linear-regression-teradata-labs-claude-cookbooks",
+  "author": "teradata-labs",
+  "source_url": "https://github.com/teradata-labs/claude-cookbooks/blob/main/skills/analytics/td-linear-regression/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/teradata-labs/claude-cookbooks/blob/main/skills/analytics/td-linear-regression/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

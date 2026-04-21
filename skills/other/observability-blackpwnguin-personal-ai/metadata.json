@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/Observability",
   "github_branch": "main",
   "dir_name": "observability-blackpwnguin-personal-ai",
-  "downloaded_at": "2026-02-05T01:45:42.156352Z"
+  "downloaded_at": "2026-02-05T01:45:42.156352Z",
+  "author": "blackpwnguin",
+  "source_url": "https://github.com/blackpwnguin/Personal-AI/blob/main/.claude/skills/Observability/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel Miessler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

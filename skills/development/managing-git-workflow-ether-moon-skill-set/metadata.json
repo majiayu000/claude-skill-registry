@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:30.721446Z",
   "github_path": "plugins/skill-set/skills/managing-git-workflow",
   "github_branch": "main",
-  "dir_name": "managing-git-workflow-ether-moon-skill-set"
+  "dir_name": "managing-git-workflow-ether-moon-skill-set",
+  "author": "ether-moon",
+  "source_url": "https://github.com/ether-moon/skill-set/blob/main/plugins/skill-set/skills/managing-git-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ether-moon",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

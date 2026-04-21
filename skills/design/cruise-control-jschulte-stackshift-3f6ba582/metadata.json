@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:16.157284Z",
   "github_path": "skills/cruise-control",
   "github_branch": "main",
-  "dir_name": "cruise-control-jschulte-stackshift-3f6ba582"
+  "dir_name": "cruise-control-jschulte-stackshift-3f6ba582",
+  "author": "jschulte",
+  "source_url": "https://github.com/jschulte/stackshift/blob/main/skills/cruise-control/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jschulte/stackshift/blob/main/skills/cruise-control/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

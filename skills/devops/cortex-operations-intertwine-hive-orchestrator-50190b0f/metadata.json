@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/cortex-operations",
   "github_branch": "main",
-  "dir_name": "cortex-operations-intertwine-hive-orchestrator-50190b0f"
+  "dir_name": "cortex-operations-intertwine-hive-orchestrator-50190b0f",
+  "author": "intertwine",
+  "source_url": "https://github.com/intertwine/hive-orchestrator/blob/main/.claude/skills/cortex-operations/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Intertwine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

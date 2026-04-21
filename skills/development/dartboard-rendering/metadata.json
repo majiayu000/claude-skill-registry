@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:20:55.307948Z",
   "github_path": ".claude/skills/dartboard-rendering",
   "github_branch": "main",
-  "dir_name": "dartboard-rendering"
+  "dir_name": "dartboard-rendering",
+  "author": "shiroinock",
+  "source_url": "https://github.com/shiroinock/Darts-Score-Trainer/blob/main/.claude/skills/dartboard-rendering/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shiroinock/Darts-Score-Trainer/blob/main/.claude/skills/dartboard-rendering/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

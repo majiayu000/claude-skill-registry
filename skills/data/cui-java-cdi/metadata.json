@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "cui-java-cdi"
+  "dir_name": "cui-java-cdi",
+  "author": "cuioss",
+  "source_url": "https://github.com/cuioss/cui-llm-rules",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cuioss/cui-llm-rules",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

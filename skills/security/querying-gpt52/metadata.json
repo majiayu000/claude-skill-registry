@@ -9,5 +9,12 @@
   ],
   "stars": 4,
   "source": "local",
-  "dir_name": "querying-gpt52"
+  "dir_name": "querying-gpt52",
+  "author": "costiash",
+  "source_url": "https://github.com/costiash/CognivAgent",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2024 CognivAgent Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

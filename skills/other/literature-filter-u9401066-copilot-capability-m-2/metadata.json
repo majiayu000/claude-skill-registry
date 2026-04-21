@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/u9401066/copilot-capability-manager",
-  "dir_name": "literature-filter-u9401066-copilot-capability-m-2"
+  "dir_name": "literature-filter-u9401066-copilot-capability-m-2",
+  "author": "u9401066",
+  "source_url": "https://github.com/u9401066/copilot-capability-manager/blob/main/.claude/skills/literature-filter/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 [Your Name or Organization]",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/radioactive-labs/plutonium-core",
-  "dir_name": "definition-actions"
+  "dir_name": "definition-actions",
+  "author": "radioactive-labs",
+  "source_url": "https://github.com/radioactive-labs/plutonium-core",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Stefan Froelich",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

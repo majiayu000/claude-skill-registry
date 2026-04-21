@@ -10,5 +10,12 @@
   "stars": 0,
   "dir_name": "semantic-html",
   "github_path": "semantic-html",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "schalkneethling",
+  "source_url": "https://github.com/schalkneethling/webdev-agent-skills/blob/main/semantic-html/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Schalk Neethling",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

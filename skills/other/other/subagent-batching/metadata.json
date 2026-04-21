@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/JacobPEvans/ai-assistant-instructions",
   "dir_name": "subagent-batching",
-  "downloaded_at": "2026-02-15T05:15:32.764628Z"
+  "downloaded_at": "2026-02-15T05:15:32.764628Z",
+  "author": "JacobPEvans",
+  "source_url": "https://github.com/JacobPEvans/ai-assistant-instructions/blob/main/agentsmd/skills/subagent-batching/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JacobPEvans/ai-assistant-instructions/blob/main/agentsmd/skills/subagent-batching/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

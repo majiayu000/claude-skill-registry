@@ -5,5 +5,12 @@
   "description": "Frontend-backend pagination standard, defining minimal parameter naming to reduce transmission characters, applicable to all system pagination scenarios.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:16.430408Z",
-  "dir_name": "pagination-standard"
+  "dir_name": "pagination-standard",
+  "author": "TrueNine",
+  "source_url": "https://github.com/TrueNine/claude-code-projects",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

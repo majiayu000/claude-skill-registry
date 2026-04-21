@@ -5,5 +5,12 @@
   "source": "github.com/RogueRope/docs",
   "downloaded_at": "2026-01-29T02:34:28.916278Z",
   "dir_name": "editing-hugo-documentation",
-  "category": "data"
+  "category": "data",
+  "author": "RogueRope",
+  "source_url": "https://github.com/RogueRope/docs/blob/main/.claude/skills/editing-hugo-documentation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RogueRope/docs/blob/main/.claude/skills/editing-hugo-documentation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

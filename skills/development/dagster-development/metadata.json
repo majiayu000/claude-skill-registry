@@ -9,5 +9,12 @@
   ],
   "stars": 25,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "dagster-development"
+  "dir_name": "dagster-development",
+  "author": "C00ldudeNoonan",
+  "source_url": "https://github.com/C00ldudeNoonan/economic-data-project",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/C00ldudeNoonan/economic-data-project",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

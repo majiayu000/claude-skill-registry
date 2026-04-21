@@ -7,5 +7,12 @@
   "dir_name": "generating-release-notes-nasa-pds-pds-claude-skills-c3ad56f5",
   "category": "other",
   "github_path": "generating-release-notes",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "NASA-PDS",
+  "source_url": "https://github.com/NASA-PDS/pds-claude-skills/blob/main/generating-release-notes/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright (c) 2022 California Institute of Technology (\"Caltech\").",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

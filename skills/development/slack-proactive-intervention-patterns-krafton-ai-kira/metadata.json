@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/slack-proactive-intervention-patterns",
   "github_branch": "main",
-  "dir_name": "slack-proactive-intervention-patterns-krafton-ai-kira"
+  "dir_name": "slack-proactive-intervention-patterns-krafton-ai-kira",
+  "author": "krafton-ai",
+  "source_url": "https://github.com/krafton-ai/KIRA/blob/main/.claude/skills/slack-proactive-intervention-patterns/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/krafton-ai/KIRA/blob/main/.claude/skills/slack-proactive-intervention-patterns/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

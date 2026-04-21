@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:26.332187Z",
   "github_path": ".github/skills/prompt-tsx-patterns",
   "github_branch": "main",
-  "dir_name": "prompt-tsx-patterns-omermachluf-vscode-copilot-chat"
+  "dir_name": "prompt-tsx-patterns-omermachluf-vscode-copilot-chat",
+  "author": "OmerMachluf",
+  "source_url": "https://github.com/OmerMachluf/vscode-copilot-chat/blob/main/.github/skills/prompt-tsx-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) Microsoft Corporation. All rights reserved.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

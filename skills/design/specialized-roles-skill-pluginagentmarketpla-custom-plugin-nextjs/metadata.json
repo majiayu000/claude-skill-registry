@@ -5,5 +5,12 @@
   "description": "Master specialized tech careers including Product Management, Engineering Management, DevRel, Technical Writing, QA, Blockchain, Game Development, Cybersecurity, and UX Design. Navigate multiple caree",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:46.152876Z",
-  "dir_name": "specialized-roles-skill-pluginagentmarketpla-custom-plugin-nextjs"
+  "dir_name": "specialized-roles-skill-pluginagentmarketpla-custom-plugin-nextjs",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-nextjs",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

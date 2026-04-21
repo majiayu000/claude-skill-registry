@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/context7-tools",
   "github_branch": "main",
-  "dir_name": "context7-tools-bsamiee-parametric-portal"
+  "dir_name": "context7-tools-bsamiee-parametric-portal",
+  "author": "bsamiee",
+  "source_url": "https://github.com/bsamiee/Parametric_Portal/blob/main/.claude/skills/context7-tools/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 bsamiee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

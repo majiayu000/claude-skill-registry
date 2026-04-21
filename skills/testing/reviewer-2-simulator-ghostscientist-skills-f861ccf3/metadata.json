@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/reviewer-2-simulator",
   "github_branch": "main",
-  "dir_name": "reviewer-2-simulator-ghostscientist-skills-f861ccf3"
+  "dir_name": "reviewer-2-simulator-ghostscientist-skills-f861ccf3",
+  "author": "GhostScientist",
+  "source_url": "https://github.com/GhostScientist/skills/blob/main/skills/reviewer-2-simulator/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2024 GhostScientist",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

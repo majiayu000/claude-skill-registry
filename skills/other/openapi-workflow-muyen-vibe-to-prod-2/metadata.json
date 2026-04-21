@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/muyen/vibe-to-prod",
-  "dir_name": "openapi-workflow-muyen-vibe-to-prod-2"
+  "dir_name": "openapi-workflow-muyen-vibe-to-prod-2",
+  "author": "muyen",
+  "source_url": "https://github.com/muyen/vibe-to-prod/blob/main/.claude/skills/openapi-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 From Vibe to Production",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

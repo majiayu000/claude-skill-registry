@@ -9,5 +9,12 @@
   ],
   "stars": 193,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "scratch-pad"
+  "dir_name": "scratch-pad",
+  "author": "krafton-ai",
+  "source_url": "https://github.com/krafton-ai/KIRA",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/krafton-ai/KIRA",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

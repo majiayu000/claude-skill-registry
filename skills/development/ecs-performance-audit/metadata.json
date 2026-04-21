@@ -10,5 +10,12 @@
   ],
   "stars": 7,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "ecs-performance-audit"
+  "dir_name": "ecs-performance-audit",
+  "author": "kateusz",
+  "source_url": "https://github.com/kateusz/GameEngine",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kateusz/GameEngine",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

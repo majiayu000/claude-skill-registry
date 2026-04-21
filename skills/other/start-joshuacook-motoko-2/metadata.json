@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/joshuacook/motoko",
-  "dir_name": "start-joshuacook-motoko-2"
+  "dir_name": "start-joshuacook-motoko-2",
+  "author": "joshuacook",
+  "source_url": "https://github.com/joshuacook/motoko/blob/main/.claude/skills/start/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Joshua Cook",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

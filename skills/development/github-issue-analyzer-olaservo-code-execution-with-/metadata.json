@@ -11,5 +11,12 @@
   "stars": 1,
   "github_path": ".claude/skills/github-issue-analyzer",
   "github_branch": "main",
-  "dir_name": "github-issue-analyzer-olaservo-code-execution-with-"
+  "dir_name": "github-issue-analyzer-olaservo-code-execution-with-",
+  "author": "olaservo",
+  "source_url": "https://github.com/olaservo/code-execution-with-mcp/blob/main/.claude/skills/github-issue-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ola Hungerford",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

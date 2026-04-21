@@ -5,5 +5,12 @@
   "description": "Conventional Commits仕様に従ったコミットメッセージを作成する。コミット時に必ず使用すること。",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:58.044919Z",
-  "dir_name": "conventional-committer"
+  "dir_name": "conventional-committer",
+  "author": "marromugi",
+  "source_url": "https://github.com/marromugi/magi-ui",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/marromugi/magi-ui",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

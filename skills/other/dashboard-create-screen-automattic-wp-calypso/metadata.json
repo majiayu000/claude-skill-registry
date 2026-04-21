@@ -7,5 +7,12 @@
   "dir_name": "dashboard-create-screen-automattic-wp-calypso",
   "category": "other",
   "github_path": ".claude/skills/dashboard-create-screen",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Automattic",
+  "source_url": "https://github.com/Automattic/wp-calypso/blob/main/.claude/skills/dashboard-create-screen/SKILL.md",
+  "license": "GPL-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Automattic/wp-calypso/blob/main/.claude/skills/dashboard-create-screen/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

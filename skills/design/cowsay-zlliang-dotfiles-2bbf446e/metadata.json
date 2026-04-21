@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:47.820698Z",
   "github_path": ".config/amp/skills/cowsay",
   "github_branch": "main",
-  "dir_name": "cowsay-zlliang-dotfiles-2bbf446e"
+  "dir_name": "cowsay-zlliang-dotfiles-2bbf446e",
+  "author": "zlliang",
+  "source_url": "https://github.com/zlliang/dotfiles/blob/main/.config/amp/skills/cowsay/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2018–PRESENT Zilong Liang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

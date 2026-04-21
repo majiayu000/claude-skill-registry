@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:05.453557Z",
   "github_path": "plugins/css-expert/skills/css-expert",
   "github_branch": "main",
-  "dir_name": "css-expert-dannysmith-claude-marketplace"
+  "dir_name": "css-expert-dannysmith-claude-marketplace",
+  "author": "dannysmith",
+  "source_url": "https://github.com/dannysmith/claude-marketplace/blob/main/plugins/css-expert/skills/css-expert/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Danny Smith",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

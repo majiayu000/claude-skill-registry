@@ -11,5 +11,12 @@
   "stars": 3,
   "github_path": ".claude/skills/writing-ast-check",
   "github_branch": "main",
-  "dir_name": "writing-ast-check-jack-michaud-faire"
+  "dir_name": "writing-ast-check-jack-michaud-faire",
+  "author": "jack-michaud",
+  "source_url": "https://github.com/jack-michaud/faire/blob/main/.claude/skills/writing-ast-check/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jack Michaud",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

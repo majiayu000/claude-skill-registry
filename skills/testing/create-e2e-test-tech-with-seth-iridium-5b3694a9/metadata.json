@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".github/skills/create-e2e-test",
   "github_branch": "main",
-  "dir_name": "create-e2e-test-tech-with-seth-iridium-5b3694a9"
+  "dir_name": "create-e2e-test-tech-with-seth-iridium-5b3694a9",
+  "author": "tech-with-seth",
+  "source_url": "https://github.com/tech-with-seth/iridium/blob/main/.github/skills/create-e2e-test/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tech-with-seth/iridium/blob/main/.github/skills/create-e2e-test/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

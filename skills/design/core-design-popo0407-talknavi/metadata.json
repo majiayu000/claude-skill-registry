@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:12.631685Z",
   "github_path": ".github/skills/core-design",
   "github_branch": "main",
-  "dir_name": "core-design-popo0407-talknavi"
+  "dir_name": "core-design-popo0407-talknavi",
+  "author": "popo0407",
+  "source_url": "https://github.com/popo0407/TALKNAVI/blob/main/.github/skills/core-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/popo0407/TALKNAVI/blob/main/.github/skills/core-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

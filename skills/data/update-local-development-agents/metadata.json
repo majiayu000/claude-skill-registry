@@ -11,5 +11,12 @@
   ],
   "stars": 1,
   "source": "local",
-  "dir_name": "update-local-development-agents"
+  "dir_name": "update-local-development-agents",
+  "author": "hurtener",
+  "source_url": "https://github.com/hurtener/penguiflow",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 hurtener",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

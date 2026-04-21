@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:10.435507Z",
   "github_path": ".claude/skills/styling-patterns",
   "github_branch": "main",
-  "dir_name": "styling-patterns"
+  "dir_name": "styling-patterns",
+  "author": "spences10",
+  "source_url": "https://github.com/spences10/devhub-crm/blob/main/.claude/skills/styling-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/spences10/devhub-crm/blob/main/.claude/skills/styling-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

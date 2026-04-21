@@ -7,5 +7,12 @@
   "dir_name": "k8s-helm-charts-dev",
   "category": "other",
   "github_path": "components/skills/k8s-helm-charts-dev",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "aRustyDev",
+  "source_url": "https://github.com/aRustyDev/ai/blob/main/components/skills/k8s-helm-charts-dev/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "Build 3D visualizations using Three.js and React Three Fiber. Use when implementing 3D components, debugging rendering issues, optimizing performance, or creating interactive visualization features.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:17.643700Z",
-  "dir_name": "3d-composition-visualization"
+  "dir_name": "3d-composition-visualization",
+  "author": "nategarelik",
+  "source_url": "https://github.com/nategarelik/composition",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nategarelik/composition",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

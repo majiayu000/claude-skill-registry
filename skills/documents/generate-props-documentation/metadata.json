@@ -5,5 +5,12 @@
   "description": "全コンポーネントのProps定義（型、デフォルト値、説明）を自動的に解析し、統一されたマークダウンドキュメントを生成します。",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:23.917353Z",
-  "dir_name": "generate-props-documentation"
+  "dir_name": "generate-props-documentation",
+  "author": "ntaksh42",
+  "source_url": "https://github.com/ntaksh42/windows-design-astro-components",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ntaksh42/windows-design-astro-components",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

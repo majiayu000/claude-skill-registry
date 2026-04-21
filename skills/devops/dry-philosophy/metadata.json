@@ -9,5 +9,12 @@
   ],
   "stars": 8,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "dry-philosophy"
+  "dir_name": "dry-philosophy",
+  "author": "elasticdotventures",
+  "source_url": "https://github.com/elasticdotventures/_b00t_",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2026 snarktank",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

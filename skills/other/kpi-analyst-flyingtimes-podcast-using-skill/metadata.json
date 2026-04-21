@@ -5,5 +5,12 @@
   "source": "github.com/flyingtimes/podcast-using-skill",
   "downloaded_at": "2026-01-29T07:46:31.186425Z",
   "dir_name": "kpi-analyst-flyingtimes-podcast-using-skill",
-  "category": "other"
+  "category": "other",
+  "author": "flyingtimes",
+  "source_url": "https://github.com/flyingtimes/podcast-using-skill/blob/main/.claude/skills/kpi-analyst/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/flyingtimes/podcast-using-skill/blob/main/.claude/skills/kpi-analyst/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

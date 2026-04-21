@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/create-notification-plugin",
   "github_branch": "main",
-  "dir_name": "create-notification-plugin-ycs77-claude-code-notifica"
+  "dir_name": "create-notification-plugin-ycs77-claude-code-notifica",
+  "author": "ycs77",
+  "source_url": "https://github.com/ycs77/claude-code-notifications/blob/main/.claude/skills/create-notification-plugin/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-present Lucas Yang <yangchenshin77@gmail.com>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

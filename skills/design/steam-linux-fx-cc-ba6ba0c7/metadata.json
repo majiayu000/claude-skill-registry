@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:00.735627Z",
   "github_path": "plugins/steam/skills/steam-linux",
   "github_branch": "main",
-  "dir_name": "steam-linux-fx-cc-ba6ba0c7"
+  "dir_name": "steam-linux-fx-cc-ba6ba0c7",
+  "author": "fx",
+  "source_url": "https://github.com/fx/cc/blob/main/plugins/steam/skills/steam-linux/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Marian Rudzynski",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

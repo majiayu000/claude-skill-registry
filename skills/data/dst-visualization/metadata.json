@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/mikkelkrogsholm/dst-skills",
-  "dir_name": "dst-visualization"
+  "dir_name": "dst-visualization",
+  "author": "mikkelkrogsholm",
+  "source_url": "https://github.com/mikkelkrogsholm/dst-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mikkelkrogsholm/dst-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

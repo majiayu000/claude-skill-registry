@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/fetch-architecture",
   "github_branch": "main",
   "dir_name": "fetch-architecture",
-  "downloaded_at": "2026-02-05T01:45:35.494877Z"
+  "downloaded_at": "2026-02-05T01:45:35.494877Z",
+  "author": "adelabdelgawad",
+  "source_url": "https://github.com/adelabdelgawad/support-center/blob/main/.claude/skills/fetch-architecture/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adelabdelgawad/support-center/blob/main/.claude/skills/fetch-architecture/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

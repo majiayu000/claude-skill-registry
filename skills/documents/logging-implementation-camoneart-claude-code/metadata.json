@@ -10,5 +10,12 @@
   "stars": 2,
   "github_path": "skills/logging-implementation",
   "github_branch": "main",
-  "dir_name": "logging-implementation-camoneart-claude-code"
+  "dir_name": "logging-implementation-camoneart-claude-code",
+  "author": "camoneart",
+  "source_url": "https://github.com/camoneart/claude-code/blob/main/skills/logging-implementation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/camoneart/claude-code/blob/main/skills/logging-implementation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

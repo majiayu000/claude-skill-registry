@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/_archived/video-legacy/video-transcribe",
   "github_branch": "main",
   "dir_name": "video-transcribe-taiyousan15-taisun-agent-f02ad35a",
-  "downloaded_at": "2026-02-05T01:44:48.259163Z"
+  "downloaded_at": "2026-02-05T01:44:48.259163Z",
+  "author": "taiyousan15",
+  "source_url": "https://github.com/taiyousan15/taisun_agent/blob/main/.claude/skills/_archived/video-legacy/video-transcribe/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 taiyousan15",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

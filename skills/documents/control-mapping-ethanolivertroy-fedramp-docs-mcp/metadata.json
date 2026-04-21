@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:15.741303Z",
   "github_path": "plugin/skills/control-mapping",
   "github_branch": "main",
-  "dir_name": "control-mapping-ethanolivertroy-fedramp-docs-mcp"
+  "dir_name": "control-mapping-ethanolivertroy-fedramp-docs-mcp",
+  "author": "ethanolivertroy",
+  "source_url": "https://github.com/ethanolivertroy/fedramp-docs-mcp/blob/main/plugin/skills/control-mapping/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ethan Troy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "stars": 1,
   "source": "github.com/legacy3/wowlab",
   "downloaded_at": "2026-01-24T16:15:48.638836Z",
-  "dir_name": "code-style-legacy3-wowlab"
+  "dir_name": "code-style-legacy3-wowlab",
+  "author": "legacy3",
+  "source_url": "https://github.com/legacy3/wowlab/blob/main/.claude/skills/code-style/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/legacy3/wowlab/blob/main/.claude/skills/code-style/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

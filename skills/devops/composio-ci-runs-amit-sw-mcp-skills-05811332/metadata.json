@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/composio-ci-runs",
   "github_branch": "main",
-  "dir_name": "composio-ci-runs-amit-sw-mcp-skills-05811332"
+  "dir_name": "composio-ci-runs-amit-sw-mcp-skills-05811332",
+  "author": "amit-sw",
+  "source_url": "https://github.com/amit-sw/mcp_skills/blob/main/skills/composio-ci-runs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/amit-sw/mcp_skills/blob/main/skills/composio-ci-runs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

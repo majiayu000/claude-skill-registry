@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:42.028361Z",
   "github_path": "skills/technical-patterns/policyengine-code-style-skill",
   "github_branch": "main",
-  "dir_name": "policyengine-code-style-policyengine-policyengine-claude-1a5fa11e"
+  "dir_name": "policyengine-code-style-policyengine-policyengine-claude-1a5fa11e",
+  "author": "PolicyEngine",
+  "source_url": "https://github.com/PolicyEngine/policyengine-claude/blob/main/skills/technical-patterns/policyengine-code-style-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 PolicyEngine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

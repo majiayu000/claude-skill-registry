@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/create-extension",
   "github_branch": "main",
-  "dir_name": "create-extension-connyay-starlark-mcp"
+  "dir_name": "create-extension-connyay-starlark-mcp",
+  "author": "connyay",
+  "source_url": "https://github.com/connyay/starlark-mcp/blob/main/.claude/skills/create-extension/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Connor Hindley",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

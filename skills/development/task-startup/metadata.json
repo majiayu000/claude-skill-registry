@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "task-startup"
+  "dir_name": "task-startup",
+  "author": "arlenagreer",
+  "source_url": "https://github.com/arlenagreer/claude_configuration_docs",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/arlenagreer/claude_configuration_docs",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

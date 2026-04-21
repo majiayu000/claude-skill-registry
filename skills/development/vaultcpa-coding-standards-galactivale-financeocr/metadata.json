@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:48.226033Z",
   "github_path": ".claude/skills/vaultcpa-coding-standards",
   "github_branch": "main",
-  "dir_name": "vaultcpa-coding-standards-galactivale-financeocr"
+  "dir_name": "vaultcpa-coding-standards-galactivale-financeocr",
+  "author": "galactivale",
+  "source_url": "https://github.com/galactivale/financeocr/blob/main/.claude/skills/vaultcpa-coding-standards/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Mauricio Siu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

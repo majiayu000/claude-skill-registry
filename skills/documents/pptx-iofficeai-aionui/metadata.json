@@ -7,5 +7,12 @@
   "stars": 10065,
   "source": "github.com/iOfficeAI/AionUi",
   "downloaded_at": "2026-01-24T16:15:28.124433Z",
-  "dir_name": "pptx-iofficeai-aionui"
+  "dir_name": "pptx-iofficeai-aionui",
+  "author": "iOfficeAI",
+  "source_url": "https://github.com/iOfficeAI/AionUi/blob/main/skills/pptx/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 AionUi (aionui.com)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/igamenovoer/magic-context",
   "downloaded_at": "2026-02-04T01:06:51.497468Z",
   "dir_name": "explore-dnn-model",
-  "category": "data"
+  "category": "data",
+  "author": "igamenovoer",
+  "source_url": "https://github.com/igamenovoer/magic-context/blob/main/skills/research/explore-dnn-model/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 James Wong",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

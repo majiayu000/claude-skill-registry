@@ -7,5 +7,12 @@
   "stars": 1,
   "source": "github.com/ZhiruiFeng/LocalAgentCrew",
   "downloaded_at": "2026-01-24T16:15:15.995789Z",
-  "dir_name": "security"
+  "dir_name": "security",
+  "author": "ZhiruiFeng",
+  "source_url": "https://github.com/ZhiruiFeng/LocalAgentCrew/blob/main/.claude/skills/security/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Zhirui Feng",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

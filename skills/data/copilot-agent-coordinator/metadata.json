@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "copilot-agent-coordinator"
+  "dir_name": "copilot-agent-coordinator",
+  "author": "cstarlea",
+  "source_url": "https://github.com/cstarlea/agent-skill-orchestrator",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cstarlea/agent-skill-orchestrator",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

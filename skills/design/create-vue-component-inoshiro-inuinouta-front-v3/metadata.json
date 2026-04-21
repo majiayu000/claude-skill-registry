@@ -5,5 +5,12 @@
   "description": "Nuxt 4プロジェクトで新しいVue 3コンポーネントを作成する際のテンプレートとガイドライン",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:32.586122Z",
-  "dir_name": "create-vue-component-inoshiro-inuinouta-front-v3"
+  "dir_name": "create-vue-component-inoshiro-inuinouta-front-v3",
+  "author": "inoshiro",
+  "source_url": "https://github.com/inoshiro/inuinouta-front-v3",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/inoshiro/inuinouta-front-v3",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

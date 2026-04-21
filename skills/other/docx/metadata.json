@@ -9,5 +9,12 @@
   "github_path": "skills/docx",
   "github_branch": "main",
   "dir_name": "docx",
-  "downloaded_at": "2026-02-05T05:35:15.671015Z"
+  "downloaded_at": "2026-02-05T05:35:15.671015Z",
+  "author": "zhu1090093659",
+  "source_url": "https://github.com/zhu1090093659/CodeConductor/blob/main/skills/docx/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 CodeConductor (CodeConductor.com)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

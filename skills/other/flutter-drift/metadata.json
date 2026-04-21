@@ -9,5 +9,12 @@
   "github_path": "flutter-drift",
   "github_branch": "main",
   "dir_name": "flutter-drift",
-  "downloaded_at": "2026-02-05T01:45:03.764615Z"
+  "downloaded_at": "2026-02-05T01:45:03.764615Z",
+  "author": "MADTeacher",
+  "source_url": "https://github.com/MADTeacher/mad-agents-skills/blob/main/flutter-drift/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Stanislav Chernyshev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

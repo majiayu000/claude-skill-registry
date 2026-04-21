@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:17.972385Z",
   "github_path": "ReVa/skills/ctf-crypto",
   "github_branch": "main",
-  "dir_name": "ctf-crypto-cyberkaida-reverse-engineering-"
+  "dir_name": "ctf-crypto-cyberkaida-reverse-engineering-",
+  "author": "cyberkaida",
+  "source_url": "https://github.com/cyberkaida/reverse-engineering-assistant/blob/main/ReVa/skills/ctf-crypto/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2023 サイバーカイダ",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

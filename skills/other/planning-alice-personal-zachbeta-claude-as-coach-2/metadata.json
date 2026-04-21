@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/ZachBeta/claude-as-coach",
-  "dir_name": "planning-alice-personal-zachbeta-claude-as-coach-2"
+  "dir_name": "planning-alice-personal-zachbeta-claude-as-coach-2",
+  "author": "ZachBeta",
+  "source_url": "https://github.com/ZachBeta/claude-as-coach/blob/main/examples/alice-the-athlete/skills/planning-alice-personal/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Zach Morek",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

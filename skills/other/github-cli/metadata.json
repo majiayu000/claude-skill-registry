@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/github-cli",
   "github_branch": "main",
   "dir_name": "github-cli",
-  "downloaded_at": "2026-02-05T01:45:31.378415Z"
+  "downloaded_at": "2026-02-05T01:45:31.378415Z",
+  "author": "oriolrius",
+  "source_url": "https://github.com/oriolrius/pki-manager-web/blob/main/.claude/skills/github-cli/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 PKI Manager Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

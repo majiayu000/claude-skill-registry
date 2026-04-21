@@ -5,5 +5,12 @@
   "description": "当用户正在进行 CTF 比赛或练习，遇到 Misc 类型题目时触发此 Skill。适用场景包括：- 用户上传或提及了音频文件（wav/mp3/flac）、图片文件（png/jpg/bmp/gif）、压缩包、pcap 流量包、内存镜像（raw/vmem/dmp）等- 用户描述了隐写、编码、套娃、文件分析、内存取证相关问题- 用户明确说\"CTF\"、\"Misc\"、\"隐写\"、\"找 flag\"、\"这是一道题",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:23.338352Z",
-  "dir_name": "ctf-misc-solver"
+  "dir_name": "ctf-misc-solver",
+  "author": "Tokeii0",
+  "source_url": "https://github.com/Tokeii0/CTFskill",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tokeii0/CTFskill",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

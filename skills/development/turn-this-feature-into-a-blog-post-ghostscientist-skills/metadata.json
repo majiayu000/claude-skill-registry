@@ -13,5 +13,12 @@
   "stars": 0,
   "github_path": "skills/turn-this-feature-into-a-blog-post",
   "github_branch": "main",
-  "dir_name": "turn-this-feature-into-a-blog-post-ghostscientist-skills"
+  "dir_name": "turn-this-feature-into-a-blog-post-ghostscientist-skills",
+  "author": "GhostScientist",
+  "source_url": "https://github.com/GhostScientist/skills/blob/main/skills/turn-this-feature-into-a-blog-post/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2024 GhostScientist",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

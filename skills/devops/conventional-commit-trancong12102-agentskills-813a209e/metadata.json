@@ -10,5 +10,12 @@
   "stars": 2,
   "github_path": "conventional-commit",
   "github_branch": "main",
-  "dir_name": "conventional-commit-trancong12102-agentskills-813a209e"
+  "dir_name": "conventional-commit-trancong12102-agentskills-813a209e",
+  "author": "trancong12102",
+  "source_url": "https://github.com/trancong12102/agentskills/blob/main/conventional-commit/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Cong Tran",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

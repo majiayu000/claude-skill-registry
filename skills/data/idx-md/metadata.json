@@ -5,5 +5,12 @@
   "source": "github.com/Keith-CY/idx.md",
   "downloaded_at": "2026-02-04T05:13:27.007902Z",
   "dir_name": "idx-md",
-  "category": "data"
+  "category": "data",
+  "author": "Keith-CY",
+  "source_url": "https://github.com/Keith-CY/idx.md/blob/main/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Keith-CY/idx.md/blob/main/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

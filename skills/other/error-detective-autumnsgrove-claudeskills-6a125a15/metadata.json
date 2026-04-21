@@ -5,5 +5,12 @@
   "source": "github.com/AutumnsGrove/ClaudeSkills",
   "downloaded_at": "2026-01-29T07:58:08.890046Z",
   "dir_name": "error-detective-autumnsgrove-claudeskills-6a125a15",
-  "category": "other"
+  "category": "other",
+  "author": "AutumnsGrove",
+  "source_url": "https://github.com/AutumnsGrove/ClaudeSkills/blob/main/error-detective/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AutumnsGrove/ClaudeSkills/blob/main/error-detective/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

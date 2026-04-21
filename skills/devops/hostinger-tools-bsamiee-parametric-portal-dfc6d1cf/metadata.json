@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:38.516054Z",
   "github_path": ".claude/skills/hostinger-tools",
   "github_branch": "main",
-  "dir_name": "hostinger-tools-bsamiee-parametric-portal-dfc6d1cf"
+  "dir_name": "hostinger-tools-bsamiee-parametric-portal-dfc6d1cf",
+  "author": "bsamiee",
+  "source_url": "https://github.com/bsamiee/Parametric_Portal/blob/main/.claude/skills/hostinger-tools/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 bsamiee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

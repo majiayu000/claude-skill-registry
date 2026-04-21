@@ -5,5 +5,12 @@
   "description": "Error recovery and failure handling patterns for distributed systems including rollback strategies, circuit breakers, retry logic with exponential backoff, graceful degradation, and compensating trans",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:29.295700Z",
-  "dir_name": "error-recovery-patterns"
+  "dir_name": "error-recovery-patterns",
+  "author": "applied-artificial-intelligence",
+  "source_url": "https://github.com/applied-artificial-intelligence/claude-code-toolkit",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Applied AI Consulting",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:42.190056Z",
   "github_path": ".claude/skills/japanese-tts-reading",
   "github_branch": "main",
-  "dir_name": "japanese-tts-reading"
+  "dir_name": "japanese-tts-reading",
+  "author": "taiyousan15",
+  "source_url": "https://github.com/taiyousan15/taisun_agent/blob/main/.claude/skills/japanese-tts-reading/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 taiyousan15",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

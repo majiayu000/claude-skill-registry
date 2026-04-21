@@ -5,5 +5,12 @@
   "description": "Use before creating new stories or when user asks \"check for conflicts\", \"find duplicates\", \"review story overlaps\", or \"detect story conflicts\" - scans story-tree database to identify duplicate stori",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:31.956447Z",
-  "dir_name": "conflict-detection"
+  "dir_name": "conflict-detection",
+  "author": "Mharbulous",
+  "source_url": "https://github.com/Mharbulous/SyncoPaid",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Mharbulous/SyncoPaid",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

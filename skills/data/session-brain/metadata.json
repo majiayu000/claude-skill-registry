@@ -10,5 +10,12 @@
   "stars": 0,
   "dir_name": "session-brain",
   "github_path": ".claude/skills/session-brain",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "zenbase-ai",
+  "source_url": "https://github.com/zenbase-ai/code-voyager/blob/main/.claude/skills/session-brain/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Zenbase AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

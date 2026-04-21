@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:43.445003Z",
   "github_path": "plugins/ndf/skills/scanner-pdf-analysis",
   "github_branch": "main",
-  "dir_name": "scanner-pdf-analysis-takemi-ohama-ai-agent-marketplace"
+  "dir_name": "scanner-pdf-analysis-takemi-ohama-ai-agent-marketplace",
+  "author": "takemi-ohama",
+  "source_url": "https://github.com/takemi-ohama/ai-agent-marketplace/blob/main/plugins/ndf/skills/scanner-pdf-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 takemi-ohama",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Specialized knowledge for real estate marketing analytics, including SEM campaign optimization, lead generation analysis, marketing channel performance, and geographic market insights. Use when workin",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:35.071248Z",
-  "dir_name": "real-estate-marketing-analytics"
+  "dir_name": "real-estate-marketing-analytics",
+  "author": "MoveRDC",
+  "source_url": "https://github.com/MoveRDC/claude-skills-marketing",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoveRDC/claude-skills-marketing",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

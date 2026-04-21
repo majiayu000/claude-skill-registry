@@ -5,5 +5,12 @@
   "description": "This skill should be used when editing Python code in the erk codebase. Use when writing, reviewing, or refactoring Python to ensure adherence to LBYL exception handling patterns, Python 3.13+ type sy",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:31.882181Z",
-  "dir_name": "dignified-python-313"
+  "dir_name": "dignified-python-313",
+  "author": "C00ldudeNoonan",
+  "source_url": "https://github.com/C00ldudeNoonan/economic-data-project",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/C00ldudeNoonan/economic-data-project",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

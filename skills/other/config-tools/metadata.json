@@ -5,5 +5,12 @@
   "source": "github.com/xingangshi/config_tools",
   "downloaded_at": "2026-01-29T02:44:54.150083Z",
   "dir_name": "config-tools",
-  "category": "other"
+  "category": "other",
+  "author": "xingangshi",
+  "source_url": "https://github.com/xingangshi/config_tools/blob/main/git_skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/xingangshi/config_tools/blob/main/git_skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "stars": 46,
   "source": "github.com/sirkirby/unifi-network-rules",
   "downloaded_at": "2026-01-24T16:15:43.699891Z",
-  "dir_name": "constitution-authoring-sirkirby-unifi-network-rules"
+  "dir_name": "constitution-authoring-sirkirby-unifi-network-rules",
+  "author": "sirkirby",
+  "source_url": "https://github.com/sirkirby/unifi-network-rules/blob/main/.codex/skills/constitution-authoring/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Chris Kirby",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

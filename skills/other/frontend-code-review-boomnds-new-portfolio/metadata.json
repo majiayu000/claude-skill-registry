@@ -9,5 +9,12 @@
   "github_path": ".agents/skills/frontend-code-review",
   "github_branch": "main",
   "dir_name": "frontend-code-review-boomnds-new-portfolio",
-  "downloaded_at": "2026-02-05T01:45:05.648299Z"
+  "downloaded_at": "2026-02-05T01:45:05.648299Z",
+  "author": "boomNDS",
+  "source_url": "https://github.com/boomNDS/new_portfolio/blob/main/.agents/skills/frontend-code-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boomNDS/new_portfolio/blob/main/.agents/skills/frontend-code-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

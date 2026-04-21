@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/managing-temp-scripts",
   "github_branch": "main",
-  "dir_name": "managing-temp-scripts-mbruhler-claude-orchestration"
+  "dir_name": "managing-temp-scripts-mbruhler-claude-orchestration",
+  "author": "mbruhler",
+  "source_url": "https://github.com/mbruhler/claude-orchestration/blob/main/skills/managing-temp-scripts/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Orchestration Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

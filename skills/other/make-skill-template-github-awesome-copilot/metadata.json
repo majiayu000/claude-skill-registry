@@ -7,5 +7,12 @@
   "dir_name": "make-skill-template-github-awesome-copilot",
   "category": "other",
   "github_path": "skills/make-skill-template",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "github",
+  "source_url": "https://github.com/github/awesome-copilot/blob/main/skills/make-skill-template/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/github/awesome-copilot/blob/main/skills/make-skill-template/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

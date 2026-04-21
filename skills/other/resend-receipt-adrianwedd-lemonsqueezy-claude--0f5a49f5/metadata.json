@@ -5,5 +5,12 @@
   "source": "github.com/adrianwedd/lemonsqueezy-claude-skills",
   "downloaded_at": "2026-01-29T08:22:17.514640Z",
   "dir_name": "resend-receipt-adrianwedd-lemonsqueezy-claude--0f5a49f5",
-  "category": "other"
+  "category": "other",
+  "author": "adrianwedd",
+  "source_url": "https://github.com/adrianwedd/lemonsqueezy-claude-skills/blob/main/skills/resend-receipt/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Adrian Wedd",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "data-designer",
   "github_path": "",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "bacoco",
+  "source_url": "https://github.com/bacoco/Data-designer-skill",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Data Designer Skill Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

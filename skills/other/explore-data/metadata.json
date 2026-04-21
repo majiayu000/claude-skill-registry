@@ -5,5 +5,12 @@
   "source": "github.com/BauplanLabs/bauplan-mcp-server",
   "downloaded_at": "2026-02-02T03:14:26.308464Z",
   "dir_name": "explore-data",
-  "category": "other"
+  "category": "other",
+  "author": "BauplanLabs",
+  "source_url": "https://github.com/BauplanLabs/bauplan-mcp-server/blob/main/skills/explore-data/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Bauplan Labs",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

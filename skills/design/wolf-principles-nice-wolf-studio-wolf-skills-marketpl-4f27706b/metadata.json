@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "wolf-principles",
   "github_branch": "main",
-  "dir_name": "wolf-principles-nice-wolf-studio-wolf-skills-marketpl-4f27706b"
+  "dir_name": "wolf-principles-nice-wolf-studio-wolf-skills-marketpl-4f27706b",
+  "author": "Nice-Wolf-Studio",
+  "source_url": "https://github.com/Nice-Wolf-Studio/wolf-skills-marketplace/blob/main/wolf-principles/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Nice-Wolf-Studio/wolf-skills-marketplace/blob/main/wolf-principles/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

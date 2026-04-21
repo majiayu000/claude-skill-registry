@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:42.527734Z",
   "github_path": "claude/skills/git-commit-crafter",
   "github_branch": "main",
-  "dir_name": "git-commit-crafter"
+  "dir_name": "git-commit-crafter",
+  "author": "ryoppippi",
+  "source_url": "https://github.com/ryoppippi/dotfiles/blob/main/claude/skills/git-commit-crafter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Ryotaro \"Justin\" Kimura",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

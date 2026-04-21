@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 1,
   "source": "github.com/shren207/nixos-config",
-  "dir_name": "configuring-git"
+  "dir_name": "configuring-git",
+  "author": "shren207",
+  "source_url": "https://github.com/shren207/nixos-config",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shren207/nixos-config",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/pwarnock/kjbc-mcp",
   "downloaded_at": "2026-02-01T01:53:17.262133Z",
   "dir_name": "concordance-pwarnock-kjbc-mcp",
-  "category": "other"
+  "category": "other",
+  "author": "pwarnock",
+  "source_url": "https://github.com/pwarnock/kjbc-mcp/blob/main/plugin/skills/concordance/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

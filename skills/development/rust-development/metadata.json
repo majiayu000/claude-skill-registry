@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/rust-development",
   "github_branch": "main",
-  "dir_name": "rust-development"
+  "dir_name": "rust-development",
+  "author": "ystk-kai",
+  "source_url": "https://github.com/ystk-kai/obsidian-sync/blob/main/.claude/skills/rust-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ystk-kai/obsidian-sync/blob/main/.claude/skills/rust-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

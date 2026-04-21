@@ -5,5 +5,12 @@
   "source": "github.com/adrianwedd/lemonsqueezy-claude-skills",
   "downloaded_at": "2026-02-04T03:58:30.972369Z",
   "dir_name": "create-discount-code",
-  "category": "data"
+  "category": "data",
+  "author": "adrianwedd",
+  "source_url": "https://github.com/adrianwedd/lemonsqueezy-claude-skills/blob/main/skills/create-discount-code/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Adrian Wedd",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

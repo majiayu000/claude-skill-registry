@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:52.589334Z",
   "github_path": "skills/operations/workloadmanagement/optimization/tune-workloads",
   "github_branch": "main",
-  "dir_name": "tune-workloads-teradata-labs-claude-cookbooks"
+  "dir_name": "tune-workloads-teradata-labs-claude-cookbooks",
+  "author": "teradata-labs",
+  "source_url": "https://github.com/teradata-labs/claude-cookbooks/blob/main/skills/operations/workloadmanagement/optimization/tune-workloads/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/teradata-labs/claude-cookbooks/blob/main/skills/operations/workloadmanagement/optimization/tune-workloads/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

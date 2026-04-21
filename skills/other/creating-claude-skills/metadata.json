@@ -7,5 +7,12 @@
   "dir_name": "creating-claude-skills",
   "category": "other",
   "github_path": ".atlasOG/exports/modules/skills/skills/creating-claude-skills",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "edheltzel",
+  "source_url": "https://github.com/edheltzel/atlas/blob/main/.atlasOG/exports/modules/skills/skills/creating-claude-skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/edheltzel/atlas/blob/main/.atlasOG/exports/modules/skills/skills/creating-claude-skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

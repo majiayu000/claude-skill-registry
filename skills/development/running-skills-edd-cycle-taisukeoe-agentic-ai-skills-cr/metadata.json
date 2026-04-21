@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:41.840617Z",
   "github_path": "plugins/skills-helper-experimental/skills/running-skills-edd-cycle",
   "github_branch": "main",
-  "dir_name": "running-skills-edd-cycle-taisukeoe-agentic-ai-skills-cr"
+  "dir_name": "running-skills-edd-cycle-taisukeoe-agentic-ai-skills-cr",
+  "author": "taisukeoe",
+  "source_url": "https://github.com/taisukeoe/agentic-ai-skills-creator/blob/main/plugins/skills-helper-experimental/skills/running-skills-edd-cycle/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Softgraphy GK",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

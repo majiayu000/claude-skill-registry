@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:51.044840Z",
   "github_path": "claude/skills/developing",
   "github_branch": "main",
-  "dir_name": "developing"
+  "dir_name": "developing",
+  "author": "skanehira",
+  "source_url": "https://github.com/skanehira/dotfiles/blob/main/claude/skills/developing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 skanehira",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

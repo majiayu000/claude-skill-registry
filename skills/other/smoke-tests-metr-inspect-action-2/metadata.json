@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/METR/inspect-action",
-  "dir_name": "smoke-tests-metr-inspect-action-2"
+  "dir_name": "smoke-tests-metr-inspect-action-2",
+  "author": "METR",
+  "source_url": "https://github.com/METR/inspect-action/blob/main/.claude/skills/smoke-tests/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 METR",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

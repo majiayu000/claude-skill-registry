@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/csharp-decompile",
   "github_branch": "main",
-  "dir_name": "csharp-decompile-j-r-beckett-speedreader"
+  "dir_name": "csharp-decompile-j-r-beckett-speedreader",
+  "author": "j-r-beckett",
+  "source_url": "https://github.com/j-r-beckett/SpeedReader/blob/main/.claude/skills/csharp-decompile/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/j-r-beckett/SpeedReader/blob/main/.claude/skills/csharp-decompile/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

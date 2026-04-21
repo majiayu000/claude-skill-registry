@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "slack-memory-store",
   "github_path": ".claude/skills/slack-memory-store",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "krafton-ai",
+  "source_url": "https://github.com/krafton-ai/KIRA/blob/main/.claude/skills/slack-memory-store/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/krafton-ai/KIRA/blob/main/.claude/skills/slack-memory-store/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:12.937351Z",
   "github_path": "plugins/orchestration/skills/conversation-style",
   "github_branch": "main",
-  "dir_name": "conversation-style-motlin-claude-code-plugins-5d8fe4d6"
+  "dir_name": "conversation-style-motlin-claude-code-plugins-5d8fe4d6",
+  "author": "motlin",
+  "source_url": "https://github.com/motlin/claude-code-plugins/blob/main/plugins/orchestration/skills/conversation-style/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2024 Craig Motlin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

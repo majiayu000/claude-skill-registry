@@ -10,5 +10,12 @@
   "stars": 2,
   "github_path": ".claude/skills/plan-approval",
   "github_branch": "main",
-  "dir_name": "plan-approval-dojocodinglabs-claude-code-waypoint"
+  "dir_name": "plan-approval-dojocodinglabs-claude-code-waypoint",
+  "author": "DojoCodingLabs",
+  "source_url": "https://github.com/DojoCodingLabs/claude-code-waypoint/blob/main/.claude/skills/plan-approval/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Code Infrastructure Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

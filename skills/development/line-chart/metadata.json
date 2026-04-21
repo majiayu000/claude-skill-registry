@@ -5,5 +5,12 @@
   "description": "Configure line charts in drizzle-cube dashboards for time series and trend analysis with multiple series support. Use when creating line charts, trend lines, multi-line graphs, or time series visualiz",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:34.934304Z",
-  "dir_name": "line-chart"
+  "dir_name": "line-chart",
+  "author": "cliftonc",
+  "source_url": "https://github.com/cliftonc/drizzle-cube-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cliftonc/drizzle-cube-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

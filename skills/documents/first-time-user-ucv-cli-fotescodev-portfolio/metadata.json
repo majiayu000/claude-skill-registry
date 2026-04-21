@@ -14,5 +14,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/first-time-user-ucv-cli",
   "github_branch": "main",
-  "dir_name": "first-time-user-ucv-cli-fotescodev-portfolio"
+  "dir_name": "first-time-user-ucv-cli-fotescodev-portfolio",
+  "author": "fotescodev",
+  "source_url": "https://github.com/fotescodev/portfolio/blob/main/.claude/skills/first-time-user-ucv-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fotescodev/portfolio/blob/main/.claude/skills/first-time-user-ucv-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

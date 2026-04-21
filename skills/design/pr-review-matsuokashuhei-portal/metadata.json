@@ -9,5 +9,12 @@
   "stars": 0,
   "github_path": ".claude/skills/pr-review",
   "github_branch": "main",
-  "dir_name": "pr-review-matsuokashuhei-portal"
+  "dir_name": "pr-review-matsuokashuhei-portal",
+  "author": "matsuokashuhei",
+  "source_url": "https://github.com/matsuokashuhei/Portal/blob/main/.claude/skills/pr-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/matsuokashuhei/Portal/blob/main/.claude/skills/pr-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

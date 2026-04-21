@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:00.075042Z",
   "github_path": "plugins/cc-nextjs/skills/nextjs-performance",
   "github_branch": "main",
-  "dir_name": "nextjs-performance"
+  "dir_name": "nextjs-performance",
+  "author": "jovermier",
+  "source_url": "https://github.com/jovermier/cc-stack-marketplace/blob/main/plugins/cc-nextjs/skills/nextjs-performance/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AI Platform",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

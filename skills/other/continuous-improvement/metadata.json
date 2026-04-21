@@ -7,5 +7,12 @@
   "dir_name": "continuous-improvement",
   "category": "other",
   "github_path": ".claude/skills/continuous-improvement",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "muyen",
+  "source_url": "https://github.com/muyen/vibe-to-prod/blob/main/.claude/skills/continuous-improvement/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 From Vibe to Production",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

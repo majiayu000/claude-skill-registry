@@ -7,5 +7,12 @@
   "dir_name": "create-unit-test-anysoftkeyboard-janus-19d0938c",
   "category": "other",
   "github_path": ".claude/skills/create-unit-test",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "AnySoftKeyboard",
+  "source_url": "https://github.com/AnySoftKeyboard/janus/blob/main/.claude/skills/create-unit-test/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AnySoftKeyboard/janus/blob/main/.claude/skills/create-unit-test/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

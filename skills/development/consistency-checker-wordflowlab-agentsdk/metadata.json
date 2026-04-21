@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:58.478970Z",
   "github_path": "examples/skills/workspace/skills/consistency-checker",
   "github_branch": "main",
-  "dir_name": "consistency-checker-wordflowlab-agentsdk"
+  "dir_name": "consistency-checker-wordflowlab-agentsdk",
+  "author": "wordflowlab",
+  "source_url": "https://github.com/wordflowlab/agentsdk/blob/main/examples/skills/workspace/skills/consistency-checker/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Wordflow Lab",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

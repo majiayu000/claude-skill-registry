@@ -5,5 +5,12 @@
   "description": "Build and execute semantic queries with filters, time dimensions, aggregations, and ordering in drizzle-cube. Use when querying analytics data, filtering results, working with date ranges, aggregating",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:35.362616Z",
-  "dir_name": "queries"
+  "dir_name": "queries",
+  "author": "cliftonc",
+  "source_url": "https://github.com/cliftonc/drizzle-cube-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cliftonc/drizzle-cube-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

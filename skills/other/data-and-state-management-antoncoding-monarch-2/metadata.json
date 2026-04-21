@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/antoncoding/monarch",
-  "dir_name": "data-and-state-management-antoncoding-monarch-2"
+  "dir_name": "data-and-state-management-antoncoding-monarch-2",
+  "author": "antoncoding",
+  "source_url": "https://github.com/antoncoding/monarch/blob/main/.claude/skills/data-and-state-management/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

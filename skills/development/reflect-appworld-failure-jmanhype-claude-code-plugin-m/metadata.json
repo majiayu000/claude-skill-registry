@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:36.049906Z",
   "github_path": "plugins/ace-context-engineering/skills/reflect-appworld-failure",
   "github_branch": "main",
-  "dir_name": "reflect-appworld-failure-jmanhype-claude-code-plugin-m"
+  "dir_name": "reflect-appworld-failure-jmanhype-claude-code-plugin-m",
+  "author": "jmanhype",
+  "source_url": "https://github.com/jmanhype/claude-code-plugin-marketplace/blob/main/plugins/ace-context-engineering/skills/reflect-appworld-failure/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 jmanhype",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

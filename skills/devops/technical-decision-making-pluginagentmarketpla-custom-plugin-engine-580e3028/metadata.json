@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:44.839832Z",
   "github_path": "skills/technical-decision-making",
   "github_branch": "main",
-  "dir_name": "technical-decision-making-pluginagentmarketpla-custom-plugin-engine-580e3028"
+  "dir_name": "technical-decision-making-pluginagentmarketpla-custom-plugin-engine-580e3028",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-engineering-manager/blob/main/skills/technical-decision-making/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

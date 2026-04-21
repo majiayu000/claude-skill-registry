@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:42.195682Z",
   "github_path": "plugins/skills-helper/skills/creating-effective-skills",
   "github_branch": "main",
-  "dir_name": "creating-effective-skills-taisukeoe-agentic-ai-skills-cr-94cbea13"
+  "dir_name": "creating-effective-skills-taisukeoe-agentic-ai-skills-cr-94cbea13",
+  "author": "taisukeoe",
+  "source_url": "https://github.com/taisukeoe/agentic-ai-skills-creator/blob/main/plugins/skills-helper/skills/creating-effective-skills/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Softgraphy GK",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

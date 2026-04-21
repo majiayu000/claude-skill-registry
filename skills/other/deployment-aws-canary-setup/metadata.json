@@ -5,5 +5,12 @@
   "source": "github.com/mariotoffia/gobridge",
   "downloaded_at": "2026-02-02T02:30:03.982663Z",
   "dir_name": "deployment-aws-canary-setup",
-  "category": "other"
+  "category": "other",
+  "author": "mariotoffia",
+  "source_url": "https://github.com/mariotoffia/gobridge/blob/main/.claude/skills/deployment-aws-canary-setup/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mariotoffia/gobridge/blob/main/.claude/skills/deployment-aws-canary-setup/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

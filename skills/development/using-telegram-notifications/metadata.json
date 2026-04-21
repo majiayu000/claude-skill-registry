@@ -5,5 +5,12 @@
   "description": "This skill enables Telegram notifications for Claude Code sessions, alerting you when tasks complete. Use this when you want to walk away from your computer and be notified on your phone when Claude f",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:30.088748Z",
-  "dir_name": "using-telegram-notifications"
+  "dir_name": "using-telegram-notifications",
+  "author": "johnnymo87",
+  "source_url": "https://github.com/johnnymo87/dotfiles",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2015 Jim Walker",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

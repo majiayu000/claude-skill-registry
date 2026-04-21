@@ -5,5 +5,12 @@
   "source": "github.com/edwardmonteiro/Aiskillinpractice",
   "downloaded_at": "2026-02-04T05:15:55.003039Z",
   "dir_name": "problem-framing-edwardmonteiro-aiskillinpractice",
-  "category": "data"
+  "category": "data",
+  "author": "edwardmonteiro",
+  "source_url": "https://github.com/edwardmonteiro/Aiskillinpractice/blob/main/skills/discovery/problem_framing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/edwardmonteiro/Aiskillinpractice/blob/main/skills/discovery/problem_framing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

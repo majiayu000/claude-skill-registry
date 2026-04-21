@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "cv-writer",
   "github_path": "cv-writer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "adedayoagarau",
+  "source_url": "https://github.com/adedayoagarau/-cv-writer-skill/blob/main/cv-writer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 [Your Name]",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

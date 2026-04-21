@@ -5,5 +5,12 @@
   "description": "Auto-invoke when reviewing React, Vue, or frontend component code. Enforces component architecture, state management patterns, and UI best practices.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:21.036309Z",
-  "dir_name": "frontend-fundamentals-danielpodolsky-mentor-spec"
+  "dir_name": "frontend-fundamentals-danielpodolsky-mentor-spec",
+  "author": "DanielPodolsky",
+  "source_url": "https://github.com/DanielPodolsky/mentor-spec",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Daniel Podolsky",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

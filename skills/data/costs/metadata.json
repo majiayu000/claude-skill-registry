@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "costs",
   "github_path": ".claude/skills/costs",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Pedro-Jose-da-Rocha-Mendonca",
+  "source_url": "https://github.com/Pedro-Jose-da-Rocha-Mendonca/Devflow/blob/main/.claude/skills/costs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Pedro Jose da Rocha Mendonca",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:43.448024Z",
   "github_path": "testdata/skills/ui-analyzer",
   "github_branch": "main",
-  "dir_name": "ui-analyzer-smallnest-goskills"
+  "dir_name": "ui-analyzer-smallnest-goskills",
+  "author": "smallnest",
+  "source_url": "https://github.com/smallnest/goskills/blob/main/testdata/skills/ui-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 smallnest",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

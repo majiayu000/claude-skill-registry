@@ -5,5 +5,12 @@
   "source": "github.com/azat-io/ai-config",
   "downloaded_at": "2026-02-02T01:13:55.152588Z",
   "dir_name": "discovering",
-  "category": "data"
+  "category": "data",
+  "author": "azat-io",
+  "source_url": "https://github.com/azat-io/ai-config/blob/main/skills/discovering/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright 2025 Azat S. <to@azat.io>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

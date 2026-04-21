@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "consensus-day-orchestrator"
+  "dir_name": "consensus-day-orchestrator",
+  "author": "EojEdred",
+  "source_url": "https://github.com/EojEdred/Etrid",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 Etrid Foundation",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -9,5 +9,12 @@
   ],
   "stars": 22,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "crucible-planner"
+  "dir_name": "crucible-planner",
+  "author": "forsonny",
+  "source_url": "https://github.com/forsonny/The-Crucible-Writing-System-For-Claude",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Crucible Writing System",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -9,5 +9,12 @@
   "github_path": "src/superclaude/skills/confidence-check",
   "github_branch": "master",
   "dir_name": "confidence-check-superclaude-org-superclaude-framewor-7b215538",
-  "downloaded_at": "2026-02-05T01:44:28.910478Z"
+  "downloaded_at": "2026-02-05T01:44:28.910478Z",
+  "author": "SuperClaude-Org",
+  "source_url": "https://github.com/SuperClaude-Org/SuperClaude_Framework/blob/master/src/superclaude/skills/confidence-check/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 SuperClaude Framework Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

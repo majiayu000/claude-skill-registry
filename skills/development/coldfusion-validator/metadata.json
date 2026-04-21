@@ -5,5 +5,12 @@
   "description": "Comprehensive ColdFusion (CFML) syntax validation and best practices verification. Use when validating ColdFusion code, checking for security vulnerabilities (SQL injection, proper cfqueryparam usage)",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:28.501863Z",
-  "dir_name": "coldfusion-validator"
+  "dir_name": "coldfusion-validator",
+  "author": "ErnestPenaJr",
+  "source_url": "https://github.com/ErnestPenaJr/Project-32",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ErnestPenaJr/Project-32",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

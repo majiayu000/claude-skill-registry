@@ -7,5 +7,12 @@
   "dir_name": "snowflake-semanticview-github-awesome-copilot",
   "category": "other",
   "github_path": "skills/snowflake-semanticview",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "github",
+  "source_url": "https://github.com/github/awesome-copilot/blob/main/skills/snowflake-semanticview/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/github/awesome-copilot/blob/main/skills/snowflake-semanticview/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

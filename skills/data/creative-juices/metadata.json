@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "creative-juices"
+  "dir_name": "creative-juices",
+  "author": "yudame",
+  "source_url": "https://github.com/yudame/ai-skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Yuda",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

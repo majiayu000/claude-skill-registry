@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/Dedalus-ERP-PAS/foundation-skills",
-  "dir_name": "create-design-system-rules-dedalus-erp-pas-foundation-skills-2"
+  "dir_name": "create-design-system-rules-dedalus-erp-pas-foundation-skills-2",
+  "author": "Dedalus-ERP-PAS",
+  "source_url": "https://github.com/Dedalus-ERP-PAS/foundation-skills/blob/main/skills/create-design-system-rules/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

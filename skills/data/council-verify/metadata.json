@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "council-verify"
+  "dir_name": "council-verify",
+  "author": "amiable-dev",
+  "source_url": "https://github.com/amiable-dev/amiable-templates",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 Amiable Dev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "db-migrations-metr-inspect-action-de062831",
   "category": "other",
   "github_path": ".claude/skills/db-migrations",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "METR",
+  "source_url": "https://github.com/METR/inspect-action/blob/main/.claude/skills/db-migrations/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 METR",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

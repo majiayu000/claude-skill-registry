@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:22.910792Z",
   "dir_name": "laneweaver-database-design",
   "github_path": "plugins/supabase/skills/laneweaver-database-design",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "linehaul-ai",
+  "source_url": "https://github.com/linehaul-ai/linehaulai-claude-marketplace/blob/main/plugins/supabase/skills/laneweaver-database-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 fakebizprez",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

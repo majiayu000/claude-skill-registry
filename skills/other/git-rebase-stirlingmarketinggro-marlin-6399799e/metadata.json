@@ -7,5 +7,12 @@
   "dir_name": "git-rebase-stirlingmarketinggro-marlin-6399799e",
   "category": "other",
   "github_path": ".claude/skills/git-rebase",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "StirlingMarketingGroup",
+  "source_url": "https://github.com/StirlingMarketingGroup/marlin/blob/main/.claude/skills/git-rebase/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/StirlingMarketingGroup/marlin/blob/main/.claude/skills/git-rebase/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

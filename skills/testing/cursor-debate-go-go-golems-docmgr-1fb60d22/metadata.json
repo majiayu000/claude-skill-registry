@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:10.929389Z",
   "github_path": ".codex/skills/cursor-debate",
   "github_branch": "main",
-  "dir_name": "cursor-debate-go-go-golems-docmgr-1fb60d22"
+  "dir_name": "cursor-debate-go-go-golems-docmgr-1fb60d22",
+  "author": "go-go-golems",
+  "source_url": "https://github.com/go-go-golems/docmgr/blob/main/.codex/skills/cursor-debate/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 Manuel Odendahl",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/council-router",
   "github_branch": "main",
-  "dir_name": "council-router-namastexlabs-automagik-genie"
+  "dir_name": "council-router-namastexlabs-automagik-genie",
+  "author": "namastexlabs",
+  "source_url": "https://github.com/namastexlabs/automagik-genie/blob/main/.claude/skills/council-router/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Automagik",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

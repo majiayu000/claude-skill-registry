@@ -10,5 +10,12 @@
   "stars": 5,
   "github_path": "convex-queries",
   "github_branch": "main",
-  "dir_name": "convex-queries-sstobo-convex-skills"
+  "dir_name": "convex-queries-sstobo-convex-skills",
+  "author": "Sstobo",
+  "source_url": "https://github.com/Sstobo/convex-skills/blob/main/convex-queries/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sstobo/convex-skills/blob/main/convex-queries/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

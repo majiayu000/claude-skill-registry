@@ -10,5 +10,12 @@
   ],
   "stars": 2,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "creating-agent-skills"
+  "dir_name": "creating-agent-skills",
+  "author": "camoneart",
+  "source_url": "https://github.com/camoneart/claude-code",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/camoneart/claude-code",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "commit-messages",
   "github_branch": "main",
-  "dir_name": "commit-messages"
+  "dir_name": "commit-messages",
+  "author": "rockorager",
+  "source_url": "https://github.com/rockorager/skills/blob/main/commit-messages/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tim Lucas",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

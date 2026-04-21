@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "drawing-canvas-implementation"
+  "dir_name": "drawing-canvas-implementation",
+  "author": "violabg",
+  "source_url": "https://github.com/violabg/pictionary-game",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/violabg/pictionary-game",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

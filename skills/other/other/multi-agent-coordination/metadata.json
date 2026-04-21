@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/intertwine/hive-orchestrator",
   "dir_name": "multi-agent-coordination",
-  "downloaded_at": "2026-02-15T07:35:22.434760Z"
+  "downloaded_at": "2026-02-15T07:35:22.434760Z",
+  "author": "intertwine",
+  "source_url": "https://github.com/intertwine/hive-orchestrator/blob/main/.opencode/skill/multi-agent-coordination/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Intertwine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

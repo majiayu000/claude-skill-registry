@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:33.513720Z",
   "dir_name": "parse-ad-requirements",
   "github_path": "src/plugins/parse-ad-requirements/skills/parse-ad-requirements",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "feed-mob",
+  "source_url": "https://github.com/feed-mob/feedmob-adpilot-mcp/blob/main/src/plugins/parse-ad-requirements/skills/parse-ad-requirements/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 FeedMob",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

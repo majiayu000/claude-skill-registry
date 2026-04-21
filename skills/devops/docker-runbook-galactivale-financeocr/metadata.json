@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:48.004230Z",
   "github_path": ".claude/skills/docker-runbook",
   "github_branch": "main",
-  "dir_name": "docker-runbook-galactivale-financeocr"
+  "dir_name": "docker-runbook-galactivale-financeocr",
+  "author": "galactivale",
+  "source_url": "https://github.com/galactivale/financeocr/blob/main/.claude/skills/docker-runbook/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Mauricio Siu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

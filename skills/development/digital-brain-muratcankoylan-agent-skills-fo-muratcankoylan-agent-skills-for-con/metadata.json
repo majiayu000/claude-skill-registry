@@ -7,5 +7,12 @@
   "stars": 7753,
   "source": "github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
   "downloaded_at": "2026-01-24T16:15:30.912198Z",
-  "dir_name": "digital-brain-muratcankoylan-agent-skills-fo-muratcankoylan-agent-skills-for-con"
+  "dir_name": "digital-brain-muratcankoylan-agent-skills-fo-muratcankoylan-agent-skills-for-con",
+  "author": "muratcankoylan",
+  "source_url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/blob/main/examples/digital-brain-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Context Engineering Agent Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

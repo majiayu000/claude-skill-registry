@@ -7,5 +7,12 @@
   "dir_name": "dart-test-dartsim-dart",
   "category": "other",
   "github_path": ".claude/skills/dart-test",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "dartsim",
+  "source_url": "https://github.com/dartsim/dart/blob/main/.claude/skills/dart-test/SKILL.md",
+  "license": "BSD-2-Clause",
+  "copyright": "Copyright (c) 2011-2016, Humanoid Lab, Georgia Tech Research Corporation",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

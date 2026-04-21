@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/BauplanLabs/bauplan-mcp-server",
   "dir_name": "root-cause-analysis-and-fix",
-  "downloaded_at": "2026-02-15T04:50:26.247149Z"
+  "downloaded_at": "2026-02-15T04:50:26.247149Z",
+  "author": "BauplanLabs",
+  "source_url": "https://github.com/BauplanLabs/bauplan-mcp-server/blob/main/skills/root-cause-analysis-and-fix/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Bauplan Labs",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

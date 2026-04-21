@@ -7,5 +7,12 @@
   "dir_name": "xiaohongshu-recruiter",
   "category": "other",
   "github_path": "skills/xiaohongshu-recruiter",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "iOfficeAI",
+  "source_url": "https://github.com/iOfficeAI/AionUi/blob/main/skills/xiaohongshu-recruiter/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 AionUi (aionui.com)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

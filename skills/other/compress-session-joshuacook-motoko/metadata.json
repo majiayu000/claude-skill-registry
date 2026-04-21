@@ -5,5 +5,12 @@
   "source": "github.com/joshuacook/motoko",
   "downloaded_at": "2026-01-29T06:05:51.670192Z",
   "dir_name": "compress-session-joshuacook-motoko",
-  "category": "other"
+  "category": "other",
+  "author": "joshuacook",
+  "source_url": "https://github.com/joshuacook/motoko/blob/main/.claude/skills/compress-session/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Joshua Cook",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

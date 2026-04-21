@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "context-pack"
+  "dir_name": "context-pack",
+  "author": "moumit-b",
+  "source_url": "https://github.com/moumit-b/Agentic-Comodity-Trading-System",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/moumit-b/Agentic-Comodity-Trading-System",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

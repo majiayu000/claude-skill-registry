@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:41.503698Z",
   "github_path": "skills/documentation/policyengine-design-skill",
   "github_branch": "main",
-  "dir_name": "policyengine-design-policyengine-policyengine-claude-f1feb72e"
+  "dir_name": "policyengine-design-policyengine-policyengine-claude-f1feb72e",
+  "author": "PolicyEngine",
+  "source_url": "https://github.com/PolicyEngine/policyengine-claude/blob/main/skills/documentation/policyengine-design-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 PolicyEngine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

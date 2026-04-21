@@ -7,5 +7,12 @@
   "dir_name": "stop-labring-fastgpt-04757e04",
   "category": "other",
   "github_path": ".claude/skills/core/app/workflow/stop",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "labring",
+  "source_url": "https://github.com/labring/FastGPT/blob/main/.claude/skills/core/app/workflow/stop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "© 2023 Sealos.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

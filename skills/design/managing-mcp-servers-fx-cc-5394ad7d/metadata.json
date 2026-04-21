@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:00.737621Z",
   "github_path": "plugins/fx-mcp/skills/managing-mcp-servers",
   "github_branch": "main",
-  "dir_name": "managing-mcp-servers-fx-cc-5394ad7d"
+  "dir_name": "managing-mcp-servers-fx-cc-5394ad7d",
+  "author": "fx",
+  "source_url": "https://github.com/fx/cc/blob/main/plugins/fx-mcp/skills/managing-mcp-servers/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Marian Rudzynski",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

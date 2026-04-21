@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "note-writer"
+  "dir_name": "note-writer",
+  "author": "u9401066",
+  "source_url": "https://github.com/u9401066/copilot-capability-manager",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 [Your Name or Organization]",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

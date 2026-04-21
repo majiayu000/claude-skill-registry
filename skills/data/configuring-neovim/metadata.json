@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "configuring-neovim"
+  "dir_name": "configuring-neovim",
+  "author": "johnnymo87",
+  "source_url": "https://github.com/johnnymo87/dotfiles",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2015 Jim Walker",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

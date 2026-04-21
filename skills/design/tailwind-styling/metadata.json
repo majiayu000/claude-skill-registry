@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "tailwind-styling"
+  "dir_name": "tailwind-styling",
+  "author": "jonit-dev",
+  "source_url": "https://github.com/jonit-dev/pixelperfect",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jonit-dev/pixelperfect",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

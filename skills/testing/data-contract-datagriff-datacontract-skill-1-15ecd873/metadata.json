@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:28.915964Z",
   "github_path": ".claude/skills/data-contract",
   "github_branch": "main",
-  "dir_name": "data-contract-datagriff-datacontract-skill-1-15ecd873"
+  "dir_name": "data-contract-datagriff-datacontract-skill-1-15ecd873",
+  "author": "dataGriff",
+  "source_url": "https://github.com/dataGriff/datacontract.skill.1/blob/main/.claude/skills/data-contract/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dataGriff/datacontract.skill.1/blob/main/.claude/skills/data-contract/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

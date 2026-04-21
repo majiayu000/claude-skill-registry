@@ -11,5 +11,12 @@
   "stars": 5,
   "dir_name": "convex-agents-threads",
   "github_path": "convex-agents-threads",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Sstobo",
+  "source_url": "https://github.com/Sstobo/convex-skills/blob/main/convex-agents-threads/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sstobo/convex-skills/blob/main/convex-agents-threads/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

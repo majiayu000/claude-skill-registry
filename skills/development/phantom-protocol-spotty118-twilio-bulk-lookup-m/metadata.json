@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/phantom-protocol",
   "github_branch": "main",
-  "dir_name": "phantom-protocol-spotty118-twilio-bulk-lookup-m"
+  "dir_name": "phantom-protocol-spotty118-twilio-bulk-lookup-m",
+  "author": "spotty118",
+  "source_url": "https://github.com/spotty118/twilio-bulk-lookup-master/blob/main/.claude/skills/phantom-protocol/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Charles Weems",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "supabase-react-best-practices"
+  "dir_name": "supabase-react-best-practices",
+  "author": "amo-tech-ai",
+  "source_url": "https://github.com/amo-tech-ai/event-studio",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/amo-tech-ai/event-studio",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

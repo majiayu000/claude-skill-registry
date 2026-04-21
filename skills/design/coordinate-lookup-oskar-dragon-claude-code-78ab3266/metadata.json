@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:27.390878Z",
   "github_path": "plugins/obsidian-location-notes/skills/coordinate-lookup",
   "github_branch": "main",
-  "dir_name": "coordinate-lookup-oskar-dragon-claude-code-78ab3266"
+  "dir_name": "coordinate-lookup-oskar-dragon-claude-code-78ab3266",
+  "author": "oskar-dragon",
+  "source_url": "https://github.com/oskar-dragon/claude-code/blob/main/plugins/obsidian-location-notes/skills/coordinate-lookup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oskar-dragon/claude-code/blob/main/plugins/obsidian-location-notes/skills/coordinate-lookup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:59.577374Z",
   "github_path": "plugins/conversation-log/skills/conversation-log",
   "github_branch": "main",
-  "dir_name": "conversation-log-axivo-claude"
+  "dir_name": "conversation-log-axivo-claude",
+  "author": "axivo",
+  "source_url": "https://github.com/axivo/claude/blob/main/plugins/conversation-log/skills/conversation-log/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2025, AXIVO",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -9,5 +9,12 @@
   ],
   "stars": 2,
   "source": "local",
-  "dir_name": "context-setter"
+  "dir_name": "context-setter",
+  "author": "j-greig",
+  "source_url": "https://github.com/j-greig/claude-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/j-greig/claude-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

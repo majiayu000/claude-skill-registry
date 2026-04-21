@@ -5,5 +5,12 @@
   "source": "github.com/METR/inspect-action",
   "downloaded_at": "2026-02-04T04:03:27.783739Z",
   "dir_name": "debug-stuck-eval",
-  "category": "data"
+  "category": "data",
+  "author": "METR",
+  "source_url": "https://github.com/METR/inspect-action/blob/main/.claude/skills/debug-stuck-eval/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 METR",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

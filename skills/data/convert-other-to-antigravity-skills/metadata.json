@@ -5,5 +5,12 @@
   "source": "github.com/lips85/antigravity-skills-bootstrap",
   "downloaded_at": "2026-01-27T01:14:59.072568Z",
   "dir_name": "convert-other-to-antigravity-skills",
-  "category": "data"
+  "category": "data",
+  "author": "lips85",
+  "source_url": "https://github.com/lips85/antigravity-skills-bootstrap/blob/main/skills/convert-other-to-antigravity-skills/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/ronnycoding/.claude",
   "downloaded_at": "2026-02-04T01:17:10.518086Z",
   "dir_name": "webgl-expert",
-  "category": "data"
+  "category": "data",
+  "author": "ronnycoding",
+  "source_url": "https://github.com/ronnycoding/.claude/blob/main/skills/webgl-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ronnycoding/.claude/blob/main/skills/webgl-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

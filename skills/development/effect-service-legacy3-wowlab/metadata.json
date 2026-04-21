@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/effect-service",
   "github_branch": "main",
-  "dir_name": "effect-service-legacy3-wowlab"
+  "dir_name": "effect-service-legacy3-wowlab",
+  "author": "legacy3",
+  "source_url": "https://github.com/legacy3/wowlab/blob/main/.claude/skills/effect-service/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/legacy3/wowlab/blob/main/.claude/skills/effect-service/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/PolicyEngine/policyengine-claude",
   "downloaded_at": "2026-01-29T07:06:36.294430Z",
   "dir_name": "policyengine-aggregation-skill-policyengine-policyengine-claude-92b4cd00",
-  "category": "other"
+  "category": "other",
+  "author": "PolicyEngine",
+  "source_url": "https://github.com/PolicyEngine/policyengine-claude/blob/main/skills/technical-patterns/policyengine-aggregation-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 PolicyEngine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

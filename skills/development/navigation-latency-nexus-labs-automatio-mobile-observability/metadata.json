@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/navigation-latency",
   "github_branch": "main",
-  "dir_name": "navigation-latency-nexus-labs-automatio-mobile-observability"
+  "dir_name": "navigation-latency-nexus-labs-automatio-mobile-observability",
+  "author": "nexus-labs-automation",
+  "source_url": "https://github.com/nexus-labs-automation/mobile-observability/blob/main/skills/navigation-latency/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Caleb / Nexus Labs",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

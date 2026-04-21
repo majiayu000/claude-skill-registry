@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/content-editing",
   "github_branch": "main",
-  "dir_name": "content-editing-azeem-2-final-docusarus"
+  "dir_name": "content-editing-azeem-2-final-docusarus",
+  "author": "Azeem-2",
+  "source_url": "https://github.com/Azeem-2/final-docusarus/blob/main/.claude/skills/content-editing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Azeem-2/final-docusarus/blob/main/.claude/skills/content-editing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

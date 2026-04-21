@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/component-slots",
   "github_branch": "main",
-  "dir_name": "component-slots"
+  "dir_name": "component-slots",
+  "author": "griffnb",
+  "source_url": "https://github.com/griffnb/assettradingdesk-ui/blob/main/.claude/skills/component-slots/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/griffnb/assettradingdesk-ui/blob/main/.claude/skills/component-slots/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

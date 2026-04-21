@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/changelog-updater",
   "github_branch": "main",
-  "dir_name": "changelog-updater"
+  "dir_name": "changelog-updater",
+  "author": "u9401066",
+  "source_url": "https://github.com/u9401066/copilot-capability-manager/blob/main/.claude/skills/changelog-updater/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 [Your Name or Organization]",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

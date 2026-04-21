@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:31.810705Z",
   "github_path": "creative-writing-skills/cw-official-docs",
   "github_branch": "main",
-  "dir_name": "cw-official-docs-haowjy-creative-writing-ski"
+  "dir_name": "cw-official-docs-haowjy-creative-writing-ski",
+  "author": "haowjy",
+  "source_url": "https://github.com/haowjy/creative-writing-skills/blob/main/creative-writing-skills/cw-official-docs/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/haowjy/creative-writing-skills/blob/main/creative-writing-skills/cw-official-docs/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

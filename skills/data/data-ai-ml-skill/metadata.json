@@ -5,5 +5,12 @@
   "description": "Master machine learning, data engineering, AI engineering, MLOps, and prompt engineering. Build intelligent systems from data pipelines to production AI applications with LLMs, agents, and modern fram",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:46.027289Z",
-  "dir_name": "data-ai-ml-skill"
+  "dir_name": "data-ai-ml-skill",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-nextjs",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

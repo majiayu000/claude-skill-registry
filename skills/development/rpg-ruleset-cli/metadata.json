@@ -10,5 +10,12 @@
   ],
   "stars": 1,
   "source": "local",
-  "dir_name": "rpg-ruleset-cli"
+  "dir_name": "rpg-ruleset-cli",
+  "author": "saw235",
+  "source_url": "https://github.com/saw235/haskell-monorepo",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/saw235/haskell-monorepo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

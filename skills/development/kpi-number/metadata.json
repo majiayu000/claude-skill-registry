@@ -5,5 +5,12 @@
   "description": "Configure KPI number displays in drizzle-cube dashboards for showing single metric values with formatting. Use when displaying KPIs, single numbers, metrics, totals, or key performance indicators.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:34.695767Z",
-  "dir_name": "kpi-number"
+  "dir_name": "kpi-number",
+  "author": "cliftonc",
+  "source_url": "https://github.com/cliftonc/drizzle-cube-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cliftonc/drizzle-cube-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

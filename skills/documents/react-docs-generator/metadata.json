@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/react-docs-generator",
   "github_branch": "master",
-  "dir_name": "react-docs-generator"
+  "dir_name": "react-docs-generator",
+  "author": "daangn",
+  "source_url": "https://github.com/daangn/seed-design/blob/master/.claude/skills/react-docs-generator/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2021 Danggeun Market Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Design system for the CERN Particle Detector aesthetic. Use when building UI components, styling elements, or implementing the detector workstation interface.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:18.230460Z",
-  "dir_name": "cern-detector-ui-nategarelik-composition"
+  "dir_name": "cern-detector-ui-nategarelik-composition",
+  "author": "nategarelik",
+  "source_url": "https://github.com/nategarelik/composition",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nategarelik/composition",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

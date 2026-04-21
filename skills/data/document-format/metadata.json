@@ -5,5 +5,12 @@
   "source": "github.com/leto-labs/jarvis-template",
   "downloaded_at": "2026-01-30T03:42:58.378735Z",
   "dir_name": "document-format",
-  "category": "data"
+  "category": "data",
+  "author": "leto-labs",
+  "source_url": "https://github.com/leto-labs/jarvis-template/blob/main/.claude/skills/document-format/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/leto-labs/jarvis-template/blob/main/.claude/skills/document-format/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

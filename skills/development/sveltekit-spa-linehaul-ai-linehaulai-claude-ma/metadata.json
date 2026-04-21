@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:23.542981Z",
   "github_path": "plugins/sveltekit-spa",
   "github_branch": "main",
-  "dir_name": "sveltekit-spa-linehaul-ai-linehaulai-claude-ma"
+  "dir_name": "sveltekit-spa-linehaul-ai-linehaulai-claude-ma",
+  "author": "linehaul-ai",
+  "source_url": "https://github.com/linehaul-ai/linehaulai-claude-marketplace/blob/main/plugins/sveltekit-spa/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 fakebizprez",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

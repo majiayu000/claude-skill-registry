@@ -10,5 +10,12 @@
   ],
   "stars": 22,
   "source": "local",
-  "dir_name": "update-ignored-endpoints"
+  "dir_name": "update-ignored-endpoints",
+  "author": "umbraco",
+  "source_url": "https://github.com/umbraco/Umbraco-CMS-MCP-Dev",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-present Umbraco",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

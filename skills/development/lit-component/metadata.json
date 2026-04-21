@@ -9,5 +9,12 @@
   ],
   "stars": 23,
   "source": "local",
-  "dir_name": "lit-component"
+  "dir_name": "lit-component",
+  "author": "commontoolsinc",
+  "source_url": "https://github.com/commontoolsinc/labs",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/commontoolsinc/labs",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

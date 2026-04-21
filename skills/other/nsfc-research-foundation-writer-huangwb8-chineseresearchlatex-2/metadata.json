@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/huangwb8/ChineseResearchLaTeX",
-  "dir_name": "nsfc-research-foundation-writer-huangwb8-chineseresearchlatex-2"
+  "dir_name": "nsfc-research-foundation-writer-huangwb8-chineseresearchlatex-2",
+  "author": "huangwb8",
+  "source_url": "https://github.com/huangwb8/ChineseResearchLaTeX/blob/main/skills/nsfc-research-foundation-writer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright © 2024 Weibin Huang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

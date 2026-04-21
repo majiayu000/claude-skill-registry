@@ -5,5 +5,12 @@
   "description": "Creates bauplan data pipeline projects with SQL and Python models. Use when starting a new pipeline, defining DAG transformations, writing models, or setting up bauplan project structure from scratch.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:23.291938Z",
-  "dir_name": "creating-bauplan-pipelines"
+  "dir_name": "creating-bauplan-pipelines",
+  "author": "BauplanLabs",
+  "source_url": "https://github.com/BauplanLabs/bauplan-mcp-server",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Bauplan Labs",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/dejanvasic85/williamstownsc",
   "downloaded_at": "2026-02-04T03:24:17.861908Z",
   "dir_name": "daisy-ui",
-  "category": "data"
+  "category": "data",
+  "author": "dejanvasic85",
+  "source_url": "https://github.com/dejanvasic85/williamstownsc/blob/main/.claude/skills/daisy-ui/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dejanvasic85/williamstownsc/blob/main/.claude/skills/daisy-ui/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

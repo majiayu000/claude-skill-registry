@@ -5,5 +5,12 @@
   "source": "github.com/T-Klug/aws-cur-report-generator",
   "downloaded_at": "2026-02-02T01:39:43.136654Z",
   "dir_name": "visualization-t-klug-aws-cur-report-gener",
-  "category": "other"
+  "category": "other",
+  "author": "T-Klug",
+  "source_url": "https://github.com/T-Klug/aws-cur-report-generator/blob/main/.claude/skills/visualization/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 AWS CUR Report Generator Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

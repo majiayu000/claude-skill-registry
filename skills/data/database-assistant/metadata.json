@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "database-assistant",
   "github_path": "skills/database-assistant",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "always-further",
+  "source_url": "https://github.com/always-further/claude-extensions/blob/main/skills/database-assistant/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Always Further",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

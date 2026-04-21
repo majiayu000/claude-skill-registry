@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:44.717923Z",
   "github_path": ".claude/skills/looplia-e2e",
   "github_branch": "main",
-  "dir_name": "looplia-e2e-memorysaver-looplia-core"
+  "dir_name": "looplia-e2e-memorysaver-looplia-core",
+  "author": "memorysaver",
+  "source_url": "https://github.com/memorysaver/looplia-core/blob/main/.claude/skills/looplia-e2e/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/memorysaver/looplia-core/blob/main/.claude/skills/looplia-e2e/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

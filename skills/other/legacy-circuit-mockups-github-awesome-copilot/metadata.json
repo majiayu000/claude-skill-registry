@@ -5,5 +5,12 @@
   "source": "github.com/github/awesome-copilot",
   "downloaded_at": "2026-01-29T05:30:07.611128Z",
   "dir_name": "legacy-circuit-mockups-github-awesome-copilot",
-  "category": "other"
+  "category": "other",
+  "author": "github",
+  "source_url": "https://github.com/github/awesome-copilot/blob/main/skills/legacy-circuit-mockups/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/github/awesome-copilot/blob/main/skills/legacy-circuit-mockups/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

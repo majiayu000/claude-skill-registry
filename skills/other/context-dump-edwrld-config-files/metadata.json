@@ -7,5 +7,12 @@
   "dir_name": "context-dump-edwrld-config-files",
   "category": "other",
   "github_path": "skills/context-dump",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "EdWrld",
+  "source_url": "https://github.com/EdWrld/config.files/blob/main/skills/context-dump/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Edwrld",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

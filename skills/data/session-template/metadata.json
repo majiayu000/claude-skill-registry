@@ -5,5 +5,12 @@
   "source": "github.com/Atyantik/python-modern-template",
   "downloaded_at": "2026-02-04T05:00:27.233251Z",
   "dir_name": "session-template",
-  "category": "data"
+  "category": "data",
+  "author": "Atyantik",
+  "source_url": "https://github.com/Atyantik/python-modern-template/blob/main/template/.claude/skills/session-template/SKILL.md.jinja/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Atyantik Technologies Private Limited",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

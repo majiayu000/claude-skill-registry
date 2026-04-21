@@ -5,5 +5,12 @@
   "description": "[TODO: Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios, file types, or tasks that trigger it.]",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:33.830196Z",
-  "dir_name": "story-design"
+  "dir_name": "story-design",
+  "author": "Mharbulous",
+  "source_url": "https://github.com/Mharbulous/SyncoPaid",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Mharbulous/SyncoPaid",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

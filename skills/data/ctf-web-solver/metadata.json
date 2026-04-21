@@ -5,5 +5,12 @@
   "description": "当用户正在进行 CTF 比赛或练习，遇到 Web 类型题目时触发此 Skill。适用场景包括：- 用户描述了 SQL 注入、XSS、SSRF、SSTI、XXE、文件包含、命令执行等 Web 安全问题- 用户需要进行信息搜集、目录扫描、端口扫描等渗透前期工作- 用户遇到 PHP 特性利用、反序列化、JWT 伪造等高级攻击场景- 用户提及 \"CTF\"、\"Web\"、\"渗透\"、\"注入\"、\"绕过\"、\"漏洞\"",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:22.394056Z",
-  "dir_name": "ctf-web-solver"
+  "dir_name": "ctf-web-solver",
+  "author": "Tokeii0",
+  "source_url": "https://github.com/Tokeii0/CTFskill",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tokeii0/CTFskill",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

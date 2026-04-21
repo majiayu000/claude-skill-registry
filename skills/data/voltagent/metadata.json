@@ -5,5 +5,12 @@
   "source": "github.com/colinmollenhour/dotfiles",
   "downloaded_at": "2026-02-02T01:04:29.818827Z",
   "dir_name": "voltagent",
-  "category": "data"
+  "category": "data",
+  "author": "colinmollenhour",
+  "source_url": "https://github.com/colinmollenhour/dotfiles/blob/main/.claude/skills/voltagent/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/colinmollenhour/dotfiles/blob/main/.claude/skills/voltagent/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

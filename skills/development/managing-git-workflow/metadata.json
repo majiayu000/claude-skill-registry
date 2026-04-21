@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "managing-git-workflow"
+  "dir_name": "managing-git-workflow",
+  "author": "ether-moon",
+  "source_url": "https://github.com/ether-moon/skill-set",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ether-moon",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

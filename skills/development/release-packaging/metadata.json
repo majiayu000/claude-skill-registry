@@ -5,5 +5,12 @@
   "description": "Package and release the .NET 8 WPF widget host app using MSIX or ClickOnce. Use when configuring installers, signing, update channels, and publishing release artifacts.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:09:39.734220Z",
-  "dir_name": "release-packaging"
+  "dir_name": "release-packaging",
+  "author": "YosrBennagra",
+  "source_url": "https://github.com/YosrBennagra/3SC",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/YosrBennagra/3SC",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

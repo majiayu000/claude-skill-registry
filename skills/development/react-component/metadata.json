@@ -10,5 +10,12 @@
   "stars": 3,
   "github_path": "skills/react-component",
   "github_branch": "main",
-  "dir_name": "react-component"
+  "dir_name": "react-component",
+  "author": "vapvarun",
+  "source_url": "https://github.com/vapvarun/claude-backup/blob/main/skills/react-component/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vapvarun/claude-backup/blob/main/skills/react-component/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

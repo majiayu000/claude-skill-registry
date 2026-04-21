@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:38.669296Z",
   "dir_name": "nx-tools",
   "github_path": ".claude/skills/nx-tools",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "bsamiee",
+  "source_url": "https://github.com/bsamiee/Parametric_Portal/blob/main/.claude/skills/nx-tools/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 bsamiee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

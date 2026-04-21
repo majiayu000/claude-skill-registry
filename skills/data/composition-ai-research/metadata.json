@@ -5,5 +5,12 @@
   "description": "Research product compositions using AI and web sources. Use when needing to find what products, substances, or objects are made of - including ingredients, materials, chemicals, and elements. Essentia",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:17.652528Z",
-  "dir_name": "composition-ai-research"
+  "dir_name": "composition-ai-research",
+  "author": "nategarelik",
+  "source_url": "https://github.com/nategarelik/composition",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nategarelik/composition",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

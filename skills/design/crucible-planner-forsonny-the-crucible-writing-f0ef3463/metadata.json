@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/crucible-planner",
   "github_branch": "main",
-  "dir_name": "crucible-planner-forsonny-the-crucible-writing-f0ef3463"
+  "dir_name": "crucible-planner-forsonny-the-crucible-writing-f0ef3463",
+  "author": "forsonny",
+  "source_url": "https://github.com/forsonny/The-Crucible-Writing-System-For-Claude/blob/main/skills/crucible-planner/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Crucible Writing System",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

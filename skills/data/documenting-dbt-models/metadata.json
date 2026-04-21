@@ -5,5 +5,12 @@
   "source": "github.com/AltimateAI/data-engineering-skills",
   "downloaded_at": "2026-02-04T05:03:27.304316Z",
   "dir_name": "documenting-dbt-models",
-  "category": "data"
+  "category": "data",
+  "author": "AltimateAI",
+  "source_url": "https://github.com/AltimateAI/data-engineering-skills/blob/main/skills/dbt/documenting-dbt-models/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 AltimateAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

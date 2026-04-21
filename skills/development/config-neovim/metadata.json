@@ -9,5 +9,12 @@
   ],
   "stars": 12,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "config-neovim"
+  "dir_name": "config-neovim",
+  "author": "TwIStOy",
+  "source_url": "https://github.com/TwIStOy/dotvim",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 Hawtian Wang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

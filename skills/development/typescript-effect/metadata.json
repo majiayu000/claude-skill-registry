@@ -5,5 +5,12 @@
   "description": "Enforces functional TypeScript patterns with Effect ecosystem. Use when (1) writing TypeScript functions or modules, (2) defining types or schemas, (3) handling errors or async operations, (4) structu",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:01:39.218778Z",
-  "dir_name": "typescript-effect"
+  "dir_name": "typescript-effect",
+  "author": "bsamiee",
+  "source_url": "https://github.com/bsamiee/Parametric_Portal",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 bsamiee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

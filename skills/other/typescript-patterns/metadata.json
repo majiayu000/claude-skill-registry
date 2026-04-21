@@ -5,5 +5,12 @@
   "source": "github.com/cliangdev/specflux",
   "downloaded_at": "2026-01-29T08:22:15.023859Z",
   "dir_name": "typescript-patterns",
-  "category": "other"
+  "category": "other",
+  "author": "cliangdev",
+  "source_url": "https://github.com/cliangdev/specflux/blob/main/src/templates/files/skills/typescript-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cliangdev/specflux/blob/main/src/templates/files/skills/typescript-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

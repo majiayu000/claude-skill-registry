@@ -7,5 +7,12 @@
   "dir_name": "policyengine-uk-data-skill",
   "category": "other",
   "github_path": "skills/data-science/policyengine-uk-data-skill",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "PolicyEngine",
+  "source_url": "https://github.com/PolicyEngine/policyengine-claude/blob/main/skills/data-science/policyengine-uk-data-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 PolicyEngine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

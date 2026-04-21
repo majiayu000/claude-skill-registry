@@ -7,5 +7,12 @@
   "dir_name": "wap-bauplanlabs-bauplan-mcp-server",
   "category": "other",
   "github_path": "skills/wap",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "BauplanLabs",
+  "source_url": "https://github.com/BauplanLabs/bauplan-mcp-server/blob/main/skills/wap/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Bauplan Labs",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

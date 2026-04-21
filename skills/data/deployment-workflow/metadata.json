@@ -5,5 +5,12 @@
   "source": "github.com/Acurioustractor/empathy-ledger-v2",
   "downloaded_at": "2026-01-29T02:36:18.211148Z",
   "dir_name": "deployment-workflow",
-  "category": "data"
+  "category": "data",
+  "author": "Acurioustractor",
+  "source_url": "https://github.com/Acurioustractor/empathy-ledger-v2/blob/main/.claude/skills/local/deployment-workflow/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Acurioustractor/empathy-ledger-v2/blob/main/.claude/skills/local/deployment-workflow/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

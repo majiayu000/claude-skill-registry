@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/composable-svelte-core",
   "github_branch": "main",
-  "dir_name": "composable-svelte-core-jonathanbelolo-composable-svelte"
+  "dir_name": "composable-svelte-core-jonathanbelolo-composable-svelte",
+  "author": "jonathanbelolo",
+  "source_url": "https://github.com/jonathanbelolo/composable-svelte/blob/main/.claude/skills/composable-svelte-core/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jonathanbelolo/composable-svelte/blob/main/.claude/skills/composable-svelte-core/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

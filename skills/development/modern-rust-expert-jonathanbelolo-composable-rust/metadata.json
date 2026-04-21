@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": ".claude/skills/modern-rust-expert",
   "github_branch": "main",
-  "dir_name": "modern-rust-expert-jonathanbelolo-composable-rust"
+  "dir_name": "modern-rust-expert-jonathanbelolo-composable-rust",
+  "author": "jonathanbelolo",
+  "source_url": "https://github.com/jonathanbelolo/composable-rust/blob/main/.claude/skills/modern-rust-expert/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Composable Rust Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "stars": 9,
   "source": "github.com/matsuni-kk/agent_template_public",
   "downloaded_at": "2026-01-24T16:15:27.486116Z",
-  "dir_name": "domain-skills-generate-matsuni-kk-agent-template-publi"
+  "dir_name": "domain-skills-generate-matsuni-kk-agent-template-publi",
+  "author": "matsuni-kk",
+  "source_url": "https://github.com/matsuni-kk/agent_template_public/blob/main/.codex/skills/domain-skills-generate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "© 2025 國松 憂魁 (Yukai Kunimatsu)",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

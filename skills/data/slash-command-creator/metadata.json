@@ -5,5 +5,12 @@
   "source": "github.com/putto11262002/jimmodel",
   "downloaded_at": "2026-02-04T01:47:31.169273Z",
   "dir_name": "slash-command-creator",
-  "category": "data"
+  "category": "data",
+  "author": "putto11262002",
+  "source_url": "https://github.com/putto11262002/jimmodel/blob/main/.claude/skills/slash-command-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/putto11262002/jimmodel/blob/main/.claude/skills/slash-command-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:12.410430Z",
   "github_path": "skills/traditional/insurance-underwriter",
   "github_branch": "main",
-  "dir_name": "insurance-underwriter-selfdriven-octo-skillzeb"
+  "dir_name": "insurance-underwriter-selfdriven-octo-skillzeb",
+  "author": "selfdriven-octo",
+  "source_url": "https://github.com/selfdriven-octo/skillzeb/blob/main/skills/traditional/insurance-underwriter/SKILL.md",
+  "license": "CC0-1.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/selfdriven-octo/skillzeb/blob/main/skills/traditional/insurance-underwriter/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

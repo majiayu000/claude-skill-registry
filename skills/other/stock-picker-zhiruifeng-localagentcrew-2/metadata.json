@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/ZhiruiFeng/LocalAgentCrew",
-  "dir_name": "stock-picker-zhiruifeng-localagentcrew-2"
+  "dir_name": "stock-picker-zhiruifeng-localagentcrew-2",
+  "author": "ZhiruiFeng",
+  "source_url": "https://github.com/ZhiruiFeng/LocalAgentCrew/blob/main/.claude/skills/stock-picker/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Zhirui Feng",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

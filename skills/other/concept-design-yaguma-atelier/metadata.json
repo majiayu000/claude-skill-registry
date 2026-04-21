@@ -5,5 +5,12 @@
   "source": "github.com/yaguma/atelier",
   "downloaded_at": "2026-01-29T06:58:08.295577Z",
   "dir_name": "concept-design-yaguma-atelier",
-  "category": "other"
+  "category": "other",
+  "author": "yaguma",
+  "source_url": "https://github.com/yaguma/atelier/blob/main/.claude/skills/concept-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Atelier Project",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

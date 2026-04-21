@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:51.241129Z",
   "github_path": ".config/opencode/skill/web-tester",
   "github_branch": "main",
-  "dir_name": "web-tester-alexismanuel-dotfiles-b498b78c"
+  "dir_name": "web-tester-alexismanuel-dotfiles-b498b78c",
+  "author": "alexismanuel",
+  "source_url": "https://github.com/alexismanuel/dotfiles/blob/main/.config/opencode/skill/web-tester/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexismanuel/dotfiles/blob/main/.config/opencode/skill/web-tester/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/zhu1090093659/CodeConductor",
   "downloaded_at": "2026-01-29T06:59:14.427043Z",
   "dir_name": "create-assistant-zhu1090093659-codeconductor",
-  "category": "other"
+  "category": "other",
+  "author": "zhu1090093659",
+  "source_url": "https://github.com/zhu1090093659/CodeConductor/blob/main/skills/create-assistant/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 CodeConductor (CodeConductor.com)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

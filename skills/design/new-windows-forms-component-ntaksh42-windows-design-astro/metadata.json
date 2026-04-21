@@ -5,5 +5,12 @@
   "description": "Windows Forms風のAstroコンポーネントとデモページを一貫性を持って自動生成します。コンポーネント名を指定すると、.astroファイル、デモページ、ナビゲーションリンクを自動作成します。",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:23.924909Z",
-  "dir_name": "new-windows-forms-component-ntaksh42-windows-design-astro"
+  "dir_name": "new-windows-forms-component-ntaksh42-windows-design-astro",
+  "author": "ntaksh42",
+  "source_url": "https://github.com/ntaksh42/windows-design-astro-components",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ntaksh42/windows-design-astro-components",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

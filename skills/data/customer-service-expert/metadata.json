@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "customer-service-expert"
+  "dir_name": "customer-service-expert",
+  "author": "GitHamza0206",
+  "source_url": "https://github.com/GitHamza0206/simba",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GitHamza0206/simba",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

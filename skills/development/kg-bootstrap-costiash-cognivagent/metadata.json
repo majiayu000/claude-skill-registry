@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:27.896884Z",
   "github_path": "app/agent/resources/.claude/skills/kg-bootstrap",
   "github_branch": "main",
-  "dir_name": "kg-bootstrap-costiash-cognivagent"
+  "dir_name": "kg-bootstrap-costiash-cognivagent",
+  "author": "costiash",
+  "source_url": "https://github.com/costiash/CognivAgent/blob/main/app/agent/resources/.claude/skills/kg-bootstrap/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2024 CognivAgent Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

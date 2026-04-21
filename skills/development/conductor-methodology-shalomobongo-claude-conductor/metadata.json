@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/conductor-methodology",
   "github_branch": "main",
-  "dir_name": "conductor-methodology-shalomobongo-claude-conductor"
+  "dir_name": "conductor-methodology-shalomobongo-claude-conductor",
+  "author": "ShalomObongo",
+  "source_url": "https://github.com/ShalomObongo/claude-conductor/blob/main/skills/conductor-methodology/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ShalomObongo/claude-conductor/blob/main/skills/conductor-methodology/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

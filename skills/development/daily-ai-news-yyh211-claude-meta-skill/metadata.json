@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "daily-ai-news",
   "github_branch": "main",
-  "dir_name": "daily-ai-news-yyh211-claude-meta-skill"
+  "dir_name": "daily-ai-news-yyh211-claude-meta-skill",
+  "author": "YYH211",
+  "source_url": "https://github.com/YYH211/Claude-meta-skill/blob/main/daily-ai-news/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/YYH211/Claude-meta-skill/blob/main/daily-ai-news/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

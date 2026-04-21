@@ -5,5 +5,12 @@
   "source": "github.com/ryoppippi/dotfiles",
   "downloaded_at": "2026-01-31T01:19:51.835787Z",
   "dir_name": "merge-main",
-  "category": "other"
+  "category": "other",
+  "author": "ryoppippi",
+  "source_url": "https://github.com/ryoppippi/dotfiles/blob/main/agents/skills/merge-main/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Ryotaro \"Justin\" Kimura",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

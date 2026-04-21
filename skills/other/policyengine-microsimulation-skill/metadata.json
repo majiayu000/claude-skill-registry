@@ -7,5 +7,12 @@
   "dir_name": "policyengine-microsimulation-skill",
   "category": "other",
   "github_path": "skills/tools-and-apis/policyengine-microsimulation-skill",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "PolicyEngine",
+  "source_url": "https://github.com/PolicyEngine/policyengine-claude/blob/main/skills/tools-and-apis/policyengine-microsimulation-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 PolicyEngine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

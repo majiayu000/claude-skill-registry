@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/add-dependency",
   "github_branch": "main",
-  "dir_name": "add-dependency-anysoftkeyboard-janus"
+  "dir_name": "add-dependency-anysoftkeyboard-janus",
+  "author": "AnySoftKeyboard",
+  "source_url": "https://github.com/AnySoftKeyboard/janus/blob/main/.claude/skills/add-dependency/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AnySoftKeyboard/janus/blob/main/.claude/skills/add-dependency/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

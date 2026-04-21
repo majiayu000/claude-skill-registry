@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "news-summary"
+  "dir_name": "news-summary",
+  "author": "aikdeirel",
+  "source_url": "https://github.com/aikdeirel/daily-pulse-chatbot",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2024 Vercel, Inc.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

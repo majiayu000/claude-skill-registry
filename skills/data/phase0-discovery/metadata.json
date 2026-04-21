@@ -5,5 +5,12 @@
   "source": "github.com/turbobeest/squawk",
   "downloaded_at": "2026-02-04T02:24:35.423035Z",
   "dir_name": "phase0-discovery",
-  "category": "data"
+  "category": "data",
+  "author": "turbobeest",
+  "source_url": "https://github.com/turbobeest/squawk/blob/main/.claude/skills/phase0-discovery/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/turbobeest/squawk/blob/main/.claude/skills/phase0-discovery/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

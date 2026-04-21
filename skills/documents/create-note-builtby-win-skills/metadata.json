@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:47.651341Z",
   "github_path": "plugins/note/skills/create-note",
   "github_branch": "main",
-  "dir_name": "create-note-builtby-win-skills"
+  "dir_name": "create-note-builtby-win-skills",
+  "author": "builtby-win",
+  "source_url": "https://github.com/builtby-win/skills/blob/main/plugins/note/skills/create-note/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Winston Zhao",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

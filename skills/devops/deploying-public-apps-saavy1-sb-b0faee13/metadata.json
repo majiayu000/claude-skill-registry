@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:02.247558Z",
   "github_path": "docs/.claude/skills/deploying-public-apps",
   "github_branch": "main",
-  "dir_name": "deploying-public-apps-saavy1-sb-b0faee13"
+  "dir_name": "deploying-public-apps-saavy1-sb-b0faee13",
+  "author": "saavy1",
+  "source_url": "https://github.com/saavy1/sb/blob/main/docs/.claude/skills/deploying-public-apps/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/saavy1/sb/blob/main/docs/.claude/skills/deploying-public-apps/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

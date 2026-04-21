@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:44.580286Z",
   "github_path": ".claude/skills/damage-control",
   "github_branch": "main",
-  "dir_name": "damage-control-disler-claude-code-damage-c"
+  "dir_name": "damage-control-disler-claude-code-damage-c",
+  "author": "disler",
+  "source_url": "https://github.com/disler/claude-code-damage-control/blob/main/.claude/skills/damage-control/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/disler/claude-code-damage-control/blob/main/.claude/skills/damage-control/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

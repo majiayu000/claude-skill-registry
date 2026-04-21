@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:42.026973Z",
   "github_path": "skills/technical-patterns/policyengine-testing-patterns-skill",
   "github_branch": "main",
-  "dir_name": "policyengine-testing-patterns-policyengine-policyengine-claude-78feebd4"
+  "dir_name": "policyengine-testing-patterns-policyengine-policyengine-claude-78feebd4",
+  "author": "PolicyEngine",
+  "source_url": "https://github.com/PolicyEngine/policyengine-claude/blob/main/skills/technical-patterns/policyengine-testing-patterns-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 PolicyEngine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

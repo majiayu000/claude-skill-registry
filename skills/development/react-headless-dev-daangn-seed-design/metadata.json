@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/react-headless-dev",
   "github_branch": "master",
-  "dir_name": "react-headless-dev-daangn-seed-design"
+  "dir_name": "react-headless-dev-daangn-seed-design",
+  "author": "daangn",
+  "source_url": "https://github.com/daangn/seed-design/blob/master/.claude/skills/react-headless-dev/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2021 Danggeun Market Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

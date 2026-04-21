@@ -10,5 +10,12 @@
   "stars": 2,
   "github_path": "skills/refining-requirements",
   "github_branch": "main",
-  "dir_name": "refining-requirements-galihcitta-dotclaudeskills-ef7b2305"
+  "dir_name": "refining-requirements-galihcitta-dotclaudeskills-ef7b2305",
+  "author": "galihcitta",
+  "source_url": "https://github.com/galihcitta/dotclaudeskills/blob/main/skills/refining-requirements/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Galih Citta",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

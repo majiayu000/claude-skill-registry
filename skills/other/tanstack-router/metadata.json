@@ -7,5 +7,12 @@
   "dir_name": "tanstack-router",
   "category": "other",
   "github_path": ".claude/skills/tanstack-router",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "oriolrius",
+  "source_url": "https://github.com/oriolrius/pki-manager-web/blob/main/.claude/skills/tanstack-router/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 PKI Manager Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

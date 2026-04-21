@@ -9,5 +9,12 @@
   ],
   "stars": 7,
   "source": "local",
-  "dir_name": "council-orchestrator"
+  "dir_name": "council-orchestrator",
+  "author": "xrf9268-hue",
+  "source_url": "https://github.com/xrf9268-hue/llm-council-plugin",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/xrf9268-hue/llm-council-plugin",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/USW-Circle-Link/USW-Circle-Link-APP",
   "downloaded_at": "2026-02-04T02:24:15.720332Z",
   "dir_name": "component-usage",
-  "category": "data"
+  "category": "data",
+  "author": "USW-Circle-Link",
+  "source_url": "https://github.com/USW-Circle-Link/USW-Circle-Link-APP/blob/main/.claude/skills/component-usage/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/USW-Circle-Link/USW-Circle-Link-APP/blob/main/.claude/skills/component-usage/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

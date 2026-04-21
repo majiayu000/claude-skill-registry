@@ -5,5 +5,12 @@
   "source": "github.com/DasBluEyedDevil/Daem0n-MCP",
   "downloaded_at": "2026-01-29T02:47:53.349009Z",
   "dir_name": "openspec-daem0n-bridge",
-  "category": "other"
+  "category": "other",
+  "author": "DasBluEyedDevil",
+  "source_url": "https://github.com/DasBluEyedDevil/Daem0n-MCP/blob/main/.claude/skills/openspec-daem0n-bridge/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 DasBluEyedDevil",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

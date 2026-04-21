@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/littlebearapps/cloudflare-engineer",
-  "dir_name": "media-streaming-littlebearapps-cloudflare-engineer-2"
+  "dir_name": "media-streaming-littlebearapps-cloudflare-engineer-2",
+  "author": "littlebearapps",
+  "source_url": "https://github.com/littlebearapps/cloudflare-engineer/blob/main/skills/media-streaming/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/littlebearapps/cloudflare-engineer/blob/main/skills/media-streaming/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

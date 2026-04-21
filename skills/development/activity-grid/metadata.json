@@ -5,5 +5,12 @@
   "description": "Configure activity grid heatmaps in drizzle-cube dashboards for GitHub-style contribution visualizations. Use when creating activity grids, heatmaps, contribution calendars, or daily activity patterns",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:34.216190Z",
-  "dir_name": "activity-grid"
+  "dir_name": "activity-grid",
+  "author": "cliftonc",
+  "source_url": "https://github.com/cliftonc/drizzle-cube-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cliftonc/drizzle-cube-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

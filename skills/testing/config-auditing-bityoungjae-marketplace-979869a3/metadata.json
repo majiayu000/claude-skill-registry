@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:12.380309Z",
   "github_path": "plugins/nvim-doctor/skills/config-auditing",
   "github_branch": "main",
-  "dir_name": "config-auditing-bityoungjae-marketplace-979869a3"
+  "dir_name": "config-auditing-bityoungjae-marketplace-979869a3",
+  "author": "BitYoungjae",
+  "source_url": "https://github.com/BitYoungjae/marketplace/blob/main/plugins/nvim-doctor/skills/config-auditing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 BitYoungjae",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

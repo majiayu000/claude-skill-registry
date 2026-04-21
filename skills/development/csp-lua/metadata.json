@@ -9,5 +9,12 @@
   ],
   "stars": 2,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "csp-lua"
+  "dir_name": "csp-lua",
+  "author": "tobi",
+  "source_url": "https://github.com/tobi/ac-tracer",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tobi/ac-tracer",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

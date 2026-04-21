@@ -7,5 +7,12 @@
   "dir_name": "content-seeder",
   "category": "other",
   "github_path": "skills/content-seeder",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "nhantran889",
+  "source_url": "https://github.com/nhantran889/theme-kit/blob/main/skills/content-seeder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nhantran889/theme-kit/blob/main/skills/content-seeder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:42.948758Z",
   "github_path": "learnfrompast/skills/workflow-analyzer",
   "github_branch": "main",
-  "dir_name": "workflow-analyzer"
+  "dir_name": "workflow-analyzer",
+  "author": "princespaghetti",
+  "source_url": "https://github.com/princespaghetti/claude-marketplace/blob/main/learnfrompast/skills/workflow-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Anthony Barbieri",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

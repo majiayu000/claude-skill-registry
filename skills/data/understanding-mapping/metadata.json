@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "understanding-mapping",
   "github_path": "skills/understanding-mapping",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "elbwalker",
+  "source_url": "https://github.com/elbwalker/walkerOS/blob/main/skills/understanding-mapping/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 elbWalker GmbH",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

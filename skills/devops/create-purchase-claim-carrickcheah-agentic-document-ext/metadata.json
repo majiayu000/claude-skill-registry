@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:22.214201Z",
   "github_path": "backend/ai-doc-processing/skills/purchasing/create-purchase-claim",
   "github_branch": "main",
-  "dir_name": "create-purchase-claim-carrickcheah-agentic-document-ext"
+  "dir_name": "create-purchase-claim-carrickcheah-agentic-document-ext",
+  "author": "carrickcheah",
+  "source_url": "https://github.com/carrickcheah/agentic-document-extraction/blob/main/backend/ai-doc-processing/skills/purchasing/create-purchase-claim/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/carrickcheah/agentic-document-extraction/blob/main/backend/ai-doc-processing/skills/purchasing/create-purchase-claim/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

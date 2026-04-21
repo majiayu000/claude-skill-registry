@@ -12,5 +12,12 @@
   "stars": 15,
   "github_path": ".claude/skills/write-app-change-log",
   "github_branch": "main",
-  "dir_name": "write-app-change-log-anysoftkeyboard-janus"
+  "dir_name": "write-app-change-log-anysoftkeyboard-janus",
+  "author": "AnySoftKeyboard",
+  "source_url": "https://github.com/AnySoftKeyboard/janus/blob/main/.claude/skills/write-app-change-log/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AnySoftKeyboard/janus/blob/main/.claude/skills/write-app-change-log/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

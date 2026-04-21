@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".archive/old-content-directory-2025-11-06/content/.claude/skills/curriculum-review-bias",
   "github_branch": "main",
-  "dir_name": "curriculum-review-bias-pauljbernard-content"
+  "dir_name": "curriculum-review-bias-pauljbernard-content",
+  "author": "pauljbernard",
+  "source_url": "https://github.com/pauljbernard/content/blob/main/.archive/old-content-directory-2025-11-06/content/.claude/skills/curriculum-review-bias/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pauljbernard/content/blob/main/.archive/old-content-directory-2025-11-06/content/.claude/skills/curriculum-review-bias/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

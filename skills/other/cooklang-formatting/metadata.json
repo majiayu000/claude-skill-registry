@@ -5,5 +5,12 @@
   "source": "github.com/keiththompson/video-to-cooklang",
   "downloaded_at": "2026-02-02T01:34:04.629752Z",
   "dir_name": "cooklang-formatting",
-  "category": "other"
+  "category": "other",
+  "author": "keiththompson",
+  "source_url": "https://github.com/keiththompson/video-to-cooklang/blob/main/skills/cooklang-formatting/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Keith",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

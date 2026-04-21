@@ -5,5 +5,12 @@
   "description": "Upload estimation results to Supabase storage and register with Estimator API. Final phase of the estimation workflow.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:12.423805Z",
-  "dir_name": "database-upload"
+  "dir_name": "database-upload",
+  "author": "MontassarbellahAbdallah",
+  "source_url": "https://github.com/MontassarbellahAbdallah/Construction_cost_estimation_system",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MontassarbellahAbdallah/Construction_cost_estimation_system",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

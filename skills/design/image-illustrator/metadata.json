@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:16.417236Z",
   "github_path": ".claude/skills/image-illustrator",
   "github_branch": "main",
-  "dir_name": "image-illustrator"
+  "dir_name": "image-illustrator",
+  "author": "RogueRope",
+  "source_url": "https://github.com/RogueRope/docs/blob/main/.claude/skills/image-illustrator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RogueRope/docs/blob/main/.claude/skills/image-illustrator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/tailwind-styling",
   "github_branch": "main",
-  "dir_name": "tailwind-styling-jonit-dev-pixelperfect"
+  "dir_name": "tailwind-styling-jonit-dev-pixelperfect",
+  "author": "jonit-dev",
+  "source_url": "https://github.com/jonit-dev/pixelperfect/blob/main/.claude/skills/tailwind-styling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jonit-dev/pixelperfect/blob/main/.claude/skills/tailwind-styling/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

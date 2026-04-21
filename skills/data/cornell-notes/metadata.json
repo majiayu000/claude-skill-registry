@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:38.467147Z",
   "dir_name": "cornell-notes",
   "github_path": ".claude-backup/skills/cornell-notes",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "kevin-pics",
+  "source_url": "https://github.com/kevin-pics/notebook/blob/main/.claude-backup/skills/cornell-notes/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kevin-pics/notebook/blob/main/.claude-backup/skills/cornell-notes/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

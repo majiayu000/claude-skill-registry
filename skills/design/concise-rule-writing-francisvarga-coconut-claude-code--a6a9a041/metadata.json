@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:37.895217Z",
   "github_path": "coconut-rules/skills/concise-rule-writing",
   "github_branch": "main",
-  "dir_name": "concise-rule-writing-francisvarga-coconut-claude-code--a6a9a041"
+  "dir_name": "concise-rule-writing-francisvarga-coconut-claude-code--a6a9a041",
+  "author": "FrancisVarga",
+  "source_url": "https://github.com/FrancisVarga/coconut-claude-code-plugins/blob/main/coconut-rules/skills/concise-rule-writing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/FrancisVarga/coconut-claude-code-plugins/blob/main/coconut-rules/skills/concise-rule-writing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

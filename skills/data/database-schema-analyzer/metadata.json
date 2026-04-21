@@ -5,5 +5,12 @@
   "description": "Analyze PostgreSQL/Supabase database schemas for design quality, security, performance, and best practices. Use when reviewing schemas, migrations, RLS policies, or when user mentions database design,",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:54.607239Z",
-  "dir_name": "database-schema-analyzer"
+  "dir_name": "database-schema-analyzer",
+  "author": "amo-tech-ai",
+  "source_url": "https://github.com/amo-tech-ai/event-studio",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/amo-tech-ai/event-studio",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

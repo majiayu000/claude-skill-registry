@@ -10,5 +10,12 @@
   "stars": 0,
   "dir_name": "convex-core",
   "github_path": "skills/convex-core",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "astersnake",
+  "source_url": "https://github.com/astersnake/convex-claude-plugin/blob/main/skills/convex-core/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Convex Community",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

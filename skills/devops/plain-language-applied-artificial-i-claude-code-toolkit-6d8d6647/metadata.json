@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:29.300263Z",
   "github_path": "examples/writing/skills/plain-language",
   "github_branch": "main",
-  "dir_name": "plain-language-applied-artificial-i-claude-code-toolkit-6d8d6647"
+  "dir_name": "plain-language-applied-artificial-i-claude-code-toolkit-6d8d6647",
+  "author": "applied-artificial-intelligence",
+  "source_url": "https://github.com/applied-artificial-intelligence/claude-code-toolkit/blob/main/examples/writing/skills/plain-language/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Applied AI Consulting",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

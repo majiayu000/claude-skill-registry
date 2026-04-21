@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/prompt-shaping",
   "github_branch": "main",
-  "dir_name": "prompt-shaping-lherron-agent-metaskills"
+  "dir_name": "prompt-shaping-lherron-agent-metaskills",
+  "author": "lherron",
+  "source_url": "https://github.com/lherron/agent-metaskills/blob/main/skills/prompt-shaping/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Lance Herron",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

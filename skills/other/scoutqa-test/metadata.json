@@ -5,5 +5,12 @@
   "source": "github.com/github/awesome-copilot",
   "downloaded_at": "2026-02-02T04:05:43.019844Z",
   "dir_name": "scoutqa-test",
-  "category": "other"
+  "category": "other",
+  "author": "github",
+  "source_url": "https://github.com/github/awesome-copilot/blob/main/skills/scoutqa-test/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/github/awesome-copilot/blob/main/skills/scoutqa-test/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:24.111658Z",
   "github_path": ".claude/skills/core-development",
   "github_branch": "main",
-  "dir_name": "core-development-7nohe-figram"
+  "dir_name": "core-development-7nohe-figram",
+  "author": "7nohe",
+  "source_url": "https://github.com/7nohe/figram/blob/main/.claude/skills/core-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daiki Urata",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

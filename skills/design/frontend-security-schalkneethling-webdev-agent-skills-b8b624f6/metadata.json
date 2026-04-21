@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:11.646601Z",
   "github_path": "frontend-security",
   "github_branch": "main",
-  "dir_name": "frontend-security-schalkneethling-webdev-agent-skills-b8b624f6"
+  "dir_name": "frontend-security-schalkneethling-webdev-agent-skills-b8b624f6",
+  "author": "schalkneethling",
+  "source_url": "https://github.com/schalkneethling/webdev-agent-skills/blob/main/frontend-security/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Schalk Neethling",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

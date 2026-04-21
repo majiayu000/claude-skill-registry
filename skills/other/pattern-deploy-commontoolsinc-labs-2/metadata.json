@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/commontoolsinc/labs",
-  "dir_name": "pattern-deploy-commontoolsinc-labs-2"
+  "dir_name": "pattern-deploy-commontoolsinc-labs-2",
+  "author": "commontoolsinc",
+  "source_url": "https://github.com/commontoolsinc/labs/blob/main/.claude/skills/pattern-deploy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/commontoolsinc/labs/blob/main/.claude/skills/pattern-deploy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

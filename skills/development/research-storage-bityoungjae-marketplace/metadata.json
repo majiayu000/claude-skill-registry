@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:12.358820Z",
   "github_path": "plugins/dokhak/skills/research-storage",
   "github_branch": "main",
-  "dir_name": "research-storage-bityoungjae-marketplace"
+  "dir_name": "research-storage-bityoungjae-marketplace",
+  "author": "BitYoungjae",
+  "source_url": "https://github.com/BitYoungjae/marketplace/blob/main/plugins/dokhak/skills/research-storage/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 BitYoungjae",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

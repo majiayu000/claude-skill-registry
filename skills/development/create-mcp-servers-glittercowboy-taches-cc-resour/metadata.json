@@ -7,5 +7,12 @@
   "stars": 1156,
   "source": "github.com/glittercowboy/taches-cc-resources",
   "downloaded_at": "2026-01-24T16:15:48.640930Z",
-  "dir_name": "create-mcp-servers-glittercowboy-taches-cc-resour"
+  "dir_name": "create-mcp-servers-glittercowboy-taches-cc-resour",
+  "author": "glittercowboy",
+  "source_url": "https://github.com/glittercowboy/taches-cc-resources/blob/main/skills/create-mcp-servers/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Lex Christopherson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

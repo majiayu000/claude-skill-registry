@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "planning-tasks"
+  "dir_name": "planning-tasks",
+  "author": "skanehira",
+  "source_url": "https://github.com/skanehira/dotfiles",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 skanehira",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

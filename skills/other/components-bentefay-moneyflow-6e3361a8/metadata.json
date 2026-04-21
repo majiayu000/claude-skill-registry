@@ -5,5 +5,12 @@
   "source": "github.com/bentefay/moneyflow",
   "downloaded_at": "2026-02-02T03:50:59.402697Z",
   "dir_name": "components-bentefay-moneyflow-6e3361a8",
-  "category": "other"
+  "category": "other",
+  "author": "bentefay",
+  "source_url": "https://github.com/bentefay/moneyflow/blob/main/.claude/skills/components/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bentefay/moneyflow/blob/main/.claude/skills/components/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

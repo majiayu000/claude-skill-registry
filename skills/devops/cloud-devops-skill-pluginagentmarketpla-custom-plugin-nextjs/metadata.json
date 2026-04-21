@@ -5,5 +5,12 @@
   "description": "Master cloud platforms (AWS, GCP, Azure), containerization (Docker), orchestration (Kubernetes), infrastructure as code, CI/CD pipelines, and DevOps practices for deploying and managing scalable appli",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:45.813758Z",
-  "dir_name": "cloud-devops-skill-pluginagentmarketpla-custom-plugin-nextjs"
+  "dir_name": "cloud-devops-skill-pluginagentmarketpla-custom-plugin-nextjs",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-nextjs",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

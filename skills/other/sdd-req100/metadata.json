@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/sdd-req100",
   "github_branch": "main",
   "dir_name": "sdd-req100",
-  "downloaded_at": "2026-02-05T01:44:48.252482Z"
+  "downloaded_at": "2026-02-05T01:44:48.252482Z",
+  "author": "taiyousan15",
+  "source_url": "https://github.com/taiyousan15/taisun_agent/blob/main/.claude/skills/sdd-req100/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 taiyousan15",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "contentful-sdk-ivo-toby-contentful-skill"
+  "dir_name": "contentful-sdk-ivo-toby-contentful-skill",
+  "author": "ivo-toby",
+  "source_url": "https://github.com/ivo-toby/contentful-skill",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ivo-toby/contentful-skill",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

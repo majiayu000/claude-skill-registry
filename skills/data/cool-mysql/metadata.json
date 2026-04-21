@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "cool-mysql",
   "github_path": ".claude/skills/cool-mysql",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "StirlingMarketingGroup",
+  "source_url": "https://github.com/StirlingMarketingGroup/cool-mysql/blob/main/.claude/skills/cool-mysql/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Stirling Marketing Group",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

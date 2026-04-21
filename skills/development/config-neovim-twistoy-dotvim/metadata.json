@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/config-neovim",
   "github_branch": "main",
-  "dir_name": "config-neovim-twistoy-dotvim"
+  "dir_name": "config-neovim-twistoy-dotvim",
+  "author": "TwIStOy",
+  "source_url": "https://github.com/TwIStOy/dotvim/blob/main/.claude/skills/config-neovim/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 Hawtian Wang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   ],
   "stars": 19,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "create-new-component"
+  "dir_name": "create-new-component",
+  "author": "ethpandaops",
+  "source_url": "https://github.com/ethpandaops/lab",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

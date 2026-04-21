@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:48.014844Z",
   "github_path": ".claude/skills/state-tax-thresholds",
   "github_branch": "main",
-  "dir_name": "state-tax-thresholds-galactivale-financeocr"
+  "dir_name": "state-tax-thresholds-galactivale-financeocr",
+  "author": "galactivale",
+  "source_url": "https://github.com/galactivale/financeocr/blob/main/.claude/skills/state-tax-thresholds/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Mauricio Siu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

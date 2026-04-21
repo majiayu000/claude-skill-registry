@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "control-mapping"
+  "dir_name": "control-mapping",
+  "author": "ethanolivertroy",
+  "source_url": "https://github.com/ethanolivertroy/fedramp-docs-mcp",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ethan Troy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

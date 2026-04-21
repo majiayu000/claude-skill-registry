@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:40.607951Z",
   "github_path": ".github/skills/mentor",
   "github_branch": "main",
-  "dir_name": "mentor-mcouthon-agents"
+  "dir_name": "mentor-mcouthon-agents",
+  "author": "mcouthon",
+  "source_url": "https://github.com/mcouthon/agents/blob/main/.github/skills/mentor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Pavel Brodsky",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

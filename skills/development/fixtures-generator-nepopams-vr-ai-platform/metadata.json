@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/Nepopams/vr_ai_platform",
   "downloaded_at": "2026-01-24T16:15:31.802083Z",
-  "dir_name": "fixtures-generator-nepopams-vr-ai-platform"
+  "dir_name": "fixtures-generator-nepopams-vr-ai-platform",
+  "author": "Nepopams",
+  "source_url": "https://github.com/Nepopams/vr_ai_platform/blob/main/.codex/skills/fixtures-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Nepopams/vr_ai_platform/blob/main/.codex/skills/fixtures-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

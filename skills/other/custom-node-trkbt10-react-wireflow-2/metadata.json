@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/trkbt10/react-wireflow",
-  "dir_name": "custom-node-trkbt10-react-wireflow-2"
+  "dir_name": "custom-node-trkbt10-react-wireflow-2",
+  "author": "trkbt10",
+  "source_url": "https://github.com/trkbt10/react-wireflow/blob/main/skills/custom-node/SKILL.md",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/trkbt10/react-wireflow/blob/main/skills/custom-node/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

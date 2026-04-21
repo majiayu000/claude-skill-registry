@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "modern-rust-expert"
+  "dir_name": "modern-rust-expert",
+  "author": "jonathanbelolo",
+  "source_url": "https://github.com/jonathanbelolo/composable-rust",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Composable Rust Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

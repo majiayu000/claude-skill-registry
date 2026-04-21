@@ -7,5 +7,12 @@
   "dir_name": "kg-insights-costiash-cognivagent",
   "category": "other",
   "github_path": "app/agent/resources/.claude/skills/kg-insights",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "costiash",
+  "source_url": "https://github.com/costiash/CognivAgent/blob/main/app/agent/resources/.claude/skills/kg-insights/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2024 CognivAgent Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

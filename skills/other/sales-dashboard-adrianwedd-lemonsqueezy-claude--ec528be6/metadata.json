@@ -5,5 +5,12 @@
   "source": "github.com/adrianwedd/lemonsqueezy-claude-skills",
   "downloaded_at": "2026-01-29T08:22:17.667035Z",
   "dir_name": "sales-dashboard-adrianwedd-lemonsqueezy-claude--ec528be6",
-  "category": "other"
+  "category": "other",
+  "author": "adrianwedd",
+  "source_url": "https://github.com/adrianwedd/lemonsqueezy-claude-skills/blob/main/skills/sales-dashboard/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Adrian Wedd",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

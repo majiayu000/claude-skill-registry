@@ -11,5 +11,12 @@
   "stars": 1,
   "github_path": ".claude/skills/library-implementation-principles",
   "github_branch": "main",
-  "dir_name": "library-implementation-principles-hurtener-penguiflow"
+  "dir_name": "library-implementation-principles-hurtener-penguiflow",
+  "author": "hurtener",
+  "source_url": "https://github.com/hurtener/penguiflow/blob/main/.claude/skills/library-implementation-principles/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 hurtener",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

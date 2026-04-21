@@ -5,5 +5,12 @@
   "source": "github.com/brettdavies/crawl4ai-skill",
   "downloaded_at": "2026-02-04T04:21:26.342591Z",
   "dir_name": "crawl4ai",
-  "category": "data"
+  "category": "data",
+  "author": "brettdavies",
+  "source_url": "https://github.com/brettdavies/crawl4ai-skill/blob/main/crawl4ai/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brett Davies",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

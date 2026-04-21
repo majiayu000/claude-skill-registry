@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "GitHub Search API",
-  "dir_name": "post-deploy-cleanup"
+  "dir_name": "post-deploy-cleanup",
+  "author": "matsuni-kk",
+  "source_url": "https://github.com/matsuni-kk/agent_template_public",
+  "license": "NOASSERTION",
+  "copyright": "© 2025 國松 憂魁 (Yukai Kunimatsu)",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "stars": 85,
   "source": "github.com/Smana/cloud-native-ref",
   "downloaded_at": "2026-01-24T16:15:26.638631Z",
-  "dir_name": "specify"
+  "dir_name": "specify",
+  "author": "Smana",
+  "source_url": "https://github.com/Smana/cloud-native-ref/blob/main/.claude/skills/specify/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2024 Ogenki",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

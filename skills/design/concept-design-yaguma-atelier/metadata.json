@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/concept-design",
   "github_branch": "main",
-  "dir_name": "concept-design-yaguma-atelier"
+  "dir_name": "concept-design-yaguma-atelier",
+  "author": "yaguma",
+  "source_url": "https://github.com/yaguma/atelier/blob/main/.claude/skills/concept-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Atelier Project",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

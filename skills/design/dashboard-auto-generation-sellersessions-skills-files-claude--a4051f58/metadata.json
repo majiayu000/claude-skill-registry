@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:12.874646Z",
   "github_path": "dashboard-auto-generation",
   "github_branch": "main",
-  "dir_name": "dashboard-auto-generation-sellersessions-skills-files-claude--a4051f58"
+  "dir_name": "dashboard-auto-generation-sellersessions-skills-files-claude--a4051f58",
+  "author": "sellersessions",
+  "source_url": "https://github.com/sellersessions/SKILLS-FILES-CLAUDE-DESKTOP-PROJECT/blob/main/dashboard-auto-generation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sellersessions/SKILLS-FILES-CLAUDE-DESKTOP-PROJECT/blob/main/dashboard-auto-generation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

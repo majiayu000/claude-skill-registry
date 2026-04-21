@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:35.857378Z",
   "github_path": "plugins/blog/skills/manage-blog",
   "github_branch": "main",
-  "dir_name": "manage-blog-builtby-win-skills"
+  "dir_name": "manage-blog-builtby-win-skills",
+  "author": "builtby-win",
+  "source_url": "https://github.com/builtby-win/skills/blob/main/plugins/blog/skills/manage-blog/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Winston Zhao",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

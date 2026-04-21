@@ -5,5 +5,12 @@
   "description": "Configure bubble charts in drizzle-cube dashboards for three-variable analysis with size and color dimensions. Use when creating bubble charts, multi-variable visualizations, or comparing three metric",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:34.677293Z",
-  "dir_name": "bubble-chart"
+  "dir_name": "bubble-chart",
+  "author": "cliftonc",
+  "source_url": "https://github.com/cliftonc/drizzle-cube-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cliftonc/drizzle-cube-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

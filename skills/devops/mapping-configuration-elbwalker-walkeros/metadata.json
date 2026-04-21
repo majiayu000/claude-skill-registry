@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/mapping-configuration",
   "github_branch": "main",
-  "dir_name": "mapping-configuration-elbwalker-walkeros"
+  "dir_name": "mapping-configuration-elbwalker-walkeros",
+  "author": "elbwalker",
+  "source_url": "https://github.com/elbwalker/walkerOS/blob/main/skills/mapping-configuration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 elbWalker GmbH",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

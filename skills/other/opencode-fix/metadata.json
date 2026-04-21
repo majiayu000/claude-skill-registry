@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/opencode-fix",
   "github_branch": "main",
   "dir_name": "opencode-fix",
-  "downloaded_at": "2026-02-05T01:44:48.254399Z"
+  "downloaded_at": "2026-02-05T01:44:48.254399Z",
+  "author": "taiyousan15",
+  "source_url": "https://github.com/taiyousan15/taisun_agent/blob/main/.claude/skills/opencode-fix/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 taiyousan15",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/upgrading-golang",
   "github_branch": "main",
-  "dir_name": "upgrading-golang-chainloop-dev-chainloop-71eb5330"
+  "dir_name": "upgrading-golang-chainloop-dev-chainloop-71eb5330",
+  "author": "chainloop-dev",
+  "source_url": "https://github.com/chainloop-dev/chainloop/blob/main/.claude/skills/upgrading-golang/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chainloop-dev/chainloop/blob/main/.claude/skills/upgrading-golang/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

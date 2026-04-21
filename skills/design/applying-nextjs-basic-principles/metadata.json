@@ -5,5 +5,12 @@
   "description": "Apply Next.js design principles and best practices for App Router, Server Components, caching strategies, and modern patterns including Next.js 16 updates. Use when building Next.js applications, impl",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:36.375544Z",
-  "dir_name": "applying-nextjs-basic-principles"
+  "dir_name": "applying-nextjs-basic-principles",
+  "author": "camoneart",
+  "source_url": "https://github.com/camoneart/claude-code",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/camoneart/claude-code",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

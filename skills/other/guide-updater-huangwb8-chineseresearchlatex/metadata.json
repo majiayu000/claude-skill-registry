@@ -7,5 +7,12 @@
   "dir_name": "guide-updater-huangwb8-chineseresearchlatex",
   "category": "other",
   "github_path": "skills/guide-updater",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "huangwb8",
+  "source_url": "https://github.com/huangwb8/ChineseResearchLaTeX/blob/main/skills/guide-updater/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright © 2024 Weibin Huang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

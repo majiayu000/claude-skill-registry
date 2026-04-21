@@ -5,5 +5,12 @@
   "source": "github.com/gfx-rs/wgpu",
   "downloaded_at": "2026-01-28T03:57:12.343918Z",
   "dir_name": "webgpu-specs",
-  "category": "data"
+  "category": "data",
+  "author": "gfx-rs",
+  "source_url": "https://github.com/gfx-rs/wgpu/blob/main/.claude/skills/webgpu-specs/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gfx-rs/wgpu/blob/main/.claude/skills/webgpu-specs/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

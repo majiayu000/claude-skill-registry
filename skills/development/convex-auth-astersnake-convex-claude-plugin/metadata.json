@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/convex-auth",
   "github_branch": "main",
-  "dir_name": "convex-auth-astersnake-convex-claude-plugin"
+  "dir_name": "convex-auth-astersnake-convex-claude-plugin",
+  "author": "astersnake",
+  "source_url": "https://github.com/astersnake/convex-claude-plugin/blob/main/skills/convex-auth/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Convex Community",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

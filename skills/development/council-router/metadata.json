@@ -9,5 +9,12 @@
   ],
   "stars": 158,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "council-router"
+  "dir_name": "council-router",
+  "author": "namastexlabs",
+  "source_url": "https://github.com/namastexlabs/automagik-genie",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Automagik",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

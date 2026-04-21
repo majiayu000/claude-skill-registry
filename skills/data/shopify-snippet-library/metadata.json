@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "shopify-snippet-library"
+  "dir_name": "shopify-snippet-library",
+  "author": "sarojpunde",
+  "source_url": "https://github.com/sarojpunde/shopify-dev-toolkit-claude-plugins",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sarojpunde/shopify-dev-toolkit-claude-plugins",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

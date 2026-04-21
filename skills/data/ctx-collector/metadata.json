@@ -9,5 +9,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "ctx-collector"
+  "dir_name": "ctx-collector",
+  "author": "Real-AI-Engineering",
+  "source_url": "https://github.com/Real-AI-Engineering/context-planning-system",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AI Engineering",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

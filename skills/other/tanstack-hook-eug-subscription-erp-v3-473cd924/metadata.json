@@ -5,5 +5,12 @@
   "source": "github.com/eug-subscription/ERP_v3",
   "downloaded_at": "2026-01-29T07:38:21.712105Z",
   "dir_name": "tanstack-hook-eug-subscription-erp-v3-473cd924",
-  "category": "other"
+  "category": "other",
+  "author": "eug-subscription",
+  "source_url": "https://github.com/eug-subscription/ERP_v3/blob/main/.agent/skills/tanstack-hook/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/eug-subscription/ERP_v3/blob/main/.agent/skills/tanstack-hook/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

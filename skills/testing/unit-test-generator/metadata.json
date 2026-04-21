@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": ".claude/skills/unit-test-generator",
   "github_branch": "main",
-  "dir_name": "unit-test-generator"
+  "dir_name": "unit-test-generator",
+  "author": "omriwen",
+  "source_url": "https://github.com/omriwen/PRISM/blob/main/.claude/skills/unit-test-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Omri",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

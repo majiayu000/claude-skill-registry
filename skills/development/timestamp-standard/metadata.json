@@ -5,5 +5,12 @@
   "description": "Frontend-backend time data transmission standard, using millisecond timestamps for time points (timezone-independent); Duration/Period use ISO 8601 string format.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:16.444475Z",
-  "dir_name": "timestamp-standard"
+  "dir_name": "timestamp-standard",
+  "author": "TrueNine",
+  "source_url": "https://github.com/TrueNine/claude-code-projects",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

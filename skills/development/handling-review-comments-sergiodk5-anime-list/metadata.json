@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": ".claude/skills/handling-review-comments",
   "github_branch": "main",
-  "dir_name": "handling-review-comments-sergiodk5-anime-list"
+  "dir_name": "handling-review-comments-sergiodk5-anime-list",
+  "author": "sergiodk5",
+  "source_url": "https://github.com/sergiodk5/anime-list/blob/main/.claude/skills/handling-review-comments/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sergiodk5/anime-list/blob/main/.claude/skills/handling-review-comments/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "component-design-reviewer"
+  "dir_name": "component-design-reviewer",
+  "author": "devstefancho",
+  "source_url": "https://github.com/devstefancho/claude-code-book-sample",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/devstefancho/claude-code-book-sample",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

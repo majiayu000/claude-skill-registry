@@ -9,5 +9,12 @@
   "github_path": "flutter-duit-bdui",
   "github_branch": "main",
   "dir_name": "flutter-duit-bdui",
-  "downloaded_at": "2026-02-05T01:45:03.801135Z"
+  "downloaded_at": "2026-02-05T01:45:03.801135Z",
+  "author": "MADTeacher",
+  "source_url": "https://github.com/MADTeacher/mad-agents-skills/blob/main/flutter-duit-bdui/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Stanislav Chernyshev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

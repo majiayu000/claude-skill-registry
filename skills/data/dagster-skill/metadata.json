@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/Obsidian-Owl/floe",
-  "dir_name": "dagster-skill"
+  "dir_name": "dagster-skill",
+  "author": "Obsidian-Owl",
+  "source_url": "https://github.com/Obsidian-Owl/floe",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Obsidian-Owl/floe",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

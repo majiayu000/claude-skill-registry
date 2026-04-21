@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "meta-searching"
+  "dir_name": "meta-searching",
+  "author": "shrwnsan",
+  "source_url": "https://github.com/shrwnsan/vibekit-claude-plugins",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 shrwnsan",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

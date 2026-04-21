@@ -10,5 +10,12 @@
   ],
   "stars": 789,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "react-docs-generator"
+  "dir_name": "react-docs-generator",
+  "author": "daangn",
+  "source_url": "https://github.com/daangn/seed-design",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2021 Danggeun Market Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

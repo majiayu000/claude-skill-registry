@@ -5,5 +5,12 @@
   "source": "github.com/netresearch/composer-agent-skill-plugin",
   "downloaded_at": "2026-02-04T05:14:41.858948Z",
   "dir_name": "malformed-yaml",
-  "category": "data"
+  "category": "data",
+  "author": "netresearch",
+  "source_url": "https://github.com/netresearch/composer-agent-skill-plugin/blob/main/tests/Fixtures/malformed-yaml/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Netresearch DTT GmbH",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "context-tools"
+  "dir_name": "context-tools",
+  "author": "ChipFlow",
+  "source_url": "https://github.com/ChipFlow/claude-context-tools",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Robert Taylor",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

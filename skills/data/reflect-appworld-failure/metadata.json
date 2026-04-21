@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "reflect-appworld-failure"
+  "dir_name": "reflect-appworld-failure",
+  "author": "jmanhype",
+  "source_url": "https://github.com/jmanhype/claude-code-plugin-marketplace",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 jmanhype",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

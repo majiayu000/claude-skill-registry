@@ -5,5 +5,12 @@
   "source": "github.com/pauljbernard/content",
   "downloaded_at": "2026-02-02T03:57:56.728590Z",
   "dir_name": "learning-multi-script-design",
-  "category": "other"
+  "category": "other",
+  "author": "pauljbernard",
+  "source_url": "https://github.com/pauljbernard/content/blob/main/.claude/skills/learning-multi-script-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pauljbernard/content/blob/main/.claude/skills/learning-multi-script-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

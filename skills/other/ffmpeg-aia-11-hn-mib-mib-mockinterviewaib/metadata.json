@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/ffmpeg",
   "github_branch": "main",
   "dir_name": "ffmpeg-aia-11-hn-mib-mib-mockinterviewaib",
-  "downloaded_at": "2026-02-05T01:45:32.885397Z"
+  "downloaded_at": "2026-02-05T01:45:32.885397Z",
+  "author": "AIA-11-HN-MIB",
+  "source_url": "https://github.com/AIA-11-HN-MIB/MIB-MockInterviewAIBot/blob/main/.claude/skills/ffmpeg/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AIA-11-HN-MIB/MIB-MockInterviewAIBot/blob/main/.claude/skills/ffmpeg/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

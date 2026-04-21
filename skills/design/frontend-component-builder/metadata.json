@@ -5,5 +5,12 @@
   "description": "Generate and refactor React + TypeScript components with Tailwind CSS for Medellin Spark. Use when building new UI components, creating dashboards, forms, cards, or wizards. Automatically includes acc",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:54.909017Z",
-  "dir_name": "frontend-component-builder"
+  "dir_name": "frontend-component-builder",
+  "author": "amo-tech-ai",
+  "source_url": "https://github.com/amo-tech-ai/medellin-spark",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/amo-tech-ai/medellin-spark",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

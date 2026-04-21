@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/creating-landing-pages",
   "github_branch": "main",
-  "dir_name": "creating-landing-pages-khaliqgant-lobber-d7396365"
+  "dir_name": "creating-landing-pages-khaliqgant-lobber-d7396365",
+  "author": "khaliqgant",
+  "source_url": "https://github.com/khaliqgant/lobber/blob/main/.claude/skills/creating-landing-pages/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/khaliqgant/lobber/blob/main/.claude/skills/creating-landing-pages/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

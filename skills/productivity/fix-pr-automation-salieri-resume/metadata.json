@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:02.702689Z",
   "github_path": "skills/fix-pr-automation",
   "github_branch": "main",
-  "dir_name": "fix-pr-automation-salieri-resume"
+  "dir_name": "fix-pr-automation-salieri-resume",
+  "author": "salieri",
+  "source_url": "https://github.com/salieri/resume/blob/main/skills/fix-pr-automation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2025 Aleksi Asikainen",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

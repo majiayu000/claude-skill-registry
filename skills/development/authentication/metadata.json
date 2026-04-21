@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "backend/app/agents/developer/src/skills/nextjs/authentication",
   "github_branch": "main",
-  "dir_name": "authentication"
+  "dir_name": "authentication",
+  "author": "xmark168",
+  "source_url": "https://github.com/xmark168/VibeSDLC/blob/main/backend/app/agents/developer/src/skills/nextjs/authentication/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/xmark168/VibeSDLC/blob/main/backend/app/agents/developer/src/skills/nextjs/authentication/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

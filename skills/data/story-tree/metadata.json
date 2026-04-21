@@ -5,5 +5,12 @@
   "description": "Use when user says \"generate stories\", \"brainstorm features\", \"update story tree\", \"what should we build\", \"show story tree\", \"show me a map\", \"story map\", \"tree diagram\", \"show stories\", \"view storie",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:31.817957Z",
-  "dir_name": "story-tree"
+  "dir_name": "story-tree",
+  "author": "Mharbulous",
+  "source_url": "https://github.com/Mharbulous/SyncoPaid",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Mharbulous/SyncoPaid",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

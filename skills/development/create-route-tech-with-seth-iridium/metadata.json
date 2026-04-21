@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".github/skills/create-route",
   "github_branch": "main",
-  "dir_name": "create-route-tech-with-seth-iridium"
+  "dir_name": "create-route-tech-with-seth-iridium",
+  "author": "tech-with-seth",
+  "source_url": "https://github.com/tech-with-seth/iridium/blob/main/.github/skills/create-route/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tech-with-seth/iridium/blob/main/.github/skills/create-route/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

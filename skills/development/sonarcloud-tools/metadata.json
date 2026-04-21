@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "sonarcloud-tools"
+  "dir_name": "sonarcloud-tools",
+  "author": "bsamiee",
+  "source_url": "https://github.com/bsamiee/Parametric_Portal",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 bsamiee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

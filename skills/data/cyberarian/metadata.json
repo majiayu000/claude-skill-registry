@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "cyberarian",
   "github_path": "cyberarian",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "slamb2k",
+  "source_url": "https://github.com/slamb2k/mad-skills/blob/main/cyberarian/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MAD Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

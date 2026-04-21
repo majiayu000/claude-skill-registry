@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "databricks-apps-cookie-auth",
   "github_path": ".claude/skills/databricks-apps-cookie-auth",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "hurtener",
+  "source_url": "https://github.com/hurtener/penguiflow/blob/main/.claude/skills/databricks-apps-cookie-auth/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 hurtener",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

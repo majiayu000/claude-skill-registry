@@ -5,5 +5,12 @@
   "description": "Creates, customizes, and troubleshoots Quarto Reveal.js presentations with proper SCSS theming, layout patterns, and extensions. Use when authoring .qmd slides or styling with SCSS.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:28.796678Z",
-  "dir_name": "creating-revealjs-presentations-fecet-quarto-scaffold"
+  "dir_name": "creating-revealjs-presentations-fecet-quarto-scaffold",
+  "author": "fecet",
+  "source_url": "https://github.com/fecet/quarto-scaffold",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fecet/quarto-scaffold",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

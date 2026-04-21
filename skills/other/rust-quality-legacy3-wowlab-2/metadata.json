@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/legacy3/wowlab",
-  "dir_name": "rust-quality-legacy3-wowlab-2"
+  "dir_name": "rust-quality-legacy3-wowlab-2",
+  "author": "legacy3",
+  "source_url": "https://github.com/legacy3/wowlab/blob/main/.claude/skills/rust-quality/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/legacy3/wowlab/blob/main/.claude/skills/rust-quality/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

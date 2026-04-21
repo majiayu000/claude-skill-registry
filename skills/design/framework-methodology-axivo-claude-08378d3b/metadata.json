@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:59.687488Z",
   "github_path": "plugins/framework/skills/framework-methodology",
   "github_branch": "main",
-  "dir_name": "framework-methodology-axivo-claude-08378d3b"
+  "dir_name": "framework-methodology-axivo-claude-08378d3b",
+  "author": "axivo",
+  "source_url": "https://github.com/axivo/claude/blob/main/plugins/framework/skills/framework-methodology/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2025, AXIVO",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

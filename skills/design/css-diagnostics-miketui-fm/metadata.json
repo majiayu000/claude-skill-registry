@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/css-diagnostics",
   "github_branch": "main",
-  "dir_name": "css-diagnostics-miketui-fm"
+  "dir_name": "css-diagnostics-miketui-fm",
+  "author": "miketui",
+  "source_url": "https://github.com/miketui/Fm/blob/main/.claude/skills/css-diagnostics/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/miketui/Fm/blob/main/.claude/skills/css-diagnostics/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

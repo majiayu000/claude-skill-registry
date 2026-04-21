@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/concept-development",
   "github_branch": "main",
-  "dir_name": "concept-development"
+  "dir_name": "concept-development",
+  "author": "u9401066",
+  "source_url": "https://github.com/u9401066/med-paper-assistant/blob/main/.claude/skills/concept-development/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Medical Paper Assistant Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

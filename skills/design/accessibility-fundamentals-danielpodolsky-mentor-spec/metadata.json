@@ -5,5 +5,12 @@
   "description": "Auto-invoke when reviewing JSX with interactive elements, forms, buttons, or navigation. Enforces WCAG compliance and inclusive design.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:09:54.650282Z",
-  "dir_name": "accessibility-fundamentals-danielpodolsky-mentor-spec"
+  "dir_name": "accessibility-fundamentals-danielpodolsky-mentor-spec",
+  "author": "DanielPodolsky",
+  "source_url": "https://github.com/DanielPodolsky/mentor-spec",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Daniel Podolsky",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

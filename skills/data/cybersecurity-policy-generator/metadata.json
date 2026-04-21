@@ -10,5 +10,12 @@
   ],
   "stars": 2,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "cybersecurity-policy-generator"
+  "dir_name": "cybersecurity-policy-generator",
+  "author": "diegocconsolini",
+  "source_url": "https://github.com/diegocconsolini/ClaudeSkillCollection",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Diego Consolini",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

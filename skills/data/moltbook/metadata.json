@@ -5,5 +5,12 @@
   "source": "github.com/iOfficeAI/AionUi",
   "downloaded_at": "2026-02-04T04:13:09.110608Z",
   "dir_name": "moltbook",
-  "category": "data"
+  "category": "data",
+  "author": "iOfficeAI",
+  "source_url": "https://github.com/iOfficeAI/AionUi/blob/main/skills/moltbook/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 AionUi (aionui.com)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

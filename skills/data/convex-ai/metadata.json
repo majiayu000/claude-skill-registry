@@ -9,5 +9,12 @@
   "stars": 0,
   "dir_name": "convex-ai",
   "github_path": "skills/convex-ai",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "astersnake",
+  "source_url": "https://github.com/astersnake/convex-claude-plugin/blob/main/skills/convex-ai/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Convex Community",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

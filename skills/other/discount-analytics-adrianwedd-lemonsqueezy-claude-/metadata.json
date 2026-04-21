@@ -5,5 +5,12 @@
   "source": "github.com/adrianwedd/lemonsqueezy-claude-skills",
   "downloaded_at": "2026-01-29T08:22:17.744845Z",
   "dir_name": "discount-analytics-adrianwedd-lemonsqueezy-claude-",
-  "category": "other"
+  "category": "other",
+  "author": "adrianwedd",
+  "source_url": "https://github.com/adrianwedd/lemonsqueezy-claude-skills/blob/main/skills/discount-analytics/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Adrian Wedd",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

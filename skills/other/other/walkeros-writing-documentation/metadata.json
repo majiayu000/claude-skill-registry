@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/elbwalker/walkerOS",
   "dir_name": "walkeros-writing-documentation",
-  "downloaded_at": "2026-02-15T07:05:41.233375Z"
+  "downloaded_at": "2026-02-15T07:05:41.233375Z",
+  "author": "elbwalker",
+  "source_url": "https://github.com/elbwalker/walkerOS/blob/main/skills/walkeros-writing-documentation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 elbWalker GmbH",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

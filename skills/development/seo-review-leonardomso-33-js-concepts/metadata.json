@@ -7,5 +7,12 @@
   "stars": 66182,
   "source": "github.com/leonardomso/33-js-concepts",
   "downloaded_at": "2026-01-24T16:16:08.981750Z",
-  "dir_name": "seo-review-leonardomso-33-js-concepts"
+  "dir_name": "seo-review-leonardomso-33-js-concepts",
+  "author": "leonardomso",
+  "source_url": "https://github.com/leonardomso/33-js-concepts/blob/main/.claude/skills/seo-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2018 Leonardo Maldonado",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

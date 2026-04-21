@@ -10,5 +10,12 @@
   "stars": 1,
   "github_path": ".claude/skills/vercel-deploying",
   "github_branch": "main",
-  "dir_name": "vercel-deploying"
+  "dir_name": "vercel-deploying",
+  "author": "seanchiuai",
+  "source_url": "https://github.com/seanchiuai/claude-web-template/blob/main/.claude/skills/vercel-deploying/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seanchiuai/claude-web-template/blob/main/.claude/skills/vercel-deploying/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

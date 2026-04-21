@@ -10,5 +10,12 @@
   "stars": 2,
   "github_path": "skills/conversation-search",
   "github_branch": "main",
-  "dir_name": "conversation-search-akatz-ai-cc-conversation-sear"
+  "dir_name": "conversation-search-akatz-ai-cc-conversation-sear",
+  "author": "akatz-ai",
+  "source_url": "https://github.com/akatz-ai/cc-conversation-search/blob/main/skills/conversation-search/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 akatz-ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

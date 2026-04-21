@@ -5,5 +5,12 @@
   "source": "github.com/labring/FastGPT",
   "downloaded_at": "2026-02-02T04:15:28.984610Z",
   "dir_name": "create-skill-file",
-  "category": "data"
+  "category": "data",
+  "author": "labring",
+  "source_url": "https://github.com/labring/FastGPT/blob/main/.claude/skills/create-skill-file/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "© 2023 Sealos.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

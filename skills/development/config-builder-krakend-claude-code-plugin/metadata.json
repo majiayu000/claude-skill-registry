@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/config-builder",
   "github_branch": "main",
-  "dir_name": "config-builder-krakend-claude-code-plugin"
+  "dir_name": "config-builder-krakend-claude-code-plugin",
+  "author": "krakend",
+  "source_url": "https://github.com/krakend/claude-code-plugin/blob/main/skills/config-builder/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 KrakenD",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

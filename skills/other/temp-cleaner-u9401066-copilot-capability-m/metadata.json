@@ -7,5 +7,12 @@
   "dir_name": "temp-cleaner-u9401066-copilot-capability-m",
   "category": "other",
   "github_path": ".claude/skills/temp-cleaner",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "u9401066",
+  "source_url": "https://github.com/u9401066/copilot-capability-manager/blob/main/.claude/skills/temp-cleaner/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 [Your Name or Organization]",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

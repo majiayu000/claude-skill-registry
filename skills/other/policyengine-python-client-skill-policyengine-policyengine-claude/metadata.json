@@ -5,5 +5,12 @@
   "source": "github.com/PolicyEngine/policyengine-claude",
   "downloaded_at": "2026-01-29T07:06:36.139377Z",
   "dir_name": "policyengine-python-client-skill-policyengine-policyengine-claude",
-  "category": "other"
+  "category": "other",
+  "author": "PolicyEngine",
+  "source_url": "https://github.com/PolicyEngine/policyengine-claude/blob/main/skills/tools-and-apis/policyengine-python-client-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 PolicyEngine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

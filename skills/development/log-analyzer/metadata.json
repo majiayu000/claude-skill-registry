@@ -10,5 +10,12 @@
   "stars": 21,
   "github_path": ".claude/skills/log-analyzer",
   "github_branch": "main",
-  "dir_name": "log-analyzer"
+  "dir_name": "log-analyzer",
+  "author": "huifer",
+  "source_url": "https://github.com/huifer/skill-security-scan/blob/main/.claude/skills/log-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Skill-Security-Scanner Team",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

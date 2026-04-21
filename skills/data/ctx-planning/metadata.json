@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "ctx-planning",
   "github_path": ".claude/skills/ctx-planning",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Real-AI-Engineering",
+  "source_url": "https://github.com/Real-AI-Engineering/context-planning-system/blob/main/.claude/skills/ctx-planning/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AI Engineering",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

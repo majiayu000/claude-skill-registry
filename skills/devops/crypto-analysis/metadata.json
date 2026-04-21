@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "crypto-analysis"
+  "dir_name": "crypto-analysis",
+  "author": "kiwamizamurai",
+  "source_url": "https://github.com/kiwamizamurai/cctf",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kiwamizamurai/cctf",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

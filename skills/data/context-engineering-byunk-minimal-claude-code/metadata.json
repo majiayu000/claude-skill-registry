@@ -5,5 +5,12 @@
   "source": "github.com/Byunk/minimal-claude-code",
   "downloaded_at": "2026-02-04T04:13:02.495955Z",
   "dir_name": "context-engineering-byunk-minimal-claude-code",
-  "category": "data"
+  "category": "data",
+  "author": "Byunk",
+  "source_url": "https://github.com/Byunk/minimal-claude-code/blob/main/minimal-claude-code/skills/context-engineering/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Byunk/minimal-claude-code/blob/main/minimal-claude-code/skills/context-engineering/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/ds1sqe/reovim",
-  "dir_name": "countdown"
+  "dir_name": "countdown",
+  "author": "ds1sqe",
+  "source_url": "https://github.com/ds1sqe/reovim",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (C) 2025 ds1sqe",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

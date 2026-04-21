@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "start-right"
+  "dir_name": "start-right",
+  "author": "slamb2k",
+  "source_url": "https://github.com/slamb2k/mad-skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MAD Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

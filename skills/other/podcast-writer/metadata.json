@@ -7,5 +7,12 @@
   "dir_name": "podcast-writer",
   "category": "other",
   "github_path": ".claude/skills/podcast-writer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "flyingtimes",
+  "source_url": "https://github.com/flyingtimes/podcast-using-skill/blob/main/.claude/skills/podcast-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/flyingtimes/podcast-using-skill/blob/main/.claude/skills/podcast-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

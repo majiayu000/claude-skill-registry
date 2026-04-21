@@ -7,5 +7,12 @@
   "dir_name": "resource-radioactive-labs-plutonium-core",
   "category": "other",
   "github_path": ".claude/skills/plutonium-nested-resources",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "radioactive-labs",
+  "source_url": "https://github.com/radioactive-labs/plutonium-core/blob/main/.claude/skills/plutonium-nested-resources/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Stefan Froelich",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "基于 NSFC 最新 Word 模板高保真优化 LaTeX 模板样式（集成测试工具,标准化测试流程）",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:16.433619Z",
-  "dir_name": "make-latex-model"
+  "dir_name": "make-latex-model",
+  "author": "huangwb8",
+  "source_url": "https://github.com/huangwb8/ChineseResearchLaTeX",
+  "license": "MIT",
+  "copyright": "Copyright © 2024 Weibin Huang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

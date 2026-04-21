@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/corgi",
   "github_branch": "main",
-  "dir_name": "corgi-escalante-bio-petri"
+  "dir_name": "corgi-escalante-bio-petri",
+  "author": "escalante-bio",
+  "source_url": "https://github.com/escalante-bio/petri/blob/main/.claude/skills/corgi/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/escalante-bio/petri/blob/main/.claude/skills/corgi/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

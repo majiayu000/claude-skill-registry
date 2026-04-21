@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:23.549138Z",
   "github_path": ".github/skills/create-blog-post-from-url",
   "github_branch": "main",
-  "dir_name": "create-blog-post-from-url-celery94-celery94-github-io"
+  "dir_name": "create-blog-post-from-url-celery94-celery94-github-io",
+  "author": "celery94",
+  "source_url": "https://github.com/celery94/celery94.github.io/blob/main/.github/skills/create-blog-post-from-url/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 Sat Naing",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

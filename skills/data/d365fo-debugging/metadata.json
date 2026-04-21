@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "d365fo-debugging"
+  "dir_name": "d365fo-debugging",
+  "author": "abdullah1854",
+  "source_url": "https://github.com/abdullah1854/ClaudeSuperSkills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/abdullah1854/ClaudeSuperSkills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

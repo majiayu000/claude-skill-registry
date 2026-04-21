@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/fixing-tmux-socket-issues",
   "github_branch": "main",
-  "dir_name": "fixing-tmux-socket-issues-johnnymo87-dotfiles-fc375ec7"
+  "dir_name": "fixing-tmux-socket-issues-johnnymo87-dotfiles-fc375ec7",
+  "author": "johnnymo87",
+  "source_url": "https://github.com/johnnymo87/dotfiles/blob/main/.claude/skills/fixing-tmux-socket-issues/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2015 Jim Walker",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

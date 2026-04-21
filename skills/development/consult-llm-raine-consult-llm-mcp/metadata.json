@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:10.597389Z",
   "github_path": "examples",
   "github_branch": "main",
-  "dir_name": "consult-llm-raine-consult-llm-mcp"
+  "dir_name": "consult-llm-raine-consult-llm-mcp",
+  "author": "raine",
+  "source_url": "https://github.com/raine/consult-llm-mcp/blob/main/examples/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Raine Virta",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

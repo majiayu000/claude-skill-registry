@@ -7,5 +7,12 @@
   "dir_name": "fabric-blackpwnguin-personal-ai-00a95fb0",
   "category": "other",
   "github_path": ".claude/skills/Fabric",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "blackpwnguin",
+  "source_url": "https://github.com/blackpwnguin/Personal-AI/blob/main/.claude/skills/Fabric/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel Miessler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

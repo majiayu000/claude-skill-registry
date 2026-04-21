@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/firebase-operations",
   "github_branch": "main",
-  "dir_name": "firebase-operations"
+  "dir_name": "firebase-operations",
+  "author": "jhlee0409",
+  "source_url": "https://github.com/jhlee0409/sidedish/blob/main/.claude/skills/firebase-operations/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jhlee0409/sidedish/blob/main/.claude/skills/firebase-operations/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

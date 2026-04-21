@@ -5,5 +5,12 @@
   "source": "github.com/bullish0x/paas-ai-stack",
   "downloaded_at": "2026-02-02T01:05:24.150437Z",
   "dir_name": "ci-cd-bullish0x-paas-ai-stack",
-  "category": "other"
+  "category": "other",
+  "author": "bullish0x",
+  "source_url": "https://github.com/bullish0x/paas-ai-stack/blob/main/skills/ci-cd/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 PaaS AI Stack Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

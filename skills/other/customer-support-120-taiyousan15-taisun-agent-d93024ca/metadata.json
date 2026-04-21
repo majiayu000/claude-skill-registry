@@ -7,5 +7,12 @@
   "dir_name": "customer-support-120-taiyousan15-taisun-agent-d93024ca",
   "category": "other",
   "github_path": ".claude/skills/customer-support-120",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "taiyousan15",
+  "source_url": "https://github.com/taiyousan15/taisun_agent/blob/main/.claude/skills/customer-support-120/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 taiyousan15",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

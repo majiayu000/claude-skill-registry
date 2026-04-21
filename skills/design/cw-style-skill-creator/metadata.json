@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "cw-style-skill-creator"
+  "dir_name": "cw-style-skill-creator",
+  "author": "haowjy",
+  "source_url": "https://github.com/haowjy/creative-writing-skills",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/haowjy/creative-writing-skills",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   "stars": 0,
   "dir_name": "text-cleanup",
   "github_path": "dist/.claude-plugin/skills/text-cleanup",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "v1truv1us",
+  "source_url": "https://github.com/v1truv1us/ai-eng-system/blob/main/dist/.claude-plugin/skills/text-cleanup/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 John Ferguson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

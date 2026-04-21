@@ -5,5 +5,12 @@
   "description": "Test EventOS web application end-to-end using Playwright browser automation via MCP. Use PROACTIVELY for smoke tests after deployments, validating user flows (booking, event creation, dashboard), debu",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:54.584691Z",
-  "dir_name": "testing-web-apps-with-playwright-amo-tech-ai-event-studio"
+  "dir_name": "testing-web-apps-with-playwright-amo-tech-ai-event-studio",
+  "author": "amo-tech-ai",
+  "source_url": "https://github.com/amo-tech-ai/event-studio",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/amo-tech-ai/event-studio",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

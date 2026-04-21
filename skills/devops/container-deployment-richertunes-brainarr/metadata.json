@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/container-deployment",
   "github_branch": "main",
-  "dir_name": "container-deployment-richertunes-brainarr"
+  "dir_name": "container-deployment-richertunes-brainarr",
+  "author": "RicherTunes",
+  "source_url": "https://github.com/RicherTunes/Brainarr/blob/main/.claude/skills/container-deployment/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brainarr Team",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

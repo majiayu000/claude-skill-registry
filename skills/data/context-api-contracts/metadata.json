@@ -10,5 +10,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "context-api-contracts"
+  "dir_name": "context-api-contracts",
+  "author": "stars-end",
+  "source_url": "https://github.com/stars-end/affordabot",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/stars-end/affordabot",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

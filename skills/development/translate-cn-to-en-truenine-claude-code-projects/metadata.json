@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:16.532962Z",
   "github_path": ".claude/skills/translate-cn-to-en",
   "github_branch": "main",
-  "dir_name": "translate-cn-to-en-truenine-claude-code-projects"
+  "dir_name": "translate-cn-to-en-truenine-claude-code-projects",
+  "author": "TrueNine",
+  "source_url": "https://github.com/TrueNine/claude-code-projects/blob/main/.claude/skills/translate-cn-to-en/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

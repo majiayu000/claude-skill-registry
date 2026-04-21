@@ -5,5 +5,12 @@
   "source": "github.com/nhantran889/theme-kit",
   "downloaded_at": "2026-01-30T01:04:46.141732Z",
   "dir_name": "locale-extractor",
-  "category": "data"
+  "category": "data",
+  "author": "nhantran889",
+  "source_url": "https://github.com/nhantran889/theme-kit/blob/main/skills/locale-extractor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nhantran889/theme-kit/blob/main/skills/locale-extractor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

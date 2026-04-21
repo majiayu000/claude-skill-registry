@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:13.234645Z",
   "github_path": ".codex/skills/cursor-remarkable-upload",
   "github_branch": "main",
-  "dir_name": "cursor-remarkable-upload"
+  "dir_name": "cursor-remarkable-upload",
+  "author": "go-go-golems",
+  "source_url": "https://github.com/go-go-golems/docmgr/blob/main/.codex/skills/cursor-remarkable-upload/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 Manuel Odendahl",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

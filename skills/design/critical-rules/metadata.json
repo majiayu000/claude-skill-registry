@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:34.197560Z",
   "github_path": ".opencode/skills/critical-rules",
   "github_branch": "main",
-  "dir_name": "critical-rules"
+  "dir_name": "critical-rules",
+  "author": "andyngdz",
+  "source_url": "https://github.com/andyngdz/exogen/blob/main/.opencode/skills/critical-rules/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Andy D. Nguyen",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

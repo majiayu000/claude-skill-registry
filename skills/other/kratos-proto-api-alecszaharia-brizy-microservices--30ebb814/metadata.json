@@ -7,5 +7,12 @@
   "dir_name": "kratos-proto-api-alecszaharia-brizy-microservices--30ebb814",
   "category": "other",
   "github_path": ".claude/skills/kratos-proto-api",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "alecszaharia",
+  "source_url": "https://github.com/alecszaharia/brizy-microservices-go/blob/main/.claude/skills/kratos-proto-api/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alecszaharia/brizy-microservices-go/blob/main/.claude/skills/kratos-proto-api/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

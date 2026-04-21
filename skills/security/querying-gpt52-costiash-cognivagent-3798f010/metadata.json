@@ -10,5 +10,12 @@
   "stars": 4,
   "github_path": ".claude/skills/querying-gpt52",
   "github_branch": "main",
-  "dir_name": "querying-gpt52-costiash-cognivagent-3798f010"
+  "dir_name": "querying-gpt52-costiash-cognivagent-3798f010",
+  "author": "costiash",
+  "source_url": "https://github.com/costiash/CognivAgent/blob/main/.claude/skills/querying-gpt52/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2024 CognivAgent Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

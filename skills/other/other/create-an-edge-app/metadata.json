@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/Screenly/Playground",
   "dir_name": "create-an-edge-app",
-  "downloaded_at": "2026-02-22T05:41:45.635078Z"
+  "downloaded_at": "2026-02-22T05:41:45.635078Z",
+  "author": "Screenly",
+  "source_url": "https://github.com/Screenly/Playground/blob/main/.claude/skills/create-an-edge-app/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2017",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

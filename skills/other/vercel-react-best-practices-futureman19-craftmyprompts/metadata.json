@@ -9,5 +9,12 @@
   "github_path": ".agent/skills/vercel-react-best-practices",
   "github_branch": "main",
   "dir_name": "vercel-react-best-practices-futureman19-craftmyprompts",
-  "downloaded_at": "2026-02-05T01:44:21.112149Z"
+  "downloaded_at": "2026-02-05T01:44:21.112149Z",
+  "author": "futureman19",
+  "source_url": "https://github.com/futureman19/craftmyprompts/blob/main/.agent/skills/vercel-react-best-practices/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/futureman19/craftmyprompts/blob/main/.agent/skills/vercel-react-best-practices/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "stars": 1,
   "source": "github.com/joshuacook/motoko",
   "downloaded_at": "2026-01-24T16:15:15.751338Z",
-  "dir_name": "learn-joshuacook-motoko"
+  "dir_name": "learn-joshuacook-motoko",
+  "author": "joshuacook",
+  "source_url": "https://github.com/joshuacook/motoko/blob/main/.claude/skills/learn/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Joshua Cook",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

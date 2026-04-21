@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:30.995618Z",
   "github_path": "plugins/cc-graphql/skills/graphql-mutations",
   "github_branch": "main",
-  "dir_name": "graphql-mutations-jovermier-cc-stack-marketplace-6f1a00e2"
+  "dir_name": "graphql-mutations-jovermier-cc-stack-marketplace-6f1a00e2",
+  "author": "jovermier",
+  "source_url": "https://github.com/jovermier/cc-stack-marketplace/blob/main/plugins/cc-graphql/skills/graphql-mutations/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AI Platform",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

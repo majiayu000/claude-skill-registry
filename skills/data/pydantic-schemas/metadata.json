@@ -5,5 +5,12 @@
   "description": "ALWAYS USE when working with Pydantic models, BaseModel, Field, validators, or data contracts. MUST be loaded before creating any Pydantic schemas, configuration classes, or API contracts. Provides v2",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:24.742669Z",
-  "dir_name": "pydantic-schemas"
+  "dir_name": "pydantic-schemas",
+  "author": "Obsidian-Owl",
+  "source_url": "https://github.com/Obsidian-Owl/floe-runtime",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Obsidian-Owl/floe-runtime",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

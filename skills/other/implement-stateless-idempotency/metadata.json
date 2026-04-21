@@ -5,5 +5,12 @@
   "source": "github.com/mariotoffia/gobridge",
   "downloaded_at": "2026-02-02T02:30:05.030741Z",
   "dir_name": "implement-stateless-idempotency",
-  "category": "other"
+  "category": "other",
+  "author": "mariotoffia",
+  "source_url": "https://github.com/mariotoffia/gobridge/blob/main/.cursor/skills/implement-stateless-idempotency/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mariotoffia/gobridge/blob/main/.cursor/skills/implement-stateless-idempotency/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

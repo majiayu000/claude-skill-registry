@@ -7,5 +7,12 @@
   "dir_name": "technical-planning-leeovery-claude-technical-wor",
   "category": "other",
   "github_path": "skills/technical-planning",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "leeovery",
+  "source_url": "https://github.com/leeovery/claude-technical-workflows/blob/main/skills/technical-planning/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Lee Overy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

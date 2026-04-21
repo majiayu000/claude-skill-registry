@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:31.810396Z",
   "github_path": "creative-writing-skills/cw-prose-writing",
   "github_branch": "main",
-  "dir_name": "cw-prose-writing-haowjy-creative-writing-ski-ce853f0d"
+  "dir_name": "cw-prose-writing-haowjy-creative-writing-ski-ce853f0d",
+  "author": "haowjy",
+  "source_url": "https://github.com/haowjy/creative-writing-skills/blob/main/creative-writing-skills/cw-prose-writing/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/haowjy/creative-writing-skills/blob/main/creative-writing-skills/cw-prose-writing/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

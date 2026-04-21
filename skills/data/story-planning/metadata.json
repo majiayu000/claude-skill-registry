@@ -5,5 +5,12 @@
   "description": "Use when user says \"plan story\", \"plan next feature\", \"create implementation plan\", \"what's ready to plan\", or asks to plan an approved story - looks up approved story-nodes from story-tree database, ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:31.887189Z",
-  "dir_name": "story-planning"
+  "dir_name": "story-planning",
+  "author": "Mharbulous",
+  "source_url": "https://github.com/Mharbulous/SyncoPaid",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Mharbulous/SyncoPaid",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -9,5 +9,12 @@
     "navigator"
   ],
   "stars": 0,
-  "dir_name": "rdc-snowflake-navigator"
+  "dir_name": "rdc-snowflake-navigator",
+  "author": "MoveRDC",
+  "source_url": "https://github.com/MoveRDC/claude-skills-marketing",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoveRDC/claude-skills-marketing",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

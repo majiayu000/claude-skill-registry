@@ -10,5 +10,12 @@
   ],
   "stars": 67,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "waf-bypass-hunter"
+  "dir_name": "waf-bypass-hunter",
+  "author": "HacktronAI",
+  "source_url": "https://github.com/HacktronAI/skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 HacktronAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

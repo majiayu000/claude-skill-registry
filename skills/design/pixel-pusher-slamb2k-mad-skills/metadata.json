@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "pixel-pusher",
   "github_branch": "main",
-  "dir_name": "pixel-pusher-slamb2k-mad-skills"
+  "dir_name": "pixel-pusher-slamb2k-mad-skills",
+  "author": "slamb2k",
+  "source_url": "https://github.com/slamb2k/mad-skills/blob/main/pixel-pusher/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MAD Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

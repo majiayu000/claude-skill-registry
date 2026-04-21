@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:53.113096Z",
   "github_path": "skills/crucible-writer",
   "github_branch": "main",
-  "dir_name": "crucible-writer-forsonny-the-crucible-writing"
+  "dir_name": "crucible-writer-forsonny-the-crucible-writing",
+  "author": "forsonny",
+  "source_url": "https://github.com/forsonny/The-Crucible-Writing-System-For-Claude/blob/main/skills/crucible-writer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Crucible Writing System",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Streamlined guide for Google Ads API queries via MCP. Use when querying campaign performance, keyword metrics, conversion data, auction insights, or ad group analysis. Reduces context overhead by prov",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:38.361973Z",
-  "dir_name": "google-ads-mcp-navigator"
+  "dir_name": "google-ads-mcp-navigator",
+  "author": "MoveRDC",
+  "source_url": "https://github.com/MoveRDC/claude-skills-marketing",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoveRDC/claude-skills-marketing",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

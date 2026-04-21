@@ -5,5 +5,12 @@
   "description": "Master database design (SQL, NoSQL), system architecture, API design (REST, GraphQL), and building scalable systems. Learn PostgreSQL, MongoDB, system design patterns, and enterprise architectures.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:45.796272Z",
-  "dir_name": "databases-architecture-skill"
+  "dir_name": "databases-architecture-skill",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-nextjs",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

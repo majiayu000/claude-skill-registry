@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/pauljbernard/content",
-  "dir_name": "learning-data-privacy-compliance-pauljbernard-content-2"
+  "dir_name": "learning-data-privacy-compliance-pauljbernard-content-2",
+  "author": "pauljbernard",
+  "source_url": "https://github.com/pauljbernard/content/blob/main/.claude/skills/learning.data-privacy-compliance/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pauljbernard/content/blob/main/.claude/skills/learning.data-privacy-compliance/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

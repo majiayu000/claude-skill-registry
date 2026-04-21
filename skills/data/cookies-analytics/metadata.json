@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/deomiarn/website-template",
-  "dir_name": "cookies-analytics"
+  "dir_name": "cookies-analytics",
+  "author": "deomiarn",
+  "source_url": "https://github.com/deomiarn/website-template",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/deomiarn/website-template",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": ".claude/skills/single-screen-prototype",
   "github_branch": "main",
-  "dir_name": "single-screen-prototype"
+  "dir_name": "single-screen-prototype",
+  "author": "yaguma",
+  "source_url": "https://github.com/yaguma/atelier/blob/main/.claude/skills/single-screen-prototype/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Atelier Project",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

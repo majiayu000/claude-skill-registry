@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:10.299460Z",
   "dir_name": "dbcli-db-ddl",
   "github_path": "skills/dbcli-db-ddl",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "tteamtm",
+  "source_url": "https://github.com/tteamtm/dbcli/blob/main/skills/dbcli-db-ddl/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 tteamtm",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

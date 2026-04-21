@@ -5,5 +5,12 @@
   "description": "Use when user says \"synthesize goals\", \"show goals\", \"what are my goals\", \"update goals\", \"show non-goals\", \"what am I building\", \"project direction\", or asks about the overall direction or intent of ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:31.871444Z",
-  "dir_name": "goal-synthesis"
+  "dir_name": "goal-synthesis",
+  "author": "Mharbulous",
+  "source_url": "https://github.com/Mharbulous/SyncoPaid",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Mharbulous/SyncoPaid",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "Auto-invoke when reviewing loops, data fetching, rendering, database queries, or resource-intensive operations. Identifies N+1 queries, unnecessary re-renders, memory leaks, and scalability issues.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:07.450488Z",
-  "dir_name": "performance-fundamentals"
+  "dir_name": "performance-fundamentals",
+  "author": "DanielPodolsky",
+  "source_url": "https://github.com/DanielPodolsky/mentor-spec",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Daniel Podolsky",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

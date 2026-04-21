@@ -5,5 +5,12 @@
   "source": "github.com/ljagiello/ctf-skills",
   "downloaded_at": "2026-02-02T02:40:19.289838Z",
   "dir_name": "ctf-pwn",
-  "category": "other"
+  "category": "other",
+  "author": "ljagiello",
+  "source_url": "https://github.com/ljagiello/ctf-skills/blob/main/ctf-pwn/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Lukasz Jagiello",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -9,5 +9,12 @@
   "github_path": ".agent/skills/database-design",
   "github_branch": "main",
   "dir_name": "database-design",
-  "downloaded_at": "2026-02-05T05:41:55.330784Z"
+  "downloaded_at": "2026-02-05T05:41:55.330784Z",
+  "author": "yunaamelia",
+  "source_url": "https://github.com/yunaamelia/vps-rdp-workstation/blob/main/.agent/skills/database-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 VPS RDP Workstation Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

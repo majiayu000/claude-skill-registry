@@ -9,5 +9,12 @@
   "stars": 7,
   "github_path": ".claude/skills/pm-planner",
   "github_branch": "main",
-  "dir_name": "pm-planner"
+  "dir_name": "pm-planner",
+  "author": "jpoley",
+  "source_url": "https://github.com/jpoley/flowspec/blob/main/.claude/skills/pm-planner/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Peregrine Summit",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

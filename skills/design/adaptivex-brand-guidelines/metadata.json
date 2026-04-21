@@ -5,5 +5,12 @@
   "description": "Applies AdaptiveX's official brand colors and typography to any sort of artifact that may benefit from having AdaptiveX's look-and-feel. Use it when brand colors or style guidelines, visual formatting",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:45.310353Z",
-  "dir_name": "adaptivex-brand-guidelines"
+  "dir_name": "adaptivex-brand-guidelines",
+  "author": "adaptiveX-gh",
+  "source_url": "https://github.com/adaptiveX-gh/coursekit-mcp",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adaptiveX-gh/coursekit-mcp",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

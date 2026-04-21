@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/kcl-composition-validator",
   "github_branch": "main",
-  "dir_name": "kcl-composition-validator-smana-cloud-native-ref-cdf5e7f9"
+  "dir_name": "kcl-composition-validator-smana-cloud-native-ref-cdf5e7f9",
+  "author": "Smana",
+  "source_url": "https://github.com/Smana/cloud-native-ref/blob/main/.claude/skills/kcl-composition-validator/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2024 Ogenki",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

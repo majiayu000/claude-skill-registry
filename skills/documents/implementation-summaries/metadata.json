@@ -7,5 +7,12 @@
   "stars": 1,
   "source": "github.com/adaptiveX-gh/coursekit-mcp",
   "downloaded_at": "2026-01-24T16:16:09.073550Z",
-  "dir_name": "implementation-summaries"
+  "dir_name": "implementation-summaries",
+  "author": "adaptiveX-gh",
+  "source_url": "https://github.com/adaptiveX-gh/coursekit-mcp/blob/main/docs/implementation-summaries/PROMPT-2.2-GammaAISkill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adaptiveX-gh/coursekit-mcp/blob/main/docs/implementation-summaries/PROMPT-2.2-GammaAISkill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

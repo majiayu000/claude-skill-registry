@@ -7,5 +7,12 @@
   "dir_name": "quality-fixer-atyantik-python-modern-templa",
   "category": "other",
   "github_path": ".claude/skills/quality-fixer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Atyantik",
+  "source_url": "https://github.com/Atyantik/python-modern-template/blob/main/.claude/skills/quality-fixer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Atyantik Technologies Private Limited",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

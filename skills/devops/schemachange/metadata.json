@@ -9,5 +9,12 @@
   "stars": 23,
   "github_path": ".claude/skills/schemachange",
   "github_branch": "main",
-  "dir_name": "schemachange"
+  "dir_name": "schemachange",
+  "author": "sfc-gh-dflippo",
+  "source_url": "https://github.com/sfc-gh-dflippo/snowflake-dbt-demo/blob/main/.claude/skills/schemachange/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sfc-gh-dflippo/snowflake-dbt-demo/blob/main/.claude/skills/schemachange/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

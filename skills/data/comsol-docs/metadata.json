@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "comsol-docs"
+  "dir_name": "comsol-docs",
+  "author": "jcdoll",
+  "source_url": "https://github.com/jcdoll/htmlDocsRAG",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jcdoll/htmlDocsRAG",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

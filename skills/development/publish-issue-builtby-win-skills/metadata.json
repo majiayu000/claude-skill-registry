@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:06.102134Z",
   "github_path": "plugins/ship/skills/publish-issue",
   "github_branch": "main",
-  "dir_name": "publish-issue-builtby-win-skills"
+  "dir_name": "publish-issue-builtby-win-skills",
+  "author": "builtby-win",
+  "source_url": "https://github.com/builtby-win/skills/blob/main/plugins/ship/skills/publish-issue/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Winston Zhao",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

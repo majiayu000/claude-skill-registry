@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:49.970771Z",
   "github_path": "claude/skills/analyzing-requirements",
   "github_branch": "main",
-  "dir_name": "analyzing-requirements"
+  "dir_name": "analyzing-requirements",
+  "author": "skanehira",
+  "source_url": "https://github.com/skanehira/dotfiles/blob/main/claude/skills/analyzing-requirements/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 skanehira",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

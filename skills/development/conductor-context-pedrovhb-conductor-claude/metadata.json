@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/conductor-context",
   "github_branch": "main",
-  "dir_name": "conductor-context-pedrovhb-conductor-claude"
+  "dir_name": "conductor-context-pedrovhb-conductor-claude",
+  "author": "pedrovhb",
+  "source_url": "https://github.com/pedrovhb/conductor-claude/blob/main/skills/conductor-context/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pedrovhb/conductor-claude/blob/main/skills/conductor-context/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/demo-builder",
   "github_branch": "main",
-  "dir_name": "demo-builder-natea-fitfinder"
+  "dir_name": "demo-builder-natea-fitfinder",
+  "author": "natea",
+  "source_url": "https://github.com/natea/fitfinder/blob/main/.claude/skills/demo-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nate Aune",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

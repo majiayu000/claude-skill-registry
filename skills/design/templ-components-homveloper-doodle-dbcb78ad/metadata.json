@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:05.645866Z",
   "github_path": ".claude/skills/templ-skills/templ-components",
   "github_branch": "main",
-  "dir_name": "templ-components-homveloper-doodle-dbcb78ad"
+  "dir_name": "templ-components-homveloper-doodle-dbcb78ad",
+  "author": "homveloper",
+  "source_url": "https://github.com/homveloper/doodle/blob/main/.claude/skills/templ-skills/templ-components/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 beomhwi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

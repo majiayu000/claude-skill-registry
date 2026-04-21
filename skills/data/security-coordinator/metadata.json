@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "security-coordinator"
+  "dir_name": "security-coordinator",
+  "author": "ricable",
+  "source_url": "https://github.com/ricable/ericsson-ran-automation-agentdb",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ricable/ericsson-ran-automation-agentdb",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

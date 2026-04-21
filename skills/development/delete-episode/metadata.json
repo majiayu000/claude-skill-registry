@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "delete-episode"
+  "dir_name": "delete-episode",
+  "author": "jesse-spevack",
+  "source_url": "https://github.com/jesse-spevack/tts",
+  "license": "NOASSERTION",
+  "copyright": "Copyright © 2025-2026, Jesse Spevack.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

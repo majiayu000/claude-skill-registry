@@ -5,5 +5,12 @@
   "source": "github.com/OmidZamani/dspy-skills",
   "downloaded_at": "2026-02-04T01:59:36.416262Z",
   "dir_name": "dspy-gepa-reflective",
-  "category": "data"
+  "category": "data",
+  "author": "OmidZamani",
+  "source_url": "https://github.com/OmidZamani/dspy-skills/blob/main/skills/dspy-gepa-reflective/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Omid Zamani",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

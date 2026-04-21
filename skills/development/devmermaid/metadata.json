@@ -5,5 +5,12 @@
   "description": "Generate Mermaid diagrams with proper syntax. Use when creating flowcharts, sequence diagrams, class diagrams, or any other Mermaid visualizations. Ensures correct label quoting to prevent parsing err",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:28.197023Z",
-  "dir_name": "devmermaid"
+  "dir_name": "devmermaid",
+  "author": "kevinslin",
+  "source_url": "https://github.com/kevinslin/llm",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kevinslin/llm",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

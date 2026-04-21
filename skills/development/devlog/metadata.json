@@ -7,5 +7,12 @@
   "stars": 2,
   "source": "github.com/mpazaryna/claude-toolkit",
   "downloaded_at": "2026-01-24T16:15:03.877442Z",
-  "dir_name": "devlog"
+  "dir_name": "devlog",
+  "author": "mpazaryna",
+  "source_url": "https://github.com/mpazaryna/claude-toolkit/blob/main/docs/devlog/2025-11-20-1751-simplify-journal-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mpazaryna/claude-toolkit/blob/main/docs/devlog/2025-11-20-1751-simplify-journal-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

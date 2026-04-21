@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:01.388957Z",
   "github_path": ".claude/skills/nx-mcp",
   "github_branch": "main",
-  "dir_name": "nx-mcp-godspeedai-sea-8a39f4dd"
+  "dir_name": "nx-mcp-godspeedai-sea-8a39f4dd",
+  "author": "GodSpeedAI",
+  "source_url": "https://github.com/GodSpeedAI/SEA/blob/main/.claude/skills/nx-mcp/SKILL.md",
+  "license": "MPL-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GodSpeedAI/SEA/blob/main/.claude/skills/nx-mcp/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

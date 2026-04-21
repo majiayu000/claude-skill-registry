@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "GitHub Search API",
-  "dir_name": "digital-brain-skill"
+  "dir_name": "digital-brain-skill",
+  "author": "goodnight000",
+  "source_url": "https://github.com/goodnight000/KittyCourt",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/goodnight000/KittyCourt",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

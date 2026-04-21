@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/elm-packages",
   "github_branch": "main",
-  "dir_name": "elm-packages"
+  "dir_name": "elm-packages",
+  "author": "caseyWebb",
+  "source_url": "https://github.com/caseyWebb/elm-claude-plugin/blob/main/skills/elm-packages/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/caseyWebb/elm-claude-plugin/blob/main/skills/elm-packages/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

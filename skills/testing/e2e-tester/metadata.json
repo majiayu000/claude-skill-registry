@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "e2e-tester"
+  "dir_name": "e2e-tester",
+  "author": "AlexBaum-ai",
+  "source_url": "https://github.com/AlexBaum-ai/NEURM",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AlexBaum-ai/NEURM",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

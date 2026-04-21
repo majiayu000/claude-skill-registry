@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "",
   "github_branch": "main",
-  "dir_name": "dzmm-builder-waylon256yhw-dzmm-builder"
+  "dir_name": "dzmm-builder-waylon256yhw-dzmm-builder",
+  "author": "waylon256yhw",
+  "source_url": "https://github.com/waylon256yhw/dzmm-builder",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/waylon256yhw/dzmm-builder",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

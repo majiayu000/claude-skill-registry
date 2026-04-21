@@ -9,5 +9,12 @@
   "stars": 1,
   "github_path": "skills/gh-grep",
   "github_branch": "main",
-  "dir_name": "gh-grep-huynguyen03dev-opencode-setup"
+  "dir_name": "gh-grep-huynguyen03dev-opencode-setup",
+  "author": "huynguyen03dev",
+  "source_url": "https://github.com/huynguyen03dev/opencode-setup/blob/main/skills/gh-grep/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/huynguyen03dev/opencode-setup/blob/main/skills/gh-grep/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

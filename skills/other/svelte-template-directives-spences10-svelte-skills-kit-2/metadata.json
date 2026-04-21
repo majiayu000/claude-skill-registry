@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/spences10/svelte-skills-kit",
-  "dir_name": "svelte-template-directives-spences10-svelte-skills-kit-2"
+  "dir_name": "svelte-template-directives-spences10-svelte-skills-kit-2",
+  "author": "spences10",
+  "source_url": "https://github.com/spences10/svelte-skills-kit/blob/main/plugins/svelte-skills/skills/svelte-template-directives/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/spences10/svelte-skills-kit/blob/main/plugins/svelte-skills/skills/svelte-template-directives/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

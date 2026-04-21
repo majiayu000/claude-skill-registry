@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/coopeverything/TogetherOS",
   "downloaded_at": "2026-01-24T16:15:32.348096Z",
-  "dir_name": "skills-coopeverything-togetheros"
+  "dir_name": "skills-coopeverything-togetheros",
+  "author": "coopeverything",
+  "source_url": "https://github.com/coopeverything/TogetherOS/blob/main/docs/skills/reward-builder-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/coopeverything/TogetherOS/blob/main/docs/skills/reward-builder-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

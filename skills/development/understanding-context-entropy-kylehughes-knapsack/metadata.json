@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:23.482651Z",
   "github_path": "dotfiles/link/claude/skills/understanding-context-entropy",
   "github_branch": "main",
-  "dir_name": "understanding-context-entropy-kylehughes-knapsack"
+  "dir_name": "understanding-context-entropy-kylehughes-knapsack",
+  "author": "kylehughes",
+  "source_url": "https://github.com/kylehughes/knapsack/blob/main/dotfiles/link/claude/skills/understanding-context-entropy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kylehughes/knapsack/blob/main/dotfiles/link/claude/skills/understanding-context-entropy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

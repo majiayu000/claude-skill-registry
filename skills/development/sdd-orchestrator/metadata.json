@@ -8,5 +8,12 @@
     "orchestrator"
   ],
   "stars": 0,
-  "dir_name": "sdd-orchestrator"
+  "dir_name": "sdd-orchestrator",
+  "author": "yangsi7",
+  "source_url": "https://github.com/yangsi7/nikita",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yangsi7/nikita",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

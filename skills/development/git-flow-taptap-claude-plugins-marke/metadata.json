@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:45.007153Z",
   "github_path": "plugins/git/skills/git-flow",
   "github_branch": "main",
-  "dir_name": "git-flow-taptap-claude-plugins-marke"
+  "dir_name": "git-flow-taptap-claude-plugins-marke",
+  "author": "taptap",
+  "source_url": "https://github.com/taptap/claude-plugins-marketplace/blob/main/plugins/git/skills/git-flow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 TapTap AI Team",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

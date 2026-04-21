@@ -10,5 +10,12 @@
   "stars": 1,
   "github_path": ".claude/skills/github-user",
   "github_branch": "main",
-  "dir_name": "github-user-graphlessdb-graphlessdb"
+  "dir_name": "github-user-graphlessdb-graphlessdb",
+  "author": "graphlessdb",
+  "source_url": "https://github.com/graphlessdb/graphlessdb/blob/main/.claude/skills/github-user/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) Small Trading Company Ltd (Destash.com).",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

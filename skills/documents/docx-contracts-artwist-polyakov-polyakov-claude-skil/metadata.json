@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "plugins/docx-contracts/skills/docx-contracts",
   "github_branch": "main",
-  "dir_name": "docx-contracts-artwist-polyakov-polyakov-claude-skil"
+  "dir_name": "docx-contracts-artwist-polyakov-polyakov-claude-skil",
+  "author": "artwist-polyakov",
+  "source_url": "https://github.com/artwist-polyakov/polyakov-claude-skills/blob/main/plugins/docx-contracts/skills/docx-contracts/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Aleksandr Poliakov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

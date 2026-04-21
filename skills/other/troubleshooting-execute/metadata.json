@@ -5,5 +5,12 @@
   "source": "github.com/arittr/spectacular",
   "downloaded_at": "2026-01-29T03:34:03.283066Z",
   "dir_name": "troubleshooting-execute",
-  "category": "other"
+  "category": "other",
+  "author": "arittr",
+  "source_url": "https://github.com/arittr/spectacular/blob/main/skills/troubleshooting-execute/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Drew Ritter",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

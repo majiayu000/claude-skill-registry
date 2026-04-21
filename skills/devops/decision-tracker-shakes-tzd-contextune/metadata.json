@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/decision-tracker",
   "github_branch": "main",
-  "dir_name": "decision-tracker-shakes-tzd-contextune"
+  "dir_name": "decision-tracker-shakes-tzd-contextune",
+  "author": "Shakes-tzd",
+  "source_url": "https://github.com/Shakes-tzd/contextune/blob/main/skills/decision-tracker/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Shakes Dlamini",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

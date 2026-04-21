@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/synqing/K1.hardware",
-  "dir_name": "prism-k1-firmware"
+  "dir_name": "prism-k1-firmware",
+  "author": "synqing",
+  "source_url": "https://github.com/synqing/K1.hardware",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/synqing/K1.hardware",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "Phase 1 of OSS contribution - Find and evaluate suitable issues matching your skills, time, and learning goals. Filters by labels, assesses project health, and provides structured recommendations. Use",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:58.681031Z",
-  "dir_name": "ossissue-discovery-devkade-collaborator"
+  "dir_name": "ossissue-discovery-devkade-collaborator",
+  "author": "devkade",
+  "source_url": "https://github.com/devkade/collaborator",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/devkade/collaborator",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

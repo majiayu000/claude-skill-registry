@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/benbrastmckie/.config",
-  "dir_name": "skill-status-sync-benbrastmckie-config-2"
+  "dir_name": "skill-status-sync-benbrastmckie-config-2",
+  "author": "benbrastmckie",
+  "source_url": "https://github.com/benbrastmckie/.config/blob/main/.claude/skills/skill-status-sync/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/benbrastmckie/.config/blob/main/.claude/skills/skill-status-sync/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

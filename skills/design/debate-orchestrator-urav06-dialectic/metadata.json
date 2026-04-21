@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/debate-orchestrator",
   "github_branch": "main",
-  "dir_name": "debate-orchestrator-urav06-dialectic"
+  "dir_name": "debate-orchestrator-urav06-dialectic",
+  "author": "urav06",
+  "source_url": "https://github.com/urav06/dialectic/blob/main/.claude/skills/debate-orchestrator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Urav",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

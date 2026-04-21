@@ -11,5 +11,12 @@
   "stars": 17,
   "github_path": "save-web-page",
   "github_branch": "main",
-  "dir_name": "save-web-page-maragudk-skills-ac82e43b"
+  "dir_name": "save-web-page-maragudk-skills-ac82e43b",
+  "author": "maragudk",
+  "source_url": "https://github.com/maragudk/skills/blob/main/save-web-page/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) Maragu ApS",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

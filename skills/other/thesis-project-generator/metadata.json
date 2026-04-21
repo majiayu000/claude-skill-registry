@@ -9,5 +9,12 @@
   "github_path": "skills/thesis-project-generator",
   "github_branch": "main",
   "dir_name": "thesis-project-generator",
-  "downloaded_at": "2026-02-05T01:45:06.023908Z"
+  "downloaded_at": "2026-02-05T01:45:06.023908Z",
+  "author": "Boboc135612",
+  "source_url": "https://github.com/Boboc135612/skills/blob/main/skills/thesis-project-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Boboc135612/skills/blob/main/skills/thesis-project-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

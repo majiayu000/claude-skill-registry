@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".codex/skills/workbench-sync",
   "github_branch": "main",
-  "dir_name": "workbench-sync"
+  "dir_name": "workbench-sync",
+  "author": "bravellian",
+  "source_url": "https://github.com/bravellian/workbench/blob/main/.codex/skills/workbench-sync/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bravellian/workbench/blob/main/.codex/skills/workbench-sync/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

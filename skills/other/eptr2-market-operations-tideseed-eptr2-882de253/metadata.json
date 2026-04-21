@@ -7,5 +7,12 @@
   "dir_name": "eptr2-market-operations-tideseed-eptr2-882de253",
   "category": "other",
   "github_path": ".claude/skills/eptr2-market-operations",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Tideseed",
+  "source_url": "https://github.com/Tideseed/eptr2/blob/main/.claude/skills/eptr2-market-operations/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tideseed/eptr2/blob/main/.claude/skills/eptr2-market-operations/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

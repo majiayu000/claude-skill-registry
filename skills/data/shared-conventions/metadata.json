@@ -5,5 +5,12 @@
   "source": "github.com/javicasper/memory-forge",
   "downloaded_at": "2026-02-04T02:10:33.366874Z",
   "dir_name": "shared-conventions",
-  "category": "data"
+  "category": "data",
+  "author": "javicasper",
+  "source_url": "https://github.com/javicasper/memory-forge/blob/main/examples/monorepo/.claude/skills/shared-conventions/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Memory Forge Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

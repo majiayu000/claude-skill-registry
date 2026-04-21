@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:00.000282Z",
   "github_path": "plugin/skills/doc-management",
   "github_branch": "main",
-  "dir_name": "doc-management-arimxyer-doc-manager-mcp"
+  "dir_name": "doc-management-arimxyer-doc-manager-mcp",
+  "author": "arimxyer",
+  "source_url": "https://github.com/arimxyer/doc-manager-mcp/blob/main/plugin/skills/doc-management/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 doc-manager-mcp contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

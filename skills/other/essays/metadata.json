@@ -5,5 +5,12 @@
   "source": "github.com/JaaronBC/JaaronBC.github.io",
   "downloaded_at": "2026-02-02T03:32:59.472973Z",
   "dir_name": "essays",
-  "category": "other"
+  "category": "other",
+  "author": "JaaronBC",
+  "source_url": "https://github.com/JaaronBC/JaaronBC.github.io/blob/main/essays/learning-skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 TechFolios",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

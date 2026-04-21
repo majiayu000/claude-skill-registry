@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/deptrac-fixer",
   "github_branch": "main",
-  "dir_name": "deptrac-fixer"
+  "dir_name": "deptrac-fixer",
+  "author": "VilnaCRM-Org",
+  "source_url": "https://github.com/VilnaCRM-Org/core-service/blob/main/.claude/skills/deptrac-fixer/SKILL.md",
+  "license": "CC0-1.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/VilnaCRM-Org/core-service/blob/main/.claude/skills/deptrac-fixer/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

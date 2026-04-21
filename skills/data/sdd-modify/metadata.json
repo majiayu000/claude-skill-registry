@@ -9,5 +9,12 @@
   ],
   "stars": 3,
   "source": "local",
-  "dir_name": "sdd-modify"
+  "dir_name": "sdd-modify",
+  "author": "tylerburleigh",
+  "source_url": "https://github.com/tylerburleigh/claude-sdd-toolkit",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tylerburleigh/claude-sdd-toolkit",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

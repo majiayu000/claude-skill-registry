@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:08.949839Z",
   "github_path": ".claude/skills/diamond-fysio-frontend",
   "github_branch": "main",
-  "dir_name": "diamond-fysio-frontend-marijnbaar-diamond-fysio-conten"
+  "dir_name": "diamond-fysio-frontend-marijnbaar-diamond-fysio-conten",
+  "author": "marijnbaar",
+  "source_url": "https://github.com/marijnbaar/diamond-fysio-contentful/blob/main/.claude/skills/diamond-fysio-frontend/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Marijn Baar",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

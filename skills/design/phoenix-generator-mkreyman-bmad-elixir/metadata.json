@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:11.575954Z",
   "github_path": "priv/skills/phoenix-generator",
   "github_branch": "main",
-  "dir_name": "phoenix-generator-mkreyman-bmad-elixir"
+  "dir_name": "phoenix-generator-mkreyman-bmad-elixir",
+  "author": "mkreyman",
+  "source_url": "https://github.com/mkreyman/bmad-elixir/blob/main/priv/skills/phoenix-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 BmadElixir Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

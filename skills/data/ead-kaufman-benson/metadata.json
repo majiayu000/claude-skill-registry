@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:20.548374Z",
   "dir_name": "ead-kaufman-benson",
   "github_path": "my-ead-skill/ead-kaufman-benson",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "JankMajesty",
+  "source_url": "https://github.com/JankMajesty/KaufmanEAD/blob/main/my-ead-skill/ead-kaufman-benson/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JankMajesty/KaufmanEAD/blob/main/my-ead-skill/ead-kaufman-benson/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

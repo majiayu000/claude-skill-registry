@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:01.557637Z",
   "github_path": "skills/linear-task-selector",
   "github_branch": "main",
-  "dir_name": "linear-task-selector-timogilvie-claude-workflow"
+  "dir_name": "linear-task-selector-timogilvie-claude-workflow",
+  "author": "timogilvie",
+  "source_url": "https://github.com/timogilvie/claude-workflow/blob/main/skills/linear-task-selector/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Tim Ogilvie",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

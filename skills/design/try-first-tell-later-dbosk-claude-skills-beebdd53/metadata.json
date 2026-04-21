@@ -12,5 +12,12 @@
   "stars": 0,
   "github_path": "try-first-tell-later",
   "github_branch": "main",
-  "dir_name": "try-first-tell-later-dbosk-claude-skills-beebdd53"
+  "dir_name": "try-first-tell-later-dbosk-claude-skills-beebdd53",
+  "author": "dbosk",
+  "source_url": "https://github.com/dbosk/claude-skills/blob/main/try-first-tell-later/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dbosk/claude-skills/blob/main/try-first-tell-later/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

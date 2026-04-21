@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:02.969793Z",
   "github_path": ".claude/skills/github-issue-implementer",
   "github_branch": "main",
-  "dir_name": "github-issue-implementer-graphlessdb-graphlessdb"
+  "dir_name": "github-issue-implementer-graphlessdb-graphlessdb",
+  "author": "graphlessdb",
+  "source_url": "https://github.com/graphlessdb/graphlessdb/blob/main/.claude/skills/github-issue-implementer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) Small Trading Company Ltd (Destash.com).",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

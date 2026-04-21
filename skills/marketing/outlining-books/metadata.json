@@ -5,5 +5,12 @@
   "description": "Creates outlines for non-fiction books and long articles. Use when user says 'create an outline', 'plan a book', 'structure a book about [topic]', or 'I want to write about [topic]'. Handles leadershi",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:00.386719Z",
-  "dir_name": "outlining-books"
+  "dir_name": "outlining-books",
+  "author": "djacobsmeyer",
+  "source_url": "https://github.com/djacobsmeyer/hold-the-line",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/djacobsmeyer/hold-the-line",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

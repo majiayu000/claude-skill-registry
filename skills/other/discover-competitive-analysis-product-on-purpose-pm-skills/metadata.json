@@ -5,5 +5,12 @@
   "source": "github.com/product-on-purpose/pm-skills",
   "downloaded_at": "2026-01-29T05:20:34.704373Z",
   "dir_name": "discover-competitive-analysis-product-on-purpose-pm-skills",
-  "category": "other"
+  "category": "other",
+  "author": "product-on-purpose",
+  "source_url": "https://github.com/product-on-purpose/pm-skills/blob/main/skills/discover-competitive-analysis/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2026 Jonathan",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

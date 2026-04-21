@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:13.533413Z",
   "github_path": "plugins/story-driven/skills/defining-stories",
   "github_branch": "main",
-  "dir_name": "defining-stories-kecbigmt-cc-plugins"
+  "dir_name": "defining-stories-kecbigmt-cc-plugins",
+  "author": "kecbigmt",
+  "source_url": "https://github.com/kecbigmt/cc-plugins/blob/main/plugins/story-driven/skills/defining-stories/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 kecy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

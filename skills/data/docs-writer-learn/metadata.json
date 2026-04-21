@@ -5,5 +5,12 @@
   "source": "github.com/reactjs/react.dev",
   "downloaded_at": "2026-02-01T05:03:40.855957Z",
   "dir_name": "docs-writer-learn",
-  "category": "data"
+  "category": "data",
+  "author": "reactjs",
+  "source_url": "https://github.com/reactjs/react.dev/blob/main/.claude/skills/docs-writer-learn/SKILL.md",
+  "license": "CC-BY-4.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/reactjs/react.dev/blob/main/.claude/skills/docs-writer-learn/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

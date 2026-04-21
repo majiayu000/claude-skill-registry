@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 6,
   "source": "github.com/zby/llm-do",
-  "dir_name": "decomplect-py"
+  "dir_name": "decomplect-py",
+  "author": "zby",
+  "source_url": "https://github.com/zby/llm-do",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 llm-do contributors",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "stars": 115,
   "source": "github.com/einverne/dotfiles",
   "downloaded_at": "2026-01-24T16:15:34.838501Z",
-  "dir_name": "performance-optimizer-einverne-dotfiles"
+  "dir_name": "performance-optimizer-einverne-dotfiles",
+  "author": "einverne",
+  "source_url": "https://github.com/einverne/dotfiles/blob/main/claude/skills/performance-optimizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/einverne/dotfiles/blob/main/claude/skills/performance-optimizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

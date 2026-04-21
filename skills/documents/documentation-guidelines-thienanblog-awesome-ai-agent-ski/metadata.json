@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/documentation-guidelines",
   "github_branch": "main",
-  "dir_name": "documentation-guidelines-thienanblog-awesome-ai-agent-ski"
+  "dir_name": "documentation-guidelines-thienanblog-awesome-ai-agent-ski",
+  "author": "thienanblog",
+  "source_url": "https://github.com/thienanblog/awesome-ai-agent-skills/blob/main/skills/documentation-guidelines/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/thienanblog/awesome-ai-agent-skills/blob/main/skills/documentation-guidelines/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

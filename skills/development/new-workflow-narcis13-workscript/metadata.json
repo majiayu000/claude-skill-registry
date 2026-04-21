@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/new-workflow",
   "github_branch": "main",
-  "dir_name": "new-workflow-narcis13-workscript"
+  "dir_name": "new-workflow-narcis13-workscript",
+  "author": "Narcis13",
+  "source_url": "https://github.com/Narcis13/workscript/blob/main/.claude/skills/new-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Steve Simkins",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

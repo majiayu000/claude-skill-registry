@@ -5,5 +5,12 @@
   "source": "github.com/sskim91/dotfiles",
   "downloaded_at": "2026-01-29T07:03:46.254595Z",
   "dir_name": "skill-writer",
-  "category": "other"
+  "category": "other",
+  "author": "sskim91",
+  "source_url": "https://github.com/sskim91/dotfiles/blob/main/.claude/skills/skill-writer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SEONG SEOB KIM",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:18.327885Z",
   "github_path": ".cursor/skills/lighthouse-optimization",
   "github_branch": "main",
-  "dir_name": "lighthouse-optimization-wchklaus97-remind-me-pwa"
+  "dir_name": "lighthouse-optimization-wchklaus97-remind-me-pwa",
+  "author": "wchklaus97",
+  "source_url": "https://github.com/wchklaus97/remind-me-pwa/blob/main/.cursor/skills/lighthouse-optimization/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 wchklaus97",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

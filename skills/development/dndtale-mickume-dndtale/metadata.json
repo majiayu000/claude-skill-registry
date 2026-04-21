@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/dndtale",
   "github_branch": "main",
-  "dir_name": "dndtale-mickume-dndtale"
+  "dir_name": "dndtale-mickume-dndtale",
+  "author": "mickume",
+  "source_url": "https://github.com/mickume/dndtale/blob/main/.claude/skills/dndtale/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Michael Kuehl",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

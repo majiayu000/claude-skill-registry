@@ -5,5 +5,12 @@
   "source": "github.com/ils15/copilot-global-config",
   "downloaded_at": "2026-01-28T02:32:22.584721Z",
   "dir_name": "telegram-bot-ui-design",
-  "category": "data"
+  "category": "data",
+  "author": "ils15",
+  "source_url": "https://github.com/ils15/copilot-global-config/blob/main/skills/telegram-bot-ui-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

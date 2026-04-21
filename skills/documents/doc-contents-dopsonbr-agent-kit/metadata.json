@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:12.090153Z",
   "github_path": "content/skills/doc-contents",
   "github_branch": "main",
-  "dir_name": "doc-contents-dopsonbr-agent-kit"
+  "dir_name": "doc-contents-dopsonbr-agent-kit",
+  "author": "dopsonbr",
+  "source_url": "https://github.com/dopsonbr/agent-kit/blob/main/content/skills/doc-contents/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dopsonbr/agent-kit/blob/main/content/skills/doc-contents/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "Run GitHub Actions workflows locally using ACT in Docker before pushing to verify CI will pass",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:53.114277Z",
-  "dir_name": "local-ci-runner-act-igorganapolsky-trading"
+  "dir_name": "local-ci-runner-act-igorganapolsky-trading",
+  "author": "IgorGanapolsky",
+  "source_url": "https://github.com/IgorGanapolsky/trading",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Igor Ganapolsky",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/arittr/spectacular",
   "downloaded_at": "2026-01-29T07:40:28.629078Z",
   "dir_name": "validating-environment-arittr-spectacular",
-  "category": "other"
+  "category": "other",
+  "author": "arittr",
+  "source_url": "https://github.com/arittr/spectacular/blob/main/skills/validating-environment/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Drew Ritter",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "end-to-end-tests"
+  "dir_name": "end-to-end-tests",
+  "author": "git-town",
+  "source_url": "https://github.com/git-town/git-town",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2014-2024 the Git Town creators",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

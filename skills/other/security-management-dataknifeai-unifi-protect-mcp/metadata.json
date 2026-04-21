@@ -5,5 +5,12 @@
   "source": "github.com/DataKnifeAI/unifi-protect-mcp",
   "downloaded_at": "2026-01-29T05:15:14.271908Z",
   "dir_name": "security-management-dataknifeai-unifi-protect-mcp",
-  "category": "other"
+  "category": "other",
+  "author": "DataKnifeAI",
+  "source_url": "https://github.com/DataKnifeAI/unifi-protect-mcp/blob/main/.github/skills/security-management/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Lee Chapman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

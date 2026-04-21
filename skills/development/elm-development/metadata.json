@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "elm-development"
+  "dir_name": "elm-development",
+  "author": "manutej",
+  "source_url": "https://github.com/manutej/fstar-labs",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/manutej/fstar-labs",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

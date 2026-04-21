@@ -9,5 +9,12 @@
   ],
   "stars": 1,
   "source": "local",
-  "dir_name": "ros2-standards"
+  "dir_name": "ros2-standards",
+  "author": "uneezaismail",
+  "source_url": "https://github.com/uneezaismail/Physical-AI-Humanoid-Robotics",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/uneezaismail/Physical-AI-Humanoid-Robotics",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

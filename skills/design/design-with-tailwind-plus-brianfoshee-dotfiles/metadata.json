@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:38.346160Z",
   "github_path": "claude/skills/design-with-tailwind-plus",
   "github_branch": "main",
-  "dir_name": "design-with-tailwind-plus-brianfoshee-dotfiles"
+  "dir_name": "design-with-tailwind-plus-brianfoshee-dotfiles",
+  "author": "brianfoshee",
+  "source_url": "https://github.com/brianfoshee/dotfiles/blob/main/claude/skills/design-with-tailwind-plus/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) Brian Foshee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

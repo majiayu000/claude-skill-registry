@@ -5,5 +5,12 @@
   "source": "github.com/nxy7/streampai-elixir",
   "downloaded_at": "2026-02-04T01:39:13.159442Z",
   "dir_name": "elixir-genius",
-  "category": "data"
+  "category": "data",
+  "author": "nxy7",
+  "source_url": "https://github.com/nxy7/streampai-elixir/blob/main/.claude/skills/elixir-genius/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Streampai. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

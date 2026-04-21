@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "decision-tracker"
+  "dir_name": "decision-tracker",
+  "author": "Shakes-tzd",
+  "source_url": "https://github.com/Shakes-tzd/contextune",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Shakes Dlamini",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

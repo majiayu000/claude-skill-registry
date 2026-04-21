@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:21.914847Z",
   "github_path": "opencode/skill/receiving-feedback",
   "github_branch": "main",
-  "dir_name": "receiving-feedback"
+  "dir_name": "receiving-feedback",
+  "author": "viktorvan",
+  "source_url": "https://github.com/viktorvan/dot-files/blob/main/opencode/skill/receiving-feedback/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/viktorvan/dot-files/blob/main/opencode/skill/receiving-feedback/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

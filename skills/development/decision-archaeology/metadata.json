@@ -9,5 +9,12 @@
   ],
   "stars": 3,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "decision-archaeology"
+  "dir_name": "decision-archaeology",
+  "author": "ntsk",
+  "source_url": "https://github.com/ntsk/dotfiles",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ntsk/dotfiles",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -12,5 +12,12 @@
   "stars": 3,
   "dir_name": "law-machine-readable-interpreter",
   "github_path": ".claude/skills/law-machine-readable-interpreter",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "MinBZK",
+  "source_url": "https://github.com/MinBZK/regelrecht-mvp/blob/main/.claude/skills/law-machine-readable-interpreter/SKILL.md",
+  "license": "EUPL-1.2",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MinBZK/regelrecht-mvp/blob/main/.claude/skills/law-machine-readable-interpreter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/docusaurus-themes",
   "github_branch": "main",
-  "dir_name": "docusaurus-themes-mcclowes-lea"
+  "dir_name": "docusaurus-themes-mcclowes-lea",
+  "author": "mcclowes",
+  "source_url": "https://github.com/mcclowes/lea/blob/main/.claude/skills/docusaurus-themes/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Max Clayton Clowes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "deep-mem",
   "github_path": "",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "ferstar",
+  "source_url": "https://github.com/ferstar/deep-mem",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ferstar/deep-mem",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

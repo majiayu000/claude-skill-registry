@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "i18n-workflow"
+  "dir_name": "i18n-workflow",
+  "author": "pakholeung37",
+  "source_url": "https://github.com/pakholeung37/skills-pre",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pakholeung37/skills-pre",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

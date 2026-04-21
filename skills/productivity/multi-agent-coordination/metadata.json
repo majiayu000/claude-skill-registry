@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": "skills/multi-agent-coordination",
   "github_branch": "main",
-  "dir_name": "multi-agent-coordination"
+  "dir_name": "multi-agent-coordination",
+  "author": "nexus-labs-automation",
+  "source_url": "https://github.com/nexus-labs-automation/agent-observability/blob/main/skills/multi-agent-coordination/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Caleb / Nexus Labs",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

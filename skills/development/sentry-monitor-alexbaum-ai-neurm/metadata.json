@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:50.687028Z",
   "github_path": ".claude/skills/sentry-monitor",
   "github_branch": "main",
-  "dir_name": "sentry-monitor-alexbaum-ai-neurm"
+  "dir_name": "sentry-monitor-alexbaum-ai-neurm",
+  "author": "AlexBaum-ai",
+  "source_url": "https://github.com/AlexBaum-ai/NEURM/blob/main/.claude/skills/sentry-monitor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AlexBaum-ai/NEURM/blob/main/.claude/skills/sentry-monitor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

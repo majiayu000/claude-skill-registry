@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "presentation-reviewer"
+  "dir_name": "presentation-reviewer",
+  "author": "Alexmacapple",
+  "source_url": "https://github.com/Alexmacapple/tester-a11y",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Alexmacapple/tester-a11y",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

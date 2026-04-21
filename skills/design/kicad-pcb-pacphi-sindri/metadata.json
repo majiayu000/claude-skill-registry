@@ -5,5 +5,12 @@
   "description": "Control KiCAD for electronic circuit design, schematic creation, and PCB layout operations",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:42.095366Z",
-  "dir_name": "kicad-pcb-pacphi-sindri"
+  "dir_name": "kicad-pcb-pacphi-sindri",
+  "author": "pacphi",
+  "source_url": "https://github.com/pacphi/sindri",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Chris Phillipson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

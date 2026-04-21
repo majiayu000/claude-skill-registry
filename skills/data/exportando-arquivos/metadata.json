@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "exportando-arquivos",
   "github_path": ".claude/skills/exportando-arquivos",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Rafael-2109",
+  "source_url": "https://github.com/Rafael-2109/frete-sistema/blob/main/.claude/skills/exportando-arquivos/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Rafael-2109/frete-sistema/blob/main/.claude/skills/exportando-arquivos/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:37.258784Z",
   "github_path": ".cursor/skills/dto-response",
   "github_branch": "main",
-  "dir_name": "dto-response-bloominggrace-create-fullstack-ser"
+  "dir_name": "dto-response-bloominggrace-create-fullstack-ser",
+  "author": "bloominggrace",
+  "source_url": "https://github.com/bloominggrace/create-fullstack-service/blob/main/.cursor/skills/dto-response/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bloominggrace/create-fullstack-service/blob/main/.cursor/skills/dto-response/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

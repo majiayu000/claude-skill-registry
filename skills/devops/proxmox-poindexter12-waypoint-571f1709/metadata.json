@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:40.954628Z",
   "github_path": "technologies/skills/proxmox",
   "github_branch": "main",
-  "dir_name": "proxmox-poindexter12-waypoint-571f1709"
+  "dir_name": "proxmox-poindexter12-waypoint-571f1709",
+  "author": "poindexter12",
+  "source_url": "https://github.com/poindexter12/waypoint/blob/main/technologies/skills/proxmox/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Joe Seymour",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

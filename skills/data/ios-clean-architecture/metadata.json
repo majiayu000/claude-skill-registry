@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "ios-clean-architecture"
+  "dir_name": "ios-clean-architecture",
+  "author": "no-problem-dev",
+  "source_url": "https://github.com/no-problem-dev/claude-code-plugins",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/no-problem-dev/claude-code-plugins",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

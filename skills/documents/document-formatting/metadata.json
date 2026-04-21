@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/document-formatting",
   "github_branch": "main",
-  "dir_name": "document-formatting"
+  "dir_name": "document-formatting",
+  "author": "russellgoldstein",
+  "source_url": "https://github.com/russellgoldstein/project-analysis-organization/blob/main/.claude/skills/document-formatting/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/russellgoldstein/project-analysis-organization/blob/main/.claude/skills/document-formatting/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

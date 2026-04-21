@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/shoma-endo/industry-specific-mc-training",
-  "dir_name": "error-handling-and-messages"
+  "dir_name": "error-handling-and-messages",
+  "author": "shoma-endo",
+  "source_url": "https://github.com/shoma-endo/industry-specific-mc-training",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shoma-endo/industry-specific-mc-training",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/cacr92/WeReply",
   "downloaded_at": "2026-02-04T02:08:13.124879Z",
   "dir_name": "python-agent-development",
-  "category": "data"
+  "category": "data",
+  "author": "cacr92",
+  "source_url": "https://github.com/cacr92/WeReply/blob/main/.claude/skills/python-agent-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 WeReply",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

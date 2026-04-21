@@ -9,5 +9,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "ds-pro-max"
+  "dir_name": "ds-pro-max",
+  "author": "kyirexy",
+  "source_url": "https://github.com/kyirexy/DesignSystem-Pro-Max-skill",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kyirexy/DesignSystem-Pro-Max-skill",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

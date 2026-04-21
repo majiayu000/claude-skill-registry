@@ -11,5 +11,12 @@
   "stars": 1,
   "github_path": "skills/options-strategy-advisor",
   "github_branch": "main",
-  "dir_name": "options-strategy-advisor-tradermonty-claude-trading-skill"
+  "dir_name": "options-strategy-advisor-tradermonty-claude-trading-skill",
+  "author": "tradermonty",
+  "source_url": "https://github.com/tradermonty/claude-trading-skills/blob/main/skills/options-strategy-advisor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 TraderMonty",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

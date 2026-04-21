@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "dbt-model-writer"
+  "dir_name": "dbt-model-writer",
+  "author": "jwest33",
+  "source_url": "https://github.com/jwest33/claude_code_plugin_dbt_snowflake_specialist",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jwest33/claude_code_plugin_dbt_snowflake_specialist",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

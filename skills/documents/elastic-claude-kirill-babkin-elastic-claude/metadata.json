@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:39.791414Z",
   "github_path": "skill",
   "github_branch": "main",
-  "dir_name": "elastic-claude-kirill-babkin-elastic-claude"
+  "dir_name": "elastic-claude-kirill-babkin-elastic-claude",
+  "author": "Kirill-Babkin",
+  "source_url": "https://github.com/Kirill-Babkin/elastic-claude/blob/main/skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kirill-Babkin/elastic-claude/blob/main/skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "deprecation-handler"
+  "dir_name": "deprecation-handler",
+  "author": "alienfast",
+  "source_url": "https://github.com/alienfast/claude",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AlienFast",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

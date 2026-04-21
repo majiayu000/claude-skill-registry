@@ -8,5 +8,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "robin"
+  "dir_name": "robin",
+  "author": "swapkats",
+  "source_url": "https://github.com/swapkats/robin",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Swap Kats",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

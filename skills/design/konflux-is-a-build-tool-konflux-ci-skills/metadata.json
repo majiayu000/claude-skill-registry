@@ -5,5 +5,12 @@
   "description": "Use this skill to query Konflux objects from the Kubernetes cluster. Konflux objects are application, component, pipelinerun, taskrun, snapshot and release. The skill can be used to query logs from fa",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:01.709302Z",
-  "dir_name": "konflux-is-a-build-tool-konflux-ci-skills"
+  "dir_name": "konflux-is-a-build-tool-konflux-ci-skills",
+  "author": "konflux-ci",
+  "source_url": "https://github.com/konflux-ci/skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/konflux-ci/skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "dokploy-template-validation",
   "github_path": ".claude/skills/dokploy-template-validation",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "enuno",
+  "source_url": "https://github.com/enuno/dokploy/blob/main/.claude/skills/dokploy-template-validation/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/enuno/dokploy/blob/main/.claude/skills/dokploy-template-validation/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

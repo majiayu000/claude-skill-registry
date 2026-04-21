@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "epub-translate"
+  "dir_name": "epub-translate",
+  "author": "lywa1998",
+  "source_url": "https://github.com/lywa1998/epub-bilingual-translate-skill",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lywa1998/epub-bilingual-translate-skill",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

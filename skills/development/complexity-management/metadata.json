@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/complexity-management",
   "github_branch": "main",
-  "dir_name": "complexity-management"
+  "dir_name": "complexity-management",
+  "author": "VilnaCRM-Org",
+  "source_url": "https://github.com/VilnaCRM-Org/core-service/blob/main/.claude/skills/complexity-management/SKILL.md",
+  "license": "CC0-1.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/VilnaCRM-Org/core-service/blob/main/.claude/skills/complexity-management/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

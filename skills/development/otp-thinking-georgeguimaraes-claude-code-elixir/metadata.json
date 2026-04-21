@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:56.393444Z",
   "github_path": "plugins/elixir/skills/otp-thinking",
   "github_branch": "main",
-  "dir_name": "otp-thinking-georgeguimaraes-claude-code-elixir"
+  "dir_name": "otp-thinking-georgeguimaraes-claude-code-elixir",
+  "author": "georgeguimaraes",
+  "source_url": "https://github.com/georgeguimaraes/claude-code-elixir/blob/main/plugins/elixir/skills/otp-thinking/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 George Guimarães",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

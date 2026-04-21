@@ -5,5 +5,12 @@
   "source": "github.com/dojoengine/dojo.js",
   "downloaded_at": "2026-02-04T01:18:39.596519Z",
   "dir_name": "dojo-setup",
-  "category": "data"
+  "category": "data",
+  "author": "dojoengine",
+  "source_url": "https://github.com/dojoengine/dojo.js/blob/main/.claude/skills/dojo-setup/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022-present",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

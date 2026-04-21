@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/library-docs",
   "github_branch": "main",
-  "dir_name": "library-docs"
+  "dir_name": "library-docs",
+  "author": "pfangueiro",
+  "source_url": "https://github.com/pfangueiro/claude-code-agents/blob/main/.claude/skills/library-docs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Pedro Fangueiro",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -9,5 +9,12 @@
   ],
   "stars": 3,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "devup-api"
+  "dir_name": "devup-api",
+  "author": "dev-five-git",
+  "source_url": "https://github.com/dev-five-git/devup-api",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dev-five-git/devup-api",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

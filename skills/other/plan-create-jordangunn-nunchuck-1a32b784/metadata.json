@@ -7,5 +7,12 @@
   "dir_name": "plan-create-jordangunn-nunchuck-1a32b784",
   "category": "other",
   "github_path": "skills/plan/plan-create",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "JordanGunn",
+  "source_url": "https://github.com/JordanGunn/nunchuck/blob/main/skills/plan/plan-create/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Jordan Godau",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "discord-get-messages",
   "github_branch": "main",
-  "dir_name": "discord-get-messages-nice-wolf-studio-agent-discord-skills"
+  "dir_name": "discord-get-messages-nice-wolf-studio-agent-discord-skills",
+  "author": "Nice-Wolf-Studio",
+  "source_url": "https://github.com/Nice-Wolf-Studio/agent-discord-skills/blob/main/discord-get-messages/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nice-Wolf-Studio",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

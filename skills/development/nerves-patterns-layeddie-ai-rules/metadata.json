@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:14.155231Z",
   "github_path": "skills/nerves-patterns",
   "github_branch": "main",
-  "dir_name": "nerves-patterns-layeddie-ai-rules"
+  "dir_name": "nerves-patterns-layeddie-ai-rules",
+  "author": "layeddie",
+  "source_url": "https://github.com/layeddie/ai-rules/blob/main/skills/nerves-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/layeddie/ai-rules/blob/main/skills/nerves-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

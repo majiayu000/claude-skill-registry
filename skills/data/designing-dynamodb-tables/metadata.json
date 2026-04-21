@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "designing-dynamodb-tables",
   "github_path": "skills/designing-dynamodb-tables",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "swapkats",
+  "source_url": "https://github.com/swapkats/robin/blob/main/skills/designing-dynamodb-tables/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Swap Kats",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

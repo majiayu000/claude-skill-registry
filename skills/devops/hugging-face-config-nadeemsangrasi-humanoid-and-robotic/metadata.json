@@ -5,5 +5,12 @@
   "description": "Generate Hugging Face Spaces configuration files including runtime setup, environment variables, and deployment instructions.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:15.590441Z",
-  "dir_name": "hugging-face-config-nadeemsangrasi-humanoid-and-robotic"
+  "dir_name": "hugging-face-config-nadeemsangrasi-humanoid-and-robotic",
+  "author": "nadeemsangrasi",
+  "source_url": "https://github.com/nadeemsangrasi/humanoid-and-robotic-book",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nadeemsangrasi/humanoid-and-robotic-book",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

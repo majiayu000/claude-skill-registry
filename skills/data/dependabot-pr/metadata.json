@@ -8,5 +8,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "dependabot-pr"
+  "dir_name": "dependabot-pr",
+  "author": "AtefAndrus",
+  "source_url": "https://github.com/AtefAndrus/disqord",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Atef Andrus",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Génère une entité Doctrine avec repository selon principes Elegant Objects",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:59.067584Z",
-  "dir_name": "frameworkmakeentity"
+  "dir_name": "frameworkmakeentity",
+  "author": "atournayre",
+  "source_url": "https://github.com/atournayre/claude-marketplace",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Aurélien Tournayre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/document-orchestrator",
   "github_branch": "main",
-  "dir_name": "document-orchestrator"
+  "dir_name": "document-orchestrator",
+  "author": "timogilvie",
+  "source_url": "https://github.com/timogilvie/claude-workflow/blob/main/skills/document-orchestrator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Tim Ogilvie",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

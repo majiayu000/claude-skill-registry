@@ -1,3 +1,4 @@
+import http.client
 import importlib.util
 import json
 import sys
@@ -103,6 +104,21 @@ def test_fetch_repo_license_degrades_after_timeout(monkeypatch):
 
     assert result["license"] == "NOASSERTION"
     assert result["error"] == "fetch_error:read timed out"
+
+
+def test_fetch_repo_license_degrades_after_incomplete_read(monkeypatch):
+    module = load_module()
+
+    def fail_request(*args, **kwargs):
+        raise http.client.IncompleteRead(b"{}", 10)
+
+    monkeypatch.setattr(module, "github_request", fail_request)
+    monkeypatch.setattr(module.time, "sleep", lambda _seconds: None)
+
+    result = module.fetch_repo_license("owner/repo", token="", timeout=1)
+
+    assert result["license"] == "NOASSERTION"
+    assert result["error"].startswith("fetch_error:IncompleteRead")
 
 
 def test_license_classification_covers_backfill_spdx_values():

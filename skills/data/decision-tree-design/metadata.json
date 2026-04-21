@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "decision-tree-design"
+  "dir_name": "decision-tree-design",
+  "author": "darantrute",
+  "source_url": "https://github.com/darantrute/_virgin-12112025",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/darantrute/_virgin-12112025",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/Razmik-Kutinava/test.admin_logistic_v8",
-  "dir_name": "dependency-security-check"
+  "dir_name": "dependency-security-check",
+  "author": "Razmik-Kutinava",
+  "source_url": "https://github.com/Razmik-Kutinava/test.admin_logistic_v8",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Razmik-Kutinava/test.admin_logistic_v8",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

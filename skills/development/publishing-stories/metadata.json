@@ -5,5 +5,12 @@
   "description": "Guides commit, push, and draft PR creation for stories. Use when ready to commit changes, pushing to remote, or creating a pull request for review.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:19.059946Z",
-  "dir_name": "publishing-stories"
+  "dir_name": "publishing-stories",
+  "author": "kecbigmt",
+  "source_url": "https://github.com/kecbigmt/cc-plugins",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 kecy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

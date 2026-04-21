@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:41.979633Z",
   "github_path": "docker/lib/extensions/vf-ffmpeg-processing/resources",
   "github_branch": "main",
-  "dir_name": "ffmpeg-processing"
+  "dir_name": "ffmpeg-processing",
+  "author": "pacphi",
+  "source_url": "https://github.com/pacphi/sindri/blob/main/docker/lib/extensions/vf-ffmpeg-processing/resources/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Chris Phillipson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:20.146614Z",
   "github_path": "examples/SkillsMCPUnifiedDemo/agent_skills/file-searcher",
   "github_branch": "main",
-  "dir_name": "file-searcher-eanzhao-aevatar-agent-framew"
+  "dir_name": "file-searcher-eanzhao-aevatar-agent-framew",
+  "author": "eanzhao",
+  "source_url": "https://github.com/eanzhao/aevatar-agent-framework/blob/main/examples/SkillsMCPUnifiedDemo/agent_skills/file-searcher/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/eanzhao/aevatar-agent-framework/blob/main/examples/SkillsMCPUnifiedDemo/agent_skills/file-searcher/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

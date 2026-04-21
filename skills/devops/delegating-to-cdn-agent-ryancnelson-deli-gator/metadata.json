@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:27.782921Z",
   "github_path": "examples/5-cdn-management/skills/delegating-to-cdn-agent",
   "github_branch": "main",
-  "dir_name": "delegating-to-cdn-agent-ryancnelson-deli-gator"
+  "dir_name": "delegating-to-cdn-agent-ryancnelson-deli-gator",
+  "author": "ryancnelson",
+  "source_url": "https://github.com/ryancnelson/deli-gator/blob/main/examples/5-cdn-management/skills/delegating-to-cdn-agent/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Ryan Nelson",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

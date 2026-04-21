@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/discover-protocols",
   "github_branch": "main",
-  "dir_name": "discover-protocols-rand-cc-polymath-dae839aa"
+  "dir_name": "discover-protocols-rand-cc-polymath-dae839aa",
+  "author": "rand",
+  "source_url": "https://github.com/rand/cc-polymath/blob/main/skills/discover-protocols/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 rand",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

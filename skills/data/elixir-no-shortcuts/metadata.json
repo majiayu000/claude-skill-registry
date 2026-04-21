@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:11.277894Z",
   "dir_name": "elixir-no-shortcuts",
   "github_path": "priv/skills/elixir-no-shortcuts",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "mkreyman",
+  "source_url": "https://github.com/mkreyman/bmad-elixir/blob/main/priv/skills/elixir-no-shortcuts/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 BmadElixir Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

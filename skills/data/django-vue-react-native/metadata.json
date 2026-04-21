@@ -11,5 +11,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "django-vue-react-native"
+  "dir_name": "django-vue-react-native",
+  "author": "hmesfin",
+  "source_url": "https://github.com/hmesfin/fullstack-starter-djvurn",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hmesfin/fullstack-starter-djvurn",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

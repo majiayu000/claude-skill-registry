@@ -5,5 +5,12 @@
   "source": "github.com/jr2804/prompts",
   "downloaded_at": "2026-02-01T04:20:42.926910Z",
   "dir_name": "documentation-standards",
-  "category": "data"
+  "category": "data",
+  "author": "jr2804",
+  "source_url": "https://github.com/jr2804/prompts/blob/main/skills/documentation/documentation_standards/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jan",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

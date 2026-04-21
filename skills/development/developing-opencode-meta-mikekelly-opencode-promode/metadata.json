@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:04.655382Z",
   "github_path": ".claude/skills/developing-opencode-meta",
   "github_branch": "main",
-  "dir_name": "developing-opencode-meta-mikekelly-opencode-promode"
+  "dir_name": "developing-opencode-meta-mikekelly-opencode-promode",
+  "author": "mikekelly",
+  "source_url": "https://github.com/mikekelly/opencode-promode/blob/main/.claude/skills/developing-opencode-meta/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Mike Kelly <mikekelly321@gmail.com>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

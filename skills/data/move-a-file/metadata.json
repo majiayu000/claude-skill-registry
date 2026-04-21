@@ -9,5 +9,12 @@
   ],
   "stars": 62,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "move-a-file"
+  "dir_name": "move-a-file",
+  "author": "Synthesys-Lab",
+  "source_url": "https://github.com/Synthesys-Lab/assassyn",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Synthesys-Lab/assassyn",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

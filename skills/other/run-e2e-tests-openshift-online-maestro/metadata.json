@@ -7,5 +7,12 @@
   "dir_name": "run-e2e-tests-openshift-online-maestro",
   "category": "other",
   "github_path": ".claude/skills/run-e2e-tests",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "openshift-online",
+  "source_url": "https://github.com/openshift-online/maestro/blob/main/.claude/skills/run-e2e-tests/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2023 Red Hat",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

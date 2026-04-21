@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:11.361506Z",
   "github_path": "priv/skills/elixir-test-runner",
   "github_branch": "main",
-  "dir_name": "elixir-test-runner-mkreyman-bmad-elixir"
+  "dir_name": "elixir-test-runner-mkreyman-bmad-elixir",
+  "author": "mkreyman",
+  "source_url": "https://github.com/mkreyman/bmad-elixir/blob/main/priv/skills/elixir-test-runner/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 BmadElixir Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

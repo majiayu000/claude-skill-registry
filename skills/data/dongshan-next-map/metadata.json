@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/JasonLinn/dongshan-next-map",
-  "dir_name": "dongshan-next-map"
+  "dir_name": "dongshan-next-map",
+  "author": "JasonLinn",
+  "source_url": "https://github.com/JasonLinn/dongshan-next-map",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JasonLinn/dongshan-next-map",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/debug-coffee-ahk",
   "github_branch": "main",
-  "dir_name": "debug-coffee-ahk-phonowell-coffee-ahk"
+  "dir_name": "debug-coffee-ahk-phonowell-coffee-ahk",
+  "author": "phonowell",
+  "source_url": "https://github.com/phonowell/coffee-ahk/blob/main/.claude/skills/debug-coffee-ahk/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright © 2015-2025, Mimiko Phonowell.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

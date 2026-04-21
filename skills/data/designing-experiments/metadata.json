@@ -5,5 +5,12 @@
   "source": "github.com/pymc-labs/CausalPy",
   "downloaded_at": "2026-02-04T04:57:12.901734Z",
   "dir_name": "designing-experiments",
-  "category": "data"
+  "category": "data",
+  "author": "pymc-labs",
+  "source_url": "https://github.com/pymc-labs/CausalPy/blob/main/.claude/skills/designing-experiments/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pymc-labs/CausalPy/blob/main/.claude/skills/designing-experiments/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

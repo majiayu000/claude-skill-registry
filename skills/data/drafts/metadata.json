@@ -5,5 +5,12 @@
   "source": "github.com/shipengqi/blog-src",
   "downloaded_at": "2026-01-27T02:10:24.457930Z",
   "dir_name": "drafts",
-  "category": "data"
+  "category": "data",
+  "author": "shipengqi",
+  "source_url": "https://github.com/shipengqi/blog-src/blob/main/drafts/2017-09-19-js-code-skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2018 Shi PengQi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

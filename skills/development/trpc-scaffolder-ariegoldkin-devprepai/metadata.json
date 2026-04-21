@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:59.840095Z",
   "github_path": ".claude/skills/trpc-scaffolder",
   "github_branch": "main",
-  "dir_name": "trpc-scaffolder-ariegoldkin-devprepai"
+  "dir_name": "trpc-scaffolder-ariegoldkin-devprepai",
+  "author": "ArieGoldkin",
+  "source_url": "https://github.com/ArieGoldkin/devPrepAi/blob/main/.claude/skills/trpc-scaffolder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ArieGoldkin/devPrepAi/blob/main/.claude/skills/trpc-scaffolder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "don-front-end-dstotijn-developer-overheid-n-748c4617",
   "category": "other",
   "github_path": "skills/don-front-end",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "dstotijn",
+  "source_url": "https://github.com/dstotijn/developer-overheid-nl-agent-skills/blob/main/skills/don-front-end/SKILL.md",
+  "license": "EUPL-1.2",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dstotijn/developer-overheid-nl-agent-skills/blob/main/skills/don-front-end/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

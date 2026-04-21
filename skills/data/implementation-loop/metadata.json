@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "implementation-loop"
+  "dir_name": "implementation-loop",
+  "author": "okurawave",
+  "source_url": "https://github.com/okurawave/expo-browser",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/okurawave/expo-browser",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

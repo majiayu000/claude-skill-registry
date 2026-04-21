@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:01.916629Z",
   "github_path": "plugins/scrapedo-web-scraper/skills/scrapedo-web-scraper",
   "github_branch": "main",
-  "dir_name": "scrapedo-web-scraper-artwist-polyakov-polyakov-claude-skil"
+  "dir_name": "scrapedo-web-scraper-artwist-polyakov-polyakov-claude-skil",
+  "author": "artwist-polyakov",
+  "source_url": "https://github.com/artwist-polyakov/polyakov-claude-skills/blob/main/plugins/scrapedo-web-scraper/skills/scrapedo-web-scraper/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Aleksandr Poliakov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

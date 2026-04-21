@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/bountydotnew/bounty.new",
   "dir_name": "front-end-design",
-  "downloaded_at": "2026-02-15T06:36:37.553765Z"
+  "downloaded_at": "2026-02-15T06:36:37.553765Z",
+  "author": "bountydotnew",
+  "source_url": "https://github.com/bountydotnew/bounty.new/blob/main/.claude/skills/front-end-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Bounty.new",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

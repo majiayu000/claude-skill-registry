@@ -9,5 +9,12 @@
   ],
   "stars": 13,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "drafts-actions"
+  "dir_name": "drafts-actions",
+  "author": "kerim",
+  "source_url": "https://github.com/kerim/claude-drafts-action-skill",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kerim/claude-drafts-action-skill",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

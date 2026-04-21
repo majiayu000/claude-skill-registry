@@ -5,5 +5,12 @@
   "source": "github.com/charlesmsiegel/tg",
   "downloaded_at": "2026-01-22T04:08:52.224126Z",
   "dir_name": "rote-creator",
-  "category": "other"
+  "category": "other",
+  "author": "charlesmsiegel",
+  "source_url": "https://github.com/charlesmsiegel/tg/blob/main/.claude/skills/rote-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/charlesmsiegel/tg/blob/main/.claude/skills/rote-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

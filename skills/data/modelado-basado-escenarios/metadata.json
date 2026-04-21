@@ -11,5 +11,12 @@
   "stars": 0,
   "dir_name": "modelado-basado-escenarios",
   "github_path": "skills/modelado-basado-escenarios",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "imaginabit",
+  "source_url": "https://github.com/imaginabit/Agente-Domain-Storytelling/blob/main/skills/modelado-basado-escenarios/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Fernando Ramírez Pérez",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

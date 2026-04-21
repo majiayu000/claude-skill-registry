@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:36.841443Z",
   "github_path": "skills/debug-tauri",
   "github_branch": "main",
-  "dir_name": "debug-tauri-8beeeaaat-tauri-plugin-debug-t"
+  "dir_name": "debug-tauri-8beeeaaat-tauri-plugin-debug-t",
+  "author": "8beeeaaat",
+  "source_url": "https://github.com/8beeeaaat/tauri-plugin-debug-tools/blob/main/skills/debug-tauri/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 sadao komaki",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:00.969793Z",
   "github_path": "skills/core-numerical/numerical-stability",
   "github_branch": "main",
-  "dir_name": "numerical-stability-heshamfs-materials-simulation"
+  "dir_name": "numerical-stability-heshamfs-materials-simulation",
+  "author": "HeshamFS",
+  "source_url": "https://github.com/HeshamFS/materials-simulation-skills/blob/main/skills/core-numerical/numerical-stability/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

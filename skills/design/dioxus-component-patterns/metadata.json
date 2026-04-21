@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "dioxus-component-patterns"
+  "dir_name": "dioxus-component-patterns",
+  "author": "wchklaus97",
+  "source_url": "https://github.com/wchklaus97/remind-me-pwa",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 wchklaus97",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

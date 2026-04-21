@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "GitHub Search API",
-  "dir_name": "definition-of-done"
+  "dir_name": "definition-of-done",
+  "author": "jarosser06",
+  "source_url": "https://github.com/jarosser06/da-vinci",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 - 2025 Jim Rosser",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

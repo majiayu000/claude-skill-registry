@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/documentation-writer",
   "github_branch": "main",
-  "dir_name": "documentation-writer"
+  "dir_name": "documentation-writer",
+  "author": "C0ntr0lledCha0s",
+  "source_url": "https://github.com/C0ntr0lledCha0s/logseq-template-graph/blob/main/.claude/skills/documentation-writer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 C0ntr0lledCha0s",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

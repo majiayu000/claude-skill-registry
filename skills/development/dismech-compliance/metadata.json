@@ -9,5 +9,12 @@
   ],
   "stars": 6,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "dismech-compliance"
+  "dir_name": "dismech-compliance",
+  "author": "monarch-initiative",
+  "source_url": "https://github.com/monarch-initiative/dismech",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2025 My Name",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

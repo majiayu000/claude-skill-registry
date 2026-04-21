@@ -9,5 +9,12 @@
   "stars": 0,
   "github_path": "torr",
   "github_branch": "main",
-  "dir_name": "torr"
+  "dir_name": "torr",
+  "author": "prateekmedia",
+  "source_url": "https://github.com/prateekmedia/agent-skills/blob/main/torr/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/prateekmedia/agent-skills/blob/main/torr/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

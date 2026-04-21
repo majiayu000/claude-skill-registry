@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:32.359674Z",
   "dir_name": "mermaid-export",
   "github_path": "skills/mermaid-export",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "sparkling",
+  "source_url": "https://github.com/sparkling/claude-config/blob/main/skills/mermaid-export/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sparkling/claude-config/blob/main/skills/mermaid-export/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

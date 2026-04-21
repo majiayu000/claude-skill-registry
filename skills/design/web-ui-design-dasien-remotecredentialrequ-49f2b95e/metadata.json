@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/web-ui-design",
   "github_branch": "main",
-  "dir_name": "web-ui-design-dasien-remotecredentialrequ-49f2b95e"
+  "dir_name": "web-ui-design-dasien-remotecredentialrequ-49f2b95e",
+  "author": "dasien",
+  "source_url": "https://github.com/dasien/RemoteCredentialRequestPOC/blob/main/.claude/skills/web-ui-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dasien/RemoteCredentialRequestPOC/blob/main/.claude/skills/web-ui-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

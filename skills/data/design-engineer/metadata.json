@@ -5,5 +5,12 @@
   "source": "github.com/trentferguson/homescreen-hero",
   "downloaded_at": "2026-01-27T03:25:28.707227Z",
   "dir_name": "design-engineer",
-  "category": "data"
+  "category": "data",
+  "author": "trentferguson",
+  "source_url": "https://github.com/trentferguson/homescreen-hero/blob/main/.claude/skills/design-engineer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Trent Ferguson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

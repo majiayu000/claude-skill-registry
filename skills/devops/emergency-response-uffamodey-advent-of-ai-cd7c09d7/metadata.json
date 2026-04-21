@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:16.423498Z",
   "github_path": "day_14_operations_management/skills/emergency-response",
   "github_branch": "main",
-  "dir_name": "emergency-response-uffamodey-advent-of-ai-cd7c09d7"
+  "dir_name": "emergency-response-uffamodey-advent-of-ai-cd7c09d7",
+  "author": "UffaModey",
+  "source_url": "https://github.com/UffaModey/advent_of_ai/blob/main/day_14_operations_management/skills/emergency-response/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

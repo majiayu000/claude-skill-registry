@@ -5,5 +5,12 @@
   "description": "Conduct objective-driven investigation to reduce uncertainty. Use when there's an unknown blocking estimation or implementation, when technical-pm identifies uncertainty, or when someone says \"we need",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:27.211950Z",
-  "dir_name": "technical-spike"
+  "dir_name": "technical-spike",
+  "author": "johannesfritz",
+  "source_url": "https://github.com/johannesfritz/autonomous-orchestration",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/johannesfritz/autonomous-orchestration",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

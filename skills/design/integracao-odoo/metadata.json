@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "integracao-odoo"
+  "dir_name": "integracao-odoo",
+  "author": "Rafael-2109",
+  "source_url": "https://github.com/Rafael-2109/frete-sistema",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Rafael-2109/frete-sistema",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

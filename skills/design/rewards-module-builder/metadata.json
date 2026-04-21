@@ -5,5 +5,12 @@
   "description": "Automates development of TogetherOS Rewards module features. Use when building reward types, implementing validation, creating UI components, writing tests, or updating Rewards documentation. Handles ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:44.005851Z",
-  "dir_name": "rewards-module-builder"
+  "dir_name": "rewards-module-builder",
+  "author": "coopeverything",
+  "source_url": "https://github.com/coopeverything/TogetherOS",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/coopeverything/TogetherOS",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

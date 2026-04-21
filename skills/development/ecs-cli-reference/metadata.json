@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/ecs-cli-reference",
   "github_branch": "main",
-  "dir_name": "ecs-cli-reference"
+  "dir_name": "ecs-cli-reference",
+  "author": "nandemo-ya",
+  "source_url": "https://github.com/nandemo-ya/kecs/blob/main/.claude/skills/ecs-cli-reference/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nandemo-ya/kecs/blob/main/.claude/skills/ecs-cli-reference/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

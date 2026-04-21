@@ -7,5 +7,12 @@
   "dir_name": "websearch-service",
   "category": "other",
   "github_path": "services/websearch_service",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Lin-A1",
+  "source_url": "https://github.com/Lin-A1/skills-agent/blob/main/services/websearch_service/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Lin-A1/skills-agent/blob/main/services/websearch_service/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

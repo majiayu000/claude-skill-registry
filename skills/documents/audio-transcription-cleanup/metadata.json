@@ -5,5 +5,12 @@
   "description": "Transform messy voice transcription text into well-formatted, human-readable documents while preserving original meaning",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:54.953292Z",
-  "dir_name": "audio-transcription-cleanup"
+  "dir_name": "audio-transcription-cleanup",
+  "author": "MacHu-GWU",
+  "source_url": "https://github.com/MacHu-GWU/sanhe-claude-code-plugins",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sanhe Hu <husanhe@email.com>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

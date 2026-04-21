@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:11.693519Z",
   "github_path": "google-official-seo-guide",
   "github_branch": "main",
-  "dir_name": "google-official-seo-guide"
+  "dir_name": "google-official-seo-guide",
+  "author": "littleben",
+  "source_url": "https://github.com/littleben/awesomeAgentskills/blob/main/google-official-seo-guide/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Awesome Agent Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:00.746416Z",
   "github_path": "design-concepts",
   "github_branch": "main",
-  "dir_name": "design-concepts-mevans2120-design-suite-claude-"
+  "dir_name": "design-concepts-mevans2120-design-suite-claude-",
+  "author": "mevans2120",
+  "source_url": "https://github.com/mevans2120/design-suite-claude-skills/blob/main/design-concepts/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Michael Evans",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

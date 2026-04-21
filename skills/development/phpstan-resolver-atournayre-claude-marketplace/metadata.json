@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:59.664633Z",
   "github_path": "qa/skills/phpstan-resolver",
   "github_branch": "main",
-  "dir_name": "phpstan-resolver-atournayre-claude-marketplace"
+  "dir_name": "phpstan-resolver-atournayre-claude-marketplace",
+  "author": "atournayre",
+  "source_url": "https://github.com/atournayre/claude-marketplace/blob/main/qa/skills/phpstan-resolver/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Aurélien Tournayre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

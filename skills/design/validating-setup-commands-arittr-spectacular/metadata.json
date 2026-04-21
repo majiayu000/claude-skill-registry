@@ -11,5 +11,12 @@
   "stars": 5,
   "github_path": "skills/validating-setup-commands",
   "github_branch": "main",
-  "dir_name": "validating-setup-commands-arittr-spectacular"
+  "dir_name": "validating-setup-commands-arittr-spectacular",
+  "author": "arittr",
+  "source_url": "https://github.com/arittr/spectacular/blob/main/skills/validating-setup-commands/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Drew Ritter",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

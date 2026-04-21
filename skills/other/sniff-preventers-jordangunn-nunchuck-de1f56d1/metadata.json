@@ -5,5 +5,12 @@
   "source": "github.com/JordanGunn/nunchuck",
   "downloaded_at": "2026-01-29T08:50:57.237935Z",
   "dir_name": "sniff-preventers-jordangunn-nunchuck-de1f56d1",
-  "category": "other"
+  "category": "other",
+  "author": "JordanGunn",
+  "source_url": "https://github.com/JordanGunn/nunchuck/blob/main/skills/sniff/sniff-preventers/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Jordan Godau",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

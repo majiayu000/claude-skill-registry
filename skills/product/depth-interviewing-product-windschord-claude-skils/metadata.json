@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "depth-interviewing-product",
   "github_branch": "main",
-  "dir_name": "depth-interviewing-product-windschord-claude-skils"
+  "dir_name": "depth-interviewing-product-windschord-claude-skils",
+  "author": "windschord",
+  "source_url": "https://github.com/windschord/claude_skils/blob/main/depth-interviewing-product/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/windschord/claude_skils/blob/main/depth-interviewing-product/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

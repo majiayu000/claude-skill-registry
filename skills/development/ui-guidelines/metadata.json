@@ -5,5 +5,12 @@
   "description": "You are helping with UI development for the ludiscan-webapp project. Follow these guidelines strictly to maintain consistency and code quality.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:25.023914Z",
-  "dir_name": "ui-guidelines"
+  "dir_name": "ui-guidelines",
+  "author": "ludiscan",
+  "source_url": "https://github.com/ludiscan/ludiscan-webapp",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 yuhi yamane",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

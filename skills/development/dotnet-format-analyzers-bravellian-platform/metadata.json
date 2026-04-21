@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:16.534134Z",
   "github_path": ".codex/skills/dotnet-format-analyzers",
   "github_branch": "main",
-  "dir_name": "dotnet-format-analyzers-bravellian-platform"
+  "dir_name": "dotnet-format-analyzers-bravellian-platform",
+  "author": "bravellian",
+  "source_url": "https://github.com/bravellian/platform/blob/main/.codex/skills/dotnet-format-analyzers/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bravellian/platform/blob/main/.codex/skills/dotnet-format-analyzers/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

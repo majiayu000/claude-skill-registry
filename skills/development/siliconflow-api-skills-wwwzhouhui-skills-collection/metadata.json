@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:14.923140Z",
   "github_path": "siliconflow-api-skills",
   "github_branch": "main",
-  "dir_name": "siliconflow-api-skills-wwwzhouhui-skills-collection"
+  "dir_name": "siliconflow-api-skills-wwwzhouhui-skills-collection",
+  "author": "wwwzhouhui",
+  "source_url": "https://github.com/wwwzhouhui/skills_collection/blob/main/siliconflow-api-skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wwwzhouhui/skills_collection/blob/main/siliconflow-api-skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

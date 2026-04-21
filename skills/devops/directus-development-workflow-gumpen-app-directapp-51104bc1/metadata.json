@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/directus-development-workflow",
   "github_branch": "main",
-  "dir_name": "directus-development-workflow-gumpen-app-directapp-51104bc1"
+  "dir_name": "directus-development-workflow-gumpen-app-directapp-51104bc1",
+  "author": "gumpen-app",
+  "source_url": "https://github.com/gumpen-app/directapp/blob/main/.claude/skills/directus-development-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gumpen-app/directapp/blob/main/.claude/skills/directus-development-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

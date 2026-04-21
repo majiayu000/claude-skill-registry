@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:25.229561Z",
   "github_path": "skills/doc-intelligence",
   "github_branch": "main",
-  "dir_name": "doc-intelligence"
+  "dir_name": "doc-intelligence",
+  "author": "brendendurham",
+  "source_url": "https://github.com/brendendurham/claude-code-config/blob/main/skills/doc-intelligence/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Claude Code Configuration Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

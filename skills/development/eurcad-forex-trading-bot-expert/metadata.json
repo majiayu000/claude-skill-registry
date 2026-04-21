@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "eurcad-forex-trading-bot-expert"
+  "dir_name": "eurcad-forex-trading-bot-expert",
+  "author": "nudou350",
+  "source_url": "https://github.com/nudou350/ForexBot",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nudou350/ForexBot",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

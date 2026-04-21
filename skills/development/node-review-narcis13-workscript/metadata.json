@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:16.296841Z",
   "github_path": ".claude/skills/node-review",
   "github_branch": "main",
-  "dir_name": "node-review-narcis13-workscript"
+  "dir_name": "node-review-narcis13-workscript",
+  "author": "Narcis13",
+  "source_url": "https://github.com/Narcis13/workscript/blob/main/.claude/skills/node-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Steve Simkins",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

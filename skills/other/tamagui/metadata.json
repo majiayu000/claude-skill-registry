@@ -7,5 +7,12 @@
   "dir_name": "tamagui",
   "category": "other",
   "github_path": "skills/tamagui",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "guillempuche",
+  "source_url": "https://github.com/guillempuche/ai-standards/blob/main/skills/tamagui/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 guillempuche",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "doc-review",
   "category": "other",
   "github_path": ".claude/skills/doc-review",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "stacklok",
+  "source_url": "https://github.com/stacklok/toolhive/blob/main/.claude/skills/doc-review/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Stacklok, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

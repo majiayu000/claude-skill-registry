@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "literate-programming",
   "github_branch": "main",
-  "dir_name": "literate-programming-dbosk-claude-skills"
+  "dir_name": "literate-programming-dbosk-claude-skills",
+  "author": "dbosk",
+  "source_url": "https://github.com/dbosk/claude-skills/blob/main/literate-programming/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dbosk/claude-skills/blob/main/literate-programming/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

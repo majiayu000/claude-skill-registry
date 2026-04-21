@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/poindexter12/waypoint",
-  "dir_name": "gh-issue-triage-poindexter12-waypoint-2"
+  "dir_name": "gh-issue-triage-poindexter12-waypoint-2",
+  "author": "poindexter12",
+  "source_url": "https://github.com/poindexter12/waypoint/blob/main/workflows/skills/gh-issue-triage/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Joe Seymour",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

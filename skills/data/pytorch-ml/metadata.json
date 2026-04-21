@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:42.447249Z",
   "dir_name": "pytorch-ml",
   "github_path": "docker/lib/extensions/vf-pytorch-ml/resources",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "pacphi",
+  "source_url": "https://github.com/pacphi/sindri/blob/main/docker/lib/extensions/vf-pytorch-ml/resources/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Chris Phillipson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

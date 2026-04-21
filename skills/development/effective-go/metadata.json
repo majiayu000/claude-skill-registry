@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/effective-go",
   "github_branch": "main",
-  "dir_name": "effective-go"
+  "dir_name": "effective-go",
+  "author": "openshift",
+  "source_url": "https://github.com/openshift/hypershift/blob/main/.claude/skills/effective-go/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/openshift/hypershift/blob/main/.claude/skills/effective-go/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/Rafael-2109/frete-sistema",
   "dir_name": "visao-produto",
-  "downloaded_at": "2026-02-15T05:40:40.095324Z"
+  "downloaded_at": "2026-02-15T05:40:40.095324Z",
+  "author": "Rafael-2109",
+  "source_url": "https://github.com/Rafael-2109/frete-sistema/blob/main/.claude/skills/visao-produto/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Rafael-2109/frete-sistema/blob/main/.claude/skills/visao-produto/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

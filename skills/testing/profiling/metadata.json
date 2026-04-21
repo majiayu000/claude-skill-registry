@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/profiling",
   "github_branch": "main",
-  "dir_name": "profiling"
+  "dir_name": "profiling",
+  "author": "facet-rs",
+  "source_url": "https://github.com/facet-rs/facet/blob/main/.claude/skills/profiling/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/facet-rs/facet/blob/main/.claude/skills/profiling/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

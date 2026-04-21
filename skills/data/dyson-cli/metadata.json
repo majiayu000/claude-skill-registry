@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "dyson-cli"
+  "dir_name": "dyson-cli",
+  "author": "tmustier",
+  "source_url": "https://github.com/tmustier/dyson-cli",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Thomas Mustier",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

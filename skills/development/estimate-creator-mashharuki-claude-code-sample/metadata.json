@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/estimate-creator",
   "github_branch": "main",
-  "dir_name": "estimate-creator-mashharuki-claude-code-sample"
+  "dir_name": "estimate-creator-mashharuki-claude-code-sample",
+  "author": "mashharuki",
+  "source_url": "https://github.com/mashharuki/claude-code-sample/blob/main/.claude/skills/estimate-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mashharuki/claude-code-sample/blob/main/.claude/skills/estimate-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

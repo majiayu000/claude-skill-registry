@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:20.833426Z",
   "github_path": "service_financial-claude/skills/e2e-playwright-diagnosis",
   "github_branch": "main",
-  "dir_name": "e2e-playwright-diagnosis-edneyreis999-zord-project"
+  "dir_name": "e2e-playwright-diagnosis-edneyreis999-zord-project",
+  "author": "edneyreis999",
+  "source_url": "https://github.com/edneyreis999/zord-project/blob/main/service_financial-claude/skills/e2e-playwright-diagnosis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/edneyreis999/zord-project/blob/main/service_financial-claude/skills/e2e-playwright-diagnosis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

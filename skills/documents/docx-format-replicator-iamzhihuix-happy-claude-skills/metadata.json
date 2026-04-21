@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/docx-format-replicator",
   "github_branch": "main",
-  "dir_name": "docx-format-replicator-iamzhihuix-happy-claude-skills"
+  "dir_name": "docx-format-replicator-iamzhihuix-happy-claude-skills",
+  "author": "iamzhihuix",
+  "source_url": "https://github.com/iamzhihuix/happy-claude-skills/blob/main/skills/docx-format-replicator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 iamzhihuix",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

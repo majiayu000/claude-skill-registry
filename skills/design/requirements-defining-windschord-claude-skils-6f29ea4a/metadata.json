@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "requirements-defining",
   "github_branch": "main",
-  "dir_name": "requirements-defining-windschord-claude-skils-6f29ea4a"
+  "dir_name": "requirements-defining-windschord-claude-skils-6f29ea4a",
+  "author": "windschord",
+  "source_url": "https://github.com/windschord/claude_skils/blob/main/requirements-defining/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/windschord/claude_skils/blob/main/requirements-defining/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

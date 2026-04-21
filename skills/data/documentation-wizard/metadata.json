@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "documentation-wizard"
+  "dir_name": "documentation-wizard",
+  "author": "Overlord-Z",
+  "source_url": "https://github.com/Overlord-Z/ClaudeShack",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Overlord-Z/ClaudeShack",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

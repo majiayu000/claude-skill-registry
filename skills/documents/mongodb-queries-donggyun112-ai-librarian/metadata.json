@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:28.090099Z",
   "github_path": ".claude/skills/mongodb-queries",
   "github_branch": "main",
-  "dir_name": "mongodb-queries-donggyun112-ai-librarian"
+  "dir_name": "mongodb-queries-donggyun112-ai-librarian",
+  "author": "donggyun112",
+  "source_url": "https://github.com/donggyun112/ai-librarian/blob/main/.claude/skills/mongodb-queries/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/donggyun112/ai-librarian/blob/main/.claude/skills/mongodb-queries/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

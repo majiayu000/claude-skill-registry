@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:07.190977Z",
   "github_path": "tools/claude/config/skills/fetching-github-prs-to-review",
   "github_branch": "main",
-  "dir_name": "fetching-github-prs-to-review-ooloth-dotfiles"
+  "dir_name": "fetching-github-prs-to-review-ooloth-dotfiles",
+  "author": "ooloth",
+  "source_url": "https://github.com/ooloth/dotfiles/blob/main/tools/claude/config/skills/fetching-github-prs-to-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ooloth/dotfiles/blob/main/tools/claude/config/skills/fetching-github-prs-to-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

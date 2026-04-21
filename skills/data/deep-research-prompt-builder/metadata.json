@@ -11,5 +11,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "deep-research-prompt-builder"
+  "dir_name": "deep-research-prompt-builder",
+  "author": "lejoe",
+  "source_url": "https://github.com/lejoe/claude-plugins",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lejoe/claude-plugins",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

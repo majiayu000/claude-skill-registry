@@ -7,5 +7,12 @@
   "dir_name": "image",
   "category": "other",
   "github_path": "skills/image",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "flight505",
+  "source_url": "https://github.com/flight505/nano-banana/blob/main/skills/image/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 flight505",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

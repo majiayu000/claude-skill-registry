@@ -5,5 +5,12 @@
   "source": "github.com/JordanGunn/nunchuck",
   "downloaded_at": "2026-01-29T08:50:55.922158Z",
   "dir_name": "task-close-jordangunn-nunchuck-9b58360b",
-  "category": "other"
+  "category": "other",
+  "author": "JordanGunn",
+  "source_url": "https://github.com/JordanGunn/nunchuck/blob/main/skills/task/task-close/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Jordan Godau",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

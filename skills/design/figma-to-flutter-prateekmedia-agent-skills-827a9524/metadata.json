@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "figma-to-flutter",
   "github_branch": "main",
-  "dir_name": "figma-to-flutter-prateekmedia-agent-skills-827a9524"
+  "dir_name": "figma-to-flutter-prateekmedia-agent-skills-827a9524",
+  "author": "prateekmedia",
+  "source_url": "https://github.com/prateekmedia/agent-skills/blob/main/figma-to-flutter/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/prateekmedia/agent-skills/blob/main/figma-to-flutter/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "hpe-copyright",
   "github_branch": "main",
-  "dir_name": "hpe-copyright-mvilrokx-claude-skills"
+  "dir_name": "hpe-copyright-mvilrokx-claude-skills",
+  "author": "mvilrokx",
+  "source_url": "https://github.com/mvilrokx/claude-skills/blob/main/hpe-copyright/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 mvilrokx",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

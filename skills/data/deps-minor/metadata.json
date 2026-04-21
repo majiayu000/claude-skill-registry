@@ -9,5 +9,12 @@
   ],
   "stars": 12,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "deps-minor"
+  "dir_name": "deps-minor",
+  "author": "huseyindeniz",
+  "source_url": "https://github.com/huseyindeniz/vite-react-dapp-template",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 Hüseyin Deniz KIVRAK",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

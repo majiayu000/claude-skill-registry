@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:19.976869Z",
   "github_path": "skills/parallel-orchestration",
   "github_branch": "main",
-  "dir_name": "parallel-orchestration-brendendurham-claude-code-config"
+  "dir_name": "parallel-orchestration-brendendurham-claude-code-config",
+  "author": "brendendurham",
+  "source_url": "https://github.com/brendendurham/claude-code-config/blob/main/skills/parallel-orchestration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Claude Code Configuration Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

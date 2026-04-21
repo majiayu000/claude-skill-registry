@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "dominino-number-calculator"
+  "dir_name": "dominino-number-calculator",
+  "author": "badlydrawnrod",
+  "source_url": "https://github.com/badlydrawnrod/agent-c",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 R.I.C. Hyde",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

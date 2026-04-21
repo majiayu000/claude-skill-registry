@@ -10,5 +10,12 @@
   "stars": 0,
   "dir_name": "read-guides",
   "github_path": "skills/read-guides",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "LunCoSim",
+  "source_url": "https://github.com/LunCoSim/ai4space/blob/main/skills/read-guides/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 LunCo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

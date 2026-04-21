@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:38.032890Z",
   "github_path": "plugins/bill-java-skills/skills/effective-java",
   "github_branch": "main",
-  "dir_name": "effective-java-xinqilin-claude-dev-toolkit-m"
+  "dir_name": "effective-java-xinqilin-claude-dev-toolkit-m",
+  "author": "xinqilin",
+  "source_url": "https://github.com/xinqilin/claude-dev-toolkit-marketplace/blob/main/plugins/bill-java-skills/skills/effective-java/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Bill Lin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/eod",
   "github_branch": "main",
-  "dir_name": "eod-dreamiurg-shipmate-285f2c8a"
+  "dir_name": "eod-dreamiurg-shipmate-285f2c8a",
+  "author": "dreamiurg",
+  "source_url": "https://github.com/dreamiurg/shipmate/blob/main/skills/eod/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 dreamiurg",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

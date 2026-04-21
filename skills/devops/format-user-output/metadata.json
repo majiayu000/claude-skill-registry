@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "format-user-output"
+  "dir_name": "format-user-output",
+  "author": "gabe-almeida",
+  "source_url": "https://github.com/gabe-almeida/next-js-my-contractor-now",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gabe-almeida/next-js-my-contractor-now",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

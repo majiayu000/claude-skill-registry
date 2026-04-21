@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:52.803352Z",
   "github_path": "skills/ellies-nix-environment",
   "github_branch": "main",
-  "dir_name": "ellies-nix-environment-wizzeh-skills"
+  "dir_name": "ellies-nix-environment-wizzeh-skills",
+  "author": "wizzeh",
+  "source_url": "https://github.com/wizzeh/skills/blob/main/skills/ellies-nix-environment/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

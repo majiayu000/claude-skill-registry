@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/doodle",
   "github_branch": "main",
-  "dir_name": "doodle-homveloper-doodle-36ef182e"
+  "dir_name": "doodle-homveloper-doodle-36ef182e",
+  "author": "homveloper",
+  "source_url": "https://github.com/homveloper/doodle/blob/main/.claude/skills/doodle/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 beomhwi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

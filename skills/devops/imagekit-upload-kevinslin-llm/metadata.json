@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:28.597860Z",
   "github_path": "skills/tool-imagekit-upload",
   "github_branch": "main",
-  "dir_name": "imagekit-upload-kevinslin-llm"
+  "dir_name": "imagekit-upload-kevinslin-llm",
+  "author": "kevinslin",
+  "source_url": "https://github.com/kevinslin/llm/blob/main/skills/tool-imagekit-upload/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kevinslin/llm/blob/main/skills/tool-imagekit-upload/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

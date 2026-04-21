@@ -5,5 +5,12 @@
   "source": "github.com/google-labs-code/stitch-skills",
   "downloaded_at": "2026-02-02T02:21:50.528995Z",
   "dir_name": "enhance-prompt",
-  "category": "other"
+  "category": "other",
+  "author": "google-labs-code",
+  "source_url": "https://github.com/google-labs-code/stitch-skills/blob/main/skills/enhance-prompt/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/google-labs-code/stitch-skills/blob/main/skills/enhance-prompt/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

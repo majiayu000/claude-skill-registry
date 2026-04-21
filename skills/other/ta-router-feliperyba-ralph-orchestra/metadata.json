@@ -5,5 +5,12 @@
   "source": "github.com/feliperyba/ralph-orchestra",
   "downloaded_at": "2026-01-29T08:12:49.061381Z",
   "dir_name": "ta-router-feliperyba-ralph-orchestra",
-  "category": "other"
+  "category": "other",
+  "author": "feliperyba",
+  "source_url": "https://github.com/feliperyba/ralph-orchestra/blob/main/.claude/skills/ta-router/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 feliperyba",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

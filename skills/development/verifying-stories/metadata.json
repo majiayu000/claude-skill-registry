@@ -5,5 +5,12 @@
   "description": "Guides developer verification before handoff. Use when completing implementation, preparing for acceptance testing, or self-reviewing work before commit or PR.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:09:55.336447Z",
-  "dir_name": "verifying-stories"
+  "dir_name": "verifying-stories",
+  "author": "kecbigmt",
+  "source_url": "https://github.com/kecbigmt/cc-plugins",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 kecy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

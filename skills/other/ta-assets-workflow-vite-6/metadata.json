@@ -5,5 +5,12 @@
   "source": "github.com/feliperyba/ralph-orchestra",
   "downloaded_at": "2026-02-01T02:46:55.836941Z",
   "dir_name": "ta-assets-workflow-vite-6",
-  "category": "other"
+  "category": "other",
+  "author": "feliperyba",
+  "source_url": "https://github.com/feliperyba/ralph-orchestra/blob/main/.claude/skills/ta-assets-workflow-vite-6/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 feliperyba",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

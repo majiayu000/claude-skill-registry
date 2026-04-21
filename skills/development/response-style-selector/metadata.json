@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/CheekyCodexConjurer/aera-chart-engine",
   "downloaded_at": "2026-01-24T16:15:34.825317Z",
-  "dir_name": "response-style-selector"
+  "dir_name": "response-style-selector",
+  "author": "CheekyCodexConjurer",
+  "source_url": "https://github.com/CheekyCodexConjurer/aera-chart-engine/blob/main/.codex/skills/response_style_selector/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CheekyCodexConjurer",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/debug-cluster",
   "github_branch": "main",
-  "dir_name": "debug-cluster-openshift-hypershift"
+  "dir_name": "debug-cluster-openshift-hypershift",
+  "author": "openshift",
+  "source_url": "https://github.com/openshift/hypershift/blob/main/.claude/skills/debug-cluster/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/openshift/hypershift/blob/main/.claude/skills/debug-cluster/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

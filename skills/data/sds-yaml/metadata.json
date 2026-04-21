@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:01.718649Z",
   "dir_name": "sds-yaml",
   "github_path": ".claude/skills/sds-yaml",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "GodSpeedAI",
+  "source_url": "https://github.com/GodSpeedAI/SEA/blob/main/.claude/skills/sds-yaml/SKILL.md",
+  "license": "MPL-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GodSpeedAI/SEA/blob/main/.claude/skills/sds-yaml/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

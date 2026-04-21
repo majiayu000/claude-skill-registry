@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/ravidorr/claude-skills-library",
   "downloaded_at": "2026-01-24T16:15:38.677602Z",
-  "dir_name": "design-super-agent"
+  "dir_name": "design-super-agent",
+  "author": "ravidorr",
+  "source_url": "https://github.com/ravidorr/claude-skills-library/blob/main/skills/design-super-agent/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Skills Library",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

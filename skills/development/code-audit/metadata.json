@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/code-audit",
   "github_branch": "main",
-  "dir_name": "code-audit"
+  "dir_name": "code-audit",
+  "author": "huseyindeniz",
+  "source_url": "https://github.com/huseyindeniz/vite-react-dapp-template/blob/main/.claude/skills/code-audit/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 Hüseyin Deniz KIVRAK",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

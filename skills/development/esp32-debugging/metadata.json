@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/esp32-debugging",
   "github_branch": "main",
-  "dir_name": "esp32-debugging"
+  "dir_name": "esp32-debugging",
+  "author": "laurigates",
+  "source_url": "https://github.com/laurigates/mcu-tinkering-lab/blob/main/.claude/skills/esp32-debugging/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Lauri Gates",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

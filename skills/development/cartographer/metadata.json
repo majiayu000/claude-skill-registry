@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/CheekyCodexConjurer/aera-chart-engine",
   "downloaded_at": "2026-01-24T16:15:04.454487Z",
-  "dir_name": "cartographer"
+  "dir_name": "cartographer",
+  "author": "CheekyCodexConjurer",
+  "source_url": "https://github.com/CheekyCodexConjurer/aera-chart-engine/blob/main/.codex/skills/cartographer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CheekyCodexConjurer",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

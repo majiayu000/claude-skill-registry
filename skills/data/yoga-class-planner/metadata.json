@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:01.379659Z",
   "dir_name": "yoga-class-planner",
   "github_path": "generated-skills/yoga-class-planner",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "mpazaryna",
+  "source_url": "https://github.com/mpazaryna/claude-toolkit/blob/main/generated-skills/yoga-class-planner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mpazaryna/claude-toolkit/blob/main/generated-skills/yoga-class-planner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

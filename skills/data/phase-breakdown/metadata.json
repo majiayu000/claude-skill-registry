@@ -5,5 +5,12 @@
   "source": "github.com/cooper538/eshop-demo",
   "downloaded_at": "2026-02-04T04:24:35.857546Z",
   "dir_name": "phase-breakdown",
-  "category": "data"
+  "category": "data",
+  "author": "cooper538",
+  "source_url": "https://github.com/cooper538/eshop-demo/blob/main/.claude/skills/phase-breakdown/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cooper538/eshop-demo/blob/main/.claude/skills/phase-breakdown/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

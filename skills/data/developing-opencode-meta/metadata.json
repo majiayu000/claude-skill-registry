@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "developing-opencode-meta"
+  "dir_name": "developing-opencode-meta",
+  "author": "mikekelly",
+  "source_url": "https://github.com/mikekelly/opencode-promode",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Mike Kelly <mikekelly321@gmail.com>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

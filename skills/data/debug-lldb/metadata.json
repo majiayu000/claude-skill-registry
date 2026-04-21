@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "debug-lldb"
+  "dir_name": "debug-lldb",
+  "author": "regenrek",
+  "source_url": "https://github.com/regenrek/codex-1up",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Kevin Kern",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -10,5 +10,12 @@
   "stars": 4,
   "github_path": "skills/tailwind-conventions",
   "github_branch": "main",
-  "dir_name": "tailwind-conventions-benshapyro-cadre-devkit-claude"
+  "dir_name": "tailwind-conventions-benshapyro-cadre-devkit-claude",
+  "author": "benshapyro",
+  "source_url": "https://github.com/benshapyro/cadre-devkit-claude/blob/main/skills/tailwind-conventions/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Cadre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/dstotijn/developer-overheid-nl-agent-skills",
-  "dir_name": "don-infra-dstotijn-developer-overheid-n-2"
+  "dir_name": "don-infra-dstotijn-developer-overheid-n-2",
+  "author": "dstotijn",
+  "source_url": "https://github.com/dstotijn/developer-overheid-nl-agent-skills/blob/main/skills/don-infra/SKILL.md",
+  "license": "EUPL-1.2",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dstotijn/developer-overheid-nl-agent-skills/blob/main/skills/don-infra/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

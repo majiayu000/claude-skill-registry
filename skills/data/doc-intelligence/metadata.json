@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "doc-intelligence"
+  "dir_name": "doc-intelligence",
+  "author": "brendendurham",
+  "source_url": "https://github.com/brendendurham/claude-code-config",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Claude Code Configuration Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

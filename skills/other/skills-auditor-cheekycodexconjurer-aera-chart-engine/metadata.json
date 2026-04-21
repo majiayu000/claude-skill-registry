@@ -9,5 +9,12 @@
   "github_path": ".codex/skills/skills_auditor",
   "github_branch": "main",
   "dir_name": "skills-auditor-cheekycodexconjurer-aera-chart-engine",
-  "downloaded_at": "2026-02-05T01:45:45.445500Z"
+  "downloaded_at": "2026-02-05T01:45:45.445500Z",
+  "author": "CheekyCodexConjurer",
+  "source_url": "https://github.com/CheekyCodexConjurer/aera-chart-engine/blob/main/.codex/skills/skills_auditor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CheekyCodexConjurer",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

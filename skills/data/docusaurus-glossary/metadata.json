@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "docusaurus-glossary",
   "github_path": ".claude/skills/docusaurus-glossary",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "mcclowes",
+  "source_url": "https://github.com/mcclowes/docusaurus-plugin-glossary/blob/main/.claude/skills/docusaurus-glossary/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 mcclowes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

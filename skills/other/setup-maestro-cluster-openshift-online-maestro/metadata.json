@@ -7,5 +7,12 @@
   "dir_name": "setup-maestro-cluster-openshift-online-maestro",
   "category": "other",
   "github_path": ".claude/skills/setup-maestro-cluster",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "openshift-online",
+  "source_url": "https://github.com/openshift-online/maestro/blob/main/.claude/skills/setup-maestro-cluster/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2023 Red Hat",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

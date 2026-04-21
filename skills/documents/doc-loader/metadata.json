@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:59.049970Z",
   "github_path": "doc/skills/doc-loader",
   "github_branch": "main",
-  "dir_name": "doc-loader"
+  "dir_name": "doc-loader",
+  "author": "atournayre",
+  "source_url": "https://github.com/atournayre/claude-marketplace/blob/main/doc/skills/doc-loader/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Aurélien Tournayre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

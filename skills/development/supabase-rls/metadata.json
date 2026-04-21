@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/shoma-endo/industry-specific-mc-training",
   "downloaded_at": "2026-01-24T16:15:15.658491Z",
-  "dir_name": "supabase-rls"
+  "dir_name": "supabase-rls",
+  "author": "shoma-endo",
+  "source_url": "https://github.com/shoma-endo/industry-specific-mc-training/blob/main/.codex/skills/supabase-rls/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shoma-endo/industry-specific-mc-training/blob/main/.codex/skills/supabase-rls/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

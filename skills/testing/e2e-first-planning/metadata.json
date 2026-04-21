@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "e2e-first-planning"
+  "dir_name": "e2e-first-planning",
+  "author": "sk8metalme",
+  "source_url": "https://github.com/sk8metalme/ai-agent-setup",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sk8metalme/ai-agent-setup",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

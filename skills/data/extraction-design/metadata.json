@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "extraction-design",
   "github_path": ".claude/skills/extraction-design",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "darantrute",
+  "source_url": "https://github.com/darantrute/_virgin-12112025/blob/main/.claude/skills/extraction-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/darantrute/_virgin-12112025/blob/main/.claude/skills/extraction-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

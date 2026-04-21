@@ -5,5 +5,12 @@
   "description": "使用jimeng-mcp-server进行AI图像和视频生成。当用户请求从文本生成图像、合成多张图片、从文本描述创建视频或为静态图像添加动画时使用此技能。支持四大核心能力：文生图、图像合成、文生视频、图生视频。需要jimeng-mcp-server在本地运行或通过SSE/HTTP访问。",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:14.990969Z",
-  "dir_name": "jimeng-mcp-skill"
+  "dir_name": "jimeng-mcp-skill",
+  "author": "wwwzhouhui",
+  "source_url": "https://github.com/wwwzhouhui/skills_collection",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wwwzhouhui/skills_collection",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

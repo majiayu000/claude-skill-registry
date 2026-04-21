@@ -8,5 +8,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "devhub"
+  "dir_name": "devhub",
+  "author": "moinsen-dev",
+  "source_url": "https://github.com/moinsen-dev/devhub",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Moinsen Dev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

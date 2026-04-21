@@ -5,5 +5,12 @@
   "source": "github.com/ryryo/dot-claude-dev",
   "downloaded_at": "2026-01-29T06:15:21.434537Z",
   "dir_name": "meta-skill-creator-ryryo-dot-claude-dev",
-  "category": "other"
+  "category": "other",
+  "author": "ryryo",
+  "source_url": "https://github.com/ryryo/dot-claude-dev/blob/main/.claude/skills/meta-skill-creator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ryryo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

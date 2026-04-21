@@ -5,5 +5,12 @@
   "source": "github.com/shaunandrews/agent-skills",
   "downloaded_at": "2026-02-04T02:06:35.849804Z",
   "dir_name": "pressable",
-  "category": "data"
+  "category": "data",
+  "author": "shaunandrews",
+  "source_url": "https://github.com/shaunandrews/agent-skills/blob/main/skills/pressable/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Shaun Andrews",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

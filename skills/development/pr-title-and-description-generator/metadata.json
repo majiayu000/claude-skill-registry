@@ -5,5 +5,12 @@
   "description": "Generate or update GitHub Pull Request titles and descriptions based on actual code changes in the final state. Use when the user mentions updating, generating, or writing PR descriptions, PR titles, ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:51.551183Z",
-  "dir_name": "pr-title-and-description-generator"
+  "dir_name": "pr-title-and-description-generator",
+  "author": "alienfast",
+  "source_url": "https://github.com/alienfast/claude",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AlienFast",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Crack password hashes using hashcat/john, perform password spraying, brute force authentication, and execute pass-the-hash attacks. Use when cracking credentials or performing password-based attacks.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:09:11.121973Z",
-  "dir_name": "cracking-passwords"
+  "dir_name": "cracking-passwords",
+  "author": "trilwu",
+  "source_url": "https://github.com/trilwu/secskills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tri Luu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

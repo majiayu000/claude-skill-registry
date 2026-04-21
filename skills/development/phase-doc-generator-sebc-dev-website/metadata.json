@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:50.386820Z",
   "github_path": ".claude/skills/phase-doc-generator",
   "github_branch": "main",
-  "dir_name": "phase-doc-generator-sebc-dev-website"
+  "dir_name": "phase-doc-generator-sebc-dev-website",
+  "author": "sebc-dev",
+  "source_url": "https://github.com/sebc-dev/website/blob/main/.claude/skills/phase-doc-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sebc-dev/website/blob/main/.claude/skills/phase-doc-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

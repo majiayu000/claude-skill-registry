@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:24:17.979410Z",
   "github_path": ".claude/skills/definition-of-done",
   "github_branch": "main",
-  "dir_name": "definition-of-done-jarosser06-da-vinci"
+  "dir_name": "definition-of-done-jarosser06-da-vinci",
+  "author": "jarosser06",
+  "source_url": "https://github.com/jarosser06/da-vinci/blob/main/.claude/skills/definition-of-done/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 - 2025 Jim Rosser",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:10.027549Z",
   "github_path": "plugins/medical-guidelines/skills/esc-guidelines-query",
   "github_branch": "main",
-  "dir_name": "esc-guidelines-query-bdeornelas-bdeornelas-github-io"
+  "dir_name": "esc-guidelines-query-bdeornelas-bdeornelas-github-io",
+  "author": "bdeornelas",
+  "source_url": "https://github.com/bdeornelas/bdeornelas.github.io/blob/main/plugins/medical-guidelines/skills/esc-guidelines-query/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Seth Hobson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

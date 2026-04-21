@@ -7,5 +7,12 @@
   "stars": 123,
   "source": "github.com/entice/entice",
   "downloaded_at": "2026-01-24T16:15:59.501089Z",
-  "dir_name": "entice"
+  "dir_name": "entice",
+  "author": "entice",
+  "source_url": "https://github.com/entice/entice/blob/main/topic_skill.md",
+  "license": "WTFPL",
+  "copyright": "Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:15.503855Z",
   "github_path": ".claude/skills/gemini-agent-sdk-setup",
   "github_branch": "main",
-  "dir_name": "gemini-agent-sdk-setup"
+  "dir_name": "gemini-agent-sdk-setup",
+  "author": "nadeemsangrasi",
+  "source_url": "https://github.com/nadeemsangrasi/humanoid-and-robotic-book/blob/main/.claude/skills/gemini-agent-sdk-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nadeemsangrasi/humanoid-and-robotic-book/blob/main/.claude/skills/gemini-agent-sdk-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

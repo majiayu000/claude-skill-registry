@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:12.165908Z",
   "github_path": "ai_docs",
   "github_branch": "main",
-  "dir_name": "element-html-builder-rohanthewiz-element"
+  "dir_name": "element-html-builder-rohanthewiz-element",
+  "author": "rohanthewiz",
+  "source_url": "https://github.com/rohanthewiz/element/blob/main/ai_docs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rohanthewiz/element/blob/main/ai_docs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

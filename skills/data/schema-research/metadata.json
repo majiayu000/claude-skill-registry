@@ -9,5 +9,12 @@
   ],
   "stars": 1,
   "source": "local",
-  "dir_name": "schema-research"
+  "dir_name": "schema-research",
+  "author": "C0ntr0lledCha0s",
+  "source_url": "https://github.com/C0ntr0lledCha0s/logseq-template-graph",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 C0ntr0lledCha0s",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

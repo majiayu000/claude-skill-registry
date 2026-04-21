@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:28.156546Z",
   "github_path": ".agent/skills/design-aesthetics",
   "github_branch": "main",
-  "dir_name": "design-aesthetics-ericbrian-multi-user-test-fest-695f62e8"
+  "dir_name": "design-aesthetics-ericbrian-multi-user-test-fest-695f62e8",
+  "author": "ericbrian",
+  "source_url": "https://github.com/ericbrian/multi-user-test-fest-issue-tracker/blob/main/.agent/skills/design-aesthetics/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ericbrian/multi-user-test-fest-issue-tracker/blob/main/.agent/skills/design-aesthetics/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "generated-skills/dev-inquiry",
   "github_branch": "main",
-  "dir_name": "dev-inquiry-mpazaryna-claude-toolkit"
+  "dir_name": "dev-inquiry-mpazaryna-claude-toolkit",
+  "author": "mpazaryna",
+  "source_url": "https://github.com/mpazaryna/claude-toolkit/blob/main/generated-skills/dev-inquiry/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mpazaryna/claude-toolkit/blob/main/generated-skills/dev-inquiry/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

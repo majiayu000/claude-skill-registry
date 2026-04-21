@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:38.348537Z",
   "github_path": "claude/skills/rails-architect",
   "github_branch": "main",
-  "dir_name": "rails-architect-brianfoshee-dotfiles"
+  "dir_name": "rails-architect-brianfoshee-dotfiles",
+  "author": "brianfoshee",
+  "source_url": "https://github.com/brianfoshee/dotfiles/blob/main/claude/skills/rails-architect/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) Brian Foshee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

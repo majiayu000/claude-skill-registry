@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "developing-llamaindex-systems"
+  "dir_name": "developing-llamaindex-systems",
+  "author": "SpillwaveSolutions",
+  "source_url": "https://github.com/SpillwaveSolutions/developing-llamaindex-systems",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SpillwaveSolutions/developing-llamaindex-systems",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

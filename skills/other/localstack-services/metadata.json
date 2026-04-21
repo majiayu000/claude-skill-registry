@@ -5,5 +5,12 @@
   "source": "github.com/nandemo-ya/kecs",
   "downloaded_at": "2026-02-02T02:09:45.240322Z",
   "dir_name": "localstack-services",
-  "category": "other"
+  "category": "other",
+  "author": "nandemo-ya",
+  "source_url": "https://github.com/nandemo-ya/kecs/blob/main/.claude/skills/localstack-services/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nandemo-ya/kecs/blob/main/.claude/skills/localstack-services/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

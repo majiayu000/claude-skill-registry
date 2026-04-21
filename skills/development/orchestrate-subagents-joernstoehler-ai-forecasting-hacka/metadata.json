@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:30:49.282448Z",
   "github_path": ".claude/skills/orchestrate-subagents",
   "github_branch": "main",
-  "dir_name": "orchestrate-subagents-joernstoehler-ai-forecasting-hacka"
+  "dir_name": "orchestrate-subagents-joernstoehler-ai-forecasting-hacka",
+  "author": "JoernStoehler",
+  "source_url": "https://github.com/JoernStoehler/ai-forecasting-hackathon/blob/main/.claude/skills/orchestrate-subagents/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JoernStoehler/ai-forecasting-hackathon/blob/main/.claude/skills/orchestrate-subagents/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:42.424921Z",
   "github_path": ".claude/skills/debug-issue",
   "github_branch": "main",
-  "dir_name": "debug-issue-ktat-photoclove"
+  "dir_name": "debug-issue-ktat-photoclove",
+  "author": "ktat",
+  "source_url": "https://github.com/ktat/photoclove/blob/main/.claude/skills/debug-issue/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 Atsushi Kato",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

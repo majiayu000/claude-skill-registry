@@ -5,5 +5,12 @@
   "description": "交互式配置 GitHub Actions 通过 SSH 密钥连接 VPS 的向导。当用户需要设置 GitHub Actions 部署到 VPS、配置 CI/CD SSH 连接、生成部署 workflow 时使用此 skill。通过问答方式收集必要信息后生成完整配置。",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:34.524118Z",
-  "dir_name": "github-actions-ssh-deploy-refly-ai-skill-to-workflow"
+  "dir_name": "github-actions-ssh-deploy-refly-ai-skill-to-workflow",
+  "author": "refly-ai",
+  "source_url": "https://github.com/refly-ai/skill-to-workflow",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/refly-ai/skill-to-workflow",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

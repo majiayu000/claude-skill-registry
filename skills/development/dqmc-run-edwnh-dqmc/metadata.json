@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/dqmc-run",
   "github_branch": "main",
-  "dir_name": "dqmc-run-edwnh-dqmc"
+  "dir_name": "dqmc-run-edwnh-dqmc",
+  "author": "edwnh",
+  "source_url": "https://github.com/edwnh/dqmc/blob/main/.claude/skills/dqmc-run/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Edwin Huang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/Lin-A1/skills-agent",
-  "dir_name": "ocr-service-lin-a1-skills-agent-111884d6"
+  "dir_name": "ocr-service-lin-a1-skills-agent-111884d6",
+  "author": "Lin-A1",
+  "source_url": "https://github.com/Lin-A1/skills-agent",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Lin-A1/skills-agent",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

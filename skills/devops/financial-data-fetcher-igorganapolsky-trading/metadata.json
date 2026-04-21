@@ -5,5 +5,12 @@
   "description": "Fetches real-time and historical market data, financial news, and fundamental data for trading decisions",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:53.230669Z",
-  "dir_name": "financial-data-fetcher-igorganapolsky-trading"
+  "dir_name": "financial-data-fetcher-igorganapolsky-trading",
+  "author": "IgorGanapolsky",
+  "source_url": "https://github.com/IgorGanapolsky/trading",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Igor Ganapolsky",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

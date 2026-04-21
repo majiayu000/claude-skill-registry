@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:29.588154Z",
   "github_path": "cad/.claude/skills/developing-solidworks",
   "github_branch": "main",
-  "dir_name": "developing-solidworks-pedropaulovc-harmonic-analyzer"
+  "dir_name": "developing-solidworks-pedropaulovc-harmonic-analyzer",
+  "author": "pedropaulovc",
+  "source_url": "https://github.com/pedropaulovc/harmonic-analyzer/blob/main/cad/.claude/skills/developing-solidworks/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Pedro Paulo Vezza Campos",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

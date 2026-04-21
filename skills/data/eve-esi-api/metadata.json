@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "eve-esi-api",
   "github_path": ".claude/skills/eve-esi-api",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "ocn",
+  "source_url": "https://github.com/ocn/zk-activity/blob/main/.claude/skills/eve-esi-api/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2025 ocn",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

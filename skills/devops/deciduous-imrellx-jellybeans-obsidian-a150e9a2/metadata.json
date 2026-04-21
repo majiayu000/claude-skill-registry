@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:31.180109Z",
   "github_path": ".claude/skills/deciduous",
   "github_branch": "main",
-  "dir_name": "deciduous-imrellx-jellybeans-obsidian-a150e9a2"
+  "dir_name": "deciduous-imrellx-jellybeans-obsidian-a150e9a2",
+  "author": "imrellx",
+  "source_url": "https://github.com/imrellx/jellybeans-obsidian/blob/main/.claude/skills/deciduous/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ivo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

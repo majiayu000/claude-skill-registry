@@ -5,5 +5,12 @@
   "source": "github.com/coeus-ventures/epic-web",
   "downloaded_at": "2026-01-29T03:15:15.552172Z",
   "dir_name": "write-action",
-  "category": "other"
+  "category": "other",
+  "author": "coeus-ventures",
+  "source_url": "https://github.com/coeus-ventures/epic-web/blob/main/.claude/skills/write-action/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/coeus-ventures/epic-web/blob/main/.claude/skills/write-action/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

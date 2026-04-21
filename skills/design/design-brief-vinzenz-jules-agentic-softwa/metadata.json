@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/design-brief",
   "github_branch": "main",
-  "dir_name": "design-brief-vinzenz-jules-agentic-softwa"
+  "dir_name": "design-brief-vinzenz-jules-agentic-softwa",
+  "author": "vinzenz",
+  "source_url": "https://github.com/vinzenz/jules-agentic-software-builder-for-claude/blob/main/.claude/skills/design-brief/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vinzenz/jules-agentic-software-builder-for-claude/blob/main/.claude/skills/design-brief/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

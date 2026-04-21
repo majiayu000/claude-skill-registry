@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/dependabot-pr",
   "github_branch": "main",
-  "dir_name": "dependabot-pr-atefandrus-disqord"
+  "dir_name": "dependabot-pr-atefandrus-disqord",
+  "author": "AtefAndrus",
+  "source_url": "https://github.com/AtefAndrus/disqord/blob/main/.claude/skills/dependabot-pr/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Atef Andrus",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

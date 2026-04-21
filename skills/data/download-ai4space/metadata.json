@@ -5,5 +5,12 @@
   "description": "Instructions for downloading the ai4space repository, useful when the user wants to start working with the lunar base model.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:53.791667Z",
-  "dir_name": "download-ai4space"
+  "dir_name": "download-ai4space",
+  "author": "LunCoSim",
+  "source_url": "https://github.com/LunCoSim/ai4space",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 LunCo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

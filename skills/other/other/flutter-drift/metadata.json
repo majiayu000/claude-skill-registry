@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/Im5tu/claude",
   "dir_name": "flutter-drift",
-  "downloaded_at": "2026-02-15T05:14:23.178350Z"
+  "downloaded_at": "2026-02-15T05:14:23.178350Z",
+  "author": "Im5tu",
+  "source_url": "https://github.com/Im5tu/claude/blob/main/skills/flutter-drift/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Stuart Blackler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

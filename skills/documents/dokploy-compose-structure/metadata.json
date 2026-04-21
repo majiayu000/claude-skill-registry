@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/dokploy-compose-structure",
   "github_branch": "main",
-  "dir_name": "dokploy-compose-structure"
+  "dir_name": "dokploy-compose-structure",
+  "author": "enuno",
+  "source_url": "https://github.com/enuno/dokploy/blob/main/.claude/skills/dokploy-compose-structure/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/enuno/dokploy/blob/main/.claude/skills/dokploy-compose-structure/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

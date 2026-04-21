@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "deep-research-synthesizer"
+  "dir_name": "deep-research-synthesizer",
+  "author": "anthony-maio",
+  "source_url": "https://github.com/anthony-maio/pieces-agent-skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anthony Maio <anthony@making-minds.ai>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

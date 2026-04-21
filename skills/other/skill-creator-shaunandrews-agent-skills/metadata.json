@@ -9,5 +9,12 @@
   "github_path": "skills/skill-creator",
   "github_branch": "main",
   "dir_name": "skill-creator-shaunandrews-agent-skills",
-  "downloaded_at": "2026-02-05T05:36:35.904203Z"
+  "downloaded_at": "2026-02-05T05:36:35.904203Z",
+  "author": "shaunandrews",
+  "source_url": "https://github.com/shaunandrews/agent-skills/blob/main/skills/skill-creator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Shaun Andrews",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

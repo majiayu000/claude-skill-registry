@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:07.195158Z",
   "github_path": "src/quaestor/skills/initializing-project",
   "github_branch": "main",
-  "dir_name": "initializing-project-jeanluciano-quaestor"
+  "dir_name": "initializing-project-jeanluciano-quaestor",
+  "author": "jeanluciano",
+  "source_url": "https://github.com/jeanluciano/quaestor/blob/main/src/quaestor/skills/initializing-project/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Jean Luciano",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

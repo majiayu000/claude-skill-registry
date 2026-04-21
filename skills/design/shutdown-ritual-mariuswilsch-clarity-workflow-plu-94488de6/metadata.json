@@ -5,5 +5,12 @@
   "description": "Evening task selection ceremony for maker work (discovery: requirements-clarity). Evaluate at requirements-clarity when user mentions shutdown ritual, evening ceremony, select for book, end of day sel",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:57.344954Z",
-  "dir_name": "shutdown-ritual-mariuswilsch-clarity-workflow-plu-94488de6"
+  "dir_name": "shutdown-ritual-mariuswilsch-clarity-workflow-plu-94488de6",
+  "author": "MariusWilsch",
+  "source_url": "https://github.com/MariusWilsch/clarity-workflow-plugin",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MariusWilsch/clarity-workflow-plugin",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

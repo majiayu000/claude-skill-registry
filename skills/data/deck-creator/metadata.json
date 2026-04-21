@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:30:10.017628Z",
   "dir_name": "deck-creator",
   "github_path": ".codex/deck-creator",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "crazywoola",
+  "source_url": "https://github.com/crazywoola/dify-x/blob/main/.codex/deck-creator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 crazywoola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

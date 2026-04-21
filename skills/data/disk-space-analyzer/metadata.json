@@ -5,5 +5,12 @@
   "source": "github.com/WhiteMinds/disk-space-analyzer-skill",
   "downloaded_at": "2026-02-04T02:02:00.765285Z",
   "dir_name": "disk-space-analyzer",
-  "category": "data"
+  "category": "data",
+  "author": "WhiteMinds",
+  "source_url": "https://github.com/WhiteMinds/disk-space-analyzer-skill/blob/main/skills/disk-space-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

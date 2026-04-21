@@ -7,5 +7,12 @@
   "stars": 2,
   "source": "github.com/SidU/GoodDocs",
   "downloaded_at": "2026-01-24T16:15:38.049476Z",
-  "dir_name": "init-repo-sidu-gooddocs"
+  "dir_name": "init-repo-sidu-gooddocs",
+  "author": "SidU",
+  "source_url": "https://github.com/SidU/GoodDocs/blob/main/.codex/skills/init-repo/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sid Uppal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

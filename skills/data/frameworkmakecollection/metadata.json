@@ -5,5 +5,12 @@
   "description": "Génère classe Collection typée avec traits Atournayre",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:59.098280Z",
-  "dir_name": "frameworkmakecollection"
+  "dir_name": "frameworkmakecollection",
+  "author": "atournayre",
+  "source_url": "https://github.com/atournayre/claude-marketplace",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Aurélien Tournayre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/works-yesed-scriptedit/awesome-slash",
   "downloaded_at": "2026-02-04T01:48:20.228991Z",
   "dir_name": "repo-mapping",
-  "category": "data"
+  "category": "data",
+  "author": "works-yesed-scriptedit",
+  "source_url": "https://github.com/works-yesed-scriptedit/awesome-slash/blob/main/plugins/repo-map/skills/repo-mapping/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Avi Fenesh",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

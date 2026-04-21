@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:25.173909Z",
   "github_path": "skills/infrastructure/docker-kubernetes",
   "github_branch": "main",
-  "dir_name": "docker-kubernetes-nategarelik-claude-code-config-9453005a"
+  "dir_name": "docker-kubernetes-nategarelik-claude-code-config-9453005a",
+  "author": "nategarelik",
+  "source_url": "https://github.com/nategarelik/claude-code-config/blob/main/skills/infrastructure/docker-kubernetes/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nategarelik/claude-code-config/blob/main/skills/infrastructure/docker-kubernetes/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

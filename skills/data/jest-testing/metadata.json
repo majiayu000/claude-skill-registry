@@ -5,5 +5,12 @@
   "source": "github.com/mcclowes/lea",
   "downloaded_at": "2026-02-04T01:57:52.142440Z",
   "dir_name": "jest-testing",
-  "category": "data"
+  "category": "data",
+  "author": "mcclowes",
+  "source_url": "https://github.com/mcclowes/lea/blob/main/.claude/skills/jest-testing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Max Clayton Clowes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

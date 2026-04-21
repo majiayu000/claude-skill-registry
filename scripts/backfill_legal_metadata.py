@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+import http.client
 import json
 import os
 import re
@@ -101,7 +102,7 @@ def fetch_repo_license(repo: str, token: str, timeout: int) -> dict[str, str]:
             if exc.code in {403, 404, 451}:
                 return {"license": "NOASSERTION", "copyright": "", "error": f"http_{exc.code}"}
             raise
-        except (TimeoutError, urllib.error.URLError, OSError) as exc:
+        except (TimeoutError, http.client.IncompleteRead, urllib.error.URLError, OSError) as exc:
             if attempt < 2:
                 time.sleep(1 + attempt)
                 continue

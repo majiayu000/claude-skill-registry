@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:31.870526Z",
   "github_path": "plugins/java-design-patterns/skills/java-design-principles",
   "github_branch": "main",
-  "dir_name": "java-design-principles-aucun6352-project-cheat-sheet-ca88d0be"
+  "dir_name": "java-design-principles-aucun6352-project-cheat-sheet-ca88d0be",
+  "author": "aucun6352",
+  "source_url": "https://github.com/aucun6352/project-cheat-sheet/blob/main/plugins/java-design-patterns/skills/java-design-principles/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Gyounggyu Lee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

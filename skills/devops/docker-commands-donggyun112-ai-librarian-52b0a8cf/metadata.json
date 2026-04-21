@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:29.979602Z",
   "github_path": ".claude/skills/docker-commands",
   "github_branch": "main",
-  "dir_name": "docker-commands-donggyun112-ai-librarian-52b0a8cf"
+  "dir_name": "docker-commands-donggyun112-ai-librarian-52b0a8cf",
+  "author": "donggyun112",
+  "source_url": "https://github.com/donggyun112/ai-librarian/blob/main/.claude/skills/docker-commands/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/donggyun112/ai-librarian/blob/main/.claude/skills/docker-commands/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

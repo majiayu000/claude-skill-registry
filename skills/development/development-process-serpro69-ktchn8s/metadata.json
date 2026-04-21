@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/development-process",
   "github_branch": "main",
-  "dir_name": "development-process-serpro69-ktchn8s"
+  "dir_name": "development-process-serpro69-ktchn8s",
+  "author": "serpro69",
+  "source_url": "https://github.com/serpro69/ktchn8s/blob/main/.claude/skills/development-process/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 - present serpro69",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

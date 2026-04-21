@@ -5,5 +5,12 @@
   "description": "Expert-level git worktree troubleshooting, cleanup, and management. Use when users have worktree issues, conflicts, cleanup needs, or questions about git worktree commands. Activate for problems like ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:08:17.450171Z",
-  "dir_name": "ctxworktree"
+  "dir_name": "ctxworktree",
+  "author": "Shakes-tzd",
+  "source_url": "https://github.com/Shakes-tzd/contextune",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Shakes Dlamini",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

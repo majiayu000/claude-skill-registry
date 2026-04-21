@@ -5,5 +5,12 @@
   "source": "github.com/jk278/veld",
   "downloaded_at": "2026-01-29T07:02:29.609243Z",
   "dir_name": "product-manager-jk278-veld",
-  "category": "other"
+  "category": "other",
+  "author": "jk278",
+  "source_url": "https://github.com/jk278/veld/blob/main/.claude/skills/product-manager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jk278/veld/blob/main/.claude/skills/product-manager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

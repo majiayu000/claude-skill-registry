@@ -9,5 +9,12 @@
   ],
   "stars": 3,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "docker-management"
+  "dir_name": "docker-management",
+  "author": "ShunsukeHayashi",
+  "source_url": "https://github.com/ShunsukeHayashi/miyabi-mcp-bundle",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ShunsukeHayashi/miyabi-mcp-bundle",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

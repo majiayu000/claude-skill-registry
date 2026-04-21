@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/eslint-config",
   "github_branch": "main",
-  "dir_name": "eslint-config-mcclowes-lea"
+  "dir_name": "eslint-config-mcclowes-lea",
+  "author": "mcclowes",
+  "source_url": "https://github.com/mcclowes/lea/blob/main/.claude/skills/eslint-config/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Max Clayton Clowes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

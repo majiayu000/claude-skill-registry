@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/design-system-analyzer",
   "github_branch": "main",
-  "dir_name": "design-system-analyzer-pastjean-dotfiles"
+  "dir_name": "design-system-analyzer-pastjean-dotfiles",
+  "author": "pastjean",
+  "source_url": "https://github.com/pastjean/dotfiles/blob/main/.claude/skills/design-system-analyzer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pastjean/dotfiles/blob/main/.claude/skills/design-system-analyzer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

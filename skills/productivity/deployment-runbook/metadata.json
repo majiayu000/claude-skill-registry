@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/deployment-runbook",
   "github_branch": "main",
-  "dir_name": "deployment-runbook"
+  "dir_name": "deployment-runbook",
+  "author": "pfangueiro",
+  "source_url": "https://github.com/pfangueiro/claude-code-agents/blob/main/.claude/skills/deployment-runbook/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Pedro Fangueiro",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

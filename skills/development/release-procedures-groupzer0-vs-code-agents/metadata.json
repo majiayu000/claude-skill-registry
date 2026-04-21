@@ -7,5 +7,12 @@
   "stars": 159,
   "source": "github.com/groupzer0/vs-code-agents",
   "downloaded_at": "2026-01-24T16:15:57.276942Z",
-  "dir_name": "release-procedures-groupzer0-vs-code-agents"
+  "dir_name": "release-procedures-groupzer0-vs-code-agents",
+  "author": "groupzer0",
+  "source_url": "https://github.com/groupzer0/vs-code-agents/blob/main/vs-code-agents/skills/release-procedures/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

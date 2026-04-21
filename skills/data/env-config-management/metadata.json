@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "env-config-management",
   "github_path": ".claude/skills/env-config-management",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "SolidCitadel",
+  "source_url": "https://github.com/SolidCitadel/UniSync/blob/main/.claude/skills/env-config-management/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 HyeonJun Jeon",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

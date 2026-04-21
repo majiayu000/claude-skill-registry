@@ -11,5 +11,12 @@
   "stars": 5,
   "github_path": ".claude/skills/markdown-confluence-sync",
   "github_branch": "main",
-  "dir_name": "markdown-confluence-sync-tstapler-dotfiles"
+  "dir_name": "markdown-confluence-sync-tstapler-dotfiles",
+  "author": "tstapler",
+  "source_url": "https://github.com/tstapler/dotfiles/blob/main/.claude/skills/markdown-confluence-sync/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tstapler/dotfiles/blob/main/.claude/skills/markdown-confluence-sync/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

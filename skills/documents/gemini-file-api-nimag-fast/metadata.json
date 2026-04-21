@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": ".claude/skills/gemini-file-api",
   "github_branch": "main",
-  "dir_name": "gemini-file-api-nimag-fast"
+  "dir_name": "gemini-file-api-nimag-fast",
+  "author": "nimag",
+  "source_url": "https://github.com/nimag/fast/blob/main/.claude/skills/gemini-file-api/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nimag/fast/blob/main/.claude/skills/gemini-file-api/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

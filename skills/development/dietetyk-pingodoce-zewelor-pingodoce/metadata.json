@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:24.087159Z",
   "github_path": ".claude/skills/dietetyk",
   "github_branch": "main",
-  "dir_name": "dietetyk-pingodoce-zewelor-pingodoce"
+  "dir_name": "dietetyk-pingodoce-zewelor-pingodoce",
+  "author": "zewelor",
+  "source_url": "https://github.com/zewelor/pingodoce/blob/main/.claude/skills/dietetyk/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zewelor/pingodoce/blob/main/.claude/skills/dietetyk/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -10,5 +10,12 @@
   "stars": 2,
   "github_path": "generated-skills/swift-lang",
   "github_branch": "main",
-  "dir_name": "swift-lang-mpazaryna-claude-toolkit-ed00837e"
+  "dir_name": "swift-lang-mpazaryna-claude-toolkit-ed00837e",
+  "author": "mpazaryna",
+  "source_url": "https://github.com/mpazaryna/claude-toolkit/blob/main/generated-skills/swift-lang/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mpazaryna/claude-toolkit/blob/main/generated-skills/swift-lang/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

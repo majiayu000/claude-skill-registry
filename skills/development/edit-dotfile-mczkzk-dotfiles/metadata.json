@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:02.712563Z",
   "github_path": "dot_claude/skills/edit-dotfile",
   "github_branch": "main",
-  "dir_name": "edit-dotfile-mczkzk-dotfiles"
+  "dir_name": "edit-dotfile-mczkzk-dotfiles",
+  "author": "mczkzk",
+  "source_url": "https://github.com/mczkzk/dotfiles/blob/main/dot_claude/skills/edit-dotfile/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mczkzk/dotfiles/blob/main/dot_claude/skills/edit-dotfile/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

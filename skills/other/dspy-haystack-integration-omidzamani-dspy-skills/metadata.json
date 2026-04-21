@@ -5,5 +5,12 @@
   "source": "github.com/OmidZamani/dspy-skills",
   "downloaded_at": "2026-01-29T05:46:10.530617Z",
   "dir_name": "dspy-haystack-integration-omidzamani-dspy-skills",
-  "category": "other"
+  "category": "other",
+  "author": "OmidZamani",
+  "source_url": "https://github.com/OmidZamani/dspy-skills/blob/main/skills/dspy-haystack-integration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Omid Zamani",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/bash0C7/picotorokko",
-  "dir_name": "picoruby-constraints-bash0c7-picotorokko-2"
+  "dir_name": "picoruby-constraints-bash0c7-picotorokko-2",
+  "author": "bash0C7",
+  "source_url": "https://github.com/bash0C7/picotorokko/blob/main/.claude/skills/picoruby-constraints/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Toshiaki \"bash\" KOSHIBA",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Review HTML/CSS and React/TypeScript code for WCAG 2.1 Level AA accessibility compliance. Use when the user asks to review code for accessibility, check WCAG compliance, identify accessibility issues,",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:08:18.268429Z",
-  "dir_name": "wcag-compliance-reviewer-shawn-sandy-skills"
+  "dir_name": "wcag-compliance-reviewer-shawn-sandy-skills",
+  "author": "shawn-sandy",
+  "source_url": "https://github.com/shawn-sandy/skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shawn-sandy/skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

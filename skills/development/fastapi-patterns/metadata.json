@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/fastapi-patterns",
   "github_branch": "main",
-  "dir_name": "fastapi-patterns"
+  "dir_name": "fastapi-patterns",
+  "author": "nauanbek",
+  "source_url": "https://github.com/nauanbek/deeps/blob/main/.claude/skills/fastapi-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 DeepAgents Control Platform Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

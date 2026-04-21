@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "doc-author"
+  "dir_name": "doc-author",
+  "author": "SidU",
+  "source_url": "https://github.com/SidU/GoodDocs",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sid Uppal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

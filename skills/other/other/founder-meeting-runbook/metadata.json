@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/evalops/open-associate-skills",
   "dir_name": "founder-meeting-runbook",
-  "downloaded_at": "2026-02-15T07:08:49.668479Z"
+  "downloaded_at": "2026-02-15T07:08:49.668479Z",
+  "author": "evalops",
+  "source_url": "https://github.com/evalops/open-associate-skills/blob/main/founder-meeting-runbook/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/evalops/open-associate-skills/blob/main/founder-meeting-runbook/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "templ-components"
+  "dir_name": "templ-components",
+  "author": "homveloper",
+  "source_url": "https://github.com/homveloper/doodle",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 beomhwi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

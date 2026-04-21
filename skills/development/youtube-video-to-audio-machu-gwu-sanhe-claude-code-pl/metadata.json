@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:55.086266Z",
   "github_path": "plugins/social-media-network/youtube/skills/youtube-video-to-audio",
   "github_branch": "main",
-  "dir_name": "youtube-video-to-audio-machu-gwu-sanhe-claude-code-pl"
+  "dir_name": "youtube-video-to-audio-machu-gwu-sanhe-claude-code-pl",
+  "author": "MacHu-GWU",
+  "source_url": "https://github.com/MacHu-GWU/sanhe-claude-code-plugins/blob/main/plugins/social-media-network/youtube/skills/youtube-video-to-audio/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sanhe Hu <husanhe@email.com>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

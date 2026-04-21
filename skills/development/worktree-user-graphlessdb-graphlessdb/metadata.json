@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:02.959318Z",
   "github_path": ".claude/skills/worktree-user",
   "github_branch": "main",
-  "dir_name": "worktree-user-graphlessdb-graphlessdb"
+  "dir_name": "worktree-user-graphlessdb-graphlessdb",
+  "author": "graphlessdb",
+  "source_url": "https://github.com/graphlessdb/graphlessdb/blob/main/.claude/skills/worktree-user/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) Small Trading Company Ltd (Destash.com).",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

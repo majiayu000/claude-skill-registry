@@ -5,5 +5,12 @@
   "source": "github.com/JordanGunn/nunchuck",
   "downloaded_at": "2026-02-04T04:25:10.606161Z",
   "dir_name": "plan-discuss",
-  "category": "data"
+  "category": "data",
+  "author": "JordanGunn",
+  "source_url": "https://github.com/JordanGunn/nunchuck/blob/main/skills/plan/plan-discuss/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Jordan Godau",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

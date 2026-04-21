@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:56.365450Z",
   "github_path": "plugins/oss-compliance/skills/oss-license",
   "github_branch": "main",
-  "dir_name": "oss-license-sk8metalme-ai-agent-setup"
+  "dir_name": "oss-license-sk8metalme-ai-agent-setup",
+  "author": "sk8metalme",
+  "source_url": "https://github.com/sk8metalme/ai-agent-setup/blob/main/plugins/oss-compliance/skills/oss-license/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sk8metalme/ai-agent-setup/blob/main/plugins/oss-compliance/skills/oss-license/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

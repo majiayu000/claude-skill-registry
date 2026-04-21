@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/codythatsme/i-migrate",
-  "dir_name": "effect"
+  "dir_name": "effect",
+  "author": "codythatsme",
+  "source_url": "https://github.com/codythatsme/i-migrate",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/codythatsme/i-migrate",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

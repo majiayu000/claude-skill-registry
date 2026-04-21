@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": "skills/oss-contribution-framework",
   "github_branch": "main",
-  "dir_name": "oss-contribution-framework-devkade-collaborator"
+  "dir_name": "oss-contribution-framework-devkade-collaborator",
+  "author": "devkade",
+  "source_url": "https://github.com/devkade/collaborator/blob/main/skills/oss-contribution-framework/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/devkade/collaborator/blob/main/skills/oss-contribution-framework/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

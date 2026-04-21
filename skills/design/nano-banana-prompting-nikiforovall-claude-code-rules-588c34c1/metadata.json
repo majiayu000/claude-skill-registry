@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:56.281347Z",
   "github_path": "plugins/handbook-nano-banana/skills/nano-banana-prompting",
   "github_branch": "main",
-  "dir_name": "nano-banana-prompting-nikiforovall-claude-code-rules-588c34c1"
+  "dir_name": "nano-banana-prompting-nikiforovall-claude-code-rules-588c34c1",
+  "author": "NikiforovAll",
+  "source_url": "https://github.com/NikiforovAll/claude-code-rules/blob/main/plugins/handbook-nano-banana/skills/nano-banana-prompting/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NikiforovAll/claude-code-rules/blob/main/plugins/handbook-nano-banana/skills/nano-banana-prompting/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

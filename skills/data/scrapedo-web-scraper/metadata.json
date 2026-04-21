@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "scrapedo-web-scraper"
+  "dir_name": "scrapedo-web-scraper",
+  "author": "artwist-polyakov",
+  "source_url": "https://github.com/artwist-polyakov/polyakov-claude-skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Aleksandr Poliakov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

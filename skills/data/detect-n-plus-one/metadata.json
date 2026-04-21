@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "detect-n-plus-one",
   "github_path": ".claude/skills/detect-n-plus-one",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "anortham",
+  "source_url": "https://github.com/anortham/miller/blob/main/.claude/skills/detect-n-plus-one/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anortham/miller/blob/main/.claude/skills/detect-n-plus-one/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

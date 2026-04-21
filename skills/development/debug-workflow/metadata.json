@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:34.935530Z",
   "github_path": ".claude/skills/debug-workflow",
   "github_branch": "main",
-  "dir_name": "debug-workflow"
+  "dir_name": "debug-workflow",
+  "author": "bash0C7",
+  "source_url": "https://github.com/bash0C7/picotorokko/blob/main/.claude/skills/debug-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Toshiaki \"bash\" KOSHIBA",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

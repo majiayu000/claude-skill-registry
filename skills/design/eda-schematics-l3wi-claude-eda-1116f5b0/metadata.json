@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:44.641359Z",
   "github_path": "templates/claude/skills/eda-schematics",
   "github_branch": "main",
-  "dir_name": "eda-schematics-l3wi-claude-eda-1116f5b0"
+  "dir_name": "eda-schematics-l3wi-claude-eda-1116f5b0",
+  "author": "l3wi",
+  "source_url": "https://github.com/l3wi/claude-eda/blob/main/templates/claude/skills/eda-schematics/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/l3wi/claude-eda/blob/main/templates/claude/skills/eda-schematics/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

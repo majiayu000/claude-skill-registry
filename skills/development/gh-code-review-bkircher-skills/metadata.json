@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:39.487152Z",
   "github_path": "gh-code-review",
   "github_branch": "main",
-  "dir_name": "gh-code-review-bkircher-skills"
+  "dir_name": "gh-code-review-bkircher-skills",
+  "author": "bkircher",
+  "source_url": "https://github.com/bkircher/skills/blob/main/gh-code-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ben Kircher",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

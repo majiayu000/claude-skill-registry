@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:24.730515Z",
   "dir_name": "dotnet-feature",
   "github_path": ".claude/skills/dotnet-feature",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "cwoodruff",
+  "source_url": "https://github.com/cwoodruff/morespeakers-com/blob/main/.claude/skills/dotnet-feature/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Chris Woody Woodruff",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "stars": 6,
   "github_path": ".claude/skills/serenity-discord-bot",
   "github_branch": "main",
-  "dir_name": "serenity-discord-bot-ocn-zk-activity"
+  "dir_name": "serenity-discord-bot-ocn-zk-activity",
+  "author": "ocn",
+  "source_url": "https://github.com/ocn/zk-activity/blob/main/.claude/skills/serenity-discord-bot/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2025 ocn",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

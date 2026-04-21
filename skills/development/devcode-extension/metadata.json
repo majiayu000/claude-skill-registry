@@ -5,5 +5,12 @@
   "description": "Install VS Code/Cursor extensions from a local .vsix via CLI (code, code-insiders, cursor, cursor-nightly). Use whenever asked to install an extension programmatically.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:30.211245Z",
-  "dir_name": "devcode-extension"
+  "dir_name": "devcode-extension",
+  "author": "kevinslin",
+  "source_url": "https://github.com/kevinslin/llm",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kevinslin/llm",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

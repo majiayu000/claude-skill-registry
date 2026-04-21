@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:16.425892Z",
   "github_path": "uceap/skills/dev-meeting-followup",
   "github_branch": "main",
-  "dir_name": "dev-meeting-followup-uceap-claude"
+  "dir_name": "dev-meeting-followup-uceap-claude",
+  "author": "UCEAP",
+  "source_url": "https://github.com/UCEAP/claude/blob/main/uceap/skills/dev-meeting-followup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/UCEAP/claude/blob/main/uceap/skills/dev-meeting-followup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

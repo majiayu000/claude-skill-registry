@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "electron-fsd"
+  "dir_name": "electron-fsd",
+  "author": "KwonCheulJin",
+  "source_url": "https://github.com/KwonCheulJin/pdf-studio-desktop",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/KwonCheulJin/pdf-studio-desktop",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

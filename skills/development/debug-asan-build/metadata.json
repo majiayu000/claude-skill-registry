@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "debug-asan-build"
+  "dir_name": "debug-asan-build",
+  "author": "coderealm-atlas",
+  "source_url": "https://github.com/coderealm-atlas/cert-ctrl",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/coderealm-atlas/cert-ctrl",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

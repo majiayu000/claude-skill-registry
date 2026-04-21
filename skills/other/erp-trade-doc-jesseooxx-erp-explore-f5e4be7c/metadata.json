@@ -5,5 +5,12 @@
   "source": "github.com/jesseooxx/ERP-explore",
   "downloaded_at": "2026-01-22T01:34:42.835191Z",
   "dir_name": "erp-trade-doc-jesseooxx-erp-explore-f5e4be7c",
-  "category": "other"
+  "category": "other",
+  "author": "jesseooxx",
+  "source_url": "https://github.com/jesseooxx/ERP-explore/blob/main/.claude/skills/erp-trade-doc/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jesseooxx/ERP-explore/blob/main/.claude/skills/erp-trade-doc/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

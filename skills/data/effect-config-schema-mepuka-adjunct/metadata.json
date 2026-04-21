@@ -5,5 +5,12 @@
   "source": "github.com/mepuka/adjunct",
   "downloaded_at": "2026-02-04T04:20:23.787168Z",
   "dir_name": "effect-config-schema-mepuka-adjunct",
-  "category": "data"
+  "category": "data",
+  "author": "mepuka",
+  "source_url": "https://github.com/mepuka/adjunct/blob/main/.claude/skills/effect-config-schema/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-present <PLACEHOLDER>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

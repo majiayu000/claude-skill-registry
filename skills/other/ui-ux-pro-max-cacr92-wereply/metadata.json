@@ -9,5 +9,12 @@
   "github_path": ".cursor/skills/ui-ux-pro-max",
   "github_branch": "main",
   "dir_name": "ui-ux-pro-max-cacr92-wereply",
-  "downloaded_at": "2026-02-05T01:44:19.481134Z"
+  "downloaded_at": "2026-02-05T01:44:19.481134Z",
+  "author": "cacr92",
+  "source_url": "https://github.com/cacr92/WeReply/blob/main/.cursor/skills/ui-ux-pro-max/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 WeReply",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/retex73/music-app",
   "downloaded_at": "2026-01-24T16:15:49.682601Z",
-  "dir_name": "dnd-patterns-retex73-music-app"
+  "dir_name": "dnd-patterns-retex73-music-app",
+  "author": "retex73",
+  "source_url": "https://github.com/retex73/music-app/blob/main/.claude/skills/dnd-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/retex73/music-app/blob/main/.claude/skills/dnd-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

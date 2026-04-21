@@ -9,5 +9,12 @@
   "stars": 0,
   "github_path": "volition",
   "github_branch": "main",
-  "dir_name": "volition-raudbjorn-cognitive-construct"
+  "dir_name": "volition-raudbjorn-cognitive-construct",
+  "author": "Raudbjorn",
+  "source_url": "https://github.com/Raudbjorn/cognitive-construct/blob/main/volition/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Raudbjorn/cognitive-construct/blob/main/volition/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

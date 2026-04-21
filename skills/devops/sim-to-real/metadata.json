@@ -5,5 +5,12 @@
   "description": "Provides guidelines and principles for bridging the gap between simulated robotics environments and real-world hardware deployment in Physical AI.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:16.725538Z",
-  "dir_name": "sim-to-real"
+  "dir_name": "sim-to-real",
+  "author": "uneezaismail",
+  "source_url": "https://github.com/uneezaismail/Physical-AI-Humanoid-Robotics",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/uneezaismail/Physical-AI-Humanoid-Robotics",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

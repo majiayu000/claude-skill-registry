@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/Lin-A1/skills-agent",
-  "dir_name": "rerank-service-lin-a1-skills-agent-2"
+  "dir_name": "rerank-service-lin-a1-skills-agent-2",
+  "author": "Lin-A1",
+  "source_url": "https://github.com/Lin-A1/skills-agent/blob/main/services/rerank_service/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Lin-A1/skills-agent/blob/main/services/rerank_service/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

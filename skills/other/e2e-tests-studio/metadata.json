@@ -5,5 +5,12 @@
   "source": "github.com/mastra-ai/mastra",
   "downloaded_at": "2026-01-28T01:39:36.018020Z",
   "dir_name": "e2e-tests-studio",
-  "category": "other"
+  "category": "other",
+  "author": "mastra-ai",
+  "source_url": "https://github.com/mastra-ai/mastra/blob/main/.claude/skills/e2e-tests-studio/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Kepler Software, Inc.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

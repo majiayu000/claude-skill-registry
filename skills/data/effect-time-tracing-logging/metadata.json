@@ -5,5 +5,12 @@
   "source": "github.com/mepuka/crate",
   "downloaded_at": "2026-01-29T07:39:33.532514Z",
   "dir_name": "effect-time-tracing-logging",
-  "category": "data"
+  "category": "data",
+  "author": "mepuka",
+  "source_url": "https://github.com/mepuka/crate/blob/main/.claude/skills/effect-time-tracing-logging/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-present Mepuka Kessy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

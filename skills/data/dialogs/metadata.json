@@ -5,5 +5,12 @@
   "source": "github.com/Clay-Ferguson/mkbrowser",
   "downloaded_at": "2026-02-04T02:27:47.506509Z",
   "dir_name": "dialogs",
-  "category": "data"
+  "category": "data",
+  "author": "Clay-Ferguson",
+  "source_url": "https://github.com/Clay-Ferguson/mkbrowser/blob/main/.claude/skills/dialogs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Clay Ferguson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

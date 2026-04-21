@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:42.652041Z",
   "github_path": "misc/claude-skills-demo/document-forge/custom-skills/watermark",
   "github_branch": "main",
-  "dir_name": "document-watermark"
+  "dir_name": "document-watermark",
+  "author": "spring-projects",
+  "source_url": "https://github.com/spring-projects/spring-ai-examples/blob/main/misc/claude-skills-demo/document-forge/custom-skills/watermark/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/spring-projects/spring-ai-examples/blob/main/misc/claude-skills-demo/document-forge/custom-skills/watermark/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

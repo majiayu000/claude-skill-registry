@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "git-cd-pr"
+  "dir_name": "git-cd-pr",
+  "author": "atournayre",
+  "source_url": "https://github.com/atournayre/claude-marketplace",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Aurélien Tournayre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

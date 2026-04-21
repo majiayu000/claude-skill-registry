@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:04.165739Z",
   "github_path": ".claude/skills/templ-skills/templ-htmx",
   "github_branch": "main",
-  "dir_name": "templ-htmx-homveloper-doodle"
+  "dir_name": "templ-htmx-homveloper-doodle",
+  "author": "homveloper",
+  "source_url": "https://github.com/homveloper/doodle/blob/main/.claude/skills/templ-skills/templ-htmx/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 beomhwi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

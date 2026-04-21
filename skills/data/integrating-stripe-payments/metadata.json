@@ -5,5 +5,12 @@
   "source": "github.com/bountydotnew/bounty.new",
   "downloaded_at": "2026-02-04T04:11:12.048762Z",
   "dir_name": "integrating-stripe-payments",
-  "category": "data"
+  "category": "data",
+  "author": "bountydotnew",
+  "source_url": "https://github.com/bountydotnew/bounty.new/blob/main/.claude/skills/integrating-stripe-payments/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Bounty.new",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

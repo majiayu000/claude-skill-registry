@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:33.695009Z",
   "github_path": "deep-research-synthesizer",
   "github_branch": "main",
-  "dir_name": "deep-research-synthesizer-anthony-maio-pieces-agent-skills"
+  "dir_name": "deep-research-synthesizer-anthony-maio-pieces-agent-skills",
+  "author": "anthony-maio",
+  "source_url": "https://github.com/anthony-maio/pieces-agent-skills/blob/main/deep-research-synthesizer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anthony Maio <anthony@making-minds.ai>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

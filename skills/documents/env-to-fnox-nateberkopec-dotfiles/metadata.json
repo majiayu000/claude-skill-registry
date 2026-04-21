@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:15.841424Z",
   "github_path": "files/home/.claude/skills/env-to-fnox",
   "github_branch": "main",
-  "dir_name": "env-to-fnox-nateberkopec-dotfiles"
+  "dir_name": "env-to-fnox-nateberkopec-dotfiles",
+  "author": "nateberkopec",
+  "source_url": "https://github.com/nateberkopec/dotfiles/blob/main/files/home/.claude/skills/env-to-fnox/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nateberkopec/dotfiles/blob/main/files/home/.claude/skills/env-to-fnox/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

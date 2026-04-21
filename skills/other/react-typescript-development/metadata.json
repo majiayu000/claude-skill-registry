@@ -5,5 +5,12 @@
   "source": "github.com/cacr92/WeReply",
   "downloaded_at": "2026-02-01T02:19:56.336362Z",
   "dir_name": "react-typescript-development",
-  "category": "other"
+  "category": "other",
+  "author": "cacr92",
+  "source_url": "https://github.com/cacr92/WeReply/blob/main/.cursor/skills/react-typescript-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 WeReply",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

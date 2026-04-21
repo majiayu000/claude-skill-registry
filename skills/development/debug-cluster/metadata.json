@@ -9,5 +9,12 @@
   ],
   "stars": 485,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "debug-cluster"
+  "dir_name": "debug-cluster",
+  "author": "openshift",
+  "source_url": "https://github.com/openshift/hypershift",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/openshift/hypershift",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

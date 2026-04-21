@@ -7,5 +7,12 @@
   "dir_name": "experiment-design-product-on-purpose-pm-skills",
   "category": "other",
   "github_path": "skills/measure/experiment-design",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "product-on-purpose",
+  "source_url": "https://github.com/product-on-purpose/pm-skills/blob/main/skills/measure/experiment-design/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2026 Jonathan",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

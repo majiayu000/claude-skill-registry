@@ -7,5 +7,12 @@
   "dir_name": "aspire-testing",
   "category": "other",
   "github_path": ".github/skills/dotnet-testing-advanced/aspire-testing",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "kevintsengtw",
+  "source_url": "https://github.com/kevintsengtw/dotnet-testing-agent-skills/blob/main/.github/skills/dotnet-testing-advanced/aspire-testing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Kevin Tseng",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

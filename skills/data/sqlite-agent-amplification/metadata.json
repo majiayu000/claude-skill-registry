@@ -11,5 +11,12 @@
   "stars": 0,
   "dir_name": "sqlite-agent-amplification",
   "github_path": ".claude/skills/sqlite-agent-amplification",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "codetalcott",
+  "source_url": "https://github.com/codetalcott/fixiplug/blob/main/.claude/skills/sqlite-agent-amplification/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/codetalcott/fixiplug/blob/main/.claude/skills/sqlite-agent-amplification/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -9,5 +9,12 @@
   ],
   "stars": 2292,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "jit-overview"
+  "dir_name": "jit-overview",
+  "author": "facet-rs",
+  "source_url": "https://github.com/facet-rs/facet",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/facet-rs/facet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

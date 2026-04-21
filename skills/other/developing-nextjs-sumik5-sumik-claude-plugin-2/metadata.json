@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/sumik5/sumik-claude-plugin",
-  "dir_name": "developing-nextjs-sumik5-sumik-claude-plugin-2"
+  "dir_name": "developing-nextjs-sumik5-sumik-claude-plugin-2",
+  "author": "sumik5",
+  "source_url": "https://github.com/sumik5/sumik-claude-plugin/blob/main/skills/developing-nextjs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sumik5/sumik-claude-plugin/blob/main/skills/developing-nextjs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

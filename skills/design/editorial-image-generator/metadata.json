@@ -5,5 +5,12 @@
   "description": "Creates sophisticated HBR-style editorial illustrations for any content using AI understanding and visual analysis. Use when creating conceptual illustrations, analyzing generated images, or compositi",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:13.745808Z",
-  "dir_name": "editorial-image-generator"
+  "dir_name": "editorial-image-generator",
+  "author": "tallyfy",
+  "source_url": "https://github.com/tallyfy/documentation",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tallyfy/documentation",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

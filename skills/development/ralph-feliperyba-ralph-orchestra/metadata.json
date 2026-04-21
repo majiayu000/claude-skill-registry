@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/feliperyba/ralph-orchestra",
   "downloaded_at": "2026-01-24T16:15:55.348952Z",
-  "dir_name": "ralph-feliperyba-ralph-orchestra"
+  "dir_name": "ralph-feliperyba-ralph-orchestra",
+  "author": "feliperyba",
+  "source_url": "https://github.com/feliperyba/ralph-orchestra/blob/main/.claude/skills/ralph/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 feliperyba",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

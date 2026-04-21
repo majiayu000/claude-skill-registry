@@ -9,5 +9,12 @@
   ],
   "stars": 5,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "denote-org"
+  "dir_name": "denote-org",
+  "author": "junghan0611",
+  "source_url": "https://github.com/junghan0611/org-mode-skills",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Junghan Kim",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

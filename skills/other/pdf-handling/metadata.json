@@ -5,5 +5,12 @@
   "source": "github.com/belumume/claude-skills",
   "downloaded_at": "2026-02-02T04:22:50.984543Z",
   "dir_name": "pdf-handling",
-  "category": "other"
+  "category": "other",
+  "author": "belumume",
+  "source_url": "https://github.com/belumume/claude-skills/blob/main/plugins/pdf-guard/skills/pdf-handling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/belumume/claude-skills/blob/main/plugins/pdf-guard/skills/pdf-handling/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

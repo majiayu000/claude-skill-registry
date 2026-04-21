@@ -11,5 +11,12 @@
   "stars": 1,
   "github_path": ".claude/skills/safe-build-operations",
   "github_branch": "main",
-  "dir_name": "safe-build-operations"
+  "dir_name": "safe-build-operations",
+  "author": "laurigates",
+  "source_url": "https://github.com/laurigates/mcu-tinkering-lab/blob/main/.claude/skills/safe-build-operations/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Lauri Gates",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

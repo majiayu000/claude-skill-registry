@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:32.124947Z",
   "github_path": "plugins/design-architecture/skills/designing-hexagonal-architecture",
   "github_branch": "main",
-  "dir_name": "designing-hexagonal-architecture-aucun6352-project-cheat-sheet-e7a8203b"
+  "dir_name": "designing-hexagonal-architecture-aucun6352-project-cheat-sheet-e7a8203b",
+  "author": "aucun6352",
+  "source_url": "https://github.com/aucun6352/project-cheat-sheet/blob/main/plugins/design-architecture/skills/designing-hexagonal-architecture/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Gyounggyu Lee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

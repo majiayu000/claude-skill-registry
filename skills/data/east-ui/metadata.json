@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "east-ui",
   "github_path": "skills/east-ui",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "elaraai",
+  "source_url": "https://github.com/elaraai/east-plugin/blob/main/skills/east-ui/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Elara AI Pty Ltd",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/retex73/music-app",
   "downloaded_at": "2026-01-29T07:05:54.903145Z",
   "dir_name": "search-optimization-retex73-music-app-5000ac13",
-  "category": "other"
+  "category": "other",
+  "author": "retex73",
+  "source_url": "https://github.com/retex73/music-app/blob/main/.claude/skills/search-optimization/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/retex73/music-app/blob/main/.claude/skills/search-optimization/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

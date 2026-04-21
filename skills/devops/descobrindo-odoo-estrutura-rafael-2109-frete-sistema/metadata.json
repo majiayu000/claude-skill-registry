@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/descobrindo-odoo-estrutura",
   "github_branch": "main",
-  "dir_name": "descobrindo-odoo-estrutura-rafael-2109-frete-sistema"
+  "dir_name": "descobrindo-odoo-estrutura-rafael-2109-frete-sistema",
+  "author": "Rafael-2109",
+  "source_url": "https://github.com/Rafael-2109/frete-sistema/blob/main/.claude/skills/descobrindo-odoo-estrutura/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Rafael-2109/frete-sistema/blob/main/.claude/skills/descobrindo-odoo-estrutura/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

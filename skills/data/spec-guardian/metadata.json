@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:50.685608Z",
   "dir_name": "spec-guardian",
   "github_path": ".claude/skills/spec-guardian",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "AlexBaum-ai",
+  "source_url": "https://github.com/AlexBaum-ai/NEURM/blob/main/.claude/skills/spec-guardian/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AlexBaum-ai/NEURM/blob/main/.claude/skills/spec-guardian/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

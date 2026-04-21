@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:21.392886Z",
   "github_path": ".claude/skills/layer-learning",
   "github_branch": "main",
-  "dir_name": "layer-learning-az9713-pacer-learning-syste"
+  "dir_name": "layer-learning-az9713-pacer-learning-syste",
+  "author": "az9713",
+  "source_url": "https://github.com/az9713/pacer-learning-system/blob/main/.claude/skills/layer-learning/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 az9713",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

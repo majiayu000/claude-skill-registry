@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/k8s-openapi",
   "github_branch": "main",
-  "dir_name": "k8s-openapi-jinnovation-kele-el"
+  "dir_name": "k8s-openapi-jinnovation-kele-el",
+  "author": "jinnovation",
+  "source_url": "https://github.com/jinnovation/kele.el/blob/main/.claude/skills/k8s-openapi/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jinnovation/kele.el/blob/main/.claude/skills/k8s-openapi/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

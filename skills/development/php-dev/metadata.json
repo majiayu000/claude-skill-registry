@@ -5,5 +5,12 @@
   "description": "PHP開発支援（Slim/PDO/Composer）。PSR-12、PHPStan、PDOでセキュアPHP開発をガイド。",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:56.250774Z",
-  "dir_name": "php-dev"
+  "dir_name": "php-dev",
+  "author": "sk8metalme",
+  "source_url": "https://github.com/sk8metalme/ai-agent-setup",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sk8metalme/ai-agent-setup",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

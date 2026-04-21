@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/JordanGunn/nunchuck",
-  "dir_name": "md-review-jordangunn-nunchuck-2"
+  "dir_name": "md-review-jordangunn-nunchuck-2",
+  "author": "JordanGunn",
+  "source_url": "https://github.com/JordanGunn/nunchuck/blob/main/skills/md/md-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Jordan Godau",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

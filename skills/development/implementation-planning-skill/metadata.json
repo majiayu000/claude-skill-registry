@@ -5,5 +5,12 @@
   "description": "実装タスクを計画的に進めるためのスキルです。複雑な実装や複数ステップを要するタスクの場合、まず計画を立ててから実装を進めます。",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:24.965734Z",
-  "dir_name": "implementation-planning-skill"
+  "dir_name": "implementation-planning-skill",
+  "author": "ludiscan",
+  "source_url": "https://github.com/ludiscan/ludiscan-webapp",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 yuhi yamane",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "test-watch-focused-patterns"
+  "dir_name": "test-watch-focused-patterns",
+  "author": "zgagnon",
+  "source_url": "https://github.com/zgagnon/skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zgagnon/skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

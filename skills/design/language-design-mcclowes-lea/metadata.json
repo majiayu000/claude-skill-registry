@@ -10,5 +10,12 @@
   "stars": 3,
   "github_path": ".claude/skills/language-design",
   "github_branch": "main",
-  "dir_name": "language-design-mcclowes-lea"
+  "dir_name": "language-design-mcclowes-lea",
+  "author": "mcclowes",
+  "source_url": "https://github.com/mcclowes/lea/blob/main/.claude/skills/language-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Max Clayton Clowes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   ],
   "stars": 16,
   "source": "local",
-  "dir_name": "laravel-11-12-app-guidelines"
+  "dir_name": "laravel-11-12-app-guidelines",
+  "author": "thienanblog",
+  "source_url": "https://github.com/thienanblog/awesome-ai-agent-skills",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/thienanblog/awesome-ai-agent-skills",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

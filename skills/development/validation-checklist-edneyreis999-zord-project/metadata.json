@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:21.321506Z",
   "github_path": "service_financial-claude/skills/validation-checklist",
   "github_branch": "main",
-  "dir_name": "validation-checklist-edneyreis999-zord-project"
+  "dir_name": "validation-checklist-edneyreis999-zord-project",
+  "author": "edneyreis999",
+  "source_url": "https://github.com/edneyreis999/zord-project/blob/main/service_financial-claude/skills/validation-checklist/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/edneyreis999/zord-project/blob/main/service_financial-claude/skills/validation-checklist/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

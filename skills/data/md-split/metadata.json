@@ -5,5 +5,12 @@
   "source": "github.com/JordanGunn/nunchuck",
   "downloaded_at": "2026-02-04T04:25:07.741405Z",
   "dir_name": "md-split",
-  "category": "data"
+  "category": "data",
+  "author": "JordanGunn",
+  "source_url": "https://github.com/JordanGunn/nunchuck/blob/main/skills/md/md-split/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Jordan Godau",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

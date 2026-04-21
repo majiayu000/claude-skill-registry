@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "deno-debugger",
   "github_branch": "main",
-  "dir_name": "deno-debugger-willkelly-deno-debug-skill"
+  "dir_name": "deno-debugger-willkelly-deno-debug-skill",
+  "author": "willkelly",
+  "source_url": "https://github.com/willkelly/deno-debug-skill/blob/main/deno-debugger/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/willkelly/deno-debug-skill/blob/main/deno-debugger/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

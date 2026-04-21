@@ -9,5 +9,12 @@
   ],
   "stars": 4,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "design-conventions"
+  "dir_name": "design-conventions",
+  "author": "adeonir",
+  "source_url": "https://github.com/adeonir/golden-anniversary",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adeonir/golden-anniversary",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

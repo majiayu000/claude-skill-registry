@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:53.021085Z",
   "github_path": "config/claude/skills/debug-renovate",
   "github_branch": "main",
-  "dir_name": "debug-renovate-fohte-dotfiles"
+  "dir_name": "debug-renovate-fohte-dotfiles",
+  "author": "fohte",
+  "source_url": "https://github.com/fohte/dotfiles/blob/main/config/claude/skills/debug-renovate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fohte/dotfiles/blob/main/config/claude/skills/debug-renovate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

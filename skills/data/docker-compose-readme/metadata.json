@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "docker-compose-readme",
   "github_path": ".claude/skills/docker-compose-readme",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "cshahdev",
+  "source_url": "https://github.com/cshahdev/docker-compose-files/blob/main/.claude/skills/docker-compose-readme/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Chirag Shah",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

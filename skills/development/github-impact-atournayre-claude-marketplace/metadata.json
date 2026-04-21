@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:59.533783Z",
   "github_path": "github/skills/github-impact",
   "github_branch": "main",
-  "dir_name": "github-impact-atournayre-claude-marketplace"
+  "dir_name": "github-impact-atournayre-claude-marketplace",
+  "author": "atournayre",
+  "source_url": "https://github.com/atournayre/claude-marketplace/blob/main/github/skills/github-impact/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Aurélien Tournayre",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

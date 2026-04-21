@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/discover-containers",
   "github_branch": "main",
-  "dir_name": "discover-containers-rand-cc-polymath"
+  "dir_name": "discover-containers-rand-cc-polymath",
+  "author": "rand",
+  "source_url": "https://github.com/rand/cc-polymath/blob/main/skills/discover-containers/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 rand",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

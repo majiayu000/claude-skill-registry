@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": "debugging-kubernetes-incidents",
   "github_branch": "main",
-  "dir_name": "debugging-kubernetes-incidents-geored-sre-skill"
+  "dir_name": "debugging-kubernetes-incidents-geored-sre-skill",
+  "author": "geored",
+  "source_url": "https://github.com/geored/sre-skill/blob/main/debugging-kubernetes-incidents/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/geored/sre-skill/blob/main/debugging-kubernetes-incidents/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

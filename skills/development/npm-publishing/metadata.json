@@ -10,5 +10,12 @@
   "stars": 3,
   "github_path": ".claude/skills/npm-publishing",
   "github_branch": "main",
-  "dir_name": "npm-publishing"
+  "dir_name": "npm-publishing",
+  "author": "mcclowes",
+  "source_url": "https://github.com/mcclowes/lea/blob/main/.claude/skills/npm-publishing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Max Clayton Clowes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

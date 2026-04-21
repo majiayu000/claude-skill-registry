@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:26.881509Z",
   "github_path": ".claude/skills/latex-conventions",
   "github_branch": "main",
-  "dir_name": "latex-conventions-joernstoehler-msc-viterbo"
+  "dir_name": "latex-conventions-joernstoehler-msc-viterbo",
+  "author": "JoernStoehler",
+  "source_url": "https://github.com/JoernStoehler/msc-viterbo/blob/main/.claude/skills/latex-conventions/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jörn Stöhler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Manage D&D 5e combat encounters with turn-based mechanics, attack rolls, and HP tracking. This skill should be used when the user requests to start a combat encounter, fight a monster, enter the train",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:25.465157Z",
-  "dir_name": "dnd-simple-combat"
+  "dir_name": "dnd-simple-combat",
+  "author": "JoeCotellese",
+  "source_url": "https://github.com/JoeCotellese/dnd-dm-skill",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JoeCotellese/dnd-dm-skill",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

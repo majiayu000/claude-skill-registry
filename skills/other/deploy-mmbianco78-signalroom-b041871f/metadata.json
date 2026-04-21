@@ -7,5 +7,12 @@
   "dir_name": "deploy-mmbianco78-signalroom-b041871f",
   "category": "other",
   "github_path": ".claude/skills/deploy",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "mmbianco78",
+  "source_url": "https://github.com/mmbianco78/signalroom/blob/main/.claude/skills/deploy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mmbianco78/signalroom/blob/main/.claude/skills/deploy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

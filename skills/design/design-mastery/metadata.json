@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:59.407398Z",
   "github_path": "src/skills/design-mastery",
   "github_branch": "main",
-  "dir_name": "design-mastery"
+  "dir_name": "design-mastery",
+  "author": "wasintoh",
+  "source_url": "https://github.com/wasintoh/toh-framework/blob/main/src/skills/design-mastery/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Wasin Treesinthuros (Innovation Vantage)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -9,5 +9,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "docusaurus-expert"
+  "dir_name": "docusaurus-expert",
+  "author": "raphaelmansuy",
+  "source_url": "https://github.com/raphaelmansuy/agentic_platform_reference",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/raphaelmansuy/agentic_platform_reference",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

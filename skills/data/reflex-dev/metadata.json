@@ -5,5 +5,12 @@
   "source": "github.com/silvainfm/paie_reflex",
   "downloaded_at": "2026-02-04T03:42:24.781452Z",
   "dir_name": "reflex-dev",
-  "category": "data"
+  "category": "data",
+  "author": "silvainfm",
+  "source_url": "https://github.com/silvainfm/paie_reflex/blob/main/.claude/skills/reflex-dev/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/silvainfm/paie_reflex/blob/main/.claude/skills/reflex-dev/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

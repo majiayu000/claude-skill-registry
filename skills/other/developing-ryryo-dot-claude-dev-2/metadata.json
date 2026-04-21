@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/ryryo/dot-claude-dev",
-  "dir_name": "developing-ryryo-dot-claude-dev-2"
+  "dir_name": "developing-ryryo-dot-claude-dev-2",
+  "author": "ryryo",
+  "source_url": "https://github.com/ryryo/dot-claude-dev/blob/main/.claude/skills/dev/developing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ryryo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

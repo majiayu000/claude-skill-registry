@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/dismech-compliance",
   "github_branch": "main",
-  "dir_name": "dismech-compliance-monarch-initiative-dismech"
+  "dir_name": "dismech-compliance-monarch-initiative-dismech",
+  "author": "monarch-initiative",
+  "source_url": "https://github.com/monarch-initiative/dismech/blob/main/.claude/skills/dismech-compliance/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2025 My Name",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

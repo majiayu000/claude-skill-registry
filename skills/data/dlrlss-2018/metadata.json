@@ -7,5 +7,12 @@
   "stars": 4,
   "source": "github.com/dukebw/ml-reading-notes-improved-system",
   "downloaded_at": "2026-01-24T16:15:32.619876Z",
-  "dir_name": "dlrlss-2018"
+  "dir_name": "dlrlss-2018",
+  "author": "dukebw",
+  "source_url": "https://github.com/dukebw/ml-reading-notes-improved-system/blob/main/dlrlss-2018/emma-brunskill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dukebw/ml-reading-notes-improved-system/blob/main/dlrlss-2018/emma-brunskill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/guillempuche/ai-standards",
   "dir_name": "unikraft",
-  "downloaded_at": "2026-02-22T07:22:49.871563Z"
+  "downloaded_at": "2026-02-22T07:22:49.871563Z",
+  "author": "guillempuche",
+  "source_url": "https://github.com/guillempuche/ai-standards/blob/main/skills/unikraft/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 guillempuche",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

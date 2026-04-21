@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "device-screenshot"
+  "dir_name": "device-screenshot",
+  "author": "prateekmedia",
+  "source_url": "https://github.com/prateekmedia/agent-skills",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/prateekmedia/agent-skills",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

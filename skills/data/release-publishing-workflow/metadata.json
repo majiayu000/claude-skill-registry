@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "release-publishing-workflow"
+  "dir_name": "release-publishing-workflow",
+  "author": "j0KZ",
+  "source_url": "https://github.com/j0KZ/mcp-agents",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 j0kz",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

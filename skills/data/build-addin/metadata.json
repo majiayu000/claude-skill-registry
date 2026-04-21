@@ -5,5 +5,12 @@
   "source": "github.com/mattg101/SolidLink",
   "downloaded_at": "2026-02-04T04:08:19.193559Z",
   "dir_name": "build-addin",
-  "category": "data"
+  "category": "data",
+  "author": "mattg101",
+  "source_url": "https://github.com/mattg101/SolidLink/blob/main/docs/dev/.agent/skills/build-addin/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 mattg101",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/hironow/dotfiles",
   "downloaded_at": "2026-01-29T01:22:39.827921Z",
   "dir_name": "update-submodule-changelog",
-  "category": "data"
+  "category": "data",
+  "author": "hironow",
+  "source_url": "https://github.com/hironow/dotfiles/blob/main/skills/update-submodule-changelog/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Hiroto N.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

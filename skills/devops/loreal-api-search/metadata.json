@@ -5,5 +5,12 @@
   "description": "Expert in searching and retrieving API information from L'Oréal's API Portal. **Use this skill whenever the user mentions 'API search', 'find API', 'API information', 'API spec', 'API schema', 'Swagge",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:08:29.012175Z",
-  "dir_name": "loreal-api-search"
+  "dir_name": "loreal-api-search",
+  "author": "smorand",
+  "source_url": "https://github.com/smorand/claude-config",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/smorand/claude-config",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

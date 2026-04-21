@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/zebbern/SecOps-CLI-Guides",
-  "dir_name": "jwt-security-testing"
+  "dir_name": "jwt-security-testing",
+  "author": "zebbern",
+  "source_url": "https://github.com/zebbern/SecOps-CLI-Guides",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zebbern/SecOps-CLI-Guides",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

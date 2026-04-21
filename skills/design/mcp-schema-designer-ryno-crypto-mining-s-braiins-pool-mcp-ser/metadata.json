@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": ".claude/skills/mcp-schema-designer",
   "github_branch": "main",
-  "dir_name": "mcp-schema-designer-ryno-crypto-mining-s-braiins-pool-mcp-ser"
+  "dir_name": "mcp-schema-designer-ryno-crypto-mining-s-braiins-pool-mcp-ser",
+  "author": "Ryno-Crypto-Mining-Services",
+  "source_url": "https://github.com/Ryno-Crypto-Mining-Services/braiins-pool-mcp-server/blob/main/.claude/skills/mcp-schema-designer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Ryno-Crypto-Mining-Services/braiins-pool-mcp-server/blob/main/.claude/skills/mcp-schema-designer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

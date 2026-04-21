@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:54.056568Z",
   "dir_name": "bitbucket-datacenter",
   "github_path": "bitbucket-datacenter-plugin/skills/bitbucket-datacenter",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "vkkotha",
+  "source_url": "https://github.com/vkkotha/claude-skills/blob/main/bitbucket-datacenter-plugin/skills/bitbucket-datacenter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

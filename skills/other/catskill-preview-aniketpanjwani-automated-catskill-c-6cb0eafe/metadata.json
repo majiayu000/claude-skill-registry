@@ -7,5 +7,12 @@
   "dir_name": "catskill-preview-aniketpanjwani-automated-catskill-c-6cb0eafe",
   "category": "other",
   "github_path": ".claude/skills/catskill-preview",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "aniketpanjwani",
+  "source_url": "https://github.com/aniketpanjwani/automated_catskill_crew/blob/main/.claude/skills/catskill-preview/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aniketpanjwani/automated_catskill_crew/blob/main/.claude/skills/catskill-preview/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "This skill provides guidance for implementing robust Qdrant vector database integration with RAG (Retrieval Augmented Generation) systems, including proper async client handling, error management, and",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:30.490801Z",
-  "dir_name": "qdrant-rag-implementation"
+  "dir_name": "qdrant-rag-implementation",
+  "author": "MuhammedSuhaib",
+  "source_url": "https://github.com/MuhammedSuhaib/LevelUpSpeckit-Plus",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MuhammedSuhaib/LevelUpSpeckit-Plus",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

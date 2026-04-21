@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:23.405785Z",
   "github_path": "plugins/ruby-rails/skills/rubocop",
   "github_branch": "main",
-  "dir_name": "rubocop-el-feo-ai-context"
+  "dir_name": "rubocop-el-feo-ai-context",
+  "author": "el-feo",
+  "source_url": "https://github.com/el-feo/ai-context/blob/main/plugins/ruby-rails/skills/rubocop/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeb Coleman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

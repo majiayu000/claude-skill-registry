@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/absolute-path-checker",
   "github_branch": "main",
-  "dir_name": "absolute-path-checker-tettuan-climpt"
+  "dir_name": "absolute-path-checker-tettuan-climpt",
+  "author": "tettuan",
+  "source_url": "https://github.com/tettuan/climpt/blob/main/.claude/skills/absolute-path-checker/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 tettuan",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

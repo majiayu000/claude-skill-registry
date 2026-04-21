@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/itsbariscan/claude-code-marketing",
-  "dir_name": "marketing-seo"
+  "dir_name": "marketing-seo",
+  "author": "itsbariscan",
+  "source_url": "https://github.com/itsbariscan/claude-code-marketing",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Baris Can Sayin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

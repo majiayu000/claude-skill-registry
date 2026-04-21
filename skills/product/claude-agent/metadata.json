@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "claude-agent"
+  "dir_name": "claude-agent",
+  "author": "cyrup-ai",
+  "source_url": "https://github.com/cyrup-ai/kodegen-claude-plugin",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 David Maple / kodegen.ai",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

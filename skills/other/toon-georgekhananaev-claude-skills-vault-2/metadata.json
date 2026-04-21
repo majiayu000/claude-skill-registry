@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/georgekhananaev/claude-skills-vault",
-  "dir_name": "toon-georgekhananaev-claude-skills-vault-2"
+  "dir_name": "toon-georgekhananaev-claude-skills-vault-2",
+  "author": "georgekhananaev",
+  "source_url": "https://github.com/georgekhananaev/claude-skills-vault/blob/main/.claude/skills/document-skills/toon/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 George Khananaev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

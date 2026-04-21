@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/enforcing-python-dunders",
   "github_branch": "main",
-  "dir_name": "enforcing-python-dunders-hernamesbarbara-promptkit"
+  "dir_name": "enforcing-python-dunders-hernamesbarbara-promptkit",
+  "author": "hernamesbarbara",
+  "source_url": "https://github.com/hernamesbarbara/promptkit/blob/main/.claude/skills/enforcing-python-dunders/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hernamesbarbara/promptkit/blob/main/.claude/skills/enforcing-python-dunders/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

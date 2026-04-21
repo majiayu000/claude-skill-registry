@@ -5,5 +5,12 @@
   "source": "github.com/vercel/ai",
   "downloaded_at": "2026-02-04T04:57:08.037481Z",
   "dir_name": "capture-api-response-test-fixture",
-  "category": "data"
+  "category": "data",
+  "author": "vercel",
+  "source_url": "https://github.com/vercel/ai/blob/main/skills/capture-api-response-test-fixture/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2023 Vercel, Inc.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "Transform existing CSS (inline styles, utility classes in markup, scattered CSS) into semantic component patterns with dark mode support and tests",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:46.103666Z",
-  "dir_name": "css-developmentrefactor-2389-research-claude-plugins"
+  "dir_name": "css-developmentrefactor-2389-research-claude-plugins",
+  "author": "2389-research",
+  "source_url": "https://github.com/2389-research/claude-plugins",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 2389 Research, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

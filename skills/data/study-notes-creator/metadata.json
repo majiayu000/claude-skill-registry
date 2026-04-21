@@ -10,5 +10,12 @@
   ],
   "stars": 2,
   "source": "local",
-  "dir_name": "study-notes-creator"
+  "dir_name": "study-notes-creator",
+  "author": "abdul-ahad-26",
+  "source_url": "https://github.com/abdul-ahad-26/physical-ai-and-humanoid-robotics",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/abdul-ahad-26/physical-ai-and-humanoid-robotics",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

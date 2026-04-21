@@ -11,5 +11,12 @@
   "stars": 2,
   "github_path": ".claude/skills/tool-ecosystem-manager",
   "github_branch": "main",
-  "dir_name": "tool-ecosystem-manager-authenticwalk-context-grounded-bib"
+  "dir_name": "tool-ecosystem-manager-authenticwalk-context-grounded-bib",
+  "author": "authenticwalk",
+  "source_url": "https://github.com/authenticwalk/context-grounded-bible/blob/main/.claude/skills/tool-ecosystem-manager/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Authentic Walk Creative",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

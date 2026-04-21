@@ -10,5 +10,12 @@
   ],
   "stars": 2,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "brokle-backend-dev"
+  "dir_name": "brokle-backend-dev",
+  "author": "brokle-ai",
+  "source_url": "https://github.com/brokle-ai/brokle",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Brokle AI",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

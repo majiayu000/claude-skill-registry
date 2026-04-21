@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:59.367848Z",
   "github_path": "plugins/psp/skills/psp-monorepo-project",
   "github_branch": "main",
-  "dir_name": "psp-monorepo-project-masseater-claude-code-plugin-2103272f"
+  "dir_name": "psp-monorepo-project-masseater-claude-code-plugin-2103272f",
+  "author": "masseater",
+  "source_url": "https://github.com/masseater/claude-code-plugin/blob/main/plugins/psp/skills/psp-monorepo-project/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/masseater/claude-code-plugin/blob/main/plugins/psp/skills/psp-monorepo-project/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

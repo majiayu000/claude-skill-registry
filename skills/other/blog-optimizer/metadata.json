@@ -5,5 +5,12 @@
   "source": "github.com/traylinx/switchAILocal",
   "downloaded_at": "2026-02-02T03:16:47.429029Z",
   "dir_name": "blog-optimizer",
-  "category": "other"
+  "category": "other",
+  "author": "traylinx",
+  "source_url": "https://github.com/traylinx/switchAILocal/blob/main/plugins/cortex-router/skills/blog-optimizer/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2026 Sebastian Schkudlara",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

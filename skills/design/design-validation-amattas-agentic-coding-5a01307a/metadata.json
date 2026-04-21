@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "development/.claude/skills/design-validation",
   "github_branch": "main",
-  "dir_name": "design-validation-amattas-agentic-coding-5a01307a"
+  "dir_name": "design-validation-amattas-agentic-coding-5a01307a",
+  "author": "amattas",
+  "source_url": "https://github.com/amattas/agentic-coding/blob/main/development/.claude/skills/design-validation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

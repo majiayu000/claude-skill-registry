@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/brevard-site-development",
   "github_branch": "main",
-  "dir_name": "brevard-site-development-breverdbidder-spd-site-plan-dev"
+  "dir_name": "brevard-site-development-breverdbidder-spd-site-plan-dev",
+  "author": "breverdbidder",
+  "source_url": "https://github.com/breverdbidder/spd-site-plan-dev/blob/main/.claude/skills/brevard-site-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/breverdbidder/spd-site-plan-dev/blob/main/.claude/skills/brevard-site-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

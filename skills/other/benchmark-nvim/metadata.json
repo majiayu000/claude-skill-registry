@@ -5,5 +5,12 @@
   "source": "github.com/koki-develop/koki-develop.nvim",
   "downloaded_at": "2026-02-02T02:49:47.613162Z",
   "dir_name": "benchmark-nvim",
-  "category": "other"
+  "category": "other",
+  "author": "koki-develop",
+  "source_url": "https://github.com/koki-develop/koki-develop.nvim/blob/main/.claude/skills/benchmark-nvim/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Koki Sato",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

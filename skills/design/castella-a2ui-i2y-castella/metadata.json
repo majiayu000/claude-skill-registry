@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:27.991478Z",
   "github_path": "skills/castella-a2ui",
   "github_branch": "main",
-  "dir_name": "castella-a2ui-i2y-castella"
+  "dir_name": "castella-a2ui-i2y-castella",
+  "author": "i2y",
+  "source_url": "https://github.com/i2y/castella/blob/main/skills/castella-a2ui/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Yasushi Itoh",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

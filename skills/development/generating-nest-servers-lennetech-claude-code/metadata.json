@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:46.822129Z",
   "github_path": "plugins/lt-dev/skills/generating-nest-servers",
   "github_branch": "main",
-  "dir_name": "generating-nest-servers-lennetech-claude-code"
+  "dir_name": "generating-nest-servers-lennetech-claude-code",
+  "author": "lenneTech",
+  "source_url": "https://github.com/lenneTech/claude-code/blob/main/plugins/lt-dev/skills/generating-nest-servers/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 lenne.tech GmbH",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

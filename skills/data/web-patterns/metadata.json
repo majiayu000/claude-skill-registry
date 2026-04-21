@@ -5,5 +5,12 @@
   "source": "github.com/plaited/plaited",
   "downloaded_at": "2026-02-04T03:58:19.394279Z",
   "dir_name": "web-patterns",
-  "category": "data"
+  "category": "data",
+  "author": "plaited",
+  "source_url": "https://github.com/plaited/plaited/blob/main/.claude/skills/web-patterns/SKILL.md",
+  "license": "ISC",
+  "copyright": "Copyright (c) 2023 - present Edward Irby",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

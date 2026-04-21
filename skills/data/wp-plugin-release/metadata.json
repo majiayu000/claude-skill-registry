@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "wp-plugin-release"
+  "dir_name": "wp-plugin-release",
+  "author": "nathanonn",
+  "source_url": "https://github.com/nathanonn/wp-abilities-seo-extension",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nathanonn/wp-abilities-seo-extension",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

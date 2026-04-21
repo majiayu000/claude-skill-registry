@@ -5,5 +5,12 @@
   "description": "Expert UX evaluation and usability guidance for Carbon ACX interfaces using heuristic evaluation, cognitive walkthroughs, user journey mapping, and flow analysis.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:28.224311Z",
-  "dir_name": "acxuxevaluator"
+  "dir_name": "acxuxevaluator",
+  "author": "chrislyons",
+  "source_url": "https://github.com/chrislyons/carbon-acx",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 Chris Lyons",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

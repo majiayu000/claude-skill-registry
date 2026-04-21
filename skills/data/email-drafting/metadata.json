@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/cklxx/elephant.ai",
-  "dir_name": "email-drafting"
+  "dir_name": "email-drafting",
+  "author": "cklxx",
+  "source_url": "https://github.com/cklxx/elephant.ai",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 cklxx",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

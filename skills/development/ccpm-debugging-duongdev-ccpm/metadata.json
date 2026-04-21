@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/ccpm-debugging",
   "github_branch": "main",
-  "dir_name": "ccpm-debugging-duongdev-ccpm"
+  "dir_name": "ccpm-debugging-duongdev-ccpm",
+  "author": "duongdev",
+  "source_url": "https://github.com/duongdev/ccpm/blob/main/skills/ccpm-debugging/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dustin Do",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

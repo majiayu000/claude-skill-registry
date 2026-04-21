@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:20.723208Z",
   "github_path": ".claude/skills/shelby/shelby-media-player",
   "github_branch": "main",
-  "dir_name": "shelby-media-player-zacharyr0th-next-starter-02c6bc1c"
+  "dir_name": "shelby-media-player-zacharyr0th-next-starter-02c6bc1c",
+  "author": "zacharyr0th",
+  "source_url": "https://github.com/zacharyr0th/next-starter/blob/main/.claude/skills/shelby/shelby-media-player/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zacharyr0th/next-starter/blob/main/.claude/skills/shelby/shelby-media-player/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

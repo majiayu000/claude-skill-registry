@@ -7,5 +7,12 @@
   "dir_name": "structured-workflow",
   "category": "other",
   "github_path": "docs/dev/.agent/skills/structured-workflow",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "mattg101",
+  "source_url": "https://github.com/mattg101/SolidLink/blob/main/docs/dev/.agent/skills/structured-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 mattg101",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

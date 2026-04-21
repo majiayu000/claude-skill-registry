@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/ccs-delegation",
   "github_branch": "main",
-  "dir_name": "ccs-delegation"
+  "dir_name": "ccs-delegation",
+  "author": "kaitranntt",
+  "source_url": "https://github.com/kaitranntt/ccs/blob/main/.claude/skills/ccs-delegation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CCS Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

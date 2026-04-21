@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/cursor-rules-synchronizer",
   "github_branch": "main",
-  "dir_name": "cursor-rules-synchronizer-amhuppert-my-ai-resources-fc52eb41"
+  "dir_name": "cursor-rules-synchronizer-amhuppert-my-ai-resources-fc52eb41",
+  "author": "amhuppert",
+  "source_url": "https://github.com/amhuppert/my-ai-resources/blob/main/.claude/skills/cursor-rules-synchronizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/amhuppert/my-ai-resources/blob/main/.claude/skills/cursor-rules-synchronizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

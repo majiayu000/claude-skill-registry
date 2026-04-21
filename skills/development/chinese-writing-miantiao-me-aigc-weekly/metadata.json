@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:27.853994Z",
   "github_path": "agent/.opencode/skills/chinese-writing",
   "github_branch": "main",
-  "dir_name": "chinese-writing-miantiao-me-aigc-weekly"
+  "dir_name": "chinese-writing-miantiao-me-aigc-weekly",
+  "author": "miantiao-me",
+  "source_url": "https://github.com/miantiao-me/aigc-weekly/blob/main/agent/.opencode/skills/chinese-writing/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

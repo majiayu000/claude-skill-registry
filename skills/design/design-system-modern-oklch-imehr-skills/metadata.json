@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:10.371585Z",
   "github_path": "skills/development/design-system-modern-oklch",
   "github_branch": "main",
-  "dir_name": "design-system-modern-oklch-imehr-skills"
+  "dir_name": "design-system-modern-oklch-imehr-skills",
+  "author": "imehr",
+  "source_url": "https://github.com/imehr/skills/blob/main/skills/development/design-system-modern-oklch/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Mehran Mozaffari",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

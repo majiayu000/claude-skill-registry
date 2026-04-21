@@ -5,5 +5,12 @@
   "source": "github.com/bmad-code-org/BMAD-METHOD",
   "downloaded_at": "2026-02-02T03:29:19.889616Z",
   "dir_name": "changelog-social",
-  "category": "other"
+  "category": "other",
+  "author": "bmad-code-org",
+  "source_url": "https://github.com/bmad-code-org/BMAD-METHOD/blob/main/.claude/skills/changelog-social/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 BMad Code, LLC",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

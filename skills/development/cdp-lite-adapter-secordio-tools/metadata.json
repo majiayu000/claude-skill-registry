@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:10.691096Z",
   "github_path": "user-explorer/skills/cdp-lite-adapter",
   "github_branch": "main",
-  "dir_name": "cdp-lite-adapter-secordio-tools"
+  "dir_name": "cdp-lite-adapter-secordio-tools",
+  "author": "secordio",
+  "source_url": "https://github.com/secordio/tools/blob/main/user-explorer/skills/cdp-lite-adapter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 qlime33",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

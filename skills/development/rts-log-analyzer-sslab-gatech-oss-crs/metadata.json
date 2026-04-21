@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:28.004478Z",
   "github_path": ".claude/skills/rts-log-analyzer",
   "github_branch": "main",
-  "dir_name": "rts-log-analyzer-sslab-gatech-oss-crs"
+  "dir_name": "rts-log-analyzer-sslab-gatech-oss-crs",
+  "author": "sslab-gatech",
+  "source_url": "https://github.com/sslab-gatech/oss-crs/blob/main/.claude/skills/rts-log-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 OSS-CRS Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

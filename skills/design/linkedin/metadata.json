@@ -9,5 +9,12 @@
   "stars": 0,
   "github_path": ".claude/skills/linkedin",
   "github_branch": "main",
-  "dir_name": "linkedin"
+  "dir_name": "linkedin",
+  "author": "xavierfuentes",
+  "source_url": "https://github.com/xavierfuentes/xavierfuentes.com/blob/main/.claude/skills/linkedin/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/xavierfuentes/xavierfuentes.com/blob/main/.claude/skills/linkedin/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

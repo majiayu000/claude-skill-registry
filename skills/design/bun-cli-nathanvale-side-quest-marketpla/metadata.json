@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:35.733650Z",
   "github_path": "plugins/dev-toolkit/skills/bun-cli",
   "github_branch": "main",
-  "dir_name": "bun-cli-nathanvale-side-quest-marketpla"
+  "dir_name": "bun-cli-nathanvale-side-quest-marketpla",
+  "author": "nathanvale",
+  "source_url": "https://github.com/nathanvale/side-quest-marketplace/blob/main/plugins/dev-toolkit/skills/bun-cli/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nathan Vale",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

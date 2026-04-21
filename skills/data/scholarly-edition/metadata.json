@@ -5,5 +5,12 @@
   "source": "github.com/Embassy-of-the-Free-Mind/sourcelibrary-v2",
   "downloaded_at": "2026-02-04T05:15:50.300645Z",
   "dir_name": "scholarly-edition",
-  "category": "data"
+  "category": "data",
+  "author": "Embassy-of-the-Free-Mind",
+  "source_url": "https://github.com/Embassy-of-the-Free-Mind/sourcelibrary-v2/blob/main/.claude/skills/scholarly-edition/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

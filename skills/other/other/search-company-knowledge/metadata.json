@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/atlassian/atlassian-mcp-server",
   "dir_name": "search-company-knowledge",
-  "downloaded_at": "2026-02-15T06:26:49.121546Z"
+  "downloaded_at": "2026-02-15T06:26:49.121546Z",
+  "author": "atlassian",
+  "source_url": "https://github.com/atlassian/atlassian-mcp-server/blob/main/skills/search-company-knowledge/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright (c) [2025] Atlassian US., Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/ccxt/ccxt",
   "downloaded_at": "2026-02-04T05:08:56.419511Z",
   "dir_name": "ccxt-csharp",
-  "category": "data"
+  "category": "data",
+  "author": "ccxt",
+  "source_url": "https://github.com/ccxt/ccxt/blob/main/.claude/skills/ccxt-csharp/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright © 2024 Igor Kroitor",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

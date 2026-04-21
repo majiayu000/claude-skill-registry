@@ -9,5 +9,12 @@
   "stars": 1,
   "github_path": ".claude/skills/tmux",
   "github_branch": "main",
-  "dir_name": "tmux"
+  "dir_name": "tmux",
+  "author": "codekiln",
+  "source_url": "https://github.com/codekiln/langstar/blob/main/.claude/skills/tmux/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 λ🏺",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

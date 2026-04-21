@@ -10,5 +10,12 @@
   "stars": 4,
   "github_path": ".claude/skills/local-setup",
   "github_branch": "main",
-  "dir_name": "local-setup-toolkit-ai-magnet-mcp-server"
+  "dir_name": "local-setup-toolkit-ai-magnet-mcp-server",
+  "author": "toolkit-ai",
+  "source_url": "https://github.com/toolkit-ai/magnet-mcp-server/blob/main/.claude/skills/local-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/toolkit-ai/magnet-mcp-server/blob/main/.claude/skills/local-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

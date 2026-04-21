@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:19.622298Z",
   "github_path": "packages/development/skills/developing-with-flutter",
   "github_branch": "main",
-  "dir_name": "developing-with-flutter"
+  "dir_name": "developing-with-flutter",
+  "author": "FortiumPartners",
+  "source_url": "https://github.com/FortiumPartners/ensemble/blob/main/packages/development/skills/developing-with-flutter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Fortium Partners",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

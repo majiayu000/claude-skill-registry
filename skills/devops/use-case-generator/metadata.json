@@ -10,5 +10,12 @@
   ],
   "stars": 10,
   "source": "local",
-  "dir_name": "use-case-generator"
+  "dir_name": "use-case-generator",
+  "author": "joshtol",
+  "source_url": "https://github.com/joshtol/emotive-engine",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Joshua Tollette",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

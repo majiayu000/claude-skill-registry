@@ -5,5 +5,12 @@
   "description": "Create, configure, and manage Claude Code hooks for workflow automation, validation, and security. Guides hook implementation, configuration patterns, and best practices.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:28.838282Z",
-  "dir_name": "claude-hooks-developer"
+  "dir_name": "claude-hooks-developer",
+  "author": "paunchygent",
+  "source_url": "https://github.com/paunchygent/skriptoteket",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/paunchygent/skriptoteket",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

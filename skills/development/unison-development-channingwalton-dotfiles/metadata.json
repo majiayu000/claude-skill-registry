@@ -10,5 +10,12 @@
   "stars": 3,
   "github_path": ".claude/skills/unison-development",
   "github_branch": "main",
-  "dir_name": "unison-development-channingwalton-dotfiles"
+  "dir_name": "unison-development-channingwalton-dotfiles",
+  "author": "channingwalton",
+  "source_url": "https://github.com/channingwalton/dotfiles/blob/main/.claude/skills/unison-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2017 Channing Walton",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

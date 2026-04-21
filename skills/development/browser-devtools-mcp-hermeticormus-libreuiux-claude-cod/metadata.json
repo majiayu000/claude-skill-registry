@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:32.744849Z",
   "github_path": "plugins/mcp-integrations/skills/browser-devtools-mcp",
   "github_branch": "main",
-  "dir_name": "browser-devtools-mcp-hermeticormus-libreuiux-claude-cod"
+  "dir_name": "browser-devtools-mcp-hermeticormus-libreuiux-claude-cod",
+  "author": "HermeticOrmus",
+  "source_url": "https://github.com/HermeticOrmus/LibreUIUX-Claude-Code/blob/main/plugins/mcp-integrations/skills/browser-devtools-mcp/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Hermetic Ormus",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

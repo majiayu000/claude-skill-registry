@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:20.361054Z",
   "github_path": ".claude/skills/next/next-pages-router",
   "github_branch": "main",
-  "dir_name": "next-pages-router-zacharyr0th-next-starter"
+  "dir_name": "next-pages-router-zacharyr0th-next-starter",
+  "author": "zacharyr0th",
+  "source_url": "https://github.com/zacharyr0th/next-starter/blob/main/.claude/skills/next/next-pages-router/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zacharyr0th/next-starter/blob/main/.claude/skills/next/next-pages-router/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

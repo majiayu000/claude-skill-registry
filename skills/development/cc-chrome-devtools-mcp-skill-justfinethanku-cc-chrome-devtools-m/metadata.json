@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "",
   "github_branch": "main",
-  "dir_name": "cc-chrome-devtools-mcp-skill-justfinethanku-cc-chrome-devtools-m"
+  "dir_name": "cc-chrome-devtools-mcp-skill-justfinethanku-cc-chrome-devtools-m",
+  "author": "justfinethanku",
+  "source_url": "https://github.com/justfinethanku/cc_chrome_devtools_mcp_skill",
+  "license": "NOASSERTION",
+  "copyright": "© 2025 Jonathan Edwards | **ALL THE FREEDOM!** 🦅🗽🌈",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

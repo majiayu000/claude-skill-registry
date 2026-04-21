@@ -5,5 +5,12 @@
   "source": "github.com/maigentic/stratarts",
   "downloaded_at": "2026-02-02T04:58:11.326843Z",
   "dir_name": "business-model-designer",
-  "category": "other"
+  "category": "other",
+  "author": "maigentic",
+  "source_url": "https://github.com/maigentic/stratarts/blob/main/skills/foundation-strategy/business-model-designer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 maigentic",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "changelog-infographic"
+  "dir_name": "changelog-infographic",
+  "author": "s-hiraoku",
+  "source_url": "https://github.com/s-hiraoku/claude-code-harnesses-factory",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 s-hiraoku",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

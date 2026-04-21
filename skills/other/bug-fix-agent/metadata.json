@@ -7,5 +7,12 @@
   "dir_name": "bug-fix-agent",
   "category": "other",
   "github_path": ".claude/skills/bug-fix-agent",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "wtthornton",
+  "source_url": "https://github.com/wtthornton/TappsCodingAgents/blob/main/.claude/skills/bug-fix-agent/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tapps",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   "stars": 10,
   "github_path": "skills/theme-implementer",
   "github_branch": "main",
-  "dir_name": "theme-implementer-joshtol-emotive-engine-a1c444b5"
+  "dir_name": "theme-implementer-joshtol-emotive-engine-a1c444b5",
+  "author": "joshtol",
+  "source_url": "https://github.com/joshtol/emotive-engine/blob/main/skills/theme-implementer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Joshua Tollette",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

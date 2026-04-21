@@ -7,5 +7,12 @@
   "dir_name": "spec-review",
   "category": "other",
   "github_path": "skills/spec-review",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "srnnkls",
+  "source_url": "https://github.com/srnnkls/tropos/blob/main/skills/spec-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/srnnkls/tropos/blob/main/skills/spec-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

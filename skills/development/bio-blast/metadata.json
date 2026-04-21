@@ -5,5 +5,12 @@
   "description": "NCBI BLAST sequence similarity search using BioPython. Use when a user wants to run BLAST programmatically with blastn/blastp and retrieve results in JSON format.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:48.024762Z",
-  "dir_name": "bio-blast"
+  "dir_name": "bio-blast",
+  "author": "dakesan",
+  "source_url": "https://github.com/dakesan/cc-dnawork-plugin",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dakesan/cc-dnawork-plugin",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

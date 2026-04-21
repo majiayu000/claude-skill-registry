@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/atlassian/atlassian-mcp-server",
   "dir_name": "triage-issue",
-  "downloaded_at": "2026-02-15T06:26:48.865348Z"
+  "downloaded_at": "2026-02-15T06:26:48.865348Z",
+  "author": "atlassian",
+  "source_url": "https://github.com/atlassian/atlassian-mcp-server/blob/main/skills/triage-issue/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright (c) [2025] Atlassian US., Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

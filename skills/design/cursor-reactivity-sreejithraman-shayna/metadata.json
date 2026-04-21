@@ -5,5 +5,12 @@
   "description": "Use when implementing cursor-based interactions like proximity effects, hover zones, or elements that react to mouse/touch position. Applies patterns for throttling, falloff, and mobile alternatives.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:39.326609Z",
-  "dir_name": "cursor-reactivity-sreejithraman-shayna"
+  "dir_name": "cursor-reactivity-sreejithraman-shayna",
+  "author": "sreejithraman",
+  "source_url": "https://github.com/sreejithraman/shayna",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sreejithraman/shayna",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

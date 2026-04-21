@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:02.511084Z",
   "github_path": "career/skills/career",
   "github_branch": "main",
-  "dir_name": "career"
+  "dir_name": "career",
+  "author": "saadshahd",
+  "source_url": "https://github.com/saadshahd/moo.md/blob/main/career/skills/career/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/saadshahd/moo.md/blob/main/career/skills/career/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

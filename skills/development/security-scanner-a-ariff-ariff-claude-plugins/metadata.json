@@ -7,5 +7,12 @@
   "stars": 2,
   "source": "github.com/a-ariff/ariff-claude-plugins",
   "downloaded_at": "2026-01-24T16:15:17.593997Z",
-  "dir_name": "security-scanner-a-ariff-ariff-claude-plugins"
+  "dir_name": "security-scanner-a-ariff-ariff-claude-plugins",
+  "author": "a-ariff",
+  "source_url": "https://github.com/a-ariff/ariff-claude-plugins/blob/main/plugins/security-scanner/skills/security-scanner.skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ariff",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

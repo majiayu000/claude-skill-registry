@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:54.715514Z",
   "github_path": "plugins/docs-skills/skills/mkdocs-github-pages-deployment",
   "github_branch": "main",
-  "dir_name": "mkdocs-github-pages-deployment-securityronin-ronin-marketplace"
+  "dir_name": "mkdocs-github-pages-deployment-securityronin-ronin-marketplace",
+  "author": "SecurityRonin",
+  "source_url": "https://github.com/SecurityRonin/ronin-marketplace/blob/main/plugins/docs-skills/skills/mkdocs-github-pages-deployment/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Albert Hui / Security Ronin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

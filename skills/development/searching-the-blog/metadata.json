@@ -5,5 +5,12 @@
   "description": "Uncover insights and memories based on posts that I have already written",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:07.284458Z",
-  "dir_name": "searching-the-blog"
+  "dir_name": "searching-the-blog",
+  "author": "houfu",
+  "source_url": "https://github.com/houfu/blog-alt-counsel",
+  "license": "MIT",
+  "copyright": "Copyright 2025 Ang Hou Fu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

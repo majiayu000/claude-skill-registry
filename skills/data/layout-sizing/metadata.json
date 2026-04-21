@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/jwmyers/vui-vux-plugins",
-  "dir_name": "layout-sizing"
+  "dir_name": "layout-sizing",
+  "author": "jwmyers",
+  "source_url": "https://github.com/jwmyers/vui-vux-plugins",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jwmyers/vui-vux-plugins",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

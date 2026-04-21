@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "bioinformatics-experiment"
+  "dir_name": "bioinformatics-experiment",
+  "author": "dakesan",
+  "source_url": "https://github.com/dakesan/BItemplate",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 [Hiroyuki Odake]",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

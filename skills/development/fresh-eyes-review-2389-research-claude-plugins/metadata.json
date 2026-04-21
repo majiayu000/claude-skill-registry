@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:46.510531Z",
   "github_path": "fresh-eyes-review/skills",
   "github_branch": "main",
-  "dir_name": "fresh-eyes-review-2389-research-claude-plugins"
+  "dir_name": "fresh-eyes-review-2389-research-claude-plugins",
+  "author": "2389-research",
+  "source_url": "https://github.com/2389-research/claude-plugins/blob/main/fresh-eyes-review/skills/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 2389 Research, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

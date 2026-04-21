@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:27.630260Z",
   "github_path": "plugins/bayesian-modeling/skills/hierarchical-models",
   "github_branch": "main",
-  "dir_name": "hierarchical-models-choxos-bayesianagent"
+  "dir_name": "hierarchical-models-choxos-bayesianagent",
+  "author": "choxos",
+  "source_url": "https://github.com/choxos/BayesianAgent/blob/main/plugins/bayesian-modeling/skills/hierarchical-models/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ahmad Sofi-Mahmudi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

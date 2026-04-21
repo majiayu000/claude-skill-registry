@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:46.754794Z",
   "github_path": "plugins/lt-dev/skills/nest-server-updating",
   "github_branch": "main",
-  "dir_name": "nest-server-updating-lennetech-claude-code-c5653201"
+  "dir_name": "nest-server-updating-lennetech-claude-code-c5653201",
+  "author": "lenneTech",
+  "source_url": "https://github.com/lenneTech/claude-code/blob/main/plugins/lt-dev/skills/nest-server-updating/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 lenne.tech GmbH",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

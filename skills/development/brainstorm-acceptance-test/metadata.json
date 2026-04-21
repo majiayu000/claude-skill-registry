@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "brainstorm-acceptance-test"
+  "dir_name": "brainstorm-acceptance-test",
+  "author": "xpmatteo",
+  "source_url": "https://github.com/xpmatteo/microchess-go",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 Matteo Vaccari",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

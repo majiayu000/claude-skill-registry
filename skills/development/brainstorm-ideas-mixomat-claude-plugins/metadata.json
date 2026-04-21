@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:10.888974Z",
   "github_path": "plugins/backend-development/skills/brainstorm-ideas",
   "github_branch": "main",
-  "dir_name": "brainstorm-ideas-mixomat-claude-plugins"
+  "dir_name": "brainstorm-ideas-mixomat-claude-plugins",
+  "author": "mixomat",
+  "source_url": "https://github.com/mixomat/claude-plugins/blob/main/plugins/backend-development/skills/brainstorm-ideas/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Marc Weinberger",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

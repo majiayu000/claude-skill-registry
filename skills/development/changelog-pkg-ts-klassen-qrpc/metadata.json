@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:12.183229Z",
   "github_path": ".codex/skills/changelog-pkg",
   "github_branch": "main",
-  "dir_name": "changelog-pkg-ts-klassen-qrpc"
+  "dir_name": "changelog-pkg-ts-klassen-qrpc",
+  "author": "ts-klassen",
+  "source_url": "https://github.com/ts-klassen/qrpc/blob/main/.codex/skills/changelog-pkg/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ts-klassen/qrpc/blob/main/.codex/skills/changelog-pkg/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

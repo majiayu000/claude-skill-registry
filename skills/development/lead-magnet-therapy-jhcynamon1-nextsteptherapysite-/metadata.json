@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": ".claude/skills/lead-magnet-therapy",
   "github_branch": "main",
-  "dir_name": "lead-magnet-therapy-jhcynamon1-nextsteptherapysite-"
+  "dir_name": "lead-magnet-therapy-jhcynamon1-nextsteptherapysite-",
+  "author": "jhcynamon1",
+  "source_url": "https://github.com/jhcynamon1/NextStepTherapySite-v2/blob/main/.claude/skills/lead-magnet-therapy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jhcynamon1/NextStepTherapySite-v2/blob/main/.claude/skills/lead-magnet-therapy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

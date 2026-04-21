@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/safe-file-reader",
   "github_branch": "main",
-  "dir_name": "safe-file-reader-xe-site"
+  "dir_name": "safe-file-reader-xe-site",
+  "author": "Xe",
+  "source_url": "https://github.com/Xe/site/blob/main/.claude/skills/safe-file-reader/SKILL.md",
+  "license": "Zlib",
+  "copyright": "Copyright (c) 2017-2022 Christine Dodrill <me@xeiaso.net>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

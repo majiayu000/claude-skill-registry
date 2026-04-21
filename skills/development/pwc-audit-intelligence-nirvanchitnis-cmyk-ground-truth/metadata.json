@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:22.832964Z",
   "github_path": ".skills/pwc-audit-intelligence",
   "github_branch": "main",
-  "dir_name": "pwc-audit-intelligence-nirvanchitnis-cmyk-ground-truth"
+  "dir_name": "pwc-audit-intelligence-nirvanchitnis-cmyk-ground-truth",
+  "author": "nirvanchitnis-cmyk",
+  "source_url": "https://github.com/nirvanchitnis-cmyk/ground-truth/blob/main/.skills/pwc-audit-intelligence/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nirvan Chitnis",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

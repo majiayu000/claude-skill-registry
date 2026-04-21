@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:20.915272Z",
   "github_path": "breenix-register-watch",
   "github_branch": "main",
-  "dir_name": "register-watch-ryanbreen-breenix"
+  "dir_name": "register-watch-ryanbreen-breenix",
+  "author": "ryanbreen",
+  "source_url": "https://github.com/ryanbreen/breenix/blob/main/breenix-register-watch/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ryanbreen/breenix/blob/main/breenix-register-watch/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

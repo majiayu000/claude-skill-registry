@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:46.293646Z",
   "github_path": "plugins/box-factory/skills/memory-design",
   "github_branch": "main",
-  "dir_name": "memory-design-racurry-neat-little-package-66fe9bb3"
+  "dir_name": "memory-design-racurry-neat-little-package-66fe9bb3",
+  "author": "racurry",
+  "source_url": "https://github.com/racurry/neat-little-package/blob/main/plugins/box-factory/skills/memory-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/racurry/neat-little-package/blob/main/plugins/box-factory/skills/memory-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "category-master"
+  "dir_name": "category-master",
+  "author": "manutej",
+  "source_url": "https://github.com/manutej/meta-prompting-framework",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Meta-Prompting Framework Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

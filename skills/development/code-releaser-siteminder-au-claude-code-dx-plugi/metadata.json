@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/code-releaser",
   "github_branch": "main",
-  "dir_name": "code-releaser-siteminder-au-claude-code-dx-plugi"
+  "dir_name": "code-releaser-siteminder-au-claude-code-dx-plugi",
+  "author": "siteminder-au",
+  "source_url": "https://github.com/siteminder-au/claude-code-dx-plugin/blob/main/skills/code-releaser/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/siteminder-au/claude-code-dx-plugin/blob/main/skills/code-releaser/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

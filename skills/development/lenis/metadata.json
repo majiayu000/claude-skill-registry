@@ -5,5 +5,12 @@
   "description": "Use when implementing Lenis smooth scroll or integrating Lenis with GSAP ScrollTrigger. Applies Lenis best practices for setup and performance.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:40.493039Z",
-  "dir_name": "lenis"
+  "dir_name": "lenis",
+  "author": "sreejithraman",
+  "source_url": "https://github.com/sreejithraman/shayna",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sreejithraman/shayna",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

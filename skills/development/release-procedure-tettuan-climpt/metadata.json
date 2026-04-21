@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/release-procedure",
   "github_branch": "main",
-  "dir_name": "release-procedure-tettuan-climpt"
+  "dir_name": "release-procedure-tettuan-climpt",
+  "author": "tettuan",
+  "source_url": "https://github.com/tettuan/climpt/blob/main/.claude/skills/release-procedure/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 tettuan",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

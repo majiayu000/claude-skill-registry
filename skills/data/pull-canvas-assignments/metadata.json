@@ -5,5 +5,12 @@
   "source": "github.com/lukebrevoort/OpenFlowState",
   "downloaded_at": "2026-02-04T02:50:40.827160Z",
   "dir_name": "pull-canvas-assignments",
-  "category": "data"
+  "category": "data",
+  "author": "lukebrevoort",
+  "source_url": "https://github.com/lukebrevoort/OpenFlowState/blob/main/workflows/pull-canvas-assignments/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Luke Brevoort",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

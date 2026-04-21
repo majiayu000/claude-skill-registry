@@ -5,5 +5,12 @@
   "source": "github.com/K-Dense-AI/claude-scientific-skills",
   "downloaded_at": "2026-02-04T02:39:20.960802Z",
   "dir_name": "imaging-data-commons",
-  "category": "data"
+  "category": "data",
+  "author": "K-Dense-AI",
+  "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/scientific-skills/imaging-data-commons/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 K-Dense Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

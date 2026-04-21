@@ -5,5 +5,12 @@
   "description": "Refining and improving user prompts for StickerNest development. Use when the user asks to improve a prompt, make a request clearer, help phrase something better, or when they give a vague request and",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:03.222408Z",
-  "dir_name": "refining-prompts"
+  "dir_name": "refining-prompts",
+  "author": "hkcm91",
+  "source_url": "https://github.com/hkcm91/StickerNestV3",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hkcm91/StickerNestV3",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

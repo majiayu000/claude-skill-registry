@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/hatayama/uLoopMCP",
-  "dir_name": "uloop-get-version-hatayama-uloopmcp-2"
+  "dir_name": "uloop-get-version-hatayama-uloopmcp-2",
+  "author": "hatayama",
+  "source_url": "https://github.com/hatayama/uLoopMCP/blob/main/Packages/src/Cli~/src/skills/skill-definitions/cli-only/uloop-get-version/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Masamichi Hatayama",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

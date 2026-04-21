@@ -5,5 +5,12 @@
   "description": "日常科研 - Stella建立临时研究站,进行系统的科学观察和实验,享受科学家的日常",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:15.410959Z",
-  "dir_name": "daily-science-routine-claudecode-npc-whispers-from-the-st"
+  "dir_name": "daily-science-routine-claudecode-npc-whispers-from-the-st",
+  "author": "ClaudeCode-NPC",
+  "source_url": "https://github.com/ClaudeCode-NPC/Whispers-from-the-Star",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ClaudeCode-NPC/Whispers-from-the-Star",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

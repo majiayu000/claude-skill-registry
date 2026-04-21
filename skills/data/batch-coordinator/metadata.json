@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "batch-coordinator",
   "github_path": ".claude/skills/batch-coordinator",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "dung-nguyen3",
+  "source_url": "https://github.com/dung-nguyen3/Skills/blob/main/.claude/skills/batch-coordinator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dung-nguyen3/Skills/blob/main/.claude/skills/batch-coordinator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -10,5 +10,12 @@
   ],
   "stars": 9,
   "source": "local",
-  "dir_name": "large-file-toc"
+  "dir_name": "large-file-toc",
+  "author": "Harryoung",
+  "source_url": "https://github.com/Harryoung/efka",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Harryoung/efka",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

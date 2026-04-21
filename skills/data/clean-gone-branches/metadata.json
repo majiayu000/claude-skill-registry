@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "clean-gone-branches"
+  "dir_name": "clean-gone-branches",
+  "author": "mixomat",
+  "source_url": "https://github.com/mixomat/claude-plugins",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Marc Weinberger",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

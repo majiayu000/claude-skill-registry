@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:43.764766Z",
   "github_path": "skills/defi-protocols",
   "github_branch": "main",
-  "dir_name": "defi-protocols"
+  "dir_name": "defi-protocols",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-blockchain/blob/main/skills/defi-protocols/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

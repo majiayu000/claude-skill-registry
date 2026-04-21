@@ -7,5 +7,12 @@
   "dir_name": "tmux-team-creator",
   "category": "other",
   "github_path": "plugins/productivity-kit/skills/tmux-team-creator",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "hongbietcode",
+  "source_url": "https://github.com/hongbietcode/synthetic-claude/blob/main/plugins/productivity-kit/skills/tmux-team-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hongbietcode/synthetic-claude/blob/main/plugins/productivity-kit/skills/tmux-team-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

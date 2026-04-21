@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": "skills/patent-diagram-generator",
   "github_branch": "main",
-  "dir_name": "patent-diagram-generator-robthepcguy-claude-patent-creato"
+  "dir_name": "patent-diagram-generator-robthepcguy-claude-patent-creato",
+  "author": "RobThePCGuy",
+  "source_url": "https://github.com/RobThePCGuy/Claude-Patent-Creator/blob/main/skills/patent-diagram-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Rob Adams Jr",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

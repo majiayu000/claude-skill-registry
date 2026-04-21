@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/brutalist-academic-ui",
   "github_branch": "main",
-  "dir_name": "brutalist-academic-ui"
+  "dir_name": "brutalist-academic-ui",
+  "author": "paunchygent",
+  "source_url": "https://github.com/paunchygent/skriptoteket/blob/main/.claude/skills/brutalist-academic-ui/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/paunchygent/skriptoteket/blob/main/.claude/skills/brutalist-academic-ui/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

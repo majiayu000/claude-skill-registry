@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/book-chapter-generator",
   "github_branch": "main",
-  "dir_name": "book-chapter-generator-dmccreary-claude-skills-c22f4776"
+  "dir_name": "book-chapter-generator-dmccreary-claude-skills-c22f4776",
+  "author": "dmccreary",
+  "source_url": "https://github.com/dmccreary/claude-skills/blob/main/skills/book-chapter-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dmccreary/claude-skills/blob/main/skills/book-chapter-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

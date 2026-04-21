@@ -7,5 +7,12 @@
   "dir_name": "mobile-development-samhvw8-dotfiles",
   "category": "other",
   "github_path": "dot_claude/skills/mobile-development",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "samhvw8",
+  "source_url": "https://github.com/samhvw8/dotfiles/blob/main/dot_claude/skills/mobile-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/samhvw8/dotfiles/blob/main/dot_claude/skills/mobile-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

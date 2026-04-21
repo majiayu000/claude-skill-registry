@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/masharratt/claude-flow-novice",
-  "dir_name": "cfn-knowledge-base"
+  "dir_name": "cfn-knowledge-base",
+  "author": "masharratt",
+  "source_url": "https://github.com/masharratt/claude-flow-novice",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/masharratt/claude-flow-novice",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

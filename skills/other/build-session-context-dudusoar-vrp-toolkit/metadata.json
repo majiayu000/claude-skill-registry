@@ -5,5 +5,12 @@
   "source": "github.com/dudusoar/VRP-Toolkit",
   "downloaded_at": "2026-01-29T08:43:20.107311Z",
   "dir_name": "build-session-context-dudusoar-vrp-toolkit",
-  "category": "other"
+  "category": "other",
+  "author": "dudusoar",
+  "source_url": "https://github.com/dudusoar/VRP-Toolkit/blob/main/.claude/skills/build-session-context/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dudusoar/VRP-Toolkit/blob/main/.claude/skills/build-session-context/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

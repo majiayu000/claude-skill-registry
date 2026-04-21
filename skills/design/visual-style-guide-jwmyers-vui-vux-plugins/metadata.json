@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:28.633769Z",
   "github_path": "plugins/zero-day-dev/skills/visual-style-guide",
   "github_branch": "main",
-  "dir_name": "visual-style-guide-jwmyers-vui-vux-plugins"
+  "dir_name": "visual-style-guide-jwmyers-vui-vux-plugins",
+  "author": "jwmyers",
+  "source_url": "https://github.com/jwmyers/vui-vux-plugins/blob/main/plugins/zero-day-dev/skills/visual-style-guide/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jwmyers/vui-vux-plugins/blob/main/plugins/zero-day-dev/skills/visual-style-guide/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

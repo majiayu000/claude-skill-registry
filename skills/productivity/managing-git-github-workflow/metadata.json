@@ -12,5 +12,12 @@
   "stars": 1,
   "github_path": ".claude/skills/managing-git-github-workflow",
   "github_branch": "main",
-  "dir_name": "managing-git-github-workflow"
+  "dir_name": "managing-git-github-workflow",
+  "author": "Suntory-N-Water",
+  "source_url": "https://github.com/Suntory-N-Water/sui-blog/blob/main/.claude/skills/managing-git-github-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 sui",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

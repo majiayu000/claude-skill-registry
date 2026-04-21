@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:19.865326Z",
   "dir_name": "next-bead",
   "github_path": "config/skills/next-bead",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "eaasxt",
+  "source_url": "https://github.com/eaasxt/Farmhand/blob/main/config/skills/next-bead/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Farmhand Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/robertguss/claude-code-toolkit",
-  "dir_name": "book-market-research-robertguss-claude-code-toolkit-2"
+  "dir_name": "book-market-research-robertguss-claude-code-toolkit-2",
+  "author": "robertguss",
+  "source_url": "https://github.com/robertguss/claude-code-toolkit/blob/main/skills/non-fiction-book-factory/book-market-research/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Robert Guss",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

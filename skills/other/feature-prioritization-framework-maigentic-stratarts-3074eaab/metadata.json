@@ -7,5 +7,12 @@
   "dir_name": "feature-prioritization-framework-maigentic-stratarts-3074eaab",
   "category": "other",
   "github_path": "skills/market-product-strategy/feature-prioritization-framework",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "maigentic",
+  "source_url": "https://github.com/maigentic/stratarts/blob/main/skills/market-product-strategy/feature-prioritization-framework/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 maigentic",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

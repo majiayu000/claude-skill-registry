@@ -11,5 +11,12 @@
   "stars": 4,
   "github_path": "skills/course-description-analyzer",
   "github_branch": "main",
-  "dir_name": "course-description-analyzer-dmccreary-claude-skills-2fa7494a"
+  "dir_name": "course-description-analyzer-dmccreary-claude-skills-2fa7494a",
+  "author": "dmccreary",
+  "source_url": "https://github.com/dmccreary/claude-skills/blob/main/skills/course-description-analyzer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dmccreary/claude-skills/blob/main/skills/course-description-analyzer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

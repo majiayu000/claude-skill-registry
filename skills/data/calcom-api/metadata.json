@@ -5,5 +5,12 @@
   "source": "github.com/calcom/cal.com",
   "downloaded_at": "2026-02-01T03:24:01.445006Z",
   "dir_name": "calcom-api",
-  "category": "data"
+  "category": "data",
+  "author": "calcom",
+  "source_url": "https://github.com/calcom/cal.com/blob/main/skills/calcom-api/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2020-present Cal.com, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

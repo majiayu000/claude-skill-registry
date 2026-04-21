@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/wtthornton/TappsCodingAgents",
-  "dir_name": "example-custom-skill-wtthornton-tappscodingagents-2"
+  "dir_name": "example-custom-skill-wtthornton-tappscodingagents-2",
+  "author": "wtthornton",
+  "source_url": "https://github.com/wtthornton/TappsCodingAgents/blob/main/.claude/skills/example-custom-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tapps",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

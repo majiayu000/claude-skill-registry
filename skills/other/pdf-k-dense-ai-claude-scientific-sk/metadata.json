@@ -9,5 +9,12 @@
   "github_path": "scientific-skills/document-skills/pdf",
   "github_branch": "main",
   "dir_name": "pdf-k-dense-ai-claude-scientific-sk",
-  "downloaded_at": "2026-02-05T01:45:12.169761Z"
+  "downloaded_at": "2026-02-05T01:45:12.169761Z",
+  "author": "K-Dense-AI",
+  "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/scientific-skills/document-skills/pdf/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 K-Dense Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

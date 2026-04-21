@@ -7,5 +7,12 @@
   "dir_name": "transit-least-squares",
   "category": "other",
   "github_path": "tasks/exoplanet-detection-period/environment/skills/transit-least-squares",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "benchflow-ai",
+  "source_url": "https://github.com/benchflow-ai/skillsbench/blob/main/tasks/exoplanet-detection-period/environment/skills/transit-least-squares/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/benchflow-ai/skillsbench/blob/main/tasks/exoplanet-detection-period/environment/skills/transit-least-squares/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

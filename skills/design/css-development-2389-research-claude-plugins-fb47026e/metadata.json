@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:46.184733Z",
   "github_path": "css-development/skills",
   "github_branch": "main",
-  "dir_name": "css-development-2389-research-claude-plugins-fb47026e"
+  "dir_name": "css-development-2389-research-claude-plugins-fb47026e",
+  "author": "2389-research",
+  "source_url": "https://github.com/2389-research/claude-plugins/blob/main/css-development/skills/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 2389 Research, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

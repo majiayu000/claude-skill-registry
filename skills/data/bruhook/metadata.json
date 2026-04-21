@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "bruhook"
+  "dir_name": "bruhook",
+  "author": "geakstr",
+  "source_url": "https://github.com/geakstr/bruhook",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dima Kharitonov <mail@dima.pub>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

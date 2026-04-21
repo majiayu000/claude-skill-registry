@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/bdg",
   "github_branch": "main",
-  "dir_name": "bdg-szymdzum-browser-debugger-cli"
+  "dir_name": "bdg-szymdzum-browser-debugger-cli",
+  "author": "szymdzum",
+  "source_url": "https://github.com/szymdzum/browser-debugger-cli/blob/main/.claude/skills/bdg/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Kumak",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

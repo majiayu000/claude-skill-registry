@@ -7,5 +7,12 @@
   "dir_name": "ux-toolkit",
   "category": "other",
   "github_path": ".claude/skills/ux-toolkit",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "georgekhananaev",
+  "source_url": "https://github.com/georgekhananaev/claude-skills-vault/blob/main/.claude/skills/ux-toolkit/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 George Khananaev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

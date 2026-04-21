@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "telegram-integration"
+  "dir_name": "telegram-integration",
+  "author": "imehr",
+  "source_url": "https://github.com/imehr/skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Mehran Mozaffari",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

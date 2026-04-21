@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/carmenta-copy",
   "github_branch": "main",
-  "dir_name": "carmenta-copy-carmentacollective-carmenta-ecacc7e8"
+  "dir_name": "carmenta-copy-carmentacollective-carmenta-ecacc7e8",
+  "author": "carmentacollective",
+  "source_url": "https://github.com/carmentacollective/carmenta/blob/main/.claude/skills/carmenta-copy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Carmenta Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

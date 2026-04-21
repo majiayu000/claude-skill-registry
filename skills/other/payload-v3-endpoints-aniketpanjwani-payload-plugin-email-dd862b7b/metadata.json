@@ -5,5 +5,12 @@
   "source": "github.com/aniketpanjwani/payload-plugin-email-newsletter",
   "downloaded_at": "2026-01-29T05:20:47.537414Z",
   "dir_name": "payload-v3-endpoints-aniketpanjwani-payload-plugin-email-dd862b7b",
-  "category": "other"
+  "category": "other",
+  "author": "aniketpanjwani",
+  "source_url": "https://github.com/aniketpanjwani/payload-plugin-email-newsletter/blob/main/.claude/skills/payload-v3-endpoints/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Aniket Panjwani",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

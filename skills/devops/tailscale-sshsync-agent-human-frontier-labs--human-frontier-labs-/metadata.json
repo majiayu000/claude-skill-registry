@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:07.733414Z",
   "github_path": "plugins/tailscale-sshsync-agent",
   "github_branch": "main",
-  "dir_name": "tailscale-sshsync-agent-human-frontier-labs--human-frontier-labs-"
+  "dir_name": "tailscale-sshsync-agent-human-frontier-labs--human-frontier-labs-",
+  "author": "Human-Frontier-Labs-Inc",
+  "source_url": "https://github.com/Human-Frontier-Labs-Inc/human-frontier-labs-marketplace/blob/main/plugins/tailscale-sshsync-agent/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Human-Frontier-Labs-Inc/human-frontier-labs-marketplace/blob/main/plugins/tailscale-sshsync-agent/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

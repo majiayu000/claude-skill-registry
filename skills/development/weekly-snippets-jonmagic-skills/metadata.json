@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:57.071216Z",
   "github_path": "skills/weekly-snippets",
   "github_branch": "main",
-  "dir_name": "weekly-snippets-jonmagic-skills"
+  "dir_name": "weekly-snippets-jonmagic-skills",
+  "author": "jonmagic",
+  "source_url": "https://github.com/jonmagic/skills/blob/main/skills/weekly-snippets/SKILL.md",
+  "license": "ISC",
+  "copyright": "Copyright (c) 2025 Jonathan Hoyt",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

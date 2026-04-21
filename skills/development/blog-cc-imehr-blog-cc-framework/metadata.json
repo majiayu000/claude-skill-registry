@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:11.691623Z",
   "github_path": "skills/content-management/blog-cc",
   "github_branch": "main",
-  "dir_name": "blog-cc-imehr-blog-cc-framework"
+  "dir_name": "blog-cc-imehr-blog-cc-framework",
+  "author": "imehr",
+  "source_url": "https://github.com/imehr/blog-cc-framework/blob/main/skills/content-management/blog-cc/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/imehr/blog-cc-framework/blob/main/skills/content-management/blog-cc/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

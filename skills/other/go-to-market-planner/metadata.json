@@ -5,5 +5,12 @@
   "source": "github.com/maigentic/stratarts",
   "downloaded_at": "2026-01-29T05:18:36.307099Z",
   "dir_name": "go-to-market-planner",
-  "category": "other"
+  "category": "other",
+  "author": "maigentic",
+  "source_url": "https://github.com/maigentic/stratarts/blob/main/skills/market-product-strategy/go-to-market-planner/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 maigentic",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

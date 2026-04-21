@@ -5,5 +5,12 @@
   "source": "github.com/iPlug2/iPlug2",
   "downloaded_at": "2026-01-29T07:51:41.644838Z",
   "dir_name": "setup-deps-iplug2-iplug2",
-  "category": "other"
+  "category": "other",
+  "author": "iPlug2",
+  "source_url": "https://github.com/iPlug2/iPlug2/blob/main/.claude/skills/setup-deps/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (C) the iPlug 2 Developers. Portions copyright other contributors, see each source file for more information.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

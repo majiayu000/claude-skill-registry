@@ -5,5 +5,12 @@
   "source": "github.com/AbdullahMalik17/Hacathan-2-",
   "downloaded_at": "2026-01-29T08:21:40.857222Z",
   "dir_name": "posting-twitter",
-  "category": "data"
+  "category": "data",
+  "author": "AbdullahMalik17",
+  "source_url": "https://github.com/AbdullahMalik17/Hacathan-2-/blob/main/.claude/skills/posting-twitter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Muhammad Abdullah Athar",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/aniketpanjwani/payload-plugin-email-newsletter",
   "downloaded_at": "2026-01-29T05:20:47.492004Z",
   "dir_name": "broadcast-api-aniketpanjwani-payload-plugin-email",
-  "category": "other"
+  "category": "other",
+  "author": "aniketpanjwani",
+  "source_url": "https://github.com/aniketpanjwani/payload-plugin-email-newsletter/blob/main/.claude/skills/broadcast-api/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Aniket Panjwani",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

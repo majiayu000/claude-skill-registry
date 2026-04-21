@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:06.180602Z",
   "github_path": ".agent/skills/dev-prompt-engineering",
   "github_branch": "main",
-  "dir_name": "dev-prompt-engineering-lastdays03-claude-skills"
+  "dir_name": "dev-prompt-engineering-lastdays03-claude-skills",
+  "author": "lastdays03",
+  "source_url": "https://github.com/lastdays03/claude_skills/blob/main/.agent/skills/dev-prompt-engineering/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lastdays03/claude_skills/blob/main/.agent/skills/dev-prompt-engineering/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

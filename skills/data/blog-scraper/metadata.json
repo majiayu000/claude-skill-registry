@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "blog-scraper",
   "github_path": ".claude/skills/blog-scraper",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Ryunosuke-Tanaka-sti",
+  "source_url": "https://github.com/Ryunosuke-Tanaka-sti/claude_and_blog_seminar/blob/main/.claude/skills/blog-scraper/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Ryunosuke-Tanaka-sti/claude_and_blog_seminar/blob/main/.claude/skills/blog-scraper/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

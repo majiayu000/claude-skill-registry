@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "presentation-master"
+  "dir_name": "presentation-master",
+  "author": "krishagel",
+  "source_url": "https://github.com/krishagel/geoffrey",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 Kris Hagel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

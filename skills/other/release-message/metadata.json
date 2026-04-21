@@ -7,5 +7,12 @@
   "dir_name": "release-message",
   "category": "other",
   "github_path": "resources/skills/release-message",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "kasperjunge",
+  "source_url": "https://github.com/kasperjunge/agent-resources/blob/main/resources/skills/release-message/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Kasper Junge",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

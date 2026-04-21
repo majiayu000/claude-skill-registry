@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:11.715110Z",
   "github_path": "skills/workflows/building-skills-marketplace",
   "github_branch": "main",
-  "dir_name": "building-skills-marketplace-imehr-skills"
+  "dir_name": "building-skills-marketplace-imehr-skills",
+  "author": "imehr",
+  "source_url": "https://github.com/imehr/skills/blob/main/skills/workflows/building-skills-marketplace/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Mehran Mozaffari",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

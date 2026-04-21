@@ -5,5 +5,12 @@
   "description": "Explain the DAIC (Discuss-Align-Implement-Check) workflow, help users understand current mode, what's allowed in each mode, and how to transition between modes - ANALYSIS-ONLY skill",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:02.183695Z",
-  "dir_name": "daic-mode-guidance"
+  "dir_name": "daic-mode-guidance",
+  "author": "grandinh",
+  "source_url": "https://github.com/grandinh/claude-chaos-express",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/grandinh/claude-chaos-express",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

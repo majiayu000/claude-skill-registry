@@ -5,5 +5,12 @@
   "description": "Generate comprehensive summary of meeting. **Use this skill when the user requests to 'create meeting summary', 'summarize the meeting', 'generate meeting email'.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:08:29.262149Z",
-  "dir_name": "meetings-summary"
+  "dir_name": "meetings-summary",
+  "author": "smorand",
+  "source_url": "https://github.com/smorand/claude-config",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/smorand/claude-config",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

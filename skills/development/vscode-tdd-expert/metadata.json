@@ -11,5 +11,12 @@
   "stars": 6,
   "github_path": ".claude/skills/vscode-tdd-expert",
   "github_branch": "main",
-  "dir_name": "vscode-tdd-expert"
+  "dir_name": "vscode-tdd-expert",
+  "author": "s-hiraoku",
+  "source_url": "https://github.com/s-hiraoku/vscode-sidebar-terminal/blob/main/.claude/skills/vscode-tdd-expert/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2025 s-hiraoku",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

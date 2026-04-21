@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:40.749445Z",
   "github_path": "plugins/canvas-api/skills/canvas-api",
   "github_branch": "main",
-  "dir_name": "canvas-api-a-ariff-ariff-claude-plugins"
+  "dir_name": "canvas-api-a-ariff-ariff-claude-plugins",
+  "author": "a-ariff",
+  "source_url": "https://github.com/a-ariff/ariff-claude-plugins/blob/main/plugins/canvas-api/skills/canvas-api/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ariff",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

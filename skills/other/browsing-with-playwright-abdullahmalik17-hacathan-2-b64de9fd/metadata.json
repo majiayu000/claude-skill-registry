@@ -7,5 +7,12 @@
   "dir_name": "browsing-with-playwright-abdullahmalik17-hacathan-2-b64de9fd",
   "category": "other",
   "github_path": ".claude/skills/browsing-with-playwright",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "AbdullahMalik17",
+  "source_url": "https://github.com/AbdullahMalik17/Hacathan-2-/blob/main/.claude/skills/browsing-with-playwright/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Muhammad Abdullah Athar",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

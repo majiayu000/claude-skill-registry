@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/canvas-week-plan",
   "github_branch": "main",
-  "dir_name": "canvas-week-plan-vishalsachdev-canvas-mcp"
+  "dir_name": "canvas-week-plan-vishalsachdev-canvas-mcp",
+  "author": "vishalsachdev",
+  "source_url": "https://github.com/vishalsachdev/canvas-mcp/blob/main/.claude/skills/canvas-week-plan/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Vishal Sachdev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "stars": 118,
   "source": "github.com/hatayama/uLoopMCP",
   "downloaded_at": "2026-01-24T16:15:33.808697Z",
-  "dir_name": "uloop-control-play-mode"
+  "dir_name": "uloop-control-play-mode",
+  "author": "hatayama",
+  "source_url": "https://github.com/hatayama/uLoopMCP/blob/main/.codex/skills/uloop-control-play-mode/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Masamichi Hatayama",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

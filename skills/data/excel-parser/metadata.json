@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "excel-parser",
   "github_path": "skills/excel-parser",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Harryoung",
+  "source_url": "https://github.com/Harryoung/efka/blob/main/skills/excel-parser/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Harryoung/efka/blob/main/skills/excel-parser/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

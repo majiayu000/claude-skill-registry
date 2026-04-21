@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:56.159687Z",
   "github_path": "bodhi-js-sdk/skills/react-integration",
   "github_branch": "main",
-  "dir_name": "bodhi-sdk-react-integration-bodhisearch-bodhi-js"
+  "dir_name": "bodhi-sdk-react-integration-bodhisearch-bodhi-js",
+  "author": "BodhiSearch",
+  "source_url": "https://github.com/BodhiSearch/bodhi-js/blob/main/bodhi-js-sdk/skills/react-integration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 BodhiSearch",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

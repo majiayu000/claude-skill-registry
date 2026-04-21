@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:26.735160Z",
   "github_path": "templates/claude/jige/skills/bug-diagnose-and-root-cause-and-fix",
   "github_branch": "main",
-  "dir_name": "bug-diagnose-and-root-cause-and-fix-727474430-cli-rule-swtich"
+  "dir_name": "bug-diagnose-and-root-cause-and-fix-727474430-cli-rule-swtich",
+  "author": "727474430",
+  "source_url": "https://github.com/727474430/cli-rule-swtich/blob/main/templates/claude/jige/skills/bug-diagnose-and-root-cause-and-fix/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 raindropwl",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

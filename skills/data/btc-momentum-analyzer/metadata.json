@@ -10,5 +10,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "btc-momentum-analyzer"
+  "dir_name": "btc-momentum-analyzer",
+  "author": "Druidss",
+  "source_url": "https://github.com/Druidss/MACD",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Druidss/MACD",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

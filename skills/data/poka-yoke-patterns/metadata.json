@@ -5,5 +5,12 @@
   "source": "github.com/seanchatmangpt/ggen",
   "downloaded_at": "2026-02-04T01:46:09.843725Z",
   "dir_name": "poka-yoke-patterns",
-  "category": "data"
+  "category": "data",
+  "author": "seanchatmangpt",
+  "source_url": "https://github.com/seanchatmangpt/ggen/blob/main/.claude/skills/poka-yoke-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sean Chatman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

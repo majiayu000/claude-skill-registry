@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "database-observability",
   "github_path": "skills/database-observability",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "nexus-labs-automation",
+  "source_url": "https://github.com/nexus-labs-automation/backend-observability/blob/main/skills/database-observability/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Nexus Labs",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:18.331942Z",
   "github_path": "aug-dev/skills/documenting-with-claude-md",
   "github_branch": "main",
-  "dir_name": "documenting-with-claude-md-bryonjacob-aug"
+  "dir_name": "documenting-with-claude-md-bryonjacob-aug",
+  "author": "bryonjacob",
+  "source_url": "https://github.com/bryonjacob/aug/blob/main/aug-dev/skills/documenting-with-claude-md/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Bryon Jacob",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -9,5 +9,12 @@
   "stars": 0,
   "github_path": ".claude/skills/research",
   "github_branch": "main",
-  "dir_name": "research-buttercupck-bcck-vault"
+  "dir_name": "research-buttercupck-bcck-vault",
+  "author": "buttercupck",
+  "source_url": "https://github.com/buttercupck/bcck_vault/blob/main/.claude/skills/research/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/buttercupck/bcck_vault/blob/main/.claude/skills/research/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

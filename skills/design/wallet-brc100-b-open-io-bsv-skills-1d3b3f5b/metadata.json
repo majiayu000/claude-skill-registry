@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/wallet-brc100-go",
   "github_branch": "main",
-  "dir_name": "wallet-brc100-b-open-io-bsv-skills-1d3b3f5b"
+  "dir_name": "wallet-brc100-b-open-io-bsv-skills-1d3b3f5b",
+  "author": "b-open-io",
+  "source_url": "https://github.com/b-open-io/bsv-skills/blob/main/skills/wallet-brc100-go/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/b-open-io/bsv-skills/blob/main/skills/wallet-brc100-go/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

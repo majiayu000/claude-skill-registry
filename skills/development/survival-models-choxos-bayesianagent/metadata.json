@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:27.696206Z",
   "github_path": "plugins/bayesian-modeling/skills/survival-models",
   "github_branch": "main",
-  "dir_name": "survival-models-choxos-bayesianagent"
+  "dir_name": "survival-models-choxos-bayesianagent",
+  "author": "choxos",
+  "source_url": "https://github.com/choxos/BayesianAgent/blob/main/plugins/bayesian-modeling/skills/survival-models/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ahmad Sofi-Mahmudi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

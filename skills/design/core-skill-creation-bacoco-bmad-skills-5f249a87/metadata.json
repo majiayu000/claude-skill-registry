@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/core-skill-creation",
   "github_branch": "main",
-  "dir_name": "core-skill-creation-bacoco-bmad-skills-5f249a87"
+  "dir_name": "core-skill-creation-bacoco-bmad-skills-5f249a87",
+  "author": "bacoco",
+  "source_url": "https://github.com/bacoco/BMad-Skills/blob/main/.claude/skills/core-skill-creation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 BMAD Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

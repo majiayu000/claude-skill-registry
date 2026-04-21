@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": ".claude/skills/personal-dev-writer",
   "github_branch": "main",
-  "dir_name": "personal-dev-writer-zura1555-agents"
+  "dir_name": "personal-dev-writer-zura1555-agents",
+  "author": "Zura1555",
+  "source_url": "https://github.com/Zura1555/agents/blob/main/.claude/skills/personal-dev-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Zura1555/agents/blob/main/.claude/skills/personal-dev-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

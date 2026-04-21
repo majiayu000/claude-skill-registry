@@ -5,5 +5,12 @@
   "source": "github.com/amyodov/pytest-claude-agent-sdk",
   "downloaded_at": "2026-02-04T01:27:12.823385Z",
   "dir_name": "publish-pypi",
-  "category": "data"
+  "category": "data",
+  "author": "amyodov",
+  "source_url": "https://github.com/amyodov/pytest-claude-agent-sdk/blob/main/.claude/skills/publish-pypi/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Alex Myodov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

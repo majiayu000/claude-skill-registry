@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/torumakabe/aks-chaos-lab",
-  "dir_name": "bicep-what-if-analysis"
+  "dir_name": "bicep-what-if-analysis",
+  "author": "torumakabe",
+  "source_url": "https://github.com/torumakabe/aks-chaos-lab",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Toru Makabe",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

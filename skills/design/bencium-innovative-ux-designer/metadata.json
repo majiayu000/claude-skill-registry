@@ -10,5 +10,12 @@
   ],
   "stars": 42,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "bencium-innovative-ux-designer"
+  "dir_name": "bencium-innovative-ux-designer",
+  "author": "bencium",
+  "source_url": "https://github.com/bencium/bencium-claude-code-design-skill",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bencium/bencium-claude-code-design-skill",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

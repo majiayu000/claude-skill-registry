@@ -5,5 +5,12 @@
   "description": "Validate and lint structured data files (YAML, JSON, TOML) for consistency, required fields, syntax errors, and schema compliance.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:28.394552Z",
-  "dir_name": "schemalinter"
+  "dir_name": "schemalinter",
+  "author": "chrislyons",
+  "source_url": "https://github.com/chrislyons/carbon-acx",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 Chris Lyons",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

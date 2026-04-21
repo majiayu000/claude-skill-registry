@@ -5,5 +5,12 @@
   "source": "github.com/masharratt/claude-flow-novice",
   "downloaded_at": "2026-02-04T01:18:14.225413Z",
   "dir_name": "cfn-node-heap-sizer",
-  "category": "data"
+  "category": "data",
+  "author": "masharratt",
+  "source_url": "https://github.com/masharratt/claude-flow-novice/blob/main/.claude/cfn-extras/skills/deprecated/cfn-node-heap-sizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/masharratt/claude-flow-novice/blob/main/.claude/cfn-extras/skills/deprecated/cfn-node-heap-sizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/georgekhananaev/claude-skills-vault",
   "downloaded_at": "2026-01-29T06:56:35.883078Z",
   "dir_name": "pep8-georgekhananaev-claude-skills-vault-6976d398",
-  "category": "other"
+  "category": "other",
+  "author": "georgekhananaev",
+  "source_url": "https://github.com/georgekhananaev/claude-skills-vault/blob/main/.claude/skills/pep8/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 George Khananaev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

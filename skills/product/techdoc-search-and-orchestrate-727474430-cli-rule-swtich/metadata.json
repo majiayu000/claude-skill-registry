@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:26.931168Z",
   "github_path": "templates/claude/jige/skills/techdoc-search-and-orchestrate",
   "github_branch": "main",
-  "dir_name": "techdoc-search-and-orchestrate-727474430-cli-rule-swtich"
+  "dir_name": "techdoc-search-and-orchestrate-727474430-cli-rule-swtich",
+  "author": "727474430",
+  "source_url": "https://github.com/727474430/cli-rule-swtich/blob/main/templates/claude/jige/skills/techdoc-search-and-orchestrate/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 raindropwl",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

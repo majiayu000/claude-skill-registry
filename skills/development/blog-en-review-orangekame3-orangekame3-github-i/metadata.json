@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/blog-en-review",
   "github_branch": "main",
-  "dir_name": "blog-en-review-orangekame3-orangekame3-github-i"
+  "dir_name": "blog-en-review-orangekame3-orangekame3-github-i",
+  "author": "orangekame3",
+  "source_url": "https://github.com/orangekame3/orangekame3.github.io/blob/main/.claude/skills/blog-en-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/orangekame3/orangekame3.github.io/blob/main/.claude/skills/blog-en-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

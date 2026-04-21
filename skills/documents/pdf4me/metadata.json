@@ -9,5 +9,12 @@
   "stars": 8,
   "github_path": "pdf4me",
   "github_branch": "main",
-  "dir_name": "pdf4me"
+  "dir_name": "pdf4me",
+  "author": "vm0-ai",
+  "source_url": "https://github.com/vm0-ai/vm0-skills/blob/main/pdf4me/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vm0-ai/vm0-skills/blob/main/pdf4me/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

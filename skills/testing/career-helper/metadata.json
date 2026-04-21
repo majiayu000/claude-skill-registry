@@ -9,5 +9,12 @@
   ],
   "stars": 2,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "career-helper"
+  "dir_name": "career-helper",
+  "author": "Zal4DW",
+  "source_url": "https://github.com/Zal4DW/career-helper",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Paul Bratcher / Prosper Consulting",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

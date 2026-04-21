@@ -5,5 +5,12 @@
   "source": "github.com/munlucky/claude-settings",
   "downloaded_at": "2026-01-29T08:37:02.318611Z",
   "dir_name": "moonshot-evaluate-complexity-munlucky-claude-settings",
-  "category": "other"
+  "category": "other",
+  "author": "munlucky",
+  "source_url": "https://github.com/munlucky/claude-settings/blob/main/.claude/skills/moonshot-evaluate-complexity/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/munlucky/claude-settings/blob/main/.claude/skills/moonshot-evaluate-complexity/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

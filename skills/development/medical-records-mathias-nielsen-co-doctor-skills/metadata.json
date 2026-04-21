@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:00.065392Z",
   "github_path": "health-platform-skill/medical-records",
   "github_branch": "main",
-  "dir_name": "medical-records-mathias-nielsen-co-doctor-skills"
+  "dir_name": "medical-records-mathias-nielsen-co-doctor-skills",
+  "author": "mathias-nielsen",
+  "source_url": "https://github.com/mathias-nielsen/co-doctor-skills/blob/main/health-platform-skill/medical-records/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mathias-nielsen/co-doctor-skills/blob/main/health-platform-skill/medical-records/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

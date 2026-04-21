@@ -9,5 +9,12 @@
   "github_path": ".opencode/skill/research",
   "github_branch": "main",
   "dir_name": "research-pentaxis93-beadsmith-815d9a57",
-  "downloaded_at": "2026-02-05T05:40:33.254872Z"
+  "downloaded_at": "2026-02-05T05:40:33.254872Z",
+  "author": "pentaxis93",
+  "source_url": "https://github.com/pentaxis93/beadsmith/blob/main/.opencode/skill/research/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pentaxis93/beadsmith/blob/main/.opencode/skill/research/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

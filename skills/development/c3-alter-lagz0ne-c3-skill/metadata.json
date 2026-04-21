@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:12.156862Z",
   "github_path": "skills/c3-alter",
   "github_branch": "main",
-  "dir_name": "c3-alter-lagz0ne-c3-skill"
+  "dir_name": "c3-alter-lagz0ne-c3-skill",
+  "author": "lagz0ne",
+  "source_url": "https://github.com/lagz0ne/c3-skill/blob/main/skills/c3-alter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Lagz0ne",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

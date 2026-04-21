@@ -5,5 +5,12 @@
   "source": "github.com/joshribakoff/surfsim",
   "downloaded_at": "2026-01-29T08:56:11.960935Z",
   "dir_name": "refactoring-joshribakoff-surfsim",
-  "category": "other"
+  "category": "other",
+  "author": "joshribakoff",
+  "source_url": "https://github.com/joshribakoff/surfsim/blob/main/.claude/skills/refactoring/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/joshribakoff/surfsim/blob/main/.claude/skills/refactoring/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/nealcaren/social-data-analysis",
   "downloaded_at": "2026-02-04T05:10:14.203026Z",
   "dir_name": "text-analyst",
-  "category": "data"
+  "category": "data",
+  "author": "nealcaren",
+  "source_url": "https://github.com/nealcaren/social-data-analysis/blob/main/plugins/text-analyst/skills/text-analyst/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Neal Caren",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

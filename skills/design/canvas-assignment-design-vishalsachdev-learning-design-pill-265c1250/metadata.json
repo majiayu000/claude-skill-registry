@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/canvas-assignment-design",
   "github_branch": "main",
-  "dir_name": "canvas-assignment-design-vishalsachdev-learning-design-pill-265c1250"
+  "dir_name": "canvas-assignment-design-vishalsachdev-learning-design-pill-265c1250",
+  "author": "vishalsachdev",
+  "source_url": "https://github.com/vishalsachdev/learning-design-pillars/blob/main/skills/canvas-assignment-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Vishal Sachdev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/saadjs/agent-skills",
   "downloaded_at": "2026-02-04T01:08:24.351456Z",
   "dir_name": "git-incremental-commits",
-  "category": "data"
+  "category": "data",
+  "author": "saadjs",
+  "source_url": "https://github.com/saadjs/agent-skills/blob/main/skills/git-incremental-commits/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Saad Bash",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

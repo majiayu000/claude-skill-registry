@@ -5,5 +5,12 @@
   "source": "github.com/yu-iskw/skill-inspector",
   "downloaded_at": "2026-02-02T01:38:17.915593Z",
   "dir_name": "build-and-fix",
-  "category": "other"
+  "category": "other",
+  "author": "yu-iskw",
+  "source_url": "https://github.com/yu-iskw/skill-inspector/blob/main/.claude/skills/build-and-fix/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yu-iskw/skill-inspector/blob/main/.claude/skills/build-and-fix/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

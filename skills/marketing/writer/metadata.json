@@ -9,5 +9,12 @@
   "stars": 0,
   "github_path": "skills/writer",
   "github_branch": "main",
-  "dir_name": "writer"
+  "dir_name": "writer",
+  "author": "krishagel",
+  "source_url": "https://github.com/krishagel/geoffrey/blob/main/skills/writer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 Kris Hagel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/tilework-tech/nori-cli",
-  "dir_name": "building-ui-ux-tilework-tech-nori-cli-2"
+  "dir_name": "building-ui-ux-tilework-tech-nori-cli-2",
+  "author": "tilework-tech",
+  "source_url": "https://github.com/tilework-tech/nori-cli/blob/main/.claude/skills/building-ui-ux/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 OpenAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

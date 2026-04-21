@@ -7,5 +7,12 @@
   "dir_name": "trip-planner-mattppal-prompts",
   "category": "other",
   "github_path": ".claude/skills/trip-planner",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "mattppal",
+  "source_url": "https://github.com/mattppal/prompts/blob/main/.claude/skills/trip-planner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattppal/prompts/blob/main/.claude/skills/trip-planner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

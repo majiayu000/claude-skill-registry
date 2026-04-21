@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:40.670239Z",
   "github_path": ".claude/skills/starting-implementation",
   "github_branch": "main",
-  "dir_name": "starting-implementation-t0k0sh1-chronia-3298d317"
+  "dir_name": "starting-implementation-t0k0sh1-chronia-3298d317",
+  "author": "t0k0sh1",
+  "source_url": "https://github.com/t0k0sh1/chronia/blob/main/.claude/skills/starting-implementation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Takashi Yamashina <takashi.yamashina@gmail.com>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "General-purpose patterns for reliable browser automation (selectors, waiting, scrolling, overlays, HITL).",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:02.500558Z",
-  "dir_name": "core-browser-automation"
+  "dir_name": "core-browser-automation",
+  "author": "mbosseme",
+  "source_url": "https://github.com/mbosseme/computer-use-1",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mbosseme/computer-use-1",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

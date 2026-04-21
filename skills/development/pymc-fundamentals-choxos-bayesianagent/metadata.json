@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:27.871252Z",
   "github_path": "plugins/bayesian-modeling/skills/pymc-fundamentals",
   "github_branch": "main",
-  "dir_name": "pymc-fundamentals-choxos-bayesianagent"
+  "dir_name": "pymc-fundamentals-choxos-bayesianagent",
+  "author": "choxos",
+  "source_url": "https://github.com/choxos/BayesianAgent/blob/main/plugins/bayesian-modeling/skills/pymc-fundamentals/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ahmad Sofi-Mahmudi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

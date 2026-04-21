@@ -5,5 +5,12 @@
   "source": "github.com/MQFacultyOfArts/PromptGrimoireTool",
   "downloaded_at": "2026-02-04T01:27:17.837424Z",
   "dir_name": "cache-docs",
-  "category": "data"
+  "category": "data",
+  "author": "MQFacultyOfArts",
+  "source_url": "https://github.com/MQFacultyOfArts/PromptGrimoireTool/blob/main/.claude/skills/cache-docs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Brian Ballsun-Stanton",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

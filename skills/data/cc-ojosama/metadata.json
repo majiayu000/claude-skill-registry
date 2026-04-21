@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "cc-ojosama",
   "github_path": "",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "hawkymisc",
+  "source_url": "https://github.com/hawkymisc/cc-ojosama",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hawkymisc/cc-ojosama",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

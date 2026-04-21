@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "bug-bounty-methodology"
+  "dir_name": "bug-bounty-methodology",
+  "author": "buttercupck",
+  "source_url": "https://github.com/buttercupck/bcck_vault",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/buttercupck/bcck_vault",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

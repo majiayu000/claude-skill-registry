@@ -12,5 +12,12 @@
   "stars": 1,
   "github_path": ".claude/skills/using-ghost-admin-api",
   "github_branch": "main",
-  "dir_name": "using-ghost-admin-api-houfu-blog-alt-counsel"
+  "dir_name": "using-ghost-admin-api-houfu-blog-alt-counsel",
+  "author": "houfu",
+  "source_url": "https://github.com/houfu/blog-alt-counsel/blob/main/.claude/skills/using-ghost-admin-api/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2025 Ang Hou Fu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

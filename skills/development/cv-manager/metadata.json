@@ -5,5 +5,12 @@
   "description": "Expert in managing professional candidate CVs and interview records. **Use this skill whenever the user mentions 'add a CV', 'add new professional interview', 'add an interview', 'view the CV', 'summa",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:08:29.044037Z",
-  "dir_name": "cv-manager"
+  "dir_name": "cv-manager",
+  "author": "smorand",
+  "source_url": "https://github.com/smorand/claude-config",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/smorand/claude-config",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

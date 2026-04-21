@@ -5,5 +5,12 @@
   "source": "github.com/hironow/dotfiles",
   "downloaded_at": "2026-01-29T01:22:39.739761Z",
   "dir_name": "brand-legal-review",
-  "category": "other"
+  "category": "other",
+  "author": "hironow",
+  "source_url": "https://github.com/hironow/dotfiles/blob/main/skills/brand-legal-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Hiroto N.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

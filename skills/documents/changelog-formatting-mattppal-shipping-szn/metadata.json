@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:01.706236Z",
   "github_path": ".rulesync/skills/changelog-formatting",
   "github_branch": "main",
-  "dir_name": "changelog-formatting-mattppal-shipping-szn"
+  "dir_name": "changelog-formatting-mattppal-shipping-szn",
+  "author": "mattppal",
+  "source_url": "https://github.com/mattppal/shipping-szn/blob/main/.rulesync/skills/changelog-formatting/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Matt Palmer",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

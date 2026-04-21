@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "branch-name"
+  "dir_name": "branch-name",
+  "author": "t0k0sh1",
+  "source_url": "https://github.com/t0k0sh1/chronia",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Takashi Yamashina <takashi.yamashina@gmail.com>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

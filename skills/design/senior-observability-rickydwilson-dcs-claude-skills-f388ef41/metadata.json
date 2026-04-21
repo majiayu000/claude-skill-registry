@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:20.420844Z",
   "github_path": "skills/engineering-team/senior-observability",
   "github_branch": "main",
-  "dir_name": "senior-observability-rickydwilson-dcs-claude-skills-f388ef41"
+  "dir_name": "senior-observability-rickydwilson-dcs-claude-skills-f388ef41",
+  "author": "rickydwilson-dcs",
+  "source_url": "https://github.com/rickydwilson-dcs/claude-skills/blob/main/skills/engineering-team/senior-observability/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rickydwilson-dcs/claude-skills/blob/main/skills/engineering-team/senior-observability/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

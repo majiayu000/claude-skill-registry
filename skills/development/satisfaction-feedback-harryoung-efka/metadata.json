@@ -10,5 +10,12 @@
   "stars": 9,
   "github_path": "skills/satisfaction-feedback",
   "github_branch": "main",
-  "dir_name": "satisfaction-feedback-harryoung-efka"
+  "dir_name": "satisfaction-feedback-harryoung-efka",
+  "author": "Harryoung",
+  "source_url": "https://github.com/Harryoung/efka/blob/main/skills/satisfaction-feedback/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Harryoung/efka/blob/main/skills/satisfaction-feedback/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

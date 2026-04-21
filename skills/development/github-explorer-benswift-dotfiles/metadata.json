@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:05.751352Z",
   "github_path": "claude/skills/github-explorer",
   "github_branch": "main",
-  "dir_name": "github-explorer-benswift-dotfiles"
+  "dir_name": "github-explorer-benswift-dotfiles",
+  "author": "benswift",
+  "source_url": "https://github.com/benswift/.dotfiles/blob/main/claude/skills/github-explorer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (C) 2025 Ben Swift",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

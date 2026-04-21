@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:46.333977Z",
   "github_path": "remote-system-maintenance/skills",
   "github_branch": "main",
-  "dir_name": "remote-system-maintenance-2389-research-claude-plugins-84f0e612"
+  "dir_name": "remote-system-maintenance-2389-research-claude-plugins-84f0e612",
+  "author": "2389-research",
+  "source_url": "https://github.com/2389-research/claude-plugins/blob/main/remote-system-maintenance/skills/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 2389 Research, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "stars": 3,
   "github_path": "skills/propose-feature-requirements",
   "github_branch": "main",
-  "dir_name": "propose-feature-requirements-cbgbt-bottlerocket-forest-87703013"
+  "dir_name": "propose-feature-requirements-cbgbt-bottlerocket-forest-87703013",
+  "author": "cbgbt",
+  "source_url": "https://github.com/cbgbt/bottlerocket-forest/blob/main/skills/propose-feature-requirements/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbgbt/bottlerocket-forest/blob/main/skills/propose-feature-requirements/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

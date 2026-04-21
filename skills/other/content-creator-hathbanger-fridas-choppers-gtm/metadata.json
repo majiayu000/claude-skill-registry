@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/content-creator",
   "github_branch": "main",
   "dir_name": "content-creator-hathbanger-fridas-choppers-gtm",
-  "downloaded_at": "2026-02-05T05:40:33.245684Z"
+  "downloaded_at": "2026-02-05T05:40:33.245684Z",
+  "author": "hathbanger",
+  "source_url": "https://github.com/hathbanger/fridas-choppers-gtm/blob/main/.claude/skills/content-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hathbanger/fridas-choppers-gtm/blob/main/.claude/skills/content-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

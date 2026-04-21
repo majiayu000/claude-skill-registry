@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/deepwiki-api",
   "github_branch": "main",
-  "dir_name": "deepwiki-api"
+  "dir_name": "deepwiki-api",
+  "author": "s-hiraoku",
+  "source_url": "https://github.com/s-hiraoku/vscode-sidebar-terminal/blob/main/.claude/skills/deepwiki-api/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2025 s-hiraoku",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/ce101-slides",
   "github_branch": "main",
-  "dir_name": "ce101-slides"
+  "dir_name": "ce101-slides",
+  "author": "brendanbecker",
+  "source_url": "https://github.com/brendanbecker/ce101/blob/main/.claude/skills/ce101-slides/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brendanbecker/ce101/blob/main/.claude/skills/ce101-slides/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

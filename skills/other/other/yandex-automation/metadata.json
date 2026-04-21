@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/ComposioHQ/awesome-claude-skills",
   "dir_name": "yandex-automation",
-  "downloaded_at": "2026-02-22T04:52:45.107252Z"
+  "downloaded_at": "2026-02-22T04:52:45.107252Z",
+  "author": "ComposioHQ",
+  "source_url": "https://github.com/ComposioHQ/awesome-claude-skills/blob/main/composio-skills/yandex-automation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ComposioHQ/awesome-claude-skills/blob/main/composio-skills/yandex-automation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

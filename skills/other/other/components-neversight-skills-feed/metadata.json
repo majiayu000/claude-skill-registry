@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/NeverSight/skills_feed",
   "dir_name": "components-neversight-skills-feed",
-  "downloaded_at": "2026-02-22T05:27:31.893495Z"
+  "downloaded_at": "2026-02-22T05:27:31.893495Z",
+  "author": "NeverSight",
+  "source_url": "https://github.com/NeverSight/skills_feed/blob/main/data/skills-md/vuer-ai/vuer/components/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NeverSight/skills_feed/blob/main/data/skills-md/vuer-ai/vuer/components/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

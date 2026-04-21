@@ -5,5 +5,12 @@
   "source": "github.com/fpl9000/ai-skills",
   "downloaded_at": "2026-02-04T03:19:03.173230Z",
   "dir_name": "transcript-saver",
-  "category": "data"
+  "category": "data",
+  "author": "fpl9000",
+  "source_url": "https://github.com/fpl9000/ai-skills/blob/main/transcript-saver/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

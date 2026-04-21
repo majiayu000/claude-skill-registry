@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:27.502097Z",
   "github_path": "claude/skills/technical-design-doc",
   "github_branch": "main",
-  "dir_name": "technical-design-doc"
+  "dir_name": "technical-design-doc",
+  "author": "bostonaholic",
+  "source_url": "https://github.com/bostonaholic/dotfiles/blob/main/claude/skills/technical-design-doc/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bostonaholic/dotfiles/blob/main/claude/skills/technical-design-doc/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

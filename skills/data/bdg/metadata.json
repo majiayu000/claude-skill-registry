@@ -8,5 +8,12 @@
   ],
   "stars": 74,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "bdg"
+  "dir_name": "bdg",
+  "author": "szymdzum",
+  "source_url": "https://github.com/szymdzum/browser-debugger-cli",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Kumak",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

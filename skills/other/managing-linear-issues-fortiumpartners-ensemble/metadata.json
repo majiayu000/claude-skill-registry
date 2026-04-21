@@ -5,5 +5,12 @@
   "source": "github.com/FortiumPartners/ensemble",
   "downloaded_at": "2026-01-29T08:39:10.066739Z",
   "dir_name": "managing-linear-issues-fortiumpartners-ensemble",
-  "category": "other"
+  "category": "other",
+  "author": "FortiumPartners",
+  "source_url": "https://github.com/FortiumPartners/ensemble/blob/main/packages/infrastructure/skills/managing-linear-issues/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Fortium Partners",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

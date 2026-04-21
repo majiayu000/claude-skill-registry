@@ -5,5 +5,12 @@
   "description": "Define the scope of an article or newsletter at the beginning of the drafting an article or newsletter",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:07.290209Z",
-  "dir_name": "generate-a-pitch"
+  "dir_name": "generate-a-pitch",
+  "author": "houfu",
+  "source_url": "https://github.com/houfu/blog-alt-counsel",
+  "license": "MIT",
+  "copyright": "Copyright 2025 Ang Hou Fu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

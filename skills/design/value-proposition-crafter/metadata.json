@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:29.846979Z",
   "github_path": "skills/foundation-strategy/value-proposition-crafter",
   "github_branch": "main",
-  "dir_name": "value-proposition-crafter"
+  "dir_name": "value-proposition-crafter",
+  "author": "maigentic",
+  "source_url": "https://github.com/maigentic/stratarts/blob/main/skills/foundation-strategy/value-proposition-crafter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 maigentic",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

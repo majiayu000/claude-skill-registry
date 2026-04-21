@@ -5,5 +5,12 @@
   "description": "Expert GCP specialist for BigQuery, Google Groups, IAM, and L'Oréal BTDP infrastructure. Use when working with any GCP projects with gcloud command (list resources in any GCP products like BigQuery, C",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:08:29.020153Z",
-  "dir_name": "gcp-specialist"
+  "dir_name": "gcp-specialist",
+  "author": "smorand",
+  "source_url": "https://github.com/smorand/claude-config",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/smorand/claude-config",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

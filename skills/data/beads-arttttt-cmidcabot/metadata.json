@@ -5,5 +5,12 @@
   "source": "github.com/arttttt/CMIDCABot",
   "downloaded_at": "2026-01-29T08:14:06.369589Z",
   "dir_name": "beads-arttttt-cmidcabot",
-  "category": "data"
+  "category": "data",
+  "author": "arttttt",
+  "source_url": "https://github.com/arttttt/CMIDCABot/blob/main/.antigravity/skills/beads/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/arttttt/CMIDCABot/blob/main/.antigravity/skills/beads/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

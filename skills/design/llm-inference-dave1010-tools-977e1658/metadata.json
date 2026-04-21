@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:46.397134Z",
   "github_path": ".skills/llm-inference",
   "github_branch": "main",
-  "dir_name": "llm-inference-dave1010-tools-977e1658"
+  "dir_name": "llm-inference-dave1010-tools-977e1658",
+  "author": "dave1010",
+  "source_url": "https://github.com/dave1010/tools/blob/main/.skills/llm-inference/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dave Hulbert",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

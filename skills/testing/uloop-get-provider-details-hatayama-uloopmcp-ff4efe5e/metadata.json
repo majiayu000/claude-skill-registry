@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/uloop-get-provider-details",
   "github_branch": "main",
-  "dir_name": "uloop-get-provider-details-hatayama-uloopmcp-ff4efe5e"
+  "dir_name": "uloop-get-provider-details-hatayama-uloopmcp-ff4efe5e",
+  "author": "hatayama",
+  "source_url": "https://github.com/hatayama/uLoopMCP/blob/main/.claude/skills/uloop-get-provider-details/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Masamichi Hatayama",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

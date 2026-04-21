@@ -9,5 +9,12 @@
   ],
   "stars": 2,
   "source": "local",
-  "dir_name": "multi-llm"
+  "dir_name": "multi-llm",
+  "author": "HTRamsey",
+  "source_url": "https://github.com/HTRamsey/claude-config",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HTRamsey/claude-config",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

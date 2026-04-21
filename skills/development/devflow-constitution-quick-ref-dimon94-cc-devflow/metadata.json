@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/devflow-constitution-quick-ref",
   "github_branch": "main",
-  "dir_name": "devflow-constitution-quick-ref-dimon94-cc-devflow"
+  "dir_name": "devflow-constitution-quick-ref-dimon94-cc-devflow",
+  "author": "Dimon94",
+  "source_url": "https://github.com/Dimon94/cc-devflow/blob/main/.claude/skills/devflow-constitution-quick-ref/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CC-DevFlow Team",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

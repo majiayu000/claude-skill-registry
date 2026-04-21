@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:30.175061Z",
   "github_path": "skills/npub-cash-address",
   "github_branch": "main",
-  "dir_name": "npub-cash-address-perceptlabs-nostril-2c955408"
+  "dir_name": "npub-cash-address-perceptlabs-nostril-2c955408",
+  "author": "PerceptLabs",
+  "source_url": "https://github.com/PerceptLabs/nostril/blob/main/skills/npub-cash-address/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PerceptLabs/nostril/blob/main/skills/npub-cash-address/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

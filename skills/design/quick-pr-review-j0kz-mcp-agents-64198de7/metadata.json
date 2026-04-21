@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:17.755196Z",
   "github_path": "docs/universal-skills/quick-pr-review",
   "github_branch": "main",
-  "dir_name": "quick-pr-review-j0kz-mcp-agents-64198de7"
+  "dir_name": "quick-pr-review-j0kz-mcp-agents-64198de7",
+  "author": "j0KZ",
+  "source_url": "https://github.com/j0KZ/mcp-agents/blob/main/docs/universal-skills/quick-pr-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 j0kz",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

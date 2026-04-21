@@ -5,5 +5,12 @@
   "source": "github.com/mhagrelius/dotfiles",
   "downloaded_at": "2026-01-29T08:48:40.994564Z",
   "dir_name": "playwright-testing",
-  "category": "data"
+  "category": "data",
+  "author": "mhagrelius",
+  "source_url": "https://github.com/mhagrelius/dotfiles/blob/main/.claude/skills/playwright-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mhagrelius/dotfiles/blob/main/.claude/skills/playwright-testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

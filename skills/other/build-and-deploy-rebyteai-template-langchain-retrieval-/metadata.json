@@ -5,5 +5,12 @@
   "source": "github.com/rebyteai-template/langchain-retrieval-agent",
   "downloaded_at": "2026-01-29T07:32:52.312067Z",
   "dir_name": "build-and-deploy-rebyteai-template-langchain-retrieval-",
-  "category": "other"
+  "category": "other",
+  "author": "rebyteai-template",
+  "source_url": "https://github.com/rebyteai-template/langchain-retrieval-agent/blob/main/.claude/skills/build-and-deploy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 LangChain",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

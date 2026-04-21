@@ -10,5 +10,12 @@
   "stars": 2,
   "dir_name": "quote-bible",
   "github_path": ".claude/skills/quote-bible",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "authenticwalk",
+  "source_url": "https://github.com/authenticwalk/context-grounded-bible/blob/main/.claude/skills/quote-bible/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Authentic Walk Creative",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

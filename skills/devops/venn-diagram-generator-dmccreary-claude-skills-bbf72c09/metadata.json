@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:29.465226Z",
   "github_path": "skills/archived/venn-diagram-generator",
   "github_branch": "main",
-  "dir_name": "venn-diagram-generator-dmccreary-claude-skills-bbf72c09"
+  "dir_name": "venn-diagram-generator-dmccreary-claude-skills-bbf72c09",
+  "author": "dmccreary",
+  "source_url": "https://github.com/dmccreary/claude-skills/blob/main/skills/archived/venn-diagram-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dmccreary/claude-skills/blob/main/skills/archived/venn-diagram-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

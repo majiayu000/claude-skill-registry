@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/building-astro5-blogs",
   "github_branch": "main",
-  "dir_name": "building-astro5-blogs-suntory-n-water-sui-blog"
+  "dir_name": "building-astro5-blogs-suntory-n-water-sui-blog",
+  "author": "Suntory-N-Water",
+  "source_url": "https://github.com/Suntory-N-Water/sui-blog/blob/main/.claude/skills/building-astro5-blogs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 sui",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:10.729154Z",
   "github_path": "skills/development/gitea-tea",
   "github_branch": "main",
-  "dir_name": "gitea-tea-beshkenadze-claude-skills-market"
+  "dir_name": "gitea-tea-beshkenadze-claude-skills-market",
+  "author": "beshkenadze",
+  "source_url": "https://github.com/beshkenadze/claude-skills-marketplace/blob/main/skills/development/gitea-tea/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/beshkenadze/claude-skills-marketplace/blob/main/skills/development/gitea-tea/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

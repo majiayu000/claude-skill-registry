@@ -5,5 +5,12 @@
   "source": "github.com/catlog22/Claude-Code-Workflow",
   "downloaded_at": "2026-02-02T05:01:36.416564Z",
   "dir_name": "ccw-loop-b",
-  "category": "other"
+  "category": "other",
+  "author": "catlog22",
+  "source_url": "https://github.com/catlog22/Claude-Code-Workflow/blob/main/.codex/skills/ccw-loop-b/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Claude Development Guidelines",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

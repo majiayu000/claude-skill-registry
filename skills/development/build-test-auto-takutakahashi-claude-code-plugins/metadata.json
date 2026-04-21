@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:22.386422Z",
   "github_path": "plugins/build-test-tools/skills/build-test-auto",
   "github_branch": "main",
-  "dir_name": "build-test-auto-takutakahashi-claude-code-plugins"
+  "dir_name": "build-test-auto-takutakahashi-claude-code-plugins",
+  "author": "takutakahashi",
+  "source_url": "https://github.com/takutakahashi/claude-code-plugins/blob/main/plugins/build-test-tools/skills/build-test-auto/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 takutakahashi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

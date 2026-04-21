@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/step-by-step",
   "github_branch": "main",
   "dir_name": "step-by-step",
-  "downloaded_at": "2026-02-05T01:44:37.786384Z"
+  "downloaded_at": "2026-02-05T01:44:37.786384Z",
+  "author": "emirrtopaloglu",
+  "source_url": "https://github.com/emirrtopaloglu/claude-code-virtuoso/blob/main/.claude/skills/step-by-step/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Emir Topaloglu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

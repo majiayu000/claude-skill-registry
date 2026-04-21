@@ -9,5 +9,12 @@
   ],
   "stars": 3,
   "source": "local",
-  "dir_name": "terraform-docs"
+  "dir_name": "terraform-docs",
+  "author": "tomique34",
+  "source_url": "https://github.com/tomique34/claude-skill-creator",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 tomique34",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   ],
   "stars": 575,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "landing-page-guide-v2"
+  "dir_name": "landing-page-guide-v2",
+  "author": "bear2u",
+  "source_url": "https://github.com/bear2u/my-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bear2u/my-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

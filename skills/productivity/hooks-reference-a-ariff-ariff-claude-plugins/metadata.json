@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:40.933469Z",
   "github_path": "plugins/hooks-reference/skills/hooks-reference",
   "github_branch": "main",
-  "dir_name": "hooks-reference-a-ariff-ariff-claude-plugins"
+  "dir_name": "hooks-reference-a-ariff-ariff-claude-plugins",
+  "author": "a-ariff",
+  "source_url": "https://github.com/a-ariff/ariff-claude-plugins/blob/main/plugins/hooks-reference/skills/hooks-reference/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ariff",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

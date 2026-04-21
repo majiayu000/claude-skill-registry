@@ -9,5 +9,12 @@
   "github_path": "skills/science-writing",
   "github_branch": "main",
   "dir_name": "science-writing",
-  "downloaded_at": "2026-02-05T01:44:22.856200Z"
+  "downloaded_at": "2026-02-05T01:44:22.856200Z",
+  "author": "fmschulz",
+  "source_url": "https://github.com/fmschulz/omics-skills/blob/main/skills/science-writing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Frederik Schulz",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

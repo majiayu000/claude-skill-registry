@@ -5,5 +5,12 @@
   "source": "github.com/RebelPotato/agent-config",
   "downloaded_at": "2026-02-04T04:21:00.918770Z",
   "dir_name": "browser-tools",
-  "category": "data"
+  "category": "data",
+  "author": "RebelPotato",
+  "source_url": "https://github.com/RebelPotato/agent-config/blob/main/skills/browser-tools/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RebelPotato/agent-config/blob/main/skills/browser-tools/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

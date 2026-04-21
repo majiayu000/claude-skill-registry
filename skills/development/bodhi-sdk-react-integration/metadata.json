@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "bodhi-sdk-react-integration"
+  "dir_name": "bodhi-sdk-react-integration",
+  "author": "BodhiSearch",
+  "source_url": "https://github.com/BodhiSearch/bodhi-js",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 BodhiSearch",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/format-ui-display",
   "github_branch": "main",
-  "dir_name": "format-ui-display"
+  "dir_name": "format-ui-display",
+  "author": "nayukata",
+  "source_url": "https://github.com/nayukata/notify-patch-notes/blob/main/.claude/skills/format-ui-display/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nayukata/notify-patch-notes/blob/main/.claude/skills/format-ui-display/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

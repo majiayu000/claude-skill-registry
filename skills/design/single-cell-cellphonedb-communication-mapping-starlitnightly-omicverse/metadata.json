@@ -5,5 +5,12 @@
   "description": "Run omicverse's CellPhoneDB v5 wrapper on annotated single-cell data to infer ligand-receptor networks and produce CellChat-style visualisations.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:15.292751Z",
-  "dir_name": "single-cell-cellphonedb-communication-mapping-starlitnightly-omicverse"
+  "dir_name": "single-cell-cellphonedb-communication-mapping-starlitnightly-omicverse",
+  "author": "Starlitnightly",
+  "source_url": "https://github.com/Starlitnightly/omicverse",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

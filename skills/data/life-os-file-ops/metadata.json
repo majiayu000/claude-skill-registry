@@ -11,5 +11,12 @@
   "stars": 0,
   "dir_name": "life-os-file-ops",
   "github_path": ".claude/skills/life-os-file-ops",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "yellinzero",
+  "source_url": "https://github.com/yellinzero/your-mind/blob/main/.claude/skills/life-os-file-ops/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Your Mind Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

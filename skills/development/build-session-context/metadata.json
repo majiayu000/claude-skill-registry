@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:40.440928Z",
   "github_path": ".claude/skills/build-session-context",
   "github_branch": "main",
-  "dir_name": "build-session-context"
+  "dir_name": "build-session-context",
+  "author": "dudusoar",
+  "source_url": "https://github.com/dudusoar/VRP-Toolkit/blob/main/.claude/skills/build-session-context/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dudusoar/VRP-Toolkit/blob/main/.claude/skills/build-session-context/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

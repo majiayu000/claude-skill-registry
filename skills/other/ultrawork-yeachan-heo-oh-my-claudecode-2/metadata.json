@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/Yeachan-Heo/oh-my-claudecode",
-  "dir_name": "ultrawork-yeachan-heo-oh-my-claudecode-2"
+  "dir_name": "ultrawork-yeachan-heo-oh-my-claudecode-2",
+  "author": "Yeachan-Heo",
+  "source_url": "https://github.com/Yeachan-Heo/oh-my-claudecode/blob/main/skills/cancel-ultrawork/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Yeachan Heo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

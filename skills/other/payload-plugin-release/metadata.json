@@ -7,5 +7,12 @@
   "dir_name": "payload-plugin-release",
   "category": "other",
   "github_path": ".claude/skills/payload-plugin-release",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "aniketpanjwani",
+  "source_url": "https://github.com/aniketpanjwani/payload-plugin-email-newsletter/blob/main/.claude/skills/payload-plugin-release/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Aniket Panjwani",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

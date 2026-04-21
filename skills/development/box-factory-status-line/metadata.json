@@ -5,5 +5,12 @@
   "description": "Practical guidance for Claude Code status lines - what to display for real workflow benefits, not just configuration syntax. Use when setting up status lines or wondering what information would actual",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:46.412973Z",
-  "dir_name": "box-factory-status-line"
+  "dir_name": "box-factory-status-line",
+  "author": "racurry",
+  "source_url": "https://github.com/racurry/neat-little-package",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/racurry/neat-little-package",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

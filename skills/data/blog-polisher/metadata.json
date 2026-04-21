@@ -5,5 +5,12 @@
   "description": "Polish technical blog posts to be more professional, logical, and well-structured, removing \"AI flavor\".",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:16.309439Z",
-  "dir_name": "blog-polisher"
+  "dir_name": "blog-polisher",
+  "author": "unix2dos",
+  "source_url": "https://github.com/unix2dos/skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 liuwei",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

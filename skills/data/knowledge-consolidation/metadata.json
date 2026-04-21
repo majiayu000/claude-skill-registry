@@ -9,5 +9,12 @@
   ],
   "stars": 62,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "knowledge-consolidation"
+  "dir_name": "knowledge-consolidation",
+  "author": "huytieu",
+  "source_url": "https://github.com/huytieu/COG-second-brain",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Huy Tieu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

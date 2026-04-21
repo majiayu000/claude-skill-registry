@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:04.737464Z",
   "github_path": "skills/docent/process-journals",
   "github_branch": "main",
-  "dir_name": "process-journals-tnez-docent"
+  "dir_name": "process-journals-tnez-docent",
+  "author": "tnez",
+  "source_url": "https://github.com/tnez/docent/blob/main/skills/docent/process-journals/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 tnezdev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

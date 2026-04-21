@@ -5,5 +5,12 @@
   "description": "寻找庇护所 - 帮助Stella在盖亚星球度过第一个夜晚,寻找或建造安全的临时住所",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:15.472204Z",
-  "dir_name": "finding-shelter"
+  "dir_name": "finding-shelter",
+  "author": "ClaudeCode-NPC",
+  "source_url": "https://github.com/ClaudeCode-NPC/Whispers-from-the-Star",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ClaudeCode-NPC/Whispers-from-the-Star",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

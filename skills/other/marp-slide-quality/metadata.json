@@ -5,5 +5,12 @@
   "source": "github.com/nibzard/skills-marketplace",
   "downloaded_at": "2026-02-02T02:51:13.614949Z",
   "dir_name": "marp-slide-quality",
-  "category": "other"
+  "category": "other",
+  "author": "nibzard",
+  "source_url": "https://github.com/nibzard/skills-marketplace/blob/main/skills/marp-slide-quality/skills/marp-slide-quality/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Skills Kit",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

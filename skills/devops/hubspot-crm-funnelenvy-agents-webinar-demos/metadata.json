@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/hubspot-crm",
   "github_branch": "main",
-  "dir_name": "hubspot-crm-funnelenvy-agents-webinar-demos"
+  "dir_name": "hubspot-crm-funnelenvy-agents-webinar-demos",
+  "author": "FunnelEnvy",
+  "source_url": "https://github.com/FunnelEnvy/agents_webinar_demos/blob/main/.claude/skills/hubspot-crm/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Arun Sivashankaran",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

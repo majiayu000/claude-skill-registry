@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "foreclosure-analysis-skill"
+  "dir_name": "foreclosure-analysis-skill",
+  "author": "breverdbidder",
+  "source_url": "https://github.com/breverdbidder/brevard-bidder-landing",
+  "license": "NOASSERTION",
+  "copyright": "Copyright © 2025 Ariel Shapira. All Rights Reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": "skills/learning-design-checklist",
   "github_branch": "main",
-  "dir_name": "learning-design-checklist-vishalsachdev-learning-design-pill-cf9584e5"
+  "dir_name": "learning-design-checklist-vishalsachdev-learning-design-pill-cf9584e5",
+  "author": "vishalsachdev",
+  "source_url": "https://github.com/vishalsachdev/learning-design-pillars/blob/main/skills/learning-design-checklist/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Vishal Sachdev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

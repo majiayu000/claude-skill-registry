@@ -7,5 +7,12 @@
   "stars": 1,
   "source": "github.com/santosrai/santosrai.github.io",
   "downloaded_at": "2026-01-24T16:16:04.294447Z",
-  "dir_name": "blog-post-formatter-santosrai-santosrai-github-io"
+  "dir_name": "blog-post-formatter-santosrai-santosrai-github-io",
+  "author": "santosrai",
+  "source_url": "https://github.com/santosrai/santosrai.github.io/blob/main/.codex/skills/blog-post-formatter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/santosrai/santosrai.github.io/blob/main/.codex/skills/blog-post-formatter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

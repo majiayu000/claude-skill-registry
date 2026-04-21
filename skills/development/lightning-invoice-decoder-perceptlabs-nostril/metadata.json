@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:30.050309Z",
   "github_path": "skills/lightning-invoice-decoder",
   "github_branch": "main",
-  "dir_name": "lightning-invoice-decoder-perceptlabs-nostril"
+  "dir_name": "lightning-invoice-decoder-perceptlabs-nostril",
+  "author": "PerceptLabs",
+  "source_url": "https://github.com/PerceptLabs/nostril/blob/main/skills/lightning-invoice-decoder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PerceptLabs/nostril/blob/main/skills/lightning-invoice-decoder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

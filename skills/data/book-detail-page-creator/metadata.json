@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "book-detail-page-creator",
   "github_path": "",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "ychoi-kr",
+  "source_url": "https://github.com/ychoi-kr/claude-book-detail-page-creator-skill",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ychoi-kr/claude-book-detail-page-creator-skill",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

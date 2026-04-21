@@ -5,5 +5,12 @@
   "description": "Create targeted repomix XML packages for AI code analysis. Suggests templates (metadata-flow, code-review, architecture, context) and file patterns based on task objectives. See reference.md for detai",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:29.095453Z",
-  "dir_name": "repomix-package-builder"
+  "dir_name": "repomix-package-builder",
+  "author": "paunchygent",
+  "source_url": "https://github.com/paunchygent/skriptoteket",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/paunchygent/skriptoteket",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

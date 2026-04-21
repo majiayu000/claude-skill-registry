@@ -7,5 +7,12 @@
   "stars": 1338,
   "source": "github.com/dvdsgl/claude-canvas",
   "downloaded_at": "2026-01-24T16:15:48.050293Z",
-  "dir_name": "calendar-dvdsgl-claude-canvas"
+  "dir_name": "calendar-dvdsgl-claude-canvas",
+  "author": "dvdsgl",
+  "source_url": "https://github.com/dvdsgl/claude-canvas/blob/main/canvas/skills/calendar/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 David Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

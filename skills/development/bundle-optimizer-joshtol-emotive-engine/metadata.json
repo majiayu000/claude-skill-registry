@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/bundle-optimizer",
   "github_branch": "main",
-  "dir_name": "bundle-optimizer-joshtol-emotive-engine"
+  "dir_name": "bundle-optimizer-joshtol-emotive-engine",
+  "author": "joshtol",
+  "source_url": "https://github.com/joshtol/emotive-engine/blob/main/skills/bundle-optimizer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Joshua Tollette",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

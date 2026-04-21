@@ -7,5 +7,12 @@
   "dir_name": "writing-for-llms-technickai-ai-coding-config",
   "category": "other",
   "github_path": "plugins/core/skills/writing-for-llms",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "TechNickAI",
+  "source_url": "https://github.com/TechNickAI/ai-coding-config/blob/main/plugins/core/skills/writing-for-llms/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nick",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

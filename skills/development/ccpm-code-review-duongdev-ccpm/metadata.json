@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/ccpm-code-review",
   "github_branch": "main",
-  "dir_name": "ccpm-code-review-duongdev-ccpm"
+  "dir_name": "ccpm-code-review-duongdev-ccpm",
+  "author": "duongdev",
+  "source_url": "https://github.com/duongdev/ccpm/blob/main/skills/ccpm-code-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dustin Do",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

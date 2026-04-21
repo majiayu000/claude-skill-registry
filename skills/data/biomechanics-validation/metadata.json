@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/feniix/kinemotion",
-  "dir_name": "biomechanics-validation"
+  "dir_name": "biomechanics-validation",
+  "author": "feniix",
+  "source_url": "https://github.com/feniix/kinemotion",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Drop-Jump Analysis Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

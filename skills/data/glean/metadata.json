@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/duong/dotfiles",
-  "dir_name": "glean"
+  "dir_name": "glean",
+  "author": "duong",
+  "source_url": "https://github.com/duong/dotfiles",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/duong/dotfiles",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

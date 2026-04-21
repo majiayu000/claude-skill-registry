@@ -7,5 +7,12 @@
   "dir_name": "mpep-search",
   "category": "other",
   "github_path": "skills/mpep-search",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "RobThePCGuy",
+  "source_url": "https://github.com/RobThePCGuy/Claude-Patent-Creator/blob/main/skills/mpep-search/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Rob Adams Jr",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

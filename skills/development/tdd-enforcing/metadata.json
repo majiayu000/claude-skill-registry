@@ -5,5 +5,12 @@
   "description": "Use when implementing features, fixing bugs, or making code changes. Ensures scope is defined before coding, then enforces RED → GREEN → REFACTOR test discipline. Triggers: 'implement', 'add', 'build'",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:11:09.870233Z",
-  "dir_name": "tdd-enforcing"
+  "dir_name": "tdd-enforcing",
+  "author": "TheMostlyGreat",
+  "source_url": "https://github.com/TheMostlyGreat/safeword",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TheMostlyGreat/safeword",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

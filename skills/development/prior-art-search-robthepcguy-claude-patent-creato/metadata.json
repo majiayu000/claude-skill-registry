@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": "skills/prior-art-search",
   "github_branch": "main",
-  "dir_name": "prior-art-search-robthepcguy-claude-patent-creato"
+  "dir_name": "prior-art-search-robthepcguy-claude-patent-creato",
+  "author": "RobThePCGuy",
+  "source_url": "https://github.com/RobThePCGuy/Claude-Patent-Creator/blob/main/skills/prior-art-search/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Rob Adams Jr",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

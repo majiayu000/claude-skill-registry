@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:29.042430Z",
   "github_path": "skills/match",
   "github_branch": "main",
-  "dir_name": "match-greenstevester-fastlane-skill"
+  "dir_name": "match-greenstevester-fastlane-skill",
+  "author": "greenstevester",
+  "source_url": "https://github.com/greenstevester/fastlane-skill/blob/main/skills/match/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 greenstevester",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

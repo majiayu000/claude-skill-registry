@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/bug-health-inline",
   "github_branch": "main",
   "dir_name": "bug-health-inline",
-  "downloaded_at": "2026-02-05T05:10:23.563816Z"
+  "downloaded_at": "2026-02-05T05:10:23.563816Z",
+  "author": "maslennikov-ig",
+  "source_url": "https://github.com/maslennikov-ig/BuhBot/blob/main/.claude/skills/bug-health-inline/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Igor Maslennikov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

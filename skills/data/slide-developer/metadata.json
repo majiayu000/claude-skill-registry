@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "slide-developer"
+  "dir_name": "slide-developer",
+  "author": "ludovicfourrage",
+  "source_url": "https://github.com/ludovicfourrage/slide-vibing",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ludovicfourrage/slide-vibing",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

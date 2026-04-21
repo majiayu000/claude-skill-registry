@@ -5,5 +5,12 @@
   "description": "Guides npm package maintenance tasks. Use when user mentions outdated packages, npm audit, security vulnerabilities, dependency updates, package optimization, unused dependencies, or devDependencies c",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:46.723332Z",
-  "dir_name": "npm-package-maintenance"
+  "dir_name": "npm-package-maintenance",
+  "author": "lenneTech",
+  "source_url": "https://github.com/lenneTech/claude-code",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 lenne.tech GmbH",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

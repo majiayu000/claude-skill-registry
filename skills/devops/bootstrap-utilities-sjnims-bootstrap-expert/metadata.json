@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:54.649720Z",
   "github_path": "plugins/bootstrap-expert/skills/bootstrap-utilities",
   "github_branch": "main",
-  "dir_name": "bootstrap-utilities-sjnims-bootstrap-expert"
+  "dir_name": "bootstrap-utilities-sjnims-bootstrap-expert",
+  "author": "sjnims",
+  "source_url": "https://github.com/sjnims/bootstrap-expert/blob/main/plugins/bootstrap-expert/skills/bootstrap-utilities/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Steve Nims",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

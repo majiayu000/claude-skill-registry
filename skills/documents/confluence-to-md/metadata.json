@@ -5,5 +5,12 @@
   "description": "Confluence ページを Markdown に変換するスキル - draw.io 図、画像、コードブロック、テーブルを適切に処理",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:17.624342Z",
-  "dir_name": "confluence-to-md"
+  "dir_name": "confluence-to-md",
+  "author": "i9wa4",
+  "source_url": "https://github.com/i9wa4/dotfiles",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 i9wa4",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

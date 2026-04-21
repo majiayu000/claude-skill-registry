@@ -11,5 +11,12 @@
   "stars": 4,
   "github_path": "google-image-search",
   "github_branch": "main",
-  "dir_name": "google-image-search-glebis-claude-skills"
+  "dir_name": "google-image-search-glebis-claude-skills",
+  "author": "glebis",
+  "source_url": "https://github.com/glebis/claude-skills/blob/main/google-image-search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/glebis/claude-skills/blob/main/google-image-search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

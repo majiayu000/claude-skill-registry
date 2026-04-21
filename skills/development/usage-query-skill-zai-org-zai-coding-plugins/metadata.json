@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:25.839776Z",
   "github_path": "plugins/glm-plan-usage/skills/usage-query-skill",
   "github_branch": "main",
-  "dir_name": "usage-query-skill-zai-org-zai-coding-plugins"
+  "dir_name": "usage-query-skill-zai-org-zai-coding-plugins",
+  "author": "zai-org",
+  "source_url": "https://github.com/zai-org/zai-coding-plugins/blob/main/plugins/glm-plan-usage/skills/usage-query-skill/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Zhipu AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

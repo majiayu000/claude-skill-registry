@@ -5,5 +5,12 @@
   "source": "github.com/yohayetsion/product-org-os",
   "downloaded_at": "2026-01-27T02:44:18.208268Z",
   "dir_name": "gtm-strategy",
-  "category": "data"
+  "category": "data",
+  "author": "yohayetsion",
+  "source_url": "https://github.com/yohayetsion/product-org-os/blob/main/product-org-plugin/skills/gtm-strategy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Yohay Etsion",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

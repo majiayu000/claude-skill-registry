@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/remotion-best-practices",
   "github_branch": "main",
   "dir_name": "remotion-best-practices-hathbanger-fridas-choppers-gtm",
-  "downloaded_at": "2026-02-05T05:41:55.119391Z"
+  "downloaded_at": "2026-02-05T05:41:55.119391Z",
+  "author": "hathbanger",
+  "source_url": "https://github.com/hathbanger/fridas-choppers-gtm/blob/main/.claude/skills/remotion-best-practices/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hathbanger/fridas-choppers-gtm/blob/main/.claude/skills/remotion-best-practices/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "Use PROACTIVELY this agent when you need to design and create optimal Claude Code subagents, update existing agents with new capabilities, revise agent configurations, analyze project requirements to ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:26.531421Z",
-  "dir_name": "agent-management"
+  "dir_name": "agent-management",
+  "author": "Emz1998",
+  "source_url": "https://github.com/Emz1998/avaris-ai",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Emz1998/avaris-ai",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

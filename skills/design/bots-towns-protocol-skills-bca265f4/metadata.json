@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:15.886892Z",
   "github_path": "skills/bots",
   "github_branch": "main",
-  "dir_name": "bots-towns-protocol-skills-bca265f4"
+  "dir_name": "bots-towns-protocol-skills-bca265f4",
+  "author": "towns-protocol",
+  "source_url": "https://github.com/towns-protocol/skills/blob/main/skills/bots/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/towns-protocol/skills/blob/main/skills/bots/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "scaffolding-openai-agents-abdullahmalik17-hacathan-2-10c9fa76",
   "category": "other",
   "github_path": ".gemini/skills/scaffolding-openai-agents",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "AbdullahMalik17",
+  "source_url": "https://github.com/AbdullahMalik17/Hacathan-2-/blob/main/.gemini/skills/scaffolding-openai-agents/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Muhammad Abdullah Athar",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

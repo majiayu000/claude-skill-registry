@@ -5,5 +5,12 @@
   "source": "github.com/phpmac/trader",
   "downloaded_at": "2026-02-02T03:59:15.915573Z",
   "dir_name": "unknown-phpmac-trader-4fc9e36e",
-  "category": "other"
+  "category": "other",
+  "author": "phpmac",
+  "source_url": "https://github.com/phpmac/trader/blob/main/.claude/skills/币安合约交易/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/phpmac/trader/blob/main/.claude/skills/币安合约交易/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

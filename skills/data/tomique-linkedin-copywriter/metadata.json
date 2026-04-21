@@ -11,5 +11,12 @@
   "stars": 3,
   "dir_name": "tomique-linkedin-copywriter",
   "github_path": "tomique-linkedin-copywriter",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "tomique34",
+  "source_url": "https://github.com/tomique34/claude-skill-creator/blob/main/tomique-linkedin-copywriter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 tomique34",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

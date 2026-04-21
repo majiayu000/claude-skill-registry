@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:17.889284Z",
   "github_path": "config/claude/skills/daily-report",
   "github_branch": "main",
-  "dir_name": "daily-report-i9wa4-dotfiles"
+  "dir_name": "daily-report-i9wa4-dotfiles",
+  "author": "i9wa4",
+  "source_url": "https://github.com/i9wa4/dotfiles/blob/main/config/claude/skills/daily-report/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 i9wa4",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

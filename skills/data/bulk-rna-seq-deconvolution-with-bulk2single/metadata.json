@@ -5,5 +5,12 @@
   "description": "Turn bulk RNA-seq cohorts into synthetic single-cell datasets using omicverse's Bulk2Single workflow for cell fraction estimation, beta-VAE generation, and quality control comparisons against referenc",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:15.289314Z",
-  "dir_name": "bulk-rna-seq-deconvolution-with-bulk2single"
+  "dir_name": "bulk-rna-seq-deconvolution-with-bulk2single",
+  "author": "Starlitnightly",
+  "source_url": "https://github.com/Starlitnightly/omicverse",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

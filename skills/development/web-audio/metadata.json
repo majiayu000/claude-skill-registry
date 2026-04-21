@@ -5,5 +5,12 @@
   "description": "Use when working with Web Audio API. Applies AudioContext management, signal routing, AudioWorklet patterns, and audio cleanup best practices.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:39.375309Z",
-  "dir_name": "web-audio"
+  "dir_name": "web-audio",
+  "author": "sreejithraman",
+  "source_url": "https://github.com/sreejithraman/shayna",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sreejithraman/shayna",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

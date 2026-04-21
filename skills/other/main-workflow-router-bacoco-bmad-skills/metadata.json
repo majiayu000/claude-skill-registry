@@ -7,5 +7,12 @@
   "dir_name": "main-workflow-router-bacoco-bmad-skills",
   "category": "other",
   "github_path": ".claude/skills/main-workflow-router",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "bacoco",
+  "source_url": "https://github.com/bacoco/BMad-Skills/blob/main/.claude/skills/main-workflow-router/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 BMAD Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

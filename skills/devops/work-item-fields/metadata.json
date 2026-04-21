@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "work-item-fields"
+  "dir_name": "work-item-fields",
+  "author": "JoshuaRamirez",
+  "source_url": "https://github.com/JoshuaRamirez/ms-ado-az-claude-code-plugin",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Joshua Ramirez",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

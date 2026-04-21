@@ -5,5 +5,12 @@
   "source": "github.com/kingpinzs/claude_parallel_templates",
   "downloaded_at": "2026-01-28T02:19:51.462761Z",
   "dir_name": "spec-parallel",
-  "category": "data"
+  "category": "data",
+  "author": "kingpinzs",
+  "source_url": "https://github.com/kingpinzs/claude_parallel_templates/blob/main/spec-kit/.claude/skills/spec-parallel/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kingpinzs/claude_parallel_templates/blob/main/spec-kit/.claude/skills/spec-parallel/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "byterover-notion-sync",
   "github_branch": "main",
-  "dir_name": "byterover-notion-sync-ryanng1403-byterover-skills"
+  "dir_name": "byterover-notion-sync-ryanng1403-byterover-skills",
+  "author": "RyanNg1403",
+  "source_url": "https://github.com/RyanNg1403/byterover-skills/blob/main/byterover-notion-sync/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Byterover Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

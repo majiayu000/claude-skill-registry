@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/canvas-course-audit",
   "github_branch": "main",
-  "dir_name": "canvas-course-audit-vishalsachdev-learning-design-pill-5494d18e"
+  "dir_name": "canvas-course-audit-vishalsachdev-learning-design-pill-5494d18e",
+  "author": "vishalsachdev",
+  "source_url": "https://github.com/vishalsachdev/learning-design-pillars/blob/main/skills/canvas-course-audit/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Vishal Sachdev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

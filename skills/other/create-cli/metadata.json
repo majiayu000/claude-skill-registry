@@ -5,5 +5,12 @@
   "source": "github.com/nickromney/n-dotfiles",
   "downloaded_at": "2026-02-02T04:50:14.774735Z",
   "dir_name": "create-cli",
-  "category": "other"
+  "category": "other",
+  "author": "nickromney",
+  "source_url": "https://github.com/nickromney/n-dotfiles/blob/main/skills/create-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nickromney/n-dotfiles/blob/main/skills/create-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

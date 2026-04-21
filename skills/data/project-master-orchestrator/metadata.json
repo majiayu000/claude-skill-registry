@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/Zura1555/agents",
-  "dir_name": "project-master-orchestrator"
+  "dir_name": "project-master-orchestrator",
+  "author": "Zura1555",
+  "source_url": "https://github.com/Zura1555/agents",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Zura1555/agents",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

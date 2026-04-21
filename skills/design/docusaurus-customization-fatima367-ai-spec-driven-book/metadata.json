@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "docusaurus-customization-fatima367-ai-spec-driven-book"
+  "dir_name": "docusaurus-customization-fatima367-ai-spec-driven-book",
+  "author": "Fatima367",
+  "source_url": "https://github.com/Fatima367/AI-Spec-Driven-Book",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Fatima367/AI-Spec-Driven-Book",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

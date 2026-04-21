@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:35.726529Z",
   "github_path": "plugins/dev-toolkit/skills/bun-fs-helpers",
   "github_branch": "main",
-  "dir_name": "bun-fs-helpers-nathanvale-side-quest-marketpla-bfd9d9ab"
+  "dir_name": "bun-fs-helpers-nathanvale-side-quest-marketpla-bfd9d9ab",
+  "author": "nathanvale",
+  "source_url": "https://github.com/nathanvale/side-quest-marketplace/blob/main/plugins/dev-toolkit/skills/bun-fs-helpers/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nathan Vale",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

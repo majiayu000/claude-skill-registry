@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:24:54.657708Z",
   "github_path": ".claude/skills/code-review-skill",
   "github_branch": "main",
-  "dir_name": "code-review-skill"
+  "dir_name": "code-review-skill",
+  "author": "mcsdodo",
+  "source_url": "https://github.com/mcsdodo/kniha-jazd/blob/main/.claude/skills/code-review-skill/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

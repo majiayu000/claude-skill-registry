@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "favicon-pwa"
+  "dir_name": "favicon-pwa",
+  "author": "Manuelvillarvieites",
+  "source_url": "https://github.com/Manuelvillarvieites/energy-company",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Manuelvillarvieites/energy-company",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

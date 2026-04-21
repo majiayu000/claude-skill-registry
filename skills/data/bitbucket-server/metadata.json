@@ -9,5 +9,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "bitbucket-server"
+  "dir_name": "bitbucket-server",
+  "author": "skempken",
+  "source_url": "https://github.com/skempken/bitbucket-server",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sebastian Kempken",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   ],
   "stars": 1,
   "source": "local",
-  "dir_name": "openspec-change-closure"
+  "dir_name": "openspec-change-closure",
+  "author": "bacoco",
+  "source_url": "https://github.com/bacoco/BMad-Skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 BMAD Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

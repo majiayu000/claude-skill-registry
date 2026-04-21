@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/TechNickAI/ai-coding-config",
-  "dir_name": "mcp-debug-technickai-ai-coding-config-2"
+  "dir_name": "mcp-debug-technickai-ai-coding-config-2",
+  "author": "TechNickAI",
+  "source_url": "https://github.com/TechNickAI/ai-coding-config/blob/main/plugins/core/skills/mcp-debug/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nick",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

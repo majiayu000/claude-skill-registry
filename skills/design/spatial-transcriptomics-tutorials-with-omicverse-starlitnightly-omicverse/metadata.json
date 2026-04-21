@@ -5,5 +5,12 @@
   "description": "Guide users through omicverse's spatial transcriptomics tutorials covering preprocessing, deconvolution, and downstream modelling workflows across Visium, Visium HD, Stereo-seq, and Slide-seq datasets",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:15.675043Z",
-  "dir_name": "spatial-transcriptomics-tutorials-with-omicverse-starlitnightly-omicverse"
+  "dir_name": "spatial-transcriptomics-tutorials-with-omicverse-starlitnightly-omicverse",
+  "author": "Starlitnightly",
+  "source_url": "https://github.com/Starlitnightly/omicverse",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/FortiumPartners/ensemble",
   "downloaded_at": "2026-02-02T02:37:37.597858Z",
   "dir_name": "using-anthropic-platform",
-  "category": "other"
+  "category": "other",
+  "author": "FortiumPartners",
+  "source_url": "https://github.com/FortiumPartners/ensemble/blob/main/packages/ai/skills/using-anthropic-platform/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Fortium Partners",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

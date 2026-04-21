@@ -5,5 +5,12 @@
   "source": "github.com/cgjen-box/evolea-website",
   "downloaded_at": "2026-01-29T02:57:09.588441Z",
   "dir_name": "website-review",
-  "category": "data"
+  "category": "data",
+  "author": "cgjen-box",
+  "source_url": "https://github.com/cgjen-box/evolea-website/blob/main/.claude/skills/website-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgjen-box/evolea-website/blob/main/.claude/skills/website-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

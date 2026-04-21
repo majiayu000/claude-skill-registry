@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:26.609517Z",
   "dir_name": "verification-sweep",
   "github_path": "tommymorgan/planning/skills/verification-sweep",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "tommymorgan",
+  "source_url": "https://github.com/tommymorgan/claude-plugins/blob/main/tommymorgan/planning/skills/verification-sweep/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tommy Morgan",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

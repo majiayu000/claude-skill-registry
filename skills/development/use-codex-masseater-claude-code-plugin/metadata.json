@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:00.171205Z",
   "github_path": "plugins/use-codex/skills/use-codex",
   "github_branch": "main",
-  "dir_name": "use-codex-masseater-claude-code-plugin"
+  "dir_name": "use-codex-masseater-claude-code-plugin",
+  "author": "masseater",
+  "source_url": "https://github.com/masseater/claude-code-plugin/blob/main/plugins/use-codex/skills/use-codex/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/masseater/claude-code-plugin/blob/main/plugins/use-codex/skills/use-codex/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -9,5 +9,12 @@
   "github_path": "skills/web-fetch",
   "github_branch": "master",
   "dir_name": "web-fetch",
-  "downloaded_at": "2026-02-05T01:45:06.246741Z"
+  "downloaded_at": "2026-02-05T01:45:06.246741Z",
+  "author": "zhayujie",
+  "source_url": "https://github.com/zhayujie/chatgpt-on-wechat/blob/master/skills/web-fetch/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 zhayujie",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

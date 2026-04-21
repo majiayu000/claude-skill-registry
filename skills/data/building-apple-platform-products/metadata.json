@@ -11,5 +11,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "building-apple-platform-products"
+  "dir_name": "building-apple-platform-products",
+  "author": "kylehughes",
+  "source_url": "https://github.com/kylehughes/apple-platform-build-tools-claude-code-plugin",
+  "license": "MIT",
+  "copyright": "Copyright 2025 Kyle Hughes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

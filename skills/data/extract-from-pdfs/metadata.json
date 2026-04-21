@@ -5,5 +5,12 @@
   "description": "This skill should be used when extracting structured data from scientific PDFs for systematic reviews, meta-analyses, or database creation. Use when working with collections of research papers that ne",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:01:38.335662Z",
-  "dir_name": "extract-from-pdfs"
+  "dir_name": "extract-from-pdfs",
+  "author": "brunoasm",
+  "source_url": "https://github.com/brunoasm/my_claude_skills",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brunoasm/my_claude_skills",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "cashflow-scheduler",
   "github_branch": "main",
-  "dir_name": "cashflow-scheduler-spaceplushy-cashflow-scheduler"
+  "dir_name": "cashflow-scheduler-spaceplushy-cashflow-scheduler",
+  "author": "SpacePlushy",
+  "source_url": "https://github.com/SpacePlushy/cashflow-scheduler/blob/main/cashflow-scheduler/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SpacePlushy/cashflow-scheduler/blob/main/cashflow-scheduler/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

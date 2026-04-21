@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/uloop-unity-search",
   "github_branch": "main",
-  "dir_name": "uloop-unity-search-hatayama-uloopmcp-dc6ccedc"
+  "dir_name": "uloop-unity-search-hatayama-uloopmcp-dc6ccedc",
+  "author": "hatayama",
+  "source_url": "https://github.com/hatayama/uLoopMCP/blob/main/.claude/skills/uloop-unity-search/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Masamichi Hatayama",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

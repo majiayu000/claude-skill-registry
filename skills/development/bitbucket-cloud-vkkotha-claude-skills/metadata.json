@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:59.107182Z",
   "github_path": "bitbucket-plugin/skills/bitbucket-cloud",
   "github_branch": "main",
-  "dir_name": "bitbucket-cloud-vkkotha-claude-skills"
+  "dir_name": "bitbucket-cloud-vkkotha-claude-skills",
+  "author": "vkkotha",
+  "source_url": "https://github.com/vkkotha/claude-skills/blob/main/bitbucket-plugin/skills/bitbucket-cloud/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

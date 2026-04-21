@@ -5,5 +5,12 @@
   "source": "github.com/hankh95/yurtle-kanban",
   "downloaded_at": "2026-02-04T02:13:58.537722Z",
   "dir_name": "expedition",
-  "category": "data"
+  "category": "data",
+  "author": "hankh95",
+  "source_url": "https://github.com/hankh95/yurtle-kanban/blob/main/skills/expedition/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Hank Head",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

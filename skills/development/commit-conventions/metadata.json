@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:53.509007Z",
   "github_path": "development/.claude/skills/commit-conventions",
   "github_branch": "main",
-  "dir_name": "commit-conventions"
+  "dir_name": "commit-conventions",
+  "author": "amattas",
+  "source_url": "https://github.com/amattas/agentic-coding/blob/main/development/.claude/skills/commit-conventions/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

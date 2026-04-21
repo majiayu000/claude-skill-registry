@@ -5,5 +5,12 @@
   "source": "github.com/kis9a/claude-skills-demo",
   "downloaded_at": "2026-02-02T02:44:30.744760Z",
   "dir_name": "issue-fix",
-  "category": "other"
+  "category": "other",
+  "author": "kis9a",
+  "source_url": "https://github.com/kis9a/claude-skills-demo/blob/main/.claude/skills/issue-fix/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kis9a/claude-skills-demo/blob/main/.claude/skills/issue-fix/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

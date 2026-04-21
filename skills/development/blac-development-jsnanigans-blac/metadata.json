@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:12.917386Z",
   "github_path": ".claude/skills/blac-development",
   "github_branch": "main",
-  "dir_name": "blac-development-jsnanigans-blac"
+  "dir_name": "blac-development-jsnanigans-blac",
+  "author": "jsnanigans",
+  "source_url": "https://github.com/jsnanigans/blac/blob/main/.claude/skills/blac-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) Facebook, Inc. and its affiliates.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

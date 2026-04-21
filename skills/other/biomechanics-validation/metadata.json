@@ -7,5 +7,12 @@
   "dir_name": "biomechanics-validation",
   "category": "other",
   "github_path": ".gemini/skills/biomechanics-validation",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "feniix",
+  "source_url": "https://github.com/feniix/kinemotion/blob/main/.gemini/skills/biomechanics-validation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Drop-Jump Analysis Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

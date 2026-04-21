@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/lambda-curry/devagent",
-  "dir_name": "quality-gate-detection"
+  "dir_name": "quality-gate-detection",
+  "author": "lambda-curry",
+  "source_url": "https://github.com/lambda-curry/devagent",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lambda-curry/devagent",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

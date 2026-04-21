@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "bcpao-data-extraction-skill",
   "github_path": ".claude/skills/bcpao-data-extraction-skill",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "breverdbidder",
+  "source_url": "https://github.com/breverdbidder/brevard-bidder-landing/blob/main/.claude/skills/bcpao-data-extraction-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright © 2025 Ariel Shapira. All Rights Reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

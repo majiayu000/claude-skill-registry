@@ -5,5 +5,12 @@
   "description": "风暴求生 - 盖亚星球遭遇极端天气,Stella必须在双星磁暴和狂风暴雨中保护自己和营地",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:15.553698Z",
-  "dir_name": "surviving-the-storm"
+  "dir_name": "surviving-the-storm",
+  "author": "ClaudeCode-NPC",
+  "source_url": "https://github.com/ClaudeCode-NPC/Whispers-from-the-Star",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ClaudeCode-NPC/Whispers-from-the-Star",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

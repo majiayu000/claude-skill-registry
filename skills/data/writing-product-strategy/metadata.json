@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/nuggetswise/pmos",
-  "dir_name": "writing-product-strategy"
+  "dir_name": "writing-product-strategy",
+  "author": "nuggetswise",
+  "source_url": "https://github.com/nuggetswise/pmos",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jesse Vincent",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

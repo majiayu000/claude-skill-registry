@@ -7,5 +7,12 @@
   "dir_name": "retention-optimization-expert",
   "category": "other",
   "github_path": "skills/retention-metrics/retention-optimization-expert",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "maigentic",
+  "source_url": "https://github.com/maigentic/stratarts/blob/main/skills/retention-metrics/retention-optimization-expert/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 maigentic",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

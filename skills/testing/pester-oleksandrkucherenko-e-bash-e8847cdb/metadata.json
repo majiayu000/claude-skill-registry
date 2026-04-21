@@ -9,5 +9,12 @@
   "stars": 16,
   "github_path": ".claude/skills/pester",
   "github_branch": "main",
-  "dir_name": "pester-oleksandrkucherenko-e-bash-e8847cdb"
+  "dir_name": "pester-oleksandrkucherenko-e-bash-e8847cdb",
+  "author": "OleksandrKucherenko",
+  "source_url": "https://github.com/OleksandrKucherenko/e-bash/blob/main/.claude/skills/pester/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2017-current Oleksandr Kucherenko",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

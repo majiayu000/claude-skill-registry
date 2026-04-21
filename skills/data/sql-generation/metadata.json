@@ -5,5 +5,12 @@
   "description": "SQL Specialist for BigQuery SQL statement implementation including ad-hoc analysis, materialized views, and data preparation. Use when generating or modifying BigQuery SQL code.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:08:29.488206Z",
-  "dir_name": "sql-generation"
+  "dir_name": "sql-generation",
+  "author": "smorand",
+  "source_url": "https://github.com/smorand/claude-config",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/smorand/claude-config",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

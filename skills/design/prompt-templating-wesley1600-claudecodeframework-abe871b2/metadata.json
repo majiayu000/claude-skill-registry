@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/prompt-templating",
   "github_branch": "main",
-  "dir_name": "prompt-templating-wesley1600-claudecodeframework-abe871b2"
+  "dir_name": "prompt-templating-wesley1600-claudecodeframework-abe871b2",
+  "author": "Wesley1600",
+  "source_url": "https://github.com/Wesley1600/ClaudeCodeFrameWork/blob/main/.claude/skills/prompt-templating/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Wesley1600/ClaudeCodeFrameWork/blob/main/.claude/skills/prompt-templating/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

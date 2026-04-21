@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "api-docs-generator",
   "github_branch": "main",
-  "dir_name": "api-docs-generator-tomique34-claude-skill-creator"
+  "dir_name": "api-docs-generator-tomique34-claude-skill-creator",
+  "author": "tomique34",
+  "source_url": "https://github.com/tomique34/claude-skill-creator/blob/main/api-docs-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 tomique34",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

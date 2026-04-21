@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/Embassy-of-the-Free-Mind/sourcelibrary-v2",
-  "dir_name": "batch-translate-embassy-of-the-free--sourcelibrary-v2-2"
+  "dir_name": "batch-translate-embassy-of-the-free--sourcelibrary-v2-2",
+  "author": "Embassy-of-the-Free-Mind",
+  "source_url": "https://github.com/Embassy-of-the-Free-Mind/sourcelibrary-v2/blob/main/.claude/skills/batch-translate/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

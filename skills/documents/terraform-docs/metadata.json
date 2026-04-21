@@ -10,5 +10,12 @@
   "stars": 3,
   "github_path": "terraform-docs",
   "github_branch": "main",
-  "dir_name": "terraform-docs"
+  "dir_name": "terraform-docs",
+  "author": "tomique34",
+  "source_url": "https://github.com/tomique34/claude-skill-creator/blob/main/terraform-docs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 tomique34",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "css-development-2389-research-claude-plugins"
+  "dir_name": "css-development-2389-research-claude-plugins",
+  "author": "2389-research",
+  "source_url": "https://github.com/2389-research/claude-plugins",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 2389 Research, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

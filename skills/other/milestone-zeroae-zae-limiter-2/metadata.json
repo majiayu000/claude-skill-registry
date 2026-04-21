@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/zeroae/zae-limiter",
-  "dir_name": "milestone-zeroae-zae-limiter-2"
+  "dir_name": "milestone-zeroae-zae-limiter-2",
+  "author": "zeroae",
+  "source_url": "https://github.com/zeroae/zae-limiter/blob/main/.claude/skills/milestone/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Zero A.E., LLC",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

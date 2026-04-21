@@ -10,5 +10,12 @@
   "stars": 1,
   "github_path": "skills/systematic-review",
   "github_branch": "main",
-  "dir_name": "systematic-review-poemswe-co-researcher"
+  "dir_name": "systematic-review-poemswe-co-researcher",
+  "author": "poemswe",
+  "source_url": "https://github.com/poemswe/co-researcher/blob/main/skills/systematic-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 poemswe",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

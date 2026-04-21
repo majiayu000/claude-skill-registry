@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:30.579988Z",
   "github_path": "tools/automation/skills/bg3-steam-launcher",
   "github_branch": "main",
-  "dir_name": "bg3-steam-launcher-tdimino-bg3se-macos"
+  "dir_name": "bg3-steam-launcher-tdimino-bg3se-macos",
+  "author": "tdimino",
+  "source_url": "https://github.com/tdimino/bg3se-macos/blob/main/tools/automation/skills/bg3-steam-launcher/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

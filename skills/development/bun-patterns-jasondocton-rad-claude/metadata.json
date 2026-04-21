@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/bun-patterns",
   "github_branch": "main",
-  "dir_name": "bun-patterns-jasondocton-rad-claude"
+  "dir_name": "bun-patterns-jasondocton-rad-claude",
+  "author": "JasonDocton",
+  "source_url": "https://github.com/JasonDocton/rad-claude/blob/main/skills/bun-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jason Docton",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

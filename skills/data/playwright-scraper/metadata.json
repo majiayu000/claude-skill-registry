@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:35.865257Z",
   "dir_name": "playwright-scraper",
   "github_path": "plugins/scraper-toolkit/skills/playwright-scraper",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "nathanvale",
+  "source_url": "https://github.com/nathanvale/side-quest-marketplace/blob/main/plugins/scraper-toolkit/skills/playwright-scraper/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nathan Vale",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

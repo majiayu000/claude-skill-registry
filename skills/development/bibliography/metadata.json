@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "bibliography"
+  "dir_name": "bibliography",
+  "author": "poemswe",
+  "source_url": "https://github.com/poemswe/co-researcher",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 poemswe",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

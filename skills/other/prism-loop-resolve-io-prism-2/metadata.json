@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/resolve-io/.prism",
-  "dir_name": "prism-loop-resolve-io-prism-2"
+  "dir_name": "prism-loop-resolve-io-prism-2",
+  "author": "resolve-io",
+  "source_url": "https://github.com/resolve-io/.prism/blob/main/plugins/prism-devtools/skills/prism-loop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/resolve-io/.prism/blob/main/plugins/prism-devtools/skills/prism-loop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

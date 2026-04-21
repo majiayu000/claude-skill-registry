@@ -5,5 +5,12 @@
   "source": "github.com/mattg101/SolidLink",
   "downloaded_at": "2026-01-29T08:15:50.982194Z",
   "dir_name": "feature-spec-orchestrator-mattg101-solidlink",
-  "category": "other"
+  "category": "other",
+  "author": "mattg101",
+  "source_url": "https://github.com/mattg101/SolidLink/blob/main/docs/dev/.agent/skills/feature-spec-orchestrator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 mattg101",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

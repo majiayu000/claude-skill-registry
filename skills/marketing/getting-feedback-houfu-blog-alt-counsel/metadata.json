@@ -10,5 +10,12 @@
   "stars": 1,
   "github_path": ".claude/skills/getting-feedback",
   "github_branch": "main",
-  "dir_name": "getting-feedback-houfu-blog-alt-counsel"
+  "dir_name": "getting-feedback-houfu-blog-alt-counsel",
+  "author": "houfu",
+  "source_url": "https://github.com/houfu/blog-alt-counsel/blob/main/.claude/skills/getting-feedback/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2025 Ang Hou Fu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/cgeorgii/dots",
   "downloaded_at": "2026-01-29T04:25:48.957012Z",
   "dir_name": "git-bug",
-  "category": "other"
+  "category": "other",
+  "author": "cgeorgii",
+  "source_url": "https://github.com/cgeorgii/dots/blob/main/.claude/skills/git-bug/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgeorgii/dots/blob/main/.claude/skills/git-bug/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

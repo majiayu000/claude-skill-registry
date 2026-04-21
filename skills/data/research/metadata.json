@@ -5,5 +5,12 @@
   "source": "github.com/TechNickAI/ai-coding-config",
   "downloaded_at": "2026-01-29T08:55:55.040468Z",
   "dir_name": "research",
-  "category": "data"
+  "category": "data",
+  "author": "TechNickAI",
+  "source_url": "https://github.com/TechNickAI/ai-coding-config/blob/main/plugins/core/skills/research/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nick",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

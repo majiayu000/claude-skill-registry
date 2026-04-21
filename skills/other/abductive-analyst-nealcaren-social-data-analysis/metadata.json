@@ -5,5 +5,12 @@
   "source": "github.com/nealcaren/social-data-analysis",
   "downloaded_at": "2026-02-02T04:31:24.192499Z",
   "dir_name": "abductive-analyst-nealcaren-social-data-analysis",
-  "category": "other"
+  "category": "other",
+  "author": "nealcaren",
+  "source_url": "https://github.com/nealcaren/social-data-analysis/blob/main/plugins/abductive-analyst/skills/abductive-analyst/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Neal Caren",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

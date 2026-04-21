@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "rts-fix-suggester"
+  "dir_name": "rts-fix-suggester",
+  "author": "sslab-gatech",
+  "source_url": "https://github.com/sslab-gatech/oss-crs",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 OSS-CRS Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

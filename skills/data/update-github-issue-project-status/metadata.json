@@ -12,5 +12,12 @@
   ],
   "stars": 1,
   "source": "local",
-  "dir_name": "update-github-issue-project-status"
+  "dir_name": "update-github-issue-project-status",
+  "author": "codekiln",
+  "source_url": "https://github.com/codekiln/langstar",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 λ🏺",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

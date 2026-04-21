@@ -5,5 +5,12 @@
   "description": "Review Firebase code against security model and best practices. Validates firebase.json structure, firestore.rules patterns, functions architecture, authentication implementation, test coverage, and e",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:46.294473Z",
-  "dir_name": "firebase-developmentvalidate"
+  "dir_name": "firebase-developmentvalidate",
+  "author": "2389-research",
+  "source_url": "https://github.com/2389-research/claude-plugins",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 2389 Research, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

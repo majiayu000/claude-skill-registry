@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/samhvw8/dotfiles",
-  "dir_name": "payment-integration-samhvw8-dotfiles"
+  "dir_name": "payment-integration-samhvw8-dotfiles",
+  "author": "samhvw8",
+  "source_url": "https://github.com/samhvw8/dotfiles",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/samhvw8/dotfiles",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

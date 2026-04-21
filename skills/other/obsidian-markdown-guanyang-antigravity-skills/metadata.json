@@ -9,5 +9,12 @@
   "github_path": "skills/obsidian-markdown",
   "github_branch": "main",
   "dir_name": "obsidian-markdown-guanyang-antigravity-skills",
-  "downloaded_at": "2026-02-05T01:44:19.587880Z"
+  "downloaded_at": "2026-02-05T01:44:19.587880Z",
+  "author": "guanyang",
+  "source_url": "https://github.com/guanyang/antigravity-skills/blob/main/skills/obsidian-markdown/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 guanyang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

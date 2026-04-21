@@ -11,5 +11,12 @@
   "stars": 5,
   "github_path": ".claude/skills/security-audit-scanner",
   "github_branch": "main",
-  "dir_name": "security-audit-scanner"
+  "dir_name": "security-audit-scanner",
+  "author": "tbartel74",
+  "source_url": "https://github.com/tbartel74/Vigil-Code/blob/main/.claude/skills/security-audit-scanner/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tomasz Bartel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

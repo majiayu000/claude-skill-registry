@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:36.201585Z",
   "github_path": "plugins/bupkis/skills/bupkis-assertion-patterns",
   "github_branch": "main",
-  "dir_name": "bupkis-assertion-patterns-boneskull-claude-plugins"
+  "dir_name": "bupkis-assertion-patterns-boneskull-claude-plugins",
+  "author": "boneskull",
+  "source_url": "https://github.com/boneskull/claude-plugins/blob/main/plugins/bupkis/skills/bupkis-assertion-patterns/SKILL.md",
+  "license": "BlueOak-1.0.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boneskull/claude-plugins/blob/main/plugins/bupkis/skills/bupkis-assertion-patterns/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

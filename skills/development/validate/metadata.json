@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/validate",
   "github_branch": "master",
-  "dir_name": "validate"
+  "dir_name": "validate",
+  "author": "iPlug2",
+  "source_url": "https://github.com/iPlug2/iPlug2/blob/master/.claude/skills/validate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (C) the iPlug 2 Developers. Portions copyright other contributors, see each source file for more information.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

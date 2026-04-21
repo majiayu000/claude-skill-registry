@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "daily-brief",
   "github_path": ".claude/skills/daily-brief",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "huytieu",
+  "source_url": "https://github.com/huytieu/COG-second-brain/blob/main/.claude/skills/daily-brief/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Huy Tieu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

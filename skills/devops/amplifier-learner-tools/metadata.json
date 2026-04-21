@@ -5,5 +5,12 @@
   "description": "Self-improving metacognitive recipe tools that learn from execution feedback and extract patterns to provide recommendations",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:10.425484Z",
-  "dir_name": "amplifier-learner-tools"
+  "dir_name": "amplifier-learner-tools",
+  "author": "imehr",
+  "source_url": "https://github.com/imehr/skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Mehran Mozaffari",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

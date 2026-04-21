@@ -5,5 +5,12 @@
   "source": "github.com/lukebrevoort/OpenFlowState",
   "downloaded_at": "2026-02-02T03:03:53.738926Z",
   "dir_name": "email-triage-draft-replies",
-  "category": "other"
+  "category": "other",
+  "author": "lukebrevoort",
+  "source_url": "https://github.com/lukebrevoort/OpenFlowState/blob/main/workflows/email-triage-draft-replies/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Luke Brevoort",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

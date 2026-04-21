@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "ric-xapp-dev"
+  "dir_name": "ric-xapp-dev",
+  "author": "thc1006",
+  "source_url": "https://github.com/thc1006/beam_tracking_ric_xapp_skeleton",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/thc1006/beam_tracking_ric_xapp_skeleton",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

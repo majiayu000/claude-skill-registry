@@ -5,5 +5,12 @@
   "description": "Optimizing StickerNest for mobile devices and touch interactions. Use when the user asks about mobile responsiveness, touch gestures, pinch-to-zoom, mobile UI, touch targets, viewport handling, safe a",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:02.817859Z",
-  "dir_name": "optimizing-mobile-experience"
+  "dir_name": "optimizing-mobile-experience",
+  "author": "hkcm91",
+  "source_url": "https://github.com/hkcm91/StickerNestV3",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hkcm91/StickerNestV3",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

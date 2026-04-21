@@ -5,5 +5,12 @@
   "source": "github.com/crmagz/cdk-constructs-library",
   "downloaded_at": "2026-02-04T02:39:07.925049Z",
   "dir_name": "repository-structure",
-  "category": "data"
+  "category": "data",
+  "author": "crmagz",
+  "source_url": "https://github.com/crmagz/cdk-constructs-library/blob/main/.claude/skills/repository-structure/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2026 Cristian Magana",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

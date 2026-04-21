@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:13.973318Z",
   "github_path": "skills/recipe-creator",
   "github_branch": "main",
-  "dir_name": "recipe-creator-tatat-agents-playground-cd17336e"
+  "dir_name": "recipe-creator-tatat-agents-playground-cd17336e",
+  "author": "tatat",
+  "source_url": "https://github.com/tatat/agents-playground/blob/main/skills/recipe-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tatat/agents-playground/blob/main/skills/recipe-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

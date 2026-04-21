@@ -5,5 +5,12 @@
   "description": "Framework for evaluating architectural decisions and generating high-quality Architecture Decision Records (ADRs).",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:27.093084Z",
-  "dir_name": "architecture-decision-review-bostonaholic-dotfiles"
+  "dir_name": "architecture-decision-review-bostonaholic-dotfiles",
+  "author": "bostonaholic",
+  "source_url": "https://github.com/bostonaholic/dotfiles",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bostonaholic/dotfiles",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

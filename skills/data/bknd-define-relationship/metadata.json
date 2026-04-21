@@ -5,5 +5,12 @@
   "source": "github.com/cameronapak/bknd-skills",
   "downloaded_at": "2026-01-28T02:45:39.903725Z",
   "dir_name": "bknd-define-relationship",
-  "category": "data"
+  "category": "data",
+  "author": "cameronapak",
+  "source_url": "https://github.com/cameronapak/bknd-skills/blob/main/skills/bknd-define-relationship/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cameronapak/bknd-skills/blob/main/skills/bknd-define-relationship/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

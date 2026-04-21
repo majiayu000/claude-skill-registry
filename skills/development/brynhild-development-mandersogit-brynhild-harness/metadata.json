@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:55.758096Z",
   "github_path": ".brynhild/skills/brynhild-development",
   "github_branch": "main",
-  "dir_name": "brynhild-development-mandersogit-brynhild-harness"
+  "dir_name": "brynhild-development-mandersogit-brynhild-harness",
+  "author": "mandersogit",
+  "source_url": "https://github.com/mandersogit/brynhild-harness/blob/main/.brynhild/skills/brynhild-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Matt Anderson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

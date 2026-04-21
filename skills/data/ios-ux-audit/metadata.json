@@ -5,5 +5,12 @@
   "source": "github.com/takapom/kozin-develop",
   "downloaded_at": "2026-02-04T03:13:22.895176Z",
   "dir_name": "ios-ux-audit",
-  "category": "data"
+  "category": "data",
+  "author": "takapom",
+  "source_url": "https://github.com/takapom/kozin-develop/blob/main/.claude/skills/ios-ux-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/takapom/kozin-develop/blob/main/.claude/skills/ios-ux-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

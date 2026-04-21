@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:07.585054Z",
   "github_path": "plugins/carebridge-standards",
   "github_branch": "main",
-  "dir_name": "carebridge-standards-human-frontier-labs--human-frontier-labs--0866b852"
+  "dir_name": "carebridge-standards-human-frontier-labs--human-frontier-labs--0866b852",
+  "author": "Human-Frontier-Labs-Inc",
+  "source_url": "https://github.com/Human-Frontier-Labs-Inc/human-frontier-labs-marketplace/blob/main/plugins/carebridge-standards/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Human-Frontier-Labs-Inc/human-frontier-labs-marketplace/blob/main/plugins/carebridge-standards/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

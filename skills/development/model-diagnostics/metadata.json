@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "model-diagnostics"
+  "dir_name": "model-diagnostics",
+  "author": "choxos",
+  "source_url": "https://github.com/choxos/BayesianAgent",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ahmad Sofi-Mahmudi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Create, checkout, rebase, and manage git branches following Carbon ACX naming conventions and workflows.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:28.225402Z",
-  "dir_name": "gitbranchmanage"
+  "dir_name": "gitbranchmanage",
+  "author": "chrislyons",
+  "source_url": "https://github.com/chrislyons/carbon-acx",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 Chris Lyons",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

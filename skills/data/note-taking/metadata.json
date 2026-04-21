@@ -10,5 +10,12 @@
   "stars": 1,
   "dir_name": "note-taking",
   "github_path": ".claude/skills/note-taking",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "houfu",
+  "source_url": "https://github.com/houfu/blog-alt-counsel/blob/main/.claude/skills/note-taking/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2025 Ang Hou Fu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

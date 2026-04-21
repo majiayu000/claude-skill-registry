@@ -7,5 +7,12 @@
   "dir_name": "traceability-auditor",
   "category": "other",
   "github_path": ".claude/skills/traceability-auditor",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "nahisaho",
+  "source_url": "https://github.com/nahisaho/CodeGraphMCPServer/blob/main/.claude/skills/traceability-auditor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 nahisaho",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

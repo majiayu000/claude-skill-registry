@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "env-health",
   "github_path": ".claude/skills/env-health",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "mim1012",
+  "source_url": "https://github.com/mim1012/ykp_project/blob/main/.claude/skills/env-health/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Supabase, Inc. and contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

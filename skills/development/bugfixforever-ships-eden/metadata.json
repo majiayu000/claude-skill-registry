@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:17.078390Z",
   "github_path": "assets/claude/skills/bugfixforever",
   "github_branch": "main",
-  "dir_name": "bugfixforever-ships-eden"
+  "dir_name": "bugfixforever-ships-eden",
+  "author": "ships",
+  "source_url": "https://github.com/ships/eden/blob/main/assets/claude/skills/bugfixforever/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2018 James Quintana",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

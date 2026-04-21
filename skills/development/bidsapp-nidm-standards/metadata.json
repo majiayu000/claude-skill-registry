@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "bidsapp-nidm-standards"
+  "dir_name": "bidsapp-nidm-standards",
+  "author": "yibeichan",
+  "source_url": "https://github.com/yibeichan/claude-skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Yibei Chen",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -9,5 +9,12 @@
   "stars": 3,
   "github_path": ".claude/skills/nuxt-v4",
   "github_branch": "main",
-  "dir_name": "nuxt-v4"
+  "dir_name": "nuxt-v4",
+  "author": "ChrisTowles",
+  "source_url": "https://github.com/ChrisTowles/blog/blob/main/.claude/skills/nuxt-v4/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ChrisTowles/blog/blob/main/.claude/skills/nuxt-v4/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

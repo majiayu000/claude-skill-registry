@@ -8,5 +8,12 @@
   ],
   "stars": 118,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "cc-trace"
+  "dir_name": "cc-trace",
+  "author": "alexfazio",
+  "source_url": "https://github.com/alexfazio/cc-trace",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexfazio/cc-trace",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/hongbietcode/synthetic-claude",
-  "dir_name": "quick-research"
+  "dir_name": "quick-research",
+  "author": "hongbietcode",
+  "source_url": "https://github.com/hongbietcode/synthetic-claude",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hongbietcode/synthetic-claude",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

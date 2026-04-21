@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/cat-patch",
   "github_branch": "main",
-  "dir_name": "cat-patch-leegmoore-coding-agent-manager"
+  "dir_name": "cat-patch-leegmoore-coding-agent-manager",
+  "author": "leegmoore",
+  "source_url": "https://github.com/leegmoore/coding-agent-manager/blob/main/.claude/skills/cat-patch/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/leegmoore/coding-agent-manager/blob/main/.claude/skills/cat-patch/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

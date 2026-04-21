@@ -9,5 +9,12 @@
   "stars": 0,
   "github_path": ".claude/skills/metadata",
   "github_branch": "main",
-  "dir_name": "metadata-profpowell-project-template"
+  "dir_name": "metadata-profpowell-project-template",
+  "author": "ProfPowell",
+  "source_url": "https://github.com/ProfPowell/project-template/blob/main/.claude/skills/metadata/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ProfPowell/project-template/blob/main/.claude/skills/metadata/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

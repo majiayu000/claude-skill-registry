@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:39.506186Z",
   "github_path": "generated_skills/content-performance-analyzer",
   "github_branch": "main",
-  "dir_name": "content-performance-analyzer-fracabu-claude-skill-factory"
+  "dir_name": "content-performance-analyzer-fracabu-claude-skill-factory",
+  "author": "fracabu",
+  "source_url": "https://github.com/fracabu/claude-skill-factory/blob/main/generated_skills/content-performance-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 fracabu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Python utility API for storing and retrieving project context in Obsidian vault markdown notes",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:48.253958Z",
-  "dir_name": "context-memory"
+  "dir_name": "context-memory",
+  "author": "resolve-io",
+  "source_url": "https://github.com/resolve-io/.prism",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/resolve-io/.prism",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

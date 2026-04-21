@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/hiromaily/go-crypto-wallet",
-  "dir_name": "typescript-development-hiromaily-go-crypto-wallet-2"
+  "dir_name": "typescript-development-hiromaily-go-crypto-wallet-2",
+  "author": "hiromaily",
+  "source_url": "https://github.com/hiromaily/go-crypto-wallet/blob/main/.claude/skills/typescript-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2018 HirokiYasui",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

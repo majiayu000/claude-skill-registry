@@ -5,5 +5,12 @@
   "source": "github.com/quickwit-oss/quickwit",
   "downloaded_at": "2026-02-02T02:03:53.369796Z",
   "dir_name": "bump-tantivy",
-  "category": "other"
+  "category": "other",
+  "author": "quickwit-oss",
+  "source_url": "https://github.com/quickwit-oss/quickwit/blob/main/.claude/skills/bump-tantivy/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/quickwit-oss/quickwit/blob/main/.claude/skills/bump-tantivy/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

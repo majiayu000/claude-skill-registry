@@ -5,5 +5,12 @@
   "source": "github.com/nahisaho/CodeGraphMCPServer",
   "downloaded_at": "2026-01-29T07:48:56.056883Z",
   "dir_name": "release-coordinator-nahisaho-codegraphmcpserver-8d871b2f",
-  "category": "other"
+  "category": "other",
+  "author": "nahisaho",
+  "source_url": "https://github.com/nahisaho/CodeGraphMCPServer/blob/main/.claude/skills/release-coordinator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 nahisaho",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

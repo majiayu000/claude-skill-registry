@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/blog-article-generator",
   "github_branch": "main",
-  "dir_name": "blog-article-generator-test141515111-blog-writing-suite"
+  "dir_name": "blog-article-generator-test141515111-blog-writing-suite",
+  "author": "test141515111",
+  "source_url": "https://github.com/test141515111/blog-writing-suite/blob/main/skills/blog-article-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Code User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

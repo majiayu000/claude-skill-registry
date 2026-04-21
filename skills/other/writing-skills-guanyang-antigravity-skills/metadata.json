@@ -9,5 +9,12 @@
   "github_path": "skills/writing-skills",
   "github_branch": "main",
   "dir_name": "writing-skills-guanyang-antigravity-skills",
-  "downloaded_at": "2026-02-05T01:44:19.596290Z"
+  "downloaded_at": "2026-02-05T01:44:19.596290Z",
+  "author": "guanyang",
+  "source_url": "https://github.com/guanyang/antigravity-skills/blob/main/skills/writing-skills/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 guanyang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

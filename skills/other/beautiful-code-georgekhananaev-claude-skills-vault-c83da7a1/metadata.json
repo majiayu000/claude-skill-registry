@@ -7,5 +7,12 @@
   "dir_name": "beautiful-code-georgekhananaev-claude-skills-vault-c83da7a1",
   "category": "other",
   "github_path": ".claude/skills/beautiful-code",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "georgekhananaev",
+  "source_url": "https://github.com/georgekhananaev/claude-skills-vault/blob/main/.claude/skills/beautiful-code/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 George Khananaev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

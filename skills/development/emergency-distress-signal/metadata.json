@@ -5,5 +5,12 @@
   "description": "紧急求救 - 飞船坠毁后与Stella的首次联系,帮助她评估损伤并制定初步生存计划",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:15.484040Z",
-  "dir_name": "emergency-distress-signal"
+  "dir_name": "emergency-distress-signal",
+  "author": "ClaudeCode-NPC",
+  "source_url": "https://github.com/ClaudeCode-NPC/Whispers-from-the-Star",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ClaudeCode-NPC/Whispers-from-the-Star",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

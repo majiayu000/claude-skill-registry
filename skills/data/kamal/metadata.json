@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:49.599645Z",
   "dir_name": "kamal",
   "github_path": "plugins/devops/skills/kamal",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "el-feo",
+  "source_url": "https://github.com/el-feo/ai-context/blob/main/plugins/devops/skills/kamal/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeb Coleman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

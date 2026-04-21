@@ -5,5 +5,12 @@
   "description": "Generate User's daily morning brief when he asks for \"morning brief\", \"daily brief\", \"brief\", or \"what's my day look like\". Compiles weather, calendar, priorities, project status, YourPet care checkli",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:57.244096Z",
-  "dir_name": "morning-brief-generator"
+  "dir_name": "morning-brief-generator",
+  "author": "kcwoodfield",
+  "source_url": "https://github.com/kcwoodfield/LifeOS-OSS",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kcwoodfield/LifeOS-OSS",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

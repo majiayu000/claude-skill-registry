@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/resolve-io/.prism",
-  "dir_name": "prism-loop"
+  "dir_name": "prism-loop",
+  "author": "resolve-io",
+  "source_url": "https://github.com/resolve-io/.prism",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/resolve-io/.prism",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

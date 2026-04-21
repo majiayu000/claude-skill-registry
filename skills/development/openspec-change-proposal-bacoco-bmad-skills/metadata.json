@@ -11,5 +11,12 @@
   "stars": 1,
   "github_path": ".claude/skills/openspec-change-proposal",
   "github_branch": "main",
-  "dir_name": "openspec-change-proposal-bacoco-bmad-skills"
+  "dir_name": "openspec-change-proposal-bacoco-bmad-skills",
+  "author": "bacoco",
+  "source_url": "https://github.com/bacoco/BMad-Skills/blob/main/.claude/skills/openspec-change-proposal/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 BMAD Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

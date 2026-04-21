@@ -5,5 +5,12 @@
   "description": "Validate py_trees behavior trees across three tiers (critical, important, advisory). Use for debugging existing BTs, diagnosing validation failures, or standalone validation.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:30.800032Z",
-  "dir_name": "behavior-tree-validator"
+  "dir_name": "behavior-tree-validator",
+  "author": "jsalfity",
+  "source_url": "https://github.com/jsalfity/bt-composition-prototype",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jsalfity/bt-composition-prototype",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

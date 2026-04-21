@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "fly-deployment"
+  "dir_name": "fly-deployment",
+  "author": "SecurityRonin",
+  "source_url": "https://github.com/SecurityRonin/ronin-marketplace",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Albert Hui / Security Ronin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

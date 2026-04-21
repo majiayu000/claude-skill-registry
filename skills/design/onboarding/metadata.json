@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/onboarding",
   "github_branch": "main",
-  "dir_name": "onboarding"
+  "dir_name": "onboarding",
+  "author": "huytieu",
+  "source_url": "https://github.com/huytieu/COG-second-brain/blob/main/.claude/skills/onboarding/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Huy Tieu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

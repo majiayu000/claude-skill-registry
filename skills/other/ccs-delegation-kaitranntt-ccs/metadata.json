@@ -5,5 +5,12 @@
   "source": "github.com/kaitranntt/ccs",
   "downloaded_at": "2026-01-29T04:09:51.149735Z",
   "dir_name": "ccs-delegation-kaitranntt-ccs",
-  "category": "other"
+  "category": "other",
+  "author": "kaitranntt",
+  "source_url": "https://github.com/kaitranntt/ccs/blob/main/.claude/skills/ccs-delegation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CCS Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "bmad-brainstorming",
   "github_path": "skills/bmad-brainstorming",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "pichiu",
+  "source_url": "https://github.com/pichiu/bmad-skills/blob/main/skills/bmad-brainstorming/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Pi Chiu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

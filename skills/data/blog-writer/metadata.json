@@ -5,5 +5,12 @@
   "source": "github.com/heyuan110/heyuan110.github.io",
   "downloaded_at": "2026-02-04T03:36:27.187076Z",
   "dir_name": "blog-writer",
-  "category": "data"
+  "category": "data",
+  "author": "heyuan110",
+  "source_url": "https://github.com/heyuan110/heyuan110.github.io/blob/main/.claude/skills/blog-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/heyuan110/heyuan110.github.io/blob/main/.claude/skills/blog-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

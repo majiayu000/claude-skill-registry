@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:53.510993Z",
   "github_path": "ai/skills/monthly-invoice-summary",
   "github_branch": "main",
-  "dir_name": "monthly-invoice-summary-steveclarke-dotfiles"
+  "dir_name": "monthly-invoice-summary-steveclarke-dotfiles",
+  "author": "steveclarke",
+  "source_url": "https://github.com/steveclarke/dotfiles/blob/main/ai/skills/monthly-invoice-summary/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/steveclarke/dotfiles/blob/main/ai/skills/monthly-invoice-summary/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

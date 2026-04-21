@@ -5,5 +5,12 @@
   "source": "github.com/terrylica/gapless-network-data",
   "downloaded_at": "2026-02-02T04:07:39.591178Z",
   "dir_name": "historical-backfill-execution",
-  "category": "data"
+  "category": "data",
+  "author": "terrylica",
+  "source_url": "https://github.com/terrylica/gapless-network-data/blob/main/.claude/skills/historical-backfill-execution/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Eon Labs",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

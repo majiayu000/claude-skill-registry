@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:05.832559Z",
   "github_path": "claude/skills/elixir-ash-phoenix",
   "github_branch": "main",
-  "dir_name": "elixir-ash-phoenix-benswift-dotfiles"
+  "dir_name": "elixir-ash-phoenix-benswift-dotfiles",
+  "author": "benswift",
+  "source_url": "https://github.com/benswift/.dotfiles/blob/main/claude/skills/elixir-ash-phoenix/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (C) 2025 Ben Swift",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

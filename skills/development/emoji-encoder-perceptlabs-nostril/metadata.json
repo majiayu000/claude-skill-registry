@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:30.053595Z",
   "github_path": "skills/emoji-encoder",
   "github_branch": "main",
-  "dir_name": "emoji-encoder-perceptlabs-nostril"
+  "dir_name": "emoji-encoder-perceptlabs-nostril",
+  "author": "PerceptLabs",
+  "source_url": "https://github.com/PerceptLabs/nostril/blob/main/skills/emoji-encoder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PerceptLabs/nostril/blob/main/skills/emoji-encoder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

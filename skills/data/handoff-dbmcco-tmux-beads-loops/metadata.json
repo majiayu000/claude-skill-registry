@@ -5,5 +5,12 @@
   "source": "github.com/dbmcco/tmux-beads-loops",
   "downloaded_at": "2026-02-04T05:17:44.879442Z",
   "dir_name": "handoff-dbmcco-tmux-beads-loops",
-  "category": "data"
+  "category": "data",
+  "author": "dbmcco",
+  "source_url": "https://github.com/dbmcco/tmux-beads-loops/blob/main/.claude/skills/handoff/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Beads Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

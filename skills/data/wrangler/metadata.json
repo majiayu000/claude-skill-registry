@@ -5,5 +5,12 @@
   "source": "github.com/NeverSight/skills_feed",
   "downloaded_at": "2026-02-04T02:33:07.825730Z",
   "dir_name": "wrangler",
-  "category": "data"
+  "category": "data",
+  "author": "NeverSight",
+  "source_url": "https://github.com/NeverSight/skills_feed/blob/main/data/skills-md/cloudflare/skills/wrangler/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NeverSight/skills_feed/blob/main/data/skills-md/cloudflare/skills/wrangler/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

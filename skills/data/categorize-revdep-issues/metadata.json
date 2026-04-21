@@ -10,5 +10,12 @@
   ],
   "stars": 297,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "categorize-revdep-issues"
+  "dir_name": "categorize-revdep-issues",
+  "author": "r-lib",
+  "source_url": "https://github.com/r-lib/vctrs",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/r-lib/vctrs",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

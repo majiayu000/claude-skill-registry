@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "bigquery-etl-core",
   "github_path": "skills/bigquery-etl-core",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "mozilla",
+  "source_url": "https://github.com/mozilla/bigquery-etl-skills/blob/main/skills/bigquery-etl-core/SKILL.md",
+  "license": "MPL-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mozilla/bigquery-etl-skills/blob/main/skills/bigquery-etl-core/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

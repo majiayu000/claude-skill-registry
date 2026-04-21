@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "debug-ffmpeg"
+  "dir_name": "debug-ffmpeg",
+  "author": "Gambitnl",
+  "source_url": "https://github.com/Gambitnl/Video_chunking",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Gambitnl/Video_chunking",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

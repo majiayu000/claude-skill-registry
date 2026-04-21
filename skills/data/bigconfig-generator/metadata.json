@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "bigconfig-generator",
   "github_path": "skills/bigconfig-generator",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "mozilla",
+  "source_url": "https://github.com/mozilla/bigquery-etl-skills/blob/main/skills/bigconfig-generator/SKILL.md",
+  "license": "MPL-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mozilla/bigquery-etl-skills/blob/main/skills/bigconfig-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/joaopelegrino/app-controle",
   "downloaded_at": "2026-01-27T02:47:28.202782Z",
   "dir_name": "ux-nomenclature",
-  "category": "data"
+  "category": "data",
+  "author": "joaopelegrino",
+  "source_url": "https://github.com/joaopelegrino/app-controle/blob/main/.claude/skills/ux-nomenclature/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/joaopelegrino/app-controle/blob/main/.claude/skills/ux-nomenclature/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

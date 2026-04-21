@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "browser-dev-tools"
+  "dir_name": "browser-dev-tools",
+  "author": "tomnagengast",
+  "source_url": "https://github.com/tomnagengast/revurb",
+  "license": "MIT",
+  "copyright": "Copyright (c) Tom Nagengast",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

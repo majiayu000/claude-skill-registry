@@ -5,5 +5,12 @@
   "source": "github.com/monkey1sai/ai-settings",
   "downloaded_at": "2026-01-29T06:36:08.758561Z",
   "dir_name": "python-dev-handbook-monkey1sai-ai-settings",
-  "category": "other"
+  "category": "other",
+  "author": "monkey1sai",
+  "source_url": "https://github.com/monkey1sai/ai-settings/blob/main/skills/codex/python-dev-handbook/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/monkey1sai/ai-settings/blob/main/skills/codex/python-dev-handbook/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

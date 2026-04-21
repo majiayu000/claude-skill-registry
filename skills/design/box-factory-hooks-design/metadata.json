@@ -5,5 +5,12 @@
   "description": "Interpretive guidance for designing Claude Code hooks. Helps you understand hook lifecycle, when to use hooks vs other patterns, and common pitfalls. ALWAYS use when creating or reviewing hooks.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:46.292633Z",
-  "dir_name": "box-factory-hooks-design"
+  "dir_name": "box-factory-hooks-design",
+  "author": "racurry",
+  "source_url": "https://github.com/racurry/neat-little-package",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/racurry/neat-little-package",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

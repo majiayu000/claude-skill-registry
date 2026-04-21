@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/framework-patterns",
   "github_branch": "main",
-  "dir_name": "framework-patterns-jasondocton-rad-claude"
+  "dir_name": "framework-patterns-jasondocton-rad-claude",
+  "author": "JasonDocton",
+  "source_url": "https://github.com/JasonDocton/rad-claude/blob/main/skills/framework-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jason Docton",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

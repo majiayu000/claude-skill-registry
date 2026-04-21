@@ -5,5 +5,12 @@
   "source": "github.com/joaopelegrino/app-controle",
   "downloaded_at": "2026-01-27T02:47:28.799047Z",
   "dir_name": "cliente-criar-a-partir-video",
-  "category": "other"
+  "category": "other",
+  "author": "joaopelegrino",
+  "source_url": "https://github.com/joaopelegrino/app-controle/blob/main/.claude/skills/cliente:criar-a-partir-video/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/joaopelegrino/app-controle/blob/main/.claude/skills/cliente:criar-a-partir-video/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

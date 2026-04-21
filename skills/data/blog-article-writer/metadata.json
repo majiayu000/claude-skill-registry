@@ -5,5 +5,12 @@
   "source": "github.com/plipowczan/portfolio",
   "downloaded_at": "2026-01-27T02:43:18.940207Z",
   "dir_name": "blog-article-writer",
-  "category": "data"
+  "category": "data",
+  "author": "plipowczan",
+  "source_url": "https://github.com/plipowczan/portfolio/blob/main/.claude/skills/blog-article-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/plipowczan/portfolio/blob/main/.claude/skills/blog-article-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "stars": 13,
   "source": "github.com/avivsinai/bitbucket-cli",
   "downloaded_at": "2026-01-24T16:15:57.889092Z",
-  "dir_name": "bkt"
+  "dir_name": "bkt",
+  "author": "avivsinai",
+  "source_url": "https://github.com/avivsinai/bitbucket-cli/blob/main/.codex/skills/bkt/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Aviv Sinai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

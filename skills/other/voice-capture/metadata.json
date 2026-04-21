@@ -7,5 +7,12 @@
   "dir_name": "voice-capture",
   "category": "other",
   "github_path": "plugins/compound-writing/skills/voice-capture",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "robertguss",
+  "source_url": "https://github.com/robertguss/claude-code-toolkit/blob/main/plugins/compound-writing/skills/voice-capture/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Robert Guss",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "奇异植物 - Stella深入研究盖亚星球的植物生态,发现既美丽又危险的外星植被,并尝试找到可利用的资源",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:15.257628Z",
-  "dir_name": "studying-alien-flora"
+  "dir_name": "studying-alien-flora",
+  "author": "ClaudeCode-NPC",
+  "source_url": "https://github.com/ClaudeCode-NPC/Whispers-from-the-Star",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ClaudeCode-NPC/Whispers-from-the-Star",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

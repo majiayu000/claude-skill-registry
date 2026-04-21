@@ -7,5 +7,12 @@
   "dir_name": "materialreacttable-mastery-georgekhananaev-claude-skills-vault-9765ad77",
   "category": "other",
   "github_path": ".claude/skills/materialreacttable-mastery",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "georgekhananaev",
+  "source_url": "https://github.com/georgekhananaev/claude-skills-vault/blob/main/.claude/skills/materialreacttable-mastery/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 George Khananaev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

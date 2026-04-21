@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:35.719997Z",
   "github_path": "plugins/claude-code-docs/skills/claude-code-docs",
   "github_branch": "main",
-  "dir_name": "claude-code-docs-nathanvale-side-quest-marketpla-0abeb615"
+  "dir_name": "claude-code-docs-nathanvale-side-quest-marketpla-0abeb615",
+  "author": "nathanvale",
+  "source_url": "https://github.com/nathanvale/side-quest-marketplace/blob/main/plugins/claude-code-docs/skills/claude-code-docs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nathan Vale",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

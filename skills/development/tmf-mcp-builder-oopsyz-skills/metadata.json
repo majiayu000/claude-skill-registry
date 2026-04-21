@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:26.899899Z",
   "github_path": "tmf-mcp-builder",
   "github_branch": "main",
-  "dir_name": "tmf-mcp-builder-oopsyz-skills"
+  "dir_name": "tmf-mcp-builder-oopsyz-skills",
+  "author": "oopsyz",
+  "source_url": "https://github.com/oopsyz/skills/blob/main/tmf-mcp-builder/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oopsyz/skills/blob/main/tmf-mcp-builder/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

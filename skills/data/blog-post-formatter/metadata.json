@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 1,
   "source": "github.com/santosrai/santosrai.github.io",
-  "dir_name": "blog-post-formatter"
+  "dir_name": "blog-post-formatter",
+  "author": "santosrai",
+  "source_url": "https://github.com/santosrai/santosrai.github.io",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/santosrai/santosrai.github.io",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

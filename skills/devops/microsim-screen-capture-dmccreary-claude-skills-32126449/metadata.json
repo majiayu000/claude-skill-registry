@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:29.056092Z",
   "github_path": "skills/archived/microsim-screen-capture",
   "github_branch": "main",
-  "dir_name": "microsim-screen-capture-dmccreary-claude-skills-32126449"
+  "dir_name": "microsim-screen-capture-dmccreary-claude-skills-32126449",
+  "author": "dmccreary",
+  "source_url": "https://github.com/dmccreary/claude-skills/blob/main/skills/archived/microsim-screen-capture/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dmccreary/claude-skills/blob/main/skills/archived/microsim-screen-capture/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

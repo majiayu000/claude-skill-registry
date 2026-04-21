@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:13.962026Z",
   "github_path": "plugins/deployment-skills/skills/fly-deployment",
   "github_branch": "main",
-  "dir_name": "fly-deployment-securityronin-ronin-marketplace"
+  "dir_name": "fly-deployment-securityronin-ronin-marketplace",
+  "author": "SecurityRonin",
+  "source_url": "https://github.com/SecurityRonin/ronin-marketplace/blob/main/plugins/deployment-skills/skills/fly-deployment/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Albert Hui / Security Ronin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

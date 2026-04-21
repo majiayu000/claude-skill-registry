@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:57.277705Z",
   "github_path": "skills/wm-workspace-manager",
   "github_branch": "main",
-  "dir_name": "wm-workspace-manager"
+  "dir_name": "wm-workspace-manager",
+  "author": "jonmagic",
+  "source_url": "https://github.com/jonmagic/skills/blob/main/skills/wm-workspace-manager/SKILL.md",
+  "license": "ISC",
+  "copyright": "Copyright (c) 2025 Jonathan Hoyt",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

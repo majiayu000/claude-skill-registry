@@ -5,5 +5,12 @@
   "description": "Guide users through OmicVerse plotting utilities showcased in the bulk, color system, and single-cell visualization tutorials, including venn/volcano charts, palette selection, and advanced embedding ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:15.301314Z",
-  "dir_name": "omicverse-visualization-for-bulk-color-systems-and-single-cell-d-starlitnightly-omicverse"
+  "dir_name": "omicverse-visualization-for-bulk-color-systems-and-single-cell-d-starlitnightly-omicverse",
+  "author": "Starlitnightly",
+  "source_url": "https://github.com/Starlitnightly/omicverse",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

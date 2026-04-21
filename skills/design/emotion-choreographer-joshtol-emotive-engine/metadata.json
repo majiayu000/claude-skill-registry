@@ -10,5 +10,12 @@
   "stars": 10,
   "github_path": "skills/emotion-choreographer",
   "github_branch": "main",
-  "dir_name": "emotion-choreographer-joshtol-emotive-engine"
+  "dir_name": "emotion-choreographer-joshtol-emotive-engine",
+  "author": "joshtol",
+  "source_url": "https://github.com/joshtol/emotive-engine/blob/main/skills/emotion-choreographer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Joshua Tollette",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Use when working on implementation phases, checking phase status, or planning work. Provides context for the structured planning system in .plans/ folder.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:39.307660Z",
-  "dir_name": "plans"
+  "dir_name": "plans",
+  "author": "sreejithraman",
+  "source_url": "https://github.com/sreejithraman/shayna",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sreejithraman/shayna",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

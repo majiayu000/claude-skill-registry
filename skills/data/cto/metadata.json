@@ -5,5 +5,12 @@
   "source": "github.com/lotosbin/claude-skills",
   "downloaded_at": "2026-02-04T01:28:45.721644Z",
   "dir_name": "cto",
-  "category": "data"
+  "category": "data",
+  "author": "lotosbin",
+  "source_url": "https://github.com/lotosbin/claude-skills/blob/main/.claude/skills/cto/Skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lotosbin/claude-skills/blob/main/.claude/skills/cto/Skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

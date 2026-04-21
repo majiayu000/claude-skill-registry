@@ -10,5 +10,12 @@
   ],
   "stars": 3,
   "source": "local",
-  "dir_name": "propose-feature-design"
+  "dir_name": "propose-feature-design",
+  "author": "cbgbt",
+  "source_url": "https://github.com/cbgbt/bottlerocket-forest",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbgbt/bottlerocket-forest",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

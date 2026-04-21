@@ -7,5 +7,12 @@
   "dir_name": "orchestrate-yeachan-heo-oh-my-claudecode-a3984864",
   "category": "other",
   "github_path": "skills/orchestrate",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Yeachan-Heo",
+  "source_url": "https://github.com/Yeachan-Heo/oh-my-claudecode/blob/main/skills/orchestrate/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Yeachan Heo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

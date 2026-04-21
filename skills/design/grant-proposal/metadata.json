@@ -5,5 +5,12 @@
   "description": "Guidance for structuring and writing PhD-level funding applications and grant proposals (e.g., NSF, NIH, ERC). Focuses on narrative arc, significance, innovation, and methodological feasibility.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:01:12.521995Z",
-  "dir_name": "grant-proposal"
+  "dir_name": "grant-proposal",
+  "author": "poemswe",
+  "source_url": "https://github.com/poemswe/co-researcher",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 poemswe",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

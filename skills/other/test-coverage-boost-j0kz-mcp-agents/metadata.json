@@ -7,5 +7,12 @@
   "dir_name": "test-coverage-boost-j0kz-mcp-agents",
   "category": "other",
   "github_path": "docs/universal-skills/test-coverage-boost",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "j0KZ",
+  "source_url": "https://github.com/j0KZ/mcp-agents/blob/main/docs/universal-skills/test-coverage-boost/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 j0kz",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

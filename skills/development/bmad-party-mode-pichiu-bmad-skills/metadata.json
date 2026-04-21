@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/bmad-party-mode",
   "github_branch": "main",
-  "dir_name": "bmad-party-mode-pichiu-bmad-skills"
+  "dir_name": "bmad-party-mode-pichiu-bmad-skills",
+  "author": "pichiu",
+  "source_url": "https://github.com/pichiu/bmad-skills/blob/main/skills/bmad-party-mode/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Pi Chiu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -13,5 +13,12 @@
   "stars": 1,
   "github_path": ".claude/skills/update-github-issue-project-status",
   "github_branch": "main",
-  "dir_name": "update-github-issue-project-status-codekiln-langstar-0cfa6eaf"
+  "dir_name": "update-github-issue-project-status-codekiln-langstar-0cfa6eaf",
+  "author": "codekiln",
+  "source_url": "https://github.com/codekiln/langstar/blob/main/.claude/skills/update-github-issue-project-status/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 λ🏺",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

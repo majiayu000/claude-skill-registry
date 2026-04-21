@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:04.196351Z",
   "github_path": ".docent/skills/docent/fix-markdown-lint",
   "github_branch": "main",
-  "dir_name": "fix-markdown-lint-tnez-docent"
+  "dir_name": "fix-markdown-lint-tnez-docent",
+  "author": "tnez",
+  "source_url": "https://github.com/tnez/docent/blob/main/.docent/skills/docent/fix-markdown-lint/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 tnezdev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

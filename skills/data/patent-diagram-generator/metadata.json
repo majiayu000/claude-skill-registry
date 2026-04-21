@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "patent-diagram-generator"
+  "dir_name": "patent-diagram-generator",
+  "author": "RobThePCGuy",
+  "source_url": "https://github.com/RobThePCGuy/Claude-Patent-Creator",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Rob Adams Jr",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

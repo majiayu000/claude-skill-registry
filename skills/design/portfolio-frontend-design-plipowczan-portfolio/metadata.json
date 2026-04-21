@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:31.291597Z",
   "github_path": ".claude/skills/portfolio-frontend-design",
   "github_branch": "main",
-  "dir_name": "portfolio-frontend-design-plipowczan-portfolio"
+  "dir_name": "portfolio-frontend-design-plipowczan-portfolio",
+  "author": "plipowczan",
+  "source_url": "https://github.com/plipowczan/portfolio/blob/main/.claude/skills/portfolio-frontend-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/plipowczan/portfolio/blob/main/.claude/skills/portfolio-frontend-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

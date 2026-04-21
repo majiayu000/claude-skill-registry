@@ -5,5 +5,12 @@
   "source": "github.com/nahisaho/CodeGraphMCPServer",
   "downloaded_at": "2026-01-29T07:48:56.255562Z",
   "dir_name": "constitution-enforcer-nahisaho-codegraphmcpserver",
-  "category": "other"
+  "category": "other",
+  "author": "nahisaho",
+  "source_url": "https://github.com/nahisaho/CodeGraphMCPServer/blob/main/.claude/skills/constitution-enforcer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 nahisaho",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

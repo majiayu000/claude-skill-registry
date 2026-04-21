@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:13.317063Z",
   "github_path": ".claude/skills/bdg",
   "github_branch": "main",
-  "dir_name": "bdg-browser-debug-szymdzum-kumak-dev"
+  "dir_name": "bdg-browser-debug-szymdzum-kumak-dev",
+  "author": "szymdzum",
+  "source_url": "https://github.com/szymdzum/kumak-dev/blob/main/.claude/skills/bdg/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Szymon Dzumak (Kumak)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

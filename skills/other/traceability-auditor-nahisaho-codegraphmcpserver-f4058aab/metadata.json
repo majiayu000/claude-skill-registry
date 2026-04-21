@@ -5,5 +5,12 @@
   "source": "github.com/nahisaho/CodeGraphMCPServer",
   "downloaded_at": "2026-01-29T07:48:56.109223Z",
   "dir_name": "traceability-auditor-nahisaho-codegraphmcpserver-f4058aab",
-  "category": "other"
+  "category": "other",
+  "author": "nahisaho",
+  "source_url": "https://github.com/nahisaho/CodeGraphMCPServer/blob/main/.claude/skills/traceability-auditor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 nahisaho",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

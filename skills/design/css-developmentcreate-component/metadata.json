@@ -5,5 +5,12 @@
   "description": "Guide creating new CSS components following Tailwind + semantic component patterns with dark mode support and test coverage",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:46.037428Z",
-  "dir_name": "css-developmentcreate-component"
+  "dir_name": "css-developmentcreate-component",
+  "author": "2389-research",
+  "source_url": "https://github.com/2389-research/claude-plugins",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 2389 Research, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

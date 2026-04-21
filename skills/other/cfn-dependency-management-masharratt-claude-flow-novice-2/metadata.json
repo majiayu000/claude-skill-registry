@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/masharratt/claude-flow-novice",
-  "dir_name": "cfn-dependency-management-masharratt-claude-flow-novice-2"
+  "dir_name": "cfn-dependency-management-masharratt-claude-flow-novice-2",
+  "author": "masharratt",
+  "source_url": "https://github.com/masharratt/claude-flow-novice/blob/main/.claude/skills/cfn-dependency-management/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/masharratt/claude-flow-novice/blob/main/.claude/skills/cfn-dependency-management/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

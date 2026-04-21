@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/meeezus/Musha-Shugyo-OS",
-  "dir_name": "biometric-intelligence-meeezus-musha-shugyo-os-2"
+  "dir_name": "biometric-intelligence-meeezus-musha-shugyo-os-2",
+  "author": "meeezus",
+  "source_url": "https://github.com/meeezus/Musha-Shugyo-OS/blob/main/.claude/skills/biometric-intelligence/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/meeezus/Musha-Shugyo-OS/blob/main/.claude/skills/biometric-intelligence/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "cdn-usage"
+  "dir_name": "cdn-usage",
+  "author": "dave1010",
+  "source_url": "https://github.com/dave1010/tools",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dave Hulbert",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

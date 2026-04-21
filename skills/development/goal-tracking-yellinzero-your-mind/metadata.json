@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/goal-tracking",
   "github_branch": "main",
-  "dir_name": "goal-tracking-yellinzero-your-mind"
+  "dir_name": "goal-tracking-yellinzero-your-mind",
+  "author": "yellinzero",
+  "source_url": "https://github.com/yellinzero/your-mind/blob/main/.claude/skills/goal-tracking/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Your Mind Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:56.239844Z",
   "github_path": ".agent/skills/dev-coding-debug",
   "github_branch": "main",
-  "dir_name": "dev-coding-debug-lastdays03-claude-skills"
+  "dir_name": "dev-coding-debug-lastdays03-claude-skills",
+  "author": "lastdays03",
+  "source_url": "https://github.com/lastdays03/claude_skills/blob/main/.agent/skills/dev-coding-debug/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lastdays03/claude_skills/blob/main/.agent/skills/dev-coding-debug/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/thebrownproject/space-agents",
   "downloaded_at": "2026-01-27T01:51:59.404381Z",
   "dir_name": "mission",
-  "category": "other"
+  "category": "other",
+  "author": "thebrownproject",
+  "source_url": "https://github.com/thebrownproject/space-agents/blob/main/skills/mission/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/thebrownproject/space-agents/blob/main/skills/mission/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/multi-query",
   "github_branch": "main",
-  "dir_name": "multi-query-juanre-llmemory-45119cea"
+  "dir_name": "multi-query-juanre-llmemory-45119cea",
+  "author": "juanre",
+  "source_url": "https://github.com/juanre/llmemory/blob/main/skills/multi-query/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Juan Reyero",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

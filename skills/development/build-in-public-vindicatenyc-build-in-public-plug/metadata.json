@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:23.285998Z",
   "github_path": "skills/build-in-public",
   "github_branch": "main",
-  "dir_name": "build-in-public-vindicatenyc-build-in-public-plug"
+  "dir_name": "build-in-public-vindicatenyc-build-in-public-plug",
+  "author": "vindicatenyc",
+  "source_url": "https://github.com/vindicatenyc/build-in-public-plugin/blob/main/skills/build-in-public/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

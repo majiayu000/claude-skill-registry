@@ -11,5 +11,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "email-welcome-sequence-therapy"
+  "dir_name": "email-welcome-sequence-therapy",
+  "author": "jhcynamon1",
+  "source_url": "https://github.com/jhcynamon1/NextStepTherapySite-v2",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jhcynamon1/NextStepTherapySite-v2",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

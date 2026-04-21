@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/board-game-ui",
   "github_branch": "main",
-  "dir_name": "board-game-ui-fil512-upship"
+  "dir_name": "board-game-ui-fil512-upship",
+  "author": "fil512",
+  "source_url": "https://github.com/fil512/upship/blob/main/.claude/skills/board-game-ui/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fil512/upship/blob/main/.claude/skills/board-game-ui/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

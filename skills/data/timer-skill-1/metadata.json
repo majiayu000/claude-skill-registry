@@ -5,5 +5,12 @@
   "description": "a simple timer that run when told to wait x minutes\"",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:34.490416Z",
-  "dir_name": "timer-skill-1"
+  "dir_name": "timer-skill-1",
+  "author": "authenticwalk",
+  "source_url": "https://github.com/authenticwalk/context-grounded-bible",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Authentic Walk Creative",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

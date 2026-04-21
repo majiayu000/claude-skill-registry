@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:14.524223Z",
   "github_path": ".cursor/skills/build-chatwindow",
   "github_branch": "main",
-  "dir_name": "build-chatwindow-somtechsolutionmaxim-somtech-pack"
+  "dir_name": "build-chatwindow-somtechsolutionmaxim-somtech-pack",
+  "author": "SomtechSolutionMAxime",
+  "source_url": "https://github.com/SomtechSolutionMAxime/somtech-pack/blob/main/.cursor/skills/build-chatwindow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SomtechSolutionMAxime/somtech-pack/blob/main/.cursor/skills/build-chatwindow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

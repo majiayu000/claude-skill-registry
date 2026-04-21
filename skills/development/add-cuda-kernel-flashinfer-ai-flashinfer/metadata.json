@@ -7,5 +7,12 @@
   "stars": 4744,
   "source": "github.com/flashinfer-ai/flashinfer",
   "downloaded_at": "2026-01-24T16:15:23.860942Z",
-  "dir_name": "add-cuda-kernel-flashinfer-ai-flashinfer"
+  "dir_name": "add-cuda-kernel-flashinfer-ai-flashinfer",
+  "author": "flashinfer-ai",
+  "source_url": "https://github.com/flashinfer-ai/flashinfer/blob/main/.claude/skills/add-cuda-kernel/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/flashinfer-ai/flashinfer/blob/main/.claude/skills/add-cuda-kernel/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

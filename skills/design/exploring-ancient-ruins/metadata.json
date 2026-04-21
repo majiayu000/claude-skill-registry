@@ -5,5 +5,12 @@
   "description": "古代遗迹 - Stella深入探索盖亚星球的古代文明遗迹,解开失落文明的秘密",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:15.316796Z",
-  "dir_name": "exploring-ancient-ruins"
+  "dir_name": "exploring-ancient-ruins",
+  "author": "ClaudeCode-NPC",
+  "source_url": "https://github.com/ClaudeCode-NPC/Whispers-from-the-Star",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ClaudeCode-NPC/Whispers-from-the-Star",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

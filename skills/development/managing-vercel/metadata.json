@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:59.983395Z",
   "github_path": "packages/infrastructure/skills/managing-vercel",
   "github_branch": "main",
-  "dir_name": "managing-vercel"
+  "dir_name": "managing-vercel",
+  "author": "FortiumPartners",
+  "source_url": "https://github.com/FortiumPartners/ensemble/blob/main/packages/infrastructure/skills/managing-vercel/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Fortium Partners",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

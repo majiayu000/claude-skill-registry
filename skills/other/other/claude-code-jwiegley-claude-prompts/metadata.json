@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/jwiegley/claude-prompts",
   "dir_name": "claude-code-jwiegley-claude-prompts",
-  "downloaded_at": "2026-02-15T07:48:46.394910Z"
+  "downloaded_at": "2026-02-15T07:48:46.394910Z",
+  "author": "jwiegley",
+  "source_url": "https://github.com/jwiegley/claude-prompts/blob/main/skills/claude-code/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jwiegley/claude-prompts/blob/main/skills/claude-code/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

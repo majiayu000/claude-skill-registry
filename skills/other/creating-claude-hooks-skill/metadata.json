@@ -7,5 +7,12 @@
   "dir_name": "creating-claude-hooks-skill",
   "category": "other",
   "github_path": ".claude/skills/creating-claude-hooks-skill",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "AgentWorkforce",
+  "source_url": "https://github.com/AgentWorkforce/relay/blob/main/.claude/skills/creating-claude-hooks-skill/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Agent Workforce Incorporated",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

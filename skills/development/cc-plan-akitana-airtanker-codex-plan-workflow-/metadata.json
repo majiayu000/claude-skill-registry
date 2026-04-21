@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/cc-plan",
   "github_branch": "main",
-  "dir_name": "cc-plan-akitana-airtanker-codex-plan-workflow-"
+  "dir_name": "cc-plan-akitana-airtanker-codex-plan-workflow-",
+  "author": "akitana-airtanker",
+  "source_url": "https://github.com/akitana-airtanker/codex-plan-workflow-skills/blob/main/skills/cc-plan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/akitana-airtanker/codex-plan-workflow-skills/blob/main/skills/cc-plan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

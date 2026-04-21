@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:21.159616Z",
   "github_path": "git-commit/skills/commit-docs",
   "github_branch": "main",
-  "dir_name": "commit-docs-shin902-shi-marketplace"
+  "dir_name": "commit-docs-shin902-shi-marketplace",
+  "author": "shin902",
+  "source_url": "https://github.com/shin902/shi-marketplace/blob/main/git-commit/skills/commit-docs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 shi.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

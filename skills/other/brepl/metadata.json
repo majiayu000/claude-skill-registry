@@ -7,5 +7,12 @@
   "dir_name": "brepl",
   "category": "other",
   "github_path": "prompts/skills/brepl",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Ramblurr",
+  "source_url": "https://github.com/Ramblurr/nix-devenv/blob/main/prompts/skills/brepl/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Ramblurr/nix-devenv/blob/main/prompts/skills/brepl/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

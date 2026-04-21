@@ -5,5 +5,12 @@
   "description": "Write high-quality technical blog posts with strong structure and clarity. Use when asked to write a blog post, technical article, tutorial, or guide about programming, software, APIs, tools, or techn",
   "source": "GitHub Search API",
   "downloaded_at": "2026-01-08T03:22:20.069344Z",
-  "dir_name": "technical-blog-post"
+  "dir_name": "technical-blog-post",
+  "author": "kasperjunge",
+  "source_url": "https://github.com/kasperjunge/agent-resources",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Kasper Junge",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

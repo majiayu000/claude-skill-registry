@@ -5,5 +5,12 @@
   "source": "github.com/helmecke/dotfiles",
   "downloaded_at": "2026-01-29T07:43:54.218553Z",
   "dir_name": "complete-skill-helmecke-dotfiles",
-  "category": "other"
+  "category": "other",
+  "author": "helmecke",
+  "source_url": "https://github.com/helmecke/dotfiles/blob/main/dot_config/opencode/skill/skill-development/examples/complete-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/helmecke/dotfiles/blob/main/dot_config/opencode/skill/skill-development/examples/complete-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

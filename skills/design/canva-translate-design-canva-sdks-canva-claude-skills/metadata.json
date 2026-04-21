@@ -5,5 +5,12 @@
   "description": "Translate all text in a Canva design to another language, creating a translated copy. Faster than manually copying and editing each text box in Canva's editor. Use when users say \"translate my design ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:20.010721Z",
-  "dir_name": "canva-translate-design-canva-sdks-canva-claude-skills"
+  "dir_name": "canva-translate-design-canva-sdks-canva-claude-skills",
+  "author": "canva-sdks",
+  "source_url": "https://github.com/canva-sdks/canva-claude-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/canva-sdks/canva-claude-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

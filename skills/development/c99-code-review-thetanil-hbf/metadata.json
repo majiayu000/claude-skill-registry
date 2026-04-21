@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/c99-code-review",
   "github_branch": "main",
-  "dir_name": "c99-code-review-thetanil-hbf"
+  "dir_name": "c99-code-review-thetanil-hbf",
+  "author": "thetanil",
+  "source_url": "https://github.com/thetanil/hbf/blob/main/.claude/skills/c99-code-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/thetanil/hbf/blob/main/.claude/skills/c99-code-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

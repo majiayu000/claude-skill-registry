@@ -9,5 +9,12 @@
   ],
   "stars": 708,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "blogpost-creator"
+  "dir_name": "blogpost-creator",
+  "author": "Xe",
+  "source_url": "https://github.com/Xe/site",
+  "license": "Zlib",
+  "copyright": "Copyright (c) 2017-2022 Christine Dodrill <me@xeiaso.net>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

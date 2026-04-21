@@ -7,5 +7,12 @@
   "dir_name": "search-driving-distance-benchflow-ai-skillsbench",
   "category": "other",
   "github_path": "tasks/travel-planning/environment/skills/search-driving-distance",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "benchflow-ai",
+  "source_url": "https://github.com/benchflow-ai/skillsbench/blob/main/tasks/travel-planning/environment/skills/search-driving-distance/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/benchflow-ai/skillsbench/blob/main/tasks/travel-planning/environment/skills/search-driving-distance/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

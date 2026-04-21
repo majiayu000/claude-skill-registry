@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:20.056431Z",
   "github_path": ".claude/skills/d3/d3-layouts-hierarchies",
   "github_branch": "main",
-  "dir_name": "d3-layouts-hierarchies-zacharyr0th-next-starter-80c0eae5"
+  "dir_name": "d3-layouts-hierarchies-zacharyr0th-next-starter-80c0eae5",
+  "author": "zacharyr0th",
+  "source_url": "https://github.com/zacharyr0th/next-starter/blob/main/.claude/skills/d3/d3-layouts-hierarchies/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zacharyr0th/next-starter/blob/main/.claude/skills/d3/d3-layouts-hierarchies/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/design-sync",
   "github_branch": "main",
-  "dir_name": "design-sync-davidorex-vcv-rack-module-crea"
+  "dir_name": "design-sync-davidorex-vcv-rack-module-crea",
+  "author": "davidorex",
+  "source_url": "https://github.com/davidorex/vcv-rack-module-creation-framework/blob/main/.claude/skills/design-sync/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/davidorex/vcv-rack-module-creation-framework/blob/main/.claude/skills/design-sync/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/slo-alerting",
   "github_branch": "main",
-  "dir_name": "slo-alerting-nexus-labs-automatio-backend-observabilit"
+  "dir_name": "slo-alerting-nexus-labs-automatio-backend-observabilit",
+  "author": "nexus-labs-automation",
+  "source_url": "https://github.com/nexus-labs-automation/backend-observability/blob/main/skills/slo-alerting/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Nexus Labs",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

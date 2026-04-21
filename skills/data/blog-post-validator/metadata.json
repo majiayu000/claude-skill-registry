@@ -10,5 +10,12 @@
   ],
   "stars": 55,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "blog-post-validator"
+  "dir_name": "blog-post-validator",
+  "author": "spences10",
+  "source_url": "https://github.com/spences10/scottspence.com",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/spences10/scottspence.com",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

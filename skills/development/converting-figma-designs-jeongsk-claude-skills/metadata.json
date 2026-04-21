@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:34.455361Z",
   "github_path": "figma-helper/skills/converting-figma-designs",
   "github_branch": "main",
-  "dir_name": "converting-figma-designs-jeongsk-claude-skills"
+  "dir_name": "converting-figma-designs-jeongsk-claude-skills",
+  "author": "jeongsk",
+  "source_url": "https://github.com/jeongsk/claude-skills/blob/main/figma-helper/skills/converting-figma-designs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 jeongsk",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

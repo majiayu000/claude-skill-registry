@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:51.789569Z",
   "github_path": "plugins/lobbi-platform-manager/skills/keycloak-admin",
   "github_branch": "main",
-  "dir_name": "keycloak-admin-lobbi-docs-claude"
+  "dir_name": "keycloak-admin-lobbi-docs-claude",
+  "author": "Lobbi-Docs",
+  "source_url": "https://github.com/Lobbi-Docs/claude/blob/main/plugins/lobbi-platform-manager/skills/keycloak-admin/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Golden Armada Team",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

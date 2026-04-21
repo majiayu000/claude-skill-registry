@@ -7,5 +7,12 @@
   "dir_name": "immersive-visuals-router",
   "category": "other",
   "github_path": "skills/immersive-visuals-router",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Bbeierle12",
+  "source_url": "https://github.com/Bbeierle12/Skill-MCP-Claude/blob/main/skills/immersive-visuals-router/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Bbeierle12",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

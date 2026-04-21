@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:46.795980Z",
   "github_path": "skills/gh-ticket",
   "github_branch": "main",
-  "dir_name": "gh-ticket"
+  "dir_name": "gh-ticket",
+  "author": "Cygnusfear",
+  "source_url": "https://github.com/Cygnusfear/claude-stuff/blob/main/skills/gh-ticket/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cygnusfear/claude-stuff/blob/main/skills/gh-ticket/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

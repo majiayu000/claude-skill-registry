@@ -7,5 +7,12 @@
   "dir_name": "invalid-yaml-skill-maxvaega-skillkit-a40721c3",
   "category": "other",
   "github_path": "tests/fixtures/skills/invalid-yaml-skill",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "maxvaega",
+  "source_url": "https://github.com/maxvaega/skillkit/blob/main/tests/fixtures/skills/invalid-yaml-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Massimo Olivieri",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

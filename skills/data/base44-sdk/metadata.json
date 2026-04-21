@@ -5,5 +5,12 @@
   "source": "github.com/base44/skills",
   "downloaded_at": "2026-01-28T01:28:12.973522Z",
   "dir_name": "base44-sdk",
-  "category": "data"
+  "category": "data",
+  "author": "base44",
+  "source_url": "https://github.com/base44/skills/blob/main/skills/base44-sdk/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 base44",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

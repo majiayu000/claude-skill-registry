@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "plugins/aws-cdk/skills/aws-cdk-development",
   "github_branch": "main",
-  "dir_name": "aws-cdk-development"
+  "dir_name": "aws-cdk-development",
+  "author": "zxkane",
+  "source_url": "https://github.com/zxkane/aws-skills/blob/main/plugins/aws-cdk/skills/aws-cdk-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Mengxin Zhu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

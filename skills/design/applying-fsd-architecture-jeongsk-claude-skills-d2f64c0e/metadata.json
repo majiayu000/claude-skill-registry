@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:36.721890Z",
   "github_path": "fsd-helper/skills/applying-fsd-architecture",
   "github_branch": "main",
-  "dir_name": "applying-fsd-architecture-jeongsk-claude-skills-d2f64c0e"
+  "dir_name": "applying-fsd-architecture-jeongsk-claude-skills-d2f64c0e",
+  "author": "jeongsk",
+  "source_url": "https://github.com/jeongsk/claude-skills/blob/main/fsd-helper/skills/applying-fsd-architecture/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 jeongsk",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

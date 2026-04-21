@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/xnopre/copro-tickets-tracker",
-  "dir_name": "architecture-validator-xnopre-copro-tickets-tracke-2"
+  "dir_name": "architecture-validator-xnopre-copro-tickets-tracke-2",
+  "author": "xnopre",
+  "source_url": "https://github.com/xnopre/copro-tickets-tracker/blob/main/.claude/skills/architecture-validator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/xnopre/copro-tickets-tracker/blob/main/.claude/skills/architecture-validator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

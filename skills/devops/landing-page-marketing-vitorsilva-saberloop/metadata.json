@@ -7,5 +7,12 @@
   "stars": 1,
   "source": "github.com/vitorsilva/saberloop",
   "downloaded_at": "2026-01-24T16:15:11.060352Z",
-  "dir_name": "landing-page-marketing-vitorsilva-saberloop"
+  "dir_name": "landing-page-marketing-vitorsilva-saberloop",
+  "author": "vitorsilva",
+  "source_url": "https://github.com/vitorsilva/saberloop/blob/main/.claude/skills/landing-page-marketing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vitorsilva/saberloop/blob/main/.claude/skills/landing-page-marketing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

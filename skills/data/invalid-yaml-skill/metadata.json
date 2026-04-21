@@ -5,5 +5,12 @@
   "source": "github.com/maxvaega/skillkit",
   "downloaded_at": "2026-02-04T03:09:46.537248Z",
   "dir_name": "invalid-yaml-skill",
-  "category": "data"
+  "category": "data",
+  "author": "maxvaega",
+  "source_url": "https://github.com/maxvaega/skillkit/blob/main/tests/fixtures/skills/invalid-yaml-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Massimo Olivieri",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

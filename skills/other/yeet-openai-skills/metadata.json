@@ -9,5 +9,12 @@
   "github_path": "skills/.curated/yeet",
   "github_branch": "main",
   "dir_name": "yeet-openai-skills",
-  "downloaded_at": "2026-02-05T01:45:09.594020Z"
+  "downloaded_at": "2026-02-05T01:45:09.594020Z",
+  "author": "openai",
+  "source_url": "https://github.com/openai/skills/blob/main/skills/.curated/yeet/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/openai/skills/blob/main/skills/.curated/yeet/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

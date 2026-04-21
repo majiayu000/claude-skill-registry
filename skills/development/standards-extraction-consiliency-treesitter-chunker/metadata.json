@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:22.197568Z",
   "github_path": ".ai-dev-kit/skills/standards-extraction",
   "github_branch": "main",
-  "dir_name": "standards-extraction-consiliency-treesitter-chunker"
+  "dir_name": "standards-extraction-consiliency-treesitter-chunker",
+  "author": "Consiliency",
+  "source_url": "https://github.com/Consiliency/treesitter-chunker/blob/main/.ai-dev-kit/skills/standards-extraction/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Consiliency",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/BankrBot/claude-plugins",
   "downloaded_at": "2026-01-27T04:17:48.008365Z",
   "dir_name": "bankr-portfolio",
-  "category": "other"
+  "category": "other",
+  "author": "BankrBot",
+  "source_url": "https://github.com/BankrBot/claude-plugins/blob/main/bankr-agent-dev/skills/bankr-portfolio/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Bankr",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

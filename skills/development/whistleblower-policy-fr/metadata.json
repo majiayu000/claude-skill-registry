@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:29.191055Z",
   "github_path": "skills/whistleblower-policy-fr-malik-taiar",
   "github_branch": "main",
-  "dir_name": "whistleblower-policy-fr"
+  "dir_name": "whistleblower-policy-fr",
+  "author": "lawvable",
+  "source_url": "https://github.com/lawvable/awesome-legal-skills/blob/main/skills/whistleblower-policy-fr-malik-taiar/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lawvable/awesome-legal-skills/blob/main/skills/whistleblower-policy-fr-malik-taiar/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

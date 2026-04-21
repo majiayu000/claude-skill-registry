@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:08.266275Z",
   "github_path": "plugins/ui/skills/gesttione-design-system",
   "github_branch": "main",
-  "dir_name": "gesttione-design-system-marcioaltoe-claude-craftkit-fcc07cb9"
+  "dir_name": "gesttione-design-system-marcioaltoe-claude-craftkit-fcc07cb9",
+  "author": "marcioaltoe",
+  "source_url": "https://github.com/marcioaltoe/claude-craftkit/blob/main/plugins/ui/skills/gesttione-design-system/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Marcio Altoé",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/architecture-analysis",
   "github_branch": "main",
-  "dir_name": "architecture-analysis-hubvue-fe-analysis-skills"
+  "dir_name": "architecture-analysis-hubvue-fe-analysis-skills",
+  "author": "hubvue",
+  "source_url": "https://github.com/hubvue/fe-analysis-skills/blob/main/skills/architecture-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Kim",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

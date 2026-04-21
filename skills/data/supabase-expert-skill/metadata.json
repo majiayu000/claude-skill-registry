@@ -5,5 +5,12 @@
   "source": "github.com/fercracix33/poli2-clean-architecture",
   "downloaded_at": "2026-02-04T01:13:05.357816Z",
   "dir_name": "supabase-expert-skill",
-  "category": "data"
+  "category": "data",
+  "author": "fercracix33",
+  "source_url": "https://github.com/fercracix33/poli2-clean-architecture/blob/main/.claude/skills/supabase-expert-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fercracix33/poli2-clean-architecture/blob/main/.claude/skills/supabase-expert-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

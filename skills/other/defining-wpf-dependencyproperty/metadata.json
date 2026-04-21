@@ -7,5 +7,12 @@
   "dir_name": "defining-wpf-dependencyproperty",
   "category": "other",
   "github_path": "wpf-dev-pack/skills/defining-wpf-dependencyproperty",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "christian289",
+  "source_url": "https://github.com/christian289/dotnet-with-claudecode/blob/main/wpf-dev-pack/skills/defining-wpf-dependencyproperty/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 christian289",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

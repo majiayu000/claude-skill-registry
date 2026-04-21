@@ -10,5 +10,12 @@
   "stars": 2,
   "github_path": ".claude/skills/phoenix-elixir",
   "github_branch": "main",
-  "dir_name": "phoenix-elixir-joshprice-claude-skills-from-u-0fa1962e"
+  "dir_name": "phoenix-elixir-joshprice-claude-skills-from-u-0fa1962e",
+  "author": "joshprice",
+  "source_url": "https://github.com/joshprice/claude-skills-from-usage-rules/blob/main/.claude/skills/phoenix-elixir/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/joshprice/claude-skills-from-usage-rules/blob/main/.claude/skills/phoenix-elixir/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

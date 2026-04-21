@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/case-studies-reference",
   "github_branch": "main",
-  "dir_name": "case-studies-reference-bbeierle12-skill-mcp-claude"
+  "dir_name": "case-studies-reference-bbeierle12-skill-mcp-claude",
+  "author": "Bbeierle12",
+  "source_url": "https://github.com/Bbeierle12/Skill-MCP-Claude/blob/main/skills/case-studies-reference/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Bbeierle12",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

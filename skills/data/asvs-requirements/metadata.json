@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:21.462282Z",
   "dir_name": "asvs-requirements",
   "github_path": "plugins/security/skills/asvs-requirements",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Zate",
+  "source_url": "https://github.com/Zate/cc-plugins/blob/main/plugins/security/skills/asvs-requirements/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CC-Plugins Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

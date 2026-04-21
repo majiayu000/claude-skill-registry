@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/CuriousLearner/devkit",
-  "dir_name": "chart-generator-curiouslearner-devkit-2"
+  "dir_name": "chart-generator-curiouslearner-devkit-2",
+  "author": "CuriousLearner",
+  "source_url": "https://github.com/CuriousLearner/devkit/blob/main/skills/chart-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sanyam Khurana",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

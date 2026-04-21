@@ -5,5 +5,12 @@
   "description": "Achieve complete clarity on goals, expectations, and success criteria. Use when starting new tasks, when requirements seem unclear, when scope is ambiguous, or anytime you need full understanding of w",
   "source": "GitHub Search API",
   "downloaded_at": "2026-01-08T03:31:55.972032Z",
-  "dir_name": "goal-clarity-150"
+  "dir_name": "goal-clarity-150",
+  "author": "MykhailoDmytriakha",
+  "source_url": "https://github.com/MykhailoDmytriakha/my-preacher-helper",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MykhailoDmytriakha/my-preacher-helper",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

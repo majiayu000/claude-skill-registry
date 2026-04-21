@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:27.906444Z",
   "github_path": ".roo/skills/coding-markdown",
   "github_branch": "main",
-  "dir_name": "coding-markdown-scottermonk-agentautoflow"
+  "dir_name": "coding-markdown-scottermonk-agentautoflow",
+  "author": "ScotterMonk",
+  "source_url": "https://github.com/ScotterMonk/AgentAutoFlow/blob/main/.roo/skills/coding-markdown/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ScotterMonk/AgentAutoFlow/blob/main/.roo/skills/coding-markdown/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

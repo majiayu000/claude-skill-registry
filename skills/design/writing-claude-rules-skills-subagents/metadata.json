@@ -5,5 +5,12 @@
   "description": "Guidelines for creating custom rules, custom skills, and custom subagents for Claude.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:52.024492Z",
-  "dir_name": "writing-claude-rules-skills-subagents"
+  "dir_name": "writing-claude-rules-skills-subagents",
+  "author": "loklaan",
+  "source_url": "https://github.com/loklaan/dotfiles",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/loklaan/dotfiles",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

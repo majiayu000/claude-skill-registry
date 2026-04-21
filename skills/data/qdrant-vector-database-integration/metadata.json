@@ -5,5 +5,12 @@
   "description": "Qdrant vector database integration patterns with LangChain4j. Store embeddings, similarity search, and vector management for Java applications. Use when implementing vector-based retrieval for RAG sys",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:57:14.187640Z",
-  "dir_name": "qdrant-vector-database-integration"
+  "dir_name": "qdrant-vector-database-integration",
+  "author": "giuseppe-trisciuoglio",
+  "source_url": "https://github.com/giuseppe-trisciuoglio/developer-kit",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Giuseppe Trisciuoglio",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

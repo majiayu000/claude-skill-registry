@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:17.846339Z",
   "github_path": ".claude/skills/security-essentials",
   "github_branch": "main",
-  "dir_name": "security-essentials-primadetaautomation-primadata-marketplac"
+  "dir_name": "security-essentials-primadetaautomation-primadata-marketplac",
+  "author": "Primadetaautomation",
+  "source_url": "https://github.com/Primadetaautomation/primadata-marketplace/blob/main/.claude/skills/security-essentials/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Rick van Beek / primautomation.nl",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

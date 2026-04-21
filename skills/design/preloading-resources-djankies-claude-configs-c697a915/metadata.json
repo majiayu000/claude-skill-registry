@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:02.374436Z",
   "github_path": "react-19/skills/preloading-resources",
   "github_branch": "main",
-  "dir_name": "preloading-resources-djankies-claude-configs-c697a915"
+  "dir_name": "preloading-resources-djankies-claude-configs-c697a915",
+  "author": "djankies",
+  "source_url": "https://github.com/djankies/claude-configs/blob/main/react-19/skills/preloading-resources/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

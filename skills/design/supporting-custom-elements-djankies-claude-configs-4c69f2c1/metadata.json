@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:03.186195Z",
   "github_path": "react-19/skills/supporting-custom-elements",
   "github_branch": "main",
-  "dir_name": "supporting-custom-elements-djankies-claude-configs-4c69f2c1"
+  "dir_name": "supporting-custom-elements-djankies-claude-configs-4c69f2c1",
+  "author": "djankies",
+  "source_url": "https://github.com/djankies/claude-configs/blob/main/react-19/skills/supporting-custom-elements/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/arabicapp/everything-claude-code",
   "downloaded_at": "2026-02-04T05:21:28.364561Z",
   "dir_name": "coding-standards",
-  "category": "data"
+  "category": "data",
+  "author": "arabicapp",
+  "source_url": "https://github.com/arabicapp/everything-claude-code/blob/main/docs/zh-TW/skills/coding-standards/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Affaan Mustafa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

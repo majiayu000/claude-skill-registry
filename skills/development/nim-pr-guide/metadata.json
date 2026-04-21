@@ -8,5 +8,12 @@
     "guide"
   ],
   "stars": 0,
-  "dir_name": "nim-pr-guide"
+  "dir_name": "nim-pr-guide",
+  "author": "axiomantic",
+  "source_url": "https://github.com/axiomantic/spellbook",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Elijah Rutschman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

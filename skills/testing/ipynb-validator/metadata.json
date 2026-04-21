@@ -10,5 +10,12 @@
   "stars": 5,
   "github_path": ".claude/skills/ipynb-validator",
   "github_branch": "main",
-  "dir_name": "ipynb-validator"
+  "dir_name": "ipynb-validator",
+  "author": "ddttom",
+  "source_url": "https://github.com/ddttom/webcomponents-with-eds/blob/main/.claude/skills/ipynb-validator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SPA with Adobe Edge Delivery Services",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

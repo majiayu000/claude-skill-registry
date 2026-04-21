@@ -5,5 +5,12 @@
   "source": "github.com/motoki317/dotfiles",
   "downloaded_at": "2026-02-02T04:59:41.370218Z",
   "dir_name": "c-ecosystem",
-  "category": "data"
+  "category": "data",
+  "author": "motoki317",
+  "source_url": "https://github.com/motoki317/dotfiles/blob/main/.claude/skills/c-ecosystem/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 motoki317",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

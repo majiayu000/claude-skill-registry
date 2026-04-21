@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:36.037918Z",
   "github_path": "private_dot_claude/skills/awaiting-pr-workflows",
   "github_branch": "main",
-  "dir_name": "awaiting-pr-workflows-karlmdavis-dotfiles"
+  "dir_name": "awaiting-pr-workflows-karlmdavis-dotfiles",
+  "author": "karlmdavis",
+  "source_url": "https://github.com/karlmdavis/dotfiles/blob/main/private_dot_claude/skills/awaiting-pr-workflows/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

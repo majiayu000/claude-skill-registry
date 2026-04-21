@@ -7,5 +7,12 @@
   "dir_name": "frontend-design-skill",
   "category": "other",
   "github_path": ".claude/skills/frontend-design-skill",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "peterstorm",
+  "source_url": "https://github.com/peterstorm/.dotfiles/blob/main/.claude/skills/frontend-design-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/peterstorm/.dotfiles/blob/main/.claude/skills/frontend-design-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

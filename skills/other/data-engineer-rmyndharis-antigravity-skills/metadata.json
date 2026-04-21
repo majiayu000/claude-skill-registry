@@ -5,5 +5,12 @@
   "source": "github.com/rmyndharis/antigravity-skills",
   "downloaded_at": "2026-01-29T07:48:45.204294Z",
   "dir_name": "data-engineer-rmyndharis-antigravity-skills",
-  "category": "other"
+  "category": "other",
+  "author": "rmyndharis",
+  "source_url": "https://github.com/rmyndharis/antigravity-skills/blob/main/skills/data-engineer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Yudhi Armyndharis",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

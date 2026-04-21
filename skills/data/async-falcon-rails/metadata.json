@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "async-falcon-rails",
   "github_path": "",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "darkamenosa",
+  "source_url": "https://github.com/darkamenosa/async-falcon-rails",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/darkamenosa/async-falcon-rails",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

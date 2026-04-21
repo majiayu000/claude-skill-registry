@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:42.775654Z",
   "github_path": "content-optimization",
   "github_branch": "main",
-  "dir_name": "content-optimization-kuse-ai-kuse-skills"
+  "dir_name": "content-optimization-kuse-ai-kuse-skills",
+  "author": "kuse-ai",
+  "source_url": "https://github.com/kuse-ai/kuse-skills/blob/main/content-optimization/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Kuse AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

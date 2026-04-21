@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:57.520255Z",
   "dir_name": "assumption-grading",
   "github_path": ".github/skills/assumption-grading",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "solvaholic",
+  "source_url": "https://github.com/solvaholic/design-team/blob/main/.github/skills/assumption-grading/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Roger D. Winans",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "prd-skill-dy9759-text2knowledgecards",
   "category": "other",
   "github_path": "skills/core-skills/prd-skill",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "dy9759",
+  "source_url": "https://github.com/dy9759/Text2KnowledgeCards/blob/main/skills/core-skills/prd-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dy9759/Text2KnowledgeCards/blob/main/skills/core-skills/prd-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

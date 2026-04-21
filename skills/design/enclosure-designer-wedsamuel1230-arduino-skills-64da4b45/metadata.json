@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:38.254458Z",
   "github_path": "skills/enclosure-designer",
   "github_branch": "main",
-  "dir_name": "enclosure-designer-wedsamuel1230-arduino-skills-64da4b45"
+  "dir_name": "enclosure-designer-wedsamuel1230-arduino-skills-64da4b45",
+  "author": "wedsamuel1230",
+  "source_url": "https://github.com/wedsamuel1230/arduino-skills/blob/main/skills/enclosure-designer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Samuel F.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

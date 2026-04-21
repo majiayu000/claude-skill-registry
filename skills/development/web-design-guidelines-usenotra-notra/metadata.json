@@ -7,5 +7,12 @@
   "stars": 59,
   "source": "github.com/usenotra/notra",
   "downloaded_at": "2026-01-24T16:15:32.616482Z",
-  "dir_name": "web-design-guidelines-usenotra-notra"
+  "dir_name": "web-design-guidelines-usenotra-notra",
+  "author": "usenotra",
+  "source_url": "https://github.com/usenotra/notra/blob/main/.claude/skills/web-design-guidelines/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

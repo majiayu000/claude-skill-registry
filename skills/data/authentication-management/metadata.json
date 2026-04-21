@@ -5,5 +5,12 @@
   "source": "github.com/Lucasdoreac/mutuapix-workspace",
   "downloaded_at": "2026-02-04T04:09:13.016851Z",
   "dir_name": "authentication-management",
-  "category": "data"
+  "category": "data",
+  "author": "Lucasdoreac",
+  "source_url": "https://github.com/Lucasdoreac/mutuapix-workspace/blob/main/.claude/skills/authentication-management/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Lucasdoreac/mutuapix-workspace/blob/main/.claude/skills/authentication-management/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

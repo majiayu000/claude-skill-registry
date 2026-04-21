@@ -5,5 +5,12 @@
   "description": "This skill should be used when reviewing pull requests, performing comprehensive code review, analyzing code changes before merge, or when the user asks for thorough/ultra-critical code review. Perfor",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:46.681843Z",
-  "dir_name": "comprehensive-code-review"
+  "dir_name": "comprehensive-code-review",
+  "author": "Cygnusfear",
+  "source_url": "https://github.com/Cygnusfear/claude-stuff",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cygnusfear/claude-stuff",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:29.278180Z",
   "github_path": "plugins/auto-release-manager/skills",
   "github_branch": "main",
-  "dir_name": "auto-release-manager-dev-gom-claude-code-marketpl"
+  "dir_name": "auto-release-manager-dev-gom-claude-code-marketpl",
+  "author": "Dev-GOM",
+  "source_url": "https://github.com/Dev-GOM/claude-code-marketplace/blob/main/plugins/auto-release-manager/skills/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Dev GOM",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

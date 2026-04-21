@@ -5,5 +5,12 @@
   "description": "Session-start routine for this project. Use when beginning a new session or onboarding to this repo to load MEMORY.md and core project context (README), then summarize context and confirm readiness.",
   "source": "GitHub Search API",
   "downloaded_at": "2026-01-08T03:30:27.140402Z",
-  "dir_name": "session-start-memory"
+  "dir_name": "session-start-memory",
+  "author": "MykhailoDmytriakha",
+  "source_url": "https://github.com/MykhailoDmytriakha/my-preacher-helper",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MykhailoDmytriakha/my-preacher-helper",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

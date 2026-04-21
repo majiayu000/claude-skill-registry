@@ -5,5 +5,12 @@
   "description": "Game programming languages - C#, C++, GDScript. Learn syntax, patterns,and engine-specific idioms for professional game development.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:45.214511Z",
-  "dir_name": "game-programming-languages"
+  "dir_name": "game-programming-languages",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-game-developer",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -10,5 +10,12 @@
   ],
   "stars": 251,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "frontend-css-standards"
+  "dir_name": "frontend-css-standards",
+  "author": "maxritter",
+  "source_url": "https://github.com/maxritter/claude-codepro",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (C) 2026 Max Ritter (@maxritter). All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

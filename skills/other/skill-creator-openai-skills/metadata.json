@@ -9,5 +9,12 @@
   "github_path": "skills/.system/skill-creator",
   "github_branch": "main",
   "dir_name": "skill-creator-openai-skills",
-  "downloaded_at": "2026-02-05T01:45:09.615045Z"
+  "downloaded_at": "2026-02-05T01:45:09.615045Z",
+  "author": "openai",
+  "source_url": "https://github.com/openai/skills/blob/main/skills/.system/skill-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/openai/skills/blob/main/skills/.system/skill-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "abc2a188-b028-4b7c-8c59-2d4f7548aad9",
   "category": "other",
   "github_path": "public/skills/abc2a188-b028-4b7c-8c59-2d4f7548aad9",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "onurkanbakirci",
+  "source_url": "https://github.com/onurkanbakirci/awesome-skills/blob/main/public/skills/abc2a188-b028-4b7c-8c59-2d4f7548aad9/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/onurkanbakirci/awesome-skills/blob/main/public/skills/abc2a188-b028-4b7c-8c59-2d4f7548aad9/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

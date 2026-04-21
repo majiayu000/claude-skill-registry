@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:12.479497Z",
   "github_path": "plugins/blocklet/skills/blocklet-converter",
   "github_branch": "main",
-  "dir_name": "blocklet-converter"
+  "dir_name": "blocklet-converter",
+  "author": "ArcBlock",
+  "source_url": "https://github.com/ArcBlock/agent-skills/blob/main/plugins/blocklet/skills/blocklet-converter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ArcBlock",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

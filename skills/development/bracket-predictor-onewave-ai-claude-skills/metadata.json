@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "bracket-predictor",
   "github_branch": "main",
-  "dir_name": "bracket-predictor-onewave-ai-claude-skills"
+  "dir_name": "bracket-predictor-onewave-ai-claude-skills",
+  "author": "OneWave-AI",
+  "source_url": "https://github.com/OneWave-AI/claude-skills/blob/main/bracket-predictor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 OneWave AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

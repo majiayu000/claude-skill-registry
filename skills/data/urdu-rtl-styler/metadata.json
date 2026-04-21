@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "urdu-rtl-styler"
+  "dir_name": "urdu-rtl-styler",
+  "author": "FAIQahm",
+  "source_url": "https://github.com/FAIQahm/hackathon_I_book",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/FAIQahm/hackathon_I_book",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "implementing-assertions",
   "category": "other",
   "github_path": "skills/implementing-assertions",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "phylaxsystems",
+  "source_url": "https://github.com/phylaxsystems/agent-skills/blob/main/skills/implementing-assertions/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Phylax",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

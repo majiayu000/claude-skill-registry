@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:46.364100Z",
   "dir_name": "python-fundamentals",
   "github_path": "skills/python-fundamentals",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-python/blob/main/skills/python-fundamentals/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/saknarinZ/agent_skills_gemini",
-  "dir_name": "project-creation-saknarinz-agent-skills-gemini-2"
+  "dir_name": "project-creation-saknarinz-agent-skills-gemini-2",
+  "author": "saknarinZ",
+  "source_url": "https://github.com/saknarinZ/agent_skills_gemini/blob/main/.agent/skills/project-creation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/saknarinZ/agent_skills_gemini/blob/main/.agent/skills/project-creation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

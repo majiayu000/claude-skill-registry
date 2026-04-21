@@ -5,5 +5,12 @@
   "description": "共通ユーティリティスキル - PDF出力、レポート生成、データ変換",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:24.014345Z",
-  "dir_name": "utilityskills"
+  "dir_name": "utilityskills",
+  "author": "liushuang393",
+  "source_url": "https://github.com/liushuang393/serverlessAIAgents",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/liushuang393/serverlessAIAgents",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

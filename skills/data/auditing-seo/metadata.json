@@ -5,5 +5,12 @@
   "source": "github.com/PerryB-GIT/claude-code-skills",
   "downloaded_at": "2026-02-04T01:36:20.949352Z",
   "dir_name": "auditing-seo",
-  "category": "data"
+  "category": "data",
+  "author": "PerryB-GIT",
+  "source_url": "https://github.com/PerryB-GIT/claude-code-skills/blob/main/auditing-seo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PerryB-GIT/claude-code-skills/blob/main/auditing-seo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

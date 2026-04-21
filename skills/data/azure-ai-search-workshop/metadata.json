@@ -7,5 +7,12 @@
   "stars": 43,
   "source": "github.com/nohanaga/Azure-AI-Search-Workshop",
   "downloaded_at": "2026-01-24T16:15:46.174803Z",
-  "dir_name": "azure-ai-search-workshop"
+  "dir_name": "azure-ai-search-workshop",
+  "author": "nohanaga",
+  "source_url": "https://github.com/nohanaga/Azure-AI-Search-Workshop/blob/main/AddCustomSkill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 hanachan",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

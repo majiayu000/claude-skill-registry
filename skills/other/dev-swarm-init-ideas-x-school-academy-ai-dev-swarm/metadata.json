@@ -5,5 +5,12 @@
   "source": "github.com/X-School-Academy/ai-dev-swarm",
   "downloaded_at": "2026-01-14T02:33:42.953970Z",
   "dir_name": "dev-swarm-init-ideas-x-school-academy-ai-dev-swarm",
-  "category": "other"
+  "category": "other",
+  "author": "X-School-Academy",
+  "source_url": "https://github.com/X-School-Academy/ai-dev-swarm/blob/main/dev-swarm/skills/dev-swarm-init-ideas/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

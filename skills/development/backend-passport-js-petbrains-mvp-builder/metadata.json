@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/backend-passport-js",
   "github_branch": "main",
-  "dir_name": "backend-passport-js-petbrains-mvp-builder"
+  "dir_name": "backend-passport-js-petbrains-mvp-builder",
+  "author": "petbrains",
+  "source_url": "https://github.com/petbrains/mvp-builder/blob/main/.claude/skills/backend-passport-js/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MVP Builder",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/dawiddutoit/custom-claude",
-  "dir_name": "temet-run-tui-patterns"
+  "dir_name": "temet-run-tui-patterns",
+  "author": "dawiddutoit",
+  "source_url": "https://github.com/dawiddutoit/custom-claude",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dawiddutoit/custom-claude",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

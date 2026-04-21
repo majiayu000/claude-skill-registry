@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/rshankras/claude-code-apple-skills",
-  "dir_name": "macos-rshankras-claude-code-apple-sk-2"
+  "dir_name": "macos-rshankras-claude-code-apple-sk-2",
+  "author": "rshankras",
+  "source_url": "https://github.com/rshankras/claude-code-apple-skills/blob/main/skills/macos/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ravishankar",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

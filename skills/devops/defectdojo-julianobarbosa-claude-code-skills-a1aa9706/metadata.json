@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:32.914412Z",
   "github_path": "skills/defectdojo-skill",
   "github_branch": "main",
-  "dir_name": "defectdojo-julianobarbosa-claude-code-skills-a1aa9706"
+  "dir_name": "defectdojo-julianobarbosa-claude-code-skills-a1aa9706",
+  "author": "julianobarbosa",
+  "source_url": "https://github.com/julianobarbosa/claude-code-skills/blob/main/skills/defectdojo-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

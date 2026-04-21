@@ -5,5 +5,12 @@
   "description": "Applies a modified Fagan Inspection methodology to systematically resolve persistent bugs and complex issues. Use when multiple previous fix attempts have failed repeatedly, when dealing with intricat",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:52.138344Z",
-  "dir_name": "performing-systematic-debugging-for-stubborn-problems"
+  "dir_name": "performing-systematic-debugging-for-stubborn-problems",
+  "author": "sammcj",
+  "source_url": "https://github.com/sammcj/agentic-coding",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sammcj/agentic-coding",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

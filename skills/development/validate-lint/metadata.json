@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:14.656700Z",
   "github_path": ".claude/skills/quality/validate-lint",
   "github_branch": "main",
-  "dir_name": "validate-lint"
+  "dir_name": "validate-lint",
+  "author": "BerryKuipers",
+  "source_url": "https://github.com/BerryKuipers/claude-code-toolkit/blob/main/.claude/skills/quality/validate-lint/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BerryKuipers/claude-code-toolkit/blob/main/.claude/skills/quality/validate-lint/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

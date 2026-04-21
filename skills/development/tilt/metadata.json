@@ -9,5 +9,12 @@
   "stars": 23,
   "github_path": ".claude/skills/tilt",
   "github_branch": "main",
-  "dir_name": "tilt"
+  "dir_name": "tilt",
+  "author": "0xBigBoss",
+  "source_url": "https://github.com/0xBigBoss/claude-code/blob/main/.claude/skills/tilt/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Allen Eubank (Big Boss)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

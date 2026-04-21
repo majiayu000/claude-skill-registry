@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:51.827521Z",
   "github_path": "Claude/skills/aws-strands-agents-agentcore",
   "github_branch": "main",
-  "dir_name": "aws-strands-agents-agentcore"
+  "dir_name": "aws-strands-agents-agentcore",
+  "author": "sammcj",
+  "source_url": "https://github.com/sammcj/agentic-coding/blob/main/Claude/skills/aws-strands-agents-agentcore/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sammcj/agentic-coding/blob/main/Claude/skills/aws-strands-agents-agentcore/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

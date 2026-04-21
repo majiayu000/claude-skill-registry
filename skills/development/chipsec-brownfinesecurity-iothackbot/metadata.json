@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:20.151902Z",
   "github_path": "skills/chipsec",
   "github_branch": "main",
-  "dir_name": "chipsec-brownfinesecurity-iothackbot"
+  "dir_name": "chipsec-brownfinesecurity-iothackbot",
+  "author": "BrownFineSecurity",
+  "source_url": "https://github.com/BrownFineSecurity/iothackbot/blob/main/skills/chipsec/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 iothackbot contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

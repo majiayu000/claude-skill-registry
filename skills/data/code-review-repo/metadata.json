@@ -5,5 +5,12 @@
   "source": "github.com/blueraai/bluera-base",
   "downloaded_at": "2026-02-04T04:17:40.233966Z",
   "dir_name": "code-review-repo",
-  "category": "data"
+  "category": "data",
+  "author": "blueraai",
+  "source_url": "https://github.com/blueraai/bluera-base/blob/main/skills/code-review-repo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/blueraai/bluera-base/blob/main/skills/code-review-repo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

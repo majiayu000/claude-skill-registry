@@ -12,5 +12,12 @@
   "stars": 0,
   "github_path": "skills/godot-visual-bug-diagnosis",
   "github_branch": "main",
-  "dir_name": "godot-visual-bug-diagnosis-jlindley-jlindley-skills"
+  "dir_name": "godot-visual-bug-diagnosis-jlindley-jlindley-skills",
+  "author": "jlindley",
+  "source_url": "https://github.com/jlindley/jlindley-skills/blob/main/skills/godot-visual-bug-diagnosis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jlindley/jlindley-skills/blob/main/skills/godot-visual-bug-diagnosis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

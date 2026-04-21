@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:42.123273Z",
   "github_path": "plugins/team/skills/quality/code-quality-review",
   "github_branch": "main",
-  "dir_name": "code-quality-review"
+  "dir_name": "code-quality-review",
+  "author": "rsmdt",
+  "source_url": "https://github.com/rsmdt/the-startup/blob/main/plugins/team/skills/quality/code-quality-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-current Rudolf Schmidt",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

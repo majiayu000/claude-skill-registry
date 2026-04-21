@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:11.639873Z",
   "github_path": ".opencode/skill/atomic-components",
   "github_branch": "main",
-  "dir_name": "atomic-components-felixanhalt-spotify-playlist-ext"
+  "dir_name": "atomic-components-felixanhalt-spotify-playlist-ext",
+  "author": "felixAnhalt",
+  "source_url": "https://github.com/felixAnhalt/spotify-playlist-extractor/blob/main/.opencode/skill/atomic-components/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

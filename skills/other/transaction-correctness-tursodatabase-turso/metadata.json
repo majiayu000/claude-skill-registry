@@ -7,5 +7,12 @@
   "dir_name": "transaction-correctness-tursodatabase-turso",
   "category": "other",
   "github_path": ".claude/skills/transaction-correctness",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "tursodatabase",
+  "source_url": "https://github.com/tursodatabase/turso/blob/main/.claude/skills/transaction-correctness/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2024 the Turso authors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

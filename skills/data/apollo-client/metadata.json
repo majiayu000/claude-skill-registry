@@ -5,5 +5,12 @@
   "source": "github.com/apollographql/skills",
   "downloaded_at": "2026-02-04T04:39:36.795986Z",
   "dir_name": "apollo-client",
-  "category": "data"
+  "category": "data",
+  "author": "apollographql",
+  "source_url": "https://github.com/apollographql/skills/blob/main/skills/apollo-client/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Apollo Graph, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

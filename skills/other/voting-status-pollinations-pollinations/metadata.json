@@ -5,5 +5,12 @@
   "source": "github.com/pollinations/pollinations",
   "downloaded_at": "2026-02-02T03:19:36.652585Z",
   "dir_name": "voting-status-pollinations-pollinations",
-  "category": "other"
+  "category": "other",
+  "author": "pollinations",
+  "source_url": "https://github.com/pollinations/pollinations/blob/main/.claude/skills/voting-status/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 pollinations.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

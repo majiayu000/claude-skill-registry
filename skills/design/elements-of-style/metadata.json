@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:41.159170Z",
   "github_path": "swiss-army-knife/skills/elements-of-style",
   "github_branch": "main",
-  "dir_name": "elements-of-style"
+  "dir_name": "elements-of-style",
+  "author": "penkzhou",
+  "source_url": "https://github.com/penkzhou/swiss-army-knife-plugin/blob/main/swiss-army-knife/skills/elements-of-style/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/penkzhou/swiss-army-knife-plugin/blob/main/swiss-army-knife/skills/elements-of-style/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

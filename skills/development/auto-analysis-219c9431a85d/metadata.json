@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/auto-analysis-219c9431a85d",
   "github_branch": "main",
-  "dir_name": "auto-analysis-219c9431a85d"
+  "dir_name": "auto-analysis-219c9431a85d",
+  "author": "HR-AR",
+  "source_url": "https://github.com/HR-AR/Project-Conductor/blob/main/.claude/skills/auto-analysis-219c9431a85d/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HR-AR/Project-Conductor/blob/main/.claude/skills/auto-analysis-219c9431a85d/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/avvale/aurora-back",
   "downloaded_at": "2026-02-04T02:36:41.646819Z",
   "dir_name": "aurora-schema",
-  "category": "data"
+  "category": "data",
+  "author": "avvale",
+  "source_url": "https://github.com/avvale/aurora-back/blob/main/.claude/skills/aurora-schema/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/avvale/aurora-back/blob/main/.claude/skills/aurora-schema/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

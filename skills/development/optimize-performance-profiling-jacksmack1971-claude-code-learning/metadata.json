@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:19.206388Z",
   "github_path": ".claude/skills/optimize-performance-profiling",
   "github_branch": "main",
-  "dir_name": "optimize-performance-profiling-jacksmack1971-claude-code-learning"
+  "dir_name": "optimize-performance-profiling-jacksmack1971-claude-code-learning",
+  "author": "JackSmack1971",
+  "source_url": "https://github.com/JackSmack1971/claude-code-learning-flywheel/blob/main/.claude/skills/optimize-performance-profiling/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Code Learning Flywheel Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

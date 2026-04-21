@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": ".claude/skills/urdu-rtl-styler",
   "github_branch": "main",
-  "dir_name": "urdu-rtl-styler-faiqahm-hackathon-i-book"
+  "dir_name": "urdu-rtl-styler-faiqahm-hackathon-i-book",
+  "author": "FAIQahm",
+  "source_url": "https://github.com/FAIQahm/hackathon_I_book/blob/main/.claude/skills/urdu-rtl-styler/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/FAIQahm/hackathon_I_book/blob/main/.claude/skills/urdu-rtl-styler/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

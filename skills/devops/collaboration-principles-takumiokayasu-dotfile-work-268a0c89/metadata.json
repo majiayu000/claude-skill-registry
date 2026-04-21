@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:16.027252Z",
   "github_path": "claude/skills/4-utility/collaboration-principles",
   "github_branch": "main",
-  "dir_name": "collaboration-principles-takumiokayasu-dotfile-work-268a0c89"
+  "dir_name": "collaboration-principles-takumiokayasu-dotfile-work-268a0c89",
+  "author": "TakumiOkayasu",
+  "source_url": "https://github.com/TakumiOkayasu/dotfile-work/blob/main/claude/skills/4-utility/collaboration-principles/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TakumiOkayasu/dotfile-work/blob/main/claude/skills/4-utility/collaboration-principles/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

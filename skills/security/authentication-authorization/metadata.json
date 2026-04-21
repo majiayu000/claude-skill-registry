@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "authentication-authorization"
+  "dir_name": "authentication-authorization",
+  "author": "TakumiOkayasu",
+  "source_url": "https://github.com/TakumiOkayasu/dotfile-work",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TakumiOkayasu/dotfile-work",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "stars": 4,
   "github_path": ".claude/skills/rule-making-skill",
   "github_branch": "main",
-  "dir_name": "rule-making-skill-andersnygaard-ettsted2"
+  "dir_name": "rule-making-skill-andersnygaard-ettsted2",
+  "author": "andersnygaard",
+  "source_url": "https://github.com/andersnygaard/ettsted2/blob/main/.claude/skills/rule-making-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andersnygaard/ettsted2/blob/main/.claude/skills/rule-making-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

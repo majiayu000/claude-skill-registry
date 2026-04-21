@@ -10,5 +10,12 @@
   "stars": 13,
   "github_path": "skills/performance-profiler",
   "github_branch": "main",
-  "dir_name": "performance-profiler"
+  "dir_name": "performance-profiler",
+  "author": "CuriousLearner",
+  "source_url": "https://github.com/CuriousLearner/devkit/blob/main/skills/performance-profiler/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sanyam Khurana",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

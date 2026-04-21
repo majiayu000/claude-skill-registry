@@ -7,5 +7,12 @@
   "dir_name": "universal-templating-lobbi-docs-claude",
   "category": "other",
   "github_path": "plugins/claude-code-templating-plugin/skills/universal-templating",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Lobbi-Docs",
+  "source_url": "https://github.com/Lobbi-Docs/claude/blob/main/plugins/claude-code-templating-plugin/skills/universal-templating/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Golden Armada Team",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

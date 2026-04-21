@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/SHAJAR5110/Hackathon-II-phase2",
-  "dir_name": "authentication"
+  "dir_name": "authentication",
+  "author": "SHAJAR5110",
+  "source_url": "https://github.com/SHAJAR5110/Hackathon-II-phase2",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SHAJAR5110/Hackathon-II-phase2",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

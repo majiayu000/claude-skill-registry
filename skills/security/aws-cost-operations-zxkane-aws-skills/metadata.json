@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "plugins/aws-cost-ops/skills/aws-cost-operations",
   "github_branch": "main",
-  "dir_name": "aws-cost-operations-zxkane-aws-skills"
+  "dir_name": "aws-cost-operations-zxkane-aws-skills",
+  "author": "zxkane",
+  "source_url": "https://github.com/zxkane/aws-skills/blob/main/plugins/aws-cost-ops/skills/aws-cost-operations/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Mengxin Zhu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

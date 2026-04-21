@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/cover-letter-voice",
   "github_branch": "main",
-  "dir_name": "cover-letter-voice"
+  "dir_name": "cover-letter-voice",
+  "author": "AJBcoding",
+  "source_url": "https://github.com/AJBcoding/claude-skill-eval/blob/main/.claude/skills/cover-letter-voice/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AJBcoding/claude-skill-eval/blob/main/.claude/skills/cover-letter-voice/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

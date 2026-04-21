@@ -5,5 +5,12 @@
   "source": "github.com/joaquimscosta/arkhe-claude-plugins",
   "downloaded_at": "2026-01-29T07:04:32.941210Z",
   "dir_name": "creating-pr",
-  "category": "data"
+  "category": "data",
+  "author": "joaquimscosta",
+  "source_url": "https://github.com/joaquimscosta/arkhe-claude-plugins/blob/main/plugins/git/skills/creating-pr/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Joaquim Costa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "aws-infrastructure-architect"
+  "dir_name": "aws-infrastructure-architect",
+  "author": "jzallen",
+  "source_url": "https://github.com/jzallen/fred_simulations",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jzallen/fred_simulations",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

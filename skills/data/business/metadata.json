@@ -5,5 +5,12 @@
   "source": "github.com/Brownbull/khujta_ai_business",
   "downloaded_at": "2026-02-04T05:06:26.217718Z",
   "dir_name": "business",
-  "category": "data"
+  "category": "data",
+  "author": "Brownbull",
+  "source_url": "https://github.com/Brownbull/khujta_ai_business/blob/main/.claude/skills/business/Skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Brownbull/khujta_ai_business/blob/main/.claude/skills/business/Skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

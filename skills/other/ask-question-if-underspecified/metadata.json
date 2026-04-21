@@ -5,5 +5,12 @@
   "source": "github.com/petebarbosa/dotfiles",
   "downloaded_at": "2026-02-02T03:58:20.839779Z",
   "dir_name": "ask-question-if-underspecified",
-  "category": "other"
+  "category": "other",
+  "author": "petebarbosa",
+  "source_url": "https://github.com/petebarbosa/dotfiles/blob/main/opencode/skill/ask-question-if-underspecified/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Pedro Barbosa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

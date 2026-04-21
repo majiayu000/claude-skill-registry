@@ -7,5 +7,12 @@
   "dir_name": "frontend-state-shaul1991-shaul-agents-plugin-478ad5ec",
   "category": "other",
   "github_path": "skills/frontend-state",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "shaul1991",
+  "source_url": "https://github.com/shaul1991/shaul-agents-plugin/blob/main/skills/frontend-state/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shaul1991/shaul-agents-plugin/blob/main/skills/frontend-state/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

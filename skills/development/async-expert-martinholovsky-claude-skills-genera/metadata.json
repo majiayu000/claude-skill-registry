@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/async-expert",
   "github_branch": "main",
-  "dir_name": "async-expert-martinholovsky-claude-skills-genera"
+  "dir_name": "async-expert-martinholovsky-claude-skills-genera",
+  "author": "martinholovsky",
+  "source_url": "https://github.com/martinholovsky/claude-skills-generator/blob/main/skills/async-expert/SKILL.md",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/martinholovsky/claude-skills-generator/blob/main/skills/async-expert/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

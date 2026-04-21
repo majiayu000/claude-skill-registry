@@ -7,5 +7,12 @@
   "dir_name": "axiom-storage-charleswiltgen-axiom",
   "category": "other",
   "github_path": ".claude-plugin/plugins/axiom/skills/axiom-storage-diag",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "CharlesWiltgen",
+  "source_url": "https://github.com/CharlesWiltgen/Axiom/blob/main/.claude-plugin/plugins/axiom/skills/axiom-storage-diag/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Charles Wiltgen",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

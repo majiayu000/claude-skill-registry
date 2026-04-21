@@ -5,5 +5,12 @@
   "description": "Capture web page layout summaries and scraping notes from live sites. Use when asked to document page structure, identify sections, or describe how to scrape a site; includes guidance for dev-browser ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:10.623003Z",
-  "dir_name": "web-layout-snapshot"
+  "dir_name": "web-layout-snapshot",
+  "author": "BenderFendor",
+  "source_url": "https://github.com/BenderFendor/Thesis",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BenderFendor/Thesis",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

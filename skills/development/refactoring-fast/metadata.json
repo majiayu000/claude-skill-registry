@@ -5,5 +5,12 @@
   "description": "Fast batch refactoring via MorphLLM edit_file. Use for \"refactor across files\", \"batch rename\", \"update pattern everywhere\", large files (500+ lines), or 5+ edits in same file.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:53.755108Z",
-  "dir_name": "refactoring-fast"
+  "dir_name": "refactoring-fast",
+  "author": "alexei-led",
+  "source_url": "https://github.com/alexei-led/claude-code-config",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Alexei Ledenev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

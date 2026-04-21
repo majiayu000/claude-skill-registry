@@ -5,5 +5,12 @@
   "source": "github.com/Anveio/conveaux",
   "downloaded_at": "2026-01-29T07:15:00.051110Z",
   "dir_name": "role-code-reviewer-anveio-conveaux",
-  "category": "other"
+  "category": "other",
+  "author": "Anveio",
+  "source_url": "https://github.com/Anveio/conveaux/blob/main/.claude/skills/role-code-reviewer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Anveio/conveaux/blob/main/.claude/skills/role-code-reviewer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

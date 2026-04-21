@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "plugins/team/skills/development/technical-writing",
   "github_branch": "main",
-  "dir_name": "technical-writing-rsmdt-the-startup"
+  "dir_name": "technical-writing-rsmdt-the-startup",
+  "author": "rsmdt",
+  "source_url": "https://github.com/rsmdt/the-startup/blob/main/plugins/team/skills/development/technical-writing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-current Rudolf Schmidt",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

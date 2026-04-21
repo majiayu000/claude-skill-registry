@@ -9,5 +9,12 @@
   "github_path": "skills/git",
   "github_branch": "main",
   "dir_name": "git-morgs32-skills",
-  "downloaded_at": "2026-02-05T05:37:49.232932Z"
+  "downloaded_at": "2026-02-05T05:37:49.232932Z",
+  "author": "morgs32",
+  "source_url": "https://github.com/morgs32/skills/blob/main/skills/git/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/morgs32/skills/blob/main/skills/git/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

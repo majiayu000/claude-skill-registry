@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:43.016792Z",
   "github_path": "modern-web-design",
   "github_branch": "main",
-  "dir_name": "modern-web-design-kuse-ai-kuse-skills-12793e74"
+  "dir_name": "modern-web-design-kuse-ai-kuse-skills-12793e74",
+  "author": "kuse-ai",
+  "source_url": "https://github.com/kuse-ai/kuse-skills/blob/main/modern-web-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Kuse AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

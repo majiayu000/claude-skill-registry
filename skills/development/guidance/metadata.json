@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:19.689470Z",
   "github_path": "16-prompt-engineering/guidance",
   "github_branch": "main",
-  "dir_name": "guidance"
+  "dir_name": "guidance",
+  "author": "zechenzhangAGI",
+  "source_url": "https://github.com/zechenzhangAGI/AI-research-SKILLs/blob/main/16-prompt-engineering/guidance/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude AI Research Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

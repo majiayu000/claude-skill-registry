@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:46.914926Z",
   "github_path": "plugins/bruno-api/skills/bruno-api",
   "github_branch": "main",
-  "dir_name": "bruno-api-diversioteam-agent-skills-marketp"
+  "dir_name": "bruno-api-diversioteam-agent-skills-marketp",
+  "author": "DiversioTeam",
+  "source_url": "https://github.com/DiversioTeam/agent-skills-marketplace/blob/main/plugins/bruno-api/skills/bruno-api/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Diversio",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

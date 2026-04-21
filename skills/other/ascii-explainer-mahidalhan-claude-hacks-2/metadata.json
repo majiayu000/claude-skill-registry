@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/mahidalhan/claude-hacks",
-  "dir_name": "ascii-explainer-mahidalhan-claude-hacks-2"
+  "dir_name": "ascii-explainer-mahidalhan-claude-hacks-2",
+  "author": "mahidalhan",
+  "source_url": "https://github.com/mahidalhan/claude-hacks/blob/main/skills/ascii-explainer/skills/ascii-explainer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Skilled Spec Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

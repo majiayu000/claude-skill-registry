@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": "skills/unity-catalog-tagger",
   "github_branch": "main",
-  "dir_name": "unity-catalog-tagger-fusionet24-aiskills"
+  "dir_name": "unity-catalog-tagger-fusionet24-aiskills",
+  "author": "fusionet24",
+  "source_url": "https://github.com/fusionet24/AISkills/blob/main/skills/unity-catalog-tagger/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AISkills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

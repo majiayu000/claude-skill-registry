@@ -5,5 +5,12 @@
   "source": "github.com/infinith4/dev-flutter-realestate",
   "downloaded_at": "2026-01-29T06:56:30.491526Z",
   "dir_name": "pm-risk-infinith4-dev-flutter-realesta",
-  "category": "other"
+  "category": "other",
+  "author": "infinith4",
+  "source_url": "https://github.com/infinith4/dev-flutter-realestate/blob/main/.claude/skills/pm-risk/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/infinith4/dev-flutter-realestate/blob/main/.claude/skills/pm-risk/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

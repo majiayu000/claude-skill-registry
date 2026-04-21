@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:52.117387Z",
   "github_path": "Claude/skills/extract-wisdom",
   "github_branch": "main",
-  "dir_name": "extract-wisdom"
+  "dir_name": "extract-wisdom",
+  "author": "sammcj",
+  "source_url": "https://github.com/sammcj/agentic-coding/blob/main/Claude/skills/extract-wisdom/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sammcj/agentic-coding/blob/main/Claude/skills/extract-wisdom/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

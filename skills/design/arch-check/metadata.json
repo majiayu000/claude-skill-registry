@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/arch-check",
   "github_branch": "main",
-  "dir_name": "arch-check"
+  "dir_name": "arch-check",
+  "author": "pwittchen",
+  "source_url": "https://github.com/pwittchen/varun.surf/blob/main/.claude/skills/arch-check/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

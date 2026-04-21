@@ -5,5 +5,12 @@
   "description": "Serves LLMs with high throughput using vLLM's PagedAttention and continuous batching. Use when deploying production LLM APIs, optimizing inference latency/throughput, or serving models with limited GP",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:19.319940Z",
-  "dir_name": "serving-llms-vllm-zechenzhangagi-ai-research-skills"
+  "dir_name": "serving-llms-vllm-zechenzhangagi-ai-research-skills",
+  "author": "zechenzhangAGI",
+  "source_url": "https://github.com/zechenzhangAGI/AI-research-SKILLs",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude AI Research Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

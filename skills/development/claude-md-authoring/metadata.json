@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:51.962641Z",
   "github_path": "Claude/skills/claude-md-authoring",
   "github_branch": "main",
-  "dir_name": "claude-md-authoring"
+  "dir_name": "claude-md-authoring",
+  "author": "sammcj",
+  "source_url": "https://github.com/sammcj/agentic-coding/blob/main/Claude/skills/claude-md-authoring/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sammcj/agentic-coding/blob/main/Claude/skills/claude-md-authoring/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

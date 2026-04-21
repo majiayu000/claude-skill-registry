@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:15.892636Z",
   "github_path": "skills/security-guardrails",
   "github_branch": "main",
-  "dir_name": "security-guardrails-csheng-dot-claude"
+  "dir_name": "security-guardrails-csheng-dot-claude",
+  "author": "CsHeng",
+  "source_url": "https://github.com/CsHeng/dot-claude/blob/main/skills/security-guardrails/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CsHeng/dot-claude/blob/main/skills/security-guardrails/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

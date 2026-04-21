@@ -5,5 +5,12 @@
   "source": "github.com/DiscreteTom/aws-sigv4-req-builder-skill",
   "downloaded_at": "2026-01-29T05:57:16.794927Z",
   "dir_name": "aws-sigv4-req-builder-discretetom-aws-sigv4-req-builde",
-  "category": "other"
+  "category": "other",
+  "author": "DiscreteTom",
+  "source_url": "https://github.com/DiscreteTom/aws-sigv4-req-builder-skill/blob/main/aws-sigv4-req-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 DiscreteTom",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

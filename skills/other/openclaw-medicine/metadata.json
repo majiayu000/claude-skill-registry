@@ -5,5 +5,12 @@
   "source": "github.com/Castrozan/.dotfiles",
   "downloaded_at": "2026-02-02T03:54:27.724780Z",
   "dir_name": "openclaw-medicine",
-  "category": "other"
+  "category": "other",
+  "author": "Castrozan",
+  "source_url": "https://github.com/Castrozan/.dotfiles/blob/main/agents/skills/openclaw-medicine/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Castrozan/.dotfiles/blob/main/agents/skills/openclaw-medicine/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/cisco-ai-defense/skill-scanner",
   "downloaded_at": "2026-01-29T08:17:00.325012Z",
   "dir_name": "prompt-injection-cisco-ai-defense-skill-scanner",
-  "category": "other"
+  "category": "other",
+  "author": "cisco-ai-defense",
+  "source_url": "https://github.com/cisco-ai-defense/skill-scanner/blob/main/evals/test_skills/malicious/prompt-injection/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2026 Cisco Systems, Inc. and its affiliates",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

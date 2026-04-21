@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": "skills/ios-app-tester",
   "github_branch": "main",
-  "dir_name": "ios-app-tester"
+  "dir_name": "ios-app-tester",
+  "author": "ckorhonen",
+  "source_url": "https://github.com/ckorhonen/claude-skills/blob/main/skills/ios-app-tester/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Chris Korhonen",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

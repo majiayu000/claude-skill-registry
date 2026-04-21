@@ -10,5 +10,12 @@
   "stars": 2,
   "github_path": ".claude/skills/phoenix-ecto",
   "github_branch": "main",
-  "dir_name": "phoenix-ecto-joshprice-claude-skills-from-u-7cf10856"
+  "dir_name": "phoenix-ecto-joshprice-claude-skills-from-u-7cf10856",
+  "author": "joshprice",
+  "source_url": "https://github.com/joshprice/claude-skills-from-usage-rules/blob/main/.claude/skills/phoenix-ecto/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/joshprice/claude-skills-from-usage-rules/blob/main/.claude/skills/phoenix-ecto/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

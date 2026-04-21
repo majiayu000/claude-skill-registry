@@ -5,5 +5,12 @@
   "description": "Master defensive Bash scripting for production automation, CI/CD pipelines, and system utilities. Expert in safe, portable, and testable shell scripts with POSIX compliance, modern Bash 5.x features, ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:15.110011Z",
-  "dir_name": "scripting-bash"
+  "dir_name": "scripting-bash",
+  "author": "joaquimscosta",
+  "source_url": "https://github.com/joaquimscosta/arkhe-claude-plugins",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Joaquim Costa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

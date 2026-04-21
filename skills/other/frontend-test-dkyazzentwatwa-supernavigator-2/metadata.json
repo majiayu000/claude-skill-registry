@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/dkyazzentwatwa/SuperNavigator",
-  "dir_name": "frontend-test-dkyazzentwatwa-supernavigator-2"
+  "dir_name": "frontend-test-dkyazzentwatwa-supernavigator-2",
+  "author": "dkyazzentwatwa",
+  "source_url": "https://github.com/dkyazzentwatwa/SuperNavigator/blob/main/navigator-main/skills/frontend-test/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2026 SuperNavigator Contributors",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

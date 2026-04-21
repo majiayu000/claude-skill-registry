@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:18.769941Z",
   "github_path": "08-distributed-training/deepspeed",
   "github_branch": "main",
-  "dir_name": "deepspeed"
+  "dir_name": "deepspeed",
+  "author": "zechenzhangAGI",
+  "source_url": "https://github.com/zechenzhangAGI/AI-research-SKILLs/blob/main/08-distributed-training/deepspeed/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude AI Research Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

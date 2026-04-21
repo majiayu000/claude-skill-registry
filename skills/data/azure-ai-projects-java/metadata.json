@@ -5,5 +5,12 @@
   "source": "github.com/microsoft/agent-skills",
   "downloaded_at": "2026-02-04T01:23:51.256704Z",
   "dir_name": "azure-ai-projects-java",
-  "category": "data"
+  "category": "data",
+  "author": "microsoft",
+  "source_url": "https://github.com/microsoft/agent-skills/blob/main/.github/skills/azure-ai-projects-java/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) Microsoft Corporation.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

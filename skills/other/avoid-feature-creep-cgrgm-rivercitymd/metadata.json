@@ -9,5 +9,12 @@
   "github_path": ".cursor/skills/avoid-feature-creep",
   "github_branch": "master",
   "dir_name": "avoid-feature-creep-cgrgm-rivercitymd",
-  "downloaded_at": "2026-02-05T01:45:02.121486Z"
+  "downloaded_at": "2026-02-05T01:45:02.121486Z",
+  "author": "cgRGM",
+  "source_url": "https://github.com/cgRGM/rivercitymd/blob/master/.cursor/skills/avoid-feature-creep/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgRGM/rivercitymd/blob/master/.cursor/skills/avoid-feature-creep/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

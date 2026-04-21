@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:10.995873Z",
   "github_path": "docs/skills/jp-ui-consumer",
   "github_branch": "main",
-  "dir_name": "jp-ui-consumer-yumehiko-jp-ui-3a2ad557"
+  "dir_name": "jp-ui-consumer-yumehiko-jp-ui-3a2ad557",
+  "author": "yumehiko",
+  "source_url": "https://github.com/yumehiko/jp-ui/blob/main/docs/skills/jp-ui-consumer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 yumehiko",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

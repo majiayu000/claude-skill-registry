@@ -11,5 +11,12 @@
   "stars": 10,
   "github_path": "deal-review-framework",
   "github_branch": "main",
-  "dir_name": "deal-review-framework-onewave-ai-claude-skills-c812260b"
+  "dir_name": "deal-review-framework-onewave-ai-claude-skills-c812260b",
+  "author": "OneWave-AI",
+  "source_url": "https://github.com/OneWave-AI/claude-skills/blob/main/deal-review-framework/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 OneWave AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

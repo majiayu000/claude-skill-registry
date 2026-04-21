@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:27.895481Z",
   "github_path": "plugins/devloop/skills/local-config",
   "github_branch": "main",
-  "dir_name": "local-config-zate-cc-plugins"
+  "dir_name": "local-config-zate-cc-plugins",
+  "author": "Zate",
+  "source_url": "https://github.com/Zate/cc-plugins/blob/main/plugins/devloop/skills/local-config/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CC-Plugins Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

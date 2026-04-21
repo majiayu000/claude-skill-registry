@@ -10,5 +10,12 @@
   "stars": 1,
   "github_path": ".claude/skills/profile-blocking",
   "github_branch": "main",
-  "dir_name": "profile-blocking"
+  "dir_name": "profile-blocking",
+  "author": "pwittchen",
+  "source_url": "https://github.com/pwittchen/varun.surf/blob/main/.claude/skills/profile-blocking/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

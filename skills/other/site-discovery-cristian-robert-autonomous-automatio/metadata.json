@@ -5,5 +5,12 @@
   "source": "github.com/cristian-robert/autonomous-automation-tester",
   "downloaded_at": "2026-01-29T07:45:40.090065Z",
   "dir_name": "site-discovery-cristian-robert-autonomous-automatio",
-  "category": "other"
+  "category": "other",
+  "author": "cristian-robert",
+  "source_url": "https://github.com/cristian-robert/autonomous-automation-tester/blob/main/.claude/skills/site-discovery/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cristian-robert/autonomous-automation-tester/blob/main/.claude/skills/site-discovery/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

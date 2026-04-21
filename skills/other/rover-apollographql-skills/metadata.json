@@ -5,5 +5,12 @@
   "source": "github.com/apollographql/skills",
   "downloaded_at": "2026-01-29T06:03:37.040295Z",
   "dir_name": "rover-apollographql-skills",
-  "category": "other"
+  "category": "other",
+  "author": "apollographql",
+  "source_url": "https://github.com/apollographql/skills/blob/main/skills/rover/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Apollo Graph, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

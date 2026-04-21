@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:19.424675Z",
   "github_path": ".claude/skills/speakerdeck-reader",
   "github_branch": "main",
-  "dir_name": "speakerdeck-reader-yamadashy-ccreader"
+  "dir_name": "speakerdeck-reader-yamadashy-ccreader",
+  "author": "yamadashy",
+  "source_url": "https://github.com/yamadashy/ccreader/blob/main/.claude/skills/speakerdeck-reader/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2025 Kazuki Yamada",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

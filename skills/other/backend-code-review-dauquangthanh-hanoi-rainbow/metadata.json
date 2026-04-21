@@ -5,5 +5,12 @@
   "source": "github.com/DauQuangThanh/hanoi-rainbow",
   "downloaded_at": "2026-01-29T08:22:10.221031Z",
   "dir_name": "backend-code-review-dauquangthanh-hanoi-rainbow",
-  "category": "other"
+  "category": "other",
+  "author": "DauQuangThanh",
+  "source_url": "https://github.com/DauQuangThanh/hanoi-rainbow/blob/main/skills/backend-code-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dau Quang Thanh",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

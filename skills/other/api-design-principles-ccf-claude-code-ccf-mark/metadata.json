@@ -5,5 +5,12 @@
   "source": "github.com/ccf/claude-code-ccf-marketplace",
   "downloaded_at": "2026-02-02T05:11:55.178223Z",
   "dir_name": "api-design-principles-ccf-claude-code-ccf-mark",
-  "category": "other"
+  "category": "other",
+  "author": "ccf",
+  "source_url": "https://github.com/ccf/claude-code-ccf-marketplace/blob/main/plugins/backend-development/skills/api-design-principles/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Seth Hobson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

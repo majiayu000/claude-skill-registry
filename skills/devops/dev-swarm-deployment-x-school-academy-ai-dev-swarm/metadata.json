@@ -5,5 +5,12 @@
   "description": "Deploy application to staging/production environments, setup CD pipelines, manage cloud infrastructure, and configure monitoring. Use when user asks to deploy application, setup production environment",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:11.562358Z",
-  "dir_name": "dev-swarm-deployment-x-school-academy-ai-dev-swarm"
+  "dir_name": "dev-swarm-deployment-x-school-academy-ai-dev-swarm",
+  "author": "X-School-Academy",
+  "source_url": "https://github.com/X-School-Academy/ai-dev-swarm",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

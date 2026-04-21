@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:56.062266Z",
   "github_path": "context-kit/.github/skills/release-and-ops",
   "github_branch": "main",
-  "dir_name": "release-and-ops-godspeedai-vibespro"
+  "dir_name": "release-and-ops-godspeedai-vibespro",
+  "author": "GodSpeedAI",
+  "source_url": "https://github.com/GodSpeedAI/VibesPro/blob/main/context-kit/.github/skills/release-and-ops/SKILL.md",
+  "license": "MPL-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GodSpeedAI/VibesPro/blob/main/context-kit/.github/skills/release-and-ops/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

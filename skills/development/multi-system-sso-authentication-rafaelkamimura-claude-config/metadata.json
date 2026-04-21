@@ -12,5 +12,12 @@
   "stars": 0,
   "github_path": "skills/multi-system-sso-authentication",
   "github_branch": "main",
-  "dir_name": "multi-system-sso-authentication-rafaelkamimura-claude-config"
+  "dir_name": "multi-system-sso-authentication-rafaelkamimura-claude-config",
+  "author": "rafaelkamimura",
+  "source_url": "https://github.com/rafaelkamimura/claude-config/blob/main/skills/multi-system-sso-authentication/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rafaelkamimura/claude-config/blob/main/skills/multi-system-sso-authentication/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

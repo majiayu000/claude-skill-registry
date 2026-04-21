@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:01.197540Z",
   "github_path": "plugin-template/skills/reference-educational-template",
   "github_branch": "main",
-  "dir_name": "reference-educational-template-djankies-claude-configs"
+  "dir_name": "reference-educational-template-djankies-claude-configs",
+  "author": "djankies",
+  "source_url": "https://github.com/djankies/claude-configs/blob/main/plugin-template/skills/reference-educational-template/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

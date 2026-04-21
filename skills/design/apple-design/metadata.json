@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "apple-design"
+  "dir_name": "apple-design",
+  "author": "aphlo",
+  "source_url": "https://github.com/aphlo/portfolio",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 HiromuKoumi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

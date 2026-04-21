@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:29.734061Z",
   "github_path": ".claude/skills/auto-draft",
   "github_branch": "main",
-  "dir_name": "auto-draft"
+  "dir_name": "auto-draft",
+  "author": "landfill",
+  "source_url": "https://github.com/landfill/Draftify/blob/main/.claude/skills/auto-draft/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/landfill/Draftify/blob/main/.claude/skills/auto-draft/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

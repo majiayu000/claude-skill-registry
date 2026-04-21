@@ -5,5 +5,12 @@
   "source": "github.com/OneKeyHQ/app-monorepo",
   "downloaded_at": "2026-01-29T04:40:32.379651Z",
   "dir_name": "creating-upgrade-test-version",
-  "category": "data"
+  "category": "data",
+  "author": "OneKeyHQ",
+  "source_url": "https://github.com/OneKeyHQ/app-monorepo/blob/main/.claude/skills/creating-upgrade-test-version/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OneKeyHQ/app-monorepo/blob/main/.claude/skills/creating-upgrade-test-version/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

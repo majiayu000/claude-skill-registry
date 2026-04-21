@@ -5,5 +5,12 @@
   "source": "github.com/adobe/helix-website",
   "downloaded_at": "2026-01-29T07:09:07.634688Z",
   "dir_name": "content-driven-development-adobe-helix-website",
-  "category": "data"
+  "category": "data",
+  "author": "adobe",
+  "source_url": "https://github.com/adobe/helix-website/blob/main/.claude/skills/content-driven-development/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adobe/helix-website/blob/main/.claude/skills/content-driven-development/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/celery-expert",
   "github_branch": "main",
-  "dir_name": "celery-expert-martinholovsky-claude-skills-genera-2056ccc4"
+  "dir_name": "celery-expert-martinholovsky-claude-skills-genera-2056ccc4",
+  "author": "martinholovsky",
+  "source_url": "https://github.com/martinholovsky/claude-skills-generator/blob/main/skills/celery-expert/SKILL.md",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/martinholovsky/claude-skills-generator/blob/main/skills/celery-expert/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

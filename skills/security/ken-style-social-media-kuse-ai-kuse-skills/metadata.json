@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:42.927788Z",
   "github_path": "ken-style-social-media",
   "github_branch": "main",
-  "dir_name": "ken-style-social-media-kuse-ai-kuse-skills"
+  "dir_name": "ken-style-social-media-kuse-ai-kuse-skills",
+  "author": "kuse-ai",
+  "source_url": "https://github.com/kuse-ai/kuse-skills/blob/main/ken-style-social-media/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Kuse AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

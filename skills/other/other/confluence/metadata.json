@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/Lobbi-Docs/claude",
   "dir_name": "confluence",
-  "downloaded_at": "2026-02-15T05:23:06.969727Z"
+  "downloaded_at": "2026-02-15T05:23:06.969727Z",
+  "author": "Lobbi-Docs",
+  "source_url": "https://github.com/Lobbi-Docs/claude/blob/main/plugins/jira-orchestrator/skills/confluence/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Golden Armada Team",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

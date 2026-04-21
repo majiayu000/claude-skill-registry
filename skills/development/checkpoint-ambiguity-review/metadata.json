@@ -7,5 +7,12 @@
   "stars": 12,
   "source": "github.com/SprocketLab/slop-code-bench",
   "downloaded_at": "2026-01-24T16:16:02.275861Z",
-  "dir_name": "checkpoint-ambiguity-review"
+  "dir_name": "checkpoint-ambiguity-review",
+  "author": "SprocketLab",
+  "source_url": "https://github.com/SprocketLab/slop-code-bench/blob/main/.codex/skills/checkpoint-ambiguity-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 gabeorlanski",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

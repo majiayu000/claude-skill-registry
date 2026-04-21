@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:01.258315Z",
   "github_path": "plugins/agent-service/skills/react-integration",
   "github_branch": "main",
-  "dir_name": "react-integration-hhopkins95-ai-systems-44d95717"
+  "dir_name": "react-integration-hhopkins95-ai-systems-44d95717",
+  "author": "hhopkins95",
+  "source_url": "https://github.com/hhopkins95/ai-systems/blob/main/plugins/agent-service/skills/react-integration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hhopkins95/ai-systems/blob/main/plugins/agent-service/skills/react-integration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

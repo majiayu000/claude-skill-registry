@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:04.683389Z",
   "github_path": "typescript/skills/refactoring-inline-types",
   "github_branch": "main",
-  "dir_name": "refactoring-inline-types-djankies-claude-configs"
+  "dir_name": "refactoring-inline-types-djankies-claude-configs",
+  "author": "djankies",
+  "source_url": "https://github.com/djankies/claude-configs/blob/main/typescript/skills/refactoring-inline-types/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

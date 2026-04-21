@@ -10,5 +10,12 @@
   "stars": 2,
   "github_path": ".claude/skills/frontend-standards",
   "github_branch": "main",
-  "dir_name": "frontend-standards-ms2sato-agent-console-6635dc06"
+  "dir_name": "frontend-standards-ms2sato-agent-console-6635dc06",
+  "author": "ms2sato",
+  "source_url": "https://github.com/ms2sato/agent-console/blob/main/.claude/skills/frontend-standards/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ms2sato",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

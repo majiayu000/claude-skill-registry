@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/architecture-readiness",
   "github_branch": "main",
-  "dir_name": "architecture-readiness-shadowx4fox-solutions-architect--a458e21b"
+  "dir_name": "architecture-readiness-shadowx4fox-solutions-architect--a458e21b",
+  "author": "shadowX4fox",
+  "source_url": "https://github.com/shadowX4fox/solutions-architect-skills/blob/main/skills/architecture-readiness/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 shadowx4fox",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

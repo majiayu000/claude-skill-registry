@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/njculpin/BudgetZero",
-  "dir_name": "persona-journey-njculpin-budgetzero-2"
+  "dir_name": "persona-journey-njculpin-budgetzero-2",
+  "author": "njculpin",
+  "source_url": "https://github.com/njculpin/BudgetZero/blob/main/.claude/skills/persona-journey/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/njculpin/BudgetZero/blob/main/.claude/skills/persona-journey/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

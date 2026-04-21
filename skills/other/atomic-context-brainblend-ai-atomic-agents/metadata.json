@@ -7,5 +7,12 @@
   "dir_name": "atomic-context-brainblend-ai-atomic-agents",
   "category": "other",
   "github_path": "claude-plugin/atomic-agents/skills/atomic-context",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "BrainBlend-AI",
+  "source_url": "https://github.com/BrainBlend-AI/atomic-agents/blob/main/claude-plugin/atomic-agents/skills/atomic-context/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Kenny Vaneetvelde",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

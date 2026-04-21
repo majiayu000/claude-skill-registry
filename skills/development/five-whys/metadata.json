@@ -5,5 +5,12 @@
   "description": "Root cause analysis for software bugs using the 5 Whys technique. Use when the user wants to find the underlying cause of a bug, error, or technical issue. Triggers include phrases like \"why is this h",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:28.139748Z",
-  "dir_name": "five-whys"
+  "dir_name": "five-whys",
+  "author": "iamhenry",
+  "source_url": "https://github.com/iamhenry/ai-project-starter-kit",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/iamhenry/ai-project-starter-kit",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/BrainBlend-AI/atomic-agents",
-  "dir_name": "atomic-context"
+  "dir_name": "atomic-context",
+  "author": "BrainBlend-AI",
+  "source_url": "https://github.com/BrainBlend-AI/atomic-agents",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Kenny Vaneetvelde",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

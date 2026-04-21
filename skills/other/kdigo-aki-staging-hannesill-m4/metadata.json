@@ -7,5 +7,12 @@
   "dir_name": "kdigo-aki-staging-hannesill-m4",
   "category": "other",
   "github_path": "src/m4/skills/kdigo-aki-staging",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "hannesill",
+  "source_url": "https://github.com/hannesill/m4/blob/main/src/m4/skills/kdigo-aki-staging/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Hannes Ill",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

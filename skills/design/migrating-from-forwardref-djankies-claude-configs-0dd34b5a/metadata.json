@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:02.253281Z",
   "github_path": "react-19/skills/migrating-from-forwardref",
   "github_branch": "main",
-  "dir_name": "migrating-from-forwardref-djankies-claude-configs-0dd34b5a"
+  "dir_name": "migrating-from-forwardref-djankies-claude-configs-0dd34b5a",
+  "author": "djankies",
+  "source_url": "https://github.com/djankies/claude-configs/blob/main/react-19/skills/migrating-from-forwardref/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

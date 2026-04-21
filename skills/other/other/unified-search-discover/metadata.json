@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/CsHeng/dot-claude",
   "dir_name": "unified-search-discover",
-  "downloaded_at": "2026-02-15T04:58:31.696260Z"
+  "downloaded_at": "2026-02-15T04:58:31.696260Z",
+  "author": "CsHeng",
+  "source_url": "https://github.com/CsHeng/dot-claude/blob/main/skills/unified-search-discover/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CsHeng/dot-claude/blob/main/skills/unified-search-discover/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

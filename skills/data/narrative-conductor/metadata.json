@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "narrative-conductor"
+  "dir_name": "narrative-conductor",
+  "author": "nmarchand73",
+  "source_url": "https://github.com/nmarchand73/new_tempsx",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nmarchand73/new_tempsx",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

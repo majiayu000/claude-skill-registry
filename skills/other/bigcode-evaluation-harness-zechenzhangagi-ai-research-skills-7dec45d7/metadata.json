@@ -7,5 +7,12 @@
   "dir_name": "bigcode-evaluation-harness-zechenzhangagi-ai-research-skills-7dec45d7",
   "category": "other",
   "github_path": "11-evaluation/bigcode-evaluation-harness",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "zechenzhangAGI",
+  "source_url": "https://github.com/zechenzhangAGI/AI-research-SKILLs/blob/main/11-evaluation/bigcode-evaluation-harness/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude AI Research Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

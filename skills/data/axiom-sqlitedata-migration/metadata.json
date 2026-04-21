@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/CharlesWiltgen/Axiom",
-  "dir_name": "axiom-sqlitedata-migration"
+  "dir_name": "axiom-sqlitedata-migration",
+  "author": "CharlesWiltgen",
+  "source_url": "https://github.com/CharlesWiltgen/Axiom",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Charles Wiltgen",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/davidgasquez/dotfiles",
   "downloaded_at": "2026-02-04T04:43:23.592741Z",
   "dir_name": "duckdb-davidgasquez-dotfiles",
-  "category": "data"
+  "category": "data",
+  "author": "davidgasquez",
+  "source_url": "https://github.com/davidgasquez/dotfiles/blob/main/agents/skills/duckdb/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2016 David Gasquez",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

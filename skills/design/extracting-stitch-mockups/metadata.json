@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:15.109223Z",
   "github_path": "plugins/google-stitch/skills/extracting-stitch-mockups",
   "github_branch": "main",
-  "dir_name": "extracting-stitch-mockups"
+  "dir_name": "extracting-stitch-mockups",
+  "author": "joaquimscosta",
+  "source_url": "https://github.com/joaquimscosta/arkhe-claude-plugins/blob/main/plugins/google-stitch/skills/extracting-stitch-mockups/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Joaquim Costa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

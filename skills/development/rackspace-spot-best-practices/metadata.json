@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:59.385822Z",
   "github_path": ".claude/skills/rackspace-spot-best-practices",
   "github_branch": "main",
-  "dir_name": "rackspace-spot-best-practices"
+  "dir_name": "rackspace-spot-best-practices",
+  "author": "Matchpoint-AI",
+  "source_url": "https://github.com/Matchpoint-AI/matchpoint-github-runners-helm/blob/main/.claude/skills/rackspace-spot-best-practices/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Matchpoint-AI/matchpoint-github-runners-helm/blob/main/.claude/skills/rackspace-spot-best-practices/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

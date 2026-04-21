@@ -7,5 +7,12 @@
   "dir_name": "audio-reactive",
   "category": "other",
   "github_path": "skills/audio-reactive",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Bbeierle12",
+  "source_url": "https://github.com/Bbeierle12/Skill-MCP-Claude/blob/main/skills/audio-reactive/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Bbeierle12",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "flutter-developer"
+  "dir_name": "flutter-developer",
+  "author": "weppa-cloud",
+  "source_url": "https://github.com/weppa-cloud/bukeer-flutter",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/weppa-cloud/bukeer-flutter",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -10,5 +10,12 @@
   "stars": 8,
   "github_path": "skills/managing-infra",
   "github_branch": "main",
-  "dir_name": "managing-infra-alexei-led-claude-code-config-8d3e4532"
+  "dir_name": "managing-infra-alexei-led-claude-code-config-8d3e4532",
+  "author": "alexei-led",
+  "source_url": "https://github.com/alexei-led/claude-code-config/blob/main/skills/managing-infra/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Alexei Ledenev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

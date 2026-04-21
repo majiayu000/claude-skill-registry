@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/eds-performance-debugging",
   "github_branch": "main",
-  "dir_name": "eds-performance-debugging"
+  "dir_name": "eds-performance-debugging",
+  "author": "ddttom",
+  "source_url": "https://github.com/ddttom/webcomponents-with-eds/blob/main/.claude/skills/eds-performance-debugging/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SPA with Adobe Edge Delivery Services",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

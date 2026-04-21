@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/SpacePlushy/portfolio",
-  "dir_name": "backend-api-spaceplushy-portfolio"
+  "dir_name": "backend-api-spaceplushy-portfolio",
+  "author": "SpacePlushy",
+  "source_url": "https://github.com/SpacePlushy/portfolio",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SpacePlushy/portfolio",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

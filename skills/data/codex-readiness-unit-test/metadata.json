@@ -5,5 +5,12 @@
   "source": "github.com/openai/skills",
   "downloaded_at": "2026-02-04T03:04:49.375557Z",
   "dir_name": "codex-readiness-unit-test",
-  "category": "data"
+  "category": "data",
+  "author": "openai",
+  "source_url": "https://github.com/openai/skills/blob/main/skills/.experimental/codex-readiness-unit-test/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/openai/skills/blob/main/skills/.experimental/codex-readiness-unit-test/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

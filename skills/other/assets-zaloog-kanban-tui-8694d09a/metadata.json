@@ -5,5 +5,12 @@
   "source": "github.com/Zaloog/kanban-tui",
   "downloaded_at": "2026-01-22T02:29:01.197871Z",
   "dir_name": "assets-zaloog-kanban-tui-8694d09a",
-  "category": "other"
+  "category": "other",
+  "author": "Zaloog",
+  "source_url": "https://github.com/Zaloog/kanban-tui/blob/main/src/kanban_tui/assets/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) <year> <copyright holders>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

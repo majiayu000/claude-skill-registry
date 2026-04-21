@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:09.214050Z",
   "github_path": ".claude/skills/architecture",
   "github_branch": "main",
-  "dir_name": "architechture-schneiderlin-synapse-9684999a"
+  "dir_name": "architechture-schneiderlin-synapse-9684999a",
+  "author": "schneiderlin",
+  "source_url": "https://github.com/schneiderlin/synapse/blob/main/.claude/skills/architecture/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 zihao",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

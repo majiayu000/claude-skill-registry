@@ -10,5 +10,12 @@
   ],
   "stars": 2,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "backend-test-writer"
+  "dir_name": "backend-test-writer",
+  "author": "9tykeshav",
+  "source_url": "https://github.com/9tykeshav/mern-ninja-cc",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Keshav Nautiyal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/miethe/skillmeat",
   "downloaded_at": "2026-01-29T06:47:39.715402Z",
   "dir_name": "skillmeat-cli-miethe-skillmeat",
-  "category": "other"
+  "category": "other",
+  "author": "miethe",
+  "source_url": "https://github.com/miethe/skillmeat/blob/main/.claude/skills/skillmeat-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/miethe/skillmeat/blob/main/.claude/skills/skillmeat-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

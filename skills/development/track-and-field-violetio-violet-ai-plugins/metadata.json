@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:51.777772Z",
   "github_path": "archive/plugins-2025-12-30/v-track-and-field/skills/track-and-field",
   "github_branch": "main",
-  "dir_name": "track-and-field-violetio-violet-ai-plugins"
+  "dir_name": "track-and-field-violetio-violet-ai-plugins",
+  "author": "violetio",
+  "source_url": "https://github.com/violetio/violet-ai-plugins/blob/main/archive/plugins-2025-12-30/v-track-and-field/skills/track-and-field/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/violetio/violet-ai-plugins/blob/main/archive/plugins-2025-12-30/v-track-and-field/skills/track-and-field/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/infinith4/dev-ai-driven-development",
   "downloaded_at": "2026-02-04T03:48:48.422569Z",
   "dir_name": "basic-design-infinith4-dev-ai-driven-develo",
-  "category": "data"
+  "category": "data",
+  "author": "infinith4",
+  "source_url": "https://github.com/infinith4/dev-ai-driven-development/blob/main/.claude/skills/basic-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Hiroshi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "bel-move-mail-to-archive",
   "github_path": ".claude/skills/bel-move-mail-to-archive",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "bennoloeffler",
+  "source_url": "https://github.com/bennoloeffler/bassi/blob/main/.claude/skills/bel-move-mail-to-archive/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bennoloeffler/bassi/blob/main/.claude/skills/bel-move-mail-to-archive/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

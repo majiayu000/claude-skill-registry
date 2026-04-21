@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:24.618762Z",
   "github_path": "skills/speckit-generator",
   "github_branch": "main",
-  "dir_name": "speckit-generator-ddunnock-claude-plugins-c6c86392"
+  "dir_name": "speckit-generator-ddunnock-claude-plugins-c6c86392",
+  "author": "ddunnock",
+  "source_url": "https://github.com/ddunnock/claude-plugins/blob/main/skills/speckit-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 David Dunnock",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/daw-music",
   "github_branch": "main",
-  "dir_name": "daw-music-pluginagentmarketpla-custom-plugin-game-d"
+  "dir_name": "daw-music-pluginagentmarketpla-custom-plugin-game-d",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-game-developer/blob/main/skills/daw-music/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

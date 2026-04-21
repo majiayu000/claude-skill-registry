@@ -9,5 +9,12 @@
   "github_path": "skills/scientific/venue-templates",
   "github_branch": "main",
   "dir_name": "venue-templates-drshailesh88-integrated-content-o",
-  "downloaded_at": "2026-02-05T01:44:51.378060Z"
+  "downloaded_at": "2026-02-05T01:44:51.378060Z",
+  "author": "drshailesh88",
+  "source_url": "https://github.com/drshailesh88/integrated_content_OS/blob/main/skills/scientific/venue-templates/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/drshailesh88/integrated_content_OS/blob/main/skills/scientific/venue-templates/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

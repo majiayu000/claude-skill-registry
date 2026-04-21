@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:16.428700Z",
   "github_path": "filament-specialist/skills/filament-docs",
   "github_branch": "main",
-  "dir_name": "filament-docs"
+  "dir_name": "filament-docs",
+  "author": "mwguerra",
+  "source_url": "https://github.com/mwguerra/claude-code-plugins/blob/main/filament-specialist/skills/filament-docs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mwguerra/claude-code-plugins/blob/main/filament-specialist/skills/filament-docs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "Expert in SQLite embedded database development for Tauri/desktop applications with focus on SQL injection prevention, migrations, FTS search, and secure data handling",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:57.382015Z",
-  "dir_name": "sqlite-database-expert"
+  "dir_name": "sqlite-database-expert",
+  "author": "martinholovsky",
+  "source_url": "https://github.com/martinholovsky/claude-skills-generator",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/martinholovsky/claude-skills-generator",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

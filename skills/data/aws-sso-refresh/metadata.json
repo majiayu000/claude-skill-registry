@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "aws-sso-refresh",
   "github_path": "skills/aws-sso-refresh",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "veelenga",
+  "source_url": "https://github.com/veelenga/aws-sso-mcp/blob/main/skills/aws-sso-refresh/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 veelenga",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

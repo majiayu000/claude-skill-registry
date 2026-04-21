@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:48.554684Z",
   "github_path": "examples/intermediate/framework-skills/fastapi-generator",
   "github_branch": "main",
-  "dir_name": "fastapi-generator"
+  "dir_name": "fastapi-generator",
+  "author": "Dexploarer",
+  "source_url": "https://github.com/Dexploarer/claudius-skills/blob/main/examples/intermediate/framework-skills/fastapi-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Dexploarer/claudius-skills/blob/main/examples/intermediate/framework-skills/fastapi-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:22.222653Z",
   "github_path": "plugins/airbot-typescript/skills/ts-style",
   "github_branch": "main",
-  "dir_name": "ts-style-sids-airbot"
+  "dir_name": "ts-style-sids-airbot",
+  "author": "sids",
+  "source_url": "https://github.com/sids/airbot/blob/main/plugins/airbot-typescript/skills/ts-style/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sids/airbot/blob/main/plugins/airbot-typescript/skills/ts-style/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

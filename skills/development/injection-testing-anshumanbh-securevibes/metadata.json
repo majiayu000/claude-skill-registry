@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:27.787273Z",
   "github_path": "packages/core/securevibes/skills/dast/nosql-injection-testing",
   "github_branch": "main",
-  "dir_name": "injection-testing-anshumanbh-securevibes"
+  "dir_name": "injection-testing-anshumanbh-securevibes",
+  "author": "anshumanbh",
+  "source_url": "https://github.com/anshumanbh/securevibes/blob/main/packages/core/securevibes/skills/dast/nosql-injection-testing/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:03.677977Z",
   "github_path": "react-19/skills/tracking-form-status",
   "github_branch": "main",
-  "dir_name": "tracking-form-status-djankies-claude-configs-c2a1bfab"
+  "dir_name": "tracking-form-status-djankies-claude-configs-c2a1bfab",
+  "author": "djankies",
+  "source_url": "https://github.com/djankies/claude-configs/blob/main/react-19/skills/tracking-form-status/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

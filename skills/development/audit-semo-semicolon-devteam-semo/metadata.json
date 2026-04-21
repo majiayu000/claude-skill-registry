@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:50.752118Z",
   "github_path": "semo-system/meta/skills/audit-semo",
   "github_branch": "main",
-  "dir_name": "audit-semo-semicolon-devteam-semo"
+  "dir_name": "audit-semo-semicolon-devteam-semo",
+  "author": "semicolon-devteam",
+  "source_url": "https://github.com/semicolon-devteam/semo/blob/main/semo-system/meta/skills/audit-semo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/semicolon-devteam/semo/blob/main/semo-system/meta/skills/audit-semo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "architecture-graph"
+  "dir_name": "architecture-graph",
+  "author": "vyshnavsdeepak",
+  "source_url": "https://github.com/vyshnavsdeepak/cartographer",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vyshnavsdeepak/cartographer",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

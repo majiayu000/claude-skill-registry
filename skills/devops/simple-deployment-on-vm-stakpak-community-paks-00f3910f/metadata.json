@@ -10,5 +10,12 @@
   "stars": 3,
   "github_path": "simple-deployment-on-vm",
   "github_branch": "main",
-  "dir_name": "simple-deployment-on-vm-stakpak-community-paks-00f3910f"
+  "dir_name": "simple-deployment-on-vm-stakpak-community-paks-00f3910f",
+  "author": "stakpak",
+  "source_url": "https://github.com/stakpak/community-paks/blob/main/simple-deployment-on-vm/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/stakpak/community-paks/blob/main/simple-deployment-on-vm/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

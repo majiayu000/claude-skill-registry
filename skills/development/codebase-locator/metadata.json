@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:13.915027Z",
   "github_path": ".opencode/skill/codebase-locator",
   "github_branch": "main",
-  "dir_name": "codebase-locator"
+  "dir_name": "codebase-locator",
+  "author": "billlzzz10",
+  "source_url": "https://github.com/billlzzz10/bl1nk-mood/blob/main/.opencode/skill/codebase-locator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/billlzzz10/bl1nk-mood/blob/main/.opencode/skill/codebase-locator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

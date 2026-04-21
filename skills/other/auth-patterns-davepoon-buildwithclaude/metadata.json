@@ -7,5 +7,12 @@
   "dir_name": "auth-patterns-davepoon-buildwithclaude",
   "category": "other",
   "github_path": "plugins/nextjs-expert/skills/auth-patterns",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "davepoon",
+  "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/nextjs-expert/skills/auth-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 davepoon",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

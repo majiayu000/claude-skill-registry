@@ -7,5 +7,12 @@
   "dir_name": "world-build",
   "category": "other",
   "github_path": ".claude/skills/oss/world-build",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "frankxai",
+  "source_url": "https://github.com/frankxai/arcanea/blob/main/.claude/skills/oss/world-build/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 FrankX",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

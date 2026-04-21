@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "apple-foundation-models"
+  "dir_name": "apple-foundation-models",
+  "author": "Eyadkelleh",
+  "source_url": "https://github.com/Eyadkelleh/apple_foundation_models_claude_skill",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Eyadkelleh/apple_foundation_models_claude_skill",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

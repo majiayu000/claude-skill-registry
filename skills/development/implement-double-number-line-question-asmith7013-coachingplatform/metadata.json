@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:02.771083Z",
   "github_path": ".claude/skills/question-types/implement-double-number-line-question",
   "github_branch": "main",
-  "dir_name": "implement-double-number-line-question-asmith7013-coachingplatform"
+  "dir_name": "implement-double-number-line-question-asmith7013-coachingplatform",
+  "author": "asmith7013",
+  "source_url": "https://github.com/asmith7013/coachingPlatform/blob/main/.claude/skills/question-types/implement-double-number-line-question/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/asmith7013/coachingPlatform/blob/main/.claude/skills/question-types/implement-double-number-line-question/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

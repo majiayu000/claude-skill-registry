@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:54.252125Z",
   "github_path": "skills/searching-code",
   "github_branch": "main",
-  "dir_name": "searching-code-alexei-led-claude-code-config"
+  "dir_name": "searching-code-alexei-led-claude-code-config",
+  "author": "alexei-led",
+  "source_url": "https://github.com/alexei-led/claude-code-config/blob/main/skills/searching-code/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Alexei Ledenev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

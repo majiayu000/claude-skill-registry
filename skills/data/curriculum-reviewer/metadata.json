@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "curriculum-reviewer",
   "github_path": ".claude/skills/curriculum-reviewer",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "SquizAI",
+  "source_url": "https://github.com/SquizAI/AI_bootcamp/blob/main/.claude/skills/curriculum-reviewer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AI Academy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

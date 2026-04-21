@@ -9,5 +9,12 @@
   ],
   "stars": 7,
   "source": "local",
-  "dir_name": "terraform-basics"
+  "dir_name": "terraform-basics",
+  "author": "jonhill90",
+  "source_url": "https://github.com/jonhill90/vibes",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jonhill90/vibes",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/sammcj/agentic-coding",
   "downloaded_at": "2026-02-04T02:02:14.006366Z",
   "dir_name": "youtube-wisdom",
-  "category": "data"
+  "category": "data",
+  "author": "sammcj",
+  "source_url": "https://github.com/sammcj/agentic-coding/blob/main/Claude/skills/youtube-wisdom/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sammcj/agentic-coding/blob/main/Claude/skills/youtube-wisdom/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

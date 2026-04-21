@@ -5,5 +5,12 @@
   "source": "github.com/stravinest/house-hold-account",
   "downloaded_at": "2026-02-02T04:22:32.001666Z",
   "dir_name": "subagent-creator",
-  "category": "other"
+  "category": "other",
+  "author": "stravinest",
+  "source_url": "https://github.com/stravinest/house-hold-account/blob/main/.claude/skills/subagent-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/stravinest/house-hold-account/blob/main/.claude/skills/subagent-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

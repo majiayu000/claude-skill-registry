@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:25.815878Z",
   "github_path": "skills/specification-refiner",
   "github_branch": "main",
-  "dir_name": "specification-refiner-ddunnock-claude-plugins"
+  "dir_name": "specification-refiner-ddunnock-claude-plugins",
+  "author": "ddunnock",
+  "source_url": "https://github.com/ddunnock/claude-plugins/blob/main/skills/specification-refiner/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 David Dunnock",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

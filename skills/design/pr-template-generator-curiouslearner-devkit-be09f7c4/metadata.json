@@ -10,5 +10,12 @@
   "stars": 13,
   "github_path": "skills/pr-template-generator",
   "github_branch": "main",
-  "dir_name": "pr-template-generator-curiouslearner-devkit-be09f7c4"
+  "dir_name": "pr-template-generator-curiouslearner-devkit-be09f7c4",
+  "author": "CuriousLearner",
+  "source_url": "https://github.com/CuriousLearner/devkit/blob/main/skills/pr-template-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sanyam Khurana",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/atlassian-skills",
   "github_branch": "main",
-  "dir_name": "atlassian-skills-bongho-atlassian-internaliz"
+  "dir_name": "atlassian-skills-bongho-atlassian-internaliz",
+  "author": "bongho",
+  "source_url": "https://github.com/bongho/atlassian-internalized/blob/main/skills/atlassian-skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bongho/atlassian-internalized/blob/main/skills/atlassian-skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

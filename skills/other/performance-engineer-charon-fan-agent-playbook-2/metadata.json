@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/Charon-Fan/agent-playbook",
-  "dir_name": "performance-engineer-charon-fan-agent-playbook-2"
+  "dir_name": "performance-engineer-charon-fan-agent-playbook-2",
+  "author": "Charon-Fan",
+  "source_url": "https://github.com/Charon-Fan/agent-playbook/blob/main/skills/performance-engineer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Charon-Fan/agent-playbook/blob/main/skills/performance-engineer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

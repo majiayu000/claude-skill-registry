@@ -5,5 +5,12 @@
   "description": "Pattern for automated testing with GitHub issue creation and Claude Code auto-fixing. Creates Test → Fail → Issue → Fix → Repeat cycle until tests pass.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:19.687580Z",
-  "dir_name": "automated-test-fix-loop"
+  "dir_name": "automated-test-fix-loop",
+  "author": "lawless-m",
+  "source_url": "https://github.com/lawless-m/claude-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lawless-m/claude-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

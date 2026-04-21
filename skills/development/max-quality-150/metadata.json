@@ -5,5 +5,12 @@
   "description": "Commitment to maximum quality work with 150% coverage. Use when you need the highest quality output for critical tasks, complex problems, important decisions, or when standard work isn",
   "source": "GitHub Search API",
   "downloaded_at": "2026-01-08T03:31:54.668509Z",
-  "dir_name": "max-quality-150"
+  "dir_name": "max-quality-150",
+  "author": "MykhailoDmytriakha",
+  "source_url": "https://github.com/MykhailoDmytriakha/my-preacher-helper",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MykhailoDmytriakha/my-preacher-helper",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

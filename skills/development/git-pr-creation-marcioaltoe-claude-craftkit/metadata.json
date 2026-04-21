@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:07.956064Z",
   "github_path": "plugins/git/skills/git-pr-creation",
   "github_branch": "main",
-  "dir_name": "git-pr-creation-marcioaltoe-claude-craftkit"
+  "dir_name": "git-pr-creation-marcioaltoe-claude-craftkit",
+  "author": "marcioaltoe",
+  "source_url": "https://github.com/marcioaltoe/claude-craftkit/blob/main/plugins/git/skills/git-pr-creation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Marcio Altoé",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

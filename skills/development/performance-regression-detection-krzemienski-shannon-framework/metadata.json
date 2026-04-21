@@ -11,5 +11,12 @@
   "stars": 1,
   "github_path": "skills/performance-regression-detection",
   "github_branch": "main",
-  "dir_name": "performance-regression-detection-krzemienski-shannon-framework"
+  "dir_name": "performance-regression-detection-krzemienski-shannon-framework",
+  "author": "krzemienski",
+  "source_url": "https://github.com/krzemienski/shannon-framework/blob/main/skills/performance-regression-detection/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/krzemienski/shannon-framework/blob/main/skills/performance-regression-detection/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

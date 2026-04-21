@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:27.740590Z",
   "github_path": "packages/core/securevibes/skills/dast/authorization-testing",
   "github_branch": "main",
-  "dir_name": "authorization-testing-anshumanbh-securevibes-dff10aee"
+  "dir_name": "authorization-testing-anshumanbh-securevibes-dff10aee",
+  "author": "anshumanbh",
+  "source_url": "https://github.com/anshumanbh/securevibes/blob/main/packages/core/securevibes/skills/dast/authorization-testing/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

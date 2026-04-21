@@ -109,6 +109,7 @@ def test_license_classification_covers_backfill_spdx_values():
     module = load_module()
 
     assert module.build_legal_metadata(license_name="MIT-0")["distribution"] == "compatible"
+    assert module.build_legal_metadata(license_name="WTFPL")["distribution"] == "compatible"
     assert module.build_legal_metadata(license_name="EUPL-1.2")["distribution"] == "restricted"
 
 

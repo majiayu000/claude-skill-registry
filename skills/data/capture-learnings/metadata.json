@@ -5,5 +5,12 @@
   "source": "github.com/pwarnock/pwarnock.github.io",
   "downloaded_at": "2026-02-04T03:33:58.751219Z",
   "dir_name": "capture-learnings",
-  "category": "data"
+  "category": "data",
+  "author": "pwarnock",
+  "source_url": "https://github.com/pwarnock/pwarnock.github.io/blob/main/.claude/skills/capture-learnings/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pwarnock/pwarnock.github.io/blob/main/.claude/skills/capture-learnings/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

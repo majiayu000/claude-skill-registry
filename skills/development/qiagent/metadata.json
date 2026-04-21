@@ -5,5 +5,12 @@
   "description": "技術実装Agent - 実行計画を技術的な実装要素に分解する",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:23.905412Z",
-  "dir_name": "qiagent"
+  "dir_name": "qiagent",
+  "author": "liushuang393",
+  "source_url": "https://github.com/liushuang393/serverlessAIAgents",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/liushuang393/serverlessAIAgents",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "stars": 914,
   "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
   "downloaded_at": "2026-01-24T16:16:06.102467Z",
-  "dir_name": "langchain-zechenzhangagi-ai-research-ski"
+  "dir_name": "langchain-zechenzhangagi-ai-research-ski",
+  "author": "zechenzhangAGI",
+  "source_url": "https://github.com/zechenzhangAGI/AI-research-SKILLs/blob/main/14-agents/langchain/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude AI Research Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

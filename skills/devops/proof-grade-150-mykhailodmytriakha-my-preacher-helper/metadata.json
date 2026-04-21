@@ -5,5 +5,12 @@
   "description": "Ensure every critical claim has verifiable evidence with confidence levels. Each fact must have source + confidence percentage. If confidence <85%, enter Loop150 to find more sources. Use for critical",
   "source": "GitHub Search API",
   "downloaded_at": "2026-01-08T03:31:26.534509Z",
-  "dir_name": "proof-grade-150-mykhailodmytriakha-my-preacher-helper"
+  "dir_name": "proof-grade-150-mykhailodmytriakha-my-preacher-helper",
+  "author": "MykhailoDmytriakha",
+  "source_url": "https://github.com/MykhailoDmytriakha/my-preacher-helper",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MykhailoDmytriakha/my-preacher-helper",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

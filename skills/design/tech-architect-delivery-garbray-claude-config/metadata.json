@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:49.647197Z",
   "github_path": "config/skills/tech-architect-delivery",
   "github_branch": "main",
-  "dir_name": "tech-architect-delivery-garbray-claude-config"
+  "dir_name": "tech-architect-delivery-garbray-claude-config",
+  "author": "garbray",
+  "source_url": "https://github.com/garbray/claude-config/blob/main/config/skills/tech-architect-delivery/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/garbray/claude-config/blob/main/config/skills/tech-architect-delivery/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

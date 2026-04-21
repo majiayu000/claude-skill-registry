@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:11.798212Z",
   "github_path": "dev-swarm/mcp-skills/dart-get-selected-widget",
   "github_branch": "main",
-  "dir_name": "dart-get-selected-widget-x-school-academy-ai-dev-swarm"
+  "dir_name": "dart-get-selected-widget-x-school-academy-ai-dev-swarm",
+  "author": "X-School-Academy",
+  "source_url": "https://github.com/X-School-Academy/ai-dev-swarm/blob/main/dev-swarm/mcp-skills/dart-get-selected-widget/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

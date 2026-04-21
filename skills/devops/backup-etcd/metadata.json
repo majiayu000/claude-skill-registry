@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "backup-etcd"
+  "dir_name": "backup-etcd",
+  "author": "mpryc",
+  "source_url": "https://github.com/mpryc/ai-agents-and-skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Michal Pryc",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

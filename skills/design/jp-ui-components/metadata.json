@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "jp-ui-components"
+  "dir_name": "jp-ui-components",
+  "author": "yumehiko",
+  "source_url": "https://github.com/yumehiko/jp-ui",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 yumehiko",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

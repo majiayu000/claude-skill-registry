@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/architecture-lint",
   "github_branch": "main",
-  "dir_name": "architecture-lint-varubogu-gbf-discord-bot-rs"
+  "dir_name": "architecture-lint-varubogu-gbf-discord-bot-rs",
+  "author": "varubogu",
+  "source_url": "https://github.com/varubogu/gbf_discord_bot_rs/blob/main/.claude/skills/architecture-lint/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ヴァルボーグ@toyosuke",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/index-knowledge",
   "github_branch": "main",
   "dir_name": "index-knowledge",
-  "downloaded_at": "2026-02-05T01:44:16.290932Z"
+  "downloaded_at": "2026-02-05T01:44:16.290932Z",
+  "author": "tursodatabase",
+  "source_url": "https://github.com/tursodatabase/turso/blob/main/.claude/skills/index-knowledge/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2024 the Turso authors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

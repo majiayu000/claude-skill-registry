@@ -7,5 +7,12 @@
   "dir_name": "code-generator",
   "category": "other",
   "github_path": "plugins/dapr/skills/code-generator",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Sahib-Sawhney-WH",
+  "source_url": "https://github.com/Sahib-Sawhney-WH/sahibs-claude-plugin-marketplace/blob/main/plugins/dapr/skills/code-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sahib",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

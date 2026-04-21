@@ -5,5 +5,12 @@
   "description": "Systematic debugging workflow to reproduce, isolate, and fix hard software bugs, resolve related lint issues, and add tests and guardrails to prevent regressions. This skill should be used for complex",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:06.303049Z",
-  "dir_name": "expert-debugging-and-lint-fixing"
+  "dir_name": "expert-debugging-and-lint-fixing",
+  "author": "auldsyababua",
+  "source_url": "https://github.com/auldsyababua/instructor-workflow",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/auldsyababua/instructor-workflow",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

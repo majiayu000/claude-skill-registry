@@ -5,5 +5,12 @@
   "description": "Verify developers are working in the right repository type (brain vs code)",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:49.819550Z",
-  "dir_name": "repository-context-checker"
+  "dir_name": "repository-context-checker",
+  "author": "violetio",
+  "source_url": "https://github.com/violetio/violet-ai-plugins",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/violetio/violet-ai-plugins",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

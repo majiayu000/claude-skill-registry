@@ -5,5 +5,12 @@
   "description": "Example skill demonstrating nested directory structure at depth 3",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:54.008625Z",
-  "dir_name": "nested-deep-skill"
+  "dir_name": "nested-deep-skill",
+  "author": "maxvaega",
+  "source_url": "https://github.com/maxvaega/skillkit",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Massimo Olivieri",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

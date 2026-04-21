@@ -9,5 +9,12 @@
   ],
   "stars": 8,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "asking-gemini"
+  "dir_name": "asking-gemini",
+  "author": "alexei-led",
+  "source_url": "https://github.com/alexei-led/claude-code-config",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Alexei Ledenev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

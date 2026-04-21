@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:37.738043Z",
   "github_path": ".codex/skills/wp-headless-backend",
   "github_branch": "main",
-  "dir_name": "wp-headless-backend-cdryampi-wordpress-headless"
+  "dir_name": "wp-headless-backend-cdryampi-wordpress-headless",
+  "author": "cdryampi",
+  "source_url": "https://github.com/cdryampi/wordpress_headless/blob/main/.codex/skills/wp-headless-backend/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cdryampi/wordpress_headless/blob/main/.codex/skills/wp-headless-backend/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:44.225483Z",
   "github_path": "skills/reading-notion",
   "github_branch": "main",
-  "dir_name": "reading-notion-syou6162-claude-code-commands"
+  "dir_name": "reading-notion-syou6162-claude-code-commands",
+  "author": "syou6162",
+  "source_url": "https://github.com/syou6162/claude-code-commands/blob/main/skills/reading-notion/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Yasuhisa Yoshida",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

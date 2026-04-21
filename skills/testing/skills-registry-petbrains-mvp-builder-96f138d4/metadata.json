@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:38.524670Z",
   "github_path": ".claude/skills/skills-registry",
   "github_branch": "main",
-  "dir_name": "skills-registry-petbrains-mvp-builder-96f138d4"
+  "dir_name": "skills-registry-petbrains-mvp-builder-96f138d4",
+  "author": "petbrains",
+  "source_url": "https://github.com/petbrains/mvp-builder/blob/main/.claude/skills/skills-registry/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MVP Builder",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   "stars": 3,
   "github_path": "skills/text-to-speech",
   "github_branch": "main",
-  "dir_name": "text-to-speech"
+  "dir_name": "text-to-speech",
+  "author": "martinholovsky",
+  "source_url": "https://github.com/martinholovsky/claude-skills-generator/blob/main/skills/text-to-speech/SKILL.md",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/martinholovsky/claude-skills-generator/blob/main/skills/text-to-speech/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

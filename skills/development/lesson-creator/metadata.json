@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "lesson-creator"
+  "dir_name": "lesson-creator",
+  "author": "SquizAI",
+  "source_url": "https://github.com/SquizAI/AI_bootcamp",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AI Academy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

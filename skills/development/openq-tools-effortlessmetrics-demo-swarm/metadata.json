@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:22.661531Z",
   "github_path": ".claude/skills/openq-tools",
   "github_branch": "main",
-  "dir_name": "openq-tools-effortlessmetrics-demo-swarm"
+  "dir_name": "openq-tools-effortlessmetrics-demo-swarm",
+  "author": "EffortlessMetrics",
+  "source_url": "https://github.com/EffortlessMetrics/demo-swarm/blob/main/.claude/skills/openq-tools/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EffortlessMetrics/demo-swarm/blob/main/.claude/skills/openq-tools/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

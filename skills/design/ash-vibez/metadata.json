@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/ash-vibez",
   "github_branch": "main",
-  "dir_name": "ash-vibez"
+  "dir_name": "ash-vibez",
+  "author": "bradleygolden",
+  "source_url": "https://github.com/bradleygolden/ash_vibez/blob/main/skills/ash-vibez/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Bradley Golden",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

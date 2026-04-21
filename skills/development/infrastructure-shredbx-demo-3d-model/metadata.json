@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/shredbx/demo-3d-model",
   "downloaded_at": "2026-01-24T16:15:15.008734Z",
-  "dir_name": "infrastructure-shredbx-demo-3d-model"
+  "dir_name": "infrastructure-shredbx-demo-3d-model",
+  "author": "shredbx",
+  "source_url": "https://github.com/shredbx/demo-3d-model/blob/main/.sdlc-workflow/reference-knowledge-from-bestays-project/old-user-stories/infrastructure/US-001E-infrastructure-sdlc-orchestrator-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shredbx/demo-3d-model/blob/main/.sdlc-workflow/reference-knowledge-from-bestays-project/old-user-stories/infrastructure/US-001E-infrastructure-sdlc-orchestrator-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

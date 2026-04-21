@@ -10,5 +10,12 @@
   "stars": 2,
   "github_path": "skills/particles-physics",
   "github_branch": "main",
-  "dir_name": "particles-physics-bbeierle12-skill-mcp-claude-cc640d78"
+  "dir_name": "particles-physics-bbeierle12-skill-mcp-claude-cc640d78",
+  "author": "Bbeierle12",
+  "source_url": "https://github.com/Bbeierle12/Skill-MCP-Claude/blob/main/skills/particles-physics/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Bbeierle12",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:24.129898Z",
   "github_path": "integrations/slack-skill",
   "github_branch": "main",
-  "dir_name": "slack-skill-jiunbae-agent-skills-cf5aa80b"
+  "dir_name": "slack-skill-jiunbae-agent-skills-cf5aa80b",
+  "author": "jiunbae",
+  "source_url": "https://github.com/jiunbae/agent-skills/blob/main/integrations/slack-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jiunbae/agent-skills/blob/main/integrations/slack-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

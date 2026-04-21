@@ -5,5 +5,12 @@
   "source": "github.com/mesbahtanvir/ishkul",
   "downloaded_at": "2026-01-29T08:27:37.827577Z",
   "dir_name": "feature-implementation",
-  "category": "other"
+  "category": "other",
+  "author": "mesbahtanvir",
+  "source_url": "https://github.com/mesbahtanvir/ishkul/blob/main/.claude/skills/feature-implementation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 ishkul",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

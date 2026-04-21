@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:18.647102Z",
   "github_path": "07-safety-alignment/llamaguard",
   "github_branch": "main",
-  "dir_name": "llamaguard-zechenzhangagi-ai-research-skills"
+  "dir_name": "llamaguard-zechenzhangagi-ai-research-skills",
+  "author": "zechenzhangAGI",
+  "source_url": "https://github.com/zechenzhangAGI/AI-research-SKILLs/blob/main/07-safety-alignment/llamaguard/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude AI Research Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

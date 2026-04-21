@@ -7,5 +7,12 @@
   "dir_name": "dev-swarm-code-test",
   "category": "other",
   "github_path": "dev-swarm/skills/dev-swarm-code-test",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "X-School-Academy",
+  "source_url": "https://github.com/X-School-Academy/ai-dev-swarm/blob/main/dev-swarm/skills/dev-swarm-code-test/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

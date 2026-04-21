@@ -9,5 +9,12 @@
   "github_path": "skills/agent-native-architecture",
   "github_branch": "main",
   "dir_name": "agent-native-architecture-iamladi-cautious-computing-m",
-  "downloaded_at": "2026-02-05T01:45:48.976839Z"
+  "downloaded_at": "2026-02-05T01:45:48.976839Z",
+  "author": "iamladi",
+  "source_url": "https://github.com/iamladi/cautious-computing-machine--primitives-plugin/blob/main/skills/agent-native-architecture/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ladislav Martincik",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

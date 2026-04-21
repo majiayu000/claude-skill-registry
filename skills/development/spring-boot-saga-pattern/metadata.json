@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:14.549376Z",
   "github_path": "skills/spring-boot/spring-boot-saga-pattern",
   "github_branch": "main",
-  "dir_name": "spring-boot-saga-pattern"
+  "dir_name": "spring-boot-saga-pattern",
+  "author": "giuseppe-trisciuoglio",
+  "source_url": "https://github.com/giuseppe-trisciuoglio/developer-kit/blob/main/skills/spring-boot/spring-boot-saga-pattern/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Giuseppe Trisciuoglio",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

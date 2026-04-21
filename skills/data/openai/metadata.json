@@ -5,5 +5,12 @@
   "source": "github.com/atrawog/bazzite-ai-plugins",
   "downloaded_at": "2026-01-27T03:14:37.724125Z",
   "dir_name": "openai",
-  "category": "data"
+  "category": "data",
+  "author": "atrawog",
+  "source_url": "https://github.com/atrawog/bazzite-ai-plugins/blob/main/bazzite-ai-jupyter/skills/openai/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/atrawog/bazzite-ai-plugins/blob/main/bazzite-ai-jupyter/skills/openai/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:13.185249Z",
   "github_path": "skills/aws-java/aws-sdk-java-v2-dynamodb",
   "github_branch": "main",
-  "dir_name": "aws-sdk-java-v2-dynamodb-giuseppe-trisciuogli-developer-kit"
+  "dir_name": "aws-sdk-java-v2-dynamodb-giuseppe-trisciuogli-developer-kit",
+  "author": "giuseppe-trisciuoglio",
+  "source_url": "https://github.com/giuseppe-trisciuoglio/developer-kit/blob/main/skills/aws-java/aws-sdk-java-v2-dynamodb/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Giuseppe Trisciuoglio",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

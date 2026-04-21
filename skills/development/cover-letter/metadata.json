@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:50.900813Z",
   "github_path": "templates/skills/cover-letter",
   "github_branch": "main",
-  "dir_name": "cover-letter"
+  "dir_name": "cover-letter",
+  "author": "ewurch",
+  "source_url": "https://github.com/ewurch/bragger/blob/main/templates/skills/cover-letter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Eduardo Wurch",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

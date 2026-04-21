@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:38.302418Z",
   "github_path": "reactflow-helper/skills/developing-reactflow-ui",
   "github_branch": "main",
-  "dir_name": "developing-reactflow-ui-jeongsk-claude-skills-f94bf975"
+  "dir_name": "developing-reactflow-ui-jeongsk-claude-skills-f94bf975",
+  "author": "jeongsk",
+  "source_url": "https://github.com/jeongsk/claude-skills/blob/main/reactflow-helper/skills/developing-reactflow-ui/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 jeongsk",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   "stars": 8,
   "github_path": "skills/swiftui-animation",
   "github_branch": "main",
-  "dir_name": "swiftui-animation"
+  "dir_name": "swiftui-animation",
+  "author": "jamesrochabrun",
+  "source_url": "https://github.com/jamesrochabrun/skills/blob/main/skills/swiftui-animation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 James Rochabrun",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

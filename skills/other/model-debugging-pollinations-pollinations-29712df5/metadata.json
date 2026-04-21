@@ -7,5 +7,12 @@
   "dir_name": "model-debugging-pollinations-pollinations-29712df5",
   "category": "other",
   "github_path": ".claude/skills/model-debugging",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "pollinations",
+  "source_url": "https://github.com/pollinations/pollinations/blob/main/.claude/skills/model-debugging/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 pollinations.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

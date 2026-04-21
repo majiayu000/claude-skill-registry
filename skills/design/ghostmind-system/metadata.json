@@ -5,5 +5,12 @@
   "description": "This skill should be used when working with the Ghostmind development system, which uses meta.json as a central configuration for Docker, Compose, Terraform, and Tmux. Use this skill when creating or ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:53.764726Z",
-  "dir_name": "ghostmind-system"
+  "dir_name": "ghostmind-system",
+  "author": "ghostmind-dev",
+  "source_url": "https://github.com/ghostmind-dev/system",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ghostmind-dev/system",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:19.171777Z",
   "github_path": "12-inference-serving/llama-cpp",
   "github_branch": "main",
-  "dir_name": "llama-cpp-zechenzhangagi-ai-research-skills"
+  "dir_name": "llama-cpp-zechenzhangagi-ai-research-skills",
+  "author": "zechenzhangAGI",
+  "source_url": "https://github.com/zechenzhangAGI/AI-research-SKILLs/blob/main/12-inference-serving/llama-cpp/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude AI Research Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

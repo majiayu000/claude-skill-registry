@@ -5,5 +5,12 @@
   "description": "General UX/UI refactor patterns for dense information products, including layout compression, view-mode clarity, selection-to-results flow, research workspace design (non-chat), and enforcing a no-emo",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:10.644102Z",
-  "dir_name": "ux-clarity-refactor-benderfendor-thesis"
+  "dir_name": "ux-clarity-refactor-benderfendor-thesis",
+  "author": "BenderFendor",
+  "source_url": "https://github.com/BenderFendor/Thesis",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BenderFendor/Thesis",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

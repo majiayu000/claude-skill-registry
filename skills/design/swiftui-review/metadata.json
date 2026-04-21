@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/swiftui-review",
   "github_branch": "main",
-  "dir_name": "swiftui-review"
+  "dir_name": "swiftui-review",
+  "author": "miyakawa2449",
+  "source_url": "https://github.com/miyakawa2449/KiroBookmark/blob/main/.claude/skills/swiftui-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 宮川 剛",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

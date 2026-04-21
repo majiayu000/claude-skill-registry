@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/build-one-to-throw-away",
   "github_branch": "main",
-  "dir_name": "build-one-to-throw-away-jzallen-fred-simulations"
+  "dir_name": "build-one-to-throw-away-jzallen-fred-simulations",
+  "author": "jzallen",
+  "source_url": "https://github.com/jzallen/fred_simulations/blob/main/.claude/skills/build-one-to-throw-away/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jzallen/fred_simulations/blob/main/.claude/skills/build-one-to-throw-away/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

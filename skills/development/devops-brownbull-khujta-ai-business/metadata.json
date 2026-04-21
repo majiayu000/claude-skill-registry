@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/Brownbull/khujta_ai_business",
   "downloaded_at": "2026-01-24T16:15:09.191786Z",
-  "dir_name": "devops-brownbull-khujta-ai-business"
+  "dir_name": "devops-brownbull-khujta-ai-business",
+  "author": "Brownbull",
+  "source_url": "https://github.com/Brownbull/khujta_ai_business/blob/main/.claude/skills/devops/Skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Brownbull/khujta_ai_business/blob/main/.claude/skills/devops/Skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

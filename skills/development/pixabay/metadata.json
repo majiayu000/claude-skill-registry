@@ -7,5 +7,12 @@
     "pixabay"
   ],
   "stars": 0,
-  "dir_name": "pixabay"
+  "dir_name": "pixabay",
+  "author": "GGPrompts",
+  "source_url": "https://github.com/GGPrompts/my-plugins",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GGPrompts/my-plugins",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

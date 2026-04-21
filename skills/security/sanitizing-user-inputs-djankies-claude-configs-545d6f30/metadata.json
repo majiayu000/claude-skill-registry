@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:04.612915Z",
   "github_path": "typescript/skills/sanitizing-user-inputs",
   "github_branch": "main",
-  "dir_name": "sanitizing-user-inputs-djankies-claude-configs-545d6f30"
+  "dir_name": "sanitizing-user-inputs-djankies-claude-configs-545d6f30",
+  "author": "djankies",
+  "source_url": "https://github.com/djankies/claude-configs/blob/main/typescript/skills/sanitizing-user-inputs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

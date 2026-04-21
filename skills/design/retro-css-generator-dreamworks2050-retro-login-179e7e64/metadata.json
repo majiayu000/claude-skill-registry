@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:12.792402Z",
   "github_path": ".factory/skills/retro-css-generator",
   "github_branch": "main",
-  "dir_name": "retro-css-generator-dreamworks2050-retro-login-179e7e64"
+  "dir_name": "retro-css-generator-dreamworks2050-retro-login-179e7e64",
+  "author": "dreamworks2050",
+  "source_url": "https://github.com/dreamworks2050/retro-login/blob/main/.factory/skills/retro-css-generator/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

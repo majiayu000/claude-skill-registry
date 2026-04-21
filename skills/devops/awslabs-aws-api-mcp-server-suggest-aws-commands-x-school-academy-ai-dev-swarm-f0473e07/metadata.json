@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:11.954838Z",
   "github_path": "dev-swarm/mcp-skills/awslabs-aws-api-mcp-server-suggest-aws-commands",
   "github_branch": "main",
-  "dir_name": "awslabs-aws-api-mcp-server-suggest-aws-commands-x-school-academy-ai-dev-swarm-f0473e07"
+  "dir_name": "awslabs-aws-api-mcp-server-suggest-aws-commands-x-school-academy-ai-dev-swarm-f0473e07",
+  "author": "X-School-Academy",
+  "source_url": "https://github.com/X-School-Academy/ai-dev-swarm/blob/main/dev-swarm/mcp-skills/awslabs-aws-api-mcp-server-suggest-aws-commands/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

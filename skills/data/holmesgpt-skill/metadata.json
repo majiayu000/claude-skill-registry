@@ -10,5 +10,12 @@
   "stars": 0,
   "dir_name": "holmesgpt-skill",
   "github_path": "skills/holmesgpt-skill",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "julianobarbosa",
+  "source_url": "https://github.com/julianobarbosa/claude-code-skills/blob/main/skills/holmesgpt-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

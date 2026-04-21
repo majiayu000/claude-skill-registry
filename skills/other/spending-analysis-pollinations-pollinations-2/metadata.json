@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/pollinations/pollinations",
-  "dir_name": "spending-analysis-pollinations-pollinations-2"
+  "dir_name": "spending-analysis-pollinations-pollinations-2",
+  "author": "pollinations",
+  "source_url": "https://github.com/pollinations/pollinations/blob/main/.claude/skills/spending-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 pollinations.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

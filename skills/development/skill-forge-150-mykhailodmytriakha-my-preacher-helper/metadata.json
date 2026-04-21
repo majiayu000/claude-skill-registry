@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:30:43.154604Z",
   "github_path": ".codex/skills/02-meta-skill-forge-150",
   "github_branch": "main",
-  "dir_name": "skill-forge-150-mykhailodmytriakha-my-preacher-helper"
+  "dir_name": "skill-forge-150-mykhailodmytriakha-my-preacher-helper",
+  "author": "MykhailoDmytriakha",
+  "source_url": "https://github.com/MykhailoDmytriakha/my-preacher-helper/blob/main/.codex/skills/02-meta-skill-forge-150/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MykhailoDmytriakha/my-preacher-helper/blob/main/.codex/skills/02-meta-skill-forge-150/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

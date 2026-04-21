@@ -5,5 +5,12 @@
   "description": "WCAG 2.1 AA compliance patterns, screen reader compatibility, keyboard navigation, and ARIA best practices. Use when implementing accessible interfaces, reviewing UI components, or auditing accessibil",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:41.943585Z",
-  "dir_name": "accessibility-design-rsmdt-the-startup"
+  "dir_name": "accessibility-design-rsmdt-the-startup",
+  "author": "rsmdt",
+  "source_url": "https://github.com/rsmdt/the-startup",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-current Rudolf Schmidt",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

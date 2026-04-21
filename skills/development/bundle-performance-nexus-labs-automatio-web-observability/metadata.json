@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/bundle-performance",
   "github_branch": "main",
-  "dir_name": "bundle-performance-nexus-labs-automatio-web-observability"
+  "dir_name": "bundle-performance-nexus-labs-automatio-web-observability",
+  "author": "nexus-labs-automation",
+  "source_url": "https://github.com/nexus-labs-automation/web-observability/blob/main/skills/bundle-performance/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Caleb Davis / Nexus Labs",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

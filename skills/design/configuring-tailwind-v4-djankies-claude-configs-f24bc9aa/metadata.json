@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:03.915591Z",
   "github_path": "tailwind-4/skills/configuring-tailwind-v4",
   "github_branch": "main",
-  "dir_name": "configuring-tailwind-v4-djankies-claude-configs-f24bc9aa"
+  "dir_name": "configuring-tailwind-v4-djankies-claude-configs-f24bc9aa",
+  "author": "djankies",
+  "source_url": "https://github.com/djankies/claude-configs/blob/main/tailwind-4/skills/configuring-tailwind-v4/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

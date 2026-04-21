@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/pollinations/pollinations",
-  "dir_name": "r2-glacier-migration-pollinations-pollinations-2"
+  "dir_name": "r2-glacier-migration-pollinations-pollinations-2",
+  "author": "pollinations",
+  "source_url": "https://github.com/pollinations/pollinations/blob/main/.claude/skills/r2-glacier-migration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 pollinations.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

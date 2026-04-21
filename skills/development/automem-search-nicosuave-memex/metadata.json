@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:21.463567Z",
   "github_path": ".claude/skills/automem-search",
   "github_branch": "main",
-  "dir_name": "automem-search-nicosuave-memex"
+  "dir_name": "automem-search-nicosuave-memex",
+  "author": "nicosuave",
+  "source_url": "https://github.com/nicosuave/memex/blob/main/.claude/skills/automem-search/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Nico Ritschel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

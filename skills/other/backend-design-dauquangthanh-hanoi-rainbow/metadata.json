@@ -7,5 +7,12 @@
   "dir_name": "backend-design-dauquangthanh-hanoi-rainbow",
   "category": "other",
   "github_path": "skills/backend-design-review",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "DauQuangThanh",
+  "source_url": "https://github.com/DauQuangThanh/hanoi-rainbow/blob/main/skills/backend-design-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dau Quang Thanh",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

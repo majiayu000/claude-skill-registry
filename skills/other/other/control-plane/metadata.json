@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/hirokazu-kobayashi-koba-hiro/idp-server",
   "dir_name": "control-plane",
-  "downloaded_at": "2026-02-22T07:26:54.256336Z"
+  "downloaded_at": "2026-02-22T07:26:54.256336Z",
+  "author": "hirokazu-kobayashi-koba-hiro",
+  "source_url": "https://github.com/hirokazu-kobayashi-koba-hiro/idp-server/blob/main/.claude/skills/control-plane/skill.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hirokazu-kobayashi-koba-hiro/idp-server/blob/main/.claude/skills/control-plane/skill.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/rish2jain/paperresearchagent",
   "downloaded_at": "2026-01-24T16:15:09.646818Z",
-  "dir_name": "aws-sagemaker-rish2jain-paperresearchagent"
+  "dir_name": "aws-sagemaker-rish2jain-paperresearchagent",
+  "author": "rish2jain",
+  "source_url": "https://github.com/rish2jain/paperresearchagent/blob/main/.claude/skills/aws-sagemaker/SKILL.md.backup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rish2jain/paperresearchagent/blob/main/.claude/skills/aws-sagemaker/SKILL.md.backup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

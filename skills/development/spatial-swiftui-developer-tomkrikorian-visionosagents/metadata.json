@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:25.703630Z",
   "github_path": "skills/spatial-swiftui-developer",
   "github_branch": "main",
-  "dir_name": "spatial-swiftui-developer-tomkrikorian-visionosagents"
+  "dir_name": "spatial-swiftui-developer-tomkrikorian-visionosagents",
+  "author": "tomkrikorian",
+  "source_url": "https://github.com/tomkrikorian/visionOSAgents/blob/main/skills/spatial-swiftui-developer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tom Krikorian",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

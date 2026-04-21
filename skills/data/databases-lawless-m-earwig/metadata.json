@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/lawless-m/Earwig",
-  "dir_name": "databases-lawless-m-earwig"
+  "dir_name": "databases-lawless-m-earwig",
+  "author": "lawless-m",
+  "source_url": "https://github.com/lawless-m/Earwig",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lawless-m/Earwig",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

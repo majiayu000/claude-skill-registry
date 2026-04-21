@@ -10,5 +10,12 @@
   "stars": 0,
   "dir_name": "model-coordination",
   "github_path": ".claude/skills/model-coordination",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "AkhilGurrapu",
+  "source_url": "https://github.com/AkhilGurrapu/kubera/blob/main/.claude/skills/model-coordination/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AkhilGurrapu/kubera/blob/main/.claude/skills/model-coordination/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "persona-pipeline"
+  "dir_name": "persona-pipeline",
+  "author": "rickoslyder",
+  "source_url": "https://github.com/rickoslyder/TraitorSim",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rickoslyder/TraitorSim",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

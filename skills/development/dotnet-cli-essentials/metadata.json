@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/dotnet-cli-essentials",
   "github_branch": "main",
-  "dir_name": "dotnet-cli-essentials"
+  "dir_name": "dotnet-cli-essentials",
+  "author": "NotMyself",
+  "source_url": "https://github.com/NotMyself/claude-stack-dotnet/blob/main/.claude/skills/dotnet-cli-essentials/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Bobby Johnson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

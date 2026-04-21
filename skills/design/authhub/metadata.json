@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:06.904814Z",
   "github_path": "authhub/skills/authhub",
   "github_branch": "main",
-  "dir_name": "authhub"
+  "dir_name": "authhub",
+  "author": "awudevelop",
+  "source_url": "https://github.com/awudevelop/claude-plugins/blob/main/authhub/skills/authhub/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AutomateWith.Us",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

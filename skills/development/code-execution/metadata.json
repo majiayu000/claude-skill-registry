@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:42.918792Z",
   "github_path": "code-operations-plugin/skills/code-execution",
   "github_branch": "main",
-  "dir_name": "code-execution"
+  "dir_name": "code-execution",
+  "author": "mhattingpete",
+  "source_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/code-operations-plugin/skills/code-execution/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 mhattingpete",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -8,5 +8,12 @@
   ],
   "stars": 4,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "autoregmonkey"
+  "dir_name": "autoregmonkey",
+  "author": "rukikotoo",
+  "source_url": "https://github.com/rukikotoo/AutoRegMonkey",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rukikotoo/AutoRegMonkey",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

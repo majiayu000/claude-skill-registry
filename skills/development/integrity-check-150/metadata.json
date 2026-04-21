@@ -5,5 +5,12 @@
   "description": "Final self-check before delivery. Verify goal alignment, completeness, correctness, and identify residual risks. Produces quality score (0-100) and delivery status. Use when completing any significant",
   "source": "GitHub Search API",
   "downloaded_at": "2026-01-08T03:31:20.344166Z",
-  "dir_name": "integrity-check-150"
+  "dir_name": "integrity-check-150",
+  "author": "MykhailoDmytriakha",
+  "source_url": "https://github.com/MykhailoDmytriakha/my-preacher-helper",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MykhailoDmytriakha/my-preacher-helper",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

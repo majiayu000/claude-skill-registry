@@ -9,5 +9,12 @@
   ],
   "stars": 2,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "api-validator"
+  "dir_name": "api-validator",
+  "author": "moasadi",
+  "source_url": "https://github.com/moasadi/ddd-bun-api-boilerplate",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/moasadi/ddd-bun-api-boilerplate",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

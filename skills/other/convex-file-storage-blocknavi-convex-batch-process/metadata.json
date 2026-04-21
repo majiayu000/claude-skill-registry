@@ -5,5 +5,12 @@
   "source": "github.com/blocknavi/convex-batch-processor",
   "downloaded_at": "2026-01-29T07:52:58.779390Z",
   "dir_name": "convex-file-storage-blocknavi-convex-batch-process",
-  "category": "other"
+  "category": "other",
+  "author": "blocknavi",
+  "source_url": "https://github.com/blocknavi/convex-batch-processor/blob/main/.claude/skills/convex-file-storage/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Blocksight",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

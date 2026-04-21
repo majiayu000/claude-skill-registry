@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:27.442295Z",
   "github_path": "chying_agent/skills/rce",
   "github_branch": "main",
-  "dir_name": "rce-yhy0-chying-agent"
+  "dir_name": "rce-yhy0-chying-agent",
+  "author": "yhy0",
+  "source_url": "https://github.com/yhy0/CHYing-agent/blob/main/chying_agent/skills/rce/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 yhy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

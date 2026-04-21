@@ -10,5 +10,12 @@
   "stars": 11,
   "github_path": ".claude/skills/nostr-tools",
   "github_branch": "main",
-  "dir_name": "nostr-tools-purrgrammer-grimoire"
+  "dir_name": "nostr-tools-purrgrammer-grimoire",
+  "author": "purrgrammer",
+  "source_url": "https://github.com/purrgrammer/grimoire/blob/main/.claude/skills/nostr-tools/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Alejandro Gómez",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

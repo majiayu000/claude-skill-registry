@@ -5,5 +5,12 @@
   "description": "GitLab Merge Requestのレビュー操作を行うスキル。MR情報取得、差分確認、コメント取得・投稿、インラインコメント、コメント返信をglabコマンドで実行する。MRレビュー、コードレビュー、MR操作が必要な時に使用。",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:08:44.235791Z",
-  "dir_name": "gitlab-mr-review-operation"
+  "dir_name": "gitlab-mr-review-operation",
+  "author": "TakumiOkayasu",
+  "source_url": "https://github.com/TakumiOkayasu/dotfile-work",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TakumiOkayasu/dotfile-work",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "gha-sha-reference"
+  "dir_name": "gha-sha-reference",
+  "author": "syou6162",
+  "source_url": "https://github.com/syou6162/claude-code-commands",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Yasuhisa Yoshida",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

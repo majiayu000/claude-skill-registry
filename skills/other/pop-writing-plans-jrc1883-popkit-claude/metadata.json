@@ -7,5 +7,12 @@
   "dir_name": "pop-writing-plans-jrc1883-popkit-claude",
   "category": "other",
   "github_path": "packages/popkit-dev/skills/pop-writing-plans",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jrc1883",
+  "source_url": "https://github.com/jrc1883/popkit-claude/blob/main/packages/popkit-dev/skills/pop-writing-plans/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jrc1883/popkit-claude/blob/main/packages/popkit-dev/skills/pop-writing-plans/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

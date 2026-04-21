@@ -7,5 +7,12 @@
   "dir_name": "architecture-introspector",
   "category": "other",
   "github_path": "skills/architecture-introspector/skills/architecture-introspector",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "mahidalhan",
+  "source_url": "https://github.com/mahidalhan/claude-hacks/blob/main/skills/architecture-introspector/skills/architecture-introspector/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Skilled Spec Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "architecture-spec-rshankras-claude-code-apple-sk",
   "category": "other",
   "github_path": "skills/product/architecture-spec",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "rshankras",
+  "source_url": "https://github.com/rshankras/claude-code-apple-skills/blob/main/skills/product/architecture-spec/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ravishankar",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

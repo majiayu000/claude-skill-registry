@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:08.115159Z",
   "github_path": "plugins/quality/skills/barrel-craft",
   "github_branch": "main",
-  "dir_name": "barrel-craft"
+  "dir_name": "barrel-craft",
+  "author": "marcioaltoe",
+  "source_url": "https://github.com/marcioaltoe/claude-craftkit/blob/main/plugins/quality/skills/barrel-craft/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Marcio Altoé",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

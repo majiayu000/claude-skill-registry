@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "ash-library-hotfix"
+  "dir_name": "ash-library-hotfix",
+  "author": "shotleybuilder",
+  "source_url": "https://github.com/shotleybuilder/ash_cookie_consent",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jason (Sertantai)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

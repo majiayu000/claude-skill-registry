@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": ".claude/skills/task-verification-pipeline",
   "github_branch": "main",
-  "dir_name": "task-verification-pipeline"
+  "dir_name": "task-verification-pipeline",
+  "author": "Anveio",
+  "source_url": "https://github.com/Anveio/conveaux/blob/main/.claude/skills/task-verification-pipeline/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Anveio/conveaux/blob/main/.claude/skills/task-verification-pipeline/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:13.396049Z",
   "github_path": "claude/oadp-operator/skills/operations/backup-etcd",
   "github_branch": "main",
-  "dir_name": "backup-etcd-mpryc-ai-agents-and-skills-9f28ba91"
+  "dir_name": "backup-etcd-mpryc-ai-agents-and-skills-9f28ba91",
+  "author": "mpryc",
+  "source_url": "https://github.com/mpryc/ai-agents-and-skills/blob/main/claude/oadp-operator/skills/operations/backup-etcd/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Michal Pryc",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

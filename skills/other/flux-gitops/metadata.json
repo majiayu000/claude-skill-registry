@@ -7,5 +7,12 @@
   "dir_name": "flux-gitops",
   "category": "other",
   "github_path": ".claude/skills/flux-gitops",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "ionfury",
+  "source_url": "https://github.com/ionfury/homelab/blob/main/.claude/skills/flux-gitops/SKILL.md",
+  "license": "WTFPL",
+  "copyright": "Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/lsst-sqre/squareone",
-  "dir_name": "data-fetching-patterns-lsst-sqre-squareone-2"
+  "dir_name": "data-fetching-patterns-lsst-sqre-squareone-2",
+  "author": "lsst-sqre",
+  "source_url": "https://github.com/lsst-sqre/squareone/blob/main/.claude/skills/data-fetching-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Association of Universities for Research in Astronomy, Inc. (AURA)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

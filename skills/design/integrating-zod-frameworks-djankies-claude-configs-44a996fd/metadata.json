@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:05.723084Z",
   "github_path": "zod-4/skills/integrating-zod-frameworks",
   "github_branch": "main",
-  "dir_name": "integrating-zod-frameworks-djankies-claude-configs-44a996fd"
+  "dir_name": "integrating-zod-frameworks-djankies-claude-configs-44a996fd",
+  "author": "djankies",
+  "source_url": "https://github.com/djankies/claude-configs/blob/main/zod-4/skills/integrating-zod-frameworks/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

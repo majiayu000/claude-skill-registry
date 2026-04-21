@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/applesauce-core",
   "github_branch": "main",
-  "dir_name": "applesauce-core-purrgrammer-grimoire"
+  "dir_name": "applesauce-core-purrgrammer-grimoire",
+  "author": "purrgrammer",
+  "source_url": "https://github.com/purrgrammer/grimoire/blob/main/.claude/skills/applesauce-core/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Alejandro Gómez",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

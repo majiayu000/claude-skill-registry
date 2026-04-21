@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:28:47.708278Z",
   "github_path": "skills/postfx-effects",
   "github_branch": "main",
-  "dir_name": "postfx-effects-bbeierle12-skill-mcp-claude"
+  "dir_name": "postfx-effects-bbeierle12-skill-mcp-claude",
+  "author": "Bbeierle12",
+  "source_url": "https://github.com/Bbeierle12/Skill-MCP-Claude/blob/main/skills/postfx-effects/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Bbeierle12",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

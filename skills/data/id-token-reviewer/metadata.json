@@ -5,5 +5,12 @@
   "source": "github.com/maronnjapan/maronn-openid-provider",
   "downloaded_at": "2026-02-04T04:54:25.554795Z",
   "dir_name": "id-token-reviewer",
-  "category": "data"
+  "category": "data",
+  "author": "maronnjapan",
+  "source_url": "https://github.com/maronnjapan/maronn-openid-provider/blob/main/.claude/skills/id-token-reviewer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/maronnjapan/maronn-openid-provider/blob/main/.claude/skills/id-token-reviewer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/joaquimscosta/arkhe-claude-plugins",
   "downloaded_at": "2026-01-31T01:24:18.047080Z",
   "dir_name": "spring-boot-web-api",
-  "category": "other"
+  "category": "other",
+  "author": "joaquimscosta",
+  "source_url": "https://github.com/joaquimscosta/arkhe-claude-plugins/blob/main/plugins/spring-boot/skills/spring-boot-web-api/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Joaquim Costa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

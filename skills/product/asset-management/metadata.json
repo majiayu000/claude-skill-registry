@@ -9,5 +9,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "asset-management"
+  "dir_name": "asset-management",
+  "author": "QuantumFusion-network",
+  "source_url": "https://github.com/QuantumFusion-network/w3zard-gen",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/QuantumFusion-network/w3zard-gen",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

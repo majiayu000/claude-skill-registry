@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/jovermier/claude-code-plugins-ip-labs",
-  "dir_name": "latest-astro"
+  "dir_name": "latest-astro",
+  "author": "jovermier",
+  "source_url": "https://github.com/jovermier/claude-code-plugins-ip-labs",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Innovative Prospects",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

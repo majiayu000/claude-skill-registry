@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "arena-cli",
   "github_path": "skills/arena-cli",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "rohunvora",
+  "source_url": "https://github.com/rohunvora/cool-claude-skills/blob/main/skills/arena-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rohunvora/cool-claude-skills/blob/main/skills/arena-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

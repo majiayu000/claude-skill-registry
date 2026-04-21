@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/baml-codegen",
   "github_branch": "main",
-  "dir_name": "baml-codegen-fryrai-baml-claude-skill"
+  "dir_name": "baml-codegen-fryrai-baml-claude-skill",
+  "author": "FryrAI",
+  "source_url": "https://github.com/FryrAI/BAML-Claude-Skill/blob/main/.claude/skills/baml-codegen/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/FryrAI/BAML-Claude-Skill/blob/main/.claude/skills/baml-codegen/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

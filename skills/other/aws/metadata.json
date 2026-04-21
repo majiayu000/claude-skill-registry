@@ -5,5 +5,12 @@
   "source": "github.com/slappforge/sigma",
   "downloaded_at": "2026-01-29T06:28:13.140702Z",
   "dir_name": "aws",
-  "category": "other"
+  "category": "other",
+  "author": "slappforge",
+  "source_url": "https://github.com/slappforge/sigma/blob/main/docs/components/aws/alexa_skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/slappforge/sigma/blob/main/docs/components/aws/alexa_skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

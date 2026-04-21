@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "astro-v6-upgrade-ascorbic-skills"
+  "dir_name": "astro-v6-upgrade-ascorbic-skills",
+  "author": "ascorbic",
+  "source_url": "https://github.com/ascorbic/skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Matt Kane",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

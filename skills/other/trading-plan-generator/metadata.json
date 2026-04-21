@@ -5,5 +5,12 @@
   "source": "github.com/jamesrochabrun/skills",
   "downloaded_at": "2026-02-01T02:02:47.451624Z",
   "dir_name": "trading-plan-generator",
-  "category": "other"
+  "category": "other",
+  "author": "jamesrochabrun",
+  "source_url": "https://github.com/jamesrochabrun/skills/blob/main/skills/trading-plan-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 James Rochabrun",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

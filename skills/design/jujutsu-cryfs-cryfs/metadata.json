@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/jujutsu",
   "github_branch": "main",
-  "dir_name": "jujutsu-cryfs-cryfs"
+  "dir_name": "jujutsu-cryfs-cryfs",
+  "author": "cryfs",
+  "source_url": "https://github.com/cryfs/cryfs/blob/main/.claude/skills/jujutsu/SKILL.md",
+  "license": "LGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

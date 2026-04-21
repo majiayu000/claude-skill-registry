@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/ryu-qqq/MarketPlace",
-  "dir_name": "integration-test-expert"
+  "dir_name": "integration-test-expert",
+  "author": "ryu-qqq",
+  "source_url": "https://github.com/ryu-qqq/MarketPlace",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ryu-qqq/MarketPlace",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

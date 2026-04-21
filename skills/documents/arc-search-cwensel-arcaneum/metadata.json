@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:44.995535Z",
   "github_path": ".claude-plugin/skills/arc-search",
   "github_branch": "main",
-  "dir_name": "arc-search-cwensel-arcaneum"
+  "dir_name": "arc-search-cwensel-arcaneum",
+  "author": "cwensel",
+  "source_url": "https://github.com/cwensel/arcaneum/blob/main/.claude-plugin/skills/arc-search/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Arcaneum Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

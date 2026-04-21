@@ -9,5 +9,12 @@
   "stars": 2,
   "github_path": ".claude/skills/igniter",
   "github_branch": "main",
-  "dir_name": "igniter-joshprice-claude-skills-from-u"
+  "dir_name": "igniter-joshprice-claude-skills-from-u",
+  "author": "joshprice",
+  "source_url": "https://github.com/joshprice/claude-skills-from-usage-rules/blob/main/.claude/skills/igniter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/joshprice/claude-skills-from-usage-rules/blob/main/.claude/skills/igniter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

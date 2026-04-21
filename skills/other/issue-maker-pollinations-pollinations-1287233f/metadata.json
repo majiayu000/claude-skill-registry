@@ -5,5 +5,12 @@
   "source": "github.com/pollinations/pollinations",
   "downloaded_at": "2026-01-29T07:47:49.475125Z",
   "dir_name": "issue-maker-pollinations-pollinations-1287233f",
-  "category": "other"
+  "category": "other",
+  "author": "pollinations",
+  "source_url": "https://github.com/pollinations/pollinations/blob/main/.claude/skills/issue-maker/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 pollinations.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

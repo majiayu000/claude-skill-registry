@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/tqer39/blog",
-  "dir_name": "unit-test-tqer39-blog-2"
+  "dir_name": "unit-test-tqer39-blog-2",
+  "author": "tqer39",
+  "source_url": "https://github.com/tqer39/blog/blob/main/.claude/skills/unit-test/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Takeru O'oyama",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

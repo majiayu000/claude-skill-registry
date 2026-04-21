@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/joshribakoff/fightingwithai.com",
-  "dir_name": "astro-images"
+  "dir_name": "astro-images",
+  "author": "joshribakoff",
+  "source_url": "https://github.com/joshribakoff/fightingwithai.com",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 fightingwithai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

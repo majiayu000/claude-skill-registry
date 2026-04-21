@@ -9,5 +9,12 @@
   ],
   "stars": 3,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "audio-engineer"
+  "dir_name": "audio-engineer",
+  "author": "ironystock",
+  "source_url": "https://github.com/ironystock/agentic-obs",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ironystock",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

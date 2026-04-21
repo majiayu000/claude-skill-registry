@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:33.019716Z",
   "github_path": "glide/skills/app-sharing",
   "github_branch": "main",
-  "dir_name": "glide"
+  "dir_name": "glide",
+  "author": "glideapps",
+  "source_url": "https://github.com/glideapps/glide-code/blob/main/glide/skills/app-sharing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/glideapps/glide-code/blob/main/glide/skills/app-sharing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

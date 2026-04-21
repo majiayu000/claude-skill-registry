@@ -8,5 +8,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "astrologue-ia"
+  "dir_name": "astrologue-ia",
+  "author": "PoulpYBifle",
+  "source_url": "https://github.com/PoulpYBifle/astro-ia",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PoulpYBifle/astro-ia",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

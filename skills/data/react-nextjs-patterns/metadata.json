@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "react-nextjs-patterns"
+  "dir_name": "react-nextjs-patterns",
+  "author": "duyet",
+  "source_url": "https://github.com/duyet/duyetbot-agent",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/duyet/duyetbot-agent",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

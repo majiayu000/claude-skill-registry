@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/ash-library-release",
   "github_branch": "main",
-  "dir_name": "ash-library-release-shotleybuilder-ash-cookie-consent"
+  "dir_name": "ash-library-release-shotleybuilder-ash-cookie-consent",
+  "author": "shotleybuilder",
+  "source_url": "https://github.com/shotleybuilder/ash_cookie_consent/blob/main/.claude/skills/ash-library-release/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jason (Sertantai)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

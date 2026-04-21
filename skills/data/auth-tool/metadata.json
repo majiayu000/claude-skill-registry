@@ -5,5 +5,12 @@
   "source": "github.com/baiyongping/cowork-platform",
   "downloaded_at": "2026-02-01T01:20:51.888625Z",
   "dir_name": "auth-tool",
-  "category": "data"
+  "category": "data",
+  "author": "baiyongping",
+  "source_url": "https://github.com/baiyongping/cowork-platform/blob/main/.codebuddy/skills/auth-tool/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/baiyongping/cowork-platform/blob/main/.codebuddy/skills/auth-tool/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "検証Agent - 全層の結果を検証し、最終判定（PASS/REVISE/REJECT）を下す",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:23.915920Z",
-  "dir_name": "reviewagent"
+  "dir_name": "reviewagent",
+  "author": "liushuang393",
+  "source_url": "https://github.com/liushuang393/serverlessAIAgents",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/liushuang393/serverlessAIAgents",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:21.417957Z",
   "github_path": "plugins/devloop/skills/go-patterns",
   "github_branch": "main",
-  "dir_name": "go-patterns-zate-cc-plugins-28fb308c"
+  "dir_name": "go-patterns-zate-cc-plugins-28fb308c",
+  "author": "Zate",
+  "source_url": "https://github.com/Zate/cc-plugins/blob/main/plugins/devloop/skills/go-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CC-Plugins Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

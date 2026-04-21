@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:16.219599Z",
   "dir_name": "author-profile",
   "github_path": "article-writer/skills/author-profile",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "mwguerra",
+  "source_url": "https://github.com/mwguerra/claude-code-plugins/blob/main/article-writer/skills/author-profile/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mwguerra/claude-code-plugins/blob/main/article-writer/skills/author-profile/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

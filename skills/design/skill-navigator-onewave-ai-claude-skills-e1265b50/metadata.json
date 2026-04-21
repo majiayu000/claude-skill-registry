@@ -10,5 +10,12 @@
   "stars": 10,
   "github_path": "skill-navigator",
   "github_branch": "main",
-  "dir_name": "skill-navigator-onewave-ai-claude-skills-e1265b50"
+  "dir_name": "skill-navigator-onewave-ai-claude-skills-e1265b50",
+  "author": "OneWave-AI",
+  "source_url": "https://github.com/OneWave-AI/claude-skills/blob/main/skill-navigator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 OneWave AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

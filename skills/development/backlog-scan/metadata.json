@@ -9,5 +9,12 @@
   ],
   "stars": 4,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "backlog-scan"
+  "dir_name": "backlog-scan",
+  "author": "andersnygaard",
+  "source_url": "https://github.com/andersnygaard/ettsted2",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andersnygaard/ettsted2",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:26.473056Z",
   "dir_name": "project-domain",
   "github_path": ".ai-dev-kit/skills/stack-analyzer/templates/project-domain",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Consiliency",
+  "source_url": "https://github.com/Consiliency/treesitter-chunker/blob/main/.ai-dev-kit/skills/stack-analyzer/templates/project-domain/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Consiliency",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

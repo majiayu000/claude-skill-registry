@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/robertpelloni/borg",
-  "dir_name": "parameterization"
+  "dir_name": "parameterization",
+  "author": "robertpelloni",
+  "source_url": "https://github.com/robertpelloni/borg",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/robertpelloni/borg",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

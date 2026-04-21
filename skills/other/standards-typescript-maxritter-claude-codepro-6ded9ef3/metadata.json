@@ -7,5 +7,12 @@
   "dir_name": "standards-typescript-maxritter-claude-codepro-6ded9ef3",
   "category": "other",
   "github_path": ".claude/skills/standards-typescript",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "maxritter",
+  "source_url": "https://github.com/maxritter/claude-codepro/blob/main/.claude/skills/standards-typescript/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (C) 2026 Max Ritter (@maxritter). All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

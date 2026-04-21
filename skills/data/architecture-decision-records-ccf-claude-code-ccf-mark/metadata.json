@@ -5,5 +5,12 @@
   "source": "github.com/ccf/claude-code-ccf-marketplace",
   "downloaded_at": "2026-02-04T05:10:54.036584Z",
   "dir_name": "architecture-decision-records-ccf-claude-code-ccf-mark",
-  "category": "data"
+  "category": "data",
+  "author": "ccf",
+  "source_url": "https://github.com/ccf/claude-code-ccf-marketplace/blob/main/plugins/documentation/skills/architecture-decision-records/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Seth Hobson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

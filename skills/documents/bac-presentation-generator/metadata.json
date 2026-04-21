@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "",
   "github_branch": "main",
-  "dir_name": "bac-presentation-generator"
+  "dir_name": "bac-presentation-generator",
+  "author": "wizardofwozzz",
+  "source_url": "https://github.com/wizardofwozzz/bac-presentation-generator",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wizardofwozzz/bac-presentation-generator",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

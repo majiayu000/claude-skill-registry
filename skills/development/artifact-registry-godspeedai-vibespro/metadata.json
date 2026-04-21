@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:55.953911Z",
   "github_path": "context-kit/.github/skills/artifact-registry",
   "github_branch": "main",
-  "dir_name": "artifact-registry-godspeedai-vibespro"
+  "dir_name": "artifact-registry-godspeedai-vibespro",
+  "author": "GodSpeedAI",
+  "source_url": "https://github.com/GodSpeedAI/VibesPro/blob/main/context-kit/.github/skills/artifact-registry/SKILL.md",
+  "license": "MPL-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GodSpeedAI/VibesPro/blob/main/context-kit/.github/skills/artifact-registry/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

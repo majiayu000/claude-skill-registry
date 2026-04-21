@@ -5,5 +5,12 @@
   "description": "Your approach to handling standards summary. Use this skill when working on files where standards summary comes into play.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:04:44.291340Z",
-  "dir_name": "standards-summary"
+  "dir_name": "standards-summary",
+  "author": "cotw-fabier",
+  "source_url": "https://github.com/cotw-fabier/spidart",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cotw-fabier/spidart",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

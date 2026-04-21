@@ -5,5 +5,12 @@
   "source": "github.com/hirokazu-kobayashi-koba-hiro/idp-server",
   "downloaded_at": "2026-02-02T03:59:53.377022Z",
   "dir_name": "userinfo-endpoint",
-  "category": "other"
+  "category": "other",
+  "author": "hirokazu-kobayashi-koba-hiro",
+  "source_url": "https://github.com/hirokazu-kobayashi-koba-hiro/idp-server/blob/main/.claude/skills/userinfo-endpoint/skill.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hirokazu-kobayashi-koba-hiro/idp-server/blob/main/.claude/skills/userinfo-endpoint/skill.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "stars": 3,
   "github_path": "two-agent-harness",
   "github_branch": "main",
-  "dir_name": "two-agent-harness"
+  "dir_name": "two-agent-harness",
+  "author": "ingpoc",
+  "source_url": "https://github.com/ingpoc/SKILLS/blob/main/two-agent-harness/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ingpoc/SKILLS/blob/main/two-agent-harness/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

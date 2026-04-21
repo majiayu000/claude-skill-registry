@@ -5,5 +5,12 @@
   "source": "github.com/feiskyer/claude-code-settings",
   "downloaded_at": "2026-02-02T04:56:07.524568Z",
   "dir_name": "kiro-skill-feiskyer-claude-code-settings",
-  "category": "other"
+  "category": "other",
+  "author": "feiskyer",
+  "source_url": "https://github.com/feiskyer/claude-code-settings/blob/main/plugins/kiro-skill/skills/kiro-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-Now Pengfei Ni",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/apply-shadcn",
   "github_branch": "main",
-  "dir_name": "apply-shadcn-otoshek-claude-code-toolkit"
+  "dir_name": "apply-shadcn-otoshek-claude-code-toolkit",
+  "author": "otoshek",
+  "source_url": "https://github.com/otoshek/Claude-Code-Toolkit/blob/main/skills/apply-shadcn/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/otoshek/Claude-Code-Toolkit/blob/main/skills/apply-shadcn/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "reviewing-code-0xhoneyjar-rm-lurker-a896a5c5",
   "category": "other",
   "github_path": ".claude/skills/reviewing-code",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "0xHoneyJar",
+  "source_url": "https://github.com/0xHoneyJar/rm-lurker/blob/main/.claude/skills/reviewing-code/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

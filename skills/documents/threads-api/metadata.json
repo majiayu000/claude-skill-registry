@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:51.835249Z",
   "github_path": "threads-api",
   "github_branch": "main",
-  "dir_name": "threads-api"
+  "dir_name": "threads-api",
+  "author": "rawveg",
+  "source_url": "https://github.com/rawveg/skillsforge-marketplace/blob/main/threads-api/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rawveg/skillsforge-marketplace/blob/main/threads-api/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

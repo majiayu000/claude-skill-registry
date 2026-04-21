@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:16.835527Z",
   "github_path": ".codex/skills/base-ui-docs",
   "github_branch": "main",
-  "dir_name": "base-ui-docs-yumehiko-jp-ui-dc46898b"
+  "dir_name": "base-ui-docs-yumehiko-jp-ui-dc46898b",
+  "author": "yumehiko",
+  "source_url": "https://github.com/yumehiko/jp-ui/blob/main/.codex/skills/base-ui-docs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 yumehiko",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

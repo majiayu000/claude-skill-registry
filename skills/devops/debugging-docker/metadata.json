@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:21:42.719686Z",
   "github_path": ".claude/skills/debugging-docker",
   "github_branch": "main",
-  "dir_name": "debugging-docker"
+  "dir_name": "debugging-docker",
+  "author": "Danik911",
+  "source_url": "https://github.com/Danik911/thesis_project/blob/main/.claude/skills/debugging-docker/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Danik911/thesis_project/blob/main/.claude/skills/debugging-docker/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

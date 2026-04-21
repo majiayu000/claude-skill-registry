@@ -5,5 +5,12 @@
   "source": "github.com/maxritter/claude-codepro",
   "downloaded_at": "2026-01-29T07:06:33.024157Z",
   "dir_name": "standards-tests-maxritter-claude-codepro",
-  "category": "data"
+  "category": "data",
+  "author": "maxritter",
+  "source_url": "https://github.com/maxritter/claude-codepro/blob/main/.claude/ccp/skills/standards-tests/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (C) 2026 Max Ritter (@maxritter). All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

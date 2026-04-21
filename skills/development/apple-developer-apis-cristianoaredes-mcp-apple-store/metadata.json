@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/apple-developer-apis",
   "github_branch": "main",
-  "dir_name": "apple-developer-apis-cristianoaredes-mcp-apple-store"
+  "dir_name": "apple-developer-apis-cristianoaredes-mcp-apple-store",
+  "author": "cristianoaredes",
+  "source_url": "https://github.com/cristianoaredes/mcp-apple-store/blob/main/.claude/skills/apple-developer-apis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Cristiano Aredes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

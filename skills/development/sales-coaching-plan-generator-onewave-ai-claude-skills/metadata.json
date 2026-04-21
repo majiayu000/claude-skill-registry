@@ -12,5 +12,12 @@
   "stars": 10,
   "github_path": "sales-coaching-plan-generator",
   "github_branch": "main",
-  "dir_name": "sales-coaching-plan-generator-onewave-ai-claude-skills"
+  "dir_name": "sales-coaching-plan-generator-onewave-ai-claude-skills",
+  "author": "OneWave-AI",
+  "source_url": "https://github.com/OneWave-AI/claude-skills/blob/main/sales-coaching-plan-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 OneWave AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

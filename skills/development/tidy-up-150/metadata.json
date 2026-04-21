@@ -5,5 +5,12 @@
   "description": "Quick, safe cleanup after completing a milestone. Fix objective issues only (syntax errors, dead code, poor naming). Must be <5% of main task time, <30 seconds per fix, and reversible. Use after key p",
   "source": "GitHub Search API",
   "downloaded_at": "2026-01-08T03:30:41.327677Z",
-  "dir_name": "tidy-up-150"
+  "dir_name": "tidy-up-150",
+  "author": "MykhailoDmytriakha",
+  "source_url": "https://github.com/MykhailoDmytriakha/my-preacher-helper",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MykhailoDmytriakha/my-preacher-helper",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

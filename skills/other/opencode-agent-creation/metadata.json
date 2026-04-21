@@ -5,5 +5,12 @@
   "source": "github.com/darellchua2/opencode-config-template",
   "downloaded_at": "2026-01-27T03:48:04.720905Z",
   "dir_name": "opencode-agent-creation",
-  "category": "other"
+  "category": "other",
+  "author": "darellchua2",
+  "source_url": "https://github.com/darellchua2/opencode-config-template/blob/main/skills/opencode-agent-creation/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2026 OpenCode Configuration Template Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

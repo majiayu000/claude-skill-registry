@@ -7,5 +7,12 @@
   "stars": 16753,
   "source": "github.com/tursodatabase/turso",
   "downloaded_at": "2026-01-24T16:15:40.253948Z",
-  "dir_name": "code-quality-tursodatabase-turso"
+  "dir_name": "code-quality-tursodatabase-turso",
+  "author": "tursodatabase",
+  "source_url": "https://github.com/tursodatabase/turso/blob/main/.claude/skills/code-quality/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2024 the Turso authors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

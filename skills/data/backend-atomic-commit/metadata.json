@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "backend-atomic-commit"
+  "dir_name": "backend-atomic-commit",
+  "author": "DiversioTeam",
+  "source_url": "https://github.com/DiversioTeam/agent-skills-marketplace",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Diversio",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

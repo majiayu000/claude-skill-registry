@@ -5,5 +5,12 @@
   "source": "github.com/noklip-io/agent-skills",
   "downloaded_at": "2026-01-29T06:46:43.656353Z",
   "dir_name": "three-js-noklip-io-agent-skills",
-  "category": "other"
+  "category": "other",
+  "author": "noklip-io",
+  "source_url": "https://github.com/noklip-io/agent-skills/blob/main/skills/three-js/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 noklip-io",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

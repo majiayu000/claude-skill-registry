@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/ava-mcp-usage",
   "github_branch": "main",
-  "dir_name": "ava-mcp-usage-yutakobayashidev-ava-3efdd91e"
+  "dir_name": "ava-mcp-usage-yutakobayashidev-ava-3efdd91e",
+  "author": "yutakobayashidev",
+  "source_url": "https://github.com/yutakobayashidev/ava/blob/main/.claude/skills/ava-mcp-usage/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Yuta Kobayashi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

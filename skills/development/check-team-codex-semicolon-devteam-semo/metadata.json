@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:50.828698Z",
   "github_path": "semo-system/semo-skills/check-team-codex",
   "github_branch": "main",
-  "dir_name": "check-team-codex-semicolon-devteam-semo"
+  "dir_name": "check-team-codex-semicolon-devteam-semo",
+  "author": "semicolon-devteam",
+  "source_url": "https://github.com/semicolon-devteam/semo/blob/main/semo-system/semo-skills/check-team-codex/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/semicolon-devteam/semo/blob/main/semo-system/semo-skills/check-team-codex/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

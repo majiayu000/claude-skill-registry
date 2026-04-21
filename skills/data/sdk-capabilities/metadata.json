@@ -5,5 +5,12 @@
   "source": "github.com/BankrBot/claude-plugins",
   "downloaded_at": "2026-01-27T04:17:46.416556Z",
   "dir_name": "sdk-capabilities",
-  "category": "data"
+  "category": "data",
+  "author": "BankrBot",
+  "source_url": "https://github.com/BankrBot/claude-plugins/blob/main/x402-sdk-dev/skills/sdk-capabilities/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Bankr",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

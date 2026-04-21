@@ -7,5 +7,12 @@
   "dir_name": "setup-fcakyon-claude-codex-setting-baf377c7",
   "category": "other",
   "github_path": "plugins/tavily-tools/skills/setup",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "fcakyon",
+  "source_url": "https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/tavily-tools/skills/setup/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/tavily-tools/skills/setup/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

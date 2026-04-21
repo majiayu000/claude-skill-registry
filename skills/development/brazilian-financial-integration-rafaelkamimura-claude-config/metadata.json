@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/brazilian-financial-integration",
   "github_branch": "main",
-  "dir_name": "brazilian-financial-integration-rafaelkamimura-claude-config"
+  "dir_name": "brazilian-financial-integration-rafaelkamimura-claude-config",
+  "author": "rafaelkamimura",
+  "source_url": "https://github.com/rafaelkamimura/claude-config/blob/main/skills/brazilian-financial-integration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rafaelkamimura/claude-config/blob/main/skills/brazilian-financial-integration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

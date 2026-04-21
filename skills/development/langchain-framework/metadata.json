@@ -5,5 +5,12 @@
   "description": "LangChain LLM application framework with chains, agents, RAG, and memory for building AI-powered applications. Use when implementing RAG (Retrieval Augmented Generation), creating AI agents with tools",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:00:35.994042Z",
-  "dir_name": "langchain-framework"
+  "dir_name": "langchain-framework",
+  "author": "bobmatnyc",
+  "source_url": "https://github.com/bobmatnyc/terminator",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bobmatnyc/terminator",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

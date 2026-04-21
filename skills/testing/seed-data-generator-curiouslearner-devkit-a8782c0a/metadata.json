@@ -11,5 +11,12 @@
   "stars": 13,
   "github_path": "skills/seed-data-generator",
   "github_branch": "main",
-  "dir_name": "seed-data-generator-curiouslearner-devkit-a8782c0a"
+  "dir_name": "seed-data-generator-curiouslearner-devkit-a8782c0a",
+  "author": "CuriousLearner",
+  "source_url": "https://github.com/CuriousLearner/devkit/blob/main/skills/seed-data-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sanyam Khurana",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

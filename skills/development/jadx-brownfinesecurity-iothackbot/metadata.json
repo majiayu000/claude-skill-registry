@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/jadx",
   "github_branch": "master",
-  "dir_name": "jadx-brownfinesecurity-iothackbot"
+  "dir_name": "jadx-brownfinesecurity-iothackbot",
+  "author": "BrownFineSecurity",
+  "source_url": "https://github.com/BrownFineSecurity/iothackbot/blob/master/skills/jadx/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 iothackbot contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

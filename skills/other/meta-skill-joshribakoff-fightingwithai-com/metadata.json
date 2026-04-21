@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/meta-skill",
   "github_branch": "main",
   "dir_name": "meta-skill-joshribakoff-fightingwithai-com",
-  "downloaded_at": "2026-02-05T01:44:19.746847Z"
+  "downloaded_at": "2026-02-05T01:44:19.746847Z",
+  "author": "joshribakoff",
+  "source_url": "https://github.com/joshribakoff/fightingwithai.com/blob/main/.claude/skills/meta-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 fightingwithai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

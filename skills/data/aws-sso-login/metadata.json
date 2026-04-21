@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "aws-sso-login"
+  "dir_name": "aws-sso-login",
+  "author": "Daisuke897",
+  "source_url": "https://github.com/Daisuke897/dotfiles",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2022 Daisuke Nakahara",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

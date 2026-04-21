@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "backend-structure-organizer"
+  "dir_name": "backend-structure-organizer",
+  "author": "Rayder-23",
+  "source_url": "https://github.com/Rayder-23/Hackathon-1_Physical-AI-Book",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Rayder-23/Hackathon-1_Physical-AI-Book",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

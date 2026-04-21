@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:38.008408Z",
   "github_path": "skills/error-message-explainer",
   "github_branch": "main",
-  "dir_name": "error-message-explainer"
+  "dir_name": "error-message-explainer",
+  "author": "wedsamuel1230",
+  "source_url": "https://github.com/wedsamuel1230/arduino-skills/blob/main/skills/error-message-explainer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Samuel F.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

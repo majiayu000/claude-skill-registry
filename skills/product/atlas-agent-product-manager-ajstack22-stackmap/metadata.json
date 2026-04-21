@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:48.676886Z",
   "github_path": "atlas-skills/atlas-agent-product-manager",
   "github_branch": "main",
-  "dir_name": "atlas-agent-product-manager-ajstack22-stackmap"
+  "dir_name": "atlas-agent-product-manager-ajstack22-stackmap",
+  "author": "ajstack22",
+  "source_url": "https://github.com/ajstack22/StackMap/blob/main/atlas-skills/atlas-agent-product-manager/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 StackMap Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

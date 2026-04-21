@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:12.859345Z",
   "github_path": ".factory/skills/wp-activation",
   "github_branch": "main",
-  "dir_name": "wp-activation"
+  "dir_name": "wp-activation",
+  "author": "dreamworks2050",
+  "source_url": "https://github.com/dreamworks2050/retro-login/blob/main/.factory/skills/wp-activation/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

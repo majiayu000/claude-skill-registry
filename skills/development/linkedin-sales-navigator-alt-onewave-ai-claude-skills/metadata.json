@@ -12,5 +12,12 @@
   "stars": 10,
   "github_path": "linkedin-sales-navigator-alt",
   "github_branch": "main",
-  "dir_name": "linkedin-sales-navigator-alt-onewave-ai-claude-skills"
+  "dir_name": "linkedin-sales-navigator-alt-onewave-ai-claude-skills",
+  "author": "OneWave-AI",
+  "source_url": "https://github.com/OneWave-AI/claude-skills/blob/main/linkedin-sales-navigator-alt/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 OneWave AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

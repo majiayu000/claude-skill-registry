@@ -7,5 +7,12 @@
   "dir_name": "converting-html-css-to-wpf-xaml-christian289-dotnet-with-claudeco",
   "category": "other",
   "github_path": ".claude/skills/converting-html-css-to-wpf-xaml",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "christian289",
+  "source_url": "https://github.com/christian289/dotnet-with-claudecode/blob/main/.claude/skills/converting-html-css-to-wpf-xaml/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 christian289",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

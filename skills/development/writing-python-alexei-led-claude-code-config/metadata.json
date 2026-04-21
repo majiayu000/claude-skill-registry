@@ -10,5 +10,12 @@
   "stars": 8,
   "github_path": "skills/writing-python",
   "github_branch": "main",
-  "dir_name": "writing-python-alexei-led-claude-code-config"
+  "dir_name": "writing-python-alexei-led-claude-code-config",
+  "author": "alexei-led",
+  "source_url": "https://github.com/alexei-led/claude-code-config/blob/main/skills/writing-python/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Alexei Ledenev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

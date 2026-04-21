@@ -26,6 +26,7 @@ PERMISSIVE_LICENSES = {
     "MIT",
     "MIT-0",
     "Unlicense",
+    "WTFPL",
 }
 
 # License families that should not be merged into MIT-compatible distribution by default.

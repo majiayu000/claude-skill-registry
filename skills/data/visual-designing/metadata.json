@@ -5,5 +5,12 @@
   "source": "github.com/VidyFoo/antigravity-skill-engine",
   "downloaded_at": "2026-02-04T05:10:21.048320Z",
   "dir_name": "visual-designing",
-  "category": "data"
+  "category": "data",
+  "author": "VidyFoo",
+  "source_url": "https://github.com/VidyFoo/antigravity-skill-engine/blob/main/.agent/skills/4-tools/visual-designing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity Lab",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

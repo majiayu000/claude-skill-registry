@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:21.518211Z",
   "github_path": "plugins/security/skills/remediation-config",
   "github_branch": "main",
-  "dir_name": "remediation-config-zate-cc-plugins-a7de0cb9"
+  "dir_name": "remediation-config-zate-cc-plugins-a7de0cb9",
+  "author": "Zate",
+  "source_url": "https://github.com/Zate/cc-plugins/blob/main/plugins/security/skills/remediation-config/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CC-Plugins Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

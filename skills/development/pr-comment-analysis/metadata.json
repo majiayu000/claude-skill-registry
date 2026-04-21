@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "pr-comment-analysis"
+  "dir_name": "pr-comment-analysis",
+  "author": "auldsyababua",
+  "source_url": "https://github.com/auldsyababua/instructor-workflow",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/auldsyababua/instructor-workflow",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

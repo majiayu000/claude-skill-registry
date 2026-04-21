@@ -5,5 +5,12 @@
   "source": "github.com/SpillwaveSolutions/code_agent_context_hooks",
   "downloaded_at": "2026-02-04T05:05:48.942273Z",
   "dir_name": "sdd",
-  "category": "data"
+  "category": "data",
+  "author": "SpillwaveSolutions",
+  "source_url": "https://github.com/SpillwaveSolutions/code_agent_context_hooks/blob/main/.claude/skills/sdd/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SpillwaveSolutions/code_agent_context_hooks/blob/main/.claude/skills/sdd/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

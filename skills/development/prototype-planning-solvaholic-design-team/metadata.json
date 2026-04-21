@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:58.304816Z",
   "github_path": ".github/skills/prototype-planning",
   "github_branch": "main",
-  "dir_name": "prototype-planning-solvaholic-design-team"
+  "dir_name": "prototype-planning-solvaholic-design-team",
+  "author": "solvaholic",
+  "source_url": "https://github.com/solvaholic/design-team/blob/main/.github/skills/prototype-planning/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Roger D. Winans",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

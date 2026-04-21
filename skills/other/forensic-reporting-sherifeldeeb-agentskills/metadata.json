@@ -5,5 +5,12 @@
   "source": "github.com/SherifEldeeb/agentskills",
   "downloaded_at": "2026-01-29T07:57:11.509304Z",
   "dir_name": "forensic-reporting-sherifeldeeb-agentskills",
-  "category": "other"
+  "category": "other",
+  "author": "SherifEldeeb",
+  "source_url": "https://github.com/SherifEldeeb/agentskills/blob/main/skills/forensics/forensic-reporting/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2024 Sherif Eldeeb",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

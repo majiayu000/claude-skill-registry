@@ -5,5 +5,12 @@
   "source": "github.com/mhattingpete/claude-skills-marketplace",
   "downloaded_at": "2026-01-29T08:23:14.093143Z",
   "dir_name": "review-implementing-mhattingpete-claude-skills-market-42e4eaf4",
-  "category": "other"
+  "category": "other",
+  "author": "mhattingpete",
+  "source_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/engineering-workflow-plugin/skills/review-implementing/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 mhattingpete",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

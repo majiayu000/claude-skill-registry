@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:30.474654Z",
   "github_path": ".claude/skills/extract-transcripts",
   "github_branch": "main",
-  "dir_name": "extract-transcripts"
+  "dir_name": "extract-transcripts",
+  "author": "0xBigBoss",
+  "source_url": "https://github.com/0xBigBoss/claude-code/blob/main/.claude/skills/extract-transcripts/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Allen Eubank (Big Boss)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

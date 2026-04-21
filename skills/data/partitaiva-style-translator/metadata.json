@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "partitaiva-style-translator"
+  "dir_name": "partitaiva-style-translator",
+  "author": "proclama2022",
+  "source_url": "https://github.com/proclama2022/dobusinessinitaly",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/proclama2022/dobusinessinitaly",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

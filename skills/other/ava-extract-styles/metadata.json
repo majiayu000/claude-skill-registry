@@ -7,5 +7,12 @@
   "dir_name": "ava-extract-styles",
   "category": "other",
   "github_path": ".claude/skills/ava-extract-styles",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "zsxawerdu",
+  "source_url": "https://github.com/zsxawerdu/gitexplorer/blob/main/.claude/skills/ava-extract-styles/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zsxawerdu/gitexplorer/blob/main/.claude/skills/ava-extract-styles/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

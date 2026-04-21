@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/christian289/dotnet-with-claudecode",
-  "dir_name": "rendering-with-drawingcontext"
+  "dir_name": "rendering-with-drawingcontext",
+  "author": "christian289",
+  "source_url": "https://github.com/christian289/dotnet-with-claudecode",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 christian289",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

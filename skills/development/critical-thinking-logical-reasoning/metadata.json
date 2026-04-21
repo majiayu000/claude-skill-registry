@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:52.041772Z",
   "github_path": "Claude/skills/critical-thinking-logical-reasoning",
   "github_branch": "main",
-  "dir_name": "critical-thinking-logical-reasoning"
+  "dir_name": "critical-thinking-logical-reasoning",
+  "author": "sammcj",
+  "source_url": "https://github.com/sammcj/agentic-coding/blob/main/Claude/skills/critical-thinking-logical-reasoning/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sammcj/agentic-coding/blob/main/Claude/skills/critical-thinking-logical-reasoning/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

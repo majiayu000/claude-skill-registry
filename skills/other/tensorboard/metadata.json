@@ -5,5 +5,12 @@
   "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
   "downloaded_at": "2026-01-29T08:55:08.827805Z",
   "dir_name": "tensorboard",
-  "category": "other"
+  "category": "other",
+  "author": "zechenzhangAGI",
+  "source_url": "https://github.com/zechenzhangAGI/AI-research-SKILLs/blob/main/13-mlops/tensorboard/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude AI Research Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

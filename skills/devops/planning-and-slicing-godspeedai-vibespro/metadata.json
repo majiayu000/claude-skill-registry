@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:55.992398Z",
   "github_path": "context-kit/.github/skills/planning-and-slicing",
   "github_branch": "main",
-  "dir_name": "planning-and-slicing-godspeedai-vibespro"
+  "dir_name": "planning-and-slicing-godspeedai-vibespro",
+  "author": "GodSpeedAI",
+  "source_url": "https://github.com/GodSpeedAI/VibesPro/blob/main/context-kit/.github/skills/planning-and-slicing/SKILL.md",
+  "license": "MPL-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GodSpeedAI/VibesPro/blob/main/context-kit/.github/skills/planning-and-slicing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

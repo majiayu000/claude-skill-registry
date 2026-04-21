@@ -5,5 +5,12 @@
   "source": "github.com/ryanthedev/code-foundations",
   "downloaded_at": "2026-02-04T01:22:18.981343Z",
   "dir_name": "prototype",
-  "category": "data"
+  "category": "data",
+  "author": "ryanthedev",
+  "source_url": "https://github.com/ryanthedev/code-foundations/blob/main/skills/prototype/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ryanthedev/code-foundations/blob/main/skills/prototype/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

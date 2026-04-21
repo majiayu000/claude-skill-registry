@@ -5,5 +5,12 @@
   "description": "Design system architecture including components, data flow, and deployment boundaries. Use when user asks to design architecture, create architecture diagrams, or start Stage 6 after UX design.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:11.693919Z",
-  "dir_name": "dev-swarm-architecture"
+  "dir_name": "dev-swarm-architecture",
+  "author": "X-School-Academy",
+  "source_url": "https://github.com/X-School-Academy/ai-dev-swarm",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

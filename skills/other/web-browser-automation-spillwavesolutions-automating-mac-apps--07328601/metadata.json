@@ -5,5 +5,12 @@
   "source": "github.com/SpillwaveSolutions/automating-mac-apps-plugin",
   "downloaded_at": "2026-01-29T08:47:21.421040Z",
   "dir_name": "web-browser-automation-spillwavesolutions-automating-mac-apps--07328601",
-  "category": "other"
+  "category": "other",
+  "author": "SpillwaveSolutions",
+  "source_url": "https://github.com/SpillwaveSolutions/automating-mac-apps-plugin/blob/main/plugins/automating-mac-apps-plugin/skills/web-browser-automation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Richard Hightower",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

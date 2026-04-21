@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/Sahib-Sawhney-WH/sahibs-claude-plugin-marketplace",
-  "dir_name": "azure-integration-sahib-sawhney-wh-sahibs-claude-plugin-2"
+  "dir_name": "azure-integration-sahib-sawhney-wh-sahibs-claude-plugin-2",
+  "author": "Sahib-Sawhney-WH",
+  "source_url": "https://github.com/Sahib-Sawhney-WH/sahibs-claude-plugin-marketplace/blob/main/plugins/dapr/skills/azure-integration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sahib",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/joelklabo/markdowntown-cli",
-  "dir_name": "sketch-upload-pipeline"
+  "dir_name": "sketch-upload-pipeline",
+  "author": "joelklabo",
+  "source_url": "https://github.com/joelklabo/markdowntown-cli",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Markdowntown Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

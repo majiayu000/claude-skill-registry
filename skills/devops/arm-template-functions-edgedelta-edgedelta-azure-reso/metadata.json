@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/arm-template-functions",
   "github_branch": "main",
-  "dir_name": "arm-template-functions-edgedelta-edgedelta-azure-reso"
+  "dir_name": "arm-template-functions-edgedelta-edgedelta-azure-reso",
+  "author": "edgedelta",
+  "source_url": "https://github.com/edgedelta/edgedelta-azure-resources/blob/main/.claude/skills/arm-template-functions/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2024 Edge Delta, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

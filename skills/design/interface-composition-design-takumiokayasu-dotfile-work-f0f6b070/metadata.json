@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:44.261691Z",
   "github_path": "claude/skills/3-task/design/interface-composition-design",
   "github_branch": "main",
-  "dir_name": "interface-composition-design-takumiokayasu-dotfile-work-f0f6b070"
+  "dir_name": "interface-composition-design-takumiokayasu-dotfile-work-f0f6b070",
+  "author": "TakumiOkayasu",
+  "source_url": "https://github.com/TakumiOkayasu/dotfile-work/blob/main/claude/skills/3-task/design/interface-composition-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TakumiOkayasu/dotfile-work/blob/main/claude/skills/3-task/design/interface-composition-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

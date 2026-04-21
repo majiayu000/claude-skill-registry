@@ -5,5 +5,12 @@
   "source": "github.com/rayzru/info-web",
   "downloaded_at": "2026-02-02T03:58:42.835911Z",
   "dir_name": "health-check-rayzru-info-web",
-  "category": "other"
+  "category": "other",
+  "author": "rayzru",
+  "source_url": "https://github.com/rayzru/info-web/blob/main/.claude/skills/health-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rayzru/info-web/blob/main/.claude/skills/health-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

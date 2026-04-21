@@ -7,5 +7,12 @@
   "stars": 1,
   "source": "github.com/deancochran/gradientpeak",
   "downloaded_at": "2026-01-24T16:15:04.492719Z",
-  "dir_name": "skills-deancochran-gradientpeak"
+  "dir_name": "skills-deancochran-gradientpeak",
+  "author": "deancochran",
+  "source_url": "https://github.com/deancochran/gradientpeak/blob/main/.claude/skills/testing-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/deancochran/gradientpeak/blob/main/.claude/skills/testing-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -13,5 +13,12 @@
   "github_path": "skills/spec-kit-skill",
   "github_branch": "main",
   "dir_name": "spec-kit-skill",
-  "downloaded_at": "2026-02-05T01:44:09.645303Z"
+  "downloaded_at": "2026-02-05T01:44:09.645303Z",
+  "author": "feiskyer",
+  "source_url": "https://github.com/feiskyer/claude-code-settings/blob/main/skills/spec-kit-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-Now Pengfei Ni",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

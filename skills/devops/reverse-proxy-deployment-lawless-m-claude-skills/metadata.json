@@ -7,5 +7,12 @@
   "stars": 5,
   "source": "github.com/lawless-m/claude-skills",
   "downloaded_at": "2026-01-24T16:15:15.927953Z",
-  "dir_name": "reverse-proxy-deployment-lawless-m-claude-skills"
+  "dir_name": "reverse-proxy-deployment-lawless-m-claude-skills",
+  "author": "lawless-m",
+  "source_url": "https://github.com/lawless-m/claude-skills/blob/main/.claude/skills/Reverse Proxy Deployment/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lawless-m/claude-skills/blob/main/.claude/skills/Reverse Proxy Deployment/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

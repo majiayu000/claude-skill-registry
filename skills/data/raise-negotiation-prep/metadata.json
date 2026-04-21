@@ -11,5 +11,12 @@
   "stars": 10,
   "dir_name": "raise-negotiation-prep",
   "github_path": "raise-negotiation-prep",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "OneWave-AI",
+  "source_url": "https://github.com/OneWave-AI/claude-skills/blob/main/raise-negotiation-prep/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 OneWave AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

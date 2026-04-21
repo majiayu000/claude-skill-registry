@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:31.887169Z",
   "github_path": "skills/bird-fast",
   "github_branch": "main",
-  "dir_name": "bird-fast-ckorhonen-claude-skills-50543c82"
+  "dir_name": "bird-fast-ckorhonen-claude-skills-50543c82",
+  "author": "ckorhonen",
+  "source_url": "https://github.com/ckorhonen/claude-skills/blob/main/skills/bird-fast/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Chris Korhonen",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

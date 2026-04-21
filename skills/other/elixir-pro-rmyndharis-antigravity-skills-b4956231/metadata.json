@@ -7,5 +7,12 @@
   "dir_name": "elixir-pro-rmyndharis-antigravity-skills-b4956231",
   "category": "other",
   "github_path": "skills/elixir-pro",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "rmyndharis",
+  "source_url": "https://github.com/rmyndharis/antigravity-skills/blob/main/skills/elixir-pro/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Yudhi Armyndharis",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

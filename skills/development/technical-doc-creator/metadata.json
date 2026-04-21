@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:42.887736Z",
   "github_path": "visual-documentation-plugin/skills/technical-doc-creator",
   "github_branch": "main",
-  "dir_name": "technical-doc-creator"
+  "dir_name": "technical-doc-creator",
+  "author": "mhattingpete",
+  "source_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/visual-documentation-plugin/skills/technical-doc-creator/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 mhattingpete",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

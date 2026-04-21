@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:16.768847Z",
   "github_path": "post-development/skills/post-development",
   "github_branch": "main",
-  "dir_name": "post-development-mwguerra-claude-code-plugins"
+  "dir_name": "post-development-mwguerra-claude-code-plugins",
+  "author": "mwguerra",
+  "source_url": "https://github.com/mwguerra/claude-code-plugins/blob/main/post-development/skills/post-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mwguerra/claude-code-plugins/blob/main/post-development/skills/post-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

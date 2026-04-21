@@ -5,5 +5,12 @@
   "source": "github.com/shaul1991/shaul-agents-plugin",
   "downloaded_at": "2026-01-29T05:54:05.441517Z",
   "dir_name": "dba-tuner-shaul1991-shaul-agents-plugin",
-  "category": "other"
+  "category": "other",
+  "author": "shaul1991",
+  "source_url": "https://github.com/shaul1991/shaul-agents-plugin/blob/main/skills/dba-tuner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shaul1991/shaul-agents-plugin/blob/main/skills/dba-tuner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:38.510748Z",
   "github_path": ".claude/skills/frontend-shadcn",
   "github_branch": "main",
-  "dir_name": "frontend-shadcn-petbrains-mvp-builder"
+  "dir_name": "frontend-shadcn-petbrains-mvp-builder",
+  "author": "petbrains",
+  "source_url": "https://github.com/petbrains/mvp-builder/blob/main/.claude/skills/frontend-shadcn/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MVP Builder",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

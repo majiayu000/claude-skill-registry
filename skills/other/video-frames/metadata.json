@@ -9,5 +9,12 @@
   "github_path": "skills/video-frames",
   "github_branch": "main",
   "dir_name": "video-frames",
-  "downloaded_at": "2026-02-05T01:45:12.160481Z"
+  "downloaded_at": "2026-02-05T01:45:12.160481Z",
+  "author": "clawdbot",
+  "source_url": "https://github.com/clawdbot/clawdbot/blob/main/skills/video-frames/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Peter Steinberger",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

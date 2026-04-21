@@ -7,5 +7,12 @@
   "dir_name": "standards-tests-maxritter-claude-codepro-7b0b8f0e",
   "category": "other",
   "github_path": ".claude/skills/standards-tests",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "maxritter",
+  "source_url": "https://github.com/maxritter/claude-codepro/blob/main/.claude/skills/standards-tests/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (C) 2026 Max Ritter (@maxritter). All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

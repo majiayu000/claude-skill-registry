@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:25.645731Z",
   "github_path": "plugins/rust-hexagonal/skills/domain-layer-expert",
   "github_branch": "main",
-  "dir_name": "domain-layer-expert-emillindfors-claude-marketplace-ecbc7516"
+  "dir_name": "domain-layer-expert-emillindfors-claude-marketplace-ecbc7516",
+  "author": "EmilLindfors",
+  "source_url": "https://github.com/EmilLindfors/claude-marketplace/blob/main/plugins/rust-hexagonal/skills/domain-layer-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EmilLindfors/claude-marketplace/blob/main/plugins/rust-hexagonal/skills/domain-layer-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

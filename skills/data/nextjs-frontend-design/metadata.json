@@ -5,5 +5,12 @@
   "source": "github.com/peterstorm/.dotfiles",
   "downloaded_at": "2026-02-04T03:10:10.774364Z",
   "dir_name": "nextjs-frontend-design",
-  "category": "data"
+  "category": "data",
+  "author": "peterstorm",
+  "source_url": "https://github.com/peterstorm/.dotfiles/blob/main/.claude/skills/nextjs-frontend-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/peterstorm/.dotfiles/blob/main/.claude/skills/nextjs-frontend-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

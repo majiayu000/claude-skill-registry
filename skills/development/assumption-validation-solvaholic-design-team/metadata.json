@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:57.520150Z",
   "github_path": ".github/skills/assumption-validation",
   "github_branch": "main",
-  "dir_name": "assumption-validation-solvaholic-design-team"
+  "dir_name": "assumption-validation-solvaholic-design-team",
+  "author": "solvaholic",
+  "source_url": "https://github.com/solvaholic/design-team/blob/main/.github/skills/assumption-validation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Roger D. Winans",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

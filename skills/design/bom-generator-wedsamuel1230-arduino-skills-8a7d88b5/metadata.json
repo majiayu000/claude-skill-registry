@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:37.736803Z",
   "github_path": "skills/bom-generator",
   "github_branch": "main",
-  "dir_name": "bom-generator-wedsamuel1230-arduino-skills-8a7d88b5"
+  "dir_name": "bom-generator-wedsamuel1230-arduino-skills-8a7d88b5",
+  "author": "wedsamuel1230",
+  "source_url": "https://github.com/wedsamuel1230/arduino-skills/blob/main/skills/bom-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Samuel F.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

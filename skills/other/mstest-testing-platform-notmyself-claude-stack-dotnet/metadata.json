@@ -5,5 +5,12 @@
   "source": "github.com/NotMyself/claude-stack-dotnet",
   "downloaded_at": "2026-01-29T07:04:46.928233Z",
   "dir_name": "mstest-testing-platform-notmyself-claude-stack-dotnet",
-  "category": "other"
+  "category": "other",
+  "author": "NotMyself",
+  "source_url": "https://github.com/NotMyself/claude-stack-dotnet/blob/main/.claude/skills/mstest-testing-platform/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Bobby Johnson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

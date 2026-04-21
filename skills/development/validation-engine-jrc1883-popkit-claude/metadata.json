@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:16.877210Z",
   "github_path": "packages/popkit-core/skills/pop-validation-engine",
   "github_branch": "main",
-  "dir_name": "validation-engine-jrc1883-popkit-claude"
+  "dir_name": "validation-engine-jrc1883-popkit-claude",
+  "author": "jrc1883",
+  "source_url": "https://github.com/jrc1883/popkit-claude/blob/main/packages/popkit-core/skills/pop-validation-engine/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jrc1883/popkit-claude/blob/main/packages/popkit-core/skills/pop-validation-engine/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/ui-ux-pro-max",
   "github_branch": "main",
-  "dir_name": "app-ui-design-markbang-onlywrite-cec46c56"
+  "dir_name": "app-ui-design-markbang-onlywrite-cec46c56",
+  "author": "markbang",
+  "source_url": "https://github.com/markbang/OnlyWrite/blob/main/.claude/skills/ui-ux-pro-max/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 OnlyWrite Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

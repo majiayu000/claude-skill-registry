@@ -7,5 +7,12 @@
   "dir_name": "candidate-evaluation-pollinations-pollinations-75de0104",
   "category": "other",
   "github_path": ".claude/skills/candidate-evaluation",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "pollinations",
+  "source_url": "https://github.com/pollinations/pollinations/blob/main/.claude/skills/candidate-evaluation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 pollinations.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

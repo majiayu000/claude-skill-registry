@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/Intellifill/IntelliFill",
   "dir_name": "auth-flow",
-  "downloaded_at": "2026-02-15T05:14:32.589917Z"
+  "downloaded_at": "2026-02-15T05:14:32.589917Z",
+  "author": "Intellifill",
+  "source_url": "https://github.com/Intellifill/IntelliFill/blob/main/.claude/skills/auth-flow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Intellifill/IntelliFill/blob/main/.claude/skills/auth-flow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

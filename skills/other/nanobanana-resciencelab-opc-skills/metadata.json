@@ -5,5 +5,12 @@
   "source": "github.com/ReScienceLab/opc-skills",
   "downloaded_at": "2026-01-29T07:28:05.765831Z",
   "dir_name": "nanobanana-resciencelab-opc-skills",
-  "category": "other"
+  "category": "other",
+  "author": "ReScienceLab",
+  "source_url": "https://github.com/ReScienceLab/opc-skills/blob/main/skills/nanobanana/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ReScienceLab/opc-skills/blob/main/skills/nanobanana/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

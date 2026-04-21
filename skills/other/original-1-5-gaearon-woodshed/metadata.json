@@ -5,5 +5,12 @@
   "source": "github.com/gaearon/woodshed",
   "downloaded_at": "2026-02-02T05:02:48.778910Z",
   "dir_name": "original-1-5-gaearon-woodshed",
-  "category": "other"
+  "category": "other",
+  "author": "gaearon",
+  "source_url": "https://github.com/gaearon/woodshed/blob/main/example/skills/decision-graph/original-1.5/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dan Abramov <dan.abramov@gmail.com>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

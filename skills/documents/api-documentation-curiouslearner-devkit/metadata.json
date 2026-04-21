@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/api-documentation",
   "github_branch": "main",
-  "dir_name": "api-documentation-curiouslearner-devkit"
+  "dir_name": "api-documentation-curiouslearner-devkit",
+  "author": "CuriousLearner",
+  "source_url": "https://github.com/CuriousLearner/devkit/blob/main/skills/api-documentation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sanyam Khurana",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

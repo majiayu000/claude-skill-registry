@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "create-claude-skill"
+  "dir_name": "create-claude-skill",
+  "author": "asmith7013",
+  "source_url": "https://github.com/asmith7013/coachingPlatform",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/asmith7013/coachingPlatform",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

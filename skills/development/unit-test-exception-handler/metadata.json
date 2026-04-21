@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:13.658721Z",
   "github_path": "skills/junit-test/unit-test-exception-handler",
   "github_branch": "main",
-  "dir_name": "unit-test-exception-handler"
+  "dir_name": "unit-test-exception-handler",
+  "author": "giuseppe-trisciuoglio",
+  "source_url": "https://github.com/giuseppe-trisciuoglio/developer-kit/blob/main/skills/junit-test/unit-test-exception-handler/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Giuseppe Trisciuoglio",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

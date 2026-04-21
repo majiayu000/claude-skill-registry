@@ -11,5 +11,12 @@
   "stars": 23,
   "github_path": ".claude/skills/typescript-best-practices",
   "github_branch": "main",
-  "dir_name": "typescript-best-practices"
+  "dir_name": "typescript-best-practices",
+  "author": "0xBigBoss",
+  "source_url": "https://github.com/0xBigBoss/claude-code/blob/main/.claude/skills/typescript-best-practices/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Allen Eubank (Big Boss)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

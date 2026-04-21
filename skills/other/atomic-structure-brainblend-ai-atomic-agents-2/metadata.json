@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/BrainBlend-AI/atomic-agents",
-  "dir_name": "atomic-structure-brainblend-ai-atomic-agents-2"
+  "dir_name": "atomic-structure-brainblend-ai-atomic-agents-2",
+  "author": "BrainBlend-AI",
+  "source_url": "https://github.com/BrainBlend-AI/atomic-agents/blob/main/claude-plugin/atomic-agents/skills/atomic-structure/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Kenny Vaneetvelde",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

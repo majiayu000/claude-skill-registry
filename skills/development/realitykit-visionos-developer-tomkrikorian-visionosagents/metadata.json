@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:25.367347Z",
   "github_path": "skills/realitykit-visionos-developer",
   "github_branch": "main",
-  "dir_name": "realitykit-visionos-developer-tomkrikorian-visionosagents"
+  "dir_name": "realitykit-visionos-developer-tomkrikorian-visionosagents",
+  "author": "tomkrikorian",
+  "source_url": "https://github.com/tomkrikorian/visionOSAgents/blob/main/skills/realitykit-visionos-developer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tom Krikorian",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

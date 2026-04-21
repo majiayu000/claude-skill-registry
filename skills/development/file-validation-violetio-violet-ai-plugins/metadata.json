@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:39.846629Z",
   "github_path": "archive/plugins-2025-12-30/v-file-validation/skills/file-validation",
   "github_branch": "main",
-  "dir_name": "file-validation-violetio-violet-ai-plugins"
+  "dir_name": "file-validation-violetio-violet-ai-plugins",
+  "author": "violetio",
+  "source_url": "https://github.com/violetio/violet-ai-plugins/blob/main/archive/plugins-2025-12-30/v-file-validation/skills/file-validation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/violetio/violet-ai-plugins/blob/main/archive/plugins-2025-12-30/v-file-validation/skills/file-validation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

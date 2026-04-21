@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:16.951437Z",
   "github_path": "dotfiles/claude/skills/code-implementation",
   "github_branch": "main",
-  "dir_name": "code-implementation-vanillacake369-tonys-nix"
+  "dir_name": "code-implementation-vanillacake369-tonys-nix",
+  "author": "vanillacake369",
+  "source_url": "https://github.com/vanillacake369/tonys-nix/blob/main/dotfiles/claude/skills/code-implementation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vanillacake369/tonys-nix/blob/main/dotfiles/claude/skills/code-implementation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

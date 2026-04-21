@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:31.905597Z",
   "github_path": "skills/video-editor",
   "github_branch": "main",
-  "dir_name": "video-editor-ckorhonen-claude-skills"
+  "dir_name": "video-editor-ckorhonen-claude-skills",
+  "author": "ckorhonen",
+  "source_url": "https://github.com/ckorhonen/claude-skills/blob/main/skills/video-editor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Chris Korhonen",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

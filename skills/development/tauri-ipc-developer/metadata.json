@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "tauri-ipc-developer"
+  "dir_name": "tauri-ipc-developer",
+  "author": "iammarkps",
+  "source_url": "https://github.com/iammarkps/eqapo-gui",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/iammarkps/eqapo-gui",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

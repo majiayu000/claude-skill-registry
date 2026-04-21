@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/ckorhonen/claude-skills",
   "downloaded_at": "2026-01-24T16:16:02.284914Z",
-  "dir_name": "agent-browser-ckorhonen-claude-skills"
+  "dir_name": "agent-browser-ckorhonen-claude-skills",
+  "author": "ckorhonen",
+  "source_url": "https://github.com/ckorhonen/claude-skills/blob/main/skills/agent-browser/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Chris Korhonen",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

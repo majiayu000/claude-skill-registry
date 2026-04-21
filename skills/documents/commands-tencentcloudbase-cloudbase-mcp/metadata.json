@@ -7,5 +7,12 @@
   "stars": 938,
   "source": "github.com/TencentCloudBase/CloudBase-MCP",
   "downloaded_at": "2026-01-24T16:16:05.170878Z",
-  "dir_name": "commands-tencentcloudbase-cloudbase-mcp"
+  "dir_name": "commands-tencentcloudbase-cloudbase-mcp",
+  "author": "TencentCloudBase",
+  "source_url": "https://github.com/TencentCloudBase/CloudBase-MCP/blob/main/.cursor/commands/add_skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tencent CloudBase",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

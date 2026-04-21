@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/motoki317/dotfiles",
-  "dir_name": "common-lisp-ecosystem-motoki317-dotfiles-2"
+  "dir_name": "common-lisp-ecosystem-motoki317-dotfiles-2",
+  "author": "motoki317",
+  "source_url": "https://github.com/motoki317/dotfiles/blob/main/.claude/skills/common-lisp-ecosystem/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 motoki317",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Best practices for Gemini API caching strategy including cache versioning, entity-stable keys, and cache busting for WescoBar",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:14.773057Z",
-  "dir_name": "gemini-api-caching"
+  "dir_name": "gemini-api-caching",
+  "author": "BerryKuipers",
+  "source_url": "https://github.com/BerryKuipers/claude-code-toolkit",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BerryKuipers/claude-code-toolkit",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

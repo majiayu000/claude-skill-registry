@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:02.643492Z",
   "github_path": "react-19/skills/managing-local-vs-global-state",
   "github_branch": "main",
-  "dir_name": "managing-local-vs-global-state-djankies-claude-configs"
+  "dir_name": "managing-local-vs-global-state-djankies-claude-configs",
+  "author": "djankies",
+  "source_url": "https://github.com/djankies/claude-configs/blob/main/react-19/skills/managing-local-vs-global-state/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

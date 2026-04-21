@@ -5,5 +5,12 @@
   "source": "github.com/0xBigBoss/claude-code",
   "downloaded_at": "2026-02-02T03:32:20.333477Z",
   "dir_name": "web-fetch-0xbigboss-claude-code",
-  "category": "other"
+  "category": "other",
+  "author": "0xBigBoss",
+  "source_url": "https://github.com/0xBigBoss/claude-code/blob/main/.claude/skills/web-fetch/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Allen Eubank (Big Boss)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

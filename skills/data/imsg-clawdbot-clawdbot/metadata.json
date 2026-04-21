@@ -7,5 +7,12 @@
   "stars": 7675,
   "source": "github.com/clawdbot/clawdbot",
   "downloaded_at": "2026-01-24T16:15:30.892642Z",
-  "dir_name": "imsg-clawdbot-clawdbot"
+  "dir_name": "imsg-clawdbot-clawdbot",
+  "author": "clawdbot",
+  "source_url": "https://github.com/clawdbot/clawdbot/blob/main/skills/imsg/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Peter Steinberger",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

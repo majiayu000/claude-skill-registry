@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:06.923358Z",
   "github_path": "session/skills/project-maps",
   "github_branch": "main",
-  "dir_name": "project-maps-awudevelop-claude-plugins"
+  "dir_name": "project-maps-awudevelop-claude-plugins",
+  "author": "awudevelop",
+  "source_url": "https://github.com/awudevelop/claude-plugins/blob/main/session/skills/project-maps/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AutomateWith.Us",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

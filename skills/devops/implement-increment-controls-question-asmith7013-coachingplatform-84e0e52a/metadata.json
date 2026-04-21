@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:02.823856Z",
   "github_path": ".claude/skills/question-types/implement-increment-controls-question",
   "github_branch": "main",
-  "dir_name": "implement-increment-controls-question-asmith7013-coachingplatform-84e0e52a"
+  "dir_name": "implement-increment-controls-question-asmith7013-coachingplatform-84e0e52a",
+  "author": "asmith7013",
+  "source_url": "https://github.com/asmith7013/coachingPlatform/blob/main/.claude/skills/question-types/implement-increment-controls-question/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/asmith7013/coachingPlatform/blob/main/.claude/skills/question-types/implement-increment-controls-question/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/miyakawa2449/KiroBookmark",
   "downloaded_at": "2026-02-02T01:09:37.656770Z",
   "dir_name": "mac-appstore-prep",
-  "category": "data"
+  "category": "data",
+  "author": "miyakawa2449",
+  "source_url": "https://github.com/miyakawa2449/KiroBookmark/blob/main/.claude/skills/mac-appstore-prep/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 宮川 剛",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

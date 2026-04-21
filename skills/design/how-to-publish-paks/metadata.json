@@ -10,5 +10,12 @@
   ],
   "stars": 3,
   "source": "local",
-  "dir_name": "how-to-publish-paks"
+  "dir_name": "how-to-publish-paks",
+  "author": "stakpak",
+  "source_url": "https://github.com/stakpak/community-paks",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/stakpak/community-paks",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/xfstudio/skills",
   "downloaded_at": "2026-02-04T01:58:21.177929Z",
   "dir_name": "spec-tasks",
-  "category": "data"
+  "category": "data",
+  "author": "xfstudio",
+  "source_url": "https://github.com/xfstudio/skills/blob/main/spec-tasks/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/xfstudio/skills/blob/main/spec-tasks/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

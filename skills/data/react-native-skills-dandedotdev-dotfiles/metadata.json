@@ -5,5 +5,12 @@
   "source": "github.com/dandedotdev/dotfiles",
   "downloaded_at": "2026-01-29T08:32:41.410890Z",
   "dir_name": "react-native-skills-dandedotdev-dotfiles",
-  "category": "data"
+  "category": "data",
+  "author": "dandedotdev",
+  "source_url": "https://github.com/dandedotdev/dotfiles/blob/main/.claude/skills/react-native-skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dandedotdev/dotfiles/blob/main/.claude/skills/react-native-skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

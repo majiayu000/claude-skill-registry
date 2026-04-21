@@ -7,5 +7,12 @@
   "dir_name": "convex-self-hosting",
   "category": "other",
   "github_path": "plugins/convex/skills/convex-self-hosting",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jovermier",
+  "source_url": "https://github.com/jovermier/claude-code-plugins-ip-labs/blob/main/plugins/convex/skills/convex-self-hosting/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Innovative Prospects",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

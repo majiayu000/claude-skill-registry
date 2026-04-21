@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/claudeaceae/samara-main",
-  "dir_name": "samara"
+  "dir_name": "samara",
+  "author": "claudeaceae",
+  "source_url": "https://github.com/claudeaceae/samara-main",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/claudeaceae/samara-main",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

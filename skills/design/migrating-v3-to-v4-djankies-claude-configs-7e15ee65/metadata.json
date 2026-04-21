@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:05.723039Z",
   "github_path": "zod-4/skills/migrating-v3-to-v4",
   "github_branch": "main",
-  "dir_name": "migrating-v3-to-v4-djankies-claude-configs-7e15ee65"
+  "dir_name": "migrating-v3-to-v4-djankies-claude-configs-7e15ee65",
+  "author": "djankies",
+  "source_url": "https://github.com/djankies/claude-configs/blob/main/zod-4/skills/migrating-v3-to-v4/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

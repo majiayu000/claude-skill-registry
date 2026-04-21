@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:04.954683Z",
   "github_path": "bazzite/skills/gpu",
   "github_branch": "main",
-  "dir_name": "gpu"
+  "dir_name": "gpu",
+  "author": "atrawog",
+  "source_url": "https://github.com/atrawog/bazzite-ai-plugins/blob/main/bazzite/skills/gpu/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/atrawog/bazzite-ai-plugins/blob/main/bazzite/skills/gpu/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

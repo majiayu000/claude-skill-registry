@@ -5,5 +5,12 @@
   "source": "github.com/ReScienceLab/opc-skills",
   "downloaded_at": "2026-02-04T01:46:50.378295Z",
   "dir_name": "producthunt",
-  "category": "data"
+  "category": "data",
+  "author": "ReScienceLab",
+  "source_url": "https://github.com/ReScienceLab/opc-skills/blob/main/skills/producthunt/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ReScienceLab/opc-skills/blob/main/skills/producthunt/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/tqer39/blog",
-  "dir_name": "reorganize-docs"
+  "dir_name": "reorganize-docs",
+  "author": "tqer39",
+  "source_url": "https://github.com/tqer39/blog",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Takeru O'oyama",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

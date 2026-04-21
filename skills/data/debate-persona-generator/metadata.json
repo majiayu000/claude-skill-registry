@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/nalyk/nalyk-skills-demo",
-  "dir_name": "debate-persona-generator"
+  "dir_name": "debate-persona-generator",
+  "author": "nalyk",
+  "source_url": "https://github.com/nalyk/nalyk-skills-demo",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nalyk/nalyk-skills-demo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

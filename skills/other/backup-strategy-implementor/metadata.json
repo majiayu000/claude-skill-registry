@@ -7,5 +7,12 @@
   "dir_name": "backup-strategy-implementor",
   "category": "other",
   "github_path": "010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/devops/backup-strategy-implementor/skills/backup-strategy-implementor",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "intent-solutions-io",
+  "source_url": "https://github.com/intent-solutions-io/plugins-nixtla/blob/main/010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/devops/backup-strategy-implementor/skills/backup-strategy-implementor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025-2026 Jeremy Longshore",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

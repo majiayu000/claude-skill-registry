@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/asset-catalog-optimizer",
   "github_branch": "main",
-  "dir_name": "asset-catalog-optimizer-paleoterra-paleorose"
+  "dir_name": "asset-catalog-optimizer-paleoterra-paleorose",
+  "author": "paleoterra",
+  "source_url": "https://github.com/paleoterra/PaleoRose/blob/main/.claude/skills/asset-catalog-optimizer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 Thomas L. Moore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

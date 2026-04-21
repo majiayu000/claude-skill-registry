@@ -5,5 +5,12 @@
   "description": "Automatically manages MOKAI daily status when user mentions MOKAI tasks, progress, status updates, or asks what to work on. Scans diary notes, inbox tasks, updates tracker and dashboard. Use when user",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:06.778474Z",
-  "dir_name": "mokai-daily-operations"
+  "dir_name": "mokai-daily-operations",
+  "author": "harrysayers7",
+  "source_url": "https://github.com/harrysayers7/claudelife",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/harrysayers7/claudelife",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

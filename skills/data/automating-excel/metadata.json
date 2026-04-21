@@ -5,5 +5,12 @@
   "source": "github.com/SpillwaveSolutions/automating-mac-apps-plugin",
   "downloaded_at": "2026-02-04T05:03:11.101753Z",
   "dir_name": "automating-excel",
-  "category": "data"
+  "category": "data",
+  "author": "SpillwaveSolutions",
+  "source_url": "https://github.com/SpillwaveSolutions/automating-mac-apps-plugin/blob/main/plugins/automating-mac-apps-plugin/skills/automating-excel/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Richard Hightower",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

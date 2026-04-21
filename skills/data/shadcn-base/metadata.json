@@ -5,5 +5,12 @@
   "source": "github.com/noklip-io/agent-skills",
   "downloaded_at": "2026-02-04T01:01:21.850435Z",
   "dir_name": "shadcn-base",
-  "category": "data"
+  "category": "data",
+  "author": "noklip-io",
+  "source_url": "https://github.com/noklip-io/agent-skills/blob/main/skills/shadcn-base/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 noklip-io",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

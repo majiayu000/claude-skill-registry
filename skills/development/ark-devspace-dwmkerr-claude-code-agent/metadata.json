@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:13.611490Z",
   "github_path": "examples/ark/plugin/skills/ark-devspace",
   "github_branch": "main",
-  "dir_name": "ark-devspace-dwmkerr-claude-code-agent"
+  "dir_name": "ark-devspace-dwmkerr-claude-code-agent",
+  "author": "dwmkerr",
+  "source_url": "https://github.com/dwmkerr/claude-code-agent/blob/main/examples/ark/plugin/skills/ark-devspace/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Dave Kerr",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

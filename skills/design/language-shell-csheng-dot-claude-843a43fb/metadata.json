@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:15.671270Z",
   "github_path": "skills/language-shell",
   "github_branch": "main",
-  "dir_name": "language-shell-csheng-dot-claude-843a43fb"
+  "dir_name": "language-shell-csheng-dot-claude-843a43fb",
+  "author": "CsHeng",
+  "source_url": "https://github.com/CsHeng/dot-claude/blob/main/skills/language-shell/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CsHeng/dot-claude/blob/main/skills/language-shell/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "nostrstack-lightning",
   "category": "other",
   "github_path": "codex/skills/nostrstack-lightning",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "joelklabo",
+  "source_url": "https://github.com/joelklabo/markdowntown-cli/blob/main/codex/skills/nostrstack-lightning/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Markdowntown Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

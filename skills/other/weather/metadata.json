@@ -9,5 +9,12 @@
   "github_path": "skills/weather",
   "github_branch": "main",
   "dir_name": "weather",
-  "downloaded_at": "2026-02-05T01:45:10.783887Z"
+  "downloaded_at": "2026-02-05T01:45:10.783887Z",
+  "author": "clawdbot",
+  "source_url": "https://github.com/clawdbot/clawdbot/blob/main/skills/weather/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Peter Steinberger",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

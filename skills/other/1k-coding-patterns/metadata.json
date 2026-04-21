@@ -7,5 +7,12 @@
   "dir_name": "1k-coding-patterns",
   "category": "other",
   "github_path": ".claude/skills/1k-coding-patterns",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "OneKeyHQ",
+  "source_url": "https://github.com/OneKeyHQ/app-monorepo/blob/main/.claude/skills/1k-coding-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OneKeyHQ/app-monorepo/blob/main/.claude/skills/1k-coding-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

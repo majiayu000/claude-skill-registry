@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/arb-translation-updater",
   "github_branch": "master",
-  "dir_name": "arb-translation-updater-calcitem-sanmill"
+  "dir_name": "arb-translation-updater-calcitem-sanmill",
+  "author": "calcitem",
+  "source_url": "https://github.com/calcitem/Sanmill/blob/master/.claude/skills/arb-translation-updater/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/arxiv-doc-builder",
   "github_branch": "main",
-  "dir_name": "arxiv-doc-builder"
+  "dir_name": "arxiv-doc-builder",
+  "author": "ultimatile",
+  "source_url": "https://github.com/ultimatile/arxiv-skills/blob/main/skills/arxiv-doc-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ultimatile",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

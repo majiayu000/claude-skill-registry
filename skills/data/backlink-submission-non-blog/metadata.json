@@ -5,5 +5,12 @@
   "description": "Automate backlink submission for directories, forums, and other non-blog resources using AI and browser automation",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:00.688194Z",
-  "dir_name": "backlink-submission-non-blog"
+  "dir_name": "backlink-submission-non-blog",
+  "author": "hekmon8",
+  "source_url": "https://github.com/hekmon8/mybacklinks-tools",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Hekmon",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

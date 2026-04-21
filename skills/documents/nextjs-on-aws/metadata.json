@@ -10,5 +10,12 @@
   "stars": 3,
   "github_path": "nextjs-on-aws",
   "github_branch": "main",
-  "dir_name": "nextjs-on-aws"
+  "dir_name": "nextjs-on-aws",
+  "author": "stakpak",
+  "source_url": "https://github.com/stakpak/community-paks/blob/main/nextjs-on-aws/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/stakpak/community-paks/blob/main/nextjs-on-aws/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

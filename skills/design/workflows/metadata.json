@@ -7,5 +7,12 @@
   "stars": 77,
   "source": "github.com/sammcj/agentic-coding",
   "downloaded_at": "2026-01-24T16:15:29.048534Z",
-  "dir_name": "workflows"
+  "dir_name": "workflows",
+  "author": "sammcj",
+  "source_url": "https://github.com/sammcj/agentic-coding/blob/main/Cline/Workflows/create-skill.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sammcj/agentic-coding/blob/main/Cline/Workflows/create-skill.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

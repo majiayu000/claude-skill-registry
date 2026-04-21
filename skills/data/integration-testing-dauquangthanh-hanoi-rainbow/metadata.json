@@ -5,5 +5,12 @@
   "source": "github.com/DauQuangThanh/hanoi-rainbow",
   "downloaded_at": "2026-01-29T08:22:10.481570Z",
   "dir_name": "integration-testing-dauquangthanh-hanoi-rainbow",
-  "category": "data"
+  "category": "data",
+  "author": "DauQuangThanh",
+  "source_url": "https://github.com/DauQuangThanh/hanoi-rainbow/blob/main/skills/integration-testing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dau Quang Thanh",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:14.459545Z",
   "github_path": "skills/spring-boot/spring-boot-event-driven-patterns",
   "github_branch": "main",
-  "dir_name": "spring-boot-event-driven-patterns"
+  "dir_name": "spring-boot-event-driven-patterns",
+  "author": "giuseppe-trisciuoglio",
+  "source_url": "https://github.com/giuseppe-trisciuoglio/developer-kit/blob/main/skills/spring-boot/spring-boot-event-driven-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Giuseppe Trisciuoglio",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

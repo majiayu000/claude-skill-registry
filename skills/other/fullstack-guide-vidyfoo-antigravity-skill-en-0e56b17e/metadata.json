@@ -7,5 +7,12 @@
   "dir_name": "fullstack-guide-vidyfoo-antigravity-skill-en-0e56b17e",
   "category": "other",
   "github_path": ".agent/skills/1-dev/fullstack-guide",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "VidyFoo",
+  "source_url": "https://github.com/VidyFoo/antigravity-skill-engine/blob/main/.agent/skills/1-dev/fullstack-guide/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity Lab",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

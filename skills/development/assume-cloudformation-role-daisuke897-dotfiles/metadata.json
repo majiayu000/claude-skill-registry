@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:30.577242Z",
   "github_path": ".github/skills/assume-cloudformation-role",
   "github_branch": "main",
-  "dir_name": "assume-cloudformation-role-daisuke897-dotfiles"
+  "dir_name": "assume-cloudformation-role-daisuke897-dotfiles",
+  "author": "Daisuke897",
+  "source_url": "https://github.com/Daisuke897/dotfiles/blob/main/.github/skills/assume-cloudformation-role/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2022 Daisuke Nakahara",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

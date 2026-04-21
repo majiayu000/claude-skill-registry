@@ -7,5 +7,12 @@
   "dir_name": "integration-test-runner-apassuello-multimodal-insight-e-1d629482",
   "category": "other",
   "github_path": ".claude/skills/integration-test-runner",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "apassuello",
+  "source_url": "https://github.com/apassuello/multimodal_insight_engine/blob/main/.claude/skills/integration-test-runner/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MultiModal Insight Engine Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

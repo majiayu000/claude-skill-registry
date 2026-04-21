@@ -5,5 +5,12 @@
   "source": "github.com/ingpoc/SKILLS",
   "downloaded_at": "2026-02-04T01:42:01.609591Z",
   "dir_name": "project-hook-setup",
-  "category": "data"
+  "category": "data",
+  "author": "ingpoc",
+  "source_url": "https://github.com/ingpoc/SKILLS/blob/main/project-hook-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ingpoc/SKILLS/blob/main/project-hook-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

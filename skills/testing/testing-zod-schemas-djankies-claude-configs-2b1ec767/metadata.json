@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:05.638260Z",
   "github_path": "zod-4/skills/testing-zod-schemas",
   "github_branch": "main",
-  "dir_name": "testing-zod-schemas-djankies-claude-configs-2b1ec767"
+  "dir_name": "testing-zod-schemas-djankies-claude-configs-2b1ec767",
+  "author": "djankies",
+  "source_url": "https://github.com/djankies/claude-configs/blob/main/zod-4/skills/testing-zod-schemas/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

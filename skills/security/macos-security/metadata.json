@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/macos-security",
   "github_branch": "main",
-  "dir_name": "macos-security"
+  "dir_name": "macos-security",
+  "author": "miyakawa2449",
+  "source_url": "https://github.com/miyakawa2449/KiroBookmark/blob/main/.claude/skills/macos-security/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 宮川 剛",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

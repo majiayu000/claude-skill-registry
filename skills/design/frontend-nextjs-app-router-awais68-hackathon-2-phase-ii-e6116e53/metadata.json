@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:06.834255Z",
   "github_path": ".claude/skills/frontend-nextjs-app-router",
   "github_branch": "main",
-  "dir_name": "frontend-nextjs-app-router-awais68-hackathon-2-phase-ii-e6116e53"
+  "dir_name": "frontend-nextjs-app-router-awais68-hackathon-2-phase-ii-e6116e53",
+  "author": "Awais68",
+  "source_url": "https://github.com/Awais68/hackathon-2-phase-ii-full-stack-web-app/blob/main/.claude/skills/frontend-nextjs-app-router/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Awais68/hackathon-2-phase-ii-full-stack-web-app/blob/main/.claude/skills/frontend-nextjs-app-router/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

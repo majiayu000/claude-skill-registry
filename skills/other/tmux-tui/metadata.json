@@ -7,5 +7,12 @@
   "dir_name": "tmux-tui",
   "category": "other",
   "github_path": ".claude/skills/tmux-tui",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "erwinkn",
+  "source_url": "https://github.com/erwinkn/ai-config/blob/main/.claude/skills/tmux-tui/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/erwinkn/ai-config/blob/main/.claude/skills/tmux-tui/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/darellchua2/opencode-config-template",
   "downloaded_at": "2026-01-27T03:48:03.575817Z",
   "dir_name": "linting-workflow",
-  "category": "data"
+  "category": "data",
+  "author": "darellchua2",
+  "source_url": "https://github.com/darellchua2/opencode-config-template/blob/main/skills/linting-workflow/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2026 OpenCode Configuration Template Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

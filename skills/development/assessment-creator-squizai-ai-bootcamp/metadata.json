@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/assessment-creator",
   "github_branch": "main",
-  "dir_name": "assessment-creator-squizai-ai-bootcamp"
+  "dir_name": "assessment-creator-squizai-ai-bootcamp",
+  "author": "SquizAI",
+  "source_url": "https://github.com/SquizAI/AI_bootcamp/blob/main/.claude/skills/assessment-creator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AI Academy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

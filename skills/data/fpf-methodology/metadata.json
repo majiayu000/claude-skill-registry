@@ -5,5 +5,12 @@
   "source": "github.com/ccf/claude-code-ccf-marketplace",
   "downloaded_at": "2026-02-04T05:10:50.609520Z",
   "dir_name": "fpf-methodology",
-  "category": "data"
+  "category": "data",
+  "author": "ccf",
+  "source_url": "https://github.com/ccf/claude-code-ccf-marketplace/blob/main/plugins/structured-reasoning/skills/fpf-methodology/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Seth Hobson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

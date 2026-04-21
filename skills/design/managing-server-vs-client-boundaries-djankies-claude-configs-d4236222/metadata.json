@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:02.682382Z",
   "github_path": "react-19/skills/managing-server-vs-client-boundaries",
   "github_branch": "main",
-  "dir_name": "managing-server-vs-client-boundaries-djankies-claude-configs-d4236222"
+  "dir_name": "managing-server-vs-client-boundaries-djankies-claude-configs-d4236222",
+  "author": "djankies",
+  "source_url": "https://github.com/djankies/claude-configs/blob/main/react-19/skills/managing-server-vs-client-boundaries/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

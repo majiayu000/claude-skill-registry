@@ -10,5 +10,12 @@
   ],
   "stars": 9,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "ask-user-choice"
+  "dir_name": "ask-user-choice",
+  "author": "syou6162",
+  "source_url": "https://github.com/syou6162/claude-code-commands",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Yasuhisa Yoshida",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

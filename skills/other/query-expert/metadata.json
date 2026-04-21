@@ -7,5 +7,12 @@
   "dir_name": "query-expert",
   "category": "other",
   "github_path": "skills/query-expert",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jamesrochabrun",
+  "source_url": "https://github.com/jamesrochabrun/skills/blob/main/skills/query-expert/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 James Rochabrun",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

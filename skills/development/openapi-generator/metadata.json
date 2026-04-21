@@ -10,5 +10,12 @@
   "stars": 13,
   "github_path": "skills/openapi-generator",
   "github_branch": "main",
-  "dir_name": "openapi-generator"
+  "dir_name": "openapi-generator",
+  "author": "CuriousLearner",
+  "source_url": "https://github.com/CuriousLearner/devkit/blob/main/skills/openapi-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sanyam Khurana",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

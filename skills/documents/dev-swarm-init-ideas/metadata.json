@@ -5,5 +5,12 @@
   "description": "Transform non-technical ideas into professional project kickoff documentation. Use when user asks to init, kickoff, or start a new project, or when ideas.md needs to be formalized into structured docu",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:12.278657Z",
-  "dir_name": "dev-swarm-init-ideas"
+  "dir_name": "dev-swarm-init-ideas",
+  "author": "X-School-Academy",
+  "source_url": "https://github.com/X-School-Academy/ai-dev-swarm",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

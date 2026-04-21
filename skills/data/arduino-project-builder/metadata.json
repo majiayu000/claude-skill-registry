@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "arduino-project-builder"
+  "dir_name": "arduino-project-builder",
+  "author": "wedsamuel1230",
+  "source_url": "https://github.com/wedsamuel1230/arduino-skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Samuel F.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

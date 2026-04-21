@@ -10,5 +10,12 @@
   "stars": 3,
   "github_path": "skills/windows-ui-automation",
   "github_branch": "main",
-  "dir_name": "windows-ui-automation-martinholovsky-claude-skills-genera-c331675b"
+  "dir_name": "windows-ui-automation-martinholovsky-claude-skills-genera-c331675b",
+  "author": "martinholovsky",
+  "source_url": "https://github.com/martinholovsky/claude-skills-generator/blob/main/skills/windows-ui-automation/SKILL.md",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/martinholovsky/claude-skills-generator/blob/main/skills/windows-ui-automation/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

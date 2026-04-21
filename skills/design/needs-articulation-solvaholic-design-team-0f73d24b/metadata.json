@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:57.808633Z",
   "github_path": ".github/skills/needs-articulation",
   "github_branch": "main",
-  "dir_name": "needs-articulation-solvaholic-design-team-0f73d24b"
+  "dir_name": "needs-articulation-solvaholic-design-team-0f73d24b",
+  "author": "solvaholic",
+  "source_url": "https://github.com/solvaholic/design-team/blob/main/.github/skills/needs-articulation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Roger D. Winans",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

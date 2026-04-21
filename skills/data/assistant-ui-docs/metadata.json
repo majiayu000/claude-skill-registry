@@ -9,5 +9,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "assistant-ui-docs"
+  "dir_name": "assistant-ui-docs",
+  "author": "Lightbridge-KS",
+  "source_url": "https://github.com/Lightbridge-KS/chat-assistant-ollama",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Lightbridge-KS/chat-assistant-ollama",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

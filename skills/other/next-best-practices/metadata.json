@@ -5,5 +5,12 @@
   "source": "github.com/usenotra/notra",
   "downloaded_at": "2026-01-29T05:30:18.887204Z",
   "dir_name": "next-best-practices",
-  "category": "other"
+  "category": "other",
+  "author": "usenotra",
+  "source_url": "https://github.com/usenotra/notra/blob/main/.agents/skills/next-best-practices/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/shredbx/demo-3d-model",
   "downloaded_at": "2026-01-29T08:54:11.209982Z",
   "dir_name": "devops-local-dev-shredbx-demo-3d-model",
-  "category": "data"
+  "category": "data",
+  "author": "shredbx",
+  "source_url": "https://github.com/shredbx/demo-3d-model/blob/main/.claude/skills/devops-local-dev/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shredbx/demo-3d-model/blob/main/.claude/skills/devops-local-dev/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

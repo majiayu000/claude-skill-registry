@@ -5,5 +5,12 @@
   "source": "github.com/Sahib-Sawhney-WH/sahibs-claude-plugin-marketplace",
   "downloaded_at": "2026-02-02T03:35:32.622531Z",
   "dir_name": "security-scanner",
-  "category": "other"
+  "category": "other",
+  "author": "Sahib-Sawhney-WH",
+  "source_url": "https://github.com/Sahib-Sawhney-WH/sahibs-claude-plugin-marketplace/blob/main/plugins/dapr/skills/security-scanner/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sahib",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

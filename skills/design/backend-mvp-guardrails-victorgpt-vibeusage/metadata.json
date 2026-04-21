@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:10.006983Z",
   "github_path": "docs/skills/backend-mvp-guardrails",
   "github_branch": "main",
-  "dir_name": "backend-mvp-guardrails-victorgpt-vibeusage"
+  "dir_name": "backend-mvp-guardrails-victorgpt-vibeusage",
+  "author": "victorGPT",
+  "source_url": "https://github.com/victorGPT/vibeusage/blob/main/docs/skills/backend-mvp-guardrails/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 victor-wu.eth",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

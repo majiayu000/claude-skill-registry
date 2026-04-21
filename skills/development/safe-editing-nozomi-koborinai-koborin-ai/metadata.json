@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:08.848292Z",
   "github_path": ".claude/skills/safe-editing",
   "github_branch": "main",
-  "dir_name": "safe-editing-nozomi-koborinai-koborin-ai"
+  "dir_name": "safe-editing-nozomi-koborinai-koborin-ai",
+  "author": "nozomi-koborinai",
+  "source_url": "https://github.com/nozomi-koborinai/koborin-ai/blob/main/.claude/skills/safe-editing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nozomi Koborinai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

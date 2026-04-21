@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:38.371556Z",
   "github_path": ".claude/skills/frontend-lottie",
   "github_branch": "main",
-  "dir_name": "frontend-lottie-petbrains-mvp-builder-efdddf4b"
+  "dir_name": "frontend-lottie-petbrains-mvp-builder-efdddf4b",
+  "author": "petbrains",
+  "source_url": "https://github.com/petbrains/mvp-builder/blob/main/.claude/skills/frontend-lottie/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MVP Builder",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

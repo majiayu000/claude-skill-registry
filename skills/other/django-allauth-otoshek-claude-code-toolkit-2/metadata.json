@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/otoshek/Claude-Code-Toolkit",
-  "dir_name": "django-allauth-otoshek-claude-code-toolkit-2"
+  "dir_name": "django-allauth-otoshek-claude-code-toolkit-2",
+  "author": "otoshek",
+  "source_url": "https://github.com/otoshek/Claude-Code-Toolkit/blob/main/skills/django-allauth/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/otoshek/Claude-Code-Toolkit/blob/main/skills/django-allauth/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

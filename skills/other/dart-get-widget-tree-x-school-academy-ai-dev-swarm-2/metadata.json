@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/X-School-Academy/ai-dev-swarm",
-  "dir_name": "dart-get-widget-tree-x-school-academy-ai-dev-swarm-2"
+  "dir_name": "dart-get-widget-tree-x-school-academy-ai-dev-swarm-2",
+  "author": "X-School-Academy",
+  "source_url": "https://github.com/X-School-Academy/ai-dev-swarm/blob/main/dev-swarm/mcp-skills/dart-get-widget-tree/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

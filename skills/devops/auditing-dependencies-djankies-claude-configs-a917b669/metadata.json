@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:04.813154Z",
   "github_path": "typescript/skills/auditing-dependencies",
   "github_branch": "main",
-  "dir_name": "auditing-dependencies-djankies-claude-configs-a917b669"
+  "dir_name": "auditing-dependencies-djankies-claude-configs-a917b669",
+  "author": "djankies",
+  "source_url": "https://github.com/djankies/claude-configs/blob/main/typescript/skills/auditing-dependencies/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

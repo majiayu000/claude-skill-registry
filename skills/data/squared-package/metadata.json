@@ -5,5 +5,12 @@
   "source": "github.com/lsst-sqre/squareone",
   "downloaded_at": "2026-02-02T01:21:00.015169Z",
   "dir_name": "squared-package",
-  "category": "data"
+  "category": "data",
+  "author": "lsst-sqre",
+  "source_url": "https://github.com/lsst-sqre/squareone/blob/main/.claude/skills/squared-package/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Association of Universities for Research in Astronomy, Inc. (AURA)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

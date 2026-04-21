@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:16.231907Z",
   "github_path": ".github/skills/azd-aca-deploy",
   "github_branch": "main",
-  "dir_name": "azd-aca-deploy-naoki1213mj-my-template-b624c35f"
+  "dir_name": "azd-aca-deploy-naoki1213mj-my-template-b624c35f",
+  "author": "naoki1213mj",
+  "source_url": "https://github.com/naoki1213mj/my-template/blob/main/.github/skills/azd-aca-deploy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

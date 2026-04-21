@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:12.858955Z",
   "github_path": ".factory/skills/i18n-helper",
   "github_branch": "main",
-  "dir_name": "i18n-helper"
+  "dir_name": "i18n-helper",
+  "author": "dreamworks2050",
+  "source_url": "https://github.com/dreamworks2050/retro-login/blob/main/.factory/skills/i18n-helper/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

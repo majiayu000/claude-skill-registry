@@ -5,5 +5,12 @@
   "description": "사용자의 간단한 기능 설명을 바탕으로 GitHub 기능 티켓을 자동으로 생성합니다. 프론트엔드, 백엔드, 공통, 인프라 섹션별로 세부 태스크를 체크박스 형태로 작성하고, gh issue create 명령으로 Mockly-Company/.github 레포에 직접 생성합니다. 버그 리포트나 문의가 아닌, 새로운 기능 개발 티켓 생성 시에만 사용합니다.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:11.793410Z",
-  "dir_name": "github-feature-ticket-generator"
+  "dir_name": "github-feature-ticket-generator",
+  "author": "Mockly-Company",
+  "source_url": "https://github.com/Mockly-Company/mockly-mobile",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Mockly-Company/mockly-mobile",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

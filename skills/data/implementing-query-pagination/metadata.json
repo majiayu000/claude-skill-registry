@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:01.230389Z",
   "dir_name": "implementing-query-pagination",
   "github_path": "prisma-6/skills/implementing-query-pagination",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "djankies",
+  "source_url": "https://github.com/djankies/claude-configs/blob/main/prisma-6/skills/implementing-query-pagination/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

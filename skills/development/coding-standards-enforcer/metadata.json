@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:25.486437Z",
   "github_path": "skills/coding-standards-enforcer",
   "github_branch": "main",
-  "dir_name": "coding-standards-enforcer"
+  "dir_name": "coding-standards-enforcer",
+  "author": "tomkrikorian",
+  "source_url": "https://github.com/tomkrikorian/visionOSAgents/blob/main/skills/coding-standards-enforcer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tom Krikorian",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

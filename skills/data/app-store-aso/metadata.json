@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "app-store-aso",
   "github_path": "",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "TimBroddin",
+  "source_url": "https://github.com/TimBroddin/app-store-aso-skill",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tim Broddin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

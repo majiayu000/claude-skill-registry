@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:14.390346Z",
   "github_path": "argentic-skill",
   "github_branch": "main",
-  "dir_name": "argentic-framework-development-angkira-argentic"
+  "dir_name": "argentic-framework-development-angkira-argentic",
+  "author": "angkira",
+  "source_url": "https://github.com/angkira/argentic/blob/main/argentic-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Yuriy Medvedev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

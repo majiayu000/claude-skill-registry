@@ -7,5 +7,12 @@
   "dir_name": "notification-system-onekeyhq-app-monorepo-7acedb3c",
   "category": "other",
   "github_path": ".claude/skills/notification-system",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "OneKeyHQ",
+  "source_url": "https://github.com/OneKeyHQ/app-monorepo/blob/main/.claude/skills/notification-system/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OneKeyHQ/app-monorepo/blob/main/.claude/skills/notification-system/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:20.172224Z",
   "github_path": "skills/nmap",
   "github_branch": "main",
-  "dir_name": "nmap-brownfinesecurity-iothackbot-2662fbeb"
+  "dir_name": "nmap-brownfinesecurity-iothackbot-2662fbeb",
+  "author": "BrownFineSecurity",
+  "source_url": "https://github.com/BrownFineSecurity/iothackbot/blob/main/skills/nmap/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 iothackbot contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

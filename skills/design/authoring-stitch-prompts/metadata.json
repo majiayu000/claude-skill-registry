@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:15.121273Z",
   "github_path": "plugins/google-stitch/skills/authoring-stitch-prompts",
   "github_branch": "main",
-  "dir_name": "authoring-stitch-prompts"
+  "dir_name": "authoring-stitch-prompts",
+  "author": "joaquimscosta",
+  "source_url": "https://github.com/joaquimscosta/arkhe-claude-plugins/blob/main/plugins/google-stitch/skills/authoring-stitch-prompts/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Joaquim Costa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

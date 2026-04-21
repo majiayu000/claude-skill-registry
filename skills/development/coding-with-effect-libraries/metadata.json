@@ -5,5 +5,12 @@
   "description": "Basic practices and guidelines for writing typescript code using that Effect TypeScript libraries (`effect`, `@effect/platform`, `@effect/cli`, `@effect/ai`).",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:52.035659Z",
-  "dir_name": "coding-with-effect-libraries"
+  "dir_name": "coding-with-effect-libraries",
+  "author": "loklaan",
+  "source_url": "https://github.com/loklaan/dotfiles",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/loklaan/dotfiles",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

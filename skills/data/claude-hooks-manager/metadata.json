@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/shredbx/demo-3d-model",
-  "dir_name": "claude-hooks-manager"
+  "dir_name": "claude-hooks-manager",
+  "author": "shredbx",
+  "source_url": "https://github.com/shredbx/demo-3d-model",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shredbx/demo-3d-model",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/apple-design",
   "github_branch": "main",
-  "dir_name": "apple-design-aphlo-portfolio-981e5cdc"
+  "dir_name": "apple-design-aphlo-portfolio-981e5cdc",
+  "author": "aphlo",
+  "source_url": "https://github.com/aphlo/portfolio/blob/main/.claude/skills/apple-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 HiromuKoumi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

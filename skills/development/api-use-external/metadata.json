@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "api-use-external"
+  "dir_name": "api-use-external",
+  "author": "ScotterMonk",
+  "source_url": "https://github.com/ScotterMonk/AgentAutoFlow",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ScotterMonk/AgentAutoFlow",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

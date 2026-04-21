@@ -11,5 +11,12 @@
   "stars": 10,
   "github_path": "landing-page-copywriter",
   "github_branch": "main",
-  "dir_name": "landing-page-copywriter"
+  "dir_name": "landing-page-copywriter",
+  "author": "OneWave-AI",
+  "source_url": "https://github.com/OneWave-AI/claude-skills/blob/main/landing-page-copywriter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 OneWave AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

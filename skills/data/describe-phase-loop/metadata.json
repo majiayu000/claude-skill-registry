@@ -5,5 +5,12 @@
   "source": "github.com/adamrdrew/ushabti",
   "downloaded_at": "2026-02-04T02:35:26.059497Z",
   "dir_name": "describe-phase-loop",
-  "category": "data"
+  "category": "data",
+  "author": "adamrdrew",
+  "source_url": "https://github.com/adamrdrew/ushabti/blob/main/skills/describe-phase-loop/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

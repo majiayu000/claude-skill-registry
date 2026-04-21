@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:19.109161Z",
   "github_path": ".claude/skills/design-frontend-component",
   "github_branch": "main",
-  "dir_name": "design-frontend-component-jacksmack1971-claude-code-learning-861cec0d"
+  "dir_name": "design-frontend-component-jacksmack1971-claude-code-learning-861cec0d",
+  "author": "JackSmack1971",
+  "source_url": "https://github.com/JackSmack1971/claude-code-learning-flywheel/blob/main/.claude/skills/design-frontend-component/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Code Learning Flywheel Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

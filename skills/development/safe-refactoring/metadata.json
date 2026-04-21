@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:41.513897Z",
   "github_path": "plugins/start/skills/safe-refactoring",
   "github_branch": "main",
-  "dir_name": "safe-refactoring"
+  "dir_name": "safe-refactoring",
+  "author": "rsmdt",
+  "source_url": "https://github.com/rsmdt/the-startup/blob/main/plugins/start/skills/safe-refactoring/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-current Rudolf Schmidt",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

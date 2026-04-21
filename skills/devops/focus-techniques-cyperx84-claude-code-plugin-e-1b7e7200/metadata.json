@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:45.973001Z",
   "github_path": "examples/02-intermediate/productivity-plugin/skills/focus-techniques",
   "github_branch": "main",
-  "dir_name": "focus-techniques-cyperx84-claude-code-plugin-e-1b7e7200"
+  "dir_name": "focus-techniques-cyperx84-claude-code-plugin-e-1b7e7200",
+  "author": "cyperx84",
+  "source_url": "https://github.com/cyperx84/claude-code-plugin-examples/blob/main/examples/02-intermediate/productivity-plugin/skills/focus-techniques/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Code Plugin Examples",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

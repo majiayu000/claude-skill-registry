@@ -7,5 +7,12 @@
   "dir_name": "sqlcipher",
   "category": "other",
   "github_path": "skills/sqlcipher",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "martinholovsky",
+  "source_url": "https://github.com/martinholovsky/claude-skills-generator/blob/main/skills/sqlcipher/SKILL.md",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/martinholovsky/claude-skills-generator/blob/main/skills/sqlcipher/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

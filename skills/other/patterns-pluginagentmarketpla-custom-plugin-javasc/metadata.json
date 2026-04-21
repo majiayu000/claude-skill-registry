@@ -5,5 +5,12 @@
   "source": "github.com/pluginagentmarketplace/custom-plugin-javascript",
   "downloaded_at": "2026-01-29T08:19:29.335723Z",
   "dir_name": "patterns-pluginagentmarketpla-custom-plugin-javasc",
-  "category": "other"
+  "category": "other",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-javascript/blob/main/skills/patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/baiyongping/cowork-platform",
   "downloaded_at": "2026-01-29T08:31:52.669558Z",
   "dir_name": "auth-wechat-baiyongping-cowork-platform",
-  "category": "other"
+  "category": "other",
+  "author": "baiyongping",
+  "source_url": "https://github.com/baiyongping/cowork-platform/blob/main/.codebuddy/skills/auth-wechat/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/baiyongping/cowork-platform/blob/main/.codebuddy/skills/auth-wechat/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "Describes the structure of the weight tracker database that allows to store and read weight records for the user",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:57.390551Z",
-  "dir_name": "weight-track-database"
+  "dir_name": "weight-track-database",
+  "author": "marcopeg",
+  "source_url": "https://github.com/marcopeg/diary",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/marcopeg/diary",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

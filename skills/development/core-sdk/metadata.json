@@ -5,5 +5,12 @@
   "description": "Kailash Core SDK fundamentals including workflow creation, node patterns, connections, runtime execution, parameter passing, error handling, cyclic workflows, async patterns, MCP integration, and inst",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:11:01.345044Z",
-  "dir_name": "core-sdk"
+  "dir_name": "core-sdk",
+  "author": "Integrum-Global",
+  "source_url": "https://github.com/Integrum-Global/kaizen-studio",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Integrum-Global/kaizen-studio",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

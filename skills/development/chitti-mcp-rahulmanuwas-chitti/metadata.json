@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:56.404031Z",
   "github_path": ".codex/skills/chitti-mcp",
   "github_branch": "main",
-  "dir_name": "chitti-mcp-rahulmanuwas-chitti"
+  "dir_name": "chitti-mcp-rahulmanuwas-chitti",
+  "author": "rahulmanuwas",
+  "source_url": "https://github.com/rahulmanuwas/chitti/blob/main/.codex/skills/chitti-mcp/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Chitti contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

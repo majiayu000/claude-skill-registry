@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/verification-checklist",
   "github_branch": "main",
-  "dir_name": "verification-checklist-trash-panda-v91-beta-the-sidekicks"
+  "dir_name": "verification-checklist-trash-panda-v91-beta-the-sidekicks",
+  "author": "trash-panda-v91-beta",
+  "source_url": "https://github.com/trash-panda-v91-beta/the-sidekicks/blob/main/skills/verification-checklist/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/trash-panda-v91-beta/the-sidekicks/blob/main/skills/verification-checklist/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

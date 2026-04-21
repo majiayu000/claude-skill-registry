@@ -7,5 +7,12 @@
   "dir_name": "coinbase-trading",
   "category": "other",
   "github_path": ".claude/skills/coinbase-trading",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "visusnet",
+  "source_url": "https://github.com/visusnet/coinbase-mcp-server/blob/main/.claude/skills/coinbase-trading/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Alexander Rose",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

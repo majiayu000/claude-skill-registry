@@ -5,5 +5,12 @@
   "description": "Skills for legacy code analysis, explanation, and safe refactoring - mandatory workflows and search tools",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:58.063792Z",
-  "dir_name": "getting-started-with-agent-skills"
+  "dir_name": "getting-started-with-agent-skills",
+  "author": "spacholski1225",
+  "source_url": "https://github.com/spacholski1225/cc-config",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/spacholski1225/cc-config",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

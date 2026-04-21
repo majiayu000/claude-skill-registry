@@ -5,5 +5,12 @@
   "description": "Designs tests with React Testing Library and MSW. Applies component testing patterns.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:32.391284Z",
-  "dir_name": "frontendtypescript-testing-shinpr-ai-coding-project-bo"
+  "dir_name": "frontendtypescript-testing-shinpr-ai-coding-project-bo",
+  "author": "shinpr",
+  "source_url": "https://github.com/shinpr/ai-coding-project-boilerplate",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Shinsuke Kagawa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

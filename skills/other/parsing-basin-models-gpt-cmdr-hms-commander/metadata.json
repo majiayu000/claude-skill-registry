@@ -5,5 +5,12 @@
   "source": "github.com/gpt-cmdr/hms-commander",
   "downloaded_at": "2026-01-29T05:19:52.222733Z",
   "dir_name": "parsing-basin-models-gpt-cmdr-hms-commander",
-  "category": "other"
+  "category": "other",
+  "author": "gpt-cmdr",
+  "source_url": "https://github.com/gpt-cmdr/hms-commander/blob/main/.claude/skills/parsing-basin-models/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 hms-commander contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/grndlvl/software-patterns",
   "dir_name": "clean-code-grndlvl-software-patterns",
-  "downloaded_at": "2026-02-15T07:24:27.503581Z"
+  "downloaded_at": "2026-02-15T07:24:27.503581Z",
+  "author": "grndlvl",
+  "source_url": "https://github.com/grndlvl/software-patterns/blob/main/.claude/skills/clean-code/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 grndlvl",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

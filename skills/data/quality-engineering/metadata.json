@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "quality-engineering"
+  "dir_name": "quality-engineering",
+  "author": "trash-panda-v91-beta",
+  "source_url": "https://github.com/trash-panda-v91-beta/the-sidekicks",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/trash-panda-v91-beta/the-sidekicks",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

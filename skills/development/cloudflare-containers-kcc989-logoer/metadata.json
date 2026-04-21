@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/cloudflare-containers",
   "github_branch": "main",
-  "dir_name": "cloudflare-containers-kcc989-logoer"
+  "dir_name": "cloudflare-containers-kcc989-logoer",
+  "author": "kcc989",
+  "source_url": "https://github.com/kcc989/logoer/blob/main/.claude/skills/cloudflare-containers/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kcc989/logoer/blob/main/.claude/skills/cloudflare-containers/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:49.116851Z",
   "github_path": "packages/sc-github-issue/skills/sc-managing-github-issues",
   "github_branch": "main",
-  "dir_name": "sc-managing-github-issues"
+  "dir_name": "sc-managing-github-issues",
+  "author": "randlee",
+  "source_url": "https://github.com/randlee/synaptic-canvas/blob/main/packages/sc-github-issue/skills/sc-managing-github-issues/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Rand Lee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

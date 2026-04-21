@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:10.594688Z",
   "github_path": ".claude/skills/comi-orchestrator",
   "github_branch": "main",
-  "dir_name": "comi-orchestrator-ys6448761-hue-daily-miracles-app"
+  "dir_name": "comi-orchestrator-ys6448761-hue-daily-miracles-app",
+  "author": "ys6448761-hue",
+  "source_url": "https://github.com/ys6448761-hue/daily-miracles-app/blob/main/.claude/skills/comi-orchestrator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ys6448761-hue/daily-miracles-app/blob/main/.claude/skills/comi-orchestrator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

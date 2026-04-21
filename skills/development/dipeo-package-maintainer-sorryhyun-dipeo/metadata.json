@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/dipeo-package-maintainer",
   "github_branch": "main",
-  "dir_name": "dipeo-package-maintainer-sorryhyun-dipeo"
+  "dir_name": "dipeo-package-maintainer-sorryhyun-dipeo",
+  "author": "sorryhyun",
+  "source_url": "https://github.com/sorryhyun/DiPeO/blob/main/.claude/skills/dipeo-package-maintainer/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sorryhyun/DiPeO/blob/main/.claude/skills/dipeo-package-maintainer/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

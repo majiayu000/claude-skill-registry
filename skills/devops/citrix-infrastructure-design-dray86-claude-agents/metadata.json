@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/citrix-infrastructure-design",
   "github_branch": "main",
-  "dir_name": "citrix-infrastructure-design-dray86-claude-agents"
+  "dir_name": "citrix-infrastructure-design-dray86-claude-agents",
+  "author": "dray86",
+  "source_url": "https://github.com/dray86/claude-agents/blob/main/.claude/skills/citrix-infrastructure-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dray86/claude-agents/blob/main/.claude/skills/citrix-infrastructure-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

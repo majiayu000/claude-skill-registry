@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": ".claude/skills/lean-hit-development",
   "github_branch": "main",
-  "dir_name": "lean-hit-development-arthur742ramos-computationalpathsle"
+  "dir_name": "lean-hit-development-arthur742ramos-computationalpathsle",
+  "author": "Arthur742Ramos",
+  "source_url": "https://github.com/Arthur742Ramos/ComputationalPathsLean/blob/main/.claude/skills/lean-hit-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Computational Paths contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/plaited/development-skills",
   "downloaded_at": "2026-02-02T04:33:52.467426Z",
   "dir_name": "optimize-agents-md",
-  "category": "other"
+  "category": "other",
+  "author": "plaited",
+  "source_url": "https://github.com/plaited/development-skills/blob/main/.plaited/skills/optimize-agents-md/SKILL.md",
+  "license": "ISC",
+  "copyright": "Copyright (c) 2026 Plaited Labs",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

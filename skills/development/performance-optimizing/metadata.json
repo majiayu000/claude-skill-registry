@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/mrwogu/promptscript",
   "downloaded_at": "2026-01-24T16:15:07.537411Z",
-  "dir_name": "performance-optimizing"
+  "dir_name": "performance-optimizing",
+  "author": "mrwogu",
+  "source_url": "https://github.com/mrwogu/promptscript/blob/main/.claude/skills/performance-optimizing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 mrwogu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

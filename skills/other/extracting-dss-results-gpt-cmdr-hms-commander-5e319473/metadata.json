@@ -7,5 +7,12 @@
   "dir_name": "extracting-dss-results-gpt-cmdr-hms-commander-5e319473",
   "category": "other",
   "github_path": ".claude/skills/extracting-dss-results",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "gpt-cmdr",
+  "source_url": "https://github.com/gpt-cmdr/hms-commander/blob/main/.claude/skills/extracting-dss-results/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 hms-commander contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

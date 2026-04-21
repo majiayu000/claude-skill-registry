@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/connect-go-reference",
   "github_branch": "main",
-  "dir_name": "connect-go-reference-washanhanzi-connectrpc-axum"
+  "dir_name": "connect-go-reference-washanhanzi-connectrpc-axum",
+  "author": "washanhanzi",
+  "source_url": "https://github.com/washanhanzi/connectrpc-axum/blob/main/.claude/skills/connect-go-reference/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/washanhanzi/connectrpc-axum/blob/main/.claude/skills/connect-go-reference/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

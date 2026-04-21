@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:07.351348Z",
   "github_path": "plugins/clojure-libraries/skills/clj-kondo",
   "github_branch": "main",
-  "dir_name": "clj-kondo-hugoduncan-library-skills"
+  "dir_name": "clj-kondo-hugoduncan-library-skills",
+  "author": "hugoduncan",
+  "source_url": "https://github.com/hugoduncan/library-skills/blob/main/plugins/clojure-libraries/skills/clj-kondo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hugoduncan/library-skills/blob/main/plugins/clojure-libraries/skills/clj-kondo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

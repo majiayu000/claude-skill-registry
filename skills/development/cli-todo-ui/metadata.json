@@ -9,5 +9,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "cli-todo-ui"
+  "dir_name": "cli-todo-ui",
+  "author": "marjan-ahmed",
+  "source_url": "https://github.com/marjan-ahmed/evolution-todo-cloud-native",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Marjan Ahmed",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

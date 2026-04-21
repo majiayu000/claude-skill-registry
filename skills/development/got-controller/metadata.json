@@ -9,5 +9,12 @@
   ],
   "stars": 108,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "got-controller"
+  "dir_name": "got-controller",
+  "author": "liangdabiao",
+  "source_url": "https://github.com/liangdabiao/Claude-Code-Deep-Research-main",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/liangdabiao/Claude-Code-Deep-Research-main",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

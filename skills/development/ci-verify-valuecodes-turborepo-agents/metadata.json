@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:39.184624Z",
   "github_path": ".claude/skills/ci-verify",
   "github_branch": "main",
-  "dir_name": "ci-verify-valuecodes-turborepo-agents"
+  "dir_name": "ci-verify-valuecodes-turborepo-agents",
+  "author": "valuecodes",
+  "source_url": "https://github.com/valuecodes/turborepo-agents/blob/main/.claude/skills/ci-verify/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Juha Kangas",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

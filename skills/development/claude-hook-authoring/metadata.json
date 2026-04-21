@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:36.720705Z",
   "github_path": "agent-kit/skills/claude-hook-authoring",
   "github_branch": "main",
-  "dir_name": "claude-hook-authoring"
+  "dir_name": "claude-hook-authoring",
+  "author": "outfitter-dev",
+  "source_url": "https://github.com/outfitter-dev/agents/blob/main/agent-kit/skills/claude-hook-authoring/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Outfitter",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/santiago-afonso/codex-container-sandbox",
   "downloaded_at": "2026-02-02T02:26:46.303757Z",
   "dir_name": "codex-container-sandbox",
-  "category": "other"
+  "category": "other",
+  "author": "santiago-afonso",
+  "source_url": "https://github.com/santiago-afonso/codex-container-sandbox/blob/main/skills/codex-container-sandbox/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/santiago-afonso/codex-container-sandbox/blob/main/skills/codex-container-sandbox/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

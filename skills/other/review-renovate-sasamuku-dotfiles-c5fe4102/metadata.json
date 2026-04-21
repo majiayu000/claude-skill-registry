@@ -5,5 +5,12 @@
   "source": "github.com/sasamuku/dotfiles",
   "downloaded_at": "2026-01-29T08:44:14.920612Z",
   "dir_name": "review-renovate-sasamuku-dotfiles-c5fe4102",
-  "category": "other"
+  "category": "other",
+  "author": "sasamuku",
+  "source_url": "https://github.com/sasamuku/dotfiles/blob/main/.claude/skills/review-renovate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sasamuku/dotfiles/blob/main/.claude/skills/review-renovate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

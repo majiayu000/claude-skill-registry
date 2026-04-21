@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "github-pr-utils"
+  "dir_name": "github-pr-utils",
+  "author": "gosu-code",
+  "source_url": "https://github.com/gosu-code/claude-plugin",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

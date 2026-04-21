@@ -9,5 +9,12 @@
   ],
   "stars": 3,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "checking-quality"
+  "dir_name": "checking-quality",
+  "author": "team-mirai-volunteer",
+  "source_url": "https://github.com/team-mirai-volunteer/kokkai-join",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/team-mirai-volunteer/kokkai-join",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

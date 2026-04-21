@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:32.206292Z",
   "github_path": "skills/choosing-pattern",
   "github_branch": "main",
-  "dir_name": "choosing-pattern-juanre-pgdbm-327fe117"
+  "dir_name": "choosing-pattern-juanre-pgdbm-327fe117",
+  "author": "juanre",
+  "source_url": "https://github.com/juanre/pgdbm/blob/main/skills/choosing-pattern/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Juan Reyero",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

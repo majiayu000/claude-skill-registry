@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:55.308178Z",
   "github_path": "scrapy-template/.claude/skills/spider-generator",
   "github_branch": "main",
-  "dir_name": "spider-generator-gizix-cc-projects-f9978c93"
+  "dir_name": "spider-generator-gizix-cc-projects-f9978c93",
+  "author": "gizix",
+  "source_url": "https://github.com/gizix/cc_projects/blob/main/scrapy-template/.claude/skills/spider-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gizix/cc_projects/blob/main/scrapy-template/.claude/skills/spider-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

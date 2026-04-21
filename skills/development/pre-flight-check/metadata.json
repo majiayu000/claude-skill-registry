@@ -7,5 +7,12 @@
   "stars": 20,
   "source": "github.com/mattnigh/skills_collection",
   "downloaded_at": "2026-01-24T16:15:50.110356Z",
-  "dir_name": "pre-flight-check"
+  "dir_name": "pre-flight-check",
+  "author": "mattnigh",
+  "source_url": "https://github.com/mattnigh/skills_collection/blob/main/collection/ProfPowell__project-template__claude__skills__pre-flight-check__SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattnigh/skills_collection/blob/main/collection/ProfPowell__project-template__claude__skills__pre-flight-check__SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

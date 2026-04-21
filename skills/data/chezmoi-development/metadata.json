@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "chezmoi-development",
   "github_path": ".claude/skills/chezmoi-development",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "fx",
+  "source_url": "https://github.com/fx/dotfiles/blob/main/.claude/skills/chezmoi-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fx/dotfiles/blob/main/.claude/skills/chezmoi-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

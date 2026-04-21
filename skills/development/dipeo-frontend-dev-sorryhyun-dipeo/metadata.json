@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/dipeo-frontend-dev",
   "github_branch": "main",
-  "dir_name": "dipeo-frontend-dev-sorryhyun-dipeo"
+  "dir_name": "dipeo-frontend-dev-sorryhyun-dipeo",
+  "author": "sorryhyun",
+  "source_url": "https://github.com/sorryhyun/DiPeO/blob/main/.claude/skills/dipeo-frontend-dev/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sorryhyun/DiPeO/blob/main/.claude/skills/dipeo-frontend-dev/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

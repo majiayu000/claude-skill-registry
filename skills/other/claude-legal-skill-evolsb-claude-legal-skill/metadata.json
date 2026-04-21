@@ -5,5 +5,12 @@
   "source": "github.com/evolsb/claude-legal-skill",
   "downloaded_at": "2026-01-29T06:04:53.764368Z",
   "dir_name": "claude-legal-skill-evolsb-claude-legal-skill",
-  "category": "other"
+  "category": "other",
+  "author": "evolsb",
+  "source_url": "https://github.com/evolsb/claude-legal-skill/blob/main/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Christopher Sheehan",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/kanopi/cms-cultivator",
-  "dir_name": "test-scaffolding-kanopi-cms-cultivator-2"
+  "dir_name": "test-scaffolding-kanopi-cms-cultivator-2",
+  "author": "kanopi",
+  "source_url": "https://github.com/kanopi/cms-cultivator/blob/main/skills/test-scaffolding/SKILL.md",
+  "license": "GPL-2.0",
+  "copyright": "Copyright (C) 1989, 1991 Free Software Foundation, Inc.,",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

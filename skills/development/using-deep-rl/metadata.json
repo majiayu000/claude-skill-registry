@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:41.222465Z",
   "github_path": "plugins/yzmir-deep-rl/skills/using-deep-rl",
   "github_branch": "main",
-  "dir_name": "using-deep-rl"
+  "dir_name": "using-deep-rl",
+  "author": "tachyon-beep",
+  "source_url": "https://github.com/tachyon-beep/skillpacks/blob/main/plugins/yzmir-deep-rl/skills/using-deep-rl/SKILL.md",
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tachyon-beep/skillpacks/blob/main/plugins/yzmir-deep-rl/skills/using-deep-rl/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

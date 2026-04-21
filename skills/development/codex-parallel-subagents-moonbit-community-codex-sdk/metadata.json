@@ -11,5 +11,12 @@
   "stars": 3,
   "github_path": "skills/codex-parallel-subagents",
   "github_branch": "main",
-  "dir_name": "codex-parallel-subagents-moonbit-community-codex-sdk"
+  "dir_name": "codex-parallel-subagents-moonbit-community-codex-sdk",
+  "author": "moonbit-community",
+  "source_url": "https://github.com/moonbit-community/codex-sdk/blob/main/skills/codex-parallel-subagents/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2026 International Digital Economy Academy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "rag-abdulsamad94-hackhaton-specskitpl-ce3bd47b",
   "category": "other",
   "github_path": ".claude/skills/rag",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "AbdulSamad94",
+  "source_url": "https://github.com/AbdulSamad94/Hackhaton-SpecsKitPlus/blob/main/.claude/skills/rag/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AbdulSamad94/Hackhaton-SpecsKitPlus/blob/main/.claude/skills/rag/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

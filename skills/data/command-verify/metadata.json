@@ -9,5 +9,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "command-verify"
+  "dir_name": "command-verify",
+  "author": "d-oit",
+  "source_url": "https://github.com/d-oit/command-verify",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 d.o.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

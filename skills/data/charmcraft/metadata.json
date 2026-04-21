@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "charmcraft"
+  "dir_name": "charmcraft",
+  "author": "tonyandrewmeyer",
+  "source_url": "https://github.com/tonyandrewmeyer/charming-with-claude",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Tony Meyer",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

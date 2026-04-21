@@ -5,5 +5,12 @@
   "source": "github.com/sendaifun/skills",
   "downloaded_at": "2026-02-02T01:28:43.097936Z",
   "dir_name": "surfpool",
-  "category": "data"
+  "category": "data",
+  "author": "sendaifun",
+  "source_url": "https://github.com/sendaifun/skills/blob/main/skills/surfpool/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2024 SendAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

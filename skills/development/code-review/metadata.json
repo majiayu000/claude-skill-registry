@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/code-review",
   "github_branch": "main",
-  "dir_name": "code-review"
+  "dir_name": "code-review",
+  "author": "breaking-brake",
+  "source_url": "https://github.com/breaking-brake/cc-wf-studio/blob/main/.claude/skills/code-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 breaking-brake",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "Sync architecture documentation with main branch changes. This skill should be used when the user wants to update docs/guide/architecture.md to reflect changes made on the main branch. It tracks the d",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:58:54.286452Z",
-  "dir_name": "sync-arch-docs"
+  "dir_name": "sync-arch-docs",
+  "author": "washanhanzi",
+  "source_url": "https://github.com/washanhanzi/connectrpc-axum",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/washanhanzi/connectrpc-axum",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

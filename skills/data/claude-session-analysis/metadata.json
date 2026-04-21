@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "claude-session-analysis"
+  "dir_name": "claude-session-analysis",
+  "author": "kawaz",
+  "source_url": "https://github.com/kawaz/claude-session-analysis",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Yoshiaki Kawazu (@kawaz)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

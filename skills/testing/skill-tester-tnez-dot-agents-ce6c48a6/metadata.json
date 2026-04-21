@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:15.591256Z",
   "github_path": "skills/meta/skill-tester",
   "github_branch": "main",
-  "dir_name": "skill-tester-tnez-dot-agents-ce6c48a6"
+  "dir_name": "skill-tester-tnez-dot-agents-ce6c48a6",
+  "author": "tnez",
+  "source_url": "https://github.com/tnez/dot-agents/blob/main/skills/meta/skill-tester/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 @tnez",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

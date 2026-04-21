@@ -11,5 +11,12 @@
   ],
   "stars": 2,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "claude-code-plugin-dev"
+  "dir_name": "claude-code-plugin-dev",
+  "author": "julep-ai",
+  "source_url": "https://github.com/julep-ai/vibesafe",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/julep-ai/vibesafe",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "Creating documentation from legacy code when none exists, focusing on what future maintainers need to know",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:59.589498Z",
-  "dir_name": "reverse-engineering-documentation"
+  "dir_name": "reverse-engineering-documentation",
+  "author": "spacholski1225",
+  "source_url": "https://github.com/spacholski1225/cc-config",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/spacholski1225/cc-config",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "stars": 1,
   "github_path": ".claude/skills/tdd-in-target-environment",
   "github_branch": "main",
-  "dir_name": "tdd-in-target-environment-cassamajor-xcnf"
+  "dir_name": "tdd-in-target-environment-cassamajor-xcnf",
+  "author": "cassamajor",
+  "source_url": "https://github.com/cassamajor/xcnf/blob/main/.claude/skills/tdd-in-target-environment/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cassamajor/xcnf/blob/main/.claude/skills/tdd-in-target-environment/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

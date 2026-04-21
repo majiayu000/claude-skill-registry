@@ -7,5 +7,12 @@
   "dir_name": "mcp-usage-orchestrator-jskjw157-fanpulse",
   "category": "other",
   "github_path": ".codex/skills/mcp-usage-orchestrator",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "jskjw157",
+  "source_url": "https://github.com/jskjw157/FanPulse/blob/main/.codex/skills/mcp-usage-orchestrator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jskjw157/FanPulse/blob/main/.codex/skills/mcp-usage-orchestrator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

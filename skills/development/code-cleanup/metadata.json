@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "essentials/skills/code-cleanup",
   "github_branch": "main",
-  "dir_name": "code-cleanup"
+  "dir_name": "code-cleanup",
+  "author": "krmcbride",
+  "source_url": "https://github.com/krmcbride/claude-plugins/blob/main/essentials/skills/code-cleanup/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Kevin McBride",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/rubys/showcase",
   "downloaded_at": "2026-02-04T03:59:40.992394Z",
   "dir_name": "compare-erb-js",
-  "category": "data"
+  "category": "data",
+  "author": "rubys",
+  "source_url": "https://github.com/rubys/showcase/blob/main/.claude/skills/compare-erb-js/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Sam Ruby",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

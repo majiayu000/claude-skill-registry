@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:52.851829Z",
   "github_path": "skills/programming/materials-properties",
   "github_branch": "main",
-  "dir_name": "materials-properties-jkitchin-skillz-42296407"
+  "dir_name": "materials-properties-jkitchin-skillz-42296407",
+  "author": "jkitchin",
+  "source_url": "https://github.com/jkitchin/skillz/blob/main/skills/programming/materials-properties/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 John Kitchin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

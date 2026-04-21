@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/0xDarkMatter/claude-mods",
-  "dir_name": "sqlite-ops-0xdarkmatter-claude-mods-2"
+  "dir_name": "sqlite-ops-0xdarkmatter-claude-mods-2",
+  "author": "0xDarkMatter",
+  "source_url": "https://github.com/0xDarkMatter/claude-mods/blob/main/skills/sqlite-ops/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/0xDarkMatter/claude-mods/blob/main/skills/sqlite-ops/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

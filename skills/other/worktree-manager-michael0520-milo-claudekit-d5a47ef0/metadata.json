@@ -7,5 +7,12 @@
   "dir_name": "worktree-manager-michael0520-milo-claudekit-d5a47ef0",
   "category": "other",
   "github_path": "plugins/worktree-manager/skills/worktree-manager",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Michael0520",
+  "source_url": "https://github.com/Michael0520/milo-claudekit/blob/main/plugins/worktree-manager/skills/worktree-manager/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Michael Lo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

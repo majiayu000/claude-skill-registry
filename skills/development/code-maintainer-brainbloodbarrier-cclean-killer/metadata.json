@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:16.060649Z",
   "github_path": ".claude/skills/code-maintainer",
   "github_branch": "main",
-  "dir_name": "code-maintainer-brainbloodbarrier-cclean-killer"
+  "dir_name": "code-maintainer-brainbloodbarrier-cclean-killer",
+  "author": "brainbloodbarrier",
+  "source_url": "https://github.com/brainbloodbarrier/CClean-Killer/blob/main/.claude/skills/code-maintainer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brainbloodbarrier/CClean-Killer/blob/main/.claude/skills/code-maintainer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

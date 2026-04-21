@@ -9,5 +9,12 @@
   "stars": 2,
   "github_path": ".claude-plugin/skills/vibesafe",
   "github_branch": "main",
-  "dir_name": "vibesafe-julep-ai-vibesafe"
+  "dir_name": "vibesafe-julep-ai-vibesafe",
+  "author": "julep-ai",
+  "source_url": "https://github.com/julep-ai/vibesafe/blob/main/.claude-plugin/skills/vibesafe/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/julep-ai/vibesafe/blob/main/.claude-plugin/skills/vibesafe/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

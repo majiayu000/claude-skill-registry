@@ -5,5 +5,12 @@
   "source": "github.com/sakamotchi/sql-query-build",
   "downloaded_at": "2026-02-04T02:18:07.414356Z",
   "dir_name": "generate-project-docs",
-  "category": "data"
+  "category": "data",
+  "author": "sakamotchi",
+  "source_url": "https://github.com/sakamotchi/sql-query-build/blob/main/.claude/skills/generate-project-docs/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Yoshitaka Sakamoto",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

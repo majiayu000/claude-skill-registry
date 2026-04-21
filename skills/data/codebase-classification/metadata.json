@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "codebase-classification"
+  "dir_name": "codebase-classification",
+  "author": "gptme",
+  "source_url": "https://github.com/gptme/gptme",
+  "license": "MIT",
+  "copyright": "Copyright 2023 Erik Bjäreholt",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

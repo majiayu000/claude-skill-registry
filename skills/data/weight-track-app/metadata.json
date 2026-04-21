@@ -5,5 +5,12 @@
   "description": "Collects the user's body weight and provide aggregations, charts and trends. Responds to commands like \"today I'm 90Kg\", \"I gained 1Kg since yesterday\", \"What's my weekly average in the last 2 months?",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:57.304268Z",
-  "dir_name": "weight-track-app"
+  "dir_name": "weight-track-app",
+  "author": "marcopeg",
+  "source_url": "https://github.com/marcopeg/diary",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/marcopeg/diary",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

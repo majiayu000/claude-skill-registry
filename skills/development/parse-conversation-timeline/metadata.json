@@ -5,5 +5,12 @@
   "description": "Transform raw session logs into structured timeline JSON for protocol audit analysis",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:48.501058Z",
-  "dir_name": "parse-conversation-timeline"
+  "dir_name": "parse-conversation-timeline",
+  "author": "cowwoc",
+  "source_url": "https://github.com/cowwoc/styler",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2026 Gili Tzabari. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

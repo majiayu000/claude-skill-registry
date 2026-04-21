@@ -5,5 +5,12 @@
   "source": "github.com/jdubray/puffin",
   "downloaded_at": "2026-02-04T03:54:12.323615Z",
   "dir_name": "coding-standard-python",
-  "category": "data"
+  "category": "data",
+  "author": "jdubray",
+  "source_url": "https://github.com/jdubray/puffin/blob/main/.claude/skills/coding-standard-python/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Jean-Jacques Dubray",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

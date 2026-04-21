@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:00.479034Z",
   "github_path": ".opencode/skills/edge-functions",
   "github_branch": "main",
-  "dir_name": "edge-functions"
+  "dir_name": "edge-functions",
+  "author": "discountedcookie",
+  "source_url": "https://github.com/discountedcookie/10x-mapmaster/blob/main/.opencode/skills/edge-functions/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 10x-mapmaster",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

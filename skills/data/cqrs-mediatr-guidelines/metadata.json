@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/islamu-ngo/Explore",
-  "dir_name": "cqrs-mediatr-guidelines"
+  "dir_name": "cqrs-mediatr-guidelines",
+  "author": "islamu-ngo",
+  "source_url": "https://github.com/islamu-ngo/Explore",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

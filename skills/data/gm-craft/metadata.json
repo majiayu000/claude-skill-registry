@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "gm-craft"
+  "dir_name": "gm-craft",
+  "author": "rjroy",
+  "source_url": "https://github.com/rjroy/adventure-engine-corvran",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ronald Roy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

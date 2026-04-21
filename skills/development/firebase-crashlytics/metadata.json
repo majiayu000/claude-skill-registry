@@ -5,5 +5,12 @@
   "description": "Firebase Crashlytics Android 崩溃与 ANR 分析专家。用于分析 Android Java/Kotlin 崩溃堆栈、解读 Firebase 崩溃报告、定位崩溃根因、提供修复建议。当用户提供 Android 崩溃日志、堆栈跟踪或 ANR 报告时使用此技能。",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:30.385334Z",
-  "dir_name": "firebase-crashlytics"
+  "dir_name": "firebase-crashlytics",
+  "author": "tianguzhe",
+  "source_url": "https://github.com/tianguzhe/zsh-config",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tianguzhe/zsh-config",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

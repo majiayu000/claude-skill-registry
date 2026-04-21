@@ -5,5 +5,12 @@
   "description": "Transform markdown notes into engaging technical blog posts for both programmers and non-technical readers",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:02:59.589702Z",
-  "dir_name": "technical-blog-post-generator"
+  "dir_name": "technical-blog-post-generator",
+  "author": "spacholski1225",
+  "source_url": "https://github.com/spacholski1225/cc-config",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/spacholski1225/cc-config",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

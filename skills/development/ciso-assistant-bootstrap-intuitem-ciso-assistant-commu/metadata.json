@@ -7,5 +7,12 @@
   "stars": 3534,
   "source": "github.com/intuitem/ciso-assistant-community",
   "downloaded_at": "2026-01-24T16:15:43.695902Z",
-  "dir_name": "ciso-assistant-bootstrap-intuitem-ciso-assistant-commu"
+  "dir_name": "ciso-assistant-bootstrap-intuitem-ciso-assistant-commu",
+  "author": "intuitem",
+  "source_url": "https://github.com/intuitem/ciso-assistant-community/blob/main/.claude/skills/ciso-assistant-bootstrap/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/intuitem/ciso-assistant-community/blob/main/.claude/skills/ciso-assistant-bootstrap/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

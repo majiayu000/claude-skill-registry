@@ -7,5 +7,12 @@
   "dir_name": "using-training-optimization-tachyon-beep-skillpacks",
   "category": "other",
   "github_path": "plugins/yzmir-training-optimization/skills/using-training-optimization",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "tachyon-beep",
+  "source_url": "https://github.com/tachyon-beep/skillpacks/blob/main/plugins/yzmir-training-optimization/skills/using-training-optimization/SKILL.md",
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tachyon-beep/skillpacks/blob/main/plugins/yzmir-training-optimization/skills/using-training-optimization/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

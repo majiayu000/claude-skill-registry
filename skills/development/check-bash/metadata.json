@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".bitbot/internal/bitbot-config/.claude/skills/check-bash",
   "github_branch": "main",
-  "dir_name": "check-bash"
+  "dir_name": "check-bash",
+  "author": "ManuelKugelmann",
+  "source_url": "https://github.com/ManuelKugelmann/BitBot/blob/main/.bitbot/internal/bitbot-config/.claude/skills/check-bash/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Manuel Kugelmann, Bitcraft IT Consulting",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

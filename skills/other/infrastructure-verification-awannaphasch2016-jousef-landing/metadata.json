@@ -5,5 +5,12 @@
   "source": "github.com/Awannaphasch2016/jousef-landing",
   "downloaded_at": "2026-02-02T03:45:01.625840Z",
   "dir_name": "infrastructure-verification-awannaphasch2016-jousef-landing",
-  "category": "other"
+  "category": "other",
+  "author": "Awannaphasch2016",
+  "source_url": "https://github.com/Awannaphasch2016/jousef-landing/blob/main/.claude/skills/infrastructure-verification/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Leopoldo Miranda",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   "stars": 1,
   "github_path": ".claude/skills/test-skill",
   "github_branch": "main",
-  "dir_name": "test-skill"
+  "dir_name": "test-skill",
+  "author": "d-oit",
+  "source_url": "https://github.com/d-oit/command-verify/blob/main/.claude/skills/test-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 d.o.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

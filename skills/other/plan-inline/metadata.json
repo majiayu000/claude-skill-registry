@@ -5,5 +5,12 @@
   "source": "github.com/lucaswall/adva-administracion",
   "downloaded_at": "2026-01-28T02:16:26.026337Z",
   "dir_name": "plan-inline",
-  "category": "other"
+  "category": "other",
+  "author": "lucaswall",
+  "source_url": "https://github.com/lucaswall/adva-administracion/blob/main/.claude/skills/plan-inline/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 ADVA - Asociación de Desarrolladores de Videojuegos Argentina",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

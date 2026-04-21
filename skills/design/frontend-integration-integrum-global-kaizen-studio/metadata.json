@@ -5,5 +5,12 @@
   "description": "Frontend integration guides for React and Flutter with Kailash SDK workflows, including setup, API integration, state management, and best practices. Use when asking about 'frontend integration', 'Rea",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:59.745093Z",
-  "dir_name": "frontend-integration-integrum-global-kaizen-studio"
+  "dir_name": "frontend-integration-integrum-global-kaizen-studio",
+  "author": "Integrum-Global",
+  "source_url": "https://github.com/Integrum-Global/kaizen-studio",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Integrum-Global/kaizen-studio",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

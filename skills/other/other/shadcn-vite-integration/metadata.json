@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/AgentiveCity/SkillFactory",
   "dir_name": "shadcn-vite-integration",
-  "downloaded_at": "2026-02-22T04:39:01.419097Z"
+  "downloaded_at": "2026-02-22T04:39:01.419097Z",
+  "author": "AgentiveCity",
+  "source_url": "https://github.com/AgentiveCity/SkillFactory/blob/main/.claude/skills/shadcn-vite-integration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AgentiveCity/SkillFactory/blob/main/.claude/skills/shadcn-vite-integration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

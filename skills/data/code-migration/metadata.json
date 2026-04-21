@@ -5,5 +5,12 @@
   "source": "github.com/xiaden/nomarr",
   "downloaded_at": "2026-01-27T02:28:28.928044Z",
   "dir_name": "code-migration",
-  "category": "data"
+  "category": "data",
+  "author": "xiaden",
+  "source_url": "https://github.com/xiaden/nomarr/blob/main/.github/skills/code-migration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Nomarr Contributors",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

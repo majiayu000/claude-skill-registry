@@ -7,5 +7,12 @@
   "stars": 20,
   "source": "github.com/mattnigh/skills_collection",
   "downloaded_at": "2026-01-24T16:15:21.580656Z",
-  "dir_name": "creating-subagents-mattnigh-skills-collection"
+  "dir_name": "creating-subagents-mattnigh-skills-collection",
+  "author": "mattnigh",
+  "source_url": "https://github.com/mattnigh/skills_collection/blob/main/collection/mikkelkrogsholm__dst-skills__claude__skills__creating-subagents__SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattnigh/skills_collection/blob/main/collection/mikkelkrogsholm__dst-skills__claude__skills__creating-subagents__SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

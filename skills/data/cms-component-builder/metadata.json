@@ -10,5 +10,12 @@
   ],
   "stars": 6,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "cms-component-builder"
+  "dir_name": "cms-component-builder",
+  "author": "kunalshetye",
+  "source_url": "https://github.com/kunalshetye/opti-astro",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kunalshetye/opti-astro",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

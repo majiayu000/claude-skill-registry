@@ -5,5 +5,12 @@
   "source": "github.com/zbruhnke/claude-code-starter",
   "downloaded_at": "2026-02-04T03:49:08.166138Z",
   "dir_name": "refactor-code",
-  "category": "data"
+  "category": "data",
+  "author": "zbruhnke",
+  "source_url": "https://github.com/zbruhnke/claude-code-starter/blob/main/.claude/skills/refactor-code/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Zach Bruhnke",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

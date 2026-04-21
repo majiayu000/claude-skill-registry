@@ -5,5 +5,12 @@
   "source": "github.com/shinpr/ai-coding-project-boilerplate",
   "downloaded_at": "2026-02-04T04:50:50.672168Z",
   "dir_name": "subagents-orchestration-guide",
-  "category": "data"
+  "category": "data",
+  "author": "shinpr",
+  "source_url": "https://github.com/shinpr/ai-coding-project-boilerplate/blob/main/.claude/skills-ja/subagents-orchestration-guide/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Shinsuke Kagawa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

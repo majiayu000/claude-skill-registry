@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "",
   "github_branch": "main",
-  "dir_name": "collaborating-with-codex-gudastudio-collaborating-with-c"
+  "dir_name": "collaborating-with-codex-gudastudio-collaborating-with-c",
+  "author": "GuDaStudio",
+  "source_url": "https://github.com/GuDaStudio/collaborating-with-codex",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 GudaStudio",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

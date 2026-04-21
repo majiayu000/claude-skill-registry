@@ -7,5 +7,12 @@
   "dir_name": "final-release-review-openai-openai-agents-python",
   "category": "other",
   "github_path": ".codex/skills/final-release-review",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "openai",
+  "source_url": "https://github.com/openai/openai-agents-python/blob/main/.codex/skills/final-release-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 OpenAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

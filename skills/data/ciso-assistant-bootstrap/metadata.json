@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 3534,
   "source": "github.com/intuitem/ciso-assistant-community",
-  "dir_name": "ciso-assistant-bootstrap"
+  "dir_name": "ciso-assistant-bootstrap",
+  "author": "intuitem",
+  "source_url": "https://github.com/intuitem/ciso-assistant-community",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/intuitem/ciso-assistant-community",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

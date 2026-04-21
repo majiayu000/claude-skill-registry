@@ -5,5 +5,12 @@
   "source": "github.com/martinemde/skillet",
   "downloaded_at": "2026-02-02T04:58:02.258847Z",
   "dir_name": "invalid-skill-martinemde-skillet-489d9c20",
-  "category": "other"
+  "category": "other",
+  "author": "martinemde",
+  "source_url": "https://github.com/martinemde/skillet/blob/main/testdata/invalid-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Martin Emde",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

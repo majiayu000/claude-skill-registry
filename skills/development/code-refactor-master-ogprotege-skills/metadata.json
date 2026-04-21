@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:25.314177Z",
   "github_path": "Categories/Code/code-refactor-master",
   "github_branch": "main",
-  "dir_name": "code-refactor-master-ogprotege-skills"
+  "dir_name": "code-refactor-master-ogprotege-skills",
+  "author": "ogprotege",
+  "source_url": "https://github.com/ogprotege/Skills/blob/main/Categories/Code/code-refactor-master/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 William Sherman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

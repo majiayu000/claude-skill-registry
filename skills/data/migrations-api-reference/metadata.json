@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:32.512551Z",
   "dir_name": "migrations-api-reference",
   "github_path": "skills/migrations-api-reference",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "juanre",
+  "source_url": "https://github.com/juanre/pgdbm/blob/main/skills/migrations-api-reference/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Juan Reyero",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

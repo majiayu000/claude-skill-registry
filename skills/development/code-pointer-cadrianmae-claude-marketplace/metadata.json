@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:19.643943Z",
   "github_path": "plugins/code-pointer/skills/code-pointer",
   "github_branch": "main",
-  "dir_name": "code-pointer-cadrianmae-claude-marketplace"
+  "dir_name": "code-pointer-cadrianmae-claude-marketplace",
+  "author": "cadrianmae",
+  "source_url": "https://github.com/cadrianmae/claude-marketplace/blob/main/plugins/code-pointer/skills/code-pointer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cadrianmae/claude-marketplace/blob/main/plugins/code-pointer/skills/code-pointer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

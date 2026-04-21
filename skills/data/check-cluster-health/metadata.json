@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "check-cluster-health"
+  "dir_name": "check-cluster-health",
+  "author": "ankurkumarz",
+  "source_url": "https://github.com/ankurkumarz/devops-sre-deepagent",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ankurkumarz/devops-sre-deepagent",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

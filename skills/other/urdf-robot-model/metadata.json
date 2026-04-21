@@ -7,5 +7,12 @@
   "dir_name": "urdf-robot-model",
   "category": "other",
   "github_path": ".claude/skills/urdf-robot-model",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "mjunaidca",
+  "source_url": "https://github.com/mjunaidca/robolearn/blob/main/.claude/skills/urdf-robot-model/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mjunaidca/robolearn/blob/main/.claude/skills/urdf-robot-model/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

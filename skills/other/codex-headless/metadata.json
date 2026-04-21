@@ -5,5 +5,12 @@
   "source": "github.com/StefanMaksimek/dev-challenge-2026",
   "downloaded_at": "2026-01-30T03:33:52.073712Z",
   "dir_name": "codex-headless",
-  "category": "other"
+  "category": "other",
+  "author": "StefanMaksimek",
+  "source_url": "https://github.com/StefanMaksimek/dev-challenge-2026/blob/main/.claude/skills/codex-headless/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/StefanMaksimek/dev-challenge-2026/blob/main/.claude/skills/codex-headless/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

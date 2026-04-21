@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "doc-generate"
+  "dir_name": "doc-generate",
+  "author": "tqer39",
+  "source_url": "https://github.com/tqer39/xtrade",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Takeru O'oyama",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

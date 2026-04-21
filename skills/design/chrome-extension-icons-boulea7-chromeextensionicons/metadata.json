@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "chrome-extension-icons-boulea7-chromeextensionicons"
+  "dir_name": "chrome-extension-icons-boulea7-chromeextensionicons",
+  "author": "Boulea7",
+  "source_url": "https://github.com/Boulea7/ChromeExtensionIconsSkill",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Boulea7",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "cns-tinker",
   "github_path": ".claude/skills/cns-tinker",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "North-Shore-AI",
+  "source_url": "https://github.com/North-Shore-AI/tinkerer/blob/main/.claude/skills/cns-tinker/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/North-Shore-AI/tinkerer/blob/main/.claude/skills/cns-tinker/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

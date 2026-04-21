@@ -5,5 +5,12 @@
   "description": "Tracking document for SND plugin skills, repository references, and missing documentation. Use this to find official sources and prioritize skill creation.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:09:27.951706Z",
-  "dir_name": "snd-plugin-references"
+  "dir_name": "snd-plugin-references",
+  "author": "vaoan",
+  "source_url": "https://github.com/vaoan/SND",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vaoan/SND",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

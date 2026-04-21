@@ -5,5 +5,12 @@
   "source": "github.com/feiskyer/codex-settings",
   "downloaded_at": "2026-01-29T07:11:52.107941Z",
   "dir_name": "spec-kit-skill",
-  "category": "data"
+  "category": "data",
+  "author": "feiskyer",
+  "source_url": "https://github.com/feiskyer/codex-settings/blob/main/skills/spec-kit-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-Now Pengfei Ni",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

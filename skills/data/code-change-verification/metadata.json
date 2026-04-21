@@ -5,5 +5,12 @@
   "source": "github.com/zaziedlm/openai-agents-python",
   "downloaded_at": "2026-01-29T06:33:07.715528Z",
   "dir_name": "code-change-verification",
-  "category": "data"
+  "category": "data",
+  "author": "zaziedlm",
+  "source_url": "https://github.com/zaziedlm/openai-agents-python/blob/main/.codex/skills/code-change-verification/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 OpenAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

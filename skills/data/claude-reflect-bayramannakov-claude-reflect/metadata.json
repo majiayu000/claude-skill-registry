@@ -5,5 +5,12 @@
   "source": "github.com/BayramAnnakov/claude-reflect",
   "downloaded_at": "2026-02-04T03:45:53.693240Z",
   "dir_name": "claude-reflect-bayramannakov-claude-reflect",
-  "category": "data"
+  "category": "data",
+  "author": "BayramAnnakov",
+  "source_url": "https://github.com/BayramAnnakov/claude-reflect/blob/main/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Bayram Annakov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

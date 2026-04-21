@@ -5,5 +5,12 @@
   "description": "Ingest web content into Kurt. Map sitemaps to discover URLs, then fetch content selectively.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:01:37.920704Z",
-  "dir_name": "content-ingestion"
+  "dir_name": "content-ingestion",
+  "author": "boringdata",
+  "source_url": "https://github.com/boringdata/kurt-demo",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boringdata/kurt-demo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

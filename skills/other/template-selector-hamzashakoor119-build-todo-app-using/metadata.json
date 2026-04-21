@@ -5,5 +5,12 @@
   "source": "github.com/hamzashakoor119/Build-ToDo-App-Using-Claude-and-SpecKitPlus",
   "downloaded_at": "2026-02-02T04:55:59.388619Z",
   "dir_name": "template-selector-hamzashakoor119-build-todo-app-using",
-  "category": "other"
+  "category": "other",
+  "author": "hamzashakoor119",
+  "source_url": "https://github.com/hamzashakoor119/Build-ToDo-App-Using-Claude-and-SpecKitPlus/blob/main/.claude/skills/template-selector/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hamzashakoor119/Build-ToDo-App-Using-Claude-and-SpecKitPlus/blob/main/.claude/skills/template-selector/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/DataDog/dd-trace-py",
   "downloaded_at": "2026-01-21T01:43:18.367183Z",
   "dir_name": "compare-cpython-versions-datadog-dd-trace-py",
-  "category": "other"
+  "category": "other",
+  "author": "DataDog",
+  "source_url": "https://github.com/DataDog/dd-trace-py/blob/main/.claude/skills/compare-cpython-versions/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DataDog/dd-trace-py/blob/main/.claude/skills/compare-cpython-versions/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

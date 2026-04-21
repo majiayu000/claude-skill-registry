@@ -9,5 +9,12 @@
   ],
   "stars": 1,
   "source": "local",
-  "dir_name": "codex-collaboration"
+  "dir_name": "codex-collaboration",
+  "author": "hewenyu",
+  "source_url": "https://github.com/hewenyu/codex-collaboration",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Codex-Collaboration Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:59.326400Z",
   "github_path": ".claude/skills/claude-optimization",
   "github_branch": "main",
-  "dir_name": "claude-optimization-phauks-grimbound"
+  "dir_name": "claude-optimization-phauks-grimbound",
+  "author": "Phauks",
+  "source_url": "https://github.com/Phauks/Grimbound/blob/main/.claude/skills/claude-optimization/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Trevor Goldsmith",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

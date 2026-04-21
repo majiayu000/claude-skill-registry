@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:15.307897Z",
   "github_path": "skills/examples/find-local-events",
   "github_branch": "main",
-  "dir_name": "find-local-events-tnez-dot-agents-db6e911c"
+  "dir_name": "find-local-events-tnez-dot-agents-db6e911c",
+  "author": "tnez",
+  "source_url": "https://github.com/tnez/dot-agents/blob/main/skills/examples/find-local-events/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 @tnez",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

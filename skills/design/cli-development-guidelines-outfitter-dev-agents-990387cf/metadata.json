@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:37.933795Z",
   "github_path": "cli-dev/skills/cli-development-guidelines",
   "github_branch": "main",
-  "dir_name": "cli-development-guidelines-outfitter-dev-agents-990387cf"
+  "dir_name": "cli-development-guidelines-outfitter-dev-agents-990387cf",
+  "author": "outfitter-dev",
+  "source_url": "https://github.com/outfitter-dev/agents/blob/main/cli-dev/skills/cli-development-guidelines/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Outfitter",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "stars": 1,
   "source": "github.com/maximxlss/codextris",
   "downloaded_at": "2026-01-24T16:16:03.808384Z",
-  "dir_name": "svelte-game-writer-maximxlss-codextris"
+  "dir_name": "svelte-game-writer-maximxlss-codextris",
+  "author": "maximxlss",
+  "source_url": "https://github.com/maximxlss/codextris/blob/main/.codex/skills/svelte-game-writer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Codextris Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

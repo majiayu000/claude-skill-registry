@@ -5,5 +5,12 @@
   "source": "github.com/showcase-gig-platform/scg-ai-playbook",
   "downloaded_at": "2026-02-01T04:18:10.285885Z",
   "dir_name": "coderabbit-review",
-  "category": "data"
+  "category": "data",
+  "author": "showcase-gig-platform",
+  "source_url": "https://github.com/showcase-gig-platform/scg-ai-playbook/blob/main/skills/coderabbit-review/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/showcase-gig-platform/scg-ai-playbook/blob/main/skills/coderabbit-review/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

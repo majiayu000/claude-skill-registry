@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "GitHub Search API",
-  "dir_name": "find-cpython-usage"
+  "dir_name": "find-cpython-usage",
+  "author": "DataDog",
+  "source_url": "https://github.com/DataDog/dd-trace-py",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DataDog/dd-trace-py",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

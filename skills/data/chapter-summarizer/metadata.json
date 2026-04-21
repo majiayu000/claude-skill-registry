@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "chapter-summarizer"
+  "dir_name": "chapter-summarizer",
+  "author": "HumaizaNaz",
+  "source_url": "https://github.com/HumaizaNaz/physical-ai-textbook",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HumaizaNaz/physical-ai-textbook",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

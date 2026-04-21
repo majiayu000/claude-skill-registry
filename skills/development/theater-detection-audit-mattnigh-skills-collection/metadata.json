@@ -7,5 +7,12 @@
   "stars": 20,
   "source": "github.com/mattnigh/skills_collection",
   "downloaded_at": "2026-01-24T16:15:09.643612Z",
-  "dir_name": "theater-detection-audit-mattnigh-skills-collection"
+  "dir_name": "theater-detection-audit-mattnigh-skills-collection",
+  "author": "mattnigh",
+  "source_url": "https://github.com/mattnigh/skills_collection/blob/main/collection/DNYoussef__ai-chrome-extension__claude__skills__theater-detection-audit__SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattnigh/skills_collection/blob/main/collection/DNYoussef__ai-chrome-extension__claude__skills__theater-detection-audit__SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

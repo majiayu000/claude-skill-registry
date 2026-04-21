@@ -5,5 +5,12 @@
   "source": "github.com/DonTizi/CodeGeass",
   "downloaded_at": "2026-02-02T01:33:00.851762Z",
   "dir_name": "cli-dontizi-codegeass",
-  "category": "other"
+  "category": "other",
+  "author": "DonTizi",
+  "source_url": "https://github.com/DonTizi/CodeGeass/blob/main/docs/cli/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2025 DonTizi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "View GitHub pull request details using gh CLI. Shows PR status, reviews, checks, comments, and metadata. Use when user wants to inspect PR information.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:33.652434Z",
-  "dir_name": "gh-pr-view"
+  "dir_name": "gh-pr-view",
+  "author": "dceoy",
+  "source_url": "https://github.com/dceoy/gh-actions-for-devops",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Daichi Narushima",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

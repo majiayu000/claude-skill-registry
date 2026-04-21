@@ -7,5 +7,12 @@
   "dir_name": "deployment-awannaphasch2016-jousef-landing-998e3e2e",
   "category": "other",
   "github_path": ".claude/skills/deployment",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Awannaphasch2016",
+  "source_url": "https://github.com/Awannaphasch2016/jousef-landing/blob/main/.claude/skills/deployment/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Leopoldo Miranda",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

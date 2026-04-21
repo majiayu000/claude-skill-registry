@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:52.344424Z",
   "github_path": "plugins/gosu-mcp-core/skills/task-list-md",
   "github_branch": "main",
-  "dir_name": "task-list-md-gosu-code-claude-plugin"
+  "dir_name": "task-list-md-gosu-code-claude-plugin",
+  "author": "gosu-code",
+  "source_url": "https://github.com/gosu-code/claude-plugin/blob/main/plugins/gosu-mcp-core/skills/task-list-md/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

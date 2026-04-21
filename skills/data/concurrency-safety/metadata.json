@@ -5,5 +5,12 @@
   "source": "github.com/saifoelloh/golang-best-practices-skill",
   "downloaded_at": "2026-02-04T04:58:47.869014Z",
   "dir_name": "concurrency-safety",
-  "category": "data"
+  "category": "data",
+  "author": "saifoelloh",
+  "source_url": "https://github.com/saifoelloh/golang-best-practices-skill/blob/main/concurrency-safety/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 saifoelloh (saifoelloh@gmail.com)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

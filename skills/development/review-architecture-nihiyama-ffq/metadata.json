@@ -7,5 +7,12 @@
   "stars": 2,
   "source": "github.com/nihiyama/ffq",
   "downloaded_at": "2026-01-24T16:15:20.002340Z",
-  "dir_name": "review-architecture-nihiyama-ffq"
+  "dir_name": "review-architecture-nihiyama-ffq",
+  "author": "nihiyama",
+  "source_url": "https://github.com/nihiyama/ffq/blob/main/.codex/skills/review-architecture/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 nihiyama",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

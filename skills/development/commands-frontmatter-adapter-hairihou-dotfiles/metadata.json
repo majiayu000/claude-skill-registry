@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:58.995639Z",
   "github_path": "src/.claude/skills/commands-frontmatter-adapter",
   "github_branch": "main",
-  "dir_name": "commands-frontmatter-adapter-hairihou-dotfiles"
+  "dir_name": "commands-frontmatter-adapter-hairihou-dotfiles",
+  "author": "hairihou",
+  "source_url": "https://github.com/hairihou/dotfiles/blob/main/src/.claude/skills/commands-frontmatter-adapter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hairihou/dotfiles/blob/main/src/.claude/skills/commands-frontmatter-adapter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

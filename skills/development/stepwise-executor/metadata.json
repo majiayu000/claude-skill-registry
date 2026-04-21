@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "stepwise-executor"
+  "dir_name": "stepwise-executor",
+  "author": "nobu007",
+  "source_url": "https://github.com/nobu007/connective-byte",
+  "license": "MPL-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nobu007/connective-byte",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

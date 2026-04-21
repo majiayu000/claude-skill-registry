@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:10.429212Z",
   "github_path": "claude-instructions/.claude/skills/jhack",
   "github_branch": "main",
-  "dir_name": "jhack-tonyandrewmeyer-charming-with-claude"
+  "dir_name": "jhack-tonyandrewmeyer-charming-with-claude",
+  "author": "tonyandrewmeyer",
+  "source_url": "https://github.com/tonyandrewmeyer/charming-with-claude/blob/main/claude-instructions/.claude/skills/jhack/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Tony Meyer",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

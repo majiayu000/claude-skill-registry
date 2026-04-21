@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/fake-driven-testing",
   "github_branch": "main",
-  "dir_name": "fake-driven-testing-dagster-io-erk"
+  "dir_name": "fake-driven-testing-dagster-io-erk",
+  "author": "dagster-io",
+  "source_url": "https://github.com/dagster-io/erk/blob/main/.claude/skills/fake-driven-testing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dagster-io/erk/blob/main/.claude/skills/fake-driven-testing/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

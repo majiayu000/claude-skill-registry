@@ -7,5 +7,12 @@
   "stars": 24605,
   "source": "github.com/affaan-m/everything-claude-code",
   "downloaded_at": "2026-01-24T16:16:08.914200Z",
-  "dir_name": "security-review-affaan-m-everything-claude-cod"
+  "dir_name": "security-review-affaan-m-everything-claude-cod",
+  "author": "affaan-m",
+  "source_url": "https://github.com/affaan-m/everything-claude-code/blob/main/skills/security-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Affaan Mustafa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

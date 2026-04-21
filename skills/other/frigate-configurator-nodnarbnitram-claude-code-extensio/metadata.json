@@ -5,5 +5,12 @@
   "source": "github.com/nodnarbnitram/claude-code-extensions",
   "downloaded_at": "2026-01-29T07:08:56.632292Z",
   "dir_name": "frigate-configurator-nodnarbnitram-claude-code-extensio",
-  "category": "other"
+  "category": "other",
+  "author": "nodnarbnitram",
+  "source_url": "https://github.com/nodnarbnitram/claude-code-extensions/blob/main/.claude/skills/frigate-configurator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brandon Martin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

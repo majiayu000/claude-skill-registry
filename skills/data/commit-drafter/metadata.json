@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "commit-drafter"
+  "dir_name": "commit-drafter",
+  "author": "AbeJitsu",
+  "source_url": "https://github.com/AbeJitsu/Learn-Claude-Code",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AbeJitsu/Learn-Claude-Code",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/taylorsatula/mira-OSS",
-  "dir_name": "checking-code-consistency-taylorsatula-mira-oss-2"
+  "dir_name": "checking-code-consistency-taylorsatula-mira-oss-2",
+  "author": "taylorsatula",
+  "source_url": "https://github.com/taylorsatula/mira-OSS/blob/main/.claude/skills/checking-code-consistency/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/akbarfarooq2006/aidd_30_days_challenges",
-  "dir_name": "chapter-outline-generator"
+  "dir_name": "chapter-outline-generator",
+  "author": "akbarfarooq2006",
+  "source_url": "https://github.com/akbarfarooq2006/aidd_30_days_challenges",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/akbarfarooq2006/aidd_30_days_challenges",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

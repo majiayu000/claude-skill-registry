@@ -9,5 +9,12 @@
   "stars": 1,
   "github_path": ".claude/skills/respond",
   "github_branch": "main",
-  "dir_name": "respond-ardeshir-krzy"
+  "dir_name": "respond-ardeshir-krzy",
+  "author": "ardeshir",
+  "source_url": "https://github.com/ardeshir/krzy/blob/main/.claude/skills/respond/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ardeshir/krzy/blob/main/.claude/skills/respond/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

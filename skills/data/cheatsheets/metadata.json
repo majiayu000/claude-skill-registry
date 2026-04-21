@@ -5,5 +5,12 @@
   "description": "Quick reference cheatsheets for Kailash SDK patterns, nodes, workflows, and best practices. Use when asking about 'quick tips', 'cheat sheet', 'quick reference', 'common mistakes', 'node selection', '",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:52.068493Z",
-  "dir_name": "cheatsheets"
+  "dir_name": "cheatsheets",
+  "author": "Integrum-Global",
+  "source_url": "https://github.com/Integrum-Global/kaizen-studio",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Integrum-Global/kaizen-studio",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

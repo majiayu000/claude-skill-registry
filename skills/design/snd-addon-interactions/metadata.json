@@ -5,5 +5,12 @@
   "description": "Use this skill when implementing game UI addon interactions in SND macros. Covers crafting addons, shop addons, node access, and general game addon patterns.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:09:27.739858Z",
-  "dir_name": "snd-addon-interactions"
+  "dir_name": "snd-addon-interactions",
+  "author": "vaoan",
+  "source_url": "https://github.com/vaoan/SND",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vaoan/SND",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

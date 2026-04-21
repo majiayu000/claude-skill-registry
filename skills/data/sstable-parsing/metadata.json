@@ -5,5 +5,12 @@
   "source": "github.com/pmcfadin/cqlite",
   "downloaded_at": "2026-02-01T01:36:39.649329Z",
   "dir_name": "sstable-parsing",
-  "category": "data"
+  "category": "data",
+  "author": "pmcfadin",
+  "source_url": "https://github.com/pmcfadin/cqlite/blob/main/.claude/skills/sstable-parsing/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pmcfadin/cqlite/blob/main/.claude/skills/sstable-parsing/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

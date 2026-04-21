@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:48.587467Z",
   "github_path": ".factory/skills/typescript-node-expert",
   "github_branch": "main",
-  "dir_name": "typescript-node-expert-dammianmiller-universal-agent-memo"
+  "dir_name": "typescript-node-expert-dammianmiller-universal-agent-memo",
+  "author": "DammianMiller",
+  "source_url": "https://github.com/DammianMiller/universal-agent-memory/blob/main/.factory/skills/typescript-node-expert/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dammian Miller",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

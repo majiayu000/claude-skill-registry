@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:56.581692Z",
   "github_path": "5.2-Coding-Assistants/5.2.1-Claude-Code/skills/read-configs",
   "github_branch": "main",
-  "dir_name": "read-configs-roger-parkinson-ehp-agentic"
+  "dir_name": "read-configs-roger-parkinson-ehp-agentic",
+  "author": "Roger-Parkinson-EHP",
+  "source_url": "https://github.com/Roger-Parkinson-EHP/agentic/blob/main/5.2-Coding-Assistants/5.2.1-Claude-Code/skills/read-configs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 License Corporation",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

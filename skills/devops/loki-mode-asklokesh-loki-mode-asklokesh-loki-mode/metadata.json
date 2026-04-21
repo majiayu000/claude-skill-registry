@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 545,
   "source": "github.com/asklokesh/loki-mode",
-  "dir_name": "loki-mode-asklokesh-loki-mode-asklokesh-loki-mode"
+  "dir_name": "loki-mode-asklokesh-loki-mode-asklokesh-loki-mode",
+  "author": "asklokesh",
+  "source_url": "https://github.com/asklokesh/loki-mode",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/asklokesh/loki-mode",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

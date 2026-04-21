@@ -5,5 +5,12 @@
   "source": "github.com/fwdslsh/crosstrain",
   "downloaded_at": "2026-01-29T08:58:58.269059Z",
   "dir_name": "doc-writer-fwdslsh-crosstrain",
-  "category": "other"
+  "category": "other",
+  "author": "fwdslsh",
+  "source_url": "https://github.com/fwdslsh/crosstrain/blob/main/src/tests/fixtures/skills/doc-writer/SKILL.md",
+  "license": "CC-BY-4.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fwdslsh/crosstrain/blob/main/src/tests/fixtures/skills/doc-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

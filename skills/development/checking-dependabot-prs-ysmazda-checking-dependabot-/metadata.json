@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:11:00.276476Z",
   "github_path": ".claude/skills/checking-dependabot-prs",
   "github_branch": "main",
-  "dir_name": "checking-dependabot-prs-ysmazda-checking-dependabot-"
+  "dir_name": "checking-dependabot-prs-ysmazda-checking-dependabot-",
+  "author": "ysmazda",
+  "source_url": "https://github.com/ysmazda/checking-dependabot-prs/blob/main/.claude/skills/checking-dependabot-prs/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ysmazda/checking-dependabot-prs/blob/main/.claude/skills/checking-dependabot-prs/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

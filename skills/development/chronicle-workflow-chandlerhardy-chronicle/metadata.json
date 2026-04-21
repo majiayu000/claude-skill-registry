@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:24.338479Z",
   "github_path": "chronicle-skills/chronicle-workflow",
   "github_branch": "main",
-  "dir_name": "chronicle-workflow-chandlerhardy-chronicle"
+  "dir_name": "chronicle-workflow-chandlerhardy-chronicle",
+  "author": "ChandlerHardy",
+  "source_url": "https://github.com/ChandlerHardy/chronicle/blob/main/chronicle-skills/chronicle-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Chandler Hardy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

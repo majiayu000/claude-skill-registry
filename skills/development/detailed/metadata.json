@@ -7,5 +7,12 @@
   "stars": 13,
   "source": "github.com/sorryhyun/DiPeO",
   "downloaded_at": "2026-01-24T16:15:58.630129Z",
-  "dir_name": "detailed"
+  "dir_name": "detailed",
+  "author": "sorryhyun",
+  "source_url": "https://github.com/sorryhyun/DiPeO/blob/main/docs/architecture/detailed/what_is_doclookup_skill.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sorryhyun/DiPeO/blob/main/docs/architecture/detailed/what_is_doclookup_skill.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

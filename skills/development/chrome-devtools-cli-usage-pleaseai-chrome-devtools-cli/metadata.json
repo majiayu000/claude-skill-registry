@@ -12,5 +12,12 @@
   "stars": 0,
   "github_path": "skills/chrome-devtools-cli-usage",
   "github_branch": "main",
-  "dir_name": "chrome-devtools-cli-usage-pleaseai-chrome-devtools-cli"
+  "dir_name": "chrome-devtools-cli-usage-pleaseai-chrome-devtools-cli",
+  "author": "pleaseai",
+  "source_url": "https://github.com/pleaseai/chrome-devtools-cli/blob/main/skills/chrome-devtools-cli-usage/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 PleaseAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

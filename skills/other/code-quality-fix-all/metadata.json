@@ -5,5 +5,12 @@
   "source": "github.com/UKGovernmentBEIS/inspect_evals",
   "downloaded_at": "2026-02-02T04:19:46.603910Z",
   "dir_name": "code-quality-fix-all",
-  "category": "other"
+  "category": "other",
+  "author": "UKGovernmentBEIS",
+  "source_url": "https://github.com/UKGovernmentBEIS/inspect_evals/blob/main/.claude/skills/code-quality-fix-all/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 UK AI Security Institute",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

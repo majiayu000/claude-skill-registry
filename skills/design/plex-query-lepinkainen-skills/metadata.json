@@ -5,5 +5,12 @@
   "description": "This skill should be used when the user asks questions about their Plex media library, such as \"what movies can I watch on Plex\", \"find romantic movies under 100 minutes\", \"show me Tom Cruise films fr",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:47.332815Z",
-  "dir_name": "plex-query-lepinkainen-skills"
+  "dir_name": "plex-query-lepinkainen-skills",
+  "author": "lepinkainen",
+  "source_url": "https://github.com/lepinkainen/skills",
+  "license": "CC0-1.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lepinkainen/skills",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

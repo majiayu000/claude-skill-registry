@@ -5,5 +5,12 @@
   "source": "github.com/ManuelKugelmann/BitBot",
   "downloaded_at": "2026-02-04T03:23:59.292854Z",
   "dir_name": "claude-template-skill",
-  "category": "data"
+  "category": "data",
+  "author": "ManuelKugelmann",
+  "source_url": "https://github.com/ManuelKugelmann/BitBot/blob/main/container/templates/bitbot-config/.claude/skills/claude-template-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Manuel Kugelmann, Bitcraft IT Consulting",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:06.639927Z",
   "dir_name": "ollama-gemma-assistant",
   "github_path": ".pagia/skills/ollama-gemma-assistant",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "automacoescomerciaisintegradas",
+  "source_url": "https://github.com/automacoescomerciaisintegradas/PAGIA/blob/main/.pagia/skills/ollama-gemma-assistant/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/automacoescomerciaisintegradas/PAGIA/blob/main/.pagia/skills/ollama-gemma-assistant/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

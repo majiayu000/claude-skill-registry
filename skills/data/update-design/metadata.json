@@ -5,5 +5,12 @@
   "source": "github.com/gaebalai/claude-code-orchestrator",
   "downloaded_at": "2026-02-04T01:11:48.060731Z",
   "dir_name": "update-design",
-  "category": "data"
+  "category": "data",
+  "author": "gaebalai",
+  "source_url": "https://github.com/gaebalai/claude-code-orchestrator/blob/main/.claude/skills/update-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 gaebalai by JAEWOO, KIM.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

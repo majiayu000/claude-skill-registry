@@ -9,5 +9,12 @@
   ],
   "stars": 38,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "conventional-commits"
+  "dir_name": "conventional-commits",
+  "author": "vm0-ai",
+  "source_url": "https://github.com/vm0-ai/vm0",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vm0-ai/vm0",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

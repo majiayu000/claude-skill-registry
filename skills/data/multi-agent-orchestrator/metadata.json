@@ -10,5 +10,12 @@
   ],
   "stars": 2,
   "source": "local",
-  "dir_name": "multi-agent-orchestrator"
+  "dir_name": "multi-agent-orchestrator",
+  "author": "tekliner",
+  "source_url": "https://github.com/tekliner/improvado-agentic-frameworks-and-skills",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tekliner/improvado-agentic-frameworks-and-skills",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

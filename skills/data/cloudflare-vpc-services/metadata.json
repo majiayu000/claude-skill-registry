@@ -5,5 +5,12 @@
   "source": "github.com/nodnarbnitram/claude-code-extensions",
   "downloaded_at": "2026-02-04T02:53:55.438811Z",
   "dir_name": "cloudflare-vpc-services",
-  "category": "data"
+  "category": "data",
+  "author": "nodnarbnitram",
+  "source_url": "https://github.com/nodnarbnitram/claude-code-extensions/blob/main/.claude/skills/cloudflare-vpc-services/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brandon Martin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

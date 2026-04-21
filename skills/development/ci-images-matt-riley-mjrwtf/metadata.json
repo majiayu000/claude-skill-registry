@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:00.039632Z",
   "github_path": ".github/skills/ci-images",
   "github_branch": "main",
-  "dir_name": "ci-images-matt-riley-mjrwtf"
+  "dir_name": "ci-images-matt-riley-mjrwtf",
+  "author": "matt-riley",
+  "source_url": "https://github.com/matt-riley/mjrwtf/blob/main/.github/skills/ci-images/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 matt-riley",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

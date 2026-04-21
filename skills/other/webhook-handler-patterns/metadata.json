@@ -9,5 +9,12 @@
   "github_path": "skills/webhook-handler-patterns",
   "github_branch": "main",
   "dir_name": "webhook-handler-patterns",
-  "downloaded_at": "2026-02-05T01:44:14.519498Z"
+  "downloaded_at": "2026-02-05T01:44:14.519498Z",
+  "author": "hookdeck",
+  "source_url": "https://github.com/hookdeck/webhook-skills/blob/main/skills/webhook-handler-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Hookdeck",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "commit-push-pr-llama-farm-llamafarm-10b4ebdc",
   "category": "other",
   "github_path": ".claude/skills/commit-push-pr",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "llama-farm",
+  "source_url": "https://github.com/llama-farm/llamafarm/blob/main/.claude/skills/commit-push-pr/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/llama-farm/llamafarm/blob/main/.claude/skills/commit-push-pr/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

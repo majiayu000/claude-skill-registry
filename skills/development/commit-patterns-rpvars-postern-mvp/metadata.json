@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:07.940783Z",
   "github_path": ".claude/skills/commit-patterns",
   "github_branch": "main",
-  "dir_name": "commit-patterns-rpvars-postern-mvp"
+  "dir_name": "commit-patterns-rpvars-postern-mvp",
+  "author": "RPvars",
+  "source_url": "https://github.com/RPvars/postern-mvp/blob/main/.claude/skills/commit-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RPvars/postern-mvp/blob/main/.claude/skills/commit-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

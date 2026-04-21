@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:25.287889Z",
   "github_path": "Categories/Documentation/repo-doc-auditor",
   "github_branch": "main",
-  "dir_name": "repo-doc-auditor-ogprotege-skills"
+  "dir_name": "repo-doc-auditor-ogprotege-skills",
+  "author": "ogprotege",
+  "source_url": "https://github.com/ogprotege/Skills/blob/main/Categories/Documentation/repo-doc-auditor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 William Sherman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

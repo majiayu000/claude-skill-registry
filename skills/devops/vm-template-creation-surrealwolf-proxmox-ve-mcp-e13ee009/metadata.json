@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:36.978753Z",
   "github_path": ".github/skills/vm-template-creation",
   "github_branch": "main",
-  "dir_name": "vm-template-creation-surrealwolf-proxmox-ve-mcp-e13ee009"
+  "dir_name": "vm-template-creation-surrealwolf-proxmox-ve-mcp-e13ee009",
+  "author": "surrealwolf",
+  "source_url": "https://github.com/surrealwolf/proxmox-ve-mcp/blob/main/.github/skills/vm-template-creation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Lee Chapman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

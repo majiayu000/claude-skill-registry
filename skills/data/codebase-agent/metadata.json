@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "codebase-agent"
+  "dir_name": "codebase-agent",
+  "author": "harivansh-afk",
+  "source_url": "https://github.com/harivansh-afk/claude-continual-learning",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/harivansh-afk/claude-continual-learning",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

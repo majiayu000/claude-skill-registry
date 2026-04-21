@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:50.088135Z",
   "github_path": ".github/skills/code-runner",
   "github_branch": "main",
-  "dir_name": "code-runner"
+  "dir_name": "code-runner",
+  "author": "formulahendry",
+  "source_url": "https://github.com/formulahendry/agent-skill-code-runner/blob/main/.github/skills/code-runner/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

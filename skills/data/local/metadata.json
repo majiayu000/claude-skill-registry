@@ -5,5 +5,12 @@
   "source": "github.com/dagster-io/erk",
   "downloaded_at": "2026-02-02T01:09:46.619659Z",
   "dir_name": "local",
-  "category": "data"
+  "category": "data",
+  "author": "dagster-io",
+  "source_url": "https://github.com/dagster-io/erk/blob/main/.claude/commands/local/audit-skill.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dagster-io/erk/blob/main/.claude/commands/local/audit-skill.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

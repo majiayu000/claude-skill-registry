@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/coding-aider-plan-generator",
   "github_branch": "main",
-  "dir_name": "coding-aider-plan-generator-p-wegner-coding-aider"
+  "dir_name": "coding-aider-plan-generator-p-wegner-coding-aider",
+  "author": "p-wegner",
+  "source_url": "https://github.com/p-wegner/coding-aider/blob/main/.claude/skills/coding-aider-plan-generator/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

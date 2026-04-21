@@ -5,5 +5,12 @@
   "source": "github.com/jwwelbor/shark-task-manager",
   "downloaded_at": "2026-01-29T04:09:36.662289Z",
   "dir_name": "collaboration",
-  "category": "data"
+  "category": "data",
+  "author": "jwwelbor",
+  "source_url": "https://github.com/jwwelbor/shark-task-manager/blob/main/.claude/skills/collaboration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 John Welborn",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

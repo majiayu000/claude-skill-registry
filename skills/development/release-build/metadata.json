@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:21:01.452587Z",
   "github_path": ".claude/skills/release-build",
   "github_branch": "main",
-  "dir_name": "release-build"
+  "dir_name": "release-build",
+  "author": "kzahedi",
+  "source_url": "https://github.com/kzahedi/YARS/blob/main/.claude/skills/release-build/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2016 Keyan Ghazi-Zahedi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

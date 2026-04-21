@@ -7,5 +7,12 @@
   "stars": 1,
   "source": "github.com/eyepyon/car",
   "downloaded_at": "2026-01-24T16:15:55.557557Z",
-  "dir_name": "erc4337-privacy-wallet"
+  "dir_name": "erc4337-privacy-wallet",
+  "author": "eyepyon",
+  "source_url": "https://github.com/eyepyon/car/blob/main/.codex/skills/erc4337-privacy-wallet-dev/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 eye junk Haruki",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

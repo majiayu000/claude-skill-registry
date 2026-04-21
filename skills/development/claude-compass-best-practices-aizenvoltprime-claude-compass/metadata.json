@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/claude-compass-best-practices",
   "github_branch": "main",
-  "dir_name": "claude-compass-best-practices-aizenvoltprime-claude-compass"
+  "dir_name": "claude-compass-best-practices-aizenvoltprime-claude-compass",
+  "author": "AizenvoltPrime",
+  "source_url": "https://github.com/AizenvoltPrime/claude-compass/blob/main/.claude/skills/claude-compass-best-practices/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

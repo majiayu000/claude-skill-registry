@@ -5,5 +5,12 @@
   "source": "github.com/ccheney/robust-skills",
   "downloaded_at": "2026-01-29T08:47:37.848771Z",
   "dir_name": "postgres-drizzle-ccheney-robust-skills-c00d4a57",
-  "category": "other"
+  "category": "other",
+  "author": "ccheney",
+  "source_url": "https://github.com/ccheney/robust-skills/blob/main/skills/postgres-drizzle/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 robust-skills contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

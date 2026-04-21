@@ -7,5 +7,12 @@
   "dir_name": "component-docs-batcher",
   "category": "other",
   "github_path": "skills/component-docs-batcher",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "evanfang0054",
+  "source_url": "https://github.com/evanfang0054/cc-system-creator-scripts/blob/main/skills/component-docs-batcher/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Evan Fang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

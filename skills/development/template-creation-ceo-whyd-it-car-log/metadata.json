@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:23.898365Z",
   "github_path": "claude_skills/template-creation",
   "github_branch": "main",
-  "dir_name": "template-creation-ceo-whyd-it-car-log"
+  "dir_name": "template-creation-ceo-whyd-it-car-log",
+  "author": "ceo-whyd-it",
+  "source_url": "https://github.com/ceo-whyd-it/car-log/blob/main/claude_skills/template-creation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ceo-whyd-it/car-log/blob/main/claude_skills/template-creation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

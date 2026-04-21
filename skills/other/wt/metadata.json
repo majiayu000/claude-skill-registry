@@ -5,5 +5,12 @@
   "source": "github.com/llama-farm/llamafarm",
   "downloaded_at": "2026-02-02T01:42:15.868855Z",
   "dir_name": "wt",
-  "category": "other"
+  "category": "other",
+  "author": "llama-farm",
+  "source_url": "https://github.com/llama-farm/llamafarm/blob/main/.claude/skills/wt/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/llama-farm/llamafarm/blob/main/.claude/skills/wt/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

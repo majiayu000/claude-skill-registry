@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/enoch-robinson/agent-skill-collection",
-  "dir_name": "ci-cd-builder"
+  "dir_name": "ci-cd-builder",
+  "author": "enoch-robinson",
+  "source_url": "https://github.com/enoch-robinson/agent-skill-collection",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/enoch-robinson/agent-skill-collection",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

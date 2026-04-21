@@ -5,5 +5,12 @@
   "source": "github.com/libertininick/chain-reaction",
   "downloaded_at": "2026-02-02T04:39:28.626200Z",
   "dir_name": "pythonic-conventions",
-  "category": "other"
+  "category": "other",
+  "author": "libertininick",
+  "source_url": "https://github.com/libertininick/chain-reaction/blob/main/.claude/skills/pythonic-conventions/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 - Present Nick Libertini",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

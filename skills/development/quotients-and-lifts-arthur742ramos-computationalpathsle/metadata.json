@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": ".claude/skills/quotients-and-lifts",
   "github_branch": "main",
-  "dir_name": "quotients-and-lifts-arthur742ramos-computationalpathsle"
+  "dir_name": "quotients-and-lifts-arthur742ramos-computationalpathsle",
+  "author": "Arthur742Ramos",
+  "source_url": "https://github.com/Arthur742Ramos/ComputationalPathsLean/blob/main/.claude/skills/quotients-and-lifts/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Computational Paths contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

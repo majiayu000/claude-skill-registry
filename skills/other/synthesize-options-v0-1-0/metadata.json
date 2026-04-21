@@ -5,5 +5,12 @@
   "source": "github.com/hummbl-dev/hummbl-agent",
   "downloaded_at": "2026-02-02T03:57:30.725524Z",
   "dir_name": "synthesize-options-v0-1-0",
-  "category": "other"
+  "category": "other",
+  "author": "hummbl-dev",
+  "source_url": "https://github.com/hummbl-dev/hummbl-agent/blob/main/skills/sy8/synthesize-options.v0.1.0/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2026 Reuben Bowlby and Daniel Matha. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

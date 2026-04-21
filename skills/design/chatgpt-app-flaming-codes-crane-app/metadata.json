@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:06.060586Z",
   "github_path": ".github/skills/chatgpt-app",
   "github_branch": "main",
-  "dir_name": "chatgpt-app-flaming-codes-crane-app"
+  "dir_name": "chatgpt-app-flaming-codes-crane-app",
+  "author": "flaming-codes",
+  "source_url": "https://github.com/flaming-codes/crane-app/blob/main/.github/skills/chatgpt-app/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/Automattic/wordpress-activitypub",
   "downloaded_at": "2026-01-29T08:59:03.278324Z",
   "dir_name": "code-style-automattic-wordpress-activitypu",
-  "category": "other"
+  "category": "other",
+  "author": "Automattic",
+  "source_url": "https://github.com/Automattic/wordpress-activitypub/blob/main/.claude/skills/code-style/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2019 Matthias Pfefferle",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:57.276237Z",
   "github_path": ".github/skills/clock",
   "github_branch": "main",
-  "dir_name": "clock-marcopeg-diary"
+  "dir_name": "clock-marcopeg-diary",
+  "author": "marcopeg",
+  "source_url": "https://github.com/marcopeg/diary/blob/main/.github/skills/clock/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/marcopeg/diary/blob/main/.github/skills/clock/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

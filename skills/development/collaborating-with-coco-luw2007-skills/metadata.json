@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:52.754900Z",
   "github_path": "collaborating-with-coco",
   "github_branch": "main",
-  "dir_name": "collaborating-with-coco-luw2007-skills"
+  "dir_name": "collaborating-with-coco-luw2007-skills",
+  "author": "luw2007",
+  "source_url": "https://github.com/luw2007/skills/blob/main/collaborating-with-coco/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 luw2007",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

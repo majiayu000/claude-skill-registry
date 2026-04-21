@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:48.537871Z",
   "github_path": "corvran/skills/panel-patterns",
   "github_branch": "main",
-  "dir_name": "panel-patterns-rjroy-adventure-engine-cor"
+  "dir_name": "panel-patterns-rjroy-adventure-engine-cor",
+  "author": "rjroy",
+  "source_url": "https://github.com/rjroy/adventure-engine-corvran/blob/main/corvran/skills/panel-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ronald Roy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

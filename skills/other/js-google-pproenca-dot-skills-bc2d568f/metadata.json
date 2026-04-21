@@ -7,5 +7,12 @@
   "dir_name": "js-google-pproenca-dot-skills-bc2d568f",
   "category": "other",
   "github_path": "skills/.experimental/js-google",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "pproenca",
+  "source_url": "https://github.com/pproenca/dot-skills/blob/main/skills/.experimental/js-google/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

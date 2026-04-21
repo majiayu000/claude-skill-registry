@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/chart-generation",
   "github_branch": "main",
-  "dir_name": "chart-generation"
+  "dir_name": "chart-generation",
+  "author": "YFOOOO",
+  "source_url": "https://github.com/YFOOOO/financial_agent/blob/main/skills/chart-generation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/YFOOOO/financial_agent/blob/main/skills/chart-generation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

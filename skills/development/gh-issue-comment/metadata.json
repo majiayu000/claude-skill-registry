@@ -5,5 +5,12 @@
   "description": "Add comments to GitHub issues using gh CLI. Provide updates, ask questions, share progress, or collaborate on issues. Use when user wants to communicate on an issue.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:29.251295Z",
-  "dir_name": "gh-issue-comment"
+  "dir_name": "gh-issue-comment",
+  "author": "dceoy",
+  "source_url": "https://github.com/dceoy/gh-actions-for-devops",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Daichi Narushima",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

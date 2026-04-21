@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": ".claude/skills/spec-flow-auto",
   "github_branch": "main",
-  "dir_name": "spec-flow-auto-nobu007-connective-byte"
+  "dir_name": "spec-flow-auto-nobu007-connective-byte",
+  "author": "nobu007",
+  "source_url": "https://github.com/nobu007/connective-byte/blob/main/.claude/skills/spec-flow-auto/SKILL.md",
+  "license": "MPL-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nobu007/connective-byte/blob/main/.claude/skills/spec-flow-auto/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

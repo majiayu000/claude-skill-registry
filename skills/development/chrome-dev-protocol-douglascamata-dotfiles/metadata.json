@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:12.423144Z",
   "github_path": "home/dot_claude/skills/chrome-dev-protocol",
   "github_branch": "main",
-  "dir_name": "chrome-dev-protocol-douglascamata-dotfiles"
+  "dir_name": "chrome-dev-protocol-douglascamata-dotfiles",
+  "author": "douglascamata",
+  "source_url": "https://github.com/douglascamata/dotfiles/blob/main/home/dot_claude/skills/chrome-dev-protocol/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Douglas Camata",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

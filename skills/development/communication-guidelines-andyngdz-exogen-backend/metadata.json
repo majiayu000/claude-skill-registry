@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:34.000842Z",
   "github_path": ".opencode/skills/communication-guidelines",
   "github_branch": "main",
-  "dir_name": "communication-guidelines-andyngdz-exogen-backend"
+  "dir_name": "communication-guidelines-andyngdz-exogen-backend",
+  "author": "andyngdz",
+  "source_url": "https://github.com/andyngdz/exogen_backend/blob/main/.opencode/skills/communication-guidelines/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Andy D. Nguyen",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

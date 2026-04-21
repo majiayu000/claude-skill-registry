@@ -5,5 +5,12 @@
   "description": "Comprehensive code review with security, performance, and quality analysis. Use when users ask to review code, analyze code quality, evaluate pull requests, or mention code review, security analysis, ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:15.882876Z",
-  "dir_name": "code-review-specialist"
+  "dir_name": "code-review-specialist",
+  "author": "luongnv89",
+  "source_url": "https://github.com/luongnv89/claude-howto",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 luongnv89",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

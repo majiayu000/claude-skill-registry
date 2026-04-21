@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/fsyyft-go/kratos-layout",
-  "dir_name": "git-commit-writer-fsyyft-go-kratos-layout-2"
+  "dir_name": "git-commit-writer-fsyyft-go-kratos-layout-2",
+  "author": "fsyyft-go",
+  "source_url": "https://github.com/fsyyft-go/kratos-layout/blob/main/.claude/skills/git-commit-writer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 fsyyft-go",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

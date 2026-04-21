@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/islamu-ngo/Explore",
-  "dir_name": "dotnet-efcore-guidelines-islamu-ngo-explore-2"
+  "dir_name": "dotnet-efcore-guidelines-islamu-ngo-explore-2",
+  "author": "islamu-ngo",
+  "source_url": "https://github.com/islamu-ngo/Explore/blob/main/.claude/skills/dotnet-efcore-guidelines/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

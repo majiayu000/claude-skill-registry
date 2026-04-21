@@ -5,5 +5,12 @@
   "source": "github.com/aaronbassett/claude-bell",
   "downloaded_at": "2026-02-04T02:44:30.023941Z",
   "dir_name": "init-local-tooling",
-  "category": "data"
+  "category": "data",
+  "author": "aaronbassett",
+  "source_url": "https://github.com/aaronbassett/claude-bell/blob/main/.claude/skills/init-local-tooling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaronbassett/claude-bell/blob/main/.claude/skills/init-local-tooling/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

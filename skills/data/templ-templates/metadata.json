@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:00.515407Z",
   "dir_name": "templ-templates",
   "github_path": ".github/skills/templ-templates",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "matt-riley",
+  "source_url": "https://github.com/matt-riley/mjrwtf/blob/main/.github/skills/templ-templates/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 matt-riley",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

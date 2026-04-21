@@ -5,5 +5,12 @@
   "source": "github.com/anam-org/metaxy",
   "downloaded_at": "2026-01-29T05:16:35.872791Z",
   "dir_name": "claude-improve-config-anam-org-metaxy-f92d03b0",
-  "category": "other"
+  "category": "other",
+  "author": "anam-org",
+  "source_url": "https://github.com/anam-org/metaxy/blob/main/.claude/skills/claude-improve-config/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anam-org/metaxy/blob/main/.claude/skills/claude-improve-config/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

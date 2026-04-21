@@ -7,5 +7,12 @@
   "dir_name": "invalid-name-consecutive-hyphens",
   "category": "other",
   "github_path": "tests/fixtures/invalid-name-consecutive-hyphens",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "pproenca",
+  "source_url": "https://github.com/pproenca/dot-skills/blob/main/tests/fixtures/invalid-name-consecutive-hyphens/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

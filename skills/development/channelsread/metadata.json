@@ -5,5 +5,12 @@
   "description": "Read messages from a channel. Use this to check for new messages, review issue history, or catch up on session logs.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:15.309058Z",
-  "dir_name": "channelsread"
+  "dir_name": "channelsread",
+  "author": "tnez",
+  "source_url": "https://github.com/tnez/dot-agents",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 @tnez",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

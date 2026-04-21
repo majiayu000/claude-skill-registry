@@ -5,5 +5,12 @@
   "description": "Clean up task branches and worktrees after merge to main",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:48.659323Z",
-  "dir_name": "task-cleanup"
+  "dir_name": "task-cleanup",
+  "author": "cowwoc",
+  "source_url": "https://github.com/cowwoc/styler",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2026 Gili Tzabari. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

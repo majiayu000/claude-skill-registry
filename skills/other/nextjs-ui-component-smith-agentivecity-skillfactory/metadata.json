@@ -5,5 +5,12 @@
   "source": "github.com/AgentiveCity/SkillFactory",
   "downloaded_at": "2026-01-29T08:26:34.702671Z",
   "dir_name": "nextjs-ui-component-smith-agentivecity-skillfactory",
-  "category": "other"
+  "category": "other",
+  "author": "AgentiveCity",
+  "source_url": "https://github.com/AgentiveCity/SkillFactory/blob/main/.claude/skills/nextjs-ui-component-smith/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AgentiveCity/SkillFactory/blob/main/.claude/skills/nextjs-ui-component-smith/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

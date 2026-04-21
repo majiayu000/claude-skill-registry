@@ -5,5 +5,12 @@
   "description": "Session ID is automatically injected at SessionStart via echo-session-id.sh hook",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:48.187654Z",
-  "dir_name": "get-session-id"
+  "dir_name": "get-session-id",
+  "author": "cowwoc",
+  "source_url": "https://github.com/cowwoc/styler",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2026 Gili Tzabari. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

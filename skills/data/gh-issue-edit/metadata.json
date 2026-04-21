@@ -5,5 +5,12 @@
   "description": "Edit GitHub issue metadata using gh CLI. Update title, body, labels, assignees, milestones, and projects. Use when issue details need to be changed.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:23.553286Z",
-  "dir_name": "gh-issue-edit"
+  "dir_name": "gh-issue-edit",
+  "author": "dceoy",
+  "source_url": "https://github.com/dceoy/gh-actions-for-devops",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Daichi Narushima",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

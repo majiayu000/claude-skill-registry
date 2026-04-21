@@ -5,5 +5,12 @@
   "source": "github.com/saifoelloh/golang-best-practices-skill",
   "downloaded_at": "2026-02-02T03:39:23.824022Z",
   "dir_name": "idiomatic-go",
-  "category": "other"
+  "category": "other",
+  "author": "saifoelloh",
+  "source_url": "https://github.com/saifoelloh/golang-best-practices-skill/blob/main/idiomatic-go/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 saifoelloh (saifoelloh@gmail.com)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

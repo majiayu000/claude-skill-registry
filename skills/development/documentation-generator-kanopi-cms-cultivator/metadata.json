@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/documentation-generator",
   "github_branch": "main",
-  "dir_name": "documentation-generator-kanopi-cms-cultivator"
+  "dir_name": "documentation-generator-kanopi-cms-cultivator",
+  "author": "kanopi",
+  "source_url": "https://github.com/kanopi/cms-cultivator/blob/main/skills/documentation-generator/SKILL.md",
+  "license": "GPL-2.0",
+  "copyright": "Copyright (C) 1989, 1991 Free Software Foundation, Inc.,",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/kiro-skill",
   "github_branch": "main",
-  "dir_name": "kiro-skill"
+  "dir_name": "kiro-skill",
+  "author": "feiskyer",
+  "source_url": "https://github.com/feiskyer/codex-settings/blob/main/skills/kiro-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-Now Pengfei Ni",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

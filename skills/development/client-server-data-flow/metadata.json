@@ -11,5 +11,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "client-server-data-flow"
+  "dir_name": "client-server-data-flow",
+  "author": "Reodor-Studios",
+  "source_url": "https://github.com/Reodor-Studios/create-reodor-app",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Reodor-Studios/create-reodor-app",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

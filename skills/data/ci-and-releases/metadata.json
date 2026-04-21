@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "ci-and-releases",
   "github_path": ".claude/skills/ci-and-releases",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Arthur742Ramos",
+  "source_url": "https://github.com/Arthur742Ramos/ComputationalPathsLean/blob/main/.claude/skills/ci-and-releases/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Computational Paths contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

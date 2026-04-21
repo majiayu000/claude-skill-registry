@@ -5,5 +5,12 @@
   "description": "Develops iOS applications with XcodeGen, SwiftUI, and SPM. Triggers on XcodeGen project.yml configuration, SPM dependency issues, device deployment problems, code signing errors, camera/AVFoundation d",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:32.295144Z",
-  "dir_name": "developing-ios-apps"
+  "dir_name": "developing-ios-apps",
+  "author": "daymade",
+  "source_url": "https://github.com/daymade/claude-code-skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 daymade",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

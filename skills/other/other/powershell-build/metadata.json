@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/Verridian-ai/life-os-Pulse-banner-generator",
   "dir_name": "powershell-build",
-  "downloaded_at": "2026-02-22T05:53:30.520000Z"
+  "downloaded_at": "2026-02-22T05:53:30.520000Z",
+  "author": "Verridian-ai",
+  "source_url": "https://github.com/Verridian-ai/life-os-Pulse-banner-generator/blob/main/.claude/skills/powershell_build/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Verridian-ai/life-os-Pulse-banner-generator/blob/main/.claude/skills/powershell_build/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

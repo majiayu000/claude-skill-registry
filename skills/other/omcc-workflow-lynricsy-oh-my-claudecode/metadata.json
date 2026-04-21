@@ -7,5 +7,12 @@
   "dir_name": "omcc-workflow-lynricsy-oh-my-claudecode",
   "category": "other",
   "github_path": "skills/omcc-workflow",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Lynricsy",
+  "source_url": "https://github.com/Lynricsy/Oh-My-ClaudeCode/blob/main/skills/omcc-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Oh-My-ClaudeCode Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

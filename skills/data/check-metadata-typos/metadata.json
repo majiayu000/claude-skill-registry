@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:42.724319Z",
   "dir_name": "check-metadata-typos",
   "github_path": ".claude/skills/check-metadata-typos",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "owid",
+  "source_url": "https://github.com/owid/etl/blob/main/.claude/skills/check-metadata-typos/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Global Change Data Lab",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

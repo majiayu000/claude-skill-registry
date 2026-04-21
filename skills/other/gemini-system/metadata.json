@@ -5,5 +5,12 @@
   "source": "github.com/gaebalai/claude-code-orchestrator",
   "downloaded_at": "2026-02-02T01:17:25.314940Z",
   "dir_name": "gemini-system",
-  "category": "other"
+  "category": "other",
+  "author": "gaebalai",
+  "source_url": "https://github.com/gaebalai/claude-code-orchestrator/blob/main/.claude/skills/gemini-system/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 gaebalai by JAEWOO, KIM.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

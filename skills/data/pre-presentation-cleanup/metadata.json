@@ -5,5 +5,12 @@
   "description": "Complete mandatory cleanup before presenting changes for user approval in AWAITING_USER_APPROVAL state",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:48.497622Z",
-  "dir_name": "pre-presentation-cleanup"
+  "dir_name": "pre-presentation-cleanup",
+  "author": "cowwoc",
+  "source_url": "https://github.com/cowwoc/styler",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2026 Gili Tzabari. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:51.577135Z",
   "github_path": "skill",
   "github_branch": "main",
-  "dir_name": "cli-ux-tester-ali5ter-claude-cli-ux-skill"
+  "dir_name": "cli-ux-tester-ali5ter-claude-cli-ux-skill",
+  "author": "ali5ter",
+  "source_url": "https://github.com/ali5ter/claude-cli-ux-skill/blob/main/skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Alister Lewis-Bowen",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "明示的に呼び出されたときにのみ読み込みます。エージェントが自律的に呼び出す必要はありません。",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:07:54.986721Z",
-  "dir_name": "tdd-cycle-skill"
+  "dir_name": "tdd-cycle-skill",
+  "author": "rimanem18",
+  "source_url": "https://github.com/rimanem18/hoxt-backlog",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rimanem18/hoxt-backlog",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

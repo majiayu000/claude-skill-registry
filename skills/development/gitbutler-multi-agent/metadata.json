@@ -5,5 +5,12 @@
   "description": "Coordinate multiple AI agents working concurrently in the same workspace using GitButler's virtual branch model. Use for parallel development, sequential handoffs, and commit transfer patterns without",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:38.098976Z",
-  "dir_name": "gitbutler-multi-agent"
+  "dir_name": "gitbutler-multi-agent",
+  "author": "outfitter-dev",
+  "source_url": "https://github.com/outfitter-dev/agents",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Outfitter",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

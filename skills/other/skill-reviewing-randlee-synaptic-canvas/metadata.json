@@ -5,5 +5,12 @@
   "source": "github.com/randlee/synaptic-canvas",
   "downloaded_at": "2026-01-29T05:29:56.999674Z",
   "dir_name": "skill-reviewing-randlee-synaptic-canvas",
-  "category": "other"
+  "category": "other",
+  "author": "randlee",
+  "source_url": "https://github.com/randlee/synaptic-canvas/blob/main/.claude/skills/skill-reviewing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Rand Lee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

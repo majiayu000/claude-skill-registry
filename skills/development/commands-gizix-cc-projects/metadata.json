@@ -7,5 +7,12 @@
   "stars": 1,
   "source": "github.com/gizix/cc_projects",
   "downloaded_at": "2026-01-24T16:15:08.621642Z",
-  "dir_name": "commands-gizix-cc-projects"
+  "dir_name": "commands-gizix-cc-projects",
+  "author": "gizix",
+  "source_url": "https://github.com/gizix/cc_projects/blob/main/.claude/commands/add-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gizix/cc_projects/blob/main/.claude/commands/add-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

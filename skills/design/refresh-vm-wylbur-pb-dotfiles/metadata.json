@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:18.063857Z",
   "github_path": "ai/claude-code/skills/refresh",
   "github_branch": "main",
-  "dir_name": "refresh-vm-wylbur-pb-dotfiles"
+  "dir_name": "refresh-vm-wylbur-pb-dotfiles",
+  "author": "vm-wylbur",
+  "source_url": "https://github.com/vm-wylbur/pb-dotfiles/blob/main/ai/claude-code/skills/refresh/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vm-wylbur/pb-dotfiles/blob/main/ai/claude-code/skills/refresh/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

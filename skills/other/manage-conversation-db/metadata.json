@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/manage-conversation-db",
   "github_branch": "main",
   "dir_name": "manage-conversation-db",
-  "downloaded_at": "2026-02-05T01:44:36.203061Z"
+  "downloaded_at": "2026-02-05T01:44:36.203061Z",
+  "author": "sarimofficial",
+  "source_url": "https://github.com/sarimofficial/HackathonlPhase-IV-AI-Powered-Kubernetes-Deployment-Minikube-Helm-kubectl-ai-Kagent-Gordon/blob/main/.claude/skills/manage-conversation-db/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sarimofficial/HackathonlPhase-IV-AI-Powered-Kubernetes-Deployment-Minikube-Helm-kubectl-ai-Kagent-Gordon/blob/main/.claude/skills/manage-conversation-db/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

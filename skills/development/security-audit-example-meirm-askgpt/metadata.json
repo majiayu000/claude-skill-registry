@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:40.676192Z",
   "github_path": "examples/skills/security-audit-example",
   "github_branch": "main",
-  "dir_name": "security-audit-example-meirm-askgpt"
+  "dir_name": "security-audit-example-meirm-askgpt",
+  "author": "meirm",
+  "source_url": "https://github.com/meirm/askGPT/blob/main/examples/skills/security-audit-example/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2023 Meir Michanie",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

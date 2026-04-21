@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:47.250657Z",
   "github_path": ".opencode/skill/tech-stack-specialist",
   "github_branch": "main",
-  "dir_name": "tech-stack-specialist-d-oit-do-novelist-ai"
+  "dir_name": "tech-stack-specialist-d-oit-do-novelist-ai",
+  "author": "d-oit",
+  "source_url": "https://github.com/d-oit/do-novelist-ai/blob/main/.opencode/skill/tech-stack-specialist/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/d-oit/do-novelist-ai/blob/main/.opencode/skill/tech-stack-specialist/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "dir_name": "cook-county-data-portal-misterclean-claude-plugins-e6e414ce",
   "category": "other",
   "github_path": "skills/cook-county-data-portal",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "MisterClean",
+  "source_url": "https://github.com/MisterClean/claude-plugins/blob/main/skills/cook-county-data-portal/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Michael McLean",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

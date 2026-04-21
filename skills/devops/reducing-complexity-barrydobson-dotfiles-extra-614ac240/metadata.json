@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:08.920892Z",
   "github_path": "packages/claude/.claude/skills/architecture/reducing-complexity",
   "github_branch": "main",
-  "dir_name": "reducing-complexity-barrydobson-dotfiles-extra-614ac240"
+  "dir_name": "reducing-complexity-barrydobson-dotfiles-extra-614ac240",
+  "author": "barrydobson",
+  "source_url": "https://github.com/barrydobson/dotfiles_extra/blob/main/packages/claude/.claude/skills/architecture/reducing-complexity/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Personal Dotfiles",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

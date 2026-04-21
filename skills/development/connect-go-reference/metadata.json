@@ -9,5 +9,12 @@
   ],
   "stars": 8,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "connect-go-reference"
+  "dir_name": "connect-go-reference",
+  "author": "washanhanzi",
+  "source_url": "https://github.com/washanhanzi/connectrpc-axum",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/washanhanzi/connectrpc-axum",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

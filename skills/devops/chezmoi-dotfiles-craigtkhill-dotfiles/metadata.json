@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/chezmoi-dotfiles",
   "github_branch": "main",
-  "dir_name": "chezmoi-dotfiles-craigtkhill-dotfiles"
+  "dir_name": "chezmoi-dotfiles-craigtkhill-dotfiles",
+  "author": "craigtkhill",
+  "source_url": "https://github.com/craigtkhill/dotfiles/blob/main/.claude/skills/chezmoi-dotfiles/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Craig Hill",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

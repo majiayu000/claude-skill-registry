@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:52.572560Z",
   "github_path": "plugins/rust-gpui-developer/skills/gpui-performance",
   "github_branch": "main",
-  "dir_name": "gpui-performance-geoffjay-claude-plugins-1956af09"
+  "dir_name": "gpui-performance-geoffjay-claude-plugins-1956af09",
+  "author": "geoffjay",
+  "source_url": "https://github.com/geoffjay/claude-plugins/blob/main/plugins/rust-gpui-developer/skills/gpui-performance/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Geoff Johnson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

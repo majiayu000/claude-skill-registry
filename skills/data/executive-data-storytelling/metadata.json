@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:40.856928Z",
   "dir_name": "executive-data-storytelling",
   "github_path": "plugins/executive-data-storytelling/skills/executive-data-storytelling",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "cameronsjo",
+  "source_url": "https://github.com/cameronsjo/claude-marketplace/blob/main/plugins/executive-data-storytelling/skills/executive-data-storytelling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Cameron Sjo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/delivery-and-infra",
   "github_branch": "main",
-  "dir_name": "delivery-and-infra-trash-panda-v91-beta-the-sidekicks"
+  "dir_name": "delivery-and-infra-trash-panda-v91-beta-the-sidekicks",
+  "author": "trash-panda-v91-beta",
+  "source_url": "https://github.com/trash-panda-v91-beta/the-sidekicks/blob/main/skills/delivery-and-infra/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/trash-panda-v91-beta/the-sidekicks/blob/main/skills/delivery-and-infra/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

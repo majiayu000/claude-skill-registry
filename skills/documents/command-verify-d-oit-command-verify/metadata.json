@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/command-verify",
   "github_branch": "main",
-  "dir_name": "command-verify-d-oit-command-verify"
+  "dir_name": "command-verify-d-oit-command-verify",
+  "author": "d-oit",
+  "source_url": "https://github.com/d-oit/command-verify/blob/main/.claude/skills/command-verify/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 d.o.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "first-principle-thinking",
   "github_branch": "main",
-  "dir_name": "first-principle-thinking-campbellmcgregor-claude-skills-repo"
+  "dir_name": "first-principle-thinking-campbellmcgregor-claude-skills-repo",
+  "author": "campbellmcgregor",
+  "source_url": "https://github.com/campbellmcgregor/claude-skills-repo/blob/main/first-principle-thinking/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Campbell McGregor",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

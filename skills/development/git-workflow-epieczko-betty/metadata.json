@@ -7,5 +7,12 @@
   "stars": 0,
   "source": "github.com/epieczko/betty",
   "downloaded_at": "2026-01-24T16:15:45.061966Z",
-  "dir_name": "git-workflow-epieczko-betty"
+  "dir_name": "git-workflow-epieczko-betty",
+  "author": "epieczko",
+  "source_url": "https://github.com/epieczko/betty/blob/main/examples/git-workflow/git-createpr-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/epieczko/betty/blob/main/examples/git-workflow/git-createpr-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

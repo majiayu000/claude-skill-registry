@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/dreamineering/meme-times",
-  "dir_name": "meme-trader-dreamineering-meme-times-2"
+  "dir_name": "meme-trader-dreamineering-meme-times-2",
+  "author": "dreamineering",
+  "source_url": "https://github.com/dreamineering/meme-times/blob/main/.claude/skills/meme-trader/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dreamineering/meme-times/blob/main/.claude/skills/meme-trader/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

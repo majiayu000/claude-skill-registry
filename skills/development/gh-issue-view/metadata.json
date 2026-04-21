@@ -5,5 +5,12 @@
   "description": "View GitHub issue details using gh CLI. Shows issue status, comments, timeline, and metadata. Use when user wants to inspect issue information or check status.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:30.165933Z",
-  "dir_name": "gh-issue-view"
+  "dir_name": "gh-issue-view",
+  "author": "dceoy",
+  "source_url": "https://github.com/dceoy/gh-actions-for-devops",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Daichi Narushima",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "",
   "github_branch": "main",
-  "dir_name": "clink-standalone-vcnoc-clink-standalone"
+  "dir_name": "clink-standalone-vcnoc-clink-standalone",
+  "author": "VCnoC",
+  "source_url": "https://github.com/VCnoC/clink-standalone",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/VCnoC/clink-standalone",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

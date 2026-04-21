@@ -5,5 +5,12 @@
   "source": "github.com/sendaifun/skills",
   "downloaded_at": "2026-01-29T06:57:33.994011Z",
   "dir_name": "solana-agent-kit-sendaifun-skills-679ad74d",
-  "category": "other"
+  "category": "other",
+  "author": "sendaifun",
+  "source_url": "https://github.com/sendaifun/skills/blob/main/skills/solana-agent-kit/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2024 SendAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

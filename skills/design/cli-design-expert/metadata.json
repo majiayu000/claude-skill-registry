@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "cli-design-expert"
+  "dir_name": "cli-design-expert",
+  "author": "DammianMiller",
+  "source_url": "https://github.com/DammianMiller/universal-agent-memory",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dammian Miller",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

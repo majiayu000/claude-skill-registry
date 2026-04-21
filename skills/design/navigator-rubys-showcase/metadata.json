@@ -9,5 +9,12 @@
   "stars": 34,
   "github_path": ".claude/skills/navigator",
   "github_branch": "main",
-  "dir_name": "navigator-rubys-showcase"
+  "dir_name": "navigator-rubys-showcase",
+  "author": "rubys",
+  "source_url": "https://github.com/rubys/showcase/blob/main/.claude/skills/navigator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Sam Ruby",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

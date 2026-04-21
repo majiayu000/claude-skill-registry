@@ -11,5 +11,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "claude-code-excellence-audit-romiluz13-claude-code-excellen"
+  "dir_name": "claude-code-excellence-audit-romiluz13-claude-code-excellen",
+  "author": "romiluz13",
+  "source_url": "https://github.com/romiluz13/claude-code-excellence-audit",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/romiluz13/claude-code-excellence-audit",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

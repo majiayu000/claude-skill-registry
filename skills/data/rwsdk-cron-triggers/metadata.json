@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "rwsdk-cron-triggers"
+  "dir_name": "rwsdk-cron-triggers",
+  "author": "kcc989",
+  "source_url": "https://github.com/kcc989/logoer",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kcc989/logoer",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

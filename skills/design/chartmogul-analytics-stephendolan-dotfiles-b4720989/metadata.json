@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:00:22.069109Z",
   "github_path": "ai/skills/chartmogul-analytics",
   "github_branch": "main",
-  "dir_name": "chartmogul-analytics-stephendolan-dotfiles-b4720989"
+  "dir_name": "chartmogul-analytics-stephendolan-dotfiles-b4720989",
+  "author": "stephendolan",
+  "source_url": "https://github.com/stephendolan/dotfiles/blob/main/ai/skills/chartmogul-analytics/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/stephendolan/dotfiles/blob/main/ai/skills/chartmogul-analytics/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

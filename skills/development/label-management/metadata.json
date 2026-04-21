@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/label-management",
   "github_branch": "main",
-  "dir_name": "label-management"
+  "dir_name": "label-management",
+  "author": "Nice-Wolf-Studio",
+  "source_url": "https://github.com/Nice-Wolf-Studio/agent-github-skills/blob/main/skills/label-management/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

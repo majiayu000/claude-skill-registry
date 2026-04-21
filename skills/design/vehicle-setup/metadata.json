@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "vehicle-setup"
+  "dir_name": "vehicle-setup",
+  "author": "ceo-whyd-it",
+  "source_url": "https://github.com/ceo-whyd-it/car-log",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ceo-whyd-it/car-log",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

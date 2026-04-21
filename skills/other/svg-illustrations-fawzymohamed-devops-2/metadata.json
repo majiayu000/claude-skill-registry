@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/fawzymohamed/devops",
-  "dir_name": "svg-illustrations-fawzymohamed-devops-2"
+  "dir_name": "svg-illustrations-fawzymohamed-devops-2",
+  "author": "fawzymohamed",
+  "source_url": "https://github.com/fawzymohamed/devops/blob/main/.claude/skills/svg-illustrations/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nuxt UI Templates",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

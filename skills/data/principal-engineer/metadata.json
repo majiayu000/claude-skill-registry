@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "principal-engineer"
+  "dir_name": "principal-engineer",
+  "author": "MRenAIAgent",
+  "source_url": "https://github.com/MRenAIAgent/mini_agent",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MRenAIAgent/mini_agent",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

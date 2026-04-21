@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:29.541369Z",
   "github_path": ".claude/skills/codex-search",
   "github_branch": "main",
-  "dir_name": "codex-search-dceoy-gh-actions-for-devop"
+  "dir_name": "codex-search-dceoy-gh-actions-for-devop",
+  "author": "dceoy",
+  "source_url": "https://github.com/dceoy/gh-actions-for-devops/blob/main/.claude/skills/codex-search/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Daichi Narushima",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

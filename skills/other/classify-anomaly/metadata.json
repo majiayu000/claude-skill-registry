@@ -7,5 +7,12 @@
   "dir_name": "classify-anomaly",
   "category": "other",
   "github_path": ".claude/skills/classify-anomaly",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "DrSatsuma1",
+  "source_url": "https://github.com/DrSatsuma1/speleoseismology/blob/main/.claude/skills/classify-anomaly/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DrSatsuma1/speleoseismology/blob/main/.claude/skills/classify-anomaly/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

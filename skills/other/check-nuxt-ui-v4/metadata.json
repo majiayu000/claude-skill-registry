@@ -5,5 +5,12 @@
   "source": "github.com/sakamotchi/sql-query-build",
   "downloaded_at": "2026-02-02T02:01:40.057337Z",
   "dir_name": "check-nuxt-ui-v4",
-  "category": "other"
+  "category": "other",
+  "author": "sakamotchi",
+  "source_url": "https://github.com/sakamotchi/sql-query-build/blob/main/.claude/skills/check-nuxt-ui-v4/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Yoshitaka Sakamoto",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

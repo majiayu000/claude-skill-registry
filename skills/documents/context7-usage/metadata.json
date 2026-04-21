@@ -10,5 +10,12 @@
   "stars": 1,
   "github_path": "skills/context7-usage",
   "github_branch": "main",
-  "dir_name": "context7-usage"
+  "dir_name": "context7-usage",
+  "author": "ramhaidar",
+  "source_url": "https://github.com/ramhaidar/Code-Executor-MCP/blob/main/skills/context7-usage/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:15.309637Z",
   "github_path": "skills/examples/simple-task",
   "github_branch": "main",
-  "dir_name": "simple-task-tnez-dot-agents"
+  "dir_name": "simple-task-tnez-dot-agents",
+  "author": "tnez",
+  "source_url": "https://github.com/tnez/dot-agents/blob/main/skills/examples/simple-task/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 @tnez",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "cli-ux-tester"
+  "dir_name": "cli-ux-tester",
+  "author": "ali5ter",
+  "source_url": "https://github.com/ali5ter/claude-cli-ux-skill",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Alister Lewis-Bowen",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

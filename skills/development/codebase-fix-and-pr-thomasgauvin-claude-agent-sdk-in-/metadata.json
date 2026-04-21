@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:05.303352Z",
   "github_path": "container/.claude/skills/codebase-fix-and-pr",
   "github_branch": "main",
-  "dir_name": "codebase-fix-and-pr-thomasgauvin-claude-agent-sdk-in-"
+  "dir_name": "codebase-fix-and-pr-thomasgauvin-claude-agent-sdk-in-",
+  "author": "thomasgauvin",
+  "source_url": "https://github.com/thomasgauvin/claude-agent-sdk-in-cloudflare-containers/blob/main/container/.claude/skills/codebase-fix-and-pr/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

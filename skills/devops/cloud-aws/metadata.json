@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "cloud-aws"
+  "dir_name": "cloud-aws",
+  "author": "kudosx",
+  "source_url": "https://github.com/kudosx/claude-skill-cloud-aws",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kudosx/claude-skill-cloud-aws",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

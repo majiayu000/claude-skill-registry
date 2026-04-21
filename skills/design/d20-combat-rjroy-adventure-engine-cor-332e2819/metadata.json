@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:48.536351Z",
   "github_path": "d20-system/skills/d20-combat",
   "github_branch": "main",
-  "dir_name": "d20-combat-rjroy-adventure-engine-cor-332e2819"
+  "dir_name": "d20-combat-rjroy-adventure-engine-cor-332e2819",
+  "author": "rjroy",
+  "source_url": "https://github.com/rjroy/adventure-engine-corvran/blob/main/d20-system/skills/d20-combat/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ronald Roy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/youngchingjui/claude-product-naming-skill",
   "downloaded_at": "2026-01-27T03:36:46.175810Z",
   "dir_name": "claude-product-naming-skill",
-  "category": "other"
+  "category": "other",
+  "author": "youngchingjui",
+  "source_url": "https://github.com/youngchingjui/claude-product-naming-skill/blob/main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/youngchingjui/claude-product-naming-skill/blob/main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

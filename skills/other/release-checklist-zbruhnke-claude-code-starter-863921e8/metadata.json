@@ -5,5 +5,12 @@
   "source": "github.com/zbruhnke/claude-code-starter",
   "downloaded_at": "2026-01-29T08:26:48.193039Z",
   "dir_name": "release-checklist-zbruhnke-claude-code-starter-863921e8",
-  "category": "other"
+  "category": "other",
+  "author": "zbruhnke",
+  "source_url": "https://github.com/zbruhnke/claude-code-starter/blob/main/.claude/skills/release-checklist/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Zach Bruhnke",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/alysonhower/dupcheck",
   "downloaded_at": "2026-02-04T01:10:41.914683Z",
   "dir_name": "clavix-start",
-  "category": "data"
+  "category": "data",
+  "author": "alysonhower",
+  "source_url": "https://github.com/alysonhower/dupcheck/blob/main/.agent/skills/clavix-start/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alysonhower/dupcheck/blob/main/.agent/skills/clavix-start/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

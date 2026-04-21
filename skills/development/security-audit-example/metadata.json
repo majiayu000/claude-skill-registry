@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "SkillsMP + GitHub Raw",
-  "dir_name": "security-audit-example"
+  "dir_name": "security-audit-example",
+  "author": "meirm",
+  "source_url": "https://github.com/meirm/askGPT",
+  "license": "MIT",
+  "copyright": "Copyright 2023 Meir Michanie",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/jjmartres/opencode",
-  "dir_name": "datadog-jjmartres-opencode-2"
+  "dir_name": "datadog-jjmartres-opencode-2",
+  "author": "jjmartres",
+  "source_url": "https://github.com/jjmartres/opencode/blob/main/opencode/skill/datadog/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jean-Jacques Martrès",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

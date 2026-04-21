@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:45.727592Z",
   "dir_name": "protection-audit",
   "github_path": ".claude/skills/protection-audit",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "AEtherlight-ai",
+  "source_url": "https://github.com/AEtherlight-ai/lumina/blob/main/.claude/skills/protection-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 ÆtherLight",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

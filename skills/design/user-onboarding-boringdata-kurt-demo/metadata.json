@@ -5,5 +5,12 @@
   "description": "Guide new users through setting up a Kurt project - understand their goals, map content sources, discover topics with clustering, and organize their knowledge base.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:01:37.918955Z",
-  "dir_name": "user-onboarding-boringdata-kurt-demo"
+  "dir_name": "user-onboarding-boringdata-kurt-demo",
+  "author": "boringdata",
+  "source_url": "https://github.com/boringdata/kurt-demo",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boringdata/kurt-demo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

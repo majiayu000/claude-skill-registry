@@ -7,5 +7,12 @@
   "stars": 1,
   "source": "github.com/Verridian-ai/life-os-Pulse-banner-generator",
   "downloaded_at": "2026-01-24T16:15:05.530388Z",
-  "dir_name": "research-agent"
+  "dir_name": "research-agent",
+  "author": "Verridian-ai",
+  "source_url": "https://github.com/Verridian-ai/life-os-Pulse-banner-generator/blob/main/.claude/skills/research-agent/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Verridian-ai/life-os-Pulse-banner-generator/blob/main/.claude/skills/research-agent/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

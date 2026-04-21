@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:13.955551Z",
   "github_path": "skills/search-hexdocs",
   "github_branch": "main",
-  "dir_name": "search-hexdocs"
+  "dir_name": "search-hexdocs",
+  "author": "michalvavra",
+  "source_url": "https://github.com/michalvavra/agents/blob/main/skills/search-hexdocs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2026 Michal Vavra <michal@vavra.tech>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

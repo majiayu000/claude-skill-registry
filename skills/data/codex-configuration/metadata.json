@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:36.967189Z",
   "dir_name": "codex-configuration",
   "github_path": "agent-kit/skills/codex-configuration",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "outfitter-dev",
+  "source_url": "https://github.com/outfitter-dev/agents/blob/main/agent-kit/skills/codex-configuration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Outfitter",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

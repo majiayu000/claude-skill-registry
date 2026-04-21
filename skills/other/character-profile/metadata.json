@@ -7,5 +7,12 @@
   "dir_name": "character-profile",
   "category": "other",
   "github_path": "category/character-analysis/character-profile",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "VanGongwanxiaowan",
+  "source_url": "https://github.com/VanGongwanxiaowan/screen-creative-skills/blob/main/category/character-analysis/character-profile/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 宫凡",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

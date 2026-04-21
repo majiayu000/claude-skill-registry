@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:05.963105Z",
   "github_path": ".github/skills/web-frontend",
   "github_branch": "main",
-  "dir_name": "web-frontend"
+  "dir_name": "web-frontend",
+  "author": "flaming-codes",
+  "source_url": "https://github.com/flaming-codes/crane-app/blob/main/.github/skills/web-frontend/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

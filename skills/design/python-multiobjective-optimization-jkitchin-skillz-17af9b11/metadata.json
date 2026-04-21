@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:53.250740Z",
   "github_path": "skills/programming/python-multiobjective-optimization",
   "github_branch": "main",
-  "dir_name": "python-multiobjective-optimization-jkitchin-skillz-17af9b11"
+  "dir_name": "python-multiobjective-optimization-jkitchin-skillz-17af9b11",
+  "author": "jkitchin",
+  "source_url": "https://github.com/jkitchin/skillz/blob/main/skills/programming/python-multiobjective-optimization/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 John Kitchin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

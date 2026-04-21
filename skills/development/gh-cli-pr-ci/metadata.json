@@ -5,5 +5,12 @@
   "description": "Use the GitHub gh CLI to inspect pull requests, status checks, and CI failures. Trigger when triaging PRs/CI, fetching workflow logs, or summarizing check results. Prefer explicit --json field lists; ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:09:58.532497Z",
-  "dir_name": "gh-cli-pr-ci"
+  "dir_name": "gh-cli-pr-ci",
+  "author": "bedecarroll",
+  "source_url": "https://github.com/bedecarroll/dotfiles",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bedecarroll/dotfiles",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

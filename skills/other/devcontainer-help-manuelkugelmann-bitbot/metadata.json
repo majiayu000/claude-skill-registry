@@ -5,5 +5,12 @@
   "source": "github.com/ManuelKugelmann/BitBot",
   "downloaded_at": "2026-01-29T08:58:15.046192Z",
   "dir_name": "devcontainer-help-manuelkugelmann-bitbot",
-  "category": "other"
+  "category": "other",
+  "author": "ManuelKugelmann",
+  "source_url": "https://github.com/ManuelKugelmann/BitBot/blob/main/container/templates/bitbot-config/.claude/skills/devcontainer-help/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Manuel Kugelmann, Bitcraft IT Consulting",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

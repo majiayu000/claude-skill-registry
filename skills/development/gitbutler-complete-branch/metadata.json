@@ -5,5 +5,12 @@
   "description": "Complete work on GitButler virtual branches and integrate to main through guided workflows with safety checks and cleanup. Use when finishing branches, merging to main, creating PRs, or when `--comple",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:37.851244Z",
-  "dir_name": "gitbutler-complete-branch"
+  "dir_name": "gitbutler-complete-branch",
+  "author": "outfitter-dev",
+  "source_url": "https://github.com/outfitter-dev/agents",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Outfitter",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

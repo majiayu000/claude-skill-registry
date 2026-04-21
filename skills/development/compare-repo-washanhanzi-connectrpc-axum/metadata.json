@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:54.418921Z",
   "github_path": ".claude/skills/compare-repo",
   "github_branch": "main",
-  "dir_name": "compare-repo-washanhanzi-connectrpc-axum"
+  "dir_name": "compare-repo-washanhanzi-connectrpc-axum",
+  "author": "washanhanzi",
+  "source_url": "https://github.com/washanhanzi/connectrpc-axum/blob/main/.claude/skills/compare-repo/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/washanhanzi/connectrpc-axum/blob/main/.claude/skills/compare-repo/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

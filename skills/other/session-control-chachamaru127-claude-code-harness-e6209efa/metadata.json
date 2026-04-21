@@ -9,5 +9,12 @@
   "github_path": "codex/.codex/skills/session-control",
   "github_branch": "main",
   "dir_name": "session-control-chachamaru127-claude-code-harness-e6209efa",
-  "downloaded_at": "2026-02-05T01:44:28.407646Z"
+  "downloaded_at": "2026-02-05T01:44:28.407646Z",
+  "author": "Chachamaru127",
+  "source_url": "https://github.com/Chachamaru127/claude-code-harness/blob/main/codex/.codex/skills/session-control/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2025 Manus AI & Chachamaru",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

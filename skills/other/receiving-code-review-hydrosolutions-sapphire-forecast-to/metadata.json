@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/receiving-code-review",
   "github_branch": "main",
   "dir_name": "receiving-code-review-hydrosolutions-sapphire-forecast-to",
-  "downloaded_at": "2026-02-05T01:44:52.210630Z"
+  "downloaded_at": "2026-02-05T01:44:52.210630Z",
+  "author": "hydrosolutions",
+  "source_url": "https://github.com/hydrosolutions/SAPPHIRE_Forecast_Tools/blob/main/.claude/skills/receiving-code-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 Beatrice Marti",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

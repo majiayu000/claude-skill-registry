@@ -7,5 +7,12 @@
   "dir_name": "docs-page-frontmatter-anam-org-metaxy-4d11701d",
   "category": "other",
   "github_path": ".claude/skills/docs-page-frontmatter",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "anam-org",
+  "source_url": "https://github.com/anam-org/metaxy/blob/main/.claude/skills/docs-page-frontmatter/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anam-org/metaxy/blob/main/.claude/skills/docs-page-frontmatter/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

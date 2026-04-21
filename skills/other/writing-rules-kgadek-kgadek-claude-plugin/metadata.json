@@ -9,5 +9,12 @@
   "github_path": "ai-spec/2026-01-21-sdd-inspirations/references/anthropics-claude-plugins-official/plugins/hookify/skills/writing-rules",
   "github_branch": "main",
   "dir_name": "writing-rules-kgadek-kgadek-claude-plugin",
-  "downloaded_at": "2026-02-05T01:45:36.962193Z"
+  "downloaded_at": "2026-02-05T01:45:36.962193Z",
+  "author": "kgadek",
+  "source_url": "https://github.com/kgadek/kgadek-claude-plugin/blob/main/ai-spec/2026-01-21-sdd-inspirations/references/anthropics-claude-plugins-official/plugins/hookify/skills/writing-rules/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

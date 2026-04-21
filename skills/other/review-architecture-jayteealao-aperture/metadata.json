@@ -5,5 +5,12 @@
   "source": "github.com/jayteealao/Aperture",
   "downloaded_at": "2026-01-29T06:26:44.072947Z",
   "dir_name": "review-architecture-jayteealao-aperture",
-  "category": "other"
+  "category": "other",
+  "author": "jayteealao",
+  "source_url": "https://github.com/jayteealao/Aperture/blob/main/.claude/skills/review-architecture/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jayteealao/Aperture/blob/main/.claude/skills/review-architecture/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

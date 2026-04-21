@@ -5,5 +5,12 @@
   "source": "github.com/sd0xdev/sd0x-dev-flow",
   "downloaded_at": "2026-02-01T02:26:15.070757Z",
   "dir_name": "codex-architect",
-  "category": "data"
+  "category": "data",
+  "author": "sd0xdev",
+  "source_url": "https://github.com/sd0xdev/sd0x-dev-flow/blob/main/skills/codex-architect/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 sd0xdev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

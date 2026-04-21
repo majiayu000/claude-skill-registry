@@ -5,5 +5,12 @@
   "source": "github.com/itechmeat/llm-code",
   "downloaded_at": "2026-02-02T04:37:10.835051Z",
   "dir_name": "vibekanban",
-  "category": "data"
+  "category": "data",
+  "author": "itechmeat",
+  "source_url": "https://github.com/itechmeat/llm-code/blob/main/skills/vibekanban/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 itechmeat",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

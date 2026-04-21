@@ -9,5 +9,12 @@
   ],
   "stars": 13,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "doc-lookup"
+  "dir_name": "doc-lookup",
+  "author": "sorryhyun",
+  "source_url": "https://github.com/sorryhyun/DiPeO",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sorryhyun/DiPeO",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

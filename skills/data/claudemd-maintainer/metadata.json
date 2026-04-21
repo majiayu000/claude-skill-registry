@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 427,
   "source": "github.com/anyproto/anytype-swift",
-  "dir_name": "claudemd-maintainer"
+  "dir_name": "claudemd-maintainer",
+  "author": "anyproto",
+  "source_url": "https://github.com/anyproto/anytype-swift",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anyproto/anytype-swift",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

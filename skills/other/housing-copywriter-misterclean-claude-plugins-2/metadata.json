@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/MisterClean/claude-plugins",
-  "dir_name": "housing-copywriter-misterclean-claude-plugins-2"
+  "dir_name": "housing-copywriter-misterclean-claude-plugins-2",
+  "author": "MisterClean",
+  "source_url": "https://github.com/MisterClean/claude-plugins/blob/main/skills/housing-copywriter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Michael McLean",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

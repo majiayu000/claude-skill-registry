@@ -9,5 +9,12 @@
   ],
   "stars": 556,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "activitypub-testing"
+  "dir_name": "activitypub-testing",
+  "author": "Automattic",
+  "source_url": "https://github.com/Automattic/wordpress-activitypub",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2019 Matthias Pfefferle",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

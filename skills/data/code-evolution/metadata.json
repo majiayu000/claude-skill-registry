@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "code-evolution"
+  "dir_name": "code-evolution",
+  "author": "hanialshater",
+  "source_url": "https://github.com/hanialshater/code-evo-agent-simple",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hanialshater/code-evo-agent-simple",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

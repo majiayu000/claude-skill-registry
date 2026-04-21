@@ -5,5 +5,12 @@
   "source": "github.com/martinemde/skillet",
   "downloaded_at": "2026-02-04T02:17:01.001908Z",
   "dir_name": "task-test",
-  "category": "data"
+  "category": "data",
+  "author": "martinemde",
+  "source_url": "https://github.com/martinemde/skillet/blob/main/.claude/skills/task-test/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Martin Emde",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

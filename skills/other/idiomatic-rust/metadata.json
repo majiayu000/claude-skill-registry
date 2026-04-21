@@ -5,5 +5,12 @@
   "source": "github.com/bearcove/pikru",
   "downloaded_at": "2026-02-02T01:13:58.593300Z",
   "dir_name": "idiomatic-rust",
-  "category": "other"
+  "category": "other",
+  "author": "bearcove",
+  "source_url": "https://github.com/bearcove/pikru/blob/main/.claude/skills/idiomatic-rust/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Amos Wenger",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

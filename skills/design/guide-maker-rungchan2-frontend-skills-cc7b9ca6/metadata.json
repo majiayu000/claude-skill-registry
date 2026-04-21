@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/guide-maker",
   "github_branch": "main",
-  "dir_name": "guide-maker-rungchan2-frontend-skills-cc7b9ca6"
+  "dir_name": "guide-maker-rungchan2-frontend-skills-cc7b9ca6",
+  "author": "rungchan2",
+  "source_url": "https://github.com/rungchan2/frontend-skills/blob/main/skills/guide-maker/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rungchan2/frontend-skills/blob/main/skills/guide-maker/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

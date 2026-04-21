@@ -7,5 +7,12 @@
   "dir_name": "python-venv-manager-fsyyft-go-kratos-layout",
   "category": "other",
   "github_path": ".claude/skills/python-venv-manager",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "fsyyft-go",
+  "source_url": "https://github.com/fsyyft-go/kratos-layout/blob/main/.claude/skills/python-venv-manager/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 fsyyft-go",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

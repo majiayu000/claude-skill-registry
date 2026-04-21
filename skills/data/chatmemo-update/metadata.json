@@ -9,5 +9,12 @@
   ],
   "stars": 5,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "chatmemo-update"
+  "dir_name": "chatmemo-update",
+  "author": "eze-is",
+  "source_url": "https://github.com/eze-is/chat-memo-website",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/eze-is/chat-memo-website",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

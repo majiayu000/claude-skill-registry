@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/emerging-tech",
   "github_branch": "main",
-  "dir_name": "emerging-tech-pluginagentmarketpla-custom-plugin-cloudf"
+  "dir_name": "emerging-tech-pluginagentmarketpla-custom-plugin-cloudf",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-cloudflare/blob/main/skills/emerging-tech/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

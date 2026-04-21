@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/artifacts-builder",
   "github_branch": "main",
-  "dir_name": "artifacts-builder"
+  "dir_name": "artifacts-builder",
+  "author": "AizenvoltPrime",
+  "source_url": "https://github.com/AizenvoltPrime/claude-compass/blob/main/.claude/skills/artifacts-builder/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:55.024666Z",
   "github_path": "plugins/terraform-toolkit/skills/terraform-upgrade-assistant",
   "github_branch": "main",
-  "dir_name": "terraform-upgrade-assistant-armanzeroeight-fastagent-plugins"
+  "dir_name": "terraform-upgrade-assistant-armanzeroeight-fastagent-plugins",
+  "author": "armanzeroeight",
+  "source_url": "https://github.com/armanzeroeight/fastagent-plugins/blob/main/plugins/terraform-toolkit/skills/terraform-upgrade-assistant/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

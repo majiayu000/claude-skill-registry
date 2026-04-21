@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:49.513236Z",
   "github_path": ".claude/skills/memory-management",
   "github_branch": "main",
-  "dir_name": "claude-recall-memory-management-raoulbia-ai-claude-recall"
+  "dir_name": "claude-recall-memory-management-raoulbia-ai-claude-recall",
+  "author": "raoulbia-ai",
+  "source_url": "https://github.com/raoulbia-ai/claude-recall/blob/main/.claude/skills/memory-management/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Raoul Biagioni",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

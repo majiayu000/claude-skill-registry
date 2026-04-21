@@ -5,5 +5,12 @@
   "source": "github.com/evanfang0054/cc-system-creator-scripts",
   "downloaded_at": "2026-02-04T04:07:13.474975Z",
   "dir_name": "doc-learner",
-  "category": "data"
+  "category": "data",
+  "author": "evanfang0054",
+  "source_url": "https://github.com/evanfang0054/cc-system-creator-scripts/blob/main/.claude/skills/doc-learner/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Evan Fang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

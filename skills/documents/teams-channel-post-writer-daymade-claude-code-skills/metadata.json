@@ -13,5 +13,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "teams-channel-post-writer",
   "github_branch": "main",
-  "dir_name": "teams-channel-post-writer-daymade-claude-code-skills"
+  "dir_name": "teams-channel-post-writer-daymade-claude-code-skills",
+  "author": "daymade",
+  "source_url": "https://github.com/daymade/claude-code-skills/blob/main/teams-channel-post-writer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 daymade",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

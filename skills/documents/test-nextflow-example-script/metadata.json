@@ -5,5 +5,12 @@
   "description": "Test a Nextflow script by running it, verifying outputs, testing resume functionality, and comparing results with documentation. Use when validating that example scripts work correctly and match their",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:28.016272Z",
-  "dir_name": "test-nextflow-example-script"
+  "dir_name": "test-nextflow-example-script",
+  "author": "nextflow-io",
+  "source_url": "https://github.com/nextflow-io/training",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nextflow-io/training",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

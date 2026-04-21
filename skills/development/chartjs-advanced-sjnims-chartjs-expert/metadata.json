@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/chartjs-advanced",
   "github_branch": "main",
-  "dir_name": "chartjs-advanced-sjnims-chartjs-expert"
+  "dir_name": "chartjs-advanced-sjnims-chartjs-expert",
+  "author": "sjnims",
+  "source_url": "https://github.com/sjnims/chartjs-expert/blob/main/skills/chartjs-advanced/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Steve Nims",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

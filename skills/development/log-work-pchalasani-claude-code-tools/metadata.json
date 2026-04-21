@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:43.024603Z",
   "github_path": "plugins/workflow/skills/log-work",
   "github_branch": "main",
-  "dir_name": "log-work-pchalasani-claude-code-tools"
+  "dir_name": "log-work-pchalasani-claude-code-tools",
+  "author": "pchalasani",
+  "source_url": "https://github.com/pchalasani/claude-code-tools/blob/main/plugins/workflow/skills/log-work/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Prasad Chalasani",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

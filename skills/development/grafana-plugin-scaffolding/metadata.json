@@ -11,5 +11,12 @@
   "stars": 1,
   "github_path": ".claude/skills/grafana-plugin-scaffolding",
   "github_branch": "main",
-  "dir_name": "grafana-plugin-scaffolding"
+  "dir_name": "grafana-plugin-scaffolding",
+  "author": "nodnarbnitram",
+  "source_url": "https://github.com/nodnarbnitram/claude-code-extensions/blob/main/.claude/skills/grafana-plugin-scaffolding/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brandon Martin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

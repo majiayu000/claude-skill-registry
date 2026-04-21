@@ -5,5 +5,12 @@
   "description": "Overview of the project's tech stack, directory structure, and architectural patterns.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:01:27.902717Z",
-  "dir_name": "project-architecture"
+  "dir_name": "project-architecture",
+  "author": "AbdulSamad94",
+  "source_url": "https://github.com/AbdulSamad94/Hackhaton-SpecsKitPlus",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AbdulSamad94/Hackhaton-SpecsKitPlus",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

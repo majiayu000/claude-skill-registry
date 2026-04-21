@@ -10,5 +10,12 @@
   "stars": 13,
   "github_path": ".claude/skills/import-refactor",
   "github_branch": "main",
-  "dir_name": "import-refactor-sorryhyun-dipeo"
+  "dir_name": "import-refactor-sorryhyun-dipeo",
+  "author": "sorryhyun",
+  "source_url": "https://github.com/sorryhyun/DiPeO/blob/main/.claude/skills/import-refactor/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sorryhyun/DiPeO/blob/main/.claude/skills/import-refactor/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   "stars": 11,
   "github_path": "skills/progressive-disclosure",
   "github_branch": "main",
-  "dir_name": "progressive-disclosure-gptme-gptme-contrib"
+  "dir_name": "progressive-disclosure-gptme-gptme-contrib",
+  "author": "gptme",
+  "source_url": "https://github.com/gptme/gptme-contrib/blob/main/skills/progressive-disclosure/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gptme/gptme-contrib/blob/main/skills/progressive-disclosure/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

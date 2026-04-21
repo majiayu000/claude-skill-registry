@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "test-guide"
+  "dir_name": "test-guide",
+  "author": "kami8ma8810",
+  "source_url": "https://github.com/kami8ma8810/cat-home",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kami8ma8810/cat-home",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

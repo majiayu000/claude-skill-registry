@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:57.859345Z",
   "github_path": "chrome-extension-wxt/skill",
   "github_branch": "main",
-  "dir_name": "chrome-extension-wxt-tenequm-claude-plugins"
+  "dir_name": "chrome-extension-wxt-tenequm-claude-plugins",
+  "author": "tenequm",
+  "source_url": "https://github.com/tenequm/claude-plugins/blob/main/chrome-extension-wxt/skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Mykhaylo Kolesnik",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

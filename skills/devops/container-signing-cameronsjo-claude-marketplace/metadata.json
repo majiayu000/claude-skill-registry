@@ -5,5 +5,12 @@
   "description": "Set up Docker image signing with Cosign and SLSA provenance attestations. Use when configuring CI/CD for container builds, setting up GHCR publishing, or implementing supply chain security.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:01:40.801032Z",
-  "dir_name": "container-signing-cameronsjo-claude-marketplace"
+  "dir_name": "container-signing-cameronsjo-claude-marketplace",
+  "author": "cameronsjo",
+  "source_url": "https://github.com/cameronsjo/claude-marketplace",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Cameron Sjo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

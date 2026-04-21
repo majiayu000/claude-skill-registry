@@ -7,5 +7,12 @@
   "dir_name": "supabase-nextjs-integration-agentivecity-skillfactory",
   "category": "other",
   "github_path": ".claude/skills/supabase-nextjs-integration",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "AgentiveCity",
+  "source_url": "https://github.com/AgentiveCity/SkillFactory/blob/main/.claude/skills/supabase-nextjs-integration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AgentiveCity/SkillFactory/blob/main/.claude/skills/supabase-nextjs-integration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

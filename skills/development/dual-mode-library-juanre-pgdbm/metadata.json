@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/dual-mode-library",
   "github_branch": "main",
-  "dir_name": "dual-mode-library-juanre-pgdbm"
+  "dir_name": "dual-mode-library-juanre-pgdbm",
+  "author": "juanre",
+  "source_url": "https://github.com/juanre/pgdbm/blob/main/skills/dual-mode-library/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Juan Reyero",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

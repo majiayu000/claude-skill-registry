@@ -5,5 +5,12 @@
   "source": "github.com/nodays-off/Hogans-Alley",
   "downloaded_at": "2026-02-04T04:22:46.252935Z",
   "dir_name": "gemini-video-understanding",
-  "category": "data"
+  "category": "data",
+  "author": "nodays-off",
+  "source_url": "https://github.com/nodays-off/Hogans-Alley/blob/main/skills/ai-tools/gemini-video-understanding/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nodays-off/Hogans-Alley/blob/main/skills/ai-tools/gemini-video-understanding/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

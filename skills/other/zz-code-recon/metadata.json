@@ -7,5 +7,12 @@
   "dir_name": "zz-code-recon",
   "category": "other",
   "github_path": "skills/zz-code-recon",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "sendaifun",
+  "source_url": "https://github.com/sendaifun/skills/blob/main/skills/zz-code-recon/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2024 SendAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

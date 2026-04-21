@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:03.879908Z",
   "github_path": "ui-design-guideline-creator/skills/ui-design-guideline",
   "github_branch": "main",
-  "dir_name": "ui-design-guideline-titabash-claude-plugins-5b43adff"
+  "dir_name": "ui-design-guideline-titabash-claude-plugins-5b43adff",
+  "author": "titabash",
+  "source_url": "https://github.com/titabash/claude-plugins/blob/main/ui-design-guideline-creator/skills/ui-design-guideline/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/titabash/claude-plugins/blob/main/ui-design-guideline-creator/skills/ui-design-guideline/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

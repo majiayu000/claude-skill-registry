@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:02:35.929425Z",
   "github_path": ".claude/skills/cisco-network-diagram-skill",
   "github_branch": "main",
-  "dir_name": "cisco-network-diagram-neuro-synapse-network-topology-age"
+  "dir_name": "cisco-network-diagram-neuro-synapse-network-topology-age",
+  "author": "neuro-synapse",
+  "source_url": "https://github.com/neuro-synapse/network-topology-agent/blob/main/.claude/skills/cisco-network-diagram-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Network Topology Agent Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

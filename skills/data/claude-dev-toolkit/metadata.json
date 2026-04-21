@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "claude-dev-toolkit"
+  "dir_name": "claude-dev-toolkit",
+  "author": "jamesscalescode",
+  "source_url": "https://github.com/jamesscalescode/claude-dev-toolkit",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 James Scales",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

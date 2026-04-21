@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:08:17.428030Z",
   "github_path": "packages/dev-org/skills/code-quality-metrics",
   "github_branch": "main",
-  "dir_name": "code-quality-metrics-shabaraba-shabaraba-cc-plugins"
+  "dir_name": "code-quality-metrics-shabaraba-shabaraba-cc-plugins",
+  "author": "shabaraba",
+  "source_url": "https://github.com/shabaraba/shabaraba-cc-plugins/blob/main/packages/dev-org/skills/code-quality-metrics/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shabaraba/shabaraba-cc-plugins/blob/main/packages/dev-org/skills/code-quality-metrics/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

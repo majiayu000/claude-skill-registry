@@ -5,5 +5,12 @@
   "source": "github.com/mcclowes/omg",
   "downloaded_at": "2026-02-04T03:55:06.810758Z",
   "dir_name": "google-style-guide",
-  "category": "data"
+  "category": "data",
+  "author": "mcclowes",
+  "source_url": "https://github.com/mcclowes/omg/blob/main/docusaurus/.claude/skills/google-style-guide/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 mcclowes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

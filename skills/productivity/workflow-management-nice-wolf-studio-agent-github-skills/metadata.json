@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/workflow-management",
   "github_branch": "main",
-  "dir_name": "workflow-management-nice-wolf-studio-agent-github-skills"
+  "dir_name": "workflow-management-nice-wolf-studio-agent-github-skills",
+  "author": "Nice-Wolf-Studio",
+  "source_url": "https://github.com/Nice-Wolf-Studio/agent-github-skills/blob/main/skills/workflow-management/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

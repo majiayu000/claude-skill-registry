@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/code-review-helper",
   "github_branch": "main",
-  "dir_name": "code-review-helper-gptme-gptme-contrib"
+  "dir_name": "code-review-helper-gptme-gptme-contrib",
+  "author": "gptme",
+  "source_url": "https://github.com/gptme/gptme-contrib/blob/main/skills/code-review-helper/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gptme/gptme-contrib/blob/main/skills/code-review-helper/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

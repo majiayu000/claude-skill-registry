@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:05:53.163498Z",
   "github_path": "plugins/rust-tokio-expert/skills/tokio-troubleshooting",
   "github_branch": "main",
-  "dir_name": "tokio-troubleshooting-geoffjay-claude-plugins"
+  "dir_name": "tokio-troubleshooting-geoffjay-claude-plugins",
+  "author": "geoffjay",
+  "source_url": "https://github.com/geoffjay/claude-plugins/blob/main/plugins/rust-tokio-expert/skills/tokio-troubleshooting/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Geoff Johnson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

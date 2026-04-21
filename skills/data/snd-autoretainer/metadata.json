@@ -5,5 +5,12 @@
   "source": "github.com/vaoan/SND",
   "downloaded_at": "2026-02-04T03:44:35.301641Z",
   "dir_name": "snd-autoretainer",
-  "category": "data"
+  "category": "data",
+  "author": "vaoan",
+  "source_url": "https://github.com/vaoan/SND/blob/main/.claude/skills/snd-autoretainer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vaoan/SND/blob/main/.claude/skills/snd-autoretainer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

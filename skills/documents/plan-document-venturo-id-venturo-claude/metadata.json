@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:28.089068Z",
   "github_path": "plugins/venturo-e2e-web/skills/plan-document",
   "github_branch": "main",
-  "dir_name": "plan-document-venturo-id-venturo-claude"
+  "dir_name": "plan-document-venturo-id-venturo-claude",
+  "author": "venturo-id",
+  "source_url": "https://github.com/venturo-id/venturo-claude/blob/main/plugins/venturo-e2e-web/skills/plan-document/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/venturo-id/venturo-claude/blob/main/plugins/venturo-e2e-web/skills/plan-document/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

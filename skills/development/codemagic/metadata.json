@@ -8,5 +8,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "codemagic"
+  "dir_name": "codemagic",
+  "author": "cktc",
+  "source_url": "https://github.com/cktc/tonic-sound",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cktc/tonic-sound",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

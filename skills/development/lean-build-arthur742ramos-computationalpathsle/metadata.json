@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/lean-build",
   "github_branch": "main",
-  "dir_name": "lean-build-arthur742ramos-computationalpathsle"
+  "dir_name": "lean-build-arthur742ramos-computationalpathsle",
+  "author": "Arthur742Ramos",
+  "source_url": "https://github.com/Arthur742Ramos/ComputationalPathsLean/blob/main/.claude/skills/lean-build/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Computational Paths contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

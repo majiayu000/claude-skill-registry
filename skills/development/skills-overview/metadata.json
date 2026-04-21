@@ -5,5 +5,12 @@
   "description": "Master index of all available skills for development workflows. Use when needing guidance on which skill to apply or when starting work on any project.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:09:41.970984Z",
-  "dir_name": "skills-overview"
+  "dir_name": "skills-overview",
+  "author": "ywatanabe1989",
+  "source_url": "https://github.com/ywatanabe1989/melbourne-moving-sale",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ywatanabe1989/melbourne-moving-sale",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

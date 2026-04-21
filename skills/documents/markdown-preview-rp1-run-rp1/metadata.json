@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:40.590201Z",
   "github_path": "plugins/base/skills/markdown-preview",
   "github_branch": "main",
-  "dir_name": "markdown-preview-rp1-run-rp1"
+  "dir_name": "markdown-preview-rp1-run-rp1",
+  "author": "rp1-run",
+  "source_url": "https://github.com/rp1-run/rp1/blob/main/plugins/base/skills/markdown-preview/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Prem Pillai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

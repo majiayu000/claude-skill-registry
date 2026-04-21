@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/vote-reset",
   "github_branch": "main",
-  "dir_name": "vote-reset-lithosdex-lithos-smart-contrac"
+  "dir_name": "vote-reset-lithosdex-lithos-smart-contrac",
+  "author": "LithosDex",
+  "source_url": "https://github.com/LithosDex/lithos-smart-contracts/blob/main/.claude/skills/vote-reset/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LithosDex/lithos-smart-contracts/blob/main/.claude/skills/vote-reset/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

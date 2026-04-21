@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:24:00.066646Z",
   "github_path": ".claude/skills/comment-enforcer",
   "github_branch": "main",
-  "dir_name": "comment-enforcer-fsyyft-go-kratos-layout"
+  "dir_name": "comment-enforcer-fsyyft-go-kratos-layout",
+  "author": "fsyyft-go",
+  "source_url": "https://github.com/fsyyft-go/kratos-layout/blob/main/.claude/skills/comment-enforcer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 fsyyft-go",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

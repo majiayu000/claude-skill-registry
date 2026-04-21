@@ -5,5 +5,12 @@
   "source": "github.com/ahtavarasmus/lightfriend-cloud",
   "downloaded_at": "2026-02-04T03:41:42.207983Z",
   "dir_name": "lightfriend-add-integration",
-  "category": "data"
+  "category": "data",
+  "author": "ahtavarasmus",
+  "source_url": "https://github.com/ahtavarasmus/lightfriend-cloud/blob/main/.claude/skills/lightfriend-add-integration/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

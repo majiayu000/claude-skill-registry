@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": "skills/claude-dev-toolkit",
   "github_branch": "main",
-  "dir_name": "claude-dev-toolkit-jamesscalescode-claude-dev-toolkit"
+  "dir_name": "claude-dev-toolkit-jamesscalescode-claude-dev-toolkit",
+  "author": "jamesscalescode",
+  "source_url": "https://github.com/jamesscalescode/claude-dev-toolkit/blob/main/skills/claude-dev-toolkit/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 James Scales",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

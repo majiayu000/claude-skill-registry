@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:31:41.236683Z",
   "github_path": ".codex/skills/codex-sdk-research",
   "github_branch": "main",
-  "dir_name": "codex-sdk-research-tiberriver256-codex-alfred"
+  "dir_name": "codex-sdk-research-tiberriver256-codex-alfred",
+  "author": "Tiberriver256",
+  "source_url": "https://github.com/Tiberriver256/codex-alfred/blob/main/.codex/skills/codex-sdk-research/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tiberriver256/codex-alfred/blob/main/.codex/skills/codex-sdk-research/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

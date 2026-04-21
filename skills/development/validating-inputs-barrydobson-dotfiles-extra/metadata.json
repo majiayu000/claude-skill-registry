@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:09.371794Z",
   "github_path": "packages/claude/.claude/skills/coding/validating-inputs",
   "github_branch": "main",
-  "dir_name": "validating-inputs-barrydobson-dotfiles-extra"
+  "dir_name": "validating-inputs-barrydobson-dotfiles-extra",
+  "author": "barrydobson",
+  "source_url": "https://github.com/barrydobson/dotfiles_extra/blob/main/packages/claude/.claude/skills/coding/validating-inputs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Personal Dotfiles",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

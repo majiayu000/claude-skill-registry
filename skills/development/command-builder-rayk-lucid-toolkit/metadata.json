@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/command-builder",
   "github_branch": "main",
-  "dir_name": "command-builder-rayk-lucid-toolkit"
+  "dir_name": "command-builder-rayk-lucid-toolkit",
+  "author": "rayk",
+  "source_url": "https://github.com/rayk/lucid-toolkit/blob/main/.claude/skills/command-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 rayk",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

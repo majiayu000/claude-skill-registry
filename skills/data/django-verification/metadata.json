@@ -5,5 +5,12 @@
   "source": "github.com/affaan-m/everything-claude-code",
   "downloaded_at": "2026-02-04T03:22:55.026157Z",
   "dir_name": "django-verification",
-  "category": "data"
+  "category": "data",
+  "author": "affaan-m",
+  "source_url": "https://github.com/affaan-m/everything-claude-code/blob/main/skills/django-verification/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Affaan Mustafa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

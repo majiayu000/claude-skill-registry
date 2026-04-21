@@ -5,5 +5,12 @@
   "source": "github.com/PeterFile/my-common-skills",
   "downloaded_at": "2026-01-29T05:54:15.276892Z",
   "dir_name": "kiro-specs-peterfile-my-common-skills",
-  "category": "other"
+  "category": "other",
+  "author": "PeterFile",
+  "source_url": "https://github.com/PeterFile/my-common-skills/blob/main/kiro-specs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PeterFile/my-common-skills/blob/main/kiro-specs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

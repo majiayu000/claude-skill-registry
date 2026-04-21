@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:15.981787Z",
   "github_path": "skill",
   "github_branch": "main",
-  "dir_name": "chrome-extension-icons-boulea7-chromeextensionicons-e8850dcf"
+  "dir_name": "chrome-extension-icons-boulea7-chromeextensionicons-e8850dcf",
+  "author": "Boulea7",
+  "source_url": "https://github.com/Boulea7/ChromeExtensionIconsSkill/blob/main/skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Boulea7",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

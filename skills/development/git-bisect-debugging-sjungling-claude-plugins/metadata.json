@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:21.986587Z",
   "github_path": "plugins/workflow/skills/git-bisect-debugging",
   "github_branch": "main",
-  "dir_name": "git-bisect-debugging-sjungling-claude-plugins"
+  "dir_name": "git-bisect-debugging-sjungling-claude-plugins",
+  "author": "sjungling",
+  "source_url": "https://github.com/sjungling/claude-plugins/blob/main/plugins/workflow/skills/git-bisect-debugging/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Scott Jungling",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

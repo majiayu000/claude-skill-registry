@@ -5,5 +5,12 @@
   "source": "github.com/iplaylf2/coding-profile",
   "downloaded_at": "2026-02-04T02:48:35.685968Z",
   "dir_name": "git-branch-namer",
-  "category": "data"
+  "category": "data",
+  "author": "iplaylf2",
+  "source_url": "https://github.com/iplaylf2/coding-profile/blob/main/profile/agent/skills/git-branch-namer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/iplaylf2/coding-profile/blob/main/profile/agent/skills/git-branch-namer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

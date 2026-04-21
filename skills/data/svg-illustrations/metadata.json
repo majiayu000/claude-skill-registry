@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/fawzymohamed/devops",
-  "dir_name": "svg-illustrations"
+  "dir_name": "svg-illustrations",
+  "author": "fawzymohamed",
+  "source_url": "https://github.com/fawzymohamed/devops",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nuxt UI Templates",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

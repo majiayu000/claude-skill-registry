@@ -7,5 +7,12 @@
   "dir_name": "coach",
   "category": "other",
   "github_path": "skills/coach",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "netresearch",
+  "source_url": "https://github.com/netresearch/claude-coach-plugin/blob/main/skills/coach/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025-2026 Netresearch DTT GmbH",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

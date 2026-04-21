@@ -7,5 +7,12 @@
   "dir_name": "workos-manager-verridian-ai-life-os-pulse-banner-9dc69269",
   "category": "other",
   "github_path": ".claude/skills/workos_manager",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Verridian-ai",
+  "source_url": "https://github.com/Verridian-ai/life-os-Pulse-banner-generator/blob/main/.claude/skills/workos_manager/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Verridian-ai/life-os-Pulse-banner-generator/blob/main/.claude/skills/workos_manager/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

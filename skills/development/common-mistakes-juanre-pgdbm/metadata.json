@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:32.292455Z",
   "github_path": "skills/common-mistakes",
   "github_branch": "main",
-  "dir_name": "common-mistakes-juanre-pgdbm"
+  "dir_name": "common-mistakes-juanre-pgdbm",
+  "author": "juanre",
+  "source_url": "https://github.com/juanre/pgdbm/blob/main/skills/common-mistakes/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Juan Reyero",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

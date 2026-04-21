@@ -5,5 +5,12 @@
   "source": "github.com/stateset/icommerce-skills",
   "downloaded_at": "2026-01-30T01:23:49.207626Z",
   "dir_name": "commerce-engine-setup",
-  "category": "data"
+  "category": "data",
+  "author": "stateset",
+  "source_url": "https://github.com/stateset/icommerce-skills/blob/main/skills/commerce-engine-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/stateset/icommerce-skills/blob/main/skills/commerce-engine-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "description": "Mandatory best practices and gold standards for Kailash SDK development including absolute imports, parameter passing, error handling, testing policies (NO MOCKING in Tiers 2-3), workflow design, cust",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:11:01.929559Z",
-  "dir_name": "gold-standards-integrum-global-kaizen-studio"
+  "dir_name": "gold-standards-integrum-global-kaizen-studio",
+  "author": "Integrum-Global",
+  "source_url": "https://github.com/Integrum-Global/kaizen-studio",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Integrum-Global/kaizen-studio",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

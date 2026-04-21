@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/frontend-ui-animator",
   "github_branch": "main",
-  "dir_name": "frontend-ui-animator-julianromli-ai-skills"
+  "dir_name": "frontend-ui-animator-julianromli-ai-skills",
+  "author": "julianromli",
+  "source_url": "https://github.com/julianromli/ai-skills/blob/main/skills/frontend-ui-animator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/julianromli/ai-skills/blob/main/skills/frontend-ui-animator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

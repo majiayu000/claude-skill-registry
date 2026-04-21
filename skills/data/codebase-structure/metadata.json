@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "dir_name": "codebase-structure",
   "github_path": ".claude/skills/codebase-structure",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Reodor-Studios",
+  "source_url": "https://github.com/Reodor-Studios/create-reodor-app/blob/main/.claude/skills/codebase-structure/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Reodor-Studios/create-reodor-app/blob/main/.claude/skills/codebase-structure/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

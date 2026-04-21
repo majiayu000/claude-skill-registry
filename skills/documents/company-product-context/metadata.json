@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:56:20.915544Z",
   "github_path": "src/LlmTornado.Demo/Static/Files/Skills/company-product-context",
   "github_branch": "main",
-  "dir_name": "company-product-context"
+  "dir_name": "company-product-context",
+  "author": "lofcz",
+  "source_url": "https://github.com/lofcz/LLMTornado/blob/main/src/LlmTornado.Demo/Static/Files/Skills/company-product-context/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Matěj Štágl",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

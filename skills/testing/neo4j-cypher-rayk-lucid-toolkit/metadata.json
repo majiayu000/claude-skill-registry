@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:13.791304Z",
   "github_path": "plugins/impl-neo4j/skills/neo4j-cypher",
   "github_branch": "main",
-  "dir_name": "neo4j-cypher-rayk-lucid-toolkit"
+  "dir_name": "neo4j-cypher-rayk-lucid-toolkit",
+  "author": "rayk",
+  "source_url": "https://github.com/rayk/lucid-toolkit/blob/main/plugins/impl-neo4j/skills/neo4j-cypher/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 rayk",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:24.237075Z",
   "dir_name": "chronicle-project-tracker",
   "github_path": "chronicle-skills/chronicle-project-tracker",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "ChandlerHardy",
+  "source_url": "https://github.com/ChandlerHardy/chronicle/blob/main/chronicle-skills/chronicle-project-tracker/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Chandler Hardy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "claude-code-optimizer"
+  "dir_name": "claude-code-optimizer",
+  "author": "mjohnson518",
+  "source_url": "https://github.com/mjohnson518/claude_superpowers",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mjohnson518/claude_superpowers",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/hgeldenhuys/claude-code-sdk",
   "downloaded_at": "2026-01-31T02:46:23.197513Z",
   "dir_name": "effective-prompting",
-  "category": "data"
+  "category": "data",
+  "author": "hgeldenhuys",
+  "source_url": "https://github.com/hgeldenhuys/claude-code-sdk/blob/main/skills/effective-prompting/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hgeldenhuys/claude-code-sdk/blob/main/skills/effective-prompting/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

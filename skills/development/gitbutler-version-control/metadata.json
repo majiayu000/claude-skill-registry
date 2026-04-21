@@ -5,5 +5,12 @@
   "description": "Version control using GitButler's virtual branches for parallel multi-branch work, post-hoc organization, and multi-agent collaboration. Use when working with GitButler, virtual branches, `but` comman",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:37.982833Z",
-  "dir_name": "gitbutler-version-control"
+  "dir_name": "gitbutler-version-control",
+  "author": "outfitter-dev",
+  "source_url": "https://github.com/outfitter-dev/agents",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Outfitter",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

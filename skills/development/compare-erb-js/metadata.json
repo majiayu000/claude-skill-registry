@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T03:20:06.380255Z",
   "github_path": ".claude/skills/compare-erb-js",
   "github_branch": "main",
-  "dir_name": "compare-erb-js"
+  "dir_name": "compare-erb-js",
+  "author": "rubys",
+  "source_url": "https://github.com/rubys/showcase/blob/main/.claude/skills/compare-erb-js/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Sam Ruby",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

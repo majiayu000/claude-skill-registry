@@ -9,5 +9,12 @@
   "github_path": "codex/.codex/skills/ci",
   "github_branch": "main",
   "dir_name": "ci-chachamaru127-claude-code-harness-f4f4be66",
-  "downloaded_at": "2026-02-05T01:44:28.594694Z"
+  "downloaded_at": "2026-02-05T01:44:28.594694Z",
+  "author": "Chachamaru127",
+  "source_url": "https://github.com/Chachamaru127/claude-code-harness/blob/main/codex/.codex/skills/ci/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2025 Manus AI & Chachamaru",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

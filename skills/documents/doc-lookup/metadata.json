@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/doc-lookup",
   "github_branch": "main",
-  "dir_name": "doc-lookup"
+  "dir_name": "doc-lookup",
+  "author": "sorryhyun",
+  "source_url": "https://github.com/sorryhyun/DiPeO/blob/main/.claude/skills/doc-lookup/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sorryhyun/DiPeO/blob/main/.claude/skills/doc-lookup/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/commit-session",
   "github_branch": "main",
-  "dir_name": "commit-session-romira915-blog-romira-dev-lept"
+  "dir_name": "commit-session-romira915-blog-romira-dev-lept",
+  "author": "Romira915",
+  "source_url": "https://github.com/Romira915/blog-romira-dev-leptos/blob/main/.claude/skills/commit-session/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 henrik",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

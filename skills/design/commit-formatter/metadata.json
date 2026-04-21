@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "commit-formatter"
+  "dir_name": "commit-formatter",
+  "author": "jgardner04",
+  "source_url": "https://github.com/jgardner04/claude-skills-skill",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Skill Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

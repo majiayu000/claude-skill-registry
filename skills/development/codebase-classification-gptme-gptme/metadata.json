@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:55:40.091144Z",
   "github_path": "gptme/lessons/skills/codebase-classification",
   "github_branch": "main",
-  "dir_name": "codebase-classification-gptme-gptme"
+  "dir_name": "codebase-classification-gptme-gptme",
+  "author": "gptme",
+  "source_url": "https://github.com/gptme/gptme/blob/main/gptme/lessons/skills/codebase-classification/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2023 Erik Bjäreholt",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

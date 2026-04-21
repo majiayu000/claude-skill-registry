@@ -5,5 +5,12 @@
   "source": "github.com/ForteScarlet/codex-kkp",
   "downloaded_at": "2026-01-29T08:54:46.180409Z",
   "dir_name": "codex-agent-collaboration-fortescarlet-codex-kkp",
-  "category": "other"
+  "category": "other",
+  "author": "ForteScarlet",
+  "source_url": "https://github.com/ForteScarlet/codex-kkp/blob/main/claude-code-skills-template/codex-agent-collaboration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ForteScarlet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

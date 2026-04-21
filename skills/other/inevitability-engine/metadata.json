@@ -7,5 +7,12 @@
   "dir_name": "inevitability-engine",
   "category": "other",
   "github_path": "InevitabilityEngine/inevitability-engine",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "leegonzales",
+  "source_url": "https://github.com/leegonzales/AISkills/blob/main/InevitabilityEngine/inevitability-engine/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Lee Gonzales",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

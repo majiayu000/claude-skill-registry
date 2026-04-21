@@ -5,5 +5,12 @@
   "source": "github.com/shoootyou/get-shit-done-multi",
   "downloaded_at": "2026-02-04T02:25:54.258599Z",
   "dir_name": "gsd-insert-phase",
-  "category": "data"
+  "category": "data",
+  "author": "shoootyou",
+  "source_url": "https://github.com/shoootyou/get-shit-done-multi/blob/main/.codex/skills/gsd-insert-phase/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Lex Christopherson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

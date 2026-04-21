@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:33.373330Z",
   "github_path": "docs/autopilot-agent-expert/skills/signal-factory-core",
   "github_branch": "main",
-  "dir_name": "signal-factory-core-kart-rc-dataobservability-ag"
+  "dir_name": "signal-factory-core-kart-rc-dataobservability-ag",
+  "author": "Kart-rc",
+  "source_url": "https://github.com/Kart-rc/dataobservability-agents/blob/main/docs/autopilot-agent-expert/skills/signal-factory-core/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Kart-rc",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

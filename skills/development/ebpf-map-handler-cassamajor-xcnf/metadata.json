@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/ebpf-map-handler",
   "github_branch": "main",
-  "dir_name": "ebpf-map-handler-cassamajor-xcnf"
+  "dir_name": "ebpf-map-handler-cassamajor-xcnf",
+  "author": "cassamajor",
+  "source_url": "https://github.com/cassamajor/xcnf/blob/main/.claude/skills/ebpf-map-handler/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cassamajor/xcnf/blob/main/.claude/skills/ebpf-map-handler/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

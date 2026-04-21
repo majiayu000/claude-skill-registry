@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "repository-management"
+  "dir_name": "repository-management",
+  "author": "Nice-Wolf-Studio",
+  "source_url": "https://github.com/Nice-Wolf-Studio/agent-github-skills",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

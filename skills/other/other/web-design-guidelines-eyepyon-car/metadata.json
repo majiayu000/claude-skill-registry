@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/eyepyon/car",
   "dir_name": "web-design-guidelines-eyepyon-car",
-  "downloaded_at": "2026-02-22T07:07:51.517281Z"
+  "downloaded_at": "2026-02-22T07:07:51.517281Z",
+  "author": "eyepyon",
+  "source_url": "https://github.com/eyepyon/car/blob/main/.agent/skills/web-design-guidelines/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 eye junk Haruki",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

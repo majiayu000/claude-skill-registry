@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/security-scanner",
   "github_branch": "main",
-  "dir_name": "security-scanner"
+  "dir_name": "security-scanner",
+  "author": "kanopi",
+  "source_url": "https://github.com/kanopi/cms-cultivator/blob/main/skills/security-scanner/SKILL.md",
+  "license": "GPL-2.0",
+  "copyright": "Copyright (C) 1989, 1991 Free Software Foundation, Inc.,",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

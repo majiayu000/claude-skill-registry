@@ -7,5 +7,12 @@
   "dir_name": "orval-pproenca-dot-skills-2dcc7d27",
   "category": "other",
   "github_path": "skills/.experimental/orval",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "pproenca",
+  "source_url": "https://github.com/pproenca/dot-skills/blob/main/skills/.experimental/orval/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

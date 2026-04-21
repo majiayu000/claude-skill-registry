@@ -5,5 +5,12 @@
   "source": "github.com/charlie-818/CLAWD",
   "downloaded_at": "2026-02-04T04:55:34.654248Z",
   "dir_name": "clawhub",
-  "category": "data"
+  "category": "data",
+  "author": "charlie-818",
+  "source_url": "https://github.com/charlie-818/CLAWD/blob/main/skills/clawhub/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Peter Steinberger",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

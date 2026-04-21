@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:30.563735Z",
   "github_path": "doc/skills/commitmsg",
   "github_branch": "main",
-  "dir_name": "commitmsg-trufae-mai"
+  "dir_name": "commitmsg-trufae-mai",
+  "author": "trufae",
+  "source_url": "https://github.com/trufae/mai/blob/main/doc/skills/commitmsg/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sergi Alvarez Capilla",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

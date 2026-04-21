@@ -5,5 +5,12 @@
   "description": "Creates and updates Agent Skills (SKILL.md directories) with proper YAML frontmatter, progressive disclosure patterns, and tool restrictions. Use when creating skills, authoring Agent Skills, building",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:36.879847Z",
-  "dir_name": "claude-skill-authoring"
+  "dir_name": "claude-skill-authoring",
+  "author": "outfitter-dev",
+  "source_url": "https://github.com/outfitter-dev/agents",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Outfitter",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "dir_name": "nuqs",
   "category": "other",
   "github_path": "skills/.curated/nuqs",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "pproenca",
+  "source_url": "https://github.com/pproenca/dot-skills/blob/main/skills/.curated/nuqs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

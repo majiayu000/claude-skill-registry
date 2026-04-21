@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:24.208307Z",
   "github_path": "chronicle-skills/chronicle-remote-summarizer",
   "github_branch": "main",
-  "dir_name": "chronicle-remote-summarizer"
+  "dir_name": "chronicle-remote-summarizer",
+  "author": "ChandlerHardy",
+  "source_url": "https://github.com/ChandlerHardy/chronicle/blob/main/chronicle-skills/chronicle-remote-summarizer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Chandler Hardy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

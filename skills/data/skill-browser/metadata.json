@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:03:15.592062Z",
   "dir_name": "skill-browser",
   "github_path": "skills/meta/skill-browser",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "tnez",
+  "source_url": "https://github.com/tnez/dot-agents/blob/main/skills/meta/skill-browser/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 @tnez",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

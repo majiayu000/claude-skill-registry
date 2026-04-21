@@ -5,5 +5,12 @@
   "description": "Generates a new Betty Framework Skill directory and manifest. Use when you need to bootstrap a new skill in the Betty Framework.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:27.959518Z",
-  "dir_name": "skill-create"
+  "dir_name": "skill-create",
+  "author": "epieczko",
+  "source_url": "https://github.com/epieczko/betty",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/epieczko/betty",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

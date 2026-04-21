@@ -12,5 +12,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "plugins/code-debug-skill-plugin/skills/code-debug-skill",
   "github_branch": "main",
-  "dir_name": "code-debug-skill-abekdwight-code-debug-skills"
+  "dir_name": "code-debug-skill-abekdwight-code-debug-skills",
+  "author": "abekdwight",
+  "source_url": "https://github.com/abekdwight/code-debug-skills/blob/main/plugins/code-debug-skill-plugin/skills/code-debug-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 OSS Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

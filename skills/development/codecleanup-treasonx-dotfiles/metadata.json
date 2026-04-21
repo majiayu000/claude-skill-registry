@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:09.735940Z",
   "github_path": "claude/skills/codecleanup",
   "github_branch": "main",
-  "dir_name": "codecleanup-treasonx-dotfiles"
+  "dir_name": "codecleanup-treasonx-dotfiles",
+  "author": "treasonx",
+  "source_url": "https://github.com/treasonx/dotfiles/blob/main/claude/skills/codecleanup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/treasonx/dotfiles/blob/main/claude/skills/codecleanup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

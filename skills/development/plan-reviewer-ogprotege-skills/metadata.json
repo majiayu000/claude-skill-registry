@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:07:25.311271Z",
   "github_path": "Categories/Planning/plan-reviewer",
   "github_branch": "main",
-  "dir_name": "plan-reviewer-ogprotege-skills"
+  "dir_name": "plan-reviewer-ogprotege-skills",
+  "author": "ogprotege",
+  "source_url": "https://github.com/ogprotege/Skills/blob/main/Categories/Planning/plan-reviewer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 William Sherman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

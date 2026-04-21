@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "critical-thinking-partner"
+  "dir_name": "critical-thinking-partner",
+  "author": "campbellmcgregor",
+  "source_url": "https://github.com/campbellmcgregor/claude-skills-repo",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Campbell McGregor",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

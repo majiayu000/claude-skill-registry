@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "cloudflare-workers/skill",
   "github_branch": "main",
-  "dir_name": "cloudflare-workers"
+  "dir_name": "cloudflare-workers",
+  "author": "tenequm",
+  "source_url": "https://github.com/tenequm/claude-plugins/blob/main/cloudflare-workers/skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Mykhaylo Kolesnik",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

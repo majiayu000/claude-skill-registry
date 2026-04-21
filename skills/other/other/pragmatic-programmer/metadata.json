@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/grndlvl/software-patterns",
   "dir_name": "pragmatic-programmer",
-  "downloaded_at": "2026-02-15T07:24:27.781507Z"
+  "downloaded_at": "2026-02-15T07:24:27.781507Z",
+  "author": "grndlvl",
+  "source_url": "https://github.com/grndlvl/software-patterns/blob/main/.claude/skills/pragmatic-programmer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 grndlvl",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

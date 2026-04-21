@@ -9,5 +9,12 @@
   "github_path": ".claude/skills/local-qa",
   "github_branch": "main",
   "dir_name": "local-qa",
-  "downloaded_at": "2026-02-05T01:45:31.383159Z"
+  "downloaded_at": "2026-02-05T01:45:31.383159Z",
+  "author": "dceoy",
+  "source_url": "https://github.com/dceoy/gh-actions-for-devops/blob/main/.claude/skills/local-qa/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Daichi Narushima",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

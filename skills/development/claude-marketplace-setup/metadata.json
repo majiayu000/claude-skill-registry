@@ -5,5 +5,12 @@
   "description": "Creates and manages plugin marketplaces for Claude Code, enabling plugin discovery, distribution, and team sharing. Generates marketplace.json files with proper schema, configures plugin sources (GitH",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:59:36.718387Z",
-  "dir_name": "claude-marketplace-setup"
+  "dir_name": "claude-marketplace-setup",
+  "author": "outfitter-dev",
+  "source_url": "https://github.com/outfitter-dev/agents",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Outfitter",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

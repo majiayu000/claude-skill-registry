@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:50.148151Z",
   "github_path": "CodexPeerReview/codex-peer-review",
   "github_branch": "main",
-  "dir_name": "codex-peer-review-leegonzales-aiskills"
+  "dir_name": "codex-peer-review-leegonzales-aiskills",
+  "author": "leegonzales",
+  "source_url": "https://github.com/leegonzales/AISkills/blob/main/CodexPeerReview/codex-peer-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Lee Gonzales",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

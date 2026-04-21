@@ -5,5 +5,12 @@
   "description": "Use when working with rwsdk/db for SQLite Durable Objects - covers setup with migrations, type-safe queries with Kysely, CRUD operations, joins, seeding, and migration rollback handling in Cloudflare ",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:06:36.090014Z",
-  "dir_name": "rwsdk-database-do"
+  "dir_name": "rwsdk-database-do",
+  "author": "kcc989",
+  "source_url": "https://github.com/kcc989/logoer",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kcc989/logoer",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

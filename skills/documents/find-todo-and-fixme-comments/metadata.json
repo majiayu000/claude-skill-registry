@@ -5,5 +5,12 @@
   "description": "Search markdown files, Nextflow scripts, and config files for TODO/FIXME comments, categorize by priority, and provide actionable recommendations. Use when you need to identify pending work or track t",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:28.062003Z",
-  "dir_name": "find-todo-and-fixme-comments"
+  "dir_name": "find-todo-and-fixme-comments",
+  "author": "nextflow-io",
+  "source_url": "https://github.com/nextflow-io/training",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nextflow-io/training",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

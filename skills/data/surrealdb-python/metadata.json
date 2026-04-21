@@ -10,5 +10,12 @@
   "stars": 9,
   "dir_name": "surrealdb-python",
   "github_path": ".claude/skills/surrealdb-python",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "ActiveInferenceInstitute",
+  "source_url": "https://github.com/ActiveInferenceInstitute/Journal-Utilities/blob/main/.claude/skills/surrealdb-python/SKILL.md",
+  "license": "CC0-1.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ActiveInferenceInstitute/Journal-Utilities/blob/main/.claude/skills/surrealdb-python/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:57:54.213730Z",
   "github_path": ".codex/skills/codex-patches",
   "github_branch": "main",
-  "dir_name": "codex-patches-acrognale-pasture"
+  "dir_name": "codex-patches-acrognale-pasture",
+  "author": "acrognale",
+  "source_url": "https://github.com/acrognale/pasture/blob/main/.codex/skills/codex-patches/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/acrognale/pasture/blob/main/.codex/skills/codex-patches/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

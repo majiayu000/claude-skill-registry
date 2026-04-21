@@ -7,5 +7,12 @@
   "dir_name": "commands-creator",
   "category": "other",
   "github_path": ".claude/skills/commands-creator",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "Mineru98",
+  "source_url": "https://github.com/Mineru98/skills-store/blob/main/.claude/skills/commands-creator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 skills-store contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

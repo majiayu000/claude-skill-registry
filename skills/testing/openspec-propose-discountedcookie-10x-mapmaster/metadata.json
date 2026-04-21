@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:04:59.678597Z",
   "github_path": ".opencode/skills/openspec-propose",
   "github_branch": "main",
-  "dir_name": "openspec-propose-discountedcookie-10x-mapmaster"
+  "dir_name": "openspec-propose-discountedcookie-10x-mapmaster",
+  "author": "discountedcookie",
+  "source_url": "https://github.com/discountedcookie/10x-mapmaster/blob/main/.opencode/skills/openspec-propose/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 10x-mapmaster",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:58:14.566693Z",
   "github_path": "plugin/skills/history-analyzer",
   "github_branch": "main",
-  "dir_name": "history-analyzer-lis186-sourceatlas"
+  "dir_name": "history-analyzer-lis186-sourceatlas",
+  "author": "lis186",
+  "source_url": "https://github.com/lis186/SourceAtlas/blob/main/plugin/skills/history-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Justin Lee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

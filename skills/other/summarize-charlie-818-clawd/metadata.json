@@ -9,5 +9,12 @@
   "github_path": "skills/summarize",
   "github_branch": "main",
   "dir_name": "summarize-charlie-818-clawd",
-  "downloaded_at": "2026-02-05T01:44:51.780353Z"
+  "downloaded_at": "2026-02-05T01:44:51.780353Z",
+  "author": "charlie-818",
+  "source_url": "https://github.com/charlie-818/CLAWD/blob/main/skills/summarize/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Peter Steinberger",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

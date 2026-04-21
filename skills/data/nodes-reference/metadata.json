@@ -5,5 +5,12 @@
   "description": "Comprehensive node reference documentation for all 110+ Kailash SDK nodes organized by category: AI, API, Code, Data, Database, File, Logic, Monitoring, Admin, Transaction, and Transform nodes. Use wh",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:49.163786Z",
-  "dir_name": "nodes-reference"
+  "dir_name": "nodes-reference",
+  "author": "Integrum-Global",
+  "source_url": "https://github.com/Integrum-Global/kaizen-studio",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Integrum-Global/kaizen-studio",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

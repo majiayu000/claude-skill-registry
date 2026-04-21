@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:21.978597Z",
   "github_path": "plugins/openrewrite/skills/recipe-writer",
   "github_branch": "main",
-  "dir_name": "recipe-writer-sjungling-claude-plugins"
+  "dir_name": "recipe-writer-sjungling-claude-plugins",
+  "author": "sjungling",
+  "source_url": "https://github.com/sjungling/claude-plugins/blob/main/plugins/openrewrite/skills/recipe-writer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Scott Jungling",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

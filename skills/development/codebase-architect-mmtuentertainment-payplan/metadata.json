@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-08T02:59:39.036128Z",
   "github_path": "tools/codebase-architect",
   "github_branch": "main",
-  "dir_name": "codebase-architect-mmtuentertainment-payplan"
+  "dir_name": "codebase-architect-mmtuentertainment-payplan",
+  "author": "mmtuentertainment",
+  "source_url": "https://github.com/mmtuentertainment/PayPlan/blob/main/tools/codebase-architect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mmtuentertainment/PayPlan/blob/main/tools/codebase-architect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

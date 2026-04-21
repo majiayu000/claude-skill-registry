@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "code-executor"
+  "dir_name": "code-executor",
+  "author": "mcfearsome",
+  "source_url": "https://github.com/mcfearsome/cc-mcp-executor-skill",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mcfearsome/cc-mcp-executor-skill",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

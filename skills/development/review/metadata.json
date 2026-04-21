@@ -10,5 +10,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/review",
   "github_branch": "main",
-  "dir_name": "review"
+  "dir_name": "review",
+  "author": "Chachamaru127",
+  "source_url": "https://github.com/Chachamaru127/claude-code-harness/blob/main/skills/review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2025 Manus AI & Chachamaru",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

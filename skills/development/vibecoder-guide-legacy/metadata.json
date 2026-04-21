@@ -5,5 +5,12 @@
   "description": "Guides VibeCoder (non-technical users) through natural language development (legacy). Use when user mentions どうすればいい, 次は何, 使い方, 困った, help, what should I do. Do NOT load for: 技術者向け作業, 直接的な実装指示, レビュー.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:45.909623Z",
-  "dir_name": "vibecoder-guide-legacy"
+  "dir_name": "vibecoder-guide-legacy",
+  "author": "Chachamaru127",
+  "source_url": "https://github.com/Chachamaru127/claude-code-harness",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2025 Manus AI & Chachamaru",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

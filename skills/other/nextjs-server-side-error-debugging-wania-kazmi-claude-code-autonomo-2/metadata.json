@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow",
-  "dir_name": "nextjs-server-side-error-debugging-wania-kazmi-claude-code-autonomo-2"
+  "dir_name": "nextjs-server-side-error-debugging-wania-kazmi-claude-code-autonomo-2",
+  "author": "Wania-Kazmi",
+  "source_url": "https://github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow/blob/main/.claude/skills/claudeception/examples/nextjs-server-side-error-debugging/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow/blob/main/.claude/skills/claudeception/examples/nextjs-server-side-error-debugging/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

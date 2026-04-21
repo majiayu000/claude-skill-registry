@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": ".claude/skills/principal-engineer",
   "github_branch": "main",
-  "dir_name": "principal-engineer-mrenaiagent-mini-agent"
+  "dir_name": "principal-engineer-mrenaiagent-mini-agent",
+  "author": "MRenAIAgent",
+  "source_url": "https://github.com/MRenAIAgent/mini_agent/blob/main/.claude/skills/principal-engineer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MRenAIAgent/mini_agent/blob/main/.claude/skills/principal-engineer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

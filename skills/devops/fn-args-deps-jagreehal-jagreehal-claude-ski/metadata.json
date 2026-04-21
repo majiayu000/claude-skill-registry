@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:35.944821Z",
   "github_path": "skills/fn-args-deps",
   "github_branch": "main",
-  "dir_name": "fn-args-deps-jagreehal-jagreehal-claude-ski"
+  "dir_name": "fn-args-deps-jagreehal-jagreehal-claude-ski",
+  "author": "jagreehal",
+  "source_url": "https://github.com/jagreehal/jagreehal-claude-skills/blob/main/skills/fn-args-deps/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Jag Reehal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

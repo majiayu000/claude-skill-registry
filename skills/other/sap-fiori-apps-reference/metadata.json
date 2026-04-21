@@ -7,5 +7,12 @@
   "dir_name": "sap-fiori-apps-reference",
   "category": "other",
   "github_path": "skills/sap-fiori-apps-reference",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "likweitan",
+  "source_url": "https://github.com/likweitan/abap-skills/blob/main/skills/sap-fiori-apps-reference/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Lik Wei",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

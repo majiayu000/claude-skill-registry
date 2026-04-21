@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/actionbook/rust-skills",
   "dir_name": "core-agent-browser",
-  "downloaded_at": "2026-02-15T06:04:52.593118Z"
+  "downloaded_at": "2026-02-15T06:04:52.593118Z",
+  "author": "actionbook",
+  "source_url": "https://github.com/actionbook/rust-skills/blob/main/skills/core-agent-browser/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/actionbook/rust-skills/blob/main/skills/core-agent-browser/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

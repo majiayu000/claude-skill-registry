@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/ghutchis/chem-skill",
   "dir_name": "chem-skill",
-  "downloaded_at": "2026-02-22T07:17:39.901270Z"
+  "downloaded_at": "2026-02-22T07:17:39.901270Z",
+  "author": "ghutchis",
+  "source_url": "https://github.com/ghutchis/chem-skill/blob/main/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Geoff Hutchison",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

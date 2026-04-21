@@ -5,5 +5,12 @@
   "source": "github.com/turbobeest/cursor-dev-system",
   "downloaded_at": "2026-01-29T06:24:05.009124Z",
   "dir_name": "implementation-verifier-turbobeest-cursor-dev-system-2e6c9b21",
-  "category": "other"
+  "category": "other",
+  "author": "turbobeest",
+  "source_url": "https://github.com/turbobeest/cursor-dev-system/blob/main/skills/implementation-verifier/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/turbobeest/cursor-dev-system/blob/main/skills/implementation-verifier/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

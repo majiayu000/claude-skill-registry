@@ -5,5 +5,12 @@
   "source": "github.com/ahtavarasmus/lightfriend-cloud",
   "downloaded_at": "2026-01-29T06:17:22.436746Z",
   "dir_name": "lightfriend-add-frontend-page-ahtavarasmus-lightfriend-cloud-84f7d6d9",
-  "category": "other"
+  "category": "other",
+  "author": "ahtavarasmus",
+  "source_url": "https://github.com/ahtavarasmus/lightfriend-cloud/blob/main/.claude/skills/lightfriend-add-frontend-page/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -9,5 +9,12 @@
   "github_path": "my-personality-i-s",
   "github_branch": "main",
   "dir_name": "my-personality-i-s",
-  "downloaded_at": "2026-02-05T01:44:36.352037Z"
+  "downloaded_at": "2026-02-05T01:44:36.352037Z",
+  "author": "crystal-project-inc",
+  "source_url": "https://github.com/crystal-project-inc/personality-ai/blob/main/my-personality-i-s/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/crystal-project-inc/personality-ai/blob/main/my-personality-i-s/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

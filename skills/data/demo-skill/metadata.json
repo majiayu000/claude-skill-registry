@@ -5,5 +5,12 @@
   "source": "github.com/fwdslsh/crosstrain",
   "downloaded_at": "2026-02-04T02:35:00.817314Z",
   "dir_name": "demo-skill",
-  "category": "data"
+  "category": "data",
+  "author": "fwdslsh",
+  "source_url": "https://github.com/fwdslsh/crosstrain/blob/main/demo/marketplaces/demo-marketplace/example-plugin/skills/demo-skill/SKILL.md",
+  "license": "CC-BY-4.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fwdslsh/crosstrain/blob/main/demo/marketplaces/demo-marketplace/example-plugin/skills/demo-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

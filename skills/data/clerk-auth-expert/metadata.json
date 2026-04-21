@@ -10,5 +10,12 @@
   ],
   "stars": 1,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "clerk-auth-expert"
+  "dir_name": "clerk-auth-expert",
+  "author": "kelvincushman",
+  "source_url": "https://github.com/kelvincushman/N8ture-AI-App",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kelvincushman/N8ture-AI-App",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

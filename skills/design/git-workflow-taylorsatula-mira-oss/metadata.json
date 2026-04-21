@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": ".claude/skills/git-workflow",
   "github_branch": "main",
-  "dir_name": "git-workflow-taylorsatula-mira-oss"
+  "dir_name": "git-workflow-taylorsatula-mira-oss",
+  "author": "taylorsatula",
+  "source_url": "https://github.com/taylorsatula/mira-OSS/blob/main/.claude/skills/git-workflow/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:03.922009Z",
   "github_path": ".claude/skills/coaching",
   "github_branch": "main",
-  "dir_name": "coaching-tituxmetal-warehouse-manager"
+  "dir_name": "coaching-tituxmetal-warehouse-manager",
+  "author": "TituxMetal",
+  "source_url": "https://github.com/TituxMetal/warehouse-manager/blob/main/.claude/skills/coaching/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Fullstack Authentication System",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

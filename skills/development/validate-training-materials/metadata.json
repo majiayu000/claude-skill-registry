@@ -5,5 +5,12 @@
   "description": "Run comprehensive validation and review checks including heading numbering, TODO/FIXME comments, Nextflow script conventions, orphaned files, admonition syntax, lesson structure, formatting, content a",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T08:56:28.049550Z",
-  "dir_name": "validate-training-materials"
+  "dir_name": "validate-training-materials",
+  "author": "nextflow-io",
+  "source_url": "https://github.com/nextflow-io/training",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nextflow-io/training",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

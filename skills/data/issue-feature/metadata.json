@@ -6,5 +6,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/jskjw157/FanPulse",
-  "dir_name": "issue-feature"
+  "dir_name": "issue-feature",
+  "author": "jskjw157",
+  "source_url": "https://github.com/jskjw157/FanPulse",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jskjw157/FanPulse",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

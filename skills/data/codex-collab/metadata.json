@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "codex-collab"
+  "dir_name": "codex-collab",
+  "author": "miracloon",
+  "source_url": "https://github.com/miracloon/my-vibecoding",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/miracloon/my-vibecoding",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:54.661195Z",
   "github_path": ".factory/skills/unreal-engine-developer",
   "github_branch": "main",
-  "dir_name": "unreal-engine-developer-dammianmiller-universal-agent-memo"
+  "dir_name": "unreal-engine-developer-dammianmiller-universal-agent-memo",
+  "author": "DammianMiller",
+  "source_url": "https://github.com/DammianMiller/universal-agent-memory/blob/main/.factory/skills/unreal-engine-developer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dammian Miller",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

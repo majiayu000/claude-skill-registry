@@ -5,5 +5,12 @@
   "description": "Updates the Betty Framework Skill Registry when new skills are created or validated.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:05:27.959646Z",
-  "dir_name": "registry-update"
+  "dir_name": "registry-update",
+  "author": "epieczko",
+  "source_url": "https://github.com/epieczko/betty",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/epieczko/betty",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

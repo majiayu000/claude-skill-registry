@@ -5,5 +5,12 @@
   "source": "github.com/dagster-io/erk",
   "downloaded_at": "2026-02-02T01:09:48.115329Z",
   "dir_name": "learned-docs",
-  "category": "other"
+  "category": "other",
+  "author": "dagster-io",
+  "source_url": "https://github.com/dagster-io/erk/blob/main/.claude/skills/learned-docs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dagster-io/erk/blob/main/.claude/skills/learned-docs/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

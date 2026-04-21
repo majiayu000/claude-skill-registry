@@ -10,5 +10,12 @@
   "stars": 0,
   "github_path": "skills/create-feature-pr",
   "github_branch": "main",
-  "dir_name": "create-feature-pr-graysurf-agentic-coding-skill"
+  "dir_name": "create-feature-pr-graysurf-agentic-coding-skill",
+  "author": "graysurf",
+  "source_url": "https://github.com/graysurf/agentic-coding-skills/blob/main/skills/create-feature-pr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/graysurf/agentic-coding-skills/blob/main/skills/create-feature-pr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

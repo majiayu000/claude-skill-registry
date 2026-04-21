@@ -7,5 +7,12 @@
   "stars": 541,
   "source": "github.com/actionbook/rust-skills",
   "downloaded_at": "2026-01-24T16:15:17.434057Z",
-  "dir_name": "core-agent-browser-actionbook-rust-skills"
+  "dir_name": "core-agent-browser-actionbook-rust-skills",
+  "author": "actionbook",
+  "source_url": "https://github.com/actionbook/rust-skills/blob/main/skills/core-agent-browser/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/actionbook/rust-skills/blob/main/skills/core-agent-browser/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

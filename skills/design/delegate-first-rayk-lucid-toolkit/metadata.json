@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:14.665713Z",
   "github_path": "plugins/luc/skills/delegate-first",
   "github_branch": "main",
-  "dir_name": "delegate-first-rayk-lucid-toolkit"
+  "dir_name": "delegate-first-rayk-lucid-toolkit",
+  "author": "rayk",
+  "source_url": "https://github.com/rayk/lucid-toolkit/blob/main/plugins/luc/skills/delegate-first/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 rayk",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

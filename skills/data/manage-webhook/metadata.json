@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:21.820760Z",
   "dir_name": "manage-webhook",
   "github_path": "plugins/sinch-claude-plugin/skills/manage-webhook",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "sinch",
+  "source_url": "https://github.com/sinch/sinch-plugins/blob/main/plugins/sinch-claude-plugin/skills/manage-webhook/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sinch/sinch-plugins/blob/main/plugins/sinch-claude-plugin/skills/manage-webhook/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

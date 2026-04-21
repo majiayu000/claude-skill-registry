@@ -5,5 +5,12 @@
   "description": "Thermodynamic foundations for distributed systems design. Use when analyzing energy flows, EROEI calculations, autopoietic closure, or validating economic models against physical constraints.Triggers:",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:25.253451Z",
-  "dir_name": "thermodynamic-economics"
+  "dir_name": "thermodynamic-economics",
+  "author": "ardeshir",
+  "source_url": "https://github.com/ardeshir/krzy",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ardeshir/krzy",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

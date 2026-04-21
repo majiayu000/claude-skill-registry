@@ -7,5 +7,12 @@
   "dir_name": "schedule-haru-llc-ai-pm-system-noteboo",
   "category": "other",
   "github_path": ".agent/skills/pm/planning/schedule",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "HaRu-LLC",
+  "source_url": "https://github.com/HaRu-LLC/ai-pm_system_notebooklmuse/blob/main/.agent/skills/pm/planning/schedule/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HaRu-LLC/ai-pm_system_notebooklmuse/blob/main/.agent/skills/pm/planning/schedule/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

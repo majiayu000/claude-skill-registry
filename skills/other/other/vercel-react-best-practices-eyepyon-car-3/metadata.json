@@ -5,5 +5,12 @@
   "category": "other",
   "source": "github.com/eyepyon/car",
   "dir_name": "vercel-react-best-practices-eyepyon-car-3",
-  "downloaded_at": "2026-02-22T07:07:52.272164Z"
+  "downloaded_at": "2026-02-22T07:07:52.272164Z",
+  "author": "eyepyon",
+  "source_url": "https://github.com/eyepyon/car/blob/main/.claude/skills/vercel-react-best-practices/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 eye junk Haruki",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

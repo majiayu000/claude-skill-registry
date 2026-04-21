@@ -5,5 +5,12 @@
   "description": "Kailash Nexus - zero-config multi-channel platform for deploying workflows as API + CLI + MCP simultaneously. Use when asking about 'Nexus', 'multi-channel', 'platform deployment', 'API deployment', '",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:10:57.326059Z",
-  "dir_name": "nexus"
+  "dir_name": "nexus",
+  "author": "Integrum-Global",
+  "source_url": "https://github.com/Integrum-Global/kaizen-studio",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Integrum-Global/kaizen-studio",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

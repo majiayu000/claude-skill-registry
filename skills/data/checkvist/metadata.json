@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:06:35.746667Z",
   "dir_name": "checkvist",
   "github_path": "claude/skills/checkvist",
-  "github_branch": "main"
+  "github_branch": "main",
+  "author": "kappa",
+  "source_url": "https://github.com/kappa/checkvist-cli/blob/main/claude/skills/checkvist/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

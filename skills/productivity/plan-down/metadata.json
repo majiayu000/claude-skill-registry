@@ -11,5 +11,12 @@
   "source": "SkillsMP Synced Skills",
   "github_path": "skills/plan-down",
   "github_branch": "main",
-  "dir_name": "plan-down"
+  "dir_name": "plan-down",
+  "author": "VCnoC",
+  "source_url": "https://github.com/VCnoC/Claude-Code-Zen-mcp-Skill-Work/blob/main/skills/plan-down/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 VCnoC",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

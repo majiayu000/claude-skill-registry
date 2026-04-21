@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:10:00.817929Z",
   "github_path": "tuya",
   "github_branch": "main",
-  "dir_name": "tuya-mbelinky-clawdis-skills"
+  "dir_name": "tuya-mbelinky-clawdis-skills",
+  "author": "mbelinky",
+  "source_url": "https://github.com/mbelinky/clawdis-skills/blob/main/tuya/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mbelinky/clawdis-skills/blob/main/tuya/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -5,5 +5,12 @@
   "source": "github.com/kubb-labs/fabric",
   "downloaded_at": "2026-01-29T06:50:54.094149Z",
   "dir_name": "jsdoc-kubb-labs-fabric",
-  "category": "other"
+  "category": "other",
+  "author": "kubb-labs",
+  "source_url": "https://github.com/kubb-labs/fabric/blob/main/.skills/jsdoc/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Stijn Van Hulle",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

@@ -5,5 +5,12 @@
   "description": "Merge GitHub pull requests using gh CLI. Supports merge, squash, and rebase strategies with auto-merge option. Use when PR is approved and ready to merge.",
   "source": "SkillsMP + GitHub Raw",
   "downloaded_at": "2026-01-06T09:03:27.340072Z",
-  "dir_name": "gh-pr-merge"
+  "dir_name": "gh-pr-merge",
+  "author": "dceoy",
+  "source_url": "https://github.com/dceoy/gh-actions-for-devops",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Daichi Narushima",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

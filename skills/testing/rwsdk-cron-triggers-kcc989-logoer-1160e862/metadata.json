@@ -11,5 +11,12 @@
   "stars": 0,
   "github_path": ".claude/skills/rwsdk-cron-triggers",
   "github_branch": "main",
-  "dir_name": "rwsdk-cron-triggers-kcc989-logoer-1160e862"
+  "dir_name": "rwsdk-cron-triggers-kcc989-logoer-1160e862",
+  "author": "kcc989",
+  "source_url": "https://github.com/kcc989/logoer/blob/main/.claude/skills/rwsdk-cron-triggers/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kcc989/logoer/blob/main/.claude/skills/rwsdk-cron-triggers/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

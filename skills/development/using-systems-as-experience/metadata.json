@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:41.093785Z",
   "github_path": "plugins/bravos-systems-as-experience/skills/using-systems-as-experience",
   "github_branch": "main",
-  "dir_name": "using-systems-as-experience"
+  "dir_name": "using-systems-as-experience",
+  "author": "tachyon-beep",
+  "source_url": "https://github.com/tachyon-beep/skillpacks/blob/main/plugins/bravos-systems-as-experience/skills/using-systems-as-experience/SKILL.md",
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tachyon-beep/skillpacks/blob/main/plugins/bravos-systems-as-experience/skills/using-systems-as-experience/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

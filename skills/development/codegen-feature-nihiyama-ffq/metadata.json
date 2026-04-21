@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:01:21.557400Z",
   "github_path": ".codex/skills/codegen-feature",
   "github_branch": "main",
-  "dir_name": "codegen-feature-nihiyama-ffq"
+  "dir_name": "codegen-feature-nihiyama-ffq",
+  "author": "nihiyama",
+  "source_url": "https://github.com/nihiyama/ffq/blob/main/.codex/skills/codegen-feature/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 nihiyama",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

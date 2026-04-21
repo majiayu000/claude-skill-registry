@@ -5,5 +5,12 @@
   "source": "github.com/zeyxx/CYNIC",
   "downloaded_at": "2026-02-02T03:58:17.955629Z",
   "dir_name": "wisdom",
-  "category": "other"
+  "category": "other",
+  "author": "zeyxx",
+  "source_url": "https://github.com/zeyxx/CYNIC/blob/main/.claude/skills/wisdom/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zeyxx/CYNIC/blob/main/.claude/skills/wisdom/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

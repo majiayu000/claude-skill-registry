@@ -9,5 +9,12 @@
   ],
   "stars": 1,
   "source": "local",
-  "dir_name": "ruff-linter"
+  "dir_name": "ruff-linter",
+  "author": "kagiyama-baking",
+  "source_url": "https://github.com/kagiyama-baking/kawashiro-server",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kagiyama-baking/kawashiro-server",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

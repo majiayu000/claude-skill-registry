@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T08:59:21.731452Z",
   "github_path": "plugins/sinch-claude-plugin/skills/manage-contact",
   "github_branch": "main",
-  "dir_name": "manage-contact-sinch-sinch-plugins"
+  "dir_name": "manage-contact-sinch-sinch-plugins",
+  "author": "sinch",
+  "source_url": "https://github.com/sinch/sinch-plugins/blob/main/plugins/sinch-claude-plugin/skills/manage-contact/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sinch/sinch-plugins/blob/main/plugins/sinch-claude-plugin/skills/manage-contact/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

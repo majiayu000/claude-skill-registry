@@ -10,5 +10,12 @@
   ],
   "stars": 0,
   "source": "local",
-  "dir_name": "comp-scout-analyze"
+  "dir_name": "comp-scout-analyze",
+  "author": "discreteds",
+  "source_url": "https://github.com/discreteds/competition-scout",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/discreteds/competition-scout",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

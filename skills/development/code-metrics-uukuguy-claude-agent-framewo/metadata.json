@@ -7,5 +7,12 @@
   "downloaded_at": "2026-01-06T09:09:21.424048Z",
   "github_path": "examples/production/07_codebase_analysis/.claude/skills/code-metrics",
   "github_branch": "main",
-  "dir_name": "code-metrics-uukuguy-claude-agent-framewo"
+  "dir_name": "code-metrics-uukuguy-claude-agent-framewo",
+  "author": "uukuguy",
+  "source_url": "https://github.com/uukuguy/claude-agent-framework/blob/main/examples/production/07_codebase_analysis/.claude/skills/code-metrics/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/uukuguy/claude-agent-framework/blob/main/examples/production/07_codebase_analysis/.claude/skills/code-metrics/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

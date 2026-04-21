@@ -11,5 +11,12 @@
   "stars": 2,
   "github_path": "skills/coderabbit-fix-flow",
   "github_branch": "main",
-  "dir_name": "coderabbit-fix-flow-alchemiststudiosdota-coderabbit-fix-flow-"
+  "dir_name": "coderabbit-fix-flow-alchemiststudiosdota-coderabbit-fix-flow-",
+  "author": "alchemiststudiosDOTai",
+  "source_url": "https://github.com/alchemiststudiosDOTai/coderabbit-fix-flow-plugin/blob/main/skills/coderabbit-fix-flow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AlchemistStudios",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

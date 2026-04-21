@@ -9,5 +9,12 @@
   ],
   "stars": 0,
   "source": "SkillsMP Synced Skills",
-  "dir_name": "chrome-builtin-ai"
+  "dir_name": "chrome-builtin-ai",
+  "author": "rish2jain",
+  "source_url": "https://github.com/rish2jain/VisualizeIt",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rish2jain/VisualizeIt",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

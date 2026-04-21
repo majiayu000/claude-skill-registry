@@ -7,5 +7,12 @@
   "tags": [],
   "stars": 0,
   "source": "github.com/Mineru98/skills-store",
-  "dir_name": "explaining-code-mineru98-skills-store-2"
+  "dir_name": "explaining-code-mineru98-skills-store-2",
+  "author": "Mineru98",
+  "source_url": "https://github.com/Mineru98/skills-store/blob/main/.claude/skills/explaining-code/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 skills-store contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
 }

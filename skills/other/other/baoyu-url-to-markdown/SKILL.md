@@ -1,14 +1,13 @@
 ---
 name: baoyu-url-to-markdown
 description: Fetch any URL and convert to markdown using baoyu-fetch CLI (Chrome CDP with site-specific adapters). Built-in adapters for X/Twitter, YouTube transcripts, Hacker News threads, and generic pages via Defuddle. Handles login/CAPTCHA via interaction wait modes. Use when user wants to save a webpage as markdown.
-version: 1.60.0
+version: 1.61.0
 metadata:
   openclaw:
     homepage: https://github.com/JimLiu/baoyu-skills#baoyu-url-to-markdown
     requires:
       anyBins:
         - bun
-        - npx
 ---
 
 # URL to Markdown
@@ -27,13 +26,13 @@ Concrete `AskUserQuestion` references below are examples — substitute the loca
 
 ## CLI Setup
 
-**Important**: The CLI is provided by the npm package dependency `baoyu-fetch`. 
+**Important**: The CLI source is vendored in `{baseDir}/scripts/lib`. `scripts/package.json` installs only third-party runtime dependencies.
 
 **Agent Execution Instructions**:
 1. Determine this SKILL.md file's directory path as `{baseDir}`
 2. Resolve `${BUN}` runtime: if `bun` installed → `bun`; else suggest installing Bun
-3. If `{baseDir}/scripts/node_modules/.bin/baoyu-fetch` does not exist, run `${BUN} install --cwd {baseDir}/scripts`
-4. `${READER}` = `{baseDir}/scripts/node_modules/.bin/baoyu-fetch`
+3. If `{baseDir}/scripts/node_modules` does not exist, run `${BUN} install --cwd {baseDir}/scripts`
+4. `${READER}` = `{baseDir}/scripts/baoyu-fetch`
 5. Replace all `${READER}` in this document with the resolved value
 
 ## Preferences (EXTEND.md)

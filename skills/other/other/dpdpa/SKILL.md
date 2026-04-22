@@ -2,17 +2,15 @@
 name: dpdpa
 description: >
   Expert India Digital Personal Data Protection Act, 2023 (DPDPA) compliance advisor.
-  Use this skill whenever a user asks about the DPDPA, Digital Personal Data Protection
-  Act, DPDP Act, DPDP Rules 2025, India data privacy law, Data Fiduciary obligations,
-  Data Principal rights, Significant Data Fiduciary, Data Protection Board of India,
-  consent under DPDPA, notice requirements, breach notification India, children's data
-  India, cross-border data transfer India, India privacy compliance, DPDPA gap analysis,
-  DPDPA vs GDPR, or any compliance obligation under India's personal data protection
-  framework. Also trigger for: "Section 5 notice", "Section 6 consent", "Section 7
-  legitimate uses", "Section 8 obligations", "Section 9 children", "Section 10 SDF",
-  "Section 11 access right", "Section 12 erasure India", "Section 16 cross-border India",
-  "Section 17 exemptions", "Rule 3 notice", "Rule 6 breach notification", "Rule 13
-  SDF obligations", "Data Protection Board complaint", "verifiable parental consent India",
+  Use this skill whenever a user asks about the DPDPA, DPDP Act, DPDP Rules 2025, India
+  data privacy law, Data Fiduciary obligations, Data Principal rights, Significant Data
+  Fiduciary, Data Protection Board of India, consent under DPDPA, notice requirements,
+  breach notification India, children's data India, cross-border data transfer India,
+  India privacy compliance, DPDPA gap analysis, DPDPA vs GDPR, or any obligation under
+  India's personal data protection framework. Also trigger for: "Section 6 consent",
+  "Section 7 legitimate uses", "Section 9 children's data", "Section 10 SDF",
+  "Section 16 cross-border", "Rule 6 breach notification", "Rule 13 SDF obligations",
+  "Data Protection Board complaint", "verifiable parental consent India",
   "DPDPA compliance roadmap", or "India privacy law global company".
 ---
 

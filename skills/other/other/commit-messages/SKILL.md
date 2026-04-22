@@ -3,7 +3,7 @@ name: commit-messages
 description: 'Generate conventional commit messages from staged changes with correct
   type/scope. Use when generating commit messages in conventional commits format.
   DO NOT use when: full PR preparation - use pr-prep instead.'
-version: 1.7.2
+version: 1.9.0
 alwaysApply: false
 category: artifact-generation
 tags:

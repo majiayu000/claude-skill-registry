@@ -1,7 +1,7 @@
 ---
 name: workflow-monitor
 description: Detect workflow failures and inefficient patterns, then create GitHub issues for improvement via /fix-workflow.
-version: 1.7.1
+version: 1.9.0
 alwaysApply: false
 category: workflow-methodology
 tags:

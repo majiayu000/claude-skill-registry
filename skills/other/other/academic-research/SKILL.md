@@ -1,6 +1,6 @@
 ---
 name: academic-research
-description: Search academic papers, build literature reviews, and synthesize research findings — combines Exa MCP (research_paper category, arxiv filtering) with arxiv-mcp-server for paper discovery, download, and deep analysis. Triggers on academic paper, literature review, research synthesis, arxiv, find papers, scholarly search.
+description: Search academic papers, build literature reviews, and synthesize research findings — combines Exa search scripts (research_paper category, arxiv filtering) with arxiv-mcp-server for paper discovery, download, and deep analysis. Triggers on academic paper, literature review, research synthesis, arxiv, find papers, scholarly search.
 ---
 
 # Academic Research
@@ -20,14 +20,21 @@ This skill provides comprehensive guidance for academic paper search, literature
 
 ## Available Tools
 
-### Exa MCP Server (Web Search with Academic Filtering)
+### Exa CLI Scripts (Web Search with Academic Filtering)
 
-**Tools**: `mcp__exa__web_search_exa`, `mcp__exa__get_code_context_exa`, `mcp__exa__deep_search_exa`
+Four scripts at `~/.claude/skills/exa-search/scripts/`:
 
-**Key Parameters for Academic Search**:
-- `category: "research_paper"` - Filter results to academic papers
-- `includeDomains: ["arxiv.org"]` - Restrict to arXiv
-- `startPublishedDate` / `endPublishedDate` - Filter by publication date
+| Script | Purpose |
+|--------|---------|
+| `exa_search.py` | Neural search with category/domain/date filters |
+| `exa_research.py` | Synthesized answers with citations |
+| `exa_similar.py` | Find papers similar to a given URL |
+| `exa_contents.py` | Extract full text from paper URLs |
+
+**Key flags for academic search**:
+- `--category "research paper"` — filter to academic papers
+- `--domain arxiv.org` — restrict to arXiv
+- `--after YYYY-MM-DD` / `--before YYYY-MM-DD` — date range
 
 ### ArXiv MCP Server (Paper Search, Download, Analysis)
 
@@ -46,12 +53,10 @@ This skill provides comprehensive guidance for academic paper search, literature
 **Use case**: Find papers on a specific topic quickly
 
 ```
-Step 1: Use Exa with research_paper category
-mcp__exa__web_search_exa({
-  query: "transformer attention mechanisms survey",
-  category: "research_paper",
-  numResults: 10
-})
+Step 1: Search with research paper category
+python3 ~/.claude/skills/exa-search/scripts/exa_search.py \
+  "transformer attention mechanisms survey" \
+  --category "research paper" -n 10
 
 Step 2: Review titles and abstracts
 Step 3: Note arXiv IDs for deeper analysis
@@ -79,21 +84,27 @@ read_paper({ arxiv_id: "2301.00234" })
 ### Workflow 3: Comprehensive Literature Review
 
 ```
-Step 1: Broad discovery with Exa (category: "research_paper")
+Step 1: Broad discovery with Exa
+python3 ~/.claude/skills/exa-search/scripts/exa_search.py \
+  "topic query" --category "research paper" -n 20
+
 Step 2: Identify key papers and authors
-Step 3: Deep dive with arXiv MCP (download + read_paper)
-Step 4: Synthesize findings by methodology/approach
+
+Step 3: Get synthesized overview
+python3 ~/.claude/skills/exa-search/scripts/exa_research.py \
+  "What are the main approaches to [topic]?" --sources --markdown
+
+Step 4: Deep dive with arXiv MCP (download + read_paper)
+Step 5: Synthesize findings by methodology/approach
 ```
 
 ### Workflow 4: Recent Developments Tracking
 
 ```
 Step 1: Time-filtered Exa search
-mcp__exa__web_search_exa({
-  query: "multimodal large language models",
-  category: "research_paper",
-  startPublishedDate: "2024-01-01"
-})
+python3 ~/.claude/skills/exa-search/scripts/exa_search.py \
+  "multimodal large language models" \
+  --category "research paper" --after 2024-01-01
 
 Step 2: Sort arXiv by submitted_date
 search_papers({ query: "multimodal LLM", sort_by: "submitted_date" })
@@ -130,17 +141,19 @@ includeDomains: [
 
 | Task | Primary Tool | Alternative |
 |------|--------------|-------------|
-| Broad topic search | Exa (research_paper) | arXiv search_papers |
-| ArXiv-specific | arXiv search_papers | Exa with includeDomains |
-| Download paper | arXiv download_paper | - |
-| Full paper content | arXiv read_paper | - |
-| Code implementations | Exa get_code_context | - |
-| Very recent papers | arXiv (submitted_date) | Exa with date filter |
+| Broad topic search | `exa_search.py --category "research paper"` | arXiv search_papers |
+| Synthesized overview | `exa_research.py --sources` | — |
+| ArXiv-specific | arXiv search_papers | `exa_search.py --domain arxiv.org` |
+| Download paper | arXiv download_paper | — |
+| Full paper content | arXiv read_paper | `exa_contents.py` |
+| Similar papers | `exa_similar.py` | — |
+| Code implementations | `exa_search.py --category github` | — |
+| Very recent papers | arXiv (submitted_date) | `exa_search.py --after YYYY-MM-DD` |
 
 ## Best Practices
 
-1. **Start broad** with Exa's research_paper category, then narrow
-2. **Use date filtering** for recent developments
+1. **Start broad** with `exa_search.py --category "research paper"`, then narrow
+2. **Use date filtering** (`--after`, `--before`) for recent developments
 3. **Download key papers** via arXiv MCP for persistent access
 4. **Cross-reference** multiple search approaches
 5. **Use technical terms** in queries for better results
@@ -162,12 +175,16 @@ Research domain for post-transformer attention mechanisms that break the O(n^2) 
 
 ### Pre-Built Search Queries
 
-```
-# Exa (research_paper category)
-"subquadratic attention mechanism" --category "research paper" --after 2024-01-01
-"block sparse attention triton kernel" --category "research paper"
-"mixture of attention heads sparse" --category "research paper"
-"linear attention transformer approximation" --category "research paper" --after 2024-06-01
+```bash
+# Exa search (research paper category)
+python3 ~/.claude/skills/exa-search/scripts/exa_search.py \
+  "subquadratic attention mechanism" --category "research paper" --after 2024-01-01
+python3 ~/.claude/skills/exa-search/scripts/exa_search.py \
+  "block sparse attention triton kernel" --category "research paper"
+python3 ~/.claude/skills/exa-search/scripts/exa_search.py \
+  "mixture of attention heads sparse" --category "research paper"
+python3 ~/.claude/skills/exa-search/scripts/exa_search.py \
+  "linear attention transformer approximation" --category "research paper" --after 2024-06-01
 
 # ArXiv (cs.LG + cs.CL)
 search_papers({ query: "subquadratic attention sparse transformer", max_results: 20, sort_by: "submitted_date" })
@@ -195,5 +212,5 @@ Working MoBA implementation with Triton kernels: `~/Desktop/Aldea/01-Repos/perpl
 ## Reference Documentation
 
 For detailed parameters and advanced usage:
-- `references/exa-academic-search.md` - Exa parameters for academic search
-- `references/arxiv-mcp-tools.md` - ArXiv MCP server tool reference
+- `references/exa-academic-search.md` — Exa CLI scripts for academic search
+- `references/arxiv-mcp-tools.md` — ArXiv MCP server tool reference

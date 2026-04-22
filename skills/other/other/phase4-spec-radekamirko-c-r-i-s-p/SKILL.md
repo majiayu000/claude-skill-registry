@@ -7,6 +7,19 @@ description: The Mileva Method (CRISP) — Phase 4: Spec. Full implementation re
 
 You are not building the thing. You are making the builder ready to build.
 
+## Project State
+
+> At the start of Phase S: read `docs/crisp-state.json`. Check phases C, R, and I are complete. Use `project`, `phases.C`, `phases.R`, `phases.I` fields to orient before reading other docs. Pay attention to: `project.agentInScope`, `project.memoryOwnershipRequired`, `phases.I.dataMappingRequired`, `phases.I.uxDiscoveryRequired`.
+>
+> At the end of Phase S (before exit checklist): update `docs/crisp-state.json`:
+> - Set `phases.current` to `"P"`
+> - Add `"S"` to `phases.complete`
+> - Set `phases.S.complete` to `true`
+> - Fill `phases.S.stack` (harness, harnessOpen, memoryOwner, layers)
+> - Fill `phases.S.mvpLine`, `phases.S.sprintCount`, `phases.S.sprints`
+> - Set `phases.S.analyticsRequired` and `phases.S.landingPageRequired`
+> - Add any unresolved items to `phases.S.openQuestions`
+
 **Output: a package a developer can read on Monday and start building on Tuesday.**
 
 ---
@@ -98,6 +111,40 @@ Confirm versions with the client before writing a single line of code. Save the 
 - Cross-check `docs/buy-vs-build-matrix.md` — already-decided tools go here, not up for debate again
 - Prefer existing libraries and open source when time or budget is constrained
 
+
+### Open Source Library Research — mandatory for every dependency
+
+> Claude's training data has a cutoff. A library that was "actively maintained" in training may have had zero commits in 18 months. One search prevents months of dependency debt.
+
+For every open source library in the tech stack, run this evaluation before confirming the choice:
+
+**Step 1: Search**
+Search GitHub: `[what you need] github library` (e.g. "pdf export github library", "react data table github")
+Evaluate the top 3–5 results.
+
+**Step 2: Score each candidate**
+
+| Criteria | What to check |
+|---|---|
+| ⭐ Stars | Community signal — >500 for a production dependency |
+| 🍴 Forks | Active derivative use — meaningful number relative to stars |
+| 📅 Last commit | Must be within 6 months for active maintenance |
+| 🐛 Issues | Open/closed ratio — high open, low closed = warning sign |
+| 📖 Documentation | Is it actually usable from docs alone? |
+| ⚖️ License | MIT/Apache-2.0/BSD = free for commercial. GPL = check carefully. |
+| 👥 Contributors | Solo maintainer = higher bus factor risk |
+
+**Step 3: Record decision**
+
+Add to the tech stack table:
+- Chosen library with pinned version
+- Why it was chosen over the alternatives (1 sentence)
+- Alternatives considered and why they were rejected
+
+> Present to client if the choice is non-obvious:
+> "I evaluated [A], [B], and [C] for [use case]. I'm recommending [A] — [stars], last commit [date], [license]. [B] was last updated [date] so I ruled it out. Agree?"
+
+
 **API Key & Secrets Rules — non-negotiable, copy into CLAUDE.md:**
 - **Never expose API keys, tokens, or secrets on the client side.** No exceptions. Not in React components, not in frontend env vars prefixed with `NEXT_PUBLIC_`, not in mobile app bundles.
 - All calls to 3rd party APIs that require credentials must be made server-side (API route, Edge function, backend service).
@@ -170,6 +217,8 @@ These integration specs are prerequisites — they must be written before the sp
 | Feature scope | `docs/problem-statement.md` — what's in and out of scope; `docs/buy-vs-build-matrix.md` — what's being built vs bought |
 | Out of scope / non-goals | `docs/project-goals.md` — non-goals; `docs/problem-statement.md` — explicit exclusions |
 | 3rd party integrations | `docs/buy-vs-build-matrix.md` and tech stack decision from 4B |
+
+**External product rule:** If `project.type === "external"` in `docs/crisp-state.json` — add a **Landing Page** epic to the backlog and tag it `MVP`. The landing page build is part of the launch, not a post-launch afterthought. The brief lives in `docs/landing-page-brief.md` (written in the Landing Page section below). Assign it to a sprint — typically Sprint 1 or a dedicated pre-launch sprint.
 
 Draft full epics and user stories in "As a [user], I want to [action], so that [outcome]" format. Leave MVP tag column blank — filled in 4D.
 
@@ -461,6 +510,24 @@ Setup (add to CI — GitHub Actions example):
 ```
 
 If Bearer is not yet configured in the project, flag it as a setup task for Sprint 1 before any code ships.
+If Bearer is not yet configured in the project, flag it as a setup task for Sprint 1 before any code ships.
+
+---
+
+### Logging Spec — mandatory for every project
+
+> Logging is what tells you what happened when production breaks at 2am. Define it before the build, not after.
+
+Write `docs/logging-spec.md` using `/templates/logging-spec.md`. This is a mandatory Phase S output — not optional.
+
+Key decisions to make:
+- Log levels per environment (production = INFO minimum, DEBUG off by default)
+- What always gets logged: every API request, auth event, background job, unhandled exception, 3rd party call, critical DB write
+- What never gets logged: passwords, API keys, secrets, PII (unless masked and compliance-required)
+- Log format: structured JSON with `requestId`, `level`, `event`, `timestamp`
+- Log destination: console (dev), file + aggregation service (production)
+
+Reference `docs/logging-spec.md` in `CLAUDE.md` and in every sprint's AI Spec quality gates.
 
 ---
 
@@ -477,10 +544,114 @@ If Bearer is not yet configured in the project, flag it as a setup task for Spri
 | `docs/assumptions-log.md` | Logged assumptions and resolution status | Always |
 | `docs/risk-assessment.md` | Risks, mitigations, security posture, legal/compliance, HITL zones | Always |
 | `docs/mvp-prioritization.md` | HVLE scoring table, weighted criteria, priority scores, MVP line | Always |
+| `docs/logging-spec.md` | Log levels, what to log, PII rules, format, destination, alerting | Always |
+| `docs/analytics-spec.md` | GA4 setup, event map, conversion goals, PII rules, sprint gates | External products with UI only |
+| `docs/landing-page-brief.md` | Hero copy, sections, CTAs, visual direction — compiled from all prior docs | External products only |
+| `docs/agent-security.md` | Agent identity/permissions, data handling, failure modes | When agent is in scope |
+| `docs/decisions.md` | Updated with Phase S decisions | Always |
 | `docs/ai-spec-[name].md` | One per sprint — pre-filled, open questions resolved, locked | Always (one per sprint) |
 | `docs/ai-spec-[service].md` | Integration spec per 3rd party service | Per integration |
 | `docs/sprint-plan.md` | Sprint sequence, goals, features per sprint, quality gates | Always |
 | `CLAUDE.md` | Compiled project context incl. NFRs — lives in project root, not docs/ | Always |
+
+---
+
+### Analytics Spec — External UI/Mobile/Web products
+
+> Every success metric from Phase R needs a GA4 event that fires when it happens.
+> If you're building a UI product and you don't define analytics before the build, you'll ship blind.
+
+Write `docs/analytics-spec.md` using `/templates/analytics-spec.md`.
+
+Key steps:
+1. Pull every success target from `docs/success-metrics.md` — map each to a GA4 conversion event
+2. Map all core user actions from `docs/user-journey-map.md` to events
+3. Define parameters per event — what context is captured alongside the event name
+4. Apply PII rules — no names, emails, or personal data in event parameters ever
+5. Assign each event to the sprint that builds the relevant feature
+
+Reference `docs/analytics-spec.md` in every sprint's AI Spec so Claude implements tracking for that sprint's features by default.
+
+---
+
+### Landing Page Brief — External products only
+
+> By Phase S, you already have everything needed for a landing page: value prop, USP, target audience, visual direction, feature breakdown. Compiling it takes 20 minutes. Not compiling it means the client builds it from scratch with none of this context.
+
+Write `docs/landing-page-brief.md` using `/templates/landing-page-brief.md`.
+
+Pre-fill from:
+- `docs/value-proposition-canvas.md` → hero headline, value prop, pain points
+- `docs/market-research.md` → USP, target audience description
+- `docs/ux-discovery.md` → visual direction, tone, non-negotiable feeling
+- `docs/stakeholder-register.md` → who the page speaks to
+- `docs/initial-backlog.md` → feature highlights (benefits framing, not feature list)
+
+Present to client for one round of copy corrections before handing off.
+
+> **MVP scope:** For external products, the landing page build is MVP — not a nice-to-have. It must already appear in `docs/initial-backlog.md` with an `MVP` tag (added during 4C) and have a sprint assigned in `docs/sprint-plan.md`.
+
+---
+
+
+### Agent Security Spec — when agent is in scope
+
+> **Trigger:** If `docs/problem-statement.md` indicates an AI agent is in scope, this is a mandatory Phase S output.
+> Do not start the sprint that builds the agent without a locked `docs/agent-security.md`.
+>
+> Aligned with AIUC-1 enterprise AI agent security standard.
+> This is the spec-layer translation of what was elicited in Phase R agent permission scoping.
+
+Write `docs/agent-security.md` using `/templates/agent-security.md`.
+
+Pre-fill from Phase R:
+- **Identity & Permissions** — from `docs/stakeholder-register.md` agent HITL/permissions section
+- **Hard boundaries** — from Phase R "what the agent must never do" elicitation
+- **Approval gates** — from Phase R gate conditions
+- **Data handling** — from `docs/problem-statement.md` (PII/compliance constraints) + Phase R data sensitivity elicitation
+- **Failure modes** — from Phase R failure behaviour elicitation
+
+Then generate open questions for anything not covered in Phase R:
+- Is the auth credential scoped to least privilege?
+- Is there an audit trail for every agent action?
+- Is the human fallback process documented and findable?
+- Are all agent actions reversible, or are some irreversible — if irreversible, is there a gate?
+
+Resolve all open questions before the sprint that builds the agent starts.
+
+Add to `CLAUDE.md`:
+- Agent security rules block (see CLAUDE.md template)
+- Reference `docs/agent-security.md` in the output manifest
+
+### Decision Logging — Phase S
+
+> Update `docs/decisions.md` with decisions made in Phase S before closing.
+
+**Log these decisions in Phase S:**
+- **Tech stack choices** — every layer, why that tool, what was rejected and why
+- **Open source library choices** — chosen library, alternatives evaluated, rationale
+- **MVP line** — where it was drawn, what was pushed to post-MVP and why
+- **NFR decisions** — uptime target, deployment approach, any tradeoffs
+- **Harness choice** — open or closed, memory ownership decision if agent in scope
+
+
+When all exit checklist items are checked and all AI Specs are locked, deliver this message:
+
+---
+
+**Your spec is complete. CRISP Phase S is done.**
+
+Here's what's ready:
+- Sprint plan → `docs/sprint-plan.md`
+- AI Spec for Sprint 1 → `docs/ai-spec-[sprint-name].md`
+- CLAUDE.md compiled → project root
+
+**To start building right now, just say:**
+> *"Start Sprint 1"*
+
+Claude Code will read the AI Spec and begin. No new setup, no mode switching, no additional steps. The spec is the handoff.
+
+If you want to review what's in scope for Sprint 1 first, check `docs/ai-spec-[sprint-name].md`. Everything the build needs is already in there.
 
 ---
 
@@ -498,6 +669,7 @@ If Bearer is not yet configured in the project, flag it as a setup task for Spri
 - [ ] Known breaking changes identified and flagged to client
 - [ ] Pinned version table saved to CLAUDE.md with version rules
 - [ ] Client confirmed versions don't conflict with existing code or infra
+- [ ] Every open source library evaluated: stars, last commit, license, alternatives rejected with reason
 
 **NFRs**
 - [ ] Availability / uptime target defined
@@ -507,6 +679,11 @@ If Bearer is not yet configured in the project, flag it as a setup task for Spri
 - [ ] Cloud provider and region decided (data residency cross-checked)
 - [ ] Backup, recovery, and monitoring expectations set
 - [ ] NFRs saved to `docs/problem-statement.md` and referenced in `CLAUDE.md`
+
+**Logging**
+- [ ] Logging spec written → `docs/logging-spec.md`
+- [ ] Log levels, format, destination, PII rules defined
+- [ ] Logging spec referenced in `CLAUDE.md`
 
 **3rd Party Integrations**
 - [ ] Every 3rd party service in tech stack identified and tagged `[INTEGRATION REQUIRED]`
@@ -533,11 +710,40 @@ If Bearer is not yet configured in the project, flag it as a setup task for Spri
 - [ ] Backlog updated with MVP / Post-MVP / Dependency tags → `docs/initial-backlog.md`
 
 **AI Architecture**
-- [ ] `CLAUDE.md` compiled from all `docs/` outputs — includes NFRs and output manifest
+- [ ] `CLAUDE.md` compiled from all `docs/` outputs — includes NFRs, logging spec, and output manifest
 - [ ] Folder structure defined
 - [ ] Agent/skill map complete — one `SKILL.md` per agent in project `skills/` folder
 - [ ] AI Specs pre-filled, sprint-specific open questions generated and resolved → `docs/ai-spec-[name].md`
 - [ ] No open questions remain in any locked spec
 - [ ] Sprint plan sequenced using MVP prioritization + dependency map → `docs/sprint-plan.md`
-- [ ] Quality gates defined per sprint
+- [ ] Quality gates defined per sprint (incl. logging gate)
 - [ ] Integration specs completed before sprints that depend on them
+- [ ] Key decisions logged → `docs/decisions.md`
+
+**Analytics & Landing Page**
+- [ ] **[External UI/Mobile/Web]** Analytics spec written → `docs/analytics-spec.md`
+  - [ ] Every Phase R success metric mapped to a GA4 conversion event
+  - [ ] All core user actions from journey map mapped to events
+  - [ ] PII rules applied — no personal data in event parameters
+  - [ ] Events assigned to sprints
+- [ ] **[External product]** Landing page brief compiled → `docs/landing-page-brief.md`
+  - [ ] Landing page epic added to `docs/initial-backlog.md` with `MVP` tag
+  - [ ] Landing page sprint assigned in `docs/sprint-plan.md`
+
+**Agent Security**
+- [ ] **[Agent in scope]** Agent security spec written → `docs/agent-security.md`
+  - [ ] Identity & permissions defined — what agent can/cannot do autonomously
+  - [ ] Hard boundaries listed explicitly — what agent must never do
+  - [ ] Approval gates defined with trigger conditions
+  - [ ] Data handling rules set — PII, logging, retention
+  - [ ] All failure modes defined with human fallback documented
+  - [ ] Audit trail confirmed — every agent action is loggable
+  - [ ] All open questions resolved before agent sprint starts
+  - [ ] Agent security rules added to `CLAUDE.md`
+  - [ ] Hero headline and value prop drafted
+  - [ ] Pain points from VPC included
+  - [ ] Visual direction from ux-discovery applied
+  - [ ] Client reviewed and copy corrections made
+
+**Progress Report**
+- [ ] Progress report generated → `docs/progress-report-[YYYY-MM-DD].md` (optional — generate on request or before handoff)

@@ -57,7 +57,7 @@ Route based on user intent:
 | "Project structure" / "Architecture" | `analyze_architecture` | `{ path: "{project_path}", scope?: "src/" }` |
 | "Find symbol X" | `find_symbols` | `{ path: "{project_path}", query: "X" }` |
 | "Find `app.get(...)` / `router.use(...)` / `server.registerTool(...)` pattern" | `grep_search` | `{ path: "{project_path}", pattern: "app\\.get\\(|router\\.use\\(|server\\.registerTool\\(" }` |
-| "Find duplicate code / hotspots / unused exports" | `audit_workspace` | `{ path: "{project_path}", scope?: "src/", verbosity: "full" }` |
+| "Find duplicate code / hotspots / unused exports" | `audit_workspace` | `{ path: "{project_path}", scope?: "src/", verbosity: "minimal", limit: 5, clone_member_limit: 3 }` |
 | "Circular dependencies / module coupling" | `analyze_architecture` | `{ path: "{project_path}", verbosity: "full" }` |
 | "Implementations / overrides" | `find_implementations` | `{ name: "X", file: "...", path: "{project_path}" }` |
 | "Dataflow / propagation" | `trace_dataflow` | `{ source: { symbol: { name: "X", file: "..." }, anchor: { kind: "param", name: "input" } }, sink?: { symbol: { name: "X", file: "..." }, anchor: { kind: "return" } }, path: "{project_path}" }` |
@@ -74,7 +74,7 @@ Route based on user intent:
 
 **Query boundary rule:** `find_symbols` is name-based discovery only. For code fragments like `export function` or unresolved member-call patterns like `app.get(...)`, use `grep_search` instead of treating them as symbols.
 
-**Ambiguity rule:** if `find_symbols` returns `truncated: true` or a large `candidate_count`, refine with `path`, then `name + file` or `workspace_qualified_name` instead of widening the graph query.
+**Ambiguity rule:** if `find_symbols` returns `partial ... truncated=1` or shows more total results than returned rows, refine with `path`, then `name + file` or `workspace_qualified_name` instead of widening the graph query.
 
 **Path rule:** `path` may be the indexed project root or any file/subdirectory inside that indexed project.
 
@@ -88,11 +88,11 @@ Route based on user intent:
 
 ### Phase 3: Present Results
 
-1. Show MCP tool output directly (markdown tables)
+1. Show MCP tool output directly; `hex-graph` uses a compact line grammar with action-line, `#section`, `.row`, `!detail`, and executable `>` follow-up pointers
 2. For code snippets referenced in results, use `hex-line read_file` with line ranges; add `edit_ready=true, verbosity="full"` only when you intend to carry revision/checksums into an edit
 3. Suggest follow-up queries based on results:
   - After `find_symbols` with a clean top match → suggest `inspect_symbol` with `workspace_qualified_name`
-  - After `find_symbols` with `truncated: true` → suggest narrowing `path` or switching to `name + file` before any deeper graph tool
+  - After `find_symbols` with `partial ... truncated=1` → suggest narrowing `path` or switching to `name + file` before any deeper graph tool
    - After `inspect_symbol` → suggest `trace_paths` if refactoring
    - After `trace_paths` → suggest `find_references` or `find_implementations` depending on symbol kind
    - After empty `trace_paths` from a broad or module-level selector → suggest `inspect_symbol` or `analyze_architecture` instead of assuming there are no dependencies

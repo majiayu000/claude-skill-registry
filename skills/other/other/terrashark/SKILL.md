@@ -47,6 +47,7 @@ Supplemental references (only when needed):
 - `references/security-and-governance.md`
 - `references/do-dont-patterns.md`
 - `references/mcp-integration.md`
+- `references/trusted-modules.md` (load when provider is `aws`, `azurerm`, `google`, `oci`, or `ibm`)
 
 ## 4) Propose fix path with explicit risk controls
 
@@ -62,6 +63,8 @@ When applicable, output:
 - migration blocks (`moved`, import strategy)
 - CI pipeline updates (plan/apply separation, artifacts, policy checks)
 - compliance controls (approvals, policy rules, evidence paths)
+
+When a trusted registry module covers the requested resource and the user has not asked for raw HCL, default to that module with an exact `version` pin (see `references/trusted-modules.md`).
 
 ## 6) Validate before finalize
 

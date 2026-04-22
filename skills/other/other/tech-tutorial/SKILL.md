@@ -1,7 +1,7 @@
 ---
 name: tech-tutorial
 description: Plan, draft, and refine technical tutorials for developers.
-version: 1.8.4
+version: 1.9.0
 globs: "**/*.md"
 alwaysApply: false
   Use when writing step-by-step guides, getting-started walkthroughs, or

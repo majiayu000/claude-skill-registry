@@ -1,7 +1,7 @@
 ---
 name: baoyu-xhs-images
 description: "[Deprecated: use baoyu-image-cards] Generates Xiaohongshu (Little Red Book) image card series with 12 visual styles, 8 layouts, and 3 color palettes. Breaks content into 1-10 cartoon-style image cards optimized for XHS engagement. Use when user mentions \"小红书图片\", \"XHS images\", \"RedNote infographics\", \"小红书种草\", \"小绿书\", \"微信图文\", \"微信贴图\", or wants social media infographic series for Chinese platforms."
-version: 1.56.1
+version: 1.56.2
 metadata:
   openclaw:
     homepage: https://github.com/JimLiu/baoyu-skills#baoyu-xhs-images
@@ -24,13 +24,30 @@ Concrete `AskUserQuestion` references below are examples — substitute the loca
 
 ## Image Generation Tools
 
-When this skill needs to render an image:
+When this skill needs to render an image, resolve the backend in this order:
 
-- **Use whatever image-generation tool or skill is available** in the current runtime — e.g., Codex `imagegen`, Hermes `image_generate`, `baoyu-imagine`, or any equivalent the user has installed.
-- **If multiple are available**, ask the user **once** at the start which to use (batch with any other initial questions).
-- **If none are available**, tell the user and ask how to proceed.
+1. **Current-request override** — if the user names a specific backend in the current message, use it.
+2. **Saved preference** — if `EXTEND.md` sets `preferred_image_backend` to a backend available right now, use it.
+3. **Auto-select** (when the preference is `auto`, unset, or the pinned backend isn't available):
+   - If the current runtime exposes a native image tool (e.g., Codex `imagegen`, Hermes `image_generate`), use it. Runtime-native tools are preferred by default — agents that know their own tool inventory should surface the native one here.
+   - Otherwise, if exactly one non-native backend is installed (e.g., `baoyu-imagine`), use it.
+   - Otherwise (multiple non-native backends with no runtime-native tool), ask the user once — batch with any other initial questions.
+4. **If none are available**, tell the user and ask how to proceed.
+
+Setting `preferred_image_backend: ask` forces the step-3 prompt every run regardless of available backends. Users change the pinned backend via the `## Changing Preferences` section below.
 
 **Prompt file requirement (hard)**: write each image's full, final prompt to a standalone file under `prompts/` (naming: `NN-{type}-[slug].md`) BEFORE invoking any backend. The file is the reproducibility record and lets you switch backends without regenerating prompts.
+
+Concrete tool names (`imagegen`, `image_generate`, `baoyu-imagine`) above are examples — substitute the local equivalents under the same rule.
+
+## Confirmation Policy
+
+Default behavior: **confirm before generation**.
+
+- Treat explicit skill invocation, a file path, matched signals/presets, and `EXTEND.md` defaults as **recommendation inputs only**. None of them authorizes skipping confirmation.
+- Do **not** start Step 3 until the user completes Step 2.
+- Skip confirmation only when the current request explicitly says to do so, for example: `--yes`, "直接生成", "不用确认", "跳过确认", "按默认出图", or equivalent wording.
+- If confirmation is skipped explicitly, state the assumed strategy / style / layout / palette / count / backend in the next user-facing update before generating.
 
 ## Language
 
@@ -292,6 +309,8 @@ Check these paths in order; first hit wins:
 
 ### Step 2: Smart Confirm ⚠️ REQUIRED
 
+**Hard gate**: this step is mandatory per the [Confirmation Policy](#confirmation-policy) — Step 3 cannot start until the user confirms here (or explicitly opts out with `--yes` / equivalent wording in the current request).
+
 Goal: present the auto-recommended plan and let the user confirm or adjust. Skip this step entirely under `--yes` — proceed with Path A using the analysis and any CLI overrides.
 
 **Display summary** before asking:
@@ -418,4 +437,16 @@ Always update the prompt file before regenerating — it's the source of truth a
 - For sensitive public figures, use stylized cartoon alternatives.
 - Smart Confirm (Step 2) is required; Detailed mode adds a second confirmation (2a + 2c).
 
-Custom configurations via EXTEND.md. See Step 0 for paths and schema.
+## Changing Preferences
+
+EXTEND.md lives at the first matching path listed in Step 0. Three ways to change it:
+
+- **Edit directly** — open EXTEND.md and change fields. Full schema: `references/config/preferences-schema.md`.
+- **Reconfigure interactively** — delete EXTEND.md (or ask "reconfigure baoyu-xhs-images preferences" / "重新配置"). The next run re-triggers first-time setup.
+- **Common one-line edits**:
+  - `preferred_image_backend: auto` — default; runtime-native tool wins, falls back to the only installed backend, asks only if multiple non-native are present.
+  - `preferred_image_backend: codex-imagegen` — pin to Codex's built-in.
+  - `preferred_image_backend: baoyu-imagine` — pin to the baoyu-imagine skill.
+  - `preferred_image_backend: ask` — confirm backend every run.
+  - `preferred_style: notion`, `preferred_layout: dense`, `preferred_palette: macaron`, `language: zh`.
+  - `watermark.enabled: true` + `watermark.content: "@handle"` — add a watermark.

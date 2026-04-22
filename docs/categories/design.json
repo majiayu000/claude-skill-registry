@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 9510,
-  "updated_at": "2026-04-21T07:23:30.101083Z",
+  "count": 9511,
+  "updated_at": "2026-04-22T02:08:13.420826Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -107484,6 +107484,23 @@
       "stars": 0,
       "install": "agentuity/discord-help-agent/.agents/skills/agentuity-cli-project-auth-generate",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "repo": "alonw0/web-asset-generator",
+      "path": "skills/web-asset-generator/SKILL.md",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "stars": 0,
+      "install": "alonw0/web-asset-generator/skills/web-asset-generator/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "astrowind",

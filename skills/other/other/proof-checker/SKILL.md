@@ -16,7 +16,7 @@ Systematically verify a mathematical proof via cross-model adversarial review, f
 - MAX_REVIEW_ROUNDS = 3
 - REVIEWER_MODEL = `gpt-5.4` via Codex MCP, reasoning effort always `xhigh`
 - **REVIEWER_BACKEND = `codex`** — Default: Codex MCP (xhigh). Override with `— reviewer: oracle-pro` for GPT-5.4 Pro via Oracle MCP. See `shared-references/reviewer-routing.md`.
-- AUDIT_DOC: `PROOF_AUDIT.md` in project root (cumulative log)
+- AUDIT_DOC: `PROOF_AUDIT.md` at the paper directory root, alongside `main.tex` (cumulative log; when invoked via `/paper-writing`, this is `paper/PROOF_AUDIT.md`)
 - REPORT_TEX: `proof_audit_report.tex` (formal before/after PDF)
 - STATE_FILE: `PROOF_CHECK_STATE.json` (for recovery)
 - SKELETON_DOC: `PROOF_SKELETON.md` (micro-claim inventory)
@@ -405,8 +405,86 @@ Write `PROOF_CHECK_STATE.json`:
 |------|---------|------|
 | `PROOF_SKELETON.md` | Dependency DAG + assumption ledger + micro-claims | Phase 0.5 |
 | `PROOF_AUDIT.md` | Cumulative round-by-round audit log | Updated each round |
+| `PROOF_AUDIT.json` | Machine-readable submission verdict (see below) | Always emitted |
 | `proof_audit_report.tex/.pdf` | Formal before/after report | Phase 4 |
 | `PROOF_CHECK_STATE.json` | State for recovery | Phase 5 |
+
+## Submission Artifact Emission
+
+This skill **always** writes `PROOF_AUDIT.json` at the paper directory
+root (i.e. `paper/PROOF_AUDIT.json` when invoked from `/paper-writing`
+with paper-dir `paper/`; `<your-paper-dir>/PROOF_AUDIT.json` when invoked
+standalone), regardless of caller or whether the paper contains theorems.
+A paper with no `\begin{theorem}` / `\begin{lemma}` / `\begin{proof}` emits
+verdict `NOT_APPLICABLE`; silent skip is forbidden. `paper-writing`
+Phase 6 and `tools/verify_paper_audits.sh` both rely on this artifact
+existing at `<paper-dir>/PROOF_AUDIT.json`.
+
+The artifact conforms to the schema in `shared-references/assurance-contract.md`:
+
+```json
+{
+  "audit_skill":      "proof-checker",
+  "verdict":          "PASS | WARN | FAIL | NOT_APPLICABLE | BLOCKED | ERROR",
+  "reason_code":      "all_proofs_complete | minor_gaps | critical_gap | no_theorems | ...",
+  "summary":          "One-line human-readable verdict summary.",
+  "audited_input_hashes": {
+    "main.tex":                 "sha256:...",
+    "sections/4.theory.tex":    "sha256:..."
+  },
+  "trace_path":       ".aris/traces/proof-checker/<date>_run<NN>/",
+  "thread_id":        "<codex mcp thread id>",
+  "reviewer_model":   "gpt-5.4",
+  "reviewer_reasoning": "xhigh",
+  "generated_at":     "<UTC ISO-8601>",
+  "details": {
+    "theorems_audited": <int>,
+    "issues": [ { "id": "T1-H3", "severity": "FATAL|CRITICAL|MAJOR|MINOR",
+                  "category": "quantifier|domination|...",
+                  "location": "sections/4.theory.tex:L182",
+                  "note": "..." }, ... ]
+  }
+}
+```
+
+### `audited_input_hashes` scope
+
+Hash the **declared input set** actually reviewed — the theorem-bearing
+`.tex` files passed into this invocation — not a repo-wide union and not
+the reviewer's self-reported opened subset. The external verifier rehashes
+these entries; any mismatch flags `STALE`.
+
+**Path convention** (must match `tools/verify_paper_audits.sh`): keys are
+**paths relative to the paper directory** (no `paper/` prefix — the
+verifier resolves relative to the paper dir; prefixing produces
+`paper/paper/...` and false-fails as STALE). Use **absolute paths** for
+files outside the paper dir.
+
+### Verdict decision table
+
+| Input state                                           | Verdict          | `reason_code` example |
+|-------------------------------------------------------|------------------|-----------------------|
+| No theorems / lemmas / proofs in paper                | `NOT_APPLICABLE` | `no_theorems`         |
+| Theorems present but referenced files unreadable      | `BLOCKED`        | `source_unreadable`   |
+| All proof obligations discharged, no gaps             | `PASS`           | `all_proofs_complete` |
+| Only MINOR issues (notation / exposition)             | `WARN`           | `minor_gaps`          |
+| Any FATAL or CRITICAL issue (logic gap, wrong claim)  | `FAIL`           | `critical_gap`        |
+| Reviewer invocation failed (network / malformed)      | `ERROR`          | `reviewer_error`      |
+
+MAJOR issues alone map to `WARN` or `FAIL` at the reviewer's discretion and
+must carry an explicit justification in `summary` + `details.issues`.
+
+### Thread independence
+
+Every invocation uses a fresh `mcp__codex__codex` thread. Never
+`codex-reply` across proof-checker runs. Do not accept prior audit outputs
+(PAPER_CLAIM_AUDIT, CITATION_AUDIT, EXPERIMENT_LOG) as input — the fresh
+thread preserves reviewer independence per
+`shared-references/reviewer-independence.md`.
+
+This skill never blocks by itself; `paper-writing` Phase 6 plus the
+verifier decide whether the verdict blocks finalization based on the
+`assurance` level.
 
 ## Example Invocations
 

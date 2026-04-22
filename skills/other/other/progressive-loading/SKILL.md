@@ -5,7 +5,7 @@ description: 'Context-aware progressive module loading with hub-and-spoke patter
 
 
   progressive loading, lazy loading, hub-spoke, module selection.'
-version: 1.8.4
+version: 1.9.0
 alwaysApply: false
 category: infrastructure
 tags:

@@ -241,12 +241,13 @@ python3 ~/.claude/skills/codex-orchestrator/scripts/codex-session.py info securi
 | `--reasoning <level>` | Override reasoning effort: `minimal`, `low`, `medium`, `high`, `xhigh` |
 | `--sandbox <mode>` | read-only, workspace-write, danger-full-access |
 | `--full-auto` | Skip approval prompts |
+| `--no-auto` | Disable auto `--full-auto` (require manual approval) |
 | `--web-search` | Enable Exa web search (injects guide into AGENTS.md) |
 | `--search` | Enable native Codex web search (model-level tool, works in all sandboxes) |
 | `--json` | Output JSONL event stream (pipe to jq, logs, etc.) |
 | `--image <file>` | Attach image to prompt (vision input) |
 | `--resume` | Resume previous exec session (builder "continue" workflow) |
-| `--with-mcp` | Keep global MCP servers enabled (disabled by default for speed) |
+| `--with-mcp` | (no-op, kept for compatibility; manage MCPs in ~/.codex/config.toml) |
 
 ### Model & Reasoning Defaults
 
@@ -255,7 +256,7 @@ Each profile has a default model and reasoning effort. User flags override these
 | Profile Type | Profiles | Model | Reasoning |
 |-------------|----------|-------|-----------|
 | **Coding** | builder, reviewer, debugger, refactor, syseng, security, docs | `gpt-5.4` | `high` |
-| **Planning** | planner, architect | `gpt-5.4-pro` | `high` |
+| **Planning** | planner, architect | `gpt-5.4` | `high` |
 | **Research** | researcher | `gpt-5.4` | `medium` |
 
 **Reasoning effort levels**: `none` < `minimal` < `low` < `medium` < `high` < `xhigh`
@@ -264,7 +265,7 @@ Each profile has a default model and reasoning effort. User flags override these
 # Uses profile defaults (builder → gpt-5.4 + high)
 ~/.claude/skills/codex-orchestrator/scripts/codex-exec.sh builder "Implement auth module"
 
-# Uses profile defaults (planner → gpt-5.4-pro + high)
+# Uses profile defaults (planner → gpt-5.4 + high)
 ~/.claude/skills/codex-orchestrator/scripts/codex-exec.sh planner "Create ExecPlan for caching"
 
 # Override model for quick tasks

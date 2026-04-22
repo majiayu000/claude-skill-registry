@@ -33,7 +33,7 @@ Receives `contextStore` with: `tech_stack`, `project_root`, `output_dir`.
 
 1) **Parse Context:** Extract tech stack, project root, output_dir from contextStore
 2) **Scan:** Find all source files (use `tech_stack` for detection)
-   **Hex-line primary path:** Use `outline(path)` and discovery-first `read_file()` for code files before analyzing comments. Use `edit_ready=true, verbosity="full"` only if the audit turns into a follow-up edit. Do not use `hex-graph` here - comment quality is a code-reading problem, not a semantic graph problem.
+   **Hex-line primary path:** Use `outline(file_path)` and discovery-first `read_file()` for code files before analyzing comments. Use `edit_ready=true, verbosity="full"` only if the audit turns into a follow-up edit. Do not use `hex-graph` here - comment quality is a code-reading problem, not a semantic graph problem.
 3) **Extract:** Parse inline comments + docstrings/JSDoc
 4) **Audit:** Run 6 category checks (see Audit Categories below)
 5) **Collect Findings:** Record each violation with severity, location (file:line), effort estimate (S/M/L), recommendation

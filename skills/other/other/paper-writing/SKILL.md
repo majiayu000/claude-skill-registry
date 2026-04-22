@@ -1,6 +1,6 @@
 ---
 name: paper-writing
-description: "Workflow 3: Full paper writing pipeline. Orchestrates paper-plan → paper-figure → figure-spec/paper-illustration/mermaid-diagram → paper-write → paper-compile → auto-paper-improvement-loop to go from a narrative report to a polished, submission-ready PDF. Use when user says \"写论文全流程\", \"write paper pipeline\", \"从报告到PDF\", \"paper writing\", or wants the complete paper generation workflow."
+description: "Workflow 3: Full paper writing pipeline. Orchestrates paper-plan → paper-figure → figure-spec/paper-illustration/mermaid-diagram → paper-write → paper-compile → auto-paper-improvement-loop to go from a narrative report to a polished PDF. At `— effort: max | beast` (or explicit `— assurance: submission`), Phase 6 gates the Final Report on `tools/verify_paper_audits.sh`; the PDF is labelled `submission-ready` only when the external verifier is green. Use when user says \"写论文全流程\", \"write paper pipeline\", \"从报告到PDF\", \"paper writing\", or wants the complete paper generation workflow."
 argument-hint: [narrative-report-path-or-topic]
 allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob, Agent, Skill, mcp__codex__codex, mcp__codex__codex-reply
 ---
@@ -45,6 +45,49 @@ This pipeline accepts one of:
 The more detailed the input (especially figure descriptions and quantitative results), the better the output.
 
 ## Pipeline
+
+### Phase 0: Assurance Setup
+
+Resolve the active `assurance` level and persist it so Phase 6's external
+verifier reads the same value. **Run once at pipeline start, before Phase 1.**
+
+**Resolution order** (first match wins):
+
+1. Explicit `— assurance: draft | submission` in `$ARGUMENTS`
+2. Derived from `— effort:`
+   - `lite` / `balanced` → `draft` (default, **zero change from current behavior**)
+   - `max` / `beast` → `submission`
+3. Default: `draft`
+
+**Action:**
+
+```bash
+mkdir -p paper/.aris
+echo "<resolved-level>" > paper/.aris/assurance.txt   # draft or submission
+```
+
+**What each level does downstream:**
+
+- **`draft`** — Existing behavior. Audits run only when their content detector
+  matches (Phase 4.5 / 4.7 / 5.5 / 5.8). Missing artifacts are non-blocking.
+  Silent-skip allowed.
+- **`submission`** — The three mandatory audits (proof-checker,
+  paper-claim-audit, citation-audit) are treated as load-bearing gates. Each
+  sub-audit must emit its JSON artifact (PASS / WARN / FAIL / NOT_APPLICABLE /
+  BLOCKED / ERROR) — never silent-skip. Phase 6 runs
+  `tools/verify_paper_audits.sh`; a non-zero exit blocks the Final Report.
+
+**Escape hatch:** a user wanting the old "beast = depth-only, no audit gate"
+can pass `— effort: beast, assurance: draft` explicitly. Legal but
+discouraged for actual submissions. See
+`shared-references/assurance-contract.md` for the full contract.
+
+**Announce the resolved level in-line before Phase 1:**
+
+```
+📋 Assurance: <level> (derived from effort: <effort>)
+   <either "current behavior, no audit gate" OR "mandatory audits gated by tools/verify_paper_audits.sh">
+```
 
 ### Phase 1: Paper Plan
 
@@ -345,24 +388,153 @@ else:
 
 ### Phase 6: Final Report
 
+**Phase 6.0 — Submission Gate**
+
+Before writing the Final Report, resolve the active assurance level. This
+uses the **same derivation rule as Phase 0** so a run where Phase 0 was
+skipped or its write failed cannot silently downgrade a `beast` / `max` /
+`— assurance: submission` invocation back to draft.
+
+**Resolution at the gate** (re-derive; do not trust `.aris/assurance.txt`
+alone):
+
+1. Parse `$ARGUMENTS` for an explicit `— assurance: draft | submission` or
+   an `— effort: lite | balanced | max | beast` directive.
+2. Derive the expected level:
+   - explicit `assurance:` wins
+   - else `lite` / `balanced` → `draft`, `max` / `beast` → `submission`
+   - else `draft`
+3. Read `paper/.aris/assurance.txt`. If the file is missing, write it now
+   with the derived level.
+4. If the file's value **disagrees** with the derived level (e.g. file
+   says `draft` but `$ARGUMENTS` says `beast`), **overwrite** the file
+   with the derived level and surface a one-line warning in-chat:
+   `⚠️ .aris/assurance.txt was draft but $ARGUMENTS says submission; overriding.`
+5. Use the re-derived level as authoritative for the rest of Phase 6.
+
+```bash
+# Final authoritative value, written and read from the same source
+ASSURANCE=<derived-from-$ARGUMENTS>        # draft | submission
+mkdir -p paper/.aris
+echo "$ASSURANCE" > paper/.aris/assurance.txt
+```
+
+If `ASSURANCE=draft`, skip directly to the Final Report template below —
+**current behavior, no change** for the default `balanced` user.
+
+If `ASSURANCE=submission`, run the pre-flight checklist below, then the
+verifier. The verifier's exit code is the source of truth — do NOT
+self-declare "audits complete" based on conversation memory.
+
+#### Submission pre-flight checklist
+
+Print this checklist verbatim at the start of Phase 6.0 and confirm each row
+before proceeding. This resists the common failure mode of the model
+skipping audits while claiming to have run them.
+
+```
+📋 Submission audits required before Final Report:
+   [ ] 1. /proof-checker        → paper/PROOF_AUDIT.json
+   [ ] 2. /paper-claim-audit    → paper/PAPER_CLAIM_AUDIT.json
+   [ ] 3. /citation-audit       → paper/CITATION_AUDIT.json
+   [ ] 4. bash <ARIS_REPO>/tools/verify_paper_audits.sh paper/ --assurance submission
+   [ ] 5. Block Final Report iff verifier exit code != 0
+```
+
+> `<ARIS_REPO>` placeholder — replace with the absolute path to your ARIS
+> clone (e.g. `~/Desktop/Auto-claude-code-research-in-sleep` or the path
+> returned by `dirname $(readlink ~/.claude/skills/paper-writing/SKILL.md)/../..`).
+> The path is stable across runs; store it in a shell variable if you
+> prefer (`export ARIS_REPO=~/…` and use `"$ARIS_REPO"` in the command).
+
+#### Invoking the three audits
+
+Each sub-audit runs in a **fresh Codex thread** (never `codex-reply`,
+never pass prior audit output as context — this preserves reviewer
+independence per `shared-references/reviewer-independence.md`).
+
+Each sub-audit **always** emits its JSON artifact, even when the content
+detector is negative. A detector-negative run emits verdict
+`NOT_APPLICABLE`; a silent skip is forbidden. See the "Submission artifact
+emission" section of each audit's SKILL.md.
+
+Order:
+
+1. `/proof-checker "paper/"` → writes `paper/PROOF_AUDIT.json` (emits
+   `NOT_APPLICABLE` if the paper contains no theorems / lemmas / proofs)
+2. `/paper-claim-audit "paper/"` → writes `paper/PAPER_CLAIM_AUDIT.json`
+   (emits `NOT_APPLICABLE` if the paper has no numeric claims; emits
+   `BLOCKED` if numeric claims exist but raw result files are missing)
+3. `/citation-audit "paper/"` → writes `paper/CITATION_AUDIT.json`
+   (emits `NOT_APPLICABLE` if no `.bib` file or no `\cite{...}` usage)
+
+#### Running the verifier
+
+```bash
+bash <ARIS_REPO>/tools/verify_paper_audits.sh paper/ --assurance submission
+```
+
+- **Exit 0** — All mandatory audits present, JSON schema-valid, hashes fresh,
+  no blocking verdicts. Proceed to the Final Report below.
+- **Exit 1** — Surface `paper/.aris/audit-verifier-report.json` to the user
+  verbatim, **refuse to generate the Final Report**, and list the specific
+  remediation for each failing row:
+  - `MISSING` → rerun that audit
+  - `STALE` → paper files edited after the audit ran; rerun the affected audit
+  - `BLOCKING_VERDICT` (FAIL / BLOCKED / ERROR) → fix the underlying issue,
+    then rerun the audit
+  - `SCHEMA_INVALID` → audit artifact malformed; rerun the audit
+
+The verifier is cheap to rerun (< 1 s). After fixing any issue, rerun it
+before claiming green.
+
+#### Optional hardening (not default)
+
+Teams that want hook-level enforcement — i.e., the harness physically
+prevents a Stop event while the verifier is red — can register a Stop hook
+in `~/.claude/settings.json`:
+
+```json
+{
+  "hooks": {
+    "Stop": [
+      {"command": "bash <ARIS_REPO>/tools/verify_paper_audits.sh paper/ --assurance submission"}
+    ]
+  }
+}
+```
+
+This is documented here, not required. Phase 6.0's verifier-as-truth
+pattern is the default repo behavior.
+
+---
+
+**Phase 6.1 — Final Report** (runs only after the submission gate is green,
+or directly if `assurance=draft`)
+
 ```markdown
 # Paper Writing Pipeline Report
 
 **Input**: [NARRATIVE_REPORT.md or topic]
 **Venue**: [ICLR/NeurIPS/ICML/CVPR/ACL/AAAI/ACM/IEEE_JOURNAL/IEEE_CONF]
+**Assurance**: [draft | submission]
+**Submission-ready**: [yes | no]   <!-- yes iff assurance=submission AND verifier exit 0 -->
 **Date**: [today]
 
 ## Pipeline Summary
 
 | Phase | Status | Output |
 |-------|--------|--------|
+| 0. Assurance Setup | ✅ | paper/.aris/assurance.txt = [draft\|submission] |
 | 1. Paper Plan | ✅ | PAPER_PLAN.md |
 | 2. Figures | ✅ | figures/ ([N] auto + [M] manual) |
 | 3. LaTeX Writing | ✅ | paper/sections/*.tex ([N] sections, [M] citations) |
 | 4. Compilation | ✅ | paper/main.pdf ([X] pages) |
 | 5. Improvement | ✅ | [score0]/10 → [score2]/10 |
-| 5.5 Final Claim Audit | ✅/SKIP | PAPER_CLAIM_AUDIT.{md,json} |
-| 5.8 Citation Audit | ✅/SKIP | CITATION_AUDIT.{md,json} |
+| 4.5 Proof Audit | [PASS\|WARN\|FAIL\|NOT_APPLICABLE\|BLOCKED\|ERROR] | PROOF_AUDIT.{md,json} |
+| 5.5 Paper Claim Audit | [PASS\|WARN\|FAIL\|NOT_APPLICABLE\|BLOCKED\|ERROR] | PAPER_CLAIM_AUDIT.{md,json} |
+| 5.8 Citation Audit | [PASS\|WARN\|FAIL\|NOT_APPLICABLE\|BLOCKED\|ERROR] | CITATION_AUDIT.{md,json} |
+| 6.0 Assurance Verifier | [OK\|STALE\|BLOCKING_VERDICT\|HAS_ISSUES\|SCHEMA_INVALID\|MISSING] per audit; exit [0\|1] overall (N/A if draft) | .aris/audit-verifier-report.json |
 
 ## Improvement Scores
 | Round | Score | Key Changes |
@@ -377,8 +549,10 @@ else:
 - paper/main_round1.pdf — After round 1
 - paper/main_round2.pdf — After round 2
 - paper/PAPER_IMPROVEMENT_LOG.md — Full review log
-- paper/PAPER_CLAIM_AUDIT.{md,json} — Numerical claim verification (if Phase 5.5 ran)
-- paper/CITATION_AUDIT.{md,json} — Bibliography verification (if Phase 5.8 ran)
+- paper/PROOF_AUDIT.{md,json} — Proof-obligation verification (always emitted at `assurance=submission`; `NOT_APPLICABLE` when no theorems)
+- paper/PAPER_CLAIM_AUDIT.{md,json} — Numerical claim verification (always emitted at `assurance=submission`; `NOT_APPLICABLE` when no numeric claims; omitted in `draft` mode if Phase 5.5 detector was negative)
+- paper/CITATION_AUDIT.{md,json} — Bibliography verification (always emitted at `assurance=submission`; `NOT_APPLICABLE` when no `.bib` or no `\cite{...}`; omitted in `draft` mode if Phase 5.8 detector was negative)
+- paper/.aris/audit-verifier-report.json — External verifier report (submission only)
 
 ## Remaining Issues (if any)
 - [items from final review that weren't addressed]

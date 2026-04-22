@@ -3,7 +3,7 @@ name: voice-learn
 description: Learn from user's manual edits to improve voice profile over
   time. Compares text at three stages (pre-review, post-review, manually
   edited) to identify recurring edit patterns and propose register updates.
-version: 1.8.4
+version: 1.9.0
 globs: "**/*.{md,txt}"
 alwaysApply: false
 category: writing-quality

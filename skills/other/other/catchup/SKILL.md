@@ -1,7 +1,7 @@
 ---
 name: catchup
 description: 'Summarize recent changes from git history for context recovery, handoffs, and sprint review'
-version: 1.7.1
+version: 1.9.0
 alwaysApply: false
 category: analysis-methods
 tags:
@@ -46,10 +46,6 @@ Structured method for quickly understanding recent changes in git repositories, 
 
 ## When NOT To Use
 
-- Doing detailed
-  diff analysis - use diff-analysis instead
-- Full code review needed
-  - use review-core instead
 - Doing detailed
   diff analysis - use diff-analysis instead
 - Full code review needed
@@ -117,15 +113,3 @@ Reference paths + lines (don't reproduce). Summarize outputs. Defer deep analysi
 - Four TodoWrite items completed
 - Context/delta/insights/follow-ups captured
 - Stakeholders understand state without re-reading sources
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

@@ -23,7 +23,7 @@ hooks:
         - type: command
           command: "powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"& (Get-ChildItem -Path (Join-Path ~ '.claude/plugins/cache') -Filter check-complete.ps1 -Recurse -EA 0 | Select-Object -First 1).FullName\" 2>/dev/null || sh \"$(ls $HOME/.claude/plugins/cache/*/*/*/scripts/check-complete.sh 2>/dev/null | head -1)\" 2>/dev/null || true"
 metadata:
-  version: "2.34.1"
+  version: "2.35.0"
 ---
 
 # Planning with Files

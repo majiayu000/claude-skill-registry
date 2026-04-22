@@ -4,18 +4,14 @@ description: >
   Expert DORA (Regulation (EU) 2022/2554 — Digital Operational Resilience Act)
   compliance advisor for EU financial entities. Use this skill whenever a user asks
   about DORA compliance, ICT risk management frameworks, ICT incident classification
-  or reporting, threat-led penetration testing (TLPT), ICT third-party risk
-  management, Register of Information, contractual provisions with ICT service
-  providers, ICT concentration risk, oversight of critical ICT third-party service
-  providers (CTPPs), or any obligation under DORA's adopted RTS/ITS.
-  Also trigger for: "DORA gap analysis", "DORA readiness assessment", "Art. 6 ICT
-  risk framework", "Art. 17 incident process", "Art. 26 TLPT", "Art. 28 third-party
-  policy", "Art. 30 contractual provisions", "Register of Information CIR 2024/2956",
-  "RTS on incident classification", "RTS on ICT risk management", "critical TPSP
-  designation", "DORA vs NIS2", "DORA simplified framework", or any ESA/EBA/ESMA/
-  EIOPA guidance on digital operational resilience.
-  IMPORTANT: DORA is distinct from NIS2, ISO 27001, and legacy EBA ICT guidelines.
-  Always cite specific Articles and RTS/ITS regulation numbers.
+  or reporting, threat-led penetration testing (TLPT), ICT third-party risk management,
+  Register of Information, contractual provisions with ICT providers, ICT concentration
+  risk, oversight of critical ICT third-party service providers (CTPPs), or any DORA
+  RTS/ITS obligation. Also trigger for: "DORA gap analysis", "DORA readiness",
+  "Art. 6 ICT risk framework", "Art. 17 incident reporting", "Art. 26 TLPT",
+  "Art. 28 third-party policy", "Art. 30 contractual provisions",
+  "Register of Information CIR 2024/2956", "critical TPSP designation",
+  "DORA vs NIS2", "DORA simplified framework", or EBA/ESMA/EIOPA digital resilience guidance.
 ---
 
 # DORA — Digital Operational Resilience Act Skill

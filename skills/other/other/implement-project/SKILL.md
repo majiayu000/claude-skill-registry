@@ -10,7 +10,7 @@ Orchestrates an entire project from tickets to release-ready code. Implements ba
 
 ## Philosophy
 
-**Autonomy is the default; escalation is the exception.** The goal is to complete an entire project — multiple batches of tickets, quality passes, and verification — without user intervention. When stuck, try `/deliberate` first. Only pull the andon cord when autonomous resolution has failed or is clearly futile.
+**Autonomy is the default; escalation is the exception.** The goal is to complete an entire project — multiple batches of tickets, quality passes, and verification — without user intervention. When stuck, try `/think-deliberate` first. Only pull the andon cord when autonomous resolution has failed or is clearly futile.
 
 **The project branch is the single integration point.** All work flows into the project branch. Batches merge into it, quality passes commit to it, and the user makes one decision at the end: merge or don't.
 
@@ -50,7 +50,7 @@ Orchestrates an entire project from tickets to release-ready code. Implements ba
 
 Beyond the mainline workflow, the orchestrator has access to additional workflows:
 
-- **`/deliberate`**: Adversarial deliberation for difficult autonomous decisions. Spawns advocates to argue options before rendering a verdict. Prefer this over gut-feel decisions when stakes are high or trade-offs are unclear.
+- **`/think-deliberate`**: Adversarial deliberation for difficult autonomous decisions. Spawns advocates to argue options before rendering a verdict. Prefer this over gut-feel decisions when stakes are high or trade-offs are unclear.
 - **`/bug-fix`**: Coordinated bug-fixing for challenging issues encountered during any phase. Handles diagnosis, reproduction, and targeted fixes.
 
 ## Andon Cord Protocol
@@ -59,7 +59,7 @@ Beyond the mainline workflow, the orchestrator has access to additional workflow
 
 **Before pulling the andon cord:**
 1. Attempt autonomous resolution first
-2. For judgment calls, run `/deliberate` to reason through options
+2. For judgment calls, run `/think-deliberate` to reason through options
 3. Only escalate if autonomous resolution has failed or is clearly futile
 
 **When the andon cord is pulled:**
@@ -67,7 +67,7 @@ Beyond the mainline workflow, the orchestrator has access to additional workflow
 2. Present to user:
    - Current phase and step
    - What was attempted and what went wrong
-   - What autonomous resolution was tried (including any `/deliberate` results)
+   - What autonomous resolution was tried (including any `/think-deliberate` results)
    - Current state of all branches (what's merged, what's in-progress)
    - Recommended path forward (if you have one)
 3. Wait for user guidance before resuming
@@ -155,7 +155,7 @@ Invoke the `/implement-batch` workflow with these autonomous overrides:
 |-------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Step 1** (receive tickets)  | Pre-loaded — pass the batch's ticket list directly                                                                                                                                                                     |
 | **Step 2** (detect tracker & fetch) | Normal operation                                                                                                                                                                                                 |
-| **Step 3** (batch planning)   | **Orchestrator approves the plan autonomously.** Review the proposed execution order. Use `/deliberate` if the ordering is unclear or if there are concerning dependency patterns. Only pull the andon cord if tickets are fundamentally incoherent. |
+| **Step 3** (batch planning)   | **Orchestrator approves the plan autonomously.** Review the proposed execution order. Use `/think-deliberate` if the ordering is unclear or if there are concerning dependency patterns. Only pull the andon cord if tickets are fundamentally incoherent. |
 | **Step 4** (create project branch) | **Skip — already on the batch branch.** The batch branch serves as `/implement-batch`'s "project branch." Topic branches are created from it.                                                                             |
 | **Steps 5a-5e** (per-ticket loop)  | Normal operation. Topic branches are created from the batch branch. Andon cord triggers cascade up to the project orchestrator.                                                                                  |
 | **Step 6** (quality passes)   | Normal operation. Let `/implement-batch` run its own refactor + review-doc.                                                                                                                                                      |
@@ -187,7 +187,7 @@ Execute the smoke testing procedure established in step 2.
 1. Diagnose the issue
 2. For straightforward fixes: implement, verify, commit
 3. For complex bugs: invoke the `/bug-fix` workflow
-4. For design-level problems: try `/deliberate` first, then andon cord if unresolvable
+4. For design-level problems: try `/think-deliberate` first, then andon cord if unresolvable
 5. Re-run smoke tests after fixes until clean
 
 **Update `PROJECT_PROGRESS.md`** with smoke test results and any fixes applied.
@@ -213,7 +213,7 @@ Run the `/review-arch` workflow with autonomous overrides:
 | **Step 2** (QA instructions)         | The smoke testing procedure from step 2                                                                                                                                                                                                                  |
 | **Step 3** (analyze)                 | Normal operation                                                                                                                                                                                                                                         |
 | **Step 4** (present analysis)        | **Orchestrator reviews the analysis.** Do not present to user.                                                                                                                                                                                           |
-| **Step 5** (iterate on plan)         | **Orchestrator decides what to implement.** Approve items that are clearly beneficial (dead code removal, obvious naming improvements, clear function ownership fixes). For high-impact items (module dissolution, major restructuring, new module creation), use `/deliberate` to reason through the trade-offs. Defer items that seem out of scope for this project — note them in the final report as recommendations. |
+| **Step 5** (iterate on plan)         | **Orchestrator decides what to implement.** Approve items that are clearly beneficial (dead code removal, obvious naming improvements, clear function ownership fixes). For high-impact items (module dissolution, major restructuring, new module creation), use `/think-deliberate` to reason through the trade-offs. Defer items that seem out of scope for this project — note them in the final report as recommendations. |
 | **Step 6** (how to proceed)          | Proceed with implementation of approved items                                                                                                                                                                                                            |
 | **Steps 7-9** (implement + summary)  | Normal operation                                                                                                                                                                                                                                         |
 | **Step 10** (review-doc)             | Normal operation                                                                                                                                                                                                                                         |
@@ -230,7 +230,7 @@ Run `/refactor` again with the same parameters as step 7a. Architectural restruc
 
 Run the `/review-test` workflow.
 
-The orchestrator handles any interactive steps autonomously, applying the same pattern: implement what's clearly beneficial, `/deliberate` for judgment calls, andon cord as last resort.
+The orchestrator handles any interactive steps autonomously, applying the same pattern: implement what's clearly beneficial, `/think-deliberate` for judgment calls, andon cord as last resort.
 
 #### 7e. Doc Review
 
@@ -352,7 +352,7 @@ Status: <current phase>
 **Sub-workflow invocation:**
 - Quality passes (`/refactor`, `/review-arch`, `/review-test`, `/review-doc`, `/review-release`): invoke as skills
 - `/implement-batch`: invoke as a skill with autonomous overrides
-- `/deliberate`, `/bug-fix`: invoke as skills when needed
+- `/think-deliberate`, `/bug-fix`: invoke as skills when needed
 
 ## Abort Conditions
 
@@ -362,7 +362,7 @@ Status: <current phase>
 - Post-merge test failures
 
 **Abort quality pass:**
-- Quality pass encounters unresolvable issues after `/deliberate`
+- Quality pass encounters unresolvable issues after `/think-deliberate`
 - Skip the pass, log the issue, continue with next pass
 - Include in final report
 

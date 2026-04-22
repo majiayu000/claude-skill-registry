@@ -1,6 +1,6 @@
 ---
 name: agent-sheet
-description: shell-native spreadsheet CLI for agent work. Use it for workbook inspection, sheet/range reads, precise writes, import/export handoff, review-table construction, formula analysis, and bounded workbook-native scripting with verification.
+description: shell-native spreadsheet CLI for agent work across reconnaissance, search, fill propagation, programmable workbook logic, and bulk data roundtrips with explicit verification.
 metadata:
   openclaw:
     os:
@@ -26,107 +26,61 @@ metadata:
 
 # agent-sheet
 
-`agent-sheet` is a local spreadsheet CLI for agents. Prefer it when the task needs real workbook structure, formulas, sheet lifecycle, import/export handoff, or a safe shell roundtrip instead of plain CSV cleanup or ad-hoc `xlsx` library use.
+`agent-sheet` is the shell-native workbook CLI for agent work. Use it when the task needs real workbook structure, formulas, workbook-local logic, or a safe stdin/stdout roundtrip instead of ad hoc CSV handling.
 
-Current product reality:
+Treat the workbook as the source of truth. Read from workbook-visible state, mutate through the public surface, and prove success from workbook-visible results.
 
-- treat `agent-sheet` as a **local-first editor**
-- do not rely on it as a direct remote-origin editor
+## Start here
 
-## Use it for
+Use the smallest surface that cleanly matches the task:
 
-- resolving a workbook and keeping the target explicit with `--entry-id`
-- inspecting workbook structure, sheets, ranges, formulas, and search hits
-- writing sparse cells, bounded ranges, anchored review tables, or formula fills
-- importing a local workbook, continuing edits, and exporting a final file
-- streaming workbook data through shell tools, then writing verified results back
-- using bounded `script js` only when built-in commands do not express the workbook change cleanly
+- `inspect`: first read, reconnaissance, workbook-visible structure, formulas, ranges, lint signals
+- `search`: first-class localization before edits
+- `fill`: first-class propagation when a correct seed already exists
+- `run`: default programmable workbook surface for bounded workbook-local logic
+- `pipe out` / `pipe in`: bulk rectangular data plane for shell roundtrips
 
-## Do not default to
+Start small. If `inspect`, `search`, `fill`, or `pipe` cleanly expresses the job, use that surface directly. Use `run` when the work is programmable workbook logic rather than bulk data movement.
 
-- reopening the workbook with a local workbook library for reads or writes that `agent-sheet` already covers
-- using shell transforms when a direct `write cells`, `write range`, `write table`, `write fill`, or `sheet ...` command is clearer
-- trusting metadata-only surfaces such as `file info` as proof of workbook structure
-- finishing after a write without a task-specific verification pass
+## Default operating model
 
-## First path
-
-1. Run [playbooks/00-preflight.md](playbooks/00-preflight.md).
-2. Resolve the workbook and keep using `--entry-id`.
-3. Choose the smallest matching command via [references/command-selection-matrix.md](references/command-selection-matrix.md).
-4. Verify with [playbooks/15-verify.md](playbooks/15-verify.md) before finishing.
+- if you do not have an `entry-id` yet, get one first with `file list`, `file create`, or `file import`, then stay on that workbook
+- resolve one workbook and keep its `--entry-id` for the whole task
+- start with `inspect` so worksheet names, headers, formulas, and write boundaries are real rather than guessed
+- use `search` before mutation when the target is content-defined
+- use `fill` for spreadsheet-native propagation from a known seed
+- use `pipe out` / `pipe in` when the shell is the right place for a rectangular transform
+- use `run` for bounded workbook-local logic, structural edits, formatting, or formula orchestration
+- verify from workbook-visible reads after every mutation or handoff step
 
 ## Hard defaults
 
-- prefer `entryId` over `unitId` for local workbooks and imports
-- treat `write range` as a full bounded rectangle replacement
-- treat `write table --sheet <name>` as an A1-anchored table write with header semantics
+- prefer `--entry-id` to keep the target explicit
+- start with `inspect`
+- treat `run` as the default programmable workbook surface
+- treat `pipe out` / `pipe in` as the bulk rectangular data plane
+- verify from workbook-visible results, not metadata alone
 - verify shell roundtrips with structure plus sample rows, not row count alone
-- use `sheet list` or `inspect workbook` for sheet existence and handoff verification
-- treat `persist` success as a closed dirty-state boundary
-- treat local read-only commands as pure reads; they should not require a follow-up `persist`
+- use workbook-visible inspection for handoff and completion checks
 
 ## Highest-signal gotchas
 
 - imported local entries can be healthy even when later `file info` shows `unitId: null`; keep operating on `entryId`
-- do not use `agent-sheet` as the tool for “user directly edits origin workbook”; that actor should be a real remote user in the browser
-- a read-only `script js` after daemon restart can reconcile snapshot state without fabricating a local batch
-- `file info` is metadata only; it does not prove sheet count, sheet names, or formula state
-- do not run `init` inside an already initialized workspace tree; nested workspace refusal is expected
-- non-English sheet names work, but quote the full A1 range string in the shell
+- `file info` is metadata only; it does not prove worksheet count, worksheet names, or formula state
+- non-English worksheet names work, but quote the full A1 range string in the shell
 - shell pipelines can preserve the expected row count while still shifting headers or keys; verify the first rows and key columns after writeback
-
-Read [references/gotchas.md](references/gotchas.md) when the task looks routine but has import/handoff, shell roundtrip, or workspace ambiguity.
-
-## Task routing
-
-| Task | Read next |
-|---|---|
-| workspace root, CLI resolution, or workbook target is unclear | [playbooks/00-preflight.md](playbooks/00-preflight.md) |
-| inspect workbook state, extract data, search, or review formulas | [playbooks/10-read-analyze.md](playbooks/10-read-analyze.md) |
-| plan the smallest safe mutation path | [references/command-selection-matrix.md](references/command-selection-matrix.md) |
-| make data-visible edits or structural workbook changes | [playbooks/20-write-safe.md](playbooks/20-write-safe.md) |
-| verify a mutation, shell roundtrip, or handoff | [playbooks/15-verify.md](playbooks/15-verify.md) |
-| create, import, open, or export a local workbook | [playbooks/30-file-lifecycle.md](playbooks/30-file-lifecycle.md) |
-| stream workbook data through shell tools | [references/shell-patterns.md](references/shell-patterns.md) |
-| formatting, layout, or other built-in command gaps | [playbooks/40-script-fallback.md](playbooks/40-script-fallback.md) |
-| import/handoff, `entryId` targeting, `file info`, or shell verification edge cases | [references/gotchas.md](references/gotchas.md) |
-
-## Output style
-
-- prefer bounded previews, file paths, or stream output over oversized inline dumps
-- use `--to-stdout` for shell pipelines
-- use `--to-file --output <path>` for large reusable extracts
-- when reporting success, include the verification surface you actually used
-
-## Ready-made assets
-
-Use these before improvising shell snippets:
-
-| Asset | Use when |
-|---|---|
-| [examples/roundtrip-awk-write-table.md](examples/roundtrip-awk-write-table.md) | building a review sheet through shell roundtrip |
-| [examples/handoff-verify.md](examples/handoff-verify.md) | exporting, importing, and proving handoff structure |
-| [examples/template-import-anchor-check.md](examples/template-import-anchor-check.md) | importing a template workbook and checking anchor cells |
-| [scripts/verify_csv_preview.py](scripts/verify_csv_preview.py) | comparing header, head sample rows, and a key column |
-| [scripts/check_csv_cells.py](scripts/check_csv_cells.py) | asserting anchor values or non-empty cells from a CSV snippet |
+- if workbook-visible verification disagrees with metadata, trust the workbook-visible surface first
 
 ## Read next
 
-Read only the file needed for the task:
+Read only what matches the task:
 
-| File | Use when |
-|---|---|
-| [playbooks/00-preflight.md](playbooks/00-preflight.md) | workspace or workbook context is not yet resolved |
-| [playbooks/10-read-analyze.md](playbooks/10-read-analyze.md) | inspecting workbook state, extracting data, searching, or reviewing formulas |
-| [references/command-selection-matrix.md](references/command-selection-matrix.md) | picking the smallest correct command before writing |
-| [playbooks/15-verify.md](playbooks/15-verify.md) | proving a mutation or handoff actually succeeded |
-| [playbooks/20-write-safe.md](playbooks/20-write-safe.md) | choosing the smallest safe mutation path |
-| [playbooks/30-file-lifecycle.md](playbooks/30-file-lifecycle.md) | creating, importing, opening, or exporting a local workbook |
-| [playbooks/40-script-fallback.md](playbooks/40-script-fallback.md) | built-in commands cannot express the requested workbook change |
-| [references/shell-patterns.md](references/shell-patterns.md) | the task is naturally a shell pipeline |
-| [references/gotchas.md](references/gotchas.md) | the task involves common real-world failure modes |
-| [references/js-api-minimal.md](references/js-api-minimal.md) | `script js` is necessary and must stay tightly bounded |
-| [examples/roundtrip-awk-write-table.md](examples/roundtrip-awk-write-table.md) | you need a concrete shell roundtrip example |
-| [examples/handoff-verify.md](examples/handoff-verify.md) | you need a concrete export/import handoff example |
-| [examples/template-import-anchor-check.md](examples/template-import-anchor-check.md) | you need a concrete non-English template import example |
+- [playbooks/01-getting-started.md](playbooks/01-getting-started.md): first contact, target resolution, basic flow
+- [playbooks/02-common-workflows.md](playbooks/02-common-workflows.md): workflow recipes by task intent
+- [playbooks/03-handoff-and-verification.md](playbooks/03-handoff-and-verification.md): handoff, completion checks, workbook-visible verification
+- [references/command-selection-matrix.md](references/command-selection-matrix.md): shortest path from task intent to command choice
+- [references/run-api.md](references/run-api.md): `run` entry point and reference map for bounded programmable workbook logic
+- [references/shell-patterns.md](references/shell-patterns.md): small shell-native patterns for `pipe` workflows
+- [references/gotchas.md](references/gotchas.md): real-world failure modes and edge cases
+- [examples/handoff-verify.md](examples/handoff-verify.md): export/import/handoff proof
+- [examples/roundtrip-pipe-review-rectangle.md](examples/roundtrip-pipe-review-rectangle.md): staged shell roundtrip with explicit preview verification

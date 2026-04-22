@@ -1,6 +1,6 @@
 ---
 name: ln-014-agent-instructions-manager
-description: "Creates AGENTS.md canonical and CLAUDE.md/GEMINI.md @AGENTS.md stubs; audits token budget, cache safety, import-pattern compliance. Use when instruction files need alignment."
+description: "Creates AGENTS.md canonical and CLAUDE.md/GEMINI.md/ANTIGRAVITY.md @AGENTS.md stubs; audits token budget, cache safety, import-pattern compliance. Use when instruction files need alignment."
 license: MIT
 ---
 
@@ -11,7 +11,7 @@ license: MIT
 **Type:** L3 Worker
 **Category:** 0XX Shared
 
-Creates missing instruction files and audits all of them (AGENTS.md, CLAUDE.md, GEMINI.md) for quality, consistency, and best practices. AGENTS.md is the single canonical source of content; CLAUDE.md and GEMINI.md are thin `@AGENTS.md` import stubs with bounded harness-specific deltas. This skill is the single owner of instruction-file creation and MCP Tool Preferences insertion or replacement.
+Creates missing instruction files and audits all of them (AGENTS.md, CLAUDE.md, GEMINI.md, ANTIGRAVITY.md) for quality, consistency, and best practices. AGENTS.md is the single canonical source of content; CLAUDE.md, GEMINI.md, and ANTIGRAVITY.md are thin `@AGENTS.md` import stubs with bounded harness-specific deltas. This skill is the single owner of instruction-file creation and MCP Tool Preferences insertion or replacement.
 
 **MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`, `shared/references/environment_worker_runtime_contract.md`, and `shared/references/worker_runtime_contract.md`
 **MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md`
@@ -79,6 +79,7 @@ Locate instruction files in target project:
 | Claude Code | `CLAUDE.md` | imports `AGENTS.md` via `@AGENTS.md` | `.claude/settings.local.json` |
 | Codex / Cursor / Amp / Factory | `AGENTS.md` | canonical | `.codex/instructions.md` |
 | Gemini CLI | `GEMINI.md` | imports `AGENTS.md` via `@AGENTS.md` | `AGENTS.md` (shared with Codex) |
+| Google Antigravity | `ANTIGRAVITY.md` | imports `AGENTS.md` via `@AGENTS.md` | `AGENTS.md` (shared with Codex/Gemini/Claude) |
 
 Report: which files exist (`found` / `missing`), which harnesses share `AGENTS.md` directly vs via import.
 
@@ -114,7 +115,7 @@ Report: which files exist (`found` / `missing`), which harnesses share `AGENTS.m
 
 **Skip condition:** All files exist OR `dry_run == true` (report what would be created).
 
-**Canonical model:** AGENTS.md is the single source of content. CLAUDE.md and GEMINI.md are `@AGENTS.md` import stubs with bounded harness-specific deltas. Create in this order so the stubs reference a file that already exists.
+**Canonical model:** AGENTS.md is the single source of content. CLAUDE.md, GEMINI.md, and ANTIGRAVITY.md are `@AGENTS.md` import stubs with bounded harness-specific deltas. Create in this order so the stubs reference a file that already exists.
 
 ### Step 2a: Detect Project Context
 
@@ -149,9 +150,18 @@ Report: which files exist (`found` / `missing`), which harnesses share `AGENTS.m
 4. Verify the file contains exactly one `@AGENTS.md` line and is ≤50 lines total
 5. Do NOT copy any content from AGENTS.md into GEMINI.md — the `@` import handles it at session load time
 
+### Step 2d2: Create ANTIGRAVITY.md (if missing) — import stub
+
+1. **MANDATORY READ:** Load `skills-catalog/ln-111-root-docs-creator/references/templates/antigravity_md_template.md`
+2. Replace `{{PROJECT_NAME}}` only
+3. Write to target project root
+4. Verify the file contains exactly one `@AGENTS.md` line and is ≤50 lines total
+5. Do NOT copy any content from AGENTS.md into ANTIGRAVITY.md — the `@` import handles it at session load time
+
+
 ### Step 2e: Report Creations
 
-List each created file with its source (template `agents_md_template.md`, template `claude_md_template.md` stub, template `gemini_md_template.md` stub).
+List each created file with its source (template `agents_md_template.md`, template `claude_md_template.md` stub, template `gemini_md_template.md` stub, template `antigravity_md_template.md` stub).
 
 ## Phase 3: Token Budget Audit
 
@@ -162,6 +172,7 @@ Line-count budgets align with the Anthropic official target (`<200 lines per CLA
 | AGENTS.md line count | ≤150 | 151-200 | >200 |
 | CLAUDE.md line count (stub) | ≤20 | 21-50 | >50 |
 | GEMINI.md line count (stub) | ≤20 | 21-50 | >50 |
+| ANTIGRAVITY.md line count (stub) | ≤20 | 21-50 | >50 |
 | User-added imperative count in AGENTS.md | ≤100 | 101-150 | >150 |
 
 **Imperative counter:** lines matching `^\s*- ` inside rule sections, plus any line containing `MUST\|NEVER\|ALWAYS\|DO NOT`. Cite the IFScale benchmark (arxiv 2507.11538) in WARN / FAIL messages.
@@ -192,7 +203,7 @@ Check each file for content that breaks prefix-based prompt caching:
 | 6 | MCP Tool Preferences | Canonical policy section in AGENTS.md matches `shared/references/mcp_tool_preferences.md` | Missing or outdated — agents use suboptimal tools |
 | 7 | No tool output examples | No large code blocks or command outputs | Found — bloats every turn |
 
-Checks #1–#6 evaluate AGENTS.md only because CLAUDE.md / GEMINI.md inherit that content via the `@AGENTS.md` import. Checks on the deltas themselves live in Phase 6.
+Checks #1–#6 evaluate AGENTS.md only because CLAUDE.md / GEMINI.md / ANTIGRAVITY.md inherit that content via the `@AGENTS.md` import. Checks on the deltas themselves live in Phase 6.
 
 ### Phase 5b: Auto-fix Fixable Issues
 
@@ -221,11 +232,11 @@ Preserve during /compact: [Critical Rules], [MCP Tool Preferences table],
 Drop examples and explanations first.
 ```
 
-Because CLAUDE.md and GEMINI.md `@AGENTS.md`, the preservation list propagates to both. The harness-specific terminology (`/compact` vs context compression) lives in each stub's delta.
+Because CLAUDE.md, GEMINI.md, and ANTIGRAVITY.md `@AGENTS.md`, the preservation list propagates to all of them. The harness-specific terminology (`/compact` vs context compression) lives in each stub's delta.
 
 ## Phase 6: Import Pattern Compliance
 
-AGENTS.md is the canonical source per `DOC_ROLE` metadata. CLAUDE.md and GEMINI.md must be thin `@AGENTS.md` import stubs with bounded harness-specific deltas.
+AGENTS.md is the canonical source per `DOC_ROLE` metadata. CLAUDE.md, GEMINI.md, and ANTIGRAVITY.md must be thin `@AGENTS.md` import stubs with bounded harness-specific deltas.
 
 | # | Check | Pass | Fail |
 |---|-------|------|------|

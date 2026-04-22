@@ -18,6 +18,21 @@ Every filled template produced during CRISP lives in the project's `docs/` folde
 > Blank templates live in `/templates/` (CRISP repo). Filled project outputs live in `[project]/docs/`.
 > Never overwrite blank templates. Always write filled versions to `docs/`.
 
+## Project State
+
+> At the start of Phase C: check if `docs/crisp-state.json` exists.
+> If yes — read it. Use `project` and `phases.C` fields for context.
+> If no — copy `templates/crisp-state.json` to `docs/crisp-state.json` and fill in `project.name`, `project.client`, `project.startedAt`, `project.type` as soon as these are known.
+>
+> At the end of Phase C (before exit checklist): update `docs/crisp-state.json`:
+> - Set `phases.current` to `"R"`
+> - Add `"C"` to `phases.complete`
+> - Set `phases.C.complete` to `true`
+> - Fill `phases.C.goNoGo`, `phases.C.oneSentence`, `phases.C.painkiller`, `phases.C.constraints`
+> - Set `project.type` to `"internal"` or `"external"`
+> - Set `project.agentInScope` and `project.memoryOwnershipRequired` if known
+> - Add any unresolved items to `phases.C.openQuestions`
+
 ---
 
 ## The 3 Moves
@@ -145,6 +160,32 @@ Output → `docs/value-proposition-canvas.md`
 | `docs/market-research.md` | TAM, competitors, feature standards, USP | External only |
 | `docs/value-proposition-canvas.md` | USP and positioning | External only |
 | `docs/swot.md` | Strengths, weaknesses, opportunities, threats | External only |
+| `docs/decisions.md` | Log of key decisions made in Phase C | Always |
+
+---
+
+## Decision Logging — Phase C
+
+> Create `docs/decisions.md` using `/templates/decisions.md` at the start of Phase C if it doesn't exist.
+> Log every significant decision as it happens — do not batch at the end.
+
+**Log these decisions in Phase C:**
+
+- **Go/No-Go** — what was called and why
+- **Internal vs External** — which it is and the reason
+- **Buy vs Build choices** — every item in the matrix with the rationale
+- **Constraints** — any hard constraint that ruled out an option
+- **Scope decisions** — anything explicitly included or excluded
+
+Format:
+```
+### Go/No-Go — [Project Name]
+**Phase:** C
+**Decision:** Go / No-Go
+**Why:** [reason — constraint, painkiller test result, CEO test outcome]
+**Alternatives considered:** [what else was discussed]
+**Source:** Client / You / Both
+```
 
 ---
 
@@ -161,3 +202,4 @@ Output → `docs/value-proposition-canvas.md`
 - [ ] **[External only]** Value Proposition Canvas pre-filled and confirmed → `docs/value-proposition-canvas.md`
 - [ ] **[External only]** SWOT complete → `docs/swot.md`
 - [ ] Go / No-Go called
+- [ ] Key decisions logged → `docs/decisions.md`

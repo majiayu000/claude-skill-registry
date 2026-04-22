@@ -25,6 +25,14 @@ output_contract: skills/council/schemas/verdict.json
 
 **YOU MUST EXECUTE THIS WORKFLOW. Do not just describe it.**
 
+## Strict Delegation Contract (default)
+
+Validation delegates to `/vibe`, `/post-mortem`, `/retro`, and `/forge` (plus lifecycle skills `/test`, `/deps`, `/review`, `/perf`) via `Skill(skill="<name>", ...)` calls — **separate tool invocations**. Strict delegation is the **default**.
+
+**Anti-pattern to reject:** spawning judges via `Agent()` in place of `/vibe`, inlining post-mortem analysis, skipping `/forge`. See [`../shared/references/strict-delegation-contract.md`](../shared/references/strict-delegation-contract.md) for the full contract and supported compression escapes (`--quick`, `--no-retro`, `--no-forge`, `--no-lifecycle`, `--no-behavioral`, `--allow-critical-deps`).
+
+See [`.agents/learnings/2026-04-19-orchestrator-compression-anti-pattern.md`](../../.agents/learnings/2026-04-19-orchestrator-compression-anti-pattern.md) for the live compression signature.
+
 ## DAG — Execute This Sequentially
 
 ```
@@ -43,20 +51,13 @@ if command -v ao &>/dev/null; then
 fi
 ```
 
-**Apply retrieved knowledge (mandatory when results returned):**
+**Apply retrieved knowledge (mandatory when results returned):** for each returned item, check applicability; if applicable, include as a `known_risk` (pattern + does-code-exhibit-it check); cite by filename when it influences a finding; record via `ao metrics cite "<path>" --type applied`. Skip silently if ao unavailable or returns no results.
 
-If learnings are returned, do NOT just load them as passive context. For each returned item:
-1. Check: does this learning apply to the current validation scope? (answer yes/no)
-2. If yes: include it as a `known_risk` — what pattern does it warn about? does the code exhibit it?
-3. Cite applicable learnings by filename when they influence a validation finding
+> *(orchestrator-owned: this knowledge retrieval is intentionally inline CLI, not a `Skill()` delegation. Do NOT expand into a separate `/research --validation-context` call — subsequent steps delegate to vibe/post-mortem/retro/forge.)*
 
-After applying, record each citation:
-```bash
-ao metrics cite "<learning-path>" --type applied 2>/dev/null || true
-```
-
-Skip silently if ao is unavailable or returns no results.
 **Run every step in order. Do not stop between steps.**
+
+> **Step ordering precedence (STEPS 1 → 1.5 → 1.6 → 1.7 → 1.8 → 2 → …):** STEP 1 (`/vibe`) runs **first** and determines whether the pipeline continues. STEPS 1.5 (four-surface closure), 1.6 (test pyramid), 1.7 (lifecycle checks), and 1.8 (behavioral) are separate orchestrator steps that run **after** vibe, **not inline inside vibe**. `/vibe` owns code quality; the surface/test/lifecycle/behavioral gates are additional closure checks layered on top.
 ```
 STEP 1  ──  Skill(skill="vibe", args="recent [--quick]")
               Use --quick for fast/standard. Full council for full.
@@ -142,20 +143,7 @@ STEP 5  ──  write phase summary to .agents/rpi/phase-3-summary-YYYY-MM-DD-<s
 
 ## Setup Detail
 
-**State:**
-```
-validation_state = {
-  epic_id: "<epic-id or null>",
-  complexity: <fast|standard|full>,
-  no_retro: <true if --no-retro>,
-  no_forge: <true if --no-forge>,
-  strict_surfaces: <true if --strict-surfaces>,
-  vibe_verdict: null,
-  post_mortem_verdict: null
-}
-```
-
-**Load execution packet** (if available): read `complexity`, `contract_surfaces`, and `done_criteria` from `.agents/rpi/execution-packet.json`. When a current `run_id` is known, prefer the matching `.agents/rpi/runs/<run-id>/execution-packet.json` archive over the latest alias.
+Track state inline: `epic_id`, `complexity`, `no_retro`, `no_forge`, `strict_surfaces`, `vibe_verdict`, `post_mortem_verdict`. Load execution packet (if available): read `complexity`, `contract_surfaces`, and `done_criteria` from `.agents/rpi/execution-packet.json`. When a current `run_id` is known, prefer the matching `.agents/rpi/runs/<run-id>/execution-packet.json` archive over the latest alias.
 
 ## Gate Detail
 
@@ -199,7 +187,8 @@ On budget expiry: allow in-flight calls to complete, write `[TIME-BOXED]` marker
 
 | Flag | Default | Description |
 |------|---------|-------------|
-| `--complexity=<level>` | auto | Force complexity level (fast/standard/full) |
+| `--complexity=<level>` | auto | Force complexity level (`fast` / `standard` / `full`). Matches `/rpi` and `/discovery` syntax. |
+| `--interactive` | off | Human gates in validation report review (before writing summary). Does NOT override `/vibe` council autonomy. |
 | `--no-lifecycle` | off | Skip ALL lifecycle checks in STEP 1.7 (test, deps, review, perf) |
 | `--lifecycle=<tier>` | matches complexity | Controls which lifecycle skills fire: `minimal` (test only), `standard` (+deps, +review), `full` (+perf) |
 | `--no-retro` | off | Skip retro step only |

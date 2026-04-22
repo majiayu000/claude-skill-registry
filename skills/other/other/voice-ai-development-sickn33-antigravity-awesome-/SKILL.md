@@ -623,7 +623,6 @@ Workflow:
 Works well with: `langgraph`, `structured-output`, `langfuse`
 
 ## When to Use
-
 - User mentions or implies: voice ai
 - User mentions or implies: voice agent
 - User mentions or implies: speech to text
@@ -634,3 +633,8 @@ Works well with: `langgraph`, `structured-output`, `langfuse`
 - User mentions or implies: elevenlabs
 - User mentions or implies: livekit
 - User mentions or implies: openai realtime
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

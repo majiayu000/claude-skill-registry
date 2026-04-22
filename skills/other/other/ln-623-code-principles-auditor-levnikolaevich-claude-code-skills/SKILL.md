@@ -38,9 +38,9 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `principles`, `cod
 3) **Scan codebase for violations (Layer 1)**
    - All Grep/Glob patterns use `scan_path` (not codebase_root)
    - **Graph acceleration (if available):** IF `contextStore.graph_indexed` OR `.hex-skills/codegraph/index.db` exists:
-     - **DRY (1.1-1.10):** `audit_workspace(path=scan_path, verbosity="full")` -- each returned clone group = DRY candidate. Use clone kind and hotspot context for severity triage. Fall back to grep patterns if unavailable.
+     - **DRY (1.1-1.10):** `audit_workspace(path=scan_path, verbosity="minimal", limit=5, clone_member_limit=3)` -- each returned clone group = DRY candidate. Raise limits only for deliberate drill-down. Use clone kind and hotspot context for severity triage. Fall back to grep patterns if unavailable.
      - **KISS inheritance:** `find_implementations(symbol)` for abstract classes -- count implementations (1 = KISS candidate). Trace inheritance depth via graph.
-     - **Complexity:** `audit_workspace(path=scan_path, verbosity="full")` -- use returned hotspots to pre-identify complex functions for KISS/quality analysis.
+     - **Complexity:** `audit_workspace(path=scan_path, verbosity="minimal", limit=5)` -- use returned hotspots to pre-identify complex functions for KISS/quality analysis. Raise `limit` only for deliberate drill-down.
      - **Outline-first read:** `outline(file_path)` before reading large source files -- understand structure before analyzing principles.
    - Follow step-by-step detection from `detection_patterns.md`
    - Apply exclusions from `detection_patterns.md#exclusions`

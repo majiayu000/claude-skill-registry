@@ -1,12 +1,12 @@
 ---
 name: smolvlm
-description: Local vision-language model for image analysis using SmolVLM-2B
-version: 1.0.0
+description: Local vision-language model for image analysis using SmolVLM2-2.2B
+version: 1.1.0
 ---
 
 # SmolVLM - Local Image Analysis
 
-Analyze images locally using SmolVLM-2B, a state-of-the-art compact vision-language model optimized for Apple Silicon via mlx-vlm.
+Analyze images locally using SmolVLM2-2.2B-Instruct, a compact vision-language model optimized for Apple Silicon via mlx-vlm. Successor to SmolVLM-2B with improved accuracy and video understanding (video requires `decord` and transformers pipeline — this skill's script handles image-only via mlx-vlm).
 
 ## Quick Usage
 
@@ -62,15 +62,16 @@ python ~/.claude/skills/smolvlm/scripts/view_image.py photo.jpg --detailed
 
 | Spec | Value |
 |------|-------|
-| Model | SmolVLM-2B-Instruct |
-| Size | ~4GB |
-| Peak Memory | 5.8GB |
+| Model | SmolVLM2-2.2B-Instruct |
+| HuggingFace ID | `HuggingFaceTB/SmolVLM2-2.2B-Instruct` |
+| Size | ~4.5GB |
+| Peak Memory | ~5.2GB (bfloat16) |
 | Speed | ~94 tok/s (M-series) |
 | Supported Formats | PNG, JPG, JPEG, GIF, WebP |
 
 ## Requirements
 
-- macOS with Apple Silicon (M1/M2/M3)
+- macOS with Apple Silicon (M1/M2/M3/M4)
 - Python 3.10+
 - mlx-vlm package: `uv pip install mlx-vlm --system`
 

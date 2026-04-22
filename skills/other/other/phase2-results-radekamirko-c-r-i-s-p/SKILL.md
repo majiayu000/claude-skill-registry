@@ -7,6 +7,17 @@ description: The Mileva Method (CRISP) — Phase 2: Results. Outcome alignment, 
 
 > "We don't know if we succeeded unless we defined what success looks like before we started."
 
+## Project State
+
+> At the start of Phase R: read `docs/crisp-state.json`. Check `phases.C` is complete. Use `phases.C.oneSentence`, `phases.C.constraints`, and `project.type` for context — do not re-read all Phase C docs from scratch.
+>
+> At the end of Phase R (before exit checklist): update `docs/crisp-state.json`:
+> - Set `phases.current` to `"I"`
+> - Add `"R"` to `phases.complete`
+> - Set `phases.R.complete` to `true`
+> - Fill `phases.R.baseline`, `phases.R.successTarget`, `phases.R.hitlZones`, `phases.R.stakeholders`
+> - Add any unresolved items to `phases.R.openQuestions`
+
 Do not discuss solutions or architecture until this phase is complete.
 
 ## Step 1: Stakeholder Register — Pre-fill, Elicit, Confirm
@@ -102,6 +113,58 @@ Client sponsor speaks money and risk — use that language.
 
 ---
 
+
+## Agent Permission Scoping — Run when an AI agent is in scope
+
+> **Trigger:** Run this section if `docs/problem-statement.md` indicates an AI agent is in scope.
+> Standard HITL elicitation is not enough for agents. Agents act autonomously, access systems, and persist state.
+> You need to define the permission boundary explicitly — not just where humans stay in the loop, but what the agent is and isn't allowed to touch.
+
+This feeds directly into `docs/agent-security.md` in Phase S. Elicit it here while you have the client in the room.
+
+---
+
+**Step 1: Map what the agent touches**
+
+> "Walk me through every system this agent needs access to. For each one — is it reading, writing, or both? And are there any records or fields it should never touch, even if it technically could?"
+
+Build a list: system → access type → explicit limits.
+
+**Step 2: Define the hard boundaries**
+
+> "Are there any actions this agent must never take on its own — no matter what? Things that should always require a human to approve or confirm first?"
+
+Common ones to surface:
+- Deleting records
+- Financial transactions above a threshold
+- Sending external communications (email, SMS)
+- Modifying records that affect multiple users
+- Actions that are irreversible
+
+Write these down explicitly. Not "use good judgment" — specific prohibitions.
+
+**Step 3: Set the approval gates**
+
+> "For the grey areas — not a hard no, but not fully autonomous either — what's the threshold where you'd want a human to sign off? A value over X? More than Y records affected? Anything touching [sensitive system]?"
+
+Map each gate: action → condition → who approves.
+
+**Step 4: Ask about data sensitivity**
+
+> "Does this agent touch any personal data — names, emails, financial records, health information? And will it log or store what it processes?"
+
+If yes: flag for AIUC-1 data handling rules in Phase S agent-security.md.
+
+**Step 5: Ask about failure**
+
+> "When this agent can't complete its task — what should happen? Should it fail silently, alert someone, or hand off to a human? What's the fallback?"
+
+Document the expected failure behaviour now. It's much harder to define after the code is written.
+
+---
+
+Save all elicited details to `docs/stakeholder-register.md` in the HITL zones section, tagged clearly as agent-specific. They will be the primary input for `docs/agent-security.md` in Phase S.
+
 ## Phase 2 Outputs
 
 > Save both files before closing Phase R. They are inputs to Phases I, S, and P.
@@ -110,6 +173,20 @@ Client sponsor speaks money and risk — use that language.
 |---|---|---|
 | `docs/stakeholder-register.md` | All impacted parties, their stakes, HITL zones | Always |
 | `docs/success-metrics.md` | Baseline measurements, success targets, second-order effects, qualitative targets, client sign-off | Always |
+| `docs/decisions.md` | Updated with Phase R decisions | Always |
+
+---
+
+## Decision Logging — Phase R
+
+> Update `docs/decisions.md` with decisions made in this phase before closing.
+
+**Log these decisions in Phase R:**
+
+- **HITL zones** — every zone the client named, and why
+- **Baseline measurement method** — how you measured the current state, what data sources were used
+- **Success targets** — what was agreed and any tradeoffs discussed to get there
+- **Stakeholder impact ratings** — any that were challenged and revised, with the reason
 
 ---
 
@@ -123,3 +200,5 @@ Client sponsor speaks money and risk — use that language.
 - [ ] Second-order impacts identified → `docs/success-metrics.md`
 - [ ] Tradeoffs presented and discussed
 - [ ] Quant and qual success criteria agreed and signed off by client sponsor → `docs/success-metrics.md`
+- [ ] Key decisions logged → `docs/decisions.md`
+- [ ] **[Agent in scope]** Agent permission scoping complete — permissions, hard boundaries, approval gates, data sensitivity, failure behaviour all elicited and saved to `docs/stakeholder-register.md`

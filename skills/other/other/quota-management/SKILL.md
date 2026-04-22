@@ -5,7 +5,7 @@ description: 'Quota tracking, threshold monitoring, and graceful degradation for
 
 
   quota, rate limiting, usage limits, thresholds.'
-version: 1.7.1
+version: 1.9.0
 alwaysApply: false
 category: infrastructure
 tags:
@@ -151,15 +151,3 @@ Then use the shared patterns:
 - Quota status checked before operation
 - Usage recorded after operation
 - Threshold warnings handled appropriately
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

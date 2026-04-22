@@ -1,7 +1,7 @@
 ---
 name: unified-review
 description: 'Orchestrate multiple review types into a single multi-domain review with integrated reporting'
-version: 1.8.4
+version: 1.9.0
 alwaysApply: false
 category: orchestration
 tags:

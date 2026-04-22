@@ -5,7 +5,7 @@ description: 'Workflow orchestrator for Spec Driven Development. Coordinates ski
 
 
   speckit workflow, spec driven development, speckit commands.'
-version: 1.7.1
+version: 1.9.0
 alwaysApply: false
 category: workflow-orchestration
 tags:
@@ -138,15 +138,3 @@ For each workflow session, track:
 - `superpowers:brainstorming`: Idea refinement.
 - `superpowers:writing-plans`: Implementation planning.
 - `superpowers:executing-plans`: Task execution.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

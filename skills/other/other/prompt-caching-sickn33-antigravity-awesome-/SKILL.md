@@ -471,9 +471,13 @@ Workflow:
 Works well with: `context-window-management`, `rag-implementation`, `conversation-memory`
 
 ## When to Use
-
 - User mentions or implies: prompt caching
 - User mentions or implies: cache prompt
 - User mentions or implies: response cache
 - User mentions or implies: cag
 - User mentions or implies: cache augmented
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

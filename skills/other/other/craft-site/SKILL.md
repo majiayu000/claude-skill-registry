@@ -1,6 +1,6 @@
 ---
 name: craft-site
-description: "Craft CMS 5 front-end Twig development — atomic design, template architecture, component patterns, Vite buildchain. Covers the full site template surface: atoms, molecules, organisms, props/extends/block pattern, layout chains, view routing, content builders, image presets, Tailwind named-key collections, multi-brand CSS tokens, JavaScript boundaries (Alpine/DataStar/Vue), Vite asset loading. Triggers on: {% include ... only %}, {% embed %}, _atoms/, _molecules/, _organisms/, _views/, _builders/, _boilerplate/, component--variant.twig, _component--props.twig, image presets, Tailwind class collections, collect({}), utilities prop, multi-brand theming, data-brand, hero sections, card components, content builders, Matrix block rendering, craft.vite.script, vite.php, vite.config.ts, nystudio107, buildchain, asset loading, per-page scripts, Blitz, static caching, page caching, ImageOptimize, Imager-X, responsive images, image optimization, srcset, image transforms, SEOmatic, Sprig, htmx, multi-language site, language switcher, localization, Formie. Always use when creating, editing, or reviewing any Craft CMS front-end Twig template, component, layout, view, builder, or buildchain configuration — including plugin template integration (Blitz, SEOmatic, Sprig, Formie, Imager-X)."
+description: "Craft CMS 5 front-end Twig development — atomic design, template architecture, component patterns, Vite buildchain. Covers the full site template surface: atoms, molecules, organisms, props/extends/block pattern, layout chains, view routing, content builders, image presets, Tailwind named-key collections, multi-brand CSS tokens, JavaScript boundaries (Alpine/DataStar/Vue, tabs, accordions, interactive components), Vite asset loading, and front-end auth (login, registration, password reset, user profiles). Triggers on: {% include ... only %}, {% embed %}, _atoms/, _molecules/, _organisms/, _views/, _builders/, _boilerplate/, component--variant.twig, _component--props.twig, image presets, Tailwind class collections, collect({}), utilities prop, multi-brand theming, data-brand, hero sections, card components, content builders, Matrix block rendering, craft.vite.script, vite.php, vite.config.ts, nystudio107, buildchain, asset loading, per-page scripts, Blitz, static caching, page caching, dynamic caching with Sprig, ImageOptimize, Imager-X, responsive images, srcset, image transforms, SEOmatic, meta tags, OpenGraph, JSON-LD, Sprig, htmx, multi-language site, language switcher, hreflang, localization, Formie, form styling, login form, registration form, user authentication front-end, RSS feed, Atom feed, JSON Feed, XML sitemap, feed.xml, sitemap.xml, |rss, |atom, search page, search results, .search(), search index, search form, search configuration, headless, headless CMS, GraphQL queries, preview tokens, Next.js, Nuxt, Astro, consuming GraphQL API, front-end framework integration. Always use when creating, editing, or reviewing any Craft CMS front-end Twig template, component, layout, view, builder, buildchain configuration, or front-end auth flow — including plugin template integration (Blitz, SEOmatic, Sprig, Formie, Imager-X). Do NOT trigger for PHP plugin/module development or content modeling decisions."
 ---
 
 # Craft CMS 5 — Front-End Twig (Atomic Design)
@@ -73,7 +73,7 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Configure email delivery via SES" → read `plugins/amazon-ses.md` + `third-party-integration.md`
 - "Build a language switcher" → read `multi-site-patterns.md`
 - "Add login/registration to the front end" → read `auth-flows.md`
-- "Build a user profile edit page" → read `auth-flows.md`
+- "Build a user profile edit page" → read `auth-account.md`
 - "Set up password reset flow" → read `auth-flows.md`
 - "Set up hreflang tags" → read `multi-site-patterns.md`
 - "Plan a multi-language site architecture" → read `multi-site-patterns.md`
@@ -81,6 +81,15 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Build reactive filtering or load-more" → read `plugins/sprig.md`
 - "Import data from an external feed" → read `plugins/feed-me.md`
 - "Set up responsive images with Imager-X" → read `plugins/imager-x.md`
+- "Build a search page" → read `search.md`
+- "Configure search settings" → read `search.md` (Search Configuration)
+- "Rebuild the search index" → read `search.md` (Rebuilding)
+- "Create an RSS feed" → read `feeds.md`
+- "Build an XML sitemap" → read `feeds.md` (XML Sitemap)
+- "Create a JSON Feed" → read `feeds.md` (JSON Feed)
+- "Set up a headless Craft CMS with Next.js" → read `headless.md`
+- "Fix GraphQL preview tokens" → read `headless.md`
+- "Consume Craft GraphQL API from a front-end framework" → read `headless.md`
 
 
 | Reference | Scope |
@@ -97,7 +106,11 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 | `references/twig-collections.md` | `collect()` method reference: creating, accessing, transforming, filtering, sorting, slicing, arrow functions |
 | `references/third-party-integration.md` | Script loading order, CMP (UserCentrics/CookieBot), GTM/sGTM data layer, analytics (Fathom/Plausible), AWS SES transport, n8n webhooks, Blitz compatibility, full head template example |
 | `references/multi-site-patterns.md` | Language switchers, hreflang tags, site architectures (subfolder/domain/subdomain/multi-brand), cross-site queries, static translations, site-specific templates, multi-site forms, site detection |
-| `references/auth-flows.md` | Front-end authentication: login, registration, password reset, set new password, edit profile, email verification, access control tags, user session helpers, GeneralConfig auth settings |
+| `references/auth-flows.md` | Front-end authentication forms: login, registration, password reset, set new password |
+| `references/auth-account.md` | Account management: edit profile, email verification, navigation partial, access control tags, user session helpers, GeneralConfig auth settings |
+| `references/search.md` | Search: syntax, Twig queries, configuration, indexing, rebuilding, score and ranking |
+| `references/feeds.md` | Feeds: RSS 2.0, Atom, JSON Feed, XML sitemap, custom routes, date filters |
+| `references/headless.md` | Headless & hybrid: headlessMode, GraphQL API, CORS, preview tokens, Next.js/Nuxt/Astro integration |
 
 ### Plugin References
 

@@ -1,7 +1,7 @@
 ---
 name: do-issue
 description: 'Parallel subagent execution with code review gates between task batches for issue resolution'
-version: 1.8.4
+version: 1.9.0
 alwaysApply: false
 category: workflow-automation
 tags:

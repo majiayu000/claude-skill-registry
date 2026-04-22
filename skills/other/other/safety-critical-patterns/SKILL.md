@@ -1,7 +1,7 @@
 ---
 name: safety-critical-patterns
 description: 'NASA Power of 10 rules adapted for writing robust, verifiable code with context-appropriate rigor'
-version: 1.7.1
+version: 1.9.0
 alwaysApply: false
 category: code-quality
 tags:

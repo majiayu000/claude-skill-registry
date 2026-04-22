@@ -69,7 +69,7 @@ Team reviews output against what was agreed in Approve, and for gaps, errors, or
 
 When the team reaches 9/10+ confidence, the lead asks the user via AskUserQuestion: question "9/10+ confidence reached. Run recursive refinement?", header "Refine", options "Deliver now" / "Run recursive refinement (9.25 → 9.5 → 9.75 → 10)".
 
-If "Deliver now": skip to Deliver. If "Run recursive refinement": starting at 9.25, the lead asks the team "What specific changes — no new scope, but gaps and errors count — would raise your score to [threshold]?" Lead implements, team re-reviews to confirm the threshold is met. The facilitator sends CONFIDENCE REACHED with the rung score before the lead advances to the next rung. The sequence is 9.25 → 9.5 → 9.75 → 10. For the 10 rung, the lead asks: "What, if anything, would you still change? If nothing, say so." This loop is autonomous once the user opts in. After 10 is confirmed, proceed to Deliver.
+If "Deliver now": skip to Deliver. If "Run recursive refinement": starting at 9.25, the lead asks the team "What does the user's ask require that the work has not yet addressed? No new scope — but gaps, errors, and items once treated as optional that are now required for completeness count." Lead implements, team re-reviews to confirm the threshold is met. The facilitator sends CONFIDENCE REACHED with the rung score before the lead advances to the next rung. The sequence is 9.25 → 9.5 → 9.75 → 10. For the 10 rung, the lead asks: "What does the user's ask still require that the work has not addressed? If nothing, say so explicitly." The rung-hold hard rule applies — see Step 1 hard rules. This loop is autonomous once the user opts in. After 10 is confirmed, proceed to Deliver.
 
 ### Deliver
 

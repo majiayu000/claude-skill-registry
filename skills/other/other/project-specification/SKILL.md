@@ -1,7 +1,7 @@
 ---
 name: project-specification
 description: "Transform project briefs into testable specifications with user stories, acceptance criteria, and measurable outcomes."
-version: 1.8.4
+version: 1.9.0
 alwaysApply: false
 # Custom metadata (not used by Claude for matching):
 model_preference: claude-sonnet-4

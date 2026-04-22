@@ -368,3 +368,8 @@ tmux attach -t shared
 - `@bash-pro` — Writing the shell scripts that orchestrate tmux sessions
 - `@bash-linux` — General Linux terminal patterns used inside tmux panes
 - `@ssh` — Combining tmux with SSH for persistent remote workflows
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

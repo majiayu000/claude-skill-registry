@@ -1,13 +1,9 @@
 ---
 name: quarto-alt-text
-description: >
-  Generate accessible alt text for data visualizations in Quarto documents. Use
-  when the user wants to add, improve, or review alt text for figures in .qmd
-  files. Triggers for requests about accessibility, figure descriptions, fig-alt,
-  screen reader support, or making Quarto documents more accessible.
+description: Generate accessible alt text for data visualizations in Quarto documents. Use when the user wants to add, improve, or review alt text for figures in .qmd files. Triggers for requests about accessibility, figure descriptions, fig-alt, screen reader support, or making Quarto documents more accessible.
 metadata:
   author: Emil Hvitfeldt (@emilhvitfeldt)
-  version: "1.0"
+  version: "1.1"
 license: MIT
 ---
 

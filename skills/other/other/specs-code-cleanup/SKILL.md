@@ -8,7 +8,7 @@ allowed-tools: Task, Read, Write, Edit, Bash, Grep, Glob, TodoWrite, AskUserQues
 
 ## Overview
 
-Performs post-review cosmetic cleanup to make code production-ready. This is the final workflow step after `/specs:task-review` approval.
+Performs post-review cosmetic cleanup to make code production-ready. This is the final workflow step after `/developer-kit-specs:specs.task-review` approval.
 
 **Input**: `docs/specs/[id]/tasks/TASK-XXX.md` (reviewed status)  
 **Output**: Cleaned code, task marked `completed`
@@ -55,7 +55,7 @@ See `references/language-patterns.md` for language-specific formatter commands, 
 2. Read the task file. Verify:
    - Status is `reviewed` or `implemented` (not `completed`)
    - Review report `TASK-XXX--review.md` exists and is approved
-3. If not reviewed → stop and tell user to run `/specs:task-review` first
+3. If not reviewed → stop and tell user to run `/developer-kit-specs:specs.task-review` first
 4. Extract task ID, title, and `provides` files
 
 ### Phase 2: Identify Files to Clean

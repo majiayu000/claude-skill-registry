@@ -239,10 +239,10 @@ If the user does not route to fixers (or after fixes are complete), ask: "Would 
 
 ## Integration with Other Skills
 
-**Relationship to `/audit-security`:**
-- `/audit-security` is security-focused — blue team + red team methodology
+**Relationship to `/review-security`:**
+- `/review-security` is security-focused — blue team + red team methodology
 - `/bug-hunt` targets correctness bugs — logic errors, edge cases, missing error handling
-- Both can find overlapping issues, but with different lenses. `/audit-security` asks "can an attacker exploit this?" while `/bug-hunt` asks "will this fail for a normal user?"
+- Both can find overlapping issues, but with different lenses. `/review-security` asks "can an attacker exploit this?" while `/bug-hunt` asks "will this fail for a normal user?"
 - Run both for comprehensive pre-release assurance
 
 **Relationship to `/bug-fix`:**

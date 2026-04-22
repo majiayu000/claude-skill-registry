@@ -327,7 +327,7 @@ for each row execute function orders_service.notify_order_created();
 PostgreSQL feature that restricts which rows users can access based on policies. Essential for multi-tenant applications and user data isolation.
 
 ### MCP (Model Context Protocol)
-Protocol enabling AI assistants to interact with external services like Supabase. Provides natural language querying and schema operations.
+Protocol enabling AI assistants to interact with external services like Supabase. Provides natural language querying and schema operations. The Supabase MCP server is also available via **mcp-lite on Edge Functions** (zero cold starts, global deployment) and as a **self-hosted Docker image** (`supabase/mcp-server:latest`).
 
 ### Upsert Pattern
 Insert a new row or update if it already exists, using `onConflict`. Atomic operation preventing race conditions.
@@ -606,5 +606,6 @@ Ask Claude: "Analyze this query and suggest optimizations: SELECT * FROM orders 
 
 ## Version History
 
+- **v2.1** (2026-04-21) - Updated for mcp-lite Edge Functions deployment (zero cold starts), self-hosted MCP via Docker, noted continued public alpha status
 - **v2.0** (2025-11-01) - Enhanced with official Supabase documentation, production patterns from Twilio-Aldea, TypeScript/SQL examples, and comprehensive RLS guide
 - **v1.0** - Initial skill creation with MCP setup, database patterns, schema design, security, and tools reference

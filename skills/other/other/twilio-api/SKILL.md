@@ -551,7 +551,8 @@ TWILIO_PHONE_NUMBER=+18005551234
 ```
 
 ### Rate Limits
-- Messaging: 200 messages per second (enterprise)
+- SMS messaging: 200 messages per second (enterprise)
+- MMS messaging: dynamic per-number limits based on Brand Trust Score (10DLC)
 - Voice: 100 concurrent calls (default)
 - API requests: 10,000 per hour (default)
 
@@ -737,6 +738,26 @@ async function sendWithBackoff(to, from, body, maxRetries = 3) {
 }
 ```
 
+## TLS Requirements
+
+Twilio is enforcing TLS 1.3 and TLS 1.2 cipher suite restrictions on the REST API (announced Mar 2026, deadline Jun 2026). Verify that your HTTP client library supports TLS 1.3 or a compliant TLS 1.2 cipher suite. Most modern Node.js (18+) and Python (3.10+) versions meet this requirement by default.
+
+## Message Scheduling
+
+Message scheduling is now generally available. Schedule messages for future delivery using the `SendAt` and `MessagingServiceSid` parameters:
+
+```javascript
+await client.messages.create({
+  to: '+14155552671',
+  messagingServiceSid: 'MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+  body: 'Scheduled message',
+  sendAt: new Date('2026-06-01T14:30:00Z'),
+  scheduleType: 'fixed',
+});
+```
+
+Messages can be scheduled up to 7 days in advance. Requires a Messaging Service (not a raw phone number).
+
 ## Resources
 
 - **Twilio Console**: https://console.twilio.com/
@@ -754,3 +775,5 @@ This skill includes:
 - TwiML response patterns
 - Complete signature validation examples
 - TypeScript and JavaScript examples
+- TLS 1.3 requirement update (Jun 2026 deadline)
+- Message scheduling (GA) and dynamic MMS rate limits

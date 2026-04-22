@@ -1,15 +1,7 @@
 ---
 name: architecture-paradigm-service-based
-description: 'Coarse-grained service architecture for deployment independence without
-  microservices complexity.
-
-
-  service-based, SOA, coarse-grained services, domain services
-
-  Use when: teams need deployment independence without microservices complexity
-
-  DO NOT use when: fine-grained scaling needed - use microservices.'
-version: 1.7.1
+description: 'Design coarse-grained service architecture for deployment independence without microservices complexity and overhead.'
+version: 1.9.0
 alwaysApply: false
 category: architectural-pattern
 tags:
@@ -66,15 +58,3 @@ estimated_tokens: 700
   - **Mitigation**: Changes to a shared database can have cascading effects across services. Mitigate this by using database views, replication, or a formal schema deprecation schedule to manage change.
 - **Architectural Degradation**:
   - **Mitigation**: Without strong governance, this architecture can degrade into a "distributed monolith"—a monolith with the added complexity of network hops. Track coupling metrics closely and enforce strict ownership of services and data to prevent this.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

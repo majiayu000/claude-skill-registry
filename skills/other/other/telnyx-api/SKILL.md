@@ -447,7 +447,7 @@ Complete official documentation extracted from developers.telnyx.com:
 - **`references/official-docs/webhooks.md`** - Complete webhook guide with signature verification, event types, and best practices
 - **`references/official-docs/messaging.md`** - Messaging API reference with SMS/MMS endpoints, character encoding, and segmentation
 - **`references/official-docs/authentication.md`** - API authentication, security, and best practices
-- **`references/official-docs/sdks.md`** - Server-side SDK documentation for Node.js, Python, Ruby, PHP, Java, C#, Go
+- **`references/official-docs/sdks.md`** - Server-side SDK documentation for Node.js (v2 with TypeScript/ESM), Python, Ruby, PHP, Java, Go
 
 ## Production Patterns (NEW)
 
@@ -704,6 +704,7 @@ TELNYX_MESSAGING_PROFILE_ID=abc85f64-5717-4562-b3fc-2c9600000000
 
 ## Version History
 
+- **v2.1** (2026-04-21) - Updated for Node SDK v2 (full TypeScript support, ESM modules), noted scheduled messaging (`send_at` field) as production feature
 - **v2.0** (2025-11-01) - Enhanced with official Telnyx documentation, production patterns from Twilio-Aldea (Ed25519 validation, provider-agnostic webhooks, idempotency), TypeScript examples, and comprehensive messaging API guide
 - **v1.0** - Initial skill creation with quick reference, error codes, and basic messaging patterns
 
@@ -714,7 +715,7 @@ TELNYX_MESSAGING_PROFILE_ID=abc85f64-5717-4562-b3fc-2c9600000000
 - **Mission Control Portal**: https://portal.telnyx.com/
 - **Status Page**: https://status.telnyx.com/
 - **Support Portal**: https://support.telnyx.com/
-- **Official SDKs**: Node.js, Python, Ruby, PHP, Java, C#, Go
+- **Official SDKs**: Node.js (v2 — TypeScript, ESM), Python, Ruby, PHP, Java, Go
 
 ## Common Patterns
 

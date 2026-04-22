@@ -1,7 +1,7 @@
 ---
 name: delegation-core
 description: Delegate tasks to external LLM services (Gemini, Qwen) with quota, logging,
-version: 1.7.1
+version: 1.9.0
 alwaysApply: false
   and error handling. Use when tasks exceed context window or need cheaper processing.
   Do not use when task requires reasoning by Claude.

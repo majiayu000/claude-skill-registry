@@ -1,7 +1,7 @@
 ---
 name: research-wiki
 description: "Persistent research knowledge base that accumulates papers, ideas, experiments, claims, and their relationships across the entire research lifecycle. Inspired by Karpathy's LLM Wiki pattern. Use when user says \"知识库\", \"research wiki\", \"add paper\", \"wiki query\", \"查知识库\", or wants to build/query a persistent field map."
-argument-hint: [subcommand: ingest|query|update|lint|stats|init]
+argument-hint: [subcommand: init|ingest|sync|query|update|lint|stats]
 allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob, Agent, WebSearch, WebFetch, mcp__codex__codex, mcp__codex__codex-reply
 ---
 
@@ -74,20 +74,67 @@ Initialize the wiki for the current project:
 
 ### `/research-wiki ingest "<paper title>" — arxiv: <id>`
 
-Add a paper to the wiki:
+Add a paper to the wiki. This subcommand is thin wrapping around the
+canonical helper `python3 tools/research_wiki.py ingest_paper …`, which
+is the single implementation of paper ingest in ARIS (per
+[`shared-references/integration-contract.md`](../shared-references/integration-contract.md)
+— one helper, no copies). The helper does all of:
 
-1. **Fetch metadata** — use arXiv/DBLP/Semantic Scholar to get full metadata
-2. **Generate slug** — `<first_author_last_name><year>_<keyword>` (e.g., `chen2025_factorized_gap`)
-3. **Check dedup** — if `paper:<slug>` already exists, update instead of creating
-4. **Create page** — `papers/<slug>.md` with full schema (see below)
-5. **Extract relationships** — scan the paper's related work / method for connections to existing wiki pages
-6. **Add edges** — append to `graph/edges.jsonl`
-7. **Update index** — regenerate `index.md`
-8. **Update gap_map** — if the paper reveals new gaps or addresses existing ones
-9. **Rebuild query_pack** — regenerate `query_pack.md`
-10. **Log** — append to `log.md`
+1. **Fetch metadata** — queries the arXiv Atom API when `--arxiv-id` is given
+2. **Generate slug** — `<first_author_last_name><year>_<keyword>`
+3. **Check dedup** — skip an existing page unless `--update-on-exist`
+4. **Create page** — `papers/<slug>.md` with the schema below
+5. **Rebuild `index.md`** and `query_pack.md`
+6. **Append `log.md`**
 
-**Paper page schema:**
+Edge extraction (step 5/8 in the old manual flow) is **not** in
+`ingest_paper`; do it as a follow-up with `add_edge` per relationship
+identified:
+
+```bash
+# arXiv-known paper
+python3 tools/research_wiki.py ingest_paper research-wiki/ \
+    --arxiv-id 2501.12345 --thesis "One-line claim from abstract."
+
+# Venue paper with no arXiv mirror
+python3 tools/research_wiki.py ingest_paper research-wiki/ \
+    --title "Attention Is All You Need" \
+    --authors "Ashish Vaswani, Noam Shazeer, …" --year 2017 --venue "NeurIPS"
+
+# Manual edge after ingest
+python3 tools/research_wiki.py add_edge research-wiki/ \
+    --from "paper:vaswani2017_attention_all_you" \
+    --to "paper:chen2025_factorized_gap" \
+    --type "extends" --evidence "Section 3.2: adapts the encoder block …"
+```
+
+Other skills (`/research-lit`, `/arxiv`, `/alphaxiv`, `/deepxiv`,
+`/semantic-scholar`, `/exa-search`) call the same helper directly in
+their own last step — they don't re-route through `/research-wiki
+ingest` as a subcommand, so they don't need an LLM roundtrip.
+
+### `/research-wiki sync — arxiv-ids <id1>,<id2>,...`
+
+Batch backfill: ingest one or more arXiv IDs that were read earlier
+without being ingested (e.g., because `research-wiki/` was set up after
+the reading happened, or a hook didn't fire).
+
+```bash
+# Explicit list
+python3 tools/research_wiki.py sync research-wiki/ \
+    --arxiv-ids 2310.06770,1706.03762
+
+# From a file (one id per line, # comments ok)
+python3 tools/research_wiki.py sync research-wiki/ --from-file ids.txt
+```
+
+Dedup is handled per-id; already-ingested papers are skipped silently.
+This is the recommended **manual repair** step (see integration
+contract §5 Backfill). `sync` does not scan session traces — callers
+declare the ids explicitly.
+
+**Paper page schema** (exactly what `ingest_paper` emits — do not
+handwrite alternative fields; `lint` will flag drift):
 
 ```markdown
 ---
@@ -96,19 +143,18 @@ node_id: paper:<slug>
 title: "<full title>"
 authors: ["First A. Author", "Second B. Author"]
 year: 2025
-venue: arXiv
+venue: "arXiv"
 external_ids:
   arxiv: "2501.12345"
   doi: null
   s2: null
-tags: [tag1, tag2]
-relevance: core  # core | related | peripheral
-origin_skill: research-lit
-created_at: 2026-04-07T10:12:00Z
-updated_at: 2026-04-07T10:12:00Z
+tags: ["tag1", "tag2"]
+added: 2026-04-07T10:12:00Z
 ---
 
-# One-line thesis
+# <full title>
+
+## One-line thesis
 
 [Single sentence capturing the paper's core contribution]
 
@@ -140,6 +186,12 @@ updated_at: 2026-04-07T10:12:00Z
 
 [Why this paper matters for our specific research direction]
 ```
+
+_Additionally, when the paper was ingested via `--arxiv-id` and the arXiv
+API returned an abstract, the helper appends an `## Abstract (original)`
+section after `Relevance to This Project` containing the raw abstract
+text as a blockquote. Manual ingests (no `--arxiv-id`) do not include
+this section._
 
 ### `/research-wiki query "<topic>"`
 
@@ -203,20 +255,35 @@ Last updated: 2026-04-07T10:12:00Z
 
 ## Integration with Existing Workflows
 
+All paper-reading skills follow the same **integration contract** (see
+[`shared-references/integration-contract.md`](../shared-references/integration-contract.md)):
+
+- single predicate — `[ -d research-wiki/ ]`
+- single canonical helper — `python3 tools/research_wiki.py ingest_paper …`
+- concrete artifact — `papers/<slug>.md` + `log.md` entry
+- backfill — `sync --arxiv-ids …`
+- diagnostic — `tools/verify_wiki_coverage.sh`
+
 ### Hook 1: After `/research-lit` finds papers
 
 ```
 # At end of research-lit, after synthesis:
 if research-wiki/ exists:
     for paper in top_relevant_papers (limit 8-12):
-        /research-wiki ingest paper
-        for each gap identified:
-            add_edge(paper.node_id, gap_id, "addresses_gap")
+        python3 tools/research_wiki.py ingest_paper research-wiki/ \
+            --arxiv-id <id> [--thesis "..."] [--tags "..."]
         for each explicit relation to existing wiki paper:
-            add_edge(paper.node_id, target.node_id, relation_type)
-    rebuild query_pack
+            python3 tools/research_wiki.py add_edge research-wiki/ \
+                --from "paper:<slug>" --to "<target>" \
+                --type <extends|contradicts|addresses_gap|...> \
+                --evidence "..."
     log "research-lit ingested N papers"
 ```
+
+Each paper-reading skill ships its own Step "Update Research Wiki (if
+active)" that calls the same helper once per paper it touched. The
+business logic is not duplicated — only the loop over that skill's
+specific result set differs.
 
 ### Hook 2: `/idea-creator` reads AND writes wiki
 

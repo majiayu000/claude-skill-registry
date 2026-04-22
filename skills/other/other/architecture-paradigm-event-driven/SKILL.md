@@ -1,10 +1,7 @@
 ---
 name: architecture-paradigm-event-driven
-description: 'Asynchronous event-based communication to decouple producers/consumers
-  for scalability and resilience. Use when real-time workloads or multiple subsystems
-  react to same events. Do not use when selecting paradigms (use architecture-paradigms
-  first), simple request-response.'
-version: 1.7.1
+description: 'Apply event-driven async messaging to decouple producers and consumers. Use for real-time processing.'
+version: 1.9.0
 alwaysApply: false
 category: architectural-pattern
 tags:
@@ -64,15 +61,3 @@ estimated_tokens: 800
   - **Mitigation**: Without strong observability, diagnosing failed or "stuck" consumers is extremely difficult. Enforce the use of distributed tracing and standardized alerting across all event-driven components.
 - **"Event Storming" Analysis Paralysis**:
   - **Mitigation**: While event storming workshops are valuable, they can become unproductive if not properly managed. Keep modeling sessions time-boxed and focused on high-value business contexts first.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

@@ -377,9 +377,9 @@ The implementer evaluates tickets against these criteria:
 - Tickets go upstream already tagged with batch labels that `/implement-project` consumes
 - Typical flow: `/scope-project` → `/implement-project`
 
-**Relationship to `/deliberate`:**
+**Relationship to `/think-deliberate`:**
 - `/scope-project`'s adversarial review is specialized for planning quality
-- `/deliberate` may be used within `/scope-project` if the planner faces a difficult design decision during ticket revision
+- `/think-deliberate` may be used within `/scope-project` if the planner faces a difficult design decision during ticket revision
 
 ## Example Session
 

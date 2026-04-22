@@ -1,7 +1,7 @@
 ---
 name: shell-review
 description: Audit shell scripts for correctness, portability, and common pitfalls.
-version: 1.7.1
+version: 1.9.0
 globs: "**/*.sh"
 alwaysApply: false
   Use when reviewing shell scripts, CI scripts, hook scripts, wrapper scripts. Do

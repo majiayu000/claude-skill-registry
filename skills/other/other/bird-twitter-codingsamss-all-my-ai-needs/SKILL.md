@@ -34,7 +34,7 @@ Default rule: if user says only `timeline` with no qualifier, treat it as `i/tim
 
 ## Prerequisites
 
-1. Bird CLI must be installed: `brew install steipete/tap/bird`
+1. Bird CLI must be installed: 优先使用仓库内置包 `vendor/bird-macos-universal-v0.8.0.tar.gz`；外部来源可用时可选 `brew install steipete/tap/bird`
 2. Must be logged into X/Twitter in Chrome browser
 3. In this environment, network access to X should go through local proxy:
    - `HTTP_PROXY=http://127.0.0.1:7897`

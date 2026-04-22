@@ -1,7 +1,7 @@
 ---
 name: scope-guard
 description: 'Pre-implementation scope control: evaluate feature necessity and enforce branch size limits'
-version: 1.8.4
+version: 1.9.0
 alwaysApply: false
 category: workflow-methodology
 tags:

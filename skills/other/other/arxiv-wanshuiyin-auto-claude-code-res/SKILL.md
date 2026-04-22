@@ -177,12 +177,34 @@ For each paper (downloaded or fetched by API):
 - **Local PDF**: papers/[ID].pdf (if downloaded)
 ```
 
-### Step 6: Final Output
+### Step 6: Update Research Wiki (if active)
+
+**Required when `research-wiki/` exists in the project**; skip silently
+otherwise. After presenting results, ingest every paper returned by
+this invocation (both the search hits shown and any downloaded PDFs)
+into the wiki:
+
+```
+if [ -d research-wiki/ ]:
+    for each arxiv_id in results:
+        python3 tools/research_wiki.py ingest_paper research-wiki/ \
+            --arxiv-id "<arxiv_id>"
+```
+
+The helper handles metadata fetch, slug, dedup, page creation, index
+rebuild, and log append in a single call — **do not handwrite
+`papers/<slug>.md`**. See
+[`shared-references/integration-contract.md`](../shared-references/integration-contract.md)
+for the canonical-helper rule. Missed ingests can be backfilled later
+with `python3 tools/research_wiki.py sync research-wiki/ --arxiv-ids <id1>,<id2>,...`.
+
+### Step 7: Final Output
 
 Summarize what was done:
 
 - `Found N papers for "query"`
 - `Downloaded: papers/2301.07041.pdf (842 KB)` (for each download)
+- `Wiki-ingested N papers` (if `research-wiki/` was present)
 - Any warnings (rate limit hit, file too small, already exists)
 
 Suggest follow-up skills:

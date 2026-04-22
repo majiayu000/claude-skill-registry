@@ -137,19 +137,33 @@ ClaudeAgentOptions(
     mcp_servers={"calc": my_server},          # MCP server configs
 
     # Permissions
-    permission_mode="acceptEdits",            # default | acceptEdits | plan | bypassPermissions
+    permission_mode="acceptEdits",            # default | dontAsk | acceptEdits | plan | bypassPermissions | auto (TS only)
     can_use_tool=my_handler,                  # Custom permission callback
 
     # Execution
     cwd="/path/to/project",                   # Working directory
     max_turns=10,                             # Limit iterations
-    env={"API_KEY": "..."},                   # Environment variables
+    env={**os.environ, "API_KEY": "..."},     # BREAKING v0.2.113: replaces process.env, must spread
 
     # Advanced
     hooks={"PreToolUse": [...]},              # Behavior hooks
     agents={"researcher": AgentDef(...)},     # Subagents
     sandbox={"enabled": True},                # Sandbox settings
     setting_sources=["project"],              # Load .claude settings
+    plugins=[SdkPluginConfig(...)],           # Plugin configs
+)
+```
+
+### AgentDefinition (Subagents)
+
+```python
+AgentDefinition(
+    description="Research specialist",
+    prompt="You are a researcher...",
+    tools=["Read", "Glob", "Grep"],
+    model="opus",                             # sonnet | opus | haiku | inherit
+    skills=["my-skill"],                      # Skill names to preload (TS)
+    max_turns=10,
 )
 ```
 
@@ -170,6 +184,10 @@ ClaudeAgentOptions(
 | **TodoWrite** | Manage task lists |
 | **KillShell** | Kill background shells |
 | **ExitPlanMode** | Exit planning mode |
+| **Monitor** | Watch background process events |
+| **AskUserQuestion** | Ask clarifying questions with multiple choice |
+| **EnterWorktree** | Create isolated git worktree |
+| **Config** | Read/write Claude Code settings |
 
 ## Message Types
 
@@ -205,17 +223,20 @@ Control agent thinking depth via the effort parameter rather than prompt-level i
 | Quick lookups, simple edits | low | Minimal thinking overhead |
 | Standard development | medium | Default for most agents |
 | Complex architecture, security | high | Deeper reasoning |
-| Deep research, long-horizon | max | Maximum thinking budget |
+| Deep research, long-horizon | xhigh / max | Maximum thinking budget |
 
 ```python
-# Adaptive thinking (recommended for Claude 4.6)
+# Adaptive thinking (recommended — default for Claude 4.6+)
 options = ClaudeAgentOptions(
-    model="claude-opus-4-6",  # or claude-sonnet-4-6
-    # Effort is controlled at the API level, not in the agent options
+    model="claude-opus-4-7",  # or claude-opus-4-6, claude-sonnet-4-6
+    # Thinking uses {"type": "adaptive"} by default for supported models
+    # Effort: 'low' | 'medium' | 'high' | 'xhigh' | 'max'
 )
 ```
 
-Avoid adding "think carefully" or "be thorough" to agent system prompts—Claude 4.6 calibrates thinking depth automatically based on task complexity.
+**Opus 4.7** (`claude-opus-4-7`) requires SDK v0.2.111+ (TypeScript) or equivalent Python version.
+
+Avoid adding "think carefully" or "be thorough" to agent system prompts—Claude 4.6+ calibrates thinking depth automatically based on task complexity.
 
 </thinking_config>
 

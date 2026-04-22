@@ -1,15 +1,9 @@
 ---
 name: quarto-authoring
-description: >
-  Writing and authoring Quarto documents (.qmd), including code cell options,
-  figure and table captions, cross-references, callout blocks (notes, warnings,
-  tips), citations and bibliography, page layout and columns, Mermaid diagrams,
-  YAML metadata configuration, and Quarto extensions. Also covers converting and
-  migrating R Markdown (.Rmd), bookdown, blogdown, xaringan, and distill projects
-  to Quarto, and creating Quarto websites, books, presentations, and reports.
+description: Writing and authoring Quarto documents (.qmd), including code cell options, figure and table captions, cross-references, callout blocks (notes, warnings, tips), citations and bibliography, page layout and columns, Mermaid diagrams, YAML metadata configuration, and Quarto extensions. Also covers converting and migrating R Markdown (.Rmd), bookdown, blogdown, xaringan, and distill projects to Quarto, and creating Quarto websites, books, presentations, and reports.
 metadata:
   author: Mickaël Canouil (@mcanouil)
-  version: "1.2"
+  version: "1.3"
 license: MIT
 ---
 

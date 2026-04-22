@@ -31,7 +31,7 @@ Receives `contextStore` with tech stack, codebase root, output_dir.
 
 1) Parse context + output_dir
 2) Run dead code detection (Layer 1: linters, grep)
-   - **Graph-capable projects:** For JavaScript, TypeScript/TSX, Python, C#, and PHP, use `index_project` then `audit_workspace(verbosity="full")` as primary detection for unused exports when graph indexing is available.
+   - **Graph-capable projects:** For JavaScript, TypeScript/TSX, Python, C#, and PHP, use `index_project` then bounded `audit_workspace(verbosity="minimal", limit=5)` as primary detection for unused exports when graph indexing is available. Raise `limit` only for deliberate drill-down.
    - Keep grep/linter fallback for unsupported languages, graph-unavailable runs, and checks outside export liveness.
 3) Analyze context per candidate (Layer 2):
    - Unused functions: used via dynamic import/reflection? Exported in public API? Used in other packages (monorepo)?

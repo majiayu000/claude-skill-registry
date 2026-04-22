@@ -7,6 +7,17 @@ description: The Mileva Method (CRISP) — Phase 3: Investigate. Process mapping
 
 Map what exists (or what should exist) before designing a solution.
 
+## Project State
+
+> At the start of Phase I: read `docs/crisp-state.json`. Check phases C and R are complete. Use `project.type`, `phases.R.hitlZones`, `phases.R.stakeholders` for context.
+>
+> At the end of Phase I (before exit checklist): update `docs/crisp-state.json`:
+> - Set `phases.current` to `"S"`
+> - Add `"I"` to `phases.complete`
+> - Set `phases.I.complete` to `true`
+> - Fill `phases.I.processTrack`, `phases.I.userTypes`, `phases.I.dataMappingRequired`, `phases.I.uxDiscoveryRequired`, `phases.I.navigationPattern`
+> - Add any unresolved items to `phases.I.openQuestions`
+
 ## Two Tracks
 
 ### Track A: Existing Process (Automation)
@@ -253,6 +264,78 @@ Record the answers. They become UX notes in the screen specs.
 
 ---
 
+
+## Data Mapping — Mandatory When Structured Data Extraction Is In Scope
+
+> **Trigger:** Run this section if any feature in scope involves extracting, transforming, or mapping structured data.
+> Examples: OCR from documents, API response parsing, CSV/Excel imports, form submissions to DB, webhook payloads.
+>
+> If the mapping isn't defined here, Claude will guess in Phase S. It will be wrong.
+> The OCR-reads-PDF-saves-to-DB feature that seemed simple will become 3 sprints of back-and-forth fixes.
+
+**How to detect if this applies:**
+
+Read the process flow and user journey. Ask: does any step involve:
+- Reading data from a document (PDF, image, spreadsheet)?
+- Consuming an external API response and saving fields to a DB?
+- Importing data from an external file or feed?
+- Taking form input and mapping it to a structured DB schema?
+
+If yes to any — run this section before closing Phase I.
+
+**What to elicit:**
+
+For each data source:
+
+**1. Describe the source structure**
+> "Show me an example of the [document/API response/file]. Walk me through what's on it — sections, headings, where the key data lives. Don't summarise — show me."
+
+Never accept "it's a standard invoice" or "just a normal API response." Get the actual structure.
+
+**2. Map every field explicitly**
+> "For each piece of data we need to save — tell me: where exactly is it in the source, what it's called there, and what DB field it maps to."
+
+Fill `docs/data-mapping.md` field by field. Do not leave any row blank.
+
+**3. Nail the edge cases**
+> "What happens if [field X] is missing? What if the document is scanned and the text is unclear? What if there are multiple values where you expect one?"
+
+Every edge case not defined here becomes a production bug.
+
+**4. Define validation rules**
+> "Before we save anything to the DB — what must be true? What would make a record invalid and what should happen when that occurs?"
+
+Save to `docs/data-mapping.md` using the template in `/templates/data-mapping.md`.
+
+---
+
+## Phase 3 Outputs
+
+> Save all of these to `docs/` before closing Phase I.
+
+| File | Contents | Required? |
+|---|---|---|
+| `docs/process-flow.md` | Full process map — every step, tool, input, output, decision | Always |
+| `docs/user-journey-map.md` | Journey per system user type — steps, needs, feelings, pain points, delights | Always |
+| `docs/project-goals.md` | Goals (incl. elicited), non-goals, success criteria linked to Phase R metrics | Always |
+| `docs/ux-discovery.md` | Audience mental models, visual direction, navigation pattern, high-stakes screens, friction/delight | External UI/Mobile/Web only |
+| `docs/data-mapping.md` | Field-by-field source → DB mapping, edge cases, validation rules | When structured data extraction is in scope |
+
+---
+
+## Decision Logging — Phase I
+
+> Update `docs/decisions.md` with decisions made in this phase before closing.
+
+**Log these decisions in Phase I:**
+
+- **Process track chosen** — Track A (existing) or Track B (greenfield), and why
+- **User types included/excluded from journey maps** — who got a map and who didn't, with reason
+- **Navigation pattern** (if UX discovery ran) — which pattern was chosen and why
+- **Data mapping scope** — which features triggered data mapping and what was decided on edge case handling
+
+---
+
 ## Exit Checklist
 - [ ] Process fully mapped (Track A or B) → `docs/process-flow.md`
 - [ ] Every tool, input, output, and decision point documented
@@ -264,9 +347,16 @@ Record the answers. They become UX notes in the screen specs.
 - [ ] Project goals pre-filled from Phase R, three elicitation moves run, confirmed → `docs/project-goals.md`
 - [ ] Unstated and conflicting goals surfaced and resolved
 - [ ] Diagrams drawn and shared with client for confirmation
+- [ ] **[Structured data in scope]** Data mapping complete → `docs/data-mapping.md`
+  - [ ] Source structure described with real example (not assumed)
+  - [ ] Every field mapped: source location → DB table → column → type
+  - [ ] Edge cases and nulls defined per field
+  - [ ] Validation rules defined
+  - [ ] All open questions answered before Phase S
 - [ ] **[External UI/Mobile/Web]** UX Discovery complete → `docs/ux-discovery.md`
   - [ ] Audience mental model confirmed per user type (3A)
   - [ ] Visual direction agreed — references captured, non-negotiable identified (3B)
   - [ ] Navigation pattern decided (3C)
   - [ ] High-stakes screens identified with emotion + primary action (3D)
   - [ ] Friction and delight moments made design-actionable (3E)
+- [ ] Key decisions logged → `docs/decisions.md`

@@ -6,6 +6,8 @@ allowed-tools: Bash(agent-browser:*)
 
 # Browser Automation with agent-browser
 
+> **When to reach for agent-browser:** CLI-first headless CDP automation — no browser extension, no pixel-level screenshots. Use it for scripted web workflows, CI-friendly browser testing, and session-based scraping where you want shell commands over GUI interaction.
+
 ## Quick start
 
 ```bash

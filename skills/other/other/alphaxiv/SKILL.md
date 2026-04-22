@@ -123,6 +123,25 @@ If the user only asks for one specific detail, answer it directly — skip the f
 /novelty-check "idea from paper"     - verify novelty against this paper's area
 ```
 
+## Update Research Wiki (if active)
+
+**Required when `research-wiki/` exists in the project**; skip silently
+otherwise. After presenting the paper summary, ingest the single paper
+that was read:
+
+```
+if [ -d research-wiki/ ]:
+    python3 tools/research_wiki.py ingest_paper research-wiki/ \
+        --arxiv-id "<paper_arxiv_id>" \
+        [--thesis "<one-line thesis from the Tier 1 overview>"]
+```
+
+The helper handles metadata fetch, slug, dedup, page creation, index
+rebuild, and log append — **do not handwrite `papers/<slug>.md`**. See
+[`shared-references/integration-contract.md`](../shared-references/integration-contract.md).
+If wiki was not present at read time, the user can backfill via
+`python3 tools/research_wiki.py sync research-wiki/ --arxiv-ids <id>`.
+
 ## Key Rules
 
 - **Overview first**: `overview` is the fastest path and must always be tried before deeper tiers. Only escalate when needed.

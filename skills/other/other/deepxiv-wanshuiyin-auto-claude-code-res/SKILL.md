@@ -189,6 +189,26 @@ Use this progression:
 
 Do not jump to full-paper reads when a brief or one section answers the question.
 
+### Step 6: Update Research Wiki (if active)
+
+**Required when `research-wiki/` exists in the project**; skip silently
+otherwise. Ingest papers that were meaningfully read (brief / head /
+section / full) during this invocation — mere `search` hits without a
+depth read do not need ingestion:
+
+```
+if [ -d research-wiki/ ]:
+    for each arxiv_id the user asked this skill to read in depth:
+        python3 tools/research_wiki.py ingest_paper research-wiki/ \
+            --arxiv-id "<arxiv_id>"
+```
+
+The helper handles metadata / slug / dedup / page / index / log in one
+call — **do not handwrite `papers/<slug>.md`**. See
+[`shared-references/integration-contract.md`](../shared-references/integration-contract.md).
+Backfill missed ingests with
+`python3 tools/research_wiki.py sync research-wiki/ --arxiv-ids <id1>,<id2>,...`.
+
 ## Key Rules
 
 - Prefer the adapter script over raw `deepxiv` commands when available.

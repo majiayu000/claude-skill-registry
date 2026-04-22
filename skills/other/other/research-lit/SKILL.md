@@ -269,26 +269,45 @@ If Zotero BibTeX was exported, include a `references.bib` snippet for direct use
 - Update related work notes in project memory
 - If Obsidian is available, optionally create a literature review note in the vault
 
-### Step 6: Update Research Wiki (if active)
+### Step 6: Update Research Wiki
 
-**This step is optional and automatic.** Skip entirely if `research-wiki/` does not exist in the project.
+**Required when `research-wiki/` exists.** Skip entirely (no action, no
+error) if the directory is absent. Per
+[`shared-references/integration-contract.md`](../shared-references/integration-contract.md),
+this step follows the canonical ingest contract — business logic lives
+in `tools/research_wiki.py`, not in this prose.
 
 ```
-if research-wiki/ directory exists:
-    for each top relevant paper found (up to 8-12):
-        1. Generate slug: python3 tools/research_wiki.py slug "<title>" --author "<last>" --year <year>
-        2. Create page: research-wiki/papers/<slug>.md with structured schema
-           (node_id, title, authors, year, venue, tags, one-line thesis, problem/gap,
-            method, key results, limitations, reusable ingredients, open questions)
-        3. Add edges to graph/edges.jsonl for relationships to existing wiki papers:
-           python3 tools/research_wiki.py add_edge research-wiki/ --from "paper:<slug>" --to "<target>" --type <type> --evidence "<text>"
-        4. Update gap_map.md if new gaps are identified
-    Rebuild query pack:
-        python3 tools/research_wiki.py rebuild_query_pack research-wiki/
-    Log:
-        python3 tools/research_wiki.py log research-wiki/ "research-lit ingested N papers"
-else:
-    skip — no wiki, no action, no error
+📋 Research Wiki ingest (runs once, at end of research-lit):
+   [ ] 1. Predicate: `research-wiki/` exists? If no, skip this step.
+   [ ] 2. For each of the top 8–12 relevant papers (arxiv IDs collected above):
+          python3 tools/research_wiki.py ingest_paper research-wiki/ \
+              --arxiv-id <id> [--thesis "<one-line>"] [--tags <t1>,<t2>]
+   [ ] 3. For each explicit relationship to an existing wiki entity,
+          add an edge:
+          python3 tools/research_wiki.py add_edge research-wiki/ \
+              --from "paper:<slug>" --to "<target_node_id>" \
+              --type <extends|contradicts|addresses_gap|inspired_by|...> \
+              --evidence "<one-sentence quote or reasoning>"
+   [ ] 4. Confirm papers/<slug>.md files were created (helper prints
+          "Paper ingested: ..."); if any failed with a network error,
+          retry or fall back to the --title/--authors/--year manual form.
+```
+
+`ingest_paper` handles slug generation, arXiv metadata fetch, dedup
+(skips an existing paper by arXiv id), page rendering, `index.md`
+rebuild, `query_pack.md` rebuild, and log append in a single call —
+**do not manually write `papers/<slug>.md`**. If the helper is
+unavailable (e.g., offline on a non-ARIS machine), log the gap and let
+`/research-wiki sync --arxiv-ids …` backfill later.
+
+For non-arXiv sources (Semantic Scholar only, IEEE/ACM journals without
+arXiv mirrors, blog posts), pass manual metadata instead:
+
+```
+python3 tools/research_wiki.py ingest_paper research-wiki/ \
+    --title "<full title>" --authors "A, B, C" --year <yyyy> \
+    --venue "<venue>" [--external-id-doi "<doi>"] [--thesis "..."]
 ```
 
 ## Key Rules

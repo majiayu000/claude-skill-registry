@@ -1,0 +1,17 @@
+{
+  "name": "orthogonal-remotion-best-practices",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/capabilities/orthogonal-remotion-best-practices/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "orthogonal-remotion-best-practices",
+  "downloaded_at": "2026-04-22T01:38:04.966811Z",
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/capabilities/orthogonal-remotion-best-practices/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/capabilities/orthogonal-remotion-best-practices/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

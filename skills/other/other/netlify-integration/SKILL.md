@@ -100,8 +100,8 @@ export const handler: Handler = async (event, context) => {
   NODE_VERSION = "18"
   NEXT_TELEMETRY_DISABLED = "1"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+# OpenNext adapter auto-detects Next.js — no plugin entry needed.
+# Legacy: @netlify/plugin-nextjs is replaced by @opennextjs/netlify.
 
 [functions]
   directory = ".netlify/functions"
@@ -346,10 +346,12 @@ export const handler: Handler = async (event, context) => {
 - No additional configuration needed
 
 ### Next.js + Netlify Integration
-- Requires `@netlify/plugin-nextjs` plugin
-- Handles ISR, SSR, and static page generation
+- Powered by the open-source **OpenNext adapter** (`@opennextjs/netlify`), which replaced the legacy `@netlify/plugin-nextjs` as the canonical approach
+- Supports Next.js 13.5+ through 16, including App Router, Server Components, and Streaming
+- Handles ISR, SSR, static generation, and fine-grained edge caching automatically
 - API routes automatically converted to serverless functions
 - Custom functions go in `.netlify/functions/` (separate from `pages/api/`)
+- The adapter auto-updates on each build unless you pin a version in `package.json`
 
 ## Reference Files
 
@@ -368,7 +370,7 @@ export const handler: Handler = async (event, context) => {
 - **`references/official-docs/functions.md`** - Complete Netlify Functions guide with handler types, event structure, deployment
 - **`references/official-docs/environment-variables.md`** - Environment variable configuration, scopes, runtime access
 - **`references/official-docs/netlify-toml.md`** - File-based configuration reference
-- **`references/official-docs/nextjs.md`** - Next.js framework integration, ISR, SSR, optimization
+- **`references/official-docs/nextjs.md`** - Next.js on Netlify via OpenNext adapter: App Router, ISR, SSR, skew protection, image optimization
 
 ### Code Examples
 - **`assets/examples/webhook-function.ts`** - Webhook handler with immediate response pattern
@@ -533,6 +535,7 @@ Repository structure (871 files) showing CLI source code organization
 
 ## Version History
 
+- **v2.1** (2026-04-21) - Updated for OpenNext adapter (replaces legacy `@netlify/plugin-nextjs`), Next.js 16 support, fine-grained edge caching
 - **v2.0** (2025-11-01) - Enhanced with official Netlify documentation, production patterns from Twilio-Aldea, TypeScript examples, webhook timeout solutions, and comprehensive Next.js integration guide. Added 10 practical Quick Reference examples extracted from real production code.
 - **v1.0** - Initial skill creation with deployment workflows, configuration, functions development, debugging
 

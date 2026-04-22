@@ -53,6 +53,10 @@ Not every spec item earns its own shell. A spec item earns a shell when either:
 
 Items meeting neither criterion get folded into the most related shell's Implementation Steps. If several such items have no clear home, group them into a single "minor fixes" shell at the end.
 
+Do not default to one shell per spec item. Individual items are often too small for a focused session on their own. For each draft shell, ask whether it is a full focused implementation session — if not, fold it into the most coupled adjacent shell. A spec's suggested groupings are usually closer to right than a conservative further split. Equally, if no forcing condition (below) applies and the entire scope fits one session, a single shell is the right answer — do not invent dependencies to hit a multi-shell shape.
+
+**Forcing condition — atomic ripple.** When a breaking change to a shared interface requires every consumer across multiple modules to update in lockstep, the change and all consumer updates must land in one shell regardless of size. Splitting leaves intermediate states that break dependents.
+
 ### Sizing
 
 - One shell = one logical unit of work (a feature, a subsystem, a layer)
@@ -82,7 +86,7 @@ For each shell, identify the structural contract with the rest of the decomposit
 
 - **Produces** — What this shell creates that other shells (or the final system) can use. List concrete artifacts at the conceptual level: modules, types, endpoints, data models, UI screens, migration files. File paths are filled in at expansion time.
 - **Consumes** — What this shell depends on that must already exist. Either listed in a prior shell's Produces, or marked "from existing codebase" if it predates this decomposition. Every Consumes entry must be traceable to a source.
-- **Covers spec requirements** — Which spec sections or requirements this shell implements. The union of Covers across all shells must equal the set of spec requirements.
+- **Covers spec requirements** — Which spec sections or requirements this shell implements. The union of Covers across all shells must equal the set of spec requirements. For partial coverage, mark the entry `(partial: <what's deferred>)` and name the deferred work in that shell's Open Questions — a bare "Covers §N" for partial coverage breaks the invariant.
 
 ### Shell Slug
 

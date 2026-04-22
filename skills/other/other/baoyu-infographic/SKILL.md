@@ -1,7 +1,7 @@
 ---
 name: baoyu-infographic
 description: Generate professional infographics with 21 layout types and 21 visual styles. Analyzes content, recommends layout×style combinations, and generates publication-ready infographics. Use when user asks to create "infographic", "信息图", "visual summary", "可视化", or "高密度信息大图".
-version: 1.56.1
+version: 1.57.1
 metadata:
   openclaw:
     homepage: https://github.com/JimLiu/baoyu-skills#baoyu-infographic
@@ -23,11 +23,17 @@ Concrete `AskUserQuestion` references below are examples — substitute the loca
 
 ## Image Generation Tools
 
-When this skill needs to render an image:
+When this skill needs to render an image, resolve the backend in this order:
 
-- **Use whatever image-generation tool or skill is available** in the current runtime — e.g., Codex `imagegen`, Hermes `image_generate`, `baoyu-imagine`, or any equivalent the user has installed.
-- **If multiple are available**, ask the user **once** at the start which to use (batch with any other initial questions).
-- **If none are available**, tell the user and ask how to proceed.
+1. **Current-request override** — if the user names a specific backend in the current message, use it.
+2. **Saved preference** — if `EXTEND.md` sets `preferred_image_backend` to a backend available right now, use it.
+3. **Auto-select** (when the preference is `auto`, unset, or the pinned backend isn't available):
+   - If the current runtime exposes a native image tool (e.g., Codex `imagegen`, Hermes `image_generate`), use it. Runtime-native tools are preferred by default — agents that know their own tool inventory should surface the native one here.
+   - Otherwise, if exactly one non-native backend is installed (e.g., `baoyu-imagine`), use it.
+   - Otherwise (multiple non-native backends with no runtime-native tool), ask the user once — batch with any other initial questions.
+4. **If none are available**, tell the user and ask how to proceed.
+
+Setting `preferred_image_backend: ask` forces the step-3 prompt every run regardless of available backends. Users change the pinned backend via the `## Changing Preferences` section below.
 
 **Prompt file requirement (hard)**: write each image's full, final prompt to a standalone file under `prompts/` (naming: `NN-{type}-[slug].md`) BEFORE invoking any backend. The backend receives the prompt file (or its content); the file is the reproducibility record and lets you switch backends without regenerating prompts.
 
@@ -64,6 +70,15 @@ references:
 - If `usage: direct` AND the chosen backend accepts reference images (e.g., `baoyu-imagine` via `--ref`) → pass the file via the backend's ref parameter
 - Otherwise → embed extracted `style`/`palette` traits in the prompt text
 
+## Confirmation Policy
+
+Default behavior: **confirm before generation**.
+
+- Treat explicit skill invocation, a file path, a matched keyword shortcut, `EXTEND.md` defaults, and the documented default combination as **recommendation inputs only**. None of them authorizes skipping confirmation.
+- Do **not** start Step 5 or Step 6 until the user confirms the combination/aspect/language/backend choices.
+- Skip confirmation only when the current request explicitly says to do so, for example: `--no-confirm`, "直接生成", "不用确认", "跳过确认", "按默认出图", or equivalent wording.
+- If confirmation is skipped explicitly, state the assumed combination/aspect/language/backend in the next user-facing update before generating.
+
 ## Options
 
 | Option | Values |
@@ -72,6 +87,7 @@ references:
 | `--style` | 21 options (see Style Gallery), default: craft-handmade |
 | `--aspect` | Named: landscape (16:9), portrait (9:16), square (1:1). Custom: any W:H ratio (e.g., 3:4, 4:3, 2.35:1) |
 | `--lang` | en, zh, ja, etc. |
+| `--no-confirm` | Skip Step 4 only when the user explicitly requests direct generation without confirmation |
 | `--ref <files...>` | Reference images (file paths) for style / palette / composition / subject guidance |
 
 ## Layout Gallery (21)
@@ -152,11 +168,11 @@ Full definitions live at `references/styles/<style>.md`.
 | Educational Diagram | `hub-spoke` + `hand-drawn-edu` |
 | Process Tutorial | `linear-progression` + `hand-drawn-edu` |
 
-Default combination: `bento-grid` + `craft-handmade`.
+Default combination: `bento-grid` + `craft-handmade` (fallback recommendation only — per the [Confirmation Policy](#confirmation-policy), defaults never bypass Step 4).
 
 ## Keyword Shortcuts
 
-When the user's input contains these keywords, auto-select the layout and promote the listed styles to the top of Step 3 recommendations. Skip content-based layout inference for matched keywords. Append any `Prompt Notes` to the Step 5 prompt.
+When the user's input contains these keywords, use the mapped layout as the leading Step 3 recommendation and promote the listed styles to the top of the Step 3 list. Skip content-based layout inference for matched keywords. Append any `Prompt Notes` to the Step 5 prompt.
 
 | User Keyword | Layout | Recommended Styles | Default Aspect | Prompt Notes |
 |--------------|--------|--------------------|----------------|--------------|
@@ -201,7 +217,7 @@ Check EXTEND.md in priority order — the first one found wins:
 | Found | Read, parse, display a one-line summary |
 | Not found | Ask the user with `AskUserQuestion` (see `references/config/first-time-setup.md`) |
 
-**EXTEND.md supports**: preferred layout/style, default aspect ratio, custom style definitions, language preference.
+**EXTEND.md supports**: preferred layout/style, default aspect ratio, language preference, preferred image backend, custom style definitions.
 
 Schema: `references/config/preferences-schema.md`
 
@@ -231,7 +247,7 @@ See `references/structured-content-template.md` for detailed format.
 
 ### Step 3: Recommend Combinations
 
-**3.1 Check Keyword Shortcuts first**: If user input matches a keyword from the **Keyword Shortcuts** table, auto-select the associated layout and prioritize associated styles as top recommendations. Skip content-based layout inference.
+**3.1 Check Keyword Shortcuts first**: If user input matches a keyword from the **Keyword Shortcuts** table, use the associated layout as the leading recommendation and prioritize associated styles as top recommendations. Skip content-based layout inference.
 
 **3.2 Otherwise**, recommend 3-5 layout×style combinations based on:
 - Data structure → matching layout
@@ -241,6 +257,8 @@ See `references/structured-content-template.md` for detailed format.
 
 ### Step 4: Confirm Options
 
+**Hard gate**: this step is mandatory per the [Confirmation Policy](#confirmation-policy) — Steps 5–6 cannot start until the user confirms here (or explicitly opts out with `--no-confirm` / equivalent in the current request).
+
 Ask the user to confirm the questions below following the [User Input Tools](#user-input-tools) rule at the top of this file (batch into one call if the runtime supports multiple questions; otherwise ask one at a time in priority order).
 
 | Priority | Question | When | Options |
@@ -248,6 +266,7 @@ Ask the user to confirm the questions below following the [User Input Tools](#us
 | 1 | **Combination** | Always | 3+ layout×style combos with rationale |
 | 2 | **Aspect** | Always | Named presets (landscape/portrait/square) or custom W:H ratio (e.g., 3:4, 4:3, 2.35:1) |
 | 3 | **Language** | Only if source ≠ user language | Language for text content |
+| 4 | **Image Backend** | Only if step 3 of the `## Image Generation Tools` rule needs to ask (no runtime-native tool AND multiple non-native backends, OR `preferred_image_backend: ask`) | Available backends |
 
 ### Step 5: Generate Prompt → `prompts/infographic.md`
 
@@ -266,7 +285,7 @@ Combine:
 
 ### Step 6: Generate Image
 
-1. Select the backend via the `## Image Generation Tools` rule at the top: use whatever is available; if multiple, ask the user once. Do this once per session.
+1. Resolve the backend per the `## Image Generation Tools` rule at the top of this file.
 2. Ensure the full final prompt is persisted at `prompts/infographic.md` (already written in Step 5) BEFORE invoking the backend — the file is the reproducibility record.
 3. **Check for existing file**: Before generating, check if `infographic.png` exists
    - If exists: Rename to `infographic-backup-YYYYMMDD-HHMMSS.png`
@@ -275,7 +294,7 @@ Combine:
 
 ### Step 7: Output Summary
 
-Report: topic, layout, style, aspect, language, output path, files created.
+Report: topic, layout, style, aspect, language, image backend, output path, files created.
 
 ## References
 
@@ -285,6 +304,15 @@ Report: topic, layout, style, aspect, language, output path, files created.
 - `references/layouts/<layout>.md` - 21 layout definitions
 - `references/styles/<style>.md` - 21 style definitions
 
-## Extension Support
+## Changing Preferences
 
-Custom configurations via EXTEND.md. See **Step 1.1** for paths and supported options.
+EXTEND.md lives at the first matching path in Step 1.1. Three ways to change it:
+
+- **Edit directly** — open EXTEND.md and change fields. Full schema: `references/config/preferences-schema.md`.
+- **Reconfigure interactively** — delete EXTEND.md (or ask "reconfigure baoyu-infographic preferences" / "重新配置"). The next run re-triggers first-time setup.
+- **Common one-line edits**:
+  - `preferred_image_backend: auto` — default; runtime-native tool wins, falls back to the only installed backend, asks only if multiple non-native are present.
+  - `preferred_image_backend: codex-imagegen` — pin to Codex's built-in.
+  - `preferred_image_backend: baoyu-imagine` — pin to the baoyu-imagine skill.
+  - `preferred_image_backend: ask` — confirm backend every run.
+  - `preferred_layout: dense-modules`, `preferred_style: morandi-journal`, `preferred_aspect: portrait`, `language: zh` — shift the Step-3 recommendations and Step-4 defaults (per [Confirmation Policy](#confirmation-policy), these never bypass Step 4).

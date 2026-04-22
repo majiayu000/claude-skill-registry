@@ -1,7 +1,7 @@
 ---
 name: pr-review
 description: 'Scope-focused PR review with requirements validation and backlog triage'
-version: 1.8.4
+version: 1.9.0
 alwaysApply: false
 category: review
 tags:
@@ -308,6 +308,63 @@ complexity.
 
 Include the additive bias score and Iron Law status in
 the Phase 6 report.
+
+### Phase 4.6: Invariant Conflict Detection
+
+Check whether the PR touches existing design invariants.
+This is a judgment problem that models get wrong far too
+often — surface conflicts for human review rather than
+silently accepting or rejecting them.
+
+**Quick detection heuristic:**
+
+1. Do changed files cross module boundaries that
+   previously didn't interact?
+2. Do changes introduce a new pattern alongside an
+   existing one (two ways to do the same thing)?
+3. Do interface/type/schema files change shape?
+4. Do data flow directions change?
+5. Are ADR-documented decisions being contradicted?
+
+```bash
+# Check for structural pattern changes
+git diff --name-only HEAD...origin/master 2>/dev/null \
+  | rg "(interface|types|schema|model|base|core|contract)" \
+  || git diff --name-only HEAD...origin/master 2>/dev/null \
+  | grep -E "(interface|types|schema|model|base|core|contract)"
+```
+
+**When a conflict is detected:**
+
+Do NOT resolve it. Add to the report as a special
+category:
+
+| Category | Definition | Action |
+|----------|------------|--------|
+| **INVARIANT** | Change conflicts with an existing design decision | Escalate to human with 3-option analysis |
+
+**For each invariant conflict, present:**
+
+1. **The invariant**: Name the design decision and why
+   it was made (reference ADRs if available)
+2. **The conflict**: What this PR does that clashes
+3. **Option A — Preserve**: Don't merge this change;
+   the invariant pays dividends elsewhere
+4. **Option B — Layer**: Merge as-is, accepting
+   inelegance; not every feature must be elegant
+5. **Option C — Revise**: The invariant is wrong;
+   here's what a redesign would look like
+
+**Classification:** INVARIANT findings are always
+BLOCKING — not because the code is wrong, but because
+the judgment call requires human input. Only the human
+reviewer can decide which of the three options is right.
+
+**Why this matters:** Bad invariant decisions compound.
+A few wrong calls and the codebase becomes unsalvageable.
+This is not a context problem solvable with better
+documentation — it is a judgment problem that requires
+human wisdom.
 
 ### Phase 5: Backlog Triage
 

@@ -1,7 +1,7 @@
 ---
 name: session-to-post
 description: 'Convert a Claude Code session into a shareable blog post or case study capturing decisions, process, and outcomes.'
-version: 1.8.4
+version: 1.9.0
 globs: "**/*.md"
 alwaysApply: false
 category: artifact-generation

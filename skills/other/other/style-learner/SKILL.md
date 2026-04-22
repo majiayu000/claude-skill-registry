@@ -1,7 +1,7 @@
 ---
 name: style-learner
 description: Learn and extract writing style patterns from exemplar text for consistent
-version: 1.8.4
+version: 1.9.0
 globs: "**/*.md"
 alwaysApply: false
   application. Use when creating a style guide from existing content, ensuring consistency

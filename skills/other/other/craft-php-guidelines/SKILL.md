@@ -1,6 +1,6 @@
 ---
 name: craft-php-guidelines
-description: "Craft CMS 5 PHP coding standards and conventions. ALWAYS load this skill when writing, editing, reviewing, or discussing any PHP file in a Craft CMS plugin or module — even for small edits. Also load when running ECS, PHPStan, or scaffolding with ddev craft make. Covers: PHPDoc blocks (@author, @since, @throws chains), section headers (=========), class organization, naming conventions, defineRules(), beforePrepare(), addSelect(), MemoizableArray, DateTimeHelper vs Carbon, enums, control flow patterns, CP Twig template conventions, form macros, translations (Craft::t), ECS/PHPStan configuration, scaffolding commands, commit messages, and the verification checklist. If you are touching PHP code in a Craft CMS context, you need this skill."
+description: "Craft CMS 5 PHP coding standards and conventions. ALWAYS load this skill when writing, editing, reviewing, or discussing any PHP file in a Craft CMS plugin or module — even for small edits. Also load when running ECS, PHPStan, or scaffolding with ddev craft make. Covers: PHPDoc blocks (@author, @since, @throws chains, documenting exceptions), section headers (=========), class organization, naming conventions (services, queue jobs, records, events, enums), defineRules() and validation, beforePrepare() and addSelect(), MemoizableArray, DateTimeHelper vs Carbon, strict_types and declare(strict_types=1) usage, short nullable notation (?string), typed properties, void return types, control flow patterns (early returns, match over switch), CP Twig template conventions, form macros, translations (Craft::t), ECS/PHPStan configuration, scaffolding commands, and the verification checklist. Triggers on: writing service classes, models, controllers, elements, element queries, records, queue jobs, migrations, or any PHP class in a Craft CMS context. Also triggers on PHP code review, refactoring, or style questions for Craft plugins and modules. NOT for front-end Twig templates (use craft-twig-guidelines), template architecture (use craft-site), or CP JavaScript/Garnish (use craft-garnish). If you are touching PHP code in a Craft CMS context, you need this skill."
 ---
 
 # Craft CMS 5 PHP Guidelines
@@ -34,6 +34,7 @@ When unsure about a convention, `WebFetch` the coding guidelines page for the au
 - Forget `parent::defineRules()` and you lose all inherited validation.
 - `DateTimeHelper` in elements/queries, `Carbon` in services — never mix in the same class.
 - Missing `@throws` chains — document exceptions from called methods too, not just your own throws.
+- Using magic property access (`$plugin->settings`, `$app->view`) instead of explicit getters (`$plugin->getSettings()`, `$app->getView()`) — PHPStan can't resolve `__get()` calls, so magic access passes at runtime but fails static analysis. Always use explicit getters for Yii2 components and Craft plugin properties.
 
 ## Reference Files
 

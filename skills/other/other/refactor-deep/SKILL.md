@@ -74,8 +74,8 @@ This ceiling applies to both `/refactor` passes (phases 2 and 4).
 **Ask the user:** "How bold should the architectural restructuring be?"
 
 Present these options:
-- **Aggressive**: Implement all recommended changes — dissolutions, new modules, major restructuring. Use `/deliberate` for genuinely ambiguous trade-offs.
-- **Moderate**: Implement clearly beneficial changes (dead code, renames, obvious function moves). Use `/deliberate` for high-impact items (module dissolution, new modules). Defer anything that seems uncertain.
+- **Aggressive**: Implement all recommended changes — dissolutions, new modules, major restructuring. Use `/think-deliberate` for genuinely ambiguous trade-offs.
+- **Moderate**: Implement clearly beneficial changes (dead code, renames, obvious function moves). Use `/think-deliberate` for high-impact items (module dissolution, new modules). Defer anything that seems uncertain.
 - **Conservative**: Only implement low-risk architectural changes — dead code removal, renames, stutter fixes. Defer restructuring items to the completion summary as recommendations.
 
 #### 1d. QA Instructions
@@ -112,8 +112,8 @@ Run the `/review-arch` workflow with autonomous overrides:
 
 **Boldness-driven decision-making for step 5:**
 
-- **Aggressive:** Approve all recommended items. Use `/deliberate` only when the analysis contains genuinely contradictory recommendations or unclear trade-offs.
-- **Moderate:** Approve clearly beneficial items (dead code removal, naming improvements, obvious function ownership fixes). For high-impact items (module dissolution, major restructuring, new module creation), use `/deliberate` to reason through trade-offs. Defer items that seem uncertain — note them in the final summary as recommendations.
+- **Aggressive:** Approve all recommended items. Use `/think-deliberate` only when the analysis contains genuinely contradictory recommendations or unclear trade-offs.
+- **Moderate:** Approve clearly beneficial items (dead code removal, naming improvements, obvious function ownership fixes). For high-impact items (module dissolution, major restructuring, new module creation), use `/think-deliberate` to reason through trade-offs. Defer items that seem uncertain — note them in the final summary as recommendations.
 - **Conservative:** Approve only low-risk items (dead code removal, renames, stutter fixes). Defer all restructuring items to the final summary as recommendations for the user to consider.
 
 ### 4. Phase 3: Tactical Refactoring (Again)
@@ -174,7 +174,7 @@ Present a consolidated summary across all three phases:
 
 **Before pulling the andon cord:**
 1. Attempt autonomous resolution first
-2. For judgment calls, run `/deliberate` to reason through options
+2. For judgment calls, run `/think-deliberate` to reason through options
 3. Only escalate if autonomous resolution has failed or is clearly futile
 
 **When the andon cord is pulled:**
@@ -182,7 +182,7 @@ Present a consolidated summary across all three phases:
 2. Present to user:
    - Current phase and step
    - What was attempted and what went wrong
-   - What autonomous resolution was tried (including any `/deliberate` results)
+   - What autonomous resolution was tried (including any `/think-deliberate` results)
    - Recommended path forward (if you have one)
 3. Wait for user guidance before resuming
 

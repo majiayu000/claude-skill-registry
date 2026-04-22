@@ -1,8 +1,8 @@
 {
   "category": "marketing",
   "code": "mkt",
-  "count": 461,
-  "updated_at": "2026-04-21T07:23:30.460800Z",
+  "count": 462,
+  "updated_at": "2026-04-22T02:08:13.782954Z",
   "skills": [
     {
       "name": "social-media",
@@ -5203,6 +5203,25 @@
       "stars": 0,
       "install": "rawkode-academy/rawkode-academy/marketing/tech",
       "source": "GitHub Search API"
+    },
+    {
+      "name": "social-reply-bot",
+      "description": "AI-powered Reddit & X auto-reply bot. Finds relevant posts, generates genuine Claude-powered replies that naturally mention your product. Includes karma warmup and lead tracking.",
+      "repo": "mguozhen/social-bot",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "marketing",
+      "tags": [
+        "reddit",
+        "twitter",
+        "social-media",
+        "ai-replies",
+        "growth",
+        "browser-automation"
+      ],
+      "stars": 0,
+      "install": "mguozhen/social-bot/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "modals-dialogs",

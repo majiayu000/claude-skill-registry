@@ -1,14 +1,9 @@
 ---
 name: r-cli-app
-description: >
-  Build command-line apps in R using the Rapp package. Use when creating
-  a CLI tool in R, adding argument parsing to an R script, turning an R
-  script into a command-line app, shipping CLIs in an R package, or
-  using Rapp (the alternative Rscript front-end). Also use for shebang
-  scripts, exec/ directory in R packages, or subcommand-based R tools.
+description: Build command-line apps in R using the Rapp package. Use when creating a CLI tool in R, adding argument parsing to an R script, turning an R script into a command-line app, shipping CLIs in an R package, or using Rapp (the alternative Rscript front-end). Also use for shebang scripts, exec/ directory in R packages, or subcommand-based R tools.
 metadata:
   author: Garrick Aden-Buie (@gadenbuie)
-  version: "1.0"
+  version: "1.1"
 license: MIT
 ---
 
@@ -236,6 +231,8 @@ Every Rapp automatically gets `--help` (human-readable) and `--help-yaml`
 
 ## Development and Testing
 
+### Interactive Development
+
 Use `Rapp::run()` to test scripts from an R session:
 
 ```r
@@ -245,6 +242,18 @@ Rapp::run("path/to/myapp.R", c("--name", "Alice", "--count", "5"))
 
 It returns the evaluation environment (invisibly) for inspection, and
 supports `browser()` for interactive debugging.
+
+### Testing CLI Apps in Packages
+
+Use `Rapp::run()` with `testthat` snapshot testing. Test computed values by
+accessing the returned environment, and test output with `expect_snapshot()`.
+
+**See [references/advanced.md](references/advanced.md#testing-cli-apps)** for
+detailed testing patterns, including:
+
+- Accessing computed values via the evaluation environment
+- Snapshot testing for help output and formatted text
+- Testing file side effects and state changes
 
 ---
 

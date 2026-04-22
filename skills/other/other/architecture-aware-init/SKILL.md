@@ -1,7 +1,7 @@
 ---
 name: architecture-aware-init
 description: "Architecture-aware project initialization combining online research with archetype selection."
-version: 1.7.1
+version: 1.9.0
 alwaysApply: false
 category: project-initialization
 tags:
@@ -480,15 +480,3 @@ WebSearch("CQRS Event Sourcing Python examples")
 - `/attune:project-init` - Basic project initialization
 - `/attune:blueprint` - Architecture planning after paradigm selection
 - Architecture paradigms README for paradigm details
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

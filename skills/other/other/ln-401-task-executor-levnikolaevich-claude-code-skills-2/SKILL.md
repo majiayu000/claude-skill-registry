@@ -88,7 +88,7 @@ Step 2c: Implementation Blueprint
   - From task "Affected Components": extract file paths (Glob/Grep or narrow `inspect_path(path=<component dir>)` to find actual paths)
   - Read each file (or key sections) to understand current structure
   - IF modifying existing code in supported languages: `index_project(path=project_root)` once, then use path-scoped `find_symbols` / `inspect_symbol` for exact symbol identity and `analyze_edit_region` before editing non-trivial ranges
-  - IF `find_symbols` returns `truncated: true` or a broad candidate set: refine to `name + file` or `workspace_qualified_name` before planning from it
+  - IF `find_symbols` returns `partial ... truncated=1` or a broad candidate set: refine to `name + file` or `workspace_qualified_name` before planning from it
   - Output:
     ## Implementation Blueprint: {taskId}
     **Files to create:** [list with brief purpose]

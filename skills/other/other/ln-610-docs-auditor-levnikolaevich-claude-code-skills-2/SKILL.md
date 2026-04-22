@@ -90,7 +90,7 @@ Mandatory research sources:
 
 Delegate specialized audit workers.
 
-Child workers may remain on `audit-worker-runtime`, but the coordinator records every worker summary through `evaluation-runtime`.
+Child workers must use `evaluation-worker-runtime` and emit evaluation-compatible summaries recorded through `evaluation-runtime`.
 
 ### Phase 4: Aggregate
 

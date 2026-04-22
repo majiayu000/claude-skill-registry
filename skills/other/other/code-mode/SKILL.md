@@ -71,17 +71,17 @@ Lead implements. Only the lead writes code. Do not ask for confirmation between 
 
 ### Review
 
-Team reviews output against what was agreed in Approve, and probes for bugs not caught earlier, new bugs introduced by the implementation, uncovered edge cases, and regressions in adjacent code. The facilitator drives review rounds. No code changes during review — reviewers verify current state.
+Team reviews output against what was agreed in Approve, and probes for bugs not caught earlier, new bugs introduced by the implementation, uncovered edge cases, regressions in adjacent code, and in-repo automation affected by the change. The facilitator drives review rounds. No code changes during review — reviewers verify current state.
 
 If concerns arise: lead fixes, team re-reviews. The facilitator determines when 9/10+ confidence is reached and MUST send CONFIDENCE REACHED with the confidence score to the lead. The lead does not advance to Refine/Deliver without it. This loop is autonomous — no user confirmation between iterations.
 
-9/10+ means: logic is correct, tests pass where applicable, no regressions introduced, no known defects left unaddressed, reviewers would ship this.
+9/10+ means: logic is correct, tests pass where applicable, no regressions introduced, no known defects left unaddressed, new or modified behavior has test coverage where testable, reviewers would ship this.
 
 ### Refine (optional)
 
 When the team reaches 9/10+ confidence, the lead asks the user via AskUserQuestion: question "9/10+ confidence reached. Run recursive refinement?", header "Refine", options "Deliver now" / "Run recursive refinement (9.25 → 9.5 → 9.75 → 10)".
 
-If "Deliver now": skip to Deliver. If "Run recursive refinement": starting at 9.25, the lead asks the team "What specific changes — no new features, but bugs and gaps count — would raise your score to [threshold]?" Lead implements, team re-reviews to confirm the threshold is met. The facilitator sends CONFIDENCE REACHED with the rung score before the lead advances to the next rung. The sequence is 9.25 → 9.5 → 9.75 → 10. For the 10 rung, the lead asks: "What, if anything, would you still change? If nothing, say so." This loop is autonomous once the user opts in. After 10 is confirmed, proceed to Deliver.
+If "Deliver now": skip to Deliver. If "Run recursive refinement": starting at 9.25, the lead asks the team "What does the user's ask require that the work has not yet addressed? No new features — but bugs, gaps, regressions, and items once treated as optional that are now required for completeness count." Lead implements, team re-reviews to confirm the threshold is met. The facilitator sends CONFIDENCE REACHED with the rung score before the lead advances to the next rung. The sequence is 9.25 → 9.5 → 9.75 → 10. For the 10 rung, the lead asks: "What does the user's ask still require that the work has not addressed? If nothing, say so explicitly." The rung-hold hard rule applies — see Step 1 hard rules. This loop is autonomous once the user opts in. After 10 is confirmed, proceed to Deliver.
 
 ### Deliver
 

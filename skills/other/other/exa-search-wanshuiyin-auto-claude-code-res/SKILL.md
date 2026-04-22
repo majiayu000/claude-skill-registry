@@ -113,8 +113,8 @@ python3 "$SCRIPT" get-contents "URL1" "URL2" --content text
 Format results as a structured table:
 
 ```
-| # | Title | URL | Date | Key Content |
-|---|-------|-----|------|-------------|
+| # | Title | Authors | Venue/Publisher | URL | Date | Key Content |
+|---|-------|---------|-----------------|-----|------|-------------|
 ```
 
 For each result:
@@ -122,6 +122,12 @@ For each result:
 - Show published date if available
 - Show highlights, text excerpt, or summary depending on content mode
 - Flag particularly relevant results
+- **For `category: "research paper"` hits only** — also record authors
+  (from Exa's `author`/`authors` fields, or fallback: parse from the
+  result snippet) and venue/publisher (from `publisher`, `source`, or
+  the domain hosting the paper). These are needed by Step 6's wiki
+  hook; if either is unavailable for a given hit, skip wiki ingest
+  for that one hit and log a note.
 
 ### Step 5: Offer Follow-up
 
@@ -129,6 +135,33 @@ After presenting results, suggest:
 - **Deepen**: "I can fetch full text for any of these results"
 - **Find similar**: "I can find pages similar to any result"
 - **Narrow**: "I can re-search with domain/date/text filters"
+
+### Step 6: Update Research Wiki (if active, research-paper results only)
+
+**Required when `research-wiki/` exists AND the search returned
+results of `category: "research paper"`**; skip silently otherwise.
+General web results (blog posts, docs, news) are **not** ingested —
+the wiki is for papers only.
+
+For each research paper hit, try to recover an arXiv ID from the URL
+(`arxiv.org/abs/<id>`); if present, use `--arxiv-id`. Otherwise fall
+back to manual metadata:
+
+```
+if [ -d research-wiki/ ] and query category was "research paper":
+    for each research-paper hit in results:
+        if URL matches arxiv.org/abs/<id>:
+            python3 tools/research_wiki.py ingest_paper research-wiki/ \
+                --arxiv-id "<id>"
+        else:
+            python3 tools/research_wiki.py ingest_paper research-wiki/ \
+                --title "<title>" --authors "<authors joined by , >" \
+                --year <year> --venue "<venue or publisher>"
+```
+
+The helper handles slug / dedup / page / index / log — **do not
+handwrite `papers/<slug>.md`**. See
+[`shared-references/integration-contract.md`](../shared-references/integration-contract.md).
 
 ## Key Rules
 - Always check that `EXA_API_KEY` is set before searching

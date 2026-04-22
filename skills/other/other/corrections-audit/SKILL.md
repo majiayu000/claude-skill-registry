@@ -48,11 +48,19 @@ Analyze corrections.md for trends, recurring patterns, and actionable insights.
    - Correction reveals a failure mode not in anti-patterns.md -> propose new anti-pattern entry
    - Correction reveals a successful mitigation -> propose new pattern in patterns.md
 
-7. **Update TL;DR section**:
+7. **Consolidate memory files** (automated hygiene):
+   - **Deduplication**: Identify corrections that describe the same root cause in different words. Merge into a single entry, preserving all dates and evidence.
+   - **Contradiction detection**: Flag corrections that contradict each other (e.g., "always use X" vs "never use X"). Present conflicts to the user for resolution.
+   - **Staleness removal**: Corrections older than 6 months whose prevention has been verified effective (no recurrence) can be archived to `memory/corrections-archive.md`.
+   - **Size cap**: If corrections.md exceeds 50 entries, consolidate the oldest resolved entries into a summary paragraph in the archive.
+   - Apply the same consolidation to `memory/patterns.md`.
+   *Inspired by: greyhaven-ai/autocontext curator agent — periodic dedup, cap, and contradiction removal.*
+
+8. **Update TL;DR section**:
    - Regenerate the TL;DR in corrections.md with the top 5 most impactful corrections
    - Impact = frequency x severity (blocking vs. quality vs. cosmetic)
 
-8. **Recommend actions**:
+9. **Recommend actions**:
    - For each graduation candidate: specific guardrail text, tier, and constraint type
    - For failed preventions: what went wrong and what stronger mechanism to use
    - For origin imbalances: specific context improvements

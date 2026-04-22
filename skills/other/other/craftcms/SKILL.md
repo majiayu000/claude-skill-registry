@@ -1,6 +1,6 @@
 ---
 name: craftcms
-description: "Craft CMS 5 plugin and module development — extending Craft. Covers the full extend surface: elements, element queries, services, models, records, project config, controllers, CP templates, migrations, queue jobs, console commands, field types, native fields, events, behaviors, Twig extensions, utilities, widgets, filesystems, debugging, testing, and GraphQL. Triggers on: beforePrepare(), afterSave(), defineSources(), defineTableAttributes(), attributeHtml(), MemoizableArray, getConfig(), handleChanged, $allowAnonymous, $enableCsrfValidation, BaseNativeField, EVENT_DEFINE_NATIVE_FIELDS, FieldLayoutBehavior, EVENT_REGISTER, EVENT_DEFINE, EVENT_BEFORE, EVENT_AFTER, CraftVariable, registerTwigExtension, DefineConsoleActionsEvent, PHPStan, Pest, plugin development, module development, custom element type, custom field type, webhook, API endpoint, queue job, migration, CP section, control panel, Craft plugin, Craft module, extending Craft, element action, element exporter, element condition, dashboard widget, utility page, GraphQL, GraphQL types, GraphQL mutations, GraphQL schema, headless, headless CMS, front-end framework, Rector, Craft 4 to 5, upgrade plugin, CI/CD, continuous integration, GitHub Actions, GitLab CI, custom validator, validation rules, defineRules. Always use when writing, editing, or reviewing any Craft CMS plugin or module code — even when the user asks about plugin architecture, Craft internals, or extending Craft without naming specific APIs."
+description: "Craft CMS 5 plugin and module development — extending Craft with PHP. Covers the full extend surface: elements, element queries, services, models, records, project config, controllers, CP templates, migrations, queue jobs, console commands, field types, native fields, events, behaviors, Twig extensions, utilities, widgets, filesystems, permissions, debugging, testing, GraphQL, and Craft configuration (config/app.php, config/general.php, Redis, SMTP, database replicas). Triggers on: beforePrepare(), afterSave(), defineSources(), defineTableAttributes(), attributeHtml(), MemoizableArray, getConfig(), handleChanged, $allowAnonymous, $enableCsrfValidation, BaseNativeField, EVENT_DEFINE_NATIVE_FIELDS, FieldLayoutBehavior, EVENT_REGISTER, EVENT_DEFINE, EVENT_BEFORE, EVENT_AFTER, CraftVariable, registerTwigExtension, DefineConsoleActionsEvent, PHPStan, Pest, plugin development, module development, custom element type, custom field type, webhook, API endpoint, queue job, batch processing, data sync, migration, CP section, control panel, Craft plugin, Craft module, extending Craft, element action, element exporter, element condition, dashboard widget, utility page, permissions, registerUserPermissions, requirePermission, GraphQL custom types, GraphQL custom mutations, GraphQL schema building, Rector, Craft 4 to 5, upgrade plugin, CI/CD, GitHub Actions, GitLab CI, custom validator, defineRules, EVENT_AUTHORIZE_VIEW, EVENT_AUTHORIZE_SAVE, canView, canSave, canDelete, element authorization, defense-in-depth, query scoping, EVENT_BEFORE_PREPARE, session invalidation, passwordResetRequired, elevated session, Table::SESSIONS, custom field type build, field type development, normalizeValue, serializeValue, inputHtml, BaseCondition, ElementCondition, condition rule, condition builder, system messages, composeFromKey, email sending, Mailer, deployment, zero-downtime deploy, atomic deploy, craft up, project-config/apply, allowAdminChanges, drafts, revisions, provisional draft, canCreateDrafts, applyDraft, getIsDraft, getIsRevision. Always use when writing, editing, or reviewing any Craft CMS plugin or module PHP code — even when the user asks about plugin architecture, Craft internals, or extending Craft without naming specific APIs. Do NOT trigger for front-end Twig templates, content modeling decisions, site-building without PHP, or consuming GraphQL/headless APIs from front-end frameworks (Next.js, Nuxt, Astro) — those belong in craft-site."
 ---
 
 # Craft CMS 5 — Extending (Plugins & Modules)
@@ -52,8 +52,8 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Set up Vite for a plugin's CP assets" → read `plugin-vite.md` + load `craft-garnish` skill
 - "Add drag-to-reorder or interactive JS to a CP page" → load `craft-garnish` skill
 - "Write CP JavaScript for a custom field type" → read `fields.md` + load `craft-garnish` skill
-- "Build a headless Craft API" → read `headless.md` + `graphql.md`
-- "Configure preview for a Next.js front-end" → read `headless.md`
+- "Build a headless Craft API" → read `graphql.md` + load `craft-site` skill for `headless.md`
+- "Configure preview for a Next.js front-end" → load `craft-site` skill for `headless.md`
 - "Set up Pest tests for a plugin" → read `testing.md`
 - "Write a test for a controller action" → read `testing.md`
 - "Configure Redis for caching and sessions" → read `config-app.md`
@@ -62,7 +62,7 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Configure mail transport / SMTP" → read `config-app.md`
 - "Set up custom URL routes" → read `config-bootstrap.md`
 - "Configure search to find short words" → read `config-app.md`
-- "Set up GraphQL tokens and schemas" → read `headless.md` + `config-general.md`
+- "Set up GraphQL tokens and schemas" → read `graphql.md` + `config-general.md`
 - "Set up caching for a high-traffic site" → read `caching.md`
 - "Register custom permissions for my plugin" → read `permissions.md`
 - "Check user permissions in templates" → read `permissions.md`
@@ -76,11 +76,35 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Create a custom filesystem type" → read `events.md` (Filesystem Types section)
 - "Build a custom condition rule for an element index" → read `cp.md` (Condition Builders section)
 - "Set up pre-commit hooks for code quality" → read `quality.md` (Pre-Commit Hooks section)
+- "Restrict element access by user group" → read `element-authorization.md` + `permissions.md`
+- "Scope CP element index by permission" → read `element-authorization.md` (Layer 3: Query Scoping)
+- "Add authorization events to a custom element" → read `element-authorization.md` + `elements.md`
+- "Build defense-in-depth for a security plugin" → read `element-authorization.md` (Defense Patterns)
+- "Force-logout a user from all devices" → read `sessions-and-auth.md` (Plugin Patterns)
+- "Understand how Craft sessions work" → read `sessions-and-auth.md`
+- "Implement password reset required" → read `sessions-and-auth.md` (passwordResetRequired Gap)
+- "Add a column to the Users element index" → read `element-index.md` (Extending Element Indexes via Events)
+- "Add a bulk action to an element index" → read `element-index.md` (Adding a custom bulk action)
+- "Add a custom sidebar source to the element index" → read `element-index.md` (Adding a sidebar source)
+- "Build a custom field type" → read `field-types-custom.md` + `fields.md`
+- "Build a relation field type" → read `field-types-custom.md` (Relation Fields)
+- "Add a condition rule to the entry index" → read `conditions.md` + `element-index.md`
+- "Build a custom condition rule" → read `conditions.md`
+- "Send email from a plugin" → read `email.md`
+- "Register a custom system message" → read `email.md` (Registering Custom System Messages)
+- "Configure SMTP transport" → read `config-app.md` + `email.md`
+- "Deploy Craft CMS to production" → read `deployment.md`
+- "Set up CI/CD for a Craft project" → read `deployment.md` (CI/CD Patterns)
+- "Zero-downtime deploy" → read `deployment.md` (Zero-Downtime)
+- "Roll back a failed deploy" → read `deployment.md` (Rollback Strategies)
+- "Work with drafts and revisions" → read `drafts-revisions.md`
+- "Create a draft programmatically" → read `drafts-revisions.md` (Creating Drafts)
+- "Skip side effects for drafts in afterSave" → read `drafts-revisions.md` (Plugin Considerations)
 
 | Task | Read |
 |------|------|
 | Element core: lifecycle, queries, status, authorization, drafts, revisions, propagation, field layouts, events | `references/elements.md` |
-| Element index: sources, table/card attributes, sort, conditions, actions, exporters, sidebar, metadata | `references/element-index.md` |
+| Element index: sources, table/card attributes, sort, conditions, actions, exporters, sidebar, metadata, extending via events (columns, sources, bulk actions, condition rules, sort) | `references/element-index.md` |
 | Services, models, records, project config, MemoizableArray, events, API clients, custom validators | `references/architecture.md` |
 | Controllers: CP CRUD, webhooks, API endpoints, action routing, authorization | `references/controllers.md` |
 | CP templates, form macros, admin changes, VueAdminTable, asset bundles, CP layout, permissions. For CP JavaScript interactions, also load `craft-garnish` skill. | `references/cp.md` |
@@ -94,12 +118,20 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 | Events: registration, lifecycle, naming conventions, custom events, behaviors, Twig extensions, utilities, widgets, filesystems, discovering events | `references/events.md` |
 | GraphQL types, queries, mutations, directives, schema components, resolvers | `references/graphql.md` |
 | Plugin Vite: VitePluginService, CP asset bundles, HMR, TypeScript, Vue in CP | `references/plugin-vite.md` |
-| Headless & hybrid: headlessMode, GraphQL API, CORS, preview tokens, front-end frameworks | `references/headless.md` |
-| GeneralConfig: all 130+ settings, categories, interactions, dangerous defaults | `references/config-general.md` |
+| Headless & hybrid: headlessMode, GraphQL API, CORS, preview tokens, front-end frameworks | craft-site skill `references/headless.md` |
+| GeneralConfig (system, routing, security, users, sessions, search, assets, images) | `references/config-general.md` |
+| GeneralConfig (content, templates, performance, GC, localization, headless, GraphQL, accessibility, preview, dev, dangerous interactions) | `references/config-general-extended.md` |
 | App config: cache, session, queue, mutex, mailer/SMTP, search, logging, CORS, DB replicas, web/console split | `references/config-app.md` |
 | Config bootstrap: env vars, aliases, priority order, fluent API, custom.php, db.php, routes.php, htmlpurifier | `references/config-bootstrap.md` |
 | Caching: template cache tag, data cache, static caching (Blitz), CDN, layered strategy, invalidation | `references/caching.md` |
 | Permissions: built-in handles, user groups, custom registration, Twig/PHP checking, authorization events, strategies | `references/permissions.md` |
+| Element authorization: four-layer defense model, authorization events, can*() methods, EVENT_BEFORE_PREPARE query scoping, controller enforcement | `references/element-authorization.md` |
+| Sessions & auth internals: dual-layer session model, auth tokens, session invalidation, passwordResetRequired, elevated sessions, plugin patterns | `references/sessions-and-auth.md` |
+| Custom field types: build pattern, value lifecycle, settings, input HTML, validation, search, GraphQL, relation fields | `references/field-types-custom.md` |
+| Conditions framework: BaseCondition, ElementCondition, custom condition rules, registering rules, condition builder UI | `references/conditions.md` |
+| Email system: system messages, custom messages, programmatic sending, templates, events, testing | `references/email.md` |
+| Deployment: standard pipeline, project config deploy, zero-downtime, CI/CD, rollback, environment management | `references/deployment.md` |
+| Drafts & revisions: draft types, provisional drafts, autosave, applying, merge, revisions, plugin considerations | `references/drafts-revisions.md` |
 
 ## Plugin vs Module Differences
 

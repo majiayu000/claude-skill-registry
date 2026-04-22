@@ -1,7 +1,7 @@
 ---
 name: cpu-gpu-performance
 description: 'Establish CPU/GPU baselines before resource-intensive operations. Use for regression detection.'
-version: 1.7.1
+version: 1.9.0
 alwaysApply: false
 progressive_loading: true
 dependencies:

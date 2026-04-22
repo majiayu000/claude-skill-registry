@@ -241,3 +241,7 @@ Complete setup instructions for configuring Figma MCP server (official and commu
 
 ### references/best-practices.md
 Extended best practices, detailed examples, and advanced patterns for design-to-code conversion including component architecture, responsive design strategies, and design system integration.
+
+## Recent Updates
+
+**Community server rebranded (Apr 2026):** The popular community MCP server by GLips has been rebranded from "figma-developer-mcp" to **Framelink MCP for Figma** (v0.11.0, 14.5k+ stars). It now supports stateless HTTP transport, VS Code layer generation, and prompt injection defense. The npm package name remains `figma-developer-mcp` for backward compatibility. See `references/setup-guide.md` for updated configuration.

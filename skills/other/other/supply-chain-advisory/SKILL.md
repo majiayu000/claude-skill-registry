@@ -3,7 +3,7 @@ name: supply-chain-advisory
 description: 'Supply chain security patterns for dependency management: known-bad version
   detection, incident response, lockfile auditing, and artifact scanning.
   Do not use for general CVE triage unrelated to dependency supply chain.'
-version: 1.7.2
+version: 1.9.0
 alwaysApply: false
 category: infrastructure
 tags:

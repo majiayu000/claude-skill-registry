@@ -1,17 +1,9 @@
 ---
 name: critical-code-reviewer
-description: >
-  Conduct rigorous, adversarial code reviews with zero tolerance for mediocrity.
-  Use when users ask to "critically review" my code or a PR, "critique my code",
-  "find issues in my code", or "what's wrong with this code". Identifies
-  security holes, lazy patterns, edge case failures, and bad practices across
-  Python, R, JavaScript/TypeScript, SQL, and front-end code. Scrutinizes error
-  handling, type safety, performance, accessibility, and code quality. Provides
-  structured feedback with severity tiers (Blocking, Required, Suggestions) and
-  specific, actionable recommendations.
+description: Conduct rigorous, adversarial code reviews with zero tolerance for mediocrity. Use when users ask to "critically review" my code or a PR, "critique my code", "find issues in my code", or "what's wrong with this code". Identifies security holes, lazy patterns, edge case failures, and bad practices across Python, R, JavaScript/TypeScript, SQL, and front-end code. Scrutinizes error handling, type safety, performance, accessibility, and code quality. Provides structured feedback with severity tiers (Blocking, Required, Suggestions) and specific, actionable recommendations.
 metadata:
   author: Garrick Aden-Buie (@gadenbuie)
-  version: "1.0"
+  version: "1.1"
 license: MIT
 ---
 

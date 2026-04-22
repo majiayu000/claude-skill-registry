@@ -7,6 +7,16 @@ description: The Mileva Method (CRISP) — Phase 5: Prove. Success validation ag
 
 > Did the needle move?
 
+## Project State
+
+> At the start of Phase P: read `docs/crisp-state.json`. Pull `phases.R.baseline` and `phases.R.successTarget` as the measurement baseline. Check `phases.S.sprints` to know what was built.
+>
+> At the end of Phase P: update `docs/crisp-state.json`:
+> - Add `"P"` to `phases.complete`
+> - Set `phases.P.complete` to `true`
+> - Set `phases.P.outcome` to `"success"`, `"partial"`, or `"fail"`
+> - Add summary notes to `phases.P.notes`
+
 This phase closes the loop back to Phase R. One question drives everything.
 
 ---

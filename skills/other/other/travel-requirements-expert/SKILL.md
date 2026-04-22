@@ -1,6 +1,6 @@
 ---
 name: travel-requirements-expert
-description: Systematically gather comprehensive travel itinerary requirements through structured discovery questions, MCP-powered research (Perplexity, Exa), and expert detail gathering. Use when users request travel planning, itinerary creation, or trip assistance requiring deep research and personalized requirements gathering. Outputs detailed requirements specification with day-by-day itineraries.
+description: Plan a trip, create an itinerary, or research a destination through a structured 5-phase workflow---discovery questions, Exa/Firecrawl research, expert detail gathering, and a day-by-day requirements spec. This skill should be used when a user says "plan a trip," "create an itinerary," "help me visit [place]," or needs travel research with specific venues, safety protocols, and dietary accommodations.
 ---
 
 # Travel Requirements Expert
@@ -9,7 +9,7 @@ Transform user travel requests into comprehensive, research-backed itinerary req
 
 ## Overview
 
-This skill provides a structured methodology for gathering travel requirements that produces detailed, implementable itineraries. Unlike ad-hoc trip planning, this approach ensures comprehensive coverage through systematic question phases, research-backed recommendations via MCP servers, and personalized balance of user preferences.
+This skill provides a structured methodology for gathering travel requirements that produces detailed, implementable itineraries. Unlike ad-hoc trip planning, this approach ensures comprehensive coverage through systematic question phases, research-backed recommendations via Exa and Firecrawl, and personalized balance of user preferences.
 
 ## When to Use This Skill
 
@@ -33,7 +33,7 @@ The skill uses a 5-phase systematic process:
 
 1. **Initial Setup** → Create requirements folder, extract key elements
 2. **Discovery Questions** → 5 foundational yes/no questions with smart defaults
-3. **Context Research** → Use MCP servers (Perplexity/Exa) for detailed information
+3. **Context Research** → Use Exa search and Firecrawl for detailed information
 4. **Expert Detail** → 5 specific questions based on research findings
 5. **Requirements Spec** → Generate comprehensive final itinerary document
 
@@ -68,23 +68,27 @@ Create `01-discovery-questions.md` with 5 foundational yes/no questions:
 4. Amenities priority (modern vs. rustic)
 5. Flexibility needs (weather-responsive vs. fixed)
 
-**CRITICAL**:
-- Write ALL 5 questions to file BEFORE asking any
-- Ask ONE question at a time to user
+**Question process:**
+- Write all 5 questions to file before asking any
+- Ask one question at a time
 - Include smart default with reasoning
 - Wait for answer before proceeding
-- Create `02-discovery-answers.md` ONLY AFTER all 5 answered
+- Create `02-discovery-answers.md` only after all 5 answered
 
-### Phase 3: Context Research with MCP
+### Phase 3: Context Research
 
-Based on discovery answers, execute parallel MCP searches:
+Based on discovery answers, execute parallel research using Exa and Firecrawl CLI tools:
 
-**Perplexity for comprehensive research**:
+**Exa Research for comprehensive, cited answers**:
+```bash
+python3 ~/.claude/skills/exa-search/scripts/exa_research.py \
+  "[destination/topic question]" --sources --markdown
 ```
-mcp__perplexity__search(
-  query="[destination/topic question]",
-  detail_level="detailed"
-)
+
+**Firecrawl Agent for autonomous multi-source research** (no URLs needed):
+```bash
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py agent \
+  "[complex question requiring multiple sources]"
 ```
 
 Research topics:
@@ -94,12 +98,15 @@ Research topics:
 - Transportation logistics
 - Site-specific details
 
-**Exa for real-time information**:
+**Exa Search for targeted neural search with filters**:
+```bash
+python3 ~/.claude/skills/exa-search/scripts/exa_search.py \
+  "[current information]" -n 10 --after 2025-01-01
 ```
-mcp__plugin_exa-mcp-server_exa__web_search_exa(
-  query="[current information]",
-  numResults=5
-)
+
+**Firecrawl Scrape for extracting pages found during search**:
+```bash
+firecrawl scrape [discovered-URL] --only-main-content
 ```
 
 Document findings in `03-context-findings.md` with confidence levels.
@@ -113,7 +120,7 @@ Create `04-detail-questions.md` with 5 questions addressing:
 - Special activity requirements
 - Daily rhythm preferences
 
-Questions MUST reference specific research findings (actual restaurants, real options, concrete trade-offs).
+Questions should reference specific research findings (actual restaurants, real options, concrete trade-offs).
 
 Same process: write all 5 first, ask one at a time, create `05-detail-answers.md` only after all answered.
 
@@ -142,7 +149,7 @@ cat references/requirements-workflow.md
 
 This reference provides:
 - Question format examples
-- MCP search strategies
+- Research tool strategies
 - Requirements spec structure
 - Metadata management
 - Common pitfalls to avoid
@@ -153,7 +160,7 @@ This reference provides:
 1. **Write questions before asking** - ensures complete coverage
 2. **One question at a time** - prevents overwhelm
 3. **Smart defaults** - makes decisions easy
-4. **Parallel MCP searches** - maximizes efficiency
+4. **Parallel CLI searches** - maximizes efficiency
 5. **Specific over abstract** - use actual venues, prices, times
 6. **Weather safety first** - for outdoor activities
 7. **Explicit integration windows** - schedule rest/contemplation
@@ -163,7 +170,7 @@ This reference provides:
 
 This systematic workflow:
 - Prevents decision fatigue (smart defaults + yes/no)
-- Maximizes MCP value (targeted parallel research)
+- Maximizes research tool value (targeted parallel searches)
 - Ensures safety (weather protocols, capability assessment)
 - Creates implementable plans (specific venues, times, backups)
 - Preserves knowledge (all research documented)

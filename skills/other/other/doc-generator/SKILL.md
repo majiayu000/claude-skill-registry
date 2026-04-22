@@ -1,7 +1,7 @@
 ---
 name: doc-generator
 description: Generate or remediate documentation with human-quality writing and style
-version: 1.8.4
+version: 1.9.0
 globs: "**/*.md"
 alwaysApply: false
   adherence. Use when creating new documentation, rewriting AI-generated content,

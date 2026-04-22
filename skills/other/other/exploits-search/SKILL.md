@@ -1,0 +1,262 @@
+---
+name: exploits-search
+description: Search for exploits across all vulnerabilities with filtering by ecosystem, severity, source, and EPSS
+argument-hint: [search query]
+user-invocable: true
+allowed-tools: Bash, Read, Glob, Grep, Edit, Write
+model: sonnet
+---
+
+# Vulnetix Exploit Search Skill
+
+This skill searches for vulnerabilities with known exploits across the entire VDB, with filtering by ecosystem, severity, exploit source, EPSS score, and CISA KEV status. Use it to **discover** exploited vulnerabilities relevant to your repository's technology stack. **This skill does not modify application code** -- it only updates `.vulnetix/memory.yaml` to track findings.
+
+**How this differs from `/vulnetix:exploits`:** The existing `/vulnetix:exploits <vuln-id>` skill performs deep analysis of a *single known* vulnerability (PoC fetching, ATT&CK mapping, CWSS scoring). This skill *discovers* exploited vulnerabilities across the landscape, optionally filtered to your repository's ecosystems.
+
+## Vulnerability Memory (.vulnetix/memory.yaml)
+
+This skill reads and updates the `.vulnetix/memory.yaml` file in the repository root. This file is shared with `/vulnetix:fix`, `/vulnetix:exploits`, `/vulnetix:package-search`, `/vulnetix:vuln`, and `/vulnetix:remediation`.
+
+### Schema
+
+The canonical schema is defined in `/vulnetix:fix`. This skill creates minimal stub entries for newly discovered vulnerabilities that affect the repository.
+
+### Reading Prior State
+
+**At the start of every invocation:**
+
+1. Use **Glob** to check if `.vulnetix/memory.yaml` exists in the repo root
+2. If it exists, use **Read** to load it -- used in Step 4 to annotate results with prior status
+3. Use **Glob** for `.vulnetix/scans/*.cdx.json` -- cross-reference against search results
+
+### Writing Updated State
+
+**After completing the search (Step 5):**
+
+For each result that matches a dependency in the repository and is **not already tracked**:
+1. Create a stub entry with `status: under_investigation`, `discovery.source: scan`, `decision.choice: investigating`, `decision.reason: "Discovered via /vulnetix:exploits-search"`
+2. Append to `history`: `event: discovered`, detail: `"Found via exploit search (<filters used>)"`
+
+For existing entries, do **not** change `status` or `decision`.
+
+### VEX Status Mapping
+
+- `not_affected` --> "Not affected"
+- `affected` --> "Vulnerable"
+- `fixed` --> "Fixed"
+- `under_investigation` --> "Investigating"
+
+## Workflow
+
+### Step 1: Load Memory and Detect Repository Ecosystems
+
+1. Load `.vulnetix/memory.yaml` if it exists
+2. Use **Glob** to detect manifest files and determine repository ecosystems:
+   - `package.json`, `package-lock.json`, `yarn.lock`, `pnpm-lock.yaml` --> **npm**
+   - `go.mod`, `go.sum` --> **go**
+   - `Cargo.toml`, `Cargo.lock` --> **cargo**
+   - `requirements.txt`, `pyproject.toml`, `Pipfile`, `poetry.lock`, `uv.lock` --> **pypi**
+   - `Gemfile`, `Gemfile.lock` --> **rubygems**
+   - `pom.xml`, `build.gradle`, `gradle.lockfile` --> **maven**
+   - `composer.json`, `composer.lock` --> **packagist**
+
+The detected ecosystem is used as a default filter if the user does not specify one.
+
+### Step 2: Parse Filters from User Message
+
+Map the user's natural language and any explicit arguments to CLI flags:
+
+**CLI Reference** (from `vulnetix vdb exploits search` docs):
+
+| Flag | Type | Default | Description |
+|------|------|---------|-------------|
+| `--ecosystem` | string | -- | Filter by package ecosystem (npm, pypi, maven, go, cargo, nuget, rubygems, packagist, etc.) |
+| `--source` | enum | -- | Filter by exploit source: `exploitdb`, `metasploit`, `nuclei`, `vulncheck-xdb`, `crowdsec`, `github`, `poc` |
+| `--severity` | enum | -- | Filter by CVSS severity: `CRITICAL`, `HIGH`, `MEDIUM`, `LOW` |
+| `--in-kev` | bool | false | Only show exploits listed in CISA KEV catalog |
+| `--min-epss` | float | -- | Minimum EPSS score threshold (0.0-1.0) |
+| `-q` | string | -- | Free-text search query (CVE ID, title, description) |
+| `--sort` | enum | recent | Sort order: `recent`, `epss`, `severity`, `maturity` |
+| `--limit` | int | 100 | Maximum results per page (1-100) |
+| `--offset` | int | 0 | Pagination offset |
+| `-o, --output` | string | pretty | Output format: `json` or `pretty` |
+
+**Natural language mapping examples:**
+
+| User says | Flags |
+|-----------|-------|
+| "npm exploits" | `--ecosystem npm` |
+| "critical vulnerabilities" | `--severity CRITICAL` |
+| "metasploit modules" | `--source metasploit` |
+| "actively exploited" / "in KEV" | `--in-kev` |
+| "high EPSS" / "likely exploited" | `--min-epss 0.7 --sort epss` |
+| "critical npm with metasploit" | `--ecosystem npm --severity CRITICAL --source metasploit` |
+| "remote code execution" | `-q "remote code execution"` |
+| "sort by severity" | `--sort severity` |
+| "sort by maturity" | `--sort maturity` |
+| "first 20" / "top 20" | `--limit 20` |
+| "next page" / "more" | `--offset <previous + limit>` |
+
+**Auto-ecosystem detection:** If the user does not specify an ecosystem and the repository uses a single ecosystem, automatically add `--ecosystem <detected>`. If the repo uses multiple ecosystems, ask whether to filter or search across all.
+
+If the argument `$ARGUMENTS` is provided as free text (not a flag), use it as the `-q` value.
+
+### Step 3: Execute Exploit Search
+
+Build and run the CLI command:
+
+```bash
+vulnetix vdb exploits search [flags] -o json
+```
+
+Examples:
+```bash
+# Search for critical npm exploits
+vulnetix vdb exploits search --ecosystem npm --severity CRITICAL -o json
+
+# CISA KEV entries with high EPSS
+vulnetix vdb exploits search --in-kev --min-epss 0.5 --sort epss -o json
+
+# Free-text search
+vulnetix vdb exploits search -q "remote code execution" --ecosystem npm -o json
+
+# Metasploit modules for Maven
+vulnetix vdb exploits search --source metasploit --ecosystem maven -o json
+
+# Sort by exploitation maturity
+vulnetix vdb exploits search --ecosystem pypi --sort maturity --limit 20 -o json
+```
+
+**Response structure** (from V2 OAS ExploitSearchResult schema):
+
+```json
+{
+  "timestamp": 1711382400000,
+  "total": 142,
+  "limit": 100,
+  "offset": 0,
+  "hasMore": true,
+  "filters": { "ecosystem": "npm", "severity": "CRITICAL" },
+  "results": [
+    {
+      "cveId": "CVE-2021-44228",
+      "state": "PUBLISHED",
+      "title": "Apache Log4j2 JNDI injection",
+      "description": "...",
+      "aliases": ["GHSA-jfh8-c2jp-5v3q"],
+      "metrics": {
+        "cvssV3Score": 10.0,
+        "cvssV3Vector": "AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+        "cvssV4Score": null
+      },
+      "epss": { "score": 0.97, "percentile": 0.999 },
+      "cess": { "score": 0.92 },
+      "cwes": [{ "id": "CWE-502", "description": "Deserialization" }],
+      "affectedProducts": [{ "vendor": "apache", "product": "log4j" }],
+      "fixAvailability": { "hasRegistryFix": true, "hasSourceFix": true },
+      "kev": {
+        "inCisaKev": true,
+        "dateAdded": "2021-12-10",
+        "dueDate": "2021-12-24",
+        "overdue": true,
+        "ransomwareUse": true
+      },
+      "exploitationMaturity": {
+        "score": 95,
+        "level": "WIDESPREAD",
+        "confidence": "HIGH"
+      },
+      "exploitTriviality": { "level": "TRIVIAL" },
+      "exploitSources": {
+        "exploitdb": 3,
+        "metasploit": 2,
+        "nuclei": 5,
+        "github": 12,
+        "vulncheckXdb": 1,
+        "crowdsec": 1
+      },
+      "sightings": {
+        "totalSightings": 50000,
+        "uniqueIPs": 12000,
+        "isActive": true
+      },
+      "timeline": {
+        "publishedDate": "2021-12-09",
+        "firstExploitDate": "2021-12-09",
+        "ageDays": 1567
+      },
+      "ecosystems": ["maven", "npm"]
+    }
+  ]
+}
+```
+
+### Step 4: Present Results
+
+Render a results table:
+
+```
+Exploit Search Results
+Filters: ecosystem=npm, severity=CRITICAL
+Total: N results (showing 1-20)
+
+| # | CVE ID          | Severity | EPSS | Maturity   | Exploit Sources       | KEV | Fix? |
+|---|-----------------|----------|------|------------|-----------------------|-----|------|
+| 1 | CVE-2021-44228  | critical | 0.97 | WIDESPREAD | ExDB:3 MSF:2 Nuc:5   | Yes | Yes  |
+| 2 | CVE-2024-XXXXX  | critical | 0.82 | ACTIVE     | MSF:1 GH:3            | Yes | Yes  |
+| 3 | CVE-2023-YYYYY  | critical | 0.65 | WEAPONIZED | ExDB:1 Nuc:2          | No  | No   |
+```
+
+**Column definitions:**
+- **CVE ID** -- primary identifier
+- **Severity** -- CVSS severity (critical/high/medium/low)
+- **EPSS** -- Exploit Prediction Scoring System probability (0.00-1.00)
+- **Maturity** -- exploitation maturity level: NONE, POC, WEAPONIZED, ACTIVE, WIDESPREAD
+- **Exploit Sources** -- abbreviated counts: ExDB (ExploitDB), MSF (Metasploit), Nuc (Nuclei), GH (GitHub PoCs), VCX (VulnCheck XDB), CS (CrowdSec)
+- **KEV** -- in CISA Known Exploited Vulnerabilities catalog (Yes/No). If overdue, append "(overdue)"
+- **Fix?** -- whether a registry or source fix is available (Yes/No)
+
+**Below the table**, for each result cross-reference with memory:
+- If tracked: `CVE-2021-44228 -- Fixed (2024-01-15)` (developer-friendly status)
+- If not tracked: no annotation
+
+**CrowdSec activity** -- if any result has active sightings, note: `"N results have active CrowdSec sightings (live exploitation detected)"`
+
+**Ransomware flag** -- if any KEV result has `ransomwareUse: true`, note: `"N results are associated with known ransomware campaigns"`
+
+**Pagination:** `Showing 1-20 of 142. Say "next page" or "page 3" for more.`
+
+**Actionable recommendations:**
+- For any result: `"Run /vulnetix:exploits <vuln-id> for deep exploit analysis (PoCs, ATT&CK mapping, CWSS scoring)"`
+- For results with fixes: `"Run /vulnetix:fix <vuln-id> for fix intelligence"` or `"Run /vulnetix:remediation <vuln-id> for a context-aware remediation plan"`
+- For details: `"Run /vulnetix:vuln <vuln-id> for full vulnerability info"`
+
+### Step 5: Update Vulnerability Memory
+
+1. Use **Read** to load the current memory file (or start fresh)
+2. For each result that matches a dependency in the repository (cross-ref affected products/ecosystems against repo manifests):
+   - If not already tracked, create a stub entry
+   - Record the search filters used in the history detail
+3. Use **Write** to save
+4. Confirm: `"Vulnerability memory updated: N new vulnerabilities tracked from exploit search"`
+
+If no results match repo dependencies, skip memory updates and note: `"No results match packages in this repository. Consider broadening the search or checking other ecosystems."`
+
+## Error Handling
+
+- If `vulnetix vdb exploits search` returns an error, suggest checking `vulnetix vdb status` for API health
+- If no results found, suggest broadening filters (remove severity, lower min-epss, try different ecosystem)
+- If the user's natural language is ambiguous, ask for clarification rather than guessing
+- If `.vulnetix/memory.yaml` cannot be written, warn but do not block results display
+
+## Important Reminders
+
+1. This skill **does not modify application code** -- it is a discovery tool
+2. This skill searches **across all vulnerabilities** -- it is not scoped to a single vuln ID (use `/vulnetix:exploits` for that)
+3. Auto-detect the repo ecosystem as a default filter to keep results relevant
+4. Exploitation maturity levels: NONE (0-14), POC (15-34), WEAPONIZED (35-54), ACTIVE (55-74), WIDESPREAD (75+)
+5. EPSS display: decimal in tables (0.97), not percentage
+6. Safe Harbour scores: not applicable to search results (they are per-version, not per-CVE)
+7. **Always update `.vulnetix/memory.yaml`** for results matching repo dependencies
+8. CrowdSec sightings indicate live exploitation -- flag prominently
+9. Ransomware associations are high-priority signals -- always surface them

@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19706,
-  "updated_at": "2026-04-21T07:23:30.191271Z",
+  "count": 19707,
+  "updated_at": "2026-04-22T02:08:13.512332Z",
   "skills": [
     {
       "name": "fix",
@@ -218308,6 +218308,24 @@
       "stars": 0,
       "install": "SpacePlushy/cashflow-scheduler/cashflow-scheduler",
       "source": "SkillsMP Synced Skills"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "readme-for-developers",

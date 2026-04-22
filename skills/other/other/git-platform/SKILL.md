@@ -1,7 +1,7 @@
 ---
 name: git-platform
 description: 'Git platform detection and cross-platform command mapping for GitHub, GitLab, and Bitbucket'
-version: 1.7.1
+version: 1.9.0
 alwaysApply: false
 category: infrastructure
 tags:

@@ -65,7 +65,7 @@ Output a flat list of `(key, file, line, surrounding_sentence)` tuples.
 
 Also build the inverse: for each bib entry, the list of all places it is cited.
 
-Save the extracted contexts to `/tmp/citation_audit_contexts.txt` (or equivalent) so the reviewer can read it directly.
+Save the extracted contexts to `paper/.aris/citation-audit/contexts.txt` so the reviewer can read it directly. Use the paper-dir-relative path `.aris/citation-audit/contexts.txt` when recording the file in `audited_input_hashes`; do not stage under `/tmp` or other transient locations that the verifier cannot rehash later.
 
 ### Step 3: Send each entry to fresh cross-model reviewer
 
@@ -108,44 +108,48 @@ Save the response to `.aris/traces/citation-audit/<date>_runNN/<key>.md` per the
 
 ### Step 4: Aggregate verdicts
 
-Build a structured `CITATION_AUDIT.json`:
+Build `CITATION_AUDIT.json` following the schema defined in **"Submission
+Artifact Emission"** below (single authoritative schema for this file).
+Per-entry ledger data goes under `details.per_entry`, not under a
+top-level `entries` field. The top-level `verdict` is a single overall
+value (PASS / WARN / FAIL / NOT_APPLICABLE / BLOCKED / ERROR) derived
+from per-entry verdicts per the decision table in "Submission Artifact
+Emission"; the top-level `summary` is a one-line human-readable string.
+
+Concretely, `details` carries the per-entry ledger:
 
 ```json
-{
-  "audit_date": "2026-04-19",
-  "bib_file": "references.bib",
+"details": {
   "total_entries": 29,
-  "summary": {
-    "KEEP": 11,
-    "FIX": 14,
-    "REPLACE": 3,
-    "REMOVE": 1
-  },
-  "entries": [
+  "counts": { "KEEP": 11, "FIX": 14, "REPLACE": 3, "REMOVE": 1 },
+  "per_entry": [
     {
       "key": "lu2024aiscientist",
       "verdict": "KEEP",
-      "existence": "YES",
-      "metadata_issues": [],
+      "axis_failures": [],
       "uses": [
-        {"file": "sec/1.intro.tex", "line": 11, "verdict": "SUPPORTS"},
-        {"file": "sec/6.related.tex", "line": 8, "verdict": "SUPPORTS"}
+        {"file": "sections/1.intro.tex", "line": 11, "verdict": "SUPPORTS"},
+        {"file": "sections/6.related.tex", "line": 8, "verdict": "SUPPORTS"}
       ]
     },
     {
       "key": "madaan2023selfrefine",
       "verdict": "FIX",
-      "existence": "YES",
-      "metadata_issues": [],
+      "axis_failures": ["CONTEXT"],
       "uses": [
-        {"file": "sec/2.overview.tex", "line": 42, "verdict": "WRONG",
-         "reason": "Self-Refine demonstrates iterative improvement, not correlated errors"},
-        {"file": "sec/6.related.tex", "line": 13, "verdict": "SUPPORTS"}
+        {"file": "sections/2.overview.tex", "line": 42, "verdict": "WRONG",
+         "note": "Self-Refine demonstrates iterative improvement, not correlated errors"},
+        {"file": "sections/6.related.tex", "line": 13, "verdict": "SUPPORTS"}
       ]
     }
   ]
 }
 ```
+
+See "Submission Artifact Emission" for the full artifact (top-level
+fields `audit_skill`, `verdict`, `reason_code`, `summary`,
+`audited_input_hashes`, `trace_path`, `thread_id`, `reviewer_model`,
+`reviewer_reasoning`, `generated_at`, `details`).
 
 ### Step 5: Generate human-readable report
 
@@ -215,7 +219,7 @@ Confirm:
 - **Web access required** — the reviewer must do real lookups, not memory pattern-match
 - **Wrong-context > metadata** — a real paper used to support a wrong claim is more dangerous than a typo in author name
 - **REPLACE/REMOVE require human approval** — never auto-modify content claims
-- **Audit is advisory** — it surfaces issues but does not auto-block compilation
+- **Always emit, never block** — this skill always writes `CITATION_AUDIT.json` with a verdict; the decision to block finalization lives in `paper-writing` Phase 6 + `tools/verify_paper_audits.sh`, driven by the `assurance` level. See "Submission Artifact Emission" below.
 - **Run once per submission** — the audit is wall-clock expensive (web lookups for each entry); not for every save
 
 ## Comparison with Other Audit Skills
@@ -243,9 +247,82 @@ After each `mcp__codex__codex` reviewer call, save the trace following `shared-r
 ## Output Contract
 
 - `CITATION_AUDIT.md` (human-readable report) at paper root
-- `CITATION_AUDIT.json` (machine-readable ledger) at paper root
+- `CITATION_AUDIT.json` (machine-readable ledger; schema below) at paper root
 - `.aris/traces/citation-audit/<date>_runNN/` (per-entry review traces)
 - Optional: applied fixes to `references.bib` + `sec/*.tex` (with --apply flag)
+
+## Submission Artifact Emission
+
+This skill **always** writes `paper/CITATION_AUDIT.json`, regardless of
+caller or detector outcome. A paper with no `.bib` file or no `\cite{...}`
+usage emits verdict `NOT_APPLICABLE`; silent skip is forbidden.
+`paper-writing` Phase 6 and `tools/verify_paper_audits.sh` both rely on
+this artifact existing at a predictable path.
+
+The artifact conforms to the schema in `shared-references/assurance-contract.md`:
+
+```json
+{
+  "audit_skill":      "citation-audit",
+  "verdict":          "PASS | WARN | FAIL | NOT_APPLICABLE | BLOCKED | ERROR",
+  "reason_code":      "all_entries_keep | metadata_drift | wrong_context | hallucinated | ...",
+  "summary":          "One-line human-readable verdict summary.",
+  "audited_input_hashes": {
+    "references.bib":             "sha256:...",
+    "main.tex":                   "sha256:...",
+    "sections/3.related.tex":     "sha256:..."
+  },
+  "trace_path":       ".aris/traces/citation-audit/<date>_run<NN>/",
+  "thread_id":        "<codex mcp thread id>",
+  "reviewer_model":   "gpt-5.4",
+  "reviewer_reasoning": "xhigh",
+  "generated_at":     "<UTC ISO-8601>",
+  "details": {
+    "total_entries":  <int>,
+    "per_entry":      [ { "key": "madaan2023selfrefine",
+                          "verdict": "KEEP | FIX | REPLACE | REMOVE",
+                          "axis_failures": [ "CONTEXT" | "METADATA" | "EXISTENCE" ],
+                          "note": "..." }, ... ]
+  }
+}
+```
+
+### `audited_input_hashes` scope
+
+Hash the **declared input set** actually passed to this audit: the `.bib`
+file, `main.tex`, and every `sections/*.tex` file that supplied citation
+contexts. Do NOT hash extracted contexts from `/tmp` or other transient
+paths — if you need to stage extracted contexts, materialize them under
+`paper/.aris/` so the verifier can rehash reproducibly. Do NOT hash
+repo-wide unions or the reviewer's self-reported opened subset.
+
+**Path convention** (must match `tools/verify_paper_audits.sh`): keys are
+**paths relative to the paper directory** (no `paper/` prefix — the
+verifier already resolves relative to the paper dir; prefixing produces
+`paper/paper/...` and false-fails as STALE). Use **absolute paths** for
+any file outside the paper dir.
+
+### Verdict decision table
+
+| Input state                                                    | Verdict          | `reason_code` example |
+|----------------------------------------------------------------|------------------|-----------------------|
+| No `.bib` file or no `\cite{...}` usage                        | `NOT_APPLICABLE` | `no_citations`        |
+| `.bib` file referenced but unreadable / missing                | `BLOCKED`        | `bib_unreadable`      |
+| Every entry KEEP, all three axes green                         | `PASS`           | `all_entries_keep`    |
+| Only FIX verdicts (metadata drift, no context errors)          | `WARN`           | `metadata_drift`      |
+| Any REPLACE or REMOVE (wrong-context or hallucinated entry)    | `FAIL`           | `wrong_context`       |
+| Web lookups timed out / reviewer invocation failed             | `ERROR`          | `reviewer_error`      |
+
+### Thread independence
+
+Every invocation uses a fresh `mcp__codex__codex` thread. Never
+`codex-reply`. Do not accept prior audit outputs (PROOF_AUDIT,
+PAPER_CLAIM_AUDIT, EXPERIMENT_LOG) as input — the fresh thread preserves
+reviewer independence per `shared-references/reviewer-independence.md`.
+
+This skill never blocks by itself; `paper-writing` Phase 6 plus the
+verifier decide whether the verdict blocks finalization based on the
+`assurance` level.
 
 ## See Also
 

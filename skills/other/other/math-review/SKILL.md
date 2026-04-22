@@ -1,7 +1,7 @@
 ---
 name: math-review
 description: 'Verify math-heavy code for algorithm correctness, numerical stability, and standards alignment'
-version: 1.8.4
+version: 1.9.0
 alwaysApply: false
 category: specialized
 tags:

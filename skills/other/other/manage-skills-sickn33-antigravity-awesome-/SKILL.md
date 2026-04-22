@@ -185,3 +185,8 @@ find ~/.agents/skills ~/.cursor/skills ~/.claude/skills -name "*.disabled" 2>/de
 - Project-scoped skills override global skills of the same name.
 - For single-file tools (Copilot, Codex, Aider, Augment), editing means replacing the entire file content.
 - When creating skills, use kebab-case for directory names (e.g., `my-new-skill`).
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

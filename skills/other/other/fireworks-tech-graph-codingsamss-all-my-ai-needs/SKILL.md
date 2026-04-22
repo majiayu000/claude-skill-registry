@@ -321,7 +321,10 @@ Always include a **legend** when 2+ arrow types are used.
 - Snap to 8px grid: horizontal 120px intervals, vertical 120px intervals
 
 **Arrow Labels** (CRITICAL):
-- MUST have background rect: `<rect fill="canvas_bg" opacity="0.95"/>` with 4px horizontal, 2px vertical padding
+- Background rect is **conditional**, not mandatory:
+  - Default: no background rect on clean/light canvases
+  - Add `<rect fill="canvas_bg" opacity="0.90-0.95"/>` only when label crosses dense lines, noisy backgrounds, or node interiors
+  - Keep 4px horizontal, 2px vertical padding when background rect is used
 - Place mid-arrow, ≤3 words, stagger by 15-20px when multiple arrows converge
 - Maintain 10px safety distance from nodes
 
@@ -341,7 +344,7 @@ When two arrows must cross each other, ALWAYS use jump-over arcs to prevent visu
 **Validation Checklist** (run before finalizing):
 1. **Arrow-Component Collision**: Arrows MUST NOT pass through component interiors (route around with orthogonal paths)
 2. **Text Overflow**: All text MUST fit with 8px padding (estimate: `text.length × 7px ≤ shape_width - 16px`)
-3. **Arrow-Text Alignment**: Arrow endpoints MUST connect to shape edges (not floating); all arrow labels MUST have background rects
+3. **Arrow-Text Alignment**: Arrow endpoints MUST connect to shape edges (not floating); arrow labels MUST remain readable (use background rect only when needed)
 4. **Container Discipline**: Prefer arrows entering and leaving section containers through open gaps between components, not through inner component bodies
 
 ## SVG Technical Rules

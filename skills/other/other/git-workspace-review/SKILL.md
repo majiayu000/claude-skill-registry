@@ -1,10 +1,7 @@
 ---
 name: git-workspace-review
-description: 'Use this skill as foundation for git workflows. Use when verifying workspace
-  state before other git operations, checking staged changes, preflight checks before
-  commits or PRs. Do not use when full commit workflow - use commit-messages instead.
-  DO NOT use when: full PR preparation - use pr-prep.'
-version: 1.7.1
+description: 'Verify workspace state, staged changes, and preflight checks before commits or PRs'
+version: 1.9.0
 alwaysApply: false
 category: workspace-ops
 tags:
@@ -80,7 +77,16 @@ Run `make format && make lint` to validate code quality before committing. Fix a
 
 ## Step 4: Review Diff Statistics (`diff-stat`)
 
-Run `git diff --cached --stat` for staged changes (or `git diff --stat` for unstaged work). Note the number of files modified and identify hotspots with large insertion or deletion counts.
+Run `git diff --cached --stat` for staged changes (or
+`git diff --stat` for unstaged work). Note the number of
+files modified and identify hotspots with large insertion
+or deletion counts.
+
+When sem is available (see `leyline:sem-integration`),
+also run `sem diff --format plain --staged` to display an entity-level
+summary alongside the stat output. This shows which
+functions, classes, and methods changed rather than just
+line counts.
 
 ## Step 5: Review Detailed Diff (`diff-details`)
 

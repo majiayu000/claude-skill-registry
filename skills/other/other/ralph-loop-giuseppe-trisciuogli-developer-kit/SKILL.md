@@ -6,7 +6,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, TodoWrite
 
 # Ralph Loop — Python Orchestrator
 
-⚠️ **IMPORTANT**: This skill uses a Python orchestrator script. Do NOT execute arbitrary bash commands. Use `Bash` ONLY to run `ralph_loop.py`. All task commands (like `/specs:task-implementation`) are shown to the user to execute manually.
+⚠️ **IMPORTANT**: This skill uses a Python orchestrator script. Do NOT execute arbitrary bash commands. Use `Bash` ONLY to run `ralph_loop.py`. All task commands (like `/developer-kit-specs:specs.task-implementation`) are shown to the user to execute manually.
 
 ## Overview
 
@@ -44,7 +44,7 @@ The Ralph Loop applies Geoffrey Huntley's "Ralph Wiggum as a Software Engineer" 
 **One Step Flow:**
 1. Run `ralph_loop.py --action=loop`
 2. Script reads `fix_plan.json` and determines current step
-3. Script shows the command to execute (e.g., `/specs:task-implementation`)
+3. Script shows the command to execute (e.g., `/developer-kit-specs:specs.task-implementation`)
 4. User executes the command in their CLI
 5. User runs `ralph_loop.py --action=loop` again
 6. Script updates state based on result and shows next command
@@ -65,12 +65,12 @@ fix_plan.json state machine:
 │    → Task found → state: "implementation"                │
 │                                                             │
 │  state: "implementation"                                  │
-│    → Show /specs:task-implementation command             │
+│    → Show /developer-kit-specs:specs.task-implementation command             │
 │    → User executes, then runs loop again                  │
 │    → Next state: "review"                                │
 │                                                             │
 │  state: "review"                                          │
-│    → Show /specs:task-review command                     │
+│    → Show /developer-kit-specs:specs.task-review command                     │
 │    → User reviews results, then runs loop again          │
 │    → Issues found → state: "fix" (retry ≤ 3)             │
 │    → Clean → state: "cleanup"                            │
@@ -85,7 +85,7 @@ fix_plan.json state machine:
 │    → Next state: "sync"                                  │
 │                                                             │
 │  state: "sync"                                            │
-│    → Show /specs:spec-sync-with-code command             │
+│    → Show /developer-kit-specs:specs.spec-sync-with-code command             │
 │    → Next state: "update_done"                           │
 │                                                             │
 │  state: "update_done"                                     │
@@ -226,7 +226,7 @@ The script shows:
 → Implementation: TASK-037
 
 Execute:
-  /specs:task-implementation --task=TASK-037
+  /developer-kit-specs:specs.task-implementation --task=TASK-037
 
 After execution, update state:
   python3 ralph_loop.py --action=loop --spec=docs/specs/001-feature/
@@ -239,7 +239,7 @@ The script shows:
 → Review: TASK-037 | Retry: 0/3
 
 Execute:
-  /specs:task-review --task=TASK-037
+  /developer-kit-specs:specs.task-review --task=TASK-037
 
 Review the generated review report, then update state:
   python3 ralph_loop.py --action=loop --spec=docs/specs/001-feature/
@@ -266,7 +266,7 @@ The script shows:
 → Sync: TASK-037
 
 Execute:
-  /specs:spec-sync-with-code docs/specs/001-feature/ --after-task=TASK-037
+  /developer-kit-specs:specs.spec-sync-with-code docs/specs/001-feature/ --after-task=TASK-037
 ```
 
 ### Step 8: Update Done (`update_done`)
@@ -313,7 +313,7 @@ For automatic scheduling every 5 minutes:
 
 This will repeatedly run the loop, showing you the next command each time.
 
-**Note**: The Ralph Loop is now managed directly through the Python script. The deprecated `/specs:ralph-loop` command has been removed.
+**Note**: The Ralph Loop is now managed directly through the Python script. The deprecated `/developer-kit-specs:specs.ralph-loop` command has been removed.
 
 ## Task File Format
 

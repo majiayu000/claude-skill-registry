@@ -1,7 +1,7 @@
 ---
 name: skills-eval
 description: Evaluate and improve Claude skill quality through auditing. Use when reviewing, preparing for production, or auditing skills.
-version: 1.8.4
+version: 1.9.0
 alwaysApply: false
 category: skill-management
 tags:
@@ -66,11 +66,8 @@ modules:
 - modules/evaluation-workflows.md
 - modules/integration-testing.md
 - modules/integration.md
-- modules/multi-metric-evaluation-methodology.md
 - modules/performance-benchmarking.md
 - modules/pressure-testing.md
-- modules/quality-metrics.md
-- modules/skill-authoring-best-practices.md
 - modules/trigger-isolation-analysis.md
 - modules/troubleshooting.md
 ---
@@ -145,17 +142,14 @@ Improvements are prioritized by impact. Critical issues include security vulnera
 
 ### Skill-Specific Modules
 - **Trigger Isolation Analysis**: See `modules/trigger-isolation-analysis.md`
-- **Skill Authoring Best Practices**: See `modules/skill-authoring-best-practices.md`
 - **Authoring Checklist**: See `modules/authoring-checklist.md`
 - **Evaluation Workflows**: See `modules/evaluation-workflows.md`
-- **Quality Metrics**: See `modules/quality-metrics.md`
 - **Advanced Tool Use Analysis**: See `modules/advanced-tool-use-analysis.md`
 - **Evaluation Framework**: See `modules/evaluation-framework.md`
 - **Integration Patterns**: See `modules/integration.md`
 - **Troubleshooting**: See `modules/troubleshooting.md`
 - **Pressure Testing**: See `modules/pressure-testing.md`
 - **Integration Testing**: See `modules/integration-testing.md`
-- **Multi-Metric Evaluation**: See `modules/multi-metric-evaluation-methodology.md`
 - **Performance Benchmarking**: See `modules/performance-benchmarking.md`
 
 ### Tools and Automation

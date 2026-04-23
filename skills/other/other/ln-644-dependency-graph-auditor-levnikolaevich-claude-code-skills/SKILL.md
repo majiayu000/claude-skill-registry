@@ -1,7 +1,7 @@
 ---
 name: ln-644-dependency-graph-auditor
 description: "Builds dependency graph, detects cycles, validates boundary rules, calculates coupling metrics (Ca/Ce/I). Use when auditing dependency structure."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__index_project, mcp__hex-graph__analyze_architecture, mcp__hex-graph__trace_paths
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__index_project, mcp__hex-graph__analyze_architecture, mcp__hex-graph__trace_paths, mcp__hex-line__read_file, mcp__hex-line__grep_search, mcp__hex-line__outline
 license: MIT
 ---
 
@@ -50,6 +50,9 @@ L3 Worker that builds and analyzes the module dependency graph to enforce archit
 ## Workflow
 
 **MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology.
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` and `shared/references/mcp_integration_patterns.md`
+
+Use `hex-graph` first when dependency topology, cycles, or architecture metrics materially improve the audit. Use `hex-line` first for local code and config reads when available. If MCP is unavailable, unsupported, or not indexed, continue with built-in `Read/Grep/Glob/Bash` and state the fallback in the report.
 
 ### Phase 1: Discover Architecture (Adaptive)
 

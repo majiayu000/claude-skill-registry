@@ -1,7 +1,7 @@
 ---
 name: ln-628-concurrency-auditor
 description: "Checks async races, thread safety, TOCTOU, deadlocks, blocking I/O, resource contention. Use when auditing concurrency safety."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__trace_dataflow, mcp__hex-graph__trace_paths
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__trace_dataflow, mcp__hex-graph__trace_paths, mcp__hex-line__read_file, mcp__hex-line__grep_search, mcp__hex-line__outline
 license: MIT
 ---
 
@@ -23,8 +23,11 @@ Specialized worker auditing concurrency, async patterns, and cross-process resou
 ## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` and `shared/references/mcp_integration_patterns.md`
 
 Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `output_dir`.
+
+Use `hex-graph` first when dataflow or call-path analysis materially improves concurrency findings. Use `hex-line` first for local code reads when available. If MCP is unavailable, unsupported, or not indexed, continue with built-in `Read/Grep/Glob/Bash` and state the fallback in the report.
 
 ## Workflow
 

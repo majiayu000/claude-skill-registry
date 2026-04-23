@@ -35,10 +35,12 @@ State the resolved spec path and target shell directory before continuing.
 Read the spec and identify:
 - **Scope** — total surface area of work
 - **Work categories** — UI, backend, data layer, infrastructure, tests, documentation, tooling
-- **Spec requirements** — enumerate the distinct requirements so each can be tracked in a shell's Covers field
+- **Spec requirements** — enumerate the `R<N>` IDs from the spec's `## Requirements` section. Every R-id must be tracked in at least one shell's Covers field.
 - **Dependencies** — which pieces must exist before others can start
 - **Greenfield vs existing** — is there an established codebase to work within
 - **Open questions** — decisions the spec deferred that will need to be answered at implementation time
+
+If the spec has no `## Requirements` section or contains no `R<N>`-numbered items, stop and tell the user to add a `## Requirements` section with enumerated `R<N>` IDs (or re-run `/draft-spec` if starting from scratch) before decomposing. Shells depend on stable R-ids for coverage tracking.
 
 ## Step 2: Decompose Into Shells
 
@@ -86,7 +88,7 @@ For each shell, identify the structural contract with the rest of the decomposit
 
 - **Produces** — What this shell creates that other shells (or the final system) can use. List concrete artifacts at the conceptual level: modules, types, endpoints, data models, UI screens, migration files. File paths are filled in at expansion time.
 - **Consumes** — What this shell depends on that must already exist. Either listed in a prior shell's Produces, or marked "from existing codebase" if it predates this decomposition. Every Consumes entry must be traceable to a source.
-- **Covers spec requirements** — Which spec sections or requirements this shell implements. The union of Covers across all shells must equal the set of spec requirements. For partial coverage, mark the entry `(partial: <what's deferred>)` and name the deferred work in that shell's Open Questions — a bare "Covers §N" for partial coverage breaks the invariant.
+- **Covers spec requirements** — Which `R<N>` IDs from the spec's `## Requirements` section this shell implements. The union of Covers across all shells must equal the full set of R-ids in the spec. Every R-id must appear in at least one shell's Covers. Write one R-id per bullet in the Step 4 template. For partial coverage of a single R-id, mark the entry `R<N> (partial: <what's deferred>)` and name the deferred work in that shell's Open Questions. A bare `R<N>` for partial coverage breaks the invariant.
 
 ### Shell Slug
 
@@ -140,8 +142,9 @@ depends_on: []
 
 ## Covers Spec Requirements
 
-- <Spec section or requirement ID>
-- <Spec section or requirement ID>
+- R<N>
+- R<N>
+- R<M> (partial: <what's deferred>)
 - ...
 
 ## Implementation Steps (High-Level)
@@ -195,4 +198,4 @@ Then use the TaskList tool and proceed to any remaining task.
 - Each shell must be self-contained with enough structural context (Context, Produces, Consumes, Covers) to understand the work without reading the full spec
 - Shell files are the only outputs. Do not modify the spec or project files.
 - Every Consumes entry must trace to a prior shell's Produces or to "from existing codebase."
-- The union of all Covers fields must equal the set of spec requirements.
+- The union of all Covers fields must equal the full set of R-ids in the spec's `## Requirements` section. Every R-id must appear in at least one shell's Covers.

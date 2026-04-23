@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 9511,
-  "updated_at": "2026-04-22T02:08:13.420826Z",
+  "count": 9512,
+  "updated_at": "2026-04-23T02:10:59.333196Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -111410,6 +111410,23 @@
       "stars": 0,
       "install": "tailwind8/portfolio-reserve/.claude/skills/nextjs-gherkin-generator",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "repo": "alonw0/web-asset-generator",
+      "path": "skills/web-asset-generator/SKILL.md",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "stars": 0,
+      "install": "alonw0/web-asset-generator/skills/web-asset-generator/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "typescript-shims",

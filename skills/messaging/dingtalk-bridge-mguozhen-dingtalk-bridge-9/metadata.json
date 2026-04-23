@@ -1,0 +1,25 @@
+{
+  "name": "dingtalk-bridge",
+  "description": "DingTalk group chat bridge for Claude Code. Send markdown/text messages, receive @mentions, auto-execute prompts via Stream SDK.",
+  "repo": "mguozhen/dingtalk-bridge",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "messaging",
+  "tags": [
+    "dingtalk",
+    "chatbot",
+    "messaging",
+    "china",
+    "notification"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "dingtalk-bridge-mguozhen-dingtalk-bridge-9",
+  "author": "mguozhen",
+  "source_url": "https://github.com/mguozhen/dingtalk-bridge/blob/main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mguozhen/dingtalk-bridge/blob/main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

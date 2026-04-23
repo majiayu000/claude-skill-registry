@@ -1,0 +1,17 @@
+{
+  "name": "welcome",
+  "repo": "qwibitai/nanoclaw",
+  "path": "container/skills/welcome/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/qwibitai/nanoclaw",
+  "dir_name": "welcome-qwibitai-nanoclaw",
+  "downloaded_at": "2026-04-23T01:52:34.688152Z",
+  "author": "qwibitai",
+  "source_url": "https://github.com/qwibitai/nanoclaw/blob/main/container/skills/welcome/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/qwibitai/nanoclaw/blob/main/container/skills/welcome/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

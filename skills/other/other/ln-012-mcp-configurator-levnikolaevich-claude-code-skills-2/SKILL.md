@@ -19,6 +19,8 @@ Invocation is agent-agnostic. Target surfaces are Claude-specific: this skill co
 
 **MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`, `shared/references/environment_worker_runtime_contract.md`, and `shared/references/worker_runtime_contract.md`
 
+Target MCP availability is not a precondition for this worker. If a server is not connected yet, use config files, package metadata, and CLI state to continue registration and cleanup work; report provider checks or live verification as `skipped` when they cannot run without MCP.
+
 ## Input / Output
 
 | Direction | Content |

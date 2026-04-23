@@ -5,7 +5,7 @@ description: "Launch the app and hands-on verify that it works by interacting wi
 
 # Smoke Test
 
-Launch the app and hands-on verify that it works. Not unit/integration tests.
+Launch the app and hands-on verify that it works by interacting with it. Every smoke test is a concrete interaction with the running app: navigating a screen, clicking a control, filling a form, running a CLI command, and observing the result.
 
 ## Step 1: Determine Scope
 
@@ -27,7 +27,12 @@ Always check for project-specific testing skills or MCP tools first. Use the fal
 
 ## Step 3: Plan Smoke Tests
 
-Design targeted smoke tests based on the scope. Each test should:
+Before drafting tests, check whether there is something to exercise:
+
+- **No user-visible change in the resolved scope** — report that there is no interactive surface to verify, then stop.
+- **Required infrastructure cannot be stood up in this session** (backend service, auth provider, seed data, external dependency) — report blocked, naming what is missing, then stop.
+
+Otherwise, design targeted smoke tests. Each test should:
 
 1. Exercise a specific flow from the determined scope
 2. Verify the happy path works end-to-end
@@ -37,9 +42,9 @@ Output the plan as text:
 
 ```
 Smoke Test Plan:
-1. [Test description] — verifies [what]
-2. [Test description] — verifies [what]
-3. [Test description] — verifies [what]
+1. [Interaction with the running app] — what the interaction verifies
+2. [Interaction with the running app] — what the interaction verifies
+3. [Interaction with the running app] — what the interaction verifies
 
 Approach: [agent-browser / claude-in-chrome / computer-use / terminal]
 Dev server command: [command]
@@ -109,5 +114,5 @@ Then use the TaskList tool and proceed to any remaining task.
 - If the dev server fails to start, report the error and stop.
 - Keep tests focused on the determined scope.
 - Use the Monitor tool to tail app logs for errors or warnings while verifying, so backend failures surface alongside UI checks.
-- After the last UI interaction, perform one additional log read or status check before reporting. Pending `Monitor` events that arrive after the agent emits final text are dropped, so the extra action gives them time to land. Matters most when this skill runs inside a subagent (e.g., from `/polish-code`).
+- After the last UI interaction, perform one additional log read or status check before reporting. Pending `Monitor` events that arrive after the agent emits final text are dropped, so the extra action gives them time to land. Matters most when this skill runs inside a subagent.
 - To diagnose failures, run the `/investigate` skill on the smoke test report.

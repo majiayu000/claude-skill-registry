@@ -1,7 +1,7 @@
 ---
 name: mission-orchestrator
 description: "Lifecycle orchestrator that auto-detects project state and routes to the correct development phase."
-version: 1.7.1
+version: 1.9.0
 alwaysApply: false
 category: workflow-orchestration
 tags:
@@ -16,8 +16,13 @@ dependencies:
 - attune:project-planning
 - attune:project-execution
 - attune:war-room-checkpoint
+- attune:war-room
 - leyline:risk-classification
 - leyline:damage-control
+- leyline:additive-bias-defense
+- imbue:justify
+- imbue:vow-enforcement
+- abstract:friction-detector
 tools:
 - Bash
 - Read
@@ -28,6 +33,9 @@ provides:
   - state-detection
   - phase-routing
   - session-recovery
+  - reflexion-buffer
+  - trust-tier
+  - adaptive-constraints
 usage_patterns:
 - full-cycle-development
 - mission-resume
@@ -41,6 +49,14 @@ modules:
 - modules/state-detection.md
 - modules/phase-routing.md
 - modules/mission-state.md
+- modules/plan-review.md
+- modules/plan-versioner.md
+- modules/feedback-collector.md
+- modules/context-injector.md
+- modules/iteration-governor.md
+- modules/reflexion-buffer.md
+- modules/trust-tier.md
+- modules/adaptive-constraints.md
 references:
 - references/mission-charter.md
 - references/progress-report.md
@@ -50,6 +66,7 @@ references:
 - [Overview](#overview)
 - [When to Use](#when-to-use)
 - [Mission Lifecycle](#mission-lifecycle)
+- [Interactive Plan Review](#interactive-plan-review)
 - [Mission Types](#mission-types)
 - [Phase-to-Skill Mapping](#phase-to-skill-mapping)
 - [Session Recovery](#session-recovery)
@@ -135,6 +152,34 @@ Missions persist state to `.attune/mission-state.json`. On resume:
 
 See `modules/mission-state.md` for the state schema and recovery protocol.
 
+## Interactive Plan Review
+
+The plan-to-execute transition uses an interactive
+review loop instead of a simple checkpoint. Plans are
+reviewed section by section, revised based on feedback,
+and must pass a mandatory war-room gate before execution.
+
+**Key capabilities:**
+
+- Section-by-section terminal review (architecture
+  first, then phases)
+- Approve/revise/reject verdicts with rationale
+- Plan version tracking with diff summaries
+- Context improvement from structured feedback
+- Additive bias scanning before user review
+- Maximum 3 revision rounds before forced decision
+- Mandatory war-room approval with Prosecution Counsel
+
+See `modules/plan-review.md` for the full protocol.
+
+### Review Modules
+
+- **plan-review.md**: Main orchestrator for the review loop
+- **plan-versioner.md**: Version tracking and diff generation
+- **feedback-collector.md**: Verdict capture and JSON output
+- **context-injector.md**: Revision prompt construction
+- **iteration-governor.md**: Round tracking and escalation
+
 ## Mission Charter
 
 Define mission boundaries using the structured template from
@@ -169,6 +214,11 @@ checkpoint rhythm guidance.
 - **state-detection.md**: Artifact existence checks, quality validation, staleness
 - **phase-routing.md**: Phase execution protocol, transition hooks, error handling
 - **mission-state.md**: State schema, persistence, recovery protocol
+- **plan-review.md**: Interactive section-by-section review with bias scanning
+- **plan-versioner.md**: Version tracking and diff summaries
+- **feedback-collector.md**: Verdict capture and feedback files
+- **context-injector.md**: Revision prompt construction from feedback
+- **iteration-governor.md**: Round tracking, cap enforcement, escalation
 
 ## Reference Modules
 

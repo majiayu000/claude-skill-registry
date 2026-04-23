@@ -1,7 +1,7 @@
 ---
 name: ln-645-open-source-replacer
 description: "Discovers custom modules replaceable by OSS, evaluates alternatives (stars, license, CVE), generates migration plan. Use when reducing custom code."
-allowed-tools: Read, Grep, Glob, Bash, WebFetch, WebSearch, mcp__Ref, mcp__context7, mcp__hex-graph__find_references, mcp__hex-graph__analyze_architecture
+allowed-tools: Read, Grep, Glob, Bash, WebFetch, WebSearch, mcp__Ref, mcp__context7, mcp__hex-graph__find_references, mcp__hex-graph__analyze_architecture, mcp__hex-line__read_file, mcp__hex-line__grep_search, mcp__hex-line__outline
 license: MIT
 ---
 
@@ -44,6 +44,9 @@ L3 Worker that discovers custom modules, analyzes their purpose, and finds battl
 ## Workflow
 
 **MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology.
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` and `shared/references/mcp_integration_patterns.md`
+
+Use `hex-graph` first when architecture or cross-file references materially improve module discovery. Use `hex-line` first for local code reads when available. If MCP is unavailable, unsupported, or not indexed, continue with built-in `Read/Grep/Glob/Bash` and state the fallback in the report.
 
 ### Phase 1: Discovery + Classification
 

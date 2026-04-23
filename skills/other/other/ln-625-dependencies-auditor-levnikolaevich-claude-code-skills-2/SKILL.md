@@ -1,7 +1,7 @@
 ---
 name: ln-625-dependencies-auditor
 description: "Checks outdated packages, unused deps, reinvented wheels, CVE/CVSS vulnerability scan. Use when auditing dependencies."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__audit_workspace, mcp__hex-graph__find_references
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__audit_workspace, mcp__hex-graph__find_references, mcp__hex-line__read_file, mcp__hex-line__grep_search, mcp__hex-line__outline
 license: MIT
 ---
 
@@ -29,11 +29,14 @@ Specialized worker auditing dependency management, code reuse, and security vuln
 ## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` and `shared/references/mcp_integration_patterns.md`
 
 Receives `contextStore` with tech stack, package manifest paths, codebase root, output_dir.
 
 **From ln-620 (codebase-auditor):** mode=full (default)
 **From ln-760 (security-setup):** mode=vulnerabilities_only
+
+Use `hex-graph` first when dependency references or code reuse evidence materially improve the audit. Use `hex-line` first for local code reads when available. If MCP is unavailable, unsupported, or not indexed, continue with built-in `Read/Grep/Glob/Bash` and state the fallback in the report.
 
 ## Workflow
 

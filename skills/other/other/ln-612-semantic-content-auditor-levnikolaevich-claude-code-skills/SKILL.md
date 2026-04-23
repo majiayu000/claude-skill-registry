@@ -44,6 +44,7 @@ Called ONLY for project documents (not reference/tasks):
 ## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`, `shared/references/docs_quality_contract.md`, and `shared/references/markdown_read_protocol.md`.
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` and `shared/references/mcp_integration_patterns.md`
 
 Receives from coordinator per invocation:
 
@@ -53,6 +54,8 @@ Receives from coordinator per invocation:
 | `output_dir` | Directory for report output (from contextStore) |
 | `project_root` | Project root path |
 | `tech_stack` | Detected technology stack |
+
+`hex-line` is optional for this doc-only worker. Use it to outline large markdown files when available; otherwise continue with built-in `Read/Grep/Glob/Bash` and do not block on MCP availability.
 
 ## Workflow
 

@@ -276,6 +276,18 @@ Graceful if absent — the audit still works without a reference.
 - **Ask first**: Destructive actions (delete, send, publish, pay). For Destructive Confidence testing, ask once before running that scenario
 - **Stop and confirm**: Anything that emails/notifies external people
 
+## Execution discipline
+
+Three principles for audit runs that catch the most bugs:
+
+1. **Drive the audit from the main session, not a sub-agent.** Sub-agents are fine for bounded analysis tasks (reviewing a batch of captured screenshots, summarising a thread). But the audit *itself* — the navigation, the noticing, the "this button looks off after the previous interaction" kind of judgement — must happen in the session that's been watching the app. Cross-interaction state lives in that session's working memory; a fresh sub-agent starts cold and misses second-order findings.
+
+2. **Use the browser tool directly.** Chrome MCP or Playwright MCP via the main session's tool calls. Don't hand screenshots to a fresh agent and ask for opinions — that loses the state-dependence that makes audits catch logic errors, business-logic issues, and odd edge cases.
+
+3. **Loop to exhaustion with variations.** Don't stop after one pass through the checklist. After each pass, generate a new angle — different persona, different workflow, different input volume, different starting point, different validation lens — and re-walk. Stop only when a full pass produces no new findings. Single-pass audits by definition miss the second-order issues.
+
+For audits expected to run longer than 30 minutes, set up a 15-min `/loop` check-in alongside the main session — it journals findings, grounds the session, and provides a natural termination signal. See [references/long-running-check-in-pattern.md](references/long-running-check-in-pattern.md).
+
 ## Reference files
 
 | When | Read |
@@ -285,6 +297,7 @@ Graceful if absent — the audit still works without a reference.
 | Full protocol for each of the 8 scenarios | [references/scenario-tests.md](references/scenario-tests.md) |
 | Report format and severity rubrics | [references/report-template.md](references/report-template.md) |
 | Browser tool commands and viewport notes | [references/browser-tools.md](references/browser-tools.md) |
+| Long-running audit supervision via 15-min `/loop` check-in | [references/long-running-check-in-pattern.md](references/long-running-check-in-pattern.md) |
 
 ## Tips
 

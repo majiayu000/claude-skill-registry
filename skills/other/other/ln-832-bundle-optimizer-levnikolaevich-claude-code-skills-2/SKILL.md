@@ -1,7 +1,7 @@
 ---
 name: ln-832-bundle-optimizer
 description: "Reduces JS/TS bundle size via tree-shaking, code splitting, and unused dependency removal. Use when optimizing frontend bundle size."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__audit_workspace
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__audit_workspace, mcp__hex-line__read_file, mcp__hex-line__grep_search, mcp__hex-line__outline
 license: MIT
 ---
 
@@ -42,6 +42,9 @@ Reduces JavaScript or TypeScript bundle size using keep/discard verification. JS
 | Workspace baseline safe | Yes | In managed runs coordinator already prepared it; in standalone runs protect rollback locally |
 
 **MANDATORY READ:** Load `shared/references/ci_tool_detection.md` for build detection.
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` and `shared/references/mcp_integration_patterns.md`
+
+Use `hex-graph` first when hotspots or clone groups materially improve optimization targeting. Use `hex-line` first for local code and config reads when available. If MCP is unavailable, unsupported, or not indexed, continue with built-in `Read/Grep/Glob/Bash` and state the fallback in the summary.
 
 ### Runtime Coordination
 

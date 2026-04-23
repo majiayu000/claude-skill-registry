@@ -104,6 +104,51 @@ Read `skills/session-end/vault-operations.md` for validator bash contract and re
 
 Read `skills/session-end/drift-operations.md` for checker bash contract and reporting matrix. Complements 2.1: vault-sync validates frontmatter inside the vault tree; drift-check validates narrative claims (paths, counts, issue refs, session-file refs) in top-level repo docs.
 
+### 2.3 Vault Staleness Check (if configured)
+
+> Skip this subsection if `vault-staleness.enabled` is not `true` (default: `false`).
+
+#### Step 1 — Resolve mode
+
+Read `vault-staleness.mode` from `$CONFIG` (default: `warn`). Valid values: `off | warn | strict`.
+
+If `mode === 'off'`, skip Phase 2.3 entirely.
+
+#### Step 2 — Invoke staleness probes
+
+Both probes already ship in `skills/discovery/probes/`. Invoke each via Node import (no shell-out):
+
+```js
+import { runProbe as runStaleness } from '$REPO_ROOT/skills/discovery/probes/vault-staleness.mjs';
+import { runProbe as runNarrative }  from '$REPO_ROOT/skills/discovery/probes/vault-narrative-staleness.mjs';
+
+const projectStaleness = await runStaleness(projectRoot, config);
+const narrativeStaleness = await runNarrative(projectRoot, config);
+```
+
+Each probe returns `{ findings: Array, metrics: Object, duration_ms: Number }` and auto-appends a JSONL summary record to its respective metrics file.
+
+#### Step 3 — Aggregate and route by mode
+
+```
+totalFindings = projectStaleness.findings.length + narrativeStaleness.findings.length
+```
+
+- `mode === 'warn'` (default): report findings to closing report Docs Health line. Never block close.
+- `mode === 'strict'`:
+  - If `totalFindings === 0`: continue, log `Vault staleness: clean (mode=strict)`.
+  - If `totalFindings > 0`: BLOCK the close. Present the findings list and offer override:
+    - On Claude Code: AskUserQuestion with options:
+      1. "Fix and retry Phase 2.3" (Recommended) — exit close, let user investigate
+      2. "Override and close" — proceed, log a Deviation entry in STATE.md `## Deviations`:
+         `- [<ISO timestamp>] Phase 2.3: Vault staleness strict-mode findings overridden by user. Findings: <count> (projects: <N>, narratives: <M>).`
+      3. "Abort close" — exit close without writing
+    - On Codex CLI / Cursor IDE: same options as numbered Markdown list.
+
+#### Step 4 — Surface to closing report
+
+Pass the aggregated counts and mode forward to Phase 6 Final Report (Docs Health line — see Phase 6 below).
+
 ## Phase 3: Documentation Updates
 
 ### 3.0 Defensive Cleanup
@@ -441,6 +486,10 @@ Present to the user:
 - TypeScript: 0 errors
 - Commits: [N] pushed to [branch]
 - Mirror: [synced/skipped]
+- Docs Health: Vault staleness — [render one of the three cases below based on Phase 2.3 result]
+  - Findings present (warn mode): `[N stale projects, M stale narratives] (mode=warn). See .orchestrator/metrics/vault-staleness.jsonl.`
+  - Skipped (disabled or mode=off): `skipped (disabled | mode=off).`
+  - Clean run: `clean (mode=<mode>).`
 - Enforcement: [N violations blocked / M warnings] (or "N/A" if enforcement off)
 - Circuit breaker: [N agents hit limits, M spirals detected] (or "none")
 - Metrics written to: `.orchestrator/metrics/sessions.jsonl`

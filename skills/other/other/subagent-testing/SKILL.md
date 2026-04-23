@@ -1,7 +1,7 @@
 ---
 name: subagent-testing
 description: 'Test skills via RED/GREEN/REFACTOR TDD with fresh subagents. Use when: validating skill behavior, preventing priming bias.'
-version: 1.8.4
+version: 1.9.0
 alwaysApply: false
 category: testing
 tags:

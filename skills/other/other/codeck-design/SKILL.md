@@ -80,9 +80,9 @@ References inform the mapping, not override it. If a signal conflicts with the c
 
 Write extracted signals to `$DECK_DIR/design-notes.md` under `## References`.
 
-## design-dna: isomorphic mapping → design archive
+## DESIGN.md: isomorphic mapping → design archive
 
-Two steps: find the isomorphic mapping (conceptual), then output design-dna.json (specification).
+Two steps: find the isomorphic mapping (conceptual), then output DESIGN.md (specification).
 
 ### Step 1: Isomorphic mapping
 
@@ -104,13 +104,13 @@ Find structurally similar things in your role's knowledge domain:
 
 Even flat lists have a formal structure (accumulation, enumeration, crescendo). Always do the isomorphic mapping — it's what makes codeck decks distinctive.
 
-### Step 2: Generate design-dna.json
+### Step 2: Generate DESIGN.md
 
-Read `references/design-dna-schema.md` — the full three-dimensional schema, unabridged. Record the **complete design intent** in every field, even for effects beyond CSS. The schema header documents the codeck environment constraints; the AI decides how to converge.
+Read `references/design-md-spec.md` — the codeck DESIGN.md format spec, based on [Google design.md](https://github.com/google-labs-code/design.md). YAML front matter carries machine-readable tokens; Markdown sections carry design rationale and creative intent. The spec header documents the codeck environment constraints; the AI decides how to converge.
 
-Every field must be populated — no empty strings. Use `"none"` or `false` for inapplicable fields. A complete DNA forces deliberate decisions across all dimensions; skipping fields causes downstream generation to lack information.
+Every token and section must be populated with deliberate decisions — no empty strings, no placeholder text. Use `"none"` for inapplicable fields. A complete DESIGN.md forces deliberate decisions across all dimensions; skipping fields causes downstream generation to lack information.
 
-Write to `$DECK_DIR/design-dna.json`.
+Write to `$DECK_DIR/DESIGN.md`.
 
 ## Style reveal
 
@@ -124,7 +124,7 @@ Show the user three things: (1) their content's formal structure, (2) the isomor
 
 Correct and forgettable is a failure mode. Read `references/visual-floor.md` before writing custom.css — 3 CSS benchmarks (dark cinematic, light editorial, minimal tension). Your output must be at least that level.
 
-Pick the closest benchmark, compare element by element. If flatter, push the DNA harder before proceeding.
+Pick the closest benchmark, compare element by element. If flatter, push the DESIGN.md harder before proceeding.
 
 ## Generate content
 
@@ -164,9 +164,9 @@ bash "$ENGINE_DIR/assemble.sh" "$DECK_DIR" "{title}" "{language}" \
 
 ### custom.css
 
-Read `references/design-dna-guide.md` for full mapping rules: design-dna.json → custom.css.
+Read `references/design-md-guide.md` for full mapping rules: DESIGN.md → custom.css.
 
-Flow: `design_system` → `:root` CSS variables → layout primitives → slide type styles → mobile.
+Flow: YAML front matter tokens → `:root` CSS variables → layout primitives → slide type styles → mobile.
 
 **Critical:** `--bg`, `--fg`, `--accent` are engine interface variables. engine.css uses them for progress bar, overview borders, page numbers. They must be defined in `:root`.
 
@@ -280,8 +280,8 @@ Option A → Edit `$DECK_DIR/slides.html` or `$DECK_DIR/custom.css`, re-run asse
 
 > codeck design complete.
 >
-> {One sentence — cite the design-dna isomorphic mapping}
+> {One sentence — cite the DESIGN.md isomorphic mapping}
 >
 > Output: `./{title}-r{revision}.html` (in user's project directory)
-> Intermediates: `$DECK_DIR/design-dna.json` + `$DECK_DIR/design-notes.md`
+> Intermediates: `$DECK_DIR/DESIGN.md` + `$DECK_DIR/design-notes.md`
 > Next: `/codeck-review`

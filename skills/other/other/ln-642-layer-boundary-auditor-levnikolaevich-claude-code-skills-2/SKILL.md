@@ -1,7 +1,7 @@
 ---
 name: ln-642-layer-boundary-auditor
 description: "Checks layer boundary violations, transaction boundaries, session ownership, cross-layer consistency. Use when auditing architecture layers."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_references, mcp__hex-graph__trace_paths, mcp__hex-graph__inspect_symbol, mcp__hex-graph__analyze_architecture
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_references, mcp__hex-graph__trace_paths, mcp__hex-graph__inspect_symbol, mcp__hex-graph__analyze_architecture, mcp__hex-line__read_file, mcp__hex-line__grep_search, mcp__hex-line__outline
 license: MIT
 ---
 
@@ -47,6 +47,9 @@ L3 Worker that audits architectural layer boundaries and detects violations.
 ## Workflow
 
 **MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology.
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` and `shared/references/mcp_integration_patterns.md`
+
+Use `hex-graph` first when references, call paths, or architecture coupling materially improve the audit. Use `hex-line` first for local code and config reads when available. If MCP is unavailable, unsupported, or not indexed, continue with built-in `Read/Grep/Glob/Bash` and state the fallback in the report.
 
 ### Phase 1: Discover Architecture
 

@@ -322,6 +322,10 @@ After presenting findings, ask the user: "Would you like to route these findings
 - `/review-release` includes basic security checks (secrets, debug artifacts)
 - `/review-security` is a comprehensive pre-release security audit — run it before major releases or after significant feature additions
 
+**Relationship to `/review-deep`:**
+- `/review-deep` runs `/review-security` as one phase of a full pre-release sweep across every `/review-*` dimension
+- Use `/review-deep` when you want the full sweep; use `/review-security` alone when security assurance is the specific goal
+
 ## Example Session
 
 ```

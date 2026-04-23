@@ -1,7 +1,7 @@
 ---
 name: ln-402-task-reviewer
 description: "Reviews task implementation for quality, code standards, and test coverage. Use when task is in To Review. Sets task Done or To Rework."
-allowed-tools: Read, Grep, Glob, Bash, WebFetch, mcp__context7, mcp__hex-graph__audit_workspace, mcp__hex-graph__find_references, mcp__hex-graph__analyze_changes, mcp__hex-line__changes
+allowed-tools: Read, Grep, Glob, Bash, WebFetch, mcp__context7, mcp__hex-graph__audit_workspace, mcp__hex-graph__find_references, mcp__hex-graph__analyze_changes, mcp__hex-line__read_file, mcp__hex-line__grep_search, mcp__hex-line__outline, mcp__hex-line__changes
 license: MIT
 ---
 
@@ -65,6 +65,7 @@ Detect operating mode at startup:
 ## Plan Mode Support
 
 **MANDATORY READ:** Load `shared/references/plan_mode_pattern.md` Workflow A (Preview-Only) for plan mode behavior.
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` and `shared/references/mcp_integration_patterns.md`
 
 **CRITICAL: In Plan Mode, plan file = REVIEW PLAN (what will be checked). NEVER write review findings or verdicts to plan file.**
 
@@ -155,6 +156,8 @@ Step 9: Update & Commit
 ```
 
 ## Workflow (concise)
+Use `hex-graph` first when semantic diff, clone groups, references, or review blast radius matter. Use `hex-line` first for local code/config/script/test reads when available. If MCP is unavailable, unsupported, or not indexed, continue with built-in `Read/Grep/Glob/Bash` and record the fallback in the review instead of blocking.
+
 1) **Resolve taskId:** Run Task Resolution Chain per guide (status filter: [To Review]).
 2) **Load task:** Load full task and parent Story independently. Detect type (label "tests" -> test task, else implementation/refactor).
 3) **Read context:** Full task + parent Story; load affected components/docs; review diffs if available.
@@ -168,7 +171,7 @@ Step 9: Update & Commit
    - Approach: diff aligned with Technical Approach in Story. If different → rationale documented in code comments.
    - **Clean code:** Per checklist — verify all 4 categories. Replaced implementations fully removed. If refactoring changed API — callers updated, old signatures removed. <!-- Defense-in-depth: also checked by ln-511 MNT-DC- -->
    - **Cross-file DRY:** For each NEW function/class/handler created by task, Grep `src/` for similar names/patterns (count mode). If 3+ files contain similar logic → add CONCERN: `MNT-DRY-CROSS: {pattern} appears in {count} files — consider extracting to shared module.` This catches cross-story duplication that per-task review misses. <!-- Defense-in-depth: also checked by ln-511 MNT-DRY- -->
-   - **Cross-file DRY preferred (hex-graph):** If hex-graph indexed, use `audit_workspace(path=scan_path, verbosity="full")` and inspect returned `clones`. Filter groups where any member is in task-modified files. Each match = CONCERN: `MNT-DRY-CROSS`. Fall back to Grep name search above if hex-graph unavailable.
+   - **Cross-file DRY preferred (hex-graph):** If hex-graph indexed, use `audit_workspace(path=scan_path, verbosity="minimal", limit=5, clone_member_limit=3)` and inspect returned `clones`. Raise limits only when the bounded preview is insufficient. Filter groups where any member is in task-modified files. Each match = CONCERN: `MNT-DRY-CROSS`. Fall back to Grep name search above if hex-graph unavailable.
    - No hardcoded creds/URLs/magic numbers; config in env/config.
    - Destructive operation guards: use code-level guards table from destructive_operation_safety.md (loaded above). CRITICAL/HIGH severity → BLOCKER: SEC-DESTR-{ID}. MEDIUM severity → CONCERN: SEC-DESTR-{ID}.
    - Error handling: all external calls (API, DB, file I/O) wrapped in try/catch or equivalent. No swallowed exceptions. Layering respected; reuse existing components. <!-- Defense-in-depth: layers also checked by ln-511 ARCH-LB- -->

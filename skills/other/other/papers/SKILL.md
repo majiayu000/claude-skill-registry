@@ -5,7 +5,7 @@ description: >-
   and open-access discovery chains. Fetches and parses
   PDFs for key findings. Use when the user needs academic
   papers, citations, or formal research on a topic.
-version: 1.7.1
+version: 1.9.0
 alwaysApply: false
 category: research
 tags:

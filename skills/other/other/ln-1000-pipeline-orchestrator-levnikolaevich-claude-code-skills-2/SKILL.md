@@ -27,7 +27,7 @@ Drives a selected Story through the full pipeline (task planning -> validation -
 ```
 L0: ln-1000-pipeline-orchestrator (sequential Skill calls, single context)
   +-- Skill("ln-300") — task decomposition (internally manages stateful task-plan workers)
-  +-- Skill("ln-310") — validation (internally launches Codex/Gemini agents)
+  +-- Skill("ln-310") — validation (internally launches configured external review agents when available)
   +-- Skill("ln-400") — execution (internally dispatches stateful task workers)
   +-- Skill("ln-500") — quality gate (internally runs artifact-first ln-510/ln-520, verdict, finalization)
 ```

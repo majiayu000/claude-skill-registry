@@ -42,7 +42,7 @@ If custom.css + slides.html exist but no assembled HTML, re-run assemble.sh.
 
 Read `$DECK_DIR/outline.md` — page structure, user intent.
 Read `$DECK_DIR/design-notes.md` — designer's decisions and note to reviewer.
-Read `$DECK_DIR/design-dna.json` — full design intent (color, typography, effects, motion).
+Read `$DECK_DIR/DESIGN.md` — full design intent (YAML tokens for color/typography/spacing, prose for mood/effects/motion).
 Read `$DECK_DIR/diagnosis.md` — role activation.
 
 **Role transition:** if design-notes.md has a "note to reviewer", respond in your activated role's voice.
@@ -92,7 +92,7 @@ Content issues → fix slides.html.
 ### 4. Visual hierarchy
 - Clear eye guidance? Title → body hierarchy?
 - Whitespace intentional? (Sparse can be deliberate — check design-notes before adding content)
-- Color matches content mood from design-dna?
+- Color matches content mood from DESIGN.md `## Overview`?
 - Type scale ratio ≥ 2.5:1 heading/body?
 
 Style issues → fix custom.css.
@@ -119,7 +119,7 @@ Check that AI-generated content doesn't break the engine:
 
 ### 7. Visual quality
 
-Compare against the design-dna.json intent and visual-floor benchmarks (`~/.claude/skills/codeck-design/references/visual-floor.md`).
+Compare against the DESIGN.md intent and visual-floor benchmarks (`~/.claude/skills/codeck-design/references/visual-floor.md`).
 
 - **Surface depth** — does the deck have material quality (gradients, shadows, glass, noise, blend modes)? Or flat colored rectangles?
 - **Type as design** — are headings visually commanding (large scale, tight tracking, gradient fill, weight contrast)? Or default-looking text?
@@ -127,7 +127,7 @@ Compare against the design-dna.json intent and visual-floor benchmarks (`~/.clau
 - **Font character** — are fonts distinctive (Google Fonts, not Inter/Roboto/system-ui)? Is `@import` present in custom.css with fallback stack?
 - **Fragment entrances** — do entrance types match content mood? Are custom types used where appropriate?
 
-If the design-dna specifies an effect or technique that's missing from custom.css, flag it.
+If the DESIGN.md specifies an effect or technique that's missing from custom.css, flag it.
 
 Style issues → fix custom.css.
 
@@ -135,7 +135,7 @@ Style issues → fix custom.css.
 
 Before flagging a visual "inconsistency," check if it's intentional:
 
-- **Color varies across slides** → check design-dna for `color_temperature_drift` or design-notes for "color drift". Intentional variation is not a bug.
+- **Color varies across slides** → check DESIGN.md `## Visual Effects` or design-notes for "color drift". Intentional variation is not a bug.
 - **A slide is mostly empty** → check if it's a breathing page (one element + whitespace = deliberate pacing). Don't fill it.
 - **Slide density alternates** → check for density inversion pattern. Forte → piano is a technique.
 - **Title is extremely large (>80px)** → check visual-floor benchmarks. 88–120px is normal for impact slides.

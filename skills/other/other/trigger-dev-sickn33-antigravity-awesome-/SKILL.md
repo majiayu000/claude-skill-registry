@@ -951,7 +951,6 @@ Workflow:
 Works well with: `nextjs-app-router`, `vercel-deployment`, `ai-agents-architect`, `llm-architect`, `email-systems`, `stripe-integration`
 
 ## When to Use
-
 - User mentions or implies: trigger.dev
 - User mentions or implies: trigger dev
 - User mentions or implies: background task
@@ -959,3 +958,8 @@ Works well with: `nextjs-app-router`, `vercel-deployment`, `ai-agents-architect`
 - User mentions or implies: long running task
 - User mentions or implies: integration task
 - User mentions or implies: scheduled task
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

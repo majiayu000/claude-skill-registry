@@ -1,13 +1,13 @@
 ---
 name: design-md
-description: Create or fetch DESIGN.md design system files in the Google Stitch 9-section format. Fetch reference designs from 68 brands (Linear, Stripe, Vercel, etc.) via getdesign CLI, or generate scaffolds from existing CSS custom properties and Tailwind tokens. Pairs with minoan-frontend-design for implementation. Triggers on "DESIGN.md", "create design system file", "extract design tokens", "codify the design", "getdesign", "make it look like [brand]".
+description: Create, fetch, validate, or export DESIGN.md design system files in the Google Stitch 9-section format. Fetch reference designs from 68 brands (Linear, Stripe, Vercel, etc.) via getdesign CLI, generate scaffolds from existing CSS custom properties and Tailwind tokens, or validate and export with the Google @google/design.md CLI. Pairs with minoan-frontend-design for implementation. Triggers on "DESIGN.md", "create design system file", "extract design tokens", "codify the design", "getdesign", "make it look like [brand]", "lint design", "validate DESIGN.md", "export design tokens", "export tailwind theme".
 ---
 
 # DESIGN.md — Design System Library & Generator
 
 DESIGN.md is a plain-text design system document in the [Google Stitch](https://stitch.withgoogle.com/docs/design-md/format/) 9-section format that AI agents read to generate consistent UI. It is the token layer between design intent (`.design-context.md` from `/shape`) and implementation (`/minoan-frontend-design`).
 
-## Two Workflows
+## Three Workflows
 
 ### Workflow A: Fetch a reference DESIGN.md
 
@@ -53,6 +53,27 @@ The script scans for CSS files containing `@theme` blocks (Tailwind CSS 4), `:ro
 
 After generating the scaffold, fill in the prose sections using project context — the conceptual direction, the atmosphere, the design guardrails. The format spec is at `references/design-md-format.md`.
 
+### Workflow C: Validate and export with Google CLI
+
+Use `@google/design.md` (the upstream CLI for the 9-section format) to lint, diff, and export:
+
+```bash
+npx @google/design.md lint DESIGN.md                       # 8 validation rules, JSON output
+npx @google/design.md diff OLD.md NEW.md                   # Token-level diff, exits 1 on regressions
+npx @google/design.md export --format tailwind DESIGN.md   # Tailwind theme JSON
+npx @google/design.md export --format dtcg DESIGN.md       # W3C Design Token Format JSON
+```
+
+**Lint after generate**: Run lint after Workflow B to surface missing sections, broken refs, and contrast issues before prose completion.
+
+**Lint before handoff**: Run lint before passing DESIGN.md to `/minoan-frontend-design`. Clean lint (exit 0) confirms structural completeness.
+
+**Export for implementation**: `export --format tailwind` produces a theme JSON that downstream tooling can consume directly.
+
+**Diff for versioning**: Compare a project's DESIGN.md against a library reference or audit changes between revisions. Exit 1 = regressions (removed tokens, broken contrast).
+
+See `references/google-cli.md` for lint rule reference and exit code semantics.
+
 ## The 9-Section Format
 
 | # | Section | Content |
@@ -74,6 +95,7 @@ See `references/design-md-format.md` for the full annotated spec with examples f
 ```
 /shape → .design-context.md (intent: audience, mood, anti-goals)
 /design-md → DESIGN.md (tokens: hex values, font stacks, shadow systems)
+  lint → npx @google/design.md lint DESIGN.md (validation gate)
 /minoan-frontend-design → implementation (creative direction + materials)
 /design-audit + /design-polish → refinement
 ```

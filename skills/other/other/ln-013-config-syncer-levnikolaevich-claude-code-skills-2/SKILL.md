@@ -1,6 +1,6 @@
 ---
 name: ln-013-config-syncer
-description: "Use when syncing skills, MCP settings, defaults, and hooks from Claude Code to Gemini CLI, Codex CLI, and Google Antigravity. Verifies language-analyzer providers for synced MCP servers match the project's languages."
+description: "Use when syncing skills, MCP settings, defaults, and hooks from Claude Code to Gemini CLI, Codex CLI, and Google Antigravity, with provider checks for synced MCP servers."
 license: MIT
 ---
 
@@ -19,6 +19,8 @@ Shared MCP servers still come from Claude. Codex top-level execution defaults ar
 
 **MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`, `shared/references/environment_worker_runtime_contract.md`, and `shared/references/worker_runtime_contract.md`
 **MANDATORY READ:** Load `shared/references/agent_skill_roots_contract.md`
+
+Config sync must still complete when MCP servers are unavailable. Use local config inspection as the primary path for sync, and record provider validation as `skipped` rather than failing the worker when the required MCP is disconnected.
 
 ---
 

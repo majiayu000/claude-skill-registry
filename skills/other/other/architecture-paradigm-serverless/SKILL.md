@@ -1,7 +1,7 @@
 ---
 name: architecture-paradigm-serverless
 description: 'Apply serverless FaaS patterns for event-driven workloads with minimal infrastructure. Use when cost scales with usage.'
-version: 1.7.1
+version: 1.9.0
 alwaysApply: false
 category: architectural-pattern
 tags:
@@ -60,15 +60,3 @@ estimated_tokens: 700
   - **Mitigation**: Tracing execution across distributed functions can be complex. Standardize on specific instrumentation libraries and structured logging to simplify debugging.
 - **Resource Limits**:
   - **Mitigation**: Actively monitor provider-imposed limits, such as concurrency and memory quotas. Design workloads to be shardable or horizontally scalable to stay within these constraints.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

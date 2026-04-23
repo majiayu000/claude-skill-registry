@@ -30,7 +30,7 @@ Run `/update-nanoclaw` in Claude Code.
 
 **Conflict resolution**: opens only conflicted files, resolves the conflict markers, keeps your local customizations intact.
 
-**Validation**: runs `npm run build` and `npm test`.
+**Validation**: runs `pnpm run build` and `pnpm test`.
 
 **Breaking changes check**: after validation, reads CHANGELOG.md for any `[BREAKING]` entries introduced by the update. If found, shows each breaking change and offers to run the recommended skill to migrate.
 
@@ -109,7 +109,7 @@ Show file-level impact from upstream:
 Bucket the upstream changed files:
 - **Skills** (`.claude/skills/`): unlikely to conflict unless the user edited an upstream skill
 - **Source** (`src/`): may conflict if user modified the same files
-- **Build/config** (`package.json`, `package-lock.json`, `tsconfig*.json`, `container/`, `launchd/`): review needed
+- **Build/config** (`package.json`, `pnpm-lock.yaml`, `tsconfig*.json`, `container/`, `launchd/`): review needed
 - **Other**: docs, tests, misc
 
 **Large drift check:** If the upstream commit count and age suggest the user has a lot of catching up to do, mention that `/migrate-nanoclaw` might be a better fit — it extracts customizations and reapplies them on clean upstream instead of merging. Offer it as an option but don't push.
@@ -175,8 +175,8 @@ If it gets messy (more than 3 rounds of conflicts):
 
 # Step 5: Validation
 Run:
-- `npm run build`
-- `npm test` (do not fail the flow if tests are not configured)
+- `pnpm run build`
+- `pnpm test` (do not fail the flow if tests are not configured)
 
 If build fails:
 - Show the error.
@@ -234,7 +234,7 @@ Tell the user:
 - Backup branch also exists: `backup/pre-update-<HASH>-<TIMESTAMP>`
 - Restart the service to apply changes:
   - If using launchd: `launchctl unload ~/Library/LaunchAgents/com.nanoclaw.plist && launchctl load ~/Library/LaunchAgents/com.nanoclaw.plist`
-  - If running manually: restart `npm run dev`
+  - If running manually: restart `pnpm run dev`
 
 
 ## Diagnostics

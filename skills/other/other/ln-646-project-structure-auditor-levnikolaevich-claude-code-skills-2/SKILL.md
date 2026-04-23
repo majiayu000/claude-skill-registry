@@ -1,7 +1,7 @@
 ---
 name: ln-646-project-structure-auditor
 description: "Checks file hygiene, ignore files, framework conventions, domain/layer organization, naming. Use when auditing project structure."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__analyze_architecture
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__analyze_architecture, mcp__hex-line__read_file, mcp__hex-line__grep_search, mcp__hex-line__outline
 license: MIT
 model: claude-haiku-4-5
 ---
@@ -44,6 +44,9 @@ L3 Worker that audits the physical directory structure of a project against fram
 ## Workflow
 
 **MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology.
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` and `shared/references/mcp_integration_patterns.md`
+
+Use `hex-graph` first when architecture summaries materially improve structure findings. Use `hex-line` first for local code, config, and manifest reads when available. If MCP is unavailable, unsupported, or not indexed, continue with built-in `Read/Grep/Glob/Bash` and state the fallback in the report.
 
 ### Phase 1: Detect Tech Stack
 

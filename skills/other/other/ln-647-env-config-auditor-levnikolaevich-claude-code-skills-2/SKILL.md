@@ -1,7 +1,7 @@
 ---
 name: ln-647-env-config-auditor
 description: "Checks env var config sync, missing defaults, naming conventions, startup validation. Use when auditing environment configuration."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_symbols, mcp__hex-graph__find_references
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_symbols, mcp__hex-graph__find_references, mcp__hex-line__read_file, mcp__hex-line__grep_search, mcp__hex-line__outline
 license: MIT
 model: claude-haiku-4-5
 ---
@@ -31,8 +31,11 @@ Specialized worker auditing environment variable configuration, synchronization,
 ## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` and `shared/references/mcp_integration_patterns.md`
 
 Receives `contextStore` with tech stack, codebase root, output_dir, domain_mode, scan_path.
+
+Use `hex-graph` first when symbol or reference analysis materially improves env-var sync findings. Use `hex-line` first for local code/config reads when available. If MCP is unavailable, unsupported, or not indexed, continue with built-in `Read/Grep/Glob/Bash` and state the fallback in the report.
 
 ## Workflow
 

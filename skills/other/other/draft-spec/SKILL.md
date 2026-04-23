@@ -55,17 +55,29 @@ Keep findings at the decision level: what tools can do, which approaches are idi
 
 ## Step 3: Deep-Dive Discussion
 
-Explore the project through multi-turn conversation. Cover these categories over the course of the discussion — track coverage internally but do not present them as a rigid checklist. Follow the user's energy and weave topics in naturally.
+Explore the project through multi-turn conversation. Gather behavioral requirements (the "what") before architectural design (the "how"), so design decisions land against a concrete set of requirements instead of being taken in the abstract. Track coverage internally but do not present the list as a rigid checklist. When the user jumps to architecture early, engage briefly then circle back to confirm the behavioral picture is complete.
+
+### Requirements (gather first)
 
 | Category | What to explore |
 |---|---|
 | **Users and personas** | Who uses this? Goals, pain points, technical sophistication |
-| **Core features** | Primary capabilities and user-facing workflows |
+| **Core behaviors** | Primary capabilities and user-facing workflows — the behaviors the system must exhibit |
+| **Non-functional requirements** | Performance, security, accessibility, i18n, compliance |
+
+### Design (gather after requirements are clear)
+
+| Category | What to explore |
+|---|---|
 | **Architecture** | Client/server split, monolith vs services, real-time needs, offline support |
 | **Tech stack** | Languages, frameworks, databases, hosting — preferences and constraints |
 | **Data model** | Key entities, relationships, storage strategy |
 | **Integrations** | Third-party APIs, auth providers, external data sources |
-| **Non-functional requirements** | Performance, security, accessibility, i18n, compliance |
+
+### Cross-cutting
+
+| Category | What to explore |
+|---|---|
 | **MVP scope** | What ships first? What is explicitly deferred? |
 | **Open questions** | Unknowns needing research, prototyping, or external input |
 
@@ -79,14 +91,68 @@ Explore the project through multi-turn conversation. Cover these categories over
 
 ## Step 4: Draft the Spec
 
-Synthesize the consulted skill and doc context plus the entire discussion into `.turbo/specs/<slug>.md` using the slug picked in Step 1. Structure the document organically based on what emerged in conversation:
+Synthesize the consulted skill and doc context plus the entire discussion into `.turbo/specs/<slug>.md` using the slug picked in Step 1. Use the fixed skeleton below.
 
-- Include only sections with real substance — no placeholder filler
-- Use concrete details from the discussion, not vague generalizations
-- Where the user deferred a decision, capture it in an Open Questions section
-- Where recommendations were accepted, state them as decisions with brief rationale
-- Adapt the structure to the project — a CLI tool spec looks different from a SaaS platform spec
-- Trace every specified component (data model, API, utility, service) to at least one consumer in the spec. If a component exists only to "support future work," either spec the future work concretely or defer the component.
+````markdown
+# <Project or Feature Name>
+
+## Overview
+
+<One or two paragraphs stating the problem being solved and the vision for the solution.>
+
+## Users
+
+<Personas and their goals. Omit this section if the project has no meaningful user role distinction (e.g., a single-integrator internal library).>
+
+## Requirements
+
+Enumerated behavioral requirements with stable IDs. Number requirements `R1`, `R2`, `R3`, ... IDs must stay stable once drafted so downstream artifacts can reference them reliably.
+
+Pick either format per requirement; both can appear in the same spec.
+
+**EARS format** — for unambiguous, testable behaviors:
+
+- **R1.** When <trigger or condition>, the system shall <expected behavior>.
+
+Adapt the slot to the EARS pattern that fits: `When` (event-driven), `While` (state-driven), `Where` (optional feature), `If ... then` (unwanted behavior), or a bare `The system shall ...` (ubiquitous).
+
+**User story format** — for user-facing capabilities with acceptance criteria:
+
+- **R2.** As a <persona>, I want <capability> so that <outcome>.
+  - Acceptance: <criterion 1>
+  - Acceptance: <criterion 2>
+
+Group related requirements under `### <Subheading>` when the list grows past ~8 items. IDs stay contiguous across subheadings.
+
+## Design
+
+Technical approach that satisfies the requirements above. Cover the elements that apply:
+
+- **Architecture** — component split, deployment shape, communication patterns
+- **Tech stack** — languages, frameworks, libraries, hosting
+- **Data model** — key entities, relationships, storage strategy
+- **Integrations** — third-party APIs, auth providers, external data sources
+- **Key flows** — sequence or data flow for any non-trivial interaction
+
+State decisions, not options. Where a decision was deferred, move it to Open Questions.
+
+## MVP Scope
+
+<What ships first versus what is explicitly deferred. Omit this section if scope is not staged.>
+
+## Open Questions
+
+<Unresolved decisions needing further input, research, or prototyping. Omit this section if none remain after Step 5.>
+````
+
+### Drafting Rules
+
+- `## Overview`, `## Requirements`, and `## Design` are mandatory. `## Users`, `## MVP Scope`, and `## Open Questions` are omitted when they would be empty.
+- Use concrete details from the discussion, not vague generalizations.
+- Every Design element must trace to at least one requirement. If a design element has no requirement to justify it, either add the requirement or drop the element.
+- Every specified component (data model entity, API endpoint, utility, service) must trace to a consumer in the spec. If a component exists only to "support future work," either spec the future work as a requirement or defer the component.
+- Where the user deferred a decision, capture it in Open Questions.
+- Where recommendations were accepted, state them in Design with brief rationale.
 
 Create the `.turbo/specs/` directory if it does not exist. Accept a different output path if the user provides one.
 
@@ -102,7 +168,7 @@ For each open question:
 
 If the user selects "Other" and provides a freeform answer, accept it and proceed.
 
-Default to resolving. Defer only when the answer genuinely needs codebase or pattern-survey context that is not yet available. If every question resolves, replace the Open Questions section with "None."
+Default to resolving. Defer only when the answer genuinely needs codebase or pattern-survey context that is not yet available. If every question resolves, delete the Open Questions section entirely.
 
 ## Step 6: Present and Finalize
 
@@ -115,6 +181,8 @@ Present the draft to the user. Use `AskUserQuestion` to offer three paths:
 After approval:
 
 > The spec is ready at the resolved spec path. To break it into shells, run `/draft-shells`.
+
+Then use the TaskList tool and proceed to any remaining task.
 
 ## Rules
 

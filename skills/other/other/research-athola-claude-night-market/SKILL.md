@@ -1,7 +1,7 @@
 ---
 name: research
 description: 'Multi-source research across code, discourse, and academic channels.'
-version: 1.8.4
+version: 1.9.0
 alwaysApply: false
 category: orchestration
 tags:

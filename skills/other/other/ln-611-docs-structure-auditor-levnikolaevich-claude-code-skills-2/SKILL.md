@@ -16,7 +16,7 @@ Specialized worker auditing structural quality of project documentation.
 
 ## Purpose & Scope
 
-- Audit documentation for **structural quality** across 7 categories
+- Audit documentation for **structural quality** across 8 categories
 - Scan all `.md` files in project, build hierarchy from `AGENTS.md` when present
 - Return structured findings to coordinator with severity, location, recommendations
 - Calculate compliance score (X/10) for Documentation Structure
@@ -24,8 +24,11 @@ Specialized worker auditing structural quality of project documentation.
 ## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`, `shared/references/docs_quality_contract.md`, `shared/references/docs_quality_rules.json`, and `shared/references/markdown_read_protocol.md`.
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` and `shared/references/mcp_integration_patterns.md`
 
 Receives `contextStore` with: `tech_stack`, `project_root`, `output_dir`.
+
+`hex-line` is optional for this doc-only worker. Use it as an accelerator for large markdown outlines and targeted reads when available; otherwise continue with built-in `Read/Grep/Glob/Bash`.
 
 ## Workflow
 
@@ -100,7 +103,7 @@ Standalone mode still writes the same JSON summary to a worker-owned run-scoped 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
 - [ ] contextStore parsed successfully (including output_dir)
-- [ ] All 7 structural categories audited
+- [ ] All 8 structural categories audited
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated using penalty algorithm
 - [ ] Report written to `{output_dir}/611-structure.md` (atomic single Write call)

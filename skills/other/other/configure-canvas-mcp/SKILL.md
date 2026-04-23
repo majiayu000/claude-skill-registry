@@ -88,6 +88,8 @@ Ask the user:
 > Copy the URL from the browser address bar while your app is open in Power Apps Designer (it should look like `https://make.powerapps.com/e/Default-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/canvas/?action=edit&app-id=...`).
 >
 > Make sure coauthoring is enabled in the app (Settings → Updates → Coauthoring).
+>
+> **Keep this browser tab open for the entire session.** The MCP server communicates with Power Apps through the coauthoring session tied to that tab. Closing the tab ends the coauthoring session, which prevents `compile_canvas` and `sync_canvas` from working and means you can't see or save generated changes.
 
 Then extract from the URL:
 - **ENV_ID**: the path segment between `/e/` and the next `/` (e.g. `Default-91bee3d9-0c15-4f17-8624-c92bb8b36ead`).
@@ -213,7 +215,7 @@ Tell the user:
 
 > ✅ Canvas Authoring MCP server configured (`canvas-authoring`, configPath: `{CONFIG_PATH}`).
 >
-> **Restart GitHub Copilot CLI to activate it.** 
+> **Restart GitHub Copilot CLI to activate it.**
 >
 > After restarting, verify the setup:
 > - `canvas-authoring` should appear in the MCP server list

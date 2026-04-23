@@ -1,6 +1,6 @@
 ---
 name: ai-image-generator
-description: "Generate AI images using Gemini or GPT APIs directly. Covers model selection (Gemini for scenes, GPT for transparent icons), the 5-part prompting framework, API calling patterns, multi-turn editing, and quality assurance. Produces photorealistic scenes, icons, illustrations, OG images, and product shots. Use when building websites that need images, creating marketing assets, or generating visual content. Triggers: 'generate image', 'ai image', 'create hero image', 'make an icon', 'generate illustration', 'create og image', 'ai art', 'image generation'."
+description: "Generate AI images using Gemini or GPT APIs directly. Covers model selection (Gemini for scenes; GPT Image 2 for text rendering, batch variations, multi-reference compositing; GPT Image 1.5 for transparent icons), the 5-part prompting framework, API calling patterns, multi-turn editing, and quality assurance. Produces photorealistic scenes, icons, illustrations, OG images, posters, infographics, and product shots. Use when building websites that need images, creating marketing assets, or generating visual content. Triggers: 'generate image', 'ai image', 'create hero image', 'make an icon', 'generate illustration', 'create og image', 'poster', 'infographic', 'image variations', 'gpt-image-2', 'ai art', 'image generation'."
 allowed-tools:
   - Read
   - Write
@@ -22,11 +22,15 @@ Choose the right model for the job:
 
 | Need | Model | Why |
 |------|-------|-----|
-| **Scenes / stock photos** | Gemini 3.1 Flash Image | Best depth, complexity, environmental context |
-| **Transparent icons / logos** | GPT Image 1.5 | Native RGBA alpha channel (`background: "transparent"`) |
-| **Text on images** | GPT Image 1.5 | 90% accurate text rendering |
-| **Drafts / iteration** | Gemini 2.5 Flash Image | Free tier (~500/day) |
-| **Final client assets** | Gemini 3 Pro Image | Higher detail, better style consistency |
+| **Photorealistic scenes / stock photos** | Gemini 3.1 Flash Image | Best depth, complexity, environmental context |
+| **Final client scenes (higher detail)** | Gemini 3 Pro Image | Higher detail, better style consistency |
+| **Text on images** (posters, OG with copy, infographics) | GPT Image 2 | Text rendering actually works — including multi-script |
+| **10-variation style exploration** | GPT Image 2 | Native batch — one prompt, 10 variants sharing composition + palette |
+| **Multi-reference compositing** (product + lifestyle) | GPT Image 2 | Handles lighting, scale, perspective across references |
+| **Transparent icons / logos** | GPT Image 1.5 | Native RGBA alpha — **GPT Image 2 cannot do transparency** |
+| **Quick drafts / iteration** | Gemini 2.5 Flash Image | Free tier (~500/day) |
+
+**Rule of thumb**: any image with readable text → GPT Image 2 (unless you need transparency, then GPT 1.5). Otherwise → Gemini.
 
 ### Model IDs
 
@@ -35,12 +39,62 @@ Choose the right model for the job:
 | Gemini 3.1 Flash Image | `gemini-3.1-flash-image-preview` | Google AI |
 | Gemini 3 Pro Image | `gemini-3-pro-image-preview` | Google AI |
 | Gemini 2.5 Flash Image | `gemini-2.5-flash-image` | Google AI |
-| GPT Image 1.5 | `gpt-image-1.5` | OpenAI |
+| GPT Image 2 (default) | `gpt-image-2` | OpenAI |
+| GPT Image 2 (ChatGPT-parity output) | `chatgpt-image-latest` | OpenAI |
+| GPT Image 1.5 (transparency-only) | `gpt-image-1.5` | OpenAI |
 
 **Verify model IDs before use** — they change frequently:
 ```bash
 curl -s "https://generativelanguage.googleapis.com/v1beta/models?key=$GEMINI_API_KEY" | python3 -c "import sys,json; [print(m['name']) for m in json.load(sys.stdin)['models'] if 'image' in m['name'].lower()]"
 ```
+
+## GPT Image 2 Specifics
+
+Released 2026-04-22. Three capabilities that change when you'd reach for it.
+
+### 1. Text rendering actually works
+
+Posters, OG images with headlines, infographics with labels, UI mockups, pricing cards. Text is rendered reliably, including non-Latin scripts (Japanese, Korean, Hindi, Bengali). Primary reason to switch from Gemini — Gemini doesn't render readable text at all.
+
+### 2. Multi-variation batching
+
+One prompt, up to 10 images in a single call. Variants share composition and palette but differ in detail. Good for style exploration before committing, A/B options for a client, rapid ideation.
+
+### 3. Multi-reference compositing
+
+Feed reference images alongside your prompt — product shots, lifestyle scenes, logos. The model places the product into the scene with correct lighting, scale, perspective. Enables "product in context" workflows without multi-turn editing.
+
+### Modes
+
+- **Instant** (default, all plans) — generates without a planning pass. Fast, good enough for most cases.
+- **Thinking** (Plus/Pro/Business plans) — plans layout before drawing. Use when element counts matter ("3 icons in a row", "5 feature bullets") or text must land in specific regions. Fewer re-rolls on complex compositions.
+
+### Aspect ratios
+
+3:1 ultra-wide through 1:3 ultra-tall, plus 1:1, 3:2, 2:3, 16:9, 9:16. Wider range than other models — useful for website banners (ultra-wide hero) or mobile story formats (ultra-tall).
+
+### Resolution
+
+Up to 2K on the long edge standard. 4K in beta.
+
+### Generation time
+
+**Up to 2 minutes on complex prompts.** Build async UX — don't block on the response. Show progress or spin off and poll.
+
+### Constraints
+
+- **No transparent backgrounds.** Fall back to `gpt-image-1.5` when you need PNG transparency.
+- **API Org Verification may be required** before the endpoint fires — enable in your OpenAI account settings if you hit auth errors on first call.
+
+### Pricing (per 1024×1024 image)
+
+| Quality | Cost |
+|---------|------|
+| Low | $0.006 |
+| Medium | $0.053 |
+| High | $0.211 |
+
+Token pricing: $5/M text in, $10/M text out, $8/M image in, $30/M image out.
 
 ## The 5-Part Prompting Framework
 
@@ -82,11 +136,15 @@ left. Terracotta-toned wall visible in the background. Shot at
 
 | Purpose | Aspect Ratio | Model |
 |---------|-------------|-------|
-| Hero banner | 16:9 or 21:9 | Gemini |
+| Hero banner (no text) | 16:9 or 21:9 | Gemini |
+| Hero banner with headline copy | 16:9 or 3:1 ultra-wide | GPT Image 2 |
 | Service card | 4:3 or 3:4 | Gemini |
 | Profile / avatar | 1:1 | Gemini |
-| Icon / badge | 1:1 | GPT (transparent) |
-| OG / social share | 1.91:1 | Gemini |
+| Icon / badge (transparent) | 1:1 | GPT Image 1.5 |
+| OG / social share (no text) | 1.91:1 | Gemini |
+| OG / social share with copy | 1.91:1 | GPT Image 2 |
+| Poster / infographic / pricing card / any typography-heavy | varies | GPT Image 2 |
+| Style exploration (10 variants of one concept) | any | GPT Image 2 (batch) |
 | Instagram post | 1:1 or 4:5 | Gemini |
 | Mobile hero | 9:16 | Gemini |
 
@@ -144,7 +202,9 @@ for part in result["candidates"][0]["content"]["parts"]:
 PYEOF
 ```
 
-#### GPT (Transparent Icons)
+#### GPT Image 1.5 — Transparent Icons
+
+Use `gpt-image-1.5` specifically for the transparent PNG case. GPT Image 2 cannot do transparency.
 
 ```python
 python3 << 'PYEOF'
@@ -179,6 +239,60 @@ with open("icon-wrench.png", "wb") as f:
 print(f"Saved: icon-wrench.png ({len(img_data):,} bytes)")
 PYEOF
 ```
+
+#### GPT Image 2 — Text-heavy or Batch Variations
+
+Use `gpt-image-2` when text has to render readably, or when you want 10 variants in one call. **No transparency** — if you need transparent bg, use 1.5 above.
+
+```python
+python3 << 'PYEOF'
+import json, base64, urllib.request, os, sys, pathlib
+
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+if not OPENAI_API_KEY:
+    print("Set OPENAI_API_KEY environment variable"); sys.exit(1)
+
+url = "https://api.openai.com/v1/images/generations"
+
+# 10-variation batch of a pricing card with rendered text
+payload = json.dumps({
+    "model": "gpt-image-2",
+    "prompt": (
+        "A modern pricing card for a web hosting plan. "
+        "Headline 'Starter' in bold sans-serif. "
+        "Price '$29/month' directly below in large type. "
+        "Three feature lines: 'Unlimited bandwidth', 'SSD storage', 'Free SSL'. "
+        "Clean flat design, soft drop shadow, deep blue accent colour. "
+        "White card on light grey background."
+    ),
+    "n": 10,
+    "size": "1024x1024",
+    "quality": "medium",
+    "output_format": "png"
+}).encode()
+
+req = urllib.request.Request(url, data=payload, headers={
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {OPENAI_API_KEY}"
+})
+
+# Timeout: up to 2 min for complex prompts
+resp = urllib.request.urlopen(req, timeout=180)
+result = json.loads(resp.read())
+
+pathlib.Path("variations").mkdir(exist_ok=True)
+for i, item in enumerate(result["data"], 1):
+    img_data = base64.b64decode(item["b64_json"])
+    path = f"variations/pricing-card-{i:02d}.png"
+    with open(path, "wb") as f:
+        f.write(img_data)
+    print(f"Saved: {path} ({len(img_data):,} bytes)")
+
+print(f"\nGenerated {len(result['data'])} variants. Pick the best; delete the rest.")
+PYEOF
+```
+
+**Batch workflow**: generate 10 → review them side-by-side → pick 1-2 → optionally regenerate with tighter prompt on the winning direction. Faster than single-shot + iterate.
 
 ### 4. Save and Optimise
 
@@ -267,6 +381,9 @@ export OPENAI_API_KEY="your-key-here"
 | Using curl for Gemini prompts | Use Python — shell escaping breaks on apostrophes |
 | "Beautiful, professional, high quality" | Use concrete specs: "85mm f/1.8, golden hour light" |
 | Not specifying what to exclude | Always end with "No text, no watermarks, no logos" |
-| Requesting transparent PNG from Gemini | Gemini cannot do transparency — use GPT with `background: "transparent"` |
+| Requesting transparent PNG from Gemini | Gemini cannot do transparency — use GPT Image 1.5 with `background: "transparent"` |
+| Requesting transparent PNG from GPT Image 2 | GPT Image 2 **cannot do transparency** — fall back to `gpt-image-1.5` for this case only |
+| Using GPT Image 1.5 for text on images | GPT Image 1.5 text rendering is unreliable — use `gpt-image-2` for any readable text |
+| Blocking a request to GPT Image 2 | Generation can take up to 2 min on complex prompts — use 180s timeout, build async UX |
 | American defaults for AU businesses | Explicitly specify "Australian" + local architecture, vegetation |
 | Generic data for model ID | Verify current model IDs — they change frequently |

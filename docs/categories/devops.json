@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5331,
-  "updated_at": "2026-04-22T02:08:13.698806Z",
+  "count": 5332,
+  "updated_at": "2026-04-23T02:10:59.634602Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -69622,6 +69622,24 @@
       "stars": 0,
       "install": "microbus-io/fabric/devops/adding-a-configuration-property-microbus-io-fabric",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "eventbridge-rule-creator",

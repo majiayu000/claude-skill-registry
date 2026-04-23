@@ -1,7 +1,7 @@
 ---
 name: escalation-governance
 description: 'Assess whether to escalate models. Use when evaluating reasoning depth.'
-version: 1.8.4
+version: 1.9.0
 alwaysApply: false
 category: agent-workflow
 tags:

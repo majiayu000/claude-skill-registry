@@ -1,7 +1,7 @@
 ---
 name: architecture-review
 description: 'Assess architecture decisions, ADR compliance, coupling analysis, and design principles'
-version: 1.7.1
+version: 1.9.0
 alwaysApply: false
 category: architecture
 tags:
@@ -101,8 +101,9 @@ Load all modules for full reviews. For focused reviews, load only relevant modul
 1. `arch-review:context-established`: Repository, branch, motivation.
 2. `arch-review:adr-audit`: ADR verification and new ADR needs.
 3. `arch-review:interaction-mapping`: Module coupling analysis.
-4. `arch-review:principle-checks`: LoD, security, performance.
-5. `arch-review:risks-actions`: Recommendation and follow-ups.
+4. `arch-review:invariant-check`: Invariant conflict detection and 3-option analysis.
+5. `arch-review:principle-checks`: LoD, security, performance.
+6. `arch-review:risks-actions`: Recommendation and follow-ups.
 
 ## Workflow
 
@@ -139,6 +140,61 @@ Document:
 - Check data ownership clarity.
 - Validate dependency flow direction.
 - Identify coupling violations.
+
+### Step 3.5: Invariant Conflict Detection (`arch-review:invariant-check`)
+
+Before checking principles, identify whether the changes
+conflict with existing design invariants. This is the
+highest-judgment step in architecture review — models
+get this wrong more often than any other call.
+
+**Identify existing invariants:**
+
+1. Scan ADRs for recorded decisions still in "accepted"
+   status
+2. Check module boundaries (are imports crossing layers
+   that previously didn't?)
+3. Check data flow direction (does data now flow in a
+   new direction?)
+4. Check API contracts (are public interfaces changing
+   shape?)
+5. Check structural patterns (is a new pattern being
+   introduced alongside an existing one?)
+
+```bash
+# Detect boundary crossings in changed files
+git diff --name-only | while read f; do
+  head -20 "$f" 2>/dev/null | rg "^(import|from|use |require)" || true
+done
+```
+
+**When a conflict is detected:**
+
+Do NOT recommend a resolution. Present the three options
+and escalate to human judgment:
+
+| Option | When Right | When Wrong |
+|--------|------------|------------|
+| **Preserve invariant** (reject feature) | Invariant simplifies many things; feature is marginal | Feature is genuinely needed and invariant is stale |
+| **Layer on top** (add inelegantly) | Feature is needed; invariant still valuable; imperfection is OK | Layering creates a maintenance trap that will compound |
+| **Revise invariant** (change the design) | Genuine new learning invalidates the original reasoning | You're "cleaning up" a decision you don't fully understand |
+
+**Output format:**
+
+```markdown
+### Invariant Conflicts
+
+[I1] **[Invariant name]** — [what decision it represents]
+- **Conflict**: [what change clashes]
+- **Options**: Preserve / Layer / Revise
+- **Recommendation**: ESCALATE TO HUMAN
+- **Risk if wrong**: [what compounds]
+```
+
+**Why this matters:** Bad invariant decisions compound.
+After a few wrong calls the codebase becomes
+unsalvageable. This is a judgment problem, not a context
+problem — the agent should surface it, not solve it.
 
 ### Step 4: Principle Checks (`arch-review:principle-checks`)
 
@@ -180,6 +236,13 @@ Provide recommendation:
 - [ ] Layers have clear responsibilities.
 - [ ] Dependencies flow downward.
 - [ ] No layer bypassing.
+
+### Invariants
+- [ ] Existing design invariants identified.
+- [ ] Conflicts between changes and invariants surfaced.
+- [ ] Three-option analysis (preserve/layer/revise) presented.
+- [ ] Invariant changes escalated to human judgment.
+- [ ] No silent invariant revisions in the diff.
 
 ### Evolution
 - [ ] Changes are reversible.

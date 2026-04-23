@@ -1,7 +1,7 @@
 ---
 name: ln-831-oss-replacer
 description: "Replaces custom modules with OSS packages using atomic keep/discard testing. Use when migrating custom code to established libraries."
-allowed-tools: Read, Grep, Glob, Bash, WebFetch, mcp__Ref, mcp__context7, mcp__hex-line__outline, mcp__hex-line__bulk_replace, mcp__hex-graph__find_references
+allowed-tools: Read, Grep, Glob, Bash, WebFetch, mcp__Ref, mcp__context7, mcp__hex-line__outline, mcp__hex-line__read_file, mcp__hex-line__grep_search, mcp__hex-line__bulk_replace, mcp__hex-graph__find_references
 license: MIT
 ---
 
@@ -42,6 +42,9 @@ Executes OSS replacement plans from `ln-645-open-source-replacer`. For each cust
 | Workspace baseline safe | Yes | In managed runs coordinator already prepared it; in standalone runs protect rollback locally |
 
 **MANDATORY READ:** Load `shared/references/ci_tool_detection.md` for test detection.
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` and `shared/references/mcp_integration_patterns.md`
+
+Use `hex-line` first for local code edits and reads when available, and use `hex-graph` first when cross-file reference checks materially improve replacement safety. If MCP is unavailable, unsupported, or not indexed, continue with built-in `Read/Grep/Glob/Bash` and state the fallback in the summary.
 
 ### Runtime Coordination
 

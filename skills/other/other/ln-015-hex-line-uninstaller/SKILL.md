@@ -16,6 +16,8 @@ Removes Claude-side hex-line integration surfaces. This worker is standalone-cap
 
 **MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`, `shared/references/environment_worker_runtime_contract.md`, and `shared/references/worker_runtime_contract.md`
 
+This worker cleans Claude-side state directly from config files and CLI state. Missing MCP connectivity is not a blocker; continue with local cleanup and verification wherever possible.
+
 ## Input / Output
 
 | Direction | Content |

@@ -2,7 +2,7 @@
 name: ln-020-codegraph
 description: "Builds and queries code knowledge graph for dependency analysis, references, implementations, and architecture overview. Use when starting work on unfamiliar codebase or before refactoring."
 license: MIT
-allowed-tools: mcp__hex-graph__index_project, mcp__hex-graph__find_symbols, mcp__hex-graph__inspect_symbol, mcp__hex-graph__trace_paths, mcp__hex-graph__find_references, mcp__hex-graph__find_implementations, mcp__hex-graph__trace_dataflow, mcp__hex-graph__analyze_changes, mcp__hex-graph__analyze_edit_region, mcp__hex-graph__analyze_architecture, mcp__hex-graph__audit_workspace, mcp__hex-line__grep_search, mcp__hex-line__read_file
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__index_project, mcp__hex-graph__find_symbols, mcp__hex-graph__inspect_symbol, mcp__hex-graph__trace_paths, mcp__hex-graph__find_references, mcp__hex-graph__find_implementations, mcp__hex-graph__trace_dataflow, mcp__hex-graph__analyze_changes, mcp__hex-graph__analyze_edit_region, mcp__hex-graph__analyze_architecture, mcp__hex-graph__audit_workspace, mcp__hex-line__grep_search, mcp__hex-line__read_file
 ---
 
 > **Paths:** File paths are relative to skills repo root.
@@ -28,6 +28,12 @@ Indexes codebase into a layered graph (tree-sitter AST → SQLite) and provides 
 - Understanding **call flow** → `trace_paths`
 - Finding a **symbol** quickly → `search`
 
+## MCP Availability
+
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` and `shared/references/mcp_integration_patterns.md`
+
+Use `hex-graph` first when the task depends on symbol identity, references, implementations, architecture, dataflow, or edit impact. Use `hex-line` first for targeted local code reads when available. If MCP is unavailable, unsupported, or not indexed, continue with built-in `Glob/Grep/Read/Bash`, answer with manual evidence, and explicitly note the degraded confidence instead of blocking the skill.
+
 ## Workflow
 
 ### Phase 1: Index
@@ -44,6 +50,8 @@ Call: index_project({ path: "{project_path}" })
 Call: index_project({ path: "{project_path}" })
 ```
 Idempotent — skips unchanged files automatically.
+
+**If `hex-graph` is unavailable:** build a manual project map with `Glob` and targeted `Grep/Read`, then continue to the closest matching query workflow without indexing.
 
 ### Phase 2: Query
 
@@ -88,8 +96,8 @@ Route based on user intent:
 
 ### Phase 3: Present Results
 
-1. Show MCP tool output directly; `hex-graph` uses a compact line grammar with action-line, `#section`, `.row`, `!detail`, and executable `>` follow-up pointers
-2. For code snippets referenced in results, use `hex-line read_file` with line ranges; add `edit_ready=true, verbosity="full"` only when you intend to carry revision/checksums into an edit
+1. Show MCP tool output directly when available; otherwise present manual findings and mark them as fallback reasoning
+2. For code snippets referenced in results, use `hex-line read_file` with line ranges when available; otherwise use built-in `Read`
 3. Suggest follow-up queries based on results:
   - After `find_symbols` with a clean top match → suggest `inspect_symbol` with `workspace_qualified_name`
   - After `find_symbols` with `partial ... truncated=1` → suggest narrowing `path` or switching to `name + file` before any deeper graph tool
@@ -123,9 +131,10 @@ Add to `.mcp.json`:
 
 ## Definition of Done
 
-- [ ] Project indexed (index_project returns success)
+- [ ] Project indexed or manual fallback map built
 - [ ] Query results shown to user
 - [ ] Follow-up suggestions provided
+- [ ] Fallback path stated when MCP was unavailable
 
 ---
 **Version:** 0.1.0

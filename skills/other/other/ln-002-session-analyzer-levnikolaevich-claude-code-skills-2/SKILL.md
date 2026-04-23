@@ -36,6 +36,8 @@ For skill self-audit: `shared/references/meta_analysis_protocol.md` §7. For mul
 - `recent` — scan latest JSONL session per agent (Claude, Codex, Gemini)
 - `{skill-name}` — focus analysis on that skill's execution within the session
 
+`hex-line` is an optional accelerator for large local session logs and repo files. If MCP is unavailable, continue with built-in `Read/Grep/Glob/Bash`; this skill must never block on MCP connectivity.
+
 ---
 
 ## Dimensions

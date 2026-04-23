@@ -4,7 +4,7 @@ description: Dispatch parallel prose and craft review agents on generated
   text. Merges results into unified advisory tables. Auto-fixes hard
   failures and presents soft findings for user decision. Use after
   voice-generate or on any text that should match a voice profile.
-version: 1.8.4
+version: 1.9.0
 globs: "**/*.{md,txt}"
 alwaysApply: false
 category: writing-quality
@@ -142,11 +142,23 @@ Can also be run on any existing text:
 /voice-review path/to/file.md --profile myvoice --register casual
 ```
 
-## Exit Criteria
+## Verification
 
-- Both review agents returned results
-- Hard failures auto-fixed
-- Advisory tables presented to user
-- User decisions applied
-- Final text saved
-- Snapshots saved (if learning mode)
+After the review completes, validate these conditions:
+
+- Both review agents returned results (no timeouts)
+- Hard failures auto-fixed and diff shown to user
+- Advisory tables presented with accept/reject/rewrite options
+- User decisions applied to the final text
+- Final text saved to disk
+- Snapshots saved (if learning mode active)
+
+## Test Spec
+
+The test suite (`test_voice_review.py`) validates:
+
+- Skill file exists and references parallel dispatch
+- Hard failure vs advisory separation is documented
+- Prose reviewer agent exists with hard-failure patterns
+- Craft reviewer agent exists with five-dimension ratings
+- Both agents produce structured output tables

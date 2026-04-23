@@ -25,6 +25,8 @@ Load these before execution:
 - `shared/references/environment_state_contract.md`
 - `shared/references/environment_state_schema.json`
 
+MCP servers are targets of this workflow, not a prerequisite for starting it. If a server is disconnected or unavailable, continue with file and CLI inspection and report that surface as `disconnected` or `skipped` instead of failing the coordinator.
+
 ## When to Use
 
 - First-time environment setup

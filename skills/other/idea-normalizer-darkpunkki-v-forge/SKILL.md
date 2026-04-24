@@ -1,11 +1,11 @@
-﻿---
-name: Normalize idea
-description: Normalize an idea into a consistent structure (writes to ideas/<IDEA_ID>/runs and updates ideas/<IDEA_ID>/latest). If Open Questions exist, ask the user and finalize with captured answers.
+---
+name: idea-normalizer
+description: "Normalize a raw idea into a structured document with consistent sections, open questions, and interactive resolution. Use when you have a freeform idea.md and need a standardized idea_normalized.md with goals, constraints, and workflow."
 argument-hint: "<IDEA_ID>   (example: IDEA-0002_controller-tool)"
 disable-model-invocation: true
 ---
 
-# Idea Normalizer â€” Agent Instructions
+# Idea Normalizer — Agent Instructions
 
 ## Invocation
 
@@ -145,35 +145,35 @@ Then also update:
 
 ## Interactive Open Questions Resolution (IMPORTANT)
 
-Goal: avoid leaving key decisions as â€œOpen Questionsâ€ when the user can answer them now.
+Goal: avoid leaving key decisions as "Open Questions" when the user can answer them now.
 
 ### Default behavior
 - If Open Questions exist, you MUST ask the user those questions and capture their answers.
 - Exception: if `normalizer_config.md` explicitly sets `interactive: false`, then proceed without asking and keep Open Questions as-is.
 
-### Phase 1 â€” Draft + ask
+### Phase 1 — Draft + ask
 After producing `idea_normalized_draft.md` and `open_questions.md`:
 
 1) Present the questions to the user as a numbered list.
 2) Ask the user to answer in the same numbered format.
-3) STOP and wait for the userâ€™s reply.
+3) STOP and wait for the user"™s reply.
 
 Also append a run_log entry with:
 - Status: `NEEDS_USER_INPUT`
 - Run-ID: `<RUN_ID>`
 - Output draft paths
 
-### Phase 2 â€” Capture answers + finalize
+### Phase 2 — Capture answers + finalize
 When the user replies:
 
-1) Save the userâ€™s answers to:
+1) Save the user"™s answers to:
 - `docs/forge/ideas/<IDEA_ID>/inputs/normalizer_answers.md`
-  - Append a new section with header: `### <ISO-8601> â€” Answers for <RUN_ID>`
+  - Append a new section with header: `### <ISO-8601> — Answers for <RUN_ID>`
 
 2) Produce final `idea_normalized.md`:
 - Move answered items into the correct sections (Constraints, Preferences, Outputs, etc.)
-- Remove or reword answered questions from â€œOpen Questionsâ€
-- Keep any truly unresolved items in â€œOpen Questionsâ€
+- Remove or reword answered questions from "Open Questions"
+- Keep any truly unresolved items in "Open Questions"
 
 3) Write final outputs to `runs/<RUN_ID>/idea_normalized.md` and `latest/idea_normalized.md`
 
@@ -209,7 +209,7 @@ Normalization does NOT mean:
 - Convert free-form text into concise bullets where appropriate
 - Mark assumptions explicitly as assumptions
 - Capture constraints and exclusions explicitly
-- Include â€œOpen Questionsâ€ for missing decisions (only those that remain after interactive resolution)
+- Include "Open Questions" for missing decisions (only those that remain after interactive resolution)
 
 ### You MUST NOT
 
@@ -318,7 +318,7 @@ status: "Draft"
 Append an entry with this shape:
 
 ```md
-### <ISO-8601 timestamp> â€” Idea Normalizer
+### <ISO-8601 timestamp> — Idea Normalizer
 
 - Idea-ID: <IDEA_ID>
 - Run-ID: <RUN_ID>
@@ -332,7 +332,7 @@ Append an entry with this shape:
   - runs/<RUN_ID>/idea_normalized.md (final, if produced)
   - latest/idea_normalized.md (final, if produced)
 - Notes:
-  - <1â€“5 bullets on key clarifications or ambiguities>
+  - <1"“5 bullets on key clarifications or ambiguities>
 - Status: NEEDS_USER_INPUT | SUCCESS | SUCCESS_WITH_WARNINGS | FAILED
 ```
 
@@ -346,7 +346,7 @@ If it exists, update ONLY the keys under the `Idea` section.
 ### Manifest template (if creating new)
 
 ```md
-# Manifest â€” <IDEA_ID>
+# Manifest — <IDEA_ID>
 
 ## Idea
 

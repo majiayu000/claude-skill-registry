@@ -1,6 +1,6 @@
 ---
-description: Complete Tailwind CSS utility classes reference - Layout, spacing, typography, colors, borders, effects
-user-invocable: false
+name: tailwindcss-utility-classes
+description: "Reference Tailwind CSS utility classes for layout, spacing, typography, colors, borders, and effects. Use when building or reviewing UI components with Tailwind CSS and need the correct class names, scales, or responsive patterns."
 ---
 
 # Tailwind CSS Utility Classes

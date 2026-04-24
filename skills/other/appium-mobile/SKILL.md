@@ -1,94 +1,75 @@
 ---
-name: Appium Mobile Testing
-description: Appium mobile testing framework for iOS and Android automation
-allowed-tools:
-  - Bash
-  - Read
-  - Write
-  - Edit
-  - Glob
-  - Grep
+name: appium-mobile
+description: "Automate mobile app testing with Appium for iOS and Android platforms. Use when writing or maintaining Appium test suites for native, hybrid, or mobile web applications across simulators, emulators, and cloud device farms."
+allowed-tools: "Bash, Read, Write, Edit, Glob, Grep"
 ---
 
-# Appium Mobile Testing Skill
+# Appium Mobile Testing
 
-## Overview
+Automate iOS and Android testing using the Appium framework with WebDriverIO.
 
-This skill provides expert-level capabilities for Appium-based mobile testing, enabling iOS and Android automation for native, hybrid, and web applications.
+## When to Use
 
-## Capabilities
+- Writing Appium test suites for native, hybrid, or mobile web apps
+- Configuring Appium server capabilities for iOS (XCUITest) or Android (UiAutomator2)
+- Integrating with cloud device farms (BrowserStack, Sauce Labs, AWS Device Farm)
+- Implementing mobile-specific gestures (swipe, pinch, long-press)
 
-### Server Configuration
-- Configure Appium server
-- Set up desired capabilities
-- Handle driver initialization
+## Server Configuration
 
-### iOS Testing
-- iOS simulator setup
-- XCUITest driver configuration
-- iOS-specific gestures and interactions
+Set up desired capabilities for your target platform:
 
-### Android Testing
-- Android emulator setup
-- UiAutomator2 driver configuration
-- Android-specific capabilities
+```javascript
+// iOS
+const iosCaps = {
+  platformName: 'iOS',
+  'appium:automationName': 'XCUITest',
+  'appium:deviceName': 'iPhone 14',
+  'appium:app': './app/MyApp.ipa'
+};
 
-### Application Types
-- Native app testing
-- Hybrid app testing (WebView)
-- Mobile web testing
+// Android
+const androidCaps = {
+  platformName: 'Android',
+  'appium:automationName': 'UiAutomator2',
+  'appium:deviceName': 'Pixel 6',
+  'appium:app': './app/MyApp.apk'
+};
+```
 
-### Gesture Handling
-- Swipe, pinch, and long-press gestures
-- Multi-touch interactions
-- Custom gesture sequences
+## Element Locator Strategies
 
-### Element Interaction
-- Mobile-specific locator strategies
-- Accessibility ID locators
-- UI Automator selectors (Android)
-- iOS predicates and class chains
+Prefer resource/accessibility IDs over XPath for reliability:
 
-### Device Farm Integration
-- BrowserStack integration
-- Sauce Labs integration
-- AWS Device Farm
+| Strategy | iOS | Android |
+|----------|-----|---------|
+| **Accessibility ID** (preferred) | `accessibility id` | `accessibility id` |
+| **Class chain** | `-ios class chain` | N/A |
+| **Predicate** | `-ios predicate string` | N/A |
+| **UI Automator** | N/A | `-android uiautomator` |
+| **XPath** (last resort) | `xpath` | `xpath` |
 
-### Mobile Assertions
-- Mobile-specific test assertions
-- Screen orientation validation
-- App state verification
+## Gesture Handling
 
-## Target Processes
+```javascript
+// Swipe up
+await driver.execute('mobile: swipe', { direction: 'up' });
 
-- `mobile-testing.js` - Mobile test implementation
-- `cross-browser-testing.js` - Mobile browser testing
-- `e2e-test-suite.js` - Mobile E2E scenarios
+// Long press
+await driver.execute('mobile: longClickGesture', {
+  elementId: element.elementId,
+  duration: 2000
+});
+```
+
+## Validation Steps
+
+1. Verify app state after each action (`driver.queryAppState('com.app.id')`)
+2. Assert screen orientation when relevant (`driver.getOrientation()`)
+3. Wait for elements explicitly — avoid hard-coded sleeps
 
 ## Dependencies
 
-- `appium` - Appium server
-- `webdriverio` - WebDriver client
-- Mobile SDKs (Xcode, Android SDK)
-
-## Usage Example
-
-```javascript
-{
-  kind: 'skill',
-  skill: {
-    name: 'appium-mobile',
-    context: {
-      action: 'execute-tests',
-      platform: 'iOS',
-      deviceName: 'iPhone 14',
-      app: './app/MyApp.ipa',
-      automationName: 'XCUITest'
-    }
-  }
-}
-```
-
-## Configuration
-
-The skill supports local emulators/simulators and cloud device farms for testing across multiple devices.
+- `appium` — Appium server (v2+)
+- `webdriverio` — WebDriver client
+- Xcode (iOS) or Android SDK (Android)

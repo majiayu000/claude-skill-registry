@@ -4,7 +4,7 @@ description: Use when you need to refactor Java code to adopt modern Java featur
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Modern Java Development Guidelines (Java 8+)
 
@@ -37,6 +37,24 @@ Before applying any modern Java refactoring, ensure the project compiles. If com
 
 - Review Java code for modern Java development
 - Apply best practices for modern Java development in Java code
+
+## Workflow
+
+1. **Compile project before modernization**
+
+Run `./mvnw compile` or `mvn compile` and stop immediately if compilation fails.
+
+2. **Read modern-Java reference and identify candidates**
+
+Read `references/141-java-refactoring-with-modern-features.md` and identify high-value opportunities to adopt modern Java features.
+
+3. **Apply modern Java refactorings**
+
+Refactor incrementally using appropriate language/library features while preserving behavior and readability.
+
+4. **Verify with full build**
+
+Run `./mvnw clean verify` or `mvn clean verify` after applying improvements.
 
 ## Reference
 

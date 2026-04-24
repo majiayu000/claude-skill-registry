@@ -4,7 +4,7 @@ description: Use when you need to take a `*.plan.md` file and turn it into OpenS
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # OpenSpec Change Planning from `*.plan.md`
 
@@ -42,6 +42,28 @@ Always execute OpenSpec commands from the parent directory that contains the `op
 - Update existing OpenSpec project
 - Initialize OpenSpec in requirements folder
 - Validate and archive OpenSpec change
+
+## Workflow
+
+1. **Read and summarize plan input**
+
+Read the provided `*.plan.md`, summarize scope, and identify candidate change-id and affected capabilities.
+
+2. **Check OpenSpec CLI and install gate**
+
+Run `openspec --version`; if missing, provide npm installation guidance for macOS, Linux, and Windows before proceeding.
+
+3. **Initialize or detect OpenSpec project**
+
+From the parent directory containing `openspec/`, run project checks and offer `openspec init` (without `--tools`) when initialization is needed.
+
+4. **Create or update change artifacts**
+
+Explain whether this is a new or existing change, then create/update proposal, design, tasks, and spec deltas using a stable change-id.
+
+5. **Validate and close workflow**
+
+Run `openspec validate --all`; when checklist tasks are complete, guide the user to archive the change with `openspec archive <change-id>`.
 
 ## Reference
 

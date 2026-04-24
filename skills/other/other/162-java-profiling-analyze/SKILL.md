@@ -4,7 +4,7 @@ description: Use when you need to analyze Java profiling data collected during t
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java Profiling Workflow / Step 2 / Analyze profiling data
 
@@ -40,6 +40,24 @@ Validate profiling results represent realistic load before analysis. Document as
 - Analyze the profiling
 - Analyze the profiling
 - Performance analysis
+
+## Workflow
+
+1. **Read analysis reference and inventory inputs**
+
+Read `references/162-java-profiling-analyze.md` and inventory profiling artifacts in `profiler/results/`.
+
+2. **Validate data quality and assumptions**
+
+Confirm datasets represent realistic load conditions and record assumptions/limitations before drawing conclusions.
+
+3. **Identify and prioritize bottlenecks**
+
+Analyze memory/CPU/threading findings, cross-reference multiple files, and prioritize issues by Impact/Effort.
+
+4. **Document findings and solution options**
+
+Create `docs/profiling-problem-analysis-YYYYMMDD.md` and `docs/profiling-solutions-YYYYMMDD.md` with quantitative evidence.
 
 ## Reference
 

@@ -1,15 +1,15 @@
 ---
 name: performance-reporter
 description: 'Generate SEO/GEO dashboards: rankings, traffic, backlinks, AI visibility for stakeholders. SEO报告/绩效仪表盘'
-version: "9.0.0"
+version: "9.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 when_to_use: "Use when generating SEO performance reports, traffic summaries, ranking reports, or stakeholder-facing dashboards."
 argument-hint: "<domain> [date range]"
 metadata:
   author: aaron-he-zhu
-  version: "9.0.0"
+  version: "9.1.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -30,17 +30,11 @@ metadata:
     - "performance report"
     - "traffic report"
     - "SEO dashboard"
-    - "SEO analytics"
-    - "monthly report"
     # EN-casual
-    - "report to stakeholders"
     - "monthly SEO report"
     - "show me my SEO results"
-    - "present SEO results to my boss"
     - "report to my boss"
-    - "monthly SEO summary"
     # EN-question
-    - "how are my SEO metrics"
     - "how is my SEO performing"
     # ZH-pro
     - "SEO报告"
@@ -65,43 +59,16 @@ metadata:
     - "reporte de rendimiento"
     # PT
     - "relatório SEO"
-    # Misspellings
-    - "SEO repoort"
 ---
 
 # Performance Reporter
 
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This monitoring skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-
-
-This skill creates comprehensive SEO and GEO performance reports that combine multiple metrics into actionable insights. It produces executive summaries, detailed analyses, and visual data presentations for stakeholder communication.
-
-**System role**: Monitoring layer skill. It turns performance changes into deltas, alerts, and next actions.
-
-## When This Must Trigger
-
-Use this when the conversation involves time-aware change detection, escalation, or stakeholder-ready visibility — even if the user doesn't use SEO terminology:
-
-- Monthly/quarterly SEO reporting
-- Executive stakeholder updates
-- Client reporting for agencies
-- Tracking campaign performance
-- Combining multiple SEO metrics
-- Creating GEO visibility reports
-- Documenting ROI from SEO efforts
+Creates comprehensive SEO and GEO performance reports combining multiple metrics into actionable insights, executive summaries, and visual data presentations for stakeholder communication.
 
 ## What This Skill Does
 
-1. **Data Aggregation**: Combines multiple SEO data sources
-2. **Trend Analysis**: Identifies patterns across metrics
-3. **Executive Summaries**: Creates high-level overviews
-4. **Visual Reports**: Presents data in clear formats
-5. **Benchmark Comparison**: Tracks against goals and competitors
-6. **Content Quality Tracking**: Integrates CORE-EEAT scores across audited pages
-7. **ROI Calculation**: Measures SEO investment returns
-8. **Recommendations**: Suggests actions based on data
+Aggregates SEO/GEO data sources, generates executive summaries and visual reports, benchmarks against goals and competitors, calculates ROI, and provides prioritized recommendations.
 
 ## Quick Start
 
@@ -140,34 +107,11 @@ Generate a content performance report
 
 ### Handoff Summary
 
-Emit this shape when finishing the skill (see [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) for the authoritative format):
-
-- **Status**: DONE / DONE_WITH_CONCERNS / BLOCKED / NEEDS_INPUT
-- **Objective**: what was analyzed, created, or fixed
-- **Key Findings / Output**: the highest-signal result
-- **Evidence**: URLs, data points, or sections reviewed
-- **Open Loops**: blockers, missing inputs, or unresolved risks
-- **Recommended Next Skill**: one primary next move
+> Emit the standard shape from [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ## Data Sources
 
-> **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
-
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
-
-**With ~~analytics + ~~search console + ~~SEO tool + ~~AI monitor connected:**
-Automatically aggregate traffic metrics from ~~analytics, search performance data from ~~search console, ranking and backlink data from ~~SEO tool, and GEO visibility metrics from ~~AI monitor. Creates comprehensive multi-source reports with historical trends.
-
-**With manual data only:**
-Ask the user to provide:
-1. Analytics screenshots or traffic data export (sessions, users, conversions)
-2. Search Console data (impressions, clicks, average position)
-3. Keyword ranking data for the reporting period
-4. Backlink metrics (referring domains, new/lost links)
-5. Key performance indicators and goals for comparison
-6. AI citation data if tracking GEO metrics
-
-Proceed with the full analysis using provided data. Note in the output which metrics are from automated collection vs. user-provided data.
+All integrations optional (see [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md)). With tools connected, aggregates traffic from ~~analytics, search data from ~~search console, rankings/backlinks from ~~SEO tool, and AI visibility from ~~AI monitor. Without tools, ask user for analytics exports, Search Console data, ranking data, and KPIs.
 
 ## Instructions
 
@@ -196,20 +140,6 @@ When a user requests a performance report:
 11. **Compile Full Report** -- Combine all sections with table of contents, appendix (data sources, methodology, glossary).
 
    > **Reference**: See [references/report-output-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/performance-reporter/references/report-output-templates.md) for complete output templates for all 11 report sections.
-
-## Validation Checkpoints
-
-### Input Validation
-- [ ] Reporting period clearly defined with comparison period
-- [ ] All required data sources available or alternatives noted
-- [ ] Target audience identified (executive/technical/client)
-- [ ] Performance goals and KPIs established for benchmarking
-
-### Output Validation
-- [ ] Every metric cites its data source and collection date
-- [ ] Trends include period-over-period comparisons
-- [ ] Recommendations are specific, prioritized, and actionable
-- [ ] Source of each data point clearly stated (~~analytics data, ~~search console data, ~~SEO tool data, user-provided, or estimated)
 
 ## Example
 
@@ -249,17 +179,7 @@ When a user requests a performance report:
 
 ### Save Results
 
-After delivering monitoring data or reports to the user, ask:
-
-> "Save these results for future sessions?"
-
-If yes, write a dated summary to `memory/monitoring/YYYY-MM-DD-<topic>.md` containing:
-- One-line headline finding or status change
-- Top 3-5 actionable items
-- Open loops or anomalies requiring follow-up
-- Source data references
-
-If any findings should influence ongoing strategy, recommend promoting key conclusions to `memory/hot-cache.md`.
+Ask "Save these results?" If yes, write a dated summary to `memory/monitoring/YYYY-MM-DD-<topic>.md` with headline finding, actionable items, and open loops.
 
 ## Reference Materials
 
@@ -269,4 +189,4 @@ If any findings should influence ongoing strategy, recommend promoting key concl
 
 ## Next Best Skill
 
-- **Primary**: [alert-manager](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/alert-manager/SKILL.md) — turn reporting insights into ongoing monitoring rules.
+Primary → [alert-manager](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/alert-manager/SKILL.md) to turn reporting insights into ongoing monitoring rules.

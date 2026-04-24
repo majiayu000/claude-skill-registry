@@ -1,15 +1,15 @@
 ---
 name: backlink-analyzer
 description: 'Analyze backlink profiles: link authority, toxic links, building opportunities, competitor link gaps. 外链分析/反向链接'
-version: "9.0.0"
+version: "9.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 when_to_use: "Use when analyzing backlink profiles, link quality, toxic links, referring domains, or anchor text distribution."
 argument-hint: "<domain or URL>"
 metadata:
   author: aaron-he-zhu
-  version: "9.0.0"
+  version: "9.1.0"
   geo-relevance: "low"
   tags:
     - seo
@@ -32,20 +32,14 @@ metadata:
     - "check link profile"
     - "find toxic links"
     - "link building opportunities"
-    - "link profile analysis"
     - "backlink audit"
-    - "link quality"
     # EN-casual
     - "who links to me"
     - "I have spammy links"
     - "how do I get more backlinks"
-    - "how do I get more links"
     - "disavow links"
-    - "link building outreach"
-    - "disavow file"
     # EN-question
     - "how to build backlinks"
-    - "how to find toxic backlinks"
     # ZH-pro
     - "外链分析"
     - "反向链接"
@@ -72,43 +66,16 @@ metadata:
     - "enlaces entrantes"
     # PT
     - "análise de backlinks"
-    # Misspellings
-    - "backlink anaylsis"
-    - "backlnk analysis"
 ---
 
 # Backlink Analyzer
 
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This monitoring skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-
-
 Analyzes, monitors, and optimizes backlink profiles. Identifies link quality, discovers opportunities, and tracks competitor link building activities.
-
-**System role**: Monitoring layer skill. It turns performance changes into deltas, alerts, and next actions.
-
-## When This Must Trigger
-
-Use this when the conversation involves time-aware change detection, escalation, or stakeholder-ready visibility — even if the user doesn't use SEO terminology:
-
-- Auditing your current backlink profile
-- Identifying toxic or harmful links
-- Discovering link building opportunities
-- Analyzing competitor backlink strategies
-- Monitoring new and lost links
-- Evaluating link quality for outreach
-- Preparing for link disavow
 
 ## What This Skill Does
 
-1. **Profile Analysis**: Comprehensive backlink profile overview
-2. **Quality Assessment**: Evaluates link authority and relevance
-3. **Toxic Link Detection**: Identifies harmful links
-4. **Competitor Analysis**: Compares link profiles across competitors
-5. **Opportunity Discovery**: Finds link building prospects
-6. **Trend Monitoring**: Tracks link acquisition over time
-7. **Disavow Guidance**: Helps create disavow files
+Analyzes backlink profiles for quality and toxicity, compares link profiles across competitors, discovers link building opportunities, and provides disavow guidance.
 
 ## Quick Start
 
@@ -149,35 +116,11 @@ Compare backlink profiles: [your domain] vs [competitor domains]
 
 ### Handoff Summary
 
-Emit this shape when finishing the skill (see [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) for the authoritative format):
-
-- **Status**: DONE / DONE_WITH_CONCERNS / BLOCKED / NEEDS_INPUT
-- **Objective**: what was analyzed, created, or fixed
-- **Key Findings / Output**: the highest-signal result
-- **Evidence**: URLs, data points, or sections reviewed
-- **Open Loops**: blockers, missing inputs, or unresolved risks
-- **Recommended Next Skill**: one primary next move
+> Emit the standard shape from [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ## Data Sources
 
-> **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
-
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
-
-**Scraping legality**: Before crawling any domain that is not your own or not under written authorization, verify `robots.txt` disallows, respect `Crawl-delay`, and confirm target TOS permits automated access. See [SECURITY.md §Scraping Boundaries](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/SECURITY.md).
-
-**With ~~link database + ~~SEO tool connected:**
-Automatically pull comprehensive backlink profiles including referring domains, anchor text distribution, link quality metrics (DA (Moz Domain Authority™) / DR (Ahrefs Domain Rating™)), link velocity, and toxic link detection from ~~link database. Competitor backlink data from ~~SEO tool for gap analysis.
-
-**With manual data only:**
-Ask the user to provide:
-1. Backlink export CSV (with source domains, anchor text, link type)
-2. Referring domains list with authority metrics
-3. Competitor domains for comparison
-4. Recent link gains/losses if tracking changes
-5. Any known toxic or spammy links
-
-Proceed with the full analysis using provided data. Note in the output which metrics are from automated collection vs. user-provided data.
+All integrations optional (see [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md)). With tools connected, pulls backlink profiles from ~~link database and competitor data from ~~SEO tool. Without tools, ask user for backlink CSV, referring domains, competitor domains, and link changes. Respect `robots.txt` and TOS per [SECURITY.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/SECURITY.md).
 
 ## Instructions
 
@@ -212,20 +155,6 @@ When running `domain-authority-auditor` after this analysis, the following data 
 | Dofollow/Nofollow ratio | T02 (Dofollow Ratio Normality) | Trust |
 | Toxic link analysis | T01 (Link Profile Naturalness), T03 (Link-Traffic Coherence) | Trust |
 | Competitive link intersection | T05 (Profile Uniqueness) | Trust |
-
-## Validation Checkpoints
-
-### Input Validation
-- [ ] Target domain backlink data is complete and current
-- [ ] Competitor domains specified for comparison analysis
-- [ ] Backlink data includes necessary fields (source domain, anchor text, link type)
-- [ ] Authority metrics available (DA/DR or equivalent)
-
-### Output Validation
-- [ ] Every metric cites its data source and collection date
-- [ ] Toxic link assessments include risk justification
-- [ ] Link opportunity recommendations are specific and actionable
-- [ ] Source of each data point clearly stated (~~link database data, ~~SEO tool data, user-provided, or estimated)
 
 ## Example
 
@@ -287,20 +216,7 @@ If you acquire links from top 10 opportunities:
 
 ### Save Results
 
-After delivering monitoring data or reports to the user, ask:
-
-> "Save these results for future sessions?"
-
-If yes, write a dated summary to `memory/monitoring/YYYY-MM-DD-<topic>.md` containing:
-- One-line headline finding or status change
-- Top 3-5 actionable items
-- Open loops or anomalies requiring follow-up
-- Source data references
-
-If any findings should influence ongoing strategy, recommend promoting key conclusions to `memory/hot-cache.md`.
-
-
-**Gate check recommended**: If toxic link ratio exceeds 15%, recommend running domain-authority-auditor to assess overall domain trust impact.
+Ask "Save these results?" If yes, write a dated summary to `memory/monitoring/YYYY-MM-DD-<topic>.md` with headline finding, actionable items, and open loops. If toxic ratio > 15%, recommend domain-authority-auditor.
 
 ## Reference Materials
 
@@ -309,8 +225,4 @@ If any findings should influence ongoing strategy, recommend promoting key concl
 
 ## Next Best Skill
 
-Follows the verdict-conditional branching pattern in [skill-contract.md §Termination rules for Next Best Skill chains](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md). Visited-set rule applies.
-
-- **Toxic link ratio > 15%** → Primary: [domain-authority-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/domain-authority-auditor/SKILL.md) — translate link findings into a domain-level trust view.
-- **Toxic link ratio ≤ 15%** → Terminal (chain ends). Link profile is within normal range; no further gate check needed.
-- **Visited-set exception**: if `domain-authority-auditor` invoked this analysis, do NOT hand back to `domain-authority-auditor` — STOP chain and report chain-complete.
+Toxic ratio > 15% → [domain-authority-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/domain-authority-auditor/SKILL.md). Otherwise → Terminal. Visited-set rule applies per [skill-contract.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).

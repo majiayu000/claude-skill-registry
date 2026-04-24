@@ -5,6 +5,8 @@ description: |
   custom action, MatchEvent, post_action, cx.widget_action,
   handle_actions, DefaultNone, widget action, event handling,
   事件处理, 自定义动作
+risk: unknown
+source: community
 ---
 
 # Robius Event and Action Patterns Skill
@@ -15,8 +17,7 @@ Best practices for event handling and action patterns in Makepad applications ba
 - **Robrix**: Matrix chat client - MessageAction, RoomsListAction, AppStateAction
 - **Moly**: AI chat application - StoreAction, ChatAction, NavigationAction, Timer patterns
 
-## Triggers
-
+## When to Use
 Use this skill when:
 - Implementing custom actions in Makepad
 - Handling events in widgets
@@ -357,3 +358,8 @@ if let ItemAction::Selected(item_id) = action.as_widget_action().cast() {
   - External link handling
   - Platform-conditional actions (#[cfg])
   - UiRunner event handling
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

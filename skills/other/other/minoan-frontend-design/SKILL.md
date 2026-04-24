@@ -39,7 +39,7 @@ Use OKLCH not HSL—it's perceptually uniform. Tint neutrals toward brand hue (e
 
 ## Motion
 
-Prioritize CSS-only animations—content hidden behind JavaScript class toggles is invisible in screenshots and static renders. Start visible, animate from there. Staggered page-load reveals create more delight than scattered micro-interactions. Scroll-triggered animations and hover states should surprise.
+Prioritize CSS-only animations—content hidden behind JavaScript class toggles is invisible in screenshots and static renders. Start visible, animate from there. Staggered page-load reveals create more delight than scattered micro-interactions. Scroll-triggered animations and hover states should surprise. For text-specific animation patterns (heading reveals, editorial staggers, text swaps), consult `references/text-animation-catalog.md` for 24 named effects with exact timing specs.
 
 ## Spatial Composition
 

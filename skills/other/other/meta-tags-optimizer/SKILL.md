@@ -1,15 +1,15 @@
 ---
 name: meta-tags-optimizer
 description: 'Optimize title tags, meta descriptions, Open Graph, Twitter cards for maximum CTR with A/B variations. 标题优化/元描述/CTR'
-version: "9.0.0"
+version: "9.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 when_to_use: "Use when optimizing title tags, meta descriptions, Open Graph tags, or Twitter Cards for a page."
 argument-hint: "<page URL or content>"
 metadata:
   author: aaron-he-zhu
-  version: "9.0.0"
+  version: "9.1.0"
   geo-relevance: "low"
   tags:
     - seo
@@ -31,21 +31,16 @@ metadata:
     - "write meta description"
     - "improve CTR"
     - "Open Graph tags"
-    - "social media preview"
     - "title optimization"
     - "meta tags"
-    - "Twitter cards"
     # EN-casual
     - "my title tag needs work"
     - "low click-through rate"
     - "fix my meta tags"
     - "OG tags not showing"
-    - "social preview looks wrong"
-    - "my click rate is low"
     # EN-question
     - "how to write a good title tag"
     - "how to improve click-through rate"
-    - "what is a good meta description"
     # EN-competitor
     - "Yoast SEO title tool"
     - "RankMath title optimizer"
@@ -76,42 +71,15 @@ metadata:
     - "etiquetas Open Graph"
     # PT
     - "otimizar meta tags"
-    # Misspellings
-    - "meta discription"
-    - "tittle tag"
 ---
 
 # Meta Tags Optimizer
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This build skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-
-
 This skill creates compelling, optimized meta tags that improve click-through rates from search results and enhance social media sharing. It covers title tags, meta descriptions, and social meta tags.
-
-**System role**: Build layer skill. It turns briefs and signals into assets that other skills can review, publish, and monitor.
-
-## When This Must Trigger
-
-Use this when the conversation involves a shippable asset or transformation that should feed directly into quality review, deployment, or monitoring — even if the user doesn't use SEO terminology:
-
-- Creating meta tags for new pages
-- Optimizing existing meta tags for better CTR
-- Preparing pages for social media sharing
-- Fixing duplicate or missing meta tags
-- A/B testing title and description variations
-- Optimizing for specific SERP features
-- Creating meta tags for different page types
 
 ## What This Skill Does
 
-1. **Title Tag Creation**: Writes compelling, keyword-optimized titles
-2. **Meta Description Writing**: Creates click-worthy descriptions
-3. **Open Graph Optimization**: Prepares pages for social sharing
-4. **Twitter Card Setup**: Optimizes Twitter-specific meta tags
-5. **CTR Analysis**: Suggests improvements for better click rates
-6. **Character Counting**: Ensures proper length for SERP display
-7. **A/B Test Suggestions**: Provides variations for testing
+Creates optimized title tags, meta descriptions, Open Graph, and Twitter Card markup with proper character limits, CTR analysis, and A/B test variations.
 
 ## Quick Start
 
@@ -150,30 +118,11 @@ Create Open Graph and Twitter card tags for [page/URL]
 
 ### Handoff Summary
 
-Emit this shape when finishing the skill (see [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) for the authoritative format):
-
-- **Status**: DONE / DONE_WITH_CONCERNS / BLOCKED / NEEDS_INPUT
-- **Objective**: what was analyzed, created, or fixed
-- **Key Findings / Output**: the highest-signal result
-- **Evidence**: URLs, data points, or sections reviewed
-- **Open Loops**: blockers, missing inputs, or unresolved risks
-- **Recommended Next Skill**: one primary next move
+> Emit the standard shape from [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ## Data Sources
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
-
-**With ~~search console + ~~SEO tool connected:**
-Automatically pull current meta tags, CTR data by query, competitor title/description patterns, SERP preview data, and impression/click metrics to identify optimization opportunities.
-
-**With manual data only:**
-Ask the user to provide:
-1. Current title and meta description (if optimizing existing)
-2. Target primary keyword and 2-3 secondary keywords
-3. Page URL and main content/value proposition
-4. Competitor URLs or examples of well-performing titles in the SERP
-
-Proceed with the full workflow using provided data. Note in the output which metrics are from automated collection vs. user-provided data.
+Optional search console and SEO tool integrations pull CTR data and competitor patterns automatically; otherwise ask the user for current tags, keywords, and competitors. See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for integration placeholders.
 
 ## Instructions
 
@@ -187,23 +136,6 @@ When a user requests meta tag optimization, run these six steps:
 6. **Provide CTR Optimization Tips** — power words analysis, CTR boosting elements table (Numbers +20-30%, Year +15-20%, Power Words +10-15%, Question +10-15%, Brackets +10%), A/B test suggestions
 
 > **Reference**: See [references/instructions-detail.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/meta-tags-optimizer/references/instructions-detail.md) for full templates (page analysis, title/description formula options, CORE-EEAT alignment matrix, CTR optimization analysis), worked example, and tips. See [references/meta-tag-code-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/meta-tags-optimizer/references/meta-tag-code-templates.md) for HTML code templates.
-
-## Validation Checkpoints
-
-### Input Validation
-- [ ] Primary keyword confirmed and matches page content
-- [ ] Page type identified (blog/product/landing/service/homepage)
-- [ ] Target audience and search intent clearly defined
-- [ ] Unique value proposition articulated
-
-### Output Validation
-- [ ] **Banned-vocab self-check** — scan titles and descriptions for banned words/phrases per [skill-contract.md §Output Voice](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md). Especially: `crucial, robust, leverage, seamless, unlock, cutting-edge, empower, streamline`. Meta tags are short — every word counts.
-- [ ] Title length 50-60 characters (displays fully in SERP)
-- [ ] Meta description length 150-160 characters
-- [ ] Primary keyword appears in both title and description
-- [ ] Open Graph image specified (1200x630px recommended)
-- [ ] All HTML syntax valid (no unclosed quotes or tags)
-- [ ] Source of each data point clearly stated (~~search console CTR data, ~~SEO tool competitor data, user-provided, or estimated)
 
 ## Example
 
@@ -222,19 +154,7 @@ Front-load keywords; match intent; be specific; test variations; update regularl
 
 ### Save Results
 
-After delivering content or optimization output to the user, ask:
-
-> "Save these results for future sessions?"
-
-If yes, write a dated summary to `memory/content/YYYY-MM-DD-<topic>.md` containing:
-- One-line description of what was created
-- Target keyword and content type
-- Open loops or items needing review
-- Source data references
-
-**Gate check recommended**: Run content-quality-auditor before publishing (PostToolUse hook will remind automatically).
-
-If any findings should influence ongoing strategy, recommend promoting key conclusions to `memory/hot-cache.md`.
+On user confirmation, save a dated summary to `memory/content/YYYY-MM-DD-<topic>.md` and promote key conclusions to `memory/hot-cache.md`.
 
 ## Reference Materials
 

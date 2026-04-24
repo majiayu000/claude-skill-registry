@@ -201,6 +201,60 @@ Eight scenarios. All eight, always. They catch what screen-by-screen testing mis
 7. **Destructive Confidence** — for every delete, send, publish, pay, share: is consent clear? Does confirm copy tell you what's about to happen? Undo available?
 8. **Second User** — log in as a restricted role (viewer not editor, client not staff). Read-only views coherent? Permissions errors make sense?
 
+## Live Interaction Smoke
+
+Code reading verifies a button exists and has an `onClick`. It does not
+verify that clicking the button actually **does something observable**.
+Bugs of this shape — "the handler runs, fires a call into an SDK, but
+the flow never completes" — are invisible to static analysis and
+require a live click + network check.
+
+Run these for every **interactive control** on every page:
+
+1. **Click it.** Pointer moves, element highlights, click lands.
+2. **Watch the Network tab.** Did a request fire? To the right URL?
+   Correct method + body shape?
+3. **Watch the DOM.** Did something visibly change — new element,
+   removed element, state transition (loading spinner, toast, route
+   change)?
+4. **If nothing changed in (2) or (3), that's a bug.** The control
+   LOOKS alive but isn't doing its job. Log it.
+
+### Known control categories that silently fail
+
+| Control category | Silent-failure mode to watch for |
+|---|---|
+| Approve / Deny buttons on tool-call cards | Handler fires but server never hears about it (SDK needs a separate "send on state change" callback). See `rules/ai-sdk-tool-approval-autosubmit.md`. |
+| "Connect X" OAuth buttons inside dialogs | `window.open()` silently popup-blocked when click originates in a modal. Must use `window.location.href`. See `rules/oauth-popup-blocked-in-dialogs.md`. |
+| Save / update buttons on forms with async validation | Button disables during mutation but the mutation itself silently 5xx'd. No toast, no error state, form just sits there. |
+| Delete / archive actions | Optimistic UI removes the row but server rejected — after refresh, the row is back. |
+| Pagination / "Load more" buttons | Fires request but response empty due to off-by-one offset. |
+| Filter chips on list views | Query param updates but query key doesn't — TanStack Query serves stale cached results. |
+| "Reply" / "Forward" in email-style UIs | Opens compose pane but Message-ID headers not set — reply threads orphan in recipient's inbox. |
+
+### SDK contract check
+
+When the page uses a third-party SDK with its own state model, verify
+the SDK's required options are passed. Silent failures usually trace
+to an undocumented-but-required option.
+
+Common SDK contracts to verify:
+
+| SDK | Option that silently breaks behaviour if missing |
+|---|---|
+| `@ai-sdk/react` useChat with `needsApproval: true` tools | `sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithApprovalResponses` |
+| `@ai-sdk/react` useChat with custom transport | `prepareSendMessagesRequest` reading latest refs (otherwise pinned to initial values) |
+| better-auth `createAuthClient` | `sessionOptions.refetchOnWindowFocus: false` for SPAs that route on session state |
+| TanStack Query `QueryClient` | `refetchOnWindowFocus: false` if your app redirects on empty query results |
+| React Router v7 `createBrowserRouter` | `loader` / `action` defined for routes that need data (not just component) |
+| Radix Dialog | `modal: true` + `onEscapeKeyDown` handler if Escape should do more than close |
+| zodResolver | `as any` around schema if using Zod v4 and resolver is older — silent validation miss |
+
+**If the page uses an SDK not on this list**, spend 2 minutes reading
+its "useX" export's options. Anything named `*On*Change`, `*On*Finish`,
+`*SendAutomatically*`, `*RefetchOn*`, or `*Configure*` is a prime
+suspect for "silent failure because it's undefined."
+
 ## Passive Error Sweeps
 
 Run these throughout, not as a dedicated phase.
@@ -283,7 +337,6 @@ Three principles for audit runs that catch the most bugs:
 1. **Drive the audit from the main session, not a sub-agent.** Sub-agents are fine for bounded analysis tasks (reviewing a batch of captured screenshots, summarising a thread). But the audit *itself* — the navigation, the noticing, the "this button looks off after the previous interaction" kind of judgement — must happen in the session that's been watching the app. Cross-interaction state lives in that session's working memory; a fresh sub-agent starts cold and misses second-order findings.
 
 2. **Use the browser tool directly.** Chrome MCP or Playwright MCP via the main session's tool calls. Don't hand screenshots to a fresh agent and ask for opinions — that loses the state-dependence that makes audits catch logic errors, business-logic issues, and odd edge cases.
-
 3. **Loop to exhaustion with variations.** Don't stop after one pass through the checklist. After each pass, generate a new angle — different persona, different workflow, different input volume, different starting point, different validation lens — and re-walk. Stop only when a full pass produces no new findings. Single-pass audits by definition miss the second-order issues.
 
 For audits expected to run longer than 30 minutes, set up a 15-min `/loop` check-in alongside the main session — it journals findings, grounds the session, and provides a natural termination signal. See [references/long-running-check-in-pattern.md](references/long-running-check-in-pattern.md).

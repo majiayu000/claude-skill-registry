@@ -1,15 +1,15 @@
 ---
 name: alert-manager
 description: 'Configure SEO alerts for ranking drops, traffic changes, technical issues, competitor movements. SEO预警/排名监控'
-version: "9.0.0"
+version: "9.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 when_to_use: "Use when setting up monitoring alerts for rankings, traffic, backlinks, technical issues, or AI visibility changes."
 argument-hint: "<domain> [metric]"
 metadata:
   author: aaron-he-zhu
-  version: "9.0.0"
+  version: "9.1.0"
   geo-relevance: "low"
   tags:
     - seo
@@ -28,17 +28,12 @@ metadata:
     # EN-formal
     - "set up SEO alerts"
     - "monitor rankings"
-    - "ranking notifications"
     - "traffic alerts"
     - "competitor alerts"
-    - "automated monitoring"
     # EN-casual
-    - "notify me when rankings drop"
     - "alert me if rankings drop"
     - "notify me of traffic changes"
-    - "watch competitor changes"
     - "watch my keywords for changes"
-    - "alert me about changes"
     # EN-question
     - "how to monitor my rankings"
     - "how to set up SEO alerts"
@@ -62,42 +57,16 @@ metadata:
     - "monitoreo de rankings"
     # PT
     - "alertas de SEO"
-    # Misspellings
-    - "SEO allerts"
 ---
 
 # Alert Manager
 
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This monitoring skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-
-
 Sets up proactive monitoring alerts for critical SEO and GEO metrics. Triggers notifications when rankings drop, traffic changes significantly, technical issues occur, or competitors make moves.
-
-**System role**: Monitoring layer skill. It turns performance changes into deltas, alerts, and next actions.
-
-## When This Must Trigger
-
-Use this when the conversation involves time-aware change detection, escalation, or stakeholder-ready visibility — even if the user doesn't use SEO terminology:
-
-- Setting up SEO monitoring systems
-- Creating ranking drop alerts
-- Monitoring technical SEO health
-- Tracking competitor movements
-- Alerting on content performance changes
-- Monitoring GEO/AI visibility changes
-- Setting up brand mention alerts
 
 ## What This Skill Does
 
-1. **Alert Configuration**: Sets up custom alert thresholds
-2. **Multi-Metric Monitoring**: Tracks rankings, traffic, technical issues
-3. **Threshold Management**: Defines when alerts trigger
-4. **Priority Classification**: Categorizes alerts by severity
-5. **Notification Setup**: Configures how alerts are delivered
-6. **Alert Response Plans**: Creates action plans for each alert type
-7. **Alert History**: Tracks alert patterns over time
+Configures custom alert thresholds across rankings, traffic, technical health, backlinks, competitors, and AI visibility; classifies alerts by severity; sets up notification delivery and response plans.
 
 ## Quick Start
 
@@ -140,33 +109,11 @@ Review and optimize my current SEO alerts
 
 ### Handoff Summary
 
-Emit this shape when finishing the skill (see [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) for the authoritative format):
-
-- **Status**: DONE / DONE_WITH_CONCERNS / BLOCKED / NEEDS_INPUT
-- **Objective**: what was analyzed, created, or fixed
-- **Key Findings / Output**: the highest-signal result
-- **Evidence**: URLs, data points, or sections reviewed
-- **Open Loops**: blockers, missing inputs, or unresolved risks
-- **Recommended Next Skill**: one primary next move
+> Emit the standard shape from [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ## Data Sources
 
-> **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
-
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
-
-**With ~~SEO tool + ~~search console + ~~web crawler connected:**
-Automatically monitor real-time metric feeds for ranking changes via ~~SEO tool API, indexing and coverage alerts from ~~search console, and technical health alerts from ~~web crawler. Set up automated threshold-based alerts with notification delivery.
-
-**With manual data only:**
-Ask the user to provide:
-1. Current baseline metrics for alert thresholds (rankings, traffic, backlinks)
-2. Critical keywords or pages to monitor
-3. Alert priority levels and notification preferences
-4. Historical data to understand normal fluctuation ranges
-5. Manual reporting on metric changes when they check their tools
-
-Proceed with the alert configuration using provided parameters. User will need to manually check metrics and report changes for alert triggers.
+All integrations optional (see [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md)). With tools connected, monitors real-time feeds from ~~SEO tool, ~~search console, and ~~web crawler for automated threshold alerts. Without tools, ask user for baseline metrics, critical keywords, alert preferences, and historical data.
 
 ## Instructions
 
@@ -247,20 +194,6 @@ When a user requests alert setup:
     - [ ] Clean up false positives
     ```
 
-## Validation Checkpoints
-
-### Input Validation
-- [ ] Alert thresholds are based on realistic baseline data
-- [ ] Critical keywords and pages clearly identified
-- [ ] Response plans defined for each alert priority level
-- [ ] Notification channels configured with appropriate recipients
-
-### Output Validation
-- [ ] Every metric cites its data source and collection date
-- [ ] Alert thresholds account for normal metric fluctuations
-- [ ] Response plans are specific and time-bound
-- [ ] Source of each alert trigger clearly stated (~~SEO tool API alert, ~~search console notification, ~~web crawler alert, or manual user check)
-
 ## Example
 
 **User**: "Set up ranking drop alerts for my top keywords"
@@ -325,17 +258,7 @@ When a user requests alert setup:
 
 ### Save Results
 
-After delivering monitoring data or reports to the user, ask:
-
-> "Save these results for future sessions?"
-
-If yes, write a dated summary to `memory/monitoring/YYYY-MM-DD-<topic>.md` containing:
-- One-line headline finding or status change
-- Top 3-5 actionable items
-- Open loops or anomalies requiring follow-up
-- Source data references
-
-If any findings should influence ongoing strategy, recommend promoting key conclusions to `memory/hot-cache.md`.
+Ask "Save these results?" If yes, write a dated summary to `memory/monitoring/YYYY-MM-DD-<topic>.md` with headline finding, actionable items, and open loops.
 
 ## Reference Materials
 
@@ -343,8 +266,4 @@ If any findings should influence ongoing strategy, recommend promoting key concl
 
 ## Next Best Skill
 
-Follows the verdict-conditional branching pattern in [skill-contract.md §Termination rules for Next Best Skill chains](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md). Visited-set rule applies.
-
-- **Alert configuration just completed and reporting cadence is requested** → Primary: [performance-reporter](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/performance-reporter/SKILL.md) — fold the configured alerts into a recurring stakeholder report.
-- **Alert configuration is a standalone setup (no reporting loop)** → Terminal (chain ends).
-- **Visited-set exception**: if `rank-tracker` invoked this skill for threshold setup, do NOT hand back to `rank-tracker` — STOP chain and report chain-complete.
+Reporting cadence requested → [performance-reporter](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/performance-reporter/SKILL.md). Standalone setup → Terminal. Visited-set rule applies per [skill-contract.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).

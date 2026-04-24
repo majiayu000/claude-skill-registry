@@ -12,8 +12,6 @@ description: Desktop GUI automation via OpenInterpreter — mouse, keyboard, scr
 
 Desktop control for Claude Code via [OpenInterpreter](https://github.com/OpenInterpreter/open-interpreter) (62k stars, AGPL-3.0). Mouse, keyboard, screenshot, and OCR primitives backed by pyautogui + pytesseract.
 
-> **Status (Apr 2026):** The open-source `open-interpreter` Python library is in maintenance mode — last tagged release v0.4.2 (Oct 2024). The company has pivoted to a closed-source desktop app (openinterpreter.com). The Library mode scripts in this skill use pyautogui and pytesseract directly and are unaffected. OS subprocess mode works with current Claude models via LiteLLM routing despite OI's stale model docs.
-
 ## Mode Selection
 
 | Mode | LLM | Script | Best For |

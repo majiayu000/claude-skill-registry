@@ -118,7 +118,7 @@ Present a single report that aggregates the results of every enabled phase. The 
 ### Phases
 | Phase            | Status        | Key Outcome                                     |
 |------------------|---------------|-------------------------------------------------|
-| /review-health   | Complete      | Overall health: Good; Python flagged (Fair)     |
+| /review-health   | Complete      | Classified as OSS library; 2 Major findings    |
 | /review-arch     | Complete      | 3 blueprint items implemented, 2 deferred       |
 | /review-security | Complete      | 1 high-severity finding; 4 advisory             |
 | /review-perf     | Complete      | No critical bottlenecks; 2 caching suggestions  |
@@ -173,7 +173,7 @@ Present a single report that aggregates the results of every enabled phase. The 
 ## Integration with Other Skills
 
 **This skill is a composition of:**
-- `/review-health` — source code health across all project languages
+- `/review-health` — first-pass strategic orientation on the repo
 - `/review-arch` — architectural analysis and restructuring
 - `/review-security` — white-box security audit
 - `/review-perf` — performance review (compute and/or web)

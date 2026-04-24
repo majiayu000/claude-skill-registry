@@ -1,16 +1,16 @@
 ---
 name: schema-markup-generator
 description: 'Generate JSON-LD structured data for FAQ, HowTo, Article, Product, LocalBusiness rich results. Schema标记/结构化数据'
-version: "9.0.0"
+version: "9.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 when_to_use: "Use when generating JSON-LD structured data, Schema.org markup, or rich snippet markup for a page."
 argument-hint: "<page URL or content type>"
 allowed-tools: WebFetch
 metadata:
   author: aaron-he-zhu
-  version: "9.0.0"
+  version: "9.1.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -34,13 +34,10 @@ metadata:
     - "rich snippets"
     - "FAQ schema"
     - "schema.org"
-    - "structured data markup"
     # EN-casual
     - "add FAQ rich results"
     - "I want star ratings in Google"
     - "product markup"
-    - "recipe schema"
-    - "add structured data to my page"
     # EN-question
     - "how to add schema markup"
     - "how to get rich snippets"
@@ -77,42 +74,15 @@ metadata:
     - "dados estruturados"
     - "marcação schema"
     - "resultados ricos"
-    # Misspellings
-    - "shema markup"
-    - "structred data"
 ---
 
 # Schema Markup Generator
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This build skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-
-
 This skill creates Schema.org structured data markup in JSON-LD format to help search engines understand your content and enable rich results in SERPs.
-
-**System role**: Build layer skill. It turns briefs and signals into assets that other skills can review, publish, and monitor.
-
-## When This Must Trigger
-
-Use this when the conversation involves a shippable asset or transformation that should feed directly into quality review, deployment, or monitoring — even if the user doesn't use SEO terminology:
-
-- Adding FAQ schema for expanded SERP presence
-- Creating How-To schema for step-by-step content
-- Adding Product schema for e-commerce pages
-- Implementing Article schema for blog posts
-- Adding Local Business schema for location pages
-- Creating Review/Rating schema
-- Implementing Organization schema for brand presence
-- Any page where rich results would improve visibility
 
 ## What This Skill Does
 
-1. **Schema Type Selection**: Recommends appropriate schema types
-2. **JSON-LD Generation**: Creates valid structured data markup
-3. **Property Mapping**: Maps your content to schema properties
-4. **Validation Guidance**: Ensures schema meets requirements
-5. **Nested Schema**: Handles complex, multi-type schemas
-6. **Rich Result Eligibility**: Identifies which rich results you can target
+Selects appropriate Schema.org types, generates valid JSON-LD with correct property mapping, handles nested/multi-type schemas, and identifies rich result eligibility.
 
 ## Quick Start
 
@@ -155,30 +125,11 @@ Review and improve this schema markup: [existing schema]
 
 ### Handoff Summary
 
-Emit this shape when finishing the skill (see [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) for the authoritative format):
-
-- **Status**: DONE / DONE_WITH_CONCERNS / BLOCKED / NEEDS_INPUT
-- **Objective**: what was analyzed, created, or fixed
-- **Key Findings / Output**: the highest-signal result
-- **Evidence**: URLs, data points, or sections reviewed
-- **Open Loops**: blockers, missing inputs, or unresolved risks
-- **Recommended Next Skill**: one primary next move
+> Emit the standard shape from [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ## Data Sources
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
-
-**With ~~web crawler connected:**
-Automatically crawl and extract page content (visible text, headings, lists, tables), existing schema markup, page metadata, and structured content elements that map to schema properties.
-
-**With manual data only:**
-Ask the user to provide:
-1. Page URL or full HTML content
-2. Page type (article, product, FAQ, how-to, local business, etc.)
-3. Specific data needed for schema (prices, dates, author info, Q&A pairs, etc.)
-4. Current schema markup (if optimizing existing)
-
-Proceed with the full workflow using provided data. Note in the output which data is from automated extraction vs. user-provided data.
+Optional web crawler integration extracts page content and existing schema automatically; otherwise ask the user for page content, type, and schema data. See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for integration placeholders.
 
 ## Instructions
 
@@ -191,24 +142,6 @@ When a user requests schema markup, run these three steps:
 3. **Provide Implementation and Validation** — show placement options (in `<head>` or before `</body>`), validation steps (~~schema validator, Schema.org Validator, ~~search console), and validation checklist
 
 > **Reference**: See [references/instructions-detail.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/schema-markup-generator/references/instructions-detail.md) for the CORE-EEAT content-to-schema mapping table, rich result eligibility matrix, full implementation guide, validation checklist, FAQ example, schema type quick reference, and tips. See [references/schema-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/schema-markup-generator/references/schema-templates.md) for copy-ready JSON-LD templates.
-
-## Validation Checkpoints
-
-### Input Validation
-- [ ] Page URL or content provided
-- [ ] Schema type appropriate for content (Article for blog, Product for e-commerce, etc.)
-- [ ] All required data available (author, dates, prices, etc. depending on schema type)
-- [ ] Content eligibility for rich results confirmed
-
-### Output Validation
-- [ ] **aggregateRating truth check** — `ratingValue` and `reviewCount` reflect site-visible reviews; no fake/incentivized entries (FTC 16 CFR §465, ~$53K/violation (inflation-adjusted, 16 CFR §1.98))
-- [ ] JSON syntax validates (no trailing commas, proper quotes)
-- [ ] All required properties present for chosen schema type
-- [ ] URLs are absolute, not relative
-- [ ] Dates in ISO 8601 format (YYYY-MM-DDTHH:MM:SS+00:00)
-- [ ] Schema content matches visible page content exactly
-- [ ] Passes ~~schema validator with no errors
-- [ ] Source of each data point clearly stated (~~web crawler extraction, user-provided, or manual entry)
 
 ## Example
 
@@ -233,19 +166,7 @@ Match visible content; don't spam; keep updated; test thoroughly; monitor Search
 
 ### Save Results
 
-After delivering content or optimization output to the user, ask:
-
-> "Save these results for future sessions?"
-
-If yes, write a dated summary to `memory/content/YYYY-MM-DD-<topic>.md` containing:
-- One-line description of what was created
-- Target keyword and content type
-- Open loops or items needing review
-- Source data references
-
-**Gate check recommended**: Run content-quality-auditor before publishing (PostToolUse hook will remind automatically).
-
-If any findings should influence ongoing strategy, recommend promoting key conclusions to `memory/hot-cache.md`.
+On user confirmation, save a dated summary to `memory/content/YYYY-MM-DD-<topic>.md` and promote key conclusions to `memory/hot-cache.md`.
 
 ## Reference Materials
 

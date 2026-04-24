@@ -4,7 +4,7 @@ description: Use when you need to review, improve, or build Spring Boot 4.0.x ap
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Spring Boot Core Guidelines
 
@@ -41,6 +41,24 @@ Before applying any Spring Boot changes, ensure the project compiles. If compila
 
 - Review Java code for Spring Boot application
 - Apply best practices for Spring Boot application in Java code
+
+## Workflow
+
+1. **Read reference and assess project context**
+
+Read `references/301-frameworks-spring-boot-core.md` and inspect the current project setup before proposing changes.
+
+2. **Gather scope and decide target improvements**
+
+Identify requested outcomes, constraints, and the minimum safe set of changes to apply.
+
+3. **Apply framework-aligned changes**
+
+Implement or refactor configuration/code following the reference patterns and project conventions.
+
+4. **Run verification and report results**
+
+Execute appropriate build/tests and summarize what changed, what was verified, and any follow-up actions.
 
 ## Reference
 

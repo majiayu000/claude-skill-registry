@@ -1,16 +1,16 @@
 ---
 name: on-page-seo-auditor
 description: 'Audit on-page SEO: titles, headers, images, links with scored report and fix priorities. 页面SEO审计/排名诊断'
-version: "9.0.0"
+version: "9.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 when_to_use: "Use when auditing a page's on-page SEO health, checking heading structure, keyword placement, image optimization, or content quality signals."
 argument-hint: "<URL> [keyword]"
 allowed-tools: WebFetch
 metadata:
   author: aaron-he-zhu
-  version: "9.0.0"
+  version: "9.1.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -33,23 +33,17 @@ metadata:
     - "audit page SEO"
     - "on-page SEO check"
     - "SEO score"
-    - "page optimization"
     - "on-page audit"
     - "SEO page analysis"
-    - "content audit"
     # EN-casual
-    - "what SEO issues does this page have"
     - "check my page"
-    - "score my page"
     - "why isn't this page ranking"
     - "what's wrong with this page's SEO"
     - "is my page optimized"
-    - "my rankings tanked"
     - "why did my rankings drop"
     # EN-question
     - "why is my page not ranking"
     - "how do I improve my page SEO"
-    - "what SEO problems does this page have"
     # EN-competitor
     - "Screaming Frog alternative"
     - "Yoast SEO alternative"
@@ -84,44 +78,16 @@ metadata:
     - "puntuación SEO"
     # PT
     - "auditoria SEO on-page"
-    # Misspellings
-    - "on page SEO aduit"
-    - "SEO scroe"
 ---
 
 # On-Page SEO Auditor
 
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This optimization skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-
-
 This skill performs detailed on-page SEO audits to identify issues and optimization opportunities. It analyzes all on-page elements that affect search rankings and provides actionable recommendations.
-
-**System role**: Optimization layer skill. It turns weak pages, structures, and technical issues into prioritized repair work.
-
-## When This Must Trigger
-
-Use this when the conversation involves a diagnosis or repair plan that should feed directly into remediation work — even if the user doesn't use SEO terminology:
-
-- Auditing pages before or after publishing
-- Identifying why a page isn't ranking well
-- Optimizing existing content for better performance
-- Creating pre-publish SEO checklists
-- Comparing your on-page SEO to competitors
-- Systematic site-wide SEO improvements
-- Training team members on SEO best practices
 
 ## What This Skill Does
 
-1. **Title Tag Analysis**: Evaluates title optimization and CTR potential
-2. **Meta Description Review**: Checks description quality and length
-3. **Header Structure Audit**: Analyzes H1-H6 hierarchy
-4. **Content Quality Assessment**: Reviews content depth and optimization
-5. **Keyword Usage Analysis**: Checks keyword placement and density
-6. **Internal Link Review**: Evaluates internal linking structure
-7. **Image Optimization Check**: Audits alt text and file optimization
-8. **Technical On-Page Review**: Checks URL, canonical, and mobile factors
+Audits all on-page SEO elements (title, meta, headers, content quality, keywords, links, images, technical factors) with scored results and prioritized fix recommendations.
 
 ## Quick Start
 
@@ -174,31 +140,11 @@ See [references/bulk-audit-playbook.md](https://github.com/aaron-he-zhu/seo-geo-
 
 ### Handoff Summary
 
-Emit this shape when finishing the skill (see [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) for the authoritative format):
-
-- **Status**: DONE / DONE_WITH_CONCERNS / BLOCKED / NEEDS_INPUT
-- **Objective**: what was analyzed, created, or fixed
-- **Key Findings / Output**: the highest-signal result
-- **Evidence**: URLs, data points, or sections reviewed
-- **Open Loops**: blockers, missing inputs, or unresolved risks
-- **Recommended Next Skill**: one primary next move
+> Emit the standard shape from [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ## Data Sources
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
-
-**Scraping legality**: Before crawling any domain that is not your own or not under written authorization, verify `robots.txt` disallows, respect `Crawl-delay`, and confirm target TOS permits automated access. See [SECURITY.md §Scraping Boundaries](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/SECURITY.md).
-
-**With ~~SEO tool + ~~web crawler connected:**
-Claude can automatically pull page HTML via ~~web crawler, fetch keyword search volume and difficulty from ~~SEO tool, retrieve click-through rate data from ~~search console, and download competitor pages for comparison. This enables fully automated audits with live data.
-
-**With manual data only:**
-Ask the user to provide:
-1. Page URL or complete HTML content
-2. Target primary and secondary keywords
-3. Competitor page URLs for comparison (optional)
-
-Proceed with the full audit using provided data. Note in the output which findings are from automated crawl vs. manual review.
+Uses ~~web crawler, ~~SEO tool, and ~~search console when connected; otherwise asks user for page URL/HTML, target keywords, and competitor URLs. See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) and [SECURITY.md §Scraping Boundaries](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/SECURITY.md).
 
 ## Instructions
 
@@ -247,18 +193,6 @@ When a user requests an on-page SEO audit, run steps 1-11:
 
     > **Reference**: See [references/audit-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/on-page-seo-auditor/references/audit-templates.md) for the full audit summary template (Step 11).
 
-## Validation Checkpoints
-
-### Input Validation
-- [ ] Target keyword(s) clearly specified by user
-- [ ] Page content accessible (either via URL or provided HTML)
-- [ ] If competitor comparison requested, competitor URL provided
-
-### Output Validation
-- [ ] Every recommendation cites specific data points (not generic advice)
-- [ ] Scores based on measurable criteria, not subjective opinion
-- [ ] All suggested changes include specific locations (title tag, H2 #3, paragraph 5, etc.)
-- [ ] Source of each data point clearly stated (~~SEO tool data, user-provided, ~~web crawler, or manual review)
 
 ## Example
 
@@ -281,17 +215,7 @@ When a user requests an on-page SEO audit, run steps 1-11:
 
 ### Save Results
 
-After delivering audit or optimization findings to the user, ask:
-
-> "Save these results for future sessions?"
-
-If yes, write a dated summary to `memory/audits/on-page-seo-auditor/YYYY-MM-DD-<topic>.md` containing:
-- One-line verdict or headline finding
-- Top 3-5 actionable items
-- Open loops or blockers
-- Source data references
-
-If any veto-level issue was found (CORE-EEAT T04, C01, R10 or CITE T03, T05, T09), also append a one-liner to `memory/hot-cache.md` without asking.
+Ask to save results; if yes, write a dated summary to `memory/audits/on-page-seo-auditor/YYYY-MM-DD-<topic>.md`. Append veto-level issues to `memory/hot-cache.md` automatically.
 
 ## Reference Materials
 
@@ -301,8 +225,4 @@ If any veto-level issue was found (CORE-EEAT T04, C01, R10 or CITE T03, T05, T09
 
 ## Next Best Skill
 
-- **Primary**: [content-refresher](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/content-refresher/SKILL.md) — turn page-level findings into concrete edits.
-- **Also consider** (pick by dimension of findings):
-  - [technical-seo-checker](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/technical-seo-checker/SKILL.md) — if issues are infrastructure-level (robots, sitemap, Core Web Vitals, canonicals).
-  - [meta-tags-optimizer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/meta-tags-optimizer/SKILL.md) — if the main issues are title / meta description / OG tags only.
-  - [internal-linking-optimizer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/internal-linking-optimizer/SKILL.md) — if anchor text or orphan-page findings dominate.
+Primary: [content-refresher](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/content-refresher/SKILL.md). Also consider [technical-seo-checker](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/technical-seo-checker/SKILL.md), [meta-tags-optimizer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/meta-tags-optimizer/SKILL.md), or [internal-linking-optimizer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/internal-linking-optimizer/SKILL.md) by finding dimension.

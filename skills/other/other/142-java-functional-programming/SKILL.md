@@ -4,7 +4,7 @@ description: Use when you need to apply functional programming principles in Jav
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java Functional Programming rules
 
@@ -43,6 +43,28 @@ Before applying any functional programming changes, ensure the project compiles.
 - Improve the code with Functional Programming
 - Apply Functional Programming
 - Refactor the code with Functional Programming
+
+## Workflow
+
+1. **Compile project before functional refactoring**
+
+Run `./mvnw compile` or `mvn compile` and stop immediately if compilation fails.
+
+2. **Confirm Java feature compatibility**
+
+Verify maven-compiler-plugin source/target supports the functional features planned for adoption.
+
+3. **Read functional-programming reference and assess code**
+
+Read `references/142-java-functional-programming.md` and identify opportunities for immutability, pure functions, and functional composition.
+
+4. **Apply functional programming improvements**
+
+Implement selected functional refactorings while keeping side effects at boundaries.
+
+5. **Verify with full build**
+
+Run `./mvnw clean verify` or `mvn clean verify` after applying improvements.
 
 ## Reference
 

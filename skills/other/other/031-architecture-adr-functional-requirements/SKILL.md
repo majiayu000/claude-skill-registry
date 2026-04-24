@@ -4,7 +4,7 @@ description: Facilitates conversational discovery to create Architectural Decisi
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Create ADRs for Functional Requirements (CLI and/or REST API)
 
@@ -35,6 +35,28 @@ Use conversational discovery—ask 1-2 questions at a time, build on answers, va
 - Document functional requirements
 - Capture functional requirements
 - Generate functional requirements in an ADR
+
+## Workflow
+
+0. **Get current date**
+
+Run `date` before discovery and use it for ADR timestamps.
+
+1. **Read reference and discover surface scope**
+
+Read `references/031-architecture-adr-functional-requirements.md`, infer CLI/API scope from project context, and ask a short clarifying question if unclear.
+
+2. **Run conversational discovery**
+
+Ask one or two questions at a time to capture context, functional requirements, and technical decisions for CLI, REST API, or both.
+
+Step constraints:
+- Never ask all discovery questions at once
+- Validate summary with user before proposing ADR generation
+
+3. **Generate ADR after explicit confirmation**
+
+Only after user confirms "proceed", generate the ADR document and provide concise next steps.
 
 ## Reference
 

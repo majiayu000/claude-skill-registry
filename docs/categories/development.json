@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19708,
-  "updated_at": "2026-04-23T02:10:59.430965Z",
+  "count": 19709,
+  "updated_at": "2026-04-24T02:11:45.152669Z",
   "skills": [
     {
       "name": "fix",
@@ -223839,6 +223839,24 @@
       "stars": 0,
       "install": "jsr-probitas/claude-plugins/development/probitas-info",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "skills/pagerunner-skill/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/skills/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "langgraph-guardian",

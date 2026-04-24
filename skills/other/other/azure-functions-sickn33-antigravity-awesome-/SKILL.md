@@ -1338,9 +1338,13 @@ Message: HttpTrigger without [Function] attribute (isolated worker requires it).
 - user needs complex orchestration -> workflow-automation (Logic Apps, Power Automate)
 
 ## When to Use
-
 - User mentions or implies: azure function
 - User mentions or implies: azure functions
 - User mentions or implies: durable functions
 - User mentions or implies: azure serverless
 - User mentions or implies: function app
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

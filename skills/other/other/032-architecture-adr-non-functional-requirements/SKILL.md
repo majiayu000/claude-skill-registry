@@ -4,7 +4,7 @@ description: Facilitates conversational discovery to create Architectural Decisi
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Create ADRs for Non-Functional Requirements
 
@@ -36,6 +36,28 @@ Use challenge-first, consultative discovery—ask 1-2 questions at a time, build
 - Document Non-functional requirements
 - Capture Non-functional requirements
 - Generate Non-functional requirements in an ADR
+
+## Workflow
+
+0. **Get current date**
+
+Run `date` before discovery and use it for ADR timestamps.
+
+1. **Read reference and open with quality challenge**
+
+Read `references/032-architecture-adr-non-functional-requirements.md` and begin with the challenge-first ISO 25010:2023 quality characteristics framing.
+
+2. **Run consultative NFR discovery**
+
+Ask one or two questions at a time to capture drivers, constraints, quality priorities, options, and trade-off preferences tailored to the primary NFR category.
+
+Step constraints:
+- Never ask all discovery questions at once
+- Validate summary with user before proposing ADR generation
+
+3. **Generate ADR after explicit confirmation**
+
+Only after user confirms "proceed", create the ADR including measurable Quality Metrics and Success Criteria.
 
 ## Reference
 

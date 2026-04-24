@@ -1,15 +1,15 @@
 ---
 name: content-refresher
 description: 'Refresh outdated posts with current stats, new sections, freshness signals to restore rankings. 内容更新/排名恢复'
-version: "9.0.0"
+version: "9.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 when_to_use: "Use when updating outdated content, refreshing old articles, improving declining pages, or adding new information to existing content."
 argument-hint: "<URL of outdated content>"
 metadata:
   author: aaron-he-zhu
-  version: "9.0.0"
+  version: "9.1.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -29,20 +29,15 @@ metadata:
     - "update old content"
     - "refresh content"
     - "content is outdated"
-    - "improve declining rankings"
-    - "revive old blog posts"
     - "content decay"
     - "content refresh strategy"
     # EN-casual
     - "traffic is dropping"
     - "ranking dropped"
     - "this post is outdated"
-    - "traffic is declining on this page"
-    - "rankings dropped for this article"
     - "my old content needs updating"
     # EN-question
     - "how to fix declining traffic"
-    - "why is my content losing rankings"
     - "how often should I update content"
     # EN-competitor
     - "Clearscope content refresh"
@@ -73,43 +68,16 @@ metadata:
     - "refrescar contenido antiguo"
     # PT
     - "atualizar conteúdo"
-    # Misspellings
-    - "content refesh"
-    - "content refreshh"
 ---
 
 # Content Refresher
 
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This optimization skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-
-
 This skill helps identify and revitalize outdated content to reclaim lost rankings and traffic. It analyzes content freshness, identifies update opportunities, and guides the refresh process for maximum SEO and GEO impact.
-
-**System role**: Optimization layer skill. It turns weak pages, structures, and technical issues into prioritized repair work.
-
-## When This Must Trigger
-
-Use this when the conversation involves a diagnosis or repair plan that should feed directly into remediation work — even if the user doesn't use SEO terminology:
-
-- Content has lost rankings or traffic over time
-- Statistics and information are outdated
-- Competitors have published better content
-- Content needs updating for a new year
-- Industry changes require content updates
-- Adding new sections to existing content
-- Converting old content for GEO optimization
 
 ## What This Skill Does
 
-1. **Freshness Analysis**: Identifies outdated content needing updates
-2. **Performance Tracking**: Finds content with declining traffic
-3. **Gap Identification**: Spots missing information competitors have
-4. **Update Prioritization**: Ranks content by refresh potential
-5. **Refresh Recommendations**: Provides specific update guidance
-6. **GEO Enhancement**: Updates content for AI citation potential
-7. **Republishing Strategy**: Advises on date and promotion tactics
+Identifies outdated content, scores freshness and performance decay, prioritizes refresh candidates, delivers specific update guidance with GEO enhancement, and advises on republishing strategy.
 
 ## Quick Start
 
@@ -152,30 +120,11 @@ Create a content refresh strategy for [domain/topic]
 
 ### Handoff Summary
 
-Emit this shape when finishing the skill (see [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) for the authoritative format):
-
-- **Status**: DONE / DONE_WITH_CONCERNS / BLOCKED / NEEDS_INPUT
-- **Objective**: what was analyzed, created, or fixed
-- **Key Findings / Output**: the highest-signal result
-- **Evidence**: URLs, data points, or sections reviewed
-- **Open Loops**: blockers, missing inputs, or unresolved risks
-- **Recommended Next Skill**: one primary next move
+> Emit the standard shape from [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ## Data Sources
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
-
-**With ~~analytics + ~~search console + ~~SEO tool connected:**
-Claude can automatically pull historical traffic trends from ~~analytics, fetch impression and ranking data from ~~search console, retrieve keyword position history from ~~SEO tool, and identify content with declining performance. This enables data-driven refresh prioritization.
-
-**With manual data only:**
-Ask the user to provide:
-1. Traffic data or screenshots showing performance trends
-2. Ranking screenshots or history for key pages
-3. Content publish dates and last update dates
-4. List of pages the user suspects need refreshing
-
-Proceed with the analysis using provided data. Note in the output which findings are from automated data vs. manual review.
+Uses ~~analytics, ~~search console, and ~~SEO tool when connected; otherwise asks user for traffic data, ranking history, publish dates, and candidate pages. See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md).
 
 ## Instructions
 
@@ -245,20 +194,6 @@ When a user requests content refresh help:
 
    > **Reference**: See [references/refresh-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/content-refresher/references/refresh-templates.md) for the refresh report template (Step 9).
 
-## Validation Checkpoints
-
-### Input Validation
-- [ ] Target content URL or title clearly identified
-- [ ] Historical performance data available (traffic trends, rankings)
-- [ ] Content publish/update dates known
-- [ ] If comparing to competitors, competitor URLs provided
-
-### Output Validation
-- [ ] **Banned-vocab self-check** — scan the refreshed content (both new additions and proposed replacements) for banned words/phrases per [skill-contract.md §Output Voice](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md). A refresh that leaves filler intact misses the point.
-- [ ] Every recommendation cites specific data points (not generic advice)
-- [ ] Outdated elements identified with specific examples and replacement data
-- [ ] All suggested additions include word counts and section locations
-- [ ] Source of each data point clearly stated (~~analytics data, ~~search console, ~~SEO tool, user-provided, or estimated)
 
 ## Example
 
@@ -282,17 +217,7 @@ When a user requests content refresh help:
 
 ### Save Results
 
-After delivering audit or optimization findings to the user, ask:
-
-> "Save these results for future sessions?"
-
-If yes, write a dated summary to `memory/audits/content-refresher/YYYY-MM-DD-<topic>.md` containing:
-- One-line verdict or headline finding
-- Top 3-5 actionable items
-- Open loops or blockers
-- Source data references
-
-If any veto-level issue was found (CORE-EEAT T04, C01, R10 or CITE T03, T05, T09), also append a one-liner to `memory/hot-cache.md` without asking.
+Ask to save results; if yes, write a dated summary to `memory/audits/content-refresher/YYYY-MM-DD-<topic>.md`. Append veto-level issues to `memory/hot-cache.md` automatically.
 
 
 **Gate check recommended**: Run content-quality-auditor on refreshed content before republishing.
@@ -305,4 +230,4 @@ If any veto-level issue was found (CORE-EEAT T04, C01, R10 or CITE T03, T05, T09
 
 ## Next Best Skill
 
-- **Primary**: [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md) — re-score the refreshed content before shipping.
+Primary: [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md) -- re-score the refreshed content before shipping.

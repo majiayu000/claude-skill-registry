@@ -1,15 +1,15 @@
 ---
 name: geo-content-optimizer
 description: 'Optimize content for AI citations in ChatGPT, Perplexity, AI Overviews, Gemini, Claude. AI引用优化/GEO优化/AI搜索'
-version: "9.0.0"
+version: "9.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 when_to_use: "Use when optimizing content for AI engines like ChatGPT, Perplexity, AI Overviews, Gemini, Claude, or Copilot. Also for AI citation optimization and generative engine visibility."
 argument-hint: "<content URL or text> [target AI engine]"
 metadata:
   author: aaron-he-zhu
-  version: "9.0.0"
+  version: "9.1.0"
   geo-relevance: "high"
   tags:
     - geo
@@ -32,21 +32,16 @@ metadata:
     - "optimize for AI"
     - "get cited by ChatGPT"
     - "AI optimization"
-    - "appear in AI answers"
     - "GEO optimization"
     - "generative engine optimization"
-    - "AI-friendly content"
     - "LLM citations"
     # EN-casual
     - "get cited by AI"
     - "show up in ChatGPT answers"
     - "AI doesn't mention my brand"
-    - "make content AI-quotable"
     - "how do I get AI to mention me"
-    - "ChatGPT doesn't know my brand"
     # EN-question
     - "how to appear in AI answers"
-    - "how to get cited by AI"
     - "why doesn't AI mention my brand"
     # EN-competitor
     - "Perplexity optimization"
@@ -80,42 +75,15 @@ metadata:
     # PT
     - "otimização para IA"
     - "aparecer nas respostas da IA"
-    # Misspellings
-    - "generative engine optimisation"
-    - "GEO optimisation"
 ---
 
 # GEO Content Optimizer
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This build skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-
-
 This skill optimizes content to appear in AI-generated responses. As AI systems increasingly answer user queries directly, getting cited by these systems directly impacts visibility.
-
-**System role**: Build layer skill. It turns briefs and signals into assets that other skills can review, publish, and monitor.
-
-## When This Must Trigger
-
-Use this when the conversation involves a shippable asset or transformation that should feed directly into quality review, deployment, or monitoring — even if the user doesn't use SEO terminology:
-
-- Optimizing existing content for AI citations
-- Creating new content designed for both SEO and GEO
-- Improving chances of appearing in AI Overviews
-- Making content more quotable by AI systems
-- Adding authority signals that AI systems trust
-- Structuring content for AI comprehension
-- Competing for visibility in the AI-first search era
 
 ## What This Skill Does
 
-1. **Citation Optimization**: Makes content more likely to be quoted by AI
-2. **Structure Enhancement**: Formats content for AI comprehension
-3. **Authority Building**: Adds signals that AI systems trust
-4. **Factual Enhancement**: Improves accuracy and verifiability
-5. **Quote Creation**: Creates memorable, citeable statements
-6. **Source Attribution**: Adds proper citations that AI can verify
-7. **GEO Scoring**: Evaluates content's AI-friendliness
+Optimizes content for AI citation by enhancing structure, authority signals, factual density, quotable statements, and source attribution, then scores overall GEO readiness.
 
 ## Quick Start
 
@@ -162,31 +130,11 @@ See [references/ai-overview-recovery.md](https://github.com/aaron-he-zhu/seo-geo
 
 ### Handoff Summary
 
-Emit this shape when finishing the skill (see [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) for the authoritative format):
-
-- **Status**: DONE / DONE_WITH_CONCERNS / BLOCKED / NEEDS_INPUT
-- **Objective**: what was analyzed, created, or fixed
-- **Key Findings / Output**: the highest-signal result
-- **Evidence**: URLs, data points, or sections reviewed
-- **Open Loops**: blockers, missing inputs, or unresolved risks
-- **Recommended Next Skill**: one primary next move
+> Emit the standard shape from [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ## Data Sources
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
-
-> **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
-
-**With ~~AI monitor + ~~SEO tool connected:**
-Automatically pull AI citation patterns (which content is being cited by ChatGPT, Claude, Perplexity), current AI visibility scores, competitor citation frequency, and AI Overview appearance tracking.
-
-**With manual data only:**
-Ask the user to provide:
-1. Target queries where they want AI citations
-2. Current content URL or full content text
-3. Any known instances where competitors are being cited by AI
-
-Proceed with the full workflow using provided data. Note in the output which metrics are from automated collection vs. user-provided data.
+Optional AI monitor and SEO tool integrations pull citation patterns and visibility scores automatically; otherwise ask the user for target queries and content. See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for integration placeholders.
 
 ## Instructions
 
@@ -199,22 +147,6 @@ When a user requests GEO optimization, run these five steps:
 5. **CORE-EEAT GEO Self-Check** — verify 14 GEO-First items (C02, C04, C09, O02, O03, O05, O06, R01, R02, R04, R07, E01, Exp10, Ept08) with Pass/Warn/Fail
 
 > **Reference**: See [references/instructions-detail.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/geo-content-optimizer/references/instructions-detail.md) for the full CORE-EEAT GEO target tables, AI engine preferences, analysis templates, optimization report template, self-check matrix, and examples.
-
-## Validation Checkpoints
-
-### Input Validation
-- [ ] Content source identified (URL, full text, or content draft)
-- [ ] Target AI queries or topics clearly defined
-- [ ] Current GEO baseline assessed (if optimizing existing content)
-
-### Output Validation
-- [ ] **Banned-vocab self-check** — scan output for banned words/phrases per [skill-contract.md §Output Voice](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md). Replace any hit with a concrete alternative.
-- [ ] At least 3 clear, quotable definitions added
-- [ ] Factual density improved with at least 5 verifiable statistics
-- [ ] All claims have source citations from authoritative sources
-- [ ] Q&A format sections cover top 5 user queries
-- [ ] GEO score improvement of at least 50% from baseline
-- [ ] Source of each data point clearly stated (~~AI monitor data, user-provided, or estimated)
 
 ## Example
 
@@ -233,19 +165,7 @@ Answer first; be specific; cite sources; stay current; match query format; build
 
 ### Save Results
 
-After delivering content or optimization output to the user, ask:
-
-> "Save these results for future sessions?"
-
-If yes, write a dated summary to `memory/content/YYYY-MM-DD-<topic>.md` containing:
-- One-line description of what was created
-- Target keyword and content type
-- Open loops or items needing review
-- Source data references
-
-**Gate check recommended**: Run content-quality-auditor before publishing (PostToolUse hook will remind automatically).
-
-If any findings should influence ongoing strategy, recommend promoting key conclusions to `memory/hot-cache.md`.
+On user confirmation, save a dated summary to `memory/content/YYYY-MM-DD-<topic>.md` and promote key conclusions to `memory/hot-cache.md`.
 
 ## Reference Materials
 

@@ -4,7 +4,7 @@ description: Use when you need to write fast unit tests for Quarkus applications
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Quarkus Unit Testing
 
@@ -40,6 +40,24 @@ Compile before test refactors; verify the full suite after.
 - Reduce slow @QuarkusTest usage with Mockito-first tests
 - Add @InjectSpy partial mocking or QuarkusTestProfile configuration in Quarkus tests
 - Convert repeated test methods to @ParameterizedTest with @CsvSource or @MethodSource
+
+## Workflow
+
+1. **Read reference and assess project context**
+
+Read `references/421-frameworks-quarkus-testing-unit-tests.md` and inspect the current project setup before proposing changes.
+
+2. **Gather scope and decide target improvements**
+
+Identify requested outcomes, constraints, and the minimum safe set of changes to apply.
+
+3. **Apply framework-aligned changes**
+
+Implement or refactor configuration/code following the reference patterns and project conventions.
+
+4. **Run verification and report results**
+
+Execute appropriate build/tests and summarize what changed, what was verified, and any follow-up actions.
 
 ## Reference
 

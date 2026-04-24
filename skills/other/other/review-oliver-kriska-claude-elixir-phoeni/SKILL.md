@@ -13,18 +13,25 @@ explain issues — do NOT create tasks or fix anything.
 ## Usage
 
 ```
-/phx:review                          # Review all changed files
+/phx:review                          # Auto-detects task ID from branch/commits
 /phx:review test                     # Review test files only
 /phx:review security                 # Run security audit only
 /phx:review oban                     # Review Oban workers only
 /phx:review deploy                   # Validate deployment config
 /phx:review iron-laws                # Check Iron Law violations only
-/phx:review .claude/plans/auth/plan.md    # Review implementation of plan
+/phx:review ENA-8931                 # Force Linear issue
+/phx:review #42                      # Force GitHub issue
+/phx:review .claude/plans/auth/plan.md    # Force plan / spec file
+/phx:review --no-requirements        # Skip requirements coverage check
 ```
 
 ## Arguments
 
-`$ARGUMENTS` = Focus area or path to plan file.
+`$ARGUMENTS` = Focus area, task ID, or path to plan/spec file.
+
+When no requirements argument is passed, the skill auto-detects a task ID
+from the current git branch name and recent commits (see
+`${CLAUDE_SKILL_DIR}/references/requirements-detection.md`).
 
 ## Workflow
 
@@ -46,6 +53,19 @@ create directories and writes will fail.
   consolidated summary as "PRIOR FINDINGS" with: "Focus on NEW issues. Mark
   still-present issues as PERSISTENT."
 
+### Step 1c: Detect Requirements Source (skip on `--no-requirements`)
+
+Find a task/spec whose requirements should be cross-checked against the diff.
+Priority order (stop at first match): explicit arg → conversation context →
+branch regex → commit subjects → latest plan → none. Full table, regexes,
+and fetch mapping in `${CLAUDE_SKILL_DIR}/references/requirements-detection.md`.
+
+Fetch the detected source into `.claude/plans/${SLUG}/reviews/.requirements-input.md`
+(Linear via `mcp__linear__get_issue`, GitHub via `gh issue view`, file via Read).
+Record `REQ_SOURCE` label (e.g. `"Linear ENA-8931"`) for the verifier heading.
+On fetch failure, set `SOURCE_STATUS=FETCH_FAILED` and continue — verifier
+will emit `NOT AVAILABLE` rather than block the review.
+
 ### Step 2: Spawn Review Agents (MANDATORY)
 
 **NEVER** spawn the same agent role twice per review. One pass per role.
@@ -56,10 +76,16 @@ create directories and writes will fail.
    selection table in `${CLAUDE_SKILL_DIR}/references/agent-spawning.md`
 3. For focused reviews (`test|security|oban|deploy|iron-laws`): spawn only the
    matching specialist from the focused mode table in the same reference
-4. Spawn in ONE message with `mode: "bypassPermissions"` and `run_in_background: true`
-5. **MANDATORY**: pass explicit `output_file` per-agent (mapping in the reference)
-6. Include the CRITICAL prompt block: write by turn ~12, chat body ≤300 words
-7. Scope every agent to the diff: pass `git diff --name-only` output with
+4. **If Step 1c succeeded** (REQ_SOURCE non-empty and `--no-requirements`
+   not passed): add `elixir-phoenix:requirements-verifier` to the same
+   parallel batch. Pass these prompt inputs: `REQUIREMENTS_TEXT` (content
+   of `.requirements-input.md`), `REQUIREMENTS_SOURCE` (REQ_SOURCE label),
+   `DIFF_FILES` (git diff --name-only output), `SOURCE_STATUS` (only if
+   FETCH_FAILED), `output_file: .claude/plans/{slug}/reviews/requirements.md`
+5. Spawn in ONE message with `mode: "bypassPermissions"` and `run_in_background: true`
+6. **MANDATORY**: pass explicit `output_file` per-agent (mapping in the reference)
+7. Include the CRITICAL prompt block: write by turn ~12, chat body ≤300 words
+8. Scope every agent to the diff: pass `git diff --name-only` output with
    "Focus on NEW code. Pre-existing: one-line `{file}:{line} — {brief}`. Do
    NOT deep-analyze unchanged files."
 
@@ -112,6 +138,17 @@ Demote or remove findings that fail filters 1-4. Mark pre-existing per filter 5.
 Read consolidated/agent output. Write to `.claude/plans/{slug}/reviews/{feature}-review.md`
 with verdict: PASS | PASS WITH WARNINGS | REQUIRES CHANGES | BLOCKED.
 
+**Requirements Coverage in verdict**: if the verifier ran, read its
+summary line and fold into the verdict:
+
+- Any `UNMET` → escalate to `REQUIRES CHANGES` (even if code-quality PASS)
+- Any `PARTIAL` (no UNMET) → downgrade PASS → `PASS WITH WARNINGS`
+- `NOT AVAILABLE` / all `MET` / `UNCLEAR` only → no verdict change
+
+Insert the verifier's `## Requirements Coverage` block into the
+review document **before** the per-agent findings so it's the first
+thing the user sees.
+
 ### Step 5: Present Findings and Ask User
 
 **STOP and present the review.** Do NOT create tasks or fix
@@ -138,4 +175,4 @@ to suppress or enforce as conventions?" See `${CLAUDE_SKILL_DIR}/references/conv
 
 `/phx:plan` → `/phx:work` → `/phx:review` (YOU ARE HERE) → Blocked? `/phx:triage` or `/phx:plan` | Pass? `/phx:compound`
 
-See: `${CLAUDE_SKILL_DIR}/references/review-template.md`, `${CLAUDE_SKILL_DIR}/references/example-review.md`, `${CLAUDE_SKILL_DIR}/references/blocker-handling.md`
+See: `${CLAUDE_SKILL_DIR}/references/review-template.md`, `${CLAUDE_SKILL_DIR}/references/example-review.md`, `${CLAUDE_SKILL_DIR}/references/blocker-handling.md`, `${CLAUDE_SKILL_DIR}/references/requirements-detection.md`

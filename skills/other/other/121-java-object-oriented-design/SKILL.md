@@ -4,7 +4,7 @@ description: Use when you need to review, improve, or refactor Java code for obj
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java Object-Oriented Design Guidelines
 
@@ -41,6 +41,24 @@ Before applying any OOD changes, ensure the project compiles. If compilation fai
 - Improve object creation patterns in Java code
 - Improve method design in Java code
 - Improve exception handling in Java code
+
+## Workflow
+
+1. **Compile project before OOD changes**
+
+Run `./mvnw compile` or `mvn compile` and stop immediately if compilation fails.
+
+2. **Read OOD reference and assess code**
+
+Read `references/121-java-object-oriented-design.md` and identify applicable SOLID/OOP/code-smell improvements.
+
+3. **Apply focused refactorings**
+
+Implement the selected object-oriented design improvements while preserving behavior.
+
+4. **Verify with full build**
+
+Run `./mvnw clean verify` or `mvn clean verify` after applying improvements.
 
 ## Reference
 

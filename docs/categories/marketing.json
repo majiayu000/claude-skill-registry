@@ -1,8 +1,8 @@
 {
   "category": "marketing",
   "code": "mkt",
-  "count": 463,
-  "updated_at": "2026-04-23T02:10:59.726926Z",
+  "count": 464,
+  "updated_at": "2026-04-24T02:11:45.445555Z",
   "skills": [
     {
       "name": "social-media",
@@ -3164,6 +3164,25 @@
       "stars": 0,
       "install": "lastdays03/claude_skills/marketing/obsi-moc-manager",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "social-reply-bot",
+      "description": "AI-powered Reddit & X auto-reply bot. Finds relevant posts, generates genuine Claude-powered replies that naturally mention your product. Includes karma warmup and lead tracking.",
+      "repo": "mguozhen/social-bot",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "marketing",
+      "tags": [
+        "reddit",
+        "twitter",
+        "social-media",
+        "ai-replies",
+        "growth",
+        "browser-automation"
+      ],
+      "stars": 0,
+      "install": "mguozhen/social-bot/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "seo-metadata",

@@ -4,7 +4,7 @@ description: Use when you need to refactor Java code based on profiling analysis
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java Profiling Workflow / Step 3 / Refactor code to fix issues
 
@@ -34,6 +34,24 @@ Verify that changes pass all tests before considering the refactoring complete.
 - Refactor the code with profiling
 - Optimize hot path
 - Performance refactoring
+
+## Workflow
+
+1. **Review profiling analysis artifacts**
+
+Read `docs/profiling-problem-analysis-YYYYMMDD.md` and `docs/profiling-solutions-YYYYMMDD.md` to select target bottlenecks.
+
+2. **Apply targeted performance refactors**
+
+Implement focused code changes for documented CPU, memory, or threading hotspots, incrementally and safely.
+
+3. **Verify behavior and performance build integrity**
+
+Run `./mvnw clean verify` or `mvn clean verify`; if tests fail, fix issues before continuing.
+
+4. **Prepare handoff for verification phase**
+
+Summarize implemented changes and expected metric improvements for Step 4 comparison.
 
 ## Reference
 

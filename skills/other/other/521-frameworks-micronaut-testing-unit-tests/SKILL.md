@@ -4,7 +4,7 @@ description: Use when you need to write unit tests for Micronaut applications ‚Ä
 license: Apache-2.0
 metadata:
   author: Juan Antonio Bre√±a Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Micronaut Unit Testing
 
@@ -35,6 +35,24 @@ Compile before test refactors; verify the full suite after.
 
 - Add or improve unit tests in a Micronaut project
 - Reduce unnecessary @MicronautTest usage with Mockito-first tests
+
+## Workflow
+
+1. **Read reference and assess project context**
+
+Read `references/521-frameworks-micronaut-testing-unit-tests.md` and inspect the current project setup before proposing changes.
+
+2. **Gather scope and decide target improvements**
+
+Identify requested outcomes, constraints, and the minimum safe set of changes to apply.
+
+3. **Apply framework-aligned changes**
+
+Implement or refactor configuration/code following the reference patterns and project conventions.
+
+4. **Run verification and report results**
+
+Execute appropriate build/tests and summarize what changed, what was verified, and any follow-up actions.
 
 ## Reference
 

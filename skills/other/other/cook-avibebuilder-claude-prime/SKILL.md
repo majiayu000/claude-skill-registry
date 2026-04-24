@@ -20,18 +20,18 @@ If the request is clear, start. If it's ambiguous or multi-faceted, ask clarifyi
 
 For a small single-concern request, just implement, verify, and continue.
 
-For multi-step work or collaboration, use `tasks.py` to track concrete outcomes. Task files persist in `.tasks/`, so a fresh context can pick up where the last one left off.
+For multi-step work or collaboration, use `.claude/scripts/tasks.py` to track concrete outcomes. Task files persist in `.tasks/`, so a fresh context can pick up where the last one left off.
 
 Every task requires three fields: `title`, `desc`, `expected`. Read the authoring rubric before writing tasks — bad tasks are worse than no tasks:
 
-- `tasks.py --help` for the short-form rubric and examples
+- `.claude/scripts/tasks.py --help` for the short-form rubric and examples
 - `.claude/scripts/tasks-authoring.md` for the full guide
 
 ```
-tasks.py --task-file <slug> add "<title>" "<desc>" "<expected>"
-tasks.py --task-file <slug> list
-tasks.py --task-file <slug> verify <id> "<evidence>"
-tasks.py --task-file <slug> done <id>
+.claude/scripts/tasks.py --task-file <slug> add "<title>" "<desc>" "<expected>"
+.claude/scripts/tasks.py --task-file <slug> list
+.claude/scripts/tasks.py --task-file <slug> verify <id> "<evidence>"
+.claude/scripts/tasks.py --task-file <slug> done <id>
 ```
 
 ### 2. Implement → Verify → Review → Next

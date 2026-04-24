@@ -3,6 +3,19 @@ name: phase4-spec
 description: The Mileva Method (CRISP) — Phase 4: Spec. Full implementation readiness package including solution design, UX direction, tech stack, backlog, MVP prioritization, risk assessment, and AI architecture for Claude Code projects — CLAUDE.md, skill mapping, AI specs, sprint planning, quality gates. Triggers on "spec", "phase 4", "build ready", "implementation plan", "CLAUDE.md", "sprint planning", "backlog", "AI spec", or after Phase I exit checklist is complete.
 ---
 
+## Pacing Rule — One Section at a Time
+
+> Present one section, deliverable, or elicitation move at a time.
+> After presenting — stop. Wait for the client to respond.
+> Do not pre-fill and present multiple sections in one message.
+> Do not move to the next step until the client confirms, corrects, or gives a clear go-ahead.
+>
+> The goal is a conversation, not a document dump.
+> If you've written more than one section without a client response in between — you've gone too far.
+
+---
+
+
 # S — Spec: Implementation Readiness
 
 You are not building the thing. You are making the builder ready to build.
@@ -41,6 +54,8 @@ All filled project documents live in `docs/`. Read from there, not from the blan
 | `docs/ux-discovery.md` | Visual direction, navigation pattern, high-stakes screens, friction/delight — **mandatory for UI/Mobile/Web; if missing, return to Phase I** |
 | `docs/process-flow.md` | Step-by-step logic — feeds agent architecture |
 | `docs/project-goals.md` | Goals and success criteria — every epic must link to one |
+| `docs/integration-map.md` | Every external system — direction, trigger, data in/out, format — **source of truth for all integration specs** |
+| `docs/data-flow.md` | Full system data pipe — confirmed by client in Phase I |
 
 > **If `docs/ux-discovery.md` does not exist and this is a UI/Mobile/Web project: stop. Go back to Phase I and run the UX Discovery section (3A–3E) before continuing.**
 
@@ -186,17 +201,34 @@ Save NFRs as an appended section in `docs/problem-statement.md` and reference th
 
 ---
 
-### 3rd Party Integration Identification — mandatory step
+### 3rd Party Integration Confirmation — mandatory step
 
-> Every 3rd party service in the tech stack = a required integration AI Spec.
+> Phase I already produced `docs/integration-map.md` — every external system was identified and mapped there.
+> This step confirms that list against the tech stack and writes the integration AI Specs. Do not discover integrations here. If something appears in the tech stack that isn't in the integration map — stop, go back, and update `docs/integration-map.md` first.
 
-When finalizing the tech stack, explicitly list every external API, SaaS, or service being integrated (examples: Stripe, Garmin, Twilio, SendGrid, Google Maps, OpenAI, etc.).
+**Step 1: Cross-check tech stack against integration map**
 
-For each one:
+Read `docs/integration-map.md`. For every external system listed there, verify it appears in the tech stack. For every external service in the tech stack, verify it appears in the integration map.
+
+Any mismatch → resolve before continuing:
+> "I see [service] in the tech stack but it's not in the integration map from Phase I. Before I write the spec — what data does it provide or receive, what triggers it, and in what format? Let's add it to the integration map now."
+
+**Step 2: Check for unresolved open questions**
+
+Open `docs/integration-map.md` and read the Open Questions section. Any unresolved questions must be answered before the integration AI Spec for that service is written. Do not write a spec against an unknown payload or trigger.
+
+**Step 3: Write integration AI Specs**
+
+For each confirmed integration:
 1. Flag it in the tech stack table with tag `[INTEGRATION REQUIRED]`
-2. Create a dedicated AI Spec for it → `docs/ai-spec-[service-name].md`
-3. Run the **Web Research Protocol** from `templates/ai-spec.md` — browse the official dev docs, extract auth, endpoints, payloads, response shapes, DB mapping
-4. Only ask the client for what docs don't provide (credentials, account-specific config, sandbox access)
+2. Create a dedicated AI Spec → `docs/ai-spec-[service-name].md`
+3. Pre-fill auth, endpoints, payload shapes, and DB mapping from `docs/integration-map.md` — this is already elicited, do not re-ask
+4. Run the **Web Research Protocol** from `templates/ai-spec.md` — browse official dev docs to fill in anything not captured in Phase I (rate limits, error codes, pagination, SDK quirks)
+5. Only ask the client for what neither the integration map nor the docs provide (credentials, account-specific config, sandbox access)
+
+**Step 4: Sequence integration sprints**
+
+Read the "Sprint dependency" column in `docs/integration-map.md`. Integration specs must be complete before any sprint that calls that API. Flag any sprint ordering conflicts now — do not let them surface during build.
 
 These integration specs are prerequisites — they must be written before the sprint that uses the integration is planned.
 
@@ -442,6 +474,7 @@ Compile from ALL `docs/` files → `CLAUDE.md` in project root.
 | NFR references | `docs/problem-statement.md` NFR section — which NFRs apply to this sprint |
 | 3rd Party Integrations | `docs/buy-vs-build-matrix.md` and 4B tech stack — only for sprints that call those APIs |
 | Environment variables | 4B tech stack; prior integration AI specs |
+| Test requirements | `docs/process-flow.md` — success condition per process step in sprint scope; acceptance criteria from user stories |
 
 **Step 2: Generate sprint-specific open questions**
 
@@ -488,8 +521,26 @@ Work through the questions. Fill answers into the spec. One round. Lock it. No c
 - Deployment checklist: dependencies resolved, env vars clean, no secrets in code
 - Security review before each deploy — cross-check NFRs from 4B
 - PR review standards defined
-- Unit test coverage requirements
 - Guardrail validation: hallucination risks, output validation, fallback logic
+
+**Unit Tests — mandatory on every sprint:**
+
+Tests are not optional and not an afterthought. They are part of the sprint scope. Estimate test writing time alongside feature development — not separately.
+
+Rules for Claude Code (copy these into CLAUDE.md via `templates/CLAUDE.md`):
+- Write unit tests for every function and feature in scope before marking sprint done
+- Run the full test suite before every commit — if a test fails, fix it before committing; do not skip
+- After every run, append an entry to `docs/test-log.md`: sprint, date, each test in plain English, ✅/❌, and for any failure — what was wrong and how it was fixed
+- Test descriptions must be plain English: "Slack notification sends when HeyReach campaign receives a reply" — not "test_fn_returns_200"
+
+**Pre-filling test requirements in the AI Spec:**
+
+For each sprint's AI Spec, pre-fill the Test Requirements section from:
+1. `docs/process-flow.md` — every process step in scope has a success condition; each becomes a required test
+2. Acceptance criteria from the sprint's user stories in `docs/initial-backlog.md`
+3. Edge cases from `docs/assumptions-log.md` and `docs/risk-assessment.md`
+
+> For non-technical clients: the test log is their window into whether the system is actually working. Write it so they can read it. "✅ Slack notification sent when HeyReach reply received — 2026-04-22 — Sprint 1" is useful. "PASS 47/47" is not.
 
 **Security Scanning — Bearer (mandatory on every PR):**
 
@@ -553,6 +604,7 @@ Reference `docs/logging-spec.md` in `CLAUDE.md` and in every sprint's AI Spec qu
 | `docs/ai-spec-[service].md` | Integration spec per 3rd party service | Per integration |
 | `docs/sprint-plan.md` | Sprint sequence, goals, features per sprint, quality gates | Always |
 | `CLAUDE.md` | Compiled project context incl. NFRs — lives in project root, not docs/ | Always |
+| `docs/test-log.md` | Running test record — appended after every run, plain English, all sprints | Always |
 
 ---
 
@@ -686,9 +738,13 @@ If you want to review what's in scope for Sprint 1 first, check `docs/ai-spec-[s
 - [ ] Logging spec referenced in `CLAUDE.md`
 
 **3rd Party Integrations**
-- [ ] Every 3rd party service in tech stack identified and tagged `[INTEGRATION REQUIRED]`
-- [ ] Integration AI Spec written per service → `docs/ai-spec-[service-name].md`
+- [ ] `docs/integration-map.md` read — all Phase I integrations cross-checked against tech stack
+- [ ] Any tech stack service not in integration map flagged and map updated before continuing
+- [ ] All open questions in `docs/integration-map.md` resolved
+- [ ] Every integration tagged `[INTEGRATION REQUIRED]` in tech stack table
+- [ ] Integration AI Spec written per service → `docs/ai-spec-[service-name].md` (pre-filled from integration map)
 - [ ] Auth, endpoints, payloads, DB mapping documented for each
+- [ ] Integration sprint sequencing confirmed — integration specs complete before dependent sprints
 
 **Foundation**
 - [ ] Initial backlog pre-filled, naming confirmed with client → `docs/initial-backlog.md`
@@ -717,6 +773,10 @@ If you want to review what's in scope for Sprint 1 first, check `docs/ai-spec-[s
 - [ ] No open questions remain in any locked spec
 - [ ] Sprint plan sequenced using MVP prioritization + dependency map → `docs/sprint-plan.md`
 - [ ] Quality gates defined per sprint (incl. logging gate)
+- [ ] Test requirements pre-filled in every AI Spec from process-flow success conditions
+- [ ] Test writing included in sprint effort estimates (not a separate afterthought)
+- [ ] `docs/test-log.md` created from `templates/test-log.md`
+- [ ] Testing rules block in `CLAUDE.md` — write tests, run before commit, append to test-log, plain English
 - [ ] Integration specs completed before sprints that depend on them
 - [ ] Key decisions logged → `docs/decisions.md`
 

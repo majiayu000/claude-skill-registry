@@ -4,7 +4,7 @@ description: Guides the creation of detailed agile feature documentation from an
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Create Agile Features from an Epic
 
@@ -36,6 +36,28 @@ Read the epic before summarizing. Ask questions in order; repeat questions 9–1
 - Split epic into features
 - Feature files from epic
 - Derive features from epic
+
+## Workflow
+
+0. **Get current date**
+
+Run `date` before generation and use that value for all date placeholders in feature documents.
+
+1. **Analyze epic and gather feature details**
+
+Read epic content from file path or pasted input, summarize it for confirmation, then ask the template questions in order.
+
+Step constraints:
+- Use exact wording from the numbered template questions
+- Repeat per-feature questions (9-11) for every identified feature
+
+2. **Generate one document per feature**
+
+Create one Markdown feature file per agreed feature, honoring user-defined naming, output path, audience/depth preferences, and per-feature inputs.
+
+3. **Close with integration guidance**
+
+Provide next steps for prioritization, breakdown into user stories, and alignment with epic goals and dependencies.
 
 ## Reference
 

@@ -4,7 +4,7 @@ description: Use when creating a plan using Plan model and enhancing structured 
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java Design Plan Creation for Cursor Plan Mode
 
@@ -17,7 +17,7 @@ Guide the process of creating a structured plan using Cursor Plan mode. **This i
 - Required sections: Requirements Summary, Approach (with Mermaid), Task List, Execution Instructions, File Checklist, Notes
 - London Style (outside-in) TDD pattern
 - Plan execution discipline: update Status after each task before advancing
-- Plan file path: .cursor/plans/YYYY-MM-DD_&lt;name&gt;.plan.md
+- Plan storage: ask user for preferred folder and filename convention before creating artifact
 
 ## Constraints
 
@@ -28,6 +28,7 @@ Gather context before drafting. Include Execution Instructions in every plan. Ne
 - **MUST**: Ask one or two questions at a time; never all at once
 - **MUST**: Validate summary ("Does this capture what you need?") before proposing plan creation
 - **MUST**: Wait for user to confirm "proceed" before generating the plan
+- **MUST**: Ask the user where they want to store the plan before generating the plan artifact
 - **MUST**: Include Execution Instructions section in every generated plan
 
 ## When to use this skill
@@ -40,6 +41,32 @@ Gather context before drafting. Include Execution Instructions in every plan. Ne
 - Refactor the plan
 - Improve the plan
 - Update the plan
+
+## Workflow
+
+0. **Get current date**
+
+Run `date` before planning and use it to derive the plan filename prefix `YYYY-MM-DD`.
+
+1. **Read reference and gather context**
+
+Read `references/041-planning-plan-mode.md` and ask one or two questions at a time to clarify requirements, constraints, and target scope.
+
+2. **Validate summary and confirm proceed**
+
+Summarize understanding, ask "Does this capture what you need?", and wait for explicit "proceed" before creating the plan artifact.
+
+3. **Confirm plan storage location**
+
+Ask where the user wants to store the plan (for example, `.cursor/plans/` or another folder) and confirm the target filename pattern before writing.
+
+4. **Generate structured plan artifact**
+
+Create the plan at the confirmed location using required sections and YAML frontmatter, including Execution Instructions.
+
+5. **Apply execution discipline**
+
+When executing tasks from the plan, update the Status column after each task before moving to the next one.
 
 ## Reference
 

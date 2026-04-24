@@ -4,7 +4,7 @@ description: Use when you need to generate an AGENTS.md file for a Java reposito
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # AGENTS.md Generator for Java repositories
 
@@ -32,6 +32,24 @@ No Maven validation is required before generating AGENTS.md. Review the project 
 - Create AGENTS.md
 - Update AGENTS.md file
 - Add agent instructions
+
+## Workflow
+
+1. **Review repository context before drafting**
+
+Inspect project structure and existing documentation to prepare accurate responses for the AGENTS.md discovery phase.
+
+2. **Read AGENTS generation reference**
+
+Read `references/200-agents-md.md` and follow its generation patterns and safeguards.
+
+3. **Run interactive requirements capture**
+
+Gather role, tech stack, commands, workflow, and boundaries in a modular step-based conversation.
+
+4. **Generate AGENTS.md artifact**
+
+Create AGENTS.md with ✅ Always do / ⚠️ Ask first / 🚫 Never do boundaries and repository-specific conventions.
 
 ## Reference
 

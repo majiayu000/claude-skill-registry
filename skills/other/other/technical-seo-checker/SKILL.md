@@ -1,16 +1,16 @@
 ---
 name: technical-seo-checker
 description: 'Technical SEO audit: Core Web Vitals, crawl, indexing, mobile, speed, architecture, redirects. 技术SEO/网站速度'
-version: "9.0.0"
+version: "9.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 when_to_use: "Use when checking technical SEO health: site speed, Core Web Vitals, indexing, crawlability, robots.txt, sitemaps, or canonical tags."
 argument-hint: "<URL or domain>"
 allowed-tools: WebFetch
 metadata:
   author: aaron-he-zhu
-  version: "9.0.0"
+  version: "9.1.0"
   geo-relevance: "low"
   tags:
     - seo
@@ -39,22 +39,17 @@ metadata:
     - "crawl issues"
     - "site indexing problems"
     - "canonical tag issues"
-    - "duplicate content"
-    - "mobile-friendly check"
     - "site speed"
     - "site health check"
     # EN-casual
     - "my site is slow"
     - "Google can't crawl my site"
-    - "Google can't find my pages"
-    - "mobile issues"
     - "indexing problems"
     - "why is my site slow"
     # EN-question
     - "how do I fix my page speed"
     - "why is my site not indexed"
     - "how to improve Core Web Vitals"
-    - "why did my site disappear from Google"
     # EN-competitor
     - "PageSpeed Insights alternative"
     - "GTmetrix alternative"
@@ -98,44 +93,16 @@ metadata:
     - "auditoria SEO técnica"
     - "meu site não aparece no Google"
     - "velocidade de carregamento"
-    # Misspellings
-    - "techincal SEO"
-    - "core web vitalls"
 ---
 
 # Technical SEO Checker
 
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This optimization skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-
-
 This skill performs comprehensive technical SEO audits to identify issues that may prevent search engines from properly crawling, indexing, and ranking your site.
-
-**System role**: Optimization layer skill. It turns weak pages, structures, and technical issues into prioritized repair work.
-
-## When This Must Trigger
-
-Use this when the conversation involves a diagnosis or repair plan that should feed directly into remediation work — even if the user doesn't use SEO terminology:
-
-- Launching a new website
-- Diagnosing ranking drops
-- Pre-migration SEO audits
-- Regular technical health checks
-- Identifying crawl and index issues
-- Improving site performance
-- Fixing Core Web Vitals issues
 
 ## What This Skill Does
 
-1. **Crawlability Audit**: Checks robots.txt, sitemaps, crawl issues
-2. **Indexability Review**: Analyzes index status and blockers
-3. **Site Speed Analysis**: Evaluates Core Web Vitals and performance
-4. **Mobile-Friendliness**: Checks mobile optimization
-5. **Security Check**: Reviews HTTPS and security headers
-6. **Structured Data Audit**: Validates schema markup
-7. **URL Structure Analysis**: Reviews URL patterns and redirects
-8. **International SEO**: Checks hreflang and localization
+Audits crawlability, indexability, Core Web Vitals, mobile-friendliness, HTTPS/security, structured data, URL structure, and international SEO with scored results and a prioritized fix roadmap.
 
 ## Quick Start
 
@@ -202,32 +169,11 @@ See [references/bulk-audit-playbook.md](https://github.com/aaron-he-zhu/seo-geo-
 
 ### Handoff Summary
 
-Emit this shape when finishing the skill (see [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) for the authoritative format):
-
-- **Status**: DONE / DONE_WITH_CONCERNS / BLOCKED / NEEDS_INPUT
-- **Objective**: what was analyzed, created, or fixed
-- **Key Findings / Output**: the highest-signal result
-- **Evidence**: URLs, data points, or sections reviewed
-- **Open Loops**: blockers, missing inputs, or unresolved risks
-- **Recommended Next Skill**: one primary next move
+> Emit the standard shape from [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ## Data Sources
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
-
-**Scraping legality**: Before crawling any domain that is not your own or not under written authorization, verify `robots.txt` disallows, respect `Crawl-delay`, and confirm target TOS permits automated access. See [SECURITY.md §Scraping Boundaries](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/SECURITY.md).
-
-**With ~~web crawler + ~~page speed tool + ~~CDN connected:**
-Claude can automatically crawl the entire site structure via ~~web crawler, pull Core Web Vitals and performance metrics from ~~page speed tool, analyze caching headers from ~~CDN, and fetch mobile-friendliness data. This enables comprehensive automated technical audits.
-
-**With manual data only:**
-Ask the user to provide:
-1. Site URL(s) to audit
-2. PageSpeed Insights screenshots or reports
-3. robots.txt file content
-4. sitemap.xml URL or file
-
-Proceed with the full audit using provided data. Note in the output which findings are from automated crawl vs. manual review.
+Uses ~~web crawler, ~~page speed tool, and ~~CDN when connected; otherwise asks user for site URLs, PageSpeed reports, robots.txt, and sitemap. See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) and [SECURITY.md §Scraping Boundaries](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/SECURITY.md).
 
 ## Instructions
 
@@ -271,18 +217,6 @@ When a user requests a technical SEO audit:
 
    > **Reference**: See [references/technical-audit-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/technical-seo-checker/references/technical-audit-templates.md) for the audit summary template (Step 9).
 
-## Validation Checkpoints
-
-### Input Validation
-- [ ] Site URL or domain clearly specified
-- [ ] Access to technical data (robots.txt, sitemap, or crawl results)
-- [ ] Performance metrics available (via ~~page speed tool or screenshots)
-
-### Output Validation
-- [ ] Every recommendation cites specific data points (not generic advice)
-- [ ] All issues include affected URLs or page counts
-- [ ] Performance metrics include actual numbers with units (seconds, KB, etc.)
-- [ ] Source of each data point clearly stated (~~web crawler data, ~~page speed tool, user-provided, or estimated)
 
 ## Example
 
@@ -305,17 +239,7 @@ When a user requests a technical SEO audit:
 
 ### Save Results
 
-After delivering audit or optimization findings to the user, ask:
-
-> "Save these results for future sessions?"
-
-If yes, write a dated summary to `memory/audits/technical-seo-checker/YYYY-MM-DD-<topic>.md` containing:
-- One-line verdict or headline finding
-- Top 3-5 actionable items
-- Open loops or blockers
-- Source data references
-
-If any veto-level issue was found (CORE-EEAT T04, C01, R10 or CITE T03, T05, T09), also append a one-liner to `memory/hot-cache.md` without asking.
+Ask to save results; if yes, write a dated summary to `memory/audits/technical-seo-checker/YYYY-MM-DD-<topic>.md`. Append veto-level issues to `memory/hot-cache.md` automatically.
 
 ## Reference Materials
 
@@ -326,4 +250,4 @@ If any veto-level issue was found (CORE-EEAT T04, C01, R10 or CITE T03, T05, T09
 
 ## Next Best Skill
 
-- **Primary**: [on-page-seo-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/on-page-seo-auditor/SKILL.md) — continue from infrastructure issues into page-level remediation.
+Primary: [on-page-seo-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/on-page-seo-auditor/SKILL.md) -- continue from infrastructure issues into page-level remediation.

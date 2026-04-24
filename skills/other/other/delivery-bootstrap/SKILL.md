@@ -50,7 +50,34 @@ Just-in-Time tech stack detection and setup.
    - Error handling patterns
    - API patterns
 
-5. **Output**:
+5. **Scaffold Architecture Decision Records** (if applicable):
+   - Check: Does the project have significant architecture decisions ahead? Indicators:
+     - Multiple competing implementation approaches (e.g., REST vs GraphQL, monolith vs microservices)
+     - New infrastructure choices (database, hosting, auth provider)
+     - Framework selection or migration
+     - Integration with external systems
+   - If yes: create `docs/adr/` directory and a template file `docs/adr/0000-template.md`:
+     ```
+     # [NUMBER]. [TITLE]
+
+     Date: [DATE]
+
+     ## Status
+     Proposed | Accepted | Deprecated | Superseded by [ADR-XXXX]
+
+     ## Context
+     What is the issue that we're seeing that is motivating this decision?
+
+     ## Decision
+     What is the change that we're proposing and/or doing?
+
+     ## Consequences
+     What becomes easier or more difficult to do because of this change?
+     ```
+   - If no significant architecture decisions are foreseeable: skip. Don't scaffold ceremony for a weekend project.
+   - ADR format: Nygard (Context/Decision/Consequences). Lightweight by design — each ADR should be readable in under 2 minutes.
+
+6. **Output**:
    ```
    ## Stack Profile
    - Language: [x] v[y]
@@ -73,6 +100,11 @@ Just-in-Time tech stack detection and setup.
 
    ## Issues Found
    - [any broken tooling or warnings]
+
+   ## Architecture Decision Records
+   - Scaffolded: yes/no
+   - Location: docs/adr/
+   - Pending decisions: [list if any identified during bootstrap]
    ```
 
 ## Rules
@@ -87,3 +119,4 @@ See `.claude/jit-tooling/active-stack.example.yml` for the expected format.
 ## Theory Citations
 - Forsgren: Accelerate (tooling and automation)
 - Smart: Sooner Safer Happier (remove friction)
+- Nygard: Architecture Decision Records (lightweight decision documentation)

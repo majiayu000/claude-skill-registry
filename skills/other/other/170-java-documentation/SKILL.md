@@ -4,7 +4,7 @@ description: Use when you need to generate or improve Java project documentation
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java Documentation Generator with modular step-based configuration
 
@@ -31,6 +31,24 @@ Before applying any documentation generation, ensure the project validates. If v
 - Improve the code with documentation
 - Apply documentation
 - Refactor the code with documentation
+
+## Workflow
+
+1. **Validate project before documentation changes**
+
+Run `./mvnw validate` or `mvn validate` and stop immediately if validation fails.
+
+2. **Read documentation reference and gather scope**
+
+Read `references/170-java-documentation.md` and identify required outputs (README, package-info, Javadoc enhancements).
+
+3. **Generate selected documentation artifacts**
+
+Create or update documentation using the selected file-handling strategy (overwrite/add/backup/skip).
+
+4. **Run documentation validation checks**
+
+Execute `./mvnw clean compile` and `./mvnw javadoc:javadoc` (or equivalent) to validate generated docs.
 
 ## Reference
 

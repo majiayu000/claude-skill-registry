@@ -4,7 +4,7 @@ description: Use when you need to review, improve, or troubleshoot a Maven pom.x
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Maven Best Practices
 
@@ -40,6 +40,24 @@ Before applying Maven best practices recommendations, ensure the project is in a
 - Review pom.xml to improve it
 - Apply Maven best practices to pom.xml
 - Improve Maven POM configuration
+
+## Workflow
+
+1. **Validate project before recommendations**
+
+Run `./mvnw validate` or `mvn validate` and stop if validation fails.
+
+2. **Read reference and analyze root POM**
+
+Read `references/110-java-maven-best-practices.md`, then inspect root `pom.xml` structure, dependency management, plugin management, properties, and profiles.
+
+3. **Expand to full module tree when present**
+
+If root has a `<modules>` section, read every child `pom.xml` and evaluate cross-module duplication, centralization opportunities, and version drift.
+
+4. **Provide prioritized best-practice recommendations**
+
+Propose concrete, safe improvements aligned with Maven best practices and full-module findings.
 
 ## Reference
 

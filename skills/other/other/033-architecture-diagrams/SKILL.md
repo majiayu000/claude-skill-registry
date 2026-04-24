@@ -4,7 +4,7 @@ description: Use when you need to generate Java project diagrams — including U
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java Diagrams Generator with modular step-based configuration
 
@@ -38,6 +38,30 @@ Before applying any diagram generation, ensure the project validates. If validat
 - Create state machine diagram
 - Create C4 diagram
 - Generate ER diagram
+
+## Workflow
+
+1. **Validate project state**
+
+Run `./mvnw validate` or `mvn validate` before applying any diagram generation.
+
+Step constraints:
+- If validation fails, stop and ask to resolve errors first
+
+2. **Read reference and configure diagram scope**
+
+Read `references/033-architecture-diagrams.md`, identify requested diagram types, and confirm output organization strategy (single-file, separate-files, or integrated docs).
+
+3. **Generate PlantUML diagrams**
+
+Create requested diagrams in PlantUML syntax (sequence, class, C4 levels 1-3 only, state machine, ER) using project inputs and context.
+
+Step constraints:
+- Never generate C4 Level 4 (Code) diagrams
+
+4. **Validate and finalize outputs**
+
+Check generated diagrams for syntax correctness and consistency with selected scope before final delivery.
 
 ## Reference
 

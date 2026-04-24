@@ -4,7 +4,7 @@ description: Use when you need to generate a checklist document with Java system
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Create a Checklist with all Java steps to use with system prompts for Java
 
@@ -29,6 +29,24 @@ Follow the template exactly without adding or removing steps, sections, or rules
 - Create Java system prompts checklist
 - Generate INVENTORY-SKILLS-JAVA.md
 - Use @001-skills-inventory
+
+## Workflow
+
+1. **Read the embedded template**
+
+Read `references/001-skills-inventory.md` before generating output and use it as the single source of truth.
+
+Step constraints:
+- Do not use cached or remembered template content
+- Preserve exact section and checklist structure from the reference
+
+2. **Generate inventory document**
+
+Create `INVENTORY-SKILLS-JAVA.md` in the project root using the exact wording and order from the reference template.
+
+3. **Validate template fidelity**
+
+Verify that no extra steps or rules were added, and that all expected sections from the reference are present in the generated file.
 
 ## Reference
 

@@ -4,7 +4,7 @@ description: Use when you need to generate Architecture Decision Records (ADRs) 
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java ADR Generator with interactive conversational approach
 
@@ -15,15 +15,6 @@ Generate Architecture Decision Records (ADRs) for Java projects through an inter
 - ADR file storage configuration
 - Conversational information gathering: context, stakeholders, decision drivers, options with pros/cons, outcome, consequences
 - MADR template generation
-- Validation with `./mvnw validate` or `mvn validate` before proceeding
-
-## Constraints
-
-Before applying any ADR generation, ensure the project validates. If validation fails, stop immediately — do not proceed until all validation errors are resolved.
-
-- **MANDATORY**: Run `./mvnw validate` or `mvn validate` before applying any ADR generation
-- **SAFETY**: If validation fails, stop immediately — do not proceed until all validation errors are resolved
-- **BEFORE APPLYING**: Read the reference for detailed good/bad examples, constraints, and safeguards for each ADR generation pattern
 
 ## When to use this skill
 
@@ -44,6 +35,20 @@ Before applying any ADR generation, ensure the project validates. If validation 
 - Deployment strategy ADR
 - Infrastructure choice
 - Vendor selection ADR
+
+## Workflow
+
+1. **Read ADR reference and gather context**
+
+Read `references/030-architecture-adr-general.md`, then collect context, stakeholders, decision drivers, options, and trade-offs through conversation.
+
+2. **Synthesize and confirm decision**
+
+Summarize recommended option, rationale, and consequences, and confirm alignment with the user before creating the ADR artifact.
+
+3. **Generate ADR output**
+
+Create a MADR-style ADR document with the final decision, alternatives, consequences, and follow-up actions.
 
 ## Reference
 

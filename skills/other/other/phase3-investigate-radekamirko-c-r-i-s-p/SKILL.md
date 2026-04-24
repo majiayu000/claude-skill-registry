@@ -1,7 +1,20 @@
 ---
 name: phase3-investigate
-description: The Mileva Method (CRISP) — Phase 3: Investigate. Process mapping for existing or greenfield processes, user journey mapping, UX discovery, project goals. Use after outcome alignment. Triggers on "investigate", "phase 3", "map the process", "process mapping", "user journey", "as-is process", or after Phase R exit checklist is complete.
+description: The Mileva Method (CRISP) — Phase 3: Investigate. Process mapping for existing or greenfield processes, user journey mapping, UX discovery, project goals, system architecture (integration map + data flow). Use after outcome alignment. Triggers on "investigate", "phase 3", "map the process", "process mapping", "user journey", "as-is process", or after Phase R exit checklist is complete.
 ---
+
+## Pacing Rule — One Section at a Time
+
+> Present one section, deliverable, or elicitation move at a time.
+> After presenting — stop. Wait for the client to respond.
+> Do not pre-fill and present multiple sections in one message.
+> Do not move to the next step until the client confirms, corrects, or gives a clear go-ahead.
+>
+> The goal is a conversation, not a document dump.
+> If you've written more than one section without a client response in between — you've gone too far.
+
+---
+
 
 # I — Investigate: Process Understanding
 
@@ -45,7 +58,12 @@ Design one step at a time:
 ## Deliverable 1: Process / Flow Diagram
 
 Map every step visually. Tool doesn't matter — draw.io, Figma, Miro, pen and paper.
-Save to `docs/process-flow.md`.
+
+> For each step in the process, capture the **success condition** — one plain-language sentence describing what "working correctly" looks like for that step. Write it from the client's perspective, not technically.
+> Bad: "works correctly" — Good: "Slack message sent to #sales within 30 seconds of HeyReach reply received"
+> These feed directly into unit test requirements in Phase S. If you can't write a success condition for a step, the step isn't defined well enough yet.
+
+Save to `docs/process-flow.md` using `templates/process-flow.md`.
 
 ---
 
@@ -165,6 +183,64 @@ Save to `docs/project-goals.md`
 
 ---
 
+## Deliverable 4: System Architecture — Integration Map + Data Flow
+
+> Run this after process mapping and before closing Phase I.
+> This is the step that answers: where does the data actually come from, and where does it go?
+> Without it, Phase S will spec integrations it discovered too late — and non-technical clients will have no way to validate that what's being built matches what they imagined.
+
+> **The HeyReach/Slack problem.** Someone wants an agent to ping them on Slack whenever a prospect replies in a HeyReach campaign. Sounds simple. But if nobody asked "how does the system know a reply happened in HeyReach?" — the integration was never designed. There's no webhook configured, no API polling, no data contract. The spec was written for a system that assumed data would appear from nowhere. Map the pipe first. Every time.
+
+---
+
+### Step 1: Integration Map
+
+For every external system involved in the process — whether it sends data in, receives data out, or both — fill one entry in `docs/integration-map.md`.
+
+Pull systems from the process flow (`docs/process-flow.md`) — every external tool named in a step is a candidate integration.
+
+For each system, elicit:
+
+**What data does it provide us?**
+> "When [trigger event] happens in [system] — what exactly gets sent to us? Can you show me an example? I need to see the actual fields, not a summary."
+
+Never accept "it sends the reply data." Get the payload. If they don't know — flag it as an open question and it must be resolved before the integration spec is written in Phase S.
+
+**What triggers it?**
+> "Is this triggered by something the user does, something on a schedule, or does [system] push it automatically? Walk me through the exact moment it fires."
+
+Webhooks, scheduled polls, user-initiated API calls, and manual exports are all fundamentally different to build. Get clarity now.
+
+**What do we send back?**
+> "After we process this — does [system] need anything from us? A status update, a record write, a notification?"
+
+**Format and auth:**
+> "Does [system] have a sandbox or test environment? What auth does it use — API key, OAuth, something else?"
+
+Save to `docs/integration-map.md` using `templates/integration-map.md`.
+
+> If any integration has unanswered questions — log them in the Open Questions section of `docs/integration-map.md`. They must be resolved before Phase S writes the integration AI Spec for that service.
+
+---
+
+### Step 2: Data Flow
+
+Once the integration map is complete, draw the full picture.
+
+`docs/data-flow.md` answers three questions for the whole system — not per step, but end to end:
+1. What enters the system, from where, in what format?
+2. What does the system do with it?
+3. What leaves the system, to where, in what format?
+
+Pre-fill from `docs/process-flow.md` and `docs/integration-map.md`. Then present to the client:
+> "Here's the full picture of how data moves through what we're building. Everything coming in is here, everything going out is here. Read through it — is there anything coming in or going out that we haven't captured? Anything that looks wrong?"
+
+This is a client-facing document. Write it in plain language. No technical jargon. If a non-technical person can't read it and verify it, rewrite it until they can.
+
+Save to `docs/data-flow.md` using `templates/data-flow.md`. Get client sign-off before closing Phase I.
+
+---
+
 ## UX Discovery — Mandatory for External Products (UI/Mobile/Web)
 
 > Run this after user journey maps are complete, before closing Phase I.
@@ -251,27 +327,12 @@ Record the answers. They become UX notes in the screen specs.
 
 ---
 
-## Phase 3 Outputs
-
-> Save all of these to `docs/` before closing Phase I.
-
-| File | Contents | Required? |
-|---|---|---|
-| `docs/process-flow.md` | Full process map — every step, tool, input, output, decision | Always |
-| `docs/user-journey-map.md` | Journey per system user type — steps, needs, feelings, pain points, delights | Always |
-| `docs/project-goals.md` | Goals (incl. elicited), non-goals, success criteria linked to Phase R metrics | Always |
-| `docs/ux-discovery.md` | Audience mental models, visual direction, navigation pattern, high-stakes screens, friction/delight | External UI/Mobile/Web only |
-
----
-
-
 ## Data Mapping — Mandatory When Structured Data Extraction Is In Scope
 
 > **Trigger:** Run this section if any feature in scope involves extracting, transforming, or mapping structured data.
 > Examples: OCR from documents, API response parsing, CSV/Excel imports, form submissions to DB, webhook payloads.
 >
 > If the mapping isn't defined here, Claude will guess in Phase S. It will be wrong.
-> The OCR-reads-PDF-saves-to-DB feature that seemed simple will become 3 sprints of back-and-forth fixes.
 
 **How to detect if this applies:**
 
@@ -315,9 +376,11 @@ Save to `docs/data-mapping.md` using the template in `/templates/data-mapping.md
 
 | File | Contents | Required? |
 |---|---|---|
-| `docs/process-flow.md` | Full process map — every step, tool, input, output, decision | Always |
+| `docs/process-flow.md` | Full process map — every step, tool, input, output, decision, success condition per step | Always |
 | `docs/user-journey-map.md` | Journey per system user type — steps, needs, feelings, pain points, delights | Always |
 | `docs/project-goals.md` | Goals (incl. elicited), non-goals, success criteria linked to Phase R metrics | Always |
+| `docs/integration-map.md` | Every external system — direction, trigger, data in/out, format, auth, open questions | Always |
+| `docs/data-flow.md` | Full system data pipe in plain language — data in, processing, data out — client signed off | Always |
 | `docs/ux-discovery.md` | Audience mental models, visual direction, navigation pattern, high-stakes screens, friction/delight | External UI/Mobile/Web only |
 | `docs/data-mapping.md` | Field-by-field source → DB mapping, edge cases, validation rules | When structured data extraction is in scope |
 
@@ -331,6 +394,7 @@ Save to `docs/data-mapping.md` using the template in `/templates/data-mapping.md
 
 - **Process track chosen** — Track A (existing) or Track B (greenfield), and why
 - **User types included/excluded from journey maps** — who got a map and who didn't, with reason
+- **Integration decisions** — which systems are in scope, any integration ruled out and why
 - **Navigation pattern** (if UX discovery ran) — which pattern was chosen and why
 - **Data mapping scope** — which features triggered data mapping and what was decided on edge case handling
 
@@ -338,7 +402,7 @@ Save to `docs/data-mapping.md` using the template in `/templates/data-mapping.md
 
 ## Exit Checklist
 - [ ] Process fully mapped (Track A or B) → `docs/process-flow.md`
-- [ ] Every tool, input, output, and decision point documented
+- [ ] Every tool, input, output, decision point, and **success condition** documented per step
 - [ ] Stakeholder-register reviewed — system users identified, non-users excluded from journey mapping
 - [ ] One journey map per system user type → `docs/user-journey-map.md`
 - [ ] Each user type persona confirmed before mapping their journey
@@ -347,6 +411,11 @@ Save to `docs/data-mapping.md` using the template in `/templates/data-mapping.md
 - [ ] Project goals pre-filled from Phase R, three elicitation moves run, confirmed → `docs/project-goals.md`
 - [ ] Unstated and conflicting goals surfaced and resolved
 - [ ] Diagrams drawn and shared with client for confirmation
+- [ ] **System Architecture complete:**
+  - [ ] Every external system named and mapped → `docs/integration-map.md`
+  - [ ] Trigger, data in/out, format, and auth documented per system
+  - [ ] No integration left as "TBD" — open questions logged and flagged for resolution before Phase S
+  - [ ] Data flow written in plain language, client has read and signed off → `docs/data-flow.md`
 - [ ] **[Structured data in scope]** Data mapping complete → `docs/data-mapping.md`
   - [ ] Source structure described with real example (not assumed)
   - [ ] Every field mapped: source location → DB table → column → type

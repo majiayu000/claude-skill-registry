@@ -1,16 +1,16 @@
 ---
 name: domain-authority-auditor
 description: '40-item CITE domain audit: citation, impact, trust, entity scoring with veto checks. 域名权威/网站可信度'
-version: "9.0.0"
+version: "9.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 when_to_use: "Use when auditing domain trust and authority. Runs CITE 40-item scoring with veto checks. Also when the user asks about domain credibility or citation trustworthiness."
 argument-hint: "<domain>"
 class: auditor
 metadata:
   author: aaron-he-zhu
-  version: "9.0.0"
+  version: "9.1.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -29,14 +29,11 @@ metadata:
     - "audit domain authority"
     - "CITE audit"
     - "domain trust score"
-    - "domain credibility check"
     - "domain rating"
     - "site authority"
     # EN-casual
     - "how trustworthy is my site"
     - "is my domain credible"
-    - "is my domain trustworthy"
-    - "domain credibility score"
     - "Google penalty recovery"
     - "my site got penalized"
     # EN-question
@@ -61,25 +58,16 @@ metadata:
     - "auditoría de dominio"
     # PT
     - "autoridade de domínio"
-    # Misspellings
-    - "domain autority"
 ---
 
 # Domain Authority Auditor
 
 > Based on [CITE Domain Rating](https://github.com/aaron-he-zhu/cite-domain-rating). Full benchmark reference: [references/cite-domain-rating.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/cite-domain-rating.md)
-
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This cross-cutting skill is part of the protocol layer and follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-
-
 This skill evaluates domain authority across 40 standardized criteria organized in 4 dimensions. It produces a comprehensive audit report with per-item scoring, dimension and weighted scores by domain type, veto item checks, and a prioritized action plan.
 
 **Sister skill**: [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md) evaluates content at the page level (80 items). This skill evaluates the domain behind the content (40 items). Together they provide a complete 120-item assessment.
 
 > **Namespace note**: CITE uses C01-C10 for Citation items; CORE-EEAT uses C01-C10 for Contextual Clarity items. In combined 120-item assessments, prefix with the framework name (e.g., CITE-C01 vs CORE-C01) to avoid confusion.
-
-**System role**: Citation Trust Gate. It decides whether a domain is credible enough to support ranking, citation, and brand authority work.
 
 ## When This Must Trigger
 
@@ -649,17 +637,7 @@ Execute in order, referring to the `## Scoring Runbook (authoritative)` block ea
 
 ### Save Results
 
-After delivering findings to the user, ask:
-
-> "Save these results for future sessions?"
-
-If yes, write a dated summary to the appropriate `memory/` path using filename `YYYY-MM-DD-<topic>.md` containing:
-- One-line verdict or headline finding
-- Top 3-5 actionable items
-- Open loops or blockers
-- Source data references
-
-If any veto-level issue was found (CORE-EEAT T04, C01, R10 or CITE T03, T05, T09), also append a one-liner to `memory/hot-cache.md` without asking.
+Ask "Save these results for future sessions?" — if yes, write `YYYY-MM-DD-<topic>.md` to `memory/`. Auto-save veto issues to `memory/hot-cache.md`.
 
 ## Validation Checkpoints
 
@@ -697,9 +675,4 @@ See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-claud
 
 ## Next Best Skill
 
-Follows the verdict-conditional branching pattern in [skill-contract.md §Termination rules for Next Best Skill chains](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md). Visited-set rule applies: if the caller in this chain is the recommended target, STOP and report chain-complete.
-
-- **Verdict = CAUTIOUS AND specific issue is link-quality** → Primary: [backlink-analyzer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/backlink-analyzer/SKILL.md) — turn link-quality trust issues into link-level investigation.
-- **Verdict = UNTRUSTED** → Primary: [entity-optimizer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/entity-optimizer/SKILL.md) — trust-building requires canonical entity work, not more link analysis.
-- **Verdict = TRUSTED** → Terminal (no recommendation). Chain ends.
-- **Visited-set exception**: if `backlink-analyzer` invoked this audit (toxic ratio > 15% gate check), do NOT hand back to `backlink-analyzer` regardless of verdict — STOP chain and report chain-complete.
+CAUTIOUS + link-quality: [backlink-analyzer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/backlink-analyzer/SKILL.md). UNTRUSTED: [entity-optimizer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/entity-optimizer/SKILL.md). TRUSTED: terminal. Visited-set rule applies per [skill-contract.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).

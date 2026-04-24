@@ -1,15 +1,15 @@
 ---
 name: keyword-research
 description: 'Find high-value SEO keywords: search volume, difficulty, intent classification, topic clusters. 关键词研究/内容选题'
-version: "9.0.0"
+version: "9.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 when_to_use: "Use when starting keyword research for a new page, topic, or campaign. Also when the user asks about search volume, keyword difficulty, topic clusters, long-tail keywords, or what to write about."
 argument-hint: "<topic or seed keyword> [market/language]"
 metadata:
   author: aaron-he-zhu
-  version: "9.0.0"
+  version: "9.1.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -35,7 +35,6 @@ metadata:
     - "keyword research"
     - "find keywords"
     - "keyword analysis"
-    - "keyword discovery"
     - "search volume analysis"
     - "keyword difficulty"
     - "topic research"
@@ -43,15 +42,12 @@ metadata:
     # EN-casual
     - "what should I write about"
     - "what are people searching for"
-    - "what are people googling"
-    - "find me topics to write"
     - "give me keyword ideas"
     - "which keywords should I target"
     - "why is my traffic low"
     - "I need content ideas"
     # EN-question
     - "how do I find good keywords"
-    - "what keywords should I target"
     - "how competitive is this keyword"
     # EN-competitor
     - "Ahrefs keyword explorer alternative"
@@ -98,42 +94,12 @@ metadata:
     - "cómo encontrar palabras clave"
     # PT
     - "pesquisa de palavras-chave"
-    # Misspellings
-    - "keywrod research"
-    - "keywork research"
 ---
 
 # Keyword Research
 
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This research skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-
-
-Discovers, analyzes, and prioritizes keywords for SEO and GEO content strategies. Identifies high-value opportunities based on search volume, competition, intent, and business relevance.
-
-**System role**: Research layer skill. It turns market signals into reusable strategic inputs for the rest of the library.
-
-## When This Must Trigger
-
-Use this when the conversation involves reusable market intelligence that should influence strategy — even if the user doesn't use SEO terminology:
-
-- Starting a new content strategy or campaign
-- Expanding into new topics or markets
-- Finding keywords for a specific product or service
-- Identifying long-tail keyword opportunities
-- Understanding search intent for your industry
-- Planning content calendars
-- Researching keywords for GEO optimization
-
-## What This Skill Does
-
-1. **Keyword Discovery**: Generates comprehensive keyword lists from seed terms
-2. **Intent Classification**: Categorizes keywords by user intent (informational, navigational, commercial, transactional)
-3. **Difficulty Assessment**: Evaluates competition level and ranking difficulty
-4. **Opportunity Scoring**: Prioritizes keywords by potential ROI
-5. **Clustering**: Groups related keywords into topic clusters
-6. **GEO Relevance**: Identifies keywords likely to trigger AI responses
+Discovers, analyzes, and prioritizes keywords for SEO and GEO content strategies. Turns market signals into reusable strategic inputs (volume, difficulty, intent, clusters, GEO relevance).
 
 ## Quick Start
 
@@ -176,33 +142,11 @@ What keywords is [competitor URL] ranking for that I should target?
 
 ### Handoff Summary
 
-Emit this shape when finishing the skill (see [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) for the authoritative format):
-
-- **Status**: DONE / DONE_WITH_CONCERNS / BLOCKED / NEEDS_INPUT
-- **Objective**: what was analyzed, created, or fixed
-- **Key Findings / Output**: the highest-signal result
-- **Evidence**: URLs, data points, or sections reviewed
-- **Open Loops**: blockers, missing inputs, or unresolved risks
-- **Recommended Next Skill**: one primary next move
+> Emit the standard shape from [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ## Data Sources
 
-> **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
-
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
-
-**With ~~SEO tool + ~~search console connected:**
-Automatically pull historical search volume data, keyword difficulty scores, SERP analysis, current rankings from ~~search console, and competitor keyword overlap. The skill will fetch seed keyword metrics, related keyword suggestions, and search trend data.
-
-**With manual data only:**
-Ask the user to provide:
-1. Seed keywords or topic description
-2. Target audience and geographic location
-3. Business goals (traffic, leads, sales)
-4. Current domain authority (if known) or site age
-5. Any known keyword performance data or search volume estimates
-
-Proceed with the full analysis using provided data. Note in the output which metrics are from automated collection vs. user-provided data.
+Optional integrations: ~~SEO tool, ~~search console. Without tools, users provide seed keywords, audience, goals, and any known metrics manually. See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md).
 
 ## Instructions
 
@@ -220,21 +164,6 @@ When a user requests keyword research, run eight phases (announce each as `[Phas
 **Quality bar** — every recommendation must include at least one specific number. Generic advice like "target long-tail keywords for better results" must be rewritten as "Target 'project management for nonprofits' (vol: 320, KD: 22) — no DR>40 sites in top 10" before including.
 
 > **Reference**: See [references/instructions-detail.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/keyword-research/references/instructions-detail.md) for the full 8-phase templates, expansion patterns, intent classification table, difficulty tiers, opportunity matrix, GEO indicators, cluster template, deliverable quality bar with actionable vs. generic examples, and tips.
-
-## Validation Checkpoints
-
-### Input Validation
-- [ ] Seed keywords or topic description clearly provided
-- [ ] Target audience and business goals specified
-- [ ] Geographic and language targeting confirmed
-- [ ] Domain authority or site maturity level established
-
-### Output Validation
-- [ ] Every recommendation cites specific data points (not generic advice)
-- [ ] Search volume and difficulty scores included for each keyword
-- [ ] Keywords grouped by intent and mapped to content types
-- [ ] Topic clusters show clear pillar-to-cluster relationships
-- [ ] Source of each data point clearly stated (~~SEO tool data, user-provided, or estimated)
 
 ## Example
 
@@ -255,17 +184,7 @@ Start with seeds; don't ignore long-tail; match intent; cluster for topical auth
 
 ### Save Results
 
-After delivering findings to the user, ask:
-
-> "Save these results for future sessions?"
-
-If yes, write a dated summary to `memory/research/keyword-research/YYYY-MM-DD-<topic>.md` containing:
-- One-line headline finding
-- Top 3-5 actionable items
-- Open loops or blockers
-- Source data references
-
-If any findings should influence ongoing strategy, recommend promoting key conclusions to `memory/hot-cache.md`.
+After delivering, offer to save a dated summary to `memory/research/keyword-research/YYYY-MM-DD-<topic>.md`. Promote key conclusions to `memory/hot-cache.md` if they influence ongoing strategy.
 
 ## Reference Materials
 
@@ -277,7 +196,4 @@ If any findings should influence ongoing strategy, recommend promoting key concl
 
 ## Next Best Skill
 
-- **Primary**: [competitor-analysis](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/competitor-analysis/SKILL.md) — turn keyword opportunities into a competitive benchmark.
-- **Also consider** (pick by goal):
-  - [content-gap-analysis](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/content-gap-analysis/SKILL.md) — if competitors are already known and the goal is producing content fast.
-  - [serp-analysis](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/serp-analysis/SKILL.md) — if SERP features (featured snippets, PAA, AI Overviews) must be understood before writing.
+Primary: [competitor-analysis](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/competitor-analysis/SKILL.md). Also: [content-gap-analysis](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/content-gap-analysis/SKILL.md), [serp-analysis](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/serp-analysis/SKILL.md).

@@ -4,7 +4,7 @@ description: Use when you need the GitHub CLI (`gh`) to verify installation, lis
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # GitHub CLI — issues, milestones, and discussion for analysis
 
@@ -27,7 +27,6 @@ Do not fabricate issue data; use only `gh` output (or explicitly agreed public R
 - **FIRST** (after gate): Verify `gh` is available before issuing subcommands
 - **TABLES**: Prefer `--json` + markdown pipe tables for issue list summaries
 - **THREAD**: For analysis, include body and all comments (or explicitly summarize with omissions noted)
-- **014**: For user stories from issues, use `@014-agile-user-story` and align answers with GitHub-sourced text
 
 ## When to use this skill
 
@@ -36,6 +35,28 @@ Do not fabricate issue data; use only `gh` output (or explicitly agreed public R
 - Issues in milestone
 - GitHub CLI issues
 - gh issue view comments
+
+## Workflow
+
+1. **Run interactive install gate**
+
+Check `gh --version`; if missing, stop and ask whether the user wants installation guidance before any issue operations.
+
+2. **Verify authentication and repository context**
+
+Confirm `gh auth status`, authenticate if needed, and establish target repository context via `--repo` or git remote.
+
+3. **List issues and milestones**
+
+Retrieve issues (optionally by milestone/state) using `gh issue list --json` and present summaries as markdown pipe tables.
+
+4. **Load full thread for analysis**
+
+Read issue body and all comments via `gh issue view --json` or `--comments`, then provide evidence-based analysis.
+
+5. **Chain to user story workflow when requested**
+
+When user asks for user stories and Gherkin from issues, hand off to `@014-agile-user-story` using GitHub-sourced content.
 
 ## Reference
 

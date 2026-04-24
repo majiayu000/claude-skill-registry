@@ -1,15 +1,15 @@
 ---
 name: content-gap-analysis
 description: 'Find content gaps: topics and keywords competitors cover that you don''t, with editorial calendar. 内容缺口/选题规划'
-version: "9.0.0"
+version: "9.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 when_to_use: "Use when finding content gaps between two domains, discovering missing topics, or identifying coverage holes versus competitors."
 argument-hint: "<your domain> <competitor domain>"
 metadata:
   author: aaron-he-zhu
-  version: "9.0.0"
+  version: "9.1.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -29,15 +29,11 @@ metadata:
     - "find content gaps"
     - "content opportunities"
     - "topic analysis"
-    - "content strategy gaps"
     - "editorial calendar"
-    - "untapped topics"
     # EN-casual
     - "what am I missing"
-    - "topics to cover"
     - "what do competitors write about"
     - "what should I cover next"
-    - "topics I haven't written about"
     - "they cover this but I don't"
     # EN-question
     - "what topics am I missing"
@@ -62,42 +58,16 @@ metadata:
     - "oportunidades de contenido"
     # PT
     - "lacunas de conteúdo"
-    # Misspellings
-    - "content gab analysis"
 ---
 
 # Content Gap Analysis
 
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This research skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-
-
-Identifies content opportunities by analyzing gaps between a site's content and competitors'. Surfaces missing topics, untapped keywords, and content formats worth creating.
-
-**System role**: Research layer skill. It turns market signals into reusable strategic inputs for the rest of the library.
-
-## When This Must Trigger
-
-Use this when the conversation involves reusable market intelligence that should influence strategy — even if the user doesn't use SEO terminology:
-
-- Planning content strategy and editorial calendar
-- Finding quick-win content opportunities
-- Understanding where competitors outperform you
-- Identifying underserved topics in your niche
-- Expanding into adjacent topic areas
-- Prioritizing content creation efforts
-- Finding GEO opportunities competitors miss
+Identifies content opportunities by comparing your site against competitors -- surfacing missing keywords, untapped topics, format gaps, and GEO-ready content worth creating.
 
 ## What This Skill Does
 
-1. **Keyword Gap Analysis**: Finds keywords competitors rank for that you don't
-2. **Topic Coverage Mapping**: Identifies topic areas needing more content
-3. **Content Format Gaps**: Reveals missing content types (videos, tools, guides)
-4. **Audience Need Mapping**: Matches gaps to audience journey stages
-5. **GEO Opportunity Detection**: Finds AI-answerable topics you're missing
-6. **Priority Scoring**: Ranks gaps by impact and effort
-7. **Content Calendar Creation**: Plans gap-filling content schedule
+Finds keyword, topic, and format gaps between your site and competitors, scores them by impact and effort, and produces a prioritized content calendar to close the highest-value gaps.
 
 ## Quick Start
 
@@ -140,33 +110,11 @@ What content gaps exist for [audience segment] in my niche?
 
 ### Handoff Summary
 
-Emit this shape when finishing the skill (see [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) for the authoritative format):
-
-- **Status**: DONE / DONE_WITH_CONCERNS / BLOCKED / NEEDS_INPUT
-- **Objective**: what was analyzed, created, or fixed
-- **Key Findings / Output**: the highest-signal result
-- **Evidence**: URLs, data points, or sections reviewed
-- **Open Loops**: blockers, missing inputs, or unresolved risks
-- **Recommended Next Skill**: one primary next move
+> Emit the standard shape from [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ## Data Sources
 
-> **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
-
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
-
-**With ~~SEO tool + ~~search console + ~~analytics + ~~AI monitor connected:**
-Automatically pull your site's content inventory from ~~search console and ~~analytics (indexed pages, traffic per page, keywords ranking), competitor content data from ~~SEO tool (ranking keywords, top pages, backlink counts), and AI citation patterns from ~~AI monitor. Keyword overlap analysis and gap identification can be automated.
-
-**With manual data only:**
-Ask the user to provide:
-1. Your site URL and content inventory (list of published content with topics)
-2. Competitor URLs (3-5 sites)
-3. Your current traffic and keyword performance (if available)
-4. Known content strengths and weaknesses
-5. Industry context and business goals
-
-Proceed with the full analysis using provided data. Note in the output which metrics are from automated collection vs. user-provided data.
+Optional integrations: ~~SEO tool, ~~search console, ~~analytics, ~~AI monitor. Without tools, users provide site URL, content inventory, competitor URLs, and business goals manually. See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md).
 
 ## Instructions
 
@@ -221,21 +169,6 @@ When a user requests content gap analysis:
 
    > **Reference**: See [references/analysis-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/content-gap-analysis/references/analysis-templates.md) for detailed templates for each step.
 
-## Validation Checkpoints
-
-### Input Validation
-- [ ] Your content inventory is complete or representative sample provided
-- [ ] Competitor URLs identified (minimum 2-3 competitors)
-- [ ] Analysis scope defined (specific topics or comprehensive)
-- [ ] Business goals and priorities clarified
-
-### Output Validation
-- [ ] Every recommendation cites specific data points (not generic advice)
-- [ ] Gap analysis compares like-to-like content (topic clusters to topic clusters)
-- [ ] Priority scoring based on measurable criteria (volume, difficulty, business fit)
-- [ ] Content calendar maps gaps to realistic timeframes
-- [ ] Source of each data point clearly stated (~~SEO tool data, ~~analytics data, ~~AI monitor data, user-provided, or estimated)
-
 ## Example
 
 > **Reference**: See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/content-gap-analysis/references/example-report.md) for a complete example analyzing SaaS marketing blog gaps vs. HubSpot and Drift.
@@ -273,17 +206,7 @@ Find gaps in our [commercial/informational] intent content
 
 ### Save Results
 
-After delivering findings to the user, ask:
-
-> "Save these results for future sessions?"
-
-If yes, write a dated summary to `memory/research/content-gap-analysis/YYYY-MM-DD-<topic>.md` containing:
-- One-line headline finding
-- Top 3-5 actionable items
-- Open loops or blockers
-- Source data references
-
-If any findings should influence ongoing strategy, recommend promoting key conclusions to `memory/hot-cache.md`.
+After delivering, offer to save a dated summary to `memory/research/content-gap-analysis/YYYY-MM-DD-<topic>.md`. Promote key conclusions to `memory/hot-cache.md` if they influence ongoing strategy.
 
 ## Reference Materials
 
@@ -293,4 +216,4 @@ If any findings should influence ongoing strategy, recommend promoting key concl
 
 ## Next Best Skill
 
-- **Primary**: [seo-content-writer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/seo-content-writer/SKILL.md) — turn missing topics into a draft or content roadmap.
+Primary: [seo-content-writer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/seo-content-writer/SKILL.md).

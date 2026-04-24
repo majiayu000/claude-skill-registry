@@ -3,6 +3,19 @@ name: phase2-results
 description: The Mileva Method (CRISP) — Phase 2: Results. Outcome alignment, stakeholder register, baseline measurement, success metrics, tradeoff negotiation. Use after problem definition is complete. Triggers on "results", "phase 2", "define success", "success metrics", "what does done look like", or after Phase C exit checklist is complete.
 ---
 
+## Pacing Rule — One Section at a Time
+
+> Present one section, deliverable, or elicitation move at a time.
+> After presenting — stop. Wait for the client to respond.
+> Do not pre-fill and present multiple sections in one message.
+> Do not move to the next step until the client confirms, corrects, or gives a clear go-ahead.
+>
+> The goal is a conversation, not a document dump.
+> If you've written more than one section without a client response in between — you've gone too far.
+
+---
+
+
 # R — Results: Outcome Alignment
 
 > "We don't know if we succeeded unless we defined what success looks like before we started."

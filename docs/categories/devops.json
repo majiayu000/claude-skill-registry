@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5332,
-  "updated_at": "2026-04-23T02:10:59.634602Z",
+  "count": 5333,
+  "updated_at": "2026-04-24T02:11:45.354237Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -58632,6 +58632,24 @@
       "stars": 0,
       "install": "joshuacook/motoko/.claude/skills/role",
       "source": "downloaded"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "fiduciary-duty-negligence",

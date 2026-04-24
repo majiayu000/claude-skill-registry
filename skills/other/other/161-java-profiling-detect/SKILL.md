@@ -4,7 +4,7 @@ description: Use when you need to set up Java application profiling to detect an
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java Profiling Workflow / Step 1 / Collect data to measure potential issues
 
@@ -36,6 +36,24 @@ Copy bash scripts exactly from templates. Ensure JVM flags are applied for profi
 - Apply Profiling
 - Refactor the code with profiling
 - Add profiling support
+
+## Workflow
+
+1. **Read profiling setup reference**
+
+Read `references/161-java-profiling-detect.md` and use script templates exactly as provided.
+
+2. **Create profiler workspace and scripts**
+
+Create `profiler/scripts` and `profiler/results`, copy setup/profile scripts verbatim, and make scripts executable.
+
+3. **Run application with profiling compatibility**
+
+Start Java process with required profiling JVM flags and verify target process availability for profiler attachment.
+
+4. **Collect profiling artifacts**
+
+Capture CPU/memory/lock/GC/I/O data and produce timestamped flamegraph and JFR outputs for analysis.
 
 ## Reference
 

@@ -4,7 +4,7 @@ description: Guides the creation of agile user stories and Gherkin feature files
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Create Agile User Stories and Gherkin Feature Files
 
@@ -33,6 +33,24 @@ Before generating artifacts, gather all required information through structured 
 - Create a user story
 - Write a user story
 - I need to write a user story
+
+## Workflow
+
+1. **Gather story and scenario details**
+
+Run the interactive questionnaire in strict order and wait for user responses before moving to the next question block.
+
+Step constraints:
+- Use the exact wording from the referenced template
+- Repeat scenario questions for each additional scenario requested by the user
+
+2. **Generate the two artifacts**
+
+Create the user story Markdown and Gherkin `.feature` content using only gathered inputs, including links between files and scenario tags.
+
+3. **Validate quality before finalizing**
+
+Check output completeness and provide an INVEST pass/fail checkpoint with concrete evidence for each criterion.
 
 ## Reference
 

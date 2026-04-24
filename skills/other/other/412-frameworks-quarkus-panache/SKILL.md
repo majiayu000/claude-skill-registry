@@ -4,7 +4,7 @@ description: Use when you need data access with Quarkus Hibernate ORM Panache ‚Ä
 license: Apache-2.0
 metadata:
   author: Juan Antonio Bre√±a Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Hibernate ORM with Panache
 
@@ -43,6 +43,24 @@ Compile before persistence changes; verify after.
 - Improve Hibernate ORM data access with Panache
 - Add DTO projections, JOIN FETCH, pagination, or optimistic locking to Panache queries
 - Fix N+1 query problems or add @Version concurrency control in Quarkus Panache
+
+## Workflow
+
+1. **Read reference and assess project context**
+
+Read `references/412-frameworks-quarkus-panache.md` and inspect the current project setup before proposing changes.
+
+2. **Gather scope and decide target improvements**
+
+Identify requested outcomes, constraints, and the minimum safe set of changes to apply.
+
+3. **Apply framework-aligned changes**
+
+Implement or refactor configuration/code following the reference patterns and project conventions.
+
+4. **Run verification and report results**
+
+Execute appropriate build/tests and summarize what changed, what was verified, and any follow-up actions.
 
 ## Reference
 

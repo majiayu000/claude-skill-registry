@@ -1,8 +1,8 @@
 {
   "category": "testing",
   "code": "tst",
-  "count": 6750,
-  "updated_at": "2026-04-23T02:11:01.102917Z",
+  "count": 6752,
+  "updated_at": "2026-04-24T02:11:46.777920Z",
   "skills": [
     {
       "name": "frontend-testing",
@@ -50133,6 +50133,23 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "playwright-skill",
+      "description": "Browser automation with Playwright - Claude writes and executes custom scripts",
+      "repo": "lackeyjb/playwright-skill",
+      "path": "skills/playwright-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "playwright",
+        "browser",
+        "automation",
+        "testing"
+      ],
+      "stars": 0,
+      "install": "lackeyjb/playwright-skill/skills/playwright-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "review-and-judge",
       "description": "Reviews outputs as a hackathon judge and ensures compliance with specs and rules.",
       "repo": "UBAIDRAZA1/UBAIDRAZA1-Todo-Web-Application",
@@ -87206,6 +87223,24 @@
       "stars": 0,
       "install": "anujkumar001111/xsky-agent/testing/electron-integration-anujkumar001111-xsky-agent",
       "source": "SkillsMP Synced Skills"
+    },
+    {
+      "name": "ios-simulator-skill",
+      "description": "iOS Simulator automation for testing with semantic navigation and Xcode integration",
+      "repo": "conorluddy/ios-simulator-skill",
+      "path": "ios-simulator-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "ios",
+        "simulator",
+        "xcode",
+        "testing",
+        "mobile"
+      ],
+      "stars": 0,
+      "install": "conorluddy/ios-simulator-skill/ios-simulator-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "greedy-selection-algorithm",

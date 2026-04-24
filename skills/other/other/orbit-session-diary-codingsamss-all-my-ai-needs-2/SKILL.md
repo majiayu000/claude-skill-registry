@@ -114,7 +114,7 @@ python3 "$SCRIPT" --date 2026-02-26
 
 ```bash
 python3 "$SCRIPT" \
-  --vault-root "/Users/suqi3/obVault/sams-vault" \
+  --vault-root "/Users/suqi3/Library/Mobile Documents/iCloud~md~obsidian/Documents/Sam's" \
   --date 2026-02-26
 ```
 

@@ -4,7 +4,7 @@ description: Use when you need to review, improve, or write Java unit tests — 
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java Unit testing guidelines
 
@@ -39,6 +39,24 @@ Before applying any unit test changes, ensure the project compiles. If compilati
 
 - Review Java code for unit tests
 - Apply best practices for unit tests in Java code
+
+## Workflow
+
+1. **Compile project before unit-test changes**
+
+Run `./mvnw compile` or `mvn compile` and stop immediately if compilation fails.
+
+2. **Read unit-testing reference and evaluate coverage**
+
+Read `references/131-java-testing-unit-testing.md` and identify modernization and quality gaps in current tests.
+
+3. **Apply unit-testing best practices**
+
+Implement or refactor tests using JUnit 5, AssertJ, Mockito, parameterization, and stronger boundary checks.
+
+4. **Verify with full build**
+
+Run `./mvnw clean verify` or `mvn clean verify` after applying improvements.
 
 ## Reference
 

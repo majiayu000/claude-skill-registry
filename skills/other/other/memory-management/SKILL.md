@@ -1,15 +1,15 @@
 ---
 name: memory-management
 description: 'Persist SEO/GEO campaign context across Claude sessions with automatic hot-list, active work, and archive tiers. 项目记忆/跨会话'
-version: "9.0.0"
+version: "9.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 when_to_use: "Use when reviewing, archiving, or cleaning up campaign memory. Also when the user asks to check saved findings, manage hot cache, or archive old data."
 argument-hint: "[review|archive|cleanup]"
 metadata:
   author: aaron-he-zhu
-  version: "9.0.0"
+  version: "9.1.0"
   geo-relevance: "low"
   tags:
     - seo
@@ -27,8 +27,6 @@ metadata:
     # EN-formal
     - "remember project context"
     - "save SEO data"
-    - "track campaign progress"
-    - "store keyword data"
     - "manage project memory"
     - "project context"
     - "refresh wiki index"
@@ -36,8 +34,6 @@ metadata:
     - "wiki lint"
     # EN-casual
     - "remember this for next time"
-    - "save my keyword data"
-    - "keep track of this campaign"
     - "what did we decide last time"
     - "what do we know so far"
     - "project status"
@@ -75,44 +71,14 @@ metadata:
     - "memória do projeto"
     - "contexto de sessão"
     - "gerenciar memória"
-    # Misspellings
-    - "memroy management"
-    - "project memery"
-    - "hot cahce"
 ---
 
 # Memory Management
-
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This cross-cutting skill is part of the protocol layer and follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-
 This skill implements a three-tier memory system (HOT/WARM/COLD) for SEO and GEO projects. HOT memory (80 lines max) loads automatically every session via the SessionStart hook. WARM memory loads on demand per skill. COLD memory is archived data queried only when explicitly requested. The skill manages the full lifecycle: capture, promote, demote, and archive.
-
-**System role**: Campaign Memory Loop. It defines how project context is captured, promoted, archived, and handed off across sessions. It is the sole executor of WARM-to-COLD archival and the aggregator for cross-skill project status queries.
-
-## When This Must Trigger
-
-Use this whenever project state should survive the current session — even if the user doesn't use memory terminology:
-
-- User says "remember this", "save this", "keep track of this"
-- User asks "what did we decide", "what do we know", "project status"
-- Setting up memory structure for a new SEO project
-- After completing audits, ranking checks, or performance reports (Stop hook reminds automatically)
-- When project context needs updating (new keywords, competitors, priorities)
-- When you need to look up historical data or project-specific terminology
-- After 30+ days of work to clean up and archive stale data
-- When open-loops.md has items older than 7 days (SessionStart hook reminds automatically)
 
 ## What This Skill Does
 
-1. **HOT tier management**: Maintains `memory/hot-cache.md` (80 lines max) — loaded automatically every session by SessionStart hook
-2. **WARM Storage**: Organizes dated findings in `memory/` subdirectories — loaded on demand by relevant skills
-3. **COLD Archive**: Moves stale data (90+ days unreferenced) to `memory/archive/` with date prefix
-4. **Promotion**: Elevates frequently-referenced findings from WARM to HOT (3+ refs in 7 days, or 2+ skill refs)
-5. **Demotion**: Moves unreferenced HOT items to WARM (30 days), WARM to COLD (90 days)
-6. **Cross-Skill Aggregation**: When user asks "what do we know", aggregates from all `memory/` subdirectories
-7. **Open Loop Tracking**: Maintains `memory/open-loops.md`, reminds user of stale items via SessionStart hook
-8. **Wiki Layer (Phase 1-3)**: Maintains `memory/wiki/index.md` (auto-refreshed structured index of WARM files, project-isolated), generates compiled entity/keyword/topic pages with contradiction detection, runs wiki lint for orphans/stale claims/hash mismatches, and previews WARM retirement candidates. See [references/wiki spec](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/proposal-wiki-layer-v3.md).
+Manages a three-tier memory lifecycle (HOT/WARM/COLD) with automatic promotion, demotion, and archival. Also maintains the wiki index layer, open-loop tracking, and cross-skill aggregation.
 
 ## Quick Start
 
@@ -195,14 +161,7 @@ What does [internal jargon] mean in this project?
 
 ### Handoff Summary
 
-Emit this shape when finishing the skill (see [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) for the authoritative format):
-
-- **Status**: DONE / DONE_WITH_CONCERNS / BLOCKED / NEEDS_INPUT
-- **Objective**: what was analyzed, created, or fixed
-- **Key Findings / Output**: the highest-signal result
-- **Evidence**: URLs, data points, or sections reviewed
-- **Open Loops**: blockers, missing inputs, or unresolved risks
-- **Recommended Next Skill**: one primary next move
+> Emit the standard shape from [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ### Temperature Lifecycle Rules
 
@@ -217,20 +176,7 @@ This skill's behavior is reinforced by the library's prompt-based hooks:
 
 ## Data Sources
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
-
-**With ~~SEO tool + ~~analytics + ~~search console connected:**
-Automatically populate memory from historical data: keyword rankings over time, competitor domain authority changes, traffic metrics, conversion data, backlink profile evolution. The skill will fetch current rankings, alert on significant changes, and update both hot cache and cold storage.
-
-**With manual data only:**
-Ask the user to provide:
-1. Current target keywords with priority levels
-2. Primary competitors (3-5 domains)
-3. Key performance metrics and last update date
-4. Active campaigns and their status
-5. Any project-specific terminology or abbreviations
-
-Proceed with memory structure creation using provided data. Note in memory/hot-cache.md which data requires manual updates vs. automated refresh.
+With tools: auto-populate from ~~SEO tool, ~~analytics, ~~search console. Without tools: ask user for keywords, competitors, metrics, campaigns, and terminology. See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md).
 
 ## Instructions
 
@@ -289,27 +235,7 @@ When invoked for review or cleanup:
 
 ### 6. Save Results
 
-After delivering any memory update or aggregation to the user, ask:
-
-> "Save these results for future sessions?"
-
-If yes, write a dated summary to the appropriate `memory/` path using filename `YYYY-MM-DD-<topic>.md` containing:
-- One-line verdict or headline finding
-- Top 3-5 actionable items
-- Open loops or blockers
-- Source data references
-
-If any veto-level issue was found (CORE-EEAT T04, C01, R10 or CITE T03, T05, T09), also append a one-liner to `memory/hot-cache.md` without asking.
-
-## Validation Checkpoints
-
-**Structure**: memory/hot-cache.md ≤80 lines; directory matches state model; glossary.md populated; timestamped filenames.
-
-**Content**: hot-cache "Last Updated" current; every keyword has rank + target + status; every competitor has DA + position; campaigns have status + ETA.
-
-**Lookups**: term reference finds correct layer; promotion/demotion round-trip works; glossary covers all shorthand.
-
-**Updates after events**: ranking check → `memory/monitoring/rank-history/` dated snapshot; competitor analysis → `memory/research/competitors/` dated file; audit → top action items in hot-cache; monthly report → metrics snapshot refreshed.
+Ask "Save these results for future sessions?" — if yes, write `YYYY-MM-DD-<topic>.md` to `memory/`. Auto-save veto issues to `memory/hot-cache.md`.
 
 ## Examples, Advanced Features & Practical Limitations
 
@@ -346,4 +272,4 @@ Before writing a third-party person to `memory/entities/`, the user must have on
 
 ## Next Best Skill
 
-- **Primary**: [keyword-research](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/keyword-research/SKILL.md) — seed or refresh campaign strategy with current demand signals.
+Primary: [keyword-research](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/keyword-research/SKILL.md) — seed or refresh campaign strategy with current demand signals.

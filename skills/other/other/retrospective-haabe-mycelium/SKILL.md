@@ -75,6 +75,7 @@ This decision log entry ensures the calibration data is auditable alongside othe
 - New patterns to capture
 - Process improvements
 - Guardrail adjustments
+- ADR review (if `docs/adr/` exists): did implementation follow the decided approach? Any consequences that turned out differently than expected? Mark superseded ADRs.
 
 ### Step 5. BVSSH Dimension Check
 - **Better**: Did quality improve or degrade?

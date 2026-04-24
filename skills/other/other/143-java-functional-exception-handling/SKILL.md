@@ -4,7 +4,7 @@ description: Use when you need to apply functional exception handling best pract
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java Functional Exception handling Best Practices
 
@@ -39,6 +39,28 @@ Before applying any functional exception handling changes, ensure the project va
 - Improve the code with Functional Exception Handling
 - Apply Functional Exception Handling
 - Refactor the code with Functional Exception Handling
+
+## Workflow
+
+1. **Validate project before functional-exception changes**
+
+Run `./mvnw validate` or `mvn validate` and stop immediately if validation fails.
+
+2. **Check required dependencies**
+
+When introducing `Either`, confirm VAVR (`io.vavr:vavr`) and SLF4J are present before implementation.
+
+3. **Read functional-exception reference and identify targets**
+
+Read `references/143-java-functional-exception-handling.md` and identify places to replace exception-heavy control flow with monadic error types.
+
+4. **Apply functional exception-handling refactorings**
+
+Implement selected `Optional`/`Either`/async error patterns with structured logging and clear error contracts.
+
+5. **Verify with full build**
+
+Run `./mvnw clean verify` or `mvn clean verify` after applying improvements.
 
 ## Reference
 

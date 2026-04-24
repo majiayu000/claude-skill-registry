@@ -4,7 +4,7 @@ description: Use when you need to apply testing strategies for Java code — RIG
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java testing strategies
 
@@ -32,6 +32,24 @@ Before applying any test strategy changes, ensure the project compiles. If compi
 - Apply RIGHT-BICEP testing strategies in Java code
 - Apply A-TRIP testing strategies in Java code
 - Apply CORRECT boundary condition verification in Java code
+
+## Workflow
+
+1. **Compile project before test-strategy changes**
+
+Run `./mvnw compile` or `mvn compile` and stop immediately if compilation fails.
+
+2. **Read testing-strategies reference**
+
+Read `references/130-java-testing-strategies.md` and map current tests to RIGHT-BICEP, A-TRIP, and CORRECT gaps.
+
+3. **Apply strategy-driven test improvements**
+
+Improve or add tests to cover missing boundaries, quality characteristics, and verification depth.
+
+4. **Verify with full build**
+
+Run `./mvnw clean verify` or `mvn clean verify` after applying improvements.
 
 ## Reference
 

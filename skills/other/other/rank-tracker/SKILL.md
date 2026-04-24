@@ -1,15 +1,15 @@
 ---
 name: rank-tracker
 description: 'Track keyword rankings and SERP feature changes in traditional search and AI responses over time. 排名追踪/SERP监控'
-version: "9.0.0"
+version: "9.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 when_to_use: "Use when tracking keyword rankings, monitoring position changes, comparing ranking snapshots, or detecting ranking drops."
 argument-hint: "<domain> [keyword list]"
 metadata:
   author: aaron-he-zhu
-  version: "9.0.0"
+  version: "9.1.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -28,17 +28,14 @@ metadata:
     - "track rankings"
     - "check keyword positions"
     - "ranking changes"
-    - "monitor SERP positions"
     - "keyword tracking"
     - "position monitoring"
     # EN-casual
     - "how am I ranking"
-    - "where do I rank for this keyword"
     - "did my rankings change"
     - "where do I rank now"
     - "check my positions"
     # EN-question
-    - "what position am I ranking at"
     - "how are my rankings doing"
     # ZH-pro
     - "排名追踪"
@@ -68,42 +65,16 @@ metadata:
     - "rastreamento de rankings"
     - "monitoramento de posições"
     - "posição no Google"
-    # Misspellings
-    - "rank trackng"
 ---
 
 # Rank Tracker
 
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This monitoring skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-
-
 Tracks, analyzes, and reports on keyword ranking positions over time. Monitors both traditional SERP rankings and AI/GEO visibility to provide comprehensive search performance insights.
-
-**System role**: Monitoring layer skill. It turns performance changes into deltas, alerts, and next actions.
-
-## When This Must Trigger
-
-Use this when the conversation involves time-aware change detection, escalation, or stakeholder-ready visibility — even if the user doesn't use SEO terminology:
-
-- Setting up ranking tracking for new campaigns
-- Monitoring keyword position changes
-- Analyzing ranking trends over time
-- Comparing rankings against competitors
-- Tracking SERP feature appearances
-- Monitoring AI Overview inclusions
-- Creating ranking reports for stakeholders
 
 ## What This Skill Does
 
-1. **Position Tracking**: Records and tracks keyword rankings
-2. **Trend Analysis**: Identifies ranking patterns over time
-3. **Movement Detection**: Flags significant position changes
-4. **Competitor Comparison**: Benchmarks against competitors
-5. **SERP Feature Tracking**: Monitors featured snippets, PAA
-6. **GEO Visibility Tracking**: Tracks AI citation appearances
-7. **Report Generation**: Creates ranking performance reports
+Tracks keyword positions, detects ranking movements, benchmarks against competitors, monitors SERP features and AI citations, and generates ranking performance reports.
 
 ## Quick Start
 
@@ -144,33 +115,11 @@ Create a ranking report for [domain/campaign]
 
 ### Handoff Summary
 
-Emit this shape when finishing the skill (see [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) for the authoritative format):
-
-- **Status**: DONE / DONE_WITH_CONCERNS / BLOCKED / NEEDS_INPUT
-- **Objective**: what was analyzed, created, or fixed
-- **Key Findings / Output**: the highest-signal result
-- **Evidence**: URLs, data points, or sections reviewed
-- **Open Loops**: blockers, missing inputs, or unresolved risks
-- **Recommended Next Skill**: one primary next move
+> Emit the standard shape from [skill-contract.md §Handoff Summary Format](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ## Data Sources
 
-> **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
-
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
-
-**With ~~SEO tool + ~~search console + ~~analytics + ~~AI monitor connected:**
-Automatically pull ranking positions from ~~SEO tool, search impressions/clicks from ~~search console, traffic data from ~~analytics, and AI Overview citation tracking from ~~AI monitor. Daily automated rank checks with historical trend data.
-
-**With manual data only:**
-Ask the user to provide:
-1. Keyword ranking positions (current and historical if available)
-2. Target keyword list with search volumes
-3. Competitor domains and their ranking positions for key terms
-4. SERP feature status (featured snippets, PAA appearances)
-5. AI Overview citation data (if tracking GEO metrics)
-
-Proceed with the full analysis using provided data. Note in the output which metrics are from automated collection vs. user-provided data.
+All integrations optional (see [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md)). With tools connected, pulls rankings from ~~SEO tool, impressions from ~~search console, traffic from ~~analytics, and AI citations from ~~AI monitor. Without tools, ask user for keyword positions, search volumes, competitor data, and SERP feature status.
 
 ## Instructions
 
@@ -191,20 +140,6 @@ When a user requests rank tracking or analysis:
 7. **Generate Ranking Report** -- Executive summary with overall trend, position distribution, key highlights (wins/concerns/opportunities), detailed analysis, SERP feature report, GEO visibility, competitive position, recommendations.
 
    > **Reference**: See [references/ranking-analysis-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/rank-tracker/references/ranking-analysis-templates.md) for complete output templates for all 7 steps.
-
-## Validation Checkpoints
-
-### Input Validation
-- [ ] Keywords list is complete with search volumes
-- [ ] Target domain and tracking location are specified
-- [ ] Competitor domains identified for comparison
-- [ ] Historical baseline data available or initial tracking period set
-
-### Output Validation
-- [ ] Every metric cites its data source and collection date
-- [ ] Ranking changes include context (vs. previous period)
-- [ ] Significant movements have explanations or investigation notes
-- [ ] Source of each data point clearly stated (~~SEO tool data, ~~search console data, user-provided, or estimated)
 
 ## Example
 
@@ -263,17 +198,7 @@ Keywords in top 10 increased from 12 to 17 (+5)
 
 ### Save Results
 
-After delivering monitoring data or reports to the user, ask:
-
-> "Save these results for future sessions?"
-
-If yes, write a dated summary to `memory/monitoring/YYYY-MM-DD-<topic>.md` containing:
-- One-line headline finding or status change
-- Top 3-5 actionable items
-- Open loops or anomalies requiring follow-up
-- Source data references
-
-If any findings should influence ongoing strategy, recommend promoting key conclusions to `memory/hot-cache.md`.
+Ask "Save these results?" If yes, write a dated summary to `memory/monitoring/YYYY-MM-DD-<topic>.md` with headline finding, actionable items, and open loops.
 
 ## Reference Materials
 
@@ -281,8 +206,4 @@ If any findings should influence ongoing strategy, recommend promoting key concl
 
 ## Next Best Skill
 
-Follows the verdict-conditional branching pattern in [skill-contract.md §Termination rules for Next Best Skill chains](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md). Visited-set rule applies.
-
-- **Initial setup (no prior baseline in `memory/monitoring/rank-history/`)** → Primary: [alert-manager](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/alert-manager/SKILL.md) — operationalize the fresh baseline into thresholds and follow-ups.
-- **Subsequent runs (baseline already exists)** → Terminal (chain ends). A delta report against the prior baseline is the deliverable; no further handoff needed.
-- **Visited-set exception**: if `alert-manager` invoked this tracker (threshold breach), do NOT hand back to `alert-manager` — STOP chain and report chain-complete.
+Initial setup (no baseline) → [alert-manager](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/alert-manager/SKILL.md). Subsequent runs (baseline exists) → Terminal. Visited-set rule applies per [skill-contract.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).

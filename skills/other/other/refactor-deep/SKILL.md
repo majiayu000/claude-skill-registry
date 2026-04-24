@@ -204,6 +204,9 @@ Present a consolidated summary across all three phases:
 - `/review-arch` — strategic architectural analysis and restructuring
 - `/review-doc` — documentation audit and updates
 
+**Relationship to `/lead-project`:**
+- `/lead-project` may invoke `/refactor-deep` during a cleanup phase of its OODA loop, when comprehensive refactoring is warranted after implementation work is complete
+
 **Relationship to `/implement-project`:**
 - `/implement-project` includes a similar quality pipeline (refactor → arch → refactor) as steps 7a-7c
 - `/refactor-deep` extracts that pipeline as a standalone workflow for use outside of project implementation

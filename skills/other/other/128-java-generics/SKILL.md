@@ -4,7 +4,7 @@ description: Use when you need to review, improve, or refactor Java code for gen
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java Generics Best Practices
 
@@ -41,6 +41,24 @@ Before applying any generics changes, ensure the project compiles. If compilatio
 - Improve the code with Generics
 - Apply Generics
 - Refactor the code with Generics
+
+## Workflow
+
+1. **Compile project before generics changes**
+
+Run `./mvnw compile` or `mvn compile` and stop immediately if compilation fails.
+
+2. **Read generics reference and assess type safety**
+
+Read `references/128-java-generics.md` and identify raw types, unsafe casts, wildcard misuse, and API variance opportunities.
+
+3. **Apply generics refactorings**
+
+Implement selected generic type and API improvements while preserving behavior.
+
+4. **Verify with full build**
+
+Run `./mvnw clean verify` or `mvn clean verify` after applying improvements.
 
 ## Reference
 

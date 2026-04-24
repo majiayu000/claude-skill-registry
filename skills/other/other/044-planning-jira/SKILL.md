@@ -4,7 +4,7 @@ description: Use when you need the Jira CLI (`jira`) to verify installation, con
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Jira CLI - issues, workflows, and discussion for analysis
 
@@ -36,6 +36,28 @@ Do not fabricate issue data; use only `jira` output (or explicitly agreed Jira R
 - Jira JQL issue query
 - jira issue view comments
 - Jira CLI issue workflow
+
+## Workflow
+
+1. **Run interactive install gate**
+
+Check `jira version`; if missing, stop and ask whether the user wants installation guidance before any issue operations.
+
+2. **Verify Jira CLI configuration**
+
+Ensure Jira CLI is configured (site/account/token flow via CLI prompts) before running private workspace commands.
+
+3. **List issues with optional JQL**
+
+Retrieve issues using basic listing or JQL filters and present summaries as markdown pipe tables.
+
+4. **Load issue details and discussion**
+
+Read full issue descriptions and all comments for analysis, explicitly noting any omissions when summarizing.
+
+5. **Execute core Jira actions when requested**
+
+Support create, assign, transition, and add-comment actions using CLI commands while avoiding secret exposure.
 
 ## Reference
 

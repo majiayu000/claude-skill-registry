@@ -4,7 +4,7 @@ description: Use when you need to design, review, or improve REST APIs with Spri
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java REST API Design Principles
 
@@ -45,6 +45,24 @@ Before applying any REST API changes, ensure the project compiles. If compilatio
 
 - Review Java code for Spring Boot REST API
 - Apply best practices for Spring Boot REST API in Java code
+
+## Workflow
+
+1. **Read reference and assess project context**
+
+Read `references/302-frameworks-spring-boot-rest.md` and inspect the current project setup before proposing changes.
+
+2. **Gather scope and decide target improvements**
+
+Identify requested outcomes, constraints, and the minimum safe set of changes to apply.
+
+3. **Apply framework-aligned changes**
+
+Implement or refactor configuration/code following the reference patterns and project conventions.
+
+4. **Run verification and report results**
+
+Execute appropriate build/tests and summarize what changed, what was verified, and any follow-up actions.
 
 ## Reference
 

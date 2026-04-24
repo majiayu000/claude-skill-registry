@@ -1,6 +1,6 @@
 ---
 name: crypt-librarian
-description: "Source pre-2016 cinema with gothic/occult sensibility, literary texture, and historical grandeur — build watchlists, curate Criterion/MUBI picks. Uses Exa search scripts for film discovery, Firecrawl for scraping. Triggers on film recommendations, watchlist, gothic cinema, occult film, arthouse, pre-2016 movies."
+description: "Source pre-2016 cinema with gothic/occult sensibility, literary texture, and historical grandeur — build watchlists, curate Criterion/MUBI picks. Uses Perplexity for film discourse, Exa for web search, Firecrawl for scraping. Triggers on film recommendations, watchlist, gothic cinema, occult film, arthouse, pre-2016 movies."
 ---
 
 # The Crypt Librarian
@@ -59,14 +59,13 @@ Before any external search, read `~/Desktop/Programming/crypt-librarian/films.js
 
 The archive is ground truth. It contains rated films with calibrated taste data, curated commentary, and thematic connections that external searches cannot replicate. Present archive matches first, then supplement with external discovery for gaps.
 
-### Step 3: Use Exa Research for Discourse
+### Step 3: Use Perplexity for Discourse
 
-Query Exa for critical discourse, retrospectives, and thematic analysis.
+Query Perplexity for critical discourse, retrospectives, and thematic analysis.
 
-```bash
-python3 ~/.claude/skills/exa-search/scripts/exa_research.py \
-  "gothic horror films romantic sensibility pre-2010" --sources --markdown
-```
+**Tool:** `mcp__perplexity__search`
+- `query`: The search query
+- `detail_level`: "brief", "normal", or "detailed" (use "detailed" for comprehensive lists)
 
 **Example queries:**
 - "Gothic horror films with romantic sensibility pre-2010"
@@ -74,9 +73,19 @@ python3 ~/.claude/skills/exa-search/scripts/exa_research.py \
 - "Revisionist noir 1970s Robert Altman style"
 - "Historical epics with psychological depth pre-2015"
 
-Exa research synthesizes critical opinion from multiple sources with inline citations.
+Perplexity excels at synthesizing critical opinion and finding thematic connections.
 
 ### Step 4: Use Exa for Film Discovery
+
+Two options for Exa access:
+
+#### Option A: MCP Tools (if available)
+
+```
+mcp__exa__web_search_exa(query="Letterboxd gothic vampire films list", numResults=10)
+```
+
+#### Option B: Direct API Script (recommended for full functionality)
 
 The skill includes `scripts/exa_film_search.py` which provides all 4 Exa endpoints:
 
@@ -159,8 +168,8 @@ Include the trailer link in the recommendation. Prefer official studio uploads o
 
 When users ask for specific moods, use these search strategies:
 
-| User Request | Exa Research Query | Exa Search Query |
-|--------------|-------------------|-----------------|
+| User Request | Perplexity Query | Exa Query |
+|--------------|------------------|-----------|
 | "Something occult" | "occult ritual films pre-2010 secret societies" | "secret society cinema Criterion MUBI list" |
 | "Gothic romance" | "gothic romantic films Neil Jordan vampire" | "Letterboxd gothic vampire romance list" |
 | "Historical epic" | "historical epics psychological depth Oliver Stone" | "Ridley Scott historical films retrospective" |
@@ -200,7 +209,7 @@ python scripts/flexible_discovery.py "your search query" [options]
 | `--mood` | noir, gothic, thriller, drama, horror, comedy, any | Tone/mood |
 | `--subreddits` | comma-separated list | Custom subreddits to search |
 | `--limit` | number | Max results per source (default: 15) |
-| `--sources` | reddit,exa | Which backends to use |
+| `--sources` | reddit,perplexity,exa | Which backends to use |
 | `--json` | flag | Output as JSON for programmatic use |
 
 ### Examples
@@ -234,7 +243,7 @@ Use this script when the user:
 - Says "ignore the usual filters" or "something different"
 - Provides a specific reference film that doesn't match the Crypt Librarian sensibility
 
-The script searches Reddit via JSON API and provides formatted Exa queries for follow-up. It does **not** enforce any exclusions—the user's request takes precedence.
+The script searches Reddit via JSON API and provides formatted Perplexity/Exa queries for follow-up. It does **not** enforce any exclusions—the user's request takes precedence.
 
 ### Reddit JSON API Pattern
 
@@ -289,9 +298,8 @@ Check each discovered film against exclusions:
 # Check if already tracked or declined
 python3 ~/Desktop/Programming/crypt-librarian/scripts/crypt_db.py check "Film Title" 1975
 
-# Use Exa research for content verification
-python3 ~/.claude/skills/exa-search/scripts/exa_research.py \
-  "Film Title 1975 content warnings violence disturbing" --sources
+# Use Perplexity for content verification
+mcp__perplexity__search "Film Title 1975 content warnings violence disturbing"
 ```
 
 ### Phase 4: Archive Integration
@@ -325,7 +333,7 @@ Use this workflow when:
 - Need to search multiple themes/directors
 - Building watchlists with full provenance tracking
 
-For quick single-theme searches, the standard Exa research/search workflow is sufficient.
+For quick single-theme searches, the standard Perplexity/Exa workflow is sufficient.
 
 ---
 
@@ -356,7 +364,7 @@ sqlite3 ~/Desktop/Programming/crypt-librarian/crypt.db "SELECT COUNT(*) FROM can
 The autonomous agent uses Claude Agent SDK with 5 subagents:
 - `taste_learner` — Pattern extraction from archive
 - `film_discoverer` — Exa/Firecrawl searches
-- `content_validator` — Exa research verification
+- `content_validator` — Perplexity verification
 - `database_manager` — SQLite provenance tracking
 - `subtitle_hunter` — Subtitle sourcing
 

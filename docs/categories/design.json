@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 9512,
-  "updated_at": "2026-04-23T02:10:59.333196Z",
+  "count": 9513,
+  "updated_at": "2026-04-24T02:11:45.052950Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -103727,6 +103727,23 @@
       "stars": 0,
       "install": "dylantarre/animation-principles/design/elegance-sophistication",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "repo": "alonw0/web-asset-generator",
+      "path": "skills/web-asset-generator/SKILL.md",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "stars": 0,
+      "install": "alonw0/web-asset-generator/skills/web-asset-generator/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "segmentation",

@@ -1,17 +1,17 @@
 ---
 name: content-quality-auditor
 description: 'Publish-readiness gate: 80-item CORE-EEAT audit with weighted scoring, veto checks, and fix plan. 内容质量/EEAT评分'
-version: "9.0.0"
+version: "9.1.0"
 license: Apache-2.0
 allowed-tools: WebFetch
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 when_to_use: "Use when auditing content quality before publishing. Runs CORE-EEAT 80-item scoring with veto checks. Also when the user asks for E-E-A-T analysis or publish readiness."
 argument-hint: "<URL or paste content> [keyword]"
 class: auditor
 metadata:
   author: aaron-he-zhu
-  version: "9.0.0"
+  version: "9.1.0"
   geo-relevance: "high"
   tags:
     - seo
@@ -32,15 +32,11 @@ metadata:
     - "EEAT score"
     - "CORE-EEAT audit"
     - "content quality check"
-    - "content assessment"
-    - "quality score"
     # EN-casual
     - "is this ready to publish"
     - "grade my article"
     - "check before publishing"
-    - "how good is my content"
     - "is my content good enough to rank"
-    - "rate my content quality"
     # EN-question
     - "is my content ready to publish"
     - "how do I improve content quality"
@@ -63,22 +59,13 @@ metadata:
     - "puntuación EEAT"
     # PT
     - "auditoria de qualidade"
-    # Misspellings
-    - "EEAT scroe"
 ---
 
 # Content Quality Auditor
 
 > Based on [CORE-EEAT Content Benchmark](https://github.com/aaron-he-zhu/core-eeat-content-benchmark). Full benchmark reference: [references/core-eeat-benchmark.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/core-eeat-benchmark.md)
 
-
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This cross-cutting skill is part of the protocol layer and follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-
-
 This skill evaluates content quality across 80 standardized criteria organized in 8 dimensions. It produces a comprehensive audit report with per-item scoring, dimension and system scores, weighted totals by content type, and a prioritized action plan.
-
-**System role**: Publish Readiness Gate. It decides whether content is ready to ship, what blocks publication, and what should be promoted into durable project memory.
 
 ## When This Must Trigger
 
@@ -655,17 +642,7 @@ Execute in order, referring to the `## Scoring Runbook (authoritative)` block ea
 
 ### Save Results
 
-After delivering findings to the user, ask:
-
-> "Save these results for future sessions?"
-
-If yes, write a dated summary to the appropriate `memory/` path using filename `YYYY-MM-DD-<topic>.md` containing:
-- One-line verdict or headline finding
-- Top 3-5 actionable items
-- Open loops or blockers
-- Source data references
-
-If any veto-level issue was found (CORE-EEAT T04, C01, R10 or CITE T03, T05, T09), also append a one-liner to `memory/hot-cache.md` without asking.
+Ask "Save these results for future sessions?" — if yes, write `YYYY-MM-DD-<topic>.md` to `memory/`. Auto-save veto issues to `memory/hot-cache.md`.
 
 ## Validation Checkpoints
 
@@ -707,8 +684,4 @@ See [references/item-reference.md](https://github.com/aaron-he-zhu/seo-geo-claud
 
 ## Next Best Skill
 
-- **Primary**: [content-refresher](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/content-refresher/SKILL.md) — turn FIX-verdict findings into a concrete rewrite plan.
-- **Also consider** (pick by verdict):
-  - **BLOCK verdict**: [seo-content-writer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/seo-content-writer/SKILL.md) — veto item typically needs a substantial rewrite, not an incremental refresh.
-  - **BLOCK verdict (entity/authority issue)**: [entity-optimizer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/entity-optimizer/SKILL.md) — when C01/T04 veto traces to entity recognition gaps.
-  - **SHIP verdict**: [rank-tracker](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/rank-tracker/SKILL.md) — content cleared; establish a baseline and watch performance.
+Primary: [content-refresher](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/content-refresher/SKILL.md) (FIX verdict). BLOCK: [seo-content-writer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/seo-content-writer/SKILL.md) or [entity-optimizer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/entity-optimizer/SKILL.md). SHIP: [rank-tracker](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/rank-tracker/SKILL.md).

@@ -4,7 +4,7 @@ description: Use when you need to apply Java exception handling best practices ‚
 license: Apache-2.0
 metadata:
   author: Juan Antonio Bre√±a Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java Exception Handling Guidelines
 
@@ -45,6 +45,24 @@ Before applying any exception handling changes, ensure the project compiles. If 
 - Use try-with-resources in Java code
 - Create exception chaining in Java code
 - Apply fail-fast validation in Java code
+
+## Workflow
+
+1. **Compile project before exception-handling changes**
+
+Run `./mvnw compile` or `mvn compile` and stop immediately if compilation fails.
+
+2. **Read exception-handling reference**
+
+Read `references/123-java-exception-handling.md` and identify applicable failure-handling and observability improvements.
+
+3. **Apply exception-handling improvements**
+
+Refactor to specific exceptions, safe resource handling, error translation, and consistent logging patterns.
+
+4. **Verify with full build**
+
+Run `./mvnw clean verify` or `mvn clean verify` after applying improvements.
 
 ## Reference
 

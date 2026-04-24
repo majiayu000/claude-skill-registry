@@ -4,7 +4,7 @@ description: Covers Maven Central search (Search API, maven-metadata.xml, artifa
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Maven Central search and coordinates
 
@@ -39,6 +39,24 @@ Verify coordinates against the Search API or repository responses before asserti
 - display-dependency-updates
 - display-plugin-updates
 - Outdated Maven dependencies
+
+## Workflow
+
+1. **Read Maven search reference workflow**
+
+Read `references/114-java-maven-search.md` before forming queries, coordinate checks, or URL outputs.
+
+2. **Perform Maven Central discovery and verification**
+
+Use Search API and repository metadata/POM checks to confirm valid coordinates and available versions.
+
+3. **Format results with full coordinates and links**
+
+Return `groupId:artifactId:version` outputs, structured tables, and verifiable HTTPS artifact URLs.
+
+4. **Run project-local update checks when applicable**
+
+When working on a local project, ensure versions-maven-plugin usage and run `versions:display-*` reports for properties, dependencies, and plugins.
 
 ## Reference
 

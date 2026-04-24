@@ -4,7 +4,7 @@ description: Use when you need to set up JMeter performance testing for a Java p
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Run performance tests based on JMeter
 
@@ -35,6 +35,24 @@ JMeter must be installed and available in PATH. If not available, show a message
 - Apply JMeter performance testing
 - Refactor the code with JMeter performance testing
 - Add JMeter support
+
+## Workflow
+
+1. **Verify JMeter prerequisite**
+
+Check `jmeter --version` and stop with guidance if JMeter is not installed or not available in PATH.
+
+2. **Read JMeter reference template**
+
+Read `references/151-java-performance-jmeter.md` and use the `run-jmeter.sh` template exactly as provided.
+
+3. **Create script and project structure**
+
+Create `run-jmeter.sh` in project root, ensure required JMeter directories/files exist, and apply executable permission with `chmod +x`.
+
+4. **Explain usage and environment overrides**
+
+Document CLI options (`-l`, `-t`, `-r`, `-g`, `-h`) and environment variable overrides (`JMETER_LOOPS`, `JMETER_THREADS`, `JMETER_RAMP_UP`).
 
 ## Reference
 

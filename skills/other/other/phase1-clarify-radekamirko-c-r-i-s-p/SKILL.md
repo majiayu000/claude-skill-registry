@@ -1,7 +1,20 @@
 ---
 name: phase1-clarify
-description: The Mileva Method (CRISP) — Phase 1: Clarify. Problem definition, eliciting, painkiller test, buy vs build, Go/No-Go. Use at the start of any AI implementation project. Triggers on "clarify", "phase 1", "start discovery", "define the problem", "what problem are we solving", or at the beginning of a new client engagement.
+description: The Mileva Method (CRISP) — Phase 1: Clarify. Problem definition, eliciting, painkiller test, buy vs build, AI justification gate, Go/No-Go. Use at the start of any AI implementation project. Triggers on "clarify", "phase 1", "start discovery", "define the problem", "what problem are we solving", or at the beginning of a new client engagement.
 ---
+
+## Pacing Rule — One Section at a Time
+
+> Present one section, deliverable, or elicitation move at a time.
+> After presenting — stop. Wait for the client to respond.
+> Do not pre-fill and present multiple sections in one message.
+> Do not move to the next step until the client confirms, corrects, or gives a clear go-ahead.
+>
+> The goal is a conversation, not a document dump.
+> If you've written more than one section without a client response in between — you've gone too far.
+
+---
+
 
 # C — Clarify: Problem Definition
 
@@ -75,7 +88,42 @@ Use this early, before they've started self-editing. The answer is almost always
 - Budget, Time, Legal/Compliance, Scope, Technical stack
 - Constraints direct architecture — capture before any solution talk
 
-**Buy vs Build**
+**Buy vs Build — with AI Justification Gate**
+
+> Run Buy vs Build in two stages. Stage 1 checks off-the-shelf AI products first — before evaluating any SaaS or custom build. Most "AI projects" don't need custom AI.
+
+**Stage 1 — Off-the-Shelf AI Check (mandatory, run first)**
+
+Before anything else: can an existing AI product solve this?
+
+| Product | What it covers | Monthly cost |
+|---|---|---|
+| Claude.ai / Claude Pro | General AI assistant, reasoning, document work | ~$20 |
+| ChatGPT / GPT-4o | General AI assistant, coding, analysis | ~$20 |
+| Copilot (Microsoft) | Office, email, Teams integration | ~$30 |
+| Notion AI | Knowledge base, docs, writing assistance | ~$10 |
+
+Present the relevant options to the client. If any of them cover the need adequately → direct the client there and stop. This is a No-Go for custom build, and that's the right outcome.
+
+> **The personal assistant trap.** Someone wants a "personal AI assistant." Sounds like a project. Often it's just Claude Pro. If what they're describing is a private chat interface with some instructions — that's $20/month, not six weeks of build. The fact that they'll pay more for a worse version of something that already exists is not a business case.
+> Always ask: "What does this need to do that Claude.ai can't do for $20 a month?" If they can't answer — you have your answer.
+
+**Stage 2 — AI Justification Gate**
+
+If off-the-shelf doesn't cover the need, answer these three questions before evaluating any custom build:
+
+1. **What does custom AI do that off-the-shelf products cannot?**
+   _(Be specific. "More control" or "our own branding" are not answers. "Processes data from our internal CRM in real-time and routes decisions back into it" is an answer.)_
+
+2. **What is the total cost: custom build + ongoing running costs vs. best off-the-shelf alternative?**
+   _(Include dev time, hosting, API costs, maintenance overhead.)_
+
+3. **Does the delta justify it?**
+
+If Q1 can't be answered specifically → No-Go. Save the client the cost.
+Save the AI justification answer to `docs/problem-statement.md` (AI Justification section) and to `docs/buy-vs-build-matrix.md`.
+
+**Stage 3 — Standard Buy vs Build**
 - Tool solves it for $50/month? → Buy it
 - Needs config on top of existing tools? → Configure it
 - Genuinely needs custom? → Build it
@@ -155,8 +203,8 @@ Output → `docs/value-proposition-canvas.md`
 
 | File | Contents | Required? |
 |---|---|---|
-| `docs/problem-statement.md` | One-sentence problem, constraints, Go/No-Go | Always |
-| `docs/buy-vs-build-matrix.md` | Tool evaluation matrix | Always |
+| `docs/problem-statement.md` | One-sentence problem, AI justification, constraints, Go/No-Go | Always |
+| `docs/buy-vs-build-matrix.md` | Off-the-shelf AI check, AI justification gate, tool evaluation matrix | Always |
 | `docs/market-research.md` | TAM, competitors, feature standards, USP | External only |
 | `docs/value-proposition-canvas.md` | USP and positioning | External only |
 | `docs/swot.md` | Strengths, weaknesses, opportunities, threats | External only |
@@ -172,6 +220,7 @@ Output → `docs/value-proposition-canvas.md`
 **Log these decisions in Phase C:**
 
 - **Go/No-Go** — what was called and why
+- **AI Justification** — what custom AI does that off-the-shelf cannot, and the cost delta
 - **Internal vs External** — which it is and the reason
 - **Buy vs Build choices** — every item in the matrix with the rationale
 - **Constraints** — any hard constraint that ruled out an option
@@ -182,7 +231,7 @@ Format:
 ### Go/No-Go — [Project Name]
 **Phase:** C
 **Decision:** Go / No-Go
-**Why:** [reason — constraint, painkiller test result, CEO test outcome]
+**Why:** [reason — constraint, painkiller test result, CEO test outcome, AI justification result]
 **Alternatives considered:** [what else was discussed]
 **Source:** Client / You / Both
 ```
@@ -197,7 +246,9 @@ Format:
 - [ ] ROI / gains identified
 - [ ] Internal vs external decided
 - [ ] Constraints captured (budget, time, legal, scope, tech)
-- [ ] Buy vs Build evaluated → `docs/buy-vs-build-matrix.md`
+- [ ] Off-the-shelf AI products checked (Stage 1) → if any cover the need, No-Go called
+- [ ] AI Justification Gate answered (Stage 2) → Q1 answered specifically, cost delta calculated → `docs/buy-vs-build-matrix.md` + `docs/problem-statement.md`
+- [ ] Buy vs Build evaluated (Stage 3) → `docs/buy-vs-build-matrix.md`
 - [ ] **[External only]** Market research complete → `docs/market-research.md`
 - [ ] **[External only]** Value Proposition Canvas pre-filled and confirmed → `docs/value-proposition-canvas.md`
 - [ ] **[External only]** SWOT complete → `docs/swot.md`

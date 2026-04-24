@@ -51,6 +51,7 @@ DoD checklist enforcement.
 - [ ] API documentation updated (if API changed)
 - [ ] Inline documentation for complex logic
 - [ ] README updated if setup/usage changed
+- [ ] Architecture Decision Records filled in (if `docs/adr/` was scaffolded by `/delivery-bootstrap`)
 
 ### Observability
 - [ ] Structured logging for key operations

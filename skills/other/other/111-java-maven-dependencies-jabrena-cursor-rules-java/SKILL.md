@@ -4,7 +4,7 @@ description: Use when you need to add or evaluate Maven dependencies that improv
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Add Maven dependencies for improved code quality
 
@@ -32,6 +32,24 @@ Before adding Maven dependencies, ensure the project is in a valid state. Use a 
 - Add Error Prone NullAway dependencies
 - Add VAVR functional dependencies
 - Add ArchUnit architecture testing dependencies
+
+## Workflow
+
+1. **Validate project before changes**
+
+Run `./mvnw validate` or `mvn validate` and stop if validation fails.
+
+2. **Read dependency reference and ask guided questions**
+
+Read `references/111-java-maven-dependencies.md` and ask one-by-one in strict order: JSpecify, conditional Enhanced Compiler Analysis, VAVR, and ArchUnit.
+
+3. **Add only selected dependencies**
+
+Implement only the dependencies and scopes chosen by the user, preserving existing pom.xml structure.
+
+4. **Report trade-offs and next checks**
+
+Summarize what was added, why, and any recommended follow-up validations or tooling alignment.
 
 ## Reference
 

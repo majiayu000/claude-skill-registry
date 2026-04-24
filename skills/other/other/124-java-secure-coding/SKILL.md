@@ -4,7 +4,7 @@ description: Use when you need to apply Java secure coding best practices — in
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java Secure coding guidelines
 
@@ -35,6 +35,24 @@ Before applying any secure coding changes, ensure the project compiles. If compi
 ## When to use this skill
 
 - Review Java code for secure coding
+
+## Workflow
+
+1. **Compile project before secure-coding changes**
+
+Run `./mvnw compile` or `mvn compile` and stop immediately if compilation fails.
+
+2. **Read secure-coding reference and assess risks**
+
+Read `references/124-java-secure-coding.md` and identify applicable vulnerabilities and hardening opportunities.
+
+3. **Apply secure-coding improvements**
+
+Implement selected protections for input validation, crypto, secrets, deserialization, and output encoding.
+
+4. **Verify with full build**
+
+Run `./mvnw clean verify` or `mvn clean verify` after applying improvements.
 
 ## Reference
 

@@ -4,7 +4,7 @@ description: Use when you need to add or review fuzz testing for Java APIs with 
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java fuzz testing with CATS
 
@@ -37,6 +37,24 @@ Before applying any fuzz testing changes, ensure the project compiles. If compil
 - Use CATS for API negative testing
 - Review CI quality gates for API contract robustness
 - Improve boundary and malformed input test coverage
+
+## Workflow
+
+1. **Read reference and assess project context**
+
+Read `references/703-technologies-fuzzing-testing.md` and inspect current API/context artifacts before proposing changes.
+
+2. **Gather scope and decide target improvements**
+
+Identify requested outcomes, constraints, and the minimum safe set of changes to apply.
+
+3. **Apply technology-aligned changes**
+
+Implement or refactor artifacts following the reference patterns and project conventions.
+
+4. **Run verification and report results**
+
+Execute appropriate checks and summarize what changed, what was verified, and any follow-up actions.
 
 ## Reference
 

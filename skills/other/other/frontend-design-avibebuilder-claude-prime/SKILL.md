@@ -42,7 +42,7 @@ Interpret creatively and make unexpected choices that feel genuinely designed fo
 
 Use the bundled design search tooling when you need concrete guidance that should shape implementation rather than generic inspiration.
 
-Reach for `scripts/search.py` when you need any of the following:
+Reach for `.claude/skills/frontend-design/scripts/search.py` when you need any of the following:
 - a style direction that fits a product category or audience
 - a color system, typography pairing, or chart recommendation
 - UX or accessibility guidance for a specific interface problem
@@ -62,13 +62,13 @@ Skip the search when the user already gave a precise visual direction and the im
 
 ```bash
 # Auto-detect the best domain from a concise query
-python3 scripts/search.py "glassmorphism dark mode"
+python3 .claude/skills/frontend-design/scripts/search.py "glassmorphism dark mode"
 
 # Ask for a specific kind of guidance
-python3 scripts/search.py "healthcare saas" --domain colors
+python3 .claude/skills/frontend-design/scripts/search.py "healthcare saas" --domain colors
 
 # Add framework context when implementation details matter
-python3 scripts/search.py "responsive layout" --stack html-tailwind
+python3 .claude/skills/frontend-design/scripts/search.py "responsive layout" --stack html-tailwind
 ```
 
 ### High-Value Defaults

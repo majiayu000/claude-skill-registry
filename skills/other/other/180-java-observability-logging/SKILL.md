@@ -4,7 +4,7 @@ description: Use when you need to implement or improve Java logging and observab
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java Logging Best Practices
 
@@ -37,6 +37,24 @@ Before applying any logging recommendations, ensure the project compiles. Compil
 - Apply logging
 - Refactor logging
 - Add logging support
+
+## Workflow
+
+1. **Compile project before logging changes**
+
+Run `./mvnw compile` or `mvn compile` and stop immediately if compilation fails.
+
+2. **Read logging reference and assess current observability**
+
+Read `references/180-java-observability-logging.md` and evaluate framework usage, log levels, sensitive-data handling, and config gaps.
+
+3. **Apply logging and observability improvements**
+
+Implement selected framework/configuration/practice changes, including secure logging and monitoring integration where applicable.
+
+4. **Verify with full build**
+
+Run `./mvnw clean verify` or `mvn clean verify` after applying improvements.
 
 ## Reference
 

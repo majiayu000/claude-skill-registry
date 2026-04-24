@@ -321,7 +321,6 @@ Implement hybrid search:
 Works well with: `ai-agents-architect`, `prompt-engineer`, `database-architect`, `backend`
 
 ## When to Use
-
 - User mentions or implies: building RAG
 - User mentions or implies: vector search
 - User mentions or implies: embeddings
@@ -335,3 +334,8 @@ Works well with: `ai-agents-architect`, `prompt-engineer`, `database-architect`,
 - User mentions or implies: weaviate
 - User mentions or implies: chromadb
 - User mentions or implies: pgvector
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

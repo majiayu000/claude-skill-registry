@@ -4,7 +4,7 @@ description: Guides the creation of agile epics with comprehensive definition in
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Create Agile Epics
 
@@ -36,6 +36,28 @@ Before generating the epic document, gather all required information through str
 - I need to create an epic
 - Define an epic
 - Epic definition
+
+## Workflow
+
+0. **Get current date**
+
+Run `date` before starting and use it to replace all date placeholders in the generated epic document.
+
+1. **Gather epic information**
+
+Ask the template questions in strict order, using exact wording and waiting for user responses before continuing.
+
+Step constraints:
+- Read the question template fresh before asking
+- Do not skip or reorder required questions
+
+2. **Generate epic document**
+
+Create the epic Markdown with all required sections (scope, value, features, dependencies, risks, and success criteria) and apply the actual current date.
+
+3. **Provide follow-up recommendations**
+
+Close with actionable next steps for story breakdown, planning, and epic tracking.
 
 ## Reference
 

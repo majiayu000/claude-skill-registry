@@ -4,7 +4,7 @@ description: Use when you need to apply data-oriented programming best practices
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0
+  version: 0.15.0-SNAPSHOT
 ---
 # Java Data-Oriented Programming Best Practices
 
@@ -39,6 +39,24 @@ Before applying any data-oriented programming recommendations, ensure the projec
 - Apply Data-Oriented Programming
 - Refactor the code with Data-Oriented Programming
 - Apply Data-Oriented Programming
+
+## Workflow
+
+1. **Compile project before data-oriented changes**
+
+Run `./mvnw compile` or `mvn compile` and stop immediately if compilation fails.
+
+2. **Read data-oriented reference and assess model design**
+
+Read `references/144-java-data-oriented-programming.md` and identify candidates for data/behavior separation and immutable transformations.
+
+3. **Apply data-oriented refactorings**
+
+Implement selected improvements using records, pure transformation functions, flat structures, and explicit validation.
+
+4. **Verify with full build**
+
+Run `./mvnw clean verify` or `mvn clean verify` after applying improvements.
 
 ## Reference
 

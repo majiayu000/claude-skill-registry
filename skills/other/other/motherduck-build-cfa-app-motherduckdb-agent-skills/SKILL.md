@@ -42,6 +42,7 @@ If no server is active, ask for a representative schema excerpt or table list an
 
 - **3-tier CFA** is the default:
   - browser -> backend API -> MotherDuck
+- Keep customer routing, connection selection, service-account usage, and embed-session creation on the backend.
 - **Embedded Dives** are acceptable when:
   - the requirement is read-only
   - the product needs a live Dive surface shipped into an app
@@ -61,10 +62,11 @@ If no server is active, ask for a representative schema excerpt or table list an
 4. Design the isolation model:
    - per customer database
    - per workload or service-account boundary
-5. Choose the connection path and read-scaling posture.
-6. Produce the implementation plan, API contract, and rollout sequence.
+5. Define the API contract with allowlisted metrics, dimensions, filters, and customer boundaries.
+6. Choose the connection path and read-scaling posture.
+7. Produce the implementation plan, API contract, and rollout sequence.
 
-When this skill produces a native DuckDB (`md:`) connection, watermark it with `custom_user_agent=agent-skills/<latest-available-skills-version>(harness-<harness>;llm-<llm>)`. If metadata is missing, fall back to `harness-unknown` and `llm-unknown`.
+When this skill produces a native DuckDB (`md:`) connection, watermark it with `custom_user_agent=agent-skills/2.1.0(harness-<harness>;llm-<llm>)`. If metadata is missing, fall back to `harness-unknown` and `llm-unknown`.
 
 ## Output
 

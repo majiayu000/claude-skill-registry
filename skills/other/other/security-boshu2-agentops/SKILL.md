@@ -1,6 +1,6 @@
 ---
 name: security
-description: 'Continuous repository security scanning and release gating. Triggers: "security scan", "security audit", "pre-release security", "run scanners", "check vulnerabilities".'
+description: 'Run repository security scans and release-gating checks.'
 skill_api_version: 1
 context:
   window: fork
@@ -14,7 +14,6 @@ metadata:
   dependencies: []
 output_contract: "stdout: security scan report"
 ---
-
 # Security Skill
 
 > **Purpose:** Run repeatable security checks across code, scripts, hooks, and release gates.

@@ -1,8 +1,7 @@
 ---
 name: knowledge-activation
-description: 'Operationalize a mature .agents corpus into usable information. Consolidates packet layers, promotes a belief book, generates playbook candidates, compiles runtime briefings, and surfaces flywheel gaps. Triggers: "operationalize .agents", "turn dot agents into usable information", "knowledge activation", "knowledge flywheel outer loop", "activate knowledge corpus".'
+description: 'Turn a mature .agents corpus into packets, belief books, briefings, and gaps.'
 ---
-
 # Knowledge Activation
 
 Turn a mature `.agents` corpus into operator-ready knowledge surfaces.
@@ -17,6 +16,22 @@ Use this skill when the problem is no longer "capture more knowledge," but:
 - surface thin topics and promotion gaps before they silently calcify
 
 `$compile` remains the hygiene loop. `knowledge-activation` owns corpus operationalization.
+
+## Where this sits in the flywheel
+
+Knowledge activation is the **fourth step** in the global-corpus workflow.
+Use the skills in order:
+
+1. `$harvest` — gather artifacts from many rigs into `~/.agents/learnings/`
+2. `$compile` — synthesize raw artifacts into the interlinked wiki at `.agents/compiled/`
+3. _(optional)_ `$dream` overnight — bounded compounding loop on top of the compiled corpus
+4. `$knowledge-activation` — lift compiled knowledge into playbooks, a belief book, and runtime briefings that future sessions read at bootstrap
+
+## Which skill do I need?
+
+See [docs/skills-decision-tree.md](../../docs/skills-decision-tree.md) for
+the full "which skill next?" decision table covering harvest, compile,
+dream, knowledge-activation, and quickstart.
 
 ## Preconditions
 

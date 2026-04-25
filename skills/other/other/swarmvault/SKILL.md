@@ -1,7 +1,7 @@
 ---
 name: swarmvault
-description: "Use SwarmVault when the user needs a local-first knowledge vault that writes durable markdown, graph, search, dashboard, review, and MCP artifacts to disk from books, notes, transcripts, exports, datasets, slide decks, files, URLs, code, and recurring source workflows."
-version: "1.4.0"
+description: "Use SwarmVault when the user needs a local-first knowledge vault that writes durable markdown, graph, search, dashboard, review, context-pack, and MCP artifacts to disk from books, notes, transcripts, exports, datasets, slide decks, files, URLs, code, and recurring source workflows."
+version: "1.5.0"
 metadata: '{"openclaw":{"requires":{"anyBins":["swarmvault","vault"]},"install":[{"id":"node","kind":"node","package":"@swarmvaultai/cli","bins":["swarmvault","vault"],"label":"Install SwarmVault CLI (npm)"}],"emoji":"🗃️","homepage":"https://www.swarmvault.ai/docs"}}'
 ---
 
@@ -17,6 +17,7 @@ For onboarding, examples, command references, or troubleshooting, read the bundl
 - If the vault does not exist yet, run `swarmvault init`.
 - Use `swarmvault demo --no-serve` when the user wants the fastest zero-config walkthrough before pointing SwarmVault at their own sources.
 - Use `swarmvault scan <directory> --no-serve` when the user wants the fastest scratch pass over a local repo or docs tree without manually stepping through init + ingest + compile first; use `swarmvault graph share --post` for copyable text, `swarmvault graph share --svg [path]` for a visual card, or `swarmvault graph share --bundle [dir]` for a portable folder with markdown, post text, SVG, HTML preview, and JSON metadata.
+- Use `swarmvault context build "<goal>" --target <path-or-node> --budget <tokens>` when the next agent, review, or handoff needs a bounded evidence pack instead of a broad vault search.
 - Read `swarmvault.schema.md` before compile or query work. It is the vault's operating contract.
 - If `wiki/graph/report.md` exists, use it before broad repo search.
 
@@ -31,10 +32,11 @@ For onboarding, examples, command references, or troubleshooting, read the bundl
 7. Compile with `swarmvault compile`, use `compile --max-tokens <n>` when the generated wiki must stay inside a bounded context budget, or use `compile --approve` when changes should go through the local review queue first.
 8. Resolve staged work with `swarmvault review list|show|accept|reject` and `swarmvault candidate list|promote|archive`.
 9. Ask questions with `swarmvault query "<question>"`. It saves durable answers into `wiki/outputs/` by default; add `--no-save` only for ephemeral checks. When an embedding provider is configured, query can merge semantic page matches into local search; `search.rerank: true` lets the current `queryProvider` rerank the merged top hits before answering.
-10. Use `swarmvault explore "<question>" --steps <n>` for save-first multi-step research loops, or `--format report|slides|chart|image` when the artifact should be presentation-oriented.
-11. Run `swarmvault lint` whenever the schema changed, artifacts look stale, or compile/query results drift. Set `profile.deepLintDefault: true` in `swarmvault.config.json` when the advisory deep-lint pass should be the default, and use `--no-deep` when you need a structural-only run. Add `--web` only when deep lint is enabled and a `webSearch.tasks.deepLintProvider` adapter is configured; web evidence is scoped to deep lint and does not change compile or query behavior.
-12. Use `swarmvault mcp` when another agent or tool should browse, search, and query the vault through MCP.
-13. Use `swarmvault graph share --post` when the user needs a quick copyable summary, `swarmvault graph share --svg [path]` when they need a 1200x630 visual card, `swarmvault graph share --bundle [dir]` when they need a portable share kit for posting, linking, or screenshotting, `swarmvault graph blast <target>` when they want reverse-import impact analysis, `swarmvault graph serve` when the live workspace or bookmarklet clipper will help, `swarmvault diff` when they need a graph-level change summary against the last committed baseline, or `swarmvault graph export --html <output>` / `graph export --report <output>` when richer sharing will help. `graph export` also supports `--html-standalone`, `--json`, `--obsidian`, and `--canvas` for lighter or Obsidian-native sharing.
+10. Build agent handoff bundles with `swarmvault context build "<goal>" --target <path-or-node> --budget <tokens>`. Use `--format markdown|json|llms` for the printed shape, and inspect `swarmvault context list|show|delete` for saved packs.
+11. Use `swarmvault explore "<question>" --steps <n>` for save-first multi-step research loops, or `--format report|slides|chart|image` when the artifact should be presentation-oriented.
+12. Run `swarmvault lint` whenever the schema changed, artifacts look stale, or compile/query results drift. Set `profile.deepLintDefault: true` in `swarmvault.config.json` when the advisory deep-lint pass should be the default, and use `--no-deep` when you need a structural-only run. Add `--web` only when deep lint is enabled and a `webSearch.tasks.deepLintProvider` adapter is configured; web evidence is scoped to deep lint and does not change compile or query behavior.
+13. Use `swarmvault mcp` when another agent or tool should browse, search, query, and build context packs from the vault through MCP.
+14. Use `swarmvault graph share --post` when the user needs a quick copyable summary, `swarmvault graph share --svg [path]` when they need a 1200x630 visual card, `swarmvault graph share --bundle [dir]` when they need a portable share kit for posting, linking, or screenshotting, `swarmvault graph blast <target>` when they want reverse-import impact analysis, `swarmvault graph serve` when the live workspace or bookmarklet clipper will help, `swarmvault diff` when they need a graph-level change summary against the last committed baseline, or `swarmvault graph export --html <output>` / `graph export --report <output>` when richer sharing will help. `graph export` also supports `--html-standalone`, `--json`, `--obsidian`, and `--canvas` for lighter or Obsidian-native sharing.
 
 ## Working rules
 
@@ -59,12 +61,14 @@ For onboarding, examples, command references, or troubleshooting, read the bundl
 - `wiki/outputs/source-guides/`: staged source-integration guides for one-source-at-a-time workflows.
 - `wiki/dashboards/`: recent sources, reading log, timeline, source sessions, source guides, research map, contradiction, and open-question dashboards.
 - `wiki/graph/share-card.md`, `wiki/graph/share-card.svg`, and `wiki/graph/share-kit/`: post-ready text, visual graph summaries, and a portable HTML-preview share bundle generated on compile.
+- `wiki/context/`: markdown context-pack companions for agent kickoff, PR review, and handoff.
 - `wiki/code/`: module pages for ingested JavaScript, JSX, TypeScript (including `.mts`/`.cts`), TSX, Bash/shell script (with shebang-based detection for extensionless scripts), Python, Go, Rust, Java, Kotlin, Scala, Dart, Lua, Zig, C#, C, C++ (including `.c`/`.cc`/`.cpp`/`.cxx` and `.h`/`.hh`/`.hpp`/`.hxx`), PHP, Ruby, PowerShell (`.ps1`/`.psm1`/`.psd1`), Elixir (`.ex`/`.exs`), OCaml (`.ml`/`.mli`), Objective-C (`.m`/`.mm`), ReScript (`.res`/`.resi`), Solidity (`.sol`), Vue single-file components (`.vue`), HTML (`.html`/`.htm`), and CSS sources.
 - `state/extracts/`: extracted markdown and JSON sidecars for PDF, the full Word family (`.docx`/`.docm`/`.dotx`/`.dotm`), RTF (`.rtf`), OpenDocument (ODT/ODP/ODS), EPUB, CSV/TSV, the full Excel family (`.xlsx`/`.xlsm`/`.xlsb`/`.xls`/`.xltx`/`.xltm`), the full PowerPoint family (`.pptx`/`.pptm`/`.potx`/`.potm`), Jupyter notebooks (`.ipynb`), BibTeX (`.bib`), Org-mode (`.org`), AsciiDoc (`.adoc`/`.asciidoc`), transcripts, Slack exports, email, calendar, audio transcripts, YouTube transcript captures, and image sources (`.png`/`.jpg`/`.jpeg`/`.gif`/`.webp`/`.bmp`/`.tif`/`.tiff`/`.svg`/`.ico`/`.heic`/`.heif`/`.avif`/`.jxl`), plus structured previews for config/data files (JSON/JSONC/JSON5/TOML/YAML/XML/INI/ENV/PROPERTIES/CFG/CONF) and content-sniffed text ingest for developer manifests (`package.json`, `Cargo.toml`, `go.mod`, `LICENSE`, `.gitignore`, `Dockerfile`, `Makefile`, and similar plaintext files).
 - `state/code-index.json`: repo-aware code aliases and local import resolution data.
 - `wiki/projects/`: project rollups over canonical pages.
 - `wiki/candidates/`: staged concept and entity pages awaiting promotion.
 - `state/graph.json`: compiled graph.
+- `state/context-packs/`: saved JSON context-pack artifacts with citations, token-budget accounting, included items, and omitted items.
 - `state/search.sqlite`: local search index.
 - `state/sources.json` and `state/sources/<id>/`: managed-source registry entries plus working sync state.
 - `state/approvals/`: staged review bundles from `compile --approve`.
@@ -76,7 +80,7 @@ For onboarding, examples, command references, or troubleshooting, read the bundl
 - `swarmvault install --agent codex|claude|cursor|goose|pi|gemini|opencode|aider|copilot|trae|claw|droid|kiro|hermes|antigravity|vscode` installs agent-specific rules into the current project.
 - `swarmvault install --agent claude|opencode|gemini|copilot --hook` installs graph-first hook or plugin support for the agents that expose project hook APIs.
 - `swarmvault install --agent aider` installs `CONVENTIONS.md` and wires `.aider.conf.yml` to read it when that config is valid YAML.
-- `swarmvault mcp` exposes tools and resources for page search, page reads, source listing, query, ingest, compile, and lint.
+- `swarmvault mcp` exposes tools and resources for page search, page reads, source listing, query, context-pack build/read/list, ingest, compile, and lint.
 
 ## Defaults to preserve
 

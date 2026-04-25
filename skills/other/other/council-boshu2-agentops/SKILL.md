@@ -1,6 +1,6 @@
 ---
 name: council
-description: 'Multi-model consensus council. Spawns parallel judges with configurable perspectives. Modes: validate, brainstorm, research. Triggers: "council", "get consensus", "multi-model review", "multi-perspective review", "council validate", "council brainstorm", "council research".'
+description: 'Run multi-judge consensus for validation, brainstorming, or research.'
 skill_api_version: 1
 context:
   window: isolated
@@ -16,7 +16,6 @@ metadata:
   replaces: judge
 output_contract: skills/council/schemas/verdict.json
 ---
-
 # /council — Multi-Model Consensus Council
 
 Spawn parallel judges with different perspectives, consolidate into consensus. Works for any task — validation, research, brainstorming.

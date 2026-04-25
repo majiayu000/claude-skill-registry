@@ -1,8 +1,8 @@
 {
   "category": "productivity",
   "code": "pro",
-  "count": 2036,
-  "updated_at": "2026-04-24T02:11:46.738303Z",
+  "count": 2041,
+  "updated_at": "2026-04-25T02:06:09.960047Z",
   "skills": [
     {
       "name": "commit-helper",
@@ -15399,6 +15399,22 @@
       "source": "downloaded"
     },
     {
+      "name": "professional-business-writing",
+      "description": "Professional business writing assistant - removes AI patterns, maintains authority and clarity.",
+      "repo": "b33kman/professional-business-writing-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "professional-writing",
+        "business-writing",
+        "writing-assistant"
+      ],
+      "stars": 0,
+      "install": "b33kman/professional-business-writing-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "tk-stats",
       "description": "Show project task statistics and progress. Use when user says /tk:stats or asks about progress, how many tasks, completion rate, or project status.",
       "repo": "iheanyi/tasuku",
@@ -20113,6 +20129,24 @@
       "source": "SkillsMP Synced Skills"
     },
     {
+      "name": "humanizar-texto-es",
+      "description": "Rewrite Spanish AI-generated text to sound naturally human-written using 11 simultaneous linguistic techniques.",
+      "repo": "ToniPerea/humanizar-texto-es",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "spanish",
+        "ai-detection",
+        "text-rewriting",
+        "nlp",
+        "research"
+      ],
+      "stars": 0,
+      "install": "ToniPerea/humanizar-texto-es/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "recall-project-memory",
       "description": "Automatically search and retrieve relevant project memory from Mem0 when working on tasks that might benefit from past decisions, patterns, or learnings. Use this skill when starting new features, fix",
       "repo": "evgenygurin/claude-mem0-project-memory",
@@ -23482,6 +23516,22 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "skill-seekers",
+      "description": "Convert docs, repos, PDFs into Claude Skills with conflict detection",
+      "repo": "yusufkaraaslan/Skill_Seekers",
+      "path": "skills/skill-seekers/SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "converter",
+        "skills",
+        "documentation"
+      ],
+      "stars": 0,
+      "install": "yusufkaraaslan/Skill_Seekers/skills/skill-seekers/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "systematic-development",
       "description": "Use Sherpa's systematic development workflow for general coding tasks. Activates when starting development work, adding features, or implementing functionality. Ensures guide check before coding and g",
       "repo": "anortham/sherpa",
@@ -23579,6 +23629,26 @@
       "stars": 0,
       "install": "grandinh/claude-chaos-express/.claude/skills/pm-status-trigger",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "confluence-to-agent-knowledge-base",
+      "description": "Turn any Confluence Cloud instance into a private, searchable AI knowledge base on GitHub with access-tiered repos. Interactive 6-phase walkthrough using the Atlassian MCP connector.",
+      "repo": "miningstore/confluence-to-agent-knowledge-base",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "confluence",
+        "knowledge-base",
+        "atlassian",
+        "mcp",
+        "wiki",
+        "search",
+        "knowledge-management"
+      ],
+      "stars": 0,
+      "install": "miningstore/confluence-to-agent-knowledge-base/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "confluence-to-agent-knowledge-base",
@@ -28899,6 +28969,28 @@
       "stars": 0,
       "install": "oocx/tfplan2md-uat/.github/skills/create-agent-skill",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "deep-research",
+      "description": "Deep research with NotebookLM + web search. Domain boost, source credibility scoring, and post-research artifact generation (podcast, video, slides, quiz).",
+      "repo": "Chris1220-cmd/deep-research-skill",
+      "path": "SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "research",
+        "deep-research",
+        "notebooklm",
+        "perplexity",
+        "gemini",
+        "domain-boost",
+        "academic",
+        "maritime",
+        "legal"
+      ],
+      "stars": 0,
+      "install": "Chris1220-cmd/deep-research-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "scaffolding-reducer",

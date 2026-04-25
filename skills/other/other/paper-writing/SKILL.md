@@ -29,7 +29,7 @@ In this hybrid pack, the pipeline itself is unchanged, but `paper-plan` and `pap
 - **REVIEWER_MODEL = `gpt-5.4`** — Model used via Codex MCP for plan review, figure review, writing review, and improvement loop.
 - **AUTO_PROCEED = true** — Auto-continue between phases. Set `false` to pause and wait for user approval after each phase.
 - **HUMAN_CHECKPOINT = false** — When `true`, the improvement loop (Phase 5) pauses after each round's review to let you see the score and provide custom modification instructions. When `false` (default), the loop runs fully autonomously. Passed through to `/auto-paper-improvement-loop`.
-- **ILLUSTRATION = `figurespec`** — Architecture/illustration generator for Phase 2b: `figurespec` (default, deterministic JSON→SVG via `/figure-spec`, best for architecture/workflow/topology), `gemini` (AI-generated via `/paper-illustration`, best for qualitative method illustrations; needs `GEMINI_API_KEY`), `mermaid` (Mermaid syntax via `/mermaid-diagram`, free, best for flowcharts), or `false` (skip Phase 2b, manual only).
+- **ILLUSTRATION = `figurespec`** — Architecture/illustration generator for Phase 2b: `figurespec` (default, deterministic JSON→SVG via `/figure-spec`, best for architecture/workflow/topology), `gemini` (AI-generated via `/paper-illustration`, best for qualitative method illustrations; needs `GEMINI_API_KEY`), `codex-image2` (AI-generated via `/paper-illustration-image2` through the local Codex native image bridge — no external API key, uses your ChatGPT Plus/Pro quota; experimental), `mermaid` (Mermaid syntax via `/mermaid-diagram`, free, best for flowcharts), or `false` (skip Phase 2b, manual only).
 
 > Override inline: `/paper-writing "NARRATIVE_REPORT.md" — venue: NeurIPS, illustration: gemini, human checkpoint: true`
 > IEEE example: `/paper-writing "NARRATIVE_REPORT.md" — venue: IEEE_JOURNAL`
@@ -174,11 +174,22 @@ If the paper plan includes architecture diagrams, pipeline figures, audit cascad
 - Output: `figures/*.mmd` + `figures/*.png`
 - Free, no API key needed
 
+**When `illustration: codex-image2`** — invoke `/paper-illustration-image2`:
+```
+/paper-illustration-image2 "[method description from PAPER_PLAN.md or NARRATIVE_REPORT.md]"
+```
+- Claude plans → Codex native image generation renders → Claude reviews (same multi-stage workflow as `gemini`, different renderer)
+- Best for: users who want a GPT-image-style renderer without needing `GEMINI_API_KEY`; uses your existing Codex / ChatGPT Plus/Pro quota
+- Output: `figures/ai_generated/figure_final.png` + `latex_include.tex` + `review_log.json` (emitted via `tools/paper_illustration_image2.py finalize`)
+- **Prerequisites** (beyond ARIS's standard Claude Code + Codex coexistence): the local Codex app-server must be signed in (`codex debug app-server send-message-v2 "ping"` succeeds), and the dedicated MCP bridge must be registered — see `mcp-servers/codex-image2/README.md` for the one-time `claude mcp add` command. Run `python3 tools/paper_illustration_image2.py preflight --workspace .` to confirm before relying on this path.
+- **Experimental**: this renderer shells through the Codex debug app-server, which Codex documents as an unstable surface. Prefer `figurespec` or `gemini` for production submission flows until `codex-image2` stabilizes.
+
 **When `illustration: false`** — skip entirely. All non-data figures must be created manually (draw.io, Figma, TikZ) and placed in `figures/` before Phase 3.
 
 **Choosing the right mode:**
 - Formal architecture / workflow / topology figures → `figurespec` (default)
-- Method concept illustrations with natural style → `gemini`
+- Method concept illustrations with natural style, have `GEMINI_API_KEY` → `gemini`
+- Method concept illustrations, prefer ChatGPT Plus/Pro quota over Gemini key → `codex-image2`
 - Quick flowchart / state machine → `mermaid`
 - Full manual control → `false`
 

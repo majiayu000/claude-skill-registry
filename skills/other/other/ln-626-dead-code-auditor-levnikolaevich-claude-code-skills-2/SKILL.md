@@ -1,6 +1,6 @@
 ---
 name: ln-626-dead-code-auditor
-description: "Checks unreachable code, unused imports/variables/functions, commented-out code, deprecated patterns. Use when auditing dead code."
+description: "Checks unreachable code, unused imports/variables/functions, commented-out code, unsupported patterns. Use when auditing dead code."
 allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__index_project, mcp__hex-graph__audit_workspace, mcp__hex-line__read_file, mcp__hex-line__grep_search, mcp__hex-line__outline
 license: MIT
 ---
@@ -76,14 +76,14 @@ Use `hex-graph` first when export liveness or workspace hotspots materially impr
 **Recommendation:** Delete (git preserves history)
 
 ### 4. Legacy Code & Backward Compatibility
-**What:** Backward compatibility shims, deprecated patterns, old code that should be removed
+**What:** Backward compatibility shims, unsupported patterns, old code that should be removed
 
 **Detection:**
 - Renamed variables/functions with old aliases:
   - Pattern: `const oldName = newName` or `export { newModule as oldModule }`
   - Pattern: `function oldFunc() { return newFunc(); }` (wrapper for backward compatibility)
-- Deprecated exports/re-exports:
-  - Grep for `// DEPRECATED`, `@deprecated` JSDoc tags
+- Unsupported exports/re-exports:
+  - Grep for `// DEPRECATED`, `@obsolete` JSDoc tags
   - Pattern: `export.*as.*old.*` or `export.*legacy.*`
 - Conditional code for old versions:
   - Pattern: `if.*legacy.*` or `if.*old.*version.*` or `isOldVersion ? oldFunc() : newFunc()`
@@ -91,22 +91,22 @@ Use `hex-graph` first when export liveness or workspace hotspots materially impr
   - Pattern: `migrate.*`, `Legacy.*Adapter`, `.*Shim`, `.*Compat`
 - Comment markers:
   - Grep for `// backward compatibility`, `// legacy support`, `// TODO: remove in v`
-  - Grep for `// old implementation`, `// deprecated`, `// kept for backward`
+  - Grep for `// old implementation`, `// unsupported`, `// kept for backward`
 
 **Severity:**
 - **HIGH:** Backward compatibility shims in critical paths (auth, payment, core features)
-- **MEDIUM:** Deprecated exports still in use, migration code from >6 months ago
+- **MEDIUM:** Unsupported exports still in use, migration code from >6 months ago
 - **LOW:** Recent migration code (<3 months), planned deprecation with clear removal timeline
 
 **Recommendation:**
 - Remove backward compatibility shims - breaking changes are acceptable when properly versioned
 - Delete old implementations - keep only the correct/new version
-- Remove deprecated exports - update consumers to use new API
+- Remove unsupported exports - update consumers to use new API
 - Delete migration code after grace period (3-6 months)
 - Clean legacy support comments - git history preserves old implementations
 
 **Effort:**
-- **S:** Remove simple aliases, delete deprecated exports
+- **S:** Remove simple aliases, delete unsupported exports
 - **M:** Refactor code using old APIs to new APIs
 - **L:** Remove complex backward compatibility layer affecting multiple modules
 

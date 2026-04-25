@@ -22,6 +22,7 @@ Use this skill when the user is evaluating whether MotherDuck can meet their sec
 - Prefer structural isolation over query-time tenant filtering for serious B2B or CFA workloads.
 - Treat region and residency as first-class architectural constraints that require current public confirmation.
 - Be explicit about whether the boundary is a share, a Dive, a database, or a full application.
+- Separate documented product guarantees from architectural recommendations and assumptions in the final answer.
 
 ## Workflow
 

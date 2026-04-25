@@ -1,6 +1,6 @@
 ---
 name: pr-plan
-description: 'Plan an open source PR contribution. Takes pr-research output and produces scope, acceptance criteria, and risk assessment. Triggers: "pr plan", "contribution plan", "plan PR", "plan contribution".'
+description: 'Plan an open source PR with scope, acceptance criteria, and risk.'
 skill_api_version: 1
 context:
   window: fork
@@ -19,7 +19,6 @@ metadata:
 allowed-tools: Read, Write, Bash, Grep, Glob
 output_contract: ".agents/plans/YYYY-MM-DD-pr-*.md"
 ---
-
 # PR Plan Skill
 
 Strategic planning for open source contributions.

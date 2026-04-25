@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19709,
-  "updated_at": "2026-04-24T02:11:45.152669Z",
+  "count": 19710,
+  "updated_at": "2026-04-25T02:06:08.159003Z",
   "skills": [
     {
       "name": "fix",
@@ -131195,6 +131195,24 @@
       "stars": 0,
       "install": "melodic-software/claude-code-plugins/plugins/business-analysis/skills/risk-analysis",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "skills/pagerunner-skill/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/skills/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "conversation-log",

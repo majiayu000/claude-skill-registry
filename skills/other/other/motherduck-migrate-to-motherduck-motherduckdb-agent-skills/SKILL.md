@@ -46,6 +46,7 @@ If no server is active, ask for representative source and target schemas before 
 - native MotherDuck storage first
 - `pg_duckdb` when extending an existing PostgreSQL estate is the least disruptive path
 - validate before cutover
+- port SQL dialect and data types deliberately before performance tuning
 - phased cutover over big-bang replacement
 
 ## Workflow
@@ -54,11 +55,12 @@ If no server is active, ask for representative source and target schemas before 
 2. Classify the source system and the target serving pattern.
 3. Inspect the target-side MotherDuck layout if available.
 4. Pick the connection and ingestion path.
-5. Rebuild the analytical model in DuckDB SQL.
-6. Run source-vs-target validation.
-7. Cut over one workload at a time.
+5. Inventory incompatible SQL, functions, data types, and operational assumptions.
+6. Rebuild the analytical model in DuckDB SQL.
+7. Run source-vs-target validation.
+8. Cut over one workload at a time.
 
-When this skill produces a native DuckDB (`md:`) connection, watermark it with `custom_user_agent=agent-skills/<latest-available-skills-version>(harness-<harness>;llm-<llm>)`. If metadata is missing, fall back to `harness-unknown` and `llm-unknown`.
+When this skill produces a native DuckDB (`md:`) connection, watermark it with `custom_user_agent=agent-skills/2.1.0(harness-<harness>;llm-<llm>)`. If metadata is missing, fall back to `harness-unknown` and `llm-unknown`.
 
 ## Output
 

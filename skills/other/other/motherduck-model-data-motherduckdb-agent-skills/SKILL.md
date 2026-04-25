@@ -32,6 +32,7 @@ This is a lightweight framework-agnostic convention for organizing SQL transform
 - Prefer wide denormalized tables and pre-aggregated serving tables over highly normalized OLTP-style schemas.
 - Use fully qualified names and add comments to tables and columns.
 - Use `NOT NULL` aggressively; do not assume primary keys or foreign keys are enforced.
+- Reuse an existing dbt, SQLMesh, or repo-local modeling convention when one is already present; create the lightweight scaffold only when there is no established project shape.
 - Separate `raw`, `staging`, and `analytics` lifecycle stages when the project is non-trivial.
 - Always produce SQL files — never execute transformations directly in the warehouse without first writing them to files.
 - Always produce a manifest — every model must declare its dependencies so the DAG is explicit and reproducible.

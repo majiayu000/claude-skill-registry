@@ -1,7 +1,7 @@
 ---
 name: ln-652-transaction-correctness-auditor
 description: "Checks transaction scope, missing rollback handling, long-held transactions, trigger/notify interaction. Use when auditing transaction correctness."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_references, mcp__hex-graph__trace_paths
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_references, mcp__hex-graph__trace_paths, mcp__hex-line__read_file, mcp__hex-line__grep_search, mcp__hex-line__outline
 license: MIT
 ---
 
@@ -23,10 +23,13 @@ Specialized worker auditing database transaction patterns for correctness, scope
 ## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` and `shared/references/mcp_integration_patterns.md`
 
 Receives `contextStore` with: `tech_stack`, `best_practices`, `db_config` (database type, ORM settings, trigger/notify patterns), `codebase_root`, `output_dir`.
 
 **Domain-aware:** Supports `domain_mode` + `current_domain`.
+
+Use `hex-graph` first when reference chains or call paths materially improve transaction analysis. Use `hex-line` first for local code/config reads when available. If MCP is unavailable, unsupported, or not indexed, continue with built-in `Read/Grep/Glob/Bash` and state the fallback in the report.
 
 ## Workflow
 

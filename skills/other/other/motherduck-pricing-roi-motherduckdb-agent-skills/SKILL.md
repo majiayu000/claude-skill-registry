@@ -18,6 +18,7 @@ Use this skill when the user is asking whether MotherDuck is financially sensibl
 ## Default Posture
 
 - Do not hardcode pricing numbers unless you have verified them in the current turn.
+- When quoting numbers, include the verification date and the public source you checked.
 - Separate storage, compute, and operational complexity in every answer.
 - Map workload shape to cost shape before comparing vendors or plans.
 - Treat many pricing questions as risk, predictability, or procurement questions rather than purely technical ones.

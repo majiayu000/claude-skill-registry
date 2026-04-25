@@ -1,6 +1,6 @@
 ---
 name: vibe
-description: 'Comprehensive code validation. Runs complexity analysis then multi-model council. Answer: Is this code ready to ship? Triggers: "vibe", "validate code", "check code", "review code", "code quality", "is this ready".'
+description: 'Validate code readiness with complexity checks and council or inline review.'
 skill_api_version: 1
 metadata:
   tier: judgment
@@ -18,7 +18,6 @@ context:
   intel_scope: full
 output_contract: skills/council/schemas/verdict.json
 ---
-
 # Vibe Skill
 
 > **Purpose:** Is this code ready to ship?

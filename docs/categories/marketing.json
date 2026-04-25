@@ -1,8 +1,8 @@
 {
   "category": "marketing",
   "code": "mkt",
-  "count": 464,
-  "updated_at": "2026-04-24T02:11:45.445555Z",
+  "count": 465,
+  "updated_at": "2026-04-25T02:06:08.491902Z",
   "skills": [
     {
       "name": "social-media",
@@ -6041,6 +6041,25 @@
       "stars": 0,
       "install": "dylantarre/animation-principles/marketing/carousels-sliders",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "social-reply-bot",
+      "description": "AI-powered Reddit & X auto-reply bot. Finds relevant posts, generates genuine Claude-powered replies that naturally mention your product. Includes karma warmup and lead tracking.",
+      "repo": "mguozhen/social-bot",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "marketing",
+      "tags": [
+        "reddit",
+        "twitter",
+        "social-media",
+        "ai-replies",
+        "growth",
+        "browser-automation"
+      ],
+      "stars": 0,
+      "install": "mguozhen/social-bot/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "content-marketing-and-social-media-strategy",

@@ -1,6 +1,6 @@
 ---
 name: shared
-description: Shared reference documents for multi-agent skills (not directly invocable)
+description: 'Shared reference contracts used by other AgentOps skills.'
 skill_api_version: 1
 user-invocable: false
 context:
@@ -15,7 +15,6 @@ metadata:
   internal: true
 output_contract: "reference documents (loaded JIT)"
 ---
-
 # Shared References
 
 This directory contains shared reference documents used by multiple skills:
@@ -181,3 +180,4 @@ Skills that chain to other skills (e.g., `/rpi` calls `/research`, `/vibe` calls
 - [references/ralph-loop-contract.md](references/ralph-loop-contract.md)
 - [references/orchestration-as-prompt.md](references/orchestration-as-prompt.md)
 - [references/stale-scope-validation.md](references/stale-scope-validation.md) — planning rule loaded by plan + pre-mortem: re-validate inherited scope against HEAD before acting on deferred beads or handoff docs.
+- [references/strict-delegation-contract.md](references/strict-delegation-contract.md) — canonical contract loaded by /rpi, /discovery, /validation: strict sub-skill delegation is the default for top-level orchestrators.

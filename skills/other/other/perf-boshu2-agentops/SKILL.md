@@ -1,6 +1,6 @@
 ---
 name: perf
-description: 'Performance profiling, benchmarking, regression detection, and optimization. Triggers: "perf", "performance", "benchmark", "profile", "slow", "optimize", "latency", "throughput", "memory leak", "perf regression".'
+description: 'Profile, benchmark, and optimize performance regressions or hotspots.'
 skill_api_version: 1
 context:
   window: fork
@@ -16,7 +16,6 @@ metadata:
     - complexity  # optional - identifies hot paths
 output_contract: "stdout: performance profile/benchmark report"
 ---
-
 # Perf Skill
 
 > Quick Ref: `/perf profile <target>` | `/perf bench <target>` | `/perf compare <baseline> <candidate>` | `/perf optimize <target>`

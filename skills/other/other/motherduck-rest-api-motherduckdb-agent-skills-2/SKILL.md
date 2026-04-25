@@ -21,6 +21,7 @@ Use this skill when the user needs to manage MotherDuck service accounts, suppor
 - Use `https://api.motherduck.com` as the base URL unless the user provides another environment.
 - Authenticate with `Authorization: Bearer ${MOTHERDUCK_ADMIN_TOKEN}` and keep admin read-write tokens in backend-managed secrets.
 - Never use read-scaling tokens for REST API administration.
+- Prefer read-before-write flows for configuration changes so the current account, service account, Duckling config, or Dive metadata is known before mutation.
 - Treat `POST /v1/users` as service-account creation unless current docs explicitly broaden the API.
 - Assume active-account, Duckling configuration, service-account creation, service-account token creation, and Dive embed-session endpoints require an organization admin bearer token unless current docs say otherwise.
 - Never expose generated access tokens in logs, browser code, client bundles, or committed files.

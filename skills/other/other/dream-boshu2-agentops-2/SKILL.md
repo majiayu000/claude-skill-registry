@@ -1,13 +1,6 @@
 ---
 name: dream
-description: >
-  Private overnight operator mode. Routes interactive Dream requests to the
-  shared `ao overnight` engine for setup, bedtime runs, and morning reports.
-  Use when the user wants to bootstrap Dream, run an overnight compounding
-  pass, inspect Dream Council or DreamScape output, or review the latest
-  morning report. Triggers: "dream", "overnight", "bedtime run",
-  "morning report", "dream setup", "dream report", "dream council",
-  "dreamscape".
+description: 'Run or review private overnight AgentOps compounding sessions.'
 skill_api_version: 1
 user-invocable: true
 context:
@@ -22,7 +15,6 @@ metadata:
   stability: experimental
 output_contract: "Dream report artifacts at .agents/overnight/*/summary.{json,md}, per-iteration cycle history at .agents/overnight/*/<runID>/iterations/iter-<N>.json (resumed runs rehydrate from disk), and optional scheduler assistance under .agentops/generated/dream/"
 ---
-
 # Dream - Private Overnight Operator Mode
 
 `/dream` is the interactive face of the Dream system. It should drive the same

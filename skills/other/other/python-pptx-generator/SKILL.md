@@ -104,3 +104,8 @@ Output: A python-pptx script with executive-friendly slide titles, concise bulle
 
 - `@pptx-official` - Use when the task is about inspecting or editing existing PowerPoint files
 - `@docx-official` - Use when the requested output should be a document instead of a slide deck
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

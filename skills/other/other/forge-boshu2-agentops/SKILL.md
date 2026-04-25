@@ -1,6 +1,6 @@
 ---
 name: forge
-description: 'Mine transcripts for knowledge - decisions, learnings, failures, patterns. Triggers: "forge insights", "mine transcripts", "extract knowledge".'
+description: 'Mine transcripts and artifacts into reusable learnings, decisions, and patterns.'
 skill_api_version: 1
 user-invocable: false
 context:
@@ -16,7 +16,6 @@ metadata:
   internal: true
 output_contract: ".agents/learnings/*.md, .agents/patterns/*.md"
 ---
-
 # Forge Skill
 
 **Typically runs automatically via SessionEnd hook.**

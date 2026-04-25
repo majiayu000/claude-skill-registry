@@ -126,10 +126,10 @@ Then use `AskUserQuestion` with these options: **Approve** or **Reject**.
 
 Apply approved changes in order:
 
-1. **Updates to existing files** — Read the target, find the right section, append or update in place. Match the tone and format already present. For auto memory, follow the memory system conventions from the system prompt. For user/project skill updates, run `/create-skill` to apply the changes.
-2. **Updates to turbo skills** — Read `~/.turbo/repo/SKILL-CONVENTIONS.md` for the turbo project's skill conventions. Use these conventions when editing turbo skills. For each lesson routed to a turbo skill:
-   1. Run `/create-skill` to update the installed copy at `~/.claude/skills/<name>/SKILL.md` (immediate effect for the user).
-   2. If `repoMode` is `"fork"` or `"source"`: use `AskUserQuestion` to ask "These turbo skill improvements could benefit other users. Run `/contribute-turbo` to submit them?" If yes, apply the same changes to `~/.turbo/repo/skills/<name>/SKILL.md`, stage them (`git -C ~/.turbo/repo add skills/<name>/`), and run `/contribute-turbo`.
+1. **Updates to existing files** — Read the target, find the right section, append or update in place. Match the tone and format already present. For auto memory, follow the memory system conventions from the system prompt. For user/project skill updates (any file inside the skill directory — SKILL.md, references, scripts, assets), run `/create-skill` to apply the changes.
+2. **Updates to turbo skills** — Read `~/.turbo/repo/SKILL-CONVENTIONS.md` for the turbo project's skill conventions. Use these conventions when editing turbo skills. Each turbo skill has two copies. The installed copy under `~/.claude/skills/<name>/` takes effect for the user immediately; the source copy under `~/.turbo/repo/skills/<name>/` is the basis for upstream contributions. For each lesson routed to a turbo skill:
+   1. Run `/create-skill` to update the installed copy at `~/.claude/skills/<name>/` (any file inside the skill directory — SKILL.md, references, scripts, assets). The user sees the effect immediately.
+   2. If `repoMode` is `"fork"` or `"source"`: use `AskUserQuestion` to ask "These turbo skill improvements could benefit other users. Apply them to the turbo repo and submit upstream?" When the user confirms, apply the same changes to the matching path under `~/.turbo/repo/skills/<name>/`, stage them (`git -C ~/.turbo/repo add skills/<name>/`), and run `/contribute-turbo`.
 3. **Improvements** — For items routed to project improvements, run `/note-improvement` with the summary, location, and rationale for each.
 4. **New skills** — Run `/create-skill` for each new skill. Provide the trigger conditions and relevant context from the session.
 

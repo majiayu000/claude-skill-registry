@@ -86,7 +86,7 @@ If the shell's Open Questions field is empty or contains "None," skip this step 
 Expand the shell into a full plan using:
 
 1. The shell's Context as the plan's Context (preserve verbatim or lightly edit)
-2. The shell's high-level Implementation Steps as the skeleton, concretizing each with `file_path:line_number` references, named functions, and specific symbols from the pattern survey
+2. The shell's high-level Implementation Steps as the skeleton, concretizing each with `file_path` references and named functions or symbols from the pattern survey
 3. A Pattern Survey section with the Step 2 findings
 4. A Verification section with specific test commands and expected observable results for this shell's work
 5. A Context Files section listing the files an implementer needs to read in full
@@ -112,7 +112,7 @@ spec: <spec path from original shell frontmatter>
 ## Implementation Steps
 
 1. **<Step 1 title>**
-   - <Concrete action with `file_path:line_number` references>
+   - <Concrete action with `file_path` references and named functions or symbols>
 2. **<Step 2 title>**
    - ...
 3. ...
@@ -135,7 +135,7 @@ State the plan path before proceeding.
 
 ### Content Rules for the Plan
 
-- **Implementation Steps**: Use concrete `file_path:line_number` references. Reference existing functions and utilities from the Pattern Survey instead of reinventing them. Each step describes a discrete unit of work that can be tracked independently during execution.
+- **Implementation Steps**: Use concrete `file_path` references and named functions or symbols. Reference existing functions and utilities from the Pattern Survey instead of reinventing them. Each step describes a discrete unit of work that can be tracked independently during execution.
 - **Verification**: Describe how to know the change actually works. Prefer specific test commands, named test files, or named smoke checks over vague phrases like "run the tests." If the change has no observable behavior, say so explicitly.
 - **Context Files**: Curate the minimum set needed to become productive. Do not dump every file touched — only the ones that anchor understanding.
 - **Scope**: Plan content describes what to build. Do not include task tracking, skill loading, test commands, or commit instructions — those are execution-wrapper concerns.

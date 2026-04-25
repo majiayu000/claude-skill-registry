@@ -1,0 +1,17 @@
+{
+  "name": "inbox-zero",
+  "repo": "composio-community/support-skills",
+  "path": "inbox-zero/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/composio-community/support-skills",
+  "dir_name": "inbox-zero",
+  "downloaded_at": "2026-04-25T01:33:27.188406Z",
+  "author": "composio-community",
+  "source_url": "https://github.com/composio-community/support-skills/blob/main/inbox-zero/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/composio-community/support-skills/blob/main/inbox-zero/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

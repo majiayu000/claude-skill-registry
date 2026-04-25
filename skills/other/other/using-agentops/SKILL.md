@@ -1,6 +1,6 @@
 ---
 name: using-agentops
-description: 'Meta skill explaining the AgentOps operating model. Hook-capable runtimes inject it at session start; Codex uses it through the explicit startup fallback. Covers bookkeeping, validation, primitives, flows, the RPI lifecycle, and the skill catalog.'
+description: 'Explain AgentOps operating model, lifecycle, skills, hooks, and context.'
 skill_api_version: 1
 user-invocable: false
 context:
@@ -16,7 +16,6 @@ metadata:
   internal: true
 output_contract: "stdout: operating guide"
 ---
-
 # AgentOps Operating Model
 
 AgentOps is the operational layer for coding agents.

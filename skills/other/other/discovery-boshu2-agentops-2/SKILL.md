@@ -1,6 +1,6 @@
 ---
 name: discovery
-description: 'Full discovery phase orchestrator. Brainstorm + ao search + research + plan + pre-mortem gate. Produces epic-id and execution-packet for /crank. Triggers: "discovery", "discover", "explore and plan", "research and plan", "discovery phase".'
+description: 'Orchestrate brainstorm, research, plan, and pre-mortem into an execution packet.'
 skill_api_version: 1
 user-invocable: true
 context:
@@ -21,7 +21,6 @@ metadata:
     - shared      # optional - CLI fallback table
 output_contract: ".agents/plans/YYYY-MM-DD-*.md, beads, epic-id"
 ---
-
 # /discovery — Full Discovery Phase Orchestrator
 
 **YOU MUST EXECUTE THIS WORKFLOW. Do not just describe it.**

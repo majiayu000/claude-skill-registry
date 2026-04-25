@@ -138,7 +138,7 @@ Run this step only when at least one trigger is true:
 
 If triggered:
 1. Run agent health check: `node shared/agents/agent_runner.mjs --health-check --json`
-2. If agent available (prefer `gemini-review`, fallback `codex-review`):
+2. If advisor agent available:
    a. Build validation prompt from `shared/agents/prompt_templates/traceability_validator.md`
    b. Fill placeholders with Phase 1 discovery and Phase 2 output
    c. Save filled prompt to `.hex-skills/task-planning/{identifier}_traceability_prompt.md`
@@ -146,7 +146,7 @@ If triggered:
 
       ```bash
       node shared/agents/agent_runner.mjs \
-        --agent {gemini-review|codex-review} \
+        --agent {advisor_agent} \
         --prompt-file .hex-skills/task-planning/{identifier}_traceability_prompt.md \
         --output-file .hex-skills/task-planning/{identifier}_traceability_result.json \
         --cwd {project_dir}

@@ -41,6 +41,7 @@ If no server is active, ask for a table list and target audience before drafting
 - curated dataset before broad access
 - Dive or share boundary over raw table dumping
 - standard ownership for metric changes
+- lightweight metric definitions and owners before inviting more users
 
 ## Workflow
 
@@ -48,10 +49,11 @@ If no server is active, ask for a table list and target audience before drafting
 2. Inspect the data model that internal teams would use.
 3. Pick the first audience and first use case.
 4. Publish one trusted dataset.
-5. Publish one Dive or one share.
-6. Expand only after the first workflow is stable.
+5. Document the metric owner, refresh expectation, and access boundary.
+6. Publish one Dive or one share.
+7. Expand only after the first workflow is stable.
 
-When this skill produces a native DuckDB (`md:`) connection, watermark it with `custom_user_agent=agent-skills/<latest-available-skills-version>(harness-<harness>;llm-<llm>)`. If metadata is missing, fall back to `harness-unknown` and `llm-unknown`.
+When this skill produces a native DuckDB (`md:`) connection, watermark it with `custom_user_agent=agent-skills/2.1.0(harness-<harness>;llm-<llm>)`. If metadata is missing, fall back to `harness-unknown` and `llm-unknown`.
 
 ## Output
 

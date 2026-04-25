@@ -1,6 +1,6 @@
 ---
 name: research
-description: 'Deep codebase exploration. Triggers: research, explore, investigate, understand, deep dive, current state.'
+description: 'Explore a codebase or question and write evidence-backed findings.'
 skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash, Write
 metadata:
@@ -16,7 +16,6 @@ context:
   intel_scope: topic
 output_contract: skills/research/schemas/findings.json
 ---
-
 # Research Skill
 
 > **Quick Ref:** Deep codebase exploration with multi-angle analysis. Output: `.agents/research/*.md`

@@ -1,6 +1,6 @@
 ---
 name: scaffold
-description: 'Project scaffolding, component generation, and boilerplate setup. Triggers: "scaffold", "new project", "init project", "create project", "generate component", "setup project", "starter", "boilerplate".'
+description: 'Create project, feature, component, or boilerplate scaffolds.'
 skill_api_version: 1
 context:
   window: fork
@@ -15,7 +15,6 @@ metadata:
     - standards  # loads language-specific conventions
 output_contract: "project files and directory structure"
 ---
-
 # Scaffold Skill
 
 > **Quick Ref:** Project scaffolding, component generation, CI/CD setup. `/scaffold <language> <name>` for new projects, `/scaffold component <type> <name>` for components, `/scaffold ci <platform>` for CI pipelines.

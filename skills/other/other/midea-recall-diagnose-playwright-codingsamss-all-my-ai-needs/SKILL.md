@@ -25,6 +25,9 @@ description: 用于排查 sit/uat/prod 环境下 `/rag-recall/api/search/keyword
 - **ES 路由消歧规则（强制）**：若日志已带 `[cluster=...]`，不得再要求用户补 `sourceSystem`；只有在无集群标识且 `requestDsl` 命中共享索引导致多集群歧义时，才可用 `sourceSystem` 辅助消歧；若仍不能唯一定位，必须中止，禁止 fallback。
 - **阶段顺序来源（强制）**：优先用运行时 `CHAIN_NAME` 提取真实阶段顺序；拿不到则动态读取关键链路代码（`SearchLiteFlowService + LiteFlowConstants`）；都失败才回退默认顺序。
 - **阶段顺序门禁（强制）**：首次丢失阶段必须按当前链路顺序判定，未验证前序文本召回证据时，禁止直接判定向量阶段丢失。
+- **首次丢失口径（强制）**：first-loss 只能由 `phase=response hit=false` 判定；仅凭下游 `phase=request` 缺失不得判该下游阶段丢失。
+- **下游 request 缺失口径（强制）**：若已确认上游阶段 `response hit=false`，下游无 `phase=request` 只允许表述为“下游未触发/未发起 request（由上游丢失导致）”，禁止表述为“下游阶段丢失”。
+- **描述禁令（强制）**：若向量阶段没有 `phase=response hit=false` 证据，禁止输出“向量召回没了/丢了”；必要时只能写“向量阶段 request 未触发（上游 first-loss 在 XXX）”。
 - **首次丢失校验（强制）**：输出结论前必须通过 `python3 scripts/first_loss_guard.py` 校验。
 - **代码后置**：默认先完成回放/ELK/ES 定位，输出前再做最小代码核对。
 - **最小代码集**：只读与“首次丢失阶段”直接相关的 `2~4` 个文件，禁止全量扫代码。
@@ -108,6 +111,7 @@ python3 scripts/elk_guard.py \
 - 时间窗先用 15 分钟，再扩 3 天。
 - 执行方式：只允许 Playwright（如 `browser_navigate/browser_type/browser_press_key`）；禁止 `curl` ELK API。
 - 先从 ELK 提取该次请求的 `CHAIN_NAME` 阶段顺序，再按顺序找首个 `phase=response hit=false` 的 `cmpId`。
+- 对每个下游阶段，`phase=request` 仅用于说明“是否触发”，不可替代 `phase=response` 作为 first-loss 证据。
 - 首次丢失结论前必须跑阶段门禁（示例）：
 
 ```bash
@@ -179,6 +183,7 @@ python3 scripts/prepare_diagnosis.py \
 ## 5. 根因判定最小集
 
 - `phase=response hit=false`：该阶段未命中目标的最高优先级证据。
+- `下游 phase=request 缺失`：只表示该阶段可能未触发，必须依附上游 first-loss 解释，不能单独当作“该阶段丢失”。
 - `目标存在性=0`：索引缺数据/发布未生效/索引路由不覆盖。
 - `目标存在性>0 且 原DSL=0`：文本匹配或过滤条件问题。
 - `原DSL>0 但最终未返回`：排序/阈值/TopN 问题。
@@ -189,7 +194,7 @@ python3 scripts/prepare_diagnosis.py \
 1. 目标首次丢失阶段（`cmpId`）
 2. 简要原因
 3. ELK 关键证据
-4. 阶段审计（文本/向量/重排各阶段 `response hit=true|false|unknown`）
+4. 阶段审计（文本/向量/重排各阶段 `response hit=true|false|unknown`；可补充 `request triggered|not_triggered`，但不得用其判 first-loss）
 5. 代码证据（至少 2 条，`文件:行号`）
 6. 若在召回阶段：ES 证据（`total/returned/rank/score`）
 7. 下一步动作（仅当前阶段相关）

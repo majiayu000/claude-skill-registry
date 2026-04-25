@@ -67,7 +67,7 @@ If unsure, do not load. Do not load `/code-style` here — `/implement` will loa
 
 Before invoking `/implement`, use `TaskCreate` to add one sub-task per plan Implementation Step. Mark each sub-task `in_progress` before starting that step and `completed` after.
 
-In the turn that invokes `/implement`, write out the Implementation Steps in order and restate the plan's Verification section (the specific commands, smoke checks, or MCP tool invocations it lists). `/implement`'s middle step should work through each Implementation Step using the plan's `file_path:line_number` references and reusing the patterns surveyed in Step 2, then run the Verification section before running `/finalize`. If any Verification check fails, halt and investigate before proceeding to commit. If a step cannot be completed (blocked by a dependency, unclear requirement, or environmental issue), halt and report; do not silently skip steps.
+In the turn that invokes `/implement`, write out the Implementation Steps in order and restate the plan's Verification section (the specific commands, smoke checks, or MCP tool invocations it lists). `/implement`'s middle step should work through each Implementation Step using the plan's `file_path` references and named symbols, reusing the patterns surveyed in Step 2, then run the Verification section before running `/finalize`. If any Verification check fails, halt and investigate before proceeding to commit. If a step cannot be completed (blocked by a dependency, unclear requirement, or environmental issue), halt and report; do not silently skip steps.
 
 Then run the `/implement` skill. `/implement` loads `/code-style`, executes the Implementation Steps and Verification as written in the context, and runs `/finalize`.
 

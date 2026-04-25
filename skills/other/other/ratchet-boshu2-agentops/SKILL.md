@@ -1,6 +1,6 @@
 ---
 name: ratchet
-description: 'Brownian Ratchet progress gates for RPI workflow. Check, record, verify. Triggers: "check gate", "verify progress", "ratchet status".'
+description: 'Record and verify Brownian Ratchet progress gates.'
 skill_api_version: 1
 user-invocable: false
 context:
@@ -16,7 +16,6 @@ metadata:
   internal: true
 output_contract: "stdout: gate check result"
 ---
-
 # Ratchet Skill
 
 Track progress through the RPI workflow with permanent gates.

@@ -22,6 +22,7 @@ Use this skill when the user needs a persistent, shareable Dive rather than a on
 - When a Dive uses shared databases in `REQUIRED_DATABASES`, always suffix the `alias` (e.g. `_share`) so it cannot collide with an existing database name. Never set `alias` to conflict with an existing database name.
 - Start from a named theme direction such as `Corporate Dashboard`, `Tufte Minimal`, or `FT Salmon` instead of vague visual prompts.
 - Prefer one query per visual section rather than one giant cross-purpose query.
+- Include loading, empty, and error states for every live query before saving or embedding the Dive.
 - Preview locally before saving when the environment supports it.
 - Treat embedded Dives as the first-choice path when a product needs a live read-only Dive surface. Move to `motherduck-build-cfa-app` when the app needs custom backend contracts, writes, non-Dive routing, or richer authorization.
 - For existing Dives, prefer reading version metadata before overwriting content; MCP `list_dives` returns `current_version`, and `read_dive` can fetch historical versions.

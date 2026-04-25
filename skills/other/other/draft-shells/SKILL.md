@@ -166,7 +166,7 @@ depends_on: []
 The following are filled in when `/expand-shell` runs:
 
 - Pattern survey against the codebase state at implementation time
-- Concrete `file_path:line_number` references for each Implementation Step
+- Concrete `file_path` references with named functions or symbols for each Implementation Step
 - Verification section with specific test commands and smoke checks
 - Context Files section with the files to read in full before editing
 ````

@@ -39,6 +39,7 @@ If no server is active, ask for representative client patterns and regions befor
 - one client database or stronger boundary per client
 - shared architecture, client-specific schema
 - explicit sharing and revocation per client
+- versioned templates for provisioning, validation, handoff, and exception tracking
 
 ## Workflow
 
@@ -46,10 +47,11 @@ If no server is active, ask for representative client patterns and regions befor
 2. Classify the client patterns.
 3. Inspect the existing regional and database layout if available.
 4. Standardize the architecture and provisioning path.
-5. Document client-specific exceptions.
-6. Produce the handoff assets and validation checks.
+5. Define the repeatable validation pack for every client environment.
+6. Document client-specific exceptions.
+7. Produce the handoff assets and validation checks.
 
-When this skill produces a native DuckDB (`md:`) connection, watermark it with `custom_user_agent=agent-skills/<latest-available-skills-version>(harness-<harness>;llm-<llm>)`. If metadata is missing, fall back to `harness-unknown` and `llm-unknown`.
+When this skill produces a native DuckDB (`md:`) connection, watermark it with `custom_user_agent=agent-skills/2.1.0(harness-<harness>;llm-<llm>)`. If metadata is missing, fall back to `harness-unknown` and `llm-unknown`.
 
 ## Output
 

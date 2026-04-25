@@ -1,6 +1,6 @@
 ---
 name: plan
-description: 'Epic decomposition into trackable issues. Triggers: "create a plan", "plan implementation", "break down into tasks", "decompose into features", "create beads issues from research", "what issues should we create", "plan out the work".'
+description: 'Decompose goals into issue-ready plans, waves, dependencies, and validation checks.'
 skill_api_version: 1
 metadata:
   tier: execution
@@ -17,7 +17,6 @@ context:
   intel_scope: topic
 output_contract: ".agents/plans/YYYY-MM-DD-*.md, beads (via bd create)"
 ---
-
 # Plan Skill
 
 > **Quick Ref:** Decompose goal into trackable issues with waves. Output: `.agents/plans/*.md` + bd issues.
@@ -136,9 +135,13 @@ Group issues by dependencies for parallel execution:
 - **Wave 3**: Issues depending on Wave 2
 - Continue until all issues assigned
 
-**Planning Rules Compliance (Mandatory Gate):** After computing waves, fill in the Planning Rules Compliance checklist (PR-001 through PR-007) in the plan document — see the table in [references/plan-document-template.md](references/plan-document-template.md). Read [references/planning-rules.md](references/planning-rules.md) for detection questions and evidence. Every rule MUST have an explicit justification or N/A rationale. If any row has an empty Justification column, mark the plan output as **INCOMPLETE** and do not proceed to Step 6.
+**Planning Rules Compliance (Mandatory Gate):** After computing waves, fill in the Planning Rules Compliance checklist (PR-001 through PR-007) in the plan document — see the table in [references/plan-document-template.md](references/plan-document-template.md). Read [references/planning-rules.md](references/planning-rules.md) for detection questions and evidence. Every rule MUST have an explicit justification or N/A rationale. If any row has an empty Justification column, mark the plan output as **INCOMPLETE** and do not proceed to Step 5.5.
 
-Read [references/wave-matrices.md](references/wave-matrices.md) for the **mandatory** file-level dependency matrix, cross-wave shared file registry, and dependency-necessity validation rules.
+### Step 5.5: File Dependency Matrix (MANDATORY)
+
+Before writing the plan document, produce an explicit file-level dependency matrix mapping each task to every file it reads or writes (columns: Task, File, Access=read/write, Notes). This matrix is the input to the swarm pre-spawn conflict check — without it, handoff to `/swarm` is blocked. Every `write` is an ownership claim: two same-wave tasks claiming `write` on the same file MUST be serialized (`blockedBy`) or merged. `read` conflicts with concurrent `write` but not with other reads. Include tests, docs, schemas, fixtures, generated artifacts, and Codex companion files — not just primary sources. The swarm skill's local-mode Pre-Spawn Conflict Check consumes this matrix.
+
+Read [references/wave-matrices.md](references/wave-matrices.md) for the full file-conflict matrix format, an example table, cross-wave shared file registry, generated-artifact companion scope, and dependency-necessity validation rules.
 
 ### Step 6: Write Plan Document
 

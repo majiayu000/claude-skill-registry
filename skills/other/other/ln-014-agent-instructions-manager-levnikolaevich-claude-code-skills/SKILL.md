@@ -1,6 +1,6 @@
 ---
 name: ln-014-agent-instructions-manager
-description: "Creates AGENTS.md canonical and CLAUDE.md/GEMINI.md/ANTIGRAVITY.md @AGENTS.md stubs; audits token budget, cache safety, import-pattern compliance. Use when instruction files need alignment."
+description: "Creates AGENTS.md canonical and CLAUDE.md @AGENTS.md stub; audits token budget, cache safety, import-pattern compliance. Use when instruction files need alignment."
 license: MIT
 ---
 
@@ -11,7 +11,7 @@ license: MIT
 **Type:** L3 Worker
 **Category:** 0XX Shared
 
-Creates missing instruction files and audits all of them (AGENTS.md, CLAUDE.md, GEMINI.md, ANTIGRAVITY.md) for quality, consistency, and best practices. AGENTS.md is the single canonical source of content; CLAUDE.md, GEMINI.md, and ANTIGRAVITY.md are thin `@AGENTS.md` import stubs with bounded harness-specific deltas. This skill is the single owner of instruction-file creation and MCP Tool Preferences insertion or replacement.
+Creates missing instruction files and audits them (AGENTS.md, CLAUDE.md) for quality, consistency, and best practices. AGENTS.md is the single canonical source of content; CLAUDE.md is a thin `@AGENTS.md` import stub with bounded harness-specific deltas. This skill is the single owner of instruction-file creation and MCP Tool Preferences insertion or replacement.
 
 **MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`, `shared/references/environment_worker_runtime_contract.md`, and `shared/references/worker_runtime_contract.md`
 **MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md`
@@ -78,8 +78,6 @@ Locate instruction files in target project:
 |-------|---------|------------------|----------|
 | Claude Code | `CLAUDE.md` | imports `AGENTS.md` via `@AGENTS.md` | `.claude/settings.local.json` |
 | Codex / Cursor / Amp / Factory | `AGENTS.md` | canonical | `.codex/instructions.md` |
-| Gemini CLI | `GEMINI.md` | imports `AGENTS.md` via `@AGENTS.md` | `AGENTS.md` (shared with Codex) |
-| Google Antigravity | `ANTIGRAVITY.md` | imports `AGENTS.md` via `@AGENTS.md` | `AGENTS.md` (shared with Codex/Gemini/Claude) |
 
 Report: which files exist (`found` / `missing`), which harnesses share `AGENTS.md` directly vs via import.
 
@@ -115,7 +113,7 @@ Report: which files exist (`found` / `missing`), which harnesses share `AGENTS.m
 
 **Skip condition:** All files exist OR `dry_run == true` (report what would be created).
 
-**Canonical model:** AGENTS.md is the single source of content. CLAUDE.md, GEMINI.md, and ANTIGRAVITY.md are `@AGENTS.md` import stubs with bounded harness-specific deltas. Create in this order so the stubs reference a file that already exists.
+**Canonical model:** AGENTS.md is the single source of content. CLAUDE.md is an `@AGENTS.md` import stub with bounded harness-specific deltas. Create in this order so the stub references a file that already exists.
 
 ### Step 2a: Detect Project Context
 
@@ -142,26 +140,9 @@ Report: which files exist (`found` / `missing`), which harnesses share `AGENTS.m
 4. Verify the file contains exactly one `@AGENTS.md` line and is ≤50 lines total
 5. Do NOT copy any content from AGENTS.md into CLAUDE.md — the `@` import handles it at session load time
 
-### Step 2d: Create GEMINI.md (if missing) — import stub
-
-1. **MANDATORY READ:** Load `skills-catalog/ln-111-root-docs-creator/references/templates/gemini_md_template.md`
-2. Replace `{{PROJECT_NAME}}` only
-3. Write to target project root
-4. Verify the file contains exactly one `@AGENTS.md` line and is ≤50 lines total
-5. Do NOT copy any content from AGENTS.md into GEMINI.md — the `@` import handles it at session load time
-
-### Step 2d2: Create ANTIGRAVITY.md (if missing) — import stub
-
-1. **MANDATORY READ:** Load `skills-catalog/ln-111-root-docs-creator/references/templates/antigravity_md_template.md`
-2. Replace `{{PROJECT_NAME}}` only
-3. Write to target project root
-4. Verify the file contains exactly one `@AGENTS.md` line and is ≤50 lines total
-5. Do NOT copy any content from AGENTS.md into ANTIGRAVITY.md — the `@` import handles it at session load time
-
-
 ### Step 2e: Report Creations
 
-List each created file with its source (template `agents_md_template.md`, template `claude_md_template.md` stub, template `gemini_md_template.md` stub, template `antigravity_md_template.md` stub).
+List each created file with its source (template `agents_md_template.md`, template `claude_md_template.md` stub).
 
 ## Phase 3: Token Budget Audit
 
@@ -171,8 +152,6 @@ Line-count budgets align with the Anthropic official target (`<200 lines per CLA
 |-------|------|------|------|
 | AGENTS.md line count | ≤150 | 151-200 | >200 |
 | CLAUDE.md line count (stub) | ≤20 | 21-50 | >50 |
-| GEMINI.md line count (stub) | ≤20 | 21-50 | >50 |
-| ANTIGRAVITY.md line count (stub) | ≤20 | 21-50 | >50 |
 | User-added imperative count in AGENTS.md | ≤100 | 101-150 | >150 |
 
 **Imperative counter:** lines matching `^\s*- ` inside rule sections, plus any line containing `MUST\|NEVER\|ALWAYS\|DO NOT`. Cite the IFScale benchmark (arxiv 2507.11538) in WARN / FAIL messages.
@@ -203,7 +182,7 @@ Check each file for content that breaks prefix-based prompt caching:
 | 6 | MCP Tool Preferences | Canonical policy section in AGENTS.md matches `shared/references/mcp_tool_preferences.md` | Missing or outdated — agents use suboptimal tools |
 | 7 | No tool output examples | No large code blocks or command outputs | Found — bloats every turn |
 
-Checks #1–#6 evaluate AGENTS.md only because CLAUDE.md / GEMINI.md / ANTIGRAVITY.md inherit that content via the `@AGENTS.md` import. Checks on the deltas themselves live in Phase 6.
+Checks #1–#6 evaluate AGENTS.md only because CLAUDE.md inherits that content via the `@AGENTS.md` import. Checks on the delta itself live in Phase 6.
 
 ### Phase 5b: Auto-fix Fixable Issues
 
@@ -232,28 +211,26 @@ Preserve during /compact: [Critical Rules], [MCP Tool Preferences table],
 Drop examples and explanations first.
 ```
 
-Because CLAUDE.md, GEMINI.md, and ANTIGRAVITY.md `@AGENTS.md`, the preservation list propagates to all of them. The harness-specific terminology (`/compact` vs context compression) lives in each stub's delta.
+Because CLAUDE.md `@AGENTS.md`, the preservation list propagates to Claude Code. The harness-specific terminology (`/compact` vs context compression) lives in the stub delta.
 
 ## Phase 6: Import Pattern Compliance
 
-AGENTS.md is the canonical source per `DOC_ROLE` metadata. CLAUDE.md, GEMINI.md, and ANTIGRAVITY.md must be thin `@AGENTS.md` import stubs with bounded harness-specific deltas.
+AGENTS.md is the canonical source per `DOC_ROLE` metadata. CLAUDE.md must be a thin `@AGENTS.md` import stub with bounded harness-specific deltas.
 
 | # | Check | Pass | Fail |
 |---|-------|------|------|
 | 1 | CLAUDE.md has `@AGENTS.md` import | Exactly one `@AGENTS.md` line present | Missing or multiple — FAIL |
-| 2 | GEMINI.md has `@AGENTS.md` import | Exactly one `@AGENTS.md` line present | Missing or multiple — FAIL |
-| 3 | CLAUDE.md delta bounded | Total file ≤50 lines | >50 lines — FAIL with drift report |
-| 4 | GEMINI.md delta bounded | Total file ≤50 lines | >50 lines — FAIL with drift report |
-| 5 | No content duplication | No section or rule from AGENTS.md reappears in CLAUDE.md / GEMINI.md | Duplicate found — FAIL, name the specific overlapping lines |
+| 2 | CLAUDE.md delta bounded | Total file ≤50 lines | >50 lines — FAIL with drift report |
+| 3 | No content duplication | No section or rule from AGENTS.md reappears in CLAUDE.md | Duplicate found — FAIL, name the specific overlapping lines |
 
 **Drift resolution rule:** AGENTS.md is the canonical source. For each inconsistency:
-- (a) If content is missing from AGENTS.md but present in CLAUDE.md / GEMINI.md → move it to AGENTS.md, then remove from the stub.
-- (b) If CLAUDE.md / GEMINI.md duplicate AGENTS.md content → replace with a single `@AGENTS.md` import line.
-- (c) If the stub delta exceeds 50 lines → split genuinely harness-specific content into `.claude/rules/*.md` (for Claude) or modular `@imports` (for Gemini); everything else moves to AGENTS.md.
+- (a) If content is missing from AGENTS.md but present in CLAUDE.md → move it to AGENTS.md, then remove from the stub.
+- (b) If CLAUDE.md duplicates AGENTS.md content → replace with a single `@AGENTS.md` import line.
+- (c) If the stub delta exceeds 50 lines → split genuinely harness-specific content into `.claude/rules/*.md`; everything else moves to AGENTS.md.
 
 **Do not** "suggest which file is source of truth" based on content volume — AGENTS.md is always the source.
 
-If `.hex-skills/environment_state.json` reports `agents.codex.discovery_violation=true`, emit a WARN that Codex skill discovery is drifted and duplicate skill counts from stale cache must not be used as evidence during instruction audits until `ln-013-config-syncer` repairs the mapping.
+If `.hex-skills/environment_state.json` reports `agents.codex.discovery_violation=true`, emit a WARN that Codex skill discovery is drifted and duplicate skill counts from stale cache must not be used as evidence during instruction audits until `ln-013-config-syncer` repairs the marketplace/plugin alignment.
 
 If `.hex-skills/environment_state.json` reports `agents.codex.permissions_default_ready=false`, emit a WARN that Codex CLI startup permissions are drifted from the managed default and instruction audits must not assume full-access startup semantics until `ln-013-config-syncer` repairs `~/.codex/config.toml`.
 
@@ -265,14 +242,12 @@ Agent Instructions Manager:
 Created:  (omit section if nothing created)
 - AGENTS.md (from template, context from package.json)
 - CLAUDE.md (import stub)
-- GEMINI.md (import stub)
 
 Audit:
 | File       | Lines | Imperatives | Cache-safe | Quality | Import pattern | Issues |
 |------------|-------|-------------|------------|---------|----------------|--------|
 | AGENTS.md  | 118   | 47          | OK         | 7/7     | n/a            | OK |
 | CLAUDE.md  | 13    | 0           | OK         | 7/7     | OK             | OK |
-| GEMINI.md  | 12    | 0           | OK         | 7/7     | OK             | OK |
 
 Import pattern: OK (or N drift issues listed)
 
@@ -285,12 +260,12 @@ Recommendations:
 ## Definition of Done
 
 - [ ] All instruction files discovered
-- [ ] Missing files created (AGENTS.md from template first; CLAUDE.md and GEMINI.md as `@AGENTS.md` import stubs second)
-- [ ] Token budget within limits: AGENTS.md ≤200 lines, CLAUDE.md and GEMINI.md each ≤50 lines, AGENTS.md imperative count ≤150
+- [ ] Missing files created (AGENTS.md from template first; CLAUDE.md as `@AGENTS.md` import stub second)
+- [ ] Token budget within limits: AGENTS.md ≤200 lines, CLAUDE.md ≤50 lines, AGENTS.md imperative count ≤150
 - [ ] No prompt cache breakers found (or reported as WARN)
 - [ ] Content quality checks passed on AGENTS.md (or issues reported)
 - [ ] Auto-fixable issues resolved in AGENTS.md (Compact Instructions, MCP Tool Preferences) or reported if dry_run
-- [ ] Import pattern compliance verified: CLAUDE.md and GEMINI.md each contain exactly one `@AGENTS.md` line and no duplicated AGENTS.md content
+- [ ] Import pattern compliance verified: CLAUDE.md contains exactly one `@AGENTS.md` line and no duplicated AGENTS.md content
 - [ ] Report generated with creation log, drift findings, and actionable recommendations
 - [ ] No conflicting external plugins detected (or user confirmed keep)
 - [ ] Structured summary returned

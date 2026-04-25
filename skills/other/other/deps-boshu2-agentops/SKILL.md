@@ -1,6 +1,6 @@
 ---
 name: deps
-description: 'Dependency audit, update, vulnerability scanning, and license compliance. Triggers: "deps", "dependencies", "update deps", "audit dependencies", "dependency update", "vulnerable dependencies", "outdated packages", "license check", "dep audit".'
+description: 'Audit, update, and validate dependencies, vulnerabilities, and licenses.'
 skill_api_version: 1
 context:
   window: fork
@@ -15,7 +15,6 @@ metadata:
     - standards  # optional - language conventions
 output_contract: "stdout: dependency audit report"
 ---
-
 # Deps Skill
 
 > Quick Ref: `/deps audit` | `/deps update [--major|--minor|--patch]` | `/deps vuln` | `/deps license`

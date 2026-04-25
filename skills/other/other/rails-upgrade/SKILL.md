@@ -105,6 +105,7 @@ When proposing code fixes that must work with both the current and target Rails 
 - Update Gemfile to target Rails version
 - Run test suite against both versions during the transition
 - Do not fix deprecations printed by the next version, these will be addressed later before the next upgrade
+- **Check CI config before opening the PR (MANDATORY):** follow `workflows/ci-sync-workflow.md` to verify every CI file in the repo matches the upgraded Gemfile (Ruby version, Rails matrix, service versions). Fix any mismatches before Step 5 is complete. Stale CI config is the most common cause of red builds on upgrade PRs.
 - Deploy and verify
 
 ### Step 6: Align load_defaults to New Version (FINAL STEP)
@@ -220,6 +221,7 @@ If user requests a multi-hop upgrade (e.g., 5.2 → 8.1):
 - `workflows/test-suite-verification-workflow.md` - **MANDATORY FIRST STEP** - How to run and verify test suite
 - `workflows/direct-detection-workflow.md` - How to run breaking change detection directly
 - `workflows/upgrade-report-workflow.md` - How to generate upgrade reports
+- `workflows/ci-sync-workflow.md` - **MANDATORY before opening the upgrade PR** - How to verify CI config matches the upgraded Gemfile
 - `workflows/app-update-preview-workflow.md` - How to generate app:update previews
 
 ### Examples (Load when user needs clarification)
@@ -341,7 +343,8 @@ Claude runs detection directly using tools - NO script generation needed
 3. Implement breaking change fixes using `NextRails.next?` for dual-boot code
 4. Update Gemfile to target Rails version
 5. Run test suite against both versions
-6. Deploy and verify
+6. **Check CI config matches the upgraded Gemfile** — load `workflows/ci-sync-workflow.md`, fix any mismatches before proceeding
+7. Deploy and verify
 ```
 
 ### Step 7: Align load_defaults (FINAL STEP)
@@ -428,7 +431,9 @@ Before starting ANY upgrade:
 **Action - Step 5 (Implement & Upgrade):**
 1. Fix breaking changes using `NextRails.next?` for dual-boot code
 2. Update Gemfile to target Rails version
-3. Run tests against both versions, deploy and verify
+3. Run tests against both versions
+4. **Check CI config matches the upgraded Gemfile** (`workflows/ci-sync-workflow.md`) — fix any mismatches before declaring Step 5 complete
+5. Deploy and verify
 
 **Action - Step 6 (Align load_defaults - FINAL):**
 1. DELEGATE to the `rails-load-defaults` skill
@@ -496,6 +501,12 @@ Before delivering, verify:
 - [ ] Code examples use user's actual code from affected files
 - [ ] Next steps clearly outlined
 
+**For CI Config Check (Step 5, before opening the PR):**
+- [ ] Every CI file in the repo enumerated (GitHub Actions, CircleCI, Jenkins, GitLab, etc.)
+- [ ] Ruby version, Rails matrix, and service versions diffed against the upgraded Gemfile
+- [ ] CI sync report produced with per-file verdict
+- [ ] All DRIFT entries fixed; overall verdict is OK
+
 **For app:update Preview:**
 - [ ] All {PLACEHOLDERS} replaced with actual values
 - [ ] File list matches user's actual config files
@@ -519,7 +530,8 @@ Before delivering, verify:
 11. **Sequential Process is Critical** (patch check → tests → dual-boot → detection → reports → implement → load_defaults)
 12. **Follow FastRuby.io Methodology** (incremental upgrades, assessment first)
 13. **Always Use `NextRails.next?` for Dual-Boot Code** (NEVER use `respond_to?` for version branching. DELEGATE to the `dual-boot` skill for patterns and setup.)
-14. **Align load_defaults Last** (load_defaults update happens AFTER the Rails version upgrade is complete, as the final step)
+14. **Check CI Config Before Opening the PR** (run `workflows/ci-sync-workflow.md` to make sure every CI file matches the upgraded Gemfile — stale CI is the most common cause of red builds on upgrade PRs)
+15. **Align load_defaults Last** (load_defaults update happens AFTER the Rails version upgrade is complete, as the final step)
 
 ---
 
@@ -539,6 +551,7 @@ A successful upgrade assistance session:
 ✅ Used user's actual code from findings (not generic examples)
 ✅ Flagged all custom code with ⚠️ warnings based on detected issues
 ✅ **Implemented changes and upgraded Rails version**
+✅ **Verified CI config matches the upgraded Gemfile** (Ruby, Rails matrix, services — all mismatches fixed before opening the PR)
 ✅ **Aligned load_defaults** (final step, after upgrade is complete)
 ✅ Provided clear next steps
 ✅ Offered to help implement changes

@@ -1,6 +1,6 @@
 ---
 name: autodev
-description: 'Manage the PROGRAM.md operational contract that bounds autonomous development loops. Use when setting up or validating PROGRAM.md/AUTODEV.md, choosing between autodev and evolve, or turning a repeated postmortem -> analyze -> plan -> pre-mortem -> implement -> validate cycle into the v2 autonomous workflow.'
+description: 'Manage PROGRAM.md/AUTODEV.md contracts for bounded autonomous development loops.'
 skill_api_version: 1
 user-invocable: true
 context:
@@ -15,7 +15,6 @@ metadata:
     - rpi
 output_contract: "validated PROGRAM.md/AUTODEV.md contract or clear evolve/RPI execution handoff"
 ---
-
 # /autodev
 
 `/autodev` manages the repo-local operational contract for autonomous development.

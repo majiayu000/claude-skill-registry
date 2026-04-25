@@ -18,6 +18,7 @@ Use this skill when executing SQL queries for analytics, aggregations, transform
 
 - Write DuckDB SQL, not PostgreSQL SQL, even when using the PG endpoint.
 - Always use fully qualified `"database"."schema"."table"` names.
+- Preserve the intended grain of every result set; state the grain before optimizing or materializing a query.
 - Filter early, aggregate early, and prefer serving tables or summaries for repeated reads.
 - Keep SQL obvious, multi-line, and explicit about grain, filters, and output shape.
 - Treat DDL, DML, `ATTACH`, `DETACH`, and lifecycle commands such as `SHUTDOWN` as writes. Use MCP `query_rw` only when the user explicitly asks for the change and confirms it.
@@ -28,7 +29,7 @@ Use this skill when executing SQL queries for analytics, aggregations, transform
 1. Confirm the actual tables, columns, and grain before writing SQL.
 2. Write the query in SQL first, then wrap it in Python or TypeScript only if needed.
 3. Use CTEs and DuckDB-native patterns such as `GROUP BY ALL`, `QUALIFY`, and `arg_max`.
-4. Check the plan and shape for pushdown, unnecessary sorts, or repeated raw rescans.
+4. Check the plan, row count, and shape for pushdown, unnecessary sorts, or repeated raw rescans.
 5. Materialize expensive repeated queries into serving tables or light views when warranted.
 
 ## Open Next

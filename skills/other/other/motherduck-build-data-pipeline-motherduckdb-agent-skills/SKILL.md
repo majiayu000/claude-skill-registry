@@ -44,7 +44,8 @@ If no server is active, ask for source shape and target shape before drafting th
 - raw landing before curation
 - explicit raw -> staging -> analytics boundaries
 - bulk ingest paths over row-by-row writes
-- DuckDB 1.5+ clients for write/delete-heavy jobs that depend on concurrent checkpoint behavior
+- idempotent stage rebuilds or append contracts before scheduled automation
+- verify the MotherDuck-supported DuckDB client version before recommending upstream-only write, checkpoint, or lakehouse features
 - native MotherDuck storage unless DuckLake is explicitly required
 
 ## Workflow
@@ -55,9 +56,9 @@ If no server is active, ask for source shape and target shape before drafting th
 4. Ingest raw data.
 5. Deduplicate, type, and promote into staging.
 6. Materialize analytics-ready outputs.
-7. Validate counts and business metrics before publishing downstream assets.
+7. Validate counts, freshness, uniqueness, and business metrics before publishing downstream assets.
 
-When this skill produces a native DuckDB (`md:`) connection, watermark it with `custom_user_agent=agent-skills/<latest-available-skills-version>(harness-<harness>;llm-<llm>)`. If metadata is missing, fall back to `harness-unknown` and `llm-unknown`.
+When this skill produces a native DuckDB (`md:`) connection, watermark it with `custom_user_agent=agent-skills/2.1.0(harness-<harness>;llm-<llm>)`. If metadata is missing, fall back to `harness-unknown` and `llm-unknown`.
 
 ## Output
 
@@ -88,7 +89,7 @@ Use this exact top-level shape when JSON is requested:
 
 - `references/dlt-dbt-motherduck-project/` -- fully runnable MotherDuck reference project using `dlt`, `dbt-duckdb`, and validation queries
 - `references/PIPELINE_IMPLEMENTATION_GUIDE.md` -- preserved detailed pipeline guidance that used to live in this skill
-- `../load-data/references/INGESTION_PATTERNS.md` -- lower-level ingestion patterns
+- `../motherduck-load-data/references/INGESTION_PATTERNS.md` -- lower-level ingestion patterns
 
 ## Runnable Artifact
 

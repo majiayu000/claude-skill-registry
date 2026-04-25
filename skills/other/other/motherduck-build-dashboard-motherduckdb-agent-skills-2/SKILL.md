@@ -8,7 +8,7 @@ license: MIT
 
 Use this skill when the user wants a multi-section Dive-backed dashboard with a clear analytical story, not just a single chart.
 
-This is a use-case skill. It orchestrates `motherduck-explore`, `motherduck-query`, `motherduck-create-dive`, and `motherduck-duckdb-sql`.
+This is a use-case skill. It orchestrates `motherduck-explore`, `motherduck-query`, and `motherduck-create-dive`; use `motherduck-duckdb-sql` as supporting reference when exact syntax matters.
 
 ## Start Here: Is a MotherDuck Server Active?
 
@@ -55,7 +55,7 @@ For lower-level Dive mechanics, use `motherduck-create-dive`.
 5. Compose the dashboard in a Dive.
 6. Save only after preview iteration is approved.
 
-When this skill produces a native DuckDB (`md:`) connection, watermark it with `custom_user_agent=agent-skills/<latest-available-skills-version>(harness-<harness>;llm-<llm>)`. If metadata is missing, fall back to `harness-unknown` and `llm-unknown`.
+When this skill produces a native DuckDB (`md:`) connection, watermark it with `custom_user_agent=agent-skills/2.1.0(harness-<harness>;llm-<llm>)`. If metadata is missing, fall back to `harness-unknown` and `llm-unknown`.
 
 ## Output
 

@@ -1,6 +1,6 @@
 ---
 name: swarm
-description: 'Spawn isolated agents for parallel task execution. Auto-selects runtime-native teams (Claude Native Teams in Claude sessions, Codex sub-agents in Codex sessions). Triggers: "swarm", "spawn agents", "parallel work", "run in parallel", "parallel execution".'
+description: 'Dispatch isolated agents for parallel tasks with file ownership and evidence.'
 skill_api_version: 1
 context:
   window: fork
@@ -16,7 +16,6 @@ metadata:
     - vibe      # optional - integration with validation
 output_contract: ".agents/swarm/results/*.json"
 ---
-
 # Swarm Skill
 
 Spawn isolated agents to execute tasks in parallel. Fresh context per agent (Ralph Wiggum pattern).
@@ -202,10 +201,10 @@ File Ownership Map (Wave N):
 ┌─────────────────────────────┬──────────┬──────────┐
 │ File                        │ Owner    │ Conflict │
 ├─────────────────────────────┼──────────┼──────────┤
-│ src/auth/middleware.go       │ task-1   │         │
-│ src/auth/middleware_test.go  │ task-1   │         │
-│ src/api/routes.go            │ task-2   │         │
-│ src/config/settings.go       │ task-1,3 │ YES     │
+│ src/auth/middleware.go      │ task-1   │          │
+│ src/auth/middleware_test.go │ task-1   │          │
+│ src/api/routes.go           │ task-2   │          │
+│ src/config/settings.go      │ task-1,3 │ YES      │
 └─────────────────────────────┴──────────┴──────────┘
 Conflicts: 1 (resolved: serialized task-3 into sub-wave 2)
 ```
@@ -540,20 +539,6 @@ ol hero ratchet "$BEAD_ID" --quest "$QUEST_ID"
 
 **Result:** Parallel execution of independent tasks using TaskList only.
 
-### Loading Wave from OL
-
-**User says:** `/swarm --from-wave /tmp/wave-ol-527.json`
-
-**What happens:**
-1. Agent validates `ol` CLI is on PATH (pre-flight check)
-2. Agent reads wave JSON from OL hero hunt output
-3. Agent creates TaskList tasks from wave entries (priority-sorted)
-4. Agent spawns workers for all unblocked beads
-5. On completion, agent runs `ol hero ratchet <bead-id> --quest <quest-id>` for each bead
-6. Agent reports backflow status to user
-
-**Result:** OL beads executed with completion reporting back to Olympus.
-
 ---
 
 ## Worktree Isolation (Multi-Epic Dispatch)
@@ -759,10 +744,6 @@ Solution: Run `which codex` to verify installation. Check `~/.codex/config.toml`
 ### Workers timeout or hang
 Cause: Worker task too large or blocked on external dependency.
 Solution: Break tasks into smaller units. Add timeout metadata to worker tasks.
-
-### OL wave integration fails with "ol CLI required"
-Cause: `--from-wave` used but `ol` CLI not on PATH.
-Solution: Install Olympus CLI or run swarm without `--from-wave` flag.
 
 ### gc backend detected but workers unresponsive
 Cause: gc controller is running but worker sessions are idle or not accepting nudges.

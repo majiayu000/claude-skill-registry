@@ -25,6 +25,7 @@ Use this skill when the job is getting data into MotherDuck correctly and effici
 - Use Parquet for durable bulk movement whenever you control the source format.
 - Treat the Postgres endpoint as a thin-client path for server-side remote reads, not for local-file or extension-driven ingestion.
 - Bootstrap the target MotherDuck database first when the ingestion tool does not create it automatically.
+- Keep raw landing minimally transformed; do typing, deduplication, and business logic in staging or modeling steps.
 - Keep source storage close to the MotherDuck region when you control placement.
 
 ## Workflow

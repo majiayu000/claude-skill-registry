@@ -1,6 +1,6 @@
 ---
 name: crank
-description: 'Hands-free epic execution. Runs until ALL children are CLOSED. Uses /swarm with runtime-native spawning (Codex sub-agents or Claude teams). NO human prompts, NO stopping. Triggers: "crank", "run epic", "execute epic", "run all tasks", "hands-free execution", "crank it".'
+description: 'Execute an epic hands-free through waves until work is done or blocked.'
 skill_api_version: 1
 user-invocable: true
 context:
@@ -20,7 +20,6 @@ metadata:
     - post-mortem # optional - suggested for learnings extraction
 output_contract: "code changes across wave execution, .agents/swarm/results/*.json"
 ---
-
 # Crank Skill
 
 > **Quick Ref:** Autonomous epic execution. `/swarm` for each wave with runtime-native spawning. Output: closed issues + phase-2 handoff for `/validation`.

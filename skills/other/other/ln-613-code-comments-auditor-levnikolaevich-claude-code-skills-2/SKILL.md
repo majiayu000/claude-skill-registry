@@ -50,7 +50,7 @@ Receives `contextStore` with: `tech_stack`, `project_root`, `output_dir`.
 | 3 | **No Forbidden Content** | No dates/authors; no historical notes; no code examples in comments |
 | 4 | **Docstrings Quality** | Match function signatures; parameters documented; return types accurate |
 | 5 | **Actuality** | Comments match code behavior; no stale references; examples runnable |
-| 6 | **Legacy Cleanup** | No TODO without context; no commented-out code; no deprecated notes |
+| 6 | **Legacy Cleanup** | No TODO without context; no commented-out code; no unsupported notes |
 
 ## Scoring Algorithm
 

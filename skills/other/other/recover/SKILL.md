@@ -1,6 +1,6 @@
 ---
 name: recover
-description: 'Post-compaction context recovery. Detects in-progress RPI and evolve sessions, loads knowledge, shows recent work and pending tasks. In Codex v0.115.0+, native hooks handle lifecycle automatically; for older versions, it prefers the explicit hookless fallback path. Triggers: "recover", "lost context", "where was I", "what was I working on".'
+description: 'Recover session context after compaction from RPI, evolve, and recent artifacts.'
 skill_api_version: 1
 context:
   window: inherit
@@ -12,7 +12,6 @@ metadata:
   dependencies: []
 output_contract: "stdout: recovered context summary"
 ---
-
 # /recover — Context Recovery After Compaction
 
 > **Purpose:** Help you get back up to speed after context compaction. Automatically detects in-progress work (RPI runs, evolve cycles), loads relevant knowledge, summarizes what you were doing and what's next. Codex v0.115.0+ uses native hooks automatically; for older Codex versions, prefers the explicit hookless fallback path (`ao codex start`/`ao codex stop`).

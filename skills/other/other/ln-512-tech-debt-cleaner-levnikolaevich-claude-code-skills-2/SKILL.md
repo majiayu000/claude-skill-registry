@@ -18,7 +18,7 @@ Automated cleanup of safe, low-risk tech debt findings from codebase audits.
 
 - **Consume** audit findings from `docs/project/codebase_audit.md` (ln-620 output) or ln-511 code quality output
 - **Filter** to auto-fixable findings with confidence >=90%
-- **Apply** safe fixes: remove unused imports, delete dead code, clean commented-out blocks, remove deprecated aliases
+- **Apply** safe fixes: remove unused imports, delete dead code, clean commented-out blocks, remove unsupported aliases
 - **Never touch** business logic, complex refactoring, or architectural changes
 - **Create** single commit with structured summary of all changes
 - Invocable from ln-510 quality coordinator pipeline or standalone
@@ -32,7 +32,7 @@ Automated cleanup of safe, low-risk tech debt findings from codebase audits.
 | Unused functions (unexported) | MNT-DC- | LOW | Delete function block |
 | Commented-out code (>5 lines) | MNT-DC- | LOW | Delete comment block |
 | Backward-compat shims (>6 months) | MNT-DC- | MEDIUM | Delete shim + update re-exports |
-| Deprecated aliases | MNT-DC- | LOW | Delete alias line |
+| Unsupported aliases | MNT-DC- | LOW | Delete alias line |
 | Trailing whitespace / empty lines | MNT- | LOW | Trim / collapse |
 
 ## NOT Auto-Fixable (skip always)
@@ -82,7 +82,7 @@ Use `hex-line` as the primary path for code files and `hex-graph` as the primary
       - For unused imports: grep codebase for usage (must have 0 references)
       - For unused functions: grep for function name (must have 0 call sites)
       - For commented-out code: verify block is code, not documentation
-      - For deprecated aliases: verify no consumers remain
+      - For unsupported aliases: verify no consumers remain
    d) Assign confidence score (0-100). Only proceed if confidence >=90
 
    **Hex-line acceleration (if available):** IF hex-line MCP server is available:
@@ -115,7 +115,7 @@ Use `hex-line` as the primary path for code files and `hex-graph` as the primary
      - {count} unused imports
      - {count} dead functions
      - {count} commented-out code blocks
-     - {count} deprecated aliases
+     - {count} unsupported aliases
 
      Source: docs/project/codebase_audit.md
      Confidence threshold: >=90%
@@ -150,7 +150,7 @@ fixes:
     status: "keep"
   - file: "src/api/v1/auth.ts"
     line: 12
-    category: "deprecated_alias"
+    category: "unsupported_alias"
     removed: "export { newAuth as oldAuth }"
     finding_id: "MNT-DC-007"
     status: "discard"

@@ -1,6 +1,6 @@
 ---
 name: post-mortem
-description: 'Wrap up completed work. Council validates the implementation, then extract and process learnings. Triggers: "post-mortem", "wrap up", "close epic", "what did we learn".'
+description: 'Review completed work, capture learnings, and feed follow-up knowledge.'
 skill_api_version: 1
 metadata:
   tier: judgment
@@ -16,7 +16,6 @@ context:
   intel_scope: full
 output_contract: skills/council/schemas/verdict.json
 ---
-
 # Post-Mortem Skill
 
 > **Purpose:** Wrap up completed work — validate it shipped correctly, extract learnings, process the knowledge backlog, activate high-value insights, and retire stale knowledge.

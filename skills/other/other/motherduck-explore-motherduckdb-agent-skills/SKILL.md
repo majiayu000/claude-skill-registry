@@ -19,6 +19,7 @@ Use this skill when you need to discover what databases, tables, and columns exi
 - Use fully qualified table names once more than one database is attached.
 - Check shared databases before concluding that data is unavailable.
 - Use MCP exploration tools when available because they return structured results faster than ad hoc SQL.
+- Return a concise schema map with table grain, join keys, date columns, and likely measures before moving into modeling or dashboard work.
 
 ## Workflow
 
@@ -26,7 +27,7 @@ Use this skill when you need to discover what databases, tables, and columns exi
 2. List tables and views in the target database.
 3. Inspect columns, types, nullability, and comments before writing queries.
 4. Run `SUMMARIZE` on important tables to understand ranges, cardinality, and null rates.
-5. Preview rows and only then move into analytical SQL or modeling work.
+5. Preview rows, capture grain and join assumptions, and only then move into analytical SQL or modeling work.
 
 ## Open Next
 

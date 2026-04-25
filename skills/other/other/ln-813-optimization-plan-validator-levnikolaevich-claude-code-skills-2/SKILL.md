@@ -134,7 +134,7 @@ Refinement uses a 2-stage state machine (see `ln-316-review-refinement-worker`):
 
 Rules:
 - Stage 1 runs in parallel, Stage 2 after merge
-- no skip when Codex is available except runtime-backed failure or disablement
+- no skip when an advisor is available except runtime-backed failure or disablement
 - cleanup evidence is mandatory
 
 ### Phase 6: Verdict
@@ -157,7 +157,7 @@ Required checks:
 - [ ] local feasibility check completed
 - [ ] all required agents resolved before merge
 - [ ] merge summary exists
-- [ ] refinement trace exists when Codex was available
+- [ ] refinement trace exists when an advisor was available
 - [ ] cleanup verified
 - [ ] coordinator summary recorded
 

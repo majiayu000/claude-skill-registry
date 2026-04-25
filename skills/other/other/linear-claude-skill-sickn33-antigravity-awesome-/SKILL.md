@@ -540,3 +540,8 @@ npx tsx scripts/linear-ops.ts project-status "My Project" completed
 | docs/labels.md | Label taxonomy |
 
 **External:** [Linear MCP Documentation](https://linear.app/docs/mcp.md)
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

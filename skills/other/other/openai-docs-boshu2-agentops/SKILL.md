@@ -1,6 +1,6 @@
 ---
 name: "openai-docs"
-description: "Use when the user asks how to build with OpenAI products or APIs and needs up-to-date official documentation with citations (for example: Codex, Responses API, Chat Completions, Apps SDK, Agents SDK, Realtime, model capabilities or limits); prioritize OpenAI docs MCP tools and restrict any fallback browsing to official OpenAI domains."
+description: 'Use official OpenAI docs for API/product questions needing current citations.'
 skill_api_version: 1
 context:
   window: fork
@@ -14,8 +14,6 @@ metadata:
   internal: false
 output_contract: "stdout: documentation with citations"
 ---
-
-
 # OpenAI Docs
 
 Provide authoritative, current guidance from OpenAI developer docs using the developers.openai.com MCP server. Always prioritize the developer docs MCP tools over web.run for OpenAI-related questions. Only if the MCP server is installed and returns no meaningful results should you fall back to web search.

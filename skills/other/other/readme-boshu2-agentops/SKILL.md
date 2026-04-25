@@ -1,6 +1,6 @@
 ---
 name: readme
-description: 'Generate a gold-standard README for any project. Interviews you about the problem, generates a draft following battle-tested patterns, then council-validates it. Triggers: "readme", "write readme", "generate readme", "improve readme", "rewrite readme".'
+description: 'Draft or improve a project README using structured evidence and review.'
 skill_api_version: 1
 context:
   window: fork
@@ -15,7 +15,6 @@ metadata:
     - council   # validates the draft
 output_contract: "README.md"
 ---
-
 # /readme — Gold-Standard README Generation
 
 > **Purpose:** Generate a README that converts skimmers into users and satisfies deep readers — then validate it with a council.

@@ -1,6 +1,6 @@
 ---
 name: oss-docs
-description: 'Scaffold and audit OSS documentation packs for open source projects. Triggers: "add OSS docs", "setup contributing guide", "add changelog", "prepare for open source", "add AGENTS.md", "OSS documentation".'
+description: 'Scaffold or audit open source docs such as README, CONTRIBUTING, and changelog.'
 skill_api_version: 1
 context:
   window: fork
@@ -19,7 +19,6 @@ metadata:
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 output_contract: "CONTRIBUTING.md, CHANGELOG.md, AGENTS.md"
 ---
-
 # OSS Documentation Skill
 
 Scaffold and audit documentation for open source projects.

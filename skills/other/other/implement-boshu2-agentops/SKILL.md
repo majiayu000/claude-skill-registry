@@ -1,6 +1,6 @@
 ---
 name: implement
-description: 'Execute a single issue with full lifecycle. Triggers: "implement", "work on task", "build this", "start feature", "pick up next issue", "work on issue".'
+description: 'Implement one tracked issue with focused edits, tests, and closure evidence.'
 skill_api_version: 1
 metadata:
   tier: execution
@@ -16,7 +16,6 @@ context:
   intel_scope: topic
 output_contract: "code changes, test results, bead status update, behavioral spec (optional)"
 ---
-
 # Implement Skill
 
 > **Quick Ref:** Execute single issue end-to-end. Output: code changes + commit + closed issue.

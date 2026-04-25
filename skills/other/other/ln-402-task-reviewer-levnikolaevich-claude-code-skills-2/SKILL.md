@@ -201,7 +201,7 @@ Use `hex-graph` first when semantic diff, clone groups, references, or review bl
    - Pre-existing bugs in touched files
    - Broken patterns in adjacent code
    - Security issues in related components
-   - Deprecated APIs, outdated dependencies
+   - Unsupported APIs, outdated dependencies
    - Missing error handling in caller/callee functions
 
    **For each side-effect bug found:**

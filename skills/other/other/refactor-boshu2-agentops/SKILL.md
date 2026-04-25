@@ -1,6 +1,6 @@
 ---
 name: refactor
-description: 'Safe, verified refactoring with regression testing at each step. Identify targets, plan transformation, execute incrementally. Triggers: "refactor", "restructure", "extract", "rename", "move", "simplify", "reduce complexity", "clean up", "decompose".'
+description: 'Plan and execute safe refactors with regression checks at each step.'
 skill_api_version: 1
 context:
   window: fork
@@ -17,7 +17,6 @@ metadata:
     - beads       # optional - for issue tracking
 output_contract: "code changes with regression verification"
 ---
-
 # Refactor Skill
 
 > **Quick Ref:** Safe, incremental refactoring with test verification at every step. One transformation, one test run, one commit. Never batch.

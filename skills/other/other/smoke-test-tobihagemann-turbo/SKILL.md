@@ -1,6 +1,6 @@
 ---
 name: smoke-test
-description: "Launch the app and hands-on verify that it works by interacting with it. Use when the user asks to \"smoke test\", \"test it manually\", \"verify it works\", \"try it out\", \"run a smoke test\", \"check it in the browser\", or \"does it actually work\". Not for unit/integration tests."
+description: "Launch the app and hands-on verify that it works by interacting with it. Falls back to an existing integration test suite when there is no interactive surface in scope. Use when the user asks to \"smoke test\", \"test it manually\", \"verify it works\", \"try it out\", \"run a smoke test\", \"check it in the browser\", or \"does it actually work\". Not a unit test runner."
 ---
 
 # Smoke Test
@@ -29,7 +29,7 @@ Always check for project-specific testing skills or MCP tools first. Use the fal
 
 Before drafting tests, check whether there is something to exercise:
 
-- **No user-visible change in the resolved scope** — report that there is no interactive surface to verify, then stop.
+- **No user-visible change in the resolved scope** — look for an existing integration test target that covers the change and is not part of the default test suite (so it hasn't already run in this session). If one exists, run it via the Integration Test Path in Step 4. If nothing exists, report that there is no interactive surface to verify and no separate integration suite to fall back on, then stop.
 - **Required infrastructure cannot be stood up in this session** (backend service, auth provider, seed data, external dependency) — report blocked, naming what is missing, then stop.
 
 Otherwise, design targeted smoke tests. Each test should:
@@ -89,6 +89,18 @@ Core verification loop per test:
 2. Check stdout/stderr for expected output
 3. Verify side effects (files created, data changed)
 4. Record pass/fail
+
+### Integration Test Path
+
+Fallback when Step 3 routed here because nothing was interactive. Run the discovered target. Use the Monitor tool to tail output for long-running suites so failures surface as they happen.
+
+Core verification loop per run:
+
+1. Run the command
+2. Capture exit code and the relevant summary output
+3. Record pass/fail per named test when the output exposes them, otherwise overall
+
+Do not invent a target if none was found in Step 3 — that gate already stopped.
 
 ## Step 5: Report
 

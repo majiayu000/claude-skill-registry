@@ -1,6 +1,6 @@
 ---
 name: heal-skill
-description: 'Automated skill maintenance. Detects and fixes common skill issues: missing frontmatter, name mismatches, unlinked references, empty directories, dead references, and Codex parity drift triage. Triggers: "heal-skill", "heal skill", "fix skills", "skill maintenance", "repair skills".'
+description: 'Repair skill hygiene: frontmatter, links, references, manifests, and parity drift.'
 skill_api_version: 1
 context:
   window: isolated
@@ -14,7 +14,6 @@ metadata:
   dependencies: []
 output_contract: "stdout: heal report, auto-fixed skill files"
 ---
-
 # /heal-skill — Automated Skill Maintenance
 
 > **Purpose:** Detect and auto-fix common skill hygiene issues across the skills/ directory.

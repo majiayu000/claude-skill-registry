@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5333,
-  "updated_at": "2026-04-24T02:11:45.354237Z",
+  "count": 5334,
+  "updated_at": "2026-04-25T02:06:08.388143Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -50024,6 +50024,24 @@
       "stars": 0,
       "install": "wshobson/agents/plugins/cloud-infrastructure/skills/istio-traffic-management",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "docker-build-and-test-workflow",

@@ -1,6 +1,6 @@
 ---
 name: trace
-description: 'Trace design decisions and concepts through session history, handoffs, and git. Triggers: "trace decision", "how did we decide", "where did this come from", "design provenance", "decision history".'
+description: 'Trace decisions and concepts through history, artifacts, and git.'
 skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash
 context:
@@ -16,7 +16,6 @@ metadata:
     - provenance # alternative - for artifact lineage
 output_contract: "stdout: decision provenance chain"
 ---
-
 # Trace Skill
 
 > **Quick Ref:** Trace design decisions through CASS sessions, handoffs, git, and artifacts. Output: `.agents/research/YYYY-MM-DD-trace-*.md`

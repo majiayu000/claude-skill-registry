@@ -1,6 +1,6 @@
 ---
 name: complexity
-description: 'Analyze code complexity and find refactor targets using radon/gocyclo. Triggers: "complexity", "analyze complexity", "find complex code", "refactor targets", "cyclomatic complexity", "code metrics".'
+description: 'Analyze code complexity and identify focused refactor targets.'
 skill_api_version: 1
 context:
   window: fork
@@ -16,7 +16,6 @@ metadata:
     - doc         # optional - for documentation and non-code artifacts
 output_contract: "stdout: complexity metrics report"
 ---
-
 # Complexity Skill
 
 **YOU MUST EXECUTE THIS WORKFLOW. Do not just describe it.**

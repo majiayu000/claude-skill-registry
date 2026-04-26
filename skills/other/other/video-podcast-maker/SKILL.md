@@ -1,9 +1,12 @@
 ---
 name: video-podcast-maker
-description: Use when user provides a topic and wants an automated video podcast created, OR when user wants to learn/analyze video design patterns from reference videos — handles research, script writing, TTS audio synthesis, Remotion video creation, and final MP4 output with background music. Also supports design learning from reference videos (learn command), style profile management, and design reference library. Supports Bilibili, YouTube, Xiaohongshu, Douyin, and WeChat Channels platforms with independent language configuration (zh-CN, en-US).
+description: Use when the user gives a topic and wants an automated video podcast created, or asks to learn visual design patterns from a reference video/image. Produces 4K video via research → script → TTS → Remotion → MP4 + BGM.
 argument-hint: "[topic]"
 effort: high
-allowed-tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, Agent
+# `allowed-tools` intentionally omitted — the workflow uses Bash, Read, Write, Edit,
+# Glob, Grep, WebFetch, WebSearch, Agent, AND optional MCP tools (Playwright for
+# design learning). Listing a closed set here would silently break the Playwright
+# fallback. Defer tool gating to the user's Claude Code permission settings.
 # --- Frontmatter fields above are primarily for Claude Code / OpenClaw.
 # Other agents such as Codex should ignore unknown fields and follow the workflow below. ---
 author: Agents365-ai
@@ -13,6 +16,9 @@ created: 2025-01-27
 updated: 2026-04-03
 bilibili: https://space.bilibili.com/441831884
 github: https://github.com/Agents365-ai/video-podcast-maker
+# `dependencies` is informational only — Claude Code does not auto-load skills
+# from this list. The agent must invoke `remotion-best-practices` per the body
+# section below. Kept for OpenClaw / SkillsMP discovery metadata.
 dependencies:
   - remotion-best-practices
 metadata:
@@ -72,7 +78,9 @@ SKILL_DIR="${SKILL_DIR:-${CLAUDE_SKILL_DIR}}"
 STAMP="${SKILL_DIR}/.last_update_check"
 NOW=$(date +%s)
 LAST=$(cat "$STAMP" 2>/dev/null || echo 0)
-if [ $((NOW - LAST)) -gt 86400 ]; then
+if [ ! -d "${SKILL_DIR}/.git" ]; then
+  echo "MANUAL_INSTALL"
+elif [ $((NOW - LAST)) -gt 86400 ]; then
   timeout 5 git -C "${SKILL_DIR}" fetch --quiet 2>/dev/null || true
   LOCAL=$(git -C "${SKILL_DIR}" rev-parse HEAD 2>/dev/null)
   REMOTE=$(git -C "${SKILL_DIR}" rev-parse origin/main 2>/dev/null)
@@ -89,14 +97,15 @@ fi
 
 - **Update available**: Ask the user whether to pull updates. Yes → `git -C "${SKILL_DIR}" pull`. No → continue.
 - **Up to date / Skipped**: Continue silently.
+- **Manual install** (no `.git` directory — skill was installed via tarball/zip/cp): Continue silently. Auto-update is disabled; the user must reinstall manually to update.
 
 ---
 
 ## Prerequisites Check
 
-!`( BACKEND="${TTS_BACKEND:-edge}"; missing=""; node -v >/dev/null 2>&1 || missing="$missing node"; python3 --version >/dev/null 2>&1 || missing="$missing python3"; ffmpeg -version >/dev/null 2>&1 || missing="$missing ffmpeg"; case "$BACKEND" in azure) [ -n "$AZURE_SPEECH_KEY" ] || missing="$missing AZURE_SPEECH_KEY" ;; doubao) { [ -n "$VOLCENGINE_APPID" ] && [ -n "$VOLCENGINE_ACCESS_TOKEN" ]; } || missing="$missing VOLCENGINE_APPID+ACCESS_TOKEN" ;; cosyvoice) [ -n "$DASHSCOPE_API_KEY" ] || missing="$missing DASHSCOPE_API_KEY" ;; elevenlabs) [ -n "$ELEVENLABS_API_KEY" ] || missing="$missing ELEVENLABS_API_KEY" ;; openai) [ -n "$OPENAI_API_KEY" ] || missing="$missing OPENAI_API_KEY" ;; google) [ -n "$GOOGLE_TTS_API_KEY" ] || missing="$missing GOOGLE_TTS_API_KEY" ;; esac; if [ -n "$missing" ]; then echo "MISSING:$missing (backend=$BACKEND)"; else echo "ALL_OK (backend=$BACKEND)"; fi )`
+!`python3 "${SKILL_DIR}/scripts/check_prereqs.py"`
 
-**If MISSING reported above**, see README.md for full setup instructions (install commands, API key setup, Remotion project init). The check is backend-aware: only the env vars required by the currently selected `TTS_BACKEND` (default: `edge`, free, no key) are validated.
+**If MISSING reported above**, see README.md for full setup instructions (install commands, API key setup, Remotion project init). The check is backend-aware: backend is resolved as `TTS_BACKEND` env var → `user_prefs.json` (`global.tts.backend`) → `edge` default, then only env vars required by that backend are validated.
 
 ---
 
@@ -160,12 +169,6 @@ Prompts at each decision point. Activated by:
 
 ---
 
-## Workflow State & Resume
-
-> **Planned feature (not yet implemented).** Currently, workflow progress is tracked via the agent's conversation context. If a session is interrupted, re-invoke the skill and inspect existing files in `videos/{name}/` to determine where to resume.
-
----
-
 ## Technical Rules
 
 Hard constraints for video production. Visual design remains the agent's creative freedom within these rules:
@@ -187,7 +190,7 @@ Hard constraints for video production. Visual design remains the agent's creativ
 
 Load these files on demand — **do NOT load all at once**:
 
-- **[references/workflow-steps.md](references/workflow-steps.md)**: Index of the 14-step workflow split across three phase files. Load at workflow start to locate which phase file to pull:
+- **[references/workflow-steps.md](references/workflow-steps.md)**: Index of the 15-step workflow split across three phase files. Load at workflow start to locate which phase file to pull:
   - **[workflow-script.md](references/workflow-script.md)** — Pre-workflow + Startup + Steps 1-4 (scripting)
   - **[workflow-production.md](references/workflow-production.md)** — Steps 5-11 (media, TTS, Remotion, render, BGM)
   - **[workflow-publish.md](references/workflow-publish.md)** — Steps 12-15 (subtitles, publish, cleanup, shorts)
@@ -210,7 +213,6 @@ project-root/                           # Remotion project root
 ├── public/                             # Remotion default (unused — use --public-dir videos/{name}/)
 │
 ├── videos/{video-name}/                # Video project assets
-│   ├── workflow_state.json             # Workflow progress
 │   ├── topic_definition.md             # Step 1
 │   ├── topic_research.md               # Step 2
 │   ├── podcast.txt                     # Step 4: narration script
@@ -260,16 +262,14 @@ npx remotion still src/remotion/index.ts Thumbnail16x9 videos/{name}/thumbnail.p
 
 ### Progress Tracking
 
-At Step 1 start:
-1. Create `videos/{name}/workflow_state.json`
-2. Use `TaskCreate` to create tasks per step. Mark `in_progress` on start, `completed` on finish.
-3. Each step updates BOTH `workflow_state.json` AND TaskUpdate.
+At Step 1 start, use your agent's task tracker (Claude Code `TaskCreate` / Codex todo list / equivalent) to create one task per step. Mark `in_progress` on start, `completed` on finish. Files in `videos/{name}/` (e.g. `podcast.txt`, `timing.json`, `output.mp4`) act as the durable record of what completed — if a session is interrupted, inspect the directory to determine where to resume.
 
 ```
  1. Define topic direction → topic_definition.md
  2. Research topic → topic_research.md
  3. Design video sections (5-7 chapters)
  4. Write narration script → podcast.txt
+ 4.5. Pronunciation pre-flight (zh-CN only) → videos/{name}/phonemes.json
  5. Collect media assets → media_manifest.json
  6. Generate publish info (Part 1) → publish_info.md
  7. Generate thumbnails (16:9 + 4:3) → thumbnail_*.png

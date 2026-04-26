@@ -1,7 +1,7 @@
 ---
 name: summon
 description: 'Autonomous orchestrator processing manifest work items through the development lifecycle with budget tracking.'
-version: 1.8.4
+version: 1.9.0
 alwaysApply: false
 category: orchestration
 tags:
@@ -35,6 +35,7 @@ modules:
   - modules/budget.md
   - modules/intake.md
   - modules/decisions.md
+  - modules/model-routing.md
 model_hint: standard
 ---
 ## Table of Contents

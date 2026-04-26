@@ -1,7 +1,7 @@
 ---
 name: architecture-paradigm-microservices
 description: 'Apply microservices for independent deployment and per-service scaling. Use when bounded contexts are clear.'
-version: 1.7.1
+version: 1.9.0
 alwaysApply: false
 category: architectural-pattern
 tags:

@@ -1,6 +1,6 @@
 ---
 name: brainstorm
-description: 'Separate WHAT from HOW before planning. Clarify goals, explore approaches, capture structured design decisions. Triggers: brainstorm, explore idea, clarify goal, idea phase.'
+description: 'Separate goals from implementation; explore options and capture design decisions.'
 skill_api_version: 1
 metadata:
   tier: execution
@@ -14,7 +14,6 @@ context:
   intel_scope: none
 output_contract: skills/research/schemas/findings.json
 ---
-
 # /brainstorm — Clarify Goals Before Planning
 
 > **Purpose:** Separate WHAT from HOW. Explore the problem space before committing to a solution.

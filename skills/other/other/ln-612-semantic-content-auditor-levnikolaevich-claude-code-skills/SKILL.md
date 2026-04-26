@@ -94,7 +94,7 @@ Analyze the document against stated scope and kind:
 | Excessive detail beyond scope | SCOPE_CREEP |
 | Content duplicated elsewhere | SSOT_VIOLATION |
 
-**Agent instruction file checks** (applies when the audited file is `AGENTS.md`, `CLAUDE.md`, or `GEMINI.md`):
+**Agent instruction file checks** (applies when the audited file is `AGENTS.md` or `CLAUDE.md`):
 
 | Check | Finding Type | Severity | Recommendation |
 |-------|--------------|----------|----------------|
@@ -138,7 +138,7 @@ Write JSON summary per `shared/references/audit_summary_contract.md`. In managed
 
 Write report to `{output_dir}/ln-612--{doc-slug}.md` where `doc-slug` is derived from document filename (e.g., `architecture`, `tech_stack`, `agents_md`).
 
-With `category: "Semantic Content"` and checks: scope_alignment, not_a_linter, non_universal_rule, obsolete_pattern (the last three fire only on AGENTS.md / CLAUDE.md / GEMINI.md targets).
+With `category: "Semantic Content"` and checks: scope_alignment, not_a_linter, non_universal_rule, obsolete_pattern (the last three fire only on AGENTS.md / CLAUDE.md targets).
 
 Return summary per `shared/references/audit_summary_contract.md`.
 

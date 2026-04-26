@@ -1,6 +1,6 @@
 ---
 name: product
-description: 'Interactive PRODUCT.md generation. Interviews you about mission, personas, value props, and competitive landscape, then generates a filled-in PRODUCT.md. Triggers: "product", "create product doc", "product definition", "who is this for".'
+description: 'Create or refine PRODUCT.md through mission, persona, and value prompts.'
 skill_api_version: 1
 context:
   window: fork
@@ -14,7 +14,6 @@ metadata:
   dependencies: []
 output_contract: "PRODUCT.md"
 ---
-
 # /product — Interactive PRODUCT.md Generation
 
 > **Purpose:** Guide the user through creating a `PRODUCT.md` that unlocks product-aware reviews in `/pre-mortem` and `/vibe`, including the default quick-mode inline paths.

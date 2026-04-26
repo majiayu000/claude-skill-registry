@@ -71,10 +71,10 @@ For complex problems with 3+ hypotheses and a non-obvious root cause, spawn para
 
 **Skip** when 1-2 hypotheses are obvious (e.g., stack trace points directly to the bug).
 
-Launch in parallel (`model: "opus"`, do not set `run_in_background`):
+Use the Agent tool to launch all agents below in a single assistant message so they run concurrently. Each Agent call uses `model: "opus"` and does not set `run_in_background`. Expect (one Agent per hypothesis + one Codex Agent) total. State the count explicitly when emitting the calls.
 
-1. **One subagent per hypothesis** — each receives the hypothesis, relevant file paths, what evidence to look for, and instructions to report **confirmed** / **refuted** / **inconclusive** with evidence. Budget: max 5 tool calls per subagent.
-2. **Codex consultation** (read-only) — launch an agent that runs the `/consult-codex` skill with a focused prompt describing the problem, reproduction, and files examined. The multi-turn conversation allows it to dig deeper into patterns the hypothesis-driven subagents miss. Run the `/evaluate-findings` skill on its output.
+- **Hypothesis Agent (one per hypothesis):** Each receives the hypothesis, relevant file paths, what evidence to look for, and instructions to report **confirmed** / **refuted** / **inconclusive** with evidence. Budget: max 5 tool calls per subagent.
+- **Codex Agent:** Launch one Agent whose prompt instructs the subagent to invoke `/consult-codex` via the Skill tool with a focused prompt describing the problem, reproduction, and files examined. The multi-turn conversation allows it to dig deeper into patterns the hypothesis-driven subagents miss. Run the `/evaluate-findings` skill on its output after the Agent returns.
 
 After all investigators complete, merge results. Codex findings that overlap with a subagent's confirmed hypothesis reinforce confidence. Novel codex findings become additional hypotheses to test in Step 4.
 

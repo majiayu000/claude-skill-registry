@@ -657,7 +657,6 @@ ISMB poster specifications:
 - Include: QR code for paper/supplementary materials
 Available templates:
 - assets/posters/beamerposter_academic.tex
-- assets/posters/tikzposter_research.tex
 ```
 
 ## Updates and Maintenance

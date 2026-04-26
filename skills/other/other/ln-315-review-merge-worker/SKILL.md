@@ -49,7 +49,7 @@ Recommended `phase_order`:
 ### Phase 1: Load Worker Results
 
 1. Load all input worker summaries (ln-311, ln-312, ln-313, ln-314).
-2. Load agent findings from external agents (Codex, Gemini).
+2. Load agent findings from all launched external agents.
 3. Load `.hex-skills/agent-review/review_history.md` for prior review entries.
 
 ### Phase 2: Deduplicate and Verify

@@ -1,8 +1,7 @@
 ---
 name: swarm
-description: 'Spawn isolated agents for parallel task execution with Codex session agents. Fresh context per agent (Ralph Wiggum pattern). Triggers: "swarm", "spawn agents", "parallel work", "run in parallel", "parallel execution".'
+description: 'Dispatch isolated agents for parallel tasks with file ownership and evidence.'
 ---
-
 # $swarm
 
 Spawn isolated agents to execute tasks in parallel with Codex session agents. Fresh context per agent.
@@ -150,7 +149,7 @@ If your runtime supports `agent_type`, mark these as `worker` agents and keep an
 ### Step 4: Wait and Collect Results
 
 ```text
-wait_agent(ids=["agent-id-1", "agent-id-2"])
+wait_agent(targets=["agent-id-1", "agent-id-2"])
 ```
 
 Collect worker result files from `.agents/swarm/results/`.
@@ -158,13 +157,13 @@ Collect worker result files from `.agents/swarm/results/`.
 If a worker needs a short correction, use:
 
 ```text
-send_input(id="agent-id-1", message="Validation failed. Fix the test failure and retry.")
+send_input(target="agent-id-1", message="Validation failed. Fix the test failure and retry.")
 ```
 
 If a worker stalls, use:
 
 ```text
-close_agent(id="agent-id-1")
+close_agent(target="agent-id-1")
 ```
 
 ### Step 5: Validate Wave

@@ -1,6 +1,6 @@
 ---
 name: security-suite
-description: 'Composable security suite for binary and prompt-surface assurance, static analysis, dynamic tracing, repo-native redteam scans, contract capture, baseline drift, and policy gating. Triggers: "binary security", "reverse engineer binary", "black-box binary test", "behavioral trace", "baseline diff", "prompt redteam", "security suite".'
+description: 'Run composable security analysis across binaries, prompts, traces, and policies.'
 skill_api_version: 1
 context:
   window: fork
@@ -14,7 +14,6 @@ metadata:
   dependencies: []
 output_contract: skills/council/schemas/verdict.json
 ---
-
 # Security Suite
 
 > **Purpose:** Provide composable, repeatable security/internal-testing primitives for authorized binaries and repo-managed prompt surfaces.

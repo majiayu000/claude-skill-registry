@@ -1,6 +1,6 @@
 ---
 name: agent-sheet
-description: shell-native spreadsheet CLI for agent work across reconnaissance, search, fill propagation, programmable workbook logic, and bulk data roundtrips with explicit verification.
+description: Deprecated legacy alias for `univer-cli`; use only for older prompts or installs that still call `agent-sheet`. Prefer `univer-cli` for current shell-native workbook work.
 metadata:
   openclaw:
     os:
@@ -25,6 +25,10 @@ metadata:
 ---
 
 # agent-sheet
+
+Deprecated: `agent-sheet` is the old name for `univer-cli`. Prefer `univer-cli` and the `univer` / `unv` command surface for new work.
+
+Keep using this skill only when an older prompt, install, or environment explicitly refers to `agent-sheet`.
 
 `agent-sheet` is the shell-native workbook CLI for agent work. Use it when the task needs real workbook structure, formulas, workbook-local logic, or a safe stdin/stdout roundtrip instead of ad hoc CSV handling.
 

@@ -60,7 +60,7 @@ Read the reference file for the resolved type:
 
 Skip peer review when the caller asked (e.g., "without peer review", "no peer", "internal only"). For shells, the internal review focuses on structural wiring and skips the project context read.
 
-Use the Agent tool to launch all agents below in a single message (`model: "opus"`, do not set `run_in_background`) so they run concurrently. That is two Agent tool calls when peer review is active (one internal + one peer), or one Agent tool call when peer review is skipped.
+Use the Agent tool to launch all agents below in a single assistant message so they run concurrently. Each Agent call uses `model: "opus"` and does not set `run_in_background`. That is two Agent tool calls when peer review is active (one internal + one peer), or one Agent tool call when peer review is skipped.
 
 - **Internal Agent:** Pass the artifact text and the reference file's content; the subagent reads project context (CLAUDE.md, relevant codebase files) before applying criteria, then returns findings in the output format below.
 - **Peer review Agent (unless skipping):** Launch an Agent tool call whose prompt instructs the subagent to invoke `/peer-review` via the Skill tool with a request describing: (a) the artifact under review; (b) the criteria live in `~/.claude/skills/review-plan/references/<type>-review.md` for the resolved type from Step 1 — the reviewer should read that file directly and use its priority scale; (c) the Overall Verdict should use the `Readiness: <ready | needs revision>` label.

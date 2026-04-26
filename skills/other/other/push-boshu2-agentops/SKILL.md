@@ -1,6 +1,6 @@
 ---
 name: push
-description: 'Test, commit, and push in one atomic workflow. Runs Go and Python tests, commits with conventional message, pushes to current branch.'
+description: 'Run gates, commit intentionally, push the branch, and confirm remote state.'
 skill_api_version: 1
 user-invocable: true
 context:
@@ -20,7 +20,6 @@ metadata:
     - push changes
 output_contract: "git commit + push"
 ---
-
 # Push Skill
 
 Atomic test-commit-push workflow. Catches failures before they reach the remote.

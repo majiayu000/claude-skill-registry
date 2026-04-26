@@ -1,7 +1,7 @@
 ---
 name: precommit-setup
 description: "Configure pre-commit hooks for linting, type checking, formatting, and testing to enforce quality gates on every commit."
-version: 1.8.4
+version: 1.9.0
 globs: "**/.pre-commit-config.yaml"
 alwaysApply: false
 # Custom metadata (not used by Claude for matching):

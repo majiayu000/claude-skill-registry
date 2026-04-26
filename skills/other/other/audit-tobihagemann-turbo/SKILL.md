@@ -42,13 +42,15 @@ If missing, use `AskUserQuestion` to ask whether to create one before proceeding
 - **Yes** — launch an Agent tool call (`model: "opus"`, do not set `run_in_background`) whose prompt instructs it to invoke the `/create-threat-model` skill via the Skill tool. Wait for completion before continuing.
 - **No** — continue without a threat model.
 
-## Step 3: Launch All Analysis Skills
+## Step 3: Launch All Analysis Agents
 
-Run all analysis skills in parallel.
+Use the Agent tool to launch all analysis agents below in a single assistant message so they run concurrently. Each Agent call uses `model: "opus"` and does not set `run_in_background`. Each Agent's prompt instructs the subagent to invoke its assigned skill via the Skill tool, with the partition's file list passed in for partitioned skills.
+
+Expect (6 partitioned rows × number of partitions, plus 5 project-wide rows) Agent tool calls total. State the count explicitly when emitting the calls.
 
 ### Partitioned Skills
 
-For each skill below, run **one instance per partition** with the partition's file list. Pass `(skip peer review)` annotations through to `/review-code` as an opt-out so it runs internal reviews only — `/peer-review` is scheduled as its own row to avoid duplicate codex runs.
+For each skill below, launch **one Agent per partition** with the partition's file list in the prompt. Pass `(skip peer review)` annotations through to `/review-code` as an opt-out so it runs internal reviews only — `/peer-review` is scheduled as its own row to avoid duplicate codex runs.
 
 | Skill | Scope |
 |---|---|

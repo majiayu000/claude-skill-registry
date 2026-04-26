@@ -1,7 +1,7 @@
 ---
 name: ln-643-api-contract-auditor
 description: "Checks layer leakage in method signatures, missing DTOs, entity leakage to API, inconsistent error contracts. Use when auditing API contracts."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_references, mcp__hex-graph__find_symbols
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_references, mcp__hex-graph__find_symbols, mcp__hex-line__read_file, mcp__hex-line__grep_search, mcp__hex-line__outline
 license: MIT
 ---
 
@@ -43,6 +43,9 @@ Specialized worker auditing API contracts, method signatures at service boundari
 ### Phase 0: Load References
 
 **MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology. Load `references/detection_patterns.md` -- language-specific Grep patterns for all 5 rules.
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` and `shared/references/mcp_integration_patterns.md`
+
+Use `hex-graph` first when symbol or reference analysis materially improves contract findings. Use `hex-line` first for local code reads when available. If MCP is unavailable, unsupported, or not indexed, continue with built-in `Read/Grep/Glob/Bash` and state the fallback in the report.
 
 ### Phase 1: Discover Service Boundaries
 

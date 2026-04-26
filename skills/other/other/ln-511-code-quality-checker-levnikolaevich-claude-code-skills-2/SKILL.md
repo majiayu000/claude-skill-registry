@@ -108,7 +108,7 @@ Formula: `Code Quality Score = 100 - metric_penalties - issue_penalties`
 
 | Prefix | Category | Severity |
 |--------|----------|----------|
-| MNT-DC- | Dead code: replaced implementations, unused exports/re-exports, backward-compat wrappers, deprecated aliases | medium (high if public API) |
+| MNT-DC- | Dead code: replaced implementations, unused exports/re-exports, backward-compat wrappers, unsupported aliases | medium (high if public API) |
 | MNT-DRY- | DRY violations: duplicate logic across files | medium |
 | MNT-GOD- | God Classes: class with >15 methods or >500 lines (not just file size) | medium (high if >1000 lines) |
 | MNT-SIG- | Method Signature Quality: boolean flag params, unclear return types, inconsistent naming, >5 optional params | low |

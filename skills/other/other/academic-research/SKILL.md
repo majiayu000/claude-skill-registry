@@ -136,6 +136,37 @@ includeDomains: [
 | Full paper content | arXiv read_paper | - |
 | Code implementations | Exa get_code_context | - |
 | Very recent papers | arXiv (submitted_date) | Exa with date filter |
+| Bot-protected sites | Obscura `--stealth` | Scrapling (Turnstile) |
+| Batch stealth scrape | Obscura `scrape` | - |
+
+### Source Extraction Escalation
+
+When a source isn't on ArXiv or Exa can't reach it, escalate through:
+
+1. **ArXiv MCP** → paper is on arXiv (free, full text, best quality)
+2. **Exa contents** → URL known, site allows crawling
+3. **Firecrawl** → JS-heavy site, no anti-bot
+4. **Obscura `--stealth`** → site fingerprints headless browsers (JSTOR, Scholar, Persée, PubMed, Academia.edu)
+5. **Scrapling** → site uses Cloudflare Turnstile
+
+### Obscura Stealth Extraction (Tier 3)
+
+For gated academic sources that block standard headless browsers via canvas/WebGL fingerprinting. Not for bypassing paywalls — for extracting publicly visible metadata, abstracts, and open-access content.
+
+**Verified sites** (2026-04-24): Google Scholar, JSTOR, Persée, PubMed, Academia.edu, Perseus Digital Library.
+
+```bash
+# Quick metadata extraction (auto-detects site type from URL)
+bash ~/.claude/skills/academic-research/scripts/academic_stealth_fetch.sh URL
+
+# With explicit site type
+bash ~/.claude/skills/academic-research/scripts/academic_stealth_fetch.sh URL scholar
+
+# Direct Obscura usage
+obscura fetch --stealth --quiet URL --eval "JS_EXPRESSION"
+```
+
+See `references/obscura-academic-patterns.md` for site-specific JS extraction patterns and gotchas.
 
 ## Best Practices
 
@@ -197,3 +228,4 @@ Working MoBA implementation with Triton kernels: `~/Desktop/Aldea/01-Repos/perpl
 For detailed parameters and advanced usage:
 - `references/exa-academic-search.md` - Exa parameters for academic search
 - `references/arxiv-mcp-tools.md` - ArXiv MCP server tool reference
+- `references/obscura-academic-patterns.md` - Site-specific Obscura extraction patterns with JS expressions and gotchas

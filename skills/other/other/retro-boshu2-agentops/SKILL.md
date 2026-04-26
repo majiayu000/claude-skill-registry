@@ -1,6 +1,6 @@
 ---
 name: retro
-description: 'Quick-capture a learning. For full retrospectives, use /post-mortem. Trigger phrases: "quick learning", "capture lesson", "retro quick".'
+description: 'Capture a quick learning or session note for later compounding.'
 skill_api_version: 1
 metadata:
   tier: knowledge

@@ -1,12 +1,7 @@
 ---
 name: architecture-paradigm-pipeline
-description: 'Consult this skill when designing data pipelines or transformation workflows.
-  Use when data flows through fixed sequence of transformations, stages can be independently
-  developed and tested, parallel processing of stages is beneficial. Do not use when
-  selecting from multiple paradigms - use architecture-paradigms first. DO NOT use
-  when: data flow is not sequential or predictable. DO NOT use when: complex branching/merging
-  logic dominates.'
-version: 1.7.1
+description: 'Design pipes-and-filters for sequential data transformations. Use when data flows through processing stages.'
+version: 1.9.0
 alwaysApply: false
 category: architectural-pattern
 tags:
@@ -55,15 +50,3 @@ estimated_tokens: 700
   - **Mitigation**: Centralize schema definitions in a shared repository and enforce compatibility tests as part of the CI/CD process to prevent breaking changes.
 - **Back-Pressure Failures**:
   - **Mitigation**: Conduct rigorous load testing to simulate high-volume scenarios. Validate that buffering, retry logic, and back-pressure mechanisms behave as expected under stress.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

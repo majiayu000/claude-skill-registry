@@ -1,7 +1,7 @@
 ---
 name: architecture-paradigm-hexagonal
 description: 'Hexagonal (Ports and Adapters) architecture isolating domain logic from infrastructure.'
-version: 1.8.4
+version: 1.9.0
 alwaysApply: false
 category: architectural-pattern
 tags:

@@ -14,6 +14,7 @@ license: MIT
 Universal reviewer with two modes:
 - `SKILL` for `ln-*/SKILL.md`
 - `COMMAND` for `.claude/commands/*.md`
+- repo suite for this skills repository when `repo` / `repo-checks` is requested or the current repo is `claude-code-skills`
 
 > **Plan Mode behavior:** Phases 1-4 and 6-7 are research. Run them fully in Plan Mode, write the report plus fix list into the plan, and apply edits only after approval.
 
@@ -32,6 +33,7 @@ Universal reviewer with two modes:
 `$ARGUMENTS` options:
 - empty -> auto-detect mode and scope
 - `ln-400 ln-500` -> SKILL mode, specific skills
+- `repo` or `repo-checks` -> run canonical repo-specific checks after universal review
 - `commands` -> COMMAND mode, all `.claude/commands/*.md`
 - `deploy.md run-tests.md` -> COMMAND mode, specific files
 
@@ -76,7 +78,7 @@ Automated failures are pre-verified. Record every one.
 
 ### Phase 3: Structural Review
 
-**MANDATORY READ:** Load `references/structural_review.md`, `shared/references/skill_contract.md`, `shared/references/mcp_applicability_matrix.md`, and `shared/references/mcp_tool_preferences.md`
+**MANDATORY READ:** Load `references/structural_review.md`, `shared/references/skill_contract.md`, `shared/references/procedural_skill_sop_guide.md`, `shared/references/mcp_applicability_matrix.md`, and `shared/references/mcp_tool_preferences.md`
 
 Review every skill in scope across D1-D11.
 
@@ -84,7 +86,7 @@ Treat these as structural issues, not style nits:
 - missing `**Type:**` when role-sensitive checks depend on it
 - worker independence violations in L3 workers
 - broken shared paths
-- stale root-doc assumptions — CLAUDE.md or GEMINI.md that duplicate AGENTS.md content instead of using the `@AGENTS.md` import stub with a bounded harness delta
+- stale root-doc assumptions — CLAUDE.md duplicating AGENTS.md content instead of using the `@AGENTS.md` import stub with a bounded harness delta
 - markdown-analysis skills missing `markdown_read_protocol.md`
 - extraction or audit skills contradicting the shared docs-quality contract
 - skills contradicting the shared skill contract
@@ -92,6 +94,7 @@ Treat these as structural issues, not style nits:
 - skills that should make `hex-graph` primary but still describe grep/manual analysis as the default path
 - skills that add `hex-graph` or `hex-line` with no real applicability per the shared matrix
 - wrong MCP namespaces such as `mcp__hex_graph__...`
+- procedural skills with vague modal words, compound high-risk steps, missing point-of-use checklists, missing why for risky steps, missing executable preflight, or missing evidence
 
 ### Phase 4: Intent Review
 
@@ -131,6 +134,40 @@ Report format:
 ### Phase 7: Volatile Numbers Cleanup
 
 Remove stale aggregate counts from SKILL.md files. Keep only local counts intrinsic to the reviewed file.
+
+---
+
+## Repo Suite Mode
+
+Use when running inside this repository or when `$ARGUMENTS` includes `repo` / `repo-checks`.
+
+### Phase 1: Universal Review
+
+Run the applicable SKILL or COMMAND mode first. Do not skip the universal review.
+
+### Phase 2: Repo-Specific Checks
+
+Run the canonical repo suite:
+
+```bash
+node skills-catalog/ln-162-skill-reviewer/references/repo_review_suite.mjs
+```
+
+The suite owns R1-R27. Do not copy those checks into host-specific command files.
+
+### Phase 3: Combined Report
+
+Merge the universal review verdict and repo suite verdict:
+
+```text
+| Source | Verdict | Details |
+|--------|---------|---------|
+| Universal review | {PASS|PASS with CONCERNS|FAIL} | {summary} |
+| Repo suite | {PASS|PASS with WARNINGS|FAIL} | {R1-R27 summary} |
+| Combined | {worst verdict} | |
+```
+
+List all FAIL and WARN items with file paths and fix descriptions.
 
 ---
 
@@ -186,7 +223,7 @@ Pass rate: {X}%
   - no `**Parent:**`
   - no required caller declaration
 - Docs-model drift is a structural defect, not a preference.
-- `Agent Teams` / `TeamCreate` are deprecated outside clearly marked historical references.
+- Unsupported platform APIs are prohibited outside clearly marked historical references.
 
 ## Reference Files
 
@@ -194,7 +231,8 @@ Pass rate: {X}%
 - `references/intent_review.md`
 - `references/automated_checks.md`
 - `references/run_checks.sh`
-- `references/deprecated_apis.md`
+- `references/run_runtime_suite.mjs`
+- `references/repo_review_suite.mjs`
 - `references/command_review_criteria.md`
 - `references/check_marketplace.mjs`
 

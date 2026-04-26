@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5334,
-  "updated_at": "2026-04-25T02:06:08.388143Z",
+  "count": 5335,
+  "updated_at": "2026-04-26T02:14:23.852300Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -45468,6 +45468,24 @@
       "stars": 0,
       "install": "patricio0312rev/skillset/templates/ci-cd/caching-strategy-optimizer",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "reverse-engineering-deep-analysis",

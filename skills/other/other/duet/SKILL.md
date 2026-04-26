@@ -25,6 +25,10 @@ This is the load-bearing principle. Everything below is mechanics.
 
 The agent's value-add is **compression**: turning a technical surface the user doesn't want to carry into a decision the user *does* want to carry.
 
+## Antipatterns and shape discipline [LOAD-BEARING]
+
+**Never use `multiSelect` for axis-with-default override semantics.** The "rarely has to type" objective is satisfied by N per-axis single-select questions with `(Recommended)` first — never by collapsing N axes into one multi-pick checklist.
+
 ## VS-gated question protocol [MANDATORY]
 
 Run `odin:askme`'s VS + actor-critic protocol before every `AskUserQuestion` fire (Phase 1, Phase 2, Phase 3). Duet-specific deltas only — askme owns the canonical spec:
@@ -57,20 +61,31 @@ Does **not** apply to:
 
 Before firing the elicitation batch, run the VS-gated question protocol (above) at askme's baseline tier — escalate to high-risk or architectural per askme's tier rules if the prompt warrants.
 
-At task start, fire one `AskUserQuestion` batch with a single `multiSelect` question:
+At task start, fire one `AskUserQuestion` batch with up to 4 **single-select** questions covering the orthogonal axes that have defensible alternatives for this prompt (typically Scope, Goal, Constraint, Pattern — pick whichever 2-4 actually have plausible alternatives):
 
-- **Question:** "Which of these defaults should I override before starting?"
-- **Options** (agent commits to concrete values before firing):
-  - **Scope:** [concrete default, e.g. "touch only the files named in the prompt"]
-  - **Goal:** [concrete default, e.g. "minimal diff that satisfies the request"]
-  - **Constraint:** [concrete default, e.g. "no new dependencies"]
-  - **Pattern:** [concrete default, e.g. "follow nearest existing convention"]
+- Each axis is its own single-select question with 2-4 plausible concrete options
+- One option per axis carries `(Recommended)` in its label with a one-sentence rationale
+- Options must cover the defensible space — every option is a concrete pick, never a "default stands" placeholder
+- Structural/taste framing first; jargon in parens on first mention
+- If an axis has only one defensible value, drop the question entirely — that's not a real fork
 
-Unticked options mean "agent's default stands." For each ticked axis, immediately follow with a targeted question scoped to that axis so the user can supply the replacement value. `Other` remains the free-text escape for anything outside the list.
+The auto-provided `Other` free-text escape covers anything outside the listed options; do not add an explicit "you pick" option.
 
 Keep it to one batch. Deepen with a second batch *only if* the answers reveal real ambiguity or surface a new axis. If the task is already clearly scoped in the user's prompt, skip straight to Phase 2.
 
-Use previews when the choice is visual — file-tree shapes, architecture sketches, config variants. Previews are single-select only (tool constraint).
+Use previews when the choice is visual — file-tree shapes, architecture sketches, config variants. Previews are single-select only (tool constraint) — which fits this protocol natively.
+
+**Example shape (one batched fire, two axes shown):**
+
+> **Q1 — Scope** (single-select)
+> - Touch only the files named in the prompt *(Recommended — minimum diff, lowest blast radius)*
+> - Touch named files plus their direct importers
+> - Touch the whole module the named files live in
+>
+> **Q2 — Goal** (single-select)
+> - Minimal diff that satisfies the request *(Recommended — prefer delete over edit, edit over add)*
+> - Refactor the surrounding code while we're here
+> - Add new behavior in addition to the request
 
 ### Phase 2 — Execution with fork-surfacing
 
@@ -137,8 +152,9 @@ One option carries `(Recommended)` in its label with a < 1-sentence why.
 
 ## Batching rules
 
-- When multiple forks are **orthogonal** (one pick does not constrain another), default to a **single `multiSelect` question** grouping all of them. This lets the user tick multiple answers in one pass.
-- Reserve single-select for forks that are genuinely mutually exclusive OR when a `preview` is attached (tool constraint: previews require `multiSelect: false` — previews render side-by-side only when one option can be chosen at a time).
+- **Default — per-axis single-select, batched.** Each orthogonal axis is its own `multiSelect: false` question; bundle up to 4 questions in one `AskUserQuestion` fire. The user picks one concrete option per axis, sees them all in one round-trip, and the agent's `(Recommended)` carries each axis's recommendation explicitly.
+- Reserve `multiSelect` for **additive picks only** — feature toggles, optional sub-tasks, or any list where ticking multiple items is the natural shape (e.g., "which checks should run before commit?").
+- Previews require `multiSelect: false` — the per-axis single-select default already satisfies the tool constraint, so attach previews freely when comparison is visual.
 - **Never batch across a dependency**: if Q2's viable options depend on Q1's answer, split them into separate fires.
 - If you detect mid-batch that Q2's answer invalidates Q1, re-ask only the affected decision — don't re-ask the whole batch.
 
@@ -146,8 +162,8 @@ One option carries `(Recommended)` in its label with a < 1-sentence why.
 
 | Failure | Antidote |
 |---|---|
-| **Rubber-stamping** — user answers fast without engaging | Add an explicit `"I don't care — you pick"` option. If they pick it twice in a row, coarsen (ask fewer, bigger-stakes questions). |
-| **Answer fatigue** — too many batches in a row | Merge related forks into one multi-select question. Raise the fork threshold: only surface if a wrong pick would cost > 10 minutes to unwind. |
+| **Rubber-stamping** — user accepts `(Recommended)` twice in a row without engaging | Coarsen — ask fewer, bigger-stakes questions; raise the fork threshold so only > 10-min-to-unwind picks surface. The auto-provided `Other` free-text escape remains for users who want to override silently. |
+| **Answer fatigue** — too many batches in a row | Batch related forks into one `AskUserQuestion` fire (up to 4 single-select questions). Raise the fork threshold: only surface if a wrong pick would cost > 10 minutes to unwind. |
 | **Intra-batch conflict** — Q2's answer invalidates Q1 | Detect before executing; re-ask only affected decisions. |
 | **"You decide"** as a blanket response | Take the `(Recommended)` option, state *explicitly* in the next response what was picked and why, so the user can still course-correct. |
 | **Long refactor (50+ files)** | Checkpoint **per module**, not per file. Bundle fork decisions at module boundaries. Show a running tree-diff so the review debt stays visible. |
@@ -161,6 +177,36 @@ One option carries `(Recommended)` in its label with a < 1-sentence why.
 - **Do not** batch decisions where later ones hinge on earlier answers. Fire, receive, then plan the next batch.
 - **Do not** recommend nothing. Always mark one `(Recommended)` — the user benefits from the agent's taste even when overriding it.
 - **Do not** generate a giant diff and then ask the user to approve. That *is* the review-bottleneck. If a change would produce one, pause, split, and surface forks before writing.
+
+## `AskUserQuestion` tool contract (Claude Code reference)
+
+This protocol assumes a single "ask user" tool with the contract below. Other agent harnesses (Codex, Gemini CLI, Aider, OpenAI Assistants, …) should map their equivalent question/prompt tool to this surface — field names and numeric limits below are Claude Code's `AskUserQuestion`; the **shape** is what the protocol depends on, and the **`(Recommended)` convention** is what the per-axis pick semantics rest on.
+
+**Per fire (one tool call):**
+- `questions` array — `minItems: 1, maxItems: 4`. All questions in the array render as one batched UI; one user round-trip per fire.
+
+**Per question:**
+- `question` — full sentence ending in `?`
+- `header` — short chip label, ≤ 12 characters
+- `multiSelect` — boolean (default `false`). `false` = single-pick (mutually exclusive options); `true` = subset of additive items (feature toggles, optional sub-tasks)
+- `options` — array, `minItems: 2, maxItems: 4`
+
+**Per option:**
+- `label` — 1-5 words; the chip text the user sees and ticks. Mark the recommended choice by appending `(Recommended)` to its label and placing it **first** in the array.
+- `description` — explanation of the trade-off / consequence; the one-sentence rationale lives here.
+- `preview` — optional rendered content (markdown, monospace box). Single-select only (tool constraint). Use for visual comparisons (layout mockups, code diffs, file trees); skip when the difference is purely conceptual.
+
+**Built-in escapes (do not duplicate):**
+- The free-text "Other" input is **auto-provided** on every question; never add an explicit "Other" option.
+- Users may attach free-text notes via the `annotations` response field.
+
+**Plan-mode caveat:**
+- Use this tool only to *clarify requirements* or *choose between approaches* during planning. Do **not** ask "Is the plan ready?" / "Should I proceed?" — that's what `ExitPlanMode` is for.
+
+**Mapping for other harnesses:**
+- If the harness exposes only single-question prompts, fire them sequentially in the dependency order this protocol prescribes — the *shape* (per-axis single-select with one Recommended) is what matters; batching is an optimization.
+- Map `(Recommended)` to whatever default-marker convention the harness uses; the rationale belongs in the description body either way.
+- Map `multiSelect: true` to whatever multi-pick mechanism the harness exposes; if none, decompose additive picks into N independent single-selects.
 
 ## Disengagement
 

@@ -37,7 +37,7 @@ Output a short text summary of detected stack, top-level layout, chosen target d
 
 Read [references/pattern-extractor.md](references/pattern-extractor.md) to see the full taxonomy of pattern categories. Decide which categories apply to the detected stack (e.g., drop "Styling and UI" for a backend service, drop "State management" for a static-analysis tool).
 
-Use the Agent tool to launch all extraction agents below in a single message (`model: "opus"`, do not set `run_in_background`) so they run concurrently. Launch one Agent per applicable category. Each agent's prompt must:
+Use the Agent tool to launch all extraction agents below in a single assistant message so they run concurrently. Each Agent call uses `model: "opus"` and does not set `run_in_background`. Launch one Agent per applicable category and state the total count explicitly when emitting the calls. Each agent's prompt must:
 
 - Name its assigned category
 - Include the stack summary and directory map from Step 1

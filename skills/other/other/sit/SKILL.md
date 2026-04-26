@@ -1,6 +1,6 @@
 ---
 name: sit
-description: "Use when a persisted `.univer` or `.unv` workbook needs `.sit` repo workflow: status, add/reset, diff/log/show/blame/checkpoints, commits, review sessions, hosted review feedback, `push review`, or origin fetch/pull/push recovery after workbook edits are saved."
+description: "Use when a persisted `.univer` or `.unv` workbook needs `.sit` repo workflow: status, commit, history inspection, approval-backed sync, or origin pull recovery after workbook edits are saved."
 metadata:
   openclaw:
     os:
@@ -23,91 +23,95 @@ metadata:
 
 `sit` is the canonical Git-shaped control plane for persisted Univer workbooks.
 
-Use `univer-cli` to create or edit workbook content. Use `sit` after workbook changes are saved and verified, or for the repo/review/origin phase of a task that also includes workbook edits.
+Use `univer-cli` to create or edit workbook content. Use `sit` after workbook changes are saved and verified, or for the repo/sync/origin phase of a task that also includes workbook edits.
 
 ## Use when
 
-- capturing persisted workbook changes into repo history
-- inspecting repo state, diff, log, show, checkpoint, or blame output
-- creating or updating a local review session
-- publishing a review session to hosted review
-- reading machine-readable hosted review feedback
+- capturing persisted workbook changes into workbook-lane history
+- inspecting repo state, diff, log, show, or blame output
+- running the default approval-backed sync flow
 - syncing local state with origin or recovering from origin refusal output
 
 ## Do not use when
 
-- the workbook still needs to be edited, imported, exported, or structurally changed before repo/review work can proceed
+- the workbook still needs to be edited, imported, exported, or structurally changed before repo/sync work can proceed
 - the task is only about `univer-cli` workbook authoring
 - you are about to invent Git-like commands that are not in the real command surface
 
 ## Core model
 
 - local history is commit-based
-- the public repo root is `.sit`
+- the public repo root for a workbook is `<file>.univer/.sit`
 - the public tracked object is a workbook path, not an internal runtime id
-- local review attempt is a `review session`
-- hosted thread reuse is decided by `push review`
-- local durable truth is still the local `review session`
-- hosted review is separate from origin materialization
-- there is no local `approve` command
-- recovery goes through existing `fetch` / `pull` / `push origin --resume` surfaces
+- the current human gate truth is repo-local commit approval state
+- `sit sync <file.univer>` is the default pull-first convergence path; it pulls first, then only continues origin advancement when the current HEAD commit is approved
+- `sit pull origin <file.univer>` is the pull-only path
+- recovery goes through existing `pull` surfaces
 - `rebase origin` is not part of the command surface
 
 ## Default flow
 
 1. Ensure workbook edits are already persisted and verified with `univer-cli`.
-2. If the repo does not exist yet, run `sit init`.
-3. Run `sit status`.
-4. Capture changes with `sit add <univer-path>` or `sit add --all`.
-5. Inspect with `sit diff`.
-6. Commit with `sit commit --message "..."`.
-7. Create a review session with `sit review create`.
+2. Run `sit status <univer-path>` when you need a quick lane summary.
+3. Commit with `sit commit <univer-path> --message "..."`.
+4. Inspect with `sit diff <univer-path>` or `sit log <univer-path>`.
+5. Ensure approval is recorded in the current repo-local commit approval truth.
+6. Run `sit sync <univer-path>` as pull-first convergence. It pulls first, then only continues origin advancement when the current HEAD commit is approved.
 
 ## Common routes
 
-### Start from an existing hosted repo
+### Attach to an existing origin workbook
 
-- `sit clone <owner>/<repo> --base-url <base-url>`
-- `sit clone <host>/<owner>/<repo>`
-- `sit clone <review-url>`
+- `sit origin bind-existing <remote-workbook-id> <univer-path>` on a fresh local target path
 
-Here `{owner}/{repo}` is the hosted review scope for this scenario. It does not need to be pre-created; if the scenario has no existing scope yet, choose stable values and reuse them consistently.
+### Pull remote changes only
 
-### Publish for review
+- `sit pull origin <univer-path>`
 
-- `sit remote add review [<base-url>] --owner <owner-id> --repo <repo-id>`
-- `sit push review <session>`
+Use pull-only mode when the task is to materialize or repair local state from remote origin, not to run the default approval-backed publish path.
 
-### Read review feedback
+## Quick reference
 
-- `sit review status <session>`
-- `sit review comments <session>`
+Use these exact commands when naming matters:
 
-### Sync with origin
+- `sit status [<univer-path>]`
+- `sit diff <univer-path> [<revision>]`
+- `sit log <univer-path> [--limit <n>]`
+- `sit show <univer-path> [<revision>]`
+- `sit blame <univer-path> --cell 'Sheet1!A1' [<revision>]`
+- `sit commit <univer-path> --message "..."`
+- `sit origin bind-existing <remote-workbook-id> <univer-path>`
+- `sit pull origin <univer-path>`
+- `sit pull origin --force-to-latest <univer-path>`
+- `sit sync <univer-path>`
 
-- `sit fetch origin <univer-path>`
-- `sit pull origin <session-or-univer-path>`
-- `sit pull origin --force-to-latest <session-or-univer-path>`
-- `sit push origin --dry-run <session>`
-- `sit push origin --explain <session>`
-- `sit push origin <session>`
-- `sit push origin --skip-review-check <session>`
-- `sit push origin --resume <replay-run>`
+Current implementation note:
 
-By default, `sit push origin <session>` checks hosted approval before replaying. Use `--skip-review-check` only when you need the explicit bypass path.
+- `sit fetch origin <univer-path>` may still exist as internal / compatibility plumbing
+- it is not part of the current public/default command teaching surface
+- if you mention it, label it as implementation detail rather than the recommended user command
 
-Follow refusal output literally. If `sit` tells you the next safe command, use that instead of improvising.
+## Recovery cues
+
+Use these when a `sit` happy path stops midway:
+
+- local workbook is still dirty:
+  `sit commit <univer-path> --message "..."`
+- approval has not been recorded yet:
+  record approval in repo-local commit approval truth
+- remote state needs local materialization:
+  `sit pull origin <univer-path>`
+- pull repair is explicitly suggested:
+  `sit pull origin --force-to-latest <univer-path>`
+- `sit sync` says replay is not confirmed yet:
+  rerun `sit sync <univer-path>`
+- lineage is blocked:
+  resolve the blocking condition before rerunning `sit sync <univer-path>` or `sit pull origin <univer-path>`
 
 ## Naming discipline
 
-- use `log`, not `history`
-- use `add`, not `stage`
-- use `push review`, not invented publish aliases
-- use `remote add review` for hosted review scope
+- use `commit <file.univer> --message`, not staging-first aliases
+- use `sync`, not invented publish aliases
+- use `pull origin`, not `sync`, when the intent is explicitly remote-to-local materialization
+- treat `fetch origin` as internal/legacy wording unless the user is explicitly discussing current implementation internals
 - do not ask for or simulate `rebase origin`
-
-## Read next
-
-- [references/command-surface.md](references/command-surface.md): exact commands and naming
-- [references/hosted-review.md](references/hosted-review.md): hosted review collaboration
-- [references/recovery.md](references/recovery.md): refusal handling and recovery paths

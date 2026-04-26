@@ -1,7 +1,7 @@
 ---
 name: project-planning
 description: "Transform specifications into dependency-ordered implementation plans with phased tasks and parallel work identification."
-version: 1.8.4
+version: 1.9.0
 alwaysApply: false
 # Custom metadata (not used by Claude for matching):
 model_preference: claude-sonnet-4

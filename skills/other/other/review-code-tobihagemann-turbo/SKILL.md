@@ -32,7 +32,7 @@ Read the reference file(s) for the active type(s):
 
 Full review activates all six types; a single-concern argument activates one. Skip peer review when instructed (e.g., "without peer review", "no peer", "internal only").
 
-Use the Agent tool to launch all agents below in a single message (`model: "opus"`, do not set `run_in_background`) so they run concurrently. For full review that is seven Agent tool calls (six internal + one peer); for single-concern it is two (one internal + one peer).
+Use the Agent tool to launch all agents below in a single assistant message so they run concurrently. Each Agent call uses `model: "opus"` and does not set `run_in_background`. For full review that is seven Agent tool calls (six internal + one peer); for single-concern it is two (one internal + one peer).
 
 - **Internal Agent (one per active type):** Launch a separate Agent tool call for each active type. Pass the scope and the type's reference file content; the subagent applies the criteria and returns findings in the output format below.
 - **Peer review Agent (unless skipping):** Launch an Agent tool call whose prompt instructs the subagent to invoke `/peer-review` via the Skill tool with a request describing: (a) the scope to review; (b) each active type as a separate review dimension so they are reviewed independently; (c) for each dimension, the criteria live in `~/.claude/skills/review-code/references/<type>-review.md` — the reviewer should read that file directly, use its priority scale and verdict label, and include any extra metadata fields it specifies (e.g., `**Category:**`, `**Library:**`, `**Docs:**`) between the `**Reviewer:**` line and the paragraph.

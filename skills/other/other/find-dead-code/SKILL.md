@@ -52,11 +52,11 @@ If no CLI tool is installed, skip to Step 3. Do not ask the user to install anyt
 
 ## Step 3: Test-Only Analysis — Parallel Subagents (Core)
 
-This is the primary analysis. Spawn parallel subagents to systematically find code that is only referenced from tests.
+This is the primary analysis. Use the Agent tool to launch one subagent per top-level source directory from Step 1 in a single assistant message so they run concurrently. Each Agent call uses `model: "opus"` and does not set `run_in_background`. Expect one Agent tool call per directory, capped at 8 by the Rules section. State the count explicitly when emitting the calls.
 
 ### Subagent Strategy
 
-For each top-level source directory identified in Step 1, launch one subagent (`model: "opus"`, do not set `run_in_background`). Each subagent receives:
+Each subagent receives:
 
 1. **Its assigned directory** to scan for exported symbols
 2. **The test file patterns** from Step 1

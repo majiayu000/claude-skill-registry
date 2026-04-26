@@ -1,7 +1,7 @@
 ---
 name: project-brainstorming
-description: "Guide project ideation through structured Socratic questioning to generate actionable project briefs with approach comparisons. Use when starting a new project or evaluating alternatives. Skip if requirements are already clear."
-version: 1.7.1
+description: "Guide project ideation through Socratic questioning to generate actionable project briefs with alternative comparisons."
+version: 1.9.0
 alwaysApply: false
 # Custom metadata (not used by Claude for matching):
 model_preference: claude-sonnet-4
@@ -16,50 +16,6 @@ dependencies:
     - modules/spec-review-loop.md
     - modules/deferred-capture.md
 ---
-## Table of Contents
-
-- [When to Use](#when-to-use)
-- [Integration](#integration)
-- [Brainstorming Framework](#brainstorming-framework)
-- [Phase 1: Problem Definition](#phase-1:-problem-definition)
-- [Problem Statement](#problem-statement)
-- [Phase 2: Constraint Discovery](#phase-2:-constraint-discovery)
-- [Constraints](#constraints)
-- [Technical](#technical)
-- [Resources](#resources)
-- [Integration](#integration)
-- [Compliance](#compliance)
-- [Success Criteria](#success-criteria)
-- [Phase 3: Approach Generation](#phase-3:-approach-generation)
-- [Approach [N]: [Name]](#approach-[n]:-[name])
-- [Phase 3.5: War Room Deliberation (REQUIRED)](#phase-3.5:-war-room-deliberation-(required))
-- [Phase 4: Approach Comparison](#phase-4:-approach-comparison)
-- [Phase 5: Decision & Rationale](#phase-5:-decision-&-rationale)
-- [Selected Approach: [Approach Name] ⭐](#selected-approach:-[approach-name]-⭐)
-- [Rationale](#rationale)
-- [Trade-offs Accepted](#trade-offs-accepted)
-- [Rejected Approaches](#rejected-approaches)
-- [Output: Project Brief](#output:-project-brief)
-- [Problem Statement](#problem-statement)
-- [Goals](#goals)
-- [Constraints](#constraints)
-- [Approach Comparison](#approach-comparison)
-- [Selected Approach](#selected-approach)
-- [Next Steps](#next-steps)
-- [Questioning Patterns](#questioning-patterns)
-- [Socratic Method](#socratic-method)
-- [Constraint-Based Thinking](#constraint-based-thinking)
-- [Red Flags to Surface](#red-flags-to-surface)
-- [Session State Management](#session-state-management)
-- [Related Skills](#related-skills)
-- [Related Commands](#related-commands)
-- [Examples](#examples)
-
-
-# Project Brainstorming Skill
-
-Guide project ideation through Socratic questioning, constraint analysis, and structured exploration.
-
 ## When To Use
 
 - Starting a new project without clear requirements
@@ -490,15 +446,3 @@ review loop.
 ## Examples
 
 See `/attune:brainstorm` command documentation for complete examples.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

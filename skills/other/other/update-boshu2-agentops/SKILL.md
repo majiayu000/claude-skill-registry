@@ -1,6 +1,6 @@
 ---
 name: update
-description: 'Reinstall all AgentOps skills globally from the latest source. Triggers: "update skills", "reinstall skills", "sync skills".'
+description: 'Reinstall or sync AgentOps skills from the latest source.'
 skill_api_version: 1
 user-invocable: true
 context:
@@ -15,7 +15,6 @@ metadata:
   dependencies: []
 output_contract: "~/.claude/skills/ (installed copies)"
 ---
-
 # /update — Reinstall AgentOps Skills
 
 > **Purpose:** One command to pull the latest skills from the repo and install them globally across all agents.

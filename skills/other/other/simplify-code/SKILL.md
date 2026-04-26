@@ -17,7 +17,7 @@ Determine what to review:
 
 ## Step 2: Launch Four Review Agents in Parallel
 
-Use the Agent tool to launch all four agents in a single message (`model: "opus"`, do not set `run_in_background`). Pass the scope from Step 1 to each agent.
+Use the Agent tool to launch all four agents below in a single assistant message so they run concurrently. Each Agent call uses `model: "opus"` and does not set `run_in_background`. Pass the scope from Step 1 to each agent.
 
 ### Agent 1: Code Reuse Review
 

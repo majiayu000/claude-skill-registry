@@ -36,7 +36,7 @@ Creates `.claude/commands/*.md` slash command files from procedural documentatio
 ### Standalone Discovery
 
 When invoked without `approved_sections`:
-1. Read `shared/references/procedural_extraction_rules.md`, `shared/references/markdown_read_protocol.md`, and `shared/references/docs_quality_contract.md`
+1. Read `shared/references/procedural_extraction_rules.md`, `shared/references/procedural_skill_sop_guide.md`, `shared/references/markdown_read_protocol.md`, and `shared/references/docs_quality_contract.md`
 2. Scan docs-first sources:
    - `docs/**/*.md`
    - `tests/README.md`
@@ -71,7 +71,7 @@ Receive or build this normalized input:
 }
 ```
 
-**MANDATORY READ:** Load `references/command_template.md`
+**MANDATORY READ:** Load `references/command_template.md` and `shared/references/procedural_skill_sop_guide.md`
 
 ### Phase 2: Transform and Create
 
@@ -102,6 +102,10 @@ For each approved section:
 | Code blocks | Source shell blocks | Preserve when executable |
 | Numbered lists | Doc prose | Ordered workflow steps |
 | Verification | Implicit expectations | Explicit verification checks |
+| Risky procedural steps | Hidden assumptions | Action, key point, why, evidence, exception, automation/guard |
+| Decision points | Blended into prose | Explicit IF/ELSE branch with evidence required per branch |
+| Dependencies/preflight | Assumed environment | First executable self-check before mutation or external invocation |
+| Exceptions | Implied troubleshooting | Concrete pause/retry/ask path |
 | Doc shell | Metadata and navigation | Remove |
 | Source provenance | Implied only | Explicit `Source` section |
 | Related docs | Inline refs | `Related Documentation` section |
@@ -129,6 +133,7 @@ summary: "Created 1 command from 1 procedural section"
 - **Preserve source:** Never modify or delete source docs.
 - **No invention:** Do not add commands, steps, or paths absent from the source.
 - **Imperative voice:** Every retained instruction must be actionable.
+- **SOP/TWI extraction:** Preserve action, decision point, exception, validation, dependency/preflight, and why for risky procedural steps.
 - **No copied doc shell:** Do not copy `DOC_KIND`, `DOC_ROLE`, `Quick Navigation`, `Agent Entry`, or `Maintenance` into commands.
 - **Source provenance:** Every generated command must point back to its source doc and section.
 - **Relative paths:** File references must stay relative to project root.
@@ -140,6 +145,7 @@ summary: "Created 1 command from 1 procedural section"
 - [ ] Source sections read with section-first protocol
 - [ ] Allowed-tools detected per command
 - [ ] Content transformed into imperative workflow steps
+- [ ] Risky procedural steps include action, key point, why, evidence, exception, and automation/guard where applicable
 - [ ] Standard doc shell content removed from command output
 - [ ] Source provenance included in each created command
 - [ ] Existing command files not overwritten

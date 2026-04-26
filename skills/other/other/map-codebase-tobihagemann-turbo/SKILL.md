@@ -31,7 +31,7 @@ Build a file manifest grouped by top-level source directory. This manifest is sh
 
 ## Step 2: Launch Inspection Agents
 
-Launch all Agent tool calls in parallel (`model: "opus"`, do not set `run_in_background`). Each agent receives the scoped file manifest and its exploration brief. Batch across multiple messages if the total exceeds what can be launched at once.
+Use the Agent tool to launch all 7 agents below in a single assistant message so they run concurrently. Each Agent call uses `model: "opus"` and does not set `run_in_background`. Each agent receives the scoped file manifest and its exploration brief.
 
 ### Dimensions
 

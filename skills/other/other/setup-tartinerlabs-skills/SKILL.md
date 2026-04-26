@@ -24,7 +24,7 @@ Use the detected package manager for all install commands. Replace `<pm>` in rul
 Before installing anything, scan for existing configurations:
 - `biome.json` / `biome.jsonc` → Biome already configured
 - `.husky/` directory → Husky already configured
-- `commitlint.config.*` / `.commitlintrc.*` → commitlint already configured
+- commitlint config listed in `rules/commitlint.md` → commitlint already configured
 - `.lintstagedrc*` / `lint-staged` key in `package.json` → lint-staged already configured
 - `gitleaks` in `.husky/pre-commit` → GitLeaks already configured
 - `tsconfig.json` → TypeScript already configured

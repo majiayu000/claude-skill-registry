@@ -82,7 +82,7 @@ After writing all files, spawn a subagent (`model: "opus"`, do not set `run_in_b
 - **For new skills**, frame the review as open-ended: propose improvements, convention checks, writing quality.
 - **For modified skills** (simplification, restructuring, bug fix), frame the review as regression-focused: check whether the change broke anything. Tell the reviewer not to propose new features.
 - **For same-session iteration** (re-reviewing a skill after applying findings from a previous review in the same session), treat as modified: the review is checking whether the fixes broke anything.
-- **For batch changes** (multiple skills created or modified in the same session), launch parallel review subagents in a single message with multiple Agent tool calls, one per skill, so they run concurrently.
+- **For batch changes** (multiple skills created or modified in the same session), use the Agent tool to launch one review subagent per skill in a single assistant message so they run concurrently. Each Agent call uses `model: "opus"` and does not set `run_in_background`. State the total count explicitly when emitting the calls.
 
 ## Step 6: Run `/evaluate-findings` Skill
 

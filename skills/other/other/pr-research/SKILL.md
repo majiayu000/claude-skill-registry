@@ -1,6 +1,6 @@
 ---
 name: pr-research
-description: 'Upstream codebase exploration for open source contribution. Outputs contribution guidelines, PR patterns, and maintainer expectations. Triggers: "pr research", "upstream research", "contribution research", "explore upstream repo".'
+description: 'Research an upstream repo before contributing: rules, patterns, and expectations.'
 skill_api_version: 1
 context:
   window: fork
@@ -19,7 +19,6 @@ metadata:
 allowed-tools: Read, Write, Bash, Grep, Glob
 output_contract: ".agents/research/YYYY-MM-DD-upstream-*.md"
 ---
-
 # PR Research Skill
 
 Systematic exploration of upstream repositories before contributing.

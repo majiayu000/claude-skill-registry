@@ -1,8 +1,8 @@
 {
   "category": "testing",
   "code": "tst",
-  "count": 6754,
-  "updated_at": "2026-04-25T02:06:10.005337Z",
+  "count": 6756,
+  "updated_at": "2026-04-26T02:14:25.490266Z",
   "skills": [
     {
       "name": "frontend-testing",
@@ -43175,6 +43175,23 @@
       "source": "SkillsMP Synced Skills"
     },
     {
+      "name": "playwright-skill",
+      "description": "Browser automation with Playwright - Claude writes and executes custom scripts",
+      "repo": "lackeyjb/playwright-skill",
+      "path": "skills/playwright-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "playwright",
+        "browser",
+        "automation",
+        "testing"
+      ],
+      "stars": 0,
+      "install": "lackeyjb/playwright-skill/skills/playwright-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "agentuity-cli-cloud-session-get",
       "description": "Get details about a specific session. Requires authentication. Use for Agentuity cloud platform operations",
       "repo": "agentuity/examples",
@@ -50393,6 +50410,24 @@
       "stars": 0,
       "install": "Official-MoonDao/LORS/testing/space-entities-expert-official-moondao-lors",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "ios-simulator-skill",
+      "description": "iOS Simulator automation for testing with semantic navigation and Xcode integration",
+      "repo": "conorluddy/ios-simulator-skill",
+      "path": "ios-simulator-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "ios",
+        "simulator",
+        "xcode",
+        "testing",
+        "mobile"
+      ],
+      "stars": 0,
+      "install": "conorluddy/ios-simulator-skill/ios-simulator-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "beam-master",

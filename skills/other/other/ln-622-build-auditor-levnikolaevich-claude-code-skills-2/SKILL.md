@@ -62,18 +62,18 @@ Receives `contextStore` with: `tech_stack` (including build_tool, test_framework
 
 **Effort:** S-M (fix syntax error vs refactor code structure)
 
-### 2. Deprecation Warnings
-**What:** Usage of deprecated APIs, libraries, or language features
+### 2. Unsupported API Warnings
+**What:** Usage of unsupported APIs, libraries, or language features
 
 **Detection:**
-- Compiler warnings: `DeprecationWarning`, `@deprecated` in stack trace
+- Compiler warnings: `UnsupportedApiWarning`, `@obsolete` in stack trace
 - Dependency warnings: `npm outdated`, `pip list --outdated`
-- Static analysis: Grep for `@deprecated` annotations
+- Static analysis: Grep for `@obsolete` annotations
 
 **Severity:**
-- **CRITICAL:** Deprecated API removed in next major version (imminent breakage)
-- **HIGH:** Deprecated with migration path available
-- **MEDIUM:** Deprecated but still supported for 1+ year
+- **CRITICAL:** Unsupported API removed in next major version (imminent breakage)
+- **HIGH:** Unsupported with migration path available
+- **MEDIUM:** Unsupported but still supported for 1+ year
 - **LOW:** Soft deprecation (no removal timeline)
 
 **Recommendation:** Migrate to recommended API, update dependencies, refactor code

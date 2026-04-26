@@ -1,7 +1,7 @@
 ---
 name: task-planning
 description: 'Generate phased, dependency-ordered tasks from specifications with parallelization opportunities and tech-stack patterns.'
-version: 1.7.1
+version: 1.9.0
 alwaysApply: false
 category: planning
 tags:
@@ -110,15 +110,3 @@ For fan-out/fan-in patterns, task ID conventions, and validation rules, see `mod
 
 - `spec-writing`: Creating source specifications
 - `speckit-orchestrator`: Workflow coordination
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

@@ -1,6 +1,6 @@
 ---
 name: 323-frameworks-spring-boot-testing-acceptance-tests
-description: Use when you need to implement acceptance tests from a Gherkin .feature file for Spring Boot applications — including finding scenarios tagged @acceptance, implementing happy path tests with TestRestTemplate, @SpringBootTest, Testcontainers with @ServiceConnection for DB/Kafka, and WireMock for external REST stubs. Requires .feature file in context. Part of the skills-for-java project
+description: Use when you need to implement acceptance tests from a Gherkin .feature file for Spring Boot applications — including finding scenarios tagged @acceptance, implementing happy path tests with TestRestTemplate, @SpringBootTest, Testcontainers with @ServiceConnection for DB/Kafka, and WireMock for external REST stubs. Requires .feature file in context. This should trigger for requests such as Review Java code for Spring Boot acceptance tests; Apply best practices for Spring Boot acceptance tests in Java code. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral

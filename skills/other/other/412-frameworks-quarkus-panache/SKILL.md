@@ -1,6 +1,6 @@
 ---
 name: 412-frameworks-quarkus-panache
-description: Use when you need data access with Quarkus Hibernate ORM Panache — including PanacheEntity / PanacheEntityBase, PanacheRepository, named queries, JPQL, native SQL, DTO projections (project(Class)), pagination (Page.of()), N+1 avoidance (JOIN FETCH), optimistic locking (@Version / OptimisticLockException), @NamedQuery for validated reusable queries, transactions, @TestTransaction for test isolation, and immutable-friendly patterns. This is the Quarkus analogue to Spring Data for relational persistence. Part of the skills-for-java project
+description: Use when you need data access with Quarkus Hibernate ORM Panache — including PanacheEntity / PanacheEntityBase, PanacheRepository, named queries, JPQL, native SQL, DTO projections (project(Class)), pagination (Page.of()), N+1 avoidance (JOIN FETCH), optimistic locking (@Version / OptimisticLockException), @NamedQuery for validated reusable queries, transactions, @TestTransaction for test isolation, and immutable-friendly patterns. This is the Quarkus analogue to Spring Data for relational persistence. This should trigger for requests such as Review Panache entities or repositories in Quarkus; Improve Hibernate ORM data access with Panache; Add DTO projections, JOIN FETCH, pagination, or optimistic locking to Panache queries; Fix N+1 query problems or add @Version concurrency control in Quarkus Panache. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral

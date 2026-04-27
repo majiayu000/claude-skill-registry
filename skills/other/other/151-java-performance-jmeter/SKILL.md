@@ -1,6 +1,6 @@
 ---
 name: 151-java-performance-jmeter
-description: Use when you need to set up JMeter performance testing for a Java project — including creating the run-jmeter.sh script from the exact template, configuring load tests with loops, threads, and ramp-up, or running performance tests from the project root with custom or default settings. Part of the skills-for-java project
+description: Use when you need to set up JMeter performance testing for a Java project — including creating the run-jmeter.sh script from the exact template, configuring load tests with loops, threads, and ramp-up, or running performance tests from the project root with custom or default settings. This should trigger for requests such as Improve the code with JMeter performance testing; Apply JMeter performance testing; Refactor the code with JMeter performance testing; Add JMeter support. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -28,6 +28,8 @@ JMeter must be installed and available in PATH. If not available, show a message
 - **CRITICAL**: Copy the run-jmeter.sh template exactly — do not modify, interpret, or enhance
 - **PERMISSION**: Make the script executable with `chmod +x run-jmeter.sh`
 - **BEFORE APPLYING**: Read the reference for the exact script template and usage instructions
+- **EDGE CASE**: If request scope is ambiguous, stop and ask a clarifying question before applying changes
+- **EDGE CASE**: If required inputs, files, or tooling are missing, report what is missing and ask whether to proceed with setup guidance
 
 ## When to use this skill
 

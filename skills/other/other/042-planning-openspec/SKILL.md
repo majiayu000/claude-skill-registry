@@ -1,6 +1,6 @@
 ---
 name: 042-planning-openspec
-description: Use when you need to take a `*.plan.md` file and turn it into OpenSpec change artifacts by validating OpenSpec installation, initializing or reusing an OpenSpec project, and creating or updating a change proposal/spec/tasks flow. Includes a concrete workflow based on `examples/requirements-examples/problem1/requirements/openspec`. Part of the skills-for-java project
+description: Use when you need to take a `*.plan.md` file and turn it into OpenSpec change artifacts by validating OpenSpec installation, initializing or reusing an OpenSpec project, and creating or updating a change proposal/spec/tasks flow. Includes a concrete workflow based on `examples/requirements-examples/problem1/requirements/openspec`. This should trigger for requests such as Convert `*.plan.md` into OpenSpec; Add change proposal from plan; Update existing OpenSpec project; Initialize OpenSpec in requirements folder. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -34,6 +34,8 @@ Always execute OpenSpec commands from the parent directory that contains the `op
 - **MUST**: When a feature/change is completed (all checklist tasks done), guide the user to archive it (for example: `openspec archive us-001-god-analysis-api`)
 - **MUST**: In `tasks.md`, generate a single OpenSpec checklist (`- [ ]` / `- [x]`) only; do not add a second table-based task list
 - **MUST**: Explain whether the workflow creates a new change or updates an existing one
+- **EDGE CASE**: If request scope is ambiguous, stop and ask a clarifying question before applying changes
+- **EDGE CASE**: If required inputs, files, or tooling are missing, report what is missing and ask whether to proceed with setup guidance
 
 ## When to use this skill
 
@@ -47,7 +49,7 @@ Always execute OpenSpec commands from the parent directory that contains the `op
 
 1. **Read and summarize plan input**
 
-Read the provided `*.plan.md`, summarize scope, and identify candidate change-id and affected capabilities.
+Read `references/042-planning-openspec.md` and the provided `*.plan.md`, then summarize scope and identify candidate change-id and affected capabilities.
 
 2. **Check OpenSpec CLI and install gate**
 

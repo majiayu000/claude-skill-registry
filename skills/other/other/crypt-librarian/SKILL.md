@@ -85,39 +85,68 @@ Two options for Exa access:
 mcp__exa__web_search_exa(query="Letterboxd gothic vampire films list", numResults=10)
 ```
 
-#### Option B: Direct API Script (recommended for full functionality)
+#### Option B: Direct API Scripts (recommended for full functionality)
 
-The skill includes `scripts/exa_film_search.py` which provides all 4 Exa endpoints:
+The skill includes `scripts/exa_film_search.py` (4 Exa endpoints) and the shared Exa scripts provide additional capabilities:
 
-**Search** — Find film lists, articles, recommendations
+| Mode | Command | Use Case |
+|------|---------|----------|
+| **Search** | `exa_film_search.py search "gothic horror" -n 10` | Find film lists and articles |
+| **Contents** | `exa_film_search.py contents "URL"` | Extract full content from URLs |
+| **Similar** | `exa_film_search.py similar "URL" -n 15` | Find similar films |
+| **Research** | `exa_film_search.py research "query"` | AI-synthesized answer with citations |
+| **Deep Search** | `exa_search.py "query" --deep` | Comprehensive 4–12s search with structured output |
+| **Instant Search** | `exa_search.py "query" --instant` | Sub-150ms for quick lookups |
+| **Image Extraction** | `exa_contents.py URL --images 10` | Extract poster/still URLs from film pages |
+| **Structured Output** | `exa_search.py "query" --deep --output-schema '{...}'` | Custom JSON schemas |
+| **Async Research** | `exa_research_async.py "question" --pro` | Premium async research |
+| **Subpage Crawling** | `exa_contents.py URL --subpages 5` | Follow links from a film page |
+
+**Practical patterns:**
 ```bash
-python scripts/exa_film_search.py search "gothic horror films pre-2010" -n 10
-python scripts/exa_film_search.py search "Criterion occult cinema" --domains letterboxd.com criterion.com
+# Find poster URLs from a Letterboxd page
+exa_contents.py "https://letterboxd.com/film/the-ninth-gate/" --images 5
+
+# Structured film search with custom schema
+exa_search.py "gothic horror pre-2010 underseen" --deep \
+  --output-schema '{"films":[{"title":"string","year":"number","director":"string"}]}'
+
+# Cost-efficient discovery (titles/URLs only, then drill into best hits)
+exa_search.py "query" -n 20 --no-text
+exa_contents.py "best-hit-url" --images 5
 ```
 
-**Contents** — Extract full content from URLs (crawling)
-```bash
-python scripts/exa_film_search.py contents "https://letterboxd.com/user/list/gothic-films/"
-```
-
-**Similar** — Find films similar to a reference
-```bash
-python scripts/exa_film_search.py similar "https://letterboxd.com/film/eyes-wide-shut/" -n 10
-```
-
-**Research** — Deep AI-synthesized research with citations
-```bash
-python scripts/exa_film_search.py research "occult ritual films similar to Eyes Wide Shut atmosphere"
-```
+**Script paths:**
+- Skill-local: `scripts/exa_film_search.py`
+- Shared: `~/.claude/skills/exa-search/scripts/exa_search.py`, `exa_contents.py`, `exa_similar.py`, `exa_research.py`, `exa_research_async.py`
 
 Requires: `EXA_API_KEY` environment variable, `pip install requests`
 
 ### Step 5: Use Firecrawl for Deep Scraping
 
-Alternative to Exa crawling — use the CLI for local scraping:
+The Firecrawl CLI and API script (`~/.claude/skills/firecrawl/scripts/firecrawl_api.py`) provide multiple modes:
 
+| Mode | Command | Use Case |
+|------|---------|----------|
+| **Scrape** | `firecrawl scrape URL --only-main-content` | Single page extraction |
+| **Agent** | `firecrawl_api.py agent "Find Criterion 4K releases 2025"` | Autonomous discovery — no URLs needed |
+| **Parallel Agent** | `firecrawl_api.py parallel-agent "Q1" "Q2" "Q3"` | Bulk queries with waterfall routing |
+| **Image Extraction** | `firecrawl scrape URL --formats images` | Extract poster URLs from Letterboxd/IMDB |
+| **Batch Scrape** | `firecrawl_api.py batch-scrape URL1 URL2 --wait` | Concurrent multi-page scrape |
+| **Interact** | `firecrawl_api.py interact SCRAPE_ID --prompt "Click next"` | Paginate through lists |
+| **Extract** | `firecrawl_api.py extract URL --prompt "Find title, year, director"` | LLM-powered structured extraction |
+| **Map** | `firecrawl map URL --search "horror"` | Discover URLs on a site by relevance |
+
+**Practical patterns for film curation:**
 ```bash
-firecrawl scrape <url>
+# Scrape a Letterboxd list
+firecrawl scrape https://letterboxd.com/user/list/name/ --only-main-content
+
+# Autonomous Criterion discovery
+firecrawl_api.py agent "Find all films in the Criterion Channel folk horror collection" --model spark-1-mini
+
+# Extract poster images from IMDB
+firecrawl scrape https://imdb.com/title/tt0123456/ --formats images
 ```
 
 **Priority sources to scrape:**
@@ -164,18 +193,54 @@ https://www.youtube.com/results?search_query=Film+Title+Year+official+trailer
 
 Include the trailer link in the recommendation. Prefer official studio uploads over fan re-uploads.
 
+### Step 9: Fetch Posters
+
+After adding films to the archive, fetch poster art for the web interface:
+
+```bash
+source ~/.config/env/secrets.env
+cd ~/Desktop/Programming/crypt-librarian/web/frontend/public/posters
+
+# Fetch posters for specific films by ID
+uv run --with requests python3 fetch_posters.py --id <film-id>
+
+# Fetch all missing posters at once
+uv run --with requests python3 fetch_posters.py
+
+# Dry run to check TMDB matches first
+uv run --with requests python3 fetch_posters.py --dry-run
+```
+
+Sources: TMDB (primary, w500 resolution) → OMDB (fallback) → SVG placeholder.
+Requires `TMDB_API_KEY` in `~/.config/env/secrets.env`.
+Output: JPG posters + `manifest.json` in `web/frontend/public/posters/`.
+
+See `references/poster-pipeline.md` for full details on the acquisition chain.
+
+## Film Onboarding Pipeline
+
+Complete workflow from discovery to display:
+
+1. **Discover** — Exa search/similar/research or Firecrawl agent
+2. **Validate** — Perplexity content check, year/exclusion filters
+3. **Deduplicate** — `crypt_db.py check "Title" YEAR`
+4. **Archive** — `crypt_db.py save-candidate` or direct `films.json` edit
+5. **Posters** — `fetch_posters.py --id <film-id>` (TMDB → OMDB → SVG)
+6. **Trailers** — `fetch_trailers.py` or Exa YouTube search
+7. **Verify** — Refresh web app, confirm poster/trailer display
+
 ## Thematic Search Patterns
 
 When users ask for specific moods, use these search strategies:
 
-| User Request | Perplexity Query | Exa Query |
-|--------------|------------------|-----------|
-| "Something occult" | "occult ritual films pre-2010 secret societies" | "secret society cinema Criterion MUBI list" |
-| "Gothic romance" | "gothic romantic films Neil Jordan vampire" | "Letterboxd gothic vampire romance list" |
-| "Historical epic" | "historical epics psychological depth Oliver Stone" | "Ridley Scott historical films retrospective" |
-| "Noir/mystery" | "revisionist noir 1970s neo-noir" | "neo-noir Criterion Collection films" |
-| "Literary adaptation" | "literary film adaptations Merchant Ivory" | "classic literary adaptations film list" |
-| "Religious/mystical" | "religious mysticism cinema Tarkovsky Dreyer" | "spiritual transcendent films Criterion" |
+| User Request | Perplexity Query | Exa Query | Firecrawl Agent |
+|--------------|------------------|-----------|-----------------|
+| "Something occult" | "occult ritual films pre-2010 secret societies" | "secret society cinema Criterion MUBI list" | `agent "Find Criterion occult ritual films with poster images"` |
+| "Gothic romance" | "gothic romantic films Neil Jordan vampire" | "Letterboxd gothic vampire romance list" | `agent "Scrape Letterboxd gothic romance lists"` |
+| "Historical epic" | "historical epics psychological depth Oliver Stone" | "Ridley Scott historical films retrospective" | `agent "Find historical epic films on Criterion and MUBI"` |
+| "Noir/mystery" | "revisionist noir 1970s neo-noir" | "neo-noir Criterion Collection films" | `agent "Find underseen neo-noir 1970s films"` |
+| "Literary adaptation" | "literary film adaptations Merchant Ivory" | "classic literary adaptations film list" | `agent "Find Criterion literary adaptation films pre-2010"` |
+| "Religious/mystical" | "religious mysticism cinema Tarkovsky Dreyer" | "spiritual transcendent films Criterion" | `agent "Find transcendent religious cinema on Criterion"` |
 
 ## Director Reference
 
@@ -379,3 +444,18 @@ See `references/calibrated-taste-profile.md` for the full taste calibration deri
 - 3-star warnings
 - Lane calibration by category
 - Director recommendations
+
+## Reference Index
+
+Consult `references/` on demand:
+
+| File | Content |
+|------|---------|
+| `repo-structure.md` | Repository layout, file purposes, key relationships |
+| `films-json-schema.md` | films.json schema, field types, category registry, ID conventions |
+| `web-app-reference.md` | VELVET CATALOGUE stack, design tokens, API endpoints, components, build commands |
+| `poster-pipeline.md` | Poster acquisition: TMDB API, fetch_posters.py usage, manifest format, fallback chain |
+| `calibrated-taste-profile.md` | Taste calibration: 5-candle predictors, 3-candle warnings, lane averages |
+| `directors-and-themes.md` | Curated director lists organized by sensibility |
+| `sources.md` | Exa/Firecrawl URLs, search strategies, priority scraping targets |
+| `films.json` | Symlink to live archive (73 films) |

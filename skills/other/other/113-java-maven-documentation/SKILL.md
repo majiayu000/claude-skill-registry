@@ -1,6 +1,6 @@
 ---
 name: 113-java-maven-documentation
-description: Use when you need to create a DEVELOPER.md file for a Maven project — combining a fixed base template with dynamic sections derived from the project pom.xml, including a Plugin Goals Reference, Maven Profiles table, and Submodules table for multi-module projects. Part of the skills-for-java project
+description: Use when you need to create a DEVELOPER.md file for a Maven project — combining a fixed base template with dynamic sections derived from the project pom.xml, including a Plugin Goals Reference, Maven Profiles table, and Submodules table for multi-module projects. This should trigger for requests such as Create DEVELOPER.md; Generate DEVELOPER.md; Maven project documentation; Add Maven documentation; Plugin goals reference. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral

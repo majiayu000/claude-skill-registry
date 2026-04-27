@@ -1,6 +1,6 @@
 ---
 name: 161-java-profiling-detect
-description: Use when you need to set up Java application profiling to detect and measure performance issues — including automated async-profiler v4.0 setup, problem-driven profiling (CPU, memory, threading, GC, I/O), interactive profiling scripts, JFR integration with Java 25 (JEP 518, JEP 520), or collecting profiling data with flamegraphs and JFR recordings. Part of the skills-for-java project
+description: Use when you need to set up Java application profiling to detect and measure performance issues — including automated async-profiler v4.0 setup, problem-driven profiling (CPU, memory, threading, GC, I/O), interactive profiling scripts, JFR integration with Java 25 (JEP 518, JEP 520), or collecting profiling data with flamegraphs and JFR recordings. This should trigger for requests such as Improve the code with profiling; Apply Profiling; Refactor the code with profiling; Add profiling support. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -29,6 +29,8 @@ Copy bash scripts exactly from templates. Ensure JVM flags are applied for profi
 - **SETUP**: Create profiler directory structure: profiler/scripts, profiler/results
 - **EXECUTABLE**: Make scripts executable with chmod +x
 - **BEFORE APPLYING**: Read the reference for exact script templates and setup instructions
+- **EDGE CASE**: If request scope is ambiguous, stop and ask a clarifying question before applying changes
+- **EDGE CASE**: If required inputs, files, or tooling are missing, report what is missing and ask whether to proceed with setup guidance
 
 ## When to use this skill
 

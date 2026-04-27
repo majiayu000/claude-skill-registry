@@ -1,6 +1,6 @@
 ---
 name: 044-planning-jira
-description: Use when you need the Jira CLI (`jira`) to verify installation, configure Jira Cloud access, list issues (all or by JQL) as markdown tables, and fetch issue descriptions and comments for analysis. Uses an interactive install gate - if `jira` is missing, ask whether to show installation guidance before any issue commands. Part of the skills-for-java project
+description: Use when you need the Jira CLI (`jira`) to verify installation, configure Jira Cloud access, list issues (all or by JQL) as markdown tables, and fetch issue descriptions and comments for analysis. Uses an interactive install gate - if `jira` is missing, ask whether to show installation guidance before any issue commands. This should trigger for requests such as jira issue list; List Jira issues; Jira JQL issue query; jira issue view comments; Jira CLI issue workflow. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral

@@ -1,6 +1,6 @@
 ---
 name: 032-architecture-adr-non-functional-requirements
-description: Facilitates conversational discovery to create Architectural Decision Records (ADRs) for non-functional requirements using the ISO/IEC 25010:2023 quality model. Use when the user wants to document quality attributes, NFR decisions, security/performance/scalability architecture, or design systems with measurable quality criteria. Part of the skills-for-java project
+description: Facilitates conversational discovery to create Architectural Decision Records (ADRs) for non-functional requirements using the ISO/IEC 25010:2023 quality model. Use when the user wants to document quality attributes, NFR decisions, security/performance/scalability architecture, or design systems with measurable quality criteria. This should trigger for requests such as Create ADR for Non-functional requirements; Document Non-functional requirements; Capture Non-functional requirements; Generate Non-functional requirements in an ADR. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -27,8 +27,8 @@ Use challenge-first, consultative discovery—ask 1-2 questions at a time, build
 - **MUST**: Read the reference template fresh—do not use cached questions
 - **MUST**: Start with challenge-first opening (ISO 25010:2023 quality characteristics)
 - **MUST**: Ask one or two questions at a time; never all at once
-- **MUST**: Validate summary with user ("Does this accurately capture your quality needs?") before proposing ADR creation
-- **MUST**: Wait for user to confirm "proceed" before generating the ADR
+- **MUST**: Validate summary with user (Does this accurately capture your quality needs?) before proposing ADR creation
+- **MUST**: Wait for user to confirm proceed before generating the ADR
 
 ## When to use this skill
 
@@ -57,7 +57,7 @@ Step constraints:
 
 3. **Generate ADR after explicit confirmation**
 
-Only after user confirms "proceed", create the ADR including measurable Quality Metrics and Success Criteria.
+Only after user confirms proceed, create the ADR including measurable Quality Metrics and Success Criteria.
 
 ## Reference
 

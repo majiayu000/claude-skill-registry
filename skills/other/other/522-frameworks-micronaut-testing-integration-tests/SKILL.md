@@ -1,6 +1,6 @@
 ---
 name: 522-frameworks-micronaut-testing-integration-tests
-description: Use when you need to write or improve integration tests for Micronaut — @MicronautTest, HttpClient, TestPropertyProvider with Testcontainers, transactional test mode where appropriate, and Maven Surefire/Failsafe splits for *Test, *Tests, *IT, and *AT. Part of the skills-for-java project
+description: Use when you need to write or improve integration tests for Micronaut — @MicronautTest, HttpClient, TestPropertyProvider with Testcontainers, transactional test mode where appropriate, and Maven Surefire/Failsafe splits for *Test, *Tests, *IT, and *AT. This should trigger for requests such as Add Micronaut integration tests with Testcontainers; Wire dynamic datasource or broker URLs for @MicronautTest. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral

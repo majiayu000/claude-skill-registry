@@ -1,7 +1,7 @@
 ---
 name: ai-session-tools
 description: Search, recover, and analyze AI session histories across Claude Code, AI Studio, and Gemini CLI. Use when user asks to "find that file from last week", "search sessions", "recover context after compaction", "what did the AI do", "export session to markdown", "find corrections", "analyze session quality", "improve CLAUDE.md from past mistakes", or "turn AI mistakes into rules". Contains session search, file recovery, correction detection, self-improvement workflow.
-version: "0.10.2rc1"
+version: "0.11.0"
 user-invocable: true
 disable-model-invocation: false
 allowed-tools:

@@ -1,7 +1,7 @@
 ---
 name: memory-management
 description: 'Persist SEO/GEO campaign context across Claude sessions with automatic hot-list, active work, and archive tiers. 项目记忆/跨会话'
-version: "9.1.0"
+version: "9.5.0"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -9,7 +9,7 @@ when_to_use: "Use when reviewing, archiving, or cleaning up campaign memory. Als
 argument-hint: "[review|archive|cleanup]"
 metadata:
   author: aaron-he-zhu
-  version: "9.1.0"
+  version: "9.5.0"
   geo-relevance: "low"
   tags:
     - seo
@@ -24,52 +24,27 @@ metadata:
     - 프로젝트메모리
     - memoria-proyecto
   triggers:
-    # EN-formal
     - "remember project context"
     - "save SEO data"
-    - "manage project memory"
-    - "project context"
     - "refresh wiki index"
     - "build wiki index"
-    - "wiki lint"
-    # EN-casual
     - "remember this for next time"
     - "what did we decide last time"
     - "what do we know so far"
     - "project status"
-    # EN-question
-    - "how to save project progress"
-    # ZH-pro
+    - "wiki lint"
     - "项目记忆管理"
-    - "SEO数据保存"
     - "跨会话记忆"
     - "刷新wiki索引"
-    - "项目状况"
-    # ZH-casual
     - "保存进度"
     - "上次说了什么"
-    - "记住这个"
-    # JA
     - "プロジェクト記憶"
-    - "プロジェクト記憶管理"
-    - "SEOデータ保存"
-    - "セッション間記憶"
     - "wikiインデックス更新"
-    - "キャンペーン履歴"
-    # KO
     - "프로젝트 메모리"
-    - "프로젝트 기억 관리"
     - "세션 기억"
-    - "데이터 저장"
-    - "캠페인 기록"
-    # ES
     - "memoria del proyecto"
     - "guardar progreso"
-    - "contexto de sesión"
-    - "gestión de memoria"
-    # PT
     - "memória do projeto"
-    - "contexto de sessão"
     - "gerenciar memória"
 ---
 
@@ -155,7 +130,7 @@ What does [internal jargon] mean in this project?
 **Expected output**: a memory update plan, hot-cache changes, and a short handoff summary.
 
 - **Reads**: current campaign facts, new findings from other skills, approved decisions, and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-- **Writes**: updates to `memory/hot-cache.md`, `memory/open-loops.md`, `memory/decisions.md`, and related `memory/` folders. Manages WARM-to-COLD archival in `memory/archive/`. Compiles `memory/wiki/index.md` (auto-refreshed) and wiki compiled pages (user-confirmed). **Sole writer of wiki (with delegated auto-refresh)**: `memory-management` owns all wiki writes semantically. For performance, two narrowly-scoped auto-refresh operations are delegated to the PostToolUse and Stop hooks in [hooks/hooks.json](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/hooks/hooks.json) — specifically, index rebuilds of `memory/wiki/index.md` and append operations on `memory/wiki/log.md`. These hooks act on behalf of `memory-management` using the schema defined in this skill; any wiki-compiled page (entity/keyword/topic) still requires explicit `memory-management` invocation. **Auditor handoff archiving** (v7.1.0+): when triggered (by the Stop hook, by a direct user request, or via an auditor's "Save these results?" yes-response), append a structured block to `memory/audits/YYYY-MM.md`. The archive is consumed by `/seo:p2-review` for the 2026-07-10 tombstone evaluation tied to [ADR-001](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/decisions/2026-04-adr-001-inline-auditor-runbook.md). See [references/examples.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/examples.md) for the exact archive block format and rules.
+- **Writes**: updates to `memory/hot-cache.md`, `memory/open-loops.md`, `memory/decisions.md`, and related `memory/` folders. Manages WARM-to-COLD archival in `memory/archive/`. Compiles `memory/wiki/index.md` (auto-refreshed) and wiki compiled pages (user-confirmed). **Sole writer of wiki (with delegated auto-refresh)**: `memory-management` owns all wiki writes semantically. For performance, the narrowly-scoped `memory/wiki/index.md` auto-refresh is delegated to the PostToolUse hook in [hooks/hooks.json](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/hooks/hooks.json). Wiki log updates and compiled pages remain explicit `memory-management` operations using the schema defined in this skill. **Auditor handoff archiving** (v7.1.0+): when triggered by a direct user request or an auditor's explicit "Save these results?" yes-response, append a structured block to `memory/audits/YYYY-MM.md`. The Stop hook never initiates memory writes. The archive is consumed by `/seo:p2-review` for the 2026-07-10 tombstone evaluation tied to [ADR-001](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/decisions/2026-04-adr-001-inline-auditor-runbook.md). See [references/examples.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/examples.md) for the exact archive block format and rules.
 - **Promotes**: durable strategy, blockers, terminology, entity candidates, and major deltas. Applies temperature lifecycle rules: promote to HOT on high reference frequency, demote on staleness.
 - **Next handoff**: use the `Next Best Skill` below when the project memory baseline is ready for active work.
 
@@ -172,7 +147,7 @@ What does [internal jargon] mean in this project?
 This skill's behavior is reinforced by the library's prompt-based hooks:
 - **SessionStart**: loads `memory/hot-cache.md`, reminds of stale open loops; loads `memory/wiki/<project>/index.md` (or global `index.md`) if it exists; provides light-user guidance based on Quick Status when `next_action` items are available
 - **PostToolUse**: after any WARM file write, silently refreshes `memory/wiki/index.md` (Phase 1); prompts to update compiled pages (Phase 2)
-- **Stop**: prompts to save session findings, auto-saves veto issues to hot-cache; appends changelog entry to index.md bottom
+- **Stop**: guarded allow-only completion check; returns `{"ok": true}`, honors `stop_hook_active`, never asks the user to save optional findings, and never initiates memory writes
 
 ## Data Sources
 
@@ -186,7 +161,11 @@ When a user requests SEO memory management:
 
 For new projects, create the directory structure defined in the [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md). Key directories: `memory/` (decisions, open-loops, glossary, entities, research, content, audits, monitoring) plus `memory/wiki/` (auto-managed compiled index with optional per-project subdirectories).
 
-> **Templates**: [hot-cache-template.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/hot-cache-template.md) · [glossary-template.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/glossary-template.md) · [Wiki spec](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/proposal-wiki-layer-v3.md)
+> **Templates**: [hot-cache-template.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/hot-cache-template.md) · [glossary-template.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/glossary-template.md) · [Wiki design archive](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/proposal-wiki-layer-v3.md)
+
+### Wiki Layer
+
+`memory-management` owns the wiki schema. Hook-delegated index refreshes may update only `memory/wiki/index.md` and `memory/wiki/<project>/index.md`. Wiki log updates remain explicit `memory-management` operations. Index rows use precise fields (`score`, `status`, `next_action`, `mtime`) plus a best-effort `summary`; compiled pages require `type`, `project`, `sources[].path`, `sources[].hash`, and `last_compiled` frontmatter.
 
 ### 2. Context Lookup Flow
 
@@ -204,9 +183,9 @@ When a user references something unclear, follow this lookup sequence:
 - Is it a custom segment or shorthand?
 
 **Step 4: Check Cold Storage**
-- Search memory/research/keywords/ for historical keyword context
-- Search memory/research/competitors/ for past analyses
-- Search memory/monitoring/reports/ for archived mentions
+- Search `memory/archive/` first for dated `YYYY-MM-DD-` archived files.
+- If the archive points to a source category, follow that trail back to `memory/research/`, `memory/audits/`, or `memory/monitoring/`.
+- Treat COLD findings as historical unless refreshed by the current session.
 
 **Step 5: Ask User**
 - If not found in any layer, ask for clarification

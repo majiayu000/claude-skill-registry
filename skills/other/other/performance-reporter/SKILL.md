@@ -1,7 +1,7 @@
 ---
 name: performance-reporter
-description: 'Generate SEO/GEO dashboards: rankings, traffic, backlinks, AI visibility for stakeholders. SEO报告/绩效仪表盘'
-version: "9.1.0"
+description: 'Use when generating SEO/GEO reports, traffic summaries, ranking reports, KPI dashboards, stakeholder updates, or monthly reports. SEO报告/绩效仪表盘'
+version: "9.5.0"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -9,7 +9,7 @@ when_to_use: "Use when generating SEO performance reports, traffic summaries, ra
 argument-hint: "<domain> [date range]"
 metadata:
   author: aaron-he-zhu
-  version: "9.1.0"
+  version: "9.5.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -63,36 +63,14 @@ metadata:
 
 # Performance Reporter
 
-
-Creates comprehensive SEO and GEO performance reports combining multiple metrics into actionable insights, executive summaries, and visual data presentations for stakeholder communication.
-
-## What This Skill Does
-
-Aggregates SEO/GEO data sources, generates executive summaries and visual reports, benchmarks against goals and competitors, calculates ROI, and provides prioritized recommendations.
+Aggregates SEO/GEO data, builds stakeholder reports, benchmarks goals/competitors, calculates ROI, and turns deltas into prioritized recommendations.
 
 ## Quick Start
 
-Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
-
-### Generate Performance Report
-
-```
+```text
 Create an SEO performance report for [domain] for [time period]
-```
-
-### Executive Summary
-
-```
 Generate an executive summary of SEO performance for [month/quarter]
-```
-
-### Specific Report Types
-
-```
 Create a GEO visibility report for [domain]
-```
-
-```
 Generate a content performance report
 ```
 
@@ -115,78 +93,38 @@ All integrations optional (see [CONNECTORS.md](https://github.com/aaron-he-zhu/s
 
 ## Instructions
 
-When a user requests a performance report:
+When a user requests a performance report, use [references/report-output-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/performance-reporter/references/report-output-templates.md) and cover:
 
-1. **Define Report Parameters** -- Domain, report period, comparison period, report type (Monthly/Quarterly/Annual), audience (Executive/Technical/Client), focus areas.
-
-2. **Create Executive Summary** -- Overall performance rating, key wins/watch areas/action required, metrics at a glance table (traffic, rankings, conversions, DA, AI citations), SEO ROI calculation.
-
-3. **Report Organic Traffic Performance** -- Traffic overview (sessions, users, pageviews, bounce rate), traffic trend visualization, traffic by source/device, top performing pages.
-
-4. **Report Keyword Rankings** -- Rankings overview by position range, distribution change visualization, top improvements and declines, SERP feature performance.
-
-5. **Report GEO/AI Performance** -- AI citation overview, citations by topic, GEO wins, optimization opportunities.
-
-6. **Report Domain Authority (CITE Score)** -- If a CITE audit has been run, include CITE dimension scores (C/I/T/E) with period-over-period trends and veto status. If no audit exists, note as "Not yet evaluated."
-
-7. **Content Quality (CORE-EEAT Score)** -- If content-quality-auditor has been run, include average scores across all 8 CORE-EEAT dimensions with trends. If no audit exists, note as "Not yet evaluated."
-
-8. **Report Backlink Performance** -- Link profile summary, weekly link acquisition, notable new links, competitive position.
-
-9. **Report Content Performance** -- Publishing summary, top performing content, content needing attention, content ROI.
-
-10. **Generate Recommendations** -- Immediate/short-term/long-term actions with priority, expected impact, and owner. Goals for next period.
-
-11. **Compile Full Report** -- Combine all sections with table of contents, appendix (data sources, methodology, glossary).
-
-   > **Reference**: See [references/report-output-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/performance-reporter/references/report-output-templates.md) for complete output templates for all 11 report sections.
+1. **Define Report Parameters** -- Domain, period, comparison period, report type, audience, focus areas, and data freshness.
+2. **Create Executive Summary** -- Overall rating, wins, watch areas, required actions, metrics at a glance (traffic, rankings, conversions, DA/authority, AI citations), and SEO ROI.
+3. **Report Organic Traffic** -- Sessions, users, pageviews, engagement/bounce, trend visualization, source/device split, top pages.
+4. **Report Keyword Rankings** -- Position ranges, distribution change, top improvements/declines, SERP features.
+5. **Report GEO/AI Performance** -- AI citation overview, citations by topic, GEO wins, and optimization opportunities.
+6. **Report Domain Authority (CITE)** -- Include CITE dimension scores and veto status when available; otherwise mark "Not yet evaluated."
+7. **Report Content Quality (CORE-EEAT)** -- Include average scores and trends when available; otherwise mark "Not yet evaluated."
+8. **Report Backlinks** -- Link profile summary, acquisition trend, notable links, competitive position.
+9. **Report Content Performance** -- Publishing summary, top content, content needing attention, and content ROI.
+10. **Generate Recommendations** -- Immediate, short-term, and long-term actions with priority, owner, expected impact, and next-period goals.
+11. **Compile Full Report** -- Add table of contents, appendix, data sources, methodology, and glossary.
 
 ## Example
 
-**User**: "Create a monthly SEO report for cloudhosting.com for January 2025"
-
-**Output** (abbreviated -- full report uses templates from all 11 steps):
-
-```markdown
-# CloudHosting SEO & GEO Performance Report — January 2025
-
-## Executive Summary — Overall Performance: Good
-
-| Metric | Jan 2025 | Dec 2024 | Change | Target | Status |
-|--------|----------|----------|--------|--------|--------|
-| Organic Traffic | 52,100 | 45,200 | +15.3% | 50,000 | On track |
-| Keywords Top 10 | 87 | 79 | +8 | 90 | Watch |
-| Organic Conversions | 684 | 612 | +11.8% | 700 | Watch |
-| Domain Rating | 54 | 53 | +1 | 55 | Watch |
-| AI Citations | 18 | 12 | +50.0% | 20 | Watch |
-
-**SEO ROI**: $8,200 invested / $41,040 organic revenue = 400%
-
-**Immediate**: Fix 37 crawl errors on /pricing/ pages
-**This Month**: Optimize mobile LCP; publish 3 AI Overview comparison pages
-**This Quarter**: Build Wikidata entry for CloudHost Inc.
-```
+Sample output: an executive summary with overall status, metrics-at-a-glance for traffic/rankings/conversions/authority/AI citations, SEO ROI, and immediate/month/quarter actions with owners and dates.
 
 ## Tips for Success
 
-1. **Lead with insights** - Start with what matters, not raw data
-2. **Visualize data** - Charts and graphs improve comprehension
-3. **Compare periods** - Context makes data meaningful
-4. **Include actions** - Every report should drive decisions
-5. **Customize for audience** - Executives need different info than technical teams
-6. **Track GEO metrics** - AI visibility is increasingly important
-
+Lead with insights, compare periods, state data freshness, include owner/deadline/impact for actions, tailor depth to audience, and track GEO/AI citation metrics when in scope.
 
 ### Save Results
 
-Ask "Save these results?" If yes, write a dated summary to `memory/monitoring/YYYY-MM-DD-<topic>.md` with headline finding, actionable items, and open loops.
+Ask "Save these results?" If yes, write `memory/monitoring/YYYY-MM-DD-<topic>.md` with the headline finding, actionable items, and open loops.
 
 ## Reference Materials
 
-- [Report Output Templates](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/performance-reporter/references/report-output-templates.md) — Complete output templates for all 11 report sections
-- [KPI Definitions](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/performance-reporter/references/kpi-definitions.md) — SEO/GEO metric definitions with benchmarks, good ranges, warning thresholds, trend analysis, and attribution guidance
-- [Report Templates by Audience](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/performance-reporter/references/report-templates.md) — Copy-ready templates for executive, marketing, technical, and client audiences
+- [Report Output Templates](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/performance-reporter/references/report-output-templates.md) -- Compact starter blocks for all 11 report sections
+- [KPI Definitions](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/performance-reporter/references/kpi-definitions.md) -- SEO/GEO metric definitions with benchmarks, thresholds, trend analysis, and attribution guidance
+- [Report Templates by Audience](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/performance-reporter/references/report-templates.md) -- Copy-ready templates for executive, marketing, technical, and client audiences
 
 ## Next Best Skill
 
-Primary → [alert-manager](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/alert-manager/SKILL.md) to turn reporting insights into ongoing monitoring rules.
+Primary: [alert-manager](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/alert-manager/SKILL.md) -- turn reporting insights into ongoing monitoring rules.

@@ -1,6 +1,6 @@
 ---
 name: 523-frameworks-micronaut-testing-acceptance-tests
-description: Use when you need to implement acceptance tests from a Gherkin .feature file for Micronaut applications — @acceptance scenarios, @MicronautTest, HttpClient, BaseAcceptanceTest with TestPropertyProvider for Testcontainers and WireMock, *AT suffix, Failsafe. Requires the .feature file in context. Part of the skills-for-java project
+description: Use when you need to implement acceptance tests from a Gherkin .feature file for Micronaut applications — @acceptance scenarios, @MicronautTest, HttpClient, BaseAcceptanceTest with TestPropertyProvider for Testcontainers and WireMock, *AT suffix, Failsafe. Requires the .feature file in context. This should trigger for requests such as Implement Micronaut acceptance tests from a Gherkin feature file; Set up BaseAcceptanceTest with Testcontainers and WireMock for Micronaut. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -14,7 +14,7 @@ Implement happy-path acceptance tests from Gherkin for Micronaut using real HTTP
 
 - Preconditions: .feature file in context; Micronaut project confirmed
 - Parsing scenarios tagged @acceptance / @acceptance-tests
-- BaseAcceptanceTest: @MicronautTest, random port, @Client("/") HttpClient, TestPropertyProvider merging DB + WireMock URLs
+- BaseAcceptanceTest: @MicronautTest, random port, @Client(/) HttpClient, TestPropertyProvider merging DB + WireMock URLs
 - wireMock.resetAll() in @BeforeEach when sharing context
 - Concrete *AT classes: Given/When/Then → setup, HttpClient exchange, AssertJ assertions
 - Maven three-tier split: *Test → Surefire, *IT + *AT → Failsafe

@@ -1,6 +1,6 @@
 ---
 name: 162-java-profiling-analyze
-description: Use when you need to analyze Java profiling data collected during the detection phase — including interpreting flamegraphs, memory allocation patterns, CPU hotspots, threading issues, systematic problem categorization, evidence documentation with profiling-problem-analysis and profiling-solutions markdown files, or prioritizing fixes using Impact/Effort scoring. Part of the skills-for-java project
+description: Use when you need to analyze Java profiling data collected during the detection phase — including interpreting flamegraphs, memory allocation patterns, CPU hotspots, threading issues, systematic problem categorization, evidence documentation with profiling-problem-analysis and profiling-solutions markdown files, or prioritizing fixes using Impact/Effort scoring. This should trigger for requests such as Analyze JFR profile; Analyze the profile; Analyze the performance; Analyze the memory. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -28,6 +28,8 @@ Validate profiling results represent realistic load before analysis. Document as
 - **DOCUMENT**: Record assumptions and limitations in analysis reports
 - **CROSS-REFERENCE**: Use multiple profiling files to validate findings
 - **BEFORE APPLYING**: Read the reference for problem analysis and solutions templates
+- **EDGE CASE**: If request scope is ambiguous, stop and ask a clarifying question before applying changes
+- **EDGE CASE**: If required inputs, files, or tooling are missing, report what is missing and ask whether to proceed with setup guidance
 
 ## When to use this skill
 

@@ -1,6 +1,6 @@
 ---
 name: 133-java-testing-acceptance-tests
-description: Use when you need to implement acceptance tests from a Gherkin .feature file for framework-agnostic Java (no Spring Boot, Quarkus, Micronaut) — finding @acceptance scenarios, happy path with RestAssured, Testcontainers for DB/Kafka, WireMock for external REST. Requires .feature file in context. Part of the skills-for-java project
+description: Use when you need to implement acceptance tests from a Gherkin .feature file for framework-agnostic Java (no Spring Boot, Quarkus, Micronaut) — finding @acceptance scenarios, happy path with RestAssured, Testcontainers for DB/Kafka, WireMock for external REST. Requires .feature file in context. This should trigger for requests such as Review Java code for acceptance tests; Apply best practices for acceptance tests in Java code. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral

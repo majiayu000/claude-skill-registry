@@ -108,7 +108,7 @@ Before declaring a task "Complete," you MUST:
 1.  [ ] **Schema Test**: `echo '{"hook_event_name":"PreToolUse", "tool_name":"Bash", "tool_input":{"command":"rm test"}}' | autorun`
 2.  [ ] **Metadata Test**: `autorun --version` (Verify commit matches current git).
 3.  [ ] **Restart Test**: Confirm PID in `~/.autorun/daemon.lock` has changed.
-4.  [ ] **Path Test**: Verify `~/.claude/plugins/cache/autorun/autorun/0.10.2rc1/hooks/hooks.json` does NOT contain `${CLAUDE_PLUGIN_ROOT}`.
+4.  [ ] **Path Test**: Verify `~/.claude/plugins/cache/autorun/autorun/0.11.0/hooks/hooks.json` does NOT contain `${CLAUDE_PLUGIN_ROOT}`.
 5.  [ ] **Pipes Test**: `cargo build 2>&1 | head -50` (Should be ALLOWED).
 6. [ ] **Status Test**: `autorun --status` (Ensure paths aren't doubled).
 
@@ -120,7 +120,7 @@ If synchronization fails, verify these locations for stale code:
 1.  **Git Source**: `plugins/autorun/src/autorun/`
 2.  **Dev Venv**: `plugins/autorun/.venv/lib/python*/site-packages/autorun/`
 3.  **Build Artifacts**: `plugins/autorun/build/` (DELETE THIS)
-4.  **Claude Cache**: `~/.claude/plugins/cache/autorun/autorun/0.10.2rc1/`
+4.  **Claude Cache**: `~/.claude/plugins/cache/autorun/autorun/0.11.0/`
 5.  **UV Tool**: `~/.local/share/uv/tools/autorun/` (Must be editable)
 6.  **Gemini Extension**: `~/.gemini/extensions/ar/` (Must be symlink)
 7.  **Gemini Venv**: `~/.gemini/extensions/ar/.venv/`
@@ -256,7 +256,7 @@ The hook script is registered but cannot be found or executed.
     2.  **Partial Install**: `hooks/` directory skipped during `shutil.copytree` due to path logic.
 *   **Solution**:
     1.  `install.py` must manually `sed`-replace the variables in `~/.claude/plugins/cache/`.
-    2.  Verify existence with: `ls -l ~/.claude/plugins/cache/autorun/autorun/0.10.2rc1/hooks/hook_entry.py`.
+    2.  Verify existence with: `ls -l ~/.claude/plugins/cache/autorun/autorun/0.11.0/hooks/hook_entry.py`.
 
 ### Layer 4: The Silent Ignore (Bug #4669)
 The hook "succeeds" (exit 0) but the safety guard is ignored.

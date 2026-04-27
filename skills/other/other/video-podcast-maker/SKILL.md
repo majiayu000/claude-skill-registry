@@ -103,9 +103,14 @@ fi
 
 ## Prerequisites Check
 
-!`python3 "${SKILL_DIR}/scripts/check_prereqs.py"`
+**Agent behavior:** Run the pre-flight check below before Step 1. `SKILL_DIR` must already be resolved (see Auto Update Check section above for resolution rules).
 
-**If MISSING reported above**, see README.md for full setup instructions (install commands, API key setup, Remotion project init). The check is backend-aware: backend is resolved as `TTS_BACKEND` env var → `user_prefs.json` (`global.tts.backend`) → `edge` default, then only env vars required by that backend are validated.
+```bash
+SKILL_DIR="${SKILL_DIR:-${CLAUDE_SKILL_DIR}}"
+python3 "${SKILL_DIR}/scripts/check_prereqs.py"
+```
+
+**If MISSING reported**, see README.md for full setup instructions (install commands, API key setup, Remotion project init). The check is backend-aware: backend is resolved as `TTS_BACKEND` env var → `user_prefs.json` (`global.tts.backend`) → `edge` default, then only env vars required by that backend are validated.
 
 ---
 
@@ -194,10 +199,28 @@ Load these files on demand — **do NOT load all at once**:
   - **[workflow-script.md](references/workflow-script.md)** — Pre-workflow + Startup + Steps 1-4 (scripting)
   - **[workflow-production.md](references/workflow-production.md)** — Steps 5-11 (media, TTS, Remotion, render, BGM)
   - **[workflow-publish.md](references/workflow-publish.md)** — Steps 12-15 (subtitles, publish, cleanup, shorts)
-- **[references/design-guide.md](references/design-guide.md)**: Visual minimums, typography, layout patterns, checklists. **MUST load before Step 9.**
+- **[references/design-guide.md](references/design-guide.md)**: Visual minimums, typography, layout patterns, checklists, **animation safety rules**. **MUST load before Step 9.**
 - **[references/design-learning.md](references/design-learning.md)**: Extracting visual patterns from reference videos/images, style profiles. Load only when the user provides a reference or manages profiles.
+- **[references/azure-tts-pitfalls.md](references/azure-tts-pitfalls.md)**: Voice selection guide, Multilingual gotchas, SSML pitfalls, style support matrix. **Load when choosing Azure voice/style or debugging hoarse/missing/glitchy audio.**
 - **[references/troubleshooting.md](references/troubleshooting.md)**: Error fixes, BGM options, preference commands, preference learning. Load on error or user request.
+- **[templates/presets/kinetic-typography/](templates/presets/kinetic-typography/)**: Bold type-driven preset (black BG + mint/yellow accents + character-pop animations). Use for opinion / argument / declaration videos. Load README first.
 - **[examples/](examples/)**: Real production video projects. The agent may reference these for composition structure and `timing.json` format.
+
+### Pre-render audit (recommended)
+
+Before launching Studio for Step 9 review:
+```bash
+python3 ${SKILL_DIR}/scripts/audit_beat_sync.py <Video.tsx> <timing.json>
+```
+Prints a beat-vs-narration alignment table and flags drift > 1.5s. Especially important for kinetic-typography style where each beat must hit a specific narration moment.
+
+### End-of-pipeline acceptance gate (MANDATORY)
+
+After Step 13, before declaring the video done:
+```bash
+python3 ${SKILL_DIR}/scripts/verify_output.py videos/{name}/
+```
+Auto-fixes common omissions (creates `final_video.mp4` if missing; disable with `--no-fix`), validates resolution/codec/duration, checks audio-timing drift, sanity-checks publish_info.md. Exit 0 = green light to publish; exit 2 = warnings only, still publishable. For machine-readable output add `--format json` (auto when piped). Full flag reference in `references/workflow-publish.md`.
 
 ---
 

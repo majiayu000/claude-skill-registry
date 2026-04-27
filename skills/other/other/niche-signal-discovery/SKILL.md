@@ -1,7 +1,7 @@
 ---
 name: niche-signal-discovery
 disable-model-invocation: true
-description: 'Discover niche first-party signals that differentiate Closed Won vs Closed Lost accounts for ICP analysis. Use when the user provides won/lost customer domain lists and wants differential signals (website content, job listings, tech stack, maturity markers) to build account scoring models and prospecting criteria. Triggers: ICP analysis, niche signals, won vs lost analysis, differential signals, signal discovery, ICP signal report, account scoring signals, lead scoring, first-party signals, buyer signals. Before reading this file, first read gtm-meta-skill to understand the Deepline CLI tool and how to use it. Then read this file for guidance on the task.'
+description: 'Discover niche first-party signals that differentiate Closed Won vs Closed Lost accounts for ICP analysis. Use when the user provides won/lost customer domain lists and wants differential signals (website content, job listings, tech stack, maturity markers) to build account scoring models and prospecting criteria. Triggers: ICP analysis, niche signals, won vs lost analysis, differential signals, signal discovery, ICP signal report, account scoring signals, lead scoring, first-party signals, buyer signals. Before reading this file, first read deepline-gtm to understand the Deepline CLI tool and how to use it. Then read this file for guidance on the task.'
 ---
 
 # Niche Signal Discovery
@@ -16,7 +16,7 @@ Discover differential signals between Closed Won and Closed Lost accounts by ext
 
 ## Deepline-First Principle
 
-Use `deepline enrich` for all enrichment, `deepline tools execute` for one-offs, `deepline playground` for inspection. Reruns are idempotent. Refer to `gtm-meta-skill` for command patterns and provider playbooks.
+Use `deepline enrich` for all enrichment, `deepline tools execute` for one-offs, `deepline playground` for inspection. Reruns are idempotent. Refer to `deepline-gtm` for command patterns and provider playbooks.
 
 ## Input requirements
 

@@ -1,6 +1,6 @@
 ---
 name: pr-prep
-description: 'PR preparation: git archaeology, test validation, structured PR body generation. Mandatory user review gate before submission. Triggers: "prepare PR", "PR prep", "submit PR", "create PR body", "write PR description".'
+description: 'Prepare PR commits, validation evidence, and review-ready PR body.'
 skill_api_version: 1
 context:
   window: fork
@@ -19,7 +19,6 @@ metadata:
 allowed-tools: Read, Write, Bash, Grep, Glob
 output_contract: "PR body (markdown), git branch"
 ---
-
 # PR Preparation Skill
 
 Systematic PR preparation that validates tests and generates high-quality PR bodies.

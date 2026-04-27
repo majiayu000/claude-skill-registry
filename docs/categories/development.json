@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19711,
-  "updated_at": "2026-04-26T02:14:23.617529Z",
+  "count": 19712,
+  "updated_at": "2026-04-27T02:15:51.580676Z",
   "skills": [
     {
       "name": "fix",
@@ -199681,6 +199681,24 @@
       "stars": 0,
       "install": "OhadRubin/skills/skills/gap-finder/gap-finder-3",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "skills/pagerunner-skill/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/skills/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "hk-setup",

@@ -1,6 +1,6 @@
 ---
 name: 513-frameworks-micronaut-db-migrations-flyway
-description: Use when you need to add or review Flyway database migrations in a Micronaut application — micronaut-flyway, db/migration scripts, flyway.datasources.* configuration, and alignment with JDBC or Micronaut Data. Part of the skills-for-java project
+description: Use when you need to add or review Flyway database migrations in a Micronaut application — micronaut-flyway, db/migration scripts, flyway.datasources.* configuration, and alignment with JDBC or Micronaut Data. This should trigger for requests such as Add or review Flyway migrations in a Micronaut project; Configure micronaut-flyway or db/migration layout. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -28,6 +28,9 @@ Before applying Flyway or SQL changes, ensure the project compiles. After improv
 - **SAFETY**: If compilation fails, stop immediately
 - **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements
 - **BEFORE APPLYING**: Read the reference for detailed rules and good/bad patterns
+- **EDGE CASE**: If the user goal is ambiguous, stop and ask a clarifying question before editing files or running project-wide commands
+- **EDGE CASE**: If required context, files, credentials, or tools are missing, report the blocker explicitly and ask whether to proceed with setup or fallback guidance
+- **EDGE CASE**: If requested changes conflict with project constraints or safety boundaries, explain the conflict and ask for user confirmation on the preferred trade-off
 
 ## When to use this skill
 

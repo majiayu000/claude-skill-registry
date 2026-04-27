@@ -1,6 +1,6 @@
 ---
 name: 144-java-data-oriented-programming
-description: Use when you need to apply data-oriented programming best practices in Java — including separating code (behavior) from data structures using records, designing immutable data with pure transformation functions, keeping data flat and denormalized with ID-based references, starting with generic data structures converting to specific types when needed, ensuring data integrity through pure validation functions, and creating flexible generic data access layers. Part of the skills-for-java project
+description: Use when you need to apply data-oriented programming best practices in Java — including separating code (behavior) from data structures using records, designing immutable data with pure transformation functions, keeping data flat and denormalized with ID-based references, starting with generic data structures converting to specific types when needed, ensuring data integrity through pure validation functions, and creating flexible generic data access layers. This should trigger for requests such as Improve the code with Data-Oriented Programming; Apply Data-Oriented Programming; Refactor the code with Data-Oriented Programming; Apply Data-Oriented Programming; Refactor the code with Data-Oriented Programming. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral

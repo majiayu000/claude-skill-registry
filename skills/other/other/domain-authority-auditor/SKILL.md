@@ -1,7 +1,7 @@
 ---
 name: domain-authority-auditor
 description: '40-item CITE domain audit: citation, impact, trust, entity scoring with veto checks. 域名权威/网站可信度'
-version: "9.1.0"
+version: "9.5.0"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -10,7 +10,7 @@ argument-hint: "<domain>"
 class: auditor
 metadata:
   author: aaron-he-zhu
-  version: "9.1.0"
+  version: "9.5.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -244,10 +244,10 @@ Same format for Trust and Eminence dimensions.
 
 **Note**: Some items require specialized data (C05-C08 AI citation data, I01 knowledge graph queries, T04-T05 IP/profile analysis). Score what is observable; mark unverifiable items as "N/A — requires [data source]" and exclude from dimension average.
 
-<!-- runbook-sync start: source_sha256=4a5e414fe8ca7082b173cd76f09a081504997534b80ac4dabd45084f80440a61 block_sha256=260ff0119ba5a4719c2dd3c1fce59771f73cbfa4c55acba45f9c010a9e5ddd0a -->
+<!-- runbook-sync start: source_sha256=dbb36bde1b9b78001d322a7c8c5947af20c8eb40ec10a88c6e4d02f65a55f40f block_sha256=ceb6c81df84880f10a89d49230d94d697dc66f01aba480c89efb0493855816db -->
 ## §1 · Handoff Schema (authoritative)
 
-Every auditor-class handoff MUST follow this shape. Emitted audit artifact files (e.g., `memory/audits/**/*.md`) MUST include `class: auditor-output` in their YAML frontmatter so the PostToolUse Artifact Gate and Stop-time archiving hooks can detect them by frontmatter class instead of prose pattern-matching. Files lacking this marker are not treated as audit artifacts regardless of body content.
+Every auditor-class handoff MUST follow this shape. Emitted audit artifact files (e.g., `memory/audits/**/*.md`) MUST include `class: auditor-output` in their YAML frontmatter so the PostToolUse Artifact Gate and guarded auditor archive checks can detect them by frontmatter class instead of prose pattern-matching. Files lacking this marker are not treated as audit artifacts regardless of body content.
 
 ```yaml
 ---
@@ -270,15 +270,17 @@ raw_overall_score: <number>      # REQUIRED for auditors; score before cap
 final_overall_score: <number>    # REQUIRED for auditors; score after cap
 ```
 
-### Backward compatibility (v7.1.0 → v7.2.0 deprecation window)
+### Legacy compatibility for archived outputs
 
-Downstream skills consuming handoffs must treat the cap-related fields as **optional with documented defaults** during the deprecation window. If absent, apply these defaults:
+New auditor-class outputs MUST include the cap-related fields. The Artifact Gate treats missing `cap_applied`, `raw_overall_score`, or `final_overall_score` (unless `status: BLOCKED`) as a validation failure.
+
+Consumers reading pre-v7.2 archived outputs may apply these defaults:
 
 - `cap_applied: false` (assume no cap when field missing)
 - `raw_overall_score: <use final_overall_score>` (treat as equal)
 - `final_overall_score: <use the overall score from the audit, whatever field name>`
 
-This prevents breakage when an audit produced before the upgrade is consumed by a skill after the upgrade. A consuming skill MUST never error on missing cap fields during the deprecation window. After v7.2.0, fields become required for all auditor-class producers; consumers may then treat absence as a BLOCKED upstream.
+This compatibility rule is read-time only; it does not permit new auditor artifacts to omit required auditor-extension fields.
 
 ### Non-auditor skills
 

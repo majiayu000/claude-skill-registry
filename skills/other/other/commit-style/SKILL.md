@@ -3,8 +3,10 @@ name: commit-style
 description: Crafts and generates professional conventional commit messages following Angular/Conventional Commits format. Use when committing changes, writing git commit messages, or when user mentions commit message.
 format: 2025-10-02
 version: 1.0.0
-status: active
+status: ACTIVE
 updated: 2026-04-15
+triggers:
+  - "committing changes, writing git commit messages, or when user mentions commit message"
 ---
 
 # Commit Style — Conventional Commits

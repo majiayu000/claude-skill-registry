@@ -1,7 +1,7 @@
 ---
 name: entity-optimizer
 description: 'Build entity presence in Knowledge Graph, Wikidata, AI systems for brand recognition and citations. 实体优化/知识图谱'
-version: "9.1.0"
+version: "9.5.0"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -9,7 +9,7 @@ when_to_use: "Use when optimizing entity presence for Knowledge Graph, Wikidata,
 argument-hint: "<entity name or brand>"
 metadata:
   author: aaron-he-zhu
-  version: "9.1.0"
+  version: "9.5.0"
   geo-relevance: "high"
   tags:
     - seo
@@ -203,7 +203,7 @@ Produce an Entity Optimization Report with: overview (entity/type/date), signal 
 
 ### Save Results
 
-Ask "Save these results for future sessions?" — if yes, write `YYYY-MM-DD-<topic>.md` to `memory/`. Auto-save veto issues to `memory/hot-cache.md`.
+Ask "Save these results for future sessions?" — if yes, write the canonical entity profile to `memory/entities/<entity-slug>.md` using the Profile schema above. If the entity is project-critical, also add a 1-3 line pointer to `memory/hot-cache.md`; do not save canonical profiles to the generic `memory/YYYY-MM-DD-<topic>.md` pattern.
 
 ## Example
 

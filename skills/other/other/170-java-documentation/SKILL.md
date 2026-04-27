@@ -1,6 +1,6 @@
 ---
 name: 170-java-documentation
-description: Use when you need to generate or improve Java project documentation — including README.md files, package-info.java files, and Javadoc enhancements — through a modular, step-based interactive process that adapts to your specific documentation needs. Part of the skills-for-java project
+description: Use when you need to generate or improve Java project documentation — including README.md files, package-info.java files, and Javadoc enhancements — through a modular, step-based interactive process that adapts to your specific documentation needs. This should trigger for requests such as Improve the code with documentation; Apply documentation; Refactor the code with documentation. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -25,6 +25,8 @@ Before applying any documentation generation, ensure the project validates. If v
 - **MANDATORY**: Run `./mvnw validate` or `mvn validate` before applying any documentation generation
 - **SAFETY**: If validation fails, stop immediately — do not proceed until all validation errors are resolved
 - **BEFORE APPLYING**: Read the reference for detailed good/bad examples, constraints, and safeguards for each documentation generation pattern
+- **EDGE CASE**: If request scope is ambiguous, stop and ask a clarifying question before applying changes
+- **EDGE CASE**: If required inputs, files, or tooling are missing, report what is missing and ask whether to proceed with setup guidance
 
 ## When to use this skill
 

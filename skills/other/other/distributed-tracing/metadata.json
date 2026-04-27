@@ -6,7 +6,7 @@
   "category": "other",
   "source": "github.com/wshobson/agents",
   "dir_name": "distributed-tracing",
-  "downloaded_at": "2026-03-07T01:33:59.128631Z",
+  "downloaded_at": "2026-04-27T02:01:48.865190Z",
   "author": "wshobson",
   "source_url": "https://github.com/wshobson/agents/blob/main/plugins/observability-monitoring/skills/distributed-tracing/SKILL.md",
   "license": "NOASSERTION",

@@ -1,6 +1,6 @@
 ---
 name: 702-technologies-wiremock
-description: Use when you need framework-agnostic WireMock guidance — stub design, JSON or programmatic mappings, precise request matching, response bodies and faults, classpath fixtures, isolation and reset between tests, verification of calls, dynamic ports and base URLs, and avoiding flaky stubs — without choosing Spring Boot, Quarkus, or Micronaut. Part of the skills-for-java project
+description: Use when you need framework-agnostic WireMock guidance — stub design, JSON or programmatic mappings, precise request matching, response bodies and faults, classpath fixtures, isolation and reset between tests, verification of calls, dynamic ports and base URLs, and avoiding flaky stubs — without choosing Spring Boot, Quarkus, or Micronaut. This should trigger for requests such as Design or review WireMock stubs (JSON mappings or Java DSL); Improve request matching, isolation, or reset strategy for HTTP mocks; Add or fix verification of outbound HTTP calls to a WireMock server; Debug flaky tests involving WireMock or unmatched request journals. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -30,6 +30,9 @@ Keep recommendations at the WireMock and HTTP-stub layer unless the user explici
 - **CONTRACTS**: Defer OpenAPI document structure and linting to `@701-technologies-openapi`
 - **MANDATORY**: Regenerate skills with `./mvnw clean install -pl skills-generator` after editing skill or system-prompt XML in this repo
 - **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` before promoting changes
+- **EDGE CASE**: If the user goal is ambiguous, stop and ask a clarifying question before editing files or running project-wide commands
+- **EDGE CASE**: If required context, files, credentials, or tools are missing, report the blocker explicitly and ask whether to proceed with setup or fallback guidance
+- **EDGE CASE**: If requested changes conflict with project constraints or safety boundaries, explain the conflict and ask for user confirmation on the preferred trade-off
 
 ## When to use this skill
 

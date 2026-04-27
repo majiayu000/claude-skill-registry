@@ -1,6 +1,6 @@
 ---
 name: 130-java-testing-strategies
-description: Use when you need to apply testing strategies for Java code — RIGHT-BICEP to guide test creation, A-TRIP for test quality characteristics, or CORRECT for verifying boundary conditions. Part of the skills-for-java project
+description: Use when you need to apply testing strategies for Java code — RIGHT-BICEP to guide test creation, A-TRIP for test quality characteristics, or CORRECT for verifying boundary conditions. This should trigger for requests such as Review Java code for testing strategies; Apply RIGHT-BICEP testing strategies in Java code; Apply A-TRIP testing strategies in Java code; Apply CORRECT boundary condition verification in Java code. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -25,6 +25,9 @@ Before applying any test strategy changes, ensure the project compiles. If compi
 - **SAFETY**: If compilation fails, stop immediately and do not proceed — compilation failure is a blocking condition
 - **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements
 - **BEFORE APPLYING**: Read the reference for detailed examples, good/bad patterns, and constraints
+- **EDGE CASE**: If the user goal is ambiguous, stop and ask a clarifying question before editing files or running project-wide commands
+- **EDGE CASE**: If required context, files, credentials, or tools are missing, report the blocker explicitly and ask whether to proceed with setup or fallback guidance
+- **EDGE CASE**: If requested changes conflict with project constraints or safety boundaries, explain the conflict and ask for user confirmation on the preferred trade-off
 
 ## When to use this skill
 

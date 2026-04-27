@@ -1,6 +1,6 @@
 ---
 name: 012-agile-epic
-description: Guides the creation of agile epics with comprehensive definition including business value, success criteria, and breakdown into user stories. Use when the user wants to create an agile epic, define large bodies of work, break down features into user stories, or document strategic initiatives. Part of the skills-for-java project
+description: Guides the creation of agile epics with comprehensive definition including business value, success criteria, and breakdown into user stories. Use when the user wants to create an agile epic, define large bodies of work, break down features into user stories, or document strategic initiatives. This should trigger for requests such as Create an agile epic; Write an epic; I need to create an epic; Define an epic; Epic definition. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral

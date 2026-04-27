@@ -1,6 +1,6 @@
 ---
 name: 422-frameworks-quarkus-testing-integration-tests
-description: Use when you need to write or improve integration tests for Quarkus — including @QuarkusTest, Dev Services for automatic container provisioning, Testcontainers via QuarkusTestResourceLifecycleManager, WireMock for external HTTP stubs, @QuarkusIntegrationTest for black-box testing against packaged artifacts, REST Assured, data isolation strategies (@TestTransaction vs @BeforeEach cleanup), and Maven Surefire/Failsafe three-tier split (*Test, *IT, *AT). Part of the skills-for-java project
+description: Use when you need to write or improve integration tests for Quarkus — including @QuarkusTest, Dev Services for automatic container provisioning, Testcontainers via QuarkusTestResourceLifecycleManager, WireMock for external HTTP stubs, @QuarkusIntegrationTest for black-box testing against packaged artifacts, REST Assured, data isolation strategies (@TestTransaction vs @BeforeEach cleanup), and Maven Surefire/Failsafe three-tier split (*Test, *IT, *AT). This should trigger for requests such as Add or improve integration tests in a Quarkus project; Configure Testcontainers or Dev Services for Quarkus tests; Add WireMock stubs for external HTTP dependencies in Quarkus integration tests; Set up @QuarkusIntegrationTest for packaged artifact or native binary testing; Fix test data isolation or configure Maven Surefire/Failsafe split. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral

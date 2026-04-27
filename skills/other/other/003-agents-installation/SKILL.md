@@ -1,6 +1,6 @@
 ---
 name: 003-agents-installation
-description: Use when you need to install the embedded robot agents into either .cursor/agents or .claude/agents, selecting the destination interactively and copying the embedded agent definitions from project assets. Part of the skills-for-java project
+description: Use when you need to install the embedded robot agents into either .cursor/agents or .claude/agents, selecting the destination interactively and copying the embedded agent definitions from project assets. This should trigger for requests such as Install embedded agents; Bootstrap .cursor/agents; Bootstrap .claude/agents; Copy robot agents. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral

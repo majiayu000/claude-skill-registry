@@ -1,6 +1,6 @@
 ---
 name: provenance
-description: 'Trace knowledge artifact lineage and sources. Find orphans, stale citations. Triggers: "where did this come from", "trace this learning", "knowledge lineage".'
+description: 'Trace where knowledge, decisions, or artifacts came from.'
 skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash
 context:
@@ -16,7 +16,6 @@ metadata:
   internal: true
 output_contract: "stdout: lineage report"
 ---
-
 # Provenance Skill
 
 Trace knowledge artifact lineage to sources.

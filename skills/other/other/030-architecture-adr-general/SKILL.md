@@ -1,6 +1,6 @@
 ---
 name: 030-architecture-adr-general
-description: Use when you need to generate Architecture Decision Records (ADRs) for a Java project through an interactive, conversational process that systematically gathers context, stakeholders, options, and outcomes to produce well-structured ADR documents. Part of the skills-for-java project
+description: Use when you need to generate Architecture Decision Records (ADRs) for a Java project through an interactive, conversational process that systematically gathers context, stakeholders, options, and outcomes to produce well-structured ADR documents. This should trigger for requests such as Generate ADR; Create Architecture Decision Record; Document architecture decision; Architecture Decision Record for Java. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -15,6 +15,14 @@ Generate Architecture Decision Records (ADRs) for Java projects through an inter
 - ADR file storage configuration
 - Conversational information gathering: context, stakeholders, decision drivers, options with pros/cons, outcome, consequences
 - MADR template generation
+
+## Constraints
+
+Handle ambiguity and blockers explicitly to avoid implicit assumptions.
+
+- **EDGE CASE**: If the user goal is ambiguous, stop and ask a clarifying question before editing files or running project-wide commands
+- **EDGE CASE**: If required context, files, credentials, or tools are missing, report the blocker explicitly and ask whether to proceed with setup or fallback guidance
+- **EDGE CASE**: If requested changes conflict with project constraints or safety boundaries, explain the conflict and ask for user confirmation on the preferred trade-off
 
 ## When to use this skill
 

@@ -1,6 +1,6 @@
 ---
 name: 703-technologies-fuzzing-testing
-description: Use when you need to add or review fuzz testing for Java APIs with CATS — including contract-driven negative testing, malformed payload validation, boundary input exploration, CI integration, reproducible failures, and local execution guidance. Part of the skills-for-java project
+description: Use when you need to add or review fuzz testing for Java APIs with CATS — including contract-driven negative testing, malformed payload validation, boundary input exploration, CI integration, reproducible failures, and local execution guidance. This should trigger for requests such as Add fuzz testing to a Java project; Use CATS for API negative testing; Review CI quality gates for API contract robustness; Improve boundary and malformed input test coverage. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -30,6 +30,8 @@ Before applying any fuzz testing changes, ensure the project compiles. If compil
 - **MANDATORY**: Regenerate skills with `./mvnw clean install -pl skills-generator` after editing skill XML
 - **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements
 - **BEFORE APPLYING**: Read the reference for detailed examples, good/bad patterns, and constraints
+- **EDGE CASE**: If request scope is ambiguous, stop and ask a clarifying question before applying changes
+- **EDGE CASE**: If required inputs, files, or tooling are missing, report what is missing and ask whether to proceed with setup guidance
 
 ## When to use this skill
 

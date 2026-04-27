@@ -1,6 +1,6 @@
 ---
 name: prompt-master
-version: 1.5.0
+version: 1.6.0
 description: Generates optimized prompts for any AI tool. Use when writing, fixing, improving, or adapting a prompt for LLM, Cursor, Midjourney, image AI, video AI, coding agents, or any other AI tool.
 ---
 
@@ -68,11 +68,14 @@ Identify the tool and route accordingly. Read full templates from [references/te
 ---
 
 **Claude (claude.ai, Claude API, Claude 4.x)**
-- Be explicit and specific — Claude follows instructions literally, not by inference
+- Be explicit and specific — Claude 4.x follows instructions literally. Opus 4.7 especially: it does exactly what you say, nothing more. Missing context = narrow literal output, not a smart guess.
 - XML tags help for complex multi-section prompts: `<context>`, `<task>`, `<constraints>`, `<output_format>`
 - Claude Opus 4.x over-engineers by default — add "Only make changes directly requested. Do not add features or refactor beyond what was asked."
 - Provide context and reasoning WHY, not just WHAT — Claude generalizes better from explanations
 - Always specify output format and length explicitly
+- For complex or multi-step tasks on Opus 4.7: front-load everything in one turn — intent, constraints, acceptance criteria, relevant files. Every extra back-and-forth turn adds reasoning overhead and token cost.
+- Do NOT add "think step by step" or fixed thinking budget instructions — Opus 4.7 uses adaptive thinking and calibrates depth automatically. To influence depth: "Think carefully before responding" (more) or "Prioritize responding quickly" (less).
+- Use Template M for agentic or multi-step tasks on Opus 4.7.
 
 ---
 
@@ -158,10 +161,15 @@ Identify the tool and route accordingly. Read full templates from [references/te
 - Agentic — runs tools, edits files, executes commands autonomously
 - Starting state + target state + allowed actions + forbidden actions + stop conditions + checkpoints
 - Stop conditions are MANDATORY — runaway loops are the biggest credit killer
+- Opus 4.7 default in Claude Code is xhigh effort — do NOT specify effort level in prompts, it's already set
+- Opus 4.7 is more literal than 4.6 — vague first turns produce narrower results. Front-load everything: intent, file scope, constraints, acceptance criteria, session strategy.
+- Opus 4.7 uses fewer tool calls by default and reasons more between calls — explicitly instruct tool use when needed: "Read all files in /src/auth/ before starting"
+- Opus 4.7 spawns fewer subagents by default — explicitly request when needed: "Use a subagent to investigate X so it stays out of main context"
 - Claude Opus 4.x over-engineers — add "Only make changes directly requested. Do not add extra files, abstractions, or features."
 - Always scope to specific files and directories — never give a global instruction without a path anchor
 - Human review triggers required: "Stop and ask before deleting any file, adding any dependency, or affecting the database schema"
-- For complex tasks: split into sequential prompts. Output Prompt 1 and add "➡️ Run this first, then ask for Prompt 2" below it. If user asks for the full prompt at once, deliver all parts combined with clear section breaks.
+- Session hygiene matters: new task = new session. Use /rewind instead of correcting mid-conversation. /compact at ~50% context, not 90%.
+- For complex tasks: use Template M. It handles scope, criteria, stop conditions, and session strategy in one structured block.
 
 ---
 

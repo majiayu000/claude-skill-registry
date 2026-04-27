@@ -1,6 +1,6 @@
 ---
 name: 114-java-maven-search
-description: Covers Maven Central search (Search API, maven-metadata.xml, artifact URLs) and project-local update reports via versions-maven-plugin (display-property-updates, display-dependency-updates, display-plugin-updates). Use when finding or verifying coordinates, browsing Central, or checking what newer versions apply to the user’s pom.xml. Part of the skills-for-java project
+description: Covers Maven Central search (Search API, maven-metadata.xml, artifact URLs) and project-local update reports via versions-maven-plugin (display-property-updates, display-dependency-updates, display-plugin-updates). Use when finding or verifying coordinates, browsing Central, or checking what newer versions apply to the user’s pom.xml. This should trigger for requests such as Search Maven Central; Find Maven dependency; Maven coordinates; groupId artifactId version. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -24,6 +24,9 @@ Verify coordinates against the Search API or repository responses before asserti
 - **VERIFY**: Do not invent GAVs — confirm via Search API or successful GET of metadata/POM
 - **FORMAT**: Always express full coordinates as `groupId:artifactId:version` when a version is fixed
 - **BEFORE APPLYING**: Read the reference for step-by-step workflows, query syntax, and URL patterns
+- **EDGE CASE**: If the user goal is ambiguous, stop and ask a clarifying question before editing files or running project-wide commands
+- **EDGE CASE**: If required context, files, credentials, or tools are missing, report the blocker explicitly and ask whether to proceed with setup or fallback guidance
+- **EDGE CASE**: If requested changes conflict with project constraints or safety boundaries, explain the conflict and ask for user confirmation on the preferred trade-off
 
 ## When to use this skill
 

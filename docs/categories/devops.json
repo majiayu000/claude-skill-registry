@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5335,
-  "updated_at": "2026-04-26T02:14:23.852300Z",
+  "count": 5336,
+  "updated_at": "2026-04-27T02:15:51.809499Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -65843,6 +65843,24 @@
       "stars": 0,
       "install": "nikhilvallishayee/universal-pattern-space/.claude/skills/pattern-space/wisdom/abrahamic/christianity-aramaic-wisdom",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "taste-eval",

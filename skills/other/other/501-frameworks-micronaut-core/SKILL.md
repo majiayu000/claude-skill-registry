@@ -1,6 +1,6 @@
 ---
 name: 501-frameworks-micronaut-core
-description: Use when building or reviewing Micronaut applications — Micronaut.run bootstrap, @Singleton/@Prototype, @Factory beans, @ConfigurationProperties, environments, @Requires, @Controller vs services, @Scheduled, graceful shutdown, @ExecuteOn for blocking work, and Jakarta-consistent APIs. Part of the skills-for-java project
+description: Use when building or reviewing Micronaut applications — Micronaut.run bootstrap, @Singleton/@Prototype, @Factory beans, @ConfigurationProperties, environments, @Requires, @Controller vs services, @Scheduled, graceful shutdown, @ExecuteOn for blocking work, and Jakarta-consistent APIs. This should trigger for requests such as Review Java code for Micronaut application structure and beans; Apply best practices for Micronaut configuration, @Requires, and factories; Improve scheduling, shutdown, or threading in Micronaut services. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral

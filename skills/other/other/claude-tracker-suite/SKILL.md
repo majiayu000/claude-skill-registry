@@ -132,6 +132,10 @@ claude-tracker                           # All recent sessions
 claude-tracker vscode                    # VS Code sessions only
 ```
 
+When speculator is running, the session listing includes:
+- **Header**: Ghostty tab count and window count alongside running/inactive/VS Code counts
+- **TTY badges**: Purple `s000`–`s010` badge per session showing which Ghostty tab it occupies
+
 ## Detect Projects
 
 ```bash
@@ -260,8 +264,25 @@ Query functions in `tracker-utils.js`:
 - `getReposForSession(sid)` — find repos a session touched
 - `getRecentCommits({hours, repoPath})` — recent commits across sessions
 - `getRecentGitEvents({hours})` — raw event timeline
+- `loadSpeculatorData()` — load speculator snapshot (Ghostty tab → session map)
+- `getSessionTTY(sessionId, speculatorData)` — look up Ghostty TTY for a session
 
 The `/session-report` command generates a Markdown dashboard combining session status with git activity.
+
+## Related: Speculator (Ghostty Tab Map)
+
+The speculator daemon (`~/.claude/scripts/speculator/`) maps Ghostty terminal tabs to running Claude Code sessions every 5 minutes. It integrates with the tracker suite via two functions in `tracker-utils.js`:
+
+| Function | Purpose |
+|----------|---------|
+| `loadSpeculatorData()` | Load latest speculator snapshot (returns null if stale >10min or missing) |
+| `getSessionTTY(sessionId, speculatorData)` | Look up which Ghostty TTY a session is running on |
+
+`list-sessions.js` uses these to add Ghostty tab counts to the header and purple TTY badges per session. The snapshot JSON at `~/.claude/scripts/speculator/data/ghostty-sessions.json` is also available for direct consumption by other tools.
+
+The Markdown view is synced to `~/.claude/agent_docs/ghostty-sessions.md` for on-demand reading by any Claude session.
+
+Check daemon health: `bash ~/.claude/scripts/speculator/status.sh`
 
 ## Related: Soul Registry
 

@@ -1,6 +1,6 @@
 ---
 name: 041-planning-plan-mode
-description: Use when creating a plan using Plan model and enhancing structured design plans in Cursor Plan mode for Java implementations. Use when the user wants to create a plan, design an implementation, structure a development plan, or use plan mode for outside-in TDD, feature implementation, or refactoring work. Part of the skills-for-java project
+description: Use when creating a plan using Plan model and enhancing structured design plans in Cursor Plan mode for Java implementations. Use when the user wants to create a plan, design an implementation, structure a development plan, or use plan mode for outside-in TDD, feature implementation, or refactoring work. This should trigger for requests such as Create a plan with Cursor Plan mode; Write a plan with Claude Plan mode; Design an implementation plan; Structure a development plan. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -26,8 +26,8 @@ Gather context before drafting. Include Execution Instructions in every plan. Ne
 - **MANDATORY**: Run `date` before starting to get date prefix for plan filename
 - **MUST**: Read the reference template fresh—do not use cached content
 - **MUST**: Ask one or two questions at a time; never all at once
-- **MUST**: Validate summary ("Does this capture what you need?") before proposing plan creation
-- **MUST**: Wait for user to confirm "proceed" before generating the plan
+- **MUST**: Validate summary (Does this capture what you need?) before proposing plan creation
+- **MUST**: Wait for user to confirm proceed before generating the plan
 - **MUST**: Ask the user where they want to store the plan before generating the plan artifact
 - **MUST**: Include Execution Instructions section in every generated plan
 
@@ -54,7 +54,7 @@ Read `references/041-planning-plan-mode.md` and ask one or two questions at a ti
 
 2. **Validate summary and confirm proceed**
 
-Summarize understanding, ask "Does this capture what you need?", and wait for explicit "proceed" before creating the plan artifact.
+Summarize understanding, ask Does this capture what you need?, and wait for explicit proceed before creating the plan artifact.
 
 3. **Confirm plan storage location**
 

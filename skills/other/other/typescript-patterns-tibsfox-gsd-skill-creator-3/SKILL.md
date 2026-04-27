@@ -1,6 +1,12 @@
 ---
 name: typescript-patterns
 description: TypeScript best practices and patterns. Use when writing TypeScript, fixing type errors, or working with generics.
+version: 1.0.0
+format: 2025-10-02
+triggers:
+  - "writing TypeScript, fixing type errors, or working with generics"
+updated: 2026-04-25
+status: ACTIVE
 ---
 
 # TypeScript Patterns

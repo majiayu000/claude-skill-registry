@@ -1,6 +1,6 @@
 ---
 name: 043-planning-github-issues
-description: Use when you need the GitHub CLI (`gh`) to verify installation, list issues (all or by milestone) as markdown tables, fetch issue bodies and comments for analysis, or hand off to @014-agile-user-story when creating user stories from GitHub threads. Uses an interactive install gate — if `gh` is missing, ask whether to show installation guidance before any issue commands. Part of the skills-for-java project
+description: Use when you need the GitHub CLI (`gh`) to verify installation, list issues (all or by milestone) as markdown tables, fetch issue bodies and comments for analysis, or hand off to @014-agile-user-story when creating user stories from GitHub threads. Uses an interactive install gate — if `gh` is missing, ask whether to show installation guidance before any issue commands. This should trigger for requests such as gh issue list; List GitHub issues; Issues in milestone; GitHub CLI issues; gh issue view comments. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral

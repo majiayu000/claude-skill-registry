@@ -1,6 +1,6 @@
 ---
 name: 163-java-profiling-refactor
-description: Use when you need to refactor Java code based on profiling analysis findings — including reviewing docs/profiling-problem-analysis and docs/profiling-solutions, identifying specific performance bottlenecks, and implementing targeted code changes to address CPU, memory, or threading issues. Part of the skills-for-java project
+description: Use when you need to refactor Java code based on profiling analysis findings — including reviewing docs/profiling-problem-analysis and docs/profiling-solutions, identifying specific performance bottlenecks, and implementing targeted code changes to address CPU, memory, or threading issues. This should trigger for requests such as Refactor the code with profiling; Apply profiling; Refactor the code with profiling; Optimize hot path. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -26,6 +26,8 @@ Verify that changes pass all tests before considering the refactoring complete.
 - **MANDATORY**: Run `./mvnw clean verify` or `mvn clean verify` after applying refactoring
 - **SAFETY**: If tests fail, fix issues before proceeding
 - **BEFORE APPLYING**: Read the analysis and solutions documents for specific recommendations
+- **EDGE CASE**: If request scope is ambiguous, stop and ask a clarifying question before applying changes
+- **EDGE CASE**: If required inputs, files, or tooling are missing, report what is missing and ask whether to proceed with setup guidance
 
 ## When to use this skill
 

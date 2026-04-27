@@ -8,7 +8,7 @@ disable-model-invocation: false
 
 Run a high-confidence demo recipe to show the user what Deepline can do. Pick the most relevant recipe below, or default to Recipe 1 if no context is given.
 
-**Always prefer the hardcoded recipes below.** `/gtm-meta-skill` is always available as a fallback but should only be used if: (a) a recipe command fails and all fallbacks are exhausted, or (b) the user's ask doesn't match any recipe here. Never invoke it preemptively.
+**Always prefer the hardcoded recipes below.** `/deepline-gtm` is always available as a fallback but should only be used if: (a) a recipe command fails and all fallbacks are exhausted, or (b) the user's ask doesn't match any recipe here. Never invoke it preemptively.
 
 ## Execution flow
 
@@ -81,7 +81,7 @@ Register the output CSV after this step.
 
 ### Step 3 — Display results
 
-Show a summary table: name, company, email, LinkedIn URL. Tell the user emails were filled via the dedicated LinkedIn-to-email waterfall. Mention they can go deeper — phone, firmographics, job change signals — with `/gtm-meta-skill`.
+Show a summary table: name, company, email, LinkedIn URL. Tell the user emails were filled via the dedicated LinkedIn-to-email waterfall. Mention they can go deeper — phone, firmographics, job change signals — with `/deepline-gtm`.
 
 ### Fallback (if Step 1 errors)
 
@@ -101,6 +101,6 @@ deepline tools execute apollo_search_people_with_match --payload '{
 
 ### Last resort
 
-If all commands fail, tell the user, then invoke `/gtm-meta-skill`:
+If all commands fail, tell the user, then invoke `/deepline-gtm`:
 
 > Find 5 CTOs at startups in New York with their emails and LinkedIn profiles.

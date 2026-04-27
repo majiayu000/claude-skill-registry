@@ -29,7 +29,7 @@ If `~/.turbo/repo/` exists, identify which installed skills are turbo skills:
 
 **Verification rule (mandatory before routing in Step 4):** For every candidate skill that is about to be routed as turbo, confirm with a fresh `test -d ~/.turbo/repo/skills/<name>` check that the skill actually lives in the turbo repo. Do not rely on remembered listings from earlier in the session, filename hits in grep output, or assumptions based on where a SKILL.md was read from. A miss here mislabels a user/project skill as turbo, triggers the contribution flow unnecessarily, and can introduce session-specific content into a shared skill — so the check is not optional.
 
-**Exception:** If the current project IS the turbo repo (i.e., the working directory contains this skill collection), route turbo skill changes directly to `skills/` in the project directory. Skip the installed-copy indirection and the contribution flow.
+**Exception:** If the current project IS the turbo repo (i.e., the working directory contains this skill collection), route turbo skill lessons through the **Existing user/project skill** destination in Step 4 — edits go directly to `skills/<name>/` in the project, with no installed-copy indirection and no contribution flow.
 
 ## Step 2: Identify Session Skills and Scan for Lessons
 
@@ -76,12 +76,12 @@ Assign each surviving lesson to exactly one destination.
 
 | Destination | Criteria |
 |---|---|
-| **Existing turbo skill** | Lesson would improve a turbo skill's instructions, supporting files, or reference materials, add a missing edge case, correct its workflow, or refine its trigger conditions. Route to any turbo skill whose *domain* covers the lesson — not just the skill worked on in this session. **Before routing here, run `test -d ~/.turbo/repo/skills/<name>`; if the directory does not exist, route to the Existing user/project skill destination instead.** Changes go to the installed copy at `~/.claude/skills/`. If `repoMode` is `"fork"` or `"source"`, also apply to `~/.turbo/repo/` and flag for contribution (see Step 6). |
-| **Existing user/project skill** | Same criteria as above, but for non-turbo skills. Changes go to the skill file directly. No contribution flow. |
-| **New skill** | A cohesive body of knowledge emerged that deserves its own on-demand context. The test: would this knowledge be too large for a CLAUDE.md section, and should it only be loaded when relevant? See the skill categories table below. |
-| **Project CLAUDE.md / AGENTS.md** | Intentional project decisions: conventions, architecture, stack choices, build setup, module boundaries. Also factual corrections to CLAUDE.md content (wrong commands, outdated paths, incorrect conventions) — fix these directly, do not defer to Project improvements. |
+| **Project improvements** | Actionable improvement to existing **code**: refactoring, performance, reliability, readability, testing, or DX. Not for documentation fixes — factual errors in CLAUDE.md belong in the **Project CLAUDE.md / AGENTS.md** row. Route to `.turbo/improvements.md` via the `/note-improvement` skill. |
 | **Auto memory** | Discovered knowledge with no skill home: API quirks, debugging workarounds, compiler gotchas, tool pitfalls, user preferences. Must not overlap with any existing skill's domain — if it does, route to the skill instead (see skill-first rule above). |
-| **Project improvements** | Actionable improvement to existing **code**: refactoring, performance, reliability, readability, testing, or DX. Not for documentation fixes — factual errors in CLAUDE.md belong in the row above. Route to `.turbo/improvements.md` via the `/note-improvement` skill. |
+| **Project CLAUDE.md / AGENTS.md** | Intentional project decisions: conventions, architecture, stack choices, build setup, module boundaries. Also factual corrections to CLAUDE.md content (wrong commands, outdated paths, incorrect conventions) — fix these directly, do not defer to Project improvements. |
+| **Existing user/project skill** | Lesson would improve a skill's instructions, supporting files, or reference materials, add a missing edge case, correct its workflow, or refine its trigger conditions. Route to any skill whose *domain* covers the lesson — not just the skill worked on in this session. Changes go to the skill file directly. No contribution flow. |
+| **New skill** | A cohesive body of knowledge emerged that deserves its own on-demand context. The test: would this knowledge be too large for a CLAUDE.md section, and should it only be loaded when relevant? See the skill categories table below. |
+| **Existing turbo skill** | Same criteria as **Existing user/project skill** above, but for turbo skills. **Before routing here, run `test -d ~/.turbo/repo/skills/<name>`; if the directory does not exist, route to the Existing user/project skill destination instead.** Changes go to the installed copy at `~/.claude/skills/`. If `repoMode` is `"fork"` or `"source"`, flag for contribution (see Step 6). |
 | **No destination** | Does not clearly fit any destination. Drop it. Routing a weak lesson is worse than losing it. |
 
 **Skill categories:**
@@ -126,12 +126,15 @@ Then use `AskUserQuestion` with these options: **Approve** or **Reject**.
 
 Apply approved changes in order:
 
-1. **Updates to existing files** — Read the target, find the right section, append or update in place. Match the tone and format already present. For auto memory, follow the memory system conventions from the system prompt. For user/project skill updates (any file inside the skill directory — SKILL.md, references, scripts, assets), run `/create-skill` to apply the changes.
-2. **Updates to turbo skills** — Read `~/.turbo/repo/SKILL-CONVENTIONS.md` for the turbo project's skill conventions. Use these conventions when editing turbo skills. Each turbo skill has two copies. The installed copy under `~/.claude/skills/<name>/` takes effect for the user immediately; the source copy under `~/.turbo/repo/skills/<name>/` is the basis for upstream contributions. For each lesson routed to a turbo skill:
-   1. Run `/create-skill` to update the installed copy at `~/.claude/skills/<name>/` (any file inside the skill directory — SKILL.md, references, scripts, assets). The user sees the effect immediately.
-   2. If `repoMode` is `"fork"` or `"source"`: use `AskUserQuestion` to ask "These turbo skill improvements could benefit other users. Apply them to the turbo repo and submit upstream?" When the user confirms, apply the same changes to the matching path under `~/.turbo/repo/skills/<name>/`, stage them (`git -C ~/.turbo/repo add skills/<name>/`), and run `/contribute-turbo`.
-3. **Improvements** — For items routed to project improvements, run `/note-improvement` with the summary, location, and rationale for each.
-4. **New skills** — Run `/create-skill` for each new skill. Provide the trigger conditions and relevant context from the session.
+1. **Improvements** — For items routed to project improvements, run `/note-improvement` with the summary, location, and rationale for each.
+2. **Updates to auto memory** — Read the target, find the right section, append or update in place, following the memory system conventions from the system prompt.
+3. **Updates to CLAUDE.md / AGENTS.md** — Read the target, find the right section, append or update in place. Match the tone and format already present.
+4. **Updates to user/project skills** — Run `/create-skill` to apply changes to any file inside the skill directory (SKILL.md, references, scripts, assets).
+5. **New skills** — Run `/create-skill` for each new skill. Provide the trigger conditions and relevant context from the session.
+6. **Updates to turbo skills** — For each lesson routed to a turbo skill:
+   1. Read `~/.turbo/repo/SKILL-CONVENTIONS.md` so turbo-specific conventions are in context before any editing.
+   2. Run `/create-skill` to update the installed copy at `~/.claude/skills/<name>/`.
+   3. After the edit is in place and reviewed, if `repoMode` is `"fork"` or `"source"`, use `AskUserQuestion` to ask "These turbo skill improvements could benefit other users. Submit them upstream?" When the user confirms, run `/contribute-turbo`.
 
 Then use the TaskList tool and proceed to any remaining task.
 

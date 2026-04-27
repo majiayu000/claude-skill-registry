@@ -21,7 +21,31 @@ Verify the repo exists and has the expected remotes:
 git -C ~/.turbo/repo remote -v
 ```
 
-## Step 2: Review Pending Changes
+## Step 2: Mirror Installed Skill Changes
+
+Port session corrections from `~/.claude/skills/<name>/` (where edits land first) into `~/.turbo/repo/skills/<name>/` (the basis for the contribution), leaving any persistent local customizations in the installed copy untouched.
+
+Detect drifted skills:
+
+```bash
+for skill in ~/.claude/skills/*/; do
+  name=$(basename "$skill")
+  repo_dir=~/.turbo/repo/skills/"$name"
+  [ -d "$repo_dir" ] || continue
+  diff -rq "$skill" "$repo_dir" >/dev/null 2>&1 && continue
+  echo "$name"
+done
+```
+
+For each drifted skill, first check whether the repo copy already has unstaged changes for it (`git -C ~/.turbo/repo status --porcelain skills/<name>/`). If it does, use `AskUserQuestion` to ask the user how to proceed before mirroring — those changes will conflate with mirrored corrections in Step 3 if not resolved.
+
+Then read both versions of every changed file and classify each hunk:
+
+- **Correction** — a session edit meant to improve the skill upstream. For modified files, apply each correction hunk with the Edit tool. For new files in the installed copy, create the matching file in the repo copy with the Write tool. For files deleted from the installed copy, remove the repo copy with `rm`.
+- **Customization** — a persistent local addition that does not belong upstream (extra workflow steps, personal paths, machine-specific notes, internal references). Leave it in the installed copy; do not propagate.
+- **Ambiguous** — use `AskUserQuestion` to confirm classification before applying.
+
+## Step 3: Review Pending Changes
 
 Check what changes exist in the local repo:
 
@@ -49,13 +73,13 @@ Present the changes in a summary table:
 
 Use `AskUserQuestion` to confirm which changes to include. If the user deselects some, unstage those files.
 
-## Step 3: Validate Skill Quality
+## Step 4: Validate Skill Quality
 
 Read `~/.turbo/repo/SKILL-CONVENTIONS.md` for the turbo project's skill conventions. These conventions supplement `/create-skill`'s general best practices with turbo-specific patterns.
 
 For each confirmed skill, if `/create-skill` has not been invoked for it in this session, run `/create-skill` to review and refine the skill. Any improvements from the review become part of the contribution.
 
-## Step 4: Craft Contribution Context
+## Step 5: Craft Contribution Context
 
 For each change, construct a "why" explanation. The goal: the turbo maintainer should understand what happened and why the existing instructions were insufficient, without learning anything about the contributor's project.
 
@@ -80,11 +104,11 @@ Before finalizing, verify each "why" description contains none of the following:
 
 Output the drafted context as text. Then use `AskUserQuestion` for approval. The user must approve the contribution message before proceeding.
 
-## Step 5: Commit Rules
+## Step 6: Commit Rules
 
 Run `/commit-rules` to load commit message rules and technical constraints.
 
-## Step 6: Create Branch and Commit
+## Step 7: Create Branch and Commit
 
 When multiple skills were changed, batch related changes into a single branch and commit. Create separate branches only when changes are independent and unrelated.
 
@@ -102,7 +126,7 @@ Commit with a message matching the turbo repo style (check `git -C ~/.turbo/repo
 
 Stay on main. Commit directly with the same message style.
 
-## Step 7: Push
+## Step 8: Push
 
 ### Fork mode
 
@@ -127,7 +151,7 @@ PR body format:
 - [1-3 bullet points]
 
 ## Context
-[The crafted "why" explanation from Step 4]
+[The crafted "why" explanation from Step 5]
 ```
 
 Return to main after creating the PR:
@@ -156,7 +180,7 @@ git -C ~/.turbo/repo push origin main
 
 Report the pushed commit hash.
 
-## Step 8: Update Config
+## Step 9: Update Config
 
 In source mode, update `~/.turbo/config.json` so the next `/update-turbo` does not re-surface the just-pushed changes:
 

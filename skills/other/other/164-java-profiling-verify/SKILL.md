@@ -1,6 +1,6 @@
 ---
 name: 164-java-profiling-verify
-description: Use when you need to verify Java performance optimizations by comparing profiling results before and after refactoring — including baseline validation, post-refactoring report generation, quantitative before/after metrics comparison, side-by-side flamegraph analysis, regression detection, or creating profiling-comparison-analysis and profiling-final-results documentation. Part of the skills-for-java project
+description: Use when you need to verify Java performance optimizations by comparing profiling results before and after refactoring — including baseline validation, post-refactoring report generation, quantitative before/after metrics comparison, side-by-side flamegraph analysis, regression detection, or creating profiling-comparison-analysis and profiling-final-results documentation. This should trigger for requests such as Verify performance fix; Verify the performance; Verify the memory; Verify the threading. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -29,6 +29,8 @@ Use identical test conditions between baseline and post-refactoring. Verify both
 - **VALIDATE**: Ensure both baseline and post-refactoring reports exist and are non-empty before comparison
 - **DOCUMENT**: Record test scenarios and load patterns for reproduction
 - **BEFORE APPLYING**: Read the reference for comparison templates and validation steps
+- **EDGE CASE**: If request scope is ambiguous, stop and ask a clarifying question before applying changes
+- **EDGE CASE**: If required inputs, files, or tooling are missing, report what is missing and ask whether to proceed with setup guidance
 
 ## When to use this skill
 

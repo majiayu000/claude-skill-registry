@@ -1,6 +1,6 @@
 ---
 name: 423-frameworks-quarkus-testing-acceptance-tests
-description: Use when you need to implement acceptance tests from a Gherkin .feature file for Quarkus applications — including @acceptance scenarios, @QuarkusTest, BaseAcceptanceTest with QuarkusTestResourceLifecycleManager for Testcontainers and WireMock, REST Assured for full HTTP pipeline testing, WireMock JSON mapping files (classpath:wiremock/mappings/), *AT suffix naming, and Maven Surefire/Failsafe three-tier split. Requires the .feature file in context. Part of the skills-for-java project
+description: Use when you need to implement acceptance tests from a Gherkin .feature file for Quarkus applications — including @acceptance scenarios, @QuarkusTest, BaseAcceptanceTest with QuarkusTestResourceLifecycleManager for Testcontainers and WireMock, REST Assured for full HTTP pipeline testing, WireMock JSON mapping files (classpath:wiremock/mappings/), *AT suffix naming, and Maven Surefire/Failsafe three-tier split. Requires the .feature file in context. This should trigger for requests such as Implement Quarkus acceptance tests from a Gherkin feature file; Set up BaseAcceptanceTest with Testcontainers and WireMock for Quarkus; Create WireMock JSON mapping files for external HTTP stubs in Quarkus acceptance tests; Configure Maven *AT naming convention and Failsafe plugin for Quarkus acceptance tests. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral

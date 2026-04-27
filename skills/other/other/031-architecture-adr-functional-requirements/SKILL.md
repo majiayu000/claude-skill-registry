@@ -1,6 +1,6 @@
 ---
 name: 031-architecture-adr-functional-requirements
-description: Facilitates conversational discovery to create Architectural Decision Records (ADRs) for functional requirements covering CLI, REST/HTTP APIs, or both. Use when the user wants to document command-line or HTTP service architecture, capture functional requirements, create ADRs for CLI or API projects, or design interfaces with documented decisions. Part of the skills-for-java project
+description: Facilitates conversational discovery to create Architectural Decision Records (ADRs) for functional requirements covering CLI, REST/HTTP APIs, or both. Use when the user wants to document command-line or HTTP service architecture, capture functional requirements, create ADRs for CLI or API projects, or design interfaces with documented decisions. This should trigger for requests such as Create ADR for functional requirements; Document functional requirements; Capture functional requirements; Generate functional requirements in an ADR. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -26,8 +26,8 @@ Use conversational discovery—ask 1-2 questions at a time, build on answers, va
 - **MANDATORY**: Run `date` before starting to get accurate timestamps for the ADR
 - **MUST**: Read the reference template fresh—do not use cached questions
 - **MUST**: Ask one or two questions at a time; never all at once
-- **MUST**: Validate summary with user ("Does this accurately capture your requirements?") before proposing ADR creation
-- **MUST**: Wait for user to confirm "proceed" before generating the ADR
+- **MUST**: Validate summary with user (Does this accurately capture your requirements?) before proposing ADR creation
+- **MUST**: Wait for user to confirm proceed before generating the ADR
 
 ## When to use this skill
 
@@ -56,7 +56,7 @@ Step constraints:
 
 3. **Generate ADR after explicit confirmation**
 
-Only after user confirms "proceed", generate the ADR document and provide concise next steps.
+Only after user confirms proceed, generate the ADR document and provide concise next steps.
 
 ## Reference
 

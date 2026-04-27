@@ -1,6 +1,6 @@
 ---
 name: 013-agile-feature
-description: Guides the creation of detailed agile feature documentation from an existing epic. Use when the user wants to split an epic into feature files, derive features with scope and acceptance criteria, or plan feature documentation for stakeholders or engineering. Part of the skills-for-java project
+description: Guides the creation of detailed agile feature documentation from an existing epic. Use when the user wants to split an epic into feature files, derive features with scope and acceptance criteria, or plan feature documentation for stakeholders or engineering. This should trigger for requests such as Create features from an epic; Split epic into features; Feature files from epic; Derive features from epic. Part of cursor-rules-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral

@@ -77,7 +77,8 @@ browser-use screenshot [path.png]         # Screenshot (base64 if no path, --ful
 browser-use click <index>                 # Click element by index
 browser-use click <x> <y>                 # Click at pixel coordinates
 browser-use type "text"                   # Type into focused element
-browser-use input <index> "text"          # Click element, then type
+browser-use input <index> "text"          # Click element, clear existing text, then type
+browser-use input <index> ""              # Clear a field without typing new text
 browser-use keys "Enter"                  # Send keyboard keys (also "Control+a", etc.)
 browser-use select <index> "option"       # Select dropdown option
 browser-use upload <index> <path>         # Upload file to file input

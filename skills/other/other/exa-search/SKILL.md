@@ -1,6 +1,6 @@
 ---
 name: exa-search
-description: Search the web with Exa AI — neural search, content extraction, similar page discovery, quick research with citations, and async pro research with structured output. Covers all Exa endpoints (/search, /contents, /findSimilar, /answer, /research/v1). Triggers on web search, find pages, similar pages, research with citations, Exa, neural search.
+description: Search the web with Exa AI — neural search, content extraction, similar page discovery, quick research with citations, and async pro research with structured output. Covers all Exa endpoints (/search, /contents, /findSimilar, /answer, /research/v0/tasks). Triggers on web search, find pages, similar pages, research with citations, Exa, neural search.
 ---
 
 # Exa Search Skill
@@ -109,7 +109,7 @@ python3 ~/.claude/skills/exa-search/scripts/exa_search.py "query" [options]
 | `... exa_search.py "Top AI startups" --deep-reasoning --schema-preset company` | Structured company research |
 | `... exa_search.py "Who is CEO of Stripe?" --deep --text-output "Short answer"` | Quick factual answer |
 
-**Categories:** company, research paper, news, pdf, github, tweet, personal site, people, financial report
+**Categories:** company, research paper, news, pdf, github, personal site, people, financial report
 
 ### 2. exa_contents.py — URL Content Extraction
 

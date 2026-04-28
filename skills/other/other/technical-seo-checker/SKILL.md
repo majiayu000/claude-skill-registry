@@ -1,16 +1,16 @@
 ---
 name: technical-seo-checker
 description: 'Technical SEO audit: Core Web Vitals, crawl, indexing, mobile, speed, architecture, redirects. 技术SEO/网站速度'
-version: "9.5.0"
+version: "9.9.0"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
-when_to_use: "Use when checking technical SEO health: site speed, Core Web Vitals, indexing, crawlability, robots.txt, sitemaps, or canonical tags."
+when_to_use: "Use when checking technical SEO health: site speed, Core Web Vitals, indexing, crawlability, robots.txt, sitemaps, canonical tags, 技术SEO, 网站速度, 核心网页指标, 索引问题, or Google找不到页面."
 argument-hint: "<URL or domain>"
 allowed-tools: WebFetch
 metadata:
   author: aaron-he-zhu
-  version: "9.5.0"
+  version: "9.9.0"
   geo-relevance: "low"
   tags:
     - seo
@@ -187,6 +187,10 @@ Ask to save results; if yes, write `memory/audits/technical-seo-checker/YYYY-MM-
 - [HTTP Status Codes](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/technical-seo-checker/references/http-status-codes.md) — SEO impact of each status code, redirect best practices
 - [Technical Audit Templates](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/technical-seo-checker/references/technical-audit-templates.md) — Compact starter blocks for all 9 audit steps and the final scorecard
 - [Technical Audit Example & Checklist](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/technical-seo-checker/references/technical-audit-example.md) — Compact worked example shape and technical SEO checklist
+- [Bulk Audit Playbook](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/technical-seo-checker/references/bulk-audit-playbook.md) — Multi-URL technical audit workflow
+- [Ecommerce Platform Patterns](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/technical-seo-checker/references/ecommerce-platform-patterns.md) — Shopify, WooCommerce, headless, BigCommerce, Magento checks
+- [LLM Crawler Handling](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/technical-seo-checker/references/llm-crawler-handling.md) — GPTBot, ClaudeBot, Gemini, Perplexity robots patterns
+- [Pre-Migration Playbook](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/technical-seo-checker/references/pre-migration-playbook.md) — Migration audit stages and launch checks
 
 ## Next Best Skill
 

@@ -206,6 +206,22 @@ Load these files on demand — **do NOT load all at once**:
 - **[templates/presets/kinetic-typography/](templates/presets/kinetic-typography/)**: Bold type-driven preset (black BG + mint/yellow accents + character-pop animations). Use for opinion / argument / declaration videos. Load README first.
 - **[examples/](examples/)**: Real production video projects. The agent may reference these for composition structure and `timing.json` format.
 
+### Script suite dispatcher (optional)
+
+All scripts in `${SKILL_DIR}/scripts/` are reachable through one hierarchical entry point:
+
+```bash
+python3 ${SKILL_DIR}/scripts/cli.py --help                 # list resources
+python3 ${SKILL_DIR}/scripts/cli.py <resource> --help      # list actions
+python3 ${SKILL_DIR}/scripts/cli.py <resource> <action> --help  # forwards to underlying script
+python3 ${SKILL_DIR}/scripts/cli.py schema [<method>]      # JSON parameter schema
+```
+
+Routes (all forward to the existing scripts; direct invocations keep working):
+`tts run|validate`, `verify`, `audit beats`, `shorts gen`, `design list|show|delete|add`, `prereqs`, `prefs get|migrate|backend|bgm-path`, `schema [<method>]`.
+
+The dispatcher is optional — every snippet in this file uses the direct script path for back-compat. Agents that prefer one entry point with discoverable help should prefer `cli.py`.
+
 ### Pre-render audit (recommended)
 
 Before launching Studio for Step 9 review:

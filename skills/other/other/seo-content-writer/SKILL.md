@@ -1,7 +1,7 @@
 ---
 name: seo-content-writer
 description: 'Write SEO blog posts, articles, landing pages with keyword integration, header optimization, and snippet targeting. SEO文章写作/内容优化'
-version: "9.5.0"
+version: "9.9.0"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -9,7 +9,7 @@ when_to_use: "Use when writing SEO-optimized articles, blog posts, landing pages
 argument-hint: "<topic> <target keyword>"
 metadata:
   author: aaron-he-zhu
-  version: "9.5.0"
+  version: "9.9.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -75,7 +75,7 @@ Here's my content brief: [brief]. Write SEO-optimized content following this out
 
 ## Data Sources
 
-Optional SEO tool and search console integrations can pull metrics automatically; otherwise ask for keywords, intent, and competitors. See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md).
+Use `~~SEO tool` and `~~search console` when connected; otherwise ask for keywords, intent, and competitors. See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md).
 
 ## Instructions
 

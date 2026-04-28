@@ -1,15 +1,15 @@
 ---
 name: performance-reporter
 description: 'Use when generating SEO/GEO reports, traffic summaries, ranking reports, KPI dashboards, stakeholder updates, or monthly reports. SEO报告/绩效仪表盘'
-version: "9.5.0"
+version: "9.9.0"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
-when_to_use: "Use when generating SEO performance reports, traffic summaries, ranking reports, or stakeholder-facing dashboards."
+when_to_use: "Use when generating SEO/GEO performance reports, traffic summaries, ranking reports, stakeholder dashboards, SEO报告, 流量报告, 月报, 周报, or 汇报给老板."
 argument-hint: "<domain> [date range]"
 metadata:
   author: aaron-he-zhu
-  version: "9.5.0"
+  version: "9.9.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -44,7 +44,7 @@ metadata:
     # ZH-casual
     - "出SEO报告"
     - "汇报给老板"
-    - "看看数据"
+    - "看看SEO数据"
     - "月报"
     - "出月报"
     - "周报"

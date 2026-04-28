@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5336,
-  "updated_at": "2026-04-27T02:15:51.809499Z",
+  "count": 5337,
+  "updated_at": "2026-04-28T02:35:57.201216Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -24007,6 +24007,24 @@
       "stars": 0,
       "install": "salieri/resume/skills/cloudflare-deploy",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "ops-cost-optimization",

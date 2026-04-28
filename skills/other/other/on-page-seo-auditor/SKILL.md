@@ -1,7 +1,7 @@
 ---
 name: on-page-seo-auditor
 description: 'Audit on-page SEO: titles, headers, images, links with scored report and fix priorities. 页面SEO审计/排名诊断'
-version: "9.5.0"
+version: "9.9.0"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -10,7 +10,7 @@ argument-hint: "<URL> [keyword]"
 allowed-tools: WebFetch
 metadata:
   author: aaron-he-zhu
-  version: "9.5.0"
+  version: "9.9.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -199,6 +199,7 @@ Ask to save results; if yes, write `memory/audits/on-page-seo-auditor/YYYY-MM-DD
 - [Scoring Rubric](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/on-page-seo-auditor/references/scoring-rubric.md) — Detailed scoring criteria, weight distribution, and grade boundaries for on-page audits
 - [Audit Templates](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/on-page-seo-auditor/references/audit-templates.md) — Compact starter blocks for all 11 audit steps and the final summary
 - [Audit Example & Checklists](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/on-page-seo-auditor/references/audit-example.md) — Full worked example and page-type checklists (blog, product, landing page)
+- [Bulk Audit Playbook](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/on-page-seo-auditor/references/bulk-audit-playbook.md) — Batch workflow for 5+ URLs
 
 ## Next Best Skill
 

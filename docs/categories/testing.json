@@ -1,8 +1,8 @@
 {
   "category": "testing",
   "code": "tst",
-  "count": 6758,
-  "updated_at": "2026-04-27T02:15:53.409574Z",
+  "count": 6760,
+  "updated_at": "2026-04-28T02:35:58.848015Z",
   "skills": [
     {
       "name": "frontend-testing",
@@ -38386,6 +38386,24 @@
       "stars": 0,
       "install": "shami-ah/OpenEvent-AI/.claude/skills/oe-integration-mode-smoke",
       "source": "GitHub Search API"
+    },
+    {
+      "name": "ios-simulator-skill",
+      "description": "iOS Simulator automation for testing with semantic navigation and Xcode integration",
+      "repo": "conorluddy/ios-simulator-skill",
+      "path": "ios-simulator-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "ios",
+        "simulator",
+        "xcode",
+        "testing",
+        "mobile"
+      ],
+      "stars": 0,
+      "install": "conorluddy/ios-simulator-skill/ios-simulator-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "scaffold-domain",
@@ -86874,6 +86892,23 @@
       "stars": 0,
       "install": "tachyon-beep/hamlet/.claude/skills/yzmir-deep-rl/skills/rl-evaluation",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "playwright-skill",
+      "description": "Browser automation with Playwright - Claude writes and executes custom scripts",
+      "repo": "lackeyjb/playwright-skill",
+      "path": "skills/playwright-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "playwright",
+        "browser",
+        "automation",
+        "testing"
+      ],
+      "stars": 0,
+      "install": "lackeyjb/playwright-skill/skills/playwright-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "deno-typescript-lsp",

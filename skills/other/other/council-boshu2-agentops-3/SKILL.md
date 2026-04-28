@@ -1,8 +1,7 @@
 ---
 name: council
-description: 'Multi-model consensus council. Spawns parallel judges with Codex session agents when available. Modes: validate, brainstorm, research. Triggers: "council", "get consensus", "multi-model review", "multi-perspective review", "council validate", "council brainstorm", "council research".'
+description: 'Run multi-judge consensus for validation, brainstorming, or research.'
 ---
-
 # $council — Multi-Model Consensus Council (Codex Native)
 
 Spawn parallel judges with different perspectives via `spawn_agent`, consolidate into consensus.
@@ -36,7 +35,7 @@ $council --preset=security-audit validate the auth system      # preset personas
 |---------|---------|
 | `COUNCIL_CLAUDE_MODEL` | sonnet |
 | `COUNCIL_EXPLORER_MODEL` | sonnet |
-| `COUNCIL_CODEX_MODEL` | gpt-5.3-codex |
+| `COUNCIL_CODEX_MODEL` | unset; use Codex default (`gpt-5.5` recommended when available) |
 | `COUNCIL_TIMEOUT` | 120 |
 | `COUNCIL_EXPLORER_TIMEOUT` | 60 |
 | `COUNCIL_R2_TIMEOUT` | 90 |
@@ -116,7 +115,7 @@ For schema details and an example, see `references/reviewer-config-example.md`.
 ### Phase 1b: Wait for Judges
 
 ```
-wait_agent(ids=["agent-id-1", "agent-id-2"])
+wait_agent(targets=["agent-id-1", "agent-id-2"])
 ```
 
 If a judge needs follow-up, use `send_input` on that agent. If a judge stalls, `close_agent` it and proceed with the remaining responses.

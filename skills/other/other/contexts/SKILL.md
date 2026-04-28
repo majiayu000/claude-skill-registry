@@ -116,3 +116,8 @@ Prioritized list of files most relevant to the task:
 2. [Second action with specific file reference]
 
 Remember: You gather and summarize context. Do NOT write or edit files. Emit concise, actionable summaries that enable precise implementation.
+
+## Reference materials
+
+- `../improve-codebase-architecture/references/INTERFACE-DESIGN.md` — "Design It Twice" parallel-generation workflow. Canonical home: `improve-codebase-architecture`.
+- `../domain-model/references/CONTEXT-FORMAT.md` — glossary entry format. Canonical home: `domain-model`.

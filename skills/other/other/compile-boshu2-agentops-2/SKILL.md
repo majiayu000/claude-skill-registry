@@ -45,7 +45,7 @@ Set `AGENTOPS_COMPILE_RUNTIME` to choose the LLM backend:
 | Value | Backend | Notes |
 |-------|---------|-------|
 | `claude-cli` | Local `claude` binary | Zero-config. Inherits your Claude Code auth — no API key needed. Auto-selected if `claude` is on PATH and nothing else is set. |
-| `ollama` | Ollama API | Default model: `gemma3:27b`. Set `OLLAMA_HOST` for remote (e.g., `bushido tunnel ollama`). |
+| `ollama` | Ollama API | Default model: `gemma3:27b`. Set `OLLAMA_HOST` for remote (e.g., `ssh -L 11435:localhost:11435 bushido-windows`). |
 | `claude` | Claude API (HTTP) | Uses `ANTHROPIC_API_KEY`. Model: `claude-sonnet-4-20250514`. |
 | `openai` | OpenAI-compatible | Uses `OPENAI_API_KEY` + `OPENAI_BASE_URL`. |
 | (unset) | Claude Code session | Compilation happens inline via the current session's LLM. |
@@ -184,7 +184,7 @@ For unattended runs, `bash skills/compile/scripts/compile.sh` supports:
 | No orphaned research | All research already referenced | Skip 2b, proceed to synthesis |
 | Empty mine output | No recent activity | Widen `--since` window |
 | Oscillation sweep empty | No oscillating goals | Healthy state — no action needed |
-| Ollama connection refused | Tunnel not running or wrong host | Run `bushido tunnel ollama` or check `OLLAMA_HOST` |
+| Ollama connection refused | Tunnel not running or wrong host | Run `ssh -L 11435:localhost:11435 bushido-windows` or check `OLLAMA_HOST` |
 | Compilation too slow | Large corpus on small model | Use `--incremental` or switch to larger model |
 | Hash file missing | First compilation | Normal — full compile runs, hashes saved after |
 

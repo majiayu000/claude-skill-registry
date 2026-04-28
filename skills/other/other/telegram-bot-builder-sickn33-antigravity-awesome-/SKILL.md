@@ -366,9 +366,13 @@ Workflow:
 Works well with: `telegram-mini-app`, `backend`, `ai-wrapper-product`, `workflow-automation`
 
 ## When to Use
-
 - User mentions or implies: telegram bot
 - User mentions or implies: bot api
 - User mentions or implies: telegram automation
 - User mentions or implies: chat bot telegram
 - User mentions or implies: tg bot
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

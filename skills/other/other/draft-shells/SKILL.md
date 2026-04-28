@@ -200,3 +200,4 @@ Then use the TaskList tool and proceed to any remaining task.
 - Every Consumes entry must be backed by an explicit edge in the shell's frontmatter `depends_on` (or marked "from existing codebase").
 - The union of all Covers fields must equal the full set of R-ids in the spec's `## Requirements` section. Every R-id must appear in at least one shell's Covers.
 - Coverage notations: only bare `R<N>` (full, claimed exactly once) and `R<N> (partial: <what's deferred>)`. Do not invent variants like `(finished: ...)`.
+- Implementation Steps (High-Level) describe build work. Exclude `git commit`, `git push`, and PR creation.

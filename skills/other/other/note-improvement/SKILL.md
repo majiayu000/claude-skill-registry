@@ -16,18 +16,18 @@ Find the nearest `.git` directory or project root. The improvements file lives a
 Gather from context or `$ARGUMENTS`:
 
 - **What**: One-line summary of the improvement
-- **Type**: One of `trivial`, `investigate`, or `standard` — see criteria below
+- **Type**: One of `direct`, `investigate`, or `plan` — see criteria below
 - **Category**: One of `refactor`, `performance`, `reliability`, `readability`, `testing`, `docs`, `dx` (developer experience), or `feature`
 - **Where**: File path(s) and/or area of the codebase affected
 - **Why**: Brief rationale — what's the benefit?
 
 ### Type criteria
 
-- **trivial** — A direct fix: typo, rename, obvious one-liner, small localized cleanup with clear scope. No investigation or plan needed.
-- **investigate** — A symptom, not a fix: unclear root cause, performance question, intermittent bug, "something feels off". Needs dedicated root-cause analysis before any change.
-- **standard** — Everything else: clear-scope work that warrants planning (multi-file refactor, test additions, feature work).
+- **direct** — Clear scope and a known approach, ready to apply via `/implement`.
+- **investigate** — A symptom that needs root-cause analysis first: unclear root cause, performance question, intermittent bug, "something feels off".
+- **plan** — Everything else: the approach warrants writing down before implementing (multi-file refactor, test additions, feature work).
 
-When the criteria above do not clearly select one value, use `AskUserQuestion` to confirm. Default to `standard` if the user declines to choose.
+When the criteria above clearly select one value, use it. Otherwise, use `AskUserQuestion` to confirm; default to `plan` if the user declines to choose.
 
 ## Step 3: Append to File
 
@@ -46,7 +46,7 @@ Out-of-scope improvement opportunities captured during work sessions. Review per
 ```markdown
 ### <one-line summary>
 
-- **Type**: <trivial | investigate | standard>
+- **Type**: <direct | investigate | plan>
 - **Category**: <category>
 - **Where**: `<file path or area>`
 - **Why**: <brief rationale>
@@ -61,7 +61,8 @@ Tell the user the improvement was noted and where the file is.
 
 ## Rules
 
-- Do not duplicate — before appending, check if a similar improvement already exists. If it does, update the existing entry instead. If the existing entry predates the Type field, add a Type line while updating.
+- Deduplicate before appending: check for a similar entry and update it in place when one exists. When the existing entry predates the Type field, add a Type line while updating.
+- When updating an existing entry tagged with the legacy values `trivial` or `standard`, rewrite the Type to `direct` or `plan` respectively so the file converges on current vocabulary.
 - Keep entries concise — 3-5 lines max per entry. These are backlog items, not specs.
-- Do not act on the improvement — only record it. The user decides when to address it.
-- Do not create the `.turbo/` directory if the project doesn't have one — ask the user where to put the file instead.
+- Record only; leave action to the user, who decides when to address it.
+- When the project has no `.turbo/` directory, use `AskUserQuestion` to confirm the location before creating one.

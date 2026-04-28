@@ -28,3 +28,7 @@ Apply the change described by the current context — the user request, a prior 
 Run the `/finalize` skill.
 
 Then use the TaskList tool and proceed to any remaining task.
+
+## Rules
+
+- Defer `git commit`, `git push`, and PR creation to Step 3.

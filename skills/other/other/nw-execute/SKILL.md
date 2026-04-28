@@ -109,7 +109,7 @@ Execute in order:
 # OUTCOME_RECORDING
 After ACTUALLY EXECUTING each phase, record via DES CLI:
 
-    PYTHONPATH=$HOME/.claude/lib/python $(command -v python3 || command -v python) -m des.cli.log_phase \
+    des-log-phase \
       --project-dir docs/feature/{feature-id}/deliver \
       --step-id {step-id} \
       --phase {PHASE_NAME} \
@@ -118,7 +118,7 @@ After ACTUALLY EXECUTING each phase, record via DES CLI:
 
 For SKIPPED phases (genuinely not applicable):
 
-    PYTHONPATH=$HOME/.claude/lib/python $(command -v python3 || command -v python) -m des.cli.log_phase \
+    des-log-phase \
       --project-dir docs/feature/{feature-id}/deliver \
       --step-id {step-id} \
       --phase {PHASE_NAME} \

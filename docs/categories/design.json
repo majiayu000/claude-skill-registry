@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 9516,
-  "updated_at": "2026-04-27T02:15:51.468383Z",
+  "count": 9517,
+  "updated_at": "2026-04-28T02:35:56.851329Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -59282,6 +59282,23 @@
       "stars": 0,
       "install": "vanman2024/ai-dev-marketplace/plugins/vercel-ai-sdk/skills/agent-workflow-patterns",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "repo": "alonw0/web-asset-generator",
+      "path": "skills/web-asset-generator/SKILL.md",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "stars": 0,
+      "install": "alonw0/web-asset-generator/skills/web-asset-generator/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "swarm",

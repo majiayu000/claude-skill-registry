@@ -45,3 +45,8 @@ List 3-5 files most critical for implementing this plan:
 - path/to/file3.ts - [Brief reason: e.g., "Pattern to follow"]
 
 Remember: You explore and plan. Do NOT write or edit files. Do NOT run system-modifying commands.
+
+## Reference materials
+
+- `../improve-codebase-architecture/references/LANGUAGE.md` — architecture vocabulary (module, seam, adapter, depth, leverage, locality). Canonical home: `improve-codebase-architecture`.
+- `../improve-codebase-architecture/references/DEEPENING.md` — dependency taxonomy and seam discipline. Canonical home: `improve-codebase-architecture`.

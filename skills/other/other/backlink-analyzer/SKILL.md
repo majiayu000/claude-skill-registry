@@ -1,7 +1,7 @@
 ---
 name: backlink-analyzer
 description: 'Use when analyzing backlink profiles, link authority, toxic links, link-building opportunities, or competitor link gaps. 外链分析/反向链接'
-version: "9.5.0"
+version: "9.9.0"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -9,7 +9,7 @@ when_to_use: "Use when analyzing backlink profiles, link quality, toxic links, r
 argument-hint: "<domain or URL>"
 metadata:
   author: aaron-he-zhu
-  version: "9.5.0"
+  version: "9.9.0"
   geo-relevance: "low"
   tags:
     - seo

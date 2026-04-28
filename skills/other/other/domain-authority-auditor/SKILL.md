@@ -1,7 +1,7 @@
 ---
 name: domain-authority-auditor
-description: '40-item CITE domain audit: citation, impact, trust, entity scoring with veto checks. 域名权威/网站可信度'
-version: "9.5.0"
+description: 'Use when auditing domain authority, trust, citations, or 域名权威/网站可信度. Runs 40-item CITE scoring with veto checks.'
+version: "9.9.0"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -10,7 +10,7 @@ argument-hint: "<domain>"
 class: auditor
 metadata:
   author: aaron-he-zhu
-  version: "9.5.0"
+  version: "9.9.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -244,7 +244,7 @@ Same format for Trust and Eminence dimensions.
 
 **Note**: Some items require specialized data (C05-C08 AI citation data, I01 knowledge graph queries, T04-T05 IP/profile analysis). Score what is observable; mark unverifiable items as "N/A — requires [data source]" and exclude from dimension average.
 
-<!-- runbook-sync start: source_sha256=dbb36bde1b9b78001d322a7c8c5947af20c8eb40ec10a88c6e4d02f65a55f40f block_sha256=ceb6c81df84880f10a89d49230d94d697dc66f01aba480c89efb0493855816db -->
+<!-- runbook-sync start: source_sha256=782eb8827d3139216dbf55154285f72b5fe6d1601acc693bb93d769df5224e2f block_sha256=5053bbe68577b7ca6fd16551244ac6de6b9c7e694be6c400ecef1af0a4df820d -->
 ## §1 · Handoff Schema (authoritative)
 
 Every auditor-class handoff MUST follow this shape. Emitted audit artifact files (e.g., `memory/audits/**/*.md`) MUST include `class: auditor-output` in their YAML frontmatter so the PostToolUse Artifact Gate and guarded auditor archive checks can detect them by frontmatter class instead of prose pattern-matching. Files lacking this marker are not treated as audit artifacts regardless of body content.
@@ -390,7 +390,7 @@ Handoff:
       evidence: "..."
 ```
 
-**Why BLOCKED, not "capped at 40"**: the 40-tier cap number is unvalidated. Blocking forces manual review, which is more honest than publishing an eyeballed number. Calibration trigger: 30+ real multi-veto audits in `memory/audits/`. Review date: 2026-07-10 via `/seo:p2-review`.
+**Why BLOCKED, not "capped at 40"**: the 40-tier cap number is unvalidated. Blocking forces manual review, which is more honest than publishing an eyeballed number. Calibration trigger: 30+ real multi-veto audits in `memory/audits/`, reviewed through `/seo:run-evals` plus maintainer calibration.
 
 **Note on dimension vs count**: the 2+ veto threshold counts **total veto failures across all dimensions**, not per-dimension. Example 3 shows T04 (Trust dim) + R10 (Referenceability dim) on different dimensions, but T03 + T09 both on the Trust dimension would also trigger BLOCKED. The veto count is dimension-agnostic.
 

@@ -1,8 +1,8 @@
 {
   "category": "marketing",
   "code": "mkt",
-  "count": 467,
-  "updated_at": "2026-04-27T02:15:51.912238Z",
+  "count": 468,
+  "updated_at": "2026-04-28T02:35:57.307913Z",
   "skills": [
     {
       "name": "social-media",
@@ -2119,6 +2119,25 @@
       "stars": 0,
       "install": "maneeshanif/Textbook_hackhathon/.claude/skills/chapter-formatting",
       "source": "SkillsMP Synced Skills"
+    },
+    {
+      "name": "social-reply-bot",
+      "description": "AI-powered Reddit & X auto-reply bot. Finds relevant posts, generates genuine Claude-powered replies that naturally mention your product. Includes karma warmup and lead tracking.",
+      "repo": "mguozhen/social-bot",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "marketing",
+      "tags": [
+        "reddit",
+        "twitter",
+        "social-media",
+        "ai-replies",
+        "growth",
+        "browser-automation"
+      ],
+      "stars": 0,
+      "install": "mguozhen/social-bot/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "website-copy-standards",

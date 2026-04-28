@@ -10,7 +10,6 @@ source: community
 Review changes on this branch for bugs, security vulnerabilities, and code quality issues.
 
 ## When to Use
-
 - You need a review focused on bugs, security issues, or risky code changes.
 - The task involves auditing the current branch diff rather than implementing new behavior.
 - You want a structured review process with checklist-driven verification against changed files.
@@ -81,3 +80,8 @@ For each issue:
 If you find nothing significant, say so - don't invent issues.
 
 Do not make changes - just report findings. I'll decide what to address.
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

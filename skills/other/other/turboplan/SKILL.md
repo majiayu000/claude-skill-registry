@@ -1,6 +1,6 @@
 ---
 name: turboplan
-description: "Analyze task complexity and route to a mode: direct fix for trivial edits, plan file for small tasks, or spec and shells for complex projects. Use when the user asks to \"turboplan\", \"run turboplan\", \"plan this task\", \"turbo plan mode\", \"plan and implement\", or \"use turboplan instead of plan mode\"."
+description: "Analyze task complexity and route to a mode by artifact: direct fix for clear-scope changes, plan file when the approach needs to be written down, or spec and shells for multi-session projects. Use when the user asks to \"turboplan\", \"run turboplan\", \"plan this task\", \"turbo plan mode\", \"plan and implement\", or \"use turboplan instead of plan mode\"."
 ---
 
 # Turboplan
@@ -13,14 +13,16 @@ Categorize the user-supplied task along these dimensions using subjective judgme
 - **Stakes**: one-off change vs long-lived project with architectural implications
 - **Unknowns**: clear approach vs needs exploration and product decisions
 
-Route to one of four outcomes:
+Route to one of three modes (or disambiguate when borderline).
 
-| Category | Criteria | Route |
+Modes are named by what they produce: no plan, a plan file, or a spec plus shells.
+
+| Mode | Criteria | Route |
 |---|---|---|
-| **Trivial** | A true one-line edit: typo fix, single rename, single config tweak. | Read [references/trivial-mode.md](references/trivial-mode.md) and follow its steps. |
-| **Small** | Fits a single implementation session, touches one or two related subsystems, no major architectural decisions left. | Read [references/small-task-mode.md](references/small-task-mode.md) and follow its steps. |
-| **Complex** | Spans multiple subsystems, requires multiple implementation sessions, or has architectural decisions that need a spec-level discussion before planning begins. | Read [references/complex-project-mode.md](references/complex-project-mode.md) and follow its steps. |
-| **Borderline** | Falls between two categories. | Use `AskUserQuestion` to confirm the route, then proceed as above. |
+| **Direct** | Clear scope and a known approach, ready to implement. Goes straight to `/implement`. | Read [references/direct-mode.md](references/direct-mode.md) and follow its steps. |
+| **Plan** | The approach warrants writing down before implementing — to survey patterns, align with the user, or survive a fresh session. Fits a single implementation session and touches one or two related subsystems. Produces a plan file. | Read [references/plan-mode.md](references/plan-mode.md) and follow its steps. |
+| **Spec** | Spans multiple subsystems, requires multiple implementation sessions, or has architectural decisions that need a spec-level discussion before planning begins. Produces a spec plus shells. | Read [references/spec-mode.md](references/spec-mode.md) and follow its steps. |
+| **Borderline** | Falls between two modes. | Use `AskUserQuestion` to confirm the route, then proceed as above. |
 
 State the chosen route before continuing with the reference file.
 

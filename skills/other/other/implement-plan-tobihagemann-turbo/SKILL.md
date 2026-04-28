@@ -12,9 +12,11 @@ Execute an implementation plan file.
 At the start, use `TaskCreate` to create a task for each step:
 
 1. Resolve and read the plan file
-2. Read relevant files and load task-specific skills
-3. Run `/implement` skill
-4. Update plan status
+2. Read context files
+3. Load task-specific skills
+4. Create sub-tasks for plan Implementation Steps
+5. Run `/implement` skill
+6. Update plan status
 
 ## Step 1: Resolve and Read the Plan File
 
@@ -32,9 +34,7 @@ If multiple plans exist and the most-recent choice is non-obvious (e.g., several
 
 State the resolved plan path before continuing, then read the file.
 
-## Step 2: Read Relevant Files and Load Task-Specific Skills
-
-### Read Relevant Files
+## Step 2: Read Context Files
 
 Read in full:
 
@@ -42,26 +42,28 @@ Read in full:
 - Files the user referenced in their original request (if any)
 - Every file path the plan references in the Context, Pattern Survey, and Implementation Steps sections
 
-### Identify and Load Task-Specific Skills
+## Step 3: Load Task-Specific Skills
 
-Scan the plan's **Implementation Steps** for work types that match available skills. For each unambiguous match, run the skill via the Skill tool before editing. For example, if the plan includes "add a Drizzle migration" and a skill exists whose triggers reference Drizzle migrations, load it. If the plan mentions "run the test suite" but no testing-specific skill trigger matches, do not load a generic testing skill.
+Scan the plan's **Implementation Steps** for work types that match available skills. For each unambiguous match, run the skill via the Skill tool. For example, if the plan includes "add a Drizzle migration" and a skill exists whose triggers reference Drizzle migrations, load it. If the plan mentions "run the test suite" but no testing-specific skill trigger matches, do not load a generic testing skill.
 
 If unsure, do not load. Do not load `/code-style` here.
 
-## Step 3: Run `/implement` Skill
+## Step 4: Create Sub-Tasks for Plan Implementation Steps
 
-Before invoking `/implement`, use `TaskCreate` to add one sub-task per plan Implementation Step. Mark each sub-task `in_progress` before starting that step and `completed` after.
+Use `TaskCreate` to add one sub-task per plan Implementation Step. These sub-tasks belong to `/implement`; do not start or complete them in this skill.
 
-In the turn that invokes `/implement`, write out the Implementation Steps in order using the plan's `file_path` references and named symbols. Restate the plan's Verification section (the specific commands, smoke checks, or MCP tool invocations it lists). If any Verification check fails, halt and investigate. If a step cannot be completed (blocked by a dependency, unclear requirement, or environmental issue), halt and report; do not silently skip steps.
+## Step 5: Run `/implement` Skill
 
-Then run the `/implement` skill.
+Run the `/implement` skill. The plan file, its file references, and its Verification section are already in conversation context from Step 1.
 
-## Step 4: Update Plan Status
+## Step 6: Update Plan Status
 
 After `/implement` completes, set the plan's frontmatter `status:` to `done`. If the plan is the legacy `.turbo/plan.md` without frontmatter, skip this step.
 
 ## Rules
 
 - The plan file is read-only during execution. If revisions are needed, run `/refine-plan` or `/draft-plan` separately.
-- Never skip Step 2.
-- Never skip Step 3's Verification instruction.
+- Never skip Steps 2 or 3.
+- Never enumerate or execute the plan's Implementation Steps inline. The work runs through `/implement`. Restating steps as a turn-level narration counts as inline execution and bypasses the delegation.
+- Honor the plan's Verification section during implementation: run the commands, smoke checks, or MCP tool invocations it specifies. If a check fails or a step is blocked by a dependency, unclear requirement, or environmental issue, halt and investigate; do not silently skip.
+- If the plan's Implementation Steps or Verification include `git commit`, `git push`, or PR creation, halt before Step 5 and ask the user to remove them via `/refine-plan`.

@@ -1,7 +1,7 @@
 ---
 name: memory-management
 description: 'Persist SEO/GEO campaign context across Claude sessions with automatic hot-list, active work, and archive tiers. 项目记忆/跨会话'
-version: "9.5.0"
+version: "9.9.0"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -9,7 +9,7 @@ when_to_use: "Use when reviewing, archiving, or cleaning up campaign memory. Als
 argument-hint: "[review|archive|cleanup]"
 metadata:
   author: aaron-he-zhu
-  version: "9.5.0"
+  version: "9.9.0"
   geo-relevance: "low"
   tags:
     - seo
@@ -130,7 +130,7 @@ What does [internal jargon] mean in this project?
 **Expected output**: a memory update plan, hot-cache changes, and a short handoff summary.
 
 - **Reads**: current campaign facts, new findings from other skills, approved decisions, and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-- **Writes**: updates to `memory/hot-cache.md`, `memory/open-loops.md`, `memory/decisions.md`, and related `memory/` folders. Manages WARM-to-COLD archival in `memory/archive/`. Compiles `memory/wiki/index.md` (auto-refreshed) and wiki compiled pages (user-confirmed). **Sole writer of wiki (with delegated auto-refresh)**: `memory-management` owns all wiki writes semantically. For performance, the narrowly-scoped `memory/wiki/index.md` auto-refresh is delegated to the PostToolUse hook in [hooks/hooks.json](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/hooks/hooks.json). Wiki log updates and compiled pages remain explicit `memory-management` operations using the schema defined in this skill. **Auditor handoff archiving** (v7.1.0+): when triggered by a direct user request or an auditor's explicit "Save these results?" yes-response, append a structured block to `memory/audits/YYYY-MM.md`. The Stop hook never initiates memory writes. The archive is consumed by `/seo:p2-review` for the 2026-07-10 tombstone evaluation tied to [ADR-001](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/decisions/2026-04-adr-001-inline-auditor-runbook.md). See [references/examples.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/examples.md) for the exact archive block format and rules.
+- **Writes**: updates to `memory/hot-cache.md`, `memory/open-loops.md`, `memory/decisions.md`, and related `memory/` folders. Manages WARM-to-COLD archival in `memory/archive/`. Compiles `memory/wiki/index.md` (auto-refreshed) and wiki compiled pages (user-confirmed). **Sole writer of wiki (with delegated auto-refresh)**: `memory-management` owns all wiki writes semantically. For performance, the narrowly-scoped `memory/wiki/index.md` auto-refresh is delegated to the PostToolUse hook in [hooks/hooks.json](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/hooks/hooks.json). Wiki log updates and compiled pages remain explicit `memory-management` operations using the schema defined in this skill. **Auditor handoff archiving** (v7.1.0+): when triggered by a direct user request or an auditor's explicit "Save these results?" yes-response, append a structured block to `memory/audits/YYYY-MM.md`. The Stop hook never initiates memory writes. The archive is consumed by `/seo:run-evals` and maintainer calibration for auditor cap review tied to [ADR-001](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/decisions/2026-04-adr-001-inline-auditor-runbook.md). See [references/examples.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/examples.md) for the exact archive block format and rules.
 - **Promotes**: durable strategy, blockers, terminology, entity candidates, and major deltas. Applies temperature lifecycle rules: promote to HOT on high reference frequency, demote on staleness.
 - **Next handoff**: use the `Next Best Skill` below when the project memory baseline is ready for active work.
 

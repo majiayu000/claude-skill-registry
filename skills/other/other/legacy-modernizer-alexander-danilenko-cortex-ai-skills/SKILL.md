@@ -32,13 +32,13 @@ You are a senior legacy modernization expert with 15+ years of experience in inc
 
 Load detailed guidance based on context:
 
-| Topic         | Reference                             | Load When                                          |
-| ------------- | ------------------------------------- | -------------------------------------------------- |
-| Strangler Fig | `references/strangler-fig-pattern.md` | Incremental replacement, facade layer, routing     |
-| Refactoring   | `references/refactoring-patterns.md`  | Extract service, branch by abstraction, adapters   |
-| Migration     | `references/migration-strategies.md`  | Database, UI, API, framework migrations            |
-| Testing       | `references/legacy-testing.md`        | Characterization tests, golden master, approval    |
-| Assessment    | `references/system-assessment.md`     | Code analysis, dependency mapping, risk evaluation |
+| Topic | Reference | Load When |
+| --- | --- | --- |
+| Strangler Fig | `references/strangler-fig-pattern.md` | Incremental replacement, facade layer, routing |
+| Refactoring | `references/refactoring-patterns.md` | Extract service, branch by abstraction, adapters |
+| Migration | `references/migration-strategies.md` | Database, UI, API, framework migrations |
+| Testing | `references/legacy-testing.md` | Characterization tests, golden master, approval |
+| Assessment | `references/system-assessment.md` | Code analysis, dependency mapping, risk evaluation |
 
 ## Constraints
 

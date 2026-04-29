@@ -24,6 +24,8 @@ Your project's CLAUDE.md and memory files may contain rules that were not author
 
 Check if the TeamCreate tool is available. If it is, agent teams are **ENABLED** — proceed. If not, agent teams are **DISABLED**. Use AskUserQuestion to offer enabling it: add `"CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"` to the `env` object in `.claude/settings.json` (project) or `~/.claude/settings.json` (global), then restart Claude Code. **STOP if not enabled.**
 
+Read `~/.claude/settings.json`. If `autoMode.environment` is absent or contains no string mentioning a source-control hostname (e.g., `github.com`, `gitlab.com`, `bitbucket.org`, `github.example.com`), show the user a block to paste — `autoMode.environment: ["$defaults", "Source control: <host>/<org>. Creating feature branches, pushing them for the first time, and opening pull requests against the configured target branch is part of the standard development workflow."]` — and explain it must live in user scope (the classifier ignores project-scoped `autoMode`). Run `git remote get-url origin 2>/dev/null` to extract `<host>` and `<org>` and substitute them into the shown block. Check for `ssh://` prefix first to disambiguate SSH-with-port from SSH-shorthand. Handle three URL forms in this order: SSH-with-port (`ssh://git@host:port/org/repo.git` — strip the port), SSH shorthand (`git@host:org/repo.git`), HTTPS (`https://host/org/repo.git`). Fall back to `<your-host>` / `<your-org>` placeholders if no remote exists. Phrase the question as "is missing or doesn't declare" since the file may not exist on a fresh install, and add a parenthetical noting auto mode requires a Max, Team, Enterprise, or API plan (not Pro) so users on unsupported plans can dismiss with informed consent. Note that the live permission mode cannot be detected from inside the session (Shift+Tab activations leave no signal); the check runs against settings only. Do not auto-write user settings. This check is informational, not blocking — proceed regardless.
+
 ## Hard Rules
 <!-- SYNC: these rules must match launch.md Step 1 (canonical source). Update both when either changes. -->
 
@@ -229,6 +231,7 @@ Modes using Recursive Refinement (9 → 9.25 → 9.5 → 9.75 → 10) apply this
 - If nothing to commit at this rung, skip and continue.
 - If a pre-commit hook rejects the commit, stop and surface the hook output; do not retry with `--no-verify`.
 - Commit messages: `checkpoint: rung 9 — <one-line summary>` for the baseline, `refine: rung <score> — <one-line summary>` for 9.25/9.5/9.75/10.
+- **Use file-based input for commit messages.** Run `mktemp` and capture its output (e.g., `/tmp/tmp.aB3xK9`) as a single file path. Use that exact captured path string in every subsequent step: write the message to it via Write, then `git commit -F <captured-path>`, then `rm <captured-path>`. Do not regenerate the path between steps — one `mktemp` call binds one path used across all four operations. Inline `-m "$(cat <<EOF ...)"` triggers the bash safety heuristic and prompts unconditionally in auto mode — file-based input does not. `mktemp` (rather than a fixed `/tmp/swarm-*.md` path) defends against symlink-race attacks on shared systems where another user could pre-create the predictable path as a symlink.
 
 ---
 
@@ -239,4 +242,5 @@ Follow the **phase arc from your mode skill**. Universal rules:
 - Phase transitions that require user input (Approve, Refine, Deliver) are mandatory stops — do not advance past them autonomously
 - After 9/10+ review confidence, ask the user about recursive refinement before delivering — do not skip to Deliver
 - Final delivery requires explicit user sign-off — follow the ship definition from `.claude/swarm-ship.md` and execute the defined shipping steps with the user's approval. If a rung commit already landed in Refine (per the Rung Commit Rule above), the commit is done; Deliver begins from push/PR.
+- **Use file-based input for PR bodies.** Run `mktemp` and capture its output as a single file path. Use that exact captured path string in every subsequent step: write the body to it via Write, then `gh pr create --body-file <captured-path>`, then `rm <captured-path>`. Do not regenerate the path between steps — one `mktemp` call binds one path used across all three operations. Inline `--body "$(cat <<EOF ...)"` triggers the bash safety heuristic and prompts unconditionally in auto mode. `mktemp` defends against symlink-race attacks on shared systems.
 - When an explicit shutdown request has been received, delete the pulse cron job using CronDelete

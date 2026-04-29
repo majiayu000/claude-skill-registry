@@ -45,6 +45,12 @@ Progress a diamond through phases with full theory gate validation. At delivery 
 
    The perspective resolution framework (`engine/perspective-resolution.md`) is the authoritative reference. The anti-pattern to avoid is Perspective Suppression — resolving a conflict by ignoring one perspective.
 
+2c. **Build-to-learn awareness NUDGE** (Define → Develop transitions only):
+   At the point of entering Develop, surface this prompt to the human:
+   > "Are you building to learn or building to earn right now? Discovery work (prototypes, spikes, experiments) can use lighter gates. Delivery work (shipping to users) must meet full DoD."
+   This is awareness only — it does not change gate requirements or routing. The human's answer is informational context, not a gate input.
+   *Source: Cagan (SVPG), Patton (build to learn vs build to earn). Added as NUDGE per risk analysis — conceptual awareness, not process gate.*
+
 3. **Calculate confidence**:
    - Apply scoring rules from confidence-thresholds.yml.
    - Look up `project_type` and `dogfood` from `diamonds/active.yml`.
@@ -162,6 +168,12 @@ Check `product_type` from `diamonds/active.yml` to determine which auto-checks a
 - If all "not-assessed" and product handles user data: **GATE FAILED** -- "Run /privacy-check."
 
 ### Always Required (REVIEW)
+
+**Success criteria declared (G-V11 REVIEW)**:
+- Check: Does decision-log.md have success criteria recorded for this delivery (from `/preflight`)?
+- If no success criteria found: **GATE FAILED** -- "No success criteria declared. Run `/preflight` and declare what will be true after delivery and how to verify it."
+- If criteria exist: verify each criterion is satisfied. Report pass/fail per criterion.
+- This catches the denominator problem: without declared criteria, "done" = "whatever we built."
 
 **Decision log (G-P4)**:
 - Check: Does decision-log.md have an entry for this delivery?

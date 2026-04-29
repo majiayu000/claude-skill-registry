@@ -1,19 +1,19 @@
 {
   "version": 1,
-  "updated_at": "2026-04-28T02:23:21.627026Z",
+  "updated_at": "2026-04-29T02:25:58.143117Z",
   "total_count": 18,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
       "branch": "master",
       "relative_path": "skills/x-twitter-scraper/SKILL.md",
-      "updated_at": "2026-04-28T02:23:14.532646Z"
+      "updated_at": "2026-04-29T02:25:51.937143Z"
     },
     "miningstore/confluence-to-agent-knowledge-base": {
       "repo": "miningstore/confluence-to-agent-knowledge-base",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-04-28T02:23:15.629036Z"
+      "updated_at": "2026-04-29T02:25:51.937726Z"
     },
     "seangeng/holydocs-skills:holydocs": {
       "repo": "seangeng/holydocs-skills",
@@ -43,73 +43,73 @@
       "repo": "mguozhen/dingtalk-bridge",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-04-28T02:23:15.630130Z"
+      "updated_at": "2026-04-29T02:25:48.834528Z"
     },
     "conorluddy/ios-simulator-skill": {
       "repo": "conorluddy/ios-simulator-skill",
       "branch": "main",
       "relative_path": "ios-simulator-skill/SKILL.md",
-      "updated_at": "2026-04-28T02:23:12.084258Z"
+      "updated_at": "2026-04-29T02:25:48.829918Z"
     },
     "lackeyjb/playwright-skill": {
       "repo": "lackeyjb/playwright-skill",
       "branch": "main",
       "relative_path": "skills/playwright-skill/SKILL.md",
-      "updated_at": "2026-04-28T02:23:12.086663Z"
+      "updated_at": "2026-04-29T02:25:48.830557Z"
     },
     "ToniPerea/humanizar-texto-es": {
       "repo": "ToniPerea/humanizar-texto-es",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-04-28T02:23:15.628594Z"
+      "updated_at": "2026-04-29T02:25:48.834938Z"
     },
     "yusufkaraaslan/Skill_Seekers": {
       "repo": "yusufkaraaslan/Skill_Seekers",
       "branch": "main",
       "relative_path": "skills/skill-seekers/SKILL.md",
-      "updated_at": "2026-04-28T02:23:11.775954Z"
+      "updated_at": "2026-04-29T02:25:48.509388Z"
     },
     "Chris1220-cmd/deep-research-skill": {
       "repo": "Chris1220-cmd/deep-research-skill",
       "branch": "master",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-04-28T02:23:14.764173Z"
+      "updated_at": "2026-04-29T02:25:49.192252Z"
     },
     "Enreign/pagerunner-skill": {
       "repo": "Enreign/pagerunner-skill",
       "branch": "main",
       "relative_path": "skills/pagerunner-skill/SKILL.md",
-      "updated_at": "2026-04-28T02:23:15.628048Z"
+      "updated_at": "2026-04-29T02:25:50.167147Z"
     },
     "alonw0/web-asset-generator": {
       "repo": "alonw0/web-asset-generator",
       "branch": "main",
       "relative_path": "skills/web-asset-generator/SKILL.md",
-      "updated_at": "2026-04-28T02:23:12.494741Z"
+      "updated_at": "2026-04-29T02:25:49.191256Z"
     },
     "mguozhen/social-bot": {
       "repo": "mguozhen/social-bot",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-04-28T02:23:14.785195Z"
+      "updated_at": "2026-04-29T02:25:48.578318Z"
     },
     "b33kman/professional-business-writing-skill": {
       "repo": "b33kman/professional-business-writing-skill",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-04-28T02:23:14.764640Z"
+      "updated_at": "2026-04-29T02:25:49.191821Z"
     },
     "MetcalfSolutions/Satori": {
       "repo": "MetcalfSolutions/Satori",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-04-28T02:23:14.534406Z"
+      "updated_at": "2026-04-29T02:25:48.833515Z"
     },
     "varfolomejev/query-victorialogs": {
       "repo": "varfolomejev/query-victorialogs",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-04-28T02:23:14.763584Z"
+      "updated_at": "2026-04-29T02:25:49.393692Z"
     }
   }
 }

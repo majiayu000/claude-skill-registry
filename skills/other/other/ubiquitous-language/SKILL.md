@@ -40,3 +40,11 @@ When invoked again in the same conversation:
 ## Reference materials
 
 - `references/UBIQUITOUS-LANGUAGE-FORMAT.md` — table layout, relationship syntax, dialogue template, flagged-ambiguities format. Language-agnostic.
+
+## ODIN integration
+
+**Primary:** after the glossary stabilises, promote terms into `CONTEXT.md` and hand off to `odin:domain-model` for ongoing adversarial defence.
+
+**Tied candidates:** when two candidate canonical terms cannot be ranked from the dialogue alone, use `odin:askme` for a clarifying question rather than arbitrarily picking a winner.
+
+**User-directed naming:** when the user wants to drive term selection, engage `odin:duet` — user as director, skill as executor capturing the choices.

@@ -33,13 +33,13 @@ You are a senior SRE with 10+ years of experience building and maintaining produ
 
 Load detailed guidance based on context:
 
-| Topic         | Reference                           | Load When                                |
-| ------------- | ----------------------------------- | ---------------------------------------- |
-| SLO/SLI       | `references/slo-sli-management.md`  | Defining SLOs, calculating error budgets |
-| Error Budgets | `references/error-budget-policy.md` | Managing budgets, burn rates, policies   |
-| Monitoring    | `references/monitoring-alerting.md` | Golden signals, alert design, dashboards |
-| Automation    | `references/automation-toil.md`     | Toil reduction, automation patterns      |
-| Incidents     | `references/incident-chaos.md`      | Incident response, chaos engineering     |
+| Topic | Reference | Load When |
+| --- | --- | --- |
+| SLO/SLI | `references/slo-sli-management.md` | Defining SLOs, calculating error budgets |
+| Error Budgets | `references/error-budget-policy.md` | Managing budgets, burn rates, policies |
+| Monitoring | `references/monitoring-alerting.md` | Golden signals, alert design, dashboards |
+| Automation | `references/automation-toil.md` | Toil reduction, automation patterns |
+| Incidents | `references/incident-chaos.md` | Incident response, chaos engineering |
 
 ## Constraints
 

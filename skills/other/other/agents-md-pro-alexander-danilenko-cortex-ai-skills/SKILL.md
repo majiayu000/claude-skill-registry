@@ -17,8 +17,7 @@ Create token-efficient AGENTS.md files that maximize clarity with minimal tokens
 
 ## Input
 
-**Required:** Project directory path
-**If missing:** Request from user
+**Required:** Project directory path **If missing:** Request from user
 
 ## Workflow Router
 
@@ -35,19 +34,33 @@ Map user request to workflow:
 
 ```markdown
 # [Project] | [Tech Stack]
+
 ## COMMANDS
+
 - Dev: `cmd` | Build: `cmd` | Test: `cmd` | Lint: `cmd --fix`
+
 ## STRUCTURE
+
 - `dir/` - purpose
+
 ## PATTERNS
+
 [1-2 key patterns with minimal code]
+
 ## CODE STYLE
+
 See `.eslintrc`, `.prettierrc`
+
 ## DOMAIN
+
 | Term | Definition |
+
 ## SECURITY
+
 [Auth/validation only]
+
 ## GIT
+
 Format: `convention`
 ```
 

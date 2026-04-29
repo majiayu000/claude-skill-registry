@@ -32,13 +32,13 @@ You are a principal architect with 15+ years of experience designing scalable sy
 
 Load detailed guidance based on context:
 
-| Topic                 | Reference                             | Load When                             |
-| --------------------- | ------------------------------------- | ------------------------------------- |
-| Architecture Patterns | `references/architecture-patterns.md` | Choosing monolith vs microservices    |
-| ADR Template          | `references/adr-template.md`          | Documenting decisions                 |
-| System Design         | `references/system-design.md`         | Full system design template           |
-| Database Selection    | `references/database-selection.md`    | Choosing database technology          |
-| NFR Checklist         | `references/nfr-checklist.md`         | Gathering non-functional requirements |
+| Topic | Reference | Load When |
+| --- | --- | --- |
+| Architecture Patterns | `references/architecture-patterns.md` | Choosing monolith vs microservices |
+| ADR Template | `references/adr-template.md` | Documenting decisions |
+| System Design | `references/system-design.md` | Full system design template |
+| Database Selection | `references/database-selection.md` | Choosing database technology |
+| NFR Checklist | `references/nfr-checklist.md` | Gathering non-functional requirements |
 
 ## Constraints
 

@@ -1,6 +1,6 @@
 ---
 name: seobuild-onpage
-version: 1.5.0
+version: 1.6.1
 description: >
   Write SEO pages that rank on Google AND get cited by LLMs. Uses live SERP data,
   500-token chunk architecture, and the Reddit Test quality gate.
@@ -203,6 +203,8 @@ Google's KG uses different NLP than transformers. Entity signals must be explici
 - Airline-to-terminal mappings where relevant
 - Parking lot names as entities, not just list items
 - Operating authority names (Port Authority, airport authority, etc.)
+- **Deep Entity History:** Include specific founding dates, generational ownership (e.g., "third-generation family business"), and origin stories.
+- **Identity & Amenity Tags:** Explicitly state identity attributes (e.g., "women-owned", "veteran-owned") and high-value physical amenities (e.g., "free parking", "on-site consultations") as these map directly to Google Business Profile tags and conversational AI filtering.
 
 ---
 
@@ -385,6 +387,7 @@ Every page must include a section framed as original research, a data experiment
 - **Weak internal linking** -- pages need sufficient internal links pointing to them. If a page has far fewer internal links than competitor pages targeting the same keyword, its ranking potential is capped
 - **Stock photos** -- do not use stock photography. Sites using the same stock images as competitors receive slight ranking demotions. Use original photos, custom screenshots, or AI-generated unique images instead. This is a confirmed signal.
 - **Broad catchall pages** -- general topical hub pages that try to cover everything get hammered in core updates. Build narrow, specific detail pages instead. A page about "FLL Terminal 1 Parking" outperforms a page about "Everything You Need to Know About FLL." Specificity equals resilience.
+- **Keyword Cannibalization / Overlapping Intents** -- Never create a page that competes with an existing URL for the same exact intent. If writing a purely sales-focused version of an existing informational topic, tag it with a recommendation to `noindex` to preserve the primary page's ranking equity.
 
 ### Always Do:
 - Short to medium sentences, concrete nouns, explicit comparisons
@@ -436,6 +439,7 @@ When optimizing local pages, explicitly add an internal link from high-traffic i
 - Format per item: name, who it's best for, why it made the list, one differentiator, one tradeoff
 - Strongest items first. Do not pad to reach a number.
 - Segment large lists into logical groups (best budget, best premium, best for beginners)
+- **The Self-Placement Rule:** It is acceptable to rank the client/brand at #1, provided the entry is strictly objective. You must clearly define *why* it is the best for a specific use-case (e.g., "Best for automated booking") and honestly list its tradeoffs. Never use lazy, universally positive marketing fluff.
 
 ### Comparison / Pricing Pages
 - Comparison table high on the page
@@ -542,7 +546,7 @@ When the user provides a target keyword and brief:
    Topic: [inferred from keyword]
    Primary Keyword: [target keyword]
    Search Intent: [from research: informational / commercial / local / comparison / transactional]
-   Audience: [inferred]
+   Ideal Customer Persona (ICP): [demographics, psychographics, and specific pain points]
    Geography: [if relevant]
    Page Type: [from research: service page / listicle / comparison / pricing / local page / guide]
    Vertical: [airport parking / local service / SaaS / medical / legal / etc.]
@@ -641,9 +645,12 @@ Run before every delivery. If any answer is NO, revise before delivering.
 | 36 | Site vs. Page audit run -- competitor type identified? | YES/NO |
 | 37 | Forensic EMQ ratio checked -- EMQ_REQUIRED flag applied correctly? | YES/NO |
 | 38 | Each 500-token chunk targets a distinct QFO facet (sub-query)? | YES/NO |
-| | **Score: X/38** | |
+| 39 | ICP defined in brief and content tailored to their pain points? | YES/NO |
+| 40 | Deep entity history / identity tags included where applicable? | YES/NO |
+| 41 | No keyword cannibalization with existing site URLs? | YES/NO |
+| | **Score: X/41** | |
 
-Pages scoring below 30/38 must be revised before delivery. Items marked NO must include a note on what needs to be fixed.
+Pages scoring below 33/41 must be revised before delivery. Items marked NO must include a note on what needs to be fixed.
 
 ### Spam Resilience Priority: Technical Relevance > Human Tone
 In the 2025-2026 spam update cycle, Google is prioritizing **technical relevance density** (factual accuracy, entity coverage, structured data completeness) over "human-sounding" prose. A page that is factually perfect, entity-rich, and operationally detailed but "sounds like AI" will outperform a page with warm, conversational tone but thin substance.
@@ -740,7 +747,7 @@ When the user provides a page assignment, gather or request:
 Topic: [target topic]
 Primary Keyword: [target keyword]
 Search Intent: [informational / commercial / local / comparison / transactional]
-Audience: [who is reading this]
+Ideal Customer Persona (ICP): [demographics, psychographics, and specific pain points]
 Geography: [location if relevant]
 Page Type: [service page / listicle / comparison / pricing / local page / guide]
 Vertical: [airport parking / local service / SaaS / medical / legal / etc.]

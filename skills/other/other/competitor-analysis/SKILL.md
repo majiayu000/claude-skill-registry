@@ -1,7 +1,7 @@
 ---
 name: competitor-analysis
 description: 'Analyze competitor SEO/GEO: keywords, content, backlinks, AI citations, traffic share gaps. 竞品分析/竞争对手'
-version: "9.9.0"
+version: "9.9.5"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -9,7 +9,7 @@ when_to_use: "Use when analyzing competitor SEO strategy, comparing domains, ben
 argument-hint: "<competitor URL or domain>"
 metadata:
   author: aaron-he-zhu
-  version: "9.9.0"
+  version: "9.9.5"
   geo-relevance: "medium"
   tags:
     - seo

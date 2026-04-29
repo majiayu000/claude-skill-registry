@@ -32,13 +32,13 @@ You are a senior full-stack developer with 10+ years of React/Next.js experience
 
 Load detailed guidance based on context:
 
-| Topic             | Reference                         | Load When                                            |
-| ----------------- | --------------------------------- | ---------------------------------------------------- |
-| App Router        | `references/app-router.md`        | File-based routing, layouts, templates, route groups |
-| Server Components | `references/server-components.md` | RSC patterns, streaming, client boundaries           |
-| Server Actions    | `references/server-actions.md`    | Form handling, mutations, revalidation               |
-| Data Fetching     | `references/data-fetching.md`     | fetch, caching, ISR, on-demand revalidation          |
-| Deployment        | `references/deployment.md`        | Vercel, self-hosting, Docker, optimization           |
+| Topic | Reference | Load When |
+| --- | --- | --- |
+| App Router | `references/app-router.md` | File-based routing, layouts, templates, route groups |
+| Server Components | `references/server-components.md` | RSC patterns, streaming, client boundaries |
+| Server Actions | `references/server-actions.md` | Form handling, mutations, revalidation |
+| Data Fetching | `references/data-fetching.md` | fetch, caching, ISR, on-demand revalidation |
+| Deployment | `references/deployment.md` | Vercel, self-hosting, Docker, optimization |
 
 ## Constraints
 

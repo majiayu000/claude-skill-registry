@@ -1,11 +1,9 @@
 ---
 name: jira-report-comment
 description: >-
-  This skill should be used when the user asks to "jira report", "post update to jira",
-  "summarize commits for jira", "report to jira", "update the ticket", "comment on the ticket",
-  "generate implementation report", "write a jira comment", "summarize my changes",
-  or wants to notify PM/QA about completed work on a Jira ticket.
-  Generates a business-friendly implementation report from git commits and saves it as a local markdown report.
+  This skill should be used when the user asks to "jira report", "post update to jira", "summarize commits for jira", "report to jira", "update the ticket", "comment on the ticket", "generate implementation report", "write a jira comment", "summarize my changes", or wants to notify PM/QA about completed work on a Jira ticket. Generates a business-friendly implementation report from git commits and saves it as a local markdown report.
+
+
 allowed-tools: Read, Write, Bash, mcp__atlassian__getJiraIssue, AskUserQuestion
 user-invocable: true
 ---
@@ -28,6 +26,7 @@ Determine the Jira issue key using this priority:
    ```
 
    Parse the ticket ID using the pattern `[A-Z]+-[0-9]+` (e.g., `feature/ABC-1234-description` yields `ABC-1234`).
+
 3. If no key can be determined, ask the user.
 
 **Always confirm** the resolved key with the user before proceeding: "I detected **CX-4328** from your branch. Use this issue key?"

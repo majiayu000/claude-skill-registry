@@ -1,6 +1,6 @@
 ---
 name: validation-first
-description: Validation-first development - design state machine specifications from requirements, then execute CREATE -> VERIFY -> IMPLEMENT cycle. Use when developing with formal state machine specifications, invariants, and temporal properties before writing implementation code.
+description: Validation-first development. Use when developing with formal state machine specifications, invariants, and temporal properties before writing implementation code.
 ---
 
 # Validation-first development

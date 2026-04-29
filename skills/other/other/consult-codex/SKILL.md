@@ -47,7 +47,7 @@ Example prompt for a diagnosis question:
 
 For correctness-critical questions, add `<verification_loop>` asking Codex to verify its answer before finalizing.
 
-Keep prompts compact. Prefer tighter output contracts over raising reasoning effort. One clear task per Codex turn.
+Keep prompts compact, with tight output contracts. One clear task per Codex turn.
 
 For long context that won't fit inline, write a context file and pipe it via stdin. The prompt stays as the argument, context pipes in as `<stdin>` automatically:
 

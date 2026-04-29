@@ -6,7 +6,7 @@ description: >
   comparing plan vs reality, documenting risks, or planning next milestones.
   Triggers: "roadmap", "project status", "blockers", "risks", "progress", "next milestone",
   "gaps", "what's done".
-argument-hint: "[--deep] status | gaps | next | delta | blockers | risks | update [--incremental] | specs | plan [scaffold|show|sync]"
+argument-hint: "[--deep] status | gaps | next [--force] | delta | blockers | risks | update [--incremental] | specs | plan [scaffold|show|sync]"
 allowed-tools: Read, Glob, Grep, Write, Bash
 ---
 
@@ -16,7 +16,21 @@ Synthesize project documentation and codebase state into actionable status repor
 
 ## Context Discovery
 
-Run the shared context discovery protocol in [CONTEXT_DISCOVERY.md](../../references/CONTEXT_DISCOVERY.md). Execute all phases in order (use thorough scan mode for Phase 7). Store results for analysis below.
+Run the shared context discovery protocol in [CONTEXT_DISCOVERY.md](../../references/CONTEXT_DISCOVERY.md). Use the scan depth appropriate for the mode:
+
+| Mode | Required Phases | Scan Depth |
+|------|----------------|------------|
+| `plan show` | 1 (config) | None — reads `{plan_file}` directly |
+| `specs` | 1, 5 | Light — config + doc scan for spec files |
+| `gaps` | 1, 3, 5 | Light — config, rich context, docs |
+| `delta` | 1, 5, 7 | Medium — config, docs, codebase scan |
+| `next` (cached) | 1 (config) | None — reads cached file + git drift check |
+| `next` (recalc) | 1-7 | Thorough — full protocol |
+| `status`, `blockers`, `risks` | 1-7 | Thorough — full protocol |
+| `update`, `update --incremental` | 1-7 | Thorough — full protocol |
+| `plan scaffold`, `plan sync` | 1-7 | Thorough — full protocol |
+
+Store results for analysis below.
 
 ## Arguments
 
@@ -24,15 +38,15 @@ Parse from `$ARGUMENTS`:
 
 | Mode | Description |
 |------|-------------|
-| `status` | Overall dashboard — modules, phases, completion |
-| `gaps` | Gap analysis status — open/closed/in-progress |
-| `next` | Prioritized next actions |
-| `delta` | What changed since last assessment |
-| `blockers` | Blocking chain analysis |
-| `risks` | Risk register with likelihood/impact |
-| `update` | Git-history-aware status document update (Phase A: what shipped + Phase B: full scan). Add `--incremental` for targeted post-sprint sync (Phase A + targeted edits only) |
-| `specs` | Spec pipeline status verification |
-| `plan` | Consolidated project plan — scaffold, show, or sync phases/specs/ADRs |
+| `status` | Overall dashboard — modules, phases, completion + drift detection |
+| `gaps` | Gap analysis status — open/closed/in-progress with evidence |
+| `next` | Prioritized recommendations with caching and smart merge. Saves to `{output_dir}/next-actions.md`. Returns cached results if <3 feat/fix commits and status doc unchanged; otherwise merge-based recalculation that preserves uncompleted items and user additions. Add `--force` to recalculate (still merges; delete file manually for clean slate) |
+| `delta` | What changed since last assessment (read-only comparison) |
+| `blockers` | Blocking chain analysis with critical path |
+| `risks` | Risk register with likelihood/impact scoring |
+| `update` | Git-aware status doc update (Phase A: what shipped + Phase B: full scan + auto-chains `plan sync`). Add `--incremental` for post-sprint targeted edits only |
+| `specs` | Spec pipeline verification against codebase. Cross-references `{plan_file}` for phase linkage if available |
+| `plan` | Project plan lifecycle — `scaffold` (create), `show` (read), `sync` (update). Defaults to `show` if plan exists, `scaffold` if not |
 | _(none)_ | Full dashboard (combines status + gaps + next) |
 
 ## Module Maturity Scale
@@ -43,23 +57,9 @@ Rate each module using the shared vocabulary in [MATURITY_SCALE.md](../../refere
 
 ### `status`
 
-Produce a status dashboard:
+Produce a status dashboard with module maturity table, then detail: What's working, What's planned, What's missing.
 
-| Module | Backend | Frontend | Maturity |
-|--------|---------|----------|----------|
-
-Then detail: What's working, What's planned, What's missing.
-
-After producing the dashboard, check for documentation drift:
-
-1. Find last modification of `{status_file}` via git: `git log -1 --format="%H %ai" -- {status_file}`
-2. Count feature/fix commits since: `git log {hash}..HEAD --oneline --no-merges | grep -cE "^[a-f0-9]+ (feat|fix):"`
-3. If 3 or more feat/fix commits exist since last update, append a notice at the end of the output:
-
-```
-⚠️  Documentation may be stale: {N} feature/fix commits since last status update ({date}).
-Run `/roadmap update` to sync.
-```
+After producing the dashboard, run drift detection: if 3+ feat/fix commits exist since last `{status_file}` update, append a staleness notice suggesting `/roadmap update`.
 
 ### `gaps`
 
@@ -67,7 +67,15 @@ Cross-reference all gap analysis documents. For each gap: original report, curre
 
 ### `next`
 
-Prioritized recommendations combining: unclosed gaps, unstarted specs, module maturity imbalances, frontend-backend parity gaps.
+Prioritized recommendations with git-aware caching and smart merge. See [WORKFLOW.md](WORKFLOW.md) § `next` for the full merge protocol.
+
+Key behaviors:
+- Saves recommendations to `{output_dir}/next-actions.md`
+- Returns cached results if <3 feat/fix commits and status doc unchanged since last calculation
+- On recalculation, merges new recommendations with existing items — preserves uncompleted items, removes items with completion evidence
+- User-added items in `### User-Added` section always preserved across recalculations
+- Shows merge diff preview with `+`/`-`/`~`/`=` markers before writing (confirmation required)
+- Combines: unclosed gaps, unstarted specs, maturity imbalances, plan backlog themes
 
 ### `delta`
 
@@ -75,121 +83,38 @@ Compare the status document against current codebase state. Highlight: new files
 
 ### `blockers`
 
-Trace blocking chains. For each blocker: what it blocks, who owns it, what's needed to unblock.
+Trace blocking chains. For each blocker: what it blocks, who owns it, what's needed to unblock. Identify critical path (longest chain).
 
 ### `risks`
 
-Risk register:
-
-| Risk | Likelihood | Impact | Score | Mitigation |
-|------|-----------|--------|-------|------------|
+Risk register with Likelihood (H/M/L) x Impact (H/M/L) scoring and suggested mitigations.
 
 ### `update`
 
-Generate an updated status document with git-history awareness. Two phases:
+Git-aware status document update. See [WORKFLOW.md](WORKFLOW.md) § `update` for the full Phase A (git history scan) + Phase B (codebase scan + write) protocol.
 
-#### Phase A: Git History Scan
-
-Before the codebase scan, analyze what changed since the last doc update:
-
-1. Find last modification of `{status_file}`: `git log -1 --format="%H %ai" -- {status_file}`
-2. If no previous commit found, skip Phase A (first-time setup — Phase B handles it)
-3. List commits since: `git log {hash}..HEAD --oneline --no-merges`
-4. Group by PR number (parse `(#NN)` from commit messages) and commit type (`feat:`, `fix:`, `docs:`, etc.)
-5. For each feature/fix group, summarize:
-   - Scope (new components, routes, hooks, test files — inferred from file paths in the diff)
-   - Related specs (cross-reference `arkhe/specs/` changes in the commit range)
-   - Related ADRs (new files in `docs/adr/` in the commit range)
-6. Present a **"What Shipped"** summary to the user before proceeding to the full scan:
-
-```
-## What Shipped Since Last Update (2026-03-09, 10 commits ago)
-
-1. Glossary Management + Dictionary Browser (PR #32, specs 022-025)
-   - 6 components, 2 hooks, 5 test files, /dictionary route
-2. App Header Unification (PR #33)
-   - Refactored navigation components
-3. skrebe.app Redirect (1aff903, ADR-0010)
-   - New middleware + DNS config
-```
-
-This context feeds into Phase B so the codebase scan knows what to look for and can produce more accurate updates.
-
-#### Phase B: Full Codebase Scan + Write (existing behavior, enhanced)
-
-1. Run full context discovery + codebase scan (same as before)
-2. Read existing status document
-3. Preserve format and structure
-4. Update all data points — now informed by the git history from Phase A:
-   - Module maturity ratings
-   - Phase completion entries (Phase A identifies which phases completed)
-   - Spec pipeline entries (Phase A identifies which specs shipped)
-   - ADR table entries (Phase A identifies new ADRs)
-   - Test coverage section
-   - Commit count and date
-   - Risk register (close risks for shipped features)
-5. Show diff preview and ask for confirmation
-6. Write updated file to `{status_file}`
-7. Also check CHANGELOG.md — if `[Unreleased]` is missing entries for shipped features from Phase A, suggest adding them after the status update is applied (don't auto-write CHANGELOG without explicit confirmation)
-8. Report changes made
+Key behaviors:
+- Shows "What Shipped" summary before scanning
+- Diff preview with `+`/`-`/`~` markers, requires confirmation before writing
+- Checks CHANGELOG.md for gaps (offers to add entries)
+- Auto-chains into `plan sync` when phase/spec status changes detected
+- Next `/roadmap next` will detect status doc changes and trigger merge-based recalculation (preserves uncompleted items)
+- `--incremental` variant: surgical targeted edits only (skips Phase B full scan)
 
 ### `specs`
 
-Spec pipeline verification:
-
-| Spec | Title | Status | Evidence |
-|------|-------|--------|----------|
-
-Verify status against codebase, not just what the spec says.
+Spec pipeline verification — verify status against codebase evidence, not just what the spec says. If `{plan_file}` exists, cross-reference to show which phase each spec belongs to and flag unlinked specs.
 
 ### `plan`
 
-Consolidated project plan — lifecycle management from scaffold to sync.
-
-Read `plan_file` from `.arkhe.yaml` `roadmap:` section (default: `docs/PROJECT-PLAN.md`).
-
-Parse subcommand from remaining arguments:
+Consolidated project plan lifecycle. Read `plan_file` from `.arkhe.yaml` (default: `docs/PROJECT-PLAN.md`).
 
 | Subcommand | Description |
 |------------|-------------|
-| `scaffold` | Create initial PROJECT-PLAN.md from existing project state |
-| `show` | Display current plan as a consolidated view (read-only) |
-| `sync` | Update plan document from current codebase + git state |
-| _(none)_ | Default to `show` if plan doc exists; `scaffold` if it doesn't |
-
-#### `plan scaffold`
-
-Create the initial plan document by consolidating scattered planning artifacts.
-
-1. **Context discovery** — run standard protocol (CONTEXT_DISCOVERY.md)
-2. **Read existing docs** — read `{status_file}`, product roadmaps (`docs/**/roadmap.md`), backlogs (`docs/**/backlog.md`)
-3. **Scan specs** — glob `{specs_dir}/*/spec.md`, extract: spec ID (directory name), title (first `#` heading), status (`Status:` field)
-4. **Scan ADRs** — glob `docs/adr/[0-9]*.md`, extract: number (filename), title (first `#` heading), status
-5. **Auto-detect phase mappings** — run the hybrid linking algorithm (see [WORKFLOW.md](WORKFLOW.md) § Hybrid Linking Algorithm)
-6. **Present proposed plan** — show full document in chat with `[AUTO-LINKED]` markers on detected mappings, `[MANUAL]` on explicit matches, `[UNLINKED]` on unmapped items
-7. **Confirm** — ask user to review linkages and approve; apply corrections
-8. **Write** — write to `{plan_file}`
-
-If `{plan_file}` already exists, warn and offer: overwrite, sync instead, or cancel.
-
-#### `plan show`
-
-Read-only consolidated view.
-
-1. Read `{plan_file}` — if missing, suggest `scaffold`
-2. Parse and present summary: timeline table, progress stats (phases done/total, specs linked/total, ADRs linked/total), active phases, next up
-3. **Drift detection**: if plan doc was last committed >7 days ago and 3+ feat/fix commits exist since, append: `"⚠️ Plan may be stale. Run /roadmap plan sync to update."`
-
-#### `plan sync`
-
-Git-aware update of the plan document — follows the `update` mode's Phase A + Phase B pattern.
-
-1. **Phase A: Git History Scan** — detect since last plan sync: new/modified specs, new ADRs, phase completion signals (feat: commits grouped by PR), backlog changes
-2. **Phase B: Auto-detect new links** — run hybrid linking on any new specs/ADRs from Phase A
-3. **Phase C: Diff and confirm** — show proposed changes as `+`/`-`/`~` markers; ask confirmation
-4. **Phase D: Write** — update `{plan_file}` preserving user-edited sections
-
-See [WORKFLOW.md](WORKFLOW.md) § `plan` for detailed execution protocol.
+| `scaffold` | Create initial PROJECT-PLAN.md using hybrid linking algorithm — see [WORKFLOW.md](WORKFLOW.md) § `plan scaffold` |
+| `show` | Read-only summary with timeline, progress stats, active phases, drift detection |
+| `sync` | Git-aware update with auto-detected links — see [WORKFLOW.md](WORKFLOW.md) § `plan sync` |
+| _(none)_ | Default to `show` if plan exists; `scaffold` if not |
 
 ## Output Rules
 
@@ -197,7 +122,7 @@ See [WORKFLOW.md](WORKFLOW.md) § `plan` for detailed execution protocol.
 - **Tabular** — use tables for at-a-glance status; prose for analysis
 - **Actionable** — always end with recommended next actions
 - **Honest** — distinguish between "verified working" and "files exist but untested"
-- `update` and `plan scaffold`/`plan sync` show unified diff preview (using `+`/`-`/`~` markers) and require explicit confirmation before writing
+- `update` and `plan scaffold`/`plan sync` show unified diff preview and require explicit confirmation before writing
 - `--deep` reports are saved by default to `{output_dir}/reports/`; user can opt out
 
 ## Deep Mode (`--deep`)

@@ -76,9 +76,11 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 **Watch for:** stands/serves as, is a testament/reminder, a vital/significant/crucial/pivotal/key role/moment, underscores/highlights importance, reflects broader, symbolizing ongoing/enduring/lasting, marking/shaping the, represents a shift, key turning point, evolving landscape
 
 **Before:**
+
 > The Statistical Institute was officially established in 1989, marking a pivotal moment in the evolution of regional statistics.
 
 **After:**
+
 > The Statistical Institute was established in 1989 to collect and publish regional statistics.
 
 #### 2. Notability Name-Dropping
@@ -86,9 +88,11 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 **Watch for:** cited in NYT, BBC, FT; independent coverage; active social media presence; written by a leading expert
 
 **Before:**
+
 > Her views have been cited in The New York Times, BBC, Financial Times, and The Hindu.
 
 **After:**
+
 > In a 2024 New York Times interview, she argued that AI regulation should focus on outcomes rather than methods.
 
 #### 3. Superficial -ing Analyses
@@ -96,9 +100,11 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 **Watch for:** highlighting/underscoring/emphasizing..., ensuring..., reflecting/symbolizing..., contributing to..., cultivating/fostering..., showcasing...
 
 **Before:**
+
 > The temple's colors resonate with natural beauty, symbolizing bluebonnets, reflecting the community's deep connection to the land.
 
 **After:**
+
 > The temple uses blue and gold colors. The architect said these were chosen to reference local bluebonnets.
 
 #### 4. Promotional Language
@@ -106,9 +112,11 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 **Watch for:** boasts a, vibrant, rich (figurative), profound, showcasing, exemplifies, commitment to, natural beauty, nestled, in the heart of, groundbreaking, renowned, breathtaking, must-visit, stunning
 
 **Before:**
+
 > Nestled within the breathtaking region, Alamata stands as a vibrant town with rich cultural heritage and stunning natural beauty.
 
 **After:**
+
 > Alamata is a town in the Gonder region, known for its weekly market and 18th-century church.
 
 #### 5. Vague Attributions
@@ -116,9 +124,11 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 **Watch for:** Industry reports, Observers have cited, Experts argue, Some critics argue, several sources/publications
 
 **Before:**
+
 > Experts believe it plays a crucial role in the regional ecosystem.
 
 **After:**
+
 > The river supports several endemic fish species, according to a 2019 survey by the Chinese Academy of Sciences.
 
 #### 6. Formulaic "Challenges" Sections
@@ -126,9 +136,11 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 **Watch for:** Despite its... faces several challenges..., Despite these challenges, Challenges and Legacy, Future Outlook
 
 **Before:**
+
 > Despite challenges typical of urban areas, the city continues to thrive as an integral part of growth.
 
 **After:**
+
 > Traffic congestion increased after 2015 when three new IT parks opened. The municipal corporation began a drainage project in 2022.
 
 ---
@@ -140,9 +152,11 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 **High-frequency:** Additionally, align with, crucial, delve, emphasizing, enduring, enhance, fostering, garner, highlight (verb), interplay, intricate/intricacies, key (adjective), landscape (abstract), pivotal, showcase, tapestry (abstract), testament, underscore (verb), valuable, vibrant
 
 **Before:**
+
 > Additionally, a distinctive feature showcases how these dishes have integrated into the traditional culinary landscape.
 
 **After:**
+
 > Pasta dishes, introduced during Italian colonization, remain common, especially in the south.
 
 #### 8. Copula Avoidance
@@ -150,9 +164,11 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 **Watch for:** serves as/stands as/marks/represents [a], boasts/features/offers [a]
 
 **Before:**
+
 > Gallery 825 serves as the exhibition space. The gallery features four spaces and boasts over 3,000 square feet.
 
 **After:**
+
 > Gallery 825 is the exhibition space. The gallery has four rooms totaling 3,000 square feet.
 
 #### 9. Negative Parallelisms
@@ -160,25 +176,31 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 **Watch for:** "Not only...but...", "It's not just about..., it's..."
 
 **Before:**
+
 > It's not just about the beat; it's part of the aggression. It's not merely a song, it's a statement.
 
 **After:**
+
 > The heavy beat adds to the aggressive tone.
 
 #### 10. Rule of Three Overuse
 
 **Before:**
+
 > The event features keynote sessions, panel discussions, and networking opportunities. Attendees can expect innovation, inspiration, and industry insights.
 
 **After:**
+
 > The event includes talks and panels. There's also time for informal networking.
 
 #### 11. Synonym Cycling
 
 **Before:**
+
 > The protagonist faces challenges. The main character must overcome obstacles. The central figure eventually triumphs. The hero returns home.
 
 **After:**
+
 > The protagonist faces many challenges but eventually triumphs and returns home.
 
 #### 12. False Ranges
@@ -186,9 +208,11 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 **Watch for:** "from X to Y" where X and Y aren't on a meaningful scale
 
 **Before:**
+
 > Our journey has taken us from the singularity of the Big Bang to the cosmic web, from the birth of stars to the dance of dark matter.
 
 **After:**
+
 > The book covers the Big Bang, star formation, and current theories about dark matter.
 
 ---
@@ -198,27 +222,32 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 #### 13. Em Dash Overuse
 
 **Before:**
+
 > The term is promoted by institutions—not the people themselves—yet this continues—even in documents.
 
 **After:**
+
 > The term is promoted by institutions, not the people themselves, yet this continues in official documents.
 
 #### 14. Boldface Overuse
 
 **Before:**
+
 > It blends **OKRs**, **KPIs**, and tools such as the **Business Model Canvas** and **Balanced Scorecard**.
 
 **After:**
+
 > It blends OKRs, KPIs, and visual strategy tools like the Business Model Canvas and Balanced Scorecard.
 
 #### 15. Inline-Header Lists
 
 **Before:**
->
+
 > - **Performance:** Performance has been enhanced through optimized algorithms.
 > - **Security:** Security has been strengthened with encryption.
 
 **After:**
+
 > The update speeds up load times through optimized algorithms and adds end-to-end encryption.
 
 #### 16. Title Case Headings
@@ -234,18 +263,21 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 #### 17. Emojis in Professional Writing
 
 **Before:**
-> 🚀 **Launch Phase:** The product launches in Q3
-> 💡 **Key Insight:** Users prefer simplicity
+
+> 🚀 **Launch Phase:** The product launches in Q3 💡 **Key Insight:** Users prefer simplicity
 
 **After:**
+
 > The product launches in Q3. User research showed a preference for simplicity.
 
 #### 18. Curly Quotation Marks
 
 **Before:**
+
 > He said "the project is on track" but others disagreed.
 
 **After:**
+
 > He said "the project is on track" but others disagreed.
 
 ---
@@ -257,9 +289,11 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 **Watch for:** I hope this helps, Of course!, Certainly!, You're absolutely right!, Would you like..., let me know, here is a...
 
 **Before:**
+
 > Here is an overview of the French Revolution. I hope this helps! Let me know if you'd like me to expand on any section.
 
 **After:**
+
 > The French Revolution began in 1789 when financial crisis and food shortages led to widespread unrest.
 
 #### 20. Knowledge-Cutoff Disclaimers
@@ -267,17 +301,21 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 **Watch for:** as of [date], Up to my last training update, While specific details are limited/scarce..., based on available information...
 
 **Before:**
+
 > While specific details about the company's founding are not extensively documented in readily available sources, it appears to have been established sometime in the 1990s.
 
 **After:**
+
 > The company was founded in 1994, according to its registration documents.
 
 #### 21. Sycophantic Tone
 
 **Before:**
+
 > Great question! You're absolutely right that this is a complex topic. That's an excellent point!
 
 **After:**
+
 > The economic factors you mentioned are relevant here.
 
 ---
@@ -297,17 +335,21 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 #### 23. Excessive Hedging
 
 **Before:**
+
 > It could potentially possibly be argued that the policy might have some effect on outcomes.
 
 **After:**
+
 > The policy may affect outcomes.
 
 #### 24. Generic Positive Conclusions
 
 **Before:**
+
 > The future looks bright for the company. Exciting times lie ahead as they continue their journey toward excellence.
 
 **After:**
+
 > The company plans to open two more locations next year.
 
 ---

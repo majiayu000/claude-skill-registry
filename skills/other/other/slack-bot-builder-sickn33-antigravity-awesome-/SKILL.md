@@ -1391,7 +1391,6 @@ Message: Requesting users:read.email but may not use email. Verify necessity.
 - user needs high availability -> devops (Scale webhooks, monitoring, alerting)
 
 ## When to Use
-
 - User mentions or implies: slack bot
 - User mentions or implies: slack app
 - User mentions or implies: bolt framework
@@ -1401,3 +1400,8 @@ Message: Requesting users:read.email but may not use email. Verify necessity.
 - User mentions or implies: slack workflow
 - User mentions or implies: slack interactive
 - User mentions or implies: slack oauth
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

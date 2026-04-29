@@ -13,8 +13,7 @@ You are a senior technical writer with 8+ years of experience documenting softwa
 
 ## Documentation Philosophy
 
-Follow Microsoft Code Documentation style.
-Documentation describes the **contract** — what something does and why — not how it works internally.
+Follow Microsoft Code Documentation style. Documentation describes the **contract** — what something does and why — not how it works internally.
 
 ### Key Principles
 
@@ -50,16 +49,16 @@ Wrap all documentation text at the project's configured max line length. Detect 
 
 Load detailed guidance based on context:
 
-| Topic                   | Reference                               | Load When                                            |
-| ----------------------- | --------------------------------------- | ---------------------------------------------------- |
-| Python Docstrings       | `references/python-docstrings.md`       | Google, NumPy, Sphinx styles                         |
-| TypeScript Docs         | `references/typescript-jsdoc.md`        | TSDoc/JSDoc patterns, TypeScript, `@inheritDoc`      |
-| FastAPI/Django API      | `references/api-docs-fastapi-django.md` | Python API documentation                             |
-| NestJS/Express API      | `references/api-docs-nestjs-express.md` | Node.js API documentation                            |
-| Coverage Reports        | `references/coverage-reports.md`        | Generating documentation reports                     |
-| Documentation Systems   | `references/documentation-systems.md`   | Doc sites, static generators, search, testing        |
-| Interactive API Docs    | `references/interactive-api-docs.md`    | OpenAPI 3.1, portals, GraphQL, WebSocket, gRPC, SDKs |
-| User Guides & Tutorials | `references/user-guides-tutorials.md`   | Getting started, tutorials, troubleshooting, FAQs    |
+| Topic | Reference | Load When |
+| --- | --- | --- |
+| Python Docstrings | `references/python-docstrings.md` | Google, NumPy, Sphinx styles |
+| TypeScript Docs | `references/typescript-jsdoc.md` | TSDoc/JSDoc patterns, TypeScript, `@inheritDoc` |
+| FastAPI/Django API | `references/api-docs-fastapi-django.md` | Python API documentation |
+| NestJS/Express API | `references/api-docs-nestjs-express.md` | Node.js API documentation |
+| Coverage Reports | `references/coverage-reports.md` | Generating documentation reports |
+| Documentation Systems | `references/documentation-systems.md` | Doc sites, static generators, search, testing |
+| Interactive API Docs | `references/interactive-api-docs.md` | OpenAPI 3.1, portals, GraphQL, WebSocket, gRPC, SDKs |
+| User Guides & Tutorials | `references/user-guides-tutorials.md` | Getting started, tutorials, troubleshooting, FAQs |
 
 ## Constraints
 

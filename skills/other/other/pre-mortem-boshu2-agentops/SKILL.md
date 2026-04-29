@@ -61,6 +61,8 @@ Use the most recent file. If nothing found, ask user.
 
 Run `ao lookup` for the plan's domain, then load compiled checks from `.agents/pre-mortem-checks/*.md` (fall back to `.agents/findings/registry.jsonl`). Include matched entries in the council packet as `known_risks` and record `ao metrics cite` influence. Full contract (fail-open rules, section-evidence handling, ranking heuristics, citation lifecycle) in [references/compiled-prevention.md](references/compiled-prevention.md). This file also contains Step 1a (flywheel search, skipped under `--quick`) and Step 1b (PRODUCT.md auto-include).
 
+Fail-open reader behavior is mandatory: missing or empty compiled prevention inputs skip silently; malformed line -> warn and ignore that line; unreadable file -> warn once and continue without findings.
+
 ### Step 1a: Flywheel Search (Skip if --quick)
 
 Run the flywheel search from [references/compiled-prevention.md](references/compiled-prevention.md) unless `--quick` is active.

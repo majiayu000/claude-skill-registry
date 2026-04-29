@@ -1,6 +1,6 @@
 ---
 name: duet
-description: Two-party working posture — user as director, agent as executor. Every fork, tradeoff, and taste choice is surfaced via batched AskUserQuestion with structural framing, a recommended default, and concrete previews when comparison is visual, so the human steers direction while the agent handles implementation. Eliminates the review-bottleneck (no giant diff to approve at the end — review is distributed across picks) and prevents codebase-understanding debt (the user remembers the architecture because they picked it). Use whenever the user invokes /duet, or says "work with me", "ask before", "check with me", "I want to decide", "don't assume", "human-in-the-loop", "co-author", "pair with me", "duet", or whenever a task clearly involves aesthetic, architectural, or irreversible strategic decisions — even without those exact words. Pair with the Duet output style to minimize cognitive load between picks.
+description: Two-party posture — user as director, agent as executor; every fork, tradeoff, or choice surfaced via batched AskUserQuestion with a recommended default. Use when the user invokes /duet, says "ask before" / "pair with me" / "human-in-the-loop", or for aesthetic/architectural/irreversible decisions.
 ---
 
 # Duet

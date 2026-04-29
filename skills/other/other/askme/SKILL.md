@@ -1,6 +1,6 @@
 ---
 name: askme
-description: Verbalized Sampling (VS) protocol for deep intent exploration before planning. Use when starting ambiguous or complex tasks, when multiple interpretations exist, or when you need to explore diverse intent hypotheses and ask maximum clarifying questions before committing to an approach.
+description: Verbalized Sampling (VS) protocol for deep intent exploration before planning, now mode-aware. Default `exhaustive` mode runs the existing VS protocol verbatim (callers without a mode arg get unchanged behavior). Optional `collaborative` mode runs a two-way tip-sharing dialogue; optional `adversarial` mode walks the design tree one fork at a time with recommendations per question. Mode-selection is hybrid — auto-detect from invoking-context phrasing ("help me refine" → collaborative, "poke holes" → adversarial, otherwise exhaustive) with explicit override via `/askme adversarial|collaborative|exhaustive`. Use when starting ambiguous or complex tasks, when multiple interpretations exist, or when you need to explore diverse intent hypotheses and ask maximum clarifying questions before committing to an approach.
 ---
 
 # Ask Me Command
@@ -24,6 +24,45 @@ Before proceeding to ask planning questions, you must *proactively and criticall
 
 Only after completing *both* critical VS and exploration steps, proceed to use the question tool to ask the *maximum possible number* of precise, clarifying, and challenging planning questions that holistically address the problem space, taking into account uncertainty, gaps, and ambiguous requirements.
 
+## Modes [LOAD-BEARING]
+
+`askme` is intentionally one skill with three modes (not split into per-mode skills); callers without a mode arg get `exhaustive` (the original VS protocol) unchanged. The body above describes `exhaustive`; the two new modes share the AskUserQuestion contract and antipattern guidance below but differ in posture.
+
+### Mode-selection (hybrid)
+
+Auto-detect from invoking-context phrasing, with slash-arg override:
+
+- User wording matches `help me refine`, `walk through with me`, `let's brainstorm`, `share tips` → **collaborative**.
+- User wording matches `poke holes`, `stress-test`, `grill`, `find weaknesses` → **adversarial**.
+- Anything else, including no qualifier → **exhaustive** (current VS behavior; backward-compatible default).
+- Explicit override: `/askme exhaustive`, `/askme collaborative`, `/askme adversarial`. The override always wins over auto-detect. Callers that invoke without any mode arg get exhaustive — *zero behavior change for existing invocations*.
+
+### `exhaustive` mode
+
+The VS-shaped protocol described above. Sample N intent hypotheses, rank, run actor-critic on each, then fire the maximum-cardinality clarifying question batch. This is the default when no other signal fires.
+
+### `collaborative` mode
+
+Two-way tip-sharing dialogue. Surface one of your own observations / tips back to the user as a counter-tip per round; let depth emerge through exchange. No scoring, no ranked sample. Use when the user is exploring a problem space rather than approaching commitment, or when their wording explicitly invites collaboration. Stop when the user signals convergence.
+
+### `adversarial` mode
+
+Walk the design tree one fork at a time. Per fork: state the question, recommend an answer with one-sentence rationale, wait for the user, do not proceed on assumed answers. Resolve dependencies parents-first; do not descend into children while a parent is unresolved. Stop conditions: every fork has a committed answer, a blocking unknown surfaces, or the design dissolves under questioning. Adjacent to `grill-me` (general design grilling) and `grill-ai-mastery` (AI-vocabulary anchored grilling) — pick those when the design under test is the anchor; pick this mode of `askme` when intent is the anchor and adversarial probing is what the user asked for.
+
+### Escalation triggers (collaborative → adversarial)
+
+Promote from collaborative to adversarial mid-session when **any** of these fire:
+
+- **Ambiguity cardinality** ≥ 2 valid architectural decisions surface from a single user message; force a fork.
+- **Unspecified file paths** — the user references "the function" / "that file" without a concrete path; demand resolution before continuing.
+- **Missing success criteria** — the user describes a goal without a verifiable signal of done; surface the gap.
+
+Sources: signal patterns documented in Cursor Plan Mode best practices and the NeurIPS 2025 Multi-Agent Clarification (MAC) paper. Treat as guidance, not a hard rule — the user can always override mode via slash-arg.
+
+### Mode interactions with the VS preamble
+
+The VS preamble (sample N, rank, actor-critic) is required only in `exhaustive` mode. `collaborative` does not run VS — it foregrounds dialogue. `adversarial` runs VS once at the start to map the design tree, then proceeds per-fork.
+
 ## `AskUserQuestion` tool contract (Claude Code reference)
 
 This protocol assumes a single "ask user" tool with the contract below. Other agent harnesses (Codex, Gemini CLI, Aider, OpenAI Assistants, …) should map their equivalent question/prompt tool to this surface — field names and numeric limits below are Claude Code's `AskUserQuestion`; the **shape** is what the protocol depends on, and the **`(Recommended)` convention** is what the per-axis pick semantics rest on.
@@ -35,7 +74,7 @@ This protocol assumes a single "ask user" tool with the contract below. Other ag
 Which of these defaults should I override before I lock in the plan?
 ❯ 1. [ ] Diff-only mode
   2. [ ] Include root prompts
-  3. [ ] CLAUDE.md wins on conflict
+  3. [ ] system-prompt-baseline.md wins on conflict
   4. [ ] Bump plugin manifests
 ```
 This is a single `multiSelect: true` question where **unticked = "default stands"**. It collapses four independent axes into one checkbox list. Never generate this shape.
@@ -43,7 +82,7 @@ This is a single `multiSelect: true` question where **unticked = "default stands
 **Correct shape — one single-select question per axis:**
 ```
 Q1 — Scope (single-select)
-❯ Diff-only mode (Recommended) — propagate only recently-new CLAUDE.md
+❯ Diff-only mode (Recommended) — propagate only recently-new baseline
   Full block alignment — full sweep across all blocks
 
 Q2 — Roots (single-select)
@@ -52,11 +91,11 @@ Q2 — Roots (single-select)
 
 Q3 — Conflict policy (single-select)
 ❯ Preserve target policy (Recommended) — non-conflicting only
-  CLAUDE.md wins — override divergent target policy
+  system-prompt-baseline.md wins — override divergent target policy
 
 Q4 — Manifests (single-select)
 ❯ Skip bump (Recommended) — sibling-harness scope
-  Bump minor — semver per CLAUDE.md memory note
+  Bump minor — semver per system-prompt-baseline.md memory note
 ```
 
 **Positive routing rule:** When the brief calls for the user to *rarely have to type*, route the intent into N per-axis single-select questions (≤4 per fire) — each axis's `(Recommended)` option carries the default. Ticking `(Recommended)` *is* accepting the default.

@@ -34,13 +34,13 @@ You are an expert prompt engineer with deep knowledge of LLM capabilities, limit
 
 Load detailed guidance based on context:
 
-| Topic              | Reference                             | Load When                                          |
-| ------------------ | ------------------------------------- | -------------------------------------------------- |
-| Prompt Patterns    | `references/prompt-patterns.md`       | Zero-shot, few-shot, chain-of-thought, ReAct       |
-| Optimization       | `references/prompt-optimization.md`   | Iterative refinement, A/B testing, token reduction |
-| Evaluation         | `references/evaluation-frameworks.md` | Metrics, test suites, automated evaluation         |
-| Structured Outputs | `references/structured-outputs.md`    | JSON mode, function calling, schema design         |
-| System Prompts     | `references/system-prompts.md`        | Persona design, guardrails, context management     |
+| Topic | Reference | Load When |
+| --- | --- | --- |
+| Prompt Patterns | `references/prompt-patterns.md` | Zero-shot, few-shot, chain-of-thought, ReAct |
+| Optimization | `references/prompt-optimization.md` | Iterative refinement, A/B testing, token reduction |
+| Evaluation | `references/evaluation-frameworks.md` | Metrics, test suites, automated evaluation |
+| Structured Outputs | `references/structured-outputs.md` | JSON mode, function calling, schema design |
+| System Prompts | `references/system-prompts.md` | Persona design, guardrails, context management |
 
 ## Constraints
 

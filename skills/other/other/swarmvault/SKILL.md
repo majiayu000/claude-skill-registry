@@ -1,7 +1,7 @@
 ---
 name: swarmvault
 description: "Use SwarmVault when the user needs a local-first knowledge vault that writes durable markdown, graph, search, dashboard, review, context-pack, task-ledger, retrieval, and MCP artifacts to disk from books, notes, transcripts, exports, datasets, slide decks, files, URLs, code, and recurring source workflows."
-version: "3.0.0"
+version: "3.1.0"
 metadata: '{"openclaw":{"requires":{"anyBins":["swarmvault","vault"]},"install":[{"id":"node","kind":"node","package":"@swarmvaultai/cli","bins":["swarmvault","vault"],"label":"Install SwarmVault CLI (npm)"}],"emoji":"🗃️","homepage":"https://www.swarmvault.ai/docs"}}'
 ---
 
@@ -81,7 +81,7 @@ For onboarding, examples, command references, or troubleshooting, read the bundl
 
 ## Agent integration
 
-- `swarmvault install --agent codex|claude|cursor|goose|pi|gemini|opencode|aider|copilot|trae|claw|droid|kiro|hermes|antigravity|vscode` installs agent-specific rules into the current project.
+- `swarmvault install --agent codex|claude|cursor|goose|pi|gemini|opencode|aider|copilot|trae|claw|droid|kiro|hermes|antigravity|vscode|amp|augment|adal|bob|cline|codebuddy|command-code|continue|cortex|crush|deepagents|firebender|iflow|junie|kilo-code|kimi|kode|mcpjam|mistral-vibe|mux|neovate|openclaw|openhands|pochi|qoder|qwen-code|replit|roo-code|trae-cn|warp|windsurf|zencoder` installs agent-specific rules into the current project. Agents in the extended roster receive a project-level skill bundle at the tool's conventional skills directory.
 - `swarmvault install --agent claude|opencode|gemini|copilot --hook` installs graph-first hook or plugin support for the agents that expose project hook APIs.
 - `swarmvault install --agent aider` installs `CONVENTIONS.md` and wires `.aider.conf.yml` to read it when that config is valid YAML.
 - `swarmvault mcp` exposes tools and resources for page search, page reads, source listing, query, context-pack build/read/list, task start/update/finish/list/read/resume, compatibility memory tasks, retrieval status/rebuild/doctor, ingest, compile, and lint.

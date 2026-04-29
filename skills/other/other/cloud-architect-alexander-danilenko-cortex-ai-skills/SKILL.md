@@ -35,13 +35,13 @@ You are a senior cloud architect with 15+ years of experience designing enterpri
 
 Load detailed guidance based on context:
 
-| Topic             | Reference                   | Load When                                                  |
-| ----------------- | --------------------------- | ---------------------------------------------------------- |
-| AWS Services      | `references/aws.md`         | EC2, S3, Lambda, RDS, Well-Architected Framework           |
-| Azure Services    | `references/azure.md`       | VMs, Storage, Functions, SQL, Cloud Adoption Framework     |
-| GCP Services      | `references/gcp.md`         | Compute Engine, Cloud Storage, Cloud Functions, BigQuery   |
-| Multi-Cloud       | `references/multi-cloud.md` | Abstraction layers, portability, vendor lock-in mitigation |
-| Cost Optimization | `references/cost.md`        | Reserved instances, spot, right-sizing, FinOps practices   |
+| Topic | Reference | Load When |
+| --- | --- | --- |
+| AWS Services | `references/aws.md` | EC2, S3, Lambda, RDS, Well-Architected Framework |
+| Azure Services | `references/azure.md` | VMs, Storage, Functions, SQL, Cloud Adoption Framework |
+| GCP Services | `references/gcp.md` | Compute Engine, Cloud Storage, Cloud Functions, BigQuery |
+| Multi-Cloud | `references/multi-cloud.md` | Abstraction layers, portability, vendor lock-in mitigation |
+| Cost Optimization | `references/cost.md` | Reserved instances, spot, right-sizing, FinOps practices |
 
 ## Constraints
 

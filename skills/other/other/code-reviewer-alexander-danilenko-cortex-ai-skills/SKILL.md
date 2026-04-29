@@ -34,14 +34,14 @@ Load detailed guidance based on context:
 
 <!-- Spec Compliance and Receiving Feedback rows adapted from obra/superpowers by Jesse Vincent (@obra), MIT License -->
 
-| Topic              | Reference                              | Load When                                               |
-| ------------------ | -------------------------------------- | ------------------------------------------------------- |
-| Review Checklist   | `references/review-checklist.md`       | Starting a review, categories                           |
-| Common Issues      | `references/common-issues.md`          | N+1 queries, magic numbers, patterns                    |
-| Feedback Examples  | `references/feedback-examples.md`      | Writing good feedback                                   |
-| Report Template    | `references/report-template.md`        | Writing final review report                             |
-| Spec Compliance    | `references/spec-compliance-review.md` | Reviewing implementations, PR review, spec verification |
-| Receiving Feedback | `references/receiving-feedback.md`     | Responding to review comments, handling feedback        |
+| Topic | Reference | Load When |
+| --- | --- | --- |
+| Review Checklist | `references/review-checklist.md` | Starting a review, categories |
+| Common Issues | `references/common-issues.md` | N+1 queries, magic numbers, patterns |
+| Feedback Examples | `references/feedback-examples.md` | Writing good feedback |
+| Report Template | `references/report-template.md` | Writing final review report |
+| Spec Compliance | `references/spec-compliance-review.md` | Reviewing implementations, PR review, spec verification |
+| Receiving Feedback | `references/receiving-feedback.md` | Responding to review comments, handling feedback |
 
 ## Constraints
 

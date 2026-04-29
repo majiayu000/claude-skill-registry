@@ -63,7 +63,6 @@ For fix or implementation tasks, default to `--sandbox workspace-write --full-au
 | `--output-schema <path>` | Enforce JSON Schema on the output |
 | `--ephemeral` | No persisted session files |
 | `--skip-git-repo-check` | Bypass git repository requirement |
-| `-m, --model <MODEL>` | Specify the model to use |
 
 ## Prompt Shaping
 
@@ -76,7 +75,7 @@ Codex uses XML tags in its own context scaffolding, so the model parses them nat
 - `<dig_deeper_nudge>`: Push past surface-level findings to check for second-order failures.
 - `<verification_loop>`: When correctness matters — ask Codex to verify before finalizing.
 
-Keep prompts compact. Prefer tighter output contracts over raising reasoning effort. One clear task per exec call.
+Keep prompts compact, with tight output contracts. One clear task per exec call.
 
 ## Parallel Execution
 

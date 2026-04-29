@@ -232,11 +232,9 @@ description: |
 |------|----------|
 | [references/outline-arrangement.md](references/outline-arrangement.md) | **核心参考**：大纲排布方法论+五步大纲法+故事结构分级+剧情质量控制+升级感设计+节点设计法+矛盾设计 |
 | [references/advanced-plot-techniques.md](references/advanced-plot-techniques.md) | 高级技法：小纲四步法+高潮逆推+情绪拉扯+金手指运用+对标书选择+双线结构+AB交织法 |
-| [references/hook-techniques.md](references/hook-techniques.md) | **核心参考**：钩子原理+章尾钩子13式+章首钩子7式+实战模板+段落级钩子+悬念编排+期待感理论 |
-| [references/opening-design.md](references/opening-design.md) | 开头设计：黄金一章法则+六大标准+开头模板+开头问题诊断 |
-| [references/character-design.md](references/character-design.md) | **人物全流程**：设定主角/配角/反派+人物元素提取+关系映射+动机链+群像写作 |
-| [references/expectation-techniques.md](references/expectation-techniques.md) | **核心参考**：铺垫/爽点/期待感设计+代入感与共鸣+多线期待+信息差+情绪模型 |
-| [references/story-structure.md](references/story-structure.md) | **结构全流程**：故事结构+八节点框架+循环写法+并列式+节奏控制+情绪驱动 |
+| [references/hook-techniques.md](references/hook-techniques.md) | **核心参考**：钩子原理+章尾钩子13式+章首钩子7式+实战模板+段落级钩子+悬念编排+期待感理论+断期待修复 |
+| [references/opening-design.md](references/opening-design.md) | 开头设计：黄金一章法则+六大标准+开局三大基点+核心模板+开头问题诊断 |
+| [references/character-design.md](references/character-design.md) | **人物全流程**：设定主角/配角/反派+人物元素提取+关系映射+动机链+群像写作+代入感构建法 |
 | [references/genre-frameworks-unified.md](references/genre-frameworks-unified.md) | **题材全流程**：题材框架+核心梗解析+事业线/爱情线设计+长篇短篇双视角 |
 | [references/style-modules.md](references/style-modules.md) | **风格全流程**：题材风格+对话+打斗/智斗+镜头式写作+爽点释放+装逼打脸+流派特征+写作基础+白描+视角 |
 | [references/anti-ai-writing.md](references/anti-ai-writing.md) | **去AI味全流程**：预防AI痕迹+三遍去AI法+改写范例库 |

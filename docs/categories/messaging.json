@@ -1,9 +1,27 @@
 {
   "category": "messaging",
   "code": "oth",
-  "count": 15,
-  "updated_at": "2026-04-28T02:35:57.313766Z",
+  "count": 16,
+  "updated_at": "2026-04-29T02:39:05.373085Z",
   "skills": [
+    {
+      "name": "dingtalk-bridge",
+      "description": "DingTalk group chat bridge for Claude Code. Send markdown/text messages, receive @mentions, auto-execute prompts via Stream SDK.",
+      "repo": "mguozhen/dingtalk-bridge",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "messaging",
+      "tags": [
+        "dingtalk",
+        "chatbot",
+        "messaging",
+        "china",
+        "notification"
+      ],
+      "stars": 0,
+      "install": "mguozhen/dingtalk-bridge/SKILL.md",
+      "source": "Community Skills"
+    },
     {
       "name": "dingtalk-bridge",
       "description": "DingTalk group chat bridge for Claude Code. Send markdown/text messages, receive @mentions, auto-execute prompts via Stream SDK.",

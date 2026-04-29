@@ -1,6 +1,6 @@
 ---
 name: git-guardrails-claude-code
-description: Install a Claude-Code PreToolUse hook that blocks destructive git commands (push variants, hard reset, force clean, branch -D, checkout/restore overwrites) before the Bash tool runs them. Trigger when the user wants git safety rails, prevention of accidental force-pushes or repository wipes, or hardening of an autonomous coding session. Claude-Code-specific install path; the hook concept maps to other harnesses but the configuration surface differs.
+description: Install a Claude-Code PreToolUse hook that blocks destructive git commands (push variants including force-push, hard reset, force clean, branch -D, checkout/restore overwrites) before Bash runs them. Use when the user wants git safety rails, force-push prevention, or repository-wipe protection.
 ---
 
 Bash-tool PreToolUse hook. The harness invokes the script with the candidate command on stdin as JSON; the script greps for dangerous patterns and exits non-zero with an explanatory stderr message, which the harness surfaces to the model as a refusal. The model cannot override the block.

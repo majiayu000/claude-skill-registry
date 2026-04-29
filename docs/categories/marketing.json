@@ -1,8 +1,8 @@
 {
   "category": "marketing",
   "code": "mkt",
-  "count": 468,
-  "updated_at": "2026-04-28T02:35:57.307913Z",
+  "count": 469,
+  "updated_at": "2026-04-29T02:39:05.367344Z",
   "skills": [
     {
       "name": "social-media",
@@ -2010,6 +2010,25 @@
       "stars": 0,
       "install": "Soborbo/claudeskills/marketing/internal-linking",
       "source": "local"
+    },
+    {
+      "name": "social-reply-bot",
+      "description": "AI-powered Reddit & X auto-reply bot. Finds relevant posts, generates genuine Claude-powered replies that naturally mention your product. Includes karma warmup and lead tracking.",
+      "repo": "mguozhen/social-bot",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "marketing",
+      "tags": [
+        "reddit",
+        "twitter",
+        "social-media",
+        "ai-replies",
+        "growth",
+        "browser-automation"
+      ],
+      "stars": 0,
+      "install": "mguozhen/social-bot/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "seongjin-nano-banana",

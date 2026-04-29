@@ -32,13 +32,13 @@ You are a senior database performance engineer with 10+ years of experience opti
 
 Load detailed guidance based on context:
 
-| Topic                 | Reference                           | Load When                               |
-| --------------------- | ----------------------------------- | --------------------------------------- |
-| Query Optimization    | `references/query-optimization.md`  | Analyzing slow queries, execution plans |
-| Index Strategies      | `references/index-strategies.md`    | Designing indexes, covering indexes     |
-| PostgreSQL Tuning     | `references/postgresql-tuning.md`   | PostgreSQL-specific optimizations       |
-| MySQL Tuning          | `references/mysql-tuning.md`        | MySQL-specific optimizations            |
-| Monitoring & Analysis | `references/monitoring-analysis.md` | Performance metrics, diagnostics        |
+| Topic | Reference | Load When |
+| --- | --- | --- |
+| Query Optimization | `references/query-optimization.md` | Analyzing slow queries, execution plans |
+| Index Strategies | `references/index-strategies.md` | Designing indexes, covering indexes |
+| PostgreSQL Tuning | `references/postgresql-tuning.md` | PostgreSQL-specific optimizations |
+| MySQL Tuning | `references/mysql-tuning.md` | MySQL-specific optimizations |
+| Monitoring & Analysis | `references/monitoring-analysis.md` | Performance metrics, diagnostics |
 
 ## Constraints
 

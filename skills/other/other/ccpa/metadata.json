@@ -1,0 +1,17 @@
+{
+  "name": "ccpa",
+  "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+  "path": "plugins/ccpa/skills/ccpa/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+  "dir_name": "ccpa",
+  "downloaded_at": "2026-04-29T01:58:29.584764Z",
+  "author": "Sushegaad",
+  "source_url": "https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/blob/main/plugins/ccpa/skills/ccpa/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/blob/main/plugins/ccpa/skills/ccpa/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

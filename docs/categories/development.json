@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19713,
-  "updated_at": "2026-04-28T02:35:56.965907Z",
+  "count": 19714,
+  "updated_at": "2026-04-29T02:39:05.032022Z",
   "skills": [
     {
       "name": "fix",
@@ -137826,6 +137826,24 @@
       "stars": 0,
       "install": "olehsvyrydov/AI-development-team/claude/skills/development/backend/kotlin/kotlin-developer",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "skills/pagerunner-skill/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/skills/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "translation-quality-assessment",

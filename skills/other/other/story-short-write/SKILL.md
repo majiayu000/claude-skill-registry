@@ -239,7 +239,7 @@ description: |
 
 | 文件 | 何时加载 |
 |------|----------|
-| [references/genre-writing-formulas.md](references/genre-writing-formulas.md) | **核心参考**：21大题材写作公式 + 震惊场景九法 + 三翻四震技法 + 比赛场景写法 + 感情线四阶段推进 + 喜剧flag机制 + 核心梗提炼验证 + 短篇视角控制法则 + 女频读者心理与写作技法 + AI辅助写作技法 + 情绪操控高级技法 + 感情线写作法则 + 毒点排查核心 + 情绪锚点理论 + 反派嘲讽新思路 + 人设拆解法 + 以小搏大四要素 + 爽点本质 + 反馈式学习法 |
+| [references/genre-writing-formulas.md](references/genre-writing-formulas.md) | **核心参考**：题材写作公式 + 三翻四震技法 + 比赛场景写法 + 感情线四阶段推进 + 喜剧flag机制 + 短篇视角控制法则 + 女频读者心理与写作技法 + 情绪操控高级技法 + 感情线写作法则 + 毒点排查核心 + 情绪锚点理论 + 反派嘲讽新思路 + 人设拆解法 + 以小搏大四要素 + 爽点本质 + 核心梗驱动法 |
 | [references/female-audience-writing.md](references/female-audience-writing.md) | 女频写作技巧+女读者偏好+情感描写+女频题材选择+对标拆书方法+感情线模式 |
 | [references/emotional-arc-design.md](references/emotional-arc-design.md) | 设计情绪曲线时，弧形模板+期待感管理+题材赛道策略 |
 | [references/reversal-toolkit.md](references/reversal-toolkit.md) | 设计反转时，反转类型+时机+误导底层路径 |

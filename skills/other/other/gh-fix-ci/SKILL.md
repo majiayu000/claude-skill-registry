@@ -1,6 +1,6 @@
 ---
 name: gh-fix-ci
-description: Inspect GitHub PR checks with gh, pull failing GitHub Actions logs, summarize failure context, then create a fix plan and implement after user approval. Use when a user asks to debug or fix failing PR CI/CD checks on GitHub Actions and wants a plan + code changes; for external checks (e.g., Buildkite), only report the details URL and mark them out of scope.
+description: Inspect GitHub PR checks with gh, pull failing GitHub Actions logs, summarize the failure, then plan and implement the fix after user approval. Use when the user asks to debug or fix failing PR CI on GitHub Actions; external checks (Buildkite, etc.) are reported as URLs only.
 metadata:
   short-description: Fix failing Github CI actions
 ---

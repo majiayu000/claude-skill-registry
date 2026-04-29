@@ -27,7 +27,7 @@ When research is needed:
 | Tier | Location | Purpose | Shared |
 |------|----------|---------|--------|
 | 1 | `~/.claude/plugins/research/` | Fast, cross-project | User only |
-| 2 | `docs/research/` | Curated, version controlled | Team |
+| 2 | `docs/research/` or JD-resolved path | Curated, version controlled | Team |
 
 ## Operations
 
@@ -37,6 +37,10 @@ When research is needed:
 | Promote | `/research promote <slug>` | Yes | Run `promote.py {slug}` directly |
 | Refresh | `/research refresh <slug>` | No | Spawn agent → fresh research → cache → update promoted |
 | List | `/research list` | Yes | Run `cache_manager.py list` (project-scoped by default, `--all` for everything) |
+
+## JD-Aware Path Resolution
+
+Promote and refresh operations detect `.jd-config.json` to resolve the research output path. If an area containing "research" exists (e.g. `"30": "research"`), output goes to `docs/30-research/`. Otherwise falls back to `docs/research/`. The frontmatter standard is defined by the `research-frontmatter` skill in the doc plugin.
 
 ## Project Scoping
 

@@ -1,35 +1,8 @@
 ---
 name: github-project-management
-title: GitHub Project Management
-version: 2.0.0
-category: github
-description: Comprehensive GitHub project management with swarm-coordinated issue tracking, project board automation, and sprint planning
-author: Claude Code
-tags:
-  - github
-  - project-management
-  - issue-tracking
-  - project-boards
-  - sprint-planning
-  - agile
-  - swarm-coordination
-difficulty: intermediate
-prerequisites:
-  - GitHub CLI (gh) installed and authenticated
-  - ruv-swarm or claude-flow MCP server configured
-  - Repository access permissions
-tools_required:
-  - mcp__github__*
-  - mcp__claude-flow__*
-  - Bash
-  - Read
-  - Write
-  - TodoWrite
-related_skills:
-  - github-pr-workflow
-  - github-release-management
-  - sparc-orchestrator
-estimated_time: 30-45 minutes
+description: |
+  Comprehensive GitHub project management with swarm-coordinated issue tracking, project board automation, and sprint planning
+allowed-tools: "mcp__github__*, mcp__claude-flow__*, Bash, Read, Write, TodoWrite"
 ---
 
 # GitHub Project Management

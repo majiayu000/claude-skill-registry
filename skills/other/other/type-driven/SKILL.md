@@ -1,6 +1,6 @@
 ---
 name: type-driven
-description: Type-driven development - design type specifications from requirements, then execute CREATE -> VERIFY -> IMPLEMENT cycle. Use when developing with refined types, state machines encoded in types, or proof-carrying types; enforces totality and exhaustive pattern matching.
+description: Type-driven development. Use when developing with refined types, state machines encoded in types, or proof-carrying types; enforces totality and exhaustive pattern matching.
 ---
 
 # Type-driven development

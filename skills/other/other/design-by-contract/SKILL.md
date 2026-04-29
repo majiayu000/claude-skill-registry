@@ -1,6 +1,6 @@
 ---
 name: design-by-contract
-description: Design-by-Contract (DbC) development - design contracts from requirements, then execute CREATE -> VERIFY -> TEST cycle. Use when implementing with formal preconditions, postconditions, and invariants across any language.
+description: Design-by-Contract (DbC) development. Use when implementing with formal preconditions, postconditions, and invariants across any language.
 ---
 
 # Design-by-Contract development

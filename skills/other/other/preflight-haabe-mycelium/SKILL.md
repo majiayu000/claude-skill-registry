@@ -63,6 +63,19 @@ Pre-delivery validation checklist. Run before every implementation task.
 **AI tool:** Eval test cases defined, red-team scenarios planned, bias testing approach chosen.
 **Service:** Walkthrough planned, client feedback mechanism defined.
 
+### Success Criteria (G-V11)
+- [ ] Declare what will be true after this delivery increment (1-3 measurable statements)
+- [ ] Declare how each criterion will be verified (test, manual check, metric)
+- [ ] Record criteria in decision-log.md alongside the delivery decision
+
+Example:
+```
+Success criteria:
+1. "Users can complete onboarding in < 5 min" — verified by usability test
+2. "API responds in < 200ms at p95" — verified by load test
+3. "No new lint or type errors introduced" — verified by CI
+```
+
 ### Definition of Done
 - [ ] DoD criteria reviewed and understood
 - [ ] All criteria are achievable within this task

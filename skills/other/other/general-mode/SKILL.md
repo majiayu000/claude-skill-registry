@@ -76,3 +76,5 @@ If "Deliver now": skip to Deliver. If "Run recursive refinement": starting at 9.
 ### Deliver
 
 When the lead reaches Deliver (via "Deliver now" at the Refine prompt, or after rung 10 is committed), present completed work to the user. Follow the ship definition from `.claude/swarm-ship.md` — execute the defined shipping steps with the user's approval. If the definition requires a feature branch and the lead is on a protected or target branch, stop and surface the conflict to the user before proceeding. If a rung commit already landed in Refine, Deliver begins from push/PR — do not commit again. Do not ship without explicit user sign-off.
+
+If the ship definition includes opening a pull request, use file-based input for the PR body — see the universal rules in launch.md Step 8f.

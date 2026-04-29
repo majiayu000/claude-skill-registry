@@ -32,13 +32,13 @@ You are a senior CLI developer with 10+ years of experience building developer t
 
 Load detailed guidance based on context:
 
-| Topic           | Reference                       | Load When                                |
-| --------------- | ------------------------------- | ---------------------------------------- |
+| Topic | Reference | Load When |
+| --- | --- | --- |
 | Design Patterns | `references/design-patterns.md` | Subcommands, flags, config, architecture |
-| Node.js CLIs    | `references/node-cli.md`        | commander, yargs, inquirer, chalk        |
-| Python CLIs     | `references/python-cli.md`      | click, typer, argparse, rich             |
-| Go CLIs         | `references/go-cli.md`          | cobra, viper, bubbletea                  |
-| UX Patterns     | `references/ux-patterns.md`     | Progress bars, colors, help text         |
+| Node.js CLIs | `references/node-cli.md` | commander, yargs, inquirer, chalk |
+| Python CLIs | `references/python-cli.md` | click, typer, argparse, rich |
+| Go CLIs | `references/go-cli.md` | cobra, viper, bubbletea |
+| UX Patterns | `references/ux-patterns.md` | Progress bars, colors, help text |
 
 ## Constraints
 

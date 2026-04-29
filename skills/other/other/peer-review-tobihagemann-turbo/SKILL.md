@@ -49,8 +49,8 @@ Invoke `/codex-exec` via the Skill tool in read-only mode with the assembled pro
 Compare codex's output against the dimensions and structure requested in Step 2, then classify it into one of three branches:
 
 - **Codex returned the requested findings** — output them verbatim.
-- **Incomplete output** (any reason — partial fan-out with missing dimensions, mid-run truncation, sections cut off, sub-agent failure, single-dimension review that ends mid-finding, etc.) — output what came back verbatim, name what is missing relative to Step 2's request, then append: "**Important:** the main agent should use `AskUserQuestion` to notify the user that codex returned only partial output (state what is missing); the missing portion was not peer-reviewed."
-- **No output / codex failed** — output a single notice stating the cause (usage limit, error, empty response), then append: "**Important:** the main agent should use `AskUserQuestion` to notify the user that peer review was not produced this run."
+- **Incomplete output** (any reason — partial fan-out with missing dimensions, mid-run truncation, sections cut off, sub-agent failure, single-dimension review that ends mid-finding, etc.) — output what came back verbatim, name what is missing relative to Step 2's request, then append: "**Action required:** Peer review returned partial output. Use the `AskUserQuestion` tool to ask the user whether to retry peer review now (transient codex errors like usage limits often clear within minutes) or proceed with the partial findings. State what is missing so the user can decide."
+- **No output / codex failed** — output a single notice stating the cause (usage limit, error, empty response), then append: "**Action required:** Peer review failed. Use the `AskUserQuestion` tool to ask the user whether to retry peer review now (transient codex errors like usage limits often clear within minutes) or proceed without peer review."
 
 Do not synthesize peer findings locally to fill a gap. Peer review's value is independence; locally written findings labeled "peer" mislead the consumer.
 

@@ -84,6 +84,19 @@ This decision log entry ensures the calibration data is auditable alongside othe
 - **Safer**: Did we maintain security and trust?
 - **Happier**: How is team satisfaction? Customer advocacy? Societal impact? Was compute usage proportionate to value (not wasteful)?
 
+### Step 6. Rework Follow-Up (14-day window)
+
+If this retrospective is for a cycle completed more than 14 days ago, check:
+- How many corrections were logged against this delivery since completion? → `rework.post_delivery_corrections`
+- How many regressions occurred? → `rework.post_delivery_regressions`
+- Days to first regression? → `rework.days_to_first_regression`
+
+Update the cycle record in `canvas/cycle-history.yml` with the rework fields. This is the denominator — the hidden cost of delivery that velocity metrics miss.
+
+If this retrospective is for a just-completed cycle, prompt: "Set a reminder to check rework in 14 days. Run `/retrospective rework-check [cycle-id]` after that."
+
+*Source: Paddo (the denominator problem — 43% of AI-assisted code requires post-delivery debugging). Forsgren (change failure rate as a trailing indicator).*
+
 ## Root Cause Analysis (when "What Didn't Go Well" surfaces a significant problem)
 
 Use these two complementary techniques. Fishbone gives breadth (all possible causes). 5 Whys gives depth (one cause traced to its root).

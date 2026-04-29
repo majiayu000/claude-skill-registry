@@ -1,6 +1,6 @@
 ---
 name: proof-driven
-description: Proof-driven development - design proofs from requirements, then execute CREATE -> VERIFY -> REMEDIATE cycle. Use when implementing with formal verification using property-based testing, theorem proving, or proof tactics; zero unproven property policy enforced.
+description: Proof-driven development. Use when implementing with formal verification using property-based testing, theorem proving, or proof tactics; zero unproven property policy enforced.
 ---
 
 # Proof-driven development

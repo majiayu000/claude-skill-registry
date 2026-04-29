@@ -1,7 +1,7 @@
 ---
 name: domain-authority-auditor
 description: 'Use when auditing domain authority, trust, citations, or 域名权威/网站可信度. Runs 40-item CITE scoring with veto checks.'
-version: "9.9.0"
+version: "9.9.5"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -10,7 +10,7 @@ argument-hint: "<domain>"
 class: auditor
 metadata:
   author: aaron-he-zhu
-  version: "9.9.0"
+  version: "9.9.5"
   geo-relevance: "medium"
   tags:
     - seo

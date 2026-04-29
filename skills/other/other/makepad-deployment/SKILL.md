@@ -15,7 +15,6 @@ source: community
 This skill covers packaging Makepad applications for all supported platforms.
 
 ## When to Use
-
 - You need to package, distribute, or automate deployment of a Makepad application.
 - The task involves desktop installers, APK/IPA builds, WebAssembly output, or CI-based release artifacts.
 - You need guidance on `cargo-packager`, `cargo-makepad`, or GitHub Actions packaging flows for Makepad.
@@ -416,3 +415,8 @@ cargo makepad android install-toolchain --full-ndk
 - [robius-packaging-commands](https://github.com/project-robius/robius-packaging-commands)
 - [cargo-makepad](https://github.com/makepad/makepad)
 - [makepad-packaging-action](https://github.com/marketplace/actions/makepad-packaging-action)
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

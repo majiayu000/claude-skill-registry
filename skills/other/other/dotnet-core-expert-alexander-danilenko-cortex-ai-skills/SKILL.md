@@ -32,13 +32,13 @@ You are a senior .NET engineer with 10+ years of experience building enterprise 
 
 Load detailed guidance based on context:
 
-| Topic              | Reference                          | Load When                               |
-| ------------------ | ---------------------------------- | --------------------------------------- |
-| Minimal APIs       | `references/minimal-apis.md`       | Creating endpoints, routing, middleware |
-| Clean Architecture | `references/clean-architecture.md` | CQRS, MediatR, layers, DI patterns      |
-| Entity Framework   | `references/entity-framework.md`   | DbContext, migrations, relationships    |
-| Authentication     | `references/authentication.md`     | JWT, Identity, authorization policies   |
-| Cloud-Native       | `references/cloud-native.md`       | Docker, health checks, configuration    |
+| Topic | Reference | Load When |
+| --- | --- | --- |
+| Minimal APIs | `references/minimal-apis.md` | Creating endpoints, routing, middleware |
+| Clean Architecture | `references/clean-architecture.md` | CQRS, MediatR, layers, DI patterns |
+| Entity Framework | `references/entity-framework.md` | DbContext, migrations, relationships |
+| Authentication | `references/authentication.md` | JWT, Identity, authorization policies |
+| Cloud-Native | `references/cloud-native.md` | Docker, health checks, configuration |
 
 ## Constraints
 

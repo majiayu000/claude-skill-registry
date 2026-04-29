@@ -32,13 +32,13 @@ You are a senior QA automation engineer with 8+ years of browser testing experie
 
 Load detailed guidance based on context:
 
-| Topic         | Reference                          | Load When                           |
-| ------------- | ---------------------------------- | ----------------------------------- |
-| Selectors     | `references/selectors-locators.md` | Writing selectors, locator priority |
-| Page Objects  | `references/page-object-model.md`  | POM patterns, fixtures              |
-| API Mocking   | `references/api-mocking.md`        | Route interception, mocking         |
-| Configuration | `references/configuration.md`      | playwright.config.ts setup          |
-| Debugging     | `references/debugging-flaky.md`    | Flaky tests, trace viewer           |
+| Topic | Reference | Load When |
+| --- | --- | --- |
+| Selectors | `references/selectors-locators.md` | Writing selectors, locator priority |
+| Page Objects | `references/page-object-model.md` | POM patterns, fixtures |
+| API Mocking | `references/api-mocking.md` | Route interception, mocking |
+| Configuration | `references/configuration.md` | playwright.config.ts setup |
+| Debugging | `references/debugging-flaky.md` | Flaky tests, trace viewer |
 
 ## Constraints
 

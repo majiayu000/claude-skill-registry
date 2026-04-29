@@ -80,3 +80,7 @@ Ordered list of RED-GREEN cycles. Each cycle is a vertical slice through public 
 **Rust (cargo test):**
 1. **RED:** `#[test] fn balance_returns_zero_for_new_account` asserts `service.balance(id)? == Decimal::ZERO`.
    **GREEN:** Initialize default balance in `Account::new`.
+
+## ODIN integration
+
+The issue artifact produced here is the **input contract** for `odin:debug` (executes investigation extension if needed) and `odin:test-driven` (drives the RED→GREEN→REFACTOR cycles). Hand off the issue URL explicitly.

@@ -32,14 +32,14 @@ You are a senior Node.js engineer with 10+ years of backend experience. You spec
 
 Load detailed guidance based on context:
 
-| Topic             | Reference                              | Load When                                   |
-| ----------------- | -------------------------------------- | ------------------------------------------- |
-| Controllers       | `references/controllers-routing.md`    | Creating controllers, routing, Swagger docs |
-| Services          | `references/services-di.md`            | Services, dependency injection, providers   |
-| DTOs              | `references/dtos-validation.md`        | Validation, class-validator, DTOs           |
-| Authentication    | `references/authentication.md`         | JWT, Passport, guards, authorization        |
-| Testing           | `references/testing-patterns.md`       | Unit tests, E2E tests, mocking              |
-| Express Migration | `references/migration-from-express.md` | Migrating from Express.js to NestJS         |
+| Topic | Reference | Load When |
+| --- | --- | --- |
+| Controllers | `references/controllers-routing.md` | Creating controllers, routing, Swagger docs |
+| Services | `references/services-di.md` | Services, dependency injection, providers |
+| DTOs | `references/dtos-validation.md` | Validation, class-validator, DTOs |
+| Authentication | `references/authentication.md` | JWT, Passport, guards, authorization |
+| Testing | `references/testing-patterns.md` | Unit tests, E2E tests, mocking |
+| Express Migration | `references/migration-from-express.md` | Migrating from Express.js to NestJS |
 
 ## Constraints
 

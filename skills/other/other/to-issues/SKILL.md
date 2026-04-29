@@ -66,3 +66,7 @@ Concise end-to-end behavior description. Demoable outcome, not layer-by-layer me
 - **Rust + Postgres API:** "Add `GET /accounts/{id}/balance` returning JSON; includes sqlx migration, handler, integration test against testcontainer Postgres." — one slice, all layers.
 - **TypeScript + React frontend:** "Render account balance with optimistic refresh; includes Zod response schema, TanStack Query hook, component, Vitest test." — one slice, all layers.
 - **CLI tool (any language):** "Add `--dry-run` flag to the migrate subcommand; includes flag parsing, no-op execution path, unit test." — one slice, all layers.
+
+## ODIN integration
+
+Use `odin:askme` for the granularity quiz (step 4). Slice list (file mode) or issue URLs (flag mode) become the **input contract** for downstream execution skills (`odin:proceed`, `odin:test-driven`).

@@ -17,7 +17,7 @@ model: opus
 
 ## Workflow
 
-1. Prerequisites → 2. Gather Requirements → 3. Plan → 4. Auth & Select Environment → 5. Scaffold → 6. Initialize → 7. Build & Deploy (baseline) → 8. Add Data Sources → 9. Implement App → 10. Final Build & Deploy → 11. Summary
+1. Prerequisites → 2. Gather Requirements → 3. Plan → 4. Scaffold → 5. Initialize → 6. Build & Deploy (baseline) → 7. Add Data Sources → 8. Implement App → 9. Final Build & Deploy → 10. Summary
 
 ---
 
@@ -29,22 +29,15 @@ Check for `memory-bank.md` per [shared-instructions.md](${CLAUDE_PLUGIN_ROOT}/sh
 
 Run prerequisite checks **first** -- no point gathering requirements if the environment isn't ready. See [prerequisites-reference.md](./references/prerequisites-reference.md) for details.
 
-Check Node.js, the npm CLI package, and Git (runs natively in bash):
+Check Node.js and Git (runs natively in bash):
 
 ```bash
-node --version                         # Must be v22+
-git --version                          # Optional but recommended
-```
-
-Check `pac` CLI via PowerShell — it's a Windows executable not on the bash PATH:
-
-```bash
-pwsh -NoProfile -Command "pac"  # Used for auth, env selection, code commands
+node --version   # Must be v22+
+git --version    # Optional but recommended
 ```
 
 - **Missing Node.js**: Report "Install Node.js v22+ from https://nodejs.org/" and STOP.
 - **Node.js below v22**: Report "Node.js 22+ is required. Please upgrade or switch with `nvm use 22`." and STOP.
-- **Missing pac**: Report "Install Power Platform CLI from https://aka.ms/PowerAppsCLI" and STOP.
 - **Missing Git**: Report "Recommended but optional." Continue if approved.
 - **All present**: Report versions and proceed.
 
@@ -82,38 +75,13 @@ Once you have their description:
 3. Present plan for approval, include `allowedPrompts` from [prerequisites-reference.md](./references/prerequisites-reference.md)
 4. Exit plan mode with `ExitPlanMode` when approved
 
-### Step 4: Auth & Select Environment
-
-```bash
-pwsh -NoProfile -Command "pac auth list"
-```
-
-If empty, proceed since the command will use system credentials. If profiles are listed, check which environment they target.
-
-**If multiple profiles are listed:** Notify the user that using Microsoft tenant credentials requires clearing all profiles first, then run:
-
-```bash
-pwsh -NoProfile -Command "pac auth clear"
-```
-
-After clearing, there is no need to run `auth create`. The tool picks up the system login automatically.
-
-`pwsh -NoProfile -Command "pac auth list"` shows the active auth profile with its environment. Check which environment it targets.
-
-- **Environment matches user's target**: Confirm and proceed.
-- **On a different environment or no target set**: Run `pwsh -NoProfile -Command "pac env list"`, show up to 10 options, let the user pick, and run `pwsh -NoProfile -Command "pac env select --environment <id>"`.
-
-See [preferred-environment.md](${CLAUDE_PLUGIN_ROOT}/shared/preferred-environment.md) for details.
-
-**Critical:** Capture the environment ID for Step 7.
-
-### Step 5: Scaffold
+### Step 4: Scaffold
 
 Ask the user for a folder name. Default to `powerapps-{app-name-slugified}-{timestamp}` if they don't have a preference.
 
 **IMPORTANT: Use `npx degit` to download the template. Do NOT use `git clone`, do NOT manually create files, do NOT download from GitHub UI. `degit` downloads the template without git history.**
 
-```powershell
+```bash
 npx degit microsoft/PowerAppsCodeApps/templates/vite {folder} --force
 cd {folder}
 npm install
@@ -127,34 +95,40 @@ npm install
 
 Verify: `package.json` exists, `node_modules/` created.
 
-### Step 6: Initialize
+### Step 5: Initialize
 
 ```bash
-pwsh -NoProfile -Command "pac code init --displayName '{user-provided-app-name}' -e <environment-id>"
+npx power-apps init -n '{user-provided-app-name}' -e <environment-id>
 ```
 
-**`pac code init` failure:**
+**Finding the environment ID:** It's the GUID in the make.powerapps.com URL: `https://make.powerapps.com/environments/<env-id>/home`. If you don't pass `-e`, the CLI will prompt for it interactively.
 
-- Non-zero exit: Report the exact output and STOP. Do not continue to Step 7.
-- "environmentId not found": Confirm the environment ID from Step 4 and retry with the correct `-e` value.
-- Example: _"The `pac code init` command failed: `[error text]`. Please check that environment ID `32a51012-...` is correct and that you have maker permissions in that environment."_
+**Authentication:** On first run, a browser window opens for Microsoft sign-in. Complete the login and the command continues. No separate auth setup is needed.
 
-**Critical:** Read `power.config.json` and verify `environmentId` matches Step 4. Update if mismatched (common issue).
+See [preferred-environment.md](${CLAUDE_PLUGIN_ROOT}/shared/preferred-environment.md) for environment selection details.
 
-### Step 7: Build & Deploy (baseline)
+**`npx power-apps init` failure:**
+
+- Non-zero exit: Report the exact output and STOP. Do not continue to Step 6.
+- "environmentId not found" or environment validation error: Verify the environment ID is correct and the user has maker permissions in that environment, then retry.
+- Example: _"The `npx power-apps init` command failed: `[error text]`. Please check that environment ID `32a51012-...` is correct and that you have maker permissions in that environment."_
+
+**Critical:** Read `power.config.json` after init and verify `environmentId` is set correctly.
+
+### Step 6: Build & Deploy (baseline)
 
 > **Pre-approved**: This baseline deploy is part of the scaffold flow and does not require a separate confirmation prompt.
 
 Build and deploy the bare template to verify the pipeline works before adding data sources.
 
-```powershell
+```bash
 npm run build
 ```
 
 Verify `dist/` folder created with `index.html` and `assets/`.
 
 ```bash
-pwsh -NoProfile -Command "pac code push"
+npx power-apps push
 ```
 
 **Capture app URL** from output: `https://apps.powerapps.com/play/e/{env-id}/app/{app-id}`
@@ -169,7 +143,7 @@ pwsh -NoProfile -Command "pac code push"
 
 This ensures progress is saved even if the session ends unexpectedly.
 
-### Step 8: Add Data Sources
+### Step 7: Add Data Sources
 
 Invoke the `/add-*` skills identified in the plan (Step 3). Run each in sequence. **Pass context as arguments** so sub-skills skip redundant questions (project path, connector name, etc.):
 
@@ -187,9 +161,9 @@ Invoke the `/add-*` skills identified in the plan (Step 3). Run each in sequence
 
 Each `/add-*` skill runs `npm run build` to catch errors. Do NOT deploy yet.
 
-**If no data sources needed:** Skip to Step 9.
+**If no data sources needed:** Skip to Step 8.
 
-### Step 9: Implement App
+### Step 8: Implement App
 
 **This is the core step.** Build the actual app features described in the plan from Step 3.
 
@@ -206,9 +180,9 @@ Each `/add-*` skill runs `npm run build` to catch errors. Do NOT deploy yet.
 - Remove unused imports before building (TS6133 strict mode)
 - Don't edit files in `src/generated/` unless fixing known issues
 
-### Step 10: Final Build & Deploy
+### Step 9: Final Build & Deploy
 
-```powershell
+```bash
 npm run build
 ```
 
@@ -217,16 +191,16 @@ Fix any TypeScript errors. Verify `dist/` contains the updated app.
 Ask the user: _"Ready to deploy to [environment name]? This will update the live app."_ Wait for explicit confirmation before proceeding.
 
 ```bash
-pwsh -NoProfile -Command "pac code push"
+npx power-apps push
 ```
 
-### Step 11: Summary
+### Step 10: Summary
 
 Provide:
 
 - App name, environment, app URL, project location
 - What was built: features, data sources, components
-- Next steps: how to iterate (`npm run build && pac code push`), how to add more data sources
+- Next steps: how to iterate (`npm run build && npx power-apps push`), how to add more data sources
 - Suggest what else the app could do:
   - `/add-datasource` -- add another data source (describe what you need, and the plugin will recommend the best approach)
   - `/add-dataverse` -- store and manage custom business data
@@ -239,7 +213,7 @@ Provide:
 
 ### Update Memory Bank
 
-Update the memory bank (created in Step 7) with final state:
+Update the memory bank (created in Step 6) with final state:
 
 - All completed steps (scaffold, data sources, implementation, deploy)
 - Features implemented and components created
@@ -264,41 +238,37 @@ These walkthroughs show the full sequence from user request to final output — 
 
 ```bash
 # Step 1: Prerequisites
-node --version                                    # → v22.4.0
-pwsh -NoProfile -Command "pac"          # verify installed
+node --version   # → v22.4.0
 
-# Step 4: Auth
-pwsh -NoProfile -Command "pac auth list"          # → verify active environment
-
-# Step 5: Scaffold
+# Step 4: Scaffold
 npx degit microsoft/PowerAppsCodeApps/templates/vite powerapps-task-tracker-20260302 --force
 cd powerapps-task-tracker-20260302
 npm install
 
-# Step 6: Initialize
-pwsh -NoProfile -Command "pac code init --displayName 'Task Tracker' -e <environment-id>"
+# Step 5: Initialize (browser login prompt on first run; CLI prompts for env ID if -e omitted)
+npx power-apps init -n 'Task Tracker' -e <environment-id>
 
-# Step 7: Baseline deploy (pre-approved as part of scaffold flow)
+# Step 6: Baseline deploy (pre-approved as part of scaffold flow)
 npm run build
-pwsh -NoProfile -Command "pac code push"
+npx power-apps push
 # → App URL: https://apps.powerapps.com/play/e/32a51012-.../app/<app-id>
 
-# Step 8: Add Dataverse (via /add-dataverse)
-pwsh -NoProfile -Command "pac code add-data-source -a dataverse -t cr123_task"
+# Step 7: Add Dataverse (via /add-dataverse)
+npx power-apps add-data-source -a dataverse -t cr123_task
 npm run build   # verify connector — no deploy yet
 
-# Step 10: Final deploy (requires user confirmation)
+# Step 9: Final deploy (requires user confirmation)
 npm run build
-pwsh -NoProfile -Command "pac code push"
+npx power-apps push
 ```
 
 **Files changed:**
 
 | File                                          | Change                                                |
 | --------------------------------------------- | ----------------------------------------------------- |
-| `power.config.json`                           | Created by `pac code init` — contains `environmentId` |
-| `src/generated/models/Cr123_taskModel.ts`     | Generated by `pac code add-data-source`               |
-| `src/generated/services/Cr123_taskService.ts` | Generated by `pac code add-data-source`               |
+| `power.config.json`                           | Created by `npx power-apps init` — contains `environmentId` |
+| `src/generated/models/Cr123_taskModel.ts`     | Generated by `npx power-apps add-data-source`               |
+| `src/generated/services/Cr123_taskService.ts` | Generated by `npx power-apps add-data-source`               |
 | `src/components/TaskList.tsx`                 | Created — renders task list with status filter        |
 | `src/components/AddTaskForm.tsx`              | Created — form to add new tasks                       |
 | `src/App.tsx`                                 | Updated — wires components to `Cr123_taskService`     |
@@ -320,7 +290,7 @@ What was built:
 - Mark complete / delete actions
 - Dataverse table `cr123_task` (Title, Description, DueDate, IsComplete)
 
-To redeploy: npm run build && pac code push (from the project folder)
+To redeploy: npm run build && npx power-apps push (from the project folder)
 
 What you can add next:
 - /add-teams — post task updates to a Teams channel
@@ -341,13 +311,13 @@ What you can add next:
 
 ## Completed Steps
 
-- [x] Prerequisites validated
-- [x] Scaffold (npx degit)
-- [x] Initialize (pac code init)
-- [x] Baseline deploy
-- [x] Add Dataverse (cr123_task)
-- [x] Implement app (TaskList, AddTaskForm)
-- [x] Final deploy
+- [x] Step 1: Prerequisites validated
+- [x] Step 4: Scaffold (npx degit)
+- [x] Step 5: Initialize (npx power-apps init)
+- [x] Step 6: Baseline deploy
+- [x] Step 7: Add Dataverse (cr123_task)
+- [x] Step 8: Implement app (TaskList, AddTaskForm)
+- [x] Step 9: Final deploy
 
 ## Data Sources
 
@@ -375,19 +345,19 @@ What you can add next:
 
 ```bash
 # Step 6: Get connection ID (via /list-connections)
-pwsh -NoProfile -Command "pac connection list"
+npx power-apps list-connections
 # → ConnectionId: conn-sp-xyz789  (SharePoint Online)
 
 # Step 7: Discover sites
-pwsh -NoProfile -Command "pac code list-datasets -a sharepointonline -c conn-sp-xyz789"
+npx power-apps list-datasets -a sharepointonline -c conn-sp-xyz789
 # → https://contoso.sharepoint.com/sites/Projects
 
 # Step 8: Discover tables
-pwsh -NoProfile -Command "pac code list-tables -a sharepointonline -c conn-sp-xyz789 -d 'https://contoso.sharepoint.com/sites/Projects'"
+npx power-apps list-tables -a sharepointonline -c conn-sp-xyz789 -d 'https://contoso.sharepoint.com/sites/Projects'
 # → Project Milestones, Documents, Team Wiki
 
 # Step 9: Add connector
-pwsh -NoProfile -Command "pac code add-data-source -a sharepointonline -c conn-sp-xyz789 -d 'https://contoso.sharepoint.com/sites/Projects' -t 'Project Milestones'"
+npx power-apps add-data-source -a sharepointonline -c conn-sp-xyz789 -d 'https://contoso.sharepoint.com/sites/Projects' -t 'Project Milestones'
 
 # Step 11: Build to verify
 npm run build   # → success

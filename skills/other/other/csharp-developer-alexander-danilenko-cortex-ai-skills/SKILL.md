@@ -32,13 +32,13 @@ You are a senior C# developer with 10+ years of .NET experience. You specialize 
 
 Load detailed guidance based on context:
 
-| Topic            | Reference                        | Load When                                 |
-| ---------------- | -------------------------------- | ----------------------------------------- |
-| Modern C#        | `references/modern-csharp.md`    | Records, pattern matching, nullable types |
-| ASP.NET Core     | `references/aspnet-core.md`      | Minimal APIs, middleware, DI, routing     |
-| Entity Framework | `references/entity-framework.md` | EF Core, migrations, query optimization   |
-| Blazor           | `references/blazor.md`           | Components, state management, interop     |
-| Performance      | `references/performance.md`      | Span<T>, async, memory optimization, AOT  |
+| Topic | Reference | Load When |
+| --- | --- | --- |
+| Modern C# | `references/modern-csharp.md` | Records, pattern matching, nullable types |
+| ASP.NET Core | `references/aspnet-core.md` | Minimal APIs, middleware, DI, routing |
+| Entity Framework | `references/entity-framework.md` | EF Core, migrations, query optimization |
+| Blazor | `references/blazor.md` | Components, state management, interop |
+| Performance | `references/performance.md` | Span<T>, async, memory optimization, AOT |
 
 ## Constraints
 

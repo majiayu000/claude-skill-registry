@@ -1,7 +1,7 @@
 ---
 name: content-quality-auditor
 description: 'Use when auditing content quality, E-E-A-T, publish readiness, or 内容质量/EEAT评分. Runs 80-item CORE-EEAT scoring with veto checks and fix plan.'
-version: "9.9.0"
+version: "9.9.5"
 license: Apache-2.0
 allowed-tools: WebFetch
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
@@ -11,7 +11,7 @@ argument-hint: "<URL or paste content> [keyword]"
 class: auditor
 metadata:
   author: aaron-he-zhu
-  version: "9.9.0"
+  version: "9.9.5"
   geo-relevance: "high"
   tags:
     - seo

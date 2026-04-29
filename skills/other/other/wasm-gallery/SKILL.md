@@ -1,0 +1,21 @@
+---
+name: wasm-gallery
+description: Browse, publish, and install WASM agents from the community gallery
+allowed-tools: mcp__claude-flow__wasm_gallery_list mcp__claude-flow__wasm_gallery_search mcp__claude-flow__wasm_gallery_create mcp__claude-flow__wasm_agent_create mcp__claude-flow__wasm_agent_export Bash
+---
+
+# WASM Gallery
+
+Browse and share WASM agents through the community gallery.
+
+## When to use
+
+When looking for pre-built WASM agents or sharing your own agents with the community.
+
+## Steps
+
+1. **Browse gallery** — call `mcp__claude-flow__wasm_gallery_list` to see available agents
+2. **Search** — call `mcp__claude-flow__wasm_gallery_search` with keywords to find specific agents
+3. **Install** — call `mcp__claude-flow__wasm_agent_create` with a gallery agent's configuration
+4. **Publish** — call `mcp__claude-flow__wasm_gallery_create` to share your agent
+5. **Export first** — call `mcp__claude-flow__wasm_agent_export` to package before publishing

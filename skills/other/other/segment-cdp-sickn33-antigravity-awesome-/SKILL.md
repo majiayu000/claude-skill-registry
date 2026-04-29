@@ -839,7 +839,6 @@ Message: Tracking without consent check. Implement consent management for GDPR.
 - user needs consent management -> privacy-specialist (GDPR/CCPA compliance with Segment)
 
 ## When to Use
-
 - User mentions or implies: segment
 - User mentions or implies: analytics.js
 - User mentions or implies: customer data platform
@@ -848,3 +847,8 @@ Message: Tracking without consent check. Implement consent management for GDPR.
 - User mentions or implies: event tracking
 - User mentions or implies: identify track page
 - User mentions or implies: data routing
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

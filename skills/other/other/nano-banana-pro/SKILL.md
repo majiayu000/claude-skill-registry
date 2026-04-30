@@ -181,7 +181,45 @@ for i in "${!PROMPTS[@]}"; do
 done
 ```
 
-### 4. Reference-Based Generation
+### 4. Badge Generation Pipeline
+
+**When to use**: Creating transparent-background PNG badges for web pages, GitHub profiles, or app icons.
+
+**Process**:
+
+1. **One-step** (recommended): Use `--badge` flag on `generate_image.py`
+2. **Two-step** (more control): Generate image, then run `badge_forge.py` separately
+
+**One-step example**:
+
+```bash
+python scripts/generate_image.py \
+  "copper binoculars with radar sweep, compass rose details, centered composition" \
+  --badge --badge-size 200 --badge-fuzz 18 \
+  --output ./badges --filename landscape
+```
+
+**Two-step example**:
+
+```bash
+# Generate raw image
+python scripts/generate_image.py \
+  "golden shield emblem, art deco style" \
+  --aspect-ratio 1:1 --output ./raw --filename shield
+
+# Forge into transparent badge with custom settings
+python scripts/badge_forge.py raw/shield_image_0_0.jpg \
+  --preset logo --fuzz 22 --feather 0.5 -o badges/shield.png
+```
+
+**Key considerations**:
+- Badge mode forces 1:1 aspect ratio automatically
+- Use `--badge-fuzz` (or `--fuzz` on badge_forge.py) to tune background removal aggressiveness
+- If subject has light/white tones similar to the background, lower fuzz or use `--corners top` to only flood from specific corners
+- Output is always PNG32 (8-bit RGBA) for smooth alpha edges
+- If alpha looks jagged (1-bit), increase fuzz or add `--feather 0.5`
+
+### 5. Reference-Based Generation
 
 **When to use**: Maintaining style consistency or character consistency across images.
 
@@ -283,7 +321,7 @@ Quick reference:
 
 ### generate_image.py
 
-Generate images from text prompts.
+Generate images from text prompts. Optionally post-process into transparent-background PNG badges.
 
 **Parameters**:
 - `prompt` (required): Text description of image
@@ -295,6 +333,10 @@ Generate images from text prompts.
 - `--output`: Output directory (default: ./output)
 - `--filename`: Base filename (default: generated)
 - `--verbose`: Show full API response
+- `--badge`: Post-process into transparent PNG badge (forces 1:1 aspect ratio, requires ImageMagick 7+)
+- `--badge-size`: Badge canvas size in pixels (default: 200)
+- `--badge-content`: Badge content area after trim (default: 164)
+- `--badge-fuzz`: Background removal fuzz tolerance % (default: 18)
 
 **Common use cases**:
 ```bash
@@ -307,6 +349,11 @@ python scripts/generate_image.py "professional headshot" \
 
 # Creative exploration
 python scripts/generate_image.py "abstract art" --temperature 0.9
+
+# Generate a transparent badge in one step
+python scripts/generate_image.py \
+  "copper binoculars with radar sweep, compass rose details" \
+  --badge --output ./badges --filename landscape
 
 # Debug mode
 python scripts/generate_image.py "test prompt" --verbose
@@ -344,6 +391,40 @@ python scripts/edit_image.py "Remove person from left side" group.jpg
 
 # Style transforms
 python scripts/edit_image.py "Apply vintage film look" modern.jpg
+```
+
+### badge_forge.py
+
+Transform images into web-ready transparent PNG badges using ImageMagick corner-flood background removal. No ML dependencies—just ImageMagick 7+.
+
+**Parameters**:
+- `sources` (required): Source image(s)
+- `-o`, `--output`: Output path (file or directory with `--batch`)
+- `--batch`: Batch mode — output is a directory
+- `--preset`: Size preset: badge (200px), icon (64px), avatar (128px), logo (300px), hero (512px)
+- `--size`: Override canvas size in pixels
+- `--padding`: Override padding in pixels
+- `--fuzz`: Override fuzz tolerance %
+- `--corners`: Corners to flood: all | top | bottom | tl,tr,bl,br (default: all)
+- `--feather`: Alpha edge feathering radius in pixels (default: 0)
+- `--dry-run`: Print ImageMagick command without executing
+
+**Common use cases**:
+```bash
+# Default badge (200px, 18% fuzz)
+python scripts/badge_forge.py source.jpg -o badge.png
+
+# Icon preset
+python scripts/badge_forge.py source.jpg --preset icon -o icon.png
+
+# Batch process
+python scripts/badge_forge.py *.jpg --batch -o ./badges/
+
+# Softer edges
+python scripts/badge_forge.py source.jpg --fuzz 25 --feather 0.5
+
+# Only flood top corners (subject touches bottom edge)
+python scripts/badge_forge.py source.jpg --corners top
 ```
 
 ### test_connection.py

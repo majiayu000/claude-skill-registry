@@ -1,6 +1,7 @@
 ---
 name: seo-keyword-cluster-builder
 description: SEO keyword clustering with topic organization, content hub architecture, internal linking strategies. Use for content strategy, keyword research, pillar page structures, or encountering cluster organization, hub architecture, internal linking errors.
+license: MIT
 ---
 
 # SEO Keyword Cluster Builder

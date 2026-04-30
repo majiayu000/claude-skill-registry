@@ -1,6 +1,7 @@
 ---
 name: motion
-description: Motion (Framer Motion) React animation library. Use for drag-and-drop, scroll animations, gestures, SVG morphing, or encountering bundle size, complex transitions, spring physics errors.
+description: >-
+  Motion (Framer Motion) React animation library. Use for drag-and-drop, scroll animations, gestures, SVG morphing, or encountering bundle size, complex transitions, spring physics errors.
 
 license: MIT
 ---

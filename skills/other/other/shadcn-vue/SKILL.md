@@ -1,11 +1,41 @@
 ---
 name: shadcn-vue
-description: shadcn-vue for Vue/Nuxt with Reka UI components and Tailwind. Use for accessible UI, Auto Form, data tables, charts, or encountering component imports, dark mode, Reka UI errors.
+description: "shadcn-vue for Vue/Nuxt with Reka UI components and Tailwind. Use for accessible UI, Auto Form, data tables, charts, or encountering component imports, dark mode, Reka UI errors."
 
-  Keywords: shadcn-vue, shadcn vue, Reka UI, radix-vue, Vue components, Nuxt components, Tailwind CSS, accessible components, headless ui, Auto Form, Zod validation, TanStack Table, data tables, Unovis charts, dark mode, useColorMode, components.json, bunx shadcn-vue, vueuse, composables, Vue 3, Nuxt 3, TypeScript, accessibility, ARIA, component library, UI components, form builder, schema validation
+metadata:
+  keywords:
+    - shadcn-vue
+    - shadcn vue
+    - Reka UI
+    - radix-vue
+    - Vue components
+    - Nuxt components
+    - Tailwind CSS
+    - accessible components
+    - headless ui
+    - Auto Form
+    - Zod validation
+    - TanStack Table
+    - data tables
+    - Unovis charts
+    - dark mode
+    - useColorMode
+    - components.json
+    - bunx shadcn-vue
+    - vueuse
+    - composables
+    - Vue 3
+    - Nuxt 3
+    - TypeScript
+    - accessibility
+    - ARIA
+    - component library
+    - UI components
+    - form builder
+    - schema validation
+
 license: MIT
 ---
-
 # shadcn-vue Production Stack
 
 **Production-tested**: Vue/Nuxt applications with accessible, customizable components

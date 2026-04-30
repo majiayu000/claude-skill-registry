@@ -1,11 +1,34 @@
 ---
 name: wordpress-plugin-core
-description: WordPress plugin development with hooks, security, REST API, custom post types. Use for plugin creation, $wpdb queries, Settings API, or encountering SQL injection, XSS, CSRF, nonce errors.
+description: "WordPress plugin development with hooks, security, REST API, custom post types. Use for plugin creation, $wpdb queries, Settings API, or encountering SQL injection, XSS, CSRF, nonce errors."
 
-  Keywords: wordpress plugin development, wordpress security, wordpress hooks, wordpress filters, wordpress database, wpdb prepare, sanitize_text_field, esc_html, wp_nonce, custom post type, register_post_type, settings api, rest api, admin-ajax, wordpress sql injection, wordpress xss, wordpress csrf, plugin header, activation hook, deactivation hook, wordpress coding standards, wordpress plugin architecture
+metadata:
+  keywords:
+    - wordpress plugin development
+    - wordpress security
+    - wordpress hooks
+    - wordpress filters
+    - wordpress database
+    - wpdb prepare
+    - sanitize_text_field
+    - esc_html
+    - wp_nonce
+    - custom post type
+    - register_post_type
+    - settings api
+    - rest api
+    - admin-ajax
+    - wordpress sql injection
+    - wordpress xss
+    - wordpress csrf
+    - plugin header
+    - activation hook
+    - deactivation hook
+    - wordpress coding standards
+    - wordpress plugin architecture
+
 license: MIT
 ---
-
 # WordPress Plugin Development (Core)
 
 **Status**: Production Ready

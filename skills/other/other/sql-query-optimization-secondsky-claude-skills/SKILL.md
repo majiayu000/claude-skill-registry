@@ -1,16 +1,45 @@
 ---
 name: sql-query-optimization
-description: SQL query optimization for PostgreSQL/MySQL with indexing, EXPLAIN analysis. Use for slow queries, N+1 problems, missing indexes, or encountering sequential scans, OFFSET pagination, temp table spills, inefficient JOINs.
+description: "SQL query optimization for PostgreSQL/MySQL with indexing, EXPLAIN analysis. Use for slow queries, N+1 problems, missing indexes, or encountering sequential scans, OFFSET pagination, temp table spills, inefficient JOINs."
 
-  Keywords: sql optimization, query performance, database indexes, explain analyze, slow queries, n+1 problem,
-  query plan, index strategy, composite index, covering index, postgresql performance, mysql optimization,
-  query rewriting, prepared statements, connection pooling, sequential scan, missing index, SELECT *,
-  LIMIT optimization, subquery performance, pagination, cursor based pagination, batch operations,
-  pg_stat_statements, full-text search, bitmap scan, index only scan, query tuning, database performance,
-  cache hit ratio, work_mem, shared_buffers, database monitoring
+metadata:
+  keywords:
+    - sql optimization
+    - query performance
+    - database indexes
+    - explain analyze
+    - slow queries
+    - n+1 problem
+    - query plan
+    - index strategy
+    - composite index
+    - covering index
+    - postgresql performance
+    - mysql optimization
+    - query rewriting
+    - prepared statements
+    - connection pooling
+    - sequential scan
+    - missing index
+    - SELECT *
+    - LIMIT optimization
+    - subquery performance
+    - pagination
+    - cursor based pagination
+    - batch operations
+    - pg_stat_statements
+    - full-text search
+    - bitmap scan
+    - index only scan
+    - query tuning
+    - database performance
+    - cache hit ratio
+    - work_mem
+    - shared_buffers
+    - database monitoring
+
 license: MIT
 ---
-
 # SQL Query Optimization
 
 **Status**: Production Ready ✅

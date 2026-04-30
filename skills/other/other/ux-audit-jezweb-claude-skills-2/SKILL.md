@@ -1,37 +1,112 @@
 ---
 name: ux-audit
-description: "Exhaustive UX audit of a web app. Walks every thread a real user would follow, tests every interactive element, runs scenario battery (keyboard-only, heavy data, destructive actions, second user, interrupted workflow, wrong turn, returning user, first contact), produces ranked findings with screenshots, then offers a fix-and-verify loop. Requires a persona. Trigger with 'ux audit', 'dogfood this', 'audit the app', 'qa sweep', 'exhaustive test', 'check all pages'."
+description: "Walk through a live web app AS a real user to find usability + behavioural bugs that static reviews miss. REQUIRES proof of interaction (typing, clicking, sending, observing) before any verdict — a sweep that didn't interact terminates with verdict 'Incomplete'. Walks threads, exercises every element, runs the multi-pane stress matrix, visual polish sweep, component perfection checklist, automated a11y (axe-core), pragmatic performance budget (LCP/CLS/INP), scenario battery (10 scenarios), and stress recipes including the real-flavour data battery. Hard gates: console errors/warnings = 0, network 5xx = 0, layout collapse = 0, axe Critical/Serious = 0, perf budget green. Audit-the-audit meta-check rejects rushed reports. Each finding has reproduction steps, evidence path, and suspected code location. Trigger with 'ux audit', 'walkthrough', 'qa sweep', 'audit the app', 'dogfood this', 'check all pages', 'find what's broken', 'stress the UI'."
 compatibility: claude-code-only
 ---
 
-# UX Audit
+# UX Audit (v2)
 
-Exhaustively audit a web app from the perspective of a real user. Two lenses, combined:
+Walk through a live web app AS a real user. The audit is **interaction-first** — typing, clicking, sending, watching, screenshotting. A static DOM sweep cannot produce a verdict.
 
-- **Flow lens** — walk the 3–5 real tasks a user would do ("threads"). Count clicks, mark dead ends, screenshot every state change.
-- **Element lens** — after threads, sweep every interactive element not already hit. Forms, menus, toggles, edge data volumes.
+## Why this skill exists in v2
 
-Then run an eight-scenario battery (first contact, interrupted workflow, wrong turn recovery, returning user, keyboard only, heavy data, destructive confidence, second user) and close with a fix-and-verify loop for critical findings.
+Most catastrophic UX bugs only surface under interaction:
 
-This is the thorough one. There is no quick mode. If the user wants a targeted check ("audit the dashboard"), scope the audit to that area — but within that area, still go exhaustive. Runtime is unbounded: assume a long-running session, write findings to the report incrementally, don't batch.
+- The Send button that doesn't clear the input
+- The @-mention picker that double-inserts the handle
+- The thread pane that breaks layout when the sidebar is also open at 1280px
+- The form submit that disables the button but silently 5xx's
+- The console warning that's been logging for weeks but no audit ever flagged
 
-## Setup
+A DOM probe sees none of these. They require: type → wait → screenshot → diff → console-read → repeat. The previous audit method drifted toward sweep mode (faster, feels productive, blind to behaviour). v2 makes that drift impossible — the agent cannot output "Pass" without an Interaction Manifest that proves real clicks happened.
 
-Four things before any browsing. Stop if any fail.
+## Verdict states
 
-### 1. Browser tool
+The audit ends in exactly one of:
+
+- **Pass** — Critical = 0, High = 0, all hard gates green, Interaction Manifest complete.
+- **Conditional Pass** — Critical = 0, High = 0, all hard gates green, but Medium/Low present.
+- **Fail** — at least one Critical or High finding, OR a hard gate red.
+- **Incomplete** — Interaction Manifest missing required entries, a phase wasn't run, OR the audit-the-audit meta-check fires (manifest timestamps clustered < 0.5s apart, screenshots fewer than 2 × routes, console reads fewer than 1 × routes, Phase 3 took < 1m for an exhaustive audit). Not legal to upgrade to Pass even if everything observed looked fine.
+
+If the work doesn't include a complete Interaction Manifest, the only legal verdict is **Incomplete**. "It looked OK" is not Pass. A clean Pass with implausible timings is rejected — the agent must redo the audit with real interaction.
+
+## Hard gates
+
+These auto-fail the audit. They cannot be downgraded.
+
+| Gate | Threshold | Severity if violated |
+|------|-----------|----------------------|
+| Console errors during walkthrough | > 0 | Critical |
+| Console warnings during walkthrough | > 0 | High |
+| Network 5xx | > 0 | Critical |
+| Network 403 / 404 on authenticated pages | > 0 | High |
+| Layout collapse at any tested viewport / pane combo | > 0 | High |
+| axe-core Critical violations on any audited page | > 0 | Critical |
+| axe-core Serious violations on any audited page | > 0 | High |
+| LCP on representative route (pragmatic budget) | > 4.0s | High |
+| CLS on representative route | > 0.25 | High |
+| INP on representative route | > 500ms | High |
+| Required Interaction Manifest entry missing | n/a | Incomplete |
+| Manifest median gap between entries < 0.5s | n/a | Incomplete (didn't actually interact) |
+
+A console warning is High *minimum*. A 5xx is Critical *automatically*. There is no "Medium console error" — that category does not exist in this skill.
+
+axe-core thresholds are run **per page** (>1 violation on any single page fails). Performance thresholds are run **once on a representative route** (per-page is overkill); pragmatic budget is well above broken, well below CWV-strict. Full thresholds + rationale in [references/performance-budget.md](references/performance-budget.md). Full a11y wiring + severity mapping in [references/a11y-automation.md](references/a11y-automation.md).
+
+### Allowlist for known noise
+
+Some apps have known-noisy console / network categories that aren't bugs (Sentry info logs in dev, browser-extension chatter, expected 401 on auth-check probes). The audit reads `.jez/audit-config.yml` (or `.json`) before Phase 3 and applies the allowlist when classifying findings. Allowlisted entries stay in the Interaction Manifest (transparency) but suppress from the findings count. The verdict block always shows both raw and allowlisted counts — `Console warnings: 3 (1 allowlisted, 2 reportable)`.
+
+Default without a config: every console error / warning is a finding. Allowlist is opt-in per project, not a global escape hatch. Full format, semantics, surface overrides, and quarterly-audit discipline in [references/audit-config.md](references/audit-config.md).
+
+## Phases (in order)
+
+1. **Pre-flight** — Persona Lock, browser tool, URL, viewport, capability tests
+2. **Discovery** — sitemap, thread inventory, element inventory
+3. **Walkthrough** — Interaction Manifest, threads, element exhaustion, multi-pane stress, first-time-user lens, live interaction smoke
+4. **Polish** — visual polish sweep, component perfection checklist
+5. **Stress** — scenario battery (10 scenarios) + extended stress recipes
+6. **Verdict** — verdict state, hard-gate scorecard, perfection roadmap, findings with reproduction
+7. **Fix-and-verify** — patch findings, re-walk affected slices, update report
+
+This is the thorough audit. There is no quick mode. For a 30-second pre-deploy check, use the dogfood drill at the bottom of this file — it's a project-level rule, not a skill invocation.
+
+## Phase 1 — Pre-flight
+
+Five gates. Stop if any fail.
+
+### 1. Persona Lock
+
+The audit needs a persona before anything else. Without a locked persona, findings drift toward generic "looks fine".
+
+Source the persona in this order:
+
+1. **Argument** — if the user provided one ("ux audit as a busy insurance broker")
+2. **Project personas** — read `.jez/audit-personas/<slug>.md`, `.jez/personas/default.md`, or `.jez/personas/<app-name>.md` if they exist
+3. **Ask once** — *"Who uses this app and what are they trying to get done?"*
+
+Capture: role, tech comfort, time pressure, emotional state, device context. A good persona predicts what they'd miss ("A receptionist between phone calls won't scroll below the fold").
+
+Lock the persona by writing the chosen persona at the top of the audit report. Every finding must be defensible from this persona's perspective. If you catch yourself thinking *"a developer would know..."* — stop. Your persona doesn't.
+
+**Always also run the first-time-user lens** (mandatory, see Phase 3) on every multi-page feature, even when the explicit persona is something else. It's the single biggest blind spot for AI / internal tooling.
+
+See [references/persona-lock.md](references/persona-lock.md) for the persona library and writing protocol.
+
+### 2. Browser tool
 
 | Target | Tool | Why |
 |--------|------|-----|
-| **Authenticated app** (internal tools, client apps) | Chrome MCP | Uses your real logged-in Chrome session — OAuth, cookies, RBAC just work |
-| **Public site** (marketing, competitor, unauthed) | Playwright MCP | No login needed |
+| **Authenticated app** | Chrome MCP | Uses your real logged-in Chrome session — OAuth, cookies, RBAC just work |
+| **Public site** | Playwright MCP | No login needed |
 | **Neither available** | **Stop** | Ask the user to connect Chrome MCP or install Playwright |
 
 Do **not** silently fall back to a fresh Playwright session for an authenticated app — the audit is worthless if you can't log in. If Chrome MCP isn't connected, stop and say: *"Open Chrome, click Connect in the Claude extension, then rerun."*
 
 See [references/browser-tools.md](references/browser-tools.md) for commands.
 
-### 2. URL
+### 3. URL
 
 Prefer the deployed/live version — that's what real users see.
 
@@ -40,41 +115,24 @@ Prefer the deployed/live version — that's what real users see.
 3. Fall back to `lsof -i :5173 -i :3000 -i :8787 -t` for a running dev server
 4. Ask the user
 
-Live site has real auth, real latency, real CDN and CORS behaviour. Local misses deployment-specific bugs (missing env vars, broken asset paths, CORS, slow APIs). Only use local if the user asks or the feature isn't deployed.
+Live site has real auth, real latency, real CDN and CORS behaviour. Local misses deployment-specific bugs. Only use local if the user asks or the feature isn't deployed.
 
-### 3. Viewport
+### 4. Viewport
 
-Pin the window at the start:
+Pin the window at 1440×900 to start. Phase 3 multi-pane stress tests 375 / 768 / 1024 / 1280 / 1440 / 1920. **Do not go above 2000px** — it breaks the harness.
 
-```
-width: 1440, height: 900
-```
+### 5. Capability tests
 
-This is the standard MacBook resolution and the audit's baseline. Responsive sweep (below) also tests 1280, 1024, 768, 375. **Do not go above 2000px wide** — it breaks the harness.
+Before any walkthrough, prove the tools work — one call each:
 
-### 4. Persona
+- One screenshot
+- One console read
+- One network request inventory
+- One element selector query
 
-The audit needs a persona. Without one, findings drift toward generic "looks fine". Source in order:
+If any fail, stop and fix the connection before starting the audit. An audit blind to console output is worthless.
 
-1. **Argument** — if the user provided one ("ux audit as a busy insurance broker")
-2. **Project personas** — read `.jez/personas/default.md` and `.jez/personas/<app-name>.md` if they exist
-3. **Ask** — if neither, ask one question: *"Who uses this app and what are they trying to get done?"*
-
-Capture: role, tech comfort, time pressure, emotional state, device context. A good persona predicts what they'd miss ("A receptionist between phone calls won't scroll below the fold").
-
-### 5. Screenshot post-processing
-
-On Retina Macs, Chrome captures screenshots at 2× the logical viewport — a 1440×900 window produces a 2880×1800 PNG. That's larger than the vision pipeline needs and wastes context. Downsize screenshots after each capture phase:
-
-```bash
-img-process batch ./screenshots --action optimise --max-width 1440
-```
-
-The `optimise` action is idempotent — no-op if already ≤ 1440px, downsize otherwise. Safe to run unconditionally, on every folder, at any point. At minimum, run it after each thread traversal and after the responsive sweep.
-
-Playwright MCP users can set `deviceScaleFactor: 1` in the browser context to sidestep this entirely — screenshots match viewport 1:1. Chrome MCP has no equivalent flag, so post-process instead.
-
-## Discovery
+## Phase 2 — Discovery
 
 ### Sitemap crawl
 
@@ -90,273 +148,427 @@ One line per route, with purpose: `/app/clients — list of clients, search, add
 
 Identify 3–5 real tasks that make up a user's day. These are the spines of the audit.
 
-Examples:
-- **Insurance broker app**: renew a policy, create a new client, work through today's queue
-- **Project management**: morning triage, update a task, send a client summary
-- **SEO tool**: check latest crawl, diagnose a regression, export a report
-
-How to find them:
-- Ask the user if they know the app's use cases
-- Read CLAUDE.md / README for "what this app does"
-- Infer from top-level nav — each major section usually maps to a thread
-
-Write them down. They structure the traversal phase.
+How to find them: ask the user, read CLAUDE.md / README, infer from top-level nav. Examples: insurance broker → renew a policy, create a client, work today's queue. Project management → morning triage, update a task, send a client summary. Spaces / chat app → create a space, send a message, open a thread.
 
 ### Element inventory
 
-For each route as you reach it, list every interactive element:
+For each route as you reach it, list every interactive element. Build inventories lazily — per-page as you traverse, not all up-front. This drives the coverage metric: *"tested 29 of 31 elements on /app/clients"*.
+
+## Phase 3 — Walkthrough (the audit itself)
+
+### Interaction Manifest (MANDATORY)
+
+Every walkthrough produces a manifest. Without it, verdict = Incomplete.
 
 ```
-/app/clients — 31 elements
-  Buttons: Add Client, Import, Export, Filter, Sort (5)
-  Inputs: Search
-  Table: row-click ×N, star toggle ×N, action menu ×N
-  Pagination: Next, Prev, page numbers, items-per-page
+INTERACTION MANIFEST — /dashboard/spaces/marketing-pod
+  Persona: SME owner, time-pressed, low tech comfort
+  [✓] 14:32:01 Typed "@assistant test" into message input (textarea[placeholder*="message"])
+  [✓] 14:32:03 Picked @assistant from autocomplete (li[data-mention-id="assistant"])
+  [✓] 14:32:05 Clicked Send (button[aria-label="Send"])
+  [✓] 14:32:06 Verified input cleared within 1000ms (textarea.value === "")
+  [✓] 14:32:08 Verified message appeared in transcript ([data-message-id] count +1)
+  [✓] 14:32:12 Opened thread on the message ([data-thread-trigger])
+  [✓] 14:32:13 Verified main column width ≥ 200px after thread open (getBoundingClientRect().width)
+  [✓] Console read after each step (0 warnings, 0 errors)
+  [✓] Screenshot before + after each step
+  [✓] Network requests inventoried (0 5xx, 0 403/404 on auth pages)
 ```
 
-This inventory powers the coverage metric. After the audit you can say *"tested 29 of 31 elements on /app/clients; 2 pagination controls not reached due to data volume"*. Coverage becomes arithmetic, not a vibe.
+Every checkbox needs a tool call (a click, a screenshot, a console read) and the timestamps + selectors are logged. The agent cannot produce a "Pass" report without a complete manifest.
 
-Build inventories lazily — per-page as you traverse, not all up-front.
+**Required entries per page audited**:
 
-## Thread Traversal (primary phase)
+- ≥ 1 input typed into (real text, not just clicked)
+- ≥ 1 primary action triggered (Send / Save / Submit / Create / Publish — whichever fits)
+- ≥ 1 modal or detail pane opened
+- ≥ 1 console read after the primary action
+- ≥ 1 screenshot before AND after the primary action
+- Verification of expected post-action state (input cleared, success toast, route change, list updated)
+
+Full template + replay protocol in [references/interaction-manifest.md](references/interaction-manifest.md).
+
+### Thread Traversal
 
 For each thread:
 
 1. **Start from the app entry point** — not mid-thread. Real users land at `/` or `/dashboard`.
-2. **Walk as the persona** — if they'd skim, skim. If they'd misread a label, misread it. Note the hesitations.
-3. **Screenshot every state change** — default → hover/focus → active → after click → after load → confirmation. Meaningful transitions, not every pixel movement. With modern context windows and sub-agent review, don't scrimp — the filmstrip is the evidence.
-4. **Track the cost**:
-   - Click count from entry to completion
-   - Decision points (moments you stopped to think)
-   - Dead ends (wrong paths and backtracks)
-   - Interrupt recovery (close the tab at step 3, return at step 4 — did state survive?)
-5. **Hand screenshots to a sub-agent for review** — at the end of each thread, dispatch: *"Here are 42 screenshots from Thread 2 (Create Client). Flag every moment of: unclear next action, broken visual hierarchy, lost context, confusing copy, missing feedback, anxiety, or 'did that work?'. Return structured findings."* The sub-agent returns a list; you stay focused on driving the browser.
+2. **Walk as the persona** — if they'd skim, skim. If they'd misread a label, misread it. Note hesitations.
+3. **Screenshot every state change** — default → hover/focus → active → after click → after load → confirmation. The filmstrip is the evidence.
+4. **Track the cost** — click count, decision points, dead ends, interrupt recovery (close tab at step 3, return at step 4 — did state survive?)
+5. **Hand screenshots to a sub-agent for review** at the end of each thread.
 
-At the end of each thread, answer three questions (as the persona):
-- **Did it end clearly?** Did I know the task was done?
-- **Would I come back?** Confidence, trust, momentum.
-- **One thing to make this twice as easy?** Often the most actionable insight in the report.
+At the end of each thread, answer (as the persona): *Did it end clearly? Would I come back? One thing to make this twice as easy?*
 
-See [references/walkthrough-checklist.md](references/walkthrough-checklist.md) for per-screen evaluation prompts and [references/workflow-comprehension.md](references/workflow-comprehension.md) for wayfinding, mental model, and page-to-page continuity.
+See [references/walkthrough-checklist.md](references/walkthrough-checklist.md) and [references/workflow-comprehension.md](references/workflow-comprehension.md).
 
-## Element Exhaustion (completeness phase)
+### Element Exhaustion
 
-For each route, work the inventory. Skip elements already exercised by thread traversal.
+For each route, work the inventory. Skip elements already exercised by thread traversal. Detail in [references/walkthrough-checklist.md](references/walkthrough-checklist.md).
 
-| Element type | Test |
-|--------------|------|
-| Button | Click, screenshot result. If it opens a modal → test the modal. If it triggers an action → verify feedback. |
-| Link | Follow it. Destination matches the label? |
-| Input | Valid, invalid, empty, very long, special characters (`O'Brien`, `café`, emoji, `<script>`). |
-| Select / dropdown | Every option. Verify behaviour per option. |
-| Toggle / checkbox | On, off. Persistence on refresh? |
-| Tab | Every tab. URL updates? Back button works? |
-| Accordion | Expand, collapse. State saves? |
-| Menu / context menu | Every item. Right-click for context menus. |
-| Drag handle | Drag to new position. Drag to invalid target. |
-| Pagination | Next, prev, jump, items-per-page. |
+For **every list/table**, test at volumes 0 / 1 / 100 / 1000+ if data permits.
 
-For **every form**:
-- Valid data → verify creation/update/confirmation
-- Invalid data → field-level error, form state preserved
-- Empty submit → required-field marking
-- Tab through fields → focus order logical
+### Multi-Pane Stress (mandatory for apps with collapsible UI)
 
-For **every list/table**, test at these volumes if data permits:
-- 0 items (empty state)
-- 1 item (pluralisation edge case)
-- 100 items (pagination)
-- 1000+ items (virtualisation, search, filter performance)
+Pane combinations are where the worst layout bugs hide — including the 2026-04-29 vertical-text-in-spaces bug, which only manifested at 1024-1280px with all three panes open. Skipping this phase means missing this class of bug entirely.
 
-Write findings to the report as you go. Don't hold them in memory.
+For apps with sidebars, members panels, threads, drawers, sheets:
 
-## Responsive Sweep
+| Viewport | Panes | What to capture |
+|----------|-------|-----------------|
+| 1920 | All open | Baseline — should always work |
+| 1440 | All open | Common dev resolution |
+| 1280 | All open | Where layout collapses start |
+| 1024 | All open | Tablet landscape — high-bug zone |
+| 1024 | 2-pane (drop one) | Verify graceful degradation |
+| 1024 | 1-pane (mobile-style) | Should fold cleanly |
+| 768 | All collapsible closed | Tablet portrait |
+| 375 | Mobile baseline | Mobile |
 
-For each route:
+For each combination: scroll the longest content, capture a screenshot, run the layout-detection JS to flag overflow / clipping / vertical-text-stacks (every character on its own line), and verify min-content widths.
 
-| Width | Mode | Why |
-|-------|------|-----|
-| 1440px | light | Baseline (matches audit viewport) |
-| 1280px | light | Standard desktop |
-| 1024px | light | Tablet landscape / nav collapse point |
-| 768px | light | Tablet portrait / stacked layout |
-| 375px | light | Mobile / touch targets |
-| 1440px | dark | Dark mode baseline |
-| 375px | dark | Dark mode mobile |
+Detail + automation snippets in [references/multi-pane-stress.md](references/multi-pane-stress.md).
 
-On any page that breaks at an intermediate width, screenshot the transition point.
+### First-time-user lens (mandatory)
 
-Run the automated layout-detection JS (overflow, clipping, invisible text) at each width — snippets in [references/walkthrough-checklist.md](references/walkthrough-checklist.md). Read console output after injection; every warning is a potential finding.
+Beyond the locked persona, every multi-page feature must pass the **first-time user** check. This catches the single biggest UX failure mode in internal/AI tooling: features built by the people who designed them work *for them*, but a brand-new user landing on the same screen has no idea what any of the controls mean.
 
-## Scenario Battery
+Adopt the persona of *someone signing in to this app for the very first time, with no prior context, no source access, no internal documentation*. For each screen ask:
 
-Eight scenarios. All eight, always. They catch what screen-by-screen testing misses. Full protocols in [references/scenario-tests.md](references/scenario-tests.md).
+| Question | What it catches |
+|---|---|
+| Could I complete the task without reading the code or docs? | Hidden technical knowledge baked into the form |
+| Are field labels in plain language, not internal vocabulary? | `agentClass`, `slug`, `webhook_id` leaking into UI |
+| Do dropdowns / pickers show **what each option does**, not just an ID? | Snake_case enums, raw class names, opaque slugs |
+| Are defaults sensible enough to keep them and move on? | Required fields with no defaults, mandatory ID inputs |
+| Is there a discoverable list of valid values when something needs to be entered? | Free-text inputs where a combobox should be |
+| If I'd say "click Skip" because I don't understand a setting, that's a UX bug. | Optional-but-confusing settings exposed as primary inputs |
 
-1. **First Contact** — figure out the app with zero prior knowledge, then write a 2-minute plain-English guide to each thread. Gaps in the guide are UX gaps.
-2. **Interrupted Workflow** — start a task, close the tab, refresh, navigate away mid-form. Does state survive?
-3. **Wrong Turn Recovery** — deliberately click the wrong thing. How many clicks to get back on track? What context is lost?
-4. **Returning User** — repeat a thread already done. Faster the second time? Shortcuts available? On the dashboard, can you tell what changed since last visit?
-5. **Keyboard Only** — unplug the mouse. Can every thread complete keyboard-only? Focus visible? Tab order logical? Escape closes?
-6. **Heavy Data** — seed with 500+ records. Lists virtualise? Search returns the right thing? Filters narrow meaningfully?
-7. **Destructive Confidence** — for every delete, send, publish, pay, share: is consent clear? Does confirm copy tell you what's about to happen? Undo available?
-8. **Second User** — log in as a restricted role (viewer not editor, client not staff). Read-only views coherent? Permissions errors make sense?
+When the lens fires, log a finding even if the screen technically works. Common fixes: replace text inputs with pickers, surface metadata, auto-derive values, hide internal IDs under "Advanced", add inline guidance.
 
-## Live Interaction Smoke
+A screen passes the lens when a brand-new persona could complete the task without back-channel help.
 
-Code reading verifies a button exists and has an `onClick`. It does not
-verify that clicking the button actually **does something observable**.
-Bugs of this shape — "the handler runs, fires a call into an SDK, but
-the flow never completes" — are invisible to static analysis and
-require a live click + network check.
+### Live Interaction Smoke
 
-Run these for every **interactive control** on every page:
+Code reading verifies a button exists and has an `onClick`. It does not verify clicking actually does something observable. For every interactive control on every page:
 
 1. **Click it.** Pointer moves, element highlights, click lands.
-2. **Watch the Network tab.** Did a request fire? To the right URL?
-   Correct method + body shape?
-3. **Watch the DOM.** Did something visibly change — new element,
-   removed element, state transition (loading spinner, toast, route
-   change)?
-4. **If nothing changed in (2) or (3), that's a bug.** The control
-   LOOKS alive but isn't doing its job. Log it.
+2. **Watch the Network tab.** Did a request fire? To the right URL? Correct method + body?
+3. **Watch the DOM.** Did something visibly change — new element, removed element, state transition?
+4. **If nothing changed in (2) or (3), that's a bug.**
 
-### Known control categories that silently fail
+Known silent-failure controls (Approve/Deny on tool-call cards, OAuth-in-dialog popup-blocked, async-validation forms, optimistic-UI delete, off-by-one pagination, filter chips with stale TanStack Query, Reply/Forward without Message-ID): see [references/live-interaction-smoke.md](references/live-interaction-smoke.md) for the full silent-failure catalogue and SDK contract checks (`@ai-sdk/react`, better-auth, TanStack Query, React Router v7, Radix Dialog, zodResolver).
 
-| Control category | Silent-failure mode to watch for |
-|---|---|
-| Approve / Deny buttons on tool-call cards | Handler fires but server never hears about it (SDK needs a separate "send on state change" callback). See `rules/ai-sdk-tool-approval-autosubmit.md`. |
-| "Connect X" OAuth buttons inside dialogs | `window.open()` silently popup-blocked when click originates in a modal. Must use `window.location.href`. See `rules/oauth-popup-blocked-in-dialogs.md`. |
-| Save / update buttons on forms with async validation | Button disables during mutation but the mutation itself silently 5xx'd. No toast, no error state, form just sits there. |
-| Delete / archive actions | Optimistic UI removes the row but server rejected — after refresh, the row is back. |
-| Pagination / "Load more" buttons | Fires request but response empty due to off-by-one offset. |
-| Filter chips on list views | Query param updates but query key doesn't — TanStack Query serves stale cached results. |
-| "Reply" / "Forward" in email-style UIs | Opens compose pane but Message-ID headers not set — reply threads orphan in recipient's inbox. |
+### Round-trip Workflow Integrity (mandatory)
 
-### SDK contract check
+For every workflow that traverses pages — A → B → A — the audit must exercise the full round-trip. The bug pattern: a mutation on B creates data tied to A, but B's mutation only invalidates B's own query key. A is stale on return. User sees an empty list, thinks the action failed, retries or gives up.
 
-When the page uses a third-party SDK with its own state model, verify
-the SDK's required options are passed. Silent failures usually trace
-to an undocumented-but-required option.
+For each cross-page workflow:
 
-Common SDK contracts to verify:
+1. Capture A's state (count, latest timestamp, badges).
+2. Trigger the action on A that navigates to B.
+3. Complete the mutation on B.
+4. Navigate back via the discoverable back affordance — NOT a hard reload.
+5. Verify A reflects the new state (incremented count, new row, updated timestamp, decremented badge).
+6. Verify the back affordance was discoverable: visible without hover, labelled with parent name, sized like a control, sidebar still shows parent context.
 
-| SDK | Option that silently breaks behaviour if missing |
-|---|---|
-| `@ai-sdk/react` useChat with `needsApproval: true` tools | `sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithApprovalResponses` |
-| `@ai-sdk/react` useChat with custom transport | `prepareSendMessagesRequest` reading latest refs (otherwise pinned to initial values) |
-| better-auth `createAuthClient` | `sessionOptions.refetchOnWindowFocus: false` for SPAs that route on session state |
-| TanStack Query `QueryClient` | `refetchOnWindowFocus: false` if your app redirects on empty query results |
-| React Router v7 `createBrowserRouter` | `loader` / `action` defined for routes that need data (not just component) |
-| Radix Dialog | `modal: true` + `onEscapeKeyDown` handler if Escape should do more than close |
-| zodResolver | `as any` around schema if using Zod v4 and resolver is older — silent validation miss |
+If A is stale OR the back affordance is hidden, log a finding (severity High — looks like data loss to the user). Reload that "fixes" the staleness is the smoking gun.
 
-**If the page uses an SDK not on this list**, spend 2 minutes reading
-its "useX" export's options. Anything named `*On*Change`, `*On*Finish`,
-`*SendAutomatically*`, `*RefetchOn*`, or `*Configure*` is a prime
-suspect for "silent failure because it's undefined."
+Build the round-trip surface inventory during Phase 2. For each mutation across the app, list every parent query key it should invalidate. Particular smells: header badges (notification bell, unread counts, pending pips) that depend on data multiple pages can mutate.
 
-## Passive Error Sweeps
+Full protocol, surface inventory format, detection heuristics, and findings template in [references/round-trip-workflows.md](references/round-trip-workflows.md).
 
-Run these throughout, not as a dedicated phase.
+### Responsive Sweep
 
-### Console errors
+Layout-detection JS at every width (overflow, clipping, invisible text). Capture transition points. Combined with multi-pane stress above for full coverage.
 
-On every page load, check the browser console:
-- JS errors (TypeError, ReferenceError) — **High**
-- Framework warnings (key props, deprecated APIs) — **Medium**
-- CSP violations — **Medium**
-- Deprecation warnings — **Low**
+### Auth-expired mid-audit
 
-### Network errors
+A long audit (30+ min) can outlast the session expiry. If during the walkthrough a navigation OR an API call returns 401/403 on a route that previously authenticated, the session has dropped.
 
-Monitor network responses across the entire session. Visual browsing misses API failures — TanStack Query and SWR swallow errors and show empty/loading states instead. A "No results found" might actually be a 403.
+**Don't try to silently re-auth.** From this point onward, every observation is potentially corrupted (signed-out user sees different surfaces, hits different gates, gets different copy).
 
-| Status | Severity | Usual cause |
-|--------|----------|-------------|
-| 500+ | **Critical** | Server error |
-| 403 | **High** | Permissions or route collision (static shadowed by `/:param`) |
-| 404 | **Medium** | Missing endpoint |
-| 401 | **Low** | Expected unauthenticated; flag on authenticated pages |
-| CORS | **High** | Missing headers — production-only failure |
+Protocol:
 
-Chrome MCP: use `read_network_requests` after each page. Playwright: attach `page.on('response')` before browsing starts.
+1. **Stop** immediately on the first unexpected 401/403 in the manifest.
+2. **Capture** the exact step that broke (network log + screenshot) — that itself is evidence for a possible "session expired without warning" finding.
+3. **Terminate the audit** with verdict `Incomplete`, cause = `auth expired mid-audit at <step>`.
+4. **Note in the Verdict block** how far the audit got: which pages had complete manifest, which were mid-flight.
+5. **Recommend next steps**: re-auth in Chrome (or re-run test-auth `/cookies` if headless) and resume from the point of failure with a fresh session.
 
-## Report
+This is intentional: silently re-authenticating mid-audit hides session-expiry bugs (the very thing the user might want to know about) AND mixes pre-expiry and post-expiry observations into one report.
 
-Write to `docs/ux-audit-YYYY-MM-DD.md` as you go. If `.jez/artifacts/` exists, use `.jez/artifacts/ux-audit-YYYY-MM-DD.md` instead.
+If the audit is running headless via test-auth cookies and the cookies expire mid-walkthrough, the same protocol applies — re-mint cookies, restart the audit. Do not stitch two halves together.
 
-Structure in [references/report-template.md](references/report-template.md):
-- Summary
-- Coverage metrics (threads walked, elements tested, inventoried coverage %)
-- Findings by severity (Critical → Low) with screenshot refs
-- Per-thread results
-- Scenario battery results
-- Network + console error inventory
-- What works well
-- Priority recommendations
+## Phase 4 — Polish
 
-**Severity:**
-- **Critical** — user cannot complete the task
-- **High** — confusion, friction, trust damage
-- **Medium** — suboptimal, workable
-- **Low** — polish
+### Visual Polish Sweep
 
-## Fix-and-Verify Loop
+A page-by-page micro-polish pass covering ten AI-tell categories: optical centring, nested border-radius rule, off-scale spacing, vibe greys, border-weight drift, drop-shadow direction, animation timings off canonical, hover-delta calibration, underline / uppercase letter-spacing, symmetry vs editorial pacing.
 
-After writing the report, offer the loop:
+Plus a per-component optical pass for buttons, badges, inputs, dropdowns, cards, tabs, avatars, toasts.
 
-*"Found N critical and M high issues. Fix them now and re-verify?"*
+Full protocol with DevTools workflow, severity guide, and reference apps for calibration in [references/visual-polish.md](references/visual-polish.md).
+
+### Component Perfection Checklist
+
+Component-level granularity that page-level audits miss. Six categories, each with concrete yes/no checks that need proof artefacts:
+
+1. **Buttons & Triggers** — state clarity, intent matching, micro-copy, loading state, hierarchy
+2. **Inputs & Forms** — persistent labels, masks, inline validation, error clarity, defaulting
+3. **Navigation & Hierarchy** — Where am I?, click depth, search logic, sticky headers
+4. **Visual Coherence** — icon consistency, empty states, border radii, contrast ratio
+5. **Mobile & Touch** — tappable surface (≥ 48×48), keyboard optimisation, swipe gestures
+6. **Performance & Feedback** — skeleton screens, success toasts, confirmation modals only for high-stakes
+
+Plus six visual states per major component (default, skeleton, empty, partial, error, disabled) — skeleton-on-blank is not a skeleton.
+
+Each checkbox in the report cites a proof artefact (screenshot, console line, DOM selector, code reference). No proof = doesn't count.
+
+Full checklist in [references/perfection-checklist.md](references/perfection-checklist.md).
+
+### Automated accessibility (axe-core, mandatory)
+
+Manual keyboard-only walks (Scenario 5) catch focus traps and tab-order. They miss ~80% of structural a11y bugs (heading skips, hover/focus contrast failures, missing aria-labels, role mismatches). axe-core covers that 80% in <1 second per page.
+
+For every audited page:
+
+1. Inject axe-core via CDN (one script tag).
+2. Run `axe.run()` after the page settles.
+3. Map violations → audit findings (axe `critical` → audit Critical, axe `serious` → audit High, etc).
+4. Hard-gate: > 0 axe Critical OR > 0 axe Serious on any page = audit Fails.
+
+Total runtime for a 16-route audit is ~16 seconds. Allowlist via `.jez/audit-config.yml` for builder-mode reference pages (Components, Style guide). Full snippet, severity mapping, and findings format in [references/a11y-automation.md](references/a11y-automation.md).
+
+### Performance budget (pragmatic, mandatory)
+
+Run the Performance API capture once on a representative route (the page real users hit most — usually dashboard or main work surface). Pragmatic thresholds (LCP < 4.0s, CLS < 0.25, INP < 500ms) sit well above broken and well below Google's CWV "Good" tier. CWV-strict is for landing pages and marketing teams; for app interiors that real users sit inside, pragmatic is the right bar.
+
+Add to verdict block. Hard-gate any threshold breach. Diagnose with Chrome DevTools Performance trace (large hero, late font, heavy click handler, hydration cost). Full measurement snippet, throttling spec, and common offenders in [references/performance-budget.md](references/performance-budget.md).
+
+## Phase 5 — Stress
+
+### Scenario Battery (10 scenarios)
+
+All ten, always. They catch what screen-by-screen testing misses. Full protocols in [references/scenario-tests.md](references/scenario-tests.md).
+
+1. **First Contact** — figure out the app with zero prior knowledge, write a 2-min plain-English guide to each thread.
+2. **Interrupted Workflow** — start a task, close the tab, refresh, navigate away mid-form. Does state survive?
+3. **Wrong Turn Recovery** — deliberately click wrong. How many clicks to recover?
+4. **Returning User** — repeat a thread. Faster? Shortcuts? Can you tell what changed since last visit?
+5. **Keyboard Only** — every thread keyboard-only. Focus visible, tab order logical, Escape closes.
+6. **Heavy Data** — seed 500+ records. Lists virtualise, search returns the right thing, filters narrow.
+7. **Destructive Confidence** — every delete/send/publish/pay/share: consent clear, copy specific, undo available.
+8. **Second User (Role)** — restricted role (viewer not editor, client not staff). Read-only views, permission errors.
+9. **Lifecycle Position** — same role at user #1 (founder), #2 (first invitee, partial state), #N (later joiner, populated workspace). Each sees a different reality.
+10. **Round-Trip Workflow Integrity** — every A→B→A flow: complete mutation on B, verify A reflects new state on return without reload. Discoverable back affordance. Header badges update. The single biggest "the project is just empty when I go back" source.
+
+### Extended Stress Recipes
+
+Beyond scenarios, run every relevant recipe in [references/stress-test-recipes.md](references/stress-test-recipes.md):
+
+| Stress | What it catches |
+|--------|-----------------|
+| Empty / saturated / long content | Edge layouts AI rarely sees during dev |
+| Race conditions (double-click, fast-type-then-blur, slow network) | Optimistic UI bugs, debounce failures |
+| Slow network (3G throttle) | Loading states, skeleton rhythm, timeout UX |
+| Reduced motion (`prefers-reduced-motion: reduce`) | Animations that ignore the preference |
+| i18n (long German, RTL Arabic, CJK widths) | Layout assumptions about text length |
+| Offline mode | Retry / queue / dirty-state UX |
+| Print stylesheet | Forgotten media query |
+| High-contrast mode | Forced-colors media query handling |
+| **Real-flavour data battery** (mandatory for any form-accepting app) | Validation that strips characters silently (apostrophe, accents, RTL); length truncation without warning; SQL/XSS canaries not escaped; file uploads that don't fit (.heic, 8000×8000 PNG, 50MB PDF). AI-built UIs are notoriously dev-data clean. |
+
+## Phase 6 — Verdict
+
+### Verdict block (mandatory at the top of the report)
+
+```
+═══════════════════════════════════════════════════════════
+VERDICT: [Pass / Conditional Pass / Fail / Incomplete]
+
+Persona: [locked persona slug]
+Surfaces audited: N / M routes
+Interaction Manifest: complete / incomplete (X of Y required entries)
+
+Hard Gates:
+  Console errors:        [count]   [GREEN/RED]   ([N] allowlisted)
+  Console warnings:      [count]   [GREEN/RED]   ([N] allowlisted)
+  Network 5xx:           [count]   [GREEN/RED]
+  Network 403/404 auth:  [count]   [GREEN/RED]   ([N] allowlisted)
+  Layout collapse:       [count]   [GREEN/RED]
+  axe-core Critical:     [count]   [GREEN/RED]   ([N] allowlisted)
+  axe-core Serious:      [count]   [GREEN/RED]   ([N] allowlisted)
+
+Performance (sampled on /[representative-route]):
+  LCP:   [N]s    [GREEN/RED]   (threshold 4.0s)
+  CLS:   [N]     [GREEN/RED]   (threshold 0.25)
+  INP:   [N]ms   [GREEN/RED]   (threshold 500ms)
+
+Findings:
+  Critical: [count]
+  High:     [count]
+  Medium:   [count]
+  Low:      [count]
+
+Time per phase:
+  Phase 3 (walkthrough):  [N]m   ← exhaustive ≥ 5m
+  Total:                  [N]m
+
+Manifest plausibility:
+  Entries:                [N]    ← ≥ 6 per audited route
+  Median gap:             [N]s   ← if < 0.5s, agent didn't actually
+                                   interact; verdict → Incomplete
+  Screenshots:            [N]    ← ≥ 2 per audited route
+═══════════════════════════════════════════════════════════
+```
+
+### Audit-the-audit meta-check
+
+The verdict block's "Time per phase" + "Manifest plausibility" rows are not decoration — they're a forcing function against the agent (or a rushed human) claiming Pass without doing the work.
+
+Auto-Incomplete triggers:
+
+| Signal | Implies | Action |
+|---|---|---|
+| Phase 3 took < 1m for an exhaustive audit | Agent skipped the walkthrough | Verdict → Incomplete |
+| Median gap between manifest entries < 0.5s | Entries logged in bulk, no real interaction | Verdict → Incomplete |
+| Screenshots fewer than 2 × routes audited | Most pages didn't get before/after captures | Verdict → Incomplete |
+| Console reads fewer than 1 × routes audited | Pages weren't checked for warnings | Verdict → Incomplete |
+| Manifest first→last span < 5m for exhaustive | Whole audit was rushed | Verdict → Incomplete |
+
+These are non-negotiable. A clean Pass with implausible timings is rejected — the agent must redo the audit with real interaction.
+
+The reviewer (the human supervising the audit, or you reading the report later) can spot-check: do timestamps in the manifest cluster suspiciously? Do screenshot file mtimes align with manifest timestamps? Did the agent actually press keys and wait for state changes, or did it batch-emit a fictional log?
+
+### Findings format (mandatory per finding)
+
+Every finding must include:
+
+```
+ID: H-2
+Layer: Interaction
+Severity: High
+Surface: /dashboard/spaces/:id (lg viewport, all 3 panes open)
+Persona: SME owner
+
+Reproduce:
+  1. Sign in
+  2. Open any existing space
+  3. Open the members panel (md+ default)
+  4. Click any message → opens thread aside
+  5. Look at the timeline column
+
+Observed: message text wraps one character per line (vertical column).
+Expected: message text wraps at word boundaries within the available column width.
+Evidence: .jez/audit-evidence/2026-04-29/spaces-vertical-text.png
+          .jez/audit-evidence/2026-04-29/spaces-vertical-text-devtools.png
+Suspected location: src/client/modules/spaces/pages/SpacePage.tsx:200 (main flex-1 min-w-0)
+Suggested fix: add min-w-[260px] to prevent the catastrophic squeeze, or hide one pane at lg.
+```
+
+A finding without reproduction + evidence + suspected location is rejected. Forces real pinning, not gestures. Layer is one of: Architecture / Interaction / Visual / Feedback / Delight (see Five-Layer Hierarchy in [references/perfection-checklist.md](references/perfection-checklist.md)).
+
+### Perfection Roadmap (mandatory)
+
+Group findings into:
+
+- **Quick Wins (24-48h)** — micro-copy, hover states, contrast fixes, single-line CSS adjustments
+- **Structural (1-2 weeks)** — primitive replacements, route restructures, multi-pane refactors
+- **Advanced Polish (post-launch)** — micro-animations, skeleton variations, personalised empty states
+
+Full report structure in [references/report-template.md](references/report-template.md).
+
+## Phase 7 — Fix-and-verify
+
+After the report, offer the loop:
+
+> *"Found N Critical and M High issues. Fix them now and re-verify?"*
 
 If yes:
 1. Group findings by file/area
 2. Patch each one
-3. Re-walk just the affected slice (not the whole app)
-4. Update the report: mark finding `✓ fixed`, `✗ still present`, or `⚠ new issue found`
+3. **Re-walk just the affected slice** (not the whole app) — including the original interaction that surfaced the bug, with a fresh screenshot
+4. Update the report: mark `✓ fixed`, `✗ still present`, or `⚠ new issue found`
 5. Close with a "fixed in this session" summary
 
-Closes the loop inside one session instead of waiting for a second audit pass tomorrow.
+Closes the loop in one session instead of waiting for tomorrow's audit.
 
-## Cross-reference with ux-extract
+## Cross-reference with ux-extract and brains-trust
 
-If a pattern library exists at `.jez/artifacts/ux-extracts/<ref>.md` or `docs/ux-extracts/<ref>.md`, read it before starting and use it as the bar. Findings can then say:
+If a pattern library exists at `.jez/artifacts/ux-extracts/<ref>.md` or `docs/ux-extracts/<ref>.md`, read it before starting and use it as the bar for findings.
 
-> *"Empty state on /app/clients shows no CTA. Reference (claude.ai) shows 3 keyboard shortcuts + 'New chat' button in the same position."*
+After v2 produces a verdict, consider running `dev-tools:brains-trust` to get a second-opinion review from a different model. v2 catches a class; brains-trust catches what your specific model habit misses. Recommended cadence: every 4-6 weeks.
 
-Graceful if absent — the audit still works without a reference.
+When merging brains-trust findings back into the audit report, **dedup by `(reproduction-steps, suspected-location)`**. Same bug surfaced by a second model is one finding with two confirmations, not two findings. The merged finding gets a `Confirmed by:` line listing the models that flagged it — useful signal for prioritising fixes (a bug both models found is high-confidence).
+
+Anti-pattern: appending the second model's report verbatim to the first. Produces a noisy report with the same Critical bug listed twice and inflates the perceived severity.
+
+## The 30-Second Dogfood Drill (project-level rule)
+
+The audit is heavy. For per-change pre-deploy checks, recommend a project rule in CLAUDE.md:
+
+> **Before declaring any UI change "done", run the 30-second dogfood drill:**
+> 1. Open the affected page
+> 2. Type into any input
+> 3. Click the primary action
+> 4. Watch the next state for 2 seconds
+> 5. Open a related view (thread, modal, detail)
+> 6. Read the console
+> If any step shows unexpected behaviour, the change isn't done.
+
+Six steps, ~30 seconds. Catches behavioural bugs that surface immediately. Pair with the full ux-audit weekly.
+
+## Playwright killer-flow tests
+
+Audits find what's broken now. Tests prevent regressions. Recommend writing 10-15 Playwright tests for the killer flows — see [references/playwright-killer-flows.md](references/playwright-killer-flows.md) for starter examples (input clears after send, no console warnings on mount, message column width ≥ 200px after thread open, @-mention exactly one pill, etc.). Run on every deploy via CI.
 
 ## Autonomy
 
-- **Just do it**: Navigate, screenshot, read pages, inject layout-detection JS, submit forms with obviously-fake test data, write the report file, dispatch screenshot-review sub-agents
-- **Ask first**: Destructive actions (delete, send, publish, pay). For Destructive Confidence testing, ask once before running that scenario
-- **Stop and confirm**: Anything that emails/notifies external people
+- **Just do it**: Navigate, screenshot, read pages, inject layout-detection JS, submit forms with fake test data, write the report file, dispatch screenshot-review sub-agents.
+- **Ask first**: Destructive actions (delete, send, publish, pay). For Destructive Confidence testing, ask once before running that scenario.
+- **Stop and confirm**: Anything that emails / notifies external people.
 
 ## Execution discipline
 
-Three principles for audit runs that catch the most bugs:
+1. **Drive the audit from the main session, not a sub-agent.** Cross-interaction state lives in the session that's been watching. A fresh sub-agent starts cold and misses second-order findings.
+2. **Use the browser tool directly.** Chrome MCP or Playwright MCP from the main session. Don't hand screenshots to a fresh agent for opinions.
+3. **Loop to exhaustion with variations.** After each pass, generate a new angle (different persona, different workflow, different input volume, different starting point). Stop only when a full pass produces no new findings.
 
-1. **Drive the audit from the main session, not a sub-agent.** Sub-agents are fine for bounded analysis tasks (reviewing a batch of captured screenshots, summarising a thread). But the audit *itself* — the navigation, the noticing, the "this button looks off after the previous interaction" kind of judgement — must happen in the session that's been watching the app. Cross-interaction state lives in that session's working memory; a fresh sub-agent starts cold and misses second-order findings.
-
-2. **Use the browser tool directly.** Chrome MCP or Playwright MCP via the main session's tool calls. Don't hand screenshots to a fresh agent and ask for opinions — that loses the state-dependence that makes audits catch logic errors, business-logic issues, and odd edge cases.
-3. **Loop to exhaustion with variations.** Don't stop after one pass through the checklist. After each pass, generate a new angle — different persona, different workflow, different input volume, different starting point, different validation lens — and re-walk. Stop only when a full pass produces no new findings. Single-pass audits by definition miss the second-order issues.
-
-For audits expected to run longer than 30 minutes, set up a 15-min `/loop` check-in alongside the main session — it journals findings, grounds the session, and provides a natural termination signal. See [references/long-running-check-in-pattern.md](references/long-running-check-in-pattern.md).
+For audits expected to run > 30 minutes, set up a 15-min `/loop` check-in alongside the main session — it journals findings, grounds the session, and provides a natural termination signal. See [references/long-running-check-in-pattern.md](references/long-running-check-in-pattern.md).
 
 ## Reference files
 
 | When | Read |
 |------|------|
-| Per-screen evaluation questions | [references/walkthrough-checklist.md](references/walkthrough-checklist.md) |
-| Workflow threads, wayfinding, mental model alignment, page-to-page continuity | [references/workflow-comprehension.md](references/workflow-comprehension.md) |
-| Full protocol for each of the 8 scenarios | [references/scenario-tests.md](references/scenario-tests.md) |
-| Report format and severity rubrics | [references/report-template.md](references/report-template.md) |
+| Persona library + writing protocol | [references/persona-lock.md](references/persona-lock.md) |
+| Audit-config allowlist format + semantics + surface overrides | [references/audit-config.md](references/audit-config.md) |
+| Interaction Manifest template + replay protocol | [references/interaction-manifest.md](references/interaction-manifest.md) |
+| Multi-pane stress matrix + automation snippets | [references/multi-pane-stress.md](references/multi-pane-stress.md) |
+| Per-screen evaluation questions, layout-detection JS | [references/walkthrough-checklist.md](references/walkthrough-checklist.md) |
+| Wayfinding, mental model, page-to-page continuity | [references/workflow-comprehension.md](references/workflow-comprehension.md) |
+| Full protocol for each of the 10 scenarios | [references/scenario-tests.md](references/scenario-tests.md) |
+| Extended stress recipes (race, slow network, reduced motion, i18n) | [references/stress-test-recipes.md](references/stress-test-recipes.md) |
+| Component-level perfection checklist (6 categories + 6 states) | [references/perfection-checklist.md](references/perfection-checklist.md) |
+| AI-tell catalogue, optical centring, design-token discipline | [references/visual-polish.md](references/visual-polish.md) |
+| Silent-failure controls + SDK contract checks | [references/live-interaction-smoke.md](references/live-interaction-smoke.md) |
+| Playwright killer-flow test starters | [references/playwright-killer-flows.md](references/playwright-killer-flows.md) |
+| Report format, verdict block, severity rubric, reproduction-step format | [references/report-template.md](references/report-template.md) |
 | Browser tool commands and viewport notes | [references/browser-tools.md](references/browser-tools.md) |
-| Long-running audit supervision via 15-min `/loop` check-in | [references/long-running-check-in-pattern.md](references/long-running-check-in-pattern.md) |
+| Round-trip workflow integrity (A→B→A pattern) | [references/round-trip-workflows.md](references/round-trip-workflows.md) |
+| Automated accessibility (axe-core injection + severity mapping) | [references/a11y-automation.md](references/a11y-automation.md) |
+| Pragmatic performance budget (LCP/CLS/INP via Performance API) | [references/performance-budget.md](references/performance-budget.md) |
+| Long-running audit supervision via 15-min `/loop` | [references/long-running-check-in-pattern.md](references/long-running-check-in-pattern.md) |
 
 ## Tips
 
-- **Thread first, elements second.** If time is short, threads tell you more.
+- **Interaction first, sweep last.** A sweep without prior interaction is Incomplete.
+- **Type into something on every page.** Real text. The single most-effective change for catching behaviour bugs.
+- **Read the console after every primary action.** Most regressions surface as warnings before they become bugs.
+- **Multi-pane stress is not optional.** If the app has collapsible UI, the worst bugs live in pane-overlap zones.
+- **Stay in persona.** If you catch yourself thinking "a developer would know..." — stop. Your persona doesn't.
+- **Every hesitation is a finding.** If you paused to figure out what to click, that's friction worth reporting.
+- **Use the eyedropper liberally.** Single fastest way to find vibe greys, off-token colours, design-system drift.
+- **Coverage is arithmetic.** Inventoried ÷ tested. Publish the ratio in the report.
 - **Sub-agents for screenshot review.** Don't drive the browser and analyse 200 screenshots in one loop.
 - **Write findings incrementally.** The report file is cheaper memory than your context.
-- **Stay in persona.** If you catch yourself thinking "a developer would know…" stop. Your persona doesn't.
-- **Every hesitation is a finding.** If you paused to figure out what to click, that's friction worth reporting.
-- **Coverage is arithmetic.** Inventoried ÷ tested. Publish the ratio in the report.

@@ -2,7 +2,7 @@
 name: janitor-tokens
 description: "Show how many context window tokens each skill consumes. Use when the user asks about token cost, context budget, skill size, or wants to know which skills waste the most context space."
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Context Window Token Cost

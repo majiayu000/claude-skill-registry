@@ -118,3 +118,5 @@ After any mode, the final output must include:
 ## Knowledge Reference
 
 Socratic method, Hegelian dialectic, steel manning, pre-mortem analysis, red teaming, falsificationism, abductive reasoning, second-order thinking, cognitive biases, inversion technique
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/workflow/the-fool/)

@@ -162,3 +162,5 @@ When designing microservices architecture, provide:
 ## Knowledge Reference
 
 Domain-driven design, bounded contexts, event storming, REST/gRPC, message queues (Kafka, RabbitMQ), service mesh (Istio, Linkerd), Kubernetes, circuit breakers, saga patterns, event sourcing, CQRS, distributed tracing (Jaeger, Zipkin), API gateways, eventual consistency, CAP theorem
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/api-architecture/microservices-architect/)

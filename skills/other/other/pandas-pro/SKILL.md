@@ -176,3 +176,5 @@ When implementing pandas solutions, provide:
 2. Comments explaining complex transformations
 3. Memory/performance considerations if dataset is large
 4. Data validation checks (dtypes, nulls, shapes)
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/data-ml/pandas-pro/)

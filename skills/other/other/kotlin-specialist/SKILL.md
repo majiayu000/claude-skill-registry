@@ -145,3 +145,5 @@ When implementing Kotlin features, provide:
 ## Knowledge Reference
 
 Kotlin 1.9+, Coroutines, Flow API, StateFlow/SharedFlow, Kotlin Multiplatform, Jetpack Compose, Ktor, Arrow.kt, kotlinx.serialization, Detekt, ktlint, Gradle Kotlin DSL, JUnit 5, MockK, Turbine
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/language/kotlin-specialist/)

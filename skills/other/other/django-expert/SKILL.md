@@ -69,7 +69,6 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 
-
 # serializers.py
 from rest_framework import serializers
 from .models import Article
@@ -85,7 +84,6 @@ class ArticleSerializer(serializers.ModelSerializer):
         if len(value.strip()) < 3:
             raise serializers.ValidationError("Title must be at least 3 characters.")
         return value.strip()
-
 
 # views.py
 from rest_framework import viewsets, permissions
@@ -160,3 +158,5 @@ When implementing Django features, provide:
 ## Knowledge Reference
 
 Django 5.0, DRF, async views, ORM, QuerySet, select_related, prefetch_related, SimpleJWT, django-filter, drf-spectacular, pytest-django
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/backend/django-expert/)

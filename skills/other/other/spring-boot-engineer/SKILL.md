@@ -193,3 +193,5 @@ class ProductControllerTest {
 - Store secrets or credentials in `application.properties`/`application.yml`
 - Hardcode URLs, credentials, or environment-specific values
 - Use deprecated Spring Boot 2.x patterns (e.g., `WebSecurityConfigurerAdapter`)
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/backend/spring-boot-engineer/)

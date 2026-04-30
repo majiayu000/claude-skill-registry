@@ -331,6 +331,35 @@ FROM biz_sales s WHERE 1=1
 
 用户确认后执行。使用 Python 调用 API（Windows 环境下 curl 中文会出错）：
 
+### Windows 执行环境（强制规则，违反会让用户吐槽"执行太慢"）
+
+**现象**：Windows 的 Bash tool 会把 `python` / `python -c` / skill 脚本当作长命令自动 `run_in_background`，tool 立即返回 background ID，真正输出要等完成通知——把毫秒级调用放大到数秒。
+
+**规则**：
+- **Windows（platform=win32）** → 用 Bash tool 调用 `powershell -Command "python xxx.py"`，同步返回。
+- **Linux / macOS** → 用 Bash tool 直接调用 `python xxx.py`。
+- 任何平台都不用 `curl`：跨平台不一致，Windows Bash 下同样被后台化。
+
+**脚本执行前强制检查（3 项，缺一不可）**：
+1. ✅ Windows 下用 `powershell -Command "python xxx.py"`，不是直接 `python xxx.py`
+2. ✅ 脚本已写入 `.py` 文件（禁止 `python -c` 内联代码）
+3. ✅ 脚本第一行已加编码声明：`import sys; sys.stdout.reconfigure(encoding='utf-8')`（防 GBK 崩溃重试）
+
+**Windows 正确示例**：
+```
+Bash: powershell -Command "python <skill_base_dir>/scripts/onlreport_api.py --api-base ... --token ..."
+```
+> `<skill_base_dir>` 是本 SKILL.md 所在目录，运行时用实际路径替换。
+
+**Windows 错误示例**（会被后台化，用户立即感知到"卡"）：
+```
+Bash: python onlreport_api.py ...     ← 返回 "Command running in background with ID: xxx"
+Bash: python -c "..."                  ← 同上
+Bash: curl -X POST ...                 ← 同上
+```
+
+---
+
 **调用方式**：import `onlreport_api`，调用 `init_api` 初始化后直接使用封装函数，无需修改脚本文件。
 
 ```python
@@ -442,8 +471,8 @@ items = [
 ```
 
 **关键约束**：
-1. **Windows 必须用 Python**，不要用 curl；Python 命令是 `python`（不是 `python3`）
-2. 写临时 `.py` 脚本时用 `Write` 工具，执行后删除临时文件
+1. **Windows 必须用 `powershell -Command "python xxx.py"`**，不要用 `python xxx.py` 或 `curl`
+2. 写临时 `.py` 脚本时用 `Write` 工具，脚本首行加 `import sys; sys.stdout.reconfigure(encoding='utf-8')`，执行后删除临时文件
 3. 字段 ID 用 `gen_id()` 生成（雪花格式 19 位数字字符串）
 4. parseSql 返回的 fieldType 全是 String，需根据上表语义修正（或直接用 `build_item` 自动推断）
 5. `isOrder`/`isSearch` 的"否"值为 `null`，不要用 `0`

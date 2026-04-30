@@ -1,6 +1,7 @@
 ---
 name: code-review
 description: Code review practices with technical rigor and verification gates. Use for receiving feedback, requesting code-reviewer subagent reviews, or preventing false completion claims in pull requests.
+license: MIT
 ---
 
 # Code Review

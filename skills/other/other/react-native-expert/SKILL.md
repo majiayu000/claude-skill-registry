@@ -183,3 +183,5 @@ When implementing React Native features, deliver:
 ## Knowledge Reference
 
 React Native 0.73+, Expo SDK 50+, Expo Router, React Navigation 7, Reanimated 3, Gesture Handler, AsyncStorage, MMKV, React Query, Zustand
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/frontend/react-native-expert/)

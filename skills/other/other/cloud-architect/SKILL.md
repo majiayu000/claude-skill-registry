@@ -214,3 +214,5 @@ When designing cloud architecture, provide:
 3. Security architecture (IAM, network segmentation, encryption)
 4. Cost estimation and optimization strategy
 5. Deployment approach and rollback plan
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/infrastructure/cloud-architect/)

@@ -143,3 +143,5 @@ When implementing TypeScript features, provide:
 ## Knowledge Reference
 
 TypeScript 5.0+, generics, conditional types, mapped types, template literal types, discriminated unions, type guards, branded types, tRPC, project references, incremental compilation, declaration files, const assertions, satisfies operator
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/language/typescript-pro/)

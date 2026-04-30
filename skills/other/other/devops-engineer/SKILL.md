@@ -142,3 +142,5 @@ Always document the rollback command and verification step in the PR or change t
 ## Knowledge Reference
 
 GitHub Actions, GitLab CI, Jenkins, CircleCI, Docker, Kubernetes, Helm, ArgoCD, Flux, Terraform, Pulumi, Crossplane, AWS/GCP/Azure, Prometheus, Grafana, PagerDuty, Backstage, LaunchDarkly, Flagger
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/devops/devops-engineer/)

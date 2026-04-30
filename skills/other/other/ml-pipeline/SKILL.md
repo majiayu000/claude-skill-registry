@@ -104,7 +104,6 @@ def train_model(
 
     metrics_output.log_metric("train_samples", len(df))
 
-
 @dsl.pipeline(name="training-pipeline")
 def training_pipeline(data_path: str, n_estimators: int = 100):
     train_step = train_model(n_estimators=n_estimators)
@@ -157,3 +156,5 @@ When implementing a pipeline, provide:
 ## Knowledge Reference
 
 MLflow, Kubeflow Pipelines, Apache Airflow, Prefect, Feast, Weights & Biases, Neptune, DVC, Great Expectations, Ray, Horovod, Kubernetes, Docker, S3/GCS/Azure Blob, model registry patterns, feature store architecture, distributed training, hyperparameter optimization
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/data-ml/ml-pipeline/)

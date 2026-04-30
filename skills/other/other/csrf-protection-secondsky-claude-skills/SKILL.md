@@ -1,6 +1,7 @@
 ---
 name: csrf-protection
 description: Implements CSRF protection using synchronizer tokens, double-submit cookies, and SameSite attributes. Use when securing web forms, protecting state-changing endpoints, or implementing defense-in-depth authentication.
+license: MIT
 ---
 
 # CSRF Protection

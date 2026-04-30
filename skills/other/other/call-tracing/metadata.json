@@ -6,7 +6,7 @@
   "category": "other",
   "source": "github.com/oliver-kriska/claude-elixir-phoenix",
   "dir_name": "call-tracing",
-  "downloaded_at": "2026-04-29T02:16:56.251352Z",
+  "downloaded_at": "2026-04-30T02:15:04.209403Z",
   "author": "oliver-kriska",
   "source_url": "https://github.com/oliver-kriska/claude-elixir-phoenix/blob/main/plugins/elixir-phoenix/skills/call-tracing/SKILL.md",
   "license": "NOASSERTION",

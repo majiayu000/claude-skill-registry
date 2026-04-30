@@ -2,15 +2,16 @@
   "name": "rest-api-design",
   "repo": "secondsky/claude-skills",
   "path": "plugins/rest-api-design/skills/rest-api-design/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/secondsky/claude-skills",
   "dir_name": "rest-api-design",
-  "downloaded_at": "2026-02-20T01:30:52.574274Z",
+  "downloaded_at": "2026-04-30T02:18:17.386624Z",
   "author": "secondsky",
   "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/rest-api-design/skills/rest-api-design/SKILL.md",
-  "license": "MIT",
-  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
-  "permission_note": "Use according to upstream license terms and attribution requirements.",
-  "distribution": "compatible",
-  "license_class": "compatible"
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/secondsky/claude-skills/blob/main/plugins/rest-api-design/skills/rest-api-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

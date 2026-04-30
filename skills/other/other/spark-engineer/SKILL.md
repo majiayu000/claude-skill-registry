@@ -146,3 +146,5 @@ When implementing Spark solutions, provide:
 ## Knowledge Reference
 
 Spark DataFrame API, Spark SQL, RDD transformations/actions, catalyst optimizer, tungsten execution engine, partitioning strategies, broadcast variables, accumulators, structured streaming, watermarks, checkpointing, Spark UI analysis, memory management, shuffle optimization
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/data-ml/spark-engineer/)

@@ -1,6 +1,7 @@
 ---
 name: responsive-web-design
 description: Builds adaptive web interfaces using Flexbox, CSS Grid, and media queries with a mobile-first approach. Use when creating multi-device layouts, implementing flexible UI systems, or ensuring cross-browser compatibility.
+license: MIT
 ---
 
 # Responsive Web Design

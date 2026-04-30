@@ -41,6 +41,7 @@ Use `WebFetch` on specific doc pages when a reference file doesn't cover enough 
 - Hardcoded Tailwind colors (`bg-yellow-600`) instead of brand tokens (`bg-brand-accent`).
 - Mixing buttons and links — buttons are actions (resolve to `<a>`, `<button>`, or `<span>` from props), links are navigation (always `<a>`). Separate atom categories.
 - Tracking/analytics inside components — decouple to data attributes at view/page level.
+- Forgetting `project-config/touch` after editing YAML outside the CP — Git pulls, manual edits, and merge conflict resolution don't update `dateModified`. Run `ddev craft project-config/touch` then `ddev craft up`, or `craft up` on other environments won't detect the change.
 
 ## Reference Files
 
@@ -90,6 +91,9 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Set up a headless Craft CMS with Next.js" → read `headless.md`
 - "Fix GraphQL preview tokens" → read `headless.md`
 - "Consume Craft GraphQL API from a front-end framework" → read `headless.md`
+- "Use entry.render() for reusable card components" → read `element-partials.md`
+- "Set up _partials/ templates for entries" → read `element-partials.md`
+- "Render Matrix blocks with partials" → read `element-partials.md`
 
 
 | Reference | Scope |
@@ -111,6 +115,7 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 | `references/search.md` | Search: syntax, Twig queries, configuration, indexing, rebuilding, score and ranking |
 | `references/feeds.md` | Feeds: RSS 2.0, Atom, JSON Feed, XML sitemap, custom routes, date filters |
 | `references/headless.md` | Headless & hybrid: headlessMode, GraphQL API, CORS, preview tokens, Next.js/Nuxt/Astro integration |
+| `references/element-partials.md` | Element partials: entry.render(), _partials/ directory, template lookup, custom variables, eager loading in partials |
 
 ### Plugin References
 

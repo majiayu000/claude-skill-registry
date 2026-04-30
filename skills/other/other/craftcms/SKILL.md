@@ -1,6 +1,6 @@
 ---
 name: craftcms
-description: "Craft CMS 5 plugin and module development — extending Craft with PHP. Covers the full extend surface: elements, element queries, services, models, records, project config, controllers, CP templates, migrations, queue jobs, console commands, field types, native fields, events, behaviors, Twig extensions, utilities, widgets, filesystems, permissions, debugging, testing, GraphQL, and Craft configuration (config/app.php, config/general.php, Redis, SMTP, database replicas). Triggers on: beforePrepare(), afterSave(), defineSources(), defineTableAttributes(), attributeHtml(), MemoizableArray, getConfig(), handleChanged, $allowAnonymous, $enableCsrfValidation, BaseNativeField, EVENT_DEFINE_NATIVE_FIELDS, FieldLayoutBehavior, EVENT_REGISTER, EVENT_DEFINE, EVENT_BEFORE, EVENT_AFTER, CraftVariable, registerTwigExtension, DefineConsoleActionsEvent, PHPStan, Pest, plugin development, module development, custom element type, custom field type, webhook, API endpoint, queue job, batch processing, data sync, migration, CP section, control panel, Craft plugin, Craft module, extending Craft, element action, element exporter, element condition, dashboard widget, utility page, permissions, registerUserPermissions, requirePermission, GraphQL custom types, GraphQL custom mutations, GraphQL schema building, Rector, Craft 4 to 5, upgrade plugin, CI/CD, GitHub Actions, GitLab CI, custom validator, defineRules, EVENT_AUTHORIZE_VIEW, EVENT_AUTHORIZE_SAVE, canView, canSave, canDelete, element authorization, defense-in-depth, query scoping, EVENT_BEFORE_PREPARE, session invalidation, passwordResetRequired, elevated session, Table::SESSIONS, custom field type build, field type development, normalizeValue, serializeValue, inputHtml, BaseCondition, ElementCondition, condition rule, condition builder, system messages, composeFromKey, email sending, Mailer, deployment, zero-downtime deploy, atomic deploy, craft up, project-config/apply, allowAdminChanges, drafts, revisions, provisional draft, canCreateDrafts, applyDraft, getIsDraft, getIsRevision. Always use when writing, editing, or reviewing any Craft CMS plugin or module PHP code — even when the user asks about plugin architecture, Craft internals, or extending Craft without naming specific APIs. Do NOT trigger for front-end Twig templates, content modeling decisions, site-building without PHP, or consuming GraphQL/headless APIs from front-end frameworks (Next.js, Nuxt, Astro) — those belong in craft-site."
+description: "Craft CMS 5 plugin and module development — extending Craft with PHP. Covers the full extend surface: elements, element queries, services, models, records, project config, controllers, CP templates, migrations, queue jobs, console commands, field types, native fields, events, behaviors, Twig extensions, utilities, widgets, filesystems, permissions, debugging, testing, GraphQL, and Craft configuration (config/app.php, config/general.php, Redis, SMTP, database replicas). Triggers on: beforePrepare(), afterSave(), defineSources(), defineTableAttributes(), attributeHtml(), MemoizableArray, getConfig(), handleChanged, $allowAnonymous, $enableCsrfValidation, BaseNativeField, EVENT_DEFINE_NATIVE_FIELDS, FieldLayoutBehavior, EVENT_REGISTER, EVENT_DEFINE, EVENT_BEFORE, EVENT_AFTER, CraftVariable, registerTwigExtension, DefineConsoleActionsEvent, PHPStan, Pest, plugin development, module development, custom element type, custom field type, webhook, API endpoint, queue job, batch processing, data sync, migration, CP section, control panel, Craft plugin, Craft module, extending Craft, element action, element exporter, element condition, dashboard widget, utility page, permissions, registerUserPermissions, requirePermission, GraphQL custom types, GraphQL custom mutations, GraphQL schema building, Rector, Craft 4 to 5, upgrade plugin, CI/CD, GitHub Actions, GitLab CI, custom validator, defineRules, EVENT_AUTHORIZE_VIEW, EVENT_AUTHORIZE_SAVE, canView, canSave, canDelete, element authorization, defense-in-depth, query scoping, EVENT_BEFORE_PREPARE, session invalidation, passwordResetRequired, elevated session, Table::SESSIONS, custom field type build, field type development, normalizeValue, serializeValue, inputHtml, BaseCondition, ElementCondition, condition rule, condition builder, system messages, composeFromKey, email sending, Mailer, deployment, zero-downtime deploy, atomic deploy, craft up, project-config/apply, allowAdminChanges, drafts, revisions, provisional draft, canCreateDrafts, applyDraft, getIsDraft, getIsRevision, App::env, App::parseEnv, CRAFT_CP_TRIGGER, CRAFT_DEV_MODE, CRAFT_ALLOW_ADMIN_CHANGES, GeneralConfig, config precedence, cpTrigger. Always use when writing, editing, or reviewing any Craft CMS plugin or module PHP code — even when the user asks about plugin architecture, Craft internals, or extending Craft without naming specific APIs. Do NOT trigger for front-end Twig templates, content modeling decisions, site-building without PHP, or consuming GraphQL/headless APIs from front-end frameworks (Next.js, Nuxt, Astro) — those belong in craft-site."
 ---
 
 # Craft CMS 5 — Extending (Plugins & Modules)
@@ -33,6 +33,8 @@ Use `WebFetch` on specific doc pages when a reference file doesn't cover enough 
 - Business logic in models or controllers — services are where logic belongs.
 - Modules need manual template root, translation, and controllerNamespace registration — nothing is automatic.
 - `DateTimeHelper` in elements/queries, `Carbon` in services — never mix in the same class.
+- Hardcoding `/admin` in CP URLs — `cpTrigger` is configurable. Use `UrlHelper::cpUrl()` in PHP, `cpUrl()` in Twig.
+- Passing `$request->getBodyParams()` directly to `savePluginSettings()` on split-settings pages — only submitted keys persist, other settings are silently dropped. Load the full settings model first, update properties, then save.
 
 ## Reference Files
 
@@ -59,6 +61,10 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Configure Redis for caching and sessions" → read `config-app.md`
 - "Set up environment variables for production" → read `config-bootstrap.md`
 - "Find a GeneralConfig setting" → read `config-general.md`
+- "Read a config value in plugin code (App::env, parseEnv, GeneralConfig)" → read `config-bootstrap.md` + `config-general.md`
+- "Check if allowAdminChanges is enabled in plugin code" → read `config-general.md` + `cp.md` (Read-Only Mode)
+- "Resolve env vars in plugin settings ($MY_API_KEY)" → read `config-bootstrap.md` (App::parseEnv)
+- "Understand CRAFT_* env var conventions" → read `config-bootstrap.md`
 - "Configure mail transport / SMTP" → read `config-app.md`
 - "Set up custom URL routes" → read `config-bootstrap.md`
 - "Configure search to find short words" → read `config-app.md`
@@ -75,6 +81,10 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Create a custom validator" → read `architecture.md` (Custom Validators section)
 - "Create a custom filesystem type" → read `events.md` (Filesystem Types section)
 - "Build a custom condition rule for an element index" → read `cp.md` (Condition Builders section)
+- "Build a tri-state on/inherit/off control" → read `cp.md` (CP UI Patterns — Tri-State Inheritance)
+- "Add tabbed settings page to a plugin" → read `cp.md` (Tabbed Settings Pages)
+- "Show an 'overrides global' warning on a field" → read `cp.md` (CP UI Patterns — Field Warning Parameter)
+- "What CSS variables does Craft CP use?" → read `cp.md` (CP UI Patterns — Craft CSS Custom Properties)
 - "Set up pre-commit hooks for code quality" → read `quality.md` (Pre-Commit Hooks section)
 - "Restrict element access by user group" → read `element-authorization.md` + `permissions.md`
 - "Scope CP element index by permission" → read `element-authorization.md` (Layer 3: Query Scoping)
@@ -100,6 +110,9 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Work with drafts and revisions" → read `drafts-revisions.md`
 - "Create a draft programmatically" → read `drafts-revisions.md` (Creating Drafts)
 - "Skip side effects for drafts in afterSave" → read `drafts-revisions.md` (Plugin Considerations)
+- "Add generated fields to a custom element" → read `elements.md` (Generated Fields)
+- "Customize how my element appears as a chip or card" → read `element-index.md` (Element Display Modes)
+- "Make plugin settings read-only when allowAdminChanges is off" → read `cp.md` (Read-Only Mode)
 
 | Task | Read |
 |------|------|

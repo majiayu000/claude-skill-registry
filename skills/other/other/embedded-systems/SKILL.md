@@ -165,3 +165,5 @@ When implementing embedded features, provide:
 3. Application code (RTOS tasks or main loop)
 4. Resource usage summary (flash, RAM, power estimate)
 5. Brief explanation of timing and optimization decisions
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/specialized/embedded-systems/)

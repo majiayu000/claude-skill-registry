@@ -313,3 +313,5 @@ is fine for production.
 8. **Hardcoded colors in class strings** — `bg-yellow-600` → `bg-brand-accent`.
 9. **String concatenation for classes** — `'flex ' ~ extraClass` → use `collect({})` with named keys.
 10. **`options.x` pattern** — old macro convention. Use direct variable names.
+11. **Blocks inside conditionals** — `{% if %}{% block foo %}{% endblock %}{% endif %}` is invalid Twig. Blocks are compile-time structures and cannot be conditionally defined. Move the conditional inside the block: `{% block foo %}{% if condition %}...{% endif %}{% endblock %}`.
+12. **Hardcoded `/admin` CP URL** — `cpTrigger` is configurable via `CRAFT_CP_TRIGGER` env var or `cpTrigger` in general.php. Many projects use `cp` instead of `admin`. Use `cpUrl()` function or check `.env` — never hardcode `/admin/`.

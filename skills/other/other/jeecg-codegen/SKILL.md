@@ -63,6 +63,9 @@ description: Use when user asks to generate JeecgBoot CRUD code, create a new mo
 
 **一对多表的前端布局风格：**
 
+> ⚠️ **严禁假设布局风格！** 必须在 Step 2 询问用户，用户未回答前不得擅自选择非默认风格（如 Tab-in-Modal）。
+> 过去曾犯错：用户未说明风格，却错误地选了 Tab-in-Modal (C9)，导致用户反馈后需要重新生成 Modal.vue。
+
 一对多表有三种前端布局风格，用户未指定时**默认使用原始布局风格**。
 
 > **重要：vue3 封装风格和 vue3Native 原生风格的一对多架构完全不同！** vue3 封装风格使用 `useJvxeMethod`，vue3Native 原生风格使用 `useValidateAntFormAndTable`。详见 `codegen-reference.md` 的 C9-C12（vue3）和 **C13（vue3Native）**。
@@ -72,9 +75,15 @@ description: Use when user asks to generate JeecgBoot CRUD code, create a new mo
 | 风格 | 关键词 | 列表页 | Modal 布局 |
 |------|--------|--------|-----------|
 | **默认/原始布局** | "默认风格"、"默认"、未指定风格 | 标准列表（无 expandedRowRender） | 上面主表 BasicForm + 下面 a-tabs 子表 |
-| **Tab-in-Modal (C9)** | "tab切换"、"radio切换"、"标题栏切换" | 标准列表 | radio-group 标题栏切换主表/子表，`wrapClassName="j-cgform-tab-modal"` |
+| **Tab-in-Modal (C9)** | "tab风格"、"tab切换"、"radio切换"、"标题栏切换" | 标准列表（同默认，**无** expandedRowRender） | radio-group 标题栏切换主表/子表，`wrapClassName="j-cgform-tab-modal"` |
 | **内嵌子表 (C12)** | "内嵌子表"、"行展开"、"expandedRowRender" | 行展开显示子表（expandedRowRender） | 上面主表 BasicForm + 下面 a-tabs 子表（同默认） |
 | **ERP (C11)** | "ERP风格"、"独立编辑" | 主表单选 + 子表独立 CRUD Tab | 仅主表 BasicForm（子表独立 Modal） |
+
+> ⚠️ **子表外键字段名必须读实体确认，严禁猜测！**
+> 生成子表 FormSchema 的隐藏外键字段前，**必须先 Read 子表 Entity.java**，以实体中的 Java 字段名为准。
+> 外键字段名因开发者习惯差异很大（`companyId` / `bizCompanyId` / `mainId` / `headerId`），
+> 根据主表实体名推断必然出错，会导致 MySQL `Field 'xxx' doesn't have a default value` 异常。
+> 同样，Modal 中 `values.xxx = unref(mainId)` 的 `xxx` 也必须与实体字段名一致。
 
 **vue3Native 原生风格（C13）— 架构完全不同：**
 - **Modal 是薄包装器**（BasicModal + useModalInner），只调 `formComponent.submitForm()/edit()/add()`
@@ -107,19 +116,45 @@ description: Use when user asks to generate JeecgBoot CRUD code, create a new mo
 - 详见规则18-24.5
 
 ### Step 2: 询问用户选项（仅全量生成需要）
+
+> **重要：必须直接向用户提问，禁止通过 Glob/Bash/Grep 等工具自动搜索 CLAUDE.md 或项目路径！**
+> Skill 加载完毕后，立刻将以下选项表格输出给用户，等待用户回复，所有路径/数据库名均通过问用户获取。
+
 一次性展示所有选项及默认值，用户说"确认"即可全部采用默认值，或只说需要改的：
 1. **后端模块**：默认 `jeecg-module-system/jeecg-system-biz`
 2. **前端风格**：默认 `vue3`（封装风格），可选 `vue3Native`（原生风格）
 3. **前端视图目录**：默认用 entityPackage 值
 4. **是否读取系统字典**：默认 `是`，读取后可自动为字段匹配已有字典编码（见"字典智能匹配"章节）
+5. **后端项目根路径**：必填，请用户提供（如 `D:/jeecgboot`）
+6. **前端项目根路径**：必填，请用户提供（如 `D:/jeecgboot-vue3`）
+7. **数据库名称**：必填，请用户提供（用于读取字典、执行菜单 SQL）
+8. **一对多布局风格**（仅有子表时展示）：默认`原始布局`（主表上方+子表 a-tabs），可选 `Tab-in-Modal`、`内嵌子表`、`ERP`
+9. **表单列数**（所有含表单的场景均需展示，逐项列出）：
+   - 单表 / 树表 Modal 表单：默认`双列`（span:12）
+   - 一对多主表 BasicForm：默认`双列`（span:12）
+   - 一对一子表 Form.vue：默认`单列`（span:24）
+   - 用户可对每项单独指定，也可统一回复"全部单列"或"全部双列"
+
+> ⚠️ **第8、9项绝对不能自行假设！** 过去曾犯错：未询问直接生成 Tab-in-Modal 风格 + 双列补充信息，用户事后指出才改正。
 
 ### Step 3: 展示摘要
 - **全量生成**：列出表名、字段清单（名称/类型/控件/校验/字典），等待用户确认后再生成。
+  - 若需求包含"生成默认值"，摘要表格必须新增**"默认值"列**，明确列出每个字段的具体预填值（参见规则35），让用户在生成前确认，而不是生成后才发现问题。
 - **增量修改**：列出要修改的文件路径 + 每个文件的具体变更内容（新增/删除/修改哪些行），等待用户确认。
 
 ### Step 4: 执行
-- **全量生成**：读取 `codegen-reference.md` 获取完整模板模式，按顺序生成全部文件。
-- **增量修改**：使用 Edit 工具精确修改每个文件，读取 `codegen-reference.md` 的 Section F 获取增量修改模板。
+
+**全量生成流程：**
+1. **并行读取**对应子文件（见顶部"参考模板读取规则"），在同一轮 response 中发出全部 Read 调用
+2. **分轮并行写入**文件——无依赖的文件在同一轮 response 中批量发出 Write 调用，**禁止逐文件串行等待**：
+   - **第 1 轮**（并行）：Entity + Mapper + IService + ServiceImpl + Controller + Mapper.xml（后端 6 文件）
+   - **第 2 轮**（并行）：data.ts + api.ts + List.vue + Modal.vue + 子表 Vue 文件（前端全部）
+   - **第 3 轮**（并行）：Flyway 建表 SQL + 菜单权限 SQL
+
+**增量修改流程：**
+1. 并行读取所有需修改的文件
+2. 并行发出所有 Edit 调用（同一轮 response）
+3. 增量修改模板见 `references/ref-d-misc.md`
 
 ### Step 5: 输出清单
 列出所有生成/修改的文件路径 + 后续操作说明（执行SQL、重启后端等）。
@@ -141,9 +176,10 @@ mysql --no-defaults --default-character-set=utf8mb4 -h127.0.0.1 -P3306 -uroot -p
 ```
 
 **注意事项：**
-- **执行 SQL 前必须先询问用户目标数据库名称**，不能自动假设
+- **执行 SQL 前必须先询问用户目标数据库名称**，不能自动假设（即使从 application-dev.yml 读到了数据库名，也必须展示给用户并等待确认）
 - 仅在本地环境（127.0.0.1/localhost）自动执行，远程环境只生成 Flyway 文件
 - 执行前先检查主菜单 ID 是否已存在，避免重复插入
+- **执行已有 SQL 文件前必须先读取内容审查**，重点检查：主菜单的 `is_leaf` 必须为 `0`（有按钮子级时），`is_leaf=1` 会导致按钮权限在权限管理树中不可见
 - 如果 MySQL 执行失败，提示用户手动执行 Flyway SQL，不中断整体流程
 - 输出结果中标注 `菜单 SQL：已自动执行 ✓`
 
@@ -153,28 +189,26 @@ mysql --no-defaults --default-character-set=utf8mb4 -h127.0.0.1 -P3306 -uroot -p
 
 **重要：执行任何 SQL 之前，必须先询问用户要执行到哪个数据库。** 不要自动假设数据库名称。先读取 `application-dev.yml` 获取配置中的数据库名，然后向用户确认是否使用该数据库。
 
+**场景A（已有表）— 一条命令取全部信息（DDL + 字段注释 + 字典列表 合并执行）：**
+
 ```bash
-# 1. 先读取项目数据库配置，获取数据库名
-# 配置文件: jeecg-module-system/jeecg-system-start/src/main/resources/application-dev.yml
-
-# 2. 向用户确认目标数据库名后，再执行查询（假设确认为 {dbname}）
-
-# 查询表 DDL
-mysql --no-defaults --default-character-set=utf8mb4 -h127.0.0.1 -P3306 -uroot -proot {dbname} -e "SHOW CREATE TABLE 表名\G"
-
-# 查询字段注释
-mysql --no-defaults --default-character-set=utf8mb4 -h127.0.0.1 -P3306 -uroot -proot {dbname} -e "SELECT COLUMN_NAME, COLUMN_TYPE, IS_NULLABLE, COLUMN_DEFAULT, COLUMN_COMMENT, COLUMN_KEY, EXTRA FROM information_schema.COLUMNS WHERE TABLE_SCHEMA='{dbname}' AND TABLE_NAME='表名' ORDER BY ORDINAL_POSITION"
+# 同一条 mysql 命令内完成三件事，减少连接次数
+mysql --no-defaults --default-character-set=utf8mb4 -h127.0.0.1 -P3306 -uroot -proot {dbname} \
+  -e "SHOW CREATE TABLE 表名\G" \
+  -e "SELECT COLUMN_NAME, COLUMN_TYPE, IS_NULLABLE, COLUMN_DEFAULT, COLUMN_COMMENT, COLUMN_KEY, EXTRA FROM information_schema.COLUMNS WHERE TABLE_SCHEMA='{dbname}' AND TABLE_NAME='表名' ORDER BY ORDINAL_POSITION" \
+  -e "SELECT d.dict_code, d.dict_name, GROUP_CONCAT(i.item_text,'=',i.item_value ORDER BY i.sort_order SEPARATOR ', ') AS items FROM sys_dict d LEFT JOIN sys_dict_item i ON d.id=i.dict_id AND i.status=1 WHERE d.del_flag=0 GROUP BY d.dict_code,d.dict_name ORDER BY d.dict_code"
 ```
 
 如果无法连接数据库，回退方案：在项目 SQL 文件中搜索表定义（`grep -r "CREATE TABLE.*表名"` 在 docs/db/ 目录下）。
 
 ## Flyway 版本号规则
 
-**生成 Flyway SQL 前必须检查已有版本号，自动递增避免冲突！**
+**生成 Flyway SQL 前必须检查已有版本号，并同时获取时间戳 — 两条命令并行发出：**
 
 ```bash
-# Flyway SQL 目录（路径以 CLAUDE.md 中的后端根路径为准）
+# 并行执行（同一轮 response 发出两个 Bash 调用）
 ls {后端根路径}/jeecg-module-system/jeecg-system-start/src/main/resources/flyway/sql/mysql/ | sort -V | tail -5
+date +%s%3N
 ```
 
 版本命名规则：`V{YYYYMMDD}_{序号}__{描述}.sql`
@@ -184,11 +218,7 @@ ls {后端根路径}/jeecg-module-system/jeecg-system-start/src/main/resources/f
 
 ## 菜单 SQL 的 ID 生成
 
-**必须使用真实时间戳确保唯一性！** 通过以下命令获取：
-
-```bash
-date +%s%3N  # 输出13位毫秒级时间戳，如 1741704000123
-```
+**时间戳在 Flyway 版本检查时已并行获取（见上方）**，直接使用，无需再单独执行 `date` 命令。
 
 用这个时间戳作为基础 ID，依次拼接 01-14：
 - 主菜单: `{timestamp}01`
@@ -522,12 +552,23 @@ private String isEnabled;
 // columns — 使用 renderSwitch 自定义渲染
 { title: '开关', align: 'center', dataIndex: 'isEnabled',
   customRender: ({ text }) => render.renderSwitch(text, [{ text: '是', value: '1' }, { text: '否', value: '0' }]) }
-// formSchema
+// formSchema（vue3 封装风格）
 { label: '开关', field: 'isEnabled', component: 'JSwitch',
   componentProps: { options: ['1', '0'] } }
 // superQuerySchema
 isEnabled: { title: '开关', order: 0, view: 'radio', dictCode: 'yn' }
 ```
+
+**vue3Native 原生风格：**
+```typescript
+// 导入（script setup 中）
+import JSwitch from '/@/components/Form/src/jeecg/components/JSwitch.vue';
+```
+```html
+<!-- 模板中使用，:options 第一个值为 checked，第二个为 unchecked -->
+<JSwitch v-model:value="formData.isEnabled" :options="['1', '0']" />
+```
+> **注意：** vue3Native 中不要使用 `<a-switch checkedValue="1">`，要用 `<JSwitch>` 组件，否则值类型不一致导致保存后回显错误。
 
 ---
 
@@ -586,7 +627,10 @@ private String tableDictCondition;
 
 ### 4. 用户/部门选择
 
-#### JSelectUserByDept（用户选择）
+#### JSelectUser（用户选择）
+
+> **⚠️ 重要：代码生成器已在 2024-01-02（issue/#5711）将用户选择组件从 `JSelectUserByDept` 修正为 `JSelectUser`。生成代码必须使用 `JSelectUser`，不要再使用旧的 `JSelectUserByDept`。**
+
 ```java
 @Excel(name = "用户选择", width = 15, dictTable = "sys_user", dicText = "realname", dicCode = "username")
 @Dict(dictTable = "sys_user", dicText = "realname", dicCode = "username")
@@ -595,11 +639,21 @@ private String userId;
 ```typescript
 // columns
 { title: '用户选择', align: 'center', dataIndex: 'userId_dictText' }
-// formSchema
-{ label: '用户选择', field: 'userId', component: 'JSelectUserByDept',
+// formSchema（vue3 封装风格）
+{ label: '用户选择', field: 'userId', component: 'JSelectUser',
   componentProps: { labelKey: 'realname' } }
 // superQuerySchema
 userId: { title: '用户选择', order: 0, view: 'sel_user' }
+```
+
+**vue3Native 原生风格：**
+```typescript
+// 导入（script setup 中）
+import JSelectUser from '/@/components/Form/src/jeecg/components/JSelectUser.vue';
+```
+```html
+<!-- 模板中使用 -->
+<JSelectUser v-model:value="formData.userId" placeholder="请选择用户" />
 ```
 
 #### JSelectDept（部门选择）
@@ -626,12 +680,12 @@ deptId: { title: '部门选择', order: 0, view: 'sel_depart' }
 @Dict(dictTable = "sys_category", dicText = "name", dicCode = "id")
 private String treeSelect;
 ```
-```typescript
+```typescript 
 // columns
 { title: '自定义树', align: 'center', dataIndex: 'treeSelect_dictText' }
 // formSchema
 { label: '自定义树', field: 'treeSelect', component: 'JTreeSelect',
-  componentProps: { dict: 'sys_category,name,id', pidField: 'pid', multiple: false } }
+  componentProps: { dict: 'sys_category,name,id', pidField: 'pid', pidValue: '0', multiple: false } }
 // superQuerySchema
 treeSelect: { title: '自定义树', order: 0, view: 'sel_search',
   dictTable: 'sys_category', dictCode: 'id', dictText: 'name' }
@@ -683,10 +737,24 @@ workTime: { title: '年月日时分秒', order: 0, view: 'datetime' }
 private String timeVal;
 ```
 ```typescript
-// formSchema
+// formSchema（vue3 封装风格）
 { label: '时间', field: 'timeVal', component: 'TimePicker',
   componentProps: { valueFormat: 'HH:mm:ss', placeholder: '请选择时间', style: 'width:100%' } }
 ```
+
+**vue3Native 原生风格：**
+```typescript
+// 导入 — 从 ant-design-vue 解构，与 Form 合并在同一行
+import { TimePicker, Form } from 'ant-design-vue';
+// 如果当前行已有其他 ant-design-vue 导入，直接追加 TimePicker：
+// import { TimePicker, RangePicker, Form } from 'ant-design-vue';
+```
+```html
+<!-- 模板中使用，必须带 value-format 否则返回 dayjs 对象而非字符串 -->
+<TimePicker v-model:value="formData.timeVal" value-format="HH:mm:ss"
+            placeholder="请选择时间" style="width:100%" />
+```
+> **注意：** vue3Native 中不要使用 `<a-time-picker>`（全局注册版），要显式导入 `TimePicker` 并以大驼峰标签使用，与 Form.useForm 的 resetFields 配合才能正确还原默认值。
 
 #### DatePicker picker 变体（季度/年/月/周）
 
@@ -770,29 +838,43 @@ private String popup;
 private String popback;
 ```
 ```typescript
-// formSchema — JPopup 组件通过 fieldConfig 定义回填映射
+// ===== vue3 封装风格 formSchema — 通过 formActionType 获取 setFieldsValue =====
 { label: 'Popup弹窗', field: 'popup', component: 'JPopup',
   componentProps: ({ formActionType }) => {
     const { setFieldsValue } = formActionType;
     return {
       setFieldsValue,
-      code: 'testbigdata',           // 报表编码，对应 onl_cgreport_head.code
+      code: 'report_user',           // 默认使用 report_user；日志场景用 testbigdata
       fieldConfig: [
-        { source: 'log_content', target: 'popup' },   // 报表字段 → 当前表字段
-        { source: 'userid', target: 'popback' },       // 回填其他字段
+        { source: 'username', target: 'popup' },    // 报表字段 → 当前表字段（source=报表列名，target=表单字段名）
+        { source: 'realname', target: 'popback' },  // 回填其他字段
       ],
-      multi: false,                   // 是否多选
+      multi: false,
     };
   } }
 // 他表字段（回填字段）— disabled Input，不可手动编辑
-{ label: 'Popup回填(他表字段)', field: 'popback', component: 'Input',
+{ label: 'Popup回填', field: 'popback', component: 'Input',
   componentProps: { disabled: true, placeholder: '由Popup自动回填' } }
 ```
 
+```html
+<!-- ===== vue3Native 原生风格 Form.vue 模板写法 ===== -->
+<!-- import JPopup from '/@/components/Form/src/jeecg/components/JPopup.vue'; -->
+
+<!-- script 中定义 setFormFieldValue -->
+<!-- function setFormFieldValue(values) { Object.assign(formData, values); } -->
+
+<JPopup v-model:value="formData.popup" code="report_user"
+  :fieldConfig="[{source:'username',target:'popup'},{source:'realname',target:'popback'}]"
+  :setFieldsValue="setFormFieldValue" :multi="false" />
+<a-input v-model:value="formData.popback" :disabled="true" placeholder="由Popup自动回填" />
+```
+
 **fieldConfig 配置规则：**
-- `source`：报表中的字段名（来自 `onl_cgreport_item.field_name`）
-- `target`：当前表单中的字段名（field 值）
+- `source`：报表中的字段名（来自 `onl_cgreport_item.field_name`），**不是**表单字段名
+- `target`：当前表单中的字段名（`formData` 的 key）
 - 可配置多组回填映射，选中一条记录后同时回填多个字段
+- 默认报表 code：用户选择用 `report_user`，日志/大数据用 `testbigdata`
 
 #### JPopupDict（Popup字典）
 
@@ -1026,7 +1108,7 @@ ALTER TABLE xxx ADD COLUMN `markdown` blob COMMENT 'markdown内容';
 | 表字典多选 | JCheckbox | varchar | String | 表字典 | _dictText | LIKE_WITH_OR |
 | 表字典下拉多选 | JSelectMultiple | varchar | String | 表字典 | _dictText | LIKE_WITH_OR |
 | 表字典带条件 | JDictSelectTag | varchar | String | 表字典(带WHERE) | _dictText | LIKE_WITH_OR |
-| 用户选择 | JSelectUserByDept | varchar | String | 表字典(sys_user) | _dictText | 无 |
+| 用户选择 | JSelectUser | varchar | String | 表字典(sys_user) | _dictText | 无 |
 | 部门选择 | JSelectDept | varchar | String | 表字典(sys_depart) | _dictText | 无 |
 | 分类字典 | JCategorySelect | varchar | String | 否 | renderCategoryTree | 无 |
 | 自定义树 | JTreeSelect | varchar | String | 表字典 | _dictText | LIKE_WITH_OR |
@@ -1082,7 +1164,7 @@ import { JVxeTypes, JVxeColumn } from '/@/components/jeecg/JVxeTable/types';
 | JUpload | `JVxeTypes.file` | `token:true, responseName:'message'` | 文件上传 |
 | JPopup | `JVxeTypes.popup` | `popupCode, fieldConfig, props` | Popup弹窗 |
 | JSelectDept | `JVxeTypes.departSelect` | — | 部门选择 |
-| JSelectUserByDept | `JVxeTypes.userSelect` | — | 用户选择 |
+| JSelectUser | `JVxeTypes.userSelect` | — | 用户选择 |
 
 **JVxeColumn 通用属性：**
 ```typescript
@@ -1230,7 +1312,7 @@ private String popDict;
 | JSelectMultiple | JSelectMultiple | 保持不变 |
 | JSwitch | JDictSelectTag(yn) | 查询用下拉选 是/否 |
 | JSearchSelect | JSearchSelect | 保持不变 |
-| JSelectUserByDept | JSelectUserByDept | 保持不变 |
+| JSelectUser | JSelectUser | 保持不变 |
 | JSelectDept | JSelectDept | 保持不变 |
 | JCategorySelect | JCategorySelect | 保持不变 |
 | JTreeSelect | JTreeSelect | 保持不变 |
@@ -1375,21 +1457,83 @@ import { rules } from '/@/utils/helper/validator';
     ];
   } },
 
-// 3. 金额格式校验
-{ label: '单价', field: 'amount', component: 'InputNumber',
-  dynamicRules: ({ model, schema }) => {
+// 3. 金额格式校验（money — 存 varchar，用 Input 组件）
+{ label: '金额', field: 'amount', component: 'Input',
+  dynamicRules: () => {
     return [
       { required: false },
-      { pattern: /^\d{1,10}$|^(?=\d+\.\d+)[\d.]{2,12}$/, message: '请输入正确的金额!' },
+      { pattern: /^(([1-9][0-9]*)|([0]\.\d{0,2}|[1-9][0-9]*\.\d{0,2}))$/, message: '请输入正确的金额!' },
     ];
   } },
 
-// 4. 常用正则模式
-// 手机号: /^1[3456789]\d{9}$/
-// 邮箱:   /^([\w]+\.*)([\w]+)@[\w]+\.\w{3}(\.\w{2}|)$/
-// 网址:   /^((ht|f)tps?):\/\/[\w\-]+(\.[\w\-]+)+([\w\-.,@?^=%&:\/~+#]*[\w\-@?^=%&\/~+#])?$/
-// 字母:   /^[a-z|A-Z]{2,10}$/
-// 密码:   /^.{6,20}$/
+// 4. 全部 fieldValidType 校验类型速查
+// ─────────────────────────────────────────────────────────────
+// 校验类型(code)    正则 / 方法                                  提示文案
+// ─────────────────────────────────────────────────────────────
+// 必填     (*)      { required: true }                           '请输入xxx!'
+// 唯一     (only)   rules.duplicateCheckRule('表名','字段',model,schema)[0]
+// 手机号   (m)      /^1[3456789]\d{9}$/                          '请输入正确的手机号码!'
+// 邮箱     (e)      /^([\w]+\.*)([\w]+)@[\w]+\.\w{3}(\.\w{2}|)$/ '请输入正确的电子邮件!'
+// 网址     (url)    /^((ht|f)tps?):\/\/[\w\-]+(\.[\w\-]+)+([\w\-.,@?^=%&:\/~+#]*[\w\-@?^=%&\/~+#])?$/ '请输入正确的网址!'
+// 金额     (money)  /^(([1-9][0-9]*)|([0]\.\d{0,2}|[1-9][0-9]*\.\d{0,2}))$/ '请输入正确的金额!'
+// 6-16位数字(n6-16) /^\d{6,16}$|^(?=\d+\.\d+)[\d.]{7,17}$/      '请输入6到16位数字!'
+// 6-16位任意(*6-16) /^.{6,16}$/                                  '请输入6到16位任意字符!'
+// 6-18位字母(s6-18) /^[a-z|A-Z]{6,18}$/                         '请输入6到18位字母!'
+// 邮政编码  (p)     /^[0-9]\d{5}$/                               '请输入正确的邮政编码!'
+// 纯字母    (s)     /^[A-Z|a-z]+$/                               '请输入字母!'
+// 数字      (n)     /^-?\d+\.?\d*$/                              '请输入数字!'
+// 整数      (z)     /^-?\d+$/                                    '请输入整数!'
+// 自定义正则(自填)  /^正则表达式$/                                '不符合校验规则!'
+// ─────────────────────────────────────────────────────────────
+
+// 5. 各类型 dynamicRules 示例
+{ label: '6到16位数字', field: 'numDigit', component: 'Input',
+  dynamicRules: () => [
+    { required: false },
+    { pattern: /^\d{6,16}$|^(?=\d+\.\d+)[\d.]{7,17}$/, message: '请输入6到16位数字!' },
+  ] },
+
+{ label: '6到16位任意字符', field: 'anyChar', component: 'Input',
+  dynamicRules: () => [
+    { required: false },
+    { pattern: /^.{6,16}$/, message: '请输入6到16位任意字符!' },
+  ] },
+
+{ label: '6到18位字母', field: 'letterStr', component: 'Input',
+  dynamicRules: () => [
+    { required: false },
+    { pattern: /^[a-z|A-Z]{6,18}$/, message: '请输入6到18位字母!' },
+  ] },
+
+{ label: '邮政编码', field: 'postCode', component: 'Input',
+  dynamicRules: () => [
+    { required: false },
+    { pattern: /^[0-9]\d{5}$/, message: '请输入正确的邮政编码!' },
+  ] },
+
+{ label: '纯字母', field: 'letterOnly', component: 'Input',
+  dynamicRules: () => [
+    { required: false },
+    { pattern: /^[A-Z|a-z]+$/, message: '请输入字母!' },
+  ] },
+
+{ label: '数字', field: 'numOnly', component: 'Input',
+  dynamicRules: () => [
+    { required: false },
+    { pattern: /^-?\d+\.?\d*$/, message: '请输入数字!' },
+  ] },
+
+{ label: '整数', field: 'intOnly', component: 'Input',
+  dynamicRules: () => [
+    { required: false },
+    { pattern: /^-?\d+$/, message: '请输入整数!' },
+  ] },
+
+{ label: '自定义正则(4位数字)', field: 'customVal', component: 'Input',
+  dynamicRules: () => [
+    { required: false },
+    { pattern: /^\d{4}$/, message: '请输入4位数字!' },
+  ] },
 ```
 
 **规则12：label 只显示业务含义，不要附带组件类型名称**
@@ -1605,8 +1749,19 @@ async function getSubList(params) {
 }
 ```
 
-**规则17.5：Flyway SQL 必须包含建表 DDL（新建表场景）**
-场景B（新建表）生成的 Flyway SQL 文件**必须同时包含建表 DDL 和菜单权限 SQL**，不能只有菜单 SQL。DDL 放在文件最前面，菜单 SQL 放在后面。
+**规则17.5：Flyway SQL 必须包含建表 DDL + 菜单权限 + 角色授权（三段缺一不可）**
+场景B（新建表）生成的 Flyway SQL 文件**必须同时包含以下三段**，缺任何一段都会导致问题：
+
+1. **建表 DDL**（`CREATE TABLE IF NOT EXISTS`）
+2. **菜单权限**（`sys_permission`：主菜单 + 所有按钮）
+3. **admin 角色授权**（`sys_role_permission`：为每条 sys_permission 插入授权记录）
+
+> **⚠️ 常见遗漏：** 只写了 sys_permission 忘写 sys_role_permission，导致 admin 登录后看不到菜单和按钮。
+
+**生成前必须查询 admin 角色 ID：**
+```bash
+mysql ... -e "SELECT id FROM sys_role WHERE role_code='admin' LIMIT 1"
+```
 
 ```sql
 -- ========== 建表 DDL ==========
@@ -1615,8 +1770,16 @@ CREATE TABLE IF NOT EXISTS `xxx` (...) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COM
 CREATE TABLE IF NOT EXISTS `xxx_detail` (...) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='xxx';
 
 -- ========== 菜单权限 ==========
-INSERT INTO sys_permission ...
-INSERT INTO sys_role_permission ...
+INSERT INTO sys_permission(...) VALUES
+('{timestamp}01', ..., 0, ...),  -- 主菜单 is_leaf=0
+('{timestamp}02', '{timestamp}01', '添加', ..., 1, ...),  -- 按钮 is_leaf=1
+...;
+
+-- ========== admin 角色授权 ==========
+INSERT INTO sys_role_permission(id, role_id, permission_id, data_rule_ids, operate_date, operate_ip) VALUES
+(REPLACE(UUID(),'-',''), '{admin_role_id}', '{timestamp}01', NULL, NOW(), '127.0.0.1'),
+(REPLACE(UUID(),'-',''), '{admin_role_id}', '{timestamp}02', NULL, NOW(), '127.0.0.1'),
+...;  -- 每条 sys_permission 对应一条授权记录
 ```
 
 **同时，执行 SQL 到数据库时也必须确保建表 DDL 被执行。** 如果分开执行（先建表再菜单），需要两步都完成。
@@ -2141,6 +2304,74 @@ let loadChild = { id: item.id + '_loadChild', name: 'loading...', isLoading: tru
 
 ---
 
+**规则34：vue3Native 单表 Form 默认单列布局，用户指定时按指定列数**
+
+生成 vue3Native 单表的 `Form.vue` 时，**默认使用单列布局**：
+
+```html
+<!-- 默认：所有字段 span=24，Modal 宽度 800 -->
+<a-col :span="24">
+  <a-form-item ...>...</a-form-item>
+</a-col>
+```
+
+仅当用户**明确说明列数**（如"双列"、"两列"、"2列"、"三列"等）时，才改变布局：
+
+| 用户指定 | `<a-col :span>` | Modal 宽度 |
+|---------|----------------|-----------|
+| 单列（默认） | `:span="24"` | 800 |
+| 双列 / 两列 / 2列 | `:span="12"` | 1000 |
+| 三列 / 3列 | `:span="8"` | 1200 |
+| 四列 / 4列 | `:span="6"` | 1280 |
+
+**注意：** 同一表单中通常有例外字段用全宽（如多行文本 `remark`、富文本 `content`），这类字段无论整体几列都用 `:span="24"`。
+
+---
+
+**规则35：生成默认值时 formSchema 的 defaultValue 必须有实际意义**
+
+当用户要求"生成默认值"时，formSchema 中每个控件的 `defaultValue` 必须是有意义的示例数据，**不能统一写 `''`（空字符串）**。空字符串在表单打开时什么都不显示，不能体现"默认值"的效果。
+
+**各控件类型的默认值规则：**
+
+| 控件类型 | 默认值写法 | 示例 |
+|---------|-----------|------|
+| Input | 示例文本 | `'示例节点'` |
+| InputPassword | 示例密码 | `'Abc@12345'` |
+| InputTextArea | 示例文本 | `'这是一条默认备注内容'` |
+| InputNumber(金额/BigDecimal) | 示例金额 | `100.00` |
+| InputNumber(整数/排序) | 示例整数 | `1` |
+| JDictSelectTag(下拉) | 取查询到的字典**第一个选项**的值 | `'1'` |
+| JDictSelectTag(radio) | 同上，取第一个选项值 | `'1'` |
+| JCheckbox(多选) | 取前两个选项值逗号拼接 | `'reading,music'` |
+| JSelectMultiple(下拉多选) | 取第一个选项值 | `'1'` |
+| JSwitch(开关) | 开启状态 | `'1'` |
+| DatePicker(日期) | 当天日期字符串 | `'2026-04-28'` |
+| DatePicker(showTime/日期时间) | 当天日期 + 上班时间 | `'2026-04-28 09:00:00'` |
+| TimePicker(时间) | 上班时间 | `'09:00:00'` |
+| DatePicker(picker=quarter) | 当年 Q1 第一天 | `'2026-01-01'` |
+| DatePicker(picker=year) | 当年 1 月 1 日 | `'2026-01-01'` |
+| DatePicker(picker=month) | 当月 1 日 | `'2026-04-01'` |
+| DatePicker(picker=week) | 本周一日期 | `'2026-04-27'` |
+| JEditor(富文本) | 示例 HTML 片段 | `'<p>这里是默认的<strong>富文本</strong>内容示例</p>'` |
+| JMarkdownEditor | 示例 Markdown 文本 | `'## 默认标题\n\n这里是默认的 **Markdown** 内容示例。'` |
+
+**以下控件依赖系统实际数据，无法预设固定默认值，保持 `defaultValue: ''`：**
+JSelectDept、JTreeSelect(关联他表)、JImageUpload、JUpload
+
+**JPopup 例外：** 默认值设为 `'admin'`（系统内置管理员账号）
+**JPopupDict 例外：** 默认值设为 `'e9ca23d68d884d4ebb19d07889727dae'`（系统内置数据 ID）
+
+**JCategorySelect 例外：** 默认值设为 `'f39a06bf9f390ba4a53d11bc4e0018d7'`（系统内置分类节点 ID）
+
+**JSelectUser 例外：** 默认值设为 `'admin'`（系统内置管理员账号，必定存在）
+
+**JAreaLinkage 例外：** 使用北京市的 GB 区划码作为默认值：`defaultValue: '110105'`（北京市朝阳区）
+
+**日期字段的当天日期**：通过 `date +%Y-%m-%d` 获取真实日期后写入，不要硬编码过去的日期。
+
+---
+
 ### 智能字段推导中的字典关键词
 
 当用户描述字段时，按以下关键词自动推导使用哪种字典：
@@ -2150,19 +2381,24 @@ let loadChild = { id: item.id + '_loadChild', name: 'loading...', isLoading: tru
 | "状态"、"类型"、"级别"、"优先级" | 系统字典（先搜索 sys_dict 匹配） | JDictSelectTag |
 | "区域"、"地区"、"分类"、"类目"、"树形选择" | 分类字典（搜索 sys_category 匹配） | JCategorySelect |
 | "部门"、"组织"、"归属" | 表字典（关联 sys_depart） | JDictSelectTag(表字典) |
-| "用户"、"负责人"、"经办人" | 用户选择组件（非字典） | JSelectUserByDept |
+| "用户"、"负责人"、"经办人" | 用户选择组件（非字典） | JSelectUser |
 
 ## 项目路径
 
-> **重要：** 以下为默认路径。实际路径以 `CLAUDE.md` 和 memory 中的配置为准，优先使用它们。
+> **重要：禁止通过 Glob/Bash/Grep 等工具主动搜索 CLAUDE.md 或项目目录！**
+>
+> 路径获取优先级（按顺序执行，不得跳步）：
+> 1. **memory 中已有记录**：直接使用，无需任何文件读取
+> 2. **当前目录下有 `CLAUDE.md`**：用 Read 工具直接读取该文件获取路径（不搜索，不 Glob）
+> 3. **以上均无**：在 Step 2 的选项表格中追加"后端项目根路径"和"前端项目根路径"两项，让用户手动填写
 
 | 类别 | 路径 |
 |------|------|
-| 后端根 | 读取 `CLAUDE.md` 中的 Backend 路径 |
-| 前端根 | 读取 `CLAUDE.md` 中的 Frontend 路径 |
-| 后端代码 | `{module}/src/main/java/org/jeecg/modules/{entityPackage}/` |
-| 前端代码 | `src/views/{viewDir}/` |
-| Flyway SQL | `jeecg-module-system/jeecg-system-start/src/main/resources/flyway/sql/mysql/` |
+| 后端根 | 由 memory / CLAUDE.md / 用户提供 |
+| 前端根 | 由 memory / CLAUDE.md / 用户提供 |
+| 后端代码 | `{后端根}/{module}/src/main/java/org/jeecg/modules/{entityPackage}/` |
+| 前端代码 | `{前端根}/src/views/{viewDir}/` |
+| Flyway SQL | `{后端根}/jeecg-module-system/jeecg-system-start/src/main/resources/flyway/sql/mysql/` |
 
 ## 命名约定
 
@@ -2189,7 +2425,7 @@ let loadChild = { id: item.id + '_loadChild', name: 'loading...', isLoading: tru
 | 内容/富文本 | text | String | JEditor | JEditor |
 | 图片/头像/照片 | varchar(1000) | String | JImageUpload | JImageUpload |
 | 文件/附件 | varchar(1000) | String | JUpload | JUpload |
-| 用户/负责人 | varchar(32) | String | JSelectUserByDept | JSelectUserByDept |
+| 用户/负责人 | varchar(32) | String | JSelectUser | JSelectUser |
 | 部门/组织 | varchar(32) | String | JSelectDept | JSelectDept |
 | 排序/序号 | int | Integer | InputNumber | a-input-number |
 

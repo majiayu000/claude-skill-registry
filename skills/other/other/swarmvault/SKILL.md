@@ -1,7 +1,7 @@
 ---
 name: swarmvault
 description: "Use SwarmVault when the user needs a local-first knowledge vault that writes durable markdown, graph, search, dashboard, review, context-pack, task-ledger, retrieval, and MCP artifacts to disk from books, notes, transcripts, exports, datasets, slide decks, files, URLs, code, and recurring source workflows."
-version: "3.1.0"
+version: "3.2.0"
 metadata: '{"openclaw":{"requires":{"anyBins":["swarmvault","vault"]},"install":[{"id":"node","kind":"node","package":"@swarmvaultai/cli","bins":["swarmvault","vault"],"label":"Install SwarmVault CLI (npm)"}],"emoji":"🗃️","homepage":"https://www.swarmvault.ai/docs"}}'
 ---
 
@@ -19,6 +19,7 @@ For onboarding, examples, command references, or troubleshooting, read the bundl
 - Use `swarmvault scan <directory> --no-serve` when the user wants the fastest scratch pass over a local repo or docs tree without manually stepping through init + ingest + compile first; use `swarmvault graph share --post` for copyable text, `swarmvault graph share --svg [path]` for a visual card, or `swarmvault graph share --bundle [dir]` for a portable folder with markdown, post text, SVG, HTML preview, and JSON metadata.
 - Use `swarmvault context build "<goal>" --target <path-or-node> --budget <tokens>` when the next agent, review, or handoff needs a bounded evidence pack instead of a broad vault search.
 - Use `swarmvault task start "<goal>" --target <path-or-node>` when agent work should leave a durable task ledger with decisions, linked context packs, changed paths, outcomes, and follow-ups. The older `memory` command remains a compatibility alias.
+- Use `swarmvault doctor` before broad troubleshooting or agent handoff; add `--repair` when the retrieval index can be safely rebuilt.
 - Read `swarmvault.schema.md` before compile or query work. It is the vault's operating contract.
 - If `wiki/graph/report.md` exists, use it before broad repo search.
 
@@ -35,10 +36,11 @@ For onboarding, examples, command references, or troubleshooting, read the bundl
 9. Ask questions with `swarmvault query "<question>"`. It saves durable answers into `wiki/outputs/` by default; add `--no-save` only for ephemeral checks. When an embedding provider is configured, query can merge semantic page matches into local search; `retrieval.rerank: true` lets the current `queryProvider` rerank the merged top hits before answering.
 10. Build agent handoff bundles with `swarmvault context build "<goal>" --target <path-or-node> --budget <tokens>`. Use `--format markdown|json|llms` for the printed shape, and inspect `swarmvault context list|show|delete` for saved packs.
 11. Start a task ledger with `swarmvault task start "<goal>" --target <path-or-node>`, update it with `swarmvault task update <id> --note|--decision|--changed-path|--context-pack`, finish it with `swarmvault task finish <id> --outcome <text>`, and use `swarmvault task resume <id> --format markdown|json|llms` for the next-agent handoff. `query`, `explore`, and `context build` can attach work with `--task <id>`; `--memory <id>` remains a compatibility alias.
-12. Use `swarmvault explore "<question>" --steps <n>` for save-first multi-step research loops, or `--format report|slides|chart|image` when the artifact should be presentation-oriented.
-13. Run `swarmvault lint` whenever the schema changed, artifacts look stale, or compile/query results drift. Set `profile.deepLintDefault: true` in `swarmvault.config.json` when the advisory deep-lint pass should be the default, and use `--no-deep` when you need a structural-only run. Add `--web` only when deep lint is enabled and a `webSearch.tasks.deepLintProvider` adapter is configured; web evidence is scoped to deep lint and does not change compile or query behavior.
-14. Use `swarmvault mcp` when another agent or tool should browse, search, query, build context packs, manage tasks, and inspect retrieval health from the vault through MCP.
-15. Use `swarmvault graph share --post` when the user needs a quick copyable summary, `swarmvault graph share --svg [path]` when they need a 1200x630 visual card, `swarmvault graph share --bundle [dir]` when they need a portable share kit for posting, linking, or screenshotting, `swarmvault graph blast <target>` when they want reverse-import impact analysis, `swarmvault graph serve` when the live workspace, Memory dashboard, or bookmarklet clipper will help, `swarmvault diff` when they need a graph-level change summary against the last committed baseline, or `swarmvault graph export --html <output>` / `graph export --report <output>` when richer sharing will help. `graph export` also supports `--html-standalone`, `--json`, `--obsidian`, and `--canvas` for lighter or Obsidian-native sharing.
+12. Run `swarmvault doctor [--repair]` when the vault needs one health summary across graph, retrieval, review queues, watch state, migrations, managed sources, and task state before deeper troubleshooting.
+13. Use `swarmvault explore "<question>" --steps <n>` for save-first multi-step research loops, or `--format report|slides|chart|image` when the artifact should be presentation-oriented.
+14. Run `swarmvault lint` whenever the schema changed, artifacts look stale, or compile/query results drift. Set `profile.deepLintDefault: true` in `swarmvault.config.json` when the advisory deep-lint pass should be the default, and use `--no-deep` when you need a structural-only run. Add `--web` only when deep lint is enabled and a `webSearch.tasks.deepLintProvider` adapter is configured; web evidence is scoped to deep lint and does not change compile or query behavior.
+15. Use `swarmvault mcp` when another agent or tool should browse, search, query, build context packs, manage tasks, and inspect vault or retrieval health from the vault through MCP.
+16. Use `swarmvault graph share --post` when the user needs a quick copyable summary, `swarmvault graph share --svg [path]` when they need a 1200x630 visual card, `swarmvault graph share --bundle [dir]` when they need a portable share kit for posting, linking, or screenshotting, `swarmvault graph blast <target>` when they want reverse-import impact analysis, `swarmvault graph serve` when the live workspace, health workbench, Memory dashboard, or bookmarklet clipper will help, `swarmvault diff` when they need a graph-level change summary against the last committed baseline, or `swarmvault graph export --html <output>` / `graph export --report <output>` when richer sharing will help. `graph export` also supports `--html-standalone`, `--json`, `--obsidian`, and `--canvas` for lighter or Obsidian-native sharing.
 
 ## Working rules
 
@@ -84,7 +86,7 @@ For onboarding, examples, command references, or troubleshooting, read the bundl
 - `swarmvault install --agent codex|claude|cursor|goose|pi|gemini|opencode|aider|copilot|trae|claw|droid|kiro|hermes|antigravity|vscode|amp|augment|adal|bob|cline|codebuddy|command-code|continue|cortex|crush|deepagents|firebender|iflow|junie|kilo-code|kimi|kode|mcpjam|mistral-vibe|mux|neovate|openclaw|openhands|pochi|qoder|qwen-code|replit|roo-code|trae-cn|warp|windsurf|zencoder` installs agent-specific rules into the current project. Agents in the extended roster receive a project-level skill bundle at the tool's conventional skills directory.
 - `swarmvault install --agent claude|opencode|gemini|copilot --hook` installs graph-first hook or plugin support for the agents that expose project hook APIs.
 - `swarmvault install --agent aider` installs `CONVENTIONS.md` and wires `.aider.conf.yml` to read it when that config is valid YAML.
-- `swarmvault mcp` exposes tools and resources for page search, page reads, source listing, query, context-pack build/read/list, task start/update/finish/list/read/resume, compatibility memory tasks, retrieval status/rebuild/doctor, ingest, compile, and lint.
+- `swarmvault mcp` exposes tools and resources for page search, page reads, source listing, query, context-pack build/read/list, task start/update/finish/list/read/resume, compatibility memory tasks, vault doctor, retrieval status/rebuild/doctor, ingest, compile, and lint.
 
 ## Defaults to preserve
 

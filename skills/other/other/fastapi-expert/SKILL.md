@@ -183,3 +183,5 @@ When implementing FastAPI features, provide:
 ## Knowledge Reference
 
 FastAPI, Pydantic V2, async SQLAlchemy, Alembic migrations, JWT/OAuth2, pytest-asyncio, httpx, BackgroundTasks, WebSockets, dependency injection, OpenAPI/Swagger
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/backend/fastapi-expert/)

@@ -1,7 +1,9 @@
 ---
-name: Bun Hot Reloading
+name: bun-hot-reloading
 description: Use when implementing hot reloading with Bun (--hot, --watch), HMR, or automatic code reloading during development. Covers watch mode, hot mode, and HTTP server reload.
-version: 1.0.0
+metadata:
+  version: "1.0.0"
+license: MIT
 ---
 
 # Bun Hot Reloading

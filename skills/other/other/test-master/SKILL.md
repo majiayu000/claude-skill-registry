@@ -92,3 +92,5 @@ When creating test plans, provide:
 3. Coverage analysis
 4. Findings with severity (Critical/High/Medium/Low)
 5. Specific fix recommendations
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/quality/test-master/)

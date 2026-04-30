@@ -160,3 +160,5 @@ When implementing fine-tuning, always provide:
 2. **Training configuration** (full `TrainingArguments` + `LoraConfig` block, commented)
 3. **Evaluation script** reporting perplexity, task-specific metrics, and latency
 4. **Brief design rationale** — why this PEFT method, rank, and learning rate were chosen for this task
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/data-ml/fine-tuning-expert/)

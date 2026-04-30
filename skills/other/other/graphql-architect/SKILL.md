@@ -144,3 +144,5 @@ When implementing GraphQL features, provide:
 ## Knowledge Reference
 
 Apollo Server, Apollo Federation 2.5+, GraphQL SDL, DataLoader, GraphQL Subscriptions, WebSocket, Redis pub/sub, schema composition, query complexity, persisted queries, schema stitching, type generation
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/api-architecture/graphql-architect/)

@@ -1,17 +1,6 @@
 ---
 name: nuxt-production
-description: |
-  Nuxt 5 production optimization: hydration, performance, testing with Vitest,
-  deployment to Cloudflare/Vercel/Netlify, and migration from Nuxt 4.
-
-  Use when: debugging hydration mismatches, optimizing performance and Core Web Vitals,
-  writing tests with Vitest, deploying to Cloudflare Pages/Workers/Vercel/Netlify,
-  or migrating from Nuxt 4 to Nuxt 5.
-
-  Keywords: hydration, hydration mismatch, ClientOnly, SSR, performance,
-  lazy loading, lazy hydration, Vitest, testing, deployment, Cloudflare Pages,
-  Cloudflare Workers, Vercel, Netlify, NuxtHub, migration, Nuxt 4 to Nuxt 5,
-  Rolldown, Vite 8, Nitro v3, comment placeholder
+description: "| Nuxt 5 production optimization: hydration, performance, testing with Vitest, deployment to Cloudflare/Vercel/Netlify, and migration from Nuxt 4. Use when: debugging hydration mismatches, optimizing performance and Core Web Vitals, writing tests with Vitest, deploying to Cloudflare Pages/Workers/Vercel/Netlify, or migrating from Nuxt 4 to Nuxt 5."
 license: MIT
 metadata:
   version: 5.0.0
@@ -20,8 +9,29 @@ metadata:
   framework: Nuxt
   framework-version: 5.x
   last-verified: 2026-03-30
+  keywords:
+    - hydration
+    - hydration mismatch
+    - ClientOnly
+    - SSR
+    - performance
+    - lazy loading
+    - lazy hydration
+    - Vitest
+    - testing
+    - deployment
+    - Cloudflare Pages
+    - Cloudflare Workers
+    - Vercel
+    - Netlify
+    - NuxtHub
+    - migration
+    - Nuxt 4 to Nuxt 5
+    - Rolldown
+    - Vite 8
+    - Nitro v3
+    - comment placeholder
 ---
-
 # Nuxt 5 Production Guide
 
 Hydration, performance, testing, deployment, and migration patterns.

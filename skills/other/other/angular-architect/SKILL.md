@@ -150,3 +150,5 @@ When implementing Angular features, provide:
 3. State management files if using NgRx
 4. Test file with comprehensive test cases
 5. Brief explanation of architectural decisions
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/frontend/angular-architect/)

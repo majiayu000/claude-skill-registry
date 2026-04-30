@@ -1,11 +1,39 @@
 ---
 name: tanstack-ai
-description: TanStack AI (alpha) provider-agnostic type-safe chat with streaming for OpenAI, Anthropic, Gemini, Ollama. Use for chat APIs, React/Solid frontends with useChat/ChatClient, isomorphic tools, tool approval flows, agent loops, multimodal inputs, or troubleshooting streaming and tool definitions.
+description: "TanStack AI (alpha) provider-agnostic type-safe chat with streaming for OpenAI, Anthropic, Gemini, Ollama. Use for chat APIs, React/Solid frontends with useChat/ChatClient, isomorphic tools, tool approval flows, agent loops, multimodal inputs, or troubleshooting streaming and tool definitions."
 
-  Keywords: TanStack AI, @tanstack/ai, @tanstack/ai-react, @tanstack/ai-client, @tanstack/ai-solid, @tanstack/ai-openai, @tanstack/ai-anthropic, @tanstack/ai-gemini, @tanstack/ai-ollama, toolDefinition, client tools, server tools, tool approval, agent loop, streaming, SSE, connection adapters, multimodal, type-safe models, TanStack Start, Next.js API, toStreamResponse, fetchServerSentEvents, chat, useChat, ChatClient, needsApproval
+metadata:
+  keywords:
+    - TanStack AI
+    - "@tanstack/ai"
+    - "@tanstack/ai-react"
+    - "@tanstack/ai-client"
+    - "@tanstack/ai-solid"
+    - "@tanstack/ai-openai"
+    - "@tanstack/ai-anthropic"
+    - "@tanstack/ai-gemini"
+    - "@tanstack/ai-ollama"
+    - toolDefinition
+    - client tools
+    - server tools
+    - tool approval
+    - agent loop
+    - streaming
+    - SSE
+    - connection adapters
+    - multimodal
+    - type-safe models
+    - TanStack Start
+    - Next.js API
+    - toStreamResponse
+    - fetchServerSentEvents
+    - chat
+    - useChat
+    - ChatClient
+    - needsApproval
+
 license: MIT
 ---
-
 # TanStack AI (Provider-Agnostic LLM SDK)
 
 **Status**: Production Ready ✅  

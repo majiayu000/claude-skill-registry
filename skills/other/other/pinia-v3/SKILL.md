@@ -1,11 +1,38 @@
 ---
 name: pinia-v3
-description: Pinia v3 Vue state management with defineStore, getters, actions. Use for Vue 3 stores, Nuxt SSR, Vuex migration, or encountering store composition, hydration, testing errors.
+description: "Pinia v3 Vue state management with defineStore, getters, actions. Use for Vue 3 stores, Nuxt SSR, Vuex migration, or encountering store composition, hydration, testing errors."
 
-  Keywords: pinia, vue state management, pinia stores, defineStore, vue 3 state, state management, getters, actions, pinia plugins, pinia ssr, nuxt pinia, vuex migration, store composition, pinia testing, setup stores, option stores, storeToRefs, mapState, mapActions, state hydration, pinia nuxt module, createPinia, useStore, pinia devtools, pinia hmr, hot module replacement
+metadata:
+  keywords:
+    - pinia
+    - vue state management
+    - pinia stores
+    - defineStore
+    - vue 3 state
+    - state management
+    - getters
+    - actions
+    - pinia plugins
+    - pinia ssr
+    - nuxt pinia
+    - vuex migration
+    - store composition
+    - pinia testing
+    - setup stores
+    - option stores
+    - storeToRefs
+    - mapState
+    - mapActions
+    - state hydration
+    - pinia nuxt module
+    - createPinia
+    - useStore
+    - pinia devtools
+    - pinia hmr
+    - hot module replacement
+
 license: MIT
 ---
-
 # Pinia v3 - Vue State Management
 
 **Status**: Production Ready ✅

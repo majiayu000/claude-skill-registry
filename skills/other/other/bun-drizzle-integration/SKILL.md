@@ -1,7 +1,9 @@
 ---
-name: Bun Drizzle Integration
+name: bun-drizzle-integration
 description: Use when integrating Drizzle ORM with Bun's SQLite driver for type-safe schema definitions and migrations.
-version: 1.0.0
+metadata:
+  version: "1.0.0"
+license: MIT
 ---
 
 # Bun Drizzle Integration

@@ -1,8 +1,6 @@
 ---
 name: cloudflare-email-routing
-description: Cloudflare Email Routing for receiving/sending emails via Workers. Use for email workers, forwarding, allowlists, or encountering Email Trigger errors, worker call failures, SPF issues.
-
-  Keywords: Cloudflare Email Routing, Email Workers, send email, receive email, email forwarding, email allowlist, email blocklist, postal-mime, mimetext, cloudflare:email, EmailMessage, ForwardableEmailMessage, EmailEvent, MX records, SPF, DKIM, email worker binding, send_email binding, wrangler email, email handler, email routing worker, "Email Trigger not available", "failed to call worker", email delivery failed, email not forwarding, destination address not verified
+description: "Cloudflare Email Routing for receiving/sending emails via Workers. Use for email workers, forwarding, allowlists, or encountering Email Trigger errors, worker call failures, SPF issues."
 license: MIT
 metadata:
   version: "2.0.0"
@@ -12,8 +10,34 @@ metadata:
   errors_prevented: 8
   templates_included: 0
   references_included: 1
+  keywords:
+    - Cloudflare Email Routing
+    - Email Workers
+    - send email
+    - receive email
+    - email forwarding
+    - email allowlist
+    - email blocklist
+    - postal-mime
+    - mimetext
+    - "cloudflare:email"
+    - EmailMessage
+    - ForwardableEmailMessage
+    - EmailEvent
+    - MX records
+    - SPF
+    - DKIM
+    - email worker binding
+    - send_email binding
+    - wrangler email
+    - email handler
+    - email routing worker
+    - "\"Email Trigger not available\""
+    - "\"failed to call worker\""
+    - email delivery failed
+    - email not forwarding
+    - destination address not verified
 ---
-
 # Cloudflare Email Routing
 
 **Status**: Production Ready ✅ | **Last Verified**: 2025-11-18

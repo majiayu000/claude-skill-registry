@@ -103,3 +103,5 @@ When debugging, provide:
 2. **Evidence**: Stack trace, logs, or test that proves it
 3. **Fix**: Code change that resolves it
 4. **Prevention**: Test or safeguard to prevent recurrence
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/quality/debugging-wizard/)

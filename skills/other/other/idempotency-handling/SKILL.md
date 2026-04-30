@@ -1,6 +1,7 @@
 ---
 name: idempotency-handling
 description: Idempotent API operations with idempotency keys, Redis caching, DB constraints. Use for payment systems, webhook retries, safe retries, or encountering duplicate processing, race conditions, key expiry errors.
+license: MIT
 ---
 
 # Idempotency Handling

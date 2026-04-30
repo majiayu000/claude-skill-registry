@@ -1,18 +1,43 @@
 ---
 name: content-collections
-description: Content Collections TypeScript-first build tool for Markdown/MDX content. Use for blogs, docs, content sites with Vite + React, MDX components, type-safe Zod schemas, Contentlayer migration, or encountering TypeScript import errors, path alias issues, collection validation errors.
+description: "Content Collections TypeScript-first build tool for Markdown/MDX content. Use for blogs, docs, content sites with Vite + React, MDX components, type-safe Zod schemas, Contentlayer migration, or encountering TypeScript import errors, path alias issues, collection validation errors."
 
-  Keywords: content-collections, @content-collections/core, @content-collections/vite,
-  @content-collections/mdx, MDX, markdown, Zod schema validation, type-safe content,
-  frontmatter, compileMDX, defineCollection, defineConfig, Vite plugin, tsconfig paths,
-  .content-collections/generated, MDXContent component, rehype plugins, remark plugins,
-  content schema, document transform, allPosts import, static site generation,
-  blog setup, documentation, Cloudflare Workers static assets, content validation errors,
-  module not found content-collections, path alias not working, MDX type errors,
-  transform function async, collection not updating
+metadata:
+  keywords:
+    - content-collections
+    - "@content-collections/core"
+    - "@content-collections/vite"
+    - "@content-collections/mdx"
+    - MDX
+    - markdown
+    - Zod schema validation
+    - type-safe content
+    - frontmatter
+    - compileMDX
+    - defineCollection
+    - defineConfig
+    - Vite plugin
+    - tsconfig paths
+    - .content-collections/generated
+    - MDXContent component
+    - rehype plugins
+    - remark plugins
+    - content schema
+    - document transform
+    - allPosts import
+    - static site generation
+    - blog setup
+    - documentation
+    - Cloudflare Workers static assets
+    - content validation errors
+    - module not found content-collections
+    - path alias not working
+    - MDX type errors
+    - transform function async
+    - collection not updating
+
 license: MIT
 ---
-
 # Content Collections
 
 **Status**: Production Ready ✅

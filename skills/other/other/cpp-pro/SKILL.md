@@ -113,3 +113,5 @@ When implementing C++ features, provide:
 3. CMakeLists.txt updates (if applicable)
 4. Test file demonstrating usage
 5. Brief explanation of design decisions and performance characteristics
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/language/cpp-pro/)

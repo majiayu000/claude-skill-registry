@@ -1,13 +1,6 @@
 ---
 name: cloudflare-d1
-description: Cloudflare D1 serverless SQLite on edge. Use for databases, migrations, bindings, or encountering D1_ERROR, statement too long, too many requests queued errors.
-
-  Keywords: d1, d1 database, cloudflare d1, wrangler d1, d1 migrations, d1 bindings, sqlite workers,
-  edge database, d1 queries, sql cloudflare, prepared statements, batch queries,
-  d1 api, wrangler migrations, D1_ERROR, D1_EXEC_ERROR, statement too long, database bindings,
-  sqlite cloudflare, sql workers api, d1 indexes, query optimization, d1 schema, read replication,
-  read replica, withSession, Sessions API, global replication, database replication, served_by_region,
-  bookmarks, sequential consistency
+description: "Cloudflare D1 serverless SQLite on edge. Use for databases, migrations, bindings, or encountering D1_ERROR, statement too long, too many requests queued errors."
 license: MIT
 metadata:
   version: "3.0.0"
@@ -20,8 +13,40 @@ metadata:
   wrangler_version: "4.50.0"
   workers_types_version: "4.20251125.0"
   drizzle_orm_version: "0.44.7"
+  keywords:
+    - d1
+    - d1 database
+    - cloudflare d1
+    - wrangler d1
+    - d1 migrations
+    - d1 bindings
+    - sqlite workers
+    - edge database
+    - d1 queries
+    - sql cloudflare
+    - prepared statements
+    - batch queries
+    - d1 api
+    - wrangler migrations
+    - D1_ERROR
+    - D1_EXEC_ERROR
+    - statement too long
+    - database bindings
+    - sqlite cloudflare
+    - sql workers api
+    - d1 indexes
+    - query optimization
+    - d1 schema
+    - read replication
+    - read replica
+    - withSession
+    - Sessions API
+    - global replication
+    - database replication
+    - served_by_region
+    - bookmarks
+    - sequential consistency
 ---
-
 # Cloudflare D1 Database
 
 **Status**: Production Ready ✅ | **Last Verified**: 2025-01-15

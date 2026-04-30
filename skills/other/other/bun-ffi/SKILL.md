@@ -1,7 +1,9 @@
 ---
-name: Bun FFI
-description: This skill should be used when the user asks about "bun:ffi", "foreign function interface", "calling C from Bun", "native libraries", "dlopen", "shared libraries", "calling native code", or integrating C/C++ libraries with Bun.
-version: 1.0.0
+name: bun-ffi
+description: "This skill should be used when the user asks about \"bun:ffi\", \"foreign function interface\", \"calling C from Bun\", \"native libraries\", \"dlopen\", \"shared libraries\", \"calling native code\", or integrating C/C++ libraries with Bun."
+metadata:
+  version: "1.0.0"
+license: MIT
 ---
 
 # Bun FFI

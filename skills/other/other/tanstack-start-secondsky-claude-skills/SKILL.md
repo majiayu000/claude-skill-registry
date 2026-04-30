@@ -18,10 +18,10 @@ metadata:
     - static prerender
     - server functions
     - server routes
-  - cloudflare workers
-  - edge rendering
-  - hydration errors
-  - next.js migration
+    - cloudflare workers
+    - edge rendering
+    - hydration errors
+    - next.js migration
 ---
 
 # TanStack Start (React) — RC-Ready Playbook

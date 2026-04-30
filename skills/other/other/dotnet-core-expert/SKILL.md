@@ -136,3 +136,5 @@ When implementing .NET features, provide:
 3. API endpoints or service implementations
 4. Database context and migrations if applicable
 5. Brief explanation of architectural decisions
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/backend/dotnet-core-expert/)

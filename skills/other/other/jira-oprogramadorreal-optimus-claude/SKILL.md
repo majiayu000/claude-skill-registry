@@ -1,5 +1,5 @@
 ---
-description: Fetches and optimizes context from a JIRA issue for AI-assisted development. Searches assigned issues or fetches by key. Distills title, description, acceptance criteria, sprint context, and comments into a structured task description. Analyzes the codebase to surface missing criteria, scope, and risks. Optionally enriches the JIRA issue with a structured analysis comment. Use before /optimus:tdd, /optimus:brainstorm, or /optimus:branch to pull task context from JIRA.
+description: Fetches and optimizes context from a JIRA issue for AI-assisted development. Searches assigned issues or fetches by key. Distills title, description, acceptance criteria, sprint context, and comments into a structured task description. Analyzes the codebase to surface missing criteria, scope, and risks. Optionally enriches the JIRA issue with a structured analysis comment, and for Complex-scope work can spawn implementation tickets in JIRA. Re-running on the same key refreshes the local task with the latest JIRA state instead of overwriting prior enrichment. Use before /optimus:tdd, /optimus:brainstorm, or /optimus:branch to pull task context from JIRA, or to refresh existing context after JIRA edits.
 disable-model-invocation: true
 ---
 
@@ -9,7 +9,7 @@ Fetch a JIRA issue, distill it into a structured task for Claude Code, analyze t
 
 ## Safety
 
-Steps 1–4 are READ-ONLY. No MCP write tool may be called until Step 5, and only after explicit user confirmation. The only write operation this skill performs is adding a comment (see Tool Name Resolution table in `jira-context-extraction.md` for the server-specific tool name) — do not call any other write tool. See `jira-context-extraction.md` section "MCP Safety" for the full tool classification.
+Steps 1–3.5 perform no MCP writes. Local file writes (e.g., the refresh path's updates to `docs/jira/<KEY>.md`) are permitted; MCP writes are only allowed in Step 5 after explicit user confirmation. See `jira-context-extraction.md` "MCP Safety" for the full permitted-write table — that reference is the single source of truth for which tools the skill is allowed to call and at which gate.
 
 ## Language
 
@@ -59,6 +59,13 @@ Read `$CLAUDE_PLUGIN_ROOT/skills/jira/references/jira-context-extraction.md` and
 
 Handle errors according to the **Error Handling** table in the reference. If a critical error occurs (401, 403, 404), report it to the user with the specified message and stop.
 
+## Step 3.5: Detect Prior Run
+
+Check whether `docs/jira/<ISSUE-KEY>.md` exists at the project root.
+
+- **File does not exist** → first run for this issue. Continue to Step 4 unchanged.
+- **File exists** → read `$CLAUDE_PLUGIN_ROOT/skills/jira/references/jira-refresh.md` and follow the **Refresh Procedure**. Do NOT continue to Step 4 — the refresh procedure owns its own routing on completion.
+
 ## Step 4: Distill into Structured Task
 
 Assemble the fetched data into the **Structured Output Format** from the extraction reference:
@@ -107,17 +114,17 @@ After the user confirms the structured task, save it to a persistent file so dow
 source: jira
 issue: [ISSUE-KEY]
 date: [YYYY-MM-DD]
+description-refresh-date: [YYYY-MM-DD]
 ---
 
 [The full structured task content from above — Goal, Acceptance Criteria, Context, Key Decisions]
 ```
 
-3. If a file for the same issue key already exists, overwrite it (the user re-fetched for fresh context)
-4. Report the file path: "Task context saved to `docs/jira/<ISSUE-KEY>.md`"
+3. Report the file path: "Task context saved to `docs/jira/<ISSUE-KEY>.md`"
 
 ## Step 5: Analyze Against Codebase
 
-Read `$CLAUDE_PLUGIN_ROOT/skills/jira/references/jira-codebase-analysis.md` and follow the **Analysis Procedure** using the Goal and Acceptance Criteria from Step 4.
+Read `$CLAUDE_PLUGIN_ROOT/skills/jira/references/jira-codebase-analysis.md` and follow the **Analysis Procedure** using the Goal and the original Acceptance Criteria from `docs/jira/<ISSUE-KEY>.md` (exclude items tagged `(from codebase analysis)` — those are prior enrichment, not source criteria).
 
 Present the **Impact Summary** to the user.
 
@@ -134,7 +141,9 @@ Check whether the detected MCP server has a comment tool (see Tool Name Resoluti
 
 3. If the comment tool call fails at runtime (e.g., tool was listed but is unavailable), inform the user and skip the JIRA write — the local file update still applies.
 
-4. Report success or failure. No further confirmation needed — comments are append-only and non-destructive. Proceed to Step 6.
+4. Report success or failure. No further confirmation needed for the comment — comments are append-only and non-destructive.
+
+5. **Complex scope only** — if the Scope Assessment from the Impact Summary is `Complex`, read `$CLAUDE_PLUGIN_ROOT/skills/jira/references/jira-implementation-tickets.md` and follow the **Implementation Ticket Creation Procedure** to optionally spawn implementation tickets. The procedure has its own confirmation gate; the default is to skip JIRA writes and emit a proposed list to the local file only. Then proceed to Step 6.
 
 ### If Update local context only
 
@@ -201,7 +210,7 @@ The plan should include:
 - Out of scope: [anything explicitly excluded in the JIRA issue]
 
 ## How this conversation should run
-Treat this conversation as a review loop — validate the plan against the actual codebase and iterate with me. When I say I'm done iterating, acknowledge but do not write yet — plan mode is read-only. I will then toggle plan mode off and send a short follow-up message (e.g. "go"). On that follow-up, append a "Refined plan" section to `docs/jira/<ISSUE-KEY>.md` to capture the refined plan, and stop. I will start a fresh conversation to run `/optimus:tdd`.
+Treat this conversation as a review loop — validate the plan against the actual codebase and iterate with me. When I say I'm done iterating, acknowledge but do not write yet — plan mode is read-only. I will then toggle plan mode off and send a short follow-up message (e.g. "go"). On that follow-up, append a `### Refined plan` section (heading exactly `### Refined plan`) to `docs/jira/<ISSUE-KEY>.md` to capture the refined plan, and stop. I will start a fresh conversation to run `/optimus:tdd`.
 ```
 ````
 
@@ -210,7 +219,7 @@ When emitting both the plan-mode prompt above and the execution prompt below, su
 Tell the user:
 
 > 1. Start a fresh Claude Code conversation in **plan mode** (CLI: press `Shift+Tab` until the mode indicator shows plan mode; other clients: use the equivalent toggle). Paste the prompt above.
-> 2. Iterate with Claude. **Do not approve the plan** — approval executes immediately and skips `/optimus:tdd`'s Red-Green-Refactor discipline. When you're satisfied, tell Claude you're done iterating; Claude will acknowledge. Then toggle plan mode off using the same control **and send a short follow-up message (e.g. "go")** — Claude will append a "Refined plan" section to `docs/jira/<ISSUE-KEY>.md` in response.
+> 2. Iterate with Claude. **Do not approve the plan** — approval executes immediately and skips `/optimus:tdd`'s Red-Green-Refactor discipline. When you're satisfied, tell Claude you're done iterating; Claude will acknowledge. Then toggle plan mode off using the same control **and send a short follow-up message (e.g. "go")** — Claude will append a `### Refined plan` section to `docs/jira/<ISSUE-KEY>.md` in response.
 > 3. Start a **second fresh conversation** and paste the execution prompt below.
 
 Then emit the **execution prompt** as a second copyable block, pre-filled from the task file:

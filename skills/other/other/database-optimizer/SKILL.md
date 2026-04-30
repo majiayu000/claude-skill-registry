@@ -145,3 +145,5 @@ When optimizing database performance, provide:
 4. Implementation SQL / config changes
 5. Validation queries to measure improvement
 6. Monitoring recommendations
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/infrastructure/database-optimizer/)

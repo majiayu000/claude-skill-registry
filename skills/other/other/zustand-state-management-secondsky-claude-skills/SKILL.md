@@ -1,14 +1,33 @@
 ---
 name: zustand-state-management
-description: Zustand state management for React with TypeScript. Use for global state, Redux/Context API migration, localStorage persistence, slices pattern, devtools, Next.js SSR, or encountering hydration errors, TypeScript inference issues, persist middleware problems, infinite render loops.
+description: "Zustand state management for React with TypeScript. Use for global state, Redux/Context API migration, localStorage persistence, slices pattern, devtools, Next.js SSR, or encountering hydration errors, TypeScript inference issues, persist middleware problems, infinite render loops."
 
-  Keywords: zustand, state management, React state, TypeScript state, persist middleware,
-  devtools, slices pattern, global state, React hooks, create store, useBoundStore,
-  StateCreator, hydration error, text content mismatch, infinite render, localStorage,
-  sessionStorage, immer middleware, shallow equality, selector pattern, zustand v5
+metadata:
+  keywords:
+    - zustand
+    - state management
+    - React state
+    - TypeScript state
+    - persist middleware
+    - devtools
+    - slices pattern
+    - global state
+    - React hooks
+    - create store
+    - useBoundStore
+    - StateCreator
+    - hydration error
+    - text content mismatch
+    - infinite render
+    - localStorage
+    - sessionStorage
+    - immer middleware
+    - shallow equality
+    - selector pattern
+    - zustand v5
+
 license: MIT
 ---
-
 # Zustand State Management
 
 **Status**: Production Ready ✅

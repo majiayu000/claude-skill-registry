@@ -268,6 +268,7 @@ For the full decision table, nested entry type patterns, and the CKEditor chunks
 - **Editing project config YAML manually** — let Craft manage `config/project/`. Use `ddev craft project-config/rebuild` to regenerate from DB if needed.
 - **Using database IDs in URI formats** — IDs differ across environments. Use `{slug}`, `{canonicalUid}`, or custom fields.
 - **Not setting `allowAdminChanges => false` in production** — without this, production schema changes won't sync back to dev.
+- **Using `@web` in filesystem URLs** — `@web` is auto-detected from the HTTP request and can be spoofed or empty in console/queue contexts. Use environment variables (`$ASSETS_URL`) for filesystem URLs. `@webroot` for paths is less risky but env vars are still preferred.
 - **Ignoring entry type visual identity** — editors navigate by icon, color, and description. Investing in these settings makes the CP usable as the content model grows.
 - **Not planning for CMS edition** — if you need per-group content permissions, you need Pro or Enterprise. This affects section and field architecture.
 
@@ -287,6 +288,9 @@ Read the relevant reference file(s) for your task.
 - "Understand project config workflow" → read `infrastructure.md` (Project Config Essentials)
 - "How does Craft store content internally?" → read `infrastructure.md` (Storage Model)
 - "Set up asset volumes and filesystems" → read `infrastructure.md` (Assets section)
+- "Configure URI format for a structure section" → read `object-templates.md` (Structure URI Patterns)
+- "Set up dynamic asset upload subpath" → read `object-templates.md` (Asset Subpath Patterns)
+- "Asset subpath broken after moving field into Matrix" → read `object-templates.md` (The Matrix Gotcha)
 
 | Reference | Scope |
 |-----------|-------|
@@ -295,3 +299,4 @@ Read the relevant reference file(s) for your task.
 | `references/content-patterns.md` | Strategic patterns for blog, portfolio, multi-site corporate. Section/field/relation architecture per pattern. Entrification migration. CKEditor vs Matrix decisions. |
 | `references/users-and-permissions.md` | Users, user groups, CMS editions, addresses, permissions architecture, field layout UI elements. |
 | `references/infrastructure.md` | Multi-site propagation methods, field translation methods, project config workflow, how Craft stores content (five-table model, JSON field values, relations, nested sets), asset volumes/filesystems/transforms. |
+| `references/object-templates.md` | Object template syntax: `{attribute}` vs `{{ twig }}`, URI formats, asset subpaths, preview targets, owner/rootOwner nesting, structure patterns, the Matrix gotcha. |

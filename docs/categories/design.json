@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 9518,
-  "updated_at": "2026-04-29T02:39:04.918026Z",
+  "count": 9519,
+  "updated_at": "2026-04-30T02:35:26.188895Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -100875,6 +100875,23 @@
       "stars": 0,
       "install": "pauljbernard/content/.archive/old-content-directory-2025-11-06/content/.claude/skills/learning-xr-design",
       "source": "downloaded"
+    },
+    {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "repo": "alonw0/web-asset-generator",
+      "path": "skills/web-asset-generator/SKILL.md",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "stars": 0,
+      "install": "alonw0/web-asset-generator/skills/web-asset-generator/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "risk-sizing-not-blocking",

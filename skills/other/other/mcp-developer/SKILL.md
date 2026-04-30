@@ -141,3 +141,5 @@ When implementing MCP features, provide:
 2. Schema definitions (tools, resources, prompts)
 3. Configuration file (transport, auth, etc.)
 4. Brief explanation of design decisions
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/api-architecture/mcp-developer/)

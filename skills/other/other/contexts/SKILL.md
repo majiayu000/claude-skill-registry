@@ -1,123 +1,77 @@
 ---
 name: contexts
-description: Coordinate context sweep before coding - gather relevant files, patterns, and tooling summaries. Use when preparing to implement a feature, fix, or refactor and need comprehensive architecture, pattern, tooling, and dependency context gathered first.
+description: Auto-router for context gathering. Detects whether the upcoming task needs codebase exploration or external knowledge research and dispatches accordingly. Use whenever the user asks for context, background, "how does X work", architectural orientation, or pre-implementation grounding — even if they don't name a specific context skill. Also fires on "get context", "give me context", "context on X", "understand X before I implement", and any setup-before-coding request.
 ---
 
 # Context Command
 
-You are a context coordinator for ODIN Code Agent. Your role is to orchestrate a comprehensive context sweep before implementation begins.
+Auto-router for pre-implementation context gathering. Classify the input as codebase-oriented, doc-oriented, or both; invoke the appropriate workflow; emit a `detected:` acknowledgement as the first output line.
 
-CRITICAL: This is a CONTEXT GATHERING task. Your role is to identify and summarize all relevant context the primary task needs.
-You will be provided with a task description and must emit concise, linked summaries of relevant files, patterns, and tooling.
+## When to Apply / NOT
 
-## Your Process
+**Apply:**
+- Any request for context, background, or orientation before implementing, fixing, or refactoring
+- "How does X work", "get me context on Y", "what's the architecture of Z"
 
-1. **Understand the Task Scope**:
-   - Parse the provided task/requirements to identify key domains
-   - Determine which subsystems, modules, and layers are involved
-   - Identify the type of changes (feature, fix, refactor, migration)
+**NOT apply:**
+- Bug reproduction or root-cause investigation — use a debugging workflow
+- Already-in-progress implementation — gather context first, then proceed
+- Analysis-only output with no pre-implementation intent
 
-2. **Execute Context Sweep**:
-   Use parallel exploration to gather context from multiple angles:
+## Detected Mode Acknowledgement [LOAD-BEARING]
 
-   **Architecture Context**:
-   - Identify entry points and control flow paths
-   - Map module boundaries and dependencies
-   - Find relevant interfaces/contracts/types
-
-   **Pattern Context**:
-   - Locate similar features or implementations as reference
-   - Identify coding conventions and idioms used
-   - Find error handling and logging patterns
-
-   **Tooling Context**:
-   - Identify build/test commands relevant to the scope
-   - Find lint/format configurations
-   - Locate CI/CD pipeline steps that may be affected
-
-   **Dependency Context**:
-   - Map internal dependencies (imports, modules)
-   - Identify external dependencies (libraries, APIs)
-   - Find configuration files that may need updates
-
-3. **Emit Linked Summaries**:
-   For each relevant file/component, provide:
-   - File path with line references where applicable
-   - Brief purpose summary (1-2 sentences)
-   - Relevance to the task (why it matters)
-   - Key patterns or constraints to preserve
-
-4. **Tool Restrictions**:
-   - Use `bash` ONLY for read-only operations (eza, git status, git log, git diff, ast-grep(find-only args), rg, fd, bat, tokei)
-   - NEVER use file creation, modification, or state-changing commands
-   - Prefer `fd` for discovery, `rg` for content search, `ast-grep` for structural patterns
-   - Use `tokei` for scope assessment
-
-## Required Output
-
-Structure your output as follows:
-
-### Task Understanding
-
-Brief restatement of the task and identified scope boundaries.
-
-### Architecture Context
+First output line before ANY work:
 
 ```
-[Module/Layer Name]
-- path/to/file.ts:L10-50 - [Purpose] - [Relevance]
-- path/to/interface.ts - [Purpose] - [Relevance]
+detected: <mode> — scope=<paths|libs|both> sources=<brief summary>
 ```
 
-### Pattern Context
+Mode values: `code-ref`, `doc-ref`, `both`, `ambiguous`.
 
-```
-[Pattern Category]
-- path/to/reference.ts - [Pattern description] - [How to apply]
-```
+For `both` mode, also append: `(sequential dispatch: codebase first, then external)`
 
-### Tooling Context
+## Input Classifier
 
-```
-- Build: [command] - [when to run]
-- Test: [command] - [scope/coverage]
-- Lint: [command] - [config location]
-```
+First-match wins. Check in order: `both` must come before leaf modes so mixed-signal inputs are reachable.
 
-### Dependency Map
+| Priority | Mode | Minimum condition |
+|----------|------|-------------------|
+| 1 | `both` | Repo-local signal (path, glob, symbol, or module) AND external signal (library, framework, SDK, API, CLI, or service name) both present and non-trivial |
+| 2 | `code-ref` | Repo-local signal present; no external signal |
+| 3 | `doc-ref` | External signal present; no repo-local signal |
+| 4 | `ambiguous` | Neither signal cleanly detected, OR signals present but neither dominant |
 
-```
-Internal:
-- module-a -> module-b (reason)
-- module-b -> module-c (reason)
+**Worked examples:**
+- `"How does our /autoresearch skill use LangGraph's interrupt for HITL pauses?"` → repo signal + external signal → `both`
+- `"Refactor claude/skills/contexts/SKILL.md"` → repo signal only → `code-ref`
+- `"Latest Pydantic v2 model_validator signature"` → external signal only → `doc-ref`
+- `"Give me context on routing"` → no concrete signal → `ambiguous` → gate fires
 
-External:
-- library-name@version - [usage context]
-```
+## Auto-Detect Gate
 
-### Critical Files Summary
+Fire `AskUserQuestion` (single-select, NEVER `multiSelect`) when classifier returns `ambiguous` OR when both signals are present but one is dominant and the mode is unclear:
 
-Prioritized list of files most relevant to the task:
+- Options: `code-ref`, `doc-ref`, `both`
+- Mark `(Recommended)` on the closest classifier match
+- One question, one axis — no batching of unrelated axes
 
-| Priority | File             | Purpose          | Action Hint |
-| -------- | ---------------- | ---------------- | ----------- |
-| P0       | path/to/core.ts  | Core logic       | Modify      |
-| P1       | path/to/types.ts | Type definitions | Extend      |
-| P2       | path/to/utils.ts | Helper functions | Reference   |
+## Hand-off & Integration
 
-### Constraints & Considerations
+**`code-ref`:** Invoke codebase exploration workflow. Emit 8-section output (Task Understanding, Architecture Context, Pattern Context, Tooling Context, Dependency Map, Critical Files Summary, Constraints & Considerations, Recommended Next Steps).
 
-- [Constraint 1]: [Impact on implementation]
-- [Constraint 2]: [Impact on implementation]
+**`doc-ref`:** Invoke external research workflow. Walk the 5-tier source ladder (Official docs → API refs → Books/papers → Tutorials → Community). Emit source-cited claims with confidence labels.
 
-### Recommended Next Steps
+**`both` (sequential):**
+1. Run codebase exploration first. Extract the symbols, modules, and interfaces that appear relevant to the external subject.
+2. Feed the extracted symbol list as additional context into the external research workflow. This grounds the research in actual repo usage rather than generic library docs.
+3. Emit both outputs in sequence. Label each section clearly.
 
-1. [First action with specific file reference]
-2. [Second action with specific file reference]
+Note: sequential dispatch roughly doubles wall-clock time versus a single mode. Emit `(sequential dispatch: codebase first, then external)` in the `detected:` line so the user can anticipate latency.
 
-Remember: You gather and summarize context. Do NOT write or edit files. Emit concise, actionable summaries that enable precise implementation.
+## Anti-Patterns
 
-## Reference materials
-
-- `../improve-codebase-architecture/references/INTERFACE-DESIGN.md` — "Design It Twice" parallel-generation workflow. Canonical home: `improve-codebase-architecture`.
-- `../domain-model/references/CONTEXT-FORMAT.md` — glossary entry format. Canonical home: `domain-model`.
+- Skipping the `detected:` acknowledgement line — it is LOAD-BEARING; downstream parsers and users depend on it
+- Checking `code-ref` or `doc-ref` before `both` in the classifier — `both` becomes unreachable under first-match-wins
+- Firing `AskUserQuestion` with `multiSelect: true` — always single-select per axis
+- Writing or editing files during context gathering — this skill is read-only
+- Slash-arg override: `/contexts code-ref`, `/contexts doc-ref`, or `/contexts both` bypasses the classifier entirely and dispatches directly to that mode

@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19714,
-  "updated_at": "2026-04-29T02:39:05.032022Z",
+  "count": 19715,
+  "updated_at": "2026-04-30T02:35:26.287453Z",
   "skills": [
     {
       "name": "fix",
@@ -114364,6 +114364,24 @@
       "stars": 0,
       "install": "johnallen3d/system-config/.opencode/skills/nix-system-config",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "skills/pagerunner-skill/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/skills/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "gemini-json-parsing",

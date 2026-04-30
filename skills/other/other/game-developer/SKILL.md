@@ -159,3 +159,5 @@ public class IdleState : State
     public override void Exit() { }
 }
 ```
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/specialized/game-developer/)

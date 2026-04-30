@@ -1,6 +1,7 @@
 ---
 name: woocommerce-copy-guidelines
 description: Guidelines for UI text and copy in WooCommerce. Use when writing user-facing text, labels, buttons, messages, or documentation in WooCommerce projects.
+license: MIT
 ---
 
 # WooCommerce Copy Guidelines

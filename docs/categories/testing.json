@@ -1,8 +1,8 @@
 {
   "category": "testing",
   "code": "tst",
-  "count": 6762,
-  "updated_at": "2026-04-29T02:39:06.906993Z",
+  "count": 6764,
+  "updated_at": "2026-04-30T02:35:27.913694Z",
   "skills": [
     {
       "name": "frontend-testing",
@@ -65350,6 +65350,24 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "ios-simulator-skill",
+      "description": "iOS Simulator automation for testing with semantic navigation and Xcode integration",
+      "repo": "conorluddy/ios-simulator-skill",
+      "path": "ios-simulator-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "ios",
+        "simulator",
+        "xcode",
+        "testing",
+        "mobile"
+      ],
+      "stars": 0,
+      "install": "conorluddy/ios-simulator-skill/ios-simulator-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "data-researcher",
       "description": "Expert data researcher specializing in discovering, collecting, and analyzing diverse data sources. Masters data mining, statistical analysis, and pattern recognition with focus on extracting meaningf",
       "repo": "zenobi-us/dotfiles",
@@ -86843,6 +86861,23 @@
       "stars": 0,
       "install": "ichaiwizm/mutuelle-v4/.claude/skills/flow-create",
       "source": "downloaded"
+    },
+    {
+      "name": "playwright-skill",
+      "description": "Browser automation with Playwright - Claude writes and executes custom scripts",
+      "repo": "lackeyjb/playwright-skill",
+      "path": "skills/playwright-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "playwright",
+        "browser",
+        "automation",
+        "testing"
+      ],
+      "stars": 0,
+      "install": "lackeyjb/playwright-skill/skills/playwright-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "penetration-tester",

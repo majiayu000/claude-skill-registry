@@ -62,6 +62,30 @@ The 43 CSS custom properties are the entire theming surface. No build step, no p
 
 Optional client-side courtesy gate using FNV-1a hashing with sessionStorage. Not real security — a visibility gate for non-public docs. To change the password, compute a new FNV-1a hash and update the `HASH` constant in `_auth.js`. Default password: `subqcode`, hash: `90eb3833`.
 
+## Diagrams (Optional)
+
+Vellum pages can include Mermaid diagrams rendered as inline SVGs via the `beautiful-mermaid` skill. No JavaScript dependency — diagrams are static SVG inlined at build time.
+
+**Generate a vellum-themed SVG:**
+
+```bash
+printf 'graph TD\n  A --> B --> C' | \
+  node ~/.claude/skills/beautiful-mermaid/scripts/mermaid.mjs \
+  -f svg -t vellum --transparent -o diagram.svg -
+```
+
+**Inline into a diagram panel:**
+
+```html
+<figure class="diagram-panel">
+  <p class="diagram-panel__label">System Architecture</p>
+  <!-- Paste SVG output here (remove width/height, keep viewBox) -->
+  <figcaption class="diagram-panel__caption">Request flow from API gateway to storage</figcaption>
+</figure>
+```
+
+The `vellum` theme uses cream/ink/copper colors matching the design system. The `--transparent` flag lets the panel's `--bg-card` background show through. Supported diagram types: flowchart, state, sequence, class, ER. See `references/component-catalog.md` for component variants (`--copper`, `--bleed`).
+
 ## QA Workflow
 
 After building pages, run these passes in order:

@@ -966,6 +966,35 @@ public class {ClassName} {
 ```
 > **自动检测：** 当一个 userTask 有 2+ 条出线且都不带 `conditions` 时，脚本自动识别为手工分支，使用水平布局。无需额外配置。
 
+---
+
+### 并行网关 / 包容网关的水平分支布局（自动）
+
+当流程中出现「**`parallelGateway` 或 `inclusiveGateway`（split，出度 ≥ 2）→ 多条分支链 → 同一 `parallelGateway` / `inclusiveGateway`（join，入度 = split 出度）**」的经典对称模式时，`bpmn_creator.py` 会自动把各条分支链**横向并排**放在 split 下方，join 落在所有分支底部正中下方，连线走 L 形（水平折线）。这是 BPMN 标准的经典样子，而不是把分支节点串行垂直堆叠。
+
+```
+             开始
+              ↓
+           填写申请
+              ↓
+           ◇ split
+           / | \
+          /  |  \
+      节点A 节点B 节点C       ← 三条分支横向并排
+          \  |  /
+           \ | /
+           ◇ join
+              ↓
+            结束
+```
+
+识别条件（同时满足才走水平布局）：
+1. split 节点类型为 `parallelGateway` 或 `inclusiveGateway`，出度 ≥ 2
+2. 每条分支是一条**不再分叉**的链（分支链中途不能再次出现多出线节点，否则放弃自动识别）
+3. 所有分支最终都汇入同一个 `parallelGateway` / `inclusiveGateway` 作为 join，且 join 的入度正好等于 split 的出度
+
+不满足任一条件时退化为原有垂直布局。**不需要在 JSON 中做任何额外配置**，只要流程结构符合模式就自动生效。
+
 **手工分支布局规则（避免节点和连线重叠）：**
 
 布局结构：
@@ -1239,8 +1268,16 @@ python "<skill目录>/scripts/bpmn_creator.py" \
 | **流程Key字段名** | `processkey`（全小写） | ~~`processKey`~~（驼峰） |
 | **类型字段名** | `typeid`（全小写） | ~~`typeId`~~（驼峰） |
 | **XML字段名** | `processDescriptor` | ~~`processXml`~~ |
+| **XML 值的形式** | **原始 XML 字符串**（服务器会自动 base64 编码后存储） | ~~`base64.b64encode(xml)`~~（传 base64 会被再次编码导致双重编码，部署时报 "前言中不允许有内容"） |
 | **流程ID字段名** | `processDefinitionId`（新建传`0`） | ~~`id`~~ |
 | **返回值中流程ID** | `result['obj']` | ~~`result['result']`~~ |
+
+> **⚠ 关键坑（实测）：** `processDescriptor` 字段传入的必须是**原始 XML 字符串**，**不是 base64**。虽然数据库 `ext_act_process.process_xml` 列最终存的是 base64，但编码是服务器端自动完成的。如果脚本自己先做 `base64.b64encode` 再传，服务器会再编码一次形成双重 base64，`saveProcess` 仍返回 success，但后续 `deployProcess` 解析失败报：
+> ```
+> javax.xml.stream.XMLStreamException: ParseError at [row,col]:[1,1]
+> Message: 前言中不允许有内容。
+> ```
+> 同理，从 `queryById` 取出的 `processXml` 是 base64，必须先 `base64.b64decode` 得到原始 XML，修改后再以**原始 XML** 形式传回 `saveProcess`。
 
 **saveProcess 请求参数完整列表：**
 ```python
@@ -2988,6 +3025,50 @@ deploy_process(api_base, token, process_id)
 ## 编辑已有流程
 
 在 JSON 配置中传入 `"processId": "已有流程ID"` 即可更新流程。
+
+### 查询已有流程 XML
+
+**API：** `GET /act/process/extActProcess/queryById?id={processId}`
+
+返回 `result.processXml` 字段是 **base64 编码**的，必须先解码才能得到原始 XML：
+
+```python
+import base64, json, urllib.request
+req = urllib.request.Request(
+    f'{api_base}/act/process/extActProcess/queryById?id={process_id}',
+    headers={'X-Access-Token': token, 'X-Sign': '0'*32, 'X-Tenant-Id': '1'},
+)
+result = json.loads(urllib.request.urlopen(req).read().decode('utf-8'))['result']
+xml_str = base64.b64decode(result['processXml']).decode('utf-8')  # 原始 XML
+# ... 修改 xml_str ...
+# 回写时传原始 xml_str，不要再 base64.b64encode（服务器自动做）
+```
+
+### 调整已有流程布局（x 坐标平移）
+
+**场景：** 流程在设计器中显示异常（节点被工具栏遮住、节点 x 坐标为负、或想整体平移避开面板）。
+
+**步骤：**
+1. `queryById` 取出 base64 后 decode 得到原始 XML
+2. 只对 `<bpmndi:BPMNDiagram>` 区段内的 `x="N"` 做替换（避免误改表达式中的数字）
+3. `saveProcess` 传回**原始 XML**（不是 base64）
+4. `deployProcess` 重新发布
+
+```python
+import re, base64
+# 定位到布局区段，只改这部分
+di_start = xml_str.index('<bpmndi:BPMNDiagram')
+head = xml_str[:di_start]
+diag = xml_str[di_start:]
+# 整体右移 +120px
+diag = re.sub(r'x="(-?\d+)"', lambda m: f'x="{int(m.group(1)) + 120}"', diag)
+new_xml = head + diag
+
+# saveProcess 参数与 bpmn_creator.py 一致，processDescriptor 传 new_xml（原始 XML）
+# 注意：防止多次运行导致重复平移，应先检查最小 x 值，若已 >= 安全阈值则跳过
+```
+
+> **防重复平移：** 脚本应记录"已平移"状态或检查当前最小 x（`min_x = min(int(m.group(1)) for m in re.finditer(r'x="(-?\d+)"', diag))`），如果 `min_x >= 50` 则跳过，避免重复运行导致节点越跑越远。
 
 ---
 

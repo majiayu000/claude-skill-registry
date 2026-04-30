@@ -1,11 +1,37 @@
 ---
 name: nuxt-content
-description: Nuxt Content v3 Git-based CMS for Markdown/MDC content sites. Use for blogs, docs, content-driven apps with type-safe queries, schema validation (Zod/Valibot), full-text search, navigation utilities. Supports Nuxt Studio production editing, Cloudflare D1/Pages deployment, Vercel deployment, SQL storage, MDC components, content collections.
+description: "Nuxt Content v3 Git-based CMS for Markdown/MDC content sites. Use for blogs, docs, content-driven apps with type-safe queries, schema validation (Zod/Valibot), full-text search, navigation utilities. Supports Nuxt Studio production editing, Cloudflare D1/Pages deployment, Vercel deployment, SQL storage, MDC components, content collections."
 
-  Keywords: nuxt content, @nuxt/content, content collections, git-based cms, markdown cms, mdc syntax, nuxt studio, content editing, queryCollection, cloudflare d1 deployment, vercel deployment, markdown components, prose components, content navigation, full-text search, type-safe queries, sql storage, content schema validation, zod validation, valibot, remote repositories, content queries, queryCollectionNavigation, queryCollectionSearchSections, ContentRenderer component
+metadata:
+  keywords:
+    - nuxt content
+    - "@nuxt/content"
+    - content collections
+    - git-based cms
+    - markdown cms
+    - mdc syntax
+    - nuxt studio
+    - content editing
+    - queryCollection
+    - cloudflare d1 deployment
+    - vercel deployment
+    - markdown components
+    - prose components
+    - content navigation
+    - full-text search
+    - type-safe queries
+    - sql storage
+    - content schema validation
+    - zod validation
+    - valibot
+    - remote repositories
+    - content queries
+    - queryCollectionNavigation
+    - queryCollectionSearchSections
+    - ContentRenderer component
+
 license: MIT
 ---
-
 # Nuxt Content v3
 
 **Status**: Production Ready

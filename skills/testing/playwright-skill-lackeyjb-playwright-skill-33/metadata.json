@@ -1,0 +1,24 @@
+{
+  "name": "playwright-skill",
+  "description": "Browser automation with Playwright - Claude writes and executes custom scripts",
+  "repo": "lackeyjb/playwright-skill",
+  "path": "skills/playwright-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "tags": [
+    "playwright",
+    "browser",
+    "automation",
+    "testing"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "playwright-skill-lackeyjb-playwright-skill-33",
+  "author": "lackeyjb",
+  "source_url": "https://github.com/lackeyjb/playwright-skill/blob/main/skills/playwright-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lackeyjb/playwright-skill/blob/main/skills/playwright-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

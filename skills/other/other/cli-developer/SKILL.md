@@ -111,3 +111,5 @@ When implementing CLI features, provide:
 ## Knowledge Reference
 
 CLI frameworks (commander, yargs, oclif, click, typer, argparse, cobra, viper), terminal UI (chalk, inquirer, rich, bubbletea), testing (snapshot testing, E2E), distribution (npm, pip, homebrew, releases), performance optimization
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/devops/cli-developer/)

@@ -7,10 +7,10 @@ allowed-tools: ["Read", "Write", "Edit", "Bash", "Glob", "Grep"]
 
 # Nuxt UI v4 - Production Component Library
 
-**Version**: Nuxt UI v4.2.1 | Nuxt v4.0.0 | **125+ Components**
-**Last Verified**: 2025-12-28
+**Version**: Nuxt UI v4.6+ | Nuxt v4.0.0 | **125+ Components**
+**Last Verified**: 2026-03-30
 
-A comprehensive production-ready component library with 125+ accessible components, Tailwind CSS v4, Reka UI accessibility, and first-class AI integration.
+A comprehensive production-ready component library with 125+ accessible components, Tailwind CSS v4, Reka UI accessibility, and first-class AI integration. Works with Nuxt and plain Vue apps (Vite, Inertia, SSR).
 
 **MCP Integration**: This plugin includes the official Nuxt UI MCP server for live component data.
 
@@ -20,7 +20,7 @@ A comprehensive production-ready component library with 125+ accessible componen
 
 **Use when**: Building Nuxt v4 dashboards, AI chat interfaces, landing pages, forms, admin panels, pricing pages, blogs, documentation sites, or any UI with Nuxt UI components
 
-**DON'T use**: Vue-only projects (no Nuxt), React projects, Nuxt 3 or earlier, Tailwind CSS v3
+**DON'T use**: React projects, Nuxt 3 or earlier, Tailwind CSS v3. Vue-only projects ARE supported via Vite plugin.
 
 ---
 
@@ -28,21 +28,39 @@ A comprehensive production-ready component library with 125+ accessible componen
 
 ```bash
 bunx nuxi init my-app && cd my-app
-bun add @nuxt/ui
+bun add @nuxt/ui tailwindcss
 ```
 
 ```typescript
 // nuxt.config.ts
-export default defineNuxtConfig({ modules: ['@nuxt/ui'] })
+export default defineNuxtConfig({
+  modules: ['@nuxt/ui'],
+  css: ['~/assets/css/main.css']
+})
+```
+
+```css
+/* assets/css/main.css */
+@import "tailwindcss";
+@import "@nuxt/ui";
 ```
 
 ```vue
 <!-- app.vue -->
 <template><UApp><NuxtPage /></UApp></template>
-<style>
-@import "tailwindcss";
-@import "@nuxt/ui";
-</style>
+```
+
+**Or use a template**:
+```bash
+npm create nuxt@latest -- -t ui             # Starter
+npm create nuxt@latest -- -t ui/dashboard    # Dashboard
+npm create nuxt@latest -- -t ui/chat         # AI Chat
+npm create nuxt@latest -- -t ui/landing      # Landing page
+npm create nuxt@latest -- -t ui/saas         # SaaS
+npm create nuxt@latest -- -t ui/docs         # Documentation
+npm create nuxt@latest -- -t ui/portfolio    # Portfolio
+npm create nuxt@latest -- -t ui/changelog    # Changelog
+npm create nuxt@latest -- -t ui/editor       # Rich text editor
 ```
 
 **Commands available**: `/nuxt-ui-v4:setup`, `/nuxt-ui:migrate`, `/nuxt-ui:theme`, `/nuxt-ui:component`
@@ -51,7 +69,7 @@ export default defineNuxtConfig({ modules: ['@nuxt/ui'] })
 
 ## Component Categories (125+ Total)
 
-### Dashboard (11 components) - NEW
+### Dashboard (10 components) - NEW
 Complete admin interface system:
 - **DashboardGroup** - Fixed layout wrapper with sidebar state management
 - **DashboardSidebar** - Resizable, collapsible sidebar
@@ -82,31 +100,54 @@ Complete admin interface system:
 
 ---
 
-### Chat / AI (5 components) - NEW
+### Chat / AI (8 components)
 Purpose-built for AI chatbots with AI SDK v5:
 - **ChatMessage** - Single message with icon, avatar, actions
 - **ChatMessages** - Message list with auto-scroll, status indicator
 - **ChatPalette** - Chat interface inside an overlay
 - **ChatPrompt** - Enhanced Textarea for AI prompts
 - **ChatPromptSubmit** - Submit button with status handling
+- **ChatReasoning** - Collapsible AI reasoning/thinking process (NEW v4.6)
+- **ChatTool** - Collapsible AI tool invocation status (NEW v4.6)
+- **ChatShimmer** - Text shimmer animation for streaming states (NEW v4.6)
 
 ```vue
-<script setup>
+<script setup lang="ts">
+import { isReasoningUIPart, isTextUIPart, isToolUIPart, getToolName } from 'ai'
 import { Chat } from '@ai-sdk/vue'
-const chat = new Chat({ api: '/api/chat' })
+import { isReasoningStreaming, isToolStreaming } from '@nuxt/ui/utils/ai'
+
+const input = ref('')
+const chat = new Chat({
+  onError(error) { console.error(error) }
+})
+
+function onSubmit() {
+  chat.sendMessage({ text: input.value })
+  input.value = ''
+}
 </script>
 
 <template>
   <UChatMessages :messages="chat.messages" :status="chat.status">
-    <template #content="{ message }">{{ message.content }}</template>
+    <template #content="{ message }">
+      <template v-for="(part, index) in message.parts" :key="`${message.id}-${part.type}-${index}`">
+        <UChatReasoning v-if="isReasoningUIPart(part)" :text="part.text" :streaming="isReasoningStreaming(message, index, chat)" />
+        <UChatTool v-else-if="isToolUIPart(part)" :text="getToolName(part)" :streaming="isToolStreaming(part)" />
+        <template v-else-if="isTextUIPart(part)">
+          <MDC v-if="message.role === 'assistant'" :value="part.text" :cache-key="`${message.id}-${index}`" />
+          <p v-else-if="message.role === 'user'" class="whitespace-pre-wrap">{{ part.text }}</p>
+        </template>
+      </template>
+    </template>
   </UChatMessages>
-  <UChatPrompt v-model="input" @submit="chat.sendMessage({ text: input })">
-    <UChatPromptSubmit :status="chat.status" />
+  <UChatPrompt v-model="input" @submit="onSubmit">
+    <UChatPromptSubmit :status="chat.status" @stop="chat.stop()" @reload="chat.regenerate()" />
   </UChatPrompt>
 </template>
 ```
 
-**Details**: Load `references/chat-components.md` for AI SDK integration, streaming, error handling
+**Details**: Load `references/chat-components.md` for full AI SDK integration, streaming, reasoning, tool calling
 
 ---
 
@@ -216,8 +257,8 @@ SaaS pricing pages:
 
 ---
 
-### Forms (20 components)
-Input, InputDate, InputTime, InputNumber, InputTags, InputMenu, Select, SelectMenu, Textarea, Checkbox, CheckboxGroup, RadioGroup, Switch, Slider, Calendar, ColorPicker, PinInput, Form, FormField, FileUpload, AuthForm
+### Forms (22 components)
+Input, InputDate, InputTime, InputNumber, InputTags, InputMenu, Select, SelectMenu, Textarea, Checkbox, CheckboxGroup, RadioGroup, Switch, Slider, Calendar, ColorPicker, PinInput, Form, FormField, FileUpload, FieldGroup, AuthForm
 
 ```vue
 <UForm :state="state" :schema="schema" @submit="onSubmit">
@@ -292,7 +333,7 @@ ColorModeAvatar, ColorModeButton, ColorModeImage, ColorModeSelect, ColorModeSwit
 
 ## Composables
 
-**Core**: `useToast`, `useOverlay`, `useColorMode`, `useFormField`
+**Core**: `useToast`, `useOverlay`, `useFormField`, `useScrollShadow`
 **Utilities**: `defineShortcuts`, `defineLocale`, `extendLocale`, `extractShortcuts`
 
 ```typescript
@@ -302,7 +343,7 @@ add({ title: 'Success', color: 'success' })
 defineShortcuts({ 'meta_k': () => openSearch() })
 ```
 
-**Details**: Load `references/composables-guide.md`
+**AI Utilities**: `isReasoningStreaming`, `isToolStreaming`, `getTextFromMessage` (from `@nuxt/ui/utils/ai`)
 
 ---
 
@@ -310,9 +351,9 @@ defineShortcuts({ 'meta_k': () => openSearch() })
 
 **1. Missing UApp Wrapper** → Wrap app with `<UApp>`
 **2. CSS Import Order** → `@import "tailwindcss"` FIRST, then `@import "@nuxt/ui"`
-**3. Template Refs (v4.2+)** → Use `ref.value?.focus()` not `ref.value.$el.focus()`
+**3. Missing tailwindcss package** → `bun add @nuxt/ui tailwindcss` (both required)
 **4. Module Not Found** → Add `'@nuxt/ui'` to `modules` in nuxt.config.ts
-**5. Dark Mode Not Working** → Set `ui: { colorMode: true }` in nuxt.config.ts
+**5. useChat not found** → AI SDK v5 uses `new Chat()` class, not `useChat()` composable
 
 **Full list**: Load `references/COMMON_ERRORS_DETAILED.md` for 25+ error solutions
 
@@ -322,10 +363,12 @@ defineShortcuts({ 'meta_k': () => openSearch() })
 
 **Dashboard/Admin**: `dashboard-components.md`
 **AI Chat**: `chat-components.md`, `ai-sdk-v5-integration.md`
+**Chat Sub-components**: `chat-reasoning.md`, `chat-tool.md`, `chat-shimmer.md`
 **Rich Text**: `editor-components.md`
 **Landing Pages**: `page-layout-components.md`
 **Pricing/SaaS**: `pricing-components.md`
 **Blog/Docs**: `content-components.md`
+**Auth/Login**: `auth-form.md`
 **Forms**: `form-components-reference.md`, `form-validation-patterns.md`
 **Theming**: `semantic-color-system.md`, `component-theming-guide.md`
 **Troubleshooting**: `COMMON_ERRORS_DETAILED.md`

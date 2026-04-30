@@ -103,3 +103,5 @@ When implementing features, provide:
 2. Backend code (models, schemas, endpoints)
 3. Frontend code (components, hooks, API calls)
 4. Brief security notes
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/security/fullstack-guardian/)

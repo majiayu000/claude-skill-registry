@@ -2,7 +2,7 @@
 name: icp-website-review
 description: >
   Evaluate a website, landing page, content, or any online asset through the eyes of
-  pre-built synthetic ICP personas. Loads personas from icp-persona-builder output,
+  pre-built synthetic ICP personas. Loads personas from buyer-persona-generator output,
   then runs them against target URLs. Supports three modes: structured scorecard,
   freeform focus group, and head-to-head competitive comparison. Reusable — run
   against the same site after changes, or against new content anytime.
@@ -11,11 +11,11 @@ tags: [research]
 
 # ICP Website Review
 
-Evaluate any online asset through the eyes of pre-built synthetic ICP personas. This is the evaluation engine — it loads personas created by `icp-persona-builder` and runs them against whatever you point it at.
+Evaluate any online asset through the eyes of pre-built synthetic ICP personas. This is the evaluation engine — it loads personas created by `buyer-persona-generator` and runs them against whatever you point it at.
 
 ## Prerequisites
 
-Personas must exist at `clients/<client>/personas/personas.json`. If they don't, run `icp-persona-builder` first.
+Personas must exist at `clients/<client>/personas/personas.json`. If they don't, run `buyer-persona-generator` first.
 
 ## Quick Start
 
@@ -463,7 +463,7 @@ The dated output path (`icp-reviews/<date>-<mode>.md`) makes it easy to see the 
 
 ## Dependencies
 
-- Pre-built personas (`icp-persona-builder` output)
+- Pre-built personas (`buyer-persona-generator` output)
 - Web search capability (for external presence checks, competitor research)
 - Web fetch capability (for reading website pages)
 - No API keys or paid tools required

@@ -33,6 +33,20 @@ When unsure about a DDEV feature, `WebFetch` the relevant docs page.
 - Editing `.ddev/config.yaml` while containers are running without restarting — changes to config require `ddev restart` to take effect.
 - Using `ddev import-db` without `--target-db=db` on multi-database setups — the default target is `db`, but if you've configured additional databases, be explicit.
 - Adding `#ddev-generated` to custom commands you've customized — DDEV overwrites files with this comment during updates. Only use it for add-on-managed commands. Custom commands you maintain should omit it.
+- Running `composer install` on the host then `ddev composer check-cs`/`ddev composer phpstan` — if the host PHP version differs from DDEV's (e.g., host PHP 8.4, DDEV PHP 8.3), `vendor/composer/platform_check.php` fails. Always run `ddev composer install` so `vendor/` matches the container's PHP version.
+
+## Craft CLI First, Raw SQL Last
+
+Always prefer Craft CLI commands over raw database queries:
+
+```bash
+ddev craft users/list-admins         # not: ddev mysql -e "SELECT * FROM users WHERE admin=1"
+ddev craft project-config/get system # not: reading project.yaml manually
+ddev craft resave/entries            # not: UPDATE queries on content tables
+ddev craft elements/delete           # not: DELETE FROM elements
+```
+
+Only fall back to `ddev mysql` when no CLI equivalent exists (e.g., checking table schemas, debugging specific rows, `TRUNCATE cache` for stuck mutex locks). Craft CLI commands handle project config, search index updates, and event firing that raw SQL skips.
 
 ## Shorthand Commands
 
@@ -117,6 +131,90 @@ cd /var/www/html && composer check-cs
 ```
 
 Note: omit `#ddev-generated` on custom commands you maintain — DDEV overwrites files with that comment during updates. Only add-on-managed commands should include it.
+
+## Composer Path Repos and Volume Mounts
+
+When developing plugins locally, Composer path repos symlink the plugin into `vendor/`. For this to work inside DDEV's Docker container, the host path must be volume-mounted so the symlink resolves.
+
+### Setup
+
+1. **composer.json** — use the local host path:
+
+```json
+{
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/Users/Shared/dev/craft-plugins/v5/*"
+        }
+    ]
+}
+```
+
+2. **docker-compose override** — mount the same path into the container. Create `.ddev/docker-compose.mounts.yaml`:
+
+```yaml
+services:
+  web:
+    volumes:
+      - /Users/Shared/dev/craft-plugins:/Users/Shared/dev/craft-plugins
+```
+
+The mount path inside the container must match the host path exactly — Composer creates absolute symlinks that must resolve in both contexts. Replace `/Users/Shared/dev/craft-plugins` with your actual plugin directory path.
+
+3. **Require the plugin**: `ddev composer require vendor/plugin-handle:@dev`
+
+### Common mistakes
+
+- Using a Docker-internal path in `composer.json` `url` — the path must be the host filesystem path, not `/var/www/...`
+- Forgetting the volume mount — `ddev composer install` succeeds but the symlink points nowhere inside the container
+- Setting `"platform": {"php": "8.3"}` in `composer.json` `config` — don't. DDEV handles the PHP version via `.ddev/config.yaml`. Platform overrides cause dependency resolution mismatches between host and container, and prevent DDEV from managing version upgrades cleanly.
+
+## Browser Debugging with Chrome DevTools MCP
+
+The Chrome DevTools MCP server gives Claude Code direct browser access — inspect pages, read console logs, check network requests, capture screenshots, and interact with the DOM.
+
+### Installation
+
+```bash
+claude mcp add chrome-devtools -- npx @anthropic-ai/chrome-devtools-mcp@latest
+```
+
+Quit and reopen Claude Code to load the new MCP server. Requires Chrome or Chromium running — the MCP server handles the DevTools Protocol connection automatically.
+
+### What it enables
+
+| Capability | Use Case |
+|-----------|----------|
+| **Page inspection** | Check rendered HTML, verify template output, inspect meta tags |
+| **Console logs** | Catch Twig errors, JS exceptions, Garnish initialization failures |
+| **Network requests** | Debug 404 assets, failed AJAX calls, Sprig/htmx swaps |
+| **DOM queries** | Verify form markup, check field rendering, validate ARIA attributes |
+| **Screenshots** | Visual verification of CP templates, responsive testing |
+| **Navigation & login** | Authenticate into the CP, navigate to plugin settings/edit pages |
+
+### When to use
+
+- **Front-end template debugging** — 404s, missing assets, broken layouts, SEOmatic meta tag verification
+- **CP template verification** — plugin settings pages render correctly, editable tables work, slideout editors load
+- **Garnish/JS debugging** — modals, drag-sort, disclosure menus initialize without console errors
+- **Sprig/htmx debugging** — watch network requests for htmx swaps, verify response HTML fragments
+- **Auth flow testing** — walk through login, registration, password reset end-to-end
+- **Read-only mode verification** — confirm settings pages display correctly with `allowAdminChanges` off
+- **Visual regression** — screenshot before/after template changes
+
+### CP authentication pattern
+
+DDEV sites are accessible at `https://{project}.ddev.site`. To inspect CP pages:
+
+1. Navigate to `https://{project}.ddev.site/{cpTrigger}`
+2. Log in with admin credentials
+3. Navigate to the plugin/settings page to inspect
+4. Check console for JS errors, inspect DOM for correct markup
+
+### Project setup
+
+The `craft-project-setup` skill offers to install Chrome DevTools MCP during scaffolding. If installed later, run `claude mcp add chrome-devtools -- npx @anthropic-ai/chrome-devtools-mcp@latest` from the project root — this writes to the project's `.claude.json`, keeping it project-level.
 
 ## Troubleshooting
 

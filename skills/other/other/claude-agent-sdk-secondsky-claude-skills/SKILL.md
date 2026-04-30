@@ -1,11 +1,29 @@
 ---
 name: claude-agent-sdk
-description: Anthropic Claude Agent SDK for autonomous agents and multi-step workflows. Use for subagents, tool orchestration, MCP servers, or encountering CLI not found, context length exceeded errors.
+description: "Anthropic Claude Agent SDK for autonomous agents and multi-step workflows. Use for subagents, tool orchestration, MCP servers, or encountering CLI not found, context length exceeded errors."
 
-  Keywords: claude agent sdk, @anthropic-ai/claude-agent-sdk, query(), createSdkMcpServer, AgentDefinition, tool(), claude subagents, mcp servers, autonomous agents, agentic loops, session management, permissionMode, canUseTool, multi-agent orchestration, settingSources, CLI not found, context length exceeded
+metadata:
+  keywords:
+    - claude agent sdk
+    - "@anthropic-ai/claude-agent-sdk"
+    - query()
+    - createSdkMcpServer
+    - AgentDefinition
+    - tool()
+    - claude subagents
+    - mcp servers
+    - autonomous agents
+    - agentic loops
+    - session management
+    - permissionMode
+    - canUseTool
+    - multi-agent orchestration
+    - settingSources
+    - CLI not found
+    - context length exceeded
+
 license: MIT
 ---
-
 # Claude Agent SDK
 
 **Status**: Production Ready

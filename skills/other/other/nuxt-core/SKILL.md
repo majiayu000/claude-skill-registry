@@ -1,17 +1,6 @@
 ---
 name: nuxt-core
-description: |
-  Nuxt 4 core framework fundamentals: project setup, configuration, routing,
-  SEO, error handling, and directory structure.
-
-  Use when: creating new Nuxt 4 projects, configuring nuxt.config.ts,
-  setting up routing and middleware, implementing SEO with useHead/useSeoMeta,
-  handling errors with error.vue and NuxtErrorBoundary, or understanding
-  Nuxt 4 directory structure.
-
-  Keywords: Nuxt 4, nuxt.config.ts, file-based routing, pages directory,
-  definePageMeta, useHead, useSeoMeta, error.vue, NuxtErrorBoundary,
-  middleware, navigateTo, NuxtLink, app directory, runtime config
+description: "| Nuxt 4 core framework fundamentals: project setup, configuration, routing, SEO, error handling, and directory structure. Use when: creating new Nuxt 4 projects, configuring nuxt.config.ts, setting up routing and middleware, implementing SEO with useHead/useSeoMeta, handling errors with error.vue and NuxtErrorBoundary, or understanding Nuxt 4 directory structure."
 license: MIT
 metadata:
   version: 4.0.0
@@ -20,8 +9,22 @@ metadata:
   framework: Nuxt
   framework-version: 4.x
   last-verified: 2025-12-28
+  keywords:
+    - Nuxt 4
+    - nuxt.config.ts
+    - file-based routing
+    - pages directory
+    - definePageMeta
+    - useHead
+    - useSeoMeta
+    - error.vue
+    - NuxtErrorBoundary
+    - middleware
+    - navigateTo
+    - NuxtLink
+    - app directory
+    - runtime config
 ---
-
 # Nuxt 4 Core Fundamentals
 
 Project setup, configuration, routing, SEO, and error handling for Nuxt 4 applications.

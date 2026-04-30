@@ -141,3 +141,5 @@ terraform {
 ## Output Format
 
 When implementing Terraform solutions, provide: module structure (`main.tf`, `variables.tf`, `outputs.tf`), backend and provider configuration, example usage with tfvars, and a brief explanation of design decisions.
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/infrastructure/terraform-engineer/)

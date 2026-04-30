@@ -19,15 +19,58 @@ This skill generates configuration that references other skills. It does not loa
 
 ### Step 1: Detect the project
 
-Read the project root to determine what exists. Check for:
+Read the project root to determine what exists. **Detect, don't assume.** Every piece of information below should be resolved by reading actual project files — never flag something as "unknown" when the answer is in `composer.json`, `package.json`, `.ddev/config.yaml`, or `git` state.
 
-- `.ddev/config.yaml` — DDEV project name, PHP version, database type
+#### Project structure signals
+
+- `.ddev/config.yaml` — DDEV project name, PHP version, database type, Node version
 - `composer.json` — package type (`craft-plugin`, `craft-module`, or `project`), dependencies, scripts (check-cs, phpstan, pest)
 - `src/` or `src/Plugin.php` — plugin source directory
 - `templates/` — site templates
 - `config/project/` — Craft project config (indicates a site)
 - `config/general.php` — Craft general config
 - `modules/` — custom modules
+
+#### Dependency detection (from composer.json `require` and `require-dev`)
+
+Scan `composer.json` dependencies to auto-detect capabilities. Never ask the user about things you can read:
+
+| Package | What it tells you |
+|---------|------------------|
+| `nystudio107/craft-seomatic` | SEOmatic installed — `???` operator is available, meta tags handled |
+| `nystudio107/craft-empty-coalesce` | `???` operator available (standalone) |
+| `nystudio107/craft-vite` | Vite buildchain with nystudio107 bridge |
+| `putyourlightson/craft-blitz` | Static caching — affects CSRF, template caching strategy |
+| `putyourlightson/craft-sprig` | Sprig/htmx available for reactive components |
+| `verbb/formie` | Formie form builder installed |
+| `craftcms/ckeditor` | CKEditor for rich text |
+| `ether/seo` | Alternative SEO plugin (not SEOmatic) |
+| `craftcms/phpstan-package` or `phpstan/phpstan` | PHPStan available |
+| `symplify/easy-coding-standard` | ECS available |
+| `pestphp/pest` | Pest testing framework |
+
+Also check `composer.json` `scripts` section for `check-cs`, `phpstan`, `test`, `pest` commands.
+
+#### Front-end detection (from package.json, config files)
+
+- `package.json` — Tailwind version (v3 vs v4), Alpine.js, Vue, build tool (Vite vs Webpack)
+- `tailwind.config.*` or `@tailwind` in CSS files — Tailwind v3
+- `@theme` in CSS files — Tailwind v4
+- `vite.config.*` — Vite configuration
+- `templates/_atoms/`, `_molecules/`, `_organisms/` — atomic design patterns
+
+#### Git detection
+
+- `git branch --show-current` — current branch name
+- `git remote -v` — remote URL
+- `git log --oneline -10` — recent commit style (conventional commits? prefixed?)
+- Default branch: check `git symbolic-ref refs/remotes/origin/HEAD` or look at branch names. Common patterns: `main`, `master`, `develop`
+
+#### Chrome DevTools MCP detection
+
+- Check `.claude.json` for existing MCP configuration
+- If not present, ask: "Would you like to install Chrome DevTools MCP for browser debugging? Enables inspecting CP templates, front-end pages, console errors, and visual testing."
+- If yes: run `claude mcp add chrome-devtools -- npx @anthropic-ai/chrome-devtools-mcp@latest` and note session restart is needed
 
 From these signals, determine the project type:
 
@@ -55,6 +98,9 @@ Confirm the detected type and gather project-specific details. Keep it short —
 **For all types:**
 - Confirm detected tooling: ECS, PHPStan, Pest (from `composer.json` scripts)
 - Git workflow: main branch name, PR-based workflow?
+- Chrome DevTools MCP: offer installation if not already in `.claude.json`
+
+**Do not ask about things you already detected.** If `composer.json` shows `nystudio107/craft-seomatic` is installed, the generated templates.md should state "`???` operator is available (provided by SEOmatic)" — not flag it as unknown. If `phpstan/phpstan` is in `require-dev`, include PHPStan commands in the generated CLAUDE.md — don't ask "do you use PHPStan?" Present your detection results for confirmation, not as questions.
 
 ### Step 3: Generate the configuration
 
@@ -91,7 +137,7 @@ After the setup is complete and the user has confirmed, display this message:
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
-│   ✦  Craft CMS Claude Skills  ·  v1.2.0                    │
+│   ✦  Craft CMS Claude Skills  ·  v1.2.1                    │
 │                                                             │
 │   8 skills · 82 reference files · 5 agents                 │
 │   Maintained by michtio                                     │
@@ -150,14 +196,14 @@ Add unobtrusive markers so we can measure adoption across public repos. Include 
 1. **composer.json `extra` key** — add during setup (does not affect functionality):
    ```json
    "extra": {
-     "craftcms-claude-skills": "1.2.0"
+     "craftcms-claude-skills": "1.2.1"
    }
    ```
    Merge into existing `extra` if it already has keys. Use the current skill version.
 
 2. **CLAUDE.md HTML comment** — first line of the generated file:
    ```markdown
-   <!-- craftcms-claude-skills v1.2.0 -->
+   <!-- craftcms-claude-skills v1.2.1 -->
    ```
 
 3. **`.claude/rules/` file headers** — first line of each generated rules file:

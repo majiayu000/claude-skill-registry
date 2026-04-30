@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5338,
-  "updated_at": "2026-04-29T02:39:05.263438Z",
+  "count": 5339,
+  "updated_at": "2026-04-30T02:35:26.487588Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -20634,6 +20634,24 @@
       "stars": 0,
       "install": "daishiman/AIWorkflowOrchestrator/docs/99-claude/skills/github-actions-security",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "istio-traffic-management",

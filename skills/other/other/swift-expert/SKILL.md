@@ -161,3 +161,5 @@ When implementing Swift features, provide:
 3. View implementations (SwiftUI) or view controllers
 4. Tests demonstrating usage
 5. Brief explanation of architectural decisions
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/language/swift-expert/)

@@ -239,3 +239,5 @@ When implementing Kubernetes resources, provide:
 2. RBAC configuration if needed (ServiceAccount, Role, RoleBinding)
 3. NetworkPolicy for network isolation
 4. Brief explanation of design decisions and security considerations
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/infrastructure/kubernetes-specialist/)

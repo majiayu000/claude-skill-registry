@@ -117,3 +117,5 @@ Code review report must include:
 ## Knowledge Reference
 
 SOLID, DRY, KISS, YAGNI, design patterns, OWASP Top 10, language idioms, testing patterns
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/quality/code-reviewer/)

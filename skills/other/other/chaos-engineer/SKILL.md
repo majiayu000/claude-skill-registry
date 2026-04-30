@@ -180,3 +180,5 @@ chaos:
 # Apply and trigger a manual kill for testing
 chaos-monkey --app my-service --account staging --dry-run false
 ```
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/devops/chaos-engineer/)

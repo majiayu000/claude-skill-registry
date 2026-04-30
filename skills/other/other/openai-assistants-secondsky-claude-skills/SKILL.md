@@ -1,10 +1,6 @@
 ---
 name: openai-assistants
-description: OpenAI Assistants API v2 for stateful chatbots with Code Interpreter, File Search, RAG. Use for threads, vector stores, or encountering active run errors, indexing delays. ⚠️ Sunset August 26, 2026.
-
-  Keywords: openai assistants, assistants api, openai threads, openai runs, code interpreter assistant,
-  file search openai, vector store openai, openai rag, assistant streaming, thread persistence,
-  stateful chatbot, thread already has active run, run status polling, vector store error
+description: "OpenAI Assistants API v2 for stateful chatbots with Code Interpreter, File Search, RAG. Use for threads, vector stores, or encountering active run errors, indexing delays. ⚠️ Sunset August 26, 2026."
 license: MIT
 metadata:
   version: "2.0.0"
@@ -18,8 +14,22 @@ metadata:
   errors_prevented: 15
   templates_included: 8
   references_included: 8
+  keywords:
+    - openai assistants
+    - assistants api
+    - openai threads
+    - openai runs
+    - code interpreter assistant
+    - file search openai
+    - vector store openai
+    - openai rag
+    - assistant streaming
+    - thread persistence
+    - stateful chatbot
+    - thread already has active run
+    - run status polling
+    - vector store error
 ---
-
 # OpenAI Assistants API v2
 
 **Status**: Production Ready (Deprecated H1 2026) | **Package**: openai@6.9.1

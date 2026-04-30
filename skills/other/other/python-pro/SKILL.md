@@ -175,3 +175,5 @@ When implementing Python features, provide:
 ## Knowledge Reference
 
 Python 3.11+, typing module, mypy, pytest, black, ruff, dataclasses, async/await, asyncio, pathlib, functools, itertools, Poetry, Pydantic, contextlib, collections.abc, Protocol
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/language/python-pro/)

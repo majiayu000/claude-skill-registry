@@ -1,15 +1,36 @@
 ---
 name: google-gemini-api
-description: Google Gemini API with @google/genai SDK. Use for multimodal AI, thinking mode, function calling, or encountering SDK deprecation warnings, context errors, multimodal format errors.
+description: "Google Gemini API with @google/genai SDK. Use for multimodal AI, thinking mode, function calling, or encountering SDK deprecation warnings, context errors, multimodal format errors."
 
-  Keywords: gemini api, @google/genai, gemini-2.5-pro, gemini-2.5-flash, gemini-2.5-flash-lite,
-  multimodal gemini, thinking mode, google ai, genai sdk, function calling gemini, streaming gemini,
-  gemini vision, gemini video, gemini audio, gemini pdf, system instructions, multi-turn chat,
-  deprecated @google/generative-ai, gemini context window, gemini models 2025, gemini 1m tokens,
-  gemini tool use, parallel function calling, compositional function calling
+metadata:
+  keywords:
+    - gemini api
+    - "@google/genai"
+    - gemini-2.5-pro
+    - gemini-2.5-flash
+    - gemini-2.5-flash-lite
+    - multimodal gemini
+    - thinking mode
+    - google ai
+    - genai sdk
+    - function calling gemini
+    - streaming gemini
+    - gemini vision
+    - gemini video
+    - gemini audio
+    - gemini pdf
+    - system instructions
+    - multi-turn chat
+    - deprecated @google/generative-ai
+    - gemini context window
+    - gemini models 2025
+    - gemini 1m tokens
+    - gemini tool use
+    - parallel function calling
+    - compositional function calling
+
 license: MIT
 ---
-
 # Google Gemini API - Complete Guide
 
 **Package**: @google/genai@1.27.0 (⚠️ NOT @google/generative-ai)

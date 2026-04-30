@@ -19,7 +19,6 @@ date_added: "2026-04-03"
 Use this skill when you need to detect AI-like Chinese writing, rewrite it to feel less synthetic, reduce AIGC signals in academic prose, or convert the text into a more specific Chinese writing style.
 
 ## When to Use
-
 - Use when the user says `去AI味`, `降AIGC`, `去除AI痕迹`, `让文字更自然`, `改成人话`, or `降低AI率`
 - Use when the user wants a Chinese text checked for AI-writing patterns or suspicious phrasing
 - Use when the user wants academic-paper-specific AIGC reduction for CNKI, VIP, or Wanfang-style checks
@@ -144,3 +143,8 @@ When switching style, keep the user's meaning stable and change only tone, struc
 ## Source
 
 Adapted from the `voidborne-d/humanize-chinese` project and its CLI/script workflow for Chinese AI-text detection and rewriting.
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

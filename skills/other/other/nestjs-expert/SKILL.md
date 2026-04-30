@@ -204,3 +204,5 @@ When implementing a NestJS feature, provide in this order:
 ## Knowledge Reference
 
 NestJS, TypeScript, TypeORM, Prisma, Passport, JWT, class-validator, class-transformer, Swagger/OpenAPI, Jest, Supertest, Guards, Interceptors, Pipes, Filters
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/backend/nestjs-expert/)

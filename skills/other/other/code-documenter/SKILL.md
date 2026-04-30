@@ -145,3 +145,5 @@ Depending on the task, provide:
 ## Knowledge Reference
 
 Google/NumPy/Sphinx docstrings, JSDoc, OpenAPI 3.0/3.1, AsyncAPI, gRPC/protobuf, FastAPI, Django, NestJS, Express, GraphQL, Docusaurus, MkDocs, VitePress, Swagger UI, Redoc, Stoplight
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/quality/code-documenter/)

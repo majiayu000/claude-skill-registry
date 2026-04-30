@@ -99,8 +99,6 @@ deepline tools execute apollo_search_people_with_match --payload '{
 }'
 ```
 
-If you specifically want the free preview-only path, `apollo_search_people` is still valid too.
-
 ### Last resort
 
 If all commands fail, tell the user, then invoke `/deepline-gtm`:

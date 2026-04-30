@@ -1,10 +1,6 @@
 ---
 name: cloudflare-kv
-description: Cloudflare Workers KV global key-value storage. Use for namespaces, caching, TTL, or encountering KV_ERROR, 429 rate limits, consistency issues.
-
-  Keywords: kv storage, cloudflare kv, workers kv, kv namespace, kv bindings, kv cache, kv ttl, kv metadata,
-  kv list, kv pagination, cache optimization, edge caching, KV_ERROR, 429 too many requests, kv rate limit,
-  eventually consistent, wrangler kv, kv operations, key value storage
+description: "Cloudflare Workers KV global key-value storage. Use for namespaces, caching, TTL, or encountering KV_ERROR, 429 rate limits, consistency issues."
 license: MIT
 metadata:
   version: "3.0.0"
@@ -14,8 +10,27 @@ metadata:
   errors_prevented: 5
   templates_included: 5
   references_included: 7
+  keywords:
+    - kv storage
+    - cloudflare kv
+    - workers kv
+    - kv namespace
+    - kv bindings
+    - kv cache
+    - kv ttl
+    - kv metadata
+    - kv list
+    - kv pagination
+    - cache optimization
+    - edge caching
+    - KV_ERROR
+    - 429 too many requests
+    - kv rate limit
+    - eventually consistent
+    - wrangler kv
+    - kv operations
+    - key value storage
 ---
-
 # Cloudflare Workers KV
 
 **Status**: Production Ready ✅ | **Last Verified**: 2025-12-27

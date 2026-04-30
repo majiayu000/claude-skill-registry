@@ -1,12 +1,13 @@
 ---
 name: thesys-generative-ui
-description: >
-  Generate, modify, and style React components from natural language using the
-  Thesys SDK. Guides schema-driven UI generation, theme customisation, tool
-  calling integration, and deployment to Vite, Next.js, or Cloudflare Workers.
-  Use when the user says "generate UI", "create a component", "build an
-  interface", "Thesys", "generative UI", or asks to turn a description into a
-  React component.
+description: >-
+  >
+    Generate, modify, and style React components from natural language using the
+    Thesys SDK. Guides schema-driven UI generation, theme customisation, tool
+    calling integration, and deployment to Vite, Next.js, or Cloudflare Workers.
+    Use when the user says "generate UI", "create a component", "build an
+    interface", "Thesys", "generative UI", or asks to turn a description into a
+    React component.
 license: MIT
 ---
 

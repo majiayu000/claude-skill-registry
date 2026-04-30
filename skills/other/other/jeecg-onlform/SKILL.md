@@ -43,8 +43,15 @@ scripts/
 ├── onlform_data.py         # 数据 CRUD（增删改查/树数据/导出CSV）
 └── onlform_menu.py         # 菜单挂载 + 路由缓存 + 角色授权
 
+templates/                  # ⚡ 可直接复用的 JSON 模板（优先读取，不要现场设计）
+└── all_controls_master_sub.json  # 全控件主子表（26种控件，主表+一对多+一对一）
+                                  # ⚠️ 模板内的表名仅为占位符，创建时必须按业务语义自定义表名，不能原样照用
+
 references/
 ├── onlform-field-types.md  # 字段类型/控件/字典/校验/默认值/扩展配置
+├── onlform-widget-types.md       # 控件速查表（fieldShowType 完整清单）
+├── onlform-head-field-types.md   # head 级字段说明（tableType/themeTemplate 等）
+├── onlform-full-widget-template.md # 26种控件配置速查（dictTable/dictField/fieldExtendJson）
 ├── onlform-enhance.md      # JS/Java/SQL增强参考 + 自定义按钮
 ├── onlform-auth.md         # 权限配置（字段/按钮/数据权限 API）
 ├── onlform-data-crud.md    # 数据 CRUD API + 存储格式
@@ -77,7 +84,7 @@ references/
 **Windows 正确示例**：
 ```
 PowerShell: python C:/path/to/onlform_creator.py --api-base http://localhost:8080 --token xxx --config config.json
-PowerShell: python -c "import urllib.request as u, json; r=u.urlopen(...); print(r.read().decode())"
+PowerShell: python -X utf8 -c "import urllib.request as u, json; r=u.urlopen(...); print(r.read().decode())"
 ```
 
 **Windows 错误示例**（会被后台化）：
@@ -88,6 +95,12 @@ Bash: curl -X POST ...                    ← 同上
 ```
 
 > **历史教训**：本 skill 早期版本错误地声称"Python 在所有 shell 下都同步返回"——实测 Windows Bash tool 对 python 也会后台化。曾因此被用户连续吐槽"执行太慢了"。
+
+> **Windows 中文编码规则（`python -c` 必须加 `-X utf8`）**：
+> PowerShell 默认编码为 UTF-16 LE，`python -c "..."` inline 代码中含中文字面量时，shell 传参过程会乱码，导致 `SyntaxError: unterminated string literal`。
+> - **解法**：始终用 `python -X utf8 -c "..."` 而不是 `python -c "..."`
+> - **含中文的复杂逻辑**：写入临时 `.py` 文件再执行，彻底避免 inline 中文
+> - **结果含中文的 print**：在 inline 脚本开头加 `import sys; sys.stdout.reconfigure(encoding='utf-8')`
 
 ### 1. 优先用 skill 自带的 Python 脚本，不要自己另起 HTTP 封装
 
@@ -167,6 +180,8 @@ JeecgBoot 后端的 context path 因部署而异：
 - 提到"主子表/明细/一对多/订单+商品" → **主子表** (主表 tableType=2, 子表 tableType=3)，**默认使用 normal 风格**（不使用 erp），除非用户明确指定
 - 默认 → **单表** (tableType=1)
 
+> **使用全控件模板（all_controls_master_sub.json）时：** 读取模板作为结构参考，但表名（tableName/tableTxt）必须根据用户的业务描述重新命名，不能使用模板中的占位符表名。
+
 > **创建前不要查重表名。** `addAll` 接口本身会校验并返回明确的重复提示，提前查重是多余的网络开销。
 >
 > **遇到重名错误（`数据库表[xxx]已存在`）时的处理规则：**
@@ -201,7 +216,9 @@ JeecgBoot 后端的 context path 因部署而异：
 > 配置 `link_table` 字段时，`dictTable` 只能引用 **Online 管理的业务表**，不能是系统表。
 > 必须先调用 `GET /online/cgform/head/list?tableName={表名}&pageNo=1&pageSize=1` 验证被关联表是否存在。
 > - 若不存在 → 先创建该 Online 表并同步数据库，再插入至少 3 条示例数据，然后再配置 link_table 字段。
-> - 若已存在 → 直接配置。
+> - 若已存在 → **继续执行列名验证（必须）**：调用 `GET /online/cgform/api/getColumns/{headId}` 查出实际列名列表，用真实列名覆盖模板/假设中的 `dictText` 字段值，不能凭猜测或模板占位符直接使用。
+>
+> **教训**：仅检查表存在还不够——模板里的 `dictText: "user_code,phone"` 与目标表实际列 `name/age/sex/birthday` 完全不同，导致运行时报 `Unknown column 'user_code' in 'field list'`。
 > 详细说明见 `references/onlform-field-types.md` 的 `link_table` 小节。
 
 核心映射速查：
@@ -367,6 +384,7 @@ python <skill目录>/scripts/onlform_data.py --api-base <URL> --token <TOKEN> --
 | [onlform-auth.md](references/onlform-auth.md) | 用户要求配置字段权限、按钮权限、数据权限、或给角色授权时 |
 | [onlform-data-crud.md](references/onlform-data-crud.md) | 需要插入/查询/更新/删除表单数据、导出CSV时——确认各控件的值格式必读 |
 | [onlform-jimureport.md](references/onlform-jimureport.md) | 用户要求关联积木报表或集成打印功能时 |
+| [onlform-master-detail-checklist.md](references/onlform-master-detail-checklist.md) | **创建主子表时必读**——subTableStr / mainTable / mainField / 外键字段三项必填清单，缺任何一项关联失效 |
 | [onlform-misc.md](references/onlform-misc.md) | 处理head级配置(extConfigJson)、主子表/树表JSON结构、BPM集成、视图配置、表单布局(formTemplate)时 |
 | [onlform-api-reference.md](references/onlform-api-reference.md) | 需要查看addAll完整请求体模板、head字段枚举、系统默认字段时 |
 | [onlform-route-cache.md](references/onlform-route-cache.md) | 用户要求开启Online表单路由缓存(keepAlive)、配置菜单组件名称、或询问动态/静态路由配置时 |

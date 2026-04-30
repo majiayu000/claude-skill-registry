@@ -106,6 +106,17 @@ See `references/design-md-format.md` for the full annotated spec with examples f
 
 Both live in the project root. `/minoan-frontend-design` consumes both — creative direction from the design context, materials from the design tokens. Tokens are materials, not recipes: creative direction still leads.
 
+## Diagrams
+
+Component hierarchies and token relationships can be visualized as Mermaid diagrams using `beautiful-mermaid` ASCII mode, then included directly in DESIGN.md files:
+
+```bash
+printf 'graph TD\n  Tokens --> Components --> Patterns' | \
+  node ~/.claude/skills/beautiful-mermaid/scripts/mermaid.mjs -
+```
+
+For SVG export (e.g., in companion HTML docs), use `-f svg -t github-light`.
+
 ## When Not to Use This Skill
 
 - For pattern research (how do other design systems implement tabs?), use `/component-gallery`

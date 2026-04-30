@@ -14,13 +14,16 @@ Analyze local git changes (or a PR/MR) against the project's coding guidelines, 
 Extract from the user's arguments:
 1. `deep` flag (present/absent)
 2. `harness` keyword after `deep` (present/absent)
-3. Everything else → scope/focus instructions (natural language, including PR numbers, paths, refs)
+3. `--branch` flag (present/absent) — overrides Step 3's PR auto-route. Has no effect when local changes are present or when an explicit PR is requested (`--pr N`, `#N`, or a PR URL). Recorded as `force-branch-diff` for Step 3.
+4. Everything else → scope/focus instructions (natural language, including PR numbers, paths, refs)
 
 Examples:
 - `/optimus:code-review` → local changes, normal mode
 - `/optimus:code-review src/auth` → scope to path, normal mode
 - `/optimus:code-review --pr 42` or `/optimus:code-review #42` → PR mode, normal
+- `/optimus:code-review --branch` → branch diff against the detected base, skip PR auto-route
 - `/optimus:code-review deep` → local changes, deep mode (8 iterations)
+- `/optimus:code-review deep --branch` → branch diff against the detected base, deep mode
 - `/optimus:code-review deep "focus on src/auth"` → scoped, deep mode
 - `/optimus:code-review deep harness` → harness mode (present command and stop)
 - `/optimus:code-review deep harness "focus on src/auth"` → harness mode, scoped
@@ -80,7 +83,7 @@ If the user selects **Normal mode**, continue with the standard single-pass flow
 
 Detect and gather the changes to review. Use the scope/focus instructions parsed in Step 1.
 
-### Local changes (default — no arguments)
+### Local changes (default flow)
 
 Run the following git commands to gather all local changes:
 
@@ -101,13 +104,16 @@ git status --short
 - **If no local changes** → detect the comparison base and check for commits ahead:
   1. **Detect platform** — read `$CLAUDE_PLUGIN_ROOT/skills/pr/references/platform-detection.md` and use the **Platform Detection Algorithm** section to determine if the project is GitHub, GitLab, or unknown.
   2. **Detect PR/MR target branch** — check if an open PR/MR exists for the current branch and extract its target branch:
-     - If GitHub: `gh pr view --json number,state,baseRefName 2>/dev/null` — only use `baseRefName` if `state` equals `"OPEN"`; if `state` is not `"OPEN"`, treat as "no open PR"
-     - If GitLab: `glab mr view --output json 2>/dev/null` — only use `target_branch` if `state` equals `"opened"`; if `state` is not `"opened"`, treat as "no open MR". If the command fails, treat as no open MR — unless the failure appears to be an auth or connectivity error, in which case inform the user before falling back
+     - If GitHub: `gh pr view --json number,state,baseRefName 2>/dev/null` — only use `number` and `baseRefName` if `state` equals `"OPEN"`; if `state` is not `"OPEN"`, treat as "no open PR"
+     - If GitLab: `glab mr view --output json 2>/dev/null` — only use `iid` and `target_branch` if `state` equals `"opened"`; if `state` is not `"opened"`, treat as "no open MR". If the command fails, treat as no open MR — unless the failure appears to be an auth or connectivity error, in which case inform the user before falling back
      - If platform unknown: try both, ignore CLI-unavailable errors — use the first result where an open PR/MR is confirmed (state check passed)
      - If no open PR/MR found or CLI unavailable → detect the default branch using `$CLAUDE_PLUGIN_ROOT/skills/pr/references/default-branch-detection.md`
-  3. Use the detected branch as `<base-branch>`. Run `git log --oneline origin/<base-branch>..HEAD`
-  4. If commits found → offer to review the branch diff (if the base came from an open PR/MR, mention that the review uses the PR's target branch)
-  5. If an open PR/MR was found in step 2 → also offer to review it directly (PR mode)
+  3. Use the detected branch as `<base-branch>` and capture the current branch as `<current-branch>` via `git rev-parse --abbrev-ref HEAD`. Run `git log --oneline origin/<base-branch>..HEAD`
+  4. If commits found → route to the appropriate review mode (do NOT prompt the user to choose). Each branch diff route below jumps to the **Branch/ref mode** block using `origin/<base-branch>` as `<ref>`. For GitLab, substitute "MR !N" for "PR #N" in the user-facing notices below:
+     - **`force-branch-diff` is set (from Step 1)** → review the branch diff.
+     - **An open PR/MR was found AND HEAD is fully pushed** (`git rev-list origin/<current-branch>..HEAD` exits 0 with no output) → auto-enter PR mode for that PR. Reuse the PR/MR identifier captured in sub-step 2 above — jump to the **PR mode (explicit request)** block below without re-prompting. Tell the user, in one line: *"Reviewing PR #N — using the PR description as author intent context. Pass `--branch` to review the branch diff instead."*
+     - **An open PR/MR was found BUT HEAD has unpushed commits or pushed state cannot be determined** (`git rev-list` returns lines or exits non-zero) → review the branch diff. Tell the user, in one line: *"Reviewing the branch diff — PR #N exists but HEAD is not fully pushed. Pass `--pr N` to review only the PR's pushed state."*
+     - **No open PR/MR found (or CLI unavailable)** → review the branch diff.
 - **If nothing at all** → inform the user there are no changes to review and suggest staging changes or specifying a PR
 
 ### PR mode (explicit request)

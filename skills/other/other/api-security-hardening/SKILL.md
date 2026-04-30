@@ -1,6 +1,7 @@
 ---
 name: api-security-hardening
 description: REST API security hardening with authentication, rate limiting, input validation, security headers. Use for production APIs, security audits, defense-in-depth, or encountering vulnerabilities, injection attacks, CORS issues.
+license: MIT
 ---
 
 # API Security Hardening

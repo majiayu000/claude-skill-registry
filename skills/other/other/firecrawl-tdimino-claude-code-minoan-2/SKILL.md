@@ -1,6 +1,6 @@
 ---
 name: firecrawl
-description: Scrape web pages to clean markdown using Firecrawl v2 — handles JS-heavy pages, site crawls, URL mapping, LLM-powered extraction, autonomous agent scraping, and post-scrape browser interaction (Interact API). Prefer over WebFetch for quality and completeness. Triggers on scrape URL, fetch page, crawl site, extract content, web to markdown, DeepWiki, Firecrawl.
+description: Scrape web pages to clean markdown using Firecrawl v2 — handles JS-heavy pages, site crawls, URL mapping, document parsing (PDF/DOCX/XLSX), LLM-powered extraction, autonomous agent scraping, and post-scrape browser interaction (Interact API). Prefer over WebFetch for quality and completeness. Triggers on scrape URL, fetch page, crawl site, extract content, parse document, web to markdown, DeepWiki, Firecrawl.
 ---
 
 # Firecrawl & Jina Web Scraping
@@ -123,6 +123,7 @@ fc-save URL
 | `batch-scrape` | Multiple URLs concurrently | `firecrawl_api.py batch-scrape URL1 URL2 URL3` |
 | `crawl` | Website crawling | `firecrawl_api.py crawl URL --limit 20` |
 | `map` | URL discovery | `firecrawl_api.py map URL --search "query"` |
+| `parse` | Parse local documents (PDF, DOCX, XLSX) | `firecrawl_api.py parse report.pdf` |
 | `extract` | LLM-powered structured extraction | `firecrawl_api.py extract URL --prompt "Find pricing"` |
 | `agent` | Autonomous extraction (no URLs needed) | `firecrawl_api.py agent "Find YC W24 AI startups"` |
 | `parallel-agent` | Bulk agent queries (v2.8.0+) | `firecrawl_api.py parallel-agent "Q1" "Q2" "Q3"` |
@@ -172,6 +173,7 @@ jina https://x.com/username/status/123456
 | Single page → markdown | `firecrawl scrape --only-main-content` | Cleanest output |
 | Search + scrape in one shot | `firecrawl search --scrape` | Combined operation |
 | Crawl entire site | `firecrawl crawl --wait --progress` | Link following + progress |
+| Local file → markdown | `firecrawl_api.py parse FILE` | Direct upload, no URL needed |
 | Autonomous data finding | `firecrawl_api.py agent` | No URLs needed |
 | Semantic/neural search | Exa `exa_search.py` | AI-powered relevance |
 | Find research papers | Exa `--category "research paper"` | Academic index |
@@ -213,6 +215,26 @@ firecrawl crawl https://docs.example.com --include-paths /api,/guides --wait --p
 ```bash
 firecrawl search "machine learning best practices 2026" --scrape --scrape-formats markdown
 ```
+
+### Document Parsing (Local Files)
+
+Parse local documents into clean Markdown. Use `parse` for local or non-public files; use `scrape` for public URLs pointing to documents—both use the same Rust-based parser.
+
+```bash
+# PDF to markdown
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py parse report.pdf
+
+# Excel spreadsheet with main content only
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py parse data.xlsx --only-main-content
+
+# Word doc with zero data retention, save to file
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py parse contract.docx --zero-data-retention -o contract.md
+
+# Raw JSON output for programmatic use
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py parse invoice.pdf --json
+```
+
+Supported formats: PDF, DOCX, DOC, XLSX, XLS, HTML, HTM, ODT, RTF (up to 50 MB).
 
 ### Agent-Powered Research (No URLs Needed)
 ```bash

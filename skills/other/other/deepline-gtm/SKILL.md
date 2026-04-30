@@ -205,16 +205,16 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Last reviewed: 2026-02-11
 
 - [apollo playbook](provider-playbooks/apollo.md)
-  Summary: Use Apollo API search for free previewing, then use people/company enrichment when you need resolved records or CRM/outbound actions.
-  Last reviewed: 2026-04-21
+  Summary: Cheap but mediocre quality people/company search with include_similar_titles=true unless strict mode is explicitly requested.
+  Last reviewed: 2026-02-11
 
 - [attio playbook](provider-playbooks/attio.md)
   Summary: Use assert_* operations for upserts, query_* operations for filtered reads, standard-object wrappers when you know the Attio object family, and webhook subscriptions with typed event names when you need realtime sync.
   Last reviewed: 2026-03-20
 
 - [bettercontact playbook](provider-playbooks/bettercontact.md)
-  Summary: Launch BetterContact enrichment jobs, then fetch terminal results with the result endpoint. Phone enrichment consumes an extra 10 credits per successful contact.
-  Last reviewed: 2026-04-21
+  Summary: Launcher tools wait for BetterContact completion by default and return final enrichment results. Use get_result only for explicit recovery or non-blocking flows.
+  Last reviewed: 2026-03-30
 
 - [builtwith playbook](provider-playbooks/builtwith.md)
   Summary: Use domain_lookup for live stack inspection, vector_search to discover the right tech label before lists/trends, and bulk_domain_lookup for row-heavy domain batches.
@@ -225,8 +225,8 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Last reviewed: 2026-03-11
 
 - [contactout playbook](provider-playbooks/contactout.md)
-  Summary: Use free ContactOut checkers before paid enrich/search calls. Strong for LinkedIn-based email and phone discovery.
-  Last reviewed: 2026-04-21
+  Summary: Use for LinkedIn → email/phone enrichment. Run contactout_check_email_status first (free) to confirm data exists before spending credits on enrich.
+  Last reviewed: 2026-03-25
 
 - [crustdata playbook](provider-playbooks/crustdata.md)
   Summary: Start with free autocomplete and default to fuzzy contains operators `(.)` for higher recall. Use ISO-3 country codes, prefer crunchbase_categories over linkedin_industries for niche verticals, and use employee_count_range for filtering instead of employee_metrics.latest_count.
@@ -237,8 +237,8 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Last reviewed: 2026-04-08
 
 - [datagma playbook](provider-playbooks/datagma.md)
-  Summary: Use Datagma for real-time enrichment, phone discovery, and job-change checks. Prefer LinkedIn URL or domain-backed inputs when available.
-  Last reviewed: 2026-04-20
+  Summary: Use for real-time person enrichment with phone + job-change signals. Pass linkedin URL as the primary identifier for best results; fall back to email or fullName+domain.
+  Last reviewed: 2026-03-31
 
 - [deepline_native playbook](provider-playbooks/deepline_native.md)
   Summary: Launcher actions wait for completion and return final payloads with job_id; search_contact uses the search budget while enrichment-style actions use the higher enrichment budget.
@@ -349,8 +349,8 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Last reviewed: 2026-03-25
 
 - [zerobounce playbook](provider-playbooks/zerobounce.md)
-  Summary: Use validate as the final deliverability gate. Email Finder and Domain Search both come from ZeroBounce guessformat; Email Finder is for named people, Domain Search is for domain-only pattern discovery.
-  Last reviewed: 2026-04-21
+  Summary: Use as final email validation gate before outbound sends. Check sub_status for granular failure reasons. Use batch for 5+ emails.
+  Last reviewed: 2026-02-28
 
 - Apply defaults when user input is absent.
 - User-specified values always override defaults.

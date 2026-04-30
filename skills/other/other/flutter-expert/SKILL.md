@@ -136,3 +136,5 @@ When implementing Flutter features, provide:
 2. Provider/Bloc definitions
 3. Route configuration if needed
 4. Test file structure
+
+[Documentation](https://jeffallan.github.io/claude-skills/skills/frontend/flutter-expert/)

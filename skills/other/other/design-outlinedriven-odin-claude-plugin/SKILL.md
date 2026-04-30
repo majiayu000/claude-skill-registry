@@ -29,6 +29,13 @@ Modern, elegant UI/UX. Don't hold back.
 
 ## Register × paradigm matrix — pointer
 
+Every design surface is **brand** (marketing, landing, campaign, long-form content, portfolio — design IS the product) or **product** (app UI, admin, dashboard, tool — design SERVES the product). Identify before designing.
+
+**Detection rule.** First match wins:
+1. Cue in the task itself — "landing page" / "campaign hero" → brand; "dashboard" / "settings panel" → product.
+2. Surface in focus — the page, file, or route being worked on; the route segment usually disambiguates (`/marketing/*` vs. `/app/*`).
+3. Register field in PRD or project context (`AGENTS.md`, `CLAUDE.md`, brand brief).
+
 Brand register opens neo-brutalism / glassmorphism / M3 Expressive with Committed / Full palette / Drenched color strategies; product register defaults to Restrained + post-minimalism / Fluent 2. Full matrix in `references/paradigms.md §0`.
 
 ## Anti-slop charter — LOAD-BEARING
@@ -72,7 +79,7 @@ Six steps. Do not skip the divergence step.
 
 1. **Frame the surface.** Capture: surface (landing / dashboard / settings / docs / one-screen tool), primary user, density target, motion budget in ms. **Then write one sentence of physical scene** (who, where, ambient light, mood) that FORCES the dark/light decision. Category names alone do not force the answer — "observability dashboard" fails; "SRE glancing at incident severity on a 27-inch monitor at 2am in a dim room" succeeds. Consult `references/soul.md` for the philosophical anchor — *why* this design must feel a certain way before deciding *how*. Surface answers before generating directions; designing on assumed callers wastes the parallel budget.
 
-2. **Diverge: 3-4 directions in parallel via Verbalized Sampling.** Delegate the parallel-generation pattern from `odin:design-an-interface` — dispatch one Explore agent per direction with a constraint that *forces* contrast (post-minimalism vs neo-brutalism vs Material 3 vs Fluent, or named taste anchors that pull in opposite directions). Reject converged outputs; re-dispatch with sharpened constraints if two directions read alike.
+2. **Diverge: 3-4 directions in parallel via Verbalized Sampling.** Delegate the parallel-generation pattern from `odin:design-an-interface` — dispatch one Explore agent per direction with a constraint that *forces* contrast (post-minimalism vs neo-brutalism vs Material 3 vs Fluent, or named taste anchors that pull in opposite directions). Reject converged outputs; re-dispatch with sharpened constraints if two directions read alike. See `references/diversity.md` for the six diversity-engineering techniques (verbalized sampling, actor-critic per candidate, persona injection, temperature, most-unlikely reframing, anti-pattern catalog).
 
 3. **Per direction, return a fixed shape.** Each direction states: name (one or two words), 1-2 taste anchors (Linear / Stripe / Things 3 / Rosé Pine / Are.na — name the references), OKLCH palette stub (4-6 swatches, never the default Tailwind ramp), type pair (display + text, named families), spacing scale subset committed (e.g., 4/8/16/24/48), motion budget in ms with one easing curve.
 
@@ -94,6 +101,19 @@ Six steps. Do not skip the divergence step.
 | Qt / QML | `references/qt.md` |
 | Cross-platform tokens | `references/design-systems.md` |
 | Motion across runtimes (timing / easing / reduced motion) | `references/motion.md` |
+
+## Cross-runtime references
+
+These references are runtime-agnostic — load them when the task fits the trigger, alongside whatever surface reference is already loaded.
+
+| Reference | Load when… |
+|-----------|------------|
+| `references/interaction-design.md` | Designing or auditing interactive elements (states, focus rings, dropdowns, modals, popovers, keyboard navigation) — applies across web / React / desktop / Qt. |
+| `references/cognitive-load.md` | Auditing a surface for mental-effort overhead (working-memory rule, the eight common violations, the cognitive-load checklist). |
+| `references/personas.md` | Running a persona-based design audit (Alex / Jordan / Sam / Riley / Casey, plus project-specific personas derived from PRD / brand brief). |
+| `references/ux-writing.md` | Drafting UI labels, error messages, empty states, confirmation dialogs, and any user-facing copy — copy is design. |
+| `references/diversity.md` | Generating diverse direction candidates in step 2 (Diverge) of the workflow — six techniques to defeat centroid convergence. |
+| `references/cjk.md` | Designing for Chinese / Japanese / Korean content — locale tagging, Pan-CJK fonts, vertical writing / ruby, locale-specific glyphs. Routes into `korean.md` / `japanese.md` / `chinese.md` for per-locale production trends and DS landscape. |
 
 ## Cross-surface invariants
 
@@ -119,6 +139,7 @@ Six steps. Do not skip the divergence step.
 4. Tokens referenced not hardcoded — `git grep` for raw hex, raw px values in component code; should be empty.
 5. Cross-surface invariants honored — spacing subset committed, ≤2 type families, motion named-properties only.
 6. Contrast verified via axe-core CLI or DevTools accessibility panel; WCAG 2.1 AA pass on every text surface.
+7. Audit tools — data-dense surfaces pass the `references/cognitive-load.md` checklist (≤1 failure); shipped surfaces have been read against ≥2 of the `references/personas.md` archetypes.
 
 ## Anti-patterns
 

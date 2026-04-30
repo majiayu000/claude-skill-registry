@@ -2,7 +2,7 @@
 name: janitor-report
 description: "Full health check of all your skills in one report. Use when the user wants to check for errors, find duplicates, detect broken skills, or get a complete overview of skill health."
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Health Report

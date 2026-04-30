@@ -1,8 +1,6 @@
 ---
 name: fastmcp
-description: FastMCP Python framework for MCP servers with tools, resources, storage backends (memory/disk/Redis/DynamoDB). Use for Claude tool exposure, OAuth Proxy, cloud deployment, or encountering storage, lifespan, middleware, circular import, async errors.
-
-  Keywords: FastMCP, MCP server Python, Model Context Protocol Python, fastmcp framework, mcp tools, mcp resources, mcp prompts, fastmcp storage, fastmcp memory storage, fastmcp disk storage, fastmcp redis, fastmcp dynamodb, fastmcp lifespan, fastmcp middleware, fastmcp oauth proxy, server composition mcp, fastmcp import, fastmcp mount, fastmcp cloud, fastmcp deployment, mcp authentication, fastmcp icons, openapi mcp, claude mcp server, fastmcp testing, storage misconfiguration, lifespan issues, middleware order, circular imports, module-level server, async await mcp
+description: "FastMCP Python framework for MCP servers with tools, resources, storage backends (memory/disk/Redis/DynamoDB). Use for Claude tool exposure, OAuth Proxy, cloud deployment, or encountering storage, lifespan, middleware, circular import, async errors."
 license: MIT
 metadata:
   version: "2.0.0"
@@ -12,8 +10,39 @@ metadata:
   errors_prevented: 25
   production_tested: true
   last_updated: "2025-11-18"
+  keywords:
+    - FastMCP
+    - MCP server Python
+    - Model Context Protocol Python
+    - fastmcp framework
+    - mcp tools
+    - mcp resources
+    - mcp prompts
+    - fastmcp storage
+    - fastmcp memory storage
+    - fastmcp disk storage
+    - fastmcp redis
+    - fastmcp dynamodb
+    - fastmcp lifespan
+    - fastmcp middleware
+    - fastmcp oauth proxy
+    - server composition mcp
+    - fastmcp import
+    - fastmcp mount
+    - fastmcp cloud
+    - fastmcp deployment
+    - mcp authentication
+    - fastmcp icons
+    - openapi mcp
+    - claude mcp server
+    - fastmcp testing
+    - storage misconfiguration
+    - lifespan issues
+    - middleware order
+    - circular imports
+    - module-level server
+    - async await mcp
 ---
-
 # FastMCP - Build MCP Servers in Python
 
 FastMCP is a Python framework for building Model Context Protocol (MCP) servers that expose tools, resources, and prompts to Large Language Models like Claude.

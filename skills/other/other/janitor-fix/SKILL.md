@@ -2,7 +2,7 @@
 name: janitor-fix
 description: "Automatically fix skill problems (safe preview first). Also use with --prune to find and remove broken symlinks, empty directories, and orphaned skills."
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Auto-Fix

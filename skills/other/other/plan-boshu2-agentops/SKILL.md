@@ -1,6 +1,6 @@
 ---
 name: plan
-description: 'Decompose goals into issue-ready plans, waves, dependencies, and validation checks.'
+description: 'Decompose goals into issue plans.'
 skill_api_version: 1
 metadata:
   tier: execution

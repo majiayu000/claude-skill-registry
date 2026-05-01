@@ -1,6 +1,6 @@
 ---
 name: standards
-description: 'Provide language and repo standards for implementation, docs, tests, and review.'
+description: 'Provide repo coding standards.'
 skill_api_version: 1
 context:
   window: isolated
@@ -33,6 +33,7 @@ references that other skills load based on file types being processed.
 | Go | `references/go.md` | vibe, implement, complexity |
 | Rust | `references/rust.md` | vibe, implement, complexity |
 | TypeScript | `references/typescript.md` | vibe, implement |
+| JavaScript | `references/javascript.md` | vibe, implement |
 | Shell | `references/shell.md` | vibe, implement |
 | YAML | `references/yaml.md` | vibe |
 | JSON | `references/json.md` | vibe |
@@ -152,6 +153,7 @@ Skills that use standards:
 - [references/skill-structure.md](references/skill-structure.md)
 - [references/standards-index.md](references/standards-index.md)
 - [references/typescript.md](references/typescript.md)
+- [references/javascript.md](references/javascript.md)
 - [references/sql-safety-checklist.md](references/sql-safety-checklist.md)
 - [references/llm-trust-boundary-checklist.md](references/llm-trust-boundary-checklist.md)
 - [references/race-condition-checklist.md](references/race-condition-checklist.md)

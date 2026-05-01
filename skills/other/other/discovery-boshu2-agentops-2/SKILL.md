@@ -1,6 +1,6 @@
 ---
 name: discovery
-description: 'Orchestrate brainstorm, research, plan, and pre-mortem into an execution packet.'
+description: 'Create execution packets.'
 skill_api_version: 1
 user-invocable: true
 context:

@@ -1,6 +1,6 @@
 ---
 name: update
-description: 'Reinstall or sync AgentOps skills from the latest source.'
+description: 'Sync AgentOps skills.'
 skill_api_version: 1
 user-invocable: true
 context:

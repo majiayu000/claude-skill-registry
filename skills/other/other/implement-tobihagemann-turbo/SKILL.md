@@ -13,7 +13,8 @@ At the start, use `TaskCreate` to create a task for each step:
 
 1. Run `/code-style` skill
 2. Make the change
-3. Run `/finalize` skill
+3. Run verification
+4. Run `/finalize` skill
 
 ## Step 1: Run `/code-style` Skill
 
@@ -23,7 +24,11 @@ Run the `/code-style` skill to load mirror, reuse, and symmetry rules before edi
 
 Apply the change described by the current context — the user request, a prior skill's task description, or an improvement entry. Keep the edit scoped to what the context describes. If the scope balloons beyond what the context specified, stop and confirm scope before continuing.
 
-## Step 3: Run `/finalize` Skill
+## Step 3: Run Verification
+
+If a Verification section is in conversation context (e.g., from a plan file), execute the commands, smoke checks, or MCP tool invocations it specifies. If a check fails, run the `/investigate` skill. If a check is blocked by a dependency, unclear requirement, or environmental issue, use `AskUserQuestion` to surface the blocker and let the user choose how to proceed. If no Verification section is in context, skip this step.
+
+## Step 4: Run `/finalize` Skill
 
 Run the `/finalize` skill.
 
@@ -31,4 +36,4 @@ Then use the TaskList tool and proceed to any remaining task.
 
 ## Rules
 
-- Defer `git commit`, `git push`, and PR creation to Step 3.
+- Defer `git commit`, `git push`, and PR creation to Step 4.

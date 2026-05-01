@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5339,
-  "updated_at": "2026-04-30T02:35:26.487588Z",
+  "count": 5340,
+  "updated_at": "2026-05-01T02:39:54.554984Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -48628,6 +48628,24 @@
       "stars": 0,
       "install": "cyberkaida/reverse-engineering-assistant/ReVa/skills/ctf-crypto",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "goth-providers",

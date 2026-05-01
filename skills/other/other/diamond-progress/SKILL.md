@@ -12,6 +12,20 @@ Progress a diamond through phases with full theory gate validation. At delivery 
 
 1. **Identify transition**: From [current phase] to [next phase] at [scale].
 
+1b. **Cognitive Forcing (before gate evaluation)**:
+
+   Before running gates, ask the human for their unprimed judgment:
+
+   > "Before I check the gates — do you think we're ready to move from [current] to [next]? What's your gut say?"
+
+   Wait for the response. Record it. Then run the gates. After presenting results, compare:
+
+   > "You said [X]. The gates say [Y]. Where do we differ?"
+
+   The human's instinct often catches risks the gates miss. If the human says "not ready" but gates pass, investigate — the human may be sensing something the evidence hasn't captured yet.
+
+   *Source: Buçinca, Malaya & Gajos (Cognitive Forcing Functions, Harvard CHI/CSCW 2021). Applied after Hoskins transcript analysis — Drew's product judgment consistently outperformed the agent's gate-based assessment.*
+
 2. **Run all required theory gates** (per theory-gates.md transition matrix):
    - For each gate:
      a. State the gate name and source theory.
@@ -320,6 +334,7 @@ Draft entries for the user. Present for confirmation before saving. This capture
 ---
 
 ## Theory Citations
+- Buçinca, Malaya & Gajos: Cognitive Forcing Functions (human judges first, reduces automation bias)
 - Torres: Evidence requirements
 - Cagan: Four risks
 - Christensen: JTBD validation

@@ -1,6 +1,6 @@
 ---
 name: forge
-description: 'Mine transcripts and artifacts into reusable learnings, decisions, and patterns.'
+description: 'Mine transcripts into learnings.'
 skill_api_version: 1
 user-invocable: false
 context:

@@ -1,8 +1,8 @@
 {
   "category": "testing",
   "code": "tst",
-  "count": 6764,
-  "updated_at": "2026-04-30T02:35:27.913694Z",
+  "count": 6765,
+  "updated_at": "2026-05-01T02:39:56.224482Z",
   "skills": [
     {
       "name": "frontend-testing",
@@ -38767,6 +38767,23 @@
       "stars": 0,
       "install": "gtmagents/gtm-agents/plugins/community-building/skills/community-insight-taxonomy",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "playwright-skill",
+      "description": "Browser automation with Playwright - Claude writes and executes custom scripts",
+      "repo": "lackeyjb/playwright-skill",
+      "path": "skills/playwright-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "playwright",
+        "browser",
+        "automation",
+        "testing"
+      ],
+      "stars": 0,
+      "install": "lackeyjb/playwright-skill/skills/playwright-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "test-retry-config",

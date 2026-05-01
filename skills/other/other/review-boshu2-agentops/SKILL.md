@@ -1,6 +1,6 @@
 ---
 name: review
-description: 'Review code, PRs, diffs, or agent output for correctness and risk.'
+description: 'Review diffs for risk.'
 skill_api_version: 1
 context:
   window: fork

@@ -1,6 +1,6 @@
 ---
 name: readme
-description: 'Draft or improve a project README using structured evidence and review.'
+description: 'Draft or improve README docs.'
 skill_api_version: 1
 context:
   window: fork

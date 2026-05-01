@@ -1,6 +1,6 @@
 ---
 name: reverse-engineer-rpi
-description: 'Reverse-engineer a product into feature catalog, code map, and specs.'
+description: 'Reverse-engineer product specs.'
 skill_api_version: 1
 context:
   window: fork

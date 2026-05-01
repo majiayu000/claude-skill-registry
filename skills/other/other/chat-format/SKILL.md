@@ -1,6 +1,7 @@
 ---
 name: chat-format
 description: Format prompts for different LLM providers with chat templates and HNSW-powered context retrieval
+argument-hint: "<prompt> [--provider anthropic|openai|local]"
 allowed-tools: mcp__claude-flow__ruvllm_chat_format mcp__claude-flow__ruvllm_hnsw_create mcp__claude-flow__ruvllm_hnsw_add mcp__claude-flow__ruvllm_hnsw_route mcp__claude-flow__ruvllm_status Bash
 ---
 

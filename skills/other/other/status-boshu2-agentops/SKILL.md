@@ -1,6 +1,6 @@
 ---
 name: status
-description: 'Show current work, recent validation, flywheel health, and next action.'
+description: 'Show AgentOps work status.'
 skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash
 model: haiku

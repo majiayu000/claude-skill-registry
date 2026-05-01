@@ -1,6 +1,6 @@
 ---
 name: converter
-description: 'Convert AgentOps skills between Codex, Cursor, and raw bundle formats.'
+description: 'Convert AgentOps skill formats.'
 skill_api_version: 1
 context:
   window: isolated

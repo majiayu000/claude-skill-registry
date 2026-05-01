@@ -1,6 +1,6 @@
 ---
 name: goals
-description: 'Maintain GOALS.yaml and GOALS.md fitness specs, directives, and drift.'
+description: 'Maintain AgentOps goals.'
 skill_api_version: 1
 context:
   window: fork

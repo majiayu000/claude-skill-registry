@@ -1,0 +1,17 @@
+{
+  "name": "repo-audit",
+  "repo": "Kanevry/session-orchestrator",
+  "path": "skills/repo-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Kanevry/session-orchestrator",
+  "dir_name": "repo-audit",
+  "downloaded_at": "2026-05-01T01:57:18.521435Z",
+  "author": "Kanevry",
+  "source_url": "https://github.com/Kanevry/session-orchestrator/blob/main/skills/repo-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kanevry/session-orchestrator/blob/main/skills/repo-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

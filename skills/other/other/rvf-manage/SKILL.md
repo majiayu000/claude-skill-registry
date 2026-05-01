@@ -1,6 +1,7 @@
 ---
 name: rvf-manage
 description: Manage RVF (Ruflo Vector Format) files for portable agent memory and cross-platform transfer
+argument-hint: "<import|export|list|delete> [options]"
 allowed-tools: mcp__claude-flow__memory_store mcp__claude-flow__memory_retrieve mcp__claude-flow__memory_list mcp__claude-flow__memory_delete mcp__claude-flow__memory_stats mcp__claude-flow__memory_import_claude mcp__claude-flow__memory_migrate mcp__claude-flow__hooks_transfer Bash
 ---
 

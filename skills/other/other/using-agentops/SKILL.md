@@ -1,6 +1,6 @@
 ---
 name: using-agentops
-description: 'Explain AgentOps operating model, lifecycle, skills, hooks, and context.'
+description: 'Explain AgentOps workflows.'
 skill_api_version: 1
 user-invocable: false
 context:

@@ -1,6 +1,6 @@
 ---
 name: seobuild-onpage
-version: 1.6.1
+version: 1.7.0
 description: >
   Write SEO pages that rank on Google AND get cited by LLMs. Uses live SERP data,
   500-token chunk architecture, and the Reddit Test quality gate.
@@ -146,6 +146,7 @@ The research script outputs:
 4. **Tables are Mandatory.** Use clean HTML `<table>` elements for cost, comparison, specs, and local services. Never simulate tables with bullet points.
 5. **Top-of-Page Dominance.** The most important, answer-forward material goes at the absolute top. A fast-scan summary block must appear within the first 200 words.
 6. **Brand > Links.** Google and LLMs prioritize "Brand + Keyword" searches. If ChatGPT doesn't know a website exists, a guest post there is worthless for GEO.
+7. **AEO Entity Validation via Owned Tier 1 Assets.** Ranking is no longer scored only on the money page. Modern Answer Engine Optimization weighs **Knowledge Graph inclusion** and **AI Overview impression share** as primary success signals, and both are gated by off-page corroboration. Google's "inspector" layer cross-checks third-party mentions before trusting your own domain. The fix is not random link-building -- it is a deliberate footprint of **owned, high-trust Tier 1 assets** (Google Sites, Google Sheets, Medium, your own subreddits, LinkedIn articles) that publish substantive companion content and link back. Without this corroborating layer, on-page perfection underperforms. See the **Tributary Trust Protocol** section for implementation.
 
 ---
 
@@ -489,6 +490,112 @@ Modern AI search agents (Gemini, ChatGPT, Perplexity) use Retrieval-Augmented Ge
 
 ---
 
+## 11A. TRIBUTARY TRUST PROTOCOL (v1.7.0)
+
+The Tributary Trust Protocol is the off-page architecture that earns Knowledge Graph inclusion and AI Overview impression share. It treats your money page as an **estuary** and a small set of owned high-trust properties as the **tributaries** that feed entity signal into it.
+
+The principle is structural, not promotional. Search engines and LLMs do not trust an entity that exists in only one location, no matter how well-optimized that one location is. They trust entities corroborated across multiple high-authority surfaces with **substantive, internally consistent content** that all points back to the same canonical entity. Tributaries are how you create that corroboration on properties you control.
+
+### What Counts as a Tier 1 Asset
+
+A Tier 1 asset is a property where (a) Google or its retrieval pipeline already trusts the host domain at platform level, (b) you can publish full-length content with internal anchors and outbound links, and (c) you control or can claim ownership. This is non-negotiable -- random guest posts and content farms do not qualify.
+
+| Tier | Asset | Why it qualifies |
+|---|---|---|
+| 1 | Google Sites (sites.google.com) | Hosted on Google infrastructure, indexed near-instantly, treated as ambient trust by Search |
+| 1 | Google Sheets (published to web) | Crawlable, schema-friendly for tabular data, Google-hosted |
+| 1 | Medium (medium.com) | High DR, fast indexing, retrieved heavily by Perplexity and ChatGPT |
+| 1 | Custom Subreddit (you moderate) | Indexed by Google as Reddit subdomain, AI Overviews cite Reddit at high rates |
+| 1 | LinkedIn Articles (personal or company page) | Authority signal, indexed, surfaces in entity searches |
+| 2 | YouTube video description + transcript | Owned, indexed, feeds entity graph for the channel |
+| 2 | GitHub repository README (if relevant vertical) | High trust, indexed, citation-ready |
+| 2 | Substack post (your own newsletter) | Owned domain, indexable, RSS-discoverable |
+
+Tier 2 assets are useful as additional corroboration but cannot substitute for the Tier 1 spread. A complete Tributary Trust deployment has **at minimum 4 of the 5 Tier 1 assets** populated for the target entity before the money page is published.
+
+### The Companion Content Rule
+
+Tributaries are not snippets, summaries, or "blog repurposing." Each tributary publishes a **distinct, substantive companion article** that is topically derived from the money page's 500-token chunk architecture but rewritten to fit the host platform's native format. A Medium article reads like a Medium article. A Google Sites page reads like a Google Sites page. A subreddit post reads like a Reddit thread.
+
+Each companion must:
+1. Cover one or two specific 500-token QFO facets from the money page in greater depth than the money page does for that facet
+2. Include the same canonical entity names, full official names, and key numbers as the money page (Entity Consensus)
+3. Pass the **Reddit Test, Information Gain Test, and `{{VERIFY}}` tagging requirements** identically to the money page (Section 5). Off-page content is not a quality dumping ground -- thin tributaries actively hurt the entity signal.
+4. Link back to the money page at least once with **descriptive, entity-rich anchor text** (never "click here", never the bare URL)
+5. Cross-link to at least one other tributary in the network. Tributaries must form an **interlinked subgraph**, not isolated mentions.
+
+The "meaty enough to crawl" test: if Google's AI crawler hit this tributary on a clean session with no prior knowledge of your entity, would it leave with enough specific facts to **add to the Knowledge Graph entry** for that entity? If the answer is "maybe" or "no," the tributary is not done. Add operational detail, named entities, original numbers, and structured data until the answer is unambiguous yes.
+
+### The Tributary Network Topology
+
+```
+                       [Money Page]
+                            ▲
+              ┌─────────────┼─────────────┐
+              │             │             │
+        [Google Site]   [Medium]    [Subreddit Post]
+              │             │             │
+              └──── interlinked ──────────┘
+                            │
+                       [Google Sheet]
+                            │
+                       [LinkedIn Article]
+```
+
+- Every tributary links to the money page (upstream)
+- Every tributary links to at least one other tributary (lateral)
+- The money page does **not** link out to tributaries (preserves equity flow direction)
+- Tributaries reference the same entity names, numbers, and citations consistently across the network (Entity Consensus)
+
+### Topical Derivation, Not Duplication
+
+Tributary content is **derived from** the money page's chunks but must not duplicate them. Duplicate or near-duplicate content across the network is a confirmed negative signal (Section 9). Use this derivation matrix:
+
+| Money page chunk | Tributary type | What the tributary covers |
+|---|---|---|
+| Pricing comparison table | Google Sheet (published) | The same data plus a calculation column, formula notes, methodology |
+| Operational detail (capacity, schedule) | Medium article | First-person observation, photos if available, expanded timeline |
+| FAQ / PAA section | Custom Subreddit post | Q&A format reframed as community thread, with mod-pinned canonical answer |
+| Original Research block | LinkedIn article | Methodology deep-dive, peer commentary invitation, industry framing |
+| Geographic/local detail | Google Site page | Map embed, named neighborhoods, transit references |
+
+### Quality Gates Apply Equally Off-Page
+
+Every quality gate that applies to the money page applies to the tributary. **There are no exceptions.** Specifically:
+
+- **Reddit Test**: A practitioner reading this on its host platform must not call it "AI slop"
+- **Information Gain Test**: Each tributary must contain at least one fact not present in the top 10 SERP results for the same query
+- **Prove-It Details**: Two hard operational facts minimum, just like the money page (Section 5B)
+- **Verification Tagging**: All `{{VERIFY}}`, `{{RESEARCH NEEDED}}`, `{{SOURCE NEEDED}}` tags must be resolved before publishing the tributary, same as the money page
+- **Entity Consensus**: Every claim cross-checked against 2+ corroborating sources
+- **Banned Patterns**: All Section 9 "Never Do" rules apply (no em dashes, no "nestled," no generic intros, no stock photos, etc.)
+
+A tributary that fails any of these gates **does net harm** to the entity signal. Google's spam systems see thin off-property content as evidence the brand is gaming search, which suppresses the money page. Better to have three excellent tributaries than seven mediocre ones.
+
+### Sequencing
+
+Tributaries must exist **before or in lockstep with** money page publication, not after. The "inspector" layer (Section 11 -- Off-Page Sequencing) checks for third-party corroboration at index time. A money page that goes live with no tributary network is interpreted as low-trust until the network catches up, and the early-rank window is lost.
+
+**Required sequence:**
+1. Publish 4+ Tier 1 tributaries first (or same-day as money page)
+2. Wait for Google to index at least 2 tributaries (verify with `site:` queries)
+3. Then publish or re-crawl the money page so the corroboration is live at first inspection
+4. Add 1-2 more tributaries over the following 2-4 weeks to demonstrate ongoing entity activity
+
+### Tributary Generation Tool
+
+Companion content for a target money page can be generated via:
+
+```bash
+python3 "${SKILL_ROOT}/scripts/tributary_gen.py" "<keyword>" --money-page=<path-or-url> --tiers=1
+```
+
+The tool reads the money page's chunk structure, derives 4-6 companion briefs (one per Tier 1 asset type), and outputs structured drafts to `~/Documents/SEO-AGI/tributaries/<slug>/`. Each draft inherits the same `{{VERIFY}}` tags and quality scorecard as the money page. The agent then refines each draft into platform-native voice before the human publishes.
+
+See Section 13 -- Execution Protocol for when to invoke this tool in the workflow.
+
+---
+
 ## 12. HUB & SPOKE INTERNAL LINKING
 
 - **Hub page** = main topic page (e.g., "ATL Airport Parking")
@@ -574,7 +681,13 @@ When the user provides a target keyword and brief:
 
 10. **Quality Checklist**: Run the checklist (Section 14) and **print the scorecard in the output** (see Section 14 for format). If any item fails, revise before delivering.
 
-11. **Save**: Output to `~/Documents/SEO-AGI/pages/` (new pages) or `~/Documents/SEO-AGI/rewrites/` (rewrites).
+11. **Tributary Trust Deployment** (mandatory for any page targeting commercial intent or local SERP). Before saving, generate the tributary network drafts:
+    ```bash
+    python3 "${SKILL_ROOT}/scripts/tributary_gen.py" "<keyword>" --money-page="<output_path>" --tiers=1
+    ```
+    Output: 4-6 companion briefs derived from the money page's 500-token chunks (one per Tier 1 asset: Google Site, Medium, Subreddit, Google Sheet, LinkedIn). Each draft must be refined by the agent to host-platform voice and pass **every quality gate that applied to the money page** -- Reddit Test, Information Gain Test, Prove-It Details, all `{{VERIFY}}` / `{{SOURCE NEEDED}}` tags resolved, no banned patterns from Section 9, Entity Consensus validated. Off-page content is held to the same bar as on-page; a thin tributary actively suppresses the money page's entity signal. Output drafts are written to `~/Documents/SEO-AGI/tributaries/<slug>/` with a manifest mapping each draft to its target host platform and the money-page chunk it derives from. Tributary drafts must be reviewed and published (or scheduled) **before or same-day as the money page** -- see Tributary Trust Protocol -- Sequencing.
+
+12. **Save**: Output to `~/Documents/SEO-AGI/pages/` (new pages) or `~/Documents/SEO-AGI/rewrites/` (rewrites). Tributary drafts save to `~/Documents/SEO-AGI/tributaries/<slug>/`.
 
 ### Rewrite Protocol
 

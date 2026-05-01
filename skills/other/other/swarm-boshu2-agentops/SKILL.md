@@ -1,6 +1,6 @@
 ---
 name: swarm
-description: 'Dispatch isolated agents for parallel tasks with file ownership and evidence.'
+description: 'Dispatch parallel agents.'
 skill_api_version: 1
 context:
   window: fork

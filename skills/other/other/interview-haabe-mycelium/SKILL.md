@@ -16,6 +16,30 @@ Progressive onboarding through structured discovery conversation.
 
 ## Workflow
 
+### Phase 0: Time Budget (ALWAYS FIRST)
+
+Before any interview questions, ask:
+
+> "How much time do you have for this project right now — today's session specifically?"
+
+Based on the answer, select a path:
+
+| Time Budget | Path | What Happens |
+|-------------|------|-------------|
+| **< 8 hours** | **Inline discovery** | Skip /interview entirely. Go straight to delivery. Weave 3 discovery questions into the first task: (1) What problem? (2) Who's the user? (3) What does done look like? Create a minimal L0 diamond with `confidence: 0.1`. |
+| **8-48 hours** | **Sprint interview** | Run Phases 1 + 2 only (Purpose + Users). Skip Phases 3-5c. Jump to Phase 6 (Classification) with defaults. Parallelize all canvas writes. Total: ~15 minutes of questions. |
+| **48+ hours** | **Full interview** | Run all phases as documented below. |
+
+**Sprint interview specifics** (8-48h path):
+- Phase 1: Compress to 2 questions: "What problem do you solve and for whom?" + "What does success look like?"
+- Phase 2: Compress to 2 questions: "Describe a specific user and their job-to-be-done" + "What do they use today?"
+- Skip Phases 3, 4, 5, 5b, 5c — these populate with stubs marked `source_class: internal_stakeholder, validated: false, confidence: 0.1`
+- Phase 6: Ask product type only. Default project scope to `solo_product`. Skip dogfood question.
+- Canvas writing: all files in parallel, one batch
+- End with: "We skipped landscape, north star, and constraints to save time. Run `/interview` again when you have time to fill those in."
+
+*Source: Hoskins friction log (2026-04-25) — full interview consumed an entire session before any delivery work started. Horthy (instruction budget overflow). Corrections.md: "Interview ceremony too long for sprints."*
+
 ### Phase 1: Purpose & Vision
 1. Ask: "What problem does this product/organization solve? Who suffers without it?"
 2. Ask: "What does success look like in 3 years? What would change in the world?"
@@ -234,6 +258,22 @@ theory_gates_status:
    - Each progression runs theory gates automatically
 
 **Do NOT leave the user without a clear next action.** Always end the interview with a specific recommendation.
+
+### Handoff to Delivery (Preventing the Process Cliff)
+
+**CRITICAL**: After the interview, Mycelium must stay present — but lightweight. The process cliff (corrections.md, 2026-04-30) happens when the agent drops all framework structure after /interview and becomes a raw implementation co-pilot.
+
+If the user immediately wants to build something after the interview:
+
+1. **Create an L3 diamond** for the first delivery task. Don't ask — just do it. Set phase to Discover, confidence to 0.15.
+2. **State the next checkpoint plainly**: "I'll run a quick service check and security scan before we call this done — you won't need to do anything extra."
+3. **Run gates inline**, not as separate skill invocations. Instead of "/service-check" as a formal step, weave the Downe principles check into the delivery review naturally.
+4. **Keep canvas updated silently**. As delivery decisions are made, update `gist.yml` and `opportunities.yml` without ceremony.
+5. **At delivery completion**, run the DoD checklist from `/diamond-progress` — but present results conversationally, not as a bureaucratic gate.
+
+The goal: the user shouldn't notice the framework is running, but the decision log should show it was.
+
+*Source: Hoskins transcript (2026-04-25) — process abandoned for 75% of session after /interview. Böckeler (inferential guidance that's too heavy gets ignored). Smart (BVSSH Sooner — process overhead that slows delivery without adding value is waste). Corrections.md: "Process cliff after onboarding."*
 
 ## Theory Citations
 

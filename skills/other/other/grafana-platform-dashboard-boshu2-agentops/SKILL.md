@@ -1,6 +1,6 @@
 ---
 name: grafana-platform-dashboard
-description: 'Improve OpenShift/Kubernetes Grafana dashboards and validate PromQL/GitOps changes.'
+description: 'Validate OpenShift Grafana dashboards.'
 skill_api_version: 1
 context:
   window: fork

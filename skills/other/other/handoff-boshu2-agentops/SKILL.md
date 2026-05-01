@@ -1,6 +1,6 @@
 ---
 name: handoff
-description: 'Create compact session handoffs for continuation after pause or compaction.'
+description: 'Write compact session handoffs.'
 skill_api_version: 1
 context:
   window: inherit

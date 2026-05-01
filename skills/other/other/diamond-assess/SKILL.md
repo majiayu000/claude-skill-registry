@@ -10,6 +10,20 @@ Evaluate current diamond state and recommend next action.
 
 ## Workflow
 
+0. **Cognitive Forcing (ALWAYS FIRST — before any analysis)**:
+
+   Before presenting any assessment, ask the human for their unprimed judgment:
+
+   > "Before I run the gates — where do you think this diamond stands right now? What feels solid and what feels shaky?"
+
+   Wait for the human's response. Record it. Then proceed with the full assessment below. After presenting the assessment (step 10), compare:
+
+   > "You said [X]. The gates say [Y]. Where do we differ?"
+
+   This prevents the agent's analysis from anchoring the human's judgment. The human's pre-assessment often catches things the gates miss (Hoskins consistently outperformed the agent on product judgment calls).
+
+   *Source: Buçinca, Malaya & Gajos (Cognitive Forcing Functions, Harvard CHI/CSCW 2021) — forcing initial human judgment before AI output significantly reduces automation bias and over-reliance on incorrect AI recommendations.*
+
 1. **Identify the diamond**: Which diamond (ID, scale, phase) is being assessed?
 
 2. **Gather current state**:
@@ -144,6 +158,7 @@ Suggested actions:
 ```
 
 ## Theory Citations
+- Buçinca, Malaya & Gajos: Cognitive Forcing Functions (human judges first, then AI presents — reduces automation bias)
 - Torres: Evidence-based progression
 - Gilad: Confidence scoring with contextual explanation
 - Cagan: Four risks assessment

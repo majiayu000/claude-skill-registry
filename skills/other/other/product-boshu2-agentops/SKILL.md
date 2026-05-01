@@ -1,6 +1,6 @@
 ---
 name: product
-description: 'Create or refine PRODUCT.md through mission, persona, and value prompts.'
+description: 'Create or refine PRODUCT.md.'
 skill_api_version: 1
 context:
   window: fork

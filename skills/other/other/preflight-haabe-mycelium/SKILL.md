@@ -10,6 +10,19 @@ Pre-delivery validation checklist. Run before every implementation task.
 
 ## Checklist
 
+### Constraints (ALWAYS FIRST)
+
+Before scoping any delivery work, establish constraints. Do not propose a plan before knowing the budget.
+
+- [ ] **Time budget**: "How much time do you have for this?" (hours, days, sprint length)
+- [ ] **Resource constraints**: Solo? Team? What skills are available?
+- [ ] **Fidelity**: Demo/prototype vs. production? Who is the audience?
+- [ ] **Dependencies**: Waiting on anything external?
+
+If time budget < 8 hours, scope aggressively — one vertical slice, no polish. If the initial plan exceeds the time budget, cut scope before presenting it to the user.
+
+*Source: Hoskins transcript (2026-04-25) — agent proposed 20-hour plan before learning user had 8 hours. Goldratt (Theory of Constraints — identify the constraint before optimizing). Corrections.md: "Over-scope before constraints."*
+
 ### Context
 - [ ] corrections.md reviewed for relevant past mistakes
 - [ ] patterns.md reviewed for applicable patterns
@@ -18,6 +31,7 @@ Pre-delivery validation checklist. Run before every implementation task.
 - [ ] Scenarios linked: `canvas/scenarios.yml` has scenarios for this solution, and acceptance criteria trace back to scenario success/failure states (Hoskins)
 
 ### Scope
+- [ ] Scope fits within the time budget declared above
 - [ ] This is the smallest vertical slice that delivers value
 - [ ] Scope is explicitly bounded (what is NOT included)
 - [ ] No speculative features (YAGNI check)

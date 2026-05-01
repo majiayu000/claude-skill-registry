@@ -1,6 +1,6 @@
 ---
 name: push
-description: 'Run gates, commit intentionally, push the branch, and confirm remote state.'
+description: 'Validate, commit, and push.'
 skill_api_version: 1
 user-invocable: true
 context:

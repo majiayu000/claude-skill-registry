@@ -1,6 +1,6 @@
 ---
 name: pre-mortem
-description: 'Stress-test a plan before implementation with council or inline review.'
+description: 'Stress-test plans before work.'
 skill_api_version: 1
 metadata:
   tier: judgment

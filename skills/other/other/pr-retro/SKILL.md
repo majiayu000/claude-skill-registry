@@ -1,6 +1,6 @@
 ---
 name: pr-retro
-description: 'Learn from PR outcomes and update contribution lessons.'
+description: 'Learn from PR outcomes.'
 skill_api_version: 1
 context:
   window: fork

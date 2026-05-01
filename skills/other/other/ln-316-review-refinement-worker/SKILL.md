@@ -19,12 +19,12 @@ license: MIT
 
 ## Purpose
 
-- run 2-stage refinement after merge using **Codex** (external agent via `agent_runner.mjs`)
-- Stage 1: 3 parallel independent Codex sessions (dry_run_executor, new_dev_tester, adversarial_reviewer)
-- Stage 2: 1 sequential Codex session (final_sweep) after merging Stage 1 results
-- record refinement trace and cleanup evidence for every Codex session
+- run 2-stage refinement after merge using the non-host advisor agent via `agent_runner.mjs`
+- Stage 1: 3 parallel independent advisor sessions (dry_run_executor, new_dev_tester, adversarial_reviewer)
+- Stage 2: 1 sequential advisor session (final_sweep) after merging Stage 1 results
+- record refinement trace and cleanup evidence for every advisor session
 
-**Critical: refinement launches Codex externally. Do NOT use Claude Agent() sub-agents.**
+**Critical: refinement launches the advisor externally. Do NOT use host-native sub-agents for this phase.**
 
 ## Runtime
 
@@ -48,9 +48,9 @@ Recommended `phase_order`:
 
 ### Critical: Independent Sessions
 
-Each perspective MUST be a separate `node agent_runner.mjs --agent codex` invocation.
-Do NOT combine multiple perspectives into a single Codex prompt or session.
-Each iter{N}/ subdirectory = independent Codex process with its own PID.
+Each perspective MUST be a separate `node agent_runner.mjs --agent {advisor_agent}` invocation.
+Do NOT combine multiple perspectives into a single advisor prompt or session.
+Each iter{N}/ subdirectory = independent advisor process with its own PID.
 
 ### Perspective Classification
 
@@ -61,7 +61,7 @@ Each iter{N}/ subdirectory = independent Codex process with its own PID.
 | 1 | `adversarial_reviewer` | parallel | Catch guaranteed failures, silent corruption |
 | 2 | `final_sweep` | after merge | Catch regressions and drift from Stage 1 fixes |
 
-All 4 perspectives are MANDATORY. `generic_quality` is not included — it is covered by the Phase 2 Codex review (`review_base.md` + mode template).
+All 4 perspectives are MANDATORY. `generic_quality` is not included — it is covered by the Phase 2 advisor review (`review_base.md` + mode template).
 
 ### Stage 1: Parallel Specialized Reviews
 
@@ -73,14 +73,14 @@ All 4 perspectives are MANDATORY. `generic_quality` is not included — it is co
       - iter1/ = dry_run_executor
       - iter2/ = new_dev_tester
       - iter3/ = adversarial_reviewer
-   d. Launch independent Codex process:
+   d. Launch independent advisor process:
       ```
-      node shared/agents/agent_runner.mjs --agent codex \
+      node shared/agents/agent_runner.mjs --agent {advisor_agent} \
         --prompt-file .hex-skills/agent-review/refinement/{identifier}/iter{N}/prompt.md \
         --output-file .hex-skills/agent-review/refinement/{identifier}/iter{N}/result.md \
         --cwd {project_dir}
       ```
-3. **Wait for ALL 3** via Claude `Monitor` tool (see Waiting section below).
+3. **Wait for ALL 3** via runtime `sync-agent`; Claude hosts may use `Monitor` for observability (see Waiting section below).
 4. **Parse results** from each completed session: extract JSON from `## Structured Data` section.
 5. **Merge findings:** deduplicate by (area, issue), keep higher confidence.
 6. **Classify:** HIGH (impact_percent >= 20%), MEDIUM (10-19%), LOW (< 10%).
@@ -90,7 +90,7 @@ All 4 perspectives are MANDATORY. `generic_quality` is not included — it is co
 10. **Record cleanup evidence** per `cleanup_evidence_contract.md` for each session.
 11. **Build `{previous_findings_summary}`** for Stage 2.
 
-If ALL 3 Codex sessions fail → EXIT(ERROR), skip Stage 2.
+If ALL 3 advisor sessions fail → EXIT(ERROR), skip Stage 2.
 If some fail → continue with available results, record partial errors.
 
 ### Stage 2: Final Sweep
@@ -99,41 +99,37 @@ If some fail → continue with available results, record partial errors.
 2. **Load `final_sweep`** perspective from `refinement_perspectives.md`.
 3. **Build prompt** with `{previous_findings_summary}` from Stage 1.
 4. **Save prompt** to `.hex-skills/agent-review/refinement/{identifier}/iter4/prompt.md`.
-5. **Launch Codex** (single independent session).
-6. **Wait** via Claude `Monitor` tool.
+5. **Launch advisor** (single independent session).
+6. **Wait** via runtime `sync-agent`; Claude hosts may use `Monitor` for observability.
 7. **Parse result,** apply any accepted fixes (Architecture Gate on each).
 8. **Kill process,** record cleanup evidence.
 
-### Waiting for Codex via Claude `Monitor` Tool (MANDATORY)
+### Waiting for Advisor Results (MANDATORY)
 
-`Monitor` is a built-in Claude Code tool that streams filtered shell output as conversation events.
+Use the active runtime `sync-agent` command before parsing or merge gates. `Monitor` is optional Claude Code observability only.
 
-For EACH launched Codex process:
+For EACH launched advisor process:
 
+When running under Claude Code, optional observability:
 ```
-Monitor(
-  command="tail -f {agent_log} | grep --line-buffered -E 'Phase|ERROR|DONE'",
-  timeout_ms=120000,
-  description="codex refinement {perspective_name}"
-)
+Monitor(command="tail -f {agent_log} | grep --line-buffered -E 'Phase|ERROR|DONE'", timeout_ms=120000, description="advisor refinement {perspective_name}")
 ```
 
-After each Monitor cycle (2 minutes):
+After each sync/monitor cycle:
 - Check result file for `<!-- END_AGENT_REVIEW_RESULT -->` marker.
 - Marker present → parse result, proceed.
-- Marker absent, log growing → launch next Monitor cycle.
+- Marker absent, log growing → continue runtime sync or optional monitor cycle.
 - Marker absent, log stale >3 min → run Liveness Protocol (see `agent_review_workflow.md`).
 
-Do NOT use `sleep`, `Bash(run_in_background=true)`, or manual stat-polling as primary wait mechanism.
-Fallback: `Bash(run_in_background=true)` ONLY when Monitor is unavailable (Bedrock/Vertex/Foundry runtimes).
+Do NOT use `sleep` or manual stat-polling as the primary wait mechanism.
 
 ### Process Cleanup
 
-After each Codex call (both stages):
+After each advisor call (both stages):
 1. Extract `pid` from runner stdout or metadata.
 2. Run `node shared/agents/agent_runner.mjs --verify-dead {pid}`.
 3. Record cleanup evidence per `cleanup_evidence_contract.md`.
-4. Codex processes accumulate on Windows if not killed.
+4. CLI advisor processes can accumulate on Windows if not killed.
 
 ### Exit States
 
@@ -141,8 +137,8 @@ After each Codex call (both stages):
 |-------|---------|
 | `COMPLETED` | Both stages done, all results merged |
 | `PARTIAL_ERROR` | Stage 1 had failures but Stage 2 completed |
-| `ERROR` | All Stage 1 Codex sessions failed (Stage 2 skipped) |
-| `SKIPPED` | Codex unavailable in health check |
+| `ERROR` | All Stage 1 advisor sessions failed (Stage 2 skipped) |
+| `SKIPPED` | No advisor available in health check |
 
 ## Summary
 
@@ -165,10 +161,10 @@ Prefer these fields:
 
 ## Definition of Done
 
-- [ ] Stage 1: all 3 Codex sessions launched in parallel
+- [ ] Stage 1: all 3 advisor sessions launched in parallel
 - [ ] Stage 2: final_sweep launched after Stage 1 merge
-- [ ] All Codex launched via `agent_runner.mjs` (not Claude sub-agents)
-- [ ] Claude `Monitor` tool used for waiting (2-min cycles)
+- [ ] All advisors launched via `agent_runner.mjs` (not host-native sub-agents)
+- [ ] Runtime `sync-agent` used for waiting; Claude Monitor is optional observability
 - [ ] Refinement trace recorded per `refinement_trace_contract.md`
 - [ ] Cleanup evidence recorded for all launched processes
 - [ ] `review-refinement` summary written

@@ -1,6 +1,7 @@
 ---
 name: wasm-agent
 description: Create and manage sandboxed WASM agents for isolated code execution
+argument-hint: "<create|list|prompt|terminate> [options]"
 allowed-tools: mcp__claude-flow__wasm_agent_create mcp__claude-flow__wasm_agent_list mcp__claude-flow__wasm_agent_prompt mcp__claude-flow__wasm_agent_tool mcp__claude-flow__wasm_agent_files mcp__claude-flow__wasm_agent_export mcp__claude-flow__wasm_agent_terminate Bash
 ---
 

@@ -1,10 +1,10 @@
 ---
 name: vellum-editorial
-description: "Scaffold editorial documentation sites with the Vellum design system — OKLCH palette, Bodoni Moda / Source Serif 4 / Inconsolata typography, crosshatch texture, 20+ semantic components (state cards, parity matrices, debugger panels, ring visualizations, phase timelines, glossaries). Static HTML, zero build step. Use when building competitive intelligence pages, internal documentation, roadmaps, or multi-page static sites that need a designed, non-generic aesthetic."
+description: "Scaffold editorial documentation sites with the Vellum design system — OKLCH palette, Bodoni Moda / Source Serif 4 / Inconsolata typography, crosshatch texture, 29 semantic components (state cards, parity matrices, entity dossiers, stat stacks, utterance blocks, editorial notes, entity flows, fact blocks, sub-navigation, source lists, debugger panels, ring visualizations, phase timelines, glossaries). Static HTML, zero build step. Use when building competitive intelligence pages, internal documentation, roadmaps, or multi-page static sites that need a designed, non-generic aesthetic."
 argument-hint: [project-name]
 ---
 
-Build editorial documentation sites with the Vellum design system. Warm parchment tones, OKLCH color science, three-font typographic hierarchy, 20+ semantic components. Static HTML with zero build step — deploys to Cloudflare Pages, GitHub Pages, or any static host.
+Build editorial documentation sites with the Vellum design system. Warm parchment tones, OKLCH color science, three-font typographic hierarchy, 29 semantic components. Static HTML with zero build step — deploys to Cloudflare Pages, GitHub Pages, or any static host.
 
 ## Creative Direction
 
@@ -32,17 +32,25 @@ Full token reference: `references/design-tokens.md`.
 
 ## Component Library
 
-21 components across 5 groups: **layout** (breadcrumb, page-nav, header, section, footer), **cards** (state-card, hook-card, cap-panel, further-card, quote-card, req-card), **data display** (matrix, matrix-note, glossary, ring, debugger-panel), **indicators** (status-dot, status-chip, tier-badge, chip), and **editorial** (toc, pullquote, savings-callout, supersession, advantage-row, phase-timeline). Each supports multiple color variants following the semantic palette.
+29 components across 6 groups: **layout** (breadcrumb, page-nav, header, section, footer), **cards** (state-card, hook-card, cap-panel, further-card, quote-card, req-card), **data display** (matrix, matrix-note, glossary, ring, debugger-panel), **indicators** (status-dot, status-chip, tier-badge, chip), **editorial** (toc, pullquote, savings-callout, supersession, advantage-row, phase-timeline), and **intelligence** (dossier, stat-stack, utterance, editorial-note, entity-flow, fact-block, sub-navigation, source-list). Each supports multiple color variants following the semantic palette.
 
 Copy-paste HTML snippets for every component: `references/component-catalog.md`.
 
 ## Page Architecture
 
-Two page patterns:
+Six page patterns:
 
 **Landing page**: breadcrumb → page-nav → header (icon, tag, h1, subtitle) → main (numbered sections with ghost `section-num`) → footer
 
 **Deep-dive page**: breadcrumb (with back link) → page-nav → header (logo, tag, h1, subtitle) → main (TOC → numbered sections) → footer
+
+**Section hub**: breadcrumb → page-nav → sub-nav → header (badge) → main (key findings + further-card grid) → footer
+
+**Profile dossier**: breadcrumb → page-nav → sub-nav → header → editorial-note → primary dossier → secondary dossiers → sources → footer
+
+**Feature comparison**: breadcrumb → page-nav → sub-nav → header → TOC → comparison panels with dimension grids → matrix → sources → footer
+
+**Analysis/implications**: breadcrumb → page-nav → sub-nav → header → TOC → state-card grid (gaps) → advantage-rows → recommendations → sources → footer
 
 Every page includes: skip link (`<a href="#main" class="skip-link">`), `_shared.css` (core system), `_components.css` (components), Google Fonts preconnect, Phosphor Icons CDN. Auth gate (`_auth.js`) loads before body content when enabled.
 
@@ -105,3 +113,4 @@ Never use `border-left` accent stripes on cards — use `::before` top-bar (like
 | `references/design-tokens.md` | Building new components or customizing the palette |
 | `references/component-catalog.md` | Need HTML snippets for any component |
 | `references/page-architecture.md` | Setting up page structure, nav, TOC, or glossary |
+| `references/advanced-patterns.md` | Ghost watermarks, asymmetric grids, fluid typography, opacity hierarchy, logo handling |

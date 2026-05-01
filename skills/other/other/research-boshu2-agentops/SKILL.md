@@ -1,6 +1,6 @@
 ---
 name: research
-description: 'Explore a codebase or question and write evidence-backed findings.'
+description: 'Explore and write findings.'
 skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash, Write
 metadata:

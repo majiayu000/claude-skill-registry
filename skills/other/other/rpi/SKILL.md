@@ -1,6 +1,6 @@
 ---
 name: rpi
-description: 'Run full lifecycle: discovery, crank implementation, validation, and report.'
+description: 'Run discovery, crank, validation.'
 skill_api_version: 1
 user-invocable: true
 context:

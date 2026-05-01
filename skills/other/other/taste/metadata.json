@@ -1,0 +1,17 @@
+{
+  "name": "taste",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/taste/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "taste",
+  "downloaded_at": "2026-05-01T01:59:21.187079Z",
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/taste/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/taste/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

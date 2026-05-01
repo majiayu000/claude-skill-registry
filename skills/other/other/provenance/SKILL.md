@@ -1,6 +1,6 @@
 ---
 name: provenance
-description: 'Trace where knowledge, decisions, or artifacts came from.'
+description: 'Trace artifact provenance.'
 skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash
 context:

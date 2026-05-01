@@ -1,6 +1,6 @@
 ---
 name: release
-description: 'Run release validation, changelog/version steps, tagging, and release notes.'
+description: 'Run release validation.'
 skill_api_version: 1
 context:
   window: fork

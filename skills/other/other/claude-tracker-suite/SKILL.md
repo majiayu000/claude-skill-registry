@@ -24,6 +24,9 @@ Search, browse, monitor, and manage Claude Code session history across all proje
 | `detect-projects.js` | Scan sessions to find all projects, check CLAUDE.md coverage |
 | `bootstrap-claude-setup.js` | Generate complete ~/.claude/ config for new machine |
 | `update-active-projects.py` | Regenerate active-projects.md with enriched session data |
+| `checkpoint-session.js` | Create/query named bookmarks within sessions |
+| `quote-session.js` | Capture/search notable phrases with FTS5 |
+| `tag-session.js` | Manual session tagging with provenance |
 
 ## Standalone Scripts
 
@@ -38,8 +41,11 @@ Commands delegate to standalone Node.js scripts (avoids shell escaping issues wi
 | `scripts/resume-session.sh` | Direct invocation | Open session in cmux tab, optionally open project in VS Code/Cursor |
 | `scripts/detect-projects.js` | Direct invocation | Project discovery and CLAUDE.md scaffolding |
 | `scripts/bootstrap-claude-setup.js` | Direct invocation | New machine setup generator |
+| `scripts/checkpoint-session.js` | `/checkpoint`, `/checkpoint-list` | Create and query session checkpoints |
+| `scripts/quote-session.js` | `/quote`, `/quote-search` | Capture and search tagged phrases via FTS5 |
+| `scripts/tag-session.js` | `/tag` | Manual session tagging with provenance |
 
-All scripts use `~/.claude/lib/tracker-utils.js` for shared utilities (path decoding, session parsing, git remote detection).
+All scripts use `~/.claude/lib/tracker-utils.js` for shared utilities (path decoding, session parsing, git remote detection) and `~/.claude/lib/tracker-db.js` for SQLite access (better-sqlite3, WAL mode).
 
 ## Quick Start
 
@@ -298,6 +304,69 @@ The soul registry (`~/.claude/hooks/soul-registry.py`) tracks **live** sessions 
 To view the live registry: `python3 ~/.claude/hooks/soul-registry.py list --md`
 
 To activate Claudicle identity in a session: `/ensoul` (opt-in per session). To bind a session to Slack: `/slack-sync #channel`.
+
+## SQLite Database (`tracker.db`)
+
+Single SQLite database at `~/.claude/tracker.db` consolidates all session metadata, git tracking, tags, and three new capabilities: checkpoints, phase tracking, and tagged phrases.
+
+**API module**: `~/.claude/lib/tracker-db.js` — synchronous better-sqlite3, WAL mode, singleton lazy-open.
+
+```bash
+# Query directly
+sqlite3 ~/.claude/tracker.db "SELECT COUNT(*) FROM sessions;"
+sqlite3 ~/.claude/tracker.db "SELECT phase, COUNT(*) FROM phases GROUP BY phase;"
+```
+
+**Migration** (idempotent): `node ~/.claude/scripts/migrate-to-sqlite.js`
+
+### Checkpoints
+
+Named bookmarks within sessions capturing label, git state, workflow phase, and modified files.
+
+```bash
+# Manual checkpoint
+node ~/.claude/skills/claude-tracker-suite/scripts/checkpoint-session.js create "finished auth module"
+node ~/.claude/skills/claude-tracker-suite/scripts/checkpoint-session.js create "pre-deploy" --summary "about to push"
+
+# List checkpoints
+node ~/.claude/skills/claude-tracker-suite/scripts/checkpoint-session.js list
+node ~/.claude/skills/claude-tracker-suite/scripts/checkpoint-session.js list --phase implementing
+node ~/.claude/skills/claude-tracker-suite/scripts/checkpoint-session.js list --limit 10
+```
+
+Auto-checkpoints are created on git commits (`git-track-post.sh`) and phase transitions (`phase-detect.py`).
+
+### Phase Tracking
+
+Automatic workflow phase detection via PostToolUse hook (`phase-detect.py`). Rolling window of last 10 tool calls, hysteresis to prevent flickering.
+
+Phases: `exploring`, `planning`, `implementing`, `testing`, `reviewing`, `debugging`, `committing`, `deploying`.
+
+```bash
+# Query current phase for a session
+sqlite3 ~/.claude/tracker.db "SELECT phase, started_at FROM phases WHERE session_id = 'abc...' AND ended_at IS NULL;"
+
+# Phase analytics
+sqlite3 ~/.claude/tracker.db "SELECT phase, COUNT(*) as transitions, AVG(duration_ms)/1000 as avg_seconds FROM phases GROUP BY phase;"
+```
+
+### Tagged Phrases
+
+Notable excerpts captured from sessions with tags, searchable via FTS5.
+
+```bash
+# Capture a phrase
+node ~/.claude/skills/claude-tracker-suite/scripts/quote-session.js capture "assumptions are the enemy" --tags principle,design
+
+# Search phrases (FTS5)
+node ~/.claude/skills/claude-tracker-suite/scripts/quote-session.js search "assumptions"
+
+# List by tag
+node ~/.claude/skills/claude-tracker-suite/scripts/quote-session.js tag principle
+
+# List recent phrases
+node ~/.claude/skills/claude-tracker-suite/scripts/quote-session.js list --limit 20
+```
 
 ## References
 

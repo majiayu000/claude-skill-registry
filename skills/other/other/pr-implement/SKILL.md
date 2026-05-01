@@ -1,6 +1,6 @@
 ---
 name: pr-implement
-description: 'Implement a scoped open source PR from a researched contribution plan.'
+description: 'Implement a scoped OSS PR.'
 skill_api_version: 1
 context:
   window: fork

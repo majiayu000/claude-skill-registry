@@ -151,13 +151,40 @@ For each paper (or top 5 if many results):
 - **Also on arXiv**: [ArXiv ID if exists, else "No"]
 ```
 
-### Step 7: Final Output
+### Step 7: Update Research Wiki (if active)
+
+**Required when `research-wiki/` exists in the project**; skip silently
+otherwise. Ingest the papers presented to the user. For results with an
+`externalIds.ArXiv` field, use `--arxiv-id`; for venue-only papers (no
+arXiv mirror — common for IEEE/ACM), fall back to manual metadata:
+
+```
+if [ -d research-wiki/ ]:
+    for each paper in results:
+        if paper.externalIds.ArXiv:
+            python3 tools/research_wiki.py ingest_paper research-wiki/ \
+                --arxiv-id "<ArXiv>"
+        else:
+            python3 tools/research_wiki.py ingest_paper research-wiki/ \
+                --title "<title>" --authors "<authors joined by , >" \
+                --year <year> --venue "<venue>" \
+                [--external-id-doi "<externalIds.DOI>"]
+```
+
+The helper handles slug / dedup / page / index / log — **do not
+handwrite `papers/<slug>.md`**. See
+[`shared-references/integration-contract.md`](../shared-references/integration-contract.md).
+Backfill with `/research-wiki sync --arxiv-ids <id1>,<id2>,...` for
+arXiv-available papers.
+
+### Step 8: Final Output
 
 Summarize what was done:
 
 - `Found N published papers for "query"`
 - `Filters applied: [publication types, fields, year range, etc.]`
 - `N papers are venue-only (not on arXiv)`
+- `Wiki-ingested N papers` (if `research-wiki/` was present)
 
 Suggest follow-up skills:
 

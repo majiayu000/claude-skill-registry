@@ -1,8 +1,12 @@
 ---
 name: story-long-write
+version: 1.0.0
 description: |
   长篇网文写作。从大纲到正文，辅助长篇网络小说的创作，包括世界观、人物、情节线管理。
   触发方式：/story-long-write、/写长篇、/story、/网文、「帮我开书」「写大纲」
+metadata:
+  openclaw:
+    source: https://github.com/worldwonderer/oh-story-claudecode
 ---
 
 # story-long-write：长篇网文写作
@@ -42,6 +46,14 @@ description: |
 如果用户没有方向：
 
 问用户：**「你想写什么类型？有没有喜欢的书想对标？你的优势是什么（脑洞好/文笔好/节奏感好/生活经验丰富）？」**
+
+#### 对标上下文加载
+
+如果用户提到对标书或工作目录下已存在 `对标/` 目录：
+
+1. 检查 `对标/` 下每本对标书的 `拆文报告.md` 是否存在
+2. 如存在，读取核心发现（开篇钩子、爽点密度、节奏模式、可借鉴套路）作为参考上下文
+3. 如不存在，提示用户：「对标书原文已放入 `对标/{书名}/原文/`。要先用 `/story-long-analyze` 深度拆解吗？拆完后把 `拆文报告.md` 复制到 `对标/{书名}/` 下，方便大纲和正文阶段参考。」
 
 根据回答做匹配：
 - 脑洞好 → 推荐：系统文、诸天流、无限流
@@ -87,6 +99,10 @@ description: |
 - 终极 Boss/终极阻碍：{}
 ```
 
+完成核心设定后，创建以下 artifact（加载 [references/artifact-protocols.md](references/artifact-protocols.md) 中对应模板）：
+- **设定/关系.md**：角色关系映射（参考 character-design.md §四种关系类型）
+- **设定/题材定位.md**：题材核心梗三分法+对标分析（参考 genre-frameworks-unified.md §核心梗解析）。对标分析表保留 2-3 行摘要，详细数据见 `对标/` 目录
+
 ---
 
 ### Phase 3：大纲搭建
@@ -118,9 +134,9 @@ description: |
 
 ### 第 1 章：{章名}
 - 核心事件：{一句话}
-- 钩子：{开篇用什么钩子}
+- 章首钩子：{从章首7式中选择} — {具体内容}
 - 爽点：{本章爽点}
-- 章尾：{章尾悬念}
+- 章尾钩子：{从章尾13式中选择} — {具体内容，期待度：强/中/弱}
 - 字数目标：{X} 字
 
 ### 第 2 章：{章名}
@@ -131,6 +147,12 @@ description: |
 - 前 3 章：全力打磨，钩子 + 人设 + 爽点 + 悬念四管齐下
 - 4-10 章：快速推进，每章有明确进展
 - 11-30 章：稳定节奏，开始铺设中长线伏笔
+
+大纲完成后，创建以下 artifact（加载 [references/artifact-protocols.md](references/artifact-protocols.md) 中对应模板）：
+- **大纲/卷纲_第X卷.md**：每卷的爽点节奏+情绪弧线+人物弧线+伏笔+反转（参考 outline-arrangement.md §大纲三层结构法 + emotional-arc-design.md §六种弧线速查 + reversal-toolkit.md §五种反转类型）
+- **追踪/伏笔.md** + **追踪/时间线.md**：伏笔状态表+故事时间线（参考 advanced-plot-techniques.md §连续性追踪）
+
+前 3 章细纲额外加载 [references/opening-design.md](references/opening-design.md)（黄金三章法则+六大标准）。
 
 ---
 
@@ -149,41 +171,67 @@ description: |
 │   │   └── ...
 │   ├── 角色/
 │   │   ├── 沈栀.md            # 每个人物一个文件，文件名用角色名
-│   │   ├── 陆衍止.md
 │   │   └── ...
-│   └── 势力/
-│       ├── 天机阁.md          # 每个势力/组织一个文件
-│       ├── 暗月教.md
-│       └── ...
+│   ├── 势力/
+│   │   ├── 天机阁.md          # 每个势力/组织一个文件
+│   │   └── ...
+│   ├── 关系.md                # 角色关系映射
+│   └── 题材定位.md            # 题材核心梗+对标分析
 ├── 大纲/
-│   ├── 大纲.md                # 全书卷级结构 + 每卷核心事件
-│   ├── 细纲_第001章.md        # 每章对应一个细纲，编号与正文对应
-│   ├── 细纲_第002章.md
-│   └── ...
+│   ├── 大纲.md                # 全书卷级结构
+│   ├── 卷纲_第一卷.md         # 每卷一个：爽点节奏+情绪弧线+人物弧线+伏笔+反转
+│   └── 细纲_第001章.md        # 每章一个：事件+钩子(章首/章尾/段落级)+爽点+悬念
 ├── 正文/
 │   ├── 第001章_章名.md
-│   ├── 第002章_章名.md
 │   └── ...
-└── 笔记.md                    # 灵感、备忘、伏笔追踪
+├── 对标/
+│   └── {对标书名}/
+│       ├── 原文/            # 对标书原文章节（手动放入或 analyze 导入）
+│       │   ├── 第001章_章名.md
+│       │   └── ...
+│       └── 拆文报告.md      # story-long-analyze 输出
+├── 追踪/
+│   ├── 伏笔.md                # 伏笔埋设/回收状态表
+│   └── 时间线.md              # 故事内时间线
+└── 笔记.md                    # 灵感、备忘
 ```
 
+**Artifact 映射表**（创建模板详见 [references/artifact-protocols.md](references/artifact-protocols.md)）：
+
+| 文件 | 粒度 | 创建阶段 | 读取时机 |
+|------|------|---------|---------|
+| 设定/关系.md | 全书 | Phase 2 | Phase 3 大纲、Phase 4 写作 |
+| 设定/题材定位.md | 全书 | Phase 2 | Phase 3 大纲、每卷开始前 |
+| 大纲/卷纲_第X卷.md | 卷 | Phase 3 | Phase 4 写卷首章前 |
+| 追踪/伏笔.md | 全书 | Phase 3 起 | Phase 4 每章写作前 |
+| 追踪/时间线.md | 全书 | Phase 3 起 | Phase 4 每章写作前 |
+| 对标/{书名}/拆文报告.md | 对标书 | 用户手动+analyze | Phase 2 核心设定、Phase 3 大纲、Phase 4 写作 |
+
+**缺失文件回退**：所有新增文件是可选增强。缺失时 agent 降级到当前行为，不报错不阻塞——情绪/反转信息在卷纲或大纲中体现，伏笔/时间线不检查，对标参考跳过。
+
 **文件组织原则：**
-- **人物一个一个文件**：`角色/角色名.md`，方便按需读取，不用加载全部人设
+- **人物一个一个文件**：`角色/角色名.md`，方便按需读取
 - **势力一个一个文件**：`势力/势力名.md`，组织/门派/家族/国家等
-- **世界观按主题拆分**：背景、力量体系、社会结构等各自独立，按需扩展
-- **细纲一章一个文件**：`细纲_第XXX章.md`，与正文一一对应，写作时只读当前章细纲
+- **世界观按主题拆分**：背景、力量体系、社会结构等各自独立
+- **细纲一章一个文件**：`细纲_第XXX章.md`，含钩子设计，与正文一一对应
 - **正文按章拆分**：每章一个文件，`第XXX章_章名.md`
-- 写正文时，先读相关角色 + 势力 + 当前卷细纲 + 上一章正文，再输出新章节到文件
 - 每章写完直接写入 `正文/` 目录，不要先输出到对话
 
 #### 单章写作流程
 
 当用户准备写某一章时：
 
-1. **读取上下文**：读上一章正文 + 本章细纲 + 相关设定
+1. **读取上下文**（按需加载，缺失则跳过）：
+   - (1) `正文/第{N-1}章_*.md` — 上一章正文
+   - (2) `大纲/细纲_第{N}章.md` — 本章细纲（含钩子设计）
+   - (3) `追踪/伏笔.md`（如存在）— 待回收伏笔
+   - (4) `设定/角色/{相关角色}.md` — 本章涉及角色
+   - (5) `对标/{对标书名}/拆文报告.md`（如存在）— 对标参考
+   - (6) `对标/{对标书名}/原文/第{N}章_*.md`（如存在）— 同位置章节参考
 2. **确认节奏**：本章是快节奏（冲突/打斗）还是慢节奏（铺垫/日常）
 3. **写作**：直接写入 `正文/第XXX章_章名.md`
 4. **检查**：章尾是否有钩子、爽点是否到位、字数是否达标
+5. **更新追踪**：写完后即时更新 `追踪/伏笔.md`（新增/回收伏笔）和 `追踪/时间线.md`（记录事件时序）
 
 #### 写作技巧提醒
 
@@ -211,6 +259,10 @@ description: |
 
 对已写内容做检查，参考 [references/quality-checklist.md](references/quality-checklist.md) 中的通用检查和长篇专项清单。
 
+检查后更新追踪文件：
+- 更新 `追踪/伏笔.md` 中的过期伏笔和回收状态
+- 更新 `追踪/时间线.md` 中的时间线疑点
+
 ---
 
 ## 下一步建议
@@ -218,6 +270,7 @@ description: |
 | 触发条件 | 推荐话术 |
 |---|---|
 | 写了几章想对标检查 | 「写了一部分了，拆一本同类型爆款对照一下。用 `/story-long-analyze`。」 |
+| 想深度对标一本爆款 | 「把原文放到 `对标/{书名}/原文/`，然后用 `/story-long-analyze` 深度拆解，拆完后把 `拆文报告.md` 复制到 `对标/{书名}/` 下。」 |
 | 方向不确定想看市场 | 「写之前先扫个榜确认方向。用 `/story-long-scan`。」 |
 | 觉得长篇压力太大 | 「试试短篇入门。用 `/story-short-write`。」 |
 | 写完了想润色去 AI 味 | 「写完了检查一下 AI 味。用 `/story-deslop`。」 |
@@ -231,20 +284,18 @@ description: |
 | 文件 | 何时加载 |
 |------|----------|
 | [references/outline-arrangement.md](references/outline-arrangement.md) | **核心参考**：大纲排布方法论+五步大纲法+故事结构分级+剧情质量控制+升级感设计+节点设计法+矛盾设计 |
+| [references/artifact-protocols.md](references/artifact-protocols.md) | 各 artifact 创建模板，Phase 2-3 过渡时加载 |
 | [references/advanced-plot-techniques.md](references/advanced-plot-techniques.md) | 高级技法：小纲四步法+高潮逆推+情绪拉扯+金手指运用+对标书选择+双线结构+AB交织法 |
 | [references/hook-techniques.md](references/hook-techniques.md) | **核心参考**：钩子原理+章尾钩子13式+章首钩子7式+实战模板+段落级钩子+悬念编排+期待感理论+断期待修复 |
-| [references/opening-design.md](references/opening-design.md) | 开头设计：黄金一章法则+六大标准+开局三大基点+核心模板+开头问题诊断 |
+| [references/opening-design.md](references/opening-design.md) | **开头全流程**：黄金一章法则+六大标准+开局三大基点+核心模板+8大题材开头范例+决策树+开头规则 |
 | [references/character-design.md](references/character-design.md) | **人物全流程**：设定主角/配角/反派+人物元素提取+关系映射+动机链+群像写作+代入感构建法 |
-| [references/genre-frameworks-unified.md](references/genre-frameworks-unified.md) | **题材全流程**：题材框架+核心梗解析+事业线/爱情线设计+长篇短篇双视角 |
+| [references/genre-frameworks-unified.md](references/genre-frameworks-unified.md) | **题材全流程**：题材框架+核心梗解析+事业线/爱情线设计+微创新与差异化设计+读者心理需求+卖点偏移检验 |
 | [references/style-modules.md](references/style-modules.md) | **风格全流程**：题材风格+对话+打斗/智斗+镜头式写作+爽点释放+装逼打脸+流派特征+写作基础+白描+视角 |
 | [references/anti-ai-writing.md](references/anti-ai-writing.md) | **去AI味全流程**：预防AI痕迹+三遍去AI法+改写范例库 |
 | [references/dialogue-mastery.md](references/dialogue-mastery.md) | 对话节奏/潜台词/信息控制+对话模式数据库+弹幕技巧 |
-| [references/genre-opening-database.md](references/genre-opening-database.md) | 8大题材开头模板+真实范例+决策树 |
 | [references/emotional-arc-design.md](references/emotional-arc-design.md) | 情绪曲线设计+弧形模板+期待感管理+题材赛道策略 |
 | [references/reversal-toolkit.md](references/reversal-toolkit.md) | 反转类型+时机+误导底层路径 |
-| [references/micro-innovation.md](references/micro-innovation.md) | 题材微创新、差异化设计 |
 | [references/quality-checklist.md](references/quality-checklist.md) | 质量检查+毒点排查+常见问题速查 |
-| [references/writer-psychology.md](references/writer-psychology.md) | 写作心理建设+职业规划+码字习惯 |
 
 ---
 

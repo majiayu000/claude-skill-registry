@@ -85,7 +85,7 @@ Never create or alter tables that already contain user data without an explicit 
 Template structure to use:
 - A server entry module for API routes and static serving.
 - The root App component for route registration.
-- A Layout component for sidebar navigation entries.
+- A **layouts folder** under src/components/layouts/ that holds six shell components — pick the one that matches what the user is building (see "Choosing a layout" below).
 - A pages folder for page implementations.
 - A small API helper module exporting a runQuery function for data access from pages.
 
@@ -93,9 +93,31 @@ For each new page:
 1. Add a page component to the pages folder.
 2. Pull data using the runQuery helper, or a dedicated read-only API route when SQL becomes complex.
 3. Add route wiring in the root App component.
-4. Add a navigation entry in the Layout component.
+4. Add a navigation entry in whichever layout shell the App component is wrapped in (sidebar nav, top nav, or tab bar — depending on the chosen layout).
 
 Keep all dashboard endpoints read-only.
+
+### Choosing a layout
+
+Six layout shells live in `src/components/layouts/`. The default `App.tsx`
+wraps routes in `SidebarLayout`. Swap the import + wrapper in `App.tsx` to
+the shell that matches what the user is asking for:
+
+| Shell | Use when the user asks for… |
+| --- | --- |
+| `SidebarLayout` (default) | a multi-section app with several pages (analytics, admin, multi-page tool) |
+| `TopNavLayout` | a single-purpose dashboard, marketing-style report, or something that wants full-width content |
+| `TopNavTabsLayout` | a Stripe-Dashboard-style sectioned view where tabs slice the same workspace |
+| `SplitPaneLayout` | inbox / CRM / chat / mail-style apps — list on the left, detail on the right. Pass `list` and `detail` as separate props |
+| `CanvasLayout` | a one-page report, embed, or screen with no chrome at all |
+| `CenteredLayout` | login forms, onboarding screens, single-action surfaces |
+
+Rules:
+- **Pick exactly one** shell per dashboard. Do not mix two shells in App.tsx.
+- Before swapping the shell, confirm the choice with the user in one sentence ("I'll build this as a split-pane inbox — list on the left, message on the right. OK?").
+- After swapping the shell, edit the nav entries inside that shell file to match the routes you wire up.
+- All shells share the same stone palette, typography, and spacing — do not introduce new colors or fonts when switching shells.
+- `SplitPaneLayout` takes `list` + `detail` props instead of `children`. App.tsx should render the list pane (route-agnostic) and the detail pane (typically a `<Routes>`) as those two props.
 
 ## Visual style rules
 
@@ -106,7 +128,7 @@ Concrete rules:
 - Prefer compact typography (extra-small or small text sizes) with a normal font weight. Avoid bold headlines except for the page title.
 - Keep borders minimal (single hairline in a light stone tone) and avoid heavy shadows or rounded "card" stacks. Flat surfaces only.
 - For Recharts lines, bars, and grids, stay within the stone color family. Use opacity to differentiate series instead of hue. Single-series charts should be a single mid-stone tone.
-- Layout: a left sidebar for navigation, a main content column with generous whitespace, KPIs as a row of small stat blocks at the top, charts and tables stacked below.
+- Layout: pick a shell from `src/components/layouts/` (see "Choosing a layout" above) instead of inventing a new chrome. Within whichever shell you pick, keep the main content column generous on whitespace, KPIs as a row of small stat blocks at the top, charts and tables stacked below.
 - Empty states, loading states, and error states must follow the same stone palette and typography — no spinners with brand colours, no red error toasts.
 
 When in doubt, look at the existing pages in the template and match their density, spacing, and tone before adding anything new.

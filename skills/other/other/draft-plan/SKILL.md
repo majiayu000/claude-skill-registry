@@ -38,6 +38,18 @@ The user may pass an explicit slug or path in their request (e.g., "draft plan a
 
 State the chosen slug and the resulting plan path before continuing.
 
+### Spec-Derived Input
+
+If the task references an existing spec at `.turbo/specs/<slug>.md` (when a spec path is passed as input), treat the spec as the source of truth for product decisions and discussion areas. Read the spec, then:
+
+- In Step 4, skip escalation for any product decision the spec resolves. Only escalate questions the spec did not answer.
+- In Step 5, skip deep-dive areas the spec covers. Only discuss areas the spec did not address.
+- Forward the spec's slug as the plan slug so the plan and spec share a slug. If `.turbo/plans/<spec-slug>.md` already exists, do not auto-suffix (that would break the shared-slug invariant). Use `AskUserQuestion` to ask whether to overwrite or pick a different slug, mirroring Step 1's explicit-slug collision handling.
+
+A question is resolved by the spec only when the spec makes a definitive statement that answers it. Mentions without a chosen direction, open questions in the spec, and deferred decisions do not count as resolved; escalate those normally.
+
+Step 2 (pattern survey) and Step 3 (consult skills and docs) still run in full. The spec describes what; `/draft-plan` still surveys how.
+
 ## Step 2: Run `/survey-patterns` Skill
 
 Run the `/survey-patterns` skill with the confirmed task description. Keep the returned findings in conversation context for use in Steps 5 and 6.
@@ -145,6 +157,6 @@ Then use the TaskList tool and proceed to any remaining task.
 ## Rules
 
 - Never skip the pattern survey.
-- Never skip decision escalation before drafting.
+- Never skip decision escalation for questions left unanswered. When entering from a Spec-Derived Input, questions the spec already resolves are considered answered and may be skipped.
 - The plan file is the only output. Do not write code, scaffolding, or other project files.
 - Do not run `/review-plan` or any review skills here.

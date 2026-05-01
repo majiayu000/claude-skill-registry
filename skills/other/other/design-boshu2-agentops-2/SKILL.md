@@ -1,6 +1,6 @@
 ---
 name: design
-description: 'Validate product fit before discovery using PRODUCT.md and scope checks.'
+description: 'Validate product fit before discovery.'
 skill_api_version: 1
 user-invocable: true
 context:

@@ -1,6 +1,6 @@
 ---
 name: validation
-description: 'Run post-implementation validation: vibe, post-mortem, retro, and forge.'
+description: 'Run post-implementation validation.'
 skill_api_version: 1
 user-invocable: true
 context:

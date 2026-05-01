@@ -65,5 +65,4 @@ After `/implement` completes, set the plan's frontmatter `status:` to `done`. If
 - The plan file is read-only during execution. If revisions are needed, run `/refine-plan` or `/draft-plan` separately.
 - Never skip Steps 2 or 3.
 - Never enumerate or execute the plan's Implementation Steps inline. The work runs through `/implement`. Restating steps as a turn-level narration counts as inline execution and bypasses the delegation.
-- Honor the plan's Verification section during implementation: run the commands, smoke checks, or MCP tool invocations it specifies. If a check fails or a step is blocked by a dependency, unclear requirement, or environmental issue, halt and investigate; do not silently skip.
 - If the plan's Implementation Steps or Verification include `git commit`, `git push`, or PR creation, halt before Step 5 and ask the user to remove them via `/refine-plan`.

@@ -1,6 +1,6 @@
 ---
 name: pr-plan
-description: 'Plan an open source PR with scope, acceptance criteria, and risk.'
+description: 'Plan an open source PR.'
 skill_api_version: 1
 context:
   window: fork

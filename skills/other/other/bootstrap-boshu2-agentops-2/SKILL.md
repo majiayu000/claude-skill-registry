@@ -1,6 +1,6 @@
 ---
 name: bootstrap
-description: 'Initialize AgentOps project files, goals, product docs, README, hooks, and .agents state.'
+description: 'Initialize AgentOps project files.'
 skill_api_version: 1
 user-invocable: true
 context:

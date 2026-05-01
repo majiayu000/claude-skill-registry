@@ -1,6 +1,6 @@
 ---
 name: deps
-description: 'Audit, update, and validate dependencies, vulnerabilities, and licenses.'
+description: 'Audit dependency risks and updates.'
 skill_api_version: 1
 context:
   window: fork

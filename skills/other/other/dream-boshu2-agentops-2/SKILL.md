@@ -1,6 +1,6 @@
 ---
 name: dream
-description: 'Run or review private overnight AgentOps compounding sessions.'
+description: 'Run overnight compounding sessions.'
 skill_api_version: 1
 user-invocable: true
 context:

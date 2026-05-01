@@ -1,6 +1,6 @@
 ---
 name: heal-skill
-description: 'Repair skill hygiene: frontmatter, links, references, manifests, and parity drift.'
+description: 'Repair skill hygiene.'
 skill_api_version: 1
 context:
   window: isolated

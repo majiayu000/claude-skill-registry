@@ -1,8 +1,8 @@
 {
   "category": "productivity",
   "code": "pro",
-  "count": 2066,
-  "updated_at": "2026-04-30T02:35:27.875127Z",
+  "count": 2071,
+  "updated_at": "2026-05-01T02:39:56.179133Z",
   "skills": [
     {
       "name": "commit-helper",
@@ -13312,6 +13312,26 @@
       "source": "downloaded"
     },
     {
+      "name": "confluence-to-agent-knowledge-base",
+      "description": "Turn any Confluence Cloud instance into a private, searchable AI knowledge base on GitHub with access-tiered repos. Interactive 6-phase walkthrough using the Atlassian MCP connector.",
+      "repo": "miningstore/confluence-to-agent-knowledge-base",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "confluence",
+        "knowledge-base",
+        "atlassian",
+        "mcp",
+        "wiki",
+        "search",
+        "knowledge-management"
+      ],
+      "stars": 0,
+      "install": "miningstore/confluence-to-agent-knowledge-base/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "issue-workflow-orchestrator",
       "description": "Issueワークフロー統括スキル。Issue受領から実装・検証・PRレビュー完了までを、分類に応じたテンプレートで統括し、フェーズ成果物を構造化して引き継ぎながら進行する。トリガー条件:- 「Issue #N を修正して」「#N を直してPRまで」- 「/fix-issue 123」「/orchestrate-issue 123」- Issue修正の全体統括が必要な時注意: 実装そのもの、コード生",
       "repo": "CAPHTECH/claude-marketplace",
@@ -16912,6 +16932,24 @@
       ],
       "stars": 0,
       "install": "miningstore/confluence-to-agent-knowledge-base/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
+      "name": "humanizar-texto-es",
+      "description": "Rewrite Spanish AI-generated text to sound naturally human-written using 11 simultaneous linguistic techniques.",
+      "repo": "ToniPerea/humanizar-texto-es",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "spanish",
+        "ai-detection",
+        "text-rewriting",
+        "nlp",
+        "research"
+      ],
+      "stars": 0,
+      "install": "ToniPerea/humanizar-texto-es/SKILL.md",
       "source": "Community Skills"
     },
     {
@@ -27296,6 +27334,28 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "deep-research",
+      "description": "Deep research with NotebookLM + web search. Domain boost, source credibility scoring, and post-research artifact generation (podcast, video, slides, quiz).",
+      "repo": "Chris1220-cmd/deep-research-skill",
+      "path": "SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "research",
+        "deep-research",
+        "notebooklm",
+        "perplexity",
+        "gemini",
+        "domain-boost",
+        "academic",
+        "maritime",
+        "legal"
+      ],
+      "stars": 0,
+      "install": "Chris1220-cmd/deep-research-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "ui-agent-patterns",
       "description": "Patterns for delegating UI work to specialized agents. Covers synthesis-master vs specialized agents, multi-agent UI generation workflows, and orchestration strategies for complex UI tasks.",
       "repo": "HermeticOrmus/LibreUIUX-Claude-Code",
@@ -28206,6 +28266,22 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "skill-seekers",
+      "description": "Convert docs, repos, PDFs into Claude Skills with conflict detection",
+      "repo": "yusufkaraaslan/Skill_Seekers",
+      "path": "skills/skill-seekers/SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "converter",
+        "skills",
+        "documentation"
+      ],
+      "stars": 0,
+      "install": "yusufkaraaslan/Skill_Seekers/skills/skill-seekers/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "professional-business-writing",
       "description": "Professional business writing assistant - removes AI patterns, maintains authority and clarity.",
       "repo": "b33kman/professional-business-writing-skill",
@@ -28522,6 +28598,22 @@
       "stars": 0,
       "install": "tariron/saasodoo/.claude/skills/odoo-specialist",
       "source": "SkillsMP (cached JSON)"
+    },
+    {
+      "name": "professional-business-writing",
+      "description": "Professional business writing assistant - removes AI patterns, maintains authority and clarity.",
+      "repo": "b33kman/professional-business-writing-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "professional-writing",
+        "business-writing",
+        "writing-assistant"
+      ],
+      "stars": 0,
+      "install": "b33kman/professional-business-writing-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "workflows",

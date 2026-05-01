@@ -1,6 +1,7 @@
 ---
 name: wasm-gallery
 description: Browse, publish, and install WASM agents from the community gallery
+argument-hint: "[search-query]"
 allowed-tools: mcp__claude-flow__wasm_gallery_list mcp__claude-flow__wasm_gallery_search mcp__claude-flow__wasm_gallery_create mcp__claude-flow__wasm_agent_create mcp__claude-flow__wasm_agent_export Bash
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: pr-research
-description: 'Research an upstream repo before contributing: rules, patterns, and expectations.'
+description: 'Research an upstream repo.'
 skill_api_version: 1
 context:
   window: fork

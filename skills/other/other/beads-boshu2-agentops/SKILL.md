@@ -1,6 +1,6 @@
 ---
 name: beads
-description: 'Use bd issue tracking: create, update, route, and close dependency-aware beads.'
+description: 'Track bd issues and dependencies.'
 skill_api_version: 1
 context:
   window: fork

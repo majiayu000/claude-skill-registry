@@ -12,9 +12,9 @@ Prepare and maintain a grounded, venue-compliant rebuttal for: **$ARGUMENTS**
 ## Scope
 
 This skill is optimized for:
-- ICML-style **text-only rebuttal**
-- strict **character limits**
-- **multiple reviewers**
+- **text-only rebuttal** under strict character/word limits (e.g. ICML single-document)
+- **per-reviewer thread responses** where each reviewer renders independently (e.g. OpenReview-style)
+- **multiple reviewers** with shared and reviewer-specific concerns
 - **follow-up rounds** after the initial rebuttal
 - safe drafting with **no fabrication**, **no overpromise**, and **full issue coverage**
 
@@ -43,7 +43,8 @@ Workflow 4:   rebuttal (post-submission external reviews)
 - **REVIEWER_MODEL = `gpt-5.4`** — Used via Codex MCP for internal stress-testing.
 - **REVIEWER_BACKEND = `codex`** — Default: Codex MCP (xhigh). Override with `— reviewer: oracle-pro` for GPT-5.4 Pro via Oracle MCP. See `shared-references/reviewer-routing.md`.
 - **MAX_INTERNAL_DRAFT_ROUNDS = 2** — draft → lint → revise.
-- **MAX_STRESS_TEST_ROUNDS = 1** — One Codex MCP critique round.
+- **VENUE_MODE = `single_document`** — `single_document` for one shared author response, or `per_reviewer_thread` when each reviewer thread renders independently. Confirm the venue/interface before drafting if unclear. Affects Phase 4/7 output shape.
+- **STRESS_TEST_ROUNDS_BASE = 1** — One Codex MCP critique round on the full response set. Add focused rounds for `reviewer_priority: pivotal` responses, terminating when Codex returns no new substantive issues. Hard cap at 5.
 - **MAX_FOLLOWUP_ROUNDS = 3** — per reviewer thread.
 - **AUTO_EXPERIMENT = false** — When `true`, automatically invoke `/experiment-bridge` to run supplementary experiments when the strategy plan identifies reviewer concerns that require new empirical evidence. When `false` (default), pause and present the evidence gap to the user for manual handling.
 - **QUICK_MODE = false** — When `true`, only run Phase 0-3 (parse reviews, atomize concerns, build strategy). Outputs `ISSUE_BOARD.md` + `STRATEGY_PLAN.md` and stops — no drafting, no stress test. Useful for quickly understanding what reviewers want before deciding how to respond.
@@ -55,10 +56,10 @@ Workflow 4:   rebuttal (post-submission external reviews)
 
 1. **Paper source** — PDF, LaTeX directory, or narrative summary
 2. **Raw reviews** — pasted text, markdown, or PDF with reviewer IDs
-3. **Venue rules** — venue name, character/word limit, text-only or revised PDF allowed
+3. **Venue rules** — venue name, character/word limit, text-only or revised PDF allowed, rendering mode (one shared response or independent reviewer threads)
 4. **Current stage** — initial rebuttal or follow-up round
 
-If venue rules or limit are missing, **stop and ask** before drafting.
+If venue rules, limit, or rendering mode are missing, **stop and ask** before drafting.
 
 ## Safety Model
 
@@ -93,7 +94,10 @@ For each atomic concern:
 - `issue_type`: assumptions / theorem_rigor / novelty / empirical_support / baseline_comparison / complexity / practical_significance / clarity / reproducibility / other
 - `severity`: critical / major / minor
 - `reviewer_stance`: positive / swing / negative / unknown
-- `response_mode`: direct_clarification / grounded_evidence / nearest_work_delta / assumption_hierarchy / narrow_concession / future_work_boundary
+- `reviewer_priority`: standard / pivotal
+  - `pivotal` — a reviewer whose response is likely to affect the decision if addressed well: low or borderline rating, addressable concerns, and enough confidence/influence to matter. Phase 3 allocates extra drafting and stress-test budget here.
+- `response_mode`: direct_clarification / grounded_evidence / nearest_work_delta / assumption_hierarchy / narrow_concession / future_work_boundary / structural_distinction
+  - `structural_distinction` — for "your method reduces to X / is just generic Y / is subsumed by Z" attacks. Pattern: agree on the local reduction; show the structural feature your parameterization preserves that X/Y/Z does not capture, backed by a concrete mechanism (theorem dependency, derivation step, or empirical consequence). Never use rhetorically without the supporting mechanism.
 - `status`: open / answered / deferred / needs_user_input
 
 ### Phase 3: Build Strategy Plan
@@ -102,9 +106,10 @@ Create `rebuttal/STRATEGY_PLAN.md`.
 
 1. Identify 2-4 **global themes** resolving shared concerns
 2. Choose **response mode** per issue
-3. Build **character budget** (10-15% opener, 75-80% per-reviewer, 5-10% closing)
-4. Identify **blocked claims** (ungrounded or unapproved)
-5. If unresolved blockers → pause and present to user
+3. Build **character budget** (10-15% opener, 75-80% per-reviewer, 5-10% closing) — applies in `single_document` mode; in `per_reviewer_thread` mode, set per-thread word/char targets instead
+4. **Identify pivotal reviewer(s)** — reviewers whose vote or confidence shift would most affect the decision, especially when concerns are addressable rather than ideological. Mark them `reviewer_priority: pivotal` in `ISSUE_BOARD.md`. There may be more than one. Allocate disproportionate drafting + stress-test budget here.
+5. Identify **blocked claims** (ungrounded or unapproved)
+6. If unresolved blockers → pause and present to user
 
 **QUICK_MODE exit**: If `QUICK_MODE = true`, stop here. Present `ISSUE_BOARD.md` + `STRATEGY_PLAN.md` to the user and summarize: how many issues per reviewer, shared vs unique concerns, recommended priorities, and evidence gaps. The user can then decide to continue with full rebuttal (`/rebuttal — quick mode: false`) or write manually.
 
@@ -138,33 +143,53 @@ If the strategy plan identifies issues that require new empirical evidence (tagg
 
 ### Phase 4: Draft Initial Rebuttal
 
-Create `rebuttal/REBUTTAL_DRAFT_v1.md`.
+Create the draft artifact(s) per `VENUE_MODE`:
+- `single_document` mode → one `rebuttal/REBUTTAL_DRAFT_v1.md`
+- `per_reviewer_thread` mode → one `rebuttal/Reviewer_<ID>_response.md` per reviewer (no top-level `REBUTTAL_DRAFT_v1.md`)
 
-Structure:
-1. **Short opener** — thank reviewers + 2-4 global resolutions
-2. **Per-reviewer numbered responses** — answer → evidence → implication
-3. **Short closing** — resolved / remaining / acceptance case
+**Structure depends on `VENUE_MODE`:**
+
+- `single_document` — one `REBUTTAL_DRAFT_v1.md`:
+  1. Short opener — thank reviewers + 2-4 global resolutions
+  2. Per-reviewer numbered responses — answer → evidence → implication
+  3. Short closing — resolved / remaining / acceptance case
+
+- `per_reviewer_thread` — one self-contained `Reviewer_<ID>_response.md` per reviewer:
+  1. Brief acknowledgment of that reviewer's main thrust
+  2. Numbered W#/Q# responses (answer → evidence → implication)
+  3. Optional shared experimental-setup paragraph (see "Reusable setup block" below)
+  - Each file must be readable standalone. No "see Reviewer X's response" references. No global opener.
 
 Default reply pattern per issue:
 - Sentence 1: direct answer
 - Sentence 2-4: grounded evidence
 - Last sentence: implication for the paper
 
-Heuristics from 5 successful rebuttals:
+**Reusable setup block (per_reviewer_thread mode).**
+If multiple reviewer-thread responses need the same experimental setup or metric definitions, write a canonical `SETUP_METRICS_BLOCK.md`. Reuse it consistently in each reviewer file that needs it. Target ≤ 150 words; expand only with genuinely reviewer-specific additions inline. Change-once-update-everywhere prevents drift across threads.
+
+Heuristics from successful rebuttals (content):
 - Evidence > assertion
-- Global narrative first, per-reviewer detail second
+- Global narrative first, per-reviewer detail second (single_document mode only)
 - Concrete numbers for counter-intuitive points
 - Name closest prior work + exact delta for novelty disputes
 - Concede narrowly when reviewer is right
 - For theory: separate core vs technical assumptions
 - Answer friendly reviewers too
 
+**Reviewer-defensive moves:**
+- **Minimum sufficient evidence per concern.** Usually one numerical anchor: the metric that maps directly to *that reviewer's* specific ask. Cut metrics other reviewers care about — bloat dilutes the answer.
+- **Pre-registered calibration phrasing.** When a threshold or hold-out was fixed before generated samples were inspected, say so explicitly with a phrase like "set on hold-out before any generated sample was inspected." Defuses cherry-pick attacks at near-zero word cost. Only use when actually true.
+- **Surface non-obvious design choices upfront.** If the experimental setup has a non-obvious caveat (compute-matched ≠ epoch-matched, atypical seed protocol, restricted parameter subset, etc.), name it concretely with numbers where they clarify the design choice. Pre-empts adversarial reverse engineering.
+- **Structural distinction over denial.** When a reviewer claims your work reduces to / is subsumed by a generic framework, do not deny the reduction. Identify the structural feature your parameterization preserves that the generic framework does not — see `response_mode: structural_distinction`.
+- **Concede without surrendering the claim.** When the reviewer is partly right, explicitly accept the local point, then state what remains true and why it still supports the paper's contribution. Pair the concession with the preserved theorem, mechanism, empirical result, or scope condition.
+
 Hard rules:
 - NEVER invent experiments, numbers, derivations, citations, or links
 - NEVER promise what user hasn't approved
 - If no strong evidence exists, say less not more
 
-Also generate `rebuttal/PASTE_READY.txt` (plain text, exact character count).
+**`single_document` mode only**: also generate `rebuttal/PASTE_READY.txt` (plain text, exact character count for the OpenReview/CMT paste field). In `per_reviewer_thread` mode skip this artifact — each `Reviewer_<ID>_response.md` is itself the paste target for its thread.
 
 Also generate `rebuttal/REVISION_PLAN.md` — the **overall revision checklist**.
 
@@ -210,6 +235,8 @@ Run all lints:
 4. **Tone** — flag aggressive/submissive/evasive phrases
 5. **Consistency** — no contradictions across reviewer replies
 6. **Limit** — exact character count, compress if over (redundancy → friendly → opener → wording, never drop critical answers)
+7. **Thread-local context** (`per_reviewer_thread` mode only) — each reviewer file must be intelligible without reading any other reviewer file. Flag any "see Reviewer X" references or undefined terms that rely on cross-thread context.
+8. **Adversarial design-choice scan** — for each experimental claim, ask: "Could a hostile reviewer find a non-obvious design choice (compute-match, frozen subset, sampling protocol) that I haven't disclosed?" If yes, add a one-line caveat in the Setup paragraph. Narrower than provenance; focused on *design choices* not factual sources.
 
 ### Phase 6: Codex MCP Stress Test
 
@@ -230,28 +257,38 @@ mcp__codex__codex:
     Verdict: safe to submit / needs revision
 ```
 
-Save full response to `rebuttal/MCP_STRESS_TEST.md`. If hard safety blocker → revise before finalizing.
+**Iterations.** Run the base round on the full draft. Then run focused follow-up rounds on each `reviewer_priority: pivotal` response, terminating when Codex returns no new substantive issues. Hard cap at 5 rounds total. Save each round to `rebuttal/MCP_STRESS_TEST_round<N>.md`; the highest round number represents the final state. If any hard safety blocker remains → revise before finalizing.
 
-### Phase 7: Finalize — Two Versions
+### Phase 7: Finalize
 
-Produce **two outputs** for different purposes:
+**Outputs depend on `VENUE_MODE`:**
 
-1. **`rebuttal/PASTE_READY.txt`** — the strict version
+**`single_document` mode** — produce two versions:
+
+1. **`rebuttal/PASTE_READY.txt`** — strict version
    - Plain text, exact character count, fits venue limit
-   - Ready to paste directly into OpenReview / CMT / HotCRP
+   - Ready to paste directly into the venue interface
    - No markdown formatting, no extras
 
-2. **`rebuttal/REBUTTAL_DRAFT_rich.md`** — the extended version
+2. **`rebuttal/REBUTTAL_DRAFT_rich.md`** — extended version
    - Same structure but with **more detail**: fuller explanations, additional evidence, optional paragraphs
    - Marked with `[OPTIONAL — cut if over limit]` for sections that exceed the strict version
    - Author can read this to understand the full reasoning, then manually decide what to keep/cut/rewrite
    - Useful for follow-up rounds — the extra material is pre-written
 
-3. Update `rebuttal/REBUTTAL_STATE.md`
-4. Refresh `rebuttal/REVISION_PLAN.md` so the overall checklist matches the final draft (add items, mark `already_done` as checked, carry forward any `pending` items)
-5. Present to user:
-   - `PASTE_READY.txt` character count vs venue limit
-   - `REBUTTAL_DRAFT_rich.md` for review and manual editing
+**`per_reviewer_thread` mode** — produce one file per reviewer:
+
+1. **`rebuttal/Reviewer_<ID>_response.md`** — one self-contained file per reviewer, ready to paste into the corresponding reviewer thread
+2. **`rebuttal/SETUP_METRICS_BLOCK.md`** — optional canonical setup/metrics text when reused across reviewer files
+3. **`rebuttal/SUPPLEMENTARY_FIG_PDF/`** (optional) — when the venue does not allow PDF revision but allows anonymous figure links, generate a venue-compliant supplementary PDF. Do not hard-code an anonymous-hosting platform or typesetting style; choose what the target venue accepts.
+
+**Both modes:**
+
+4. Update `rebuttal/REBUTTAL_STATE.md`
+5. Refresh `rebuttal/REVISION_PLAN.md` so the overall checklist matches the final draft (add items, mark `already_done` as checked, carry forward any `pending` items)
+6. Present to user:
+   - For `single_document`: `PASTE_READY.txt` character count vs venue limit; `REBUTTAL_DRAFT_rich.md` for review
+   - For `per_reviewer_thread`: list of per-reviewer files with word counts; `SETUP_METRICS_BLOCK.md` if used; supplementary PDF if generated
    - `REVISION_PLAN.md` checklist — counts of pending / approved / deferred
    - Remaining risks + lines needing manual approval
 
@@ -274,7 +311,7 @@ When new reviewer comments arrive:
 - **Never overpromise.** Only promise what user explicitly approved.
 - **Full coverage.** Every reviewer concern tracked and accounted for.
 - **Preserve raw records.** Reviews and MCP outputs stored verbatim.
-- **Global + per-reviewer structure.** Shared concerns in opener.
+- **Structure follows `VENUE_MODE`.** `single_document` → global opener with shared concerns + per-reviewer numbered detail. `per_reviewer_thread` → no global opener; each reviewer file is self-contained.
 - **Answer friendly reviewers too.** Reinforce supportive framing.
 - **Meta-reviewer closing.** Summarize resolved/remaining/why accept.
 - **Evidence > rhetoric.** Derivations and numbers over prose.

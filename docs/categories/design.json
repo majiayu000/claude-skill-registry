@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 9520,
-  "updated_at": "2026-05-01T02:39:54.203301Z",
+  "count": 9521,
+  "updated_at": "2026-05-01T20:15:59.648193Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -93669,6 +93669,23 @@
       "stars": 0,
       "install": "wwwzhouhui/skills_collection/design/xiaohuihui-dify-tech-article",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "repo": "alonw0/web-asset-generator",
+      "path": "skills/web-asset-generator/SKILL.md",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "stars": 0,
+      "install": "alonw0/web-asset-generator/skills/web-asset-generator/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "worldbuilding",

@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5340,
-  "updated_at": "2026-05-01T02:39:54.554984Z",
+  "count": 5341,
+  "updated_at": "2026-05-01T20:15:59.992368Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -27367,6 +27367,24 @@
       "stars": 0,
       "install": "pauljbernard/content/.archive/old-content-directory-2025-11-06/content/.claude/skills/learning-localization-engineering",
       "source": "downloaded"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "runtime-diagnostics",

@@ -1,0 +1,25 @@
+{
+  "name": "neat-freak",
+  "description": "End-of-session knowledge cleanup with OCD-level rigor — reconciles project docs (CLAUDE.md, README.md, docs/) and agent memory against the code so nothing rots. Cross-platform: Claude Code, Codex, OpenCode, OpenClaw.",
+  "repo": "KKKKhazix/khazix-skills",
+  "path": "neat-freak",
+  "github_branch": "main",
+  "category": "productivity",
+  "tags": [
+    "documentation",
+    "memory",
+    "housekeeping",
+    "cross-platform",
+    "agent-skill"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "neat-freak",
+  "author": "KKKKhazix",
+  "source_url": "https://github.com/KKKKhazix/khazix-skills/blob/main/neat-freak/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/KKKKhazix/khazix-skills/blob/main/neat-freak/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

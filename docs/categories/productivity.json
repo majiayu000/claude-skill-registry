@@ -1,8 +1,8 @@
 {
   "category": "productivity",
   "code": "pro",
-  "count": 2071,
-  "updated_at": "2026-05-01T02:39:56.179133Z",
+  "count": 2079,
+  "updated_at": "2026-05-01T20:16:01.601966Z",
   "skills": [
     {
       "name": "commit-helper",
@@ -12977,6 +12977,26 @@
       "source": "SkillsMP Synced Skills"
     },
     {
+      "name": "confluence-to-agent-knowledge-base",
+      "description": "Turn any Confluence Cloud instance into a private, searchable AI knowledge base on GitHub with access-tiered repos. Interactive 6-phase walkthrough using the Atlassian MCP connector.",
+      "repo": "miningstore/confluence-to-agent-knowledge-base",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "confluence",
+        "knowledge-base",
+        "atlassian",
+        "mcp",
+        "wiki",
+        "search",
+        "knowledge-management"
+      ],
+      "stars": 0,
+      "install": "miningstore/confluence-to-agent-knowledge-base/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "workbench-github",
       "description": "GitHub workflows for Workbench CLI. Use when creating pull requests from work items or wiring GitHub-specific actions.",
       "repo": "bravellian/workbench",
@@ -14015,6 +14035,22 @@
       "source": "SkillsMP Synced Skills"
     },
     {
+      "name": "professional-business-writing",
+      "description": "Professional business writing assistant - removes AI patterns, maintains authority and clarity.",
+      "repo": "b33kman/professional-business-writing-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "professional-writing",
+        "business-writing",
+        "writing-assistant"
+      ],
+      "stars": 0,
+      "install": "b33kman/professional-business-writing-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "grey-haven-context-management",
       "description": "Multi-agent workflow orchestration with state persistence, handoff patterns, and resumable workflows. Use when building multi-agent workflows, coordinating complex tasks, or implementing resumable pro",
       "repo": "greyhaven-ai/claude-code-config",
@@ -14202,6 +14238,24 @@
       "stars": 0,
       "install": "cyrup-ai/kodegen-claude-plugin/plugins/kg/skills/browser-agent",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "khazix-writer",
+      "description": "Long-form WeChat article writer in 数字生命卡兹克 (Khazix)'s personal style — full style rule set, four-layer self-check system, content methodology and a curated style library. Use when the user wants to...",
+      "repo": "KKKKhazix/khazix-skills",
+      "path": "khazix-writer",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "writing",
+        "wechat",
+        "long-form",
+        "chinese",
+        "content-creation"
+      ],
+      "stars": 0,
+      "install": "KKKKhazix/khazix-skills/khazix-writer",
+      "source": "Community Skills"
     },
     {
       "name": "chain-of-thought",
@@ -16599,6 +16653,24 @@
       "source": "SkillsMP Synced Skills"
     },
     {
+      "name": "hv-analysis",
+      "description": "横纵分析法 (Horizontal-Vertical Analysis) deep-research skill — vertical axis traces a subject's full life history as a narrative, horizontal axis benchmarks it against competitors at the current moment...",
+      "repo": "KKKKhazix/khazix-skills",
+      "path": "hv-analysis",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "deep-research",
+        "analysis",
+        "competitive-analysis",
+        "pdf",
+        "chinese"
+      ],
+      "stars": 0,
+      "install": "KKKKhazix/khazix-skills/hv-analysis",
+      "source": "Community Skills"
+    },
+    {
       "name": "executive-summary-creator",
       "description": "Executive Summary Creator - Auto-activating skill for Enterprise Workflows.Triggers on: executive summary creator, executive summary creatorPart of the Enterprise Workflows skill category.",
       "repo": "jeremylongshore/claude-code-plugins-plus-skills",
@@ -17027,6 +17099,24 @@
       "stars": 0,
       "install": "MykhailoDmytriakha/my-preacher-helper/.codex/skills/21-understand-research-150",
       "source": "GitHub Search API"
+    },
+    {
+      "name": "neat-freak",
+      "description": "End-of-session knowledge cleanup with OCD-level rigor — reconciles project docs (CLAUDE.md, README.md, docs/) and agent memory against the code so nothing rots. Cross-platform: Claude Code, Codex, ...",
+      "repo": "KKKKhazix/khazix-skills",
+      "path": "neat-freak",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "documentation",
+        "memory",
+        "housekeeping",
+        "cross-platform",
+        "agent-skill"
+      ],
+      "stars": 0,
+      "install": "KKKKhazix/khazix-skills/neat-freak",
+      "source": "Community Skills"
     },
     {
       "name": "war-room-ops",
@@ -17509,6 +17599,24 @@
       "stars": 0,
       "install": "techops-services/vibeyard/.claude/skills/feature-spec",
       "source": "SkillsMP Synced Skills"
+    },
+    {
+      "name": "humanizar-texto-es",
+      "description": "Rewrite Spanish AI-generated text to sound naturally human-written using 11 simultaneous linguistic techniques.",
+      "repo": "ToniPerea/humanizar-texto-es",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "spanish",
+        "ai-detection",
+        "text-rewriting",
+        "nlp",
+        "research"
+      ],
+      "stars": 0,
+      "install": "ToniPerea/humanizar-texto-es/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "executing-tasks-from-any-source",
@@ -23848,6 +23956,22 @@
       "source": "downloaded"
     },
     {
+      "name": "skill-seekers",
+      "description": "Convert docs, repos, PDFs into Claude Skills with conflict detection",
+      "repo": "yusufkaraaslan/Skill_Seekers",
+      "path": "skills/skill-seekers/SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "converter",
+        "skills",
+        "documentation"
+      ],
+      "stars": 0,
+      "install": "yusufkaraaslan/Skill_Seekers/skills/skill-seekers/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "stable-baselines3",
       "description": "Use this skill for reinforcement learning tasks including training RL agents (PPO, SAC, DQN, TD3, DDPG, A2C, etc.), creating custom Gym environments, implementing callbacks for monitoring and control,",
       "repo": "davila7/claude-code-templates",
@@ -25159,6 +25283,28 @@
       "stars": 0,
       "install": "YL08140921/unson-os-market-research/.skills/idea-generator",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "deep-research",
+      "description": "Deep research with NotebookLM + web search. Domain boost, source credibility scoring, and post-research artifact generation (podcast, video, slides, quiz).",
+      "repo": "Chris1220-cmd/deep-research-skill",
+      "path": "SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "research",
+        "deep-research",
+        "notebooklm",
+        "perplexity",
+        "gemini",
+        "domain-boost",
+        "academic",
+        "maritime",
+        "legal"
+      ],
+      "stars": 0,
+      "install": "Chris1220-cmd/deep-research-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "tickets",

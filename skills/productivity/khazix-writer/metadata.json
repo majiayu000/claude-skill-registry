@@ -1,0 +1,25 @@
+{
+  "name": "khazix-writer",
+  "description": "Long-form WeChat article writer in 数字生命卡兹克 (Khazix)'s personal style — full style rule set, four-layer self-check system, content methodology and a curated style library. Use when the user wants to draft, continue, or expand a Chinese long-form article in this voice.",
+  "repo": "KKKKhazix/khazix-skills",
+  "path": "khazix-writer",
+  "github_branch": "main",
+  "category": "productivity",
+  "tags": [
+    "writing",
+    "wechat",
+    "long-form",
+    "chinese",
+    "content-creation"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "khazix-writer",
+  "author": "KKKKhazix",
+  "source_url": "https://github.com/KKKKhazix/khazix-skills/blob/main/khazix-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/KKKKhazix/khazix-skills/blob/main/khazix-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

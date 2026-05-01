@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19716,
-  "updated_at": "2026-05-01T02:39:54.318535Z",
+  "count": 19717,
+  "updated_at": "2026-05-01T20:15:59.760905Z",
   "skills": [
     {
       "name": "fix",
@@ -134914,6 +134914,24 @@
       "stars": 0,
       "install": "fredrikaverpil/dotfiles/development/aip",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "skills/pagerunner-skill/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/skills/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "format-processor",

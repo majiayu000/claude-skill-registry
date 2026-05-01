@@ -1,0 +1,25 @@
+{
+  "name": "hv-analysis",
+  "description": "横纵分析法 (Horizontal-Vertical Analysis) deep-research skill — vertical axis traces a subject's full life history as a narrative, horizontal axis benchmarks it against competitors at the current moment, then crosses both axes for original insight. Outputs a typeset PDF report (10k–30k Chinese chars).",
+  "repo": "KKKKhazix/khazix-skills",
+  "path": "hv-analysis",
+  "github_branch": "main",
+  "category": "productivity",
+  "tags": [
+    "deep-research",
+    "analysis",
+    "competitive-analysis",
+    "pdf",
+    "chinese"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "hv-analysis",
+  "author": "KKKKhazix",
+  "source_url": "https://github.com/KKKKhazix/khazix-skills/blob/main/hv-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/KKKKhazix/khazix-skills/blob/main/hv-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

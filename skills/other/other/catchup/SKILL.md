@@ -1,7 +1,7 @@
 ---
 name: catchup
-description: 'Summarize recent changes from git history for context recovery, handoffs, and sprint review'
-version: 1.9.0
+description: 'Summarize recent git changes for context recovery. Use when resuming after a session break, joining ongoing work, or preparing a handoff.'
+version: 1.9.3
 alwaysApply: false
 category: analysis-methods
 tags:
@@ -11,9 +11,7 @@ tags:
 - follow-ups
 dependencies:
 - imbue:proof-of-work
-tools:
-- git
-- log-tools
+tools: []
 usage_patterns:
 - context-catchup
 - handoff-preparation
@@ -23,6 +21,7 @@ model_hint: fast
 estimated_tokens: 700
 progressive_loading: true
 module_strategy: context-based
+role: entrypoint
 ---
 ## Table of Contents
 

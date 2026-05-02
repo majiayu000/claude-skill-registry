@@ -1,6 +1,6 @@
 ---
 name: complexity
-description: 'Analyze code complexity and identify focused refactor targets.'
+description: 'Find focused refactor hotspots.'
 skill_api_version: 1
 context:
   window: fork

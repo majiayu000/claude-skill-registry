@@ -50,11 +50,14 @@ This is **stricter than reviewer-independence** — it's zero-context evidence a
 
 Locate paper and result files WITHOUT reading or interpreting them.
 
-**Paper files** (claims):
+**Paper files** (claims) — paths shown relative to the shell's working
+directory so you can find them with `ls`; when writing them into
+`audited_input_hashes`, use paths relative to the paper dir (no `paper/`
+prefix) per the "Submission Artifact Emission" section below:
 ```
-paper/main.tex
-paper/sections/*.tex
-paper/tables/*.tex (if separate)
+paper/main.tex                # → hash key: main.tex
+paper/sections/*.tex          # → hash key: sections/*.tex
+paper/tables/*.tex (if separate)   # → hash key: tables/*.tex
 ```
 
 **Result files** (evidence):
@@ -242,3 +245,82 @@ Same pattern as `/experiment-audit`:
 ## Review Tracing
 
 After each `mcp__codex__codex` or `mcp__codex__codex-reply` reviewer call, save the trace following `shared-references/review-tracing.md`. Use `tools/save_trace.sh` or write files directly to `.aris/traces/<skill>/<date>_run<NN>/`. Respect the `--- trace:` parameter (default: `full`).
+
+## Submission Artifact Emission
+
+This skill **always** writes `paper/PAPER_CLAIM_AUDIT.json`, regardless of
+caller or detector outcome. A detector-negative run (paper has no numeric
+claims) emits verdict `NOT_APPLICABLE`; a paper-with-numeric-claims-but-no-
+raw-results run emits `BLOCKED`. Silent skip is forbidden — `paper-writing`
+Phase 6 and `tools/verify_paper_audits.sh` both rely on this artifact
+existing at a predictable path.
+
+The artifact conforms to the schema in `shared-references/assurance-contract.md`:
+
+```json
+{
+  "audit_skill":      "paper-claim-audit",
+  "verdict":          "PASS | WARN | FAIL | NOT_APPLICABLE | BLOCKED | ERROR",
+  "reason_code":      "all_numbers_match | rounding_drift | missing_raw_results | ...",
+  "summary":          "One-line human-readable verdict summary.",
+  "audited_input_hashes": {
+    "main.tex":                              "sha256:...",
+    "sections/5.evidence.tex":               "sha256:...",
+    "/abs/path/to/results/run_2026_04_19.json": "sha256:..."
+  },
+  "trace_path":       ".aris/traces/paper-claim-audit/<date>_run<NN>/",
+  "thread_id":        "<codex mcp thread id>",
+  "reviewer_model":   "gpt-5.4",
+  "reviewer_reasoning": "xhigh",
+  "generated_at":     "<UTC ISO-8601>",
+  "details": {
+    "total_claims":   <int>,
+    "mismatches":     [ ... per-claim issue records ... ],
+    "result_files":   [ ... raw files consulted ... ]
+  }
+}
+```
+
+### `audited_input_hashes` scope
+
+Hash the **declared input set** passed into this audit invocation — i.e. the
+exact `.tex` files and raw result / config files this run read — not a
+repo-wide union and not the reviewer's self-reported subset. If a caller
+passed only `main.tex` + a single result file, hash those two files and no
+others. The external verifier rehashes these entries; any mismatch flags
+`STALE`.
+
+**Path convention** (must match what `tools/verify_paper_audits.sh`
+expects): keys are **paths relative to the paper directory** (the arg
+passed to the verifier) for in-paper files — so `main.tex`, not
+`paper/main.tex` — and **absolute paths** for out-of-paper files such as
+external `results/` dirs. The verifier resolves relative entries via
+`os.path.join(paper_dir, key)`; prefixing with `paper/` produces
+`paper/paper/main.tex` and false-fails as STALE.
+
+### Verdict decision table
+
+| Input state                                           | Verdict          | `reason_code` example |
+|-------------------------------------------------------|------------------|-----------------------|
+| No numeric claims detected in paper                   | `NOT_APPLICABLE` | `no_numeric_claims`   |
+| Numeric claims detected, no raw result files found    | `BLOCKED`        | `no_raw_evidence`     |
+| All claims reconcile to raw data                      | `PASS`           | `all_numbers_match`   |
+| Minor rounding drift only, no material mismatch       | `WARN`           | `rounding_drift`      |
+| Any material mismatch (wrong number, config mismatch) | `FAIL`           | `claim_mismatch`      |
+| Reviewer invocation failed (network / malformed)      | `ERROR`          | `reviewer_error`      |
+
+### Thread independence
+
+Every invocation uses a fresh `mcp__codex__codex` thread. Never
+`codex-reply`. Do not accept prior audit outputs (PROOF_AUDIT, CITATION_AUDIT,
+EXPERIMENT_LOG, AUTO_REVIEW summaries) as input to this audit — the fresh
+thread preserves reviewer independence per
+`shared-references/reviewer-independence.md`.
+
+### Human-readable sibling
+
+`paper/PAPER_CLAIM_AUDIT.md` is written alongside the JSON for readers.
+The JSON is authoritative for `tools/verify_paper_audits.sh`; the Markdown
+is for humans. The parent skill (`paper-writing` Phase 6) plus the verifier
+decide whether the verdict blocks finalization — this skill itself never
+blocks; it only emits.

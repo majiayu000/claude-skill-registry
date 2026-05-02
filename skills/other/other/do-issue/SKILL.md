@@ -1,7 +1,8 @@
 ---
 name: do-issue
-description: 'Parallel subagent execution with code review gates between task batches for issue resolution'
-version: 1.9.0
+role: entrypoint
+description: 'Parallel subagent execution with review gates between task batches. Use when resolving GitHub/GitLab issues that need multiple steps.'
+version: 1.9.3
 alwaysApply: false
 category: workflow-automation
 tags:
@@ -19,9 +20,7 @@ dependencies:
 - superpowers:test-driven-development
 - superpowers:requesting-code-review
 - superpowers:finishing-a-development-branch
-tools:
-- gh (GitHub CLI) / glab (GitLab CLI)
-- Task (subagent dispatch)
+tools: []
 usage_patterns:
 - issue-discovery
 - task-planning

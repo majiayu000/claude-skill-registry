@@ -1,8 +1,8 @@
 {
   "category": "testing",
   "code": "tst",
-  "count": 6766,
-  "updated_at": "2026-05-01T20:16:01.645872Z",
+  "count": 6767,
+  "updated_at": "2026-05-02T02:18:30.987686Z",
   "skills": [
     {
       "name": "frontend-testing",
@@ -74916,6 +74916,23 @@
       "stars": 0,
       "install": "deve1993/Quickfy-website/.claude/skills-main/skills-main/new_skills/a11y-specialist",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "playwright-skill",
+      "description": "Browser automation with Playwright - Claude writes and executes custom scripts",
+      "repo": "lackeyjb/playwright-skill",
+      "path": "skills/playwright-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "playwright",
+        "browser",
+        "automation",
+        "testing"
+      ],
+      "stars": 0,
+      "install": "lackeyjb/playwright-skill/skills/playwright-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "gohome-clawdis",

@@ -5,19 +5,16 @@ description: 'Interactive project initialization with git setup, workflows, hook
 
 
   project setup, initialization, scaffold, bootstrap, new project.'
-version: 1.9.0
+version: 1.9.3
 alwaysApply: false
 model: claude-sonnet-4
-tools:
-- Read
-- Write
-- Bash
-- Glob
+tools: []
 modules:
 - ./modules/language-detection.md
 - ./modules/metadata-collection.md
 - ./modules/template-rendering.md
 model_hint: standard
+role: entrypoint
 ---
 ## Table of Contents
 

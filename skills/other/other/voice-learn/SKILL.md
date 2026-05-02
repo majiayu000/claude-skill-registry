@@ -3,7 +3,7 @@ name: voice-learn
 description: Learn from user's manual edits to improve voice profile over
   time. Compares text at three stages (pre-review, post-review, manually
   edited) to identify recurring edit patterns and propose register updates.
-version: 1.9.0
+version: 1.9.3
 globs: "**/*.{md,txt}"
 alwaysApply: false
 category: writing-quality
@@ -13,13 +13,7 @@ tags:
 - improvement
 - feedback
 - iteration
-tools:
-- Read
-- Write
-- Bash
-- Glob
-- Agent
-- TodoWrite
+tools: []
 complexity: high
 model_hint: opus
 estimated_tokens: 2000

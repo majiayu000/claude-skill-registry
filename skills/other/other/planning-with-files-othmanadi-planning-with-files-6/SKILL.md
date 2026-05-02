@@ -30,7 +30,7 @@ Before any complex task:
 1. Create `task_plan.md`, `findings.md`, `progress.md` in your project root
 2. If they don't exist yet, initialize them using:
    - macOS/Linux: `bash .continue/skills/planning-with-files/scripts/init-session.sh`
-   - Windows: `powershell -ExecutionPolicy Bypass -File .continue/skills/planning-with-files/scripts/init-session.ps1`
+   - Windows: `powershell -ExecutionPolicy RemoteSigned -File .continue/skills/planning-with-files/scripts/init-session.ps1`
 3. Re-read `task_plan.md` before major decisions
 4. Update `task_plan.md` after each phase completes
 5. Write discoveries to `findings.md` (especially after web/search/image/PDF viewing)

@@ -100,8 +100,8 @@ metadata:
 ```
 
 完成核心设定后，创建以下 artifact（加载 [references/artifact-protocols.md](references/artifact-protocols.md) 中对应模板）：
-- **设定/关系.md**：角色关系映射（参考 character-design.md §四种关系类型）
-- **设定/题材定位.md**：题材核心梗三分法+对标分析（参考 genre-frameworks-unified.md §核心梗解析）。对标分析表保留 2-3 行摘要，详细数据见 `对标/` 目录
+- **设定/关系.md**：角色关系映射（参考 character-design.md「四种关系类型」）
+- **设定/题材定位.md**：题材核心梗三分法+对标分析（参考 genre-frameworks-unified.md「核心梗解析」）。对标分析表保留 2-3 行摘要，详细数据见 `对标/` 目录
 
 ---
 
@@ -149,8 +149,8 @@ metadata:
 - 11-30 章：稳定节奏，开始铺设中长线伏笔
 
 大纲完成后，创建以下 artifact（加载 [references/artifact-protocols.md](references/artifact-protocols.md) 中对应模板）：
-- **大纲/卷纲_第X卷.md**：每卷的爽点节奏+情绪弧线+人物弧线+伏笔+反转（参考 outline-arrangement.md §大纲三层结构法 + emotional-arc-design.md §六种弧线速查 + reversal-toolkit.md §五种反转类型）
-- **追踪/伏笔.md** + **追踪/时间线.md**：伏笔状态表+故事时间线（参考 advanced-plot-techniques.md §连续性追踪）
+- **大纲/卷纲_第X卷.md**：每卷的爽点节奏+情绪弧线+人物弧线+伏笔+反转（参考 outline-arrangement.md「大纲三层结构法」 + emotional-arc-design.md「六种弧线速查」 + reversal-toolkit.md「五种反转类型」）
+- **追踪/伏笔.md** + **追踪/时间线.md**：伏笔状态表+故事时间线（参考 advanced-plot-techniques.md「连续性追踪」）
 
 前 3 章细纲额外加载 [references/opening-design.md](references/opening-design.md)（黄金三章法则+六大标准）。
 
@@ -265,15 +265,17 @@ metadata:
 
 ---
 
-## 下一步建议
+## 流程衔接
 
-| 触发条件 | 推荐话术 |
-|---|---|
-| 写了几章想对标检查 | 「写了一部分了，拆一本同类型爆款对照一下。用 `/story-long-analyze`。」 |
-| 想深度对标一本爆款 | 「把原文放到 `对标/{书名}/原文/`，然后用 `/story-long-analyze` 深度拆解，拆完后把 `拆文报告.md` 复制到 `对标/{书名}/` 下。」 |
-| 方向不确定想看市场 | 「写之前先扫个榜确认方向。用 `/story-long-scan`。」 |
-| 觉得长篇压力太大 | 「试试短篇入门。用 `/story-short-write`。」 |
-| 写完了想润色去 AI 味 | 「写完了检查一下 AI 味。用 `/story-deslop`。」 |
+**流水线：** 长篇
+**位置：** 写作（第 3/3 步）
+
+| 时机 | 跳转到 | 命令 |
+|---|---|---|
+| 写完，去 AI 味 | story-deslop | `/story-deslop` |
+| 想对比参考书 | story-long-analyze | `/story-long-analyze` |
+| 需要市场方向 | story-long-scan | `/story-long-scan` |
+| 太长，适合短篇 | story-short-write | `/story-short-write` |
 
 ---
 

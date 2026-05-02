@@ -1,7 +1,7 @@
 ---
 name: war-room-checkpoint
-description: "Assess decision reversibility and risk at critical checkpoints to determine whether War Room escalation is warranted. Use when evaluating whether a decision needs multi-LLM deliberation. Skip for standalone or easily reversible decisions."
-version: 1.7.1
+description: "Assess decision reversibility and risk at critical checkpoints to determine whether full War Room escalation is warranted."
+version: 1.9.3
 alwaysApply: false
 # Custom metadata (not used by Claude for matching):
 model_preference: claude-sonnet-4
@@ -13,6 +13,7 @@ complexity: lightweight
 model_hint: fast
 estimated_tokens: 400
 progressive_loading: false
+role: library
 ---
 # War Room Checkpoint Skill
 

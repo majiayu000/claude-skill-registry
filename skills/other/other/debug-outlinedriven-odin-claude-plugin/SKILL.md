@@ -62,3 +62,12 @@ Use `procs` (not `ps`) for PID. Use `bat -P -p -n` (not `cat`) for trace files. 
 5. **Confirm with inverse**.
 6. **Bisect for regressions**.
 7. **No silent edits**.
+
+## Reasoning approach
+
+Before hypothesizing a fix, reason through the failure — SHORT-form KEYWORDS for trace notes, observe the symptoms, trace the execution path, break down where actual behavior diverges from expected, critically review each candidate cause, validate each hypothesis against the evidence. The root cause is the smallest explanation that accounts for all observed symptoms. For numeric calculation (timing math, bound arithmetic, off-by-N analysis), invoke `fend` per the baseline rule; never self-calculate. Causal reasoning and trace interpretation are in-head — they are not arithmetic.
+
+## Pre-flight Check
+
+- Before writing a plan for a bug fix that touches multiple files
+- Whenever you notice that the previous attempt to fix a bug failed

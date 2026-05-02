@@ -1,7 +1,7 @@
 ---
 name: scope-guard
-description: 'Pre-implementation scope control: evaluate feature necessity and enforce branch size limits'
-version: 1.9.0
+description: 'Pre-implementation scope control: worthiness scoring, branch-size limits, defer nice-to-haves. Use before adding features or proposing abstractions.'
+version: 1.9.3
 alwaysApply: false
 category: workflow-methodology
 tags:
@@ -26,6 +26,7 @@ modules:
 - modules/anti-overengineering.md
 - modules/branch-management.md
 - modules/baseline-scenarios.md
+role: library
 ---
 > Building more than what is needed takes choices away
 > from those who work here next. Scope-guard is humility
@@ -263,6 +264,8 @@ When evaluating a feature, create these todos:
 - `superpowers:brainstorming` - Ideation workflow this guards
 - `superpowers:writing-plans` - Planning workflow this validates
 - `imbue:review-core` - Review methodology pattern
+- `imbue:karpathy-principles` - Compact four-principle synthesis covering scope, simplicity, surgical edits, and verifiable goals
+- See `docs/quality-gates.md#skill-level-quality-gate-composition` for the full gate-skill federation graph
 
 ## Module Reference
 

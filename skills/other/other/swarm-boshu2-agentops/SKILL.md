@@ -260,6 +260,8 @@ done
 
 > **Platform pitfalls:** Include relevant pitfalls from `references/worker-pitfalls.md` in worker prompts for the target language/platform. For example, inject the Bash section for shell script tasks, the Go section for Go tasks, etc. This prevents common worker failures from known platform gotchas.
 
+> **Pre-task checks:** Inject the Quick-Reference Inject Block from `references/worker-pre-task-checks.md` into every worker dispatch prompt — grep-for-existing-impls, file-manifest existence, deletion-adjacent symbol verify. Prevents workers from duplicating existing utilities or operating on stale plan symbols.
+
 #### gc Worker Dispatch (when `SWARM_BACKEND="gc"`)
 
 When gc is the selected backend, dispatch and monitor workers through gc sessions instead of Claude teams or Codex sub-agents:
@@ -319,6 +321,8 @@ When a worker discovers work outside their assigned scope, they MUST NOT modify 
 ```json
 {"worker": "<worker-id>", "finding": "<description>", "suggested_files": ["path/to/file"], "timestamp": "<ISO8601>"}
 ```
+
+For richer scope-escape narration (status classification, concrete next step, evidence), see [references/scope-escape-template.md](references/scope-escape-template.md). Use the template when a single-line JSONL entry is insufficient for the operator to act on.
 
 The lead reviews scope escapes after each wave and creates follow-up tasks as needed.
 
@@ -772,4 +776,6 @@ Solution: Check which spawn backend was selected (look for "Using: <backend>" me
 - [../shared/references/backend-inline.md](../shared/references/backend-inline.md)
 - [../shared/references/claude-code-latest-features.md](../shared/references/claude-code-latest-features.md)
 - [references/pre-spawn-friction-gates.md](references/pre-spawn-friction-gates.md)
+- [references/scope-escape-template.md](references/scope-escape-template.md)
+- [references/worker-pre-task-checks.md](references/worker-pre-task-checks.md)
 - [../shared/references/ralph-loop-contract.md](../shared/references/ralph-loop-contract.md)

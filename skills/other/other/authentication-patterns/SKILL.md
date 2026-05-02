@@ -5,7 +5,7 @@ description: 'Authentication patterns for external services: API keys, OAuth, to
 
 
   authentication, API keys, OAuth, token management, credentials.'
-version: 1.9.0
+version: 1.9.3
 alwaysApply: false
 category: infrastructure
 tags:

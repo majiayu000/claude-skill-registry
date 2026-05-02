@@ -1,7 +1,7 @@
 ---
 name: usage-logging
 description: Consult this skill when implementing usage logging and audit trails.
-version: 1.9.0
+version: 1.9.3
 alwaysApply: false
   Use when implementing audit trails, tracking costs, collecting usage analytics,
   managing session logging. Do not use when simple operations without logging needs.
@@ -14,8 +14,7 @@ tags:
 - sessions
 - analytics
 dependencies: []
-tools:
-- usage-logger
+tools: []
 provides:
   infrastructure:
   - usage-logging

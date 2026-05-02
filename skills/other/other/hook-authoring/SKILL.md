@@ -1,7 +1,7 @@
 ---
 name: hook-authoring
 description: 'Guide for creating Claude Code hooks with security-first design. Use for validation, logging, and policy enforcement.'
-version: 1.9.0
+version: 1.9.3
 alwaysApply: false
 category: hook-development
 tags:

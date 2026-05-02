@@ -1,7 +1,7 @@
 ---
 name: makefile-generation
 description: "Generate Makefiles with testing, linting, formatting, and automation targets for new projects."
-version: 1.9.0
+version: 1.9.3
 globs: "**/Makefile"
 alwaysApply: false
 # Custom metadata (not used by Claude for matching):
@@ -159,4 +159,4 @@ deploy: build ## Deploy to production
 ## Related Skills
 
 - `Skill(attune:project-init)` - Full project initialization
-- `Skill(abstract:makefile-dogfooder)` - Makefile testing and validation
+- `/abstract:make-dogfood` command - Makefile testing and validation

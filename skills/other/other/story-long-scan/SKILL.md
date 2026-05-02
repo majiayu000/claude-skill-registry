@@ -54,8 +54,7 @@ metadata:
 |--------|------|------|--------|
 | 1 | **browser-cdp 采集** | 直接抓取平台页面，产出结构化文件 | 有 Chrome 环境时（优先） |
 | 2 | **用户提供** | 用户粘贴榜单截图/文字/链接 | 用户已有数据时 |
-| 3 | **实时搜索** | 使用 WebSearch/WebFetch 获取 | 无 Chrome 但有网络时 |
-| 4 | **内置知识** | 基于知识库趋势数据做分析 | 无法联网、用户无数据时 |
+| 3 | **内置知识** | 基于知识库趋势数据做分析 | 无法联网、用户无数据时 |
 
 #### browser-cdp 采集模式
 
@@ -107,13 +106,6 @@ URL 参数：`/rank/{channel}_{type}_{cat_id}`，channel 0=女频/1=男频，typ
 - 用户提供已有的扫描结果文件路径 → 直接加载进入 Phase 2 分析
 - 用户提供链接 → 用 WebFetch 抓取
 - 用户粘贴/截图 → 手动解析进入分析
-
-**实时搜索操作指引：**
-- 起点：搜索「起点中文网 月票榜/新书榜/畅销榜 {当前年月}」
-- 番茄：搜索「番茄小说 阅读榜/新书榜 {当前年月}」
-- 七猫：搜索「七猫免费小说 排行榜 {当前年月}」
-- 晋江：搜索「晋江文学城 收入金榜/月榜 {当前年月}」
-- 数据量有限，无法产出完整结构化文件
 
 **内置知识操作指引：**
 - 加载 `references/genre-trends.md`
@@ -242,13 +234,16 @@ URL 参数：`/rank/{channel}_{type}_{cat_id}`，channel 0=女频/1=男频，typ
 
 ---
 
-## 下一步建议
+## 流程衔接
 
-| 触发条件 | 推荐话术 |
-|---|---|
-| 用户找到了感兴趣的题材 | 「方向有了，下一步拆一本这个题材的爆款。用 `/story-long-analyze`。」 |
-| 用户想直接开始写 | 「扫完榜直接开书也行。用 `/story-long-write`。」 |
-| 用户发现短篇更适合自己 | 「长篇可能不是你的菜，看看短篇市场。用 `/story-short-scan`。」 |
+**流水线：** 长篇
+**位置：** 扫榜（第 1/3 步）
+
+| 时机 | 跳转到 | 命令 |
+|---|---|---|
+| 找到方向 | story-long-analyze | `/story-long-analyze` |
+| 直接开写 | story-long-write | `/story-long-write` |
+| 更适合短篇 | story-short-scan | `/story-short-scan` |
 
 ## 参考资料
 
@@ -260,7 +255,12 @@ URL 参数：`/rank/{channel}_{type}_{cat_id}`，channel 0=女频/1=男频，typ
 | [references/genre-trends.md](references/genre-trends.md) | 查看当前题材趋势和切入建议时 |
 | [references/publishing-guide.md](references/publishing-guide.md) | 平台选择+推荐机制+数据指标+简介设计 |
 | [references/scan-output-format.md](references/scan-output-format.md) | browser-cdp采集字段定义+输出模板+文件命名规范 |
-| [scripts/fanqie-rank-scraper.js](scripts/fanqie-rank-scraper.js) | 番茄榜单采集+字体解码脚本，配合 browser-cdp 使用 |
+| [scripts/cdp-utils.js](scripts/cdp-utils.js) | CDP 公共工具函数（ab/sleep/evalJSON/safeStr/scrollLoad/getArg），各采集脚本共用 |
+| [scripts/fanqie-rank-scraper.js](scripts/fanqie-rank-scraper.js) | 番茄榜单采集，通过详情页绕过字体反爬，配合 browser-cdp 使用 |
+| [scripts/qidian-rank-scraper.js](scripts/qidian-rank-scraper.js) | 起点榜单采集（畅销/月票/新书等），SSR 直出提取 |
+| [scripts/qimao-rank-scraper.js](scripts/qimao-rank-scraper.js) | 七猫榜单采集（大热/新书/完结等），tab 切换+滚动加载 |
+| [scripts/jjwxc-rank-scraper.js](scripts/jjwxc-rank-scraper.js) | 晋江榜单采集（收入金榜/月榜等），按频道分组提取 |
+| [scripts/ciweimao-rank-scraper.js](scripts/ciweimao-rank-scraper.js) | 刺猬猫榜单采集（点击/收藏/月票等），单页 9 榜提取 |
 
 ---
 

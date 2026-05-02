@@ -1,11 +1,8 @@
 ---
 name: agent-expenditure
-description: >-
-  Track per-agent token usage and flag waste patterns in parallel
-  dispatch workflows. Consult after running parallel agents to evaluate
-  whether expenditure was proportional to value. Cross-references the
-  plan-before-large-dispatch rule.
-version: 1.7.1
+role: library
+description: 'Track per-agent token usage and flag waste in parallel dispatch. Use after running parallel agents to evaluate cost vs value.'
+version: 1.9.3
 alwaysApply: false
 category: resource-optimization
 tags:

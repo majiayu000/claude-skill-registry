@@ -1,7 +1,7 @@
 ---
 name: python-performance
 description: 'Python performance profiling and optimization: bottleneck detection, memory tuning, benchmarking'
-version: 1.9.0
+version: 1.9.3
 globs: "**/*.py"
 alwaysApply: false
 category: performance
@@ -12,10 +12,7 @@ tags:
 - optimization
 - cProfile
 - memory
-tools:
-- profiler-runner
-- memory-analyzer
-- benchmark-suite
+tools: []
 usage_patterns:
 - performance-analysis
 - bottleneck-identification

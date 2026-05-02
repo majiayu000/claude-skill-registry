@@ -1,7 +1,7 @@
 ---
 name: damage-control
 description: 'Recover from broken agent state including crash recovery, context overflow, merge conflicts, and corrupted worktrees.'
-version: 1.8.4
+version: 1.9.3
 alwaysApply: false
 category: infrastructure
 tags:
@@ -37,6 +37,7 @@ modules:
 - modules/merge-conflict-resolution.md
 - modules/state-reconciliation.md
 - modules/risk-assessment-checklist.md
+role: library
 ---
 ## Table of Contents
 

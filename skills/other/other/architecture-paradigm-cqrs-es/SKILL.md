@@ -1,7 +1,7 @@
 ---
 name: architecture-paradigm-cqrs-es
 description: 'Apply CQRS and Event Sourcing for read/write separation and audit trails. Use when auditability is critical.'
-version: 1.9.0
+version: 1.9.3
 alwaysApply: false
 category: architectural-pattern
 tags:
@@ -12,10 +12,7 @@ tags:
 - audit-trail
 - scalability
 dependencies: []
-tools:
-- event-store
-- message-broker
-- projection-builder
+tools: []
 usage_patterns:
 - paradigm-implementation
 - distributed-system-design

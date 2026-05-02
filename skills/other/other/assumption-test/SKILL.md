@@ -1,7 +1,7 @@
 ---
 name: assumption-test
-description: "Design the smallest viable test to validate or invalidate a critical assumption. Based on Torres's assumption testing framework."
-instruction_budget: 24
+description: "Design the smallest viable test to validate or invalidate a critical assumption. Based on Torres's assumption testing framework, organized by Gilad's AFTER model (Assessment → Fact-Finding → Tests → Experiments → Release Results)."
+instruction_budget: 38
 ---
 
 # Assumption Testing
@@ -32,17 +32,62 @@ Plot each assumption on:
 
 ## Step 3: Choose the Lightest Test
 
+Organized by Gilad's AFTER model (Assessment → Fact-Finding → Tests → Experiments → Release Results). Always start from the top and pick the lightest test that produces meaningful signal. Don't build a prototype when a survey would suffice.
+
+### Assessment (internal, cheapest — hours)
+
 | Test Type | Effort | Signal Quality | When to Use |
 |-----------|--------|---------------|-------------|
-| **Data mining** | Hours | Variable | You have existing behavioral data |
-| **One-question survey** | Hours | Low-Medium | Quick pulse on a specific question |
+| **Goals alignment** | Minutes | Low | Check if the idea serves a current strategic goal |
+| **Business modeling** | Hours | Low-Medium | Sketch unit economics or revenue model |
+| **ICE analysis** | Hours | Low-Medium | Score Impact/Confidence/Ease (see `/ice-score`) |
+| **Assumption mapping** | Hours | Medium | List and prioritize all assumptions (Step 1-2 above) |
+| **Stakeholder review** | Hours | Low | Internal expert judgment (beware organizational mythology — Brown) |
+
+### Fact-Finding (external evidence — hours to days)
+
+| Test Type | Effort | Signal Quality | When to Use |
+|-----------|--------|---------------|-------------|
+| **Data analysis** | Hours | Variable | You have existing behavioral data |
+| **Surveys** | Hours | Low-Medium | Quick pulse on a specific question |
+| **Competitive analysis** | Hours | Medium | Map alternatives users already use |
+| **User interviews** | Days | High | Story-based interviews about past behavior (see `/user-interview`) |
+| **Field research** | Days | High | Observe users in their natural context |
+
+### Tests (controlled artifacts — days to weeks)
+
+| Test Type | Effort | Signal Quality | When to Use |
+|-----------|--------|---------------|-------------|
 | **Smoke/fake door test** | Days | Medium | Test demand before building |
 | **Concierge test** | Days | High | Manually deliver the service |
 | **Wizard of Oz** | Days | High | Fake the backend, real frontend |
-| **Prototype test** | 1-2 weeks | High | Test usability with interactive mockup |
-| **A/B test** | 2+ weeks | Very High | Test with real users at scale |
+| **Usability test** | Days | High | Test usability with interactive mockup (see `/usability-check`) |
+| **Early adopters** | Days-Weeks | High | Give access to known enthusiasts, observe behavior |
+| **Labs** | Days-Weeks | Medium-High | Internal prototype environment for structured exploration |
+| **Fishfood** | Days-Weeks | Medium-High | Internal-only release (your team uses it) |
+| **Dogfood** | Weeks | High | Broader internal release (adjacent teams use it) |
+| **Alpha** | Weeks | High | Controlled external release with selected users, known bugs expected |
+| **Beta** | Weeks | High | Broader external release, feature-complete, collecting feedback |
+| **Preview** | Weeks | High | Feature-flagged release to opted-in users |
+| **Longitudinal study** | Weeks | Very High | Track same users over time for behavior change |
 
-**Rule**: Always pick the LIGHTEST test that produces meaningful signal. Don't build a prototype when a survey would suffice.
+### Experiments (statistical comparisons — weeks)
+
+| Test Type | Effort | Signal Quality | When to Use |
+|-----------|--------|---------------|-------------|
+| **A/B test** | 2+ weeks | Very High | Test one change with real users at scale |
+| **A/B/n test** | 2+ weeks | Very High | Test multiple variants simultaneously |
+| **Multivariate test** | 2+ weeks | Very High | Test combinations of changes |
+
+### Release Results (staged release — weeks)
+
+| Test Type | Effort | Signal Quality | When to Use |
+|-----------|--------|---------------|-------------|
+| **% Launch** | Weeks | Very High | Roll out to a percentage of users, measure |
+| **Holdback** | Weeks | Very High | Keep a control group on the old experience |
+| **Post-launch analysis** | Ongoing | Very High | Measure outcomes after full release |
+
+*Source: Gilad (AFTER model, Evidence-Guided / Testing Product Ideas Handbook). 28 techniques across 5 stages, ordered by cost and confidence.*
 
 ## Step 4: Define Success Criteria
 

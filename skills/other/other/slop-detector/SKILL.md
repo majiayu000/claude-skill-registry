@@ -1,12 +1,9 @@
 ---
 name: slop-detector
-description: Detect and flag AI-generated content markers in documentation and prose.
-version: 1.8.4
+description: 'Detect AI-generated markers in prose. Use when reviewing docs for slop, cleaning LLM output, or auditing prose quality. Not for generating new content.'
+version: 1.9.3
 globs: "**/*.md"
 alwaysApply: false
-  Use when reviewing documentation for AI markers, cleaning up LLM-generated content,
-  or auditing prose quality. Do not use when generating new content (use doc-generator)
-  or learning writing styles (use style-learner).
 category: writing-quality
 tags:
 - ai-detection
@@ -15,10 +12,7 @@ tags:
 - cleanup
 - documentation
 - quality
-tools:
-- Read
-- Grep
-- TodoWrite
+tools: []
 complexity: medium
 model_hint: fast
 estimated_tokens: 4200
@@ -36,6 +30,7 @@ modules:
 - i18n-patterns
 dependencies:
 - scribe:shared
+role: library
 ---
 # AI Slop Detection
 

@@ -1,7 +1,7 @@
 ---
 name: pr-review
-description: 'Scope-focused PR review with requirements validation and backlog triage'
-version: 1.9.0
+description: 'Scope-focused PR review with requirements validation and backlog triage. Use when reviewing pull requests with a clear scope contract.'
+version: 1.9.3
 alwaysApply: false
 category: review
 tags:
@@ -13,9 +13,7 @@ tags:
 - code-quality
 - knowledge-capture
 - cross-platform
-tools:
-- gh / glab (platform-detected)
-- pensive:unified-review
+tools: []
 usage_patterns:
 - scope-validation
 - backlog-triage
@@ -45,6 +43,7 @@ dependencies:
 - memory-palace:review-chamber
 - scribe:slop-detector
 - scribe:doc-generator
+role: entrypoint
 ---
 ## Table of Contents
 

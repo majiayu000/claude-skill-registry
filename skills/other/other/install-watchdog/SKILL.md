@@ -1,17 +1,10 @@
 ---
 name: install-watchdog
-description: >
-  Install the egregore watchdog daemon using the OS-native
-  scheduler. Creates a launchd plist (macOS) or systemd timer
-  (Linux) that checks every 5 minutes if egregore needs
-  relaunching.
-version: 1.9.0
+description: 'Install egregore watchdog daemon via OS scheduler (launchd or systemd). Use to enable automatic 5-minute relaunch checks.'
+version: 1.9.3
 alwaysApply: false
 category: setup
-tools:
-  - Bash
-  - Write
-  - Read
+tools: []
 model_hint: standard
 ---
 # Install Watchdog

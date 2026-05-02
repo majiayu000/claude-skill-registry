@@ -43,6 +43,12 @@ See [formal-tools](references/formal-tools.md) for theorem provers and bounded m
 - Serialization round-trip (encode/decode fidelity)
 - Stateful systems (databases, queues, caches) -- via stateful PBT
 
+## Reasoning approach
+
+Before attempting a proof, reason through the property — SHORT-form KEYWORDS for internal scratchwork, break down the property into hypothesis and assumptions, critically review which proof strategy fits (induction, case analysis, contradiction, construction), validate each strategy against the property structure. Work through the proof step-by-step, verifying each step against the axioms. If a step fails, diagnose why before revising the strategy. For numeric calculation arising in the proof (e.g., bound arithmetic, complexity sums), invoke `fend` per the baseline rule; never self-calculate. Symbolic reasoning, case enumeration, and induction structure are in-head — they are not arithmetic.
+
+## Protocol
+
 ## When NOT to Apply
 
 - UI rendering, visual layout

@@ -1,7 +1,7 @@
 ---
 name: workflow-improvement
-description: 'Retrospective evaluation and improvement of skills, agents, commands, and hooks'
-version: 1.9.0
+description: 'Retrospective evaluation and improvement of skills, agents, commands, and hooks. Use after a sprint or when a workflow felt friction-heavy.'
+version: 1.9.3
 alwaysApply: false
 category: workflow-ops
 tags:
@@ -12,11 +12,7 @@ tags:
 - agents
 - skills
 - hooks
-tools:
-- Read
-- Edit
-- Bash
-- TodoWrite
+tools: []
 complexity: medium
 model_hint: standard
 estimated_tokens: 900

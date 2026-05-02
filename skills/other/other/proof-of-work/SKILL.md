@@ -1,7 +1,7 @@
 ---
 name: proof-of-work
 description: 'Enforce validation and evidence before declaring work complete. Use for acceptance criteria and done gates.'
-version: 1.7.1
+version: 1.9.3
 alwaysApply: false
 category: workflow-methodology
 tags:
@@ -29,6 +29,7 @@ modules:
 - modules/retry-protocol.md
 - modules/todowrite-patterns.md
 - modules/validation-protocols.md
+role: library
 ---
 > Claims without evidence fail the people who depend on
 > your work. Proof-of-work is humility in practice:
@@ -131,6 +132,11 @@ Before sending a completion message, confirm that you have run the recommended c
 
 - [TodoWrite naming patterns](modules/todowrite-patterns.md) - naming conventions and safe deletion rules for imbue TodoWrite items
 - [Evidence logging](modules/evidence-logging.md) - structured evidence capture, audit trails, and reproducibility patterns
+
+## Related Skills
+
+- `imbue:karpathy-principles` - The "Goal-Driven Execution" principle wraps the Iron Law in a four-principle synthesis useful as a pre-flight gate
+- See `docs/quality-gates.md#skill-level-quality-gate-composition` for the full gate-skill federation graph
 
 ## Exit Criteria
 

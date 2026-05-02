@@ -1,6 +1,6 @@
 ---
 name: inject
-description: 'Load relevant .agents knowledge into the current session context.'
+description: 'Load relevant .agents context.'
 skill_api_version: 1
 user-invocable: false
 context:

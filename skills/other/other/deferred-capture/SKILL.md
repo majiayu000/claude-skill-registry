@@ -4,7 +4,7 @@ description: >-
   Contract for unified deferred-item capture across plugins.
   Defines CLI interface, issue template, label taxonomy,
   and compliance test.
-version: 1.9.0
+version: 1.9.3
 alwaysApply: false
 model_hint: standard
 ---

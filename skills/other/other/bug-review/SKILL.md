@@ -1,10 +1,8 @@
 ---
 name: bug-review
-description: 'Use this skill for systematic bug hunting with evidence trails. Use
-  when deep bug hunting needed, documenting defects, verifying fixes, systematic debugging
-  required. Do not use when test coverage audit - use test-review instead. DO NOT
-  use when: architecture issues - use architecture-review.'
-version: 1.7.1
+role: library
+description: 'Bug hunting with evidence trails. Use when investigating reported defects or verifying that a fix resolves the root cause.'
+version: 1.9.3
 alwaysApply: false
 category: code-review
 tags:
@@ -14,10 +12,7 @@ tags:
 - code-quality
 - fixes
 - verification
-tools:
-- defect-tracker
-- fix-generator
-- verification-runner
+tools: []
 usage_patterns:
 - bug-hunting
 - defect-documentation
@@ -216,15 +211,3 @@ Assign owners and deadlines for follow-up items.
 - Fixes prepared with test coverage verified
 - Verification plan includes commands and expected outputs
 - Remaining risks assessed and owners assigned
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

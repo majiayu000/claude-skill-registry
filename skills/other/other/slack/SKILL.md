@@ -1,24 +1,25 @@
 ---
 name: slack
-description: "Slack workspace integration: 8 on-demand scripts (post, read, delete, search, react, upload, channels, users) + Session Bridge (connect any Claude Code session to Slack via background listener + inbox.jsonl) + Claudicle unified launcher (Claude Agent SDK, soul engine, three-tier memory)."
+description: "Slack workspace integration: 9 on-demand scripts (post, read, delete, search, stream, react, upload, channels, users) + dual-token support + RTS API search + chat streaming + AI Block Kit + Session Bridge + Claudicle unified launcher (Claude Agent SDK, soul engine, three-tier memory)."
 ---
 
 # Slack Skill
 
 Full Slack workspace integration with three modes:
-1. **Scripts** — 8 Python scripts for on-demand Slack operations
+1. **Scripts** — 9 Python scripts for on-demand Slack operations
 2. **Session Bridge** — connect THIS Claude Code session to Slack (background listener + inbox file, no extra API costs)
 3. **Unified Launcher** — `claudicle.py` with Claude Agent SDK, soul engine, per-channel sessions (requires SDK API key)
 
 ## When to Use This Skill
 
 ### Scripts (on-demand)
-- Posting messages to Slack channels or threads
+- Posting messages to Slack channels or threads (with optional AI feedback buttons)
 - Reading channel history or thread replies
-- Searching messages or files across the workspace
+- Searching messages, files, channels, or users via RTS API (with legacy fallback)
+- Streaming messages in real-time via chat streaming API
 - Adding or managing reactions on messages
 - Uploading files or code snippets
-- Listing channels, getting channel info, or joining channels
+- Listing channels, getting channel info, or joining channels (including bulk join)
 - Looking up users by name, ID, or email
 
 ### Session Bridge (recommended)
@@ -41,9 +42,12 @@ Full Slack workspace integration with three modes:
 
 All scripts require the `SLACK_BOT_TOKEN` environment variable (a Bot User OAuth Token starting with `xoxb-`). Scripts also require `requests` (`uv pip install --system requests`).
 
+Optional: `SLACK_USER_TOKEN` (`xoxp-`) enables workspace-wide search via legacy `search.messages`/`search.files` when the RTS API is unavailable. The bot token is used for all other operations.
+
 ```bash
-# Verify token is set
+# Verify tokens
 echo $SLACK_BOT_TOKEN
+echo $SLACK_USER_TOKEN  # optional, for legacy search fallback
 ```
 
 ### First-Time Setup
@@ -54,10 +58,12 @@ echo $SLACK_BOT_TOKEN
    - `app_mentions:read`
    - `channels:history`, `groups:history`, `im:history`, `mpim:history`
    - `channels:read`, `groups:read`, `im:read`, `im:write`
+   - `channels:join` — enables bot to join public channels programmatically
    - `chat:write`
    - `files:write`, `files:read`
    - `reactions:write`, `reactions:read`
-   - `search:read`
+   - `search:read` — legacy search (bot-visible channels only)
+   - `search:read.public`, `search:read.private`, `search:read.im`, `search:read.mpim`, `search:read.files`, `search:read.users` — RTS API (unified search, Feb 2026+)
    - `users:read`, `users:read.email`
    - `users:write` (optional — enables green presence dot)
 4. **Settings → Socket Mode** → toggle **ON** → generate an App-Level Token:
@@ -74,6 +80,7 @@ echo $SLACK_BOT_TOKEN
    ```bash
    export SLACK_BOT_TOKEN=xoxb-...   # Bot User OAuth Token
    export SLACK_APP_TOKEN=xapp-...   # App-Level Token (Socket Mode)
+   export SLACK_USER_TOKEN=xoxp-...  # (optional) User Token for legacy workspace-wide search
    ```
 9. Invite the bot to channels: `/invite @Claude Code`
 
@@ -87,11 +94,23 @@ echo $SLACK_BOT_TOKEN
 # Post a message
 python3 ~/.claude/skills/slack/scripts/slack_post.py "#general" "Hello from Claude"
 
+# Post with AI feedback buttons
+python3 ~/.claude/skills/slack/scripts/slack_post.py "#general" "Here's my analysis" --ai
+
 # Read recent messages
 python3 ~/.claude/skills/slack/scripts/slack_read.py "#general" -n 10
 
-# Search the workspace
+# Search the workspace (auto-detects RTS API, falls back to legacy)
 python3 ~/.claude/skills/slack/scripts/slack_search.py "deployment status"
+
+# Search with RTS API (messages, files, channels, users)
+python3 ~/.claude/skills/slack/scripts/slack_search.py "deployment" --rts --type channels
+
+# Stream a message in real-time
+python3 ~/.claude/skills/slack/scripts/slack_stream.py "#general" "Streaming message..."
+
+# Join all public channels
+python3 ~/.claude/skills/slack/scripts/slack_channels.py --join-all-public
 
 # Connect this session to Slack (recommended)
 cd ~/.claude/skills/slack/daemon && python3 slack_listen.py --bg
@@ -157,8 +176,13 @@ python3 ~/.claude/skills/slack/scripts/slack_app_home.py --debug   # print block
 | Schedule a message | `slack_post.py` | `slack_post.py "#ch" "msg" --schedule ISO` |
 | Read channel history | `slack_read.py` | `slack_read.py "#general" -n 20` |
 | Read thread | `slack_read.py` | `slack_read.py "#ch" --thread TS` |
-| Search messages | `slack_search.py` | `slack_search.py "query"` |
+| Search (RTS, auto) | `slack_search.py` | `slack_search.py "query"` |
+| Search messages only | `slack_search.py` | `slack_search.py "query" --type messages` |
 | Search files | `slack_search.py` | `slack_search.py "query" --files` |
+| Search channels/users | `slack_search.py` | `slack_search.py "query" --rts --type channels` |
+| Stream a message | `slack_stream.py` | `slack_stream.py "#ch" "text" --chunk-size 50` |
+| Stream from stdin | `slack_stream.py` | `echo "text" \| slack_stream.py "#ch" --stdin` |
+| Post with AI buttons | `slack_post.py` | `slack_post.py "#ch" "msg" --ai` |
 | Delete message | `slack_delete.py` | `slack_delete.py "#ch" TS1 TS2` |
 | Clean thread (bot msgs) | `slack_delete.py` | `slack_delete.py "#ch" --thread TS` |
 | Add reaction | `slack_react.py` | `slack_react.py "#ch" TS emoji` |
@@ -166,6 +190,7 @@ python3 ~/.claude/skills/slack/scripts/slack_app_home.py --debug   # print block
 | Share code snippet | `slack_upload.py` | `slack_upload.py "#ch" --snippet CODE` |
 | List channels | `slack_channels.py` | `slack_channels.py` |
 | Join channel | `slack_channels.py` | `slack_channels.py --join "#ch"` |
+| Join all public channels | `slack_channels.py` | `slack_channels.py --join-all-public` |
 | Find user by email | `slack_users.py` | `slack_users.py --email user@co.com` |
 
 For full script documentation (all parameters, examples, test suite, common workflows), see `references/scripts-reference.md`.
@@ -177,8 +202,8 @@ For full script documentation (all parameters, examples, test suite, common work
 | Tier | Rate | Key Methods |
 |------|------|-------------|
 | **Tier 1** | **1/min** | `conversations.history`, `conversations.replies` |
-| Tier 2 | 20/min | `conversations.list`, `users.list`, `search.messages` |
-| Tier 3 | 50/min | `reactions.*`, `conversations.info`, `chat.update` |
+| Tier 2 | 20/min | `conversations.list`, `users.list`, `search.messages`, `assistant.search.context` |
+| Tier 3 | 50/min | `reactions.*`, `conversations.info`, `chat.update`, `chat.startStream`, `chat.appendStream`, `chat.stopStream` |
 | Tier 4 | 100+/min | `files.getUploadURLExternal`, `files.completeUploadExternal` |
 | Special | 1/sec/channel | `chat.postMessage` |
 
@@ -204,6 +229,10 @@ python3 claudicle.py --no-slack
 ```
 
 **Requires**: `claude` CLI in PATH, `SLACK_BOT_TOKEN`, `SLACK_APP_TOKEN`, plus `claude-agent-sdk`.
+
+**Streaming**: Set `SLACK_DAEMON_STREAMING=true` to enable real-time streaming responses via `chat.startStream`/`chat.appendStream`/`chat.stopStream`. Only active when the soul engine is off (XML-tagged responses can't stream meaningfully).
+
+**AI Blocks**: Set `SLACK_DAEMON_AI_BLOCKS=true` to include feedback buttons on responses.
 
 For full installation, architecture, SDK integration, per-channel sessions, configuration, data flows, and threading model, see `references/unified-launcher-architecture.md`.
 
@@ -265,7 +294,10 @@ Bootstrap personalized configuration by having Claudicle interview new users to 
 |---------|-----|
 | Bot not responding to @mentions | Enable Socket Mode; verify `SLACK_APP_TOKEN` (xapp-) is exported |
 | "missing_scope" error | Add the missing scope in OAuth & Permissions → reinstall app |
-| No search results | Invite bot to channels with `/invite @Claude Code`, or use user token (`xoxp-`) |
+| No search results | Add `search:read.*` scopes for RTS API, or invite bot to channels, or set `SLACK_USER_TOKEN` for legacy search |
+| RTS search "missing_scope" | Add granular `search:read.*` scopes → reinstall app; script auto-falls back to legacy |
+| Streaming not working | Set `SLACK_DAEMON_STREAMING=true`; streaming is disabled when soul engine is on |
+| `channels:join` denied | Add `channels:join` scope → reinstall app |
 | Rate limited (429) | Scripts auto-retry; reduce batch sizes |
 | Launcher/daemon exits immediately | Verify `which claude` returns a path |
 | "Credit balance is too low" | Check Anthropic billing; error now surfaces in Slack response |
@@ -311,7 +343,8 @@ scripts/
 ├── slack_post.py        # Post messages to channels/threads
 ├── slack_read.py        # Read channel history or threads
 ├── slack_delete.py      # Delete messages (single, batch, thread cleanup)
-├── slack_search.py      # Search messages or files
+├── slack_search.py      # Search messages, files, channels, users (RTS + legacy)
+├── slack_stream.py      # Stream messages in real-time via chat streaming API
 ├── slack_react.py       # Add/remove reactions
 ├── slack_upload.py      # Upload files or snippets
 ├── slack_memory.py      # CLI wrapper for three-tier memory system

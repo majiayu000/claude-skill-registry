@@ -1,7 +1,7 @@
 ---
 name: proof-checker
 description: Rigorous mathematical proof verification and fixing workflow. Reads a LaTeX proof, identifies gaps via cross-model review (Codex GPT-5.4 xhigh), fixes each gap with full derivations, re-reviews, and generates an audit report. Use when user says "检查证明", "verify proof", "proof check", "审证明", "check this proof", or wants rigorous mathematical verification of a theory paper.
-argument-hint: [path-to-tex-file or proof-description]
+argument-hint: "[path-to-tex-file or proof-description] [--deep-fix] [--restatement-check]"
 allowed-tools: Bash(*), Read, Grep, Glob, Write, Edit, Agent, mcp__codex__codex, mcp__codex__codex-reply
 ---
 
@@ -221,6 +221,63 @@ mcp__codex__codex:
     [FULL PROOF CONTENT HERE]
 ```
 
+#### Phase 1 addendum — `--deep-fix` opt-in
+
+If the user passed `--deep-fix` on invocation, append the following block to the reviewer prompt **after** the OUTPUT FORMAT block above (do **not** modify the original block; the new fields are additive). Default invocations skip this block entirely and emit the original output schema unchanged.
+
+```
+    ## DEEP-FIX OUTPUT (opt-in, only when --deep-fix is set)
+
+    For EACH issue listed above, additionally provide a `deep_fix_plan`
+    that is repair-grade — sufficient for an executor to apply the fix
+    in one Edit pass without spawning a follow-up review thread:
+
+    - issue_id: same as the issue id above
+    - corrected_statement: the theorem/lemma statement as it should
+      read after the fix, with explicit quantifiers, regime conditions,
+      and uniformity scope (LaTeX, paste-ready)
+    - changed_equations: list of {before: <LaTeX>, after: <LaTeX>}
+      pairs for each equation that needs replacement
+    - downstream_labels: list of \label{...} keys whose statements or
+      proofs depend on this fix and must be re-checked or rewritten
+    - minimal_tex_patch_plan: ordered list of concrete edits, each as
+      {file: <path>, anchor_old: <unique LaTeX snippet to find>,
+       replacement_new: <LaTeX to insert>}; the executor will pass
+      these directly to its file-editing tool
+    - closure_tests: 2-5 sanity checks the executor must run after
+      applying the fix (e.g., "verify constant_dependence_diff matches
+      computed value", "limit case γ→0 reduces to identity",
+      "dimension count matches before/after")
+
+    ## ALGEBRA / TYPE SANITY PASS (opt-in, only when --deep-fix is set)
+
+    If any issue invokes Schur test, Young's inequality, Cauchy-Schwarz,
+    Hölder, quadratic form, operator norm, or power counting, the
+    deep_fix_plan for that issue MUST also include an `algebra_sanity`
+    object:
+
+    - dimension_table: map of {symbol: type_signature}, e.g.
+      {"K(i,α)": "scalar ≥ 0",
+       "‖K‖_{2→2}": "scalar ≥ 0",
+       "Σ_i V_i^rem": "scalar quadratic in w"}
+    - power_count: number of times each operator-norm or Schur factor
+      appears on each side; flag mismatch as INVALID
+    - zero_coupling_check: evaluate the expression at γ=0 (or the
+      analogous degenerate point); confirm it reduces to the expected
+      identity / vanishing case
+    - constant_dependence_diff: list of constants whose dependence on
+      (d, K, n, ...) changes between BEFORE and AFTER, with the new
+      explicit dependence written out
+
+    Be precise. The executor will apply this plan literally; vague
+    prose ("strengthen the bound", "redo the Schur step") is not
+    acceptable in deep-fix mode. If you cannot produce a precise plan
+    for an issue, omit that issue's deep-fix block and signal the
+    deep-fix path is unavailable — do NOT emit a vague plan, and do
+    NOT add a deep-fix-only category (e.g. UNCLEAR_DEEP_FIX) into the
+    standard issue list, since that contaminates default-call output.
+```
+
 **Save the threadId.** Parse into structured issue list. Write to `PROOF_AUDIT.md`.
 
 ### Phase 1.5: Counterexample Red Team
@@ -328,6 +385,52 @@ After fixes, re-run:
 - Counterexample suite on all DOWNSTREAM lemmas of modified results
 - Assumption-delta report: what became stronger/weaker due to fixes?
 
+### Phase 3.6: Theorem Restatement Regression (opt-in)
+
+**Default**: skipped. Existing callers see no change.
+
+**Opt-in**: pass `--restatement-check` on invocation. The skill then runs a cross-location consistency pass after Phase 3.5 (Global Closure) and before Phase 3.9 (Unrecoverable Protocol).
+
+This phase catches a specific class of bugs that Phase 3.5's "Statement-conclusion match" check does NOT catch: **drift between the canonical theorem statement and its restatements elsewhere in the paper** (summary tables, "Key Contributions" / "Summary" sections, abstract, discussion, captions). Common drift patterns observed in practice:
+
+- Main theorem says "width-1 unconditional, width-w conditional" but a later summary cites it as "unconditional DSM excess-risk oracle bound".
+- Main theorem κ exponent is `O(d²K²)` but a constants table writes `O(K²)`.
+- Main theorem regime condition is squared envelope, but a remark elsewhere still shows the first-order envelope.
+- Restatement quietly drops a quantifier ("for $n \ge n_0$") that the proof relied on.
+
+#### Algorithm
+
+1. **Build canonical statement table.** Scan all `*.tex` files in the paper for `\begin{theorem}` / `\begin{lemma}` / `\begin{proposition}` / `\begin{corollary}` blocks with a `\label{...}`. For each: record `(label, full_statement_text, file:line_range)`.
+
+2. **Collect restatement candidates.** For each canonical label `thm:foo`:
+   - Every `\Cref{thm:foo}` / `\ref{thm:foo}` / `\cref{thm:foo}` invocation, with the surrounding 2 sentences as candidate restatement context.
+   - Rows in tables (`\begin{tabular}` … `\end{tabular}`) that mention the label, the theorem's informal name, or its constants.
+   - Bullets in "Key Contributions" / "Summary" / "Main Results" lists.
+   - Sentences in the abstract and introduction that paraphrase the theorem.
+
+3. **Normalized diff.** For each (canonical_statement, restatement_context) pair:
+   - Strip `\,` `\;` `\!` `~`, normalize whitespace, normalize math-mode delimiters (`$..$`, `\(..\)`, display vs inline).
+   - Detect drift signatures (one or more):
+     - **conditional_loss** — canonical says "under \Cref{ass:X}" or "for w=1"; restatement omits the conditional.
+     - **scope_change** — big-O exponent or rate differs (`O(K^2)` vs `O(d^2K^2)`; `√n` vs `n`).
+     - **quantifier_loss** — quantifier present canonically (e.g. "for $n \ge n_0$", "for sufficiently small $\gamma$") absent in restatement.
+     - **regime_envelope_change** — first-order leakage `Cγ/(1-Δγ)` vs squared envelope `(Cγ/(1-Δγ))²` (or analogous).
+     - **constant_change** — different numeric constant or different parameter dependence stated.
+     - **variable_rename** — same role in argument played by differently-named symbol with no explicit alias.
+
+4. **Emit findings.** Each detected drift becomes an entry in `details.restatement_drift` (see "Submission Artifact Emission" below). Severity defaults to **MAJOR** (UNDERSTATED/OVERSTATED + GLOBAL); reviewer may downgrade to MINOR if drift is purely cosmetic (e.g. `\,` placement) and upgrade to CRITICAL only if the restatement is used downstream as if it were the canonical (e.g. another proof cites the restated version).
+
+#### What this phase does NOT do
+- It does **not** fix drift automatically. The output is advisory; the executor or a follow-up `--deep-fix` run handles the rewrite.
+- It does **not** alter `details.issues`; restatement drift is reported as a sibling field, so existing consumers reading `issues[]` see no schema change.
+- It does **not** alter the top-level `verdict` decision rule. A paper with non-empty `restatement_drift` may still emit `PASS` if all proof obligations are otherwise discharged; the drift is independent of proof correctness. (The reviewer may at its discretion mirror a **CRITICAL**-severity drift into the `issues` list as a regular issue — typically when the restated version is used downstream as if it were canonical — but that is a per-issue judgment, never an automatic rule. MAJOR or MINOR drift never mirrors into `issues`.)
+
+#### Failure mode
+If `--restatement-check` is set but the cross-location scan cannot complete, emit `details.restatement_drift: []` plus `details.restatement_check_status: "unavailable"` with a one-line note explaining why. Verifier gates and downstream skills MUST treat `"unavailable"` identically to the field being absent: not blocking. Phases 1 / 1.5 / 2 / 3 / 3.5 / 3.9 / 4 / 5 still run normally. Cases that trigger this fallback include:
+- Unreadable `.tex` (parser / encoding error on a file that contains a theorem block).
+- Ambiguous label resolution (e.g., the same `\label{thm:foo}` appears more than once with no clear canonical pick).
+- **No labeled canonical theorem-like block found** (the algorithm only inspects `\begin{theorem|lemma|proposition|corollary}` blocks with an explicit `\label{...}`; if there is no such block, there is nothing to compare restatements against).
+
 ### Phase 3.9: Unrecoverable Proof Protocol
 
 If acceptance gate is not met after MAX_REVIEW_ROUNDS, output a **Proof Unrecoverable Report**:
@@ -370,6 +473,38 @@ Write `PROOF_CHECK_STATE.json`:
 }
 ```
 
+## Deep-Fix Mode (opt-in)
+
+**Default**: disabled. The Phase 1 reviewer emits issues with `minimal_fix` (a 1-2 sentence pointer); existing callers see no change.
+
+**Opt-in**: pass `--deep-fix` on invocation. The Phase 1 reviewer prompt is **augmented** (not replaced) with the "DEEP-FIX OUTPUT" and "ALGEBRA / TYPE SANITY PASS" blocks above, so the reviewer also returns a `deep_fix_plan` per issue: corrected statement, changed equations, downstream label list, minimal LaTeX patch plan, and closure tests. Issues invoking Schur / Young / Cauchy-Schwarz / Hölder / quadratic forms / operator norms / power counting additionally carry an `algebra_sanity` block (dimension table + power count + zero-coupling check + constant-dependence diff).
+
+### Why opt-in
+The default `minimal_fix` prose is intentionally short — it suits the common case where the executor wants high-level pointers and will derive the patch separately. Forcing `deep_fix_plan` on every run would (a) inflate every reviewer call by 2-5×, (b) trigger re-review thrash for issues the executor has already decided to weaken or defer, and (c) change the shape of `details.issues` for every existing caller. The flag preserves zero behavior change for default invocations while letting the executor request repair-grade output when the fix is going to be applied immediately.
+
+### Effect when enabled
+- The Phase 1 reviewer prompt is augmented with the deep-fix and algebra-sanity blocks; nothing in the original mandatory checklist or output format is removed.
+- `PROOF_AUDIT.json` `details` gains a sibling field `deep_fix_plans` (parallel to `details.issues`); see "Submission Artifact Emission" below.
+- The top-level `verdict`, `reason_code`, and `summary` are **unchanged in shape and decision rule**: deep-fix output is advisory tooling for the executor, not a verdict-altering signal.
+- Verifier gates and downstream skills (`paper-writing` Phase 6, `tools/verify_paper_audits.sh`) MUST treat absence of `deep_fix_plans` as the only valid default state and MUST NOT block on its presence or content.
+
+### When opt-in is appropriate
+- The executor intends to apply the fix in the same session and wants to skip a follow-up "give me a concrete patch" thread.
+- A previous default-mode run identified a CRITICAL or MAJOR issue whose `minimal_fix` was too vague to act on (e.g., "redo the Schur step" without specifying the corrected operator-norm bound).
+- Algebra-heavy proofs with Schur / quadratic-form / operator-norm steps where the reviewer's first pass has consistently produced under-specified fixes.
+
+### Failure modes
+
+A deep-fix-only failure must never contaminate the default proof-check output. All of the following paths emit `details.deep_fix_status: "unavailable"` + `details.deep_fix_plans: []` (with a one-line note in `details.deep_fix_note`) and leave the standard issue list, top-level verdict, reason_code, and summary unchanged:
+
+- The reviewer refuses to produce a repair-grade plan because the fix would require choices the reviewer is unwilling to make.
+- The Phase 1 reviewer call returns truncated or malformed deep-fix output (parse failure on the augmented section).
+- The augmented Phase 1 call times out before producing the deep-fix block, but otherwise returned a valid normal proof review.
+
+Verifier gates MUST treat `unavailable` identically to the field being absent: not blocking. Do **not** add a `UNCLEAR_DEEP_FIX` (or any deep-fix-only) entry into `details.issues`, since `details.issues` is the default schema's issue list and adding deep-fix-specific failures to it would change default behavior for callers without the flag.
+
+If the augmented Phase 1 call fails so badly that the normal proof review cannot be recovered (e.g., the reviewer thread itself errored), retry once with the unaugmented prompt; if that also fails, fall through to the existing reviewer-failure path that maps to the top-level `ERROR` verdict.
+
 ## Key Rules
 
 ### Mathematical rigor
@@ -386,7 +521,7 @@ Write `PROOF_CHECK_STATE.json`:
 - **Claude analyzes, Codex reviews**: Claude reads proof, formulates questions, implements fixes. Codex provides adversarial review.
 - **Codex reasoning always xhigh**: Never downgrade.
 - **Send full content**: Don't summarize — send actual math for line-by-line checking.
-- **Preserve threadId**: Use `codex-reply` for follow-up rounds.
+- **Preserve threadId within a single run**: Use `codex-reply` for Phase 3 follow-up rounds within the same top-level `/proof-checker` invocation, so the reviewer keeps prior-issue context when judging whether a fix closed the gap. Across separate top-level invocations, always start a fresh thread (see "Thread independence" below).
 
 ### Fix quality
 - **Minimal fixes**: Fix exactly what's broken, nothing more.
@@ -399,6 +534,13 @@ Write `PROOF_CHECK_STATE.json`:
 - **Separate "proven" from "assumed"**: The audit report has an explicit section for this.
 - **Log open problems**: Issues requiring future work are listed, not hidden.
 
+### Opt-in flag discipline
+- **Deep-fix is opt-in only**: never auto-enable; never block on `deep_fix_plans` content; existing callers must observe identical reviewer output and identical JSON schema if they do not pass `--deep-fix`.
+- **Reviewer prompt augmentation is additive**: the deep-fix block is appended to the Phase 1 prompt, not substituted for any part of it. The original mandatory checklist (A-H) and original per-issue OUTPUT FORMAT remain in place verbatim.
+- **Restatement check is opt-in only**: Phase 3.6 runs only when `--restatement-check` is set; existing callers must observe identical reviewer output and identical JSON schema if they do not pass the flag.
+- **No Phase reordering**: enabling Phase 3.6 inserts it strictly between 3.5 and 3.9; it does not skip any other phase or change their semantics.
+- **No verdict crosstalk**: neither deep-fix output nor `restatement_drift` ever alters top-level `verdict` or `reason_code`. A paper with non-empty drift or with deep-fix plans may still pass; a paper with FAIL verdict stays FAIL whether or not either flag was set.
+
 ## Output Files
 
 | File | Content | When |
@@ -408,6 +550,8 @@ Write `PROOF_CHECK_STATE.json`:
 | `PROOF_AUDIT.json` | Machine-readable submission verdict (see below) | Always emitted |
 | `proof_audit_report.tex/.pdf` | Formal before/after report | Phase 4 |
 | `PROOF_CHECK_STATE.json` | State for recovery | Phase 5 |
+
+When `--restatement-check` is set, `PROOF_AUDIT.json` additionally carries `details.restatement_drift` and `details.restatement_check_status`; both fields are omitted when the flag is unset. See "Submission Artifact Emission" below.
 
 ## Submission Artifact Emission
 
@@ -447,6 +591,76 @@ The artifact conforms to the schema in `shared-references/assurance-contract.md`
 }
 ```
 
+### Optional: `details.deep_fix_plans` (only when `--deep-fix` is set)
+
+```json
+"details": {
+  ...
+  "deep_fix_plans": [
+    {
+      "issue_id": "T1-H3",
+      "corrected_statement": "<LaTeX, paste-ready>",
+      "changed_equations": [{"before": "<LaTeX>", "after": "<LaTeX>"}, ...],
+      "downstream_labels": ["thm:convergence", "cor:minimax", ...],
+      "minimal_tex_patch_plan": [
+        {"file": "sections/4.theory.tex",
+         "anchor_old": "<unique LaTeX snippet>",
+         "replacement_new": "<LaTeX to insert>"},
+        ...
+      ],
+      "closure_tests": [
+        "verify constant_dependence_diff matches computed value",
+        "limit case γ→0 reduces to identity",
+        ...
+      ],
+      "algebra_sanity": {
+        "dimension_table": {"<symbol>": "<type_signature>", ...},
+        "power_count": "<one-line check>",
+        "zero_coupling_check": "<one-line check>",
+        "constant_dependence_diff": "<before vs after>"
+      }
+    }
+  ],
+  "deep_fix_status": "ok" | "unavailable"
+}
+```
+
+Field semantics:
+- Both `deep_fix_plans` and `deep_fix_status` are **omitted entirely** when the flag is not set. The default schema does not include either key.
+- When the flag is set and reviewer returns well-formed plans, `deep_fix_status` is `"ok"` and `deep_fix_plans` mirrors `details.issues` one-to-one (each plan referenced by `issue_id`); `algebra_sanity` is present only for issues invoking Schur / Young / Cauchy-Schwarz / Hölder / quadratic-form / operator-norm / power-counting steps.
+- When the flag is set but reviewer output is malformed or truncated, `deep_fix_status` is `"unavailable"` and `deep_fix_plans` is `[]`. Downstream consumers MUST treat `"unavailable"` identically to the field being absent: not blocking.
+- Downstream consumers MUST treat absence of either field as the only valid default state and MUST NOT raise on missing.
+- `deep_fix_plans` is advisory tooling for the executor; `tools/verify_paper_audits.sh` and `paper-writing` Phase 6 do not block on its content or shape.
+
+### Optional: `details.restatement_drift` (only when `--restatement-check` is set)
+
+```json
+"details": {
+  ...
+  "restatement_drift": [
+    {
+      "label": "thm:dsm-oracle",
+      "canonical_location": "sections/2.setup.tex:117",
+      "restatement_location": "sections/appendix.tex:1614",
+      "drift_type": "conditional_loss" | "scope_change" | "quantifier_loss" |
+                    "regime_envelope_change" | "constant_change" | "variable_rename",
+      "canonical_excerpt": "<short LaTeX>",
+      "restatement_excerpt": "<short LaTeX>",
+      "severity": "MAJOR" | "MINOR" | "CRITICAL",
+      "note": "..."
+    }
+  ],
+  "restatement_check_status": "ok" | "unavailable"
+}
+```
+
+Field semantics:
+- Both `restatement_drift` and `restatement_check_status` are **omitted entirely** when the flag is not set. The default schema does not include either key.
+- When the flag is set and the cross-location scan completes, `restatement_check_status` is `"ok"` and `restatement_drift` lists detected pairs (possibly empty if none found).
+- When the scan fails (per "Failure mode" in Phase 3.6), `restatement_check_status` is `"unavailable"` and `restatement_drift` is `[]`.
+- Downstream consumers MUST treat absence or `"unavailable"` identically as the default state and MUST NOT raise on missing.
+- `restatement_drift` does **not** alter `details.issues` and does **not** change the top-level `verdict` decision rule. The reviewer may at its discretion mirror a CRITICAL-severity drift into `details.issues` as a regular issue, but that is a per-issue judgment, not an automatic schema-driven rule.
+
 ### `audited_input_hashes` scope
 
 Hash the **declared input set** actually reviewed — the theorem-bearing
@@ -476,11 +690,9 @@ must carry an explicit justification in `summary` + `details.issues`.
 
 ### Thread independence
 
-Every invocation uses a fresh `mcp__codex__codex` thread. Never
-`codex-reply` across proof-checker runs. Do not accept prior audit outputs
-(PAPER_CLAIM_AUDIT, CITATION_AUDIT, EXPERIMENT_LOG) as input — the fresh
-thread preserves reviewer independence per
-`shared-references/reviewer-independence.md`.
+Every **top-level** `/proof-checker` invocation starts a fresh `mcp__codex__codex` thread; do not reuse a saved threadId across separate invocations of this skill. Within a single top-level invocation, `codex-reply` is the correct primitive to thread the Phase 3 follow-up rounds — the reviewer needs prior-issue context to judge whether a fix actually closed the gap, and the Phase 1→3 flow above explicitly relies on this. The Phase 3.5 "Independent second review for FATAL/CRITICAL fixes" sub-step is the deliberate exception inside a single run: it must spawn a fresh thread so the blind reviewer has no exposure to the original critique.
+
+Do not accept prior audit outputs (PAPER_CLAIM_AUDIT, CITATION_AUDIT, EXPERIMENT_LOG) as input across separate invocations — the cross-run freshness is what preserves reviewer independence per `shared-references/reviewer-independence.md`.
 
 This skill never blocks by itself; `paper-writing` Phase 6 plus the
 verifier decide whether the verdict blocks finalization based on the
@@ -492,4 +704,7 @@ verifier decide whether the verdict blocks finalization based on the
 /proof-checker "neurips_2025.tex"
 /proof-checker "check the GMM generalization proof, focus on dimension dependence"
 /proof-checker "verify proof in paper.tex — difficulty: nightmare"
+/proof-checker "paper/main.tex --deep-fix"            # opt-in: ask reviewer to also emit repair-grade deep_fix_plans
+/proof-checker "paper/main.tex --restatement-check"   # opt-in: run Phase 3.6 to detect cross-location theorem-statement drift
+/proof-checker "paper/main.tex --deep-fix --restatement-check"   # both opt-ins, independent
 ```

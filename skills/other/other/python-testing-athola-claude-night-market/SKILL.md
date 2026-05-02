@@ -1,7 +1,7 @@
 ---
 name: python-testing
 description: 'Python testing patterns: pytest setup, fixtures, TDD, mocking, async tests, and integration tests'
-version: 1.8.4
+version: 1.9.3
 globs: "**/*.py"
 alwaysApply: false
 category: testing
@@ -12,10 +12,7 @@ tags:
 - tdd
 - test-automation
 - quality-assurance
-tools:
-- test-analyzer
-- coverage-reporter
-- test-runner
+tools: []
 usage_patterns:
 - testing-implementation
 - test-suite-setup

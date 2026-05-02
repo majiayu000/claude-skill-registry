@@ -1,7 +1,7 @@
 ---
 name: project-planning
-description: "Transform specifications into dependency-ordered implementation plans with phased tasks and parallel work identification."
-version: 1.9.0
+description: "Turn a specification into a phased implementation plan with dependency ordering. Use when converting a spec into executable tasks."
+version: 1.9.3
 alwaysApply: false
 # Custom metadata (not used by Claude for matching):
 model_preference: claude-sonnet-4
@@ -10,6 +10,7 @@ tags: [planning, architecture, task-breakdown, dependencies, estimation]
 complexity: intermediate
 model_hint: standard
 estimated_tokens: 900
+role: library
 ---
 ## Delegation
 

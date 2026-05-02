@@ -1,7 +1,7 @@
 ---
 name: knowledge-locator
 description: 'Search and navigate stored knowledge in memory palaces. Use for cross-referencing, context retrieval.'
-version: 1.9.0
+version: 1.9.3
 alwaysApply: false
 category: navigation
 tags:

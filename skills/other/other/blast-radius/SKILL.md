@@ -1,5 +1,6 @@
 ---
 name: blast-radius
+role: entrypoint
 description: >
   Analyze the blast radius of code changes with risk
   scoring. Shows affected nodes, untested functions,
@@ -9,10 +10,7 @@ tags:
 - code-review
 - impact-analysis
 - risk-scoring
-tools:
-- Bash
-- Read
-- Grep
+tools: []
 ---
 
 # Blast Radius Analysis

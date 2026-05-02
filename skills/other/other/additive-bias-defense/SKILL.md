@@ -1,12 +1,10 @@
 ---
 name: additive-bias-defense
 description: >-
-  Cross-cutting contract that inverts the burden of
-  proof for code additions. Every proposed addition
-  must be justified with evidence, or it does not
-  ship. Review-oriented skills consult this contract
-  to detect LLM additive bias patterns.
-version: 1.9.0
+  Cross-cutting contract that inverts burden of proof
+  for code additions. Use when reviewing proposed
+  additions or detecting LLM additive-bias patterns.
+version: 1.9.3
 alwaysApply: false
 category: quality-contract
 tags:
@@ -29,6 +27,7 @@ usage_patterns:
 complexity: foundational
 model_hint: standard
 estimated_tokens: 800
+role: library
 ---
 
 > The default answer to "should we add this?" is no.
@@ -102,6 +101,11 @@ Review-oriented skills MUST consult this contract by:
 | `conserve:unbloat` | Findings feed removal candidates |
 | `attune:mission-orchestrator` | Plan sections scanned before user review |
 | `imbue:justify` | Scrutiny questions extend audit protocol |
+
+## Related Skills
+
+- `imbue:karpathy-principles` - "Simplicity First" and "Surgical Changes" principles invoke this contract from a higher-level four-principle synthesis
+- See `docs/quality-gates.md#skill-level-quality-gate-composition` for the full gate-skill federation graph
 
 ## The Subtraction Principle
 

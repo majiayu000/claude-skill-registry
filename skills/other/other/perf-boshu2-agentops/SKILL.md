@@ -1,6 +1,6 @@
 ---
 name: perf
-description: 'Profile, benchmark, and optimize performance regressions or hotspots.'
+description: 'Profile and optimize hotspots.'
 skill_api_version: 1
 context:
   window: fork

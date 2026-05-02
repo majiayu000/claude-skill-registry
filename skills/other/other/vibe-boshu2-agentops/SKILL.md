@@ -1,6 +1,6 @@
 ---
 name: vibe
-description: 'Validate code readiness with complexity checks and council or inline review.'
+description: 'Validate code readiness.'
 skill_api_version: 1
 metadata:
   tier: judgment

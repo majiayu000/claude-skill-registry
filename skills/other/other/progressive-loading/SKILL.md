@@ -5,7 +5,7 @@ description: 'Context-aware progressive module loading with hub-and-spoke patter
 
 
   progressive loading, lazy loading, hub-spoke, module selection.'
-version: 1.9.0
+version: 1.9.3
 alwaysApply: false
 category: infrastructure
 tags:
@@ -16,10 +16,7 @@ tags:
 - lazy-loading
 dependencies:
 - leyline:mecw-patterns
-tools:
-- mecw-monitor
-- context-tracker
-- module-selector
+tools: []
 provides:
   infrastructure:
   - progressive-loading

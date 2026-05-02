@@ -1,7 +1,7 @@
 ---
 name: architecture-paradigm-layered
 description: 'Layered (n-tier) architecture with enforced layer boundaries and separation of concerns.'
-version: 1.8.4
+version: 1.9.3
 alwaysApply: false
 category: architectural-pattern
 tags:
@@ -11,10 +11,7 @@ tags:
 - separation-of-concerns
 - monolith
 dependencies: []
-tools:
-- dependency-validator
-- layer-enforcer
-- architecture-compliance-checker
+tools: []
 usage_patterns:
 - paradigm-implementation
 - legacy-system-modernization

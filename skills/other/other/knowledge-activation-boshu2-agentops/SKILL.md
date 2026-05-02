@@ -1,6 +1,6 @@
 ---
 name: knowledge-activation
-description: 'Turn a mature .agents corpus into packets, belief books, briefings, and gaps.'
+description: 'Activate mature .agents knowledge.'
 skill_api_version: 1
 user-invocable: true
 context:
@@ -54,7 +54,8 @@ dream, knowledge-activation, and quickstart.
 This skill assumes the current workspace already has:
 
 - a `.agents/` directory
-- packet refresh builders under `.agents/scripts/` when `ao knowledge activate` needs to rebuild source manifests, topics, promoted packets, and chunk bundles
+- packet refresh builders under `.agents/scripts/` when `ao knowledge activate` needs to rebuild source manifests, topics, promoted packets, and chunk bundles from custom workspace logic
+- or `.agents/harvest/latest.json`, which `ao knowledge activate` can use as a native fallback to turn the latest harvest catalog into a `harvested-praxis` topic packet, promoted packet, and chunk bundle
 - packet, topic, playbook, and briefing surfaces that can be refreshed mechanically
 
 Read [references/script-contracts.md](references/script-contracts.md) for the required builder inventory and command ownership.
@@ -79,9 +80,10 @@ The skill owns routing, sequencing, interpretation, and next-step recommendation
 
 ### Step 1: Preflight
 
-Verify that `.agents/` exists. When you plan to run `ao knowledge activate`, also verify that the packet refresh builders are present.
+Verify that `.agents/` exists. When you plan to run `ao knowledge activate`, verify that at least one evidence substrate is present:
 
 - packet builders: `source_manifest_build.py`, `topic_packet_build.py`, `corpus_packet_promote.py`, `knowledge_chunk_build.py`
+- harvest fallback: `.agents/harvest/latest.json`
 - native operator surfaces: `ao knowledge beliefs`, `ao knowledge playbooks`, `ao knowledge brief`, `ao knowledge gaps`
 
 ### Step 2: Consolidate Evidence

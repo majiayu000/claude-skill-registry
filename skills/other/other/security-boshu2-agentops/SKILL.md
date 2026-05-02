@@ -1,6 +1,6 @@
 ---
 name: security
-description: 'Run repository security scans and release-gating checks.'
+description: 'Run repository security scans.'
 skill_api_version: 1
 context:
   window: fork

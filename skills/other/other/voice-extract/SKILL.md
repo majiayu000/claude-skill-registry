@@ -5,7 +5,7 @@ description: Extract writing voice from user samples using SICO comparative
   distinctive voice features. Use when training the system on a new writing
   voice, adding samples to an existing profile, or re-running extraction
   for improved specificity.
-version: 1.9.0
+version: 1.9.3
 globs: "**/*.{md,txt}"
 alwaysApply: false
 category: writing-quality
@@ -15,14 +15,7 @@ tags:
 - sico
 - style-transfer
 - writing
-tools:
-- Read
-- Write
-- Bash
-- Glob
-- Grep
-- Agent
-- TodoWrite
+tools: []
 complexity: high
 model_hint: opus
 estimated_tokens: 3200

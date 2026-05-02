@@ -1,23 +1,19 @@
 ---
 name: feature-review
-description: 'Review and prioritize features using RICE, WSJF, or Kano scoring frameworks, then create GitHub issues for suggestions.'
-version: 1.9.0
+description: 'Score backlog items with RICE, WSJF, or Kano and file GitHub issues for the top picks. Use for roadmap triage. NOT a code or diff review.'
+version: 1.9.3
 alwaysApply: false
 category: workflow-methodology
 tags:
-- feature-review
-- prioritization
+- feature-prioritization
+- backlog-triage
 - RICE
 - WSJF
 - Kano
 - roadmap
-- backlog
 dependencies:
 - imbue:scope-guard
-- imbue:review-core
-- tome:research (optional, for --research flag)
-tools:
-- gh (GitHub CLI)
+tools: []
 usage_patterns:
 - feature-inventory
 - prioritization-scoring
@@ -266,7 +262,7 @@ Create `.feature-review.yaml` in project root:
 
 ```yaml
 # .feature-review.yaml
-version: 1.9.0
+version: 1.9.3
 
 # Scoring weights (must sum to 1.0)
 weights:
@@ -373,8 +369,8 @@ These rules apply to all configurations:
 ## Related Skills
 
 - `imbue:scope-guard`: Prevent overengineering.
-- `imbue:review-core`: Structured review methodology.
-- `sanctum:pr-review`: Code-level feature review.
+- `sanctum:pr-review`: Code-level review (different scope: this
+  skill prioritizes feature ideas, pr-review reviews diffs).
 
 ## Reference
 

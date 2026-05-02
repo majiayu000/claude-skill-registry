@@ -1,7 +1,7 @@
 ---
 name: release-health-gates
 description: 'Standardize release approvals with GitHub-aware checklists and deployment gate validation'
-version: 1.9.0
+version: 1.9.3
 alwaysApply: false
 category: governance
 tags:
@@ -11,8 +11,7 @@ tags:
 - quality
 - governance
 dependencies: []
-tools:
-- minister-tracker
+tools: []
 provides:
   governance:
   - release-gates

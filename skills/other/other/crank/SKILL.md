@@ -1,6 +1,6 @@
 ---
 name: crank
-description: 'Execute an epic hands-free through waves until work is done or blocked.'
+description: 'Execute epics through waves.'
 skill_api_version: 1
 user-invocable: true
 context:
@@ -161,6 +161,10 @@ If input is a description string:
 1. Decompose into tasks (`TaskCreate` for each)
 2. Set up dependencies
 3. Proceed to Step 3
+
+### Step 1.5: Branch Isolation Gate
+
+Before wave-1 commit, refuse to crank on `main`/`master`. Cut `crank/<epic-id>` to prevent parallel-session reset clobbers. See [references/branch-isolation.md](references/branch-isolation.md) for the gate script and override flag.
 
 ### Step 1a: Initialize Wave Counter
 
@@ -340,6 +344,10 @@ Worker prompt signpost:
 ### Step 3b.2: Load Shared Task Notes (Before Worker Dispatch)
 
 Read `.agents/crank/SHARED_TASK_NOTES.md` and inject its contents into every worker's TaskCreate description (after the issue body). Include a `DISCOVERY REPORTING` instruction so workers report new findings for the orchestrator to harvest. See [references/shared-task-notes.md](references/shared-task-notes.md) for the injection template, size management rules, and discovery reporting format.
+
+### Step 3b.3: Parallel-Wave Isolation (wave size ≥ 2)
+
+**Skip if wave has only 1 worker.** Parallel workers in a shared clone can clobber each other's staged work when sibling workers run `git checkout` mid-task. Three-tier protection (prompt rule → conditional ephemeral worktrees → disposition gate) prevents this without re-introducing worktree sprawl. Read [references/parallel-wave-isolation.md](references/parallel-wave-isolation.md) for the full tier definitions, the worker prompt template, the `preflight-swarm.sh` escalation criterion, and the `check-worktree-disposition.sh` cleanup gate.
 
 ### Step 4: Execute Wave via Swarm
 
@@ -638,6 +646,7 @@ If unsure whether a step is orchestrator-owned or delegatable, the default is **
 ## Reference Documents
 
 - [references/de-sloppify.md](references/de-sloppify.md)
+- [references/parallel-wave-isolation.md](references/parallel-wave-isolation.md)
 - [references/plan-mutations.md](references/plan-mutations.md)
 - [references/shared-task-notes.md](references/shared-task-notes.md)
 - [references/claude-code-latest-features.md](references/claude-code-latest-features.md)

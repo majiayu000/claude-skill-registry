@@ -1,6 +1,6 @@
 ---
 name: red-team
-description: 'Probe docs or skills with adversarial persona tests and consolidate findings.'
+description: 'Probe docs and skills.'
 skill_api_version: 1
 metadata:
   tier: judgment

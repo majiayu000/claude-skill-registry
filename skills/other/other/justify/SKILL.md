@@ -1,12 +1,7 @@
 ---
 name: justify
-description: >-
-  Post-implementation audit that justifies every change
-  against a minimal-intervention standard. Detects AI
-  additive bias, test-logic tampering, and unnecessary
-  complexity. Use after completing work, before committing
-  or creating PRs.
-version: 1.9.0
+description: 'Post-implementation audit against minimal-intervention standard. Detects additive bias and test tampering. Use after work, before commit or PR.'
+version: 1.9.3
 alwaysApply: false
 category: workflow-methodology
 tags:
@@ -18,11 +13,7 @@ tags:
 dependencies:
 - imbue:proof-of-work
 - leyline:additive-bias-defense
-tools:
-- Bash
-- Read
-- Grep
-- Glob
+tools: []
 usage_patterns:
 - post-implementation-review
 - pre-commit-audit
@@ -30,6 +21,7 @@ usage_patterns:
 complexity: intermediate
 model_hint: standard
 estimated_tokens: 2800
+role: entrypoint
 ---
 
 > The simplest change that fixes the problem is the
@@ -384,3 +376,16 @@ reworked before the report passes.
 > Rely less on AI and initial lines of thinking.
 > Challenge yourself to be better, to think of a more
 > elegant implementation or a simpler solution.
+
+## Related Skills
+
+- `imbue:karpathy-principles` - "Surgical Changes" and
+  "Goal-Driven Execution" principles invoke this audit
+  from a higher-level synthesis
+- `leyline:additive-bias-defense` - the contract this
+  audit enforces in detail
+- `imbue:proof-of-work` - the validation layer this
+  audit complements (proof-of-work asks "did it work?",
+  justify asks "did it need to exist?")
+- See `docs/quality-gates.md#skill-level-quality-gate-composition`
+  for the full gate-skill federation graph

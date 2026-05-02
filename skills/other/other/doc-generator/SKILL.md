@@ -1,7 +1,7 @@
 ---
 name: doc-generator
 description: Generate or remediate documentation with human-quality writing and style
-version: 1.9.0
+version: 1.9.3
 globs: "**/*.md"
 alwaysApply: false
   adherence. Use when creating new documentation, rewriting AI-generated content,
@@ -14,11 +14,7 @@ tags:
 - generation
 - remediation
 - polish
-tools:
-- Read
-- Write
-- Edit
-- TodoWrite
+tools: []
 complexity: medium
 model_hint: standard
 estimated_tokens: 1600

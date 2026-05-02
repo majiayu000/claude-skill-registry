@@ -1,6 +1,6 @@
 ---
 name: harvest
-description: 'Consolidate knowledge across .agents directories and promote useful items.'
+description: 'Promote .agents knowledge.'
 skill_api_version: 1
 user-invocable: true
 context:

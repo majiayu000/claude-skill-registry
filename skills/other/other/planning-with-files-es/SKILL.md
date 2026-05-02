@@ -12,7 +12,7 @@ hooks:
     - matcher: "Write|Edit|Bash|Read|Glob|Grep"
       hooks:
         - type: command
-          command: "cat task_plan.md 2>/dev/null | head -30 || true"
+          command: "if [ -f task_plan.md ]; then echo '---BEGIN PLAN DATA---'; cat task_plan.md 2>/dev/null | head -30; echo '---END PLAN DATA---'; fi"
   PostToolUse:
     - matcher: "Write|Edit"
       hooks:
@@ -21,9 +21,9 @@ hooks:
   Stop:
     - hooks:
         - type: command
-          command: "powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"& (Get-ChildItem -Path (Join-Path ~ '.claude/plugins/cache') -Filter check-complete.ps1 -Recurse -EA 0 | Select-Object -First 1).FullName\" 2>/dev/null || sh \"$(ls $HOME/.claude/plugins/cache/*/*/*/scripts/check-complete.sh 2>/dev/null | head -1)\" 2>/dev/null || true"
+          command: "powershell.exe -NoProfile -ExecutionPolicy RemoteSigned -Command \"& (Get-ChildItem -Path (Join-Path ~ '.claude/plugins/cache') -Filter check-complete.ps1 -Recurse -EA 0 | Select-Object -First 1).FullName\" 2>/dev/null || sh \"$(ls $HOME/.claude/plugins/cache/*/*/*/scripts/check-complete.sh 2>/dev/null | head -1)\" 2>/dev/null || true"
 metadata:
-  version: "2.35.0"
+  version: "2.36.3"
 ---
 
 # Sistema de Planificación con Archivos

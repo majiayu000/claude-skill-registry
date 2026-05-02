@@ -1,7 +1,7 @@
 ---
 name: qwen-delegation
 description: Qwen CLI delegation workflow implementing delegation-core for Alibaba's
-version: 1.9.0
+version: 1.9.3
 alwaysApply: false
   Qwen models. Use when delegation-core selected Qwen, need Qwen's large context capabilities,
   batch processing required. Do not use when deciding which model to use (use delegation-core
@@ -17,7 +17,7 @@ dependencies:
 - delegation-core
 tools:
 - qwen-cli
-- delegation-executor
+- delegation_executor.py
 usage_patterns:
 - qwen-cli-integration
 - large-context-analysis

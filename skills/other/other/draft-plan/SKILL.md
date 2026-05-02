@@ -76,11 +76,11 @@ Identify product or design decisions the user's request did not resolve. Escalat
 
 **Do not escalate** technical decisions the agent can make autonomously: which data structure, which existing pattern to follow, internal implementation approach. The boundary is product intent.
 
-Present each decision as a concise trade-off with options. Draft plan steps that depend on these decisions only after the user responds.
+Present each decision as a concise trade-off with options. Mark the strongest option "(Recommended)" and place it first. Draft plan steps that depend on these decisions only after the user responds.
 
 ## Step 5: Deep-Dive Discussion
 
-Work through the implementation shape with the user via `AskUserQuestion`, one or two questions at a time. Use the pattern survey findings to frame choices. Cover whichever of these matter for the task. Do not present a rigid checklist:
+Interview the user relentlessly about every aspect of the implementation shape until you reach shared understanding. Use `AskUserQuestion`, one question at a time. Use the pattern survey findings to frame choices. Cover whichever of these matter for the task. Do not present a rigid checklist:
 
 | Area | What to explore |
 |---|---|
@@ -93,7 +93,9 @@ Work through the implementation shape with the user via `AskUserQuestion`, one o
 
 ### Discussion Guidelines
 
+- If a question can be answered by exploring the codebase, explore the codebase instead.
 - Make recommendations with reasoning, not just questions. Be a collaborator, not an interviewer.
+- Walk down each branch of the design tree, resolving dependencies between decisions one-by-one.
 - When the user says "you decide," make the call and explain why.
 - Probe short answers before moving on.
 - When the shape is clear or the user signals readiness, confirm before drafting.

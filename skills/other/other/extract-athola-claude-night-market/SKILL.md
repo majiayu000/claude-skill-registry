@@ -1,9 +1,6 @@
 ---
 name: extract
-description: >
-  Analyze a codebase and build a knowledge base of business logic,
-  architecture, data flow, and engineering patterns. The foundation
-  for gauntlet challenges and agent integration.
+description: 'Build a codebase knowledge base of business logic, architecture, data flow, and patterns. Use as foundation for gauntlet challenges.'
 model_hint: standard
 ---
 

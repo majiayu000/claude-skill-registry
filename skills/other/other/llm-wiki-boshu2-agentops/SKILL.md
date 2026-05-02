@@ -1,6 +1,6 @@
 ---
 name: llm-wiki
-description: 'Build an external-knowledge wiki from clipped articles, papers, and transcripts.'
+description: 'Build external-knowledge wikis.'
 skill_api_version: 1
 metadata:
   tier: knowledge

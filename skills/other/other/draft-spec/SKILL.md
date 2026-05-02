@@ -55,7 +55,7 @@ Keep findings at the decision level: what tools can do, which approaches are idi
 
 ## Step 3: Deep-Dive Discussion
 
-Explore the project through multi-turn conversation. Gather behavioral requirements (the "what") before architectural design (the "how"), so design decisions land against a concrete set of requirements instead of being taken in the abstract. Track coverage internally but do not present the list as a rigid checklist. When the user jumps to architecture early, engage briefly then circle back to confirm the behavioral picture is complete.
+Interview the user relentlessly about every aspect of the project until you reach shared understanding. Gather behavioral requirements (the "what") before architectural design (the "how"), so design decisions land against a concrete set of requirements instead of being taken in the abstract. Track coverage internally but do not present the list as a rigid checklist. When the user jumps to architecture early, engage briefly then circle back to confirm the behavioral picture is complete.
 
 ### Requirements (gather first)
 
@@ -83,10 +83,12 @@ Explore the project through multi-turn conversation. Gather behavioral requireme
 
 ### Discussion Guidelines
 
-- Use `AskUserQuestion` to ask one or two questions at a time, not a wall of questions. Use options with descriptions to frame trade-offs and offer concrete suggestions. Use `multiSelect` when choices are not mutually exclusive.
+- If a question can be answered by exploring the codebase, explore the codebase instead
+- Use `AskUserQuestion` to ask one question at a time. Use options with descriptions to frame trade-offs and offer concrete suggestions. Use `multiSelect` when choices are not mutually exclusive.
 - When the user gives a short answer, probe deeper before moving on
 - Offer concrete suggestions and trade-off analysis — be a collaborator, not an interviewer
-- If the user says "you decide" or "what do you recommend", make a clear recommendation with reasoning
+- For each question, recommend an answer with reasoning
+- Walk down each branch of the design tree, resolving dependencies between decisions one-by-one
 - When all categories have sufficient depth or the user signals readiness, confirm before moving to drafting
 
 ## Step 4: Draft the Spec

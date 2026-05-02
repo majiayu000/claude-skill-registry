@@ -1,6 +1,6 @@
 ---
 name: pr-validate
-description: 'Validate PR scope, isolation, quality, and upstream alignment.'
+description: 'Validate PR scope and quality.'
 skill_api_version: 1
 context:
   window: fork

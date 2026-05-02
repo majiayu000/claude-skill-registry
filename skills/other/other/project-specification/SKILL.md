@@ -1,7 +1,7 @@
 ---
 name: project-specification
 description: "Transform project briefs into testable specifications with user stories, acceptance criteria, and measurable outcomes."
-version: 1.9.0
+version: 1.9.3
 alwaysApply: false
 # Custom metadata (not used by Claude for matching):
 model_preference: claude-sonnet-4
@@ -10,6 +10,7 @@ tags: [specification, requirements, acceptance-criteria, spec-driven-development
 complexity: intermediate
 model_hint: standard
 estimated_tokens: 800
+role: library
 ---
 ## Delegation
 

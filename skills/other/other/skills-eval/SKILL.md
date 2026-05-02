@@ -1,7 +1,7 @@
 ---
 name: skills-eval
 description: Evaluate and improve Claude skill quality through auditing. Use when reviewing, preparing for production, or auditing skills.
-version: 1.9.0
+version: 1.9.3
 alwaysApply: false
 category: skill-management
 tags:
@@ -15,12 +15,7 @@ tags:
 dependencies:
 - modular-skills
 - performance-optimization
-tools:
-- skills-auditor
-- improvement-suggester
-- compliance-checker
-- tool-performance-analyzer
-- token-usage-tracker
+tools: []
 provides:
   infrastructure:
   - evaluation-framework
@@ -70,6 +65,7 @@ modules:
 - modules/pressure-testing.md
 - modules/trigger-isolation-analysis.md
 - modules/troubleshooting.md
+role: entrypoint
 ---
 # Skills Evaluation and Improvement
 

@@ -409,6 +409,12 @@ Before starting ANY upgrade:
 3. Use Grep/Glob/Read tools to search for each pattern
 4. Collect findings with file:line references
 
+**Action - Step 4.5 (Check Gem Compatibility):**
+1. Load: `workflows/gem-compatibility-workflow.md` and follow it
+2. Run primary check (`bundle_report compatibility`); escalate to railsbump only when the workflow's conditions trigger
+3. Pass the resulting buckets (required bumps, blockers, already compatible) into Step 5's report
+4. If blockers exist, load `references/gem-compatibility.md` for the fork/replace/vendor playbook
+
 **Action - Step 5 (Generate Reports):**
 1. Load: `workflows/upgrade-report-workflow.md`
 2. Load: `workflows/app-update-preview-workflow.md`

@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5341,
-  "updated_at": "2026-05-01T20:15:59.992368Z",
+  "count": 5342,
+  "updated_at": "2026-05-02T02:18:29.370847Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -66580,6 +66580,24 @@
       "stars": 0,
       "install": "mpryc/ai-agents-and-skills/devops/diagnose-with-must-gather",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "optimization-load-balancer",

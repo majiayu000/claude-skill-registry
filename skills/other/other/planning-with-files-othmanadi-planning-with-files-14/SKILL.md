@@ -33,7 +33,7 @@ sh .kiro/skills/planning-with-files/assets/scripts/bootstrap.sh
 Windows (PowerShell):
 
 ```powershell
-pwsh -ExecutionPolicy Bypass -File .kiro/skills/planning-with-files/assets/scripts/bootstrap.ps1
+pwsh -ExecutionPolicy RemoteSigned -File .kiro/skills/planning-with-files/assets/scripts/bootstrap.ps1
 ```
 
 Creates:

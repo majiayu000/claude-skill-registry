@@ -1,6 +1,6 @@
 ---
 name: crank
-description: 'Execute an epic hands-free through waves until work is done or blocked.'
+description: 'Execute epics through waves.'
 ---
 # $crank - Autonomous Epic Execution (Codex Native)
 
@@ -169,6 +169,10 @@ log_plan_mutation() {
 - If `epic_id` is absent, keep the packet `objective` as the execution spine and continue in file-backed mode instead of inventing an epic ID
 - For other plan files, read the plan file and extract tasks
 
+### Step 1.5: Branch Isolation Gate
+
+Before wave-1 commit, refuse to crank on `main`/`master`. Cut `crank/<epic-id>` to prevent parallel-session reset clobbers. See [references/branch-isolation.md](references/branch-isolation.md) for the gate script and override flag.
+
 ### Step 2: Load Execution Details
 
 **Beads mode:**
@@ -269,6 +273,14 @@ for task in wave_tasks:
 ```
 
 Display an ownership table before spawning workers. If conflicts exist, split into sub-waves and keep file ownership disjoint.
+
+#### 4c.1: Parallel-Wave Isolation (wave size ≥ 2)
+
+For waves with 2+ workers, three tiers prevent sibling-worker clobber without re-introducing worktree sprawl. Read [references/parallel-wave-isolation.md](references/parallel-wave-isolation.md) for the full tier definitions, the worker prompt template, the `preflight-swarm.sh` escalation criterion, and the `check-worktree-disposition.sh` cleanup gate.
+
+Tier 1 (always): inject the branch-isolation prompt rule (worker's first git op = `git checkout -b feat/<epic>-<slug> origin/main`; never `git switch`, `stash pop`, `reset --hard`).
+Tier 2 (escalate on `preflight-swarm.sh` non-zero): ephemeral per-worker worktree.
+Tier 3 (wave-end): `scripts/check-worktree-disposition.sh` flags stragglers.
 
 #### 4d: Spawn Workers
 
@@ -511,6 +523,7 @@ fi
 ## Reference Documents
 
 - [references/de-sloppify.md](references/de-sloppify.md) - cleanup pass after implementation waves
+- [references/parallel-wave-isolation.md](references/parallel-wave-isolation.md) - branch-isolation rule + conditional ephemeral worktrees + cleanup gate for parallel waves
 - [references/plan-mutations.md](references/plan-mutations.md) - plan mutation audit trail for drift analysis
 - [references/shared-task-notes.md](references/shared-task-notes.md) - cross-wave context persistence
 - [references/commit-strategies.md](references/commit-strategies.md) - per-task vs wave-batch commits

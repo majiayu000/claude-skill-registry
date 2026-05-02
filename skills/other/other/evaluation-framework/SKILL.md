@@ -1,7 +1,7 @@
 ---
 name: evaluation-framework
 description: Patterns for building evaluation and scoring systems, quality gates, rubrics, and decision frameworks. Use for any scored assessment.
-version: 1.9.0
+version: 1.9.3
 alwaysApply: false
 category: infrastructure
 tags:

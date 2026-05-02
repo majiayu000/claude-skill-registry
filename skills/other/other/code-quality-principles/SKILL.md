@@ -1,7 +1,7 @@
 ---
 name: code-quality-principles
 description: KISS, YAGNI, and SOLID code quality principles for clean code, reducing complexity and preventing over-engineering.
-version: 1.9.0
+version: 1.9.3
 alwaysApply: true
 category: development
 tags:
@@ -280,3 +280,8 @@ When reviewing code, check:
 - [ ] Dependencies are injected, not created (DIP)
 
 **Verification:** Run `wc -l <file>` to check line counts and `rg -c "class " <file>` (or `grep -c "class " <file>`) to count classes per file.
+
+## Related Skills
+
+- `imbue:karpathy-principles` - The "Simplicity First" principle wraps KISS, YAGNI, and SOLID into a four-principle synthesis derived from Karpathy's observations on LLM coding pitfalls
+- See `docs/quality-gates.md#skill-level-quality-gate-composition` for the full gate-skill federation graph

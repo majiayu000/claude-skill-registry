@@ -252,6 +252,75 @@ For the full cmux CLI reference, see `references/cmux-commands.md`.
 2. `claude-tracker-watch --daemon` — keep summaries auto-updated
 3. Read `~/.claude/agent_docs/active-projects.md` — curated project overview
 
+## SQLite Database (`tracker.db`)
+
+Single SQLite database at `~/.claude/tracker.db` consolidates all session metadata, git tracking, tags, and three new capabilities: checkpoints, phase tracking, and tagged phrases.
+
+**API module**: `~/.claude/lib/tracker-db.js` — synchronous better-sqlite3, WAL mode, singleton lazy-open.
+
+```bash
+# Query directly
+sqlite3 ~/.claude/tracker.db "SELECT COUNT(*) FROM sessions;"
+sqlite3 ~/.claude/tracker.db "SELECT phase, COUNT(*) FROM phases GROUP BY phase;"
+sqlite3 ~/.claude/tracker.db "SELECT phrase, GROUP_CONCAT(tag) FROM tagged_phrases tp LEFT JOIN tagged_phrase_tags tpt ON tpt.phrase_id = tp.id GROUP BY tp.id ORDER BY tp.timestamp DESC LIMIT 10;"
+```
+
+**Migration** (idempotent): `node ~/.claude/scripts/migrate-to-sqlite.js`
+
+### Checkpoints
+
+Named bookmarks within sessions capturing label, git state, workflow phase, and modified files.
+
+```bash
+# Manual checkpoint
+node ~/.claude/skills/claude-tracker-suite/scripts/checkpoint-session.js create "finished auth module"
+node ~/.claude/skills/claude-tracker-suite/scripts/checkpoint-session.js create "pre-deploy" --summary "about to push"
+
+# List checkpoints
+node ~/.claude/skills/claude-tracker-suite/scripts/checkpoint-session.js list
+node ~/.claude/skills/claude-tracker-suite/scripts/checkpoint-session.js list --phase implementing
+node ~/.claude/skills/claude-tracker-suite/scripts/checkpoint-session.js list --limit 10
+```
+
+Auto-checkpoints are created on git commits (`git-track-post.sh`) and phase transitions (`phase-detect.py`).
+
+### Phase Tracking
+
+Automatic workflow phase detection via PostToolUse hook (`phase-detect.py`). Rolling window of last 10 tool calls, hysteresis to prevent flickering.
+
+Phases: `exploring`, `planning`, `implementing`, `testing`, `reviewing`, `debugging`, `committing`, `deploying`.
+
+```bash
+# Query current phase for a session
+sqlite3 ~/.claude/tracker.db "SELECT phase, started_at FROM phases WHERE session_id = 'abc...' AND ended_at IS NULL;"
+
+# Phase history
+sqlite3 ~/.claude/tracker.db "SELECT phase, started_at, ended_at, duration_ms FROM phases WHERE session_id = 'abc...' ORDER BY started_at;"
+
+# Phase analytics
+sqlite3 ~/.claude/tracker.db "SELECT phase, COUNT(*) as transitions, AVG(duration_ms)/1000 as avg_seconds FROM phases GROUP BY phase;"
+```
+
+### Tagged Phrases
+
+Notable excerpts captured from sessions with tags, searchable via FTS5.
+
+```bash
+# Capture a phrase
+node ~/.claude/skills/claude-tracker-suite/scripts/quote-session.js capture "assumptions are the enemy" --tags principle,design
+
+# Search phrases (FTS5)
+node ~/.claude/skills/claude-tracker-suite/scripts/quote-session.js search "assumptions"
+
+# List by tag
+node ~/.claude/skills/claude-tracker-suite/scripts/quote-session.js tag principle
+
+# List recent phrases
+node ~/.claude/skills/claude-tracker-suite/scripts/quote-session.js list --limit 20
+```
+
+Phrases are also auto-extracted by the `session-tags-infer.py` Stop hook during LLM inference.
+
 ## Related: Git Tracking
 
 Git-aware session tracking via PreToolUse/PostToolUse hooks intercepts all git commands and tags sessions with repos they touch. Enables cross-directory session discovery.
@@ -304,69 +373,6 @@ The soul registry (`~/.claude/hooks/soul-registry.py`) tracks **live** sessions 
 To view the live registry: `python3 ~/.claude/hooks/soul-registry.py list --md`
 
 To activate Claudicle identity in a session: `/ensoul` (opt-in per session). To bind a session to Slack: `/slack-sync #channel`.
-
-## SQLite Database (`tracker.db`)
-
-Single SQLite database at `~/.claude/tracker.db` consolidates all session metadata, git tracking, tags, and three new capabilities: checkpoints, phase tracking, and tagged phrases.
-
-**API module**: `~/.claude/lib/tracker-db.js` — synchronous better-sqlite3, WAL mode, singleton lazy-open.
-
-```bash
-# Query directly
-sqlite3 ~/.claude/tracker.db "SELECT COUNT(*) FROM sessions;"
-sqlite3 ~/.claude/tracker.db "SELECT phase, COUNT(*) FROM phases GROUP BY phase;"
-```
-
-**Migration** (idempotent): `node ~/.claude/scripts/migrate-to-sqlite.js`
-
-### Checkpoints
-
-Named bookmarks within sessions capturing label, git state, workflow phase, and modified files.
-
-```bash
-# Manual checkpoint
-node ~/.claude/skills/claude-tracker-suite/scripts/checkpoint-session.js create "finished auth module"
-node ~/.claude/skills/claude-tracker-suite/scripts/checkpoint-session.js create "pre-deploy" --summary "about to push"
-
-# List checkpoints
-node ~/.claude/skills/claude-tracker-suite/scripts/checkpoint-session.js list
-node ~/.claude/skills/claude-tracker-suite/scripts/checkpoint-session.js list --phase implementing
-node ~/.claude/skills/claude-tracker-suite/scripts/checkpoint-session.js list --limit 10
-```
-
-Auto-checkpoints are created on git commits (`git-track-post.sh`) and phase transitions (`phase-detect.py`).
-
-### Phase Tracking
-
-Automatic workflow phase detection via PostToolUse hook (`phase-detect.py`). Rolling window of last 10 tool calls, hysteresis to prevent flickering.
-
-Phases: `exploring`, `planning`, `implementing`, `testing`, `reviewing`, `debugging`, `committing`, `deploying`.
-
-```bash
-# Query current phase for a session
-sqlite3 ~/.claude/tracker.db "SELECT phase, started_at FROM phases WHERE session_id = 'abc...' AND ended_at IS NULL;"
-
-# Phase analytics
-sqlite3 ~/.claude/tracker.db "SELECT phase, COUNT(*) as transitions, AVG(duration_ms)/1000 as avg_seconds FROM phases GROUP BY phase;"
-```
-
-### Tagged Phrases
-
-Notable excerpts captured from sessions with tags, searchable via FTS5.
-
-```bash
-# Capture a phrase
-node ~/.claude/skills/claude-tracker-suite/scripts/quote-session.js capture "assumptions are the enemy" --tags principle,design
-
-# Search phrases (FTS5)
-node ~/.claude/skills/claude-tracker-suite/scripts/quote-session.js search "assumptions"
-
-# List by tag
-node ~/.claude/skills/claude-tracker-suite/scripts/quote-session.js tag principle
-
-# List recent phrases
-node ~/.claude/skills/claude-tracker-suite/scripts/quote-session.js list --limit 20
-```
 
 ## References
 

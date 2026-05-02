@@ -1,8 +1,8 @@
 {
   "category": "productivity",
   "code": "pro",
-  "count": 2079,
-  "updated_at": "2026-05-01T20:16:01.601966Z",
+  "count": 2084,
+  "updated_at": "2026-05-02T02:18:30.942844Z",
   "skills": [
     {
       "name": "commit-helper",
@@ -13736,6 +13736,24 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "humanizar-texto-es",
+      "description": "Rewrite Spanish AI-generated text to sound naturally human-written using 11 simultaneous linguistic techniques.",
+      "repo": "ToniPerea/humanizar-texto-es",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "spanish",
+        "ai-detection",
+        "text-rewriting",
+        "nlp",
+        "research"
+      ],
+      "stars": 0,
+      "install": "ToniPerea/humanizar-texto-es/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "procedural-memory-system",
       "description": "This skill should be used when the user asks to \"reflect on patterns\", \"generate rules from sessions\", \"consolidate memory\", \"analyze session patterns\", \"learn procedures and workflows\", \"create proce",
       "repo": "jcmrs/jcmrs-plugins",
@@ -14146,6 +14164,22 @@
       "stars": 0,
       "install": "g97iulio1609/vscode-agent-skills/skills/oneplan",
       "source": "downloaded"
+    },
+    {
+      "name": "skill-seekers",
+      "description": "Convert docs, repos, PDFs into Claude Skills with conflict detection",
+      "repo": "yusufkaraaslan/Skill_Seekers",
+      "path": "skills/skill-seekers/SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "converter",
+        "skills",
+        "documentation"
+      ],
+      "stars": 0,
+      "install": "yusufkaraaslan/Skill_Seekers/skills/skill-seekers/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "atlas-meta",
@@ -15565,6 +15599,26 @@
       "stars": 0,
       "install": "jeremylongshore/claude-code-plugins-plus-skills/planned-skills/generated/19-business-automation/google-sheets-automation",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "confluence-to-agent-knowledge-base",
+      "description": "Turn any Confluence Cloud instance into a private, searchable AI knowledge base on GitHub with access-tiered repos. Interactive 6-phase walkthrough using the Atlassian MCP connector.",
+      "repo": "miningstore/confluence-to-agent-knowledge-base",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "confluence",
+        "knowledge-base",
+        "atlassian",
+        "mcp",
+        "wiki",
+        "search",
+        "knowledge-management"
+      ],
+      "stars": 0,
+      "install": "miningstore/confluence-to-agent-knowledge-base/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "blueprinteventbus-integration",
@@ -22059,6 +22113,28 @@
       "source": "Community Skills"
     },
     {
+      "name": "deep-research",
+      "description": "Deep research with NotebookLM + web search. Domain boost, source credibility scoring, and post-research artifact generation (podcast, video, slides, quiz).",
+      "repo": "Chris1220-cmd/deep-research-skill",
+      "path": "SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "research",
+        "deep-research",
+        "notebooklm",
+        "perplexity",
+        "gemini",
+        "domain-boost",
+        "academic",
+        "maritime",
+        "legal"
+      ],
+      "stars": 0,
+      "install": "Chris1220-cmd/deep-research-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "dev-workflow-orchestrator",
       "description": "Orchestrate PRD creation, task generation, and gated task processing with user confirmations between phases.",
       "repo": "dundas/teleportation-cli",
@@ -25233,6 +25309,22 @@
       "stars": 0,
       "install": "jeremylongshore/claude-code-plugins-plus-skills/planned-skills/generated/20-enterprise-workflows/definition-of-done-generator",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "professional-business-writing",
+      "description": "Professional business writing assistant - removes AI patterns, maintains authority and clarity.",
+      "repo": "b33kman/professional-business-writing-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "professional-writing",
+        "business-writing",
+        "writing-assistant"
+      ],
+      "stars": 0,
+      "install": "b33kman/professional-business-writing-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "sdk-bridge-patterns",

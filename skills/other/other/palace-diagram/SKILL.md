@@ -1,7 +1,7 @@
 ---
 name: palace-diagram
 description: 'Generate visual diagrams of palace structure, knowledge topology, and synapse connectivity.'
-version: 1.9.0
+version: 1.9.3
 alwaysApply: false
 category: visualization
 tags:
@@ -25,6 +25,13 @@ estimated_tokens: 400
 Generate Mermaid and ASCII diagrams from the knowledge
 graph, showing palace structure, entity relationships,
 synapse connectivity, and tier assignments.
+
+> **Status: unwired**. As of v1.9.4, no command or agent
+> invokes `Skill(memory-palace:palace-diagram)`. The skill
+> defines the contract but the integration into `/palace`
+> (e.g. as `/palace diagram <palace-id>`) is pending. Use
+> the `palace_manager.py` script directly until the wiring
+> lands. Tracked for follow-up in the April 2026 skill audit.
 
 ## When To Use
 

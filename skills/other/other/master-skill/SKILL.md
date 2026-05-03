@@ -28,16 +28,27 @@ allowed-tools:
 
 ## 预置法师
 
-以下汉传祖师大德可直接使用，无需生成：
+以下三大传统祖师大德可直接使用，无需生成：
 
-- `/xuanzang` — 玄奘法师（法相唯识宗）
-- `/kumarajiva` — 鸠摩罗什（三论宗/中观）
-- `/huineng` — 慧能大师（禅宗六祖）
-- `/zhiyi` — 智顗大师（天台宗）
-- `/fazang` — 法藏大师（华严宗）
-- `/yinguang` — 印光大师（净土宗）
-- `/ouyi` — 蕅益大师（天台/净土·跨宗派）
-- `/xuyun` — 虚云老和尚（禅宗·五宗兼嗣）
+**汉传**
+- `/master-xuanzang` — 玄奘法师（法相唯识宗）
+- `/master-kumarajiva` — 鸠摩罗什（三论宗/中观）
+- `/master-huineng` — 慧能大师（禅宗六祖）
+- `/master-zhiyi` — 智顗大师（天台宗）
+- `/master-fazang` — 法藏大师（华严宗）
+- `/master-yinguang` — 印光大师（净土宗）
+- `/master-ouyi` — 蕅益大师（天台/净土·跨宗派）
+- `/master-xuyun` — 虚云老和尚（禅宗·五宗兼嗣）
+
+**藏传**
+- `/master-atisha` — 阿底峡尊者（噶当派开祖 · 三士道 · 982-1054）
+- `/master-tsongkhapa` — 宗喀巴大师（格鲁派创始人 · 三主要道 · 应成中观 · 1357-1419）
+- `/master-milarepa` — 米拉日巴尊者（噶举派 · 大手印 · 那洛六法 · 1052-1135）
+
+**南传**
+- `/master-buddhaghosa` — 觉音尊者（上座部论师 · 《清净道论》· 5世纪）
+- `/master-mahasi-sayadaw` — 马哈希尊者（缅甸内观 · 标记法 · 1904-1982）
+- `/master-ajahn-chah` — 阿姜查（泰国森林禅林派 · 巴蓬寺传承 · 1918-1992）
 
 ## 对比模式
 

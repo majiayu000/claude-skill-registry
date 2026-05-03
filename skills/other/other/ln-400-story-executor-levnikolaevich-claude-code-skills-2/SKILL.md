@@ -35,7 +35,7 @@ Runtime-backed coordinator for Story execution. Owns task ordering, worktree lif
 ## Runtime Contract
 
 **MANDATORY READ:** Load `shared/references/environment_state_contract.md`, `shared/references/storage_mode_detection.md`, `shared/references/input_resolution_pattern.md`
-**MANDATORY READ:** Load `shared/references/coordinator_runtime_contract.md`, `shared/references/story_execution_runtime_contract.md`, `shared/references/coordinator_summary_contract.md`
+**MANDATORY READ:** Load `shared/references/coordinator_runtime_contract.md`, `shared/references/story_execution_runtime_contract.md`, `shared/references/coordinator_summary_contract.md`, `shared/references/loop_health_contract.md`
 **MANDATORY READ:** Load `shared/references/git_worktree_fallback.md` — use the Story execution row
 
 Runtime CLI:
@@ -47,6 +47,7 @@ node shared/scripts/story-execution-runtime/cli.mjs checkpoint --phase PHASE_3_S
 node shared/scripts/story-execution-runtime/cli.mjs record-worker --task-id {taskId} --payload '{...}'
 node shared/scripts/story-execution-runtime/cli.mjs record-group --group-id {groupId} --payload '{...}'
 node shared/scripts/story-execution-runtime/cli.mjs record-stage-summary --story {storyId} --payload '{...}'
+node shared/scripts/story-execution-runtime/cli.mjs record-loop-health --scope task --scope-id {taskId} --payload '{...}'
 node shared/scripts/story-execution-runtime/cli.mjs advance --to PHASE_4_TASK_EXECUTION
 ```
 
@@ -125,11 +126,18 @@ Flow:
 4. Start `task-worker-runtime` and checkpoint executor `child_run` metadata before invocation.
 5. Execute the worker through Agent or Skill with `--run-id` and `--summary-artifact-path`.
 6. Read the executor summary artifact from `.hex-skills/runtime-artifacts/runs/{parent_run_id}/task-status/{taskId}--{worker}.json`.
-7. When review is required, repeat the same runtime-backed sequence for `ln-402`.
-8. Read the latest `ln-402` review summary artifact for the same task from `.hex-skills/runtime-artifacts/runs/{parent_run_id}/task-status/{taskId}--ln-402.json`.
-9. Record worker artifacts with `record-worker`.
-10. Checkpoint `PHASE_4_TASK_EXECUTION`.
-11. Advance to `PHASE_6_VERIFY_STATUSES`.
+7. Record task loop health before retrying the same task/worker/error:
+   - Action: compare current worker output with previous task loop health.
+   - Key point: retry only when new artifact, new `ln-402` summary, task status delta, `files_changed` delta, or scenario improvement exists.
+   - Why: repeated identical worker failures create retry storms without adding evidence.
+   - Evidence: `record-loop-health --scope task --scope-id {taskId}` result.
+   - Exception: if `pause.pause=true`, stop and surface `paused_reason`.
+   - Automation/guard: story-execution runtime pauses after same-error/no-progress threshold.
+8. When review is required, repeat the same runtime-backed sequence for `ln-402`.
+9. Read the latest `ln-402` review summary artifact for the same task from `.hex-skills/runtime-artifacts/runs/{parent_run_id}/task-status/{taskId}--ln-402.json`.
+10. Record worker artifacts with `record-worker`.
+11. Checkpoint `PHASE_4_TASK_EXECUTION`.
+12. Advance to `PHASE_6_VERIFY_STATUSES`.
 
 ### Phase 5: Group Execution
 
@@ -161,7 +169,7 @@ Used only for `Todo` groups with more than one task.
 Runs once when all tasks are Done. Delegates to an external agent to trace the user scenario end-to-end against implemented code. The executor has completion bias after shepherding tasks through implementation — an external agent has no investment in the story being done.
 
 1. Load the Story ACs and the traceability table (from `.hex-skills/task-planning/{identifier}_traceability.md`). If the traceability artifact is missing, reconstruct an equivalent trace from the Story ACs and task Implementation Plans — do not fail scenario validation solely because the planner artifact is absent.
-2. Run agent health check. If an agent is available (prefer `gemini-review`, fallback `codex-review`):
+2. Run agent health check. If an advisor agent is available:
    a. Build validation prompt from `shared/agents/prompt_templates/scenario_validator.md`
    b. Fill with: Story ACs, traceability table, architecture context, project root path (agent reads code directly)
    c. Save prompt to `.hex-skills/story-execution/{identifier}_scenario_prompt.md`
@@ -179,6 +187,8 @@ Runs once when all tasks are Done. Delegates to an external agent to trace the u
 3. If no agent available: run self-check as fallback (trace 5 segments via code inspection).
 4. If any segment is broken or missing:
    - Identify the responsible task from traceability table layer mapping
+   - Record scenario loop health keyed by broken segment before setting another rework
+   - If the same broken segment returns without code/artifact delta, pause instead of reworking blindly
    - Set that task back to `To Rework` with scenario findings as rework context
    - Advance back to `PHASE_3_SELECT_WORK`
 5. Max 2 scenario validation loops. If still failing after 2 rework cycles, `PAUSE` for user review.
@@ -277,6 +287,7 @@ Skill(skill: "ln-402-task-reviewer", args: "{taskId} --run-id {reviewRunId} --su
 - Never move Story to `Done`.
 - Every worker outcome must be read from summary JSON, not from prose-only chat.
 - `record-worker` is the primary runtime ingestion path for worker outcomes.
+- `record-loop-health` is the primary retry-usefulness ingestion path before repeating task/group/scenario work.
 - Every managed worker run must be started through `task-worker-runtime` before invocation.
 - `ln-1000` consumes the Stage 2 coordinator artifact, not free-text stage output.
 - Reviews remain sequential even when execution groups are parallel.

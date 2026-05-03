@@ -35,6 +35,9 @@ python3 scripts/test_connection.py --check-models
 # Generate an image
 python3 scripts/generate_image.py "A Minoan bull-leaper under golden light"
 
+# Compare models side-by-side (HTML page)
+python3 scripts/compare_models.py "A bronze seal stamp in Minoan style" --all --open
+
 # Edit with mask
 python3 scripts/edit_image.py "Replace the sky with a dramatic sunset" photo.png --mask sky_mask.png
 
@@ -149,7 +152,17 @@ Additional options:
 | `--pro` | `gpt-5.4-pro` | Highest quality, most expensive |
 | `--orchestrator MODEL` | any | Manual override |
 
-### 5. Streaming with Partial Images
+### 5. Model Comparison (HTML Page)
+
+```bash
+python3 scripts/compare_models.py "A Minoan bull-leaper" --open
+python3 scripts/compare_models.py "prompt" --all --open
+python3 scripts/compare_models.py "" --list-models
+```
+
+Generates the same prompt across multiple models and outputs a dark-themed HTML comparison page. See `references/compare-models-reference.md` for full options.
+
+### 6. Streaming with Partial Images
 
 ```bash
 python3 scripts/stream_image.py "prompt" --partials N [options]
@@ -203,6 +216,7 @@ Start with `--quality low` ($0.006/image) for ideation. Graduate to `medium` ($0
 | `edit_image.py` | Edit with mask/references | Image API |
 | `compose_images.py` | Multi-reference composition | Image API |
 | `converse_image.py` | Multi-turn editing | Responses API |
+| `compare_models.py` | Side-by-side model comparison (HTML) | Image API |
 | `stream_image.py` | Streaming with partials | Image API |
 | `test_connection.py` | Connectivity check | Models API |
 
@@ -211,5 +225,6 @@ Start with `--quality low` ($0.006/image) for ideation. Graduate to `medium` ($0
 | File | Contents |
 |------|----------|
 | `references/api-reference.md` | Full parameter reference, pricing, size constraints |
+| `references/compare-models-reference.md` | Model comparison script: options, examples, HTML output |
 | `references/prompting-guide.md` | Prompt engineering patterns, text rendering, style keywords |
 | `references/troubleshooting.md` | Error codes, content policy, rate limits |

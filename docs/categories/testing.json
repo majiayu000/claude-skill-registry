@@ -1,8 +1,8 @@
 {
   "category": "testing",
   "code": "tst",
-  "count": 6767,
-  "updated_at": "2026-05-02T02:18:30.987686Z",
+  "count": 6768,
+  "updated_at": "2026-05-03T02:33:39.573956Z",
   "skills": [
     {
       "name": "frontend-testing",
@@ -52925,6 +52925,23 @@
       ],
       "stars": 0,
       "install": "conorluddy/ios-simulator-skill/ios-simulator-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
+      "name": "playwright-skill",
+      "description": "Browser automation with Playwright - Claude writes and executes custom scripts",
+      "repo": "lackeyjb/playwright-skill",
+      "path": "skills/playwright-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "playwright",
+        "browser",
+        "automation",
+        "testing"
+      ],
+      "stars": 0,
+      "install": "lackeyjb/playwright-skill/skills/playwright-skill/SKILL.md",
       "source": "Community Skills"
     },
     {

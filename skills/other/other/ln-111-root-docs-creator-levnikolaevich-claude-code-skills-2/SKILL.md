@@ -1,6 +1,6 @@
 ---
 name: ln-111-root-docs-creator
-description: "Creates root documentation files (AGENTS.md, CLAUDE.md, GEMINI.md, ANTIGRAVITY.md, docs/README.md, standards, principles). Use for initial project doc setup."
+description: "Creates root documentation files (AGENTS.md, CLAUDE.md, docs/README.md, standards, principles). Use for initial project doc setup."
 license: MIT
 model: claude-sonnet-4-6
 ---
@@ -30,16 +30,14 @@ From coordinator:
   - `ENABLE_WORKFLOW_PRINCIPLES` (optional boolean; default `false`) — when `true`, expands the `{{WORKFLOW_PRINCIPLES_BLOCK}}` placeholder in AGENTS.md with the content of `references/templates/agents_md_workflow_principles.md`
 - `targetDir`: Project root directory
 
-**MANDATORY READ:** Load `shared/references/docs_quality_contract.md`, `shared/references/docs_quality_rules.json`, and `shared/references/agent_instructions_writing_guide.md` (the canonical writing guide for AGENTS.md / CLAUDE.md / GEMINI.md / ANTIGRAVITY.md).
+**MANDATORY READ:** Load `shared/references/docs_quality_contract.md`, `shared/references/docs_quality_rules.json`, and `shared/references/agent_instructions_writing_guide.md` (the canonical writing guide for AGENTS.md / CLAUDE.md).
 
-## Documents Created (7)
+## Documents Created
 
 | File | Target Sections | Questions |
 |------|-----------------|-----------|
 | AGENTS.md | Quick Navigation, Agent Entry, Critical Rules, (optional) Workflow Principles, Development Commands, Maintenance | Q1-Q6 |
 | CLAUDE.md | `@AGENTS.md` import + `## Claude Code` delta (≤20 lines total) | Q1-Q6 |
-| GEMINI.md | `@AGENTS.md` import + `## Gemini CLI` delta (≤20 lines total) | Q1-Q6 |
-| ANTIGRAVITY.md | `@AGENTS.md` import + `## Google Antigravity` delta (≤20 lines total) | Q1-Q6 |
 | docs/README.md | Quick Navigation, Agent Entry, Documentation Map, Maintenance | Q7-Q13 |
 | docs/documentation_standards.md | Quick Reference (60+ requirements), 12 main sections, Maintenance | Q14-Q16 |
 | docs/principles.md | Core Principles (8), Decision Framework, Anti-Patterns, Verification, Maintenance | Q17-Q22 |
@@ -52,14 +50,14 @@ From coordinator:
 3. Set defaults for missing optional keys (`ENABLE_WORKFLOW_PRINCIPLES` defaults to `false`)
 
 ### Phase 2: Create Documents
-For each document (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `ANTIGRAVITY.md`, `docs/README.md`, `docs/documentation_standards.md`, `docs/principles.md`):
+For each document (`AGENTS.md`, `CLAUDE.md`, `docs/README.md`, `docs/documentation_standards.md`, `docs/principles.md`):
 1. Check if file exists (idempotent)
 2. If exists: skip with log
 3. If not exists:
    - Copy template from `references/templates/`
    - For AGENTS.md: enforce the shared header contract (`SCOPE`, `DOC_KIND`, `DOC_ROLE: canonical`, `READ_WHEN`, `SKIP_WHEN`, `PRIMARY_SOURCES`) and the top-section contract (`## Quick Navigation`, `## Agent Entry`, `## Critical Rules`, `## Maintenance`)
    - For AGENTS.md: if `ENABLE_WORKFLOW_PRINCIPLES=true`, replace the `{{WORKFLOW_PRINCIPLES_BLOCK}}` placeholder with the full content of `references/templates/agents_md_workflow_principles.md`; otherwise strip the placeholder line and its leading comment
-   - For CLAUDE.md, GEMINI.md, and ANTIGRAVITY.md: use the import-stub templates (`claude_md_template.md`, `gemini_md_template.md`, `antigravity_md_template.md`). They contain `DOC_ROLE: derived`, a single `@AGENTS.md` line, and a bounded harness-specific delta. Do not inline any AGENTS.md content
+   - For CLAUDE.md: use the import-stub template (`claude_md_template.md`). It contains `DOC_ROLE: derived`, a single `@AGENTS.md` line, and a bounded harness-specific delta. Do not inline any AGENTS.md content
    - For `docs/principles.md`: prefer normalized principle inputs already present in Context Store
    - If project-specific principles are absent, keep the template structure and fill only facts supported by current project sources
    - Replace `{{PLACEHOLDER}}` tokens with Context Store values
@@ -70,17 +68,15 @@ For each document (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `ANTIGRAVITY.md`, `doc
 **Root entrypoint rule (canonical model):**
 - `AGENTS.md` is the single canonical source of content. It holds the Critical Rules table, MCP Tool Preferences, Navigation, Development Commands, and optional Workflow Principles.
 - `CLAUDE.md` is a Claude Code-specific stub that contains `@AGENTS.md` plus a `## Claude Code` delta with harness-specific rules (≤20 lines total, ≤50 absolute max). Do not duplicate AGENTS.md content.
-- `GEMINI.md` is the Gemini CLI analog with `@AGENTS.md` plus a `## Gemini CLI` delta.
-- `ANTIGRAVITY.md` is the Google Antigravity IDE analog with `@AGENTS.md` plus a `## Google Antigravity` delta (skills root hints, workspace-scoped `.agents/` layout).
-- Claude Code, Gemini CLI, and Antigravity all natively expand `@path` imports into the session context at launch (5-hop recursion), so the imported AGENTS.md is available to each harness automatically.
-- Harness delta content: command terminology (`/compact`, `/memory show`), storage pointers (`~/.claude/projects/<project>/memory/`), and features that only exist in one harness (`.claude/rules/` with `paths:` frontmatter, nested on-demand loading).
+- Claude Code expands `@path` imports into the session context at launch, so the imported AGENTS.md is available automatically.
+- Harness delta content: command terminology (`/compact`, `/memory show`), storage pointers (`~/.claude/projects/<project>/memory/`), and Claude-only features (`.claude/rules/` with `paths:` frontmatter, nested on-demand loading).
 
 ### Phase 3: Self-Validate
 For each created document:
 1. Check SCOPE tag in first 12 lines
 2. Check metadata markers (`DOC_KIND`, `DOC_ROLE`, `READ_WHEN`, `SKIP_WHEN`, `PRIMARY_SOURCES`)
 3. For AGENTS.md: check `Quick Navigation`, `Agent Entry`, `Critical Rules`, `Maintenance`
-4. For CLAUDE.md / GEMINI.md / ANTIGRAVITY.md: check `@AGENTS.md` import line is present and the file is ≤50 lines
+4. For CLAUDE.md: check `@AGENTS.md` import line is present and the file is ≤50 lines
 5. Check required sections (from questions_root.md)
 6. Check docs-quality contract compliance (no forbidden placeholders, no leaked template metadata)
 7. Check POSIX endings (single newline at end)
@@ -90,15 +86,13 @@ For each created document:
 Return to coordinator:
 ```json
 {
-  "created_files": ["AGENTS.md", "CLAUDE.md", "GEMINI.md", "ANTIGRAVITY.md", "docs/README.md", "docs/documentation_standards.md", "docs/principles.md"],
+  "created_files": ["AGENTS.md", "CLAUDE.md", "docs/README.md", "docs/documentation_standards.md", "docs/principles.md"],
   "skipped_files": [],
   "quality_inputs": {
-    "doc_paths": ["AGENTS.md", "CLAUDE.md", "GEMINI.md", "ANTIGRAVITY.md", "docs/README.md", "docs/documentation_standards.md", "docs/principles.md"],
+    "doc_paths": ["AGENTS.md", "CLAUDE.md", "docs/README.md", "docs/documentation_standards.md", "docs/principles.md"],
     "owners": {
       "AGENTS.md": "ln-111-root-docs-creator",
       "CLAUDE.md": "ln-111-root-docs-creator",
-      "GEMINI.md": "ln-111-root-docs-creator",
-      "ANTIGRAVITY.md": "ln-111-root-docs-creator",
       "docs/README.md": "ln-111-root-docs-creator",
       "docs/documentation_standards.md": "ln-111-root-docs-creator",
       "docs/principles.md": "ln-111-root-docs-creator"
@@ -116,7 +110,7 @@ Return to coordinator:
 - **Publishable output:** Root docs must not contain `[TBD: ...]`, `TODO`, or leaked template metadata
 - **Language:** All root docs in English (universal standards)
 - **SCOPE tags:** Required in first 10 lines of each file (HTML comments are stripped from Claude Code's injected context but stay visible to maintainers and auditors)
-- **Canonical-stub root model:** `AGENTS.md` is the single source; `CLAUDE.md`, `GEMINI.md`, and `ANTIGRAVITY.md` are `@AGENTS.md` imports plus bounded harness deltas. See `shared/references/agent_instructions_writing_guide.md` for rationale and anti-patterns.
+- **Canonical-stub root model:** `AGENTS.md` is the single source; `CLAUDE.md` is an `@AGENTS.md` import plus bounded harness delta. See `shared/references/agent_instructions_writing_guide.md` for rationale and anti-patterns.
 
 ### NO_CODE_EXAMPLES Rule (MANDATORY)
 Root documents define **navigation and standards**, NOT implementations:
@@ -154,16 +148,16 @@ Write the summary to the provided artifact path or return the same envelope in s
 
 ## Definition of Done
 - [ ] Context Store received and validated
-- [ ] 7 root documents created (or skipped if exist)
+- [ ] Root documents created (or skipped if exist)
 - [ ] All placeholders replaced; no `[TBD: ...]` markers or template metadata remain in root docs
-- [ ] `CLAUDE.md`, `GEMINI.md`, and `ANTIGRAVITY.md` each contain exactly one `@AGENTS.md` line and a bounded harness delta (≤50 lines total)
+- [ ] `CLAUDE.md` contains exactly one `@AGENTS.md` line and a bounded harness delta (≤50 lines total)
 - [ ] If `ENABLE_WORKFLOW_PRINCIPLES=true`: the workflow principles shard is expanded in AGENTS.md; if `false`: the placeholder line is stripped
 - [ ] Self-validation passed (SCOPE, metadata markers, top sections, Maintenance, POSIX)
 - [ ] **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
 - [ ] Status returned
 
 ## Reference Files
-- Templates: `references/templates/agents_md_template.md`, `references/templates/claude_md_template.md`, `references/templates/gemini_md_template.md`, `references/templates/agents_md_workflow_principles.md`, `references/templates/docs_root_readme_template.md`, `references/templates/documentation_standards_template.md`, `references/templates/principles_template.md`
+- Templates: `references/templates/agents_md_template.md`, `references/templates/claude_md_template.md`, `references/templates/agents_md_workflow_principles.md`, `references/templates/docs_root_readme_template.md`, `references/templates/documentation_standards_template.md`, `references/templates/principles_template.md`
 - Questions: `references/questions_root.md` (Q1-Q22)
 - **Writing guide:** `shared/references/agent_instructions_writing_guide.md` (canonical rationale for the `@AGENTS.md` import pattern, size budgets, anti-patterns)
 - **Environment state:** `shared/references/environment_state_contract.md` (detection and bootstrap pattern)

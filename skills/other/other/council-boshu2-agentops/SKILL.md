@@ -42,7 +42,7 @@ Council works independently — no RPI workflow, no ratchet chain, no `ao` CLI r
 | `--quick` | 0 (inline) | Self | Fast single-agent check, no spawning |
 | default | 2 | Runtime-native (Codex sub-agents preferred; Claude teams fallback) | Independent judges (no perspective labels) |
 | `--deep` | 3 | Runtime-native | Thorough review |
-| `--mixed` | 3+3 | Runtime-native + Codex CLI | Cross-vendor consensus |
+| `--mixed` | 2N (default N=3) | Runtime-native + Codex CLI | Cross-vendor consensus — same N perspectives applied to both vendors |
 | `--debate` | 2+ | Runtime-native | Adversarial refinement (2 rounds) |
 
 ### Spawn Backend (MANDATORY)
@@ -103,6 +103,8 @@ See [references/packet-format.md](references/packet-format.md) for the full JSON
 > **Perspectives & Presets:** Use `Read` tool on `skills/council/references/personas.md` for persona definitions, preset configurations, and custom perspective details.
 
 **Auto-Escalation:** When `--preset` or `--perspectives` specifies more perspectives than the current judge count, automatically escalate judge count to match. The `--count` flag overrides auto-escalation.
+
+**Mixed-mode perspective assignment:** Under `--mixed`, the perspective list is built once and each perspective is assigned to one Claude judge **and** one Codex judge with identical prompt and packet. This produces head-to-head pairs (perspective × vendor) so verdict differences isolate the vendor variable. Without `--preset` or `--perspectives`, both vendors run 3 generic judges each (6 total). With a 4-perspective preset like `security-audit` or `plan-review`, both vendors run those 4 perspectives (8 total). Do not split perspectives across vendors — symmetric pairing is the whole point of `--mixed`.
 
 ---
 

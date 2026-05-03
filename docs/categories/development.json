@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19718,
-  "updated_at": "2026-05-02T02:18:29.140361Z",
+  "count": 19719,
+  "updated_at": "2026-05-03T02:33:37.647113Z",
   "skills": [
     {
       "name": "fix",
@@ -203891,6 +203891,24 @@
       "stars": 0,
       "install": "hanialshater/code-evo-agent-simple/development/code-evolution",
       "source": "SkillsMP Synced Skills"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "skills/pagerunner-skill/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/skills/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "agent-communication",

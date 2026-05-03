@@ -1,8 +1,8 @@
 {
   "category": "marketing",
   "code": "mkt",
-  "count": 473,
-  "updated_at": "2026-05-02T02:18:29.473540Z",
+  "count": 474,
+  "updated_at": "2026-05-03T02:33:37.995475Z",
   "skills": [
     {
       "name": "social-media",
@@ -5460,6 +5460,25 @@
       "stars": 0,
       "install": "kuse-ai/kuse-skills/marketing/content-optimization",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "social-reply-bot",
+      "description": "AI-powered Reddit & X auto-reply bot. Finds relevant posts, generates genuine Claude-powered replies that naturally mention your product. Includes karma warmup and lead tracking.",
+      "repo": "mguozhen/social-bot",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "marketing",
+      "tags": [
+        "reddit",
+        "twitter",
+        "social-media",
+        "ai-replies",
+        "growth",
+        "browser-automation"
+      ],
+      "stars": 0,
+      "install": "mguozhen/social-bot/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "blog-commenter",

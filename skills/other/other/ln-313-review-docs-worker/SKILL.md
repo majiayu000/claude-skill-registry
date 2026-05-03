@@ -25,7 +25,7 @@ license: MIT
 ## Mode Gate
 
 - `mode=story`: full documentation pipeline — domain extraction, pattern detection, doc generation
-- `mode=plan_review|context`: skip unless documentation delta exists; record `docs_skipped_reason`
+- `mode=plan_review`: skip unless documentation delta exists; record `docs_skipped_reason`
 
 ## Runtime
 

@@ -6,7 +6,7 @@
   "category": "other",
   "source": "github.com/malob/nix-config",
   "dir_name": "cancel",
-  "downloaded_at": "2026-05-02T01:53:51.533316Z",
+  "downloaded_at": "2026-05-03T02:09:45.108858Z",
   "author": "malob",
   "source_url": "https://github.com/malob/nix-config/blob/master/configs/claude/plugins/tts/skills/cancel/SKILL.md",
   "license": "NOASSERTION",

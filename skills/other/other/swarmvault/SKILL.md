@@ -1,7 +1,7 @@
 ---
 name: swarmvault
 description: "Use SwarmVault when the user needs a local-first knowledge vault that writes durable markdown, graph, search, dashboard, review, context-pack, task-ledger, retrieval, and MCP artifacts to disk from books, notes, transcripts, exports, datasets, slide decks, files, URLs, code, and recurring source workflows."
-version: "3.2.0"
+version: "3.3.0"
 metadata: '{"openclaw":{"requires":{"anyBins":["swarmvault","vault"]},"install":[{"id":"node","kind":"node","package":"@swarmvaultai/cli","bins":["swarmvault","vault"],"label":"Install SwarmVault CLI (npm)"}],"emoji":"🗃️","homepage":"https://www.swarmvault.ai/docs"}}'
 ---
 
@@ -19,7 +19,7 @@ For onboarding, examples, command references, or troubleshooting, read the bundl
 - Use `swarmvault scan <directory> --no-serve` when the user wants the fastest scratch pass over a local repo or docs tree without manually stepping through init + ingest + compile first; use `swarmvault graph share --post` for copyable text, `swarmvault graph share --svg [path]` for a visual card, or `swarmvault graph share --bundle [dir]` for a portable folder with markdown, post text, SVG, HTML preview, and JSON metadata.
 - Use `swarmvault context build "<goal>" --target <path-or-node> --budget <tokens>` when the next agent, review, or handoff needs a bounded evidence pack instead of a broad vault search.
 - Use `swarmvault task start "<goal>" --target <path-or-node>` when agent work should leave a durable task ledger with decisions, linked context packs, changed paths, outcomes, and follow-ups. The older `memory` command remains a compatibility alias.
-- Use `swarmvault doctor` before broad troubleshooting or agent handoff; add `--repair` when the retrieval index can be safely rebuilt.
+- Use `swarmvault doctor` before broad troubleshooting or agent handoff; add `--repair` when the retrieval index can be safely rebuilt. In `swarmvault graph serve`, the workbench shows every doctor check with details and copyable suggested commands.
 - Read `swarmvault.schema.md` before compile or query work. It is the vault's operating contract.
 - If `wiki/graph/report.md` exists, use it before broad repo search.
 
@@ -40,7 +40,7 @@ For onboarding, examples, command references, or troubleshooting, read the bundl
 13. Use `swarmvault explore "<question>" --steps <n>` for save-first multi-step research loops, or `--format report|slides|chart|image` when the artifact should be presentation-oriented.
 14. Run `swarmvault lint` whenever the schema changed, artifacts look stale, or compile/query results drift. Set `profile.deepLintDefault: true` in `swarmvault.config.json` when the advisory deep-lint pass should be the default, and use `--no-deep` when you need a structural-only run. Add `--web` only when deep lint is enabled and a `webSearch.tasks.deepLintProvider` adapter is configured; web evidence is scoped to deep lint and does not change compile or query behavior.
 15. Use `swarmvault mcp` when another agent or tool should browse, search, query, build context packs, manage tasks, and inspect vault or retrieval health from the vault through MCP.
-16. Use `swarmvault graph share --post` when the user needs a quick copyable summary, `swarmvault graph share --svg [path]` when they need a 1200x630 visual card, `swarmvault graph share --bundle [dir]` when they need a portable share kit for posting, linking, or screenshotting, `swarmvault graph blast <target>` when they want reverse-import impact analysis, `swarmvault graph serve` when the live workspace, health workbench, Memory dashboard, or bookmarklet clipper will help, `swarmvault diff` when they need a graph-level change summary against the last committed baseline, or `swarmvault graph export --html <output>` / `graph export --report <output>` when richer sharing will help. `graph export` also supports `--html-standalone`, `--json`, `--obsidian`, and `--canvas` for lighter or Obsidian-native sharing.
+16. Use `swarmvault graph share --post` when the user needs a quick copyable summary, `swarmvault graph share --svg [path]` when they need a 1200x630 visual card, `swarmvault graph share --bundle [dir]` when they need a portable share kit for posting, linking, or screenshotting, `swarmvault graph blast <target>` when they want reverse-import impact analysis, `swarmvault graph serve` when the live workspace, health workbench, Memory dashboard, or bookmarklet clipper will help, `swarmvault diff` when they need a graph-level change summary against the last committed baseline, or `swarmvault graph export --html <output>` / `graph export --report <output>` when richer sharing will help. The live workbench exposes explicit capture modes, context-pack/task token budgets, and action receipts. `graph export` also supports `--html-standalone`, `--json`, `--obsidian`, and `--canvas` for lighter or Obsidian-native sharing.
 
 ## Working rules
 

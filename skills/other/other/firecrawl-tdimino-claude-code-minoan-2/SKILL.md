@@ -71,6 +71,7 @@ firecrawl scrape URL --only-main-content | \
 ### Other Token-Saving Patterns
 
 - **Use `--only-main-content`** to strip navigation and footer boilerplate, reducing token consumption. Omit only when nav/footer content is specifically needed.
+- **Use `--only-clean-content`** (Python API script) for aggressive cleaning—strips nav, ads, and cookie banners. Stronger than `--only-main-content`; use when the page is still noisy after main-content filtering.
 - **Use `firecrawl map URL --search "topic"` first** to find relevant subpages before scraping
 - **Use `--format links` first** to get URL list, evaluate, then scrape selectively
 - **Use `--max-chars`** with `exa_contents.py` to cap extraction length
@@ -236,6 +237,31 @@ python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py parse invoice.pdf --
 
 Supported formats: PDF, DOCX, DOC, XLSX, XLS, HTML, HTM, ODT, RTF (up to 50 MB).
 
+### PDF Parsing (Fire-PDF v2.9)
+
+Fire-PDF is now the default parsing pipeline for all PDF scrapes. Three modes:
+
+```bash
+# Auto mode (default) — detects text layer vs scanned, chooses best method
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py scrape "https://example.com/report.pdf"
+
+# Fast mode — text layer only, skip OCR (use for PDFs with selectable text)
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py scrape URL --pdf-mode fast
+
+# OCR mode — force full OCR (use for scanned docs or image-only PDFs)
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py scrape URL --pdf-mode ocr
+
+# Limit pages parsed (large documents)
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py parse report.pdf --pdf-mode auto --pdf-max-pages 20
+```
+
+| Flag | Values | Notes |
+|------|--------|-------|
+| `--pdf-mode` | `fast`, `auto`, `ocr` | Default: `auto`. `fast` = text layer only; `ocr` = force OCR |
+| `--pdf-max-pages` | integer | Caps pages parsed; useful for budget control on large PDFs |
+
+Both flags work on `scrape` (for PDF URLs) and `parse` (for local files).
+
 ### Agent-Powered Research (No URLs Needed)
 ```bash
 python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py agent \
@@ -304,6 +330,14 @@ python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py scrape "https://app.
 **Full interact reference:** `references/interact-reference.md`
 
 ---
+
+## Billing Notes
+
+- **Credit/token unification (v2.9):** Credits and tokens are now unified—15 tokens = 1 credit. All pricing is expressed in credits.
+- **Default cache TTL:** Results are cached for 2 days. Use `--max-age 0` (or `maxAge: 0` in API) to force a fresh scrape regardless of cache.
+- **`query` format:** Pass `formats=["query"]` (Python API) to get a direct answer (`data.answer`) instead of full markdown. Use for factual lookups where you don't need the full page content.
+- **`audio` format:** `formats=["audio"]` returns an MP3 of the page read aloud. Useful for accessibility pipelines or voice interfaces.
+- **`wikimedia` engine:** Pass `engine="wikimedia"` in search options to route queries through Wikimedia. Useful for encyclopedic lookups.
 
 ## Troubleshooting
 

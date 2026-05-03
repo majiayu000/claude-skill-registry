@@ -51,7 +51,7 @@ The execution workflow at [template-filling-execution.md](./template-filling-exe
 
 ### Remote MCP path: contract-term disclosure
 
-The Remote MCP path sends cloud agreement field values such as provider name, customer name, scope, pricing, and service-level terms to a hosted Open Agreements endpoint on `openagreements.ai` for server-side rendering. Before using Remote MCP:
+The Remote MCP path sends cloud agreement field values such as provider name, customer name, scope, pricing, and service-level terms to a hosted Open Agreements endpoint on `openagreements.org` for server-side rendering. Before using Remote MCP:
 
 1. Confirm with the user that sharing the agreement values with the hosted service is acceptable.
 2. Offer the Local CLI path as an offline alternative if the user prefers local-only processing.

@@ -27,14 +27,16 @@ Use Gemini when you want AI-driven discovery that goes beyond keyword matching �
 
 - **MAX_RESULTS = 15** — Target number of papers Gemini should find.
 - **MIN_YEAR = 2022** — Default minimum publication year. Override with `— year: 2020-`.
-- **DEFAULT_MODEL = gemini-2.5-pro** — Default model. Override with `— model: gemini-2.5-flash`.
+- **DEFAULT_MODEL = gemini-3-pro-preview** — Strongest available Gemini option (Gemini 3 Pro). Requires `gemini-cli` v0.40+ and `mcp__gemini-cli__ask-gemini` accepting Gemini 3 aliases (verified). Override with `— model: gemini-3-flash-preview` (Gemini 3 Flash, faster, higher quota), `— model: auto-gemini-3` (auto-routes inside the Gemini 3 family by load), or `— model: gemini-2.5-pro` / `gemini-2.5-flash` (legacy, for users on older `gemini-cli` < v0.40). The MCP tool accepts all of these verbatim.
 
 > Overrides (append to arguments):
 > - `/gemini-search "topic" — max: 20` — request up to 20 papers
 > - `/gemini-search "topic" — year: 2020-` — papers from 2020 onward
 > - `/gemini-search "topic" — code-only` — only papers with open-source code
 > - `/gemini-search "topic" — venues: NeurIPS,ICML,ICLR` — focus on specific venues
-> - `/gemini-search "topic" — model: gemini-2.5-flash` — use Flash model (faster, higher free quota)
+> - `/gemini-search "topic" — model: gemini-3-flash-preview` — Gemini 3 Flash (faster, higher quota, less capable than Pro)
+> - `/gemini-search "topic" — model: auto-gemini-3` — auto-routes within the Gemini 3 family by load
+> - `/gemini-search "topic" — model: gemini-2.5-pro` — legacy (only if your `gemini-cli` < v0.40)
 
 ## Environment & Setup
 

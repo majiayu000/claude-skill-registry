@@ -1,0 +1,17 @@
+{
+  "name": "mcp-maintainer",
+  "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+  "path": ".codex/skills/mcp-maintainer/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/hoangsonww/Claude-Code-Agent-Monitor",
+  "dir_name": "mcp-maintainer",
+  "downloaded_at": "2026-05-03T02:05:42.128482Z",
+  "author": "hoangsonww",
+  "source_url": "https://github.com/hoangsonww/Claude-Code-Agent-Monitor/blob/master/.codex/skills/mcp-maintainer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hoangsonww/Claude-Code-Agent-Monitor/blob/master/.codex/skills/mcp-maintainer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

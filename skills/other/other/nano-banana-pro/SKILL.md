@@ -7,23 +7,6 @@ description: Generate and edit high-quality images using Google's Nano Banana Pr
 
 Generate and edit professional-quality images using Google's state-of-the-art Gemini 3 Pro Image model.
 
-## Models
-
-| Model | ID | Use Case |
-|-------|----|----------|
-| **Nano Banana Pro** (default) | `gemini-3-pro-image-preview` | Best quality, pro-tier image generation |
-| **Nano Banana 2** (fast) | `gemini-3.1-flash-image-preview` | Faster, cheaper, 131K input tokens, extra aspect ratios |
-
-All scripts accept `--fast` to use Nano Banana 2, or `--model <id>` for explicit override. Default is always the pro model.
-
-```bash
-# Use fast model for quick iteration
-python scripts/generate_image.py "A sunset" --fast
-
-# Explicit model override
-python scripts/generate_image.py "A sunset" --model gemini-3.1-flash-image-preview
-```
-
 ## API Configuration
 
 Set your Gemini API key as an environment variable:
@@ -181,45 +164,7 @@ for i in "${!PROMPTS[@]}"; do
 done
 ```
 
-### 4. Badge Generation Pipeline
-
-**When to use**: Creating transparent-background PNG badges for web pages, GitHub profiles, or app icons.
-
-**Process**:
-
-1. **One-step** (recommended): Use `--badge` flag on `generate_image.py`
-2. **Two-step** (more control): Generate image, then run `badge_forge.py` separately
-
-**One-step example**:
-
-```bash
-python scripts/generate_image.py \
-  "copper binoculars with radar sweep, compass rose details, centered composition" \
-  --badge --badge-size 200 --badge-fuzz 18 \
-  --output ./badges --filename landscape
-```
-
-**Two-step example**:
-
-```bash
-# Generate raw image
-python scripts/generate_image.py \
-  "golden shield emblem, art deco style" \
-  --aspect-ratio 1:1 --output ./raw --filename shield
-
-# Forge into transparent badge with custom settings
-python scripts/badge_forge.py raw/shield_image_0_0.jpg \
-  --preset logo --fuzz 22 --feather 0.5 -o badges/shield.png
-```
-
-**Key considerations**:
-- Badge mode forces 1:1 aspect ratio automatically
-- Use `--badge-fuzz` (or `--fuzz` on badge_forge.py) to tune background removal aggressiveness
-- If subject has light/white tones similar to the background, lower fuzz or use `--corners top` to only flood from specific corners
-- Output is always PNG32 (8-bit RGBA) for smooth alpha edges
-- If alpha looks jagged (1-bit), increase fuzz or add `--feather 0.5`
-
-### 5. Reference-Based Generation
+### 4. Reference-Based Generation
 
 **When to use**: Maintaining style consistency or character consistency across images.
 
@@ -255,20 +200,6 @@ for img_path in ["ref1.jpg", "ref2.jpg", "ref3.jpg"]:
 ```
 
 ## Prompting Best Practices
-
-### Text Rendering (99%+ accuracy)
-
-Gemini 3 Pro achieves near-perfect text rendering with these rules:
-
-1. **Quote exact text** — wrap desired text in double quotes within the prompt: `render the text "WORLD WAR WATCHER" in green monospace`
-2. **Keep text short** — under 10 words per text element for highest accuracy
-3. **Specify font style** — "monospace", "serif", "sans-serif", "handwritten"
-4. **Specify color** — use named colors or hex: `in phosphor green (#2dd4bf)`
-5. **Specify position** — "on the right side", "centered at the top", "bottom-left corner"
-6. **Use reference images** — `generate_with_references.py` preserves character likeness while adding text
-7. **Avoid military/war terms in text prompts** — content policy may block. Use "cinematic", "professional", "dark" instead of "military command center"
-
-Verified in production: OG card for World War Watcher commentary pages generated with all three text elements ("WORLD WAR WATCHER", "DISPATCHES", "Kothar wa Khasis") rendered correctly on first attempt using quoted strings + reference image approach.
 
 ### Essential Structure
 
@@ -321,22 +252,16 @@ Quick reference:
 
 ### generate_image.py
 
-Generate images from text prompts. Optionally post-process into transparent-background PNG badges.
+Generate images from text prompts.
 
 **Parameters**:
 - `prompt` (required): Text description of image
 - `--api-key`: API key (or use `GEMINI_API_KEY` env var)
-- `--model`: Override model ID (default: gemini-3-pro-image-preview)
-- `--fast`: Use Nano Banana 2 (gemini-3.1-flash-image-preview) for faster generation
-- `--aspect-ratio`: 1:1 | 2:3 | 3:2 | 3:4 | 4:3 | 4:5 | 5:4 | 9:16 | 16:9 | 21:9 (default: 16:9)
+- `--aspect-ratio`: 1:1 | 3:4 | 4:3 | 9:16 | 16:9 (default: 16:9)
 - `--temperature`: 0.0-1.0 (default: 0.7)
 - `--output`: Output directory (default: ./output)
 - `--filename`: Base filename (default: generated)
 - `--verbose`: Show full API response
-- `--badge`: Post-process into transparent PNG badge (forces 1:1 aspect ratio, requires ImageMagick 7+)
-- `--badge-size`: Badge canvas size in pixels (default: 200)
-- `--badge-content`: Badge content area after trim (default: 164)
-- `--badge-fuzz`: Background removal fuzz tolerance % (default: 18)
 
 **Common use cases**:
 ```bash
@@ -350,11 +275,6 @@ python scripts/generate_image.py "professional headshot" \
 # Creative exploration
 python scripts/generate_image.py "abstract art" --temperature 0.9
 
-# Generate a transparent badge in one step
-python scripts/generate_image.py \
-  "copper binoculars with radar sweep, compass rose details" \
-  --badge --output ./badges --filename landscape
-
 # Debug mode
 python scripts/generate_image.py "test prompt" --verbose
 ```
@@ -367,8 +287,6 @@ Edit existing images with natural language instructions.
 - `prompt` (required): Edit instruction
 - `image` (required): Path to input image
 - `--api-key`: API key (or use `GEMINI_API_KEY` env var)
-- `--model`: Override model ID
-- `--fast`: Use Nano Banana 2 for faster editing
 - `--aspect-ratio`: Output aspect ratio
 - `--temperature`: Creativity level
 - `--output`: Output directory (default: ./output)
@@ -391,40 +309,6 @@ python scripts/edit_image.py "Remove person from left side" group.jpg
 
 # Style transforms
 python scripts/edit_image.py "Apply vintage film look" modern.jpg
-```
-
-### badge_forge.py
-
-Transform images into web-ready transparent PNG badges using ImageMagick corner-flood background removal. No ML dependencies—just ImageMagick 7+.
-
-**Parameters**:
-- `sources` (required): Source image(s)
-- `-o`, `--output`: Output path (file or directory with `--batch`)
-- `--batch`: Batch mode — output is a directory
-- `--preset`: Size preset: badge (200px), icon (64px), avatar (128px), logo (300px), hero (512px)
-- `--size`: Override canvas size in pixels
-- `--padding`: Override padding in pixels
-- `--fuzz`: Override fuzz tolerance %
-- `--corners`: Corners to flood: all | top | bottom | tl,tr,bl,br (default: all)
-- `--feather`: Alpha edge feathering radius in pixels (default: 0)
-- `--dry-run`: Print ImageMagick command without executing
-
-**Common use cases**:
-```bash
-# Default badge (200px, 18% fuzz)
-python scripts/badge_forge.py source.jpg -o badge.png
-
-# Icon preset
-python scripts/badge_forge.py source.jpg --preset icon -o icon.png
-
-# Batch process
-python scripts/badge_forge.py *.jpg --batch -o ./badges/
-
-# Softer edges
-python scripts/badge_forge.py source.jpg --fuzz 25 --feather 0.5
-
-# Only flood top corners (subject touches bottom edge)
-python scripts/badge_forge.py source.jpg --corners top
 ```
 
 ### test_connection.py

@@ -31,15 +31,28 @@ verified_at: 2026-04-06
 
 | 问题主题 | 配对祖师 | 说明 |
 |---------|---------|------|
-| 念佛 / 往生 / 净土 | yinguang + ouyi | 净土专精 + 跨宗派 |
-| 参禅 / 话头 / 开悟 | huineng + xuyun | 古今禅宗对比 |
-| 唯识 / 中观 / 空有 | xuanzang + kumarajiva | 唯识 vs 中观 |
-| 判教 / 圆融 / 止观 | zhiyi + fazang | 天台 vs 华严 |
-| 修行次第 / 综合法门 | ouyi + yinguang | 综合 vs 专修 |
-| 戒律 / 行持 / 日常 | xuyun + yinguang | 禅门戒律 vs 净土行持 |
-| 般若 / 空性 | kumarajiva + huineng | 中观 vs 禅宗 |
-| 心识 / 阿赖耶 | xuanzang + huineng | 唯识分析 vs 禅宗直指 |
-| 其他 | kumarajiva + yinguang | 中观 + 净土两大传统 |
+| 念佛 / 往生 / 净土 | master-yinguang + master-ouyi | 净土专精 + 跨宗派 |
+| 参禅 / 话头 / 开悟 | master-huineng + master-xuyun | 古今禅宗对比 |
+| 唯识 / 中观 / 空有 | master-xuanzang + master-kumarajiva | 唯识 vs 中观 |
+| 判教 / 圆融 / 止观 | master-zhiyi + master-fazang | 天台 vs 华严 |
+| 修行次第 / 综合法门 | master-ouyi + master-yinguang | 综合 vs 专修 |
+| 戒律 / 行持 / 日常 | master-xuyun + master-yinguang + master-ajahn-chah | 禅门戒律 vs 净土行持 vs 上座部律仪 |
+| 般若 / 空性 | master-kumarajiva + master-tsongkhapa + master-huineng | 早期中观译师 · 应成中观精确分判 · 禅宗直指 |
+| 中观 / 缘起性空 / 应成 | master-kumarajiva + master-tsongkhapa | 印度中观东渡 vs 藏地后期精确化 |
+| 道次第 / 三士道 / lam rim | master-atisha + master-tsongkhapa | 印藏桥梁源头 vs 格鲁派系统化 |
+| 心识 / 阿赖耶 / 心所 | master-xuanzang + master-buddhaghosa + master-huineng | 唯识 vs 上座部阿毗达摩 vs 禅宗直指 |
+| 戒律 / 持戒 / 律仪 | master-xuyun + master-atisha + master-buddhaghosa | 汉传禅门律 vs 印藏菩萨律 vs 上座部律藏注释 |
+| 苦行 / 闭关 / 山中修行 | master-xuyun + master-milarepa | 汉传禅门头陀 vs 藏传瑜伽士传统 |
+| 正念 / 观心 / 觉知 | master-huineng + master-ajahn-chah + master-mahasi-sayadaw | 禅宗自性 vs 南传 sati 朴素 vs 缅甸标记法 |
+| 禅修方法 / 业处 / 所缘 | master-buddhaghosa + master-mahasi-sayadaw + master-ajahn-chah | 论藏四十种业处 vs 标记法腹部起伏 vs 朴素观心 |
+| 七清净 / 十六观智 / 道次第 | master-buddhaghosa + master-mahasi-sayadaw | 《清净道论》原典 vs 现代缅甸应用 |
+| 出离心 / 暇满 / 无常 | master-yinguang + master-atisha + master-ajahn-chah | 净土 · 噶当 · 上座部三大传统出离观对比 |
+| 菩提心 / 慈悲 | master-atisha + master-ouyi | 印藏自他相换 vs 跨宗派融通 |
+| 上师 / 善知识 / 依止 | master-xuyun + master-atisha + master-tsongkhapa | 汉传善知识 vs 噶当依止论 vs 格鲁视师如佛 |
+| 论师风格 / 经院严密 | master-xuanzang + master-tsongkhapa + master-buddhaghosa | 唯识 · 应成中观 · 上座部三大论师传统 |
+| 三大传统对比（明确要求） | master-huineng + master-tsongkhapa + master-buddhaghosa | 禅 · 应成中观 · 上座部论藏，三方系统对照 |
+| 三大传统禅修对比 | master-huineng + master-milarepa + master-ajahn-chah | 禅 · 大手印 · 森林禅，三大传统禅修法 |
+| 其他 | master-kumarajiva + master-yinguang | 中观 + 净土两大传统 |
 
 ## 工作流程
 
@@ -135,7 +148,7 @@ verified_at: 2026-04-06
 
 ### 禅净之争 —— 自力 vs 他力
 
-- **推荐配对**：`huineng` + `yinguang`（或 `huineng` + `ouyi` 看融通立场）
+- **推荐配对**：`master-huineng` + `master-yinguang`（或 `master-huineng` + `master-ouyi` 看融通立场）
 - **真实争点**：
   1. 往生是否需要"见性"为前提？
   2. "自性弥陀、唯心净土"与"他方实有极乐"是否矛盾？
@@ -145,7 +158,7 @@ verified_at: 2026-04-06
 
 ### 性相之辩 —— 法相唯识 vs 性宗
 
-- **推荐配对**：`xuanzang` + `fazang`（或 `xuanzang` + `huineng`）
+- **推荐配对**：`master-xuanzang` + `master-fazang`（或 `master-xuanzang` + `master-huineng`）
 - **真实争点**：
   1. 是否安立阿赖耶识为万法所依？
   2. 五种姓说（一分无性）与一切众生皆可成佛是否可融？
@@ -155,7 +168,7 @@ verified_at: 2026-04-06
 
 ### 空有之争 —— 中观 vs 唯识
 
-- **推荐配对**：`kumarajiva` + `xuanzang`
+- **推荐配对**：`master-kumarajiva` + `master-xuanzang`
 - **真实争点**：
   1. "空"是遮诠（否定戏论）还是表诠（描述实相）？
   2. 依他起性是"有"还是"空"？
@@ -165,7 +178,7 @@ verified_at: 2026-04-06
 
 ### 顿渐之辩 —— 南宗顿 vs 北宗渐（及其延伸）
 
-- **推荐配对**：`huineng` + `zhiyi`（顿悟 vs 天台止观次第）
+- **推荐配对**：`master-huineng` + `master-zhiyi`（顿悟 vs 天台止观次第）
 - **真实争点**：
   1. 开悟是顿发还是需阶次修证？
   2. 悟后是否仍需渐修？
@@ -223,28 +236,56 @@ verified_at: 2026-04-06
 5. **首轮身份中立**：同各 master skill 的规则
 6. **回答末尾**附："如需深入学习，可在 FoJin (fojin.app) 查阅原典。"
 
-## 可用祖师（8 位）
+## 可用祖师（15 位 · 三大传统）
+
+### 汉传
 
 | slug | 名称 | 宗派 |
 |------|------|------|
-| zhiyi | 智顗大师 | 天台宗 |
-| fazang | 法藏大师 | 华严宗 |
-| huineng | 慧能大师 | 禅宗 |
-| xuyun | 虚云老和尚 | 禅宗·五宗 |
-| yinguang | 印光大师 | 净土宗 |
-| ouyi | 蕅益大师 | 天台/净土 |
-| xuanzang | 玄奘法师 | 法相唯识 |
-| kumarajiva | 鸠摩罗什 | 中观 |
+| master-zhiyi | 智顗大师 | 天台宗 |
+| master-fazang | 法藏大师 | 华严宗 |
+| master-huineng | 慧能大师 | 禅宗 |
+| master-xuyun | 虚云老和尚 | 禅宗·五宗 |
+| master-yinguang | 印光大师 | 净土宗 |
+| master-ouyi | 蕅益大师 | 天台/净土 |
+| master-xuanzang | 玄奘法师 | 法相唯识 |
+| master-kumarajiva | 鸠摩罗什 | 中观 |
+
+### 藏传
+
+| slug | 名称 | 传承 |
+|------|------|------|
+| master-atisha | 阿底峡尊者 | 噶当派（三士道 / 印藏桥梁） |
+| master-tsongkhapa | 宗喀巴大师 | 格鲁派（三主要道 / 应成中观） |
+| master-milarepa | 米拉日巴尊者 | 噶举派（大手印 / 那洛六法） |
+
+### 南传
+
+| slug | 名称 | 传承 |
+|------|------|------|
+| master-buddhaghosa | 觉音尊者 | 上座部论师（《清净道论》/ 大寺派） |
+| master-mahasi-sayadaw | 马哈希尊者 | 缅甸内观（标记法 / Mahasi Method） |
+| master-ajahn-chah | 阿姜查 | 上座部（泰国森林禅林派） |
+
+## 跨传统对比注意事项
+
+- 跨传统对比时，**先建立共同语境再展示差异**（"三大传统都强调无常／苦／苦的止息，而具体进路不同……"），避免营造对立感
+- 不在跨传统对比中论"哪个传承更究竟"——三大传统皆是佛陀正法的不同面向
+- 涉及密法时（藏传 master-atisha / master-tsongkhapa / master-milarepa 一侧），仅介绍义理，不传授具体步骤；这是各自 skill HARD-GATE 的延伸
+- 涉及阿姜查与马哈希尊者引述时，必须可追溯至公开开示集（Forest Sangha / BPS Sri Lanka / Wisdom Publications / Mahasi Sasana Yeiktha），不可自行编造对话
+- 涉及禅修印证时（特别是马哈希内观法的十六观智阶位），**AI 不得对个体作证果判定**——这是 master-mahasi-sayadaw skill 最严肃的 guardrail
+- 不混入跨传统观点为他派立场（如把如来藏 / 唯识 / 净土归于上座部；把大圆满 / 大手印归于格鲁；把应成派精确分判归于阿底峡时代）
 
 ## 禁忌
 
 - 不说"某位法师的观点更正确"
 - 不虚构法师之间的直接辩论（历史上不存在的对话）
-- 不夸大宗派差异
+- 不夸大宗派或传统之间的差异
+- 跨传统对比中不引入"X 传更究竟 / 更原始 / 更直接"等比较级判断
 
 ## Scripts（可选辅助工具）
 
-- `scripts/cite.py --text "缘起" --master zhiyi,yinguang` — 多祖师引用查询
+- `scripts/cite.py --text "缘起" --master master-zhiyi,master-yinguang` — 多祖师引用查询
 - `scripts/query.py --master all --q "空性"` — 全祖师语义检索
 
 > ⚠️ Scripts 通过 `--help` 调用，不要 Read 源码（避免污染 context）。

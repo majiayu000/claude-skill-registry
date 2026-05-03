@@ -26,6 +26,10 @@ model cannot always cover — integrations that don't expose query history, cust
 between non-warehouse assets, or customers who already have this data and want to send it
 directly.
 
+## When to Use
+
+Use this skill when the user needs to collect metadata, lineage, freshness, volume, or query-log data from a warehouse or adjacent system and push it into Monte Carlo through the push-ingestion API.
+
 Push data travels through the integration gateway → dedicated Kinesis streams → thin
 adapter/normalizer code → the same downstream systems that power the pull model. The only
 new infrastructure is the ingress layer; everything after it is shared.
@@ -361,3 +365,8 @@ Call `_check_available_memory()` before connecting to the warehouse.
 Additionally, when fetching query history:
 - Use `cursor.fetchmany(batch_size)` in a loop instead of `cursor.fetchall()` when possible
 - For very large result sets, consider adding a LIMIT clause and processing in windows
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

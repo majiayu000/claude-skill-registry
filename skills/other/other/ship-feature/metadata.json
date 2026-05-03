@@ -1,0 +1,17 @@
+{
+  "name": "ship-feature",
+  "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+  "path": ".claude/skills/ship-feature/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/hoangsonww/Claude-Code-Agent-Monitor",
+  "dir_name": "ship-feature",
+  "downloaded_at": "2026-05-03T02:05:41.733382Z",
+  "author": "hoangsonww",
+  "source_url": "https://github.com/hoangsonww/Claude-Code-Agent-Monitor/blob/master/.claude/skills/ship-feature/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hoangsonww/Claude-Code-Agent-Monitor/blob/master/.claude/skills/ship-feature/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -75,7 +75,7 @@ metadata:
 
 ### Phase 2：构思核心框架
 
-> 如果用户有参考小说，先用 `/story-short-analyze` 拆解，输出存入 对标/ 目录。写作时参考其结构/情绪/反转设计。
+> 如果用户有参考小说，先用 `/story-short-analyze` 拆解，输出存入 `拆文库/{书名}/`（或用户指定的 对标/ 目录）。写作时参考其结构/情绪/反转设计。
 
 帮用户确定短篇的核心框架：
 
@@ -150,7 +150,7 @@ metadata:
 ├── 设定.md          # 核心框架 + 人设 + 反转铺垫 + 结构物件（含三现追踪表）+ 反派设计
 ├── 小节大纲.md  # 小节大纲：每节 1 行（主事件|子事件×3-5|情绪|读者新获知什么|钩子|伏笔/物件|动静|对话密度）
 ├── 正文.md          # 完整正文
-└── 对标/            # 可选：story-short-analyze 输出
+└── 对标/            # 可选：用户手动指定的参考目录
     └── {参考小说}/拆文报告.md
 ```
 
@@ -343,7 +343,7 @@ metadata:
 
 | 时机 | 跳转到 | 命令 |
 |---|---|---|
-| 有参考小说想对标 | story-short-analyze | `/story-short-analyze`（拆文模式） → 输出存入 对标/ 目录 |
+| 有参考小说想对标 | story-short-analyze | `/story-short-analyze`（拆文模式） → 输出存入 `拆文库/{书名}/` |
 | 写完，去 AI 味 | story-deslop | `/story-deslop` |
 | 想自检 | story-short-analyze | `/story-short-analyze`（自检模式） |
 | 需要市场方向 | story-short-scan | `/story-short-scan` |

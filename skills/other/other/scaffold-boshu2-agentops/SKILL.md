@@ -1,6 +1,6 @@
 ---
 name: scaffold
-description: 'Create project, feature, component, or boilerplate scaffolds.'
+description: 'Create project, component, or boilerplate scaffolds.'
 skill_api_version: 1
 context:
   window: fork

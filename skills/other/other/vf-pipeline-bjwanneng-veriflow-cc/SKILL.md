@@ -112,12 +112,12 @@ TaskUpdate complete.
 
 ## Stage 2: codegen
 
-Read spec.json and golden_model.py (parallel Read calls) to include inline in prompts.
+Read spec.json, golden_model.py, and coding_style.md (parallel Read calls) to include inline in prompts.
 
 Dispatch ALL agents in parallel (single message):
 
 - **One vf-coder per module** in spec.json (subagent_type: general-purpose)
-  - Prompt includes: MODULE_NAME, OUTPUT_FILE path, spec.json content, golden_model.py content
+  - Prompt includes: MODULE_NAME, OUTPUT_FILE path, spec.json content, golden_model.py content, coding_style.md content
   - For top modules: include submodule port definitions from spec.json
   - For leaf modules: include only that module's spec entry
 - **One vf-tb-gen** (subagent_type: general-purpose)
@@ -166,6 +166,27 @@ if [ -f workspace/docs/golden_model.py ]; then
     fi
 fi
 ```
+
+### Cocotb per-cycle verification (if cocotb available)
+
+Before running Verilog simulation, run cocotb with per-cycle internal signal
+comparison. This is the PRIMARY debugging tool — it finds the FIRST divergence
+point automatically, instead of only checking final outputs.
+
+```bash
+if command -v cocotb-config &>/dev/null; then
+    cd "$PROJECT_DIR/workspace/tb"
+    make SIM=icarus 2>&1 | tee "$PROJECT_DIR/logs/cocotb.log"
+    cd "$PROJECT_DIR"
+    if grep -q "FIRST DIVERGENCE" logs/cocotb.log; then
+        echo "[COCOTB] Internal signal mismatch found — see cocotb.log for details"
+        # Extract first divergence info — this is the PRIMARY diagnostic
+        # for error_recovery.md. Do NOT guess the root cause.
+    fi
+fi
+```
+
+If cocotb is not available, proceed with Verilog simulation as before.
 
 ### Run simulation
 

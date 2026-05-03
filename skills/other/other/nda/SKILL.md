@@ -51,7 +51,7 @@ The execution workflow at [template-filling-execution.md](./template-filling-exe
 
 ### Remote MCP path: data disclosure to a hosted third-party service
 
-**The Remote MCP path sends NDA field values — including company names, purposes, dates, and other confidential business details — to a hosted Open Agreements endpoint on `openagreements.ai` for server-side rendering.** Before using Remote MCP for a real NDA, the agent MUST:
+**The Remote MCP path sends NDA field values — including company names, purposes, dates, and other confidential business details — to a hosted Open Agreements endpoint on `openagreements.org` for server-side rendering.** Before using Remote MCP for a real NDA, the agent MUST:
 
 1. Tell the user explicitly that confidential content will be transmitted to a hosted third-party server from the user's perspective.
 2. Get explicit informed consent from the user to proceed.

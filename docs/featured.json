@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-03T02:33:39.657877Z",
+  "updated_at": "2026-05-04T19:23:03.467614Z",
   "count": 100,
   "skills": [
     {
@@ -12,7 +12,17 @@
       "tags": [],
       "stars": 242476,
       "install": "facebook/react/.claude/skills/fix/SKILL.md",
-      "source": "github.com/facebook/react"
+      "source": "github.com/facebook/react",
+      "id": "ql-ypicldgtgls8xdts8odfwpkwoeqc0vsygwikv4wy",
+      "owner": "facebook",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "create-pr-n8n-io-n8n",
@@ -24,7 +34,17 @@
       "tags": [],
       "stars": 170998,
       "install": "n8n-io/n8n/.claude/skills/create-pr/SKILL.md",
-      "source": "github.com/n8n-io/n8n"
+      "source": "github.com/n8n-io/n8n",
+      "id": "pzhoclcfbl9relg9u7ulffxtfy7wgrkk4ni5qq2py2u",
+      "owner": "n8n-io",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "create-pr",
@@ -36,7 +56,17 @@
       "tags": [],
       "stars": 170998,
       "install": "n8n-io/n8n/.claude/skills/create-pr/SKILL.md",
-      "source": "github.com/n8n-io/n8n"
+      "source": "github.com/n8n-io/n8n",
+      "id": "pzhoclcfbl9relg9u7ulffxtfy7wgrkk4ni5qq2py2u",
+      "owner": "n8n-io",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "update-docs",
@@ -48,19 +78,17 @@
       "tags": [],
       "stars": 137316,
       "install": "vercel/next.js/.claude/skills/update-docs/SKILL.md",
-      "source": "github.com/vercel/next.js"
-    },
-    {
-      "name": "frontend-testing",
-      "description": "Generate Vitest + React Testing Library tests for Dify frontend components, hooks, and utilities. Triggers on testing, spec files, coverage, Vitest, RTL, unit tests, integration tests, or write/review",
-      "repo": "langgenius/dify",
-      "path": ".agents/skills/frontend-testing/SKILL.md",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 127079,
-      "install": "langgenius/dify/.agents/skills/frontend-testing/SKILL.md",
-      "source": "github.com/langgenius/dify"
+      "source": "github.com/vercel/next.js",
+      "id": "aywfypwy2u_5vzpg5j9slsvre_v2yyluis5dyazgpcu",
+      "owner": "vercel",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "skill-creator",
@@ -72,7 +100,17 @@
       "tags": [],
       "stars": 127079,
       "install": "langgenius/dify/.agents/skills/skill-creator/SKILL.md",
-      "source": "github.com/langgenius/dify"
+      "source": "github.com/langgenius/dify",
+      "id": "vb3da34zaxshlwoebxullnfips97cnzc7steez0hopa",
+      "owner": "langgenius",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "frontend-testing-langgenius-dify",
@@ -84,7 +122,17 @@
       "tags": [],
       "stars": 127079,
       "install": "langgenius/dify/.agents/skills/frontend-testing/SKILL.md",
-      "source": "github.com/langgenius/dify"
+      "source": "github.com/langgenius/dify",
+      "id": "gj3jugvkfyzwamizgx0agibocm_rmwam4uhutc3jkcy",
+      "owner": "langgenius",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "skill-creator-langgenius-dify",
@@ -96,7 +144,39 @@
       "tags": [],
       "stars": 127079,
       "install": "langgenius/dify/.agents/skills/skill-creator/SKILL.md",
-      "source": "github.com/langgenius/dify"
+      "source": "github.com/langgenius/dify",
+      "id": "vb3da34zaxshlwoebxullnfips97cnzc7steez0hopa",
+      "owner": "langgenius",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "frontend-testing",
+      "description": "Generate Vitest + React Testing Library tests for Dify frontend components, hooks, and utilities. Triggers on testing, spec files, coverage, Vitest, RTL, unit tests, integration tests, or write/review",
+      "repo": "langgenius/dify",
+      "path": ".agents/skills/frontend-testing/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [],
+      "stars": 127079,
+      "install": "langgenius/dify/.agents/skills/frontend-testing/SKILL.md",
+      "source": "github.com/langgenius/dify",
+      "id": "gj3jugvkfyzwamizgx0agibocm_rmwam4uhutc3jkcy",
+      "owner": "langgenius",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "electron-chromium-upgrade",
@@ -108,7 +188,17 @@
       "tags": [],
       "stars": 119879,
       "install": "electron/electron/.claude/skills/electron-chromium-upgrade/SKILL.md",
-      "source": "github.com/electron/electron"
+      "source": "github.com/electron/electron",
+      "id": "pnlpit5elwqsrhjpqyjdxq6xw_a46yh0imizteorp_w",
+      "owner": "electron",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "docstring",
@@ -120,7 +210,17 @@
       "tags": [],
       "stars": 96875,
       "install": "pytorch/pytorch/.claude/skills/docstring/SKILL.md",
-      "source": "github.com/pytorch/pytorch"
+      "source": "github.com/pytorch/pytorch",
+      "id": "x0sowij8klzeygkg-1nnq1dnoftxvzv11u5krzdo03c",
+      "owner": "pytorch",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "add-uint-support",
@@ -136,7 +236,42 @@
       ],
       "stars": 95362,
       "install": "pytorch/pytorch/.claude/skills/add-uint-support",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "o1ubr0viuvmjznzl6losm9o-pz2hgpkj5jvfgkyjb3e",
+      "owner": "pytorch",
+      "quality_grade": "S",
+      "quality_score": 94,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "skill-writer",
+      "description": "Guide users through creating Agent Skills for Claude Code. Use when the user wants to create, write, author, or design a new Skill, or needs help with SKILL.md files, frontmatter, or skill structure.",
+      "repo": "pytorch/pytorch",
+      "path": ".claude/skills/skill-writer",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "skill",
+        "writer"
+      ],
+      "stars": 95362,
+      "install": "pytorch/pytorch/.claude/skills/skill-writer",
+      "source": "SkillsMP Synced Skills",
+      "id": "wdbggxrowhsffyr1lekiqksqh0glomfgwvrhksngz1o",
+      "owner": "pytorch",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "add-uint-support",
@@ -152,7 +287,17 @@
       ],
       "stars": 95362,
       "install": "pytorch/pytorch/.claude/skills/add-uint-support",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "o1ubr0viuvmjznzl6losm9o-pz2hgpkj5jvfgkyjb3e",
+      "owner": "pytorch",
+      "quality_grade": "S",
+      "quality_score": 94,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "skill-writer",
@@ -167,22 +312,17 @@
       ],
       "stars": 95362,
       "install": "pytorch/pytorch/.claude/skills/skill-writer",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "skill-writer",
-      "description": "Guide users through creating Agent Skills for Claude Code. Use when the user wants to create, write, author, or design a new Skill, or needs help with SKILL.md files, frontmatter, or skill structure.",
-      "repo": "pytorch/pytorch",
-      "path": ".claude/skills/skill-writer",
-      "branch": "main",
-      "category": "design",
-      "tags": [
-        "skill",
-        "writer"
-      ],
-      "stars": 95362,
-      "install": "pytorch/pytorch/.claude/skills/skill-writer",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "wdbggxrowhsffyr1lekiqksqh0glomfgwvrhksngz1o",
+      "owner": "pytorch",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "at-dispatch-v2",
@@ -196,7 +336,17 @@
       ],
       "stars": 95362,
       "install": "pytorch/pytorch/.claude/skills/at-dispatch-v2",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "c0rrnxs28qr5oiaafk3kwu0d85fexbjq56d_c5mcbaa",
+      "owner": "pytorch",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "home-assistant-integration-knowledge",
@@ -208,7 +358,17 @@
       "tags": [],
       "stars": 84362,
       "install": "home-assistant/core/.claude/skills/integrations/SKILL.md",
-      "source": "github.com/home-assistant/core"
+      "source": "github.com/home-assistant/core",
+      "id": "wvavznpwxauysbkhbkdagrzxm6slgj-4wlbj-4r5neo",
+      "owner": "home-assistant",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "browser-use",
@@ -220,7 +380,15 @@
       "tags": [],
       "stars": 76633,
       "install": "browser-use/browser-use/skills/browser-use/SKILL.md",
-      "source": "github.com/browser-use/browser-use"
+      "source": "github.com/browser-use/browser-use",
+      "id": "kki1bgqo4-ty6rsc0upjefvya_kosmqfbxduy3tknpi",
+      "owner": "browser-use",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": []
     },
     {
       "name": "browser-use-browser-use-browser-use",
@@ -232,31 +400,15 @@
       "tags": [],
       "stars": 76633,
       "install": "browser-use/browser-use/skills/browser-use/SKILL.md",
-      "source": "github.com/browser-use/browser-use"
-    },
-    {
-      "name": "resource-curator",
-      "description": "Find, evaluate, and maintain high-quality external resources for JavaScript concept documentation, including auditing for broken and outdated links",
-      "repo": "leonardomso/33-js-concepts",
-      "path": ".claude/skills/resource-curator/SKILL.md",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 66182,
-      "install": "leonardomso/33-js-concepts/.claude/skills/resource-curator/SKILL.md",
-      "source": "github.com/leonardomso/33-js-concepts"
-    },
-    {
-      "name": "seo-review",
-      "description": "Perform a focused SEO audit on JavaScript concept pages to maximize search visibility, featured snippet optimization, and ranking potential",
-      "repo": "leonardomso/33-js-concepts",
-      "path": ".claude/skills/seo-review/SKILL.md",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 66182,
-      "install": "leonardomso/33-js-concepts/.claude/skills/seo-review/SKILL.md",
-      "source": "github.com/leonardomso/33-js-concepts"
+      "source": "github.com/browser-use/browser-use",
+      "id": "kki1bgqo4-ty6rsc0upjefvya_kosmqfbxduy3tknpi",
+      "owner": "browser-use",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": []
     },
     {
       "name": "fact-check",
@@ -268,19 +420,17 @@
       "tags": [],
       "stars": 66182,
       "install": "leonardomso/33-js-concepts/.claude/skills/fact-check/SKILL.md",
-      "source": "github.com/leonardomso/33-js-concepts"
-    },
-    {
-      "name": "concept-workflow",
-      "description": "End-to-end workflow for creating complete JavaScript concept documentation, orchestrating all skills from research to final review",
-      "repo": "leonardomso/33-js-concepts",
-      "path": ".claude/skills/concept-workflow/SKILL.md",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 66182,
-      "install": "leonardomso/33-js-concepts/.claude/skills/concept-workflow/SKILL.md",
-      "source": "github.com/leonardomso/33-js-concepts"
+      "source": "github.com/leonardomso/33-js-concepts",
+      "id": "qns_vcaozntk0zqcaqx3wfnubfl0asc6hf02z26hiqk",
+      "owner": "leonardomso",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "write-concept",
@@ -292,7 +442,83 @@
       "tags": [],
       "stars": 66182,
       "install": "leonardomso/33-js-concepts/.claude/skills/write-concept/SKILL.md",
-      "source": "github.com/leonardomso/33-js-concepts"
+      "source": "github.com/leonardomso/33-js-concepts",
+      "id": "ydqw8zfs1bjiovehpaphv5nosjsuk_xaqk6zyehyhy8",
+      "owner": "leonardomso",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "seo-review",
+      "description": "Perform a focused SEO audit on JavaScript concept pages to maximize search visibility, featured snippet optimization, and ranking potential",
+      "repo": "leonardomso/33-js-concepts",
+      "path": ".claude/skills/seo-review/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [],
+      "stars": 66182,
+      "install": "leonardomso/33-js-concepts/.claude/skills/seo-review/SKILL.md",
+      "source": "github.com/leonardomso/33-js-concepts",
+      "id": "aqvufxnex9pmxdb3hlvbsmepvfdxjpvd0lstryy1uoe",
+      "owner": "leonardomso",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "concept-workflow",
+      "description": "End-to-end workflow for creating complete JavaScript concept documentation, orchestrating all skills from research to final review",
+      "repo": "leonardomso/33-js-concepts",
+      "path": ".claude/skills/concept-workflow/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [],
+      "stars": 66182,
+      "install": "leonardomso/33-js-concepts/.claude/skills/concept-workflow/SKILL.md",
+      "source": "github.com/leonardomso/33-js-concepts",
+      "id": "7j9myi_smtaxq6lfva2q9cb3stvnvm7ajeczu7pjnju",
+      "owner": "leonardomso",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "resource-curator",
+      "description": "Find, evaluate, and maintain high-quality external resources for JavaScript concept documentation, including auditing for broken and outdated links",
+      "repo": "leonardomso/33-js-concepts",
+      "path": ".claude/skills/resource-curator/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [],
+      "stars": 66182,
+      "install": "leonardomso/33-js-concepts/.claude/skills/resource-curator/SKILL.md",
+      "source": "github.com/leonardomso/33-js-concepts",
+      "id": "vm5igsqds5kvnfmu5rj8fcvuh4r6hxcgtgm9bxp_pzi",
+      "owner": "leonardomso",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "claude-opus-4-5-migration",
@@ -304,7 +530,17 @@
       "tags": [],
       "stars": 60209,
       "install": "anthropics/claude-code/plugins/claude-opus-4-5-migration/skills/claude-opus-4-5-migration/SKILL.md",
-      "source": "github.com/anthropics/claude-code"
+      "source": "github.com/anthropics/claude-code",
+      "id": "jfnd3ci_mktnrssqxpfojjx65kgpmao9azozk1zt-tg",
+      "owner": "anthropics",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "skill-creator",
@@ -319,19 +555,18 @@
       ],
       "stars": 54704,
       "install": "openai/codex/codex-rs/core/src/skills/assets/samples/skill-creator",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "add-admin-api-endpoint",
-      "description": "Add a new endpoint or endpoints to Ghost's Admin API at `ghost/api/admin/**`.",
-      "repo": "TryGhost/Ghost",
-      "path": ".claude/skills/add-admin-api-endpoint/SKILL.md",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 51672,
-      "install": "TryGhost/Ghost/.claude/skills/add-admin-api-endpoint/SKILL.md",
-      "source": "github.com/TryGhost/Ghost"
+      "source": "SkillsMP Synced Skills",
+      "id": "2led0m9rbawo7iho17aczxhwrugjqejyqr9-o3coxyk",
+      "owner": "openai",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code",
+        "Codex CLI"
+      ]
     },
     {
       "name": "create-database-migration",
@@ -343,7 +578,17 @@
       "tags": [],
       "stars": 51672,
       "install": "TryGhost/Ghost/.claude/skills/create-database-migration/SKILL.md",
-      "source": "github.com/TryGhost/Ghost"
+      "source": "github.com/TryGhost/Ghost",
+      "id": "t8nqcdknr9ayh-4c5fscbgtvzromewojr8asrp2q1fu",
+      "owner": "TryGhost",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "create-database-migration-tryghost-ghost",
@@ -355,7 +600,39 @@
       "tags": [],
       "stars": 51672,
       "install": "TryGhost/Ghost/.claude/skills/create-database-migration/SKILL.md",
-      "source": "github.com/TryGhost/Ghost"
+      "source": "github.com/TryGhost/Ghost",
+      "id": "t8nqcdknr9ayh-4c5fscbgtvzromewojr8asrp2q1fu",
+      "owner": "TryGhost",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "add-admin-api-endpoint",
+      "description": "Add a new endpoint or endpoints to Ghost's Admin API at `ghost/api/admin/**`.",
+      "repo": "TryGhost/Ghost",
+      "path": ".claude/skills/add-admin-api-endpoint/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [],
+      "stars": 51672,
+      "install": "TryGhost/Ghost/.claude/skills/add-admin-api-endpoint/SKILL.md",
+      "source": "github.com/TryGhost/Ghost",
+      "id": "-mx0ph1h3hekpn751fmtwec0ashl7ithxqfdye5wt9s",
+      "owner": "TryGhost",
+      "quality_grade": "A",
+      "quality_score": 76,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "frontend-design",
@@ -370,7 +647,17 @@
       ],
       "stars": 47860,
       "install": "anthropics/claude-code/plugins/frontend-design/skills/frontend-design",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "tgd-pouw1a1od652jwmfpfpdqcb3kucs_vhmxtxa3uq",
+      "owner": "anthropics",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "frontend-design",
@@ -385,67 +672,17 @@
       ],
       "stars": 47860,
       "install": "anthropics/claude-code/plugins/frontend-design/skills/frontend-design",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "unknown",
-      "description": "The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_chart:",
-      "repo": "metabase/metabase",
-      "path": ".claude/skills/add-malli-schemas/SKILL.md",
-      "branch": "master",
-      "category": "development",
-      "tags": [],
-      "stars": 45687,
-      "install": "metabase/metabase/.claude/skills/add-malli-schemas/SKILL.md",
-      "source": "GitHub Code Search Results"
-    },
-    {
-      "name": "unknown",
-      "description": "The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_chart:",
-      "repo": "metabase/metabase",
-      "path": ".claude/skills/clojure-write/SKILL.md",
-      "branch": "master",
-      "category": "development",
-      "tags": [],
-      "stars": 45687,
-      "install": "metabase/metabase/.claude/skills/clojure-write/SKILL.md",
-      "source": "GitHub Code Search Results"
-    },
-    {
-      "name": "unknown",
-      "description": "The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_chart:",
-      "repo": "metabase/metabase",
-      "path": ".claude/skills/typescript-review/SKILL.md",
-      "branch": "master",
-      "category": "development",
-      "tags": [],
-      "stars": 45687,
-      "install": "metabase/metabase/.claude/skills/typescript-review/SKILL.md",
-      "source": "GitHub Code Search Results"
-    },
-    {
-      "name": "analytics-events",
-      "description": "Add product analytics events to track user interactions in the Metabase frontend",
-      "repo": "metabase/metabase",
-      "path": ".claude/skills/analytics-events/SKILL.md",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 45687,
-      "install": "metabase/metabase/.claude/skills/analytics-events/SKILL.md",
-      "source": "github.com/metabase/metabase"
-    },
-    {
-      "name": "unknown",
-      "description": "The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_chart:",
-      "repo": "metabase/metabase",
-      "path": ".claude/skills/docs-review/SKILL.md",
-      "branch": "master",
-      "category": "development",
-      "tags": [],
-      "stars": 45687,
-      "install": "metabase/metabase/.claude/skills/docs-review/SKILL.md",
-      "source": "GitHub Code Search Results"
+      "source": "SkillsMP Synced Skills",
+      "id": "tgd-pouw1a1od652jwmfpfpdqcb3kucs_vhmxtxa3uq",
+      "owner": "anthropics",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "typescript-write",
@@ -457,7 +694,39 @@
       "tags": [],
       "stars": 45687,
       "install": "metabase/metabase/.claude/skills/typescript-write/SKILL.md",
-      "source": "github.com/metabase/metabase"
+      "source": "github.com/metabase/metabase",
+      "id": "j6jidhftpjsifd7-hu4u_gy70xe0nuswd863hmm9xkq",
+      "owner": "metabase",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "unknown",
+      "description": "The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_chart:",
+      "repo": "metabase/metabase",
+      "path": ".claude/skills/typescript-review/SKILL.md",
+      "branch": "master",
+      "category": "development",
+      "tags": [],
+      "stars": 45687,
+      "install": "metabase/metabase/.claude/skills/typescript-review/SKILL.md",
+      "source": "GitHub Code Search Results",
+      "id": "hkumu9d81hf7exfoykqj-izkbxpf8voirr26agdkelu",
+      "owner": "metabase",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "unknown",
@@ -469,7 +738,105 @@
       "tags": [],
       "stars": 45687,
       "install": "metabase/metabase/.claude/skills/docs-write/SKILL.md",
-      "source": "GitHub Code Search Results"
+      "source": "GitHub Code Search Results",
+      "id": "rbkqszm12kjurskfapnr7ctfyqjg_sylxo7en2yafms",
+      "owner": "metabase",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "unknown",
+      "description": "The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_chart:",
+      "repo": "metabase/metabase",
+      "path": ".claude/skills/add-malli-schemas/SKILL.md",
+      "branch": "master",
+      "category": "development",
+      "tags": [],
+      "stars": 45687,
+      "install": "metabase/metabase/.claude/skills/add-malli-schemas/SKILL.md",
+      "source": "GitHub Code Search Results",
+      "id": "p0_4bd9tmrn_wxv2z_71c6ycqvexvwqif_bbdnx7nfa",
+      "owner": "metabase",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "unknown",
+      "description": "The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_chart:",
+      "repo": "metabase/metabase",
+      "path": ".claude/skills/docs-review/SKILL.md",
+      "branch": "master",
+      "category": "development",
+      "tags": [],
+      "stars": 45687,
+      "install": "metabase/metabase/.claude/skills/docs-review/SKILL.md",
+      "source": "GitHub Code Search Results",
+      "id": "4oa6gp75cpmlt9r4kvdd-ounq8dfp1j-7idivcraw24",
+      "owner": "metabase",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "analytics-events",
+      "description": "Add product analytics events to track user interactions in the Metabase frontend",
+      "repo": "metabase/metabase",
+      "path": ".claude/skills/analytics-events/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [],
+      "stars": 45687,
+      "install": "metabase/metabase/.claude/skills/analytics-events/SKILL.md",
+      "source": "github.com/metabase/metabase",
+      "id": "a9bd9ahhlcl2dgfmyqzuuoqo_du4utfpajwgxji5sxa",
+      "owner": "metabase",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "unknown",
+      "description": "The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_chart:",
+      "repo": "metabase/metabase",
+      "path": ".claude/skills/clojure-write/SKILL.md",
+      "branch": "master",
+      "category": "development",
+      "tags": [],
+      "stars": 45687,
+      "install": "metabase/metabase/.claude/skills/clojure-write/SKILL.md",
+      "source": "GitHub Code Search Results",
+      "id": "ysl6liu3nggv97uhl_mwk7mo9pumywrfh2kbnqx3vgu",
+      "owner": "metabase",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "write-issue",
@@ -481,19 +848,17 @@
       "tags": [],
       "stars": 44845,
       "install": "tldraw/tldraw/.claude/skills/write-issue/SKILL.md",
-      "source": "github.com/tldraw/tldraw"
-    },
-    {
-      "name": "skill-creator",
-      "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workfl",
-      "repo": "tldraw/tldraw",
-      "path": ".claude/skills/skill-creator/SKILL.md",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 44845,
-      "install": "tldraw/tldraw/.claude/skills/skill-creator/SKILL.md",
-      "source": "github.com/tldraw/tldraw"
+      "source": "github.com/tldraw/tldraw",
+      "id": "jnwr5p8nl9ue39dac26ciffw2qgn08xeczfvqavr4vu",
+      "owner": "tldraw",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "skill-creator-tldraw-tldraw",
@@ -505,7 +870,39 @@
       "tags": [],
       "stars": 44845,
       "install": "tldraw/tldraw/.claude/skills/skill-creator/SKILL.md",
-      "source": "github.com/tldraw/tldraw"
+      "source": "github.com/tldraw/tldraw",
+      "id": "ttl4kgypo6kdrrogcsyk_18ap4jmnkw8mddcdmvq-ow",
+      "owner": "tldraw",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "skill-creator",
+      "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workfl",
+      "repo": "tldraw/tldraw",
+      "path": ".claude/skills/skill-creator/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [],
+      "stars": 44845,
+      "install": "tldraw/tldraw/.claude/skills/skill-creator/SKILL.md",
+      "source": "github.com/tldraw/tldraw",
+      "id": "ttl4kgypo6kdrrogcsyk_18ap4jmnkw8mddcdmvq-ow",
+      "owner": "tldraw",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "clojure-review",
@@ -520,7 +917,17 @@
       ],
       "stars": 44733,
       "install": "metabase/metabase/.claude/skills/clojure-review",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "_98mcyzbca2zclwgckc5zxoj7yd0-sqq0snka1bz9uu",
+      "owner": "metabase",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "typescript-review",
@@ -535,7 +942,17 @@
       ],
       "stars": 44733,
       "install": "metabase/metabase/.claude/skills/typescript-review",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "bfdivxjlcu8lm94mfgb3jfzgoakd1memdphujpc7xao",
+      "owner": "metabase",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "clojure-write",
@@ -550,7 +967,17 @@
       ],
       "stars": 44733,
       "install": "metabase/metabase/.claude/skills/clojure-write",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "ezmspam9imz4esqmppqzpgsibcuq35obzpent9yxmtw",
+      "owner": "metabase",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "docs-review",
@@ -565,37 +992,17 @@
       ],
       "stars": 44733,
       "install": "metabase/metabase/.claude/skills/docs-review",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "docs-write",
-      "description": "Write documentation following Metabase's conversational, clear, and user-focused style. Use when creating or editing documentation files (markdown, MDX, etc.).",
-      "repo": "metabase/metabase",
-      "path": ".claude/skills/docs-write",
-      "branch": "master",
-      "category": "documents",
-      "tags": [
-        "docs",
-        "write"
-      ],
-      "stars": 44733,
-      "install": "metabase/metabase/.claude/skills/docs-write",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "docs-write",
-      "description": "Write documentation following Metabase's conversational, clear, and user-focused style. Use when creating or editing documentation files (markdown, MDX, etc.).",
-      "repo": "metabase/metabase",
-      "path": ".claude/skills/docs-write",
-      "branch": "master",
-      "category": "documents",
-      "tags": [
-        "docs",
-        "write"
-      ],
-      "stars": 44733,
-      "install": "metabase/metabase/.claude/skills/docs-write",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "y8faq8jx4t433h-7dlz6bka4-h3timatjvz5mwevq_q",
+      "owner": "metabase",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "docs-review",
@@ -610,7 +1017,67 @@
       ],
       "stars": 44733,
       "install": "metabase/metabase/.claude/skills/docs-review",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "y8faq8jx4t433h-7dlz6bka4-h3timatjvz5mwevq_q",
+      "owner": "metabase",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "docs-write",
+      "description": "Write documentation following Metabase's conversational, clear, and user-focused style. Use when creating or editing documentation files (markdown, MDX, etc.).",
+      "repo": "metabase/metabase",
+      "path": ".claude/skills/docs-write",
+      "branch": "master",
+      "category": "documents",
+      "tags": [
+        "docs",
+        "write"
+      ],
+      "stars": 44733,
+      "install": "metabase/metabase/.claude/skills/docs-write",
+      "source": "SkillsMP Synced Skills",
+      "id": "46am3tpbvy1txq2gyc89smsd-wtwyhimoht79k0o7k0",
+      "owner": "metabase",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "docs-write",
+      "description": "Write documentation following Metabase's conversational, clear, and user-focused style. Use when creating or editing documentation files (markdown, MDX, etc.).",
+      "repo": "metabase/metabase",
+      "path": ".claude/skills/docs-write",
+      "branch": "master",
+      "category": "documents",
+      "tags": [
+        "docs",
+        "write"
+      ],
+      "stars": 44733,
+      "install": "metabase/metabase/.claude/skills/docs-write",
+      "source": "SkillsMP Synced Skills",
+      "id": "46am3tpbvy1txq2gyc89smsd-wtwyhimoht79k0o7k0",
+      "owner": "metabase",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "git-workflow",
@@ -622,7 +1089,17 @@
       "tags": [],
       "stars": 37144,
       "install": "agno-agi/agno/cookbook/02_agents/skills/sample_skills/git-workflow/SKILL.md",
-      "source": "github.com/agno-agi/agno"
+      "source": "github.com/agno-agi/agno",
+      "id": "jm15mw9yqhngy-1opohwcdpio7l3auuzqzvuljbzzkw",
+      "owner": "agno-agi",
+      "quality_grade": "A",
+      "quality_score": 76,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "git-workflow",
@@ -634,7 +1111,17 @@
       "tags": [],
       "stars": 37144,
       "install": "agno-agi/agno/cookbook/02_agents/skills/sample_skills/git-workflow/SKILL.md",
-      "source": "github.com/agno-agi/agno"
+      "source": "github.com/agno-agi/agno",
+      "id": "jm15mw9yqhngy-1opohwcdpio7l3auuzqzvuljbzzkw",
+      "owner": "agno-agi",
+      "quality_grade": "A",
+      "quality_score": 76,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "unknown",
@@ -646,7 +1133,15 @@
       "tags": [],
       "stars": 35109,
       "install": "obra/superpowers/skills/using-superpowers/SKILL.md",
-      "source": "GitHub Code Search Results"
+      "source": "GitHub Code Search Results",
+      "id": "tp9dkxhpiecrto2ruqfi0shjb_156ixfk0fz9vic3dk",
+      "owner": "obra",
+      "quality_grade": "A",
+      "quality_score": 76,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": []
     },
     {
       "name": "api-ref-doc",
@@ -658,7 +1153,17 @@
       "tags": [],
       "stars": 31827,
       "install": "medusajs/medusa/.claude/skills/api-ref-doc/SKILL.md",
-      "source": "github.com/medusajs/medusa"
+      "source": "github.com/medusajs/medusa",
+      "id": "fukdmufadluja6dn3s-pw8qeb5cdopw--haj2fel9sg",
+      "owner": "medusajs",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "book-doc",
@@ -670,31 +1175,17 @@
       "tags": [],
       "stars": 31827,
       "install": "medusajs/medusa/.claude/skills/book-doc/SKILL.md",
-      "source": "github.com/medusajs/medusa"
-    },
-    {
-      "name": "how-to",
-      "description": "You are an expert technical writer specializing in focused, task-oriented how-to guides for the Medusa ecommerce platform.",
-      "repo": "medusajs/medusa",
-      "path": ".claude/skills/how-to/SKILL.md",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 31827,
-      "install": "medusajs/medusa/.claude/skills/how-to/SKILL.md",
-      "source": "github.com/medusajs/medusa"
-    },
-    {
-      "name": "tutorial",
-      "description": "You are an expert technical writer specializing in comprehensive, multi-step tutorials for the Medusa ecommerce platform.",
-      "repo": "medusajs/medusa",
-      "path": ".claude/skills/tutorial/SKILL.md",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 31827,
-      "install": "medusajs/medusa/.claude/skills/tutorial/SKILL.md",
-      "source": "github.com/medusajs/medusa"
+      "source": "github.com/medusajs/medusa",
+      "id": "1v1lo4pclvuy0guo5uaj17qugueijxdayijbzxyrhck",
+      "owner": "medusajs",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "recipe",
@@ -706,7 +1197,61 @@
       "tags": [],
       "stars": 31827,
       "install": "medusajs/medusa/.claude/skills/recipe/SKILL.md",
-      "source": "github.com/medusajs/medusa"
+      "source": "github.com/medusajs/medusa",
+      "id": "nmx8ot7gcogpwrjjeuhu-bj7z3kq29dsiw0suzwx9lm",
+      "owner": "medusajs",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "how-to",
+      "description": "You are an expert technical writer specializing in focused, task-oriented how-to guides for the Medusa ecommerce platform.",
+      "repo": "medusajs/medusa",
+      "path": ".claude/skills/how-to/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [],
+      "stars": 31827,
+      "install": "medusajs/medusa/.claude/skills/how-to/SKILL.md",
+      "source": "github.com/medusajs/medusa",
+      "id": "gz1f7kvrbm4zri7p-nueiunp74l_nqugbn4tovpljny",
+      "owner": "medusajs",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "tutorial",
+      "description": "You are an expert technical writer specializing in comprehensive, multi-step tutorials for the Medusa ecommerce platform.",
+      "repo": "medusajs/medusa",
+      "path": ".claude/skills/tutorial/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [],
+      "stars": 31827,
+      "install": "medusajs/medusa/.claude/skills/tutorial/SKILL.md",
+      "source": "github.com/medusajs/medusa",
+      "id": "s7ronku06fiozttfc6wld2lb8rxtcubopahwtschzm8",
+      "owner": "medusajs",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "resources-doc",
@@ -718,7 +1263,17 @@
       "tags": [],
       "stars": 31827,
       "install": "medusajs/medusa/.claude/skills/resources-doc/SKILL.md",
-      "source": "github.com/medusajs/medusa"
+      "source": "github.com/medusajs/medusa",
+      "id": "5vdltzlq4_akd0l6ueaggy4-czrsc3zfgn-qv26bfmq",
+      "owner": "medusajs",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "ui-component-doc",
@@ -730,19 +1285,17 @@
       "tags": [],
       "stars": 31827,
       "install": "medusajs/medusa/.claude/skills/ui-component-doc/SKILL.md",
-      "source": "github.com/medusajs/medusa"
-    },
-    {
-      "name": "ui-component-doc",
-      "description": "You are an expert technical writer specializing in UI component library documentation for the Medusa UI design system.",
-      "repo": "medusajs/medusa",
-      "path": ".claude/skills/ui-component-doc/SKILL.md",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 31827,
-      "install": "medusajs/medusa/.claude/skills/ui-component-doc/SKILL.md",
-      "source": "github.com/medusajs/medusa"
+      "source": "github.com/medusajs/medusa",
+      "id": "awmkqbycbycokymgwvd0ysogvx5rskip4llqdrnpl1s",
+      "owner": "medusajs",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "resources-doc",
@@ -754,7 +1307,39 @@
       "tags": [],
       "stars": 31827,
       "install": "medusajs/medusa/.claude/skills/resources-doc/SKILL.md",
-      "source": "github.com/medusajs/medusa"
+      "source": "github.com/medusajs/medusa",
+      "id": "5vdltzlq4_akd0l6ueaggy4-czrsc3zfgn-qv26bfmq",
+      "owner": "medusajs",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "ui-component-doc",
+      "description": "You are an expert technical writer specializing in UI component library documentation for the Medusa UI design system.",
+      "repo": "medusajs/medusa",
+      "path": ".claude/skills/ui-component-doc/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [],
+      "stars": 31827,
+      "install": "medusajs/medusa/.claude/skills/ui-component-doc/SKILL.md",
+      "source": "github.com/medusajs/medusa",
+      "id": "awmkqbycbycokymgwvd0ysogvx5rskip4llqdrnpl1s",
+      "owner": "medusajs",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "commit-helper",
@@ -766,7 +1351,17 @@
       "tags": [],
       "stars": 31777,
       "install": "cockroachdb/cockroach/.claude/skills/commit-helper/SKILL.md",
-      "source": "github.com/cockroachdb/cockroach"
+      "source": "github.com/cockroachdb/cockroach",
+      "id": "hoges4lpfgswh6ffbsfzatrqtq3pjtf1eyofdaao-im",
+      "owner": "cockroachdb",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "commit-helper",
@@ -778,7 +1373,17 @@
       "tags": [],
       "stars": 31777,
       "install": "cockroachdb/cockroach/.claude/skills/commit-helper/SKILL.md",
-      "source": "github.com/cockroachdb/cockroach"
+      "source": "github.com/cockroachdb/cockroach",
+      "id": "hoges4lpfgswh6ffbsfzatrqtq3pjtf1eyofdaao-im",
+      "owner": "cockroachdb",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "cookbook-audit-anthropics-claude-cookbooks",
@@ -790,7 +1395,17 @@
       "tags": [],
       "stars": 31757,
       "install": "anthropics/claude-cookbooks/.claude/skills/cookbook-audit/SKILL.md",
-      "source": "github.com/anthropics/claude-cookbooks"
+      "source": "github.com/anthropics/claude-cookbooks",
+      "id": "6qk5pdgeid_yrg8gvfkx9cftxkvkmqnbsfxk10eoidu",
+      "owner": "anthropics",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "cookbook-audit",
@@ -802,7 +1417,17 @@
       "tags": [],
       "stars": 31757,
       "install": "anthropics/claude-cookbooks/.claude/skills/cookbook-audit/SKILL.md",
-      "source": "github.com/anthropics/claude-cookbooks"
+      "source": "github.com/anthropics/claude-cookbooks",
+      "id": "6qk5pdgeid_yrg8gvfkx9cftxkvkmqnbsfxk10eoidu",
+      "owner": "anthropics",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "applying-brand-guidelines",
@@ -814,7 +1439,17 @@
       "tags": [],
       "stars": 31757,
       "install": "anthropics/claude-cookbooks/skills/custom_skills/applying-brand-guidelines/SKILL.md",
-      "source": "github.com/anthropics/claude-cookbooks"
+      "source": "github.com/anthropics/claude-cookbooks",
+      "id": "tmy83rsrmroo5jffn-nags1ewgyh5_axywhpxtppaog",
+      "owner": "anthropics",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "turborepo",
@@ -826,7 +1461,15 @@
       "tags": [],
       "stars": 29619,
       "install": "vercel/turborepo/skills/turborepo/SKILL.md",
-      "source": "github.com/vercel/turborepo"
+      "source": "github.com/vercel/turborepo",
+      "id": "zn-gxiejg94veltg9ywml1hhbriqtapxtunkw_zjhpi",
+      "owner": "vercel",
+      "quality_grade": "B",
+      "quality_score": 68,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": []
     },
     {
       "name": "make-pr",
@@ -838,7 +1481,17 @@
       "tags": [],
       "stars": 29211,
       "install": "remotion-dev/remotion/.claude/skills/pr/SKILL.md",
-      "source": "github.com/remotion-dev/remotion"
+      "source": "github.com/remotion-dev/remotion",
+      "id": "wneapfocdlmxlhvysmsw5qhvb-dajqpt1lncaqxy7jo",
+      "owner": "remotion-dev",
+      "quality_grade": "A",
+      "quality_score": 76,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "writing-docs",
@@ -850,7 +1503,17 @@
       "tags": [],
       "stars": 29211,
       "install": "remotion-dev/remotion/.claude/skills/writing-docs/SKILL.md",
-      "source": "github.com/remotion-dev/remotion"
+      "source": "github.com/remotion-dev/remotion",
+      "id": "rw6uiqsmytg_5oz32glaqqv-h4a9b8b_m9r07demqta",
+      "owner": "remotion-dev",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "unknown",
@@ -862,7 +1525,17 @@
       "tags": [],
       "stars": 27975,
       "install": "nrwl/nx/.claude/skills/run-nx-generator/SKILL.md",
-      "source": "GitHub Code Search Results"
+      "source": "GitHub Code Search Results",
+      "id": "tiqh1hzjfgflyvrvdjgzlfuppwipff4ucjgb5jcfczm",
+      "owner": "nrwl",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "run-nx-generator",
@@ -877,7 +1550,17 @@
       ],
       "stars": 27580,
       "install": "nrwl/nx/.claude/skills/run-nx-generator",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "pdyowegrwst6buitv_exujywasdmlipan9zp2374oy4",
+      "owner": "nrwl",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "rag-implementation",
@@ -889,7 +1572,17 @@
       "tags": [],
       "stars": 26628,
       "install": "wshobson/agents/plugins/llm-application-dev/skills/rag-implementation/SKILL.md",
-      "source": "github.com/wshobson/agents"
+      "source": "github.com/wshobson/agents",
+      "id": "wynvtnif6o1qrv4qfnynsq2q3ujc32bpp2bwhpsdboi",
+      "owner": "wshobson",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "create-skill-file",
@@ -905,7 +1598,17 @@
       ],
       "stars": 26350,
       "install": "labring/FastGPT/.claude/skills/create-skill-file",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "nhwggydimzkqhwfqlkk0eljmwvlp7nzyillhfbqz964",
+      "owner": "labring",
+      "quality_grade": "S",
+      "quality_score": 94,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "create-skill-file",
@@ -921,7 +1624,17 @@
       ],
       "stars": 26350,
       "install": "labring/FastGPT/.claude/skills/create-skill-file",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "nhwggydimzkqhwfqlkk0eljmwvlp7nzyillhfbqz964",
+      "owner": "labring",
+      "quality_grade": "S",
+      "quality_score": 94,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "category",
@@ -933,7 +1646,15 @@
       "tags": [],
       "stars": 26240,
       "install": "haizlin/fe-interview/category/skill.md",
-      "source": "github.com/haizlin/fe-interview"
+      "source": "github.com/haizlin/fe-interview",
+      "id": "2dhvdqfiplegkvlqas_iz7f245rn2tbl7kwltsux6om",
+      "owner": "haizlin",
+      "quality_grade": "B",
+      "quality_score": 68,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": []
     },
     {
       "name": "design-principles",
@@ -945,7 +1666,17 @@
       "tags": [],
       "stars": 25765,
       "install": "srbhr/Resume-Matcher/.claude/skills/design-principles/skill.md",
-      "source": "github.com/srbhr/Resume-Matcher"
+      "source": "github.com/srbhr/Resume-Matcher",
+      "id": "outmvyfcx3ewyxcuylbsfmnuttaezdxhfmmrhotcwem",
+      "owner": "srbhr",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "langsmith-fetch-composiohq-awesome-claude-skil",
@@ -957,79 +1688,17 @@
       "tags": [],
       "stars": 25149,
       "install": "ComposioHQ/awesome-claude-skills/langsmith-fetch/SKILL.md",
-      "source": "github.com/ComposioHQ/awesome-claude-skills"
-    },
-    {
-      "name": "strategic-compact-affaan-m-everything-claude-cod",
-      "description": "Suggests manual context compaction at logical intervals to preserve context through task phases rather than arbitrary auto-compaction.",
-      "repo": "affaan-m/everything-claude-code",
-      "path": "skills/strategic-compact/SKILL.md",
-      "branch": "main",
-      "category": "productivity",
-      "tags": [],
-      "stars": 24605,
-      "install": "affaan-m/everything-claude-code/skills/strategic-compact/SKILL.md",
-      "source": "github.com/affaan-m/everything-claude-code"
-    },
-    {
-      "name": "coding-standards-affaan-m-everything-claude-cod",
-      "description": "Universal coding standards, best practices, and patterns for TypeScript, JavaScript, React, and Node.js development.",
-      "repo": "affaan-m/everything-claude-code",
-      "path": "skills/coding-standards/SKILL.md",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 24605,
-      "install": "affaan-m/everything-claude-code/skills/coding-standards/SKILL.md",
-      "source": "github.com/affaan-m/everything-claude-code"
-    },
-    {
-      "name": "frontend-patterns-affaan-m-everything-claude-cod",
-      "description": "Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices.",
-      "repo": "affaan-m/everything-claude-code",
-      "path": "skills/frontend-patterns/SKILL.md",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 24605,
-      "install": "affaan-m/everything-claude-code/skills/frontend-patterns/SKILL.md",
-      "source": "github.com/affaan-m/everything-claude-code"
-    },
-    {
-      "name": "eval-harness-affaan-m-everything-claude-cod",
-      "description": "A formal evaluation framework for Claude Code sessions, implementing eval-driven development (EDD) principles.",
-      "repo": "affaan-m/everything-claude-code",
-      "path": "skills/eval-harness/SKILL.md",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 24605,
-      "install": "affaan-m/everything-claude-code/skills/eval-harness/SKILL.md",
-      "source": "github.com/affaan-m/everything-claude-code"
-    },
-    {
-      "name": "security-review-affaan-m-everything-claude-cod",
-      "description": "Use this skill when adding authentication, handling user input, working with secrets, creating API endpoints, or implementing payment/sensitive features. Provides comprehensive security checklist and",
-      "repo": "affaan-m/everything-claude-code",
-      "path": "skills/security-review/SKILL.md",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 24605,
-      "install": "affaan-m/everything-claude-code/skills/security-review/SKILL.md",
-      "source": "github.com/affaan-m/everything-claude-code"
-    },
-    {
-      "name": "continuous-learning-affaan-m-everything-claude-cod",
-      "description": "Automatically extract reusable patterns from Claude Code sessions and save them as learned skills for future use.",
-      "repo": "affaan-m/everything-claude-code",
-      "path": "skills/continuous-learning/SKILL.md",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 24605,
-      "install": "affaan-m/everything-claude-code/skills/continuous-learning/SKILL.md",
-      "source": "github.com/affaan-m/everything-claude-code"
+      "source": "github.com/ComposioHQ/awesome-claude-skills",
+      "id": "hg1aszonbdx3hx0v-m1k367-hnzte0rn50dfa7mcjps",
+      "owner": "ComposioHQ",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "project-guidelines-example-affaan-m-everything-claude-cod",
@@ -1041,19 +1710,39 @@
       "tags": [],
       "stars": 24605,
       "install": "affaan-m/everything-claude-code/skills/project-guidelines-example/SKILL.md",
-      "source": "github.com/affaan-m/everything-claude-code"
+      "source": "github.com/affaan-m/everything-claude-code",
+      "id": "hihulrvbliljsynxgq758rrftqqzn3fdfhekgoawnki",
+      "owner": "affaan-m",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
-      "name": "backend-patterns-affaan-m-everything-claude-cod",
-      "description": "Backend architecture patterns, API design, database optimization, and server-side best practices for Node.js, Express, and Next.js API routes.",
+      "name": "continuous-learning-affaan-m-everything-claude-cod",
+      "description": "Automatically extract reusable patterns from Claude Code sessions and save them as learned skills for future use.",
       "repo": "affaan-m/everything-claude-code",
-      "path": "skills/backend-patterns/SKILL.md",
+      "path": "skills/continuous-learning/SKILL.md",
       "branch": "main",
       "category": "development",
       "tags": [],
       "stars": 24605,
-      "install": "affaan-m/everything-claude-code/skills/backend-patterns/SKILL.md",
-      "source": "github.com/affaan-m/everything-claude-code"
+      "install": "affaan-m/everything-claude-code/skills/continuous-learning/SKILL.md",
+      "source": "github.com/affaan-m/everything-claude-code",
+      "id": "_lf5z_f7h0mpxwj1ie35zduv2vfbidpwwowbhu5pama",
+      "owner": "affaan-m",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "tdd-workflow-affaan-m-everything-claude-cod",
@@ -1065,7 +1754,127 @@
       "tags": [],
       "stars": 24605,
       "install": "affaan-m/everything-claude-code/skills/tdd-workflow/SKILL.md",
-      "source": "github.com/affaan-m/everything-claude-code"
+      "source": "github.com/affaan-m/everything-claude-code",
+      "id": "xdhxmdvcsibgfpwbqs70djp-lutmndn039dq7rumeow",
+      "owner": "affaan-m",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "security-review-affaan-m-everything-claude-cod",
+      "description": "Use this skill when adding authentication, handling user input, working with secrets, creating API endpoints, or implementing payment/sensitive features. Provides comprehensive security checklist and",
+      "repo": "affaan-m/everything-claude-code",
+      "path": "skills/security-review/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [],
+      "stars": 24605,
+      "install": "affaan-m/everything-claude-code/skills/security-review/SKILL.md",
+      "source": "github.com/affaan-m/everything-claude-code",
+      "id": "g_t-kp01p8rz_cujxj2iknrbcatfuvlonugaznmar78",
+      "owner": "affaan-m",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "backend-patterns-affaan-m-everything-claude-cod",
+      "description": "Backend architecture patterns, API design, database optimization, and server-side best practices for Node.js, Express, and Next.js API routes.",
+      "repo": "affaan-m/everything-claude-code",
+      "path": "skills/backend-patterns/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [],
+      "stars": 24605,
+      "install": "affaan-m/everything-claude-code/skills/backend-patterns/SKILL.md",
+      "source": "github.com/affaan-m/everything-claude-code",
+      "id": "cois1m1bgti9ahxexhe533bxhdxhceqyfjnjjxhtbzi",
+      "owner": "affaan-m",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "frontend-patterns-affaan-m-everything-claude-cod",
+      "description": "Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices.",
+      "repo": "affaan-m/everything-claude-code",
+      "path": "skills/frontend-patterns/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [],
+      "stars": 24605,
+      "install": "affaan-m/everything-claude-code/skills/frontend-patterns/SKILL.md",
+      "source": "github.com/affaan-m/everything-claude-code",
+      "id": "ksgj6xwcrf1eah9kgj2iq71vjmbrja0ftl3mjgqfsvc",
+      "owner": "affaan-m",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "eval-harness-affaan-m-everything-claude-cod",
+      "description": "A formal evaluation framework for Claude Code sessions, implementing eval-driven development (EDD) principles.",
+      "repo": "affaan-m/everything-claude-code",
+      "path": "skills/eval-harness/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [],
+      "stars": 24605,
+      "install": "affaan-m/everything-claude-code/skills/eval-harness/SKILL.md",
+      "source": "github.com/affaan-m/everything-claude-code",
+      "id": "odxwdzudqorgxlchoe-g1kk_l5plbskpdjamjdpznhu",
+      "owner": "affaan-m",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "coding-standards-affaan-m-everything-claude-cod",
+      "description": "Universal coding standards, best practices, and patterns for TypeScript, JavaScript, React, and Node.js development.",
+      "repo": "affaan-m/everything-claude-code",
+      "path": "skills/coding-standards/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [],
+      "stars": 24605,
+      "install": "affaan-m/everything-claude-code/skills/coding-standards/SKILL.md",
+      "source": "github.com/affaan-m/everything-claude-code",
+      "id": "3l2c7opcovjcprfvxr7imwtwxciepcggipk8p9ycrbk",
+      "owner": "affaan-m",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "clickhouse-io-affaan-m-everything-claude-cod",
@@ -1077,7 +1886,17 @@
       "tags": [],
       "stars": 24605,
       "install": "affaan-m/everything-claude-code/skills/clickhouse-io/SKILL.md",
-      "source": "github.com/affaan-m/everything-claude-code"
+      "source": "github.com/affaan-m/everything-claude-code",
+      "id": "6tlkrusc9cf_gmodcvbrcxxeozjc_zjnrtpqvygzl0q",
+      "owner": "affaan-m",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "clickhouse-io-affaan-m-everything-claude-cod",
@@ -1089,7 +1908,85 @@
       "tags": [],
       "stars": 24605,
       "install": "affaan-m/everything-claude-code/skills/clickhouse-io/SKILL.md",
-      "source": "github.com/affaan-m/everything-claude-code"
+      "source": "github.com/affaan-m/everything-claude-code",
+      "id": "6tlkrusc9cf_gmodcvbrcxxeozjc_zjnrtpqvygzl0q",
+      "owner": "affaan-m",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "strategic-compact-affaan-m-everything-claude-cod",
+      "description": "Suggests manual context compaction at logical intervals to preserve context through task phases rather than arbitrary auto-compaction.",
+      "repo": "affaan-m/everything-claude-code",
+      "path": "skills/strategic-compact/SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [],
+      "stars": 24605,
+      "install": "affaan-m/everything-claude-code/skills/strategic-compact/SKILL.md",
+      "source": "github.com/affaan-m/everything-claude-code",
+      "id": "nohu5dhfurqnmk0m6k8riesmdxslw9s7twpqx2afav8",
+      "owner": "affaan-m",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "mcp-builder",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate externa",
+      "repo": "anthropics/skills",
+      "path": "skills/mcp-builder",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "mcp",
+        "builder"
+      ],
+      "stars": 24530,
+      "install": "anthropics/skills/skills/mcp-builder",
+      "source": "SkillsMP Synced Skills",
+      "id": "484erhznudvufrqwhskhgj7q8yjise4vkjwmubgltlq",
+      "owner": "anthropics",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": []
+    },
+    {
+      "name": "mcp-builder",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate externa",
+      "repo": "anthropics/skills",
+      "path": "skills/mcp-builder",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "mcp",
+        "builder"
+      ],
+      "stars": 24530,
+      "install": "anthropics/skills/skills/mcp-builder",
+      "source": "SkillsMP Synced Skills",
+      "id": "484erhznudvufrqwhskhgj7q8yjise4vkjwmubgltlq",
+      "owner": "anthropics",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": []
     },
     {
       "name": "web-artifacts-builder",
@@ -1105,37 +2002,17 @@
       ],
       "stars": 24530,
       "install": "anthropics/skills/skills/web-artifacts-builder",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "mcp-builder",
-      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate externa",
-      "repo": "anthropics/skills",
-      "path": "skills/mcp-builder",
-      "branch": "main",
-      "category": "design",
-      "tags": [
-        "mcp",
-        "builder"
-      ],
-      "stars": 24530,
-      "install": "anthropics/skills/skills/mcp-builder",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "mcp-builder",
-      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate externa",
-      "repo": "anthropics/skills",
-      "path": "skills/mcp-builder",
-      "branch": "main",
-      "category": "design",
-      "tags": [
-        "mcp",
-        "builder"
-      ],
-      "stars": 24530,
-      "install": "anthropics/skills/skills/mcp-builder",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "nb626fzrteuwlb7pxocxezxaernzjd7ylmj4g6ruwpy",
+      "owner": "anthropics",
+      "quality_grade": "S",
+      "quality_score": 94,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "web-artifacts-builder",
@@ -1151,37 +2028,17 @@
       ],
       "stars": 24530,
       "install": "anthropics/skills/skills/web-artifacts-builder",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "webapp-testing",
-      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser l",
-      "repo": "anthropics/skills",
-      "path": "skills/webapp-testing",
-      "branch": "main",
-      "category": "testing",
-      "tags": [
-        "webapp",
-        "testing"
-      ],
-      "stars": 24530,
-      "install": "anthropics/skills/skills/webapp-testing",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "webapp-testing",
-      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser l",
-      "repo": "anthropics/skills",
-      "path": "skills/webapp-testing",
-      "branch": "main",
-      "category": "testing",
-      "tags": [
-        "webapp",
-        "testing"
-      ],
-      "stars": 24530,
-      "install": "anthropics/skills/skills/webapp-testing",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "nb626fzrteuwlb7pxocxezxaernzjd7ylmj4g6ruwpy",
+      "owner": "anthropics",
+      "quality_grade": "S",
+      "quality_score": 94,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "internal-comms",
@@ -1196,7 +2053,17 @@
       ],
       "stars": 24530,
       "install": "anthropics/skills/skills/internal-comms",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "0uogss1djcxkk3yeodqtnte6-cambf4hialvpvz0ega",
+      "owner": "anthropics",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "internal-comms",
@@ -1211,7 +2078,63 @@
       ],
       "stars": 24530,
       "install": "anthropics/skills/skills/internal-comms",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "0uogss1djcxkk3yeodqtnte6-cambf4hialvpvz0ega",
+      "owner": "anthropics",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "webapp-testing",
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser l",
+      "repo": "anthropics/skills",
+      "path": "skills/webapp-testing",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "webapp",
+        "testing"
+      ],
+      "stars": 24530,
+      "install": "anthropics/skills/skills/webapp-testing",
+      "source": "SkillsMP Synced Skills",
+      "id": "hkf1eajyj2nw8k800n3pum3d65eitqfmmxkoeq1ieds",
+      "owner": "anthropics",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": []
+    },
+    {
+      "name": "webapp-testing",
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser l",
+      "repo": "anthropics/skills",
+      "path": "skills/webapp-testing",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "webapp",
+        "testing"
+      ],
+      "stars": 24530,
+      "install": "anthropics/skills/skills/webapp-testing",
+      "source": "SkillsMP Synced Skills",
+      "id": "hkf1eajyj2nw8k800n3pum3d65eitqfmmxkoeq1ieds",
+      "owner": "anthropics",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": []
     },
     {
       "name": "docx",
@@ -1225,7 +2148,65 @@
       ],
       "stars": 24530,
       "install": "anthropics/skills/skills/docx",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "okcxnkqx-_ns9qlkunanovhytiafcj-oy8wvakjgo_4",
+      "owner": "anthropics",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "pdf",
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically p",
+      "repo": "anthropics/skills",
+      "path": "skills/pdf",
+      "branch": "main",
+      "category": "documents",
+      "tags": [
+        "pdf"
+      ],
+      "stars": 24530,
+      "install": "anthropics/skills/skills/pdf",
+      "source": "SkillsMP Synced Skills",
+      "id": "8awwjtnivdhk3b7vxjcn1hhhbl4m2izrn1cjgejhe4g",
+      "owner": "anthropics",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "pdf",
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically p",
+      "repo": "anthropics/skills",
+      "path": "skills/pdf",
+      "branch": "main",
+      "category": "documents",
+      "tags": [
+        "pdf"
+      ],
+      "stars": 24530,
+      "install": "anthropics/skills/skills/pdf",
+      "source": "SkillsMP Synced Skills",
+      "id": "8awwjtnivdhk3b7vxjcn1hhhbl4m2izrn1cjgejhe4g",
+      "owner": "anthropics",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "docx",
@@ -1239,35 +2220,17 @@
       ],
       "stars": 24530,
       "install": "anthropics/skills/skills/docx",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "pdf",
-      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically p",
-      "repo": "anthropics/skills",
-      "path": "skills/pdf",
-      "branch": "main",
-      "category": "documents",
-      "tags": [
-        "pdf"
-      ],
-      "stars": 24530,
-      "install": "anthropics/skills/skills/pdf",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "pdf",
-      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically p",
-      "repo": "anthropics/skills",
-      "path": "skills/pdf",
-      "branch": "main",
-      "category": "documents",
-      "tags": [
-        "pdf"
-      ],
-      "stars": 24530,
-      "install": "anthropics/skills/skills/pdf",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "okcxnkqx-_ns9qlkunanovhytiafcj-oy8wvakjgo_4",
+      "owner": "anthropics",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "fetch-unresolved-comments",
@@ -1283,7 +2246,17 @@
       ],
       "stars": 23068,
       "install": "mlflow/mlflow/.claude/skills/fetch-unresolved-comments",
-      "source": "SkillsMP Synced Skills"
+      "source": "SkillsMP Synced Skills",
+      "id": "1-fwatcs6bpcjppq4o2e94mcffoclbqzixnrllof6tw",
+      "owner": "mlflow",
+      "quality_grade": "S",
+      "quality_score": 94,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     },
     {
       "name": "reviewing-code",
@@ -1295,7 +2268,17 @@
       "tags": [],
       "stars": 22287,
       "install": "jlowin/fastmcp/.claude/skills/code-review/SKILL.md",
-      "source": "github.com/jlowin/fastmcp"
+      "source": "github.com/jlowin/fastmcp",
+      "id": "d0zktf5dupvp9typgyasevvk7hrtwz8zpkeqqapjl3y",
+      "owner": "jlowin",
+      "quality_grade": "A",
+      "quality_score": 84,
+      "security_status": "unknown",
+      "install_status": "known_good",
+      "trust_score": 100,
+      "compatible_agents": [
+        "Claude Code"
+      ]
     }
   ]
 }

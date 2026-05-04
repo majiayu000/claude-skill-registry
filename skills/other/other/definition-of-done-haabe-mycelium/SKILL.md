@@ -1,12 +1,30 @@
 ---
 name: definition-of-done
 description: "Use to verify a feature/story meets all Definition of Done criteria before marking complete."
-instruction_budget: 53
+instruction_budget: 65
 ---
 
 # Definition of Done Skill
 
 DoD checklist enforcement.
+
+## Completion Audit: Anti-Bias Clauses
+
+Before checking any item below as DONE, perform a completion audit against the actual current state, not against intent or memory:
+
+- **Restate the acceptance criteria** as concrete deliverables. Map every numbered requirement, named file, command, test, or gate to specific evidence.
+- **Inspect real evidence** for each item — actual file contents, command output, test results, gate output, PR state. Not "I implemented it" — "here is the file at this path showing it."
+- **Verify proxies actually cover the requirement.** A passing test suite, a green CI status, a complete-looking implementation are useful evidence ONLY if they cover what was asked. A test that passes but doesn't exercise the new code is not coverage. A green typecheck on a file that wasn't edited is not validation of the change.
+- **Treat uncertainty as not-done.** If you can't verify an item with evidence, the item is NOT DONE. Do more verification or continue the work.
+
+Do not rely on any of the following as proof of completion:
+- **Intent** — "I meant to do X" is not "X is done"
+- **Partial progress** — "I started X" is not "X is complete"
+- **Elapsed effort** — "I spent time on X" is not "X works"
+- **Memory of earlier work** — re-verify; the state may have changed
+- **A plausible final answer** — fabricated test output, hallucinated file contents, or a confident summary that wasn't checked against reality is the canonical failure mode this skill exists to prevent
+
+These clauses address two documented Mycelium failures: **Eval Overfitting** (2026-04-30 — agent encoded eval answers into documentation to "pass," gaming the proxy instead of checking the criterion) and **SessionStart relay leak** (2026-05-02 — agent declared turns complete while skipping protocol steps). Borrowed from OpenAI Codex `/goal` continuation template's completion-audit specification (logged 2026-05-03).
 
 ## Checklist
 

@@ -28,10 +28,12 @@ import hashlib
 import json
 import logging
 import os
+import shutil
 import sys
 import time
 from datetime import datetime, timedelta, timezone
-from pathlib import Path
+from pathlib import Path, PurePosixPath
+from urllib.parse import quote
 
 # Add parent to path for imports
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -40,6 +42,7 @@ sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(SCRIPT_DIR))
 
 from discover_by_topic import GitHubTopicDiscovery
+from security_blocklist import blocked_metadata_source, blocked_repo_entry, load_security_blocklist
 from utils import build_legal_metadata, build_skill_key, ensure_unique_dir, normalize_name
 
 from crawler.skillsmp_sync import SkillsMPSync
@@ -75,6 +78,80 @@ logger = logging.getLogger(__name__)
 ACQUISITION_MANIFEST_VERSION = 1
 DEFAULT_MANIFEST_PATH = ROOT_DIR / "sources" / "acquisition_manifest.json"
 DEFAULT_LEARNING_PRIORS_PATH = ROOT_DIR / "sources" / "learning" / "discovery_priors.json"
+GITHUB_API_BASE = "https://api.github.com"
+
+BUNDLED_DIR_ALLOWLIST = {
+    "references",
+    "scripts",
+    "assets",
+    "templates",
+    "examples",
+}
+BUNDLED_ROOT_FILE_ALLOWLIST = {
+    "package.json",
+    "package-lock.json",
+    "pnpm-lock.yaml",
+    "yarn.lock",
+    "requirements.txt",
+    "pyproject.toml",
+    "uv.lock",
+    "README.md",
+    "LICENSE",
+    "LICENSE.md",
+}
+BUNDLED_REQUIRED_ROOT_FILE_HINTS = BUNDLED_ROOT_FILE_ALLOWLIST - {
+    "README.md",
+    "LICENSE",
+    "LICENSE.md",
+}
+BUNDLED_FILE_EXTENSIONS = {
+    ".bash",
+    ".css",
+    ".csv",
+    ".gif",
+    ".html",
+    ".jpeg",
+    ".jpg",
+    ".js",
+    ".json",
+    ".jsx",
+    ".j2",
+    ".md",
+    ".mjs",
+    ".png",
+    ".ps1",
+    ".py",
+    ".sh",
+    ".svg",
+    ".toml",
+    ".tpl",
+    ".ts",
+    ".tsx",
+    ".txt",
+    ".yaml",
+    ".yml",
+}
+BUNDLED_EXCLUDED_PARTS = {
+    ".git",
+    "__pycache__",
+    "node_modules",
+    "dist",
+    "build",
+    ".venv",
+    "venv",
+}
+MAX_BUNDLED_FILE_BYTES = 1_000_000
+MAX_BUNDLED_TOTAL_BYTES = 5_000_000
+MAX_BUNDLED_FILES_PER_SKILL = 100
+
+
+class BundledListingError(Exception):
+    """Raised when GitHub Contents API cannot list a skill support directory."""
+
+    def __init__(self, directory_path: str, reason: str):
+        self.directory_path = directory_path.strip("/") or "."
+        self.reason = reason
+        super().__init__(f"{self.directory_path}: {reason}")
 
 
 def _source_count(path: Path) -> int:
@@ -102,6 +179,82 @@ def _ordered_unique(values: list[str]) -> list[str]:
         seen.add(normalized)
         ordered.append(normalized)
     return ordered
+
+
+def skill_source_dir(relative_path: str) -> str:
+    """Return the source directory for a resolved SKILL.md path."""
+    normalized = (relative_path or "").strip().strip("/")
+    if not normalized or normalized == "SKILL.md":
+        return ""
+    if normalized.lower().endswith("/skill.md"):
+        return normalized.rsplit("/", 1)[0]
+    parent = PurePosixPath(normalized).parent.as_posix()
+    return "" if parent == "." else parent
+
+
+def bundled_relative_path(source_dir: str, repo_path: str) -> str:
+    """Return repo_path relative to source_dir using POSIX separators."""
+    source_dir = (source_dir or "").strip().strip("/")
+    repo_path = (repo_path or "").strip().strip("/")
+    if not source_dir:
+        return repo_path
+    prefix = f"{source_dir}/"
+    if repo_path == source_dir:
+        return ""
+    if not repo_path.startswith(prefix):
+        return ""
+    return repo_path[len(prefix):]
+
+
+def should_recurse_bundled_dir(relative_path: str) -> bool:
+    """Return True when a support subdirectory is safe to inspect."""
+    parts = [part for part in relative_path.strip("/").split("/") if part]
+    if not parts:
+        return False
+    if any(part.startswith(".") or part in BUNDLED_EXCLUDED_PARTS for part in parts):
+        return False
+    return parts[0] in BUNDLED_DIR_ALLOWLIST
+
+
+def is_safe_bundled_file(relative_path: str, size: int) -> bool:
+    """Return True when a bundled support file should be archived."""
+    normalized = relative_path.strip("/")
+    if not normalized or normalized == "SKILL.md":
+        return False
+    if size < 0 or size > MAX_BUNDLED_FILE_BYTES:
+        return False
+
+    parts = [part for part in normalized.split("/") if part]
+    if not parts:
+        return False
+    if any(part.startswith(".") or part in BUNDLED_EXCLUDED_PARTS for part in parts):
+        return False
+
+    filename = parts[-1]
+    if filename.lower() == "skill.md":
+        return False
+    if len(parts) == 1:
+        return filename in BUNDLED_ROOT_FILE_ALLOWLIST
+
+    if parts[0] not in BUNDLED_DIR_ALLOWLIST:
+        return False
+    if filename in BUNDLED_ROOT_FILE_ALLOWLIST:
+        return True
+    return PurePosixPath(filename).suffix.lower() in BUNDLED_FILE_EXTENSIONS
+
+
+def is_submodule_contents_entry(entry: dict) -> bool:
+    """Return True for GitHub Contents API submodules exposed as file entries."""
+    return entry.get("type") == "submodule" or "submodule_git_url" in entry
+
+
+def requires_complete_bundled_archive(skill_content: str) -> bool:
+    """Return True when SKILL.md explicitly depends on bundled support files."""
+    normalized = (skill_content or "").lower().replace("\\", "/")
+    for dirname in BUNDLED_DIR_ALLOWLIST:
+        if f"{dirname}/" in normalized:
+            return True
+    return any(filename.lower() in normalized for filename in BUNDLED_REQUIRED_ROOT_FILE_HINTS)
 
 
 def build_manifest_key(repo: str, path: str, name: str, category: str) -> str:
@@ -276,6 +429,52 @@ def filter_pending_skills(
         filtered.append(skill)
 
     return filtered, skipped, skipped_rows
+
+
+def validate_existing_archive_sources(
+    output_dir: Path,
+    security_blocklist: dict[str, dict],
+) -> None:
+    """Fail when existing archived skills are sourced from blocked repos."""
+    exclude = {".git", ".github-skills", ".template", ".templates", ".attic"}
+    blocked_archives: list[str] = []
+    metadata_errors: list[str] = []
+
+    for dirpath, dirnames, filenames in os.walk(output_dir):
+        dirnames[:] = [dirname for dirname in dirnames if dirname not in exclude]
+        if "metadata.json" not in filenames or "SKILL.md" not in filenames:
+            continue
+
+        meta_path = Path(dirpath) / "metadata.json"
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            metadata_errors.append(f"{meta_path}: {exc}")
+            continue
+
+        blocked_source = blocked_metadata_source(meta, security_blocklist)
+        if not blocked_source:
+            continue
+        blocked_entry, source_field = blocked_source
+
+        blocked_archives.append(
+            f"{meta_path.parent}: {blocked_entry['repo']} "
+            f"via {source_field} ({blocked_entry.get('reason', 'security blocklist')})"
+        )
+
+    if metadata_errors:
+        sample = "\n".join(metadata_errors[:20])
+        raise RuntimeError(
+            "Cannot validate existing archive metadata for security blocklist:\n"
+            f"{sample}"
+        )
+
+    if blocked_archives:
+        sample = "\n".join(blocked_archives[:50])
+        raise RuntimeError(
+            "Existing archive contains blocked source repos:\n"
+            f"{sample}"
+        )
 
 
 def build_branch_probe_order(
@@ -485,6 +684,9 @@ async def download_skills(
         len(manifest_entries),
         manifest_file,
     )
+    security_blocklist = load_security_blocklist()
+    logger.info("Security blocklist loaded: %s repos", len(security_blocklist))
+    validate_existing_archive_sources(output_dir, security_blocklist)
 
     # Check existing (across all categories)
     exclude = {".git", ".github-skills", ".template", ".templates", ".attic"}
@@ -573,6 +775,7 @@ async def download_skills(
         return {
             "downloaded": 0,
             "failed": 0,
+            "bundled_files": 0,
             "total": len(existing),
             "shard_count": shard_count,
             "shard_index": shard_index,
@@ -585,6 +788,7 @@ async def download_skills(
         "downloaded": 0,
         "failed": 0,
         "skipped": len(existing),
+        "bundled_files": 0,
         "url_attempts": 0,
         "manifest_hits": 0,
         "manifest_misses": 0,
@@ -679,6 +883,7 @@ async def download_skills(
         manifest_hit: bool = False,
         branch: str = "",
         relative_path: str = "",
+        bundled_file_count: int = 0,
     ) -> None:
         observations.append(
             {
@@ -696,11 +901,159 @@ async def download_skills(
                 "manifest_hit": manifest_hit,
                 "resolved_branch": branch,
                 "resolved_relative_path": relative_path,
+                "bundled_file_count": bundled_file_count,
             }
         )
 
     for skipped_skill, skipped_reason in pending_skipped_rows:
         add_observation(skipped_skill, outcome="skipped", failure_reason=skipped_reason)
+
+    async def fetch_contents_listing(
+        session: aiohttp.ClientSession,
+        repo: str,
+        branch: str,
+        directory_path: str,
+    ) -> list[dict]:
+        encoded_path = quote(directory_path.strip("/"), safe="/")
+        encoded_ref = quote(branch, safe="")
+        path_suffix = f"/{encoded_path}" if encoded_path else ""
+        url = f"{GITHUB_API_BASE}/repos/{repo}/contents{path_suffix}?ref={encoded_ref}"
+        try:
+            async with session.get(url, timeout=request_timeout) as resp:
+                if resp.status != 200:
+                    raise BundledListingError(directory_path, f"status {resp.status}")
+                payload = await resp.json()
+        except BundledListingError:
+            raise
+        except Exception as exc:
+            reason = str(exc) or exc.__class__.__name__
+            raise BundledListingError(directory_path, reason) from exc
+        if not isinstance(payload, list):
+            raise BundledListingError(directory_path, "unexpected payload")
+        return payload
+
+    async def collect_bundled_file_entries(
+        session: aiohttp.ClientSession,
+        repo: str,
+        branch: str,
+        resolved_skill_path: str,
+    ) -> list[dict]:
+        source_dir = skill_source_dir(resolved_skill_path)
+        queue = [source_dir]
+        seen_dirs = set()
+        candidates: list[dict] = []
+
+        while queue:
+            current_dir = queue.pop(0)
+            if current_dir in seen_dirs:
+                continue
+            seen_dirs.add(current_dir)
+
+            for entry in await fetch_contents_listing(session, repo, branch, current_dir):
+                entry_type = entry.get("type")
+                if is_submodule_contents_entry(entry):
+                    continue
+
+                repo_path = str(entry.get("path") or "").strip("/")
+                rel_path = bundled_relative_path(source_dir, repo_path)
+                if not rel_path:
+                    continue
+
+                if entry_type == "dir":
+                    if should_recurse_bundled_dir(rel_path):
+                        queue.append(repo_path)
+                    continue
+
+                if entry_type != "file":
+                    continue
+
+                try:
+                    size = int(entry.get("size") or 0)
+                except (TypeError, ValueError):
+                    size = -1
+                if is_safe_bundled_file(rel_path, size):
+                    candidates.append(
+                        {
+                            "repo_path": repo_path,
+                            "relative_path": rel_path,
+                            "download_url": entry.get("download_url") or "",
+                            "size": size,
+                        }
+                    )
+
+        selected: list[dict] = []
+        total_size = 0
+        for entry in sorted(candidates, key=lambda item: item["relative_path"]):
+            if len(selected) >= MAX_BUNDLED_FILES_PER_SKILL:
+                break
+            if total_size + entry["size"] > MAX_BUNDLED_TOTAL_BYTES:
+                continue
+            selected.append(entry)
+            total_size += entry["size"]
+        return selected
+
+    async def download_bundled_files(
+        session: aiohttp.ClientSession,
+        repo: str,
+        branch: str,
+        resolved_skill_path: str,
+        skill_dir: Path,
+        require_complete_archive: bool,
+    ) -> tuple[list[str], list[str], str]:
+        archived: list[str] = []
+        failed: list[str] = []
+        try:
+            entries = await collect_bundled_file_entries(session, repo, branch, resolved_skill_path)
+        except BundledListingError as exc:
+            if not require_complete_archive:
+                return archived, failed, ""
+            return archived, [str(exc)], "bundled_listing_failed"
+        if not entries:
+            return archived, failed, ""
+
+        skill_root = skill_dir.resolve()
+        for entry in entries:
+            rel_path = entry["relative_path"]
+            target_path = (skill_dir / rel_path).resolve()
+            try:
+                target_path.relative_to(skill_root)
+            except ValueError:
+                failed.append(rel_path)
+                continue
+
+            url = entry["download_url"] or (
+                f"{GITHUB_RAW_BASE}/{repo}/{branch}/{quote(entry['repo_path'], safe='/')}"
+            )
+            try:
+                async with session.get(url, timeout=request_timeout) as resp:
+                    if resp.status != 200:
+                        failed.append(rel_path)
+                        continue
+                    content = await resp.read()
+            except Exception:
+                failed.append(rel_path)
+                continue
+
+            if len(content) > MAX_BUNDLED_FILE_BYTES:
+                failed.append(rel_path)
+                continue
+            target_path.parent.mkdir(parents=True, exist_ok=True)
+            target_path.write_bytes(content)
+            archived.append(rel_path)
+
+        if failed and not require_complete_archive:
+            skill_root = skill_dir.resolve()
+            for rel_path in archived:
+                target_path = (skill_dir / rel_path).resolve()
+                try:
+                    target_path.relative_to(skill_root)
+                except ValueError:
+                    continue
+                target_path.unlink(missing_ok=True)
+            return [], [], ""
+
+        failure_reason = "bundled_download_failed" if failed else ""
+        return archived, failed, failure_reason
 
     async def try_download(session: aiohttp.ClientSession, skill: dict) -> bool:
         name = (skill.get("name") or "").strip() or "unknown"
@@ -714,6 +1067,13 @@ async def download_skills(
         if not repo:
             failures["no_repo"].append(name)
             add_observation(skill, outcome="failed", failure_reason="no_repo")
+            return False
+        blocked_entry = blocked_repo_entry(repo, security_blocklist)
+        if blocked_entry:
+            reason = blocked_entry.get("reason") or "blocked source repo"
+            failures["blocked_source"].append(f"{repo}: {name} ({reason})")
+            add_observation(skill, outcome="failed", failure_reason="blocked_source")
+            logger.warning("Blocked security-listed source repo: %s (%s)", repo, name)
             return False
 
         manifest_key = build_manifest_key(repo, path, name, category)
@@ -739,6 +1099,7 @@ async def download_skills(
                             if resp.status == 200:
                                 content = await resp.text()
                                 if content and len(content) > 50 and ("---" in content[:50] or "#" in content[:100]):
+                                    require_complete_archive = requires_complete_bundled_archive(content)
                                     # Valid content - save under category with normalized name
                                     category_dir = output_dir / category
                                     category_dir.mkdir(parents=True, exist_ok=True)
@@ -747,6 +1108,39 @@ async def download_skills(
                                     skill_dir.mkdir(parents=True, exist_ok=True)
                                     (skill_dir / "SKILL.md").write_text(content, encoding="utf-8")
                                     resolved_path = path or relative_path
+                                    (
+                                        bundled_files,
+                                        bundled_failures,
+                                        bundled_failure_reason,
+                                    ) = await download_bundled_files(
+                                        session,
+                                        repo,
+                                        branch,
+                                        relative_path,
+                                        skill_dir,
+                                        require_complete_archive,
+                                    )
+                                    if bundled_failures:
+                                        failure_reason = (
+                                            bundled_failure_reason or "bundled_download_failed"
+                                        )
+                                        shutil.rmtree(skill_dir, ignore_errors=True)
+                                        failures[failure_reason].append(
+                                            f"{name}: {', '.join(bundled_failures)}"
+                                        )
+                                        stats["url_attempts"] += attempts
+                                        add_observation(
+                                            skill,
+                                            outcome="failed",
+                                            failure_reason=failure_reason,
+                                            attempts=attempts,
+                                            manifest_hit=manifest_entry is not None,
+                                            branch=branch,
+                                            relative_path=relative_path,
+                                            bundled_file_count=len(bundled_files),
+                                        )
+                                        return False
+                                    stats["bundled_files"] += len(bundled_files)
                                     legal_meta = build_legal_metadata(
                                         repo=repo,
                                         path=resolved_path,
@@ -770,6 +1164,8 @@ async def download_skills(
                                             "stars": skill.get("stars", 0),
                                             "source": skill.get("source", ""),
                                             "dir_name": skill_dir.name,
+                                            "archive_mode": "directory" if bundled_files else "skill-md",
+                                            "bundled_files": bundled_files,
                                             **legal_meta,
                                         }, indent=2, ensure_ascii=False),
                                         encoding="utf-8"
@@ -793,6 +1189,7 @@ async def download_skills(
                                         manifest_hit=manifest_entry is not None,
                                         branch=branch,
                                         relative_path=relative_path,
+                                        bundled_file_count=len(bundled_files),
                                     )
                                     return True
                             elif resp.status == 403:
@@ -877,6 +1274,7 @@ async def download_skills(
     logger.info("DOWNLOAD COMPLETE")
     logger.info("=" * 60)
     logger.info(f"Downloaded: {stats['downloaded']}")
+    logger.info(f"Bundled files archived: {stats['bundled_files']}")
     logger.info(f"Failed: {stats['failed']}")
     logger.info(f"URL attempts: {stats['url_attempts']}")
     logger.info(f"Total skills: {final_count}")

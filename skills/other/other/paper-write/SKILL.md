@@ -1,7 +1,7 @@
 ---
 name: paper-write
 description: "Draft LaTeX paper section by section from an outline. Use when user says \"写论文\", \"write paper\", \"draft LaTeX\", \"开始写\", or wants to generate LaTeX content from a paper plan."
-argument-hint: [venue-or-section]
+argument-hint: "[venue-or-section] [— style-ref: <source>]"
 allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob, Agent, WebSearch, WebFetch, mcp__codex__codex, mcp__codex__codex-reply
 ---
 
@@ -36,6 +36,34 @@ Keep the existing `insleep` workflow, file layout, and defaults. Use the shared 
 - Read `../shared-references/citation-discipline.md` only when the built-in DBLP/CrossRef workflow is insufficient.
 
 These references are support material, not extra workflow phases.
+
+## Optional: Style reference (`— style-ref: <source>`, opt-in)
+
+Lets the user steer **structural** style (section ordering, theorem density, sentence cadence, figure density, bibliography style) toward a reference paper. **Default OFF — when the user does not pass `— style-ref`, do nothing differently from before.**
+
+Only when `— style-ref: <source>` appears in `$ARGUMENTS`, run the helper FIRST, before drafting:
+
+```bash
+if [ ! -f tools/extract_paper_style.py ]; then
+  echo "error: tools/extract_paper_style.py not found — re-run 'bash tools/install_aris.sh' to refresh the '.aris/tools' symlink (added in #174), or copy the helper manually from the ARIS repo" >&2
+  exit 1
+fi
+CACHE=$(python3 tools/extract_paper_style.py --source "<source>")
+case $? in
+  0) ;;                                       # use $CACHE/style_profile.md as structural guidance
+  2) echo "warning: style-ref skipped (missing optional dep)" >&2 ;;
+  3) echo "error: --style-ref source failed; aborting draft" >&2 ; exit 1 ;;
+  *) echo "error: helper failed unexpectedly; aborting draft" >&2 ; exit 1 ;;
+esac
+```
+
+Sources accepted: local TeX dir / file, local PDF, arXiv id (`2501.12345` or `arxiv:2501.12345`), http(s) URL. Overleaf URLs and project IDs are rejected — clone via `/overleaf-sync setup <id>` first and pass the local clone path.
+
+**Strict rules** (full contract in `tools/extract_paper_style.py` docstring):
+
+- Use `style_profile.md` as **structural** guidance only. Match section count, section ordering tendency, theorem-environment density, caption-length distribution, sentence cadence, math display ratio, citation style.
+- **Never copy prose, claims, examples, or terminology** from anything reachable through the cache. The profile is intentionally aggregate; if you need substance, use the user's own outline.
+- **Never pass `— style-ref` (or the cache contents) to reviewer / auditor sub-agents.** Cross-model review independence (`../shared-references/reviewer-independence.md`) requires reviewers see only the artifact and the user's prompt, not the author's stylistic context.
 
 ## Templates
 
@@ -237,7 +265,7 @@ If no standalone full-proof source exists:
 - If the appendix needs different wording, add an explicit notation bridge instead of silently renaming concepts
 - Resolve all mismatches before Step 4
 
-**Empirical motivation:** in our April 2026 NeurIPS run, the default behavior generated `"see supplementary proof document"` placeholders in the appendix. We had to manually pull 1264 lines of full proofs from a standalone `proof_dllm_full.tex` file. Without this pass, theory papers ship with sketch-only appendices that fail at theory venues.
+**Empirical motivation:** in a real theory-paper run, the default behavior generated `"see supplementary proof document"` placeholders in the appendix. The author had to manually pull hundreds of lines of full proofs from a standalone proofs file (e.g. `proof_full.tex`). Without this pass, theory papers ship with sketch-only appendices that fail at theory venues.
 
 ### Step 4: Build Bibliography
 
@@ -382,7 +410,7 @@ If `VERIFY` or `MISMATCH` is printed, do not invent metadata:
 
 **Citation reachability rule:** an entry is dead if its key does not appear in any `\cite...{}` command in `paper/main.tex` or any `paper/sections/*.tex` file.
 
-**Empirical motivation:** in our April 2026 NeurIPS run, 3 dead bib entries (`bresler2015`, `sedd2024`, `wainwright2008`) sat in `references.bib` for 5+ improvement rounds, and a `codd2025` entry had `year = {2026}` (key/year mismatch). Neither was flagged by the existing automated cleaning.
+**Empirical motivation:** in a real submission run, several dead bib entries sat in `references.bib` for many improvement rounds, and at least one entry had a key/year mismatch. Neither was flagged by the existing automated cleaning.
 
 **Citation verification rules (from claude-scholar + Imbad0202):**
 1. Every BibTeX entry must have: author, title, year, venue/journal

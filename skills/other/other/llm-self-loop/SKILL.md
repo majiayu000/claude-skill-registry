@@ -48,11 +48,6 @@ Naming the rule: babysitting an unloopable step is the failure mode this skill e
 - It does not bootstrap strict-mode validation gates — defer to `strict-validation-setup`.
 - It does not pick the test framework — defer to `test-driven` or the language's idiomatic tester.
 
-## Cross-references
-
-- `strict-validation-setup` — bootstrap the gates this skill verifies against. Pair: bootstrap once, run many.
-- `odin:duet` — adjacent two-party working posture. Use `duet` when preserving the human as inner-loop director is the goal; use this skill when removing the human from the inner loop is the goal. Different ends of the same axis.
-
 ## Posture
 
 Surgical, not architectural. Remove one gate at a time. After each fix, re-evaluate whether the loop now closes — sometimes one trigger removal is enough. Resist the temptation to redesign the whole system.

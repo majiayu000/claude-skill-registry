@@ -32,9 +32,16 @@ Analyze corrections.md for trends, recurring patterns, and actionable insights.
 
 4. **Check origin distribution** (APEX alignment):
    - Count corrections by `Origin` (ai-generated, human-written, ai-assisted)
-   - If ai-generated corrections dominate (>60%): flag for prompt/context improvement
+   - If ai-generated corrections dominate (>60%): flag for prompt/context improvement, BUT see `detection_origin` cross-check below before acting on this interpretation
    - If human-written corrections dominate (>60%): flag for process/training improvement
    - If ai-assisted is high: check if the AI contribution or the human contribution caused the issue
+
+4b. **Cross-check with detection_origin** (when field is present — see memory/README.md):
+   - Count corrections by `Detection_origin` if present (user / agent_self / hook / evaluator / eval_runner / external_review)
+   - **Critical disambiguation**: if Origin is heavily ai-generated AND detection_origin is heavily `user`, the apparent AI-quality signal is actually a HARNESS-DETECTION GAP. The AI is generating failures and the user is the only entity catching them. The right intervention is more harness checks (hooks, evaluators), NOT more AI context.
+   - If detection_origin is dominantly `user` (>70%): flag for harness-detection gap. Suggest where new hooks or evaluators could catch the failure modes earlier.
+   - If detection_origin is well-distributed across mechanisms: harness coverage is healthy; trust the Origin signal at face value.
+   - Surfaced 2026-05-03 (mycelium-roadmap dogfood): without this cross-check, the audit's "100% ai-generated → improve prompt context" framing would have driven the wrong intervention. Real signal was "AI generates, user catches" — fixed by shipping the framework-guard hook (harness-detection layer), not by improving prompts.
 
 5. **Root-cause recurring corrections** (5 Whys):
    For each correction that appears 3+ times, apply 5 Whys to find the systemic root:

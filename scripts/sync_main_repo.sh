@@ -61,6 +61,7 @@ rsync -a --delete --exclude '.git' "$data_dir/" "$main_dir/skills/"
 if [[ "$rebuild" -eq 1 ]]; then
   echo "Rebuilding main registry + index..."
   python "$main_dir/scripts/rebuild_registry.py" --skills-dir "$main_dir/skills" --registry "$main_dir/registry.json" --categories-dir "$main_dir/docs/categories"
+  python "$main_dir/scripts/build_registry_summary.py" --registry "$main_dir/registry.json" --plugins "$main_dir/sources/plugins.json" --output "$main_dir/registry_summary.json"
   python "$main_dir/scripts/build_search_index.py" --skills-dir "$main_dir/skills" --output "$main_dir/docs"
 fi
 

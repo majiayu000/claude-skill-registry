@@ -47,7 +47,12 @@ Supplemental references (only when needed):
 - `references/security-and-governance.md`
 - `references/do-dont-patterns.md`
 - `references/mcp-integration.md`
-- `references/trusted-modules.md` (load when provider is `aws`, `azurerm`, `google`, `oci`, or `ibm`)
+
+Conditional references (CRR; load only on detected signals):
+- `references/conditional/backend-state-safety.md` (backend is `s3`, `azurerm`, `gcs`, `remote`, `cloud`, `pg`, `consul`, or `local`, or task mentions backend migration, locking, state backup, or restore)
+- `references/conditional/trusted-modules.md` (provider is `aws`, `azurerm`, `google`, `oci`, or `ibm`)
+
+Do not load multiple conditional references unless the task spans multiple detected backends, providers, or tools.
 
 ## 4) Propose fix path with explicit risk controls
 
@@ -64,7 +69,7 @@ When applicable, output:
 - CI pipeline updates (plan/apply separation, artifacts, policy checks)
 - compliance controls (approvals, policy rules, evidence paths)
 
-When a trusted registry module covers the requested resource and the user has not asked for raw HCL, default to that module with an exact `version` pin (see `references/trusted-modules.md`).
+When a trusted registry module covers the requested resource and the user has not asked for raw HCL, default to that module with an exact `version` pin (see `references/conditional/trusted-modules.md`).
 
 ## 6) Validate before finalize
 

@@ -1,7 +1,7 @@
 ---
 name: framework-health
 description: "Evaluate Mycelium's own process effectiveness. Measures cycle velocity, discard trends, confidence calibration, gate effectiveness, regression rate. Run quarterly or every 20 cycles."
-instruction_budget: 42
+instruction_budget: 50
 ---
 
 # Framework Health Check
@@ -52,6 +52,20 @@ For each dimension, compute the metric and compare against trend (if prior asses
 **Regression Rate**:
 - Count diamonds that regressed at least once / total diamonds
 - Trend: decreasing (good) / increasing (bad) / stable
+
+### 2b. Re-run Deferred Design-Verification Eval Scenarios
+
+Re-run any eval scenario tagged `regression` AND `router-discipline` from `.claude/evals/scenarios/integration/`. These are deferred design-time decisions that need periodic re-verification (the AGENTS.md router design is the canonical case — see `agents-md-router-discipline.yml`).
+
+For each scenario:
+- Run via `/eval-runner` against the scenario file
+- Compare result against the scenario's `baseline_reference` field
+- Report:
+  - **Same outcome** → design holding; no action
+  - **Improved** → either the design got better OR the model improved; investigate which (a model improvement that hides a design regression is a Goodhart trap)
+  - **Regressed** → design drifted; flag for remediation in this assessment
+
+If a scenario fails its `success_criteria` for the first time, log to corrections.md as a new generalizable correction with the scenario name as evidence. Do not auto-remediate — surface the regression for human review.
 
 ### 3. Run Threshold Calibration
 

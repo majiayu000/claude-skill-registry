@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-03T02:33:36.982049Z",
+  "updated_at": "2026-05-04T19:23:00.166895Z",
   "categories": [
     {
       "name": "adb-meta-automation",
@@ -89,7 +89,7 @@
     {
       "name": "data",
       "code": "dat",
-      "count": 46586
+      "count": 46387
     },
     {
       "name": "data-access",
@@ -99,7 +99,7 @@
     {
       "name": "design",
       "code": "des",
-      "count": 9523
+      "count": 9515
     },
     {
       "name": "design-principles",
@@ -109,7 +109,7 @@
     {
       "name": "development",
       "code": "dev",
-      "count": 19719
+      "count": 19703
     },
     {
       "name": "development-code",
@@ -124,7 +124,7 @@
     {
       "name": "devops",
       "code": "ops",
-      "count": 5343
+      "count": 5318
     },
     {
       "name": "docs",
@@ -139,12 +139,17 @@
     {
       "name": "documents",
       "code": "doc",
-      "count": 3272
+      "count": 3271
     },
     {
       "name": "domains",
       "code": "oth",
       "count": 2
+    },
+    {
+      "name": "engineering",
+      "code": "oth",
+      "count": 3
     },
     {
       "name": "examples",
@@ -214,7 +219,7 @@
     {
       "name": "messaging",
       "code": "oth",
-      "count": 21
+      "count": 22
     },
     {
       "name": "meta",
@@ -229,7 +234,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 132618
+      "count": 132086
     },
     {
       "name": "performance",
@@ -239,7 +244,7 @@
     {
       "name": "personal-development",
       "code": "oth",
-      "count": 32
+      "count": 33
     },
     {
       "name": "planning",
@@ -259,7 +264,7 @@
     {
       "name": "productivity",
       "code": "pro",
-      "count": 2089
+      "count": 2095
     },
     {
       "name": "programming-languages",
@@ -284,7 +289,7 @@
     {
       "name": "security",
       "code": "sec",
-      "count": 1284
+      "count": 1263
     },
     {
       "name": "security-compliance",
@@ -344,7 +349,7 @@
     {
       "name": "testing",
       "code": "tst",
-      "count": 6768
+      "count": 6763
     },
     {
       "name": "testing-methodologies",

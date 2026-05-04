@@ -14,6 +14,7 @@ $council validate this plan                                    # validation (2 j
 $council brainstorm caching approaches                         # brainstorm
 $council --deep validate the implementation                    # 3 judges
 $council --preset=security-audit validate the auth system      # preset personas
+$council --deep --mixed --preset=leadership-quartet validate product thesis
 ```
 
 ## Modes
@@ -174,8 +175,10 @@ Save to `.agents/council/YYYY-MM-DD-<type>-<target>.md`:
 | architecture | coupling, scalability, maintainability |
 | research | breadth, depth, contrarian |
 | ops | reliability, observability, failure-modes |
+| leadership-quartet | product-manager, cto, chief-engineer, staff-engineer |
 
 Use: `$council --preset=security-audit validate the auth system`
+Use: `$council --deep --mixed --preset=leadership-quartet validate product thesis`
 
 ## Graceful Degradation
 

@@ -75,6 +75,10 @@ def test_build_plugins_index_and_stats_use_plugin_keys(tmp_path):
     )
 
     stats_data = json.loads((output_dir / "stats.json").read_text(encoding="utf-8"))
+    lite_data = json.loads((output_dir / "search-index-lite.json").read_text(encoding="utf-8"))
+    quality_data = json.loads((output_dir / "quality-index.json").read_text(encoding="utf-8"))
+    security_data = json.loads((output_dir / "security-index.json").read_text(encoding="utf-8"))
+    ranking_data = json.loads((output_dir / "ranking-index.json").read_text(encoding="utf-8"))
 
     assert "plugins" in plugins_data
     assert "collections" not in plugins_data
@@ -88,6 +92,96 @@ def test_build_plugins_index_and_stats_use_plugin_keys(tmp_path):
     assert "raw_skill_count" not in stats_data
     assert "dedup_skill_count" not in stats_data
     assert "total_collections" not in stats_data
+    assert stats_data["lite_index_count"] == 1
+    assert stats_data["lite_index_included_count"] == 1
+    assert lite_data["dedupe_key"] == "install|branch"
+    assert lite_data["total_count"] == 1
+    assert lite_data["included_count"] == 1
+    assert lite_data["skills"][0]["id"]
+    assert lite_data["skills"][0]["quality_grade"] in {"S", "A", "B", "C", "unknown", "blocked"}
+    assert lite_data["skills"][0]["security_status"] == "unknown"
+    assert quality_data["count"] == 1
+    assert security_data["count"] == 1
+    assert ranking_data["count"] == 1
+    assert ranking_data["records"][0]["recommended_score"] >= 0
+
+
+def test_build_search_index_lite_dedupes_install_and_branch(tmp_path):
+    output_dir = tmp_path / "docs"
+    skills = [
+        {
+            "name": "demo-weak",
+            "description": "short",
+            "repo": "owner/repo",
+            "path": "skills/demo/SKILL.md",
+            "branch": "main",
+            "category": "development",
+            "tags": [],
+            "stars": 1,
+            "install": "owner/repo/skills/demo/SKILL.md",
+            "source": "test",
+        },
+        {
+            "name": "demo-strong",
+            "description": "A much clearer description for the same install target with richer metadata.",
+            "repo": "owner/repo",
+            "path": "skills/demo/SKILL.md",
+            "branch": "main",
+            "category": "development",
+            "tags": ["demo", "quality", "search"],
+            "stars": 10,
+            "install": "owner/repo/skills/demo/SKILL.md",
+            "source": "test",
+        },
+    ]
+
+    build_search_index.build_search_index(skills, output_dir, source_name="test-skills")
+
+    lite_data = json.loads((output_dir / "search-index-lite.json").read_text(encoding="utf-8"))
+    assert lite_data["raw_count"] == 2
+    assert lite_data["total_count"] == 1
+    assert lite_data["included_count"] == 1
+    assert lite_data["skills"][0]["name"] == "demo-strong"
+
+
+def test_build_search_index_lite_dedupe_uses_untruncated_description_length(tmp_path):
+    output_dir = tmp_path / "docs"
+    install = "owner/repo/skills/demo/SKILL.md"
+    long_description = "a" * 240
+    shorter_but_over_truncation = "b" * 181
+    skills = [
+        {
+            "name": "demo-long",
+            "description": long_description,
+            "repo": "owner/repo",
+            "path": "skills/demo/SKILL.md",
+            "branch": "main",
+            "category": "development",
+            "tags": ["demo", "quality", "search"],
+            "stars": 10,
+            "install": install,
+            "source": "test",
+        },
+        {
+            "name": "demo-shorter",
+            "description": shorter_but_over_truncation,
+            "repo": "owner/repo",
+            "path": "skills/demo/SKILL.md",
+            "branch": "main",
+            "category": "development",
+            "tags": ["demo", "quality", "search"],
+            "stars": 10,
+            "install": install,
+            "source": "test",
+        },
+    ]
+
+    build_search_index.build_search_index(skills, output_dir, source_name="test-skills")
+
+    lite_data = json.loads((output_dir / "search-index-lite.json").read_text(encoding="utf-8"))
+    assert lite_data["total_count"] == 1
+    assert lite_data["skills"][0]["name"] == "demo-long"
+    assert "_description_length" not in lite_data["skills"][0]
 
 
 def test_utc_helpers_keep_trailing_z_suffix():

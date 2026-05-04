@@ -26,7 +26,7 @@ Walk the eight anchors one at a time against the artifact. For each: state the a
 
 ### `anchor` mode procedure
 
-Load the charter and anchors as imperatives the model will honor across subsequent responses. **Persistence is best-effort**: applies until the user signals "stop taste" or "normal mode" OR context is compacted, whichever comes first. Re-invoke `/taste anchor` if drift is observed. Mirrors `odin:caveman` (SKILL.md line 14) but acknowledges the runtime constraint honestly — a skill cannot enforce session state. The model honors a directive loaded once into context.
+Load the charter and anchors as imperatives the model will honor across subsequent responses. **Persistence is best-effort**: applies until the user signals "stop taste" or "normal mode" OR context is compacted, whichever comes first. Re-invoke `/taste anchor` if drift is observed. The model honors a directive loaded once into context.
 
 ## The two-sided charter
 
@@ -94,15 +94,6 @@ Side B (overkill) blocks: thesaurus soup, abstraction towers, decoration coverin
 Persistence: best-effort. Stop with "stop taste" or "normal mode". May reset on context compaction.
 ```
 
-## Register stacking
-
-When `/taste anchor` is active alongside another register (`odin:axiom-mode`, `odin:caveman`):
-
-- Anchor judges **content** (intent, restraint, one-strong-moment, anti-slop, anti-overkill).
-- Active register shapes **form** (predicate prose, telegraphic compression, etc.).
-- Anchor does NOT override register form choices; register does NOT override anchor judgment commitments.
-- Practical conflicts rare. Surface to user when they occur.
-
 ## Auto-clarity exception
 
 Suspend `/taste` register temporarily for:
@@ -113,11 +104,3 @@ Suspend `/taste` register temporarily for:
 - Direct user clarification requests.
 
 Resume the register once the high-stakes section ends.
-
-## Adjacent skills
-
-- `odin:design` — visual direction (paradigms, palettes, type, motion). `/taste` audits or anchors any domain; for visual specifics, charter cross-links to `odin:design/references/anti-slop.md` rather than duplicating.
-- `odin:caveman` — verbosity register (drop ceremony, preserve grammar). `/taste` decides what is committed; `caveman` shapes how it is said.
-- `odin:askme` — intent exploration (sample N hypotheses, clarify). `/taste` is post-intent judgment: applied to the artifact once intent is locked.
-- `elements-of-style:writing-clearly-and-concisely` — prose mechanics (Strunk's rules). `/taste` overlays POV on top of mechanics; both apply.
-- `impeccable:impeccable` — distillation and polish (transform). `/taste` is judgment, not transformation; runs before or after a polish pass, not in place of it.

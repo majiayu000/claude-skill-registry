@@ -31,7 +31,7 @@ The agent's value-add is **compression**: turning a technical surface the user d
 
 ## VS-gated question protocol [MANDATORY]
 
-Run `odin:askme`'s VS + actor-critic protocol before every `AskUserQuestion` fire (Phase 1, Phase 2, Phase 3). Duet-specific deltas only — askme owns the canonical spec:
+Run VS + actor-critic protocol before every `AskUserQuestion` fire (Phase 1, Phase 2, Phase 3). Duet-specific deltas only — askme owns the canonical spec:
 
 - **Format (compressed visible):** Render numbered survivors only; no weakness/contradiction/oversight block:
   ```
@@ -211,7 +211,3 @@ This protocol assumes a single "ask user" tool with the contract below. Other ag
 ## Disengagement
 
 The user leaves duet by saying "go ahead on your own", "full autonomy", "you drive from here", "/duet off", or similar. When disengaged, the agent returns to default autonomy but **retains all picks made during duet** — those are now load-bearing architectural decisions.
-
-## Pairing
-
-Pair with the `Duet` output style to minimize between-pick cognitive load: decisions before prose, jargon on demand, short execution updates, no validation language, no recap.

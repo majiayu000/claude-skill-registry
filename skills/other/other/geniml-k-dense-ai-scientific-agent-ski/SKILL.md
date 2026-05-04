@@ -17,19 +17,19 @@ Geniml is a Python package for building machine learning models on genomic inter
 Install geniml using uv:
 
 ```bash
-uv uv pip install geniml
+uv pip install geniml
 ```
 
 For ML dependencies (PyTorch, etc.):
 
 ```bash
-uv uv pip install 'geniml[ml]'
+uv pip install 'geniml[ml]'
 ```
 
 Development version from GitHub:
 
 ```bash
-uv uv pip install git+https://github.com/databio/geniml.git
+uv pip install git+https://github.com/databio/geniml.git
 ```
 
 ## Core Capabilities

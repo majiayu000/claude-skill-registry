@@ -137,6 +137,8 @@ Enables adversarial two-round review for plan validation. Use for high-stakes pl
 
 Five mandatory checks run during council validation — temporal interrogation, error-&-rescue map, council FAIL pattern check, test pyramid coverage, and input validation for enum-like fields. Each has auto-trigger conditions and judge-prompt snippets. Full step text and check tables in [references/mandatory-checks.md](references/mandatory-checks.md).
 
+When a plan introduces a regex, grep, glob, or similar scope predicate, also apply [references/scope-predicate-positive-negative-cases.md](references/scope-predicate-positive-negative-cases.md): require positive and negative examples before approval.
+
 ### Step 3: Interpret Council Verdict
 
 | Council Verdict | Pre-Mortem Result | Action |
@@ -207,6 +209,7 @@ See [references/examples.md](references/examples.md) for the troubleshooting tab
 - [references/compiled-prevention.md](references/compiled-prevention.md)
 - [references/scope-mode.md](references/scope-mode.md)
 - [references/mandatory-checks.md](references/mandatory-checks.md)
+- [references/scope-predicate-positive-negative-cases.md](references/scope-predicate-positive-negative-cases.md)
 - [references/write-pre-mortem-output.md](references/write-pre-mortem-output.md)
 - [references/examples.md](references/examples.md)
 - [references/council-fail-patterns.md](references/council-fail-patterns.md)

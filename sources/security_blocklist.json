@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "updated_at": "2026-05-04",
+  "blocked_repos": [
+    {
+      "repo": "blacklanternsecurity/red-run",
+      "reason": "Reported malware/backdoor payloads in published SKILL.md artifacts.",
+      "source_issue": "https://github.com/majiayu000/claude-skill-registry/issues/27",
+      "action": "reject",
+      "added_at": "2026-05-04"
+    },
+    {
+      "repo": "SnailSploit/Claude-Red",
+      "reason": "Reported malware/backdoor payloads in published SKILL.md artifacts.",
+      "source_issue": "https://github.com/majiayu000/claude-skill-registry/issues/27",
+      "action": "reject",
+      "added_at": "2026-05-04"
+    },
+    {
+      "repo": "trilwu/secskills",
+      "reason": "Reported malware/backdoor payloads in published SKILL.md artifacts.",
+      "source_issue": "https://github.com/majiayu000/claude-skill-registry/issues/27",
+      "action": "reject",
+      "added_at": "2026-05-04"
+    },
+    {
+      "repo": "macaugh/super-rouge-hunter-skills",
+      "reason": "Reported malware/backdoor payloads in published SKILL.md artifacts.",
+      "source_issue": "https://github.com/majiayu000/claude-skill-registry/issues/27",
+      "action": "reject",
+      "added_at": "2026-05-04"
+    },
+    {
+      "repo": "zebbern/SecOps-CLI-Guides",
+      "reason": "Reported reverse-shell payloads in published SKILL.md artifacts.",
+      "source_issue": "https://github.com/majiayu000/claude-skill-registry/issues/27",
+      "action": "reject",
+      "added_at": "2026-05-04"
+    },
+    {
+      "repo": "AgentSecOps/SecOpsAgentKit",
+      "reason": "Reported reverse-shell payloads in published SKILL.md artifacts.",
+      "source_issue": "https://github.com/majiayu000/claude-skill-registry/issues/27",
+      "action": "reject",
+      "added_at": "2026-05-04"
+    },
+    {
+      "repo": "openclaw/skills",
+      "reason": "Reported AI-agent trojan payloads in published SKILL.md artifacts.",
+      "source_issue": "https://github.com/majiayu000/claude-skill-registry/issues/27",
+      "action": "reject",
+      "added_at": "2026-05-04"
+    },
+    {
+      "repo": "YPYT1/All-skills",
+      "reason": "Reported AI-agent trojan payloads in published SKILL.md artifacts.",
+      "source_issue": "https://github.com/majiayu000/claude-skill-registry/issues/27",
+      "action": "reject",
+      "added_at": "2026-05-04"
+    },
+    {
+      "repo": "aifinlab/FinClaw",
+      "reason": "Reported AI-agent trojan payloads in published SKILL.md artifacts.",
+      "source_issue": "https://github.com/majiayu000/claude-skill-registry/issues/27",
+      "action": "reject",
+      "added_at": "2026-05-04"
+    }
+  ]
+}

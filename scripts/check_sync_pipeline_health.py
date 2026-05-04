@@ -56,6 +56,10 @@ def _validate_security_report(report_path: Path) -> list[str]:
     if invalid_keys:
         return [f"security report has non-integer fields: {', '.join(sorted(invalid_keys))}"]
 
+    failed = int(payload.get("failed", 0))
+    if failed > 0:
+        return [f"security report contains failed scans: failed={failed}"]
+
     return []
 
 

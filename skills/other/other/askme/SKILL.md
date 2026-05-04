@@ -47,7 +47,7 @@ Two-way tip-sharing dialogue. Surface one of your own observations / tips back t
 
 ### `adversarial` mode
 
-Walk the design tree one fork at a time. Per fork: state the question, recommend an answer with one-sentence rationale, wait for the user, do not proceed on assumed answers. Resolve dependencies parents-first; do not descend into children while a parent is unresolved. Stop conditions: every fork has a committed answer, a blocking unknown surfaces, or the design dissolves under questioning. Adjacent to `grill-me` (general design grilling) and `grill-ai-mastery` (AI-vocabulary anchored grilling) — pick those when the design under test is the anchor; pick this mode of `askme` when intent is the anchor and adversarial probing is what the user asked for.
+Walk the design tree one fork at a time. Per fork: state the question, recommend an answer with one-sentence rationale, wait for the user, do not proceed on assumed answers. Resolve dependencies parents-first; do not descend into children while a parent is unresolved. Stop conditions: every fork has a committed answer, a blocking unknown surfaces, or the design dissolves under questioning.
 
 ### Escalation triggers (collaborative → adversarial)
 

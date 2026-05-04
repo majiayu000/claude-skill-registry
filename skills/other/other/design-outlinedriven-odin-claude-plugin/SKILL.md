@@ -79,11 +79,11 @@ Six steps. Do not skip the divergence step.
 
 1. **Frame the surface.** Capture: surface (landing / dashboard / settings / docs / one-screen tool), primary user, density target, motion budget in ms. **Then write one sentence of physical scene** (who, where, ambient light, mood) that FORCES the dark/light decision. Category names alone do not force the answer — "observability dashboard" fails; "SRE glancing at incident severity on a 27-inch monitor at 2am in a dim room" succeeds. Consult `references/soul.md` for the philosophical anchor — *why* this design must feel a certain way before deciding *how*. Surface answers before generating directions; designing on assumed callers wastes the parallel budget.
 
-2. **Diverge: 3-4 directions in parallel via Verbalized Sampling.** Delegate the parallel-generation pattern from `odin:design-an-interface` — dispatch one Explore agent per direction with a constraint that *forces* contrast (post-minimalism vs neo-brutalism vs Material 3 vs Fluent, or named taste anchors that pull in opposite directions). Reject converged outputs; re-dispatch with sharpened constraints if two directions read alike. See `references/diversity.md` for the six diversity-engineering techniques (verbalized sampling, actor-critic per candidate, persona injection, temperature, most-unlikely reframing, anti-pattern catalog).
+2. **Diverge: 3-4 directions in parallel via Verbalized Sampling.** Dispatch one Explore agent per direction with a constraint that *forces* contrast (post-minimalism vs neo-brutalism vs Material 3 vs Fluent, or named taste anchors that pull in opposite directions). Reject converged outputs; re-dispatch with sharpened constraints if two directions read alike. See `references/diversity.md` for the six diversity-engineering techniques (verbalized sampling, actor-critic per candidate, persona injection, temperature, most-unlikely reframing, anti-pattern catalog).
 
 3. **Per direction, return a fixed shape.** Each direction states: name (one or two words), 1-2 taste anchors (Linear / Stripe / Things 3 / Rosé Pine / Are.na — name the references), OKLCH palette stub (4-6 swatches, never the default Tailwind ramp), type pair (display + text, named families), spacing scale subset committed (e.g., 4/8/16/24/48), motion budget in ms with one easing curve.
 
-4. **Pick via `odin:askme` exhaustive — per-axis single-select.** Each axis (direction, density, motion budget, type pair) is its own single-select question; the recommended option carries `(Recommended)` and is placed first. Ticking `(Recommended)` *is* accepting the default. Never use `multiSelect` for axis-with-default override semantics — that shape collapses N independent decisions into one ambiguous checklist; reserve `multiSelect` for additive picks only (feature toggles, optional sub-tasks).
+4. **Pick via per-axis single-select.** Each axis (direction, density, motion budget, type pair) is its own single-select question; the recommended option carries `(Recommended)` and is placed first. Ticking `(Recommended)` *is* accepting the default. Never use `multiSelect` for axis-with-default override semantics — that shape collapses N independent decisions into one ambiguous checklist; reserve `multiSelect` for additive picks only (feature toggles, optional sub-tasks).
 
 5. **Derive DTCG-shaped tokens from the picked direction.** Color, type, space, radius, shadow, motion — each a token, each referenced not hardcoded. Tokens precede component code; component code references tokens.
 
@@ -124,13 +124,6 @@ These references are runtime-agnostic — load them when the task fits the trigg
 - **Semantic structure precedes class names.** `<nav>` / `<main>` / `<article>` first; utility classes second. Class soup over weak structure is slop.
 - **Contrast: WCAG 2.1 AA is the legal floor.** APCA is a *design-input* tool only — it was REMOVED from WCAG 3 in July 2023 and never reinstated. Do not claim "WCAG 3 compliant via APCA"; that compliance does not exist. Verify AA with axe-core or the browser DevTools accessibility panel.
 
-## Integration hooks
-
-- `odin:askme` (exhaustive) — per-axis single-select for direction commitment; one tool call, ≤4 questions, `(Recommended)` first.
-- `odin:design-an-interface` — the parallel-generation pattern lifted for direction divergence; same constraint-forced contrast, different artifact.
-- `odin:plan` / `odin:proceed` / `odin:contexts` — orchestration when the design work spans multiple files or phases.
-- `odin:write-a-skill` — when a downstream component skill is needed (e.g., a chart-component skill), author it with the same SKILL.md contract.
-
 ## Verification gate
 
 1. ODIN design gate ≥95% per the `<design>` block above (tokens / density / paradigm / forbidden list).
@@ -148,9 +141,3 @@ These references are runtime-agnostic — load them when the task fits the trigg
 - Skipping the direction commit and jumping to component code — components without a direction are coupling without contract.
 - Mixing two paradigms on one surface — neo-brutalism shadow on a glass card reads as confusion.
 - Ranking directions by implementation effort — short-term cost is the wrong axis; taste fit and depth are the right ones.
-
-## Adjacent skills disambiguation
-
-- `design-an-interface` — module / API contract shape; not visual direction. Lift its parallel-generation pattern, not its scope.
-- `design-by-contract` — Eiffel-style pre/post conditions on functions; unrelated to UI.
-- `web-design-skills:web-design-engineer` and `ui-ux-pro-max:ui-ux-pro-max` — installed but bloated and preset-heavy; `odin:design` chooses restraint and direction over presets.

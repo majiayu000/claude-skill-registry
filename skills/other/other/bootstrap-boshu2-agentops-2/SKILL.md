@@ -19,7 +19,7 @@ output_contract: ".agents/ directory structure, GOALS.md, PRODUCT.md"
 ---
 # /bootstrap
 
-> **Quick Ref:** One command to set up the full AgentOps product layer. Progressive — bare repos get everything, existing repos fill gaps only.
+> **Quick Ref:** Product/operations layer around the `ao quick-start` core seed. Progressive — bare repos get the golden path first, existing repos fill gaps only.
 
 **YOU MUST EXECUTE THIS WORKFLOW. Do not just describe it.**
 
@@ -52,6 +52,7 @@ git rev-parse --is-inside-work-tree >/dev/null 2>&1 || { echo "NOT_A_GIT_REPO"; 
 HAS_GOALS=$([[ -f GOALS.md ]] && echo true || echo false)
 HAS_PRODUCT=$([[ -f PRODUCT.md ]] && echo true || echo false)
 HAS_README=$([[ -f README.md ]] && echo true || echo false)
+HAS_PROGRAM=$([[ -f PROGRAM.md || -f AUTODEV.md ]] && echo true || echo false)
 HAS_AGENTS=$([[ -d .agents ]] && echo true || echo false)
 HAS_HOOKS=$(grep -q "agentops" .claude/settings.json 2>/dev/null && echo true || echo false)
 HAS_AO=$(command -v ao >/dev/null && echo true || echo false)
@@ -64,7 +65,7 @@ Classify the repo:
 |-------|-----------|
 | **bare** | No GOALS.md, no PRODUCT.md, no .agents/ |
 | **partial** | Some artifacts present, some missing |
-| **complete** | All artifacts present |
+| **complete** | GOALS.md, PRODUCT.md, README.md, PROGRAM.md/AUTODEV.md, and .agents/ present |
 
 If `--dry-run` is set: report the state and what would be created, including whether `bd` would be recommended (when `HAS_BD` is false), then stop. Do not proceed to Steps 1-6.
 
@@ -116,14 +117,20 @@ If `HAS_README` is true and `--force` is not set: skip. Report "README.md exists
 
 If PRODUCT.md does not exist (Step 2 was skipped or failed): skip. Report "README.md skipped -- PRODUCT.md required first."
 
-### Step 4: .agents/ Structure
+### Step 4: Core Seed and .agents/ Structure
 
 If `HAS_AGENTS` is false (or `--force` is set):
 
-Create the directory structure:
+Prefer the CLI golden path:
 
 ```bash
-mkdir -p .agents/learnings .agents/council .agents/research .agents/plans .agents/rpi
+ao quick-start --no-beads
+```
+
+If `ao` is unavailable, create the minimal directory structure and report the exact command to repair later:
+
+```bash
+mkdir -p .agents/learnings .agents/council .agents/research .agents/plans .agents/rpi .agents/patterns .agents/retro .agents/handoff
 ```
 
 Create `.agents/AGENTS.md` if it does not exist:
@@ -153,7 +160,23 @@ Knowledge is automatically managed by the AgentOps flywheel:
 
 If `HAS_AGENTS` is true and `--force` is not set: skip. Report ".agents/ exists -- skipped."
 
-### Step 5: Hook Activation
+If `ao` is unavailable after fallback creation: report "Core seed repair command: `ao quick-start --dry-run` after installing ao."
+
+### Step 5: PROGRAM.md / AUTODEV.md
+
+If `HAS_PROGRAM` is false (or `--force` is set):
+
+Use the existing autodev CLI path:
+
+```bash
+ao autodev init "your current objective"
+```
+
+If `ao` is unavailable: do not create a placeholder. Report "PROGRAM.md skipped -- install ao, then run: `ao autodev init \"your current objective\"`."
+
+If `HAS_PROGRAM` is true and `--force` is not set: skip. Report "PROGRAM.md/AUTODEV.md exists -- skipped."
+
+### Step 6: Hook Activation
 
 If `HAS_AO` is true AND `HAS_HOOKS` is false (or `--force` is set):
 
@@ -165,7 +188,7 @@ If `HAS_AO` is false: skip. Report "Hooks skipped -- ao CLI not installed. Run: 
 
 If `HAS_HOOKS` is true and `--force` is not set: skip. Report "Hooks already configured -- skipped."
 
-### Step 6: Report
+### Step 7: Report
 
 Output a summary table:
 
@@ -177,6 +200,7 @@ Bootstrap complete.
 | GOALS.md      | created / skipped / failed |
 | PRODUCT.md    | created / skipped / failed |
 | README.md     | created / skipped / failed |
+| PROGRAM.md    | created / skipped / failed |
 | .agents/      | created / skipped / failed |
 | Hooks         | activated / skipped / failed |
 | bd            | present / recommended (not installed) |
@@ -221,3 +245,4 @@ Repo is now AgentOps-ready. Next: /rpi "your first goal"
 - [product](../product/SKILL.md) -- Product definition generation
 - [readme](../readme/SKILL.md) -- README generation
 - [quickstart](../quickstart/SKILL.md) -- New user onboarding (lighter than bootstrap)
+- [related operator runbooks](references/related-runbooks.md) -- host-hygiene runbooks (PATH rationalization, etc.)

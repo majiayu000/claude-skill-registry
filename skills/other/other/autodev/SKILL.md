@@ -1,6 +1,6 @@
 ---
 name: autodev
-description: 'Manage PROGRAM.md/AUTODEV.md contracts for bounded autonomous development loops.'
+description: 'Manage bounded autonomous dev loops.'
 skill_api_version: 1
 user-invocable: true
 context:

@@ -1,7 +1,7 @@
 ---
 name: canvas-update
 description: "Update canvas sections with new evidence. Ensures canvas stays current as the single source of truth."
-instruction_budget: 8
+instruction_budget: 12
 ---
 
 # Canvas Update
@@ -46,3 +46,11 @@ instruction_budget: 8
 3. Make the update with evidence citation
 4. Check cross-file consistency
 5. Log in decision-log.md
+
+## Counter-Argument Check (Bias Mitigation)
+
+Before applying the canvas update, draft a one-line counter-argument: *"What's the strongest case AGAINST this update — what evidence or perspective would invalidate it?"* If you can't articulate one, run `/devils-advocate` before proceeding.
+
+This addresses the bias cluster documented in corrections.md (L5 sycophancy 2026-04-20, eval overfitting 2026-04-30, sharper-framing-isn't-righter 2026-05-03). Common shape: agent prefers what feels right over what evidence supports under competing pressure (be helpful vs. be honest, sharpen framing vs. preserve evidence base). The counter-argument step forces the missing perspective explicit, so the bias surfaces before it lands in canvas.
+
+Especially important when interpolating user-supplied content (already untrusted per security-trust.md#prompt-injection-defense) AND when increasing a confidence value — both contexts where the agent is most likely to default toward the optimistic read.

@@ -58,3 +58,23 @@ def test_validate_pipeline_health_requires_report_when_security_passes(tmp_path)
     assert errors == [
         f"required security report is missing: {tmp_path / 'security-report.json'}"
     ]
+
+
+def test_validate_pipeline_health_rejects_failed_security_report(tmp_path):
+    report_path = tmp_path / "security-report.json"
+    report_path.write_text(
+        json.dumps({"total": 3, "passed": 2, "failed": 1}),
+        encoding="utf-8",
+    )
+
+    errors = validate_pipeline_health(
+        PipelineHealthInput(
+            discovery_outcome="success",
+            download_outcome="success",
+            security_outcome="success",
+            security_report=report_path,
+            require_security_report=True,
+        )
+    )
+
+    assert errors == ["security report contains failed scans: failed=1"]

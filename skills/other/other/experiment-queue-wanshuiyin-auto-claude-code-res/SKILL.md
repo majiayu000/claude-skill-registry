@@ -43,22 +43,22 @@ All of these are pure engineering friction that can be orchestrated.
 A manifest lists jobs with explicit state:
 
 ```yaml
-project: dllm_distill
-cwd: /home/rfyang/rfyang_code/dllm_experiments_torch
-conda: dllm
+project: my_grid_experiment
+cwd: /home/user/your_project
+conda: my_env
 # Optional: override conda hook path if conda is not at a standard location.
 # Can be a bare path (wrapped automatically) or a full `eval "$(... shell.bash hook)"` string.
 # Falls back to auto-detect of ~/anaconda3, ~/miniconda3, /opt/anaconda3, etc.,
 # or the ARIS_CONDA_HOOK environment variable.
 # conda_hook: /custom/path/to/conda
-ssh: SJTUServer5
+ssh: gpu-server
 default_cmd: >
-  python run_pc_distill_exp.py --backbone softmax --lam 0.5
+  python run_distill.py --backbone softmax --lam 0.5
   --K 500 --L 96 --W 16 --n_steps 30000 --batch_size 128 --lr 1e-4
 
 preconditions:
   - type: checkpoint_exists
-    path: checkpoints/transformer/pcc_softmax_L96_K500_N{N}_wikitext103.pt
+    path: checkpoints/transformer/teacher_L96_K500_N{N}.pt
 
 gpus: [0, 1, 2, 3, 4, 5, 6, 7]
 max_parallel: 8
@@ -101,7 +101,17 @@ Input can be:
 - **Grid spec** (Cartesian product of param values, e.g., `N=[64,128,256] × n=[50K,150K,500K,652K]`)
 - **Natural language description** (Claude parses into manifest)
 
-Save the built manifest to `<project>/experiment_queue/<timestamp>/manifest.json` for reproducibility.
+Bind run identifiers once so every later step refers to the same paths:
+
+```bash
+# REPLACE the placeholder path before running, or pre-export PROJECT_DIR:
+PROJECT_DIR="${PROJECT_DIR:?set PROJECT_DIR to the local project root}"
+RUN_TS=$(date -u +%Y%m%dT%H%M%SZ)
+LOCAL_RUN_DIR="$PROJECT_DIR/experiment_queue/$RUN_TS"
+mkdir -p "$LOCAL_RUN_DIR"
+```
+
+Save the built manifest to `$LOCAL_RUN_DIR/manifest.json` for reproducibility.
 
 ### Step 2: Pre-flight
 
@@ -115,25 +125,62 @@ If any precondition fails, show user which jobs are blocked and why.
 
 ### Step 3: Launch Scheduler
 
-Resolve the bundled helper directory from the managed Codex install manifest or from `ARIS_REPO`, then copy the helpers to the SSH host:
+Resolve the bundled helper directory (`$PROJECT_DIR` / `$RUN_TS` / `$LOCAL_RUN_DIR` already set in Step 1):
 
 ```bash
 ARIS_REPO="${ARIS_REPO:-$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills-codex.txt 2>/dev/null)}"
 [ -n "$ARIS_REPO" ] || { echo "ERROR: ARIS_REPO not set. Use install_aris_codex.sh managed install or export ARIS_REPO=/path/to/ARIS."; exit 1; }
 QUEUE_TOOLS="$ARIS_REPO/tools/experiment_queue"
 [ -f "$QUEUE_TOOLS/queue_manager.py" ] || { echo "ERROR: queue_manager.py not found under $QUEUE_TOOLS"; exit 1; }
-ssh <server> 'mkdir -p ~/.aris_queue'
-scp "$QUEUE_TOOLS/queue_manager.py" "$QUEUE_TOOLS/build_manifest.py" <server>:~/.aris_queue/
 ```
 
-Run `tools/experiment_queue/queue_manager.py` as a detached `nohup` process on the SSH host:
+Compute remote paths (note: modern `scp` runs in SFTP mode and does NOT reliably expand `$HOME` in destination paths — use remote-relative for `scp`, `$HOME`-prefixed for `ssh` command strings):
 
 ```bash
-ssh <server> 'nohup python3 ~/.aris_queue/queue_manager.py \
-  --manifest /tmp/manifest.json \
-  --state /tmp/queue_state.json \
-  --log /tmp/queue.log \
-  > /tmp/queue_mgr.log 2>&1 &'
+REMOTE_RUN_REL=".aris_queue/runs/$RUN_TS"
+REMOTE_RUN_DIR="\$HOME/$REMOTE_RUN_REL"
+```
+
+Bootstrap remote run dir + copy helpers + copy manifest. Per-invocation, idempotent:
+
+```bash
+ssh <server> "mkdir -p \"$REMOTE_RUN_DIR/logs\" \"\$HOME/.aris_queue\""
+scp "$QUEUE_TOOLS/queue_manager.py" "$QUEUE_TOOLS/build_manifest.py" <server>:.aris_queue/
+scp "$LOCAL_RUN_DIR/manifest.json" <server>:"$REMOTE_RUN_REL/manifest.json"
+```
+
+Launch the scheduler as a detached `nohup` process:
+
+```bash
+ssh <server> "nohup python3 \"\$HOME/.aris_queue/queue_manager.py\" \\
+  --manifest \"$REMOTE_RUN_DIR/manifest.json\" \\
+  --state    \"$REMOTE_RUN_DIR/queue_state.json\" \\
+  --log-dir  \"$REMOTE_RUN_DIR/logs\" \\
+  > \"$REMOTE_RUN_DIR/queue_mgr.log\" 2>&1 &"
+```
+
+Notes: `--log-dir` is what `queue_manager.py` actually consumes (per-job log files for OOM detection). Do NOT pass `--log <path>` — that flag is declared but unused.
+
+Persist run identifiers for monitoring + resume (sourceable later):
+
+```bash
+{
+  printf 'PROJECT_DIR=%q\n'    "$PROJECT_DIR"
+  printf 'RUN_TS=%q\n'         "$RUN_TS"
+  printf 'LOCAL_RUN_DIR=%q\n'  "$LOCAL_RUN_DIR"
+  printf 'REMOTE_RUN_REL=%q\n' "$REMOTE_RUN_REL"
+  printf 'REMOTE_RUN_DIR=%q\n' "$REMOTE_RUN_DIR"
+} > "$LOCAL_RUN_DIR/run_meta.txt"
+```
+
+`%q` shell-escapes values; `REMOTE_RUN_DIR` keeps a literal `$HOME` (correct for later reuse inside `ssh "..."`).
+
+**Resume an existing queue.** Do NOT regenerate `RUN_TS`. Reload from `run_meta.txt` and re-run only the launch command above (not the bootstrap):
+
+```bash
+LOCAL_RUN_DIR="/abs/path/to/project/experiment_queue/<existing-run-ts>"
+. "$LOCAL_RUN_DIR/run_meta.txt"
+# Then re-run the launch command verbatim; do NOT re-run mkdir/scp.
 ```
 
 The scheduler:
@@ -148,20 +195,21 @@ The scheduler:
 
 ### Step 4: Monitoring
 
-User can check state anytime:
+User can check state anytime, using `$REMOTE_RUN_DIR` from Step 3 (or reload it from `$LOCAL_RUN_DIR/run_meta.txt`):
 
 ```bash
-ssh <server> cat /tmp/queue_state.json | jq '.jobs | group_by(.status) | map({(.[0].status): length}) | add'
+ssh <server> "cat \"$REMOTE_RUN_DIR/queue_state.json\"" \
+  | jq '.jobs | group_by(.status) | map({(.[0].status): length}) | add'
 ```
 
-Or invoke `/monitor-experiment` which reads the state file.
+Note: `/monitor-experiment` is currently focused on screen sessions, result JSONs, and W&B; it does not yet read `queue_state.json` directly. For queue-state monitoring, use the literal command above.
 
 ### Step 5: Post-completion
 
 When all jobs in `manifest.json` are `completed` or `stuck`:
-- Scheduler exits cleanly
-- Write final summary to `<project>/experiment_queue/<timestamp>/summary.md`
-- Invoke `/analyze-results` if `analyze_on_complete: true`
+- The remote scheduler (`queue_manager.py`) exits cleanly with `All jobs done` to its own stdout (captured in `$REMOTE_RUN_DIR/queue_mgr.log`). It does NOT write the local summary.
+- The **local** skill agent then aggregates state into `$LOCAL_RUN_DIR/summary.md` (read `$REMOTE_RUN_DIR/queue_state.json`, group by status, optionally pull per-job logs).
+- Local skill agent invokes `/analyze-results` if `analyze_on_complete: true`.
 
 ## Grid Spec Syntax
 
@@ -189,8 +237,8 @@ phases:
     grid:
       N: [384, 512]
     template:
-      cmd: python run_pc_exp.py --direction c --backbone softmax --n_hidden ${N} ...
-      output_check: checkpoints/transformer/pcc_softmax_L96_K500_N${N}_wikitext103.pt
+      cmd: python run_train.py --direction c --backbone softmax --n_hidden ${N} ...
+      output_check: checkpoints/transformer/teacher_L96_K500_N${N}.pt
   
   - name: distill_students
     depends_on: train_teachers
@@ -198,8 +246,8 @@ phases:
       N: [384, 512]
       seed: [42, 200, 201]
     template:
-      cmd: python run_pc_distill_exp.py --n_hidden ${N} --seed ${seed} ...
-      output_check: figures/pcdistill_sw_N${N}_*_seed${seed}.json
+      cmd: python run_distill.py --n_hidden ${N} --seed ${seed} ...
+      output_check: figures/distill_sw_N${N}_*_seed${seed}.json
 ```
 
 Scheduler enforces `depends_on`: `distill_students` jobs stay `pending` until all
@@ -242,7 +290,7 @@ If scheduler crashes / is killed:
 ```markdown
 # Experiment Queue Summary
 
-**Project**: dllm_distill
+**Project**: my_grid_experiment
 **Started**: 2026-04-16 11:36:29
 **Completed**: 2026-04-16 18:02:14
 **Total wall-clock**: 6h 25m
@@ -256,7 +304,7 @@ If scheduler crashes / is killed:
 | multi_seed_validation | 16 | 16 | 0 | 1h 25m |
 
 ## Results Files
-- 42 JSON files in `figures/pcdistill_sw_*.json`
+- 42 JSON files in `figures/distill_sw_*.json`
 
 ## Next Steps
 - Run `/analyze-results` on output JSONs

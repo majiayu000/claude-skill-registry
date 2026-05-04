@@ -9,7 +9,6 @@ Install by downloading the installer script first, reviewing it, and then runnin
 `curl -LsSf https://hf.co/cli/install.sh -o /tmp/hf-install.sh && less /tmp/hf-install.sh && bash /tmp/hf-install.sh`
 
 ## When to Use
-
 Use this skill when you need the `hf` CLI for Hub authentication, downloads, uploads, repo management, or basic compute operations.
 
 The Hugging Face Hub CLI tool `hf` is available. IMPORTANT: The `hf` command replaces the deprecated `huggingface-cli` command.
@@ -194,3 +193,8 @@ Some command examples:
 
 - Use `hf <command> --help` for full options, descriptions, usage, and real-world examples
 - Authenticate with `HF_TOKEN` env var (recommended) or with `--token`
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

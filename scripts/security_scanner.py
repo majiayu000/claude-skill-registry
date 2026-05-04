@@ -4,14 +4,15 @@ Security Scanner for SKILL.md files
 Implements automated security checks for skill registry
 """
 
-import os
-import re
 import json
-import yaml
-import hashlib
+import re
 from pathlib import Path
 from typing import Dict, List, Tuple
+
 import jsonschema
+import yaml
+
+from security_blocklist import blocked_metadata_source, load_security_blocklist
 
 # Load schema
 SCHEMA_PATH = Path(__file__).parent.parent / "schema" / "skill.schema.json"
@@ -107,6 +108,41 @@ SENSITIVE_PATHS = [
     '/proc/', '/sys/', '$HOME/.env', '.env',
 ]
 
+BUNDLED_SCAN_DIRS = ('references', 'scripts', 'assets', 'templates', 'examples')
+BUNDLED_SCAN_ROOT_FILES = (
+    'package.json',
+    'package-lock.json',
+    'pnpm-lock.yaml',
+    'yarn.lock',
+    'requirements.txt',
+    'pyproject.toml',
+    'uv.lock',
+    'README.md',
+)
+BUNDLED_SCAN_EXTENSIONS = {
+    '.bash',
+    '.css',
+    '.csv',
+    '.html',
+    '.js',
+    '.json',
+    '.jsx',
+    '.j2',
+    '.md',
+    '.mjs',
+    '.ps1',
+    '.py',
+    '.sh',
+    '.svg',
+    '.toml',
+    '.tpl',
+    '.ts',
+    '.tsx',
+    '.txt',
+    '.yaml',
+    '.yml',
+}
+
 INJECTION_PATTERNS = [
     re.compile(r'ignore\s+(all\s+)?(previous|prior|above)\s+(instructions|prompts)', re.IGNORECASE),
     re.compile(r'disregard\s+(everything|all)', re.IGNORECASE),
@@ -129,6 +165,7 @@ class SecurityScanner:
     def __init__(self, schema_path: str = None):
         self.schema_path = schema_path or SCHEMA_PATH
         self.schema = self._load_schema()
+        self.security_blocklist = load_security_blocklist()
         self.issues = []
 
     def _load_schema(self) -> dict:
@@ -186,16 +223,19 @@ class SecurityScanner:
         # 4. Check for sensitive paths
         self._scan_sensitive_paths(content)
 
-        # 5. Check bundled scripts
+        # 5. Check bundled scripts and reference implementations
         self._scan_bundled_files(skill_path.parent)
 
-        # 6. Prompt injection detection
+        # 6. Block known malicious or high-risk source repositories
+        self._scan_blocked_source(skill_path)
+
+        # 7. Prompt injection detection
         self._detect_prompt_injection(content)
 
-        # 7. Hardcoded credentials detection
+        # 8. Hardcoded credentials detection
         self._detect_credentials(content, skill_path)
 
-        # 8. Obfuscation-to-execution chains
+        # 9. Obfuscation-to-execution chains
         self._detect_obfuscation_exec(content, skill_path)
 
         # Determine if safe (only fail on truly dangerous issues)
@@ -205,6 +245,8 @@ class SecurityScanner:
             'dangerous_pattern',
             'file_too_large',
             'hardcoded_credential',
+            'metadata_read_error',
+            'blocked_source',
         }
         has_critical = any(
             i['severity'] == 'error' and i.get('type') in critical_types
@@ -289,32 +331,85 @@ class SecurityScanner:
                 })
 
     def _scan_bundled_files(self, skill_dir: Path):
-        """Scan bundled scripts and resources"""
-        scripts_dir = skill_dir / 'scripts'
-        if not scripts_dir.exists():
-            return
+        """Scan bundled executable/reference files."""
+        for filename in BUNDLED_SCAN_ROOT_FILES:
+            bundled_file = skill_dir / filename
+            if bundled_file.is_file():
+                self._scan_bundled_text_file(bundled_file)
 
-        for script_file in scripts_dir.rglob('*'):
-            if not script_file.is_file():
+        for dirname in BUNDLED_SCAN_DIRS:
+            bundled_dir = skill_dir / dirname
+            if not bundled_dir.exists():
                 continue
 
-            # Check file size
-            size = script_file.stat().st_size
-            if size > 10_000_000:  # 10MB
-                self.issues.append({
-                    'severity': 'error',
-                    'type': 'file_too_large',
-                    'file': str(script_file),
-                    'message': f'Bundled file too large: {size} bytes'
-                })
+            for script_file in bundled_dir.rglob('*'):
+                if not script_file.is_file():
+                    continue
 
-            # Scan script content
-            if script_file.suffix in ['.py', '.sh', '.js']:
-                try:
-                    content = script_file.read_text(encoding='utf-8')
-                    self._scan_dangerous_patterns(content, script_file)
-                except (OSError, UnicodeDecodeError):
-                    pass
+                if not self._check_bundled_file_size(script_file):
+                    continue
+                if script_file.suffix.lower() in BUNDLED_SCAN_EXTENSIONS:
+                    self._scan_bundled_text_file(script_file)
+
+    def _check_bundled_file_size(self, bundled_file: Path) -> bool:
+        """Return False and record an issue when an archived support file is too large."""
+        size = bundled_file.stat().st_size
+        if size > 10_000_000:  # 10MB
+            self.issues.append({
+                'severity': 'error',
+                'type': 'file_too_large',
+                'file': str(bundled_file),
+                'message': f'Bundled file too large: {size} bytes'
+            })
+            return False
+        return True
+
+    def _scan_bundled_text_file(self, bundled_file: Path):
+        """Scan an archived support file when it is text-like executable input."""
+        if not self._check_bundled_file_size(bundled_file):
+            return
+
+        try:
+            content = bundled_file.read_text(encoding='utf-8')
+            self._scan_dangerous_patterns(content, bundled_file)
+            self._detect_credentials(content, bundled_file)
+            self._detect_obfuscation_exec(content, bundled_file)
+        except (OSError, UnicodeDecodeError):
+            pass
+
+    def _scan_blocked_source(self, skill_path: Path):
+        """Fail archived skills sourced from a repo on the security blocklist."""
+        metadata_path = skill_path.parent / "metadata.json"
+        if not metadata_path.exists():
+            return
+
+        try:
+            metadata = json.loads(metadata_path.read_text(encoding='utf-8'))
+        except (OSError, json.JSONDecodeError) as exc:
+            self.issues.append({
+                'severity': 'error',
+                'type': 'metadata_read_error',
+                'file': str(metadata_path),
+                'message': f'Cannot read metadata for blocklist scan: {exc}',
+            })
+            return
+
+        blocked_source = blocked_metadata_source(metadata, self.security_blocklist)
+        if not blocked_source:
+            return
+        blocked_entry, source_field = blocked_source
+
+        self.issues.append({
+            'severity': 'error',
+            'type': 'blocked_source',
+            'file': str(metadata_path),
+            'repo': blocked_entry["repo"],
+            'metadata_field': source_field,
+            'message': (
+                f'Skill source repo "{blocked_entry["repo"]}" is blocked: '
+                f'{blocked_entry.get("reason", "security blocklist")}'
+            ),
+        })
 
     def _detect_credentials(self, content: str, file_path: Path):
         """Detect hardcoded credentials and secret key formats"""
@@ -381,8 +476,9 @@ class SecurityScanner:
 
 def resolve_scan_file_list(skills_dir: Path, file_list_path: Path) -> List[Path]:
     """
-    Resolve a newline-delimited file list into SKILL.md paths under skills_dir.
-    Lines may be absolute or relative paths.
+    Resolve a newline-delimited archive file list into SKILL.md paths under skills_dir.
+    Lines may be absolute or relative paths. Non-SKILL.md files map to the
+    nearest parent directory that owns a SKILL.md.
     """
     if not file_list_path.exists():
         return []
@@ -390,6 +486,16 @@ def resolve_scan_file_list(skills_dir: Path, file_list_path: Path) -> List[Path]
     skills_root = skills_dir.resolve()
     selected = []
     seen = set()
+
+    def owning_skill_file(candidate: Path) -> Path | None:
+        current = candidate if candidate.is_dir() else candidate.parent
+        while True:
+            skill_file = current / "SKILL.md"
+            if skill_file.is_file():
+                return skill_file
+            if current == skills_root:
+                return None
+            current = current.parent
 
     for raw in file_list_path.read_text(encoding='utf-8', errors='ignore').splitlines():
         line = raw.strip()
@@ -407,16 +513,18 @@ def resolve_scan_file_list(skills_dir: Path, file_list_path: Path) -> List[Path]
             # Ignore paths outside scan root for safety.
             continue
 
-        if candidate.name != "SKILL.md":
-            continue
-        if not candidate.exists() or not candidate.is_file():
+        if not candidate.exists():
             continue
 
-        key = str(candidate)
+        skill_file = candidate if candidate.name == "SKILL.md" else owning_skill_file(candidate)
+        if not skill_file:
+            continue
+
+        key = str(skill_file)
         if key in seen:
             continue
         seen.add(key)
-        selected.append(candidate)
+        selected.append(skill_file)
 
     return selected
 

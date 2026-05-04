@@ -1,7 +1,7 @@
 ---
 name: launch-tier
 description: "Classify releases into launch tiers and plan go-to-market. Based on Lauchengco's Loved framework."
-instruction_budget: 58
+instruction_budget: 62
 ---
 
 # Launch Tier Classification
@@ -147,3 +147,9 @@ This closes the data loop: predicted ICE → actual delivery metrics → actual 
 - Shotton: Choice Factory (ethical behavioral science in positioning)
 - Kim: Three Ways (Second Way -- amplify feedback loops right-to-left)
 - Torres: Continuous Discovery (market signals feed back into OST)
+
+## Counter-Argument Check (Bias Mitigation)
+
+Before finalizing the launch tier classification AND before drafting any positioning copy, draft a one-line counter-argument: *"What's the strongest case that this is a smaller tier than I'm claiming? That this positioning is overstating impact? That market readiness is weaker than the evidence suggests?"* If you can't articulate one, run `/devils-advocate` before proceeding.
+
+This addresses the bias cluster documented in corrections.md (L5 sycophancy 2026-04-20 — promotional language in decision logs at L5 — explicitly named this skill's domain; eval overfitting 2026-04-30; sharper-framing-isn't-righter 2026-05-03). L5 work is the highest-risk context for bias because the framing pressure is explicit ("we're going to market"). G-M1 catches the WORST language, but bias appears in subtler tier-classification and positioning choices that G-M1 doesn't see. The counter-argument is the upstream check.

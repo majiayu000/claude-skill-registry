@@ -26,13 +26,13 @@ Install fluidsim using uv with appropriate feature flags:
 
 ```bash
 # Basic installation
-uv uv pip install fluidsim
+uv pip install fluidsim
 
 # With FFT support (required for most solvers)
-uv uv pip install "fluidsim[fft]"
+uv pip install "fluidsim[fft]"
 
 # With MPI for parallel computing
-uv uv pip install "fluidsim[fft,mpi]"
+uv pip install "fluidsim[fft,mpi]"
 ```
 
 Set environment variables for output directories (optional):

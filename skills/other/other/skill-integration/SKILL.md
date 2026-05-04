@@ -11,6 +11,12 @@ description: >
   observation), or when skill refinement, creation, or suggestion review
   is discussed. Critical for maintaining the adaptive learning layer.
 user-invocable: true
+version: 1.0.0
+format: 2025-10-02
+triggers:
+  - "Manages skill-creator integration with GSD workflows including skill loading, session observation, bounded learning guardrails, and pattern detection"
+updated: 2026-04-25
+status: ACTIVE
 ---
 
 # Skill-Creator Integration

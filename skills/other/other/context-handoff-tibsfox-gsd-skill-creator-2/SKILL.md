@@ -1,6 +1,12 @@
 ---
 name: context-handoff
 description: Creates context handoff documents for session continuity. Use when ending sessions, switching tasks, or handing off work.
+version: 1.0.0
+format: 2025-10-02
+triggers:
+  - "ending sessions, switching tasks, or handing off work"
+updated: 2026-04-25
+status: ACTIVE
 ---
 
 # Context Handoff

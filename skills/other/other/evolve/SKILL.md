@@ -1,6 +1,6 @@
 ---
 name: evolve
-description: 'Run autonomous improvement: goals, planning, implementation, validation, repeat.'
+description: 'Run autonomous improvement loops.'
 skill_api_version: 1
 user-invocable: true
 context:
@@ -421,7 +421,7 @@ See `references/examples.md` for detailed walkthroughs.
 |---------|----------|
 | Loop exits immediately | Remove `~/.config/evolve/KILL` or `.agents/evolve/STOP` |
 | Stagnation after repeated empty passes | Queue layers and producer layers were empty across multiple passes — dormancy is the fallback outcome |
-| `ao goals measure` hangs | Use `--timeout 30` flag or `--beads-only` to skip |
+| `ao goals measure` hangs | Use `--timeout 30 --total-timeout 75` or `--beads-only` to skip |
 | Regression gate reverts | Review reverted changes, narrow scope, re-run; claimed work items must be released back to available state |
 
 See `references/cycle-history.md` for advanced troubleshooting.

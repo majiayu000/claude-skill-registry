@@ -1,7 +1,7 @@
 ---
 name: retrospective
 description: "Structured retrospective after completing a delivery increment or diamond. Captures learning for continuous improvement."
-instruction_budget: 53
+instruction_budget: 58
 ---
 
 # Retrospective
@@ -186,3 +186,11 @@ After delivery retrospective, always ask:
 4. Update canvas/bvssh-health.yml if dimensions changed
 5. Log in decision-log.md
 6. Record cycle in `canvas/cycle-history.yml` (see Cycle History Recording above)
+
+## Counter-Argument Check (Bias Mitigation)
+
+Before finalizing the retrospective, draft a one-line counter-argument for each major claim: *"What's the strongest case that this 'went well' was actually luck? That this 'went wrong' was actually unavoidable? That this 'pattern' is actually noise?"* If you can't articulate counter-cases, run `/devils-advocate` before locking in the corrections/patterns.
+
+This addresses the bias cluster documented in corrections.md (L5 sycophancy 2026-04-20, eval overfitting 2026-04-30, sharper-framing-isn't-righter 2026-05-03). Retrospectives are particularly bias-prone — narrative coherence is rewarded, the agent is incentivized to find tidy patterns, and post-hoc rationalization is the natural mode. Counter-arguments break that gravity.
+
+Especially important when proposing graduation candidates (recurring corrections → guardrails) — make sure the recurrence is real, not 3 instances of pattern-matching by the agent itself.

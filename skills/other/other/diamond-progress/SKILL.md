@@ -1,7 +1,7 @@
 ---
 name: diamond-progress
 description: "Progress a diamond from one phase to the next. Runs all required theory gate checks, validates evidence, and at Deliver->Complete runs the executable Definition of Done checklist."
-instruction_budget: 200
+instruction_budget: 205
 ---
 
 # Diamond Progress Skill
@@ -346,3 +346,11 @@ Draft entries for the user. Present for confirmation before saving. This capture
 - Downe: Service quality (gated for user-facing work)
 - Forsgren: DORA metrics + testing requirements
 - EU AI Act: Regulatory classification (L3-L5)
+
+## Counter-Argument Check (Bias Mitigation)
+
+Before progressing the diamond OR signing off on a phase transition, draft a one-line counter-argument: *"What's the strongest case AGAINST this transition — what gate is borderline, what evidence is weakest, what regression risk is being underweighted?"* If you can't articulate one, run `/devils-advocate` before proceeding.
+
+This addresses the bias cluster documented in corrections.md (L5 sycophancy 2026-04-20, eval overfitting 2026-04-30, sharper-framing-isn't-righter 2026-05-03). Common shape: agent prefers what feels right over what evidence supports under competing pressure (be helpful vs. be honest, advance vs. regress). Phase-transition reviews are the canonical context — the agent is incentivized to move forward and may underweight the case for staying or regressing.
+
+Especially important at L4→complete (DoD signoff) and L5 transitions (where the L5-sycophancy correction explicitly named promotional-language drift).

@@ -49,6 +49,8 @@ Investigation mode uses the 4-phase structure below. Audit mode uses systematic 
 
 **For failure category taxonomy and the 3-failure rule, read `skills/bug-hunt/references/failure-categories.md`.**
 
+**For audits or pre-release sweeps that need more than one pass, route through `skills/bug-hunt/references/audit-fix-rescan-cycle.md` (multi-pass methodology) and use `skills/bug-hunt/references/convergence-criteria.md` to decide when to stop.**
+
 ## Execution Steps
 
 Given `/bug-hunt <symptom>`:
@@ -391,6 +393,8 @@ Common bug patterns to check:
 - [references/audit-report-template.md](references/audit-report-template.md)
 - [references/bug-report-template.md](references/bug-report-template.md)
 - [references/failure-categories.md](references/failure-categories.md)
+- [references/audit-fix-rescan-cycle.md](references/audit-fix-rescan-cycle.md)
+- [references/convergence-criteria.md](references/convergence-criteria.md)
 
 ## See Also
 

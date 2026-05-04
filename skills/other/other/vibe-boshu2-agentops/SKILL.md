@@ -226,9 +226,24 @@ Skip silently if no patterns match. This step runs in both `--quick` and full mo
 
 **Skip if `--quick`.** Search for relevant prior learnings via `ao lookup`.
 
-### Step 2e: Bug Hunt
+### Step 2e: Bug Hunt or Deep Audit Sweep
 
-**Skip if `--quick`.** Run proactive bug-hunt audit on target files.
+**Skip if `--quick`.**
+
+**Path A — Deep Audit Sweep (`--deep` or `--sweep`):**
+
+Read `references/deep-audit-protocol.md` for the full protocol. In summary:
+
+1. Chunk target files into batches of 3-5 by line count
+2. Dispatch up to 8 Explore agents in parallel, each with a mandatory 8-category checklist per file
+3. Merge all explorer findings into a sweep manifest at `.agents/council/sweep-manifest.md`
+4. Include sweep manifest in the council packet so judges shift to adjudication mode
+
+**Why:** Generalist judges exhibit satisfaction bias — they stop after a small number of findings regardless of actual issue count. Per-file explorers with category checklists reduce that bias and surface concrete line-level issues before council adjudication.
+
+**Path B — Lightweight Bug Hunt (default, no `--deep`/`--sweep`):**
+
+Run proactive bug-hunt audit on target files.
 
 ### Step 2f: Codex Review
 

@@ -8,11 +8,14 @@ import os
 import json
 import time
 import logging
+import shutil
 from collections import defaultdict
 import requests
 from datetime import datetime
 from pathlib import Path
 
+from security_blocklist import blocked_metadata_source, load_security_blocklist
+from security_scanner import SecurityScanner
 from utils import normalize_name, ensure_unique_dir, build_skill_key, build_legal_metadata
 
 logging.basicConfig(level=logging.INFO)
@@ -66,6 +69,8 @@ class GitHubTopicDiscovery:
 
         self.discovered_repos = set()
         self.skills = []
+        self.security_blocklist = load_security_blocklist()
+        self.security_scanner = SecurityScanner()
         self.repo_candidates = {}
         self.path_candidates = {}
         self.topic_stats = defaultdict(
@@ -293,6 +298,20 @@ class GitHubTopicDiscovery:
 
     def download_skill(self, repo, path, output_dir):
         """Download a SKILL.md file"""
+        blocked_source = blocked_metadata_source(
+            {"repo": repo, "path": path},
+            self.security_blocklist,
+        )
+        if blocked_source:
+            blocked_entry, source_field = blocked_source
+            logger.warning(
+                "Blocked security-listed discovered source: %s via %s (%s)",
+                blocked_entry["repo"],
+                source_field,
+                path,
+            )
+            return False
+
         # Extract skill name from path
         parts = path.rsplit('/', 1)
         if len(parts) == 2:
@@ -343,6 +362,20 @@ class GitHubTopicDiscovery:
                     (skill_path / 'metadata.json').write_text(
                         json.dumps(metadata, indent=2), encoding='utf-8'
                     )
+
+                    is_safe, issues = self.security_scanner.scan_file(skill_path / 'SKILL.md')
+                    if not is_safe:
+                        issue_types = sorted(
+                            {str(issue.get("type") or "unknown") for issue in issues}
+                        )
+                        shutil.rmtree(skill_path, ignore_errors=True)
+                        logger.warning(
+                            "Rejected discovered skill after security scan: %s/%s (%s)",
+                            repo,
+                            path,
+                            ", ".join(issue_types[:8]),
+                        )
+                        return False
 
                     return True
             except Exception as e:

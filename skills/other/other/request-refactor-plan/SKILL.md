@@ -1,6 +1,6 @@
 ---
 name: request-refactor-plan
-description: Plan a refactor as a sequence of tiny, working commits via adversarial interview. Default output is a markdown plan at `<project-root>/docs/refactor-plans/<name>.md`; pass `--emit-issue` to additionally file a GitHub issue. Trigger when user proposes a structural refactor (rename, extract, move, split, deduplicate) — NOT for new features.
+description: Plan a refactor as a sequence of tiny, working commits via adversarial interview. Default output is a markdown plan at `<project-root>/docs/refactor-plans/<name>.md`; pass `--emit-issue` to also file a GitHub issue. Trigger on structural refactors (rename, extract, move, split, dedupe) — NOT new features.
 ---
 
 Adversarial interview to break a refactor into the smallest commits that each leave the codebase green.

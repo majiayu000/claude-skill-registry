@@ -1,6 +1,7 @@
 ---
 name: using-agentops
 description: 'Explain AgentOps workflows.'
+practices: [wiki-knowledge-surface, pragmatic-programmer, agile-manifesto]
 skill_api_version: 1
 user-invocable: false
 context:
@@ -104,6 +105,7 @@ These are the skills every user needs first. Everything else is available when y
 | `/bootstrap` | One-command full AgentOps setup — fills gaps only |
 | `/research` | Deep codebase exploration |
 | `/council` | Multi-model consensus review + finding auto-extraction |
+| `/validate` | Canonical PASS/WARN/FAIL verdict over an artifact, plan, code change, PR, or gate |
 | `/vibe` | Code validation (classification + suppression + domain checklists) |
 | `/rpi` | Full RPI lifecycle orchestrator (`/discovery` → `/crank` → `/validation`) |
 | `/implement` | Execute single issue |
@@ -111,13 +113,13 @@ These are the skills every user needs first. Everything else is available when y
 | `/status` | Single-screen dashboard of current work and suggested next action |
 | `/goals` | Maintain GOALS.yaml fitness specification |
 | `/push` | Atomic test-commit-push workflow |
-| `/flywheel` | Knowledge flywheel health monitoring (σ×ρ > δ/100) |
 
 ## Advanced Skills (when you need them)
 
 | Skill | Purpose |
 |-------|---------|
-| `/compile` | Active knowledge intelligence — Mine → Grow → Defrag cycle |
+| `/compile`, `/flywheel` | Active knowledge intelligence and flywheel health — Mine → Grow → Defrag cycle |
+| `/curate` | Canonical miner role for transcripts, `.agents/`, bd, git, skill diffs, and rare wiki entries |
 | `/llm-wiki` | External reading wiki proposal — raw sources to compiled wiki |
 | `/harvest` | Cross-rig knowledge consolidation — sweep, dedup, promote to global hub |
 | `/knowledge-activation` | Operationalize a mature `.agents` corpus into beliefs, playbooks, briefings, and gap surfaces |
@@ -143,13 +145,17 @@ These are the skills every user needs first. Everything else is available when y
 | `/security` | Continuous repository security scanning and release gating |
 | `/security-suite` | Binary and prompt-surface security suite — static analysis, dynamic tracing, offline redteam, policy gating |
 | `/test` | Test generation, coverage analysis, and TDD workflow |
+| `/hooks-authoring` | Author and validate AgentOps runtime hooks |
 | `/red-team` | Persona-based adversarial validation — probe docs and skills from constrained user perspectives |
 | `/review` | Review incoming PRs, agent output, or diffs — SCORED checklist |
 | `/refactor` | Safe, verified refactoring with regression testing at each step |
 | `/deps` | Dependency audit, update, vulnerability scanning, and license compliance |
 | `/perf` | Performance profiling, benchmarking, regression detection, and optimization |
+| `/system-tuning` | Restore system responsiveness via safe, ordered process cleanup and agent-swarm hygiene |
 | `/scaffold` | Project scaffolding, component generation, and boilerplate setup |
 | `/scenario` | Author and manage holdout scenarios for behavioral validation |
+| `/skill-auditor` | Two-pass audit of an existing SKILL.md against the unified template (15 checks) |
+| `/skill-builder` | Scaffold or absorb new SKILL.md files against the unified template |
 
 ## Expert Skills (specialized workflows)
 

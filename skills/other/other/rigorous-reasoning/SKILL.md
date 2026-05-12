@@ -1,7 +1,6 @@
 ---
 name: rigorous-reasoning
-description: 'Prevent sycophantic reasoning via checklist enforcing evidence-based conclusions and honest analysis.'
-version: 1.9.0
+description: 'Anti-sycophancy reasoning checklist.'
 alwaysApply: false
 category: workflow-methodology
 tags:
@@ -14,6 +13,7 @@ dependencies:
 - imbue:proof-of-work
 tools: []
 model_hint: deep
+role: library
 ---
 ## Table of Contents
 
@@ -195,6 +195,8 @@ Use `proof-of-work` to document:
 
 - `imbue:proof-of-work` - Technical validation and evidence capture (complements reasoning validation)
 - `imbue:scope-guard` - Feature evaluation (often involves contested claims)
+- `imbue:karpathy-principles` - The "Think Before Coding" principle covers the same hidden-assumption guard at a higher abstraction
+- See `docs/quality-gates.md#skill-level-quality-gate-composition` for the full gate-skill federation graph (this skill is cross-cutting across phases)
 
 ## Exit Criteria
 

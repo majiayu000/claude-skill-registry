@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "{BASE_URL}/#business",
+      "name": "{BUSINESS_NAME}",
+      "url": "{BASE_URL}",
+      "image": "{IMAGE_URL}",
+      "description": "{DESCRIPTION}",
+      "telephone": "{PHONE}",
+      "email": "{EMAIL}",
+      "priceRange": "{PRICE_RANGE}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{STREET}",
+        "addressLocality": "{CITY}",
+        "addressRegion": "{STATE}",
+        "postalCode": "{ZIP}",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "{LAT}",
+        "longitude": "{LNG}"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.google.com/maps/place/{PLACE_ID}",
+        "https://www.yelp.com/biz/{YELP_SLUG}",
+        "https://www.facebook.com/{PAGE}",
+        "https://www.instagram.com/{HANDLE}"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{RATING}",
+        "reviewCount": "{REVIEW_COUNT}",
+        "bestRating": "5"
+      },
+      "hasMap": "https://www.google.com/maps/place/{PLACE_ID}"
+    }
+  ]
+}

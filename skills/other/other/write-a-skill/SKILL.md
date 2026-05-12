@@ -1,6 +1,7 @@
 ---
 name: write-a-skill
 description: Author a single new skill — produce a SKILL.md plus optional bundled references and scripts following Anthropic's progressive-disclosure conventions. Trigger when the user asks to "write a skill", "create a skill", "draft a SKILL.md", or "add a skill" for a specific capability. Distinct from repo onboarding workflows that write AGENTS.md and project conventions.
+disable-model-invocation: true
 ---
 
 Skill authoring loop: gather requirements, draft against the SKILL.md contract, review with the user, refine. One concern per skill; one skill per directory. Apply the `skill-creator:skill-creator` methodology (three-level progressive disclosure, pushy descriptions, evals.json).

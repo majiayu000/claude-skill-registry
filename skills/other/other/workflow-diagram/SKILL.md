@@ -1,6 +1,6 @@
 ---
 name: workflow-diagram
-description: "Generate workflow diagrams showing process steps, decision points, and state transitions"
+description: 'Generate workflow diagrams showing process steps, decision points, and state transitions.'
 ---
 
 # Workflow Diagram

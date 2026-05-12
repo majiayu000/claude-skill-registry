@@ -1,7 +1,7 @@
 ---
 name: oss-find-real-issues
 description: |
-  Find actual code issues in a repo that aren't listed in GitHub issues - missing tests,
+  Find actual code issues in a repo that aren't listed in GitHub issues. missing tests,
   inconsistent patterns, outdated dependencies, documentation gaps. Presents findings to
   the user for evaluation. Use when you want to make proactive contributions beyond
   existing issues, or when no good issues are available.
@@ -9,17 +9,17 @@ description: |
 
 # Find Real Issues
 
-Don't wait for someone to file an issue - find real problems in the code. This skill analyzes a codebase for actual issues that maintainers would appreciate being fixed: missing tests, inconsistent patterns, silent failures, documentation gaps. You evaluate whether they're worth filing - the LLM just finds them.
+Don't wait for someone to file an issue. find real problems in the code. This skill analyzes a codebase for actual issues that maintainers would appreciate being fixed: missing tests, inconsistent patterns, silent failures, documentation gaps. You evaluate whether they're worth filing. the LLM just finds them.
 
 ## Purpose
 
-The best contributions aren't always in the issue tracker. Experienced contributors earn maintainer trust by finding and fixing problems nobody asked about - but that everyone benefits from. This skill teaches you to read code critically, spot patterns that are off, and evaluate whether a fix would be welcome.
+The best contributions aren't always in the issue tracker. Experienced contributors earn maintainer trust by finding and fixing problems nobody asked about. but that everyone benefits from. This skill teaches you to read code critically, spot patterns that are off, and evaluate whether a fix would be welcome.
 
 ## Prerequisites
 
 - A repo cloned locally
 - Basic understanding of the codebase (from `oss-prep-to-contribute` or your own exploration)
-- Check that the repo accepts unsolicited PRs (some don't - verify in CONTRIBUTING.md)
+- Check that the repo accepts unsolicited PRs (some don't. verify in CONTRIBUTING.md)
 
 ## Process
 
@@ -38,15 +38,15 @@ gh pr list -R {owner}/{repo} --state merged --limit 20 \
 ```
 
 Look for:
-- "Please file an issue before submitting a PR" - if present, you should file an issue first, not just submit a fix
-- "We welcome contributions" - green light
-- No external PRs merged - yellow flag, ask in their communication channel first
+- "Please file an issue before submitting a PR": if present, you should file an issue first, not just submit a fix
+- "We welcome contributions": green light
+- No external PRs merged. yellow flag, ask in their communication channel first
 
 Inform the user about the repo's stance on unsolicited contributions.
 
 ### 2. Systematic code analysis
 
-Use Explore agents to analyze the codebase across multiple dimensions. For each dimension, look for concrete, specific problems - not vague "could be better" observations.
+Use Explore agents to analyze the codebase across multiple dimensions. For each dimension, look for concrete, specific problems. not vague "could be better" observations.
 
 **Dimension 1: Test coverage gaps**
 
@@ -133,15 +133,15 @@ For each finding, present:
 ## Finding #{n}: {one-line summary}
 
 **Category**: {test gap / error handling / inconsistency / docs / security / dependency}
-**Severity**: {high - could cause bugs or security issues / medium - code quality / low - cosmetic}
+**Severity**: {high. could cause bugs or security issues / medium. code quality / low. cosmetic}
 **Location**: `{file}:{line}` 
 **What's wrong**: {specific description with code reference}
 **Impact**: {what could go wrong because of this}
-**Suggested approach**: {high-level - not a code fix, just the direction}
-**Would a PR be welcome?**: {yes - clearly a bug / maybe - discuss first / probably not - too opinionated}
+**Suggested approach**: {high-level. not a code fix, just the direction}
+**Would a PR be welcome?**: {yes. clearly a bug / maybe. discuss first / probably not. too opinionated}
 ```
 
-### 5. Thinking gate - user evaluates each finding
+### 5. Thinking gate: user evaluates each finding
 
 For each finding, ask the user:
 
@@ -150,15 +150,15 @@ For each finding, ask the user:
 > 2. If you were a maintainer, would you merge a PR fixing this?
 > 3. What could go wrong if this stays unfixed? (Check the 'Impact' section above)"
 
-**This is the most important part.** The skill isn't just about finding issues - it's about teaching the user to evaluate code critically. Their judgment matters more than the LLM's analysis.
+**This is the most important part.** The skill isn't just about finding issues. it's about teaching the user to evaluate code critically. Their judgment matters more than the LLM's analysis.
 
 If the user says "yes, fix it" without articulating WHY:
 
-> "Before we proceed - explain why this is a problem. What could go wrong if it stays as-is? A maintainer will ask this in the PR review."
+> "Before we proceed. explain why this is a problem. What could go wrong if it stays as-is? A maintainer will ask this in the PR review."
 
 If the user disagrees with a finding:
 
-> "Good - that's a valid call. Can you explain why you think it's not an issue? Understanding why something ISN'T a problem is just as valuable."
+> "Good. that's a valid call. Can you explain why you think it's not an issue? Understanding why something ISN'T a problem is just as valuable."
 
 ### 6. Fetch issue templates
 
@@ -174,13 +174,13 @@ gh api "repos/{owner}/{repo}/contents/ISSUE_TEMPLATE.md" --jq '.content' 2>/dev/
 gh api "repos/{owner}/{repo}/contents/.github/ISSUE_TEMPLATE.md" --jq '.content' 2>/dev/null | base64 -d 2>/dev/null
 ```
 
-**If a template directory exists**: fetch each template file (skip `config.yml` - it's not a template). Templates can be `.md` (with YAML frontmatter) or `.yml` (issue forms). For `.md` templates, parse the YAML frontmatter (`name`, `description`, `labels`). For `.yml` issue forms, parse the top-level `name`, `description`, and `labels` fields directly. Present the available templates:
+**If a template directory exists**: fetch each template file (skip `config.yml`: it's not a template). Templates can be `.md` (with YAML frontmatter) or `.yml` (issue forms). For `.md` templates, parse the YAML frontmatter (`name`, `description`, `labels`). For `.yml` issue forms, parse the top-level `name`, `description`, and `labels` fields directly. Present the available templates:
 
 ```
 Available issue templates:
-1. Bug Report - Report a bug (labels: bug)
-2. Feature Request - Suggest an enhancement (labels: enhancement)
-3. Documentation - Report a docs issue (labels: documentation)
+1. Bug Report: Report a bug (labels: bug)
+2. Feature Request: Suggest an enhancement (labels: enhancement)
+3. Documentation: Report a docs issue (labels: documentation)
 ```
 
 Ask the user: "Which template matches the issue you're filing?" Fetch the selected template and enforce its structure.
@@ -198,10 +198,10 @@ For findings the user validates:
 Help the user write an issue description (they write it, LLM reviews). If a template was found in step 6, the description must follow that template's structure.
 
 **Issue writing rules:**
-- Title: what's wrong, in under 10 words. Not "Issue with..." - state the problem directly
+- Title: what's wrong, in under 10 words. Not "Issue with...". State the problem directly
 - Body: reproduction steps or code reference, expected vs actual behavior, that's it
-- No filler, no "I believe", no "it seems like" - state facts
-- No AI jargon: "comprehensive", "robust", "fundamental" - cut all of it
+- No filler, no "I believe", no "it seems like". State facts
+- No AI jargon: "comprehensive", "robust", "fundamental". Cut all of it
 - If you can't describe the issue in 5 lines, you don't understand it well enough yet
 
 ```bash
@@ -209,7 +209,7 @@ gh issue create -R {owner}/{repo} \
   --title "{descriptive title}" \
   --label "{label1}" --label "{label2}" \
   --body "$(cat <<'EOF'
-{user's issue description - following template structure if one was found in step 6}
+{user's issue description. following template structure if one was found in step 6}
 EOF
 )"
 # Omit --label flags entirely if no labels from template. Use one --label per label.
@@ -219,7 +219,7 @@ Then → `oss-find-issue` (claim the issue they just filed) → `oss-contribute`
 
 **Option B: Fix directly** (for small, obvious fixes in repos that accept unsolicited PRs):
 
-→ `oss-contribute` directly - skip to the implementation phase
+→ `oss-contribute` directly. skip to the implementation phase
 
 ### 8. Track findings
 
@@ -237,17 +237,44 @@ Maintain a summary:
 
 ## Related Skills
 
-- **Next step (file issue)**: → `oss-find-issue` - to claim the issue you just filed
-- **Next step (direct fix)**: → `oss-contribute` - to implement the fix
-- **Preparation**: ← `oss-explore-repo` - build broad understanding before looking for issues
-- **Previous step**: ← `oss-prep-to-contribute` - should understand the codebase first
-- **Alternative to**: ← `oss-find-issue` - when no existing issues match your skills, find your own
+- **Next step (file issue)**: → `oss-find-issue`: to claim the issue you just filed
+- **Next step (direct fix)**: → `oss-contribute`: to implement the fix
+- **Preparation**: ← `oss-explore-repo`: build broad understanding before looking for issues
+- **Previous step**: ← `oss-prep-to-contribute`: should understand the codebase first
+- **Alternative to**: ← `oss-find-issue`: when no existing issues match your skills, find your own
+
+## Common Rationalizations
+
+| Shortcut | Why It Fails |
+|----------|-------------|
+| "I found a code smell, let me just fix it and submit a PR" | Uninvited PRs for subjective improvements get rejected. File an issue first. let the maintainer confirm it's wanted before you invest time in a fix. |
+| "The security scanner found 50 issues, let me file them all" | Scanner output without analysis is noise. Most findings are false positives or low-severity. Filing 50 issues burns maintainer goodwill. Filter ruthlessly, present only actionable findings. |
+| "This is obviously a bug, I don't need the user to evaluate it" | What looks like a bug might be intentional behavior, a known trade-off, or a design decision with context you don't have. The user's evaluation catches these before you embarrass yourself in an issue. |
+| "Any test coverage improvement is welcome" | Testing trivial getters or obvious constructors wastes reviewer time. Focus on critical untested code paths. error handling, edge cases, security-relevant logic. |
+| "I'll file the issue and fix it in the same PR" | Separate concerns. The issue gets maintainer buy-in. The PR delivers the fix. Combining them skips the "is this actually wanted?" check. |
+
+## Red Flags
+
+- All findings are severity "low". You're finding cosmetic issues, not real problems
+- Findings cluster in one file. you may be looking too narrowly; expand to other modules
+- User agrees with every finding without pushback. they're not evaluating critically
+- Repo's CONTRIBUTING.md says "file an issue before submitting PRs" but user wants to skip straight to fixing
+
+## Verification Checklist
+
+- [ ] Repo accepts unsolicited contributions (verified)
+- [ ] Each finding has a specific file:line reference
+- [ ] Each finding has a clear impact statement (what could go wrong)
+- [ ] User evaluated each finding and gave a reasoned verdict
+- [ ] High-severity findings were filed as issues (if repo requires it)
+- [ ] Issue descriptions follow repo template (if one exists)
+- [ ] Findings summary table maintained with user verdicts and actions
 
 ## Anti-patterns
 
-- **DO NOT** file issues for style preferences - "I'd do it differently" is not an issue
+- **DO NOT** file issues for style preferences. "I'd do it differently" is not an issue
 - **DO NOT** file issues without checking if the repo wants unsolicited contributions
-- **DO NOT** present findings as definitive problems - always let the user evaluate and decide
+- **DO NOT** present findings as definitive problems. always let the user evaluate and decide
 - **DO NOT** submit fix PRs for issues you haven't filed first (unless the repo explicitly welcomes it)
-- **DO NOT** run security scanners and dump the output - analyze, filter, and present only actionable findings
-- **DO NOT** treat every finding as equally important - severity and maintainer-welcome-ness matter
+- **DO NOT** run security scanners and dump the output. analyze, filter, and present only actionable findings
+- **DO NOT** treat every finding as equally important. severity and maintainer-welcome-ness matter

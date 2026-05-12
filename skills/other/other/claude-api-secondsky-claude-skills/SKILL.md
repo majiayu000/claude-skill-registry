@@ -1,8 +1,6 @@
 ---
 name: claude-api
-description: Anthropic Messages API (Claude API) for integrations, streaming, prompt caching, tool use, vision. Use for chatbots, assistants, or encountering rate limits, 429 errors.
-
-  Keywords: claude api, anthropic api, messages api, @anthropic-ai/sdk, claude streaming, prompt caching, tool use, vision, extended thinking, claude 3.5 sonnet, claude 3.7 sonnet, claude sonnet 4, function calling, SSE, rate limits, 429 errors
+description: "Anthropic Messages API (Claude API) for integrations, streaming, prompt caching, tool use, vision. Use for chatbots, assistants, or encountering rate limits, 429 errors."
 license: MIT
 metadata:
   version: "2.0.0"
@@ -10,8 +8,24 @@ metadata:
   sdk_version: "@anthropic-ai/sdk@0.70.1"
   templates_included: 12
   references_included: 7
+  keywords:
+    - claude api
+    - anthropic api
+    - messages api
+    - "@anthropic-ai/sdk"
+    - claude streaming
+    - prompt caching
+    - tool use
+    - vision
+    - extended thinking
+    - claude 3.5 sonnet
+    - claude 3.7 sonnet
+    - claude sonnet 4
+    - function calling
+    - SSE
+    - rate limits
+    - 429 errors
 ---
-
 # Claude API (Anthropic Messages API)
 
 **Status**: Production Ready | **SDK**: @anthropic-ai/sdk@0.70.1

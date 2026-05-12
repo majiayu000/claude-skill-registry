@@ -197,11 +197,13 @@ For multi-step pipelines (text-to-3d → rig → animate), show the FULL pipelin
 | Change mesh format/topology | Remesh | `POST /openapi/v1/remesh` | 5 |
 | Add skeleton to character | Auto-Rigging | `POST /openapi/v1/rigging` | 5 |
 | Animate a rigged character | Animation | `POST /openapi/v1/animations` | 3 |
-| 2D image from text | Text to Image | `POST /openapi/v1/text-to-image` | 3–9 |
-| Transform a 2D image | Image to Image | `POST /openapi/v1/image-to-image` | 3–9 |
-| Check credit balance | Balance | `GET /openapi/v1/balance` | 0 |
-| 3D print a model (white) | → See Print Pipeline section | — | 20 |
+| 2D image from text (recommended pre-step before image-to-3d) | Text to Image | `POST /openapi/v1/text-to-image` | 3–9 |
+| Optimize/edit a 2D image (recommended pre-step before image-to-3d) | Image to Image | `POST /openapi/v1/image-to-image` | 3–9 |
+| Check FDM printability | Analyze Printability | `POST /openapi/v1/print/analyze` | **0 (free)** |
+| Repair non-manifold/degenerate-face/hole topology | Repair Printability | `POST /openapi/v1/print/repair` | 10 |
 | Multi-color 3D print | Multi-Color Print | `POST /openapi/v1/print/multi-color` | 10 (+ generation) |
+| 3D print a model (white) | → See Print Pipeline section | — | 20 |
+| Check credit balance | Balance | `GET /openapi/v1/balance` | 0 |
 
 ---
 
@@ -382,6 +384,18 @@ print(f"\nREFINE COMPLETE — Task: {refine_id} | Formats: {', '.join(task['mode
 
 ---
 
+### (Optional but strongly recommended) 2D Optimization Pre-Step
+
+Image quality directly determines 3D model quality. Before calling `/openapi/v1/image-to-3d` or `/openapi/v1/multi-image-to-3d`, evaluate the user's input and proactively suggest a 2D pass:
+
+| User input | Recommended pre-step |
+|---|---|
+| Only a text description, no reference image | `/openapi/v1/text-to-image` with `nano-banana-pro`. For characters add `generate_multi_view: True` and `pose_mode: "a-pose"` or `"t-pose"` for rig-friendly output. |
+| Reference image is low-resolution / cluttered background / unclear subject / bad lighting | `/openapi/v1/image-to-image` with `nano-banana-pro` to clean up. |
+| User wants to adjust style / colors / details | `/openapi/v1/image-to-image` for style transfer, then 3D-ify. |
+
+3-9 extra credits typically buy a noticeable quality bump. Skip when the user already provided a clean studio-style image.
+
 ### Image to 3D
 
 ```python
@@ -523,7 +537,36 @@ Trigger when the user mentions: print, 3d print, slicer, slice, bambu, orca, pru
 
 1. **Detect installed slicers** first (see script below)
 2. Ask the user: "White model (single-color) or multicolor?"
-3. If **multicolor**: check for multicolor-capable slicer (OrcaSlicer, Bambu Studio, Creality Print, Elegoo Slicer, Anycubic Slicer Next), ask max_colors (1-16, default 4) and max_depth (3-6, default 4), confirm cost: 40 credits
+3. If **multicolor**: check for multicolor-capable slicer (OrcaSlicer, Bambu Studio, Creality Print, Elegoo Slicer, Anycubic Slicer Next), ask max_colors (1-16, default 4) and max_depth (3-6, default 4), confirm cost: 40 credits (+10 if repair is needed)
+4. **(Recommended)** After generation, run a **printability analysis** (`POST /openapi/v1/print/analyze`, FREE). Run **`POST /openapi/v1/print/repair`** (10 credits) only if status = error.
+
+### Printability Analysis & Repair
+
+```python
+# After the textured/final mesh is ready:
+INPUT_TASK_ID = refine_id  # or whatever produced the print-ready mesh
+
+# input_task_id MUST refer to a Meshy 6 / Preview task. For Meshy 4/5 outputs,
+# pass `model_url` (the GLB download URL) instead.
+analyze_id = create_task("/openapi/v1/print/analyze", {
+    "input_task_id": INPUT_TASK_ID,
+})
+analyze_task = poll_task("/openapi/v1/print/analyze", analyze_id)
+
+p = analyze_task.get("printability") or {}
+metrics = p.get("metrics", {})
+print(f"Printability: {p.get('status')}: {metrics}")
+
+if p.get("status") == "error":
+    repair_id = create_task("/openapi/v1/print/repair", {
+        "input_task_id": INPUT_TASK_ID,   # output is GLB
+    })
+    repair_task = poll_task("/openapi/v1/print/repair", repair_id)
+    repaired_url = next((u for u in repair_task["model_urls"].values() if u), None)
+    # Use repaired_url for the next step (download / multicolor / slicer)
+```
+
+**Status meanings**: `healthy` (print as-is) | `warning` (degenerate faces / holes — repair optional) | `error` (non-watertight / non-manifold — repair recommended) | `unknown` (analyze failed). Repair preserves geometry only, not textures — re-texture if needed for multicolor.
 
 ### Slicer Detection + Opening
 

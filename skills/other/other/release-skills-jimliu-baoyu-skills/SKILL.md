@@ -1,6 +1,6 @@
 ---
 name: release-skills
-description: Universal release workflow. Auto-detects version files and changelogs. Supports Node.js, Python, Rust, Claude Plugin, and generic projects. Use when user says "release", "发布", "new version", "bump version", "push", "推送".
+description: Universal release workflow. Auto-detects version files and changelogs. Supports Node.js, Python, Rust, Claude Plugin, GitHub Releases, annotated tags, historical release backfill, and generic projects. Use when user says "release", "发布", "new version", "bump version", "push", "推送", "release notes", "GitHub Release", or "回填 Release".
 ---
 
 # Release Skills
@@ -39,6 +39,7 @@ Just run `/release-skills` - auto-detects your project configuration.
 | `--major` | Force major version bump |
 | `--minor` | Force minor version bump |
 | `--patch` | Force patch version bump |
+| `--backfill-releases` | Create missing GitHub Releases for existing tags from changelog sections |
 
 ## Workflow
 
@@ -57,7 +58,11 @@ Just run `/release-skills` - auto-detects your project configuration.
    - `HISTORY*.md`
    - `CHANGES*.md`
 4. Identify language of each changelog by filename suffix
-5. Display detected configuration
+5. Detect GitHub release support:
+   - Check whether `origin` points to GitHub
+   - Check whether `gh` is installed and authenticated
+   - Check existing releases with `gh release list --limit 5` when available
+6. Display detected configuration
 
 **Project Hook Contract**:
 
@@ -310,6 +315,14 @@ git commit -m "docs(project): update architecture documentation"
    - Read version file (JSON/TOML/text)
    - Update version number
    - Write back (preserve formatting)
+3. **Create release notes file**:
+   - Prefer the new version section from `CHANGELOG.md`
+   - If no English/default changelog exists, use the first detected changelog
+   - Extract only the exact `## {VERSION} - {YYYY-MM-DD}` section through the next `##`
+   - Match both plain version and tag-prefixed headings when needed, e.g. `1.2.3` and `v1.2.3`
+   - Keep breaking changes near the top; if needed, add a short highlight before other sections
+   - Write notes to a UTF-8 temp file and reuse it for annotated tag messages, GitHub Releases, and `publish_artifact`
+   - In normal mode, stop rather than creating an empty tag or GitHub Release when notes cannot be found
 
 **Version Paths by File Type**:
 
@@ -325,7 +338,7 @@ git commit -m "docs(project): update architecture documentation"
 
 Before creating the release commit, ask user to confirm:
 
-**Use AskUserQuestion with two questions**:
+**Use AskUserQuestion with three questions**:
 
 1. **Version bump** (single select):
    - Show recommended version based on Step 3 analysis
@@ -334,6 +347,11 @@ Before creating the release commit, ask user to confirm:
 
 2. **Push to remote** (single select):
    - Options: "Yes, push after commit", "No, keep local only"
+
+3. **Publish GitHub Release** (single select):
+   - Offer this only when GitHub release support is available
+   - Default to "Yes, publish after tag push" when the user also chose push
+   - If the user keeps the release local, do not create or edit a GitHub Release
 
 **Example Output Before Confirmation**:
 ```
@@ -349,10 +367,11 @@ Changelog preview (en):
   ### Fixes
   - Improve panel layout for long dialogues in comic
 
-Ready to create release commit and tag.
+Release notes source: CHANGELOG.md#1.3.0
+Ready to create release commit, annotated tag, and GitHub Release.
 ```
 
-### Step 9: Create Release Commit and Tag
+### Step 9: Create Release Commit and Annotated Tag
 
 After user confirmation:
 
@@ -367,10 +386,11 @@ After user confirmation:
    git commit -m "chore: release v{VERSION}"
    ```
 
-3. **Create tag**:
+3. **Create annotated tag**:
    ```bash
-   git tag v{VERSION}
+   git tag -a v{VERSION} -F <release-notes-file>
    ```
+   If `.releaserc.yml` sets `tag.sign: true`, use `git tag -s` with the same notes file.
 
 4. **Push if user confirmed** (Step 8):
    ```bash
@@ -379,6 +399,28 @@ After user confirmation:
    ```
 
 **Note**: Do NOT add Co-Authored-By line. This is a release commit, not a code contribution.
+
+### Step 10: Publish Release Artifacts and GitHub Release
+
+Project artifact publishing and GitHub Releases are separate outputs:
+
+1. **Project artifacts**:
+   - If `release.hooks.publish_artifact` exists, run it once per prepared target
+   - Pass the same `{release_notes_file}` used for the tag and GitHub Release
+   - In dry-run mode, pass `{dry_run}=true` and report what would be published
+
+2. **GitHub Release**:
+   - Run only if the user confirmed remote publishing and GitHub support is available
+   - Ensure the tag exists on the remote before creating the release
+   - Create or update using the extracted notes:
+     ```bash
+     if gh release view v{VERSION} >/dev/null 2>&1; then
+       gh release edit v{VERSION} --title "v{VERSION}" --notes-file <release-notes-file>
+     else
+       gh release create v{VERSION} --title "v{VERSION}" --notes-file <release-notes-file> --verify-tag
+     fi
+     ```
+   - Never inline multiline release notes into shell commands
 
 **Post-Release Output**:
 ```
@@ -391,8 +433,31 @@ Commits:
   4. chore: release v1.3.0
 
 Tag: v1.3.0
+Tag type: annotated
+GitHub Release: published  # or "skipped/local only"
 Status: Pushed to origin  # or "Local only - run git push when ready"
 ```
+
+## Backfill Existing GitHub Releases
+
+Use this mode when the user asks to backfill historical releases or passes `--backfill-releases`.
+
+1. Do not bump versions, edit changelogs, or create release commits.
+2. List existing tags in version order and detect missing releases:
+   ```bash
+   git tag --sort=v:refname
+   gh release view <tag>
+   ```
+3. For each tag without a GitHub Release:
+   - Normalize the changelog lookup by stripping the configured tag prefix, e.g. `v1.2.3` -> `1.2.3`
+   - Extract the matching section from `CHANGELOG.md`; fall back to the first matching changelog file
+   - Skip or ask before publishing if no matching changelog section exists
+   - Create the release with:
+     ```bash
+     gh release create <tag> --title "<tag>" --notes-file <release-notes-file> --verify-tag
+     ```
+4. Detect lightweight tags with `git cat-file -t <tag>` (`commit` means lightweight, `tag` means annotated).
+5. Do not rewrite public lightweight tags by default. Converting an existing remote tag to an annotated tag requires explicit user confirmation because it rewrites a published reference.
 
 ## Configuration (.releaserc.yml)
 
@@ -498,6 +563,7 @@ No changes made. Run without --dry-run to execute.
 /release-skills --minor      # Force minor bump
 /release-skills --patch      # Force patch bump
 /release-skills --major      # Force major bump (with confirmation)
+/release-skills --backfill-releases  # Create missing GitHub Releases for existing tags
 ```
 
 ## When to Use
@@ -506,6 +572,7 @@ Trigger this skill when user requests:
 - "release", "发布", "create release", "new version", "新版本"
 - "bump version", "update version", "更新版本"
 - "prepare release"
+- "release notes", "GitHub Release", "回填 Release"
 - "push to remote" (with uncommitted changes)
 
 **Important**: If user says "just push" or "直接 push" with uncommitted changes, STILL follow all steps above first.

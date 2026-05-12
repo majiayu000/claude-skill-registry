@@ -1,7 +1,6 @@
 ---
 name: modular-skills
-description: 'Build composable skill modules with hub-and-spoke loading. Use when: token budget is tight, complexity is high.'
-version: 1.9.0
+description: 'Build composable skill modules with hub-and-spoke loading. Use when token budget is tight or complexity is high.'
 alwaysApply: false
 category: workflow-optimization
 tags:
@@ -13,10 +12,7 @@ tags:
 - skill-design
 - token-optimization
 dependencies: []
-tools:
-- skill-analyzer
-- token-estimator
-- module_validator
+tools: []
 usage_patterns:
 - skill-design
 - architecture-review
@@ -33,6 +29,7 @@ modules:
 - modules/implementation-patterns.md
 - modules/optimization-techniques.md
 - modules/troubleshooting.md
+- modules/design-patterns.md
 ---
 ## Table of Contents
 

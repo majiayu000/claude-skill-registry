@@ -1,6 +1,7 @@
 ---
 name: deps
 description: 'Audit dependency risks and updates.'
+practices: [supply-chain-integrity, continuous-delivery, sre]
 skill_api_version: 1
 context:
   window: fork
@@ -128,6 +129,8 @@ Low        util-lib           1.0.0     1.0.1       Patch release
 ## Step 3: Update Strategy
 
 Choose strategy based on the update scope requested (or default to the classification).
+
+When the request is to update an entire library family or dependency surface, read [references/library-update-ratchet.md](references/library-update-ratchet.md) before changing manifests. It defines the one-package loop, rollback evidence, and release-note check.
 
 ### Patch updates (`--patch` or Low severity)
 
@@ -292,3 +295,4 @@ File name format: `YYYY-MM-DD-deps-<mode>.md`
 - `skills/standards/SKILL.md` -- Language-specific conventions
 - `skills/security/SKILL.md` -- Broader security scanning
 - `skills/vibe/SKILL.md` -- Code quality validation
+- [references/library-update-ratchet.md](references/library-update-ratchet.md)

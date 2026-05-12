@@ -53,10 +53,16 @@ A canonical `template.md` has these parts in this order:
 3. **`## Cover Terms`** — short subtitle paragraph followed by a
    `Kind | Label | Value | Show When` table with `{snake_case}` field
    placeholders.
-4. **`## Standard Terms`** — clauses, each preceded by `<!-- oa:clause id=... -->`.
-   The first clause should be `Defined Terms` with `type=definitions`.
-5. **`## Signatures`** — `<!-- oa:signature-mode arrangement=... -->` followed by
-   exactly two `<!-- oa:signer ... -->` blocks.
+4. **Optional `recitals` section** — `<!-- oa:section type=recitals -->`
+   followed by an H2 such as `## Recitals` and one or more recital paragraphs.
+5. **Operative section** — `<!-- oa:section type=standard_terms -->` followed
+   by an author-chosen H2 such as `## Standard Terms`, `## Resolutions`, or
+   `## Terms`. Clauses live here, each preceded by `<!-- oa:clause id=... -->`.
+   The first clause should be `Defined Terms` with `type=definitions` when a
+   definitions clause is needed.
+6. **Signature section** — `<!-- oa:section type=signature -->` followed by the
+   signature H2 and then `<!-- oa:signature-mode arrangement=... -->` plus the
+   signer blocks.
 
 ## Step-by-step conversion
 
@@ -98,6 +104,10 @@ Notes:
   (a hidden, do-not-edit-by-hand artifact).
 - Do **not** add `output_markdown_path` or `outputs.markdown` — the canonical
   compiler rejects them. The canonical `template.md` *is* the source.
+- For directive-backed sections, the body H2 that follows `oa:section` is the
+  rendered heading source of truth. Keep the frontmatter `sections` metadata in
+  place, but treat the body heading as authoritative for the visible section
+  title.
 
 ### Step 2 — Title (H1)
 
@@ -107,6 +117,10 @@ Notes:
 
 Keep the H1 text identical to `document.title`. There is no automatic
 cross-validation today, but drift between the two is a known footgun.
+
+If the rendered title or section heading differs from the raw markdown, see
+"Sharp edges and renderer transforms" below for the body-vs.-frontmatter
+source-of-truth map.
 
 ### Step 3 — Cover Terms section
 
@@ -141,11 +155,14 @@ Rules:
   - `<field_name>` — rendered only when the boolean field is truthy. The
     field's name must satisfy `^[a-z_][a-z0-9_]*$`.
 
-### Step 4 — Standard Terms clauses
+### Step 4 — Directive-anchored body sections
 
-Every clause gets a directive, then a `### Heading`, then prose paragraphs:
+Every operative section starts with an `oa:section` directive. The H2 that
+follows may be author-chosen. Every clause inside the operative section then
+gets an `oa:clause` directive, a `### Heading`, and prose paragraphs:
 
 ```markdown
+<!-- oa:section type=standard_terms -->
 ## Standard Terms
 
 <!-- oa:clause id=assignment-of-inventions -->
@@ -160,6 +177,27 @@ interest in Covered Inventions, to the extent permitted by law.
 During the Restricted Period, Employee must not engage in any Competitive Business
 within the Restricted Territory.
 ```
+
+If the document needs standalone WHEREAS-style recitals, author them in a
+separate `recitals` section before the operative section:
+
+```markdown
+<!-- oa:section type=recitals -->
+## Recitals
+
+**WHEREAS**, Company is considering a financing transaction.
+
+**WHEREAS**, the board has reviewed the proposed terms.
+
+<!-- oa:section type=standard_terms -->
+## Resolutions
+```
+
+`oa:section` types:
+
+- `standard_terms` — required operative clause section
+- `signature` — required signature section
+- `recitals` — optional recital-only section
 
 Directive attributes:
 - `id` — slug, kebab-case, unique within the document. Used for stable
@@ -192,9 +230,10 @@ other IP ownership, use a present-tense operative grant such as `hereby assigns`
 
 ### Step 5 — Defined Terms clause (use when it earns its keep)
 
-Use a Defined Terms clause as the **first** clause under `## Standard Terms`
-when a capitalized concept needs an explicit anchor or when a longer definition
-materially shortens later operative clauses.
+Use a Defined Terms clause as the **first** clause in the
+`oa:section type=standard_terms` operative section when a capitalized concept
+needs an explicit anchor or when a longer definition materially shortens later
+operative clauses.
 
 Before adding a definition, ask:
 
@@ -263,6 +302,7 @@ explicit linking semantics.
 ### Step 7 — Signatures section
 
 ```markdown
+<!-- oa:section type=signature -->
 ## Signatures
 
 <!-- oa:signature-mode arrangement=entity-plus-individual -->
@@ -298,6 +338,60 @@ Strict rules (the `cover-standard-signature-v1` layout enforces these):
 - `arrangement` is `entity-plus-individual` or `stacked`. Defaults to `stacked`.
 - `kind` is `entity`, `individual`, or `acknowledging-individual`.
 - `capacity` is `through_representative`, `personal`, or `acknowledging`.
+
+### Sharp edges and renderer transforms
+
+A few parts of canonical `template.md` are structural-only in source or
+normalized by the renderer. If the artifact looks different from the raw
+markdown, check these first:
+
+- **Body H1 is anchor-only.** Keep the `# ...` line readable for humans
+  navigating the raw `.md`, but the rendered title comes from frontmatter
+  `document.title`. If they drift, the artifact follows frontmatter.
+- **The H2 after `<!-- oa:section -->` becomes the in-document section
+  heading.** Post-#285, that H2 is the visible section title in the body, so
+  choose names that read well in the output. Example:
+  `<!-- oa:section type=standard_terms -->` + `## Resolutions` renders
+  `Resolutions` as the in-document heading; the same directive +
+  `## Standard Terms` renders `Standard Terms`. Note that on
+  `cover-standard-signature-v1`, the **running page header** is separately
+  driven by frontmatter `sections.<name>.section_label` — if you rename the
+  body H2 but leave `section_label` alone, the page header will not change.
+- **`[Signature Page Follows]` is renderer-inserted.** Authors do not write
+  that string in canonical source. The `traditional-consent-v1` layout always
+  inserts `[Signature Page Follows]` between the operative section and the
+  signature section, so seeing it in output but not source is expected.
+- **Signer row values in repeat-backed signature sections get `$`
+  auto-prefixed.** In a repeat-backed signature section, write
+  `{stockholder.name}` in canonical source. The parser rewrites it to
+  `{$stockholder.name}` in generated artifacts, so do not "fix" the `$`
+  you see there. This rewrite is scoped to signer row values; it does not
+  fire for other loop contexts.
+
+Use this quick source-of-truth map when deciding where authored text will show
+up:
+
+- Body `# <H1>` -> anchor-only for raw `.md`; not rendered in the artifact
+- Body `## <heading>` immediately after `<!-- oa:section type=... -->` ->
+  rendered as the in-document section heading
+- Body `### <clause heading>` plus following paragraphs -> rendered
+- Frontmatter `sections.<name>.section_label` -> running page header in
+  `cover-standard-signature-v1` (independent of the body H2)
+- Body recital paragraphs under `<!-- oa:section type=recitals -->` ->
+  rendered in the optional recital section (currently only `traditional-consent-v1`
+  emits a recital section; `cover-standard-signature-v1` ignores it)
+- Frontmatter `document.title` -> rendered as the document title
+- Frontmatter `document.opening_recital` -> rendered before the operative
+  section by `traditional-consent-v1`; not consumed by
+  `cover-standard-signature-v1`
+- Frontmatter `document.label` and `document.version` -> rendered in the
+  layout footer; exact placement varies by layout
+- Frontmatter `document.license` -> consumed in the Markdown export, but
+  both current DOCX layouts hardcode the footer license string as
+  "Free to use under CC BY 4.0." rather than reading frontmatter. All
+  first-party templates currently use that license so the output happens
+  to match, but don't expect a non-CC-BY-4.0 license to flow through to
+  the DOCX footer today.
 
 ### Step 8 — Generate and verify
 
@@ -408,6 +502,7 @@ The terms below are incorporated into and form part of this agreement.
 | row | Effective Date | {effective_date} | always |
 | row | Confidentiality Term | {confidentiality_term} | always |
 
+<!-- oa:section type=standard_terms -->
 ## Standard Terms
 
 <!-- oa:clause id=defined-terms type=definitions -->
@@ -433,6 +528,7 @@ Each party's confidentiality obligations apply for the Confidentiality Term
 listed in Cover Terms, beginning on the Effective Date. Trade-secret
 obligations survive indefinitely.
 
+<!-- oa:section type=signature -->
 ## Signatures
 
 <!-- oa:signature-mode arrangement=stacked -->

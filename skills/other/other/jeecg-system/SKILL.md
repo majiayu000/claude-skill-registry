@@ -348,7 +348,10 @@ if dept:
 | `/sys/position/queryByCode` | GET | 按code查职务 |
 | `/sys/dict/getDictText/{code}/{key}` | GET | 获取字典文本值 |
 | `/sys/dict/loadDict/{code}` | GET | 下拉搜索异步加载字典 |
-| `/sys/category/loadTreeData` | GET | 分类字典树数据 |
+| `/sys/category/loadTreeRoot` | GET | 分类字典根节点列表（必须传 `async=false&pcode=`） |
+| `/sys/category/loadAllData` | GET | 指定节点的子节点列表（必须传 `code=<节点code>`） |
+| `/sys/category/add` | POST | 创建分类节点（body: `{pid, name}`，**禁止传 code，后端自动生成**） |
+| `/sys/category/delete` | DELETE | 删除分类节点（param: `id=`） |
 | `/sys/tenant/list` | GET | 租户列表 |
 | `/sys/tenant/getCurrentUserTenant` | GET | 当前用户所有租户 |
 | `/sys/dataSource/list` | GET | 数据源列表 |
@@ -376,7 +379,14 @@ if dept:
 
 **SysTenant:** `id`, `name`, `beginDate`, `endDate`, `status`(0禁用/1正常)
 
-**SysCategory:** `id`, `pid`, `name`, `code`
+**SysCategory:** `id`, `pid`, `name`, `code`（**`code` 由后端自动生成，禁止在 add 请求中传入**，根节点示例 `B06`，子节点示例 `B06A01`）
+
+> **⚠️ 分类字典创建规则：**
+>
+> 1. **禁止传 `code`**：`/sys/category/add` 的 body 只传 `pid` 和 `name`，不要传 `code`，后端会自动按层级规则生成（根节点 `B06`、子节点 `B06A01`...）。
+> 2. **获取生成的 code**：`add` 接口在新版本会在 `result` 中返回 `code`，但老版本不返回。如果响应 `result` 为 null 或不含 `code`，必须立即调用 `loadTreeRoot`（根节点）或 `loadAllData`（子节点）主动查询，拿到 `code` 后再继续创建子级，不可假设或跳过。
+> 3. **查询接口参数**：`loadTreeRoot` 必须传 `async=false&pcode=`（pcode 为空字符串表示根节点）；`loadAllData` 必须传 `code=<父节点的code>`。
+> 4. **删除用 DELETE 方法**：`/sys/category/delete` 需要 HTTP DELETE，传 param `id=`。
 
 **QuartzJob:** `id`, `jobClassName`, `cronExpression`, `parameter`, `description`, `status`(0停用/-1删除/1运行)
 

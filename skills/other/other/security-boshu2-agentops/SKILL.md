@@ -1,6 +1,7 @@
 ---
 name: security
 description: 'Run repository security scans.'
+practices: [supply-chain-integrity, sre]
 skill_api_version: 1
 context:
   window: fork

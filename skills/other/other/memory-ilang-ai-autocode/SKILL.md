@@ -21,4 +21,4 @@ version: 5.0.0
 ::FACT{path:project|value:.autocode/memory.md}
 ::FACT{path:global|value:~/.autocode/user.md}
 
-Powered by I-Lang v3.0 | ilang.ai
+Powered by I-Lang v4.0 | ilang.ai

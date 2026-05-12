@@ -1,7 +1,6 @@
 ---
 name: media-composition
-description: Combine media assets (GIFs, videos) into composite tutorials with vertical/horizontal
-version: 1.9.0
+description: 'Combine media assets (GIFs, videos) into composite tutorials with vertical/horizontal.'
 alwaysApply: false
   layouts.
 category: media-generation
@@ -12,8 +11,7 @@ tags:
 - combine
 - stitch
 - tutorial
-tools:
-- Bash
+tools: []
 complexity: medium
 model_hint: standard
 estimated_tokens: 450

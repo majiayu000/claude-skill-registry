@@ -1,10 +1,6 @@
 ---
 name: voice-generate
-description: Generate text in a learned writing voice using extracted voice
-  profiles and register selection. Frames source material as raw notes for
-  optimal output quality. Use when writing blog posts, essays, emails, or
-  any prose in the user's trained voice.
-version: 1.9.3
+description: 'Generate text in a learned writing voice.'
 globs: "**/*.{md,txt}"
 alwaysApply: false
 category: writing-quality
@@ -20,9 +16,9 @@ model_hint: opus
 estimated_tokens: 2400
 progressive_loading: true
 modules:
-- source-framing
-- register-selection
-- generation-pipeline
+- modules/source-framing.md
+- modules/register-selection.md
+- modules/generation-pipeline.md
 dependencies:
 - scribe:voice-extract
 - scribe:slop-detector
@@ -167,7 +163,8 @@ After generation:
   subversion, and subtle voice qualities require the larger
   model. Sonnet flattens these.
 - **Banned phrase scan**: Can run locally (regex/grep)
-- **Review agents**: Sonnet is sufficient (structured prompts)
+- **Review agents**: Sonnet is sufficient (the prompts are
+  templated, so Opus tonal range is not needed)
 
 ## Per-Project Voice
 

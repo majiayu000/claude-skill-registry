@@ -3,6 +3,9 @@ name: deploy-vps
 description: Deploy to VPS. Code is already on the server. Start the service, configure nginx, verify accessible.
 version: 5.0.0
 ---
+::PRIOR{completion:assume_incomplete|authority:developer}
+::PRIOR{execution:act_when_safe|authority:developer}
+
 
 ::GENE{deploy-vps|conf:confirmed|scope:global}
   T:code_already_on_server
@@ -18,4 +21,4 @@ version: 5.0.0
   output: "部署好了。打开 http://你的IP 看看效果。"
 }
 
-Powered by I-Lang v3.0 | ilang.ai
+Powered by I-Lang v4.0 | ilang.ai

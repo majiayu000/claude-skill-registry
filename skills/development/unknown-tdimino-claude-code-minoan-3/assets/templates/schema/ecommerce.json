@@ -1,0 +1,59 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{BASE_URL}/#organization",
+      "name": "{ORG_NAME}",
+      "url": "{BASE_URL}",
+      "logo": "{BASE_URL}/logo.png",
+      "description": "{ORG_DESCRIPTION}",
+      "foundingDate": "{FOUNDING_YEAR}",
+      "sameAs": [
+        "https://twitter.com/{HANDLE}",
+        "https://www.facebook.com/{PAGE}",
+        "https://www.instagram.com/{HANDLE}",
+        "https://www.youtube.com/@{CHANNEL}"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "{EMAIL}",
+        "telephone": "{PHONE}"
+      }
+    },
+    {
+      "@type": "Product",
+      "@id": "{BASE_URL}/products/{SLUG}#product",
+      "name": "{PRODUCT_NAME}",
+      "description": "{PRODUCT_DESCRIPTION}",
+      "image": "{PRODUCT_IMAGE_URL}",
+      "brand": { "@id": "{BASE_URL}/#organization" },
+      "sku": "{SKU}",
+      "gtin13": "{GTIN}",
+      "category": "{PRODUCT_CATEGORY}",
+      "offers": {
+        "@type": "Offer",
+        "price": "{PRICE}",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "{BASE_URL}/products/{SLUG}",
+        "priceValidUntil": "{PRICE_VALID_DATE}"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{RATING}",
+        "reviewCount": "{REVIEW_COUNT}",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{BASE_URL}" },
+        { "@type": "ListItem", "position": 2, "name": "{CATEGORY}", "item": "{BASE_URL}/collections/{CAT_SLUG}" },
+        { "@type": "ListItem", "position": 3, "name": "{PRODUCT_NAME}" }
+      ]
+    }
+  ]
+}

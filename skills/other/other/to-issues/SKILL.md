@@ -1,6 +1,7 @@
 ---
 name: to-issues
 description: Decompose a plan, PRD, or spec into independently-grabbable vertical-slice issues (markdown file by default, GitHub issues via flag). Trigger when the user wants implementation tickets, work decomposition, or to convert an implementation plan into parallelizable work. Takes a plan file and emits atomic vertical slices.
+# auto-invoke: explicitly permitted — model invocation explicitly required and documented
 ---
 
 Break a plan into **tracer-bullet vertical slices**. Each slice cuts end-to-end through every layer (schema, API, UI, tests) and is independently demoable. Reject horizontal layer-slices — they create blocked queues.

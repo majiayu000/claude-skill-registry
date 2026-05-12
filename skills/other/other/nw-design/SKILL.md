@@ -18,6 +18,108 @@ Execute DESIGN wave through discovery-driven architecture design. The command st
 
 All architects write to `docs/product/architecture/brief.md` (SSOT), each in its own section. Analyzes existing codebase, evaluates open-source alternatives, produces C4 diagrams (Mermaid) as mandatory output.
 
+## Output Tiers (per D2)
+
+Provenance: feature `lean-wave-documentation` — D2 (schema-typed sections), D10 (one-line expansion descriptions). The DESIGN wave emits a single `feature-delta.md` whose headings are typed `[REF]` (always emitted) or `[WHY]/[HOW]` (lazy expansions). Tier-1 is the always-on baseline; Tier-2 is the lazily-rendered expansion catalog.
+
+### Tier-1 [REF] — always emitted
+
+Tier-1 sections constitute the lean-default baseline. Every DESIGN run emits at minimum these sections under `## Wave: DESIGN / [REF] <Section>` headings:
+
+- DDD list — D-numbered design decisions with verdicts and one-line rationale
+- Component decomposition — table of components with paths and change types
+- Driving ports — inbound surfaces (CLI, skill, HTTP) named per the C4 contract
+- Driven ports + adapters — outbound side-effects with adapter mapping
+- Technology choices — pinned languages/frameworks/runtime versions
+- Decisions table — DDD-N row per locked decision (no rationale prose)
+- Reuse Analysis table — every overlapping component classified EXTEND or CREATE NEW
+- Open questions — items deliberately deferred to DISTILL/DELIVER
+
+### Tier-2 EXPANSION CATALOG — lazy, on-demand (per D10)
+
+Tier-2 items are NOT emitted by default. They are rendered only when explicitly requested via `--expand <id>` (DDD-2) or via the wave-end interactive prompt when `expansion_prompt = "ask"`. Each item has a one-line description (per D10) so the menu fits in a single render. Each emitted Tier-2 section is headed `## Wave: DESIGN / [WHY] <Section>` or `## Wave: DESIGN / [HOW] <Section>`.
+
+| Expansion ID | Tier label | One-line description |
+|---|---|---|
+| `trade-off-analysis` | [WHY] | Quality-attribute trade-off matrix with prioritization rationale |
+| `rejected-alternatives` | [WHY] | Architectures weighed and rejected with one-paragraph reason per option |
+| `c4-narrative` | [HOW] | Long-form C4 walkthrough: System Context → Container → Component prose |
+| `evolution-scenarios` | [WHY] | Hypothetical future stress vectors and how the design absorbs them |
+| `paradigm-rationale` | [WHY] | Why FP/OOP was selected; comparison vs the alternative for this domain |
+| `reuse-analysis-deep-dive` | [WHY] | Per-row justification for every EXTEND vs CREATE NEW decision in the Reuse table |
+| `c4-component-diagrams` | [HOW] | Component-level C4 diagrams for complex subsystems (Mermaid) |
+| `expansion-catalog-rationale` | [WHY] | Why this set of expansions, why these defaults, why D10 enforces one-line descriptions |
+
+## Density resolution (per D12)
+
+Provenance: D12 (rigor cascade), DDD-5 (density resolver shared utility). Before emitting any Tier-1 section, resolve the active documentation density:
+
+1. **Read** `~/.nwave/global-config.json`. Treat missing/malformed config as empty dict (fall back to defaults).
+2. **Call** `resolve_density(global_config)` from `scripts/shared/density_config.py`. The function returns a `Density` value object with fields `mode` (`"lean"` | `"full"`), `expansion_prompt` (`"ask"` | `"always-skip"` | `"always-expand"` | `"smart"`), and `provenance` (the cascade branch that produced this result).
+3. **Branch on `density.mode`**:
+   - `lean` → emit ONLY Tier-1 `[REF]` sections under `## Wave: DESIGN / [REF] <Section>` headings. Do NOT auto-render Tier-2 items.
+   - `full` → emit Tier-1 `[REF]` sections PLUS all Tier-2 expansion items rendered under their `[WHY]` / `[HOW]` headings. This is auto-expansion (no menu).
+4. **At wave end**, branch on `density.expansion_prompt`:
+   - `"ask"` → present the expansion menu (Tier-2 catalog above with one-line descriptions per D10) and append user-selected items as `## Wave: DESIGN / [WHY|HOW] <Section>` headings.
+   - `"always-skip"` → no menu, no extra sections (idempotent re-runs, CI mode).
+   - `"always-expand"` → equivalent to `mode = "full"` for this run; auto-render every Tier-2 item.
+   - `"smart"` → out of scope for v1 (per OQ-3); treat as `"ask"` until heuristic is empirically tuned.
+
+The resolver itself encodes the D12 cascade: explicit `documentation.density` override > `rigor.profile` mapping (`lean`→`lean`, `standard`→`lean`+`ask`, `thorough`→`full`, `exhaustive`→`full`+all-expansions, `custom`→`lean`+`ask`) > hard default `lean`+`ask`. This skill MUST NOT replicate the cascade locally — call `resolve_density(global_config)` and trust its output.
+
+**Section heading prefix convention (per D2)**: every emitted section starts with `## Wave: DESIGN / [REF] <Section>` for Tier-1; `## Wave: DESIGN / [WHY] <Section>` or `## Wave: DESIGN / [HOW] <Section>` for Tier-2. Validator `scripts/validation/validate_feature_delta.py` enforces the regex `^## Wave: \w+ / \[(REF|WHY|HOW)\] .+$` on every wave heading.
+
+### Ad-hoc override — user request mid-session
+
+Even when `density.mode = "lean"` and `density.expansion_prompt = "always-skip"`, the user may ask DURING the wave session for specific expansions:
+
+- "expand jtbd" / "expand jtbd-narrative" / "more on jtbd"
+- "add alternatives considered"
+- "show migration playbook"
+- "tell me why" (interpretive — append the WHY rationale section relevant to the most recent decision)
+- "more on <X>" (where `<X>` is one of the expansion catalog items for this wave)
+
+When the user makes such a request:
+
+1. Append the corresponding `[WHY]` or `[HOW]` section to `feature-delta.md` under the current wave's heading.
+2. Emit a `DocumentationDensityEvent` with `choice="expand"` and `expansion_id=<the requested item>` to `JsonlAuditLogWriter`.
+3. Do NOT modify `~/.nwave/global-config.json`. The override is ONE-SHOT for this wave only.
+
+If the user's request matches NO item in this wave's Expansion Catalog, respond with the catalog list (one-line description per item per D10) and ask for clarification — do NOT improvise an expansion outside the catalog.
+
+## Telemetry (per D4 + DDD-6)
+
+Provenance: D4 (telemetry schema instrumented day-one), D6 (first-install pedagogical prompt creates audit signal), DDD-6 (telemetry event class lives in DES domain, writer reused). Every expansion choice — whether the user expanded an item or skipped the menu — emits a structured event to the existing `JsonlAuditLogWriter` driven adapter.
+
+**Event type**: `DocumentationDensityEvent` (dataclass at `src/des/domain/telemetry/documentation_density_event.py`).
+
+**Schema fields** (per D4):
+
+```
+{
+  "feature_id": "<feature-id>",
+  "wave": "DESIGN",
+  "expansion_id": "<id-from-catalog-or-'*'-for-skip-all>",
+  "choice": "skip" | "expand",
+  "timestamp": "<ISO-8601 datetime>"
+}
+```
+
+**Emission pattern**:
+
+1. Construct a `DocumentationDensityEvent(feature_id=..., wave="DESIGN", expansion_id=..., choice=..., timestamp=...)`.
+2. Call `event.to_audit_event()` to convert to the open `AuditEvent` shape (`event_type="DOCUMENTATION_DENSITY"` and the schema fields nested under `data`).
+3. Dispatch via `JsonlAuditLogWriter().log_event(audit_event)`.
+
+The wave-skill harness invokes the helper `scripts/shared/telemetry.py:write_density_event(...)` which performs all three steps. This skill MUST NOT bypass the helper or write JSONL directly — every density telemetry event flows through the shared helper to keep the audit-log schema consistent.
+
+**When to emit**:
+- One event per user choice in the expansion menu when `expansion_prompt = "ask"` (`choice = "expand"` for selected items, `choice = "skip"` with `expansion_id = "*"` if the user skips the entire menu).
+- One synthetic `choice = "skip"` event with `expansion_id = "*"` when `expansion_prompt = "always-skip"` (records the skipped menu opportunity).
+- One `choice = "expand"` event per Tier-2 item rendered when `mode = "full"` or `expansion_prompt = "always-expand"`.
+
+This telemetry feeds the propagation success metric: when DEVOPS/DISTILL consume a lean DESIGN feature-delta and produce no `--expand` requests for trade-off or evolution scenarios, the `[REF]` baseline is sufficient for downstream waves.
+
 ## Prior Wave Consultation
 
 Before beginning DESIGN work, read SSOT and prior wave artifacts in this order:
@@ -66,6 +168,30 @@ Architecture decisions are driven by quality attributes, not pattern shopping. E
 6. **Recommend Architecture Based on Drivers** — recommend based on quality attribute priorities|constraints|paradigm from steps 1-5. Default: modular monolith with dependency inversion (ports-and-adapters). Overrides require evidence. If functional paradigm: apply types-first design, composition pipelines, pure core / effect shell, effect boundaries as ports, immutable state — in architecture document only, no code snippets. Gate: architecture pattern selected with written rationale.
 6. **Stress Analysis** (HIDDEN — `--residuality` flag only) — when activated: apply complexity-science-based stress analysis (stressors|attractors|residues|incidence matrix|resilience modifications) using the `stress-analysis` skill. When not activated: skip entirely, do not mention. Gate: activated only when flag present.
 7. **Produce Deliverables** — write architecture document with component boundaries|tech stack|integration patterns. Produce C4 System Context diagram (Mermaid) — mandatory. Produce C4 Container diagram (Mermaid) — mandatory. Produce C4 Component diagrams (Mermaid) — only for complex subsystems. Write ADRs for significant decisions. Gate: mandatory C4 diagrams present, ADRs written.
+
+## Outcome Collision Check (per DISCUSS#D-5 grain)
+
+Provenance: feature `outcomes-registry` — DISCUSS#D-2 (lean Tier-1 + Tier-2 default), D-5 (per-typed-contract grain), D-6 (gate-scoping: code-feature pipelines only).
+
+**Trigger**: a new feature-delta has been emitted in DESIGN with a Reuse Analysis table. Run this check AFTER step 5 (Reuse Analysis) in the Discovery Flow and BEFORE producing the final architecture deliverables in step 7.
+
+**Skip when**: the feature is methodology-only (skill propagation, prose changes, no new typed contract surface). Per D-6 gate-scoping, the outcomes registry tracks code-feature pipelines only.
+
+**Procedure**:
+
+1. **Run** the collision-check CLI against the freshly-emitted feature-delta:
+   ```
+   nwave-ai outcomes check-delta docs/feature/{feature-id}/feature-delta.md
+   ```
+2. **Handle exit codes**:
+   - **Exit `0`** — no collisions detected. Proceed to step 7 (Produce Deliverables).
+   - **Exit `1`** — one or more candidate outcomes overlap with existing OUT-N rows in `docs/product/outcomes/registry.yaml`. Review the reported OUT-ids. For each:
+     - **Genuine duplication**: link the new candidate to the existing OUT-N via `related: [OUT-N]` in the registry, OR mark the existing OUT-N `superseded_by: OUT-M` if the new contract replaces it. Re-run `check-delta` to confirm.
+     - **False positive** (Tier-1 keyword/shape match fired but Tier-2 disambiguation reveals the contracts are distinct): annotate the candidate's keywords in the registry to be more distinctive, then re-run.
+
+The registry at `docs/product/outcomes/registry.yaml` is the SSOT for "what we promise the system does." Reuse Analysis (step 5) deduplicates within the codebase; the Outcome Collision Check deduplicates across the contract registry — they are complementary gates.
+
+Gate: `check-delta` exits `0`, OR every reported collision has been resolved (linked, superseded, or disambiguated) and the re-run exits `0`, OR the feature is documented as methodology-only and the check is correctly skipped.
 
 ## Rigor Profile Integration
 
@@ -152,6 +278,7 @@ Context files: see Prior Wave Consultation above.
 - [ ] Component boundaries defined with dependency-inversion compliance
 - [ ] C4 System Context + Container diagrams produced (Mermaid)
 - [ ] ADRs written with alternatives considered
+- [ ] Per-wave peer review (OPTIONAL — invoke `/nw-review nw-solution-architect-reviewer` only on trigger: contested ADR, novel pattern, performance-budget unverified by spike, security boundary change. Default: skip. Mandatory consolidated review fires at end of DISTILL covering all 4 waves in parallel.)
 - [ ] Handoff accepted by nw-platform-architect (DEVOPS wave)
 
 ## Next Wave
@@ -191,24 +318,17 @@ Before completing DESIGN, produce `docs/feature/{feature-id}/design/wave-decisio
 
 This summary enables DEVOPS and DISTILL to quickly assess architecture decisions without reading all DESIGN files.
 
-## Expected Outputs
+## Outputs
 
-### Feature delta (in `docs/feature/{feature-id}/`)
-```
-  wave-decisions.md              (appends ## DESIGN Decisions section)
-```
+**Single narrative file**: `docs/feature/{feature-id}/feature-delta.md` — DDD list, component decomposition, driving/driven ports, technology choices, decisions table, reuse analysis, open questions all become `## Wave: DESIGN / [REF|WHY|HOW] <Section>` headings.
 
-### SSOT updates (in `docs/product/architecture/`)
-```
-  brief.md                       (created or updated — each architect owns its section:
-                                   ## System Architecture — nw-system-designer
-                                   ## Domain Model — nw-ddd-architect
-                                   ## Application Architecture — nw-solution-architect)
-  adr-*.md                       (new ADRs for this feature's architectural decisions)
-  c4-diagrams.md                 (current component topology, if separate from brief)
-```
+**Machine artifacts**: none unique to feature dir (the `feature-delta.md` IS the artifact; SSOT writes carry the architectural payload).
 
-### Optional
-```
-CLAUDE.md (project root)         (optional: ## Development Paradigm section)
-```
+**SSOT updates** (per Recommendation 3 / back-propagation contract — DESIGN is the primary SSOT integrator):
+- `docs/product/architecture/brief.md` — created or updated. Each architect owns its section: `## System Architecture` (nw-system-designer), `## Domain Model` (nw-ddd-architect), `## Application Architecture` (nw-solution-architect)
+- `docs/product/architecture/adr-*.md` — one ADR per significant architectural decision
+- `docs/product/architecture/c4-diagrams.md` — current component topology if separate from brief
+
+**Optional** (project-root, not feature-dir): `CLAUDE.md` `## Development Paradigm` section.
+
+Legacy multi-file outputs (per-wave `wave-decisions.md`, `architecture-design.md`, etc. inside `docs/feature/{id}/design/`) are NOT produced — that content lives in `feature-delta.md` plus the SSOT integration above. Validator: `scripts/validation/validate_feature_layout.py`.

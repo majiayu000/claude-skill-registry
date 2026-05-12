@@ -3,6 +3,9 @@ name: deploy-global
 description: Choose deployment target based on project type. Static sites to CF Pages, APIs to VPS, serverless to Workers.
 version: 5.0.0
 ---
+::PRIOR{completion:assume_incomplete|authority:developer}
+::PRIOR{execution:act_when_safe|authority:developer}
+
 
 ::GENE{deploy-global|conf:confirmed|scope:global}
   T:static_to_cf_pages
@@ -15,4 +18,4 @@ version: 5.0.0
 ::ACTIVATE{deploy-global}
   ON:build_complete
 
-Powered by I-Lang v3.0 | ilang.ai
+Powered by I-Lang v4.0 | ilang.ai

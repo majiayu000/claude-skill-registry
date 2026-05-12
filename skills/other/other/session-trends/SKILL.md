@@ -21,7 +21,12 @@ Requires `.claude/session-metrics/metrics.jsonl` from `/session-scan`.
 /session-trends --window 30d             # Specific window only
 /session-trends --project enaia          # Filter by project
 /session-trends --compare MEMORY.md      # Compare against memory baseline
+/session-trends --html out.html          # Write HTML report with ASCII bars
 ```
+
+For pure context-window stats (max prompt tokens, ctx %, compaction rate)
+across raw Claude Code JSONL files, see the `--scan-jsonl` mode of
+`compute-metrics.py` (inspired by badlogic / earendil-works/pi).
 
 ## Pipeline
 
@@ -129,3 +134,12 @@ See `references/trend-queries.md` for interpreting specific trend patterns.
 1. **ALWAYS use Python for computation** — no manual aggregation
 2. **NEVER modify metrics.jsonl** — read-only for trends
 3. **ALWAYS show window comparison** — single numbers lack context
+
+## Acknowledgements
+
+The HTML report layout (preformatted text + ASCII bar charts via `█`/`░`)
+and per-model + threshold-bucket breakdown (`>=80%`, `>=90%`, `>=100%`,
+`compaction_rate`) were borrowed from
+[badlogic / earendil-works/pi `session-context-stats.mjs`](https://github.com/earendil-works/pi/blob/main/scripts/session-context-stats.mjs).
+Our pipeline's qualitative metrics (friction, fingerprint, plugin
+opportunity, skill effectiveness) are additive on top.

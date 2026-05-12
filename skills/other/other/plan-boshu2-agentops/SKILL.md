@@ -1,6 +1,7 @@
 ---
 name: plan
 description: 'Decompose goals into issue plans.'
+practices: [adr, agile-manifesto, pragmatic-programmer]
 skill_api_version: 1
 metadata:
   tier: execution
@@ -122,8 +123,27 @@ Analyze the goal and break it into discrete, implementable issues. For each issu
 - **Title**: Clear action verb (e.g., "Add authentication middleware")
 - **Description**: What needs to be done
 - **Dependencies**: Which issues must complete first (if any)
-- **Acceptance criteria**: How to verify it's done
+- **Acceptance criteria**: How to verify it's done — emitted as a fenced YAML `acceptance_criteria` block (see contract below)
 - **Test levels**: Which pyramid levels (L0–L3) this issue's tests cover
+
+#### Acceptance Criteria Contract (mandatory)
+
+Every issue body MUST contain an `acceptance_criteria` fenced YAML block. The block lives BELOW the issue's textual description and ABOVE any "Reference" or "Notes" trailer. The parent epic body carries its own `acceptance_criteria` block (epic-level criteria); each child bead carries its own. `/discovery` STEP 6 lifts both into the execution packet under `epic_criteria` and `bead_criteria`. Canonical shape: [`schemas/execution-packet.schema.json`](../../schemas/execution-packet.schema.json) (`#/$defs/Criterion`).
+
+```yaml
+acceptance_criteria:
+  - id: ac-<scope>.<n>
+    description: "<one-line measurable statement>"
+    check_type: test_pass | command_exit_zero | file_exists | grep_match | manual | council_judge | custom_rubric
+    check_command: "<shell command or script path>"
+    evidence_path: "<glob>"
+    evidence_required: true | false
+    weight: 0.0–1.0
+    optional: true | false
+    agent_judge: "<council:name>"  # REQUIRED only when check_type == custom_rubric
+```
+
+`agent_judge` is REQUIRED when `check_type == "custom_rubric"` — `custom_rubric` accepts free-text `check_command`, so the judge field names the council/judge that owns the verdict. The schema enforces this with an `if/then` clause; an issue body that omits it for a `custom_rubric` criterion is a contract violation, not a soft warning.
 
 Read [references/decomposition.md](references/decomposition.md) for: anti-pattern pre-flight, design briefs for rewrites, issue granularity rules, operationalization heuristics, conformance checks, and schema strictness pre-flight.
 
@@ -236,5 +256,6 @@ See [references/examples.md](references/examples.md) for more troubleshooting sc
 - [references/complexity-estimation.md](references/complexity-estimation.md)
 - [references/detail-templates.md](references/detail-templates.md)
 - [references/examples.md](references/examples.md)
+- [references/plan-to-beads-workflow.md](references/plan-to-beads-workflow.md)
 - [references/sdd-patterns.md](references/sdd-patterns.md)
 - [references/templates.md](references/templates.md)

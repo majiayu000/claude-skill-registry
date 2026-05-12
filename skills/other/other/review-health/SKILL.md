@@ -266,7 +266,7 @@ Do not routinely spawn per-language SMEs. That is the prior failure mode this re
  | Security findings (CVEs, secrets, auth)    | `/review-security` | Safety-tier findings involving security                                |
  | Performance hotspots                       | `/review-perf`     | Observations of perf-sensitive code without benchmarks                 |
  | Accessibility (for web projects)           | `/review-a11y`     | Documentation findings for web UI code                                 |
- | Documentation gaps                         | `/review-doc`      | Documentation at Foundational                                          |
+ | Documentation gaps                         | `/tidy-docs`      | Documentation at Foundational                                          |
  | Pre-release readiness                      | `/review-release`  | When the user is preparing to publish/deploy                           |
 
 Route with a scoped argument when possible: `/review-arch services/billing/` is more useful than `/review-arch`.

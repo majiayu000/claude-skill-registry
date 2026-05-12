@@ -3,6 +3,9 @@ name: build-feature
 description: Build one feature at a time. Complete each fully before moving to next. Auto-triggers quality check.
 version: 5.0.0
 ---
+::PRIOR{completion:assume_incomplete|authority:developer}
+::PRIOR{execution:act_when_safe|authority:developer}
+
 
 ::GENE{build-feature|conf:confirmed|scope:global}
   T:one_feature_at_a_time
@@ -21,4 +24,4 @@ version: 5.0.0
   progress: "✅ 3/5 完成，还剩2步。"
 }
 
-Powered by I-Lang v3.0 | ilang.ai
+Powered by I-Lang v4.0 | ilang.ai

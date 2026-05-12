@@ -1,11 +1,6 @@
 ---
 name: project-init
-description: 'Interactive project initialization with git setup, workflows, hooks,
-  and build configuration.
-
-
-  project setup, initialization, scaffold, bootstrap, new project.'
-version: 1.9.3
+description: 'Interactive project init: git, workflows, hooks, build config. Scaffold a new project.'
 alwaysApply: false
 model: claude-sonnet-4
 tools: []

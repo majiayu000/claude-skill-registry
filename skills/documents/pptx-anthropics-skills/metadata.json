@@ -1,0 +1,43 @@
+{
+  "name": "pptx",
+  "description": "PowerPoint presentation creation and editing",
+  "repo": "anthropics/skills",
+  "path": "skills/pptx",
+  "github_branch": "main",
+  "category": "documents",
+  "tags": [
+    "document",
+    "powerpoint",
+    "presentation",
+    "slides"
+  ],
+  "stars": 0,
+  "source": "Anthropic Official",
+  "dir_name": "pptx-anthropics-skills",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "scripts/__init__.py",
+    "scripts/add_slide.py",
+    "scripts/clean.py",
+    "scripts/office/helpers/__init__.py",
+    "scripts/office/helpers/merge_runs.py",
+    "scripts/office/helpers/simplify_redlines.py",
+    "scripts/office/pack.py",
+    "scripts/office/soffice.py",
+    "scripts/office/unpack.py",
+    "scripts/office/validate.py",
+    "scripts/office/validators/__init__.py",
+    "scripts/office/validators/base.py",
+    "scripts/office/validators/docx.py",
+    "scripts/office/validators/pptx.py",
+    "scripts/office/validators/redlining.py",
+    "scripts/thumbnail.py"
+  ],
+  "author": "anthropics",
+  "source_url": "https://github.com/anthropics/skills/blob/main/skills/pptx/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anthropics/skills/blob/main/skills/pptx/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

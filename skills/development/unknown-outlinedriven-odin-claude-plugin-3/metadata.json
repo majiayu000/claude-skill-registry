@@ -1,0 +1,27 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/generate-my-taste/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-outlinedriven-odin-claude-plugin-3",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "assets/template/references/anchors.md",
+    "assets/template/references/charter.md",
+    "references/anchor-derivation.md",
+    "references/charter-examples.md",
+    "references/influence-catalogue.md"
+  ],
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/generate-my-taste/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/generate-my-taste/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,6 +1,7 @@
 ---
 name: rpi
 description: 'Run discovery, crank, validation.'
+practices: [continuous-delivery, dora-metrics, agile-manifesto, pragmatic-programmer]
 skill_api_version: 1
 user-invocable: true
 context:
@@ -39,6 +40,7 @@ tool invocations. Keep strict delegation on by default; do not compress phases,
 replace phase skills with direct agent spawns, or skip validation. Read
 [../shared/references/strict-delegation-contract.md](../shared/references/strict-delegation-contract.md)
 for the full anti-compression contract.
+See [references/isolation-contract.md](references/isolation-contract.md) for the four-lever model and the compression patterns `scripts/check-skill-isolation.sh` flags. See [references/best-practices.md](references/best-practices.md) for the principle + anti-pattern citation table.
 
 RPI owns one lifecycle objective across all phases. Preserve the discovered
 `epic_id` when present; otherwise preserve the original goal and execution

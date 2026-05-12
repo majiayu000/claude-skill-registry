@@ -1,7 +1,6 @@
 ---
 name: github-initiative-pulse
-description: 'Generate markdown digests and CSV exports for GitHub issues, PRs, and initiative health tracking'
-version: 1.9.0
+description: 'Generate markdown digests and CSV exports for GitHub issues, PRs, and initiative health tracking.'
 alwaysApply: false
 category: project-management
 tags:
@@ -11,8 +10,7 @@ tags:
 - status
 - dashboards
 dependencies: []
-tools:
-- minister-tracker
+tools: []
 provides:
   reporting:
   - status-digest

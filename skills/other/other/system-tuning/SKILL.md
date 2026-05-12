@@ -1,6 +1,7 @@
 ---
 name: system-tuning
 description: 'Restore system responsiveness via safe, ordered process cleanup and agent-swarm hygiene.'
+practices: [sre, resilience-patterns, ebpf-observability]
 skill_api_version: 1
 user-invocable: true
 context:

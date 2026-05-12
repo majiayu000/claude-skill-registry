@@ -1,6 +1,6 @@
 ---
 name: describe-design
-description: Research a codebase and create architectural documentation describing how features or systems work. Use when the user asks to: (1) Document how a feature works, (2) Create an architecture overview, (3) Explain code structure for onboarding or knowledge transfer, (4) Research and describe a system's design. Produces markdown documents with Mermaid diagrams and stable code references suitable for humans and AI agents.
+description: "Research a codebase and create architectural documentation describing how features or systems work. Use when the user asks to: (1) Document how a feature works, (2) Create an architecture overview, (3) Explain code structure for onboarding or knowledge transfer, (4) Research and describe a system's design. Produces markdown documents with Mermaid diagrams and stable code references suitable for humans and AI agents."
 metadata:
   author: Garrick Aden-Buie (@gadenbuie)
   version: "1.1"

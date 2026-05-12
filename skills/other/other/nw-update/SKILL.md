@@ -34,8 +34,10 @@ Do NOT attempt to upgrade nwave-ai in the current session.
 Invoke the detector and resolve the PM binary absolute path in a single Bash call:
 
 ```bash
-PYTHONPATH=$HOME/.claude/lib/python python3 -c "
-import shutil, sys
+python3 -c "
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/.claude/lib/python'))
+import shutil
 from pathlib import Path
 from des.adapters.driven.package_managers.package_manager_detector import detect_pm
 pm = detect_pm(Path(sys.executable))
@@ -68,13 +70,15 @@ Then restart Claude Code.
 Call the driving port `PendingUpdateService.request_update`:
 
 ```bash
-PYTHONPATH=$HOME/.claude/lib/python python3 -c "
+python3 -c "
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/.claude/lib/python'))
 from des.application.pending_update_service import PendingUpdateService
 from des.adapters.driven.config.des_config import DESConfig
 from des.adapters.driven.package_managers.package_manager_detector import detect_pm
 from des.ports.driven_ports.package_manager_port import PackageManagerPort
 from pathlib import Path
-import shutil, sys
+import shutil
 
 pm = detect_pm(Path(sys.executable))
 binary = shutil.which(pm)

@@ -524,10 +524,7 @@ After the implementer approves, present the complete ticket set to the user:
 
 ### 10. Cut Tickets Upstream
 
-**Detect issue tracker** using the same detection as `/scope` and `/implement-batch`:
-- Check `CLAUDE.md` for tracker preference
-- Auto-detect from `git remote -v`
-- GitHub → `gh`, Gitea → MCP tools, GitLab → `glab`
+**Detect issue tracker** per [`references/trackers.md`](../../references/trackers.md).
 
 **Create batch labels/tags first:**
 - For each batch, create a label (e.g., `batch-1`, `batch-2`) if it doesn't already exist
@@ -631,10 +628,6 @@ The implementer evaluates tickets against these criteria:
 - `/scope-project` creates tickets; `/implement-project` implements them
 - Tickets go upstream already tagged with batch labels that `/implement-project` consumes
 - Typical flow: `/scope-project` → `/implement-project`
-
-**Relationship to `/think-deliberate`:**
-- `/scope-project`'s adversarial review is specialized for planning quality
-- `/think-deliberate` may be used within `/scope-project` if the planner faces a difficult design decision during ticket revision
 
 ## Example Session
 

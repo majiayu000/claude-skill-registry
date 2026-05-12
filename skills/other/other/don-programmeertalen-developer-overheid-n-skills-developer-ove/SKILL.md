@@ -1,6 +1,6 @@
 ---
 name: don-programmeertalen
-description: Programming language guidelines for Dutch government software. Use when choosing programming languages, setting up development environments, or following language-specific best practices for government projects.
+description: "Programming language guidelines for Dutch government software: language choice, dev environments, best practices."
 metadata:
   source: developer.overheid.nl
   synced-from: https://github.com/developer-overheid-nl/don-site

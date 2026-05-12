@@ -117,3 +117,9 @@ Remove approved garbage entries. Report final counts.
 
 - `${CLAUDE_SKILL_DIR}/references/risk-classification.md` — Full classification rules
 - `${CLAUDE_SKILL_DIR}/references/settings-format.md` — Permission pattern format
+
+## Related
+
+Long mix output flooding context? `/phx:mix-compression` installs rtk filters
+that compress `mix test/credo/dialyzer/compile` output before it reaches the
+transcript (5-15% token savings on mix-heavy sessions).

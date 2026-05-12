@@ -1,6 +1,6 @@
 ---
 name: don-open-source
-description: Open source standards and practices for Dutch government projects. Use when setting up an open source repository, choosing licenses, creating publiccode.yml, or following the Standard for Public Code.
+description: "Open source standards for Dutch government: licensing, publiccode.yml, Standard for Public Code, CONTRIBUTING.md."
 metadata:
   source: developer.overheid.nl
   synced-from: https://github.com/developer-overheid-nl/don-site

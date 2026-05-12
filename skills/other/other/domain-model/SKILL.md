@@ -1,7 +1,6 @@
 ---
 name: domain-model
 description: Grill against the existing domain model. Stress-test a plan's terminology against `CONTEXT.md` and ADRs; update both inline as decisions crystallise. Trigger when user proposes a feature/refactor that touches business concepts and the project has documented domain language to honor — or when domain language is missing and needs capture.
-disable-model-invocation: true
 ---
 
 Adversarial interview against the documented domain. Walk every branch of the design; resolve dependencies one decision at a time; recommend an answer per question. Ask one question per turn — wait for response before continuing.

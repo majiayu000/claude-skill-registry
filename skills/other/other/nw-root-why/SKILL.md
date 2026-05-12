@@ -27,18 +27,15 @@ Execute \*investigate-root-cause for {problem-statement}.
 
 ## Usage: DELIVER Wave Retrospective (Phase 3.5)
 
-When invoked as part of `/nw-deliver` Phase 3.5, analyze across 4 categories:
+When invoked as part of `/nw-deliver` Phase 3.5, execute in order:
 
-1. **What worked well** (and why — preserve these practices)
-2. **What worked better than before** (and why — reinforce improvements)
-3. **What worked badly** (5 Whys root cause, actionable fix)
-4. **What worked worse than before** (5 Whys root cause, prevent regression)
-
-**Inputs**: Evolution document|execution-log.json|mutation results|git log.
-**Output**: Retrospective section appended to evolution document.
-**Skip**: If clean execution (no skips|no failures|no tooling issues), generate brief summary only.
-
-Tag items requiring nWave framework changes as **meta-improvements**.
+1. **Gather Inputs** — Read evolution document, execution-log.json, mutation results, and git log. Gate: all available inputs loaded.
+2. **Analyze What Worked Well** — Identify practices that succeeded and document why — preserve these. Gate: at least one practice documented with rationale.
+3. **Analyze What Improved** — Identify what worked better than before and why — record as reinforcements. Gate: delta from prior execution captured.
+4. **Analyze What Worked Badly** — Apply 5 Whys root cause analysis to failures; produce actionable fix per root cause. Gate: each failure has a root cause and fix.
+5. **Analyze What Regressed** — Apply 5 Whys to anything worse than before; produce prevention action. Gate: each regression has a root cause and prevention action.
+6. **Tag Meta-Improvements** — Mark any items requiring nWave framework changes as **meta-improvements**. Gate: all framework-level issues flagged.
+7. **Append Retrospective** — Write retrospective section to evolution document. If clean execution (no skips, no failures, no tooling issues), generate brief summary only. Gate: evolution document updated.
 
 ## Success Criteria
 

@@ -1,6 +1,7 @@
 ---
 name: compile
 description: 'Compile .agents knowledge wiki.'
+practices: [wiki-knowledge-surface, ddd-bounded-context]
 skill_api_version: 1
 user-invocable: true
 context:

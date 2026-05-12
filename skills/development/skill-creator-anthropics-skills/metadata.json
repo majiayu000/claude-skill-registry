@@ -1,0 +1,38 @@
+{
+  "name": "skill-creator",
+  "description": "Create new Claude Code skills",
+  "repo": "anthropics/skills",
+  "path": "skills/skill-creator",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [
+    "skill",
+    "creator",
+    "meta",
+    "development"
+  ],
+  "stars": 0,
+  "source": "Anthropic Official",
+  "dir_name": "skill-creator-anthropics-skills",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "assets/eval_review.html",
+    "references/schemas.md",
+    "scripts/__init__.py",
+    "scripts/aggregate_benchmark.py",
+    "scripts/generate_report.py",
+    "scripts/improve_description.py",
+    "scripts/package_skill.py",
+    "scripts/quick_validate.py",
+    "scripts/run_eval.py",
+    "scripts/run_loop.py",
+    "scripts/utils.py"
+  ],
+  "author": "anthropics",
+  "source_url": "https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

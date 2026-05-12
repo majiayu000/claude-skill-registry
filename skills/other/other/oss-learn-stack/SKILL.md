@@ -9,7 +9,7 @@ description: |
 
 # Learn Stack
 
-Don't learn a framework from docs alone - learn it from how THIS repo uses it. This skill finds the patterns, explains the concepts, and points to real examples in the codebase you're about to contribute to.
+Don't learn a framework from docs alone. learn it from how THIS repo uses it. This skill finds the patterns, explains the concepts, and points to real examples in the codebase you're about to contribute to.
 
 ## Purpose
 
@@ -68,11 +68,11 @@ Present the full stack categorized:
 Ask targeted questions:
 
 > "Here's the stack this repo uses. For each technology, tell me your comfort level:
-> - **Comfortable** - used it in a project
-> - **Familiar** - read about it, haven't used it
-> - **Unknown** - never used it or only vaguely know what it is
+> - **Comfortable**: used it in a project
+> - **Familiar**: read about it, haven't used it
+> - **Unknown**: never used it or only vaguely know what it is
 >
-> Be honest - I'll focus teaching on the gaps. No judgment."
+> Be honest. I'll focus teaching on the gaps. No judgment."
 
 Process one gap at a time, starting with the most critical for the contribution they plan to make.
 
@@ -94,16 +94,16 @@ For each concept, present:
 ```
 ## {Technology}: {Concept Name}
 
-**What it is**: {2-3 sentence explanation - just enough to read the code}
+**What it is**: {2-3 sentence explanation. just enough to read the code}
 
 **How this repo uses it**:
-- `src/handlers/auth.ts:15-30` - {what this example demonstrates}
-- `src/middleware/validate.ts:8-22` - {what this example demonstrates}
+- `src/handlers/auth.ts:15-30`: {what this example demonstrates}
+- `src/middleware/validate.ts:8-22`: {what this example demonstrates}
 
 **Walk-through** of `src/handlers/auth.ts:15-30`:
-{line-by-line explanation of the key lines - not every line, just the ones that matter}
+{line-by-line explanation of the key lines. not every line, just the ones that matter}
 
-**Learn more**: {one link to official docs for this specific concept - not the homepage, the specific page}
+**Learn more**: {one link to official docs for this specific concept. not the homepage, the specific page}
 ```
 
 Rules:
@@ -112,7 +112,7 @@ Rules:
 - One external link per concept (the specific doc page, not the homepage)
 - Walk through the clearest example, skip the complex ones
 
-### 4. Thinking gate - user reads the code
+### 4. Thinking gate: user reads the code
 
 After explaining a concept:
 
@@ -135,7 +135,7 @@ Don't move on until the user can recognize the pattern independently.
 Once gaps are filled, tie the learning to what the user needs to do:
 
 > "The issue you're working on touches `{area}` which uses `{concept you just learned}`.
-> Specifically, look at `{file}:{line}` - that's where your change will interact with {concept}.
+> Specifically, look at `{file}:{line}`: that's where your change will interact with {concept}.
 > Based on what you just learned, what do you think needs to change there?"
 
 If the user doesn't have a specific issue yet, point to areas where the newly learned technology is most visible and suggest they explore those files on their own.
@@ -146,11 +146,11 @@ The user creates their own quick-reference for while they code.
 
 **Thinking gate:**
 
-> "Write a cheat sheet for yourself - 3-5 bullet points covering the key concepts you just learned, with file references for each.
+> "Write a cheat sheet for yourself. 3-5 bullet points covering the key concepts you just learned, with file references for each.
 > This is your reference while you code. Write it in YOUR words, not mine.
 >
 > Example format:
-> - {Concept}: {what it does} - see `{file}:{line}` for an example"
+> - {Concept}: {what it does}. See `{file}:{line}` for an example"
 
 Review their cheat sheet. Flag anything incorrect but don't rewrite it.
 
@@ -167,16 +167,16 @@ If the user can answer all three, they're ready to contribute. If not, revisit t
 
 ## Related Skills
 
-- **Triggered from**: ← `oss-prep-to-contribute` - when knowledge check reveals unfamiliar technology
-- **Triggered from**: ← `oss-explore-repo` - when exploration reveals the user doesn't understand the stack
-- **Next step**: → `oss-contribute` - ready to work on the issue
+- **Triggered from**: ← `oss-prep-to-contribute`: when knowledge check reveals unfamiliar technology
+- **Triggered from**: ← `oss-explore-repo`: when exploration reveals the user doesn't understand the stack
+- **Next step**: → `oss-contribute`: ready to work on the issue
 - **Pairs with**: `oss-explore-repo` (architecture understanding) + this skill (technology understanding) = full preparation
 
 ## Anti-patterns
 
-- **DO NOT** teach from generic docs - every example must come from THIS repo's codebase
-- **DO NOT** dump all concepts at once - teach one gap at a time, verify understanding, then move on
-- **DO NOT** skip the "find another example" gate - recognition matters more than explanation
-- **DO NOT** teach more than what's needed for the contribution - the goal is sufficiency, not mastery
-- **DO NOT** replace official documentation - point to it for depth, don't reproduce it
-- **DO NOT** assume the user knows prerequisite concepts - if they're unknown on React, don't assume they know JSX
+- **DO NOT** teach from generic docs. every example must come from THIS repo's codebase
+- **DO NOT** dump all concepts at once. teach one gap at a time, verify understanding, then move on
+- **DO NOT** skip the "find another example" gate. recognition matters more than explanation
+- **DO NOT** teach more than what's needed for the contribution. the goal is sufficiency, not mastery
+- **DO NOT** replace official documentation. point to it for depth, don't reproduce it
+- **DO NOT** assume the user knows prerequisite concepts. if they're unknown on React, don't assume they know JSX

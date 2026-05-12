@@ -1,7 +1,6 @@
 ---
 name: catchup
-description: 'Summarize recent git changes for context recovery. Use when resuming after a session break, joining ongoing work, or preparing a handoff.'
-version: 1.9.3
+description: 'Summarize recent git changes for context recovery.'
 alwaysApply: false
 category: analysis-methods
 tags:

@@ -25,4 +25,4 @@ version: 5.0.0
    Total first year: about $82. After that $72/year."
 }
 
-Powered by I-Lang v3.0 | ilang.ai
+Powered by I-Lang v4.0 | ilang.ai

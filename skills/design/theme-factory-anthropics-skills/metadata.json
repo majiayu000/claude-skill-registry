@@ -1,0 +1,26 @@
+{
+  "name": "theme-factory",
+  "description": "Create and customize UI themes",
+  "repo": "anthropics/skills",
+  "path": "skills/theme-factory",
+  "github_branch": "main",
+  "category": "design",
+  "tags": [
+    "theme",
+    "ui",
+    "customization",
+    "design"
+  ],
+  "stars": 0,
+  "source": "Anthropic Official",
+  "dir_name": "theme-factory-anthropics-skills",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "anthropics",
+  "source_url": "https://github.com/anthropics/skills/blob/main/skills/theme-factory/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anthropics/skills/blob/main/skills/theme-factory/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -356,6 +356,33 @@ seomator audit https://example.com
 
 Results are stored in `~/.seomator/` for later retrieval with `seomator report`.
 
+## Trust Model
+
+The `seomator` CLI fetches HTML from arbitrary user-supplied URLs. Any text
+quoted from those pages — titles, meta tags, headings, link text, alt
+attributes, schema content — is **untrusted input** that may attempt indirect
+prompt injection against the LLM consuming the report.
+
+The LLM-format reporter (`--format llm`) applies a layered defense:
+
+1. **Per-report nonce.** Every render emits a 128-bit hex nonce on the root
+   `<seo-audit>` element.
+2. **Nonce-stamped delimiters.** Site-derived text inside `<msg>` and
+   `<details>` is wrapped in `<untrusted-{nonce}>...</untrusted-{nonce}>`. An
+   attacker cannot forge the closing tag because the nonce is unpredictable
+   and unique per audit.
+3. **Security notice.** The report includes a `<security-notice>` instructing
+   the consuming LLM to treat the wrapped blocks as data, not instructions.
+4. **Invisible-character stripping.** Zero-width chars (U+200B–U+200D, U+2060,
+   U+FEFF), Unicode tag block (U+E0000–U+E007F), and C0/C1 controls are
+   removed from quoted content before XML escaping.
+5. **XML escaping.** Any literal `<` `>` `&` `"` `'` inside untrusted content
+   is escaped, so a crafted `</untrusted-...>` literal becomes inert text.
+
+Tool-authored fields — fix suggestions, rule IDs, category metadata — are
+emitted as plain XML and are not wrapped, since wrapping trusted content in
+untrusted delimiters would dilute the signal.
+
 ## Resources
 
 - **Full rules reference**: See `docs/SEO-AUDIT-RULES.md` for all 251 rules

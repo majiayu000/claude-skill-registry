@@ -7,7 +7,7 @@ description: Reduce concepts, duplication, and ceremony in internal code while t
 
 Code rots in two directions: outward (drift from the original design) and downward (accretion of dead state, redundant indirection, speculative ceremony). This skill addresses the second. The thesis is local: you are already in nearby code for some other reason; while you are there, remove what does not earn its keep.
 
-**Modern insight (2025)**: Tidy First (Kent Beck) and the dataflow-first design heuristic (Casey Muratori) converge on the same conclusion — small, frequent, atomic cleanups embedded in the active commit stream beat scheduled "cleanup PRs" by a wide margin. Scheduled cleanups bundle unrelated concerns and become unreviewable; embedded cleanups stay reviewable because their scope is the file already in your hands.
+**Modern insight (2025)**: Kent Beck's *Tidy First?* thesis and Casey Muratori's dataflow-first design heuristic both converge on the same conclusion that this skill's compress-side operations operationalize — small, frequent, atomic cleanups embedded in the active commit stream beat scheduled "cleanup PRs" by a wide margin. Scheduled cleanups bundle unrelated concerns and become unreviewable; embedded cleanups stay reviewable because their scope is the file already in your hands.
 
 See [dead-fields](references/dead-fields.md) for examples of dead struct fields, props, and class members.
 See [redundant-wrappers](references/redundant-wrappers.md) for examples of single-line passthrough functions that should be inlined.
@@ -98,7 +98,6 @@ Not boundaries: internal modules in the same crate/package, helpers in the same 
 1. **Never bundle cleanup with behavior change in one commit** — split via `git move --fixup` so each commit has exactly one concern. Cleanup commits ride alongside behavior commits in the same PR; that is fine and encouraged.
 2. **Never add an abstraction during cleanup** — cleanup removes; if a new abstraction is genuinely warranted, that is a *separate* commit with its own justification.
 3. **Never extend cleanup beyond files already touched by the active change** — opportunistic sweeps across the codebase are out of scope; they belong in scheduled refactor work that has its own plan.
-4. **If conflict with `~/.claude/claude/system-prompt-baseline.md`, system-prompt-baseline.md wins** — this skill complies with the user's git charter and tidy-first principles; if drift is detected, system-prompt-baseline.md is the source of truth.
 
 ## Validation Gates
 
@@ -120,11 +119,3 @@ Not boundaries: internal modules in the same crate/package, helpers in the same 
 | 13 | Mixed-concern commit — must split via `git move --fixup` before merging |
 | 14 | New abstraction introduced — separate the commit, justify the abstraction independently |
 | 15 | Ghost references found — cleanup incomplete |
-
----
-
-## See also
-
-- `tests-purge-unneeded` — sibling deletion discipline for test code; the same thesis (delete what does not earn its keep), applied to the test suite
-- `refactor-break-bw-compat` — when the deletion crosses a public-API boundary; that skill handles migration plans, blast-radius mapping, and consumer coordination
-- `~/.claude/claude/system-prompt-baseline.md` `<git>` charter — atomic-commit and one-concern-per-commit rules this skill enforces

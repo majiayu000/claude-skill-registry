@@ -1,6 +1,6 @@
 ---
 name: setup-pre-commit
-description: Install git pre-commit hooks via the project's hook tool of choice — Husky+lint-staged (npm/yarn/pnpm/bun), pre-commit framework (Python), lefthook (Go), cargo-husky (Rust), pre-commit (OCaml). Use when user wants commit-time formatting, linting, type-checking, or test gates. Detects ecosystem first; recommends the right tool.
+description: Install git pre-commit hooks via the project's hook tool — Husky+lint-staged (JS), pre-commit (Python/OCaml), lefthook (Go), cargo-husky (Rust). Use when the user wants commit-time formatting, linting, type-checking, or test gates. Detects ecosystem first.
 ---
 
 Detect the ecosystem, pick the right hook tool, install with formatter + type-check + test gates.

@@ -1,6 +1,7 @@
 ---
 name: llm-wiki
 description: 'Build external-knowledge wikis.'
+practices: [wiki-knowledge-surface, ddd-bounded-context, prompt-as-spec]
 skill_api_version: 1
 metadata:
   tier: knowledge

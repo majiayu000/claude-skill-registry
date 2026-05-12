@@ -1,6 +1,6 @@
 ---
 name: seobuild-onpage
-version: 1.7.0
+version: 1.7.1
 description: >
   Write SEO pages that rank on Google AND get cited by LLMs. Uses live SERP data,
   500-token chunk architecture, and the Reddit Test quality gate.
@@ -133,8 +133,8 @@ The research script outputs:
 
 ## HARD RULES (never violate)
 
-1. **Never use the word "beefy" or "BEEFY" in any output** -- not in filenames, not in prose, not in comments. The framework is called **seo-agi**. Period.
-2. **Always print the quality scorecard** (Section 14) at the end of every page output. No exceptions. If the scorecard is missing, the delivery is incomplete.
+1. **Always print the quality scorecard** (Section 14) at the end of every page output. No exceptions. If the scorecard is missing, the delivery is incomplete.
+2. **The framework is called seo-agi / seobuild-onpage.** Use those names only. Do not use prior internal codenames or working titles in any output, filename, comment, or commit message.
 
 ---
 
@@ -761,9 +761,13 @@ Run before every delivery. If any answer is NO, revise before delivering.
 | 39 | ICP defined in brief and content tailored to their pain points? | YES/NO |
 | 40 | Deep entity history / identity tags included where applicable? | YES/NO |
 | 41 | No keyword cannibalization with existing site URLs? | YES/NO |
-| | **Score: X/41** | |
+| 42 | Meta Entity Isolation -- entities sourced from competitor SERP snippets (bolded terms), not body? | YES/NO |
+| 43 | N-Gram AI Alignment -- 2+ bigrams/trigrams from top 3 competitors verbatim in AI Summary Nugget? | YES/NO |
+| 44 | Dual-Intent -- Primary intent satisfied in first 500 tokens AND Secondary action funnel present? | YES/NO |
+| 45 | Status Code Governance -- every legacy URL has explicit 301 or 410 recommendation (no silent leave-as-is)? | YES/NO |
+| | **Score: X/45** | |
 
-Pages scoring below 33/41 must be revised before delivery. Items marked NO must include a note on what needs to be fixed.
+Pages scoring below 36/45 must be revised before delivery. Items marked NO must include a note on what needs to be fixed.
 
 ### Spam Resilience Priority: Technical Relevance > Human Tone
 In the 2025-2026 spam update cycle, Google is prioritizing **technical relevance density** (factual accuracy, entity coverage, structured data completeness) over "human-sounding" prose. A page that is factually perfect, entity-rich, and operationally detailed but "sounds like AI" will outperform a page with warm, conversational tone but thin substance.
@@ -880,6 +884,89 @@ Load on demand when writing (use Read tool with the skill root path):
 - `references/quality-checklist.md` -- detailed scoring rubric
 
 To read these, find the skill root first, then use the Read tool on `${SKILL_ROOT}/references/<filename>`.
+
+## TECHNICAL CODEBASE EXECUTION RULES (v1.7.1)
+
+When the skill runs **inside a project repository** (detected by the presence of a `package.json`, `next.config.js`, `astro.config.*`, `gatsby-config.*`, `Gemfile`, `_config.yml`, `requirements.txt`, or `pyproject.toml` in the working tree), the agent must extend its output beyond markdown briefs and write directly into the codebase.
+
+### 1. Framework Detection
+
+Before writing any output, scan the project root and identify the framework. Use these signals in priority order:
+
+| Signal | Framework |
+|---|---|
+| `next.config.{js,ts,mjs}` + `app/` or `pages/` | Next.js (App Router or Pages Router) |
+| `astro.config.{mjs,ts}` | Astro |
+| `gatsby-config.{js,ts}` | Gatsby |
+| `nuxt.config.{js,ts}` | Nuxt |
+| `_config.yml` + `_posts/` | Jekyll |
+| `config.toml` + `content/` | Hugo |
+| `*.tsx` / `*.jsx` without framework config | Generic React |
+| Only `.md` / `.mdx` files | Static markdown site |
+| Only `.html` files | Static HTML |
+
+The detected framework determines the file extension, semantic-HTML injection point, and redirect-config target.
+
+### 2. Semantic HTML Injection
+
+For every page the skill produces, generate the rendered semantic HTML container scaffold (`<article>`, `<section>`, `<aside>`, `<main>` per Section 6) and inject it directly into the source file's component or template. Do not output a generic `<div>` shell and rely on the developer to refactor. Specifically:
+
+- **Next.js / React / Astro components (`.tsx`, `.jsx`, `.astro`)**: emit a complete component file with semantic landmarks, not a markdown body that has to be wrapped later
+- **Markdown pages with frontmatter (`.md`, `.mdx`)**: include a semantic HTML block at the top of the body (above the prose) that wraps the AI Summary Nugget and Original Research block in `<aside>` and `<section>` tags respectively, since most markdown renderers will preserve raw HTML
+- **Plain HTML (`.html`)**: produce the full document with `<main>` / `<article>` / `<section>` already in place
+
+### 3. Status Code Config Generation (310 / 410 Snippets)
+
+For every legacy URL that the rewrite protocol flags as **410** (Gone), the skill must emit a concrete redirect/410 snippet matched to the project's deployment target. Do not stop at "recommend 410" -- generate the config the user can commit.
+
+Output format depends on what the project actually uses:
+
+```apache
+# Apache .htaccess
+RedirectMatch 410 ^/old-thin-path/?$
+```
+
+```nginx
+# Nginx site config
+location = /old-thin-path { return 410; }
+```
+
+```js
+// next.config.js
+async redirects() {
+  return [
+    { source: "/old-thin-path", destination: "/", statusCode: 410 },
+    // 301 example for surviving topics:
+    { source: "/old-merged-path", destination: "/canonical-path", permanent: true },
+  ];
+}
+```
+
+```toml
+# Vercel / vercel.json (functional 410 via rewrite to a 410-returning route)
+{ "redirects": [ { "source": "/old-thin-path", "destination": "/410", "statusCode": 410 } ] }
+```
+
+Detect which one to emit by looking for `.htaccess`, `nginx.conf`, `next.config.*`, or `vercel.json` in the project. When ambiguous, emit Apache + Nginx + Next.js as a triple-snippet block and let the developer pick.
+
+### 4. Output Location Rules
+
+| Asset | Where it goes |
+|---|---|
+| Page content (markdown brief) | `~/Documents/SEO-AGI/pages/` (unchanged) |
+| Rendered component file (when in repo) | The repo's existing pages/posts directory, matched to convention (`app/[slug]/page.tsx`, `content/posts/<slug>.md`, etc.) |
+| Redirect / 410 config snippets | `~/Documents/SEO-AGI/redirects/<project>/snippets.txt` PLUS, when safe, appended directly to the live config file with a clearly marked `# seo-agi: BEGIN/END` block the developer can review |
+
+### 5. Hard Rules for Codebase Writes
+
+- **Never overwrite** an existing component or page file silently. If a file at the target path exists, write to `<filename>.seoagi.tsx` (or equivalent) and tell the user to diff and merge.
+- **Never modify** routing config, `.htaccess`, or deployment manifests without printing the exact diff and asking the user to approve before write.
+- **Always include** a top-of-file comment in every generated file pointing to the source brief: `// generated by seo-agi from ~/Documents/SEO-AGI/pages/<slug>.md`
+- **Match existing code style** (indentation, quote style, import order) detected from neighboring files. Do not "improve" formatting.
+
+These rules close the gap between "ranking page brief" and "shipped ranking page." The skill writes content that ranks; the codebase execution layer writes the code that gets the content into production.
+
+---
 
 ## DEPENDENCIES
 

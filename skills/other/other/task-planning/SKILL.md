@@ -1,7 +1,6 @@
 ---
 name: task-planning
-description: 'Generate phased, dependency-ordered tasks from specifications with parallelization opportunities and tech-stack patterns.'
-version: 1.9.0
+description: 'Generate phased, dependency-ordered tasks from specifications.'
 alwaysApply: false
 category: planning
 tags:
@@ -17,7 +16,7 @@ tools: []
 modules:
 - phase-structure.md
 - dependency-patterns.md
-- tech-stack-patterns
+- modules/tech-stack-patterns.md
 progressive_loading: true
 usage_patterns:
 - task-generation

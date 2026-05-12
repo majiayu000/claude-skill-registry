@@ -29,6 +29,7 @@ import json
 import logging
 import os
 import shutil
+import subprocess
 import sys
 import time
 from datetime import datetime, timedelta, timezone
@@ -42,8 +43,14 @@ sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(SCRIPT_DIR))
 
 from discover_by_topic import GitHubTopicDiscovery
-from security_blocklist import blocked_metadata_source, blocked_repo_entry, load_security_blocklist
-from utils import build_legal_metadata, build_skill_key, ensure_unique_dir, normalize_name
+from security_blocklist import blocked_metadata_source, load_security_blocklist
+from utils import (
+    build_legal_metadata,
+    build_skill_key,
+    ensure_unique_dir,
+    iter_source_skills,
+    normalize_name,
+)
 
 from crawler.skillsmp_sync import SkillsMPSync
 
@@ -434,10 +441,17 @@ def filter_pending_skills(
 def validate_existing_archive_sources(
     output_dir: Path,
     security_blocklist: dict[str, dict],
-) -> None:
-    """Fail when existing archived skills are sourced from blocked repos."""
+    *,
+    remove_blocked: bool = False,
+) -> list[str]:
+    """Validate existing archives against the source blocklist.
+
+    By default this fails closed. The download pipeline passes
+    ``remove_blocked=True`` so the scheduled data sync can purge already
+    archived blocked sources and commit those deletions.
+    """
     exclude = {".git", ".github-skills", ".template", ".templates", ".attic"}
-    blocked_archives: list[str] = []
+    blocked_archives: list[tuple[Path, str]] = []
     metadata_errors: list[str] = []
 
     for dirpath, dirnames, filenames in os.walk(output_dir):
@@ -457,9 +471,13 @@ def validate_existing_archive_sources(
             continue
         blocked_entry, source_field = blocked_source
 
+        archive_dir = meta_path.parent
         blocked_archives.append(
-            f"{meta_path.parent}: {blocked_entry['repo']} "
-            f"via {source_field} ({blocked_entry.get('reason', 'security blocklist')})"
+            (
+                archive_dir,
+                f"{archive_dir}: {blocked_entry['repo']} "
+                f"via {source_field} ({blocked_entry.get('reason', 'security blocklist')})",
+            )
         )
 
     if metadata_errors:
@@ -470,11 +488,98 @@ def validate_existing_archive_sources(
         )
 
     if blocked_archives:
-        sample = "\n".join(blocked_archives[:50])
+        sample = "\n".join(summary for _, summary in blocked_archives[:50])
+        if remove_blocked:
+            output_root = output_dir.resolve()
+            removed_archives: list[str] = []
+            removed_dirs: set[Path] = set()
+            for archive_dir, summary in blocked_archives:
+                resolved_archive_dir = archive_dir.resolve()
+                try:
+                    resolved_archive_dir.relative_to(output_root)
+                except ValueError as exc:
+                    raise RuntimeError(
+                        "Refusing to remove blocked archive outside output dir: "
+                        f"{archive_dir}"
+                    ) from exc
+                if resolved_archive_dir in removed_dirs:
+                    continue
+                shutil.rmtree(archive_dir)
+                removed_dirs.add(resolved_archive_dir)
+                removed_archives.append(summary)
+
+            logger.warning(
+                "Removed %s existing blocked archived skills before download:\n%s",
+                len(removed_archives),
+                "\n".join(removed_archives[:50]),
+            )
+            return removed_archives
+
         raise RuntimeError(
             "Existing archive contains blocked source repos:\n"
             f"{sample}"
         )
+
+    return []
+
+
+def remove_ci_untracked_archive_files(output_dir: Path) -> int:
+    """Remove stale untracked archive files from CI data checkouts.
+
+    The core repo still has a legacy ``skills/`` tree. In GitHub Actions the
+    data repo is checked out into that same path, so old core files can remain
+    as untracked files inside the data checkout and then fail incremental scans.
+    Only do this cleanup in CI; local untracked files are user work.
+    """
+    if os.environ.get("GITHUB_ACTIONS") != "true":
+        return 0
+    if not (output_dir / ".git").exists():
+        return 0
+
+    result = subprocess.run(
+        ["git", "-C", str(output_dir), "ls-files", "--others", "--exclude-standard", "-z"],
+        capture_output=True,
+        check=False,
+    )
+    if result.returncode != 0:
+        stderr = result.stderr.decode("utf-8", errors="replace").strip()
+        raise RuntimeError(f"Cannot list untracked archive files in {output_dir}: {stderr}")
+
+    output_root = output_dir.resolve()
+    removed = 0
+    touched_parents: set[Path] = set()
+    for raw_path in result.stdout.split(b"\0"):
+        if not raw_path:
+            continue
+        rel_path = Path(raw_path.decode("utf-8", errors="surrogateescape"))
+        if rel_path.is_absolute() or ".." in rel_path.parts:
+            raise RuntimeError(f"Refusing unsafe untracked archive path: {rel_path}")
+        target = (output_dir / rel_path).resolve()
+        try:
+            target.relative_to(output_root)
+        except ValueError as exc:
+            raise RuntimeError(f"Refusing untracked archive path outside output dir: {target}") from exc
+        if target.is_dir():
+            shutil.rmtree(target)
+        elif target.exists() or target.is_symlink():
+            target.unlink()
+        else:
+            continue
+        removed += 1
+        touched_parents.add(target.parent)
+
+    for parent in sorted(touched_parents, key=lambda path: len(path.parts), reverse=True):
+        current = parent
+        while current != output_root and current.exists():
+            try:
+                current.rmdir()
+            except OSError:
+                break
+            current = current.parent
+
+    if removed:
+        logger.warning("Removed %s CI-only untracked archive file(s) before download", removed)
+    return removed
 
 
 def build_branch_probe_order(
@@ -603,7 +708,7 @@ def build_unified_registry(
 
         source_name = source.get("name", source_file.stem)
 
-        for skill in source.get("skills", []):
+        for skill in iter_source_skills(source):
             # Create unique key
             repo = skill.get("repo", "")
             name = skill.get("name", "")
@@ -664,6 +769,7 @@ async def download_skills(
     from collections import defaultdict
 
     import aiohttp
+    from security_scanner import SecurityScanner
 
     GITHUB_RAW_BASE = "https://raw.githubusercontent.com"
     BRANCHES = ("main", "master")
@@ -686,7 +792,13 @@ async def download_skills(
     )
     security_blocklist = load_security_blocklist()
     logger.info("Security blocklist loaded: %s repos", len(security_blocklist))
-    validate_existing_archive_sources(output_dir, security_blocklist)
+    security_scanner = SecurityScanner()
+    removed_blocked_archives = validate_existing_archive_sources(
+        output_dir,
+        security_blocklist,
+        remove_blocked=True,
+    )
+    removed_ci_untracked_files = remove_ci_untracked_archive_files(output_dir)
 
     # Check existing (across all categories)
     exclude = {".git", ".github-skills", ".template", ".templates", ".attic"}
@@ -782,6 +894,8 @@ async def download_skills(
             "pending_before_shard": len(pending_all),
             "prefiltered_no_repo": pending_skipped["no_repo"],
             "skipped_cooldown_not_found": pending_skipped["cooldown_not_found"],
+            "blocked_archives_removed": len(removed_blocked_archives),
+            "ci_untracked_files_removed": removed_ci_untracked_files,
         }
 
     stats = {
@@ -797,6 +911,8 @@ async def download_skills(
         "pending_before_shard": len(pending_all),
         "prefiltered_no_repo": pending_skipped["no_repo"],
         "skipped_cooldown_not_found": pending_skipped["cooldown_not_found"],
+        "blocked_archives_removed": len(removed_blocked_archives),
+        "ci_untracked_files_removed": removed_ci_untracked_files,
     }
     failures = defaultdict(list)
     observations: list[dict] = []
@@ -1068,12 +1184,28 @@ async def download_skills(
             failures["no_repo"].append(name)
             add_observation(skill, outcome="failed", failure_reason="no_repo")
             return False
-        blocked_entry = blocked_repo_entry(repo, security_blocklist)
-        if blocked_entry:
+        blocked_source = blocked_metadata_source(
+            {
+                **skill,
+                "repo": repo,
+                "path": path or skill.get("path", ""),
+                "github_path": skill.get("github_path", ""),
+            },
+            security_blocklist,
+        )
+        if blocked_source:
+            blocked_entry, source_field = blocked_source
             reason = blocked_entry.get("reason") or "blocked source repo"
-            failures["blocked_source"].append(f"{repo}: {name} ({reason})")
+            failures["blocked_source"].append(
+                f"{blocked_entry['repo']}: {name} via {source_field} ({reason})"
+            )
             add_observation(skill, outcome="failed", failure_reason="blocked_source")
-            logger.warning("Blocked security-listed source repo: %s (%s)", repo, name)
+            logger.warning(
+                "Blocked security-listed source before download: %s via %s (%s)",
+                blocked_entry["repo"],
+                source_field,
+                name,
+            )
             return False
 
         manifest_key = build_manifest_key(repo, path, name, category)
@@ -1170,6 +1302,38 @@ async def download_skills(
                                         }, indent=2, ensure_ascii=False),
                                         encoding="utf-8"
                                     )
+                                    is_safe, security_issues = security_scanner.scan_file(
+                                        skill_dir / "SKILL.md"
+                                    )
+                                    if not is_safe:
+                                        issue_types = sorted(
+                                            {
+                                                str(issue.get("type") or "unknown")
+                                                for issue in security_issues
+                                            }
+                                        )
+                                        shutil.rmtree(skill_dir, ignore_errors=True)
+                                        failures["security_scan_failed"].append(
+                                            f"{repo}: {name} ({', '.join(issue_types[:8])})"
+                                        )
+                                        stats["url_attempts"] += attempts
+                                        add_observation(
+                                            skill,
+                                            outcome="failed",
+                                            failure_reason="security_scan_failed",
+                                            attempts=attempts,
+                                            manifest_hit=manifest_entry is not None,
+                                            branch=branch,
+                                            relative_path=relative_path,
+                                            bundled_file_count=len(bundled_files),
+                                        )
+                                        logger.warning(
+                                            "Rejected downloaded skill after security scan: %s/%s (%s)",
+                                            repo,
+                                            relative_path,
+                                            ", ".join(issue_types[:8]),
+                                        )
+                                        return False
                                     preferred_branch_by_repo[repo] = branch
                                     manifest_entries[manifest_key] = {
                                         "repo": repo,

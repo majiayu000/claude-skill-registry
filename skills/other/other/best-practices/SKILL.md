@@ -24,10 +24,9 @@ Modern web development standards based on Lighthouse best practices audits. Cove
 <!-- ✅ HTTPS only -->
 <img src="https://example.com/image.jpg">
 <script src="https://cdn.example.com/script.js"></script>
-
-<!-- ✅ Protocol-relative (will use page's protocol) -->
-<img src="//example.com/image.jpg">
 ```
+
+Avoid protocol-relative URLs (`//example.com/...`) — they're an HTTP-era pattern with no benefit on HTTPS-only sites and hide the actual scheme from reviewers.
 
 **HSTS Header:**
 ```
@@ -68,17 +67,54 @@ Content-Security-Policy:
 </script>
 ```
 
+### Trusted Types (modern DOM-XSS defense)
+
+A strict CSP blocks loading untrusted *script files*, but it doesn't stop a string from reaching `innerHTML`, `eval`, or other DOM-XSS sinks. Trusted Types — Baseline across all major browsers since early 2026 — closes that hole by making sinks reject raw strings and accept only typed objects produced by a named policy.
+
+```
+Content-Security-Policy: require-trusted-types-for 'script'; trusted-types default;
+```
+
+```javascript
+// One central policy that does the sanitization
+const escape = trustedTypes.createPolicy('default', {
+  createHTML: (s) => DOMPurify.sanitize(s, { RETURN_TRUSTED_TYPE: true })
+});
+
+// ❌ This now throws TypeError under enforcement
+element.innerHTML = userInput;
+
+// ✅ Goes through the policy
+element.innerHTML = escape.createHTML(userInput);
+```
+
+Roll out with `Content-Security-Policy-Report-Only` first to find every sink usage in your app, then flip to enforcement. Angular has built-in Trusted Types support; React 19+ produces TrustedHTML when Trusted Types are enforced; for everything else, [DOMPurify](https://github.com/cure53/DOMPurify) is the de-facto sanitizer.
+
+### Subresource Integrity (SRI) for third-party scripts
+
+Pin every `<script>` and `<link rel="stylesheet">` you load from a CDN you don't control. If the CDN is compromised — as happened to polyfill.io in 2024 — the browser refuses to execute a file whose hash doesn't match.
+
+```html
+<script src="https://cdn.example.com/lib@1.2.3/dist/lib.js"
+        integrity="sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC"
+        crossorigin="anonymous"></script>
+```
+
+`integrity` accepts space-separated hashes; include the next version's hash before rotating to avoid downtime. Generate with `openssl dgst -sha384 -binary file.js | openssl base64 -A`. SRI requires `crossorigin` and an `Access-Control-Allow-Origin` response header from the CDN.
+
 ### Security headers
 
 ```
-# Prevent clickjacking
+# Prevent clickjacking — prefer CSP `frame-ancestors` (above); X-Frame-Options
+# is the legacy fallback for older browsers.
 X-Frame-Options: DENY
 
 # Prevent MIME type sniffing
 X-Content-Type-Options: nosniff
 
-# Enable XSS filter (legacy browsers)
-X-XSS-Protection: 1; mode=block
+# Do NOT send X-XSS-Protection. The legacy browser XSS auditor was deprecated
+# and removed (Chrome 78, Edge 17), and in some cases it introduced its own
+# vulnerabilities. Use a strict CSP + Trusted Types (below) instead.
 
 # Control referrer information
 Referrer-Policy: strict-origin-when-cross-origin
@@ -114,12 +150,23 @@ npm ls lodash
 
 **Known vulnerable patterns to avoid:**
 ```javascript
-// ❌ Prototype pollution vulnerable patterns
-Object.assign(target, userInput);
-_.merge(target, userInput);
+// ❌ Recursive merges of untrusted input can pollute Object.prototype
+//    via __proto__, constructor, or prototype keys.
+_.merge(target, userInput);          // lodash <4.17.20
+$.extend(true, {}, target, userInput); // jQuery deep extend
+Object.assign(target, ...userInputs); // safe by itself (shallow), but unsafe
+                                      // when target IS Object.prototype-derived
+                                      // and userInput contains __proto__
 
-// ✅ Safer alternatives
-const safeData = JSON.parse(JSON.stringify(userInput));
+// ✅ For untrusted bags, use a null-prototype object so __proto__ is just a key
+const safe = Object.create(null);
+Object.assign(safe, userInput); // shallow, no recursion → safe by construction
+
+// ✅ For deep copies, structuredClone drops __proto__ and functions
+const deepSafe = structuredClone(userInput);
+
+// ✅ For deep merges, use a library that explicitly blocks dangerous keys
+//    (e.g. lodash ≥4.17.21 _.mergeWith with a customizer, or deepmerge-ts).
 ```
 
 ### Input sanitization
@@ -228,17 +275,22 @@ if ('IntersectionObserver' in window) {
 
 ### Polyfills (when needed)
 
+Prefer **bundling polyfills at build time** (Babel/SWC + `core-js`, or `@vitejs/plugin-legacy`) targeted by your supported-browsers list. This eliminates the runtime check entirely and avoids shipping polyfill bytes to modern browsers.
+
+If you must load a polyfill at runtime, append a script element — never use `document.write` (it blocks the parser and is broken in async/deferred contexts):
+
 ```html
-<!-- Load polyfills conditionally -->
 <script>
   if (!('fetch' in window)) {
-    document.write('<script src="/polyfills/fetch.js"><\/script>');
+    const s = document.createElement('script');
+    s.src = '/polyfills/fetch.js';
+    s.defer = true;
+    document.head.appendChild(s);
   }
 </script>
-
-<!-- Or use polyfill.io -->
-<script src="https://polyfill.io/v3/polyfill.min.js?features=fetch,IntersectionObserver"></script>
 ```
+
+**Never load polyfills from a third-party CDN you don't control.** The `polyfill.io` service was [compromised in mid-2024](https://sansec.io/research/polyfill-supply-chain-attack) in a supply-chain attack and used to serve malware to ~100k sites. Self-host, or use a vetted mirror (e.g. [Cloudflare's `cdnjs` polyfill build](https://blog.cloudflare.com/polyfill-io-now-available-on-cdnjs-reduce-your-supply-chain-risk/)) — and pin the version with [Subresource Integrity](#subresource-integrity-sri-for-third-party-scripts).
 
 ---
 
@@ -373,6 +425,10 @@ module.exports = {
   devtool: process.env.NODE_ENV === 'production' ? false : 'source-map',
 };
 ```
+
+**Strip `sourcesContent` from production maps** when uploading to your error tracker. By default, bundlers embed the full original source inside the `.map` file — anyone who obtains the map (including via a misconfigured upload step) gets your unminified code. Configure your bundler to omit `sourcesContent`, or use a Sentry/Bugsnag CLI flag that does so when uploading.
+
+For Vite, prefer `sourcemap: 'hidden'` over `'true'` so the `//# sourceMappingURL=` comment isn't emitted into the bundle.
 
 ---
 
@@ -542,9 +598,11 @@ findNearbyButton.addEventListener('click', async () => {
 ### Security (critical)
 - [ ] HTTPS enabled, no mixed content
 - [ ] No vulnerable dependencies (`npm audit`)
-- [ ] CSP headers configured
-- [ ] Security headers present
-- [ ] No exposed source maps
+- [ ] CSP headers configured (with `frame-ancestors`, `base-uri`, `form-action`)
+- [ ] `require-trusted-types-for 'script'` enforced (or report-only during rollout)
+- [ ] Third-party `<script>`/`<link rel="stylesheet">` pinned with SRI hashes
+- [ ] Security headers present (HSTS, X-Content-Type-Options, Referrer-Policy)
+- [ ] No exposed source maps (and `sourcesContent` stripped from uploaded ones)
 
 ### Compatibility
 - [ ] Valid HTML5 doctype

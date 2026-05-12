@@ -1,7 +1,7 @@
 ---
 name: oss-contribute
 description: |
-  Research an issue deeply and present all context to the user - but the user writes the code.
+  Research an issue deeply and present all context to the user. but the user writes the code.
   The LLM investigates code paths, finds relevant files, explains patterns, and identifies
   constraints. The user thinks through the approach and implements it. Use when ready to
   start working on an issue after oss-prep-to-contribute.
@@ -9,7 +9,7 @@ description: |
 
 # Contribute
 
-The LLM is your research assistant, not your ghostwriter. This skill digs deep into the issue - traces code, reads history, finds patterns, identifies constraints - then hands everything to you. You think. You decide. You code.
+The LLM is your research assistant, not your ghostwriter. This skill digs deep into the issue. traces code, reads history, finds patterns, identifies constraints. then hands everything to you. You think. You decide. You code.
 
 ## Purpose
 
@@ -26,7 +26,7 @@ The fastest way to NOT learn from open source is to let an AI write the fix. Thi
 
 ### 1. Deep investigation
 
-Use Agent with subagent_type=Explore to thoroughly investigate the issue. This is where the LLM does heavy lifting - reading code so the user doesn't have to grep blindly.
+Use Agent with subagent_type=Explore to thoroughly investigate the issue. This is where the LLM does heavy lifting. reading code so the user doesn't have to grep blindly.
 
 **Investigate**:
 - The exact code path the issue describes (trace entry → processing → output)
@@ -60,7 +60,7 @@ Deliver findings in a structured format. Every claim must have a file:line refer
 ## Issue Research: #{number}
 
 ### The Problem
-{What's wrong or missing - in plain language, with code references}
+{What's wrong or missing. in plain language, with code references}
 
 ### Relevant Code
 | File | Lines | What it does | Why it matters |
@@ -70,16 +70,16 @@ Deliver findings in a structured format. Every claim must have a file:line refer
 | `tests/foo.test.ts` | 80-95 | Tests happy path | Missing test for edge case Y |
 
 ### How the Code Works
-{Trace the flow step by step - entry point → processing → output}
-{Explain WHY it's structured this way - design decisions, patterns used}
+{Trace the flow step by step. entry point → processing → output}
+{Explain WHY it's structured this way. design decisions, patterns used}
 
 ### Constraints
-- {constraint 1 - e.g., "this function is called from 3 places, changes must be backwards compatible"}
-- {constraint 2 - e.g., "the test suite mocks this dependency, so your tests should too"}
+- {constraint 1, e.g. "this function is called from 3 places, changes must be backwards compatible"}
+- {constraint 2, e.g. "the test suite mocks this dependency, so your tests should too"}
 
 ### Approach Options
-1. **{Option A}**: {description} - Trade-off: {pro/con}
-2. **{Option B}**: {description} - Trade-off: {pro/con}
+1. **{Option A}**: {description}. Trade-off: {pro/con}
+2. **{Option B}**: {description}. Trade-off: {pro/con}
 {Present options, don't pick for the user}
 
 ### What Tests Should Cover
@@ -88,22 +88,22 @@ Deliver findings in a structured format. Every claim must have a file:line refer
 - {edge case that's currently untested}
 ```
 
-### 3. Thinking gate - user explains the root cause
+### 3. Thinking gate: user explains the root cause
 
 After presenting the research, stop and ask:
 
-> "Based on what I've found - look at the code paths and constraints I presented above. Specifically:
-> 1. What's the root cause? (Hint: look at the relevant code section in the research above - what goes wrong there?)
-> 2. Which approach do you want to take, and why? (I listed the trade-offs - which ones matter most for this repo?)"
+> "Based on what I've found. look at the code paths and constraints I presented above. Specifically:
+> 1. What's the root cause? (Hint: look at the relevant code section in the research above. what goes wrong there?)
+> 2. Which approach do you want to take, and why? (I listed the trade-offs. which ones matter most for this repo?)"
 
 **Wait for their answer.** Do NOT proceed until they've articulated their understanding.
 
 If their explanation has gaps:
-- Point out WHAT's wrong: "You mentioned X, but look at `src/foo.ts:45` - it actually does Y"
-- Don't give the correct answer - give them the reference and let them correct themselves
+- Point out WHAT's wrong: "You mentioned X, but look at `src/foo.ts:45`: it actually does Y"
+- Don't give the correct answer. give them the reference and let them correct themselves
 - Ask again once they've revised
 
-### 4. Thinking gate - user describes their plan
+### 4. Thinking gate: user describes their plan
 
 Once the root cause is understood, ask:
 
@@ -114,40 +114,40 @@ Once the root cause is understood, ask:
 > 4. Are there any edge cases you're handling?"
 
 Review their plan:
-- If something is missing, say WHAT's missing: "You haven't mentioned how this affects `src/bar.ts` - it also calls the function you're changing"
-- If the approach won't work, explain WHY: "That approach would break the callers at `src/baz.ts:20` - look at how they use the return value"
-- Don't rewrite their plan - poke holes and let them patch
+- If something is missing, say WHAT's missing: "You haven't mentioned how this affects `src/bar.ts`: it also calls the function you're changing"
+- If the approach won't work, explain WHY: "That approach would break the callers at `src/baz.ts:20`: look at how they use the return value"
+- Don't rewrite their plan. poke holes and let them patch
 
 ### 5. User drives the implementation
 
-The user implements their plan. The LLM acts as a pair programmer: the user describes the logic, the LLM helps write it. Think senior dev + junior dev - the junior explains what they want to do, the senior helps them get it right.
+The user implements their plan. The LLM acts as a pair programmer: the user describes the logic, the LLM helps write it. Think senior dev + junior dev. the junior explains what they want to do, the senior helps them get it right.
 
 **How it works**:
 - User describes what a function should do: "I need to add a check here that validates the input is a valid URL before passing it to the handler"
-- LLM implements what the user specified - filling in syntax, matching repo patterns, handling the mechanical parts
+- LLM implements what the user specified. filling in syntax, matching repo patterns, handling the mechanical parts
 - User reviews the result and iterates: "That's close, but it should also handle the case where..."
 
 **What the LLM DOES**:
 - Implement code that the user has described in plain language (the user drives the logic)
 - Answer specific questions about the codebase ("what does this function expect as input?")
 - Point to examples of patterns in the repo ("how do other modules handle this?")
-- Review the user's code when asked - identify issues and suggest fixes
+- Review the user's code when asked. identify issues and suggest fixes
 - Run tests when asked and explain failures
 
 **What the LLM DOES NOT DO**:
-- Write code unprompted - the user must describe what the code should do first
-- Make architectural decisions - the user chose the approach in step 4
-- Skip ahead - if the user says "just fix it" without describing the logic, redirect:
+- Write code unprompted. the user must describe what the code should do first
+- Make architectural decisions. the user chose the approach in step 4
+- Skip ahead. if the user says "just fix it" without describing the logic, redirect:
 
-> "Tell me what this code should do - walk me through the logic step by step. Once you've described it, I'll help you write it. What should happen first?"
+> "Tell me what this code should do. walk me through the logic step by step. Once you've described it, I'll help you write it. What should happen first?"
 
 The key: the user must always describe WHAT the code should do before the LLM writes HOW.
 
-### 6. Thinking gate - user explains their changes
+### 6. Thinking gate: user explains their changes
 
 After implementation, before committing:
 
-> "Before we move to submitting - explain what you changed and why. This is what a reviewer will ask you:
+> "Before we move to submitting. explain what you changed and why. This is what a reviewer will ask you:
 > 1. What did you modify in each file? (Walk through the diff in your head)
 > 2. Why this approach over the alternatives we discussed?
 > 3. How do your tests verify the fix? (What behavior do they check?)
@@ -170,19 +170,46 @@ If the user can articulate all four clearly, they're ready. If not, point them b
 git diff --stat
 ```
 
-If tests or lint fail, explain WHAT failed and WHERE - don't fix it. Point the user to the failing assertion and the relevant code.
+If tests or lint fail, explain WHAT failed and WHERE. Don't fix it. Point the user to the failing assertion and the relevant code.
 
 ## Related Skills
 
-- **Previous step**: ← `oss-prep-to-contribute` - set up the environment and build understanding
-- **Next step**: → `oss-submit-pr` - submit the PR following repo guidelines
-- **If knowledge gaps surface**: → `oss-learn-stack` - learn unfamiliar tech from the repo's own code
+- **Previous step**: ← `oss-prep-to-contribute`: set up the environment and build understanding
+- **Next step**: → `oss-submit-pr`: submit the PR following repo guidelines
+- **If knowledge gaps surface**: → `oss-learn-stack`: learn unfamiliar tech from the repo's own code
 - **If significant rework needed**: ← `oss-post-pr` sends back here after reviewer feedback
+
+## Common Rationalizations
+
+| Shortcut | Why It Fails |
+|----------|-------------|
+| "Just show me the fix, I'll understand it later" | You won't. Reading someone else's fix teaches you what the answer is, not why. When the next bug is similar-but-different, you'll be stuck again. |
+| "I understand the issue, let's skip the thinking gates" | If you understand it, articulating it takes 30 seconds. If you can't articulate it, you don't understand it. and your implementation will show it. |
+| "The LLM already found the root cause, why do I need to explain it?" | Because a reviewer will ask you. Because your commit message needs to explain it. Because understanding is the whole point of contributing. not the PR. |
+| "Let's just write the code, I'll explain it after" | Code written without a plan drifts. You'll solve the wrong problem or miss edge cases the constraints would have caught. Plan first, code second. |
+| "This is a simple fix, we don't need all these steps" | Simple fixes in unfamiliar codebases are rarely simple. The fix is easy. knowing WHAT to fix and WHERE is the hard part. |
+
+## Red Flags
+
+- User says "just fix it" repeatedly without describing the logic. they're treating this as a code generator, not a learning tool
+- Implementation touches files not identified in the research. scope is creeping
+- User can't explain their changes in step 6 after writing them. they copied patterns without understanding
+- Tests pass but user can't explain what behavior they verify. mechanical testing, not intentional testing
+
+## Verification Checklist
+
+- [ ] User articulated the root cause in their own words (step 3)
+- [ ] User described their implementation plan before coding (step 4)
+- [ ] All code changes were described by the user before the LLM wrote them (step 5)
+- [ ] User can explain each changed file and why (step 6)
+- [ ] Tests pass, including new tests for the fix
+- [ ] Lint/formatting passes
+- [ ] Diff only touches files relevant to the issue
 
 ## Anti-patterns
 
-- **DO NOT** write code without the user describing the logic first - they must explain WHAT before you write HOW
-- **DO NOT** skip thinking gates - they're not optional checkpoints, they're the whole point
-- **DO NOT** present approach options with a clear recommendation - present trade-offs and let the user decide
-- **DO NOT** rubber-stamp the user's plan - actively look for gaps and edge cases they missed
-- **DO NOT** let "just fix it" slide - ask the user to describe what the fix should do, then help them implement it
+- **DO NOT** write code without the user describing the logic first. they must explain WHAT before you write HOW
+- **DO NOT** skip thinking gates. they're not optional checkpoints, they're the whole point
+- **DO NOT** present approach options with a clear recommendation. present trade-offs and let the user decide
+- **DO NOT** rubber-stamp the user's plan. actively look for gaps and edge cases they missed
+- **DO NOT** let "just fix it" slide. ask the user to describe what the fix should do, then help them implement it

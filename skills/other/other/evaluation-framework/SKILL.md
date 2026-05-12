@@ -1,7 +1,6 @@
 ---
 name: evaluation-framework
-description: Patterns for building evaluation and scoring systems, quality gates, rubrics, and decision frameworks. Use for any scored assessment.
-version: 1.9.3
+description: 'Patterns for evaluation and scoring systems, quality gates, rubrics, and decision frameworks.'
 alwaysApply: false
 category: infrastructure
 tags:
@@ -32,6 +31,9 @@ progressive_loading: true
 modules:
 - modules/scoring-patterns.md
 - modules/decision-thresholds.md
+- modules/evaluation-rubric.md
+- modules/multi-metric-evaluation-methodology.md
+- modules/quality-metrics.md
 ---
 ## Table of Contents
 

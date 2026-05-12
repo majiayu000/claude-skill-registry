@@ -42,16 +42,15 @@ data_dir="$(cd "$data_dir" && pwd)"
 main_dir="$(cd "$main_dir" && pwd)"
 
 echo "Sync core -> main (excluding skills)..."
-# Keep main-owned workflows so publish wiring stays stable.
+# Keep all main-owned workflows stable. Mirroring a new workflow file from core
+# requires token workflow scope in the publish repo and breaks scheduled publish.
 rsync -a --delete \
   --exclude '.git' \
   --exclude '.gitignore' \
   --exclude 'skills' \
   --exclude 'skills/**' \
-  --exclude '.github/workflows/sync-data.yml' \
-  --exclude '.github/workflows/build-index.yml' \
-  --exclude '.github/workflows/publish-from-core.yml' \
-  --exclude '.github/workflows/metadata-compliance.yml' \
+  --exclude '.github/workflows/*.yml' \
+  --exclude '.github/workflows/*.yaml' \
   "$core_dir/" "$main_dir/"
 
 echo "Sync data -> main/skills..."

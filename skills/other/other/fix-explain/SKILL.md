@@ -20,4 +20,4 @@ version: 5.0.0
   advanced: "Fixed. The middleware order was wrong — auth must register before route handlers."
 }
 
-Powered by I-Lang v3.0 | ilang.ai
+Powered by I-Lang v4.0 | ilang.ai

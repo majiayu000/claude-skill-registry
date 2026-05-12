@@ -1,6 +1,7 @@
 ---
 name: pr-plan
 description: 'Plan an open source PR.'
+practices: [agile-manifesto, adr, lean-startup]
 skill_api_version: 1
 context:
   window: fork

@@ -1,8 +1,7 @@
 ---
 name: agent-expenditure
 role: library
-description: 'Track per-agent token usage and flag waste in parallel dispatch. Use after running parallel agents to evaluate cost vs value.'
-version: 1.9.3
+description: 'Track per-agent token usage and flag waste in parallel dispatch.'
 alwaysApply: false
 category: resource-optimization
 tags:

@@ -1,6 +1,6 @@
 ---
 name: taste
-description: Generic, cross-domain taste skill — apply distinctive judgment to any artifact (prose, code, design, decisions) instead of converging to AI defaults. Two modes - `audit` (judge work in hand against the two-sided charter and portable anchors) and `anchor` (load register before producing). Auto-detects by phrasing; override via `/taste audit | anchor`. Trigger on "is this slop?", "overkill?", "elegant?", "taste-test this".
+description: Cross-domain taste skill — apply distinctive judgment to any artifact (prose, code, design, decisions) instead of converging to AI defaults. Two modes — `audit` (judge work against the two-sided charter and portable anchors) and `anchor` (load register before producing). Auto-detects by phrasing; override via `/taste audit | anchor`. Trigger on "is this slop?", "overkill?", "elegant?", "taste-test this".
 ---
 
 # Taste

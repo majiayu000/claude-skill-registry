@@ -1,7 +1,6 @@
 ---
 name: tech-tutorial
 description: Plan, draft, and refine technical tutorials for developers.
-version: 1.9.0
 globs: "**/*.md"
 alwaysApply: false
   Use when writing step-by-step guides, getting-started walkthroughs, or
@@ -14,20 +13,15 @@ tags:
 - code-examples
 - developer-docs
 - getting-started
-tools:
-- Read
-- Write
-- Edit
-- Bash
-- TodoWrite
+tools: []
 complexity: medium
 model_hint: standard
 estimated_tokens: 2800
 progressive_loading: true
 modules:
-- outline-structure
-- code-examples
-- progressive-complexity
+- modules/outline-structure.md
+- modules/code-examples.md
+- modules/progressive-complexity.md
 dependencies:
 - scribe:shared
 - scribe:slop-detector
@@ -62,13 +56,22 @@ tutorial that meets that standard.
 Before writing a single line, answer these questions:
 
 - Who is this for? (experience level, assumed prior knowledge)
+- How many readers? How often will each one read it?
 - What will they build or accomplish by the end?
+- **What is the one sentence they must walk away with?**
+  (the thesis — not the topic)
 - What is the single prerequisite the reader must have installed?
 - What is explicitly out of scope?
 
 Write these answers down as a header block in the draft.
 If you cannot answer the "what will they accomplish" question
-in one sentence, the scope is too broad.
+in one sentence, the scope is too broad. If you cannot state
+the thesis in one sentence, the tutorial is not ready to draft.
+
+The audience size and read frequency feed the reader-time
+budget (see `scribe:slop-detector` module `document-economy.md`).
+A tutorial that 500 developers will read once is a 40-hour
+reader-budget asset; spend the writing time accordingly.
 
 ### Step 2: Outline
 
@@ -128,14 +131,23 @@ Pay particular attention to:
 
 Verify the completed tutorial against this checklist:
 
+Content:
 - [ ] All code blocks tested and produce the stated output
 - [ ] Prerequisites section lists exact versions where relevant
 - [ ] Every step states the expected result
 - [ ] Troubleshooting section covers at least two common failure modes
+
+Sentence-level:
 - [ ] No tier-1 slop words
 - [ ] Em dash count is under 2 per 1000 words
 - [ ] Bullet ratio is under 40%
 - [ ] Line length wraps at 80 characters
+
+Document-level (document-economy module):
+- [ ] Thesis from Step 1 appears in the lead paragraph
+- [ ] Thesis echoed at the close (and ideally mid-tutorial)
+- [ ] No "in summary" section that re-lists what just happened
+- [ ] No section opens by restating its heading
 
 ## Required TodoWrite Items
 

@@ -12,6 +12,7 @@ Use this skill when the job is getting data into MotherDuck correctly and effici
 
 - Prefer current MotherDuck loading, cloud-storage, and Postgres-endpoint loading docs first.
 - Use `CREATE SECRET` and cloud-storage docs for protected-object-store workflows.
+- Use the DuckDB database upload docs when the source is an existing local `.duckdb`, `.ddb`, or attached DuckDB database.
 - Keep the loading advice aligned with MotherDuck's documented posture:
   - batch over streaming
   - Parquet over CSV when you control the format
@@ -22,6 +23,7 @@ Use this skill when the job is getting data into MotherDuck correctly and effici
 
 - Start by classifying the source: object storage or HTTPS, local file or local DuckDB, in-memory rows, or an external database.
 - Prefer `CREATE TABLE AS SELECT` for first loads and `INSERT INTO ... SELECT` for appends.
+- For whole local DuckDB databases, use `CREATE OR REPLACE DATABASE remote_name FROM CURRENT_DATABASE()`, an attached local database, or a file path from a native DuckDB client after attaching `md:`.
 - Use Parquet for durable bulk movement whenever you control the source format.
 - Treat the Postgres endpoint as a thin-client path for server-side remote reads, not for local-file or extension-driven ingestion.
 - Bootstrap the target MotherDuck database first when the ingestion tool does not create it automatically.

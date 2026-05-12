@@ -1,7 +1,6 @@
 ---
 name: skill-authoring
-description: 'Guide to creating Claude Code skills using TDD methodology and persuasion principles. Use for new skill development.'
-version: 1.9.3
+description: 'Guide creating Claude Code skills with TDD methodology and persuasion principles. Use for new skill development.'
 alwaysApply: false
 category: skill-development
 tags:
@@ -12,13 +11,20 @@ tags:
 - best-practices
 - validation
 modules:
-- tdd-methodology
-- persuasion-principles
-- description-writing
-- progressive-disclosure
-- anti-rationalization
-- graphviz-conventions
-- deployment-checklist
+- modules/tdd-methodology.md
+- modules/persuasion-principles.md
+- modules/description-writing.md
+- modules/progressive-disclosure.md
+- modules/anti-rationalization.md
+- modules/graphviz-conventions.md
+- modules/deployment-checklist.md
+- modules/advanced-patterns.md
+- modules/authentication.md
+- modules/error-handling.md
+- modules/examples.md
+- modules/testing-with-subagents.md
+- modules/troubleshooting.md
+- modules/validation.md
 dependencies:
 - modular-skills
 estimated_tokens: 1500
@@ -97,14 +103,26 @@ Skills must explicitly counter patterns where Claude attempts to bypass requirem
 ## Module References
 
 For detailed implementation guidance:
+
+**Core authoring cycle:**
 - **TDD Methodology**: See `modules/tdd-methodology.md` for RED-GREEN-REFACTOR cycle details
 - **Persuasion Principles**: See `modules/persuasion-principles.md` for compliance research and techniques
 - **Description Writing**: See `modules/description-writing.md` for discovery optimization
 - **Progressive Disclosure**: See `modules/progressive-disclosure.md` for file structure patterns
 - **Anti-Rationalization**: See `modules/anti-rationalization.md` for bulletproofing techniques
 - **Graphviz Conventions**: See `modules/graphviz-conventions.md` for process diagram standards
-- **Testing with Subagents**: See `abstract:subagent-testing` skill for pressure testing methodology
-- **Deployment Checklist**: See `modules/deployment-checklist.md` for final validation
+
+**Working with concrete skills (load when implementing or debugging):**
+- **Annotated Examples**: See `modules/examples.md` for walk-throughs of well-authored skills in this repo
+- **Advanced Patterns**: See `modules/advanced-patterns.md` for skill-to-skill coordination, conditional behavior, and scaling across activation contexts
+- **Authentication**: See `modules/authentication.md` for skills that invoke `gh`, `glab`, MCP servers, or other authenticated tools
+- **Error Handling**: See `modules/error-handling.md` for missing tools, timeouts, partial subagent results, and permission denials
+- **Troubleshooting**: See `modules/troubleshooting.md` for diagnosing skills that do not behave as the test corpus says they should
+
+**Validation and deployment (load when shipping):**
+- **Validation**: See `modules/validation.md` for frontmatter parsing, reference resolution, and structural checks before merge
+- **Testing with Subagents**: See `modules/testing-with-subagents.md` for running the Iron Law test in a fresh subagent (and `abstract:subagent-testing` for the broader pressure-testing methodology)
+- **Deployment Checklist**: See `modules/deployment-checklist.md` for final validation before promoting a skill
 
 ## Deployment and Quality Gates
 
@@ -126,7 +144,7 @@ referencing sibling files, data assets, or module
 paths without hardcoding absolute paths:
 
 ```markdown
-See `${CLAUDE_SKILL_DIR}/modules/advanced.md`
+See `${CLAUDE_SKILL_DIR}/modules/advanced-patterns.md`
 for detailed patterns.
 
 Run: `python3 ${CLAUDE_SKILL_DIR}/scripts/check.py`

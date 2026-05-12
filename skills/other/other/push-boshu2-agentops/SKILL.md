@@ -1,6 +1,7 @@
 ---
 name: push
 description: 'Validate, commit, and push.'
+practices: [continuous-delivery, gitops, dora-metrics]
 skill_api_version: 1
 user-invocable: true
 context:

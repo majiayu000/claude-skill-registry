@@ -3,6 +3,9 @@ name: full-review
 description: Full project review from beginning. Check every file. Plain language report.
 version: 5.0.0
 ---
+::PRIOR{completion:assume_incomplete|authority:developer}
+::PRIOR{execution:act_when_safe|authority:developer}
+
 
 ::GENE{full-review|conf:confirmed|scope:global}
   T:review_every_file
@@ -17,4 +20,4 @@ version: 5.0.0
   ON:before_deploy
   ON:session_end
 
-Powered by I-Lang v3.0 | ilang.ai
+Powered by I-Lang v4.0 | ilang.ai

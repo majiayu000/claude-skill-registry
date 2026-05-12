@@ -74,6 +74,28 @@ export async function getServerSideProps() {
 }
 ```
 
+**5. Make navigations instant with the Speculation Rules API**
+
+For most sites, the LCP a user actually experiences is dominated by *the next page they navigate to*, not the one they landed on. Telling the browser to prerender likely-next pages on hover collapses that LCP to ~0ms.
+
+```html
+<script type="speculationrules">
+{
+  "prerender": [{
+    "where": { "href_matches": "/*" },
+    "eagerness": "moderate"
+  }]
+}
+</script>
+```
+
+`eagerness` settings (cheapest → most aggressive): `conservative` (start on pointerdown), `moderate` (start after ~200ms hover), `eager` (start as soon as the link is in the viewport), `immediate` (start on page load). Start with `moderate` — it captures most navigations without prerendering pages users never visit.
+
+Caveats:
+- **Bandwidth/CPU cost.** Each prerender is roughly a full page load. Scope `where` carefully (`href_matches` patterns, exclude logout/checkout) and avoid `immediate` outside small sites.
+- **Side effects fire early.** Analytics, ads, and any code that runs on load will fire when the prerender starts, not when the user navigates. Gate side effects on the [`prerenderingchange` event](https://developer.chrome.com/docs/web-platform/prerender-pages#detect_when_a_page_is_prerendered_or_used_for_a_full_navigation) or `document.prerendering`.
+- **Chromium-only.** Safari and Firefox ignore the script — it's a progressive enhancement, never a regression.
+
 ### LCP optimization checklist
 
 ```markdown
@@ -84,6 +106,7 @@ export async function getServerSideProps() {
 - [ ] No render-blocking JavaScript in <head>
 - [ ] Fonts don't block text rendering (font-display: swap)
 - [ ] LCP element in initial HTML (not JS-rendered)
+- [ ] Speculation Rules added for likely-next navigations (moderate eagerness)
 ```
 
 ### LCP element identification
@@ -122,16 +145,23 @@ function processLargeArray(items) {
   items.forEach(item => expensiveOperation(item));
 }
 
-// ✅ Break into chunks with yielding
+// ✅ Break into chunks and yield to the scheduler. scheduler.yield() is the
+//    recommended modern API — its continuation is queued at a boosted
+//    priority so the rest of your work resumes ahead of unrelated tasks,
+//    while still letting the browser handle pending input first.
 async function processLargeArray(items) {
   const CHUNK_SIZE = 100;
   for (let i = 0; i < items.length; i += CHUNK_SIZE) {
-    const chunk = items.slice(i, i + CHUNK_SIZE);
-    chunk.forEach(item => expensiveOperation(item));
-    
-    // Yield to main thread
-    await new Promise(r => setTimeout(r, 0));
-    // Or use scheduler.yield() when available
+    items.slice(i, i + CHUNK_SIZE).forEach(expensiveOperation);
+
+    if ('scheduler' in window && 'yield' in scheduler) {
+      await scheduler.yield();
+    } else {
+      // Fallback for browsers without scheduler.yield (Safari, older Firefox).
+      // setTimeout(0) yields but loses priority — your continuation may run
+      // after unrelated tasks the browser picked up in between.
+      await new Promise(r => setTimeout(r, 0));
+    }
   }
 }
 ```
@@ -148,19 +178,26 @@ button.addEventListener('click', () => {
   trackEvent('click');
 });
 
-// ✅ Prioritize visual feedback
-button.addEventListener('click', () => {
-  // Immediate visual feedback
+// ✅ Prioritize visual feedback, then yield before doing the heavy work
+button.addEventListener('click', async () => {
+  // 1. Immediate visual feedback (cheap DOM update)
   button.classList.add('loading');
-  
-  // Defer non-critical work
-  requestAnimationFrame(() => {
-    const result = calculateComplexThing();
-    updateUI(result);
-  });
-  
-  // Use requestIdleCallback for analytics
-  requestIdleCallback(() => trackEvent('click'));
+
+  // 2. Yield so the browser can paint the loading state before we block
+  if ('scheduler' in window && 'yield' in scheduler) {
+    await scheduler.yield();
+  }
+
+  // 3. Now do the heavy work — the user already saw the click register
+  const result = calculateComplexThing();
+  updateUI(result);
+
+  // 4. Lowest-priority work last, when the main thread is idle
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => trackEvent('click'));
+  } else {
+    setTimeout(() => trackEvent('click'), 0);
+  }
 });
 ```
 
@@ -218,7 +255,10 @@ function App() {
 
 ### INP debugging
 ```javascript
-// Identify slow interactions
+// Identify slow interactions. durationThreshold: 40 matches what the
+// web-vitals library uses — 16 (one frame) fires on nearly every interaction
+// and drowns the console; 40 surfaces interactions that are starting to feel
+// sluggish without spamming.
 new PerformanceObserver((list) => {
   for (const entry of list.getEntries()) {
     if (entry.duration > 200) {
@@ -231,8 +271,10 @@ new PerformanceObserver((list) => {
       });
     }
   }
-}).observe({ type: 'event', buffered: true, durationThreshold: 16 });
+}).observe({ type: 'event', buffered: true, durationThreshold: 40 });
 ```
+
+For field debugging across real users, prefer the `web-vitals/attribution` build of the [web-vitals library](https://github.com/GoogleChrome/web-vitals) — `onINP()` from that build attaches a `LoAF` (Long Animation Frame) breakdown identifying the longest script and the input/processing/presentation phase that ate the budget.
 
 ---
 

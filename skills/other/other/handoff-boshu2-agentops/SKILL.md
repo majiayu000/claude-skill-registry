@@ -1,6 +1,7 @@
 ---
 name: handoff
 description: 'Write compact session handoffs.'
+practices: [adr, wiki-knowledge-surface, code-complete]
 skill_api_version: 1
 context:
   window: inherit

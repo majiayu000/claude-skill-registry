@@ -1,7 +1,6 @@
 ---
 name: friction-detector
-description: 'Detect friction signals during execution and graduate recurring patterns into rules. Use for session retrospectives and learning pipeline automation.'
-version: 1.9.3
+description: 'Detect friction signals and graduate recurring patterns into rules. Use for session retrospectives and learning pipeline automation.'
 alwaysApply: false
 trigger: friction, friction detection, session retrospective, learning pipeline, recurring mistakes, pattern graduation, friction report
 model_hint: standard
@@ -83,18 +82,30 @@ cycles (when `metacognitive-self-mod` detects regression).
 
 ### Step 1: Scan Session for Signals
 
-For each friction indicator found, record:
+For each friction indicator found, wrap it in the
+shared session-capture envelope (ADR-0011) so
+downstream readers can ingest friction signals and
+trace-capture entries through one parser:
 
 ```json
 {
-  "signal_type": "retry_loop",
-  "description": "rg command failed 3x, fell back to grep",
-  "context": "searching for pattern in node_modules",
-  "weight": "medium",
+  "schema_version": "session-capture/1",
+  "session_id": "2026-04-14-abc12345",
   "timestamp": "2026-04-14T10:23:00Z",
-  "session_id": "abc123"
+  "source": "friction-detector",
+  "payload": {
+    "signal_type": "retry_loop",
+    "description": "rg command failed 3x, fell back to grep",
+    "context": "searching for pattern in node_modules",
+    "weight": "medium"
+  }
 }
 ```
+
+Legacy files written before envelope adoption are read
+as ``session-capture/0`` (entire file treated as the
+payload). See ``docs/adr/0011-session-capture-envelope.md``
+for the contract and migration path.
 
 ### Step 2: Compare Against Existing Log
 

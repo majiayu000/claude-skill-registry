@@ -16,7 +16,7 @@ Reference for building with Phoenix LiveView 1.0/1.1.
 
 ## Iron Laws — Never Violate These
 
-1. **NO DATABASE QUERIES IN DISCONNECTED MOUNT** — Queries run TWICE (HTTP + WebSocket). Use `assign_async`
+1. **NO UNCONDITIONAL DB QUERIES IN MOUNT** — Mount runs TWICE. Default: `assign_async`. SEO routes: `connected?` guard + cache-backed disconnected branch (crawlers read that HTML)
 2. **ALWAYS USE STREAMS FOR LISTS** — Regular assigns = O(n) memory per user. Streams = O(1)
 3. **CHECK connected?/1 BEFORE SUBSCRIPTIONS** — Prevents double subscriptions
 4. **EXTRACT VARIABLES BEFORE assign_async CLOSURE** — Closures copy entire referenced variables
@@ -61,6 +61,26 @@ end
 stream_insert(socket, :items, item, at: 0)
 stream_delete(socket, :items, item)
 ```
+
+### SEO Dead-Render (cache-backed disconnected branch)
+
+For public/SEO-visible routes (marketing, articles, product listings) the
+disconnected render IS the HTML crawlers see. Fetch from a cache there, real
+data on connect:
+
+```elixir
+def mount(_params, _session, socket) do
+  products =
+    if connected?(socket),
+      do: Catalog.list_products(),
+      else: Cache.get_products() || []
+
+  {:ok, assign(socket, products: products)}
+end
+```
+
+Empty list → `<noscript>`-friendly skeleton. Cache → `:persistent_term`, ETS,
+or Cachex. This satisfies Iron Law #1 AND keeps Googlebot/GPTBot happy.
 
 ### PubSub with connected? check
 

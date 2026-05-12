@@ -14,7 +14,7 @@ Use this skill when the storage decision is genuinely about open table format an
 - Use the upstream DuckLake and DuckDB extension docs only to clarify extension-level behavior that MotherDuck docs reference.
 - Keep the guidance aligned with the documented product posture:
   - native MotherDuck first
-  - upstream DuckLake v1.0 is production-ready, but MotherDuck's DuckLake docs still define the MotherDuck product surface and preview/compatibility limits
+  - upstream DuckLake v1.0 is production-ready and supported by DuckDB 1.5.2, while MotherDuck's DuckLake docs still define the MotherDuck product surface and preview/compatibility limits
   - fully managed, BYOB, and own-compute paths are distinct
   - maintenance and compaction are explicit operations, not background magic
 
@@ -26,6 +26,7 @@ Use this skill when the storage decision is genuinely about open table format an
 - Choose the operating mode deliberately: fully managed for easiest evaluation, BYOB for customer bucket ownership, own compute only when the compute boundary matters too.
 - Document the fallback to native MotherDuck storage if the DuckLake requirement is weak, unverified, or only about future portability.
 - For DuckLake v1.0, data inlining, sorted tables, bucket partitioning, deletion vectors, or extension behavior, verify the current MotherDuck DuckLake docs and DuckDB/DuckLake version matrix before giving syntax guarantees.
+- Do not infer MotherDuck client/runtime support from upstream DuckDB release notes alone; check the MotherDuck lifecycle docs when the exact DuckDB version matters.
 - Keep the MotherDuck product surface separate from raw DuckLake-extension assumptions.
 
 ## Workflow

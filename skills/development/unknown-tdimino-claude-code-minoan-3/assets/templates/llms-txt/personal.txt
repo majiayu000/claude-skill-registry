@@ -1,0 +1,25 @@
+# {FULL_NAME}
+
+> {FULL_NAME} is a {ROLE_DESCRIPTION}. {ONE_SENTENCE_ABOUT}.
+
+## Work
+
+- [{PROJECT_1}]({BASE_URL}/projects/{SLUG_1}): {PROJECT_1_DESCRIPTION}
+- [{PROJECT_2}]({BASE_URL}/projects/{SLUG_2}): {PROJECT_2_DESCRIPTION}
+- [{PROJECT_3}]({BASE_URL}/projects/{SLUG_3}): {PROJECT_3_DESCRIPTION}
+
+## Writing
+
+- [{POST_1}]({BASE_URL}/blog/{SLUG_1}): {POST_1_DESCRIPTION}
+- [{POST_2}]({BASE_URL}/blog/{SLUG_2}): {POST_2_DESCRIPTION}
+
+## About
+
+- [About]({BASE_URL}/about): Background, expertise, and interests
+- [Contact]({BASE_URL}/contact): How to get in touch
+
+## Optional
+
+- [Resume]({BASE_URL}/resume): Professional experience and education
+- [Speaking]({BASE_URL}/speaking): Talks, presentations, and appearances
+- [Uses]({BASE_URL}/uses): Tools, hardware, and software

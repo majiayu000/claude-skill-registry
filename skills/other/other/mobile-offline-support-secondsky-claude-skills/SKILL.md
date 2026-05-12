@@ -1,6 +1,7 @@
 ---
 name: mobile-offline-support
 description: Offline-first mobile apps with local storage, sync queues, conflict resolution. Use for offline functionality, data sync, connectivity handling, or encountering sync conflicts, queue management, storage limits, network transition errors.
+license: MIT
 ---
 
 # Mobile Offline Support

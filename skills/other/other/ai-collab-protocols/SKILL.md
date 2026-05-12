@@ -1,6 +1,7 @@
 ---
 name: ai-collab-protocols
-description: Surface concrete in-task-collaboration protocols when the user describes an AI workflow informally — URL-as-entity-reference, durable PR-comment threads as session memory, "fit the protocol" basics. Trigger when the user names entities by colloquial label instead of stable URL, asks "how should I structure this for Claude", pastes a screenshot when a URL would do, or describes a multi-step Claude workflow without a durable handle. Apply tactics reactively, not as a checklist.
+description: Surface in-task-collaboration protocols when the user describes an AI workflow informally — URL-as-entity-reference, PR-comment threads as session memory. Trigger when the user names entities by colloquial label instead of stable URL, asks "how should I structure this for Claude", or describes a multi-step Claude workflow without a durable handle. Apply reactively, not as a checklist.
+disable-model-invocation: true
 ---
 
 Spot the protocol gap, name the better tactic, point at the durable handle. Small surgical interventions, not a lecture.

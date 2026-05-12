@@ -1,22 +1,49 @@
 ---
 name: competitive-positioning
-disable-model-invocation: true
 description: "Maps a startup's competitive landscape, scores moat strength across 6+ dimensions, and generates an investor-ready competition narrative with positioning map."
-compatibility: Requires Python 3.10+ and uv for script execution.
-metadata:
-  author: lool-ventures
-  version: "0.3.0"
-imports:
-  - "deck-review:checklist.json (optional — competition slide claims for cross-validation)"
-  - "market-sizing:sizing.json (optional — validate market claims in positioning)"
-exports:
-  - "landscape.json -> deck-review, fundraise-readiness"
-  - "report.json -> ic-sim, fundraise-readiness, cross-document-consistency"
+when_to_use: >
+  Use ONLY when the user has asked for competitive landscape mapping,
+  moat analysis, or positioning evaluation AND has provided enough
+  context (a deck, a list of competitors, or a clearly named startup).
+  Do not auto-invoke on general questions about competition or strategy.
+user-invocable: true
 ---
 
 # Competitive Positioning Skill
 
 Help startup founders see their competitive landscape clearly — who the real competitors are, where they're differentiated, how defensible that differentiation is, and how to present it to investors. Produce a competitive analysis with positioning maps, moat scorecards, and an investor-ready narrative. The tone is founder-first: a coaching tool for preparation, not a judgment.
+
+## Skill Metadata
+
+- **Author:** lool-ventures
+- **Version:** managed in `founder-skills/.claude-plugin/plugin.json`
+- **Compatibility:** Python 3.10+ and `uv` for script execution.
+- **Imports (optional):**
+  - `deck-review:checklist.json` — competition slide claims for cross-validation
+  - `market-sizing:sizing.json` — validate market claims in positioning
+- **Exports:**
+  - `landscape.json` → `deck-review`, `fundraise-readiness`
+  - `report.json` → `ic-sim`, `fundraise-readiness`, `cross-document-consistency`
+
+## Skill Execution Model (READ FIRST)
+
+This skill runs **inline in the main thread** (not as a sub-agent). The main thread has full tool access including Bash, and is responsible for orchestrating the full pipeline: running producer scripts, persisting artifacts, and dispatching the competitive-positioning sub-agent at specific moments.
+
+**Two dispatch contexts for the sub-agent:**
+
+- **Context A — Per-step analytical dispatch (Mitigation 1):** Steps 4 (LANDSCAPE_RESEARCH), 5 (MOAT_SCORING + POSITIONING_SCORING), and 6 (CHECKLIST) dispatch the competitive-positioning agent via the `Task` tool. The agent does deep analysis and returns structured JSON. The main thread captures the JSON and pipes it through the producer script (`validate_landscape.py`, `score_moats.py`, `score_positioning.py`, or `checklist.py`). The sub-agent does NOT write artifacts directly.
+- **Context B — Post-compose coaching dispatch:** Step 7 dispatches the sub-agent after `compose_report.py` writes `report.md`. The sub-agent reads `report.md`, appends `## Coaching Commentary`, verifies all canonical artifacts on disk, and returns a structured success payload.
+
+**Why this model:** In Cowork, sub-agents have a restricted tool allowlist (no Bash). By keeping orchestration in the main thread and dispatching sub-agents only for analytical or post-compose tasks that use only Read/Edit/Glob/Grep, the pipeline works correctly in both Claude Code (CLI) and Cowork.
+
+**Tolerant JSON extraction protocol (Context A):** After dispatching the sub-agent, capture its final assistant message. The sub-agent should return raw JSON, but may wrap it in ` ```json ... ``` ` fences or add a prose preamble. Extract JSON tolerantly:
+
+1. If the message is wrapped in a ` ```json ... ``` ` (or plain ` ``` ... ``` `) fence, strip the fence first.
+2. Try to parse the stripped text directly as JSON.
+3. If that fails, walk through the text looking for the first `{` character and try `json.JSONDecoder().raw_decode(text[i:])` — this is brace-aware and handles nested objects correctly (unlike regex, which truncates on the first `}`).
+4. If extraction fails entirely, re-prompt the sub-agent with: "Your previous reply could not be parsed as JSON. Return ONLY the JSON object — no markdown fences, no prose preamble."
+
+> See `founder-skills/references/skill-execution-model.md` for the full inline-skill execution model (3 dispatch contexts, Mitigation 1+2, producer contract, Cowork quirks, per-symptom triage).
 
 ## Input Formats
 
@@ -60,12 +87,12 @@ Every analysis deposits structured JSON artifacts into a working directory. The 
 |------|----------|----------|
 | 2 | `product_profile.json` | Agent (main) |
 | 3 | `landscape_draft.json` | Agent (main) |
-| 4 | `landscape_enriched.json` | Research sub-agent (Task) or agent (sequential) |
+| 4 | `landscape_enriched.json` | Context A dispatch: LANDSCAPE_RESEARCH |
 | 4b | `landscape.json` | `validate_landscape.py` (from enriched) |
-| 5 | `positioning.json` | Agent (main — views, moats, stress-tests) |
-| 6a | `moat_scores.json` | `score_moats.py` |
-| 6b | `positioning_scores.json` | `score_positioning.py` |
-| 6c | `checklist.json` | `checklist.py` |
+| 5a | `moat_scores.json` | Context A dispatch: MOAT_SCORING → `score_moats.py` |
+| 5b | `positioning_scores.json` | Context A dispatch: POSITIONING_SCORING → `score_positioning.py` |
+| 5c | `positioning.json` | Agent (main — views, moats, stress-tests) |
+| 6 | `checklist.json` | Context A dispatch: CHECKLIST → `checklist.py` |
 | 7 | `report.json` | `compose_report.py` reads all |
 | 7d | `report.html` | `visualize.py` |
 | 7e | `explore.html` | `explore.py` |
@@ -109,6 +136,7 @@ After Step 1 (when the slug is known):
 ```bash
 ANALYSIS_DIR="$ARTIFACTS_ROOT/competitive-positioning-${SLUG}"
 mkdir -p "$ANALYSIS_DIR"
+mkdir -p "$ANALYSIS_DIR/.staging"   # for ad-hoc sub-agent JSON staging (v0.4.2)
 RUN_ID="$(date -u +%Y%m%dT%H%M%SZ)"
 ```
 
@@ -162,21 +190,7 @@ Write `landscape_draft.json` to `$ANALYSIS_DIR`.
 
 **MANDATORY STOP — TWO SEPARATE STEPS. DO NOT COMBINE THEM.**
 
-**Step A: Output a chat message** with the competitor list and candidate axes. Use a markdown table or formatted list. This is a normal assistant message — NOT an AskUserQuestion call. Example:
-
-```
-Here's the competitive landscape I've identified:
-
-| # | Competitor | Category | Description |
-|---|---|---|---|
-| 1 | Acme Corp | Direct | Same product, same market |
-| 2 | Status quo | Do-nothing | Manual process |
-...
-
-Proposed positioning axes:
-- **X: Deployment Speed** — how fast to integrate
-- **Y: Detection Accuracy** — false positive rate
-```
+**Step A: Output a chat message** with the competitor list and candidate axes. Use a markdown table or formatted list. This is a normal assistant message — NOT an AskUserQuestion call.
 
 **Step B: AFTER the chat message, call `AskUserQuestion`** with ONLY a short question. The question field is plain text — NO markdown, NO tables, NO bullet points, NO competitor names.
 
@@ -185,174 +199,289 @@ Options: `Looks good` / `Missing competitors` / `Remove some` / `Change axes`
 
 **CRITICAL: The AskUserQuestion question must be ONE SHORT SENTENCE. Put ALL details in the chat message (Step A), not in the question.**
 
-This two-step pattern (chat message then AskUserQuestion) is required because AskUserQuestion renders as plain text. Detailed content goes in the chat message; only the gate question goes in AskUserQuestion.
-
 If founder requests changes, apply corrections and repeat Steps A+B.
 
 Apply all corrections to `landscape_draft.json` before proceeding.
 
-### Step 4: Research & Enrich Competitors -> `landscape_enriched.json` -> `landscape.json`
+### Sub-agent JSON staging (v0.4.2)
 
-Spawn a `general-purpose` Task sub-agent to research and enrich each competitor. The sub-agent receives: `landscape_draft.json` path, `product_profile.json` path, `ANALYSIS_DIR`, `RUN_ID`, and available search tool names.
+When a sub-agent returns JSON too large for bash heredoc, write it to
+`$ANALYSIS_DIR/.staging/<step>_input.json` first, then pipe via:
 
-**Sub-agent instructions:**
+```bash
+cat "$ANALYSIS_DIR/.staging/<step>_input.json" | python3 "$SCRIPTS/<producer>.py" ...
+```
 
-**Phase A — Enrich existing competitors:** For each competitor in `landscape_draft.json`, use web search to find: pricing model, funding history, team size, target customers, strengths, weaknesses. Record `evidence_source` per field (`"researched"` or `"agent_estimate"`). Set `research_depth` per competitor — MUST be one of: `"full"` (web research completed), `"partial"` (added via suggested_additions), `"founder_provided"` (no web research). Do NOT use values like "high", "medium", "low".
+The `.staging/` directory is created at setup and removed at cleanup.
+This avoids `Operation not permitted` errors that occur when writing to
+`$OUTPUTS_ROOT/` (Cowork sandbox marks that read-only post-write).
 
-**Phase B — Gap detection:** After enriching, check for missing competitor categories. Search for: "alternatives to [startup product]", "[sector] competitors", G2/Capterra comparisons. If new competitors are found that would strengthen the analysis, add them to `suggested_additions[]` with `merged: false`. **CRITICAL: Do NOT add discovered competitors to `competitors[]` — only add them to `suggested_additions[]`. The main agent handles merging after founder approval.**
+### Step 4: Research & Enrich Competitors -> `landscape_enriched.json` -> `landscape.json` (Context A: LANDSCAPE_RESEARCH dispatch)
 
-**Output format:** `competitors[]` must contain ONLY the original competitors from `landscape_draft.json` — no additions. Discovered competitors go exclusively in `suggested_additions[]`. Write `landscape_enriched.json` to `$ANALYSIS_DIR` with this exact structure:
+**Dispatch the competitive-positioning sub-agent in Context A (LANDSCAPE_RESEARCH).** Do not do the landscape research yourself in the main thread — dispatch it via the `Task` tool so the research runs in an isolated context.
 
-```json
+**Dispatch prompt template:**
+
+```
+CONTEXT: LANDSCAPE_RESEARCH
+ANALYSIS_DIR: <absolute path to ANALYSIS_DIR>
+RUN_ID: <RUN_ID>
+
+You are the competitive-positioning agent dispatched in Context A (LANDSCAPE_RESEARCH).
+Read landscape_draft.json at <ANALYSIS_DIR>/landscape_draft.json and
+product_profile.json at <ANALYSIS_DIR>/product_profile.json.
+
+Phase A — Enrich existing competitors: For each competitor in landscape_draft.json, use
+available tools to find: pricing model, funding history, team size, target customers,
+strengths, weaknesses. Record evidence_source per field (researched or agent_estimate).
+Set research_depth per competitor — MUST be one of: full, partial, or founder_provided.
+
+Phase B — Gap detection: After enriching, check for missing competitor categories.
+If new competitors are found, add them to suggested_additions[] with merged: false.
+Do NOT add to competitors[] — only to suggested_additions[].
+
+Return JSON only — exactly the shape expected by validate_landscape.py:
 {
-  "competitors": [
-    {
-      "name": "...", "slug": "...", "category": "...",
-      "description": "...", "key_differentiators": ["..."],
-      "research_depth": "full",
-      "evidence_source": {"pricing_model": "researched", "funding": "agent_estimate"},
-      "sourced_fields_count": 5,
-      "pricing_model": "...", "funding": "...", "team_size": "...",
-      "target_customers": ["..."], "strengths": ["..."], "weaknesses": ["..."]
-    }
-  ],
-  "suggested_additions": [
-    {
-      "name": "...", "slug": "...", "category": "...",
-      "rationale": "...", "partial_profile": {}, "merged": false
-    }
-  ],
+  "competitors": [...original competitors enriched, NOT new ones...],
+  "suggested_additions": [...newly discovered...],
   "suggested_axes": [],
   "assessment_mode": "sub-agent",
   "research_depth": "full",
-  "input_mode": "...",
-  "metadata": {"run_id": "..."}
+  "input_mode": "<from product_profile>",
+  "metadata": {"run_id": "<RUN_ID>"}
 }
 ```
 
-`research_depth` per competitor MUST be one of: `"full"`, `"partial"`, `"founder_provided"`. Do NOT use `"high"`, `"medium"`, `"low"`.
-
-All slugs MUST be kebab-case (lowercase, hyphens only, no underscores). Example: `"manual-campaigns"` not `"manual_campaigns"`. The validator auto-converts underscores to hyphens but it's better to get it right.
-
-**Before returning:** Run `ls "$ANALYSIS_DIR/landscape_enriched.json"` to verify the file was actually written. Report the file path from the `ls` output, not from memory.
-
-Return to the main agent ONLY: (1) verified file path from `ls`, (2) count of competitors enriched, (3) research_depth per competitor, (4) any `suggested_additions` found, (5) suggested axis pairs if any.
-
-**Graceful degradation:** If Task tool is unavailable, research sequentially in the main agent. If no search tools are available, enrich from agent knowledge and set `research_depth: "founder_provided"`.
-
-**After the sub-agent returns:**
-
-If `suggested_additions` exist, review them first. If all discoveries are clearly irrelevant (wrong market, integration partners not competitors, too small to matter), you may skip the mini-gate and mark all as `merged: false` with a note explaining why. Otherwise, present relevant discoveries to the founder (each entry has a `rationale` field — the sub-agent may also use `reason` as an alias, check both). Use `AskUserQuestion` to ask which to include. Merge approved additions into `competitors[]` (set `merged: true`), mark declined ones as `merged: false`.
-
-**Validate and normalize:**
+**After the sub-agent returns:** apply the tolerant JSON extraction protocol (see "Skill Execution Model" preamble) to obtain the structured JSON. If `suggested_additions` exist, present them to the founder and ask which to include. Merge approved ones into `competitors[]`. Then pipe through the producer script:
 
 ```bash
-cat "$ANALYSIS_DIR/landscape_enriched.json" | python3 "$SCRIPTS/validate_landscape.py" --pretty -o "$ANALYSIS_DIR/landscape.json"
+cat <<'LANDSCAPE_EOF' | python3 "$SCRIPTS/validate_landscape.py" --pretty -o "$ANALYSIS_DIR/landscape.json"
+<JSON extracted from sub-agent reply, with approved additions merged in>
+LANDSCAPE_EOF
 ```
 
 Fix any errors (exit 1) and re-run. Warnings are acceptable — address medium-severity ones in the report.
-
-**Competitor set boundary:** Target 5-7 competitors. `validate_landscape.py` enforces minimum 3 and maximum 10. If the founder wants to add more during Gate 1, cap at 10 and explain why — deeper analysis of fewer competitors beats shallow analysis of many.
 
 ### Gate 2: Founder Validation of Positioning
 
 **MANDATORY STOP — TWO SEPARATE STEPS, same pattern as Gate 1.**
 
-**Step A: Output a chat message** with the positioning preview. Use a markdown table showing competitor positions on chosen axes and moat highlights.
+**Step A: Output a chat message** with the positioning preview.
 
-**Step B: AFTER the chat message, call `AskUserQuestion`** with ONLY a short question. NO details in the question field.
+**Step B: AFTER the chat message, call `AskUserQuestion`** with ONLY a short question.
 
 Question: `Does this positioning look right?`
 Options: `Proceed to scoring` / `Adjust positions` / `Change axes` / `Other changes`
 
-This two-step pattern (chat message then AskUserQuestion) is required because AskUserQuestion renders as plain text. Detailed content goes in the chat message; only the gate question goes in AskUserQuestion.
-
 If founder changes an axis (not just coordinates), re-assign ALL competitor coordinates on the new axis with fresh evidence. Apply all corrections before proceeding to Step 5.
 
-### Step 5: Positioning & Moat Assessment -> `positioning.json`
+### Step 5: Positioning & Moat Assessment -> `positioning.json` + Dispatch Moat/Positioning Scoring (Context A)
 
 **REQUIRED — read `$REFS/moat-definitions.md` now.**
 
-Before writing `positioning.json`, read `landscape.json` to get the competitor list and use it to scaffold the JSON structure. Write each section (views, moat_assessments, differentiation_claims) separately to manage complexity. The competitor slugs from `landscape.json` plus `_startup` define the complete set of entities that must appear in views and moat_assessments.
+Write `positioning.json` to `$ANALYSIS_DIR` (consult `references/artifact-schemas.md` for the schema). Then dispatch the sub-agent **twice in parallel** (two Task calls in one message) — once for MOAT_SCORING and once for POSITIONING_SCORING.
 
-Build the full positioning artifact:
+**MOAT_SCORING dispatch prompt:**
 
-**Views:** 1-2 positioning views (primary required, secondary optional). For each view, assign coordinates (0-100) for every competitor and `_startup`. Every point needs `x_evidence`, `y_evidence`, and provenance source fields. **When `input_mode` is `"deck"` and the deck has its own competition axes** (recorded in `product_profile.json` as `deck_axes`), create a secondary view using the deck's axes. This strengthens NARR_03 (deck alignment) and gives the founder a direct comparison between their existing narrative and the analytically recommended positioning.
+```
+CONTEXT: MOAT_SCORING
+ANALYSIS_DIR: <absolute path>
+RUN_ID: <RUN_ID>
 
-**Moat assessments:** Score every slug in `landscape.json` (including `_startup`) across 6 canonical moat dimensions: `network_effects`, `data_advantages`, `switching_costs`, `regulatory_barriers`, `cost_structure`, `brand_reputation`. Each moat gets: status (`strong`/`moderate`/`weak`/`absent`/`not_applicable`), evidence (required even for `not_applicable`), evidence_source, and trajectory (`building`/`stable`/`eroding`).
+You are the competitive-positioning agent dispatched in Context A (MOAT_SCORING).
+Read positioning.json at <ANALYSIS_DIR>/positioning.json and landscape.json at
+<ANALYSIS_DIR>/landscape.json.
 
-**Differentiation stress-tests:** For each of the startup's `differentiation_claims` from `product_profile.json`, assess: verifiable (boolean), supporting/challenging evidence, investor challenge, and verdict (`holds`/`partially_holds`/`does_not_hold`).
+Score every slug (including _startup) across the 6 canonical moat dimensions from
+${CLAUDE_PLUGIN_ROOT}/skills/competitive-positioning/references/moat-definitions.md:
+network_effects, data_advantages, switching_costs, regulatory_barriers,
+cost_structure, brand_reputation.
 
-**Accepted warnings:** If you intentionally omit a do-nothing alternative or accept a known limitation, add an `accepted_warnings` entry with the warning code, match pattern, and reason. Common expected warnings:
-- `SHALLOW_COMPETITOR_PROFILE` for do-nothing/status-quo alternatives (they always have thin evidence because they're not real companies)
-- `MOAT_WITHOUT_EVIDENCE` for do-nothing moats rated `absent` (expected — the status quo has no moats)
+Each moat: status (strong/moderate/weak/absent/not_applicable), evidence (required),
+evidence_source (researched/agent_estimate/founder_override), trajectory
+(building/stable/eroding).
 
-Write `positioning.json` to `$ANALYSIS_DIR`. Consult `references/artifact-schemas.md` for the full schema.
-
-### Step 6: Script Scoring Phase (Parallel)
-
-**ALL THREE scripts below are MANDATORY. Do NOT skip any of them. `compose_report.py` will emit HIGH-severity warnings for any missing scoring artifact, and `--strict` will fail. Run all three — they can run in parallel (three Bash calls in one message):**
-
-**6a — Moat scores:**
-
-```bash
-cat "$ANALYSIS_DIR/positioning.json" | python3 "$SCRIPTS/score_moats.py" --pretty -o "$ANALYSIS_DIR/moat_scores.json"
+Return JSON only — exactly the shape expected by score_moats.py:
+{
+  "moat_assessments": {
+    "_startup": {"moats": [...]},
+    "<slug>": {"moats": [...]},
+    ...
+  },
+  "metadata": {"run_id": "<RUN_ID>"}
+}
 ```
 
-**6b — Positioning scores:**
+**POSITIONING_SCORING dispatch prompt:**
 
-```bash
-cat "$ANALYSIS_DIR/positioning.json" | python3 "$SCRIPTS/score_positioning.py" --pretty -o "$ANALYSIS_DIR/positioning_scores.json"
+```
+CONTEXT: POSITIONING_SCORING
+ANALYSIS_DIR: <absolute path>
+RUN_ID: <RUN_ID>
+
+You are the competitive-positioning agent dispatched in Context A (POSITIONING_SCORING).
+Read positioning.json at <ANALYSIS_DIR>/positioning.json.
+
+For each view in positioning.json, assign coordinates (0-100) for every competitor
+and _startup on both axes. Every point needs x_evidence, y_evidence, and provenance.
+Assess differentiation claims: verifiable (boolean), evidence, challenge, verdict
+(holds/partially_holds/does_not_hold).
+
+Return JSON only — exactly the shape expected by score_positioning.py:
+{
+  "views": [
+    {
+      "id": "...", "x_axis": {"name": "..."}, "y_axis": {"name": "..."},
+      "x_axis_rationale": "...", "y_axis_rationale": "...",
+      "points": [
+        {"competitor": "...", "x": 0-100, "y": 0-100,
+         "x_evidence": "...", "y_evidence": "...",
+         "x_evidence_source": "researched|agent_estimate",
+         "y_evidence_source": "researched|agent_estimate"}
+      ]
+    }
+  ],
+  "differentiation_claims": [...],
+  "metadata": {"run_id": "<RUN_ID>"}
+}
 ```
 
-**6c — Checklist:**
+**After both sub-agents return:** apply the tolerant JSON extraction protocol to each. Pipe MOAT_SCORING output through `score_moats.py` and POSITIONING_SCORING output through `score_positioning.py`:
+
+```bash
+cat <<'MOAT_EOF' | python3 "$SCRIPTS/score_moats.py" --pretty -o "$ANALYSIS_DIR/moat_scores.json"
+<JSON extracted from MOAT_SCORING sub-agent reply>
+MOAT_EOF
+```
+
+```bash
+cat <<'POS_EOF' | python3 "$SCRIPTS/score_positioning.py" --pretty -o "$ANALYSIS_DIR/positioning_scores.json"
+<JSON extracted from POSITIONING_SCORING sub-agent reply>
+POS_EOF
+```
+
+### Step 6: Score Checklist -> `checklist.json` (Context A: CHECKLIST dispatch)
 
 **REQUIRED — read `$REFS/checklist-criteria.md` now.**
 
-Assess all 25 checklist items with evidence from the analysis. Mode-based gating applies: when `input_mode` is `"conversation"`, research-dependent items auto-gate to `not_applicable`.
+**Dispatch the competitive-positioning sub-agent in Context A (CHECKLIST).** Dispatch via the `Task` tool.
 
-Write the checklist JSON to `$ANALYSIS_DIR/checklist_input.json` using the Write tool (which handles escaping safely — no shell interpretation of quotes, newlines, or special characters). Then pipe it to the script:
+**Dispatch prompt template:**
 
-```bash
-cat "$ANALYSIS_DIR/checklist_input.json" | python3 "$SCRIPTS/checklist.py" --pretty -o "$ANALYSIS_DIR/checklist.json"
+```
+CONTEXT: CHECKLIST
+ANALYSIS_DIR: <absolute path>
+RUN_ID: <RUN_ID>
+
+You are the competitive-positioning agent dispatched in Context A (CHECKLIST).
+Read landscape.json, positioning.json, moat_scores.json, and positioning_scores.json
+from <ANALYSIS_DIR>. Also read
+${CLAUDE_PLUGIN_ROOT}/skills/competitive-positioning/references/checklist-criteria.md.
+
+Assess all 25 checklist items (COVER_01..05, POS_01..05, MOAT_01..04,
+EVID_01..04, NARR_01..04, MISS_01..03). Mode-based gating applies: when
+input_mode is conversation, research-dependent items auto-gate to not_applicable.
+
+Evidence is MANDATORY for every item: every fail and warn MUST have a non-empty
+evidence string citing specific findings. Every pass MUST have evidence noting
+what was checked.
+
+Return JSON only — the items array without a summary (the producer script
+computes the summary):
+{"items": [{"id": "COVER_01", "status": "pass", "evidence": "...", "notes": "..."}, ...all 25 items...]}
 ```
 
-The JSON must contain: `{"items": [...all 25 items...], "input_mode": "<deck|conversation|document>", "metadata": {"run_id": "<RUN_ID>"}}`. Use the actual `input_mode` determined in Step 2 and the `RUN_ID` from Step 0.
+**After the sub-agent returns:** apply the tolerant JSON extraction protocol to obtain the structured JSON. Then pipe through the producer script:
 
-**Evidence is MANDATORY for every item:** Every `fail` and `warn` item MUST have a non-empty `evidence` string citing specific findings. Every `pass` item MUST have `evidence` noting what was checked. Empty evidence produces blank lines in the report.
+```bash
+cat <<'CHECKLIST_EOF' | python3 "$SCRIPTS/checklist.py" --pretty -o "$ANALYSIS_DIR/checklist.json"
+<JSON extracted from sub-agent reply>
+CHECKLIST_EOF
+```
 
-Fix script errors (exit 1) and re-run. Script warnings are findings to present, not errors to fix.
-
-### Step 7: Compose, Validate, and Visualize
+### Step 7: Compose, Validate, and Post-Compose Coaching
 
 **7a — Compose report JSON (two-pass pattern):**
 
 **Pass 1 (discovery):** Run compose WITHOUT `--strict` and WITHOUT `accepted_warnings` in `positioning.json`:
 
 ```bash
-python3 "$SCRIPTS/compose_report.py" --dir "$ANALYSIS_DIR" --pretty -o "$ANALYSIS_DIR/report.json"
+python3 "$SCRIPTS/compose_report.py" --dir "$ANALYSIS_DIR" --pretty \
+  -o "$ANALYSIS_DIR/report.json" \
+  --write-md "$ANALYSIS_DIR/report.md"
 ```
+
+`compose_report.py` writes both `report.json` and `report.md` deterministically. **Do NOT** read `report_markdown` out of `report.json` and re-write it via heredoc.
 
 Inspect the warnings in the output. Fix any high-severity warnings (missing artifacts, stale run_id) and re-run Pass 1.
 
-**Pass 2 (with acceptances):** If any medium-severity warnings should be accepted (agent judgment based on context — e.g., `MISSING_DO_NOTHING` in a regulated market, `MOAT_WITHOUT_EVIDENCE` for a do-nothing alternative), add `accepted_warnings` to `positioning.json` with the warning code, match pattern, and reason. Then re-run with `--strict`:
+**Pass 2 (with acceptances):** If any medium-severity warnings should be accepted, add `accepted_warnings` to `positioning.json` with the warning code, match pattern, and reason. Then re-run with `--strict`:
 
 ```bash
-python3 "$SCRIPTS/compose_report.py" --dir "$ANALYSIS_DIR" --strict --pretty -o "$ANALYSIS_DIR/report.json"
+python3 "$SCRIPTS/compose_report.py" --dir "$ANALYSIS_DIR" --strict --pretty \
+  -o "$ANALYSIS_DIR/report.json" \
+  --write-md "$ANALYSIS_DIR/report.md"
 ```
 
-This two-pass approach avoids the ordering problem where `accepted_warnings` must reference warnings that have not yet been generated. Medium-severity warnings are review findings to present, not data errors to fix.
+**Post-write verification:** `compose_report.py` exits non-zero (code 2) if the declared output files don't exist or are empty after writing. If compose exits non-zero, stop and report the exact stderr — do not proceed.
 
-**7b — Cross-skill lookups:** Use `find_artifact.py` to locate prior deck-review and market-sizing artifacts. If deck-review found, cross-reference competition slide claims against the analysis. If market-sizing found, validate market scope consistency. Note findings for inclusion in coaching commentary.
+**7b — Cross-skill lookups:** Use `find_artifact.py` to locate prior deck-review and market-sizing artifacts. If found, note findings for inclusion in coaching commentary.
 
-**7c — Write report and coaching commentary:** Read `report_markdown` from the compose output JSON. Insert your `## Coaching Commentary` section immediately before the final `---` separator line (the footer). The coaching commentary is agent-written (not script-generated) and should include:
-- 2-3 competitive strengths to lead with in investor meetings
-- The single highest-leverage improvement to the competitive narrative
-- What investors will push on and how to prepare
-- Defensibility roadmap: which moats to build and in what order
-- Cross-skill findings from step 7b (if any prior artifacts were found)
+**7c — Post-Compose Coaching Commentary (Context B dispatch — POST_COMPOSE_COACHING):**
 
-Write the combined output (report_markdown + coaching commentary) to `$ANALYSIS_DIR/report.md` and display it to the user in full. **Present the file path** so the user can access it directly.
+**Dispatch the competitive-positioning sub-agent in Context B.** Dispatch via the `Task` tool after `compose_report.py` has successfully written both `report.json` and `report.md`.
+
+**Mitigation 2 protocol (v0.4.2):** the main thread reads the structured `coaching_payload` from `report.json` and inlines it into the dispatch prompt. The sub-agent does NOT Read full `report.md` — it consumes `coaching_payload` directly, performs Grep idempotency, Edits via the per-run uuid `insertion_marker`, and Grep-verifies all artifacts. See the competitive-positioning agent body's "Context B — Post-compose coaching dispatch (POST_COMPOSE_COACHING)" section for the full procedure.
+
+<!-- skill-quality-ci: bash-after-subagent-ok -->
+```bash
+COACHING_PAYLOAD="$(python3 -c '
+import json, sys
+data = json.load(open(sys.argv[1]))
+print(json.dumps(data["coaching_payload"], indent=2))
+' "$ANALYSIS_DIR/report.json")"
+```
+
+**Dispatch prompt template:**
+
+```
+CONTEXT: POST_COMPOSE_COACHING
+
+You are dispatched to add coaching commentary to a competitive positioning review.
+
+The compose_report.py script has finished. The structured `coaching_payload`
+from report.json is:
+
+<paste $COACHING_PAYLOAD JSON here verbatim>
+
+Follow your agent body's Context B procedure
+(POST_COMPOSE_COACHING):
+
+1. grep_idempotency_check — Grep "## Coaching Commentary" (output_mode:count)
+   and Grep the EXACT coaching_payload.insertion_marker (output_mode:count)
+   on coaching_payload.report_path. Apply the 6-state decision matrix.
+2. Compose commentary from the inlined coaching_payload (failed_items,
+   warned_items, summary, high_severity_warnings, company_name).
+   Do NOT Read the full report.md.
+3. edit_via_marker — single Edit on coaching_payload.report_path:
+     old_string = coaching_payload.insertion_marker  (EXACT uuid string)
+     new_string = "## Coaching Commentary\n\n<your commentary>"
+4. self_verify_artifacts_via_grep_run_id — Grep run_id from each producer
+   artifact (landscape.json, positioning.json, moat_scores.json,
+   positioning_scores.json, checklist.json), confirm all 5 match;
+   bounded Read (limit:1) on report.json and report.md; re-Grep the marker
+   (must be 0) and the "## Coaching Commentary" header (must be 1).
+5. Return the success payload:
+   {"status": "complete", "review_dir": "<path>", "report_path": "<path>",
+    "landscape_summary": "<one-liner>", "top_moats": [<list>],
+    "high_severity_warnings": [<list>]}
+   OR if verification fails:
+   {"status": "blocked", "reason": "<specific gap>"}
+
+Stop after returning JSON. Do not narrate.
+```
+
+**After the sub-agent returns:** apply the tolerant JSON extraction protocol to obtain the success/blocked payload. If `status == "blocked"`, stop and report the reason. If `status == "complete"`, present `report_path` to the founder.
 
 **7d — Visualize (optional):**
 
@@ -378,6 +507,7 @@ Copy final deliverables to workspace root with clean names:
 cp "$ANALYSIS_DIR/report.md" "./${COMPANY_NAME}_Competitive_Positioning.md"
 cp "$ANALYSIS_DIR/report.html" "./${COMPANY_NAME}_Competitive_Positioning.html" 2>/dev/null
 cp "$ANALYSIS_DIR/explore.html" "./${COMPANY_NAME}_Competitive_Explorer.html" 2>/dev/null
+rm -rf "$ANALYSIS_DIR/.staging" 2>/dev/null || true
 ```
 
 Where `COMPANY_NAME` is the company name with spaces replaced by underscores (e.g., "Acme Corp" -> "Acme_Corp"). Present the file paths to the user.
@@ -402,3 +532,13 @@ Where `COMPANY_NAME` is the company name with spaces replaced by underscores (e.
 ## Cross-Agent Integration
 
 This skill imports artifacts from prior deck-review (competition slide claims) and market-sizing (market scope validation) analyses. Imported artifacts are recorded with dates. Imports older than 7 days are flagged as `STALE_IMPORT`.
+
+## Main-Thread Return
+
+This skill runs inline in the main thread (not as a sub-agent). The final outcome the main thread delivers to the founder is:
+
+- The path to `$ANALYSIS_DIR/report.md` — the primary deliverable.
+- The structured success payload from the Context B sub-agent (Step 7c): `{status, review_dir, report_path, landscape_summary, top_moats, high_severity_warnings}`.
+- Optionally: the HTML report paths from Steps 7d and 7e.
+
+**Do NOT inline `report_markdown` in the assistant message.** The founder reads the file via the path.

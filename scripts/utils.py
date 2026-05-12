@@ -243,6 +243,17 @@ def build_skill_key(repo: str = "", path: str = "", name: str = "", category: st
     return ""
 
 
+def iter_source_skills(source: dict):
+    """Yield source rows with any top-level repo applied to rows that omit it."""
+    default_repo = source.get("repo") if isinstance(source.get("repo"), str) else ""
+    for skill in source.get("skills", []):
+        if not isinstance(skill, dict):
+            raise TypeError("source skill entry must be an object")
+        if default_repo and not skill.get("repo"):
+            skill = {**skill, "repo": default_repo}
+        yield skill
+
+
 def _short_hash(value: str) -> str:
     return hashlib.sha1(value.encode("utf-8", errors="ignore")).hexdigest()[:8]
 

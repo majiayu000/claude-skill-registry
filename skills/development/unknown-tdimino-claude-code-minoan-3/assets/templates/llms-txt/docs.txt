@@ -1,0 +1,28 @@
+# {PROJECT_NAME} Documentation
+
+> {PROJECT_NAME} is {PROJECT_DESCRIPTION}. This documentation covers installation, API reference, guides, and examples.
+
+## Getting Started
+
+- [Installation]({BASE_URL}/docs/install): System requirements, package installation, and initial setup
+- [Quick Start]({BASE_URL}/docs/quickstart): First project in 5 minutes
+- [Configuration]({BASE_URL}/docs/config): Environment variables, config files, and runtime options
+
+## API Reference
+
+- [Core API]({BASE_URL}/docs/api/core): Primary classes, methods, and interfaces
+- [CLI Reference]({BASE_URL}/docs/api/cli): Command-line tools and flags
+- [Configuration API]({BASE_URL}/docs/api/config): Programmatic configuration options
+
+## Guides
+
+- [{GUIDE_1}]({BASE_URL}/docs/guides/{SLUG_1}): {GUIDE_1_DESCRIPTION}
+- [{GUIDE_2}]({BASE_URL}/docs/guides/{SLUG_2}): {GUIDE_2_DESCRIPTION}
+- [Migration Guide]({BASE_URL}/docs/guides/migration): Upgrading between versions
+
+## Optional
+
+- [Examples]({BASE_URL}/docs/examples): Code samples and demo projects
+- [Changelog]({BASE_URL}/changelog): Version history and breaking changes
+- [Contributing]({BASE_URL}/docs/contributing): Development setup and contribution guidelines
+- [Architecture]({BASE_URL}/docs/architecture): System design and internal structure

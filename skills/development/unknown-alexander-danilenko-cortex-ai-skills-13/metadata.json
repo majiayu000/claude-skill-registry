@@ -1,0 +1,30 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "alexander-danilenko/cortex-ai-skills",
+  "path": "skills/documentation/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-alexander-danilenko-cortex-ai-skills-13",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "references/api-docs-fastapi-django.md",
+    "references/api-docs-nestjs-express.md",
+    "references/coverage-reports.md",
+    "references/documentation-systems.md",
+    "references/interactive-api-docs.md",
+    "references/python-docstrings.md",
+    "references/typescript-jsdoc.md",
+    "references/user-guides-tutorials.md"
+  ],
+  "author": "alexander-danilenko",
+  "source_url": "https://github.com/alexander-danilenko/cortex-ai-skills/blob/main/skills/documentation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexander-danilenko/cortex-ai-skills/blob/main/skills/documentation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

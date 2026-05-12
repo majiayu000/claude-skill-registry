@@ -1,6 +1,7 @@
 ---
 name: red-team
 description: 'Probe docs and skills.'
+practices: [ai-assisted-dev, design-by-contract, sre]
 skill_api_version: 1
 metadata:
   tier: judgment

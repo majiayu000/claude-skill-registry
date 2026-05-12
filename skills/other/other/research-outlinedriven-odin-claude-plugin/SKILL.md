@@ -1,11 +1,11 @@
 ---
 name: research
-description: "Read-only external knowledge gathering. Mirrors ODIN's canonical 5-tier doc-retrieval priority (Official docs → API refs → Books/papers → Tutorials → Community). Use whenever the user asks about library APIs, framework behavior, SDK migration, version-specific docs, vendor announcements, RFCs, or any external technical knowledge. Verifies claims against primary sources before synthesis. Invoke for any of: \"how does X library work\", \"what's the API for Y\", \"migration guide\", \"version changes in Z\", \"docs for\", or any named library/framework/SDK/API/CLI/service — even without naming /research."
+description: "Read-only external knowledge gathering via ODIN's 5-tier doc ladder (Official docs → API refs → Books/papers → Tutorials → Community). For library APIs, framework behavior, SDK migrations, version-specific docs, vendor announcements, RFCs. Verifies claims against primary sources. Invoke on \"how does X library work\", \"migration guide\", \"docs for\", or any named library/framework/SDK/API/CLI/service."
 ---
 
 # Research Command
 
-Read-only external knowledge gathering. Walk the canonical 5-tier source ladder; cite every claim to a primary source; flag training-data-only assertions explicitly. Do NOT write, edit, or commit files.
+Read-only external knowledge gathering. Walk the 5-tier source ladder; cite every claim to a primary source; flag training-data-only assertions explicitly. Do NOT write, edit, or commit files.
 
 ## When to Apply / NOT
 

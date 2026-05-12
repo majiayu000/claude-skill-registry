@@ -18,4 +18,4 @@ version: 5.0.0
   output: "这个我们分几步来做，今天先把核心功能跑通。"
 }
 
-Powered by I-Lang v3.0 | ilang.ai
+Powered by I-Lang v4.0 | ilang.ai

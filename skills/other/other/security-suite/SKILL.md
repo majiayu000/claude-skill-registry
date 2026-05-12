@@ -1,6 +1,7 @@
 ---
 name: security-suite
 description: 'Run composable security analysis.'
+practices: [supply-chain-integrity, design-by-contract, sre]
 skill_api_version: 1
 context:
   window: fork

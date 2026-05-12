@@ -1,7 +1,6 @@
 ---
 name: development-workflow
-description: detailed development workflow with modular patterns for git, code review, testing, documentation, and deployment
-
+description: 'Detailed development workflow with modular patterns for git, review, testing, and deployment.'
 Triggers: deployment, development, hub-and-spoke, modular, code
 created_by: abstract-examples
 tags: [development, workflow, modular, hub-and-spoke]
@@ -11,11 +10,11 @@ estimated_tokens: 45
 dependencies: []
 companion_skills: []
 modules:
-  - git-workflow
-  - code-review
-  - testing-strategies
-  - documentation-guidelines
-  - deployment-procedures
+  - modules/git-workflow.md
+  - modules/code-review.md
+  - modules/testing-strategies.md
+  - modules/documentation-guidelines.md
+  - modules/deployment-procedures.md
 tools:
   - setup-validator
   - workflow-checker
@@ -62,13 +61,16 @@ Get started quickly with this development workflow framework:
 
 ## Available Modules
 
-This workflow includes these specialized modules:
+This workflow illustrates a hub coordinating these specialized
+modules. Each link below resolves to a working example file in
+this skill's `modules/` directory; copy the directory and adapt
+the contents when using this template for a real skill:
 
-- **[git-workflow](modules/git-workflow/)** - Repository setup, branching strategies, and daily git practices
-- **[code-review](modules/code-review/)** - Pull request process, review guidelines, and quality standards
-- **[testing-strategies](modules/testing-strategies/)** - Unit testing, integration testing, and E2E testing patterns
-- **[documentation-guidelines](modules/documentation-guidelines/)** - Code documentation, API docs, and README standards
-- **[deployment-procedures](modules/deployment-procedures/)** - CI/CD pipelines, environment setup, and monitoring
+- **[modules/git-workflow.md](modules/git-workflow.md)**: Repository setup, branching strategies, and daily git practices
+- **[modules/code-review.md](modules/code-review.md)**: Pull request process, review guidelines, and quality standards
+- **[modules/testing-strategies.md](modules/testing-strategies.md)**: Unit testing, integration testing, and E2E testing patterns
+- **[modules/documentation-guidelines.md](modules/documentation-guidelines.md)**: Code documentation, API docs, and README standards
+- **[modules/deployment-procedures.md](modules/deployment-procedures.md)**: CI/CD pipelines, environment setup, and monitoring
 
 ## Quick Start
 
@@ -97,13 +99,13 @@ To use this development workflow:
 ## Usage Patterns
 
 ### For New Projects
-Start with [git-workflow](modules/git-workflow/) to establish repository structure, then progress through modules as your project develops.
+Start with the git-workflow module to establish repository structure, then progress through modules as your project develops.
 
 ### For Existing Projects
 Use individual modules to improve specific areas:
-- Need better code reviews? → Use [code-review](modules/code-review/)
-- Testing coverage issues? → Use [testing-strategies](modules/testing-strategies/)
-- Deployment problems? → Use [deployment-procedures](modules/deployment-procedures/)
+- Need better code reviews? Use the code-review module
+- Testing coverage issues? Use the testing-strategies module
+- Deployment problems? Use the deployment-procedures module
 
 ### For Team Onboarding
 Guide new team members through the modules in order to establish consistent practices.

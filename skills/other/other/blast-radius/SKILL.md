@@ -1,10 +1,7 @@
 ---
 name: blast-radius
 role: entrypoint
-description: >
-  Analyze the blast radius of code changes with risk
-  scoring. Shows affected nodes, untested functions,
-  and review priorities using the code knowledge graph.
+description: 'Analyze blast radius of code changes with risk scoring. Shows affected nodes and untested functions.'
 model_hint: standard
 tags:
 - code-review

@@ -1,0 +1,229 @@
+{
+  "design_name": "design_name",
+  "description": "Brief description",
+  "target_frequency_mhz": 200,
+  "data_width": 32,
+  "byte_order": "MSB_FIRST",
+  "constraints": {
+    "timing": {
+      "target_frequency_mhz": 200,
+      "critical_path_ns": 5.0,
+      "jitter_ns": 0.1,
+      "clock_domains": [
+        {
+          "name": "clk_core",
+          "frequency_mhz": 200,
+          "source": "external"
+        }
+      ]
+    },
+    "area": {
+      "target_device": "XC7A35T",
+      "target_device_family": "Artix-7",
+      "max_luts": 8000,
+      "max_ffs": 5000,
+      "max_brams": 16,
+      "max_cells": 5000
+    },
+    "power": {
+      "budget_mw": 200,
+      "clock_gating": true
+    },
+    "io": {
+      "standard": "LVCMOS33",
+      "external_interfaces": [
+        {
+          "name": "ext_if",
+          "type": "INTERFACE_TYPE",
+          "params": "Interface parameters"
+        }
+      ]
+    },
+    "verification": {
+      "coverage_target_pct": 95,
+      "formal_verification": false,
+      "trace_cycles": 16
+    }
+  },
+  "timing_convention": {
+    "golden_model": "software_instantaneous",
+    "rtl": "post_nba_registered",
+    "golden_to_rtl_offset_cycles": 1,
+    "description": "Golden model trace T=N corresponds to RTL T=N+offset (NBA delay). The cocotb testbench compensates with DRIVE_PHASE_CYCLES = golden_to_rtl_offset_cycles."
+  },
+  "design_intent": {
+    "architecture_style": "iterative",
+    "pipeline_stages": 2,
+    "resource_strategy": "distributed_ram",
+    "interface_preferences": {
+      "internal": "valid/ready",
+      "register": "apb-like"
+    },
+    "ip_reuse": [],
+    "key_decisions": [
+      "Decision and rationale"
+    ]
+  },
+  "critical_path_budget": 50,
+  "modules": [
+    {
+      "module_name": "module_name",
+      "description": "What this module does",
+      "module_type": "top|processing|control|memory|interface",
+      "hierarchy_level": 0,
+      "parent": null,
+      "submodules": [],
+      "clock_domains": [
+        {
+          "name": "clk_domain_name",
+          "clock_port": "clk",
+          "reset_port": "rst",
+          "frequency_mhz": 200,
+          "reset_type": "sync_active_high"
+        }
+      ],
+      "ports": [
+        {
+          "name": "port_name",
+          "direction": "input|output",
+          "width": 1,
+          "protocol": "clock|reset|data|valid|ready|flag",
+          "reset_polarity": "active_high",
+          "handshake": "single_cycle",
+          "ack_port": "",
+          "signal_lifetime": "pulse",
+          "description": "Port description"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "PARAM_NAME",
+          "default_value": 16,
+          "description": "Parameter description"
+        }
+      ],
+      "timing_contract": {
+        "registered_outputs": ["output_port_name"],
+        "same_cycle_visible": ["combinational_port_name"],
+        "pipeline_delay_cycles": 1,
+        "description": "Per-module timing: registered_outputs change at posedge via NBA (1-cycle delay); same_cycle_visible are combinational (no delay)."
+      },
+      "cycle_timing": {
+        "fsm_states": [
+          {
+            "name": "STATE_IDLE",
+            "duration_cycles": "variable",
+            "transitions": [
+              {"condition": "start_valid == 1", "next_state": "STATE_LOAD"}
+            ],
+            "asserted_signals": [],
+            "description": "Wait for start signal"
+          },
+          {
+            "name": "STATE_LOAD",
+            "duration_cycles": 1,
+            "transitions": [
+              {"condition": "1", "next_state": "STATE_PROCESS"}
+            ],
+            "asserted_signals": ["load_en"],
+            "description": "Capture input data into internal registers"
+          },
+          {
+            "name": "STATE_PROCESS",
+            "duration_cycles": "N (iterative)",
+            "transitions": [
+              {"condition": "step_cnt == MAX-1", "next_state": "STATE_DONE"}
+            ],
+            "asserted_signals": ["process_en"],
+            "description": "Iterative computation, one step per cycle"
+          },
+          {
+            "name": "STATE_DONE",
+            "duration_cycles": 1,
+            "transitions": [
+              {"condition": "1", "next_state": "STATE_IDLE"}
+            ],
+            "asserted_signals": ["output_valid"],
+            "description": "Output result and return to idle"
+          }
+        ],
+        "signal_timing": [
+          {
+            "signal": "output_valid",
+            "type": "registered",
+            "first_asserted_cycle": "T+N+1",
+            "description": "Registered output, visible at T+N+2 externally"
+          }
+        ],
+        "pipeline_timing": {
+          "input_to_output_latency_cycles": 1,
+          "throughput": "1 result per N cycles",
+          "reset_recovery_cycles": 1
+        },
+        "reset_scopes": [
+          {
+            "register_group": "example_group",
+            "scope": "global",
+            "reset_values": "reset value description",
+            "description": "When and how this register group is re-initialized. scope: global (hardware reset only), per_message (each new message), per_block (each block within a message)"
+          }
+        ]
+      }
+    }
+  ],
+  "module_connectivity": [
+    {
+      "_comment": "registered->sequential: FSM output reg to submodule input reg. delay=1, visible at T+1.",
+      "source": "module1.port1",
+      "destination": "module2.port1",
+      "bus_width": 32,
+      "connection_type": "direct",
+      "timing_contract": {
+        "producer_type": "registered",
+        "consumer_type": "sequential",
+        "same_cycle_visible": false,
+        "pipeline_delay_cycles": 1,
+        "producer_cycle": "T",
+        "visible_cycle": "T+1",
+        "consumer_cycle": "T+1",
+        "sample_phase": "posedge_after_nba",
+        "bypass_required": false,
+        "bypass_signal": "",
+        "description": "Producer registers output at posedge T, consumer sees OLD value at posedge T, NEW value at T+1"
+      }
+    },
+    {
+      "_comment": "registered->combinational: FSM output reg to submodule combinational input. delay=1, visible at T+1.  This is the MOST COMMON error pattern — same_cycle_visible MUST be false.",
+      "source": "fsm.load_en",
+      "destination": "datapath.load_en",
+      "bus_width": 1,
+      "connection_type": "direct",
+      "timing_contract": {
+        "producer_type": "registered",
+        "consumer_type": "combinational",
+        "same_cycle_visible": false,
+        "pipeline_delay_cycles": 1,
+        "producer_cycle": "T",
+        "visible_cycle": "T+1",
+        "consumer_cycle": "T+1",
+        "sample_phase": "posedge_after_nba",
+        "bypass_required": false,
+        "bypass_signal": "",
+        "description": "Registered control output from FSM, visible to combinational consumer at T+1.  CRITICAL: same_cycle_visible=false, pipeline_delay_cycles=1."
+      }
+    }
+  ],
+  "fanout_groups": [
+    {
+      "name": "example_group",
+      "common_source": "fsm.STATE_DONE",
+      "signals": [
+        {"name": "ctrl_signal_a", "path": "fsm.ctrl_a -> submodule_a.ctrl_a"},
+        {"name": "ctrl_signal_b", "path": "fsm.ctrl_b -> submodule_b.ctrl_b"}
+      ],
+      "constraint": "same_arrival",
+      "max_delay_skew_cycles": 0,
+      "description": "Signals from the same FSM state must arrive at their destinations within the skew tolerance. The checker accumulates pipeline_delay_cycles along each signal's path through module_connectivity."
+    }
+  ]
+}

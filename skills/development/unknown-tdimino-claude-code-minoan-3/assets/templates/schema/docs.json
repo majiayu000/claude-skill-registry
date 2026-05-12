@@ -1,0 +1,55 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{BASE_URL}/#organization",
+      "name": "{ORG_NAME}",
+      "url": "{BASE_URL}",
+      "logo": "{BASE_URL}/logo.png",
+      "description": "{ORG_DESCRIPTION}",
+      "sameAs": [
+        "https://github.com/{ORG}",
+        "https://twitter.com/{HANDLE}",
+        "https://www.npmjs.com/org/{ORG}"
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "headline": "{TITLE}",
+      "description": "{DESCRIPTION}",
+      "datePublished": "{DATE_PUBLISHED}",
+      "dateModified": "{DATE_MODIFIED}",
+      "author": { "@id": "{BASE_URL}/#organization" },
+      "publisher": { "@id": "{BASE_URL}/#organization" },
+      "mainEntityOfPage": "{DOC_URL}",
+      "proficiencyLevel": "{LEVEL}",
+      "dependencies": "{FRAMEWORK} {VERSION}",
+      "programmingLanguage": "{LANGUAGE}",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "CreativeWorkSeries",
+        "name": "{PROJECT_NAME} Documentation",
+        "url": "{BASE_URL}/docs"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "{HOWTO_TITLE}",
+      "description": "{HOWTO_DESCRIPTION}",
+      "totalTime": "PT{MINUTES}M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "{STEP_1_NAME}",
+          "text": "{STEP_1_TEXT}"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "{STEP_2_NAME}",
+          "text": "{STEP_2_TEXT}"
+        }
+      ]
+    }
+  ]
+}

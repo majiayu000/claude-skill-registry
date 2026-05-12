@@ -50,6 +50,37 @@ pre-GREEN state). If tests still pass, it's Fixture Theater.
 2. Acceptance test Given steps set up PRECONDITIONS, never the expected end-state
 3. If `git diff --stat` shows only test files changed after GREEN, BLOCK the COMMIT
 
+## Extension Justification (Mandate against Parallel Implementations)
+
+**Provenance**: 2026-05-02, RCA `docs/analysis/rca-systematic-duplication-despite-design.md`. Outcomes-registry catches duplicate *outcomes* (same input/output contract). It does NOT catch the failure mode where a NEW outcome is genuinely different but should have *extended* an existing component instead of being shipped as a parallel implementation in a new file.
+
+This rule is **language-agnostic**: it applies to any source file regardless of host language. Examples in this section use multiple languages to underscore that.
+
+**Rule**: before creating a NEW source file under a path that already contains ≥1 file in the same role/layer, the crafter MUST emit an Extension Justification block. The block has exactly four lines:
+
+```
+WHY-NEW-FILE: <relative-path-of-new-file>
+  CLOSEST-EXISTING: <relative-path-of-the-most-similar-existing-file>
+  EXTENSION-COST: <one sentence on what extending CLOSEST-EXISTING would require>
+  PARALLEL-RATIONALE: <one sentence on why a separate file is justified instead>
+```
+
+**Trigger**: applies when ANY of these are true for the proposed new file:
+- The parent directory exists and has ≥1 sibling file in the same architectural role (e.g. new `domain/rules/e3b_cherry_pick.<ext>` when `e3_non_empty.<ext>` exists; or new `internal/handlers/login.go` when `signup.go` exists; or new `src/services/Email.cs` when `Sms.cs` exists)
+- The new file's dependency surface (top imports / `use` / `require` / `using` / `include` / `import`) overlaps an existing sibling by ≥50%
+- The new file's primary class/function naming follows a sibling pattern (`E3Rule` ↔ `E3bRule`, `LoginHandler` ↔ `SignupHandler`, `EmailService` ↔ `SmsService`, `PgRepository` ↔ `MysqlRepository`)
+
+**Not triggered** when:
+- Parent directory is empty (greenfield — no extension candidate exists)
+- The new file is a language-mandated boilerplate marker with no behavior of its own — examples by language: Python `__init__.py` / `conftest.py`; Go `doc.go`; Rust `mod.rs`; TypeScript `index.ts` re-export shim; Ruby `version.rb`; Java/Kotlin empty `package-info.java`. The rule of thumb: if removing the file's *contents* (keeping the empty file) leaves the package importable, it is a marker — not a component.
+- The new file is in a path explicitly listed in the DESIGN wave's component table with rationale already captured
+
+**Enforcement**: the crafter's PREPARE phase MUST inventory existing files in `<target-path>/` before producing the first file-write. If the inventory is non-empty for a target path AND the new file is not a marker per the exclusion above, the Extension Justification block is mandatory before each new-file write. Reviewer agents flag missing blocks as a HIGH severity finding.
+
+**Self-test for the rationale**: a valid PARALLEL-RATIONALE answers the question "what would break or what would become awkward if this lived inside CLOSEST-EXISTING?". Non-answers like "different concern", "cleaner separation", "single responsibility" are rejected — those are the phrases a parallel-creation bias produces without effort. Concrete answers cite at least one of: incompatible interface/signature, different lifecycle (init order, hot-reload, deployment unit), incompatible dependency set, divergent target/runtime (e.g. server-side vs client-side, native vs WASM), or DESIGN-table-recorded boundary that already adjudicated the split.
+
+**Why this is a discipline rule, not a structural detector**: structural detectors (call-graph + body-shape match) live in project tsunami and are language-aware by design. Extension Justification is the cheap behavioral nudge that runs at WRITE-time on any LLM-driven crafter regardless of target language. The block makes the bias visible to the reviewer; it does NOT block the write. If the rationale is weak, the reviewer catches it at Phase 4 (Adversarial Review).
+
 ## Build and Test Protocol
 
 After every TDD cycle, Mikado leaf, or atomic transformation:

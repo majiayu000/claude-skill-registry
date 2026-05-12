@@ -18,7 +18,7 @@ This skill should also be activated for:
 - **Minoan parallels**: "Moses-Minos", "Bezalel-Daedalus", "Kaphtor", "Caphtor", "Linear A"
 - **OCR/tools**: "extract from PDF", "OCR academic", "compile quotations", "theme categorization"
 - **Paper research**: "Thera eruption", "Tempest Stela", "primordial waters", "Gaza as Minoa", "Manat"
-- **JSTOR**: "search JSTOR", "JSTOR article", "academic database"
+- **JSTOR**: "search JSTOR", "JSTOR article", "download from JSTOR", "saved articles", "academic database"
 - **Web Discovery**: "find papers about", "search for scholarship", "literature search", "Google Scholar", "academic search", "find sources", "discover research", "omnisearch", "Exa search"
 - **Source Extraction**: "extract from URL", "scrape academic page", "stealth fetch", "parse PDF URL", "get abstract from JSTOR"
 
@@ -89,13 +89,6 @@ See `references/cuneiform-databases.md` for CDLI/ORACC API details and script co
 - CDLI: `https://cdli.earth/artifacts/{P-number}.json`
 - ORACC: `https://oracc.museum.upenn.edu/{project}/corpusjson/{P-number}.json`
 - Key P-number: P480701 = Enuma Elish composite
-
-**Quick commands:**
-```bash
-python3 ~/.claude/skills/ancient-near-east-research/scripts/fetch_cuneiform.py cdli P480701
-python3 ~/.claude/skills/ancient-near-east-research/scripts/fetch_cuneiform.py deity tiamat
-python3 ~/.claude/skills/ancient-near-east-research/scripts/fetch_cuneiform.py oracc-projects
-```
 
 ## Web Discovery & Source Extraction
 
@@ -186,7 +179,7 @@ firecrawl search "Cyrus Gordon Minoan Semitic" --scrape --limit 10
 
 ### Tier 4: Obscura Stealth Extraction (Bot-Protected Sites)
 
-For JSTOR, Google Scholar, Persée, Perseus, and Academia.edu. Extracts publicly visible metadata and abstracts --- not for bypassing paywalls.
+For JSTOR, Google Scholar, Persée, Perseus, and Academia.edu. Extracts publicly visible metadata and abstracts — not for bypassing paywalls.
 
 ```bash
 # Auto-detect site type from URL
@@ -279,14 +272,26 @@ For academic citations:
 - With Hebrew: Include original + transliteration when relevant
 - Commentaries: Rashi on Genesis 1:2, s.v. "תהום"
 
+## Integration with Research Workflow
+
+This skill connects to the quotations compilation system at:
+`~/Desktop/Athirat, Knossos, & Minos/`
+
+Generated quotations can be added to the themed compilation by:
+1. Saving output as markdown in the `Snippets/` directory
+2. Adding `**Category: [Theme]**` header (Thera, Knossos, Minos, Palestine, Linguistics)
+3. Running `python3 compile_themed_quotations.py`
+
 ## Resources
 
 ### Scripts
 
 - `scripts/fetch_sefaria.py` - Fetch Hebrew Bible passages with translations and commentaries
 - `scripts/fetch_cuneiform.py` - Access CDLI and ORACC cuneiform databases
+- `scripts/fetch_jstor.py` - JSTOR browser automation (search, saved articles, PDF download)
 - `scripts/compile_quotations.py` - Compile themed quotation documents (5-theme categorization)
 - `scripts/ane_stealth_fetch.sh` - Stealth fetch wrapper for 10 academic site types (Scholar, JSTOR, Persée, Perseus, CDLI, ORACC, Sefaria, PubMed, Academia, general)
+- `scripts/ocr_academic_pdf.py` - Extract text from academic PDFs using Marker OCR
 - `scripts/mistral_ocr_pdf.py` - High-accuracy OCR using Mistral Pixtral-Large (94.89% accuracy on scanned docs)
 
 ### Mistral OCR Usage
@@ -312,9 +317,93 @@ python3 ~/.claude/skills/ancient-near-east-research/scripts/mistral_ocr_pdf.py l
 ### References
 
 - `references/sefaria_api.md` - Complete Sefaria API documentation
-- `references/hebrew-passages.md` - Key Hebrew Bible passages for ANE comparative research
-- `references/akkadian-terms.md` - Akkadian terminology and Enuma Elish
-- `references/cuneiform-databases.md` - CDLI/ORACC API reference
+- `references/source-directories.md` - Filesystem locations for source materials and tools
 - `references/categorization-keywords.md` - Theme keywords for quotation auto-categorization
 - `references/obscura-ane-patterns.md` - Site-specific Obscura extraction patterns for ANE academic sites
-- `references/gordon-papers/gordon-findings.md` - Gordon's Minoan-Semitic key findings (Moses-Minos, Daedalus-Bezalel, Ida footstool)
+- `references/gordon-papers/` - Cyrus H. Gordon's Minoan-Semitic research
+  - `gordon-findings.md` - Summary of key findings (Moses-Minos, Daedalus-Bezalel, Ida footstool)
+  - `Ugarit-and-Caphtor.pdf`, `Gordon-Minoica-1962.pdf`, `Gordon-DeciphermentMinoanEteocretan-1975.pdf`
+- `references/drafts/` - Working paper drafts (gnostic-reception-genesis.md, gordon-findings.md)
+
+## Active Paper Project
+
+This skill supports a 3-part academic paper series: **"Thera, Knossos, and Minos: Minoan-Semitic Connections in the Ancient Mediterranean"**
+
+**Part I: Thera** (in progress): Thera eruption → Greek sources → Astour's etymologies → Tehom-Tiamat → Athirat of the Sea → Thera the Goddess → purple etymology (tip'eret)
+**Part II: Knossos/Knossot** (planned): Palace culture, Linear A, Daedalus-Bezalel, kaftôrîm, priestess traditions
+**Part III: Minos/Manna/Moses** (planned): Moses-Minos parallels, law-giver traditions, Gaza as Minoa, Manat the Goddess
+
+Active repo: `~/Desktop/Thera-Knossos-Minos-Paper/`
+
+## Cuneiform Script Usage
+
+See `references/cuneiform-databases.md` for full script commands and ORACC project reference.
+
+**Quick commands:**
+```bash
+python3 ~/.claude/skills/ancient-near-east-research/scripts/fetch_cuneiform.py cdli P480701
+python3 ~/.claude/skills/ancient-near-east-research/scripts/fetch_cuneiform.py deity tiamat
+python3 ~/.claude/skills/ancient-near-east-research/scripts/fetch_cuneiform.py oracc-projects
+```
+
+## JSTOR Browser Automation
+
+> **Prefer Obscura stealth fetch (Tier 4) or Exa search (Tier 2) for JSTOR metadata and abstracts.** This script is retained for cases requiring authenticated full-text download.
+
+Access JSTOR scholarly database using browser automation via `agent-browser`. Requires a JSTOR account with download privileges.
+
+See `references/jstor-research.md` for URL patterns and search strategies.
+
+### First-Time Setup
+
+Authenticate with JSTOR (opens browser for manual login):
+
+```bash
+python3 ~/.claude/skills/ancient-near-east-research/scripts/fetch_jstor.py login
+```
+
+Auth state is saved to `~/.jstor-auth.json` and reused for subsequent commands.
+
+### JSTOR Commands
+
+```bash
+# Check authentication status
+python3 ~/.claude/skills/ancient-near-east-research/scripts/fetch_jstor.py status
+
+# Search for articles
+python3 ~/.claude/skills/ancient-near-east-research/scripts/fetch_jstor.py search "minoan semitic etymology" -n 20
+
+# List saved articles (My Library)
+python3 ~/.claude/skills/ancient-near-east-research/scripts/fetch_jstor.py saved
+
+# List recently read articles
+python3 ~/.claude/skills/ancient-near-east-research/scripts/fetch_jstor.py recent
+
+# Get article metadata
+python3 ~/.claude/skills/ancient-near-east-research/scripts/fetch_jstor.py article https://jstor.org/stable/12345
+
+# Download PDF to specified directory
+python3 ~/.claude/skills/ancient-near-east-research/scripts/fetch_jstor.py download https://jstor.org/stable/12345 -o ~/sources/
+```
+
+### Research Pipeline
+
+JSTOR integrates with the existing OCR and quotations workflow:
+
+```
+JSTOR Search → Download PDFs → Mistral OCR → Quotations DB → RAG Dossiers
+```
+
+**Example workflow:**
+```bash
+# 1. Search JSTOR
+python3 fetch_jstor.py search "Cyrus Gordon minoan" --json > results.json
+
+# 2. Download interesting article
+python3 fetch_jstor.py download https://jstor.org/stable/528927 -o ~/sources/gordon/
+
+# 3. OCR the PDF
+python3 mistral_ocr_pdf.py ~/sources/gordon/jstor-528927.pdf -o ~/sources/gordon/article.md
+
+# 4. Extract quotations and add to database
+```

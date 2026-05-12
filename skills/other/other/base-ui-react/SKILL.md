@@ -1,11 +1,6 @@
 ---
 name: base-ui-react
-description: MUI Base UI unstyled React components with Floating UI. Use for accessible components, Radix UI migration, render props API, or encountering positioning, popup, v1.0 beta issues.
-
-  Keywords: base-ui, @base-ui-components/react, mui base ui, unstyled components, accessible components,
-  render props, radix alternative, radix migration, floating-ui, positioner pattern, headless ui,
-  accessible dialog, accessible select, accessible popover, accessible tooltip, accessible accordion,
-  number field, cloudflare workers ui, beta components
+description: "MUI Base UI unstyled React components with Floating UI. Use for accessible components, Radix UI migration, render props API, or encountering positioning, popup, v1.0 beta issues."
 license: MIT
 metadata:
   version: "2.0.0"
@@ -15,8 +10,27 @@ metadata:
   errors_prevented: 10
   templates_included: 7
   references_included: 3
+  keywords:
+    - base-ui
+    - "@base-ui-components/react"
+    - mui base ui
+    - unstyled components
+    - accessible components
+    - render props
+    - radix alternative
+    - radix migration
+    - floating-ui
+    - positioner pattern
+    - headless ui
+    - accessible dialog
+    - accessible select
+    - accessible popover
+    - accessible tooltip
+    - accessible accordion
+    - number field
+    - cloudflare workers ui
+    - beta components
 ---
-
 # Base UI React
 
 **Status**: Beta (v1.0.0-beta.4) ⚠️ | **Last Verified**: 2025-11-18

@@ -57,7 +57,7 @@ Before starting TDD cycles, analyze whether the user's task is a good fit for te
 
 4. **No context found** — proceed with normal task gathering below.
 
-Design docs take priority over JIRA files because they are more detailed (they incorporate JIRA context if brainstorm consumed it). Detected context feeds into the existing task-gathering cascade below — it does NOT bypass Step 3 decomposition. TDD still independently decomposes the goal into behaviors.
+Design docs take priority over JIRA files because they are more detailed (they incorporate JIRA context if brainstorm consumed it). Detected context feeds into the existing task-gathering cascade below — it does NOT bypass Step 3 decomposition. TDD still independently decomposes the goal into behaviors, except when a `## Scenarios` section is present (see the scenario-driven shortcut in Step 3).
 
 If context detection above resolved a task description (user accepted a design doc or JIRA context), use it — skip the inline/prompt gathering below. Otherwise, if the user provided a task description inline (e.g., `/optimus:tdd "Add auth endpoint"`), use it. Otherwise, use `AskUserQuestion` — header "TDD scope", question "What feature or bug fix do you want to implement with TDD?":
 - **New feature** — "Implement a new capability (e.g., 'Add user authentication endpoint')"
@@ -133,7 +133,9 @@ Break the user's description into small, individually testable behaviors. Each b
 - **Independent** — it can be tested and implemented without the other behaviors being done yet
 - **Small** — one test, one assertion focus (a test may have supporting assertions, but tests one thing)
 
-Decomposition strategies by task type:
+**Scenario-driven shortcut:** if the input design doc contains a `## Scenarios` section with `### Scenario:` headings in Given/When/Then form, use those scenarios directly as the behavior list in the order they appear — each scenario maps to one Red-Green-Refactor cycle. The scenarios are the stakeholder-approved acceptance criteria; do not re-derive a parallel behavior list. If a scenario implies multiple sub-behaviors (e.g., a Then with two unrelated outcomes joined by "and"), apply the decomposition strategies below to split that single scenario into the minimum number of cycles needed. For scenario-driven bug fixes, verify Scenario 1 is a reproduce-the-bug case; if it isn't, prepend one before applying the rest.
+
+Otherwise, use these decomposition strategies by task type:
 - **API endpoints** — one behavior per response scenario (success case, each error code, each validation rule)
 - **Business logic** — one behavior per business rule or edge case
 - **Bug fixes** — first behavior is always "reproduce the bug" (a test that demonstrates the current broken behavior)

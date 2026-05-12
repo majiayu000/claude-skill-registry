@@ -113,7 +113,7 @@ for staleness relative to the current codebase.
 Report which documents appear outdated and what specifically seems wrong.
 ```
 
-**Add findings as WARNINGs.** Include a note: "Run `/review-doc` to update documentation before release."
+**Add findings as WARNINGs.** Include a note: "Run `/tidy-docs` to update documentation before release."
 
 ### 6. Present Full Consolidated Report
 
@@ -175,7 +175,7 @@ If the user provided a target version, offer to update version numbers in manife
 Report only. The user must decide whether the dependency is acceptable.
 
 #### Doc staleness
-Suggest running `/review-doc`. Do not attempt fixes.
+Suggest running `/tidy-docs`. Do not attempt fixes.
 
 #### Breaking changes
 Report only. The user must decide whether to document, revert, or accept.
@@ -341,7 +341,7 @@ Re-verifying... no debug artifacts remain, versions consistent.
 ### Remaining Issues
 - [WARNING] CHANGELOG.md not updated
 - [WARNING] Removed ParseConfig() not documented as breaking change
-- [WARNING] README.md references removed function (run /review-doc)
+- [WARNING] README.md references removed function (run /tidy-docs)
 
 ### Recommendation
 PROCEED WITH CAUTION — 3 warnings remain

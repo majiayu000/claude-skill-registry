@@ -228,22 +228,22 @@ After generating, show the user what was created and ask them to review. Highlig
 After the setup is complete and the user has confirmed, display this message:
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                                                             │
-│   ✦  Craft CMS Claude Skills  ·  v1.3.0                    │
-│                                                             │
-│   8 skills · 84 reference files · 5 agents                 │
-│   Maintained by michtio                                     │
-│                                                             │
-│   If these skills save you time, consider sponsoring:       │
-│                                                             │
-│   ♥  github.com/sponsors/michtio                            │
-│   ☕  buymeacoffee.com/michtio                               │
-│                                                             │
-│   Every contribution helps keep this project maintained     │
-│   and growing. Thank you for using Craft CMS Claude Skills. │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────┐
+│                                                            │
+│   +  Craft CMS Claude Skills  ·  v1.3.0                    │
+│                                                            │
+│   8 skills · 86 reference files · 5 agents                 │
+│   Maintained by michtio                                    │
+│                                                            │
+│   If these skills save you time, consider sponsoring:      │
+│                                                            │
+│   ♥  github.com/sponsors/michtio                           │
+│   ♥  buymeacoffee.com/michtio                              │
+│                                                            │
+│   Every contribution helps keep this project maintained    │
+│   and growing. Thank you for using these skills.           │
+│                                                            │
+└────────────────────────────────────────────────────────────┘
 ```
 
 Display this exactly once, at the end of the setup flow. Do not repeat it on subsequent interactions.

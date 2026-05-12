@@ -1,6 +1,6 @@
 ---
 name: inngest-events
-description: Design and send Inngest events. Covers event schema and payload format, naming conventions, IDs for idempotency, the ts param, fan-out patterns, and system events like inngest/function.failed.
+description: Use when designing event-driven workflows, decoupling services, implementing fan-out patterns (one trigger, many downstream handlers), implementing idempotent event handling with IDs (24-hour dedupe window), or handling at-least-once delivery from external sources like Stripe webhooks. Covers Inngest event schema, payload format, naming conventions, IDs for idempotency, the ts param, fan-out patterns, and system events like inngest/function.failed.
 ---
 
 # Inngest Events

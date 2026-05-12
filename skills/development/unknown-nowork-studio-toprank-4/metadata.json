@@ -1,0 +1,25 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "nowork-studio/toprank",
+  "path": "google-ads/audit/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-nowork-studio-toprank-4",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "references/account-health-scoring.md",
+    "references/business-context.md",
+    "references/persona-discovery.md"
+  ],
+  "author": "nowork-studio",
+  "source_url": "https://github.com/nowork-studio/toprank/blob/main/google-ads/audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nowork-studio/toprank/blob/main/google-ads/audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,6 +1,7 @@
 ---
 name: edit-article
 description: Mechanically tighten existing prose — restructure sections by dependency order, split or merge paragraphs, remove redundancy. Use to compress verbose plan files, READMEs, ADRs, and design docs. Does NOT change voice, register, tone, or any ODIN-mandated phrasing.
+disable-model-invocation: true
 ---
 
 Mechanical, structural-only edits to prose. Voice and register are load-bearing and preserved verbatim.

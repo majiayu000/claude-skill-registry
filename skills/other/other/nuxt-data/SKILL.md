@@ -1,16 +1,6 @@
 ---
 name: nuxt-data
-description: |
-  Nuxt 4 data management: composables, data fetching with useFetch/useAsyncData,
-  and state management with useState and Pinia.
-
-  Use when: creating custom composables, fetching data with useFetch or useAsyncData,
-  managing global state with useState, integrating Pinia, debugging reactive data issues,
-  or implementing SSR-safe state patterns.
-
-  Keywords: useFetch, useAsyncData, $fetch, useState, composables, Pinia,
-  data fetching, state management, reactive, shallow reactivity, reactive keys,
-  transform, pending, error, refresh, dedupe, caching
+description: "| Nuxt 4 data management: composables, data fetching with useFetch/useAsyncData, and state management with useState and Pinia. Use when: creating custom composables, fetching data with useFetch or useAsyncData, managing global state with useState, integrating Pinia, debugging reactive data issues, or implementing SSR-safe state patterns."
 license: MIT
 metadata:
   version: 4.0.0
@@ -19,8 +9,25 @@ metadata:
   framework: Nuxt
   framework-version: 4.x
   last-verified: 2025-12-28
+  keywords:
+    - useFetch
+    - useAsyncData
+    - $fetch
+    - useState
+    - composables
+    - Pinia
+    - data fetching
+    - state management
+    - reactive
+    - shallow reactivity
+    - reactive keys
+    - transform
+    - pending
+    - error
+    - refresh
+    - dedupe
+    - caching
 ---
-
 # Nuxt 4 Data Management
 
 Composables, data fetching, and state management patterns for Nuxt 4 applications.

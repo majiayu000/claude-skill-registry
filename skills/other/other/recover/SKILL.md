@@ -1,6 +1,7 @@
 ---
 name: recover
 description: 'Recover session context.'
+practices: [sre, legacy-code-seams, pragmatic-programmer]
 skill_api_version: 1
 context:
   window: inherit

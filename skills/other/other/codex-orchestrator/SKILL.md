@@ -84,8 +84,8 @@ Examples:
 # Security audit
 ~/.claude/skills/codex-orchestrator/scripts/codex-exec.sh security "Audit the payment module for vulnerabilities"
 
-# Full-auto mode (no approval prompts)
-~/.claude/skills/codex-orchestrator/scripts/codex-exec.sh reviewer "Fix all lint errors" --full-auto
+# Write profiles auto-approve by default (uses -a never + --sandbox workspace-write)
+~/.claude/skills/codex-orchestrator/scripts/codex-exec.sh reviewer "Fix all lint errors"
 
 # Create execution plan for complex feature
 ~/.claude/skills/codex-orchestrator/scripts/codex-exec.sh planner "Create an ExecPlan for adding WebSocket support"
@@ -186,7 +186,7 @@ python3 ~/.claude/skills/codex-orchestrator/scripts/codex-session.py info securi
 ~/.claude/skills/codex-orchestrator/scripts/codex-exec.sh architect "Review the auth system ExecPlan for design issues"
 
 # 3. Build (plan guides implementation)
-~/.claude/skills/codex-orchestrator/scripts/codex-exec.sh builder "Implement milestone 1 from the auth ExecPlan" --full-auto
+~/.claude/skills/codex-orchestrator/scripts/codex-exec.sh builder "Implement milestone 1 from the auth ExecPlan"
 ```
 
 ### Architect → Builder → Reviewer
@@ -255,8 +255,7 @@ python3 ~/.claude/skills/codex-orchestrator/scripts/codex-session.py info securi
 | `--model <model>` | Override model (default: per-profile, see below) |
 | `--reasoning <level>` | Override reasoning effort: `minimal`, `low`, `medium`, `high`, `xhigh` |
 | `--sandbox <mode>` | read-only, workspace-write, danger-full-access |
-| `--full-auto` | Skip approval prompts |
-| `--no-auto` | Disable auto `--full-auto` (require manual approval) |
+| `--no-approve` | Force read-only sandbox (no file writes) |
 | `--web-search` | Enable Exa web search (injects guide into AGENTS.md) |
 | `--search` | Enable native Codex web search (model-level tool, works in all sandboxes) |
 | `--json` | Output JSONL event stream (pipe to jq, logs, etc.) |
@@ -377,6 +376,12 @@ Check profile exists:
 ```bash
 ls ~/.claude/skills/codex-orchestrator/agents/
 ```
+
+### "Codex produced no output"
+The researcher/chat profiles capture output to a temp file. If Codex exits without writing to it, the script warns and exits 1. Common causes:
+- Codex session too short to produce a response
+- Model returned empty response (retry)
+- AGENTS.md was missing (check for stale `.AGENTS.md.codex-backup.*` files in working directory)
 
 ### Poor Results
 - Narrow the task scope

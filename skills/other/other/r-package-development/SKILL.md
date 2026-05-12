@@ -3,7 +3,7 @@ name: r-package-development
 description: R package development with devtools, testthat, and roxygen2. Use when the user is working on an R package, running tests, writing documentation, or building package infrastructure.
 metadata:
   author: Simon P. Couch (@simonpcouch)
-  version: "1.1"
+  version: "1.2"
 ---
 
 # R package development
@@ -66,7 +66,7 @@ air format .
 ## `NEWS.md`
 
 - Every user-facing change should be given a bullet in `NEWS.md`. Do not add bullets for small documentation changes or internal refactorings.
-- Each bullet should briefly describe the change to the end user and mention the related issue in parentheses.
-- A bullet can consist of multiple sentences but should not contain any new lines (i.e. DO NOT line wrap).
+- Each bullet should briefly describe the change to the end user.
 - If the change is related to a function, put the name of the function early in the bullet.
+- If the bullet is related to a GitHub issue or pull request, reference it by number in parentheses before the final period: `(#123).`.
 - Order bullets alphabetically by function name. Put all bullets that don't mention function names at the beginning.

@@ -1,6 +1,7 @@
 ---
 name: reverse-engineer-rpi
 description: 'Reverse-engineer product specs.'
+practices: [legacy-code-seams, ddd-bounded-context, adr]
 skill_api_version: 1
 context:
   window: fork

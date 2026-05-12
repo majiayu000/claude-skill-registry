@@ -1,6 +1,6 @@
 ---
 name: qa
-description: Lightweight conversational QA mode — user reports bugs in plain language, agent clarifies minimally, files GitHub issues that survive refactors. Trigger when the user says "QA", "QA session", wants to file bugs conversationally, or starts ad-hoc reporting without a fixed deliverable shape. Differentiates from branch-scoped review and PR-scoped review.
+description: Conversational QA mode — user reports bugs in plain language, agent clarifies minimally, files GitHub issues that survive refactors. Trigger on "QA", "QA session", or ad-hoc bug reporting without a fixed deliverable shape. Distinct from branch-scoped and PR-scoped review.
 ---
 
 Run an interactive QA session. The user describes problems. You clarify lightly, explore the codebase in the background for domain language, and file issues that are durable and user-focused. Each issue is independent — never batch.

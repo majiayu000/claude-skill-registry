@@ -1,6 +1,7 @@
 ---
 name: ratchet
 description: 'Record Brownian Ratchet gates.'
+practices: [dora-metrics, refactoring, continuous-integration]
 skill_api_version: 1
 user-invocable: false
 context:

@@ -1,6 +1,6 @@
 ---
 name: don-apis
-description: Dutch Government API design rules, OpenAPI specifications, and API architecture guidelines. Use when building REST APIs for Dutch government projects, creating OpenAPI specs, or implementing API design patterns like webhooks and event-driven architecture.
+description: "Dutch government API design rules and OpenAPI standards: REST APIs, webhooks, event-driven architecture for government projects."
 metadata:
   source: developer.overheid.nl
   synced-from: https://github.com/developer-overheid-nl/don-site

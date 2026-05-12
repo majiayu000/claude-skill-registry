@@ -1,0 +1,21 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "sequenzia/agent-alchemy",
+  "path": "ported/20260310/all/skills/project-learnings/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-sequenzia-agent-alchemy-3",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "sequenzia",
+  "source_url": "https://github.com/sequenzia/agent-alchemy/blob/main/ported/20260310/all/skills/project-learnings/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sequenzia/agent-alchemy/blob/main/ported/20260310/all/skills/project-learnings/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

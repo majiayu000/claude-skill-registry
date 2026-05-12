@@ -22,11 +22,35 @@ Until `doctor` is green, nothing else will work. Typical failures: Chrome not ru
 
 ---
 
-## Window lifecycle
+## Lease lifecycle
 
-- `opencli browser *` commands already keep the automation session alive between calls. The window stays open until you run `opencli browser close` or the idle timeout expires.
-- `--focus` (or `OPENCLI_WINDOW_FOCUSED=1`) opens the automation window in the foreground. Use it when you want to watch the page live.
-- `--live` (or `OPENCLI_LIVE=1`) is mainly for browser-backed adapter commands such as `opencli xiaohongshu note ...`. It keeps the adapter's automation window open after the command returns so you can inspect the final page state.
+- `opencli browser *` commands keep an owned tab lease alive between calls. Owned leases share a dedicated automation container and are released with `opencli browser close` or when the idle timeout expires.
+- `opencli browser bind` binds a `bound:*` workspace to the Chrome tab you already have open. Use this for logged-in pages, SSO flows, or pages you manually positioned before handing control to the agent.
+- `--focus` (or `OPENCLI_WINDOW_FOCUSED=1`) opens the automation container in the foreground. Use it when you want to watch the page live.
+- `--live` (or `OPENCLI_LIVE=1`) is mainly for browser-backed adapter commands such as `opencli xiaohongshu note ...`. It keeps the adapter's automation lease open after the command returns so you can inspect the final page state.
+
+### Bind Tab
+
+```bash
+opencli browser bind --domain example.com
+opencli browser --workspace bound:default state
+opencli browser --workspace bound:default click "Search"
+opencli browser --workspace bound:default network
+opencli browser unbind
+```
+
+Binding uses a separate `bound:*` workspace. It never owns the user window, never closes the user tab, and fails closed if the tab is closed or becomes non-debuggable. Re-run `bind` when you switch to a different real tab.
+
+Use `--domain <host>` and `--path-prefix <path>` to avoid binding the wrong tab:
+
+```bash
+opencli browser bind --workspace bound:gmail --domain mail.google.com --path-prefix /mail
+opencli browser --workspace bound:gmail state
+```
+
+Navigation is blocked by default on bound workspaces because it can destroy the logged-in/positioned state you wanted to preserve. `browser open` and `browser back` require `--allow-navigate-bound`; tab mutation (`tab new`, `tab select`, `tab close`) is blocked for bound workspaces. Use a normal `browser:*` automation workspace when you want OpenCLI to own tab lifecycle.
+
+`opencli browser sessions` returns `idleMsRemaining: null` for bound workspaces. That means there is no OpenCLI idle-close timer; the binding lasts until `unbind`, tab close, window close, or daemon restart.
 
 ---
 
@@ -143,6 +167,7 @@ Default timeout `10000` ms. SPA routes, login redirects, and lazy-loaded lists n
 
 ### Extract
 
+- **`web read --url <url>`** — One-shot Markdown reader for arbitrary pages. It expands same-origin iframes by default, so old iframe-shell sites work better than with a top-document-only scrape. For AJAX shell pages use `opencli web read --url <url> --wait-for "<selector>" --wait-until networkidle --diagnose`; diagnostics show frame URLs, empty containers, and API-like XHRs. If the value you need is table/API data, switch to `browser network` or a dedicated adapter instead of relying on Markdown.
 - **`browser eval <js> [--frame N]`** — Run an expression in the page (or in a cross-origin frame via `--frame`). Wrap in an IIFE and return JSON. Read-only: no `document.forms[0].submit()`, no clicks, no navigations. If the result is a string, stdout is the raw string; otherwise it's JSON.
 - **`browser extract [--selector <css>] [--chunk-size N] [--start N]`** — Markdown extraction of long-form content with a continuation cursor. Returns `{url, title, selector, total_chars, chunk_size, start, end, next_start_char, content}`. Loop on `next_start_char` until it is `null`. Auto-scopes to `<main>`/`<article>`/`<body>` if you don't pass `--selector`.
 
@@ -170,7 +195,9 @@ Default output keeps JSON/XML/plain-text and JS-like API responses, then drops o
 | `browser tab select [targetId]` | Make a tab the default. All subcommands accept `--tab <targetId>` to target one without changing the default. |
 | `browser tab close [targetId]` | Close by `page`. |
 | `browser back` | History back on the active tab. |
-| `browser close` | Close the automation window when done. |
+| `browser close` | Release the current automation tab lease when done. |
+| `browser bind` | Bind `bound:default` (or `--workspace bound:<name>`) to the current Chrome tab. |
+| `browser unbind` | Detach a bound workspace without closing the user tab/window. |
 
 ---
 
@@ -353,4 +380,4 @@ opencli browser eval "(() => document.querySelector('input[name=cardnumber]')?.v
 ## See also
 
 - `opencli-adapter-author` — turning what you just figured out into a reusable `~/.opencli/clis/<site>/<command>.js`.
-- `opencli-autofix` — when an existing adapter breaks, this skill walks you through `OPENCLI_DIAGNOSTIC` and filing a fix.
+- `opencli-autofix` — when an existing adapter breaks, this skill walks you through `--trace retain-on-failure` evidence and filing a fix.

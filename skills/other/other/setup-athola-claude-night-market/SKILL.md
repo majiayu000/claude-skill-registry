@@ -1,6 +1,6 @@
 ---
 name: setup
-description: 'Provision the oracle inference daemon (Python 3.11+, onnxruntime via uv). Use when first installing or upgrading the oracle ML environment.'
+description: 'Provision the oracle inference daemon (Python 3.11+, onnxruntime via uv).'
 ---
 
 # Oracle Setup

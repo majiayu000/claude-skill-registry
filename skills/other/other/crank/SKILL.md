@@ -1,6 +1,7 @@
 ---
 name: crank
 description: 'Execute epics through waves.'
+practices: [continuous-delivery, xp, agile-manifesto]
 skill_api_version: 1
 user-invocable: true
 context:
@@ -36,7 +37,7 @@ For Claude runtime feature coverage (agents/hooks/worktree/settings), the shared
 
 Crank owns orchestration, epic/task lifecycle, and knowledge-flywheel steps. Swarm owns runtime-native worker spawning, fresh-context isolation, per-wave execution, and cleanup. In beads mode Crank gets each wave from `bd ready`, bridges issues into worker tasks, verifies results, and syncs status back to beads. In TaskList mode the same loop runs over pending unblocked tasks instead of beads issues.
 
-Read `references/team-coordination.md` for the full per-wave execution model and `references/ralph-loop-contract.md` for the fresh-context worker contract.
+Read `references/team-coordination.md` for the full per-wave execution model, `references/ralph-loop-contract.md` for the fresh-context worker contract, and `references/worker-specs.md` for per-worker model/tool/prompt specs.
 
 ## Flags
 
@@ -364,6 +365,8 @@ This is the shift-left edge of the prevention ratchet: compiled findings target 
 
 **Validation metadata policy (REQUIRED):** For implementation tasks typed `feature|bug|task`, include `metadata.validation.tests` plus at least one structural check (`files_exist` or `content_check`). `docs|chore|ci` use an explicit test-exempt path and should still include applicable structural and/or command/lint checks. Do not omit `metadata.issue_type` and hope task-validation can infer it later. When `/plan` includes `test_levels` metadata in the issue, carry it forward into `metadata.validation.test_levels` so workers know which pyramid levels (L0–L3) to target. See the test pyramid standard (`test-pyramid.md` in the standards skill) for level definitions.
 
+**Acceptance-criteria injection (REQUIRED, pre-spawn):** Before each wave, read the bead's `acceptance_criteria` fenced YAML block from `bd show <bead-id>` body and inject it into each worker's TaskCreate description as `metadata.validation.acceptance_criteria`. Workers consume this list to know which gates apply to their task. The criterion shape is defined in `schemas/execution-packet.schema.json` (`$defs/Criterion`) — `id`, `description`, `check_type` (closed enum: `test_pass | command_exit_zero | file_exists | grep_match | manual | council_judge | custom_rubric`), `check_command`, `evidence_path`, `evidence_required`, `weight`, `optional`, and `agent_judge` (required when `check_type == "custom_rubric"`). Do not paraphrase or filter the block; pass it through verbatim so worker-side verdicts map back to plan-side ids.
+
 **Language Standards Injection (REQUIRED for code tasks):** Detect project language from repo root markers (`go.mod`, `pyproject.toml`, `Cargo.toml`, `package.json`) and load the matching standard from the standards skill. For `feature|bug|task` issues, include the Testing section verbatim in each worker's task description. For test-modifying issues, also inject file naming and assertion quality rules.
 
 **Validation block extraction (beads mode):** Extract validation metadata from each issue's fenced `validation` block (written by `/plan`). If no block found, fall back to `files_exist` from mentioned file paths. Inject into `metadata.validation` of each TaskCreate.
@@ -448,11 +451,25 @@ fi
 
 > **Principle:** Verify each wave meets acceptance criteria using lightweight inline judges. No skill invocations — prevents context explosion in the orchestrator loop.
 
-**For acceptance check details (diff computation, inline judges, verdict gating), read `skills/crank/references/wave-patterns.md`.**
+**For acceptance check details (diff computation, inline judges, verdict gating, CI-policy parity gate), read `skills/crank/references/wave-patterns.md`.**
+
+**CI-Policy Parity Gate (conditional):** When a wave's diff touches `.github/workflows/*.yml`, the orchestrator MUST run `bash scripts/validate-ci-policy-parity.sh` as part of wave acceptance. On failure, the wave verdict is **FAIL**. See [references/wave-patterns.md](references/wave-patterns.md) "CI-Policy Parity Gate" for trigger pattern, worked example, and the soc-lmww1 / commit `c587b361` motivation.
 
 ### Step 5.7: Wave Checkpoint
 
-After each wave completes (post-vibe-gate, pre-next-wave), write `.agents/crank/wave-${wave}-checkpoint.json` with fields: `schema_version`, `wave`, `timestamp`, `tasks_completed`, `tasks_failed`, `files_changed`, `git_sha`, `acceptance_verdict` (from Step 5.5), `commit_strategy`, `mutations_this_wave`, `total_mutations`, `mutation_budget` (task_added limit 5, task_reordered limit 3). On retry of the same wave, the file is overwritten.
+After each wave completes (post-vibe-gate, pre-next-wave), write `.agents/crank/wave-${wave}-checkpoint.json` with fields: `schema_version`, `wave`, `timestamp`, `tasks_completed`, `tasks_failed`, `files_changed`, `git_sha`, `acceptance_verdict` (from Step 5.5), `commit_strategy`, `mutations_this_wave`, `total_mutations`, `mutation_budget` (task_added limit 5, task_reordered limit 3), and `criterion_verdicts` (per-criterion roll-up — see below). On retry of the same wave, the file is overwritten.
+
+**Per-criterion verdicts:** When the wave's beads carried an `acceptance_criteria` block (see Step 4 acceptance-criteria injection), record one verdict per criterion id:
+
+```json
+"criterion_verdicts": [
+  {"id": "ac-<scope>.<n>", "status": "PASS|FAIL|SKIP", "evidence_path": "<path>", "notes": "<one-liner>"}
+]
+```
+
+`evidence_path` points to a file or log line that justifies the verdict (test output, grep result, gate report). `SKIP` is reserved for criteria not exercised this wave (e.g., gated by a flag, deferred to a later wave) and must include a `notes` reason.
+
+**Back-compat fallback (back-compat):** When the bead has no `acceptance_criteria` block, omit `criterion_verdicts` from the checkpoint and emit a WARN log line: `[deprecated] no acceptance_criteria found in packet — running vibe-only`. This is the pre-mortem advisory fix #2 ramp: WARN until **2026-06-30**, then FAIL after that date. Tracker beads created before this rollout date are grandfathered for that window; new packets must include the block.
 
 Immediately validate the checkpoint before using it downstream:
 
@@ -643,6 +660,8 @@ Most `/crank` steps delegate worker execution via `/swarm` or `Skill()`. A small
 
 If unsure whether a step is orchestrator-owned or delegatable, the default is **delegate**. Only steps marked with the admonition above are exempt.
 
+Crank runs as an isolated phase-2 execution context — discovery and validation are sealed off from this skill. See [references/isolation-contract.md](references/isolation-contract.md) for the four-lever enforcement model and the compression patterns `scripts/check-skill-isolation.sh` flags. See [references/best-practices.md](references/best-practices.md) for the lifecycle principle + anti-pattern citation table (cite by number; do not duplicate body content).
+
 ## Reference Documents
 
 - [references/de-sloppify.md](references/de-sloppify.md)
@@ -662,6 +681,7 @@ If unsure whether a step is orchestrator-owned or delegatable, the default is **
 - [references/team-coordination.md](references/team-coordination.md)
 - [references/test-first-mode.md](references/test-first-mode.md)
 - [references/troubleshooting.md](references/troubleshooting.md)
+- [references/phase-data-contracts.md](references/phase-data-contracts.md) — phase artifact data contracts (cited from references/isolation-contract.md)
 - [references/uat-integration-wave.md](references/uat-integration-wave.md)
 - [references/wave1-spec-consistency-checklist.md](references/wave1-spec-consistency-checklist.md)
 - [references/wave-patterns.md](references/wave-patterns.md)

@@ -1,0 +1,28 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "alexander-danilenko/cortex-ai-skills",
+  "path": "skills/nestjs/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-alexander-danilenko-cortex-ai-skills-3",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "references/authentication.md",
+    "references/controllers-routing.md",
+    "references/dtos-validation.md",
+    "references/migration-from-express.md",
+    "references/services-di.md",
+    "references/testing-patterns.md"
+  ],
+  "author": "alexander-danilenko",
+  "source_url": "https://github.com/alexander-danilenko/cortex-ai-skills/blob/main/skills/nestjs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexander-danilenko/cortex-ai-skills/blob/main/skills/nestjs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

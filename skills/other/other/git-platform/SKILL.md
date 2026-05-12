@@ -1,7 +1,6 @@
 ---
 name: git-platform
-description: 'Git platform detection and cross-platform command mapping for GitHub, GitLab, and Bitbucket'
-version: 1.9.0
+description: 'Git platform detection and cross-platform command mapping for GitHub, GitLab, and Bitbucket.'
 alwaysApply: false
 category: infrastructure
 tags:
@@ -33,6 +32,7 @@ estimated_tokens: 400
 progressive_loading: true
 modules:
 - modules/command-mapping.md
+role: library
 ---
 ## Table of Contents
 

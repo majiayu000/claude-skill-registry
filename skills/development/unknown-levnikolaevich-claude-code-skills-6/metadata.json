@@ -1,0 +1,30 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "plugins/codebase-audit-suite/skills/ln-627-diagnosability-auditor/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-levnikolaevich-claude-code-skills-6",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "references/audit_output_schema.md",
+    "references/audit_scoring.md",
+    "references/audit_summary_contract.md",
+    "references/audit_worker_core_contract.md",
+    "references/mcp_integration_patterns.md",
+    "references/mcp_tool_preferences.md",
+    "references/templates/audit_worker_report_template.md",
+    "references/two_layer_detection.md"
+  ],
+  "author": "levnikolaevich",
+  "source_url": "https://github.com/levnikolaevich/claude-code-skills/blob/master/plugins/codebase-audit-suite/skills/ln-627-diagnosability-auditor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/levnikolaevich/claude-code-skills/blob/master/plugins/codebase-audit-suite/skills/ln-627-diagnosability-auditor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -7,6 +7,13 @@ allowed-tools: Read, Grep, Glob, Bash
 
 # Design Lint (Quick Check)
 
+## When NOT to use
+
+- For deeper review of design judgment (composition, hierarchy, rhythm) → use `/ss-review`
+- For accessibility specifically → use `/ss-a11y`
+- For Nielsen UX heuristics → use `/ss-audit`
+- For applying refactors — this only flags violations; use `/ss-review` to fix
+
 Target: **$ARGUMENTS**
 
 ## What This Does

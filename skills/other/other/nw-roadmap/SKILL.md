@@ -28,26 +28,22 @@ Output: `docs/feature/{feature-id}/deliver/roadmap.json`
 
 You MUST execute these steps in order. Do NOT skip any.
 
-**Step 1 — Parse parameters:**
-1. Agent name (after @, validated against agent registry)
-2. Goal description (quoted string)
-3. Derive feature-id from goal (kebab-case, e.g., "Migrate to OAuth2" -> "migrate-to-oauth2")
+1. **Parse Parameters** — Extract agent name (after @, validated against agent registry), goal description (quoted string), and derive feature-id from goal in kebab-case (e.g., "Migrate to OAuth2" -> "migrate-to-oauth2"). Gate: agent name, goal, and feature-id all resolved.
 
-**Step 2 — Scaffold skeleton via CLI (mandatory, BEFORE invoking agent):**
+2. **Scaffold Skeleton** — Run `des.cli.roadmap init` via Bash BEFORE invoking agent. Gate: CLI exits 0; stop and report error on non-zero exit.
 
 ```bash
-PYTHONPATH=~/.claude/lib/python $(command -v python3 || command -v python) -m des.cli.roadmap init \
+des-roadmap init \
   --project-id {feature-id} \
   --goal "{goal-description}" \
   --output docs/feature/{feature-id}/deliver/roadmap.json
 ```
 For complex projects add: `--phases 3 --steps "01:3,02:2,03:1"`
 
-If exit code non-zero, stop and report error. Do NOT write file manually.
+Do NOT write the file manually.
 
-**Step 3 — Invoke agent to fill skeleton:**
+3. **Invoke Agent** — Invoke the named agent via Task tool to fill skeleton TODO placeholders. Gate: agent completes without error.
 
-Skeleton exists with TODO placeholders. Invoke via Task tool:
 ```
 @{agent-name}
 
@@ -61,14 +57,11 @@ Goal: {goal-description}
 
 Context to pass (if available): measurement baseline|mikado-graph.md|existing docs.
 
-**Step 4 — Validate via CLI (hard gate, mandatory):**
+4. **Validate** — Run `des-roadmap validate` via Bash. Gate: exit 0 = success; exit 1 = print errors and stop; exit 2 = usage error, stop.
 
 ```bash
-PYTHONPATH=~/.claude/lib/python $(command -v python3 || command -v python) -m des.cli.roadmap validate docs/feature/{feature-id}/deliver/roadmap.json
+des-roadmap validate docs/feature/{feature-id}/deliver/roadmap.json
 ```
-- Exit 0 -> success, roadmap ready
-- Exit 1 -> print errors, STOP, do NOT proceed
-- Exit 2 -> usage error, STOP
 
 ## Invocation Principles
 
@@ -82,17 +75,19 @@ For performance roadmaps, include measurement context inline so agent can valida
 ## Success Criteria
 
 ### Dispatcher (you) — all 4 must be checked
-- [ ] Parameters parsed (agent name, goal, feature-id)
-- [ ] `des.cli.roadmap init` executed via Bash (exit 0)
-- [ ] Agent invoked via Task tool to fill TODO placeholders
-- [ ] `des.cli.roadmap validate` executed via Bash (exit 0)
+
+- [ ] 1. Parameters parsed (agent name, goal, feature-id)
+- [ ] 2. `des.cli.roadmap init` executed via Bash (exit 0)
+- [ ] 3. Agent invoked via Task tool to fill TODO placeholders
+- [ ] 4. `des.cli.roadmap validate` executed via Bash (exit 0)
 
 ### Agent output (reference)
-- [ ] All TODO placeholders replaced with real content
-- [ ] Steps are self-contained and atomic
-- [ ] Acceptance criteria are behavioral and measurable
-- [ ] Step decomposition ratio <= 2.5 (steps / production files)
-- [ ] Dependencies mapped, time estimates provided
+
+- [ ] 5. All TODO placeholders replaced with real content
+- [ ] 6. Steps are self-contained and atomic
+- [ ] 7. Acceptance criteria are behavioral and measurable
+- [ ] 8. Step decomposition ratio <= 2.5 (steps / production files)
+- [ ] 9. Dependencies mapped, time estimates provided
 
 ## Error Handling
 

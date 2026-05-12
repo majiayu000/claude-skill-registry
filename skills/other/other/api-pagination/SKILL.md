@@ -1,6 +1,7 @@
 ---
 name: api-pagination
 description: Implements efficient API pagination using offset, cursor, and keyset strategies for large datasets. Use when building paginated endpoints, implementing infinite scroll, or optimizing database queries for collections.
+license: MIT
 ---
 
 # API Pagination

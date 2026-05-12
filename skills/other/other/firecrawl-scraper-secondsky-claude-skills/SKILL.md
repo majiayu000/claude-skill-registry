@@ -1,11 +1,33 @@
 ---
 name: firecrawl-scraper
-description: Firecrawl v2.5 API for web scraping/crawling to LLM-ready markdown. Use for site extraction, dynamic content, or encountering JavaScript rendering, bot detection, content loading errors.
+description: "Firecrawl v2.5 API for web scraping/crawling to LLM-ready markdown. Use for site extraction, dynamic content, or encountering JavaScript rendering, bot detection, content loading errors."
 
-  Keywords: firecrawl, firecrawl api, web scraping, web crawler, scrape website, crawl website, extract content, html to markdown, site crawler, content extraction, web automation, firecrawl-py, firecrawl-js, llm ready data, structured data extraction, bot bypass, javascript rendering, scraping api, crawling api, map urls, batch scraping
+metadata:
+  keywords:
+    - firecrawl
+    - firecrawl api
+    - web scraping
+    - web crawler
+    - scrape website
+    - crawl website
+    - extract content
+    - html to markdown
+    - site crawler
+    - content extraction
+    - web automation
+    - firecrawl-py
+    - firecrawl-js
+    - llm ready data
+    - structured data extraction
+    - bot bypass
+    - javascript rendering
+    - scraping api
+    - crawling api
+    - map urls
+    - batch scraping
+
 license: MIT
 ---
-
 # Firecrawl Web Scraper Skill
 
 **Status**: Production Ready ✅

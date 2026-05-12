@@ -7,6 +7,13 @@ allowed-tools: Read, Write, Edit, Grep, Glob
 
 # UX Feedback States Generator
 
+## When NOT to use
+
+- For only the words inside a state → use `/ss-copy`
+- For accessibility issues in existing states → use `/ss-a11y`
+- For brand-new component creation → use `/ss-component`
+- For analytics or error-logging plumbing — UI presentation only
+
 Target: **$ARGUMENTS**
 
 ## Instructions

@@ -7,6 +7,13 @@ allowed-tools: Read, Write, Edit, Grep, Glob
 
 # Accessibility Audit
 
+## When NOT to use
+
+- For general design system compliance review → use `/ss-review`
+- For Nielsen UX heuristics → use `/ss-audit`
+- For non-StyleSeed code (no `data-slot`, no semantic tokens) — assumes StyleSeed conventions
+- For runtime testing — this is a static code audit, not a screen-reader simulation
+
 Target: **$ARGUMENTS**
 
 ## Audit Criteria

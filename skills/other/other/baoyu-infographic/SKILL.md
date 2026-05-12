@@ -1,7 +1,7 @@
 ---
 name: baoyu-infographic
-description: Generate professional infographics with 21 layout types and 21 visual styles. Analyzes content, recommends layout×style combinations, and generates publication-ready infographics. Use when user asks to create "infographic", "信息图", "visual summary", "可视化", or "高密度信息大图".
-version: 1.57.1
+description: Generate professional infographics with 21 layout types and 22 visual styles. Analyzes content, recommends layout×style combinations, and generates publication-ready infographics. Use when user asks to create "infographic", "信息图", "visual summary", "可视化", or "高密度信息大图".
+version: 1.58.0
 metadata:
   openclaw:
     homepage: https://github.com/JimLiu/baoyu-skills#baoyu-infographic
@@ -28,10 +28,13 @@ When this skill needs to render an image, resolve the backend in this order:
 1. **Current-request override** — if the user names a specific backend in the current message, use it.
 2. **Saved preference** — if `EXTEND.md` sets `preferred_image_backend` to a backend available right now, use it.
 3. **Auto-select** (when the preference is `auto`, unset, or the pinned backend isn't available):
-   - If the current runtime exposes a native image tool (e.g., Codex `imagegen`, Hermes `image_generate`), use it. Runtime-native tools are preferred by default — agents that know their own tool inventory should surface the native one here.
+   - **Codex (`imagegen`)** — first, inspect your available-skills / tool inventory. If a skill named `imagegen` is listed, you are running inside Codex and MUST use it: invoke via the `Skill` tool with `skill: "imagegen"`, passing the saved prompt file's content (plus output path and aspect ratio per Codex `imagegen`'s own args). Codex `imagegen` is the official raster backend in that runtime and outranks any non-native skill (e.g., `baoyu-imagine`) unless the user has explicitly pinned a different `preferred_image_backend`.
+   - **Other runtime-native tools** — if the runtime exposes a different native image tool (e.g., Hermes `image_generate`), use it the same way.
    - Otherwise, if exactly one non-native backend is installed (e.g., `baoyu-imagine`), use it.
    - Otherwise (multiple non-native backends with no runtime-native tool), ask the user once — batch with any other initial questions.
 4. **If none are available**, tell the user and ask how to proceed.
+
+**⛔ Never substitute SVG, HTML, canvas, or other code-based rendering for raster image generation.** Codex `imagegen`'s own description says it should be used "when the output should be a bitmap asset rather than repo-native code or vector." If you cannot resolve a raster backend via step 3, fall through to step 4 and ask the user — do **not** silently emit SVG, write inline `<svg>` markup, or produce HTML/CSS art as a substitute. This applies even if the article/section seems "diagram-like": the consumer skill calling this rule has already decided that a raster image is what it needs.
 
 Setting `preferred_image_backend: ask` forces the step-3 prompt every run regardless of available backends. Users change the pinned backend via the `## Changing Preferences` section below.
 
@@ -84,7 +87,7 @@ Default behavior: **confirm before generation**.
 | Option | Values |
 |--------|--------|
 | `--layout` | 21 options (see Layout Gallery), default: bento-grid |
-| `--style` | 21 options (see Style Gallery), default: craft-handmade |
+| `--style` | 22 options (see Style Gallery), default: craft-handmade |
 | `--aspect` | Named: landscape (16:9), portrait (9:16), square (1:1). Custom: any W:H ratio (e.g., 3:4, 4:3, 2.35:1) |
 | `--lang` | en, zh, ja, etc. |
 | `--no-confirm` | Skip Step 4 only when the user explicitly requests direct generation without confirmation |
@@ -118,7 +121,7 @@ Default behavior: **confirm before generation**.
 
 Full definitions live at `references/layouts/<layout>.md`.
 
-## Style Gallery (21)
+## Style Gallery (22)
 
 | Style | Description |
 |-------|-------------|
@@ -143,6 +146,7 @@ Full definitions live at `references/layouts/<layout>.md`.
 | `morandi-journal` | Hand-drawn doodle, warm Morandi tones |
 | `retro-pop-grid` | 1970s retro pop art, Swiss grid, thick outlines |
 | `hand-drawn-edu` | Macaron pastels, hand-drawn wobble, stick figures |
+| `retro-popup-pop` | Retro popup collage, vintage UI, thick outlines, flat pop colors |
 
 Full definitions live at `references/styles/<style>.md`.
 
@@ -165,6 +169,7 @@ Full definitions live at `references/styles/<style>.md`.
 | Product Guide | `dense-modules` + `morandi-journal` |
 | Technical Guide | `dense-modules` + `pop-laboratory` |
 | Trendy Guide | `dense-modules` + `retro-pop-grid` |
+| Retro Pop Guide | `dense-modules` + `retro-popup-pop` |
 | Educational Diagram | `hub-spoke` + `hand-drawn-edu` |
 | Process Tutorial | `linear-progression` + `hand-drawn-edu` |
 
@@ -176,7 +181,7 @@ When the user's input contains these keywords, use the mapped layout as the lead
 
 | User Keyword | Layout | Recommended Styles | Default Aspect | Prompt Notes |
 |--------------|--------|--------------------|----------------|--------------|
-| 高密度信息大图 / high-density-info | `dense-modules` | `morandi-journal`, `pop-laboratory`, `retro-pop-grid` | portrait | — |
+| 高密度信息大图 / high-density-info | `dense-modules` | `morandi-journal`, `pop-laboratory`, `retro-pop-grid`, `retro-popup-pop` | portrait | — |
 | 信息图 / infographic | `bento-grid` | `craft-handmade` | landscape | Minimalist: clean canvas, ample whitespace, no complex background textures. Simple cartoon elements and icons only. |
 
 ## Output Structure

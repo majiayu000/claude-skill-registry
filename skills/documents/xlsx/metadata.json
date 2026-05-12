@@ -1,0 +1,40 @@
+{
+  "name": "xlsx",
+  "description": "Excel spreadsheet creation and manipulation",
+  "repo": "anthropics/skills",
+  "path": "skills/xlsx",
+  "github_branch": "main",
+  "category": "documents",
+  "tags": [
+    "document",
+    "excel",
+    "spreadsheet",
+    "data"
+  ],
+  "stars": 0,
+  "source": "Anthropic Official",
+  "dir_name": "xlsx",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "scripts/office/helpers/__init__.py",
+    "scripts/office/helpers/merge_runs.py",
+    "scripts/office/helpers/simplify_redlines.py",
+    "scripts/office/pack.py",
+    "scripts/office/soffice.py",
+    "scripts/office/unpack.py",
+    "scripts/office/validate.py",
+    "scripts/office/validators/__init__.py",
+    "scripts/office/validators/base.py",
+    "scripts/office/validators/docx.py",
+    "scripts/office/validators/pptx.py",
+    "scripts/office/validators/redlining.py",
+    "scripts/recalc.py"
+  ],
+  "author": "anthropics",
+  "source_url": "https://github.com/anthropics/skills/blob/main/skills/xlsx/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anthropics/skills/blob/main/skills/xlsx/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

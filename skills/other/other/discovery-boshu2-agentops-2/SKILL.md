@@ -1,6 +1,7 @@
 ---
 name: discovery
 description: 'Create execution packets.'
+practices: [adr, lean-startup, mythical-man-month]
 skill_api_version: 1
 user-invocable: true
 context:
@@ -31,7 +32,8 @@ Discovery delegates to `/brainstorm` (conditional), `/design` (conditional), `/r
 
 **Anti-pattern to reject:** inlining `/research` work (grep + read + synthesize), collapsing `/plan` into an inline decomposition, skipping `/pre-mortem`. See [`../shared/references/strict-delegation-contract.md`](../shared/references/strict-delegation-contract.md) for the full contract and supported compression escapes (`--quick`, `--skip-brainstorm`, `--interactive`/`--auto`, `--no-scaffold`).
 
-See [`.agents/learnings/2026-04-19-orchestrator-compression-anti-pattern.md`](../../.agents/learnings/2026-04-19-orchestrator-compression-anti-pattern.md) for the live compression signature.
+See [`docs/learnings/orchestrator-compression-anti-pattern.md`](../../docs/learnings/orchestrator-compression-anti-pattern.md) for the live compression signature.
+See [`references/isolation-contract.md`](references/isolation-contract.md) for the mechanical four-lever model and the compression patterns flagged by `scripts/check-skill-isolation.sh`. See [`references/best-practices.md`](references/best-practices.md) for the lifecycle principle + anti-pattern citation table.
 
 ## DAG — Execute This Sequentially
 
@@ -73,6 +75,11 @@ STEP 4  ──  Skill(skill="plan", args="<goal> [--auto]")
               Pass --auto unless --interactive.
               After: extract epic-id, auto-detect complexity from issue count
               (1-2 → fast, 3-6 → standard, 7+ → full) unless --complexity override.
+              The plan output MUST include `acceptance_criteria` fenced YAML
+              blocks at TWO levels: per-epic (parent epic body) AND per-bead
+              (each issue body). Criterion contract documented under
+              "Acceptance Criteria Contract" below; canonical machine-readable
+              shape lives in `schemas/execution-packet.schema.json` (#/$defs/Criterion).
 
 STEP 4.5 ── if --no-scaffold is NOT set (alias: --no-lifecycle, deprecated)
               AND plan output contains new project/module creation
@@ -92,6 +99,9 @@ STEP 5  ──  Skill(skill="pre-mortem", args="<plan-path> [--quick]")
 STEP 6  ──  Write execution-packet.json (latest alias) + per-run packet archive
               to .agents/rpi/ and .agents/rpi/runs/<run-id>/ when run_id exists.
               Include plan_path, test_levels, ranked_packet_path, epic-id, complexity.
+              Record the criteria fences from STEP 4's plan into the packet under
+              `epic_criteria` (array) and `bead_criteria` (object keyed by bead ID).
+              Canonical shape: `schemas/execution-packet.schema.json`.
               ao ratchet record discovery 2>/dev/null || true
               Output <promise>DONE</promise>
 ```
@@ -142,11 +152,34 @@ if command -v ao &>/dev/null; then AO_AVAILABLE=true; else AO_AVAILABLE=false; f
 
 **STEP 4 (plan):** After plan, record the exact `plan_path` for STEP 5. If tracker probes are healthy, extract epic-id via `bd list --type epic --status open`. If tracker probes are degraded, keep the objective + `plan_path` in `.agents/rpi/execution-packet.json` and continue in `tasklist` mode without inventing an epic.
 
+The plan emitted by `/plan` MUST include `acceptance_criteria` fenced YAML at two levels: per-epic (parent epic body) and per-bead (each issue body). Criterion shape is fixed by `schemas/execution-packet.schema.json` (`#/$defs/Criterion`). See "Acceptance Criteria Contract" below for the YAML form.
+
 **STEP 5 (pre-mortem):** Pass the recorded `plan_path` into `/pre-mortem`. Do not rely on “most recent” plan/spec selection during discovery retries.
 
 **STEP 5.5 (pre-mortem fix propagation):** Before STEP 6, copy any required pseudocode fixes from the pre-mortem report into the affected plan issues or file-backed task specs. Workers read issue/task bodies, not the pre-mortem report.
 
 **STEP 6 (output):** Write execution packet and phase summary per `references/output-templates.md`. Keep `.agents/rpi/execution-packet.json` as the latest alias and archive the same packet to `.agents/rpi/runs/<run-id>/execution-packet.json` when `run_id` exists. Include `plan_path`, `test_levels`, and `ranked_packet_path` in the execution packet for `/crank` and standalone `/validation` consumption.
+
+Record the criteria fences from STEP 4's plan into the packet: `epic_criteria` (array, from the epic body) and `bead_criteria` (object keyed by bead ID, one array per bead). Both fields are typed by `#/$defs/Criterion` in `schemas/execution-packet.schema.json` — that schema is the canonical source of truth for criterion shape, not this SKILL.md.
+
+## Acceptance Criteria Contract
+
+Both the epic and each child bead carry an `acceptance_criteria` fenced YAML block. STEP 6 lifts these into the execution packet (`epic_criteria`, `bead_criteria`). Canonical shape: `schemas/execution-packet.schema.json` (`#/$defs/Criterion`).
+
+```yaml
+acceptance_criteria:
+  - id: ac-<scope>.<n>
+    description: "<one-line measurable statement>"
+    check_type: test_pass | command_exit_zero | file_exists | grep_match | manual | council_judge | custom_rubric
+    check_command: "<shell command or script path>"
+    evidence_path: "<glob>"
+    evidence_required: true | false
+    weight: 0.0–1.0
+    optional: true | false
+    agent_judge: "<council:name>"  # REQUIRED only when check_type == custom_rubric
+```
+
+`agent_judge` is REQUIRED when `check_type == "custom_rubric"` — `custom_rubric` accepts free-text `check_command`, so the judge field names the council/judge that owns the verdict. Enforced by the schema's `if/then` clause; missing it is a packet-write error, not a runtime warning.
 
 ## Flags
 
@@ -171,6 +204,20 @@ if command -v ao &>/dev/null; then AO_AVAILABLE=true; else AO_AVAILABLE=false; f
 /discovery --complexity=full "migrate to v2 API"   # force full council ceremony
 ```
 
+## Output Specification
+
+**Format:** markdown phase summary to stdout + JSON execution packet on disk.
+
+**Files written:**
+
+- `.agents/research/<topic-slug>.md` — research artifact (via `/research` delegation)
+- `.agents/plans/YYYY-MM-DD-<goal-slug>.md` — plan document (via `/plan` delegation)
+- `.agents/council/YYYY-MM-DD-pre-mortem-<topic>.md` — pre-mortem report (via `/pre-mortem` delegation)
+- `.agents/rpi/execution-packet.json` — latest packet (consumed by `/crank` and `/validation`)
+- `.agents/rpi/runs/<run-id>/execution-packet.json` — per-run archive when `run_id` is set
+
+**Exit signal:** completion marker (`<promise>DONE</promise>` or `<promise>BLOCKED</promise>`) — see Completion Markers below.
+
 ## Completion Markers
 
 ```
@@ -189,5 +236,6 @@ Read `references/troubleshooting.md` for common problems and solutions.
 - [references/phase-budgets.md](references/phase-budgets.md) — time budgets per complexity level
 - [references/troubleshooting.md](references/troubleshooting.md) — common problems and solutions
 - [references/output-templates.md](references/output-templates.md) — execution packet and phase summary formats
+- [references/phase-data-contracts.md](references/phase-data-contracts.md) — phase artifact data contracts (cited from references/isolation-contract.md)
 
 **See also:** [brainstorm](../brainstorm/SKILL.md), [design](../design/SKILL.md), [research](../research/SKILL.md), [plan](../plan/SKILL.md), [pre-mortem](../pre-mortem/SKILL.md), [crank](../crank/SKILL.md), [rpi](../rpi/SKILL.md), [scaffold](../scaffold/SKILL.md)

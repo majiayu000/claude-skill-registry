@@ -1,0 +1,27 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "agentkit-seo/agentkit-seo",
+  "path": ".skills/agent-skill/agentkit-seo-web-portfolio/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-agentkit-seo-agentkit-seo-4",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "references/content-performance-and-aeo.md",
+    "references/indexing-and-architecture.md",
+    "references/metadata-structured-data-and-js.md",
+    "references/portfolio-audit-and-maintenance.md",
+    "references/section-recipes.md"
+  ],
+  "author": "agentkit-seo",
+  "source_url": "https://github.com/agentkit-seo/agentkit-seo/blob/main/.skills/agent-skill/agentkit-seo-web-portfolio/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agentkit-seo/agentkit-seo/blob/main/.skills/agent-skill/agentkit-seo-web-portfolio/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

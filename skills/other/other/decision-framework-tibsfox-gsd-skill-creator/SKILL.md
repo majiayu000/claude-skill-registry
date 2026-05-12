@@ -1,6 +1,12 @@
 ---
 name: decision-framework
 description: Thinking frameworks for decisions and problem analysis. Use when evaluating options, root causes, or prioritizing.
+version: 1.0.0
+format: 2025-10-02
+triggers:
+  - "evaluating options, root causes, or prioritizing"
+updated: 2026-04-25
+status: ACTIVE
 ---
 
 # Decision Frameworks

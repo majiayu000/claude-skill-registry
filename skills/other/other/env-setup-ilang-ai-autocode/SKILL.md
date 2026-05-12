@@ -39,4 +39,4 @@ version: 5.0.0
 ::FACT{domain:namecheap|price:$10/year|url:namecheap.com}
 ::FACT{ssl:letsencrypt|price:free}
 
-Powered by I-Lang v3.0 | ilang.ai
+Powered by I-Lang v4.0 | ilang.ai

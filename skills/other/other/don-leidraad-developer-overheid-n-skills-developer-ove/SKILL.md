@@ -1,6 +1,6 @@
 ---
 name: don-leidraad
-description: NeRDS software development guidelines for Dutch government projects. Use when making architectural decisions, setting up CI/CD, implementing security practices, handling privacy requirements, or ensuring accessibility compliance in government software.
+description: "NeRDS software development guidelines for Dutch government: architecture, CI/CD, security, privacy, accessibility."
 metadata:
   source: developer.overheid.nl
   synced-from: https://github.com/developer-overheid-nl/don-site

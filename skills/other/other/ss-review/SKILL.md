@@ -7,6 +7,13 @@ allowed-tools: Read, Grep, Glob
 
 # UI Design Review
 
+## When NOT to use
+
+- For accessibility-only issues → use `/ss-a11y`
+- For Nielsen UX heuristics → use `/ss-audit`
+- For a quick automated check → use `/ss-lint`
+- For non-UI code (data fetching, business rules)
+
 Review the file: **$ARGUMENTS**
 
 ## Checklist

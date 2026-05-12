@@ -1,6 +1,7 @@
 ---
 name: forge
 description: 'Mine transcripts into learnings.'
+practices: [wiki-knowledge-surface, lean-startup]
 skill_api_version: 1
 user-invocable: false
 context:
@@ -17,6 +18,8 @@ metadata:
 output_contract: ".agents/learnings/*.md, .agents/patterns/*.md"
 ---
 # Forge Skill
+
+> **Cross-vendor analog:** the capture half of Anthropic Managed Agents' memory + dreaming pair (May 2026). Forge mines transcripts; `/dream` curates between sessions. Off the API, local, cross-vendor.
 
 **Typically runs automatically via SessionEnd hook.**
 
@@ -218,31 +221,8 @@ Transcript → /forge → .agents/forge/ (Tier 0)
 
 ## Examples
 
-### SessionEnd Hook Invocation
-
-**Hook triggers:** `session-end.sh` runs when session ends
-
-**What happens:**
-1. Hook calls `ao forge transcript --last-session --queue --quiet`
-2. CLI analyzes session transcript for decisions, learnings, failures, patterns
-3. CLI writes session ID to `.agents/ao/pending.jsonl` queue
-4. Next session start triggers `/forge --promote` to process the queue
-
-**Result:** Session transcript automatically queued for knowledge extraction without user action.
-
-### Manual Transcript Mining
-
-**User says:** `/forge <path>` or "mine this transcript for knowledge"
-
-**What happens:**
-1. Agent identifies transcript path or uses `ao forge transcript --last-session`
-2. Agent scans transcript for knowledge patterns (decisions, learnings, failures, patterns)
-3. Agent scores each extraction by confidence (0.0-1.0)
-4. Agent writes candidates to `.agents/forge/YYYY-MM-DD-forge.md`
-5. Agent indexes forge output with `ao forge markdown`
-6. Agent reports extraction counts and candidate locations
-
-**Result:** Transcript mined for reusable knowledge, candidates ready for human review or 2+ citations promotion.
+See [references/examples.md](references/examples.md) for the SessionEnd hook
+invocation walkthrough and manual transcript-mining walkthrough.
 
 ## Troubleshooting
 

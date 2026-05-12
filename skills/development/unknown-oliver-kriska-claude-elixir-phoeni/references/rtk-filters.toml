@@ -1,0 +1,433 @@
+schema_version = 1
+
+# RTK TOML filters for Elixir mix commands.
+#
+# Drop into `.rtk/filters.toml` at the project root. Filters apply when mix
+# commands run via `rtk mix ...` (rtk's shell hook rewrites `mix X` -> `rtk mix X`
+# transparently — see references/install.md).
+#
+# Design notes:
+# - Every mix-* filter includes shared compile-strip patterns because parallel
+#   deps.compile often runs as a side effect, emitting "Compiling N files" and
+#   "Generated X app" noise with worker-prefix form `N> `.
+# - filter_stderr = true because mix emits warnings to stderr; we want them
+#   filtered through the same pipeline, not leaking raw.
+# - match_output short-circuits the "happy path" to a one-liner before any
+#   other processing — biggest wins for `mix test` (passing runs are the norm).
+# - Rust regex crate (RTK's engine) does NOT support backreferences (\1, \2).
+#   Any pattern using them will silently fail.
+# - Critical-preserve: compile errors, test failures, dialyzer warnings, and
+#   stack traces with file:line are NEVER stripped — only progress noise is.
+
+# ============================================================================
+# mix test — compact pass/fail, preserve failure blocks, stacktraces, compile errors
+# ============================================================================
+[filters.mix-test]
+description = "Compact mix test — short-circuit all-green, preserve failures and compile errors"
+match_command = "^(?:[A-Z_][A-Z0-9_]*=\\S+\\s+)*mix\\s+test(\\s|$)"
+strip_ansi = true
+filter_stderr = true
+
+match_output = [
+  { pattern = "\\b0 failures\\b", message = "mix test: all pass" },
+]
+
+replace = [
+  { pattern = "^[.*sF]{3,}", replacement = "" },
+]
+
+strip_lines_matching = [
+  "^$",
+  "^\\s*$",
+  "^Excluding tags:",
+  "^Including tags:",
+  "^Randomized with seed",
+  "^OK$",
+  "^Compiling \\d+ file",
+  "^Generated \\w+ app$",
+  "^\\d+> Compiling \\d+ file",
+  "^\\d+> Generated \\w+ app",
+  "^\\d+> ==> \\w+",
+  "^\\d+> ===> (Compiling|Analyzing)",
+  "^==> \\w+$",
+  "^build ended with \\d+ errors$",
+  "^\\d{2}:\\d{2}:\\d{2}\\.\\d+ ",
+  "^\\d{2}:\\d{2}:\\d{2}\\.\\d+ app_version=",
+  "^\\d{2}:\\d{2}:\\d{2}\\.\\d+ line=\\d+",
+  # Stack-trace frame strippers — drop frames from libraries you don't care about.
+  # Add your own deps here: e.g., "^\\s+\\(my_dep \\d" strips lines like "    (my_dep 1.2.3) ..."
+  "^\\s+\\(phoenix_live_view \\d",
+  "^\\s+\\(elixir \\d",
+  "^\\s+\\(ecto \\d",
+  "^warning: Range\\.new",
+  "^warning: redefining module ",
+  "^Query: INSERT INTO",
+  "^Query: UPDATE",
+  "^Query: SELECT",
+  "^Params: ",
+  "^Reason: %Postgrex",
+  "^Function: #Function<",
+  "^    Args: \\[\\]",
+]
+
+tail_lines = 200
+on_empty = "mix test: ok"
+
+[[tests.mix-test]]
+name = "all pass short-circuits"
+input = """
+Running ExUnit with seed: 986129, max_cases: 28
+Excluding tags: [:ci_only]
+
+.
+Finished in 1.1 seconds (0.00s async, 1.1s sync)
+1 test, 0 failures
+
+OK
+"""
+expected = "mix test: all pass"
+
+[[tests.mix-test]]
+name = "compile error preserved"
+input = """
+Running ExUnit with seed: 755757, max_cases: 28
+Excluding tags: [:ci_only]
+
+    error: undefined variable ^b_item
+    │
+ 20 │       assert [{^a_item, ^b_item}] = [Enum.at(a, 0)]
+    │                          ^
+    │
+    └─ test/validation_match_test.exs:20:26: ValidationMatchTest
+
+== Compilation error in file test/validation_match_test.exs ==
+** (CompileError) test/validation_match_test.exs: cannot compile module
+"""
+expected = """Running ExUnit with seed: 755757, max_cases: 28
+    error: undefined variable ^b_item
+    │
+ 20 │       assert [{^a_item, ^b_item}] = [Enum.at(a, 0)]
+    │                          ^
+    │
+    └─ test/validation_match_test.exs:20:26: ValidationMatchTest
+== Compilation error in file test/validation_match_test.exs ==
+** (CompileError) test/validation_match_test.exs: cannot compile module"""
+
+# ============================================================================
+# mix credo — drop redefining-module warnings, progress lines, keep violations
+# ============================================================================
+[filters.mix-credo]
+description = "Compact mix credo — drop custom-check redefine warnings and progress"
+match_command = "^(?:[A-Z_][A-Z0-9_]*=\\S+\\s+)*mix\\s+credo(\\s|$)"
+strip_ansi = true
+filter_stderr = true
+
+match_output = [
+  { pattern = "found no issues\\.", message = "mix credo: clean" },
+]
+
+strip_lines_matching = [
+  "^$",
+  "^\\s*$",
+  "^OK$",
+  "^Compiling \\d+ file",
+  "^Generated \\w+ app$",
+  "^\\d+> Compiling",
+  "^\\d+> Generated",
+  "^\\s*warning: redefining module ",
+  "^\\s+│$",
+  "^\\s+~+$",
+  "^  \\d+ │ defmodule ",
+  "^\\s+└─ lib/mix/credo/",
+  "^Checking \\d+ source files",
+  "^Please report incorrect results:",
+  "^Analysis took \\d",
+  "^Use `mix credo explain`",
+]
+
+on_empty = "mix credo: clean"
+
+[[tests.mix-credo]]
+name = "clean run short-circuits"
+input = """
+    warning: redefining module MyApp.Test.Credo.WarnApplicationConfig
+    │
+  1 │ defmodule MyApp.Test.Credo.WarnApplicationConfig do
+    │ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    │
+    └─ lib/mix/credo/warn_application_config.ex:1: MyApp.Test.Credo.WarnApplicationConfig (module)
+
+Checking 2579 source files (this might take a while) ...
+Analysis took 13.4 seconds
+29543 mods/funs, found no issues.
+
+Use `mix credo explain` to explain issues.
+OK
+"""
+expected = "mix credo: clean"
+
+[[tests.mix-credo]]
+name = "violation block preserved"
+input = """
+Compiling 2 files (.ex)
+Generated my_app app
+
+  Code Readability
+┃
+┃ [R] ↗ Variable names should be written in snake_case.
+┃       config/runtime.exs:16:1 #()
+┃ [R] ↘ Line is too long (max is 120, was 158).
+┃       config/runtime.exs:85:121 #()
+
+Please report incorrect results: https://github.com/rrrene/credo/issues
+Analysis took 0.3 seconds
+0 mods/funs, found 2 code readability issues.
+
+Use `mix credo explain` to explain issues.
+"""
+expected = """  Code Readability
+┃
+┃ [R] ↗ Variable names should be written in snake_case.
+┃       config/runtime.exs:16:1 #()
+┃ [R] ↘ Line is too long (max is 120, was 158).
+┃       config/runtime.exs:85:121 #()
+0 mods/funs, found 2 code readability issues."""
+
+# ============================================================================
+# mix dialyzer — drop PLT progress and config dumps, keep warnings + summary
+# ============================================================================
+[filters.mix-dialyzer]
+description = "Compact mix dialyzer — drop PLT progress, keep warnings and summary"
+match_command = "^(?:[A-Z_][A-Z0-9_]*=\\S+\\s+)*mix\\s+dialyzer(\\s|$)"
+strip_ansi = true
+filter_stderr = true
+
+match_output = [
+  { pattern = "done \\(passed successfully\\)", message = "mix dialyzer: clean" },
+]
+
+strip_lines_matching = [
+  "^$",
+  "^\\s*$",
+  "^OK$",
+  "^Compiling \\d+ file",
+  "^Generated \\w+ app$",
+  "^Finding suitable PLTs",
+  "^Checking PLT\\.\\.\\.",
+  "^Looking up modules in ",
+  "^Finding applications for ",
+  "^Finding modules for ",
+  "^Checking \\d+ modules in ",
+  "^Adding \\d+ modules to ",
+  "^Removing \\d+ modules from ",
+  "^done in \\d+m?\\d+",
+  "^ignore_warnings: ",
+  "^Starting Dialyzer",
+  "^\\[$",
+  "^  check_plt: ",
+  "^  init_plt: ",
+  "^  files: ",
+  "^   ~c\"",
+  "^   \\.\\.\\.\\],",
+  "^  \\.\\.\\.",
+  "^\\]$",
+  "^\\[:[a-z_]+,",
+  "^_{40,}$",
+  "^Halting VM with exit status \\d",
+]
+
+on_empty = "mix dialyzer: clean"
+
+[[tests.mix-dialyzer]]
+name = "clean run short-circuits"
+input = """
+Generated my_app app
+Finding suitable PLTs
+Checking PLT...
+[:abnf_parsec, :acceptor_pool, :algoliax, :apollo_io]
+Looking up modules in dialyxir_erlang-_elixir-_deps-dev.plt
+Checking 9618 modules in dialyxir_erlang-_elixir-_deps-dev.plt
+Adding 223 modules to dialyxir_erlang-_elixir-_deps-dev.plt
+done in 0m51.82s
+ignore_warnings: .dialyzer_ignore_warnings.exs
+
+Starting Dialyzer
+[
+  check_plt: false,
+  init_plt: ~c"priv/plts/dev/dialyxir_erlang.plt",
+  files: [~c"/Users/.../my_app.beam",
+   ...],
+  ...
+]
+Total errors: 156, Skipped: 156, Unnecessary Skips: 0
+done in 0m27.35s
+done (passed successfully)
+OK
+"""
+expected = "mix dialyzer: clean"
+
+[[tests.mix-dialyzer]]
+name = "warnings preserved dividers stripped"
+input = """
+Total errors: 156, Skipped: 154, Unnecessary Skips: 0
+done in 0m40.32s
+________________________________________________________________________________
+lib/my_app/reports/excel_formatting.ex:407:14:unknown_function
+Function Elixlsx.Sheet.set_col_width/3 does not exist.
+________________________________________________________________________________
+lib/my_app/reports/excel_formatting.ex:418:13:unknown_function
+Function Elixlsx.Sheet.set_col_width/3 does not exist.
+________________________________________________________________________________
+done (warnings were emitted)
+Halting VM with exit status 2
+"""
+expected = """Total errors: 156, Skipped: 154, Unnecessary Skips: 0
+lib/my_app/reports/excel_formatting.ex:407:14:unknown_function
+Function Elixlsx.Sheet.set_col_width/3 does not exist.
+lib/my_app/reports/excel_formatting.ex:418:13:unknown_function
+Function Elixlsx.Sheet.set_col_width/3 does not exist.
+done (warnings were emitted)"""
+
+# ============================================================================
+# mix deps.get — collapse "Unchanged" package list
+# ============================================================================
+[filters.mix-deps-get]
+description = "Compact mix deps.get — collapse unchanged package lists"
+match_command = "^(?:[A-Z_][A-Z0-9_]*=\\S+\\s+)*mix\\s+deps\\.get(\\s|$)"
+strip_ansi = true
+filter_stderr = true
+
+match_output = [
+  { pattern = "All dependencies (have been fetched|are up to date)", message = "mix deps.get: unchanged" },
+]
+
+strip_lines_matching = [
+  "^$",
+  "^\\s*$",
+  "^OK$",
+  "^Resolving Hex dependencies",
+  "^Resolution completed in ",
+  "^Unchanged:$",
+  "^  [a-z_][a-z0-9_]* \\d+\\.\\d+",
+  "^Compiling \\d+ file",
+  "^Generated \\w+ app$",
+]
+
+on_empty = "mix deps.get: unchanged"
+
+[[tests.mix-deps-get]]
+name = "unchanged collapses"
+input = """
+Resolving Hex dependencies...
+Resolution completed in 1.638s
+Unchanged:
+  abnf_parsec 2.1.0
+  acceptor_pool 1.0.1
+  algoliax 0.10.0
+  credo 1.7.18
+All dependencies have been fetched
+OK
+"""
+expected = "mix deps.get: unchanged"
+
+# ============================================================================
+# mix ecto.migrate / rollback / gen.migration — strip compile prefix
+# ============================================================================
+[filters.mix-ecto-migrate]
+description = "Compact mix ecto.migrate — strip compile prefix"
+match_command = "^(?:[A-Z_][A-Z0-9_]*=\\S+\\s+)*mix\\s+ecto\\.(migrate|rollback|gen\\.migration)(\\s|$)"
+strip_ansi = true
+filter_stderr = true
+
+match_output = [
+  { pattern = "\\[info\\] Migrations already up", message = "mix ecto.migrate: up to date" },
+]
+
+strip_lines_matching = [
+  "^$",
+  "^\\s*$",
+  "^OK$",
+  "^Compiling \\d+ file",
+  "^Generated \\w+ app$",
+  "^\\d+> Compiling",
+  "^\\d+> Generated",
+]
+
+on_empty = "mix ecto.migrate: ok"
+
+[[tests.mix-ecto-migrate]]
+name = "already up short-circuits"
+input = """
+Compiling 2 files (.ex)
+Generated my_app app
+
+06:54:27.843 [info] Migrations already up
+"""
+expected = "mix ecto.migrate: up to date"
+
+# ============================================================================
+# mix compile (extended) — handles parallel worker prefix `N> ` and MIX_ENV
+# Shadows the built-in mix-compile filter.
+# ============================================================================
+[filters.mix-compile]
+description = "Compact mix compile — handles parallel workers and MIX_ENV prefixes"
+match_command = "^(?:[A-Z_][A-Z0-9_]*=\\S+\\s+)*mix\\s+compile(\\s|$)"
+strip_ansi = true
+filter_stderr = true
+
+replace = [
+  { pattern = "^\\d+> ", replacement = "" },
+]
+
+strip_lines_matching = [
+  "^$",
+  "^\\s*$",
+  "^OK$",
+  "^mix deps\\.compile running across \\d+ OS processes",
+  "^Compiling \\d+ file",
+  "^Generated \\w+ app$",
+  "^==> \\w+$",
+  "^===> (Compiling|Analyzing) ",
+  "^\\[debug\\] Copying NIF ",
+  "^AppSignal extension installation",
+]
+
+on_empty = "mix compile: ok"
+
+[[tests.mix-compile]]
+name = "parallel compile with worker prefix strips cleanly"
+input = """
+mix deps.compile running across 7 OS processes
+2> ==> peri
+2> Compiling 7 files (.ex)
+3> ==> fine
+3> Compiling 1 file (.ex)
+3> Generated fine app
+2> Generated peri app
+Compiling 1821 files (.ex)
+Generated my_app app
+OK
+"""
+expected = "mix compile: ok"
+
+[[tests.mix-compile]]
+name = "preserves warning with file:line"
+input = """
+2> ==> peri
+2> Compiling 7 files (.ex)
+3>     warning: variable "assigns" is unused
+3>     │
+3> 183 │     defp prepare_icon_name(assigns) do
+3>     │                            ~~~~~~~
+3>     │
+3>     └─ lib/icon.ex:183:28: Iconify.Icon.prepare_icon_name/1
+2> Generated peri app
+Compiling 1821 files (.ex)
+Generated my_app app
+"""
+expected = """    warning: variable "assigns" is unused
+    │
+183 │     defp prepare_icon_name(assigns) do
+    │                            ~~~~~~~
+    │
+    └─ lib/icon.ex:183:28: Iconify.Icon.prepare_icon_name/1"""

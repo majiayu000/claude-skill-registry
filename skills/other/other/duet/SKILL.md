@@ -31,13 +31,13 @@ The agent's value-add is **compression**: turning a technical surface the user d
 
 ## VS-gated question protocol [MANDATORY]
 
-Run VS + actor-critic protocol before every `AskUserQuestion` fire (Phase 1, Phase 2, Phase 3). Duet-specific deltas only — askme owns the canonical spec:
+Run VS + falsifier protocol before every `AskUserQuestion` fire (Phase 1, Phase 2, Phase 3). Duet-specific deltas only — askme owns the canonical spec:
 
-- **Format (compressed visible):** Render numbered survivors only; no weakness/contradiction/oversight block:
+- **Format (compressed visible):** Render numbered survivors with weights only; no falsifier block:
   ```
   VS (N→M):
-  1. [Most likely] <hypothesis>
-  2. [Alt] <hypothesis>
+  1. [Weight: 0.42] <hypothesis>
+  2. [Weight: 0.28] <hypothesis>
   ```
 - **Phase 2 short-circuit:** Exactly 1 survivor → skip the `AskUserQuestion`, execute silently.
 - **Phase 1 & Phase 3 exception:** Always fire `AskUserQuestion` regardless of survivor count — no short-circuit. Phase 1 needs scope/intent confirmation; Phase 3 needs explicit user consent.

@@ -1,7 +1,7 @@
 ---
 name: api-review
-description: 'Evaluate API surface design, consistency, documentation, and exemplar alignment'
-version: 1.9.0
+role: library
+description: 'Evaluate API surface design, consistency, and exemplar alignment.'
 alwaysApply: false
 category: code-review
 tags:
@@ -10,10 +10,7 @@ tags:
 - consistency
 - documentation
 - versioning
-tools:
-- surface-analyzer
-- exemplar-finder
-- consistency-checker
+tools: []
 usage_patterns:
 - api-design-review
 - consistency-audit

@@ -5,7 +5,7 @@ license: MIT
 compatibility: Requires Python 3 with requests package. Depends on meshy-3d-generation skill. Works with Claude Code, Cursor, and all Agent Skills compatible tools.
 metadata:
   author: meshy-dev
-  version: "0.2.0"
+  version: "0.3.0"
   homepage: https://github.com/meshy-dev/meshy-3d-agent
 allowed-tools: Bash, Read, Write, Glob, Grep
 ---
@@ -40,8 +40,9 @@ When detected, guide the user through the appropriate print pipeline below.
    b. Supported multicolor slicers: **OrcaSlicer, Bambu Studio, Creality Print, Elegoo Slicer, Anycubic Slicer Next**
    c. If no multicolor slicer detected, warn the user and suggest installing one
    d. Ask: "How many colors? (default: 4, max: 16)" and "Segmentation depth? (3=coarse, 6=fine, default: 4)"
-   e. Confirm cost: generation (20) + texture (10) + multicolor (10) = **40 credits total**
+   e. Confirm cost: generation (20) + texture (10) + multicolor (10) = **40 credits total** (+10 if repair is needed)
    f. Follow Multicolor Pipeline
+5. **(Recommended)** Insert a **printability analysis** step (`POST /openapi/v1/print/analyze`, FREE) after generation in either pipeline. Run **`POST /openapi/v1/print/repair`** (10 credits) only if analyze flags errors.
 
 ---
 
@@ -130,6 +131,68 @@ if slicers:
 else:
     print("No slicer software detected. Install one of: OrcaSlicer, Bambu Studio, PrusaSlicer, etc.")
 ```
+
+---
+
+## Printability Analysis & Repair (FREE → optional 10-credit fix)
+
+Before downloading and printing, run the **automated printability check** to decide whether the mesh needs repair. The analyze step is FREE (0 credits), so there's no reason to skip it for production prints.
+
+### Analyze Script
+
+```python
+# Run after the generation/refine/retexture step that produced your printable mesh
+INPUT_TASK_ID = refine_id  # or whatever produced the textured / final mesh
+# IMPORTANT: input_task_id MUST refer to a task that used Meshy 6 or any Preview model.
+# For Meshy 4/5 outputs, pass `model_url` (the GLB download URL) instead.
+
+analyze_id = create_task("/openapi/v1/print/analyze", {
+    "input_task_id": INPUT_TASK_ID,
+    # OR: "model_url": "https://example.com/model.glb"
+})
+
+analyze_task = poll_task("/openapi/v1/print/analyze", analyze_id)
+
+p = analyze_task.get("printability") or {}
+metrics = p.get("metrics", {})
+status = p.get("status", "unknown")
+
+print(f"Printability: {status} (issues: {p.get('issue_count', 0)} = "
+      f"errors {p.get('error_count', 0)} + warnings {p.get('warning_count', 0)})")
+print(f"  watertight={metrics.get('is_watertight')}, "
+      f"volume={metrics.get('volume')} m³, "
+      f"non_manifold_edges={metrics.get('non_manifold_edges')}, "
+      f"degenerate_faces={metrics.get('degenerate_faces')}, "
+      f"holes={metrics.get('holes')}")
+
+needs_repair = status == "error"  # warning is optional; error means won't print well
+```
+
+**Status meanings**:
+- `healthy` — print as-is.
+- `warning` — degenerate faces or holes present. Repair is OPTIONAL but recommended for thin-feature prints.
+- `error` — non-watertight, non-positive volume, or non-manifold edges. **Recommend repair before printing.**
+- `unknown` — analyze couldn't process the model. Inspect manually or retry.
+
+### Repair Script (only if analyze flagged errors)
+
+```python
+if needs_repair:
+    repair_id = create_task("/openapi/v1/print/repair", {
+        "input_task_id": INPUT_TASK_ID,    # output is GLB
+        # OR: "model_url": "https://example.com/model.stl"   # output is STL
+    })
+    repair_task = poll_task("/openapi/v1/print/repair", repair_id)
+
+    # Output format mirrors input. Find the populated field:
+    repaired_url = next(
+        (url for url in repair_task["model_urls"].values() if url),
+        None
+    )
+    # Use this repaired URL for downstream download / multicolor / slicer steps.
+```
+
+**Note**: repair preserves geometry only, not textures. If you need a textured + repaired model for multicolor printing, run `repair` first, then re-texture (or feed `repair`'s task_id to `multi-color` directly — the API handles re-texturing internally if applicable).
 
 ---
 
@@ -331,38 +394,34 @@ else:
 
 ---
 
-## Printability Checklist (Manual Review)
+## Manual Sanity Checks (in addition to the automated analyze API)
 
-> **Note:** Automated printability analysis API is coming soon. For now, manually review the checklist below before printing.
+The analyze API covers geometric correctness (watertight, manifold edges, degenerate faces, holes). Some print-quality concerns still need a human eye in the slicer:
 
-| Check | Recommendation |
-|-------|---------------|
-| Wall thickness | Minimum 1.2mm for FDM, 0.8mm for resin |
-| Overhangs | Keep below 45° or add supports |
-| Manifold mesh | Ensure watertight with no holes |
-| Minimum detail | At least 0.4mm for FDM, 0.05mm for resin |
-| Base stability | Flat base or add brim/raft in slicer |
-| Floating parts | All parts connected or printed separately |
+| Check | Recommendation | Where to verify |
+|-------|---------------|-----------------|
+| Wall thickness | Minimum 1.2mm for FDM, 0.8mm for resin | Slicer (after import) |
+| Overhangs | Keep below 45° or add supports | Slicer support generation |
+| Minimum detail | At least 0.4mm for FDM, 0.05mm for resin | Visual inspection in slicer |
+| Base stability | Flat base or add brim/raft in slicer | Slicer plate adhesion |
+| Hollowing | Consider hollowing for figurines/miniatures | Slicer hollow tool (resin) |
 
-**Recommendations**: Import into your slicer to check for mesh errors. Use the slicer's built-in repair tool if needed. Consider hollowing figurines to save material.
+The automated analyze API now handles: watertightness, volume, non-manifold edges, degenerate faces, holes — these no longer require manual inspection.
 
 ---
 
 ## Key Rules for Print Workflow
 
+- **Always detect slicer first** and report results to the user before proceeding
+- **Always run analyze (FREE)** for production / functional prints, miniatures with thin features, mechanical parts
+- **Repair is conditional**: only when analyze status = error, or warning if the user cares about quality
 - **White model**: Download OBJ format, apply `fix_obj_for_printing()` for coordinate conversion
 - **Multicolor**: The multi-color API outputs 3MF directly — no coordinate conversion needed (3MF uses Z-up natively)
 - **3MF for multicolor**: The Multi-Color Print API outputs 3MF directly — no need to request 3MF from generate/refine via `target_formats`. For non-print use cases that need 3MF, pass `"3mf"` in `target_formats` at generation time.
-- **Always detect slicer first** and report results to the user before proceeding
 - **For multicolor, verify slicer supports it** before proceeding with the (costly) pipeline
 - After opening in slicer, remind user to check print settings (layer height, infill, supports)
 - **If OBJ is not available**: Download GLB and guide user to import manually
-
----
-
-## Coming Soon
-
-- **Printability Analysis & Fix API** — Automated mesh analysis and repair (non-manifold edges, thin walls, floating parts)
+- **Repair caveat**: textures are NOT preserved. For a multicolor print on a model that needs repair, run repair first, then re-texture, then multicolor.
 
 ---
 

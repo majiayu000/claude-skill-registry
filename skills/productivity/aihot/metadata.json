@@ -1,0 +1,28 @@
+{
+  "name": "aihot",
+  "description": "AI HOT 中文 AI 资讯查询 Skill。让 Agent 用一句话拿到 aihot.virxact.com 上每天的 AI HOT 日报和全部 AI 动态(精选/全部/分类/时间窗/关键词搜索),无需 API Key、无需配 MCP server。匿名只读 REST API + RSS 三轨。",
+  "repo": "KKKKhazix/khazix-skills",
+  "path": "aihot",
+  "github_branch": "main",
+  "category": "productivity",
+  "tags": [
+    "ai-news",
+    "chinese",
+    "rest-api",
+    "rss",
+    "daily-report",
+    "agent-friendly"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "aihot",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "KKKKhazix",
+  "source_url": "https://github.com/KKKKhazix/khazix-skills/blob/main/aihot/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/KKKKhazix/khazix-skills/blob/main/aihot/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

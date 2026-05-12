@@ -1,8 +1,6 @@
 ---
 name: better-chatbot-patterns
-description: Reusable better-chatbot patterns for custom deployments. Use for server action validators, tool abstraction, multi-AI providers, or encountering auth validation, FormData parsing, workflow execution errors.
-
-  Keywords: AI chatbot patterns, server action validators, tool abstraction, multi-AI providers, workflow execution, MCP integration, validated actions, tool type checking, Vercel AI SDK patterns, chatbot architecture
+description: "Reusable better-chatbot patterns for custom deployments. Use for server action validators, tool abstraction, multi-AI providers, or encountering auth validation, FormData parsing, workflow execution errors."
 license: MIT
 metadata:
   version: 1.0.0
@@ -12,8 +10,18 @@ metadata:
   tech_stack: Next.js 15, Vercel AI SDK 5, Zod, Zustand
   token_savings: ~65%
   errors_prevented: 5
+  keywords:
+    - AI chatbot patterns
+    - server action validators
+    - tool abstraction
+    - multi-AI providers
+    - workflow execution
+    - MCP integration
+    - validated actions
+    - tool type checking
+    - Vercel AI SDK patterns
+    - chatbot architecture
 ---
-
 # better-chatbot-patterns
 
 **Status**: Production Ready

@@ -1,12 +1,7 @@
 ---
 name: speckit-orchestrator
 role: entrypoint
-description: 'Workflow orchestrator for Spec Driven Development. Coordinates skills
-  and tracks progress.
-
-
-  speckit workflow, spec driven development, speckit commands.'
-version: 1.9.3
+description: 'Workflow orchestrator for Spec Driven Development. Coordinates skills and tracks progress.'
 alwaysApply: false
 category: workflow-orchestration
 tags:
@@ -23,9 +18,9 @@ dependencies:
 - superpowers:executing-plans
 tools: []
 modules:
-- command-skill-matrix
-- progress-tracking
-- artifact-structure
+- modules/command-skill-matrix.md
+- modules/progress-tracking.md
+- modules/artifact-structure.md
 progressive_loading: true
 usage_patterns:
 - workflow-coordination

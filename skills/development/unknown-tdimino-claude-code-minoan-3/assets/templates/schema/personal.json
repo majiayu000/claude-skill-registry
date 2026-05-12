@@ -1,0 +1,42 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "{BASE_URL}/#person",
+      "name": "{FULL_NAME}",
+      "url": "{BASE_URL}",
+      "image": "{HEADSHOT_URL}",
+      "jobTitle": "{JOB_TITLE}",
+      "description": "{BIO}",
+      "email": "{EMAIL}",
+      "sameAs": [
+        "https://github.com/{HANDLE}",
+        "https://twitter.com/{HANDLE}",
+        "https://www.linkedin.com/in/{SLUG}",
+        "https://en.wikipedia.org/wiki/{PAGE}",
+        "https://www.wikidata.org/wiki/{QID}"
+      ],
+      "knowsAbout": ["{SKILL_1}", "{SKILL_2}", "{SKILL_3}"],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "{UNIVERSITY}"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "{EMPLOYER}",
+        "url": "{EMPLOYER_URL}"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "{PROJECT_NAME}",
+      "description": "{PROJECT_DESCRIPTION}",
+      "url": "{PROJECT_URL}",
+      "author": { "@id": "{BASE_URL}/#person" },
+      "dateCreated": "{DATE_CREATED}",
+      "programmingLanguage": "{LANGUAGE}",
+      "keywords": ["{KW_1}", "{KW_2}"]
+    }
+  ]
+}

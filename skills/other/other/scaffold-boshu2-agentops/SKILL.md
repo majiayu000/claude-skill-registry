@@ -1,6 +1,7 @@
 ---
 name: scaffold
 description: 'Create project, component, or boilerplate scaffolds.'
+practices: [pragmatic-programmer, design-patterns, hexagonal-architecture]
 skill_api_version: 1
 context:
   window: fork
@@ -135,6 +136,8 @@ Create the directory tree and all files. Every generated file must have real, fu
 ## Step 3: Apply Best Practices
 
 After generating the structure, layer on cross-cutting concerns:
+
+For installer scripts, agent-facing tool servers, MCP surfaces, or Rust CLI storage scaffolds, apply [references/agent-facing-tool-scaffolds.md](references/agent-facing-tool-scaffolds.md) before writing files.
 
 ### .gitignore
 
@@ -381,3 +384,8 @@ Next steps:
   cd <name>
   <language-specific "run" command>
 ```
+
+## References
+
+- [references/agent-facing-tool-scaffolds.md](references/agent-facing-tool-scaffolds.md)
+- [references/recommended-reading.md](references/recommended-reading.md) — forward-looking index of external skills (e.g., `mcp-server-design`) worth absorbing into scaffold when their trigger conditions arrive. Consult before designing a new scaffold mode that targets agent-facing tool surfaces.

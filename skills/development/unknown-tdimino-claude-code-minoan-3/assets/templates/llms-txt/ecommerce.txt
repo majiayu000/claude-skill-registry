@@ -1,0 +1,26 @@
+# {SITE_NAME}
+
+> {SITE_NAME} is an online store offering {PRODUCT_CATEGORY}. {ONE_SENTENCE_VALUE_PROP}.
+
+## Products
+
+- [{PRODUCT_1}]({BASE_URL}/products/{SLUG_1}): {PRODUCT_1_DESCRIPTION}
+- [{PRODUCT_2}]({BASE_URL}/products/{SLUG_2}): {PRODUCT_2_DESCRIPTION}
+- [{PRODUCT_3}]({BASE_URL}/products/{SLUG_3}): {PRODUCT_3_DESCRIPTION}
+
+## Categories
+
+- [{CATEGORY_1}]({BASE_URL}/collections/{CAT_1}): {CATEGORY_1_DESCRIPTION}
+- [{CATEGORY_2}]({BASE_URL}/collections/{CAT_2}): {CATEGORY_2_DESCRIPTION}
+
+## Information
+
+- [About]({BASE_URL}/about): Company story, mission, and team
+- [Shipping & Returns]({BASE_URL}/shipping): Shipping rates, delivery times, return policy
+- [FAQ]({BASE_URL}/faq): Common questions about products and ordering
+
+## Optional
+
+- [Blog]({BASE_URL}/blog): Product guides, style tips, and industry news
+- [Reviews]({BASE_URL}/reviews): Customer testimonials and product reviews
+- [Contact]({BASE_URL}/contact): Customer support and inquiries

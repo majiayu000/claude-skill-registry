@@ -13,6 +13,7 @@ Use this skill when the user is evaluating whether MotherDuck can meet their sec
 
 - Prefer current MotherDuck public trust, security, pricing, and product documentation.
 - If the MotherDuck MCP `ask_docs_question` feature is available, use it first.
+- Use current SSO and data-recovery docs when the requirement involves identity-provider login, restore windows, named snapshots, or `UNDROP DATABASE`.
 - Verify claims against live public materials before making compliance or commercial assertions.
 
 ## Default Posture

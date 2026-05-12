@@ -319,30 +319,13 @@ Fixes #456
 
 #### 12b. Update/Close Issue Tracker Ticket (Conditional)
 
-**Detect issue tracker:**
-- Check for platform integration (CLI, MCP server, or API)
-- Skip if not available
+Detect tracker, recover the ticket number, and post the close-out per [`references/trackers.md`](../../references/trackers.md) (Detection Procedure + "Comment / update (close-out)" + "Close" operations).
 
-**Determine ticket number:**
-- Try to extract from current branch name (e.g., `fix/456-pagination-bug` -> #456)
-- Check commit messages for ticket references
-- Ask user for ticket number if not found and they indicated a ticket exists
-
-**If ticket number identified:**
-- Ask user: "Do you want to update and/or close ticket #456?"
-  - Options: "Update only", "Update and close", "Skip"
-
-**If user chooses to update:**
-- Post comment with summary:
-  - Root cause identified
-  - Fix applied
-  - Tests added (regression + related failure modes)
-  - Files changed
-- Use available integration to comment on issue
-
-**If user chooses to close:**
-- Close the ticket with final comment
-- Use available integration to close issue
+**Close-out comment content (skill-specific):**
+- Root cause identified
+- Fix applied
+- Tests added (regression + related failure modes)
+- Files changed
 
 #### 12c. Sync with Main Branch (Conditional)
 

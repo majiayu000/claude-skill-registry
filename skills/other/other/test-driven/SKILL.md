@@ -67,7 +67,7 @@ See [examples](references/examples.md) for brief TDD cycle patterns per language
 1. **CREATE** -- Write failing tests: error cases -> edge cases -> happy paths -> property tests
 2. **RED** -- Run tests, verify all fail. If any pass, the test is wrong or behavior already exists.
 3. **GREEN** -- Minimal code to pass. No extras, no optimization, no cleanup.
-4. **REFACTOR** -- Clean up while green. Separate structural changes from behavioral (Tidy First). Re-run tests after every change.
+4. **REFACTOR** -- Clean up while green. Separate structural changes from behavioral (compress first, then extend). Re-run tests after every change.
 
 ---
 

@@ -1,0 +1,72 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{BASE_URL}/#organization",
+      "name": "{ORG_NAME}",
+      "url": "{BASE_URL}",
+      "logo": "{BASE_URL}/logo.png",
+      "description": "{ORG_DESCRIPTION}",
+      "foundingDate": "{FOUNDING_YEAR}",
+      "numberOfEmployees": "{EMPLOYEE_COUNT}",
+      "sameAs": [
+        "https://twitter.com/{HANDLE}",
+        "https://github.com/{ORG}",
+        "https://www.linkedin.com/company/{SLUG}",
+        "https://www.youtube.com/@{CHANNEL}",
+        "https://www.crunchbase.com/organization/{SLUG}"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "{SALES_EMAIL}"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "{APP_NAME}",
+      "applicationCategory": "{CATEGORY}",
+      "operatingSystem": "Web",
+      "description": "{APP_DESCRIPTION}",
+      "url": "{BASE_URL}",
+      "publisher": { "@id": "{BASE_URL}/#organization" },
+      "datePublished": "{LAUNCH_DATE}",
+      "softwareVersion": "{VERSION}",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "{LOW_PRICE}",
+        "highPrice": "{HIGH_PRICE}",
+        "priceCurrency": "USD",
+        "offerCount": "{PLAN_COUNT}"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{RATING}",
+        "reviewCount": "{REVIEW_COUNT}",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "{QUESTION_1}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{ANSWER_1}"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "{QUESTION_2}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{ANSWER_2}"
+          }
+        }
+      ]
+    }
+  ]
+}

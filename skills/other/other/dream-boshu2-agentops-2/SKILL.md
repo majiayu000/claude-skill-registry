@@ -1,6 +1,7 @@
 ---
 name: dream
 description: 'Run overnight compounding sessions.'
+practices: [lean-startup, wiki-knowledge-surface, sre]
 skill_api_version: 1
 user-invocable: true
 context:
@@ -16,6 +17,8 @@ metadata:
 output_contract: "Dream report artifacts at .agents/overnight/*/summary.{json,md}, per-iteration cycle history at .agents/overnight/*/<runID>/iterations/iter-<N>.json (resumed runs rehydrate from disk), and optional scheduler assistance under .agentops/generated/dream/"
 ---
 # Dream - Private Overnight Operator Mode
+
+> **Cross-vendor analog:** Anthropic Managed Agents Dreaming (research preview, May 2026). Same shape — scheduled session review, pattern extraction, memory curation between runs — but local, off the API, and against any model.
 
 `/dream` is the interactive face of the Dream system. It should drive the same
 engine as `ao overnight`; do not invent a parallel workflow.

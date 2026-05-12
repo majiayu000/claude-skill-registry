@@ -1,6 +1,7 @@
 ---
 name: trace
 description: 'Trace decisions through artifacts.'
+practices: [distributed-tracing, adr, ebpf-observability]
 skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash
 context:

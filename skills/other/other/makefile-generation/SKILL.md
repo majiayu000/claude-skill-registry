@@ -1,7 +1,6 @@
 ---
 name: makefile-generation
 description: "Generate Makefiles with testing, linting, formatting, and automation targets for new projects."
-version: 1.9.3
 globs: "**/Makefile"
 alwaysApply: false
 # Custom metadata (not used by Claude for matching):

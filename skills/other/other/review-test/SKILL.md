@@ -1,16 +1,20 @@
 ---
 name: review-test
-description: Comprehensive test suite review across five phases. Fills unit coverage gaps, surveys integration coverage, surveys E2E (browser) coverage for webapps, identifies missing fuzz tests, and audits test quality — in that order.
+description: Comprehensive test suite review across five phases. Surveys unit coverage, integration coverage, E2E (browser) coverage for webapps, fuzz coverage, and test quality — in that order. Advisory only — produces findings and proposes tickets; does not implement test changes.
 model: opus
 ---
 
-# Test Review - Comprehensive Test Suite Review
+# Test Review — Comprehensive Test Suite Survey
 
-Five-phase review: fill unit coverage gaps, survey integration coverage, survey E2E (browser) coverage when applicable, identify fuzz testing opportunities, then audit test quality. Each phase runs its own analysis → present → select → implement → verify cycle.
+Five-phase survey: unit coverage gaps, integration coverage gaps, E2E (browser) coverage gaps when applicable, fuzz coverage gaps, then test quality issues. Each phase runs its analysis and contributes findings to a consolidated report; at the end, the skill proposes a ticket structure for the recommended work and creates tickets after operator approval.
+
+**Advisory only.** The skill produces findings and proposes tickets; it does not implement test changes. The cognitive seam between "find a coverage gap" and "design a test for it" is wide enough that mixing them under one workflow degrades both — test design requires fresh reasoning about edge cases, mocking strategy, and assertion shape, and the discovery agents shouldn't be biased toward gaps whose fixes are easy. Tickets capture findings durably across that seam and compose with `/implement` and `/implement-project` for remediation.
+
+The same logic applies in reverse to test-quality findings (DELETE / REWRITE / SIMPLIFY): the operator should approve removing or rewriting an existing test explicitly, via a ticket, rather than have a workflow do it as a side effect of running a review.
 
 ## Philosophy
 
-**Tests are a system, not a checklist.** Unit gaps, integration gaps, E2E gaps, fuzz gaps, and bad tests are different facets of the same problem: the test suite isn't doing its job. This workflow addresses all of them in deliberate order — inside-out by test scope (unit → integration → E2E), then fuzz as an addendum, then quality covers everything that landed.
+**Tests are a system, not a checklist.** Unit gaps, integration gaps, E2E gaps, fuzz gaps, and bad tests are different facets of the same problem: the test suite isn't doing its job. This workflow surveys all of them in deliberate order — inside-out by test scope (unit → integration → E2E), then fuzz as an addendum, then quality covers everything that exists today.
 
 ## Workflow Overview
 
@@ -24,7 +28,9 @@ Five-phase review: fill unit coverage gaps, survey integration coverage, survey 
 │  4. Phase 3: E2E coverage (webapps only)         │
 │  5. Phase 4: Fuzz coverage                       │
 │  6. Phase 5: Test quality audit                  │
-│  7. Summary + optional commit                    │
+│  7. Present consolidated findings                │
+│  8. Cut tickets (proposed structure, operator-   │
+│     approved)                                    │
 └──────────────────────────────────────────────────┘
 ```
 
@@ -50,7 +56,7 @@ This scope applies to all five phases.
 
 ## Phase 1: Unit Coverage Gaps
 
-Fill missing unit-level test coverage, prioritized by risk.
+Survey missing unit-level test coverage, prioritized by risk.
 
 ### 1a. Detect/Obtain Coverage Data
 
@@ -92,7 +98,7 @@ If no coverage tooling is detected: "What command generates a coverage report fo
 
 If no coverage tooling is available, proceed with manual analysis. The agent will read source and test files to identify gaps by inspection.
 
-**Note:** In manual analysis mode, quantitative coverage improvement is unavailable.
+**Note:** In manual analysis mode, quantitative coverage measurement is unavailable.
 
 **Store:** the coverage command (if any) and baseline coverage percentage.
 
@@ -104,7 +110,7 @@ If no coverage tooling is available, proceed with manual analysis. The agent wil
 
 **Large scope (roughly >15 source files):** Partition by directory or module. Spawn multiple `qa-test-coverage-reviewer` agents **in parallel**, each with a focused partition and relevant coverage data.
 
-Merge findings into a single list ordered by priority tier (CRITICAL → HIGH → LOW). Collect REFACTOR-FOR-TESTABILITY suggestions separately — these are presented at the end of the workflow, not here.
+Merge findings into a single list ordered by priority tier (CRITICAL → HIGH → LOW). Collect REFACTOR-FOR-TESTABILITY suggestions separately — these are presented in the consolidated findings, not as ticket candidates by default.
 
 **Prompt for each agent:**
 
@@ -121,100 +127,19 @@ Identify:
 Return structured findings with ADD recommendations and refactoring suggestions.
 ```
 
-**If no significant gaps found:** Report "No significant coverage gaps found" and proceed to Phase 2.
+**If no significant gaps found:** Record "No significant coverage gaps found" and proceed to Phase 2.
 
-### 1c. Present Findings and User Selection
+### 1c. Record Phase 1 Findings
 
-Display findings as a numbered list grouped by priority tier. Hold back refactoring suggestions for the end of the workflow.
+Record findings grouped by priority tier (CRITICAL / HIGH / LOW) for the consolidated report in step 7. Hold the REFACTOR-FOR-TESTABILITY suggestions separately — they appear as an informational section in the final report; they may or may not be cut as tickets per the runtime ticket-structure proposal in step 8.
 
-**Example:**
-
-```
-## Phase 1: Unit Coverage Gap Analysis
-
-Overall coverage: 68.3% lines (baseline)
-
-### CRITICAL (2 found)
-1. [ADD] auth.go:ValidateJWT (lines 45-72) — JWT validation error paths untested
-   Risk: Invalid tokens could bypass authentication
-2. [ADD] payment.go:ChargeCard (lines 88-120) — Retry and failure logic untested
-   Risk: Silent charge failures or double charges
-
-### HIGH (3 found)
-3. [ADD] parser.go:ParseConfig (lines 30-55) — Malformed input handling untested
-4. [ADD] api.go:CreateUser (lines 15-40) — Duplicate email conflict untested
-5. [ADD] middleware.go:RateLimit (lines 22-45) — Limit exceeded path untested
-
-### LOW (2 found)
-6. [ADD] config.go:Defaults (lines 5-12) — Default value coverage
-7. [ADD] router.go:RegisterRoutes (lines 8-25) — Route registration
-
-Select which gaps to fill (e.g., "1-5" or "all"):
-```
-
-Use `AskUserQuestion` with multi-select. If more than ~10 findings, batch by tier.
-
-### 1d. Implement Selected Tests
-
-**Detect appropriate SME and spawn based on project language:**
-- Go: `swe-sme-golang`
-- Dockerfile: `swe-sme-docker`
-- Makefile: `swe-sme-makefile`
-- GraphQL: `swe-sme-graphql`
-- Ansible: `swe-sme-ansible`
-- Zig: `swe-sme-zig`
-- TypeScript: `swe-sme-typescript`
-- JavaScript: `swe-sme-javascript`
-- HTML: `swe-sme-html`
-- CSS: `swe-sme-css`
-
-**For languages without a dedicated SME:** implement directly as orchestrator.
-
-**Group findings by target test file**, then spawn one SME agent per file **in parallel**. Findings targeting the same test file go to the same agent.
-
-**Prompt each SME agent with:**
-
-```
-Write tests to fill the following coverage gaps in [source file].
-Target test file: [test file]
-
-Gaps to cover:
-1. [function_name (lines N-M)]: [what is untested]
-   Should verify: [specific test description from analyst]
-
-Guidelines:
-- Write focused tests targeting the specific untested code paths.
-- Follow the project's existing test conventions and framework.
-- Test behavior, not implementation details.
-- Cover the error/edge cases identified in the gap analysis.
-- Each test should have a clear name indicating what it verifies.
-- If existing test helpers or fixtures are available, use them.
-```
-
-### 1e. Verify
-
-Run the test suite. Confirm new tests pass and existing tests still pass.
-
-**If failures:** Report which tests failed. For new test failures, attempt one fix. For existing test failures, report to user. Let user decide how to proceed.
-
-### 1f. Re-run Coverage
-
-**If a coverage command was established:** Re-run it and display before/after comparison:
-
-```
-## Coverage Improvement
-
-              Before    After     Change
-Lines         68.3%     78.1%     +9.8%
-```
-
-**If manual analysis mode:** Skip with: "No coverage tooling available — cannot measure improvement quantitatively."
+Proceed to Phase 2.
 
 ---
 
 ## Phase 2: Integration Coverage
 
-Survey integration test coverage and recommend gaps or, if none exist, a starter strategy.
+Survey integration test coverage and identify gaps or, if none exist, a starter strategy.
 
 ### 2a. Analyze Integration Coverage
 
@@ -237,126 +162,23 @@ strategy (cap ~10) and missing strategies (cap ~3).
 Return findings per the agent's output format, with calibrated confidence.
 ```
 
-### 2b. Handle Mode
+### 2b. Record Phase 2 Findings
 
 The agent reports in one of two modes.
 
-**Mode A (no integration tests detected):** the agent proposes a starter strategy with infrastructure and starter tests. Present to the user.
+**Mode A (no integration tests detected):** the agent proposes a starter strategy with infrastructure and starter tests. Record the strategy, infrastructure proposal, and starter tests.
 
-**Mode B (integration tests detected):** the agent reports gaps and expansion opportunities. Present them.
+**Mode B (integration tests detected):** the agent reports gaps within the strategy and strategy-expansion opportunities. Record them with their priorities.
 
-**If the agent reports "no findings"** (Mode B with empty B1 and B2), report the existing posture briefly and proceed to Phase 3.
+**If the agent reports "no findings"** (Mode B with empty gaps and expansion), record the existing posture briefly and proceed.
 
-### 2c. Present Findings and User Selection
-
-Display findings.
-
-**Example (Mode A):**
-
-```
-## Phase 2: Integration Coverage
-
-Integration test posture: NONE DETECTED
-Seams identified: 4 (PostgreSQL, Redis cache, Stripe API, queue consumer via Kafka)
-
-### Proposed Strategy
-- Service-level integration tests using testcontainers for Postgres + Kafka
-- HTTP-level tests against the spun-up app with a real DB
-
-### Proposed Infrastructure
-- `make integration-test` target with `//go:build integration` tag
-- `docker-compose.test.yml` for Postgres + Kafka
-- `tests/integration/README.md` documenting how to run
-
-### Starter Tests (5)
-1. [ADD] User signup → DB persistence → email queued (CRITICAL flow)
-   Catches: signup-pipeline integration regressions. Complexity: moderate
-2. [ADD] Payment webhook handling → Stripe sig verification → DB write
-   Catches: webhook handling regressions. Complexity: moderate
-3. [ADD] Login → session token issuance → Redis store
-   Catches: auth-token regression. Complexity: simple
-4. [ADD] Order placement → queue produce → consumer process
-   Catches: order-pipeline regressions. Complexity: complex
-5. [ADD] Account deletion → cascade across tables
-   Catches: data-residency regressions. Complexity: moderate
-
-Select what to implement: [infrastructure, all tests, specific tests]
-```
-
-**Example (Mode B):**
-
-```
-## Phase 2: Integration Coverage
-
-Integration test posture: testcontainers (Postgres), `make integration-test`
-Existing tests: 12 (DB suite covering CRUD on Users, Orders, Payments)
-
-### Gaps Within Existing Strategy (3 found)
-1. [HIGH] DB suite — `DeleteUser` cascade not tested. Risk: orphan rows on account deletion.
-2. [MEDIUM] DB suite — `UpdateOrder` concurrent-write path not tested.
-3. [LOW] DB suite — pagination edge cases (empty result, max page size).
-
-### Strategy Expansion (1 found)
-4. [HIGH] Queue consumer — Kafka consumer has no integration tests despite carrying critical order-processing flow. Existing `docker-compose.test.yml` could host Kafka with minor changes.
-
-Select which items to address (e.g., "1-4" or "all"):
-```
-
-Use `AskUserQuestion` with multi-select. In Mode A, the user can select infrastructure as a separate item from individual starter tests.
-
-### 2d. Implement Selected Items
-
-**If infrastructure was selected (Mode A):** Implement infrastructure first as a separate step:
-- Add Makefile target / build tag / pytest mark
-- Add `docker-compose.test.yml` (or equivalent) if needed
-- Create the `tests/integration/` directory and README
-
-**Then implement selected tests:** group by target test file, dispatch to language SMEs in parallel (same dispatch as Phase 1).
-
-**Prompt each SME agent with:**
-
-```
-Write integration tests for [file/scenario] in this project.
-Target test file: [path]
-
-Tests to write:
-1. [Test scenario]: [what to exercise]
-   Seam: [seam being exercised]
-   Should verify: [specific properties / regressions]
-
-Guidelines:
-- Use the project's existing integration test framework and fixture conventions.
-- Follow the build tag / marker convention identified by the reviewer.
-- Use testcontainers (or equivalent) for fixture services where appropriate.
-- Tests should be deterministic — known initial state, predictable assertions.
-- Keep each test focused on one seam / flow.
-```
-
-### 2e. Verify
-
-**Do NOT run the integration test suite by default.** Integration tests are slow and may require fixtures up.
-
-Compile-check only — confirm new tests compile and don't break unit tests:
-
-```
-Running unit tests to confirm no regressions...
-[Unit tests pass]
-
-New integration tests compile cleanly. Integration suite NOT run automatically
-(may require fixtures up and take significant time).
-```
-
-**Then prompt the user:** "Run the new integration tests now? Requires fixtures (e.g., `docker-compose up`) and may take significant time. [y/N]"
-
-If yes, run the integration test command and report results.
-
-If no, note in the summary that integration tests are pending manual verification.
+Proceed to Phase 3.
 
 ---
 
 ## Phase 3: E2E Coverage
 
-Survey end-to-end (browser-driven) test coverage and recommend gaps or, if none exist, a starter strategy using Playwright. **This phase only applies to webapps.**
+Survey end-to-end (browser-driven) test coverage and identify gaps or, if none exist, a starter strategy using Playwright. **This phase only applies to webapps.**
 
 ### 3a. Webapp Detection Gate
 
@@ -364,17 +186,7 @@ Spawn `qa-test-e2e-reviewer` for the gate check first. The agent's Step 0 detect
 
 **If the agent reports "NOT A WEBAPP":**
 
-```
-## Phase 3: E2E Coverage
-
-Webapp detection: NOT A WEBAPP — skipping phase.
-
-[Brief one-line note about what was checked.]
-
-Proceeding to Phase 4.
-```
-
-Skip to Phase 4. Do not proceed with the rest of Phase 3.
+Record "Phase 3 skipped — not a webapp" and proceed to Phase 4. Do not proceed with the rest of Phase 3.
 
 **If the agent reports webapp signals detected:** Continue to step 3b (the same agent invocation produces the full analysis; the gate is the first thing it reports).
 
@@ -406,19 +218,18 @@ Return findings per the agent's output format, with calibrated confidence and
 explicit flag that journey classification is the most subjective input.
 ```
 
-### 3c. Present Findings and Confirm Journey Classification
+### 3c. Confirm Journey Classification
 
-Display the agent's report. **Before presenting recommendations for selection, confirm the journey classification with the user** — this is the most subjective input in the analysis.
+Before recording the Phase 3 findings, **confirm the agent's journey classification with the user** — this is the most subjective input in the analysis and shapes the priority assigned to each gap.
 
 **Example confirmation prompt:**
 
 ```
-## Phase 3: E2E Coverage
+## Phase 3: E2E Coverage — confirm journey classification
 
 Webapp detection: DETECTED via @playwright/test in package.json + React deps
-E2E posture: [Mode A or Mode B summary]
 
-### Critical User Journeys (please confirm before proceeding)
+### Critical User Journeys (please confirm before findings are finalized)
 
 CRITICAL:
 - Signup → email confirmation → first-login flow
@@ -435,123 +246,20 @@ NICE-TO-HAVE:
 - Help center search
 
 ⚠️  Journey classification is the most subjective part of this analysis.
-Please confirm or correct before I present implementation recommendations.
+Please confirm or correct.
 
 Are these classifications correct? [Yes / Correct: ...]
 ```
 
 Use `AskUserQuestion`. Allow free-form correction.
 
-If the user corrects any classification, update the analysis accordingly before moving to selection.
+If the user corrects any classification, update the agent's findings before recording.
 
-### 3d. Present Mode-Specific Findings and User Selection
+### 3d. Record Phase 3 Findings
 
-After journey confirmation, present recommendations.
+Record the gaps (Mode A starter strategy, infrastructure, and starter tests; or Mode B gaps and expansion opportunities) with the confirmed journey priorities. The agent's "out of scope" declarations stay in the recorded report.
 
-**Example (Mode A):**
-
-```
-### Mode A: No E2E Detected — Prescribed Framework: Playwright
-
-### Proposed Infrastructure
-- `playwright.config.ts` (Chromium + Firefox + WebKit, headless default)
-- `tests/e2e/` directory
-- `npm run test:e2e` script
-- Fixture/seeding: dedicated test users seed script + per-test API setup
-- `tests/e2e/README.md` documenting how to run, debug, and seed
-
-### Starter Tests (5)
-1. [ADD] Signup flow: visit /signup → fill form → submit → reach /welcome
-   Journey: Signup (CRITICAL). Catches: signup-pipeline UI regressions.
-2. [ADD] Login flow: visit /login → submit → reach /dashboard
-   Journey: Login (CRITICAL). Catches: auth-flow UI regressions.
-3. [ADD] Checkout happy path: cart → payment → confirmation
-   Journey: Checkout (CRITICAL). Catches: full purchase pipeline regressions.
-4. [ADD] Password reset: request → email link → set new password → login
-   Journey: Password reset (IMPORTANT). Catches: account-recovery regressions.
-5. [ADD] Profile update: navigate → edit → save → verify persistence
-   Journey: Profile settings (IMPORTANT). Catches: settings-mutation regressions.
-
-Out of scope (declared): visual regression, a11y, performance, mobile-native, component tests.
-
-Select what to implement: [infrastructure, all tests, specific tests]
-```
-
-**Example (Mode B):**
-
-```
-### Mode B: Playwright detected (npm run test:e2e, 8 existing tests)
-
-### Gaps Within Existing Strategy (3 found)
-1. [HIGH] Signup flow tested but email-verification step not exercised. Risk: regression in email-link redemption.
-2. [MEDIUM] Profile settings — only happy path tested; validation-error path missing.
-3. [LOW] Search results — no test for empty-result state.
-
-### Strategy Expansion (1 found)
-4. [HIGH] Authenticated marketing app (logged-in dashboard customizations) untested; only public marketing is covered.
-
-Out of scope (declared): visual regression, a11y, performance, mobile-native, component tests.
-
-Select which items to address (e.g., "1-4" or "all"):
-```
-
-Use `AskUserQuestion` with multi-select.
-
-### 3e. Implement Selected Items
-
-**If infrastructure was selected (Mode A):** Implement infrastructure first via `swe-sme-typescript`:
-- Generate `playwright.config.ts`
-- Create `tests/e2e/` directory
-- Add `npm run test:e2e` script
-- Stub the fixture/seeding strategy (test user creation script, per-test API setup)
-- Create `tests/e2e/README.md`
-
-**Then implement selected tests:** dispatch to `swe-sme-typescript` (Playwright in TS by default) or the appropriate SME if the project uses a different stack.
-
-For Mode B with non-Playwright frameworks (Cypress, Selenium, etc.), dispatch to the SME for the relevant language and instruct them to write tests in the project's existing framework — **do not migrate to Playwright**.
-
-**Prompt each SME agent with:**
-
-```
-Write E2E tests for [user journey/scenario] in this project.
-Framework: [Playwright TS | Cypress | Selenium | other]
-Target test file: [path]
-
-Tests to write:
-1. [Test scenario]: [user journey to exercise]
-   Journey: [CRITICAL/IMPORTANT/NICE-TO-HAVE]
-   Should verify: [specific user-visible behavior]
-
-Guidelines:
-- Use the project's existing E2E framework conventions.
-- For Playwright: prefer page.getByRole / getByLabel / getByText over CSS selectors.
-- Tests should be deterministic — use known-state fixtures, not relying on prior test state.
-- Keep tests focused on one journey.
-- Use the fixture/seeding approach already established in the project.
-```
-
-### 3f. Verify
-
-**Do NOT run the E2E suite by default.** E2E tests require a running test environment, fixtures, and browser binaries.
-
-Compile-check only — confirm new tests parse / type-check cleanly:
-
-```
-Running TypeScript type-check on new E2E tests...
-[Type-check passes]
-
-Running unit tests to confirm no regressions...
-[Unit tests pass]
-
-E2E tests compile cleanly. E2E suite NOT run automatically
-(requires environment up + browser binaries; may take significant time).
-```
-
-**Then prompt the user:** "Run the new E2E tests now? Requires test environment up and browser binaries installed. [y/N]"
-
-If yes, run the E2E test command and report results.
-
-If no, note in the summary that E2E tests are pending manual verification.
+Proceed to Phase 4.
 
 ---
 
@@ -572,105 +280,21 @@ Identify:
 - Functions that are good fuzz candidates but lack fuzz tests
 ```
 
-### 4b. Handle Infrastructure Check
+### 4b. Record Phase 4 Findings
 
-**If the agent reports no fuzz infrastructure:**
+**If the agent reports no fuzz infrastructure:** Record "No fuzz testing infrastructure detected for [language]" plus the agent's tooling recommendation. The tooling recommendation appears as an informational entry in the consolidated report and may be cut as a ticket per the runtime ticket-structure proposal (step 8). Do not attempt to set up fuzz tooling.
 
-Report to the user:
+**If the agent reports no candidates or all candidates are covered:** Record "No fuzz coverage gaps" with the brief explanation.
 
-```
-## Phase 4: Fuzz Coverage
-
-No fuzz testing infrastructure detected for [language].
-
-To enable fuzz testing, consider: [tooling recommendation from agent]
-
-Skipping fuzz analysis. Proceeding to Phase 5.
-```
-
-Proceed to Phase 5. Do not attempt to set up fuzz tooling.
-
-**If the agent reports no candidates or all candidates are covered:**
-
-```
-## Phase 4: Fuzz Coverage
-
-Fuzz infrastructure detected: [tooling]
-No fuzz coverage gaps found. [brief explanation]
-
-Proceeding to Phase 5.
-```
+**Otherwise:** Record candidates grouped by priority (HIGH / MEDIUM / LOW). Record covered candidates separately as informational context.
 
 Proceed to Phase 5.
-
-### 4c. Present Findings and User Selection
-
-Display fuzz candidates as a numbered list grouped by priority.
-
-**Example:**
-
-```
-## Phase 4: Fuzz Coverage
-
-Fuzz infrastructure: native testing.F (Go 1.22)
-Existing fuzz tests: 2
-
-### HIGH (2 found)
-1. [ADD] parser.go:ParseConfig — Parses user-provided YAML config
-   Input: arbitrary []byte
-   Should verify: no panics, returns error on invalid input
-2. [ADD] protocol.go:DecodeMessage — Decodes wire protocol messages
-   Input: arbitrary []byte
-   Should verify: no panics, bounded output size
-
-### MEDIUM (1 found)
-3. [ADD] template.go:Render — Renders user-provided templates
-   Input: arbitrary string
-   Should verify: no panics, no infinite loops
-
-### Already covered
-- parser.go:ParseJSON — fuzz test in parser_test.go:FuzzParseJSON
-- auth.go:ParseToken — fuzz test in auth_test.go:FuzzParseToken
-
-Select which fuzz tests to add (e.g., "1-3" or "all"):
-```
-
-Use `AskUserQuestion` with multi-select.
-
-### 4d. Implement Selected Fuzz Tests
-
-Same SME dispatch as Phase 1. Group by target test file, spawn in parallel.
-
-**Prompt each SME agent with:**
-
-```
-Write fuzz tests for the following functions in [source file].
-Target test file: [test file]
-
-Fuzz targets:
-1. [function_name]: [what to fuzz]
-   Input type: [what to generate]
-   Should verify: [properties to check]
-
-Guidelines:
-- Use the project's fuzz testing framework ([framework name]).
-- Each fuzz test should target one function.
-- Check the properties specified (no panics, round-trip consistency, etc.).
-- Follow existing fuzz test conventions if any exist in the project.
-- Keep the fuzz target function focused — minimize setup, maximize input coverage.
-```
-
-### 4e. Verify
-
-Run the test suite (not the fuzz tests themselves — those run indefinitely). Confirm fuzz test functions compile and pass their seed corpus if any.
-
-**If failures:** Same handling as Phase 1.
 
 ---
 
 ## Phase 5: Test Quality Audit
 
-Identify and fix bad tests across the entire test suite, including tests written in Phases 1–4.
+Identify quality issues across the existing test suite.
 
 ### 5a. Scan for Quality Issues
 
@@ -701,135 +325,153 @@ Return structured findings with recommended actions (DELETE, REWRITE, ADD, SIMPL
 Redundant tests should be reported as informational only (no action recommended).
 ```
 
-**If no issues found:** Report "No test quality issues found" and proceed to summary.
+**If no issues found:** Record "No test quality issues found" and proceed to the consolidated report.
 
-### 5b. Present Findings and User Selection
+### 5b. Record Phase 5 Findings
 
-Display findings as a numbered list grouped by category.
+Record findings grouped by category (Tautological / Brittle / False-confidence / Inconsistent / Missing / Redundant) with the per-finding recommended action (DELETE / REWRITE / SIMPLIFY / ADD / informational). The redundant category stays informational.
 
-**Example:**
-
-```
-## Phase 5: Test Quality Audit
-
-### Tautological (2 found)
-1. [DELETE] model_test.go:TestUserStruct — Checks struct field existence
-2. [DELETE] config_test.go:TestDefaultConfig — Asserts hardcoded values against themselves
-
-### Brittle (2 found)
-3. [REWRITE] api_test.go:TestCreateUserError — Exact error string match
-4. [REWRITE] handler_test.go:TestNotFound — Asserts full JSON response body
-
-### Redundant (1 noted — informational, no action)
-- [INFO] math_test.go:TestAddVariants — 5 cases hitting same code path
-
-### Missing Coverage (1 found)
-5. [ADD] auth.go:RevokeToken — No tests for revocation path
-
-Select which items to address (e.g., "1-5" or "all"):
-```
-
-Use `AskUserQuestion` with multi-select.
-
-### 5c. Implement Selected Changes
-
-Same SME dispatch as Phases 1, 2, 3, and 4. **Group findings by file**, spawn one SME per file **in parallel**.
-
-**Prompt each SME agent with:**
-
-```
-The test auditor identified the following issues in [file]. Implement the recommended changes.
-
-DELETE findings (remove these tests — but if you believe a test has value, rewrite it instead):
-[List of DELETE items for this file]
-
-REWRITE/SIMPLIFY findings (fix these tests):
-[List of REWRITE/SIMPLIFY items for this file]
-
-ADD findings (write new tests):
-[List of ADD items for this file]
-
-Guidelines:
-- Focus on testing observable behavior rather than implementation details.
-- Follow the project's existing test conventions.
-- Keep tests simple and readable.
-- For DELETE items: if the test covers real behavior that could regress, rewrite it rather than deleting it. Only delete tests that are genuinely self-fulfilling or completely orphaned.
-```
-
-### 5d. Verify
-
-Run the test suite. Confirm all changes are clean.
-
-**If failures:** Same handling as Phase 1.
+Proceed to step 7.
 
 ---
 
-## 6. Summary
+## 7. Present Consolidated Findings
 
-Present a combined summary of all five phases, plus any refactoring suggestions collected in Phase 1.
+Compile all phases into a single report:
 
 ```
-## Test Review Complete
+## Test Review Summary
 
-### Phase 1: Unit Coverage Gaps
-- Tests added: N
-- Coverage: XX% → YY% (+Z%)
+Scope: [what was reviewed]
+Baseline coverage: XX% (if measured) — or "manual analysis — not measured"
 
-### Phase 2: Integration Coverage
-- Mode: [A: starter strategy adopted | B: gaps filled]
-- Infrastructure added: [yes/no]
-- Tests added: N
-- Manual run pending: [yes/no]
+## Phase 1: Unit Coverage Gaps
+- N gaps found: X CRITICAL, Y HIGH, Z LOW
+- [Numbered list of gaps with file:line and risk description]
 
-### Phase 3: E2E Coverage
+## Phase 2: Integration Coverage
+- Mode: [A — none detected / B — exists]
+- [Mode A: proposed strategy + infrastructure + starter tests, or
+   Mode B: N gaps within strategy, M strategy-expansion opportunities,
+   with priorities]
+
+## Phase 3: E2E Coverage
 - Webapp: [yes / no — skipped]
-- Mode: [A: starter strategy adopted | B: gaps filled]
-- Framework: [Playwright | Cypress | other]
-- Infrastructure added: [yes/no]
-- Tests added: N
-- Manual run pending: [yes/no]
+- Mode: [A — none detected / B — exists / N/A — skipped]
+- Framework: [Playwright / Cypress / other]
+- [Mode A: prescribed Playwright + infrastructure + starter tests, or
+   Mode B: N gaps within strategy, M strategy-expansion opportunities,
+   with confirmed journey priorities]
 
-### Phase 4: Fuzz Coverage
-- Fuzz tests added: N
-- [or: "Skipped — no fuzz infrastructure"]
+## Phase 4: Fuzz Coverage
+- Infrastructure: [present / absent + tooling recommendation]
+- [N candidates with priority and properties to verify]
 
-### Phase 5: Test Quality Audit
-- Tests deleted: N
-- Tests rewritten: N
-- Tests added: N
+## Phase 5: Test Quality Audit
+- N findings: X to DELETE, Y to REWRITE, Z to ADD, W to SIMPLIFY, V redundant (info)
+- [Findings by category]
 
-### Net Change
-- Total tests added: N
-- Total tests removed: N
-- Net: +/-N
-
-### Refactoring for Testability (informational)
-[Refactoring suggestions from Phase 1 coverage analyst, if any]
-
-1. [file:function] — [problem]
-   Suggestion: [what to refactor]
-   Would enable testing: [what becomes testable]
-
-These suggestions are not implemented by this workflow. Use /refactor
-or address them manually.
-
-### Files Modified
-- [file]: [what changed]
+## Refactoring for Testability (informational)
+[Refactoring suggestions from Phase 1 coverage analyst, if any. These
+suggestions are not implemented by this workflow; use /refactor or
+address them manually if cut as tickets.]
 ```
 
-**Ask user if they want to commit.** If yes, create a commit:
+Present to the user. Walk through CRITICAL items and high-impact starter-strategy proposals (Mode A items in Phases 2 and 3) explicitly — these are the highest-leverage findings and the operator should engage with them before the ticket-structure proposal.
 
-```bash
-git add [specific files]
-git commit -m "$(cat <<'EOF'
-test: comprehensive test suite review
+---
 
-[Brief description: added N unit tests, N integration tests, N E2E tests,
-N fuzz tests, deleted N bad tests, rewrote N brittle tests]
-Coverage: XX% → YY%
-EOF
-)"
+## 8. Cut Tickets
+
+After presenting findings, propose a ticket structure based on the review's shape. Each review produces a different finding distribution — high-risk unit gaps with sparse integration coverage, Mode A starter strategies for two phases, a quality audit that is mostly tautological-test removal — and the right ticket granularity depends on that shape. Rather than prescribe a fixed mapping, examine the findings and propose a structure that fits.
+
+### 8a. Analyze Findings and Propose Structure
+
+Examine the consolidated findings produced in step 7:
+- Count by phase and priority.
+- Note Mode A starter strategies (Phases 2 and 3) — these are typically ticket-shaped as one "set up infrastructure + write starter tests" ticket or split (infrastructure separate from each starter test).
+- Note clustering — multiple findings in the same file or component.
+- Note REFACTOR-FOR-TESTABILITY suggestions and the fuzz tooling recommendation if present.
+- Note redundant tests — informational only, no ticket needed by default.
+
+From that shape, propose a ticket structure. Common shapes:
+
+- **Concentrated unit gaps + small integration/E2E asks:** 1 ticket per CRITICAL unit gap; 1 batch ticket per HIGH/LOW tier; 1 ticket per integration or E2E gap; 1 batch ticket for Phase-5 quality issues.
+- **Mode A starter strategies dominate:** 1 ticket per phase's starter strategy (e.g., "Set up integration test infrastructure + write 5 starter tests"); individual tickets for unit/quality findings only if there are few.
+- **Lots of Phase-5 churn (many DELETE/REWRITE):** 1 batch ticket per quality category (e.g., "Delete tautological tests," "Rewrite brittle tests in `pkg/api/`").
+- **Light review, scattered findings:** 1 batch ticket per phase covering all findings.
+- **No actionable findings:** No tickets. The review report stands alone.
+
+Present the proposed structure to the operator with the reasoning:
+
 ```
+Proposed ticket structure for this review:
+
+Phase 1: 8 gaps (2 CRITICAL, 3 HIGH, 3 LOW)
+Phase 2: Mode B — 4 gaps within strategy
+Phase 3: Mode A — Playwright not present; 5 starter tests + infrastructure
+Phase 4: 2 fuzz candidates (1 HIGH, 1 MEDIUM)
+Phase 5: 6 findings (2 DELETE, 3 REWRITE, 1 ADD; 2 redundant — informational)
+
+Proposed: 7 tickets
+  - 1 ticket per CRITICAL unit gap (2 tickets)
+  - 1 batch ticket: "Phase 1 — HIGH/LOW unit coverage gaps" (6 gaps)
+  - 1 batch ticket: "Phase 2 — Integration gaps within existing strategy" (4 gaps)
+  - 1 ticket: "Set up Playwright E2E infrastructure + 5 starter tests"
+  - 1 batch ticket: "Phase 4 — Fuzz test additions" (2 candidates)
+  - 1 batch ticket: "Phase 5 — Test quality cleanup" (DELETE + REWRITE + ADD)
+  - (Refactor-for-testability suggestions held as informational — no ticket)
+
+Approve / edit / decline?
+```
+
+Wait for the response. Three outcomes:
+
+- **Approve:** Proceed to 8b.
+- **Edit:** The operator modifies the structure (merge two tickets, split one, drop a finding, change granularity, promote the refactoring suggestions into a ticket). Apply the edits, present the revised structure, and repeat until approved.
+- **Decline:** The review report stands alone. The operator can act on findings at their discretion. The skill exits cleanly.
+
+### 8b. Create Tickets
+
+Use the canonical tracker integration documented in [`references/trackers.md`](../../references/trackers.md). For each ticket in the approved structure:
+
+**Title:** `[<PHASE/TYPE>] <concise summary>` (e.g., `[Phase 1 CRITICAL] Add unit tests for auth.ValidateJWT error paths`, `[Phase 3 Mode A] Set up Playwright E2E infrastructure + starter tests`, `[Phase 5] Delete tautological tests in model_test.go and config_test.go`).
+
+**Body sections (per-finding tickets):**
+- **Gap** — what is untested or what test is problematic.
+- **Files** — `file.go:LINE` for the source code and target test file.
+- **Risk / Reason** — why this matters (for ADD) or what makes the test bad (for DELETE/REWRITE).
+- **Should verify** — the property a new test should establish, copied from the reviewer's recommendation.
+- **Acceptance criteria** — measurable definition of done (e.g., "tests added for invalid-token, expired-token, and signature-mismatch paths in `auth_test.go`; `go test ./auth/...` passes").
+- **Recommended implementation skill** — names the next move with scope hint. Examples: `/implement` for a single ticket; for Mode A starter strategies, `/scope` first if the operator wants to refine the strategy before implementing.
+
+**Body sections (batch tickets):**
+- A brief intro paragraph stating the batch theme (e.g., "Phase 1 HIGH/LOW unit coverage gaps — group remediation as a single implementation pass").
+- One section per included finding using the per-finding structure above.
+- A single set of acceptance criteria covering the batch.
+
+**For Mode A starter-strategy tickets (Phases 2 and 3):**
+- **Strategy** — the proposed strategy (e.g., "testcontainers-based integration tests; HTTP-level against spun-up app").
+- **Infrastructure** — itemized: Makefile target, build tag, fixture compose file, README.
+- **Starter tests** — N starter tests with the journey/seam each exercises.
+- **Out of scope** — the agent's declared out-of-scope items (especially Phase 3).
+- **Acceptance criteria** — infrastructure runs, starter tests pass on first invocation.
+
+**For Phase 5 quality tickets:**
+- Preserve the per-test recommendation (DELETE / REWRITE / SIMPLIFY). For DELETE: include the "if the test covers real behavior, rewrite instead of delete" caveat from the reviewer so the implementer doesn't blindly remove tests with hidden value.
+
+**For the fuzz tooling recommendation (if Phase 4 reported absence):**
+- Optional ticket: "Adopt fuzz testing infrastructure for [language]" with the agent's tooling recommendation as the body. Cut only if the operator approves it during step 8a.
+
+**Labels:** Apply phase-type labels (`test-coverage`, `integration-test`, `e2e`, `fuzz`, `test-quality`) when the tracker supports them. The implementation may apply a `test` umbrella label if one exists.
+
+After all tickets are created, report the URLs to the operator and exit.
+
+### Orchestrator-Invoked Behavior
+
+When `/review-test` is invoked by an orchestrator (`/lead-project`, `/review-deep`, `/implement-project`), the workflow above is unchanged. The skill proposes the ticket structure to the orchestrator, which applies its own judgment per [`references/autonomy.md`](../../references/autonomy.md) — approving, editing, or declining the proposal, then deciding which of any created tickets to work in the current flow versus defer.
+
+The contract change versus pre-v9.0.0 is that test work surfaced by `/review-test` is now durably documented in the tracker rather than implemented in-skill via SME routing. The orchestrator's decision-making is otherwise unchanged.
 
 ## Agent Coordination
 
@@ -838,19 +480,19 @@ EOF
 **Phase 3 analysis:** Spawn single `qa-test-e2e-reviewer` agent (which performs the webapp gate first).
 **Phase 4 analysis:** Spawn single `qa-test-fuzz-reviewer` agent.
 **Phase 5 analysis:** Spawn `qa-test-reviewer` agent(s). For large scopes, partition and run in parallel.
-**Implementation (all phases):** Parallel by file. Group findings by target file, spawn one SME per file. Phase 3 infrastructure setup uses `swe-sme-typescript` for Playwright-prescribed Mode A.
+
+**No remediation agents.** Step 8 cuts tickets via the tracker integration; no `swe-sme-*` or `qa-engineer` invocations happen inside `/review-test`. Test design and implementation are handled out-of-skill by `/implement` or `/implement-project` against the cut tickets.
 
 **Fresh instances:** Every agent spawn is a fresh instance. No state carried between invocations.
 
 **State to maintain (as orchestrator):**
 - Scope (shared across all phases)
-- Coverage command and baseline metrics
+- Coverage command and baseline metrics (Phase 1)
 - Webapp detection result (used to skip Phase 3 cleanly)
 - Confirmed journey classification (Phase 3, after user correction)
-- User selections for each phase
-- Implementation results per phase
-- Refactoring suggestions (held for final summary)
-- Running totals for summary
+- Per-phase findings (accumulating)
+- Refactoring suggestions (held for informational section of consolidated report)
+- Tickets created at step 8 (if any)
 
 ## Abort Conditions
 
@@ -860,10 +502,149 @@ EOF
 
 **Do NOT abort for:**
 - Coverage command failure (fall back to manual analysis)
-- Phase 2 reporting "no findings" (Mode B with no gaps; report and proceed)
+- Phase 2 reporting "no findings" (Mode B with no gaps; record and proceed)
 - Phase 3 webapp gate negative (skip cleanly to Phase 4)
-- Phase 4 finding no fuzz infrastructure (skip phase, continue)
-- Individual SME failures (report and continue)
-- Test suite failures after changes (report and let user decide)
-- Any single phase finding no issues (report and continue to next phase)
-- Integration or E2E suite not run in verify steps (this is intentional — user runs them ad-hoc)
+- Phase 4 finding no fuzz infrastructure (record tooling recommendation as informational; continue)
+- Any single phase finding no issues (record and continue to next phase)
+- Operator declining to cut tickets at step 8 — review report stands alone
+- Tracker unavailable when the operator has approved ticket creation — surface the error; preserve the approved ticket set in the completion summary so the operator can create the tickets manually
+
+## Integration with Other Skills
+
+**`/review-test` vs `/test-mutation`:** Complementary. `/review-test` builds breadth (surfaces gap and quality tickets); `/test-mutation` builds depth (verifies that existing tests actually catch bugs). Recommended sequence: `/review-test` → work the cut tickets via `/implement` or `/implement-project` → `/test-mutation` to strengthen.
+
+**`/review-test` before `/refactor`:** Run `/review-test` first to ensure the test suite is strong enough to catch regressions before refactoring. Note that gaps surfaced this way land as tickets, not as immediately-filled tests — work the cut tickets via `/implement` before invoking `/refactor` if immediate strengthening is needed.
+
+## Example Session
+
+```
+> /review-test
+
+What should I review?
+> Entire project
+
+## Phase 1: Unit Coverage Gap Analysis
+
+Overall coverage: 68.3% lines (baseline)
+
+### CRITICAL (2 found)
+1. [ADD] auth.go:ValidateJWT (lines 45-72) — JWT validation error paths untested
+   Risk: Invalid tokens could bypass authentication
+2. [ADD] payment.go:ChargeCard (lines 88-120) — Retry and failure logic untested
+   Risk: Silent charge failures or double charges
+
+### HIGH (3 found)
+3. [ADD] parser.go:ParseConfig (lines 30-55) — Malformed input handling untested
+4. [ADD] api.go:CreateUser (lines 15-40) — Duplicate email conflict untested
+5. [ADD] middleware.go:RateLimit (lines 22-45) — Limit exceeded path untested
+
+### LOW (2 found)
+6. [ADD] config.go:Defaults (lines 5-12) — Default value coverage
+7. [ADD] router.go:RegisterRoutes (lines 8-25) — Route registration
+
+## Phase 2: Integration Coverage
+
+Integration test posture: NONE DETECTED (Mode A)
+Seams identified: 4 (PostgreSQL, Redis cache, Stripe API, Kafka consumer)
+
+### Proposed Strategy
+- Service-level integration tests using testcontainers for Postgres + Kafka
+- HTTP-level tests against the spun-up app with a real DB
+
+### Proposed Infrastructure
+- `make integration-test` with `//go:build integration` tag
+- `docker-compose.test.yml` for Postgres + Kafka
+- `tests/integration/README.md`
+
+### Starter Tests (5)
+1. [ADD] Signup → DB persistence → email queued (CRITICAL flow)
+2. [ADD] Payment webhook handling → Stripe sig verification → DB write
+3. [ADD] Login → session token issuance → Redis store
+4. [ADD] Order placement → queue produce → consumer process
+5. [ADD] Account deletion → cascade across tables
+
+## Phase 3: E2E Coverage — confirm journey classification
+
+Webapp detection: DETECTED via @playwright/test in package.json + React deps
+
+### Critical User Journeys (please confirm)
+CRITICAL: Signup, Login, Checkout
+IMPORTANT: Password reset, Profile settings
+
+⚠️  Journey classification is the most subjective part of this analysis.
+
+Are these classifications correct?
+> Yes
+
+### Mode A — Playwright prescribed
+
+Infrastructure: playwright.config.ts, tests/e2e/, npm run test:e2e, seeding script.
+Starter tests: 5 (Signup, Login, Checkout happy path, Password reset, Profile update).
+Out of scope: visual regression, a11y, performance, mobile-native, component tests.
+
+## Phase 4: Fuzz Coverage
+
+Fuzz infrastructure: native testing.F (Go 1.22)
+Existing fuzz tests: 2
+
+### HIGH (2 found)
+1. [ADD] parser.go:ParseConfig — Parses user-provided YAML config
+2. [ADD] protocol.go:DecodeMessage — Decodes wire protocol messages
+
+## Phase 5: Test Quality Audit
+
+### Tautological (2 found) — DELETE
+- model_test.go:TestUserStruct — Checks struct field existence
+- config_test.go:TestDefaultConfig — Asserts hardcoded values against themselves
+
+### Brittle (2 found) — REWRITE
+- api_test.go:TestCreateUserError — Exact error string match
+- handler_test.go:TestNotFound — Asserts full JSON response body
+
+### Missing Coverage (1 found) — ADD
+- auth.go:RevokeToken — No tests for revocation path
+
+### Redundant (1 noted — informational)
+- math_test.go:TestAddVariants — 5 cases hitting same code path
+
+## Refactoring for Testability (informational)
+
+1. internal/scheduler/queue.go — global mutable state prevents isolated testing.
+   Suggestion: thread a `Clock` interface through Schedule() so time can be controlled.
+   Would enable testing: timeout / retry edge cases without sleep().
+
+Proposed ticket structure for this review:
+
+Phase 1: 7 gaps (2 CRITICAL, 3 HIGH, 2 LOW)
+Phase 2: Mode A — full starter strategy (infra + 5 tests)
+Phase 3: Mode A — full Playwright starter strategy (infra + 5 tests)
+Phase 4: 2 fuzz candidates (HIGH)
+Phase 5: 5 findings (2 DELETE, 2 REWRITE, 1 ADD; 1 redundant — informational)
+
+Proposed: 8 tickets
+  - 1 ticket per CRITICAL unit gap (2 tickets)
+  - 1 batch ticket: "Phase 1 — HIGH/LOW unit coverage gaps" (5 gaps)
+  - 1 ticket: "Set up integration test infrastructure + 5 starter tests"
+  - 1 ticket: "Set up Playwright E2E infrastructure + 5 starter tests"
+  - 1 batch ticket: "Phase 4 — Fuzz test additions" (2 candidates)
+  - 1 batch ticket: "Phase 5 — Test quality cleanup" (DELETE + REWRITE + ADD)
+  - (Refactor-for-testability suggestion held as informational — no ticket
+     unless you'd like one)
+
+Approve / edit / decline?
+> Approve, and please add a ticket for the queue.go refactor-for-testability item.
+
+Editing structure: + 1 ticket "Refactor scheduler.queue.go to enable timeout testing"
+
+Final structure: 9 tickets. Creating...
+  #N — [Phase 1 CRITICAL] Add unit tests for auth.ValidateJWT error paths
+  #N — [Phase 1 CRITICAL] Add unit tests for payment.ChargeCard retry/failure
+  #N — [Phase 1 HIGH/LOW] Unit coverage gap batch (5 gaps)
+  #N — [Phase 2 Mode A] Integration test infrastructure + 5 starter tests
+  #N — [Phase 3 Mode A] Playwright E2E infrastructure + 5 starter tests
+  #N — [Phase 4] Fuzz test additions for parser and protocol (2 candidates)
+  #N — [Phase 5] Test quality cleanup (delete tautological, rewrite brittle)
+  #N — [Refactor-for-testability] Thread Clock interface through scheduler.queue
+
+8 tickets created. Review complete.
+```

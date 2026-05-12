@@ -236,10 +236,12 @@ Wait for user confirmation before executing.
 | Change mesh format/topology | Remesh | `POST /openapi/v1/remesh` | 5 |
 | Add skeleton to character | Auto-Rigging | `POST /openapi/v1/rigging` | 5 (includes walking + running) |
 | Animate a rigged character (custom) | Animation | `POST /openapi/v1/animations` | 3 |
-| 2D image from text | Text to Image | `POST /openapi/v1/text-to-image` | 3–9 |
-| Transform a 2D image | Image to Image | `POST /openapi/v1/image-to-image` | 3–9 |
-| Check credit balance | Balance | `GET /openapi/v1/balance` | 0 |
+| 2D image from text (recommended pre-step before image-to-3d) | Text to Image | `POST /openapi/v1/text-to-image` | 3–9 |
+| Optimize/edit a 2D image (recommended pre-step before image-to-3d) | Image to Image | `POST /openapi/v1/image-to-image` | 3–9 |
+| Check FDM printability (watertight / non-manifold edges / holes) | Analyze Printability | `POST /openapi/v1/print/analyze` | **0 (free)** |
+| Repair non-manifold/degenerate-face/hole topology | Repair Printability | `POST /openapi/v1/print/repair` | 10 |
 | Multi-color 3D print | Multi-Color Print | `POST /openapi/v1/print/multi-color` | 10 |
+| Check credit balance | Balance | `GET /openapi/v1/balance` | 0 |
 
 ---
 
@@ -435,6 +437,32 @@ print(f"  Formats: {', '.join(task['model_urls'].keys())}")
 ```
 
 > **Refine compatibility**: All models (meshy-5, meshy-6, latest) support both preview and refine. The preview and refine `ai_model` should match — mismatched models may return 400 (model mismatch).
+
+### (Optional but strongly recommended) 2D Optimization Pre-Step
+
+Image quality directly determines 3D model quality. Before calling `/openapi/v1/image-to-3d` or `/openapi/v1/multi-image-to-3d`, evaluate the user's input and proactively suggest a 2D pass:
+
+| User input | Recommended pre-step |
+|---|---|
+| Only a text description, no reference image | `/openapi/v1/text-to-image` with `nano-banana-pro`. For characters add `generate_multi_view: True` and `pose_mode: "a-pose"` or `"t-pose"` for rig-friendly output. |
+| Reference image is low-resolution / cluttered background / unclear subject / bad lighting | `/openapi/v1/image-to-image` with `nano-banana-pro` to clean up (remove background, raise resolution, normalize lighting, fill occlusions). |
+| User wants to adjust style / colors / details | `/openapi/v1/image-to-image` for style transfer, then 3D-ify. |
+
+The optimized image URL feeds directly into `/openapi/v1/image-to-3d`'s `image_url`. **3-9 extra credits typically buy a noticeable quality bump**, and downstream `refine` / texture-on-mesh stages benefit too.
+
+**Skip when**: the user already provided a clean front-facing studio shot — go straight to image-to-3d.
+
+```python
+# Example: text-only request → text-to-image → image-to-3d
+img_id = create_task("/openapi/v1/text-to-image", {
+    "ai_model": "nano-banana-pro",
+    "prompt": "studio render of a sci-fi helmet, neutral background, even lighting",
+    "aspect_ratio": "1:1",
+    # "generate_multi_view": True,   # for character meshes use multi-view + pose_mode
+})
+img_task = poll_task("/openapi/v1/text-to-image", img_id)
+generated_image_url = img_task["image_urls"][0]   # use as input for image-to-3d below
+```
 
 ### Image to 3D
 

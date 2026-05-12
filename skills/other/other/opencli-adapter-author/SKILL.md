@@ -10,7 +10,7 @@ allowed-tools: Bash(opencli:*), Read, Edit, Write, Grep
 
 全程用现有工具：`opencli browser *` / `opencli doctor` / `opencli browser init` / `opencli browser verify`。没有新命令。
 
-调试浏览器型 adapter 时，优先直接带上 `--live --focus`。这样命令跑完后 automation window 还在，而且在前台，方便你核对最终页面状态，而不是猜是抓数错了还是页面走偏了。
+调试浏览器型 adapter 时，优先直接带上 `--trace on --live --focus`。`--trace on` 每轮都落 trace artifact，`summary.md` 是失败/成功复盘入口；`--live --focus` 让 automation lease 保留且容器在前台，方便核对最终页面状态。
 
 ---
 
@@ -82,7 +82,7 @@ START
   │
   ▼
 ┌──────────────────────────┐
-│ opencli browser verify    │── 失败 ──→ autofix skill，回对应步骤
+│ opencli browser verify    │── 失败 ──→ autofix skill，用 --trace retain-on-failure 回对应步骤
 └──────────────────────────┘
   │ 成功
   ▼
@@ -163,7 +163,7 @@ DONE
 | | 200 但 `data: []` 空 | 参数传错 / 接口换版，回 §1 看 network 里真实请求头 |
 | Step 7 字段解码 | 排序键对比推不出 | field-decode-playbook.md §3 结构差分 |
 | | 还推不出 | 先输出 raw，adapter 跑起来再迭代 |
-| Step 10 verify 失败 | `fltt` 漏了 / 字段映射错 | autofix skill |
+| Step 10 verify 失败 | `fltt` 漏了 / 字段映射错 | autofix skill；复现命令加 `--trace retain-on-failure` |
 | | 某列永远是 `null` | 字段路径错了，回 Step 7 |
 | Step 10 verify fixture mismatch | `[pattern]` row[i] 报错 | 先肉眼比对网页值；值对 → 是 fixture pattern 太严，放宽；值不对 → 字段映射错 |
 | | `[column] missing column "X"` | 实际 response 没这列（站点改版 or args 影响）；重新 `--update-fixture` 或修 adapter |
@@ -187,6 +187,7 @@ DONE
 | `references/site-memory.md` | 总览：in-repo 种子 + 本地 `~/.opencli/sites/` 的两层结构 |
 | `references/site-memory/<site>.md` | Step 2 读站点公共知识（eastmoney / xueqiu / bilibili / tonghuashun 已铺） |
 | `references/success-rate-pitfalls.md` | Step 7 / 11 踩坑前翻：10 种"verify 能过但数据是错的"静默失败 |
+| `references/jsdom-fixture-pattern.md` | 当 adapter 走 `page.evaluate` 内 DOM 抽取、且 mocked-evaluate 单测漏 silent bug 时——把 HTML 冻进 `clis/<site>/__fixtures__/` 用 JSDOM 跑（含 fixture 创建 mandatory `awk 'NF>0'` 收紧 + reverse-validate 纪律） |
 
 ---
 
@@ -198,6 +199,7 @@ DONE
 - 写私人 adapter 用 `~/.opencli/clis/<site>/<name>.js`（免 build）；要提 PR 才 copy 到 `clis/<site>/<name>.js`
 - 站点记忆每轮回写：没记忆 → 用 skill → 产生记忆 → 下次变 5 分钟
 - **调试过程中的原始 dump / 抓包 / HTML 样本只能落在 `~/.opencli/sites/<site>/fixtures/` 或 `/tmp/`。严禁在 repo 根目录、`clis/<site>/` 或当前工作目录留 `.dbg-*.html / raw-*.json / sample.*` 这类临时文件**（PR diff 会带上去，别人 review 时很烦）。
+- **JSDOM unit-test fixture（`clis/<site>/__fixtures__/<command>.html`）是上面那条的例外**——它是有意 commit 进 repo 的 review artifact，不是临时 dump。但因此 quality bar 要更高：必须按 `references/jsdom-fixture-pattern.md` 的 5 步做完（含 mandatory `awk 'NF>0'` 空白行收紧），并 reverse-validate 一道证明 regression guard 真能挂。
 
 ---
 

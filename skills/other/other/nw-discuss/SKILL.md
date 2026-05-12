@@ -15,6 +15,137 @@ Execute DISCUSS wave through Luna's integrated workflow: JTBD analysis|UX journe
 
 For greenfield projects (no src/ code, no docs/feature/ history), Luna proposes Walking Skeleton as Feature 0.
 
+## Output Tiers (per D2)
+
+Provenance: feature `lean-wave-documentation` — D2 (schema-typed sections), DDD-7 (DISCUSS pilot wave). The DISCUSS wave emits a single `feature-delta.md` whose headings are typed `[REF]` (always emitted) or `[WHY]/[HOW]` (lazy expansions). Tier-1 is the always-on baseline; Tier-2 is the lazily-rendered expansion catalog.
+
+### Tier-1 [REF] — always emitted
+
+Tier-1 sections constitute the lean-default baseline. Every DISCUSS run emits at minimum these sections under `## Wave: DISCUSS / [REF] <Section>` headings:
+
+- Persona ID — one-line user identifier mapped to the journey
+- JTBD one-liner — single-sentence Job-to-be-Done statement
+- Locked decisions — D-numbered design decisions with verdicts
+- User stories with elevator pitches — every story has Before/After/Decision-enabled triplet
+- Acceptance criteria (ACs) — testable, embedded per story
+- Definition of Done (DoD) — 9-item checklist
+- Out-of-scope — explicit non-goals
+- WS strategy — A/B/C/D per Mandate 5
+- Driving ports — inbound surfaces (CLI, skill, HTTP)
+- Pre-requisites — dependencies on prior waves or features
+
+### Tier-2 EXPANSION CATALOG — lazy, on-demand (per D10)
+
+Tier-2 items are NOT emitted by default. They are rendered only when explicitly requested via `--expand <id>` (DDD-2) or via the wave-end interactive prompt when `expansion_prompt = "ask"`. Each item has a one-line description (per D10) so the menu fits in a single render. Each emitted Tier-2 section is headed `## Wave: DISCUSS / [WHY] <Section>` or `## Wave: DISCUSS / [HOW] <Section>`.
+
+| Expansion ID | Tier label | One-line description |
+|---|---|---|
+| `jtbd-narrative` | [WHY] | Full JTBD analysis: job dimensions (functional/emotional/social), four forces, opportunity scores |
+| `persona-narrative` | [WHY] | Extended persona: goals, frustrations, mental model, vocabulary glossary |
+| `alternatives-considered` | [WHY] | Decision rationale: alternatives weighed and rejected per locked decision |
+| `migration-playbook` | [HOW] | Step-by-step migration guide for users on a prior version |
+| `journey-deep-dive` | [HOW] | Full UX journey: emotional arc, shared artifacts registry, error-path map |
+| `gherkin-scenarios` | [HOW] | Generated Gherkin scenarios covering happy path and key error paths |
+| `reviewer-findings-trace` | [WHY] | R1-R10 reviewer findings chain with verdicts and how each landed in D1-D10 |
+| `expansion-catalog-rationale` | [WHY] | Why this set of expansions, why these defaults, why D10 enforces one-line descriptions |
+
+## Density resolution (per D12)
+
+Provenance: D12 (rigor cascade), DDD-5 (density resolver shared utility), Decision 4 (2026-04-28: lean+ask-intelligent default with explicit triggers). Before emitting any Tier-1 section, resolve the active documentation density:
+
+1. **Read** `~/.nwave/global-config.json`. Treat missing/malformed config as empty dict (fall back to defaults).
+2. **Call** `resolve_density(global_config)` from `scripts/shared/density_config.py`. The function returns a `Density` value object with fields `mode` (`"lean"` | `"full"`), `expansion_prompt` (`"ask"` | `"always-skip"` | `"always-expand"` | `"smart"` | `"ask-intelligent"`), and `provenance` (the cascade branch that produced this result).
+3. **Branch on `density.mode`**:
+   - `lean` → emit ONLY Tier-1 `[REF]` sections under `## Wave: DISCUSS / [REF] <Section>` headings. Do NOT auto-render Tier-2 items.
+   - `full` → emit Tier-1 `[REF]` sections PLUS all Tier-2 expansion items rendered under their `[WHY]` / `[HOW]` headings. This is auto-expansion (no menu).
+4. **At wave end**, branch on `density.expansion_prompt`:
+   - `"ask"` → present the FULL expansion menu (Tier-2 catalog above with one-line descriptions per D10) and append user-selected items as `## Wave: DISCUSS / [WHY|HOW] <Section>` headings.
+   - `"ask-intelligent"` → run trigger detection (see table below). If NO trigger fires, emit no menu (silent lean). If 1+ trigger fires, present a SCOPED menu containing ONLY the suggested expansions for the triggers that fired. This is the fresh-install hard default per Decision 4.
+   - `"always-skip"` → no menu, no extra sections (idempotent re-runs, CI mode).
+   - `"always-expand"` → equivalent to `mode = "full"` for this run; auto-render every Tier-2 item.
+   - `"smart"` → out of scope for v1 (per OQ-3); treat as `"ask-intelligent"` until heuristic is empirically tuned.
+
+The resolver itself encodes the D12 cascade: explicit `documentation.density` override > `rigor.profile` mapping (`lean`→`lean`+`always-skip`, `standard`→`lean`+`ask-intelligent`, `thorough`→`full`+`always-expand`, `exhaustive`→`full`+`always-expand`, `custom`→`lean`+`ask-intelligent`) > hard default `lean`+`ask-intelligent`. This skill MUST NOT replicate the cascade locally — call `resolve_density(global_config)` and trust its output.
+
+### Trigger detection (`ask-intelligent` mode, per Decision 4)
+
+When `expansion_prompt = "ask-intelligent"`, evaluate ALL triggers below against the wave artifacts produced so far. Each trigger that fires contributes its suggested expansion to a scoped menu shown to the user. If NO trigger fires, emit no menu — strict lean output.
+
+| Trigger | Detection criterion | Suggested expansion |
+|---------|--------------------|--------------------|
+| AC ambiguity | ≥2 user stories share an AC where reasonable readers could disagree on the outcome (e.g. underspecified state, missing precondition, vague verb) | `gherkin-scenarios` |
+| Cross-context complexity | Feature touches ≥3 bounded contexts (per DDD glossary) OR ≥3 distinct technologies | `alternatives-considered` |
+| Multi-stakeholder need | ≥3 distinct personas referenced across the user stories | `persona-narrative` |
+| Compliance / regulatory | ACs reference regulatory terms (GDPR, HIPAA, SOX, audit, retention, encryption, PII, data residency) | `migration-playbook` (if data migration) OR `journey-deep-dive` (if user-facing compliance journey) |
+| WS strategy = D | Walking Skeleton strategy is "Configurable" (env-switching) | `alternatives-considered` |
+
+Menu presentation when 1+ trigger fires:
+
+```
+Suggested expansions for this feature (triggered by: {trigger names}):
+  - {expansion-id-1}: {one-line description}
+  - {expansion-id-2}: {one-line description}
+Apply? [Y/n/all/none/custom]
+```
+
+Do NOT show the generic 8-item Tier-2 expansion catalog in `ask-intelligent` mode — only the triggered items. The user retains the ad-hoc override path ("expand <X>") for any catalog item even when not triggered.
+
+Emit one `DocumentationDensityEvent` per scoped-menu choice (telemetry section below). When NO trigger fires, emit one `choice = "skip"` event with `expansion_id = "*"` to record the silent-lean opportunity.
+
+**Section heading prefix convention (per D2)**: every emitted section starts with `## Wave: DISCUSS / [REF] <Section>` for Tier-1; `## Wave: DISCUSS / [WHY] <Section>` or `## Wave: DISCUSS / [HOW] <Section>` for Tier-2. Validator `scripts/validation/validate_feature_delta.py` enforces the regex `^## Wave: \w+ / \[(REF|WHY|HOW)\] .+$` on every wave heading.
+
+### Ad-hoc override — user request mid-session
+
+Even when `density.mode = "lean"` and `density.expansion_prompt = "always-skip"`, the user may ask DURING the wave session for specific expansions:
+
+- "expand jtbd" / "expand jtbd-narrative" / "more on jtbd"
+- "add alternatives considered"
+- "show migration playbook"
+- "tell me why" (interpretive — append the WHY rationale section relevant to the most recent decision)
+- "more on <X>" (where `<X>` is one of the expansion catalog items for this wave)
+
+When the user makes such a request:
+
+1. Append the corresponding `[WHY]` or `[HOW]` section to `feature-delta.md` under the current wave's heading.
+2. Emit a `DocumentationDensityEvent` with `choice="expand"` and `expansion_id=<the requested item>` to `JsonlAuditLogWriter`.
+3. Do NOT modify `~/.nwave/global-config.json`. The override is ONE-SHOT for this wave only.
+
+If the user's request matches NO item in this wave's Expansion Catalog, respond with the catalog list (one-line description per item per D10) and ask for clarification — do NOT improvise an expansion outside the catalog.
+
+## Telemetry (per D4 + DDD-6)
+
+Provenance: D4 (telemetry schema instrumented day-one), D6 (first-install pedagogical prompt creates audit signal), DDD-6 (telemetry event class lives in DES domain, writer reused). Every expansion choice — whether the user expanded an item or skipped the menu — emits a structured event to the existing `JsonlAuditLogWriter` driven adapter.
+
+**Event type**: `DocumentationDensityEvent` (dataclass at `src/des/domain/telemetry/documentation_density_event.py`).
+
+**Schema fields** (per D4):
+
+```
+{
+  "feature_id": "<feature-id>",
+  "wave": "DISCUSS",
+  "expansion_id": "<id-from-catalog-or-'*'-for-skip-all>",
+  "choice": "skip" | "expand",
+  "timestamp": "<ISO-8601 datetime>"
+}
+```
+
+**Emission pattern**:
+
+1. Construct a `DocumentationDensityEvent(feature_id=..., wave="DISCUSS", expansion_id=..., choice=..., timestamp=...)`.
+2. Call `event.to_audit_event()` to convert to the open `AuditEvent` shape (`event_type="DOCUMENTATION_DENSITY"` and the schema fields nested under `data`).
+3. Dispatch via `JsonlAuditLogWriter().log_event(audit_event)`.
+
+The wave-skill harness invokes the helper `scripts/shared/telemetry.py:write_density_event(...)` which performs all three steps. This skill MUST NOT bypass the helper or write JSONL directly — every density telemetry event flows through the shared helper to keep the audit-log schema consistent.
+
+**When to emit**:
+- One event per user choice in the expansion menu when `expansion_prompt = "ask"` (`choice = "expand"` for selected items, `choice = "skip"` with `expansion_id = "*"` if the user skips the entire menu).
+- One synthetic `choice = "skip"` event with `expansion_id = "*"` when `expansion_prompt = "always-skip"` (records the skipped menu opportunity).
+- One `choice = "expand"` event per Tier-2 item rendered when `mode = "full"` or `expansion_prompt = "always-expand"`.
+- For `expansion_prompt = "ask-intelligent"` (Decision 4): one `choice = "expand"` event per scoped-menu item the user accepts; one `choice = "skip"` event with `expansion_id = "*"` when no triggers fire (silent-lean opportunity); one `choice = "skip"` event with `expansion_id = "*"` when triggers fire but the user declines all suggestions.
+
+This telemetry feeds the DDD-7 pilot success metric (4): "downstream agent regression — DESIGN consumes lean DISCUSS feature-delta.md and produces no `--expand` invocation". The `JsonlAuditLogWriter` persists the trail; no new driven port is introduced.
+
 ## Interactive Decision Points
 
 ### Decision 1: Feature Type
@@ -43,8 +174,10 @@ For greenfield projects (no src/ code, no docs/feature/ history), Luna proposes 
 ### Decision 4: JTBD Analysis
 **Question**: Include Jobs-to-be-Done analysis?
 **Options**:
-1. Yes -- recommended when user motivations are unclear or multiple jobs compete
-2. No -- skip JTBD, proceed directly to journey design (default)
+1. Yes -- mandatory by default. Every user-facing story must trace to a `job_id` in `docs/product/jobs.yaml`. Stories without job traceability fail Definition of Ready.
+2. No (infrastructure-only escape valve) -- only permitted when the feature is a pure internal change (e.g. rename internal module, refactor build script) with no user-visible behavior. Requires `job_id: infrastructure-only` AND a `infrastructure_rationale` field on every story explaining why no user job applies. Reviewer will reject this option for any feature that touches user-facing surfaces.
+
+Default: 1 (Yes). Rationale: STANDING rule "Tech-surface vs value-outcome backlog anti-pattern" (2026-04-24) — epics with tech-surface children but no JTBD framing fail to converge on done-state. Default-on JTBD enforces value-outcome framing at PO level.
 
 ## Prior Wave Consultation
 
@@ -79,8 +212,8 @@ When DISCUSS decisions change assumptions established in DISCOVER:
 
 @nw-product-owner
 
-IF Decision 4 = Yes: Execute *jtbd-analysis for {feature-id}, then *journey informed by JTBD artifacts, then *story-map, then *gather-requirements with outcome KPIs.
-IF Decision 4 = No (default): Execute *journey for {feature-id}, then *story-map, then *gather-requirements with outcome KPIs.
+IF Decision 4 = Yes (default): Execute *jtbd-analysis for {feature-id}, then *journey informed by JTBD artifacts, then *story-map, then *gather-requirements with outcome KPIs. Every user story must include a `job_id` field traceable to `docs/product/jobs.yaml`.
+IF Decision 4 = No (infrastructure-only escape valve): Execute *journey for {feature-id}, then *story-map, then *gather-requirements with outcome KPIs. Every story must use `job_id: infrastructure-only` AND include an `infrastructure_rationale` field. Reviewer rejects this branch for any user-facing feature.
 
 Context files: see Prior Wave Consultation above + project context files.
 
@@ -95,9 +228,9 @@ Context files: see Prior Wave Consultation above + project context files.
 
 At the start of execution, create these tasks using TaskCreate and follow them in order:
 
-### Phase 1: Jobs-to-be-Done Analysis (OPTIONAL — when Decision 4 = Yes)
+### Phase 1: Jobs-to-be-Done Analysis (DEFAULT — when Decision 4 = Yes; SKIPPED only for infrastructure-only escape valve)
 
-Grounds all subsequent artifacts in real user motivations.
+Grounds all subsequent artifacts in real user motivations. Mandatory unless Decision 4 = No (infrastructure-only); reviewer enforces job traceability as a hard-blocking DoR check.
 
 1. **Job Discovery** — Ask user what users are trying to accomplish. Capture in job story format: "When [situation], I want to [motivation], so I can [outcome]." Gate: all primary jobs documented in job story format.
 2. **Job Dimensions** — For each job, identify functional (practical task), emotional (desired feeling), and social (desired perception) dimensions. Gate: three dimensions documented per job.
@@ -110,6 +243,10 @@ Grounds all subsequent artifacts in real user motivations.
 | Job Stories | `docs/feature/{feature-id}/discuss/jtbd-job-stories.md` |
 | Four Forces | `docs/feature/{feature-id}/discuss/jtbd-four-forces.md` |
 | Opportunity Scores | `docs/feature/{feature-id}/discuss/jtbd-opportunity-scores.md` (when multiple jobs) |
+
+### Phase 1.5: Scope Assessment (Elephant Carpaccio early gate)
+
+**Per Decision 3 (2026-04-28)**: scope assessment runs BEFORE journey visualization investment to detect oversized features early and save rework. The agent (`nw-product-owner`) runs this as workflow Phase 2 (between Discovery and Journey Visualization). Heuristics: oversized signals (any 2+) = >10 user stories | >3 bounded contexts or modules | walking skeleton requires >5 integration points | estimated effort >2 weeks | multiple independent user outcomes that could ship separately. If oversized: propose splitting into independent thin end-to-end slices, ask user to confirm split before continuing. If right-sized: note `## Scope Assessment: PASS` in `wave-decisions.md`. Deeper Elephant Carpaccio slicing happens later in Phase 2.5 (User Story Mapping). Gate: scope assessed; right-sized OR user-approved split confirmed.
 
 ### Phase 2: Journey Design
 
@@ -155,9 +292,9 @@ Luna loads `user-story-mapping` skill before this phase.
 
 ### Phase 3: Requirements and User Stories
 
-Luna crafts LeanUX stories informed by JTBD + journey artifacts. Every story traces to at least one job story. Validates against DoR, invokes peer review, prepares handoff.
+Luna crafts LeanUX stories informed by JTBD + journey artifacts. Every story traces to at least one job story. Validates against DoR, prepares handoff. Per-wave peer review is OPTIONAL — the mandatory review gate is consolidated at end of DISTILL where Eclipse + Architect + Forge + Sentinel run in parallel against the full feature-delta.md (all 4 waves visible). Invoke per-wave review explicitly via `/nw-review` only when uncertainty warrants early feedback (e.g., novel domain, contested DoR, vendor-neutrality risk).
 
-1. **Story Drafting** — Craft user stories in LeanUX format. Each story traces to at least one job story from Phase 1 (or states "JTBD skipped" if Decision 4 = No). Gate: every story has a job traceability reference.
+1. **Story Drafting** — Craft user stories in LeanUX format. Each story MUST trace to at least one `job_id` referencing a job in `docs/product/jobs.yaml` (Phase 1 output when Decision 4 = Yes). Infrastructure-only escape valve (Decision 4 = No): every story uses `job_id: infrastructure-only` AND includes an `infrastructure_rationale` field documenting why no user job applies — reviewer rejects this for user-facing features. Gate: every story has a job traceability reference (real `job_id` OR `infrastructure-only` with rationale).
 1b. **Elevator Pitch Test (MANDATORY, per-story)** — Every user story MUST contain an `### Elevator Pitch` subsection immediately after the story narrative, with exactly these three lines:
 
 ```markdown
@@ -173,13 +310,15 @@ Rules:
 - The "Decision enabled" line is the Job-to-be-Done connection: if the user cannot make any decision with the output, the story is infrastructure, not value — merge it into the story that DOES enable a decision
 - If a story legitimately has no user-visible output (pure infra migration), it MUST be labelled `@infrastructure` and BLOCK the slice — a slice containing only `@infrastructure` stories cannot be released
 
-Gate: every non-`@infrastructure` story has a complete Elevator Pitch. Slices with only `@infrastructure` stories are flagged for re-slicing.
+**Slice composition hard gate (per Decision 2)**: any slice that contains ONLY `@infrastructure` stories (zero user-visible value stories) is a structural failure. The reviewer (`nw-product-owner-reviewer`) will REJECT the story-map and set verdict to `rejected_pending_revisions`. The PO must either (a) merge the slice with an adjacent value-bearing slice, or (b) split the `@infrastructure` work to land BEFORE the slice as a precursor commit (not a separately-shipped slice). This is hard-blocking: structural failure, not nit.
+
+Gate: every non-`@infrastructure` story has a complete Elevator Pitch. Every slice contains at least one user-visible value story (slice composition hard gate).
 
 2. **Acceptance Criteria** — Embed testable acceptance criteria in each story. Gate: every AC is verifiable without ambiguity. AC MUST verify the Elevator Pitch's "After" command produces the "sees" output end-to-end.
 3. **Requirements Completeness** — Calculate requirements completeness score. Gate: score > 0.95.
 4. **Outcome KPIs** — Define measurable outcome KPIs with targets. Gate: each KPI has a numeric target and measurement method.
 5. **DoR Validation** — Validate all 9 DoR items with evidence. Gate: DoR passed with evidence for all 9 items.
-6. **Peer Review** — Invoke peer review. Gate: review approved.
+6. **Peer Review (OPTIONAL — per-wave; mandatory at end of DISTILL)** — Per-wave Eclipse review is opt-in. Invoke explicitly via `/nw-review nw-product-owner-reviewer` only if (a) DoR validation surfaced ambiguity, (b) JTBD assumptions are unverified, (c) vendor-neutrality risk in story ACs, or (d) user explicitly requests. Default: skip. The mandatory consolidated review covering DISCUSS+DESIGN+DEVOPS+DISTILL fires at end of DISTILL. Gate: optional unless triggered.
 7. **Handoff Preparation** — Confirm handoff acceptance by nw-solution-architect (DESIGN wave). Gate: handoff accepted.
 
 | Artifact | Path |
@@ -190,12 +329,12 @@ Gate: every non-`@infrastructure` story has a complete Elevator Pitch. Slices wi
 
 ## Success Criteria
 
-1. - [ ] (when JTBD selected) JTBD analysis complete: all jobs in job story format
-2. - [ ] (when JTBD selected) Job dimensions identified: functional|emotional|social per job
-3. - [ ] (when JTBD selected) Four Forces mapped per job (push|pull|anxiety|habit)
-4. - [ ] (when JTBD selected) Opportunity scores produced (when multiple jobs)
+1. - [ ] JTBD analysis complete: all jobs in job story format (mandatory unless infrastructure-only escape valve)
+2. - [ ] Job dimensions identified: functional|emotional|social per job
+3. - [ ] Four Forces mapped per job (push|pull|anxiety|habit)
+4. - [ ] Opportunity scores produced (when multiple jobs)
 5. - [ ] UX journey map with emotional arcs and shared artifacts
-6. - [ ] (when JTBD selected) Every journey maps to at least one job
+6. - [ ] Every journey maps to at least one job
 7. - [ ] Discovery complete: user mental model understood, no vague steps
 8. - [ ] Happy path defined: all steps start-to-goal with expected outputs
 9. - [ ] Emotional arc coherent: confidence builds progressively
@@ -204,10 +343,10 @@ Gate: every non-`@infrastructure` story has a complete Elevator Pitch. Slices wi
 12. - [ ] Outcome KPIs defined with measurable targets
 13. - [ ] Prioritization suggestions based on outcome impact
 14. - [ ] Requirements completeness score > 0.95
-15. - [ ] (when JTBD selected) Every user story traces to at least one job story
+15. - [ ] Every user story traces to at least one job story (or `job_id: infrastructure-only` with rationale)
 16. - [ ] All acceptance criteria testable
 17. - [ ] DoR passed: all 9 items validated with evidence
-18. - [ ] Peer review approved
+18. - [ ] Per-wave peer review (OPTIONAL — invoked only on trigger; mandatory consolidated review fires at end of DISTILL)
 19. - [ ] Handoff accepted by nw-solution-architect (DESIGN wave)
 
 ## Next Wave
@@ -241,21 +380,19 @@ Before completing DISCUSS, produce `docs/feature/{feature-id}/discuss/wave-decis
 
 This summary enables DESIGN to quickly assess DISCUSS outcomes. DESIGN reads this plus key artifacts (user-stories.md, story-map.md, outcome-kpis.md) rather than all DISCUSS files.
 
-## Expected Outputs
+## Outputs
 
-```
-docs/feature/{feature-id}/discuss/     (feature delta)
-  user-stories.md               (requirements + embedded AC, each story traces to a job)
-  story-map.md
-  dor-validation.md
-  outcome-kpis.md
-  wave-decisions.md
+**Single narrative file**: `docs/feature/{feature-id}/feature-delta.md` — all DISCUSS findings (Tier-1 [REF] sections + any rendered Tier-2 expansions) live here. User stories with embedded AC, story map, DoR validation, outcome KPIs, wave-decisions all become `## Wave: DISCUSS / [REF|WHY|HOW] <Section>` headings.
 
-docs/product/                          (SSOT updates)
-  journeys/{name}.yaml          (create or extend journey schema)
-  journeys/{name}-visual.md     (human-readable journey narrative)
-  jobs.yaml                     (add validated job if new)
-```
+**Machine artifacts** (declared, parseable by downstream waves):
+- `docs/feature/{feature-id}/slices/slice-NN-*.md` — slice briefs (one per elephant-carpaccio slice; consumed by DELIVER for roadmap step decomposition)
+
+**SSOT updates** (per Recommendation 3 / back-propagation contract):
+- `docs/product/jobs.yaml` — add validated job stories (functional/emotional/social dimensions, four forces, opportunity score)
+- `docs/product/journeys/{name}.yaml` — create or extend journey schema (refines DISCOVER seed)
+- `docs/product/personas/{name}.yaml` — create or extend persona profile
+
+Legacy multi-file outputs (`user-stories.md`, `story-map.md`, `dor-validation.md`, `outcome-kpis.md`, `wave-decisions.md`, `journey-{name}-visual.md` as separate files) are NOT produced — that content lives in `feature-delta.md`. Validator: `scripts/validation/validate_feature_layout.py`.
 
 ## Examples
 

@@ -1,6 +1,6 @@
 ---
 name: class-diagram
-description: "Generate class diagrams showing classes, interfaces, inheritance, and composition"
+description: 'Generate class diagrams showing classes, interfaces, inheritance, and composition.'
 ---
 
 # Class Diagram

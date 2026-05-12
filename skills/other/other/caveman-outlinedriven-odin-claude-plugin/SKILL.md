@@ -1,6 +1,7 @@
 ---
 name: caveman
-description: Verbosity-reduction response register. Drops redundant clauses, narrative hedging, and ceremony while preserving articles, grammar, and decision-oriented register. Trigger when user requests "caveman", "compact mode", "less tokens", "be brief", or when long sessions approach context-window pressure and concise grammatical English is needed.
+description: Verbosity-reduction response register. Drops redundant clauses, narrative hedging, and ceremony while preserving articles, grammar, and decision-oriented register. Trigger on "caveman", "compact mode", "less tokens", "be brief", or context-window pressure in long sessions.
+# auto-invoke: explicitly permitted — fires on description-match phrasings ("caveman", "be brief")
 ---
 
 Concise grammatical English — not telegraphic fragmentation. Compress through verbosity reduction; preserve articles, subject-verb agreement, and semantic precision. Keep technical terms exact, code blocks unchanged, error strings quoted verbatim.

@@ -1,66 +1,73 @@
 ---
 name: adr-index
-description: Build or rebuild the ADR index and dependency graph in AgentDB
+description: Build or rebuild the ADR index + dependency graph by running scripts/import.mjs (handles v3-style and plugin-style ADR formats; one Bash call vs hundreds of MCP round-trips)
 argument-hint: ""
-allowed-tools: mcp__claude-flow__agentdb_hierarchical-store mcp__claude-flow__agentdb_hierarchical-query mcp__claude-flow__agentdb_causal-edge mcp__claude-flow__agentdb_causal-query mcp__claude-flow__memory_store mcp__claude-flow__memory_search Bash Read Grep Glob
+allowed-tools: Bash mcp__claude-flow__memory_list mcp__claude-flow__memory_search
 ---
 
 # ADR Index
 
-Build or rebuild the full ADR index and dependency graph in AgentDB from the `docs/adr/` directory.
+Persists every ADR under `*/docs/adr/` or `*/docs/adrs/` to the `adr-patterns` namespace and every relationship (supersedes / amends / related / depends-on) to `adr-edges`. Handles both ADR formats found in the Ruflo monorepo:
+
+- **v3-style**: `# ADR-097: Title` heading + `**Status**: Proposed` line
+- **plugin-style**: YAML frontmatter (`id: ADR-NNNN`, `status: Proposed`)
+
+Implementation is in `scripts/import.mjs` (one Bash call) rather than dozens of per-ADR MCP tool calls — same effective behavior, materially faster, dual-format-aware, and false-positive-resistant for issue numbers.
 
 ## When to use
 
-After importing ADRs from another project, when the AgentDB graph is out of sync, or when bootstrapping ADR tracking on an existing codebase that already has ADR files.
+- After importing ADRs from another project
+- When the AgentDB graph is out of sync with the on-disk ADR files
+- Bootstrapping ADR tracking on an existing codebase
 
 ## Steps
 
-1. **Scan directory** -- `Glob` for `docs/adr/ADR-*.md` to find all ADR files. If no files found, report that no ADRs exist yet.
+1. **Run the importer**:
 
-2. **Parse each ADR** -- `Read` each file and extract:
-   - **ID**: from the filename (e.g., `ADR-042` from `ADR-042-use-postgres.md`)
-   - **Title**: from the `# ADR-NNN: <Title>` heading
-   - **Status**: from the `**Status**:` line
-   - **Date**: from the `**Date**:` line
-   - **Tags**: from the `**Tags**:` line
-   - **Links**: from the `## Links` section (supersedes, amended-by, related)
-
-3. **Store in AgentDB** -- For each ADR, call `mcp__claude-flow__agentdb_hierarchical-store` with:
-   - path: `adr/<adr-id>`
-   - value: `{ "id": "<id>", "title": "<title>", "status": "<status>", "date": "<date>", "tags": "<tags>", "file": "<filepath>" }`
-
-4. **Build causal edges** -- For each ADR with links:
-   - "Supersedes ADR-XXX" -> `mcp__claude-flow__agentdb_causal-edge` with `from: ADR-XXX`, `to: <current>`, `relation: supersedes`
-   - "Amended by ADR-YYY" -> `mcp__claude-flow__agentdb_causal-edge` with `from: <current>`, `to: ADR-YYY`, `relation: amends`
-   - "Related: ADR-ZZZ" -> `mcp__claude-flow__agentdb_causal-edge` with `from: <current>`, `to: ADR-ZZZ`, `relation: related`
-   - "Depends on ADR-WWW" -> `mcp__claude-flow__agentdb_causal-edge` with `from: <current>`, `to: ADR-WWW`, `relation: depends-on`
-
-5. **Store in memory** -- For each ADR, call `mcp__claude-flow__memory_store` with:
-   - namespace: `adr-patterns`
-   - key: `<adr-id>`
-   - value: `<title> — <first paragraph of Context section>`
-   This enables semantic search across ADRs.
-
-6. **Verify graph** -- Call `mcp__claude-flow__agentdb_causal-query` to retrieve all edges and verify:
-   - No dangling references (edges pointing to non-existent ADRs)
-   - No circular supersedes chains
-   - All superseded ADRs have status "superseded"
-
-7. **Report** -- Output a summary:
+   ```bash
+   node plugins/ruflo-adr/scripts/import.mjs
    ```
-   ## ADR Index Summary
 
-   Total ADRs: N
-   - Proposed: X
-   - Accepted: Y
-   - Deprecated: Z
-   - Superseded: W
+   Optional env:
+   - `IMPORT_FORMAT=json` — emit JSON instead of markdown
+   - `IMPORT_DRY_RUN=1` — parse + summarize, skip persistence
+   - `ADR_ROOT=/path` — scan a different root (default: cwd)
 
-   Relationships: M edges
-   - Supersedes: A
-   - Amends: B
-   - Depends-on: C
-   - Related: D
+2. **Inspect the summary** — total ADRs, stored count, by-status breakdown, edge counts, dangling refs, status mismatches.
 
-   Issues found: (list any dangling refs or status mismatches)
+3. **Verify graph integrity** (optional but recommended) via the sibling `adr-verify` skill, which runs `scripts/verify.mjs` and exits 1 on cycles.
+
+4. **Search semantically** via `mcp__claude-flow__memory_search` against the populated namespace:
+
    ```
+   memory_search --query "federation budget" --namespace adr-patterns
+   ```
+
+## Storage shape
+
+`adr-patterns` namespace, key `<ADR-id>::<basename>`, value (text):
+
+```
+<title> — <first paragraph of Context>
+
+file: <relative path>
+status: <Proposed|Accepted|Superseded|...>
+date: <ISO date>
+tags: <comma-separated>
+```
+
+`adr-edges` namespace, key `<relation>:<FROM>-><TO>:<timestamp-rand>`, value:
+
+```json
+{ "from": "ADR-097", "to": "ADR-086", "relation": "related", "capturedAt": "<ISO>" }
+```
+
+## False-positive guard
+
+`#1697` / `commit abc123` / `PR 1234` references inside ADR bodies are stripped before regex extraction so they don't get misread as `ADR-1697` etc. See `extractAdrRefs()` in `scripts/import.mjs`.
+
+## Cross-references
+
+- `adr-create` — produces the ADR files this skill consumes
+- `adr-review` — runs over `adr-patterns` for compliance checks
+- `adr-verify` (sibling skill) — runs `scripts/verify.mjs` for graph-integrity gating

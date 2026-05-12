@@ -2,14 +2,14 @@
 name: oss-explore-repo
 description: |
   Guided codebase exploration for understanding a repo's architecture, patterns,
-  and domain language before contributing. Not issue-specific - builds general
+  and domain language before contributing. Not issue-specific. builds general
   understanding. Use when exploring a new repo, wanting to understand how a
   project works, or preparing to become a regular contributor.
 ---
 
 # Explore Repo
 
-Explore a codebase the way experienced contributors do - by understanding the architecture, the patterns, and the domain language before touching anything.
+Explore a codebase the way experienced contributors do. by understanding the architecture, the patterns, and the domain language before touching anything.
 
 ## Purpose
 
@@ -50,7 +50,7 @@ The user should be able to explain what the project does to a non-technical pers
 **Thinking gate:**
 
 > "Explain what this project does in one sentence. Who uses it? What problem does it solve?
-> Don't use the README's words - rephrase it as if you're explaining to a friend who doesn't code."
+> Don't use the README's words. rephrase it as if you're explaining to a friend who doesn't code."
 
 If the user can't do this clearly, they need to read more docs before touching code.
 
@@ -98,7 +98,7 @@ grep -rn "// \|# \|/// \|/\*\*" src/ lib/ --include="*.ts" --include="*.py" --in
 find docs/ -name "*glossary*" -o -name "*terminology*" -o -name "*concepts*" 2>/dev/null
 ```
 
-Present terms the contributor must understand to read the code fluently. Group by importance - which terms appear in nearly every file vs which are module-specific.
+Present terms the contributor must understand to read the code fluently. Group by importance. which terms appear in nearly every file vs which are module-specific.
 
 **Thinking gate:**
 
@@ -133,8 +133,8 @@ Identify:
 
 **Thinking gate:**
 
-> "If you were adding a new feature to this repo, describe the steps - which files would you create, what patterns would you follow, where would you add tests?
-> Don't worry about getting it right - I'll tell you what you missed."
+> "If you were adding a new feature to this repo, describe the steps. which files would you create, what patterns would you follow, where would you add tests?
+> Don't worry about getting it right. I'll tell you what you missed."
 
 Review the user's answer. Point out conventions they missed without giving the full answer.
 
@@ -176,7 +176,7 @@ If the repo uses technologies the user isn't familiar with, suggest → `oss-lea
 
 ### 8. Create a personal map
 
-The user writes their own architecture summary. Not a copy of the LLM's summary from step 3 - their own version in their own words.
+The user writes their own architecture summary. Not a copy of the LLM's summary from step 3. Their own version in their own words.
 
 **Thinking gate:**
 
@@ -186,21 +186,21 @@ The user writes their own architecture summary. Not a copy of the LLM's summary 
 > - The main patterns (error handling, testing, config)
 > - One thing that surprised you
 >
-> This is YOUR mental model. It doesn't need to be perfect - it needs to be yours."
+> This is YOUR mental model. It doesn't need to be perfect. it needs to be yours."
 
 Review their summary. Flag anything incorrect but don't rewrite it.
 
 ## Related Skills
 
-- **Next step (found an issue)**: → `oss-find-issue` - find an issue that matches your new understanding
-- **Next step (find your own)**: → `oss-find-real-issues` - use your understanding to find real code problems
-- **If tech gaps surfaced**: → `oss-learn-stack` - learn unfamiliar technologies from the repo itself
-- **Issue-specific prep**: → `oss-prep-to-contribute` - once you have an issue, prepare specifically for it
+- **Next step (found an issue)**: → `oss-find-issue`: find an issue that matches your new understanding
+- **Next step (find your own)**: → `oss-find-real-issues`: use your understanding to find real code problems
+- **If tech gaps surfaced**: → `oss-learn-stack`: learn unfamiliar technologies from the repo itself
+- **Issue-specific prep**: → `oss-prep-to-contribute`: once you have an issue, prepare specifically for it
 
 ## Anti-patterns
 
-- **DO NOT** dump the entire codebase structure - guide the user through it layer by layer
-- **DO NOT** skip the domain language step - code fluency requires vocabulary
-- **DO NOT** treat this as a replacement for reading code - the user must read actual files, not just summaries
-- **DO NOT** confuse this with `oss-prep-to-contribute` - this is general exploration, not issue-specific preparation
-- **DO NOT** rush through thinking gates - the user's ability to explain the architecture in their own words IS the outcome
+- **DO NOT** dump the entire codebase structure. guide the user through it layer by layer
+- **DO NOT** skip the domain language step. code fluency requires vocabulary
+- **DO NOT** treat this as a replacement for reading code. the user must read actual files, not just summaries
+- **DO NOT** confuse this with `oss-prep-to-contribute`. this is general exploration, not issue-specific preparation
+- **DO NOT** rush through thinking gates. the user's ability to explain the architecture in their own words IS the outcome

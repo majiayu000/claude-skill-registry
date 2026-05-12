@@ -1,6 +1,6 @@
 ---
 name: bug-hunt
-description: Proactive bug-hunting workflow. Assesses codebase risk through complexity, coverage, and structural analysis, then spawns focused investigators that write reproducing tests to validate suspected bugs. Thoroughness over speed.
+description: Proactive bug-hunting workflow. Assesses codebase risk through complexity, coverage, and structural analysis, then spawns focused investigators that write reproducing tests to validate suspected bugs. Thoroughness over speed. Advisory only — produces findings and proposes tickets; does not implement fixes.
 model: opus
 ---
 
@@ -9,6 +9,8 @@ model: opus
 Systematically hunts for bugs before they reach users. An assessor analyzes the codebase to identify high-risk hotspots by cross-referencing code complexity, test coverage gaps, and structural risk factors. Focused hunters then deep-dive into each hotspot, writing reproducing tests to validate or invalidate suspected bugs.
 
 **This is deliberately thorough.** Each suspected bug gets a reproducing test — no speculative reports. The goal is confirmed findings with evidence, not a noisy list of maybes.
+
+**Advisory only.** The skill produces findings and proposes tickets; it does not implement fixes. The cognitive seam between "find bug" and "fix bug" is wide enough that mixing them under one workflow degrades both — investigation pressure shouldn't bias the hunters toward bugs they could easily fix, and remediation requires fresh reasoning the hunters aren't currently in. Tickets capture findings durably across that seam and compose with `/implement` and `/implement-project` for remediation. The reproducing tests serve as acceptance criteria — the fix is done when the test passes.
 
 ## Workflow Overview
 
@@ -24,8 +26,10 @@ Systematically hunts for bugs before they reach users. An assessor analyzes the 
 │     └─ Prior findings passed to subsequent hunters   │
 │  4. Synthesize findings                              │
 │  5. Present consolidated findings to user            │
-│  6. Optionally route findings to fixers              │
-│  7. Optionally commit reproducing tests              │
+│  6. Cut tickets + commit reproducing tests           │
+│     (proposed structure; operator-approved)          │
+│  7. (If tickets declined) commit reproducing tests   │
+│     standalone for the coverage benefit              │
 └──────────────────────────────────────────────────────┘
 ```
 
@@ -183,35 +187,99 @@ Systemic patterns: N
 
 **Present to user interactively.** Walk through CRITICAL findings first. For each, explain the bug, the impact, and show the reproducing test. Let the user ask questions before moving on.
 
-### 6. Route to Fixers (Optional)
+### 6. Cut Tickets
 
-After presenting findings, ask: "Would you like to route confirmed bugs to agents for fixing?"
+After presenting findings, propose a ticket structure based on the hunt's shape. Each hunt produces a different mix — concentrated CRITICALs in one module, a single systemic pattern across many modules, mostly coverage-improvements with few confirmed bugs — and the right ticket granularity depends on that shape. Rather than prescribe a fixed mapping, examine the findings and propose a structure that fits.
 
-**If yes:**
-- For each confirmed bug, determine the appropriate fixer:
-  - Detect project language and spawn the appropriate SME agent
-  - Pass the bug description, root cause, reproducing test, and fix guidance
-  - The reproducing test serves as the acceptance criterion — when it passes, the bug is fixed
-- After each fix, spawn `qa-engineer` to verify:
-  - The reproducing test now passes
-  - No other tests broke
-- Commit each fix atomically
+#### 6a. Analyze Findings and Propose Structure
 
-**If no:** The report and reproducing tests stand on their own.
+Examine the consolidated findings produced in step 5:
+- Count confirmed bugs by severity (CRITICAL / HIGH / MEDIUM / LOW).
+- Count systemic patterns (cross-cutting issues observed across multiple hotspots).
+- Count reproducing tests written (some confirm bugs; some are coverage improvements).
+- Note clustering — multiple bugs in the same module or in the same defect class.
 
-### 7. Commit Reproducing Tests (Optional)
+From that shape, propose a ticket structure. Common shapes:
 
-If the user does not route to fixers (or after fixes are complete), ask: "Would you like to commit the reproducing tests? They document the bugs and improve coverage."
+- **Concentrated bugs:** 1 ticket per CRITICAL/HIGH bug; 1 ticket per systemic pattern; defer MEDIUM/LOW to a batch ticket.
+- **Spread across severity:** 1 ticket per CRITICAL bug; batch tickets per severity for HIGH/MEDIUM/LOW.
+- **Systemic-pattern-dominated:** 1 ticket per pattern with finding references; per-bug tickets only for the highest-severity outliers.
+- **Mostly coverage improvements:** No bug tickets; just commit the reproducing tests as the coverage benefit (handled in step 7).
+- **No confirmed bugs:** No tickets to cut. Audit report stands alone; offer test commit per step 7.
 
-**If yes:**
-- Commit all reproducing tests (both bug-confirming and coverage-improving) in a single commit
-- Use a descriptive commit message referencing the bug hunt
+Present the proposed structure with the reasoning:
 
-**If no:** Leave tests uncommitted for the user to handle.
+```
+Proposed ticket structure for this hunt:
+
+7 confirmed bugs (3 CRITICAL, 3 HIGH, 1 MEDIUM), 1 systemic pattern,
+9 reproducing tests.
+
+Proposed: 8 tickets + 1 test commit
+  - 1 ticket per CRITICAL/HIGH bug (6 tickets)
+  - 1 ticket for the systemic pattern (error-path cleanup missing in
+    5 of 12 resource-reserving functions)
+  - 1 batch ticket: MEDIUM bugs (1 finding)
+  - Reproducing tests committed first so ticket bodies can reference
+    them by path.
+
+Approve / edit / decline?
+```
+
+Wait for the response. Three outcomes:
+
+- **Approve:** Proceed to 6b.
+- **Edit:** The operator modifies the structure (merge two tickets, split one, drop a finding). Apply edits, present revised structure, and repeat until approved.
+- **Decline:** Skip to step 7 — offer to commit reproducing tests as a standalone act so the coverage benefit isn't lost.
+
+#### 6b. Commit Reproducing Tests and Create Tickets
+
+Commit all reproducing tests (both bug-confirming and coverage-improving) in a single commit. The commit message should reference the bug hunt and list the test files added. This commit lands first so ticket bodies can reference the test paths by name.
+
+Then create tickets via the canonical tracker integration ([`references/trackers.md`](../../references/trackers.md)). For each ticket in the approved structure:
+
+**Title:** `[<SEVERITY>] <concise bug summary>` (e.g., `[CRITICAL] JPY conversion loses 1 yen for odd amounts in ConvertAmount`).
+
+**Body sections (per-bug tickets):**
+- **Bug** — concrete description.
+- **Root cause** — why the bug exists.
+- **Impact** — what happens in practice.
+- **Reproducing test** — `<test file>:<test name>` (committed in the preceding test commit). Serves as the acceptance criterion — the fix is done when the test passes.
+- **Fix guidance** — what needs to change.
+
+**For systemic-pattern tickets:**
+- **Pattern** — description of the cross-cutting issue.
+- **Observed in** — `file:line` locations across the codebase.
+- **Recommendation** — usually a follow-up `/refactor` with appropriate scope, or `/implement-batch` if multiple touchpoints need careful coordination.
+- **Individual findings** — references to the per-bug tickets if they were cut separately.
+
+**For batch tickets:**
+- One section per included finding, using the per-bug body structure.
+- A brief intro paragraph explaining the batch theme.
+
+**Labels:** Apply severity labels (`critical` / `high` / `medium` / `low`) when the tracker supports them. The implementation may also apply a `bug` umbrella label if one exists.
+
+After all tickets are created, report the URLs to the operator and exit.
+
+#### Orchestrator-Invoked Behavior
+
+When `/bug-hunt` is invoked by an orchestrator, the workflow above is unchanged. The skill proposes the ticket structure to the orchestrator, which applies its own judgment per [`references/autonomy.md`](../../references/autonomy.md) — approving, editing, or declining the proposal, then deciding which of any created tickets to work in the current flow versus defer.
+
+### 7. Commit Reproducing Tests (Fallback)
+
+This step only runs when the operator declined ticket creation in step 6 (or when the hunt found no confirmed bugs but produced coverage-improvement tests). The reproducing tests are coverage improvements regardless of whether bugs are fixed; this step preserves that value.
+
+Ask: "Would you like to commit the reproducing tests? They document known bugs and improve coverage."
+
+**If yes:** Commit all reproducing tests (both bug-confirming and coverage-improving) in a single commit. Use a descriptive commit message referencing the bug hunt.
+
+**If no:** Leave tests uncommitted for the operator to handle.
 
 ## Agent Coordination
 
 **Sequential execution within investigation phase.** The assessor runs first, then hunters run sequentially so findings accumulate for pattern detection.
+
+**No remediation agents.** Step 6 cuts tickets and commits reproducing tests; no `swe-sme-*` or `qa-engineer` invocations happen inside `/bug-hunt`. Remediation is handled out-of-skill by `/implement` or `/implement-project` against the cut tickets, using the reproducing tests as acceptance criteria.
 
 **Fresh instances for every agent.** Each agent gets a clean context window dedicated entirely to its task.
 
@@ -239,25 +307,11 @@ If the user does not route to fixers (or after fixes are complete), ask: "Would 
 
 ## Integration with Other Skills
 
-**Relationship to `/review-security`:**
-- `/review-security` is security-focused — blue team + red team methodology
-- `/bug-hunt` targets correctness bugs — logic errors, edge cases, missing error handling
-- Both can find overlapping issues, but with different lenses. `/review-security` asks "can an attacker exploit this?" while `/bug-hunt` asks "will this fail for a normal user?"
-- Run both for comprehensive pre-release assurance
+**`/bug-hunt` vs `/review-security`:** Different lenses on overlapping territory. `/review-security` asks "can an attacker exploit this?" `/bug-hunt` asks "will this fail for a normal user?" Run both for comprehensive pre-release assurance.
 
-**Relationship to `/bug-fix`:**
-- `/bug-fix` is reactive — fixes a known, reported bug
-- `/bug-hunt` is proactive — finds bugs before they're reported
-- Bug hunt findings can feed into `/bug-fix` for thorough remediation of complex issues
+**`/bug-hunt` vs `/bug-fix`:** `/bug-hunt` is proactive — it finds bugs before they're reported. `/bug-fix` is reactive — it fixes a known, reported bug. Bug-hunt findings can feed into `/bug-fix` for thorough remediation of complex issues.
 
-**Relationship to `/review-test`:**
-- `/review-test` focuses on test quality — coverage gaps, brittle tests, missing fuzz tests
-- `/bug-hunt` uses coverage data as one input signal but focuses on finding actual bugs, not improving test quality
-- The coverage improvements from `/bug-hunt` are a side effect, not the primary goal
-
-**Relationship to `/refactor`:**
-- Systemic patterns identified by `/bug-hunt` (e.g., "inconsistent error handling across 15 modules") may warrant a follow-up `/refactor`
-- `/bug-hunt` identifies the pattern; `/refactor` fixes it systematically
+**`/bug-hunt` → `/refactor`:** Systemic patterns identified by `/bug-hunt` (e.g., "inconsistent error handling across 15 modules") may warrant a follow-up `/refactor` to fix the pattern systematically.
 
 ## Example Session
 
@@ -350,9 +404,33 @@ Systemic pattern: Error-path cleanup is missing in 5 of 12 functions
 ## Bug Hunt Summary
 [Full report...]
 
-Would you like to route confirmed bugs to agents for fixing?
-> Yes, fix the criticals
+Proposed ticket structure for this hunt:
 
-[Routing CRITICAL bugs to Go SME...]
-[Reproducing tests serve as acceptance criteria — fix is done when they pass]
+7 confirmed bugs (3 CRITICAL, 3 HIGH, 1 MEDIUM), 1 systemic pattern,
+9 reproducing tests.
+
+Proposed: 8 tickets + 1 test commit
+  - 1 ticket per CRITICAL/HIGH bug (6 tickets)
+  - 1 ticket for the systemic pattern (error-path cleanup missing in
+    5 of 12 resource-reserving functions)
+  - 1 batch ticket: MEDIUM bugs (1 finding)
+  - Reproducing tests committed first so ticket bodies can reference
+    them by path.
+
+Approve / edit / decline?
+> Approve
+
+Committing reproducing tests... (9 tests, 1 commit)
+Creating tickets...
+  #N — [CRITICAL] JPY conversion loses 1 yen for odd amounts
+  #N — [CRITICAL] Negative-amount currency conversion bypasses sign
+  #N — [CRITICAL] Payment failure leaves phantom inventory holds
+  #N — [HIGH] FetchRates lacks timeout handling
+  #N — [HIGH] Multi-item refund miscalculates partial amounts
+  #N — [HIGH] Race in checkout state transition
+  #N — [SYSTEMIC] Error-path cleanup missing in 5 resource-reserving
+                  functions
+  #N — [MEDIUM] One MEDIUM finding (batch ticket)
+
+8 tickets created. Reproducing tests committed. Hunt complete.
 ```

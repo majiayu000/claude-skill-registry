@@ -51,7 +51,7 @@ The skill reads project state on every invocation and presents a single confirma
 - Nothing found → starts from PRD generation
 
 For programmatic use: `/feature-marker --mode <mode> <feature-slug>`
-where mode is one of: `full` · `tasks-only` · `spec-driven` · `test-only`
+where mode is one of: `full` · `tasks-only` · `spec-driven` · `test-only` · `prd-only`
 
 ## Prerequisites
 

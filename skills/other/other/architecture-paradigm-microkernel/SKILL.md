@@ -1,7 +1,6 @@
 ---
 name: architecture-paradigm-microkernel
 description: 'Microkernel architecture with a minimal core and plugin-based extensibility for platforms.'
-version: 1.8.4
 alwaysApply: false
 category: architectural-pattern
 tags:
@@ -11,10 +10,7 @@ tags:
 - extensibility
 - platform-design
 dependencies: []
-tools:
-- plugin-loader
-- sandbox-executor
-- sdk-generator
+tools: []
 usage_patterns:
 - paradigm-implementation
 - platform-development

@@ -1,6 +1,6 @@
 ---
 name: llm-self-loop
-description: 'Restructure Web-UI / human-triggered tasks into CLI + file-output loops the LLM can iterate alone. Open LLM-side observability — structured logs, file dumps, addressable scratchpads. Apply the trap-or-abandon decision: if a step cannot be looped, improve the harness rather than babysit. Trigger when the user mentions iterative grunt-work, "I have to push a button in a web UI to trigger this", monitoring dashboards, designing Claude-driven automation, or any workflow whose inner loop currently requires a human in the middle.'
+description: 'Restructure Web-UI / human-triggered tasks into CLI + file-output loops the LLM can iterate alone, with structured logs and addressable scratchpads. Apply trap-or-abandon: if a step cannot be looped, improve the harness rather than babysit. Trigger on iterative grunt-work, "push a button in a web UI to trigger this", monitoring dashboards, or any workflow whose inner loop requires a human in the middle.'
 ---
 
 The job: turn workflows that need a human in the inner loop into workflows the LLM closes itself. The two halves are *removing the trigger gate* and *opening observability*.

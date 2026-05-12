@@ -1,6 +1,6 @@
 ---
 name: inngest-setup
-description: Set up Inngest in a TypeScript project. Install the SDK, create a client, configure environment variables, serve endpoints or connect as a worker, and run the local dev server.
+description: Use when adding durable execution to a TypeScript project — building retry-safe webhook handlers, background jobs that survive crashes, scheduled tasks, or long-running workflows that outlive a single request. Covers Inngest SDK installation, client config, environment variables, serve endpoints (Next.js, Express, Hono, Fastify), connect-as-worker mode, and the local dev server.
 ---
 
 # Inngest Setup
@@ -40,8 +40,9 @@ import { Inngest } from "inngest";
 export const inngest = new Inngest({
   id: "my-app" // Unique identifier for your application (hyphenated slug)
 });
-// In development, you must set the INNGEST_DEV=1 env var or use isDev: true
-// In production, INNGEST_SIGNING_KEY is required (v4 defaults to Cloud mode)
+// IMPORTANT: v4 defaults to Cloud mode. For local dev, set INNGEST_DEV=1 env var.
+// Without it, your serve endpoint will return 500 ("In cloud mode but no signing key").
+// In production, set INNGEST_SIGNING_KEY (required for Cloud mode).
 ```
 
 ### Key Configuration Options
@@ -49,7 +50,7 @@ export const inngest = new Inngest({
 - **`id`** (required): Unique identifier for your app. Use a hyphenated slug like `"my-app"` or `"user-service"`
 - **`eventKey`**: Event key for sending events (prefer `INNGEST_EVENT_KEY` env var)
 - **`env`**: Environment name for Branch Environments
-- **`isDev`**: Force Dev mode (`true`) or Cloud mode (`false`). **v4 defaults to Cloud mode**, so set `isDev: true` or `INNGEST_DEV=1` for local development
+- **`isDev`**: Force Dev mode (`true`) or Cloud mode (`false`). **v4 defaults to Cloud mode**, so set `INNGEST_DEV=1` env var for local development. **Never hardcode `isDev: true` in source code** — it will silently break in production. Always use the env var.
 - **`signingKey`**: Signing key for production (prefer `INNGEST_SIGNING_KEY` env var). Moved from `serve()` to client in v4
 - **`signingKeyFallback`**: Fallback signing key for key rotation (prefer `INNGEST_SIGNING_KEY_FALLBACK` env var)
 - **`baseUrl`**: Custom Inngest API base URL (prefer `INNGEST_BASE_URL` env var)
@@ -114,6 +115,31 @@ INNGEST_BASE_URL=http://localhost:8288
 ```
 
 **⚠️ Common Gotcha**: Never hardcode keys in your source code. Always use environment variables for `INNGEST_EVENT_KEY` and `INNGEST_SIGNING_KEY`.
+
+## CRITICAL: Enable Dev Mode for Local Development
+
+**Before creating serve endpoints or connecting workers, ensure dev mode is enabled.** Without it, Inngest defaults to Cloud mode and your endpoints will fail with 500 errors.
+
+Add to your `.env` file (or your dev script in package.json):
+
+```env
+INNGEST_DEV=1
+```
+
+Or in `package.json` scripts:
+
+```json
+{
+  "scripts": {
+    "dev": "INNGEST_DEV=1 tsx --watch src/server.ts"
+  }
+}
+```
+
+**Symptoms of missing INNGEST_DEV:**
+- GET `/api/inngest` returns `{"code":"internal_server_error"}`
+- Server logs: "In cloud mode but no signing key found"
+- Dev server can't sync with your app
 
 ## Step 3: Choose Your Connection Mode
 
@@ -309,7 +335,9 @@ If your app runs on a non-standard port (not 3000), make sure the dev server can
 
 **Port Conflicts**: If port 8288 is in use, specify a different port: `-p 9999`
 
-**Auto-discovery Not Working**: Use manual URL specification: `-u http://localhost:YOUR_PORT/api/inngest`
+**Auto-discovery Not Working**: Use manual URL specification: `-u http://localhost:YOUR_PORT/api/inngest`. If using `--no-discovery` flag, the `-u` flag is **required** — the dev server will not find your app without it.
+
+**Functions Not Showing in Dev Server**: Your app must register with the dev server. This happens automatically when your serve endpoint receives its first request from the dev server. If registration isn't happening: (1) verify `INNGEST_DEV=1` is set, (2) verify the dev server can reach your app URL, (3) try restarting your app while the dev server is running.
 
 **Signature Verification Errors**: Ensure `INNGEST_SIGNING_KEY` is set correctly in production
 

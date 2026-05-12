@@ -1,7 +1,6 @@
 ---
 name: makefile-review
-description: 'Audit Makefiles for build correctness and recipe duplication. Use when reviewing build pipelines or generated targets.'
-version: 1.9.3
+description: 'Audit Makefiles for build correctness and recipe duplication.'
 globs: "**/Makefile"
 alwaysApply: false
 category: build
@@ -25,11 +24,11 @@ dependencies:
 - pensive:shared
 - imbue:proof-of-work
 modules:
-- dependency-graph
-- deduplication-patterns
-- portability-checks
-- best-practices
-- plugin-dogfood-checks
+- modules/dependency-graph.md
+- modules/deduplication-patterns.md
+- modules/portability-checks.md
+- modules/best-practices.md
+- modules/plugin-dogfood-checks.md
 ---
 ## Table of Contents
 

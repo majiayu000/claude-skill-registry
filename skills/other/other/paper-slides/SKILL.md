@@ -567,6 +567,26 @@ Next steps:
 
 **State**: Write `SLIDES_STATE.json` with `phase: 8, status: "completed"`.
 
+## Recommended Follow-up: `/slides-polish`
+
+After this skill produces the initial Beamer + PPTX, the typical drift is
+**typography proportion + per-slide layout**, not content. Run
+`/slides-polish` as a focused post-generation polish phase: it does
+per-page Codex review against a reference visual (e.g., a prior academic
+talk), bumps PPTX fonts to projector-readable sizes, fixes text-frame
+overflow, and applies a fix-pattern catalog (italic style leaks, em-dash
+spacing, image aspect ratio, Chinese-font hints, anonymity placeholders).
+
+`/slides-polish` is read-only on content (no claim / number / citation
+edits) and preserves speaker notes verbatim. Invocation:
+
+```
+/slides-polish slides/ — reference: <ref-pdf> [— style: generic | why-rf | <venue>]
+```
+
+Skip it for short decks (< 5 slides) or when a complete redesign is
+needed (re-run `/paper-slides` instead).
+
 ## Key Rules
 
 - **Large file handling**: If the Write tool fails due to file size, immediately retry using Bash (`cat << 'EOF' > file`) to write in chunks. Do NOT ask the user for permission — just do it silently.

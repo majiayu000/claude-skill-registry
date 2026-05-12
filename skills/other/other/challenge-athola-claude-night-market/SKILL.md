@@ -1,9 +1,6 @@
 ---
 name: challenge
-description: >
-  Run a gauntlet challenge session with adaptive difficulty.
-  Tests codebase understanding through multiple choice, code
-  completion, trace exercises, and more.
+description: 'Adaptive-difficulty challenge testing codebase understanding via multiple-choice and trace exercises.'
 model_hint: standard
 ---
 

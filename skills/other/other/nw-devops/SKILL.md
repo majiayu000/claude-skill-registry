@@ -15,6 +15,109 @@ Execute DEVOPS wave: platform readiness|CI/CD pipeline setup|observability desig
 
 Apex translates DESIGN architecture decisions into operational infrastructure: CI/CD pipelines|logging|monitoring|alerting|observability.
 
+## Output Tiers (per D2)
+
+Provenance: feature `lean-wave-documentation` — D2 (schema-typed sections), D10 (one-line expansion descriptions). The DEVOPS wave emits a single `feature-delta.md` whose headings are typed `[REF]` (always emitted) or `[WHY]/[HOW]` (lazy expansions). Tier-1 is the always-on baseline; Tier-2 is the lazily-rendered expansion catalog.
+
+### Tier-1 [REF] — always emitted
+
+Tier-1 sections constitute the lean-default baseline. Every DEVOPS run emits at minimum these sections under `## Wave: DEVOPS / [REF] <Section>` headings:
+
+- Environment matrix — table of target environments with platform + preconditions
+- CI/CD pipeline outline — stage list with trigger rules per branch
+- Monitoring contracts — KPI-to-instrument mapping (one row per outcome KPI)
+- Deployment strategy — chosen strategy + rollback contract (one paragraph)
+- Mutation testing strategy — selected mode (per-feature/nightly-delta/pre-release/disabled)
+- Observability stack — chosen tools per signal class (logs/metrics/traces)
+- Branching strategy — selected model + CI trigger alignment
+- Coexistence matrix — tools that must continue to work alongside deployment
+- Pre-requisites — DESIGN constraints the platform must satisfy
+
+### Tier-2 EXPANSION CATALOG — lazy, on-demand (per D10)
+
+Tier-2 items are NOT emitted by default. They are rendered only when explicitly requested via `--expand <id>` (DDD-2) or via the wave-end interactive prompt when `expansion_prompt = "ask"`. Each item has a one-line description (per D10) so the menu fits in a single render. Each emitted Tier-2 section is headed `## Wave: DEVOPS / [WHY] <Section>` or `## Wave: DEVOPS / [HOW] <Section>`.
+
+| Expansion ID | Tier label | One-line description |
+|---|---|---|
+| `infra-cost-analysis` | [WHY] | Per-environment monthly cost estimate with vendor pricing assumptions |
+| `alternative-deploy-targets` | [WHY] | Cloud/on-prem/hybrid options weighed and rejected with one-paragraph reason |
+| `observability-deep-dive` | [HOW] | Detailed metric/log/trace schemas, alert thresholds, dashboard layouts |
+| `runbook-drafts` | [HOW] | Incident response runbooks for the top failure modes |
+| `kpi-instrumentation-recipes` | [HOW] | Per-KPI data collection recipe (event names, log fields, metric labels) |
+| `ci-pipeline-yaml` | [HOW] | Full CI/CD pipeline YAML with comments per stage |
+| `disaster-recovery-plan` | [HOW] | Backup, restore, and DR procedures with RPO/RTO targets |
+| `expansion-catalog-rationale` | [WHY] | Why this set of expansions, why these defaults, why D10 enforces one-line descriptions |
+
+## Density resolution (per D12)
+
+Provenance: D12 (rigor cascade), DDD-5 (density resolver shared utility). Before emitting any Tier-1 section, resolve the active documentation density:
+
+1. **Read** `~/.nwave/global-config.json`. Treat missing/malformed config as empty dict (fall back to defaults).
+2. **Call** `resolve_density(global_config)` from `scripts/shared/density_config.py`. The function returns a `Density` value object with fields `mode` (`"lean"` | `"full"`), `expansion_prompt` (`"ask"` | `"always-skip"` | `"always-expand"` | `"smart"`), and `provenance` (the cascade branch that produced this result).
+3. **Branch on `density.mode`**:
+   - `lean` → emit ONLY Tier-1 `[REF]` sections under `## Wave: DEVOPS / [REF] <Section>` headings. Do NOT auto-render Tier-2 items.
+   - `full` → emit Tier-1 `[REF]` sections PLUS all Tier-2 expansion items rendered under their `[WHY]` / `[HOW]` headings. This is auto-expansion (no menu).
+4. **At wave end**, branch on `density.expansion_prompt`:
+   - `"ask"` → present the expansion menu (Tier-2 catalog above with one-line descriptions per D10) and append user-selected items as `## Wave: DEVOPS / [WHY|HOW] <Section>` headings.
+   - `"always-skip"` → no menu, no extra sections (idempotent re-runs, CI mode).
+   - `"always-expand"` → equivalent to `mode = "full"` for this run; auto-render every Tier-2 item.
+   - `"smart"` → out of scope for v1 (per OQ-3); treat as `"ask"` until heuristic is empirically tuned.
+
+The resolver itself encodes the D12 cascade: explicit `documentation.density` override > `rigor.profile` mapping (`lean`→`lean`, `standard`→`lean`+`ask`, `thorough`→`full`, `exhaustive`→`full`+all-expansions, `custom`→`lean`+`ask`) > hard default `lean`+`ask`. This skill MUST NOT replicate the cascade locally — call `resolve_density(global_config)` and trust its output.
+
+**Section heading prefix convention (per D2)**: every emitted section starts with `## Wave: DEVOPS / [REF] <Section>` for Tier-1; `## Wave: DEVOPS / [WHY] <Section>` or `## Wave: DEVOPS / [HOW] <Section>` for Tier-2. Validator `scripts/validation/validate_feature_delta.py` enforces the regex `^## Wave: \w+ / \[(REF|WHY|HOW)\] .+$` on every wave heading.
+
+### Ad-hoc override — user request mid-session
+
+Even when `density.mode = "lean"` and `density.expansion_prompt = "always-skip"`, the user may ask DURING the wave session for specific expansions:
+
+- "expand jtbd" / "expand jtbd-narrative" / "more on jtbd"
+- "add alternatives considered"
+- "show migration playbook"
+- "tell me why" (interpretive — append the WHY rationale section relevant to the most recent decision)
+- "more on <X>" (where `<X>` is one of the expansion catalog items for this wave)
+
+When the user makes such a request:
+
+1. Append the corresponding `[WHY]` or `[HOW]` section to `feature-delta.md` under the current wave's heading.
+2. Emit a `DocumentationDensityEvent` with `choice="expand"` and `expansion_id=<the requested item>` to `JsonlAuditLogWriter`.
+3. Do NOT modify `~/.nwave/global-config.json`. The override is ONE-SHOT for this wave only.
+
+If the user's request matches NO item in this wave's Expansion Catalog, respond with the catalog list (one-line description per item per D10) and ask for clarification — do NOT improvise an expansion outside the catalog.
+
+## Telemetry (per D4 + DDD-6)
+
+Provenance: D4 (telemetry schema instrumented day-one), D6 (first-install pedagogical prompt creates audit signal), DDD-6 (telemetry event class lives in DES domain, writer reused). Every expansion choice — whether the user expanded an item or skipped the menu — emits a structured event to the existing `JsonlAuditLogWriter` driven adapter.
+
+**Event type**: `DocumentationDensityEvent` (dataclass at `src/des/domain/telemetry/documentation_density_event.py`).
+
+**Schema fields** (per D4):
+
+```
+{
+  "feature_id": "<feature-id>",
+  "wave": "DEVOPS",
+  "expansion_id": "<id-from-catalog-or-'*'-for-skip-all>",
+  "choice": "skip" | "expand",
+  "timestamp": "<ISO-8601 datetime>"
+}
+```
+
+**Emission pattern**:
+
+1. Construct a `DocumentationDensityEvent(feature_id=..., wave="DEVOPS", expansion_id=..., choice=..., timestamp=...)`.
+2. Call `event.to_audit_event()` to convert to the open `AuditEvent` shape (`event_type="DOCUMENTATION_DENSITY"` and the schema fields nested under `data`).
+3. Dispatch via `JsonlAuditLogWriter().log_event(audit_event)`.
+
+The wave-skill harness invokes the helper `scripts/shared/telemetry.py:write_density_event(...)` which performs all three steps. This skill MUST NOT bypass the helper or write JSONL directly — every density telemetry event flows through the shared helper to keep the audit-log schema consistent.
+
+**When to emit**:
+- One event per user choice in the expansion menu when `expansion_prompt = "ask"` (`choice = "expand"` for selected items, `choice = "skip"` with `expansion_id = "*"` if the user skips the entire menu).
+- One synthetic `choice = "skip"` event with `expansion_id = "*"` when `expansion_prompt = "always-skip"` (records the skipped menu opportunity).
+- One `choice = "expand"` event per Tier-2 item rendered when `mode = "full"` or `expansion_prompt = "always-expand"`.
+
+This telemetry feeds the propagation success metric: when DISTILL consumes a lean DEVOPS environment matrix and produces no `--expand` request for the runbook drafts or alternative deploy targets, the `[REF]` baseline is sufficient.
+
 ## Interactive Decision Points
 
 Before proceeding, the orchestrator asks:
@@ -199,15 +302,18 @@ For features that do NOT install into systems (pure business logic), the environ
 
 DISTILL reads this file to parametrize acceptance scenarios over target environments. If this file is missing, DISTILL uses defaults (clean, with-pre-commit, with-stale-config) — but coverage gaps are the PA's responsibility.
 
-## Peer Review Gate
+## Peer Review Gate (OPTIONAL — per-wave; mandatory at end of DISTILL)
 
-AFTER producing all deliverables, dispatch the reviewer:
+Per-wave Forge review is opt-in. Default: skip and proceed to DISTILL. The mandatory consolidated review covering DISCUSS+DESIGN+DEVOPS+DISTILL fires at end of DISTILL where Eclipse + Architect + Forge + Sentinel run in parallel against the full `feature-delta.md` (all 4 waves visible — catches cross-wave inconsistencies that per-wave review misses).
 
-1. **Dispatch reviewer** — Invoke `@nw-platform-architect-reviewer` on the produced platform readiness artifacts. Gate: reviewer invoked.
-2. **Verify review scope** — Confirm reviewer covers: CI/CD pipeline correctness and completeness, environment inventory coverage (all deployment targets), observability design alignment with outcome KPIs, infrastructure security and deployment strategy soundness. Gate: all four areas reviewed.
-3. **Handle rejection** — On REJECTION: revise artifacts per reviewer findings and re-submit. Gate: re-submission accepted or escalation triggered.
-4. **Escalate if blocked** — After 2 failed attempts, escalate to user. Gate: max 2 revision cycles before escalation.
-5. **Block handoff** — Do not hand off to DISTILL until review passes. Gate: reviewer approval confirmed.
+Invoke per-wave Forge review explicitly via `/nw-review nw-platform-architect-reviewer` only if:
+- Novel deployment target not in prior coexistence matrix
+- New CI/CD framework introduced (e.g., switching from GitHub Actions to GitLab)
+- Observability stack rewrite (not extension)
+- Security posture change (new secrets management, new RBAC layer)
+- Maintainer explicitly flags uncertainty
+
+When triggered, the reviewer covers: CI/CD pipeline correctness and completeness, environment inventory coverage, observability design alignment with outcome KPIs, infrastructure security and deployment strategy soundness. On REJECTION: revise artifacts per findings and re-submit (max 2 revision cycles before escalation). Gate: optional unless triggered.
 
 ## Success Criteria
 
@@ -223,7 +329,7 @@ AFTER producing all deliverables, dispatch the reviewer:
 - [ ] Outcome KPIs instrumentation designed (if outcome-kpis.md exists)
 - [ ] Data collection pipeline documented for each KPI
 - [ ] Dashboard mockup or spec includes all outcome KPIs
-- [ ] Peer review approved by @nw-platform-architect-reviewer
+- [ ] Per-wave peer review (OPTIONAL — invoked only on trigger; mandatory consolidated review fires at end of DISTILL)
 - [ ] Handoff accepted by nw-acceptance-designer (DISTILL wave)
 
 ## Next Wave
@@ -268,17 +374,15 @@ Before completing DEVOPS, produce `docs/feature/{feature-id}/devops/wave-decisio
 - {any DESIGN assumptions changed, with rationale}
 ```
 
-## Expected Outputs
+## Outputs
 
-```
-docs/feature/{feature-id}/devops/
-  platform-architecture.md
-  ci-cd-pipeline.md
-  observability-design.md
-  monitoring-alerting.md
-  infrastructure-integration.md    (if existing infra)
-  branching-strategy.md
-  continuous-learning.md           (if applicable)
-  kpi-instrumentation.md           (if outcome-kpis.md exists)
-  wave-decisions.md
-```
+**Single narrative file**: `docs/feature/{feature-id}/feature-delta.md` — environment matrix, CI/CD outline, monitoring contracts, deployment strategy, mutation strategy, observability stack, branching strategy, coexistence matrix all become `## Wave: DEVOPS / [REF|WHY|HOW] <Section>` headings.
+
+**Machine artifacts** (declared, parseable by downstream):
+- `docs/feature/{feature-id}/environments.yaml` — target environments + coexistence matrix + platform coverage + deployment assumptions. DISTILL parses this to parametrize acceptance scenarios over environments (Mandate 4 / Environmental Realism).
+
+**SSOT updates** (per Recommendation 3 / back-propagation contract):
+- `docs/product/kpi-contracts.yaml` — instrumentation deltas: per-KPI data collection (event names, log fields, metric labels), dashboard mapping, alerting thresholds. Created if absent; extended otherwise.
+- `docs/product/architecture/brief.md` — append/update deployment topology subsection if the chosen platform changes the system-context diagram (e.g. new managed services, new region).
+
+Legacy multi-file outputs (`platform-architecture.md`, `ci-cd-pipeline.md`, `observability-design.md`, `monitoring-alerting.md`, `infrastructure-integration.md`, `branching-strategy.md`, `continuous-learning.md`, `kpi-instrumentation.md`, `wave-decisions.md` as separate files) are NOT produced — that content lives in `feature-delta.md`. Only `environments.yaml` survives as a separate machine artifact because it has a parseable downstream consumer. Validator: `scripts/validation/validate_feature_layout.py`.

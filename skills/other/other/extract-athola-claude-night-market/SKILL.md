@@ -1,6 +1,6 @@
 ---
 name: extract
-description: 'Build a codebase knowledge base of business logic, architecture, data flow, and patterns. Use as foundation for gauntlet challenges.'
+description: 'Build a codebase knowledge base of business logic, architecture, data flow, and patterns.'
 model_hint: standard
 ---
 

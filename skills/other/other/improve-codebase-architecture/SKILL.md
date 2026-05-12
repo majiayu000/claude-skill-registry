@@ -1,6 +1,7 @@
 ---
 name: improve-codebase-architecture
-description: Surface deepening opportunities — refactors that turn shallow modules into deep ones — informed by `CONTEXT.md` and `docs/adr/`. Use when the user asks to improve architecture, find refactor candidates, raise testability, or make a codebase more agent-navigable. Skip for single localized fixes.
+description: Surface deepening refactors that turn shallow modules into deep ones, informed by `CONTEXT.md` and `docs/adr/`. Use when the user asks to improve architecture, find refactor candidates, raise testability, or make a codebase more agent-navigable. Skip for single localized fixes.
+disable-model-invocation: true
 ---
 
 Iteration loop: explore for friction, present deepening candidates, grill the chosen one, update domain artifacts inline. Vocabulary is load-bearing — see `references/LANGUAGE.md`.

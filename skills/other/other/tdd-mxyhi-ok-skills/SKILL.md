@@ -44,6 +44,8 @@ RIGHT (vertical):
 
 ### 1. Planning
 
+When exploring the codebase, use the project's domain glossary so that test names and interface vocabulary match the project's language, and respect ADRs in the area you're touching.
+
 Before writing any code:
 
 - [ ] Confirm with user what interface changes are needed

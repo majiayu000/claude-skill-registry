@@ -21,10 +21,9 @@ Optional `--skill-for={agent-name}` distills research into a practitioner-focuse
 
 At orchestration time, before invoking the researcher subagent:
 
-1. **Read** `.nwave/trusted-source-domains.yaml` from the project root
-2. **If file missing**, seed it from the defaults in the `## Default Trusted Sources` section below, then notify the user:
-   "Seeded `.nwave/trusted-source-domains.yaml` with defaults (7 categories, 42 trusted domains, 5 excluded). Edit the YAML directly to customize."
-3. **Embed** the YAML content inline in the researcher subagent Task prompt so the agent receives trusted source config via prompt context
+1. **Read Config** — Read `.nwave/trusted-source-domains.yaml` from the project root. Gate: file read attempted.
+2. **Seed If Missing** — If file missing, write it from the defaults in `## Default Trusted Sources` below, then notify the user: "Seeded `.nwave/trusted-source-domains.yaml` with defaults (7 categories, 42 trusted domains, 5 excluded). Edit the YAML directly to customize." Gate: file exists.
+3. **Embed Config** — Embed the YAML content inline in the researcher subagent Task prompt so the agent receives trusted source config via prompt context. Gate: YAML present in Task prompt.
 
 ## Agent Invocation
 
@@ -41,16 +40,15 @@ Execute \*research on {topic} [--skill-for={agent-name}].
 
 ## Output Management
 
-The researcher MUST create the output file in the FIRST 5 turns with a document skeleton (title, sections, placeholders). All subsequent findings are written DIRECTLY to this file as they are gathered -- never held only in context.
+The researcher MUST create the output file in the FIRST 5 turns with a document skeleton (title, sections, placeholders). All subsequent findings are written DIRECTLY to this file as they are gathered — never held only in context.
 
 If the agent is interrupted or runs out of turns, the output file contains all work done so far. This is the researcher's equivalent of the crafter's "commit early, commit often."
 
-Progressive write checkpoints:
-- Turn ~5: Output file exists with skeleton
-- Turn ~10: First findings written
-- Turn ~25: All gathered findings written so far
-- Turn ~35: Stop gathering, begin synthesizing
-- Turn ~45+: Polish only
+1. **Skeleton** — By turn ~5: Create output file with title, sections, and placeholders. Gate: output file exists.
+2. **First Findings** — By turn ~10: Write initial gathered findings to file. Gate: file has substantive content.
+3. **Ongoing Writes** — By turn ~25: Write all gathered findings so far. Gate: no findings held only in context.
+4. **Synthesize** — By turn ~35: Stop gathering, begin synthesizing. Gate: synthesis section started.
+5. **Polish** — Turn ~45+: Polish and finalize only. Gate: research document complete.
 
 ## Success Criteria
 

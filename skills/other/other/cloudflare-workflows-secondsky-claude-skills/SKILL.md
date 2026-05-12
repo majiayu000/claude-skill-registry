@@ -1,11 +1,6 @@
 ---
 name: cloudflare-workflows
-description: Cloudflare Workflows for durable long-running execution. Use for multi-step workflows, retries, state persistence, or encountering NonRetryableError, execution failed errors.
-
-  Keywords: cloudflare workflows, workflows workers, durable execution, workflow step,
-  WorkflowEntrypoint, step.do, step.sleep, workflow retries, NonRetryableError,
-  workflow state, wrangler workflows, workflow events, long-running tasks, step.sleepUntil,
-  step.waitForEvent, workflow bindings
+description: "Cloudflare Workflows for durable long-running execution. Use for multi-step workflows, retries, state persistence, or encountering NonRetryableError, execution failed errors."
 license: MIT
 metadata:
   version: "3.0.0"
@@ -18,8 +13,24 @@ metadata:
   agents_included: 3
   commands_included: 4
   scripts_included: 5
+  keywords:
+    - cloudflare workflows
+    - workflows workers
+    - durable execution
+    - workflow step
+    - WorkflowEntrypoint
+    - step.do
+    - step.sleep
+    - workflow retries
+    - NonRetryableError
+    - workflow state
+    - wrangler workflows
+    - workflow events
+    - long-running tasks
+    - step.sleepUntil
+    - step.waitForEvent
+    - workflow bindings
 ---
-
 # Cloudflare Workflows
 
 **Status**: Production Ready ✅ | **Last Verified**: 2025-12-27 | **Version**: 3.0.0

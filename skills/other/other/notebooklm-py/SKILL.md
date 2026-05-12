@@ -59,7 +59,7 @@ For automated environments, multiple accounts, or parallel agent workflows:
 
 **Multiple accounts:** Use named profiles (`notebooklm profile create work`, then `notebooklm -p work login`). Alternatively, use different `NOTEBOOKLM_HOME` directories per account.
 
-**Parallel agents:** The CLI stores notebook context in a shared file (`~/.notebooklm/context.json`). Multiple concurrent agents using `notebooklm use` can overwrite each other's context.
+**Parallel agents:** The CLI stores notebook context per profile (`~/.notebooklm/profiles/<profile>/context.json`, with a legacy fallback to `~/.notebooklm/context.json` for the implicit default profile). Multiple concurrent agents that share a profile and use `notebooklm use` can overwrite each other's context — use one of the isolation strategies below.
 
 **Solutions for parallel workflows:**
 1. **Always use explicit notebook ID** (recommended): Pass `-n <notebook_id>` (for `wait`/`download` commands) or `--notebook <notebook_id>` (for others) instead of relying on `use`
@@ -133,6 +133,7 @@ Before starting workflows, verify the CLI is ready:
 | Authenticate | `notebooklm login` |
 | Diagnose auth issues | `notebooklm auth check` |
 | Diagnose auth (full) | `notebooklm auth check --test` |
+| One-shot cookie keepalive (for cron) | `notebooklm auth refresh --quiet` |
 | List notebooks | `notebooklm list` |
 | Create notebook | `notebooklm create "Title"` |
 | Set context | `notebooklm use <notebook_id>` |
@@ -180,7 +181,7 @@ Before starting workflows, verify the CLI is ready:
 | Download quiz (markdown) | `notebooklm download quiz --format markdown quiz.md` |
 | Download flashcards | `notebooklm download flashcards cards.json` |
 | Download flashcards (markdown) | `notebooklm download flashcards --format markdown cards.md` |
-| Delete notebook | `notebooklm notebook delete <id>` |
+| Delete notebook | `notebooklm delete -n <id>` |
 | List languages | `notebooklm language list` |
 | Get language | `notebooklm language get` |
 | Set language | `notebooklm language set zh_Hans` |
@@ -348,7 +349,7 @@ When user wants full automation (generate and download when ready):
 3. `notebooklm source list` to verify
 
 **Source limits:** Varies by plan—Standard: 50, Plus: 100, Pro: 300, Ultra: 600 sources per notebook. See [NotebookLM plans](https://support.google.com/notebooklm/answer/16213268) for details. The CLI does not enforce these limits; they are applied by your NotebookLM account.
-**Supported types:** PDFs, YouTube URLs, web URLs, Google Docs, text files, Markdown, Word docs, audio files, video files, images
+**Supported types:** PDFs, YouTube URLs, web URLs, Google Docs, text files, Markdown, Word docs, EPUB, audio files, video files, images
 
 ### Bulk Import with Source Waiting (Subagent Pattern)
 **Time:** Varies by source count
@@ -577,7 +578,6 @@ notebooklm language get --local  # Read local config only
 notebooklm --help              # Main commands
 notebooklm auth check          # Diagnose auth issues
 notebooklm auth check --test   # Full auth validation with network test
-notebooklm notebook --help     # Notebook management
 notebooklm source --help       # Source management
 notebooklm research --help     # Research status/wait
 notebooklm generate --help     # Content generation

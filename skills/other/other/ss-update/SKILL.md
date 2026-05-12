@@ -7,6 +7,13 @@ allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 
 # StyleSeed Update Assistant
 
+## When NOT to use
+
+- For first-time setup → use `/ss-setup`
+- For just one new component or skin — copy that file manually
+- For projects that have heavily diverged from upstream — manual diff review first
+- For updating user code/components — this updates engine files only, not your custom UI
+
 Automatically detect and update StyleSeed files in the current project.
 
 ## Instructions

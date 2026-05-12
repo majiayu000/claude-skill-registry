@@ -1,6 +1,6 @@
 ---
 name: dependency-graph
-description: "Generate dependency graphs showing import relationships between modules or plugins"
+description: 'Generate dependency graphs showing import relationships between modules or plugins.'
 ---
 
 # Dependency Graph

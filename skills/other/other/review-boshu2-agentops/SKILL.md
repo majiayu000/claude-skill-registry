@@ -1,6 +1,7 @@
 ---
 name: review
-description: 'Review diffs for risk.'
+description: 'Review diffs for risk, find mocks, scan for bugs, and audit codebases.'
+practices: [code-complete, refactoring, design-by-contract]
 skill_api_version: 1
 context:
   window: fork
@@ -36,6 +37,10 @@ This skill is for reviewing OTHER people's or agents' changes. For validating yo
 /review --agent .agents/crank/      # Agent mode — review agent-generated output
 /review --agent ./output.patch      # Agent mode — review a patch file
 /review --deep 42                   # Deep mode — spawns council for second opinion
+/review --mocks                     # Find stubs, mocks, placeholders, TODOs
+/review --bugs                      # Bug scanner: null derefs, leaks, security holes
+/review --audit security            # Domain audit: security, perf, UX, API, CLI
+/review --deep-scan                 # Iterative audit-fix-rescan until clean
 ```
 
 ---
@@ -135,6 +140,8 @@ If intent is unclear, flag it: "PR description does not explain the purpose of t
 ### Step 3: Systematic Review Pass (SCORED)
 
 Review every changed file against the SCORED checklist. For each category, actively look for problems. Do not skim -- read each changed line.
+
+For audit-style reviews, generated-code suspicion, mock leakage, or external-review-tool findings, load [references/audit-and-mock-sweeps.md](references/audit-and-mock-sweeps.md) before writing final findings.
 
 #### S -- Security
 
@@ -318,6 +325,13 @@ Merge council findings into the review document under a "## Council Findings" se
 
 ---
 
+## Reference Documents
+
+- [references/MOCK_FINDER.md](references/MOCK_FINDER.md) — Find stubs, mocks, placeholders, TODOs
+- [references/BUG_SCANNER.md](references/BUG_SCANNER.md) — Bug scanner: null derefs, leaks, security
+- [references/DOMAIN_AUDIT.md](references/DOMAIN_AUDIT.md) — Domain-parameterized audit (security, perf, UX, API, CLI)
+- [references/DEEP_SCAN.md](references/DEEP_SCAN.md) — Iterative audit-fix-rescan cycle
+
 ## See Also
 
 - [vibe](../vibe/SKILL.md) — Self-review and code quality validation
@@ -325,3 +339,4 @@ Merge council findings into the review document under a "## Council Findings" se
 - [standards](../standards/SKILL.md) — Language-specific coding conventions
 - [bug-hunt](../bug-hunt/SKILL.md) — Deep bug investigation
 - [pr-validate](../pr-validate/SKILL.md) — PR scope and isolation checks
+- [references/audit-and-mock-sweeps.md](references/audit-and-mock-sweeps.md)

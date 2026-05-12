@@ -1,6 +1,6 @@
 ---
 name: deepline-gtm
-description: "Use this skill for GTM prospecting, enrichment, qualification, and outbound workflows, especially when users mention Deepline, CSV processing, lead/account/contact research, waterfall enrichment, email or LinkedIn lookup, personalization, scoring, or campaign activation. Route CSV-heavy and provider-driven requests through this skill, then rely on linked sub-docs and provider playbooks for execution details. Available providers: adyntel, ai_ark, apify, apollo, attio, bettercontact, builtwith, cloudflare, contactout, crustdata, customer_db, dataforseo, datagma, deepline_native, deeplineagent, dropleads, exa, firecrawl, forager, fullenrich, generic_http, heyreach, hubspot, hunter, icypeas, instantly, ipqs, leadmagic, lemlist, lusha, openwebninja, parallel, peopledatalabs, prospeo, rocketreach, salesforce, serper, slack, smartlead, snowflake, theirstack, trestle, wiza, zerobounce."
+description: "Use this skill for GTM prospecting, enrichment, qualification, and outbound workflows, especially when users mention Deepline, CSV processing, lead/account/contact research, waterfall enrichment, email or LinkedIn lookup, personalization, scoring, or campaign activation. Route CSV-heavy and provider-driven requests through this skill, then rely on linked sub-docs and provider playbooks for execution details. Available providers: adyntel, ai_ark, apify, apollo, attio, bettercontact, bloomberry, builtwith, cloudflare, contactout, crustdata, customer_db, dataforseo, datagma, deepline_native, deeplineagent, discolike, dropleads, exa, findymail, firecrawl, forager, fullenrich, generic_http, heyreach, hubspot, hunter, icypeas, instantly, ipqs, leadmagic, lemlist, linkedin_ads_audiences, linkedin_scraper, lusha, openwebninja, parallel, peopledatalabs, prospeo, rocketreach, salesforce, serper, slack, smartlead, snowflake, theirstack, trestle, wiza, zerobounce."
 ---
 
 # GTM Meta Skill
@@ -198,23 +198,27 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
 
 - [ai_ark playbook](provider-playbooks/ai_ark.md)
   Summary: Use company and people search for prospecting, reverse lookup for identity resolution, mobile phone finder only for strong matches, and async export or email-finder flows when you need verified emails.
-  Last reviewed: 2026-03-16
+  Last reviewed: 2026-04-30
 
 - [apify playbook](provider-playbooks/apify.md)
   Summary: Prefer sync run (`apify_run_actor_sync`) for actor execution. Use async run plus polling only when you need non-blocking execution. Reach for Apify before call_ai/WebSearch when the source is already known and a source-specific actor exists.
   Last reviewed: 2026-02-11
 
 - [apollo playbook](provider-playbooks/apollo.md)
-  Summary: Cheap but mediocre quality people/company search with include_similar_titles=true unless strict mode is explicitly requested.
-  Last reviewed: 2026-02-11
+  Summary: Use Apollo API search for free previewing, then use people/company enrichment when you need resolved records or CRM/outbound actions.
+  Last reviewed: 2026-04-21
 
 - [attio playbook](provider-playbooks/attio.md)
   Summary: Use assert_* operations for upserts, query_* operations for filtered reads, standard-object wrappers when you know the Attio object family, and webhook subscriptions with typed event names when you need realtime sync.
   Last reviewed: 2026-03-20
 
 - [bettercontact playbook](provider-playbooks/bettercontact.md)
-  Summary: Launcher tools wait for BetterContact completion by default and return final enrichment results. Use get_result only for explicit recovery or non-blocking flows.
-  Last reviewed: 2026-03-30
+  Summary: Launch BetterContact enrichment jobs, then fetch terminal results with the result endpoint. Phone enrichment consumes an extra 10 credits per successful contact.
+  Last reviewed: 2026-04-21
+
+- [bloomberry playbook](provider-playbooks/bloomberry.md)
+  Summary: Use company tech-stack enrichment for known domains, tech-stack changes for recent adoption/churn signals, current customers for account lists by vendor or category, vendor listing for discovery, and job postings for hiring intent.
+  Last reviewed: 2026-05-01
 
 - [builtwith playbook](provider-playbooks/builtwith.md)
   Summary: Use domain_lookup for live stack inspection, vector_search to discover the right tech label before lists/trends, and bulk_domain_lookup for row-heavy domain batches.
@@ -225,8 +229,8 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Last reviewed: 2026-03-11
 
 - [contactout playbook](provider-playbooks/contactout.md)
-  Summary: Use for LinkedIn → email/phone enrichment. Run contactout_check_email_status first (free) to confirm data exists before spending credits on enrich.
-  Last reviewed: 2026-03-25
+  Summary: Use free ContactOut checkers before paid enrich/search calls. Strong for LinkedIn-based email and phone discovery.
+  Last reviewed: 2026-04-21
 
 - [crustdata playbook](provider-playbooks/crustdata.md)
   Summary: Start with free autocomplete and default to fuzzy contains operators `(.)` for higher recall. Use ISO-3 country codes, prefer crunchbase_categories over linkedin_industries for niche verticals, and use employee_count_range for filtering instead of employee_metrics.latest_count.
@@ -237,8 +241,8 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Last reviewed: 2026-04-08
 
 - [datagma playbook](provider-playbooks/datagma.md)
-  Summary: Use for real-time person enrichment with phone + job-change signals. Pass linkedin URL as the primary identifier for best results; fall back to email or fullName+domain.
-  Last reviewed: 2026-03-31
+  Summary: Use Datagma for real-time enrichment, phone discovery, and job-change checks. Prefer LinkedIn URL or domain-backed inputs when available.
+  Last reviewed: 2026-04-20
 
 - [deepline_native playbook](provider-playbooks/deepline_native.md)
   Summary: Launcher actions wait for completion and return final payloads with job_id; search_contact uses the search budget while enrichment-style actions use the higher enrichment budget.
@@ -248,6 +252,10 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Summary: Use Vercel AI Gateway for plain inference or multi-step research with Deepline-managed tools and billing.
   Last reviewed: 2026-03-22
 
+- [discolike playbook](provider-playbooks/discolike.md)
+  Summary: Use discover or count for ICP expansion, bizdata for firmographic lookup, match when you start from a company name, and relationship datasets for vendors, public links, subsidiaries, and redirects.
+  Last reviewed: 2026-04-30
+
 - [dropleads playbook](provider-playbooks/dropleads.md)
   Summary: Use Prime-DB search/count first to scope segments efficiently, then run finder/verifier steps only on shortlisted records. Prefer companyDomains over companyNames, split multi-word keywords into separate tokens, and use broad jobTitles plus seniority instead of exact-title matching.
   Last reviewed: 2026-02-26
@@ -255,6 +263,10 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
 - [exa playbook](provider-playbooks/exa.md)
   Summary: Use search/contents before answer for auditable retrieval, then synthesize with explicit citations. Write natural-language queries, expect discard/noise, and avoid mixing category searches with includeDomains-style source scoping.
   Last reviewed: 2026-02-11
+
+- [findymail playbook](provider-playbooks/findymail.md)
+  Summary: Use direct email/profile/company/phone lookups for enrichment, technology search before technology lookup filters, and Intellimatch launch/status/data as the async lead-list workflow.
+  Last reviewed: 2026-05-01
 
 - [firecrawl playbook](provider-playbooks/firecrawl.md)
   Summary: Web scraping, crawling, search, and AI extraction. Use firecrawl_scrape for single pages, firecrawl_search for web search + scraping, firecrawl_map for URL discovery, firecrawl_crawl for multi-page crawls, firecrawl_extract for structured extraction.
@@ -304,6 +316,14 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Summary: List campaign inventory first and push contacts in small batches with post-write stat checks.
   Last reviewed: 2026-03-01
 
+- [linkedin_ads_audiences playbook](provider-playbooks/linkedin_ads_audiences.md)
+  Summary: Use list upload segments for contact or company matching. LinkedIn does not support true append semantics on LIST_UPLOAD segments, so treat syncs as replacements.
+  Last reviewed: 2026-04-09
+
+- [linkedin_scraper playbook](provider-playbooks/linkedin_scraper.md)
+  Summary: Use LinkedinScraper for LinkedIn/Sales Navigator actions that require an authenticated identity. Prefer live read/extract tools first; engagement tools mutate LinkedIn state.
+  Last reviewed: 2026-05-05
+
 - [lusha playbook](provider-playbooks/lusha.md)
   Summary: Use for B2B email + direct dial enrichment by LinkedIn URL, email, or name+company. Also supports company enrichment by domain and prospecting search with department/seniority/industry filters.
   Last reviewed: 2026-03-31
@@ -321,8 +341,8 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Last reviewed: 2026-02-11
 
 - [prospeo playbook](provider-playbooks/prospeo.md)
-  Summary: Use enrich-person for individual contacts, search-person for prospecting with 30+ filters, and search-company for account-level lists.
-  Last reviewed: 2026-02-28
+  Summary: Use enrich-person for individual contacts, search-person for prospecting with stable filters, and search-company for account-level lists. Use FullEnrich for job-change workflows; Prospeo's live job-change search filter is not reliable.
+  Last reviewed: 2026-04-29
 
 - [salesforce playbook](provider-playbooks/salesforce.md)
   Summary: Use field inspection before custom writes, object-specific create/update/delete tools for standard CRM records, and list tools for incremental reads with pagination handoff.
@@ -349,8 +369,8 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Last reviewed: 2026-03-25
 
 - [zerobounce playbook](provider-playbooks/zerobounce.md)
-  Summary: Use as final email validation gate before outbound sends. Check sub_status for granular failure reasons. Use batch for 5+ emails.
-  Last reviewed: 2026-02-28
+  Summary: Use validate as the final deliverability gate. Email Finder and Domain Search both come from ZeroBounce guessformat; Email Finder is for named people, Domain Search is for domain-only pattern discovery.
+  Last reviewed: 2026-04-21
 
 - Apply defaults when user input is absent.
 - User-specified values always override defaults.
@@ -529,8 +549,9 @@ curl -s "https://code.deepline.com/api/v2/cli/install" | bash
 2. If not, search `deepline tools get apify_run_actor_sync` for the actor id, or try deepline tools search.
 3. If not present, run discovery search.
 4. Avoid rental-priced actors.
-5. Pick value-over-quality-fit; when tied, choose best evidence-quality/price balance.
-6. Honor `operatorNotes` over public ratings when conflicting.
+5. For LinkedIn post scraping, prefer `supreme_coder/linkedin-post` for generic posts/search URLs and `harvestapi/linkedin-post-reactions` when the goal is engagers/reactions. Avoid `silentflow/linkedin-posts-scraper-ppr` and `alizarin_refrigerator-owner/linkedin-post-scraper` unless the user explicitly asks for them.
+6. Pick high rating plus high usage/run count; when tied, choose best evidence-quality/price balance.
+7. Honor `operatorNotes` over public ratings when conflicting.
 
 ```bash
 deepline tools execute apify_list_store_actors --payload '{"search":"linkedin company employees scraper","sortBy":"relevance","limit":20}'

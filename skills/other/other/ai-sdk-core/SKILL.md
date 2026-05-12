@@ -1,14 +1,34 @@
 ---
 name: ai-sdk-core
-description: Vercel AI SDK v5 for backend AI (text generation, structured output, tools, agents). Multi-provider. Use for server-side AI or encountering AI_APICallError, AI_NoObjectGeneratedError, streaming failures.
+description: "Vercel AI SDK v5 for backend AI (text generation, structured output, tools, agents). Multi-provider. Use for server-side AI or encountering AI_APICallError, AI_NoObjectGeneratedError, streaming failures."
 
-  Keywords: ai sdk core, vercel ai sdk, generateText, streamText, generateObject, streamObject,
-  ai sdk node, ai sdk server, zod ai schema, ai tools calling, ai agent class, openai sdk, anthropic sdk,
-  google gemini sdk, workers-ai-provider, ai streaming backend, multi-provider ai, ai sdk errors,
-  AI_APICallError, AI_NoObjectGeneratedError, streamText fails, worker startup limit ai
+metadata:
+  keywords:
+    - ai sdk core
+    - vercel ai sdk
+    - generateText
+    - streamText
+    - generateObject
+    - streamObject
+    - ai sdk node
+    - ai sdk server
+    - zod ai schema
+    - ai tools calling
+    - ai agent class
+    - openai sdk
+    - anthropic sdk
+    - google gemini sdk
+    - workers-ai-provider
+    - ai streaming backend
+    - multi-provider ai
+    - ai sdk errors
+    - AI_APICallError
+    - AI_NoObjectGeneratedError
+    - streamText fails
+    - worker startup limit ai
+
 license: MIT
 ---
-
 # AI SDK Core
 
 Production-ready backend AI with Vercel AI SDK v5.

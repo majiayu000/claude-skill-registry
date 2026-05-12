@@ -122,30 +122,9 @@ Output: Approved ticket content ready to create.
 
 ### 6. Create Ticket
 
-**Detect issue tracker:**
-- Check `CLAUDE.md` for tracker preference and integration method
-- Auto-detect from git remote URL if not specified
-- Use available integration (CLI, MCP server, or API)
-
-**Create ticket using available integration:**
-- Use platform integration to create issue
-- Pass title and body
-- Apply any default labels if specified in CLAUDE.md
-
-**Capture ticket URL:**
-- Present ticket URL to user
-- Confirm successful creation
+Detect the issue tracker and create the ticket per [`references/trackers.md`](../../references/trackers.md) (Detection Procedure + "Create" operation). Capture and present the resulting ticket URL.
 
 Output: Created ticket with URL.
-
-## Issue Tracker Detection
-
-**Check in this order:**
-1. Look for explicit tracker specification in `CLAUDE.md` or `README.md`
-2. Auto-detect from `git remote -v` URL
-3. Use available integration method for the detected platform
-
-**Note:** If no integration is available, output the ticket content and instructions for manual creation.
 
 ## Skill Boundaries
 

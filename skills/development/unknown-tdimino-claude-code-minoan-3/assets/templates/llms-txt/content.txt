@@ -1,0 +1,26 @@
+# {SITE_NAME}
+
+> {SITE_NAME} covers {TOPIC_AREA}. {ONE_SENTENCE_EDITORIAL_MISSION}.
+
+## Key Content
+
+- [{ARTICLE_1}]({BASE_URL}/{SLUG_1}): {ARTICLE_1_DESCRIPTION}
+- [{ARTICLE_2}]({BASE_URL}/{SLUG_2}): {ARTICLE_2_DESCRIPTION}
+- [{ARTICLE_3}]({BASE_URL}/{SLUG_3}): {ARTICLE_3_DESCRIPTION}
+
+## Topics
+
+- [{TOPIC_1}]({BASE_URL}/topics/{TOPIC_SLUG_1}): {TOPIC_1_DESCRIPTION}
+- [{TOPIC_2}]({BASE_URL}/topics/{TOPIC_SLUG_2}): {TOPIC_2_DESCRIPTION}
+
+## About
+
+- [About]({BASE_URL}/about): Mission, editorial team, and methodology
+- [Sources]({BASE_URL}/sources): Data sources, verification process, and citation policy
+- [Methodology]({BASE_URL}/methodology): How content is researched and verified
+
+## Optional
+
+- [Archive]({BASE_URL}/archive): Full content archive by date
+- [Newsletter]({BASE_URL}/subscribe): Email updates and summaries
+- [RSS Feed]({BASE_URL}/feed.xml): RSS/Atom feed for content syndication

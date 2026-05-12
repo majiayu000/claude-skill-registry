@@ -1,6 +1,7 @@
 ---
 name: harvest
 description: 'Promote .agents knowledge.'
+practices: [wiki-knowledge-surface, lean-startup]
 skill_api_version: 1
 user-invocable: true
 context:

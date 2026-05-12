@@ -1,7 +1,6 @@
 ---
 name: context-map
-description: 'Generate a compressed project context map to reduce token waste from codebase exploration. Use before sessions involving heavy file reads.'
-version: 1.9.3
+description: 'Generate a compressed project context map.'
 category: optimization
 tags:
   - context

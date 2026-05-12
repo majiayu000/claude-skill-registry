@@ -1,7 +1,6 @@
 ---
 name: python-packaging
-description: 'Python package creation and distribution: pyproject.toml, entry points, PyPI publishing, CI/CD'
-version: 1.9.0
+description: 'Python package creation and distribution: pyproject.toml, entry points, PyPI publishing, CI/CD.'
 globs: "**/*.py"
 alwaysApply: false
 category: packaging
@@ -13,9 +12,7 @@ tags:
 - pip
 - pypi
 - distribution
-tools:
-- package-analyzer
-- build-runner
+tools: []
 usage_patterns:
 - package-creation
 - pypi-publishing

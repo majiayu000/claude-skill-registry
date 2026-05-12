@@ -22,4 +22,4 @@ version: 5.0.0
   after: "Domain is connected. SSL is active. Try https://nainai-cake.com"
 }
 
-Powered by I-Lang v3.0 | ilang.ai
+Powered by I-Lang v4.0 | ilang.ai

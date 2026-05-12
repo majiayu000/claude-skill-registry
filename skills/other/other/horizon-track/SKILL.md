@@ -1,6 +1,7 @@
 ---
 name: horizon-track
 description: Track long-horizon objectives across multiple sessions with milestone checkpoints, progress persistence, and drift detection
+argument-hint: "<objective-name>"
 allowed-tools: mcp__claude-flow__memory_store mcp__claude-flow__memory_search mcp__claude-flow__memory_list mcp__claude-flow__memory_retrieve mcp__claude-flow__task_list mcp__claude-flow__task_summary mcp__claude-flow__progress_check mcp__claude-flow__progress_summary mcp__claude-flow__agentdb_hierarchical-store mcp__claude-flow__agentdb_hierarchical-recall mcp__claude-flow__hooks_intelligence_pattern-store mcp__claude-flow__session_save mcp__claude-flow__session_restore Bash Read Write
 ---
 

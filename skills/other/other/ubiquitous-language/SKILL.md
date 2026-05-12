@@ -1,7 +1,6 @@
 ---
 name: ubiquitous-language
 description: Extract a domain glossary from the current dialogue; flag ambiguities, propose canonical terms, persist to `UBIQUITOUS_LANGUAGE.md`. Trigger when the user is hardening domain terminology, building a glossary, or fresh domain concepts surface in conversation without documented language.
-disable-model-invocation: true
 ---
 
 Mine the live conversation for domain-relevant nouns, verbs, and concepts; resolve synonyms and overloaded terms into a canonical, opinionated glossary. Persist the result to `UBIQUITOUS_LANGUAGE.md` so subsequent sessions inherit the same vocabulary. Re-invocation refines the file in place rather than overwriting.

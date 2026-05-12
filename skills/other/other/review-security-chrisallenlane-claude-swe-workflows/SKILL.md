@@ -1,6 +1,6 @@
 ---
 name: review-security
-description: White-box security audit. Blue-teamer and lead red-teamer run in parallel isolation for an independent first pass — neither sees the other's output during reconnaissance. A synthesis step categorizes findings into four prescriptive buckets (anchoring-suppressed, convergent, blue-flagged-unverified, divergent), producing a unified target list. Focused red-teamers then deep-dive each target. Iterates when exploit chains are discovered. Heavy and thorough by design.
+description: White-box security audit. Blue-teamer and lead red-teamer run in parallel isolation for an independent first pass — neither sees the other's output during reconnaissance. A synthesis step categorizes findings into four prescriptive buckets (anchoring-suppressed, convergent, blue-flagged-unverified, divergent), producing a unified target list. Focused red-teamers then deep-dive each target. Iterates when exploit chains are discovered. Heavy and thorough by design. Advisory only — produces findings and proposes tickets; does not implement remediation.
 model: opus
 ---
 
@@ -9,6 +9,8 @@ model: opus
 Orchestrates a comprehensive security assessment of the project's source code using both defensive and offensive analysis. A blue-teamer and a lead red-teamer run in parallel, in isolation — neither sees the other's output during the first pass. The orchestrator then synthesizes their territories into a unified target list with four prescriptive categories, surfacing what each team alone would have missed. Focused red-teamers deep-dive each target. Findings are synthesized, exploit chains are explored, and the process iterates until no new chains emerge.
 
 **This is deliberately heavy.** Thoroughness is the priority, not speed. A complete audit may spawn many agents and take significant time. That's the point — shallow security reviews miss the vulnerabilities that matter.
+
+**Advisory only.** The skill produces findings and proposes tickets; it does not implement remediation. The cognitive seam between "find vulnerability" and "fix vulnerability" is wide enough that mixing them under one workflow degrades both — security findings require fresh threat-model reasoning to remediate correctly, and the discovery agents shouldn't be biased toward findings they could easily fix. Tickets capture findings durably across that seam and compose with `/implement` and `/implement-project` for remediation.
 
 The parallel-isolated first pass is the load-bearing discipline of this skill. The previous design ran blue first, then red informed by blue. That design embedded an anchoring failure mode: whatever the blue team flagged as "the defensive territory" became the salient territory for the red team. Real attackers don't get a defensive briefing — they look at the system fresh and find what defenders missed. Independent reconnaissance surfaces the territory the old design suppressed.
 
@@ -38,7 +40,7 @@ The parallel-isolated first pass is the load-bearing discipline of this skill. T
 │     ├─ If exploit chains found → goto 4 (new vector) │
 │     └─ If no new chains → proceed                    │
 │  6. Present consolidated findings to user            │
-│  7. Optionally route findings to fixers              │
+│  7. Cut tickets (proposed structure, operator-approved) │
 └──────────────────────────────────────────────────────┘
 ```
 
@@ -365,22 +367,78 @@ blue-flagged-unverified and divergent are dropped first.]
 
 The `Discovered by:` field is meant to make the discipline visible to the user. *Synthesis (anchoring-suppressed)* attribution is especially important — over time, this field provides empirical signal about whether the parallel-isolated first pass is producing value the old sequential design would have suppressed.
 
-### 7. Route to Fixers (Optional)
+### 7. Cut Tickets
 
-After presenting findings, ask the user: "Would you like to route these findings to agents for remediation?"
+After presenting findings, propose a ticket structure based on the audit's shape. Each audit produces a different finding distribution — concentrated CRITICALs, spread across severity, chain-heavy, defense-in-depth-only — and the right ticket granularity depends on that shape. Rather than prescribe a fixed mapping (one-per-finding, one-per-chain, severity-batched), examine the findings and propose a structure that fits.
 
-**If yes:**
-- For each finding, determine the appropriate fixer:
-  - Web vulnerabilities (XSS, CSRF, clickjacking) → `swe-sme-html`, `swe-sme-javascript`, or `swe-sme-css` depending on the fix
-  - Injection vulnerabilities (SQL, command, path) → language-appropriate SME
-  - Auth/crypto issues → `sec-blue-teamer` for defensive remediation guidance, then language SME for implementation
-  - For exploit chains → fix the cheapest link (the component that's easiest to remediate and breaks the chain)
+#### 7a. Analyze Findings and Propose Structure
 
-- Spawn the appropriate agent with the finding details and remediation guidance
-- After each fix, spawn `qa-engineer` to verify the fix doesn't break functionality
-- Commit each fix atomically
+Examine the consolidated findings produced in step 6:
+- Count by severity (CRITICAL / HIGH / MEDIUM / LOW).
+- Count exploit chains.
+- Note clustering — multiple findings in the same component, or in the same vulnerability class.
+- Note any defense-in-depth observations (typically LOW-severity findings that are not independently exploitable but harden against future regressions).
 
-**If no:** The audit report stands on its own. The user can act on findings at their discretion.
+From that shape, propose a ticket structure. Common shapes:
+
+- **Concentrated CRITICALs:** 1 ticket per CRITICAL/HIGH finding (so each gets dedicated remediation attention); 1 ticket per chain; 1 batch ticket for MEDIUMs/LOWs as "defense-in-depth observations."
+- **Spread across severity:** 1 ticket per CRITICAL, 1 ticket per chain, 1 batch per severity for HIGH/MEDIUM/LOW.
+- **Defense-in-depth only:** 1 batch ticket listing all observations with a "hardening" framing — no individual tickets.
+- **No findings:** No tickets. The audit report stands alone.
+
+Present the proposed structure to the operator with the reasoning:
+
+```
+Proposed ticket structure for this audit:
+
+8 findings (3 CRITICAL, 2 HIGH, 1 MEDIUM, 1 LOW), 1 exploit chain.
+
+Proposed: 7 tickets
+  - 1 ticket per CRITICAL/HIGH finding (5 tickets)
+  - 1 ticket for the chain (combined attack, components, cheapest-link fix)
+  - 1 batch ticket: "Defense-in-depth observations" (1 MEDIUM + 1 LOW)
+
+Approve / edit / decline?
+```
+
+Wait for the response. Three outcomes:
+
+- **Approve:** Proceed to 7b.
+- **Edit:** The operator modifies the structure (merge two tickets, split one, drop a finding, change granularity). Apply the edits, present the revised structure, and repeat until approved.
+- **Decline:** The audit report stands alone. The operator can act on findings at their discretion. The skill exits cleanly.
+
+#### 7b. Create Tickets
+
+Use the canonical tracker integration documented in [`references/trackers.md`](../../references/trackers.md). For each ticket in the approved structure:
+
+**Title:** `[<SEVERITY>] <concise vulnerability summary>` (e.g., `[CRITICAL] OAuth state parameter not validated on /api/auth/callback`).
+
+**Body sections:**
+- **Attack** — concrete reproduction path.
+- **Impact** — what the attacker gets.
+- **Data flow** — entry → transformations → sink.
+- **Defensive gap** (if blue-team data informed the finding) — the relevant blue-teamer observation.
+- **Fix guidance** — remediation direction (not concrete code).
+- **Discovered by** — preserves the v7.1.0 attribution: `red team independent`, `blue team independent`, `synthesis (anchoring-suppressed)`, `focused agent for <target>`, or `chain analysis`. This is load-bearing — the field provides empirical signal over time about whether the parallel-isolated first pass is producing value the old sequential design would have suppressed. Do not drop it.
+
+**For chain tickets:**
+- **Components** — the constituent findings (cite individual finding tickets if they were cut as separate tickets).
+- **Combined impact** — what the chain achieves that components alone don't.
+- **Cheapest-link fix** — which component to fix first to break the chain.
+
+**For batch tickets:**
+- One section per included finding, using the per-finding body structure above.
+- A brief intro paragraph explaining the batch theme (e.g., "Defense-in-depth observations — none independently exploitable; addressing these hardens against future regressions and chain construction.").
+
+**Labels:** Apply severity labels (`critical` / `high` / `medium` / `low`) when the tracker supports them. The implementation may also apply a `security` umbrella label if one exists.
+
+After all tickets are created, report the URLs to the operator and exit.
+
+#### Orchestrator-Invoked Behavior
+
+When `/review-security` is invoked by an orchestrator (`/lead-project`, `/review-deep`, `/implement-project`, etc.), the workflow above is unchanged. The skill proposes the ticket structure to the orchestrator, which applies its own judgment per [`references/autonomy.md`](../../references/autonomy.md) — approving, editing, or declining the proposal, then deciding which of any created tickets to work in the current flow versus defer.
+
+The contract change versus pre-v8.0.0 is that work surfaced by `/review-security` is now durably documented in the tracker rather than handled in-skill via fixer routing. The orchestrator's decision-making is otherwise unchanged.
 
 ## Agent Coordination
 
@@ -389,6 +447,8 @@ After presenting findings, ask the user: "Would you like to route these findings
 **Orchestrator-direct synthesis at phase 3.** The reconnaissance synthesis is performed by the orchestrator, not a sub-agent. The categorization rules are mechanical, the orchestrator already holds both reports, and avoiding an extra agent saves cost and round-trip time.
 
 **Sequential execution within all other phases.** Focused red-teamers (phase 4) run sequentially so findings accumulate for chain analysis.
+
+**No remediation agents.** Phase 7 cuts tickets via the tracker integration; no `swe-sme-*` or `qa-engineer` invocations happen inside `/review-security`. Remediation is handled out-of-skill by `/implement` or `/implement-project` against the cut tickets.
 
 **Fresh instances for every agent.** Each agent gets a clean context window dedicated entirely to its task. This is the core design principle — full context dedicated to a single concern.
 
@@ -418,22 +478,9 @@ After presenting findings, ask the user: "Would you like to route these findings
 
 ## Integration with Other Skills
 
-**Relationship to `/bug-fix`:**
-- `/bug-fix` invokes `sec-blue-teamer` for scoped security review of changed code
-- `/review-security` is a dedicated, full-depth security audit
-- Use `/review-security` proactively; `/bug-fix` handles security reactively
+**`/review-security` vs `/bug-fix`:** `/review-security` is proactive — a full-depth audit run before major releases or after significant feature additions. `/bug-fix` is reactive — it invokes `sec-blue-teamer` for scoped review of changed code as part of fixing a specific bug.
 
-**Relationship to `/implement`:**
-- `/implement` may invoke `sec-blue-teamer` as part of its review phase
-- `/review-security` is independent and deeper — run it when security assurance matters, not as part of routine development
-
-**Relationship to `/review-release`:**
-- `/review-release` includes basic security checks (secrets, debug artifacts)
-- `/review-security` is a comprehensive pre-release security audit — run it before major releases or after significant feature additions
-
-**Relationship to `/review-deep`:**
-- `/review-deep` runs `/review-security` as one phase of a full pre-release sweep across every `/review-*` dimension
-- Use `/review-deep` when you want the full sweep; use `/review-security` alone when security assurance is the specific goal
+**`/review-security` vs `/review-release`:** `/review-release` includes basic security checks (secrets, debug artifacts) as part of its pre-release sweep. `/review-security` is the dedicated audit — run it when security assurance is the goal, not as part of routine release prep.
 
 ## Example Session
 
@@ -630,8 +677,29 @@ that 3 of the 8 findings — including the upload path traversal and the
 CSV formula injection — emerged from the anchoring-suppressed bucket
 that the old sequential design would have suppressed.]
 
-Would you like to route these findings to agents for remediation?
-> Yes, let's fix the criticals
+Proposed ticket structure for this audit:
 
-[Routing CRITICAL findings to appropriate SMEs...]
+8 findings (3 CRITICAL, 2 HIGH, 1 MEDIUM, 1 LOW), 1 exploit chain.
+
+Proposed: 7 tickets
+  - 1 ticket per CRITICAL/HIGH finding (5 tickets)
+  - 1 ticket for the chain (IDOR + OAuth CSRF → account takeover)
+  - 1 batch ticket: "Defense-in-depth observations" (1 MEDIUM + 1 LOW)
+
+Approve / edit / decline?
+> Approve
+
+Creating tickets...
+  #N — [CRITICAL] Path traversal in POST /api/upload destination
+  #N — [CRITICAL] OAuth state parameter not validated on /api/auth/callback
+  #N — [CRITICAL] SQL injection in POST /api/search (unauthenticated)
+  #N — [HIGH] IDOR + sensitive data exposure on GET /api/users/:id
+  #N — [HIGH] Privilege escalation via PUT /api/settings/notifications
+  #N — [CRITICAL] Chain: IDOR + OAuth CSRF → account takeover
+  #N — [LOW/MEDIUM] Defense-in-depth observations (CSV formula injection,
+                    verbose error responses)
+
+7 tickets created. Each ticket carries the Discovered by: attribution
+so the parallel-isolated first pass's empirical signal survives the
+handoff to the tracker. Audit complete.
 ```

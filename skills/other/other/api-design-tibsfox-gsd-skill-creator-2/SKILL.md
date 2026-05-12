@@ -1,6 +1,12 @@
 ---
 name: api-design
 description: REST API design best practices. Use when designing APIs, choosing status codes, or creating endpoints.
+version: 1.0.0
+format: 2025-10-02
+triggers:
+  - "designing APIs, choosing status codes, or creating endpoints"
+updated: 2026-04-25
+status: ACTIVE
 ---
 
 # REST API Design

@@ -1,6 +1,7 @@
 ---
 name: shared
 description: 'Shared AgentOps skill contracts.'
+practices: [design-by-contract, pragmatic-programmer, twelve-factor-app]
 skill_api_version: 1
 user-invocable: false
 context:

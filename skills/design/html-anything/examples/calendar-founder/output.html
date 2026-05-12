@@ -1,0 +1,1099 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sam Reyes — Founder Calendar (2 weeks)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #a03b00;
+  --primary-container: #c94c00;
+  --primary-fixed: #ffdbcd;
+  --primary-fixed-dim: #ffb597;
+  --on-primary: #ffffff;
+  --accent-glow: #E8400D;
+  --secondary: #d5baff;
+  --secondary-container: #7b40e0;
+  --tertiary: #4d44e3;
+  --accent-cyan: #00D4FF;
+  --bg: #fff8f6;
+  --surface: #fff8f6;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #fbf2ef;
+  --surface-container: #f5ece9;
+  --surface-container-high: #efe6e3;
+  --fg-1: #1e1b19;
+  --fg-2: #594138;
+  --fg-muted: #8d7166;
+  --border: rgba(0,0,0,0.06);
+  --border-strong: rgba(0,0,0,0.12);
+  --outline-variant: #e1bfb2;
+  --green: #10b981;
+  --blue: #3b82f6;
+  --yellow: #f59e0b;
+  --red: #ef4444;
+  --font-headline: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'Menlo', ui-monospace, monospace;
+  --space-xs: 4px; --space-sm: 8px; --space-md: 12px;
+  --space-lg: 16px; --space-xl: 20px; --space-2xl: 24px;
+  --space-3xl: 32px; --space-4xl: 48px; --space-5xl: 64px;
+  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px;
+  --radius-xl: 20px; --radius-2xl: 28px; --radius-pill: 9999px;
+  --shadow-sm: 0 1px 2px rgba(30,27,25,0.04);
+  --shadow-md: 0 4px 12px rgba(30,27,25,0.08);
+  --shadow-lg: 0 8px 24px rgba(30,27,25,0.12);
+  --shadow-accent: 0 8px 24px rgba(160,59,0,0.15);
+  --gradient-primary: linear-gradient(135deg, #a03b00 0%, #c94c00 100%);
+  --gradient-hero: linear-gradient(135deg, #a03b00 0%, #7b40e0 100%);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #060B18;
+    --surface: #0B1426;
+    --surface-container-lowest: #101D35;
+    --surface-container-low: #101D35;
+    --surface-container: #162544;
+    --surface-container-high: #1c2d52;
+    --fg-1: #F8FAFC;
+    --fg-2: #CBD5E1;
+    --fg-muted: #64748B;
+    --border: rgba(255,255,255,0.08);
+    --border-strong: rgba(255,255,255,0.14);
+    --primary: #FF6B35;
+    --primary-fixed: rgba(255,107,53,0.15);
+    --accent-glow: #00D4FF;
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
+    --outline-variant: rgba(255,255,255,0.1);
+  }
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:15px;scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--fg-1);line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-headline);letter-spacing:-0.01em}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+
+/* OPS SHELL */
+.ops-shell{min-height:100vh;display:flex;flex-direction:column}
+
+/* COMMAND BAR */
+.command-bar{
+  background:var(--surface-container-low);
+  border-bottom:1px solid var(--border-strong);
+  position:sticky;top:0;z-index:100;
+  padding:var(--space-md) var(--space-lg);
+  display:flex;flex-wrap:wrap;gap:var(--space-sm);align-items:center;
+}
+.command-bar-title{font-family:var(--font-headline);font-weight:700;font-size:1rem;color:var(--fg-1);white-space:nowrap}
+.command-bar-meta{font-size:0.78rem;color:var(--fg-muted);font-family:var(--font-mono);white-space:nowrap}
+.command-bar-spacer{flex:1}
+.search-box{
+  display:flex;align-items:center;gap:var(--space-xs);
+  background:var(--surface-container-lowest);
+  border:1px solid var(--border-strong);
+  border-radius:var(--radius-pill);
+  padding:var(--space-xs) var(--space-md);
+  min-width:160px;max-width:260px;
+}
+.search-box input{
+  border:none;outline:none;background:transparent;
+  font-family:var(--font-body);font-size:0.85rem;color:var(--fg-1);width:100%;
+}
+.search-box input::placeholder{color:var(--fg-muted)}
+.search-icon{color:var(--fg-muted);font-size:0.85rem;flex-shrink:0}
+.btn-copy{
+  background:var(--primary);color:var(--on-primary);
+  border:none;border-radius:var(--radius-pill);
+  padding:var(--space-xs) var(--space-md);
+  font-family:var(--font-body);font-size:0.8rem;font-weight:600;
+  cursor:pointer;white-space:nowrap;transition:opacity 0.15s;
+}
+.btn-copy:hover{opacity:0.88}
+
+/* KPI RAIL */
+.kpi-rail{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+  gap:var(--space-md);
+  padding:var(--space-lg);
+  background:var(--surface-container-low);
+  border-bottom:1px solid var(--border);
+}
+.kpi-cell{
+  background:var(--surface-container-lowest);
+  border:1px solid var(--border);
+  border-radius:var(--radius-md);
+  padding:var(--space-md) var(--space-lg);
+  display:flex;flex-direction:column;gap:2px;
+  box-shadow:var(--shadow-sm);
+}
+.kpi-label{font-size:0.72rem;color:var(--fg-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.04em}
+.kpi-value{font-family:var(--font-mono);font-size:1.5rem;font-weight:700;color:var(--primary);line-height:1.1}
+.kpi-sub{font-size:0.75rem;color:var(--fg-2)}
+
+/* MAIN CONTENT */
+.ops-main{padding:var(--space-lg);display:flex;flex-direction:column;gap:var(--space-xl);max-width:1400px;margin:0 auto;width:100%}
+
+/* SECTION CARD */
+.section-card{
+  background:var(--surface-container-lowest);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-md);
+  overflow:hidden;
+}
+.section-header{
+  display:flex;align-items:center;gap:var(--space-sm);
+  padding:var(--space-lg) var(--space-xl);
+  border-bottom:1px solid var(--border);
+  background:var(--surface-container-low);
+}
+.section-title{font-family:var(--font-headline);font-size:0.9rem;font-weight:700;color:var(--fg-1);text-transform:uppercase;letter-spacing:0.04em}
+.section-badge{
+  font-family:var(--font-mono);font-size:0.72rem;
+  background:var(--primary-fixed);color:var(--primary);
+  border-radius:var(--radius-pill);padding:2px var(--space-sm);font-weight:600;
+}
+.section-body{padding:var(--space-xl)}
+
+/* CALENDAR CARD */
+.cal-card{
+  display:grid;grid-template-columns:1fr;gap:var(--space-lg);
+  padding:var(--space-xl);
+}
+@media(min-width:640px){.cal-card{grid-template-columns:auto 1fr}}
+.cal-headline{font-size:1.05rem;line-height:1.5;color:var(--fg-2);max-width:60ch}
+.cal-stats{display:flex;flex-wrap:wrap;gap:var(--space-md)}
+.cal-stat-pill{
+  display:flex;align-items:center;gap:var(--space-xs);
+  background:var(--surface-container);
+  border:1px solid var(--border-strong);
+  border-radius:var(--radius-pill);
+  padding:var(--space-xs) var(--space-md);
+}
+.cal-stat-pill .mono{font-size:0.9rem;font-weight:700;color:var(--fg-1)}
+.cal-stat-pill span{font-size:0.78rem;color:var(--fg-muted)}
+
+/* HEATMAP */
+.heatmap-wrap{overflow-x:auto;padding-bottom:var(--space-sm)}
+.heatmap-table{border-collapse:collapse;min-width:520px;width:100%}
+.heatmap-table th{
+  font-family:var(--font-mono);font-size:0.65rem;color:var(--fg-muted);
+  text-align:center;padding:2px 1px;font-weight:500;
+}
+.heatmap-table td.day-label{
+  font-family:var(--font-mono);font-size:0.7rem;color:var(--fg-2);
+  padding-right:var(--space-sm);white-space:nowrap;font-weight:600;text-align:right;
+}
+.hm-cell{
+  width:24px;height:18px;border-radius:3px;
+  transition:opacity 0.15s;cursor:default;
+}
+.hm-cell:hover{outline:2px solid var(--primary);outline-offset:1px}
+.hm-legend{display:flex;align-items:center;gap:var(--space-xs);margin-top:var(--space-md);font-size:0.72rem;color:var(--fg-muted)}
+.hm-legend-swatch{width:14px;height:10px;border-radius:2px}
+
+/* WEEK STRIP */
+.week-strip{display:flex;gap:var(--space-sm);align-items:flex-end;padding:var(--space-md) 0;overflow-x:auto}
+.week-bar-wrap{display:flex;flex-direction:column;align-items:center;gap:var(--space-xs);flex:1;min-width:80px}
+.week-bar{
+  width:100%;border-radius:var(--radius-sm) var(--radius-sm) 0 0;
+  min-height:4px;transition:opacity 0.15s;
+}
+.week-bar.overloaded{background:var(--red)}
+.week-bar.normal{background:var(--primary)}
+.week-label{font-family:var(--font-mono);font-size:0.65rem;color:var(--fg-muted);text-align:center}
+.week-count{font-family:var(--font-mono);font-size:0.72rem;font-weight:700;color:var(--fg-2)}
+
+/* RECURRING */
+.recurring-list{display:flex;flex-direction:column;gap:var(--space-sm)}
+.recurring-row{
+  display:flex;align-items:center;gap:var(--space-md);
+  padding:var(--space-sm) var(--space-md);
+  background:var(--surface-container);
+  border-radius:var(--radius-sm);
+  border:1px solid var(--border);
+}
+.recurring-title{font-family:var(--font-mono);font-size:0.8rem;font-weight:600;color:var(--fg-1);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.recurring-count{font-family:var(--font-mono);font-size:0.85rem;font-weight:700;color:var(--primary);white-space:nowrap}
+.chip{
+  font-size:0.68rem;font-weight:600;
+  border-radius:var(--radius-pill);
+  padding:2px var(--space-sm);
+  white-space:nowrap;
+}
+.chip-blue{background:rgba(59,130,246,0.12);color:var(--blue)}
+.chip-green{background:rgba(16,185,129,0.12);color:var(--green)}
+.chip-orange{background:var(--primary-fixed);color:var(--primary)}
+.chip-purple{background:rgba(123,64,224,0.12);color:var(--secondary-container)}
+.chip-red{background:rgba(239,68,68,0.12);color:var(--red)}
+.chip-muted{background:var(--surface-container-high);color:var(--fg-muted)}
+
+/* FLAG QUEUE / BOTTLENECKS */
+.flag-queue{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:var(--space-md)}
+.flag-card{
+  background:var(--surface-container);
+  border:1px solid var(--border-strong);
+  border-radius:var(--radius-md);
+  padding:var(--space-lg);
+  display:flex;flex-direction:column;gap:var(--space-sm);
+}
+.flag-card.overload{border-left:3px solid var(--red)}
+.flag-card.info{border-left:3px solid var(--blue)}
+.flag-card.warn{border-left:3px solid var(--yellow)}
+.flag-title{font-weight:700;font-size:0.85rem;color:var(--fg-1)}
+.flag-meta{font-family:var(--font-mono);font-size:0.75rem;color:var(--primary)}
+.flag-desc{font-size:0.8rem;color:var(--fg-2);line-height:1.5}
+
+/* ATTENDEES */
+.leaderboard{display:flex;flex-direction:column;gap:var(--space-sm)}
+.lb-row{display:flex;align-items:center;gap:var(--space-md)}
+.lb-name{font-size:0.85rem;color:var(--fg-1);font-weight:500;min-width:120px;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb-bar-wrap{flex:1;height:8px;background:var(--surface-container);border-radius:var(--radius-pill);overflow:hidden}
+.lb-bar{height:100%;border-radius:var(--radius-pill);background:var(--primary);transition:width 0.6s cubic-bezier(0.4,0,0.2,1)}
+.lb-nums{font-family:var(--font-mono);font-size:0.75rem;color:var(--fg-muted);white-space:nowrap;text-align:right;min-width:80px}
+
+/* FILTER STRIP */
+.filter-strip{
+  display:flex;flex-wrap:wrap;gap:var(--space-xs);
+  padding:var(--space-md) var(--space-xl);
+  border-bottom:1px solid var(--border);
+  background:var(--surface-container-low);
+}
+.filter-group-label{font-size:0.7rem;font-weight:700;color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.04em;align-self:center;margin-right:var(--space-xs);white-space:nowrap}
+.filter-chip{
+  border:1px solid var(--border-strong);
+  background:var(--surface-container);
+  color:var(--fg-2);
+  border-radius:var(--radius-pill);
+  padding:3px var(--space-md);
+  font-size:0.75rem;font-weight:600;
+  cursor:pointer;transition:all 0.12s;user-select:none;
+}
+.filter-chip:hover{border-color:var(--primary);color:var(--primary)}
+.filter-chip.active{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+.filter-divider{width:1px;background:var(--border-strong);margin:0 var(--space-xs);align-self:stretch}
+
+/* CALENDAR GRID */
+.cal-grid{display:flex;flex-direction:column;gap:var(--space-sm);padding:var(--space-md) var(--space-xl) var(--space-xl)}
+.cal-day-row{display:flex;gap:var(--space-sm);align-items:flex-start}
+.cal-day-label{
+  font-family:var(--font-mono);font-size:0.72rem;color:var(--fg-muted);
+  font-weight:600;min-width:72px;padding-top:var(--space-xs);text-align:right;
+  white-space:nowrap;
+}
+.cal-day-events{display:flex;flex-wrap:wrap;gap:var(--space-xs);flex:1}
+.cal-event-chip{
+  font-size:0.7rem;font-weight:600;
+  border-radius:var(--radius-sm);
+  padding:3px var(--space-sm);
+  cursor:pointer;transition:opacity 0.12s;
+  max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.cal-event-chip:hover{opacity:0.82}
+.cal-event-chip.long{border-left:3px solid var(--primary)}
+
+/* DATA GRID */
+.data-grid{width:100%;overflow:hidden}
+.drill-toggle{
+  display:flex;align-items:center;gap:var(--space-sm);
+  padding:var(--space-lg) var(--space-xl);
+  cursor:pointer;user-select:none;
+  background:var(--surface-container-low);
+  border-bottom:1px solid var(--border);
+}
+.drill-toggle:hover{background:var(--surface-container)}
+.drill-toggle-label{font-family:var(--font-headline);font-size:0.9rem;font-weight:700;color:var(--fg-1);text-transform:uppercase;letter-spacing:0.04em}
+.drill-toggle-icon{color:var(--fg-muted);transition:transform 0.2s;font-size:0.85rem}
+.drill-toggle.open .drill-toggle-icon{transform:rotate(180deg)}
+.drill-search{padding:var(--space-md) var(--space-xl);border-bottom:1px solid var(--border)}
+.drill-search input{
+  width:100%;border:1px solid var(--border-strong);
+  border-radius:var(--radius-pill);
+  padding:var(--space-sm) var(--space-lg);
+  font-family:var(--font-body);font-size:0.85rem;
+  background:var(--surface-container-lowest);color:var(--fg-1);
+  outline:none;
+}
+.drill-search input:focus{border-color:var(--primary)}
+.events-list{max-height:600px;overflow-y:auto}
+.event-row{
+  border-bottom:1px solid var(--border);
+  cursor:pointer;transition:background 0.1s;
+}
+.event-row:hover{background:var(--surface-container-low)}
+.event-row.cancelled .event-title{text-decoration:line-through;color:var(--fg-muted)}
+.event-row-main{
+  display:grid;
+  grid-template-columns:100px 1fr auto;
+  gap:var(--space-sm);align-items:center;
+  padding:var(--space-sm) var(--space-xl);
+}
+.event-dt{font-family:var(--font-mono);font-size:0.72rem;color:var(--fg-muted)}
+.event-title{font-size:0.85rem;font-weight:500;color:var(--fg-1);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.event-title.long{color:var(--primary);font-weight:600}
+.event-dur{font-family:var(--font-mono);font-size:0.72rem;color:var(--fg-muted);white-space:nowrap}
+.event-detail{
+  padding:var(--space-md) var(--space-xl) var(--space-lg);
+  background:var(--surface-container);
+  font-size:0.82rem;color:var(--fg-2);line-height:1.6;
+  display:none;
+}
+.event-detail.open{display:block}
+.event-detail-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:var(--space-sm) var(--space-xl)}
+.event-detail-item label{display:block;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--fg-muted);margin-bottom:2px}
+.event-detail-item .val{font-size:0.82rem;color:var(--fg-1)}
+.attendee-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.attendee-tag{
+  background:var(--surface-container-high);
+  border-radius:var(--radius-pill);
+  padding:2px var(--space-sm);
+  font-size:0.68rem;color:var(--fg-2);font-weight:600;
+}
+mark.highlight{background:rgba(248,152,0,0.3);color:inherit;border-radius:2px;padding:0 1px}
+
+/* LONGEST EVENTS */
+.longest-list{display:flex;flex-direction:column;gap:var(--space-sm)}
+.longest-row{
+  display:flex;align-items:center;gap:var(--space-md);
+  padding:var(--space-sm) var(--space-md);
+  background:var(--surface-container);
+  border-radius:var(--radius-sm);
+  border:1px solid var(--border);
+  cursor:pointer;transition:background 0.1s;
+}
+.longest-row:hover{background:var(--surface-container-high)}
+.longest-title{flex:1;font-size:0.82rem;font-weight:600;color:var(--fg-1);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.longest-start{font-family:var(--font-mono);font-size:0.72rem;color:var(--fg-muted)}
+.longest-dur{font-family:var(--font-mono);font-size:0.85rem;font-weight:700;color:var(--primary);white-space:nowrap}
+
+/* TWO-COL */
+.two-col{display:grid;grid-template-columns:1fr;gap:var(--space-xl)}
+@media(min-width:768px){.two-col{grid-template-columns:1fr 1fr}}
+
+/* SECTION LAYOUT */
+.section-split{display:flex;flex-direction:column;gap:var(--space-xl)}
+@media(min-width:900px){.section-split{flex-direction:row;align-items:flex-start}}
+.section-split > *{flex:1;min-width:0}
+
+/* PAGINATION */
+.pagination{display:flex;align-items:center;justify-content:center;gap:var(--space-sm);padding:var(--space-md)}
+.page-btn{
+  background:var(--surface-container);border:1px solid var(--border-strong);
+  border-radius:var(--radius-sm);padding:var(--space-xs) var(--space-md);
+  font-family:var(--font-mono);font-size:0.8rem;color:var(--fg-2);
+  cursor:pointer;transition:all 0.12s;
+}
+.page-btn:hover:not(:disabled){background:var(--primary);color:var(--on-primary);border-color:var(--primary)}
+.page-btn:disabled{opacity:0.4;cursor:not-allowed}
+.page-info{font-family:var(--font-mono);font-size:0.78rem;color:var(--fg-muted)}
+
+/* FOOTER */
+.ops-footer{
+  margin-top:var(--space-4xl);
+  padding:var(--space-xl) var(--space-lg);
+  border-top:1px solid var(--border);
+  font-size:0.75rem;color:var(--fg-muted);text-align:center;line-height:1.6;
+  font-style:italic;
+}
+
+/* EMPTY STATE */
+.empty-state{
+  padding:var(--space-xl);
+  text-align:center;color:var(--fg-muted);
+  font-size:0.85rem;
+}
+
+/* ANIMATION */
+@media(prefers-reduced-motion:no-preference){
+  .kpi-value{animation:countUp 0.5s ease-out}
+  @keyframes countUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .section-card{animation:fadeSlide 0.3s ease-out both}
+  @keyframes fadeSlide{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+}
+
+/* TOOLTIP */
+.tooltip-wrap{position:relative}
+.tooltip-text{
+  display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);
+  background:var(--fg-1);color:var(--bg);
+  font-family:var(--font-mono);font-size:0.7rem;
+  padding:4px 8px;border-radius:var(--radius-sm);
+  white-space:nowrap;pointer-events:none;z-index:200;
+}
+.tooltip-wrap:hover .tooltip-text{display:block}
+
+/* NO RESULTS */
+.no-results{padding:var(--space-2xl);text-align:center;color:var(--fg-muted);font-size:0.85rem}
+</style>
+</head>
+<body>
+<script>const DATA = {"kind":"calendar","format":"ics","items":[{"id":"i_0001","title":"Engineering standup","kind":"event","start":"2026-04-27 16:30","end":"2026-04-27 16:45","startEpoch":1777307400000,"endEpoch":1777308300000,"durationMinutes":15,"status":"confirmed","statusBucket":"open","organizer":"Alex Rivera","assignees":["Sam Reyes","Alex Rivera","Mira Chen","Devon Park","Jordan Tate"],"owner":"Alex Rivera","location":"Zoom","description":"Daily 15-minute eng sync. Blockers + ship goals.","isCompleted":false},{"id":"i_0002","title":"Investor follow-up — Cardinal Ventures","kind":"event","start":"2026-04-27 17:00","end":"2026-04-27 17:45","startEpoch":1777309200000,"endEpoch":1777311900000,"durationMinutes":45,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Aman Sharma"],"owner":"Sam Reyes","location":"Zoom","description":"Walk through the term sheet markup; confirm board observer language.","isCompleted":false},{"id":"i_0003","title":"Deep work — Pricing V2 brief","kind":"event","start":"2026-04-27 18:00","end":"2026-04-27 19:00","startEpoch":1777312800000,"endEpoch":1777316400000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes"],"owner":"Sam Reyes","location":"Office — focus room","description":"Draft the pricing memo for Mira and Sarah by EOW.","isCompleted":false},{"id":"i_0004","title":"Cofounder lunch — Mira","kind":"event","start":"2026-04-27 20:00","end":"2026-04-27 21:00","startEpoch":1777320000000,"endEpoch":1777323600000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Mira Chen"],"owner":"Sam Reyes","location":"Café Marlow","description":"Weekly cofounder catch-up — usually open agenda.","isCompleted":false},{"id":"i_0005","title":"Customer — Loma Foods onboarding check","kind":"event","start":"2026-04-27 21:30","end":"2026-04-27 22:00","startEpoch":1777325400000,"endEpoch":1777327200000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sarah Kim","assignees":["Sam Reyes","Sarah Kim","Sara Pham","Ricky Ortiz"],"owner":"Sarah Kim","location":"Zoom","isCompleted":false},{"id":"i_0006","title":"Customer — Northwind Co feedback","kind":"event","start":"2026-04-27 22:00","end":"2026-04-27 22:30","startEpoch":1777327200000,"endEpoch":1777329000000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Tania Iwu"],"owner":"Sam Reyes","location":"Zoom","isCompleted":false},{"id":"i_0007","title":"1:1 — Devon Park","kind":"event","start":"2026-04-27 23:00","end":"2026-04-27 23:30","startEpoch":1777330800000,"endEpoch":1777332600000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Devon Park"],"owner":"Sam Reyes","location":"Office — corner room","isCompleted":false},{"id":"i_0008","title":"Engineering standup","kind":"event","start":"2026-04-28 16:30","end":"2026-04-28 16:45","startEpoch":1777393800000,"endEpoch":1777394700000,"durationMinutes":15,"status":"confirmed","statusBucket":"open","organizer":"Alex Rivera","assignees":["Sam Reyes","Alex Rivera","Mira Chen","Devon Park","Jordan Tate"],"owner":"Alex Rivera","location":"Zoom","isCompleted":false},{"id":"i_0009","title":"1:1 — Mira Chen (cofounder)","kind":"event","start":"2026-04-28 17:00","end":"2026-04-28 17:30","startEpoch":1777395600000,"endEpoch":1777397400000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Mira Chen"],"owner":"Sam Reyes","location":"Office — focus room","isCompleted":false},{"id":"i_0010","title":"Pitch rehearsal (board prep)","kind":"event","start":"2026-04-28 17:30","end":"2026-04-28 18:30","startEpoch":1777397400000,"endEpoch":1777401000000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Mira Chen","Sarah Kim"],"owner":"Sam Reyes","location":"Office — board room","description":"Run the deck end-to-end; trim from 24 to 18 slides.","isCompleted":false},{"id":"i_0011","title":"Investor — Hightower Capital pitch","kind":"event","start":"2026-04-28 18:30","end":"2026-04-28 19:30","startEpoch":1777401000000,"endEpoch":1777404600000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Jenna Liu"],"owner":"Sam Reyes","location":"Zoom","description":"Series A first meeting; Jenna brings 2 partners.","isCompleted":false},{"id":"i_0012","title":"Advisor lunch — Mark Reeve","kind":"event","start":"2026-04-28 19:30","end":"2026-04-28 20:30","startEpoch":1777404600000,"endEpoch":1777408200000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Mark Reeve"],"owner":"Sam Reyes","location":"Tartine — Mission","isCompleted":false},{"id":"i_0013","title":"Customer — Drey Logistics","kind":"event","start":"2026-04-28 20:30","end":"2026-04-28 21:00","startEpoch":1777408200000,"endEpoch":1777410000000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sarah Kim","assignees":["Sam Reyes","Sarah Kim","Henri Chen"],"owner":"Sarah Kim","location":"Zoom","isCompleted":false},{"id":"i_0014","title":"Customer — Solare Global","kind":"event","start":"2026-04-28 21:00","end":"2026-04-28 21:30","startEpoch":1777410000000,"endEpoch":1777411800000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Ana Quintero"],"owner":"Sam Reyes","location":"Zoom","isCompleted":false},{"id":"i_0015","title":"Customer — Brewline support sync","kind":"event","start":"2026-04-28 21:30","end":"2026-04-28 22:00","startEpoch":1777411800000,"endEpoch":1777413600000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Olu Adeyemi"],"owner":"Sam Reyes","location":"Zoom","isCompleted":false},{"id":"i_0016","title":"Q2 OKR review (all-hands)","kind":"event","start":"2026-04-28 22:30","end":"2026-04-28 23:30","startEpoch":1777415400000,"endEpoch":1777419000000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Mira Chen","Alex Rivera","Sarah Kim","Devon Park","Jordan Tate"],"owner":"Sam Reyes","location":"Office — all-hands room","isCompleted":false},{"id":"i_0017","title":"Office hours — candidates","kind":"event","start":"2026-04-29 00:00","end":"2026-04-29 01:00","startEpoch":1777420800000,"endEpoch":1777424400000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes"],"owner":"Sam Reyes","location":"Zoom","description":"Three back-to-back 20-min slots with VP-Eng candidates.","isCompleted":false},{"id":"i_0018","title":"Engineering standup","kind":"event","start":"2026-04-29 16:30","end":"2026-04-29 16:45","startEpoch":1777480200000,"endEpoch":1777481100000,"durationMinutes":15,"status":"confirmed","statusBucket":"open","organizer":"Alex Rivera","assignees":["Sam Reyes","Alex Rivera","Mira Chen","Devon Park","Jordan Tate"],"owner":"Alex Rivera","location":"Zoom","isCompleted":false},{"id":"i_0019","title":"Sprint review","kind":"event","start":"2026-04-29 17:00","end":"2026-04-29 17:30","startEpoch":1777482000000,"endEpoch":1777483800000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Alex Rivera","assignees":["Sam Reyes","Alex Rivera","Mira Chen","Devon Park","Jordan Tate"],"owner":"Alex Rivera","location":"Zoom","isCompleted":false},{"id":"i_0020","title":"1:1 — Alex Rivera (head of eng)","kind":"event","start":"2026-04-29 18:00","end":"2026-04-29 18:30","startEpoch":1777485600000,"endEpoch":1777487400000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Alex Rivera"],"owner":"Sam Reyes","location":"Office — focus room","isCompleted":false},{"id":"i_0021","title":"Investor — Cardinal Ventures (David Lee intro)","kind":"event","start":"2026-04-29 18:30","end":"2026-04-29 19:00","startEpoch":1777487400000,"endEpoch":1777489200000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","David Lee"],"owner":"Sam Reyes","location":"Zoom","isCompleted":false},{"id":"i_0022","title":"Deep work — Pricing V2 brief","kind":"event","start":"2026-04-29 20:00","end":"2026-04-29 21:00","startEpoch":1777492800000,"endEpoch":1777496400000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes"],"owner":"Sam Reyes","location":"Office — focus room","isCompleted":false},{"id":"i_0023","title":"Customer — Aguilar & Pham (legal vertical)","kind":"event","start":"2026-04-29 21:00","end":"2026-04-29 22:00","startEpoch":1777496400000,"endEpoch":1777500000000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sarah Kim","assignees":["Sam Reyes","Sarah Kim","Maria Aguilar"],"owner":"Sarah Kim","location":"Zoom","isCompleted":false},{"id":"i_0024","title":"Customer — Healthcare DPC discovery","kind":"event","start":"2026-04-29 22:00","end":"2026-04-29 23:00","startEpoch":1777500000000,"endEpoch":1777503600000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sarah Kim","assignees":["Sam Reyes","Sarah Kim","Tan Park"],"owner":"Sarah Kim","location":"Zoom","isCompleted":false},{"id":"i_0025","title":"Hiring panel debrief — VP Eng round 1","kind":"event","start":"2026-04-29 23:30","end":"2026-04-30 00:30","startEpoch":1777505400000,"endEpoch":1777509000000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Talia Brown","assignees":["Sam Reyes","Talia Brown","Mira Chen","Alex Rivera"],"owner":"Talia Brown","location":"Office — board room","isCompleted":false},{"id":"i_0026","title":"Engineering standup","kind":"event","start":"2026-04-30 16:30","end":"2026-04-30 16:45","startEpoch":1777566600000,"endEpoch":1777567500000,"durationMinutes":15,"status":"confirmed","statusBucket":"open","organizer":"Alex Rivera","assignees":["Sam Reyes","Alex Rivera","Mira Chen","Devon Park","Jordan Tate"],"owner":"Alex Rivera","location":"Zoom","isCompleted":false},{"id":"i_0027","title":"Recruiter sync — Talia","kind":"event","start":"2026-04-30 17:00","end":"2026-04-30 18:00","startEpoch":1777568400000,"endEpoch":1777572000000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Talia Brown","assignees":["Sam Reyes","Talia Brown"],"owner":"Talia Brown","location":"Zoom","description":"Pipeline review and VP-Eng outreach plan.","isCompleted":false},{"id":"i_0028","title":"1:1 — Sarah Kim (head of sales)","kind":"event","start":"2026-04-30 18:00","end":"2026-04-30 18:30","startEpoch":1777572000000,"endEpoch":1777573800000,"durationMinutes":30,"status":"cancelled","statusBucket":"cancelled","organizer":"Sam Reyes","assignees":["Sam Reyes","Sarah Kim"],"owner":"Sam Reyes","location":"Office — focus room","description":"Sarah out sick — rescheduling to next Tue.","isCompleted":false},{"id":"i_0029","title":"Customer — M&A vertical (Joe Patel)","kind":"event","start":"2026-04-30 18:30","end":"2026-04-30 19:00","startEpoch":1777573800000,"endEpoch":1777575600000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sarah Kim","assignees":["Sam Reyes","Sarah Kim","Joe Patel"],"owner":"Sarah Kim","location":"Zoom","isCompleted":false},{"id":"i_0030","title":"Advisor lunch — Helena Frank","kind":"event","start":"2026-04-30 19:00","end":"2026-04-30 20:00","startEpoch":1777575600000,"endEpoch":1777579200000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Helena Frank"],"owner":"Sam Reyes","location":"Café Marlow","isCompleted":false},{"id":"i_0031","title":"Investor — Marquee Capital pitch","kind":"event","start":"2026-04-30 21:00","end":"2026-04-30 22:00","startEpoch":1777582800000,"endEpoch":1777586400000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Priya Shah","Tom Bradley"],"owner":"Sam Reyes","location":"Marquee Capital — Embarcadero","description":"Partner meeting; bring laptop + 1-pager handouts.","isCompleted":false},{"id":"i_0032","title":"Investor — Hightower term sheet follow-up","kind":"event","start":"2026-04-30 22:00","end":"2026-04-30 22:45","startEpoch":1777586400000,"endEpoch":1777589100000,"durationMinutes":45,"status":"confirmed","statusBucket":"open","organizer":"Jenna Liu","assignees":["Sam Reyes","Jenna Liu"],"owner":"Jenna Liu","location":"Zoom","isCompleted":false},{"id":"i_0033","title":"Deep work — Product demo prep","kind":"event","start":"2026-04-30 23:00","end":"2026-05-01 00:00","startEpoch":1777590000000,"endEpoch":1777593600000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes"],"owner":"Sam Reyes","location":"Office — focus room","isCompleted":false},{"id":"i_0034","title":"Engineering standup","kind":"event","start":"2026-05-01 16:30","end":"2026-05-01 16:45","startEpoch":1777653000000,"endEpoch":1777653900000,"durationMinutes":15,"status":"confirmed","statusBucket":"open","organizer":"Alex Rivera","assignees":["Sam Reyes","Alex Rivera","Mira Chen","Devon Park","Jordan Tate"],"owner":"Alex Rivera","location":"Zoom","isCompleted":false},{"id":"i_0035","title":"Deep work — Board prep block","kind":"event","start":"2026-05-01 17:00","end":"2026-05-01 19:00","startEpoch":1777654800000,"endEpoch":1777662000000,"durationMinutes":120,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes"],"owner":"Sam Reyes","location":"Office — board room","description":"Lock the deck, fact-check the pipeline numbers, finalize the asks.","isCompleted":false},{"id":"i_0036","title":"Friday show-and-tell (all-hands demo)","kind":"event","start":"2026-05-01 19:30","end":"2026-05-01 20:30","startEpoch":1777663800000,"endEpoch":1777667400000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Mira Chen","assignees":["Sam Reyes","Mira Chen","Alex Rivera","Sarah Kim","Devon Park","Jordan Tate"],"owner":"Mira Chen","location":"Office — all-hands room","isCompleted":false},{"id":"i_0037","title":"Investor — Cardinal Ventures partner meeting","kind":"event","start":"2026-05-01 21:00","end":"2026-05-01 22:00","startEpoch":1777669200000,"endEpoch":1777672800000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Aman Sharma","assignees":["Sam Reyes","Aman Sharma","David Lee"],"owner":"Aman Sharma","location":"Cardinal Ventures — Sand Hill","isCompleted":false},{"id":"i_0038","title":"Engineering standup","kind":"event","start":"2026-05-04 16:30","end":"2026-05-04 16:45","startEpoch":1777912200000,"endEpoch":1777913100000,"durationMinutes":15,"status":"confirmed","statusBucket":"open","organizer":"Alex Rivera","assignees":["Sam Reyes","Alex Rivera","Mira Chen","Devon Park","Jordan Tate"],"owner":"Alex Rivera","location":"Zoom","isCompleted":false},{"id":"i_0039","title":"Investor — Hightower term sheet review","kind":"event","start":"2026-05-04 17:00","end":"2026-05-04 17:30","startEpoch":1777914000000,"endEpoch":1777915800000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Jenna Liu","assignees":["Sam Reyes","Jenna Liu"],"owner":"Jenna Liu","location":"Zoom","isCompleted":false},{"id":"i_0040","title":"Deep work — Pricing V2 brief","kind":"event","start":"2026-05-04 18:00","end":"2026-05-04 19:00","startEpoch":1777917600000,"endEpoch":1777921200000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes"],"owner":"Sam Reyes","location":"Office — focus room","isCompleted":false},{"id":"i_0041","title":"Customer — Realestate fund (Solano)","kind":"event","start":"2026-05-04 19:30","end":"2026-05-04 20:30","startEpoch":1777923000000,"endEpoch":1777926600000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sarah Kim","assignees":["Sam Reyes","Sarah Kim","Maria Solano"],"owner":"Sarah Kim","location":"Zoom","isCompleted":false},{"id":"i_0042","title":"Customer — Investment fund (Adit Patel)","kind":"event","start":"2026-05-04 21:00","end":"2026-05-04 21:30","startEpoch":1777928400000,"endEpoch":1777930200000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sarah Kim","assignees":["Sam Reyes","Sarah Kim","Adit Patel"],"owner":"Sarah Kim","location":"Zoom","isCompleted":false},{"id":"i_0043","title":"VP Eng interview — Naomi Wells","kind":"event","start":"2026-05-04 22:00","end":"2026-05-04 23:00","startEpoch":1777932000000,"endEpoch":1777935600000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Talia Brown","assignees":["Sam Reyes","Naomi Wells"],"owner":"Talia Brown","location":"Zoom","isCompleted":false},{"id":"i_0044","title":"VP Eng interview — Sebastian Park","kind":"event","start":"2026-05-04 23:00","end":"2026-05-05 00:00","startEpoch":1777935600000,"endEpoch":1777939200000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Talia Brown","assignees":["Sam Reyes","Sebastian Park"],"owner":"Talia Brown","location":"Zoom","isCompleted":false},{"id":"i_0045","title":"Engineering standup","kind":"event","start":"2026-05-05 16:30","end":"2026-05-05 16:45","startEpoch":1777998600000,"endEpoch":1777999500000,"durationMinutes":15,"status":"confirmed","statusBucket":"open","organizer":"Alex Rivera","assignees":["Sam Reyes","Alex Rivera","Mira Chen","Devon Park","Jordan Tate"],"owner":"Alex Rivera","location":"Zoom","isCompleted":false},{"id":"i_0046","title":"1:1 — Mira Chen (cofounder)","kind":"event","start":"2026-05-05 17:00","end":"2026-05-05 17:30","startEpoch":1778000400000,"endEpoch":1778002200000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Mira Chen"],"owner":"Sam Reyes","location":"Office — focus room","isCompleted":false},{"id":"i_0047","title":"Press / PR call — Anya Voss (TechCrunch)","kind":"event","start":"2026-05-05 17:30","end":"2026-05-05 18:00","startEpoch":1778002200000,"endEpoch":1778004000000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Anya Voss"],"owner":"Sam Reyes","location":"Zoom","isCompleted":false},{"id":"i_0048","title":"Customer — Solare Global success review","kind":"event","start":"2026-05-05 18:00","end":"2026-05-05 18:30","startEpoch":1778004000000,"endEpoch":1778005800000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sarah Kim","assignees":["Sam Reyes","Sarah Kim","Ana Quintero"],"owner":"Sarah Kim","location":"Zoom","isCompleted":false},{"id":"i_0049","title":"Investor — Marquee Capital follow-up","kind":"event","start":"2026-05-05 18:30","end":"2026-05-05 19:00","startEpoch":1778005800000,"endEpoch":1778007600000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Priya Shah","assignees":["Sam Reyes","Priya Shah"],"owner":"Priya Shah","location":"Zoom","isCompleted":false},{"id":"i_0050","title":"Customer — Loma Foods upsell","kind":"event","start":"2026-05-05 19:00","end":"2026-05-05 19:30","startEpoch":1778007600000,"endEpoch":1778009400000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sarah Kim","assignees":["Sam Reyes","Sarah Kim","Sara Pham"],"owner":"Sarah Kim","location":"Zoom","isCompleted":false},{"id":"i_0051","title":"Customer — Brewline renewal","kind":"event","start":"2026-05-05 19:30","end":"2026-05-05 20:00","startEpoch":1778009400000,"endEpoch":1778011200000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sarah Kim","assignees":["Sam Reyes","Sarah Kim","Olu Adeyemi"],"owner":"Sarah Kim","location":"Zoom","isCompleted":false},{"id":"i_0052","title":"Customer — Drey Logistics expansion","kind":"event","start":"2026-05-05 20:00","end":"2026-05-05 20:30","startEpoch":1778011200000,"endEpoch":1778013000000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sarah Kim","assignees":["Sam Reyes","Sarah Kim","Henri Chen"],"owner":"Sarah Kim","location":"Zoom","isCompleted":false},{"id":"i_0053","title":"Sales pipeline review","kind":"event","start":"2026-05-05 20:30","end":"2026-05-05 21:00","startEpoch":1778013000000,"endEpoch":1778014800000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sarah Kim","assignees":["Sam Reyes","Sarah Kim"],"owner":"Sarah Kim","location":"Office — focus room","isCompleted":false},{"id":"i_0054","title":"Customer — Healthcare DPC pilot kickoff","kind":"event","start":"2026-05-05 21:00","end":"2026-05-05 21:30","startEpoch":1778014800000,"endEpoch":1778016600000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sarah Kim","assignees":["Sam Reyes","Sarah Kim","Tan Park"],"owner":"Sarah Kim","location":"Zoom","isCompleted":false},{"id":"i_0055","title":"Customer — Aguilar & Pham referral chat","kind":"event","start":"2026-05-05 21:30","end":"2026-05-05 22:00","startEpoch":1778016600000,"endEpoch":1778018400000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Maria Aguilar"],"owner":"Sam Reyes","location":"Zoom","isCompleted":false},{"id":"i_0056","title":"Investor — Octopus warm intro (David Choi)","kind":"event","start":"2026-05-05 22:00","end":"2026-05-05 22:30","startEpoch":1778018400000,"endEpoch":1778020200000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","David Choi"],"owner":"Sam Reyes","location":"Zoom","isCompleted":false},{"id":"i_0057","title":"1:1 — Sarah Kim (rescheduled)","kind":"event","start":"2026-05-05 22:30","end":"2026-05-05 23:00","startEpoch":1778020200000,"endEpoch":1778022000000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Sarah Kim"],"owner":"Sam Reyes","location":"Office — focus room","isCompleted":false},{"id":"i_0058","title":"Recruiting — backfill ICs (Talia)","kind":"event","start":"2026-05-05 23:00","end":"2026-05-06 00:00","startEpoch":1778022000000,"endEpoch":1778025600000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Talia Brown","assignees":["Sam Reyes","Talia Brown"],"owner":"Talia Brown","location":"Zoom","isCompleted":false},{"id":"i_0059","title":"Founder dinner — Helen Yu (advisor) & Mira","kind":"event","start":"2026-05-06 00:30","end":"2026-05-06 02:30","startEpoch":1778027400000,"endEpoch":1778034600000,"durationMinutes":120,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Helen Yu","Mira Chen"],"owner":"Sam Reyes","location":"State Bird Provisions","isCompleted":false},{"id":"i_0060","title":"Engineering standup","kind":"event","start":"2026-05-06 16:30","end":"2026-05-06 16:45","startEpoch":1778085000000,"endEpoch":1778085900000,"durationMinutes":15,"status":"confirmed","statusBucket":"open","organizer":"Alex Rivera","assignees":["Sam Reyes","Alex Rivera","Mira Chen","Devon Park","Jordan Tate"],"owner":"Alex Rivera","location":"Zoom","isCompleted":false},{"id":"i_0061","title":"Sprint review","kind":"event","start":"2026-05-06 17:00","end":"2026-05-06 17:30","startEpoch":1778086800000,"endEpoch":1778088600000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Alex Rivera","assignees":["Sam Reyes","Alex Rivera","Mira Chen","Devon Park","Jordan Tate"],"owner":"Alex Rivera","location":"Zoom","isCompleted":false},{"id":"i_0062","title":"1:1 — Alex Rivera (head of eng)","kind":"event","start":"2026-05-06 18:00","end":"2026-05-06 18:30","startEpoch":1778090400000,"endEpoch":1778092200000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Alex Rivera"],"owner":"Sam Reyes","location":"Office — focus room","isCompleted":false},{"id":"i_0063","title":"Customer — M&A vertical onboarding","kind":"event","start":"2026-05-06 19:00","end":"2026-05-06 20:00","startEpoch":1778094000000,"endEpoch":1778097600000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sarah Kim","assignees":["Sam Reyes","Sarah Kim","Joe Patel"],"owner":"Sarah Kim","location":"Zoom","isCompleted":false},{"id":"i_0064","title":"Investor — Series A closing call","kind":"event","start":"2026-05-06 20:30","end":"2026-05-06 21:30","startEpoch":1778099400000,"endEpoch":1778103000000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Aman Sharma","assignees":["Sam Reyes","Aman Sharma","Jenna Liu"],"owner":"Aman Sharma","location":"Zoom","description":"Co-investor walk-through; sign next week if all green.","isCompleted":false},{"id":"i_0065","title":"VP Eng panel debrief","kind":"event","start":"2026-05-06 22:00","end":"2026-05-06 23:00","startEpoch":1778104800000,"endEpoch":1778108400000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Talia Brown","assignees":["Sam Reyes","Talia Brown","Mira Chen","Alex Rivera"],"owner":"Talia Brown","location":"Office — board room","isCompleted":false},{"id":"i_0066","title":"All-hands","kind":"event","start":"2026-05-06 23:00","end":"2026-05-07 00:00","startEpoch":1778108400000,"endEpoch":1778112000000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Mira Chen","assignees":["Sam Reyes","Mira Chen","Alex Rivera","Sarah Kim","Devon Park","Jordan Tate"],"owner":"Mira Chen","location":"Office — all-hands room","isCompleted":false},{"id":"i_0067","title":"Engineering standup","kind":"event","start":"2026-05-07 16:30","end":"2026-05-07 16:45","startEpoch":1778171400000,"endEpoch":1778172300000,"durationMinutes":15,"status":"confirmed","statusBucket":"open","organizer":"Alex Rivera","assignees":["Sam Reyes","Alex Rivera","Mira Chen","Devon Park","Jordan Tate"],"owner":"Alex Rivera","location":"Zoom","isCompleted":false},{"id":"i_0068","title":"Customer — Northwind quarterly review","kind":"event","start":"2026-05-07 17:00","end":"2026-05-07 17:30","startEpoch":1778173200000,"endEpoch":1778175000000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Sarah Kim","assignees":["Sam Reyes","Sarah Kim","Tania Iwu"],"owner":"Sarah Kim","location":"Zoom","isCompleted":false},{"id":"i_0069","title":"Deep work — Board meeting prep","kind":"event","start":"2026-05-07 18:00","end":"2026-05-07 19:00","startEpoch":1778176800000,"endEpoch":1778180400000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes"],"owner":"Sam Reyes","location":"Office — board room","isCompleted":false},{"id":"i_0070","title":"Board meeting — Q2 review","kind":"event","start":"2026-05-07 21:00","end":"2026-05-07 23:00","startEpoch":1778187600000,"endEpoch":1778194800000,"durationMinutes":120,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Mira Chen","Helen Yu","Aman Sharma","Jenna Liu","Mark Reeve"],"owner":"Sam Reyes","location":"Office — board room","description":"Q2 numbers, fundraising update, hiring plan, Pricing V2 commitment.","isCompleted":false},{"id":"i_0071","title":"Board reception","kind":"event","start":"2026-05-07 23:00","end":"2026-05-08 00:00","startEpoch":1778194800000,"endEpoch":1778198400000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Mira Chen","Helen Yu","Aman Sharma","Jenna Liu","Mark Reeve"],"owner":"Sam Reyes","location":"Office — rooftop","isCompleted":false},{"id":"i_0072","title":"Board dinner","kind":"event","start":"2026-05-08 01:00","end":"2026-05-08 03:00","startEpoch":1778202000000,"endEpoch":1778209200000,"durationMinutes":120,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Mira Chen","Helen Yu","Aman Sharma","Jenna Liu","Mark Reeve"],"owner":"Sam Reyes","location":"Quince — Jackson Square","isCompleted":false},{"id":"i_0073","title":"Engineering standup","kind":"event","start":"2026-05-08 16:30","end":"2026-05-08 16:45","startEpoch":1778257800000,"endEpoch":1778258700000,"durationMinutes":15,"status":"confirmed","statusBucket":"open","organizer":"Alex Rivera","assignees":["Sam Reyes","Alex Rivera","Mira Chen","Devon Park","Jordan Tate"],"owner":"Alex Rivera","location":"Zoom","isCompleted":false},{"id":"i_0074","title":"Board feedback debrief — leadership","kind":"event","start":"2026-05-08 17:00","end":"2026-05-08 18:00","startEpoch":1778259600000,"endEpoch":1778263200000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes","Mira Chen","Alex Rivera","Sarah Kim"],"owner":"Sam Reyes","location":"Office — board room","description":"What landed, what didn't; what to fix before next quarter.","isCompleted":false},{"id":"i_0075","title":"Friday show-and-tell (all-hands demo)","kind":"event","start":"2026-05-08 18:30","end":"2026-05-08 19:30","startEpoch":1778265000000,"endEpoch":1778268600000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Mira Chen","assignees":["Sam Reyes","Mira Chen","Alex Rivera","Sarah Kim","Devon Park","Jordan Tate"],"owner":"Mira Chen","location":"Office — all-hands room","isCompleted":false},{"id":"i_0076","title":"Deep work — Pricing V2 brief","kind":"event","start":"2026-05-08 20:00","end":"2026-05-08 21:00","startEpoch":1778270400000,"endEpoch":1778274000000,"durationMinutes":60,"status":"confirmed","statusBucket":"open","organizer":"Sam Reyes","assignees":["Sam Reyes"],"owner":"Sam Reyes","location":"Office — focus room","isCompleted":false},{"id":"i_0077","title":"Investor — closing follow-up (Aman)","kind":"event","start":"2026-05-08 21:30","end":"2026-05-08 22:00","startEpoch":1778275800000,"endEpoch":1778277600000,"durationMinutes":30,"status":"confirmed","statusBucket":"open","organizer":"Aman Sharma","assignees":["Sam Reyes","Aman Sharma"],"owner":"Aman Sharma","location":"Zoom","isCompleted":false}],"calendar":{"totalMinutes":3450,"uniqueAttendees":30,"weeks":[{"weekOf":"2026-W18","count":37,"totalMinutes":1665,"overloaded":true},{"weekOf":"2026-W19","count":40,"totalMinutes":1815,"overloaded":true}],"busyHours":[{"day":"Mon","hourCounts":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,1,1,2,2,2]},{"day":"Tue","hourCounts":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,4,3,3,3,4,3,1]},{"day":"Wed","hourCounts":[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,3,1,2,1,2,2]},{"day":"Thu","hourCounts":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,3,1,0,2,1,2]},{"day":"Fri","hourCounts":[0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,1,1,1,2,0,0]},{"day":"Sat","hourCounts":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"day":"Sun","hourCounts":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}],"topAttendees":[{"name":"Sam Reyes","count":77,"minutes":3480},{"name":"Mira Chen","count":27,"minutes":1230},{"name":"Sarah Kim","count":23,"minutes":990},{"name":"Alex Rivera","count":21,"minutes":690},{"name":"Aman Sharma","count":7,"minutes":495},{"name":"Jenna Liu","count":7,"minutes":495},{"name":"Devon Park","count":17,"minutes":480},{"name":"Jordan Tate","count":16,"minutes":450},{"name":"Helen Yu","count":4,"minutes":420},{"name":"Mark Reeve","count":4,"minutes":360},{"name":"Talia Brown","count":4,"minutes":240},{"name":"David Lee","count":2,"minutes":90}],"topOrganizers":[{"name":"Sam Reyes","count":35,"minutes":1905},{"name":"Sarah Kim","count":15,"minutes":570},{"name":"Talia Brown","count":6,"minutes":360},{"name":"Alex Rivera","count":12,"minutes":210},{"name":"Mira Chen","count":3,"minutes":180},{"name":"Aman Sharma","count":3,"minutes":150},{"name":"Jenna Liu","count":2,"minutes":75},{"name":"Priya Shah","count":1,"minutes":30}],"longestEvents":[{"id":"i_0035","title":"Deep work — Board prep block","minutes":120,"start":"2026-05-01 17:00"},{"id":"i_0059","title":"Founder dinner — Helen Yu (advisor) & Mira","minutes":120,"start":"2026-05-06 00:30"},{"id":"i_0070","title":"Board meeting — Q2 review","minutes":120,"start":"2026-05-07 21:00"},{"id":"i_0072","title":"Board dinner","minutes":120,"start":"2026-05-08 01:00"},{"id":"i_0003","title":"Deep work — Pricing V2 brief","minutes":60,"start":"2026-04-27 18:00"},{"id":"i_0004","title":"Cofounder lunch — Mira","minutes":60,"start":"2026-04-27 20:00"}],"recurring":[{"title":"engineering standup","count":10},{"title":"deep work — pricing v2 brief","count":4},{"title":"1:1 — mira chen (cofounder)","count":2},{"title":"sprint review","count":2},{"title":"1:1 — alex rivera (head of eng)","count":2},{"title":"friday show-and-tell (all-hands demo)","count":2}],"backToBackBlocks":[{"start":"2026-05-05 16:30","end":"2026-05-06 00:00","count":14,"minutes":450},{"start":"2026-04-28 16:30","end":"2026-04-28 22:00","count":8,"minutes":330},{"start":"2026-04-27 16:30","end":"2026-04-27 19:00","count":3,"minutes":150},{"start":"2026-04-29 20:00","end":"2026-04-29 23:00","count":3,"minutes":180},{"start":"2026-04-30 21:00","end":"2026-05-01 00:00","count":3,"minutes":180}],"meetingFreeStreaks":[{"start":"2026-05-02","end":"2026-05-03","days":2}],"totals":{"events":77,"cancelled":1,"minutes":3450,"distinctTitles":61}},"totals":{"events":77,"cancelled":1,"minutes":3450,"distinctTitles":61},"meta":{"sourceFile":"input.ics","sizeBytes":33801,"format":"ics","kind":"ics-calendar","eventCount":77,"dateRange":"2026-04-27 → 2026-05-08","calendarName":"Sam Reyes — Founder calendar","prodId":"-//html-anything//founder-calendar synthetic//EN","totalMinutes":3450,"uniqueAttendees":30},"calendarName":"Sam Reyes — Founder calendar"};</script>
+<div class="ops-shell">
+
+<!-- COMMAND BAR -->
+<div class="command-bar">
+  <div style="display:flex;flex-direction:column;gap:2px">
+    <div class="command-bar-title">Sam Reyes — Founder Calendar</div>
+    <div class="command-bar-meta mono" id="cmdMeta">Loading…</div>
+  </div>
+  <div class="command-bar-spacer"></div>
+  <div class="search-box">
+    <span class="search-icon">⌕</span>
+    <input type="text" id="globalSearch" placeholder="Search events…" autocomplete="off">
+  </div>
+  <button class="btn-copy" id="copyMdBtn">Copy as Markdown</button>
+</div>
+
+<!-- KPI RAIL -->
+<div class="kpi-rail" id="kpiRail">
+  <div class="kpi-cell">
+    <div class="kpi-label">Scheduled Time</div>
+    <div class="kpi-value mono" id="kpiHours">—</div>
+    <div class="kpi-sub" id="kpiHoursSub">total hours</div>
+  </div>
+  <div class="kpi-cell">
+    <div class="kpi-label">Events</div>
+    <div class="kpi-value mono" id="kpiEvents">—</div>
+    <div class="kpi-sub" id="kpiEventsSub">—</div>
+  </div>
+  <div class="kpi-cell">
+    <div class="kpi-label">Date Range</div>
+    <div class="kpi-value mono" style="font-size:1rem" id="kpiRange">—</div>
+    <div class="kpi-sub" id="kpiRangeSub">—</div>
+  </div>
+  <div class="kpi-cell">
+    <div class="kpi-label">Participants</div>
+    <div class="kpi-value mono" id="kpiPax">—</div>
+    <div class="kpi-sub">unique attendees</div>
+  </div>
+  <div class="kpi-cell">
+    <div class="kpi-label">Recurring Series</div>
+    <div class="kpi-value mono" id="kpiRecurring">—</div>
+    <div class="kpi-sub">always-on events</div>
+  </div>
+  <div class="kpi-cell">
+    <div class="kpi-label">Back-to-back</div>
+    <div class="kpi-value mono" id="kpiB2b">—</div>
+    <div class="kpi-sub">blocks detected</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="ops-main">
+
+  <!-- CALENDAR SUMMARY CARD -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-title">Calendar</div>
+      <div class="section-badge" id="calBadge">—</div>
+    </div>
+    <div class="cal-card">
+      <div>
+        <div class="cal-stats" id="calStats"></div>
+      </div>
+      <div class="cal-headline" id="calHeadline">Loading…</div>
+    </div>
+  </div>
+
+  <!-- TIME ALLOCATION -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-title">Time Allocation — Busy Hours Heatmap</div>
+      <div class="section-badge">Day × Hour</div>
+    </div>
+    <div class="section-body">
+      <div class="heatmap-wrap" id="heatmapWrap"></div>
+      <div class="hm-legend">
+        <span>Less</span>
+        <div class="hm-legend-swatch" style="background:var(--surface-container-high)"></div>
+        <div class="hm-legend-swatch" style="background:rgba(160,59,0,0.25)"></div>
+        <div class="hm-legend-swatch" style="background:rgba(160,59,0,0.5)"></div>
+        <div class="hm-legend-swatch" style="background:rgba(160,59,0,0.75)"></div>
+        <div class="hm-legend-swatch" style="background:var(--primary)"></div>
+        <span>More meetings</span>
+      </div>
+      <!-- Week density strip below -->
+      <div style="margin-top:var(--space-2xl)">
+        <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--fg-muted);margin-bottom:var(--space-sm)">Weekly Density</div>
+        <div class="week-strip" id="weekStrip"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TWO-COL: RECURRING + LONGEST EVENTS -->
+  <div class="two-col">
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">Recurring Series</div>
+        <div class="section-badge">Always-on load</div>
+      </div>
+      <div class="section-body">
+        <div class="recurring-list" id="recurringList"></div>
+      </div>
+    </div>
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">Longest Events</div>
+        <div class="section-badge">Deep blocks</div>
+      </div>
+      <div class="section-body">
+        <div class="longest-list" id="longestList"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTLENECKS / FLAGS -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-title">Back-to-back Blocks &amp; Overloaded Weeks</div>
+      <div class="section-badge" id="flagBadge">Flags</div>
+    </div>
+    <div class="section-body">
+      <div class="flag-queue" id="flagQueue"></div>
+    </div>
+  </div>
+
+  <!-- MEETING-FREE STREAKS -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-title">Meeting-free Streaks</div>
+      <div class="section-badge">Protected days</div>
+    </div>
+    <div class="section-body">
+      <div class="flag-queue" id="streakQueue"></div>
+    </div>
+  </div>
+
+  <!-- ATTENDEES + ORGANIZERS -->
+  <div class="two-col">
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">Top Attendees</div>
+        <div class="section-badge">Who I meet with</div>
+      </div>
+      <div class="section-body">
+        <div class="leaderboard" id="attendeeBoard"></div>
+      </div>
+    </div>
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">Top Organizers</div>
+        <div class="section-badge">Who books my time</div>
+      </div>
+      <div class="section-body">
+        <div class="leaderboard" id="organizerBoard"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROADMAP / CALENDAR WEEK VIEW -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-title">Calendar — Week View</div>
+      <div class="section-badge">Day-by-day ribbon</div>
+    </div>
+    <!-- FILTER STRIP -->
+    <div class="filter-strip" id="filterStrip">
+      <span class="filter-group-label">Status</span>
+      <button class="filter-chip active" data-filter-type="status" data-filter-val="all">All</button>
+      <button class="filter-chip" data-filter-type="status" data-filter-val="confirmed">Confirmed</button>
+      <button class="filter-chip" data-filter-type="status" data-filter-val="cancelled">Cancelled</button>
+      <div class="filter-divider"></div>
+      <span class="filter-group-label">Organizer</span>
+      <div id="organizerChips" style="display:contents"></div>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
+  </div>
+
+  <!-- BROWSE ALL EVENTS (DRILL-DOWN) -->
+  <div class="section-card" id="drillSection">
+    <div class="drill-toggle" id="drillToggle">
+      <div class="drill-toggle-label" id="drillLabel">Browse all 77 events</div>
+      <div class="drill-toggle-icon">▼</div>
+    </div>
+    <div id="drillBody" style="display:none">
+      <!-- Owner/Status filter chips -->
+      <div class="filter-strip" id="drillFilterStrip">
+        <span class="filter-group-label">Attendee</span>
+        <div id="drillAttendeeChips" style="display:contents"></div>
+        <div class="filter-divider"></div>
+        <span class="filter-group-label">Status</span>
+        <button class="filter-chip active" data-drill-type="status" data-drill-val="all">All</button>
+        <button class="filter-chip" data-drill-type="status" data-drill-val="confirmed">Confirmed</button>
+        <button class="filter-chip" data-drill-type="status" data-drill-val="cancelled">Cancelled</button>
+      </div>
+      <div class="drill-search">
+        <input type="text" id="drillSearch" placeholder="Search title, description, location, attendees…" autocomplete="off">
+      </div>
+      <div class="events-list" id="eventsList"></div>
+      <div class="pagination" id="pagination"></div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="ops-footer">
+  <em>Generated locally — your calendar file never left your machine. The full export is embedded in this HTML and rendered in your browser. For sharing, prefer an anonymized export.</em>
+</footer>
+</div>
+
+<script>/* html-anything: truncated generated script disabled so this checked-in example remains valid HTML.
+
+(function(){
+'use strict';
+
+// ── helpers ──────────────────────────────────────────────────────────────────
+function fmtHours(mins){
+  const h=Math.floor(mins/60),m=mins%60;
+  return m>0?`${h}h ${m}m`:`${h}h`;
+}
+function fmtDate(str){
+  if(!str)return'';
+  const d=new Date(str.replace(' ','T'));
+  return d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+}
+function fmtDateTime(str){
+  if(!str)return'';
+  const d=new Date(str.replace(' ','T'));
+  return d.toLocaleDateString('en-US',{month:'short',day:'numeric'})+' '
+    +d.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',hour12:true});
+}
+function fmtTime(str){
+  if(!str)return'';
+  const d=new Date(str.replace(' ','T'));
+  return d.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',hour12:true});
+}
+function fmtDayLabel(dateStr){
+  if(!dateStr)return'';
+  const d=new Date(dateStr.replace(' ','T'));
+  return d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+}
+function escHtml(s){
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function highlightText(text,query){
+  if(!query||!text)return escHtml(text||'');
+  const q=query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  return escHtml(text).replace(new RegExp(`(${q})`,'gi'),'<mark class="highlight">$1</mark>');
+}
+
+// ── data extraction ───────────────────────────────────────────────────────────
+const cal = DATA.calendar || DATA;
+const items = DATA.items || [];
+const totals = cal.totals || DATA.totals || {};
+const weeks = cal.weeks || DATA.weeks || [];
+const busyHours = cal.busyHours || DATA.busyHours || [];
+const topAttendees = cal.topAttendees || DATA.topAttendees || [];
+const topOrganizers = cal.topOrganizers || DATA.topOrganizers || [];
+const recurring = cal.recurring || DATA.recurring || [];
+const longestEvents = cal.longestEvents || DATA.longestEvents || [];
+const backToBack = cal.backToBackBlocks || DATA.backToBackBlocks || [];
+const freeStreaks = cal.meetingFreeStreaks || DATA.meetingFreeStreaks || [];
+const totalMinutes = cal.totalMinutes || DATA.totalMinutes || totals.minutes || 0;
+const uniqueAttendees = DATA.uniqueAttendees || cal.uniqueAttendees || topAttendees.length;
+const dateRange = DATA.dateRange || '';
+const calName = DATA.calendarName || (DATA.meta && DATA.meta.calendarName) || 'Calendar';
+
+// ── KPI rail ─────────────────────────────────────────────────────────────────
+document.getElementById('kpiHours').textContent = fmtHours(totalMinutes);
+document.getElementById('kpiHoursSub').textContent = 'total scheduled time';
+document.getElementById('kpiEvents').textContent = totals.events || items.length;
+const cancelled = totals.cancelled || 0;
+document.getElementById('kpiEventsSub').textContent = cancelled ? `${cancelled} cancelled` : 'all confirmed';
+document.getElementById('kpiRange').textContent = dateRange.replace('→','→');
+document.getElementById('kpiRangeSub').textContent = weeks.length + ' weeks';
+document.getElementById('kpiPax').textContent = uniqueAttendees;
+document.getElementById('kpiRecurring').textContent = recurring.length;
+document.getElementById('kpiB2b').textContent = backToBack.length;
+document.getElementById('cmdMeta').textContent = `${dateRange} · ${totals.events||items.length} events · ${fmtHours(totalMinutes)}`;
+
+// ── calendar summary card ────────────────────────────────────────────────────
+document.getElementById('calBadge').textContent = calName;
+
+// Compute headline
+const totalH = (totalMinutes/60).toFixed(1);
+const dayCount = dateRange ? (() => {
+  const parts = dateRange.split('→').map(s=>s.trim());
+  if(parts.length===2){
+    const d1=new Date(parts[0]),d2=new Date(parts[1]);
+    return Math.round((d2-d1)/86400000)+1;
+  }
+  return weeks.length*7;
+})() : weeks.length*7;
+
+// Find busiest day
+const dayTotals = {};
+busyHours.forEach(d=>{
+  dayTotals[d.day] = d.hourCounts.reduce((a,b)=>a+b,0);
+});
+const busiestDay = Object.entries(dayTotals).sort((a,b)=>b[1]-a[1])[0];
+const overloadedWks = weeks.filter(w=>w.overloaded);
+
+let headline = `${fmtHours(totalMinutes)} scheduled across ${dayCount} days — `;
+if(busiestDay) headline += `${busiestDay[0]}s carry the heaviest meeting load`;
+if(backToBack.length) headline += `, with ${backToBack.length} back-to-back block${backToBack.length>1?'s':''} of 3+ meetings`;
+if(overloadedWks.length) headline += `. Both weeks are flagged overloaded`;
+headline += '.';
+document.getElementById('calHeadline').textContent = headline;
+
+const statsEl = document.getElementById('calStats');
+[
+  {val: totals.events||items.length, label: 'events'},
+  {val: fmtHours(totalMinutes), label: 'scheduled'},
+  {val: uniqueAttendees, label: 'participants'},
+  {val: cancelled, label: 'cancelled'},
+  {val: recurring.length, label: 'recurring series'},
+].forEach(({val,label})=>{
+  const div=document.createElement('div');
+  div.className='cal-stat-pill';
+  div.innerHTML=`<span class="mono">${val}</span><span>${label}</span>`;
+  statsEl.appendChild(div);
+});
+
+// ── heatmap ──────────────────────────────────────────────────────────────────
+(function buildHeatmap(){
+  if(!busyHours.length)return;
+  const wrap = document.getElementById('heatmapWrap');
+  const maxVal = Math.max(...busyHours.flatMap(d=>d.hourCounts));
+  
+  const table = document.createElement('table');
+  table.className = 'heatmap-table';
+  
+  // Header row (hours)
+  const thead = document.createElement('thead');
+  const hrow = document.createElement('tr');
+  const th0 = document.createElement('th'); th0.style.width='44px'; hrow.appendChild(th0);
+  for(let h=0;h<24;h++){
+    const th = document.createElement('th');
+    th.textContent = h%6===0 ? `${h}` : '';
+    hrow.appendChild(th);
+  }
+  thead.appendChild(hrow); table.appendChild(thead);
+  
+  const tbody = document.createElement('tbody');
+  busyHours.forEach(dayObj=>{
+    const tr = document.createElement('tr');
+    const tdLabel = document.createElement('td');
+    tdLabel.className='day-label'; tdLabel.textContent=dayObj.day;
+    tr.appendChild(tdLabel);
+    dayObj.hourCounts.forEach((count,h)=>{
+      const td = document.createElement('td');
+      const cell = document.createElement('div');
+      cell.className='hm-cell tooltip-wrap';
+      if(count===0){
+        cell.style.background='var(--surface-container-high)';
+      } else {
+        const intensity = count/maxVal;
+        cell.style.background=`rgba(160,59,0,${0.15+intensity*0.85})`;
+      }
+      const tip = document.createElement('span');
+      tip.className='tooltip-text';
+      tip.textContent=`${dayObj.day} ${String(h).padStart(2,'0')}:00 — ${count} event${count!==1?'s':''}`;
+      cell.appendChild(tip);
+      td.appendChild(cell);
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  wrap.appendChild(table);
+})();
+
+// ── week strip ───────────────────────────────────────────────────────────────
+(function buildWeekStrip(){
+  const strip = document.getElementById('weekStrip');
+  if(!weeks.length){strip.innerHTML='<span style="color:var(--fg-muted);font-size:0.8rem">No week data.</span>';return;}
+  const maxMins = Math.max(...weeks.map(w=>w.totalMinutes));
+  weeks.forEach(w=>{
+    const wrap = document.createElement('div');
+    wrap.className='week-bar-wrap';
+    const bar = document.createElement('div');
+    bar.className='week-bar '+(w.overloaded?'overloaded':'normal');
+    const pct = Math.max(8, Math.round((w.totalMinutes/maxMins)*120));
+    bar.style.height=pct+'px';
+    const lbl = document.createElement('div');
+    lbl.className='week-label';
+    lbl.textContent=w.weekOf;
+    const cnt = document.createElement('div');
+    cnt.className='week-count';
+    cnt.textContent=fmtHours(w.totalMinutes);
+    const evCnt = document.createElement('div');
+    evCnt.className='week-label';
+    evCnt.textContent=`${w.count} events`;
+    if(w.overloaded){
+      const tag=document.createElement('div');
+      tag.className='chip chip-red';tag.style.fontSize='0.6rem';
+      tag.textContent='overloaded';
+      wrap.appendChild(bar);wrap.appendChild(cnt);wrap.appendChild(lbl);wrap.appendChild(evCnt);wrap.appendChild(tag);
+    } else {
+      wrap.appendChild(bar);wrap.appendChild(cnt);wrap.appendChild(lbl);wrap.appendChild(evCnt);
+    }
+    strip.appendChild(wrap);
+  });
+})();
+
+// ── recurring ────────────────────────────────────────────────────────────────
+(function buildRecurring(){
+  const list = document.getElementById('recurringList');
+  if(!recurring.length){list.innerHTML='<div class="empty-state">No recurring events detected.</div>';return;}
+  recurring.forEach(r=>{
+    const row=document.createElement('div');row.className='recurring-row';
+    const title=document.createElement('div');title.className='recurring-title';
+    title.title=r.title;
+    title.textContent=r.title.replace(/\b\w/g,c=>c.toUpperCase());
+    const cnt=document.createElement('div');cnt.className='recurring-count';cnt.textContent=`×${r.count}`;
+    const chip=document.createElement('div');chip.className='chip chip-blue';chip.textContent='recurring';
+    row.appendChild(title);row.appendChild(cnt);row.appendChild(chip);
+    list.appendChild(row);
+  });
+})();
+
+// ── longest events ───────────────────────────────────────────────────────────
+(function buildLongest(){
+  const list=document.getElementById('longestList');
+  if(!longestEvents.length){list.innerHTML='<div class="empty-state">No long events found.</div>';return;}
+  longestEvents.forEach(ev=>{
+    const row=document.createElement('div');row.className='longest-row';
+    row.dataset.id=ev.id;
+    const title=document.createElement('div');title.className='longest-title';title.title=ev.title;title.textContent=ev.title;
+    const start=document.createElement('div');start.className='longest-start';start.textContent=fmtDateTime(ev.start);
+    const dur=document.createElement('div');dur.className='longest-dur';dur.textContent=fmtHours(ev.minutes);
+    row.appendChild(title);row.appendChild(start);row.appendChild(dur);
+    row.addEventListener('click',()=>{
+      openDrill();
+      setTimeout(()=>jumpToEvent(ev.id),80);
+    });
+    list.appendChild(row);
+  });
+})();
+
+// ── back-to-back flags ────────────────────────────────────────────────────────
+(function buildFlags(){
+  const queue=document.getElementById('flagQueue');
+  const overloadedWks=weeks.filter(w=>w.overloaded);
+  
+  const items2=[
+    ...backToBack.map((b,i)=>({
+      type:'overload',
+      title:`Back-to-back block #${i+1}`,
+      meta:`${b.count} meetings · ${fmtHours(b.minutes)}`,
+      desc:`${fmtDateTime(b.start)} → ${fmtTime(b.end)} — ${b.count} consecutive meetings spanning ${fmtHours(b.minutes)} with minimal gaps. Review for content overlap or consolidation.`
+    })),
+    ...overloadedWks.map(w=>({
+      type:'warn',
+      title:`Overloaded week: ${w.weekOf}`,
+      meta:`${w.count} events · ${fmtHours(w.totalMinutes)}`,
+      desc:`${w.count} events totalling ${fmtHours(w.totalMinutes)} — exceeds sustainable meeting load. Consider deferring or delegating.`
+    })),
+  ];
+  
+  if(!items2.length){
+    queue.innerHTML='<div class="empty-state">No back-to-back blocks or overloaded weeks detected.</div>';
+    return;
+  }
+  document.getElementById('flagBadge').textContent=`${items2.length} flags`;
+  
+  items2.forEach(it=>{
+    const card=document.createElement('div');
+    card.className=`flag-card ${it.type}`;
+    card.innerHTML=`<div class="flag-title">${escHtml(it.title)}</div>
+      <div class="flag-meta mono">${escHtml(it.meta)}</div>
+      <div class="flag-desc">${escHtml(it.desc)}</div>`;
+    queue.appendChild(card);
+  });
+})();
+
+// ── meeting-free streaks ──────────────────────────────────────────────────────
+(function buildStreaks(){
+  const queue=document.getElementById('streakQueue');
+  if(!freeStreaks.length){
+    queue.innerHTML='<div class="empty-state">No multi-day meeting-free streaks in this period.</div>';
+    return;
+  }
+  freeStreaks.forEach(s=>{
+    const card=document.createElement('div');card.className='flag-card info';
+    card.innerHTML=`<div class="flag-title">Meeting-free: ${escHtml(fmtDate(s.start))} → ${escHtml(fmtDate(s.end))}</div>
+      <div class="flag-meta mono">${s.days} day${s.days!==1?'s':''} clear</div>
+      <div class="flag-desc">Likely deep-work, travel, or off-week — verify it's intentional and guard these days proactively.</div>`;
+    queue.appendChild(card);
+  });
+})();
+
+// ── attendees leaderboard ────────────────────────────────────────────────────
+function buildLeaderboard(id, data, maxVal){
+  const board=document.getElementById(id);
+  if(!data.length){board.innerHTML='<div class="empty-state">No data.</div>';return;}
+  const mv=maxVal||Math.max(...data.map(d=>d.minutes||d.count||0));
+  data.slice(0,8).forEach(d=>{
+    const row=document.createElement('div');row.className='lb-row';
+    const name=document.createElement('div');name.className='lb-name';name.title=d.name;name.textContent=d.name;
+    const barWrap=document.createElement('div');barWrap.className='lb-bar-wrap';
+    const bar=document.createElement('div');bar.className='lb-bar';
+    const pct=Math.round(((d.minutes||d.count||0)/mv)*100);
+    setTimeout(()=>{bar.style.width=pct+'%'},50);
+    barWrap.appendChild(bar);
+    const nums=document.createElement('div');nums.className='lb-nums';
+    nums.textContent=`${d.count}× · ${fmtHours(d.minutes||0)}`;
+    row.appendChild(name);row.appendChild(barWrap);row.appendChild(nums);
+    board.appendChild(row);
+  });
+}
+buildLeaderboard('attendeeBoard', topAttendees.filter(a=>a.name!=='Sam Reyes'));
+buildLeaderboard('organizerBoard', topOrganizers);
+
+// ── calendar week view (roadmap) ──────────────────────────────────────────────
+let activeStatusFilter='all';
+const activeOrganizerFilters=new Set();
+
+// Build organizer chips
+(function buildOrgChips(){
+  const container=document.getElementById('organizerChips');
+  topOrganizers.slice(0,6).forEach(org=>{
+    const btn=document.createElement('button');
+    btn.className='filter-chip';
+    btn.dataset.filterType='organizer';
+    btn.dataset.filterVal=org.name;
+    btn.textContent=org.name.split(' ')[0];
+    container.appendChild(btn);
+  });
+  
+  document.getElementById('filterStrip').addEventListener('click',e=>{
+    const chip=e.target.closest('.filter-chip');
+    if(!chip)return;
+    const type=chip.dataset.filterType;
+    const val=chip.dataset.filterVal;
+    if(type==='status'){
+      document.querySelectorAll('#filterStrip [data-filter-type="status"]').forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      activeStatusFilter=val;
+    } else if(type==='organizer'){
+      if(chip.classList.contains('active')){
+        chip.classList.remove('active');
+        activeOrganizerFilters.delete(val);
+      } else {
+        chip.classList.add('active');
+        activeOrganizerFilters.add(val);
+      }
+    }
+    renderCalGrid();
+  });
+})();
+
+// Group items by date
+function groupByDay(evts){
+  const map={};
+  evts.forEach(ev=>{
+    if(!ev.start)return;
+    const dateKey=ev.start.slice(0,10);
+    if(!map[dateKey])map[dateKey]=[];
+    map[dateKey].push(ev);
+  });
+  return map;
+}
+
+// Color palette for event chips
+const calColors=[
+  {bg:'rgba(160,59,0,0.12)',color:'var(--primary)',border:'rgba(160,59,0,0.3)'},
+  {bg:'rgba(123,64,224,0.1)',color:'var(--secondary-container)',border:'rgba(123,64,224,0.25)'},
+  {bg:'rgba(59,130,246,0.1)',color:'var(--blue)',border:'rgba(59,130,246,0.25)'},
+  {bg:'rgba(16,185,129,0.1)',color:'var(--green)',border:'rgba(16,185,129,0.25)'},
+  {bg:'rgba(245,158,11,0.1)',color:'var(--yellow)',border:'rgba(245,158,11,0.25)'},
+];
+const orgColorMap={};
+let colorIdx=0;
+function getOrgColor(org){
+  if(!orgColorMap[org]){orgColorMap[org]=calColors[colorIdx%calColors.length];colorIdx++;}
+  return orgColorMap[org];
+}
+
+function renderCalGrid(){
+  const grid=document.getElementById('calGrid');
+  grid.innerHTML='';
+  
+  let filtered=items.slice();
+  if(activeStatusFilter!=='all') filtered=filtered.filter(ev=>ev.status===activeStatusFilter);
+  if(activeOrganizerFilters.size>0) filtered=filtered.filter(ev=>activeOrganizerFilters.has(ev.organizer)||activeOrganizerFilters.has(ev.owner));
+  
+  const grouped=groupByDay(filtered);
+  const days=Object.keys(grouped).sort();
+  
+  if(!days.length){
+    grid.innerHTML='<div class="empty-state">No events match the current filters.</div>';
+    return;
+  }
+  
+  days.forEach(day=>{
+    const row=document.createElement('div');row.className='cal-day-row';
+    const lbl=document.createElement('div');lbl.className='cal-day-label';
+    lbl.textContent=fmtDayLabel(day+' 00:00');
+    const evWrap=document.createElement('div');evWrap.className='cal-day-events';
+    
+    grouped[day].sort((a,b)=>a.startEpoch-b.startEpoch).forEach(ev=>{
+      const chip=document.createElement('div');
+      chip.className='cal-event-chip'+(ev.durationMinutes>=90?' long':'');
+      const col=getOrgColor(ev.organizer||ev.owner||'');
+      chip.style.background=col.bg;
+      chip.style.color=col.color;
+      chip.style.border=`1px solid ${col.border}`;
+      chip.title=`${ev.title} — ${fmtTime(ev.start)} (${fmtHours(ev.durationMinutes||0)})`;
+      chip.textContent=`${fmtTime(ev.start)} ${ev.title}`;
+      chip.dataset.id=ev.id;
+      chip.addEventListener('click',()=>{openDrill();setTimeout(()=>jumpToEvent(ev.id),80);});
+      evWrap.appendChild(chip);
+    });
+    
+    row.appendChild(lbl);row.appendChild(evWrap);
+    grid.appendChild(row);
+  });
+}
+renderCalGrid();
+
+// ── drill-down ────────────────────────────────────────────────────────────────
+let drillOpen=false;
+let drillPage=0;
+const PAGE_SIZE=25;
+let drillSearch='';
+let drillStatusFilter='all';
+const drillAttendeeFilters=new Set();
+let drillItems=[...items];
+let filteredDrillItems=[...items];
+
+const drillToggle=document.getElementById('drillToggle');
+const drillBody=document.getElementById('drillBody');
+
+function openDrill(){
+  if(!drillOpen){
+    drillOpen=true;
+    drillBody.style.display='block';
+    drillToggle.classList.add('open');
+    renderDrillItems();
+  }
+}
+
+drillToggle.addEventListener('click',()=>{
+  drillOpen=!drillOpen;
+  drillBody.style.display=drillOpen?'block':'none';
+  drillToggle.classList.toggle('open',drillOpen);
+  if(drillOpen)renderDrillItems();
+});
+
+document.getElementById('drillLabel').textContent=`Browse all ${items.length} events`;
+
+// Build attendee chips for drill
+(function buildDrillAttendeeChips(){
+  const container=document.getElementById('drillAttendeeChips');
+  topAttendees.slice(0,8).filter(a=>a.name!=='Sam Reyes').forEach(att=>{
+    const btn=document.createElement('button');
+    btn.className='filter-chip';
+    btn.dataset.drillType='attendee';
+    btn.dataset.drillVal=att.name;
+    btn.textContent=att.name.split
+*/
+</script>
+</body>
+</html>

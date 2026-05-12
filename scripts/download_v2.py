@@ -21,23 +21,24 @@ Example:
 """
 
 import asyncio
-import aiohttp
 import json
-import os
-from pathlib import Path
-from typing import Dict, List, Set, Tuple, Optional
-from datetime import datetime
-from collections import defaultdict
-import time
 import logging
+import os
+import time
+from collections import defaultdict
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
 
+import aiohttp
 from utils import (
-    normalize_name,
-    ensure_unique_dir,
-    build_skill_key,
-    get_repo_suffix,
-    short_hash,
     build_legal_metadata,
+    build_skill_key,
+    ensure_unique_dir,
+    get_repo_suffix,
+    iter_source_skills,
+    normalize_name,
+    short_hash,
 )
 
 # Configuration
@@ -62,6 +63,21 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+
+
+def load_source_skills(sources_dir: Path) -> List[dict]:
+    """Load source rows, preserving source-level defaults such as top-level repo."""
+    skills: List[dict] = []
+    if not sources_dir.exists():
+        return skills
+    for source_file in sources_dir.glob("*.json"):
+        try:
+            with open(source_file, 'r') as f:
+                data = json.load(f)
+            skills.extend(iter_source_skills(data))
+        except Exception as e:
+            logger.warning(f"Failed to load {source_file}: {e}")
+    return skills
 
 
 class SkillRegistry:
@@ -402,14 +418,7 @@ async def main():
 
     # Load from sources
     sources_dir = registry_dir / "sources"
-    if sources_dir.exists():
-        for source_file in sources_dir.glob("*.json"):
-            try:
-                with open(source_file, 'r') as f:
-                    data = json.load(f)
-                    skills.extend(data.get("skills", []))
-            except Exception as e:
-                logger.warning(f"Failed to load {source_file}: {e}")
+    skills.extend(load_source_skills(sources_dir))
 
     # Deduplicate by repo+name
     seen = set()

@@ -1,9 +1,6 @@
 ---
 name: graph-search
-description: >
-  Search the code knowledge graph by function, class,
-  or type name using FTS5 full-text search with
-  query-aware kind boosting.
+description: 'Search the code knowledge graph by function, class, or type using FTS5 full-text search.'
 model_hint: standard
 ---
 

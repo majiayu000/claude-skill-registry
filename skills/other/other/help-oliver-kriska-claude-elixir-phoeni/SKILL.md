@@ -91,7 +91,7 @@ After recommending, always add:
 2. **MAX ONE clarifying question** — don't interrogate, make your best guess
 3. **Show exact syntax** — `/phx:plan Add user notifications` not just "use the plan command"
 4. **Context over keywords** — existing plans + git state matter more than word matching
-5. **Never block** — if user already knows what they want, don't redirect
+5. **NEVER block** — if user already knows what they want, DO NOT redirect
 
 ## Integration
 

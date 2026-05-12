@@ -1,6 +1,6 @@
 ---
 name: don-front-end
-description: Front-end development standards for Dutch government websites. Use when building accessible government web applications, implementing NL Design System components, or ensuring WCAG compliance.
+description: "Dutch government web standards: NL Design System, WCAG accessibility, government UI patterns."
 metadata:
   source: developer.overheid.nl
   synced-from: https://github.com/developer-overheid-nl/don-site

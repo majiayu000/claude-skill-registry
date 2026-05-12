@@ -1,0 +1,22 @@
+# {BUSINESS_NAME}
+
+> {BUSINESS_NAME} is a {BUSINESS_TYPE} located in {CITY}, {STATE}. {ONE_SENTENCE_DESCRIPTION}.
+
+## Services
+
+- [{SERVICE_1}]({BASE_URL}/services/{SLUG_1}): {SERVICE_1_DESCRIPTION}
+- [{SERVICE_2}]({BASE_URL}/services/{SLUG_2}): {SERVICE_2_DESCRIPTION}
+- [{SERVICE_3}]({BASE_URL}/services/{SLUG_3}): {SERVICE_3_DESCRIPTION}
+
+## Information
+
+- [About]({BASE_URL}/about): Our story, team, and values
+- [Location]({BASE_URL}/location): Address, hours, parking, and directions
+- [Contact]({BASE_URL}/contact): Phone, email, and appointment booking
+
+## Optional
+
+- [Reviews]({BASE_URL}/reviews): Customer testimonials
+- [Gallery]({BASE_URL}/gallery): Photos of our work and space
+- [Blog]({BASE_URL}/blog): Tips, news, and community updates
+- [FAQ]({BASE_URL}/faq): Common questions about our services

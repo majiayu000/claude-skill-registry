@@ -1,9 +1,6 @@
 ---
 name: voice-learn
-description: Learn from user's manual edits to improve voice profile over
-  time. Compares text at three stages (pre-review, post-review, manually
-  edited) to identify recurring edit patterns and propose register updates.
-version: 1.9.3
+description: 'Learn from manual edits to improve voice profile. Compares pre-review, post-review, and edited text.'
 globs: "**/*.{md,txt}"
 alwaysApply: false
 category: writing-quality
@@ -19,8 +16,8 @@ model_hint: opus
 estimated_tokens: 2000
 progressive_loading: true
 modules:
-- snapshot-management
-- pattern-analysis
+- modules/snapshot-management.md
+- modules/pattern-analysis.md
 dependencies:
 - scribe:voice-extract
 - scribe:voice-generate

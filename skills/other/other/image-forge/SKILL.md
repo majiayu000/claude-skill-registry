@@ -1,6 +1,6 @@
 ---
 name: image-forge
-description: Edit images with precision using ImageMagick 7, sips, rembg, and Pillow — with intelligent routing to AI semantic editing (Gemini/nano-banana-pro) for content-aware operations. Covers cropping, resizing, compositing, annotating, format conversion, color adjustment, batch processing, and montage creation. Triggers on image editing, crop, resize, composite, annotate, remove background, format conversion.
+description: Edit images with precision using ImageMagick 7, sips, transparent-background, and Pillow — with intelligent routing to AI semantic editing (Gemini/nano-banana-pro) for content-aware operations. Covers cropping, resizing, compositing, annotating, format conversion, color adjustment, background removal, batch processing, and montage creation. Triggers on image editing, crop, resize, composite, annotate, remove background, format conversion.
 ---
 
 # Image Forge
@@ -11,7 +11,7 @@ Pixel-precise image editing with three-tier routing: deterministic CLI tools for
 
 **Use AI when the edit requires understanding what is in the image. Use ImageMagick when the edit requires knowing exactly what to do to the pixels.**
 
-### Tier 1: Deterministic (magick, sips, rembg)
+### Tier 1: Deterministic (magick, sips, transparent-background)
 
 Use for operations with exact, numeric parameters:
 
@@ -34,7 +34,8 @@ Use for operations with exact, numeric parameters:
 | Sepia | magick | `magick in.jpg -sepia-tone 80% out.jpg` |
 | Blur | magick | `magick in.jpg -blur 0x3 out.jpg` |
 | Sharpen | magick | `magick in.jpg -sharpen 0x1 out.jpg` |
-| Remove background | rembg | `rembg i in.jpg out.png` |
+| Remove background (AI) | transparent-background | See **Background Removal** section below |
+| Remove background (simple) | magick | `magick in.jpg -fuzz 15% -transparent white -trim +repage out.png` |
 | Strip metadata | magick | `magick in.jpg -strip out.jpg` |
 | Set DPI | magick | `magick in.jpg -density 300 out.jpg` |
 | Batch resize | `batch_ops.py` | `python3 scripts/batch_ops.py *.jpg --op resize --width 800 --output resized/` |
@@ -65,6 +66,49 @@ Use the Read tool to inspect images before/after edits:
 - Describe image contents
 - Check composition and framing
 - Identify colors, objects, text in image
+
+## Background Removal
+
+Use `transparent-background` (InSPyReNet model) for AI background removal. It produces clean alpha mattes with smooth anti-aliased edges — far superior to ImageMagick's `-transparent`/`-fuzz` approach, which leaves white fringing in concave regions and jagged edges.
+
+**When to use each:**
+
+| Method | When | Quality |
+|--------|------|---------|
+| `transparent-background` | Any photo/render with complex foreground (hair, translucent edges, concave regions) | Smooth alpha, no fringing |
+| `magick -transparent white -fuzz N%` | Simple shapes on pure white, quick-and-dirty | Fast but aliased edges, misses interior white |
+| `magick floodfill` | Remove background from corners only, preserve interior white | Only hits connected regions |
+
+**Python API (recommended):**
+
+```python
+from transparent_background import Remover
+from PIL import Image
+
+remover = Remover()
+img = Image.open("input.jpg").convert("RGB")
+out = remover.process(img, type="rgba")
+out.save("output.png")
+```
+
+**With trim (most common workflow):**
+
+```bash
+python3 -c "
+from transparent_background import Remover
+from PIL import Image
+remover = Remover()
+img = Image.open('input.jpg').convert('RGB')
+remover.process(img, type='rgba').save('/tmp/nobg.png')
+"
+magick /tmp/nobg.png -trim +repage output.png
+```
+
+**Install:** `uv pip install --system transparent-background`
+
+**Performance:** ~2-3s per image on Apple Silicon (MPS). First run downloads the InSPyReNet model (~170MB).
+
+**Note:** `rembg` is an alternative but has a broken `gradio` dependency as of May 2026. `transparent-background` is the more reliable option.
 
 ## Scripts
 

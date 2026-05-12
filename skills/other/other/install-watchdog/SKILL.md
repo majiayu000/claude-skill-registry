@@ -1,7 +1,6 @@
 ---
 name: install-watchdog
-description: 'Install egregore watchdog daemon via OS scheduler (launchd or systemd). Use to enable automatic 5-minute relaunch checks.'
-version: 1.9.3
+description: 'Install egregore watchdog daemon via OS scheduler (launchd or systemd).'
 alwaysApply: false
 category: setup
 tools: []

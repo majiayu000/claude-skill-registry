@@ -1,6 +1,7 @@
 ---
 name: doc
 description: 'Generate and validate repo docs.'
+practices: [wiki-knowledge-surface, code-complete, pragmatic-programmer]
 skill_api_version: 1
 context:
   window: fork
@@ -257,5 +258,8 @@ Tell the user:
 ## Reference Documents
 
 - [references/generation-templates.md](references/generation-templates.md)
+- [references/prose-and-report-workmanship.md](references/prose-and-report-workmanship.md)
 - [references/project-types.md](references/project-types.md)
 - [references/validation-rules.md](references/validation-rules.md)
+- [references/de-slopify.md](references/de-slopify.md) — Remove AI writing artifacts from docs
+- [references/architecture-report.md](references/architecture-report.md) — Generate technical architecture documents

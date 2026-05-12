@@ -1,6 +1,7 @@
 ---
 name: pr-prep
 description: 'Prepare PR commits and body.'
+practices: [continuous-integration, continuous-delivery, gitops]
 skill_api_version: 1
 context:
   window: fork

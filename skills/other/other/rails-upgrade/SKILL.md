@@ -170,6 +170,7 @@ If user requests a multi-hop upgrade (e.g., 5.2 → 8.1):
 - `workflows/direct-detection-workflow.md` - How to run breaking change detection directly
 - `workflows/upgrade-report-workflow.md` - How to generate upgrade reports
 - `workflows/gem-compatibility-workflow.md` - **Load in Step 4.5** - Per-lockfile gem compatibility check against the target Rails version. Documents both the primary (`next_rails` `bundle_report compatibility`) and the secondary (railsbump.org API) and the rules for when to escalate.
+- `workflows/boot-smoke-test-workflow.md` - **Load in Step 4.6** - Run a Rails-loading command against `Gemfile.next` to catch gem-level runtime incompat that the resolver can't see (gems calling removed Rails internals or `require`-ing removed files).
 - `workflows/ci-sync-workflow.md` - **MANDATORY before opening the upgrade PR** - How to verify CI config matches the upgraded Gemfile
 - `workflows/app-update-preview-workflow.md` - How to generate app:update previews
 - **`upgrade-cleanup` companion plugin** - User-triggered. Removes dual-boot scaffolding and drops `NextRails.next?` / `NextRails.current?` branches. Deprecation triage stays with this skill for the next hop.
@@ -288,6 +289,39 @@ Determines which gems must be bumped before the Rails version change can resolve
    otherwise.
 ```
 
+### Step 4.6: Boot Smoke Test on Gemfile.next
+```
+Catches the gem-internal incompatibilities that Step 4 (codebase grep) and
+Step 4.5 (resolver-level compat check) cannot see.
+
+A gem can declare loose Rails constraints — no upper bound on activerecord /
+activesupport — and `bundle_report compatibility` plus `bundle install` will
+both call it "compatible." But at runtime, the gem may:
+
+  - call a Rails internal that was removed at the target version
+    (e.g. database_cleaner-active_record 2.1.x calling
+    AR::ConnectionAdapters#schema_migration, removed in Rails 7.2)
+  - require a file that was removed at the target version
+    (e.g. jbuilder 2.11.x doing `require "active_support/proxy_object"`,
+    removed in Rails 8.0)
+
+These surface only when something boots Rails. Catching them here, before
+the report is written, lets them land in fix-before-bump where they belong
+instead of mid-implementation.
+
+1. Read: workflows/boot-smoke-test-workflow.md
+2. Run a Rails-loading command against Gemfile.next:
+     BUNDLE_GEMFILE=Gemfile.next bundle exec rspec --dry-run
+   (or `bin/rails runner "puts Rails.version"`, or `bundle exec rspec` if
+   the suite is fast enough — anything that triggers
+   `Bundler.require(*Rails.groups)` and the framework boot.)
+3. If boot fails, capture the LoadError / NoMethodError trace, identify
+   the offending gem (grep the bundle paths for the missing constant or
+   file), check rubygems for a newer version with target-Rails compat,
+   and add the bump to the fix-before-bump bucket for Step 5.
+4. Re-run the boot smoke test until it succeeds. Then proceed to Step 5.
+```
+
 ### Step 5: Load Report Resources & Generate Reports
 ```
 1. Read: templates/upgrade-report-template.md
@@ -298,7 +332,7 @@ Determines which gems must be bumped before the Rails version change can resolve
 
 **Deliverable #1: Comprehensive Upgrade Report**
 - **Input:** Direct detection findings + version guide data
-- **Output:** A report covering breaking changes (with OLD vs NEW code examples taken from the user's actual files), custom-code warnings flagged with ⚠️, a step-by-step migration plan, a testing checklist, and a rollback plan.
+- **Output:** A report covering findings grouped into the two buckets defined in `workflows/direct-detection-workflow.md` — **fix-before-bump** (`kind: breaking` and `kind: deprecation`) and **fix-when-ready** (`kind: migration` and `kind: optional`) — with OLD vs NEW code examples taken from the user's actual files, custom-code warnings flagged with ⚠️, a step-by-step migration plan, a testing checklist, and a rollback plan.
 
 **Deliverable #2: app:update Preview**
 - **Input:** Actual config files + findings
@@ -308,14 +342,18 @@ Determines which gems must be bumped before the Rails version change can resolve
 ```
 1. Present Comprehensive Upgrade Report first
 2. Present app:update Preview Report second
-3. Implement breaking change fixes using `NextRails.next?` for dual-boot code
+3. Apply fix-before-bump changes (`kind: breaking` and `kind: deprecation`). Most fixes are direct rewrites — the new API typically works on both sides of the dual-boot pair (e.g., `update_attributes` → `update`). Use `NextRails.next?` only when the fix requires target-version-only APIs that don't exist in the current Rails
 4. Update Gemfile to target Rails version
 5. Run test suite against both versions
 6. **Check CI config matches the upgraded Gemfile** — load `workflows/ci-sync-workflow.md`, fix any mismatches before proceeding
 7. Deploy and verify
 ```
 
-**Do not fix deprecations printed by the next version during this hop.** Those belong to the *next* upgrade cycle and will be addressed before the next version bump. Triaging them now expands the scope of the current hop and risks shipping a half-finished change.
+**Do not fix `load_defaults`-triggered runtime deprecation warnings about *future* Rails versions during this hop.** This caveat covers post-bump runtime warnings emitted by Rails X+1 about behavior scheduled to change in X+2 — typically surfaced once `load_defaults X.Y` flips on in Step 7. Those belong to the *next* upgrade cycle and are addressed before the next version bump.
+
+This is **not** a contradiction of fix-before-bump. The `kind: deprecation` patterns from Step 4's detection are warnings emitted by the *current* Rails version about APIs that go away at the *target* version — they stay in fix-before-bump and should be addressed in this hop.
+
+Triaging tomorrow's deprecation warnings now expands the scope of the current hop and risks shipping a half-finished change.
 
 ### Step 7: Align load_defaults
 ```
@@ -423,7 +461,7 @@ Before starting ANY upgrade:
 5. Present both reports to user
 
 **Action - Step 6 (Implement & Upgrade):**
-1. Fix breaking changes using `NextRails.next?` for dual-boot code
+1. Apply fix-before-bump changes (`kind: breaking` and `kind: deprecation`). Most fixes are direct rewrites — the new API typically works on both sides of the dual-boot pair (e.g., `update_attributes` → `update`). Use `NextRails.next?` only when the fix requires target-version-only APIs that don't exist in the current Rails
 2. Update Gemfile to target Rails version
 3. Run tests against both versions
 4. **Check CI config matches the upgraded Gemfile** (`workflows/ci-sync-workflow.md`) — fix any mismatches before declaring Step 6 complete
@@ -492,7 +530,7 @@ Before delivering, verify:
 **For Comprehensive Upgrade Report:**
 - [ ] All {PLACEHOLDERS} replaced with actual values
 - [ ] Used ACTUAL findings from direct detection (not generic examples)
-- [ ] Breaking changes section includes real file:line references
+- [ ] Findings grouped into the two buckets — fix-before-bump (`kind: breaking` and `kind: deprecation`) and fix-when-ready (`kind: migration` and `kind: optional`) — with real file:line references
 - [ ] Custom code warnings based on actual detected issues
 - [ ] Code examples use user's actual code from affected files
 - [ ] Next steps clearly outlined

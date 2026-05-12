@@ -108,9 +108,9 @@ Comprehensive accessibility guidelines based on WCAG 2.2 and Lighthouse accessib
   background: #fff;
 }
 
-/* ✅ Focus states need contrast too */
+/* ✅ Focus states need contrast too (3:1 against background, WCAG 1.4.11) */
 :focus-visible {
-  outline: 2px solid #005fcc;
+  outline: 2px solid currentColor;
   outline-offset: 2px;
 }
 ```
@@ -157,12 +157,22 @@ Comprehensive accessibility guidelines based on WCAG 2.2 and Lighthouse accessib
 
 ### Keyboard accessible (2.1)
 
-**All functionality must be keyboard accessible:**
-```javascript
-// ❌ Only handles click
-element.addEventListener('click', handleAction);
+**All functionality must be keyboard accessible.** Prefer native interactive elements — `<button>`, `<a href>`, and form controls handle Enter/Space activation, focus, and assistive-tech semantics for free. Only add manual keyboard handling when you cannot use a native element.
 
-// ✅ Handles both click and keyboard
+```html
+<!-- ❌ Non-interactive element with click only: not focusable, no keyboard activation -->
+<div class="card" onclick="handleAction()">Open</div>
+
+<!-- ✅ Best: use a native button -->
+<button type="button" onclick="handleAction()">Open</button>
+```
+
+```javascript
+// ✅ When you MUST use a non-interactive element (e.g. div with role="button"),
+// make it focusable AND handle keyboard activation. Do NOT add this to a native
+// <button> — Enter/Space already fire click, so you'd double-trigger.
+element.setAttribute('role', 'button');
+element.setAttribute('tabindex', '0');
 element.addEventListener('click', handleAction);
 element.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' || e.key === ' ') {
@@ -186,11 +196,11 @@ element.addEventListener('keydown', (e) => {
 }
 
 :focus-visible {
-  outline: 2px solid #005fcc;
+  outline: 2px solid currentColor; /* inherits text color → already contrast-checked */
   outline-offset: 2px;
 }
 
-/* ✅ Or custom focus styles */
+/* ✅ Or pick a brand color and verify ≥3:1 contrast against every background it lands on */
 button:focus-visible {
   box-shadow: 0 0 0 3px rgba(0, 95, 204, 0.5);
 }

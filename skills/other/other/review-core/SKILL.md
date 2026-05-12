@@ -1,7 +1,6 @@
 ---
 name: review-core
-description: 'Reusable scaffolding for review workflows with context establishment, evidence capture, and structured output.'
-version: 1.9.0
+description: 'Review-workflow scaffolding (context, evidence, output).'
 alwaysApply: false
 category: review-patterns
 tags:

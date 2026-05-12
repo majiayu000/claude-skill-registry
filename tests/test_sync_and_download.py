@@ -1,6 +1,7 @@
 import asyncio
 import importlib.util
 import json
+import subprocess
 import sys
 import types
 from datetime import timedelta
@@ -78,6 +79,34 @@ def test_should_fail_on_empty_download_only_when_all_attempts_fail():
     assert module.should_fail_on_empty_download({"downloaded": 0, "failed": 3, "skipped": 10}) is False
 
 
+def test_build_unified_registry_inherits_top_level_repo(tmp_path):
+    module = load_module()
+    sources_dir = tmp_path / "sources"
+    sources_dir.mkdir()
+    output_path = tmp_path / "registry.json"
+    (sources_dir / "anthropic.json").write_text(
+        json.dumps(
+            {
+                "name": "Anthropic",
+                "repo": "anthropics/skills",
+                "skills": [
+                    {
+                        "name": "docx",
+                        "path": "skills/docx",
+                        "description": "Document editing skill.",
+                        "category": "documents",
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    assert module.build_unified_registry(sources_dir, output_path) == 1
+    registry = json.loads(output_path.read_text(encoding="utf-8"))
+    assert registry["skills"][0]["repo"] == "anthropics/skills"
+
+
 def test_download_blocks_security_listed_source_repo(tmp_path, monkeypatch):
     module = load_module()
     registry_path = tmp_path / "registry.json"
@@ -115,7 +144,97 @@ def test_download_blocks_security_listed_source_repo(tmp_path, monkeypatch):
     assert failure_report["failure_reasons"]["blocked_source"] == 1
 
 
-def test_existing_blocked_archive_fails_before_existing_skip(tmp_path, monkeypatch):
+def test_download_blocks_security_listed_source_path_alias(tmp_path, monkeypatch):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    failure_report_path = tmp_path / "failure_report.json"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "toprank",
+                        "repo": "nowork-studio/toprank",
+                        "path": "openclaw/skills/toprank/SKILL.md",
+                        "category": "development",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    install_fake_aiohttp(monkeypatch, {})
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            failure_report_path=failure_report_path,
+        )
+    )
+
+    assert stats["downloaded"] == 0
+    assert stats["failed"] == 1
+    assert not list(output_dir.rglob("SKILL.md"))
+    failure_report = json.loads(failure_report_path.read_text(encoding="utf-8"))
+    assert failure_report["failure_reasons"]["blocked_source"] == 1
+
+
+def test_download_removes_skill_that_fails_security_scan(tmp_path, monkeypatch):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    failure_report_path = tmp_path / "failure_report.json"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "unsafe-demo",
+                        "repo": "acme/unsafe-demo",
+                        "path": "SKILL.md",
+                        "category": "development",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    install_fake_aiohttp(
+        monkeypatch,
+        {
+            "https://raw.githubusercontent.com/acme/unsafe-demo/main/SKILL.md": FakeResponse(
+                200,
+                text=(
+                    "---\nname: unsafe-demo\n"
+                    "description: Demo skill with unsafe shell execution.\n---\n"
+                    "# Unsafe Demo\n"
+                    "```python\n"
+                    "import subprocess\n"
+                    "subprocess.run('echo unsafe', shell=True)\n"
+                    "```\n"
+                ),
+            ),
+        },
+    )
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            failure_report_path=failure_report_path,
+        )
+    )
+
+    assert stats["downloaded"] == 0
+    assert stats["failed"] == 1
+    assert not list(output_dir.rglob("SKILL.md"))
+    failure_report = json.loads(failure_report_path.read_text(encoding="utf-8"))
+    assert failure_report["failure_reasons"]["security_scan_failed"] == 1
+
+
+def test_download_removes_existing_blocked_archive_before_existing_skip(tmp_path, monkeypatch):
     module = load_module()
     registry_path = tmp_path / "registry.json"
     output_dir = tmp_path / "skills"
@@ -139,14 +258,52 @@ description: Existing blocked archive.
     registry_path.write_text(json.dumps({"skills": []}), encoding="utf-8")
     install_fake_aiohttp(monkeypatch, {})
 
-    with pytest.raises(RuntimeError, match="Existing archive contains blocked source repos"):
-        asyncio.run(
-            module.download_skills(
-                registry_path,
-                output_dir,
-                failure_report_path=failure_report_path,
-            )
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            failure_report_path=failure_report_path,
         )
+    )
+
+    assert stats["blocked_archives_removed"] == 1
+    assert stats["downloaded"] == 0
+    assert not skill_dir.exists()
+
+
+def test_download_removes_ci_untracked_archive_leftovers(tmp_path, monkeypatch):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    stale_dir = output_dir / "other" / "old-core-leftover"
+    stale_dir.mkdir(parents=True)
+    (stale_dir / "SKILL.md").write_text(
+        """---
+name: old-core-leftover
+description: Stale file left by the core checkout.
+---
+
+# Demo
+""",
+        encoding="utf-8",
+    )
+    (stale_dir / "metadata.json").write_text("{}", encoding="utf-8")
+    registry_path.write_text(json.dumps({"skills": []}), encoding="utf-8")
+    install_fake_aiohttp(monkeypatch, {})
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+
+    subprocess_result = subprocess.run(
+        ["git", "init"],
+        cwd=output_dir,
+        check=True,
+        capture_output=True,
+    )
+    assert subprocess_result.returncode == 0
+
+    stats = asyncio.run(module.download_skills(registry_path, output_dir))
+
+    assert stats["ci_untracked_files_removed"] == 2
+    assert not stale_dir.exists()
 
 
 def test_existing_archive_blocks_security_listed_github_path(tmp_path):

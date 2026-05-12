@@ -1,7 +1,6 @@
 ---
 name: computer-control
 description: 'Automate desktop GUI workflows via Claude computer use API with screenshot capture and mouse/keyboard control.'
-version: 1.9.0
 alwaysApply: false
 model_hint: standard
 ---
@@ -21,6 +20,15 @@ environments through screenshots and mouse/keyboard actions.
 
 - Tasks achievable through CLI or API (no GUI needed)
 - Browser automation better served by Playwright or CDP
+
+> **Why this stays opt-in.** Per
+> [docs/inclusive-defaults.md][inc] (TRUE-exception
+> category 4), Computer Use takes screenshots and
+> synthesizes keyboard/mouse input — cross-process side
+> effects that must always be explicitly invoked, never
+> default-on.
+
+[inc]: ../../../../docs/inclusive-defaults.md
 
 ## Architecture
 

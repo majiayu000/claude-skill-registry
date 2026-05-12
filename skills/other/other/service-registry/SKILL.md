@@ -1,7 +1,6 @@
 ---
 name: service-registry
-description: Service registry patterns for managing external services, health checks, centralized configuration, and unified execution.
-version: 1.9.0
+description: 'Service registry for external services: health checks, central config, unified execution.'
 alwaysApply: false
 category: infrastructure
 tags:
@@ -13,8 +12,7 @@ tags:
 dependencies:
 - quota-management
 - usage-logging
-tools:
-- service-executor
+tools: []
 provides:
   infrastructure:
   - service-registry

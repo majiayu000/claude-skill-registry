@@ -1,8 +1,7 @@
 ---
 name: do-issue
 role: entrypoint
-description: 'Parallel subagent execution with review gates between task batches. Use when resolving GitHub/GitLab issues that need multiple steps.'
-version: 1.9.3
+description: 'Parallel subagent execution with review gates between task batches. For multi-step issues.'
 alwaysApply: false
 category: workflow-automation
 tags:

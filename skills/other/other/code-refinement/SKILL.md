@@ -1,7 +1,6 @@
 ---
 name: code-refinement
-description: 'Improve code quality across duplication, efficiency, and architectural fit. Use when refactoring or hardening recently-written code.'
-version: 1.9.3
+description: 'Improve code quality across duplication, efficiency, and architectural fit.'
 alwaysApply: false
 category: code-quality
 tags:
@@ -131,6 +130,7 @@ Load all for comprehensive refinement. For focused work, load only relevant modu
 3. `refine:prioritized` — Findings ranked by impact and effort
 4. `refine:plan-generated` — Concrete refactoring plan with before/after
 5. `refine:evidence-captured` — Evidence appendix per `imbue:proof-of-work`
+6. `refine:execution-complete` — All wave-listed candidates closed-or-rationale'd (only required when invocation includes "execute findings" or stronger; see Step 6)
 
 ## Workflow
 
@@ -187,6 +187,46 @@ Document with `imbue:proof-of-work` (if available):
 - Principle violations cited
 
 **Fallback**: If `imbue` is not installed, capture evidence inline in the report using the same `[E1]` reference format without TodoWrite integration.
+
+### Step 6: Execute Findings (`refine:execution-complete`)
+
+Steps 1-5 produce a **plan**. Steps 6 produces **closures**. Both are part of the skill — execution does not stop at planning unless the user explicitly says "plan only".
+
+#### Execution mode detection
+
+Match the user's invocation phrasing against this table to determine execution scope:
+
+| User said | Mode | Stop when |
+|---|---|---|
+| `/code-refinement` (no qualifier) | **Plan only** | After Step 5 |
+| `--dry-run` or "just plan" | **Plan only** | After Step 5 |
+| "execute findings" / "apply fixes" | **Plan + execute Wave 1** | After all SMALL-effort + LOW-risk findings closed |
+| "execute all findings" / "all phases" / "all waves" | **Plan + execute every wave** | After every finding (or every wave-listed candidate) is either closed by commit or has explicit per-item rationale in the synthesis |
+| "ignore scope guard" | **Override branch-size limits** | Branch metrics do not gate execution. Continue past RED zone. |
+| "do not stop until complete" / "until ALL ... complete" | **No mid-task summaries** | Only declare done when synthesis has every wave-listed candidate closed-or-rationale'd |
+
+The triggers compose: `--tier 3 --execute all findings --ignore-scope-guard` means run every Wave 2 + Wave 3 candidate to closure regardless of branch size.
+
+#### Completion gate (when execution mode is active)
+
+The task is **not complete** until ALL of the following hold:
+
+1. **Wave 2 candidates** (medium-effort, listed in synthesis "Wave 2 Candidates" section): every entry has either a closure commit or an explicit per-item line in the synthesis stating why it is not viable.
+2. **Wave 3 candidates** (large-effort, listed in synthesis "Wave 3 Candidates" section): same gate. Do not pre-emptively defer LARGE-effort items with generic "needs dedicated PR" rationale when the user said "execute all" — execute the mechanical ones (split-by-class, mixin-package, module-merge) and reserve "deferred" only for items requiring architecture-level decisions (schema changes, new dependency declarations, new venv layouts).
+3. **Synthesis updated**: `docs/refinement/<date>/00-synthesis.md` records every closure with its commit SHA and every deferral with one-sentence rationale.
+
+#### Anti-pattern detector for the agent itself
+
+If the model finds itself doing any of the following during execution, this is a stop-hook leak — go back to executing findings:
+
+| Anti-pattern | Recognise as |
+|---|---|
+| "Wave 2 closed. Moving to Wave 3." (mid-run summary) | Premature turn-completion signal — keep working |
+| "Documenting deferred items with rationale" before all mechanical items are done | Skipping execution under a paper trail |
+| Writing a completion summary while >0 listed candidates lack closure-or-rationale | Violation of completion gate |
+| Re-asking user "should I continue?" when invocation included "do not stop" | Ignoring the explicit no-mid-task-summary contract |
+
+If the harness fires a stop signal mid-execution and the completion gate is not met, immediately resume with the next finding.
 
 ## Tiered Analysis
 

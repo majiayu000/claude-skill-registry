@@ -1,6 +1,7 @@
 ---
 name: provenance
 description: 'Trace artifact provenance.'
+practices: [supply-chain-integrity, adr, hermetic-builds]
 skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash
 context:

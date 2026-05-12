@@ -1,6 +1,7 @@
 ---
 name: inject
 description: 'Load relevant .agents context.'
+practices: [wiki-knowledge-surface, pragmatic-programmer]
 skill_api_version: 1
 user-invocable: false
 context:

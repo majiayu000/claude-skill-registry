@@ -1,7 +1,6 @@
 ---
 name: architecture-paradigm-serverless
-description: 'Apply serverless FaaS patterns for event-driven workloads with minimal infrastructure. Use when cost scales with usage.'
-version: 1.9.0
+description: 'Apply serverless FaaS patterns for event-driven workloads with minimal infrastructure.'
 alwaysApply: false
 category: architectural-pattern
 tags:
@@ -11,10 +10,7 @@ tags:
 - event-driven
 - cost-optimization
 dependencies: []
-tools:
-- cloud-sdk
-- serverless-framework
-- IaC-tools
+tools: []
 usage_patterns:
 - paradigm-implementation
 - event-driven-architectures

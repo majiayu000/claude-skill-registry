@@ -1,0 +1,1029 @@
+<!doctype html>
+<html lang="en" data-ha-style="timeline-story">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Synthetic saved-conversation atlas</title>
+  <style>
+:root {
+  --primary:#a03b00; --primary-container:#c94c00; --on-primary:#fff;
+  --secondary:#7b40e0; --tertiary:#4d44e3; --accent-cyan:#00D4FF;
+  --bg:#fff8f6; --surface:#fff8f6; --surface-container-lowest:#fff;
+  --surface-container-low:#fbf2ef; --surface-container:#f5ece9; --surface-container-high:#efe6e3;
+  --fg-1:#1e1b19; --fg-2:#594138; --fg-muted:#8d7166;
+  --border:rgba(0,0,0,.06); --border-strong:rgba(0,0,0,.12);
+  --green:#10b981; --blue:#3b82f6; --yellow:#f59e0b; --red:#ef4444;
+  --user-tint:#3b82f6; --asst-tint:#a03b00; --sys-tint:#8d7166;
+  --font-headline:'Space Grotesk',ui-sans-serif,system-ui,sans-serif;
+  --font-body:'Plus Jakarta Sans',ui-sans-serif,system-ui,sans-serif;
+  --font-mono:'SF Mono','Menlo',ui-monospace,monospace;
+  --space-xs:4px; --space-sm:8px; --space-md:12px; --space-lg:16px;
+  --space-xl:20px; --space-2xl:24px; --space-3xl:32px; --space-4xl:48px; --space-5xl:64px;
+  --radius-sm:8px; --radius-md:12px; --radius-lg:16px; --radius-xl:20px; --radius-pill:9999px;
+  --shadow-sm:0 1px 2px rgba(30,27,25,.04); --shadow-md:0 4px 12px rgba(30,27,25,.08);
+  --shadow-accent:0 8px 24px rgba(160,59,0,.15);
+  --gradient-text:linear-gradient(135deg,#a03b00 0%,#7b40e0 100%);
+  --gradient-primary:linear-gradient(135deg,#a03b00 0%,#c94c00 100%);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:#060B18; --surface:#0B1426; --surface-container-lowest:#101D35;
+    --surface-container-low:#101D35; --surface-container:#162544; --surface-container-high:#1c2d52;
+    --fg-1:#F8FAFC; --fg-2:#CBD5E1; --fg-muted:#64748B;
+    --border:rgba(255,255,255,.08); --border-strong:rgba(255,255,255,.14);
+    --primary:#FF6B35; --user-tint:#60a5fa; --asst-tint:#FF6B35; --sys-tint:#94a3b8;
+    --shadow-md:0 4px 12px rgba(0,0,0,.4);
+  }
+}
+*,*::before,*::after{box-sizing:border-box;margin:0}
+html,body{background:var(--bg);color:var(--fg-1);font-family:var(--font-body);
+  font-size:15.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body{min-height:100vh}
+main{max-width:1240px;margin:0 auto;padding:var(--space-2xl) var(--space-xl) var(--space-5xl)}
+h1,h2,h3,h4{font-family:var(--font-headline);letter-spacing:-.01em;font-weight:600;color:var(--fg-1)}
+h1{font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(20px,2.4vw,24px);margin-bottom:var(--space-md)}
+h3{font-size:17px;margin-bottom:var(--space-sm)}
+h4{font-size:14px;margin-bottom:var(--space-sm);color:var(--fg-2)}
+.muted{color:var(--fg-muted)}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+button{font:inherit;cursor:pointer;border:none;background:transparent;color:inherit}
+input,select,textarea{font:inherit;color:var(--fg-1)}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+code,pre{font-family:var(--font-mono)}
+.hero{padding:var(--space-3xl) 0 var(--space-2xl);border-bottom:1px solid var(--border)}
+.hero .eyebrow{display:inline-flex;gap:var(--space-sm);align-items:center;
+  background:var(--surface-container);color:var(--primary);
+  padding:var(--space-xs) var(--space-md);border-radius:var(--radius-pill);
+  font-family:var(--font-mono);font-size:11.5px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.08em;margin-bottom:var(--space-lg)}
+.hero h1{background:var(--gradient-text);-webkit-background-clip:text;background-clip:text;color:transparent;max-width:24ch}
+.hero .editorial{margin-top:var(--space-lg);max-width:64ch;color:var(--fg-2);font-size:17px;line-height:1.55}
+.hero-actions{display:flex;gap:var(--space-md);margin-top:var(--space-xl);flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:var(--space-sm);padding:var(--space-sm) var(--space-lg);
+  border-radius:var(--radius-pill);font-weight:600;font-size:14px;border:1px solid var(--border-strong);
+  background:var(--surface-container-lowest);color:var(--fg-1);transition:all .15s ease}
+.btn:hover{background:var(--surface-container);box-shadow:var(--shadow-sm)}
+.btn.primary{background:var(--gradient-primary);color:var(--on-primary);border-color:transparent}
+.btn.primary:hover{box-shadow:var(--shadow-accent)}
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--space-lg);margin-top:var(--space-3xl)}
+.kpi{background:var(--surface-container-lowest);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:var(--space-lg) var(--space-xl);box-shadow:var(--shadow-sm)}
+.kpi .label{font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--fg-muted);font-weight:500}
+.kpi .value{font-family:var(--font-headline);font-size:28px;font-weight:600;margin-top:var(--space-xs);color:var(--fg-1)}
+.kpi .value.accent{color:var(--primary)}
+.kpi .sub{font-size:12.5px;color:var(--fg-muted);margin-top:2px;font-family:var(--font-mono)}
+.section{margin-top:var(--space-4xl)}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:var(--space-lg);gap:var(--space-md);flex-wrap:wrap}
+.section-head .meta{font-size:13px;color:var(--fg-muted);font-family:var(--font-mono)}
+.card{background:var(--surface-container-lowest);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:var(--space-xl);box-shadow:var(--shadow-sm)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl)}
+@media (max-width:780px){.grid-2{grid-template-columns:1fr}}
+.heur-chip{display:inline-flex;align-items:center;gap:6px;padding:3px var(--space-sm);
+  border-radius:var(--radius-pill);background:var(--surface-container);color:var(--secondary);
+  font-family:var(--font-mono);font-size:10.5px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.08em}
+.stack-bar{display:flex;height:14px;border-radius:var(--radius-pill);overflow:hidden;margin-top:var(--space-sm);background:var(--surface-container)}
+.stack-bar i{display:block;height:100%}
+.stack-legend{display:flex;flex-wrap:wrap;gap:var(--space-md);margin-top:var(--space-sm);font-size:12.5px;color:var(--fg-muted);font-family:var(--font-mono)}
+.stack-legend span{display:inline-flex;align-items:center;gap:6px}
+.stack-legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.kind-code{background:var(--blue)} .kind-writing{background:var(--secondary)} .kind-planning{background:var(--green)}
+.kind-research{background:var(--accent-cyan)} .kind-chat{background:var(--yellow)} .kind-other{background:var(--fg-muted)}
+.chips{display:flex;gap:var(--space-sm);flex-wrap:wrap;margin-bottom:var(--space-md)}
+.chip{display:inline-flex;align-items:center;gap:var(--space-sm);padding:6px var(--space-md);
+  border-radius:var(--radius-pill);background:var(--surface-container);border:1px solid var(--border);
+  font-size:12.5px;font-weight:500;cursor:pointer;transition:all .15s ease;user-select:none}
+.chip:hover{background:var(--surface-container-high)}
+.chip.active{background:var(--primary);color:var(--on-primary);border-color:transparent}
+.chip .count{font-family:var(--font-mono);font-size:11.5px;color:var(--fg-muted);font-weight:400}
+.chip.active .count{color:rgba(255,255,255,.8)}
+.timeline-svg{width:100%;height:130px;display:block;margin-top:var(--space-md)}
+.timeline-svg .bar{fill:var(--secondary);opacity:.65}
+.timeline-svg .bar:hover{opacity:.95}
+.timeline-svg text{font-family:var(--font-mono);font-size:11px;fill:var(--fg-muted)}
+.rhythm{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl);margin-top:var(--space-lg)}
+.rhythm-card h4{margin-bottom:var(--space-xs);font-size:13px;color:var(--fg-muted);font-weight:500}
+.rhythm-bars{display:flex;align-items:flex-end;gap:2px;height:40px}
+.rhythm-bars i{flex:1;background:var(--primary);border-radius:2px 2px 0 0;opacity:.6;min-height:2px}
+.rhythm-axis{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:10.5px;color:var(--fg-muted);margin-top:var(--space-xs)}
+@media (max-width:780px){.rhythm{grid-template-columns:1fr}}
+.heur-panel{display:flex;flex-direction:column;gap:var(--space-md)}
+.heur-card{padding:var(--space-md);border:1px solid var(--border);border-left:3px solid var(--secondary);
+  border-radius:var(--radius-md);background:var(--surface-container-lowest)}
+.heur-card.important{border-left-color:var(--primary)}
+.heur-card .meta-row{display:flex;justify-content:space-between;gap:var(--space-md);align-items:baseline;margin-bottom:var(--space-xs);font-size:12px;color:var(--fg-muted);font-family:var(--font-mono)}
+.heur-card .body{font-size:13.5px;line-height:1.5;color:var(--fg-2);white-space:pre-wrap;word-break:break-word}
+.heur-card .actions{display:flex;justify-content:space-between;align-items:center;margin-top:var(--space-sm);gap:var(--space-md)}
+.heur-card .copy-btn,.heur-card .jump-btn{padding:4px var(--space-sm);font-size:11.5px;border:1px solid var(--border);
+  border-radius:var(--radius-sm);background:var(--surface-container);color:var(--fg-1);font-family:var(--font-mono);cursor:pointer}
+.heur-card .copy-btn:hover,.heur-card .jump-btn:hover{background:var(--surface-container-high)}
+.empty{font-size:13px;color:var(--fg-muted);font-style:italic;padding:var(--space-md) 0}
+.callouts{display:grid;grid-template-columns:1fr;gap:var(--space-md)}
+.callout{padding:var(--space-md);border:1px solid var(--border);border-left:3px solid var(--yellow);
+  border-radius:var(--radius-md);background:var(--surface-container-lowest);cursor:pointer}
+.callout:hover{background:var(--surface-container-low)}
+.callout .ttl{font-weight:600;font-size:14px;color:var(--fg-1);margin-bottom:2px}
+.callout .meta{font-family:var(--font-mono);font-size:11.5px;color:var(--fg-muted);margin-bottom:var(--space-xs)}
+.callout .last{font-size:13px;color:var(--fg-2);font-style:italic}
+.callout .why{font-size:11.5px;color:var(--fg-muted);margin-top:var(--space-xs);font-style:italic}
+.drill-toolbar{display:flex;gap:var(--space-md);margin-bottom:var(--space-md);flex-wrap:wrap;align-items:center}
+.drill-search{flex:1 1 280px;min-width:220px;padding:var(--space-sm) var(--space-md);border:1px solid var(--border-strong);
+  border-radius:var(--radius-md);background:var(--surface-container-lowest);font-size:14px;font-family:var(--font-mono)}
+.drill-search:focus{outline:2px solid var(--primary);outline-offset:1px;border-color:var(--primary)}
+.drill-meta{font-size:12.5px;color:var(--fg-muted);font-family:var(--font-mono)}
+.convo-list{display:flex;flex-direction:column;gap:var(--space-md)}
+.convo{background:var(--surface-container-lowest);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:var(--space-lg) var(--space-xl);box-shadow:var(--shadow-sm)}
+.convo .head{display:flex;justify-content:space-between;gap:var(--space-md);align-items:baseline;flex-wrap:wrap}
+.convo .ttl{font-family:var(--font-headline);font-weight:600;font-size:17px;color:var(--fg-1)}
+.convo .when{font-family:var(--font-mono);font-size:12px;color:var(--fg-muted)}
+.convo .badges{display:flex;gap:var(--space-xs);flex-wrap:wrap;margin-top:var(--space-xs)}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:2px var(--space-sm);
+  border-radius:var(--radius-pill);background:var(--surface-container);font-family:var(--font-mono);font-size:11px;color:var(--fg-2)}
+.badge.kind{background:var(--surface-container-high);color:var(--fg-1)}
+.badge.code{background:rgba(59,130,246,.15);color:var(--blue)}
+.badge.unresolved{background:rgba(245,158,11,.15);color:var(--yellow)}
+.badge.model{background:var(--surface-container);color:var(--secondary)}
+.preview{margin-top:var(--space-md);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md)}
+@media (max-width:780px){.preview{grid-template-columns:1fr}}
+.preview .row{font-size:13px;line-height:1.5}
+.preview .role{font-family:var(--font-mono);font-size:11px;color:var(--fg-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px}
+.preview .text{color:var(--fg-2);overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+.convo .toolbar{display:flex;gap:var(--space-sm);margin-top:var(--space-md)}
+.convo .toolbar button{padding:4px var(--space-sm);font-size:11.5px;border:1px solid var(--border);
+  border-radius:var(--radius-sm);background:var(--surface-container);color:var(--fg-1);font-family:var(--font-mono);cursor:pointer}
+.convo .toolbar button:hover{background:var(--surface-container-high)}
+.thread{margin-top:var(--space-md);border-top:1px solid var(--border);padding-top:var(--space-md);display:none}
+.convo.open .thread{display:block}
+.day-bucket{margin-bottom:var(--space-md)}
+.day-bucket .day{font-family:var(--font-mono);font-size:11px;color:var(--fg-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:var(--space-xs)}
+.bubble{padding:var(--space-md) var(--space-lg);border-radius:var(--radius-md);margin-bottom:var(--space-sm);
+  background:var(--surface-container);font-size:14px;line-height:1.55;white-space:pre-wrap;word-break:break-word}
+.bubble.user{background:rgba(59,130,246,.08);border-left:3px solid var(--user-tint)}
+.bubble.assistant{background:rgba(160,59,0,.06);border-left:3px solid var(--asst-tint)}
+.bubble.system,.bubble.tool{background:var(--surface-container);border-left:3px solid var(--sys-tint);color:var(--fg-muted);font-size:12.5px}
+.bubble .role-line{font-family:var(--font-mono);font-size:11px;color:var(--fg-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:var(--space-xs);display:flex;justify-content:space-between;gap:var(--space-md)}
+.bubble pre,.bubble code{background:var(--surface-container-high);padding:2px 6px;border-radius:4px;font-size:13px}
+.bubble pre{padding:var(--space-md);overflow-x:auto;margin:var(--space-sm) 0}
+.bubble pre code{background:transparent;padding:0}
+.search-hit{background:rgba(245,158,11,.35);border-radius:2px;padding:0 2px}
+footer{margin-top:var(--space-5xl);padding-top:var(--space-2xl);border-top:1px solid var(--border);
+  font-size:12.5px;color:var(--fg-muted);font-family:var(--font-mono);font-style:italic;line-height:1.6;max-width:64ch}
+  </style>
+<!-- html-anything example style skin:start -->
+
+<style id="html-anything-example-style-skin">
+html[data-ha-style] {
+  --ha-style-accent: var(--primary, #a03b00);
+  --ha-style-accent-2: var(--secondary-container, #7b40e0);
+  --ha-style-badge-bg: rgba(255,255,255,.78);
+  --ha-style-badge-fg: var(--fg-1, #1e1b19);
+}
+html[data-ha-style] body {
+  position: relative;
+  background-attachment: fixed;
+}
+html[data-ha-style] body::before {
+  position: fixed;
+  z-index: 9999;
+  top: 12px;
+  right: 12px;
+  padding: 7px 10px;
+  border: 1px solid color-mix(in srgb, var(--ha-style-accent) 26%, transparent);
+  border-radius: 999px;
+  background: var(--ha-style-badge-bg);
+  color: var(--ha-style-badge-fg);
+  box-shadow: 0 6px 24px rgba(0,0,0,.10);
+  font: 700 10px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  backdrop-filter: blur(16px);
+}
+html[data-ha-style] .hero,
+html[data-ha-style] header.hero,
+html[data-ha-style] .top,
+html[data-ha-style] .header {
+  position: relative;
+}
+html[data-ha-style] .hero::before,
+html[data-ha-style] header.hero::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 6px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: var(--ha-style-accent);
+}
+
+html[data-ha-style="teaching"] {
+  --ha-style-accent: #0f766e;
+  --ha-style-accent-2: #f59e0b;
+  --primary: #0f766e;
+  --primary-container: #115e59;
+  --primary-fixed: #ccfbf1;
+  --secondary-container: #f59e0b;
+  --bg: #f6fbfb;
+  --surface: #f6fbfb;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #edf7f5;
+  --surface-container: #e5f1ee;
+  --surface-container-high: #d8e8e4;
+  --fg-1: #10201f;
+  --fg-2: #304c49;
+  --fg-muted: #647b78;
+  --border: rgba(15,118,110,.14);
+  --gradient-hero: linear-gradient(135deg, #0f766e 0%, #f59e0b 100%);
+  --gradient-text: linear-gradient(135deg, #0f766e 0%, #f59e0b 100%);
+}
+html[data-ha-style="teaching"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(rgba(15,118,110,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,118,110,.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+html[data-ha-style="teaching"] body::before { content: "teaching"; }
+
+html[data-ha-style="relationship"] {
+  --ha-style-accent: #be3455;
+  --ha-style-accent-2: #317b93;
+  --primary: #be3455;
+  --primary-container: #a52d4b;
+  --primary-fixed: #ffe1e8;
+  --secondary-container: #317b93;
+  --bg: #fff7f8;
+  --surface: #fff7f8;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #fff0f3;
+  --surface-container: #f8e7eb;
+  --surface-container-high: #efdde3;
+  --fg-1: #28181c;
+  --fg-2: #5f3e48;
+  --fg-muted: #8d6b75;
+  --border: rgba(190,52,85,.14);
+  --rose: #e25b74;
+  --blue: #4f95a8;
+  --gradient-hero: linear-gradient(135deg, #be3455 0%, #317b93 100%);
+  --gradient-text: linear-gradient(135deg, #be3455 0%, #317b93 100%);
+}
+html[data-ha-style="relationship"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(120deg, rgba(190,52,85,.08), transparent 36%),
+    linear-gradient(300deg, rgba(49,123,147,.08), transparent 40%);
+}
+html[data-ha-style="relationship"] body::before { content: "relationship"; }
+
+html[data-ha-style="timeline-story"] {
+  --ha-style-accent: #9a4b14;
+  --ha-style-accent-2: #2f6f73;
+  --primary: #9a4b14;
+  --primary-container: #7a3b10;
+  --primary-fixed: #ffe8cf;
+  --secondary-container: #2f6f73;
+  --bg: #fbf8f1;
+  --surface: #fbf8f1;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f4ecdf;
+  --surface-container: #eee3d3;
+  --surface-container-high: #e4d7c4;
+  --fg-1: #241b12;
+  --fg-2: #5c4b3d;
+  --fg-muted: #8a7968;
+  --border: rgba(154,75,20,.16);
+  --gradient-hero: linear-gradient(135deg, #9a4b14 0%, #2f6f73 100%);
+  --gradient-text: linear-gradient(135deg, #9a4b14 0%, #2f6f73 100%);
+}
+html[data-ha-style="timeline-story"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(90deg, transparent 0 calc(50% - 1px), rgba(154,75,20,.16) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)),
+    radial-gradient(circle at 50% 72px, rgba(154,75,20,.20) 0 4px, transparent 5px);
+  background-size: 100% 100%, 100% 96px;
+}
+html[data-ha-style="timeline-story"] body::before { content: "timeline story"; }
+html[data-ha-style="timeline-story"] .hero::before,
+html[data-ha-style="timeline-story"] header.hero::before {
+  width: 8px;
+  height: 72px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--ha-style-accent), var(--ha-style-accent-2));
+}
+
+html[data-ha-style="map-atlas"] {
+  --ha-style-accent: #17695a;
+  --ha-style-accent-2: #2f66a8;
+  --primary: #17695a;
+  --primary-container: #115346;
+  --primary-fixed: #daf5ec;
+  --secondary-container: #2f66a8;
+  --bg: #f4faf7;
+  --surface: #f4faf7;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eaf4ef;
+  --surface-container: #e0eee8;
+  --surface-container-high: #d4e6de;
+  --fg-1: #10221d;
+  --fg-2: #365149;
+  --fg-muted: #6e837b;
+  --border: rgba(23,105,90,.16);
+  --gradient-hero: linear-gradient(135deg, #17695a 0%, #2f66a8 100%);
+  --gradient-text: linear-gradient(135deg, #17695a 0%, #2f66a8 100%);
+}
+html[data-ha-style="map-atlas"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    repeating-linear-gradient(24deg, rgba(23,105,90,.09) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(116deg, rgba(47,102,168,.08) 0 1px, transparent 1px 42px);
+}
+html[data-ha-style="map-atlas"] body::before { content: "map atlas"; }
+html[data-ha-style="map-atlas"] .hero::before,
+html[data-ha-style="map-atlas"] header.hero::before {
+  width: 78px;
+  height: 78px;
+  border: 2px solid var(--ha-style-accent);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 55% 42%, var(--ha-style-accent) 0 4px, transparent 5px),
+    linear-gradient(45deg, transparent 47%, rgba(47,102,168,.55) 48% 52%, transparent 53%);
+}
+
+html[data-ha-style="network-map"] {
+  --ha-style-accent: #355f91;
+  --ha-style-accent-2: #a34d67;
+  --primary: #355f91;
+  --primary-container: #294b75;
+  --primary-fixed: #deebff;
+  --secondary-container: #a34d67;
+  --bg: #f7f8fb;
+  --surface: #f7f8fb;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eef1f7;
+  --surface-container: #e6ebf3;
+  --surface-container-high: #dbe2ee;
+  --fg-1: #151b24;
+  --fg-2: #3f4a5b;
+  --fg-muted: #737e8f;
+  --border: rgba(53,95,145,.16);
+  --gradient-hero: linear-gradient(135deg, #355f91 0%, #a34d67 100%);
+  --gradient-text: linear-gradient(135deg, #355f91 0%, #a34d67 100%);
+}
+html[data-ha-style="network-map"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(53,95,145,.22) 0 3px, transparent 4px),
+    radial-gradient(circle at 68% 34%, rgba(163,77,103,.18) 0 3px, transparent 4px),
+    linear-gradient(38deg, transparent 0 48%, rgba(53,95,145,.10) 49% 51%, transparent 52%);
+  background-size: 88px 88px, 118px 118px, 132px 132px;
+}
+html[data-ha-style="network-map"] body::before { content: "network map"; }
+html[data-ha-style="network-map"] .hero::before,
+html[data-ha-style="network-map"] header.hero::before {
+  width: 86px;
+  height: 46px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 18px 24px, var(--ha-style-accent) 0 7px, transparent 8px),
+    radial-gradient(circle at 44px 12px, var(--ha-style-accent-2) 0 6px, transparent 7px),
+    radial-gradient(circle at 70px 30px, var(--ha-style-accent) 0 7px, transparent 8px),
+    linear-gradient(22deg, transparent 0 31%, color-mix(in srgb, var(--ha-style-accent) 60%, transparent) 32% 36%, transparent 37%),
+    linear-gradient(160deg, transparent 0 43%, color-mix(in srgb, var(--ha-style-accent-2) 60%, transparent) 44% 48%, transparent 49%);
+}
+
+html[data-ha-style="dashboard"] {
+  --ha-style-accent: #0f5f6f;
+  --ha-style-accent-2: #8a5a16;
+  --primary: #0f5f6f;
+  --primary-container: #0b4c59;
+  --primary-fixed: #d8f2f5;
+  --secondary-container: #8a5a16;
+  --bg: #f5f7f9;
+  --surface: #f5f7f9;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eef2f5;
+  --surface-container: #e7edf1;
+  --surface-container-high: #dce5ea;
+  --fg-1: #111827;
+  --fg-2: #374151;
+  --fg-muted: #6b7280;
+  --border: rgba(15,95,111,.16);
+  --gradient-hero: linear-gradient(135deg, #0f5f6f 0%, #083344 100%);
+  --gradient-text: linear-gradient(135deg, #0f5f6f 0%, #083344 100%);
+}
+html[data-ha-style="dashboard"] body {
+  background-color: var(--bg) !important;
+  background-image: linear-gradient(90deg, rgba(15,95,111,.08) 0 1px, transparent 1px);
+  background-size: 18px 100%;
+}
+html[data-ha-style="dashboard"] body::before { content: "dashboard"; }
+html[data-ha-style="dashboard"] .hero::before,
+html[data-ha-style="dashboard"] header.hero::before {
+  width: 100%;
+  height: 3px;
+  margin-bottom: 14px;
+}
+
+html[data-ha-style="document"] {
+  --ha-style-accent: #8b3f1f;
+  --ha-style-accent-2: #2f6f73;
+  --primary: #8b3f1f;
+  --primary-container: #703319;
+  --primary-fixed: #ffe4d5;
+  --secondary-container: #2f6f73;
+  --bg: #fbfaf7;
+  --surface: #fbfaf7;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f2efe8;
+  --surface-container: #e9e4da;
+  --surface-container-high: #ded7c9;
+  --fg-1: #211d18;
+  --fg-2: #554d44;
+  --fg-muted: #82786c;
+  --border: rgba(139,63,31,.16);
+  --font-headline: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --gradient-hero: linear-gradient(135deg, #8b3f1f 0%, #2f6f73 100%);
+  --gradient-text: linear-gradient(135deg, #8b3f1f 0%, #2f6f73 100%);
+}
+html[data-ha-style="document"] body {
+  background-color: var(--bg) !important;
+  background-image: linear-gradient(90deg, rgba(139,63,31,.18) 0 4px, transparent 4px);
+  background-size: 100% 100%;
+}
+html[data-ha-style="document"] body::before { content: "document"; }
+html[data-ha-style="document"] .hero::before,
+html[data-ha-style="document"] header.hero::before {
+  width: 42px;
+  height: 42px;
+  border-radius: 0;
+  background: transparent;
+  border-top: 4px solid var(--ha-style-accent);
+  border-left: 4px solid var(--ha-style-accent);
+}
+
+html[data-ha-style="developer"] {
+  color-scheme: dark;
+  --ha-style-accent: #38bdf8;
+  --ha-style-accent-2: #f97316;
+  --ha-style-badge-bg: rgba(8,16,31,.82);
+  --ha-style-badge-fg: #dbeafe;
+  --primary: #38bdf8;
+  --primary-container: #0e7490;
+  --primary-fixed: #0f2942;
+  --secondary-container: #f97316;
+  --bg: #07111f;
+  --surface: #07111f;
+  --surface-container-lowest: #0b1426;
+  --surface-container-low: #0f1b31;
+  --surface-container: #13233d;
+  --surface-container-high: #1b2f50;
+  --fg-1: #f8fafc;
+  --fg-2: #cbd5e1;
+  --fg-muted: #94a3b8;
+  --border: rgba(148,163,184,.18);
+  --green: #34d399;
+  --red: #fb7185;
+  --yellow: #fbbf24;
+  --gradient-hero: linear-gradient(135deg, #0f172a 0%, #0e7490 100%);
+  --gradient-text: linear-gradient(135deg, #38bdf8 0%, #f97316 100%);
+}
+html[data-ha-style="developer"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(rgba(56,189,248,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,189,248,.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+html[data-ha-style="developer"] body::before { content: "developer"; }
+html[data-ha-style="developer"] pre,
+html[data-ha-style="developer"] code,
+html[data-ha-style="developer"] .mono {
+  color: inherit;
+}
+</style>
+<!-- html-anything example style skin:end -->
+</head>
+<body>
+<main>
+  <header class="hero">
+    <div class="eyebrow"><span>AI chat log</span><span>•</span><span>2026-01-09 → 2026-04-19</span></div>
+    <h1>Synthetic saved-conversation atlas</h1>
+    <p class="editorial">Six AI conversations a small-team founder saved off as keepers — picking a CRM, prepping for a board update, debugging npm, drafting a vendor email. The shape mixes planning, writing, and code; one Untitled debugging thread shows what these atlases catch when titles slip.</p>
+    <div class="hero-actions">
+      <button class="btn primary" data-action="copy-summary">Copy summary as Markdown</button>
+      <button class="btn" data-action="expand-all">Expand all conversations</button>
+      <button class="btn" data-action="collapse-all">Collapse all</button>
+    </div>
+    <div class="kpi-row" id="kpi-row"></div>
+  </header>
+
+  <section class="section" id="section-overview">
+    <div class="section-head"><h2>Overview</h2><span class="meta">kind & model breakdown</span></div>
+    <div class="grid-2">
+      <div class="card" id="kind-card">
+        <h3>What you used AI for</h3>
+        <div id="kind-stack"></div>
+        <div class="muted" style="font-size:12.5px;margin-top:var(--space-md)">
+          Conversation kinds are inferred from message keywords and code-block density —
+          <span class="heur-chip">Heuristic</span> not exact.
+        </div>
+      </div>
+      <div class="card" id="model-card">
+        <h3>Models you talked to</h3>
+        <div id="model-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="section-timeline">
+    <div class="section-head"><h2>Timeline</h2><span class="meta" id="timeline-meta"></span></div>
+    <div class="card">
+      <svg class="timeline-svg" id="timeline-svg" viewBox="0 0 1000 130" preserveAspectRatio="none"></svg>
+      <div class="rhythm">
+        <div class="rhythm-card">
+          <h4>Hour of day (UTC)</h4>
+          <div class="rhythm-bars" id="hour-bars"></div>
+          <div class="rhythm-axis"><span>0</span><span>6</span><span>12</span><span>18</span><span>23</span></div>
+        </div>
+        <div class="rhythm-card">
+          <h4>Day of week (UTC)</h4>
+          <div class="rhythm-bars" id="dow-bars"></div>
+          <div class="rhythm-axis"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="section-topics">
+    <div class="section-head"><h2>Topics</h2><span class="meta">click a chip to filter the index</span></div>
+    <div class="card">
+      <div class="chips" id="topic-chips"></div>
+      <div class="muted" style="font-size:12.5px;margin-top:var(--space-md)">
+        Topics come from a coarse keyword roll-up across titles + first user prompts —
+        <span class="heur-chip">Heuristic</span> not real topic modeling.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="section-heuristic">
+    <div class="section-head"><h2>Reusable prompts &amp; important answers</h2><span class="meta">heuristic — review before reusing</span></div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Reusable prompts <span class="heur-chip">Heuristic</span></h3>
+        <p class="muted" style="font-size:12.5px;margin-bottom:var(--space-md)">
+          User prompts that share keywords with prompts from other conversations
+          (heuristic — review before reusing).
+        </p>
+        <div class="heur-panel" id="reusable-panel"></div>
+      </div>
+      <div class="card">
+        <h3>Important answers <span class="heur-chip">Heuristic</span></h3>
+        <p class="muted" style="font-size:12.5px;margin-bottom:var(--space-md)">
+          The longest single assistant reply per conversation — usually the
+          chunks of advice or code worth revisiting.
+        </p>
+        <div class="heur-panel" id="important-panel"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="section-unresolved">
+    <div class="section-head"><h2>Unresolved threads</h2><span class="meta">heuristic — surface-pattern hints</span></div>
+    <div class="card">
+      <p class="muted" style="font-size:12.5px;margin-bottom:var(--space-md)">
+        Conversations where the last turn is a user message, or where the
+        assistant ended with an unusually short reply to a question
+        (<span class="heur-chip">Heuristic</span> — these are surface-pattern hypotheses, not verdicts).
+      </p>
+      <div class="callouts" id="unresolved-list"></div>
+    </div>
+  </section>
+
+  <section class="section" id="section-index">
+    <div class="section-head"><h2>Conversation index</h2><span class="meta" id="index-meta"></span></div>
+    <div class="drill-toolbar">
+      <input class="drill-search" id="search" placeholder="Search titles &amp; messages…" autocomplete="off" />
+      <span class="drill-meta" id="filter-summary"></span>
+    </div>
+    <div class="chips" id="kind-chips"></div>
+    <div class="convo-list" id="convo-list"></div>
+  </section>
+
+  <footer>
+    Generated locally — your AI chat export never left your machine.
+    The full conversation log is embedded in this HTML and rendered in your
+    browser. No network calls back to OpenAI / Anthropic at render or click
+    time. For sharing, prefer an anonymized export.
+  </footer>
+</main>
+
+<script>const DATA = {"kind":"ai-chat-export","format":"ai-chat-log-md","platform":"AI chat log","conversations":[{"id":"c_0002","title":"Picking a CRM that won't outgrow us","createdEpoch":1767945600000,"createdIso":"2026-01-09","messageCount":4,"userCount":2,"assistantCount":2,"systemCount":0,"toolCount":0,"wordCount":399,"assistantWordCount":351,"userWordCount":48,"codeBlockCount":0,"hasCode":false,"models":[],"topic":"Picking a CRM that won't outgrow us","kind":"code","firstUserPrompt":"We're 14 people, mostly engineers, with a small founding sales team. Looking for a CRM that we can use without hiring a dedicated ops person to run it. What should I be evaluating?","firstAssistantReply":"Three things to evaluate, in order of how often they sink small-team CRM rollouts:\n\n1. **Time to first useful report.** Can a non-ops person build the \"deals closing this quarter, by stage\" view in under 30 minutes? If the CRM requires custom report-builder fluency, you'll either build it yourself and resent it forever…","lastUserText":"What about HubSpot's free tier — is that a real option or a sales funnel?","isUnresolved":false,"messages":[{"id":"m_0001","role":"user","text":"We're 14 people, mostly engineers, with a small founding sales team. Looking for a CRM that we can use without hiring a dedicated ops person to run it. What should I be evaluating?","wordCount":33,"charCount":180,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"Three things to evaluate, in order of how often they sink small-team CRM rollouts:\n\n1. **Time to first useful report.** Can a non-ops person build the \"deals closing this quarter, by stage\" view in under 30 minutes? If the CRM requires custom report-builder fluency, you'll either build it yourself and resent it forever, or ignore the CRM and live in spreadsheets.\n2. **What happens when the founder stops updating it.** Most CRMs decay because the founder enters deals during pipeline review and forgets the rest of the time. Look for one that pulls activity from email + calendar automatically (Pipedrive, HubSpot, Attio, Folk all do this to varying degrees) so the system stays accurate without manual entry.\n3. **Migration cost when you outgrow it.** Look at the export format. Will you be able to dump all your contacts + deals + activity history into a CSV / API in a year when you hire a real RevOps person and want to move to Salesforce? CRMs vary a lot here.\n\nFor a 14-person team with no ops headcount, I'd start with **Attio** or **Folk** (both lean toward \"spreadsheet that grew up\", easy onboarding) over HubSpot or Pipedrive (more functionality but more configuration). Salesforce is overkill until you're ~50 people or have a dedicated admin.","wordCount":213,"charCount":1258,"codeBlockCount":0,"hasCode":false},{"id":"m_0003","role":"user","text":"What about HubSpot's free tier — is that a real option or a sales funnel?","wordCount":15,"charCount":73,"codeBlockCount":0,"hasCode":false},{"id":"m_0004","role":"assistant","text":"Real option for the first ~6 months, then sales funnel.\n\nThe free tier genuinely covers contacts + deals + a basic pipeline + email tracking — enough to run small-team sales. The catch is the upgrade cliff: the moment you want **email sequences, custom reports beyond a few presets, more than 1000 marketing contacts, or remove HubSpot branding from forms**, you jump to Sales Hub Professional at $450+/month/team.\n\nFor a 14-person team that's growing, you'll probably hit one of those needs within 6 months. So treat the free tier as a \"free trial\" and plan the budget for the paid tier on day one — don't be surprised by it.\n\nIf $450/month feels steep, the lighter alternatives (Pipedrive Advanced at ~$30/user/month, Attio Pro at ~$30/user/month, Folk at ~$20/user/month) get you most of the same functionality at small-team pricing.","wordCount":138,"charCount":836,"codeBlockCount":0,"hasCode":false}]},{"id":"c_0003","title":"Help me prep for a board update","createdEpoch":1769068800000,"createdIso":"2026-01-22","messageCount":4,"userCount":2,"assistantCount":2,"systemCount":0,"toolCount":0,"wordCount":416,"assistantWordCount":373,"userWordCount":43,"codeBlockCount":0,"hasCode":false,"models":[],"topic":"Help me prep for a board update","kind":"planning","firstUserPrompt":"Quarterly board update is on Friday. We had a tough Q4 — missed revenue, lost two deals to competitors. How should I frame this without being defensive?","firstAssistantReply":"Three principles for a \"tough quarter\" board update:\n\n1. **Lead with the bad news.** If you bury it in slide 14, the board will spend slides 1–13 wondering when you'll get to it. Putting it on slide 2 (after a one-slide TL;DR) signals you're owning it and lets the conversation move forward.\n2. **Diagnose, don't blame.*…","lastUserText":"How long should the update be? Last quarter mine ran 90 minutes, two board members complained.","isUnresolved":false,"messages":[{"id":"m_0001","role":"user","text":"Quarterly board update is on Friday. We had a tough Q4 — missed revenue, lost two deals to competitors. How should I frame this without being defensive?","wordCount":27,"charCount":152,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"Three principles for a \"tough quarter\" board update:\n\n1. **Lead with the bad news.** If you bury it in slide 14, the board will spend slides 1–13 wondering when you'll get to it. Putting it on slide 2 (after a one-slide TL;DR) signals you're owning it and lets the conversation move forward.\n2. **Diagnose, don't blame.** \"We missed Q4 revenue by 18%\" → followed by your honest read on *why*. Was it a single deal that slipped, broader market softness, a product gap, sales execution? Be specific. Vague diagnoses (\"the macro environment\") read as deflecting.\n3. **What you've changed already.** The board doesn't want to hear \"we'll do better.\" They want to see that you've already changed something — pricing, the comp plan, hiring profile, ICP focus, product roadmap. If you don't have a change yet, lead with \"here's the diagnosis, here's what we'll have decided by next month, and I'll bring the decision to the next call.\"\n\nFor the specific case (missed revenue + lost deals to competitors): the board wants to know whether this is a **temporary execution miss** (fixable with sales changes) or a **structural product gap** (the competitors have a feature you don't, and that's the deciding factor). If it's the latter, that's actually a much bigger conversation. Be honest about which it is.","wordCount":218,"charCount":1298,"codeBlockCount":0,"hasCode":false},{"id":"m_0003","role":"user","text":"How long should the update be? Last quarter mine ran 90 minutes, two board members complained.","wordCount":16,"charCount":94,"codeBlockCount":0,"hasCode":false},{"id":"m_0004","role":"assistant","text":"Aim for 45 minutes of presentation + 30 minutes of discussion, capped at 90 minutes total. The structure that usually fits:\n\n- **5 min**: TL;DR — what happened, what's next, what you need from the board\n- **15 min**: Business performance (revenue, churn, hiring, runway). Numbers + context, not 20 slides of charts.\n- **15 min**: One deep-dive topic — the most important strategic question this quarter. Pick ONE. (For your case: \"is this a sales execution issue or a product gap?\")\n- **10 min**: Asks of the board — intros, advice, hiring help, decisions you need.\n- **30 min**: Open discussion / Q&A.\n\n90 minutes total. If you ran 90 minutes of presentation last time and got pushback, the issue was probably that you spent it on numbers + updates rather than on a strategic conversation. Board members care about the strategic question; they can read the numbers in the deck before the call.","wordCount":155,"charCount":894,"codeBlockCount":0,"hasCode":false}]},{"id":"c_0004","title":"Debugging — npm install hangs on this project","createdEpoch":1771056000000,"createdIso":"2026-02-14","messageCount":4,"userCount":2,"assistantCount":2,"systemCount":0,"toolCount":0,"wordCount":303,"assistantWordCount":264,"userWordCount":39,"codeBlockCount":2,"hasCode":true,"models":[],"topic":"Debugging — npm install hangs on this project","kind":"code","firstUserPrompt":"npm install on this project hangs at \"reify:trace: timing reifyNode\" forever. Tried clearing cache, deleting node_modules, no luck. Node 20, npm 10, package-lock checked in.","firstAssistantReply":"Three usual culprits for hangs at the reify step:\n\n1. **A registry mirror that's silently stalling.** Check `npm config get registry` — if it's pointing at an internal mirror or a moved registry, requests can hang without timing out. Try `npm install --registry https://registry.npmjs.org/` to bypass.\n2. **A peer depend…","lastUserText":"Tried verbose, it loops on 'reify:trace: timing audit' lines. Could that be the issue?","isUnresolved":false,"messages":[{"id":"m_0001","role":"user","text":"npm install on this project hangs at \"reify:trace: timing reifyNode\" forever. Tried clearing cache, deleting node_modules, no luck. Node 20, npm 10, package-lock checked in.","wordCount":25,"charCount":173,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"Three usual culprits for hangs at the reify step:\n\n1. **A registry mirror that's silently stalling.** Check `npm config get registry` — if it's pointing at an internal mirror or a moved registry, requests can hang without timing out. Try `npm install --registry https://registry.npmjs.org/` to bypass.\n2. **A peer dependency conflict that npm is silently retrying.** Run with verbose logging:\n   ```bash\n   npm install --loglevel=verbose 2>&1 | tee install.log\n   ```\n   Look for repeated lines about a specific package. The hang is usually npm trying alternative resolutions in a loop.\n3. **A package script (postinstall, etc.) that's blocking on user input.** Some packages prompt during install. Run with `--ignore-scripts` to confirm:\n   ```bash\n   npm install --ignore-scripts\n   ```\n   If that finishes fast, you have a script-side hang to track down.\n\nWhat's in your package.json? If you paste it I can be more specific.","wordCount":139,"charCount":927,"codeBlockCount":2,"hasCode":true},{"id":"m_0003","role":"user","text":"Tried verbose, it loops on 'reify:trace: timing audit' lines. Could that be the issue?","wordCount":14,"charCount":86,"codeBlockCount":0,"hasCode":false},{"id":"m_0004","role":"assistant","text":"Yes — that's almost certainly `npm audit` calling the npm registry on every package, and it's hanging if the registry is slow or unreachable.\n\nQuick fix: `npm install --no-audit`\n\nIf that works, you have two longer-term options:\n\n- **Add it to .npmrc**: `audit=false` if you don't run audit in this project at all (e.g. it's a sandbox).\n- **Run audit separately**: keep audit on for installs in CI but skip it locally with the flag. Most teams do this — `npm audit` is slow and noisy and most people only check it in CI anyway.\n\nIf `--no-audit` also hangs, it's the registry connection itself. Run `curl -v https://registry.npmjs.org/express` and see if that hangs too — if yes, it's a network / DNS issue, not npm.","wordCount":125,"charCount":715,"codeBlockCount":0,"hasCode":false}]},{"id":"c_0005","title":"Untitled","createdEpoch":1772524800000,"createdIso":"2026-03-03","messageCount":2,"userCount":1,"assistantCount":1,"systemCount":0,"toolCount":0,"wordCount":168,"assistantWordCount":158,"userWordCount":10,"codeBlockCount":2,"hasCode":true,"models":[],"topic":"docker • host • path","kind":"code","firstUserPrompt":"what's the difference between bind mounts and volumes in docker","firstAssistantReply":"**Bind mount**: Docker mounts a directory from your host filesystem into the container. The host path is the source of truth — you control where it lives, what permissions it has, who else can read it.\n\n```bash\ndocker run -v /host/path:/container/path my-image\n```\n\nUse when: you want to edit files on the host and have…","lastUserText":"what's the difference between bind mounts and volumes in docker","isUnresolved":false,"messages":[{"id":"m_0001","role":"user","text":"what's the difference between bind mounts and volumes in docker","wordCount":10,"charCount":63,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"**Bind mount**: Docker mounts a directory from your host filesystem into the container. The host path is the source of truth — you control where it lives, what permissions it has, who else can read it.\n\n```bash\ndocker run -v /host/path:/container/path my-image\n```\n\nUse when: you want to edit files on the host and have them reflect in the container immediately (development), or you want to use existing host files (config, certs, project source).\n\n**Volume**: Docker creates and manages a named storage location, typically under `/var/lib/docker/volumes/` on Linux. The container sees it at the mount path; you don't deal with the host path directly.\n\n```bash\ndocker volume create mydata\ndocker run -v mydata:/container/path my-image\n```\n\nUse when: you want Docker to manage the lifecycle (backup, share between containers, portable across machines), or the data is opaque to the host (database files).\n\n**Practical rule**: dev / source code → bind mount. Production data (db files, app state) → volume.","wordCount":158,"charCount":1005,"codeBlockCount":2,"hasCode":true}]},{"id":"c_0006","title":"Make this email less aggressive","createdEpoch":1773817200000,"createdIso":"2026-03-18","messageCount":3,"userCount":2,"assistantCount":1,"systemCount":0,"toolCount":0,"wordCount":308,"assistantWordCount":214,"userWordCount":94,"codeBlockCount":0,"hasCode":false,"models":[],"topic":"Make this email less aggressive","kind":"writing","firstUserPrompt":"Vendor missed a deadline they committed to. I drafted this email but it reads as too hot — can you tone it down without losing the signal that I'm unhappy?\n\n> Hi [vendor],\n> You committed to delivering the Q1 milestone by March 15. It's now March 18 and I haven't heard from you. This is the second deadline you've misse…","firstAssistantReply":"Same signal, calmer delivery:\n\n> Hi [vendor],\n>\n> The Q1 milestone we agreed to was due March 15 — wanted to check in on where things stand. I haven't seen an update yet, so I'm guessing something's gotten in the way.\n>\n> Stepping back a bit: this is the second deadline that's slipped this engagement, and I want to be…","lastUserText":"What if they respond apologetically but vaguely — what do I say back?","isUnresolved":true,"unresolvedReason":"Last turn is a user message — no assistant reply on record.","messages":[{"id":"m_0001","role":"user","text":"Vendor missed a deadline they committed to. I drafted this email but it reads as too hot — can you tone it down without losing the signal that I'm unhappy?\n\n> Hi [vendor],\n> You committed to delivering the Q1 milestone by March 15. It's now March 18 and I haven't heard from you. This is the second deadline you've missed in the last six months. We need to talk about whether this engagement is working. Please respond by EOD tomorrow.","wordCount":81,"charCount":435,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"Same signal, calmer delivery:\n\n> Hi [vendor],\n>\n> The Q1 milestone we agreed to was due March 15 — wanted to check in on where things stand. I haven't seen an update yet, so I'm guessing something's gotten in the way.\n>\n> Stepping back a bit: this is the second deadline that's slipped this engagement, and I want to be honest that it's making it hard for me to plan around your work. Can we get on a call this week to figure out what's going on and whether the current setup is the right fit?\n>\n> Thanks,\n> [your name]\n\nWhat I changed:\n\n- \"You committed... It's now... I haven't heard\" — these stack as accusations. Replaced with one neutral check-in and one explicit observation.\n- \"We need to talk about whether this engagement is working\" → \"whether the current setup is the right fit.\" Same outcome on the table; less of an ultimatum.\n- \"Please respond by EOD tomorrow\" → cut. Hard deadlines in a \"this isn't working\" email feel punitive. Asking for a call this week sets a similar pace without the ultimatum framing.\n\nIf they don't respond within ~3 business days, then send a firmer follow-up with a hard date. The first one shouldn't lead with that.","wordCount":214,"charCount":1157,"codeBlockCount":0,"hasCode":false},{"id":"m_0003","role":"user","text":"What if they respond apologetically but vaguely — what do I say back?","wordCount":13,"charCount":69,"codeBlockCount":0,"hasCode":false}]},{"id":"c_0007","title":"Recipe — what to do with leftover roasted vegetables","createdEpoch":1776582000000,"createdIso":"2026-04-19","messageCount":2,"userCount":1,"assistantCount":1,"systemCount":0,"toolCount":0,"wordCount":206,"assistantWordCount":177,"userWordCount":29,"codeBlockCount":0,"hasCode":false,"models":[],"topic":"Recipe — what to do with leftover roasted vegetables","kind":"other","firstUserPrompt":"I have a sheet pan of roasted vegetables left over from last night — sweet potato, broccoli, red onion, peppers. What can I make for lunch in 15 min?","firstAssistantReply":"Five quick options, depending on what else you have:\n\n1. **Grain bowl**: throw the vegetables over rice or quinoa, drizzle with tahini-lemon-garlic dressing (3 tbsp tahini + juice of half a lemon + 1 minced garlic clove + warm water to thin). Top with a fried egg if you have one.\n2. **Frittata**: whisk 4 eggs + a splas…","lastUserText":"I have a sheet pan of roasted vegetables left over from last night — sweet potato, broccoli, red onion, peppers. What can I make for lunch in 15 min?","isUnresolved":false,"messages":[{"id":"m_0001","role":"user","text":"I have a sheet pan of roasted vegetables left over from last night — sweet potato, broccoli, red onion, peppers. What can I make for lunch in 15 min?","wordCount":29,"charCount":149,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"Five quick options, depending on what else you have:\n\n1. **Grain bowl**: throw the vegetables over rice or quinoa, drizzle with tahini-lemon-garlic dressing (3 tbsp tahini + juice of half a lemon + 1 minced garlic clove + warm water to thin). Top with a fried egg if you have one.\n2. **Frittata**: whisk 4 eggs + a splash of milk + salt, pour over the vegetables in an oven-safe pan, cook on the stove until edges set, then 8 min at 375°F to finish. Crumble feta on top before serving.\n3. **Quesadilla**: chop everything small, spread on half a tortilla with shredded cheese, fold and pan-fry until crisp. Serve with hot sauce or salsa.\n4. **Cold pasta salad**: toss with cooked pasta + olive oil + lemon + salt + a handful of arugula. Eat at room temp.\n5. **Soup base**: blitz with chicken / veg stock + a can of white beans, simmer 5 min, top with olive oil + chili flakes.\n\nIf you tell me what protein you have I can be more specific.","wordCount":177,"charCount":937,"codeBlockCount":0,"hasCode":false}]}],"weeklyHistogram":[{"weekOf":"2026-W02","count":1},{"weekOf":"2026-W04","count":1},{"weekOf":"2026-W07","count":1},{"weekOf":"2026-W10","count":1},{"weekOf":"2026-W12","count":1},{"weekOf":"2026-W16","count":1}],"monthlyHistogram":[{"month":"2026-01","count":2},{"month":"2026-02","count":1},{"month":"2026-03","count":2},{"month":"2026-04","count":1}],"hourCounts":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"dowCounts":[0,0,0,0,0,0,0],"topicClusters":[{"name":"Picking a CRM that won't outgrow us","count":1,"conversationIds":["c_0002"]},{"name":"Help me prep for a board update","count":1,"conversationIds":["c_0003"]},{"name":"Debugging — npm install hangs on this project","count":1,"conversationIds":["c_0004"]},{"name":"docker • host • path","count":1,"conversationIds":["c_0005"]},{"name":"Make this email less aggressive","count":1,"conversationIds":["c_0006"]},{"name":"Recipe — what to do with leftover roasted vegetables","count":1,"conversationIds":["c_0007"]}],"modelBreakdown":[],"kindBreakdown":[{"kind":"code","count":3},{"kind":"planning","count":1},{"kind":"writing","count":1},{"kind":"other","count":1}],"longestConversations":[{"id":"c_0002","title":"Picking a CRM that won't outgrow us","messageCount":4,"wordCount":399},{"id":"c_0003","title":"Help me prep for a board update","messageCount":4,"wordCount":416},{"id":"c_0004","title":"Debugging — npm install hangs on this project","messageCount":4,"wordCount":303},{"id":"c_0006","title":"Make this email less aggressive","messageCount":3,"wordCount":308},{"id":"c_0005","title":"Untitled","messageCount":2,"wordCount":168},{"id":"c_0007","title":"Recipe — what to do with leftover roasted vegetables","messageCount":2,"wordCount":206}],"reusablePrompts":[{"id":"m_0001","conversationId":"c_0002","text":"We're 14 people, mostly engineers, with a small founding sales team. Looking for a CRM that we can use without hiring a dedicated ops person to run it. What should I be evaluating?","sharedKeywords":["people","mostly","engineer","small","found","without"]},{"id":"m_0001","conversationId":"c_0003","text":"Quarterly board update is on Friday. We had a tough Q4 — missed revenue, lost two deals to competitors. How should I frame this without being defensive?","sharedKeywords":["quarterly","board","update","friday","tough","revenue"]}],"importantAnswers":[{"id":"m_0002","conversationId":"c_0003","preview":"Three principles for a \"tough quarter\" board update:\n\n1. **Lead with the bad news.** If you bury it in slide 14, the board will spend slides 1–13 wondering when you'll get to it. Putting it on slide 2 (after a one-slide TL;DR) signals you're owning it and lets the conversation move forward.\n2. **Diagnose, don't blame.** \"We missed Q4 revenue by 18%\" → follow…","charCount":1298},{"id":"m_0002","conversationId":"c_0002","preview":"Three things to evaluate, in order of how often they sink small-team CRM rollouts:\n\n1. **Time to first useful report.** Can a non-ops person build the \"deals closing this quarter, by stage\" view in under 30 minutes? If the CRM requires custom report-builder fluency, you'll either build it yourself and resent it forever, or ignore the CRM and live in spreadsh…","charCount":1258},{"id":"m_0002","conversationId":"c_0006","preview":"Same signal, calmer delivery:\n\n> Hi [vendor],\n>\n> The Q1 milestone we agreed to was due March 15 — wanted to check in on where things stand. I haven't seen an update yet, so I'm guessing something's gotten in the way.\n>\n> Stepping back a bit: this is the second deadline that's slipped this engagement, and I want to be honest that it's making it hard for me t…","charCount":1157},{"id":"m_0002","conversationId":"c_0005","preview":"**Bind mount**: Docker mounts a directory from your host filesystem into the container. The host path is the source of truth — you control where it lives, what permissions it has, who else can read it.\n\n```bash\ndocker run -v /host/path:/container/path my-image\n```\n\nUse when: you want to edit files on the host and have them reflect in the container immediatel…","charCount":1005},{"id":"m_0002","conversationId":"c_0007","preview":"Five quick options, depending on what else you have:\n\n1. **Grain bowl**: throw the vegetables over rice or quinoa, drizzle with tahini-lemon-garlic dressing (3 tbsp tahini + juice of half a lemon + 1 minced garlic clove + warm water to thin). Top with a fried egg if you have one.\n2. **Frittata**: whisk 4 eggs + a splash of milk + salt, pour over the vegetabl…","charCount":937},{"id":"m_0002","conversationId":"c_0004","preview":"Three usual culprits for hangs at the reify step:\n\n1. **A registry mirror that's silently stalling.** Check `npm config get registry` — if it's pointing at an internal mirror or a moved registry, requests can hang without timing out. Try `npm install --registry https://registry.npmjs.org/` to bypass.\n2. **A peer dependency conflict that npm is silently retry…","charCount":927}],"unresolvedThreads":[{"id":"c_0006","title":"Make this email less aggressive","lastUserText":"What if they respond apologetically but vaguely — what do I say back?","reason":"Last turn is a user message — no assistant reply on record."}],"totals":{"conversations":6,"messages":19,"userMessages":10,"assistantMessages":9,"codeBlocks":4,"activeDays":0,"withModel":0},"activeRange":"2026-01-09 → 2026-04-19","topModels":[],"meta":{"sourceFile":"input.md","sizeBytes":11301,"format":"ai-chat-log-md","kind":"ai-chat-export","platform":"AI chat log","conversationCount":6,"messageCount":19,"userMessageCount":10,"assistantMessageCount":9,"codeBlockCount":4,"activeDays":0,"activeRange":"2026-01-09 → 2026-04-19","topModels":[],"unresolvedCount":1}};</script>
+<script>
+(function () {
+  const $ = (s, r) => (r || document).querySelector(s)
+  const $$ = (s, r) => Array.from((r || document).querySelectorAll(s))
+
+  const conversations = DATA.conversations || []
+  const convoById = new Map(conversations.map(c => [c.id, c]))
+  const state = { topic: null, kind: null, search: "", openIds: new Set() }
+
+  const kpiRow = $("#kpi-row")
+  function kpi(label, value, sub, accent) {
+    const el = document.createElement("div")
+    el.className = "kpi"
+    el.innerHTML = '<div class="label">' + escapeHtml(label) + '</div>' +
+      '<div class="value' + (accent ? ' accent' : '') + '">' + escapeHtml(value) + '</div>' +
+      (sub ? '<div class="sub">' + escapeHtml(sub) + '</div>' : '')
+    return el
+  }
+  kpiRow.appendChild(kpi("Conversations", String(DATA.totals.conversations || 0)))
+  kpiRow.appendChild(kpi("Messages", String(DATA.totals.messages || 0), DATA.totals.userMessages + " from you, " + DATA.totals.assistantMessages + " from AI"))
+  kpiRow.appendChild(kpi("Active days", String(DATA.totals.activeDays || 0), DATA.activeRange))
+  kpiRow.appendChild(kpi("Code blocks", String(DATA.totals.codeBlocks || 0), null, true))
+
+  const kindStack = $("#kind-stack")
+  const kindEntries = (DATA.kindBreakdown || []).filter(k => k.count > 0)
+  const kindTotal = kindEntries.reduce((s, k) => s + k.count, 0) || 1
+  const stackBar = document.createElement("div")
+  stackBar.className = "stack-bar"
+  for (const k of kindEntries) {
+    const i = document.createElement("i")
+    i.className = "kind-" + k.kind
+    i.style.width = (100 * k.count / kindTotal).toFixed(2) + "%"
+    i.title = k.kind + " — " + k.count
+    stackBar.appendChild(i)
+  }
+  kindStack.appendChild(stackBar)
+  const legend = document.createElement("div")
+  legend.className = "stack-legend"
+  for (const k of kindEntries) {
+    const span = document.createElement("span")
+    span.innerHTML = '<i class="kind-' + k.kind + '"></i>' + escapeHtml(k.kind) + ' · ' + k.count
+    legend.appendChild(span)
+  }
+  kindStack.appendChild(legend)
+
+  const modelList = $("#model-list")
+  const modelEntries = (DATA.modelBreakdown || []).slice(0, 8)
+  if (!modelEntries.length) {
+    modelList.innerHTML = '<p class="empty">No model metadata in this export.</p>'
+  } else {
+    const totalMsgs = modelEntries.reduce((s, m) => s + m.messageCount, 0) || 1
+    for (const m of modelEntries) {
+      const row = document.createElement("div")
+      row.style.cssText = "display:grid;grid-template-columns:1fr auto auto;gap:var(--space-md);align-items:center;padding:var(--space-sm) 0;border-bottom:1px solid var(--border);font-size:13.5px"
+      row.innerHTML = '<span class="mono">' + escapeHtml(m.model) + '</span>' +
+        '<span style="width:80px;height:6px;background:var(--surface-container);border-radius:var(--radius-pill);overflow:hidden">' +
+          '<i style="display:block;height:100%;background:var(--gradient-primary);width:' + (100 * m.messageCount / totalMsgs).toFixed(1) + '%"></i>' +
+        '</span>' +
+        '<span class="mono muted">' + m.messageCount + ' msg</span>'
+      modelList.appendChild(row)
+    }
+  }
+
+  const tlSvg = $("#timeline-svg")
+  const tlMeta = $("#timeline-meta")
+  const buckets = (DATA.weeklyHistogram && DATA.weeklyHistogram.length >= 4)
+    ? DATA.weeklyHistogram : DATA.monthlyHistogram || []
+  if (!buckets.length) {
+    tlSvg.innerHTML = '<text x="500" y="65" text-anchor="middle">No dated conversations.</text>'
+    tlMeta.textContent = ""
+  } else {
+    const max = Math.max(1, ...buckets.map(b => b.count))
+    const w = 1000, h = 130, pad = 14
+    const bw = (w - pad * 2) / buckets.length
+    let svg = ""
+    for (let i = 0; i < buckets.length; i++) {
+      const b = buckets[i]
+      const bh = (b.count / max) * (h - 30)
+      const x = pad + i * bw
+      const y = h - bh - 14
+      svg += '<rect class="bar" x="' + (x + 1) + '" y="' + y + '" width="' + (bw - 2) + '" height="' + bh + '"><title>' + escapeHtml(b.weekOf || b.month) + ' — ' + b.count + '</title></rect>'
+    }
+    svg += '<text x="' + pad + '" y="' + (h - 2) + '" text-anchor="start">' + escapeHtml(buckets[0].weekOf || buckets[0].month) + '</text>'
+    svg += '<text x="' + (w - pad) + '" y="' + (h - 2) + '" text-anchor="end">' + escapeHtml(buckets[buckets.length - 1].weekOf || buckets[buckets.length - 1].month) + '</text>'
+    tlSvg.innerHTML = svg
+    tlMeta.textContent = buckets.length + ' ' + ('weekOf' in buckets[0] ? 'weeks' : 'months') + ' · peak ' + max
+  }
+
+  function renderRhythm(elId, counts, maxLabels) {
+    const el = $("#" + elId)
+    const max = Math.max(1, ...counts)
+    el.innerHTML = ""
+    for (let i = 0; i < counts.length; i++) {
+      const bar = document.createElement("i")
+      const pct = (counts[i] / max) * 100
+      bar.style.height = Math.max(2, pct) + "%"
+      bar.style.opacity = (0.35 + 0.65 * (counts[i] / max)).toFixed(2)
+      bar.title = (maxLabels ? maxLabels[i] : i) + " — " + counts[i]
+      el.appendChild(bar)
+    }
+  }
+  renderRhythm("hour-bars", DATA.hourCounts || new Array(24).fill(0))
+  const dowLabels = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+  renderRhythm("dow-bars", DATA.dowCounts || new Array(7).fill(0), dowLabels)
+
+  const topicChips = $("#topic-chips")
+  const topics = (DATA.topicClusters || []).slice(0, 12)
+  if (!topics.length) {
+    topicChips.innerHTML = '<p class="empty">No topic clusters surfaced from this sample.</p>'
+  } else {
+    const allChip = mkChip("All topics", "", topics.reduce((s, t) => s + t.count, 0), true)
+    allChip.dataset.topic = ""
+    topicChips.appendChild(allChip)
+    for (const t of topics) {
+      const c = mkChip(t.name, t.name, t.count)
+      c.dataset.topic = t.name
+      topicChips.appendChild(c)
+    }
+    topicChips.addEventListener("click", e => {
+      const chip = e.target.closest(".chip"); if (!chip) return
+      const v = chip.dataset.topic || ""
+      state.topic = v || null
+      $$(".chip", topicChips).forEach(c => c.classList.toggle("active", (c.dataset.topic || "") === v))
+      renderConvoList()
+    })
+  }
+
+  const reusablePanel = $("#reusable-panel")
+  const reusablePrompts = (DATA.reusablePrompts || []).slice(0, 8)
+  if (!reusablePrompts.length) {
+    reusablePanel.innerHTML = '<p class="empty">No prompts shared distinctive keywords across conversations — needs more data to surface a pattern.</p>'
+  } else {
+    for (const p of reusablePrompts) {
+      const card = document.createElement("div")
+      card.className = "heur-card"
+      const conv = convoById.get(p.conversationId)
+      card.innerHTML =
+        '<div class="meta-row"><span>' + escapeHtml(conv ? conv.title : p.conversationId) + '</span>' +
+          '<span>' + escapeHtml(p.ts || "") + '</span></div>' +
+        '<div class="body">' + escapeHtml(p.text) + '</div>' +
+        '<div class="meta-row" style="margin-top:var(--space-xs)">' +
+          '<span>shared: ' + (p.sharedKeywords || []).slice(0,5).map(escapeHtml).join(" • ") + '</span></div>' +
+        '<div class="actions"><button class="copy-btn" data-action="copy-prompt">copy prompt</button>' +
+          '<button class="jump-btn" data-jump="' + escapeAttr(p.conversationId) + '">jump to conversation</button></div>'
+      card.querySelector(".copy-btn").addEventListener("click", () => navigator.clipboard?.writeText(p.text))
+      card.querySelector(".jump-btn").addEventListener("click", () => jumpTo(p.conversationId))
+      reusablePanel.appendChild(card)
+    }
+  }
+
+  const importantPanel = $("#important-panel")
+  const importantAnswers = (DATA.importantAnswers || []).slice(0, 8)
+  if (!importantAnswers.length) {
+    importantPanel.innerHTML = '<p class="empty">No assistant reply long enough to surface as a candidate.</p>'
+  } else {
+    for (const a of importantAnswers) {
+      const card = document.createElement("div")
+      card.className = "heur-card important"
+      const conv = convoById.get(a.conversationId)
+      card.innerHTML =
+        '<div class="meta-row"><span>' + escapeHtml(conv ? conv.title : a.conversationId) + '</span>' +
+          '<span>' + a.charCount + ' chars · ' + escapeHtml(a.ts || "") + '</span></div>' +
+        '<div class="body">' + escapeHtml(a.preview) + '</div>' +
+        '<div class="actions"><span class="muted" style="font-size:11.5px">heuristic — review before reusing</span>' +
+          '<button class="jump-btn" data-jump="' + escapeAttr(a.conversationId) + '">jump to conversation</button></div>'
+      card.querySelector(".jump-btn").addEventListener("click", () => jumpTo(a.conversationId))
+      importantPanel.appendChild(card)
+    }
+  }
+
+  const unresolvedList = $("#unresolved-list")
+  const unresolved = (DATA.unresolvedThreads || []).slice(0, 12)
+  if (!unresolved.length) {
+    unresolvedList.innerHTML = '<p class="empty">No threads look unresolved — every conversation ends with an assistant reply.</p>'
+  } else {
+    for (const u of unresolved) {
+      const el = document.createElement("div")
+      el.className = "callout"
+      el.innerHTML =
+        '<div class="ttl">' + escapeHtml(u.title) + '</div>' +
+        '<div class="meta">' + escapeHtml(u.lastTs || "—") + (u.gapDays != null ? ' · ' + u.gapDays + 'd ago' : '') + '</div>' +
+        '<div class="last">' + escapeHtml(u.lastUserText) + '</div>' +
+        '<div class="why">' + escapeHtml(u.reason) + '</div>'
+      el.addEventListener("click", () => jumpTo(u.id))
+      unresolvedList.appendChild(el)
+    }
+  }
+
+  const kindChips = $("#kind-chips")
+  const allKinds = mkChip("All kinds", "", conversations.length, true)
+  allKinds.dataset.kind = ""
+  kindChips.appendChild(allKinds)
+  for (const k of (DATA.kindBreakdown || [])) {
+    const c = mkChip(k.kind, k.kind, k.count)
+    c.dataset.kind = k.kind
+    kindChips.appendChild(c)
+  }
+  kindChips.addEventListener("click", e => {
+    const chip = e.target.closest(".chip"); if (!chip) return
+    const v = chip.dataset.kind || ""
+    state.kind = v || null
+    $$(".chip", kindChips).forEach(c => c.classList.toggle("active", (c.dataset.kind || "") === v))
+    renderConvoList()
+  })
+
+  $("#search").addEventListener("input", e => {
+    state.search = e.target.value.trim().toLowerCase()
+    renderConvoList()
+  })
+
+  function matchesFilters(c) {
+    if (state.kind && c.kind !== state.kind) return false
+    if (state.topic) {
+      const t = (DATA.topicClusters || []).find(t => t.name === state.topic)
+      if (!t || !t.conversationIds.includes(c.id)) return false
+    }
+    if (state.search) {
+      const hay = (c.title + " " + c.firstUserPrompt + " " + c.firstAssistantReply + " " +
+        c.messages.map(m => m.text).join(" ")).toLowerCase()
+      if (!hay.includes(state.search)) return false
+    }
+    return true
+  }
+
+  const convoListEl = $("#convo-list")
+  const indexMeta = $("#index-meta")
+  const filterSummary = $("#filter-summary")
+
+  function renderConvoList() {
+    convoListEl.innerHTML = ""
+    let shown = 0
+    for (const c of conversations) {
+      if (!matchesFilters(c)) continue
+      shown++
+      convoListEl.appendChild(renderConvo(c))
+    }
+    indexMeta.textContent = shown + " / " + conversations.length + " shown"
+    const parts = []
+    if (state.kind) parts.push("kind=" + state.kind)
+    if (state.topic) parts.push("topic=" + state.topic)
+    if (state.search) parts.push('search="' + state.search + '"')
+    filterSummary.textContent = parts.length ? parts.join(" · ") : ""
+    if (!shown) {
+      const e = document.createElement("p")
+      e.className = "empty"
+      e.textContent = "No conversations match the current filters."
+      convoListEl.appendChild(e)
+    }
+  }
+
+  function renderConvo(c) {
+    const el = document.createElement("article")
+    el.className = "convo"
+    el.id = "convo-" + c.id
+    if (state.openIds.has(c.id)) el.classList.add("open")
+    const dateStr = c.createdIso || ""
+    const modelChips = (c.models || []).slice(0, 3).map(m => '<span class="badge model">' + escapeHtml(m) + '</span>').join("")
+    el.innerHTML =
+      '<div class="head">' +
+        '<div><div class="ttl">' + escapeHtml(c.title) + '</div>' +
+          '<div class="badges">' +
+            '<span class="badge kind">' + escapeHtml(c.kind) + '</span>' +
+            (c.hasCode ? '<span class="badge code">code</span>' : '') +
+            (c.isUnresolved ? '<span class="badge unresolved">unresolved</span>' : '') +
+            modelChips +
+            '<span class="badge">' + c.messageCount + ' msg · ' + c.wordCount + ' words</span>' +
+          '</div></div>' +
+        '<div class="when">' + escapeHtml(dateStr) + '</div>' +
+      '</div>' +
+      '<div class="preview">' +
+        '<div class="row"><div class="role">First user prompt</div><div class="text">' + highlight(c.firstUserPrompt) + '</div></div>' +
+        '<div class="row"><div class="role">First assistant reply</div><div class="text">' + highlight(c.firstAssistantReply) + '</div></div>' +
+      '</div>' +
+      '<div class="toolbar">' +
+        '<button data-action="toggle">' + (state.openIds.has(c.id) ? 'Hide' : 'Show all') + ' ' + c.messageCount + ' messages</button>' +
+        '<button data-action="copy-md">Copy as Markdown</button>' +
+      '</div>' +
+      '<div class="thread">' + (state.openIds.has(c.id) ? renderThread(c) : "") + '</div>'
+    el.querySelector('button[data-action="toggle"]').addEventListener("click", () => {
+      const open = state.openIds.has(c.id)
+      if (open) state.openIds.delete(c.id); else state.openIds.add(c.id)
+      const newEl = renderConvo(c)
+      el.replaceWith(newEl)
+    })
+    el.querySelector('button[data-action="copy-md"]').addEventListener("click", () => {
+      navigator.clipboard?.writeText(conversationToMarkdown(c))
+    })
+    return el
+  }
+
+  function renderThread(c) {
+    const byDay = new Map()
+    for (const m of c.messages) {
+      const day = m.ts ? m.ts.slice(0, 10) : "(undated)"
+      const arr = byDay.get(day) || []
+      arr.push(m)
+      byDay.set(day, arr)
+    }
+    let html = ""
+    for (const [day, msgs] of byDay.entries()) {
+      html += '<div class="day-bucket"><div class="day">' + escapeHtml(day) + '</div>'
+      for (const m of msgs) {
+        html += '<div class="bubble ' + escapeAttr(m.role) + '">' +
+          '<div class="role-line"><span>' + escapeHtml(m.role) + (m.model ? ' · ' + escapeHtml(m.model) : '') + '</span>' +
+            '<span>' + escapeHtml(m.ts || "") + '</span></div>' +
+          renderMessageBody(m.text) +
+        '</div>'
+      }
+      html += '</div>'
+    }
+    return html
+  }
+
+  function renderMessageBody(text) {
+    // Lightweight code-fence rendering. No syntax highlighting library.
+    const FENCE = String.fromCharCode(96, 96, 96)
+    const fenceRe = new RegExp("(" + FENCE + "[\\s\\S]*?" + FENCE + ")", "g")
+    const parts = String(text || "").split(fenceRe)
+    let out = ""
+    for (const p of parts) {
+      if (p.startsWith(FENCE) && p.endsWith(FENCE)) {
+        const inner = p.slice(3, -3).replace(/^[a-z0-9_-]+\n/i, "")
+        out += '<pre><code>' + escapeHtml(inner) + '</code></pre>'
+      } else {
+        out += highlight(p)
+      }
+    }
+    return out
+  }
+
+  function highlight(text) {
+    const s = escapeHtml(String(text || ""))
+    if (!state.search) return s
+    try {
+      const re = new RegExp("(" + escapeRegExp(state.search) + ")", "gi")
+      return s.replace(re, '<span class="search-hit">$1</span>')
+    } catch { return s }
+  }
+
+  function jumpTo(id) {
+    state.openIds.add(id)
+    renderConvoList()
+    const el = document.getElementById("convo-" + id)
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" })
+  }
+
+  $("button[data-action='copy-summary']").addEventListener("click", () => {
+    const md = summaryToMarkdown()
+    navigator.clipboard?.writeText(md)
+  })
+  $("button[data-action='expand-all']").addEventListener("click", () => {
+    for (const c of conversations) state.openIds.add(c.id)
+    renderConvoList()
+  })
+  $("button[data-action='collapse-all']").addEventListener("click", () => {
+    state.openIds.clear()
+    renderConvoList()
+  })
+
+  function summaryToMarkdown() {
+    const lines = []
+    lines.push("# " + (document.title || "AI chat export"))
+    lines.push("")
+    lines.push("- **Conversations**: " + DATA.totals.conversations)
+    lines.push("- **Messages**: " + DATA.totals.messages + " (" + DATA.totals.userMessages + " from you, " + DATA.totals.assistantMessages + " from AI)")
+    lines.push("- **Active range**: " + DATA.activeRange)
+    lines.push("- **Code blocks**: " + DATA.totals.codeBlocks)
+    if ((DATA.topModels || []).length) lines.push("- **Models**: " + DATA.topModels.join(", "))
+    lines.push("")
+    lines.push("## Topics")
+    for (const t of (DATA.topicClusters || []).slice(0, 8)) lines.push("- " + t.name + " (" + t.count + ")")
+    lines.push("")
+    lines.push("## Unresolved")
+    for (const u of (DATA.unresolvedThreads || []).slice(0, 8)) lines.push("- " + u.title + (u.lastTs ? " (" + u.lastTs + ")" : ""))
+    return lines.join("\n")
+  }
+
+  function conversationToMarkdown(c) {
+    const lines = []
+    lines.push("# " + c.title)
+    if (c.createdIso) lines.push("Date: " + c.createdIso)
+    lines.push("")
+    for (const m of c.messages) {
+      const role = m.role.charAt(0).toUpperCase() + m.role.slice(1)
+      lines.push(role + ":" + (m.model ? " (" + m.model + ")" : ""))
+      lines.push(m.text)
+      lines.push("")
+    }
+    return lines.join("\n")
+  }
+
+  function mkChip(label, value, count, active) {
+    const c = document.createElement("button")
+    c.className = "chip" + (active ? " active" : "")
+    c.innerHTML = escapeHtml(label) + ' <span class="count">' + count + '</span>'
+    return c
+  }
+  function escapeHtml(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])) }
+  function escapeAttr(s) { return escapeHtml(s) }
+  function escapeRegExp(s) { return s.replace(/[.*+?^$()|[\]\\{}]/g, "\\$&") }
+
+  renderConvoList()
+})()
+</script>
+</body>
+</html>

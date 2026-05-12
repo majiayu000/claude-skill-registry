@@ -1,6 +1,7 @@
 ---
 name: autodev
 description: 'Manage bounded autonomous dev loops.'
+practices: [cmm-process-maturity, ai-assisted-dev, dora-metrics]
 skill_api_version: 1
 user-invocable: true
 context:

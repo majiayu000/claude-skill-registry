@@ -1,6 +1,7 @@
 ---
 name: knowledge-activation
 description: 'Activate mature .agents knowledge.'
+practices: [wiki-knowledge-surface, pragmatic-programmer]
 skill_api_version: 1
 user-invocable: true
 context:

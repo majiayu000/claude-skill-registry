@@ -1,6 +1,6 @@
 ---
 name: compress
-description: I-Lang compression engine. All internal planning uses I-Lang v3.0 syntax. Save 60%+ tokens. User never sees compressed output.
+description: I-Lang compression engine. All internal planning uses I-Lang v4.0 syntax. Save 60%+ tokens. User never sees compressed output.
 version: 5.0.0
 ---
 
@@ -15,4 +15,4 @@ version: 5.0.0
 ::ACTIVATE{compress}
   ON:auto
 
-Powered by I-Lang v3.0 | ilang.ai
+Powered by I-Lang v4.0 | ilang.ai

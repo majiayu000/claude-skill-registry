@@ -1,0 +1,28 @@
+# {SITE_NAME}
+
+> {SITE_NAME} is a {PRODUCT_CATEGORY} platform that {VALUE_PROP}. Used by {CUSTOMER_COUNT}+ teams.
+
+## Documentation
+
+- [Getting Started]({BASE_URL}/docs/quickstart): Installation, setup, and first steps
+- [API Reference]({BASE_URL}/docs/api): REST API endpoints, authentication, rate limits
+- [Configuration]({BASE_URL}/docs/config): Settings, environment variables, deployment options
+
+## Features
+
+- [{FEATURE_1}]({BASE_URL}/features/{SLUG_1}): {FEATURE_1_DESCRIPTION}
+- [{FEATURE_2}]({BASE_URL}/features/{SLUG_2}): {FEATURE_2_DESCRIPTION}
+- [{FEATURE_3}]({BASE_URL}/features/{SLUG_3}): {FEATURE_3_DESCRIPTION}
+
+## Resources
+
+- [Pricing]({BASE_URL}/pricing): Plans, comparison, and enterprise options
+- [Integrations]({BASE_URL}/integrations): Third-party connections and plugins
+- [Security]({BASE_URL}/security): Compliance, data handling, and infrastructure
+
+## Optional
+
+- [Blog]({BASE_URL}/blog): Product updates, engineering deep-dives, and best practices
+- [Changelog]({BASE_URL}/changelog): Version history and release notes
+- [Status]({STATUS_URL}): System uptime and incident history
+- [Community]({BASE_URL}/community): Forum, Discord, and user groups

@@ -1,9 +1,6 @@
 ---
 name: curate
-description: >
-  Add or edit knowledge annotations. Capture tribal knowledge,
-  business context, and rationale that cannot be inferred from
-  code.
+description: 'Add or edit knowledge annotations. Capture tribal knowledge and rationale not in code.'
 model_hint: standard
 ---
 

@@ -15,6 +15,21 @@ def load_module():
     return module
 
 
+class FakeResponse:
+    def __init__(self, status_code, text=""):
+        self.status_code = status_code
+        self.text = text
+
+
+class FakeSession:
+    def __init__(self, response):
+        self.response = response
+        self.headers = {}
+
+    def get(self, url, timeout=None):
+        return self.response
+
+
 def test_write_candidates_jsonl_emits_repo_and_path_rows(tmp_path):
     module = load_module()
     discovery = module.GitHubTopicDiscovery(request_delay=0.0)
@@ -102,3 +117,46 @@ def test_update_priors_accumulates_stats_across_runs(tmp_path):
     assert repo["selected_runs"] == 2
     assert repo["downloaded_skills"] == 2
     assert priors["topic_yield"]["claude-skills"]["downloaded_skills"] == 2
+
+
+def test_download_skill_rejects_security_listed_path(tmp_path):
+    module = load_module()
+    discovery = module.GitHubTopicDiscovery(request_delay=0.0)
+    discovery.session = FakeSession(FakeResponse(200, "---\nname: demo\n---\n# Demo\n"))
+
+    downloaded = discovery.download_skill(
+        "nowork-studio/toprank",
+        "openclaw/skills/toprank/SKILL.md",
+        tmp_path / "skills",
+    )
+
+    assert downloaded is False
+    assert not list(tmp_path.rglob("SKILL.md"))
+
+
+def test_download_skill_removes_security_scan_failure(tmp_path):
+    module = load_module()
+    discovery = module.GitHubTopicDiscovery(request_delay=0.0)
+    discovery.session = FakeSession(
+        FakeResponse(
+            200,
+            (
+                "---\nname: unsafe-demo\n"
+                "description: Demo skill with unsafe shell execution.\n---\n"
+                "# Unsafe Demo\n"
+                "```python\n"
+                "import subprocess\n"
+                "subprocess.run('echo unsafe', shell=True)\n"
+                "```\n"
+            ),
+        )
+    )
+
+    downloaded = discovery.download_skill(
+        "acme/unsafe-demo",
+        "skills/unsafe-demo/SKILL.md",
+        tmp_path / "skills",
+    )
+
+    assert downloaded is False
+    assert not list(tmp_path.rglob("SKILL.md"))

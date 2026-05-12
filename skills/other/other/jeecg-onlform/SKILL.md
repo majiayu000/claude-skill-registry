@@ -150,6 +150,27 @@ JeecgBoot 后端的 context path 因部署而异：
 > **重要：** 配置表单字段的字典、用户选择、部门选择等数据源时，必须遵循"先查后建"原则。
 > 使用 `jeecg-system` skill 的 `system_utils.py` 查询和管理主数据。
 
+## 临时配置文件规则（强制）
+
+所有传给脚本的 `--config <xxx.json>` 必须写到**系统临时目录**，由 OS 自动清理；skill 和脚本都不主动 `rm`。
+
+```python
+import tempfile, os, json
+config_path = os.path.join(tempfile.gettempdir(), 'onl_<表名>_<步骤>.json')
+with open(config_path, 'w', encoding='utf-8') as f:
+    json.dump(cfg, f, ensure_ascii=False, indent=2)
+```
+
+`tempfile.gettempdir()` 自动适配：Windows `%TEMP%` / Linux `/tmp` / macOS `/var/folders/.../T`（注意 macOS 不是 `/tmp`）。命名建议带表名+步骤前缀（如 `onl_sk_audit_create.json`）便于排错。
+
+**❌ 禁止：**
+- 写到 `<skill>/tmp/` 或当前工作目录（污染 skill / 用户项目）
+- 硬编码 `/tmp` / `C:\Temp`（不跨平台）
+- 每步完成后主动 `rm` / `Remove-Item`（OS 会清，多余 tool call）
+- **主动 `os.path.exists()` 检查**（自身就是一次 tool call）
+
+**临时文件可能被 OS 异步清理**，但**乐观调用 + 报错再补救**：仅当脚本返回 `FileNotFoundError` / `配置文件不存在` 时，用相同内容重写后重试，不要换路径或去 skill 目录找。
+
 ## 交互流程
 
 ### Step 0: 判断操作类型
@@ -371,7 +392,7 @@ python <skill目录>/scripts/onlform_data.py --api-base <URL> --token <TOKEN> --
 |------|------|
 | `--api-base` | JeecgBoot 后端地址（如 `http://localhost:8080/jeecg-boot`） |
 | `--token` | X-Access-Token |
-| `--config` | JSON 配置文件路径 |
+| `--config` | JSON 配置文件路径 — **必须写到系统临时目录**，详见上文「临时配置文件规则」 |
 
 所有脚本支持 `tableName` 自动解析 `headId`，无需手动查询。
 

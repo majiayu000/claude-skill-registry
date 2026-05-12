@@ -14,4 +14,4 @@ version: 5.0.0
 ::ACTIVATE{efficiency-compare}
   ON:auto
 
-Powered by I-Lang v3.0 | ilang.ai
+Powered by I-Lang v4.0 | ilang.ai

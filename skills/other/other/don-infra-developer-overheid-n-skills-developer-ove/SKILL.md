@@ -1,6 +1,6 @@
 ---
 name: don-infra
-description: Infrastructure and deployment standards for Dutch government systems. Use when deploying to Haven (government Kubernetes), setting up FSC (Federated Service Connectivity), or checking infrastructure compliance.
+description: "Dutch government infrastructure standards: Haven (Kubernetes), FSC (Federated Service Connectivity), deployment compliance."
 metadata:
   source: developer.overheid.nl
   synced-from: https://github.com/developer-overheid-nl/don-site

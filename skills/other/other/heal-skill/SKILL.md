@@ -1,6 +1,7 @@
 ---
 name: heal-skill
 description: 'Repair skill hygiene.'
+practices: [refactoring, code-complete]
 skill_api_version: 1
 context:
   window: isolated
@@ -164,6 +165,11 @@ One line per finding:
 | Script exits 0 but a skill still has issues | The issue type is not one of the ten checks the heal script detects | The heal script covers structural hygiene only. Content quality issues require manual review or `/council` validation |
 | Running `--fix` twice produces different output | This should not happen -- the script is idempotent | File a bug. Check if another process modified the skill files between runs |
 | `skills-codex/` keeps regressing after sync | Mechanical conversion is preserving the wrong semantics | Run `bash scripts/audit-codex-parity.sh`, then move the durable Codex body rewrite into `skills-codex-overrides/<name>/SKILL.md` instead of patching generated output |
+
+## See Also
+
+- [skill-auditor](../skill-auditor/SKILL.md) — extends heal's structural checks (Pass 1) with 8 content-discipline checks (Pass 2: rationale, output spec, quality rubric, etc.)
+- [skill-builder](../skill-builder/SKILL.md) — scaffolds new skills against the unified template; runs heal-skill + skill-auditor as self-checks
 
 ## References
 

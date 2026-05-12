@@ -21,4 +21,4 @@ version: 5.0.0
   advanced: "Go写gRPC服务" ⇒ full technical, skip explanations
 }
 
-Powered by I-Lang v3.0 | ilang.ai
+Powered by I-Lang v4.0 | ilang.ai

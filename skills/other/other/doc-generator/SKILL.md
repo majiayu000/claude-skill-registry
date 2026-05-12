@@ -1,7 +1,6 @@
 ---
 name: doc-generator
-description: Generate or remediate documentation with human-quality writing and style
-version: 1.9.3
+description: 'Generate or remediate documentation with human-quality writing and style.'
 globs: "**/*.md"
 alwaysApply: false
   adherence. Use when creating new documentation, rewriting AI-generated content,
@@ -20,24 +19,48 @@ model_hint: standard
 estimated_tokens: 1600
 progressive_loading: true
 modules:
-- generation-guidelines
-- remediation-workflow
-- quality-gates
+- modules/generation-guidelines.md
+- modules/remediation-workflow.md
+- modules/quality-gates.md
 dependencies:
 - scribe:shared
 - scribe:slop-detector
 ---
 # Documentation Generator
 
-Documentation must be grounded in specific claims rather than abstract adjectives. We avoid filler phrases like "In today's fast-paced world" and focus on delivering useful information directly. Each claim should be supported by evidence, such as specific version numbers or request rates, rather than vague descriptors like "comprehensive."
+**A document costs the sum of its readers' time. Earn that
+cost or cut.**
+
+Generate documents that are grounded in specific claims, lead
+with their thesis, and earn every sentence. Filler phrases like
+"In today's fast-paced world" and vague descriptors like
+"thorough" or "complete" without evidence are bloat. So is
+any sentence that does not carry, instance, bound, or repeat
+the document's one takeaway.
+
+This skill enforces both **sentence-level cleanliness** (no
+slop vocabulary, em dash overuse, or sycophantic openers) and
+**document-level economy** (thesis-first, every sentence
+earns weight, repetition reserved for the thesis). See
+`Skill(scribe:slop-detector)` module `document-economy.md`
+for the full rubric.
 
 ## Core Writing Principles
 
-We prioritize authorial perspective and active voice to maintain a consistent team tone. This involves explaining the reasoning behind technical choices, such as selecting one database over another, rather than providing neutral boilerplate. Bullets should be used sparingly for actionable summaries; multi-line bullet waterfalls should be converted to short paragraphs to preserve nuance.
+Use active voice and an authorial perspective. Explain the
+reasoning behind technical choices (why this database, not
+that one) rather than presenting neutral boilerplate. Use
+bullets sparingly for short, parallel summaries; convert
+multi-line bullet waterfalls into prose so the reasoning
+survives.
 
 ### Vocabulary and Style
 
-Avoid business jargon and linguistic tics like mirrored sentence structures or excessive em dashes. We use the imperative mood for docstrings (e.g., "Validate input") and strictly avoid humanizing non-living constructs like code.
+Avoid business jargon and linguistic tics like mirrored
+sentence structures or em dash overuse. Use the imperative
+mood for docstrings ("Validate input", not "Validates").
+Do not humanize non-living constructs ("the code wants",
+"the function speaks to").
 
 | Instead of | Use |
 |------------|-----|
@@ -49,7 +72,8 @@ Avoid business jargon and linguistic tics like mirrored sentence structures or e
 
 ### 9. Limit Humanizing Constructs
 
-"Lives under," "speaks to," and similar phrases only make sense for living things.
+"Lives under," "speaks to," and similar phrases only make sense
+for living things.
 
 ### 10. Imperative Mood for Docstrings
 
@@ -75,9 +99,19 @@ For new documentation:
 
 **Type**: [README/Guide/API docs/Tutorial]
 **Audience**: [developers/users/admins]
+**Audience size**: [1 / small team / org / public]
+**Read frequency**: [once / weekly / per-invocation]
+**Thesis**: [one sentence the reader must walk away with]
 **Length target**: [~X words or sections]
 **Style profile**: [profile name or "default"]
 ```
+
+The **Thesis** field is required. If you cannot state the
+takeaway in one sentence, the scope is not ready. Audience
+size and read frequency feed the reader-time budget (see
+`scribe:slop-detector` module `document-economy.md`): a
+skill loaded daily by 50 users has a wildly different
+budget than a 1:1 design note.
 
 ### Step 2: Load Style (if available)
 
@@ -90,13 +124,22 @@ Apply voice, vocabulary, and structural guidelines.
 
 ### Step 3: Draft Content
 
+**Lead with the thesis.** The first paragraph must state the
+single takeaway. If a reader stops after the lead, they should
+still leave with the message. Echo the thesis once in the body
+and once at the close; cut every other repetition.
+
 Follow the 10 core principles above. For each section:
 
-1. Start with the essential information
-2. Add context only if it adds value
-3. Use specific examples
+1. Start with the essential information (state the thesis or
+   a clear instance of it)
+2. Add context only if it adds value (does it carry, instance,
+   or bound the thesis?)
+3. Use specific examples (one is proof; two is emphasis;
+   three is filler)
 4. Prefer prose over bullets
-5. End when information is complete (no summary padding)
+5. End when information is complete (no summary padding,
+   no "in conclusion" restatements)
 
 ### Step 4: Run Slop Detector
 
@@ -109,6 +152,8 @@ Fix any findings before proceeding.
 ### Step 5: Quality Gate
 
 Verify against checklist:
+
+Sentence-level:
 - [ ] No tier-1 slop words
 - [ ] Em dash count < 3 per 1000 words
 - [ ] Bullet ratio < 40%
@@ -116,6 +161,15 @@ Verify against checklist:
 - [ ] No formulaic openers or closers
 - [ ] Authorial perspective present
 - [ ] No emojis (unless explicitly requested)
+
+Document-level (document-economy module):
+- [ ] Thesis stated in the lead, single and clear (2/2)
+- [ ] >80% of sentences carry, instance, bound, or repeat
+      the thesis (2/2)
+- [ ] Thesis echoed at least 3 times; non-thesis repetition
+      cut (2/2)
+- [ ] Writing time roughly proportional to (audience size ×
+      read frequency × per-read time)
 
 ## Mode: Remediation
 

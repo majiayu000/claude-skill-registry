@@ -1,6 +1,7 @@
 ---
 name: goals
 description: 'Maintain AgentOps goals.'
+practices: [dora-metrics, lean-startup, agile-manifesto]
 skill_api_version: 1
 context:
   window: fork

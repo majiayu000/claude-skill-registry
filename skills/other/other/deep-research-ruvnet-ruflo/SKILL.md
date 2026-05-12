@@ -1,6 +1,7 @@
 ---
 name: deep-research
 description: Orchestrate multi-phase deep research with web search, memory retrieval, pattern matching, and synthesis into structured findings
+argument-hint: "<topic>"
 allowed-tools: mcp__claude-flow__memory_store mcp__claude-flow__memory_search mcp__claude-flow__memory_search_unified mcp__claude-flow__agentdb_hierarchical-store mcp__claude-flow__agentdb_hierarchical-recall mcp__claude-flow__agentdb_pattern-search mcp__claude-flow__agentdb_pattern-store mcp__claude-flow__neural_predict mcp__claude-flow__hooks_intelligence_pattern-search mcp__claude-flow__hooks_intelligence_pattern-store mcp__claude-flow__task_create mcp__claude-flow__task_list mcp__claude-flow__task_summary Bash WebSearch WebFetch Read Write
 ---
 

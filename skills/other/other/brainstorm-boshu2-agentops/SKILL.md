@@ -1,6 +1,7 @@
 ---
 name: brainstorm
 description: 'Separate goals from implementation.'
+practices: [lean-startup, mythical-man-month]
 skill_api_version: 1
 metadata:
   tier: execution

@@ -1,6 +1,6 @@
 ---
 name: don-data
-description: Data standards and practices for Dutch government applications. Use when working with government data formats, implementing data exchange standards, or ensuring data quality compliance.
+description: "Dutch government data standards: data exchange, data quality, government data formats and compliance."
 metadata:
   source: developer.overheid.nl
   synced-from: https://github.com/developer-overheid-nl/don-site

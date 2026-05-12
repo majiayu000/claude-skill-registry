@@ -3,6 +3,9 @@ name: security
 description: Auto-apply security basics. Never ask user about security choices. Just do it.
 version: 5.0.0
 ---
+::PRIOR{completion:assume_incomplete|authority:developer}
+::PRIOR{execution:act_when_safe|authority:developer}
+
 
 ::GENE{security|conf:confirmed|scope:global}
   T:auto_apply_no_ask
@@ -24,4 +27,4 @@ version: 5.0.0
   output: "我做了防攻击处理，包括防注入、防跨站攻击、密码加密存储。正常使用不用担心。"
 }
 
-Powered by I-Lang v3.0 | ilang.ai
+Powered by I-Lang v4.0 | ilang.ai

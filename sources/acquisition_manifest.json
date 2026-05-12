@@ -1,19 +1,19 @@
 {
   "version": 1,
-  "updated_at": "2026-05-04T02:21:12.193034Z",
-  "total_count": 26,
+  "updated_at": "2026-05-12T19:55:40.825395Z",
+  "total_count": 546,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
       "branch": "master",
       "relative_path": "skills/x-twitter-scraper/SKILL.md",
-      "updated_at": "2026-05-04T02:21:00.530653Z"
+      "updated_at": "2026-05-12T19:54:32.975300Z"
     },
     "miningstore/confluence-to-agent-knowledge-base": {
       "repo": "miningstore/confluence-to-agent-knowledge-base",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-04T02:21:06.199346Z"
+      "updated_at": "2026-05-12T19:55:05.731426Z"
     },
     "seangeng/holydocs-skills:holydocs": {
       "repo": "seangeng/holydocs-skills",
@@ -43,7 +43,7 @@
       "repo": "mguozhen/dingtalk-bridge",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-04T02:21:04.694453Z"
+      "updated_at": "2026-05-12T19:55:01.885564Z"
     },
     "conorluddy/ios-simulator-skill": {
       "repo": "conorluddy/ios-simulator-skill",
@@ -55,61 +55,61 @@
       "repo": "lackeyjb/playwright-skill",
       "branch": "main",
       "relative_path": "skills/playwright-skill/SKILL.md",
-      "updated_at": "2026-05-04T02:21:04.697281Z"
+      "updated_at": "2026-05-12T19:55:02.217532Z"
     },
     "ToniPerea/humanizar-texto-es": {
       "repo": "ToniPerea/humanizar-texto-es",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-04T02:21:02.680316Z"
+      "updated_at": "2026-05-12T19:55:01.237068Z"
     },
     "yusufkaraaslan/Skill_Seekers": {
       "repo": "yusufkaraaslan/Skill_Seekers",
       "branch": "main",
       "relative_path": "skills/skill-seekers/SKILL.md",
-      "updated_at": "2026-05-04T02:21:04.723967Z"
+      "updated_at": "2026-05-12T19:55:03.096607Z"
     },
     "Chris1220-cmd/deep-research-skill": {
       "repo": "Chris1220-cmd/deep-research-skill",
       "branch": "master",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-04T02:21:02.401282Z"
+      "updated_at": "2026-05-12T19:55:01.257832Z"
     },
     "Enreign/pagerunner-skill": {
       "repo": "Enreign/pagerunner-skill",
       "branch": "main",
       "relative_path": "skills/pagerunner-skill/SKILL.md",
-      "updated_at": "2026-05-04T02:21:05.644751Z"
+      "updated_at": "2026-05-12T19:55:04.105272Z"
     },
     "alonw0/web-asset-generator": {
       "repo": "alonw0/web-asset-generator",
       "branch": "main",
       "relative_path": "skills/web-asset-generator/SKILL.md",
-      "updated_at": "2026-05-04T02:21:05.614915Z"
+      "updated_at": "2026-05-12T19:55:05.238204Z"
     },
     "mguozhen/social-bot": {
       "repo": "mguozhen/social-bot",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-04T02:21:04.968141Z"
+      "updated_at": "2026-05-12T19:55:03.644837Z"
     },
     "b33kman/professional-business-writing-skill": {
       "repo": "b33kman/professional-business-writing-skill",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-04T02:21:04.876306Z"
+      "updated_at": "2026-05-12T19:55:03.314907Z"
     },
     "MetcalfSolutions/Satori": {
       "repo": "MetcalfSolutions/Satori",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-04T02:21:06.101565Z"
+      "updated_at": "2026-05-12T19:55:05.890475Z"
     },
     "varfolomejev/query-victorialogs": {
       "repo": "varfolomejev/query-victorialogs",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-04T02:21:05.385119Z"
+      "updated_at": "2026-05-12T19:55:04.924856Z"
     },
     "KKKKhazix/khazix-skills:hv-analysis": {
       "repo": "KKKKhazix/khazix-skills",
@@ -157,7 +157,3127 @@
       "repo": "0xRy4n/hubspot-developer-skill",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-04T02:21:06.060898Z"
+      "updated_at": "2026-05-12T19:55:04.985161Z"
+    },
+    "KKKKhazix/khazix-skills:aihot": {
+      "repo": "KKKKhazix/khazix-skills",
+      "branch": "main",
+      "relative_path": "aihot/SKILL.md",
+      "updated_at": "2026-05-09T16:14:33.718303Z"
+    },
+    "anthropics/skills:skills/theme-factory": {
+      "repo": "anthropics/skills",
+      "branch": "main",
+      "relative_path": "skills/theme-factory/SKILL.md",
+      "updated_at": "2026-05-09T16:14:33.718772Z"
+    },
+    "anthropics/skills:skills/frontend-design": {
+      "repo": "anthropics/skills",
+      "branch": "main",
+      "relative_path": "skills/frontend-design/SKILL.md",
+      "updated_at": "2026-05-09T16:14:33.738442Z"
+    },
+    "anthropics/skills:skills/slack-gif-creator": {
+      "repo": "anthropics/skills",
+      "branch": "main",
+      "relative_path": "skills/slack-gif-creator/SKILL.md",
+      "updated_at": "2026-05-09T16:14:33.847084Z"
+    },
+    "getterdoneinc/skill": {
+      "repo": "getterdoneinc/skill",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-05-12T19:55:01.284407Z"
+    },
+    "anthropics/skills:skills/skill-creator": {
+      "repo": "anthropics/skills",
+      "branch": "main",
+      "relative_path": "skills/skill-creator/SKILL.md",
+      "updated_at": "2026-05-09T16:14:34.929129Z"
+    },
+    "anthropics/skills:skills/xlsx": {
+      "repo": "anthropics/skills",
+      "branch": "main",
+      "relative_path": "skills/xlsx/SKILL.md",
+      "updated_at": "2026-05-09T16:14:35.803185Z"
+    },
+    "anthropics/skills:skills/pptx": {
+      "repo": "anthropics/skills",
+      "branch": "main",
+      "relative_path": "skills/pptx/SKILL.md",
+      "updated_at": "2026-05-09T16:14:35.910671Z"
+    },
+    "2389-research/simmer:skills/simmer/SKILL.md": {
+      "repo": "2389-research/simmer",
+      "branch": "main",
+      "relative_path": "skills/simmer/SKILL.md",
+      "updated_at": "2026-05-12T19:54:35.854711Z"
+    },
+    "Kanevry/session-orchestrator:skills/using-orchestrator/SKILL.md": {
+      "repo": "Kanevry/session-orchestrator",
+      "branch": "main",
+      "relative_path": "skills/using-orchestrator/SKILL.md",
+      "updated_at": "2026-05-12T19:54:35.888834Z"
+    },
+    "Tibsfox/gsd-skill-creator:examples/skills/languages/translation-interpretation/SKILL.md": {
+      "repo": "Tibsfox/gsd-skill-creator",
+      "branch": "main",
+      "relative_path": "examples/skills/languages/translation-interpretation/SKILL.md",
+      "updated_at": "2026-05-12T19:54:35.901514Z"
+    },
+    "Tibsfox/gsd-skill-creator:examples/skills/statistics/inferential-statistics/SKILL.md": {
+      "repo": "Tibsfox/gsd-skill-creator",
+      "branch": "main",
+      "relative_path": "examples/skills/statistics/inferential-statistics/SKILL.md",
+      "updated_at": "2026-05-12T19:54:35.912029Z"
+    },
+    "Tibsfox/gsd-skill-creator:examples/skills/astronomy/cosmological-observation/SKILL.md": {
+      "repo": "Tibsfox/gsd-skill-creator",
+      "branch": "main",
+      "relative_path": "examples/skills/astronomy/cosmological-observation/SKILL.md",
+      "updated_at": "2026-05-12T19:54:35.937245Z"
+    },
+    "OutlineDriven/odin-claude-plugin:skills/tidy/SKILL.md": {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "branch": "main",
+      "relative_path": "skills/tidy/SKILL.md",
+      "updated_at": "2026-05-12T19:54:35.943609Z"
+    },
+    "Tibsfox/gsd-skill-creator:examples/skills/media/latex-authoring/SKILL.md": {
+      "repo": "Tibsfox/gsd-skill-creator",
+      "branch": "main",
+      "relative_path": "examples/skills/media/latex-authoring/SKILL.md",
+      "updated_at": "2026-05-12T19:54:35.961203Z"
+    },
+    "Tibsfox/gsd-skill-creator:examples/skills/history/historical-perspectives/SKILL.md": {
+      "repo": "Tibsfox/gsd-skill-creator",
+      "branch": "main",
+      "relative_path": "examples/skills/history/historical-perspectives/SKILL.md",
+      "updated_at": "2026-05-12T19:54:35.996175Z"
+    },
+    "Tibsfox/gsd-skill-creator:examples/skills/spatial-computing/world-building-block-paradigms/SKILL.md": {
+      "repo": "Tibsfox/gsd-skill-creator",
+      "branch": "main",
+      "relative_path": "examples/skills/spatial-computing/world-building-block-paradigms/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.049127Z"
+    },
+    "aiskillstore/marketplace:skills/degausai/wonda-cli/SKILL.md": {
+      "repo": "aiskillstore/marketplace",
+      "branch": "main",
+      "relative_path": "skills/degausai/wonda-cli/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.109117Z"
+    },
+    "a5c-ai/babysitter:plugins/babysitter-codex/skills/team-install/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "plugins/babysitter-codex/skills/team-install/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.144714Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/cc10x/skills/code-review-patterns/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/cc10x/skills/code-review-patterns/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.150011Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/gastown/skills/work-decomposition/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/gastown/skills/work-decomposition/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.161420Z"
+    },
+    "aiskillstore/marketplace:skills/sickn33/base/SKILL.md": {
+      "repo": "aiskillstore/marketplace",
+      "branch": "main",
+      "relative_path": "skills/sickn33/base/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.168803Z"
+    },
+    "alexander-danilenko/cortex-ai-skills:skills/humanize-text/SKILL.md": {
+      "repo": "alexander-danilenko/cortex-ai-skills",
+      "branch": "main",
+      "relative_path": "skills/humanize-text/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.178894Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/gastown/skills/session-management/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/gastown/skills/session-management/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.184074Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/gastown/skills/formula-authoring/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/gastown/skills/formula-authoring/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.188161Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/metaswarm/skills/plan-review-gate/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/metaswarm/skills/plan-review-gate/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.193247Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/gastown/skills/convoy-management/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/gastown/skills/convoy-management/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.204563Z"
+    },
+    "Tibsfox/gsd-skill-creator:examples/skills/state/mail-async/SKILL.md": {
+      "repo": "Tibsfox/gsd-skill-creator",
+      "branch": "main",
+      "relative_path": "examples/skills/state/mail-async/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.213228Z"
+    },
+    "a5c-ai/babysitter:library/specializations/web-development/skills/socketio/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/web-development/skills/socketio/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.226408Z"
+    },
+    "avelikiy/great_cto:skills/done-blocked/SKILL.md": {
+      "repo": "avelikiy/great_cto",
+      "branch": "main",
+      "relative_path": "skills/done-blocked/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.266523Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/gog-sdk/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/gog-sdk/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.298497Z"
+    },
+    "avelikiy/great_cto:skills/skeptical-triage/SKILL.md": {
+      "repo": "avelikiy/great_cto",
+      "branch": "main",
+      "relative_path": "skills/skeptical-triage/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.309226Z"
+    },
+    "boshu2/agentops:skills-codex/curate/SKILL.md": {
+      "repo": "boshu2/agentops",
+      "branch": "main",
+      "relative_path": "skills-codex/curate/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.440897Z"
+    },
+    "boshu2/agentops:skills-codex-overrides/beads/SKILL.md": {
+      "repo": "boshu2/agentops",
+      "branch": "main",
+      "relative_path": "skills-codex-overrides/beads/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.488603Z"
+    },
+    "boshu2/agentops:skills-codex/validate/SKILL.md": {
+      "repo": "boshu2/agentops",
+      "branch": "main",
+      "relative_path": "skills-codex/validate/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.523469Z"
+    },
+    "boshu2/agentops:skills/curate/SKILL.md": {
+      "repo": "boshu2/agentops",
+      "branch": "main",
+      "relative_path": "skills/curate/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.541719Z"
+    },
+    "boshu2/agentops:skills-codex-overrides/research/SKILL.md": {
+      "repo": "boshu2/agentops",
+      "branch": "main",
+      "relative_path": "skills-codex-overrides/research/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.566239Z"
+    },
+    "chiruu12/OSS-Skills:skills/oss-debug-ci/SKILL.md": {
+      "repo": "chiruu12/OSS-Skills",
+      "branch": "main",
+      "relative_path": "skills/oss-debug-ci/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.574310Z"
+    },
+    "boshu2/agentops:skills/validate/SKILL.md": {
+      "repo": "boshu2/agentops",
+      "branch": "main",
+      "relative_path": "skills/validate/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.581333Z"
+    },
+    "chiruu12/OSS-Skills:skills/oss-write-docs/SKILL.md": {
+      "repo": "chiruu12/OSS-Skills",
+      "branch": "main",
+      "relative_path": "skills/oss-write-docs/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.590425Z"
+    },
+    "OutlineDriven/odin-claude-plugin:skills/generate-my-taste/assets/template/SKILL.md": {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "branch": "main",
+      "relative_path": "skills/generate-my-taste/assets/template/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.597454Z"
+    },
+    "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance:plugins/csrd/skills/csrd/SKILL.md": {
+      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+      "branch": "main",
+      "relative_path": "plugins/csrd/skills/csrd/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.625364Z"
+    },
+    "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance:plugins/ear/skills/ear/SKILL.md": {
+      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+      "branch": "main",
+      "relative_path": "plugins/ear/skills/ear/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.649958Z"
+    },
+    "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance:plugins/itar/skills/itar/SKILL.md": {
+      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+      "branch": "main",
+      "relative_path": "plugins/itar/skills/itar/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.672305Z"
+    },
+    "chiruu12/OSS-Skills:skills/oss-review-prs/SKILL.md": {
+      "repo": "chiruu12/OSS-Skills",
+      "branch": "main",
+      "relative_path": "skills/oss-review-prs/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.682206Z"
+    },
+    "chiruu12/OSS-Skills:skills/oss-setup-dev-env/SKILL.md": {
+      "repo": "chiruu12/OSS-Skills",
+      "branch": "main",
+      "relative_path": "skills/oss-setup-dev-env/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.691161Z"
+    },
+    "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance:plugins/eu-ai-act/skills/eu-ai-act/SKILL.md": {
+      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+      "branch": "main",
+      "relative_path": "plugins/eu-ai-act/skills/eu-ai-act/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.714248Z"
+    },
+    "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance:plugins/lgpd/skills/lgpd/SKILL.md": {
+      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+      "branch": "main",
+      "relative_path": "plugins/lgpd/skills/lgpd/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.739141Z"
+    },
+    "chiruu12/OSS-Skills:skills/oss-evaluate-repo/SKILL.md": {
+      "repo": "chiruu12/OSS-Skills",
+      "branch": "main",
+      "relative_path": "skills/oss-evaluate-repo/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.752552Z"
+    },
+    "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance:plugins/nist-800-53/skills/nist-800-53/SKILL.md": {
+      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+      "branch": "main",
+      "relative_path": "plugins/nist-800-53/skills/nist-800-53/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.780526Z"
+    },
+    "aiskillstore/marketplace:skills/larksuite/lark-vc/SKILL.md": {
+      "repo": "aiskillstore/marketplace",
+      "branch": "main",
+      "relative_path": "skills/larksuite/lark-vc/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.794380Z"
+    },
+    "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance:plugins/cis-controls/skills/cis-controls/SKILL.md": {
+      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+      "branch": "main",
+      "relative_path": "plugins/cis-controls/skills/cis-controls/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.823634Z"
+    },
+    "chiruu12/OSS-Skills:skills/oss-second-contribution/SKILL.md": {
+      "repo": "chiruu12/OSS-Skills",
+      "branch": "main",
+      "relative_path": "skills/oss-second-contribution/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.837686Z"
+    },
+    "chiruu12/OSS-Skills:skills/oss-write-tests/SKILL.md": {
+      "repo": "chiruu12/OSS-Skills",
+      "branch": "main",
+      "relative_path": "skills/oss-write-tests/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.860571Z"
+    },
+    "agentkit-seo/agentkit-seo:.skills/agent-skill/agentkit-seo/SKILL.md": {
+      "repo": "agentkit-seo/agentkit-seo",
+      "branch": "main",
+      "relative_path": ".skills/agent-skill/agentkit-seo/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.869783Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/remove-workspace/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/remove-workspace/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.985908Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/resume-at/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/resume-at/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.993300Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/execute-phase/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/execute-phase/SKILL.md",
+      "updated_at": "2026-05-12T19:54:36.998063Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/validate-phase/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/validate-phase/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.008793Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/graphify/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/graphify/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.015243Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/mvp-phase/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/mvp-phase/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.048526Z"
+    },
+    "alexander-danilenko/cortex-ai-skills:skills/spec-mining/SKILL.md": {
+      "repo": "alexander-danilenko/cortex-ai-skills",
+      "branch": "main",
+      "relative_path": "skills/spec-mining/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.075315Z"
+    },
+    "aiskillstore/marketplace:skills/xixu-me/xget/SKILL.md": {
+      "repo": "aiskillstore/marketplace",
+      "branch": "main",
+      "relative_path": "skills/xixu-me/xget/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.094894Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/spec-phase/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/spec-phase/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.101427Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/thread/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/thread/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.119073Z"
+    },
+    "davepoon/buildwithclaude:plugins/claude-ops/skills/ops-go/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/claude-ops/skills/ops-go/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.131621Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/do/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/do/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.136939Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/scan/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/scan/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.142079Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/verify-work/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/verify-work/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.146712Z"
+    },
+    "bjwanneng/veriflow-cc:src/claude_skills/vf-rtl/SKILL.md": {
+      "repo": "bjwanneng/veriflow-cc",
+      "branch": "main",
+      "relative_path": "src/claude_skills/vf-rtl/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.178134Z"
+    },
+    "alexander-danilenko/cortex-ai-skills:skills/python/SKILL.md": {
+      "repo": "alexander-danilenko/cortex-ai-skills",
+      "branch": "main",
+      "relative_path": "skills/python/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.206632Z"
+    },
+    "agentkit-seo/agentkit-seo:.skills/agent-skill/agentkit-seo-cv-ats/SKILL.md": {
+      "repo": "agentkit-seo/agentkit-seo",
+      "branch": "main",
+      "relative_path": ".skills/agent-skill/agentkit-seo-cv-ats/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.217658Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/new-workspace/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/new-workspace/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.221195Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/ui-phase/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/ui-phase/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.224915Z"
+    },
+    "davepoon/buildwithclaude:plugins/claude-ops/skills/setup/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/claude-ops/skills/setup/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.300928Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/session-report/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/session-report/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.312514Z"
+    },
+    "agentkit-seo/agentkit-seo:.skills/agent-skill/agentkit-seo-github/SKILL.md": {
+      "repo": "agentkit-seo/agentkit-seo",
+      "branch": "main",
+      "relative_path": ".skills/agent-skill/agentkit-seo-github/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.324319Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/code-review/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/code-review/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.328189Z"
+    },
+    "davepoon/buildwithclaude:plugins/claude-ops/skills/ops/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/claude-ops/skills/ops/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.333059Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/progress/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/progress/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.336639Z"
+    },
+    "agentkit-seo/agentkit-seo:.skills/agent-skill/agentkit-seo-linkedin/SKILL.md": {
+      "repo": "agentkit-seo/agentkit-seo",
+      "branch": "main",
+      "relative_path": ".skills/agent-skill/agentkit-seo-linkedin/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.346551Z"
+    },
+    "alexander-danilenko/cortex-ai-skills:skills/javascript/SKILL.md": {
+      "repo": "alexander-danilenko/cortex-ai-skills",
+      "branch": "main",
+      "relative_path": "skills/javascript/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.373572Z"
+    },
+    "agentkit-seo/agentkit-seo:.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md": {
+      "repo": "agentkit-seo/agentkit-seo",
+      "branch": "main",
+      "relative_path": ".skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.383989Z"
+    },
+    "agentkit-seo/agentkit-seo:.skills/agent-skill/agentkit-seo-x-twitter/SKILL.md": {
+      "repo": "agentkit-seo/agentkit-seo",
+      "branch": "main",
+      "relative_path": ".skills/agent-skill/agentkit-seo-x-twitter/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.393369Z"
+    },
+    "agentkit-seo/agentkit-seo:.skills/agent-skill/agentkit-seo-web-portfolio/SKILL.md": {
+      "repo": "agentkit-seo/agentkit-seo",
+      "branch": "main",
+      "relative_path": ".skills/agent-skill/agentkit-seo-web-portfolio/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.435525Z"
+    },
+    "K-Dense-AI/scientific-agent-skills:scientific-skills/exa-search/SKILL.md": {
+      "repo": "K-Dense-AI/scientific-agent-skills",
+      "branch": "main",
+      "relative_path": "scientific-skills/exa-search/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.449071Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/discuss-phase/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/discuss-phase/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.453966Z"
+    },
+    "alexander-danilenko/cortex-ai-skills:skills/legacy-modernization/SKILL.md": {
+      "repo": "alexander-danilenko/cortex-ai-skills",
+      "branch": "main",
+      "relative_path": "skills/legacy-modernization/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.481173Z"
+    },
+    "alexander-danilenko/cortex-ai-skills:skills/typescript/SKILL.md": {
+      "repo": "alexander-danilenko/cortex-ai-skills",
+      "branch": "main",
+      "relative_path": "skills/typescript/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.513657Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/new-project/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/new-project/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.519261Z"
+    },
+    "davepoon/buildwithclaude:plugins/claude-ops/skills/ops-gtm/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/claude-ops/skills/ops-gtm/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.531462Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/reapply-patches/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/reapply-patches/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.540081Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/set-profile/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/set-profile/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.543201Z"
+    },
+    "alexander-danilenko/cortex-ai-skills:skills/dotnet-core/SKILL.md": {
+      "repo": "alexander-danilenko/cortex-ai-skills",
+      "branch": "main",
+      "relative_path": "skills/dotnet-core/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.573568Z"
+    },
+    "alexander-danilenko/cortex-ai-skills:skills/csharp/SKILL.md": {
+      "repo": "alexander-danilenko/cortex-ai-skills",
+      "branch": "main",
+      "relative_path": "skills/csharp/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.599640Z"
+    },
+    "athola/claude-night-market:plugins/gauntlet/skills/gauntlet-curate/SKILL.md": {
+      "repo": "athola/claude-night-market",
+      "branch": "master",
+      "relative_path": "plugins/gauntlet/skills/gauntlet-curate/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.607858Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/milestone-summary/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/milestone-summary/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.611651Z"
+    },
+    "davepoon/buildwithclaude:plugins/claude-ops/skills/ops-settings/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/claude-ops/skills/ops-settings/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.621605Z"
+    },
+    "athola/claude-night-market:plugins/pensive/skills/performance-review/SKILL.md": {
+      "repo": "athola/claude-night-market",
+      "branch": "master",
+      "relative_path": "plugins/pensive/skills/performance-review/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.628787Z"
+    },
+    "athola/claude-night-market:plugins/abstract/skills/hook-scope-guide/SKILL.md": {
+      "repo": "athola/claude-night-market",
+      "branch": "master",
+      "relative_path": "plugins/abstract/skills/hook-scope-guide/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.635114Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/extract_learnings/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/extract_learnings/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.638439Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/complete-milestone/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/complete-milestone/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.643458Z"
+    },
+    "athola/claude-night-market:plugins/sanctum/skills/stack-rebase/SKILL.md": {
+      "repo": "athola/claude-night-market",
+      "branch": "master",
+      "relative_path": "plugins/sanctum/skills/stack-rebase/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.649955Z"
+    },
+    "davepoon/buildwithclaude:plugins/all-skills/skills/coinpaprika-api/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/all-skills/skills/coinpaprika-api/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.654361Z"
+    },
+    "alexander-danilenko/cortex-ai-skills:skills/nestjs/SKILL.md": {
+      "repo": "alexander-danilenko/cortex-ai-skills",
+      "branch": "main",
+      "relative_path": "skills/nestjs/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.678970Z"
+    },
+    "davepoon/buildwithclaude:plugins/claude-ops/skills/ops-marketing/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/claude-ops/skills/ops-marketing/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.722285Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/help/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/help/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.725389Z"
+    },
+    "baidu-netdisk/bdpan-storage:skills/baidu-drive/SKILL.md": {
+      "repo": "baidu-netdisk/bdpan-storage",
+      "branch": "main",
+      "relative_path": "skills/baidu-drive/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.757500Z"
+    },
+    "OutlineDriven/odin-claude-plugin:skills/generate-my-taste/SKILL.md": {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "branch": "main",
+      "relative_path": "skills/generate-my-taste/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.780956Z"
+    },
+    "giuseppe-trisciuoglio/developer-kit:plugins/developer-kit-specs/skills/create-pr-from-spec/SKILL.md": {
+      "repo": "giuseppe-trisciuoglio/developer-kit",
+      "branch": "main",
+      "relative_path": "plugins/developer-kit-specs/skills/create-pr-from-spec/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.787379Z"
+    },
+    "giuseppe-trisciuoglio/developer-kit:plugins/developer-kit-core/skills/bug-fix-brief/SKILL.md": {
+      "repo": "giuseppe-trisciuoglio/developer-kit",
+      "branch": "main",
+      "relative_path": "plugins/developer-kit-core/skills/bug-fix-brief/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.791569Z"
+    },
+    "baidu-netdisk/bdpan-storage:skills/baidu-wenku-aippt-personal/SKILL.md": {
+      "repo": "baidu-netdisk/bdpan-storage",
+      "branch": "main",
+      "relative_path": "skills/baidu-wenku-aippt-personal/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.807630Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/fast/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/fast/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.810710Z"
+    },
+    "boshu2/agentops:skills-codex/system-tuning/SKILL.md": {
+      "repo": "boshu2/agentops",
+      "branch": "main",
+      "relative_path": "skills-codex/system-tuning/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.820442Z"
+    },
+    "gooseworks-ai/goose-skills:skills/capabilities/seo-analyzer/SKILL.md": {
+      "repo": "gooseworks-ai/goose-skills",
+      "branch": "main",
+      "relative_path": "skills/capabilities/seo-analyzer/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.828167Z"
+    },
+    "gooseworks-ai/goose-skills:skills/capabilities/web-search/SKILL.md": {
+      "repo": "gooseworks-ai/goose-skills",
+      "branch": "main",
+      "relative_path": "skills/capabilities/web-search/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.838992Z"
+    },
+    "gooseworks-ai/goose-skills:skills/capabilities/sales-prospecting/SKILL.md": {
+      "repo": "gooseworks-ai/goose-skills",
+      "branch": "main",
+      "relative_path": "skills/capabilities/sales-prospecting/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.844448Z"
+    },
+    "gooseworks-ai/goose-skills:skills/composites/goose-graphics-create-format/SKILL.md": {
+      "repo": "gooseworks-ai/goose-skills",
+      "branch": "main",
+      "relative_path": "skills/composites/goose-graphics-create-format/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.853365Z"
+    },
+    "boshu2/agentops:skills-codex/hooks-authoring/SKILL.md": {
+      "repo": "boshu2/agentops",
+      "branch": "main",
+      "relative_path": "skills-codex/hooks-authoring/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.858989Z"
+    },
+    "gooseworks-ai/goose-skills:skills/capabilities/company-domain-lookup-logodev/SKILL.md": {
+      "repo": "gooseworks-ai/goose-skills",
+      "branch": "main",
+      "relative_path": "skills/capabilities/company-domain-lookup-logodev/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.862273Z"
+    },
+    "boshu2/agentops:skills/hooks-authoring/SKILL.md": {
+      "repo": "boshu2/agentops",
+      "branch": "main",
+      "relative_path": "skills/hooks-authoring/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.869580Z"
+    },
+    "gooseworks-ai/goose-skills:skills/capabilities/ai-video-calls-tavus/SKILL.md": {
+      "repo": "gooseworks-ai/goose-skills",
+      "branch": "main",
+      "relative_path": "skills/capabilities/ai-video-calls-tavus/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.874182Z"
+    },
+    "gooseworks-ai/goose-skills:skills/composites/ad-lead-quality-analyzer/SKILL.md": {
+      "repo": "gooseworks-ai/goose-skills",
+      "branch": "main",
+      "relative_path": "skills/composites/ad-lead-quality-analyzer/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.897044Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/handoff/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/handoff/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.902405Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/fan-out/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/fan-out/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.906166Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/start/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/start/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.911987Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/jtbd-map/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/jtbd-map/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.915761Z"
+    },
+    "boshu2/agentops:skills-codex/skill-auditor/SKILL.md": {
+      "repo": "boshu2/agentops",
+      "branch": "main",
+      "relative_path": "skills-codex/skill-auditor/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.942432Z"
+    },
+    "gooseworks-ai/goose-skills:skills/composites/meta-ad-policy-checker/SKILL.md": {
+      "repo": "gooseworks-ai/goose-skills",
+      "branch": "main",
+      "relative_path": "skills/composites/meta-ad-policy-checker/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.951092Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/ping/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/ping/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.953868Z"
+    },
+    "gooseworks-ai/goose-skills:skills/capabilities/market-research/SKILL.md": {
+      "repo": "gooseworks-ai/goose-skills",
+      "branch": "main",
+      "relative_path": "skills/capabilities/market-research/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.958182Z"
+    },
+    "gooseworks-ai/goose-skills:skills/capabilities/setup-outreach-campaign-smartlead/SKILL.md": {
+      "repo": "gooseworks-ai/goose-skills",
+      "branch": "main",
+      "relative_path": "skills/capabilities/setup-outreach-campaign-smartlead/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.968577Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/setup/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/setup/SKILL.md",
+      "updated_at": "2026-05-12T19:54:37.976082Z"
+    },
+    "alexander-danilenko/cortex-ai-skills:skills/react/SKILL.md": {
+      "repo": "alexander-danilenko/cortex-ai-skills",
+      "branch": "main",
+      "relative_path": "skills/react/SKILL.md",
+      "updated_at": "2026-05-12T19:54:38.018645Z"
+    },
+    "boshu2/agentops:skills/skill-builder/SKILL.md": {
+      "repo": "boshu2/agentops",
+      "branch": "main",
+      "relative_path": "skills/skill-builder/SKILL.md",
+      "updated_at": "2026-05-12T19:54:38.035202Z"
+    },
+    "boshu2/agentops:skills/skill-auditor/SKILL.md": {
+      "repo": "boshu2/agentops",
+      "branch": "main",
+      "relative_path": "skills/skill-auditor/SKILL.md",
+      "updated_at": "2026-05-12T19:54:38.058480Z"
+    },
+    "boshu2/agentops:skills-codex/skill-builder/SKILL.md": {
+      "repo": "boshu2/agentops",
+      "branch": "main",
+      "relative_path": "skills-codex/skill-builder/SKILL.md",
+      "updated_at": "2026-05-12T19:54:38.073047Z"
+    },
+    "giuseppe-trisciuoglio/developer-kit:plugins/developer-kit-specs/skills/constitution/SKILL.md": {
+      "repo": "giuseppe-trisciuoglio/developer-kit",
+      "branch": "main",
+      "relative_path": "plugins/developer-kit-specs/skills/constitution/SKILL.md",
+      "updated_at": "2026-05-12T19:54:38.175656Z"
+    },
+    "chrisallenlane/claude-swe-workflows:skills/pre-compact/SKILL.md": {
+      "repo": "chrisallenlane/claude-swe-workflows",
+      "branch": "master",
+      "relative_path": "skills/pre-compact/SKILL.md",
+      "updated_at": "2026-05-12T19:54:38.309167Z"
+    },
+    "alexander-danilenko/cortex-ai-skills:skills/documentation/SKILL.md": {
+      "repo": "alexander-danilenko/cortex-ai-skills",
+      "branch": "main",
+      "relative_path": "skills/documentation/SKILL.md",
+      "updated_at": "2026-05-12T19:54:38.369310Z"
+    },
+    "boshu2/agentops:skills/domain/SKILL.md": {
+      "repo": "boshu2/agentops",
+      "branch": "main",
+      "relative_path": "skills/domain/SKILL.md",
+      "updated_at": "2026-05-12T19:54:38.426316Z"
+    },
+    "getaero-io/gtm-eng-skills:skills/deepline-sdk/SKILL.md": {
+      "repo": "getaero-io/gtm-eng-skills",
+      "branch": "main",
+      "relative_path": "skills/deepline-sdk/SKILL.md",
+      "updated_at": "2026-05-12T19:54:38.440162Z"
+    },
+    "chrisallenlane/claude-swe-workflows:skills/tidy-git/SKILL.md": {
+      "repo": "chrisallenlane/claude-swe-workflows",
+      "branch": "master",
+      "relative_path": "skills/tidy-git/SKILL.md",
+      "updated_at": "2026-05-12T19:54:38.620050Z"
+    },
+    "boshu2/agentops:skills-codex/domain/SKILL.md": {
+      "repo": "boshu2/agentops",
+      "branch": "main",
+      "relative_path": "skills-codex/domain/SKILL.md",
+      "updated_at": "2026-05-12T19:54:38.637227Z"
+    },
+    "chrisallenlane/claude-swe-workflows:skills/tidy-docs/SKILL.md": {
+      "repo": "chrisallenlane/claude-swe-workflows",
+      "branch": "master",
+      "relative_path": "skills/tidy-docs/SKILL.md",
+      "updated_at": "2026-05-12T19:54:38.642485Z"
+    },
+    "alexander-danilenko/cortex-ai-skills:skills/testing/SKILL.md": {
+      "repo": "alexander-danilenko/cortex-ai-skills",
+      "branch": "main",
+      "relative_path": "skills/testing/SKILL.md",
+      "updated_at": "2026-05-12T19:54:39.152859Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/migrate-from-legacy/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/migrate-from-legacy/SKILL.md",
+      "updated_at": "2026-05-12T19:54:47.905505Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/user-interview/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/user-interview/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.011133Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/preflight/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/preflight/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.015507Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/ice-score/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/ice-score/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.021357Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/devils-advocate/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/devils-advocate/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.026305Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/reflexion/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/reflexion/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.030989Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/framework-health/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/framework-health/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.037404Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/dora-check/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/dora-check/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.045389Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/canvas-health/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/canvas-health/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.052575Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/bias-check/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/bias-check/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.057215Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/service-check/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/service-check/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.061534Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/launch-tier/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/launch-tier/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.068811Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/a11y-check/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/a11y-check/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.073078Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/xai-check/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/xai-check/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.081176Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/metrics-pull/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/metrics-pull/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.087969Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-webex/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-webex/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.091657Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/usability-check/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/usability-check/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.096570Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/wardley-map/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/wardley-map/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.100346Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-gchat/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-gchat/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.103940Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/prompt-optimizer/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/prompt-optimizer/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.107148Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/debug/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/debug/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.116018Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/canvas-sync/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/canvas-sync/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.118972Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/bvssh-check/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/bvssh-check/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.123572Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/log-evidence/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/log-evidence/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.128984Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/delivery-bootstrap/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/delivery-bootstrap/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.133345Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/privacy-check/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/privacy-check/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.137127Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/metrics-detect/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/metrics-detect/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.141274Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/diamond-progress/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/diamond-progress/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.154793Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/interview/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/interview/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.170700Z"
+    },
+    "mxyhi/ok-skills:karpathy-guidelines/SKILL.md": {
+      "repo": "mxyhi/ok-skills",
+      "branch": "main",
+      "relative_path": "karpathy-guidelines/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.174323Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/canvas-update/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/canvas-update/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.178503Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/feedback-review/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/feedback-review/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.183467Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/threat-model/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/threat-model/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.188418Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/team-shape/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/team-shape/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.193633Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/gist-plan/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/gist-plan/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.197806Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/diamond-assess/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/diamond-assess/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.204754Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/customize/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/customize/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.209177Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-codex/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-codex/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.221480Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/user-needs-map/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/user-needs-map/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.226490Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/cynefin-classify/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/cynefin-classify/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.238752Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-emacs/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-emacs/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.246090Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-mnemon/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-mnemon/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.252175Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/retrospective/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/retrospective/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.260308Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/ost-builder/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/ost-builder/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.265864Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-resend/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-resend/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.269836Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/regulatory-review/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/regulatory-review/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.274199Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/security-review/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/security-review/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.279504Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/setup/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/setup/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.282131Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-github/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-github/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.287184Z"
+    },
+    "nanocoai/nanoclaw:container/skills/welcome/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": "container/skills/welcome/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.292756Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-discord/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-discord/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.296628Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/eval-runner/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/eval-runner/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.300820Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-linear/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-linear/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.306335Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-teams/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-teams/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.311982Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/assumption-test/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/assumption-test/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.319244Z"
+    },
+    "nWave-ai/nWave:nWave/skills/nw-diverge/SKILL.md": {
+      "repo": "nWave-ai/nWave",
+      "branch": "main",
+      "relative_path": "nWave/skills/nw-diverge/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.325818Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-vercel/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-vercel/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.330346Z"
+    },
+    "microsoft/power-platform-skills:plugins/canvas-apps/skills/canvas-app/SKILL.md": {
+      "repo": "microsoft/power-platform-skills",
+      "branch": "main",
+      "relative_path": "plugins/canvas-apps/skills/canvas-app/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.340862Z"
+    },
+    "huangjia2019/claude-code-engineering:10-Plugins/projects/03-team-toolkit/skills/react-patterns/SKILL.md": {
+      "repo": "huangjia2019/claude-code-engineering",
+      "branch": "main",
+      "relative_path": "10-Plugins/projects/03-team-toolkit/skills/react-patterns/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.343590Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-signal/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-signal/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.351985Z"
+    },
+    "mxyhi/ok-skills:grill-with-docs/SKILL.md": {
+      "repo": "mxyhi/ok-skills",
+      "branch": "main",
+      "relative_path": "grill-with-docs/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.355975Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/corrections-audit/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/corrections-audit/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.364561Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/definition-of-done/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/definition-of-done/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.371756Z"
+    },
+    "mxyhi/ok-skills:grill-me/SKILL.md": {
+      "repo": "mxyhi/ok-skills",
+      "branch": "main",
+      "relative_path": "grill-me/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.375073Z"
+    },
+    "haabe/mycelium:plugins/mycelium/skills/mocked-persona-interview/SKILL.md": {
+      "repo": "haabe/mycelium",
+      "branch": "main",
+      "relative_path": "plugins/mycelium/skills/mocked-persona-interview/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.389808Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/claw/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/claw/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.398409Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-slack/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-slack/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.429062Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-matrix/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-matrix/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.441146Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/init-onecli/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/init-onecli/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.455653Z"
+    },
+    "mxyhi/ok-skills:diagnose/SKILL.md": {
+      "repo": "mxyhi/ok-skills",
+      "branch": "main",
+      "relative_path": "diagnose/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.553791Z"
+    },
+    "jeecgboot/skills:jeecg-dev/SKILL.md": {
+      "repo": "jeecgboot/skills",
+      "branch": "main",
+      "relative_path": "jeecg-dev/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.559311Z"
+    },
+    "nexscope-ai/eCommerce-Skills:etsy-advertising/SKILL.md": {
+      "repo": "nexscope-ai/eCommerce-Skills",
+      "branch": "main",
+      "relative_path": "etsy-advertising/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.563596Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/manage-mounts/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/manage-mounts/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.566647Z"
+    },
+    "nanocoai/nanoclaw:container/skills/self-customize/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": "container/skills/self-customize/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.572199Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-ollama-tool/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-ollama-tool/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.577952Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-ollama-provider/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-ollama-provider/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.583518Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/convert-to-apple-container/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/convert-to-apple-container/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.589288Z"
+    },
+    "nanocoai/nanoclaw:container/skills/vercel-cli/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": "container/skills/vercel-cli/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.594989Z"
+    },
+    "jabrena/cursor-rules-java:skills/515-frameworks-micronaut-mongodb/SKILL.md": {
+      "repo": "jabrena/cursor-rules-java",
+      "branch": "main",
+      "relative_path": "skills/515-frameworks-micronaut-mongodb/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.607584Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-deltachat/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-deltachat/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.614636Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-imessage/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-imessage/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.618495Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-gcal-tool/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-gcal-tool/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.624982Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-macos-statusbar/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-macos-statusbar/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.628968Z"
+    },
+    "nanocoai/nanoclaw:container/skills/agent-browser/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": "container/skills/agent-browser/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.633712Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/update-nanoclaw/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/update-nanoclaw/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.642278Z"
+    },
+    "nanocoai/nanoclaw:container/skills/slack-formatting/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": "container/skills/slack-formatting/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.645883Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/manage-channels/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/manage-channels/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.651613Z"
+    },
+    "nanocoai/nanoclaw:container/skills/onecli-gateway/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": "container/skills/onecli-gateway/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.656008Z"
+    },
+    "nanocoai/nanoclaw:container/skills/frontend-engineer/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": "container/skills/frontend-engineer/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.661614Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-whatsapp/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-whatsapp/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.668481Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-karpathy-llm-wiki/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-karpathy-llm-wiki/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.672938Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-gmail-tool/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-gmail-tool/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.681403Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-vercel/container-skills/vercel-cli/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-vercel/container-skills/vercel-cli/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.685671Z"
+    },
+    "joaquimscosta/arkhe-claude-plugins:plugins/devtools/skills/tilt-setup/SKILL.md": {
+      "repo": "joaquimscosta/arkhe-claude-plugins",
+      "branch": "main",
+      "relative_path": "plugins/devtools/skills/tilt-setup/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.702836Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/qodo-pr-resolver/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/qodo-pr-resolver/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.713642Z"
+    },
+    "nowork-studio/toprank:gemini/SKILL.md": {
+      "repo": "nowork-studio/toprank",
+      "branch": "main",
+      "relative_path": "gemini/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.726127Z"
+    },
+    "nexscope-ai/eCommerce-Skills:etsy-digital-products/SKILL.md": {
+      "repo": "nexscope-ai/eCommerce-Skills",
+      "branch": "main",
+      "relative_path": "etsy-digital-products/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.729443Z"
+    },
+    "jabrena/cursor-rules-java:skills/414-frameworks-quarkus-kafka/SKILL.md": {
+      "repo": "jabrena/cursor-rules-java",
+      "branch": "main",
+      "relative_path": "skills/414-frameworks-quarkus-kafka/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.742135Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-telegram/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-telegram/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.746632Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-dashboard/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-dashboard/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.750854Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/init-first-agent/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/init-first-agent/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.756992Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-atomic-chat-tool/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-atomic-chat-tool/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.763303Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/migrate-nanoclaw/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/migrate-nanoclaw/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.776130Z"
+    },
+    "nexscope-ai/eCommerce-Skills:etsy-pricing-strategy/SKILL.md": {
+      "repo": "nexscope-ai/eCommerce-Skills",
+      "branch": "main",
+      "relative_path": "etsy-pricing-strategy/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.779444Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/update-skills/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/update-skills/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.784476Z"
+    },
+    "leejpsd/typescript-react-patterns:SKILL.md": {
+      "repo": "leejpsd/typescript-react-patterns",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.793866Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/migrate-from-v1/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/migrate-from-v1/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.801985Z"
+    },
+    "jabrena/cursor-rules-java:skills/183-observability-tracing-opentelemetry/SKILL.md": {
+      "repo": "jabrena/cursor-rules-java",
+      "branch": "main",
+      "relative_path": "skills/183-observability-tracing-opentelemetry/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.812443Z"
+    },
+    "jabrena/cursor-rules-java:skills/415-frameworks-quarkus-mongodb/SKILL.md": {
+      "repo": "jabrena/cursor-rules-java",
+      "branch": "main",
+      "relative_path": "skills/415-frameworks-quarkus-mongodb/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.824032Z"
+    },
+    "oribarilan/97:skills/using-97/SKILL.md": {
+      "repo": "oribarilan/97",
+      "branch": "main",
+      "relative_path": "skills/using-97/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.829498Z"
+    },
+    "oribarilan/97:skills/clean-code/SKILL.md": {
+      "repo": "oribarilan/97",
+      "branch": "main",
+      "relative_path": "skills/clean-code/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.836467Z"
+    },
+    "oribarilan/97:skills/build-deploy-and-tooling/SKILL.md": {
+      "repo": "oribarilan/97",
+      "branch": "main",
+      "relative_path": "skills/build-deploy-and-tooling/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.846413Z"
+    },
+    "oribarilan/97:skills/testing-discipline/SKILL.md": {
+      "repo": "oribarilan/97",
+      "branch": "main",
+      "relative_path": "skills/testing-discipline/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.852475Z"
+    },
+    "jabrena/cursor-rules-java:skills/514-frameworks-micronaut-kafka/SKILL.md": {
+      "repo": "jabrena/cursor-rules-java",
+      "branch": "main",
+      "relative_path": "skills/514-frameworks-micronaut-kafka/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.862467Z"
+    },
+    "nowork-studio/toprank:toprank-upgrade-skill/SKILL.md": {
+      "repo": "nowork-studio/toprank",
+      "branch": "main",
+      "relative_path": "toprank-upgrade-skill/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.868274Z"
+    },
+    "oribarilan/97:skills/working-with-users-and-team/SKILL.md": {
+      "repo": "oribarilan/97",
+      "branch": "main",
+      "relative_path": "skills/working-with-users-and-team/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.873282Z"
+    },
+    "nowork-studio/toprank:seo/setup-cms/SKILL.md": {
+      "repo": "nowork-studio/toprank",
+      "branch": "main",
+      "relative_path": "seo/setup-cms/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.881094Z"
+    },
+    "oribarilan/97:skills/api-design/SKILL.md": {
+      "repo": "oribarilan/97",
+      "branch": "main",
+      "relative_path": "skills/api-design/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.889730Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-whatsapp-cloud/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-whatsapp-cloud/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.893908Z"
+    },
+    "oribarilan/97:skills/domain-modeling/SKILL.md": {
+      "repo": "oribarilan/97",
+      "branch": "main",
+      "relative_path": "skills/domain-modeling/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.906617Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-opencode/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-opencode/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.914527Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/use-native-credential-proxy/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/use-native-credential-proxy/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.920862Z"
+    },
+    "jabrena/cursor-rules-java:skills/314-frameworks-spring-kafka/SKILL.md": {
+      "repo": "jabrena/cursor-rules-java",
+      "branch": "main",
+      "relative_path": "skills/314-frameworks-spring-kafka/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.935483Z"
+    },
+    "jabrena/cursor-rules-java:skills/182-java-observability-metrics-micrometer/SKILL.md": {
+      "repo": "jabrena/cursor-rules-java",
+      "branch": "main",
+      "relative_path": "skills/182-java-observability-metrics-micrometer/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.946141Z"
+    },
+    "oribarilan/97:skills/before-you-refactor/SKILL.md": {
+      "repo": "oribarilan/97",
+      "branch": "main",
+      "relative_path": "skills/before-you-refactor/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.953052Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/add-wechat/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/add-wechat/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.961539Z"
+    },
+    "jabrena/cursor-rules-java:skills/315-frameworks-spring-mongodb/SKILL.md": {
+      "repo": "jabrena/cursor-rules-java",
+      "branch": "main",
+      "relative_path": "skills/315-frameworks-spring-mongodb/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.973806Z"
+    },
+    "jabrena/cursor-rules-java:skills/181-java-observability-logging/SKILL.md": {
+      "repo": "jabrena/cursor-rules-java",
+      "branch": "main",
+      "relative_path": "skills/181-java-observability-logging/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.979600Z"
+    },
+    "oribarilan/97:skills/observability/SKILL.md": {
+      "repo": "oribarilan/97",
+      "branch": "main",
+      "relative_path": "skills/observability/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.986441Z"
+    },
+    "posit-dev/skills:posit-dev/working-on/SKILL.md": {
+      "repo": "posit-dev/skills",
+      "branch": "main",
+      "relative_path": "posit-dev/working-on/SKILL.md",
+      "updated_at": "2026-05-12T19:54:48.992320Z"
+    },
+    "oribarilan/97:skills/correctness-traps/SKILL.md": {
+      "repo": "oribarilan/97",
+      "branch": "main",
+      "relative_path": "skills/correctness-traps/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.002251Z"
+    },
+    "redhat-community-ai-tools/claude-code-setup-evaluator:skills/writing-plans/SKILL.md": {
+      "repo": "redhat-community-ai-tools/claude-code-setup-evaluator",
+      "branch": "main",
+      "relative_path": "skills/writing-plans/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.015676Z"
+    },
+    "redhat-community-ai-tools/claude-code-setup-evaluator:skills/brainstorming/SKILL.md": {
+      "repo": "redhat-community-ai-tools/claude-code-setup-evaluator",
+      "branch": "main",
+      "relative_path": "skills/brainstorming/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.033422Z"
+    },
+    "redhat-community-ai-tools/claude-code-setup-evaluator:skills/verification-loop/SKILL.md": {
+      "repo": "redhat-community-ai-tools/claude-code-setup-evaluator",
+      "branch": "main",
+      "relative_path": "skills/verification-loop/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.071881Z"
+    },
+    "redhat-community-ai-tools/claude-code-setup-evaluator:skills/security-check/SKILL.md": {
+      "repo": "redhat-community-ai-tools/claude-code-setup-evaluator",
+      "branch": "main",
+      "relative_path": "skills/security-check/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.078164Z"
+    },
+    "redhat-community-ai-tools/claude-code-setup-evaluator:skills/clean-code-guide/SKILL.md": {
+      "repo": "redhat-community-ai-tools/claude-code-setup-evaluator",
+      "branch": "main",
+      "relative_path": "skills/clean-code-guide/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.107736Z"
+    },
+    "redhat-community-ai-tools/claude-code-setup-evaluator:skills/systematic-debugging/SKILL.md": {
+      "repo": "redhat-community-ai-tools/claude-code-setup-evaluator",
+      "branch": "main",
+      "relative_path": "skills/systematic-debugging/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.127109Z"
+    },
+    "redhat-community-ai-tools/claude-code-setup-evaluator:skills/python-conventions/SKILL.md": {
+      "repo": "redhat-community-ai-tools/claude-code-setup-evaluator",
+      "branch": "main",
+      "relative_path": "skills/python-conventions/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.132589Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/migrate-brizy-to-gutenberg/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/migrate-brizy-to-gutenberg/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.145221Z"
+    },
+    "redhat-community-ai-tools/claude-code-setup-evaluator:skills/data-pipeline-patterns/SKILL.md": {
+      "repo": "redhat-community-ai-tools/claude-code-setup-evaluator",
+      "branch": "main",
+      "relative_path": "skills/data-pipeline-patterns/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.150626Z"
+    },
+    "redhat-community-ai-tools/claude-code-setup-evaluator:skills/refactoring-patterns/SKILL.md": {
+      "repo": "redhat-community-ai-tools/claude-code-setup-evaluator",
+      "branch": "main",
+      "relative_path": "skills/refactoring-patterns/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.154593Z"
+    },
+    "redhat-community-ai-tools/claude-code-setup-evaluator:tests/test_evaluate_setup/fixtures/bad-skill/SKILL.md": {
+      "repo": "redhat-community-ai-tools/claude-code-setup-evaluator",
+      "branch": "main",
+      "relative_path": "tests/test_evaluate_setup/fixtures/bad-skill/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.156818Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/content-portability/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/content-portability/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.171418Z"
+    },
+    "nowork-studio/toprank:seo/seo-page/SKILL.md": {
+      "repo": "nowork-studio/toprank",
+      "branch": "main",
+      "relative_path": "seo/seo-page/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.190350Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/migrate-divi-to-breakdance/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/migrate-divi-to-breakdance/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.200594Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/respira-setup-assistant/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/respira-setup-assistant/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.209841Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/internal-link-builder/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/internal-link-builder/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.217737Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/migrate-wpbakery-to-bricks/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/migrate-wpbakery-to-bricks/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.232184Z"
+    },
+    "ruvnet/ruflo:.agents/skills/v3-ddd-architecture/SKILL.md": {
+      "repo": "ruvnet/ruflo",
+      "branch": "main",
+      "relative_path": ".agents/skills/v3-ddd-architecture/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.240247Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/site-onboarding/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/site-onboarding/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.246934Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/migrate-elementor-to-oxygen/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/migrate-elementor-to-oxygen/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.255612Z"
+    },
+    "ruvnet/ruflo:plugins/ruflo-core/skills/witness/SKILL.md": {
+      "repo": "ruvnet/ruflo",
+      "branch": "main",
+      "relative_path": "plugins/ruflo-core/skills/witness/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.262837Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/migrate-divi-to-gutenberg/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/migrate-divi-to-gutenberg/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.272680Z"
+    },
+    "ruvnet/ruflo:plugins/ruflo-adr/skills/adr-verify/SKILL.md": {
+      "repo": "ruvnet/ruflo",
+      "branch": "main",
+      "relative_path": "plugins/ruflo-adr/skills/adr-verify/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.276774Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/migrate-visual-composer-to-gutenberg/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/migrate-visual-composer-to-gutenberg/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.285568Z"
+    },
+    "ruvnet/ruflo:.claude/skills/browser/SKILL.md": {
+      "repo": "ruvnet/ruflo",
+      "branch": "main",
+      "relative_path": ".claude/skills/browser/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.291093Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/migrate-thrive-architect-to-gutenberg/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/migrate-thrive-architect-to-gutenberg/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.299463Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/migrate-divi-to-bricks/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/migrate-divi-to-bricks/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.309071Z"
+    },
+    "redhat-community-ai-tools/claude-code-setup-evaluator:tests/test_evaluate_setup/fixtures/good-skill/SKILL.md": {
+      "repo": "redhat-community-ai-tools/claude-code-setup-evaluator",
+      "branch": "main",
+      "relative_path": "tests/test_evaluate_setup/fixtures/good-skill/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.312262Z"
+    },
+    "nowork-studio/toprank:google-ads/copy/SKILL.md": {
+      "repo": "nowork-studio/toprank",
+      "branch": "main",
+      "relative_path": "google-ads/copy/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.323951Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/migrate-oxygen-to-bricks/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/migrate-oxygen-to-bricks/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.332309Z"
+    },
+    "ruvnet/ruflo:plugins/ruflo-sparc/skills/sparc-spec/SKILL.md": {
+      "repo": "ruvnet/ruflo",
+      "branch": "main",
+      "relative_path": "plugins/ruflo-sparc/skills/sparc-spec/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.336986Z"
+    },
+    "nowork-studio/toprank:google-ads/landing/SKILL.md": {
+      "repo": "nowork-studio/toprank",
+      "branch": "main",
+      "relative_path": "google-ads/landing/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.349043Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/migrate-beaver-builder-to-gutenberg/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/migrate-beaver-builder-to-gutenberg/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.357235Z"
+    },
+    "redhat-community-ai-tools/claude-code-setup-evaluator:tests/test_evaluate_setup/fixtures/security-skill/SKILL.md": {
+      "repo": "redhat-community-ai-tools/claude-code-setup-evaluator",
+      "branch": "main",
+      "relative_path": "tests/test_evaluate_setup/fixtures/security-skill/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.359815Z"
+    },
+    "scdenney/open-science-skills:plugin/skills/fair-check/SKILL.md": {
+      "repo": "scdenney/open-science-skills",
+      "branch": "main",
+      "relative_path": "plugin/skills/fair-check/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.372071Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/migrate-elementor-to-bricks/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/migrate-elementor-to-bricks/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.380917Z"
+    },
+    "nowork-studio/toprank:seo/content-writer/SKILL.md": {
+      "repo": "nowork-studio/toprank",
+      "branch": "main",
+      "relative_path": "seo/content-writer/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.392052Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/migrate-elementor-to-gutenberg/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/migrate-elementor-to-gutenberg/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.401949Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/migrate-elementor-to-breakdance/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/migrate-elementor-to-breakdance/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.411312Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/migrate-wpbakery-to-gutenberg/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/migrate-wpbakery-to-gutenberg/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.421743Z"
+    },
+    "ruvnet/ruflo:plugins/ruflo-agent/skills/wasm-agent/SKILL.md": {
+      "repo": "ruvnet/ruflo",
+      "branch": "main",
+      "relative_path": "plugins/ruflo-agent/skills/wasm-agent/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.426841Z"
+    },
+    "nowork-studio/toprank:seo/broken-link-checker/SKILL.md": {
+      "repo": "nowork-studio/toprank",
+      "branch": "main",
+      "relative_path": "seo/broken-link-checker/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.433354Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/migrate-oxygen-to-breakdance/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/migrate-oxygen-to-breakdance/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.446420Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/migrate-beaver-builder-to-bricks/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/migrate-beaver-builder-to-bricks/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.454555Z"
+    },
+    "nowork-studio/toprank:seo/geo-optimizer/SKILL.md": {
+      "repo": "nowork-studio/toprank",
+      "branch": "main",
+      "relative_path": "seo/geo-optimizer/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.471452Z"
+    },
+    "scdenney/open-science-skills:plugin/skills/conjoint-diagnostics/SKILL.md": {
+      "repo": "scdenney/open-science-skills",
+      "branch": "main",
+      "relative_path": "plugin/skills/conjoint-diagnostics/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.482260Z"
+    },
+    "secondsky/claude-skills:plugins/verification-before-completion/skills/verification-before-completion/SKILL.md": {
+      "repo": "secondsky/claude-skills",
+      "branch": "main",
+      "relative_path": "plugins/verification-before-completion/skills/verification-before-completion/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.488226Z"
+    },
+    "scdenney/open-science-skills:plugin/skills/methods-reporting/SKILL.md": {
+      "repo": "scdenney/open-science-skills",
+      "branch": "main",
+      "relative_path": "plugin/skills/methods-reporting/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.499013Z"
+    },
+    "scdenney/open-science-skills:plugin/skills/figure-table-audit/SKILL.md": {
+      "repo": "scdenney/open-science-skills",
+      "branch": "main",
+      "relative_path": "plugin/skills/figure-table-audit/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.504252Z"
+    },
+    "ruvnet/ruflo:plugins/ruflo-agent/skills/managed-agent/SKILL.md": {
+      "repo": "ruvnet/ruflo",
+      "branch": "main",
+      "relative_path": "plugins/ruflo-agent/skills/managed-agent/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.509346Z"
+    },
+    "scdenney/open-science-skills:plugin/skills/list-experiment/SKILL.md": {
+      "repo": "scdenney/open-science-skills",
+      "branch": "main",
+      "relative_path": "plugin/skills/list-experiment/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.520450Z"
+    },
+    "sequenzia/agent-alchemy:ported/20260310/all/skills/codebase-analysis/SKILL.md": {
+      "repo": "sequenzia/agent-alchemy",
+      "branch": "main",
+      "relative_path": "ported/20260310/all/skills/codebase-analysis/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.534243Z"
+    },
+    "jabrena/cursor-rules-java:skills/145-java-refactoring-high-performance/SKILL.md": {
+      "repo": "jabrena/cursor-rules-java",
+      "branch": "main",
+      "relative_path": "skills/145-java-refactoring-high-performance/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.564649Z"
+    },
+    "scdenney/open-science-skills:plugin/skills/citation-check/SKILL.md": {
+      "repo": "scdenney/open-science-skills",
+      "branch": "main",
+      "relative_path": "plugin/skills/citation-check/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.587750Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/migrate-from-openclaw/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/migrate-from-openclaw/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.618787Z"
+    },
+    "scdenney/open-science-skills:plugin/skills/journal-review/SKILL.md": {
+      "repo": "scdenney/open-science-skills",
+      "branch": "main",
+      "relative_path": "plugin/skills/journal-review/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.637674Z"
+    },
+    "scdenney/open-science-skills:plugin/skills/conjoint-cleaning/SKILL.md": {
+      "repo": "scdenney/open-science-skills",
+      "branch": "main",
+      "relative_path": "plugin/skills/conjoint-cleaning/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.648209Z"
+    },
+    "sequenzia/agent-alchemy:ported/20260310/all/skills-flat/architecture-patterns/SKILL.md": {
+      "repo": "sequenzia/agent-alchemy",
+      "branch": "main",
+      "relative_path": "ported/20260310/all/skills-flat/architecture-patterns/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.658437Z"
+    },
+    "sequenzia/agent-alchemy:ported/20260310/all/skills/project-learnings/SKILL.md": {
+      "repo": "sequenzia/agent-alchemy",
+      "branch": "main",
+      "relative_path": "ported/20260310/all/skills/project-learnings/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.668735Z"
+    },
+    "oliver-kriska/claude-elixir-phoenix:plugins/elixir-phoenix/skills/mix-compression/SKILL.md": {
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "branch": "main",
+      "relative_path": "plugins/elixir-phoenix/skills/mix-compression/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.680672Z"
+    },
+    "sequenzia/agent-alchemy:ported/20260310/all/skills/changelog-format/SKILL.md": {
+      "repo": "sequenzia/agent-alchemy",
+      "branch": "main",
+      "relative_path": "ported/20260310/all/skills/changelog-format/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.703491Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/incident-runbook-templates/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/incident-runbook-templates/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.711999Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/azure-containerregistry-py/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/azure-containerregistry-py/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.717630Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/mobile-experience-report/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/mobile-experience-report/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.722626Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/shopify-automation/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/shopify-automation/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.728133Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/azure-monitor-ingestion-java/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/azure-monitor-ingestion-java/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.737806Z"
+    },
+    "sequenzia/agent-alchemy:ported/20260305-191444/skills/changelog-format/SKILL.md": {
+      "repo": "sequenzia/agent-alchemy",
+      "branch": "main",
+      "relative_path": "ported/20260305-191444/skills/changelog-format/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.747971Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/azure-ai-transcription-py/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/azure-ai-transcription-py/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.752177Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/woocommerce-health-check/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/woocommerce-health-check/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.758106Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/startup-business-analyst-financial-projections/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/startup-business-analyst-financial-projections/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.768802Z"
+    },
+    "thedotmack/claude-mem:plugin/skills/babysit/SKILL.md": {
+      "repo": "thedotmack/claude-mem",
+      "branch": "main",
+      "relative_path": "plugin/skills/babysit/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.773148Z"
+    },
+    "secondsky/claude-skills:plugins/microservices-patterns/skills/microservices-patterns/SKILL.md": {
+      "repo": "secondsky/claude-skills",
+      "branch": "main",
+      "relative_path": "plugins/microservices-patterns/skills/microservices-patterns/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.780650Z"
+    },
+    "nowork-studio/toprank:seo/meta-tags-optimizer/SKILL.md": {
+      "repo": "nowork-studio/toprank",
+      "branch": "main",
+      "relative_path": "seo/meta-tags-optimizer/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.799668Z"
+    },
+    "thoughtbot/rails-consultant:skills/socratic-review/SKILL.md": {
+      "repo": "thoughtbot/rails-consultant",
+      "branch": "main",
+      "relative_path": "skills/socratic-review/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.808362Z"
+    },
+    "thoughtbot/rails-consultant:skills/prior-art/SKILL.md": {
+      "repo": "thoughtbot/rails-consultant",
+      "branch": "main",
+      "relative_path": "skills/prior-art/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.812823Z"
+    },
+    "thoughtbot/rails-consultant:skills/challenge/SKILL.md": {
+      "repo": "thoughtbot/rails-consultant",
+      "branch": "main",
+      "relative_path": "skills/challenge/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.818141Z"
+    },
+    "thoughtbot/rails-consultant:skills/offboard/SKILL.md": {
+      "repo": "thoughtbot/rails-consultant",
+      "branch": "main",
+      "relative_path": "skills/offboard/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.823166Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/stitch-design-taste/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/stitch-design-taste/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.832566Z"
+    },
+    "thoughtbot/rails-consultant:skills/standup/SKILL.md": {
+      "repo": "thoughtbot/rails-consultant",
+      "branch": "main",
+      "relative_path": "skills/standup/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.838378Z"
+    },
+    "thoughtbot/rails-consultant:skills/hard-news/SKILL.md": {
+      "repo": "thoughtbot/rails-consultant",
+      "branch": "main",
+      "relative_path": "skills/hard-news/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.842722Z"
+    },
+    "sequenzia/agent-alchemy:ported/20260310/all/skills-flat/docs-writer/SKILL.md": {
+      "repo": "sequenzia/agent-alchemy",
+      "branch": "main",
+      "relative_path": "ported/20260310/all/skills-flat/docs-writer/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.849699Z"
+    },
+    "thoughtbot/rails-consultant:skills/rubber-duck/SKILL.md": {
+      "repo": "thoughtbot/rails-consultant",
+      "branch": "main",
+      "relative_path": "skills/rubber-duck/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.854155Z"
+    },
+    "thedotmack/claude-mem:plugin/skills/wowerpoint/SKILL.md": {
+      "repo": "thedotmack/claude-mem",
+      "branch": "main",
+      "relative_path": "plugin/skills/wowerpoint/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.860625Z"
+    },
+    "nowork-studio/toprank:meta-ads/audit/SKILL.md": {
+      "repo": "nowork-studio/toprank",
+      "branch": "main",
+      "relative_path": "meta-ads/audit/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.880161Z"
+    },
+    "thoughtbot/rails-consultant:skills/explain/SKILL.md": {
+      "repo": "thoughtbot/rails-consultant",
+      "branch": "main",
+      "relative_path": "skills/explain/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.885078Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/mise-configurator/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/mise-configurator/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.890204Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/get-qodo-rules/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/get-qodo-rules/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.898799Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/indexing-issue-auditor/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/indexing-issue-auditor/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.904774Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/hugging-face-gradio/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/hugging-face-gradio/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.918453Z"
+    },
+    "tobihagemann/turbo:codex/skills/audit/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/audit/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.924179Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/technical-debt-audit/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/technical-debt-audit/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.931390Z"
+    },
+    "rohitg00/pro-workflow:skills/llm-council/SKILL.md": {
+      "repo": "rohitg00/pro-workflow",
+      "branch": "main",
+      "relative_path": "skills/llm-council/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.941118Z"
+    },
+    "tobihagemann/turbo:codex/skills/draft-plan/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/draft-plan/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.965132Z"
+    },
+    "nowork-studio/toprank:google-ads/audit/SKILL.md": {
+      "repo": "nowork-studio/toprank",
+      "branch": "main",
+      "relative_path": "google-ads/audit/SKILL.md",
+      "updated_at": "2026-05-12T19:54:49.997488Z"
+    },
+    "tobihagemann/turbo:claude/skills/finalize/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/finalize/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.001590Z"
+    },
+    "tobihagemann/turbo:codex/skills/finalize/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/finalize/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.005579Z"
+    },
+    "tobihagemann/turbo:claude/skills/audit/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/audit/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.011416Z"
+    },
+    "tobihagemann/turbo:codex/skills/peer-review/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/peer-review/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.015425Z"
+    },
+    "nowork-studio/toprank:seo/schema-markup-generator/SKILL.md": {
+      "repo": "nowork-studio/toprank",
+      "branch": "main",
+      "relative_path": "seo/schema-markup-generator/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.035740Z"
+    },
+    "tobihagemann/turbo:codex/skills/stage/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/stage/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.038583Z"
+    },
+    "tobihagemann/turbo:codex/skills/ship/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/ship/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.046111Z"
+    },
+    "tobihagemann/turbo:claude/skills/onboard/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/onboard/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.051961Z"
+    },
+    "tobihagemann/turbo:claude/skills/create-pr/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/create-pr/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.055961Z"
+    },
+    "tobihagemann/turbo:codex/skills/update-pr/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/update-pr/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.060731Z"
+    },
+    "tobihagemann/turbo:claude/skills/draft-plan/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/draft-plan/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.068112Z"
+    },
+    "tobihagemann/turbo:codex/skills/create-pr/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/create-pr/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.072161Z"
+    },
+    "rohitg00/pro-workflow:skills/wiki-query/SKILL.md": {
+      "repo": "rohitg00/pro-workflow",
+      "branch": "main",
+      "relative_path": "skills/wiki-query/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.077824Z"
+    },
+    "tobihagemann/turbo:codex/skills/expand-shell/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/expand-shell/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.084824Z"
+    },
+    "tobihagemann/turbo:codex/skills/draft-spec/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/draft-spec/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.092241Z"
+    },
+    "tobihagemann/turbo:claude/skills/refine-plan/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/refine-plan/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.097843Z"
+    },
+    "tobihagemann/turbo:codex/skills/commit-rules/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/commit-rules/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.100656Z"
+    },
+    "tobihagemann/turbo:codex/skills/update-turbo/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/update-turbo/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.103538Z"
+    },
+    "tobihagemann/turbo:codex/skills/polish-code/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/polish-code/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.108201Z"
+    },
+    "tobihagemann/turbo:codex/skills/claude-print/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/claude-print/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.112532Z"
+    },
+    "tobihagemann/turbo:codex/skills/stage-commit/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/stage-commit/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.115059Z"
+    },
+    "tobihagemann/turbo:codex/skills/review-pr/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/review-pr/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.118350Z"
+    },
+    "tobihagemann/turbo:claude/skills/update-pr/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/update-pr/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.123253Z"
+    },
+    "tobihagemann/turbo:claude/skills/implement/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/implement/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.130665Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/seo-aeo-amplifier/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/seo-aeo-amplifier/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.136878Z"
+    },
+    "tobihagemann/turbo:claude/skills/polish-code/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/polish-code/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.141986Z"
+    },
+    "tobihagemann/turbo:codex/skills/self-improve/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/self-improve/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.150728Z"
+    },
+    "tobihagemann/turbo:codex/skills/explain-this/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/explain-this/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.155448Z"
+    },
+    "tobihagemann/turbo:codex/skills/draft-shells/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/draft-shells/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.165477Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/wordpress-ai-image-optimizer/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/wordpress-ai-image-optimizer/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.173412Z"
+    },
+    "posit-dev/skills:posit-dev/implement/SKILL.md": {
+      "repo": "posit-dev/skills",
+      "branch": "main",
+      "relative_path": "posit-dev/implement/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.190286Z"
+    },
+    "respira-press/agent-skills-wordpress:skills/wordpress-site-dna/SKILL.md": {
+      "repo": "respira-press/agent-skills-wordpress",
+      "branch": "main",
+      "relative_path": "skills/wordpress-site-dna/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.195898Z"
+    },
+    "nowork-studio/toprank:seo/keyword-research/SKILL.md": {
+      "repo": "nowork-studio/toprank",
+      "branch": "main",
+      "relative_path": "seo/keyword-research/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.352129Z"
+    },
+    "rohitg00/pro-workflow:skills/survey-generator/SKILL.md": {
+      "repo": "rohitg00/pro-workflow",
+      "branch": "main",
+      "relative_path": "skills/survey-generator/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.367810Z"
+    },
+    "tobihagemann/turbo:codex/skills/investigate/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/investigate/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.470979Z"
+    },
+    "tobihagemann/turbo:claude/skills/investigate/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/investigate/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.484045Z"
+    },
+    "nowork-studio/toprank:meta-ads/manage/SKILL.md": {
+      "repo": "nowork-studio/toprank",
+      "branch": "main",
+      "relative_path": "meta-ads/manage/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.585172Z"
+    },
+    "tobihagemann/turbo:claude/skills/peer-review/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/peer-review/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.595271Z"
+    },
+    "thoughtbot/rails-consultant:skills/slice/SKILL.md": {
+      "repo": "thoughtbot/rails-consultant",
+      "branch": "main",
+      "relative_path": "skills/slice/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.604524Z"
+    },
+    "levnikolaevich/claude-code-skills:plugins/setup-environment/skills/ln-021-codegraph/SKILL.md": {
+      "repo": "levnikolaevich/claude-code-skills",
+      "branch": "master",
+      "relative_path": "plugins/setup-environment/skills/ln-021-codegraph/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.612440Z"
+    },
+    "nanocoai/nanoclaw:.claude/skills/x-integration/SKILL.md": {
+      "repo": "nanocoai/nanoclaw",
+      "branch": "main",
+      "relative_path": ".claude/skills/x-integration/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.627103Z"
+    },
+    "tobihagemann/turbo:claude/skills/review-plan/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/review-plan/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.804302Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/carrier-relationship-management/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/carrier-relationship-management/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.865079Z"
+    },
+    "sequenzia/agent-alchemy:ported/20260310/all/skills/technical-diagrams/SKILL.md": {
+      "repo": "sequenzia/agent-alchemy",
+      "branch": "main",
+      "relative_path": "ported/20260310/all/skills/technical-diagrams/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.890996Z"
+    },
+    "tobihagemann/turbo:codex/skills/review-plan/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/review-plan/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.900369Z"
+    },
+    "levnikolaevich/claude-code-skills:plugins/community-engagement/skills/ln-913-community-debater/SKILL.md": {
+      "repo": "levnikolaevich/claude-code-skills",
+      "branch": "master",
+      "relative_path": "plugins/community-engagement/skills/ln-913-community-debater/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.914257Z"
+    },
+    "thoughtbot/rails-consultant:skills/test-driven-development/SKILL.md": {
+      "repo": "thoughtbot/rails-consultant",
+      "branch": "main",
+      "relative_path": "skills/test-driven-development/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.937044Z"
+    },
+    "tobihagemann/turbo:codex/skills/turboplan/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/turboplan/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.949424Z"
+    },
+    "secondsky/claude-skills:plugins/tanstack-router/skills/tanstack-router/SKILL.md": {
+      "repo": "secondsky/claude-skills",
+      "branch": "main",
+      "relative_path": "plugins/tanstack-router/skills/tanstack-router/SKILL.md",
+      "updated_at": "2026-05-12T19:54:50.975587Z"
+    },
+    "nowork-studio/toprank:google-ads/manage/SKILL.md": {
+      "repo": "nowork-studio/toprank",
+      "branch": "main",
+      "relative_path": "google-ads/manage/SKILL.md",
+      "updated_at": "2026-05-12T19:54:51.080138Z"
+    },
+    "tobihagemann/turbo:codex/skills/review-code/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/review-code/SKILL.md",
+      "updated_at": "2026-05-12T19:54:51.452892Z"
+    },
+    "levnikolaevich/claude-code-skills:plugins/codebase-audit-suite/skills/ln-645-architecture-modernization-auditor/SKILL.md": {
+      "repo": "levnikolaevich/claude-code-skills",
+      "branch": "master",
+      "relative_path": "plugins/codebase-audit-suite/skills/ln-645-architecture-modernization-auditor/SKILL.md",
+      "updated_at": "2026-05-12T19:54:51.636126Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/hig-components-content/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/hig-components-content/SKILL.md",
+      "updated_at": "2026-05-12T19:54:51.673817Z"
+    },
+    "levnikolaevich/claude-code-skills:plugins/codebase-audit-suite/skills/ln-627-diagnosability-auditor/SKILL.md": {
+      "repo": "levnikolaevich/claude-code-skills",
+      "branch": "master",
+      "relative_path": "plugins/codebase-audit-suite/skills/ln-627-diagnosability-auditor/SKILL.md",
+      "updated_at": "2026-05-12T19:54:51.803062Z"
+    },
+    "tdimino/claude-code-minoan:skills/core-development/dag-typesafe/SKILL.md": {
+      "repo": "tdimino/claude-code-minoan",
+      "branch": "main",
+      "relative_path": "skills/core-development/dag-typesafe/SKILL.md",
+      "updated_at": "2026-05-12T19:54:51.827235Z"
+    },
+    "levnikolaevich/claude-code-skills:plugins/codebase-audit-suite/skills/ln-624-code-maintainability-hotspot-auditor/SKILL.md": {
+      "repo": "levnikolaevich/claude-code-skills",
+      "branch": "master",
+      "relative_path": "plugins/codebase-audit-suite/skills/ln-624-code-maintainability-hotspot-auditor/SKILL.md",
+      "updated_at": "2026-05-12T19:54:51.844627Z"
+    },
+    "levnikolaevich/claude-code-skills:plugins/codebase-audit-suite/skills/ln-629-runtime-lifecycle-config-auditor/SKILL.md": {
+      "repo": "levnikolaevich/claude-code-skills",
+      "branch": "master",
+      "relative_path": "plugins/codebase-audit-suite/skills/ln-629-runtime-lifecycle-config-auditor/SKILL.md",
+      "updated_at": "2026-05-12T19:54:51.857993Z"
+    },
+    "levnikolaevich/claude-code-skills:plugins/codebase-audit-suite/skills/ln-626-dead-code-pruning-auditor/SKILL.md": {
+      "repo": "levnikolaevich/claude-code-skills",
+      "branch": "master",
+      "relative_path": "plugins/codebase-audit-suite/skills/ln-626-dead-code-pruning-auditor/SKILL.md",
+      "updated_at": "2026-05-12T19:54:52.001955Z"
+    },
+    "levnikolaevich/claude-code-skills:plugins/codebase-audit-suite/skills/ln-641-pattern-fitness-auditor/SKILL.md": {
+      "repo": "levnikolaevich/claude-code-skills",
+      "branch": "master",
+      "relative_path": "plugins/codebase-audit-suite/skills/ln-641-pattern-fitness-auditor/SKILL.md",
+      "updated_at": "2026-05-12T19:54:52.090356Z"
+    },
+    "levnikolaevich/claude-code-skills:plugins/codebase-audit-suite/skills/ln-647-configuration-boundary-auditor/SKILL.md": {
+      "repo": "levnikolaevich/claude-code-skills",
+      "branch": "master",
+      "relative_path": "plugins/codebase-audit-suite/skills/ln-647-configuration-boundary-auditor/SKILL.md",
+      "updated_at": "2026-05-12T19:54:52.130190Z"
+    },
+    "levnikolaevich/claude-code-skills:plugins/codebase-audit-suite/skills/ln-642-layer-ownership-boundary-auditor/SKILL.md": {
+      "repo": "levnikolaevich/claude-code-skills",
+      "branch": "master",
+      "relative_path": "plugins/codebase-audit-suite/skills/ln-642-layer-ownership-boundary-auditor/SKILL.md",
+      "updated_at": "2026-05-12T19:54:52.392046Z"
+    },
+    "levnikolaevich/claude-code-skills:plugins/codebase-audit-suite/skills/ln-623-duplication-overabstraction-auditor/SKILL.md": {
+      "repo": "levnikolaevich/claude-code-skills",
+      "branch": "master",
+      "relative_path": "plugins/codebase-audit-suite/skills/ln-623-duplication-overabstraction-auditor/SKILL.md",
+      "updated_at": "2026-05-12T19:54:52.413447Z"
+    },
+    "levnikolaevich/claude-code-skills:plugins/codebase-audit-suite/skills/ln-644-dependency-topology-auditor/SKILL.md": {
+      "repo": "levnikolaevich/claude-code-skills",
+      "branch": "master",
+      "relative_path": "plugins/codebase-audit-suite/skills/ln-644-dependency-topology-auditor/SKILL.md",
+      "updated_at": "2026-05-12T19:54:52.438956Z"
+    },
+    "levnikolaevich/claude-code-skills:plugins/codebase-audit-suite/skills/ln-625-dependency-reuse-auditor/SKILL.md": {
+      "repo": "levnikolaevich/claude-code-skills",
+      "branch": "master",
+      "relative_path": "plugins/codebase-audit-suite/skills/ln-625-dependency-reuse-auditor/SKILL.md",
+      "updated_at": "2026-05-12T19:54:52.557659Z"
+    },
+    "levnikolaevich/claude-code-skills:plugins/setup-environment/skills/ln-014-agent-instructions-manager/SKILL.md": {
+      "repo": "levnikolaevich/claude-code-skills",
+      "branch": "master",
+      "relative_path": "plugins/setup-environment/skills/ln-014-agent-instructions-manager/SKILL.md",
+      "updated_at": "2026-05-12T19:54:52.623003Z"
+    },
+    "rohitg00/pro-workflow:skills/wiki-builder/SKILL.md": {
+      "repo": "rohitg00/pro-workflow",
+      "branch": "main",
+      "relative_path": "skills/wiki-builder/SKILL.md",
+      "updated_at": "2026-05-12T19:54:52.696008Z"
+    },
+    "tdimino/claude-code-minoan:skills/research/minoan/SKILL.md": {
+      "repo": "tdimino/claude-code-minoan",
+      "branch": "main",
+      "relative_path": "skills/research/minoan/SKILL.md",
+      "updated_at": "2026-05-12T19:54:53.146078Z"
+    },
+    "tdimino/claude-code-minoan:skills/research/geo-seo/SKILL.md": {
+      "repo": "tdimino/claude-code-minoan",
+      "branch": "main",
+      "relative_path": "skills/research/geo-seo/SKILL.md",
+      "updated_at": "2026-05-12T19:54:55.059917Z"
+    },
+    "levnikolaevich/claude-code-skills:plugins/agile-workflow/skills/ln-500-story-quality-gate/SKILL.md": {
+      "repo": "levnikolaevich/claude-code-skills",
+      "branch": "master",
+      "relative_path": "plugins/agile-workflow/skills/ln-500-story-quality-gate/SKILL.md",
+      "updated_at": "2026-05-12T19:54:58.684561Z"
+    },
+    "levnikolaevich/claude-code-skills:plugins/agile-workflow/skills/ln-200-scope-decomposer/SKILL.md": {
+      "repo": "levnikolaevich/claude-code-skills",
+      "branch": "master",
+      "relative_path": "plugins/agile-workflow/skills/ln-200-scope-decomposer/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.270993Z"
+    },
+    "tobihagemann/turbo:codex/skills/commit-staged/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/commit-staged/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.640613Z"
+    },
+    "tobihagemann/turbo:claude/skills/update-turbo/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/update-turbo/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.656387Z"
+    },
+    "tobihagemann/turbo:claude/skills/commit-rules/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/commit-rules/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.659794Z"
+    },
+    "tobihagemann/turbo:claude/skills/stage-commit/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/stage-commit/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.662723Z"
+    },
+    "worldwonderer/oh-story-claudecode:skills/story/SKILL.md": {
+      "repo": "worldwonderer/oh-story-claudecode",
+      "branch": "main",
+      "relative_path": "skills/story/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.666091Z"
+    },
+    "tobihagemann/turbo:codex/skills/simplify-code/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/simplify-code/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.670768Z"
+    },
+    "tobihagemann/turbo:claude/skills/draft-shells/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/draft-shells/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.679492Z"
+    },
+    "tobihagemann/turbo:claude/skills/create-handoff/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/create-handoff/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.686688Z"
+    },
+    "tobihagemann/turbo:codex/skills/find-dead-code/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/find-dead-code/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.694551Z"
+    },
+    "tobihagemann/turbo:claude/skills/consult-codex/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/consult-codex/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.699275Z"
+    },
+    "tobihagemann/turbo:claude/skills/explain-this/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/explain-this/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.703968Z"
+    },
+    "tobihagemann/turbo:claude/skills/implement-plan/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/implement-plan/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.708424Z"
+    },
+    "tobihagemann/turbo:codex/skills/pick-next-shell/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/pick-next-shell/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.712157Z"
+    },
+    "tobihagemann/turbo:codex/skills/implement-plan/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/implement-plan/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.716635Z"
+    },
+    "tobihagemann/turbo:codex/skills/interpret-feedback/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/interpret-feedback/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.721114Z"
+    },
+    "tobihagemann/turbo:claude/skills/codex-review/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/codex-review/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.724068Z"
+    },
+    "tobihagemann/turbo:claude/skills/map-codebase/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/map-codebase/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.729301Z"
+    },
+    "tobihagemann/turbo:codex/skills/evaluate-findings/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/evaluate-findings/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.735274Z"
+    },
+    "tobihagemann/turbo:claude/skills/simplify-code/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/simplify-code/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.742040Z"
+    },
+    "tobihagemann/turbo:claude/skills/evaluate-findings/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/evaluate-findings/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.748039Z"
+    },
+    "tobihagemann/turbo:codex/skills/github-voice/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/github-voice/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.751771Z"
+    },
+    "tobihagemann/turbo:claude/skills/contribute-turbo/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/contribute-turbo/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.758659Z"
+    },
+    "tobihagemann/turbo:codex/skills/pick-next-issue/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/pick-next-issue/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.762267Z"
+    },
+    "tobihagemann/turbo:codex/skills/split-and-ship/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/split-and-ship/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.766275Z"
+    },
+    "tobihagemann/turbo:claude/skills/update-changelog/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/update-changelog/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.769540Z"
+    },
+    "wanshuiyin/Auto-claude-code-research-in-sleep:skills/paper-talk/SKILL.md": {
+      "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
+      "branch": "main",
+      "relative_path": "skills/paper-talk/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.781877Z"
+    },
+    "tobihagemann/turbo:claude/skills/self-improve/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/self-improve/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.790875Z"
+    },
+    "vibeeval/vibecosystem:skills/gate-check/SKILL.md": {
+      "repo": "vibeeval/vibecosystem",
+      "branch": "main",
+      "relative_path": "skills/gate-check/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.798248Z"
+    },
+    "tobihagemann/turbo:codex/skills/map-codebase/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/map-codebase/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.803476Z"
+    },
+    "tobihagemann/turbo:claude/skills/pick-next-shell/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/pick-next-shell/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.807284Z"
+    },
+    "tobihagemann/turbo:codex/skills/apply-findings/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/apply-findings/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.811018Z"
+    },
+    "tobihagemann/turbo:claude/skills/create-changelog/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/create-changelog/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.814537Z"
+    },
+    "wanshuiyin/Auto-claude-code-research-in-sleep:skills/resubmit-pipeline/SKILL.md": {
+      "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
+      "branch": "main",
+      "relative_path": "skills/resubmit-pipeline/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.831752Z"
+    },
+    "tobihagemann/turbo:claude/skills/split-and-ship/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/split-and-ship/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.835505Z"
+    },
+    "tobihagemann/turbo:codex/skills/contribute-turbo/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/contribute-turbo/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.842461Z"
+    },
+    "tobihagemann/turbo:claude/skills/note-improvement/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/note-improvement/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.846518Z"
+    },
+    "tobihagemann/turbo:codex/skills/stage-commit-push/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/stage-commit-push/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.849342Z"
+    },
+    "wanshuiyin/Auto-claude-code-research-in-sleep:skills/slides-polish/SKILL.md": {
+      "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
+      "branch": "main",
+      "relative_path": "skills/slides-polish/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.866046Z"
+    },
+    "tobihagemann/turbo:codex/skills/create-handoff/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/create-handoff/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.870075Z"
+    },
+    "tobihagemann/turbo:codex/skills/update-changelog/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/update-changelog/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.873446Z"
+    },
+    "tobihagemann/turbo:claude/skills/pick-next-issue/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/pick-next-issue/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.877067Z"
+    },
+    "wanshuiyin/Auto-claude-code-research-in-sleep:skills/skills-codex/resubmit-pipeline/SKILL.md": {
+      "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
+      "branch": "main",
+      "relative_path": "skills/skills-codex/resubmit-pipeline/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.894258Z"
+    },
+    "wanshuiyin/Auto-claude-code-research-in-sleep:skills/kill-argument/SKILL.md": {
+      "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
+      "branch": "main",
+      "relative_path": "skills/kill-argument/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.906657Z"
+    },
+    "tobihagemann/turbo:codex/skills/consult-claude/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/consult-claude/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.909606Z"
+    },
+    "wshobson/agents:plugins/ship-mate/skills/scan/SKILL.md": {
+      "repo": "wshobson/agents",
+      "branch": "main",
+      "relative_path": "plugins/ship-mate/skills/scan/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.916261Z"
+    },
+    "tobihagemann/turbo:codex/skills/note-improvement/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/note-improvement/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.920326Z"
+    },
+    "tobihagemann/turbo:codex/skills/reply-to-pr-threads/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/reply-to-pr-threads/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.924396Z"
+    },
+    "tobihagemann/turbo:claude/skills/expand-shell/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/expand-shell/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.931226Z"
+    },
+    "vibeeval/vibecosystem:skills/tracing-patterns/skill.md": {
+      "repo": "vibeeval/vibecosystem",
+      "branch": "main",
+      "relative_path": "skills/tracing-patterns/skill.md",
+      "updated_at": "2026-05-12T19:54:59.935884Z"
+    },
+    "tobihagemann/turbo:claude/skills/find-dead-code/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/find-dead-code/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.943681Z"
+    },
+    "tobihagemann/turbo:codex/skills/commit-staged-push/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/commit-staged-push/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.946253Z"
+    },
+    "tobihagemann/turbo:codex/skills/review-dependencies/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/review-dependencies/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.950552Z"
+    },
+    "tobihagemann/turbo:claude/skills/changelog-rules/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/changelog-rules/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.954565Z"
+    },
+    "tobihagemann/turbo:claude/skills/stage-commit-push/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/stage-commit-push/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.957124Z"
+    },
+    "tobihagemann/turbo:codex/skills/frontend-design/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/frontend-design/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.968865Z"
+    },
+    "tobihagemann/turbo:codex/skills/review-tooling/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/review-tooling/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.975011Z"
+    },
+    "tobihagemann/turbo:claude/skills/apply-findings/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/apply-findings/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.978864Z"
+    },
+    "tobihagemann/turbo:codex/skills/changelog-rules/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/changelog-rules/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.986810Z"
+    },
+    "tobihagemann/turbo:claude/skills/commit-staged-push/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/commit-staged-push/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.990004Z"
+    },
+    "tobihagemann/turbo:codex/skills/recall-reasoning/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/recall-reasoning/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.994563Z"
+    },
+    "tobihagemann/turbo:claude/skills/commit-staged/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/commit-staged/SKILL.md",
+      "updated_at": "2026-05-12T19:54:59.997052Z"
+    },
+    "tobihagemann/turbo:codex/skills/create-changelog/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/create-changelog/SKILL.md",
+      "updated_at": "2026-05-12T19:55:00.000199Z"
+    },
+    "vibeeval/vibecosystem:skills/resume-handoff/SKILL.md": {
+      "repo": "vibeeval/vibecosystem",
+      "branch": "main",
+      "relative_path": "skills/resume-handoff/SKILL.md",
+      "updated_at": "2026-05-12T19:55:00.007308Z"
+    },
+    "tobihagemann/turbo:codex/skills/create-threat-model/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/create-threat-model/SKILL.md",
+      "updated_at": "2026-05-12T19:55:00.277040Z"
+    },
+    "tobihagemann/turbo:codex/skills/survey-patterns/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/survey-patterns/SKILL.md",
+      "updated_at": "2026-05-12T19:55:00.282571Z"
+    },
+    "tobihagemann/turbo:claude/skills/fetch-pr-comments/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/fetch-pr-comments/SKILL.md",
+      "updated_at": "2026-05-12T19:55:00.288798Z"
+    },
+    "tobihagemann/turbo:claude/skills/survey-patterns/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/survey-patterns/SKILL.md",
+      "updated_at": "2026-05-12T19:55:00.309598Z"
+    },
+    "tobihagemann/turbo:codex/skills/fetch-pr-comments/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/fetch-pr-comments/SKILL.md",
+      "updated_at": "2026-05-12T19:55:00.322467Z"
+    },
+    "worldwonderer/oh-story-claudecode:skills/story-import/SKILL.md": {
+      "repo": "worldwonderer/oh-story-claudecode",
+      "branch": "main",
+      "relative_path": "skills/story-import/SKILL.md",
+      "updated_at": "2026-05-12T19:55:00.446377Z"
+    },
+    "tobihagemann/turbo:claude/skills/create-skill/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/create-skill/SKILL.md",
+      "updated_at": "2026-05-12T19:55:00.476336Z"
+    },
+    "tobihagemann/turbo:codex/skills/consult-oracle/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/consult-oracle/SKILL.md",
+      "updated_at": "2026-05-12T19:55:00.488385Z"
+    },
+    "tobihagemann/turbo:claude/skills/resolve-findings/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/resolve-findings/SKILL.md",
+      "updated_at": "2026-05-12T19:55:00.534525Z"
+    },
+    "tobihagemann/turbo:claude/skills/recall-reasoning/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/recall-reasoning/SKILL.md",
+      "updated_at": "2026-05-12T19:55:00.554948Z"
+    },
+    "tobihagemann/turbo:codex/skills/resolve-findings/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/resolve-findings/SKILL.md",
+      "updated_at": "2026-05-12T19:55:00.559224Z"
+    },
+    "tobihagemann/turbo:claude/skills/consult-oracle/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/consult-oracle/SKILL.md",
+      "updated_at": "2026-05-12T19:55:00.672057Z"
+    },
+    "worldwonderer/oh-story-claudecode:skills/story-review/SKILL.md": {
+      "repo": "worldwonderer/oh-story-claudecode",
+      "branch": "main",
+      "relative_path": "skills/story-review/SKILL.md",
+      "updated_at": "2026-05-12T19:55:01.856603Z"
+    },
+    "tobihagemann/turbo:claude/skills/review-code/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/review-code/SKILL.md",
+      "updated_at": "2026-05-12T19:55:01.871158Z"
+    },
+    "worldwonderer/oh-story-claudecode:skills/story-setup/SKILL.md": {
+      "repo": "worldwonderer/oh-story-claudecode",
+      "branch": "main",
+      "relative_path": "skills/story-setup/SKILL.md",
+      "updated_at": "2026-05-12T19:55:05.386368Z"
+    },
+    "clockless-org/html-anything": {
+      "repo": "clockless-org/html-anything",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-05-12T19:55:34.768174Z"
     }
   }
 }

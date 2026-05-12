@@ -1,6 +1,7 @@
 ---
 name: status
 description: 'Show AgentOps work status.'
+practices: [dora-metrics, sre]
 skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash
 model: haiku

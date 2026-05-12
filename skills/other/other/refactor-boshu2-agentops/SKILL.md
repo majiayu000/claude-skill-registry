@@ -1,6 +1,7 @@
 ---
 name: refactor
 description: 'Execute safe refactors.'
+practices: [refactoring, legacy-code-seams, design-patterns]
 skill_api_version: 1
 context:
   window: fork
@@ -61,6 +62,8 @@ Extract method, class, or module from a target. The `<pattern>` describes what t
 ## Core Principle
 
 **Every refactoring step must be verified by running tests before proceeding to the next step.**
+
+For simplification, de-slop cleanup, over-abstraction removal, or readability-focused refactors, load [references/behavior-preserving-simplification.md](references/behavior-preserving-simplification.md) before planning transformations.
 
 No batching. No "I'll run tests after all changes." Each transformation is atomic:
 
@@ -419,3 +422,7 @@ vulture <directory>
 - `/vibe` -- validate code quality post-refactor
 - `/bug-hunt` -- if refactoring uncovers bugs
 - `/implement` -- if refactoring requires new code
+
+## Reference Documents
+
+- [references/behavior-preserving-simplification.md](references/behavior-preserving-simplification.md)

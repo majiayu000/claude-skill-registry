@@ -33,7 +33,7 @@ Autonomous refactoring workflow that iteratively improves code quality within th
 │     ├─ PASS → commit, goto 4                        │
 │     └─ FAIL → retry (max 3), then abort batch       │
 │  9. Completion summary                              │
-│ 10. Update documentation (/review-doc)              │
+│ 10. Update documentation (/tidy-docs)              │
 └─────────────────────────────────────────────────────┘
 ```
 
@@ -251,11 +251,11 @@ When workflow completes, present summary:
 
 ### 7. Update Documentation
 
-After the refactoring summary, run the `/review-doc` workflow to bring project documentation up to date. Even tactical refactoring can rename functions, move code between files, and change APIs — documentation that references the old state becomes stale.
+After the refactoring summary, run the `/tidy-docs` workflow to bring project documentation up to date. Even tactical refactoring can rename functions, move code between files, and change APIs — documentation that references the old state becomes stale.
 
 Invoke the skill directly:
 ```
-/review-doc
+/tidy-docs
 ```
 
 This spawns a doc-maintainer agent that audits all project documentation and fixes issues it finds. Any changes are committed separately from the refactoring commits.
@@ -302,20 +302,9 @@ This spawns a doc-maintainer agent that audits all project documentation and fix
 
 ## Integration with Other Skills
 
-**Relationship to `/review-arch`:**
-- `/refactor` is a tactical workflow for code quality improvements within existing architecture
-- `/review-arch` is a strategic workflow that questions and restructures the architecture itself (noun analysis, module boundaries, blueprints)
-- Use `/refactor` for routine cleanup; use `/review-arch` when the module structure itself needs rethinking
+**`/refactor` vs `/review-arch`:** `/refactor` is tactical cleanup within existing architecture (DRY, dead code, naming, complexity). `/review-arch` is strategic — it questions the architecture and proposes restructuring (advisory; offers to cut tickets). Use `/refactor` for routine cleanup; use `/review-arch` when the module structure itself needs rethinking.
 
-**Relationship to `/implement`:**
-- `/implement` is a feature development workflow that optionally invokes `swe-code-reviewer` for code review after implementation
-- `/refactor` is a dedicated refactoring workflow that uses `swe-code-reviewer` as its core scanner in an autonomous loop
-- Same agent, different workflows: one-shot review vs. iterative improvement
-
-**Relationship to `/scope`:**
-- `/scope` explores and creates tickets
-- `/refactor` implements improvements autonomously
-- Could use `/scope` first to plan a large refactoring, then `/refactor` to execute
+**`/scope` → `/refactor`:** For a large refactoring effort, use `/scope` first to plan the work, then `/refactor` to execute autonomously.
 
 ## Example Session
 
@@ -390,7 +379,7 @@ No opportunities found at any level.
 - DRY consolidation: 5 instances
 - Lint fixes: 2 instances
 
-Running /review-doc to update documentation...
+Running /tidy-docs to update documentation...
 
 Spawning doc-maintainer agent...
   No documentation changes needed.

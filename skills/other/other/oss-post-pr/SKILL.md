@@ -185,6 +185,8 @@ If the reviewer requests a fundamentally different approach:
 - **Previous step**: ← `oss-submit-pr` - the PR submission
 - **If significant rework**: → `oss-contribute` - re-investigate with the new approach
 - **If minor fixes**: → `oss-submit-pr` - re-verify and push updates
+- **If CI fails**: → `oss-debug-ci` - diagnose and fix CI pipeline failures
+- **After merge**: → `oss-second-contribution` - plan your next contribution and build trust
 - **Loop**: This skill may be invoked multiple times per PR as new reviews come in
 
 ## Anti-patterns

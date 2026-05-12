@@ -14,6 +14,7 @@ Use this skill when you need exact DuckDB syntax, function behavior, or a quick 
 - Prefer current DuckDB SQL docs for language features and function semantics.
 - Use current MotherDuck SQL docs for MotherDuck-only commands such as shares, secrets, snapshots, and Dive operations.
 - Check MotherDuck version-lifecycle docs for newly released DuckDB features before promising they are available in MotherDuck.
+- Treat upstream DuckDB 1.5.x docs as ahead of MotherDuck unless the current MotherDuck lifecycle docs confirm the same DuckDB version and feature surface.
 - Distinguish upstream DuckDB current-version docs from MotherDuck-supported DuckDB versions; MotherDuck can lag upstream current for client compatibility and SQL feature support.
 - If the connection path matters, verify behavior against the current Postgres-endpoint docs before promising server-mode support.
 
@@ -25,6 +26,7 @@ Use this skill when you need exact DuckDB syntax, function behavior, or a quick 
 - When porting SQL from another engine, translate functions, date arithmetic, identifier quoting, and type casts explicitly instead of assuming compatibility.
 - For upstream DuckDB 1.5 features such as `VARIANT`, native `GEOMETRY`, `date_trunc` return-type changes, ODBC scanner behavior, or lakehouse-format changes, verify current MotherDuck support before adding them to production guidance.
 - Check whether the statement depends on local files, extension install/load, temporary-table behavior, or other client-only features before claiming it will work in MotherDuck.
+- Treat snapshot, restore, and `UNDROP DATABASE` statements as operational SQL with plan-specific retention behavior, not ordinary analytical syntax.
 - Treat MotherDuck SQL as an additional surface on top of DuckDB SQL, not a replacement for it.
 
 ## Workflow

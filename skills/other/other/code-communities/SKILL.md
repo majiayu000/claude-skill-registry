@@ -1,9 +1,6 @@
 ---
 name: code-communities
-description: >
-  Detect architectural clusters in the codebase using
-  community detection on the code knowledge graph.
-  Shows module boundaries, cohesion, and coupling warnings.
+description: 'Detect architectural clusters via community detection on the code graph. Shows boundaries and coupling.'
 ---
 
 # Code Community Detection

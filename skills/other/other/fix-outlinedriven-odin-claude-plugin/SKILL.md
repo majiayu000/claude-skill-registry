@@ -125,7 +125,7 @@ Partial match → `GH_PARTIAL` ambiguity flag.
 ## Constitutional Rules
 
 - Evidence before claims: run verifiers, read output, then state result.
-- Tidy-first: reduce coupling before behavior change.
+- Compress-first: reduce coupling before behavior change.
 - Atomic commits: one concern per commit; guard must pass before a loop commit is **kept** (KEEP in decide matrix = tests-pass gate).
 - Never skip the guard.
 - Full specs: `references/loop.md`, `references/classifier.md`, `references/verifiers.md`.

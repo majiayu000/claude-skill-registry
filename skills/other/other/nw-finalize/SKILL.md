@@ -60,7 +60,6 @@ Before dispatching, verify all steps are done — prevents archiving incomplete 
 | `design/technology-stack.md` | `docs/architecture/{feature}/` | If exists |
 | `design/data-models.md` | `docs/architecture/{feature}/` | If exists |
 | `design/adrs/ADR-*.md` | `docs/adrs/` | Flat namespace, cross-feature |
-| `distill/test-scenarios.md` | `docs/scenarios/{feature}/` | Scenario-to-story traceability |
 | `distill/walking-skeleton.md` | `docs/scenarios/{feature}/` | Walking skeleton specification |
 | `discuss/journey-*.yaml` | `docs/ux/{feature}/` | If UX journeys exist |
 | `discuss/journey-*-visual.md` | `docs/ux/{feature}/` | If UX visuals exist |
@@ -77,7 +76,6 @@ These are process scaffolding — valuable during delivery, disposable after:
 | `deliver/roadmap.json` | Step plan — superseded by evolution doc + git history |
 | `deliver/.develop-progress.json` | Resume state — temporary |
 | `design/review-*.md` | Review findings captured in evolution doc |
-| `distill/acceptance-review.md` | Test review — tests themselves remain in `tests/` |
 | `discuss/dor-checklist.md` | Process gate, not lasting value |
 | `discuss/shared-artifacts-registry.md` | Process scaffolding |
 | `discuss/prioritization.md` | Superseded by roadmap execution |
@@ -145,7 +143,6 @@ docs/
   research/              # Research docs (flat, cross-feature)
   scenarios/             # Acceptance test documentation by feature
     {feature}/
-      test-scenarios.md
       walking-skeleton.md
   ux/                    # UX specs and journeys by feature
     {feature}/

@@ -1,17 +1,44 @@
 ---
 name: drizzle-orm-d1
-description: |
-  Type-safe ORM for Cloudflare D1 databases using Drizzle. Use when: building D1 database schemas, writing type-safe SQL queries, managing migrations with Drizzle Kit, defining table relations, implementing prepared statements, using D1 batch API, or encountering D1_ERROR, transaction errors, foreign key constraint failures, or schema inference issues.
+description: "| Type-safe ORM for Cloudflare D1 databases using Drizzle. Use when: building D1 database schemas, writing type-safe SQL queries, managing migrations with Drizzle Kit, defining table relations, implementing prepared statements, using D1 batch API, or encountering D1_ERROR, transaction errors, foreign key constraint failures, or schema inference issues."
 
-  Keywords: drizzle orm, drizzle d1, type-safe sql, drizzle schema, drizzle migrations,
-  drizzle kit, orm cloudflare, d1 orm, drizzle typescript, drizzle relations, drizzle transactions,
-  drizzle query builder, schema definition, prepared statements, drizzle batch, migration management,
-  relational queries, drizzle joins, D1_ERROR, BEGIN TRANSACTION d1, foreign key constraint,
-  migration failed, schema not found, d1 binding error, schema design, database indexes, soft deletes,
-  uuid primary keys, enum constraints, performance optimization, naming conventions, schema testing
+metadata:
+  keywords:
+    - drizzle orm
+    - drizzle d1
+    - type-safe sql
+    - drizzle schema
+    - drizzle migrations
+    - drizzle kit
+    - orm cloudflare
+    - d1 orm
+    - drizzle typescript
+    - drizzle relations
+    - drizzle transactions
+    - drizzle query builder
+    - schema definition
+    - prepared statements
+    - drizzle batch
+    - migration management
+    - relational queries
+    - drizzle joins
+    - D1_ERROR
+    - BEGIN TRANSACTION d1
+    - foreign key constraint
+    - migration failed
+    - schema not found
+    - d1 binding error
+    - schema design
+    - database indexes
+    - soft deletes
+    - uuid primary keys
+    - enum constraints
+    - performance optimization
+    - naming conventions
+    - schema testing
+
 license: MIT
 ---
-
 # Drizzle ORM for Cloudflare D1
 
 **Status**: Production Ready ✅

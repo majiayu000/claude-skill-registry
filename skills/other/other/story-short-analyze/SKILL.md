@@ -25,7 +25,7 @@ metadata:
 
 ```
 用户提到具体题材（追妻/重生/虐文/...）？
-  ├─ 是 → 加载 genre-frameworks-unified.md 对应题材的「短篇视角」章节
+  ├─ 是 → 加载 genre-catalog.md 对应题材的「短篇视角」章节
   └─ 否 → 使用通用模板（Phase 2-6）
 ```
 
@@ -50,8 +50,9 @@ metadata:
 按 output-templates.md 中的模板输出：
 
 - **Phase 2**：全篇结构拆解。按 [output-templates.md Phase 2](references/output-templates.md) 输出结构划分和基本信息。
-- **Phase 3**：情绪曲线分析。按 [Phase 3](references/output-templates.md) 输出情绪节点和曲线特征。
-- **Phase 4**：反转设计分析。按 [Phase 4](references/output-templates.md) 输出反转类型、机制、时机。
+- **Phase 2.5**：人设速写。按 [Phase 2.5](references/output-templates.md) 分析主角 + 至少 2 个配角的核心矛盾、性格弧线、功能定位。
+- **Phase 3**：情绪曲线分析。按 [Phase 3](references/output-templates.md) 输出情绪节点和曲线特征，**每个节点同时标注该段的钩子类型**。
+- **Phase 4**：反转设计分析。按 [Phase 4](references/output-templates.md) 输出反转类型、机制、时机。**包含前置反转检查**：是否有在故事时间线之前就已存在的谎言/误判。
 - **Phase 5**：开头与结尾分析。按 [Phase 5](references/output-templates.md) 拆解首尾。
 - **Phase 6**：输出拆文报告。按 [Phase 6](references/output-templates.md) 模板输出完整报告。
 
@@ -81,17 +82,24 @@ metadata:
 | [references/output-templates.md](references/output-templates.md) | 拆文时：输出模板+结构库+必填字段 |
 | [references/deconstruction-examples.md](references/deconstruction-examples.md) | 学习拆文方法时（3个完整案例） |
 | [references/zhihu-style.md](references/zhihu-style.md) | 分析知乎盐言故事时 |
-| [references/genre-frameworks-unified.md](references/genre-frameworks-unified.md) | 拆解特定题材时，加载对应题材的「短篇视角」章节 |
-| [references/hook-techniques.md](references/hook-techniques.md) | 深度分析钩子设计时 |
-| [references/character-design.md](references/character-design.md) | 深度分析人物设计时 |
+| [references/genre-catalog.md](references/genre-catalog.md) | 拆解特定题材时，加载对应题材的「短篇视角」章节 |
+| [references/hooks-chapter.md](references/hooks-chapter.md) | 深度分析章节钩子设计时 |
+| [references/hooks-suspense.md](references/hooks-suspense.md) | 深度分析悬念设计时 |
+| [references/hooks-paragraph.md](references/hooks-paragraph.md) | 深度分析段落钩子时 |
+| [references/character-basics.md](references/character-basics.md) | 深度分析人物基础时 |
+| [references/character-design-methods.md](references/character-design-methods.md) | 深度分析人设方法时 |
+| [references/character-relations.md](references/character-relations.md) | 深度分析人物关系时 |
 | [references/quality-checklist.md](references/quality-checklist.md) | 评估质量时 |
+| [references/genre-core-mechanics.md](references/genre-core-mechanics.md) | 分析核心梗设计与循环机制时 |
+| [references/genre-readers.md](references/genre-readers.md) | 分析读者心理与期待管理时 |
 
 > **题材写作公式**：`references/genre-writing-formulas.md`（21大题材写作公式）
+> **通用写作技法**：`references/genre-writing-techniques.md`（情绪操控+感情线+震惊场景+喜剧机制）
 > **市场数据**：`references/real-market-data.md`（跨平台写作差异对照表）
 
 ---
 
 ## 语言
 
-- 用户用中文就用中文回复，用英文就用英文回复
+- 跟随用户的语言回复，用户用什么语言就用什么语言回复
 - 中文回复遵循《中文文案排版指北》

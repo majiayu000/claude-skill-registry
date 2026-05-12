@@ -1,17 +1,49 @@
 ---
 name: cloudflare-vectorize
-description: Cloudflare Vectorize vector database for semantic search and RAG. Use for vector indexes, embeddings, similarity search, or encountering dimension mismatches, filter errors.
+description: "Cloudflare Vectorize vector database for semantic search and RAG. Use for vector indexes, embeddings, similarity search, or encountering dimension mismatches, filter errors."
 
-  Keywords: vectorize, vector database, vector index, vector search, similarity search, semantic search,
-  nearest neighbor, knn search, ann search, RAG, retrieval augmented generation, chat with data,
-  document search, semantic Q&A, context retrieval, bge-base, @cf/baai/bge-base-en-v1.5,
-  text-embedding-3-small, text-embedding-3-large, Workers AI embeddings, openai embeddings,
-  insert vectors, upsert vectors, query vectors, delete vectors, metadata filtering, namespace filtering,
-  topK search, cosine similarity, euclidean distance, dot product, wrangler vectorize, metadata index,
-  create vectorize index, vectorize dimensions, vectorize metric, vectorize binding
+metadata:
+  keywords:
+    - vectorize
+    - vector database
+    - vector index
+    - vector search
+    - similarity search
+    - semantic search
+    - nearest neighbor
+    - knn search
+    - ann search
+    - RAG
+    - retrieval augmented generation
+    - chat with data
+    - document search
+    - semantic Q&A
+    - context retrieval
+    - bge-base
+    - "@cf/baai/bge-base-en-v1.5"
+    - text-embedding-3-small
+    - text-embedding-3-large
+    - Workers AI embeddings
+    - openai embeddings
+    - insert vectors
+    - upsert vectors
+    - query vectors
+    - delete vectors
+    - metadata filtering
+    - namespace filtering
+    - topK search
+    - cosine similarity
+    - euclidean distance
+    - dot product
+    - wrangler vectorize
+    - metadata index
+    - create vectorize index
+    - vectorize dimensions
+    - vectorize metric
+    - vectorize binding
+
 license: MIT
 ---
-
 # Cloudflare Vectorize
 
 Complete implementation guide for Cloudflare Vectorize - a globally distributed vector database for building semantic search, RAG (Retrieval Augmented Generation), and AI-powered applications with Cloudflare Workers.

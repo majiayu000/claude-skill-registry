@@ -36,6 +36,7 @@ Deep performance optimization based on Lighthouse performance audits. Focuses on
 * **Enable compression.** Gzip or Brotli for text assets. Brotli preferred (15-20% smaller).
 * **HTTP/2 or HTTP/3.** Multiplexing reduces connection overhead.
 * **Edge caching.** Cache HTML at CDN edge when possible.
+* **Send Early Hints (HTTP 103) for slow origins.** When the origin needs hundreds of milliseconds to assemble the final response, return a `103 Early Hints` with `Link: </hero.webp>; rel=preload; as=image` (and similar for critical CSS/fonts) so the browser starts fetching before the `200 OK` lands. Cloudflare reports [20–30% LCP improvements](https://blog.cloudflare.com/early-hints-performance/) on image-heavy pages. Requires HTTP/2+ and is supported by Chromium-based browsers; other browsers ignore the 103 and fall through to the 200 — safe to enable. CDNs (Cloudflare, Fastly, Akamai) can synthesize 103s automatically from prior responses; on your own origin, emit them from the same handler that issues the 200.
 
 ### Resource loading
 
@@ -53,6 +54,19 @@ Deep performance optimization based on Lighthouse performance audits. Focuses on
 <!-- Critical font -->
 <link rel="preload" href="/font.woff2" as="font" type="font/woff2" crossorigin>
 ```
+
+**Prerender likely-next navigations** with the [Speculation Rules API](https://developer.chrome.com/docs/web-platform/prerender-pages):
+```html
+<script type="speculationrules">
+{
+  "prerender": [{
+    "where": { "href_matches": "/*" },
+    "eagerness": "moderate"
+  }]
+}
+</script>
+```
+`moderate` triggers after a ~200ms hover — usually intent-correlated, rarely wasted. See [core-web-vitals → LCP](../core-web-vitals/SKILL.md#lcp-largest-contentful-paint) for the full discussion of eagerness tradeoffs and the `prerenderingchange` gating you'll need for analytics.
 
 **Defer non-critical CSS:**
 ```html
@@ -295,6 +309,31 @@ requestAnimationFrame(animate);
   contain-intrinsic-size: 0 50px; /* Estimated item height */
 }
 ```
+
+### Smooth navigations with View Transitions
+
+The [View Transitions API](https://developer.chrome.com/docs/web-platform/view-transitions) lets the browser cross-fade (or custom-animate) between two DOM states using a single GPU-composited snapshot — no double-render, no layout thrash, and the snapshot doesn't count toward CLS.
+
+**Same-document (SPA-style) — Baseline 2026:**
+```javascript
+// Wrap the DOM mutation that swaps the view
+function navigate(newView) {
+  if (!document.startViewTransition) return swapDOM(newView);
+  document.startViewTransition(() => swapDOM(newView));
+}
+```
+
+**Cross-document (MPA-style) — Chromium-stable, progressive enhancement elsewhere:**
+```css
+/* On both source and destination pages */
+@view-transition { navigation: auto; }
+```
+That's the entire integration — same-origin navigations now fade automatically. To opt specific elements into shared-element transitions (e.g. a thumbnail expanding into a hero), give them a matching `view-transition-name`:
+```css
+.product-thumb[data-id="42"], .product-hero { view-transition-name: product-42; }
+```
+
+Pair this with Speculation Rules (above) for instant + animated navigations.
 
 ## Third-party scripts
 

@@ -1,0 +1,83 @@
+# ============================================
+# AI Search Crawlers — ALLOW for visibility
+# Blocking these removes the site from AI search results.
+# ============================================
+
+# OpenAI ChatGPT Search (index crawler — the only search-critical OpenAI bot)
+User-agent: OAI-SearchBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic Claude Search
+User-agent: Claude-SearchBot
+Allow: /
+
+# Brave Search / Leo AI
+User-agent: Bravebot
+Allow: /
+
+# You.com AI Search
+User-agent: YouBot
+Allow: /
+
+# ============================================
+# User-Triggered Fetch Bots — ALLOW (recommended)
+# These fire when a user pastes a URL into the AI product.
+# Blocking them does NOT remove the site from search results,
+# but prevents live page reads during conversations.
+# ============================================
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+# Note: Perplexity-User generally ignores robots.txt directives.
+
+User-agent: Claude-User
+Allow: /
+
+# ============================================
+# AI Training / Opt-Out Crawlers — BLOCK to protect content
+# Blocking these has NO effect on AI search visibility.
+# ============================================
+
+# Apple Intelligence training opt-out (NOT a search crawler)
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+# ============================================
+# AI Discovery Directives
+# ============================================
+LLMs-Txt: /llms.txt
+LLMs-Full-Txt: /llms-full.txt

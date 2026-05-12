@@ -1,12 +1,12 @@
 ---
 name: threejs-particle-canvas
-description: "Generate interactive Three.js canvases in five modes: narrative particle phase cycles, WebGPU spinner/loaders, infinite gallery tunnels, animated glTF specimens, vinyl showcase with webcam reflection. Ships a reusable Phosphor Vigil FX post-processing module (CRT composite, scanlines, chromatic aberration). Self-contained HTML output. Triggers on particle system, ambient 3D canvas, WebGL art, spinner, loader, infinite tunnel, glTF animation, CRT post-processing, vinyl record, webcam reflection, 3D product showcase."
+description: "Generate interactive Three.js canvases in six modes: narrative particle phase cycles, WebGPU spinner/loaders, infinite gallery tunnels, animated glTF specimens, vinyl showcase with webcam reflection, glass hero sections with physically-accurate refraction/dispersion/iridescence. Ships a reusable Phosphor Vigil FX post-processing module (CRT composite, scanlines, chromatic aberration). Self-contained HTML output. Triggers on particle system, ambient 3D canvas, WebGL art, spinner, loader, infinite tunnel, glTF animation, CRT post-processing, vinyl record, webcam reflection, 3D product showcase, glass hero, 3D glass, refraction, dispersion, iridescent glass, frosted glass panes, glass material."
 argument-hint: [concept or narrative theme]
 ---
 
 # Three.js Particle Canvas
 
-Generate ambient particle canvases — interactive browser experiences where particles embody a concept, move through narrative phases, and respond to gentle user interaction. Output is a single self-contained HTML file. No build step, no framework, runs offline.
+Generate interactive Three.js canvases in six modes — from ambient particle narratives to physically-accurate 3D glass hero sections. Output is a single self-contained HTML file. No build step, no framework, runs offline.
 
 This is NOT a 3D product viewer, game engine, or data dashboard. The viewer observes, explores, and contemplates — they do not control.
 
@@ -117,6 +117,7 @@ Key patterns:
 | Mode 5 OMMA source (81KB, unminified) | `references/vinyl-bundle-annotated.js` |
 | Shared Phosphor Vigil FX pipeline | `references/phosphor-vigil-fx.md` |
 | Shared FX module (importable standalone) | `assets/phosphor-vigil.js` |
+| Mode 6 glass material, geometry, interaction, presets | `references/glass-hero-design-system.md` |
 
 ## Theme Presets
 
@@ -268,6 +269,122 @@ python3 ~/.claude/skills/threejs-particle-canvas/scripts/validate_vinyl.py outpu
 
 See `references/vinyl-showcase-patterns.md` for the full 6-system technical breakdown (camera pipeline, procedural textures, material stack, scroll keyframes, drag interaction, audio engine).
 
+## Mode 6: Glass Hero
+
+Physically-accurate 3D glass panes with refraction, dispersion, and iridescence floating over hero content. Voronoi-fractured glass shards rendered with `MeshPhysicalMaterial` — chromatic fringe at edges, thin-film rainbow shifts at angles, and real light bending through the volume. Deconstructed from [kaolti's glass-hero experiment](https://experiments.thisiswhitespace.com/glass-hero).
+
+Example: `/threejs-particle-canvas glass hero — developer tools landing page with frosted glass panes refracting the headline`
+
+### Three.js Version
+
+Mode 6 requires **Three.js r162+** for `MeshPhysicalMaterial.dispersion`. Use `three@0.170.0` or later via CDN. Import `EffectComposer`, `RenderPass`, and `UnrealBloomPass` from the matching addons path.
+
+### Config
+
+| Parameter | Default | Effect |
+|---|---|---|
+| `preset` | `"chromatic-prism"` | Material preset: `clear-crystal`, `frosted-opal`, `chromatic-prism` |
+| `pieceCount` | 5 | Number of glass fragments |
+| `gap` | 0.045 | Space between panes |
+| `cornerRadius` | 0.045 | Fragment rounding |
+| `paneDepth` | 0.040 | Glass thickness (geometry) |
+| `hoverTilt` | 0.36 | Rotation response to cursor |
+| `hoverRadius` | 1.95 | Influence zone size |
+| `hoverCellPush` | 1.04 | Z-displacement on hover |
+| `hoverEase` | 4.0 | Animation smoothing |
+| `parallax` | 1.90 | Depth response to cursor |
+| `flyDuration` | 0.90 | Entry animation time (seconds) |
+| `flyDirectionDeg` | 60 | Entry animation angle |
+| `bloomStrength` | 0.05 | Bloom glow intensity |
+| `bloomRadius` | 1.80 | Bloom spread |
+| `bloomThreshold` | 1.10 | Bloom brightness cutoff |
+| `backgroundColor` | `#0a0a0c` | Scene background |
+| `accentColor` | `#57FFA8` | Mint — CTA/link hover |
+| `secondaryColor` | `#A78BFA` | Violet — secondary actions |
+| `font` | `"Geist"` | Display font (+ Space Grotesk for controls) |
+
+### Material Presets
+
+| Preset | IOR | Dispersion | Roughness | Iridescence | Feel |
+|--------|-----|------------|-----------|-------------|------|
+| `clear-crystal` | 1.5 | 0.1 | 0.05 | 0.0 | Clean, sharp, minimal distortion |
+| `frosted-opal` | 1.8 | 0.3 | 0.7 | 1.0 | Soft, diffused, rainbow-shifted |
+| `chromatic-prism` | 2.14 | 0.415 | 0.41 | 1.0 | Maximum drama — the Glass Hero default |
+
+See `references/glass-hero-design-system.md` for the full 16-parameter material space, all three preset definitions, and the complete Voronoi geometry parameter table.
+
+### Signature moment
+
+**The chromatic fringe.** When the user first hovers a glass pane and it tilts — the edge catches dispersion, splitting white into a rainbow fringe while the content behind bends and refracts. That moment of physical accuracy in a browser is the point.
+
+### Architecture
+
+```
+init() → createScene() → createGlassPanes() → createHeroContent() → setupPostProcessing()
+                                                                            ↓
+animate() ← requestAnimationFrame ← updateHover() + updateParallax() + updateFlyIn()
+    ↓
+Scene graph:
+  - Scene (bg: #0a0a0c)
+    - DirectionalLight + AmbientLight
+    - GlassGroup (N × Mesh<ExtrudedVoronoiGeometry, MeshPhysicalMaterial>)
+    - HeroContent (CSS overlay positioned behind glass via z-index)
+  - EffectComposer → RenderPass → UnrealBloomPass
+```
+
+### Voronoi Pane Generation
+
+1. Scatter N random seed points within the hero rectangle
+2. Run Lloyd relaxation (4 iterations) for even distribution
+3. Compute Voronoi cells, clip to hero bounds
+4. For each cell: extrude polygon to `paneDepth`, apply `cornerRadius`
+5. Create `MeshPhysicalMaterial` with preset values, assign to each mesh
+6. Position with `gap` between cells
+
+### Interaction
+
+Mouse position in NDC drives two effects:
+- **Pane tilt**: Each pane within `hoverRadius` rotates toward the cursor (quaternion slerp at `hoverEase` rate)
+- **Cell push**: Hovered pane's `position.z` lerps toward `hoverCellPush`; in Focus mode only the hovered cell moves
+
+### Hero Content
+
+The hero text (headline, body, CTA) renders as an HTML overlay positioned behind the Three.js canvas via CSS `z-index`. The glass panes refract the content visible through `transmission`. No html-in-canvas API required — the transmission buffer captures what's behind the glass naturally.
+
+Fallback for browsers without MeshPhysicalMaterial transmission: render glass as semi-transparent with `backdrop-filter: blur()` CSS on an overlay div.
+
+### Color System
+
+Dark base with mint/violet accents. For a flat CSS equivalent of this palette (no Three.js), see grainient's glass-hero palette preset: `grainient/references/glass-hero-palette.md`.
+
+```css
+:root {
+  --glass-bg: #0a0a0c;
+  --glass-accent: #57FFA8;
+  --glass-secondary: #A78BFA;
+  --glass-warm: rgb(254, 128, 64);
+  --glass-text: white;
+  --glass-text-body: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.11);
+}
+```
+
+### Typography
+
+Geist (display/body) + Geist Mono (code) + Space Grotesk (controls). Heading: 28px, -0.02em tracking, semibold. Body: 15px, -0.005em, line-height 1.6.
+
+### Anti-Patterns (Mode 6 specific)
+
+- Never use Three.js below r162 — `dispersion` property doesn't exist
+- Never use `MeshStandardMaterial` — must be `MeshPhysicalMaterial` for transmission/dispersion
+- Never set `transmission > 0` without enabling the renderer's transmission buffer (automatic in recent Three.js)
+- Never use React Three Fiber or drei — vanilla JS only, matching other modes
+- Never skip the `UnrealBloomPass` — even at strength 0.05, the bloom on glass edges is the visual glue
+- Never use `OrbitControls` — implement parallax + hover tilt directly via mouse events
+- Never omit the fly-in animation — entering without motion feels static and dead
+- Never use pure black `#000000` — use `#0a0a0c` (blue-tinted near-black)
+- Never hard-code Voronoi cells — generate procedurally from seed points for each instance
+
 ## Shared FX: Phosphor Vigil
 
 `assets/phosphor-vigil.js` — a 4-pass post-processing pipeline shared across Modes 3 & 4 and importable into any Three.js project. Feedback trail ping-pong (RGB-shifted by velocity, iridescent oil-slick tint), bloom threshold, box blur, CRT composite (barrel distortion, chromatic aberration, dual-frequency scanlines, RGB subpixel shadow mask, vignette, dual-frequency flicker, phosphor glow, grain, warm/green tint).
@@ -317,7 +434,7 @@ See `references/design-references.md` for exemplary interactive canvas experienc
 - Never use synchronous font loading — CSS `@font-face` with `font-display: swap`
 - Never hardcode window dimensions — always `window.innerWidth/Height`
 - Never skip WebGL error handling — always provide a text fallback
-- Never use pure black (`#000000`) — use rich off-blacks (`#050508`, `#0a0a12`)
+- Never use pure black (`#000000`) — use rich off-blacks (`#050508`, `#0a0a12`, `#0a0a0c` for Mode 6)
 - Never default to icosahedron — derive geometry from the concept
 - Never embed the phosphor-vigil shaders inline — always `import { PhosphorVigil } from './phosphor-vigil.js'`, the pipeline is shared identity across modes
 - Never rename the `IMAGES_INJECTION_POINT` sentinel or the `IMAGE_MANIFEST` const in Mode 3 — the image-well bridge depends on both

@@ -1,6 +1,6 @@
 ---
 name: review-deep
-description: Comprehensive pre-release review pipeline. Runs /review-health, /review-arch, /review-security, /review-perf, /review-a11y, /review-test, /review-doc, and /review-release in sequence. Thin orchestrator — each sub-skill keeps its normal interactive behavior. Auto-detects phases that do not apply and asks the user to confirm skipping them. Ends with a consolidated report.
+description: Comprehensive pre-release review pipeline. Runs /review-health, /review-arch, /review-security, /review-perf, /review-a11y, /review-test, /tidy-docs, and /review-release in sequence. Thin orchestrator — each sub-skill keeps its normal interactive behavior. Auto-detects phases that do not apply and asks the user to confirm skipping them. Ends with a consolidated report.
 model: opus
 ---
 
@@ -12,7 +12,7 @@ Convenience wrapper that runs every `/review-*` skill in a coordinated sequence.
 
 **Thin orchestrator, not a new process.** This skill composes eight existing `/review-*` skills. It adds sequencing, skip detection, branch safety, and a consolidated final report — nothing else. Each sub-skill retains its normal behavior.
 
-**Interactive throughout.** The user participates in every sub-skill's decision points. This is not fire-and-forget. If you want an autonomous sweep, use the individual skills directly with their autonomous modes (where supported).
+**Interactive throughout.** The user participates in every sub-skill's decision points. This is not fire-and-forget. If you want a less hands-on sweep, invoke the individual skills directly — each manages its own user interaction. Skills that offer tickets (e.g., `/review-arch`, `/review-security`, `/bug-hunt` as of v8.0.0) still present the proposal here; you decide at each prompt.
 
 **Detect-and-confirm skips.** Some phases do not apply to every project (no web content → no a11y; no tests → no test review). The orchestrator detects these conditions, proposes a skip list, and asks the user to confirm before starting.
 
@@ -31,7 +31,7 @@ Convenience wrapper that runs every `/review-*` skill in a coordinated sequence.
 │     4. /review-perf                                  │
 │     5. /review-a11y                                  │
 │     6. /review-test                                  │
-│     7. /review-doc                                   │
+│     7. /tidy-docs                                   │
 │     8. /review-release                               │
 │  3. Consolidated final report                        │
 └──────────────────────────────────────────────────────┘
@@ -77,7 +77,7 @@ Will run:
 - /review-arch
 - /review-security
 - /review-perf
-- /review-doc
+- /tidy-docs
 - /review-release
 
 Confirm, or override (e.g., "also skip /review-perf", "force-run /review-test")?
@@ -119,12 +119,12 @@ Present a single report that aggregates the results of every enabled phase. The 
 | Phase            | Status        | Key Outcome                                     |
 |------------------|---------------|-------------------------------------------------|
 | /review-health   | Complete      | Classified as OSS library; 2 Major findings    |
-| /review-arch     | Complete      | 3 blueprint items implemented, 2 deferred       |
+| /review-arch     | Complete      | 5 blueprint recommendations; 3 tickets cut      |
 | /review-security | Complete      | 1 high-severity finding; 4 advisory             |
 | /review-perf     | Complete      | No critical bottlenecks; 2 caching suggestions  |
 | /review-a11y     | Skipped       | No web content                                  |
-| /review-test     | Complete      | +14 tests, -3 brittle tests; coverage 72 → 81%  |
-| /review-doc      | Complete      | 7 docs updated                                  |
+| /review-test     | Complete      | 5 coverage/quality tickets cut; coverage 72%    |
+| /tidy-docs      | Complete      | 7 docs updated                                  |
 | /review-release  | Complete      | Release verdict: GO, after 2 advisory items     |
 
 ### Changes Made
@@ -134,7 +134,7 @@ Present a single report that aggregates the results of every enabled phase. The 
 ### Cross-Cutting Observations
 [Synthesize across phases. Examples:
  - Multiple phases flagged inconsistent error handling → project-level concern
- - Arch review renamed modules; doc review updated doc references to match
+ - Arch review recommended a module split that doc review's stale-link findings also pointed at
  - Security and perf both pointed at the same hot-path function
  If no cross-cutting themes emerged, say so concisely.]
 
@@ -174,12 +174,12 @@ Present a single report that aggregates the results of every enabled phase. The 
 
 **This skill is a composition of:**
 - `/review-health` — first-pass strategic orientation on the repo
-- `/review-arch` — architectural analysis and restructuring
+- `/review-arch` — architectural analysis (advisory; offers ticket cutting)
 - `/review-security` — white-box security audit
 - `/review-perf` — performance review (compute and/or web)
 - `/review-a11y` — WCAG accessibility audit
 - `/review-test` — coverage, fuzz, and quality test review
-- `/review-doc` — documentation audit and updates
+- `/tidy-docs` — documentation audit and updates
 - `/review-release` — pre-release readiness check
 
 **When to use `/review-deep` vs. individual skills:**
@@ -187,5 +187,5 @@ Present a single report that aggregates the results of every enabled phase. The 
 - Use an individual `/review-*` skill for targeted single-dimension review, or when a previous `/review-deep` surfaced a specific area to re-examine.
 
 **Relationship to `/refactor-deep`:**
-- `/refactor-deep` composes refactoring skills: `/refactor`, `/review-arch`, `/refactor`, `/review-doc`. It is change-oriented.
-- `/review-deep` composes review skills and is evaluation-oriented. It shares `/review-arch` and `/review-doc` with `/refactor-deep`; running both back-to-back in the same session is usually redundant. Prefer `/review-deep` when release readiness is the goal.
+- `/refactor-deep` composes: `/refactor` (tactical cleanup), `/review-arch` (advisory architectural analysis, with optional ticket creation), `/tidy-docs`. It is change-oriented.
+- `/review-deep` composes review skills and is evaluation-oriented. It shares `/review-arch` and `/tidy-docs` with `/refactor-deep`; running both back-to-back in the same session is usually redundant. Prefer `/review-deep` when release readiness is the goal.

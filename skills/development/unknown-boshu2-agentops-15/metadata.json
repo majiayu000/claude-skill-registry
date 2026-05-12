@@ -1,0 +1,26 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "boshu2/agentops",
+  "path": "skills-codex/hooks-authoring/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-boshu2-agentops-15",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "LICENSE.md",
+    "references/event-taxonomy.md",
+    "references/matcher-patterns.md",
+    "references/test-harness.md"
+  ],
+  "author": "boshu2",
+  "source_url": "https://github.com/boshu2/agentops/blob/main/skills-codex/hooks-authoring/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boshu2/agentops/blob/main/skills-codex/hooks-authoring/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

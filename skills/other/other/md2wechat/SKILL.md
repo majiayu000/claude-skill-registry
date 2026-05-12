@@ -197,3 +197,206 @@ Draft behavior:
 - May download remote images when asked.
 - May call external image-generation services when configured.
 - May upload HTML, images, drafts, and image posts to WeChat when the user explicitly requests those actions.
+
+## Markdown Expression Diagnosis（排版诊断层）
+
+公众号排版不是装饰系统，而是**阅读决策系统**。
+
+在选择任何排版模块之前，先完成三步诊断：
+
+### Step 0：读取品牌档案
+
+```bash
+test -f ~/.config/md2wechat/brand.md   && cat ~/.config/md2wechat/brand.md   || echo "no brand profile — using system defaults"
+```
+
+如有 `voice.style_ref`，一并读取作为风格上下文。
+
+### Step 1：三问诊断
+
+| 诊断问题 | 回答方向 | 决定哪个目标优先 |
+|---|---|---|
+| **这篇文章想让读者做什么？** | 关注 / 收藏 / 咨询 / 转发 / 购买 | conversion 模块配置 |
+| **这篇文章最应该被记住的是什么？** | 一个判断 / 一个数字 / 一个品牌 | memorability 模块选择 |
+| **这是系列内容还是独立文章？** | 系列 → 强化品牌锚点；独立 → 内容权威即可 | brand.md 应用力度 |
+
+### Step 2：四目标模块选择
+
+| 目标 | 读者问题 | 排版职责 | 代表模块 |
+|---|---|---|---|
+| **attention** | 这篇值不值得看？ | 第一屏承诺、开头判断 | hero / verdict / audience-fit |
+| **readability** | 手机读起来累不累？ | 段落切分、卡片密度 | part / callout / steps / toc |
+| **memorability** | 我读完记住什么？ | 金句、核心判断、品牌锚点 | quote / verdict / author-card / summary |
+| **conversion** | 我下一步做什么？ | 行动路径清晰可见 | cta / subscribe / faq |
+
+选模块顺序：attention（1–2 个）→ readability（1–3 个）→ memorability（1–2 个）→ conversion（1 个）。
+总数受 `brand.md limits.max_modules` 约束（默认 6）。
+
+### Step 3：核心原则
+
+- 不堆模块。一篇文章 hero 只有一个，verdict 只有一个，cta 只有一个。
+- 写作是内在表达，排版是外在表达。Agent 的工作是把内在表达翻译成外在表达。
+- Brand Profile 让文章长期像同一个人，Layout Policy 让单篇文章排得有理由。
+
+## Brand Profile（品牌档案）
+
+品牌档案存储在 `~/.config/md2wechat/brand.md`（可选文件，用户创建）。
+
+### 读取协议
+
+每次正式排版任务前检测并读取：
+
+```bash
+test -f ~/.config/md2wechat/brand.md   && cat ~/.config/md2wechat/brand.md   || echo "no brand profile"
+```
+
+### 优先级链（从高到低）
+
+```
+CLI flag (--theme 等)
+  > brand.md 字段
+  > config.yaml api.* 字段
+  > Layout Policy 推荐默认值
+  > 工具硬编码默认值
+```
+
+### 降级规则
+
+| 情况 | Agent 行为 |
+|---|---|
+| brand.md 不存在 | 静默跳过，继续用 config.yaml 默认值 |
+| YAML 语法错误 | 警告具体行号，降级，不中断任务 |
+| 字段缺失 | 该字段用默认值 |
+| theme 值无效 | 降级到 api.default_theme，警告 |
+| style_ref 路径不存在 | 警告，使用内联 voice 字段 |
+| style_ref 是目录 | 读目录下全部 .md 文件（字母序合并） |
+| limits.max_modules > 43 | cap 到 43，警告 |
+| limits.max_cta > 2 | cap 到 2，警告 |
+| limits.max_quotes > 10 | cap 到 10，警告 |
+| limits.max_hero > 1 | cap 到 1，警告 |
+| limits.max_modules 为 0 | 当作未设置，用默认值 6 |
+| author_card 部分填写 | 用现有字段渲染简化版，不跳过 |
+
+### style_ref 读取
+
+当 `voice.style_ref` 存在时，在排版任务前读取作为风格上下文：
+
+```bash
+# 单个文件
+style_ref_path=$(python3 -c "import os; print(os.path.expanduser('~/Documents/brand/voice-guide.md'))")
+[ -f "$style_ref_path" ] && cat "$style_ref_path" || echo "style_ref not found, using inline voice"
+
+# 目录（读所有 .md，按字母序合并）
+style_ref_dir=$(python3 -c "import os; print(os.path.expanduser('~/Documents/brand/'))")
+[ -d "$style_ref_dir" ] && for f in "$style_ref_dir"*.md; do [ -f "$f" ] && echo "=== $f ===" && cat "$f"; done
+```
+
+### Sanity Cap（读取后立即应用）
+
+```python3
+import os
+
+brand_path = os.path.expanduser('~/.config/md2wechat/brand.md')
+if os.path.exists(brand_path):
+    with open(brand_path) as f:
+        brand_content = f.read()
+else:
+    brand_content = ""
+
+# Agent contextually extracts limits from brand_content (natural language)
+# Example limits in brand.md:
+#   max_modules: 6 (出现频率限制)
+#   max_cta: 1 (单篇CTA上限)
+#
+# Supported ranges:
+caps = {'max_modules': (43, 6), 'max_cta': (2, 1), 'max_quotes': (10, 2), 'max_hero': (1, 1)}
+# Agent respects these caps regardless of brand.md content
+```
+
+### 触发行为
+
+**A'（任务前一句话提示，不阻塞）**
+
+当用户进行正式排版/发布任务且 brand.md 不存在时：
+> 在任务开始前说一句："我注意到你还没有品牌档案，这次用系统默认设置。如需固定 CTA 和作者信息，告诉我。"
+> → 不等用户回复，立刻开始任务。本次会话不再重复提示。
+
+**C（用户主动设置）**
+
+当用户说"帮我设置品牌档案"或"brand init"时，运行 3 问引导：
+
+```
+Q1: "你的公众号名称或笔名？"
+    → name + author_card.name
+
+Q2: "一句话介绍（身份 + 做什么）？
+     例：AI 应用开发者 / 独立开发者，记录 AI 工具实践。"
+    → 用 / 分隔：/ 前 → author_card.title，/ 后 → author_card.bio
+
+Q3: "文章结尾的引导语？
+     例：如果这篇对你有启发，欢迎关注，继续看 AI 内容工作流。"
+    → cta.default_body
+
+Q4（可跳过）: "你有写作风格参考文件吗？（输入路径，或直接回车跳过）"
+    → voice.style_ref，跳过则省略此字段
+```
+
+收集完成后写入文件：
+
+```bash
+mkdir -p ~/.config/md2wechat
+cat > ~/.config/md2wechat/brand.md << 'BRAND_EOF'
+schema_version: 1
+name: [Q1答案]
+
+voice:
+  avoid:
+    - 过度营销
+    - 空泛鸡汤
+
+layout:
+  opening: verdict_first
+
+limits:
+  max_modules: 6
+  max_cta: 1
+  max_quotes: 2
+  max_hero: 1
+
+cta:
+  default_title: 如果这篇对你有启发
+  default_body: [Q3答案]
+  default_action: 关注 / 咨询
+
+author_card:
+  name: [Q1答案]
+  title: [Q2答案/前半部分]
+  bio: [Q2答案/后半部分]
+BRAND_EOF
+```
+
+如果 Q4 有填写，在 voice 下追加：`  style_ref: [Q4路径]`
+
+写入后验证：
+
+```bash
+cat ~/.config/md2wechat/brand.md
+
+python3 -c "
+content = open('$HOME/.config/md2wechat/brand.md').read()
+checks = ['schema_version', 'cta:', 'author_card:', 'limits:']
+missing = [c for c in checks if c not in content]
+if missing:
+    print('WARNING: 字段不完整:', missing)
+else:
+    print('brand.md 写入成功，字段完整。')
+"
+```
+
+### 更新 brand.md（局部修改）
+
+当用户只想更新某个字段（如 CTA）时，重新生成整个文件而非手术式编辑：
+1. 读取现有 brand.md，展示当前对应字段值
+2. 询问新值
+3. 将变更合并后重新生成完整 brand.md
+4. 展示关键 diff（echo 对比）后写入

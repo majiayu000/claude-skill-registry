@@ -1,6 +1,6 @@
 ---
 name: srgn-cli
-description: "Practical guide for building safe, syntax-aware srgn CLI commands for source-code search and transformation. Use when users ask for srgn commands, scoped refactors (comments/docstrings/imports/functions), multi-file rewrites with --glob, custom tree-sitter query usage, or CI-style checks with --fail-any/--fail-none."
+description: "Build safe, syntax-aware srgn CLI commands for source-code search and transformation. Use for srgn commands, scoped refactors (comments/docstrings/imports/functions), multi-file rewrites with --glob, tree-sitter queries, or CI checks with --fail-any/--fail-none."
 ---
 
 # srgn CLI

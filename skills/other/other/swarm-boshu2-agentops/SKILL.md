@@ -1,6 +1,7 @@
 ---
 name: swarm
 description: 'Dispatch parallel agents.'
+practices: [microservices, team-topologies, mythical-man-month]
 skill_api_version: 1
 context:
   window: fork
@@ -113,6 +114,7 @@ This is how the prevention ratchet applies shift-left mechanically: active compi
 - If you cannot enumerate files yet, add a planning step to identify them before spawning workers. An empty or missing manifest signals the need for more planning, not unconstrained workers.
 - Workers receive the manifest in their prompt and are instructed to stay within it (see `references/local-mode.md` worker prompt template).
 - The worker prompt MUST include the `metadata.files` array as the FILE MANIFEST section. Workers grep for existing function signatures before writing new code to avoid duplication.
+- Per-worker model/tool/prompt isolation specs: see [`references/worker-specs.md`](references/worker-specs.md) and [`schemas/worker-spec.v1.schema.json`](../../schemas/worker-spec.v1.schema.json). When a wave's tasks declare a `metadata.worker_spec` reference, the spawned worker honors the named spec's model/tool/prompt allowlist instead of inheriting the lead agent's surface.
 
 ```json
 {

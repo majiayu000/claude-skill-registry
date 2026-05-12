@@ -11,6 +11,8 @@ metadata:
 
 Comprehensive quality review based on Google Lighthouse audits. Covers Performance, Accessibility, SEO, and Best Practices across 150+ checks.
 
+> **Lighthouse v13 note (Oct 2025+).** Lighthouse has migrated the Performance category from per-opportunity audits to **Performance Insight Audits** ([announcement](https://developer.chrome.com/blog/moving-lighthouse-to-insights)). Several individual audit names this skill historically referenced — *First Meaningful Paint*, *No Document Write*, *Uses Passive Event Listeners*, *Uses Rel Preload* — have been removed or merged. The underlying *advice* is unchanged and still applies; only the report format moved. The CLS-related audits ("layout shifts", "non-composited animations", "unsized images") are now consolidated into a single `cls-culprits-insight`, and image audits are merged into `image-delivery-insight`. Treat older Lighthouse JSON output as a superset, not a contradiction.
+
 ## How it works
 
 1. Analyze the provided code/project for quality issues

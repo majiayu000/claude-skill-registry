@@ -1,8 +1,6 @@
 ---
 name: elevenlabs-agents
-description: ElevenLabs Agents Platform for AI voice agents (React/JS/Native/Swift). Use for voice AI, RAG, tools, or encountering package deprecation, audio cutoff, CSP violations, webhook auth failures.
-
-  Keywords: ElevenLabs Agents, ElevenLabs voice agents, AI voice agents, conversational AI, @elevenlabs/react, @elevenlabs/client, @elevenlabs/react-native, @elevenlabs/elevenlabs-js, @elevenlabs/agents-cli, elevenlabs SDK, voice AI, TTS, text-to-speech, ASR, speech recognition, turn-taking model, WebRTC voice, WebSocket voice, ElevenLabs conversation, agent system prompt, agent tools, agent knowledge base, RAG voice agents, multi-voice agents, pronunciation dictionary, voice speed control, elevenlabs scribe, @11labs deprecated, Android audio cutoff, CSP violation elevenlabs, dynamic variables elevenlabs, case-sensitive tool names, webhook authentication
+description: "ElevenLabs Agents Platform for AI voice agents (React/JS/Native/Swift). Use for voice AI, RAG, tools, or encountering package deprecation, audio cutoff, CSP violations, webhook auth failures."
 license: MIT
 metadata:
   version: 1.1.0
@@ -25,8 +23,41 @@ metadata:
     - https://github.com/elevenlabs/elevenlabs-examples
   errors_prevented: 17+
   token_savings: ~73%
+  keywords:
+    - ElevenLabs Agents
+    - ElevenLabs voice agents
+    - AI voice agents
+    - conversational AI
+    - "@elevenlabs/react"
+    - "@elevenlabs/client"
+    - "@elevenlabs/react-native"
+    - "@elevenlabs/elevenlabs-js"
+    - "@elevenlabs/agents-cli"
+    - elevenlabs SDK
+    - voice AI
+    - TTS
+    - text-to-speech
+    - ASR
+    - speech recognition
+    - turn-taking model
+    - WebRTC voice
+    - WebSocket voice
+    - ElevenLabs conversation
+    - agent system prompt
+    - agent tools
+    - agent knowledge base
+    - RAG voice agents
+    - multi-voice agents
+    - pronunciation dictionary
+    - voice speed control
+    - elevenlabs scribe
+    - "@11labs deprecated"
+    - Android audio cutoff
+    - CSP violation elevenlabs
+    - dynamic variables elevenlabs
+    - case-sensitive tool names
+    - webhook authentication
 ---
-
 # ElevenLabs Agents Platform
 
 ## Overview

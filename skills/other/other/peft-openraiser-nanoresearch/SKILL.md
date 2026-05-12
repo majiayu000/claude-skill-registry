@@ -17,7 +17,7 @@ Fine-tune LLMs by training <1% of parameters using LoRA, QLoRA, and 25+ adapter 
 **Use PEFT/LoRA when:**
 - Fine-tuning 7B-70B models on consumer GPUs (RTX 4090, A100)
 - Need to train <1% parameters (6MB adapters vs 14GB full model)
-- Want fast iteration with multiple task-specific adapters
+- Want fast iteration with multiple task specific adapters
 - Deploying multiple fine-tuned variants from one base model
 
 **Use QLoRA (PEFT + quantization) when:**

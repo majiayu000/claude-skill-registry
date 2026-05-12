@@ -430,7 +430,18 @@ Task:
 
 **Important**: Always include the `CONCURRENT EXECUTION MODE` and `RESULT FILE PROTOCOL` sections regardless of `max_parallel` value. All agents write to per-task context files and result files.
 
-5. **Poll for completion**: After launching all background agents, poll for result files using the `poll-for-results.sh` script from `execute-tasks` via the **multi-round polling pattern**. Each poll round invokes `bash ${CLAUDE_PLUGIN_ROOT}/../sdd-tools/skills/execute-tasks/scripts/poll-for-results.sh .claude/sessions/__live_session__ {task_ids...}` (with Bash `timeout: 480000`). The script checks for `result-task-{id}.md` files every 15 seconds for up to 7 minutes, reporting progress on exit. The orchestrator loops across rounds until all results are found or the 45-minute cumulative timeout is reached. If the Bash tool returns a timeout error, treat it as an incomplete round and retry. After polling completes, proceed to 8d.
+5. **Poll for completion**: After launching all background agents, poll for result files using `poll-for-results.sh` from `execute-tasks`. The script checks for `result-task-{id}.md` files every 15 seconds for up to 45 minutes, printing progress lines periodically. A single Bash invocation handles the entire polling lifecycle.
+
+   **Poll invocation** (via Bash tool with `timeout: 2760000`):
+   ```bash
+   bash ${CLAUDE_PLUGIN_ROOT}/../sdd-tools/skills/execute-tasks/scripts/poll-for-results.sh \
+     .claude/sessions/__live_session__ {task_ids...}
+   ```
+
+   Parse the output:
+   - `POLL_RESULT: ALL_DONE` — all agents finished. Proceed to 8d.
+   - `POLL_RESULT: TIMEOUT` — not all agents finished within the timeout window. Log the `Waiting on:` line and proceed to 8d (handles missing result files via TaskOutput fallback).
+   - Bash tool timeout or no recognizable output — treat as timeout. Proceed to 8d.
 
 #### 8d: Process Results (Batch)
 
@@ -478,7 +489,7 @@ After batch processing identifies failed tasks:
    - For TDD tasks, include TDD-specific retry guidance in the prompt
    - Update `progress.md`: `- [{id}] {subject} -- Retrying ({n}/{max})`
 3. If any retry agents were launched:
-   - Enter a new multi-round polling loop for the retry agents' result files (same `poll-for-results.sh` pattern as 8c step 5, with only the retry task IDs as arguments)
+   - Poll for retry result files using `poll-for-results.sh` (same pattern as 8c step 5, with only the retry task IDs as arguments and `timeout: 2760000` on the Bash invocation)
    - After polling completes, **reap retry agents**: call `TaskOutput` on each retry `background_task_id` to extract `duration_ms` and `total_tokens` (same pattern as 8d step 1). If `TaskOutput` times out, call `TaskStop` to force-terminate.
    - Process retry results using the same batch approach as 8d (using the freshly extracted per-task duration and token values for task_log rows)
    - Repeat 8e if any retries still have attempts remaining
@@ -607,13 +618,13 @@ See `references/tdd-verification-patterns.md` for complete verification rules.
 - **Autonomous execution loop**: After user confirms the plan, no further prompts between tasks
 - **Background agent execution**: Agents run as background tasks (`run_in_background: true`), returning ~3 lines instead of ~100+ lines of full output. This reduces orchestrator context consumption by ~79% per wave.
 - **Agent process reaping**: After polling confirms result files exist, the orchestrator calls `TaskOutput` on each background task_id to reap the process and extract per-task `duration_ms` and `total_tokens` usage metadata. If `TaskOutput` times out, `TaskStop` force-terminates the stuck agent. This prevents lingering background processes.
-- **Result file protocol**: Each agent writes a compact `result-task-{id}.md` as its very last action. TDD result files include a `## TDD Compliance` section. The orchestrator polls for these files via `poll-for-results.sh` in multi-round Bash invocations (each with `timeout: 480000`), with progress output between rounds, then batch-reads them for processing.
+- **Result file protocol**: Each agent writes a compact `result-task-{id}.md` as its very last action. TDD result files include a `## TDD Compliance` section. The orchestrator polls for these files via `poll-for-results.sh` in a single Bash invocation (with `timeout: 2760000`), then batch-reads them for processing.
 - **Batched session file updates**: `task_log.md` and `progress.md` are updated once per wave (batch read-modify-write) instead of per-task.
 - **Wave-based TDD parallelism**: Test tasks (RED) in one wave, their paired implementation tasks (GREEN) in the next. Multiple features run in parallel within a wave
 - **Agent routing by metadata**: TDD tasks go to `tdd-executor`, non-TDD tasks go to `task-executor`
 - **Per-task context isolation**: Each agent writes to `context-task-{id}.md`, orchestrator merges after each wave
 - **Test-to-implementation context flow**: Test task result data is read from disk and injected into the paired implementation task's prompt via `PAIRED TEST TASK OUTPUT`. RED result files are retained across waves until the paired GREEN task completes.
-- **Within-wave retry**: Failed tasks with retries remaining are re-launched as background agents. The orchestrator enters a new multi-round polling loop for retry result files (same `poll-for-results.sh` pattern as initial wave polling).
+- **Within-wave retry**: Failed tasks with retries remaining are re-launched as background agents. The orchestrator polls for retry result files using `poll-for-results.sh` (same pattern as initial wave polling).
 - **No silent degradation**: If TDD test task fails, its paired implementation task stays blocked. Never run implementation without tests
 - **TDD compliance tracking**: Per-pair tracking of RED/GREEN/REFACTOR verification extracted from result files
 - **Configurable strictness**: `strict`, `normal`, or `relaxed` TDD enforcement via settings

@@ -14,6 +14,10 @@ Orchestrates a batch of tickets as a cohesive unit. Creates a project branch, im
 
 **The project branch is the integration point.** Each ticket gets its own topic branch. Work flows from topic branches into the project branch, never directly into main. This keeps main clean and gives the user a single decision point at the end: merge the project branch or don't.
 
+**This skill is a for-loop, not an orchestrator.** Tickets are the work definition. Commander's intent does not apply here — the tickets carry the intent, and cross-cutting constraints (if any) inherit from the caller (`/implement-project` or `/lead-project`). The skill applies the autonomy discipline documented in [`references/autonomy.md`](../../references/autonomy.md) at the points where it does apply: the shared handoff template for andon-cord pulls, the cascade rule for `/implement` escalations.
+
+**Cascade rule.** Escalations from `/implement` cascade up to this skill, not directly to the operator. When `/implement` would otherwise pull its own cord (e.g., 3-strike acceptance failure, unresolvable critical security finding), the batch skill catches that signal and pulls *its* cord with batch-level context (which ticket, which step, what's already merged). The caller has more context than the worker; the worker does not go around its caller.
+
 ## Workflow Overview
 
 ```
@@ -32,7 +36,7 @@ Orchestrates a batch of tickets as a cohesive unit. Creates a project branch, im
 │     └─ 5e. Delete topic branch                       │
 │  6. Cross-cutting quality passes                     │
 │     ├─ 6a. /refactor (SAFE aggression)               │
-│     └─ 6b. /review-doc                               │
+│     └─ 6b. /tidy-docs                               │
 │  7. Final review (present to user)                   │
 └──────────────────────────────────────────────────────┘
 ```
@@ -41,14 +45,11 @@ Orchestrates a batch of tickets as a cohesive unit. Creates a project branch, im
 
 **This protocol applies throughout the entire workflow.** When the andon cord is pulled:
 
-1. **Stop all work immediately** — do not attempt to continue with other tickets or steps
-2. Present to user:
-   - Which ticket and which step failed
-   - What was attempted and what went wrong
-   - Current state of all branches (what's merged, what's in-progress)
-3. Wait for user guidance before resuming
+1. **Stop all work immediately** — do not attempt to continue with other tickets or steps.
+2. Produce a handoff using the **shared handoff template** in [`references/autonomy.md`](../../references/autonomy.md). The escalation must include pre-loaded options (2–3 named choices), an explicit recommendation, the one tradeoff that would flip the recommendation, and a pre-rebutted counterargument. Include the skill-specific state: which ticket and step failed, current branch state (what's merged into the project branch, what's in-progress on a topic branch), and tracker links if relevant.
+3. Wait for user guidance before resuming.
 
-**Andon cord triggers:**
+**Andon cord triggers (skill-specific):**
 - Acceptance verification fails 3 times (step 5b, `/implement` step 4)
 - Unresolvable critical/high security findings (step 5b, `/implement` step 5a)
 - Post-merge test suite failure (step 5d)
@@ -70,18 +71,7 @@ Accept tickets from the user in any of these forms:
 
 ### 2. Detect Issue Tracker & Fetch Tickets
 
-**Detect platform:**
-- Run `git remote -v` and inspect the URL
-- GitHub: `github.com` → use `gh` CLI
-- Gitea: other git hosting → use `mcp__gitea__*` MCP tools if available, otherwise API
-- GitLab: `gitlab.com` or GitLab instances → use `glab` CLI if available
-
-**Fetch each ticket:**
-- Title
-- Description/body
-- Acceptance criteria (if explicitly present)
-- Labels/tags
-- Dependencies (referenced issues, "depends on" links)
+Detect the issue tracker and fetch ticket data per [`references/trackers.md`](../../references/trackers.md) (Detection Procedure + "Fetch (read)" operation). Fetch each ticket's title, description, acceptance criteria, labels, and dependencies.
 
 **Andon cord** if tracker is unavailable or tickets can't be fetched.
 
@@ -175,7 +165,7 @@ Run the `/refactor` workflow with these parameters:
 
 #### 6b. Documentation Review
 
-Run the `/review-doc` workflow:
+Run the `/tidy-docs` workflow:
 - Full documentation audit (not git-diff scoped)
 - Fixes committed separately
 
@@ -246,6 +236,6 @@ The orchestrator maintains:
 - `/scope` creates tickets; `/implement-batch` consumes them
 - Typical flow: `/scope` to plan and create tickets, then `/implement-batch` to implement the batch
 
-**Relationship to `/refactor`, `/review-doc`:**
+**Relationship to `/refactor`, `/tidy-docs`:**
 - These run as cross-cutting quality passes after all tickets are implemented
 - They catch issues that span multiple tickets or emerge from their interaction

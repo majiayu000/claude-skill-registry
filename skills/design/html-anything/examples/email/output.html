@@ -1,0 +1,1132 @@
+<!doctype html>
+<html lang="en" data-ha-style="soft-saas">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Acme x Clockless — Mailbox Snapshot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light;
+  --canvas: #f5f7fb;
+  --panel: #ffffff;
+  --panel-2: #f8faff;
+  --line: rgba(106, 119, 150, 0.14);
+  --line-strong: rgba(88, 101, 133, 0.22);
+  --text: #172033;
+  --muted: #6b7288;
+  --muted-2: #9aa3b7;
+  --blue: #5b7cf6;
+  --blue-2: #aebcff;
+  --cyan: #65d6ce;
+  --pink: #e978ae;
+  --yellow: #f6c445;
+  --green: #49c99f;
+  --shadow: 0 18px 44px rgba(71, 83, 112, 0.11);
+  --shadow-soft: 0 8px 24px rgba(71, 83, 112, 0.08);
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "SF Mono", Menlo, ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(720px 320px at 52% 10%, rgba(91, 124, 246, 0.10), transparent 72%),
+    radial-gradient(580px 320px at 80% 0%, rgba(101, 214, 206, 0.12), transparent 70%),
+    var(--canvas);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+button, input { font: inherit; }
+button { cursor: pointer; }
+.soft-saas-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 42px 28px 72px;
+}
+.soft-board {
+  display: grid;
+  grid-template-columns: 300px minmax(390px, 1fr) 330px;
+  gap: 24px;
+  align-items: start;
+}
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-soft);
+}
+.profile-card {
+  padding: 24px 20px 18px;
+  min-height: 374px;
+}
+.avatar {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font: 700 17px/1 var(--font-display);
+  background:
+    radial-gradient(circle at 34% 24%, rgba(255,255,255,.92) 0 3px, transparent 4px),
+    linear-gradient(135deg, #7f8cff, #7357d4);
+  box-shadow: 0 9px 20px rgba(91, 124, 246, 0.28);
+}
+.profile-card h1 {
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+.profile-card .sub {
+  margin-top: 6px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+.channel-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 14px 0 22px;
+}
+.channel-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font: 700 10px/1 var(--font-display);
+}
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+}
+.tab {
+  min-height: 34px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+.tab[aria-selected="true"] {
+  background: #eef3ff;
+  color: var(--blue);
+}
+.mini-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0 12px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.toggle {
+  width: 30px;
+  height: 16px;
+  border-radius: 99px;
+  background: #edf2ff;
+  position: relative;
+}
+.toggle::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 2px;
+  right: 2px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+.draft-list {
+  display: grid;
+  gap: 8px;
+}
+.soft-row {
+  min-height: 34px;
+  display: grid;
+  grid-template-columns: 16px 54px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #fbfcff;
+}
+.soft-row.active {
+  border-color: #dbe4ff;
+  background: #f6f8ff;
+}
+.check {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #cfd6e7;
+  border-radius: 3px;
+  display: inline-block;
+}
+.active .check {
+  background: var(--blue);
+  border-color: var(--blue);
+  box-shadow: inset 0 0 0 2px #fff;
+}
+.row-time {
+  color: var(--text);
+  font: 700 11px/1 var(--font-mono);
+}
+.row-subject {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: 11px;
+}
+.status-pill {
+  padding: 5px 8px;
+  border-radius: 7px;
+  background: #fff2cf;
+  color: #9a6c00;
+  font: 700 10px/1 var(--font-mono);
+}
+.left-stack, .center-stack, .right-stack {
+  display: grid;
+  gap: 24px;
+}
+.soft-alert {
+  min-height: 66px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 15px 18px;
+  border: 1px solid #cad7ff;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(234, 239, 255, 0.98), rgba(246, 249, 255, 0.94));
+  box-shadow: 0 9px 22px rgba(91, 124, 246, 0.12);
+}
+.soft-icon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  color: var(--blue);
+  border-radius: 10px;
+  background: #eef3ff;
+}
+.soft-alert strong {
+  display: block;
+  font-size: 13px;
+}
+.soft-alert span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.metric-bloom {
+  padding: 22px 22px 18px;
+  min-height: 460px;
+}
+.panel-head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.panel-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: -0.03em;
+}
+.panel-kicker {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.link-button {
+  min-height: 32px;
+  border: 0;
+  color: var(--blue);
+  background: transparent;
+  font-size: 12px;
+  font-weight: 800;
+}
+.bloom-wrap {
+  display: grid;
+  place-items: center;
+  min-height: 245px;
+}
+.honeycomb {
+  width: min(410px, 100%);
+  display: grid;
+  grid-template-columns: repeat(9, 30px);
+  gap: 4px;
+  justify-content: center;
+}
+.honey-cell {
+  width: 30px;
+  height: 26px;
+  border: 0;
+  padding: 0;
+  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0 50%);
+  background: #e7edff;
+  transition: transform .16s ease, filter .16s ease;
+}
+.honey-cell:hover, .honey-cell:focus-visible {
+  transform: translateY(-2px) scale(1.08);
+  filter: saturate(1.18);
+  outline: none;
+}
+.honey-cell.selected {
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--blue);
+  transform: translateY(-2px) scale(1.08);
+}
+.bloom-legend {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin: 12px 0 14px;
+  color: var(--muted);
+  font: 700 10px/1 var(--font-mono);
+}
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.legend-line {
+  width: 2px;
+  height: 24px;
+  border-radius: 10px;
+  background: var(--blue);
+}
+.bloom-insight {
+  min-height: 76px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+.insight-copy strong {
+  display: block;
+  font-size: 13px;
+}
+.insight-copy span {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+.delta-list {
+  display: grid;
+  gap: 7px;
+}
+.delta {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.delta b {
+  color: var(--text);
+  font: 800 12px/1 var(--font-mono);
+}
+.campaign-panel {
+  padding: 16px;
+}
+.hint-card {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #dfe7ff;
+  border-radius: 12px;
+  color: #4e5d85;
+  background: #f6f8ff;
+  font-size: 11px;
+  line-height: 1.35;
+}
+.metric-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.metric-tile {
+  min-height: 96px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: #fff;
+}
+.metric-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+  padding: 5px 8px;
+  border-radius: 7px;
+  background: #eef3ff;
+  color: #4964d8;
+  font: 800 10px/1 var(--font-mono);
+}
+.metric-label::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+.metric-value {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+.metric-note {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.tile-foot {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+}
+.spark {
+  width: 44px;
+  height: 24px;
+}
+.spark path {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.leaderboard-panel {
+  padding: 16px;
+}
+.leader-row {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 38px;
+  padding: 7px 8px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+}
+.leader-row:hover, .leader-row:focus-visible, .leader-row.active {
+  background: #f3fbf9;
+  border-color: #d4f0ea;
+  outline: none;
+}
+.rank {
+  color: var(--text);
+  font: 800 11px/1 var(--font-mono);
+}
+.sender {
+  min-width: 0;
+}
+.sender b {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+}
+.sender span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 10px;
+}
+.count {
+  color: var(--text);
+  font: 800 12px/1 var(--font-mono);
+}
+.delivery-grid {
+  padding: 16px;
+}
+.grid-map {
+  display: grid;
+  grid-template-columns: 46px repeat(7, 1fr);
+  gap: 5px;
+  align-items: center;
+  margin-top: 14px;
+}
+.grid-label {
+  color: var(--muted);
+  font: 700 9px/1 var(--font-mono);
+  text-align: center;
+}
+.time-label {
+  text-align: right;
+  padding-right: 5px;
+}
+.delivery-cell {
+  min-height: 25px;
+  border: 0;
+  border-radius: 6px;
+  background: #eef3ff;
+  transition: transform .16s ease, box-shadow .16s ease;
+}
+.delivery-cell:hover, .delivery-cell:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(91, 124, 246, 0.16);
+  outline: none;
+}
+.delivery-legend {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 14px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-right: 6px;
+}
+.activity-strip {
+  grid-column: 2 / 4;
+  padding: 18px;
+}
+.activity-head {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  margin-bottom: 12px;
+}
+.journey-stat strong {
+  display: block;
+  font: 800 16px/1 var(--font-display);
+}
+.journey-stat span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 10px;
+}
+.bars {
+  display: grid;
+  grid-template-columns: repeat(42, 1fr);
+  gap: 4px;
+  align-items: end;
+  height: 72px;
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+.bar {
+  min-height: 4px;
+  border-radius: 6px 6px 2px 2px;
+  background: linear-gradient(180deg, rgba(101,214,206,.9), rgba(101,214,206,.32));
+}
+.thread-workbench {
+  margin-top: 24px;
+  padding: 20px;
+}
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.search {
+  flex: 1 1 280px;
+  min-height: 44px;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  padding: 0 14px;
+  color: var(--text);
+  background: #fff;
+  outline: none;
+}
+.search:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px rgba(91,124,246,.12);
+}
+.copy-button {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--blue);
+  padding: 0 14px;
+  font-weight: 800;
+}
+.thread-list {
+  display: grid;
+  gap: 8px;
+}
+.thread-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: #fff;
+}
+.thread-card strong {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+}
+.thread-card span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.thread-badges {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.badge {
+  padding: 5px 8px;
+  border-radius: 8px;
+  background: #f0f3fb;
+  color: #52607b;
+  font: 800 10px/1 var(--font-mono);
+}
+.badge.open {
+  color: #a46500;
+  background: #fff2cf;
+}
+.badge.done {
+  color: #187858;
+  background: #dcf8ec;
+}
+.soft-tooltip {
+  position: fixed;
+  z-index: 40;
+  max-width: 240px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .14s ease, transform .14s ease;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255,255,255,.96);
+  box-shadow: var(--shadow);
+  color: var(--text);
+  font-size: 11px;
+  line-height: 1.35;
+}
+.soft-tooltip.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%) translateY(16px);
+  opacity: 0;
+  padding: 10px 14px;
+  border-radius: 99px;
+  background: #172033;
+  color: #fff;
+  font-size: 12px;
+  transition: opacity .18s ease, transform .18s ease;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+@media (max-width: 1120px) {
+  .soft-board { grid-template-columns: 280px minmax(0, 1fr); }
+  .right-stack { grid-column: 1 / 3; grid-template-columns: 1fr 1fr; }
+  .activity-strip { grid-column: 1 / 3; }
+}
+@media (max-width: 780px) {
+  .soft-saas-shell { padding: 18px 12px 44px; }
+  .soft-board, .left-stack, .right-stack { grid-template-columns: 1fr; }
+  .right-stack, .activity-strip { grid-column: auto; }
+  .profile-card { min-height: auto; }
+  .metric-grid, .bloom-insight, .activity-head { grid-template-columns: 1fr 1fr; }
+  .honeycomb { grid-template-columns: repeat(9, 26px); gap: 4px; }
+  .honey-cell { width: 26px; height: 23px; }
+  .grid-map { grid-template-columns: 42px repeat(7, 1fr); gap: 4px; }
+  .delivery-cell { min-height: 24px; }
+  .bars { grid-template-columns: repeat(28, 1fr); }
+}
+@media (max-width: 520px) {
+  .metric-grid, .activity-head { grid-template-columns: 1fr; }
+  .thread-card { grid-template-columns: 1fr; }
+  .thread-badges { justify-content: flex-start; }
+}
+</style>
+</head>
+<body>
+<main class="soft-saas-shell">
+  <section class="soft-board" aria-label="Soft SaaS email analytics console">
+    <aside class="left-stack">
+      <article class="profile-card panel">
+        <div class="avatar" aria-hidden="true">M</div>
+        <h1 id="source-title">Mailbox snapshot</h1>
+        <p class="sub" id="source-subtitle">Loading archive</p>
+        <div class="channel-row" aria-label="Connected channels">
+          <span class="channel-dot" style="background:#e05658">M</span>
+          <span class="channel-dot" style="background:#e978ae">S</span>
+          <span class="channel-dot" style="background:#5b7cf6">C</span>
+          <span class="channel-dot" style="background:#35b7ad">A</span>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Mailbox states">
+          <button class="tab" role="tab" aria-selected="true" type="button">Threads</button>
+          <button class="tab" role="tab" aria-selected="false" type="button">Senders</button>
+          <button class="tab" role="tab" aria-selected="false" type="button">Loops</button>
+        </div>
+        <div class="mini-meta"><span id="updated-meta">Updated from archive</span><span>Auto refresh <i class="toggle" aria-hidden="true"></i></span></div>
+        <div class="draft-list" id="profile-rows"></div>
+      </article>
+
+      <article class="delivery-grid panel">
+        <div class="panel-head">
+          <div><h2 class="panel-title">Delivery</h2><p class="panel-kicker">Email · Weekday x time</p></div>
+        </div>
+        <div class="grid-map" id="delivery-grid"></div>
+        <div class="delivery-legend">
+          <span><i class="legend-dot" style="background:#435ac8"></i>High traffic</span>
+          <span><i class="legend-dot" style="background:#8fa4ff"></i>Moderate</span>
+          <span><i class="legend-dot" style="background:#dfe6ff"></i>Low</span>
+          <span><i class="legend-dot" style="background:#f7f9fe"></i>Quiet</span>
+        </div>
+      </article>
+    </aside>
+
+    <section class="center-stack">
+      <aside class="soft-alert" aria-label="Selected insight">
+        <span class="soft-icon" aria-hidden="true">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 14.5 12 3l7 11.5-7 6.5-7-6.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        <p><strong id="alert-title">New archive ready for analysis</strong><span id="alert-copy">Hover or select a cell to inspect where work concentrated.</span></p>
+      </aside>
+
+      <article class="metric-bloom panel">
+        <div class="panel-head">
+          <div>
+            <h2 class="panel-title">Thread Performance</h2>
+            <p class="panel-kicker">Email · From the archived window</p>
+          </div>
+          <button class="link-button" id="reset-filter" type="button">All threads</button>
+        </div>
+        <div class="bloom-wrap">
+          <div class="honeycomb" id="honeycomb" aria-label="Daily thread activity cells"></div>
+        </div>
+        <div class="bloom-legend">
+          <span class="legend-item"><i class="legend-line" style="background:var(--yellow)"></i><span id="opened-label">0% replied</span></span>
+          <span class="legend-item"><i class="legend-line" style="background:var(--pink)"></i><span id="clicked-label">0% loops</span></span>
+          <span class="legend-item"><i class="legend-line" style="background:var(--blue)"></i><span id="converted-label">0m response</span></span>
+        </div>
+        <div class="bloom-insight">
+          <p class="insight-copy"><strong id="selected-title">Select a cell</strong><span id="selected-copy">The bloom groups messages by day in the archive. Brighter cells mean a busier support moment.</span></p>
+          <div class="delta-list" id="delta-list"></div>
+        </div>
+      </article>
+    </section>
+
+    <aside class="right-stack">
+      <article class="campaign-panel panel">
+        <div class="panel-head">
+          <div><h2 class="panel-title">Onboarding Campaign</h2><p class="panel-kicker">Support flow health</p></div>
+        </div>
+        <div class="hint-card">
+          <span class="soft-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 3v6m0 6v6M3 12h6m6 0h6M7 7l3 3m4 4 3 3m0-10-3 3m-4 4-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <span>Use the console to spot delayed replies, unresolved questions, and repeated customer asks.</span>
+        </div>
+        <div class="metric-grid" id="metric-grid"></div>
+      </article>
+
+      <article class="leaderboard-panel panel">
+        <div class="panel-head">
+          <div><h2 class="panel-title">Leaderboard</h2><p class="panel-kicker">Most active senders</p></div>
+          <span class="badge" id="channel-count">0 channels</span>
+        </div>
+        <div id="leaderboard"></div>
+      </article>
+    </aside>
+
+    <article class="activity-strip panel">
+      <div class="panel-head">
+        <div><h2 class="panel-title">Journey Metrics</h2><p class="panel-kicker">Archive rhythm</p></div>
+        <p class="panel-kicker" id="date-range">Archive</p>
+      </div>
+      <div class="activity-head" id="journey-stats"></div>
+      <div class="bars" id="activity-bars" aria-label="Daily message bars"></div>
+    </article>
+  </section>
+
+  <section class="thread-workbench panel" aria-label="Thread evidence">
+    <div class="toolbar">
+      <div>
+        <h2 class="panel-title">Evidence Threads</h2>
+        <p class="panel-kicker" id="thread-meta">Search threads and sender handoffs</p>
+      </div>
+      <input class="search" id="search" type="search" placeholder="Search subject, participant, or sender" aria-label="Search email threads">
+      <button class="copy-button" type="button" id="copy-summary">Copy summary</button>
+    </div>
+    <div class="thread-list" id="thread-list"></div>
+  </section>
+</main>
+<div class="soft-tooltip" id="tooltip" role="tooltip"></div>
+<div class="toast" id="toast" role="status" aria-live="polite">Copied summary</div>
+<script>const DATA = {"messages":[{"id":"m_0001","ts":"2026-01-27 14:14:21","date":"2026-01-27","time":"14:14:21","tsEpoch":1769523261000,"messageId":"<ns-1701@northstack.dev>","inReplyTo":null,"references":[],"threadId":"t_0001","from":{"name":"Casey Liu","email":"casey@northstack.dev"},"to":[{"name":"Clockless Support","email":"support@clockless.ai"}],"cc":[],"subject":"Webhook signatures failing after rotation","subjectKey":"webhook signatures failing after rotation","body":"Hey team,\n\nSince we rotated our signing key on Sunday afternoon, every webhook\nfrom your ingest endpoint is coming back with a bad signature. We're\nseeing about 300 401s an hour against /api/v2/ingest.\n\nWe followed the rotation guide step by step (paste new key into the\nSettings → Keys panel, then revoke the old one). Anything we missed\nin the rollover? Happy to send sample failing payloads.\n\nCasey\nNorthstack Engineering","bodyPreview":"Hey team, Since we rotated our signing key on Sunday afternoon, every webhook from your ingest endpoint is coming back with a bad signature. We're seeing about 300 401s an hour against /api/v2/ingest. We followed the rotation guide step by ","attachments":[],"isReply":false,"isForward":false,"hasQuestion":true},{"id":"m_0002","ts":"2026-01-27 14:48:02","date":"2026-01-27","time":"14:48:02","tsEpoch":1769525282000,"messageId":"<cl-2201@clockless.ai>","inReplyTo":"<ns-1701@northstack.dev>","references":["<ns-1701@northstack.dev>"],"threadId":"t_0001","from":{"name":"Mira Park","email":"mira@clockless.ai"},"to":[{"name":"Casey Liu","email":"casey@northstack.dev"}],"cc":[{"name":"Clockless Support","email":"support@clockless.ai"}],"subject":"Re: Webhook signatures failing after rotation","subjectKey":"webhook signatures failing after rotation","body":"Hi Casey,\n\nSorry about the noise. Two things would help me narrow it down:\n\n1. Paste the X-Clockless-Signature header from one failing call.\n2. Confirm whether you also flipped the \"active key id\" radio on the\n   settings page after pasting the new key. There's a known foot-gun\n   where the panel saves the new secret but keeps the old key id as\n   active, so signatures keep getting computed against the previous\n   secret.\n\nIf (2) is the issue we can swap it for you in seconds.\n\nMira","bodyPreview":"Hi Casey, Sorry about the noise. Two things would help me narrow it down: 1. Paste the X-Clockless-Signature header from one failing call. 2. Confirm whether you also flipped the \"active key id\" radio on the settings page after pasting the ","attachments":[],"isReply":true,"isForward":false,"hasQuestion":false},{"id":"m_0003","ts":"2026-01-27 15:11:55","date":"2026-01-27","time":"15:11:55","tsEpoch":1769526715000,"messageId":"<ns-1702@northstack.dev>","inReplyTo":"<cl-2201@clockless.ai>","references":["<ns-1701@northstack.dev>","<cl-2201@clockless.ai>"],"threadId":"t_0001","from":{"name":"Casey Liu","email":"casey@northstack.dev"},"to":[{"name":"Mira Park","email":"mira@clockless.ai"}],"cc":[{"name":"Clockless Support","email":"support@clockless.ai"}],"subject":"Re: Webhook signatures failing after rotation","subjectKey":"webhook signatures failing after rotation","body":"You called it. The active key id radio was still pointing at\nkey_2024Q4_b. Just flipped to key_2026Q1_a and the signatures\nvalidate again — 401 rate dropped to zero.\n\nThank you for the fast turnaround. Two follow-up asks:\n\n  - Could you add an alert / inline warning when the active key id\n    differs from the most-recently-saved secret? This would have\n    saved us about three hours.\n  - Is there a programmatic key-rotation endpoint we could call from\n    our deploy pipeline so we never touch the UI for this?\n\nCasey","bodyPreview":"You called it. The active key id radio was still pointing at key_2024Q4_b. Just flipped to key_2026Q1_a and the signatures validate again — 401 rate dropped to zero. Thank you for the fast turnaround. Two follow-up asks: - Could you add an ","attachments":[],"isReply":true,"isForward":false,"hasQuestion":true},{"id":"m_0004","ts":"2026-01-27 16:02:31","date":"2026-01-27","time":"16:02:31","tsEpoch":1769529751000,"messageId":"<cl-2202@clockless.ai>","inReplyTo":"<ns-1702@northstack.dev>","references":["<ns-1701@northstack.dev>","<cl-2201@clockless.ai>","<ns-1702@northstack.dev>"],"threadId":"t_0001","from":{"name":"Mira Park","email":"mira@clockless.ai"},"to":[{"name":"Casey Liu","email":"casey@northstack.dev"}],"cc":[],"subject":"Re: Webhook signatures failing after rotation","subjectKey":"webhook signatures failing after rotation","body":"Glad it's fixed.\n\nOn your asks:\n\n1. Inline warning — filed as CL-4117. We agree this is the right fix\n   and it's on next sprint's plate. I'll post the PR link here when\n   it lands.\n2. Rotation endpoint — already exists, just under-documented. POST\n   /api/v2/keys/rotate with {\"label\": \"...\"} returns the new secret\n   and atomically flips the active key id. I'll add a section to the\n   webhooks docs by Friday.\n\nClosing the ticket — reopen anytime if anything else looks off.\n\nMira","bodyPreview":"Glad it's fixed. On your asks: 1. Inline warning — filed as CL-4117. We agree this is the right fix and it's on next sprint's plate. I'll post the PR link here when it lands. 2. Rotation endpoint — already exists, just under-documented. POS","attachments":[],"isReply":true,"isForward":false,"hasQuestion":false},{"id":"m_0005","ts":"2026-01-27 16:09:48","date":"2026-01-27","time":"16:09:48","tsEpoch":1769530188000,"messageId":"<ns-1703@northstack.dev>","inReplyTo":"<cl-2202@clockless.ai>","references":["<ns-1701@northstack.dev>","<cl-2201@clockless.ai>","<ns-1702@northstack.dev>","<cl-2202@clockless.ai>"],"threadId":"t_0001","from":{"name":"Casey Liu","email":"casey@northstack.dev"},"to":[{"name":"Mira Park","email":"mira@clockless.ai"}],"cc":[],"subject":"Re: Webhook signatures failing after rotation","subjectKey":"webhook signatures failing after rotation","body":"Perfect. Watching for the PR link.\n\nCasey","bodyPreview":"Perfect. Watching for the PR link. Casey","attachments":[],"isReply":true,"isForward":false,"hasQuestion":false},{"id":"m_0006","ts":"2026-01-28 19:45:00","date":"2026-01-28","time":"19:45:00","tsEpoch":1769629500000,"messageId":"<cl-2210@clockless.ai>","inReplyTo":null,"references":[],"threadId":"t_0002","from":{"name":"Mira Park","email":"mira@clockless.ai"},"to":[{"name":"Jordan Reyes","email":"jordan@clockless.ai"}],"cc":[],"subject":"Can we move standup to 10am?","subjectKey":"can we move standup to 10am?","body":"Hey Jordan — moving deploys to first thing in the morning is killing\nme on 9am standup. Could we slide it to 10am starting next week?\n\nMira","bodyPreview":"Hey Jordan — moving deploys to first thing in the morning is killing me on 9am standup. Could we slide it to 10am starting next week? Mira","attachments":[],"isReply":false,"isForward":false,"hasQuestion":true},{"id":"m_0007","ts":"2026-01-28 20:02:14","date":"2026-01-28","time":"20:02:14","tsEpoch":1769630534000,"messageId":"<cl-2211@clockless.ai>","inReplyTo":"<cl-2210@clockless.ai>","references":["<cl-2210@clockless.ai>"],"threadId":"t_0002","from":{"name":"Jordan Reyes","email":"jordan@clockless.ai"},"to":[{"name":"Mira Park","email":"mira@clockless.ai"}],"cc":[],"subject":"Re: Can we move standup to 10am?","subjectKey":"can we move standup to 10am?","body":"Works for me. I'll update the calendar invite this evening.\n\nJordan","bodyPreview":"Works for me. I'll update the calendar invite this evening. Jordan","attachments":[],"isReply":true,"isForward":false,"hasQuestion":false},{"id":"m_0008","ts":"2026-02-02 13:30:11","date":"2026-02-02","time":"13:30:11","tsEpoch":1770039011000,"messageId":"<cl-2301@clockless.ai>","inReplyTo":null,"references":[],"threadId":"t_0003","from":{"name":"Jordan Reyes","email":"jordan@clockless.ai"},"to":[{"name":"Alex Chen","email":"alex@acme.co"}],"cc":[{"name":"Sam Patel","email":"sam@acme.co"},{"name":"Mira Park","email":"mira@clockless.ai"}],"subject":"Pilot kickoff next steps","subjectKey":"pilot kickoff next steps","body":"Hi Alex, Sam,\n\nGreat call on Friday. Per our notes, here's the plan we landed on\nfor the 6-week pilot:\n\n  - Scope: ingest pipeline + dashboards for Acme's North-1 region.\n  - Pricing: flat /mo for the pilot, credited toward year 1 if\n    you sign by April 15.\n  - Success criteria: P95 ingest latency under 200ms, alerting\n    integrated with your PagerDuty service \"acme-platform\".\n  - Kickoff target: Wed Feb 11.\n\nCould you confirm the kickoff date works for both teams, and forward\nthe legal redlines you mentioned? Once those are in we'll\ncounter-sign and start provisioning the sandbox.\n\nJordan","bodyPreview":"Hi Alex, Sam, Great call on Friday. Per our notes, here's the plan we landed on for the 6-week pilot: - Scope: ingest pipeline + dashboards for Acme's North-1 region. - Pricing: flat /mo for the pilot, credited toward year 1 if you sign by ","attachments":[],"isReply":false,"isForward":false,"hasQuestion":true},{"id":"m_0009","ts":"2026-02-02 16:44:20","date":"2026-02-02","time":"16:44:20","tsEpoch":1770050660000,"messageId":"<ac-9001@acme.co>","inReplyTo":"<cl-2301@clockless.ai>","references":["<cl-2301@clockless.ai>"],"threadId":"t_0003","from":{"name":"Alex Chen","email":"alex@acme.co"},"to":[{"name":"Jordan Reyes","email":"jordan@clockless.ai"}],"cc":[{"name":"Sam Patel","email":"sam@acme.co"},{"name":"Mira Park","email":"mira@clockless.ai"}],"subject":"Re: Pilot kickoff next steps","subjectKey":"pilot kickoff next steps","body":"Jordan,\n\nFeb 11 works for us. Sam will run the technical kickoff; he's looped\nin on this thread.\n\nTwo redlines from our legal team (attached):\n\n  - Section 7.2 — they want the data-residency commitment to\n    explicitly call out us-east-2.\n  - Section 11 — 30-day termination notice instead of 60.\n\nOtherwise the redline copy is mostly OK. Could you confirm the\nus-east-2 commitment is fine on your side? That's the longer pole\nof the two.\n\nAlex","bodyPreview":"Jordan, Feb 11 works for us. Sam will run the technical kickoff; he's looped in on this thread. Two redlines from our legal team (attached): - Section 7.2 — they want the data-residency commitment to explicitly call out us-east-2. - Section","attachments":[{"filename":"acme-clockless-pilot-redline-v3.pdf","contentType":"application/pdf","sizeEstimate":171}],"isReply":true,"isForward":false,"hasQuestion":true},{"id":"m_0010","ts":"2026-02-02 21:18:55","date":"2026-02-02","time":"21:18:55","tsEpoch":1770067135000,"messageId":"<cl-2302@clockless.ai>","inReplyTo":"<ac-9001@acme.co>","references":["<cl-2301@clockless.ai>","<ac-9001@acme.co>"],"threadId":"t_0003","from":{"name":"Jordan Reyes","email":"jordan@clockless.ai"},"to":[{"name":"Alex Chen","email":"alex@acme.co"}],"cc":[{"name":"Sam Patel","email":"sam@acme.co"},{"name":"Mira Park","email":"mira@clockless.ai"}],"subject":"Re: Pilot kickoff next steps","subjectKey":"pilot kickoff next steps","body":"Alex,\n\nGot the redline — thanks. Spoke with our infra lead and us-east-2 is\nfine; we already have the residency posture in place there. I'll\nhave legal counter-sign tomorrow and send the executed copy back.\n\nMira will reach out this week with credentials for the sandbox so\nSam can start wiring up the ingest endpoint ahead of the Feb 11\nkickoff.\n\nJordan","bodyPreview":"Alex, Got the redline — thanks. Spoke with our infra lead and us-east-2 is fine; we already have the residency posture in place there. I'll have legal counter-sign tomorrow and send the executed copy back. Mira will reach out this week with","attachments":[],"isReply":true,"isForward":false,"hasQuestion":false},{"id":"m_0011","ts":"2026-02-03 14:50:00","date":"2026-02-03","time":"14:50:00","tsEpoch":1770130200000,"messageId":"<cl-2303@clockless.ai>","inReplyTo":"<cl-2302@clockless.ai>","references":["<cl-2301@clockless.ai>","<ac-9001@acme.co>","<cl-2302@clockless.ai>"],"threadId":"t_0003","from":{"name":"Mira Park","email":"mira@clockless.ai"},"to":[{"name":"Sam Patel","email":"sam@acme.co"}],"cc":[{"name":"Alex Chen","email":"alex@acme.co"},{"name":"Jordan Reyes","email":"jordan@clockless.ai"}],"subject":"Re: Pilot kickoff next steps","subjectKey":"pilot kickoff next steps","body":"Hi Sam,\n\nSandbox is provisioned. Credentials and the runbook are attached as\na single PDF — ingest endpoint, signing key, and the PagerDuty\nintegration walkthrough.\n\nTwo things to look out for:\n\n  - The sandbox region is us-east-2 (per Alex's redline).\n  - We provisioned a separate signing key for the pilot so you can\n    rotate independently of any production setup.\n\nPing me here once the first event lands and I'll verify on our side.\n\nMira","bodyPreview":"Hi Sam, Sandbox is provisioned. Credentials and the runbook are attached as a single PDF — ingest endpoint, signing key, and the PagerDuty integration walkthrough. Two things to look out for: - The sandbox region is us-east-2 (per Alex's re","attachments":[{"filename":"pilot-sandbox-runbook.pdf","contentType":"application/pdf","sizeEstimate":15}],"isReply":true,"isForward":false,"hasQuestion":false},{"id":"m_0012","ts":"2026-02-04 22:22:08","date":"2026-02-04","time":"22:22:08","tsEpoch":1770243728000,"messageId":"<ac-9010@acme.co>","inReplyTo":"<cl-2303@clockless.ai>","references":["<cl-2301@clockless.ai>","<ac-9001@acme.co>","<cl-2302@clockless.ai>","<cl-2303@clockless.ai>"],"threadId":"t_0003","from":{"name":"Sam Patel","email":"sam@acme.co"},"to":[{"name":"Mira Park","email":"mira@clockless.ai"}],"cc":[{"name":"Alex Chen","email":"alex@acme.co"},{"name":"Jordan Reyes","email":"jordan@clockless.ai"}],"subject":"Re: Pilot kickoff next steps","subjectKey":"pilot kickoff next steps","body":"First event landed at 17:18 ET — verified end-to-end on our side.\nRates and signature both look healthy.\n\nWe're going to load-test for an hour tomorrow morning around 9 ET,\nramping from 100 to 5000 events/sec. Anything we should warn your\nside about, or are we good to push ahead?\n\nSam","bodyPreview":"First event landed at 17:18 ET — verified end-to-end on our side. Rates and signature both look healthy. We're going to load-test for an hour tomorrow morning around 9 ET, ramping from 100 to 5000 events/sec. Anything we should warn your si","attachments":[],"isReply":true,"isForward":false,"hasQuestion":true},{"id":"m_0013","ts":"2026-02-06 13:15:42","date":"2026-02-06","time":"13:15:42","tsEpoch":1770383742000,"messageId":"<ac-9020@acme.co>","inReplyTo":"<ac-9010@acme.co>","references":["<cl-2301@clockless.ai>","<ac-9001@acme.co>","<cl-2302@clockless.ai>","<cl-2303@clockless.ai>","<ac-9010@acme.co>"],"threadId":"t_0003","from":{"name":"Alex Chen","email":"alex@acme.co"},"to":[{"name":"Jordan Reyes","email":"jordan@clockless.ai"}],"cc":[{"name":"Sam Patel","email":"sam@acme.co"},{"name":"Mira Park","email":"mira@clockless.ai"}],"subject":"Re: Pilot kickoff next steps","subjectKey":"pilot kickoff next steps","body":"Quick scheduling question on the kickoff itself — Sam's flight got\nmoved and he'd like to push the Feb 11 call by two hours, from 10am\nET to 12pm ET. Does that still work on your end?\n\nAlex","bodyPreview":"Quick scheduling question on the kickoff itself — Sam's flight got moved and he'd like to push the Feb 11 call by two hours, from 10am ET to 12pm ET. Does that still work on your end? Alex","attachments":[],"isReply":true,"isForward":false,"hasQuestion":true}],"threads":[{"id":"t_0003","subject":"Pilot kickoff next steps","participants":["Jordan Reyes <jordan@clockless.ai>","Alex Chen <alex@acme.co>","Sam Patel <sam@acme.co>","Mira Park <mira@clockless.ai>"],"messageIds":["m_0008","m_0009","m_0010","m_0011","m_0012","m_0013"],"firstTs":"2026-02-02 13:30:11","lastTs":"2026-02-06 13:15:42","messageCount":6,"lastSender":"Alex Chen <alex@acme.co>","lastEndsInQuestion":true},{"id":"t_0002","subject":"Can we move standup to 10am?","participants":["Mira Park <mira@clockless.ai>","Jordan Reyes <jordan@clockless.ai>"],"messageIds":["m_0006","m_0007"],"firstTs":"2026-01-28 19:45:00","lastTs":"2026-01-28 20:02:14","messageCount":2,"lastSender":"Jordan Reyes <jordan@clockless.ai>","lastEndsInQuestion":false},{"id":"t_0001","subject":"Webhook signatures failing after rotation","participants":["Casey Liu <casey@northstack.dev>","Clockless Support <support@clockless.ai>","Mira Park <mira@clockless.ai>"],"messageIds":["m_0001","m_0002","m_0003","m_0004","m_0005"],"firstTs":"2026-01-27 14:14:21","lastTs":"2026-01-27 16:09:48","messageCount":5,"lastSender":"Casey Liu <casey@northstack.dev>","lastEndsInQuestion":false}],"senders":[{"email":"mira@clockless.ai","name":"Mira Park","count":4,"domain":"clockless.ai"},{"email":"casey@northstack.dev","name":"Casey Liu","count":3,"domain":"northstack.dev"},{"email":"jordan@clockless.ai","name":"Jordan Reyes","count":3,"domain":"clockless.ai"},{"email":"alex@acme.co","name":"Alex Chen","count":2,"domain":"acme.co"},{"email":"sam@acme.co","name":"Sam Patel","count":1,"domain":"acme.co"}],"domains":[{"domain":"clockless.ai","count":7},{"domain":"northstack.dev","count":3},{"domain":"acme.co","count":3}],"attachments":[{"filename":"acme-clockless-pilot-redline-v3.pdf","contentType":"application/pdf","sizeEstimate":171,"threadId":"t_0003","ts":"2026-02-02 16:44:20","fromEmail":"alex@acme.co"},{"filename":"pilot-sandbox-runbook.pdf","contentType":"application/pdf","sizeEstimate":15,"threadId":"t_0003","ts":"2026-02-03 14:50:00","fromEmail":"mira@clockless.ai"}],"sourceFile":"input.mbox","sizeBytes":10528,"format":"mbox","messageCount":13,"threadCount":3,"senderCount":5,"domainCount":3,"attachmentCount":2,"dateRange":"2026-01-27 → 2026-02-06","topSenders":[{"email":"mira@clockless.ai","name":"Mira Park","count":4,"domain":"clockless.ai"},{"email":"casey@northstack.dev","name":"Casey Liu","count":3,"domain":"northstack.dev"},{"email":"jordan@clockless.ai","name":"Jordan Reyes","count":3,"domain":"clockless.ai"},{"email":"alex@acme.co","name":"Alex Chen","count":2,"domain":"acme.co"},{"email":"sam@acme.co","name":"Sam Patel","count":1,"domain":"acme.co"}],"topDomains":[{"domain":"clockless.ai","count":7},{"domain":"northstack.dev","count":3},{"domain":"acme.co","count":3}]};</script>
+<script>
+(() => {
+  const messages = Array.isArray(DATA.messages) ? DATA.messages.slice().sort((a, b) => a.tsEpoch - b.tsEpoch) : [];
+  const threads = Array.isArray(DATA.threads) ? DATA.threads : [];
+  const senders = Array.isArray(DATA.senders) ? DATA.senders : [];
+  const domains = Array.isArray(DATA.domains) ? DATA.domains : [];
+  const internalDomain = "clockless.ai";
+  let activeSender = "";
+  const tooltip = document.getElementById("tooltip");
+
+  function $(id) { return document.getElementById(id); }
+  function esc(value) {
+    return String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
+  }
+  function isInternal(email) { return String(email || "").toLowerCase().endsWith("@" + internalDomain); }
+  function fmtPct(value) { return Math.round(value * 10) / 10 + "%"; }
+  function shortDate(ts) {
+    const d = new Date(ts);
+    return Number.isNaN(d.getTime()) ? "Archive" : d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  }
+  function minutesLabel(mins) {
+    if (!Number.isFinite(mins) || mins <= 0) return "n/a";
+    if (mins < 60) return Math.round(mins) + "m";
+    return (Math.round(mins / 6) / 10) + "h";
+  }
+  function getThreadMessages(thread) {
+    const ids = new Set(thread.messageIds || []);
+    return messages.filter(m => ids.has(m.id));
+  }
+  function responseSamples() {
+    const mins = [];
+    for (const thread of threads) {
+      const ms = getThreadMessages(thread);
+      for (let i = 1; i < ms.length; i++) {
+        const prev = ms[i - 1];
+        const next = ms[i];
+        if (!isInternal(prev.from?.email) && isInternal(next.from?.email)) {
+          const diff = (next.tsEpoch - prev.tsEpoch) / 60000;
+          if (diff > 0 && diff < 60 * 24 * 14) mins.push(diff);
+        }
+      }
+    }
+    return mins;
+  }
+  const responseMins = responseSamples();
+  const avgResponse = responseMins.length ? responseMins.reduce((a, b) => a + b, 0) / responseMins.length : 0;
+  const internalMessages = messages.filter(m => isInternal(m.from?.email)).length;
+  const externalMessages = messages.length - internalMessages;
+  const repliedThreads = threads.filter(t => {
+    const ms = getThreadMessages(t);
+    return ms.some(m => !isInternal(m.from?.email)) && ms.some(m => isInternal(m.from?.email));
+  }).length;
+  const resolvedThreads = threads.filter(t => isInternal(t.lastSender || "") && !t.lastEndsInQuestion).length;
+  const openLoops = threads.filter(t => t.lastEndsInQuestion).length;
+  const handoffs = threads.filter(t => new Set(getThreadMessages(t).filter(m => isInternal(m.from?.email)).map(m => m.from.email)).size > 1).length;
+  const threadCount = Math.max(threads.length, 1);
+
+  function renderProfile() {
+    $("source-title").textContent = DATA.sourceFile ? DATA.sourceFile.replace(/\.[^.]+$/, "") : "Mailbox snapshot";
+    $("source-subtitle").textContent = (DATA.messageCount || messages.length) + " messages · " + threads.length + " threads · " + (DATA.dateRange || "archive");
+    $("updated-meta").textContent = "Last parsed from " + (DATA.format || "mbox");
+    const recent = threads.slice().sort((a, b) => String(b.lastTs).localeCompare(String(a.lastTs))).slice(0, 5);
+    $("profile-rows").innerHTML = recent.map((t, i) => {
+      const status = t.lastEndsInQuestion ? "Open" : isInternal(t.lastSender || "") ? "Handled" : "Waiting";
+      return '<div class="soft-row ' + (i < 2 ? "active" : "") + '">' +
+        '<span class="check" aria-hidden="true"></span>' +
+        '<span class="row-time">' + esc((t.lastTs || "").slice(11, 16) || "--:--") + '</span>' +
+        '<span class="row-subject">' + esc(t.subject) + '</span>' +
+        '<span class="status-pill">' + esc(status) + '</span>' +
+      '</div>';
+    }).join("");
+  }
+
+  function colorFor(value, max, warm = false) {
+    const t = max ? Math.max(0, Math.min(1, value / max)) : 0;
+    if (warm && t > 0.72) return "#f6c445";
+    if (t > 0.62) return "#d86db0";
+    if (t > 0.34) return "#90a4ff";
+    if (t > 0.08) return "#dfe6ff";
+    return "#f7f9fe";
+  }
+  function dayBuckets() {
+    const map = new Map();
+    for (const m of messages) {
+      const key = (m.date || "unknown").slice(0, 10);
+      const bucket = map.get(key) || { date: key, count: 0, external: 0, internal: 0, subjects: new Set() };
+      bucket.count += 1;
+      if (isInternal(m.from?.email)) bucket.internal += 1; else bucket.external += 1;
+      if (m.subject) bucket.subjects.add(m.subject.replace(/^re:\s*/i, ""));
+      map.set(key, bucket);
+    }
+    return [...map.values()].sort((a, b) => a.date.localeCompare(b.date));
+  }
+  function renderBloom() {
+    const buckets = dayBuckets();
+    const max = Math.max(1, ...buckets.map(b => b.count));
+    const center = 4;
+    const cells = [];
+    for (let r = 0; r < 9; r++) {
+      for (let c = 0; c < 9; c++) {
+        const dist = Math.abs(r - center) + Math.abs(c - center);
+        if (dist <= 6 && Math.abs(r - c) <= 6) cells.push({ r, c });
+      }
+    }
+    $("honeycomb").innerHTML = cells.map((cell, i) => {
+      const bucket = buckets[i % Math.max(buckets.length, 1)] || { date: "No activity", count: 0, external: 0, internal: 0, subjects: new Set() };
+      const color = colorFor(bucket.count, max, i > cells.length * 0.36 && i < cells.length * 0.66);
+      const subjectCount = bucket.subjects?.size || 0;
+      const label = bucket.date + ": " + bucket.count + " messages, " + subjectCount + " thread topics";
+      return '<button class="honey-cell" type="button" aria-label="' + esc(label) + '" data-index="' + i + '" data-title="' + esc(bucket.date) + '" data-copy="' + esc(label) + '" style="background:' + color + '"></button>';
+    }).join("");
+    $("opened-label").textContent = fmtPct(repliedThreads / threadCount * 100) + " replied";
+    $("clicked-label").textContent = fmtPct(openLoops / threadCount * 100) + " open loops";
+    $("converted-label").textContent = minutesLabel(avgResponse) + " avg response";
+    $("delta-list").innerHTML = [
+      ["External", externalMessages + " msgs"],
+      ["Internal", internalMessages + " msgs"],
+      ["Threads", threads.length],
+      ["Domains", domains.length || DATA.domainCount || 0],
+    ].map(([label, value]) => '<div class="delta"><span>' + esc(label) + '</span><b>' + esc(value) + '</b></div>').join("");
+    document.querySelectorAll(".honey-cell").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".honey-cell.selected").forEach(el => el.classList.remove("selected"));
+        btn.classList.add("selected");
+        $("selected-title").textContent = btn.dataset.title;
+        $("selected-copy").textContent = btn.dataset.copy;
+        $("alert-title").textContent = "Selected activity cell";
+        $("alert-copy").textContent = btn.dataset.copy;
+      });
+      attachTooltip(btn, () => btn.dataset.copy);
+    });
+  }
+
+  function renderMetricTiles() {
+    const metrics = [
+      ["Replied", fmtPct(repliedThreads / threadCount * 100), "Threads with support response", "#65d6ce"],
+      ["Resolved", fmtPct(resolvedThreads / threadCount * 100), "Last reply handled by team", "#5b7cf6"],
+      ["Open loops", openLoops, "Last message ends in question", "#e978ae"],
+      ["Handoffs", handoffs, "Internal multi-owner threads", "#f6c445"],
+    ];
+    $("metric-grid").innerHTML = metrics.map((m, i) => (
+      '<div class="metric-tile">' +
+        '<div class="metric-label">' + esc(m[0]) + '</div>' +
+        '<div class="tile-foot">' +
+          '<div><div class="metric-value">' + esc(m[1]) + '</div><div class="metric-note">' + esc(m[2]) + '</div></div>' +
+          sparkline(i, m[3]) +
+        '</div>' +
+      '</div>'
+    )).join("");
+  }
+  function sparkline(seed, color) {
+    const paths = [
+      "M2 19 C8 16 8 8 15 11 S24 20 34 7 S40 8 42 5",
+      "M2 18 C7 17 10 9 16 10 C23 11 24 16 30 14 C35 12 37 7 42 6",
+      "M2 20 C9 20 10 15 17 15 C24 15 25 8 32 9 C38 10 39 5 42 4",
+      "M2 18 C8 10 15 20 22 12 C29 4 35 14 42 7",
+    ];
+    return '<svg class="spark" viewBox="0 0 44 24" aria-hidden="true"><path d="' + paths[seed % paths.length] + '" style="stroke:' + color + '"></path></svg>';
+  }
+
+  function renderLeaderboard() {
+    $("channel-count").textContent = domains.length + " domains";
+    const top = senders.slice(0, 5);
+    $("leaderboard").innerHTML = top.map((s, i) => {
+      const email = s.email || s.name || "";
+      const active = activeSender === email ? " active" : "";
+      return '<button class="leader-row' + active + '" type="button" data-email="' + esc(email) + '">' +
+        '<span class="rank">#' + (i + 1) + '</span>' +
+        '<span class="sender"><b>' + esc(s.name || email) + '</b><span>' + esc(email) + '</span></span>' +
+        '<span class="count">' + esc(s.count || 0) + '</span>' +
+      '</button>';
+    }).join("");
+    document.querySelectorAll(".leader-row").forEach(btn => {
+      btn.addEventListener("click", () => {
+        activeSender = activeSender === btn.dataset.email ? "" : btn.dataset.email;
+        renderLeaderboard();
+        renderThreads();
+      });
+    });
+  }
+
+  function renderDeliveryGrid() {
+    const weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    const bands = [
+      ["00", 0, 4], ["04", 4, 8], ["08", 8, 12], ["12", 12, 16], ["16", 16, 20], ["20", 20, 24],
+    ];
+    const counts = Array.from({ length: bands.length }, () => Array(7).fill(0));
+    for (const m of messages) {
+      const d = new Date(m.ts || m.tsEpoch);
+      if (Number.isNaN(d.getTime())) continue;
+      const day = (d.getDay() + 6) % 7;
+      const hour = d.getHours();
+      const band = bands.findIndex(([, start, end]) => hour >= start && hour < end);
+      if (band >= 0) counts[band][day] += 1;
+    }
+    const max = Math.max(1, ...counts.flat());
+    const parts = ['<span></span>', ...weekdays.map(d => '<span class="grid-label">' + d + '</span>')];
+    for (let r = 0; r < bands.length; r++) {
+      parts.push('<span class="grid-label time-label">' + bands[r][0] + '</span>');
+      for (let c = 0; c < 7; c++) {
+        const value = counts[r][c];
+        parts.push('<button class="delivery-cell" type="button" aria-label="' + weekdays[c] + " " + bands[r][0] + ":00, " + value + ' messages" data-tip="' + weekdays[c] + " " + bands[r][0] + ":00 · " + value + ' messages" style="background:' + colorFor(value, max) + '"></button>');
+      }
+    }
+    $("delivery-grid").innerHTML = parts.join("");
+    document.querySelectorAll(".delivery-cell").forEach(cell => attachTooltip(cell, () => cell.dataset.tip));
+  }
+
+  function renderActivity() {
+    $("date-range").textContent = DATA.dateRange || "";
+    $("journey-stats").innerHTML = [
+      ["Messages", messages.length],
+      ["Threads", threads.length],
+      ["Replied", fmtPct(repliedThreads / threadCount * 100)],
+      ["Avg response", minutesLabel(avgResponse)],
+      ["Open loops", openLoops],
+    ].map(([label, value]) => '<div class="journey-stat"><strong>' + esc(value) + '</strong><span>' + esc(label) + '</span></div>').join("");
+    const buckets = dayBuckets();
+    const max = Math.max(1, ...buckets.map(b => b.count));
+    const shown = buckets.slice(-42);
+    $("activity-bars").innerHTML = shown.map(b => {
+      const h = Math.max(6, Math.round((b.count / max) * 62));
+      return '<i class="bar" style="height:' + h + 'px" aria-label="' + esc(b.date + ": " + b.count + " messages") + '"></i>';
+    }).join("");
+  }
+
+  function threadStatus(thread) {
+    if (thread.lastEndsInQuestion) return "Open";
+    if (isInternal(thread.lastSender || "")) return "Handled";
+    return "Waiting";
+  }
+  function renderThreads() {
+    const query = $("search").value.trim().toLowerCase();
+    let visible = threads.filter(t => {
+      const hay = [t.subject, t.participants?.join(" "), t.lastSender].join(" ").toLowerCase();
+      if (query && !hay.includes(query)) return false;
+      if (activeSender) {
+        const ms = getThreadMessages(t);
+        return ms.some(m => (m.from?.email || "") === activeSender);
+      }
+      return true;
+    });
+    visible = visible.slice().sort((a, b) => String(b.lastTs).localeCompare(String(a.lastTs))).slice(0, 18);
+    $("thread-meta").textContent = (activeSender ? "Filtered by " + activeSender + " · " : "") + visible.length + " visible threads";
+    $("thread-list").innerHTML = visible.map(t => {
+      const status = threadStatus(t);
+      const cls = status === "Open" ? "open" : status === "Handled" ? "done" : "";
+      return '<article class="thread-card">' +
+        '<div><strong>' + esc(t.subject) + '</strong><span>' + esc((t.participants || []).slice(0, 4).join(" · ")) + '</span></div>' +
+        '<div class="thread-badges"><span class="badge ' + cls + '">' + esc(status) + '</span><span class="badge">' + esc(t.messageCount) + ' msgs</span><span class="badge">' + esc(shortDate(t.lastTs)) + '</span></div>' +
+      '</article>';
+    }).join("") || '<p class="panel-kicker">No matching threads.</p>';
+  }
+
+  function attachTooltip(el, textFn) {
+    el.addEventListener("pointerenter", event => showTip(event, textFn()));
+    el.addEventListener("pointermove", moveTip);
+    el.addEventListener("pointerleave", hideTip);
+    el.addEventListener("focus", event => showTip(event, textFn()));
+    el.addEventListener("blur", hideTip);
+  }
+  function showTip(event, text) {
+    tooltip.textContent = text || "";
+    tooltip.classList.add("show");
+    moveTip(event);
+  }
+  function moveTip(event) {
+    const x = event.clientX || (event.target.getBoundingClientRect().left + 8);
+    const y = event.clientY || (event.target.getBoundingClientRect().top + 8);
+    tooltip.style.left = Math.min(window.innerWidth - 260, x + 14) + "px";
+    tooltip.style.top = Math.max(12, y + 14) + "px";
+  }
+  function hideTip() { tooltip.classList.remove("show"); }
+
+  function copySummary() {
+    const summary = [
+      "# " + (DATA.sourceFile || "Mailbox snapshot"),
+      "- Messages: " + messages.length,
+      "- Threads: " + threads.length,
+      "- Replied threads: " + fmtPct(repliedThreads / threadCount * 100),
+      "- Open loops: " + openLoops,
+      "- Avg response: " + minutesLabel(avgResponse),
+    ].join("\n");
+    navigator.clipboard?.writeText(summary).catch(() => {});
+    const toast = $("toast");
+    toast.classList.add("show");
+    window.setTimeout(() => toast.classList.remove("show"), 1300);
+  }
+
+  $("search").addEventListener("input", renderThreads);
+  $("copy-summary").addEventListener("click", copySummary);
+  $("reset-filter").addEventListener("click", () => {
+    activeSender = "";
+    $("search").value = "";
+    document.querySelectorAll(".honey-cell.selected").forEach(el => el.classList.remove("selected"));
+    $("selected-title").textContent = "All threads";
+    $("selected-copy").textContent = "Filters cleared. The console is showing the full mailbox archive again.";
+    renderLeaderboard();
+    renderThreads();
+  });
+  document.querySelectorAll(".tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-selected", "false"));
+      tab.setAttribute("aria-selected", "true");
+    });
+  });
+
+  renderProfile();
+  renderBloom();
+  renderMetricTiles();
+  renderLeaderboard();
+  renderDeliveryGrid();
+  renderActivity();
+  renderThreads();
+})();
+</script>
+</body>
+</html>

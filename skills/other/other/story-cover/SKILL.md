@@ -26,7 +26,8 @@ metadata:
 ## API 配置
 
 ```bash
-BASE_URL=${GPT_IMAGE_BASE_URL:-https://yunwu.ai/v1}
+# 可通过 GPT_IMAGE_BASE_URL 环境变量覆盖默认地址（如使用代理服务）
+BASE_URL=${GPT_IMAGE_BASE_URL:-https://api.openai.com/v1}
 API_KEY=${GPT_IMAGE_API_KEY:?请设置 export GPT_IMAGE_API_KEY=你的key}
 MODEL=gpt-image-2
 SIZE=1024x1536
@@ -200,5 +201,5 @@ jq -r '.data[0].b64_json' response.json | base64 --decode > "${BOOK_DIR}/封面/
 
 ## 语言
 
-- 用户用中文就用中文回复，用英文就用英文回复
+- 跟随用户的语言回复，用户用什么语言就用什么语言回复
 - 中文回复遵循《中文文案排版指北》

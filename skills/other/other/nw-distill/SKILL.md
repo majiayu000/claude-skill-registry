@@ -9,6 +9,150 @@ argument-hint: '[story-id] - Optional: --test-framework=[cucumber|specflow|pytes
 
 This skill provides the acceptance designer's methodology for creating acceptance tests. The orchestrator controls the overall flow (agent dispatch, review gate, handoff) -- this skill focuses on HOW to create good acceptance tests.
 
+## Output Tiers (per D2)
+
+Provenance: feature `lean-wave-documentation` — D2 (schema-typed sections), D10 (one-line expansion descriptions). The DISTILL wave emits a single `feature-delta.md` whose headings are typed `[REF]` (always emitted) or `[WHY]/[HOW]` (lazy expansions). Tier-1 is the always-on baseline; Tier-2 is the lazily-rendered expansion catalog. The `.feature` file remains the SSOT for scenarios; the wave-delta sections are pointers + structured summaries.
+
+### Tier-1 [REF] — always emitted
+
+Tier-1 sections constitute the lean-default baseline. Every DISTILL run emits at minimum these sections under `## Wave: DISTILL / [REF] <Section>` headings:
+
+- Scenario list with tags — table of scenario titles + tags (`@walking_skeleton`, `@US-N`, `@real-io`, `@in-memory`, `@error`, `@property`)
+- WS strategy — A/B/C/D selection per Mandate 5 with one-line justification
+- Adapter coverage table — per Mandate 6, every driven adapter mapped to at least one `@real-io` scenario
+- Scaffolds — list of RED-ready scaffold files created (per Mandate 7) with `__SCAFFOLD__` markers
+- Test placement — `tests/{path}/` directory choice with one-line precedent justification
+- Driving Adapter coverage — every CLI/endpoint/hook in DESIGN mapped to at least one subprocess/HTTP/hook scenario
+- Pre-requisites — DESIGN driving ports + DEVOPS environment matrix the scenarios depend on
+
+### Tier-2 EXPANSION CATALOG — lazy, on-demand (per D10)
+
+Tier-2 items are NOT emitted by default. They are rendered only when explicitly requested via `--expand <id>` (DDD-2) or via the wave-end interactive prompt when `expansion_prompt = "ask"`. Each item has a one-line description (per D10) so the menu fits in a single render. Each emitted Tier-2 section is headed `## Wave: DISTILL / [WHY] <Section>` or `## Wave: DISTILL / [HOW] <Section>`.
+
+| Expansion ID | Tier label | One-line description |
+|---|---|---|
+| `scenario-alternatives-considered` | [WHY] | Alternative scenario phrasings weighed and rejected (Gherkin variants, tag schemes) |
+| `fixture-design-discussion` | [WHY] | Why these tmp_path/conftest fixtures, why these scopes, what they cannot model |
+| `edge-case-enumeration` | [WHY] | Full edge-case taxonomy: empty/null/boundary/concurrency/timeout/permission |
+| `error-path-rationale` | [WHY] | Why each `@error` scenario was chosen and what failure mode it surfaces |
+| `tagging-cookbook` | [HOW] | Cookbook for tag application: `@property`, `@requires_external`, `@walking_skeleton` |
+| `scaffold-authoring-recipes` | [HOW] | Per-language scaffold recipes (Python, TS, Go, Rust, Java) with marker conventions |
+| `pbt-strategy-notes` | [WHY] | Property-based testing strategies for invariants surfaced by the feature |
+| `expansion-catalog-rationale` | [WHY] | Why this set of expansions, why these defaults, why D10 enforces one-line descriptions |
+
+## Density resolution (per D12)
+
+Provenance: D12 (rigor cascade), DDD-5 (density resolver shared utility). Before emitting any Tier-1 section, resolve the active documentation density:
+
+1. **Read** `~/.nwave/global-config.json`. Treat missing/malformed config as empty dict (fall back to defaults).
+2. **Call** `resolve_density(global_config)` from `scripts/shared/density_config.py`. The function returns a `Density` value object with fields `mode` (`"lean"` | `"full"`), `expansion_prompt` (`"ask"` | `"always-skip"` | `"always-expand"` | `"smart"`), and `provenance` (the cascade branch that produced this result).
+3. **Branch on `density.mode`**:
+   - `lean` → emit ONLY Tier-1 `[REF]` sections under `## Wave: DISTILL / [REF] <Section>` headings. Do NOT auto-render Tier-2 items.
+   - `full` → emit Tier-1 `[REF]` sections PLUS all Tier-2 expansion items rendered under their `[WHY]` / `[HOW]` headings. This is auto-expansion (no menu).
+4. **At wave end**, branch on `density.expansion_prompt`:
+   - `"ask"` → present the expansion menu (Tier-2 catalog above with one-line descriptions per D10) and append user-selected items as `## Wave: DISTILL / [WHY|HOW] <Section>` headings.
+   - `"always-skip"` → no menu, no extra sections (idempotent re-runs, CI mode).
+   - `"always-expand"` → equivalent to `mode = "full"` for this run; auto-render every Tier-2 item.
+   - `"smart"` → out of scope for v1 (per OQ-3); treat as `"ask"` until heuristic is empirically tuned.
+
+The resolver itself encodes the D12 cascade: explicit `documentation.density` override > `rigor.profile` mapping (`lean`→`lean`, `standard`→`lean`+`ask`, `thorough`→`full`, `exhaustive`→`full`+all-expansions, `custom`→`lean`+`ask`) > hard default `lean`+`ask`. This skill MUST NOT replicate the cascade locally — call `resolve_density(global_config)` and trust its output.
+
+**Section heading prefix convention (per D2)**: every emitted section starts with `## Wave: DISTILL / [REF] <Section>` for Tier-1; `## Wave: DISTILL / [WHY] <Section>` or `## Wave: DISTILL / [HOW] <Section>` for Tier-2. Validator `scripts/validation/validate_feature_delta.py` enforces the regex `^## Wave: \w+ / \[(REF|WHY|HOW)\] .+$` on every wave heading.
+
+### Ad-hoc override — user request mid-session
+
+Even when `density.mode = "lean"` and `density.expansion_prompt = "always-skip"`, the user may ask DURING the wave session for specific expansions:
+
+- "expand jtbd" / "expand jtbd-narrative" / "more on jtbd"
+- "add alternatives considered"
+- "show migration playbook"
+- "tell me why" (interpretive — append the WHY rationale section relevant to the most recent decision)
+- "more on <X>" (where `<X>` is one of the expansion catalog items for this wave)
+
+When the user makes such a request:
+
+1. Append the corresponding `[WHY]` or `[HOW]` section to `feature-delta.md` under the current wave's heading.
+2. Emit a `DocumentationDensityEvent` with `choice="expand"` and `expansion_id=<the requested item>` to `JsonlAuditLogWriter`.
+3. Do NOT modify `~/.nwave/global-config.json`. The override is ONE-SHOT for this wave only.
+
+If the user's request matches NO item in this wave's Expansion Catalog, respond with the catalog list (one-line description per item per D10) and ask for clarification — do NOT improvise an expansion outside the catalog.
+
+## Telemetry (per D4 + DDD-6)
+
+Provenance: D4 (telemetry schema instrumented day-one), D6 (first-install pedagogical prompt creates audit signal), DDD-6 (telemetry event class lives in DES domain, writer reused). Every expansion choice — whether the user expanded an item or skipped the menu — emits a structured event to the existing `JsonlAuditLogWriter` driven adapter.
+
+**Event type**: `DocumentationDensityEvent` (dataclass at `src/des/domain/telemetry/documentation_density_event.py`).
+
+**Schema fields** (per D4):
+
+```
+{
+  "feature_id": "<feature-id>",
+  "wave": "DISTILL",
+  "expansion_id": "<id-from-catalog-or-'*'-for-skip-all>",
+  "choice": "skip" | "expand",
+  "timestamp": "<ISO-8601 datetime>"
+}
+```
+
+**Emission pattern**:
+
+1. Construct a `DocumentationDensityEvent(feature_id=..., wave="DISTILL", expansion_id=..., choice=..., timestamp=...)`.
+2. Call `event.to_audit_event()` to convert to the open `AuditEvent` shape (`event_type="DOCUMENTATION_DENSITY"` and the schema fields nested under `data`).
+3. Dispatch via `JsonlAuditLogWriter().log_event(audit_event)`.
+
+The wave-skill harness invokes the helper `scripts/shared/telemetry.py:write_density_event(...)` which performs all three steps. This skill MUST NOT bypass the helper or write JSONL directly — every density telemetry event flows through the shared helper to keep the audit-log schema consistent.
+
+**When to emit**:
+- One event per user choice in the expansion menu when `expansion_prompt = "ask"` (`choice = "expand"` for selected items, `choice = "skip"` with `expansion_id = "*"` if the user skips the entire menu).
+- One synthetic `choice = "skip"` event with `expansion_id = "*"` when `expansion_prompt = "always-skip"` (records the skipped menu opportunity).
+- One `choice = "expand"` event per Tier-2 item rendered when `mode = "full"` or `expansion_prompt = "always-expand"`.
+
+This telemetry feeds the propagation success metric: when DELIVER consumes a lean DISTILL feature-delta and produces no `--expand` for fixture-design or edge-case enumeration, the `[REF]` baseline plus the `.feature` file is sufficient for the crafter.
+
+## Feature-Delta Schema (US-01, US-02)
+
+Provenance: `unified-feature-delta` US-01 (scaffold command) and US-02 (E1+E2 validator rules).
+
+Every `feature-delta.md` is a Markdown document with `## Wave: <NAME>` sections. The canonical table format must be used in every `### [REF] Inherited commitments` block.
+
+### Scaffold command
+
+```
+nwave-ai init-scaffold --feature <feature-name>
+```
+
+Creates `docs/feature/<feature-name>/feature-delta.md` with three pre-populated wave sections (DISCUSS, DESIGN, DISTILL), each containing a ready-to-fill commitments table. The scaffold passes the E1+E2 validator immediately.
+
+### Canonical table format
+
+Every `### [REF] Inherited commitments` block MUST have exactly four columns in this order:
+
+```markdown
+## Wave: DISCUSS
+
+### [REF] Inherited commitments
+
+| Origin | Commitment | DDD | Impact |
+|--------|------------|-----|--------|
+| n/a | <commitment text> | n/a | <impact text> |
+```
+
+Column semantics:
+- **Origin**: wave and row reference of the upstream commitment (e.g., `DISCUSS#row1`) or `n/a` for root commitments
+- **Commitment**: the specific commitment inherited or newly introduced in this wave
+- **DDD**: Design Decision Document reference that authorizes any change (e.g., `DDD-3`) or `n/a` / `(none)` when not applicable
+- **Impact**: substantive description (>=10 words or a consequence verb from the verb list) of the commitment's effect on the system
+
+### Validator rules (E1+E2)
+
+- **E1 (SectionPresent)**: every `## Wave: <NAME>` heading must match the canonical pattern. Known wave names: DISCOVER, DISCUSS, DESIGN, DEVOPS, DISTILL, DELIVER. Near-misses get a did-you-mean suggestion.
+- **E2 (ColumnsPresent)**: every `### [REF] Inherited commitments` block must have a header row with the four required columns (Origin, Commitment, DDD, Impact) in any order, case-insensitive.
+
+### Incremental authoring
+
+Sections for waves not yet authored may be omitted entirely. The validator does not require all six wave sections to be present. An incremental feature-delta with only DISCUSS is valid. Missing future-wave sections are never flagged.
+
 ## Acceptance Criteria: Port-to-Port Principle
 
 Every AC MUST name the driving port (entry point) through which the behavior is exercised. This enables port-to-port acceptance tests that make TBU (Tested But Unwired) defects structurally impossible.
@@ -125,6 +269,27 @@ Team needs different behavior in CI vs local development?
 - `@in-memory` -- scenario uses InMemory doubles
 - `@requires_external` -- scenario needs external system (skip if absent)
 - Walking skeleton under B/C/D: MUST have `@walking_skeleton @real-io`
+
+## Register Outcomes (per DISCUSS#D-5 grain)
+
+Provenance: feature `outcomes-registry` — DISCUSS#D-2 (lean Tier-1 + Tier-2 default), D-5 (per-typed-contract grain), D-6 (gate-scoping: code-feature pipelines only).
+
+**Trigger**: feature has a new typed contract surface — a rule module, CLI subcommand, public service operation, or system-wide invariant. Each such surface is one OUT-N row in the registry.
+
+**Skip when**: the feature is methodology-only (skill propagation, prose changes, documentation updates, no new typed contract). Per D-6 gate-scoping, the registry tracks code-feature pipelines only; methodology features are explicitly OUT of scope.
+
+**Procedure** — for every new contract surface introduced by the scenarios in this DISTILL session:
+
+1. **Determine `kind`**: one of
+   - `specification` — a rule (e.g. a guard, a validation predicate, a policy)
+   - `operation` — a function/method exposed at a driving port (CLI subcommand, service method, endpoint)
+   - `invariant` — a system-wide constraint that must always hold
+2. **Run** `nwave-ai outcomes register --id OUT-N --kind {kind} --input-shape "..." --output-shape "..." --keywords "k1,k2,k3"`
+3. **Handle exit codes**: exit `0` on successful registration; exit `2` on duplicate id (re-id the candidate and retry — typically because the OUT-N number is already taken).
+
+The registry at `docs/product/outcomes/registry.yaml` becomes the SSOT for "what we promise the system does." Subsequent waves (DESIGN of later features) consult it to detect outcome collisions before introducing duplicate contracts.
+
+Gate: every new typed contract introduced in the scenarios is registered with one OUT-N row, OR the feature is documented as methodology-only and registration is correctly skipped.
 
 ## Driving Adapter Verification (Mandatory — RCA fix P1, 2026-04-10)
 
@@ -308,35 +473,43 @@ Only RED tests proceed to the DELIVER TDD cycle. BROKEN tests block the upstream
 
 The scaffold is never committed to production -- it exists only between DISTILL approval and DELIVER completion for each step.
 
-## Expected Outputs
+## Final Wave Review Gate (Mandatory — covers DISCUSS+DESIGN+DEVOPS+DISTILL)
 
-```
-tests/{test-type-path}/{feature-id}/acceptance/
-  walking-skeleton.feature
-  milestone-{N}-{description}.feature
-  integration-checkpoints.feature
-  steps/
-    conftest.py
-    {domain}_steps.py
+AFTER all DISTILL Tier-1 [REF] sections are appended to `feature-delta.md` and acceptance scenarios + scaffolds are written, dispatch FOUR reviewers in parallel against the full `feature-delta.md`. This is the consolidated mandatory review that replaces per-wave reviews (per-wave is now opt-in only — see DISCUSS/DESIGN/DEVOPS skills). All four reviewers see the entire 4-wave chain in one file, enabling cross-wave consistency checks that per-wave review misses.
 
-src/{production-path}/
-  {module}.py               # RED scaffold stubs (Mandate 7)
+1. **Dispatch four reviewers in parallel** (single message, multiple Agent tool uses, all on Haiku for cost efficiency):
+   - `@nw-product-owner-reviewer` (Eclipse) — reviews DISCUSS sections (lines 1 to first `## Wave: DESIGN` heading)
+   - `@nw-solution-architect-reviewer` (Architect) — reviews DESIGN sections (between `## Wave: DESIGN` and `## Wave: DEVOPS`)
+   - `@nw-platform-architect-reviewer` (Forge) — reviews DEVOPS sections (between `## Wave: DEVOPS` and `## Wave: DISTILL`)
+   - `@nw-acceptance-designer-reviewer` (Sentinel) — reviews DISTILL sections + executable `.feature` files + scaffolds
+   Gate: all four reviewers dispatched concurrently.
 
-docs/feature/{feature-id}/distill/
-  walking-skeleton.md   (notes only — the .feature file is the SSOT)
-  wave-decisions.md
-```
+2. **Each reviewer outputs YAML verdict** with: `approval_status` ∈ {approved, conditionally_approved, needs_revision, rejected}, `blocker_count`, `high_count`, `low_count`, `findings_list`. Gate: structured verdict received from each.
 
-Note: `test-scenarios.md` and `acceptance-review.md` are NOT produced — the `.feature` file under `tests/{test-type-path}/{feature-id}/acceptance/` is the scenario SSOT, and reviewer output is ephemeral (lives in PR comments / retrospective, not as a committed artifact).
+3. **Cross-wave consistency check** — if Eclipse APPROVES DISCUSS but Architect's findings reveal DISCUSS contradictions (e.g. story claims X, ADR assumes Y), surface as cross-wave blocker. Gate: contradictions flagged.
 
-Bug fix regression tests:
-```
-tests/regression/{component-or-module}/
-  bug-{ticket-or-description}.feature
-  steps/
-    conftest.py
-    {domain}_steps.py
+4. **Blocker handling** — for each NEEDS_REVISION verdict: dispatch fix to the corresponding wave's primary agent (Luna for DISCUSS, Morgan for DESIGN, platform-architect for DEVOPS, acceptance-designer for DISTILL). Re-run only the affected reviewer after fix. Gate: 2 revision cycles max per wave; escalate to user if not resolved.
 
-tests/unit/{component-or-module}/
-  test_{module}_bug_{ticket-or-description}.py
-```
+5. **Block DELIVER handoff** — do not hand off to DELIVER until all four verdicts are APPROVED or CONDITIONALLY_APPROVED with documented action items in DELIVER scope. Gate: zero blockers, zero high (or accepted-with-conditions).
+
+**Cost**: 4 Haiku reviewers in parallel ≈ $0.05-0.20 per feature. Trades small cost for late-feedback-blast-radius reduction (full chain visible).
+
+**Per-wave review trigger override**: even with this final gate, a wave-skill may have triggered its own per-wave review (DoR ambiguity, contested ADR, novel deployment target, etc.). Per-wave reviewer outputs are PR-ephemeral, not committed; they inform the wave's primary agent in real time but don't substitute for this final gate.
+
+## Outputs
+
+**Single narrative file**: `docs/feature/{feature-id}/feature-delta.md` — scenario list with tags, WS strategy, adapter coverage table, scaffolds list, test placement, driving adapter coverage, pre-requisites all become `## Wave: DISTILL / [REF|WHY|HOW] <Section>` headings. The `.feature` file (below) remains the SSOT for executable scenarios; the wave-delta sections are pointers + structured summaries.
+
+**Machine artifacts** (declared, parseable by downstream — the `.feature` files ARE the scenario SSOT, executable by pytest-bdd):
+- `tests/{test-type-path}/{feature-id}/acceptance/walking-skeleton.feature`
+- `tests/{test-type-path}/{feature-id}/acceptance/milestone-{N}-{description}.feature`
+- `tests/{test-type-path}/{feature-id}/acceptance/integration-checkpoints.feature`
+- `tests/{test-type-path}/{feature-id}/acceptance/steps/conftest.py` + `{domain}_steps.py`
+- `src/{production-path}/{module}.py` — RED scaffold stubs (Mandate 7)
+
+For bug fix regression tests: `tests/regression/{component-or-module}/bug-{ticket-or-description}.feature` + matching `tests/unit/{component-or-module}/test_{module}_bug_{ticket-or-description}.py`.
+
+**SSOT updates** (per Recommendation 3 / back-propagation contract):
+- `docs/product/kpi-contracts.yaml` — refine acceptance metrics: per-KPI scenario tag (`@kpi`) link, expected measurement window, soft-vs-hard gate classification. DISTILL inherits the contract from DEVOPS and tightens it as scenarios are written.
+
+Legacy multi-file outputs (`walking-skeleton.md`, `wave-decisions.md`, `test-scenarios.md`, `acceptance-review.md` as separate files in `docs/feature/{id}/distill/`) are NOT produced — that content lives in `feature-delta.md`, and the executable `.feature` files are the scenario SSOT. Reviewer output is ephemeral (PR comments / retrospective, not committed). Validator: `scripts/validation/validate_feature_layout.py`.

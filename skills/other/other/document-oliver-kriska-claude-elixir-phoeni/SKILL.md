@@ -1,6 +1,6 @@
 ---
 name: phx:document
-description: Write @moduledoc and @doc annotations into Elixir source files. Use ONLY when the user explicitly asks to generate documentation for modules, contexts, or schemas.
+description: Generate @moduledoc and @doc strings for Elixir modules, contexts, and schemas. Use when explicitly asked to write @doc/@moduledoc — NOT for README or external docs.
 effort: low
 argument-hint: [plan-file OR feature-name]
 ---

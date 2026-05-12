@@ -1,7 +1,6 @@
 ---
 name: hook-authoring
-description: 'Guide for creating Claude Code hooks with security-first design. Use for validation, logging, and policy enforcement.'
-version: 1.9.3
+description: 'Guide creating Claude Code hooks with security-first design. Use for validation, logging, and policy enforcement.'
 alwaysApply: false
 category: hook-development
 tags:
@@ -614,6 +613,7 @@ For detailed guidance on specific topics:
 - **Performance Guidelines**: `modules/performance-guidelines.md` - Optimization techniques
 - **Scope Selection**: `modules/scope-selection.md` - Choosing plugin/project/global
 - **Testing Hooks**: `modules/testing-hooks.md` - Testing strategies and fixtures
+- **Observability Warnings**: `modules/observability-warnings.md` - Copy-pasteable resolution pattern for binary-actionable drift hooks
 
 ## Tools
 

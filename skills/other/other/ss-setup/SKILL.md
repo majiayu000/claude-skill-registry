@@ -7,6 +7,13 @@ allowed-tools: Read, Write, Edit, Grep, Glob, Bash, WebFetch
 
 # Design System Setup Wizard
 
+## When NOT to use
+
+- For projects already configured with StyleSeed → use `/ss-update` instead
+- For just adding one component to an existing project → use `/ss-component`
+- For changing brand skin in an already set-up project — directly swap `theme.css`
+- For non-React or non-Tailwind-v4 stacks — currently unsupported
+
 Guide the user through setting up StyleSeed for their project, step by step.
 
 ## Instructions

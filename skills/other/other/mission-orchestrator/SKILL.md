@@ -1,7 +1,6 @@
 ---
 name: mission-orchestrator
 description: "Lifecycle orchestrator that auto-detects project state and routes to the correct development phase."
-version: 1.9.0
 alwaysApply: false
 category: workflow-orchestration
 tags:
@@ -23,10 +22,7 @@ dependencies:
 - imbue:justify
 - imbue:vow-enforcement
 - abstract:friction-detector
-tools:
-- Bash
-- Read
-- Write
+tools: []
 provides:
   workflow:
   - mission-lifecycle
@@ -60,6 +56,7 @@ modules:
 references:
 - references/mission-charter.md
 - references/progress-report.md
+role: entrypoint
 ---
 ## Table of Contents
 
@@ -180,6 +177,28 @@ See `modules/plan-review.md` for the full protocol.
 - **context-injector.md**: Revision prompt construction
 - **iteration-governor.md**: Round tracking and escalation
 
+## User Directive Overrides
+
+The orchestrator parses the user's command-args and
+free-text at mission start for natural-language trust
+signals. Phrases like "ignore scope guard", "ultrathink",
+"don't keep asking", and "be autonomous" are recognized
+as directive overrides that adjust the constraint
+profile without requiring an explicit
+`--constraints=` flag.
+
+Directive overrides win over mission-type defaults but
+never bypass the Safety Floor (pre-commit hooks,
+proof-of-work evidence, destructive-operation
+confirmation, external-facing actions). When a directive
+is detected, the orchestrator acknowledges it once at
+mission start and stops asking for the corresponding
+checkpoints. Repeated approval-seeking after a directive
+override is itself a workflow bug.
+
+See `modules/adaptive-constraints.md` "User Directive
+Override" section for the parsing table.
+
 ## Mission Charter
 
 Define mission boundaries using the structured template from
@@ -210,20 +229,80 @@ checkpoint rhythm guidance.
 
 ## Module Reference
 
-- **mission-types.md**: Type definitions, auto-detection logic, custom types
-- **state-detection.md**: Artifact existence checks, quality validation, staleness
-- **phase-routing.md**: Phase execution protocol, transition hooks, error handling
-- **mission-state.md**: State schema, persistence, recovery protocol
-- **plan-review.md**: Interactive section-by-section review with bias scanning
+### Core modules (always loaded)
+
+- **mission-types.md**: Type definitions, auto-detection logic,
+  custom types
+- **state-detection.md**: Artifact existence checks, quality
+  validation, staleness
+- **phase-routing.md**: Phase execution protocol, transition
+  hooks, error handling
+- **mission-state.md**: State schema, persistence, recovery
+  protocol
+
+### Plan-review modules (load when plan phase runs)
+
+- **plan-review.md**: Interactive section-by-section review
+  with bias scanning
 - **plan-versioner.md**: Version tracking and diff summaries
 - **feedback-collector.md**: Verdict capture and feedback files
-- **context-injector.md**: Revision prompt construction from feedback
-- **iteration-governor.md**: Round tracking, cap enforcement, escalation
+- **context-injector.md**: Revision prompt construction from
+  feedback
+- **iteration-governor.md**: Round tracking, cap enforcement,
+  escalation
+
+### Conditional modules (load only when triggered)
+
+- **reflexion-buffer.md**: Cross-session learning buffer; load
+  when iteration count > 1 or after a failed revision round.
+- **trust-tier.md**: Constraint-profile classifier; load when
+  a user directive override is detected at mission start.
+- **adaptive-constraints.md**: Constraint adaptation rules;
+  load alongside `trust-tier.md` when directive overrides are
+  active.
+
+## Module Loading by Mission Type
+
+This skill declares `progressive_loading: true`. To keep the
+orchestrator's resident token cost minimal, load only the
+subset of modules each mission type actually needs. The
+orchestrator itself loads only the four core modules at
+mission start; the rest are loaded on-demand when their
+phase runs.
+
+| Mission type | Core | Plan-review | Reflexion | Trust + adaptive |
+|--------------|------|-------------|-----------|------------------|
+| `quickfix` (execute only) | yes | -- | -- | if directive |
+| `tactical` (plan -> execute) | yes | yes | if revising | if directive |
+| `standard` (specify -> plan -> execute) | yes | yes | if revising | if directive |
+| `full` (brainstorm -> specify -> plan -> execute) | yes | yes | yes | if directive |
+
+Token cost (approximate, computed from `wc -w` on hub +
+loaded modules and converted at ~1.3 tokens per word):
+
+| Mission type | Loaded modules | Approx tokens |
+|--------------|----------------|---------------|
+| `quickfix`   | hub + core (4) | ~4,100 |
+| `tactical`   | hub + core + plan-review (9) | ~6,900 |
+| `standard`   | same as tactical (9) | ~6,900 |
+| `full`       | hub + core + plan-review + reflexion (10) | ~7,900 |
+
+The previous load-all pattern brought in roughly 10,100
+tokens for every mission, including `quickfix` runs that
+only need the execute phase. With per-type loading, quickfix
+is ~60% lighter and the standard / tactical / full paths
+save 22-32%.
+
+When a directive override fires, the trust-tier +
+adaptive-constraints pair adds ~2,200 tokens on top of the
+mission-type baseline.
 
 ## Reference Modules
 
-- **mission-charter.md**: Structured mission definition template
+- **mission-charter.md**: Structured mission definition
+  template (load only when defining a charter)
 - **progress-report.md**: Checkpoint status report template
+  (load only when emitting a progress report)
 
 ## Related Skills
 

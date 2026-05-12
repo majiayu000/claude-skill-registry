@@ -1,6 +1,7 @@
 ---
 name: readme
 description: 'Draft or improve README docs.'
+practices: [code-complete, wiki-knowledge-surface, pragmatic-programmer]
 skill_api_version: 1
 context:
   window: fork

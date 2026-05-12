@@ -3,6 +3,9 @@ name: build-ui
 description: Build user-facing interface. Clean, functional, mobile-friendly by default.
 version: 5.0.0
 ---
+::PRIOR{completion:assume_incomplete|authority:developer}
+::PRIOR{execution:act_when_safe|authority:developer}
+
 
 ::GENE{build-ui|conf:confirmed|scope:global}
   T:mobile_first
@@ -14,4 +17,4 @@ version: 5.0.0
 ::ACTIVATE{build-ui}
   ON:ui_task_detected
 
-Powered by I-Lang v3.0 | ilang.ai
+Powered by I-Lang v4.0 | ilang.ai

@@ -3,7 +3,8 @@ name: ralph-loop
 description: "Ralph Wiggum-inspired automation loop for specification-driven development. Orchestrates task implementation, review, cleanup, and synchronization using a Python script. Use when: user runs /loop command, user asks to automate task implementation, user wants to iterate through spec tasks step-by-step, or user wants to run development workflow automation with context window management. One step per invocation. State machine: init → choose_task → implementation → review → fix → cleanup → sync → update_done. Supports --from-task and --to-task for task range filtering. State persisted in fix_plan.json."
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob, TodoWrite
 ---
-
+> **⚠️ WARNING**: This skill was deprecated in favor of a new command `ralph-loop-v2` that uses a Python orchestrator script. 
+> The old `/specs:ralph-loop` command will be removed soon. Please migrate to the new command.
 # Ralph Loop — Python Orchestrator
 
 ⚠️ **IMPORTANT**: This skill uses a Python orchestrator script. Do NOT execute arbitrary bash commands. Use `Bash` ONLY to run `ralph_loop.py`. All task commands (like `/developer-kit-specs:specs.task-implementation`) are shown to the user to execute manually.

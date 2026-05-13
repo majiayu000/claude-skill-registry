@@ -1,6 +1,6 @@
 ---
 name: deepline-gtm
-description: "Use this skill for GTM prospecting, enrichment, qualification, and outbound workflows, especially when users mention Deepline, CSV processing, lead/account/contact research, waterfall enrichment, email or LinkedIn lookup, personalization, scoring, or campaign activation. Route CSV-heavy and provider-driven requests through this skill, then rely on linked sub-docs and provider playbooks for execution details. Available providers: adyntel, ai_ark, apify, apollo, attio, bettercontact, bloomberry, builtwith, cloudflare, contactout, crustdata, customer_db, dataforseo, datagma, deepline_native, deeplineagent, discolike, dropleads, exa, findymail, firecrawl, forager, fullenrich, generic_http, heyreach, hubspot, hunter, icypeas, instantly, ipqs, leadmagic, lemlist, linkedin_ads_audiences, linkedin_scraper, lusha, openwebninja, parallel, peopledatalabs, prospeo, rocketreach, salesforce, serper, slack, smartlead, snowflake, theirstack, trestle, wiza, zerobounce."
+description: "Use this skill for GTM prospecting, enrichment, qualification, and outbound workflows, especially when users mention Deepline, CSV processing, lead/account/contact research, waterfall enrichment, email or LinkedIn lookup, personalization, scoring, or campaign activation. Route CSV-heavy and provider-driven requests through this skill, then rely on linked sub-docs and provider playbooks for execution details. Available providers: adyntel, ai_ark, apify, apollo, attio, bettercontact, bloomberry, builtwith, cloudflare, contactout, crustdata, crustdata-v2, customer_db, dataforseo, datagma, deepline_native, deeplineagent, discolike, dropleads, exa, findymail, firecrawl, forager, fullenrich, generic_http, heyreach, hubspot, hunter, icypeas, instantly, ipqs, leadmagic, lemlist, linkedin_ads_audiences, linkedin_scraper, lusha, openwebninja, parallel, peopledatalabs, prospeo, rocketreach, salesforce, serper, slack, smartlead, snowflake, theirstack, trestle, wiza, zerobounce."
 ---
 
 # GTM Meta Skill
@@ -235,6 +235,10 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
 - [crustdata playbook](provider-playbooks/crustdata.md)
   Summary: Start with free autocomplete and default to fuzzy contains operators `(.)` for higher recall. Use ISO-3 country codes, prefer crunchbase_categories over linkedin_industries for niche verticals, and use employee_count_range for filtering instead of employee_metrics.latest_count.
   Last reviewed: 2026-02-11
+
+- [crustdata-v2 playbook](provider-playbooks/crustdata-v2.md)
+  Summary: Use autocomplete endpoints before structured searches, prefer in-DB search for broad discovery, and use realtime enrichment only when fresh upstream data is required.
+  Last reviewed: 2026-05-12
 
 - [dataforseo playbook](provider-playbooks/dataforseo.md)
   Summary: Use DataForSEO for native SEO and content-analysis endpoints. Most tools are generated directly from the docs catalog, so prefer regeneration over hand edits.

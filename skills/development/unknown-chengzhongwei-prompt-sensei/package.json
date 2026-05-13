@@ -1,0 +1,45 @@
+{
+  "name": "prompt-sensei",
+  "version": "0.5.1",
+  "description": "A quiet, local-first prompt mentor with improve, observe, report, and lookback workflows",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc",
+    "init": "node dist/scripts/observe.js --init",
+    "observe": "node dist/scripts/observe.js",
+    "report": "node dist/scripts/report.js",
+    "lookback": "node dist/scripts/lookback.js",
+    "settings": "node dist/scripts/settings.js",
+    "setup-hooks": "node dist/scripts/setup-hooks.js",
+    "sync-codex-install": "node dist/scripts/sync-codex-install.js",
+    "session-start": "node dist/scripts/session-start.js",
+    "stop": "node dist/scripts/stop.js",
+    "pre-compact": "node dist/scripts/pre-compact.js",
+    "eval": "node dist/scripts/eval.js",
+    "check-update": "node dist/scripts/update.js --check",
+    "update": "node dist/scripts/update.js --apply",
+    "clear-data": "node dist/scripts/clear.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "claude-code",
+    "codex",
+    "prompt-engineering",
+    "ai-coding",
+    "developer-tools",
+    "prompt-coach",
+    "prompt-history",
+    "lookback",
+    "local-first",
+    "engineering-productivity",
+    "ai-agents"
+  ],
+  "license": "Apache-2.0",
+  "author": "Chengzhong Wei"
+}

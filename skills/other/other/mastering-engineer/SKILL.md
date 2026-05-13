@@ -91,26 +91,50 @@ Check for custom mastering presets:
 
 genres:
   dark-electronic:
-    cut_highmid: -3  # More aggressive cut
-    boost_sub: 2     # More sub bass
-    target_lufs: -12 # Louder master
+    cut_highmid: -3         # More aggressive cut
+    target_lufs: -12        # Louder master
+    compress_ratio: 2.0     # Heavier compression
+    compress_attack: 15.0   # Faster attack
 
   ambient:
-    cut_highmid: -1  # Gentle cut
-    boost_sub: 0     # Natural bass
-    target_lufs: -16 # Quieter, more dynamic
+    cut_highmid: -1         # Gentle cut
+    target_lufs: -16        # Quieter, more dynamic
+    compress_ratio: 1.2     # Very light compression
+
+defaults:
+  dither_bits: 24           # 24-bit output for archival
 ```
+
+**Available preset fields:**
+
+| Category | Fields |
+|----------|--------|
+| Loudness | `target_lufs`, `target_lra` |
+| EQ cuts | `cut_highmid`, `cut_highs` |
+| EQ high-mid | `eq_highmid_freq`, `eq_highmid_q` |
+| EQ highs | `eq_highs_freq`, `eq_highs_q` |
+| EQ low shelf | `eq_low_freq`, `eq_low_gain`, `eq_low_q` |
+| EQ sub-bass | `eq_sub_cut_freq` |
+| EQ options | `eq_linear_phase` |
+| Compression | `compress_ratio`, `compress_threshold`, `compress_attack`, `compress_release`, `compress_mix`, `compress_makeup` |
+| Multiband | `multiband_enabled`, `multiband_low_crossover`, `multiband_high_crossover`, `multiband_low_ratio`, `multiband_mid_ratio`, `multiband_high_ratio`, `multiband_low_threshold`, `multiband_mid_threshold`, `multiband_high_threshold` |
+| Mid/side EQ | `midside_low_gain`, `midside_low_freq`, `midside_high_gain`, `midside_high_freq` |
+| Stereo | `stereo_width`, `stereo_bass_mono_freq` |
+| De-essing | `deess_enabled`, `deess_freq`, `deess_bandwidth`, `deess_threshold`, `deess_ratio` |
+| Limiting | `limiter_lookahead_ms`, `limiter_release_ms` |
+| Processing | `dc_filter_freq`, `processing_oversample` |
+| Output | `output_bits`, `dither_bits`, `output_sample_rate`, `track_gap` |
 
 ### How to Use Override
 1. Load at invocation start
 2. Check for genre-specific presets when mastering
-3. Override presets take precedence over base genre presets
-4. Use override target_lufs instead of default -14
+3. Override presets take precedence over base genre presets (field-level merge)
+4. Only specify fields you want to change — unset fields inherit from built-in
 
 **Example:**
 - Mastering "dark-electronic" genre
 - Override has custom preset
-- Result: Apply -3 highmid cut, +2 sub boost, target -12 LUFS
+- Result: Apply -3 highmid cut, 2.0:1 compression with 15ms attack, target -12 LUFS
 
 ---
 
@@ -260,6 +284,48 @@ If a track has excessive dynamic range and won't reach target LUFS:
 fix_dynamic_track(album_slug, track_filename="05-problem-track.wav")
 ```
 
+### Step 6.5: Real-listener QC artifacts (`mastering_samples/`)
+
+After verification, `master_album` writes operator-listening artifacts to a
+sibling directory so `mastered/` stays byte-identical to what gets uploaded
+to streaming platforms:
+
+```
+{audio_root}/.../[album]/
+├── mastered/                         # Final masters — UPLOAD THIS
+│   ├── 01-track.wav
+│   └── ...
+└── mastering_samples/                # Operator QA only — DO NOT UPLOAD
+    ├── 01-track.aac.m4a              # 128 kbps AAC for Bluetooth listening
+    ├── 01-track.mono.wav             # Mono fold-down sample
+    └── 01-track.MONO_FOLD.md         # Per-band delta report + verdict
+```
+
+**Two automated checks run here**:
+- **Codec preview** — renders each master to 128 kbps AAC. Audition on
+  AirPods / car Bluetooth before release; compressed playback exposes
+  warbly sibilance, lost sub-bass, and pumping that the full-resolution
+  master hides.
+- **Mono fold-down** — sums stereo to mono, measures per-band drops vs.
+  stereo. A >6 dB drop in any band hard-fails the pipeline (phase
+  cancellation). Listen to `.mono.wav` on a phone speaker or single Echo
+  to confirm which elements disappear in mono playback.
+
+Standalone tools (run independently of the full pipeline):
+```
+render_codec_preview(album_slug)        # writes .aac.m4a files
+mono_fold_check(album_slug)             # writes .MONO_FOLD.md + .mono.wav
+```
+
+Re-run cleanup (regenerable artifacts):
+```
+reset_mastering(album_slug, subfolders=["mastering_samples"], dry_run=False)
+```
+
+Configurable thresholds live in `tools/mastering/genre-presets.yaml`
+under `defaults:` (`mono_fold_band_drop_fail_db`, etc.) — override per-user
+in `~/.bitwize-music/overrides/mastering-presets.yaml`.
+
 ---
 
 ## MCP Tools Reference
@@ -274,6 +340,8 @@ All mastering operations are available as MCP tools. **Use these instead of runn
 | `master_with_reference` | Match mastering to a reference track |
 | `fix_dynamic_track` | Fix tracks with extreme dynamic range |
 | `master_album` | End-to-end pipeline — all steps in one call |
+| `render_codec_preview` | Render 128 kbps AAC previews to `mastering_samples/` |
+| `mono_fold_check` | Mono fold-down QC: per-band deltas, sample audio, MD report |
 
 ---
 

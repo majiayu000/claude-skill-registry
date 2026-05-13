@@ -20,7 +20,6 @@ allowed-tools:
 # Single Page Analysis
 
 ## When to Use
-
 - Use when the user provides a single URL for detailed on-page SEO review.
 - Use when auditing one page rather than an entire site.
 - Use when checking metadata, content, schema, images, and page-level technical signals together.
@@ -101,3 +100,8 @@ If DataForSEO MCP tools are available, use `serp_organic_live_advanced` for real
 | URL unreachable (DNS failure, connection refused) | Report the error clearly. Do not guess page content. Suggest the user verify the URL and try again. |
 | Page requires authentication (401/403) | Report that the page is behind authentication. Suggest the user provide the rendered HTML directly or a publicly accessible URL. |
 | JavaScript-rendered content (empty body in HTML) | Note that key content may be rendered client-side. Analyze the available HTML and flag that results may be incomplete. Suggest using a browser-rendered snapshot if available. |
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

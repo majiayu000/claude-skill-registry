@@ -147,9 +147,11 @@ Before starting workflows, verify the CLI is ready:
 | Wait for source processing | `notebooklm source wait <source_id>` |
 | Web research (fast) | `notebooklm source add-research "query"` |
 | Web research (deep) | `notebooklm source add-research "query" --mode deep --no-wait` |
+| Web research (query from file) | `notebooklm source add-research --prompt-file research_query.txt --mode deep` |
 | Check research status | `notebooklm research status` |
 | Wait for research | `notebooklm research wait --import-all` |
 | Chat | `notebooklm ask "question"` |
+| Chat (long prompt from file) | `notebooklm ask --prompt-file question.txt` |
 | Chat (specific sources) | `notebooklm ask "question" -s src_id1 -s src_id2` |
 | Chat (with references) | `notebooklm ask "question" --json` |
 | Chat (save answer as note) | `notebooklm ask "question" --save-as-note` |
@@ -161,6 +163,7 @@ Before starting workflows, verify the CLI is ready:
 | Get source fulltext | `notebooklm source fulltext <source_id>` |
 | Get source guide | `notebooklm source guide <source_id>` |
 | Generate podcast | `notebooklm generate audio "instructions"` |
+| Generate (long prompt from file) | `notebooklm generate audio --prompt-file instructions.txt` |
 | Generate podcast (JSON) | `notebooklm generate audio --json` |
 | Generate podcast (specific sources) | `notebooklm generate audio -s src_id1 -s src_id2` |
 | Generate video | `notebooklm generate video "instructions"` |
@@ -256,6 +259,7 @@ All generate commands support:
 - `--language` to set output language (defaults to configured language or 'en')
 - `--json` for machine-readable output (returns `task_id` and `status`)
 - `--retry N` to automatically retry on rate limits with exponential backoff
+- `--prompt-file PATH` to read description/query from a file (mutually exclusive with positional argument; use for long prompts)
 
 | Type | Command | Options | Download |
 |------|---------|---------|----------|
@@ -490,6 +494,20 @@ All commands use consistent exit codes:
 - `source wait` returns 1 if source not found or processing failed
 - `artifact wait` returns 2 if timeout reached before completion
 - `generate` returns 1 if rate limited (check stderr for details)
+
+## Long Prompts
+
+When a prompt or query exceeds shell command-line length limits, use `--prompt-file` to read it from a file:
+
+```bash
+notebooklm ask --prompt-file ./long_question.txt
+notebooklm generate report --prompt-file ./custom_report_prompt.txt
+notebooklm source add-research --prompt-file ./research_query.txt --mode deep
+```
+
+`--prompt-file` is mutually exclusive with the positional text argument. The file is read as UTF-8 with trailing whitespace stripped. Supported on: `ask`, all `generate` subcommands (except `mind-map`), and `source add-research`.
+
+> **Note:** `--prompt-file` reads a *prompt/query text file*, not a source document. To upload a file as a notebook source, use `source add ./file.pdf`.
 
 ## Known Limitations
 

@@ -2,7 +2,7 @@
 name: album-conceptualizer
 description: Designs album concepts, tracklist architecture, and thematic planning through 7 structured phases. Use when planning a new album or reworking an existing album concept.
 argument-hint: <"plan album about [topic]" or album-path>
-model: claude-opus-4-6
+model: claude-opus-4-7
 prerequisites:
   - new-album
 allowed-tools:
@@ -68,7 +68,7 @@ Limitations (genre, theme, format) force interesting choices. Embrace them.
 Check for custom album planning preferences:
 
 ### Loading Override
-1. Call `load_override("album-planning-guide.md")` — returns override content if found (auto-resolves path from config)
+1. Call `load_override("album-planning-guide.md")` — returns override content if found (auto-resolves path from config). **Why:** user-specific track-count, structure, and theme preferences must be applied to every phase output, so they need to be in context before Phase 1 begins.
 2. If found: read and incorporate preferences
 3. If not found: use base planning principles only
 
@@ -185,8 +185,7 @@ Map album energy as a curve with peaks and valleys. Present to user for review.
 10 (Outro):  ▂▂▂ Resolution
 ```
 
-**Avoid**: Flatline energy (all medium), all peaks clustered at start/end, three slow songs in a row, no contrast between adjacent tracks
-**Aim for**: Build → Peak → Valley → Build → Peak → Resolution
+**Aim for**: Build → Peak → Valley → Build → Peak → Resolution. Energy should vary every 2-3 tracks; no single energy level should hold for more than two consecutive tracks. Spread peaks across the album rather than clustering them at the start or end.
 
 ### Pacing Problems Checklist
 - Three or more songs at the same energy level in a row
@@ -196,7 +195,7 @@ Map album energy as a curve with peaks and valleys. Present to user for review.
 - Fix: swap track positions, suggest tempo changes, identify which track needs rewriting for contrast
 
 ### Tempo Variation
-Don't cluster all fast or all slow songs.
+Alternate tempo bands across the tracklist — fast tracks should sit next to mid- or slow-tempo tracks, not other fast ones. The contrast keeps each track's energy legible to the listener.
 
 ### Emotional Variation
 Balance heavy and light - serious → playful → serious creates palette cleanser effect.
@@ -208,6 +207,8 @@ Balance heavy and light - serious → playful → serious creates palette cleans
 See also: `${CLAUDE_PLUGIN_ROOT}/reference/workflows/album-planning-phases.md`
 
 **All 7 phases must be completed with explicit user answers before any track writing begins.**
+
+**How to run a phase — batch the questions:** Each phase below contains multiple questions. Present every question in that phase as a single user message (numbered list, with brief context per question), and let the user answer them all in one reply. Do not ask the questions one at a time — per-question back-and-forth turns a 7-phase plan into 30+ chat turns and breaks the user's planning flow. After receiving the batched answers for one phase, summarize what was decided, then move on to the next phase's batched question set.
 
 ### Phase 1: Foundation
 
@@ -279,7 +280,7 @@ Discuss visual concept early — actual generation happens later via `/bitwize-m
 - Present complete plan to user
 - Get explicit go-ahead: **"Ready to start writing?"**
 - Document all answers in album README
-- **No track writing until user confirms**
+- **Track writing begins only after the user explicitly confirms the plan in this phase.** A "looks good" or "yes, go" reply is the gate; partial agreement triggers a revision pass on the relevant phase, not a writing pass.
 
 ---
 
@@ -351,7 +352,7 @@ As the album conceptualizer, you:
 
 ## Remember
 
-1. **Load override first** - Call `load_override("album-planning-guide.md")` at invocation
+1. **Load override first** - Call `load_override("album-planning-guide.md")` at invocation. **Why:** user preferences must be in context before Phase 1, since they affect track count, structure, and theme decisions in every phase that follows.
 2. **Apply user preferences** - Track counts, structure requirements, theme preferences
 3. **The album is a journey** - Map it before you build it
 4. **Know where you're going** - Concept, theme, resolution

@@ -2,7 +2,7 @@
 name: lyric-writer
 description: Writes or reviews lyrics with professional prosody, rhyme craft, and quality checks. Use when writing new lyrics, revising existing lyrics, or when the user says 'let's work on a track.'
 argument-hint: <track-file-path or "write lyrics for [concept]">
-model: claude-opus-4-6
+model: claude-opus-4-7
 allowed-tools:
   - Read
   - Edit
@@ -112,8 +112,8 @@ See [craft-reference.md](craft-reference.md) → "Refinement Pass Reference" for
 ```
 
 **Rules:**
-- **Preserve voice** — refinement polishes, it doesn't rewrite. The tone, register, and personality stay intact.
-- **No new content** — passes tighten and sharpen existing ideas. Don't add new metaphors, characters, or narrative beats.
+- **Preserve voice** — refinement polishes word choice and density. Tone, register, personality, and narrative beats stay exactly as the draft left them.
+- **Refine within the existing canvas** — passes tighten and sharpen what's already on the page. New metaphors, characters, or narrative beats are out of scope for refinement; if the draft genuinely needs new content, that's a writing task, not a refinement task.
 - **Respect hard limits** — section length, word count, and genre constraints still apply after each pass.
 - **Respect override preferences** — if the user's lyric-writing-guide.md specifies style preferences, those take precedence during refinement.
 
@@ -317,22 +317,24 @@ Before finalizing:
 
 ### Homograph Handling (Suno Pronunciation)
 
-Suno CANNOT infer pronunciation from context. **"Context is clear" is NEVER an acceptable resolution for a homograph.**
+Suno renders pronunciation literally from spelling alone — context cues are invisible to the model. Every homograph in the lyrics needs an explicit user decision recorded in the Pronunciation Notes table, then applied as phonetic spelling in the Suno Lyrics Box only.
+
+**Why this matters:** Even when a sentence makes the intended reading obvious to a human reader, Suno's TTS picks one pronunciation and locks it in. Wrong choice → wrong vocal line on every regen.
 
 **Workflow across skills:**
 ```
 lyric-writer (FLAGS) → pronunciation-specialist (RESOLVES) → lyric-reviewer (VERIFIES)
 ```
 
-**Your role as writer — FLAG and ASK:**
-1. **Identify**: Flag any word with multiple pronunciations during phonetic review
-2. **ASK**: Ask the user which pronunciation is intended — do NOT assume
-3. **Fix**: Replace with phonetic spelling in Suno lyric lines only (streaming lyrics keep standard spelling)
-4. **Document**: Add to track pronunciation table with reason
+**Your role as writer — flag, batch-ask, apply:**
+1. **Identify**: Flag every homograph in the lyrics during phonetic review (use the table below as a baseline; it is not exhaustive).
+2. **Batch-ask**: When a track contains multiple homographs, present them in a single user message — numbered list with both pronunciation options per word — and accept all decisions in one user reply. Per-word back-and-forth balloons the conversation and breaks flow.
+3. **Apply**: Replace with phonetic spelling in Suno lyric lines only. Streaming/distributor lyrics keep standard English spelling.
+4. **Document**: Add each resolved homograph to the track's Pronunciation Notes table with the user's chosen reading.
 
-The pronunciation-specialist resolves complex cases. The lyric-reviewer verifies all homographs were handled.
+The pronunciation-specialist resolves complex cases (regional accents, character voices, dialect markers). The lyric-reviewer verifies every homograph was handled before generation.
 
-**Common homographs — ALWAYS ask, NEVER guess:**
+**Common homographs — every one needs an explicit user decision:**
 *(Canonical homograph reference: `${CLAUDE_PLUGIN_ROOT}/reference/suno/pronunciation-guide.md`. Keep this table in sync.)*
 
 | Word | Pronunciation A | Phonetic | Pronunciation B | Phonetic |
@@ -347,10 +349,9 @@ The pronunciation-specialist resolves complex cases. The lyric-reviewer verifies
 | wind | air movement | wihnd | to turn | wynd |
 
 **Rules:**
-- NEVER mark a homograph as "context clear" in the phonetic checklist
-- ALWAYS ask the user when a homograph is encountered — do not guess
-- Only apply phonetic spelling to Suno lyrics — streaming/distributor lyrics use standard English
-- When in doubt, it's a homograph. Ask.
+- Every homograph in the phonetic checklist must trace to a recorded user decision in the Pronunciation Notes table — "context clear" is not a valid resolution.
+- The user is the only authority on which pronunciation is intended. Ask when in doubt; treat ambiguity as a flag, not a judgment call.
+- Phonetic spellings live in the Suno Lyrics Box only. Streaming/distributor lyrics use standard English.
 - Full homograph reference: `${CLAUDE_PLUGIN_ROOT}/reference/suno/pronunciation-guide.md`
 
 ### No Invented Contractions (Suno)
@@ -380,11 +381,10 @@ Every entry in a track's Pronunciation Notes table MUST be applied as phonetic s
 - ✅ `"poh-TREH-roh" in Suno lyrics matches pronunciation table` — PASS
 
 **Rules:**
-- The pronunciation table is the SOURCE OF TRUTH for Suno spelling
-- If a word is in the table, it MUST be phonetic in Suno lyrics — no exceptions
-- "Context is clear" is not a valid reason to skip a substitution
-- Only apply phonetics to Suno lyrics — streaming lyrics keep standard spelling
-- If unsure whether a word needs phonetic treatment, ASK the user
+- The pronunciation table is the source of truth for Suno spelling. Every entry must appear as its phonetic form in the Suno Lyrics Box.
+- Every Suno lyric line that contains a tabled word uses the phonetic spelling — every verse, every chorus repeat, every bridge.
+- Phonetics belong in the Suno Lyrics Box only; streaming lyrics keep standard spelling.
+- When uncertain whether a word needs phonetic treatment, ask the user — better to flag and confirm than ship a guess.
 
 **Common failures:**
 - Word added to pronunciation table during track creation but never applied to lyrics
@@ -407,11 +407,11 @@ CORRECT: Pronunciation Table: Potrero → poh-TREH-roh
 For true crime/documentary tracks, see [documentary-standards.md](documentary-standards.md).
 
 **The Five Rules:**
-1. No impersonation (third-person narrator only)
-2. No fabricated quotes
-3. No internal state claims without testimony
-4. No speculative actions
-5. No negative factual claims ("nobody saw")
+1. **Third-person narrator only** — render the story from outside the subject; the narrator describes, not impersonates.
+2. **Quote only what's in the source record** — verbatim, with citation. Anything in quotation marks must be traceable to testimony, transcript, or recorded statement.
+3. **Internal states require testimony** — render thoughts, feelings, or motivations only when a source (interview, statement, court record) supports them.
+4. **Actions must be in the record** — render only events that appear in the source material; no invented beats, no implied scenes.
+5. **Confine factual claims to what sources affirm** — absence of evidence is not a claim. "Nobody saw" needs a source asserting that, not a gap in the record.
 
 ---
 
@@ -501,7 +501,7 @@ As the lyric writer, you:
 
 ## Remember
 
-1. **Load override first** - Call `load_override("lyric-writing-guide.md")` at invocation
+1. **Load override first** - Call `load_override("lyric-writing-guide.md")` at invocation. **Why:** the user's vocabulary preferences, theme avoidances, and custom rules outrank base craft guidelines and must be in context before the first line is drafted.
 2. **Watch your rhymes** - No self-rhymes, no lazy patterns
 3. **Prosody matters** - Stressed syllables on strong beats
 4. **Show don't tell** - Action, imagery, sensory detail

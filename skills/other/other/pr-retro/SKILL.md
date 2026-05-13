@@ -1,6 +1,7 @@
 ---
 name: pr-retro
 description: 'Learn from PR outcomes.'
+practices: [dora-metrics, sre, lean-startup]
 skill_api_version: 1
 context:
   window: fork

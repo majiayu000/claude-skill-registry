@@ -1,19 +1,19 @@
 {
   "version": 1,
-  "updated_at": "2026-05-12T19:55:40.825395Z",
-  "total_count": 546,
+  "updated_at": "2026-05-13T04:07:14.319998Z",
+  "total_count": 558,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
       "branch": "master",
       "relative_path": "skills/x-twitter-scraper/SKILL.md",
-      "updated_at": "2026-05-12T19:54:32.975300Z"
+      "updated_at": "2026-05-13T04:06:53.310150Z"
     },
     "miningstore/confluence-to-agent-knowledge-base": {
       "repo": "miningstore/confluence-to-agent-knowledge-base",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-12T19:55:05.731426Z"
+      "updated_at": "2026-05-13T04:06:54.604499Z"
     },
     "seangeng/holydocs-skills:holydocs": {
       "repo": "seangeng/holydocs-skills",
@@ -43,7 +43,7 @@
       "repo": "mguozhen/dingtalk-bridge",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-12T19:55:01.885564Z"
+      "updated_at": "2026-05-13T04:06:52.552574Z"
     },
     "conorluddy/ios-simulator-skill": {
       "repo": "conorluddy/ios-simulator-skill",
@@ -55,61 +55,61 @@
       "repo": "lackeyjb/playwright-skill",
       "branch": "main",
       "relative_path": "skills/playwright-skill/SKILL.md",
-      "updated_at": "2026-05-12T19:55:02.217532Z"
+      "updated_at": "2026-05-13T04:06:52.208617Z"
     },
     "ToniPerea/humanizar-texto-es": {
       "repo": "ToniPerea/humanizar-texto-es",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-12T19:55:01.237068Z"
+      "updated_at": "2026-05-13T04:06:52.263975Z"
     },
     "yusufkaraaslan/Skill_Seekers": {
       "repo": "yusufkaraaslan/Skill_Seekers",
       "branch": "main",
       "relative_path": "skills/skill-seekers/SKILL.md",
-      "updated_at": "2026-05-12T19:55:03.096607Z"
+      "updated_at": "2026-05-13T04:06:52.069792Z"
     },
     "Chris1220-cmd/deep-research-skill": {
       "repo": "Chris1220-cmd/deep-research-skill",
       "branch": "master",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-12T19:55:01.257832Z"
+      "updated_at": "2026-05-13T04:06:52.324444Z"
     },
     "Enreign/pagerunner-skill": {
       "repo": "Enreign/pagerunner-skill",
       "branch": "main",
       "relative_path": "skills/pagerunner-skill/SKILL.md",
-      "updated_at": "2026-05-12T19:55:04.105272Z"
+      "updated_at": "2026-05-13T04:06:53.330807Z"
     },
     "alonw0/web-asset-generator": {
       "repo": "alonw0/web-asset-generator",
       "branch": "main",
       "relative_path": "skills/web-asset-generator/SKILL.md",
-      "updated_at": "2026-05-12T19:55:05.238204Z"
+      "updated_at": "2026-05-13T04:06:53.054521Z"
     },
     "mguozhen/social-bot": {
       "repo": "mguozhen/social-bot",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-12T19:55:03.644837Z"
+      "updated_at": "2026-05-13T04:06:52.293274Z"
     },
     "b33kman/professional-business-writing-skill": {
       "repo": "b33kman/professional-business-writing-skill",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-12T19:55:03.314907Z"
+      "updated_at": "2026-05-13T04:06:52.380144Z"
     },
     "MetcalfSolutions/Satori": {
       "repo": "MetcalfSolutions/Satori",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-12T19:55:05.890475Z"
+      "updated_at": "2026-05-13T04:06:54.014234Z"
     },
     "varfolomejev/query-victorialogs": {
       "repo": "varfolomejev/query-victorialogs",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-12T19:55:04.924856Z"
+      "updated_at": "2026-05-13T04:06:52.916864Z"
     },
     "KKKKhazix/khazix-skills:hv-analysis": {
       "repo": "KKKKhazix/khazix-skills",
@@ -157,7 +157,7 @@
       "repo": "0xRy4n/hubspot-developer-skill",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-12T19:55:04.985161Z"
+      "updated_at": "2026-05-13T04:06:54.159173Z"
     },
     "KKKKhazix/khazix-skills:aihot": {
       "repo": "KKKKhazix/khazix-skills",
@@ -187,7 +187,7 @@
       "repo": "getterdoneinc/skill",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-12T19:55:01.284407Z"
+      "updated_at": "2026-05-13T04:06:52.347883Z"
     },
     "anthropics/skills:skills/skill-creator": {
       "repo": "anthropics/skills",
@@ -3277,7 +3277,79 @@
       "repo": "clockless-org/html-anything",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-12T19:55:34.768174Z"
+      "updated_at": "2026-05-13T04:07:08.086121Z"
+    },
+    "aiskillstore/marketplace:skills/easysoft/zentao-cli/SKILL.md": {
+      "repo": "aiskillstore/marketplace",
+      "branch": "main",
+      "relative_path": "skills/easysoft/zentao-cli/SKILL.md",
+      "updated_at": "2026-05-13T04:06:52.082779Z"
+    },
+    "bitwize-music-studio/claude-ai-music-skills:skills/promote-idea/SKILL.md": {
+      "repo": "bitwize-music-studio/claude-ai-music-skills",
+      "branch": "main",
+      "relative_path": "skills/promote-idea/SKILL.md",
+      "updated_at": "2026-05-13T04:06:52.089764Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/unslop/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/unslop/SKILL.md",
+      "updated_at": "2026-05-13T04:06:52.106854Z"
+    },
+    "bitwize-music-studio/claude-ai-music-skills:skills/health-check/SKILL.md": {
+      "repo": "bitwize-music-studio/claude-ai-music-skills",
+      "branch": "main",
+      "relative_path": "skills/health-check/SKILL.md",
+      "updated_at": "2026-05-13T04:06:52.126746Z"
+    },
+    "a5c-ai/babysitter:library/specializations/gpu-programming/skills/hip-rocm/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/gpu-programming/skills/hip-rocm/SKILL.md",
+      "updated_at": "2026-05-13T04:06:52.157148Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/navmesh/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/navmesh/SKILL.md",
+      "updated_at": "2026-05-13T04:06:52.192136Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/gastown/skills/agent-coordination/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/gastown/skills/agent-coordination/SKILL.md",
+      "updated_at": "2026-05-13T04:06:52.198437Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/terrain/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/terrain/SKILL.md",
+      "updated_at": "2026-05-13T04:06:52.211800Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/superpowers/skills/executing-plans/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/superpowers/skills/executing-plans/SKILL.md",
+      "updated_at": "2026-05-13T04:06:52.218413Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/pilot-shell/skills/codebase-sync/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/pilot-shell/skills/codebase-sync/SKILL.md",
+      "updated_at": "2026-05-13T04:06:52.230031Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/superpowers/skills/writing-plans/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/superpowers/skills/writing-plans/SKILL.md",
+      "updated_at": "2026-05-13T04:06:52.236577Z"
+    },
+    "chengzhongwei/Prompt-sensei:SKILL.md": {
+      "repo": "chengzhongwei/Prompt-sensei",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-05-13T04:06:54.950854Z"
     }
   }
 }

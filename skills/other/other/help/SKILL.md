@@ -27,6 +27,7 @@ Display this help information to the user in a clear, organized format.
 
 **Album & Track Creation**
 - `/bitwize-music:album-ideas` - Track and manage album ideas
+- `/bitwize-music:promote-idea` - Convert a Pending idea into a full album (one-shot)
 - `/bitwize-music:new-album` - Create new album with directory structure
 - `/bitwize-music:album-conceptualizer` - Album concepts and tracklist architecture
 - `/bitwize-music:lyric-writer` - Write/review lyrics, fix prosody
@@ -86,7 +87,7 @@ Display this help information to the user in a clear, organized format.
 ### Common Workflows
 
 **Creating a New Album:**
-1. `/bitwize-music:new-album <name> <genre>` - Create structure
+1. `/bitwize-music:new-album <name> <genre>` - Create structure (or `/bitwize-music:promote-idea "<idea title>"` if the idea lives in `IDEAS.md`)
 2. Answer the 7 planning phases (concept, sonic direction, etc.)
 3. Write lyrics for each track
 4. Run `/bitwize-music:lyric-reviewer` before generation

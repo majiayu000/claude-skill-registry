@@ -1,6 +1,7 @@
 ---
 name: oss-docs
 description: 'Scaffold or audit OSS docs.'
+practices: [code-complete, pragmatic-programmer]
 skill_api_version: 1
 context:
   window: fork

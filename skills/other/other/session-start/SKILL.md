@@ -36,6 +36,21 @@ Quick dependency check:
 - If config missing (`~/.bitwize-music/config.yaml` doesn't exist): suggest `/bitwize-music:configure`
 - Don't proceed until setup is complete
 
+## Step 1.5: Health Check
+
+Use the `health_check` MCP tool (checks venv packages + skill registration in one call):
+
+**Venv results** (from `result.venv`):
+- `status: "ok"` → continue silently
+- `status: "stale"` → warn with mismatches and fix command, continue session
+- `status: "no_venv"` → **stop** and suggest `/bitwize-music:setup`
+- `status: "error"` → warn and continue
+
+**Skill registration results** (from `result.skills`):
+- `status: "ok"` → continue silently
+- `status: "stale"` → warn: list missing and ghost skill names, show fix message
+- `status: "no_cache"` → warn that plugin cache not found, continue
+
 ## Step 2: Load Config
 
 Read `~/.bitwize-music/config.yaml`.
@@ -138,6 +153,7 @@ SESSION START
 =============
 
 Setup: MCP ready, config loaded
+Health: [venv ok, skills ok | warnings listed]
 Overrides: [loaded from {path} | not found (optional)]
 State: [loaded | rebuilt | error]
 

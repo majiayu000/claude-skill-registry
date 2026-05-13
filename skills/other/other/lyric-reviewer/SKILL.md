@@ -2,7 +2,7 @@
 name: lyric-reviewer
 description: Reviews lyrics against a quality checklist before Suno generation. Use before generating tracks to catch rhyme, prosody, pronunciation, and structural issues.
 argument-hint: <track-path | album-path | --fix>
-model: claude-opus-4-6
+model: claude-opus-4-7
 prerequisites:
   - lyric-writer
   - pronunciation-specialist
@@ -82,8 +82,8 @@ lyric-writer (WRITES + SUNO PROMPT) → pronunciation-specialist (RESOLVES) → 
 - **Warning**: Clear stress misalignment
 
 ### 3. Pronunciation Check
-- Call `check_homographs(lyrics_text)` — automated scan for homograph words with pronunciation options
-- Call `check_pronunciation_enforcement(album_slug, track_slug)` — verifies all pronunciation table entries are applied in lyrics
+- Call `check_homographs(lyrics_text)` — automated scan for homograph words with pronunciation options. **Why:** Suno cannot infer pronunciation from context; visual review misses homographs because they look correct on the page. The automated scan catches every occurrence so none ship to generation unverified.
+- Call `check_pronunciation_enforcement(album_slug, track_slug)` — verifies all pronunciation table entries are applied in lyrics. **Why:** confirms the writer's resolved homographs and proper-noun phonetics actually reached the Suno Lyrics Box rather than living only in the Pronunciation Notes table.
 - **Critical**: Unphonetic proper noun, homograph detected (AUTO-FIX REQUIRED - see Homograph Detection section)
 
 ### 4. POV/Tense Check
@@ -289,7 +289,7 @@ Before marking "Ready for Suno":
 
 ## Remember
 
-1. **You are QC, not creative** - Identify issues, don't rewrite lyrics yourself
+1. **Output is a verification report, not revised lyrics** - Identify issues and propose fixes; let the lyric-writer or user apply rewrites. Auto-fixes are limited to pronunciation substitutions where the Notes table already holds the user-approved phonetic.
 2. **Always apply pronunciation fixes** - Don't just report them, fix them in the Lyrics Box
 3. **Homographs are landmines** - live, read, lead, wind will mispronounce
 4. **Documentary = legal risk** - Take internal state claims seriously

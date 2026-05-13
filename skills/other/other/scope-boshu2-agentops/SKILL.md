@@ -1,6 +1,7 @@
 ---
 name: scope
 description: 'Hard-block edits outside declared frozen directories via PreToolUse hook.'
+practices: [ddd-bounded-context, design-by-contract, mythical-man-month]
 skill_api_version: 1
 context:
   window: isolated
@@ -107,7 +108,12 @@ Reserved for a follow-up skill that combines `freeze` + status + spawn-orchestra
 - Wave 1 hardcodes the `.agents/scope.lock` path. Wave 2 (issue I5) migrates the path through `lib/ao-paths.sh`.
 - The hook's defensive parse on malformed JSON is intentional. See [references/lock-file-format.md](references/lock-file-format.md) for the rationale.
 - Hooks (session-boundary) and `agentopsd` (cron-cadence) compose; this skill is purely session-boundary.
+- Path-scope freezing handles *where* edits land. For a complementary lane that gates *what* commands run (`rm -rf`, `git reset --hard`, `DROP DATABASE`, `kubectl delete`, `terraform destroy`) — including allowlist layering, one-shot override codes, and PreToolUse wiring — see [references/destructive-command-guard-patterns.md](references/destructive-command-guard-patterns.md). Wire it alongside the scope guard when a wave touches infrastructure or shared data.
+- When a workflow needs human approval, hook parity, or simultaneous command review rather than only path freezing, use [references/command-approval-and-hook-guardrails.md](references/command-approval-and-hook-guardrails.md).
+- When authoring new hook behavior rather than using scope's existing guard, use `/hooks-authoring`.
 
 ## References
 
 - [references/lock-file-format.md](references/lock-file-format.md)
+- [references/destructive-command-guard-patterns.md](references/destructive-command-guard-patterns.md)
+- [references/command-approval-and-hook-guardrails.md](references/command-approval-and-hook-guardrails.md)

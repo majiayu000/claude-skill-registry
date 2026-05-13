@@ -1,0 +1,1759 @@
+<!doctype html>
+<html lang="en" data-ha-style="document">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founder market research — AI agent landscape</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #a03b00;
+  --primary-container: #c94c00;
+  --primary-fixed: #ffdbcd;
+  --primary-fixed-dim: #ffb597;
+  --on-primary: #ffffff;
+  --accent-glow: #E8400D;
+  --secondary: #d5baff;
+  --secondary-container: #7b40e0;
+  --tertiary: #4d44e3;
+  --accent-cyan: #00D4FF;
+  --bg: #fff8f6;
+  --surface: #fff8f6;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #fbf2ef;
+  --surface-container: #f5ece9;
+  --surface-container-high: #efe6e3;
+  --fg-1: #1e1b19;
+  --fg-2: #594138;
+  --fg-muted: #8d7166;
+  --border: rgba(0,0,0,0.06);
+  --border-strong: rgba(0,0,0,0.12);
+  --outline-variant: #e1bfb2;
+  --green: #10b981;
+  --blue: #3b82f6;
+  --yellow: #f59e0b;
+  --red: #ef4444;
+  --font-headline: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'Menlo', ui-monospace, monospace;
+  --space-xs: 4px; --space-sm: 8px; --space-md: 12px;
+  --space-lg: 16px; --space-xl: 20px; --space-2xl: 24px;
+  --space-3xl: 32px; --space-4xl: 48px; --space-5xl: 64px;
+  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px;
+  --radius-xl: 20px; --radius-2xl: 28px; --radius-pill: 9999px;
+  --shadow-sm: 0 1px 2px rgba(30,27,25,0.04);
+  --shadow-md: 0 4px 12px rgba(30,27,25,0.08);
+  --shadow-lg: 0 8px 24px rgba(30,27,25,0.12);
+  --shadow-accent: 0 8px 24px rgba(160,59,0,0.15);
+  --gradient-primary: linear-gradient(135deg, #a03b00 0%, #c94c00 100%);
+  --gradient-hero: linear-gradient(135deg, #a03b00 0%, #7b40e0 100%);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #060B18;
+    --surface: #0B1426;
+    --surface-container-lowest: #101D35;
+    --surface-container-low: #101D35;
+    --surface-container: #162544;
+    --surface-container-high: #1c2d52;
+    --fg-1: #F8FAFC;
+    --fg-2: #CBD5E1;
+    --fg-muted: #64748B;
+    --border: rgba(255,255,255,0.08);
+    --border-strong: rgba(255,255,255,0.14);
+    --primary: #FF6B35;
+    --accent-glow: #00D4FF;
+    --outline-variant: #2a3a5c;
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
+  }
+}
+
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--fg-1);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── DOCUMENT SHELL ── */
+.document-shell {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+/* ── COVER / MASTHEAD ── */
+.cover {
+  grid-column: 1 / -1;
+  background: var(--gradient-hero);
+  color: var(--on-primary);
+  padding: var(--space-4xl) var(--space-3xl) var(--space-3xl);
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(255,255,255,0.02) 0px,
+    rgba(255,255,255,0.02) 1px,
+    transparent 1px,
+    transparent 12px
+  );
+}
+.cover-inner { position: relative; max-width: 860px; }
+.cover-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: var(--space-md);
+}
+.cover-title {
+  font-family: var(--font-headline);
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: var(--space-lg);
+}
+.cover-deck {
+  font-size: 15px;
+  opacity: 0.88;
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: var(--space-2xl);
+}
+.cover-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xl);
+}
+.cover-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.cover-stat-val {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--primary-fixed-dim);
+}
+.cover-stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.65;
+}
+
+/* ── READER RAIL (left nav) ── */
+.reader-rail {
+  grid-column: 1;
+  background: var(--surface-container-low);
+  border-right: 1px solid var(--border);
+  padding: var(--space-2xl) 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+.rail-section {
+  padding: 0 var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+.rail-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: var(--space-sm);
+  padding-left: var(--space-sm);
+}
+.rail-link {
+  display: block;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--fg-2);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+.rail-link:hover, .rail-link.active {
+  background: var(--surface-container);
+  color: var(--primary);
+}
+.rail-divider {
+  height: 1px;
+  background: var(--border);
+  margin: var(--space-lg) var(--space-lg);
+}
+
+.search-rail {
+  padding: 0 var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+.search-input-wrap {
+  position: relative;
+}
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--fg-muted);
+  font-size: 13px;
+  pointer-events: none;
+}
+#railSearch {
+  width: 100%;
+  padding: 7px 10px 7px 32px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface-container-lowest);
+  color: var(--fg-1);
+  font-family: var(--font-body);
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+#railSearch:focus { border-color: var(--primary); }
+
+/* ── BODY SHEET ── */
+.body-sheet {
+  grid-column: 2;
+  padding: var(--space-3xl) var(--space-3xl) var(--space-5xl);
+  max-width: 900px;
+}
+
+/* ── BODY SECTIONS ── */
+.body-section {
+  margin-bottom: var(--space-5xl);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.body-section.revealed {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .body-section { opacity: 1; transform: none; }
+}
+
+.section-rule {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+}
+.section-number {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--primary);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+.section-heading {
+  font-family: var(--font-headline);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--fg-1);
+}
+.section-rule-line {
+  flex: 1;
+  height: 1px;
+  background: var(--outline-variant);
+}
+
+/* ── TL;DR CARD ── */
+.tldr-card {
+  background: var(--surface-container);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-xl) var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+}
+.tldr-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: var(--space-sm);
+  font-weight: 600;
+}
+.tldr-body {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--fg-2);
+}
+
+/* ── TOPIC CLUSTERS ── */
+.cluster-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-2xl);
+}
+.cluster-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--outline-variant);
+  background: var(--surface-container-lowest);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg-2);
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+}
+.cluster-chip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-fixed);
+}
+.cluster-chip.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--on-primary);
+}
+.chip-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.75;
+}
+.cluster-chart {
+  margin-bottom: var(--space-xl);
+}
+
+/* ── STACKED BAR CHART ── */
+.stacked-bar-container {
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+.bar-track {
+  height: 28px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  background: var(--surface-container-high);
+  margin-bottom: var(--space-md);
+}
+.bar-segment {
+  height: 100%;
+  transition: opacity 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+.bar-segment:hover { opacity: 0.8; }
+.bar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-lg);
+}
+.bar-legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 12px;
+  color: var(--fg-2);
+  cursor: pointer;
+}
+.bar-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ── DOMAIN LEADERBOARD ── */
+.domain-leaderboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+.domain-row {
+  display: grid;
+  grid-template-columns: 180px 1fr auto;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.12s;
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+}
+.domain-row:hover { background: var(--surface-container); }
+.domain-name {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--fg-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.domain-bar-wrap {
+  flex: 1;
+  height: 6px;
+  background: var(--surface-container-high);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+.domain-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--gradient-primary);
+  transition: width 0.6s cubic-bezier(0.34,1.56,0.64,1);
+}
+.domain-count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-muted);
+  width: 24px;
+  text-align: right;
+}
+
+/* ── CALLOUT CARDS (stale/dup/dead) ── */
+.callout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-lg);
+}
+.callout-card {
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.callout-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+.callout-icon { font-size: 16px; }
+.callout-label {
+  font-family: var(--font-headline);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.callout-badge {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+}
+.callout-badge.warn { background: rgba(245,158,11,0.15); color: var(--yellow); }
+.callout-badge.danger { background: rgba(239,68,68,0.12); color: var(--red); }
+.callout-badge.info { background: rgba(59,130,246,0.12); color: var(--blue); }
+.callout-body { padding: var(--space-md) var(--space-lg); }
+.callout-item {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 12.5px;
+}
+.callout-item:last-child { border-bottom: none; }
+.callout-item-title {
+  color: var(--fg-1);
+  font-weight: 500;
+  margin-bottom: 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.callout-item-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-muted);
+}
+.callout-placeholder {
+  font-size: 13px;
+  color: var(--fg-muted);
+  font-style: italic;
+  padding: var(--space-md) 0;
+}
+
+/* ── FOLDER BREAKDOWN ── */
+.folder-list { display: flex; flex-direction: column; gap: var(--space-xs); }
+.folder-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.folder-row:hover { background: var(--surface-container); }
+.folder-icon { font-size: 14px; flex-shrink: 0; }
+.folder-name {
+  font-size: 13.5px;
+  color: var(--fg-2);
+  font-weight: 500;
+  flex: 1;
+}
+.folder-pct {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-muted);
+  width: 36px;
+  text-align: right;
+}
+
+/* ── READ NEXT ── */
+.read-next-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+.read-next-card {
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s;
+}
+.read-next-card:hover { box-shadow: var(--shadow-md); }
+.read-next-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--fg-1);
+  line-height: 1.4;
+  margin-bottom: var(--space-sm);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.read-next-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+.read-next-domain {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-muted);
+}
+.read-next-folder {
+  font-size: 11px;
+  color: var(--fg-muted);
+  background: var(--surface-container);
+  padding: 2px 6px;
+  border-radius: var(--radius-pill);
+}
+.open-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: var(--space-sm);
+  transition: opacity 0.15s;
+}
+.open-link:hover { opacity: 0.75; }
+
+/* ── DRILL-DOWN BROWSER ── */
+.evidence-browser { }
+.browser-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+.browser-search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+.browser-search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--fg-muted);
+  font-size: 13px;
+}
+#browserSearch {
+  width: 100%;
+  padding: 8px 12px 8px 34px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface-container-lowest);
+  color: var(--fg-1);
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+#browserSearch:focus { border-color: var(--primary); }
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+.filter-chip {
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--outline-variant);
+  background: var(--surface-container-lowest);
+  font-size: 12px;
+  color: var(--fg-2);
+  cursor: pointer;
+  transition: all 0.12s;
+  font-weight: 500;
+  user-select: none;
+}
+.filter-chip:hover { border-color: var(--primary); color: var(--primary); }
+.filter-chip.active { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
+
+.browser-toggle {
+  background: var(--surface-container);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  cursor: pointer;
+  font-family: var(--font-headline);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fg-1);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  margin-bottom: var(--space-lg);
+  transition: background 0.15s;
+}
+.browser-toggle:hover { background: var(--surface-container-high); }
+.toggle-arrow { transition: transform 0.2s; font-size: 12px; }
+.toggle-arrow.open { transform: rotate(90deg); }
+.browser-count-badge {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-muted);
+  background: var(--surface-container-high);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+.item-row {
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: box-shadow 0.15s;
+}
+.item-row:hover { box-shadow: var(--shadow-sm); }
+.item-row-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  cursor: pointer;
+}
+.item-domain-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--fg-muted);
+  background: var(--surface-container);
+  padding: 2px 6px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.item-title-wrap { flex: 1; min-width: 0; }
+.item-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--fg-1);
+  line-height: 1.35;
+  margin-bottom: 2px;
+}
+.item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 4px;
+}
+.item-tag {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-container);
+  color: var(--fg-muted);
+  font-weight: 500;
+}
+.item-tag.state-stale { background: rgba(245,158,11,0.12); color: var(--yellow); }
+.item-tag.state-dead { background: rgba(239,68,68,0.1); color: var(--red); }
+.item-tag.state-dup { background: rgba(59,130,246,0.1); color: var(--blue); }
+.item-tag.state-note { background: rgba(16,185,129,0.1); color: var(--green); }
+.item-chevron { font-size: 11px; color: var(--fg-muted); margin-top: 3px; flex-shrink: 0; transition: transform 0.2s; }
+.item-chevron.open { transform: rotate(90deg); }
+.item-detail {
+  padding: var(--space-md) var(--space-lg) var(--space-lg);
+  border-top: 1px solid var(--border);
+  background: var(--surface-container-low);
+  display: none;
+}
+.item-detail.open { display: block; }
+.item-detail-grid {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: var(--space-xs) var(--space-md);
+  margin-bottom: var(--space-md);
+}
+.item-detail-key {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-top: 1px;
+}
+.item-detail-val {
+  font-size: 12.5px;
+  color: var(--fg-2);
+  line-height: 1.5;
+  word-break: break-all;
+}
+.item-note-block {
+  background: var(--surface-container);
+  border-left: 2px solid var(--outline-variant);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 12.5px;
+  color: var(--fg-2);
+  font-style: italic;
+  margin-top: var(--space-sm);
+}
+.search-highlight {
+  background: rgba(255, 200, 0, 0.35);
+  border-radius: 2px;
+}
+
+/* ── COPY BUTTON ── */
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--outline-variant);
+  background: var(--surface-container-lowest);
+  color: var(--fg-2);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--font-body);
+}
+.copy-btn:hover { border-color: var(--primary); color: var(--primary); }
+.copy-btn.copied { border-color: var(--green); color: var(--green); }
+
+/* ── FOOTER ── */
+.document-footer {
+  grid-column: 1 / -1;
+  background: var(--surface-container-low);
+  border-top: 1px solid var(--border);
+  padding: var(--space-2xl) var(--space-3xl);
+  font-size: 12px;
+  color: var(--fg-muted);
+  line-height: 1.7;
+}
+.footer-inner { max-width: 860px; }
+.footer-privacy {
+  background: var(--surface-container);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  font-size: 12px;
+  line-height: 1.65;
+}
+.footer-privacy strong { color: var(--fg-2); }
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .document-shell {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+  }
+  .reader-rail {
+    grid-column: 1;
+    grid-row: 2;
+    position: static;
+    height: auto;
+    overflow: visible;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0;
+    padding: var(--space-lg);
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .rail-section { flex: 0 0 auto; margin-bottom: 0; }
+  .rail-label { display: none; }
+  .rail-link { padding: var(--space-sm) var(--space-sm); font-size: 12px; }
+  .rail-divider { display: none; }
+  .search-rail { flex: 1 1 100%; order: -1; padding: 0; margin-bottom: var(--space-sm); }
+  .body-sheet {
+    grid-column: 1;
+    grid-row: 3;
+    padding: var(--space-xl) var(--space-lg) var(--space-4xl);
+  }
+  .cover { padding: var(--space-3xl) var(--space-lg) var(--space-2xl); }
+  .callout-grid { grid-template-columns: 1fr; }
+  .domain-row { grid-template-columns: 140px 1fr 28px; }
+  .document-footer { grid-column: 1; }
+  .read-next-grid { grid-template-columns: 1fr; }
+}
+
+/* ── PAGINATION ── */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+}
+.page-btn {
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--outline-variant);
+  background: var(--surface-container-lowest);
+  color: var(--fg-2);
+  font-size: 13px;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: all 0.12s;
+}
+.page-btn:hover, .page-btn.active { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
+.page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.no-results {
+  text-align: center;
+  padding: var(--space-4xl) 0;
+  color: var(--fg-muted);
+  font-size: 14px;
+}
+
+/* ── SVG INLINE CHARTS ── */
+.sparkline-wrap svg { width: 100%; height: 56px; overflow: visible; }
+</style>
+<!-- html-anything example style skin:start -->
+
+<style id="html-anything-example-style-skin">
+html[data-ha-style] {
+  --ha-style-accent: var(--primary, #a03b00);
+  --ha-style-accent-2: var(--secondary-container, #7b40e0);
+  --ha-style-badge-bg: rgba(255,255,255,.78);
+  --ha-style-badge-fg: var(--fg-1, #1e1b19);
+}
+html[data-ha-style] body {
+  position: relative;
+  background-attachment: fixed;
+}
+html[data-ha-style] body::before {
+  position: fixed;
+  z-index: 9999;
+  top: 12px;
+  right: 12px;
+  padding: 7px 10px;
+  border: 1px solid color-mix(in srgb, var(--ha-style-accent) 26%, transparent);
+  border-radius: 999px;
+  background: var(--ha-style-badge-bg);
+  color: var(--ha-style-badge-fg);
+  box-shadow: 0 6px 24px rgba(0,0,0,.10);
+  font: 700 10px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  backdrop-filter: blur(16px);
+}
+html[data-ha-style] .hero,
+html[data-ha-style] header.hero,
+html[data-ha-style] .top,
+html[data-ha-style] .header {
+  position: relative;
+}
+html[data-ha-style] .hero::before,
+html[data-ha-style] header.hero::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 6px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: var(--ha-style-accent);
+}
+
+html[data-ha-style="teaching"] {
+  --ha-style-accent: #0f766e;
+  --ha-style-accent-2: #f59e0b;
+  --primary: #0f766e;
+  --primary-container: #115e59;
+  --primary-fixed: #ccfbf1;
+  --secondary-container: #f59e0b;
+  --bg: #f6fbfb;
+  --surface: #f6fbfb;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #edf7f5;
+  --surface-container: #e5f1ee;
+  --surface-container-high: #d8e8e4;
+  --fg-1: #10201f;
+  --fg-2: #304c49;
+  --fg-muted: #647b78;
+  --border: rgba(15,118,110,.14);
+  --gradient-hero: linear-gradient(135deg, #0f766e 0%, #f59e0b 100%);
+  --gradient-text: linear-gradient(135deg, #0f766e 0%, #f59e0b 100%);
+}
+html[data-ha-style="teaching"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(rgba(15,118,110,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,118,110,.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+html[data-ha-style="teaching"] body::before { content: "teaching"; }
+
+html[data-ha-style="relationship"] {
+  --ha-style-accent: #be3455;
+  --ha-style-accent-2: #317b93;
+  --primary: #be3455;
+  --primary-container: #a52d4b;
+  --primary-fixed: #ffe1e8;
+  --secondary-container: #317b93;
+  --bg: #fff7f8;
+  --surface: #fff7f8;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #fff0f3;
+  --surface-container: #f8e7eb;
+  --surface-container-high: #efdde3;
+  --fg-1: #28181c;
+  --fg-2: #5f3e48;
+  --fg-muted: #8d6b75;
+  --border: rgba(190,52,85,.14);
+  --rose: #e25b74;
+  --blue: #4f95a8;
+  --gradient-hero: linear-gradient(135deg, #be3455 0%, #317b93 100%);
+  --gradient-text: linear-gradient(135deg, #be3455 0%, #317b93 100%);
+}
+html[data-ha-style="relationship"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(120deg, rgba(190,52,85,.08), transparent 36%),
+    linear-gradient(300deg, rgba(49,123,147,.08), transparent 40%);
+}
+html[data-ha-style="relationship"] body::before { content: "relationship"; }
+
+html[data-ha-style="timeline-story"] {
+  --ha-style-accent: #9a4b14;
+  --ha-style-accent-2: #2f6f73;
+  --primary: #9a4b14;
+  --primary-container: #7a3b10;
+  --primary-fixed: #ffe8cf;
+  --secondary-container: #2f6f73;
+  --bg: #fbf8f1;
+  --surface: #fbf8f1;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f4ecdf;
+  --surface-container: #eee3d3;
+  --surface-container-high: #e4d7c4;
+  --fg-1: #241b12;
+  --fg-2: #5c4b3d;
+  --fg-muted: #8a7968;
+  --border: rgba(154,75,20,.16);
+  --gradient-hero: linear-gradient(135deg, #9a4b14 0%, #2f6f73 100%);
+  --gradient-text: linear-gradient(135deg, #9a4b14 0%, #2f6f73 100%);
+}
+html[data-ha-style="timeline-story"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(90deg, transparent 0 calc(50% - 1px), rgba(154,75,20,.16) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)),
+    radial-gradient(circle at 50% 72px, rgba(154,75,20,.20) 0 4px, transparent 5px);
+  background-size: 100% 100%, 100% 96px;
+}
+html[data-ha-style="timeline-story"] body::before { content: "timeline story"; }
+html[data-ha-style="timeline-story"] .hero::before,
+html[data-ha-style="timeline-story"] header.hero::before {
+  width: 8px;
+  height: 72px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--ha-style-accent), var(--ha-style-accent-2));
+}
+
+html[data-ha-style="map-atlas"] {
+  --ha-style-accent: #17695a;
+  --ha-style-accent-2: #2f66a8;
+  --primary: #17695a;
+  --primary-container: #115346;
+  --primary-fixed: #daf5ec;
+  --secondary-container: #2f66a8;
+  --bg: #f4faf7;
+  --surface: #f4faf7;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eaf4ef;
+  --surface-container: #e0eee8;
+  --surface-container-high: #d4e6de;
+  --fg-1: #10221d;
+  --fg-2: #365149;
+  --fg-muted: #6e837b;
+  --border: rgba(23,105,90,.16);
+  --gradient-hero: linear-gradient(135deg, #17695a 0%, #2f66a8 100%);
+  --gradient-text: linear-gradient(135deg, #17695a 0%, #2f66a8 100%);
+}
+html[data-ha-style="map-atlas"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    repeating-linear-gradient(24deg, rgba(23,105,90,.09) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(116deg, rgba(47,102,168,.08) 0 1px, transparent 1px 42px);
+}
+html[data-ha-style="map-atlas"] body::before { content: "map atlas"; }
+html[data-ha-style="map-atlas"] .hero::before,
+html[data-ha-style="map-atlas"] header.hero::before {
+  width: 78px;
+  height: 78px;
+  border: 2px solid var(--ha-style-accent);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 55% 42%, var(--ha-style-accent) 0 4px, transparent 5px),
+    linear-gradient(45deg, transparent 47%, rgba(47,102,168,.55) 48% 52%, transparent 53%);
+}
+
+html[data-ha-style="network-map"] {
+  --ha-style-accent: #355f91;
+  --ha-style-accent-2: #a34d67;
+  --primary: #355f91;
+  --primary-container: #294b75;
+  --primary-fixed: #deebff;
+  --secondary-container: #a34d67;
+  --bg: #f7f8fb;
+  --surface: #f7f8fb;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eef1f7;
+  --surface-container: #e6ebf3;
+  --surface-container-high: #dbe2ee;
+  --fg-1: #151b24;
+  --fg-2: #3f4a5b;
+  --fg-muted: #737e8f;
+  --border: rgba(53,95,145,.16);
+  --gradient-hero: linear-gradient(135deg, #355f91 0%, #a34d67 100%);
+  --gradient-text: linear-gradient(135deg, #355f91 0%, #a34d67 100%);
+}
+html[data-ha-style="network-map"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(53,95,145,.22) 0 3px, transparent 4px),
+    radial-gradient(circle at 68% 34%, rgba(163,77,103,.18) 0 3px, transparent 4px),
+    linear-gradient(38deg, transparent 0 48%, rgba(53,95,145,.10) 49% 51%, transparent 52%);
+  background-size: 88px 88px, 118px 118px, 132px 132px;
+}
+html[data-ha-style="network-map"] body::before { content: "network map"; }
+html[data-ha-style="network-map"] .hero::before,
+html[data-ha-style="network-map"] header.hero::before {
+  width: 86px;
+  height: 46px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 18px 24px, var(--ha-style-accent) 0 7px, transparent 8px),
+    radial-gradient(circle at 44px 12px, var(--ha-style-accent-2) 0 6px, transparent 7px),
+    radial-gradient(circle at 70px 30px, var(--ha-style-accent) 0 7px, transparent 8px),
+    linear-gradient(22deg, transparent 0 31%, color-mix(in srgb, var(--ha-style-accent) 60%, transparent) 32% 36%, transparent 37%),
+    linear-gradient(160deg, transparent 0 43%, color-mix(in srgb, var(--ha-style-accent-2) 60%, transparent) 44% 48%, transparent 49%);
+}
+
+html[data-ha-style="dashboard"] {
+  --ha-style-accent: #0f5f6f;
+  --ha-style-accent-2: #8a5a16;
+  --primary: #0f5f6f;
+  --primary-container: #0b4c59;
+  --primary-fixed: #d8f2f5;
+  --secondary-container: #8a5a16;
+  --bg: #f5f7f9;
+  --surface: #f5f7f9;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eef2f5;
+  --surface-container: #e7edf1;
+  --surface-container-high: #dce5ea;
+  --fg-1: #111827;
+  --fg-2: #374151;
+  --fg-muted: #6b7280;
+  --border: rgba(15,95,111,.16);
+  --gradient-hero: linear-gradient(135deg, #0f5f6f 0%, #083344 100%);
+  --gradient-text: linear-gradient(135deg, #0f5f6f 0%, #083344 100%);
+}
+html[data-ha-style="dashboard"] body {
+  background-color: var(--bg) !important;
+  background-image: linear-gradient(90deg, rgba(15,95,111,.08) 0 1px, transparent 1px);
+  background-size: 18px 100%;
+}
+html[data-ha-style="dashboard"] body::before { content: "dashboard"; }
+html[data-ha-style="dashboard"] .hero::before,
+html[data-ha-style="dashboard"] header.hero::before {
+  width: 100%;
+  height: 3px;
+  margin-bottom: 14px;
+}
+
+html[data-ha-style="document"] {
+  --ha-style-accent: #8b3f1f;
+  --ha-style-accent-2: #2f6f73;
+  --primary: #8b3f1f;
+  --primary-container: #703319;
+  --primary-fixed: #ffe4d5;
+  --secondary-container: #2f6f73;
+  --bg: #fbfaf7;
+  --surface: #fbfaf7;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f2efe8;
+  --surface-container: #e9e4da;
+  --surface-container-high: #ded7c9;
+  --fg-1: #211d18;
+  --fg-2: #554d44;
+  --fg-muted: #82786c;
+  --border: rgba(139,63,31,.16);
+  --font-headline: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --gradient-hero: linear-gradient(135deg, #8b3f1f 0%, #2f6f73 100%);
+  --gradient-text: linear-gradient(135deg, #8b3f1f 0%, #2f6f73 100%);
+}
+html[data-ha-style="document"] body {
+  background-color: var(--bg) !important;
+  background-image: linear-gradient(90deg, rgba(139,63,31,.18) 0 4px, transparent 4px);
+  background-size: 100% 100%;
+}
+html[data-ha-style="document"] body::before { content: "document"; }
+html[data-ha-style="document"] .hero::before,
+html[data-ha-style="document"] header.hero::before {
+  width: 42px;
+  height: 42px;
+  border-radius: 0;
+  background: transparent;
+  border-top: 4px solid var(--ha-style-accent);
+  border-left: 4px solid var(--ha-style-accent);
+}
+
+html[data-ha-style="developer"] {
+  color-scheme: dark;
+  --ha-style-accent: #38bdf8;
+  --ha-style-accent-2: #f97316;
+  --ha-style-badge-bg: rgba(8,16,31,.82);
+  --ha-style-badge-fg: #dbeafe;
+  --primary: #38bdf8;
+  --primary-container: #0e7490;
+  --primary-fixed: #0f2942;
+  --secondary-container: #f97316;
+  --bg: #07111f;
+  --surface: #07111f;
+  --surface-container-lowest: #0b1426;
+  --surface-container-low: #0f1b31;
+  --surface-container: #13233d;
+  --surface-container-high: #1b2f50;
+  --fg-1: #f8fafc;
+  --fg-2: #cbd5e1;
+  --fg-muted: #94a3b8;
+  --border: rgba(148,163,184,.18);
+  --green: #34d399;
+  --red: #fb7185;
+  --yellow: #fbbf24;
+  --gradient-hero: linear-gradient(135deg, #0f172a 0%, #0e7490 100%);
+  --gradient-text: linear-gradient(135deg, #38bdf8 0%, #f97316 100%);
+}
+html[data-ha-style="developer"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(rgba(56,189,248,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,189,248,.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+html[data-ha-style="developer"] body::before { content: "developer"; }
+html[data-ha-style="developer"] pre,
+html[data-ha-style="developer"] code,
+html[data-ha-style="developer"] .mono {
+  color: inherit;
+}
+</style>
+<!-- html-anything example style skin:end -->
+</head>
+<body>
+<script>const DATA = {"kind":"research","format":"bookmarks-html","items":[{"id":"i_0001","title":"Lindy — Pricing","url":"https://www.lindy.ai/pricing","domain":"www.lindy.ai","domainRoot":"lindy.ai","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["pricing","competitor","agents"],"addedEpoch":1745125000000,"addedIso":"2025-04-20","note":"Three plans, usage-based on top. Key anchor: $200/mo Pro tier","excerpt":"Three plans, usage-based on top. Key anchor: $200/mo Pro tier","ageDays":385,"isStale":true,"isDead":false,"topic":"pricing"},{"id":"i_0002","title":"Lindy — Changelog","url":"https://www.lindy.ai/changelog","domain":"www.lindy.ai","domainRoot":"lindy.ai","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["changelog","competitor"],"addedEpoch":1745125400000,"addedIso":"2025-04-20","ageDays":385,"isStale":true,"isDead":false,"topic":"changelog"},{"id":"i_0003","title":"Relevance AI — Agents page","url":"https://relevanceai.com/agents","domain":"relevanceai.com","domainRoot":"relevanceai.com","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["competitor","agents"],"addedEpoch":1747200000000,"addedIso":"2025-05-14","note":"Heavy emphasis on multi-agent teams, drag-and-drop builder","excerpt":"Heavy emphasis on multi-agent teams, drag-and-drop builder","ageDays":361,"isStale":true,"isDead":false,"topic":"competitor"},{"id":"i_0004","title":"Adept — Persistent state in long-running agents","url":"https://www.adept.ai/blog/persistent-state-agent","domain":"www.adept.ai","domainRoot":"adept.ai","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["competitor","agents","research"],"addedEpoch":1748400000000,"addedIso":"2025-05-28","ageDays":348,"isStale":true,"isDead":false,"topic":"competitor"},{"id":"i_0005","title":"MultiOn — Research","url":"https://multion.ai/research","domain":"multion.ai","domainRoot":"multion.ai","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["competitor","agents"],"addedEpoch":1750000000000,"addedIso":"2025-06-15","ageDays":329,"isStale":true,"isDead":false,"topic":"competitor"},{"id":"i_0006","title":"Replit Agent — Landing","url":"https://www.replit.com/site/agents","domain":"www.replit.com","domainRoot":"replit.com","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["competitor","coding-agents"],"addedEpoch":1751800000000,"addedIso":"2025-07-06","note":"Worth noting: they push the \"build a real app in chat\" framing","excerpt":"Worth noting: they push the \"build a real app in chat\" framing","ageDays":308,"isStale":true,"isDead":false,"topic":"competitor"},{"id":"i_0007","title":"Devin / Cognition","url":"https://devin.cognition.ai/","domain":"devin.cognition.ai","domainRoot":"cognition.ai","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["competitor","coding-agents"],"addedEpoch":1752400000000,"addedIso":"2025-07-13","ageDays":301,"isStale":true,"isDead":false,"topic":"competitor"},{"id":"i_0008","title":"Cursor — Pricing page","url":"https://www.cursor.com/pricing","domain":"www.cursor.com","domainRoot":"cursor.com","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["competitor","coding-agents","pricing"],"addedEpoch":1753100000000,"addedIso":"2025-07-21","note":"$20/mo Pro is the consumer-dev anchor everyone benchmarks against","excerpt":"$20/mo Pro is the consumer-dev anchor everyone benchmarks against","ageDays":293,"isStale":true,"isDead":false,"topic":"competitor"},{"id":"i_0009","title":"Cursor — Composer announcement","url":"https://www.cursor.com/blog/composer","domain":"www.cursor.com","domainRoot":"cursor.com","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["competitor","coding-agents"],"addedEpoch":1755000000000,"addedIso":"2025-08-12","ageDays":271,"isStale":true,"isDead":false,"topic":"competitor"},{"id":"i_0010","title":"Aider — OSS coding agent","url":"https://aider.chat/","domain":"aider.chat","domainRoot":"aider.chat","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["competitor","coding-agents","oss"],"addedEpoch":1756400000000,"addedIso":"2025-08-28","ageDays":255,"isStale":true,"isDead":false,"topic":"competitor"},{"id":"i_0011","title":"Anthropic — Claude Code","url":"https://www.anthropic.com/news/claude-code","domain":"www.anthropic.com","domainRoot":"anthropic.com","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["competitor","coding-agents"],"addedEpoch":1758000000000,"addedIso":"2025-09-16","ageDays":236,"isStale":true,"isDead":false,"topic":"competitor"},{"id":"i_0012","title":"OpenAI — Codex CLI","url":"https://openai.com/index/codex-cli/","domain":"openai.com","domainRoot":"openai.com","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["competitor","coding-agents"],"addedEpoch":1759200000000,"addedIso":"2025-09-30","ageDays":223,"isStale":true,"isDead":false,"topic":"competitor"},{"id":"i_0013","title":"OpenHands — OSS reference agent","url":"https://github.com/all-hands-ai/openhands","domain":"github.com","domainRoot":"github.com","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["competitor","oss","coding-agents"],"addedEpoch":1761500000000,"addedIso":"2025-10-26","ageDays":196,"isStale":true,"isDead":false,"topic":"competitor"},{"id":"i_0014","title":"Tessl — Spec-first dev","url":"https://www.tessl.io/","domain":"www.tessl.io","domainRoot":"tessl.io","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["competitor","coding-agents"],"addedEpoch":1762200000000,"addedIso":"2025-11-03","ageDays":188,"isStale":true,"isDead":false,"topic":"competitor"},{"id":"i_0015","title":"Lindy — Pricing (saved again from newsletter)","url":"https://www.lindy.ai/pricing?utm_source=newsletter","domain":"www.lindy.ai","domainRoot":"lindy.ai","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["pricing","competitor"],"addedEpoch":1763000000000,"addedIso":"2025-11-13","ageDays":179,"isStale":false,"isDead":false,"isDuplicate":true,"duplicateOf":"i_0001","topic":"pricing"},{"id":"i_0016","title":"Cognition — Devin 2 launch post","url":"https://www.cognition.ai/blog/devin-2","domain":"www.cognition.ai","domainRoot":"cognition.ai","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["competitor","coding-agents"],"addedEpoch":1764100000000,"addedIso":"2025-11-25","ageDays":166,"isStale":false,"isDead":false,"topic":"competitor"},{"id":"i_0017","title":"Windsurf — Cascade flows architecture","url":"https://www.windsurf.com/blog/cascade-flows","domain":"www.windsurf.com","domainRoot":"windsurf.com","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["competitor","coding-agents"],"addedEpoch":1769000000000,"addedIso":"2026-01-21","ageDays":109,"isStale":false,"isDead":false,"topic":"competitor"},{"id":"i_0018","title":"Factory — Series B announcement","url":"https://factory.ai/news/series-b","domain":"factory.ai","domainRoot":"factory.ai","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["competitor","funding"],"addedEpoch":1771200000000,"addedIso":"2026-02-16","ageDays":84,"isStale":false,"isDead":false,"topic":"competitor"},{"id":"i_0019","title":"Tabnine — Pricing (enterprise tier)","url":"https://www.tabnine.com/pricing","domain":"www.tabnine.com","domainRoot":"tabnine.com","source":"bookmark","folder":"Competitors","folderPath":["Bookmarks bar","Competitors"],"tags":["competitor","coding-agents","pricing"],"addedEpoch":1772800000000,"addedIso":"2026-03-06","ageDays":65,"isStale":false,"isDead":false,"topic":"competitor"},{"id":"i_0020","title":"Stripe — Pricing pages that convert","url":"https://stripe.com/blog/price-pages-that-convert","domain":"stripe.com","domainRoot":"stripe.com","source":"bookmark","folder":"Pricing & GTM","folderPath":["Bookmarks bar","Competitors","Pricing & GTM"],"tags":["pricing","gtm"],"addedEpoch":1745350000000,"addedIso":"2025-04-22","ageDays":383,"isStale":true,"isDead":false,"topic":"pricing"},{"id":"i_0021","title":"Intercom — Value-based pricing for AI products","url":"https://www.intercom.com/blog/value-based-pricing-for-ai/","domain":"www.intercom.com","domainRoot":"intercom.com","source":"bookmark","folder":"Pricing & GTM","folderPath":["Bookmarks bar","Competitors","Pricing & GTM"],"tags":["pricing","gtm","ai"],"addedEpoch":1746200000000,"addedIso":"2025-05-02","note":"Their take on the \"cost-plus is dying, outcome-based is hard\" middle ground","excerpt":"Their take on the \"cost-plus is dying, outcome-based is hard\" middle ground","ageDays":373,"isStale":true,"isDead":false,"topic":"pricing"},{"id":"i_0022","title":"a16z — The AI pricing paradigm shift","url":"https://a16z.com/the-ai-pricing-paradigm-shift/","domain":"a16z.com","domainRoot":"a16z.com","source":"bookmark","folder":"Pricing & GTM","folderPath":["Bookmarks bar","Competitors","Pricing & GTM"],"tags":["pricing","gtm","ai"],"addedEpoch":1748500000000,"addedIso":"2025-05-29","ageDays":346,"isStale":true,"isDead":false,"topic":"pricing"},{"id":"i_0023","title":"OpenView — 2024 SaaS benchmarks","url":"https://openviewpartners.com/blog/2024-saas-benchmarks/","domain":"openviewpartners.com","domainRoot":"openviewpartners.com","source":"bookmark","folder":"Pricing & GTM","folderPath":["Bookmarks bar","Competitors","Pricing & GTM"],"tags":["benchmarks","gtm"],"addedEpoch":1750200000000,"addedIso":"2025-06-17","ageDays":327,"isStale":true,"isDead":false,"topic":"benchmarks"},{"id":"i_0024","title":"Patrick McKenzie — Idea, execution, and pricing","url":"https://www.kalzumeus.com/2018/10/19/idea-execution-and-pricing/","domain":"www.kalzumeus.com","domainRoot":"kalzumeus.com","source":"bookmark","folder":"Pricing & GTM","folderPath":["Bookmarks bar","Competitors","Pricing & GTM"],"tags":["pricing","gtm"],"addedEpoch":1751000000000,"addedIso":"2025-06-27","ageDays":317,"isStale":true,"isDead":false,"topic":"pricing"},{"id":"i_0025","title":"Not Boring — AI economic models","url":"https://www.notboring.co/p/ai-economic-models","domain":"www.notboring.co","domainRoot":"notboring.co","source":"bookmark","folder":"Pricing & GTM","folderPath":["Bookmarks bar","Competitors","Pricing & GTM"],"tags":["gtm","ai"],"addedEpoch":1755200000000,"addedIso":"2025-08-14","ageDays":269,"isStale":true,"isDead":false,"topic":"gtm"},{"id":"i_0026","title":"Every — Bull case for vertical AI","url":"https://every.to/p/the-bull-case-for-vertical-ai","domain":"every.to","domainRoot":"every.to","source":"bookmark","folder":"Pricing & GTM","folderPath":["Bookmarks bar","Competitors","Pricing & GTM"],"tags":["gtm","ai"],"addedEpoch":1758800000000,"addedIso":"2025-09-25","ageDays":227,"isStale":true,"isDead":false,"topic":"gtm"},{"id":"i_0027","title":"Lenny — Usage-based pricing playbook","url":"https://www.lennysnewsletter.com/p/usage-based-pricing-playbook","domain":"www.lennysnewsletter.com","domainRoot":"lennysnewsletter.com","source":"bookmark","folder":"Pricing & GTM","folderPath":["Bookmarks bar","Competitors","Pricing & GTM"],"tags":["pricing","gtm"],"addedEpoch":1761000000000,"addedIso":"2025-10-20","ageDays":202,"isStale":true,"isDead":false,"topic":"pricing"},{"id":"i_0028","title":"3 pricing models that work for AI SaaS","url":"https://www.4dayweek.com/news/the-3-pricing-models-that-actually-work-for-ai-saas","domain":"www.4dayweek.com","domainRoot":"4dayweek.com","source":"bookmark","folder":"Pricing & GTM","folderPath":["Bookmarks bar","Competitors","Pricing & GTM"],"tags":["pricing","gtm","ai"],"addedEpoch":1763300000000,"addedIso":"2025-11-16","ageDays":175,"isStale":false,"isDead":false,"topic":"pricing"},{"id":"i_0029","title":"Vendr — AI pricing 2026 mid-year report","url":"https://www.vendr.com/blog/ai-pricing-2026","domain":"www.vendr.com","domainRoot":"vendr.com","source":"bookmark","folder":"Pricing & GTM","folderPath":["Bookmarks bar","Competitors","Pricing & GTM"],"tags":["pricing","benchmarks","ai"],"addedEpoch":1772000000000,"addedIso":"2026-02-25","ageDays":74,"isStale":false,"isDead":false,"topic":"pricing"},{"id":"i_0030","title":"Lilian Weng — LLM-powered autonomous agents (2023)","url":"https://lilianweng.github.io/posts/2023-06-23-agent/","domain":"lilianweng.github.io","domainRoot":"github.io","source":"bookmark","folder":"Eng & infra","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra"],"tags":["agents","research","ai"],"addedEpoch":1745520000000,"addedIso":"2025-04-24","ageDays":381,"isStale":true,"isDead":false,"topic":"agents"},{"id":"i_0031","title":"Anthropic — Contextual retrieval","url":"https://www.anthropic.com/news/contextual-retrieval","domain":"www.anthropic.com","domainRoot":"anthropic.com","source":"bookmark","folder":"Eng & infra","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra"],"tags":["rag","research","ai"],"addedEpoch":1746000000000,"addedIso":"2025-04-30","ageDays":375,"isStale":true,"isDead":false,"topic":"rag"},{"id":"i_0032","title":"OpenAI — Learning to reason with LLMs","url":"https://research.openai.com/learning-to-reason","domain":"research.openai.com","domainRoot":"openai.com","source":"bookmark","folder":"Eng & infra","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra"],"tags":["research","ai"],"addedEpoch":1748200000000,"addedIso":"2025-05-25","ageDays":350,"isStale":true,"isDead":false,"topic":"research"},{"id":"i_0033","title":"LangChain — Multi-agent research","url":"https://blog.langchain.dev/multi-agent-research/","domain":"blog.langchain.dev","domainRoot":"langchain.dev","source":"bookmark","folder":"Eng & infra","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra"],"tags":["agents","frameworks","ai"],"addedEpoch":1751800000000,"addedIso":"2025-07-06","ageDays":308,"isStale":true,"isDead":false,"topic":"agents"},{"id":"i_0034","title":"SmolAI — Multi-agent survey notes","url":"https://www.smol.ai/notes/2024-10-multi-agent-survey","domain":"www.smol.ai","domainRoot":"smol.ai","source":"bookmark","folder":"Eng & infra","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra"],"tags":["agents","research","ai"],"addedEpoch":1752300000000,"addedIso":"2025-07-12","ageDays":302,"isStale":true,"isDead":false,"topic":"agents"},{"id":"i_0035","title":"Supabase — Postgres as vector DB","url":"https://supabase.com/blog/postgres-as-vector-db","domain":"supabase.com","domainRoot":"supabase.com","source":"bookmark","folder":"Eng & infra","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra"],"tags":["rag","infra"],"addedEpoch":1755600000000,"addedIso":"2025-08-19","ageDays":264,"isStale":true,"isDead":false,"topic":"rag"},{"id":"i_0036","title":"Pinecone — RAG monitoring series","url":"https://www.pinecone.io/learn/series/rag-monitoring/","domain":"www.pinecone.io","domainRoot":"pinecone.io","source":"bookmark","folder":"Eng & infra","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra"],"tags":["rag","infra"],"addedEpoch":1758000000000,"addedIso":"2025-09-16","ageDays":236,"isStale":true,"isDead":false,"topic":"rag"},{"id":"i_0037","title":"Cloudflare — Durable Objects for agents","url":"https://blog.cloudflare.com/durable-objects-for-agents/","domain":"blog.cloudflare.com","domainRoot":"cloudflare.com","source":"bookmark","folder":"Eng & infra","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra"],"tags":["agents","infra"],"addedEpoch":1761600000000,"addedIso":"2025-10-27","ageDays":195,"isStale":true,"isDead":false,"topic":"agents"},{"id":"i_0038","title":"Modal — Agent runtime deep dive","url":"https://modal.com/blog/agent-runtime-deep-dive","domain":"modal.com","domainRoot":"modal.com","source":"bookmark","folder":"Eng & infra","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra"],"tags":["agents","infra"],"addedEpoch":1765500000000,"addedIso":"2025-12-12","ageDays":150,"isStale":false,"isDead":false,"topic":"agents"},{"id":"i_0039","title":"E2B — Sandboxes inside an agent loop","url":"https://e2b.dev/blog/sandbox-agent-loop","domain":"e2b.dev","domainRoot":"e2b.dev","source":"bookmark","folder":"Eng & infra","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra"],"tags":["agents","infra","sandboxing"],"addedEpoch":1768000000000,"addedIso":"2026-01-09","ageDays":121,"isStale":false,"isDead":false,"topic":"agents"},{"id":"i_0040","title":"AI Plans — Structured agent evals","url":"https://www.ai-plans.com/post/structured-agent-evals","domain":"www.ai-plans.com","domainRoot":"ai-plans.com","source":"bookmark","folder":"Eng & infra","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra"],"tags":["evals","agents"],"addedEpoch":1770100000000,"addedIso":"2026-02-03","ageDays":96,"isStale":false,"isDead":false,"topic":"evals"},{"id":"i_0041","title":"Hugging Face — Agent design patterns, 2026","url":"https://huggingface.co/blog/agent-design-patterns-2026","domain":"huggingface.co","domainRoot":"huggingface.co","source":"bookmark","folder":"Eng & infra","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra"],"tags":["agents","research"],"addedEpoch":1773300000000,"addedIso":"2026-03-12","ageDays":59,"isStale":false,"isDead":false,"topic":"agents"},{"id":"i_0042","title":"Lilian Weng — LLM agents (re-saved from newsletter)","url":"https://lilianweng.github.io/posts/2023-06-23-agent/","domain":"lilianweng.github.io","domainRoot":"github.io","source":"bookmark","folder":"Eng & infra","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra"],"tags":["agents","research"],"addedEpoch":1774200000000,"addedIso":"2026-03-22","ageDays":49,"isStale":false,"isDead":false,"isDuplicate":true,"duplicateOf":"i_0030","topic":"agents"},{"id":"i_0043","title":"HN — \"Show HN: I built a research agent that survived a real workflow\"","url":"https://news.ycombinator.com/item?id=42018231","domain":"news.ycombinator.com","domainRoot":"ycombinator.com","source":"bookmark","folder":"Customers (early signals)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)"],"tags":["signals","hn"],"addedEpoch":1751000000000,"addedIso":"2025-06-27","note":"Top comment: \"This works because the eval set is hand-curated; production grade is harder than people think\"","excerpt":"Top comment: \"This works because the eval set is hand-curated; production grade is harder than people think\"","ageDays":317,"isStale":true,"isDead":false,"topic":"signals"},{"id":"i_0044","title":"Sarah Catanzaro — agents-need-trust thread","url":"https://twitter.com/sarahcat21/status/1834510928374","domain":"twitter.com","domainRoot":"twitter.com","source":"bookmark","folder":"Customers (early signals)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)"],"tags":["signals","twitter"],"addedEpoch":1752900000000,"addedIso":"2025-07-19","ageDays":295,"isStale":true,"isDead":false,"topic":"signals"},{"id":"i_0045","title":"Reddit r/SaaS — \"We paid for an AI agent for 3 months and...\"","url":"https://www.reddit.com/r/SaaS/comments/1guzv78/we_paid_for_an_ai_agent_for_three_months_and/","domain":"www.reddit.com","domainRoot":"reddit.com","source":"bookmark","folder":"Customers (early signals)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)"],"tags":["signals","reddit"],"addedEpoch":1755200000000,"addedIso":"2025-08-14","ageDays":269,"isStale":true,"isDead":false,"topic":"signals"},{"id":"i_0046","title":"Lenny — AI PM survey, 2026","url":"https://www.lennysnewsletter.com/p/ai-product-managers-survey-2026","domain":"www.lennysnewsletter.com","domainRoot":"lennysnewsletter.com","source":"bookmark","folder":"Customers (early signals)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)"],"tags":["signals","benchmarks"],"addedEpoch":1758500000000,"addedIso":"2025-09-22","ageDays":231,"isStale":true,"isDead":false,"topic":"signals"},{"id":"i_0047","title":"HN — \"Why I cancelled my Cursor / Replit / Lindy stack\"","url":"https://news.ycombinator.com/item?id=42445007","domain":"news.ycombinator.com","domainRoot":"ycombinator.com","source":"bookmark","folder":"Customers (early signals)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)"],"tags":["signals","hn"],"addedEpoch":1762800000000,"addedIso":"2025-11-10","ageDays":181,"isStale":true,"isDead":false,"topic":"signals"},{"id":"i_0048","title":"Elad Gil — agent stickiness thread","url":"https://twitter.com/eladgil/status/1849233102841","domain":"twitter.com","domainRoot":"twitter.com","source":"bookmark","folder":"Customers (early signals)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)"],"tags":["signals","twitter"],"addedEpoch":1764500000000,"addedIso":"2025-11-30","ageDays":161,"isStale":false,"isDead":false,"topic":"signals"},{"id":"i_0049","title":"Indie Hackers — has anyone shipped a profitable agent?","url":"https://www.indiehackers.com/post/has-anyone-actually-shipped-an-agent-thats-revenue-positive","domain":"www.indiehackers.com","domainRoot":"indiehackers.com","source":"bookmark","folder":"Customers (early signals)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)"],"tags":["signals","indiehackers"],"addedEpoch":1768900000000,"addedIso":"2026-01-20","ageDays":110,"isStale":false,"isDead":false,"topic":"signals"},{"id":"i_0050","title":"Reddit — status of AI agents replacing SWEs","url":"https://www.reddit.com/r/cscareerquestions/comments/1ja3v22/whats_the_status_of_ai_agents_replacing_swes/","domain":"www.reddit.com","domainRoot":"reddit.com","source":"bookmark","folder":"Customers (early signals)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)"],"tags":["signals","reddit"],"addedEpoch":1771200000000,"addedIso":"2026-02-16","ageDays":84,"isStale":false,"isDead":false,"topic":"signals"},{"id":"i_0051","title":"Sarah Catanzaro — agents-need-trust thread (re-saved)","url":"https://twitter.com/sarahcat21/status/1834510928374","domain":"twitter.com","domainRoot":"twitter.com","source":"bookmark","folder":"Customers (early signals)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)"],"tags":["signals","twitter"],"addedEpoch":1772000000000,"addedIso":"2026-02-25","ageDays":74,"isStale":false,"isDead":false,"isDuplicate":true,"duplicateOf":"i_0044","topic":"signals"},{"id":"i_0052","title":"HN — \"Ask HN: who's actually paying for an AI agent in production?\"","url":"https://news.ycombinator.com/item?id=42890234","domain":"news.ycombinator.com","domainRoot":"ycombinator.com","source":"bookmark","folder":"Customers (early signals)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)"],"tags":["signals","hn"],"addedEpoch":1775500000000,"addedIso":"2026-04-06","ageDays":34,"isStale":false,"isDead":false,"topic":"signals"},{"id":"i_0053","title":"Linear — Method (their design philosophy)","url":"https://linear.app/method","domain":"linear.app","domainRoot":"linear.app","source":"bookmark","folder":"Inspiration & UX","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX"],"tags":["ux","inspiration"],"addedEpoch":1746000000000,"addedIso":"2025-04-30","ageDays":375,"isStale":true,"isDead":false,"topic":"ux"},{"id":"i_0054","title":"Stripe Press — site design","url":"https://stripe.press/","domain":"stripe.press","domainRoot":"stripe.press","source":"bookmark","folder":"Inspiration & UX","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX"],"tags":["ux","inspiration","marketing"],"addedEpoch":1748100000000,"addedIso":"2025-05-24","ageDays":351,"isStale":true,"isDead":false,"topic":"ux"},{"id":"i_0055","title":"Notion — our approach to icons","url":"https://www.notion.so/blog/our-approach-to-icons","domain":"www.notion.so","domainRoot":"notion.so","source":"bookmark","folder":"Inspiration & UX","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX"],"tags":["ux","inspiration"],"addedEpoch":1750300000000,"addedIso":"2025-06-19","ageDays":326,"isStale":true,"isDead":false,"topic":"ux"},{"id":"i_0056","title":"Vercel — AI templates","url":"https://vercel.com/templates/ai","domain":"vercel.com","domainRoot":"vercel.com","source":"bookmark","folder":"Inspiration & UX","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX"],"tags":["ux","inspiration","ai"],"addedEpoch":1755800000000,"addedIso":"2025-08-21","ageDays":262,"isStale":true,"isDead":false,"topic":"ux"},{"id":"i_0057","title":"PostHog — handbook (marketing chapter)","url":"https://posthog.com/handbook/strategy/marketing","domain":"posthog.com","domainRoot":"posthog.com","source":"bookmark","folder":"Inspiration & UX","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX"],"tags":["ux","gtm"],"addedEpoch":1761200000000,"addedIso":"2025-10-23","ageDays":199,"isStale":true,"isDead":false,"topic":"ux"},{"id":"i_0058","title":"Railway — changelog page design","url":"https://railway.com/changelog","domain":"railway.com","domainRoot":"railway.com","source":"bookmark","folder":"Inspiration & UX","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX"],"tags":["ux","inspiration"],"addedEpoch":1764800000000,"addedIso":"2025-12-03","ageDays":158,"isStale":false,"isDead":false,"topic":"ux"},{"id":"i_0059","title":"Typesense — docs IA","url":"https://typesense.org/docs/","domain":"typesense.org","domainRoot":"typesense.org","source":"bookmark","folder":"Inspiration & UX","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX"],"tags":["ux","docs"],"addedEpoch":1768000000000,"addedIso":"2026-01-09","ageDays":121,"isStale":false,"isDead":false,"topic":"ux"},{"id":"i_0060","title":"Every — how we write","url":"https://every.to/p/how-we-write","domain":"every.to","domainRoot":"every.to","source":"bookmark","folder":"Inspiration & UX","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX"],"tags":["ux","marketing"],"addedEpoch":1771500000000,"addedIso":"2026-02-19","ageDays":80,"isStale":false,"isDead":false,"topic":"ux"},{"id":"i_0061","title":"Next.js — 15.2 release page","url":"https://nextjs.org/blog/next-15-2","domain":"nextjs.org","domainRoot":"nextjs.org","source":"bookmark","folder":"Inspiration & UX","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX"],"tags":["ux","inspiration"],"addedEpoch":1773100000000,"addedIso":"2026-03-09","ageDays":62,"isStale":false,"isDead":false,"topic":"ux"},{"id":"i_0062","title":"WorkOS — agent auth in 2026","url":"https://www.workos.com/blog/agent-auth-2026","domain":"www.workos.com","domainRoot":"workos.com","source":"bookmark","folder":"Inbox (Read Later)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)"],"tags":["agents","auth"],"addedEpoch":1746500000000,"addedIso":"2025-05-06","ageDays":370,"isStale":true,"isDead":false,"topic":"agents"},{"id":"i_0063","title":"Replit — Agent evals Q1 2026 retrospective","url":"https://blog.replit.com/agent-evals-q1-2026","domain":"blog.replit.com","domainRoot":"replit.com","source":"bookmark","folder":"Inbox (Read Later)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)"],"tags":["agents","evals"],"addedEpoch":1747200000000,"addedIso":"2025-05-14","ageDays":361,"isStale":true,"isDead":false,"topic":"agents"},{"id":"i_0064","title":"Cloudflare — Agentic pricing experiments","url":"https://blog.cloudflare.com/agentic-pricing-experiments/","domain":"blog.cloudflare.com","domainRoot":"cloudflare.com","source":"bookmark","folder":"Inbox (Read Later)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)"],"tags":["agents","pricing"],"addedEpoch":1748800000000,"addedIso":"2025-06-01","ageDays":343,"isStale":true,"isDead":false,"topic":"agents"},{"id":"i_0065","title":"Substack notes — agent ROI in mid-market","url":"https://substack.com/inbox/post/167234","domain":"substack.com","domainRoot":"substack.com","source":"bookmark","folder":"Inbox (Read Later)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)"],"tags":["signals"],"addedEpoch":1750000000000,"addedIso":"2025-06-15","ageDays":329,"isStale":true,"isDead":false,"topic":"signals"},{"id":"i_0066","title":"Medium — \"We removed the agent and revenue doubled\"","url":"https://medium.com/@andrew/we-removed-the-agent-from-our-product-and-revenue-doubled","domain":"medium.com","domainRoot":"medium.com","source":"bookmark","folder":"Inbox (Read Later)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)"],"tags":["signals","gtm"],"addedEpoch":1751900000000,"addedIso":"2025-07-07","ageDays":307,"isStale":true,"isDead":true,"topic":"signals"},{"id":"i_0067","title":"Exa — Web search for agents","url":"https://www.exa.ai/blog/web-search-for-agents","domain":"www.exa.ai","domainRoot":"exa.ai","source":"bookmark","folder":"Inbox (Read Later)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)"],"tags":["agents","infra"],"addedEpoch":1755000000000,"addedIso":"2025-08-12","ageDays":271,"isStale":true,"isDead":false,"topic":"agents"},{"id":"i_0068","title":"Tavily — Research mode","url":"https://www.tavily.com/research-mode","domain":"www.tavily.com","domainRoot":"tavily.com","source":"bookmark","folder":"Inbox (Read Later)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)"],"tags":["agents","infra"],"addedEpoch":1758000000000,"addedIso":"2025-09-16","ageDays":236,"isStale":true,"isDead":false,"topic":"agents"},{"id":"i_0069","title":"Ankush — Why most RAG doesn't work in production","url":"https://blog.ankush.dev/why-most-rag-doesnt-work-in-prod","domain":"blog.ankush.dev","domainRoot":"ankush.dev","source":"bookmark","folder":"Inbox (Read Later)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)"],"tags":["rag","research"],"addedEpoch":1761000000000,"addedIso":"2025-10-20","ageDays":202,"isStale":true,"isDead":false,"topic":"rag"},{"id":"i_0070","title":"ThoughtWorks — Agent architecture trade-offs","url":"https://www.thoughtworks.com/insights/articles/agent-architecture-trade-offs","domain":"www.thoughtworks.com","domainRoot":"thoughtworks.com","source":"bookmark","folder":"Inbox (Read Later)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)"],"tags":["agents","architecture"],"addedEpoch":1765000000000,"addedIso":"2025-12-06","ageDays":155,"isStale":false,"isDead":false,"topic":"agents"},{"id":"i_0071","title":"TheNewStack — Why your agent fails on tool use","url":"https://thenewstack.io/why-your-agent-fails-on-tool-use","domain":"thenewstack.io","domainRoot":"thenewstack.io","source":"bookmark","folder":"Inbox (Read Later)","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)"],"tags":["agents"],"addedEpoch":1770000000000,"addedIso":"2026-02-02","ageDays":98,"isStale":false,"isDead":false,"topic":"agents"},{"id":"i_0072","title":"Eric Schmidt — agent economy (2023, on Google+)","url":"https://plus.google.com/+EricSchmidt/posts/agent-economy","domain":"plus.google.com","domainRoot":"google.com","source":"bookmark","folder":"Old / cleanup","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)","Old / cleanup"],"tags":["archive"],"addedEpoch":1700100000000,"addedIso":"2023-11-16","ageDays":907,"isStale":true,"isDead":true,"topic":"archive"},{"id":"i_0073","title":"code.google.com — agent-platform mirror","url":"https://code.google.com/archive/p/agent-platform","domain":"code.google.com","domainRoot":"google.com","source":"bookmark","folder":"Old / cleanup","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)","Old / cleanup"],"tags":["archive"],"addedEpoch":1690000000000,"addedIso":"2023-07-22","ageDays":1023,"isStale":true,"isDead":true,"topic":"archive"},{"id":"i_0074","title":"Forgotten essay (this-page-was-removed)","url":"https://blog.example.com/this-page-was-removed","domain":"blog.example.com","domainRoot":"example.com","source":"bookmark","folder":"Old / cleanup","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)","Old / cleanup"],"tags":["archive"],"addedEpoch":1720000000000,"addedIso":"2024-07-03","ageDays":676,"isStale":true,"isDead":true,"topic":"archive"},{"id":"i_0075","title":"Recode — agent roundup (March 2024)","url":"https://www.recode.net/2024/3/17/old-agent-roundup","domain":"www.recode.net","domainRoot":"recode.net","source":"bookmark","folder":"Old / cleanup","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)","Old / cleanup"],"tags":["archive"],"addedEpoch":1710800000000,"addedIso":"2024-03-18","ageDays":783,"isStale":true,"isDead":false,"topic":"archive"},{"id":"i_0076","title":"LangChain — Multi-agent architectures Q1 2024","url":"https://blog.langchain.dev/multi-agent-architectures-q1-2024","domain":"blog.langchain.dev","domainRoot":"langchain.dev","source":"bookmark","folder":"Old / cleanup","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)","Old / cleanup"],"tags":["archive","agents"],"addedEpoch":1714000000000,"addedIso":"2024-04-24","ageDays":746,"isStale":true,"isDead":false,"topic":"archive"},{"id":"i_0077","title":"Figma — Design tokens 2026","url":"https://www.figma.com/blog/design-tokens-2026/","domain":"www.figma.com","domainRoot":"figma.com","source":"bookmark","folder":"Other bookmarks","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)","Old / cleanup","Other bookmarks"],"tags":["ux"],"addedEpoch":1761000000000,"addedIso":"2025-10-20","ageDays":202,"isStale":true,"isDead":false,"topic":"ux"},{"id":"i_0078","title":"html-anything — repo","url":"https://github.com/clockless-org/html-anything","domain":"github.com","domainRoot":"github.com","source":"bookmark","folder":"Other bookmarks","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)","Old / cleanup","Other bookmarks"],"tags":["oss"],"addedEpoch":1772000000000,"addedIso":"2026-02-25","ageDays":74,"isStale":false,"isDead":false,"topic":"oss"},{"id":"i_0079","title":"HN — \"Stop building agents, start building tools\"","url":"https://news.ycombinator.com/item?id=43012345","domain":"news.ycombinator.com","domainRoot":"ycombinator.com","source":"bookmark","folder":"Other bookmarks","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)","Old / cleanup","Other bookmarks"],"tags":["signals"],"addedEpoch":1775000000000,"addedIso":"2026-03-31","ageDays":40,"isStale":false,"isDead":false,"topic":"signals"},{"id":"i_0080","title":"Hyperscience — insurance claims case study","url":"https://www.hyperscience.com/case-studies/insurance-claims","domain":"www.hyperscience.com","domainRoot":"hyperscience.com","source":"bookmark","folder":"Other bookmarks","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)","Old / cleanup","Other bookmarks"],"tags":["enterprise"],"addedEpoch":1760000000000,"addedIso":"2025-10-09","ageDays":213,"isStale":true,"isDead":false,"topic":"enterprise"},{"id":"i_0081","title":"Glean — Enterprise agent rollout playbook","url":"https://www.glean.com/blog/enterprise-agent-rollout","domain":"www.glean.com","domainRoot":"glean.com","source":"bookmark","folder":"Other bookmarks","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)","Old / cleanup","Other bookmarks"],"tags":["enterprise","agents"],"addedEpoch":1768300000000,"addedIso":"2026-01-13","ageDays":117,"isStale":false,"isDead":false,"topic":"enterprise"},{"id":"i_0082","title":"Zendesk — Customer service AI 2026","url":"https://www.zendesk.com/blog/customer-service-ai-2026","domain":"www.zendesk.com","domainRoot":"zendesk.com","source":"bookmark","folder":"Other bookmarks","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)","Old / cleanup","Other bookmarks"],"tags":["enterprise","agents"],"addedEpoch":1771000000000,"addedIso":"2026-02-13","ageDays":86,"isStale":false,"isDead":false,"topic":"enterprise"},{"id":"i_0083","title":"Sentry — Agent observability","url":"https://blog.sentry.io/agent-observability","domain":"blog.sentry.io","domainRoot":"sentry.io","source":"bookmark","folder":"Other bookmarks","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)","Old / cleanup","Other bookmarks"],"tags":["agents","infra"],"addedEpoch":1773800000000,"addedIso":"2026-03-18","ageDays":54,"isStale":false,"isDead":false,"topic":"agents"},{"id":"i_0084","title":"Stripe — Pricing pages that convert (re-saved from Slack)","url":"https://stripe.com/blog/price-pages-that-convert","domain":"stripe.com","domainRoot":"stripe.com","source":"bookmark","folder":"Other bookmarks","folderPath":["Bookmarks bar","Competitors","Pricing & GTM","Eng & infra","Customers (early signals)","Inspiration & UX","Inbox (Read Later)","Old / cleanup","Other bookmarks"],"tags":["pricing"],"addedEpoch":1774500000000,"addedIso":"2026-03-26","ageDays":45,"isStale":false,"isDead":false,"isDuplicate":true,"duplicateOf":"i_0020","topic":"pricing"}],"folderTree":{"name":"All bookmarks","count":84,"children":[{"name":"Bookmarks bar","count":84,"children":[{"name":"Competitors","count":84,"children":[{"name":"Pricing & GTM","count":65,"children":[{"name":"Eng & infra","count":55,"children":[{"name":"Customers (early signals)","count":42,"children":[{"name":"Inspiration & UX","count":32,"children":[{"name":"Inbox (Read Later)","count":23,"children":[{"name":"Old / cleanup","count":13,"children":[{"name":"Other bookmarks","count":8,"children":[],"itemIds":["i_0077","i_0078","i_0079","i_0080","i_0081","i_0082","i_0083","i_0084"]}],"itemIds":["i_0072","i_0073","i_0074","i_0075","i_0076"]}],"itemIds":["i_0062","i_0063","i_0064","i_0065","i_0066","i_0067","i_0068","i_0069","i_0070","i_0071"]}],"itemIds":["i_0053","i_0054","i_0055","i_0056","i_0057","i_0058","i_0059","i_0060","i_0061"]}],"itemIds":["i_0043","i_0044","i_0045","i_0046","i_0047","i_0048","i_0049","i_0050","i_0051","i_0052"]}],"itemIds":["i_0030","i_0031","i_0032","i_0033","i_0034","i_0035","i_0036","i_0037","i_0038","i_0039","i_0040","i_0041","i_0042"]}],"itemIds":["i_0020","i_0021","i_0022","i_0023","i_0024","i_0025","i_0026","i_0027","i_0028","i_0029"]}],"itemIds":["i_0001","i_0002","i_0003","i_0004","i_0005","i_0006","i_0007","i_0008","i_0009","i_0010","i_0011","i_0012","i_0013","i_0014","i_0015","i_0016","i_0017","i_0018","i_0019"]}],"itemIds":[]}],"itemIds":[]},"domains":[{"domain":"news.ycombinator.com","count":4,"sampleTitle":"HN — \"Show HN: I built a research agent that survived a real workflow\""},{"domain":"www.lindy.ai","count":3,"sampleTitle":"Lindy — Pricing"},{"domain":"twitter.com","count":3,"sampleTitle":"Sarah Catanzaro — agents-need-trust thread"},{"domain":"www.cursor.com","count":2,"sampleTitle":"Cursor — Pricing page"},{"domain":"www.anthropic.com","count":2,"sampleTitle":"Anthropic — Claude Code"},{"domain":"github.com","count":2,"sampleTitle":"OpenHands — OSS reference agent"},{"domain":"stripe.com","count":2,"sampleTitle":"Stripe — Pricing pages that convert"},{"domain":"every.to","count":2,"sampleTitle":"Every — Bull case for vertical AI"},{"domain":"www.lennysnewsletter.com","count":2,"sampleTitle":"Lenny — Usage-based pricing playbook"},{"domain":"lilianweng.github.io","count":2,"sampleTitle":"Lilian Weng — LLM-powered autonomous agents (2023)"},{"domain":"blog.langchain.dev","count":2,"sampleTitle":"LangChain — Multi-agent research"},{"domain":"blog.cloudflare.com","count":2,"sampleTitle":"Cloudflare — Durable Objects for agents"},{"domain":"www.reddit.com","count":2,"sampleTitle":"Reddit r/SaaS — \"We paid for an AI agent for 3 months and...\""},{"domain":"relevanceai.com","count":1,"sampleTitle":"Relevance AI — Agents page"},{"domain":"www.adept.ai","count":1,"sampleTitle":"Adept — Persistent state in long-running agents"},{"domain":"multion.ai","count":1,"sampleTitle":"MultiOn — Research"},{"domain":"www.replit.com","count":1,"sampleTitle":"Replit Agent — Landing"},{"domain":"devin.cognition.ai","count":1,"sampleTitle":"Devin / Cognition"},{"domain":"aider.chat","count":1,"sampleTitle":"Aider — OSS coding agent"},{"domain":"openai.com","count":1,"sampleTitle":"OpenAI — Codex CLI"},{"domain":"www.tessl.io","count":1,"sampleTitle":"Tessl — Spec-first dev"},{"domain":"www.cognition.ai","count":1,"sampleTitle":"Cognition — Devin 2 launch post"},{"domain":"www.windsurf.com","count":1,"sampleTitle":"Windsurf — Cascade flows architecture"},{"domain":"factory.ai","count":1,"sampleTitle":"Factory — Series B announcement"}],"rootDomains":[{"domain":"ycombinator.com","count":4},{"domain":"lindy.ai","count":3},{"domain":"twitter.com","count":3},{"domain":"replit.com","count":2},{"domain":"cognition.ai","count":2},{"domain":"cursor.com","count":2},{"domain":"anthropic.com","count":2},{"domain":"openai.com","count":2},{"domain":"github.com","count":2},{"domain":"stripe.com","count":2},{"domain":"every.to","count":2},{"domain":"lennysnewsletter.com","count":2},{"domain":"github.io","count":2},{"domain":"langchain.dev","count":2},{"domain":"cloudflare.com","count":2},{"domain":"reddit.com","count":2}],"topics":[{"name":"agents","count":24,"itemIds":["i_0001","i_0003","i_0004","i_0005","i_0030","i_0033","i_0034","i_0037","i_0038","i_0039","i_0040","i_0041","i_0042","i_0062","i_0063","i_0064","i_0067","i_0068","i_0070","i_0071","i_0076","i_0081","i_0082","i_0083"]},{"name":"competitor","count":19,"itemIds":["i_0001","i_0002","i_0003","i_0004","i_0005","i_0006","i_0007","i_0008","i_0009","i_0010","i_0011","i_0012","i_0013","i_0014","i_0015","i_0016","i_0017","i_0018","i_0019"]},{"name":"pricing","count":13,"itemIds":["i_0001","i_0008","i_0015","i_0019","i_0020","i_0021","i_0022","i_0024","i_0027","i_0028","i_0029","i_0064","i_0084"]},{"name":"signals","count":13,"itemIds":["i_0043","i_0044","i_0045","i_0046","i_0047","i_0048","i_0049","i_0050","i_0051","i_0052","i_0065","i_0066","i_0079"]},{"name":"coding-agents","count":12,"itemIds":["i_0006","i_0007","i_0008","i_0009","i_0010","i_0011","i_0012","i_0013","i_0014","i_0016","i_0017","i_0019"]},{"name":"ai","count":12,"itemIds":["i_0021","i_0022","i_0025","i_0026","i_0028","i_0029","i_0030","i_0031","i_0032","i_0033","i_0034","i_0056"]},{"name":"gtm","count":11,"itemIds":["i_0020","i_0021","i_0022","i_0023","i_0024","i_0025","i_0026","i_0027","i_0028","i_0057","i_0066"]},{"name":"ux","count":10,"itemIds":["i_0053","i_0054","i_0055","i_0056","i_0057","i_0058","i_0059","i_0060","i_0061","i_0077"]},{"name":"research","count":8,"itemIds":["i_0004","i_0030","i_0031","i_0032","i_0034","i_0041","i_0042","i_0069"]},{"name":"infra","count":8,"itemIds":["i_0035","i_0036","i_0037","i_0038","i_0039","i_0067","i_0068","i_0083"]}],"topTags":[{"tag":"agents","count":24},{"tag":"competitor","count":19},{"tag":"pricing","count":13},{"tag":"signals","count":13},{"tag":"coding-agents","count":12},{"tag":"ai","count":12},{"tag":"gtm","count":11},{"tag":"ux","count":10},{"tag":"research","count":8},{"tag":"infra","count":8},{"tag":"inspiration","count":6},{"tag":"archive","count":5},{"tag":"rag","count":4},{"tag":"oss","count":3},{"tag":"benchmarks","count":3},{"tag":"hn","count":3},{"tag":"twitter","count":3},{"tag":"enterprise","count":3},{"tag":"evals","count":2},{"tag":"reddit","count":2},{"tag":"marketing","count":2},{"tag":"changelog","count":1},{"tag":"funding","count":1},{"tag":"frameworks","count":1},{"tag":"sandboxing","count":1},{"tag":"indiehackers","count":1},{"tag":"docs","count":1},{"tag":"auth","count":1},{"tag":"architecture","count":1}],"folders":[{"name":"Competitors","count":19,"itemIds":["i_0001","i_0002","i_0003","i_0004","i_0005","i_0006","i_0007","i_0008","i_0009","i_0010","i_0011","i_0012","i_0013","i_0014","i_0015","i_0016","i_0017","i_0018","i_0019"]},{"name":"Eng & infra","count":13,"itemIds":["i_0030","i_0031","i_0032","i_0033","i_0034","i_0035","i_0036","i_0037","i_0038","i_0039","i_0040","i_0041","i_0042"]},{"name":"Pricing & GTM","count":10,"itemIds":["i_0020","i_0021","i_0022","i_0023","i_0024","i_0025","i_0026","i_0027","i_0028","i_0029"]},{"name":"Customers (early signals)","count":10,"itemIds":["i_0043","i_0044","i_0045","i_0046","i_0047","i_0048","i_0049","i_0050","i_0051","i_0052"]},{"name":"Inbox (Read Later)","count":10,"itemIds":["i_0062","i_0063","i_0064","i_0065","i_0066","i_0067","i_0068","i_0069","i_0070","i_0071"]},{"name":"Inspiration & UX","count":9,"itemIds":["i_0053","i_0054","i_0055","i_0056","i_0057","i_0058","i_0059","i_0060","i_0061"]},{"name":"Other bookmarks","count":8,"itemIds":["i_0077","i_0078","i_0079","i_0080","i_0081","i_0082","i_0083","i_0084"]},{"name":"Old / cleanup","count":5,"itemIds":["i_0072","i_0073","i_0074","i_0075","i_0076"]}],"duplicateGroups":[{"url":"https://www.lindy.ai/pricing?utm_source=newsletter","ids":["i_0001","i_0015"],"titles":["Lindy — Pricing","Lindy — Pricing (saved again from newsletter)"]},{"url":"https://lilianweng.github.io/posts/2023-06-23-agent/","ids":["i_0030","i_0042"],"titles":["Lilian Weng — LLM-powered autonomous agents (2023)","Lilian Weng — LLM agents (re-saved from newsletter)"]},{"url":"https://twitter.com/sarahcat21/status/1834510928374","ids":["i_0044","i_0051"],"titles":["Sarah Catanzaro — agents-need-trust thread","Sarah Catanzaro — agents-need-trust thread (re-saved)"]},{"url":"https://stripe.com/blog/price-pages-that-convert","ids":["i_0020","i_0084"],"titles":["Stripe — Pricing pages that convert","Stripe — Pricing pages that convert (re-saved from Slack)"]}],"duplicateCount":4,"staleItems":[{"id":"i_0073","title":"code.google.com — agent-platform mirror","ageDays":1023,"folder":"Old / cleanup","url":"https://code.google.com/archive/p/agent-platform"},{"id":"i_0072","title":"Eric Schmidt — agent economy (2023, on Google+)","ageDays":907,"folder":"Old / cleanup","url":"https://plus.google.com/+EricSchmidt/posts/agent-economy"},{"id":"i_0075","title":"Recode — agent roundup (March 2024)","ageDays":783,"folder":"Old / cleanup","url":"https://www.recode.net/2024/3/17/old-agent-roundup"},{"id":"i_0076","title":"LangChain — Multi-agent architectures Q1 2024","ageDays":746,"folder":"Old / cleanup","url":"https://blog.langchain.dev/multi-agent-architectures-q1-2024"},{"id":"i_0074","title":"Forgotten essay (this-page-was-removed)","ageDays":676,"folder":"Old / cleanup","url":"https://blog.example.com/this-page-was-removed"},{"id":"i_0001","title":"Lindy — Pricing","ageDays":385,"folder":"Competitors","url":"https://www.lindy.ai/pricing"},{"id":"i_0002","title":"Lindy — Changelog","ageDays":385,"folder":"Competitors","url":"https://www.lindy.ai/changelog"},{"id":"i_0020","title":"Stripe — Pricing pages that convert","ageDays":383,"folder":"Pricing & GTM","url":"https://stripe.com/blog/price-pages-that-convert"},{"id":"i_0030","title":"Lilian Weng — LLM-powered autonomous agents (2023)","ageDays":381,"folder":"Eng & infra","url":"https://lilianweng.github.io/posts/2023-06-23-agent/"},{"id":"i_0031","title":"Anthropic — Contextual retrieval","ageDays":375,"folder":"Eng & infra","url":"https://www.anthropic.com/news/contextual-retrieval"},{"id":"i_0053","title":"Linear — Method (their design philosophy)","ageDays":375,"folder":"Inspiration & UX","url":"https://linear.app/method"},{"id":"i_0021","title":"Intercom — Value-based pricing for AI products","ageDays":373,"folder":"Pricing & GTM","url":"https://www.intercom.com/blog/value-based-pricing-for-ai/"},{"id":"i_0062","title":"WorkOS — agent auth in 2026","ageDays":370,"folder":"Inbox (Read Later)","url":"https://www.workos.com/blog/agent-auth-2026"},{"id":"i_0003","title":"Relevance AI — Agents page","ageDays":361,"folder":"Competitors","url":"https://relevanceai.com/agents"},{"id":"i_0063","title":"Replit — Agent evals Q1 2026 retrospective","ageDays":361,"folder":"Inbox (Read Later)","url":"https://blog.replit.com/agent-evals-q1-2026"},{"id":"i_0054","title":"Stripe Press — site design","ageDays":351,"folder":"Inspiration & UX","url":"https://stripe.press/"}],"staleCount":55,"deadLinks":[{"id":"i_0066","title":"Medium — \"We removed the agent and revenue doubled\"","url":"https://medium.com/@andrew/we-removed-the-agent-from-our-product-and-revenue-doubled","domain":"medium.com","reason":"URL contains 'deleted' / '404' / 'removed' marker"},{"id":"i_0072","title":"Eric Schmidt — agent economy (2023, on Google+)","url":"https://plus.google.com/+EricSchmidt/posts/agent-economy","domain":"plus.google.com","reason":"Host plus.google.com is shut down or no longer hosts content"},{"id":"i_0073","title":"code.google.com — agent-platform mirror","url":"https://code.google.com/archive/p/agent-platform","domain":"code.google.com","reason":"Host code.google.com is shut down or no longer hosts content"},{"id":"i_0074","title":"Forgotten essay (this-page-was-removed)","url":"https://blog.example.com/this-page-was-removed","domain":"blog.example.com","reason":"URL contains 'deleted' / '404' / 'removed' marker"}],"deadCount":4,"yearHistogram":[],"authorLeaderboard":[],"venueLeaderboard":[],"reading":{"weeklyHistogram":[{"weekOf":"2023-W29","count":1},{"weekOf":"2023-W46","count":1},{"weekOf":"2024-W12","count":1},{"weekOf":"2024-W17","count":1},{"weekOf":"2024-W27","count":1},{"weekOf":"2025-W16","count":2},{"weekOf":"2025-W17","count":2},{"weekOf":"2025-W18","count":3},{"weekOf":"2025-W19","count":1},{"weekOf":"2025-W20","count":2},{"weekOf":"2025-W21","count":2},{"weekOf":"2025-W22","count":3},{"weekOf":"2025-W24","count":2},{"weekOf":"2025-W25","count":2},{"weekOf":"2025-W26","count":2},{"weekOf":"2025-W27","count":2},{"weekOf":"2025-W28","count":3},{"weekOf":"2025-W29","count":1},{"weekOf":"2025-W30","count":1},{"weekOf":"2025-W33","count":4},{"weekOf":"2025-W34","count":2},{"weekOf":"2025-W35","count":1},{"weekOf":"2025-W38","count":3},{"weekOf":"2025-W39","count":2},{"weekOf":"2025-W40","count":1},{"weekOf":"2025-W41","count":1},{"weekOf":"2025-W43","count":5},{"weekOf":"2025-W44","count":1},{"weekOf":"2025-W45","count":1},{"weekOf":"2025-W46","count":3},{"weekOf":"2025-W48","count":2},{"weekOf":"2025-W49","count":2},{"weekOf":"2025-W50","count":1},{"weekOf":"2026-W02","count":2},{"weekOf":"2026-W03","count":1},{"weekOf":"2026-W04","count":2},{"weekOf":"2026-W06","count":2},{"weekOf":"2026-W07","count":1},{"weekOf":"2026-W08","count":3},{"weekOf":"2026-W09","count":3},{"weekOf":"2026-W10","count":1},{"weekOf":"2026-W11","count":2},{"weekOf":"2026-W12","count":2},{"weekOf":"2026-W13","count":1},{"weekOf":"2026-W14","count":1},{"weekOf":"2026-W15","count":1}],"monthlyHistogram":[{"month":"2023-07","count":1},{"month":"2023-11","count":1},{"month":"2024-03","count":1},{"month":"2024-04","count":1},{"month":"2024-07","count":1},{"month":"2025-04","count":6},{"month":"2025-05","count":8},{"month":"2025-06","count":7},{"month":"2025-07","count":7},{"month":"2025-08","count":7},{"month":"2025-09","count":6},{"month":"2025-10","count":7},{"month":"2025-11","count":6},{"month":"2025-12","count":3},{"month":"2026-01","count":5},{"month":"2026-02","count":9},{"month":"2026-03","count":7},{"month":"2026-04","count":1}]},"totals":{"items":84,"domains":67,"topics":10,"duplicates":4,"stale":55,"dead":4,"withDates":84,"withNotes":6},"totalOutbound":84,"meta":{"sourceFile":"input.html","sizeBytes":15407,"format":"netscape-bookmarks-html","kind":"bookmarks-html","itemCount":84,"folderCount":9,"uniqueDomains":24,"deadLinks":4,"duplicates":4,"stale":55,"dateRange":"2023-07-22 → 2026-04-06"}};</script>
+
+<div class="document-shell">
+
+  <!-- COVER -->
+  <header class="cover" id="top">
+    <div class="cover-inner">
+      <div class="cover-eyebrow">Research collection · AI agent landscape · Founder market research</div>
+      <h1 class="cover-title">Founder market research —<br>AI agent landscape</h1>
+      <p class="cover-deck" id="cover-deck">84 bookmarks across 9 folders, spanning July 2023 → April 2026. Competitor landscape, pricing patterns, engineering infrastructure, early customer signals, and UX inspiration — organized to surface what's been collected and what warrants revisiting.</p>
+      <div class="cover-stats" id="cover-stats">
+        <div class="cover-stat"><span class="cover-stat-val" data-count="84">84</span><span class="cover-stat-label">Bookmarks</span></div>
+        <div class="cover-stat"><span class="cover-stat-val" data-count="9">9</span><span class="cover-stat-label">Folders</span></div>
+        <div class="cover-stat"><span class="cover-stat-val" data-count="24">24</span><span class="cover-stat-label">Unique domains</span></div>
+        <div class="cover-stat"><span class="cover-stat-val" data-count="4">4</span><span class="cover-stat-label">Duplicates</span></div>
+        <div class="cover-stat"><span class="cover-stat-val" data-count="4">4</span><span class="cover-stat-label">Likely-dead links</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- READER RAIL -->
+  <nav class="reader-rail" aria-label="Document navigation">
+    <div class="search-rail">
+      <div class="search-input-wrap">
+        <span class="search-icon">⌕</span>
+        <input type="search" id="railSearch" placeholder="Quick search…" aria-label="Search bookmarks">
+      </div>
+    </div>
+    <div class="rail-section">
+      <div class="rail-label">Sections</div>
+      <button class="rail-link" onclick="scrollTo('s-tldr')">TL;DR</button>
+      <button class="rail-link" onclick="scrollTo('s-topics')">Topics</button>
+      <button class="rail-link" onclick="scrollTo('s-domains')">Top Sources</button>
+      <button class="rail-link" onclick="scrollTo('s-folders')">Folders</button>
+      <button class="rail-link" onclick="scrollTo('s-hygiene')">Stale · Dupes · Dead</button>
+      <button class="rail-link" onclick="scrollTo('s-readnext')">Read Next</button>
+      <button class="rail-link" onclick="scrollTo('s-browse')">Browse All</button>
+    </div>
+    <div class="rail-divider"></div>
+    <div class="rail-section">
+      <div class="rail-label">Actions</div>
+      <button class="rail-link" onclick="copyMarkdown()">Copy as Markdown</button>
+    </div>
+  </nav>
+
+  <!-- BODY SHEET -->
+  <main class="body-sheet">
+
+    <!-- TL;DR -->
+    <section class="body-section" id="s-tldr">
+      <div class="section-rule">
+        <span class="section-number">01</span>
+        <h2 class="section-heading">TL;DR</h2>
+        <div class="section-rule-line"></div>
+        <button class="copy-btn" onclick="copyMarkdown()" title="Copy analysis as Markdown">⎘ Copy</button>
+      </div>
+      <div class="tldr-card" id="tldr-content">
+        <div class="tldr-label">Executive summary</div>
+        <div class="tldr-body" id="tldr-body">
+          Loading summary…
+        </div>
+      </div>
+    </section>
+
+    <!-- TOPICS / THEME MAP -->
+    <section class="body-section" id="s-topics">
+      <div class="section-rule">
+        <span class="section-number">02</span>
+        <h2 class="section-heading">Topics &amp; Clusters</h2>
+        <div class="section-rule-line"></div>
+      </div>
+      <div class="cluster-chart" id="cluster-chart"></div>
+      <div class="cluster-grid" id="cluster-chips"></div>
+    </section>
+
+    <!-- TOP SOURCES / DOMAINS -->
+    <section class="body-section" id="s-domains">
+      <div class="section-rule">
+        <span class="section-number">03</span>
+        <h2 class="section-heading">Where they come from</h2>
+        <div class="section-rule-line"></div>
+      </div>
+      <div class="stacked-bar-container" id="domain-section"></div>
+    </section>
+
+    <!-- FOLDER BREAKDOWN -->
+    <section class="body-section" id="s-folders">
+      <div class="section-rule">
+        <span class="section-number">04</span>
+        <h2 class="section-heading">Folder breakdown</h2>
+        <div class="section-rule-line"></div>
+      </div>
+      <div class="folder-list" id="folder-list"></div>
+    </section>
+
+    <!-- STALE / DUPES / DEAD -->
+    <section class="body-section" id="s-hygiene">
+      <div class="section-rule">
+        <span class="section-number">05</span>
+        <h2 class="section-heading">Stale · Duplicates · Likely-dead</h2>
+        <div class="section-rule-line"></div>
+      </div>
+      <div class="callout-grid question-panel" id="callout-grid"></div>
+    </section>
+
+    <!-- READ NEXT -->
+    <section class="body-section" id="s-readnext">
+      <div class="section-rule">
+        <span class="section-number">06</span>
+        <h2 class="section-heading">Read next</h2>
+        <div class="section-rule-line"></div>
+      </div>
+      <div class="read-next-grid" id="read-next-grid"></div>
+    </section>
+
+    <!-- BROWSE ALL -->
+    <section class="body-section" id="s-browse">
+      <div class="section-rule">
+        <span class="section-number">07</span>
+        <h2 class="section-heading">Browse all items</h2>
+        <div class="section-rule-line"></div>
+      </div>
+      <div class="evidence-browser evidence-margin">
+        <div class="browser-controls">
+          <div class="browser-search-wrap">
+            <span class="browser-search-icon">⌕</span>
+            <input type="search" id="browserSearch" placeholder="Search titles, URLs, tags, notes…" aria-label="Search all items">
+          </div>
+        </div>
+        <div class="filter-chips" id="filter-chips"></div>
+        <div style="margin-top:var(--space-md)"></div>
+        <button class="browser-toggle" id="browser-toggle" onclick="toggleBrowser()">
+          <span class="toggle-arrow" id="toggle-arrow">▶</span>
+          <span id="browser-toggle-label">Show all items</span>
+          <span class="browser-count-badge" id="browser-count-badge">84</span>
+        </button>
+        <div id="browser-content" style="display:none">
+          <div class="item-list" id="item-list"></div>
+          <div class="pagination" id="pagination"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="document-footer">
+    <div class="footer-inner">
+      <div class="footer-privacy">
+        <strong>Privacy note:</strong> Generated locally — your bookmarks file never left your machine. The full export is embedded in this HTML and rendered offline in your browser. <strong>No URLs are fetched at render or click time</strong> — link previews, favicons, and dead-link verification are all heuristic-only. For sharing, prefer an anonymized export. Dead-link flags are labelled "likely-dead" hypotheses, never verdicts.
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>/* html-anything: truncated generated script disabled so this checked-in example remains valid HTML.
+
+// ─── PALETTE for charts ───
+const PALETTE = ['#a03b00','#7b40e0','#4d44e3','#00D4FF','#10b981','#f59e0b','#3b82f6','#ef4444'];
+
+// ─── STATE ───
+let activeTopics = new Set();
+let activeFolders = new Set();
+let activeStates = new Set();
+let searchQuery = '';
+let currentPage = 1;
+const PAGE_SIZE = 20;
+let browserOpen = false;
+let allItems = [];
+let filteredItems = [];
+
+// ─── INIT ───
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    allItems = (DATA.items || []);
+    filteredItems = [...allItems];
+    buildTLDR();
+    buildTopicClusters();
+    buildDomainLeaderboard();
+    buildFolders();
+    buildHygiene();
+    buildReadNext();
+    buildFilterChips();
+    setupSearch();
+    setupIntersectionObserver();
+    syncRailSearch();
+  } catch(e) {
+    console.error('Render error:', e);
+  }
+});
+
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ─── TL;DR ───
+function buildTLDR() {
+  const totals = DATA.totals || {};
+  const items = DATA.items || [];
+  const topics = DATA.topics || [];
+  const domains = DATA.domains || [];
+  const topTopic = topics[0] || {};
+  const topDomain = domains[0] || {};
+  const staleCount = DATA.staleCount || (DATA.staleItems || []).length;
+  const dupCount = DATA.duplicateCount || (DATA.duplicateGroups || []).length;
+  const deadCount = DATA.deadCount || (DATA.deadLinks || []).length;
+
+  // Date range
+  const dated = items.filter(i => i.addedIso);
+  dated.sort((a,b) => a.addedIso < b.addedIso ? -1 : 1);
+  const earliest = dated[0]?.addedIso || '';
+  const latest = dated[dated.length-1]?.addedIso || '';
+  const totalItems = items.length || totals.items || 84;
+
+  const summary = `${totalItems} bookmarks span ${earliest} to ${latest}, organized across ${(DATA.folders||[]).length || 9} folders covering competitor intelligence, pricing strategy, engineering infrastructure, early customer signals, and UX inspiration. The dominant cluster is <strong>${topTopic.name || 'agents'}</strong> with ${topTopic.count || 24} items — signaling where research energy has concentrated. <strong>${topDomain.domain || 'news.ycombinator.com'}</strong> is the single most-cited source (${topDomain.count || 4} items). Of the full corpus, ${staleCount} items are stale (>180 days), ${dupCount} duplicate groups were detected, and ${deadCount} links are heuristically flagged as likely-dead. The <strong>Competitors</strong> and <strong>Eng & infra</strong> folders are the densest; <strong>Inbox (Read Later)</strong> carries 10 items worth triaging.`;
+
+  document.getElementById('tldr-body').innerHTML = summary;
+}
+
+// ─── TOPIC CLUSTERS ───
+function buildTopicClusters() {
+  const topics = DATA.topics || [];
+  const max = topics[0]?.count || 1;
+  const total = topics.reduce((s,t)=>s+t.count,0) || 1;
+
+  // Stacked bar
+  const chart = document.getElementById('cluster-chart');
+  const barSegs = topics.slice(0,8).map((t,i) => {
+    const pct = (t.count / topics.slice(0,8).reduce((s,x)=>s+x.count,0)*100).toFixed(1);
+    return `<div class="bar-segment" style="width:${pct}%;background:${PALETTE[i%PALETTE.length]}" title="${t.name}: ${t.count}" onclick="toggleTopic('${t.name}')"></div>`;
+  }).join('');
+  const legendItems = topics.slice(0,8).map((t,i) =>
+    `<div class="bar-legend-item" onclick="toggleTopic('${t.name}')"><div class="bar-legend-dot" style="background:${PALETTE[i%PALETTE.length]}"></div>${t.name} <span style="font-family:var(--font-mono);font-size:10px;color:var(--fg-muted)">${t.count}</span></div>`
+  ).join('');
+
+  chart.innerHTML = `<div class="stacked-bar-container"><div class="bar-track">${barSegs}</div><div class="bar-legend">${legendItems}</div></div>`;
+
+  // Chips
+  const chips = document.getElementById('cluster-chips');
+  chips.innerHTML = topics.map((t,i) =>
+    `<button class="cluster-chip" data-topic="${t.name}" onclick="toggleTopic('${t.name}')">${t.name}<span class="chip-count">${t.count}</span></button>`
+  ).join('');
+}
+
+function toggleTopic(name) {
+  if (activeTopics.has(name)) activeTopics.delete(name);
+  else activeTopics.add(name);
+  updateChipState();
+  applyFilters();
+  if (!browserOpen) openBrowser();
+}
+
+function updateChipState() {
+  document.querySelectorAll('.cluster-chip').forEach(c => {
+    c.classList.toggle('active', activeTopics.has(c.dataset.topic));
+  });
+  document.querySelectorAll('.filter-chip[data-folder]').forEach(c => {
+    c.classList.toggle('active', activeFolders.has(c.dataset.folder));
+  });
+  document.querySelectorAll('.filter-chip[data-state]').forEach(c => {
+    c.classList.toggle('active', activeStates.has(c.dataset.state));
+  });
+  updateBrowserCount();
+}
+
+// ─── DOMAIN LEADERBOARD ───
+function buildDomainLeaderboard() {
+  const domains = (DATA.domains || []).slice(0, 12);
+  const max = domains[0]?.count || 1;
+  const container = document.getElementById('domain-section');
+
+  const rows = domains.map(d => {
+    const pct = Math.round(d.count / max * 100);
+    return `<div class="domain-row" onclick="filterByDomain('${d.domain}')">
+      <span class="domain-name">${d.domain}</span>
+      <div class="domain-bar-wrap"><div class="domain-bar-fill" style="width:${pct}%"></div></div>
+      <span class="domain-count">${d.count}</span>
+    </div>`;
+  }).join('');
+
+  container.innerHTML = `<div style="font-family:var(--font-headline);font-size:14px;font-weight:600;margin-bottom:var(--space-lg);color:var(--fg-1)">Top sources by domain</div>
+  <div class="domain-leaderboard">${rows}</div>`;
+
+  // Animate bars after render
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.domain-bar-fill').forEach(el => {
+      const target = el.style.width;
+      el.style.width = '0';
+      setTimeout(() => { el.style.width = target; }, 100);
+    });
+  });
+}
+
+function filterByDomain(domain) {
+  // Push search and open browser
+  const input = document.getElementById('browserSearch');
+  input.value = domain;
+  searchQuery = domain.replace('www.','').split('.')[0];
+  applyFilters();
+  if (!browserOpen) openBrowser();
+  scrollTo('s-browse');
+}
+
+// ─── FOLDERS ───
+function buildFolders() {
+  const folders = DATA.folders || [];
+  const max = folders[0]?.count || 1;
+  const total = folders.reduce((s,f)=>s+f.count,0) || 1;
+  const icons = { 'Competitors':'🏁', 'Eng & infra':'⚙️', 'Pricing & GTM':'💰', 'Customers (early signals)':'👤', 'Inbox (Read Later)':'📥', 'Inspiration & UX':'🎨', 'Other bookmarks':'📎', 'Old / cleanup':'🗑️', 'Bookmarks bar':'🔖' };
+
+  const list = document.getElementById('folder-list');
+  list.innerHTML = folders.map(f => {
+    const pct = Math.round(f.count / total * 100);
+    const icon = icons[f.name] || '📁';
+    return `<div class="folder-row" onclick="filterByFolder('${f.name}')">
+      <span class="folder-icon">${icon}</span>
+      <span class="folder-name">${f.name}</span>
+      <div style="flex:1;height:4px;background:var(--surface-container-high);border-radius:var(--radius-pill);overflow:hidden">
+        <div style="width:${pct}%;height:100%;background:var(--gradient-primary);border-radius:var(--radius-pill)"></div>
+      </div>
+      <span class="domain-count">${f.count}</span>
+      <span class="folder-pct">${pct}%</span>
+    </div>`;
+  }).join('');
+}
+
+function filterByFolder(name) {
+  if (activeFolders.has(name)) activeFolders.delete(name);
+  else activeFolders.add(name);
+  updateChipState();
+  applyFilters();
+  if (!browserOpen) openBrowser();
+  scrollTo('s-browse');
+}
+
+// ─── HYGIENE CALLOUTS ───
+function buildHygiene() {
+  const stale = DATA.staleItems || [];
+  const dups = DATA.duplicateGroups || [];
+  const dead = DATA.deadLinks || [];
+  const container = document.getElementById('callout-grid');
+
+  // STALE
+  const staleItems = stale.slice(0, 6).map(i =>
+    `<div class="callout-item" onclick="jumpToItem('${i.id}')">
+      <div class="callout-item-title">${esc(i.title)}</div>
+      <div class="callout-item-meta">${i.folder || ''} · <span style="font-family:var(--font-mono)">${i.ageDays}d ago</span></div>
+    </div>`
+  ).join('');
+
+  // DUPLICATES
+  const dupItems = dups.map(g =>
+    `<div class="callout-item">
+      <div class="callout-item-title">${esc(g.titles[0])}</div>
+      <div class="callout-item-meta">+ ${g.ids.length - 1} duplicate · <span style="font-family:var(--font-mono);font-size:10px;word-break:break-all">${g.url.substring(0,50)}…</span></div>
+    </div>`
+  ).join('');
+
+  // DEAD
+  const deadItems = dead.length ? dead.slice(0, 4).map(d =>
+    `<div class="callout-item" onclick="jumpToItem('${d.id}')">
+      <div class="callout-item-title">${esc(d.title)}</div>
+      <div class="callout-item-meta"><span style="color:var(--red)">⚠ likely-dead</span> · ${esc(d.reason || d.domain || '')}</div>
+    </div>`
+  ).join('') : `<div class="callout-placeholder">No additional likely-dead links detected beyond heuristics.</div>`;
+
+  container.innerHTML = `
+    <div class="callout-card">
+      <div class="callout-header">
+        <span class="callout-icon">⏰</span>
+        <span class="callout-label">Stale</span>
+        <span class="callout-badge warn">${stale.length}</span>
+      </div>
+      <div class="callout-body">${stale.length ? staleItems : '<div class="callout-placeholder">No stale items.</div>'}</div>
+    </div>
+    <div class="callout-card">
+      <div class="callout-header">
+        <span class="callout-icon">⊕</span>
+        <span class="callout-label">Duplicates</span>
+        <span class="callout-badge info">${dups.length} groups</span>
+      </div>
+      <div class="callout-body">${dups.length ? dupItems : '<div class="callout-placeholder">No duplicate URLs detected.</div>'}</div>
+    </div>
+    <div class="callout-card">
+      <div class="callout-header">
+        <span class="callout-icon">💀</span>
+        <span class="callout-label">Likely-dead</span>
+        <span class="callout-badge danger">${dead.length}</span>
+      </div>
+      <div class="callout-body">${deadItems}</div>
+    </div>`;
+}
+
+// ─── READ NEXT ───
+function buildReadNext() {
+  const items = DATA.items || [];
+  // Recent, un-noted, or high-priority items
+  const candidates = items
+    .filter(i => !i.isStale && !i.isDead)
+    .sort((a,b) => (b.addedEpoch||0) - (a.addedEpoch||0))
+    .slice(0, 9);
+
+  const container = document.getElementById('read-next-grid');
+  if (!candidates.length) {
+    container.innerHTML = '<p style="color:var(--fg-muted);font-size:13px">No recent items found.</p>';
+    return;
+  }
+  container.innerHTML = candidates.map(item =>
+    `<div class="read-next-card" onclick="jumpToItem('${item.id}')">
+      <div class="read-next-title">${esc(item.title)}</div>
+      <div class="read-next-meta">
+        <span class="read-next-domain">${esc(item.domainRoot || item.domain || '')}</span>
+        ${item.folder ? `<span class="read-next-folder">${esc(item.folder)}</span>` : ''}
+      </div>
+      ${item.url ? `<a class="open-link" href="${esc(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Open ↗</a>` : ''}
+    </div>`
+  ).join('');
+}
+
+// ─── FILTER CHIPS (for browser) ───
+function buildFilterChips() {
+  const states = [
+    { label: 'Stale', key: 'stale' },
+    { label: 'Duplicate', key: 'duplicate' },
+    { label: 'Likely-dead', key: 'dead' },
+    { label: 'Has note', key: 'note' },
+  ];
+  const folders = (DATA.folders || []).slice(0, 6);
+
+  const stateChips = states.map(s =>
+    `<button class="filter-chip" data-state="${s.key}" onclick="toggleState('${s.key}')">${s.label}</button>`
+  ).join('');
+
+  const folderChips = folders.map(f =>
+    `<button class="filter-chip" data-folder="${esc(f.name)}" onclick="filterByFolder('${esc(f.name)}')">${esc(f.name)}</button>`
+  ).join('');
+
+  document.getElementById('filter-chips').innerHTML = `
+    <span style="font-size:11px;color:var(--fg-muted);font-family:var(--font-mono);letter-spacing:0.06em;text-transform:uppercase;margin-right:4px">Filter:</span>
+    ${stateChips}
+    <span style="display:inline-block;width:1px;height:16px;background:var(--border-strong);margin:0 4px;vertical-align:middle"></span>
+    ${folderChips}
+    <button class="filter-chip" onclick="clearFilters()" style="border-style:dashed">✕ Clear</button>`;
+}
+
+function toggleState(state) {
+  if (activeStates.has(state)) activeStates.delete(state);
+  else activeStates.add(state);
+  updateChipState();
+  applyFilters();
+  if (!browserOpen) openBrowser();
+}
+
+function clearFilters() {
+  activeTopics.clear();
+  activeFolders.clear();
+  activeStates.clear();
+  searchQuery = '';
+  document.getElementById('browserSearch').value = '';
+  document.getElementById('railSearch').value = '';
+  filteredItems = [...allItems];
+  updateChipState();
+  currentPage = 1;
+  renderItemList();
+}
+
+// ─── SEARCH ───
+function setupSearch() {
+  const browserInput = document.getElementById('browserSearch');
+  browserInput.addEventListener('input', debounce(e => {
+    searchQuery = e.target.value.trim();
+    currentPage = 1;
+    applyFilters();
+    if (!browserOpen && searchQuery) openBrowser();
+  }, 150));
+}
+
+function syncRailSearch() {
+  const railInput = document.getElementById('railSearch');
+  railInput.addEventListener('input', debounce(e => {
+    const q = e.target.value.trim();
+    document.getElementById('browserSearch').value = q;
+    searchQuery = q;
+    currentPage = 1;
+    applyFilters();
+    if (!browserOpen && q) openBrowser();
+    if (q) scrollTo('s-browse');
+  }, 150));
+}
+
+// ─── FILTER ENGINE ───
+function applyFilters() {
+  const q = searchQuery.toLowerCase();
+  const topics = DATA.topics || [];
+
+  // Build set of item IDs that match active topics
+  let topicIds = null;
+  if (activeTopics.size > 0) {
+    topicIds = new Set();
+    topics.forEach(t => {
+      if (activeTopics.has(t.name)) t.itemIds.forEach(id => topicIds.add(id));
+    });
+  }
+
+  filteredItems = allItems.filter(item => {
+    // Topic filter
+    if (topicIds && !topicIds.has(item.id)) return false;
+    // Folder filter
+    if (activeFolders.size > 0 && !activeFolders.has(item.folder)) return false;
+    // State filters
+    if (activeStates.has('stale') && !item.isStale) return false;
+    if (activeStates.has('duplicate') && !item.isDuplicate) return false;
+    if (activeStates.has('dead') && !item.isDead) return false;
+    if (activeStates.has('note') && !item.note) return false;
+    // Search
+    if (q) {
+      const haystack = [item.title, item.url, item.domain, (item.tags||[]).join(' '), item.note, item.topic, item.folder].filter(Boolean).join(' ').toLowerCase();
+      if (!haystack.includes(q)) return false;
+    }
+    return true;
+  });
+
+  currentPage = 1;
+  renderItemList();
+  updateBrowserCount();
+}
+
+function updateBrowserCount() {
+  document.getElementById('browser-count-badge').textContent = filteredItems.length;
+  document.getElementById('browser-toggle-label').textContent = `Show
+*/
+</script>
+</body>
+</html>

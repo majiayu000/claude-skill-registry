@@ -226,11 +226,7 @@ Proposed: 8 tickets + 1 test commit
 Approve / edit / decline?
 ```
 
-Wait for the response. Three outcomes:
-
-- **Approve:** Proceed to 6b.
-- **Edit:** The operator modifies the structure (merge two tickets, split one, drop a finding). Apply edits, present revised structure, and repeat until approved.
-- **Decline:** Skip to step 7 — offer to commit reproducing tests as a standalone act so the coverage benefit isn't lost.
+Wait for the response and dispatch per [`references/advisory-tickets.md`](../../references/advisory-tickets.md) § "Three outcomes". Approve → proceed to 6b. Edit → loop until approved. Decline → skip to step 7 (offer to commit reproducing tests as a standalone act).
 
 #### 6b. Commit Reproducing Tests and Create Tickets
 
@@ -263,7 +259,7 @@ After all tickets are created, report the URLs to the operator and exit.
 
 #### Orchestrator-Invoked Behavior
 
-When `/bug-hunt` is invoked by an orchestrator, the workflow above is unchanged. The skill proposes the ticket structure to the orchestrator, which applies its own judgment per [`references/autonomy.md`](../../references/autonomy.md) — approving, editing, or declining the proposal, then deciding which of any created tickets to work in the current flow versus defer.
+See [`references/advisory-tickets.md`](../../references/advisory-tickets.md) § "Orchestrator-invoked behavior" — the proposal is presented identically to operator and orchestrator; the orchestrator's auto-approval contract is documented in [`references/autonomy.md`](../../references/autonomy.md) § "Auto-approval of sub-skill ticket proposals".
 
 ### 7. Commit Reproducing Tests (Fallback)
 

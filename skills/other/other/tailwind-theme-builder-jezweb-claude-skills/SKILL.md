@@ -1,11 +1,6 @@
 ---
 name: tailwind-theme-builder
-description: >
-  Set up Tailwind v4 with shadcn/ui themed UI. Workflow: install dependencies,
-  configure CSS variables with @theme inline, set up dark mode, verify.
-  Use when initialising React projects with Tailwind v4, setting up shadcn/ui theming,
-  or fixing colors not working, tw-animate-css errors, @theme inline dark mode conflicts,
-  @apply breaking, v3 migration issues.
+description: "Set up Tailwind v4 + shadcn/ui themed UI with dark mode. Install deps, configure CSS variables via @theme inline, wire dark mode toggle, verify. Use whenever the user mentions Tailwind v4, setting up Tailwind theming, shadcn/ui colours, dark mode, or troubleshooting colours not working, tw-animate-css errors, @theme inline conflicts, @apply breaking after upgrade, or v3 → v4 migration issues."
 compatibility: claude-code-only
 ---
 

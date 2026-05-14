@@ -1,10 +1,6 @@
 ---
 name: shopify-content
-description: >
-  Create and manage Shopify pages, blog posts, navigation, and SEO metadata.
-  Workflow: determine content type, generate content, create via API or browser, verify.
-  Use when creating pages, writing blog posts, updating navigation menus,
-  managing redirects, or updating SEO metadata on a Shopify store.
+description: "Create and manage Shopify pages, blog posts, navigation menus, redirects, and SEO metadata via the Admin API or browser automation. Use whenever the user wants to add a page to a Shopify store, write a Shopify blog post, update the storefront navigation, manage redirects, or tune SEO metadata on a Shopify site."
 compatibility: claude-code-only
 ---
 

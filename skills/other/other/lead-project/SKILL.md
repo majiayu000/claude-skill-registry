@@ -22,7 +22,7 @@ The user states intent once, in structured form, at startup. Every subsequent de
 - **Constraints** — hard limits (what not to touch, what not to use)
 - **Non-goals** — explicit out-of-scope (prevents scope expansion)
 
-This five-field schema is the **canonical implementation** of commander's intent referenced from [`references/autonomy.md`](../../references/autonomy.md). Other orchestrator-family skills (`/implement-project`, `/refactor-deep`) use lighter variants — fewer fields because the work is more bounded — but `/lead-project`'s purpose is the most open-ended, so it elicits the full schema.
+This five-field schema is the **canonical implementation** of commander's intent referenced from [`references/autonomy.md`](../../references/autonomy.md). Other orchestrator-family skills (`/implement-project`, `/lead-refactor`, `/lead-bug-hunt`) use lighter variants — fewer fields because the work is more bounded — but `/lead-project`'s purpose is the most open-ended, so it elicits the full schema.
 
 Without a concrete end state, the loop has no termination condition and will drift into polish. If the user's initial statement is vague, keep asking until intent is crisp — "make it better" is not enough; "all features in backlog.md work end-to-end, `go test ./...` exits 0, and CHANGELOG covers the changes" is. Intent elicitation is the primary human-interaction point; invest the time.
 
@@ -76,52 +76,19 @@ The skill may NOT without explicit permission: push or merge to main/master, cre
 
 ### 0. Startup
 
-#### 0a. Branch and working-tree check
+Follow the shared startup protocol in [`references/lead-startup.md`](../../references/lead-startup.md). Skill-specific values:
 
-- Identify the main branch (`main` or `master`).
-- Verify current branch is NOT `main`/`master`. If it is: create `lead-project/<descriptive-name>` from current HEAD and check it out. Confirm the branch name with the user before creating.
-- Check working tree status:
-  - Clean → proceed.
-  - Dirty → **ask the user** how to handle uncommitted work: commit as-is, stash, discard, or abort. Do not guess.
+- **0a. Branch and working-tree check** — branch-name pattern: `lead-project/<descriptive-name>`. The descriptive name comes from the operator or is derived from the intent's purpose.
+- **0b. Resume existing run or start fresh** — state-doc filename: `LEAD_PROJECT_STATE.md`. "Resume as-is" semantic: agent re-runs a full Observe + Orient before the next Decide.
+- **0c. Elicit commander's intent** — five fields per the canonical schema in [`references/autonomy.md`](../../references/autonomy.md) § "Commander's-intent schemas per skill / `/lead-project`". Push-back examples specific to this skill:
+  - "Works well" → "What does 'well' look like? What command would I run to verify?"
+  - "Fix the bugs" → "Which bugs? Are they tracked? What's the test that proves they're fixed?"
+  - "Clean up the codebase" → "Clean up in what dimension — dead code, structure, naming? What signal tells us cleanup is sufficient?"
 
-#### 0b. Resume existing run or start fresh
+  **For each End-state condition, classify it** in the state doc as **Mechanical** (a shell command or other deterministic check the skill can run, e.g., `go test ./...` exits 0) or **Subjective** (requires human judgment, e.g., "README reads clearly to a new user"). Mechanical conditions become hard gates at termination; subjective conditions are presented to the user in the completion report for final sign-off.
 
-Check for `LEAD_PROJECT_STATE.md` at the repo root:
-
-- **If absent:** proceed to intent elicitation.
-- **If present:** read it. Verify the recorded branch still exists, is currently checked out, and the current HEAD matches `Last cycle HEAD` from the state doc.
-  - **HEAD matches and branch is current** — summarize current phase, pinned intent, and last cycle to the user. Offer three options:
-    1. **Resume** as-is (agent re-runs a full Observe + Orient before the next Decide).
-    2. **Resume with updated intent** — re-elicit the commander's intent fields, preserving the cycle log.
-    3. **Start fresh** — archive the existing state doc to `LEAD_PROJECT_STATE.<timestamp>.md` and re-elicit intent from scratch.
-  - **HEAD has moved or branch has changed** — do NOT auto-resume. Pull the andon cord immediately with a handoff explaining the divergence and let the user decide: reset to the recorded SHA, resume with updated intent against the new HEAD, or start fresh.
-
-#### 0c. Elicit commander's intent (interactive)
-
-Walk the user through the five fields one at a time. Do not accept a single free-form paragraph — the structure is load-bearing. For each field:
-
-1. **Purpose** — "In one or two sentences: why are we doing this iteration?"
-2. **Key tasks** — "What non-negotiable outcomes must be true when this is done? List them."
-3. **End state** — "What concrete, observable conditions indicate completion? (e.g., specific features working, test suite green, specific CHANGELOG entries, a specific release cut.) These become the termination check. **Prefer conditions that can be checked by a shell command** (e.g., `go test ./...` exits 0, `grep -q 'v1.0' CHANGELOG.md`), since those can be verified mechanically. Subjective conditions are allowed but will be flagged for your review at termination."
-4. **Constraints** — "What are the hard limits? (e.g., don't touch module X, don't change the public API, must remain Go 1.22 compatible.)"
-5. **Non-goals** — "What's explicitly out of scope? (e.g., no new features beyond the backlog, no dependency upgrades.)"
-
-**Push back on vague answers.** Do not accept "make it better," "improve quality," "works well," or similar. Propose sharper phrasings and ask the user to confirm or refine. Keep asking follow-up questions until the intent is crisp enough to anchor a multi-cycle loop. This is the primary human-interaction point — take the time to get it right. Several rounds of dialogue is normal; do not rush past this step.
-
-Examples of what to push back on:
-- "Works well" → "What does 'well' look like? What command would I run to verify?"
-- "Fix the bugs" → "Which bugs? Are they tracked? What's the test that proves they're fixed?"
-- "Clean up the codebase" → "Clean up in what dimension — dead code, structure, naming? What signal tells us cleanup is sufficient?"
-
-After each round, read back what you have and ask whether the user wants to refine further.
-
-**For each End-state condition, classify it** in the state doc as:
-- **Mechanical** — a shell command or other deterministic check the skill can run (e.g., `go test ./...` exits 0)
-- **Subjective** — requires human judgment (e.g., "README reads clearly to a new user")
-
-Both types are valid. Mechanical conditions become hard gates at termination; subjective conditions are presented to the user in the completion report for final sign-off.
-
-Read back the complete intent statement and ask for confirmation before proceeding.
+- **0d. Optional `/review-health`** — see below (skill-specific step inserted between intent elicitation and state-doc seeding).
+- **0e. Seed `LEAD_PROJECT_STATE.md`** — include the pinned intent (all five fields, verbatim), the initial triage plan (first 3–5 actions), an empty cycle log. Gitignore the state doc per the protocol.
 
 #### 0d. Optional `/review-health`
 
@@ -130,18 +97,6 @@ Decide whether to run `/review-health` based on:
 - **Skip it** when: intent is narrow and specific (e.g., "implement these three tickets"), or when prior state doc shows recent health assessment.
 
 If run, capture the findings as input to initial triage planning.
-
-#### 0e. Seed `LEAD_PROJECT_STATE.md`
-
-Create the state document at the repo root with:
-
-- Pinned intent (all five fields, verbatim)
-- Branch name and base branch
-- Creation timestamp
-- Initial triage plan (first 3–5 actions the skill plans to take)
-- Empty cycle log
-
-**Add `LEAD_PROJECT_STATE.md` to `.gitignore`** if not already present. Commit the `.gitignore` change separately.
 
 ### 1. OODA Loop
 
@@ -201,9 +156,9 @@ Available actions (non-exhaustive):
 
 - `/scope` — draft new tickets when gaps emerge that serve intent
 - `/implement` or `/implement-batch` or `/implement-project` — execute ticketed work
-- `/refactor` or `/refactor-deep` — code quality cleanup
+- `/refactor` or `/lead-refactor` — code quality cleanup
 - `/review-arch`, `/review-test`, `/tidy-docs`, `/review-release`, `/review-perf`, `/review-a11y`, `/review-security` — targeted reviews
-- `/review-deep` — comprehensive review pass
+- `/lead-review` — comprehensive review pass
 - `/bug-hunt` — proactive bug discovery
 - `/bug-fix` — diagnosis-first bug fixing
 - `/test-mutation` — mutation testing
@@ -413,7 +368,14 @@ The skill records every deferral with rationale in the state doc so the completi
 
 ## Andon Cord Protocol
 
-**The andon cord is the only planned escalation path.** The user is not checking in between cycles — they will only be interrupted when the cord is pulled. Pull it sparingly but decisively.
+Follow the shared handoff template and per-skill extension protocol in [`references/autonomy.md`](../../references/autonomy.md) § "Shared handoff template" and § "Per-skill handoff extensions". Skill-specific values:
+
+- **Title format** — `## Andon Cord — /lead-project — Cycle N` (the cycle number is load-bearing for this skill).
+- **What I tried** subsection — between "What went wrong" and "Pre-loaded options," include the actions attempted, `/think-*` skills invoked and their verdicts, and alternative approaches considered. This is a `/lead-project` extension; sub-skill orchestrators typically don't have enough decision history to populate it.
+- **Current-state additions:**
+  - `Mechanical end-state conditions: <K of M passing>`
+  - `Pending key tasks: <summary>`
+  - `Cycle log pointer: see LEAD_PROJECT_STATE.md cycles N-3 through N`
 
 ### Before pulling the cord
 
@@ -437,23 +399,6 @@ Pull the cord when:
 - **Resume-time HEAD divergence.** On resume, recorded branch SHA does not match current HEAD.
 - **Hard cap hit.** 50 cycles elapsed without reaching termination. Something is likely wrong — hand off rather than continue.
 - **Sub-skill andon cord cascades up.** A sub-skill pulled its own andon cord for a reason this skill cannot resolve.
-
-### Handoff format
-
-Use the **shared handoff template** from [`references/autonomy.md`](../../references/autonomy.md). Append the produced handoff to the state doc under a `## Andon Cord` section and present it to the user.
-
-Skill-specific extensions to the shared template:
-
-- **Title** — `## Andon Cord — /lead-project — Cycle N` (the cycle number is load-bearing for this skill).
-- **What I tried** subsection — between "What went wrong" and "Pre-loaded options," include the actions attempted, `/think-*` skills invoked and their verdicts, and alternative approaches considered. This is a `/lead-project` extension; sub-skill orchestrators typically don't have enough decision history to populate it.
-- **Current state** must additionally include:
-  - `Mechanical end-state conditions: <K of M passing>`
-  - `Pending key tasks: <summary>`
-  - `Cycle log pointer: see LEAD_PROJECT_STATE.md cycles N-3 through N`
-
-All other sections (project orientation, pre-loaded options, recommendation with pre-rebutted counterargument and what-would-flip, current state baseline, to resume) follow the shared template structure verbatim.
-
-After pulling the cord: stop. Do not attempt additional cycles. Wait for user input.
 
 ## State Management
 
@@ -604,9 +549,9 @@ Ensure `LEAD_PROJECT_STATE.md` is ignored. Commit the `.gitignore` change on the
 
 `/scope` and `/scope-project` create tickets. `/lead-project` may invoke `/scope` when it identifies a gap worth ticketing. `/scope-project` is typically run by the user before `/lead-project` to establish the initial backlog.
 
-**Relationship to `/review-deep`:**
+**Relationship to `/lead-review`:**
 
-`/review-deep` is a comprehensive review pass. `/lead-project` may invoke it near the end of a run to validate end-state conditions, or invoke individual `/review-*` skills earlier when specific concerns arise.
+`/lead-review` is a comprehensive review pass. `/lead-project` may invoke it near the end of a run to validate end-state conditions, or invoke individual `/review-*` skills earlier when specific concerns arise.
 
 **Relationship to `/think-*` skills:**
 
@@ -627,10 +572,10 @@ Ensure `LEAD_PROJECT_STATE.md` is ignored. Commit the `.gitignore` change on the
 ├── (per cycle, any of:)
 │   ├── /scope
 │   ├── /implement | /implement-batch | /implement-project
-│   ├── /refactor | /refactor-deep
+│   ├── /refactor | /lead-refactor
 │   ├── /review-arch | /review-test | /tidy-docs | /review-release
 │   ├── /review-perf | /review-a11y | /review-security
-│   ├── /review-deep
+│   ├── /lead-review
 │   ├── /bug-hunt | /bug-fix
 │   ├── /test-mutation
 │   └── /think-reframe | /think-diagnose | /think-deliberate

@@ -1,0 +1,1875 @@
+{
+  "guild": {
+    "id": "G001",
+    "name": "Lo-Fi Radio Club"
+  },
+  "channel": {
+    "id": "C001GEN",
+    "type": "GuildTextChat",
+    "name": "general",
+    "topic": "music recs · listening parties · existence"
+  },
+  "dateRange": {
+    "after": null,
+    "before": null
+  },
+  "exportedAt": "2026-04-25T01:00:00Z",
+  "messages": [
+    {
+      "id": "100001",
+      "type": "Default",
+      "timestamp": "2026-04-18T18:02:00.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "ok new week, what's everyone listening to. I just put on the new Adrianne Lenker live ep and it's stunning",
+      "author": {
+        "id": "1001",
+        "name": "ravi",
+        "nickname": "ravi"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100002",
+      "type": "Default",
+      "timestamp": "2026-04-18T18:03:30.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "haven't heard it yet, sending now. last week I had Yo La Tengo on loop",
+      "author": {
+        "id": "1002",
+        "name": "sage",
+        "nickname": "sage"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "🎶",
+            "code": "🎶",
+            "isAnimated": false
+          },
+          "count": 2
+        }
+      ],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100003",
+      "type": "Default",
+      "timestamp": "2026-04-18T18:04:11.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "yo la tengo is forever rotation. side note: the new bonny light horseman album is out next month",
+      "author": {
+        "id": "1003",
+        "name": "echo_tape",
+        "nickname": "echo"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": "100002",
+        "channelId": "C001GEN",
+        "guildId": "G001"
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100004",
+      "type": "Default",
+      "timestamp": "2026-04-18T18:05:00.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "wait is it really, ahh",
+      "author": {
+        "id": "1004",
+        "name": "noor",
+        "nickname": "noor"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "🥹",
+            "code": "🥹",
+            "isAnimated": false
+          },
+          "count": 3
+        }
+      ],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100005",
+      "type": "Default",
+      "timestamp": "2026-04-18T18:09:42.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I've been on this kalita kovacs kick all week. her old stuff. it scratches a particular itch",
+      "author": {
+        "id": "1005",
+        "name": "tomo",
+        "nickname": "tomo"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100006",
+      "type": "Default",
+      "timestamp": "2026-04-18T18:18:00.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "track of the day from me: \"summer end\" by sleepy fish. lo-fi but with actual emotional content",
+      "author": {
+        "id": "1006",
+        "name": "bea",
+        "nickname": "bea"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100007",
+      "type": "Default",
+      "timestamp": "2026-04-18T18:19:33.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "saved",
+      "author": {
+        "id": "1007",
+        "name": "kestrel",
+        "nickname": "kestrel"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100008",
+      "type": "Default",
+      "timestamp": "2026-04-18T18:25:01.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "is anyone going to the listening party on saturday? I have a +1 spare",
+      "author": {
+        "id": "1008",
+        "name": "ami",
+        "nickname": "ami"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100009",
+      "type": "Default",
+      "timestamp": "2026-04-18T18:25:55.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "ME. I want it. dm",
+      "author": {
+        "id": "1001",
+        "name": "ravi",
+        "nickname": "ravi"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100010",
+      "type": "Default",
+      "timestamp": "2026-04-18T18:26:30.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "yours, will dm",
+      "author": {
+        "id": "1008",
+        "name": "ami",
+        "nickname": "ami"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100011",
+      "type": "Default",
+      "timestamp": "2026-04-18T19:11:20.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "off-topic but the new pixar short is so good, please watch it",
+      "author": {
+        "id": "1009",
+        "name": "dax",
+        "nickname": "dax"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100012",
+      "type": "Default",
+      "timestamp": "2026-04-18T19:14:00.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "agreed I cried at work",
+      "author": {
+        "id": "1010",
+        "name": "freya",
+        "nickname": "freya"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100013",
+      "type": "Default",
+      "timestamp": "2026-04-18T19:14:50.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "lol",
+      "author": {
+        "id": "1002",
+        "name": "sage",
+        "nickname": "sage"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100014",
+      "type": "Default",
+      "timestamp": "2026-04-18T20:01:00.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "@everyone — quick reminder, the radio club listening party is saturday 8pm pacific in the voice channel. theme is \"first track that hits you in the chest\". come prepared",
+      "author": {
+        "id": "1011",
+        "name": "milo",
+        "nickname": "milo (mod)"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "✅",
+            "code": "✅",
+            "isAnimated": false
+          },
+          "count": 7
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "🎧",
+            "code": "🎧",
+            "isAnimated": false
+          },
+          "count": 5
+        }
+      ],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100015",
+      "type": "Default",
+      "timestamp": "2026-04-18T20:02:18.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I'm bringing \"holocene\" no I will not be apologizing",
+      "author": {
+        "id": "1012",
+        "name": "june",
+        "nickname": "june"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100016",
+      "type": "Default",
+      "timestamp": "2026-04-18T20:02:55.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "based",
+      "author": {
+        "id": "1006",
+        "name": "bea",
+        "nickname": "bea"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100017",
+      "type": "Default",
+      "timestamp": "2026-04-18T20:03:18.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "first track that hit me in the chest was \"lover, you should've come over\". still does",
+      "author": {
+        "id": "1005",
+        "name": "tomo",
+        "nickname": "tomo"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100018",
+      "type": "Default",
+      "timestamp": "2026-04-18T20:08:01.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "buckley one is unbeatable. real ones know",
+      "author": {
+        "id": "1003",
+        "name": "echo_tape",
+        "nickname": "echo"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100019",
+      "type": "Default",
+      "timestamp": "2026-04-19T14:30:00.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "totally unrelated but does anyone here use anytype / obsidian / etc for music notes? trying to track which albums I've actually finished vs just queued",
+      "author": {
+        "id": "1004",
+        "name": "noor",
+        "nickname": "noor"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100020",
+      "type": "Default",
+      "timestamp": "2026-04-19T14:32:11.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "obsidian + a single album.md per album. tags: queued, finished, dropped",
+      "author": {
+        "id": "1001",
+        "name": "ravi",
+        "nickname": "ravi"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100021",
+      "type": "Default",
+      "timestamp": "2026-04-19T14:32:48.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I do this in notion with a database, +1 to it",
+      "author": {
+        "id": "1009",
+        "name": "dax",
+        "nickname": "dax"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100022",
+      "type": "Default",
+      "timestamp": "2026-04-19T14:33:30.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "ok obsidian it is. thanks both",
+      "author": {
+        "id": "1004",
+        "name": "noor",
+        "nickname": "noor"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100023",
+      "type": "Default",
+      "timestamp": "2026-04-19T15:00:18.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "hot take: 70% of music discovery in 2026 is happening in discord servers like this one. radio is dead, blogs are dead, magazines are dead, and tiktok is a search engine not a discovery engine",
+      "author": {
+        "id": "1012",
+        "name": "june",
+        "nickname": "june"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100024",
+      "type": "Default",
+      "timestamp": "2026-04-19T15:01:42.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "agreed",
+      "author": {
+        "id": "1007",
+        "name": "kestrel",
+        "nickname": "kestrel"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100025",
+      "type": "Default",
+      "timestamp": "2026-04-19T15:02:00.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "sort of agreed. the algorithm still moves the needle for like 80% of casual listeners, we're just not them",
+      "author": {
+        "id": "1010",
+        "name": "freya",
+        "nickname": "freya"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100026",
+      "type": "Default",
+      "timestamp": "2026-04-19T15:02:48.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "yeah 'discovery' for the average listener is whatever spotify autoplay puts on next",
+      "author": {
+        "id": "1002",
+        "name": "sage",
+        "nickname": "sage"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100027",
+      "type": "Default",
+      "timestamp": "2026-04-19T15:03:34.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "fair.",
+      "author": {
+        "id": "1012",
+        "name": "june",
+        "nickname": "june"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100028",
+      "type": "Default",
+      "timestamp": "2026-04-19T19:55:07.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I just got back from a record store in providence. I bought too many records. I have no regrets and no money",
+      "author": {
+        "id": "1005",
+        "name": "tomo",
+        "nickname": "tomo"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100029",
+      "type": "Default",
+      "timestamp": "2026-04-19T19:56:12.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "this is the way",
+      "author": {
+        "id": "1008",
+        "name": "ami",
+        "nickname": "ami"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "💸",
+            "code": "💸",
+            "isAnimated": false
+          },
+          "count": 4
+        }
+      ],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100030",
+      "type": "Default",
+      "timestamp": "2026-04-19T19:57:00.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "name them",
+      "author": {
+        "id": "1006",
+        "name": "bea",
+        "nickname": "bea"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100031",
+      "type": "Default",
+      "timestamp": "2026-04-19T19:58:14.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "fine. nick drake bryter layter, japan tin drum, low double negative, cocteau twins heaven or las vegas, and a duster compilation that i don't think is supposed to exist",
+      "author": {
+        "id": "1005",
+        "name": "tomo",
+        "nickname": "tomo"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100032",
+      "type": "Default",
+      "timestamp": "2026-04-19T19:58:50.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "the duster one is real and I'm jealous",
+      "author": {
+        "id": "1003",
+        "name": "echo_tape",
+        "nickname": "echo"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100033",
+      "type": "Default",
+      "timestamp": "2026-04-19T19:59:22.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "double negative on vinyl is also unhinged in the best way",
+      "author": {
+        "id": "1010",
+        "name": "freya",
+        "nickname": "freya"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100034",
+      "type": "Default",
+      "timestamp": "2026-04-20T03:01:30.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "ok the listening party was something else. milo's pick (\"weightless\" by marconi union) blew the room away",
+      "author": {
+        "id": "1008",
+        "name": "ami",
+        "nickname": "ami"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100035",
+      "type": "Default",
+      "timestamp": "2026-04-20T03:02:11.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I came in late, did sage play \"strange overtones\" or am i making that up",
+      "author": {
+        "id": "1001",
+        "name": "ravi",
+        "nickname": "ravi"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100036",
+      "type": "Default",
+      "timestamp": "2026-04-20T03:02:48.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I did. you're not making it up",
+      "author": {
+        "id": "1002",
+        "name": "sage",
+        "nickname": "sage"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100037",
+      "type": "Default",
+      "timestamp": "2026-04-20T03:03:10.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "it was a great night. thanks for organizing milo",
+      "author": {
+        "id": "1007",
+        "name": "kestrel",
+        "nickname": "kestrel"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100038",
+      "type": "Default",
+      "timestamp": "2026-04-20T03:03:30.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "love this server",
+      "author": {
+        "id": "1011",
+        "name": "milo",
+        "nickname": "milo (mod)"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "❤️",
+            "code": "❤️",
+            "isAnimated": false
+          },
+          "count": 9
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "🎶",
+            "code": "🎶",
+            "isAnimated": false
+          },
+          "count": 4
+        }
+      ],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100039",
+      "type": "Default",
+      "timestamp": "2026-04-20T15:11:12.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "for next time can we have a theme that isn't hyper-emotional bangers, my heart can't take it weekly",
+      "author": {
+        "id": "1009",
+        "name": "dax",
+        "nickname": "dax"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100040",
+      "type": "Default",
+      "timestamp": "2026-04-20T15:11:50.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "noted. theme suggestions for next month welcome — drop them as replies",
+      "author": {
+        "id": "1012",
+        "name": "june",
+        "nickname": "june"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": "100040",
+        "channelId": "C001GEN",
+        "guildId": "G001"
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100041",
+      "type": "Default",
+      "timestamp": "2026-04-20T15:12:18.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "\"under three minutes only\"",
+      "author": {
+        "id": "1005",
+        "name": "tomo",
+        "nickname": "tomo"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": "100040",
+        "channelId": "C001GEN",
+        "guildId": "G001"
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100042",
+      "type": "Default",
+      "timestamp": "2026-04-20T15:12:42.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "\"covers that beat the original\"",
+      "author": {
+        "id": "1003",
+        "name": "echo_tape",
+        "nickname": "echo"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": "100040",
+        "channelId": "C001GEN",
+        "guildId": "G001"
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100043",
+      "type": "Default",
+      "timestamp": "2026-04-20T15:13:09.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "\"first track of an album that made you finish the album\"",
+      "author": {
+        "id": "1006",
+        "name": "bea",
+        "nickname": "bea"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": "100040",
+        "channelId": "C001GEN",
+        "guildId": "G001"
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100044",
+      "type": "Default",
+      "timestamp": "2026-04-20T15:13:30.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "\"songs you've never shared with anyone\"",
+      "author": {
+        "id": "1004",
+        "name": "noor",
+        "nickname": "noor"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": "100040",
+        "channelId": "C001GEN",
+        "guildId": "G001"
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100045",
+      "type": "Default",
+      "timestamp": "2026-04-20T15:13:55.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "the last one is brutal, I love it",
+      "author": {
+        "id": "1010",
+        "name": "freya",
+        "nickname": "freya"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100046",
+      "type": "Default",
+      "timestamp": "2026-04-21T17:00:00.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "@everyone — we hit 500 members today. thanks for being a real one of the few good corners of the internet still. we'll be doing a small ama with the founder of lo-fi-stream-collective on sunday, more info this week",
+      "author": {
+        "id": "1011",
+        "name": "milo",
+        "nickname": "milo (mod)"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "🎉",
+            "code": "🎉",
+            "isAnimated": false
+          },
+          "count": 18
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "🥹",
+            "code": "🥹",
+            "isAnimated": false
+          },
+          "count": 11
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "🎧",
+            "code": "🎧",
+            "isAnimated": false
+          },
+          "count": 7
+        }
+      ],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100047",
+      "type": "Default",
+      "timestamp": "2026-04-21T17:02:11.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "🎉🎉🎉",
+      "author": {
+        "id": "1007",
+        "name": "kestrel",
+        "nickname": "kestrel"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100048",
+      "type": "Default",
+      "timestamp": "2026-04-21T17:02:48.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "this server saved my taste in 2025 honestly",
+      "author": {
+        "id": "1001",
+        "name": "ravi",
+        "nickname": "ravi"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100049",
+      "type": "Default",
+      "timestamp": "2026-04-21T17:03:09.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "true.",
+      "author": {
+        "id": "1008",
+        "name": "ami",
+        "nickname": "ami"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100050",
+      "type": "Default",
+      "timestamp": "2026-04-21T17:03:35.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "🎧",
+      "author": {
+        "id": "1012",
+        "name": "june",
+        "nickname": "june"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100051",
+      "type": "Default",
+      "timestamp": "2026-04-21T22:30:00.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "ok off topic but I had the worst meeting day today, the only thing that got me through was a 4 hour ambient mix in my headphones",
+      "author": {
+        "id": "1009",
+        "name": "dax",
+        "nickname": "dax"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100052",
+      "type": "Default",
+      "timestamp": "2026-04-21T22:31:11.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "link the mix",
+      "author": {
+        "id": "1010",
+        "name": "freya",
+        "nickname": "freya"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100053",
+      "type": "Default",
+      "timestamp": "2026-04-21T22:31:42.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "https://example.invalid/4hr-ambient-mix",
+      "author": {
+        "id": "1009",
+        "name": "dax",
+        "nickname": "dax"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100054",
+      "type": "Default",
+      "timestamp": "2026-04-22T15:18:09.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "track of the day: \"sunset lover\" by petit biscuit. cliche but right",
+      "author": {
+        "id": "1006",
+        "name": "bea",
+        "nickname": "bea"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100055",
+      "type": "Default",
+      "timestamp": "2026-04-22T15:19:01.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "still slaps tho",
+      "author": {
+        "id": "1004",
+        "name": "noor",
+        "nickname": "noor"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100056",
+      "type": "Default",
+      "timestamp": "2026-04-22T15:19:30.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I went deep on jeff parker this morning. \"forfolks\" first three tracks are peak",
+      "author": {
+        "id": "1002",
+        "name": "sage",
+        "nickname": "sage"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100057",
+      "type": "Default",
+      "timestamp": "2026-04-22T15:20:00.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "every time someone says forfolks I have to listen to it again. dangerous server",
+      "author": {
+        "id": "1005",
+        "name": "tomo",
+        "nickname": "tomo"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100058",
+      "type": "Default",
+      "timestamp": "2026-04-22T16:48:00.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "anyone here a sigur ros person",
+      "author": {
+        "id": "1003",
+        "name": "echo_tape",
+        "nickname": "echo"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100059",
+      "type": "Default",
+      "timestamp": "2026-04-22T16:48:42.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "() era yes",
+      "author": {
+        "id": "1001",
+        "name": "ravi",
+        "nickname": "ravi"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100060",
+      "type": "Default",
+      "timestamp": "2026-04-22T16:49:11.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "agaetis byrjun for me",
+      "author": {
+        "id": "1008",
+        "name": "ami",
+        "nickname": "ami"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100061",
+      "type": "Default",
+      "timestamp": "2026-04-22T16:49:30.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "the long answer is all of it",
+      "author": {
+        "id": "1012",
+        "name": "june",
+        "nickname": "june"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100062",
+      "type": "Default",
+      "timestamp": "2026-04-23T19:00:00.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "@everyone — sunday ama is locked. 7pm pacific. host: milo. guest: ana from lo-fi-stream-collective. drop questions you want asked in this thread",
+      "author": {
+        "id": "1011",
+        "name": "milo",
+        "nickname": "milo (mod)"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "🎤",
+            "code": "🎤",
+            "isAnimated": false
+          },
+          "count": 6
+        }
+      ],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100063",
+      "type": "Default",
+      "timestamp": "2026-04-23T19:01:11.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "what was the moment they realized streaming could actually pay artists in lo-fi/ambient",
+      "author": {
+        "id": "1001",
+        "name": "ravi",
+        "nickname": "ravi"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": "100063",
+        "channelId": "C001GEN",
+        "guildId": "G001"
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100064",
+      "type": "Default",
+      "timestamp": "2026-04-23T19:01:48.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "what's a sub-genre they think will break in 2026",
+      "author": {
+        "id": "1005",
+        "name": "tomo",
+        "nickname": "tomo"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": "100063",
+        "channelId": "C001GEN",
+        "guildId": "G001"
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100065",
+      "type": "Default",
+      "timestamp": "2026-04-23T19:02:18.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "what tools do they use for curation that they wish more people knew about",
+      "author": {
+        "id": "1007",
+        "name": "kestrel",
+        "nickname": "kestrel"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": "100063",
+        "channelId": "C001GEN",
+        "guildId": "G001"
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100066",
+      "type": "Default",
+      "timestamp": "2026-04-23T19:03:00.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "great qs, will ask all three",
+      "author": {
+        "id": "1012",
+        "name": "june",
+        "nickname": "june"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100067",
+      "type": "Default",
+      "timestamp": "2026-04-24T22:14:00.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "y'all I need a friday recommendation, currently fried",
+      "author": {
+        "id": "1010",
+        "name": "freya",
+        "nickname": "freya"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100068",
+      "type": "Default",
+      "timestamp": "2026-04-24T22:14:42.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "if you haven't done it in a while, put on \"in rainbows\" front to back. it's friday.",
+      "author": {
+        "id": "1006",
+        "name": "bea",
+        "nickname": "bea"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100069",
+      "type": "Default",
+      "timestamp": "2026-04-24T22:15:11.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "this is exactly what I needed thank you",
+      "author": {
+        "id": "1010",
+        "name": "freya",
+        "nickname": "freya"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    },
+    {
+      "id": "100070",
+      "type": "Default",
+      "timestamp": "2026-04-24T22:15:42.000Z",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "🎧",
+      "author": {
+        "id": "1009",
+        "name": "dax",
+        "nickname": "dax"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": null,
+        "channelId": null,
+        "guildId": null
+      },
+      "inlineEmojis": []
+    }
+  ]
+}

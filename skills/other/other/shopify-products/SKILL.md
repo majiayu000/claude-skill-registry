@@ -1,10 +1,6 @@
 ---
 name: shopify-products
-description: >
-  Create and manage Shopify products via the Admin API.
-  Workflow: gather product data, choose method (API or CSV), execute, verify.
-  Use when adding products, bulk importing, updating variants, managing inventory,
-  uploading product images, or assigning products to collections.
+description: "Create and manage Shopify products via the Admin GraphQL API or CSV import. Workflow: gather data, choose method, execute, verify. Use whenever the user wants to add products to Shopify, bulk-import a catalog from CSV/spreadsheet/URL, update variants or prices, manage inventory quantities, upload product images, or assign products to collections."
 compatibility: claude-code-only
 ---
 

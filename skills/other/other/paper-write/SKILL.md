@@ -11,7 +11,7 @@ Draft a LaTeX paper based on: **$ARGUMENTS**
 
 ## Constants
 
-- **REVIEWER_MODEL = `gpt-5.4`** — Model used via Codex MCP for section review. Must be an OpenAI model.
+- **REVIEWER_MODEL = `gpt-5.5`** — Model used via Codex MCP for section review. Must be an OpenAI model.
 - **TARGET_VENUE = `ICLR`** — Default venue. Supported: `ICLR`, `NeurIPS`, `ICML`, `CVPR` (also ICCV/ECCV), `ACL` (also EMNLP/NAACL), `AAAI`, `ACM` (ACM MM, SIGIR, KDD, CHI, etc.), `IEEE_JOURNAL` (IEEE Transactions / Letters, e.g., T-PAMI, JSAC, TWC, TCOM, TSP, TIP), `IEEE_CONF` (IEEE conferences, e.g., ICC, GLOBECOM, INFOCOM, ICASSP). Determines style file and formatting.
 - **ANONYMOUS = true** — If true, use anonymous author block. Set `false` for camera-ready. Note: most IEEE venues do NOT use anonymous submission — set `false` for IEEE.
 - **MAX_PAGES = 9** — Main body page limit. For ML conferences: counts from first page to end of Conclusion section, references and appendix NOT counted. **For IEEE venues: references ARE counted toward the page limit.** Typical limits: IEEE journal = no strict limit (but 12-14 pages typical for Transactions, 4-5 for Letters), IEEE conference = 5-8 pages including references.
@@ -64,6 +64,27 @@ Sources accepted: local TeX dir / file, local PDF, arXiv id (`2501.12345` or `ar
 - Use `style_profile.md` as **structural** guidance only. Match section count, section ordering tendency, theorem-environment density, caption-length distribution, sentence cadence, math display ratio, citation style.
 - **Never copy prose, claims, examples, or terminology** from anything reachable through the cache. The profile is intentionally aggregate; if you need substance, use the user's own outline.
 - **Never pass `— style-ref` (or the cache contents) to reviewer / auditor sub-agents.** Cross-model review independence (`../shared-references/reviewer-independence.md`) requires reviewers see only the artifact and the user's prompt, not the author's stylistic context.
+
+### `<!-- DATA_NEEDED -->` markers (when `GAP_REPORT.md` exists)
+
+If `/paper-plan` ran with `— style-ref:` it will have emitted `GAP_REPORT.md` alongside `PAPER_PLAN.md`. This file lists structural slots (ablation tables, scaling experiments, failure-case analyses, …) the exemplar implies but the user has **no evidence to fill**.
+
+When `GAP_REPORT.md` is present and a section slot is classified as `status: missing`:
+
+1. **Do not fabricate numerical results, figure references, or qualitative claims** to fill that slot.
+2. Emit an HTML-comment placeholder at the exact location the missing content would go:
+
+   ```latex
+   <!-- DATA_NEEDED: GAP_S5_ABLATION — ablation table comparing X across the 3 axes implied by exemplar -->
+   ```
+
+3. Slot ID and one-line description come straight from `GAP_REPORT.md`. **Never invent Slot IDs.** Never reword the description to be more confident than the report.
+4. The marker is intentionally an HTML comment so it is invisible in the rendered PDF but **searchable via `grep -r "DATA_NEEDED" sec/`** for human triage / `/experiment-bridge` follow-up.
+5. For `status: partial`, write what the user has and emit `<!-- DATA_NEEDED: <Slot ID> — <what specifically is short> -->` at the gap point in the same paragraph (do not split the section).
+
+**Carve-out from "no placeholder" rule.** The default `/paper-write` discipline (no placeholders such as "see supplementary" or "TBD") still applies for everything **except** GAP_REPORT-listed missing slots. The marker is the principled way to surface genuine evidence deficits without compromising claim integrity.
+
+Original idea: @zhangpelf in [#217](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/issues/217).
 
 ## Templates
 
@@ -170,7 +191,7 @@ Process sections in order. For each section:
 
 1. **Read the plan** — what claims, evidence, citations belong here
 2. **Read NARRATIVE_REPORT.md** — extract relevant content, findings, and quantitative results
-3. **Draft content** — write complete LaTeX (not placeholders)
+3. **Draft content** — write complete LaTeX (no fabricated placeholders). **Exception:** if `GAP_REPORT.md` exists and the section has slots with `status: missing`, emit `<!-- DATA_NEEDED: <Slot ID> — <description> -->` at those points instead of inventing data — see the DATA_NEEDED markers subsection above.
 4. **Insert figures/tables** — use snippets from `figures/latex_includes.tex`
 5. **Add citations** — for ML conferences (ICLR/NeurIPS/ICML/CVPR/ACL/AAAI): use `\citep{}` / `\citet{}` (natbib). **For IEEE venues**: use `\cite{}` (numeric style via `cite` package). Never mix natbib and cite commands.
 
@@ -486,7 +507,7 @@ Send the complete draft to GPT-5.4 xhigh:
 
 ```
 mcp__codex__codex:
-  model: gpt-5.4
+  model: gpt-5.5
   config: {"model_reasoning_effort": "xhigh"}
   prompt: |
     Review this [VENUE] paper draft (main body, excluding appendix).

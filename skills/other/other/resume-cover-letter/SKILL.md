@@ -1,11 +1,6 @@
 ---
 name: resume-cover-letter
-description: >
-  Write a resume/CV or cover letter tailored to a specific role. Handles regional
-  format differences (AU/NZ, US, UK), ATS-friendly formatting, achievement-focused
-  bullets, and cover letter structure. Use when someone needs help with a job
-  application, resume review, CV update, or cover letter draft. Triggers: resume,
-  CV, cover letter, job application, career document.
+description: "Write a resume / CV or cover letter tailored to a specific role. Handles regional format differences (AU/NZ, US, UK), ATS-friendly formatting, achievement-focused bullets, and cover letter structure. Use whenever the user mentions a job application, resume, CV, cover letter, career document, applying for a role, or needs help framing their experience for a specific job."
 ---
 
 # Resume and Cover Letter Writer

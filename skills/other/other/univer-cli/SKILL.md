@@ -22,6 +22,7 @@ Use this skill when the task involves any of these:
 - streaming a bounded rectangle through shell tools such as `awk`, `sort`, `uniq`, `wc`, or `jq`
 - opening a readonly local preview with `univer view`
 - checking local workbook status and creating local changesets with `status` and `commit`
+- discarding local mutations or resetting local commits with `restore` and `reset`
 - cloning, pulling, or syncing workbook versioning state with a configured remote
 - exporting a handoff file and proving it is usable
 
@@ -69,6 +70,8 @@ Direct package access can corrupt workbooks or teach the agent false state. If t
 | Preview readonly workbook state | `univer view --no-open --json` or `univer view` |
 | Check local versioning state | `univer status` |
 | Create a local changeset from local mutations | `univer commit --message <message>` |
+| Discard uncommitted local mutations | `univer restore` |
+| Reset local unsynced commits | `univer reset --soft HEAD~N` or `univer reset --hard HEAD~N` |
 | Initialize a local package from an existing remote unit | `univer clone --unit-id <unitID>` |
 | Pull remote-only changes | `univer pull` |
 | Sync local and remote versioning state | `univer sync` |
@@ -207,6 +210,33 @@ univer status "$WB"
 
 `commit` creates a local changeset from current local mutations. It does not push to a remote.
 
+### Restore Or Reset Local Work
+
+Use `restore` when the current uncommitted workbook mutations should be discarded while preserving
+local commits and synced history.
+
+```bash
+univer status "$WB"
+univer restore "$WB"
+univer status "$WB"
+```
+
+Use `reset --soft HEAD~N` to remove the last N local unsynced commits and restore their mutations
+as uncommitted local mutations. Use `reset --hard HEAD~N` to remove the last N local unsynced
+commits and discard current uncommitted local mutations.
+
+```bash
+univer status "$WB"
+univer reset "$WB" --soft HEAD~1
+univer status "$WB"
+
+univer reset "$WB" --hard HEAD~1
+univer status "$WB"
+```
+
+`reset` only accepts `HEAD~N` targets and only operates on local unsynced commits. It does not
+rewrite synced changesets or remote history.
+
 ### Clone, Pull, And Sync
 
 Use `clone` when a remote workbook unit already exists and you need a new local package path. The
@@ -299,6 +329,8 @@ Avoid `pnpm dev -- ...` in clean pipeline examples. The pnpm/tsx wrapper can pri
 - `pipe in` writes parsed matrix data and reports a summary; it does not echo input.
 - `view` is readonly preview. Do not treat it as mutation verification unless the task is visual review.
 - `commit` is local only; use `sync` to push local changesets.
+- `restore` discards only uncommitted local mutations; it does not remove local commits.
+- `reset` is local-only and limited to `HEAD~N` over unsynced local commits. Do not use it as a remote revert or force-push workflow.
 - `sync` does not push uncommitted local mutations. Commit verified workbook changes first.
 - If `sync` reports an invalid remote binding, stop and diagnose the package or remote setup.
 - `pull` requires a package already bound to a remote unit. Use `sync` for first remote creation or `clone --unit-id` for an existing remote unit.

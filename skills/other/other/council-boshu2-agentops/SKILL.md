@@ -1,6 +1,7 @@
 ---
 name: council
 description: 'Run multi-judge consensus.'
+practices: [llm-eval-harness, ai-assisted-dev, design-by-contract]
 skill_api_version: 1
 context:
   window: isolated
@@ -28,6 +29,7 @@ Spawn parallel judges with different perspectives, consolidate into consensus. W
 /council brainstorm caching approaches                         # brainstorm
 /council research kubernetes upgrade strategies                # research
 /council --preset=security-audit validate the auth system      # preset personas
+/council --deep --mixed --preset=leadership-quartet validate product thesis
 /council --deep --explorers=3 research upgrade automation      # deep + explorers
 /council --debate validate the auth system                     # adversarial 2-round review
 /council                                                       # infers from context
@@ -104,7 +106,7 @@ See [references/packet-format.md](references/packet-format.md) for the full JSON
 
 **Auto-Escalation:** When `--preset` or `--perspectives` specifies more perspectives than the current judge count, automatically escalate judge count to match. The `--count` flag overrides auto-escalation.
 
-**Mixed-mode perspective assignment:** Under `--mixed`, the perspective list is built once and each perspective is assigned to one Claude judge **and** one Codex judge with identical prompt and packet. This produces head-to-head pairs (perspective × vendor) so verdict differences isolate the vendor variable. Without `--preset` or `--perspectives`, both vendors run 3 generic judges each (6 total). With a 4-perspective preset like `security-audit` or `plan-review`, both vendors run those 4 perspectives (8 total). Do not split perspectives across vendors — symmetric pairing is the whole point of `--mixed`.
+**Mixed-mode perspective assignment:** Under `--mixed`, the perspective list is built once and each perspective is assigned to one Claude judge **and** one Codex judge with identical prompt and packet. This produces head-to-head pairs (perspective × vendor) so verdict differences isolate the vendor variable. Without `--preset` or `--perspectives`, both vendors run 3 generic judges each (6 total). With a 4-perspective preset like `security-audit`, `plan-review`, or `leadership-quartet`, both vendors run those 4 perspectives (8 total). Do not split perspectives across vendors — symmetric pairing is the whole point of `--mixed`.
 
 ---
 

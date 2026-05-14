@@ -1,15 +1,6 @@
 ---
 name: icon-set-generator
-description: >
-  Generate cohesive, project-specific SVG icon sets for websites and applications.
-  Use this skill whenever the user needs custom icons, an icon set for a website or app,
-  icons for a client project, or mentions needing SVG icons that look consistent together.
-  Also trigger when the user describes a project and icons would naturally be part of the
-  deliverable — e.g. "I'm building a site for a plumber" implies they'll need service icons.
-  Trigger on: "icons for", "icon set", "custom icons", "SVG icons", "make me icons",
-  "I need icons", "website icons", "project icons", or any request for consistent visual
-  assets for a web project. This skill produces individual SVG files with a consistent
-  style engine, not generic icon library lookups.
+description: "Generate cohesive, project-specific SVG icon sets for websites and applications. Use this skill whenever the user needs custom icons, an icon set for a website or app, icons for a client project, or mentions needing SVG icons that look consistent together. Also trigger when the user describes a project and icons would naturally be part of the deliverable — e.g. 'I'm building a site for a plumber' implies they'll need service icons. Trigger on: 'icons for', 'icon set', 'custom icons', 'SVG icons', 'make me icons', 'I need icons', 'website icons', 'project icons', or any request for consistent visual assets for a web project. Produces individual SVG files with a consistent style engine, not generic icon library lookups."
 compatibility: claude-code-only
 ---
 

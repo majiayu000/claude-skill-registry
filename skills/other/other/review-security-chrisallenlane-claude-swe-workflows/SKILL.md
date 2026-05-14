@@ -401,11 +401,7 @@ Proposed: 7 tickets
 Approve / edit / decline?
 ```
 
-Wait for the response. Three outcomes:
-
-- **Approve:** Proceed to 7b.
-- **Edit:** The operator modifies the structure (merge two tickets, split one, drop a finding, change granularity). Apply the edits, present the revised structure, and repeat until approved.
-- **Decline:** The audit report stands alone. The operator can act on findings at their discretion. The skill exits cleanly.
+Wait for the response and dispatch per [`references/advisory-tickets.md`](../../references/advisory-tickets.md) § "Three outcomes". Approve → proceed to 7b. Edit → loop until approved. Decline → the audit report stands alone, no tracker writes.
 
 #### 7b. Create Tickets
 
@@ -436,9 +432,9 @@ After all tickets are created, report the URLs to the operator and exit.
 
 #### Orchestrator-Invoked Behavior
 
-When `/review-security` is invoked by an orchestrator (`/lead-project`, `/review-deep`, `/implement-project`, etc.), the workflow above is unchanged. The skill proposes the ticket structure to the orchestrator, which applies its own judgment per [`references/autonomy.md`](../../references/autonomy.md) — approving, editing, or declining the proposal, then deciding which of any created tickets to work in the current flow versus defer.
+See [`references/advisory-tickets.md`](../../references/advisory-tickets.md) § "Orchestrator-invoked behavior" — the proposal is presented identically to operator and orchestrator; the orchestrator's auto-approval contract is documented in [`references/autonomy.md`](../../references/autonomy.md) § "Auto-approval of sub-skill ticket proposals".
 
-The contract change versus pre-v8.0.0 is that work surfaced by `/review-security` is now durably documented in the tracker rather than handled in-skill via fixer routing. The orchestrator's decision-making is otherwise unchanged.
+The contract change versus pre-v8.0.0 is that work surfaced by `/review-security` is now durably documented in the tracker rather than handled in-skill via fixer routing.
 
 ## Agent Coordination
 

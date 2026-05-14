@@ -1,11 +1,6 @@
 ---
 name: award-application
-description: >
-  Write compelling award submissions, grant applications, and competition entries.
-  Maps achievements to selection criteria using evidence-based narratives.
-  Handles business awards (Telstra, chamber of commerce), industry awards,
-  and grant applications. Use when preparing any competitive submission
-  where you need to demonstrate merit against defined criteria.
+description: "Write compelling award submissions, grant applications, and competition entries. Maps achievements to selection criteria using evidence-based narratives. Use whenever the user is applying for a business award (Telstra, chamber of commerce, industry awards), a grant, a competition, or any submission demonstrating merit against defined criteria."
 ---
 
 # Award Application Writer

@@ -1,6 +1,6 @@
 ---
 name: google-chat-messages
-description: "Send Google Chat messages via webhook — text, rich cards (cardsV2), threaded replies. Includes TypeScript types, card builder utility, and widget reference."
+description: "Send Google Chat messages via incoming webhooks — text, rich cards (cardsV2), threaded replies. TypeScript types, card builder utility, widget reference inline. Use whenever the user wants to post to Google Chat from a script, build a chatbot reply, send a notification card, build a Google Chat webhook integration, or troubleshoot card / threading issues."
 compatibility: claude-code-only
 ---
 

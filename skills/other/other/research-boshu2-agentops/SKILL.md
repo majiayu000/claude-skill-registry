@@ -1,6 +1,7 @@
 ---
 name: research
 description: 'Explore and write findings.'
+practices: [wiki-knowledge-surface, pragmatic-programmer, ddd-bounded-context]
 skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash, Write
 metadata:
@@ -314,6 +315,8 @@ Include in your Explore agent prompt:
 - "medium" - for feature exploration
 - "very thorough" - for architecture/cross-cutting concerns
 
+For onboarding-style research ("what does this do?", new repo orientation), follow `references/onboarding-methodology.md` for the phased docs-first walk and reusable mental-model template. When the question reduces to "what happens when <event> arrives?", trace one path end-to-end using `references/data-flow-from-entry-points.md`.
+
 ## Examples
 
 ### Investigate Authentication System
@@ -373,9 +376,12 @@ Include in your Explore agent prompt:
 - [references/backend-inline.md](references/backend-inline.md)
 - [references/claude-code-latest-features.md](references/claude-code-latest-features.md)
 - [references/context-discovery.md](references/context-discovery.md)
+- [references/data-flow-from-entry-points.md](references/data-flow-from-entry-points.md)
 - [references/document-template.md](references/document-template.md)
 - [references/failure-patterns.md](references/failure-patterns.md)
+- [references/onboarding-methodology.md](references/onboarding-methodology.md)
 - [references/ralph-loop-contract.md](references/ralph-loop-contract.md)
+- [references/source-discovery-and-pattern-extraction.md](references/source-discovery-and-pattern-extraction.md)
 - [references/vibe-methodology.md](references/vibe-methodology.md)
 - [../shared/references/backend-background-tasks.md](../shared/references/backend-background-tasks.md)
 - [../shared/references/backend-claude-teams.md](../shared/references/backend-claude-teams.md)
@@ -383,3 +389,5 @@ Include in your Explore agent prompt:
 - [../shared/references/backend-inline.md](../shared/references/backend-inline.md)
 - [../shared/references/claude-code-latest-features.md](../shared/references/claude-code-latest-features.md)
 - [../shared/references/ralph-loop-contract.md](../shared/references/ralph-loop-contract.md)
+- [references/codebase-archaeology.md](references/codebase-archaeology.md) — Systematic codebase exploration for onboarding
+- [references/software-research.md](references/software-research.md) — Research tools via source code, GitHub, and web

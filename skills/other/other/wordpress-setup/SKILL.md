@@ -1,10 +1,6 @@
 ---
 name: wordpress-setup
-description: >
-  Connect to a WordPress site via WP-CLI over SSH or REST API.
-  Workflow: check CLI, test SSH connection, set up auth, verify access, save config.
-  Use when connecting to a WordPress site, setting up WP-CLI access, creating
-  application passwords, or troubleshooting WordPress connection issues.
+description: "Connect to a WordPress site via WP-CLI over SSH or the REST API. Check CLI, test SSH, set up auth, verify access, save config. Use whenever the user wants to connect to a WordPress site, set up WP-CLI access, create an Application Password, or troubleshoot WordPress connection / auth issues."
 compatibility: claude-code-only
 ---
 

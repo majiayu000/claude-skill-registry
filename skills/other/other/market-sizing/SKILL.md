@@ -162,6 +162,10 @@ python3 "$SHARED_SCRIPTS/founder_context.py" init \
 
 Extract all market-relevant data. If the deck includes explicit TAM/SAM/SOM claims, record them in `inputs.json` under `existing_claims`.
 
+`existing_claims` must be a flat object with lowercase keys `tam`, `sam`, `som`. Use `null` for any figure the deck does not state. Custom keys (e.g., `SAM_Israel_only`) are silently ignored by reconciliation and will trigger an `EXISTING_CLAIMS_SHAPE` warning.
+
+If the deck states figures that don't fit the flat shape — regional sub-SAMs, time-anchored SOM projections, alternative TAM frames — put them in the optional `existing_claims_detail` field (any structure). This field does NOT participate in deck-vs-computed reconciliation, but it is rendered as a "Deck Claims (Narrative)" sub-section in the report.
+
 Write `inputs.json`:
 ```bash
 cat <<'INPUTS_EOF' > "$ANALYSIS_DIR/inputs.json"
@@ -175,7 +179,8 @@ cat <<'INPUTS_EOF' > "$ANALYSIS_DIR/inputs.json"
   "target_segments": ["..."],
   "pricing_model": "...",
   "revenue_model": "...",
-  "existing_claims": {},
+  "existing_claims": {"tam": null, "sam": null, "som": null},
+  "existing_claims_detail": null,
   "materials_provided": ["..."],
   "metadata": {"run_id": "<RUN_ID>"}
 }
@@ -510,6 +515,16 @@ Read `methodology.json` for `methodology`. Read `checklist.json` for
 `report_markdown`). Do NOT pass `warned_items` from a `warn` status —
 market-sizing checklist has no `warn` status, so `warned_items` is always `[]`.
 
+The compose script also emits `coaching_payload.deck_coverage` directly in
+`report.json` — copy this field verbatim into the dispatch prompt (it is
+`null` when the founder's `existing_claims` had no canonical figures stated;
+otherwise `{"deck_reviewed": true, "stated": [...], "missing": [...]}`).
+**Coaching framing for `deck_coverage`:** when `missing` is non-empty, frame
+as "deck stated {stated} but should also show {missing}" — NOT understatement.
+If the warnings list contains `EXISTING_CLAIMS_SHAPE`, do not trust
+`deck_coverage = null` as "deck wasn't reviewed"; frame the coaching around
+the warning and the "Deck Claims (Narrative)" section instead.
+
 **Dispatch prompt template:**
 
 ```
@@ -540,6 +555,7 @@ coaching_payload:
   "sam": <sam value from sizing.json>,
   "som": <som value from sizing.json>,
   "company_name": "<from inputs.json>",
+  "deck_coverage": <null OR {"deck_reviewed": true, "stated": [<canonical keys with values>], "missing": [<canonical keys with null>]} — copy verbatim from coaching_payload emitted by compose_report.py>,
   "review_dir": "<ANALYSIS_DIR absolute path>",
   "report_path": "<ANALYSIS_DIR>/report.md",
   "insertion_marker": "<EXACT marker string from report.json, e.g. <!-- COACHING_INSERTION_POINT_a1b2c3d4 -->"

@@ -9,16 +9,28 @@ Complete programmatic access to Google NotebookLM—including capabilities not e
 
 ## Installation
 
-**From PyPI (Recommended):**
+**From PyPI (Recommended for AI agents — Python-version-aware):**
 ```bash
-pip install notebooklm-py
+pip install "notebooklm-py[browser]"   # mandatory; errors must propagate
+
+# [cookies] (rookiepy) is optional and known to FAIL TO BUILD on Python 3.13+.
+# Skip it deliberately on 3.13+ rather than swallowing the error — that lets
+# *real* install failures (typos, network, PyPI outages) surface for the agent.
+if python -c "import sys; sys.exit(0 if sys.version_info < (3, 13) else 1)"; then
+    pip install "notebooklm-py[cookies]"   # errors propagate
+else
+    echo "Skipping [cookies] on Python 3.13+ (rookiepy unavailable). Use 'notebooklm login' interactively."
+fi
 ```
+
+> Full install matrix (extras, headless servers, contributor flow): [Installation guide on GitHub](https://github.com/teng-lin/notebooklm-py/blob/main/docs/installation.md).
 
 **From GitHub (use latest release tag, NOT main branch):**
 ```bash
 # Get the latest release tag (using curl)
 LATEST_TAG=$(curl -s https://api.github.com/repos/teng-lin/notebooklm-py/releases/latest | grep '"tag_name"' | cut -d'"' -f4)
-pip install "git+https://github.com/teng-lin/notebooklm-py@${LATEST_TAG}"
+# Includes [browser] so the interactive `notebooklm login` flow works.
+pip install "notebooklm-py[browser] @ git+https://github.com/teng-lin/notebooklm-py@${LATEST_TAG}"
 ```
 
 ⚠️ **DO NOT install from main branch** (`pip install git+https://github.com/teng-lin/notebooklm-py`). The main branch may contain unreleased/unstable changes. Always use PyPI or a specific release tag, unless you are testing unreleased features.
@@ -69,11 +81,15 @@ For automated environments, multiple accounts, or parallel agent workflows:
 
 ## Agent Setup Verification
 
-Before starting workflows, verify the CLI is ready:
+Before starting workflows, verify auth is in place. **Use `--test --json` (not bare `--json`)** — bare `--json` only proves the cookie file parses; `--test` makes a network call and proves the cookies still authenticate against Google.
 
-1. `notebooklm status` → Should show "Authenticated as: email@..."
-2. `notebooklm list --json` → Should return valid JSON (even if empty notebooks list)
-3. If either fails → Run `notebooklm login`
+1. `notebooklm auth check --test --json` → require BOTH `"status": "ok"` AND `"checks.token_fetch": true`. Bare `"status": "ok"` (without `--test`) is a false-positive trap — a stale cookie file passes the parse check.
+2. `notebooklm list --json` → expect valid JSON (may be empty for new accounts).
+3. **If auth fails or is missing → run `notebooklm login` first.** This is the primary auth path: opens a browser, the user signs in to Google once, and the resulting `storage_state.json` is reused on every subsequent run. Works on any environment with a display.
+   - For headless contexts where opening a browser is not feasible, use `notebooklm login --browser-cookies <browser>` instead — extracts the user's already-logged-in cookies from Chrome/Firefox/etc. (requires the `[cookies]` extra; rookiepy may not install on Python 3.13+).
+   - Re-run step 1 after login to confirm.
+
+> **Note:** `notebooklm status` reports *context state* (selected notebook); do not use it to verify auth.
 
 ## When This Skill Activates
 
@@ -430,7 +446,7 @@ notebooklm source add-research "topic" --mode deep --import-all
 **JSON output:** Use `--json` flag for machine-readable output:
 ```bash
 notebooklm list --json
-notebooklm auth check --json
+notebooklm auth check --test --json   # use --test for network-validated auth (see § Agent Setup Verification)
 notebooklm source list --json
 notebooklm artifact list --json
 ```
@@ -442,7 +458,7 @@ notebooklm artifact list --json
 {"notebooks": [{"index": 1, "id": "...", "title": "...", "is_owner": true, "created_at": "..."}], "count": 1}
 ```
 
-`notebooklm auth check --json`:
+`notebooklm auth check --test --json` (use `--test` to drive the network token-fetch — bare `--json` would leave `"token_fetch": null`):
 ```json
 {"status": "ok", "checks": {"storage_exists": true, "json_valid": true, "cookies_present": true, "sid_cookie": true, "token_fetch": true}, "details": {"storage_path": "...", "auth_source": "file", "cookies_found": ["SID", "HSID", "..."], "cookie_domains": [".google.com"]}}
 ```

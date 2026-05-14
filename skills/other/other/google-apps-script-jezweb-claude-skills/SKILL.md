@@ -1,6 +1,6 @@
 ---
 name: google-apps-script
-description: "Build Google Apps Script automation for Sheets and Workspace apps. Produces scripts with custom menus, triggers, dialogs, email automation, PDF export, and external API integration."
+description: "Build Google Apps Script automation for Sheets and Workspace. Custom menus, triggers (onEdit / time-driven / form submit), dialogs, sidebars, email batches, PDF export, external API. Use whenever the user wants to automate a Google Sheet, build a Sheets menu / sidebar / dialog, hit a Sheets row from email or a webhook, schedule a Sheets workflow, or asks 'how do I script this in Sheets'."
 compatibility: claude-code-only
 ---
 
@@ -531,13 +531,11 @@ function fetchExternalData() {
 
 ---
 
-## Optional Patterns (not inlined)
+## Reconstruct from Apps Script docs if needed
 
-Omitted to keep this file focused. Reconstruct from Apps Script docs if needed:
-
-- **Row/Column show/hide** -- `sheet.hideRows()`, `showRows()`, `isRowHiddenByUser()`
-- **Formatting** -- `setBackground()`, `setFontWeight()`, `setBorder()`, `setNumberFormat()`, conditional formatting
-- **Data protection** -- `range.protect()`, `setUnprotectedRanges()`, editor management
-- **Multiple sheets** -- `getSheetByName()`, looping numbered tabs, `copyTo()`, `insertSheet()`
-- **Auto-numbering rows** -- `onEdit` trigger to auto-number column A when column B is edited
-- **Google Chat webhooks** -- POST to `chat.googleapis.com` with JSON payload
+- **Row/Column show/hide** — `sheet.hideRows()`, `showRows()`, `isRowHiddenByUser()`
+- **Formatting** — `setBackground()`, `setFontWeight()`, `setBorder()`, `setNumberFormat()`, conditional formatting
+- **Data protection** — `range.protect()`, `setUnprotectedRanges()`, editor management
+- **Multiple sheets** — `getSheetByName()`, looping numbered tabs, `copyTo()`, `insertSheet()`
+- **Auto-numbering rows** — `onEdit` trigger to auto-number column A when column B is edited
+- **Google Chat webhooks** — POST to `chat.googleapis.com` with JSON payload

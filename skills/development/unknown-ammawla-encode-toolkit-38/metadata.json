@@ -1,0 +1,23 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "ammawla/encode-toolkit",
+  "path": "plugin/skills/batch-analysis/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-ammawla-encode-toolkit-38",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "references/literature.md"
+  ],
+  "author": "ammawla",
+  "source_url": "https://github.com/ammawla/encode-toolkit/blob/main/plugin/skills/batch-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ammawla/encode-toolkit/blob/main/plugin/skills/batch-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

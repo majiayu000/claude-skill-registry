@@ -1,6 +1,7 @@
 ---
 name: flywheel
 description: 'Check knowledge flywheel health.'
+practices: [wiki-knowledge-surface, lean-startup, dora-metrics]
 skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash
 model: haiku

@@ -1,10 +1,6 @@
 ---
 name: shopify-setup
-description: >
-  Set up Shopify CLI auth and Admin API access for a store.
-  Workflow: install CLI, authenticate, create custom app, store access token, verify.
-  Use when connecting to a Shopify store, setting up API access, or troubleshooting
-  auth issues with Shopify CLI or Admin API tokens.
+description: "Set up Shopify CLI auth and Admin API access for a store. Install CLI, authenticate, create custom app, store access token, verify. Use whenever the user wants to connect to a Shopify store, set up Shopify API access, install Shopify CLI, or troubleshoot Shopify auth / Admin API token issues."
 compatibility: claude-code-only
 ---
 

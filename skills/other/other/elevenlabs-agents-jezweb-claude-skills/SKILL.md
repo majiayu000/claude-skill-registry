@@ -1,11 +1,6 @@
 ---
 name: elevenlabs-agents
-description: >
-  Build conversational AI voice agents with ElevenLabs Platform.
-  Workflow: configure agent, add tools and knowledge base, integrate SDK, test, deploy.
-  Supports React, React Native, and Swift SDKs. Use when building voice agents,
-  AI phone systems, or troubleshooting @11labs deprecated packages, webhook errors,
-  CSP violations, localhost allowlist, or tool parsing errors.
+description: "Build conversational AI voice agents on the ElevenLabs platform. Configure agent + tools + knowledge base, integrate SDK (React / React Native / Swift / JS / server-side), test, deploy. Use whenever the user mentions ElevenLabs, building a voice agent, an AI phone system, an AI receptionist, conversational AI, or troubleshooting deprecated @11labs packages, webhook errors, CSP violations, localhost allowlist, or tool parsing errors."
 compatibility: claude-code-only
 ---
 

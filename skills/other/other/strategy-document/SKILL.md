@@ -1,11 +1,6 @@
 ---
 name: strategy-document
-description: >
-  Write structured strategic documents for small and medium businesses.
-  Produces SWOT analyses, lean business plans, OKRs, and competitive analyses.
-  Each mode has a defined structure and quality bar. Use when a business needs
-  to articulate strategy, set goals, analyse competition, or plan for growth.
-  Outputs actionable documents, not generic frameworks.
+description: "Write structured strategic documents for small and medium businesses: SWOT analyses, lean business plans, OKRs, competitive analyses. Each mode has a defined structure and quality bar. Use whenever a business asks to articulate strategy, set goals, analyse competition, plan for growth, do a SWOT, write OKRs, or build a lean business plan. Produces actionable documents, not generic frameworks."
 ---
 
 # Strategy Document Writer

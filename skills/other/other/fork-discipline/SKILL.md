@@ -384,8 +384,6 @@ Write a script to `.jez/scripts/fork-refactor.sh` that:
 ## Tips
 
 - Run this before adding a new client, not after
-- The boundary map is the most valuable output — print it, put it on the wall
 - Config merge is the single highest-ROI refactor — do it first
-- Feature flags are better than `if (client)` even with one client
-- If you find yourself saying "this is mostly the same for all clients except..." that's a feature flag, not a fork
-- The FORK.md is for the team, not just for Claude — write it like a human will read it
+- Feature flags beat `if (client)` even with one client. *"This is mostly the same except..."* = feature flag, not fork.
+- FORK.md is for the team, not just for Claude — write it like a human will read it

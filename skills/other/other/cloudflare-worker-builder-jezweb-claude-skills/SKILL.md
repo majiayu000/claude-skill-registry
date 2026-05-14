@@ -1,10 +1,6 @@
 ---
 name: cloudflare-worker-builder
-description: >
-  Scaffold and deploy Cloudflare Workers with Hono routing, Vite plugin, and Static Assets.
-  Workflow: describe project, scaffold structure, configure bindings, deploy.
-  Use when creating Workers projects, setting up Hono/Vite, configuring D1/R2/KV bindings,
-  or troubleshooting export syntax errors, API route conflicts, HMR issues, or deployment failures.
+description: "Scaffold and deploy Cloudflare Workers with Hono routing, Vite plugin, and Static Assets. Describe project, scaffold structure, configure bindings, deploy. Use whenever the user wants to create a Worker project, set up Hono on Cloudflare, configure D1 / R2 / KV / Queues bindings, or troubleshoot Worker export syntax, API route conflicts, HMR issues, or deployment failures."
 compatibility: claude-code-only
 ---
 

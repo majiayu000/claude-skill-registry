@@ -13,7 +13,7 @@ Adapted from `/research-review`. The reviewer persona is a patent examiner, not 
 
 ## Constants
 
-- `REVIEWER_MODEL = gpt-5.4` — Model used via Codex MCP
+- `REVIEWER_MODEL = gpt-5.5` — Model used via Codex MCP
 - `REVIEW_ROUNDS = 2` — Number of review rounds
 - `EXAMINER_PERSONA = "patent-examiner"` — GPT-5.4 persona
 
@@ -48,7 +48,7 @@ Send to `REVIEWER_MODEL` via `spawn_agent` with xhigh reasoning:
 
 ```text
 spawn_agent:
-  model: gpt-5.4
+  model: gpt-5.5
   reasoning_effort: xhigh
   message: |
     You are a senior patent examiner at the [USPTO/CNIPA/EPO].

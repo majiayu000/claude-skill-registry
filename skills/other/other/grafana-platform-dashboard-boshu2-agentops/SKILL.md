@@ -1,6 +1,7 @@
 ---
 name: grafana-platform-dashboard
 description: 'Validate OpenShift Grafana dashboards.'
+practices: [sre, distributed-tracing, dora-metrics]
 skill_api_version: 1
 context:
   window: fork

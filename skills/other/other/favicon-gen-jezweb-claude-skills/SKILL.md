@@ -1,11 +1,6 @@
 ---
 name: favicon-gen
-description: >
-  Generate custom favicons from logos, text, or brand colours. Produces all required
-  formats: favicon.svg, favicon.ico, apple-touch-icon.png, icon-192/512.png, and web
-  manifest. Use when initialising websites, replacing CMS default favicons, converting
-  logos to favicons, creating branded icons from initials, or troubleshooting favicon
-  not displaying, iOS black square, or missing manifest.
+description: "Generate custom favicons from logos, text, or brand colours. Produces favicon.svg, favicon.ico, apple-touch-icon.png, icon-192/512.png, and web manifest. Use whenever the user wants a favicon, mentions replacing a CMS default favicon, converting a logo into a favicon, creating branded initials icons, or troubleshooting favicon not displaying / iOS black square / missing manifest."
 compatibility: claude-code-only
 ---
 

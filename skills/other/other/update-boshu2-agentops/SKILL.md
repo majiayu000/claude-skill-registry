@@ -1,6 +1,7 @@
 ---
 name: update
 description: 'Sync AgentOps skills.'
+practices: [gitops, continuous-delivery, infrastructure-as-code]
 skill_api_version: 1
 user-invocable: true
 context:

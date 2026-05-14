@@ -82,7 +82,7 @@ Any .md file that is an executor-written summary
 
 ```
 mcp__codex__codex:
-  model: gpt-5.4
+  model: gpt-5.5
   config: {"model_reasoning_effort": "xhigh"}
   prompt: |
     You are a paper-to-evidence auditor. You have ZERO prior context about
@@ -270,7 +270,7 @@ The artifact conforms to the schema in `shared-references/assurance-contract.md`
   },
   "trace_path":       ".aris/traces/paper-claim-audit/<date>_run<NN>/",
   "thread_id":        "<codex mcp thread id>",
-  "reviewer_model":   "gpt-5.4",
+  "reviewer_model":   "gpt-5.5",
   "reviewer_reasoning": "xhigh",
   "generated_at":     "<UTC ISO-8601>",
   "details": {

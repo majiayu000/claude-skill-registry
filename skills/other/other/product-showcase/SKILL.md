@@ -231,7 +231,7 @@ Agentic apps are especially hard to market because the value is invisible — th
 - Use time comparisons ("What took 2 hours now takes 30 seconds")
 - Avoid jargon ("Finds connections in your data" not "Semantic vector search with RAG")
 
-### 4. Screenshot Presentation
+### 5. Screenshot Presentation
 
 Screenshots are shown in browser-frame mockups using CSS:
 
@@ -258,7 +258,7 @@ Screenshots are shown in browser-frame mockups using CSS:
 
 This gives screenshots a polished "app in a browser" look without needing to edit the images.
 
-### 6. Site Navigation
+### 6. Site Navigation (multi-page)
 
 Multi-page sites need consistent navigation:
 
@@ -482,10 +482,6 @@ Use the `seo-local-business` skill for JSON-LD if the product serves a specific 
 1. **Only screenshot real features** — don't fabricate capabilities the app doesn't have
 2. **Choose the best screenshots** — not every page is showcase-worthy. Pick the ones that tell the product story
 3. **Write benefit-focused copy** — "See all your contacts in one place" not "Contact list page"
-4. **Browser frames on screenshots** — always wrap in the CSS mockup for professional appearance
-5. **Consistent screenshot size** — all at 1280x720 for the captures, CSS handles display sizing
-6. **No fake testimonials** — leave the section out if none provided
-7. **No invented statistics** — leave stats blocks empty if no real data
-8. **Forms must submit somewhere** — never ship a form that goes nowhere
-9. **Every page needs navigation** — consistent nav, mobile hamburger, CTA always visible
-10. **Deploy to a real URL** — don't leave it as local files. A showcase needs to be shareable.
+4. **No fake testimonials** — leave the section out if none provided
+5. **No invented statistics** — leave stats blocks empty if no real data
+6. **Deploy to a real URL** — don't leave it as local files. A showcase needs to be shareable

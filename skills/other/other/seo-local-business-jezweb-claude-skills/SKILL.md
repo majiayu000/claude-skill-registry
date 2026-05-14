@@ -1,6 +1,6 @@
 ---
 name: seo-local-business
-description: "Generate complete SEO setup for local business websites — HTML head tags, JSON-LD LocalBusiness schema, robots.txt, sitemap.xml. Australian-optimised with +61 phone, ABN, suburb patterns."
+description: "Generate complete SEO setup for local business websites — HTML head tags, JSON-LD LocalBusiness schema, robots.txt, sitemap.xml. Australian-optimised with +61 phone, ABN, suburb patterns. Use whenever the user wants SEO for a local business (tradesman, café, clinic, agency, retailer), needs JSON-LD structured data, asks for LocalBusiness schema, or wants meta tags / robots.txt / sitemap for a suburb-serving business."
 ---
 
 # SEO Local Business

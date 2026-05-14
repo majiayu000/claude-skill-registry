@@ -425,11 +425,7 @@ Proposed: 7 tickets
 Approve / edit / decline?
 ```
 
-Wait for the response. Three outcomes:
-
-- **Approve:** Proceed to 8b.
-- **Edit:** The operator modifies the structure (merge two tickets, split one, drop a finding, change granularity, promote the refactoring suggestions into a ticket). Apply the edits, present the revised structure, and repeat until approved.
-- **Decline:** The review report stands alone. The operator can act on findings at their discretion. The skill exits cleanly.
+Wait for the response and dispatch per [`references/advisory-tickets.md`](../../references/advisory-tickets.md) § "Three outcomes". Approve → proceed to 8b. Edit → loop until approved (edits may include promoting the refactoring suggestions into a ticket). Decline → the review report stands alone, no tracker writes.
 
 ### 8b. Create Tickets
 
@@ -469,9 +465,9 @@ After all tickets are created, report the URLs to the operator and exit.
 
 ### Orchestrator-Invoked Behavior
 
-When `/review-test` is invoked by an orchestrator (`/lead-project`, `/review-deep`, `/implement-project`), the workflow above is unchanged. The skill proposes the ticket structure to the orchestrator, which applies its own judgment per [`references/autonomy.md`](../../references/autonomy.md) — approving, editing, or declining the proposal, then deciding which of any created tickets to work in the current flow versus defer.
+See [`references/advisory-tickets.md`](../../references/advisory-tickets.md) § "Orchestrator-invoked behavior" — the proposal is presented identically to operator and orchestrator; the orchestrator's auto-approval contract is documented in [`references/autonomy.md`](../../references/autonomy.md) § "Auto-approval of sub-skill ticket proposals".
 
-The contract change versus pre-v9.0.0 is that test work surfaced by `/review-test` is now durably documented in the tracker rather than implemented in-skill via SME routing. The orchestrator's decision-making is otherwise unchanged.
+The contract change versus pre-v9.0.0 is that test work surfaced by `/review-test` is now durably documented in the tracker rather than implemented in-skill via SME routing.
 
 ## Agent Coordination
 

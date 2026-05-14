@@ -1,11 +1,6 @@
 ---
 name: aussie-business-english
-description: >
-  Australian business English writing style for professional communications.
-  Warm, direct, EN-AU spelling. Use when writing emails, chat messages,
-  proposals, client communications, or any business writing for Australian
-  SME audiences. Applies to drafting, editing, and tone-checking any
-  professional text.
+description: "Australian business English writing style for professional communications — warm, direct, EN-AU spelling (colour, organise, centre). Use whenever the user is writing for an Australian audience: emails, chat messages, proposals, client communications, blog posts, web copy, or any business writing. Apply to drafting, editing, and tone-checking professional text."
 ---
 
 # Aussie Business English

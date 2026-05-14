@@ -1,11 +1,6 @@
 ---
 name: nz-business-english
-description: >
-  New Zealand business English writing style for professional communications.
-  Warm, inclusive, EN-NZ spelling. Use when writing emails, chat messages,
-  proposals, client communications, or any business writing for New Zealand
-  SME audiences. Applies to drafting, editing, and tone-checking any
-  professional text.
+description: "New Zealand business English writing style for professional communications — warm, inclusive, EN-NZ spelling (colour, organise, centre). Use whenever the user is writing for a New Zealand audience: emails, chat messages, proposals, client communications, blog posts, web copy, or any business writing. Apply to drafting, editing, and tone-checking professional text."
 ---
 
 # NZ Business English

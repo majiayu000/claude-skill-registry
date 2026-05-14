@@ -16,7 +16,7 @@ Analyzes codebase architecture and produces a target blueprint via noun analysis
 
 **Recommend boldly.** The analysis agent surfaces every opportunity it finds, even uncertain ones — the operator can always reject a recommendation when reviewing the plan. The skill's job is to *see*, not to *act*.
 
-**Single workflow for everyone.** The skill's workflow is identical whether a human operator or an orchestrator (`/refactor-deep`, `/implement-project`, `/lead-project`) is at the receiving end. After the analysis, the skill presents a proposed ticket structure for the recommended work; the operator (human or orchestrator) approves, edits, or declines. Orchestrators apply their own autonomy judgment per [`references/autonomy.md`](../../references/autonomy.md) — declining items they intend to implement inline, approving items they want tracked for later.
+**Single workflow for everyone.** The skill's workflow is identical whether a human operator or an orchestrator (`/lead-refactor`, `/implement-project`, `/lead-project`) is at the receiving end. After the analysis, the skill presents a proposed ticket structure for the recommended work; the operator (human or orchestrator) approves, edits, or declines. Orchestrators apply their own autonomy judgment per [`references/autonomy.md`](../../references/autonomy.md) — declining items they intend to implement inline, approving items they want tracked for later.
 
 ## Workflow Overview
 
@@ -123,14 +123,9 @@ Once the plan is finalized, offer to convert the planned work into tickets. **Th
 - Remove tickets they don't want cut (decline)
 - Add labels (default to no labels; offer common candidates: `refactor`, `tech-debt`, `arch`)
 
-When invoked by an orchestrator, the orchestrator applies its own autonomy judgment to the approve/edit/decline decision — typically declining items it intends to implement inline as part of its workflow and approving items it wants tracked for follow-up. Either response is valid; the skill doesn't presume one outcome.
+When invoked by an orchestrator, the dispatch is the same — the orchestrator is just another receiver of the same offer (see [`references/advisory-tickets.md`](../../references/advisory-tickets.md) § "Orchestrator-invoked behavior"). The orchestrator applies its own autonomy judgment per [`references/autonomy.md`](../../references/autonomy.md) § "Auto-approval of sub-skill ticket proposals" — typically declining items it intends to implement inline and approving items it wants tracked for follow-up.
 
-**On approval, create tickets in the tracker.** Detect the tracker using the same pattern as `/scope`:
-- GitHub → `gh` CLI
-- Gitea → `mcp__gitea__*` MCP tools
-- GitLab → `glab` CLI
-
-Capture each ticket's URL or number for the completion summary.
+**On approval, create tickets in the tracker.** Use the canonical tracker integration documented in [`references/trackers.md`](../../references/trackers.md) (Detection Procedure + "Create" operation). Capture each ticket's URL or number for the completion summary.
 
 **If the operator declines to cut tickets:** That's a valid outcome. Note in the completion summary that the analysis was advisory-only — the orchestrator (or operator) may still act on the analysis without tickets.
 
@@ -279,4 +274,4 @@ work through #201-#203 as a cohesive unit (they touch overlapping
 files); #204 deserves its own scoping pass first.
 ```
 
-When invoked by an orchestrator, the same flow runs — the orchestrator receives the analysis and the ticket-structure proposal, applies its own autonomy judgment, and approves / edits / declines. There is no separate "autonomous mode" — the orchestrator is just another receiver of the same offer.
+When invoked by an orchestrator, the same flow runs. See [`references/advisory-tickets.md`](../../references/advisory-tickets.md) § "Orchestrator-invoked behavior" for the shared protocol — the orchestrator is just another receiver of the same offer.

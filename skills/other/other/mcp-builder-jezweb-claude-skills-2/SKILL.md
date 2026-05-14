@@ -1,11 +1,6 @@
 ---
 name: mcp-builder
-description: >
-  Build MCP servers in Python with FastMCP. Workflow: define tools and resources,
-  build server, test locally, deploy to FastMCP Cloud or Docker.
-  Use when creating MCP servers, exposing tools/resources/prompts to LLMs,
-  building Claude integrations, or troubleshooting FastMCP module-level server,
-  storage, lifespan, middleware, OAuth, or deployment errors.
+description: "Build MCP servers in Python with FastMCP. Define tools / resources / prompts, build the server, test locally, deploy to FastMCP Cloud or Docker. Use whenever the user mentions building an MCP server, exposing tools to LLMs, FastMCP, building a Claude integration, or troubleshooting FastMCP module-level server, storage, lifespan, middleware, OAuth, or deployment errors."
 compatibility: claude-code-only
 ---
 

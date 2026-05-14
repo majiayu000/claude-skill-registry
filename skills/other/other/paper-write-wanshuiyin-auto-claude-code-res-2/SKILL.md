@@ -9,7 +9,7 @@ Draft a LaTeX paper based on: **$ARGUMENTS**
 
 ## Constants
 
-- **REVIEWER_MODEL = `gpt-5.4`** — Model used via a secondary Codex agent for section review. Must be an OpenAI model.
+- **REVIEWER_MODEL = `gpt-5.5`** — Model used via a secondary Codex agent for section review. Must be an OpenAI model.
 - **TARGET_VENUE = `ICLR`** — Default venue. Supported: `ICLR`, `NeurIPS`, `ICML`, `CVPR` (also ICCV/ECCV), `ACL` (also EMNLP/NAACL), `AAAI`, `ACM` (ACM MM, SIGIR, KDD, CHI, etc.), `IEEE_JOURNAL` (IEEE Transactions / Letters, e.g., T-PAMI, JSAC, TWC, TCOM, TSP, TIP), `IEEE_CONF` (IEEE conferences, e.g., ICC, GLOBECOM, INFOCOM, ICASSP). Determines style file and formatting.
 - **ANONYMOUS = true** — If true, use anonymous author block. Set `false` for camera-ready. Note: most IEEE venues do NOT use anonymous submission — set `false` for IEEE.
 - **MAX_PAGES = 9** — Main body page limit. For ML conferences: counts from first page to end of Conclusion section, references and appendix NOT counted. **For IEEE venues: references ARE counted toward the page limit.** Typical limits: IEEE journal = no strict limit (but 12-14 pages typical for Transactions, 4-5 for Letters), IEEE conference = 5-8 pages including references.
@@ -319,7 +319,7 @@ Send the complete draft to GPT-5.4 xhigh:
 
 ```
 spawn_agent:
-  model: gpt-5.4
+  model: gpt-5.5
   reasoning_effort: xhigh
   message: |
     Review this [VENUE] paper draft (main body, excluding appendix).

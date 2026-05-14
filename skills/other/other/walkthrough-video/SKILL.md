@@ -368,21 +368,11 @@ Add title card at start and CTA at end:
 | GIF | `--image-format png` then `ffmpeg` | Short loops, social media |
 | PNG sequence | `--image-format png --sequence` | Post-production editing |
 
-## Tips
+## Tips and Pitfalls
 
-- **1280x720 is ideal** for web walkthrough videos (good quality, reasonable file size)
-- **3-5 seconds per screen** feels natural — longer for complex screens
-- **Fade is the safest transition** — use others sparingly for emphasis
-- **Text overlays need contrast** — use text-shadow or semi-transparent background
-- **Ken Burns effect** (subtle zoom) prevents static screenshots from feeling dead
+- **1280×720, 3-5 seconds per screen, under 90 seconds total** — beyond these, attention drops
+- **Fade is the safest transition** — pick 1-2 transition types and stay consistent
+- **Text overlays need contrast** — text-shadow or semi-transparent background; too small or low-contrast reads as "AI made this"
+- **Ken Burns** (subtle zoom) prevents static screenshots from feeling dead. Add intro/outro cards so the video doesn't feel abrupt
 - **Preview before rendering** — `npx remotion studio` saves time vs full renders
-- **Keep it under 90 seconds** — attention drops sharply after that
-
-## Common Pitfalls
-
-- ❌ Using screenshots at different dimensions (causes scaling issues)
-- ❌ Too many transition types (pick 1-2 and stay consistent)
-- ❌ Text overlays that are too small or lack contrast
-- ❌ No intro/outro — video feels abrupt
-- ❌ Rendering before previewing (wastes time on fixable issues)
-- ❌ Forgetting `staticFile()` for assets in `public/` directory
+- **Match screenshot dimensions** (mismatched causes scaling issues). Use `staticFile()` for `public/` assets

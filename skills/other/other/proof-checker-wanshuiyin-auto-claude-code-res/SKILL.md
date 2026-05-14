@@ -14,7 +14,7 @@ Systematically verify a mathematical proof via cross-model adversarial review, f
 ## Constants
 
 - MAX_REVIEW_ROUNDS = 3
-- REVIEWER_MODEL = `gpt-5.4` via Codex reviewer agent, reasoning effort always `xhigh`
+- REVIEWER_MODEL = `gpt-5.5` via Codex reviewer agent, reasoning effort always `xhigh`
 - **REVIEWER_BACKEND = `codex`** — Default: Codex reviewer agent (`spawn_agent`, xhigh). Override with `— reviewer: oracle-pro` for GPT-5.4 Pro via Oracle MCP. See `shared-references/reviewer-routing.md`.
 - AUDIT_DOC: `PROOF_AUDIT.md` at the paper directory root, alongside `main.tex` (cumulative log; when invoked via `/paper-writing`, this is `paper/PROOF_AUDIT.md`)
 - REPORT_TEX: `proof_audit_report.tex` (formal before/after PDF)
@@ -181,7 +181,7 @@ Submit the **complete proof content** with the following **mandatory reviewer ch
 
 ```text
 spawn_agent:
-  model: gpt-5.4
+  model: gpt-5.5
   reasoning_effort: xhigh
   message: |
     You are performing a rigorous mathematical proof review. For EVERY theorem,
@@ -313,7 +313,7 @@ For any fix that resolved a FATAL or CRITICAL issue, submit the **fixed section 
 
 ```text
 spawn_agent:
-  model: gpt-5.4
+  model: gpt-5.5
   reasoning_effort: xhigh
   message: |
     Blind review of the following proof section. You have NOT seen any prior
@@ -436,7 +436,7 @@ The artifact conforms to the schema in `shared-references/assurance-contract.md`
   },
   "trace_path":       ".aris/traces/proof-checker/<date>_run<NN>/",
   "thread_id":        "<codex mcp thread id>",
-  "reviewer_model":   "gpt-5.4",
+  "reviewer_model":   "gpt-5.5",
   "reviewer_reasoning": "xhigh",
   "generated_at":     "<UTC ISO-8601>",
   "details": {

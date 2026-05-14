@@ -117,6 +117,7 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Customize how my element appears as a chip or card" → read `element-index.md` (Element Display Modes)
 - "Add a screen to the User edit page" → read `elements.md` (Extending User Edit Screens)
 - "Make plugin settings read-only when allowAdminChanges is off" → read `cp.md` (Read-Only Mode)
+- "Add tabs to a plugin's settings page" → read `cp.md` (Settings Pages → With tabs or custom actions). `settingsHtml()` is single-pane only — tabs require a custom controller and a template extending `_layouts/cp` directly.
 
 Load only the reference files your task needs — each file costs input tokens on every turn.
 

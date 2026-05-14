@@ -1,11 +1,6 @@
 ---
 name: wordpress-elementor
-description: >
-  Edit Elementor pages and manage templates on WordPress sites.
-  Workflow: identify page, choose editing method (browser or WP-CLI), execute, verify.
-  Use when editing Elementor pages, updating text in Elementor widgets,
-  applying or managing Elementor templates, or making content changes
-  to pages built with Elementor page builder.
+description: "Edit Elementor pages and manage templates on WordPress sites via browser automation (for visual / structural changes) or WP-CLI (for safe text replacements). Use whenever the user wants to edit an Elementor page, update text in Elementor widgets, apply or manage Elementor templates, or make content changes to pages built with the Elementor page builder."
 compatibility: claude-code-only
 ---
 

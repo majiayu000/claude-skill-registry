@@ -226,7 +226,7 @@ Think beyond what exists today:
 
 **Convergence trends**: What separate tools are being unified? (Email + chat + tasks = Slack. Notes + databases + wikis = Notion. What's next?)
 
-### 7. Technical Research (deep mode)
+### 9. Technical Research (deep mode)
 
 For each major architectural decision:
 
@@ -241,7 +241,7 @@ For each major architectural decision:
 | File storage | R2, S3, local — access patterns? |
 | API design | REST, tRPC, GraphQL — what does the use case need? |
 
-### 8. Synthesis
+### 10. Synthesis
 
 Produce a research brief saved to `.jez/artifacts/research-brief-{topic}.md`:
 

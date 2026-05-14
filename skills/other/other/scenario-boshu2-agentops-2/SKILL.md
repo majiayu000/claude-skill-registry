@@ -1,6 +1,7 @@
 ---
 name: scenario
 description: 'Manage holdout scenarios.'
+practices: [property-based-testing, snapshot-testing, llm-eval-harness]
 skill_api_version: 1
 metadata:
   tier: execution

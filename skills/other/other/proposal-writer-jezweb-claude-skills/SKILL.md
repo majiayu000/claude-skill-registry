@@ -1,11 +1,6 @@
 ---
 name: proposal-writer
-description: >
-  Write a client proposal or quote for a service business. Covers project
-  understanding, scope, timeline, pricing presentation, and terms. Works for
-  web development, consulting, trades, professional services, and any B2B
-  service engagement. Triggers: proposal, quote, project proposal, client
-  proposal, scope of work, SOW, engagement letter.
+description: "Write a client proposal, quote, scope of work, or engagement letter for a service business. Covers project understanding, scope, timeline, pricing presentation, and terms. Use whenever the user asks for a proposal, quote, project proposal, client proposal, SOW, statement of work, engagement letter, or B2B service engagement document — for web dev, consulting, trades, or any service business."
 ---
 
 # Client Proposal Writer

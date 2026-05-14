@@ -76,7 +76,7 @@ On each page:
 
 #### Produce an Audit Report
 
-Write to `.jez/artifacts/onboarding-audit.md`:
+Write to `.jez/artifacts/onboarding/audit.md`:
 
 ```markdown
 # Onboarding Audit: [App Name]

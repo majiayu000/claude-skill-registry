@@ -1,23 +1,14 @@
 ---
 name: tanstack-start
-description: "Build a full-stack TanStack Start app on Cloudflare Workers from scratch — SSR, file-based routing, server functions, D1+Drizzle, better-auth, Tailwind v4+shadcn/ui. No template repo — Claude generates every file fresh per project."
+description: "Build a full-stack TanStack Start app on Cloudflare Workers from scratch — SSR, file-based routing, server functions, D1+Drizzle, better-auth, Tailwind v4+shadcn/ui. Use whenever the user mentions TanStack Start, asks to scaffold a full-stack Cloudflare app with SSR, wants an SSR dashboard, or asks for a React 19 + Cloudflare Workers app with file-based routing and server functions — even if they don't name TanStack Start specifically. No template repo — Claude generates every file fresh per project."
 compatibility: claude-code-only
 ---
 
 # TanStack Start on Cloudflare
 
-Build a complete full-stack app from nothing. Claude generates every file — no template clone, no scaffold command. Each project gets exactly what it needs.
+Build a complete full-stack app from nothing. Claude generates every file — no template clone, no scaffold command.
 
-## What You Get
-
-| Layer | Technology |
-|-------|-----------|
-| Framework | TanStack Start v1 (SSR, file-based routing, server functions) |
-| Frontend | React 19, Tailwind v4, shadcn/ui |
-| Backend | Server functions (via Nitro on Cloudflare Workers) |
-| Database | D1 + Drizzle ORM |
-| Auth | better-auth (Google OAuth + email/password) |
-| Deployment | Cloudflare Workers |
+Stack: TanStack Start v1 (SSR, file-based routing, server functions via Nitro) on Cloudflare Workers; React 19 + Tailwind v4 + shadcn/ui; D1 + Drizzle; better-auth (Google OAuth + email/password).
 
 ## Project File Tree
 
@@ -421,9 +412,9 @@ function CreateItemForm() {
 
 ### Step 6: App Shell + Theme
 
-**`src/routes/__root.tsx`** — Root layout with full HTML document, `<HeadContent />` and `<Scripts />` from `@tanstack/react-router`. Add `suppressHydrationWarning` on `<html>` for SSR + theme toggle compatibility. Import global CSS. Include inline theme init script to prevent flash.
+**`src/routes/__root.tsx`** — Full HTML document with `<HeadContent />` + `<Scripts />` from `@tanstack/react-router`, `suppressHydrationWarning` on `<html>` (SSR + theme), inline theme init script to prevent flash, global CSS import.
 
-**`src/styles/app.css`** — `@import "tailwindcss"` (v4 syntax), CSS variables for shadcn/ui tokens in `:root` and `.dark`, neutral/monochrome palette. Use semantic tokens only.
+**`src/styles/app.css`** — `@import "tailwindcss"` (v4 syntax) + shadcn/ui CSS variables in `:root` and `.dark`. Semantic tokens only.
 
 **`src/router.tsx`**:
 
@@ -442,18 +433,18 @@ declare module "@tanstack/react-router" {
 }
 ```
 
-**`src/client.tsx`** and **`src/ssr.tsx`** — standard TanStack Start entry point boilerplate.
+**`src/client.tsx`** + **`src/ssr.tsx`** — standard TanStack Start entry boilerplate.
 
-Install shadcn/ui (configure to use `src/components`):
+Install shadcn/ui:
 
 ```bash
 pnpm dlx shadcn@latest init --defaults
 pnpm dlx shadcn@latest add button card input label sidebar table dropdown-menu form separator sheet
 ```
 
-**Theme toggle**: three-state (light -> dark -> system -> light). Store in localStorage. Apply `.dark` class on `<html>`. Use JS-only system preference detection — NO CSS `@media (prefers-color-scheme)` queries.
+**Theme toggle** — three-state (light → dark → system → light), localStorage-persisted, `.dark` class on `<html>`. **JS-only** system preference detection; NO CSS `@media (prefers-color-scheme)` queries.
 
-**Components** in `src/components/`: `app-sidebar.tsx` (navigation), `theme-toggle.tsx`, `user-nav.tsx` (dropdown with sign-out), `stat-card.tsx`.
+**Components** in `src/components/`: `app-sidebar.tsx`, `theme-toggle.tsx`, `user-nav.tsx`, `stat-card.tsx`.
 
 ### Step 7: CRUD Server Functions
 
@@ -484,13 +475,10 @@ pnpm dev
 
 ### Step 9: Deploy to Production
 
-**Pre-deploy checklist:**
-- [ ] `wrangler.jsonc` has correct `account_id`
+**Pre-deploy checklist** — verify before running deploy:
+- [ ] `wrangler.jsonc` has correct `account_id`; `main` is `"@tanstack/react-start/server-entry"`; `nodejs_compat` in `compatibility_flags`
 - [ ] D1 database created and `database_id` set
-- [ ] `main` is `"@tanstack/react-start/server-entry"`
-- [ ] `nodejs_compat` in `compatibility_flags`
-- [ ] `.dev.vars` is in `.gitignore`
-- [ ] No hardcoded secrets in source
+- [ ] `.dev.vars` is gitignored; no hardcoded secrets in source
 
 **Set production secrets:**
 
@@ -498,15 +486,13 @@ pnpm dev
 openssl rand -hex 32 | npx wrangler secret put BETTER_AUTH_SECRET
 echo "https://PROJECT.SUBDOMAIN.workers.dev" | npx wrangler secret put BETTER_AUTH_URL
 echo "http://localhost:3000,https://PROJECT.SUBDOMAIN.workers.dev" | npx wrangler secret put TRUSTED_ORIGINS
-```
 
-If using Google OAuth:
-```bash
+# Google OAuth (optional)
 echo "your-client-id" | npx wrangler secret put GOOGLE_CLIENT_ID
 echo "your-client-secret" | npx wrangler secret put GOOGLE_CLIENT_SECRET
 ```
 
-Add production redirect URI in Google Cloud Console: `https://PROJECT.SUBDOMAIN.workers.dev/api/auth/callback/google`
+If using Google OAuth, add the production redirect URI in Google Cloud Console: `https://PROJECT.SUBDOMAIN.workers.dev/api/auth/callback/google`.
 
 **Migrate and deploy:**
 
@@ -515,15 +501,11 @@ pnpm db:migrate:remote
 pnpm build && npx wrangler deploy
 ```
 
-After first deploy: update `BETTER_AUTH_URL` with actual Worker URL, then redeploy.
+After first deploy, update `BETTER_AUTH_URL` to the actual Worker URL and redeploy.
 
-**Post-deploy verification:**
-- [ ] App loads at production URL
-- [ ] Auth login/register works
-- [ ] CRUD operations work
-- [ ] Theme persists across page loads
+**Verify:** app loads at production URL, auth works, CRUD works, theme persists.
 
-**Custom domain** (optional): Add in Cloudflare Dashboard -> Workers -> Triggers -> Custom Domains. Update `BETTER_AUTH_URL` and `TRUSTED_ORIGINS` secrets with the custom domain. Update Google OAuth redirect URI. Redeploy.
+**Custom domain** (optional): Cloudflare Dashboard → Workers → Triggers → Custom Domains. Update `BETTER_AUTH_URL` + `TRUSTED_ORIGINS` secrets + Google OAuth redirect URI to the new domain. Redeploy.
 
 ## Common Issues
 

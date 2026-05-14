@@ -1,19 +1,19 @@
 {
   "version": 1,
-  "updated_at": "2026-05-13T04:07:14.319998Z",
-  "total_count": 558,
+  "updated_at": "2026-05-14T04:07:53.229794Z",
+  "total_count": 681,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
       "branch": "master",
       "relative_path": "skills/x-twitter-scraper/SKILL.md",
-      "updated_at": "2026-05-13T04:06:53.310150Z"
+      "updated_at": "2026-05-14T04:07:23.618170Z"
     },
     "miningstore/confluence-to-agent-knowledge-base": {
       "repo": "miningstore/confluence-to-agent-knowledge-base",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-13T04:06:54.604499Z"
+      "updated_at": "2026-05-14T04:07:25.740146Z"
     },
     "seangeng/holydocs-skills:holydocs": {
       "repo": "seangeng/holydocs-skills",
@@ -43,7 +43,7 @@
       "repo": "mguozhen/dingtalk-bridge",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-13T04:06:52.552574Z"
+      "updated_at": "2026-05-14T04:07:22.845277Z"
     },
     "conorluddy/ios-simulator-skill": {
       "repo": "conorluddy/ios-simulator-skill",
@@ -55,61 +55,61 @@
       "repo": "lackeyjb/playwright-skill",
       "branch": "main",
       "relative_path": "skills/playwright-skill/SKILL.md",
-      "updated_at": "2026-05-13T04:06:52.208617Z"
+      "updated_at": "2026-05-14T04:07:22.121170Z"
     },
     "ToniPerea/humanizar-texto-es": {
       "repo": "ToniPerea/humanizar-texto-es",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-13T04:06:52.263975Z"
+      "updated_at": "2026-05-14T04:07:22.108726Z"
     },
     "yusufkaraaslan/Skill_Seekers": {
       "repo": "yusufkaraaslan/Skill_Seekers",
       "branch": "main",
       "relative_path": "skills/skill-seekers/SKILL.md",
-      "updated_at": "2026-05-13T04:06:52.069792Z"
+      "updated_at": "2026-05-14T04:07:21.949619Z"
     },
     "Chris1220-cmd/deep-research-skill": {
       "repo": "Chris1220-cmd/deep-research-skill",
       "branch": "master",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-13T04:06:52.324444Z"
+      "updated_at": "2026-05-14T04:07:22.248688Z"
     },
     "Enreign/pagerunner-skill": {
       "repo": "Enreign/pagerunner-skill",
       "branch": "main",
       "relative_path": "skills/pagerunner-skill/SKILL.md",
-      "updated_at": "2026-05-13T04:06:53.330807Z"
+      "updated_at": "2026-05-14T04:07:24.143637Z"
     },
     "alonw0/web-asset-generator": {
       "repo": "alonw0/web-asset-generator",
       "branch": "main",
       "relative_path": "skills/web-asset-generator/SKILL.md",
-      "updated_at": "2026-05-13T04:06:53.054521Z"
+      "updated_at": "2026-05-14T04:07:23.562708Z"
     },
     "mguozhen/social-bot": {
       "repo": "mguozhen/social-bot",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-13T04:06:52.293274Z"
+      "updated_at": "2026-05-14T04:07:22.493574Z"
     },
     "b33kman/professional-business-writing-skill": {
       "repo": "b33kman/professional-business-writing-skill",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-13T04:06:52.380144Z"
+      "updated_at": "2026-05-14T04:07:22.436504Z"
     },
     "MetcalfSolutions/Satori": {
       "repo": "MetcalfSolutions/Satori",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-13T04:06:54.014234Z"
+      "updated_at": "2026-05-14T04:07:24.620702Z"
     },
     "varfolomejev/query-victorialogs": {
       "repo": "varfolomejev/query-victorialogs",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-13T04:06:52.916864Z"
+      "updated_at": "2026-05-14T04:07:23.628734Z"
     },
     "KKKKhazix/khazix-skills:hv-analysis": {
       "repo": "KKKKhazix/khazix-skills",
@@ -157,7 +157,7 @@
       "repo": "0xRy4n/hubspot-developer-skill",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-13T04:06:54.159173Z"
+      "updated_at": "2026-05-14T04:07:25.117916Z"
     },
     "KKKKhazix/khazix-skills:aihot": {
       "repo": "KKKKhazix/khazix-skills",
@@ -187,7 +187,7 @@
       "repo": "getterdoneinc/skill",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-13T04:06:52.347883Z"
+      "updated_at": "2026-05-14T04:07:22.483877Z"
     },
     "anthropics/skills:skills/skill-creator": {
       "repo": "anthropics/skills",
@@ -3277,7 +3277,7 @@
       "repo": "clockless-org/html-anything",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-13T04:07:08.086121Z"
+      "updated_at": "2026-05-14T04:07:47.079557Z"
     },
     "aiskillstore/marketplace:skills/easysoft/zentao-cli/SKILL.md": {
       "repo": "aiskillstore/marketplace",
@@ -3350,6 +3350,744 @@
       "branch": "main",
       "relative_path": "SKILL.md",
       "updated_at": "2026-05-13T04:06:54.950854Z"
+    },
+    "aiskillstore/marketplace:skills/cyrusse/use-skills/SKILL.md": {
+      "repo": "aiskillstore/marketplace",
+      "branch": "main",
+      "relative_path": "skills/cyrusse/use-skills/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.215654Z"
+    },
+    "a5c-ai/babysitter:library/specializations/web-development/skills/websocket/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/web-development/skills/websocket/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.222753Z"
+    },
+    "a5c-ai/babysitter:library/specializations/web-development/skills/turborepo/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/web-development/skills/turborepo/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.227774Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/flipbook/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/flipbook/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.231252Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/perforce/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/perforce/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.257702Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/cc10x/skills/architecture-patterns/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/cc10x/skills/architecture-patterns/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.262327Z"
+    },
+    "ammawla/encode-toolkit:skills/functional-screen-analysis/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/functional-screen-analysis/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.359146Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/regulatory-elements/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/regulatory-elements/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.382762Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/search-encode/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/search-encode/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.405563Z"
+    },
+    "ammawla/encode-toolkit:skills/clinvar-annotation/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/clinvar-annotation/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.421829Z"
+    },
+    "ammawla/encode-toolkit:skills/liftover-coordinates/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/liftover-coordinates/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.437823Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/jaspar-motifs/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/jaspar-motifs/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.455655Z"
+    },
+    "ammawla/encode-toolkit:skills/geo-connector/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/geo-connector/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.473130Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/download-encode/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/download-encode/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.492210Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/ensembl-annotation/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/ensembl-annotation/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.505807Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/publication-trust/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/publication-trust/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.528159Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/cellxgene-context/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/cellxgene-context/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.543698Z"
+    },
+    "ammawla/encode-toolkit:skills/integrative-analysis/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/integrative-analysis/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.564791Z"
+    },
+    "ammawla/encode-toolkit:skills/ucsc-browser/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/ucsc-browser/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.578772Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/geo-connector/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/geo-connector/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.593188Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/compare-biosamples/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/compare-biosamples/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.613704Z"
+    },
+    "ammawla/encode-toolkit:skills/ensembl-annotation/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/ensembl-annotation/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.628039Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/rpikit/skills/plan-implementation/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/rpikit/skills/plan-implementation/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.631703Z"
+    },
+    "ammawla/encode-toolkit:skills/pipeline-guide/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/pipeline-guide/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.651298Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/cross-reference/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/cross-reference/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.676541Z"
+    },
+    "ammawla/encode-toolkit:skills/motif-analysis/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/motif-analysis/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.696805Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/motif-analysis/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/motif-analysis/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.715970Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/single-cell-encode/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/single-cell-encode/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.737918Z"
+    },
+    "ammawla/encode-toolkit:skills/epigenome-profiling/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/epigenome-profiling/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.764491Z"
+    },
+    "ammawla/encode-toolkit:skills/scientific-writing/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/scientific-writing/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.795133Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/gtex-expression/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/gtex-expression/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.812082Z"
+    },
+    "a5c-ai/babysitter:library/specializations/web-development/skills/turbopack/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/web-development/skills/turbopack/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.815347Z"
+    },
+    "ammawla/encode-toolkit:skills/visualization-workflow/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/visualization-workflow/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.834616Z"
+    },
+    "ammawla/encode-toolkit:skills/gwas-catalog/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/gwas-catalog/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.854558Z"
+    },
+    "ammawla/encode-toolkit:skills/cross-reference/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/cross-reference/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.878898Z"
+    },
+    "ammawla/encode-toolkit:skills/regulatory-elements/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/regulatory-elements/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.900244Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/setup/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/setup/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.911602Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/ucsc-browser/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/ucsc-browser/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.925378Z"
+    },
+    "ammawla/encode-toolkit:skills/scrna-meta-analysis/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/scrna-meta-analysis/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.947040Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/pipeline-guide/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/pipeline-guide/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.966613Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/scientific-writing/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/scientific-writing/SKILL.md",
+      "updated_at": "2026-05-14T04:07:19.998277Z"
+    },
+    "ammawla/encode-toolkit:skills/gnomad-variants/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/gnomad-variants/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.013454Z"
+    },
+    "JimLiu/baoyu-skills:skills/baoyu-wechat-summary/SKILL.md": {
+      "repo": "JimLiu/baoyu-skills",
+      "branch": "main",
+      "relative_path": "skills/baoyu-wechat-summary/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.039870Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/epigenome-profiling/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/epigenome-profiling/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.071503Z"
+    },
+    "ammawla/encode-toolkit:skills/disease-research/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/disease-research/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.089143Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/clinvar-annotation/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/clinvar-annotation/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.104959Z"
+    },
+    "ammawla/encode-toolkit:skills/peak-annotation/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/peak-annotation/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.122785Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/variant-annotation/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/variant-annotation/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.145166Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/scrna-meta-analysis/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/scrna-meta-analysis/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.166714Z"
+    },
+    "ammawla/encode-toolkit:skills/download-encode/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/download-encode/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.184138Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/peak-annotation/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/peak-annotation/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.201092Z"
+    },
+    "ammawla/encode-toolkit:skills/single-cell-encode/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/single-cell-encode/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.221907Z"
+    },
+    "ammawla/encode-toolkit:skills/cellxgene-context/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/cellxgene-context/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.237469Z"
+    },
+    "ammawla/encode-toolkit:skills/publication-trust/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/publication-trust/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.251693Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/cite-encode/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/cite-encode/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.271858Z"
+    },
+    "ammawla/encode-toolkit:skills/gtex-expression/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/gtex-expression/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.289558Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/gwas-catalog/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/gwas-catalog/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.308792Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/track-experiments/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/track-experiments/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.332705Z"
+    },
+    "ammawla/encode-toolkit:skills/search-encode/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/search-encode/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.352262Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/batch-analysis/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/batch-analysis/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.371175Z"
+    },
+    "ammawla/encode-toolkit:skills/track-experiments/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/track-experiments/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.395529Z"
+    },
+    "ammawla/encode-toolkit:skills/cite-encode/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/cite-encode/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.414925Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/gnomad-variants/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/gnomad-variants/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.430345Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/disease-research/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/disease-research/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.448727Z"
+    },
+    "ammawla/encode-toolkit:skills/batch-analysis/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/batch-analysis/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.466287Z"
+    },
+    "ammawla/encode-toolkit:skills/multi-omics-integration/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/multi-omics-integration/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.488014Z"
+    },
+    "ammawla/encode-toolkit:skills/jaspar-motifs/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/jaspar-motifs/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.507485Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/quality-assessment/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/quality-assessment/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.532642Z"
+    },
+    "ammawla/encode-toolkit:skills/variant-annotation/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/variant-annotation/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.555177Z"
+    },
+    "ammawla/encode-toolkit:skills/setup/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/setup/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.566127Z"
+    },
+    "ammawla/encode-toolkit:skills/quality-assessment/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/quality-assessment/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.593392Z"
+    },
+    "ammawla/encode-toolkit:skills/compare-biosamples/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/compare-biosamples/SKILL.md",
+      "updated_at": "2026-05-14T04:07:20.613156Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/integrative-analysis/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/integrative-analysis/SKILL.md",
+      "updated_at": "2026-05-14T04:07:21.556372Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/defi-protocol-templates/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/defi-protocol-templates/SKILL.md",
+      "updated_at": "2026-05-14T04:07:21.566682Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/distributed-debugging-debug-trace/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/distributed-debugging-debug-trace/SKILL.md",
+      "updated_at": "2026-05-14T04:07:21.570311Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/azure-ai-translation-text-py/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/azure-ai-translation-text-py/SKILL.md",
+      "updated_at": "2026-05-14T04:07:21.576694Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/codebase-cleanup-refactor-clean/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/codebase-cleanup-refactor-clean/SKILL.md",
+      "updated_at": "2026-05-14T04:07:21.580238Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/seo-cannibalization-detector/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/seo-cannibalization-detector/SKILL.md",
+      "updated_at": "2026-05-14T04:07:21.609773Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/api-documentation-generator/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/api-documentation-generator/SKILL.md",
+      "updated_at": "2026-05-14T04:07:21.619207Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/azure-mgmt-apimanagement-dotnet/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/azure-mgmt-apimanagement-dotnet/SKILL.md",
+      "updated_at": "2026-05-14T04:07:21.626693Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/cc-skill-project-guidelines-example/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/cc-skill-project-guidelines-example/SKILL.md",
+      "updated_at": "2026-05-14T04:07:21.633738Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/office-productivity/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/office-productivity/SKILL.md",
+      "updated_at": "2026-05-14T04:07:21.638699Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/backend-development-feature-development/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/backend-development-feature-development/SKILL.md",
+      "updated_at": "2026-05-14T04:07:21.648212Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/secrets-management/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/secrets-management/SKILL.md",
+      "updated_at": "2026-05-14T04:07:21.655060Z"
+    },
+    "redhat-community-ai-tools/claude-code-setup-evaluator:skills/coding-standards/SKILL.md": {
+      "repo": "redhat-community-ai-tools/claude-code-setup-evaluator",
+      "branch": "main",
+      "relative_path": "skills/coding-standards/SKILL.md",
+      "updated_at": "2026-05-14T04:07:21.664113Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/error-debugging-error-analysis/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/error-debugging-error-analysis/SKILL.md",
+      "updated_at": "2026-05-14T04:07:21.667798Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/liftover-coordinates/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/liftover-coordinates/SKILL.md",
+      "updated_at": "2026-05-14T04:07:21.685981Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/multi-omics-integration/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/multi-omics-integration/SKILL.md",
+      "updated_at": "2026-05-14T04:07:21.939229Z"
+    },
+    "ammawla/encode-toolkit:skills/bioinformatics-installer/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/bioinformatics-installer/SKILL.md",
+      "updated_at": "2026-05-14T04:07:21.973936Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/hic-aggregation/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/hic-aggregation/SKILL.md",
+      "updated_at": "2026-05-14T04:07:21.995742Z"
+    },
+    "ammawla/encode-toolkit:skills/accessibility-aggregation/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/accessibility-aggregation/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.019198Z"
+    },
+    "aiskillstore/marketplace:skills/benderfendor/plan/SKILL.md": {
+      "repo": "aiskillstore/marketplace",
+      "branch": "main",
+      "relative_path": "skills/benderfendor/plan/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.029533Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/visualization-workflow/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/visualization-workflow/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.049059Z"
+    },
+    "ammawla/encode-toolkit:skills/methylation-aggregation/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/methylation-aggregation/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.072654Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/functional-screen-analysis/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/functional-screen-analysis/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.099264Z"
+    },
+    "ammawla/encode-toolkit:skills/hic-aggregation/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/hic-aggregation/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.145897Z"
+    },
+    "OutlineDriven/odin-claude-plugin:skills/simplify/SKILL.md": {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "branch": "main",
+      "relative_path": "skills/simplify/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.188282Z"
+    },
+    "aiskillstore/marketplace:skills/lumacoder/open-show/SKILL.md": {
+      "repo": "aiskillstore/marketplace",
+      "branch": "main",
+      "relative_path": "skills/lumacoder/open-show/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.277542Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/histone-aggregation/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/histone-aggregation/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.358042Z"
+    },
+    "ammawla/encode-toolkit:skills/histone-aggregation/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/histone-aggregation/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.426153Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/methylation-aggregation/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/methylation-aggregation/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.461703Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/bioinformatics-installer/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/bioinformatics-installer/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.524405Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/accessibility-aggregation/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/accessibility-aggregation/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.543334Z"
+    },
+    "ammawla/encode-toolkit:skills/pipeline-chipseq/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/pipeline-chipseq/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.568714Z"
+    },
+    "ammawla/encode-toolkit:skills/pipeline-atacseq/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/pipeline-atacseq/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.591430Z"
+    },
+    "ammawla/encode-toolkit:skills/pipeline-rnaseq/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/pipeline-rnaseq/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.617564Z"
+    },
+    "ammawla/encode-toolkit:skills/pipeline-hic/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/pipeline-hic/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.641529Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/pipeline-chipseq/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/pipeline-chipseq/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.668602Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/pipeline-atacseq/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/pipeline-atacseq/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.702903Z"
+    },
+    "ammawla/encode-toolkit:skills/pipeline-dnaseseq/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/pipeline-dnaseseq/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.723604Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/pipeline-rnaseq/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/pipeline-rnaseq/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.748979Z"
+    },
+    "browser-act/skills:browser-act-skill-forge/SKILL.md": {
+      "repo": "browser-act/skills",
+      "branch": "main",
+      "relative_path": "browser-act-skill-forge/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.788145Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/pipeline-cutandrun/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/pipeline-cutandrun/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.811385Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/pipeline-wgbs/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/pipeline-wgbs/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.833519Z"
+    },
+    "ammawla/encode-toolkit:skills/pipeline-wgbs/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/pipeline-wgbs/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.867978Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/pipeline-dnaseseq/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/pipeline-dnaseseq/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.889172Z"
+    },
+    "ammawla/encode-toolkit:skills/pipeline-cutandrun/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "skills/pipeline-cutandrun/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.912565Z"
+    },
+    "ammawla/encode-toolkit:plugin/skills/pipeline-hic/SKILL.md": {
+      "repo": "ammawla/encode-toolkit",
+      "branch": "main",
+      "relative_path": "plugin/skills/pipeline-hic/SKILL.md",
+      "updated_at": "2026-05-14T04:07:22.937431Z"
+    },
+    "proyecto26/slides-ai-plugin:skills/html-slides/SKILL.md": {
+      "repo": "proyecto26/slides-ai-plugin",
+      "branch": "main",
+      "relative_path": "skills/html-slides/SKILL.md",
+      "updated_at": "2026-05-14T04:07:23.179562Z"
+    },
+    "chrisallenlane/claude-swe-workflows:skills/lead-review/SKILL.md": {
+      "repo": "chrisallenlane/claude-swe-workflows",
+      "branch": "master",
+      "relative_path": "skills/lead-review/SKILL.md",
+      "updated_at": "2026-05-14T04:07:23.287473Z"
+    },
+    "chrisallenlane/claude-swe-workflows:skills/lead-refactor/SKILL.md": {
+      "repo": "chrisallenlane/claude-swe-workflows",
+      "branch": "master",
+      "relative_path": "skills/lead-refactor/SKILL.md",
+      "updated_at": "2026-05-14T04:07:23.330649Z"
+    },
+    "chrisallenlane/claude-swe-workflows:skills/lead-bug-hunt/SKILL.md": {
+      "repo": "chrisallenlane/claude-swe-workflows",
+      "branch": "master",
+      "relative_path": "skills/lead-bug-hunt/SKILL.md",
+      "updated_at": "2026-05-14T04:07:23.407399Z"
+    },
+    "proyecto26/slides-ai-plugin:skills/pptx-slides/SKILL.md": {
+      "repo": "proyecto26/slides-ai-plugin",
+      "branch": "main",
+      "relative_path": "skills/pptx-slides/SKILL.md",
+      "updated_at": "2026-05-14T04:07:24.524352Z"
     }
   }
 }

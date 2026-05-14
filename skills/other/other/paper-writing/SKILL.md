@@ -26,7 +26,7 @@ In this hybrid pack, the pipeline itself is unchanged, but `paper-plan` and `pap
 
 - **VENUE = `ICLR`** — Target venue. Options: `ICLR`, `NeurIPS`, `ICML`, `CVPR`, `ACL`, `AAAI`, `ACM`, `IEEE_JOURNAL` (IEEE Transactions / Letters), `IEEE_CONF` (IEEE conferences). Affects style file, page limit, citation format.
 - **MAX_IMPROVEMENT_ROUNDS = 2** — Number of review→fix→recompile rounds in the improvement loop.
-- **REVIEWER_MODEL = `gpt-5.4`** — Model used via Codex MCP for plan review, figure review, writing review, and improvement loop.
+- **REVIEWER_MODEL = `gpt-5.5`** — Model used via Codex MCP for plan review, figure review, writing review, and improvement loop.
 - **AUTO_PROCEED = true** — Auto-continue between phases. Set `false` to pause and wait for user approval after each phase.
 - **HUMAN_CHECKPOINT = false** — When `true`, the improvement loop (Phase 5) pauses after each round's review to let you see the score and provide custom modification instructions. When `false` (default), the loop runs fully autonomously. Passed through to `/auto-paper-improvement-loop`.
 - **ILLUSTRATION = `figurespec`** — Architecture/illustration generator for Phase 2b: `figurespec` (default, deterministic JSON→SVG via `/figure-spec`, best for architecture/workflow/topology), `gemini` (AI-generated via `/paper-illustration`, best for qualitative method illustrations; needs `GEMINI_API_KEY`), `codex-image2` (AI-generated via `/paper-illustration-image2` through the local Codex native image bridge — no external API key, uses your ChatGPT Plus/Pro quota; experimental), `mermaid` (Mermaid syntax via `/mermaid-diagram`, free, best for flowcharts), or `false` (skip Phase 2b, manual only).
@@ -443,7 +443,7 @@ After the final paper-claim-audit passes, run `/citation-audit` to verify every 
 ```
 if paper/references.bib (or paper.bib) exists and contains entries cited from sec/*.tex:
     Run /citation-audit "paper/"
-    Fresh cross-family reviewer (gpt-5.4 via Codex MCP) with web/DBLP/arXiv lookup
+    Fresh cross-family reviewer (gpt-5.5 via Codex MCP) with web/DBLP/arXiv lookup
     verifies each entry:
       (i)   EXISTENCE — paper resolves at claimed arXiv ID / DOI / venue
       (ii)  METADATA — author names, year, venue, title match canonical sources

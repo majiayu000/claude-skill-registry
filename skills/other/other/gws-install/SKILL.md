@@ -1,11 +1,6 @@
 ---
 name: gws-install
-description: >
-  Quick install of the Google Workspace CLI (gws) on an additional machine using existing
-  OAuth credentials. Requires client_secret.json from a previous gws-setup.
-  Use when setting up gws on a new computer, reinstalling after a fresh OS, or
-  configuring a second workstation. Triggers: "install gws", "gws on new machine",
-  "gws install", "set up gws again".
+description: "Quick install of the Google Workspace CLI (gws) on an additional machine using existing OAuth credentials. Requires client_secret.json from a previous gws-setup. Use whenever the user wants to install gws on a new computer, reinstall after a fresh OS, configure a second workstation, or says 'install gws', 'gws on new machine', 'set up gws again'."
 compatibility: claude-code-only
 ---
 

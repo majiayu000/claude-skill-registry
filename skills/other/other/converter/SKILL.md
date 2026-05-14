@@ -1,6 +1,7 @@
 ---
 name: converter
 description: 'Convert AgentOps skill formats.'
+practices: [refactoring, design-patterns]
 skill_api_version: 1
 context:
   window: isolated

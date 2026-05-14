@@ -4,21 +4,9 @@ description: "Walk through a live web app AS a real user to find usability + beh
 compatibility: claude-code-only
 ---
 
-# UX Audit (v2)
+# UX Audit
 
 Walk through a live web app AS a real user. The audit is **interaction-first** — typing, clicking, sending, watching, screenshotting. A static DOM sweep cannot produce a verdict.
-
-## Why this skill exists in v2
-
-Most catastrophic UX bugs only surface under interaction:
-
-- The Send button that doesn't clear the input
-- The @-mention picker that double-inserts the handle
-- The thread pane that breaks layout when the sidebar is also open at 1280px
-- The form submit that disables the button but silently 5xx's
-- The console warning that's been logging for weeks but no audit ever flagged
-
-A DOM probe sees none of these. They require: type → wait → screenshot → diff → console-read → repeat. The previous audit method drifted toward sweep mode (faster, feels productive, blind to behaviour). v2 makes that drift impossible — the agent cannot output "Pass" without an Interaction Manifest that proves real clicks happened.
 
 ## Verdict states
 
@@ -56,9 +44,9 @@ axe-core thresholds are run **per page** (>1 violation on any single page fails)
 
 ### Allowlist for known noise
 
-Some apps have known-noisy console / network categories that aren't bugs (Sentry info logs in dev, browser-extension chatter, expected 401 on auth-check probes). The audit reads an audit-config file before Phase 3 and applies the allowlist when classifying findings. Path fallback chain: `.jez/audit-config.yml` → `audit-config.yml` (project root) → `.audit/config.yml`. Allowlisted entries stay in the Interaction Manifest (transparency) but suppress from the findings count. The verdict block always shows both raw and allowlisted counts — `Console warnings: 3 (1 allowlisted, 2 reportable)`.
+Some apps have known-noisy console / network categories that aren't bugs (Sentry info logs, browser-extension chatter, expected 401 on auth-check probes). Read the audit-config file before Phase 3 and apply its allowlist. Path fallback: `.jez/audit-config.yml` → `audit-config.yml` → `.audit/config.yml`. Allowlisted entries stay in the Interaction Manifest but suppress from findings. Verdict block shows both raw and allowlisted: `Console warnings: 3 (1 allowlisted, 2 reportable)`.
 
-Default without a config: every console error / warning is a finding. Allowlist is opt-in per project, not a global escape hatch. Full format, semantics, surface overrides, and quarterly-audit discipline in [references/audit-config.md](references/audit-config.md).
+Default without a config: every console error / warning is a finding. Format, semantics, surface overrides in [references/audit-config.md](references/audit-config.md).
 
 ## Phases (in order)
 
@@ -70,7 +58,7 @@ Default without a config: every console error / warning is a finding. Allowlist 
 6. **Verdict** — verdict state, hard-gate scorecard, perfection roadmap, findings with reproduction
 7. **Fix-and-verify** — patch findings, re-walk affected slices, update report
 
-This is the thorough audit. There is no quick mode. For a 30-second pre-deploy check, use the dogfood drill at the bottom of this file — it's a project-level rule, not a skill invocation.
+For a 30-second pre-deploy check, use the dogfood drill at the bottom of this file — a project-level rule, not a skill invocation.
 
 ## Phase 1 — Pre-flight
 
@@ -237,7 +225,7 @@ Known silent-failure controls (Approve/Deny on tool-call cards, OAuth-in-dialog 
 
 ### Round-trip Workflow Integrity (mandatory)
 
-For every A → B → A workflow, walk the full round-trip: capture A's state, trigger action that goes to B, complete mutation, navigate back via discoverable affordance (not reload), verify A reflects new state including header badges. Stale A or hidden back-affordance is High — looks like data loss to the user. Particular smells: header badges (bell, unread, pending pips) that depend on data multiple pages can mutate. Full protocol + surface inventory + findings template in [references/round-trip-workflows.md](references/round-trip-workflows.md).
+Covered by Scenario 10 in the battery (Phase 5). Run it as part of Phase 3 walkthrough too — every A→B→A flow encountered while traversing threads gets the round-trip check before moving on. Full protocol in [references/round-trip-workflows.md](references/round-trip-workflows.md).
 
 ### Responsive Sweep
 
@@ -413,13 +401,9 @@ Closes the loop in one session instead of waiting for tomorrow's audit.
 
 ## Cross-reference with ux-extract and brains-trust
 
-If a pattern library exists (fallback chain: `.jez/artifacts/ux-extracts/<ref>.md` → `docs/ux-extracts/<ref>.md` → `audits/extracts/<ref>.md`), read it before starting and use it as the bar for findings.
+If a pattern library exists (fallback: `.jez/artifacts/ux-extracts/<ref>.md` → `docs/ux-extracts/<ref>.md` → `audits/extracts/<ref>.md`), read it before starting and use it as the bar for findings.
 
-After v2 produces a verdict, consider running `dev-tools:brains-trust` to get a second-opinion review from a different model. v2 catches a class; brains-trust catches what your specific model habit misses. Recommended cadence: every 4-6 weeks.
-
-When merging brains-trust findings back into the audit report, **dedup by `(reproduction-steps, suspected-location)`**. Same bug surfaced by a second model is one finding with two confirmations, not two findings. The merged finding gets a `Confirmed by:` line listing the models that flagged it — useful signal for prioritising fixes (a bug both models found is high-confidence).
-
-Anti-pattern: appending the second model's report verbatim to the first. Produces a noisy report with the same Critical bug listed twice and inflates the perceived severity.
+After the verdict, optionally run `dev-tools:brains-trust` for a second-opinion review (every 4-6 weeks). When merging findings back, **dedup by `(reproduction-steps, suspected-location)`** — same bug from a second model is one finding with two confirmations, not two findings. Add a `Confirmed by:` line. Don't append the second report verbatim; produces noise + inflates severity.
 
 ## The 30-Second Dogfood Drill (project-level rule)
 
@@ -483,11 +467,6 @@ For audits expected to run > 30 minutes, set up a 15-min `/loop` check-in alongs
 
 ## Tips
 
-- **Interaction first, sweep last.** A sweep without prior interaction is Incomplete.
-- **Type into something on every page.** Real text. The single most-effective change for catching behaviour bugs.
-- **Read the console after every primary action.** Most regressions surface as warnings before they become bugs.
-- **Multi-pane stress is not optional.** If the app has collapsible UI, the worst bugs live in pane-overlap zones.
-- **Stay in persona.** If you catch yourself thinking "a developer would know..." — stop. Your persona doesn't.
 - **Every hesitation is a finding.** If you paused to figure out what to click, that's friction worth reporting.
 - **Use the eyedropper liberally.** Single fastest way to find vibe greys, off-token colours, design-system drift.
 - **Coverage is arithmetic.** Inventoried ÷ tested. Publish the ratio in the report.

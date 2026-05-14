@@ -11,7 +11,7 @@ Check whether a proposed method/idea has already been done in the literature: **
 
 ## Constants
 
-- REVIEWER_MODEL = `gpt-5.4` — Model used via Codex MCP. Must be an OpenAI model (e.g., `gpt-5.4`, `o3`, `gpt-4o`)
+- REVIEWER_MODEL = `gpt-5.5` — Model used via Codex MCP. Must be an OpenAI model (e.g., `gpt-5.5`, `o3`, `gpt-4o`)
 
 ## Instructions
 
@@ -84,6 +84,7 @@ Output a structured report:
 - Check both the method AND the experimental setting for novelty
 - If the method is not novel but the FINDING would be, say so explicitly
 - Always check the most recent 6 months of arXiv — the field moves fast
+- **Anti-hallucination for Closest Prior Work.** Every paper in the prior-work table must pass pre-search verification via `tools/verify_papers.py` (3-layer arXiv / CrossRef / Semantic Scholar fallback) before being included. Never fabricate arXiv IDs, DOIs, or titles from memory; tag unverifiable entries as `[UNVERIFIED]` and surface the uncertainty to the user. Full protocol in [`shared-references/citation-discipline.md`](../shared-references/citation-discipline.md) § Pre-Search Verification Protocol.
 
 ## Review Tracing
 

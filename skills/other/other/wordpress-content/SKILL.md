@@ -1,10 +1,6 @@
 ---
 name: wordpress-content
-description: >
-  Create and manage WordPress posts, pages, media, categories, and menus.
-  Workflow: determine content type, choose method (WP-CLI or REST API), execute, verify.
-  Use when creating blog posts, updating pages, uploading media, managing categories
-  and tags, updating menus, or doing bulk content operations on WordPress sites.
+description: "Create and manage WordPress posts, pages, media, categories, tags, and menus via WP-CLI or the REST API. Use whenever the user wants to publish a blog post on WordPress, update a page, upload media, manage categories or tags, update navigation menus, schedule posts, or do bulk content operations on a WordPress site."
 compatibility: claude-code-only
 ---
 

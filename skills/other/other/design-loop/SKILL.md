@@ -1,6 +1,6 @@
 ---
 name: design-loop
-description: "Autonomous multi-page site builder using a baton-passing loop pattern. Each iteration reads a task from .design/next-prompt.md, generates a page with Claude's HTML/CSS/Tailwind, integrates it into the site, verifies visually via browser automation, then writes the next task to keep the loop going. Drives complete website builds from a single starting prompt. Triggers: 'design loop', 'build the site', 'build all pages', 'autonomous site build', 'baton loop', 'next page', 'keep building pages'."
+description: "Autonomous multi-page site builder using a baton-passing loop. Each iteration reads a task from .design/next-prompt.md, generates a page in HTML/Tailwind, integrates it into the site, verifies visually, then writes the next task to keep the loop alive. Use whenever the user asks to build an entire site autonomously, build all pages of a site, generate multiple pages in sequence, or run a 'design loop' / 'baton loop' / 'autonomous site build' — even if they say 'just keep going' or 'build the next page' or 'next page' mid-flow."
 allowed-tools:
   - Read
   - Write
@@ -516,20 +516,12 @@ project/
 └── .gitignore               # Add .design/screenshots/
 ```
 
-## Tips
-
-- **Start with the homepage** — it establishes the visual language for everything else
-- **Read existing pages before generating** — consistency comes from copying, not recreating
-- **One page per iteration** — don't try to generate multiple pages at once
-- **Include the design system in every baton** — Claude needs it fresh each time
-- **Use the roadmap** — don't generate pages randomly; follow the user's priority order
-- **Wire navigation early** — even link to pages that don't exist yet (they will soon)
-
 ## Common Pitfalls
 
 - Forgetting to update `.design/next-prompt.md` (breaks the loop)
-- Recreating a page that already exists in the sitemap
+- Recreating a page already marked `[x]` in SITE.md sitemap
 - Regenerating the header/nav instead of copying from existing pages
-- Not including the design system block in the baton prompt
-- Leaving `href="#"` placeholder links instead of real page URLs
+- Missing the design system block in the baton prompt
+- `href="#"` placeholders left in nav instead of real URLs
 - Inconsistent Tailwind config across pages
+- Generating multiple pages per iteration (one page per loop, always)

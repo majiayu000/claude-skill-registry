@@ -23,7 +23,7 @@ Unlike papers (dense prose, 8-15 pages), posters are **visual-first**: one page,
 - **COLUMNS = 4** — Number of content columns. Typical: 4 for landscape A0 (IMRAD), **3 for portrait A0** (research consensus), 2 for portrait A1. Portrait A0 should NEVER use 4 columns — text becomes too narrow and unreadable.
 - **PAPER_DIR = `paper/`** — Directory containing the compiled paper (main.tex + figures/).
 - **OUTPUT_DIR = `poster/`** — Output directory for all poster files.
-- **REVIEWER_MODEL = `gpt-5.4`** — Model used via Codex MCP for poster review.
+- **REVIEWER_MODEL = `gpt-5.5`** — Model used via Codex MCP for poster review.
 - **AUTO_PROCEED = false** — At each checkpoint, **always wait for explicit user confirmation**. Set `true` only if user explicitly requests fully autonomous mode.
 - **COMPILER = `latexmk`** — LaTeX build tool.
 - **ENGINE = `pdflatex`** — LaTeX engine. Use `xelatex` for CJK text.

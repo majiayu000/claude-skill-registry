@@ -53,7 +53,7 @@ Pass ONLY file paths and the audit checklist to the reviewer. The reviewer reads
 
 ```text
 spawn_agent:
-  model: gpt-5.4
+  model: gpt-5.5
   reasoning_effort: xhigh
   message: |
     You are an experiment integrity auditor. Read ALL files listed below
@@ -172,7 +172,7 @@ Also write `EXPERIMENT_AUDIT.json` for machine consumption:
 ```json
 {
   "date": "2026-04-10",
-  "auditor": "gpt-5.4-xhigh",
+  "auditor": "gpt-5.5-xhigh",
   "overall_verdict": "warn",
   "integrity_status": "warn",
   "checks": {

@@ -1,11 +1,6 @@
 ---
 name: nemoclaw-setup
-description: >
-  Install and configure NVIDIA NemoClaw (sandboxed OpenClaw agent platform) on Linux.
-  Handles cloudflared tunnels, Docker cgroup fixes, OpenShell, sandbox creation,
-  remote access via Cloudflare Tunnel, and known bug workarounds.
-  Triggers: "install nemoclaw", "setup nemoclaw", "nvidia nemoclaw", "openclaw setup",
-  "nemoclaw on spark", "nemoclaw on dgx".
+description: "Install and configure NVIDIA NemoClaw (sandboxed OpenClaw agent platform) on Linux. Handles cloudflared tunnels, Docker cgroup fixes, OpenShell, sandbox creation, remote access via Cloudflare Tunnel, and known bug workarounds. Use whenever the user mentions installing NemoClaw, setting up OpenClaw, configuring an NVIDIA Spark or DGX for sandboxed agents, or troubleshooting NemoClaw deployment."
 compatibility: claude-code-only
 ---
 

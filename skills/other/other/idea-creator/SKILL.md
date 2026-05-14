@@ -19,7 +19,7 @@ Given a broad research direction from the user, systematically generate, validat
 - **PILOT_TIMEOUT_HOURS = 3** — Hard timeout: kill pilots exceeding 3 hours. Collect partial results if available.
 - **MAX_PILOT_IDEAS = 3** — Pilot at most 3 ideas in parallel. Additional ideas are validated on paper only.
 - **MAX_TOTAL_GPU_HOURS = 8** — Total GPU budget for all pilots combined.
-- **REVIEWER_MODEL = `gpt-5.4`** — Model used via Codex MCP for brainstorming and review. Must be an OpenAI model (e.g., `gpt-5.4`, `o3`, `gpt-4o`).
+- **REVIEWER_MODEL = `gpt-5.5`** — Model used via Codex MCP for brainstorming and review. Must be an OpenAI model (e.g., `gpt-5.5`, `o3`, `gpt-4o`).
 - **REVIEWER_BACKEND = `codex`** — Default: Codex MCP (xhigh). Override with `— reviewer: oracle-pro` for GPT-5.4 Pro via Oracle MCP. See `shared-references/reviewer-routing.md`.
 - **OUTPUT_DIR = `idea-stage/`** — All idea-stage outputs go here. Create the directory if it doesn't exist.
 
@@ -303,6 +303,7 @@ if research-wiki/ exists:
 - "Apply X to Y" is the lowest form of research idea. Push for deeper questions.
 - Include eliminated ideas in the report — they save future time by documenting dead ends.
 - **If the user's direction is too broad (e.g., "NLP", "computer vision", "reinforcement learning"), STOP and ask them to narrow it.** A good direction is 1-2 sentences specifying the problem, domain, and constraint — e.g., "factorized gap in discrete diffusion LMs" or "sample efficiency of offline RL with image observations". Without sufficient specificity, generated ideas will be too vague to run experiments on.
+- **Anti-hallucination for cited papers.** When the landscape survey or novelty justification cites specific papers, every cited paper must pass pre-search verification (`tools/verify_papers.py`, 3-layer arXiv / CrossRef / S2 fallback). Never fabricate arXiv IDs, DOIs, or titles from memory; mark unverifiable references as `[UNVERIFIED]` rather than dropping or guessing. Full protocol in [`shared-references/citation-discipline.md`](../shared-references/citation-discipline.md) § Pre-Search Verification Protocol.
 
 ## Composing with Other Skills
 

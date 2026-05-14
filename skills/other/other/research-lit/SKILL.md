@@ -325,8 +325,54 @@ python3 "$SCRIPT" download ARXIV_ID --dir papers/
 - 1-second delay between downloads (rate limiting)
 - Verify each PDF > 10 KB
 
+### Step 1.5: Verify Candidate Papers (anti-hallucination, mandatory)
+
+Before analysis, run pre-search verification on **all** candidate papers
+collected from Steps 0a-1 to filter out LLM-fabricated arXiv IDs / DOIs /
+titles. Helper: `tools/verify_papers.py` (resolve via the chain
+`.aris/tools/verify_papers.py` → `tools/verify_papers.py` →
+`$ARIS_REPO/tools/verify_papers.py`, see
+[`shared-references/wiki-helper-resolution.md`](../shared-references/wiki-helper-resolution.md)).
+
+```bash
+# 1. Emit candidates as JSON (one entry per paper, with any known identifiers)
+cat > research-wiki/candidate_papers.json <<'JSON'
+[
+  {"id": "p1", "arxiv_id": "2307.03172", "doi": null, "title": "Lost in the Middle"},
+  {"id": "p2", "arxiv_id": null, "doi": "10.1145/...", "title": "..."},
+  {"id": "p3", "arxiv_id": null, "doi": null, "title": "Some Paper Title"}
+]
+JSON
+
+# 2. Run 3-layer verification (arXiv batch → CrossRef → Semantic Scholar fuzzy)
+python3 tools/verify_papers.py \
+    --input  research-wiki/candidate_papers.json \
+    --output research-wiki/verified_papers.json
+
+# 3. Read verdict + per-paper status; surface warnings to the user
+```
+
+**Mandatory output rules** (see
+[`shared-references/citation-discipline.md`](../shared-references/citation-discipline.md)
+§ Pre-Search Verification Protocol for the full contract):
+
+- Tag every paper in the analyzed list with its status: `✅ verified (via
+  arxiv|crossref|s2)` or `⚠️ UNVERIFIED (reason)` or `… verify_pending`.
+- **Never silently drop unverified papers** — keep them in the output with the
+  `[UNVERIFIED]` marker so the user can audit the search quality.
+- Never fabricate a DOI or arXiv ID from memory. If a field is unknown, leave
+  it `null` in `candidate_papers.json` — the helper will fall through to title
+  search.
+- If the helper returns `WARN` with `high_hallucination_rate`, surface the
+  warning verbatim and recommend re-running with narrower queries.
+- For papers tagged `verify_pending`, do not promote them to `verified` —
+  show the pending state to the user and retry on the next session.
+
+Optional: set `ARIS_VERIFY_EMAIL=you@institution.edu` in your shell to lift
+CrossRef rate limits to the polite pool.
+
 ### Step 2: Analyze Each Paper
-For each relevant paper (from all sources), extract:
+For each **verified** paper (from all sources), extract:
 - **Problem**: What gap does it address?
 - **Method**: Core technical contribution (1-2 sentences)
 - **Results**: Key numbers/claims

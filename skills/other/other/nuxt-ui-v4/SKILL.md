@@ -65,6 +65,16 @@ npm create nuxt@latest -- -t ui/editor       # Rich text editor
 
 **Commands available**: `/nuxt-ui-v4:setup`, `/nuxt-ui:migrate`, `/nuxt-ui:theme`, `/nuxt-ui:component`
 
+## Secure Installation
+
+UI packages modify CSS and component trees — verify before allowing into your project. Follow supply chain security best practices:
+
+- **Block post-install scripts** — `npm config set ignore-scripts true` (or Bun: disabled by default)
+- **Cooldown period** — Wait 7 days for new package versions to be vetted by the community
+- **Audit before installing** — Run `socket package score npm <pkg>` or use `socket npm install <pkg>` to check packages
+
+Load the `dependency-upgrade` skill for full security configuration including Socket CLI integration, cooldown setup, lockfile validation, and CI enforcement.
+
 ---
 
 ## Component Categories (125+ Total)

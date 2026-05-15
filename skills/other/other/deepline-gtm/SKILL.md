@@ -1,6 +1,6 @@
 ---
 name: deepline-gtm
-description: "Use this skill for GTM prospecting, enrichment, qualification, and outbound workflows, especially when users mention Deepline, CSV processing, lead/account/contact research, waterfall enrichment, email or LinkedIn lookup, personalization, scoring, or campaign activation. Route CSV-heavy and provider-driven requests through this skill, then rely on linked sub-docs and provider playbooks for execution details. Available providers: adyntel, ai_ark, apify, apollo, attio, bettercontact, bloomberry, builtwith, cloudflare, contactout, crustdata, crustdata-v2, customer_db, dataforseo, datagma, deepline_native, deeplineagent, discolike, dropleads, exa, findymail, firecrawl, forager, fullenrich, generic_http, heyreach, hubspot, hunter, icypeas, instantly, ipqs, leadmagic, lemlist, linkedin_ads_audiences, linkedin_scraper, lusha, openwebninja, parallel, peopledatalabs, prospeo, rocketreach, salesforce, serper, slack, smartlead, snowflake, theirstack, trestle, wiza, zerobounce."
+description: "Use this skill for GTM prospecting, enrichment, qualification, and outbound workflows, especially when users mention Deepline, CSV processing, lead/account/contact research, waterfall enrichment, email or LinkedIn lookup, personalization, scoring, or campaign activation. Route CSV-heavy and provider-driven requests through this skill, then rely on linked sub-docs and provider playbooks for execution details. Available providers: adyntel, ai_ark, apify, apollo, attio, bettercontact, bloomberry, builtwith, cloudflare, contactout, crustdata, crustdata-v2, customer_db, dataforseo, datagma, deepline_native, deeplineagent, discolike, dropleads, exa, findymail, firecrawl, forager, fullenrich, generic_http, heyreach, hubspot, hunter, icypeas, instantly, ipqs, leadmagic, lemlist, linkedin_ads_audiences, linkedin_scraper, lusha, openwebninja, parallel, peopledatalabs, predictleads, prospeo, rocketreach, salesforce, serper, slack, smartlead, snowflake, theirstack, trestle, upcell, wiza, zerobounce."
 ---
 
 # GTM Meta Skill
@@ -61,6 +61,7 @@ When a recipe matches: **follow it step-by-step as your execution plan.** Recipe
 
 | Recipe                          | Use when...                                                                                                                                |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `account-orgchart.md`           | Building an org chart around a target person or company - map reporting structures, find decision makers, highlight warm intro paths       |
 | `build-tam.md`                  | Building a total addressable market list or large company list from ICP criteria                                                           |
 | `clay-to-deepline.md`           | Converting a Clay table into local Deepline enrich scripts (extraction, mapping, parity validation)                                       |
 | `linkedin-url-lookup.md`        | Resolving a person's LinkedIn profile URL from their name and company with strict identity validation                                      |
@@ -344,6 +345,10 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Summary: Use clean/autocomplete helpers to normalize input before costly person/company search and enrich calls. Treat company search as a last-resort structured path, and prefer payload files or heredocs for non-trivial SQL-style queries.
   Last reviewed: 2026-02-11
 
+- [predictleads playbook](provider-playbooks/predictleads.md)
+  Summary: Use direct company endpoints when you already know a domain. Use discovery endpoints for broad searches and budget them per returned result.
+  Last reviewed: 2026-05-12
+
 - [prospeo playbook](provider-playbooks/prospeo.md)
   Summary: Use enrich-person for individual contacts, search-person for prospecting with stable filters, and search-company for account-level lists. Use FullEnrich for job-change workflows; Prospeo's live job-change search filter is not reliable.
   Last reviewed: 2026-04-29
@@ -367,6 +372,10 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
 - [trestle playbook](provider-playbooks/trestle.md)
   Summary: Phone validation before outbound. Use trestle_phone_validation ($0.015) for line type, carrier, activity score. Use trestle_real_contact ($0.03) when you need to verify the phone belongs to a specific person.
   Last reviewed: 2026-04-26
+
+- [upcell playbook](provider-playbooks/upcell.md)
+  Summary: Use contact existence first when you only need to check mobile availability for free; use contact enrichment to reveal matched mobile numbers.
+  Last reviewed: 2026-05-14
 
 - [wiza playbook](provider-playbooks/wiza.md)
   Summary: Use for LinkedIn → email/phone enrichment. Wiza charges 1 credit for profile-only, 2 for email, and 5 for phone reveals. Accepts Sales Navigator URLs unlike ContactOut.

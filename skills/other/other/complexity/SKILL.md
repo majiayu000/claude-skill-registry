@@ -1,6 +1,7 @@
 ---
 name: complexity
 description: 'Find focused refactor hotspots.'
+practices: [code-complete, refactoring]
 skill_api_version: 1
 context:
   window: fork

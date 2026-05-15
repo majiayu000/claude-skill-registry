@@ -1,0 +1,23 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/gate/gate-dex-market/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-aiskillstore-marketplace-24",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "README.md"
+  ],
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/gate/gate-dex-market/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/gate/gate-dex-market/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,7 +1,7 @@
 ---
 name: keyword-research
-description: 'Find high-value SEO keywords: search volume, difficulty, intent classification, topic clusters. 关键词研究/内容选题'
-version: "9.9.5"
+description: 'Use when the user asks to "find keywords"; prioritizes volume, difficulty, intent, and clusters from provided or connected data. 关键词研究/内容选题'
+version: "9.9.9"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -9,7 +9,7 @@ when_to_use: "Use when starting keyword research for a new page, topic, or campa
 argument-hint: "<topic or seed keyword> [market/language]"
 metadata:
   author: aaron-he-zhu
-  version: "9.9.5"
+  version: "9.9.9"
   geo-relevance: "medium"
   tags:
     - seo
@@ -77,7 +77,7 @@ What keywords is [competitor URL] ranking for that I should target?
 
 - **Reads**: goals, market inputs, tool data, and prior strategy from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing research deliverable and reusable summary.
-- **Promotes**: durable keyword priorities, competitor facts, and strategy decisions to `memory/hot-cache.md`, `memory/decisions.md`, and `memory/research/`.
+- **Promotes**: durable keyword priorities, competitor facts, and pending strategy decisions to `memory/hot-cache.md`, `memory/open-loops.md`, and `memory/research/`.
 - **Primary next skill**: [competitor-analysis](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/competitor-analysis/SKILL.md) when the keyword set is ready for market comparison.
 
 ### Handoff Summary

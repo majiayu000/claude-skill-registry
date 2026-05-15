@@ -128,7 +128,7 @@ If the user chooses **Adjust**, ask what to change, apply modifications, and pre
 
 ### Create PR/MR
 
-Write the body to a secure temp file: `TMPFILE=$(mktemp "${TMPDIR:-/tmp}/pr-body-XXXXXX.md")`. Clean up after the creation attempt: `rm -f "$TMPFILE"`.
+Write the body to a temp file in the current working directory: `TMPFILE=$(mktemp ./pr-body-XXXXXX.md)`. Clean up after the creation attempt: `rm -f "$TMPFILE"`. (Use a relative path, not `/tmp` — on Windows, Git Bash's `/tmp` mount is unresolvable by the native `gh.exe`/`glab.exe`, which would silently submit an empty body.)
 
 - **GitHub:** `gh pr create --title "<title>" --body-file "$TMPFILE" --base <default-branch>`
 - **GitLab:** `glab mr create --title "<title>" --description "$(cat "$TMPFILE")" --target-branch <default-branch>`
@@ -189,7 +189,7 @@ Use `AskUserQuestion` — header "Update preview", question "Review the updated 
 
 ### Apply update
 
-Write the body to a secure temp file (same pattern as Step 5). Clean up after the update attempt.
+Write the body to a temp file (same pattern as Step 5). Clean up after the update attempt.
 
 - **GitHub:** `gh pr edit <number> --title "<title>" --body-file "$TMPFILE"`  (or `--body-file` only if keeping the title)
 - **GitLab:** `glab mr update <number> --title "<title>" --description "$(cat "$TMPFILE")"`

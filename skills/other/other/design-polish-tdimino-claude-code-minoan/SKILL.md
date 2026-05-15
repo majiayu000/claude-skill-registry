@@ -6,11 +6,27 @@ argument-hint: "[target]"
 
 Perform a meticulous final pass to catch all the small details that separate good work from great work. This skill makes changes — `/design-audit` and `/design-critique` are report-only. Polish is the last step, not the first — don't polish work that isn't functionally complete.
 
+Detector and automated QA output are defect evidence only. A clean script result is never proof that the design is strong; gather browser evidence and inspect the real interaction path.
+
 ## Preparation
 
 Read `~/.claude/skills/minoan-frontend-design/SKILL.md` for aesthetic principles. Check `.design-context.md` for project context.
 
 Confirm the work is functionally complete before starting. If it's not, tell the user and suggest finishing the feature first.
+
+**Pull in prior critique** (optional signal): If `/design-critique` has been run on the same target, read the latest snapshot from `.design-critique/` and fold its P0/P1 items into your polish list. The critique is one input among many — do your own pass either way.
+
+**Triage cosmetic vs functional**: Classify each issue as **cosmetic** (looks off, doesn't impede the user) or **functional** (breaks, blocks, or confuses the experience). When polish time is tight, functional issues ship first; cosmetic ones can land in a follow-up. Quality should be consistent — never perfect one corner while leaving another rough.
+
+## Design System Discovery
+
+Aligning the feature to the design system is **not optional**. Polish without alignment is decoration on top of drift.
+
+1. **Find the design system**: Search for design system documentation, component libraries, style guides, or token definitions. Study core patterns: color tokens, spacing scale, typography styles, component API, motion conventions.
+2. **Note the conventions**: How are shared components imported? What spacing scale is used? Which colors come from tokens vs hard-coded values? What flow shapes are used for comparable actions (modal vs full-page, inline vs route)?
+3. **Identify drift, then name the root cause**: For every deviation, classify as a **missing token** (value should exist but doesn't), a **one-off implementation** (shared component exists but wasn't used), or a **conceptual misalignment** (feature's flow/IA/hierarchy doesn't match neighboring features). The fix differs by category.
+
+If a design system exists, polish **must** align the feature with it. If none exists, polish against conventions visible in the codebase.
 
 ## Systematic Polish
 
@@ -21,6 +37,13 @@ Work through these dimensions methodically:
 - Optical alignment: text at `margin-left: 0` looks indented — use `-0.05em` negative margin. Play icons shift right.
 - Concentric border radius on nested elements (`outerRadius = innerRadius + padding`).
 - Responsive consistency: spacing and alignment hold at all breakpoints.
+
+### Information Architecture & Flow
+Visual polish on a misshapen flow is wasted work. Match the *shape* of the experience to the system, not just the surface.
+- **Progressive disclosure**: Match how much is revealed when, compared to neighboring features.
+- **Established user flows**: Multi-step actions follow the same shape as comparable flows (modal vs full-page, inline edit vs separate route, save-on-blur vs explicit submit).
+- **Hierarchy & complexity**: Same conceptual weight gets same visual weight. Primary actions don't become tertiary in one corner.
+- **Naming and mental model**: Feature uses the same nouns and verbs as the rest of the system.
 
 ### Typography
 - Same elements use same sizes/weights throughout.
@@ -116,6 +139,13 @@ Before marking as done:
 - [ ] Dynamic numbers use `tabular-nums`
 - [ ] Images have subtle inset outlines for depth
 - [ ] Buttons scale on press (0.96)
+
+## Clean Up
+
+After polishing, ensure code quality:
+- **Replace custom implementations**: If the design system provides a component you reimplemented, switch to the shared version.
+- **Remove orphaned code**: Delete unused styles, components, or files made obsolete by polish.
+- **Consolidate tokens**: If you introduced new values, check whether they should be tokens.
 
 ## Reference
 

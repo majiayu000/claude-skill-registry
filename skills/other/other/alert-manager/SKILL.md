@@ -1,7 +1,7 @@
 ---
 name: alert-manager
-description: 'Configure SEO alerts for ranking drops, traffic changes, technical issues, competitor movements. SEO预警/排名监控'
-version: "9.9.5"
+description: 'Use when the user asks to "set SEO alerts"; configures ranking, traffic, technical, competitor, and notification thresholds. SEO预警/排名监控'
+version: "9.9.9"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -9,7 +9,7 @@ when_to_use: "Use when setting up monitoring alerts for rankings, traffic, backl
 argument-hint: "<domain> [metric]"
 metadata:
   author: aaron-he-zhu
-  version: "9.9.5"
+  version: "9.9.9"
   geo-relevance: "low"
   tags:
     - seo
@@ -70,7 +70,7 @@ Create ranking drop alerts for my top 20 keywords
 
 - **Reads**: current metrics, baselines, alert thresholds, and reporting context from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing monitoring deliverable and reusable summary.
-- **Promotes**: significant anomalies, durable thresholds, and follow-up actions to `memory/open-loops.md` and `memory/decisions.md`.
+- **Promotes**: significant anomalies, durable thresholds, follow-up actions, and pending decisions to `memory/open-loops.md`.
 - **Primary next skill**: [performance-reporter](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/performance-reporter/SKILL.md) when alert output needs a reporting cadence.
 
 ### Handoff Summary

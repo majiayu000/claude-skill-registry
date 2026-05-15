@@ -474,6 +474,16 @@ Check `headless: false` and ensure display available
 **Element not found:**
 Add wait: `await page.waitForSelector('.element', { timeout: 10000 })`
 
+## Secure Installation
+
+When installing Playwright and browser binaries, follow supply chain security best practices:
+
+- **Block post-install scripts** — `npm config set ignore-scripts true` (then manually run `npx playwright install` to download browsers)
+- **Cooldown period** — Wait 7 days for new package versions to be vetted by the community
+- **Audit before installing** — Run `socket package score npm <pkg>` or use `socket npm install <pkg>` to check packages
+
+Load the `dependency-upgrade` skill for full security configuration including Socket CLI integration, cooldown setup, lockfile validation, and CI enforcement.
+
 ## See Also
 
 - `vitest-testing` - Unit and integration testing

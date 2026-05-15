@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conductor Motion — File Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cm-bg: #0B0F1A;
+  --cm-surface: #141824;
+  --cm-elevated: #1C2133;
+  --cm-brand: #4F7BF7;
+  --cm-brand-40: rgba(79, 123, 247, 0.4);
+  --cm-text: #E8ECF4;
+  --cm-text-70: rgba(232, 236, 244, 0.7);
+  --cm-text-40: rgba(232, 236, 244, 0.4);
+  --cm-text-20: rgba(232, 236, 244, 0.2);
+  --cm-success: #34D399;
+  --cm-border: rgba(232, 236, 244, 0.15);
+  --cm-border-subtle: rgba(232, 236, 244, 0.08);
+  --cm-ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --cm-font: 'Geist', system-ui, sans-serif;
+  --cm-font-mono: 'Geist Mono', 'SF Mono', monospace;
+  --cm-body-size: clamp(0.875rem, 0.5vw + 0.75rem, 1rem);
+  --cm-mono-size: clamp(0.75rem, 0.4vw + 0.65rem, 0.875rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cm-bg);
+  color: var(--cm-text);
+  font-family: var(--cm-font);
+  font-size: var(--cm-body-size);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.review-panel {
+  width: 100%;
+  max-width: 40rem;
+  background: var(--cm-surface);
+  border: 1px solid var(--cm-border-subtle);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--cm-border-subtle);
+  font-family: var(--cm-font-mono);
+  font-size: var(--cm-mono-size);
+}
+
+.review-title {
+  color: var(--cm-text-70);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.review-count {
+  color: var(--cm-text-40);
+}
+
+.file-list {
+  padding: 0.5rem 0;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 1.5rem;
+  transition: background 200ms ease;
+}
+
+.file-item:hover {
+  background: var(--cm-elevated);
+}
+
+.file-icon {
+  flex: 0 0 auto;
+  color: var(--cm-text-40);
+  display: flex;
+}
+
+.file-name {
+  flex: 1 1 auto;
+  font-size: var(--cm-body-size);
+  color: var(--cm-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-ext {
+  flex: 0 0 auto;
+  font-family: var(--cm-font-mono);
+  font-size: var(--cm-mono-size);
+  color: var(--cm-text-40);
+  min-width: 3rem;
+  text-align: right;
+}
+
+.file-review-status {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 7rem;
+}
+
+.file-review-status span {
+  font-family: var(--cm-font-mono);
+  font-size: var(--cm-mono-size);
+  color: var(--cm-text-40);
+}
+
+.review-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cm-text-40);
+  flex-shrink: 0;
+}
+
+.review-dot.is-processing {
+  background: var(--cm-brand);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.review-dot.is-reviewed {
+  background: var(--cm-success);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.review-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border-top: 1px solid var(--cm-border-subtle);
+  font-family: var(--cm-font-mono);
+  font-size: var(--cm-mono-size);
+  color: var(--cm-text-40);
+}
+
+.review-progress-bar {
+  width: 6rem;
+  height: 4px;
+  background: var(--cm-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.review-progress-fill {
+  height: 100%;
+  background: var(--cm-success);
+  width: 0%;
+  transition: width 400ms var(--cm-ease-out-cubic);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-dot.is-processing { animation: none; }
+  .review-progress-fill { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="review-panel">
+  <div class="review-header">
+    <span class="review-title">Document Review</span>
+    <span class="review-count"><span class="count-reviewed">0</span> / <span class="count-total">0</span></span>
+  </div>
+  <div class="file-list"></div>
+  <div class="review-footer">
+    <span class="review-status-text">Initializing...</span>
+    <div class="review-progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+      <div class="review-progress-fill"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const PROCESS_DURATION = 2000;
+  const STAGGER_DELAY = 800;
+  const REVEAL_STAGGER = 200;
+
+  const FILES = [
+    'Report_Q4_2024.xlsx',
+    'Contract_Draft_v3.pdf',
+    'Audit_Log_March.csv',
+    'Compliance_Review.docx',
+    'Financial_Summary.pdf'
+  ];
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const list = document.querySelector('.file-list');
+  const countReviewed = document.querySelector('.count-reviewed');
+  const countTotal = document.querySelector('.count-total');
+  const progressFill = document.querySelector('.review-progress-fill');
+  const statusText = document.querySelector('.review-status-text');
+
+  if (list.dataset.initDone === 'true') return;
+  list.dataset.initDone = 'true';
+
+  let pausedByVisibility = false;
+  document.addEventListener('visibilitychange', () => {
+    pausedByVisibility = document.hidden;
+  });
+
+  countTotal.textContent = FILES.length;
+
+  const FILE_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none"><path opacity="0.4" d="M3.5 5.5H8.5M3.5 7.5H8.5M3.5 9.5H8.5M0.5 0.5H8.5L11.5 3.5V14.5H0.5V0.5Z" stroke="currentColor"/></svg>`;
+
+  function parseExt(filename) {
+    const m = filename.match(/(\.[a-z0-9]+)$/i);
+    return m ? m[1] : '';
+  }
+
+  function createRow(filename, state) {
+    const row = document.createElement('div');
+    row.className = 'file-item';
+
+    const icon = document.createElement('div');
+    icon.className = 'file-icon';
+    icon.innerHTML = FILE_SVG;
+
+    const name = document.createElement('span');
+    name.className = 'file-name';
+    name.textContent = filename;
+
+    const ext = document.createElement('span');
+    ext.className = 'file-ext';
+    ext.textContent = parseExt(filename);
+
+    const status = document.createElement('div');
+    status.className = 'file-review-status';
+
+    const dot = document.createElement('div');
+    dot.className = 'review-dot';
+
+    const label = document.createElement('span');
+
+    if (state === 'reviewed') {
+      dot.classList.add('is-reviewed');
+      label.textContent = 'Reviewed';
+    } else if (state === 'processing') {
+      dot.classList.add('is-processing');
+      label.textContent = 'Reviewing';
+    } else {
+      label.textContent = 'Unreviewed';
+    }
+
+    status.appendChild(dot);
+    status.appendChild(label);
+
+    row.appendChild(icon);
+    row.appendChild(name);
+    row.appendChild(ext);
+    row.appendChild(status);
+
+    return row;
+  }
+
+  function updateProgress(reviewed) {
+    const pct = (reviewed / FILES.length) * 100;
+    progressFill.style.width = pct + '%';
+    progressFill.parentElement.setAttribute('aria-valuenow', Math.round(pct));
+    countReviewed.textContent = reviewed;
+    if (reviewed === FILES.length) {
+      statusText.textContent = 'Review complete';
+    } else if (reviewed > 0) {
+      statusText.textContent = 'Reviewing...';
+    }
+  }
+
+  if (reducedMotion) {
+    FILES.forEach(f => list.appendChild(createRow(f, 'reviewed')));
+    updateProgress(FILES.length);
+    return;
+  }
+
+  const rows = FILES.map(f => ({
+    filename: f,
+    el: null,
+    state: 'unreviewed'
+  }));
+
+  rows.forEach((r, i) => {
+    const row = createRow(r.filename, 'unreviewed');
+    row.style.opacity = '0';
+    row.style.transform = 'translateY(5px)';
+    list.appendChild(row);
+    r.el = row;
+
+    setTimeout(() => {
+      row.style.transition = 'opacity 300ms ease, transform 300ms ease';
+      row.style.opacity = '1';
+      row.style.transform = 'none';
+    }, i * REVEAL_STAGGER);
+  });
+
+  statusText.textContent = 'Queued';
+  let reviewed = 0;
+
+  rows.forEach((r, i) => {
+    const startDelay = 1000 + (i * STAGGER_DELAY);
+
+    setTimeout(() => {
+      const newRow = createRow(r.filename, 'processing');
+      newRow.style.opacity = '0';
+      r.el.style.transition = 'opacity 200ms ease';
+      r.el.style.opacity = '0';
+
+      setTimeout(() => {
+        list.replaceChild(newRow, r.el);
+        r.el = newRow;
+        requestAnimationFrame(() => {
+          newRow.style.transition = 'opacity 200ms ease';
+          newRow.style.opacity = '1';
+        });
+        statusText.textContent = `Reviewing ${r.filename}`;
+      }, 200);
+    }, startDelay);
+
+    setTimeout(() => {
+      const newRow = createRow(r.filename, 'reviewed');
+      newRow.style.opacity = '0';
+      r.el.style.transition = 'opacity 200ms ease';
+      r.el.style.opacity = '0';
+
+      setTimeout(() => {
+        list.replaceChild(newRow, r.el);
+        r.el = newRow;
+        requestAnimationFrame(() => {
+          newRow.style.transition = 'opacity 200ms ease';
+          newRow.style.opacity = '1';
+        });
+        reviewed++;
+        updateProgress(reviewed);
+      }, 200);
+    }, startDelay + PROCESS_DURATION);
+  });
+})();
+</script>
+</body>
+</html>

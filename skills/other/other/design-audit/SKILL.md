@@ -12,6 +12,8 @@ This is a code-level audit, not a design critique. Check what's measurable and v
 
 Read `~/.claude/skills/minoan-frontend-design/SKILL.md` for anti-pattern guidance. Check `.design-context.md` for project context if it exists.
 
+**Read the ignore list** at `.design-critique/ignore.md` if it exists. Findings matching an ignore entry (case-insensitive substring) should be silently dropped — the user has already acknowledged them as deferred tradeoffs or accepted deviations.
+
 ## Diagnostic Scan
 
 Check 5 dimensions. Score each 0-4 using `~/.claude/skills/minoan-frontend-design/references/heuristics-scoring.md` criteria.
@@ -27,9 +29,10 @@ Check 5 dimensions. Score each 0-4 using `~/.claude/skills/minoan-frontend-desig
 
 ### 2. Performance
 - Layout thrashing: reading/writing layout properties in loops
-- Expensive animations: animating width/height/top/left instead of transform/opacity
-- Missing optimization: no lazy loading, unoptimized assets
+- Expensive animations: casual layout-property animation, unbounded blur/filter/shadow effects, or effects that visibly drop frames
+- Missing optimization: no lazy loading, unoptimized assets, missing `will-change`
 - Bundle size: unnecessary imports, unused dependencies
+- Render performance: unnecessary re-renders, missing memoization
 
 **Score**: 0=Severe issues, 1=Major problems, 2=Partial optimization, 3=Mostly optimized, 4=Fast and lean
 

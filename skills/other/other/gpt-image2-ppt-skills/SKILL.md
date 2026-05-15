@@ -29,7 +29,7 @@ description: Generate visually striking PPT slides via OpenAI's gpt-image-2 -- 1
 直接给 skill 一个 .pptx 模板，后续所有页都仿这个模板。
 
 ```bash
-# 一行：自动渲染 + vision 抽风格 + 出图。本机有 LibreOffice 或 docker 镜像即可
+# 一行：自动渲染 + vision 抽风格 + 出图。本机有 LibreOffice 即可
 python3 scripts/generate_ppt.py \
   --plan slides_plan.json \
   --template-pptx ./company-template.pptx \
@@ -42,12 +42,33 @@ python3 scripts/generate_ppt.py \
 
 skill 自带 `render_template.py`，把 .pptx 自动渲染成每页 PNG，存到 `<cwd>/template_renders/<stem>/page-NN.png`。
 
-后端按优先级自动挑：
-1. 本机 `libreoffice` / `soffice` 命令（最快）
-2. 本机 docker + `linuxserver/libreoffice` 镜像（首次拉 ~2.5GB）
-3. PDF -> PNG 走 `pymupdf`（已在 requirements）；没装就用 `pdf2image` + poppler
+### Agent 前置检查（模板克隆时必须做）
 
-如果两种 LibreOffice 都没有，会让用户手动从 PowerPoint/Keynote/WPS 导出每页 PNG，命名 `page-01.png` 起按字典序对应页码。
+**在跑任何 --template-pptx 命令之前，你必须先检查本机是否有 LibreOffice。**
+
+检查方式：
+
+- Linux/Mac: `which libreoffice || which soffice`
+- Windows: `where libreoffice 2>nul & where soffice 2>nul`
+
+如果都没有，**立即自动安装**（不要等 render_template.py 报错）：
+
+| 平台 | 安装命令 |
+| --- | --- |
+| Windows | `winget install LibreOffice.LibreOffice` |
+| macOS | `brew install --cask libreoffice` |
+| Linux (Debian/Ubuntu) | `sudo apt-get install -y libreoffice` |
+| Linux (Fedora/RHEL) | `sudo dnf install -y libreoffice` |
+| Linux (Arch) | `sudo pacman -S --noconfirm libreoffice-fresh` |
+
+装完再次检查，确认 `libreoffice` 或 `soffice` 在 PATH 中再继续后续流程。
+
+> 注意：Windows 上 `winget` 是 Win10/11 自带，会弹 UAC 确认框，需要用户点确认；macOS 上 `brew` 需要先安装 Homebrew。
+
+渲染后端按优先级自动挑：
+1. **Windows**：PowerPoint COM（本机有 Office 时优先，直出 PNG，跳过 PDF 步骤）> LibreOffice
+2. **macOS / Linux**：LibreOffice / soffice 命令
+3. PDF -> PNG 走 `pymupdf`（已在 requirements）；没装就用 `pdf2image` + poppler
 
 跑 `generate_ppt.py --template-pptx ...` 时如果省略 `--template-images` 会自动调一次渲染；也可以手动先跑一次：
 

@@ -5,7 +5,7 @@ description: Build distinctive, production-grade frontend interfaces — website
 
 <!-- Creative core: syncretic-v3 (eval/skills/syncretic-v3.md). See eval/skills/INDEX.md for lineage. -->
 <!-- Eval record: 70.0% vs wetch (14-6, p=0.058) across 20 blind A/B comparisons. -->
-<!-- Impeccable sync: v1.6.0 (2026-03-24). Anti-patterns, critique refs, scoring rubrics updated. -->
+<!-- Impeccable sync: v3.1.0 (2026-05-14). Domain refs, anti-patterns, brand register, critique persistence, sibling skills updated. -->
 
 Build frontend interfaces that are unmistakably *designed*, not generated. Every interface should feel like a specific designer made specific choices for a specific context.
 
@@ -15,7 +15,7 @@ Before designing, check for `.design-context.md` in the project root. If absent 
 
 ## Creative Direction
 
-Name the conceptual direction before coding—"Bloomberg Terminal," "medical journal," "zine collage," "VHS dreamworld." The name anchors every subsequent decision.
+Name the conceptual direction before coding—"Bloomberg Terminal," "medical journal," "zine collage," "VHS dreamworld," "intelligence dossier." The name anchors every subsequent decision.
 
 Root every aesthetic choice in the subject itself. A jazz club's website should feel like smoke and brass. A children's reading app should feel like opening a pop-up book. A fintech dashboard should feel like a control room, not a toy. The design should be so fitted to its context that transplanting the aesthetic to a different project would feel wrong.
 
@@ -88,7 +88,7 @@ Consult `references/` on demand:
 **Techniques**: `creative-arsenal.md`, `design-dials.md`, `editorial-patterns.md` (eval-tested), `astryx-hero.md` (depth-parallax editorial hero + fluid-dom sibling links). **Shader cross-ref**: `~/.claude/skills/rocaille-shader/references/fluid-dom.md` (pointer-reactive fluid over DOM sections).
 **Stripe** (light-mode): `stripe-design-tokens.md`, `stripe-component-patterns.md`, `stripe-signature-techniques.md`.
 **Mintlify** (dark-first docs): `mintlify-design-tokens.md`, `mintlify-component-patterns.md`, `mintlify-signature-techniques.md`.
-**Anti-patterns**: `anti-patterns.md` (condensed checklist from Impeccable v1.6.0).
+**Anti-patterns**: `anti-patterns.md` (condensed checklist from Impeccable v3.1.0, incl. brand register guards).
 **Critique & Scoring**: `heuristics-scoring.md` (Nielsen's 10, P0-P3 severity), `cognitive-load.md` (8-item checklist, working memory rule), `personas.md` (5 archetypes + project-specific).
 **Design system exemplar**: `linear-design-md.md` (DESIGN.md format—tokens, components, responsive rules from Linear).
 **Advanced techniques**: `sunny-mode-technique.md` (`@property` palette transitions, blend-mode overlays, physics Easter eggs).

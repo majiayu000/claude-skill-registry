@@ -1,7 +1,7 @@
 ---
 name: backlink-analyzer
 description: 'Use when analyzing backlink profiles, link authority, toxic links, link-building opportunities, or competitor link gaps. 外链分析/反向链接'
-version: "9.9.5"
+version: "9.9.9"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -9,7 +9,7 @@ when_to_use: "Use when analyzing backlink profiles, link quality, toxic links, r
 argument-hint: "<domain or URL>"
 metadata:
   author: aaron-he-zhu
-  version: "9.9.5"
+  version: "9.9.9"
   geo-relevance: "low"
   tags:
     - seo
@@ -79,7 +79,7 @@ Find link building opportunities by analyzing [competitor domains]
 
 - **Reads**: current metrics, baselines, alert thresholds, and reporting context from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing monitoring deliverable and reusable summary.
-- **Promotes**: significant changes, confirmed anomalies, and follow-up actions to `memory/open-loops.md` and `memory/decisions.md`.
+- **Promotes**: significant changes, confirmed anomalies, follow-up actions, and pending decisions to `memory/open-loops.md`.
 - **Primary next skill**: [domain-authority-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/domain-authority-auditor/SKILL.md) when toxicity or authority concerns need formal scoring.
 
 ### Handoff Summary

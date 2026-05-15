@@ -1,8 +1,6 @@
 ---
 name: nextjs
-description: Next.js 16 with App Router, Server Components, Server Actions, Cache Components. Use for React 19.2 apps, SSR, or encountering async params, proxy.ts migration, use cache errors.
-
-  Keywords: Next.js 16, Next.js App Router, Next.js Pages Router, Server Components, React Server Components, Server Actions, Cache Components, use cache, Next.js 16 breaking changes, async params nextjs, proxy.ts migration, React 19.2, Next.js metadata, Next.js SEO, generateMetadata, static generation, dynamic rendering, streaming SSR, Suspense, parallel routes, intercepting routes, route groups, Next.js middleware, Next.js API routes, Route Handlers, revalidatePath, revalidateTag, next/navigation, useSearchParams, turbopack, next.config
+description: "Next.js 16 with App Router, Server Components, Server Actions, Cache Components. Use for React 19.2 apps, SSR, or encountering async params, proxy.ts migration, use cache errors."
 license: MIT
 metadata:
   version: 1.0.0
@@ -15,9 +13,40 @@ metadata:
   production_tested: true
   token_savings: 65-70%
   errors_prevented: 18+
+  keywords:
+    - Next.js 16
+    - Next.js App Router
+    - Next.js Pages Router
+    - Server Components
+    - React Server Components
+    - Server Actions
+    - Cache Components
+    - use cache
+    - Next.js 16 breaking changes
+    - async params nextjs
+    - proxy.ts migration
+    - React 19.2
+    - Next.js metadata
+    - Next.js SEO
+    - generateMetadata
+    - static generation
+    - dynamic rendering
+    - streaming SSR
+    - Suspense
+    - parallel routes
+    - intercepting routes
+    - route groups
+    - Next.js middleware
+    - Next.js API routes
+    - Route Handlers
+    - revalidatePath
+    - revalidateTag
+    - next/navigation
+    - useSearchParams
+    - turbopack
+    - next.config
 allowed-tools: ["Read", "Write", "Edit", "Bash", "Glob", "Grep"]
 ---
-
 # Next.js App Router - Production Patterns
 
 **Version**: Next.js 16.0.3

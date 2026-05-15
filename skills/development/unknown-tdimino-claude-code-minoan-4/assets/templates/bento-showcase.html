@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grainient Bento Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --grn-bg: #000000;
+            --grn-surface: #141414;
+            --grn-elevated: #1A1A1A;
+            --grn-card: #2B2B2B;
+            --grn-accent: #C2F13C;
+            --grn-accent-40: rgba(194, 241, 60, 0.4);
+            --grn-accent-20: rgba(194, 241, 60, 0.2);
+            --grn-text: #FFFFFF;
+            --grn-text-70: rgba(255, 255, 255, 0.7);
+            --grn-text-40: rgba(255, 255, 255, 0.4);
+            --grn-text-20: rgba(255, 255, 255, 0.2);
+            --grn-text-10: rgba(255, 255, 255, 0.1);
+            --grn-border: rgba(255, 255, 255, 0.2);
+            --grn-border-subtle: rgba(255, 255, 255, 0.1);
+            --grn-spring-snappy: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --grn-spring-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+            --grn-spring-subtle: cubic-bezier(0.22, 1, 0.36, 1);
+            --grn-blur-light: blur(5px);
+            --grn-blur-medium: blur(10px);
+            --grn-blur-heavy: blur(20px);
+            --grn-font: 'Inter', system-ui, sans-serif;
+            --grn-hero-size: clamp(32px, 4vw + 1rem, 6vw);
+            --grn-body-size: clamp(16px, 1vw + 1rem, 1.1vw);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            font-family: var(--grn-font);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: var(--grn-bg);
+            color: var(--grn-text);
+        }
+
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--grn-text-20); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--grn-text-40); }
+        html { scrollbar-width: thin; scrollbar-color: var(--grn-text-20) transparent; }
+
+        /* Glassmorphism Nav */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 32px;
+            backdrop-filter: var(--grn-blur-heavy);
+            -webkit-backdrop-filter: var(--grn-blur-heavy);
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom: 1px solid var(--grn-border-subtle);
+        }
+
+        .nav__logo { font-size: 18px; font-weight: 600; text-decoration: none; color: var(--grn-text); }
+
+        .nav__cta {
+            padding: 8px 20px; font-size: 14px; font-weight: 600; color: #000;
+            text-decoration: none; border-radius: 50px;
+            background: linear-gradient(180deg, #EBFFB4, var(--grn-accent));
+            box-shadow: inset 0 0 3px white, 0 0 40px var(--grn-accent-20);
+            transition: filter 0.4s var(--grn-spring-snappy), transform 0.4s var(--grn-spring-snappy);
+        }
+        .nav__cta:hover { filter: brightness(1.1); transform: scale(1.02); }
+
+        /* Header */
+        .header {
+            padding: 120px 32px 60px; text-align: center;
+            background: var(--grn-surface);
+        }
+
+        .header__title {
+            font-size: var(--grn-hero-size); font-weight: 600;
+            line-height: 1.1; margin-bottom: 16px;
+        }
+
+        .header__title em {
+            font-style: normal;
+            background: linear-gradient(180deg, #EBFFB4, var(--grn-accent));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        .header__sub {
+            font-size: var(--grn-body-size); color: var(--grn-text-70);
+            max-width: 500px; margin: 0 auto; line-height: 1.5;
+        }
+
+        /* Bento Grid */
+        .bento {
+            max-width: 1100px; margin: 0 auto;
+            padding: 40px 32px 80px;
+        }
+
+        .bento__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .bento__card {
+            background: var(--grn-surface);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: inset 0 0 0 1px var(--grn-border-subtle);
+            position: relative;
+            overflow: clip;
+            transition: transform 0.6s var(--grn-spring-smooth);
+        }
+
+        .bento__card:hover { transform: translateY(-4px); }
+
+        /* Featured card with lime glow */
+        .bento__card--featured {
+            box-shadow:
+                inset 0px 0.5px 0.5px 0px rgb(255,255,255),
+                0px 70px 30px 0px rgba(0,0,0,0.05),
+                0px 40px 25px 0px rgba(0,0,0,0.25),
+                0px 20px 20px 0px rgba(0,0,0,0.25),
+                0px 5px 10px 0px rgba(0,0,0,0.35),
+                0px 0px 0px 0.7px rgba(0,0,0,0.35),
+                0px -5px 30px 0px var(--grn-accent-20),
+                0px -1px 3px 0px var(--grn-accent-20),
+                0px 1px 0px 2px var(--grn-accent-20);
+        }
+
+        /* White glow variant */
+        .bento__card--glow {
+            box-shadow:
+                inset 0px 0.5px 0.5px 0px rgb(255,255,255),
+                0px 70px 30px 0px rgba(0,0,0,0.05),
+                0px 40px 25px 0px rgba(0,0,0,0.25),
+                0px 20px 20px 0px rgba(0,0,0,0.25),
+                0px 5px 10px 0px rgba(0,0,0,0.35),
+                0px 0px 0px 0.7px rgba(0,0,0,0.35),
+                0px -5px 30px 0px rgba(255,255,255,0.08),
+                0px -1px 3px 0px rgba(255,255,255,0.08),
+                0px 1px 0px 2px rgba(255,255,255,0.08);
+        }
+
+        .bento__card--span2 { grid-column: span 2; }
+        .bento__card--tall { grid-row: span 2; }
+
+        .bento__icon {
+            width: 40px; height: 40px; margin-bottom: 16px;
+            border-radius: 10px;
+            background: var(--grn-elevated);
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .bento__title {
+            font-size: 18px; font-weight: 600; margin-bottom: 8px;
+        }
+
+        .bento__text {
+            font-size: 14px; color: var(--grn-text-70); line-height: 1.5;
+        }
+
+        /* Hover zoom image inside bento cards */
+        .bento__image-wrap {
+            position: relative; overflow: clip;
+            border-radius: 12px; margin-top: 20px;
+            aspect-ratio: 16/9;
+        }
+
+        .bento__image {
+            width: 100%; height: 100%; object-fit: cover;
+            border-radius: inherit;
+            transition: transform 0.8s var(--grn-spring-smooth);
+        }
+
+        .bento__image-wrap:hover .bento__image {
+            transform: scale(1.08);
+        }
+
+        .bento__image-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.6) 100%);
+            border-radius: inherit;
+            pointer-events: none;
+        }
+
+        /* Badge */
+        .bento__badge {
+            display: inline-flex; align-items: center; gap: 4px;
+            padding: 4px 10px; font-size: 11px; font-weight: 600;
+            border-radius: 50px; margin-bottom: 12px;
+            background: var(--grn-accent-20); color: var(--grn-accent);
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center; padding: 80px 32px;
+            background: var(--grn-surface);
+        }
+
+        .cta-section__title {
+            font-size: clamp(24px, 3vw + 0.5rem, 48px);
+            font-weight: 600; margin-bottom: 12px;
+        }
+
+        .cta-section__sub {
+            font-size: var(--grn-body-size); color: var(--grn-text-70);
+            margin-bottom: 32px;
+        }
+
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 32px; font-family: var(--grn-font);
+            font-size: 15px; font-weight: 600; color: #000;
+            border: none; border-radius: 50px; cursor: pointer;
+            background: linear-gradient(180deg, #EBFFB4, var(--grn-accent));
+            box-shadow: inset 0 0 3px white, 0 0 40px var(--grn-accent-20);
+            transition: filter 0.4s var(--grn-spring-snappy), transform 0.4s var(--grn-spring-snappy);
+            text-decoration: none;
+        }
+        .btn-primary:hover { filter: brightness(1.1); transform: scale(1.03); }
+        .btn-primary:active { transform: scale(0.98); }
+
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 32px; font-family: var(--grn-font);
+            font-size: 15px; font-weight: 500; color: var(--grn-text);
+            background: transparent; border: 1px solid var(--grn-border);
+            border-radius: 50px; cursor: pointer;
+            transition: background-color 0.4s var(--grn-spring-subtle);
+            text-decoration: none;
+        }
+        .btn-secondary:hover { background-color: var(--grn-text-10); }
+
+        /* Entry animations */
+        .fade-up {
+            opacity: 0; transform: translateY(24px);
+            transition: opacity 0.8s var(--grn-spring-smooth), transform 0.8s var(--grn-spring-smooth);
+        }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        @media (prefers-reduced-motion: reduce) {
+            .fade-up { opacity: 1; transform: none; transition: none; }
+            .bento__card { transition: none; }
+            .bento__image { transition: none; }
+        }
+
+        @media (max-width: 809px) {
+            .bento__grid { grid-template-columns: 1fr; }
+            .bento__card--span2 { grid-column: span 1; }
+            .nav { padding: 12px 20px; }
+            .header { padding: 100px 20px 40px; }
+            .bento { padding: 20px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="#" class="nav__logo">Grainient</a>
+        <a href="#" class="nav__cta">Get Access</a>
+    </nav>
+
+    <section class="header">
+        <h1 class="header__title">Everything you need for <em>gradient design</em></h1>
+        <p class="header__sub">A complete toolkit of backgrounds, textures, and tools — curated for modern interfaces.</p>
+    </section>
+
+    <section class="bento">
+        <div class="bento__grid">
+            <!-- Card 1: Featured, spans 2 columns -->
+            <div class="bento__card bento__card--span2 bento__card--featured fade-up">
+                <span class="bento__badge">Featured</span>
+                <h3 class="bento__title">1,200+ Premium Gradients</h3>
+                <p class="bento__text">Hand-crafted backgrounds with noise textures, smooth blends, and animated variants. Export at any resolution for web, mobile, or print.</p>
+                <div class="bento__image-wrap">
+                    <div class="bento__image" style="background: linear-gradient(135deg, #0a1a00, #141414, #1a0a2a); width: 100%; height: 100%;"></div>
+                    <div class="bento__image-overlay"></div>
+                </div>
+            </div>
+
+            <!-- Card 2: Tall card -->
+            <div class="bento__card bento__card--tall bento__card--glow fade-up">
+                <div class="bento__icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" role="presentation">
+                        <defs><linearGradient id="icon1" x1="0.209" x2="0.791" y1="0" y2="1">
+                            <stop offset="0" stop-color="#FFF9E7"/><stop offset="1" stop-color="#BA8B4D"/>
+                        </linearGradient></defs>
+                        <path d="M10 2L12.5 7.5L18 8.5L14 12.5L15 18L10 15.5L5 18L6 12.5L2 8.5L7.5 7.5L10 2Z" fill="url(#icon1)"/>
+                    </svg>
+                </div>
+                <h3 class="bento__title">AI-Generated Collection</h3>
+                <p class="bento__text">498 unique gradients created with custom diffusion models. Each one is one-of-a-kind — no two are alike. Perfect for hero sections and editorial backgrounds.</p>
+                <div class="bento__image-wrap" style="margin-top: auto;">
+                    <div class="bento__image" style="background: linear-gradient(160deg, #1a0520, #0a0a2a, #001a1a); width: 100%; height: 100%;"></div>
+                    <div class="bento__image-overlay"></div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bento__card fade-up">
+                <div class="bento__icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" role="presentation">
+                        <defs><linearGradient id="icon2" x1="0.608" x2="0.392" y1="1" y2="0">
+                            <stop offset="0" stop-color="#AADB1F"/><stop offset="1" stop-color="#C2F13C"/>
+                        </linearGradient></defs>
+                        <rect x="2" y="2" width="16" height="16" rx="3" fill="url(#icon2)"/>
+                    </svg>
+                </div>
+                <h3 class="bento__title">Noisy & Grainy</h3>
+                <p class="bento__text">327 gradients with film grain and noise textures baked in at 4K resolution.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bento__card fade-up">
+                <div class="bento__icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" role="presentation">
+                        <circle cx="10" cy="10" r="8" fill="var(--grn-text-20)"/>
+                    </svg>
+                </div>
+                <h3 class="bento__title">Smooth Blends</h3>
+                <p class="bento__text">406 clean gradient backgrounds with precise color transitions and no visible banding.</p>
+            </div>
+
+            <!-- Card 5: spans 2 -->
+            <div class="bento__card bento__card--span2 fade-up">
+                <span class="bento__badge">New</span>
+                <h3 class="bento__title">Shader Gradient Tool</h3>
+                <p class="bento__text">Real-time WebGL gradient generator. Customize colors, noise, and animation speed. Export as CSS, image, or embed code. Included with every plan.</p>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="bento__card fade-up">
+                <h3 class="bento__title">Animated Variants</h3>
+                <p class="bento__text">50 looping MP4 gradient animations for hero backgrounds, loading screens, and video overlays.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2 class="cta-section__title">Ready to elevate your design?</h2>
+        <p class="cta-section__sub">One-time purchase. Lifetime access. No subscriptions.</p>
+        <div style="display: flex; gap: 12px; justify-content: center;">
+            <a href="#" class="btn-primary">Get All Access</a>
+            <a href="#" class="btn-secondary">View Pricing</a>
+        </div>
+    </section>
+
+    <script>
+        // Intersection Observer for fade-up animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

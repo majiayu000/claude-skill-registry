@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conductor Motion — Typewriter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cm-bg: #0B0F1A;
+  --cm-surface: #141824;
+  --cm-elevated: #1C2133;
+  --cm-brand: #4F7BF7;
+  --cm-brand-40: rgba(79, 123, 247, 0.4);
+  --cm-text: #E8ECF4;
+  --cm-text-70: rgba(232, 236, 244, 0.7);
+  --cm-text-40: rgba(232, 236, 244, 0.4);
+  --cm-border: rgba(232, 236, 244, 0.15);
+  --cm-border-subtle: rgba(232, 236, 244, 0.08);
+  --cm-ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --cm-stagger: 200ms;
+  --cm-hero-transition: 1300ms;
+  --cm-font: 'Geist', system-ui, sans-serif;
+  --cm-font-mono: 'Geist Mono', 'SF Mono', monospace;
+  --cm-hero-size: clamp(2rem, 4vw + 1rem, 4.5rem);
+  --cm-body-size: clamp(0.875rem, 0.5vw + 0.75rem, 1rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cm-bg);
+  color: var(--cm-text);
+  font-family: var(--cm-font);
+  font-size: var(--cm-body-size);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  max-width: 64rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero-heading {
+  font-size: var(--cm-hero-size);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.rotator-type__text {
+  color: var(--cm-brand);
+}
+
+.rotator-type__cursor {
+  color: var(--cm-text-40);
+  font-weight: 300;
+  animation: blink 530ms step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.hero-subtitle {
+  margin-top: 1.5rem;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.25rem);
+  color: var(--cm-text-70);
+  max-width: 40rem;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+.type-on-block {
+  margin-top: 3rem;
+  padding: 1.5rem 2rem;
+  background: var(--cm-surface);
+  border: 1px solid var(--cm-border-subtle);
+  border-radius: 0.75rem;
+  font-family: var(--cm-font-mono);
+  font-size: var(--cm-body-size);
+  color: var(--cm-text-70);
+  text-align: left;
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+.type-on-prefix {
+  color: var(--cm-brand);
+  user-select: none;
+}
+
+.type-on-cursor {
+  color: var(--cm-text-40);
+  animation: blink 530ms step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rotator-type__cursor,
+  .type-on-cursor {
+    animation: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1 class="hero-heading hero-rotator">
+    <!-- JS will restructure this into base + cycling text + cursor -->
+    Accelerating
+    <ul style="display:none">
+      <li>complex approvals</li>
+      <li>investigations</li>
+      <li>e-discovery</li>
+      <li>FOIA review</li>
+    </ul>
+  </h1>
+
+  <p class="hero-subtitle">
+    Distill complex policies and expertise into agentic decision trees
+    to review and approve documents at mission speed.
+  </p>
+
+  <div class="type-on-block">
+    <span class="type-on-prefix">$ </span>
+    <span class="type-on" data-loop="true">search initialization...</span>
+  </div>
+</div>
+
+<script>
+(() => {
+  const TYPE_MIN_MS = 35;
+  const TYPE_MAX_MS = 65;
+  const DELETE_MIN_MS = 18;
+  const DELETE_MAX_MS = 35;
+  const HOLD_MS = 1100;
+  const BETWEEN_WORDS_MS = 180;
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function randomBetween(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function initRotator(root) {
+    const heading = root.querySelector('h1, h2, h3');
+    const lis = Array.from(root.querySelectorAll('ul li'));
+    if (!heading || !lis.length) return;
+    if (root.dataset.rotatorInit === 'true') return;
+    root.dataset.rotatorInit = 'true';
+
+    const items = lis.map(li => (li.textContent || '').trim()).filter(Boolean);
+    if (!items.length) return;
+
+    const baseText = (heading.childNodes[0]?.textContent || '').trim();
+    heading.textContent = '';
+
+    const base = document.createElement('span');
+    base.className = 'rotator-base';
+    base.textContent = baseText;
+
+    const space = document.createTextNode(' ');
+
+    const text = document.createElement('span');
+    text.className = 'rotator-type__text';
+
+    const cursor = document.createElement('span');
+    cursor.className = 'rotator-type__cursor';
+    cursor.setAttribute('aria-hidden', 'true');
+    cursor.textContent = '|';
+
+    heading.appendChild(base);
+    heading.appendChild(space);
+    heading.appendChild(text);
+    heading.appendChild(cursor);
+
+    if (reducedMotion) {
+      text.textContent = items[0];
+      return;
+    }
+
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let timeoutId = null;
+    let pausedByVisibility = false;
+
+    function stop() {
+      if (timeoutId) { clearTimeout(timeoutId); timeoutId = null; }
+    }
+
+    function tick() {
+      const currentWord = items[wordIndex];
+      if (!isDeleting) {
+        charIndex += 1;
+        text.textContent = currentWord.slice(0, charIndex);
+        if (charIndex < currentWord.length) {
+          timeoutId = setTimeout(tick, randomBetween(TYPE_MIN_MS, TYPE_MAX_MS));
+        } else {
+          isDeleting = true;
+          timeoutId = setTimeout(tick, HOLD_MS);
+        }
+      } else {
+        charIndex -= 1;
+        text.textContent = currentWord.slice(0, Math.max(0, charIndex));
+        if (charIndex > 0) {
+          timeoutId = setTimeout(tick, randomBetween(DELETE_MIN_MS, DELETE_MAX_MS));
+        } else {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % items.length;
+          timeoutId = setTimeout(tick, BETWEEN_WORDS_MS);
+        }
+      }
+    }
+
+    function start() { stop(); tick(); }
+    start();
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) { pausedByVisibility = true; stop(); }
+      else if (pausedByVisibility) { pausedByVisibility = false; start(); }
+    });
+  }
+
+  function initTypeOn(el) {
+    const originalText = (el.textContent || '').trim();
+    const shouldLoop = String(el.dataset.loop).toLowerCase() === 'true';
+    if (!originalText) return;
+    if (el.dataset.typeOnInit === 'true') return;
+    el.dataset.typeOnInit = 'true';
+
+    el.innerHTML = '<span class="type-on-text"></span><span class="type-on-cursor" aria-hidden="true">|</span>';
+    const textEl = el.querySelector('.type-on-text');
+    const cursorEl = el.querySelector('.type-on-cursor');
+
+    if (reducedMotion) {
+      textEl.textContent = originalText;
+      if (cursorEl) cursorEl.style.display = 'none';
+      return;
+    }
+
+    const TYPE_SPEED = 28;
+    const TYPE_VARIANCE = 20;
+    const DELETE_SPEED = 18;
+    const HOLD_FULL_MS = 1200;
+    const HOLD_EMPTY_MS = 300;
+
+    function randomDelay() { return TYPE_SPEED + Math.random() * TYPE_VARIANCE; }
+    function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+    let stopped = false;
+
+    async function typeText(text) {
+      for (let i = 1; i <= text.length; i++) {
+        if (stopped) return;
+        textEl.textContent = text.slice(0, i);
+        await wait(randomDelay());
+      }
+    }
+
+    async function deleteText() {
+      const current = textEl.textContent;
+      for (let i = current.length - 1; i >= 0; i--) {
+        if (stopped) return;
+        textEl.textContent = current.slice(0, i);
+        await wait(DELETE_SPEED);
+      }
+    }
+
+    async function run() {
+      do {
+        await typeText(originalText);
+        await wait(HOLD_FULL_MS);
+        if (!shouldLoop) break;
+        await deleteText();
+        await wait(HOLD_EMPTY_MS);
+      } while (shouldLoop && !stopped);
+    }
+
+    run();
+
+    document.addEventListener('visibilitychange', () => {
+      stopped = document.hidden;
+      if (!document.hidden) run();
+    });
+  }
+
+  document.querySelectorAll('.hero-rotator').forEach(initRotator);
+  document.querySelectorAll('.type-on').forEach(initTypeOn);
+})();
+</script>
+</body>
+</html>

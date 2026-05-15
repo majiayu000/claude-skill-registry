@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conductor Motion — Stagger Reveal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cm-bg: #0B0F1A;
+  --cm-surface: #141824;
+  --cm-elevated: #1C2133;
+  --cm-brand: #4F7BF7;
+  --cm-brand-40: rgba(79, 123, 247, 0.4);
+  --cm-text: #E8ECF4;
+  --cm-text-70: rgba(232, 236, 244, 0.7);
+  --cm-text-40: rgba(232, 236, 244, 0.4);
+  --cm-text-20: rgba(232, 236, 244, 0.2);
+  --cm-success: #34D399;
+  --cm-border: rgba(232, 236, 244, 0.15);
+  --cm-border-subtle: rgba(232, 236, 244, 0.08);
+  --cm-ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --cm-stagger: 200ms;
+  --cm-hero-transition: 1300ms;
+  --cm-font: 'Geist', system-ui, sans-serif;
+  --cm-font-mono: 'Geist Mono', 'SF Mono', monospace;
+  --cm-hero-size: clamp(2rem, 4vw + 1rem, 4.5rem);
+  --cm-body-size: clamp(0.875rem, 0.5vw + 0.75rem, 1rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cm-bg);
+  color: var(--cm-text);
+  font-family: var(--cm-font);
+  font-size: var(--cm-body-size);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Hero cascade --- */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero-badge,
+.hero-heading,
+.hero-subtitle,
+.hero-cta {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--cm-hero-transition) var(--cm-ease-out-cubic),
+              transform var(--cm-hero-transition) var(--cm-ease-out-cubic);
+}
+
+html.is-loaded .hero-badge    { opacity: 1; transform: none; transition-delay: calc(0 * var(--cm-stagger)); }
+html.is-loaded .hero-heading  { opacity: 1; transform: none; transition-delay: calc(1 * var(--cm-stagger)); }
+html.is-loaded .hero-subtitle { opacity: 1; transform: none; transition-delay: calc(2 * var(--cm-stagger)); }
+html.is-loaded .hero-cta      { opacity: 1; transform: none; transition-delay: calc(3 * var(--cm-stagger)); }
+
+.hero-badge {
+  display: inline-flex;
+  padding: 0.35rem 1rem;
+  border: 1px solid var(--cm-border);
+  border-radius: 100px;
+  font-family: var(--cm-font-mono);
+  font-size: var(--cm-mono-size, 0.8rem);
+  color: var(--cm-text-70);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero-heading {
+  margin-top: 1.5rem;
+  font-size: var(--cm-hero-size);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 48rem;
+}
+
+.hero-subtitle {
+  margin-top: 1.5rem;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.25rem);
+  color: var(--cm-text-70);
+  max-width: 36rem;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  margin-top: 2rem;
+  display: inline-flex;
+  padding: 0.75rem 2rem;
+  background: var(--cm-brand);
+  color: var(--cm-bg);
+  border: none;
+  border-radius: 0.5rem;
+  font-family: var(--cm-font);
+  font-size: var(--cm-body-size);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 200ms ease;
+  text-decoration: none;
+}
+
+.hero-cta:hover {
+  background: #3D6BE5;
+}
+
+/* --- Scroll-triggered section --- */
+
+.features {
+  padding: 6rem 2rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.features-heading {
+  font-size: clamp(1.5rem, 2vw + 0.5rem, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: var(--cm-surface);
+  border: 1px solid var(--cm-border-subtle);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms var(--cm-ease-out-cubic),
+              transform 600ms var(--cm-ease-out-cubic);
+}
+
+.feature-card.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.feature-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--cm-brand-40);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cm-brand);
+}
+
+.feature-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  color: var(--cm-text-70);
+  line-height: 1.6;
+}
+
+/* --- Stats row (scroll reveal) --- */
+
+.stats {
+  padding: 4rem 2rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.stats-row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+  min-width: 10rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms var(--cm-ease-out-cubic),
+              transform 600ms var(--cm-ease-out-cubic);
+}
+
+.stat.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--cm-brand);
+  font-family: var(--cm-font-mono);
+}
+
+.stat-label {
+  margin-top: 0.25rem;
+  font-size: var(--cm-body-size);
+  color: var(--cm-text-40);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-family: var(--cm-font-mono);
+  font-size: 0.75rem;
+}
+
+/* --- Navbar scroll effect --- */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1rem 2rem;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 300ms ease, border-color 300ms ease;
+}
+
+.navbar.is-scrolled {
+  background: rgba(11, 15, 26, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom-color: var(--cm-border-subtle);
+}
+
+.navbar-inner {
+  max-width: 64rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--cm-text);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.navbar-links a {
+  color: var(--cm-text-70);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 200ms ease;
+}
+
+.navbar-links a:hover {
+  color: var(--cm-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-badge,
+  .hero-heading,
+  .hero-subtitle,
+  .hero-cta {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .feature-card,
+  .stat {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .navbar {
+    transition: none !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <span class="navbar-logo">ConductorAI</span>
+    <ul class="navbar-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#stats">Results</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <span class="hero-badge">Now Available</span>
+  <h1 class="hero-heading">Accelerating complex approvals with AI-powered review</h1>
+  <p class="hero-subtitle">Distill complex policies and expertise into agentic decision trees to review and approve documents at mission speed.</p>
+  <a href="#features" class="hero-cta">Get Started</a>
+</section>
+
+<section class="features" id="features">
+  <h2 class="features-heading">Why teams choose Conductor</h2>
+  <div class="feature-grid">
+    <div class="feature-card scroll-reveal">
+      <div class="feature-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L2 7l8 5 8-5-8-5z" stroke="currentColor" stroke-width="1.5"/><path d="M2 13l8 5 8-5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </div>
+      <h3>Agentic Review</h3>
+      <p>Decision trees that encode your expertise and apply it consistently across thousands of documents.</p>
+    </div>
+    <div class="feature-card scroll-reveal">
+      <div class="feature-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M6 10h8M10 6v8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </div>
+      <h3>Custom Workflows</h3>
+      <p>Build approval pipelines that match your team's exact process without compromising compliance.</p>
+    </div>
+    <div class="feature-card scroll-reveal">
+      <div class="feature-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l3 3" stroke="currentColor" stroke-width="1.5"/></svg>
+      </div>
+      <h3>Mission Speed</h3>
+      <p>Reduce review cycles from weeks to hours with AI that learns your standards and applies them at scale.</p>
+    </div>
+    <div class="feature-card scroll-reveal">
+      <div class="feature-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10l5 5L17 5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </div>
+      <h3>Audit Trail</h3>
+      <p>Complete provenance for every decision—who reviewed what, when, and why—built into every workflow.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stats" id="stats">
+  <div class="stats-row">
+    <div class="stat scroll-reveal" data-target="1324" data-suffix="+">
+      <div class="stat-value">0</div>
+      <div class="stat-label">Documents Reviewed</div>
+    </div>
+    <div class="stat scroll-reveal" data-target="98" data-suffix="%">
+      <div class="stat-value">0</div>
+      <div class="stat-label">Accuracy Rate</div>
+    </div>
+    <div class="stat scroll-reveal" data-target="12" data-suffix="x">
+      <div class="stat-value">0</div>
+      <div class="stat-label">Faster Review</div>
+    </div>
+  </div>
+</section>
+
+<div style="height: 20vh;"></div>
+
+<script>
+(() => {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (document.documentElement.dataset.initDone === 'true') return;
+  document.documentElement.dataset.initDone = 'true';
+
+  let paused = false;
+  document.addEventListener('visibilitychange', () => {
+    paused = document.hidden;
+  });
+
+  // Hero cascade: double rAF to ensure CSS transitions fire after paint
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('is-loaded');
+    });
+  });
+
+  // Navbar scroll effect
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        navbar.classList.toggle('is-scrolled', window.scrollY > 40);
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+
+  if (reducedMotion) {
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+      el.classList.add('is-visible');
+    });
+    document.querySelectorAll('.stat').forEach(el => {
+      el.classList.add('is-visible');
+      const target = parseInt(el.dataset.target, 10);
+      const suffix = el.dataset.suffix || '';
+      el.querySelector('.stat-value').textContent = Intl.NumberFormat('en-US').format(target) + suffix;
+    });
+    return;
+  }
+
+  // Scroll-triggered reveals with stagger
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const parent = entry.target.closest('.feature-grid, .stats-row');
+      if (parent) {
+        const siblings = Array.from(parent.querySelectorAll('.scroll-reveal'));
+        const idx = siblings.indexOf(entry.target);
+        entry.target.style.transitionDelay = `${idx * 150}ms`;
+      }
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
+
+  // Animated stat counters
+  function animateCounter(el) {
+    const valueEl = el.querySelector('.stat-value');
+    const target = parseInt(el.dataset.target, 10);
+    const suffix = el.dataset.suffix || '';
+    const duration = 2000;
+    const start = performance.now();
+    let pauseOffset = 0;
+
+    function tick(now) {
+      if (paused) { pauseOffset = now; requestAnimationFrame(tick); return; }
+      if (pauseOffset) { const delta = now - pauseOffset; pauseOffset = 0; start + delta; }
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      valueEl.textContent = Intl.NumberFormat('en-US').format(Math.round(target * eased)) + suffix;
+      if (t < 1) requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      if (entry.target.dataset.target) animateCounter(entry.target);
+      statObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.stat').forEach(el => statObserver.observe(el));
+})();
+</script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 name: content-gap-analysis
-description: 'Find content gaps: topics and keywords competitors cover that you don''t, with editorial calendar. 内容缺口/选题规划'
-version: "9.9.5"
+description: 'Use when the user asks to "find content gaps"; maps competitor topics, missing keywords, and editorial calendar opportunities. 内容缺口/选题规划'
+version: "9.9.9"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -9,7 +9,7 @@ when_to_use: "Use when finding content gaps between two domains, discovering mis
 argument-hint: "<your domain> <competitor domain>"
 metadata:
   author: aaron-he-zhu
-  version: "9.9.5"
+  version: "9.9.9"
   geo-relevance: "medium"
   tags:
     - seo
@@ -71,7 +71,7 @@ What content am I missing compared to my top 3 competitors?
 
 - **Reads**: goals, market inputs, tool data, and prior strategy from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing analysis and reusable summary.
-- **Promotes**: durable keyword priorities, competitor facts, and strategy decisions to `memory/hot-cache.md`, `memory/decisions.md`, and `memory/research/`.
+- **Promotes**: durable keyword priorities, competitor facts, and pending strategy decisions to `memory/hot-cache.md`, `memory/open-loops.md`, and `memory/research/`.
 - **Primary next skill**: [seo-content-writer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/seo-content-writer/SKILL.md) when the prioritized gap list is approved.
 
 ### Handoff Summary

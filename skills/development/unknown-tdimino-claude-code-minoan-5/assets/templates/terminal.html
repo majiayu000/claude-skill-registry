@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conductor Motion — Terminal Display</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cm-bg: #0B0F1A;
+  --cm-surface: #141824;
+  --cm-elevated: #1C2133;
+  --cm-brand: #4F7BF7;
+  --cm-brand-40: rgba(79, 123, 247, 0.4);
+  --cm-brand-20: rgba(79, 123, 247, 0.2);
+  --cm-text: #E8ECF4;
+  --cm-text-70: rgba(232, 236, 244, 0.7);
+  --cm-text-40: rgba(232, 236, 244, 0.4);
+  --cm-text-20: rgba(232, 236, 244, 0.2);
+  --cm-success: #34D399;
+  --cm-border: rgba(232, 236, 244, 0.15);
+  --cm-border-subtle: rgba(232, 236, 244, 0.08);
+  --cm-ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --cm-font: 'Geist', system-ui, sans-serif;
+  --cm-font-mono: 'Geist Mono', 'SF Mono', monospace;
+  --cm-body-size: clamp(0.875rem, 0.5vw + 0.75rem, 1rem);
+  --cm-mono-size: clamp(0.75rem, 0.4vw + 0.65rem, 0.875rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cm-bg);
+  color: var(--cm-text);
+  font-family: var(--cm-font);
+  font-size: var(--cm-body-size);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.terminal-block {
+  width: 100%;
+  max-width: 40rem;
+  background: var(--cm-surface);
+  border: 1px solid var(--cm-border-subtle);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  font-family: var(--cm-font-mono);
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--cm-border-subtle);
+  margin-bottom: 1rem;
+}
+
+.terminal-header-title {
+  font-size: var(--cm-mono-size);
+  color: var(--cm-text-40);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.terminal-status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--cm-mono-size);
+  color: var(--cm-brand);
+}
+
+.terminal-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cm-brand);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.terminal-body {
+  min-height: 8rem;
+}
+
+.terminal-row {
+  display: flex;
+  align-items: baseline;
+  font-size: var(--cm-mono-size);
+  padding: 0.3rem 0;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.terminal-row.is-visible {
+  opacity: 1;
+}
+
+.terminal-timestamp {
+  color: var(--cm-text-40);
+  flex: 0 0 auto;
+  margin-right: 0.75rem;
+}
+
+.terminal-dots {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--cm-text-20);
+}
+
+.terminal-label {
+  flex: 0 0 auto;
+  color: var(--cm-text-70);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-left: 0.75rem;
+}
+
+.terminal-status-line {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--cm-border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.terminal-status-text {
+  color: var(--cm-brand);
+  font-size: var(--cm-mono-size);
+  flex: 1 1 auto;
+  min-height: 1.2em;
+}
+
+.terminal-status-cursor {
+  color: var(--cm-text-40);
+  animation: blink 530ms step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.terminal-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 0 0 auto;
+}
+
+.terminal-progress-bar {
+  width: 6rem;
+  height: 4px;
+  background: var(--cm-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.terminal-progress-fill {
+  height: 100%;
+  background: var(--cm-brand);
+  width: 0%;
+  transition: width 450ms var(--cm-ease-out-cubic);
+}
+
+.terminal-progress-pct {
+  font-size: var(--cm-mono-size);
+  color: var(--cm-text-40);
+  min-width: 2.5rem;
+  text-align: right;
+}
+
+.terminal-results {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--cm-border-subtle);
+}
+
+.result-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.result-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--cm-text);
+}
+
+.result-label {
+  font-size: var(--cm-mono-size);
+  color: var(--cm-text-40);
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal-status-dot { animation: none; }
+  .terminal-status-cursor { animation: none; }
+  .terminal-progress-fill { transition: none; }
+  .terminal-row { opacity: 1 !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="terminal-block">
+  <div class="terminal-header">
+    <span class="terminal-header-title">Search Console</span>
+    <div class="terminal-status-indicator">
+      <div class="terminal-status-dot" aria-hidden="true"></div>
+      <span>Active</span>
+    </div>
+  </div>
+
+  <div class="terminal-body">
+    <div class="terminal-rows"></div>
+    <div class="terminal-status-line">
+      <div class="terminal-status-text">
+        <span class="status-typed"></span><span class="terminal-status-cursor" aria-hidden="true">|</span>
+      </div>
+      <div class="terminal-progress">
+        <div class="terminal-progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div class="terminal-progress-fill"></div>
+        </div>
+        <span class="terminal-progress-pct">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="terminal-results">
+    <div class="result-col">
+      <span class="result-value matches-value">0</span>
+      <span class="result-label">Matches</span>
+    </div>
+    <div class="result-col">
+      <span class="result-value similar-value">0</span>
+      <span class="result-label">Similar</span>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const TYPE_SPEED = 45;
+  const TYPE_VARIANCE = 18;
+  const DELETE_SPEED = 24;
+  const HOLD_FULL_MS = 2400;
+  const HOLD_EMPTY_MS = 160;
+
+  const TIMESTAMPS = ['10:14:02', '10:14:31', '10:14:58', '10:15:12', '10:15:33'];
+  const LABELS = ['QUERY_RECEIVED', 'INPUT_PARSED', 'SEARCH_ACTIVE', 'RESULTS_RANKED', 'COMPLETE'];
+  const STATUS_ITEMS = [
+    'scanning document repository...',
+    'parsing query parameters...',
+    'matching compliance criteria...',
+    'ranking relevance scores...',
+    'compiling results...'
+  ];
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const rowsContainer = document.querySelector('.terminal-rows');
+  const statusTyped = document.querySelector('.status-typed');
+  const progressFill = document.querySelector('.terminal-progress-fill');
+  const progressPct = document.querySelector('.terminal-progress-pct');
+  const matchesValue = document.querySelector('.matches-value');
+  const similarValue = document.querySelector('.similar-value');
+  const statusCursor = document.querySelector('.terminal-status-cursor');
+
+  if (rowsContainer.dataset.initDone === 'true') return;
+  rowsContainer.dataset.initDone = 'true';
+
+  let stopped = false;
+  document.addEventListener('visibilitychange', () => {
+    stopped = document.hidden;
+  });
+
+  function measureDotWidth(container) {
+    const probe = document.createElement('span');
+    probe.style.cssText = 'visibility:hidden;position:absolute;white-space:nowrap;font-family:var(--cm-font-mono);font-size:var(--cm-mono-size);';
+    probe.textContent = '.';
+    container.appendChild(probe);
+    const w = probe.offsetWidth;
+    probe.remove();
+    return w || 6;
+  }
+
+  function fillDots(dotsEl) {
+    const parent = dotsEl.closest('.terminal-row');
+    if (!parent) return;
+    const available = dotsEl.offsetWidth;
+    const dotW = measureDotWidth(dotsEl.parentElement);
+    const count = Math.max(0, Math.floor(available / dotW) - 2);
+    dotsEl.textContent = '.'.repeat(count);
+  }
+
+  function createRow(index) {
+    const row = document.createElement('div');
+    row.className = 'terminal-row';
+
+    const ts = document.createElement('span');
+    ts.className = 'terminal-timestamp';
+    ts.textContent = `[${TIMESTAMPS[index]}]`;
+
+    const dots = document.createElement('span');
+    dots.className = 'terminal-dots';
+
+    const label = document.createElement('span');
+    label.className = 'terminal-label';
+    label.textContent = LABELS[index];
+
+    row.appendChild(ts);
+    row.appendChild(dots);
+    row.appendChild(label);
+    return { row, dots };
+  }
+
+  function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+  function animateCounter(el, target, durationMs) {
+    const start = performance.now();
+    function tick(now) {
+      const t = Math.min(1, (now - start) / durationMs);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = Intl.NumberFormat('en-US').format(Math.round(target * eased));
+      if (t < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  if (reducedMotion) {
+    TIMESTAMPS.forEach((_, i) => {
+      const { row, dots } = createRow(i);
+      row.classList.add('is-visible');
+      rowsContainer.appendChild(row);
+      requestAnimationFrame(() => fillDots(dots));
+    });
+    statusTyped.textContent = STATUS_ITEMS[STATUS_ITEMS.length - 1];
+    statusCursor.style.display = 'none';
+    progressFill.style.width = '100%';
+    progressPct.textContent = '100%';
+    matchesValue.textContent = Intl.NumberFormat('en-US').format(1234);
+    similarValue.textContent = Intl.NumberFormat('en-US').format(2356);
+    return;
+  }
+
+  const allDots = [];
+
+  TIMESTAMPS.forEach((_, i) => {
+    const { row, dots } = createRow(i);
+    rowsContainer.appendChild(row);
+    allDots.push(dots);
+
+    setTimeout(() => {
+      row.classList.add('is-visible');
+      requestAnimationFrame(() => fillDots(dots));
+    }, i * 600);
+  });
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => allDots.forEach(fillDots), 80);
+  });
+
+  async function runStatusSequence() {
+    const totalSteps = STATUS_ITEMS.length;
+    for (let i = 0; i < totalSteps; i++) {
+      const item = STATUS_ITEMS[i];
+
+      for (let c = 1; c <= item.length; c++) {
+        if (stopped) { await wait(100); c--; continue; }
+        statusTyped.textContent = item.slice(0, c);
+        await wait(TYPE_SPEED + Math.random() * TYPE_VARIANCE);
+      }
+
+      const percent = Math.min(100, ((i + 1) / totalSteps) * 100);
+      progressFill.style.width = percent + '%';
+      progressPct.textContent = Math.round(percent) + '%';
+      progressFill.parentElement.setAttribute('aria-valuenow', Math.round(percent));
+
+      await wait(HOLD_FULL_MS);
+
+      if (i < totalSteps - 1) {
+        const current = item;
+        for (let c = current.length - 1; c >= 0; c--) {
+          statusTyped.textContent = current.slice(0, c);
+          await wait(DELETE_SPEED);
+        }
+        await wait(HOLD_EMPTY_MS);
+      }
+    }
+
+    animateCounter(matchesValue, 1234, 3000);
+    animateCounter(similarValue, 2356, 3500);
+  }
+
+  setTimeout(runStatusSequence, TIMESTAMPS.length * 600 + 500);
+})();
+</script>
+</body>
+</html>

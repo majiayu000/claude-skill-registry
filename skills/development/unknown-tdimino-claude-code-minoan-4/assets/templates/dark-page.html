@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grainient Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ═══════════════════════════════════════════════
+           Design Tokens
+           ═══════════════════════════════════════════════ */
+        :root {
+            --grn-bg: #000000;
+            --grn-surface: #141414;
+            --grn-elevated: #1A1A1A;
+            --grn-card: #2B2B2B;
+            --grn-accent: #C2F13C;
+            --grn-accent-40: rgba(194, 241, 60, 0.4);
+            --grn-accent-20: rgba(194, 241, 60, 0.2);
+            --grn-text: #FFFFFF;
+            --grn-text-70: rgba(255, 255, 255, 0.7);
+            --grn-text-40: rgba(255, 255, 255, 0.4);
+            --grn-text-20: rgba(255, 255, 255, 0.2);
+            --grn-text-10: rgba(255, 255, 255, 0.1);
+            --grn-border: rgba(255, 255, 255, 0.2);
+            --grn-border-subtle: rgba(255, 255, 255, 0.1);
+            --grn-spring-snappy: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --grn-spring-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+            --grn-spring-subtle: cubic-bezier(0.22, 1, 0.36, 1);
+            --grn-blur-light: blur(5px);
+            --grn-blur-medium: blur(10px);
+            --grn-blur-heavy: blur(20px);
+            --grn-font: 'Inter', system-ui, sans-serif;
+            --grn-hero-size: clamp(32px, 4vw + 1rem, 6vw);
+            --grn-section-size: clamp(24px, 3vw + 0.5rem, 48px);
+            --grn-body-size: clamp(16px, 1vw + 1rem, 1.1vw);
+        }
+
+        /* ═══════════════════════════════════════════════
+           Reset & Base
+           ═══════════════════════════════════════════════ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            width: 100%; height: 100%;
+            font-family: var(--grn-font);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: var(--grn-bg);
+            color: var(--grn-text);
+        }
+
+        /* Effect #15: Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--grn-text-20); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--grn-text-40); }
+        html { scrollbar-width: thin; scrollbar-color: var(--grn-text-20) transparent; }
+
+        /* ═══════════════════════════════════════════════
+           Layer 1: WebGL Shader Canvas
+           ═══════════════════════════════════════════════ */
+        #shader-canvas {
+            position: fixed; inset: 0; z-index: 1;
+            width: 100%; height: 100%;
+            display: block;
+        }
+
+        /* ═══════════════════════════════════════════════
+           Layer 2: Vignette Overlay (Effect #2)
+           ═══════════════════════════════════════════════ */
+        .vignette { position: fixed; z-index: 2; pointer-events: none; }
+        .vignette--top { inset: 0 0 auto 0; height: 30%; background: linear-gradient(0deg, transparent 0%, var(--grn-surface) 100%); }
+        .vignette--bottom { inset: auto 0 0 0; height: 30%; background: linear-gradient(180deg, transparent 0%, var(--grn-surface) 100%); }
+        .vignette--left { inset: 0 auto 0 0; width: 20%; background: linear-gradient(270deg, transparent 0%, var(--grn-surface) 100%); }
+        .vignette--right { inset: 0 0 0 auto; width: 20%; background: linear-gradient(90deg, transparent 0%, var(--grn-surface) 100%); }
+
+        /* ═══════════════════════════════════════════════
+           Layer 3: Grid Pattern Overlay (Effect #14)
+           ═══════════════════════════════════════════════ */
+        .grid-overlay {
+            position: fixed; inset: 0; z-index: 3;
+            pointer-events: none;
+            opacity: 0.06;
+            background-image:
+                repeating-linear-gradient(0deg, var(--grn-accent) 0, var(--grn-accent) 1px, transparent 1px, transparent 100px),
+                repeating-linear-gradient(90deg, var(--grn-accent) 0, var(--grn-accent) 1px, transparent 1px, transparent 100px);
+        }
+
+        /* ═══════════════════════════════════════════════
+           Layer 5: Glassmorphism Nav (Effect #8)
+           ═══════════════════════════════════════════════ */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 32px;
+            backdrop-filter: var(--grn-blur-heavy);
+            -webkit-backdrop-filter: var(--grn-blur-heavy);
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom: 1px solid var(--grn-border-subtle);
+        }
+
+        .nav__logo {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 18px; font-weight: 600;
+            text-decoration: none; color: var(--grn-text);
+        }
+        .nav__logo svg { display: block; }
+
+        .nav__links {
+            display: flex; align-items: center; gap: 8px;
+            list-style: none;
+        }
+
+        .nav__link {
+            padding: 8px 16px;
+            font-size: 14px; font-weight: 500;
+            color: var(--grn-text-70);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: color 0.4s var(--grn-spring-subtle), background-color 0.4s var(--grn-spring-subtle);
+        }
+        .nav__link:hover { color: var(--grn-text); background-color: var(--grn-text-10); }
+
+        .nav__cta {
+            padding: 8px 20px;
+            font-size: 14px; font-weight: 600;
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            background: linear-gradient(180deg, #EBFFB4, var(--grn-accent));
+            box-shadow: inset 0 0 3px white, 0 0 40px var(--grn-accent-20);
+            transition: filter 0.4s var(--grn-spring-snappy), transform 0.4s var(--grn-spring-snappy);
+        }
+        .nav__cta:hover { filter: brightness(1.1); transform: scale(1.02); }
+        .nav__cta:active { transform: scale(0.98); }
+
+        /* ═══════════════════════════════════════════════
+           Layer 4: Content Sections
+           ═══════════════════════════════════════════════ */
+        .section {
+            position: relative; z-index: 10;
+            padding: 100px 32px;
+        }
+        .section--surface { background: var(--grn-surface); }
+        .section--elevated { background: var(--grn-elevated); }
+        .section--dark { background: var(--grn-bg); }
+
+        .section__inner { max-width: 1200px; margin: 0 auto; }
+
+        .section__header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section__label {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 13px; font-weight: 500;
+            color: var(--grn-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+        }
+        .section__label-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--grn-accent);
+            box-shadow: 0 0 8px var(--grn-accent-40);
+        }
+
+        .section__title {
+            font-size: var(--grn-section-size);
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .section__subtitle {
+            font-size: var(--grn-body-size);
+            color: var(--grn-text-70);
+            line-height: 1.6;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        /* ═══════════════════════════════════════════════
+           Hero Section (Effects #1, #2, #5, #11, #16)
+           ═══════════════════════════════════════════════ */
+        .hero {
+            position: relative; z-index: 10;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            min-height: 100vh;
+            padding: 120px 32px 80px;
+            text-align: center;
+        }
+
+        .hero__badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 6px 14px;
+            font-size: 13px; font-weight: 500;
+            color: var(--grn-text-70);
+            border-radius: 50px;
+            border: 1px solid var(--grn-border-subtle);
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: var(--grn-blur-light);
+            -webkit-backdrop-filter: var(--grn-blur-light);
+            margin-bottom: 24px;
+            opacity: 0; transform: translateY(20px);
+            animation: fadeUp 0.8s var(--grn-spring-smooth) 0.2s forwards;
+        }
+        .hero__badge-dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--grn-accent);
+        }
+
+        .hero__title {
+            font-size: var(--grn-hero-size);
+            font-weight: 600;
+            line-height: 1.1;
+            max-width: 800px;
+            margin-bottom: 20px;
+            opacity: 0; transform: translateY(20px);
+            animation: fadeUp 0.8s var(--grn-spring-smooth) 0.4s forwards;
+        }
+        .hero__title em {
+            font-style: normal;
+            background: linear-gradient(180deg, #EBFFB4, var(--grn-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero__subtitle {
+            font-size: var(--grn-body-size);
+            font-weight: 400;
+            color: var(--grn-text-70);
+            max-width: 520px;
+            line-height: 1.5;
+            margin-bottom: 40px;
+            opacity: 0; transform: translateY(20px);
+            animation: fadeUp 0.8s var(--grn-spring-smooth) 0.6s forwards;
+        }
+
+        .hero__actions {
+            display: flex; gap: 12px;
+            opacity: 0; transform: translateY(20px);
+            animation: fadeUp 0.8s var(--grn-spring-smooth) 0.8s forwards;
+        }
+
+        .scroll-indicator {
+            position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+            display: flex; flex-direction: column; align-items: center; gap: 8px;
+            color: var(--grn-text-40);
+            font-size: 12px; font-weight: 500;
+            opacity: 0;
+            animation: fadeUp 0.8s var(--grn-spring-smooth) 1.2s forwards;
+        }
+        .scroll-indicator__arrow {
+            width: 20px; height: 20px;
+            border-right: 1.5px solid var(--grn-text-40);
+            border-bottom: 1.5px solid var(--grn-text-40);
+            transform: rotate(45deg);
+            animation: bounce 2s var(--grn-spring-smooth) infinite;
+        }
+
+        /* ═══════════════════════════════════════════════
+           Buttons (Effect #11: Gradient CTAs)
+           ═══════════════════════════════════════════════ */
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 28px;
+            font-family: var(--grn-font);
+            font-size: 15px; font-weight: 600;
+            color: #000; border: none; border-radius: 50px; cursor: pointer;
+            background: linear-gradient(180deg, #EBFFB4, var(--grn-accent));
+            box-shadow: inset 0 0 3px white, 0 0 40px var(--grn-accent-20);
+            transition: filter 0.4s var(--grn-spring-snappy), transform 0.4s var(--grn-spring-snappy);
+            text-decoration: none;
+        }
+        .btn-primary:hover { filter: brightness(1.1); transform: scale(1.03); }
+        .btn-primary:active { transform: scale(0.98); }
+
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 28px;
+            font-family: var(--grn-font);
+            font-size: 15px; font-weight: 500;
+            color: var(--grn-text);
+            background: transparent;
+            border: 1px solid var(--grn-border);
+            border-radius: 50px; cursor: pointer;
+            transition: background-color 0.4s var(--grn-spring-subtle), border-color 0.4s var(--grn-spring-subtle);
+            text-decoration: none;
+        }
+        .btn-secondary:hover { background-color: var(--grn-text-10); border-color: var(--grn-text-40); }
+
+        /* ═══════════════════════════════════════════════
+           Bento Grid (Effect #10)
+           ═══════════════════════════════════════════════ */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .bento-card {
+            background: var(--grn-surface);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: inset 0 0 0 1px var(--grn-border-subtle);
+            transition: transform 0.6s var(--grn-spring-snappy);
+        }
+        .bento-card:hover { transform: translateY(-4px); }
+
+        .bento-card--span2 { grid-column: span 2; }
+        .bento-card--tall { grid-row: span 2; }
+
+        /* Effect #3: 9-Layer Lime Glow Shadow */
+        .bento-card--featured {
+            box-shadow:
+                inset 0px 0.5px 0.5px 0px rgb(255,255,255),
+                0px 70px 30px 0px rgba(0,0,0,0.05),
+                0px 40px 25px 0px rgba(0,0,0,0.25),
+                0px 20px 20px 0px rgba(0,0,0,0.25),
+                0px 5px 10px 0px rgba(0,0,0,0.35),
+                0px 0px 0px 0.7px rgba(0,0,0,0.35),
+                0px -5px 30px 0px var(--grn-accent-20),
+                0px -1px 3px 0px var(--grn-accent-20),
+                0px 1px 0px 2px var(--grn-accent-20);
+        }
+
+        /* Effect #3: 9-Layer White Glow Shadow */
+        .bento-card--glow {
+            box-shadow:
+                inset 0px 0.5px 0.5px 0px rgb(255,255,255),
+                0px 70px 30px 0px rgba(0,0,0,0.05),
+                0px 40px 25px 0px rgba(0,0,0,0.25),
+                0px 20px 20px 0px rgba(0,0,0,0.25),
+                0px 5px 10px 0px rgba(0,0,0,0.35),
+                0px 0px 0px 0.7px rgba(0,0,0,0.35),
+                0px -5px 30px 0px rgba(255,255,255,0.08),
+                0px -1px 3px 0px rgba(255,255,255,0.08),
+                0px 1px 0px 2px rgba(255,255,255,0.08);
+        }
+
+        .bento-card__icon { margin-bottom: 16px; }
+
+        .bento-card__title {
+            font-size: 18px; font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .bento-card__text {
+            font-size: 14px; font-weight: 400;
+            color: var(--grn-text-70);
+            line-height: 1.5;
+        }
+
+        /* ═══════════════════════════════════════════════
+           Hover Zoom Cards (Effect #6)
+           ═══════════════════════════════════════════════ */
+        .zoom-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .zoom-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: clip;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+        }
+
+        .zoom-card__image {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s var(--grn-spring-smooth);
+        }
+        .zoom-card:hover .zoom-card__image { transform: scale(1.08); }
+
+        .zoom-card__overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, transparent 50%);
+            display: flex; align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.6s var(--grn-spring-smooth);
+            pointer-events: none;
+        }
+        .zoom-card:hover .zoom-card__overlay { opacity: 1; }
+
+        .zoom-card__label {
+            font-size: 14px; font-weight: 500;
+        }
+
+        /* Gradient fill placeholders for zoom cards */
+        .zoom-card--aurora { background: linear-gradient(135deg, #0a3a0a 0%, #1a3a2a 50%, #0a1a3a 100%); }
+        .zoom-card--nebula { background: linear-gradient(135deg, #2a0a3a 0%, #1a0a2a 50%, #0a1a3a 100%); }
+        .zoom-card--sunset { background: linear-gradient(135deg, #3a1a0a 0%, #3a2a1a 50%, #2a1a0a 100%); }
+        .zoom-card--ocean { background: linear-gradient(135deg, #0a1a3a 0%, #0a2a3a 50%, #0a3a3a 100%); }
+        .zoom-card--forest { background: linear-gradient(135deg, #0a2a0a 0%, #1a3a0a 50%, #0a3a1a 100%); }
+        .zoom-card--ember { background: linear-gradient(135deg, #3a0a0a 0%, #3a1a0a 50%, #3a2a1a 100%); }
+
+        /* ═══════════════════════════════════════════════
+           Ticker Marquee (Effect #7)
+           ═══════════════════════════════════════════════ */
+        .ticker-holder {
+            display: flex; gap: 5px;
+            height: 500px;
+            overflow: clip;
+        }
+
+        .ticker-column {
+            flex: 1;
+            display: flex; flex-direction: column; gap: 5px;
+            will-change: transform;
+        }
+
+        .ticker-item {
+            flex-shrink: 0;
+            border-radius: 12px;
+            padding: 20px;
+            background: var(--grn-elevated);
+            box-shadow: inset 0 0 0 1px var(--grn-border-subtle);
+        }
+
+        .ticker-item__name {
+            font-size: 14px; font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .ticker-item__desc {
+            font-size: 12px; font-weight: 400;
+            color: var(--grn-text-40);
+        }
+        .ticker-item--accent {
+            background: linear-gradient(135deg, rgba(194,241,60,0.1) 0%, var(--grn-elevated) 100%);
+        }
+
+        /* ═══════════════════════════════════════════════
+           3D Card Flip (Effect #9)
+           ═══════════════════════════════════════════════ */
+        .perspective-container {
+            perspective: 1200px;
+            overflow: visible;
+        }
+
+        .flip-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .flip-card {
+            position: relative;
+            height: 280px;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.8s var(--grn-spring-smooth);
+        }
+        .flip-card:nth-child(2) { translate: 0 20px; }
+        .flip-card:nth-child(3) { translate: 0 40px; }
+        .flip-card.flipped { transform: rotateY(180deg); }
+
+        .flip-card__face {
+            position: absolute; inset: 0;
+            backface-visibility: hidden;
+            border-radius: 16px;
+            padding: 28px;
+            display: flex; flex-direction: column; justify-content: space-between;
+            box-shadow: inset 0 0 0 1px var(--grn-border-subtle);
+        }
+
+        .flip-card__front { background: var(--grn-surface); }
+        .flip-card__back {
+            background: var(--grn-elevated);
+            transform: rotateY(180deg);
+        }
+
+        .flip-card__number {
+            font-size: 48px; font-weight: 600;
+            background: linear-gradient(180deg, #EBFFB4, var(--grn-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .flip-card__title {
+            font-size: 18px; font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .flip-card__text {
+            font-size: 14px;
+            color: var(--grn-text-70);
+            line-height: 1.5;
+        }
+
+        .flip-card__hint {
+            font-size: 12px;
+            color: var(--grn-text-40);
+        }
+
+        /* ═══════════════════════════════════════════════
+           Testimonials (Glassmorphism panels)
+           ═══════════════════════════════════════════════ */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .testimonial {
+            padding: 28px;
+            border-radius: 16px;
+            backdrop-filter: var(--grn-blur-medium);
+            -webkit-backdrop-filter: var(--grn-blur-medium);
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: inset 0 0 0 1px var(--grn-border-subtle);
+        }
+
+        .testimonial__stars {
+            display: flex; gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial__text {
+            font-size: 15px; font-weight: 400;
+            color: var(--grn-text-70);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .testimonial__author {
+            display: flex; align-items: center; gap: 12px;
+        }
+
+        .testimonial__avatar {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            background: var(--grn-card);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 600;
+        }
+
+        .testimonial__name {
+            font-size: 14px; font-weight: 500;
+        }
+        .testimonial__role {
+            font-size: 12px; font-weight: 400;
+            color: var(--grn-text-40);
+        }
+
+        /* ═══════════════════════════════════════════════
+           Pricing (Effect #3: Lime Glow)
+           ═══════════════════════════════════════════════ */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            align-items: start;
+        }
+
+        .pricing-card {
+            padding: 32px;
+            border-radius: 20px;
+            background: var(--grn-surface);
+            box-shadow: inset 0 0 0 1px var(--grn-border-subtle);
+        }
+
+        .pricing-card--featured {
+            box-shadow:
+                inset 0px 0.5px 0.5px 0px rgb(255,255,255),
+                0px 70px 30px 0px rgba(0,0,0,0.05),
+                0px 40px 25px 0px rgba(0,0,0,0.25),
+                0px 20px 20px 0px rgba(0,0,0,0.25),
+                0px 5px 10px 0px rgba(0,0,0,0.35),
+                0px 0px 0px 0.7px rgba(0,0,0,0.35),
+                0px -5px 30px 0px var(--grn-accent-20),
+                0px -1px 3px 0px var(--grn-accent-20),
+                0px 1px 0px 2px var(--grn-accent-20);
+            transform: scale(1.03);
+        }
+
+        .pricing-card__badge {
+            display: inline-block;
+            padding: 4px 10px;
+            font-size: 11px; font-weight: 600;
+            color: #000;
+            background: var(--grn-accent);
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+
+        .pricing-card__name {
+            font-size: 18px; font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card__price {
+            font-size: 40px; font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .pricing-card__price span {
+            font-size: 16px; font-weight: 400;
+            color: var(--grn-text-40);
+        }
+
+        .pricing-card__desc {
+            font-size: 14px;
+            color: var(--grn-text-40);
+            margin-bottom: 24px;
+        }
+
+        .pricing-card__features {
+            list-style: none;
+            margin-bottom: 28px;
+        }
+        .pricing-card__features li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--grn-text-70);
+            border-bottom: 1px solid var(--grn-border-subtle);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .pricing-card__features li:last-child { border-bottom: none; }
+
+        .pricing-card .btn-primary,
+        .pricing-card .btn-secondary { width: 100%; justify-content: center; }
+
+        /* ═══════════════════════════════════════════════
+           Newsletter (Effect #13: Inset Borders)
+           ═══════════════════════════════════════════════ */
+        .newsletter {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .newsletter__form {
+            display: flex; gap: 8px;
+            margin-top: 24px;
+        }
+
+        .newsletter__input {
+            flex: 1;
+            padding: 12px 20px;
+            font-family: var(--grn-font);
+            font-size: 15px;
+            color: var(--grn-text);
+            background: var(--grn-elevated);
+            border: none;
+            border-radius: 50px;
+            box-shadow: inset 0 0 0 1px var(--grn-border-subtle);
+            outline: none;
+            transition: box-shadow 0.4s var(--grn-spring-subtle);
+        }
+        .newsletter__input::placeholder { color: var(--grn-text-40); }
+        .newsletter__input:focus { box-shadow: inset 0 0 0 1px var(--grn-accent-40); }
+
+        /* ═══════════════════════════════════════════════
+           Footer
+           ═══════════════════════════════════════════════ */
+        .footer {
+            position: relative; z-index: 10;
+            padding: 60px 32px 32px;
+            background: var(--grn-bg);
+            border-top: 1px solid var(--grn-border-subtle);
+        }
+
+        .footer__inner {
+            max-width: 1200px; margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .footer__brand { font-size: 14px; color: var(--grn-text-40); line-height: 1.6; }
+        .footer__brand a { color: var(--grn-text); text-decoration: none; font-weight: 600; }
+
+        .footer__col-title {
+            font-size: 13px; font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--grn-text-40);
+            margin-bottom: 16px;
+        }
+
+        .footer__links { list-style: none; }
+        .footer__links li { margin-bottom: 8px; }
+        .footer__links a {
+            font-size: 14px; color: var(--grn-text-70);
+            text-decoration: none;
+            transition: color 0.3s var(--grn-spring-subtle);
+        }
+        .footer__links a:hover { color: var(--grn-text); }
+
+        .footer__bottom {
+            max-width: 1200px; margin: 40px auto 0;
+            padding-top: 24px;
+            border-top: 1px solid var(--grn-border-subtle);
+            display: flex; justify-content: space-between;
+            font-size: 13px; color: var(--grn-text-40);
+        }
+
+        /* ═══════════════════════════════════════════════
+           Animations (Effect #5: Spring)
+           ═══════════════════════════════════════════════ */
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: rotate(45deg) translateY(0); }
+            50% { transform: rotate(45deg) translateY(6px); }
+        }
+
+        .fade-up {
+            opacity: 0; transform: translateY(24px);
+            transition: opacity 0.8s var(--grn-spring-smooth), transform 0.8s var(--grn-spring-smooth);
+        }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* ═══════════════════════════════════════════════
+           prefers-reduced-motion
+           ═══════════════════════════════════════════════ */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .hero__badge, .hero__title, .hero__subtitle, .hero__actions, .scroll-indicator,
+            .fade-up {
+                opacity: 1; transform: none;
+            }
+            #shader-canvas { display: none; }
+            body {
+                background: linear-gradient(135deg, #0a1a00 0%, #141414 40%, #1a0a2a 100%);
+            }
+            .ticker-column { will-change: auto; }
+        }
+
+        /* ═══════════════════════════════════════════════
+           Mobile Responsive
+           ═══════════════════════════════════════════════ */
+        @media (max-width: 809px) {
+            .nav { padding: 12px 20px; }
+            .nav__links { display: none; }
+            .hero { padding: 100px 20px 60px; }
+            .hero__actions { flex-direction: column; width: 100%; max-width: 320px; }
+            .btn-primary, .btn-secondary { justify-content: center; width: 100%; }
+
+            .section { padding: 60px 20px; }
+
+            .bento-grid,
+            .zoom-grid,
+            .flip-grid,
+            .testimonial-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bento-card--span2 { grid-column: span 1; }
+
+            .ticker-holder { height: 400px; }
+            .ticker-column:nth-child(n+4) { display: none; }
+
+            .footer__inner {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
+            .footer__bottom { flex-direction: column; gap: 8px; }
+
+            .newsletter__form { flex-direction: column; }
+
+            .pricing-card--featured { transform: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════════
+         Layer 1: WebGL Shader (Effect #1)
+         ═══════════════════════════════════════════════ -->
+    <canvas id="shader-canvas"></canvas>
+
+    <!-- ═══════════════════════════════════════════════
+         Layer 2: Vignette (Effect #2)
+         ═══════════════════════════════════════════════ -->
+    <div class="vignette vignette--top"></div>
+    <div class="vignette vignette--bottom"></div>
+    <div class="vignette vignette--left"></div>
+    <div class="vignette vignette--right"></div>
+
+    <!-- ═══════════════════════════════════════════════
+         Layer 3: Grid Overlay (Effect #14)
+         ═══════════════════════════════════════════════ -->
+    <div class="grid-overlay"></div>
+
+    <!-- ═══════════════════════════════════════════════
+         Layer 5: Glassmorphism Nav (Effect #8)
+         ═══════════════════════════════════════════════ -->
+    <nav class="nav">
+        <a href="#" class="nav__logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" role="presentation">
+                <defs>
+                    <linearGradient id="logo-grad" x1="0.608" x2="0.392" y1="1" y2="0">
+                        <stop offset="0" stop-color="#AADB1F"/>
+                        <stop offset="1" stop-color="#C2F13C"/>
+                    </linearGradient>
+                </defs>
+                <circle cx="12" cy="12" r="10" fill="url(#logo-grad)"/>
+            </svg>
+            Grainient
+        </a>
+        <ul class="nav__links">
+            <li><a href="#features" class="nav__link">Features</a></li>
+            <li><a href="#collection" class="nav__link">Collection</a></li>
+            <li><a href="#showcase" class="nav__link">Showcase</a></li>
+            <li><a href="#pricing" class="nav__link">Pricing</a></li>
+        </ul>
+        <a href="#" class="nav__cta">Get Access</a>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════
+         Hero (Effects #1, #2, #5, #11, #16)
+         ═══════════════════════════════════════════════ -->
+    <section class="hero">
+        <div class="hero__badge">
+            <span class="hero__badge-dot"></span>
+            New Collection Available
+        </div>
+        <h1 class="hero__title">Premium <em>Gradient</em> Backgrounds for Modern Design</h1>
+        <p class="hero__subtitle">High-resolution gradient backgrounds with grain textures, smooth blends, and animated variants for your next project.</p>
+        <div class="hero__actions">
+            <a href="#collection" class="btn-primary">Browse Collection</a>
+            <a href="#pricing" class="btn-secondary">View Pricing</a>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-indicator__arrow"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         Features — Bento Grid (Effects #3, #10, #12, #13)
+         ═══════════════════════════════════════════════ -->
+    <section class="section section--surface" id="features">
+        <div class="section__inner">
+            <div class="section__header fade-up">
+                <div class="section__label">
+                    <span class="section__label-dot"></span>
+                    Features
+                </div>
+                <h2 class="section__title">Everything you need to ship beautiful gradients</h2>
+                <p class="section__subtitle">Every asset is hand-tuned for color harmony, noise distribution, and resolution. Ready for Figma, Framer, or any tool.</p>
+            </div>
+
+            <div class="bento-grid fade-up">
+                <!-- Featured card with lime glow -->
+                <div class="bento-card bento-card--span2 bento-card--featured">
+                    <div class="bento-card__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" role="presentation">
+                            <defs><linearGradient id="icon-lime-1" x1="0.608" x2="0.392" y1="1" y2="0"><stop offset="0" stop-color="#AADB1F"/><stop offset="1" stop-color="#C2F13C"/></linearGradient></defs>
+                            <path d="M12 2L15 8.5L22 9.5L17 14.5L18 21L12 18L6 21L7 14.5L2 9.5L9 8.5L12 2Z" fill="url(#icon-lime-1)"/>
+                        </svg>
+                    </div>
+                    <h3 class="bento-card__title">Premium Quality</h3>
+                    <p class="bento-card__text">Every gradient is rendered at 4K+ resolution with precise noise grain, smooth color transitions, and multiple export formats.</p>
+                </div>
+
+                <!-- Card with white glow -->
+                <div class="bento-card bento-card--glow">
+                    <div class="bento-card__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" role="presentation">
+                            <defs><linearGradient id="icon-gold-1" x1="0.209" x2="0.791" y1="0" y2="1"><stop offset="0" stop-color="#FFF9E7"/><stop offset="1" stop-color="#BA8B4D"/></linearGradient></defs>
+                            <path d="M13 3L4 14H12L11 21L20 10H12L13 3Z" fill="url(#icon-gold-1)"/>
+                        </svg>
+                    </div>
+                    <h3 class="bento-card__title">Instant Access</h3>
+                    <p class="bento-card__text">Download and use immediately. No subscriptions, no restrictions.</p>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-card__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" role="presentation">
+                            <defs><linearGradient id="icon-lime-2" x1="0.608" x2="0.392" y1="1" y2="0"><stop offset="0" stop-color="#AADB1F"/><stop offset="1" stop-color="#C2F13C"/></linearGradient></defs>
+                            <rect x="3" y="3" width="18" height="18" rx="3" fill="url(#icon-lime-2)"/>
+                        </svg>
+                    </div>
+                    <h3 class="bento-card__title">Figma Plugin</h3>
+                    <p class="bento-card__text">Apply gradients directly in your design tool with one click.</p>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-card__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" role="presentation">
+                            <defs><linearGradient id="icon-gold-2" x1="0.209" x2="0.791" y1="0" y2="1"><stop offset="0" stop-color="#FFF9E7"/><stop offset="1" stop-color="#BA8B4D"/></linearGradient></defs>
+                            <circle cx="12" cy="12" r="9" fill="url(#icon-gold-2)"/>
+                        </svg>
+                    </div>
+                    <h3 class="bento-card__title">Commercial License</h3>
+                    <p class="bento-card__text">Use in unlimited personal and commercial projects, forever.</p>
+                </div>
+
+                <div class="bento-card bento-card--span2">
+                    <div class="bento-card__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" role="presentation">
+                            <defs><linearGradient id="icon-lime-3" x1="0.608" x2="0.392" y1="1" y2="0"><stop offset="0" stop-color="#AADB1F"/><stop offset="1" stop-color="#C2F13C"/></linearGradient></defs>
+                            <path d="M4 6L12 2L20 6V12C20 17 12 22 12 22C12 22 4 17 4 12V6Z" fill="url(#icon-lime-3)"/>
+                        </svg>
+                    </div>
+                    <h3 class="bento-card__title">Weekly Updates</h3>
+                    <p class="bento-card__text">New gradient packs added every week. Subscribers get early access to seasonal collections, animated variants, and exclusive color palettes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         Collection Gallery — Hover Zoom (Effect #6)
+         ═══════════════════════════════════════════════ -->
+    <section class="section section--dark" id="collection">
+        <div class="section__inner">
+            <div class="section__header fade-up">
+                <div class="section__label">
+                    <span class="section__label-dot"></span>
+                    Collection
+                </div>
+                <h2 class="section__title">Browse our gradient library</h2>
+                <p class="section__subtitle">Hand-crafted color combinations with precise grain textures.</p>
+            </div>
+
+            <div class="zoom-grid fade-up">
+                <div class="zoom-card zoom-card--aurora">
+                    <div class="zoom-card__image" style="background: linear-gradient(135deg, #0a3a0a 0%, #1a3a2a 50%, #0a1a3a 100%); width:100%; height:100%;"></div>
+                    <div class="zoom-card__overlay"><span class="zoom-card__label">Aurora Borealis</span></div>
+                </div>
+                <div class="zoom-card zoom-card--nebula">
+                    <div class="zoom-card__image" style="background: linear-gradient(135deg, #2a0a3a 0%, #1a0a2a 50%, #3a0a2a 100%); width:100%; height:100%;"></div>
+                    <div class="zoom-card__overlay"><span class="zoom-card__label">Nebula Skies</span></div>
+                </div>
+                <div class="zoom-card zoom-card--sunset">
+                    <div class="zoom-card__image" style="background: linear-gradient(135deg, #3a1a0a 0%, #3a2a1a 50%, #2a1a0a 100%); width:100%; height:100%;"></div>
+                    <div class="zoom-card__overlay"><span class="zoom-card__label">Ember Sunset</span></div>
+                </div>
+                <div class="zoom-card zoom-card--ocean">
+                    <div class="zoom-card__image" style="background: linear-gradient(135deg, #0a1a3a 0%, #0a2a3a 50%, #0a3a3a 100%); width:100%; height:100%;"></div>
+                    <div class="zoom-card__overlay"><span class="zoom-card__label">Deep Ocean</span></div>
+                </div>
+                <div class="zoom-card zoom-card--forest">
+                    <div class="zoom-card__image" style="background: linear-gradient(135deg, #0a2a0a 0%, #1a3a0a 50%, #0a3a1a 100%); width:100%; height:100%;"></div>
+                    <div class="zoom-card__overlay"><span class="zoom-card__label">Midnight Forest</span></div>
+                </div>
+                <div class="zoom-card zoom-card--ember">
+                    <div class="zoom-card__image" style="background: linear-gradient(135deg, #3a0a0a 0%, #3a1a0a 50%, #3a2a1a 100%); width:100%; height:100%;"></div>
+                    <div class="zoom-card__overlay"><span class="zoom-card__label">Volcanic Glow</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         Showcase Ticker (Effect #7)
+         ═══════════════════════════════════════════════ -->
+    <section class="section section--surface" id="showcase">
+        <div class="section__inner">
+            <div class="section__header fade-up">
+                <div class="section__label">
+                    <span class="section__label-dot"></span>
+                    Showcase
+                </div>
+                <h2 class="section__title">See what creators are building</h2>
+                <p class="section__subtitle">A live feed of projects using Grainient assets.</p>
+            </div>
+
+            <div class="ticker-holder fade-up" id="ticker">
+                <div class="ticker-column" data-speed="0.45">
+                    <div class="ticker-item"><div class="ticker-item__name">Portfolio v3</div><div class="ticker-item__desc">Aurora gradient hero section</div></div>
+                    <div class="ticker-item ticker-item--accent"><div class="ticker-item__name">SaaS Landing</div><div class="ticker-item__desc">Nebula background with glassmorphism</div></div>
+                    <div class="ticker-item"><div class="ticker-item__name">Studio Rebrand</div><div class="ticker-item__desc">Full gradient system integration</div></div>
+                    <div class="ticker-item"><div class="ticker-item__name">App Store Page</div><div class="ticker-item__desc">Ember gradient screenshots</div></div>
+                    <div class="ticker-item ticker-item--accent"><div class="ticker-item__name">Conference Site</div><div class="ticker-item__desc">Animated aurora keynote backdrop</div></div>
+                    <div class="ticker-item"><div class="ticker-item__name">E-commerce</div><div class="ticker-item__desc">Product cards with grain overlay</div></div>
+                </div>
+                <div class="ticker-column" data-speed="0.55">
+                    <div class="ticker-item ticker-item--accent"><div class="ticker-item__name">Music Player</div><div class="ticker-item__desc">Dynamic gradient visualizer</div></div>
+                    <div class="ticker-item"><div class="ticker-item__name">Agency Home</div><div class="ticker-item__desc">Bento grid with glow shadows</div></div>
+                    <div class="ticker-item"><div class="ticker-item__name">Blog Redesign</div><div class="ticker-item__desc">Subtle grain header backgrounds</div></div>
+                    <div class="ticker-item ticker-item--accent"><div class="ticker-item__name">NFT Gallery</div><div class="ticker-item__desc">3D card flip reveals</div></div>
+                    <div class="ticker-item"><div class="ticker-item__name">Dashboard UI</div><div class="ticker-item__desc">Dark surface elevation system</div></div>
+                    <div class="ticker-item"><div class="ticker-item__name">Brand Guide</div><div class="ticker-item__desc">Color system showcase</div></div>
+                </div>
+                <div class="ticker-column" data-speed="0.50">
+                    <div class="ticker-item"><div class="ticker-item__name">Startup Launch</div><div class="ticker-item__desc">Full landing with all 16 effects</div></div>
+                    <div class="ticker-item"><div class="ticker-item__name">Portfolio v2</div><div class="ticker-item__desc">Hover zoom gallery section</div></div>
+                    <div class="ticker-item ticker-item--accent"><div class="ticker-item__name">AI Product</div><div class="ticker-item__desc">Shader gradient background</div></div>
+                    <div class="ticker-item"><div class="ticker-item__name">Design System</div><div class="ticker-item__desc">Token-based theming demo</div></div>
+                    <div class="ticker-item"><div class="ticker-item__name">Mobile App</div><div class="ticker-item__desc">Gradient splash screens</div></div>
+                    <div class="ticker-item ticker-item--accent"><div class="ticker-item__name">Event Page</div><div class="ticker-item__desc">Vignette overlay with CTA</div></div>
+                </div>
+                <div class="ticker-column" data-speed="0.60">
+                    <div class="ticker-item"><div class="ticker-item__name">Social Cards</div><div class="ticker-item__desc">OG image gradient templates</div></div>
+                    <div class="ticker-item ticker-item--accent"><div class="ticker-item__name">Game UI</div><div class="ticker-item__desc">Lime glow menu system</div></div>
+                    <div class="ticker-item"><div class="ticker-item__name">Pitch Deck</div><div class="ticker-item__desc">Slide backgrounds with grain</div></div>
+                    <div class="ticker-item"><div class="ticker-item__name">Podcast Site</div><div class="ticker-item__desc">Audio waveform gradient overlay</div></div>
+                    <div class="ticker-item ticker-item--accent"><div class="ticker-item__name">Newsletter</div><div class="ticker-item__desc">Email header gradient exports</div></div>
+                    <div class="ticker-item"><div class="ticker-item__name">Resume Site</div><div class="ticker-item__desc">Minimal dark with accent borders</div></div>
+                </div>
+                <div class="ticker-column" data-speed="0.48">
+                    <div class="ticker-item ticker-item--accent"><div class="ticker-item__name">Video Editor</div><div class="ticker-item__desc">Animated gradient transitions</div></div>
+                    <div class="ticker-item"><div class="ticker-item__name">Recipe App</div><div class="ticker-item__desc">Warm sunset food photography BGs</div></div>
+                    <div class="ticker-item"><div class="ticker-item__name">Fitness App</div><div class="ticker-item__desc">Ocean gradient workout cards</div></div>
+                    <div class="ticker-item ticker-item--accent"><div class="ticker-item__name">Dev Tools</div><div class="ticker-item__desc">Terminal-green accent system</div></div>
+                    <div class="ticker-item"><div class="ticker-item__name">Photo Editor</div><div class="ticker-item__desc">Gradient overlay blend modes</div></div>
+                    <div class="ticker-item"><div class="ticker-item__name">Travel Blog</div><div class="ticker-item__desc">Location-based color palettes</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         3D Card Flip (Effect #9)
+         ═══════════════════════════════════════════════ -->
+    <section class="section section--dark">
+        <div class="section__inner">
+            <div class="section__header fade-up">
+                <div class="section__label">
+                    <span class="section__label-dot"></span>
+                    How It Works
+                </div>
+                <h2 class="section__title">Three steps to stunning visuals</h2>
+                <p class="section__subtitle">Click each card to learn more.</p>
+            </div>
+
+            <div class="perspective-container fade-up">
+                <div class="flip-grid">
+                    <div class="flip-card" role="button" tabindex="0" aria-label="Browse — click to flip for details" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}">
+                        <div class="flip-card__face flip-card__front">
+                            <div class="flip-card__number">01</div>
+                            <div>
+                                <h3 class="flip-card__title">Browse</h3>
+                                <p class="flip-card__hint">Click to flip</p>
+                            </div>
+                        </div>
+                        <div class="flip-card__face flip-card__back">
+                            <h3 class="flip-card__title">Browse</h3>
+                            <p class="flip-card__text">Explore 500+ hand-crafted gradients organized by mood, color family, and use case. Filter by resolution, animation type, or grain intensity.</p>
+                        </div>
+                    </div>
+
+                    <div class="flip-card" role="button" tabindex="0" aria-label="Customize — click to flip for details" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}">
+                        <div class="flip-card__face flip-card__front">
+                            <div class="flip-card__number">02</div>
+                            <div>
+                                <h3 class="flip-card__title">Customize</h3>
+                                <p class="flip-card__hint">Click to flip</p>
+                            </div>
+                        </div>
+                        <div class="flip-card__face flip-card__back">
+                            <h3 class="flip-card__title">Customize</h3>
+                            <p class="flip-card__text">Adjust colors, grain density, blur intensity, and animation speed. Export as PNG, SVG, CSS code, or animated MP4 in any resolution.</p>
+                        </div>
+                    </div>
+
+                    <div class="flip-card" role="button" tabindex="0" aria-label="Ship — click to flip for details" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}">
+                        <div class="flip-card__face flip-card__front">
+                            <div class="flip-card__number">03</div>
+                            <div>
+                                <h3 class="flip-card__title">Ship</h3>
+                                <p class="flip-card__hint">Click to flip</p>
+                            </div>
+                        </div>
+                        <div class="flip-card__face flip-card__back">
+                            <h3 class="flip-card__title">Ship</h3>
+                            <p class="flip-card__text">Drop into your project with the Figma plugin, copy CSS directly, or use our React component. Works with any framework or design tool.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         Testimonials (Effect #8: Glassmorphism)
+         ═══════════════════════════════════════════════ -->
+    <section class="section section--surface">
+        <div class="section__inner">
+            <div class="section__header fade-up">
+                <div class="section__label">
+                    <span class="section__label-dot"></span>
+                    Testimonials
+                </div>
+                <h2 class="section__title">Loved by designers worldwide</h2>
+            </div>
+
+            <div class="testimonial-grid fade-up">
+                <div class="testimonial">
+                    <div class="testimonial__stars">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M8 1L10 5.5L15 6.2L11.5 9.5L12.3 14.5L8 12.2L3.7 14.5L4.5 9.5L1 6.2L6 5.5L8 1Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M8 1L10 5.5L15 6.2L11.5 9.5L12.3 14.5L8 12.2L3.7 14.5L4.5 9.5L1 6.2L6 5.5L8 1Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M8 1L10 5.5L15 6.2L11.5 9.5L12.3 14.5L8 12.2L3.7 14.5L4.5 9.5L1 6.2L6 5.5L8 1Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M8 1L10 5.5L15 6.2L11.5 9.5L12.3 14.5L8 12.2L3.7 14.5L4.5 9.5L1 6.2L6 5.5L8 1Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M8 1L10 5.5L15 6.2L11.5 9.5L12.3 14.5L8 12.2L3.7 14.5L4.5 9.5L1 6.2L6 5.5L8 1Z"/></svg>
+                    </div>
+                    <p class="testimonial__text">"These gradients completely transformed our landing page. The grain texture adds a premium feel that flat gradients never achieve."</p>
+                    <div class="testimonial__author">
+                        <div class="testimonial__avatar">AK</div>
+                        <div>
+                            <div class="testimonial__name">Alex Kim</div>
+                            <div class="testimonial__role">Design Lead, Vercel</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial__stars">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M8 1L10 5.5L15 6.2L11.5 9.5L12.3 14.5L8 12.2L3.7 14.5L4.5 9.5L1 6.2L6 5.5L8 1Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M8 1L10 5.5L15 6.2L11.5 9.5L12.3 14.5L8 12.2L3.7 14.5L4.5 9.5L1 6.2L6 5.5L8 1Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M8 1L10 5.5L15 6.2L11.5 9.5L12.3 14.5L8 12.2L3.7 14.5L4.5 9.5L1 6.2L6 5.5L8 1Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M8 1L10 5.5L15 6.2L11.5 9.5L12.3 14.5L8 12.2L3.7 14.5L4.5 9.5L1 6.2L6 5.5L8 1Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M8 1L10 5.5L15 6.2L11.5 9.5L12.3 14.5L8 12.2L3.7 14.5L4.5 9.5L1 6.2L6 5.5L8 1Z"/></svg>
+                    </div>
+                    <p class="testimonial__text">"The animated shader gradients are incredible. We replaced our entire hero background system with a single Grainient asset."</p>
+                    <div class="testimonial__author">
+                        <div class="testimonial__avatar">SL</div>
+                        <div>
+                            <div class="testimonial__name">Sara Lindstrom</div>
+                            <div class="testimonial__role">Frontend Eng, Linear</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial__stars">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M8 1L10 5.5L15 6.2L11.5 9.5L12.3 14.5L8 12.2L3.7 14.5L4.5 9.5L1 6.2L6 5.5L8 1Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M8 1L10 5.5L15 6.2L11.5 9.5L12.3 14.5L8 12.2L3.7 14.5L4.5 9.5L1 6.2L6 5.5L8 1Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M8 1L10 5.5L15 6.2L11.5 9.5L12.3 14.5L8 12.2L3.7 14.5L4.5 9.5L1 6.2L6 5.5L8 1Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M8 1L10 5.5L15 6.2L11.5 9.5L12.3 14.5L8 12.2L3.7 14.5L4.5 9.5L1 6.2L6 5.5L8 1Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M8 1L10 5.5L15 6.2L11.5 9.5L12.3 14.5L8 12.2L3.7 14.5L4.5 9.5L1 6.2L6 5.5L8 1Z"/></svg>
+                    </div>
+                    <p class="testimonial__text">"Finally, production-ready gradient assets with proper grain. The CSS export is pixel-perfect and the custom properties make theming trivial."</p>
+                    <div class="testimonial__author">
+                        <div class="testimonial__avatar">MT</div>
+                        <div>
+                            <div class="testimonial__name">Marcus Torres</div>
+                            <div class="testimonial__role">Creative Director, Stripe</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         Pricing (Effects #3, #11, #13)
+         ═══════════════════════════════════════════════ -->
+    <section class="section section--dark" id="pricing">
+        <div class="section__inner">
+            <div class="section__header fade-up">
+                <div class="section__label">
+                    <span class="section__label-dot"></span>
+                    Pricing
+                </div>
+                <h2 class="section__title">Simple, transparent pricing</h2>
+                <p class="section__subtitle">One-time purchase. No subscriptions. Use forever.</p>
+            </div>
+
+            <div class="pricing-grid fade-up">
+                <div class="pricing-card">
+                    <div class="pricing-card__name">Starter</div>
+                    <div class="pricing-card__price">$29 <span>once</span></div>
+                    <p class="pricing-card__desc">Essential gradients for personal projects.</p>
+                    <ul class="pricing-card__features">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M6.5 11L3 7.5L4 6.5L6.5 9L12 3.5L13 4.5L6.5 11Z"/></svg>
+                            50 static gradients
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M6.5 11L3 7.5L4 6.5L6.5 9L12 3.5L13 4.5L6.5 11Z"/></svg>
+                            PNG + SVG export
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M6.5 11L3 7.5L4 6.5L6.5 9L12 3.5L13 4.5L6.5 11Z"/></svg>
+                            Personal license
+                        </li>
+                    </ul>
+                    <a href="#" class="btn-secondary">Get Starter</a>
+                </div>
+
+                <div class="pricing-card pricing-card--featured">
+                    <div class="pricing-card__badge">Most Popular</div>
+                    <div class="pricing-card__name">Pro</div>
+                    <div class="pricing-card__price">$79 <span>once</span></div>
+                    <p class="pricing-card__desc">Everything you need for professional work.</p>
+                    <ul class="pricing-card__features">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M6.5 11L3 7.5L4 6.5L6.5 9L12 3.5L13 4.5L6.5 11Z"/></svg>
+                            200+ gradients
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M6.5 11L3 7.5L4 6.5L6.5 9L12 3.5L13 4.5L6.5 11Z"/></svg>
+                            Animated variants
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M6.5 11L3 7.5L4 6.5L6.5 9L12 3.5L13 4.5L6.5 11Z"/></svg>
+                            CSS + Figma export
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M6.5 11L3 7.5L4 6.5L6.5 9L12 3.5L13 4.5L6.5 11Z"/></svg>
+                            Commercial license
+                        </li>
+                    </ul>
+                    <a href="#" class="btn-primary">Get Pro</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-card__name">Team</div>
+                    <div class="pricing-card__price">$199 <span>once</span></div>
+                    <p class="pricing-card__desc">Full access for your entire design team.</p>
+                    <ul class="pricing-card__features">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M6.5 11L3 7.5L4 6.5L6.5 9L12 3.5L13 4.5L6.5 11Z"/></svg>
+                            500+ gradients
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M6.5 11L3 7.5L4 6.5L6.5 9L12 3.5L13 4.5L6.5 11Z"/></svg>
+                            All export formats
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M6.5 11L3 7.5L4 6.5L6.5 9L12 3.5L13 4.5L6.5 11Z"/></svg>
+                            Up to 10 seats
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--grn-accent)" role="presentation"><path d="M6.5 11L3 7.5L4 6.5L6.5 9L12 3.5L13 4.5L6.5 11Z"/></svg>
+                            Priority support
+                        </li>
+                    </ul>
+                    <a href="#" class="btn-secondary">Get Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         Newsletter (Effect #13: Inset Border)
+         ═══════════════════════════════════════════════ -->
+    <section class="section section--surface">
+        <div class="section__inner">
+            <div class="newsletter fade-up">
+                <div class="section__label">
+                    <span class="section__label-dot"></span>
+                    Stay Updated
+                </div>
+                <h2 class="section__title">Get new gradients in your inbox</h2>
+                <p class="section__subtitle">Join 5,000+ designers. Weekly drops, no spam.</p>
+                <form class="newsletter__form" onsubmit="event.preventDefault()" aria-label="Newsletter signup">
+                    <label for="newsletter-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Email address</label>
+                    <input type="email" id="newsletter-email" class="newsletter__input" placeholder="your@email.com" required>
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         Footer
+         ═══════════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <a href="#">Grainient</a>
+                <p style="margin-top: 12px;">Premium gradient backgrounds with grain textures for modern design projects.</p>
+            </div>
+            <div>
+                <h3 class="footer__col-title">Product</h3>
+                <ul class="footer__links">
+                    <li><a href="#">Browse</a></li>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Figma Plugin</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer__col-title">Resources</h3>
+                <ul class="footer__links">
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Changelog</a></li>
+                    <li><a href="#">API</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer__col-title">Company</h3>
+                <ul class="footer__links">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <span>&copy; 2026 Grainient. All rights reserved.</span>
+            <span>Made with gradients and grain.</span>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════
+         JavaScript: All JS-driven effects
+         ═══════════════════════════════════════════════ -->
+    <script>
+        // ============================================
+        // Effect #1: WebGL2 Aurora Shader Gradient
+        // ============================================
+        const canvas = document.getElementById('shader-canvas');
+        const gl = canvas.getContext('webgl2');
+
+        if (!gl) {
+            canvas.style.display = 'none';
+            document.body.style.background = 'linear-gradient(135deg, #0a1a00 0%, #141414 40%, #1a0a2a 100%)';
+        }
+
+        if (gl) {
+            const vertexSource = `#version 300 es
+                in vec4 aPosition;
+                void main() { gl_Position = aPosition; }
+            `;
+
+            const fragmentSource = `#version 300 es
+                precision highp float;
+                uniform float uTime;
+                uniform vec2 uResolution;
+                out vec4 fragColor;
+
+                vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+                vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+                vec3 permute(vec3 x) { return mod289(((x * 34.0) + 1.0) * x); }
+
+                float snoise(vec2 v) {
+                    const vec4 C = vec4(0.211324865405187, 0.366025403784439,
+                                       -0.577350269189626, 0.024390243902439);
+                    vec2 i = floor(v + dot(v, C.yy));
+                    vec2 x0 = v - i + dot(i, C.xx);
+                    vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+                    vec4 x12 = x0.xyxy + C.xxzz;
+                    x12.xy -= i1;
+                    i = mod289(i);
+                    vec3 p = permute(permute(i.y + vec3(0.0, i1.y, 1.0)) + i.x + vec3(0.0, i1.x, 1.0));
+                    vec3 m = max(0.5 - vec3(dot(x0, x0), dot(x12.xy, x12.xy), dot(x12.zw, x12.zw)), 0.0);
+                    m = m * m; m = m * m;
+                    vec3 x_ = 2.0 * fract(p * C.www) - 1.0;
+                    vec3 h = abs(x_) - 0.5;
+                    vec3 ox = floor(x_ + 0.5);
+                    vec3 a0 = x_ - ox;
+                    m *= 1.79284291400159 - 0.85373472095314 * (a0 * a0 + h * h);
+                    vec3 g;
+                    g.x = a0.x * x0.x + h.x * x0.y;
+                    g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+                    return 130.0 * dot(m, g);
+                }
+
+                float fbm(vec2 p, float t) {
+                    float val = 0.0;
+                    float amp = 0.5;
+                    float freq = 1.0;
+                    for (int i = 0; i < 5; i++) {
+                        val += amp * snoise(p * freq + t * 0.3);
+                        freq *= 2.0;
+                        amp *= 0.5;
+                    }
+                    return val;
+                }
+
+                void main() {
+                    vec2 uv = gl_FragCoord.xy / uResolution;
+                    vec2 p = (gl_FragCoord.xy - 0.5 * uResolution) / uResolution.y;
+                    float t = uTime * 0.15;
+
+                    float n1 = fbm(p * 1.2 + vec2(t * 0.4, t * 0.2), t);
+                    float n2 = fbm(p * 1.8 + vec2(-t * 0.3, t * 0.5), t * 1.2);
+                    float n3 = fbm(p * 2.5 + vec2(t * 0.2, -t * 0.4), t * 0.8);
+                    float n4 = fbm(p * 0.8 + vec2(t * 0.6, t * 0.1), t * 0.5);
+                    float n5 = fbm(p * 3.0 + vec2(-t * 0.5, -t * 0.3), t * 1.5);
+                    float n6 = fbm(p * 1.5 + vec2(t * 0.1, t * 0.7), t * 0.6);
+
+                    vec3 green = vec3(0.2, 0.85, 0.3);
+                    vec3 lime  = vec3(0.76, 0.95, 0.23);
+                    vec3 blue  = vec3(0.1, 0.3, 0.9);
+                    vec3 purple = vec3(0.5, 0.1, 0.8);
+                    vec3 teal  = vec3(0.1, 0.7, 0.6);
+                    vec3 pink  = vec3(0.8, 0.2, 0.5);
+
+                    vec3 color = vec3(0.0);
+                    color += green  * max(n1, 0.0) * 0.35;
+                    color += lime   * max(n2, 0.0) * 0.25;
+                    color += blue   * max(n3, 0.0) * 0.3;
+                    color += purple * max(n4, 0.0) * 0.2;
+                    color += teal   * max(n5, 0.0) * 0.15;
+                    color += pink   * max(n6, 0.0) * 0.1;
+
+                    float vertBias = smoothstep(-0.5, 0.5, p.y);
+                    color *= mix(0.6, 1.2, vertBias);
+
+                    float vignette = 1.0 - length(p) * 0.6;
+                    color *= max(vignette, 0.0);
+                    color = max(color, 0.0);
+
+                    fragColor = vec4(color, 1.0);
+                }
+            `;
+
+            function createShader(type, source) {
+                const shader = gl.createShader(type);
+                gl.shaderSource(shader, source);
+                gl.compileShader(shader);
+                if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+                    console.error('Shader error:', gl.getShaderInfoLog(shader));
+                    gl.deleteShader(shader);
+                    return null;
+                }
+                return shader;
+            }
+
+            const vs = createShader(gl.VERTEX_SHADER, vertexSource);
+            const fs = createShader(gl.FRAGMENT_SHADER, fragmentSource);
+            const program = gl.createProgram();
+            gl.attachShader(program, vs);
+            gl.attachShader(program, fs);
+            gl.linkProgram(program);
+
+            if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+                console.error('Program error:', gl.getProgramInfoLog(program));
+            }
+
+            const timeLoc = gl.getUniformLocation(program, 'uTime');
+            const resLoc = gl.getUniformLocation(program, 'uResolution');
+
+            const positions = new Float32Array([-1,-1, 1,-1, -1,1, -1,1, 1,-1, 1,1]);
+            const buf = gl.createBuffer();
+            gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+            gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
+
+            const vao = gl.createVertexArray();
+            gl.bindVertexArray(vao);
+            gl.enableVertexAttribArray(0);
+            gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+
+            function resize() {
+                const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+                canvas.width = window.innerWidth * dpr;
+                canvas.height = window.innerHeight * dpr;
+                gl.viewport(0, 0, canvas.width, canvas.height);
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+
+            // Visibility gating — pause shader when offscreen
+            let shaderVisible = true;
+            const shaderObserver = new IntersectionObserver(([entry]) => {
+                shaderVisible = entry.isIntersecting;
+            }, { threshold: 0 });
+            shaderObserver.observe(canvas);
+
+            // Debounced resize
+            let resizeScheduled = false;
+            window.addEventListener('resize', () => {
+                if (!resizeScheduled) {
+                    resizeScheduled = true;
+                    requestAnimationFrame(() => { resize(); resizeScheduled = false; });
+                }
+            });
+
+            function render(time) {
+                if (shaderVisible) {
+                    gl.useProgram(program);
+                    gl.uniform1f(timeLoc, time * 0.001);
+                    gl.uniform2f(resLoc, canvas.width, canvas.height);
+                    gl.drawArrays(gl.TRIANGLES, 0, 6);
+                }
+                requestAnimationFrame(render);
+            }
+
+            requestAnimationFrame(render);
+        }
+
+        // ============================================
+        // Effect #4: Lenis-Style Smooth Scroll
+        // ============================================
+        class SmoothScroll {
+            constructor() {
+                this.current = window.scrollY;
+                this.target = window.scrollY;
+                this.lerp = 0.1;
+                this.running = true;
+
+                window.addEventListener('wheel', (e) => {
+                    e.preventDefault();
+                    this.target += e.deltaY;
+                    this.target = Math.max(0, Math.min(this.target, document.body.scrollHeight - window.innerHeight));
+                }, { passive: false });
+
+                // Sync target when anchor links are clicked
+                document.querySelectorAll('a[href^="#"]').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        const target = document.querySelector(link.getAttribute('href'));
+                        if (target) {
+                            e.preventDefault();
+                            this.target = target.offsetTop;
+                        }
+                    });
+                });
+
+                this.animate();
+            }
+
+            animate() {
+                if (!this.running) return;
+                this.current += (this.target - this.current) * this.lerp;
+                window.scrollTo(0, this.current);
+                requestAnimationFrame(() => this.animate());
+            }
+
+            destroy() { this.running = false; }
+        }
+
+        // ============================================
+        // Effect #5: IntersectionObserver Entry Animations
+        // ============================================
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+
+        // ============================================
+        // Effect #7: Vertical Ticker Marquee
+        // ============================================
+        class TickerEngine {
+            constructor(holder) {
+                this.columns = [...holder.querySelectorAll('.ticker-column')].map(col => {
+                    const items = [...col.children];
+                    return {
+                        el: col,
+                        speed: parseFloat(col.dataset.speed) || 0.5,
+                        offset: 0,
+                        itemHeight: items[0] ? items[0].offsetHeight : 80
+                    };
+                });
+                this.paused = false;
+                this.visible = true;
+                holder.addEventListener('mouseenter', () => this.paused = true);
+                holder.addEventListener('mouseleave', () => this.paused = false);
+
+                // Visibility gating — pause when offscreen
+                const tickerObserver = new IntersectionObserver(([entry]) => {
+                    this.visible = entry.isIntersecting;
+                }, { threshold: 0 });
+                tickerObserver.observe(holder);
+
+                this.animate();
+            }
+
+            animate() {
+                if (!this.paused && this.visible) {
+                    this.columns.forEach(col => {
+                        col.offset -= col.speed;
+                        if (col.offset < -(col.itemHeight + 5)) {
+                            col.offset += col.itemHeight + 5;
+                            col.el.appendChild(col.el.children[0]);
+                        }
+                        col.el.style.transform = `translateY(${col.offset}px)`;
+                    });
+                }
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        // ============================================
+        // Initialize (respects prefers-reduced-motion)
+        // ============================================
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        let smoothScroll = null;
+        let ticker = null;
+
+        if (!prefersReducedMotion) {
+            smoothScroll = new SmoothScroll();
+
+            const tickerEl = document.getElementById('ticker');
+            if (tickerEl) ticker = new TickerEngine(tickerEl);
+        }
+    </script>
+</body>
+</html>

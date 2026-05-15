@@ -1,7 +1,7 @@
 ---
 name: technical-seo-checker
-description: 'Technical SEO audit: Core Web Vitals, crawl, indexing, mobile, speed, architecture, redirects. 技术SEO/网站速度'
-version: "9.9.5"
+description: 'Use when the user asks to "check technical SEO"; audits crawl, indexing, CWV, mobile, security, redirects, and evidence gaps. 技术SEO/网站速度'
+version: "9.9.9"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -10,7 +10,7 @@ argument-hint: "<URL or domain>"
 allowed-tools: WebFetch
 metadata:
   author: aaron-he-zhu
-  version: "9.9.5"
+  version: "9.9.9"
   geo-relevance: "low"
   tags:
     - seo
@@ -130,8 +130,8 @@ See [references/bulk-audit-playbook.md](https://github.com/aaron-he-zhu/seo-geo-
 
 - **Reads**: the current page or site state, symptoms, prior audits, and current priorities from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing audit or optimization plan plus a reusable summary that can be stored under `memory/audits/`.
-- **Promotes**: blocking defects, repeated weaknesses, and fix priorities to `memory/open-loops.md` and `memory/decisions.md`.
-- **Next handoff**: use the `Next Best Skill` below when the repair path is clear.
+- **Promotes**: blocking defects, repeated weaknesses, fix priorities, and pending decisions to `memory/open-loops.md`.
+- **Primary next skill**: use the `Next Best Skill` below when the repair path is clear.
 
 ### Handoff Summary
 
@@ -179,7 +179,7 @@ When a user requests a technical SEO audit, use the compact step templates in [r
 
 ### Save Results
 
-Ask to save results; if yes, write `memory/audits/technical-seo-checker/YYYY-MM-DD-<topic>.md` and append veto-level issues to `memory/hot-cache.md`.
+Ask to save results; if yes, write `memory/audits/technical-seo-checker/YYYY-MM-DD-<topic>.md` and hand off veto-level risks to the auditor gate before any hot-cache marker.
 
 ## Reference Materials
 

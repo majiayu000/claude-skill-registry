@@ -23,7 +23,7 @@ hooks:
         - type: command
           command: "SD=\"${FACTORY_PROJECT_DIR:-.factory/skills/planning-with-files}/scripts\"; sh \"$SD/check-complete.sh\" 2>/dev/null || true"
 metadata:
-  version: "2.37.0"
+  version: "2.38.0"
 ---
 
 # Planning with Files

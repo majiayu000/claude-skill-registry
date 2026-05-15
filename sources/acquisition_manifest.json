@@ -1,19 +1,19 @@
 {
   "version": 1,
-  "updated_at": "2026-05-14T04:07:53.229794Z",
-  "total_count": 681,
+  "updated_at": "2026-05-15T04:10:09.990935Z",
+  "total_count": 831,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
       "branch": "master",
       "relative_path": "skills/x-twitter-scraper/SKILL.md",
-      "updated_at": "2026-05-14T04:07:23.618170Z"
+      "updated_at": "2026-05-15T04:09:47.481474Z"
     },
     "miningstore/confluence-to-agent-knowledge-base": {
       "repo": "miningstore/confluence-to-agent-knowledge-base",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-14T04:07:25.740146Z"
+      "updated_at": "2026-05-15T04:09:49.306516Z"
     },
     "seangeng/holydocs-skills:holydocs": {
       "repo": "seangeng/holydocs-skills",
@@ -43,7 +43,7 @@
       "repo": "mguozhen/dingtalk-bridge",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-14T04:07:22.845277Z"
+      "updated_at": "2026-05-15T04:09:47.001291Z"
     },
     "conorluddy/ios-simulator-skill": {
       "repo": "conorluddy/ios-simulator-skill",
@@ -55,61 +55,61 @@
       "repo": "lackeyjb/playwright-skill",
       "branch": "main",
       "relative_path": "skills/playwright-skill/SKILL.md",
-      "updated_at": "2026-05-14T04:07:22.121170Z"
+      "updated_at": "2026-05-15T04:09:46.623516Z"
     },
     "ToniPerea/humanizar-texto-es": {
       "repo": "ToniPerea/humanizar-texto-es",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-14T04:07:22.108726Z"
+      "updated_at": "2026-05-15T04:09:46.654380Z"
     },
     "yusufkaraaslan/Skill_Seekers": {
       "repo": "yusufkaraaslan/Skill_Seekers",
       "branch": "main",
       "relative_path": "skills/skill-seekers/SKILL.md",
-      "updated_at": "2026-05-14T04:07:21.949619Z"
+      "updated_at": "2026-05-15T04:09:46.538806Z"
     },
     "Chris1220-cmd/deep-research-skill": {
       "repo": "Chris1220-cmd/deep-research-skill",
       "branch": "master",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-14T04:07:22.248688Z"
+      "updated_at": "2026-05-15T04:09:46.779869Z"
     },
     "Enreign/pagerunner-skill": {
       "repo": "Enreign/pagerunner-skill",
       "branch": "main",
       "relative_path": "skills/pagerunner-skill/SKILL.md",
-      "updated_at": "2026-05-14T04:07:24.143637Z"
+      "updated_at": "2026-05-15T04:09:47.908514Z"
     },
     "alonw0/web-asset-generator": {
       "repo": "alonw0/web-asset-generator",
       "branch": "main",
       "relative_path": "skills/web-asset-generator/SKILL.md",
-      "updated_at": "2026-05-14T04:07:23.562708Z"
+      "updated_at": "2026-05-15T04:09:47.523718Z"
     },
     "mguozhen/social-bot": {
       "repo": "mguozhen/social-bot",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-14T04:07:22.493574Z"
+      "updated_at": "2026-05-15T04:09:46.789532Z"
     },
     "b33kman/professional-business-writing-skill": {
       "repo": "b33kman/professional-business-writing-skill",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-14T04:07:22.436504Z"
+      "updated_at": "2026-05-15T04:09:46.798581Z"
     },
     "MetcalfSolutions/Satori": {
       "repo": "MetcalfSolutions/Satori",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-14T04:07:24.620702Z"
+      "updated_at": "2026-05-15T04:09:48.050923Z"
     },
     "varfolomejev/query-victorialogs": {
       "repo": "varfolomejev/query-victorialogs",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-14T04:07:23.628734Z"
+      "updated_at": "2026-05-15T04:09:47.534364Z"
     },
     "KKKKhazix/khazix-skills:hv-analysis": {
       "repo": "KKKKhazix/khazix-skills",
@@ -157,7 +157,7 @@
       "repo": "0xRy4n/hubspot-developer-skill",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-14T04:07:25.117916Z"
+      "updated_at": "2026-05-15T04:09:48.491813Z"
     },
     "KKKKhazix/khazix-skills:aihot": {
       "repo": "KKKKhazix/khazix-skills",
@@ -187,7 +187,7 @@
       "repo": "getterdoneinc/skill",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-14T04:07:22.483877Z"
+      "updated_at": "2026-05-15T04:09:46.749047Z"
     },
     "anthropics/skills:skills/skill-creator": {
       "repo": "anthropics/skills",
@@ -3277,7 +3277,7 @@
       "repo": "clockless-org/html-anything",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-14T04:07:47.079557Z"
+      "updated_at": "2026-05-15T04:10:03.697112Z"
     },
     "aiskillstore/marketplace:skills/easysoft/zentao-cli/SKILL.md": {
       "repo": "aiskillstore/marketplace",
@@ -4088,6 +4088,906 @@
       "branch": "main",
       "relative_path": "skills/pptx-slides/SKILL.md",
       "updated_at": "2026-05-14T04:07:24.524352Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/frame-macos-notification/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/frame-macos-notification/SKILL.md",
+      "updated_at": "2026-05-15T04:09:43.003017Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/stats/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/stats/SKILL.md",
+      "updated_at": "2026-05-15T04:09:43.005406Z"
+    },
+    "avelikiy/great_cto:skills/anti-patterns/SKILL.md": {
+      "repo": "avelikiy/great_cto",
+      "branch": "main",
+      "relative_path": "skills/anti-patterns/SKILL.md",
+      "updated_at": "2026-05-15T04:09:43.010450Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/plan-phase/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/plan-phase/SKILL.md",
+      "updated_at": "2026-05-15T04:09:43.014336Z"
+    },
+    "aiskillstore/marketplace:skills/microsoft/azure-rbac/SKILL.md": {
+      "repo": "aiskillstore/marketplace",
+      "branch": "main",
+      "relative_path": "skills/microsoft/azure-rbac/SKILL.md",
+      "updated_at": "2026-05-15T04:09:43.017461Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/blog-post/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/blog-post/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.780023Z"
+    },
+    "Kanevry/session-orchestrator:skills/playwright-driver/SKILL.md": {
+      "repo": "Kanevry/session-orchestrator",
+      "branch": "main",
+      "relative_path": "skills/playwright-driver/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.788280Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/email-marketing/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/email-marketing/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.840015Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/saas-landing/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/saas-landing/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.842718Z"
+    },
+    "davepoon/buildwithclaude:plugins/claude-ops/skills/ops-deploy/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/claude-ops/skills/ops-deploy/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.850438Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/spike-wrap-up/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/spike-wrap-up/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.853089Z"
+    },
+    "davepoon/buildwithclaude:plugins/claude-ops/skills/ops-whatsapp-biz/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/claude-ops/skills/ops-whatsapp-biz/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.863273Z"
+    },
+    "avelikiy/great_cto:skills/archetype-review-base/SKILL.md": {
+      "repo": "avelikiy/great_cto",
+      "branch": "main",
+      "relative_path": "skills/archetype-review-base/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.869358Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/resume-modern/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/resume-modern/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.876211Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/pricing-page/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/pricing-page/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.885083Z"
+    },
+    "davepoon/buildwithclaude:plugins/claude-ops/skills/uninstall/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/claude-ops/skills/uninstall/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.891038Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/flowai-team-dashboard/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/flowai-team-dashboard/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.893814Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/health/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/health/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.896206Z"
+    },
+    "Kanevry/session-orchestrator:skills/peekaboo-driver/SKILL.md": {
+      "repo": "Kanevry/session-orchestrator",
+      "branch": "main",
+      "relative_path": "skills/peekaboo-driver/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.904469Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/secure-phase/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/secure-phase/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.907153Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/team-okrs/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/team-okrs/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.909834Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/video-hyperframes/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/video-hyperframes/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.913218Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/frame-glitch-title/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/frame-glitch-title/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.917398Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/social-carousel/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/social-carousel/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.920159Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/research-phase/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/research-phase/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.925396Z"
+    },
+    "avelikiy/great_cto:skills/pm-planning/SKILL.md": {
+      "repo": "avelikiy/great_cto",
+      "branch": "main",
+      "relative_path": "skills/pm-planning/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.930291Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/dashboard/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/dashboard/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.932994Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/manager/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/manager/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.935972Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/poster-hero/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/poster-hero/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.938908Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/waitlist-page/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/waitlist-page/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.941595Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-replit/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-replit/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.944741Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/digital-eguide/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/digital-eguide/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.947412Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-hermes-cyber/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-hermes-cyber/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.950191Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/magazine-poster/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/magazine-poster/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.953024Z"
+    },
+    "davepoon/buildwithclaude:plugins/claude-ops/skills/ops-ecom/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/claude-ops/skills/ops-ecom/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.964371Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-xhs-pastel/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-xhs-pastel/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.976370Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/frame-liquid-bg-hero/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/frame-liquid-bg-hero/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.980744Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/pr-branch/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/pr-branch/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.983516Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-guizang-editorial/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-guizang-editorial/SKILL.md",
+      "updated_at": "2026-05-15T04:09:44.987686Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-open-slide-canvas/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-open-slide-canvas/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.048715Z"
+    },
+    "avelikiy/great_cto:skills/well-architected/SKILL.md": {
+      "repo": "avelikiy/great_cto",
+      "branch": "main",
+      "relative_path": "skills/well-architected/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.056296Z"
+    },
+    "avelikiy/great_cto:skills/prose-style/SKILL.md": {
+      "repo": "avelikiy/great_cto",
+      "branch": "main",
+      "relative_path": "skills/prose-style/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.062106Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/ultraplan-phase/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/ultraplan-phase/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.064841Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/social-spotify-card/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/social-spotify-card/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.069105Z"
+    },
+    "Kanevry/session-orchestrator:skills/test-runner/SKILL.md": {
+      "repo": "Kanevry/session-orchestrator",
+      "branch": "main",
+      "relative_path": "skills/test-runner/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.079084Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/card-xiaohongshu/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/card-xiaohongshu/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.082704Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-graphify-dark/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-graphify-dark/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.085372Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/mockup-device-3d/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/mockup-device-3d/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.089384Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/add-todo/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/add-todo/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.092060Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/maestro/skills/story-decomposition/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/maestro/skills/story-decomposition/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.094865Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-tech-sharing/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-tech-sharing/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.097563Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/update/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/update/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.100036Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/web-proto-editorial/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/web-proto-editorial/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.102642Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/eng-runbook/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/eng-runbook/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.105681Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-magazine-web/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-magazine-web/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.108901Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/web-proto-brutalist/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/web-proto-brutalist/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.111551Z"
+    },
+    "davepoon/buildwithclaude:plugins/claude-ops/skills/ops-speedup/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/claude-ops/skills/ops-speedup/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.135687Z"
+    },
+    "davepoon/buildwithclaude:plugins/claude-ops/skills/ops-next/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/claude-ops/skills/ops-next/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.141526Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/plant-seed/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/plant-seed/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.144692Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/rpikit/skills/systematic-debugging/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/rpikit/skills/systematic-debugging/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.149348Z"
+    },
+    "davepoon/buildwithclaude:plugins/claude-ops/skills/ops-comms/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/claude-ops/skills/ops-comms/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.166135Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/audit-uat/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/audit-uat/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.168490Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/invoice/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/invoice/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.171093Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/mobile-onboarding/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/mobile-onboarding/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.174306Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/mobile-app/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/mobile-app/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.186148Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/ai-integration-phase/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/ai-integration-phase/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.189090Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/list-workspaces/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/list-workspaces/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.191334Z"
+    },
+    "avelikiy/great_cto:skills/discovery/SKILL.md": {
+      "repo": "avelikiy/great_cto",
+      "branch": "main",
+      "relative_path": "skills/discovery/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.195629Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/from-gsd2/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/from-gsd2/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.198776Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/sprite-animation/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/sprite-animation/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.201568Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/add-phase/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/add-phase/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.204175Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-dir-key-nav/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-dir-key-nav/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.209326Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-pitch/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-pitch/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.213089Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/kanban-board/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/kanban-board/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.216239Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/frame-data-chart-nyt/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/frame-data-chart-nyt/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.220139Z"
+    },
+    "davepoon/buildwithclaude:plugins/all-skills/skills/tweetclaw/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/all-skills/skills/tweetclaw/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.224084Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/pm-spec/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/pm-spec/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.226771Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/dating-web/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/dating-web/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.229406Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/data-report/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/data-report/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.232630Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/prototype-web/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/prototype-web/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.236081Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/ingest-docs/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/ingest-docs/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.239548Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/frame-light-leak-cinema/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/frame-light-leak-cinema/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.243980Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-xhs-post/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-xhs-post/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.246894Z"
+    },
+    "avelikiy/great_cto:skills/cost-model/SKILL.md": {
+      "repo": "avelikiy/great_cto",
+      "branch": "main",
+      "relative_path": "skills/cost-model/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.251787Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/docs-page/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/docs-page/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.254434Z"
+    },
+    "avelikiy/great_cto:skills/pre-mortem/SKILL.md": {
+      "repo": "avelikiy/great_cto",
+      "branch": "main",
+      "relative_path": "skills/pre-mortem/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.260822Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-product-launch/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-product-launch/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.263553Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/meeting-notes/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/meeting-notes/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.269001Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-obsidian-claude/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-obsidian-claude/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.277899Z"
+    },
+    "aiskillstore/marketplace:skills/easysoft/zentao-api/SKILL.md": {
+      "repo": "aiskillstore/marketplace",
+      "branch": "main",
+      "relative_path": "skills/easysoft/zentao-api/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.287125Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/article-magazine/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/article-magazine/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.290666Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-safety-alert/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-safety-alert/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.294017Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/finance-report/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/finance-report/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.296687Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/frame-flowchart-sticky/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/frame-flowchart-sticky/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.301051Z"
+    },
+    "davepoon/buildwithclaude:plugins/gsd/skills/autonomous/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/gsd/skills/autonomous/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.304987Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/social-media-matrix/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/social-media-matrix/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.307824Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/live-dashboard/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/live-dashboard/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.311601Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-course-module/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-course-module/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.314472Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/social-reddit-card/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/social-reddit-card/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.318496Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/frame-logo-outro/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/frame-logo-outro/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.322699Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-blueprint/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-blueprint/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.325433Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/card-twitter/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/card-twitter/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.328893Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/ppt-keynote/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/ppt-keynote/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.332087Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/wireframe-sketch/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/wireframe-sketch/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.335278Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/code-refactoring-refactor-clean/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/code-refactoring-refactor-clean/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.338589Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-swiss-international/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-swiss-international/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.343276Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/gamified-app/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/gamified-app/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.346027Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/game-development/multiplayer/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/game-development/multiplayer/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.349746Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/weekly-update/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/weekly-update/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.352476Z"
+    },
+    "secondsky/claude-skills:plugins/sequential-thinking/skills/sequential-thinking/SKILL.md": {
+      "repo": "secondsky/claude-skills",
+      "branch": "main",
+      "relative_path": "plugins/sequential-thinking/skills/sequential-thinking/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.356208Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/motion-frames/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/motion-frames/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.358871Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/rag-implementation/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/rag-implementation/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.443698Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-simple/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-simple/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.448373Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/social-media-dashboard/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/social-media-dashboard/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.451226Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-presenter-mode/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-presenter-mode/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.454106Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/doc-kami-parchment/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/doc-kami-parchment/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.458318Z"
+    },
+    "secondsky/claude-skills:plugins/progressive-web-app/skills/progressive-web-app/SKILL.md": {
+      "repo": "secondsky/claude-skills",
+      "branch": "main",
+      "relative_path": "plugins/progressive-web-app/skills/progressive-web-app/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.461596Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/web-proto-soft/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/web-proto-soft/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.464239Z"
+    },
+    "tobihagemann/turbo:claude/skills/simplify-docs/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "claude/skills/simplify-docs/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.468516Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/deck-xhs-white/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/deck-xhs-white/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.927610Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/social-x-post-card/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/social-x-post-card/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.931769Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/hr-onboarding/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/hr-onboarding/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.934368Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/godot-3d/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/godot-3d/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.941781Z"
+    },
+    "ursazoo/lanhu-to-code:skills/code-gen/SKILL.md": {
+      "repo": "ursazoo/lanhu-to-code",
+      "branch": "main",
+      "relative_path": "skills/code-gen/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.944612Z"
+    },
+    "nexu-io/html-anything:src/lib/templates/skills/vfx-text-cursor/SKILL.md": {
+      "repo": "nexu-io/html-anything",
+      "branch": "main",
+      "relative_path": "src/lib/templates/skills/vfx-text-cursor/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.948511Z"
+    },
+    "tobihagemann/turbo:codex/skills/simplify-docs/SKILL.md": {
+      "repo": "tobihagemann/turbo",
+      "branch": "main",
+      "relative_path": "codex/skills/simplify-docs/SKILL.md",
+      "updated_at": "2026-05-15T04:09:45.954812Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/xbox-gdk/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/xbox-gdk/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.212123Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/cog-second-brain/skills/onboarding/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/cog-second-brain/skills/onboarding/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.215691Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/api-security-best-practices/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/api-security-best-practices/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.229391Z"
+    },
+    "ursazoo/lanhu-to-code:skills/code-format/SKILL.md": {
+      "repo": "ursazoo/lanhu-to-code",
+      "branch": "main",
+      "relative_path": "skills/code-format/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.232511Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/headline-psychologist/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/headline-psychologist/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.237144Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/debugging-toolkit-smart-debug/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/debugging-toolkit-smart-debug/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.242192Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/database-migrations-migration-observability/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/database-migrations-migration-observability/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.250734Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/full-output-enforcement/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/full-output-enforcement/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.255124Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/python-fastapi-development/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/python-fastapi-development/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.260858Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/production-audit/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/production-audit/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.487597Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/error-debugging-multi-agent-review/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/error-debugging-multi-agent-review/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.493064Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/onboarding-cro/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/onboarding-cro/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.501692Z"
+    },
+    "aiskillstore/marketplace:skills/gate/gate-dex-market/SKILL.md": {
+      "repo": "aiskillstore/marketplace",
+      "branch": "main",
+      "relative_path": "skills/gate/gate-dex-market/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.517209Z"
+    },
+    "hqhq1025/skill-optimizer:skills/skill-generalizer/SKILL.md": {
+      "repo": "hqhq1025/skill-optimizer",
+      "branch": "main",
+      "relative_path": "skills/skill-generalizer/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.523048Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/odoo-backup-strategy/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/odoo-backup-strategy/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.527136Z"
+    },
+    "hqhq1025/skill-optimizer:skills/skill-personalizer/SKILL.md": {
+      "repo": "hqhq1025/skill-optimizer",
+      "branch": "main",
+      "relative_path": "skills/skill-personalizer/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.532872Z"
+    },
+    "ursazoo/lanhu-to-code:skills/component-doc-gen/SKILL.md": {
+      "repo": "ursazoo/lanhu-to-code",
+      "branch": "main",
+      "relative_path": "skills/component-doc-gen/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.644859Z"
+    },
+    "hqhq1025/skill-optimizer:skills/skill-miner/SKILL.md": {
+      "repo": "hqhq1025/skill-optimizer",
+      "branch": "main",
+      "relative_path": "skills/skill-miner/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.675684Z"
+    },
+    "tdimino/claude-code-minoan:skills/design-media/atmosphere-shader/SKILL.md": {
+      "repo": "tdimino/claude-code-minoan",
+      "branch": "main",
+      "relative_path": "skills/design-media/atmosphere-shader/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.908092Z"
+    },
+    "davepoon/buildwithclaude:plugins/ralph-review-trio/skills/ralph-review-trio/SKILL.md": {
+      "repo": "davepoon/buildwithclaude",
+      "branch": "main",
+      "relative_path": "plugins/ralph-review-trio/skills/ralph-review-trio/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.935991Z"
+    },
+    "ursazoo/lanhu-to-code:skills/design-to-code/SKILL.md": {
+      "repo": "ursazoo/lanhu-to-code",
+      "branch": "main",
+      "relative_path": "skills/design-to-code/SKILL.md",
+      "updated_at": "2026-05-15T04:09:46.942470Z"
+    },
+    "tdimino/claude-code-minoan:skills/research/reverse-trace/SKILL.md": {
+      "repo": "tdimino/claude-code-minoan",
+      "branch": "main",
+      "relative_path": "skills/research/reverse-trace/SKILL.md",
+      "updated_at": "2026-05-15T04:09:47.930537Z"
+    },
+    "tdimino/claude-code-minoan:skills/design-media/conductor-motion/SKILL.md": {
+      "repo": "tdimino/claude-code-minoan",
+      "branch": "main",
+      "relative_path": "skills/design-media/conductor-motion/SKILL.md",
+      "updated_at": "2026-05-15T04:09:49.065117Z"
+    },
+    "tdimino/claude-code-minoan:skills/design-media/grainient/SKILL.md": {
+      "repo": "tdimino/claude-code-minoan",
+      "branch": "main",
+      "relative_path": "skills/design-media/grainient/SKILL.md",
+      "updated_at": "2026-05-15T04:09:49.773378Z"
     }
   }
 }

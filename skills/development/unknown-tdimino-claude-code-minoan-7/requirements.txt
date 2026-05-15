@@ -1,0 +1,4 @@
+google-cloud-vision>=3.7
+google-genai>=1.0
+picarta>=1.1
+Pillow>=10.0

@@ -1,6 +1,7 @@
 ---
 name: pr-implement
 description: 'Implement a scoped OSS PR.'
+practices: [continuous-delivery, xp, pragmatic-programmer]
 skill_api_version: 1
 context:
   window: fork

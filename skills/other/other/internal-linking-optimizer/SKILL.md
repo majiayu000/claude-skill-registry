@@ -1,7 +1,7 @@
 ---
 name: internal-linking-optimizer
 description: 'Use when improving internal link structure, anchor text, orphan pages, crawl depth, site architecture, or link equity flow. 内链优化/站内架构'
-version: "9.9.5"
+version: "9.9.9"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -9,7 +9,7 @@ when_to_use: "Use when improving internal link structure, anchor text distributi
 argument-hint: "<URL or sitemap>"
 metadata:
   author: aaron-he-zhu
-  version: "9.9.5"
+  version: "9.9.9"
   geo-relevance: "low"
   tags:
     - seo
@@ -93,8 +93,8 @@ Optimize anchor text across the site
 
 - **Reads**: the current page or site state, symptoms, prior audits, and current priorities from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing audit or optimization plan plus a reusable summary that can be stored under `memory/audits/`.
-- **Promotes**: blocking defects, repeated weaknesses, and fix priorities to `memory/open-loops.md` and `memory/decisions.md`.
-- **Next handoff**: use the `Next Best Skill` below when the repair path is clear.
+- **Promotes**: blocking defects, repeated weaknesses, fix priorities, and pending decisions to `memory/open-loops.md`.
+- **Primary next skill**: use the `Next Best Skill` below when the repair path is clear.
 
 ### Handoff Summary
 
@@ -138,7 +138,7 @@ When a user requests internal linking optimization:
 
 ### Save Results
 
-Ask to save results; if yes, write a dated summary to `memory/audits/internal-linking-optimizer/YYYY-MM-DD-<topic>.md`. Append veto-level issues to `memory/hot-cache.md` automatically.
+Ask to save results; if yes, write a dated summary to `memory/audits/internal-linking-optimizer/YYYY-MM-DD-<topic>.md`. Hand off veto-level risks to the auditor gate before any hot-cache marker.
 
 ## Reference Materials
 

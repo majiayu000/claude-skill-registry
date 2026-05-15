@@ -1,7 +1,7 @@
 ---
 name: competitor-analysis
-description: 'Analyze competitor SEO/GEO: keywords, content, backlinks, AI citations, traffic share gaps. 竞品分析/竞争对手'
-version: "9.9.5"
+description: 'Use when the user asks to "compare competitors" or find SEO/GEO gaps; analyzes keywords, content, backlinks, AI citations, and traffic share. 竞品分析/竞争对手'
+version: "9.9.9"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -9,7 +9,7 @@ when_to_use: "Use when analyzing competitor SEO strategy, comparing domains, ben
 argument-hint: "<competitor URL or domain>"
 metadata:
   author: aaron-he-zhu
-  version: "9.9.5"
+  version: "9.9.9"
   geo-relevance: "medium"
   tags:
     - seo
@@ -80,7 +80,7 @@ Compare my site [URL] against [competitor 1], [competitor 2], [competitor 3]
 
 - **Reads**: goals, market inputs, tool data, and prior strategy from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing analysis and reusable summary.
-- **Promotes**: durable competitor facts, keyword priorities, entity candidates, and strategy decisions to `memory/hot-cache.md`, `memory/decisions.md`, and `memory/research/`.
+- **Promotes**: durable competitor facts, keyword priorities, entity candidates, and pending strategy decisions to `memory/hot-cache.md`, `memory/open-loops.md`, and `memory/research/`.
 - **Primary next skill**: [content-gap-analysis](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/content-gap-analysis/SKILL.md) when the competitive landscape is clear.
 
 ### Handoff Summary

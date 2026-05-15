@@ -10,9 +10,15 @@ Evaluate the design quality of a feature or component. Report-only — this skil
 
 Read `~/.claude/skills/minoan-frontend-design/SKILL.md` for aesthetic principles and anti-pattern guidance. If no `.design-context.md` exists in the project root, ask the user about audience and intended feel before proceeding — context determines whether a design choice is right or wrong.
 
+### Resolve Target and Load Ignore List
+
+1. **Resolve the primary artifact.** Map the user's phrasing to a concrete file path: "the homepage" → `src/pages/index.tsx`, "the settings modal" → `src/components/Settings.tsx`. File paths are stable across runs; dev-server ports drift.
+
+2. **Read the ignore list** at `.design-critique/ignore.md` if it exists. Each non-empty, non-comment line is something the user has marked as "do not re-raise" (deferred tradeoffs, designer-intended deviations, accepted false positives). When a finding matches a line (case-insensitive substring), **drop it silently** — do not mention it in the report.
+
 ## Step 1: LLM Design Review
 
-Read the relevant source files (HTML, CSS, JS/TS) and visually inspect if browser automation is available.
+Read the relevant source files (HTML, CSS, JS/TS) and visually inspect if browser automation is available. **If using browser automation, create a new tab** — never reuse an existing tab, to prevent state interference between assessments.
 
 Evaluate as a design director:
 
@@ -21,7 +27,12 @@ Evaluate as a design director:
 **Holistic Design Review**: Visual hierarchy (eye flow, primary action clarity), composition (balance, whitespace, rhythm), typography (hierarchy, readability, font choices), color (purposeful use, cohesion, accessibility), states & edge cases (empty, loading, error, success).
 
 **Cognitive Load** (consult `~/.claude/skills/minoan-frontend-design/references/cognitive-load.md`):
-Run the 8-item checklist. Report failure count: 0-1 = low (good), 2-3 = moderate, 4+ = critical. Count visible options at each decision point — if >4, flag it.
+Run the 8-item checklist. Report failure count: 0-1 = low (good), 2-3 = moderate, 4+ = critical. Count visible options at each decision point — if >4, flag it. Check for progressive disclosure: is complexity revealed only when needed?
+
+**Emotional Journey**:
+- What emotion does this interface evoke? Is that intentional?
+- **Peak-end rule**: Is the most intense moment positive? Does the experience end well?
+- **Emotional valleys**: Check for anxiety spikes at high-stakes moments (payment, delete, commit). Are there design interventions (progress indicators, reassurance copy, undo options)?
 
 **Nielsen's Heuristics** (consult `~/.claude/skills/minoan-frontend-design/references/heuristics-scoring.md`):
 Score each of the 10 heuristics 0-4.
@@ -84,5 +95,29 @@ Be specific — name exact elements and interactions that fail each persona.
 List recommended commands in priority order. End with `/design-polish` as the final step if fixes were recommended.
 
 For technical quality issues (contrast ratios, performance, responsive breakpoints), run `/design-audit`.
+
+## Critique Persistence
+
+After generating the report, save it so `/design-polish` can read prior findings and trends can be tracked across runs.
+
+1. **Write the report** to `.design-critique/<timestamp>__<slug>.md` where `<timestamp>` is `YYYYMMDD-HHmmss` and `<slug>` is a kebab-case identifier derived from the resolved target path (e.g., `src-pages-index` from `src/pages/index.tsx`).
+
+2. **Include frontmatter** with structured metadata:
+   ```yaml
+   ---
+   target: "<user's original phrasing>"
+   resolved: "<file path>"
+   total_score: <heuristic total /40>
+   p0_count: <n>
+   p1_count: <n>
+   date: "<ISO 8601>"
+   ---
+   ```
+
+3. **Append a trend line** after the report: read all snapshots for this slug, extract `total_score` from each, and present the trajectory:
+   > **Trend for `<slug>` (last 5 runs): 24 → 28 → 32 → 29 → 32**
+   If this is the first run, say: "First run for this target, no trend yet."
+
+Persistence is fire-and-forget — failures should not block the report. The `.design-critique/ignore.md` file is user-maintained (never auto-generated).
 
 > Re-run `/design-critique` after fixes to see your score improve.

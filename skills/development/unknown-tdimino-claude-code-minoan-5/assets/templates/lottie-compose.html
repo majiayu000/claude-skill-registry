@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conductor Motion — Lottie Compose</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cm-bg: #0B0F1A;
+  --cm-surface: #141824;
+  --cm-elevated: #1C2133;
+  --cm-brand: #4F7BF7;
+  --cm-brand-40: rgba(79, 123, 247, 0.4);
+  --cm-text: #E8ECF4;
+  --cm-text-70: rgba(232, 236, 244, 0.7);
+  --cm-text-40: rgba(232, 236, 244, 0.4);
+  --cm-text-20: rgba(232, 236, 244, 0.2);
+  --cm-success: #34D399;
+  --cm-border: rgba(232, 236, 244, 0.15);
+  --cm-border-subtle: rgba(232, 236, 244, 0.08);
+  --cm-ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --cm-font: 'Geist', system-ui, sans-serif;
+  --cm-font-mono: 'Geist Mono', 'SF Mono', monospace;
+  --cm-body-size: clamp(0.875rem, 0.5vw + 0.75rem, 1rem);
+  --cm-mono-size: clamp(0.75rem, 0.4vw + 0.65rem, 0.875rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cm-bg);
+  color: var(--cm-text);
+  font-family: var(--cm-font);
+  font-size: var(--cm-body-size);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.lottie-page {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: var(--cm-font-mono);
+  font-size: var(--cm-mono-size);
+  color: var(--cm-text-40);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 1rem;
+}
+
+/* --- Hero with Lottie background --- */
+
+.lottie-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--cm-surface);
+  border: 1px solid var(--cm-border-subtle);
+  margin-bottom: 3rem;
+}
+
+.lottie-hero-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.lottie-hero-bg svg {
+  width: 100%;
+  height: 100%;
+}
+
+.lottie-hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 2rem;
+}
+
+.lottie-hero h1 {
+  font-size: clamp(2rem, 4vw + 1rem, 4rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.lottie-hero p {
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.25rem);
+  color: var(--cm-text-70);
+  max-width: 36rem;
+  line-height: 1.6;
+}
+
+/* --- Feature cards with Lottie slots --- */
+
+.lottie-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.lottie-card {
+  background: var(--cm-surface);
+  border: 1px solid var(--cm-border-subtle);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.lottie-card-animation {
+  aspect-ratio: 16/9;
+  background: var(--cm-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lottie-card-animation svg {
+  width: 60%;
+  height: 60%;
+  color: var(--cm-brand-40);
+}
+
+.lottie-card-body {
+  padding: 1.5rem;
+}
+
+.lottie-card-body h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.lottie-card-body p {
+  color: var(--cm-text-70);
+  line-height: 1.6;
+}
+
+/* --- Responsive Lottie container --- */
+
+.lottie-responsive {
+  margin-bottom: 3rem;
+}
+
+.lottie-responsive-container {
+  background: var(--cm-surface);
+  border: 1px solid var(--cm-border-subtle);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20rem;
+}
+
+.slot-desktop { display: flex; }
+.slot-tablet  { display: none; }
+.slot-mobile  { display: none; }
+
+@media (max-width: 991px) {
+  .slot-desktop { display: none; }
+  .slot-tablet  { display: flex; }
+}
+
+@media (max-width: 767px) {
+  .slot-tablet { display: none; }
+  .slot-mobile { display: flex; }
+}
+
+.lottie-slot {
+  width: 100%;
+  max-width: 24rem;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cm-text-40);
+  font-family: var(--cm-font-mono);
+  font-size: var(--cm-mono-size);
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.lottie-slot svg {
+  width: 4rem;
+  height: 4rem;
+  color: var(--cm-brand-40);
+}
+
+/* --- Scroll-synced Lottie --- */
+
+.lottie-scroll-section {
+  margin-bottom: 3rem;
+}
+
+.lottie-scrub-track {
+  height: 300vh;
+  position: relative;
+}
+
+.lottie-scrub-sticky {
+  position: sticky;
+  top: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lottie-scrub-display {
+  background: var(--cm-surface);
+  border: 1px solid var(--cm-border-subtle);
+  border-radius: 0.75rem;
+  width: 100%;
+  max-width: 32rem;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.scrub-progress-ring {
+  width: 8rem;
+  height: 8rem;
+}
+
+.scrub-ring-bg {
+  fill: none;
+  stroke: var(--cm-border);
+  stroke-width: 4;
+}
+
+.scrub-ring-fill {
+  fill: none;
+  stroke: var(--cm-brand);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 251.33;
+  stroke-dashoffset: 251.33;
+  transition: stroke-dashoffset 50ms linear;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.scrub-label {
+  margin-top: 1rem;
+  font-family: var(--cm-font-mono);
+  font-size: var(--cm-mono-size);
+  color: var(--cm-text-40);
+}
+
+.scrub-pct {
+  color: var(--cm-brand);
+  font-weight: 600;
+}
+
+/* --- Controls --- */
+
+.controls-bar {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.ctrl-btn {
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--cm-border);
+  border-radius: 0.375rem;
+  background: var(--cm-surface);
+  color: var(--cm-text-70);
+  font-family: var(--cm-font-mono);
+  font-size: var(--cm-mono-size);
+  cursor: pointer;
+  transition: border-color 200ms ease, color 200ms ease;
+}
+
+.ctrl-btn:hover {
+  border-color: var(--cm-brand-40);
+  color: var(--cm-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrub-ring-fill { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="lottie-page">
+
+  <!-- Hero with Lottie background slot -->
+  <div class="lottie-hero">
+    <div class="lottie-hero-bg" data-lottie-slot="hero-bg">
+      <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="glow" cx="50%" cy="50%">
+            <stop offset="0%" stop-color="var(--cm-brand)" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="var(--cm-brand)" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="400" cy="200" r="180" fill="url(#glow)"/>
+        <circle class="orbit-ring" cx="400" cy="200" r="120" fill="none" stroke="var(--cm-brand-40)" stroke-width="0.5" stroke-dasharray="4 8"/>
+        <circle class="orbit-ring" cx="400" cy="200" r="160" fill="none" stroke="var(--cm-brand-40)" stroke-width="0.5" stroke-dasharray="4 8"/>
+      </svg>
+    </div>
+    <div class="lottie-hero-content">
+      <h1>Lottie Orchestration</h1>
+      <p>Viewport-triggered playback, scroll-synced scrubbing, and responsive animation variants — all composable.</p>
+    </div>
+  </div>
+
+  <!-- Feature cards with Lottie animation slots -->
+  <div class="section-label">Feature Demos (Lottie slots)</div>
+  <div class="lottie-features">
+    <div class="lottie-card">
+      <div class="lottie-card-animation" data-lottie-slot="feature-1">
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5"/><path d="M24 14v10l7 7" stroke="currentColor" stroke-width="1.5"/></svg>
+      </div>
+      <div class="lottie-card-body">
+        <h3>Viewport Playback</h3>
+        <p>Animations play when visible, pause when scrolled away. Zero wasted GPU cycles.</p>
+      </div>
+    </div>
+    <div class="lottie-card">
+      <div class="lottie-card-animation" data-lottie-slot="feature-2">
+        <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="4" stroke="currentColor" stroke-width="1.5"/><path d="M16 24h16M24 16v16" stroke="currentColor" stroke-width="1.5"/></svg>
+      </div>
+      <div class="lottie-card-body">
+        <h3>Scroll Scrub</h3>
+        <p>Animation progress tied to scroll position — scrub forward and backward in real time.</p>
+      </div>
+    </div>
+    <div class="lottie-card">
+      <div class="lottie-card-animation" data-lottie-slot="feature-3">
+        <svg viewBox="0 0 48 48" fill="none"><path d="M8 36V12l12 12 8-8 12 12V36H8z" stroke="currentColor" stroke-width="1.5"/></svg>
+      </div>
+      <div class="lottie-card-body">
+        <h3>Responsive Variants</h3>
+        <p>Desktop, tablet, and mobile variants swap automatically at breakpoints.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Responsive Lottie demo -->
+  <div class="lottie-responsive">
+    <div class="section-label">Responsive Container (resize to test)</div>
+    <div class="lottie-responsive-container">
+      <div class="slot-desktop lottie-slot" data-lottie-slot="responsive-desktop">
+        <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="28" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M16 40h16" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span>Desktop variant</span>
+      </div>
+      <div class="slot-tablet lottie-slot" data-lottie-slot="responsive-tablet">
+        <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="4" width="28" height="40" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="40" r="1.5" fill="currentColor"/></svg>
+        <span>Tablet variant</span>
+      </div>
+      <div class="slot-mobile lottie-slot" data-lottie-slot="responsive-mobile">
+        <svg viewBox="0 0 48 48" fill="none"><rect x="14" y="4" width="20" height="40" rx="4" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="40" r="1.5" fill="currentColor"/></svg>
+        <span>Mobile variant</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll-synced Lottie -->
+  <div class="lottie-scroll-section">
+    <div class="section-label">Scroll-Synced Progress (scroll down)</div>
+    <div class="lottie-scrub-track">
+      <div class="lottie-scrub-sticky">
+        <div class="lottie-scrub-display" data-lottie-slot="scrub-target">
+          <svg class="scrub-progress-ring" viewBox="0 0 100 100">
+            <circle class="scrub-ring-bg" cx="50" cy="50" r="40"/>
+            <circle class="scrub-ring-fill" cx="50" cy="50" r="40"/>
+          </svg>
+        </div>
+        <div class="scrub-label">Scroll progress: <span class="scrub-pct">0%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls-bar">
+    <button class="ctrl-btn" onclick="document.querySelectorAll('[data-lottie-slot]').forEach(el => el.style.opacity = el.style.opacity === '0.3' ? '1' : '0.3')">Toggle Slots</button>
+    <button class="ctrl-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Scroll Top</button>
+  </div>
+
+</div>
+
+<script>
+(() => {
+  if (document.body.dataset.initDone === 'true') return;
+  document.body.dataset.initDone = 'true';
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let paused = false;
+  document.addEventListener('visibilitychange', () => {
+    paused = document.hidden;
+    if (!paused && scrubRunning) requestAnimationFrame(updateScrub);
+  });
+
+  // Scroll-synced ring
+  const track = document.querySelector('.lottie-scrub-track');
+  const ringFill = document.querySelector('.scrub-ring-fill');
+  const pctLabel = document.querySelector('.scrub-pct');
+  const circumference = 2 * Math.PI * 40;
+  let scrubRunning = false;
+
+  function updateScrub() {
+    if (paused) return;
+    const rect = track.getBoundingClientRect();
+    const viewH = window.innerHeight;
+    const progress = Math.max(0, Math.min(1, -rect.top / (rect.height - viewH)));
+    ringFill.style.strokeDashoffset = circumference * (1 - progress);
+    pctLabel.textContent = Math.round(progress * 100) + '%';
+    requestAnimationFrame(updateScrub);
+  }
+
+  if (track && ringFill) {
+    if (reducedMotion) {
+      ringFill.style.strokeDashoffset = '0';
+      pctLabel.textContent = '100%';
+    } else {
+      scrubRunning = true;
+      requestAnimationFrame(updateScrub);
+    }
+  }
+
+  // Viewport-triggered playback demo (IntersectionObserver on slots)
+  const slotObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const slot = entry.target;
+      if (entry.isIntersecting) {
+        slot.dataset.playing = 'true';
+      } else {
+        slot.dataset.playing = 'false';
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('[data-lottie-slot]').forEach(el => slotObserver.observe(el));
+})();
+</script>
+</body>
+</html>

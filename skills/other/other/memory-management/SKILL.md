@@ -1,7 +1,7 @@
 ---
 name: memory-management
-description: 'Persist SEO/GEO campaign context across Claude sessions with automatic hot-list, active work, and archive tiers. 项目记忆/跨会话'
-version: "9.9.5"
+description: 'Use when the user asks to "remember project context"; manages SEO/GEO memory, hot-cache, active work, archive tiers, and privacy cleanup. 项目记忆/跨会话'
+version: "9.9.9"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -9,7 +9,7 @@ when_to_use: "Use when reviewing, archiving, or cleaning up campaign memory. Als
 argument-hint: "[review|archive|cleanup]"
 metadata:
   author: aaron-he-zhu
-  version: "9.9.5"
+  version: "9.9.9"
   geo-relevance: "low"
   tags:
     - seo
@@ -130,9 +130,9 @@ What does [internal jargon] mean in this project?
 **Expected output**: a memory update plan, hot-cache changes, and a short handoff summary.
 
 - **Reads**: current campaign facts, new findings from other skills, approved decisions, and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-- **Writes**: updates to `memory/hot-cache.md`, `memory/open-loops.md`, `memory/decisions.md`, and related `memory/` folders. Manages WARM-to-COLD archival in `memory/archive/`. Compiles `memory/wiki/index.md` (auto-refreshed) and wiki compiled pages (user-confirmed). **Sole writer of wiki (with delegated auto-refresh)**: `memory-management` owns all wiki writes semantically. For performance, the narrowly-scoped `memory/wiki/index.md` auto-refresh is delegated to the PostToolUse hook in [hooks/hooks.json](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/hooks/hooks.json). Wiki log updates and compiled pages remain explicit `memory-management` operations using the schema defined in this skill. **Auditor handoff archiving** (v7.1.0+): when triggered by a direct user request or an auditor's explicit "Save these results?" yes-response, append a structured block to `memory/audits/YYYY-MM.md`. The Stop hook never initiates memory writes. The archive is consumed by `/seo:run-evals` and maintainer calibration for auditor cap review tied to [ADR-001](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/decisions/2026-04-adr-001-inline-auditor-runbook.md). See [references/examples.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/examples.md) for the exact archive block format and rules.
+- **Writes**: updates to `memory/hot-cache.md`, `memory/open-loops.md`, `memory/decisions.md`, and related `memory/` folders. Manages WARM-to-COLD archival in `memory/archive/`. Compiles `memory/wiki/index.md` (auto-refreshed) and wiki compiled pages (user-confirmed). **Sole writer of wiki (with delegated auto-refresh)**: `memory-management` owns all wiki writes semantically. For performance, the narrowly-scoped `memory/wiki/index.md` auto-refresh is delegated to the PostToolUse hook in [hooks/hooks.json](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/hooks/hooks.json). Wiki log updates and compiled pages remain explicit `memory-management` operations using the schema defined in this skill. **Auditor handoff archiving** (v7.1.0+): when triggered by a direct user request or an auditor's explicit "Save these results?" yes-response, append a structured block to `memory/audits/YYYY-MM.md`. The Stop hook never initiates memory writes. The archive is consumed by `/aaron:guard --evals` and maintainer calibration for auditor cap review tied to [ADR-001](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/decisions/2026-04-adr-001-inline-auditor-runbook.md). See [references/examples.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/examples.md) for the exact archive block format and rules.
 - **Promotes**: durable strategy, blockers, terminology, entity candidates, and major deltas. Applies temperature lifecycle rules: promote to HOT on high reference frequency, demote on staleness.
-- **Next handoff**: use the `Next Best Skill` below when the project memory baseline is ready for active work.
+- **Primary next skill**: use the `Next Best Skill` below when the project memory baseline is ready for active work.
 
 ### Handoff Summary
 
@@ -165,7 +165,16 @@ For new projects, create the directory structure defined in the [State Model](ht
 
 ### Wiki Layer
 
-`memory-management` owns the wiki schema. Hook-delegated index refreshes may update only `memory/wiki/index.md` and `memory/wiki/<project>/index.md`. Wiki log updates remain explicit `memory-management` operations. Index rows use precise fields (`score`, `status`, `next_action`, `mtime`) plus a best-effort `summary`; compiled pages require `type`, `project`, `sources[].path`, `sources[].hash`, and `last_compiled` frontmatter.
+`memory-management` owns wiki schema and is the sole semantic writer. See [wiki-runbook.md](references/wiki-runbook.md) for execution detail.
+
+#### Phase 1 — Index (auto-refreshed)
+PostToolUse hook silently rebuilds `memory/wiki/index.md` after WARM writes. Index rows: precise (`score`/`status`/`next_action`/`mtime`) + best-effort (`summary`). Project-scoped index at `memory/wiki/<project>/index.md`. See [wiki-runbook.md §1](references/wiki-runbook.md).
+
+#### Phase 2 — Compiled Pages (user-confirmed)
+On user request or 3+ WARM mentions of an entity, generate `memory/wiki/<project>/<type>-<slug>.md` with source SHA-256 hashes. Contradictions resolved via SessionStart conversational prompt, not file editing. Write log entry to `memory/wiki/log.md`. See [wiki-runbook.md §2-§5](references/wiki-runbook.md).
+
+#### Phase 3 — User-Initiated Retirement
+WARM files fully covered by compiled wiki pages may be retired to `memory/archive/`. Always user-confirmed via `/aaron:guard --wiki --retire-preview` followed by explicit memory-management invocation. COLD files receive `originally_at` / `retired_on` / `retired_because_compiled` frontmatter to preserve recovery path. Single retire call hard-capped at 5 files. See [wiki-runbook.md §7](references/wiki-runbook.md).
 
 ### 2. Context Lookup Flow
 
@@ -214,7 +223,7 @@ When invoked for review or cleanup:
 
 ### 6. Save Results
 
-Ask "Save these results for future sessions?" — if yes, write `YYYY-MM-DD-<topic>.md` to `memory/`. Auto-save veto issues to `memory/hot-cache.md`.
+Ask "Save these results for future sessions?" — if yes, write `YYYY-MM-DD-<topic>.md` to `memory/`. Add veto issues to `memory/hot-cache.md` only from auditor handoff or explicit user approval.
 
 ## Examples, Advanced Features & Practical Limitations
 
@@ -235,8 +244,16 @@ Invoke: `memory-management purge <entity-name-or-slug>`
 This skill then:
 1. Greps all files under `memory/` (including `memory/archive/`) for the entity name, slug, or domain
 2. Presents matches to user for confirmation
-3. Deletes matching entries from `memory/entities/<slug>.md`, `memory/entities/candidates.md`, and surfaces references in other files for manual review
-4. Logs the purge to `memory/audits/gdpr-purges.md` with date + subject requested
+3. Deletes or anonymizes confirmed matches across canonical and derived surfaces:
+   - **Canonical**: `memory/hot-cache.md`, WARM notes, COLD/archive files, `memory/entities/<slug>.md`, `memory/entities/candidates.md`, `memory/geo-feedback/`, audit aggregates, open loops
+   - **Wiki layer**: compiled `memory/wiki/` pages, `memory/wiki/log.md`, `memory/wiki/log-archive/`, `memory/wiki/.unresolved.md`, `memory/wiki/.drift-log`, `memory/wiki/.retire-day-log`
+   - **Phase 3 archive reverse-link scan** (v9.9.9+): `grep -l "originally_at:.*<entity>" memory/archive/*.md` AND `grep -l "retired_because_compiled:.*<entity>" memory/archive/*.md` — purge entity name, `originally_at` path string, AND `retired_because_compiled` path string from any matched archive frontmatter
+   - **`.unresolved.md` value-field scrub** (v9.9.9+): the `.unresolved.md` schema stores `value_a:` / `value_b:` as freeform values. If the entity name appears as a VALUE (e.g., `value_a: "CEO is Jane Doe"`) rather than as the contradiction's `entity:` field, the standard entity-name grep catches it via line-match. Confirm by running `grep -F "<entity-name>" memory/wiki/.unresolved.md` AND scrubbing each match (replace value with redacted label, preserve the contradiction structure for audit integrity).
+   - **Malformed archive handling** (v9.9.9+): some archives may lack `originally_at:` (legacy / manually-mv'd files) or contain non-printable bytes in the field. The reverse-link grep silently skips these, creating compliance ghosts. Mitigation: ALSO run `grep -F "<entity-name>" memory/archive/*.md` body-content grep — catches the entity name regardless of frontmatter integrity. If a malformed archive is touched by the purge, log it explicitly to `memory/audits/gdpr-purges.md` so a compliance audit can verify scope.
+4. Removes or refreshes derived wiki indexes so purged names do not reappear from cached pages
+5. Writes a tombstone to `memory/privacy/tombstones.md` with redacted label, salted non-reversible fingerprint, date, scope, and `reingest_blocked: true`; never store the raw subject
+6. Logs the purge to `memory/audits/gdpr-purges.md` per the canonical schema in [references/gdpr-purge-log-template.md](references/gdpr-purge-log-template.md) (v9.9.9+) — required fields: `purge_id`, `date`, `redacted_label`, `fingerprint`, `scope.{canonical,wiki,archive}`, `action`, `action_detail`, `legal_basis`, `proof.{grep_count_before,grep_count_after}`, `reingest_blocked: true`, `audit_signature`. Auditor-verifiable structure: never raw subject; mechanical grep-count proof; cross-referenced to tombstone fingerprint.
+7. For auditor archives, redact subject identifiers while preserving score/status/proof metadata required for audit integrity
 
 ### Lawful basis reminder
 Before writing a third-party person to `memory/entities/`, the user must have one lawful basis per GDPR Art 6 (where GDPR applies — see scope note above): `consent`, `legitimate_interest`, `contract`, or equivalent. Advisory — this skill does not enforce, and does not substitute for legal review.

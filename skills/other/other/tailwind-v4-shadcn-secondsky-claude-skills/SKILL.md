@@ -1,24 +1,31 @@
 ---
 name: tailwind-v4-shadcn
-description: |
-  Production-tested setup for Tailwind CSS v4 with shadcn/ui, Vite, and React.
+description: "| Production-tested setup for Tailwind CSS v4 with shadcn/ui, Vite, and React. Use when: initializing React projects with Tailwind v4, setting up shadcn/ui, implementing dark mode, debugging CSS variable issues, fixing theme switching, migrating from Tailwind v3, or encountering color/theming problems. Covers: @theme inline pattern, CSS variable architecture, dark mode with ThemeProvider, component composition, vite.config setup, common v4 gotchas, and production-tested patterns."
 
-  Use when: initializing React projects with Tailwind v4, setting up shadcn/ui,
-  implementing dark mode, debugging CSS variable issues, fixing theme switching,
-  migrating from Tailwind v3, or encountering color/theming problems.
+metadata:
+  keywords:
+    - Tailwind v4
+    - shadcn/ui
+    - "@tailwindcss/vite"
+    - "@theme inline"
+    - dark mode
+    - CSS variables
+    - hsl() wrapper
+    - components.json
+    - React theming
+    - theme switching
+    - colors not working
+    - variables broken
+    - theme not applying
+    - "@plugin directive"
+    - typography plugin
+    - forms plugin
+    - prose class
+    - "@tailwindcss/typography"
+    - "@tailwindcss/forms"
 
-  Covers: @theme inline pattern, CSS variable architecture, dark mode with
-  ThemeProvider, component composition, vite.config setup, common v4 gotchas,
-  and production-tested patterns.
-
-  Keywords: Tailwind v4, shadcn/ui, @tailwindcss/vite, @theme inline, dark mode,
-  CSS variables, hsl() wrapper, components.json, React theming, theme switching,
-  colors not working, variables broken, theme not applying, @plugin directive,
-  typography plugin, forms plugin, prose class, @tailwindcss/typography,
-  @tailwindcss/forms
 license: MIT
 ---
-
 # Tailwind v4 + shadcn/ui Production Stack
 
 **Production-tested**: WordPress Auditor (https://wordpress-auditor.webfonts.workers.dev)
@@ -535,6 +542,16 @@ Load reference files based on user's specific needs:
 - **shadcn/ui Theming**: https://ui.shadcn.com/docs/theming
 
 ---
+
+## Secure Installation
+
+When installing Tailwind and shadcn/ui packages, follow supply chain security best practices:
+
+- **Block post-install scripts** — `npm config set ignore-scripts true` (or Bun: disabled by default)
+- **Cooldown period** — Wait 7 days for new package versions to be vetted by the community
+- **Audit before installing** — Run `socket package score npm <pkg>` or use `socket npm install <pkg>` to check packages
+
+Load the `dependency-upgrade` skill for full security configuration including Socket CLI integration, cooldown setup, lockfile validation, and CI enforcement.
 
 ## Production Example
 

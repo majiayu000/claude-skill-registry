@@ -1,8 +1,9 @@
 ---
 name: model-deployment
 description: Deploy ML models with FastAPI, Docker, Kubernetes. Use for serving predictions, containerization, monitoring, drift detection, or encountering latency issues, health check failures, version conflicts.
-keywords: model deployment, FastAPI, Docker, Kubernetes, ML serving, model monitoring, drift detection, A/B testing, CI/CD, mlops, production ml, model versioning, health checks, Prometheus, containerization, rolling updates, blue-green deployment, canary deployment, model registry
 license: MIT
+metadata:
+  keywords: "model deployment, FastAPI, Docker, Kubernetes, ML serving, model monitoring, drift detection, A/B testing, CI/CD, mlops, production ml, model versioning, health checks, Prometheus, containerization, rolling updates, blue-green deployment, canary deployment, model registry"
 ---
 
 # ML Model Deployment

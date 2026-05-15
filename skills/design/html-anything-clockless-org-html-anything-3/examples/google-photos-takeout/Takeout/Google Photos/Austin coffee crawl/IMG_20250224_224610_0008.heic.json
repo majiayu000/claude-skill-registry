@@ -1,0 +1,36 @@
+{
+  "title": "IMG_20250224_224610_0008.heic",
+  "description": "",
+  "imageViews": "11",
+  "creationTime": {
+    "timestamp": "1740438148",
+    "formatted": "24 Feb 2025 23:08:39 UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1740437170",
+    "formatted": "24 Feb 2025 22:46:10 UTC"
+  },
+  "geoData": {
+    "latitude": 30.250831,
+    "longitude": -97.803354,
+    "altitude": 123.2,
+    "latitudeSpan": 0,
+    "longitudeSpan": 0
+  },
+  "geoDataExif": {
+    "latitude": 30.250831,
+    "longitude": -97.803354,
+    "altitude": 123.2,
+    "latitudeSpan": 0,
+    "longitudeSpan": 0
+  },
+  "url": "https://photos.google.com/photo/SYNTHETIC_IMG_20250224_224610_0008_heic",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {}
+    }
+  },
+  "favorited": false,
+  "archived": false,
+  "trashed": false
+}

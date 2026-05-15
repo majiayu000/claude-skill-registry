@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en" data-ha-style="terminal-cli">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CI failure - Terminal CLI Console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #0a0a0a;
+  --surface: #0a0a0a;
+  --surface-container-lowest: #0a0a0a;
+  --surface-container-low: #0d160d;
+  --surface-container: #102610;
+  --surface-container-high: #153315;
+  --primary: #33ff00;
+  --secondary: #ffb000;
+  --muted: #1f521f;
+  --accent: #33ff00;
+  --error: #ff3333;
+  --border: #1f521f;
+  --border-strong: #33ff00;
+  --fg-1: #33ff00;
+  --fg-2: #b7ff9a;
+  --fg-muted: #1f521f;
+  --on-primary: #050505;
+  --green: #33ff00;
+  --yellow: #ffb000;
+  --red: #ff3333;
+  --blue: #72d5ff;
+  --font-headline: 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  --font-body: 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+  --space-xs: 4px; --space-sm: 8px; --space-md: 12px;
+  --space-lg: 16px; --space-xl: 20px; --space-2xl: 24px;
+  --space-3xl: 32px; --space-4xl: 48px; --space-5xl: 64px;
+  --radius-sm: 0; --radius-md: 0; --radius-lg: 0;
+  --radius-xl: 0; --radius-2xl: 0; --radius-pill: 0;
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-accent: none;
+  --text-glow: 0 0 5px rgba(51, 255, 0, 0.5);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--fg-1);
+  background:
+    linear-gradient(180deg, rgba(51, 255, 0, 0.035), transparent 220px),
+    var(--bg);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.45;
+  text-shadow: var(--text-glow);
+  overflow-x: hidden;
+}
+button, input { font: inherit; }
+a { color: var(--primary); }
+.scanline-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0.13;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(51, 255, 0, 0.16) 0,
+    rgba(51, 255, 0, 0.16) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  mix-blend-mode: screen;
+}
+.terminal-cli-shell {
+  width: min(1440px, calc(100vw - 28px));
+  margin: 0 auto;
+  padding: 18px 0 38px;
+}
+.shell-prompt {
+  min-height: 92px;
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  border: 1px solid var(--border-strong);
+  padding: 14px 16px;
+  background: rgba(10, 10, 10, 0.96);
+}
+.prompt-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.prompt-user { color: var(--blue); }
+.prompt-path { color: var(--secondary); }
+.command { color: var(--fg-2); overflow: hidden; text-overflow: ellipsis; }
+.terminal-cursor {
+  display: inline-block;
+  width: 9px;
+  height: 1.15em;
+  background: var(--primary);
+  box-shadow: 0 0 10px rgba(51, 255, 0, 0.6);
+  animation: blink 1s steps(1, end) infinite;
+}
+.meta-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  color: var(--fg-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.status-rail {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-top: 0;
+  background: var(--border);
+}
+.status-cell {
+  min-height: 78px;
+  padding: 12px;
+  background: var(--surface);
+  display: grid;
+  align-content: space-between;
+  gap: 8px;
+}
+.status-code {
+  display: inline-flex;
+  width: fit-content;
+  color: var(--on-primary);
+  background: var(--primary);
+  padding: 1px 6px;
+  text-shadow: none;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+.status-code.err { background: var(--red); }
+.status-code.warn { background: var(--secondary); color: #0a0a0a; }
+.status-code.hyp { background: transparent; color: var(--secondary); border: 1px solid var(--secondary); }
+.status-code.dim { background: transparent; color: var(--fg-muted); border: 1px solid var(--border); }
+.status-value {
+  font-size: clamp(18px, 2.6vw, 30px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+.status-label { color: var(--fg-muted); font-size: 10px; text-transform: uppercase; }
+.ascii-bar {
+  color: var(--fg-2);
+  letter-spacing: -0.06em;
+  white-space: nowrap;
+}
+.workbench {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+.terminal-pane {
+  border: 1px solid var(--border);
+  background: rgba(10, 10, 10, 0.96);
+  min-width: 0;
+}
+.terminal-pane.strong { border-color: var(--border-strong); }
+.pane-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--fg-2);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+.pane-body { padding: 12px; }
+.finding {
+  display: grid;
+  gap: 6px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border);
+}
+.finding:last-child { border-bottom: 0; }
+.finding p { margin: 0; color: var(--fg-2); }
+.line-link {
+  color: var(--secondary);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.phase-strip {
+  display: grid;
+  grid-template-columns: 0.8fr 1.6fr 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+}
+.phase-strip > div {
+  padding: 7px 8px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  min-width: 0;
+}
+.phase-strip > div:nth-child(4n) { border-right: 0; }
+.phase-strip .head { color: var(--fg-muted); text-transform: uppercase; font-size: 10px; }
+.ok { color: var(--green); }
+.err-text { color: var(--red); }
+.warn-text { color: var(--secondary); }
+.dim { color: var(--fg-muted); }
+.test-card {
+  display: grid;
+  gap: 8px;
+  border: 1px solid var(--border);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.test-card strong { color: var(--fg-2); }
+.hypothesis {
+  color: var(--fg-2);
+  border-left: 2px solid var(--secondary);
+  padding-left: 10px;
+}
+.checklist {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+.checklist li::before { content: "[ ] "; color: var(--secondary); }
+.command-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.command-button {
+  color: var(--primary);
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  padding: 6px 9px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.command-button:hover,
+.command-button:focus-visible,
+.line-link:focus-visible {
+  color: var(--on-primary);
+  background: var(--primary);
+  outline: none;
+  text-shadow: none;
+}
+.prompt-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+.prompt-input label { color: var(--secondary); white-space: nowrap; }
+.prompt-input input {
+  flex: 1;
+  min-width: 90px;
+  color: var(--fg-2);
+  background: transparent;
+  border: 0;
+  outline: none;
+  caret-color: var(--primary);
+}
+.raw-console {
+  max-height: 520px;
+  overflow: auto;
+  border: 1px solid var(--border);
+  background: #050805;
+}
+.raw-line {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  min-height: 22px;
+  border-bottom: 1px solid rgba(31, 82, 31, 0.28);
+}
+.raw-line mark {
+  background: var(--secondary);
+  color: #050505;
+  text-shadow: none;
+}
+.raw-num {
+  color: var(--fg-muted);
+  padding: 3px 8px;
+  border-right: 1px solid rgba(31, 82, 31, 0.5);
+  text-align: right;
+  user-select: none;
+}
+.raw-text {
+  padding: 3px 8px;
+  color: var(--fg-2);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.raw-line.error .raw-text { color: var(--red); }
+.raw-line.warning .raw-text { color: var(--secondary); }
+.raw-line.target {
+  background: rgba(51, 255, 0, 0.13);
+  outline: 1px solid var(--border-strong);
+}
+.footer-note {
+  color: var(--fg-muted);
+  border: 1px dashed var(--border);
+  padding: 10px;
+  margin-top: 12px;
+}
+@keyframes blink { 50% { opacity: 0; } }
+@media (max-width: 980px) {
+  .status-rail { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .workbench { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .terminal-cli-shell { width: calc(100vw - 16px); padding-top: 8px; }
+  .status-rail { grid-template-columns: 1fr; }
+  .phase-strip { grid-template-columns: 1fr; }
+  .phase-strip > div { border-right: 0; }
+  .prompt-line { white-space: normal; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; }
+}
+</style>
+</head>
+<body>
+<div class="scanline-overlay" aria-hidden="true"></div>
+<main class="terminal-cli-shell">
+  <header class="shell-prompt">
+    <div class="prompt-line" aria-label="terminal command">
+      <span class="prompt-user">operator@gha-runner</span><span>:</span><span class="prompt-path">~/checkout-service</span><span>$</span>
+      <span class="command">scan --source input.log --risk --evidence --style terminal-cli</span>
+      <span class="terminal-cursor" aria-hidden="true"></span>
+    </div>
+    <div class="meta-line">
+      <span>provider=github-actions</span>
+      <span>branch=feat/payment-pending-queue</span>
+      <span>sha=b2c3d4e</span>
+      <span>file=input.log</span>
+      <span>local=yes</span>
+    </div>
+  </header>
+
+  <section class="status-rail" aria-label="run status rail">
+    <div class="status-cell">
+      <span class="status-code err">[ERR]</span>
+      <span class="status-value">exit=1</span>
+      <span class="status-label">Run status</span>
+    </div>
+    <div class="status-cell">
+      <span class="status-code">[OK]</span>
+      <span class="status-value">6/8</span>
+      <span class="status-label">Clean phases</span>
+    </div>
+    <div class="status-cell">
+      <span class="status-code err">[ERR]</span>
+      <span class="status-value">2</span>
+      <span class="status-label">Failing tests</span>
+    </div>
+    <div class="status-cell">
+      <span class="status-code dim">[LOG]</span>
+      <span class="status-value">139</span>
+      <span class="status-label">Raw lines</span>
+    </div>
+    <div class="status-cell">
+      <span class="status-code warn">[HYP]</span>
+      <span class="ascii-bar">[|||||||||..] reason mapping</span>
+      <span class="status-label">Most likely area</span>
+    </div>
+  </section>
+
+  <section class="workbench">
+    <aside class="terminal-pane strong">
+      <div class="pane-title"><span>+--- RUN SUMMARY ---+</span><span class="status-code err">FAILED</span></div>
+      <div class="pane-body">
+        <div class="finding">
+          <span class="status-code err">[ERR]</span>
+          <p>Run failed in <strong>npm test</strong>. The visible failure is two Vitest assertions in <code>tests/checkout/charge.test.ts</code>.</p>
+        </div>
+        <div class="finding">
+          <span class="status-code hyp">[HYP]</span>
+          <p>Hypothesis: `chargeOrder` is returning gateway-native pending states (`pending_review`, `requires_action`) where the tests expect the normalized reason `pending`.</p>
+        </div>
+        <div class="command-row" aria-label="terminal actions">
+          <button class="command-button" type="button" id="copy-summary">[ COPY SUMMARY ]</button>
+          <button class="command-button" type="button" data-jump="82">[ JUMP FAIL ]</button>
+          <button class="command-button" type="button" id="filter-errors">[ FILTER ERR ]</button>
+          <button class="command-button" type="button" id="show-all">[ SHOW ALL ]</button>
+        </div>
+      </div>
+    </aside>
+
+    <section class="terminal-pane">
+      <div class="pane-title"><span>+--- PHASE STRIP ---+</span><span class="dim">width=line-count</span></div>
+      <div class="pane-body">
+        <div class="phase-strip" id="phase-strip" aria-label="CI phase status table"></div>
+      </div>
+    </section>
+
+    <section class="terminal-pane">
+      <div class="pane-title"><span>+--- REVIEW CHECKLIST ---+</span><span class="dim">operator.todo</span></div>
+      <div class="pane-body">
+        <ul class="checklist">
+          <li>Inspect `chargeOrder` status normalization for `pending_review` and `requires_action`.</li>
+          <li>Confirm whether the public contract should expose `reason: "pending"` for all queued charges.</li>
+          <li>Re-run `npm test -- tests/checkout/charge.test.ts` after the mapping change.</li>
+          <li>Check webhook handling still preserves the original gateway status internally.</li>
+          <li>Add a focused test for any new pending status that can be queued.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="terminal-pane">
+      <div class="pane-title"><span>+--- RISK HOTSPOTS ---+</span><span class="dim">evidence-linked</span></div>
+      <div class="pane-body">
+        <div class="finding">
+          <span><span class="status-code err">[ERR]</span> <button class="line-link" type="button" data-jump="85">line 85</button></span>
+          <p>First failed assertion shows `pending_review` received where `pending` was expected.</p>
+        </div>
+        <div class="finding">
+          <span><span class="status-code err">[ERR]</span> <button class="line-link" type="button" data-jump="104">line 104</button></span>
+          <p>Second failed assertion shows `requires_action` received where `pending` was expected.</p>
+        </div>
+        <div class="finding">
+          <span><span class="status-code dim">[OK]</span> lines 49-58</span>
+          <p>Lint and typecheck passed, so the break is behavioral rather than syntax/type-level.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="terminal-pane">
+      <div class="pane-title"><span>+--- SUSPECTED ROOT CAUSE ---+</span><span class="status-code hyp">[HYP]</span></div>
+      <div class="pane-body">
+        <div class="hypothesis">
+          <p><strong>Hypothesis:</strong> the queue path now preserves raw provider states instead of normalizing them to `pending` before returning the API response.</p>
+          <p class="dim">Evidence: assertion diffs at lines 85-95 and 104-110. Distinguish by checking the return object in `chargeOrder` before webhook persistence.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="terminal-pane">
+      <div class="pane-title"><span>+--- FAILING TESTS ---+</span><span>2</span></div>
+      <div class="pane-body">
+        <article class="test-card">
+          <span class="status-code err">[FAIL]</span>
+          <strong>chargeOrder &gt; queues the charge and returns pending for a pending_review status</strong>
+          <span class="dim">tests/checkout/charge.test.ts:32:21 · <button class="line-link" type="button" data-jump="82">raw line 82</button></span>
+          <span class="ascii-bar">[||||||||||] reason: pending_review != pending</span>
+        </article>
+        <article class="test-card">
+          <span class="status-code err">[FAIL]</span>
+          <strong>chargeOrder &gt; queues the charge for a requires_action status</strong>
+          <span class="dim">tests/checkout/charge.test.ts:42:25 · <button class="line-link" type="button" data-jump="101">raw line 101</button></span>
+          <span class="ascii-bar">[|||||||||.] reason: requires_action != pending</span>
+        </article>
+      </div>
+    </section>
+  </section>
+
+  <section class="terminal-pane" style="margin-top:12px;">
+    <div class="pane-title"><span>+--- RAW LOG ---+</span><span id="match-count" class="dim">grep=off</span></div>
+    <div class="pane-body">
+      <div class="prompt-input">
+        <label for="grep">grep@raw:~$</label>
+        <input id="grep" type="search" spellcheck="false" autocomplete="off" placeholder="type to highlight raw lines, e.g. pending">
+      </div>
+      <div class="raw-console" id="raw-console" tabindex="0" aria-label="Raw CI log"></div>
+    </div>
+  </section>
+
+  <p class="footer-note">[LOCAL] Generated locally. The full CI log is embedded in this HTML and rendered in your browser. The analysis above is a hypothesis from a sample, not a verdict; verify against the runtime before acting on it.</p>
+</main>
+
+<template id="raw-log">2026-05-04T16:21:08.4912831Z Current runner version: '2.319.1'
+2026-05-04T16:21:08.4934712Z Operating System: Ubuntu 22.04.4 LTS
+2026-05-04T16:21:08.4938441Z Runner Image: ubuntu-22.04 / 20240428.1
+2026-05-04T16:21:08.4972145Z ##[group]GITHUB_TOKEN Permissions
+2026-05-04T16:21:08.4985021Z   Contents: read
+2026-05-04T16:21:08.4986104Z   Metadata: read
+2026-05-04T16:21:08.4987082Z   Packages: read
+2026-05-04T16:21:08.4988013Z ##[endgroup]
+2026-05-04T16:21:08.5021342Z Prepare workflow directory
+2026-05-04T16:21:08.5298110Z Prepare all required actions
+2026-05-04T16:21:08.5510921Z Getting action download info
+2026-05-04T16:21:09.0117732Z Download action repository 'actions/checkout@v4' (SHA:b4ffde65f46336ab88eb53be808477a3936bae11)
+2026-05-04T16:21:09.4081123Z Download action repository 'actions/setup-node@v4' (SHA:60edb5dd545a775178f52524783378180af0d1f8)
+2026-05-04T16:21:09.7890211Z ##[group]Run actions/checkout@v4
+2026-05-04T16:21:09.7891201Z with:
+2026-05-04T16:21:09.7892015Z   repository: clockless-org/checkout-service
+2026-05-04T16:21:09.7892913Z   token: ***
+2026-05-04T16:21:09.7893712Z   ssh-strict: true
+2026-05-04T16:21:09.7894510Z   persist-credentials: true
+2026-05-04T16:21:09.7895401Z   fetch-depth: 1
+2026-05-04T16:21:09.7896298Z env:
+2026-05-04T16:21:09.7897105Z   NODE_VERSION: 20
+2026-05-04T16:21:09.7898012Z ##[endgroup]
+2026-05-04T16:21:09.9514321Z Syncing repository: clockless-org/checkout-service
+2026-05-04T16:21:09.9614021Z Getting Git version info
+2026-05-04T16:21:10.0098731Z Initializing the repository
+2026-05-04T16:21:11.4421031Z Determining the checkout info
+2026-05-04T16:21:11.5102114Z Fetching the repository
+2026-05-04T16:21:13.8821402Z Determining the default branch
+2026-05-04T16:21:14.0091123Z Checking out the ref refs/heads/feat/payment-pending-queue
+2026-05-04T16:21:14.5511312Z [command]/usr/bin/git log -1 --format='%H'
+2026-05-04T16:21:14.5601923Z 'b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1'
+2026-05-04T16:21:14.5921412Z ##[group]Run actions/setup-node@v4
+2026-05-04T16:21:14.5922302Z with:
+2026-05-04T16:21:14.5923119Z   node-version: 20
+2026-05-04T16:21:14.5923921Z   cache: npm
+2026-05-04T16:21:14.5924712Z ##[endgroup]
+2026-05-04T16:21:14.7212301Z Found in cache @ /opt/hostedtoolcache/node/20.13.1/x64
+2026-05-04T16:21:14.7301201Z ##[group]Run npm ci
+2026-05-04T16:21:14.7302100Z npm ci
+2026-05-04T16:21:14.7303012Z shell: /usr/bin/bash -e {0}
+2026-05-04T16:21:14.7303891Z ##[endgroup]
+2026-05-04T16:21:21.0421013Z added 612 packages, and audited 613 packages in 6s
+2026-05-04T16:21:21.0521223Z found 0 vulnerabilities
+2026-05-04T16:21:21.0921412Z ##[group]Run npm run lint
+2026-05-04T16:21:21.0922301Z npm run lint
+2026-05-04T16:21:21.0923201Z shell: /usr/bin/bash -e {0}
+2026-05-04T16:21:21.0924020Z ##[endgroup]
+2026-05-04T16:21:23.4421013Z &gt; checkout-service@0.4.1 lint
+2026-05-04T16:21:23.4422301Z &gt; eslint --max-warnings=0 src tests
+2026-05-04T16:21:24.6712013Z All files pass lint.
+2026-05-04T16:21:24.7212302Z ##[group]Run npm run typecheck
+2026-05-04T16:21:24.7213201Z npm run typecheck
+2026-05-04T16:21:24.7214101Z shell: /usr/bin/bash -e {0}
+2026-05-04T16:21:24.7215001Z ##[endgroup]
+2026-05-04T16:21:30.5512012Z &gt; checkout-service@0.4.1 typecheck
+2026-05-04T16:21:30.5513102Z &gt; tsc --noEmit
+2026-05-04T16:21:32.8211201Z All files typecheck cleanly.
+2026-05-04T16:21:32.8531123Z ##[group]Run npm test -- --reporter=verbose
+2026-05-04T16:21:32.8532101Z npm test -- --reporter=verbose
+2026-05-04T16:21:32.8533002Z shell: /usr/bin/bash -e {0}
+2026-05-04T16:21:32.8533921Z ##[endgroup]
+2026-05-04T16:21:34.5512012Z &gt; checkout-service@0.4.1 test
+2026-05-04T16:21:34.5513001Z &gt; vitest run --reporter=verbose
+2026-05-04T16:21:34.5513921Z
+2026-05-04T16:21:35.9412013Z  RUN  v1.5.0 /home/runner/work/checkout-service/checkout-service
+2026-05-04T16:21:35.9413012Z
+2026-05-04T16:21:36.7821302Z  ✓ tests/auth/session.test.ts (4 tests) 12ms
+2026-05-04T16:21:36.7822201Z    ✓ verifySession &gt; returns null for empty token
+2026-05-04T16:21:36.7823102Z    ✓ verifySession &gt; returns null for expired token
+2026-05-04T16:21:36.7824001Z    ✓ verifySession &gt; returns null when issuer does not match
+2026-05-04T16:21:36.7824921Z    ✓ verifySession &gt; returns the decoded session for a valid token
+2026-05-04T16:21:37.4128201Z  ✓ tests/order/total.test.ts (8 tests) 21ms
+2026-05-04T16:21:37.4129102Z    ✓ totalCents &gt; sums lineItem prices
+2026-05-04T16:21:37.4130012Z    ✓ totalCents &gt; applies tax_rate
+2026-05-04T16:21:37.4130921Z    ✓ totalCents &gt; rounds to integer cents
+2026-05-04T16:21:37.4131821Z    ✓ totalCents &gt; applies a percent discount
+2026-05-04T16:21:37.4132721Z    ✓ totalCents &gt; applies a fixed discount
+2026-05-04T16:21:37.4133621Z    ✓ totalCents &gt; clamps a discount to the subtotal
+2026-05-04T16:21:37.4134521Z    ✓ totalCents &gt; handles zero items
+2026-05-04T16:21:37.4135421Z    ✓ totalCents &gt; handles a single item
+2026-05-04T16:21:38.1234101Z FAIL  tests/checkout/charge.test.ts &gt; chargeOrder &gt; queues the charge and returns pending for a pending_review status
+2026-05-04T16:21:38.1235012Z    ✕ chargeOrder &gt; queues the charge and returns pending for a pending_review status (8 ms)
+2026-05-04T16:21:38.1235921Z
+2026-05-04T16:21:38.1236821Z      AssertionError: expected { ok: false, reason: 'pending_review', ...(1) } to deeply equal { ok: false, reason: 'pending', chargeId: 'ch_003' }
+2026-05-04T16:21:38.1237721Z
+2026-05-04T16:21:38.1238621Z      - Expected
+2026-05-04T16:21:38.1239521Z      + Received
+2026-05-04T16:21:38.1240421Z
+2026-05-04T16:21:38.1241321Z        Object {
+2026-05-04T16:21:38.1242221Z          "chargeId": "ch_003",
+2026-05-04T16:21:38.1243121Z          "ok": false,
+2026-05-04T16:21:38.1244021Z      -   "reason": "pending",
+2026-05-04T16:21:38.1244921Z      +   "reason": "pending_review",
+2026-05-04T16:21:38.1245821Z        }
+2026-05-04T16:21:38.1246721Z
+2026-05-04T16:21:38.1247621Z       at tests/checkout/charge.test.ts:32:21
+2026-05-04T16:21:38.1248521Z       at runWithTimeout (node_modules/vitest/dist/index.js:241:13)
+2026-05-04T16:21:38.1249421Z       at Module.runTest (node_modules/vitest/dist/index.js:412:7)
+2026-05-04T16:21:38.1250321Z
+2026-05-04T16:21:38.1612301Z FAIL  tests/checkout/charge.test.ts &gt; chargeOrder &gt; queues the charge for a requires_action status
+2026-05-04T16:21:38.1613201Z    ✕ chargeOrder &gt; queues the charge for a requires_action status (4 ms)
+2026-05-04T16:21:38.1614101Z
+2026-05-04T16:21:38.1615001Z      AssertionError: expected 'requires_action' to be 'pending' // Object.is equality
+2026-05-04T16:21:38.1615901Z
+2026-05-04T16:21:38.1616801Z      - Expected
+2026-05-04T16:21:38.1617701Z      + Received
+2026-05-04T16:21:38.1618601Z
+2026-05-04T16:21:38.1619501Z      - "pending"
+2026-05-04T16:21:38.1620401Z      + "requires_action"
+2026-05-04T16:21:38.1621301Z
+2026-05-04T16:21:38.1622201Z       at tests/checkout/charge.test.ts:42:25
+2026-05-04T16:21:38.1623101Z       at runWithTimeout (node_modules/vitest/dist/index.js:241:13)
+2026-05-04T16:21:38.1624001Z       at Module.runTest (node_modules/vitest/dist/index.js:412:7)
+2026-05-04T16:21:38.1624901Z
+2026-05-04T16:21:38.1721301Z  ✓ tests/checkout/charge.test.ts &gt; chargeOrder &gt; returns ok for a succeeded charge
+2026-05-04T16:21:38.1722201Z  ✓ tests/checkout/charge.test.ts &gt; chargeOrder &gt; returns the failure reason for a hard-declined charge
+2026-05-04T16:21:38.1812301Z  ✓ tests/checkout/webhook.test.ts (3 tests) 9ms
+2026-05-04T16:21:38.1813201Z    ✓ paymentWebhook &gt; returns 204 for unknown event types
+2026-05-04T16:21:38.1814101Z    ✓ paymentWebhook &gt; transitions the order to paid on charge.succeeded
+2026-05-04T16:21:38.1815001Z    ✓ paymentWebhook &gt; transitions the order to failed on charge.failed
+2026-05-04T16:21:38.2412101Z
+2026-05-04T16:21:38.2413012Z  Test Files  1 failed | 3 passed (4)
+2026-05-04T16:21:38.2413921Z       Tests  2 failed | 13 passed (15)
+2026-05-04T16:21:38.2414821Z    Start at  16:21:35
+2026-05-04T16:21:38.2415721Z    Duration  2.30s
+2026-05-04T16:21:38.2416621Z
+2026-05-04T16:21:38.4012301Z npm ERR! Lifecycle script `test` failed with error:
+2026-05-04T16:21:38.4013201Z npm ERR! Error: command failed
+2026-05-04T16:21:38.4014101Z npm ERR!   in workspace: checkout-service@0.4.1
+2026-05-04T16:21:38.4015001Z npm ERR!   at location: /home/runner/work/checkout-service/checkout-service
+2026-05-04T16:21:38.4112301Z ##[error]Process completed with exit code 1.
+2026-05-04T16:21:38.4521301Z Post job cleanup.
+2026-05-04T16:21:38.5421301Z [command]/usr/bin/git version
+2026-05-04T16:21:38.5621301Z git version 2.43.0
+2026-05-04T16:21:38.5821301Z ##[group]Cleaning up orphan processes
+2026-05-04T16:21:38.5921301Z ##[endgroup]
+2026-05-04T16:21:38.6021301Z Cleaning up orphan processes
+</template>
+
+<script>
+const RAW_LOG = document.getElementById("raw-log").innerHTML
+  .replaceAll("&gt;", ">")
+  .replaceAll("&lt;", "<")
+  .replaceAll("&amp;", "&");
+
+const DATA = {
+  kind: "ci-log",
+  provider: "github-actions",
+  status: "failed",
+  exitCode: 1,
+  groups: [
+    { id: "g_0001", name: "token perms", startLine: 4, endLine: 8, status: "ok", bar: "[|..........]" },
+    { id: "g_0002", name: "checkout", startLine: 14, endLine: 32, status: "ok", bar: "[||||.......]" },
+    { id: "g_0003", name: "setup node", startLine: 33, endLine: 38, status: "ok", bar: "[|..........]" },
+    { id: "g_0004", name: "npm ci", startLine: 39, endLine: 44, status: "ok", bar: "[||.........]" },
+    { id: "g_0005", name: "lint", startLine: 45, endLine: 51, status: "ok", bar: "[||.........]" },
+    { id: "g_0006", name: "typecheck", startLine: 52, endLine: 58, status: "ok", bar: "[||.........]" },
+    { id: "g_0007", name: "vitest", startLine: 59, endLine: 132, status: "fail", bar: "[|||||||||||]" },
+    { id: "g_0008", name: "cleanup", startLine: 136, endLine: 139, status: "ok", bar: "[|..........]" }
+  ],
+  errors: [82, 101, 128, 129, 130, 131, 132],
+  failingTests: [82, 101],
+  rawLines: RAW_LOG.split(/\n/).map((text, index) => ({ num: index + 1, text }))
+};
+
+const phaseStrip = document.getElementById("phase-strip");
+const rawConsole = document.getElementById("raw-console");
+const grep = document.getElementById("grep");
+const matchCount = document.getElementById("match-count");
+let filterMode = "all";
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
+}
+
+function renderPhases() {
+  phaseStrip.innerHTML = [
+    '<div class="head">state</div><div class="head">phase</div><div class="head">lines</div><div class="head">density</div>',
+    ...DATA.groups.map(group => `
+      <div><span class="status-code ${group.status === "fail" ? "err" : ""}">[${group.status === "fail" ? "ERR" : "OK"}]</span></div>
+      <div><button class="line-link" type="button" data-jump="${group.startLine}">${escapeHtml(group.name)}</button></div>
+      <div>${group.startLine}-${group.endLine}</div>
+      <div class="ascii-bar">${group.bar}</div>
+    `)
+  ].join("");
+}
+
+function decorate(text, term) {
+  const escaped = escapeHtml(text);
+  if (!term) return escaped;
+  const safeTerm = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return escaped.replace(new RegExp(safeTerm, "gi"), match => `<mark>${match}</mark>`);
+}
+
+function renderRaw() {
+  const term = grep.value.trim();
+  const lines = DATA.rawLines.filter(line => filterMode !== "errors" || DATA.errors.includes(line.num));
+  let matches = 0;
+  rawConsole.innerHTML = lines.map(line => {
+    const isError = DATA.errors.includes(line.num) || /FAIL|AssertionError|npm ERR|##\[error\]/.test(line.text);
+    const isWarning = /WARN|warning/i.test(line.text);
+    const hasMatch = term && line.text.toLowerCase().includes(term.toLowerCase());
+    if (hasMatch) matches += 1;
+    return `<div class="raw-line ${isError ? "error" : ""} ${isWarning ? "warning" : ""}" id="L${line.num}" data-line="${line.num}">
+      <span class="raw-num">${line.num}</span>
+      <span class="raw-text">${decorate(line.text, term)}</span>
+    </div>`;
+  }).join("");
+  matchCount.textContent = term ? `grep=${matches}` : (filterMode === "errors" ? "filter=err" : "grep=off");
+}
+
+function jumpToLine(num) {
+  filterMode = "all";
+  renderRaw();
+  const target = document.getElementById(`L${num}`);
+  if (!target) return;
+  target.classList.add("target");
+  target.scrollIntoView({ block: "center", behavior: "smooth" });
+  setTimeout(() => target.classList.remove("target"), 1600);
+}
+
+function copySummary() {
+  const summary = [
+    "# CI failure - feat/payment-pending-queue",
+    "",
+    "- Status: failed (exit=1)",
+    "- Provider: GitHub Actions",
+    "- Failing tests: 2 in tests/checkout/charge.test.ts",
+    "- Hypothesis: chargeOrder may be returning provider-native pending states instead of normalized reason: pending.",
+    "- Evidence: line 85 shows pending_review != pending; line 104 shows requires_action != pending.",
+    "",
+    "Next checks:",
+    "- Inspect status normalization around queued charges.",
+    "- Re-run npm test -- tests/checkout/charge.test.ts.",
+    "- Verify webhook persistence still keeps raw gateway status internally."
+  ].join("\n");
+  navigator.clipboard?.writeText(summary);
+  const button = document.getElementById("copy-summary");
+  button.textContent = "[ COPIED ]";
+  setTimeout(() => { button.textContent = "[ COPY SUMMARY ]"; }, 1200);
+}
+
+document.addEventListener("click", event => {
+  const jump = event.target.closest("[data-jump]");
+  if (jump) jumpToLine(Number(jump.dataset.jump));
+});
+document.getElementById("copy-summary").addEventListener("click", copySummary);
+document.getElementById("filter-errors").addEventListener("click", () => { filterMode = "errors"; renderRaw(); });
+document.getElementById("show-all").addEventListener("click", () => { filterMode = "all"; renderRaw(); });
+grep.addEventListener("input", renderRaw);
+
+renderPhases();
+renderRaw();
+</script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 name: schema-markup-generator
-description: 'Generate JSON-LD structured data for FAQ, HowTo, Article, Product, LocalBusiness rich results. Schema标记/结构化数据'
-version: "9.9.5"
+description: 'Use when the user asks to "generate schema"; creates JSON-LD for FAQ, HowTo, Article, Product, and LocalBusiness rich-result candidates. Schema标记/结构化数据'
+version: "9.9.9"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -10,7 +10,7 @@ argument-hint: "<page URL or content type>"
 allowed-tools: WebFetch
 metadata:
   author: aaron-he-zhu
-  version: "9.9.5"
+  version: "9.9.9"
   geo-relevance: "medium"
   tags:
     - seo
@@ -73,8 +73,8 @@ Review and improve this schema markup: [existing schema]
 
 - **Reads**: the brief, target keywords, entity inputs, quality constraints, and prior decisions from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing content, metadata, or schema deliverable plus a reusable summary that can be stored under `memory/content/`.
-- **Promotes**: approved angles, messaging choices, missing evidence, and publish blockers to `memory/hot-cache.md`, `memory/decisions.md`, and `memory/open-loops.md`.
-- **Next handoff**: use the `Next Best Skill` below when the asset is ready for review or deployment.
+- **Promotes**: approved angles, messaging choices, missing evidence, and publish blockers to `memory/hot-cache.md` and `memory/open-loops.md`; propose durable decisions as pending-decision items.
+- **Primary next skill**: use the `Next Best Skill` below when the asset is ready for review or deployment.
 
 ### Handoff Summary
 
@@ -82,7 +82,7 @@ Review and improve this schema markup: [existing schema]
 
 ## Data Sources
 
-Optional web crawler integration can extract page content and existing schema automatically; otherwise ask for page content, type, and schema data. See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md).
+Optional web crawler integration can extract page content and existing schema after [SECURITY.md §Scraping Boundaries](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/SECURITY.md); otherwise ask for page content, type, and schema data. See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md).
 
 ## Instructions
 

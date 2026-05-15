@@ -1,7 +1,7 @@
 ---
 name: serp-analysis
-description: 'Analyze SERPs: ranking factors, features, intent patterns, AI overviews, featured snippets. SERP分析/搜索结果'
-version: "9.9.5"
+description: 'Use when the user asks to "analyze SERPs"; reviews ranking factors, features, intent, AI Overviews, and snippets. SERP分析/搜索结果'
+version: "9.9.9"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 allowed-tools: WebFetch
@@ -10,7 +10,7 @@ when_to_use: "Use when analyzing search engine results pages, SERP features, fea
 argument-hint: "<keyword or query>"
 metadata:
   author: aaron-he-zhu
-  version: "9.9.5"
+  version: "9.9.9"
   geo-relevance: "high"
   tags:
     - seo
@@ -74,7 +74,7 @@ What does it take to rank for [keyword]?
 
 - **Reads**: goals, market inputs, tool data, and prior strategy from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing analysis and reusable summary.
-- **Promotes**: durable keyword priorities, competitor facts, and strategy decisions to `memory/hot-cache.md`, `memory/decisions.md`, and `memory/research/`.
+- **Promotes**: durable keyword priorities, competitor facts, and pending strategy decisions to `memory/hot-cache.md`, `memory/open-loops.md`, and `memory/research/`.
 - **Primary next skill**: [seo-content-writer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/seo-content-writer/SKILL.md) when the user is ready to build against the observed SERP.
 
 ### Handoff Summary
@@ -83,7 +83,7 @@ What does it take to rank for [keyword]?
 
 ## Data Sources
 
-Optional integrations: ~~SEO tool, ~~search console, ~~AI monitor. Without tools, ask for target keywords, SERP screenshots or top-10 URLs, and search context. See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md).
+Optional integrations: ~~SEO tool, ~~search console, ~~AI monitor. Before fetching third-party SERP pages, apply [SECURITY.md §Scraping Boundaries](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/SECURITY.md). Without tools, ask for target keywords, SERP screenshots or top-10 URLs, and search context. See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md).
 
 ## Instructions
 

@@ -25,6 +25,16 @@ bun run dev
 bun run deploy
 ```
 
+## Secure Installation
+
+Scaffolding tools like `bunx create-cloudflare` download and execute remote code. Before running, follow supply chain security best practices:
+
+- **Block post-install scripts** — Bun disables them by default; allow specific packages via `trustedDependencies` in `package.json`
+- **Cooldown period** — Configure `minimumReleaseAge` in `bunfig.toml` to wait 7 days for new versions
+- **Audit before installing** — Run `socket package score npm <pkg>` or use `socket npm install <pkg>` to check packages
+
+Load the `dependency-upgrade` skill for full security configuration including Socket CLI integration, cooldown setup, lockfile validation, and CI enforcement.
+
 ## Project Setup
 
 ### package.json

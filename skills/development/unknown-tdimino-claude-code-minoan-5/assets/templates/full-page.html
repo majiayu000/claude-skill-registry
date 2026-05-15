@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conductor Motion — Full Page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cm-bg: #0B0F1A;
+  --cm-surface: #141824;
+  --cm-elevated: #1C2133;
+  --cm-card: #242A3D;
+  --cm-brand: #4F7BF7;
+  --cm-brand-40: rgba(79, 123, 247, 0.4);
+  --cm-brand-20: rgba(79, 123, 247, 0.2);
+  --cm-text: #E8ECF4;
+  --cm-text-70: rgba(232, 236, 244, 0.7);
+  --cm-text-40: rgba(232, 236, 244, 0.4);
+  --cm-text-20: rgba(232, 236, 244, 0.2);
+  --cm-success: #34D399;
+  --cm-border: rgba(232, 236, 244, 0.15);
+  --cm-border-subtle: rgba(232, 236, 244, 0.08);
+  --cm-ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --cm-stagger: 200ms;
+  --cm-hero-transition: 1300ms;
+  --cm-font: 'Geist', system-ui, sans-serif;
+  --cm-font-mono: 'Geist Mono', 'SF Mono', monospace;
+  --cm-hero-size: clamp(2rem, 4vw + 1rem, 4.5rem);
+  --cm-body-size: clamp(0.875rem, 0.5vw + 0.75rem, 1rem);
+  --cm-mono-size: clamp(0.75rem, 0.4vw + 0.65rem, 0.875rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cm-bg);
+  color: var(--cm-text);
+  font-family: var(--cm-font);
+  font-size: var(--cm-body-size);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Navbar --- */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1rem 2rem;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 300ms ease, border-color 300ms ease;
+}
+
+.navbar.is-scrolled {
+  background: rgba(11, 15, 26, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom-color: var(--cm-border-subtle);
+}
+
+.navbar-inner {
+  max-width: 64rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.navbar-links a {
+  color: var(--cm-text-70);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 200ms ease;
+}
+
+.navbar-links a:hover { color: var(--cm-text); }
+
+/* --- Hero --- */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+}
+
+.hero-badge, .hero-heading, .hero-subtitle, .hero-demo {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--cm-hero-transition) var(--cm-ease-out-cubic),
+              transform var(--cm-hero-transition) var(--cm-ease-out-cubic);
+}
+
+html.is-loaded .hero-badge    { opacity: 1; transform: none; transition-delay: calc(0 * var(--cm-stagger)); }
+html.is-loaded .hero-heading  { opacity: 1; transform: none; transition-delay: calc(1 * var(--cm-stagger)); }
+html.is-loaded .hero-subtitle { opacity: 1; transform: none; transition-delay: calc(2 * var(--cm-stagger)); }
+html.is-loaded .hero-demo     { opacity: 1; transform: none; transition-delay: calc(3 * var(--cm-stagger)); }
+
+.hero-badge {
+  display: inline-flex;
+  padding: 0.35rem 1rem;
+  border: 1px solid var(--cm-border);
+  border-radius: 100px;
+  font-family: var(--cm-font-mono);
+  font-size: var(--cm-mono-size);
+  color: var(--cm-text-70);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero-heading {
+  margin-top: 1.5rem;
+  font-size: var(--cm-hero-size);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 48rem;
+  white-space: nowrap;
+}
+
+.rotator-type__text { color: var(--cm-brand); }
+.rotator-type__cursor {
+  color: var(--cm-text-40);
+  font-weight: 300;
+  animation: blink 530ms step-end infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.hero-subtitle {
+  margin-top: 1.5rem;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.25rem);
+  color: var(--cm-text-70);
+  max-width: 36rem;
+  line-height: 1.6;
+}
+
+.hero-demo {
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 36rem;
+}
+
+/* --- Progress panel (embedded in hero) --- */
+
+.progress-panel {
+  background: var(--cm-surface);
+  border: 1px solid var(--cm-border-subtle);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  font-family: var(--cm-font-mono);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--cm-mono-size);
+  color: var(--cm-text-40);
+  margin-bottom: 1rem;
+}
+
+.progress-bar-track {
+  height: 6px;
+  background: var(--cm-border);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--cm-brand), var(--cm-success));
+  border-radius: 3px;
+  transition: width 200ms var(--cm-ease-out-cubic);
+}
+
+.progress-status {
+  font-size: var(--cm-mono-size);
+  color: var(--cm-brand);
+}
+
+.progress-cursor {
+  color: var(--cm-text-40);
+  animation: blink 530ms step-end infinite;
+}
+
+/* --- Feature section --- */
+
+.section {
+  padding: 6rem 2rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.section-heading {
+  font-size: clamp(1.5rem, 2vw + 0.5rem, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-sub {
+  color: var(--cm-text-70);
+  text-align: center;
+  max-width: 32rem;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: var(--cm-surface);
+  border: 1px solid var(--cm-border-subtle);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms var(--cm-ease-out-cubic), transform 600ms var(--cm-ease-out-cubic);
+}
+
+.feature-card.is-visible { opacity: 1; transform: none; }
+
+.feature-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  color: var(--cm-text-70);
+  line-height: 1.6;
+}
+
+/* --- File review section --- */
+
+.review-panel {
+  background: var(--cm-surface);
+  border: 1px solid var(--cm-border-subtle);
+  border-radius: 0.75rem;
+  max-width: 36rem;
+  margin: 0 auto;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms var(--cm-ease-out-cubic), transform 600ms var(--cm-ease-out-cubic);
+}
+
+.review-panel.is-visible { opacity: 1; transform: none; }
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--cm-border-subtle);
+  font-family: var(--cm-font-mono);
+  font-size: var(--cm-mono-size);
+  color: var(--cm-text-40);
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+.file-icon { color: var(--cm-text-40); display: flex; }
+
+.file-name { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.review-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cm-text-40);
+  flex-shrink: 0;
+}
+
+.review-dot.is-reviewed { background: var(--cm-success); }
+.review-dot.is-processing { background: var(--cm-brand); animation: pulse 1.2s ease-in-out infinite; }
+
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.file-status-label {
+  font-family: var(--cm-font-mono);
+  font-size: var(--cm-mono-size);
+  color: var(--cm-text-40);
+  min-width: 5rem;
+}
+
+/* --- CTA --- */
+
+.cta-section {
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.cta-btn {
+  display: inline-flex;
+  padding: 0.875rem 2.5rem;
+  background: var(--cm-brand);
+  color: var(--cm-bg);
+  border: none;
+  border-radius: 0.5rem;
+  font-family: var(--cm-font);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 200ms ease;
+}
+
+.cta-btn:hover { background: #3D6BE5; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-badge, .hero-heading, .hero-subtitle, .hero-demo,
+  .feature-card, .review-panel {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .rotator-type__cursor, .progress-cursor { animation: none; }
+  .review-dot.is-processing { animation: none; }
+  .progress-bar-fill { transition: none; }
+  .navbar { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <span class="navbar-logo">ConductorAI</span>
+    <ul class="navbar-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#review">Review</a></li>
+      <li><a href="#cta">Get Started</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <span class="hero-badge">AI-Powered Review</span>
+  <h1 class="hero-heading">
+    <span class="rotator-base">Accelerating</span> <span class="rotator-type__text"></span><span class="rotator-type__cursor" aria-hidden="true">|</span>
+  </h1>
+  <p class="hero-subtitle">Distill complex policies and expertise into agentic decision trees to review and approve documents at mission speed.</p>
+  <div class="hero-demo">
+    <div class="progress-panel">
+      <div class="progress-header">
+        <span>search initialization</span>
+        <span class="progress-pct">0%</span>
+      </div>
+      <div class="progress-bar-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar-fill"></div></div>
+      <div class="progress-status"><span class="progress-typed"></span><span class="progress-cursor" aria-hidden="true">|</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <h2 class="section-heading">Built for mission-critical review</h2>
+  <p class="section-sub">Encode expertise into repeatable workflows that scale with your organization.</p>
+  <div class="feature-grid">
+    <div class="feature-card scroll-reveal">
+      <h3>Agentic Decision Trees</h3>
+      <p>Capture expert knowledge as structured decision logic that applies consistently to every document.</p>
+    </div>
+    <div class="feature-card scroll-reveal">
+      <h3>Compliance Automation</h3>
+      <p>Map regulatory requirements directly to review criteria. Stay audit-ready without manual tracking.</p>
+    </div>
+    <div class="feature-card scroll-reveal">
+      <h3>Real-Time Analytics</h3>
+      <p>Monitor review throughput, accuracy rates, and bottlenecks from a unified dashboard.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="review">
+  <h2 class="section-heading">Watch it work</h2>
+  <p class="section-sub">Documents flow through review stages automatically — from intake to completion.</p>
+  <div class="review-panel scroll-reveal">
+    <div class="review-header">
+      <span>Document Review</span>
+      <span class="review-count">0 / 4</span>
+    </div>
+    <div class="file-list"></div>
+  </div>
+</section>
+
+<section class="cta-section" id="cta">
+  <h2 class="section-heading">Ready to accelerate?</h2>
+  <p class="section-sub">Start reviewing documents at mission speed today.</p>
+  <a href="#" class="cta-btn">Request Demo</a>
+</section>
+
+<script>
+(() => {
+  if (document.body.dataset.initDone === 'true') return;
+  document.body.dataset.initDone = 'true';
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Hero cascade
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('is-loaded');
+    });
+  });
+
+  // Navbar
+  const navbar = document.querySelector('.navbar');
+  let navTicking = false;
+  window.addEventListener('scroll', () => {
+    if (navTicking) return;
+    navTicking = true;
+    requestAnimationFrame(() => {
+      navbar.classList.toggle('is-scrolled', window.scrollY > 40);
+      navTicking = false;
+    });
+  }, { passive: true });
+
+  // --- Typewriter rotator ---
+  const WORDS = ['complex approvals', 'investigations', 'e-discovery', 'FOIA review'];
+  const textEl = document.querySelector('.rotator-type__text');
+  const TYPE_MIN = 35, TYPE_MAX = 65, DEL_MIN = 18, DEL_MAX = 35, HOLD = 1100, BETWEEN = 180;
+
+  function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+
+  if (reducedMotion) {
+    textEl.textContent = WORDS[0];
+  } else {
+    let wIdx = 0, cIdx = 0, deleting = false, tid = null;
+    function rotatorTick() {
+      const word = WORDS[wIdx];
+      if (!deleting) {
+        cIdx++;
+        textEl.textContent = word.slice(0, cIdx);
+        tid = cIdx < word.length
+          ? setTimeout(rotatorTick, rand(TYPE_MIN, TYPE_MAX))
+          : setTimeout(() => { deleting = true; rotatorTick(); }, HOLD);
+      } else {
+        cIdx--;
+        textEl.textContent = word.slice(0, Math.max(0, cIdx));
+        if (cIdx > 0) {
+          tid = setTimeout(rotatorTick, rand(DEL_MIN, DEL_MAX));
+        } else {
+          deleting = false;
+          wIdx = (wIdx + 1) % WORDS.length;
+          tid = setTimeout(rotatorTick, BETWEEN);
+        }
+      }
+    }
+    rotatorTick();
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) { clearTimeout(tid); }
+      else { rotatorTick(); }
+    });
+  }
+
+  // --- Progress bar simulation ---
+  const progressFill = document.querySelector('.progress-bar-fill');
+  const progressPct = document.querySelector('.progress-pct');
+  const progressTyped = document.querySelector('.progress-typed');
+  const STATUS = ['scanning repository...', 'parsing documents...', 'matching criteria...', 'ranking results...'];
+
+  function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+  if (reducedMotion) {
+    progressFill.style.width = '100%';
+    progressPct.textContent = '100%';
+    progressTyped.textContent = STATUS[STATUS.length - 1];
+  } else {
+    (async () => {
+      await wait(1200);
+      for (let i = 0; i < STATUS.length; i++) {
+        const item = STATUS[i];
+        for (let c = 1; c <= item.length; c++) {
+          progressTyped.textContent = item.slice(0, c);
+          await wait(40 + Math.random() * 15);
+        }
+        const pct = Math.min(100, ((i + 1) / STATUS.length) * 100);
+        progressFill.style.width = pct + '%';
+        progressPct.textContent = Math.round(pct) + '%';
+        await wait(1800);
+        if (i < STATUS.length - 1) {
+          for (let c = item.length - 1; c >= 0; c--) {
+            progressTyped.textContent = item.slice(0, c);
+            await wait(22);
+          }
+          await wait(150);
+        }
+      }
+    })();
+  }
+
+  // --- Scroll reveals ---
+  if (reducedMotion) {
+    document.querySelectorAll('.scroll-reveal').forEach(el => el.classList.add('is-visible'));
+  } else {
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const grid = entry.target.closest('.feature-grid');
+        if (grid) {
+          const siblings = Array.from(grid.querySelectorAll('.scroll-reveal'));
+          entry.target.style.transitionDelay = `${siblings.indexOf(entry.target) * 150}ms`;
+        }
+        entry.target.classList.add('is-visible');
+        revealObs.unobserve(entry.target);
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.scroll-reveal').forEach(el => revealObs.observe(el));
+  }
+
+  // --- File review state machine ---
+  const FILES = ['Report_Q4.xlsx', 'Contract_Draft.pdf', 'Audit_Log.csv', 'Compliance.docx'];
+  const fileList = document.querySelector('.file-list');
+  const countEl = document.querySelector('.review-count');
+  const svgTemplate = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svgTemplate.setAttribute('width', '12');
+  svgTemplate.setAttribute('height', '15');
+  svgTemplate.setAttribute('viewBox', '0 0 12 15');
+  svgTemplate.setAttribute('fill', 'none');
+  const svgPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  svgPath.setAttribute('opacity', '0.4');
+  svgPath.setAttribute('d', 'M3.5 5.5H8.5M3.5 7.5H8.5M3.5 9.5H8.5M0.5 0.5H8.5L11.5 3.5V14.5H0.5V0.5Z');
+  svgPath.setAttribute('stroke', 'currentColor');
+  svgTemplate.appendChild(svgPath);
+
+  function makeFileRow(name, state) {
+    const row = document.createElement('div');
+    row.className = 'file-item';
+
+    const icon = document.createElement('span');
+    icon.className = 'file-icon';
+    icon.appendChild(svgTemplate.cloneNode(true));
+
+    const nameEl = document.createElement('span');
+    nameEl.className = 'file-name';
+    nameEl.textContent = name;
+
+    const dot = document.createElement('div');
+    dot.className = 'review-dot';
+    if (state === 'reviewed') dot.classList.add('is-reviewed');
+    else if (state === 'processing') dot.classList.add('is-processing');
+
+    const label = document.createElement('span');
+    label.className = 'file-status-label';
+    label.textContent = state === 'reviewed' ? 'Reviewed' : state === 'processing' ? 'Reviewing' : 'Unreviewed';
+
+    row.appendChild(icon);
+    row.appendChild(nameEl);
+    row.appendChild(dot);
+    row.appendChild(label);
+    return row;
+  }
+
+  if (!fileList) return;
+
+  const reviewPanel = document.querySelector('.review-panel');
+  const reviewObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      reviewObs.unobserve(entry.target);
+      startReviewAnimation();
+    });
+  }, { threshold: 0.3 });
+  reviewObs.observe(reviewPanel);
+
+  function startReviewAnimation() {
+    if (reducedMotion) {
+      FILES.forEach(f => fileList.appendChild(makeFileRow(f, 'reviewed')));
+      countEl.textContent = `${FILES.length} / ${FILES.length}`;
+      return;
+    }
+
+    const rows = FILES.map(f => ({ name: f, el: null }));
+    rows.forEach((r, i) => {
+      const row = makeFileRow(r.name, 'unreviewed');
+      row.style.opacity = '0';
+      row.style.transform = 'translateY(5px)';
+      fileList.appendChild(row);
+      r.el = row;
+      setTimeout(() => {
+        row.style.transition = 'opacity 300ms ease, transform 300ms ease';
+        row.style.opacity = '1';
+        row.style.transform = 'none';
+      }, i * 200);
+    });
+
+    let reviewed = 0;
+    rows.forEach((r, i) => {
+      const t = 1200 + i * 800;
+      setTimeout(() => {
+        const newRow = makeFileRow(r.name, 'processing');
+        fileList.replaceChild(newRow, r.el);
+        r.el = newRow;
+      }, t);
+      setTimeout(() => {
+        const newRow = makeFileRow(r.name, 'reviewed');
+        fileList.replaceChild(newRow, r.el);
+        r.el = newRow;
+        reviewed++;
+        countEl.textContent = `${reviewed} / ${FILES.length}`;
+      }, t + 2000);
+    });
+  }
+})();
+</script>
+</body>
+</html>

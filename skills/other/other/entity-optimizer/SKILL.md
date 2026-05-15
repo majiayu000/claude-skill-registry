@@ -1,7 +1,7 @@
 ---
 name: entity-optimizer
-description: 'Build entity presence in Knowledge Graph, Wikidata, AI systems for brand recognition and citations. 实体优化/知识图谱'
-version: "9.9.5"
+description: 'Use when the user asks to "optimize entity presence"; builds Knowledge Graph, Wikidata, sameAs, and AI recognition signals. 实体优化/知识图谱'
+version: "9.9.9"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -9,7 +9,7 @@ when_to_use: "Use when optimizing entity presence for Knowledge Graph, Wikidata,
 argument-hint: "<entity name or brand>"
 metadata:
   author: aaron-he-zhu
-  version: "9.9.5"
+  version: "9.9.9"
   geo-relevance: "high"
   tags:
     - seo
@@ -124,7 +124,7 @@ This skill is the sole writer of canonical entity profiles at `memory/entities/<
 
 **Profile schema**: the frontmatter of every canonical entity profile follows the authoritative contract in [references/entity-geo-handoff-schema.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/entity-geo-handoff-schema.md). That schema defines which fields downstream skills (`geo-content-optimizer`, `schema-markup-generator`, `meta-tags-optimizer`, `ai-overview-recovery`) depend on. Do not omit required fields — the consumers will degrade gracefully to `DONE_WITH_CONCERNS` and surface an `open_loop` pointing back here.
 
-- **Next handoff**: use the `Next Best Skill` below once the entity truth is clear.
+- **Primary next skill**: use the `Next Best Skill` below once the entity truth is clear.
 
 ### Handoff Summary
 
@@ -204,6 +204,8 @@ Produce an Entity Optimization Report with: overview (entity/type/date), signal 
 ### Save Results
 
 Ask "Save these results for future sessions?" — if yes, write the canonical entity profile to `memory/entities/<entity-slug>.md` using the Profile schema above. If the entity is project-critical, also add a 1-3 line pointer to `memory/hot-cache.md`; do not save canonical profiles to the generic `memory/YYYY-MM-DD-<topic>.md` pattern.
+
+Before writing any canonical profile, check `memory/privacy/tombstones.md` for a matching salted fingerprint or redacted label. If `reingest_blocked: true`, do not recreate the profile; return `NEEDS_INPUT` and ask the user to resolve the privacy block.
 
 ## Example
 

@@ -79,6 +79,16 @@ for await (const message of response) {
 
 ---
 
+## Secure Installation
+
+Agent SDK packages provide system-level capabilities — verify before installing to prevent unauthorized agent access. Follow supply chain security best practices:
+
+- **Block post-install scripts** — `npm config set ignore-scripts true` (or Bun: disabled by default)
+- **Cooldown period** — Wait 7 days for new package versions to be vetted by the community
+- **Audit before installing** — Run `socket package score npm <pkg>` or use `socket npm install <pkg>` to check packages
+
+Load the `dependency-upgrade` skill for full security configuration including Socket CLI integration, cooldown setup, lockfile validation, and CI enforcement.
+
 ## The Complete Claude Agent SDK Reference
 
 ## Table of Contents

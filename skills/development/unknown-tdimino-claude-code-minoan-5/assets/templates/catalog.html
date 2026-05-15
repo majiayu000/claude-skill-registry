@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conductor Motion — Effects Catalog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cm-bg: #0B0F1A;
+  --cm-surface: #141824;
+  --cm-elevated: #1C2133;
+  --cm-card: #242A3D;
+  --cm-brand: #4F7BF7;
+  --cm-brand-40: rgba(79, 123, 247, 0.4);
+  --cm-brand-20: rgba(79, 123, 247, 0.2);
+  --cm-text: #E8ECF4;
+  --cm-text-70: rgba(232, 236, 244, 0.7);
+  --cm-text-40: rgba(232, 236, 244, 0.4);
+  --cm-text-20: rgba(232, 236, 244, 0.2);
+  --cm-success: #34D399;
+  --cm-border: rgba(232, 236, 244, 0.15);
+  --cm-border-subtle: rgba(232, 236, 244, 0.08);
+  --cm-ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --cm-stagger: 200ms;
+  --cm-hero-transition: 1300ms;
+  --cm-font: 'Geist', system-ui, sans-serif;
+  --cm-font-mono: 'Geist Mono', 'SF Mono', monospace;
+  --cm-hero-size: clamp(2rem, 4vw + 1rem, 4.5rem);
+  --cm-body-size: clamp(0.875rem, 0.5vw + 0.75rem, 1rem);
+  --cm-mono-size: clamp(0.75rem, 0.4vw + 0.65rem, 0.875rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cm-bg);
+  color: var(--cm-text);
+  font-family: var(--cm-font);
+  font-size: var(--cm-body-size);
+  -webkit-font-smoothing: antialiased;
+}
+
+.catalog {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+}
+
+.catalog-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.catalog-header h1 {
+  font-size: var(--cm-hero-size);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.catalog-header p {
+  color: var(--cm-text-70);
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.25rem);
+  max-width: 32rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.demo-section {
+  margin-bottom: 4rem;
+}
+
+.demo-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.demo-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--cm-brand-20);
+  color: var(--cm-brand);
+  font-family: var(--cm-font-mono);
+  font-size: var(--cm-mono-size);
+  font-weight: 600;
+}
+
+.demo-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.demo-desc {
+  color: var(--cm-text-70);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.demo-box {
+  background: var(--cm-surface);
+  border: 1px solid var(--cm-border-subtle);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.demo-box-inner {
+  padding: 2rem;
+}
+
+.demo-box-mono {
+  padding: 1.5rem;
+  font-family: var(--cm-font-mono);
+}
+
+/* --- 1. Typewriter --- */
+
+.tw-heading {
+  font-size: clamp(1.5rem, 3vw + 0.5rem, 2.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.tw-text { color: var(--cm-brand); }
+.tw-cursor {
+  color: var(--cm-text-40);
+  font-weight: 300;
+  animation: blink 530ms step-end infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+/* --- 2. Progress --- */
+
+.prog-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--cm-mono-size);
+  color: var(--cm-text-40);
+  margin-bottom: 0.75rem;
+}
+
+.prog-track {
+  height: 6px;
+  background: var(--cm-border);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.prog-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--cm-brand), var(--cm-success));
+  border-radius: 3px;
+  transition: width 200ms var(--cm-ease-out-cubic);
+}
+
+.prog-status {
+  font-size: var(--cm-mono-size);
+  color: var(--cm-brand);
+}
+
+/* --- 3. File Review --- */
+
+.fr-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--cm-border-subtle);
+  font-family: var(--cm-font-mono);
+  font-size: var(--cm-mono-size);
+  color: var(--cm-text-40);
+}
+
+.fr-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1.25rem;
+}
+
+.fr-icon { color: var(--cm-text-40); display: flex; }
+.fr-name { flex: 1; }
+
+.fr-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cm-text-40);
+}
+
+.fr-dot.reviewed { background: var(--cm-success); }
+.fr-dot.processing { background: var(--cm-brand); animation: pulse 1.2s ease-in-out infinite; }
+
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.fr-label {
+  font-family: var(--cm-font-mono);
+  font-size: var(--cm-mono-size);
+  color: var(--cm-text-40);
+  min-width: 5rem;
+}
+
+/* --- 4. Stagger Reveal --- */
+
+.stagger-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.stagger-card {
+  background: var(--cm-elevated);
+  border: 1px solid var(--cm-border-subtle);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 600ms var(--cm-ease-out-cubic), transform 600ms var(--cm-ease-out-cubic);
+}
+
+.stagger-card.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.stagger-card .num {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cm-brand);
+  font-family: var(--cm-font-mono);
+}
+
+.stagger-card .label {
+  font-size: var(--cm-mono-size);
+  color: var(--cm-text-40);
+  margin-top: 0.25rem;
+}
+
+/* --- 5. Terminal --- */
+
+.term-row {
+  display: flex;
+  align-items: baseline;
+  font-size: var(--cm-mono-size);
+  padding: 0.25rem 0;
+}
+
+.term-ts { color: var(--cm-text-40); margin-right: 0.75rem; }
+.term-dots { flex: 1; color: var(--cm-text-20); overflow: hidden; white-space: nowrap; }
+.term-label { color: var(--cm-text-70); text-transform: uppercase; letter-spacing: 0.04em; margin-left: 0.75rem; }
+
+.term-status-line {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--cm-border-subtle);
+  font-size: var(--cm-mono-size);
+  color: var(--cm-brand);
+}
+
+/* --- 6. Lottie slots --- */
+
+.lottie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.lottie-demo-slot {
+  aspect-ratio: 4/3;
+  background: var(--cm-elevated);
+  border: 1px dashed var(--cm-border);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--cm-text-40);
+  font-family: var(--cm-font-mono);
+  font-size: var(--cm-mono-size);
+}
+
+.lottie-demo-slot svg {
+  width: 2rem;
+  height: 2rem;
+  color: var(--cm-brand-40);
+}
+
+@media (max-width: 640px) {
+  .stagger-grid, .lottie-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tw-cursor { animation: none; }
+  .fr-dot.processing { animation: none; }
+  .prog-fill { transition: none; }
+  .stagger-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="catalog">
+
+  <div class="catalog-header">
+    <h1>Effects Catalog</h1>
+    <p>Every animation pattern in the conductor-motion system, demonstrated in isolation.</p>
+  </div>
+
+  <!-- 1. Typewriter -->
+  <div class="demo-section">
+    <div class="demo-label">
+      <span class="demo-number">1</span>
+      <span class="demo-title">Typewriter / Rotator</span>
+    </div>
+    <p class="demo-desc">Hero text cycles through words with character-by-character typing and deletion. Per-character random delay creates a human feel.</p>
+    <div class="demo-box">
+      <div class="demo-box-inner">
+        <div class="tw-heading">
+          <span>Accelerating </span><span class="tw-text" id="tw-text"></span><span class="tw-cursor" aria-hidden="true">|</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Progress Simulation -->
+  <div class="demo-section">
+    <div class="demo-label">
+      <span class="demo-number">2</span>
+      <span class="demo-title">Progress Simulation</span>
+    </div>
+    <p class="demo-desc">Progress bar fills with easeOutCubic timing while status text types through each phase. Simulates a live process running.</p>
+    <div class="demo-box">
+      <div class="demo-box-mono">
+        <div class="prog-header">
+          <span>search initialization</span>
+          <span id="prog-pct">0%</span>
+        </div>
+        <div class="prog-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="prog-fill" id="prog-fill"></div></div>
+        <div class="prog-status"><span id="prog-typed"></span><span class="tw-cursor" aria-hidden="true">|</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. File Review -->
+  <div class="demo-section">
+    <div class="demo-label">
+      <span class="demo-number">3</span>
+      <span class="demo-title">File Review State Machine</span>
+    </div>
+    <p class="demo-desc">Documents transition through unreviewed → processing → reviewed states with staggered timing.</p>
+    <div class="demo-box">
+      <div class="fr-header">
+        <span>Document Review</span>
+        <span id="fr-count">0 / 3</span>
+      </div>
+      <div id="fr-list"></div>
+    </div>
+  </div>
+
+  <!-- 4. Stagger Reveal -->
+  <div class="demo-section">
+    <div class="demo-label">
+      <span class="demo-number">4</span>
+      <span class="demo-title">Stagger Reveal</span>
+    </div>
+    <p class="demo-desc">Cards fade up with sequential delay when they enter the viewport. Uses IntersectionObserver for scroll triggering.</p>
+    <div class="demo-box">
+      <div class="stagger-grid" id="stagger-grid">
+        <div class="stagger-card scroll-reveal"><div class="num">1,324</div><div class="label">Documents</div></div>
+        <div class="stagger-card scroll-reveal"><div class="num">98%</div><div class="label">Accuracy</div></div>
+        <div class="stagger-card scroll-reveal"><div class="num">12x</div><div class="label">Faster</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Terminal Display -->
+  <div class="demo-section">
+    <div class="demo-label">
+      <span class="demo-number">5</span>
+      <span class="demo-title">Terminal Display</span>
+    </div>
+    <p class="demo-desc">Timestamped status rows with dot-leader fills and a typing status line. Simulates a command-line interface running a search.</p>
+    <div class="demo-box">
+      <div class="demo-box-mono">
+        <div id="term-rows"></div>
+        <div class="term-status-line"><span id="term-typed"></span><span class="tw-cursor" aria-hidden="true">|</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Lottie Slots -->
+  <div class="demo-section">
+    <div class="demo-label">
+      <span class="demo-number">6</span>
+      <span class="demo-title">Lottie Orchestration</span>
+    </div>
+    <p class="demo-desc">Placeholder slots for Lottie JSON animations. Supply your own animation files — viewport-triggered playback and scroll scrub are built in.</p>
+    <div class="demo-box">
+      <div class="lottie-grid">
+        <div class="lottie-demo-slot" data-lottie-slot="slot-1">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5"/><path d="M20 18l12 6-12 6V18z" fill="currentColor" opacity="0.5"/></svg>
+          <span>slot-1.json</span>
+        </div>
+        <div class="lottie-demo-slot" data-lottie-slot="slot-2">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5"/><path d="M20 18l12 6-12 6V18z" fill="currentColor" opacity="0.5"/></svg>
+          <span>slot-2.json</span>
+        </div>
+        <div class="lottie-demo-slot" data-lottie-slot="slot-3">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5"/><path d="M20 18l12 6-12 6V18z" fill="currentColor" opacity="0.5"/></svg>
+          <span>slot-3.json</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(() => {
+  if (document.body.dataset.initDone === 'true') return;
+  document.body.dataset.initDone = 'true';
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
+  function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+
+  let paused = false;
+  document.addEventListener('visibilitychange', () => {
+    paused = document.hidden;
+  });
+
+  // 1. Typewriter
+  const twEl = document.getElementById('tw-text');
+  const TW_WORDS = ['complex approvals', 'investigations', 'e-discovery', 'FOIA review'];
+  if (reducedMotion) {
+    twEl.textContent = TW_WORDS[0];
+  } else {
+    let wi = 0, ci = 0, del = false, ttid;
+    function twTick() {
+      const w = TW_WORDS[wi];
+      if (!del) {
+        ci++;
+        twEl.textContent = w.slice(0, ci);
+        ttid = ci < w.length ? setTimeout(twTick, rand(35, 65)) : setTimeout(() => { del = true; twTick(); }, 1100);
+      } else {
+        ci--;
+        twEl.textContent = w.slice(0, Math.max(0, ci));
+        if (ci > 0) { ttid = setTimeout(twTick, rand(18, 35)); }
+        else { del = false; wi = (wi + 1) % TW_WORDS.length; ttid = setTimeout(twTick, 180); }
+      }
+    }
+    twTick();
+    document.addEventListener('visibilitychange', () => { if (document.hidden) clearTimeout(ttid); else twTick(); });
+  }
+
+  // 2. Progress
+  const progFill = document.getElementById('prog-fill');
+  const progPct = document.getElementById('prog-pct');
+  const progTyped = document.getElementById('prog-typed');
+  const PROG_ITEMS = ['scanning repository...', 'parsing documents...', 'matching criteria...', 'ranking results...'];
+  if (reducedMotion) {
+    progFill.style.width = '100%';
+    progPct.textContent = '100%';
+    progTyped.textContent = PROG_ITEMS[PROG_ITEMS.length - 1];
+  } else {
+    (async () => {
+      await wait(800);
+      for (let i = 0; i < PROG_ITEMS.length; i++) {
+        for (let c = 1; c <= PROG_ITEMS[i].length; c++) {
+          progTyped.textContent = PROG_ITEMS[i].slice(0, c);
+          await wait(40 + Math.random() * 15);
+        }
+        const pct = Math.min(100, ((i + 1) / PROG_ITEMS.length) * 100);
+        progFill.style.width = pct + '%';
+        progPct.textContent = Math.round(pct) + '%';
+        await wait(1800);
+        if (i < PROG_ITEMS.length - 1) {
+          for (let c = PROG_ITEMS[i].length - 1; c >= 0; c--) {
+            progTyped.textContent = PROG_ITEMS[i].slice(0, c);
+            await wait(22);
+          }
+          await wait(150);
+        }
+      }
+    })();
+  }
+
+  // 3. File Review
+  const frList = document.getElementById('fr-list');
+  const frCount = document.getElementById('fr-count');
+  const FR_FILES = ['Report_Q4.xlsx', 'Contract.pdf', 'Audit_Log.csv'];
+  const frSvgTemplate = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  frSvgTemplate.setAttribute('width', '12');
+  frSvgTemplate.setAttribute('height', '15');
+  frSvgTemplate.setAttribute('viewBox', '0 0 12 15');
+  frSvgTemplate.setAttribute('fill', 'none');
+  const frSvgPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  frSvgPath.setAttribute('opacity', '0.4');
+  frSvgPath.setAttribute('d', 'M3.5 5.5H8.5M3.5 7.5H8.5M3.5 9.5H8.5M0.5 0.5H8.5L11.5 3.5V14.5H0.5V0.5Z');
+  frSvgPath.setAttribute('stroke', 'currentColor');
+  frSvgTemplate.appendChild(frSvgPath);
+
+  function frRow(name, state) {
+    const d = document.createElement('div');
+    d.className = 'fr-item';
+
+    const icon = document.createElement('span');
+    icon.className = 'fr-icon';
+    icon.appendChild(frSvgTemplate.cloneNode(true));
+
+    const nameEl = document.createElement('span');
+    nameEl.className = 'fr-name';
+    nameEl.textContent = name;
+
+    const dot = document.createElement('div');
+    dot.className = 'fr-dot';
+    if (state === 'reviewed') dot.classList.add('reviewed');
+    else if (state === 'processing') dot.classList.add('processing');
+
+    const label = document.createElement('span');
+    label.className = 'fr-label';
+    label.textContent = state === 'reviewed' ? 'Reviewed' : state === 'processing' ? 'Reviewing' : 'Unreviewed';
+
+    d.appendChild(icon);
+    d.appendChild(nameEl);
+    d.appendChild(dot);
+    d.appendChild(label);
+    return d;
+  }
+
+  if (reducedMotion) {
+    FR_FILES.forEach(f => frList.appendChild(frRow(f, 'reviewed')));
+    frCount.textContent = `${FR_FILES.length} / ${FR_FILES.length}`;
+  } else {
+    const frRows = FR_FILES.map(f => ({ name: f, el: null }));
+    frRows.forEach((r, i) => {
+      const row = frRow(r.name, 'unreviewed');
+      row.style.opacity = '0';
+      frList.appendChild(row);
+      r.el = row;
+      setTimeout(() => { row.style.transition = 'opacity 300ms ease'; row.style.opacity = '1'; }, i * 200);
+    });
+    let frReviewed = 0;
+    frRows.forEach((r, i) => {
+      const t = 1200 + i * 800;
+      setTimeout(() => { const n = frRow(r.name, 'processing'); frList.replaceChild(n, r.el); r.el = n; }, t);
+      setTimeout(() => {
+        const n = frRow(r.name, 'reviewed');
+        frList.replaceChild(n, r.el);
+        r.el = n;
+        frReviewed++;
+        frCount.textContent = `${frReviewed} / ${FR_FILES.length}`;
+      }, t + 2000);
+    });
+  }
+
+  // 4. Stagger reveal
+  if (reducedMotion) {
+    document.querySelectorAll('.stagger-card').forEach(el => el.classList.add('is-visible'));
+  } else {
+    const staggerObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const cards = Array.from(entry.target.closest('.stagger-grid').querySelectorAll('.stagger-card'));
+        const idx = cards.indexOf(entry.target);
+        entry.target.style.transitionDelay = `${idx * 150}ms`;
+        entry.target.classList.add('is-visible');
+        staggerObs.unobserve(entry.target);
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.stagger-card').forEach(el => staggerObs.observe(el));
+  }
+
+  // 5. Terminal
+  const termRows = document.getElementById('term-rows');
+  const termTyped = document.getElementById('term-typed');
+  const TERM_TS = ['10:14:02', '10:14:31', '10:14:58'];
+  const TERM_LABELS = ['QUERY_RECEIVED', 'SEARCH_ACTIVE', 'COMPLETE'];
+
+  function makeDots(count) { return '.'.repeat(Math.max(0, count)); }
+
+  TERM_TS.forEach((ts, i) => {
+    const row = document.createElement('div');
+    row.className = 'term-row';
+
+    const tsEl = document.createElement('span');
+    tsEl.className = 'term-ts';
+    tsEl.textContent = '[' + ts + ']';
+
+    const dotsEl = document.createElement('span');
+    dotsEl.className = 'term-dots';
+    dotsEl.textContent = makeDots(30 - i * 5);
+
+    const labelEl = document.createElement('span');
+    labelEl.className = 'term-label';
+    labelEl.textContent = TERM_LABELS[i];
+
+    row.appendChild(tsEl);
+    row.appendChild(dotsEl);
+    row.appendChild(labelEl);
+
+    if (!reducedMotion) {
+      row.style.opacity = '0';
+      row.style.transition = 'opacity 300ms ease';
+      setTimeout(() => { row.style.opacity = '1'; }, i * 500);
+    }
+    termRows.appendChild(row);
+  });
+
+  if (reducedMotion) {
+    termTyped.textContent = 'search complete';
+  } else {
+    const termText = 'scanning documents...';
+    (async () => {
+      await wait(TERM_TS.length * 500 + 300);
+      for (let c = 1; c <= termText.length; c++) {
+        termTyped.textContent = termText.slice(0, c);
+        await wait(45 + Math.random() * 18);
+      }
+    })();
+  }
+})();
+</script>
+</body>
+</html>

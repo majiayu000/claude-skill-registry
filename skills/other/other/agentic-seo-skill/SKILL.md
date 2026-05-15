@@ -11,7 +11,7 @@ description: >
 
 # SEO Skill (Agentic / Claude / Codex)
 
-LLM-first SEO analysis skill with 16 specialized sub-skills, 10 specialist agents, and 33 scripts for website, blog, and GitHub repository optimization.
+LLM-first SEO analysis skill with 16 specialized sub-skills, 10 specialist agents, and 89 scripts for website, blog, and GitHub repository optimization.
 
 ## Deterministic Trigger Mapping
 
@@ -132,6 +132,11 @@ python3 <SKILL_DIR>/scripts/internal_links.py <url> --depth 1 --max-pages 20
 
 # Extract article content and perform keyword research for LLM-driven optimization
 python3 <SKILL_DIR>/scripts/article_seo.py <url> --keyword "<optional_target_keyword>" --json
+
+# Credentials for paid/auth APIs (PageSpeed, GitHub, GSC, Knowledge Graph)
+# are loaded from CLI flags, then env vars, then a `.env` file in the repo
+# root / cwd / `~/.agentic-seo/.env`. Copy `.env.example` to `.env` and fill
+# in only the keys you have. Never paste secrets in prompts.
 
 # GitHub repository SEO (provider fallback: auto|api|gh)
 # Auth setup (choose one):
@@ -298,6 +303,18 @@ Checks staged HTML files for: placeholder text in schema, title tag length, miss
 python3 <SKILL_DIR>/scripts/validate_schema.py <file_path>
 ```
 Validates JSON-LD blocks in HTML files: JSON syntax, @context/@type presence, placeholder text, deprecated/restricted types.
+
+### Skill Inventory Validator
+```bash
+python3 <SKILL_DIR>/scripts/validate_skill_inventory.py
+```
+Validates documented sub-skill, agent, and script counts against files on disk. CI uses this to prevent README/SKILL inventory drift.
+
+### Reference Freshness Validator
+```bash
+python3 <SKILL_DIR>/scripts/reference_freshness.py <SKILL_DIR>/resources/references --max-age-days 90
+```
+Checks that every reference file has a `<!-- Updated: YYYY-MM-DD -->` marker and flags references older than the configured freshness window.
 
 ---
 

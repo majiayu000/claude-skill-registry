@@ -169,6 +169,16 @@ export function cn(...inputs: ClassValue[]) {
 
 3. Copy component code from [ui.aceternity.com](https://ui.aceternity.com) to your project
 
+## Secure Installation
+
+This setup runs multiple remote code executions (`create-next-app`, `shadcn init`, `shadcn add`). Before installing, follow supply chain security best practices:
+
+- **Block post-install scripts** — `npm config set ignore-scripts true` (or Bun: disabled by default)
+- **Cooldown period** — Wait 7 days for new package versions to be vetted by the community
+- **Audit before installing** — Run `socket package score npm <pkg>` or use `socket npm install <pkg>` to check packages
+
+Load the `dependency-upgrade` skill for full security configuration including Socket CLI integration, cooldown setup, lockfile validation, and CI enforcement.
+
 ## Component Categories
 
 ### 1. Backgrounds & Effects (28 components)

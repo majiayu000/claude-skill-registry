@@ -1,0 +1,25 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "hqhq1025/skill-optimizer",
+  "path": "skills/skill-miner/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-hqhq1025-skill-optimizer",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "references/discovery-rubric.md",
+    "references/patterns.json",
+    "scripts/scan_sessions.py"
+  ],
+  "author": "hqhq1025",
+  "source_url": "https://github.com/hqhq1025/skill-optimizer/blob/main/skills/skill-miner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hqhq1025/skill-optimizer/blob/main/skills/skill-miner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

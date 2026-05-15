@@ -1,4 +1,5 @@
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -300,6 +301,159 @@ def test_safe_write_registry_writes_compact_json(tmp_path):
 
     content = registry_path.read_text(encoding="utf-8")
     assert content == '{"skills":[{"name":"demo","repo":"owner/repo"}]}'
+
+
+def test_registry_shard_id_is_stable_for_install_and_branch():
+    skill = {
+        "name": "demo",
+        "repo": "owner/repo",
+        "path": "skills/demo/SKILL.md",
+        "branch": "main",
+    }
+
+    assert rebuild_registry.registry_shard_id(skill) == rebuild_registry.registry_shard_id(skill)
+
+
+def test_write_registry_shards_writes_manifest_entries_and_removes_stale(tmp_path):
+    shards_dir = tmp_path / "registry-shards"
+    shards_dir.mkdir()
+    stale = shards_dir / "stale.json"
+    stale.write_text("{}", encoding="utf-8")
+
+    skills = [
+        {
+            "name": "alpha",
+            "repo": "owner/repo",
+            "path": "skills/alpha/SKILL.md",
+            "branch": "main",
+        },
+        {
+            "name": "beta",
+            "repo": "owner/repo",
+            "path": "skills/beta/SKILL.md",
+            "branch": "main",
+        },
+    ]
+
+    entries = rebuild_registry.write_registry_shards(
+        skills,
+        shards_dir,
+        "2026-05-14T00:00:00Z",
+    )
+
+    assert not stale.exists()
+    assert len(entries) == 256
+    assert sum(entry["count"] for entry in entries) == 2
+    assert all((tmp_path / entry["path"]).exists() for entry in entries)
+    assert all((tmp_path / entry["gzip_path"]).exists() for entry in entries)
+    assert all(entry["sha256"] for entry in entries)
+
+
+def test_write_registry_shards_references_paths_from_manifest_location(tmp_path):
+    manifest_dir = tmp_path / "published"
+    shards_dir = manifest_dir / "registry-shards"
+    skills = [
+        {
+            "name": "alpha",
+            "repo": "owner/repo",
+            "path": "skills/alpha/SKILL.md",
+            "branch": "main",
+        },
+    ]
+
+    entries = rebuild_registry.write_registry_shards(
+        skills,
+        shards_dir,
+        "2026-05-14T00:00:00Z",
+        reference_base=manifest_dir,
+    )
+
+    assert all(entry["path"].startswith("registry-shards/") for entry in entries)
+    assert all(entry["gzip_path"].startswith("registry-shards/") for entry in entries)
+
+
+def test_build_compatibility_registry_can_omit_manifest_pointer():
+    registry = rebuild_registry.build_compatibility_registry(
+        generated_at="2026-05-14T00:00:00Z",
+        total_count=2,
+        plugin_count=1,
+        archive_skill_md_count_raw=3,
+        archive_metadata_count_raw=3,
+    )
+
+    assert registry["total_count"] == 2
+    assert registry["registry_skill_count_dedup"] == 2
+    assert "manifest" not in registry
+    assert registry["deprecated_full_payload"] is True
+    assert "merged claude-skill-registry artifact" in registry["message"]
+    assert "skills" not in registry
+
+
+def test_build_compatibility_registry_points_to_manifest_without_skills():
+    registry = rebuild_registry.build_compatibility_registry(
+        generated_at="2026-05-14T00:00:00Z",
+        total_count=2,
+        plugin_count=1,
+        archive_skill_md_count_raw=3,
+        archive_metadata_count_raw=3,
+        manifest_path="registry-manifest.json",
+    )
+
+    assert registry["total_count"] == 2
+    assert registry["registry_skill_count_dedup"] == 2
+    assert registry["manifest"] == "registry-manifest.json"
+    assert registry["deprecated_full_payload"] is True
+    assert "skills" not in registry
+
+
+def test_rebuild_registry_accepts_absolute_manifest_output(tmp_path):
+    skills_dir = tmp_path / "skills"
+    skill_dir = skills_dir / "development" / "demo"
+    skill_dir.mkdir(parents=True)
+    (skill_dir / "SKILL.md").write_text("# demo\n\nDemo skill.", encoding="utf-8")
+    (skill_dir / "metadata.json").write_text(
+        json.dumps(
+            {
+                "name": "demo",
+                "repo": "owner/repo",
+                "github_path": "skills/demo",
+                "github_branch": "main",
+                "category": "development",
+                "tags": ["demo"],
+                "stars": 1,
+                "source": "test",
+            }
+        ),
+        encoding="utf-8",
+    )
+    registry_path = tmp_path / "registry.json"
+    manifest_path = tmp_path / "artifacts" / "registry-manifest.json"
+    shards_dir = tmp_path / "artifacts" / "registry-shards"
+
+    subprocess.run(
+        [
+            sys.executable,
+            str(SCRIPTS_DIR / "rebuild_registry.py"),
+            "--skills-dir",
+            str(skills_dir),
+            "--registry",
+            str(registry_path),
+            "--manifest",
+            str(manifest_path),
+            "--shards-dir",
+            str(shards_dir),
+            "--skip-categories",
+            "--compat-manifest-pointer",
+        ],
+        check=True,
+        cwd=ROOT,
+    )
+
+    registry = json.loads(registry_path.read_text(encoding="utf-8"))
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    assert registry["manifest"] == "artifacts/registry-manifest.json"
+    assert manifest["shard_count"] == 256
+    assert all(entry["path"].startswith("registry-shards/") for entry in manifest["shards"])
 
 
 def test_cleanup_orphan_metadata_removes_only_orphans(tmp_path):

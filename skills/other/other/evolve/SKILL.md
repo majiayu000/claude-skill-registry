@@ -1,6 +1,7 @@
 ---
 name: evolve
 description: 'Run autonomous improvement loops.'
+practices: [lean-startup, dora-metrics, agile-manifesto]
 skill_api_version: 1
 user-invocable: true
 context:
@@ -26,6 +27,8 @@ metadata:
 output_contract: "code changes, GOALS.md fitness deltas"
 ---
 # /evolve — Goal-Driven Compounding Loop
+
+> **Cross-vendor analog:** Anthropic Managed Agents Outcomes (May 2026). Both close the loop "agent runs → grader scores against a rubric → agent retries"; AgentOps does it locally against any model.
 
 > Measure what's wrong. Fix the worst thing. Measure again. Compound.
 
@@ -103,10 +106,20 @@ Dream owns the knowledge compounding layer; `/evolve` owns the code compounding 
 
 ```bash
 mkdir -p .agents/evolve
-ao lookup --query "autonomous improvement cycle" --limit 5 2>/dev/null || true
+ao corpus inject --query "autonomous improvement cycle" --limit 5 2>/dev/null || true
+bash scripts/evolve-update-session-state.sh 2>/dev/null || true  # refresh derived idle_streak + mode_repeat_streak
 ```
 
+`ao corpus inject` routes through the typed BC1 `CorpusReaderPort`
+(`cli/cmd/ao/corpus_reader_adapter.go`, cycle 112 productionCorpusReader),
+emitting one ranked `ports.CorpusItem` JSON record per line from
+`.agents/learnings/` by default. This closes soc-y5vh.1 — Step 0 prior-knowledge
+retrieval is now load-bearing on the typed port, not an untyped `ao lookup`
+shell-out.
+
 **Apply retrieved knowledge:** If learnings are returned, check each for applicability to the current improvement cycle. For applicable learnings, cite by filename and record: `ao metrics cite "<path>" --type applied 2>/dev/null || true`
+
+**Prior-failure injection (mandatory):** read the last 3 entries of `.agents/evolve/cycle-history.jsonl`. For any with `gate` containing `FAIL|FAILED|BLOCKED`, extract failure-surface keywords (`registry|bats|markdown|supergate|canary|coverage|toolchain`) and search `.agents/learnings/` for matching learnings. Print the top matches before work selection. Without this read path, the loop accumulates write-only ledgers and re-derives lessons each cycle. See `references/convergence-mechanics.md` for the full recipe.
 
 Before cycle recovery, load the repo execution profile contract when it exists. The repo execution profile is the source for repo policy; the user prompt should mostly supply mission/objective, not restate startup reads, validation bundle, tracker wrapper rules, or `definition_of_done`.
 
@@ -155,7 +168,7 @@ evolve_state = {
 }
 ```
 
-Persist `evolve_state` to `.agents/evolve/session-state.json` at each cycle boundary, after work claims, after release/finalize, and during teardown. `cycle-history.jsonl` remains the canonical cycle ledger; `session-state.json` carries resume-only state that has not yet earned a committed cycle entry.
+Persist `evolve_state` to `.agents/evolve/session-state.json` at each cycle boundary, after work claims, after release/finalize, and during teardown. `cycle-history.jsonl` remains the canonical cycle ledger; `session-state.json` carries resume-only state that has not yet earned a committed cycle entry. Both files are **local-only** (the nested `.agents/.gitignore` denies all paths) — record durable milestones in commit messages too. See `references/cycle-history.md` for full local-only semantics.
 
 ### Step 0.2: Compile Warmup (--compile only)
 
@@ -173,7 +186,16 @@ Run at the TOP of every cycle:
 CYCLE_START_SHA=$(git rev-parse HEAD)
 [ -f ~/.config/evolve/KILL ] && echo "KILL: $(cat ~/.config/evolve/KILL)" && exit 0
 [ -f .agents/evolve/STOP ] && echo "STOP: $(cat .agents/evolve/STOP 2>/dev/null)" && exit 0
+[ -f .agents/evolve/DORMANT ] && echo "Dormant since $(head -1 .agents/evolve/DORMANT 2>/dev/null)." && exit 0
 ```
+
+**Sticky dormancy:** the `DORMANT` marker is written once when the Step 3 hard-gate fires (see "Nothing found?" section). Subsequent cycles short-circuit here with zero further tool calls — no fitness measurement, no work selection, no inference burn. Operator clears it by `rm .agents/evolve/DORMANT` when new scope arrives, or by editing it to indicate why. The marker is local-only (gitignored under `.agents/`).
+
+### Step 1.5: Healing-first classifier
+
+Before fitness or work selection, classify the cycle: `ao ci recent --limit 1 2>/dev/null | jq -r '.Conclusion // empty'`. The command routes through the typed BC2 `CIStatusPort` (`cli/cmd/ao/ci_status_adapter.go`, cycle 117 productionCIStatus) — no inline `gh` shell-outs in the evolve hot path (soc-y5vh.2). If the last push CI was `failure`, this cycle is **restorative-only** — Step 3 selection MUST take only work that reduces CI red (bug-type harvested items, gate-failure-fix beads, or generator output typed bug). No PG4 promotions, feature additions, or new shape work allowed until CI is green. The cycle-history.jsonl `gate` field of any FAIL cycle automatically triggers this mode for cycle N+1. See `references/convergence-mechanics.md`.
+
+**Convergence check:** read `.agents/evolve/session-convergence.json` if present. If ALL criteria are met (CI green streak ≥ 3, outstanding HIGH+MEDIUM next-work ≤ 1, fitness ≥ baseline), emit teardown and DO NOT re-arm wakeup.
 
 ### Step 2: Measure Fitness
 
@@ -187,6 +209,12 @@ When a repo-local program contract exists, apply a scope filter before Step 4:
 - candidate work that clearly requires immutable-scope edits is not eligible for direct execution
 - prefer harvested, beads, goals, and generated work that can plausibly land within mutable scope
 - if the selected item is inherently out of scope, escalate it or convert it into durable follow-up work instead of invoking `/rpi` and hoping discovery widens scope
+
+**Step 3.0: Scope filter — route wrong-shape work to scout-mode**
+
+Before claiming a harvested item, gate scope vs session budget. If the work touches > 5 non-uniform files, introduces a new shape (schema field, struct field, validator rule, contract surface), is operator-level epic work, OR `PRODUCTIVE_THIS_SESSION > 5` and the work would extend an implementation arc rather than close one — route to **scout-mode** (read + annotate the queue entry, no execution). See `references/scout-mode.md` for the procedure and `references/mechanical-batches.md` for when a >5-file batch is uniform enough to bypass.
+
+**Metronome gate:** read `mode_repeat_streak` from `session-state.json` (kept current by `scripts/evolve-update-session-state.sh`). If `mode_repeat_streak >= 3` AND the candidate work would produce the same `mode` value as the trailing run, BLOCK selection at this rung and force a jump to the NEXT rung in the ladder. If `mode_repeat_streak >= 5`, file a `bd remember "metronome-N: <mode>"` and require operator override before continuing on that rung. See `references/metronome-gate.md` for the detection rule and the cycles 144-154 retrospective.
 
 **Step 3.1: Harvested work first**
 
@@ -311,14 +339,12 @@ See `references/quality-mode.md` for scoring and full details.
 **Nothing found?** HARD GATE — only consider dormancy after the generator layers also came up empty:
 
 ```bash
-# Count trailing idle/unchanged entries in cycle-history.jsonl (portable, no tac)
-IDLE_STREAK=$(awk '/"result"\s*:\s*"(idle|unchanged)"/{streak++; next} {streak=0} END{print streak+0}' \
-  .agents/evolve/cycle-history.jsonl 2>/dev/null)
-
-if [ "$GENERATOR_EMPTY_STREAK" -ge 2 ] && [ "$IDLE_STREAK" -ge 2 ]; then
-  # Work layers are empty AND producer layers were empty for the 3rd consecutive pass — STOP
+IDLE_STREAK=$(jq -r '.idle_streak // 0' .agents/evolve/session-state.json 2>/dev/null)
+if [ "${GENERATOR_EMPTY_STREAK:-0}" -ge 2 ] && [ "${IDLE_STREAK:-0}" -ge 2 ]; then
+  printf '%s\n%s\n%s\n' "cycle $CYCLE" "$(date -u +%FT%TZ)" "stagnation: queue+generator empty x3" \
+    > .agents/evolve/DORMANT
   echo "Stagnation reached after repeated empty work + generator passes. Dormancy is the last-resort outcome."
-  # go to Teardown — do NOT log another idle entry
+  # go to Teardown — do NOT log another idle entry. The DORMANT marker short-circuits Step 1 next fire.
 fi
 ```
 
@@ -351,6 +377,22 @@ Or for an epic with children: `Invoke /crank {epic_id}`.
 
 If Step 3 created durable work instead of executing it immediately, re-enter Step 3 and let the newly-created bead item win through the normal selection order.
 
+**Mechanical-batch hint:** when the implementation phase identifies > 20 uniform per-file edits, prefer a script (`awk`/`sed`/`for f in $candidates`) over N tool-level Edit calls. See `references/mechanical-batches.md` for the decision rule and the script-first pattern.
+
+**Pre-flight schema check (architectural migrations):** if the selected work is a port/adapter migration that rewires an existing consumer, BEFORE invoking `/rpi`, sample two representative consumer call sites and compare field-use against the target port surface. If the consumer reads > 20% more fields than the port projects, abort the migration cycle and convert the work into a port-widening cycle instead. The phase-2 narrowness post-mortem (`docs/learnings/2026-05-13-bc-ports-narrowness-postmortem.md`) is the encoded lesson; see `references/pre-flight-schema-check.md` for the procedure.
+
+**Operator-shape carve-out:** `AskUserQuestion` is permitted ONLY for shape decisions affecting > 50 files OR a schema/contract surface (carrier choice, struct-field shape, frontmatter-key shape). See `references/autonomous-execution.md` for the bound on this exception.
+
+### Step 4.5: Source-surface detection (pre-gate sync)
+
+Before invoking the regression gate, sync downstream artifacts when the staged diff touches binary or embedded surfaces:
+
+- `cli/**/*.go` changed → `cd cli && make build && go install ./cmd/ao`
+- `skills/**` or `hooks/**` changed → `cd cli && make sync-hooks`
+- `skills-codex/**` changed → `bash scripts/regen-codex-hashes.sh`
+
+Without these, the gate fails on stale-binary or embedded-drift errors that look like real regressions. See `references/gate-hygiene.md` for the detection recipe.
+
 ### Step 5: Regression Gate
 
 After execution, run the project build+test bundle. If the repo execution profile declared `validation_commands`, run them. If a repo-local program contract exists, run its `validation_commands` too, de-duplicated and in declared order after the repo bootstrap checks. Also check `if [ -f scripts/check-wiring-closure.sh ]; then bash scripts/check-wiring-closure.sh; fi`.
@@ -363,6 +405,8 @@ Use the program contract's `decision_policy` as the first keep/revert rule set f
 Treat program `stop_conditions` as per-cycle done criteria. Do not mark claimed work consumed, completed, or productive until both the stop conditions and the regression gate pass.
 
 If not `--beads-only`, re-measure fitness to `fitness-latest-post.json` and detect regressions. The AgentOps CLI is required for fitness measurement. Read `references/fitness-scoring.md` for the full measurement, regression detection, and revert procedure.
+
+**Gate output parsing:** trust the structural marker `^.*Pass [0-9]+: (FAILED|BLOCKED)` over the trailing status line — the trailing line conflates blocking and advisory results. See `references/gate-hygiene.md`.
 
 Work finalization after the regression gate: claim it first, then keep `consumed: false` until the /rpi cycle succeeds. After the cycle's `/post-mortem` finishes, immediately re-read `.agents/rpi/next-work.jsonl` before selecting the next item. Read `references/knowledge-loop-integration.md` for full claim/release semantics.
 
@@ -379,11 +423,21 @@ Two paths: productive cycles get committed, idle cycles are local-only.
 ```bash
 while true; do
   # Step 1 .. Step 6
-  # Stop if kill switch, max-cycles, or a real safety breaker triggers
+  # Stop if kill switch, max-cycles, dormancy, or CONTEXT_BUDGET_EXHAUSTED
   # Otherwise increment cycle and re-enter selection
   CYCLE=$((CYCLE + 1))
 done
 ```
+
+**Stop reasons (any one terminates the loop):**
+
+1. KILL/STOP file present.
+2. `--max-cycles=N` cap reached.
+3. **Dormancy** — `IDLE_STREAK >= 2 AND GENERATOR_EMPTY_STREAK >= 2` (queue layers AND generator layers both empty across 3 consecutive passes).
+4. **CONTEXT_BUDGET_EXHAUSTED** — `context_streak >= 2` (two consecutive cycles forced into scout-mode or harvested-as-defer because the current context is too heavy to safely execute available work). See `references/context-budget.md`.
+5. Regression breaker after a revert.
+
+**Self-perpetuation modes:** the terminal-native `ao evolve` loop and the Claude-Code-harness `ScheduleWakeup` end-of-turn pattern are duals — both drive Step 1..Step 7 repeatedly against the same persisted state. See `references/autonomous-execution.md` for the ScheduleWakeup cadence and the rule that hard stops must NOT re-arm.
 
 Push only when productive work has accumulated:
 ```bash
@@ -395,6 +449,42 @@ fi
 ### Teardown
 
 Read `references/knowledge-loop-integration.md` for the full teardown learning extraction procedure (commit staged artifacts, run `/post-mortem`, push, report summary).
+
+**Release-context teardown (MANDATORY when the loop ran on a release-shaped branch):**
+
+When the current branch matches `release/*`, `v*-prep`, `v*-evolve-run`, or `v\d+\.\d+*`, the teardown report MUST NOT recommend `/release` as the next step. Instead, emit the explicit pre-release checklist below — the operator must run these AND confirm green before tagging:
+
+```
+## Pre-release checklist — REQUIRED before /release
+
+The autonomous loop has stopped, but release-readiness gates have NOT been run
+during cycles. The operator MUST run the following sequence and confirm green
+before invoking /release. Do NOT skip any of these on the basis of "cycles
+were green" — fast pre-push gate ≠ full pre-push gate; goals-measure ≠
+release readiness.
+
+  [ ] 1. Regenerate CLI reference docs if any cobra command/flag changed:
+         bash scripts/generate-cli-reference.sh
+         git diff cli/docs/COMMANDS.md   # commit if non-empty
+
+  [ ] 2. Run the FULL pre-push gate (NOT --fast):
+         bash scripts/pre-push-gate.sh
+
+  [ ] 3. Run the release-readiness gate:
+         bash scripts/ci-local-release.sh
+
+  [ ] 4. (Recommended) Smoke /evolve with the new typed read paths if BC port
+         wire-ups changed:
+         /evolve --quick --max-cycles=1 --dry-run
+
+Only after [1]–[3] pass: /release <version>
+
+If any check fails, fix the issue, re-run all four, then ship.
+```
+
+The handoff artifact (e.g., `.agents/runs/<release>/READY-TO-TAG.md`) MUST contain this checklist verbatim, unchecked, when written by the loop. The operator checks the boxes as they complete each gate; "ready to tag" means the boxes are checked, not that the loop ran cleanly.
+
+**Rationale:** cycles 170-183 of the v2.41-evolve-run shipped clean code, all unit/integration tests green, `ao goals measure` 0/30 failing for three consecutive cycles — but the loop never ran the full pre-push gate, `ci-local-release.sh`, or `generate-cli-reference.sh`. The latter was load-bearing (the branch removed a CLI flag). Per-cycle `--fast` is a smoke test, not release readiness. Operator caught the gap; this checklist makes it mechanical.
 
 ## Examples
 
@@ -428,15 +518,25 @@ See `references/cycle-history.md` for advanced troubleshooting.
 
 ## References
 
-- `references/cycle-history.md` — JSONL format, recovery protocol, kill switch
-- `references/compounding.md` — Knowledge flywheel and work harvesting
-- `references/goals-schema.md` — GOALS.yaml format and continuous metrics
-- `references/parallel-execution.md` — Parallel /swarm architecture
-- `references/teardown.md` — Trajectory computation and session summary
-- `references/examples.md` — Detailed usage examples
-- `references/artifacts.md` — Generated files registry
-- `references/oscillation.md` — Oscillation detection and quarantine
-- `references/quality-mode.md` — Quality-first mode: scoring, priority cascade, artifacts
+- [references/artifacts.md](references/artifacts.md) — Generated files registry
+- [references/autonomous-execution.md](references/autonomous-execution.md) — Autonomous-loop rules, operator-shape carve-out, ScheduleWakeup self-perpetuation
+- [references/compounding.md](references/compounding.md) — Knowledge flywheel and work harvesting
+- [references/context-budget.md](references/context-budget.md) — `CONTEXT_BUDGET_EXHAUSTED` as a third stop reason and handoff protocol
+- [references/convergence-mechanics.md](references/convergence-mechanics.md) — Read-path mechanisms (prior-failure injection, healing-first classifier, hypothesis tracking, STOP criteria) that turn write-only ledgers into compounding behavior
+- [references/cycle-history.md](references/cycle-history.md) — JSONL format, recovery protocol, kill switch
+- [references/examples.md](references/examples.md) — Detailed usage examples
+- [references/fitness-scoring.md](references/fitness-scoring.md) — Baseline capture, regression detection, revert procedure
+- [references/gate-hygiene.md](references/gate-hygiene.md) — Pre-gate source-surface detection and structural gate-output parsing
+- [references/goals-schema.md](references/goals-schema.md) — GOALS.yaml format and continuous metrics
+- [references/knowledge-loop-integration.md](references/knowledge-loop-integration.md) — Claim/release semantics and harvest re-read
+- [references/mechanical-batches.md](references/mechanical-batches.md) — Script-first vs per-file Edit for > 20-file uniform batches
+- [references/metronome-gate.md](references/metronome-gate.md) — Cross-cycle detector that blocks the same-mode-repeated failure mode (cycles 144-154)
+- [references/oscillation.md](references/oscillation.md) — Oscillation detection and quarantine
+- [references/pre-flight-schema-check.md](references/pre-flight-schema-check.md) — Cheap field-fit check before architectural migration cycles
+- [references/parallel-execution.md](references/parallel-execution.md) — Parallel /swarm architecture
+- [references/quality-mode.md](references/quality-mode.md) — Quality-first mode: scoring, priority cascade, artifacts
+- [references/scout-mode.md](references/scout-mode.md) — Scout-mode as a first-class cycle result; scope filter procedure
+- [references/teardown.md](references/teardown.md) — Trajectory computation and session summary
 
 ## See Also
 
@@ -449,18 +549,3 @@ See `references/cycle-history.md` for advanced troubleshooting.
 - [refactor](../refactor/SKILL.md) — Safe, verified refactoring
 - [deps](../deps/SKILL.md) — Dependency audit and vulnerability scanning
 - [perf](../perf/SKILL.md) — Performance profiling and benchmarking
-
-## Reference Documents
-
-- [references/artifacts.md](references/artifacts.md)
-- [references/compounding.md](references/compounding.md)
-- [references/cycle-history.md](references/cycle-history.md)
-- [references/examples.md](references/examples.md)
-- [references/goals-schema.md](references/goals-schema.md)
-- [references/oscillation.md](references/oscillation.md)
-- [references/parallel-execution.md](references/parallel-execution.md)
-- [references/quality-mode.md](references/quality-mode.md)
-- [references/autonomous-execution.md](references/autonomous-execution.md)
-- [references/teardown.md](references/teardown.md)
-- [references/fitness-scoring.md](references/fitness-scoring.md)
-- [references/knowledge-loop-integration.md](references/knowledge-loop-integration.md)

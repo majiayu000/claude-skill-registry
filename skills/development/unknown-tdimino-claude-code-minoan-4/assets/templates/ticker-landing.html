@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grainient Ticker Landing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --grn-bg: #000000;
+            --grn-surface: #141414;
+            --grn-elevated: #1A1A1A;
+            --grn-card: #2B2B2B;
+            --grn-accent: #C2F13C;
+            --grn-accent-40: rgba(194, 241, 60, 0.4);
+            --grn-accent-20: rgba(194, 241, 60, 0.2);
+            --grn-text: #FFFFFF;
+            --grn-text-70: rgba(255, 255, 255, 0.7);
+            --grn-text-40: rgba(255, 255, 255, 0.4);
+            --grn-text-20: rgba(255, 255, 255, 0.2);
+            --grn-text-10: rgba(255, 255, 255, 0.1);
+            --grn-border: rgba(255, 255, 255, 0.2);
+            --grn-border-subtle: rgba(255, 255, 255, 0.1);
+            --grn-spring-snappy: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --grn-spring-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+            --grn-spring-subtle: cubic-bezier(0.22, 1, 0.36, 1);
+            --grn-blur-light: blur(5px);
+            --grn-blur-medium: blur(10px);
+            --grn-blur-heavy: blur(20px);
+            --grn-font: 'Inter', system-ui, sans-serif;
+            --grn-hero-size: clamp(32px, 4vw + 1rem, 6vw);
+            --grn-body-size: clamp(16px, 1vw + 1rem, 1.1vw);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            font-family: var(--grn-font);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: var(--grn-bg);
+            color: var(--grn-text);
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--grn-text-20); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--grn-text-40); }
+        html { scrollbar-width: thin; scrollbar-color: var(--grn-text-20) transparent; }
+
+        /* Vignette */
+        .vignette { position: fixed; z-index: 2; pointer-events: none; }
+        .vignette--top { inset: 0 0 auto 0; height: 25%; background: linear-gradient(0deg, transparent, var(--grn-surface)); }
+        .vignette--bottom { inset: auto 0 0 0; height: 25%; background: linear-gradient(180deg, transparent, var(--grn-surface)); }
+
+        /* Nav */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 32px;
+            backdrop-filter: var(--grn-blur-heavy);
+            -webkit-backdrop-filter: var(--grn-blur-heavy);
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom: 1px solid var(--grn-border-subtle);
+        }
+
+        .nav__logo {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 18px; font-weight: 600; text-decoration: none; color: var(--grn-text);
+        }
+
+        .nav__cta {
+            padding: 8px 20px; font-size: 14px; font-weight: 600; color: #000;
+            text-decoration: none; border-radius: 50px;
+            background: linear-gradient(180deg, #EBFFB4, var(--grn-accent));
+            box-shadow: inset 0 0 3px white, 0 0 40px var(--grn-accent-20);
+            transition: filter 0.4s var(--grn-spring-snappy), transform 0.4s var(--grn-spring-snappy);
+        }
+        .nav__cta:hover { filter: brightness(1.1); transform: scale(1.02); }
+
+        /* Hero */
+        .hero {
+            position: relative; z-index: 10;
+            text-align: center;
+            padding: 140px 32px 60px;
+        }
+
+        .hero__title {
+            font-size: var(--grn-hero-size); font-weight: 600;
+            line-height: 1.1; margin-bottom: 16px;
+        }
+
+        .hero__title em {
+            font-style: normal;
+            background: linear-gradient(180deg, #EBFFB4, var(--grn-accent));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        .hero__sub {
+            font-size: var(--grn-body-size); color: var(--grn-text-70);
+            max-width: 480px; margin: 0 auto 32px; line-height: 1.5;
+        }
+
+        .hero__actions { display: flex; gap: 12px; justify-content: center; }
+
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 28px; font-family: var(--grn-font);
+            font-size: 15px; font-weight: 600; color: #000;
+            border: none; border-radius: 50px; cursor: pointer;
+            background: linear-gradient(180deg, #EBFFB4, var(--grn-accent));
+            box-shadow: inset 0 0 3px white, 0 0 40px var(--grn-accent-20);
+            transition: filter 0.4s var(--grn-spring-snappy), transform 0.4s var(--grn-spring-snappy);
+            text-decoration: none;
+        }
+        .btn-primary:hover { filter: brightness(1.1); transform: scale(1.03); }
+        .btn-primary:active { transform: scale(0.98); }
+
+        .btn-secondary {
+            display: inline-flex; align-items: center;
+            padding: 12px 28px; font-family: var(--grn-font);
+            font-size: 15px; font-weight: 500; color: var(--grn-text);
+            background: transparent; border: 1px solid var(--grn-border);
+            border-radius: 50px; cursor: pointer; text-decoration: none;
+            transition: background-color 0.4s var(--grn-spring-subtle);
+        }
+        .btn-secondary:hover { background-color: var(--grn-text-10); }
+
+        /* Ticker Section */
+        .ticker-section {
+            position: relative; z-index: 10;
+            padding: 20px 32px 80px;
+        }
+
+        .ticker-holder {
+            display: flex; gap: 5px;
+            height: 600px;
+            overflow: clip;
+            max-width: 1100px; margin: 0 auto;
+        }
+
+        .ticker-column {
+            flex: 1;
+            display: flex; flex-direction: column; gap: 5px;
+            will-change: transform;
+        }
+
+        .ticker-item {
+            flex-shrink: 0;
+            border-radius: 10px;
+            overflow: clip;
+            box-shadow: inset 0 0 0 1px var(--grn-border-subtle);
+        }
+
+        .ticker-card {
+            width: 100%; aspect-ratio: 3/4;
+            border-radius: inherit;
+        }
+
+        /* Gradient fills for ticker cards */
+        .grad-1 { background: linear-gradient(135deg, #1a0520, #0a0a2a, #001a1a); }
+        .grad-2 { background: linear-gradient(160deg, #0a1a00, #141414, #1a0a2a); }
+        .grad-3 { background: linear-gradient(200deg, #1a1000, #0a0a14, #001020); }
+        .grad-4 { background: linear-gradient(180deg, #100a1a, #0a141a, #001a0a); }
+        .grad-5 { background: linear-gradient(150deg, #1a0a00, #140a14, #0a1a1a); }
+        .grad-6 { background: linear-gradient(170deg, #001a10, #0a0a1a, #1a0010); }
+
+        /* Fade masks on ticker */
+        .ticker-section::before,
+        .ticker-section::after {
+            content: ''; position: absolute; left: 0; right: 0;
+            height: 120px; z-index: 3; pointer-events: none;
+        }
+        .ticker-section::before { top: 0; background: linear-gradient(180deg, var(--grn-bg), transparent); }
+        .ticker-section::after { bottom: 0; background: linear-gradient(0deg, var(--grn-bg), transparent); }
+
+        /* Features */
+        .features {
+            position: relative; z-index: 10;
+            padding: 80px 32px;
+            background: var(--grn-surface);
+        }
+
+        .features__inner {
+            max-width: 900px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature__icon {
+            width: 48px; height: 48px; margin: 0 auto 16px;
+            border-radius: 12px;
+            background: var(--grn-elevated);
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .feature__title { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+        .feature__text { font-size: 14px; color: var(--grn-text-70); line-height: 1.5; }
+
+        /* CTA */
+        .cta {
+            position: relative; z-index: 10;
+            text-align: center; padding: 80px 32px;
+        }
+
+        .cta__title {
+            font-size: clamp(24px, 3vw + 0.5rem, 48px);
+            font-weight: 600; margin-bottom: 12px;
+        }
+
+        .cta__sub {
+            font-size: var(--grn-body-size); color: var(--grn-text-70);
+            margin-bottom: 32px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .ticker-column { transform: none !important; }
+        }
+
+        @media (max-width: 809px) {
+            .nav { padding: 12px 20px; }
+            .hero { padding: 100px 20px 40px; }
+            .hero__actions { flex-direction: column; align-items: center; }
+            .ticker-holder { height: 400px; }
+            .ticker-column:nth-child(n+4) { display: none; }
+            .features__inner { grid-template-columns: 1fr; gap: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="vignette vignette--top"></div>
+    <div class="vignette vignette--bottom"></div>
+
+    <nav class="nav">
+        <a href="#" class="nav__logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" role="presentation">
+                <defs><linearGradient id="logo" x1="0.608" x2="0.392" y1="1" y2="0">
+                    <stop offset="0" stop-color="#AADB1F"/><stop offset="1" stop-color="#C2F13C"/>
+                </linearGradient></defs>
+                <circle cx="12" cy="12" r="10" fill="url(#logo)"/>
+            </svg>
+            Grainient
+        </a>
+        <a href="#" class="nav__cta">Get Access</a>
+    </nav>
+
+    <section class="hero">
+        <h1 class="hero__title">Browse <em>1,200+</em> gradient backgrounds</h1>
+        <p class="hero__sub">Scroll through our entire collection. Every gradient is available in 4K, with grain and smooth variants.</p>
+        <div class="hero__actions">
+            <a href="#" class="btn-primary">Download All</a>
+            <a href="#" class="btn-secondary">View Pricing</a>
+        </div>
+    </section>
+
+    <section class="ticker-section">
+        <div class="ticker-holder" id="ticker-holder">
+            <div class="ticker-column" data-speed="0.45">
+                <div class="ticker-item"><div class="ticker-card grad-1"></div></div>
+                <div class="ticker-item"><div class="ticker-card grad-3"></div></div>
+                <div class="ticker-item"><div class="ticker-card grad-5"></div></div>
+                <div class="ticker-item"><div class="ticker-card grad-2"></div></div>
+            </div>
+            <div class="ticker-column" data-speed="0.55">
+                <div class="ticker-item"><div class="ticker-card grad-4"></div></div>
+                <div class="ticker-item"><div class="ticker-card grad-1"></div></div>
+                <div class="ticker-item"><div class="ticker-card grad-6"></div></div>
+                <div class="ticker-item"><div class="ticker-card grad-3"></div></div>
+            </div>
+            <div class="ticker-column" data-speed="0.5">
+                <div class="ticker-item"><div class="ticker-card grad-2"></div></div>
+                <div class="ticker-item"><div class="ticker-card grad-5"></div></div>
+                <div class="ticker-item"><div class="ticker-card grad-4"></div></div>
+                <div class="ticker-item"><div class="ticker-card grad-1"></div></div>
+            </div>
+            <div class="ticker-column" data-speed="0.6">
+                <div class="ticker-item"><div class="ticker-card grad-6"></div></div>
+                <div class="ticker-item"><div class="ticker-card grad-2"></div></div>
+                <div class="ticker-item"><div class="ticker-card grad-3"></div></div>
+                <div class="ticker-item"><div class="ticker-card grad-5"></div></div>
+            </div>
+            <div class="ticker-column" data-speed="0.48">
+                <div class="ticker-item"><div class="ticker-card grad-3"></div></div>
+                <div class="ticker-item"><div class="ticker-card grad-6"></div></div>
+                <div class="ticker-item"><div class="ticker-card grad-1"></div></div>
+                <div class="ticker-item"><div class="ticker-card grad-4"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="features__inner">
+            <div class="feature">
+                <div class="feature__icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" role="presentation">
+                        <defs><linearGradient id="f1" x1="0.209" x2="0.791" y1="0" y2="1">
+                            <stop offset="0" stop-color="#FFF9E7"/><stop offset="1" stop-color="#BA8B4D"/>
+                        </linearGradient></defs>
+                        <path d="M10 2L12.5 7.5L18 8.5L14 12.5L15 18L10 15.5L5 18L6 12.5L2 8.5L7.5 7.5L10 2Z" fill="url(#f1)"/>
+                    </svg>
+                </div>
+                <h3 class="feature__title">4K Resolution</h3>
+                <p class="feature__text">Every background exports at 3840x2160 with no compression artifacts.</p>
+            </div>
+            <div class="feature">
+                <div class="feature__icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" role="presentation">
+                        <rect x="3" y="3" width="14" height="14" rx="3" fill="var(--grn-accent)"/>
+                    </svg>
+                </div>
+                <h3 class="feature__title">Figma & Framer Ready</h3>
+                <p class="feature__text">Drag and drop into your design tool of choice. No conversion needed.</p>
+            </div>
+            <div class="feature">
+                <div class="feature__icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" role="presentation">
+                        <circle cx="10" cy="10" r="7" fill="var(--grn-text-20)"/>
+                    </svg>
+                </div>
+                <h3 class="feature__title">Commercial License</h3>
+                <p class="feature__text">Use in client projects, SaaS products, and commercial applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2 class="cta__title">Start designing with gradients</h2>
+        <p class="cta__sub">One-time purchase. Lifetime updates. No subscriptions.</p>
+        <a href="#" class="btn-primary">Get All Access</a>
+    </section>
+
+    <script>
+        // Ticker Marquee Engine
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!reducedMotion) {
+            class TickerEngine {
+                constructor(holder) {
+                    this.columns = [...holder.querySelectorAll('.ticker-column')].map(col => {
+                        const items = [...col.children];
+                        return {
+                            el: col,
+                            speed: parseFloat(col.dataset.speed) || 0.5,
+                            offset: 0,
+                            itemHeight: items[0] ? items[0].offsetHeight : 80
+                        };
+                    });
+                    this.paused = false;
+                    this.visible = true;
+
+                    holder.addEventListener('mouseenter', () => this.paused = true);
+                    holder.addEventListener('mouseleave', () => this.paused = false);
+
+                    const tickerObserver = new IntersectionObserver(([entry]) => {
+                        this.visible = entry.isIntersecting;
+                    }, { threshold: 0 });
+                    tickerObserver.observe(holder);
+
+                    this.animate();
+                }
+
+                animate() {
+                    if (!this.paused && this.visible) {
+                        this.columns.forEach(col => {
+                            col.offset -= col.speed;
+                            if (col.offset < -(col.itemHeight + 5)) {
+                                col.offset += col.itemHeight + 5;
+                                col.el.appendChild(col.el.children[0]);
+                            }
+                            col.el.style.transform = `translateY(${col.offset}px)`;
+                        });
+                    }
+                    requestAnimationFrame(() => this.animate());
+                }
+            }
+
+            new TickerEngine(document.getElementById('ticker-holder'));
+        }
+
+        // Smooth Scroll (Lenis-style)
+        if (!reducedMotion) {
+            class SmoothScroll {
+                constructor({ lerp = 0.1 } = {}) {
+                    this.lerp = lerp;
+                    this.targetY = window.scrollY;
+                    this.currentY = window.scrollY;
+                    this.running = false;
+
+                    window.addEventListener('wheel', (e) => {
+                        e.preventDefault();
+                        this.targetY = Math.max(0,
+                            Math.min(this.targetY + e.deltaY,
+                                document.body.scrollHeight - window.innerHeight));
+                        if (!this.running) {
+                            this.running = true;
+                            this.animate();
+                        }
+                    }, { passive: false });
+                }
+
+                animate() {
+                    this.currentY += (this.targetY - this.currentY) * this.lerp;
+                    window.scrollTo(0, this.currentY);
+                    if (Math.abs(this.targetY - this.currentY) > 0.5) {
+                        requestAnimationFrame(() => this.animate());
+                    } else {
+                        this.running = false;
+                    }
+                }
+            }
+
+            new SmoothScroll({ lerp: 0.1 });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,2461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grainient Effects Catalog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --grn-bg: #000000;
+            --grn-surface: #141414;
+            --grn-elevated: #1A1A1A;
+            --grn-card: #2B2B2B;
+            --grn-accent: #C2F13C;
+            --grn-accent-40: rgba(194, 241, 60, 0.4);
+            --grn-accent-20: rgba(194, 241, 60, 0.2);
+            --grn-accent-10: rgba(194, 241, 60, 0.1);
+            --grn-text: #FFFFFF;
+            --grn-text-70: rgba(255, 255, 255, 0.7);
+            --grn-text-40: rgba(255, 255, 255, 0.4);
+            --grn-text-20: rgba(255, 255, 255, 0.2);
+            --grn-text-10: rgba(255, 255, 255, 0.1);
+            --grn-border: rgba(255, 255, 255, 0.2);
+            --grn-border-subtle: rgba(255, 255, 255, 0.1);
+            --grn-spring-snappy: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --grn-spring-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+            --grn-spring-subtle: cubic-bezier(0.22, 1, 0.36, 1);
+            --grn-blur-light: blur(5px);
+            --grn-blur-medium: blur(10px);
+            --grn-blur-heavy: blur(20px);
+            --grn-font: 'Inter', system-ui, sans-serif;
+            --grn-hero-size: clamp(32px, 4vw + 1rem, 6vw);
+            --grn-body-size: clamp(16px, 1vw + 1rem, 1.1vw);
+            --sidebar-width: 240px;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            width: 100%; height: 100%;
+            font-family: var(--grn-font);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: var(--grn-bg);
+            color: var(--grn-text);
+            overflow-x: hidden;
+        }
+
+        /* ── Global custom scrollbar ── */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--grn-text-20); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--grn-text-40); }
+        html { scrollbar-width: thin; scrollbar-color: var(--grn-text-20) transparent; }
+
+        /* ── Layout ── */
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* ── Sidebar ── */
+        .sidebar {
+            position: fixed;
+            top: 0; left: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            z-index: 200;
+            display: flex;
+            flex-direction: column;
+            background: rgba(20, 20, 20, 0.85);
+            backdrop-filter: var(--grn-blur-heavy);
+            -webkit-backdrop-filter: var(--grn-blur-heavy);
+            border-right: 1px solid var(--grn-border-subtle);
+            /* Inset border accent on right */
+            box-shadow: inset -1px 0 0 var(--grn-border-subtle);
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .sidebar__logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 20px 16px 16px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--grn-text);
+            border-bottom: 1px solid var(--grn-border-subtle);
+            text-decoration: none;
+        }
+
+        .sidebar__logo-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--grn-accent);
+            box-shadow: 0 0 8px var(--grn-accent-40);
+            flex-shrink: 0;
+        }
+
+        .sidebar__section {
+            padding: 12px 0 4px;
+        }
+
+        .sidebar__group-label {
+            padding: 6px 16px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--grn-text-40);
+        }
+
+        .sidebar__item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 16px;
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--grn-text-70);
+            text-decoration: none;
+            border-radius: 0;
+            transition: color 0.2s, background 0.2s;
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .sidebar__item:hover {
+            color: var(--grn-text);
+            background: var(--grn-text-10);
+        }
+
+        .sidebar__item.active {
+            color: var(--grn-accent);
+            background: var(--grn-accent-10);
+        }
+
+        .sidebar__item-num {
+            font-size: 10px;
+            color: var(--grn-text-40);
+            font-variant-numeric: tabular-nums;
+            width: 14px;
+            flex-shrink: 0;
+        }
+
+        /* ── Main content ── */
+        .main {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            padding: 32px 40px 80px;
+            max-width: calc(100% - var(--sidebar-width));
+        }
+
+        .main__header {
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--grn-border-subtle);
+        }
+
+        .main__title {
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .main__title em {
+            font-style: normal;
+            background: linear-gradient(180deg, #EBFFB4, var(--grn-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .main__subtitle {
+            font-size: 14px;
+            color: var(--grn-text-70);
+            line-height: 1.5;
+        }
+
+        /* ── Effect section anchors ── */
+        .effect-section {
+            margin-bottom: 60px;
+            scroll-margin-top: 24px;
+        }
+
+        /* ── Effect card ── */
+        .effect-card {
+            background: var(--grn-surface);
+            border: 1px solid var(--grn-border-subtle);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .effect-card__header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--grn-border-subtle);
+        }
+
+        .effect-card__number {
+            font-size: 11px;
+            color: var(--grn-text-40);
+            font-variant-numeric: tabular-nums;
+            font-weight: 500;
+        }
+
+        .effect-card__name {
+            font-size: 15px;
+            font-weight: 600;
+            flex: 1;
+        }
+
+        /* ── Tier badges ── */
+        .tier-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+        }
+
+        .tier-badge--hero {
+            background: rgba(255, 200, 0, 0.15);
+            color: #FFD700;
+            border: 1px solid rgba(255, 200, 0, 0.3);
+        }
+
+        .tier-badge--motion {
+            background: rgba(60, 140, 255, 0.15);
+            color: #60A0FF;
+            border: 1px solid rgba(60, 140, 255, 0.3);
+        }
+
+        .tier-badge--surface {
+            background: rgba(60, 220, 120, 0.15);
+            color: #4CD88A;
+            border: 1px solid rgba(60, 220, 120, 0.3);
+        }
+
+        .tier-badge--detail {
+            background: rgba(180, 180, 180, 0.12);
+            color: rgba(255,255,255,0.6);
+            border: 1px solid rgba(180,180,180,0.2);
+        }
+
+        /* ── Preview area ── */
+        .effect-preview {
+            padding: 24px 20px;
+            background: var(--grn-elevated);
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* ── Controls ── */
+        .effect-controls {
+            padding: 16px 20px;
+            background: var(--grn-surface);
+            border-top: 1px solid var(--grn-border-subtle);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            min-width: 140px;
+        }
+
+        .control-label {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--grn-text-40);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .control-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .control-value {
+            font-size: 12px;
+            color: var(--grn-text-70);
+            min-width: 36px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 4px;
+            background: var(--grn-text-20);
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+            width: 120px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 14px; height: 14px;
+            border-radius: 50%;
+            background: var(--grn-accent);
+            cursor: pointer;
+            box-shadow: 0 0 6px var(--grn-accent-40);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 14px; height: 14px;
+            border-radius: 50%;
+            background: var(--grn-accent);
+            cursor: pointer;
+            border: none;
+        }
+
+        input[type="color"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 32px; height: 24px;
+            border: 1px solid var(--grn-border);
+            border-radius: 4px;
+            cursor: pointer;
+            background: none;
+            padding: 2px;
+        }
+
+        input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; border-radius: 2px; }
+        input[type="color"]::-webkit-color-swatch { border: none; border-radius: 2px; }
+
+        input[type="checkbox"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px; height: 16px;
+            border: 1px solid var(--grn-border);
+            border-radius: 3px;
+            cursor: pointer;
+            background: transparent;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        input[type="checkbox"]:checked {
+            background: var(--grn-accent);
+            border-color: var(--grn-accent);
+        }
+
+        input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 4px; top: 1px;
+            width: 5px; height: 9px;
+            border: 2px solid #000;
+            border-top: none; border-left: none;
+            transform: rotate(45deg);
+        }
+
+        select {
+            background: var(--grn-elevated);
+            border: 1px solid var(--grn-border-subtle);
+            border-radius: 6px;
+            color: var(--grn-text);
+            font-family: var(--grn-font);
+            font-size: 12px;
+            padding: 4px 8px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        select:focus {
+            border-color: var(--grn-accent-40);
+        }
+
+        .ctrl-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 12px;
+            font-family: var(--grn-font);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--grn-text-70);
+            background: var(--grn-elevated);
+            border: 1px solid var(--grn-border-subtle);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: color 0.2s, border-color 0.2s, background 0.2s;
+        }
+
+        .ctrl-btn:hover {
+            color: var(--grn-text);
+            border-color: var(--grn-border);
+            background: var(--grn-card);
+        }
+
+        /* ── Code snippet ── */
+        .code-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--grn-text-40);
+            background: none;
+            border: none;
+            border-top: 1px solid var(--grn-border-subtle);
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            transition: color 0.2s;
+        }
+
+        .code-toggle:hover { color: var(--grn-text-70); }
+
+        .code-toggle__arrow {
+            font-size: 10px;
+            transition: transform 0.2s;
+        }
+
+        .code-toggle.open .code-toggle__arrow {
+            transform: rotate(90deg);
+        }
+
+        .code-block {
+            display: none;
+            padding: 16px 20px;
+            background: #0D0D0D;
+            border-top: 1px solid var(--grn-border-subtle);
+            overflow-x: auto;
+        }
+
+        .code-block.open {
+            display: block;
+        }
+
+        .code-block pre {
+            font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+            font-size: 12px;
+            line-height: 1.6;
+            color: var(--grn-text-70);
+            white-space: pre;
+        }
+
+        .code-block .kw { color: #C792EA; }
+        .code-block .prop { color: #82AAFF; }
+        .code-block .val { color: var(--grn-accent); }
+        .code-block .cm { color: var(--grn-text-40); }
+
+        /* ======================================================
+           EFFECT-SPECIFIC STYLES
+           ====================================================== */
+
+        /* 1. WebGL card */
+        #preview-shader {
+            width: 100%;
+            height: 280px;
+            border-radius: 8px;
+            display: block;
+        }
+
+        /* 2. Vignette demo */
+        .vignette-demo {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #1a2a00, #0a0a1a, #1a0a2a);
+            overflow: hidden;
+        }
+
+        .vignette-demo__layer {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        /* 3. Box shadow demo */
+        .shadow-demo-card {
+            width: 200px;
+            height: 120px;
+            background: var(--grn-card);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--grn-text-70);
+            transition: box-shadow 0.4s var(--grn-spring-smooth);
+        }
+
+        /* 4. Smooth scroll demo */
+        .smooth-scroll-outer {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            border-radius: 8px;
+            background: var(--grn-elevated);
+            position: relative;
+        }
+
+        .smooth-scroll-inner {
+            padding: 16px;
+        }
+
+        .smooth-scroll-item {
+            height: 56px;
+            background: var(--grn-card);
+            border: 1px solid var(--grn-border-subtle);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            font-size: 13px;
+            color: var(--grn-text-70);
+        }
+
+        /* 5. Spring demo buttons */
+        .spring-demos {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .spring-btn {
+            padding: 10px 20px;
+            font-family: var(--grn-font);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--grn-text);
+            background: var(--grn-card);
+            border: 1px solid var(--grn-border-subtle);
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .spring-btn--snappy { transition: transform 0.5s var(--grn-spring-snappy); }
+        .spring-btn--smooth { transition: transform 0.5s var(--grn-spring-smooth); }
+        .spring-btn--subtle { transition: transform 0.5s var(--grn-spring-subtle); }
+
+        /* 6. Hover zoom demo */
+        .zoom-card {
+            width: 200px;
+            height: 140px;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            background: linear-gradient(135deg, #1a2a00, #0a1a30);
+        }
+
+        .zoom-card__img {
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, #1a3a10 0%, #0a2030 50%, #2a0a3a 100%);
+            transform-origin: center;
+            transition: transform 0.4s var(--grn-spring-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        /* 7. Ticker demo */
+        .ticker-demo {
+            display: flex;
+            gap: 16px;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .ticker-col {
+            width: 160px;
+            flex-shrink: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .ticker-col::before,
+        .ticker-col::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0;
+            height: 48px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .ticker-col::before {
+            top: 0;
+            background: linear-gradient(to bottom, var(--grn-elevated), transparent);
+        }
+
+        .ticker-col::after {
+            bottom: 0;
+            background: linear-gradient(to top, var(--grn-elevated), transparent);
+        }
+
+        .ticker-track {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 8px;
+            will-change: transform;
+        }
+
+        .ticker-item {
+            height: 72px;
+            background: var(--grn-card);
+            border: 1px solid var(--grn-border-subtle);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--grn-text-70);
+            flex-shrink: 0;
+            text-align: center;
+            padding: 8px;
+        }
+
+        /* 8. Glassmorphism */
+        .glass-demo {
+            display: flex;
+            gap: 12px;
+            padding: 20px;
+            background: linear-gradient(135deg, #0a1a00, #0a0a1a, #1a0a2a);
+            border-radius: 8px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .glass-panel {
+            padding: 16px;
+            border-radius: 10px;
+            border: 1px solid var(--grn-border-subtle);
+            font-size: 12px;
+            color: var(--grn-text-70);
+            text-align: center;
+            min-width: 90px;
+        }
+
+        .glass-panel span {
+            display: block;
+            font-size: 10px;
+            color: var(--grn-text-40);
+            margin-top: 4px;
+        }
+
+        /* 9. 3D card flip */
+        .flip-scene {
+            perspective: 800px;
+        }
+
+        .flip-card {
+            width: 160px;
+            height: 110px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s var(--grn-spring-smooth);
+            cursor: pointer;
+        }
+
+        .flip-card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card__face {
+            position: absolute;
+            inset: 0;
+            border-radius: 10px;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .flip-card__front {
+            background: var(--grn-card);
+            border: 1px solid var(--grn-border-subtle);
+            color: var(--grn-text-70);
+        }
+
+        .flip-card__back {
+            background: linear-gradient(135deg, #1a2a00, var(--grn-surface));
+            border: 1px solid var(--grn-accent-40);
+            color: var(--grn-accent);
+            transform: rotateY(180deg);
+        }
+
+        /* 10. Bento grid */
+        .bento-demo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 100px 80px;
+            gap: 8px;
+            width: 100%;
+            max-width: 340px;
+        }
+
+        .bento-cell {
+            background: var(--grn-card);
+            border: 1px solid var(--grn-border-subtle);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: var(--grn-text-40);
+        }
+
+        .bento-cell--span { grid-column: span 2; }
+
+        /* 11. Gradient CTAs */
+        .cta-demo {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .cta-primary {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 24px;
+            font-family: var(--grn-font);
+            font-size: 14px;
+            font-weight: 600;
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: linear-gradient(180deg, #EBFFB4, var(--grn-accent));
+            box-shadow: inset 0 0 3px white, 0 0 40px var(--grn-accent-20);
+            transition: filter 0.4s var(--grn-spring-snappy), transform 0.4s var(--grn-spring-snappy);
+        }
+
+        .cta-primary:hover { filter: brightness(1.1); transform: scale(1.03); }
+        .cta-primary:active { transform: scale(0.98); }
+
+        .cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 24px;
+            font-family: var(--grn-font);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--grn-text);
+            background: transparent;
+            border: 1px solid var(--grn-border);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s var(--grn-spring-subtle), border-color 0.3s;
+        }
+
+        .cta-secondary:hover {
+            background-color: var(--grn-text-10);
+            border-color: var(--grn-text-40);
+        }
+
+        /* 12. SVG gradient icons */
+        .icon-demo {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .icon-wrap svg {
+            display: block;
+            width: 40px; height: 40px;
+        }
+
+        /* 13. Inset border */
+        .inset-card {
+            width: 220px;
+            height: 120px;
+            background: var(--grn-card);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--grn-text-70);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 14. Grid overlay */
+        .grid-demo {
+            width: 100%;
+            height: 180px;
+            border-radius: 8px;
+            background: var(--grn-elevated);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .grid-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        /* 15. Custom scrollbar demo */
+        .scrollbar-demo {
+            width: 100%;
+            height: 160px;
+            overflow-y: auto;
+            background: var(--grn-elevated);
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .scrollbar-line {
+            height: 20px;
+            background: var(--grn-card);
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        /* 16. Clamp typography */
+        .clamp-demo {
+            width: 100%;
+        }
+
+        .clamp-sample {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--grn-border-subtle);
+        }
+
+        .clamp-sample:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .clamp-sample__label {
+            font-size: 10px;
+            color: var(--grn-text-40);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 4px;
+        }
+
+        /* ── Mobile header dropdown ── */
+        .mobile-header {
+            display: none;
+            position: sticky;
+            top: 0;
+            z-index: 300;
+            background: rgba(20, 20, 20, 0.95);
+            backdrop-filter: var(--grn-blur-heavy);
+            -webkit-backdrop-filter: var(--grn-blur-heavy);
+            border-bottom: 1px solid var(--grn-border-subtle);
+            padding: 12px 16px;
+        }
+
+        .mobile-header__select {
+            width: 100%;
+            background: var(--grn-elevated);
+            border: 1px solid var(--grn-border-subtle);
+            border-radius: 8px;
+            color: var(--grn-text);
+            font-family: var(--grn-font);
+            font-size: 14px;
+            padding: 8px 12px;
+            outline: none;
+        }
+
+        /* ── Checkbox label inline ── */
+        .checkbox-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: var(--grn-text-70);
+            cursor: pointer;
+        }
+
+        /* ── Reduced motion ── */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            #preview-shader { display: none; }
+
+            .shader-fallback {
+                display: flex !important;
+            }
+        }
+
+        .shader-fallback {
+            display: none;
+            width: 100%;
+            height: 280px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #0a1a00, #141414, #1a0a2a);
+            align-items: center;
+            justify-content: center;
+            color: var(--grn-text-40);
+            font-size: 13px;
+        }
+
+        /* ── Mobile layout ── */
+        @media (max-width: 768px) {
+            .sidebar { display: none; }
+            .mobile-header { display: block; }
+            .main {
+                margin-left: 0;
+                max-width: 100%;
+                padding: 20px 16px 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Mobile nav dropdown -->
+<div class="mobile-header">
+    <select class="mobile-header__select" id="mobile-nav" onchange="scrollToEffect(this.value)">
+        <option value="">— Jump to Effect —</option>
+        <optgroup label="Tier 1: Hero">
+            <option value="effect-1">1. WebGL Shader Gradient</option>
+            <option value="effect-2">2. Vignette Overlay</option>
+            <option value="effect-3">3. 9-Layer Box Shadow</option>
+        </optgroup>
+        <optgroup label="Tier 2: Motion">
+            <option value="effect-4">4. Smooth Scroll</option>
+            <option value="effect-5">5. Spring Animations</option>
+            <option value="effect-6">6. Hover Image Zoom</option>
+            <option value="effect-7">7. Vertical Ticker Marquee</option>
+        </optgroup>
+        <optgroup label="Tier 3: Surface">
+            <option value="effect-8">8. Glassmorphism</option>
+            <option value="effect-9">9. 3D Card Flip</option>
+            <option value="effect-10">10. Bento Grid</option>
+            <option value="effect-11">11. Gradient CTAs</option>
+        </optgroup>
+        <optgroup label="Tier 4: Detail">
+            <option value="effect-12">12. SVG Gradient Icons</option>
+            <option value="effect-13">13. Inset Border System</option>
+            <option value="effect-14">14. Grid Pattern Overlay</option>
+            <option value="effect-15">15. Custom Scrollbar</option>
+            <option value="effect-16">16. Responsive Clamp Typography</option>
+        </optgroup>
+    </select>
+</div>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+    <a href="#" class="sidebar__logo">
+        <span class="sidebar__logo-dot"></span>
+        Grainient Catalog
+    </a>
+
+    <div class="sidebar__section">
+        <div class="sidebar__group-label">Tier 1 — Hero</div>
+        <button class="sidebar__item" onclick="scrollToEffect('effect-1')"><span class="sidebar__item-num">01</span> WebGL Shader</button>
+        <button class="sidebar__item" onclick="scrollToEffect('effect-2')"><span class="sidebar__item-num">02</span> Vignette Overlay</button>
+        <button class="sidebar__item" onclick="scrollToEffect('effect-3')"><span class="sidebar__item-num">03</span> 9-Layer Shadow</button>
+    </div>
+
+    <div class="sidebar__section">
+        <div class="sidebar__group-label">Tier 2 — Motion</div>
+        <button class="sidebar__item" onclick="scrollToEffect('effect-4')"><span class="sidebar__item-num">04</span> Smooth Scroll</button>
+        <button class="sidebar__item" onclick="scrollToEffect('effect-5')"><span class="sidebar__item-num">05</span> Spring Animations</button>
+        <button class="sidebar__item" onclick="scrollToEffect('effect-6')"><span class="sidebar__item-num">06</span> Hover Image Zoom</button>
+        <button class="sidebar__item" onclick="scrollToEffect('effect-7')"><span class="sidebar__item-num">07</span> Vertical Ticker</button>
+    </div>
+
+    <div class="sidebar__section">
+        <div class="sidebar__group-label">Tier 3 — Surface</div>
+        <button class="sidebar__item" onclick="scrollToEffect('effect-8')"><span class="sidebar__item-num">08</span> Glassmorphism</button>
+        <button class="sidebar__item" onclick="scrollToEffect('effect-9')"><span class="sidebar__item-num">09</span> 3D Card Flip</button>
+        <button class="sidebar__item" onclick="scrollToEffect('effect-10')"><span class="sidebar__item-num">10</span> Bento Grid</button>
+        <button class="sidebar__item" onclick="scrollToEffect('effect-11')"><span class="sidebar__item-num">11</span> Gradient CTAs</button>
+    </div>
+
+    <div class="sidebar__section">
+        <div class="sidebar__group-label">Tier 4 — Detail</div>
+        <button class="sidebar__item" onclick="scrollToEffect('effect-12')"><span class="sidebar__item-num">12</span> SVG Gradient Icons</button>
+        <button class="sidebar__item" onclick="scrollToEffect('effect-13')"><span class="sidebar__item-num">13</span> Inset Border System</button>
+        <button class="sidebar__item" onclick="scrollToEffect('effect-14')"><span class="sidebar__item-num">14</span> Grid Pattern Overlay</button>
+        <button class="sidebar__item" onclick="scrollToEffect('effect-15')"><span class="sidebar__item-num">15</span> Custom Scrollbar</button>
+        <button class="sidebar__item" onclick="scrollToEffect('effect-16')"><span class="sidebar__item-num">16</span> Clamp Typography</button>
+    </div>
+</aside>
+
+<!-- Main content -->
+<div class="layout">
+    <main class="main">
+        <div class="main__header">
+            <h1 class="main__title">Grainient <em>Effects Catalog</em></h1>
+            <p class="main__subtitle">16 composable dark-mode effects — each demonstrated individually with interactive controls and implementation snippets.</p>
+        </div>
+
+        <!-- ════════════════════════════════════════════
+             EFFECT 1 — WebGL Shader Gradient
+             ════════════════════════════════════════════ -->
+        <section class="effect-section" id="effect-1">
+            <div class="effect-card">
+                <div class="effect-card__header">
+                    <span class="effect-card__number">01</span>
+                    <span class="effect-card__name">WebGL Shader Gradient</span>
+                    <span class="tier-badge tier-badge--hero">Hero</span>
+                </div>
+                <div class="effect-preview" style="padding: 0; display: block;">
+                    <canvas id="preview-shader"></canvas>
+                    <div class="shader-fallback">Shader disabled (reduced-motion)</div>
+                </div>
+                <div class="effect-controls">
+                    <div class="control-group">
+                        <div class="control-label">Speed</div>
+                        <div class="control-row">
+                            <input type="range" id="shader-speed" min="0.2" max="3" step="0.1" value="1">
+                            <span class="control-value" id="shader-speed-val">1.0×</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">Palette</div>
+                        <select id="shader-palette">
+                            <option value="aurora">Aurora</option>
+                            <option value="nebula">Nebula</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="code-toggle" onclick="toggleCode(this)">
+                    <span class="code-toggle__arrow">▶</span> View implementation
+                </button>
+                <div class="code-block">
+<pre><span class="cm">/* WebGL2 Aurora Shader — fullscreen quad */</span>
+<span class="kw">const</span> canvas = document.querySelector(<span class="val">'#shader-canvas'</span>);
+<span class="kw">const</span> gl = canvas.getContext(<span class="val">'webgl2'</span>);
+
+<span class="cm">/* Fragment shader: 6-layer FBM noise, aurora palette */</span>
+<span class="kw">float</span> <span class="prop">fbm</span>(vec2 p, float t) {
+  float val = 0.0; float amp = 0.5; float freq = 1.0;
+  <span class="kw">for</span> (int i = 0; i &lt; 5; i++) {
+    val += amp * snoise(p * freq + t * 0.3);
+    freq *= 2.0; amp *= 0.5;
+  }
+  <span class="kw">return</span> val;
+}
+
+<span class="cm">/* Animate */</span>
+<span class="kw">function</span> <span class="prop">render</span>(time) {
+  gl.uniform1f(timeLoc, time * <span class="val">0.001</span>);
+  gl.uniform2f(resLoc, canvas.width, canvas.height);
+  gl.drawArrays(gl.TRIANGLES, <span class="val">0</span>, <span class="val">6</span>);
+  requestAnimationFrame(render);
+}</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+             EFFECT 2 — Vignette Overlay
+             ════════════════════════════════════════════ -->
+        <section class="effect-section" id="effect-2">
+            <div class="effect-card">
+                <div class="effect-card__header">
+                    <span class="effect-card__number">02</span>
+                    <span class="effect-card__name">Vignette Overlay</span>
+                    <span class="tier-badge tier-badge--hero">Hero</span>
+                </div>
+                <div class="effect-preview">
+                    <div class="vignette-demo" id="vignette-demo">
+                        <div class="vignette-demo__layer" id="vignette-layer"></div>
+                        <span style="color: var(--grn-text-70); font-size: 13px; position: relative; z-index: 1;">Content beneath vignette</span>
+                    </div>
+                </div>
+                <div class="effect-controls">
+                    <div class="control-group">
+                        <div class="control-label">Intensity</div>
+                        <div class="control-row">
+                            <input type="range" id="vignette-intensity" min="0" max="100" step="5" value="60">
+                            <span class="control-value" id="vignette-intensity-val">60%</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">Color</div>
+                        <input type="color" id="vignette-color" value="#000000">
+                    </div>
+                </div>
+                <button class="code-toggle" onclick="toggleCode(this)">
+                    <span class="code-toggle__arrow">▶</span> View implementation
+                </button>
+                <div class="code-block">
+<pre><span class="cm">/* 4-directional vignette via linear-gradient overlays */</span>
+<span class="prop">.vignette</span> { position: fixed; z-index: 2; pointer-events: none; }
+
+<span class="prop">.vignette--top</span> {
+  inset: 0 0 auto 0; height: <span class="val">30%</span>;
+  background: linear-gradient(0deg, transparent 0%, var(<span class="val">--grn-surface</span>) 100%);
+}
+<span class="prop">.vignette--bottom</span> {
+  inset: auto 0 0 0; height: <span class="val">30%</span>;
+  background: linear-gradient(180deg, transparent 0%, var(<span class="val">--grn-surface</span>) 100%);
+}
+<span class="prop">.vignette--left</span>  { width: <span class="val">20%</span>; /* ... */ }
+<span class="prop">.vignette--right</span> { width: <span class="val">20%</span>; /* ... */ }</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+             EFFECT 3 — 9-Layer Box Shadow
+             ════════════════════════════════════════════ -->
+        <section class="effect-section" id="effect-3">
+            <div class="effect-card">
+                <div class="effect-card__header">
+                    <span class="effect-card__number">03</span>
+                    <span class="effect-card__name">9-Layer Box Shadow</span>
+                    <span class="tier-badge tier-badge--hero">Hero</span>
+                </div>
+                <div class="effect-preview">
+                    <div class="shadow-demo-card" id="shadow-card">Shadow Glow</div>
+                </div>
+                <div class="effect-controls">
+                    <div class="control-group">
+                        <div class="control-label">Glow Color</div>
+                        <select id="shadow-glow" onchange="updateShadow()">
+                            <option value="lime">Lime</option>
+                            <option value="white">White</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">Intensity</div>
+                        <div class="control-row">
+                            <input type="range" id="shadow-intensity" min="0.2" max="2" step="0.1" value="1" oninput="updateShadow(); document.getElementById('shadow-intensity-val').textContent = parseFloat(this.value).toFixed(1) + '×'">
+                            <span class="control-value" id="shadow-intensity-val">1.0×</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="code-toggle" onclick="toggleCode(this)">
+                    <span class="code-toggle__arrow">▶</span> View implementation
+                </button>
+                <div class="code-block">
+<pre><span class="cm">/* 9-layer radial box-shadow stack */</span>
+<span class="prop">.glow-card</span> {
+  box-shadow:
+    0 1px 2px rgba(<span class="val">194,241,60</span>, 0.07),
+    0 2px 4px rgba(<span class="val">194,241,60</span>, 0.07),
+    0 4px 8px rgba(<span class="val">194,241,60</span>, 0.07),
+    0 8px 16px rgba(<span class="val">194,241,60</span>, 0.07),
+    0 16px 32px rgba(<span class="val">194,241,60</span>, 0.07),
+    0 32px 64px rgba(<span class="val">194,241,60</span>, 0.07),
+    0 0 0 1px rgba(<span class="val">194,241,60</span>, 0.15),
+    inset 0 1px 0 rgba(<span class="val">255,255,255</span>, 0.1),
+    inset 0 -1px 0 rgba(<span class="val">0,0,0</span>, 0.3);
+}</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+             EFFECT 4 — Smooth Scroll
+             ════════════════════════════════════════════ -->
+        <section class="effect-section" id="effect-4">
+            <div class="effect-card">
+                <div class="effect-card__header">
+                    <span class="effect-card__number">04</span>
+                    <span class="effect-card__name">Smooth Scroll (Lerp)</span>
+                    <span class="tier-badge tier-badge--motion">Motion</span>
+                </div>
+                <div class="effect-preview" style="flex-direction: column; align-items: stretch; gap: 8px;">
+                    <div class="smooth-scroll-outer" id="smooth-scroll-outer">
+                        <div class="smooth-scroll-inner" id="smooth-scroll-inner">
+                            <div class="smooth-scroll-item">Item 01 — Scroll me</div>
+                            <div class="smooth-scroll-item">Item 02 — Smooth interpolation</div>
+                            <div class="smooth-scroll-item">Item 03 — Lerp-based easing</div>
+                            <div class="smooth-scroll-item">Item 04 — No library needed</div>
+                            <div class="smooth-scroll-item">Item 05 — rAF driven</div>
+                            <div class="smooth-scroll-item">Item 06 — End of list</div>
+                        </div>
+                    </div>
+                    <span style="font-size: 11px; color: var(--grn-text-40); text-align: center;">Scroll inside the container above</span>
+                </div>
+                <div class="effect-controls">
+                    <div class="control-group">
+                        <div class="control-label">Lerp Factor</div>
+                        <div class="control-row">
+                            <input type="range" id="lerp-factor" min="0.02" max="0.3" step="0.01" value="0.08">
+                            <span class="control-value" id="lerp-factor-val">0.08</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="code-toggle" onclick="toggleCode(this)">
+                    <span class="code-toggle__arrow">▶</span> View implementation
+                </button>
+                <div class="code-block">
+<pre><span class="kw">let</span> currentY = <span class="val">0</span>, targetY = <span class="val">0</span>;
+<span class="kw">const</span> LERP = <span class="val">0.08</span>; <span class="cm">// 0.05 = silky, 0.2 = responsive</span>
+
+container.addEventListener(<span class="val">'wheel'</span>, e =&gt; {
+  e.preventDefault();
+  targetY = Math.max(<span class="val">0</span>, Math.min(maxScroll, targetY + e.deltaY));
+}, { passive: <span class="val">false</span> });
+
+<span class="kw">function</span> <span class="prop">tick</span>() {
+  currentY += (targetY - currentY) * LERP;
+  inner.style.transform = <span class="val">`translateY(-${currentY}px)`</span>;
+  requestAnimationFrame(tick);
+}
+tick();</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+             EFFECT 5 — Spring Animations
+             ════════════════════════════════════════════ -->
+        <section class="effect-section" id="effect-5">
+            <div class="effect-card">
+                <div class="effect-card__header">
+                    <span class="effect-card__number">05</span>
+                    <span class="effect-card__name">Spring Animations</span>
+                    <span class="tier-badge tier-badge--motion">Motion</span>
+                </div>
+                <div class="effect-preview">
+                    <div class="spring-demos">
+                        <button class="spring-btn spring-btn--snappy" id="spring-snappy"
+                            onmouseenter="this.style.transform='scale(1.15)'"
+                            onmouseleave="this.style.transform='scale(1)'">
+                            Snappy
+                        </button>
+                        <button class="spring-btn spring-btn--smooth" id="spring-smooth"
+                            onmouseenter="this.style.transform='scale(1.15)'"
+                            onmouseleave="this.style.transform='scale(1)'">
+                            Smooth
+                        </button>
+                        <button class="spring-btn spring-btn--subtle" id="spring-subtle"
+                            onmouseenter="this.style.transform='scale(1.15)'"
+                            onmouseleave="this.style.transform='scale(1)'">
+                            Subtle
+                        </button>
+                    </div>
+                </div>
+                <div class="effect-controls">
+                    <div class="control-group">
+                        <div class="control-label">Active Preset</div>
+                        <select id="spring-preset" onchange="updateSpringPreview()">
+                            <option value="snappy">Snappy — cubic-bezier(0.34,1.56,0.64,1)</option>
+                            <option value="smooth">Smooth — cubic-bezier(0.25,1,0.5,1)</option>
+                            <option value="subtle">Subtle — cubic-bezier(0.22,1,0.36,1)</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">Duration</div>
+                        <div class="control-row">
+                            <input type="range" id="spring-duration" min="100" max="1200" step="50" value="500" oninput="updateSpringPreview(); document.getElementById('spring-dur-val').textContent=this.value+'ms'">
+                            <span class="control-value" id="spring-dur-val">500ms</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="code-toggle" onclick="toggleCode(this)">
+                    <span class="code-toggle__arrow">▶</span> View implementation
+                </button>
+                <div class="code-block">
+<pre><span class="prop">:root</span> {
+  <span class="prop">--grn-spring-snappy</span>: cubic-bezier(<span class="val">0.34, 1.56, 0.64, 1</span>); <span class="cm">/* bounce */</span>
+  <span class="prop">--grn-spring-smooth</span>: cubic-bezier(<span class="val">0.25, 1, 0.5, 1</span>);    <span class="cm">/* ease-out */</span>
+  <span class="prop">--grn-spring-subtle</span>: cubic-bezier(<span class="val">0.22, 1, 0.36, 1</span>);   <span class="cm">/* gentle */</span>
+}
+
+<span class="prop">.btn</span> {
+  transition: transform 0.5s var(<span class="val">--grn-spring-snappy</span>);
+}
+
+<span class="prop">.btn:hover</span> { transform: scale(<span class="val">1.05</span>); }</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+             EFFECT 6 — Hover Image Zoom
+             ════════════════════════════════════════════ -->
+        <section class="effect-section" id="effect-6">
+            <div class="effect-card">
+                <div class="effect-card__header">
+                    <span class="effect-card__number">06</span>
+                    <span class="effect-card__name">Hover Image Zoom</span>
+                    <span class="tier-badge tier-badge--motion">Motion</span>
+                </div>
+                <div class="effect-preview" style="gap: 20px;">
+                    <div class="zoom-card" id="zoom-card">
+                        <div class="zoom-card__img" id="zoom-img">🖼</div>
+                    </div>
+                    <span style="font-size: 12px; color: var(--grn-text-40);">Hover the card</span>
+                </div>
+                <div class="effect-controls">
+                    <div class="control-group">
+                        <div class="control-label">Scale</div>
+                        <div class="control-row">
+                            <input type="range" id="zoom-scale" min="1.05" max="2" step="0.05" value="1.2" oninput="updateZoom(); document.getElementById('zoom-scale-val').textContent=parseFloat(this.value).toFixed(2)+'×'">
+                            <span class="control-value" id="zoom-scale-val">1.20×</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">Duration</div>
+                        <div class="control-row">
+                            <input type="range" id="zoom-dur" min="100" max="1000" step="50" value="400" oninput="updateZoom(); document.getElementById('zoom-dur-val').textContent=this.value+'ms'">
+                            <span class="control-value" id="zoom-dur-val">400ms</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="code-toggle" onclick="toggleCode(this)">
+                    <span class="code-toggle__arrow">▶</span> View implementation
+                </button>
+                <div class="code-block">
+<pre><span class="prop">.card</span> { overflow: hidden; border-radius: 10px; }
+
+<span class="prop">.card__img</span> {
+  transition: transform 0.4s var(<span class="val">--grn-spring-smooth</span>);
+  transform-origin: center;
+}
+
+<span class="prop">.card:hover .card__img</span> {
+  transform: scale(<span class="val">1.2</span>);
+}</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+             EFFECT 7 — Vertical Ticker Marquee
+             ════════════════════════════════════════════ -->
+        <section class="effect-section" id="effect-7">
+            <div class="effect-card">
+                <div class="effect-card__header">
+                    <span class="effect-card__number">07</span>
+                    <span class="effect-card__name">Vertical Ticker Marquee</span>
+                    <span class="tier-badge tier-badge--motion">Motion</span>
+                </div>
+                <div class="effect-preview">
+                    <div class="ticker-demo">
+                        <div class="ticker-col" style="background: var(--grn-elevated);">
+                            <div class="ticker-track" id="ticker-a">
+                                <div class="ticker-item">Aurora<br>Gradient</div>
+                                <div class="ticker-item">Dark Mode<br>First</div>
+                                <div class="ticker-item">Lime<br>Accent</div>
+                                <div class="ticker-item">Glass<br>Panels</div>
+                                <div class="ticker-item">Spring<br>Motion</div>
+                                <div class="ticker-item">WebGL<br>Shader</div>
+                            </div>
+                        </div>
+                        <div class="ticker-col" style="background: var(--grn-elevated);">
+                            <div class="ticker-track" id="ticker-b">
+                                <div class="ticker-item" style="border-color: var(--grn-accent-40); color: var(--grn-accent);">Bento<br>Grid</div>
+                                <div class="ticker-item">SVG<br>Icons</div>
+                                <div class="ticker-item">Inset<br>Border</div>
+                                <div class="ticker-item">Smooth<br>Scroll</div>
+                                <div class="ticker-item" style="border-color: var(--grn-accent-40); color: var(--grn-accent);">Vignette<br>Layer</div>
+                                <div class="ticker-item">Clamp<br>Type</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="effect-controls">
+                    <div class="control-group">
+                        <div class="control-label">Speed</div>
+                        <div class="control-row">
+                            <input type="range" id="ticker-speed" min="0.2" max="3" step="0.1" value="1" oninput="tickerSpeedFactor=parseFloat(this.value); document.getElementById('ticker-speed-val').textContent=parseFloat(this.value).toFixed(1)+'×'">
+                            <span class="control-value" id="ticker-speed-val">1.0×</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">Playback</div>
+                        <button class="ctrl-btn" id="ticker-pause-btn" onclick="toggleTicker()">Pause</button>
+                    </div>
+                </div>
+                <button class="code-toggle" onclick="toggleCode(this)">
+                    <span class="code-toggle__arrow">▶</span> View implementation
+                </button>
+                <div class="code-block">
+<pre><span class="kw">let</span> posA = <span class="val">0</span>, posB = <span class="val">-50</span>; <span class="cm">// stagger cols</span>
+<span class="kw">const</span> SPEED = <span class="val">0.4</span>; <span class="cm">// px per frame</span>
+
+<span class="kw">function</span> <span class="prop">tick</span>() {
+  posA -= SPEED; posB -= SPEED;
+  <span class="cm">// Reset when first clone scrolls off</span>
+  <span class="kw">if</span> (posA &lt;= -itemH * count) posA = <span class="val">0</span>;
+  <span class="kw">if</span> (posB &lt;= -itemH * count) posB = <span class="val">0</span>;
+  trackA.style.transform = <span class="val">`translateY(${posA}px)`</span>;
+  trackB.style.transform = <span class="val">`translateY(${posB}px)`</span>;
+  requestAnimationFrame(tick);
+}</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+             EFFECT 8 — Glassmorphism
+             ════════════════════════════════════════════ -->
+        <section class="effect-section" id="effect-8">
+            <div class="effect-card">
+                <div class="effect-card__header">
+                    <span class="effect-card__number">08</span>
+                    <span class="effect-card__name">Glassmorphism</span>
+                    <span class="tier-badge tier-badge--surface">Surface</span>
+                </div>
+                <div class="effect-preview">
+                    <div class="glass-demo" id="glass-demo">
+                        <div class="glass-panel" id="glass-light" style="backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); background: rgba(255,255,255,0.05);">
+                            Light<span>blur(5px)</span>
+                        </div>
+                        <div class="glass-panel" id="glass-mid" style="backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); background: rgba(255,255,255,0.07);">
+                            Medium<span>blur(10px)</span>
+                        </div>
+                        <div class="glass-panel" id="glass-heavy" style="backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); background: rgba(255,255,255,0.1);">
+                            Heavy<span>blur(20px)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="effect-controls">
+                    <div class="control-group">
+                        <div class="control-label">Blur (all)</div>
+                        <div class="control-row">
+                            <input type="range" id="glass-blur" min="0" max="40" step="1" value="10" oninput="updateGlass(); document.getElementById('glass-blur-val').textContent=this.value+'px'">
+                            <span class="control-value" id="glass-blur-val">10px</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">Opacity</div>
+                        <div class="control-row">
+                            <input type="range" id="glass-opacity" min="0" max="30" step="1" value="7" oninput="updateGlass(); document.getElementById('glass-opacity-val').textContent=this.value+'%'">
+                            <span class="control-value" id="glass-opacity-val">7%</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="code-toggle" onclick="toggleCode(this)">
+                    <span class="code-toggle__arrow">▶</span> View implementation
+                </button>
+                <div class="code-block">
+<pre><span class="prop">.glass-panel</span> {
+  backdrop-filter: var(<span class="val">--grn-blur-medium</span>);    <span class="cm">/* blur(10px) */</span>
+  -webkit-backdrop-filter: var(<span class="val">--grn-blur-medium</span>);
+  background: rgba(<span class="val">255, 255, 255, 0.07</span>);
+  border: 1px solid var(<span class="val">--grn-border-subtle</span>);
+  border-radius: 10px;
+}
+
+<span class="prop">:root</span> {
+  <span class="prop">--grn-blur-light</span>:  blur(<span class="val">5px</span>);
+  <span class="prop">--grn-blur-medium</span>: blur(<span class="val">10px</span>);
+  <span class="prop">--grn-blur-heavy</span>:  blur(<span class="val">20px</span>);
+}</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+             EFFECT 9 — 3D Card Flip
+             ════════════════════════════════════════════ -->
+        <section class="effect-section" id="effect-9">
+            <div class="effect-card">
+                <div class="effect-card__header">
+                    <span class="effect-card__number">09</span>
+                    <span class="effect-card__name">3D Card Flip</span>
+                    <span class="tier-badge tier-badge--surface">Surface</span>
+                </div>
+                <div class="effect-preview" style="gap: 20px; flex-wrap: wrap;">
+                    <div class="flip-scene" id="flip-scene" style="perspective: 800px;">
+                        <div class="flip-card" id="flip-card" onclick="this.classList.toggle('flipped')">
+                            <div class="flip-card__face flip-card__front">Click to flip</div>
+                            <div class="flip-card__face flip-card__back">Flipped!</div>
+                        </div>
+                    </div>
+                    <span style="font-size: 12px; color: var(--grn-text-40);">Click the card</span>
+                </div>
+                <div class="effect-controls">
+                    <div class="control-group">
+                        <div class="control-label">Perspective</div>
+                        <div class="control-row">
+                            <input type="range" id="flip-perspective" min="300" max="2000" step="50" value="800" oninput="document.getElementById('flip-scene').style.perspective=this.value+'px'; document.getElementById('flip-persp-val').textContent=this.value+'px'">
+                            <span class="control-value" id="flip-persp-val">800px</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">Action</div>
+                        <button class="ctrl-btn" onclick="document.getElementById('flip-card').classList.toggle('flipped')">Flip Card</button>
+                    </div>
+                </div>
+                <button class="code-toggle" onclick="toggleCode(this)">
+                    <span class="code-toggle__arrow">▶</span> View implementation
+                </button>
+                <div class="code-block">
+<pre><span class="prop">.flip-scene</span> { perspective: <span class="val">800px</span>; }
+
+<span class="prop">.flip-card</span> {
+  transform-style: preserve-3d;
+  transition: transform 0.6s var(<span class="val">--grn-spring-smooth</span>);
+}
+
+<span class="prop">.flip-card.flipped</span> { transform: rotateY(<span class="val">180deg</span>); }
+
+<span class="prop">.flip-card__front, .flip-card__back</span> {
+  position: absolute; inset: 0;
+  backface-visibility: hidden;
+}
+
+<span class="prop">.flip-card__back</span> { transform: rotateY(<span class="val">180deg</span>); }</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+             EFFECT 10 — Bento Grid
+             ════════════════════════════════════════════ -->
+        <section class="effect-section" id="effect-10">
+            <div class="effect-card">
+                <div class="effect-card__header">
+                    <span class="effect-card__number">10</span>
+                    <span class="effect-card__name">Bento Grid</span>
+                    <span class="tier-badge tier-badge--surface">Surface</span>
+                </div>
+                <div class="effect-preview">
+                    <div class="bento-demo" id="bento-grid">
+                        <div class="bento-cell">Cell A</div>
+                        <div class="bento-cell">Cell B</div>
+                        <div class="bento-cell bento-cell--span">Cell C — spans 2 columns</div>
+                    </div>
+                </div>
+                <div class="effect-controls">
+                    <div class="control-group">
+                        <div class="control-label">Gap</div>
+                        <div class="control-row">
+                            <input type="range" id="bento-gap" min="4" max="32" step="2" value="8" oninput="document.getElementById('bento-grid').style.gap=this.value+'px'; document.getElementById('bento-gap-val').textContent=this.value+'px'">
+                            <span class="control-value" id="bento-gap-val">8px</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">Radius</div>
+                        <div class="control-row">
+                            <input type="range" id="bento-radius" min="0" max="24" step="2" value="10" oninput="document.querySelectorAll('.bento-cell').forEach(c=>c.style.borderRadius=this.value+'px'); document.getElementById('bento-radius-val').textContent=this.value+'px'">
+                            <span class="control-value" id="bento-radius-val">10px</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="code-toggle" onclick="toggleCode(this)">
+                    <span class="code-toggle__arrow">▶</span> View implementation
+                </button>
+                <div class="code-block">
+<pre><span class="prop">.bento-grid</span> {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 80px;
+  gap: <span class="val">8px</span>;
+}
+
+<span class="prop">.bento-cell</span> {
+  background: var(<span class="val">--grn-card</span>);
+  border: 1px solid var(<span class="val">--grn-border-subtle</span>);
+  border-radius: 10px;
+}
+
+<span class="prop">.bento-cell--span</span> { grid-column: span <span class="val">2</span>; }</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+             EFFECT 11 — Gradient CTAs
+             ════════════════════════════════════════════ -->
+        <section class="effect-section" id="effect-11">
+            <div class="effect-card">
+                <div class="effect-card__header">
+                    <span class="effect-card__number">11</span>
+                    <span class="effect-card__name">Gradient CTAs</span>
+                    <span class="tier-badge tier-badge--surface">Surface</span>
+                </div>
+                <div class="effect-preview">
+                    <div class="cta-demo">
+                        <button class="cta-primary" id="cta-primary-btn">Get Started</button>
+                        <button class="cta-secondary">Learn More</button>
+                    </div>
+                </div>
+                <div class="effect-controls">
+                    <div class="control-group">
+                        <div class="control-label">Accent Color</div>
+                        <input type="color" id="cta-accent" value="#C2F13C" oninput="updateCta()">
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">Glow Intensity</div>
+                        <div class="control-row">
+                            <input type="range" id="cta-glow" min="0" max="80" step="4" value="40" oninput="updateCta(); document.getElementById('cta-glow-val').textContent=this.value+'px'">
+                            <span class="control-value" id="cta-glow-val">40px</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="code-toggle" onclick="toggleCode(this)">
+                    <span class="code-toggle__arrow">▶</span> View implementation
+                </button>
+                <div class="code-block">
+<pre><span class="prop">.btn-primary</span> {
+  background: linear-gradient(180deg, <span class="val">#EBFFB4</span>, var(<span class="val">--grn-accent</span>));
+  box-shadow:
+    inset 0 0 3px white,
+    0 0 40px var(<span class="val">--grn-accent-20</span>);
+  color: <span class="val">#000</span>;
+  border-radius: 50px;
+  transition: filter 0.4s var(<span class="val">--grn-spring-snappy</span>),
+              transform 0.4s var(<span class="val">--grn-spring-snappy</span>);
+}
+
+<span class="prop">.btn-primary:hover</span> {
+  filter: brightness(<span class="val">1.1</span>); transform: scale(<span class="val">1.03</span>);
+}</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+             EFFECT 12 — SVG Gradient Icons
+             ════════════════════════════════════════════ -->
+        <section class="effect-section" id="effect-12">
+            <div class="effect-card">
+                <div class="effect-card__header">
+                    <span class="effect-card__number">12</span>
+                    <span class="effect-card__name">SVG Gradient Icons</span>
+                    <span class="tier-badge tier-badge--detail">Detail</span>
+                </div>
+                <div class="effect-preview">
+                    <div class="icon-demo" id="icon-demo">
+                        <!-- Icons injected by JS -->
+                    </div>
+                </div>
+                <div class="effect-controls">
+                    <div class="control-group">
+                        <div class="control-label">Gradient Direction</div>
+                        <select id="icon-dir" onchange="updateIcons()">
+                            <option value="0,1,0,0">Left → Right</option>
+                            <option value="0,0,0,1" selected>Top → Bottom</option>
+                            <option value="0,1,1,0">Diagonal ↘</option>
+                            <option value="1,0,0,1">Diagonal ↙</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="code-toggle" onclick="toggleCode(this)">
+                    <span class="code-toggle__arrow">▶</span> View implementation
+                </button>
+                <div class="code-block">
+<pre><span class="cm">&lt;!-- SVG gradient fill via linearGradient --&gt;</span>
+<span class="kw">&lt;svg&gt;</span>
+  <span class="prop">&lt;defs&gt;</span>
+    <span class="kw">&lt;linearGradient</span> id=<span class="val">"icon-grad"</span>
+      x1=<span class="val">"0"</span> y1=<span class="val">"0"</span> x2=<span class="val">"0"</span> y2=<span class="val">"1"</span><span class="kw">&gt;</span>
+      <span class="kw">&lt;stop</span> offset=<span class="val">"0"</span> stop-color=<span class="val">"#EBFFB4"</span><span class="kw">/&gt;</span>
+      <span class="kw">&lt;stop</span> offset=<span class="val">"1"</span> stop-color=<span class="val">"#C2F13C"</span><span class="kw">/&gt;</span>
+    <span class="kw">&lt;/linearGradient&gt;</span>
+  <span class="prop">&lt;/defs&gt;</span>
+  <span class="kw">&lt;path</span> d=<span class="val">"..."</span> fill=<span class="val">"url(#icon-grad)"</span><span class="kw">/&gt;</span>
+<span class="kw">&lt;/svg&gt;</span></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+             EFFECT 13 — Inset Border System
+             ════════════════════════════════════════════ -->
+        <section class="effect-section" id="effect-13">
+            <div class="effect-card">
+                <div class="effect-card__header">
+                    <span class="effect-card__number">13</span>
+                    <span class="effect-card__name">Inset Border System</span>
+                    <span class="tier-badge tier-badge--detail">Detail</span>
+                </div>
+                <div class="effect-preview">
+                    <div class="inset-card" id="inset-card">
+                        Per-side accent borders
+                    </div>
+                </div>
+                <div class="effect-controls">
+                    <label class="checkbox-row">
+                        <input type="checkbox" id="inset-top" checked onchange="updateInset()"> Top
+                    </label>
+                    <label class="checkbox-row">
+                        <input type="checkbox" id="inset-right" onchange="updateInset()"> Right
+                    </label>
+                    <label class="checkbox-row">
+                        <input type="checkbox" id="inset-bottom" onchange="updateInset()"> Bottom
+                    </label>
+                    <label class="checkbox-row">
+                        <input type="checkbox" id="inset-left" onchange="updateInset()"> Left
+                    </label>
+                    <div class="control-group">
+                        <div class="control-label">Color</div>
+                        <input type="color" id="inset-color" value="#C2F13C" oninput="updateInset()">
+                    </div>
+                </div>
+                <button class="code-toggle" onclick="toggleCode(this)">
+                    <span class="code-toggle__arrow">▶</span> View implementation
+                </button>
+                <div class="code-block">
+<pre><span class="cm">/* Inset shadow = inner border, 1px top only */</span>
+<span class="prop">.card--top-border</span> {
+  box-shadow: inset 0 1px 0 var(<span class="val">--grn-accent-40</span>);
+}
+
+<span class="prop">.card--all-borders</span> {
+  box-shadow:
+    inset 0  1px 0 var(<span class="val">--grn-accent-40</span>),  <span class="cm">/* top */</span>
+    inset 0 -1px 0 var(<span class="val">--grn-accent-40</span>),  <span class="cm">/* bottom */</span>
+    inset  1px 0 0 var(<span class="val">--grn-accent-40</span>),  <span class="cm">/* left */</span>
+    inset -1px 0 0 var(<span class="val">--grn-accent-40</span>);  <span class="cm">/* right */</span>
+}</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+             EFFECT 14 — Grid Pattern Overlay
+             ════════════════════════════════════════════ -->
+        <section class="effect-section" id="effect-14">
+            <div class="effect-card">
+                <div class="effect-card__header">
+                    <span class="effect-card__number">14</span>
+                    <span class="effect-card__name">Grid Pattern Overlay</span>
+                    <span class="tier-badge tier-badge--detail">Detail</span>
+                </div>
+                <div class="effect-preview" style="display: block; padding: 0;">
+                    <div class="grid-demo">
+                        <div class="grid-overlay" id="grid-overlay"></div>
+                        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--grn-text-40); font-size: 13px;">Content above grid</div>
+                    </div>
+                </div>
+                <div class="effect-controls">
+                    <div class="control-group">
+                        <div class="control-label">Grid Size</div>
+                        <div class="control-row">
+                            <input type="range" id="grid-size" min="16" max="80" step="4" value="32" oninput="updateGrid(); document.getElementById('grid-size-val').textContent=this.value+'px'">
+                            <span class="control-value" id="grid-size-val">32px</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">Opacity</div>
+                        <div class="control-row">
+                            <input type="range" id="grid-opacity" min="1" max="30" step="1" value="8" oninput="updateGrid(); document.getElementById('grid-opacity-val').textContent=this.value+'%'">
+                            <span class="control-value" id="grid-opacity-val">8%</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="code-toggle" onclick="toggleCode(this)">
+                    <span class="code-toggle__arrow">▶</span> View implementation
+                </button>
+                <div class="code-block">
+<pre><span class="prop">.grid-overlay</span> {
+  background-image:
+    linear-gradient(var(<span class="val">--grid-color</span>) 1px, transparent 1px),
+    linear-gradient(90deg, var(<span class="val">--grid-color</span>) 1px, transparent 1px);
+  background-size: <span class="val">32px 32px</span>;
+  pointer-events: none;
+}
+
+<span class="cm">/* CSS variable for runtime control */</span>
+<span class="prop">:root</span> {
+  <span class="prop">--grid-color</span>: rgba(<span class="val">255, 255, 255, 0.08</span>);
+  <span class="prop">--grid-size</span>: <span class="val">32px</span>;
+}</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+             EFFECT 15 — Custom Scrollbar
+             ════════════════════════════════════════════ -->
+        <section class="effect-section" id="effect-15">
+            <div class="effect-card">
+                <div class="effect-card__header">
+                    <span class="effect-card__number">15</span>
+                    <span class="effect-card__name">Custom Scrollbar</span>
+                    <span class="tier-badge tier-badge--detail">Detail</span>
+                </div>
+                <div class="effect-preview" style="display: block;">
+                    <div class="scrollbar-demo" id="scrollbar-demo">
+                        <div class="scrollbar-line" style="width: 90%;"></div>
+                        <div class="scrollbar-line" style="width: 70%;"></div>
+                        <div class="scrollbar-line" style="width: 85%;"></div>
+                        <div class="scrollbar-line" style="width: 60%;"></div>
+                        <div class="scrollbar-line" style="width: 80%;"></div>
+                        <div class="scrollbar-line" style="width: 75%;"></div>
+                        <div class="scrollbar-line" style="width: 55%;"></div>
+                        <div class="scrollbar-line" style="width: 90%;"></div>
+                        <div class="scrollbar-line" style="width: 65%;"></div>
+                        <div class="scrollbar-line" style="width: 78%;"></div>
+                    </div>
+                </div>
+                <div class="effect-controls">
+                    <div class="control-group">
+                        <div class="control-label">Thumb Color</div>
+                        <input type="color" id="scrollbar-color" value="#C2F13C" oninput="updateScrollbar()">
+                    </div>
+                </div>
+                <button class="code-toggle" onclick="toggleCode(this)">
+                    <span class="code-toggle__arrow">▶</span> View implementation
+                </button>
+                <div class="code-block">
+<pre><span class="cm">/* WebKit browsers */</span>
+<span class="prop">::-webkit-scrollbar</span> { width: <span class="val">6px</span>; height: <span class="val">6px</span>; }
+<span class="prop">::-webkit-scrollbar-track</span> { background: transparent; }
+<span class="prop">::-webkit-scrollbar-thumb</span> {
+  background: var(<span class="val">--grn-text-20</span>);
+  border-radius: <span class="val">3px</span>;
+}
+<span class="prop">::-webkit-scrollbar-thumb:hover</span> {
+  background: var(<span class="val">--grn-text-40</span>);
+}
+
+<span class="cm">/* Firefox */</span>
+<span class="prop">html</span> {
+  scrollbar-width: thin;
+  scrollbar-color: var(<span class="val">--grn-text-20</span>) transparent;
+}</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+             EFFECT 16 — Responsive Clamp Typography
+             ════════════════════════════════════════════ -->
+        <section class="effect-section" id="effect-16">
+            <div class="effect-card">
+                <div class="effect-card__header">
+                    <span class="effect-card__number">16</span>
+                    <span class="effect-card__name">Responsive Clamp Typography</span>
+                    <span class="tier-badge tier-badge--detail">Detail</span>
+                </div>
+                <div class="effect-preview" style="display: block; align-items: stretch;">
+                    <div class="clamp-demo">
+                        <div class="clamp-sample">
+                            <div class="clamp-sample__label">Hero — clamp(32px, 4vw + 1rem, 6vw)</div>
+                            <div style="font-size: clamp(32px, 4vw + 1rem, 6vw); font-weight: 600; line-height: 1.1;">The Gradient</div>
+                        </div>
+                        <div class="clamp-sample">
+                            <div class="clamp-sample__label">Section — clamp(24px, 3vw + 0.5rem, 48px)</div>
+                            <div style="font-size: clamp(24px, 3vw + 0.5rem, 48px); font-weight: 600; line-height: 1.2;">Dark Mode First</div>
+                        </div>
+                        <div class="clamp-sample">
+                            <div class="clamp-sample__label">Body — clamp(16px, 1vw + 1rem, 1.1vw)</div>
+                            <div style="font-size: clamp(16px, 1vw + 1rem, 1.1vw); color: var(--grn-text-70); line-height: 1.6;">Resize the window to see fluid type scaling without breakpoints. The clamp() function bounds the font between a minimum and maximum, interpolating linearly in between.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="effect-controls">
+                    <div class="control-group" style="min-width: 280px;">
+                        <div class="control-label">How it works</div>
+                        <div style="font-size: 12px; color: var(--grn-text-40); line-height: 1.5;">Resize the browser window — text scales fluidly between min and max values without media query breakpoints.</div>
+                    </div>
+                </div>
+                <button class="code-toggle" onclick="toggleCode(this)">
+                    <span class="code-toggle__arrow">▶</span> View implementation
+                </button>
+                <div class="code-block">
+<pre><span class="prop">:root</span> {
+  <span class="cm">/* clamp(min, preferred, max) */</span>
+  <span class="prop">--grn-hero-size</span>: clamp(<span class="val">32px</span>, 4vw + 1rem, 6vw);
+  <span class="prop">--grn-body-size</span>: clamp(<span class="val">16px</span>, 1vw + 1rem, 1.1vw);
+}
+
+<span class="prop">.hero__title</span> { font-size: var(<span class="val">--grn-hero-size</span>); }
+<span class="prop">.body-text</span>   { font-size: var(<span class="val">--grn-body-size</span>); }
+
+<span class="cm">/* Section heading — explicit inline */</span>
+<span class="prop">.section__title</span> {
+  font-size: clamp(<span class="val">24px</span>, 3vw + 0.5rem, <span class="val">48px</span>);
+}</pre>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════════
+// Utility
+// ══════════════════════════════════════════════════════
+function scrollToEffect(id) {
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Update sidebar active state
+    document.querySelectorAll('.sidebar__item').forEach(btn => btn.classList.remove('active'));
+    const match = Array.from(document.querySelectorAll('.sidebar__item'))
+        .find(b => b.getAttribute('onclick')?.includes(id));
+    if (match) match.classList.add('active');
+}
+
+function toggleCode(btn) {
+    btn.classList.toggle('open');
+    const block = btn.nextElementSibling;
+    block.classList.toggle('open');
+}
+
+// ══════════════════════════════════════════════════════
+// Effect 1 — WebGL Shader
+// ══════════════════════════════════════════════════════
+(function initShader() {
+    const canvas = document.getElementById('preview-shader');
+    if (!canvas) return;
+
+    // Honour prefers-reduced-motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        canvas.style.display = 'none';
+        return;
+    }
+
+    const gl = canvas.getContext('webgl2');
+    if (!gl) {
+        canvas.style.display = 'none';
+        return;
+    }
+
+    const vert = `#version 300 es
+        in vec4 aPosition;
+        void main() { gl_Position = aPosition; }
+    `;
+
+    // Palettes: aurora (default) and nebula
+    const PALETTES = {
+        aurora: {
+            c1: [0.2, 0.85, 0.3],
+            c2: [0.76, 0.95, 0.23],
+            c3: [0.1, 0.3, 0.9],
+            c4: [0.5, 0.1, 0.8],
+            c5: [0.1, 0.7, 0.6],
+            c6: [0.8, 0.2, 0.5]
+        },
+        nebula: {
+            c1: [0.6, 0.1, 0.9],
+            c2: [0.9, 0.2, 0.6],
+            c3: [0.1, 0.4, 0.9],
+            c4: [0.0, 0.7, 0.9],
+            c5: [0.8, 0.3, 0.1],
+            c6: [0.5, 0.0, 0.8]
+        }
+    };
+
+    let currentPalette = PALETTES.aurora;
+    let speedFactor = 1.0;
+
+    const frag = `#version 300 es
+        precision highp float;
+        uniform float uTime;
+        uniform vec2 uResolution;
+        uniform vec3 uC1, uC2, uC3, uC4, uC5, uC6;
+        out vec4 fragColor;
+
+        vec3 mod289(vec3 x) { return x - floor(x*(1./289.))*289.; }
+        vec2 mod289(vec2 x) { return x - floor(x*(1./289.))*289.; }
+        vec3 permute(vec3 x) { return mod289(((x*34.)+1.)*x); }
+
+        float snoise(vec2 v) {
+            const vec4 C = vec4(.211324865405187,.366025403784439,-.577350269189626,.024390243902439);
+            vec2 i=floor(v+dot(v,C.yy));
+            vec2 x0=v-i+dot(i,C.xx);
+            vec2 i1=(x0.x>x0.y)?vec2(1,0):vec2(0,1);
+            vec4 x12=x0.xyxy+C.xxzz; x12.xy-=i1;
+            i=mod289(i);
+            vec3 p=permute(permute(i.y+vec3(0,i1.y,1))+i.x+vec3(0,i1.x,1));
+            vec3 m=max(.5-vec3(dot(x0,x0),dot(x12.xy,x12.xy),dot(x12.zw,x12.zw)),0.);
+            m=m*m; m=m*m;
+            vec3 x_=2.*fract(p*C.www)-1.;
+            vec3 h=abs(x_)-.5;
+            vec3 ox=floor(x_+.5);
+            vec3 a0=x_-ox;
+            m*=1.79284291400159-.85373472095314*(a0*a0+h*h);
+            vec3 g;
+            g.x=a0.x*x0.x+h.x*x0.y;
+            g.yz=a0.yz*x12.xz+h.yz*x12.yw;
+            return 130.*dot(m,g);
+        }
+
+        float fbm(vec2 p,float t){
+            float v=0.,amp=.5,freq=1.;
+            for(int i=0;i<5;i++){v+=amp*snoise(p*freq+t*.3);freq*=2.;amp*=.5;}
+            return v;
+        }
+
+        void main(){
+            vec2 p=(gl_FragCoord.xy-.5*uResolution)/uResolution.y;
+            float t=uTime*.15;
+            float n1=fbm(p*1.2+vec2(t*.4,t*.2),t);
+            float n2=fbm(p*1.8+vec2(-t*.3,t*.5),t*1.2);
+            float n3=fbm(p*2.5+vec2(t*.2,-t*.4),t*.8);
+            float n4=fbm(p*.8+vec2(t*.6,t*.1),t*.5);
+            float n5=fbm(p*3.+vec2(-t*.5,-t*.3),t*1.5);
+            float n6=fbm(p*1.5+vec2(t*.1,t*.7),t*.6);
+            vec3 color=vec3(0);
+            color+=uC1*max(n1,0.)*.35;
+            color+=uC2*max(n2,0.)*.25;
+            color+=uC3*max(n3,0.)*.3;
+            color+=uC4*max(n4,0.)*.2;
+            color+=uC5*max(n5,0.)*.15;
+            color+=uC6*max(n6,0.)*.1;
+            float vert=smoothstep(-.5,.5,p.y);
+            color*=mix(.6,1.2,vert);
+            float vig=1.-length(p)*.6;
+            color*=max(vig,0.);
+            color=max(color,0.);
+            fragColor=vec4(color,1.);
+        }
+    `;
+
+    function mkShader(type, src) {
+        const s = gl.createShader(type);
+        gl.shaderSource(s, src);
+        gl.compileShader(s);
+        if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+            console.error(gl.getShaderInfoLog(s));
+            gl.deleteShader(s);
+            return null;
+        }
+        return s;
+    }
+
+    const vs = mkShader(gl.VERTEX_SHADER, vert);
+    const fs = mkShader(gl.FRAGMENT_SHADER, frag);
+    const prog = gl.createProgram();
+    gl.attachShader(prog, vs); gl.attachShader(prog, fs);
+    gl.linkProgram(prog);
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+        console.error(gl.getProgramInfoLog(prog));
+        return;
+    }
+
+    const timeLoc = gl.getUniformLocation(prog, 'uTime');
+    const resLoc  = gl.getUniformLocation(prog, 'uResolution');
+    const c1Loc   = gl.getUniformLocation(prog, 'uC1');
+    const c2Loc   = gl.getUniformLocation(prog, 'uC2');
+    const c3Loc   = gl.getUniformLocation(prog, 'uC3');
+    const c4Loc   = gl.getUniformLocation(prog, 'uC4');
+    const c5Loc   = gl.getUniformLocation(prog, 'uC5');
+    const c6Loc   = gl.getUniformLocation(prog, 'uC6');
+
+    const positions = new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]);
+    const buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
+    const vao = gl.createVertexArray();
+    gl.bindVertexArray(vao);
+    gl.enableVertexAttribArray(0);
+    gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+
+    function resize() {
+        const rect = canvas.parentElement.getBoundingClientRect();
+        const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        canvas.width  = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+        gl.viewport(0, 0, canvas.width, canvas.height);
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function setPalette(p) {
+        gl.useProgram(prog);
+        gl.uniform3fv(c1Loc, p.c1);
+        gl.uniform3fv(c2Loc, p.c2);
+        gl.uniform3fv(c3Loc, p.c3);
+        gl.uniform3fv(c4Loc, p.c4);
+        gl.uniform3fv(c5Loc, p.c5);
+        gl.uniform3fv(c6Loc, p.c6);
+    }
+    setPalette(currentPalette);
+
+    function render(time) {
+        gl.useProgram(prog);
+        gl.uniform1f(timeLoc, time * 0.001 * speedFactor);
+        gl.uniform2f(resLoc, canvas.width, canvas.height);
+        gl.drawArrays(gl.TRIANGLES, 0, 6);
+        requestAnimationFrame(render);
+    }
+    requestAnimationFrame(render);
+
+    // Controls
+    const speedSlider = document.getElementById('shader-speed');
+    const speedVal    = document.getElementById('shader-speed-val');
+    speedSlider.addEventListener('input', () => {
+        speedFactor = parseFloat(speedSlider.value);
+        speedVal.textContent = speedFactor.toFixed(1) + '×';
+    });
+
+    document.getElementById('shader-palette').addEventListener('change', e => {
+        currentPalette = PALETTES[e.target.value] || PALETTES.aurora;
+        setPalette(currentPalette);
+    });
+})();
+
+// ══════════════════════════════════════════════════════
+// Effect 2 — Vignette
+// ══════════════════════════════════════════════════════
+function updateVignette() {
+    const intensity = document.getElementById('vignette-intensity').value;
+    const color     = document.getElementById('vignette-color').value;
+    document.getElementById('vignette-intensity-val').textContent = intensity + '%';
+
+    // Convert hex to rgb
+    const r = parseInt(color.slice(1,3),16);
+    const g = parseInt(color.slice(3,5),16);
+    const b = parseInt(color.slice(5,7),16);
+
+    const layer = document.getElementById('vignette-layer');
+    layer.style.background = `radial-gradient(ellipse at center, transparent 0%, rgba(${r},${g},${b},${intensity/100}) 100%)`;
+}
+
+document.getElementById('vignette-intensity').addEventListener('input', updateVignette);
+document.getElementById('vignette-color').addEventListener('input', updateVignette);
+updateVignette();
+
+// ══════════════════════════════════════════════════════
+// Effect 3 — Box Shadow
+// ══════════════════════════════════════════════════════
+function updateShadow() {
+    const glowSel   = document.getElementById('shadow-glow').value;
+    const intensity = parseFloat(document.getElementById('shadow-intensity').value);
+    const card      = document.getElementById('shadow-card');
+
+    const baseA = 0.07 * intensity;
+    let rgb;
+    if (glowSel === 'lime') {
+        rgb = '194,241,60';
+    } else {
+        rgb = '255,255,255';
+    }
+
+    card.style.boxShadow = `
+        0 1px 2px rgba(${rgb},${baseA}),
+        0 2px 4px rgba(${rgb},${baseA}),
+        0 4px 8px rgba(${rgb},${baseA}),
+        0 8px 16px rgba(${rgb},${baseA}),
+        0 16px 32px rgba(${rgb},${baseA}),
+        0 32px 64px rgba(${rgb},${baseA}),
+        0 0 0 1px rgba(${rgb},${0.15 * intensity}),
+        inset 0 1px 0 rgba(255,255,255,0.1),
+        inset 0 -1px 0 rgba(0,0,0,0.3)
+    `;
+}
+
+document.getElementById('shadow-glow').addEventListener('change', updateShadow);
+updateShadow();
+
+// ══════════════════════════════════════════════════════
+// Effect 4 — Smooth Scroll (lerp)
+// ══════════════════════════════════════════════════════
+(function initSmoothScroll() {
+    const outer = document.getElementById('smooth-scroll-outer');
+    const inner = document.getElementById('smooth-scroll-inner');
+    if (!outer || !inner) return;
+
+    let currentY = 0;
+    let targetY  = 0;
+    let lerp     = 0.08;
+    let rafId    = null;
+
+    function getMaxScroll() {
+        return Math.max(0, inner.scrollHeight - outer.clientHeight);
+    }
+
+    outer.addEventListener('wheel', e => {
+        e.preventDefault();
+        targetY = Math.max(0, Math.min(getMaxScroll(), targetY + e.deltaY));
+    }, { passive: false });
+
+    function tick() {
+        currentY += (targetY - currentY) * lerp;
+        inner.style.transform = `translateY(-${currentY}px)`;
+        rafId = requestAnimationFrame(tick);
+    }
+    tick();
+
+    const lerpSlider = document.getElementById('lerp-factor');
+    const lerpVal    = document.getElementById('lerp-factor-val');
+    lerpSlider.addEventListener('input', () => {
+        lerp = parseFloat(lerpSlider.value);
+        lerpVal.textContent = lerp.toFixed(2);
+    });
+})();
+
+// ══════════════════════════════════════════════════════
+// Effect 5 — Spring preset update
+// ══════════════════════════════════════════════════════
+function updateSpringPreview() {
+    const preset   = document.getElementById('spring-preset').value;
+    const duration = document.getElementById('spring-duration').value;
+    const curves = {
+        snappy: 'cubic-bezier(0.34,1.56,0.64,1)',
+        smooth: 'cubic-bezier(0.25,1,0.5,1)',
+        subtle: 'cubic-bezier(0.22,1,0.36,1)'
+    };
+    const curve = curves[preset] || curves.snappy;
+    ['spring-snappy','spring-smooth','spring-subtle'].forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) {
+            btn.style.transition = `transform ${duration}ms ${curve}`;
+        }
+    });
+}
+
+// ══════════════════════════════════════════════════════
+// Effect 6 — Hover zoom
+// ══════════════════════════════════════════════════════
+function updateZoom() {
+    const scale = parseFloat(document.getElementById('zoom-scale').value);
+    const dur   = document.getElementById('zoom-dur').value;
+    const img   = document.getElementById('zoom-img');
+    const card  = document.getElementById('zoom-card');
+    img.style.transition = `transform ${dur}ms var(--grn-spring-smooth)`;
+
+    card.onmouseenter = () => { img.style.transform = `scale(${scale})`; };
+    card.onmouseleave = () => { img.style.transform = 'scale(1)'; };
+}
+updateZoom();
+
+// ══════════════════════════════════════════════════════
+// Effect 7 — Vertical Ticker
+// ══════════════════════════════════════════════════════
+let tickerSpeedFactor = 1.0;
+let tickerPaused = false;
+
+(function initTicker() {
+    const trackA = document.getElementById('ticker-a');
+    const trackB = document.getElementById('ticker-b');
+    if (!trackA || !trackB) return;
+
+    // Clone items for seamless loop
+    const itemsA = Array.from(trackA.children);
+    const itemsB = Array.from(trackB.children);
+    itemsA.forEach(item => trackA.appendChild(item.cloneNode(true)));
+    itemsB.forEach(item => trackB.appendChild(item.cloneNode(true)));
+
+    const itemH  = 80; // 72px card + 8px gap
+    const countA = itemsA.length;
+    const countB = itemsB.length;
+
+    let posA =  0;
+    let posB = -itemH * 2; // stagger
+
+    function tick() {
+        if (!tickerPaused) {
+            const speed = 0.4 * tickerSpeedFactor;
+            posA -= speed;
+            posB -= speed;
+            if (posA <= -(itemH * countA)) posA = 0;
+            if (posB <= -(itemH * countB)) posB = 0;
+            trackA.style.transform = `translateY(${posA}px)`;
+            trackB.style.transform = `translateY(${posB}px)`;
+        }
+        requestAnimationFrame(tick);
+    }
+    tick();
+})();
+
+function toggleTicker() {
+    tickerPaused = !tickerPaused;
+    const btn = document.getElementById('ticker-pause-btn');
+    if (btn) btn.textContent = tickerPaused ? 'Resume' : 'Pause';
+}
+
+// ══════════════════════════════════════════════════════
+// Effect 8 — Glassmorphism
+// ══════════════════════════════════════════════════════
+function updateGlass() {
+    const blur    = document.getElementById('glass-blur').value;
+    const opacity = document.getElementById('glass-opacity').value;
+    const panels  = [
+        document.getElementById('glass-light'),
+        document.getElementById('glass-mid'),
+        document.getElementById('glass-heavy')
+    ];
+    const opacityF = parseFloat(opacity) / 100;
+    panels.forEach(p => {
+        if (!p) return;
+        p.style.backdropFilter         = `blur(${blur}px)`;
+        p.style.webkitBackdropFilter   = `blur(${blur}px)`;
+        p.style.background             = `rgba(255,255,255,${opacityF})`;
+    });
+}
+
+// ══════════════════════════════════════════════════════
+// Effect 11 — Gradient CTAs
+// ══════════════════════════════════════════════════════
+function hexToRgb(hex) {
+    const r = parseInt(hex.slice(1,3),16);
+    const g = parseInt(hex.slice(3,5),16);
+    const b = parseInt(hex.slice(5,7),16);
+    return {r,g,b};
+}
+
+function updateCta() {
+    const hex  = document.getElementById('cta-accent').value;
+    const glow = document.getElementById('cta-glow').value;
+    const {r,g,b} = hexToRgb(hex);
+
+    const btn = document.getElementById('cta-primary-btn');
+    if (!btn) return;
+
+    // Compute a slightly lighter version for gradient top
+    const light = `rgb(${Math.min(r+30,255)},${Math.min(g+30,255)},${Math.min(b+30,255)})`;
+    btn.style.background   = `linear-gradient(180deg, ${light}, rgb(${r},${g},${b}))`;
+    btn.style.boxShadow    = `inset 0 0 3px white, 0 0 ${glow}px rgba(${r},${g},${b},0.3)`;
+}
+
+// ══════════════════════════════════════════════════════
+// Effect 12 — SVG Gradient Icons
+// ══════════════════════════════════════════════════════
+const ICON_PATHS = [
+    // Star
+    'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z',
+    // Lightning
+    'M13 2L3 14h9l-1 8 10-12h-9l1-8z',
+    // Diamond
+    'M12 2L2 9l10 13 10-13L12 2zM2 9h20M12 2v20',
+    // Circle
+    'M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z'
+];
+
+const ICON_LABELS = ['Star', 'Lightning', 'Diamond', 'Circle'];
+
+function updateIcons() {
+    const dirStr = document.getElementById('icon-dir').value;
+    const [x1,y1,x2,y2] = dirStr.split(',');
+    const container = document.getElementById('icon-demo');
+    if (!container) return;
+    container.innerHTML = '';
+
+    ICON_PATHS.forEach((path, i) => {
+        const gradId = `icon-grad-${i}`;
+        const wrap = document.createElement('div');
+        wrap.className = 'icon-wrap';
+        wrap.style.textAlign = 'center';
+        wrap.innerHTML = `
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="${gradId}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}">
+                        <stop offset="0" stop-color="#EBFFB4"/>
+                        <stop offset="1" stop-color="#C2F13C"/>
+                    </linearGradient>
+                </defs>
+                <path d="${path}" fill="url(#${gradId})" stroke="none"/>
+            </svg>
+            <div style="font-size:10px; color: var(--grn-text-40); margin-top: 4px;">${ICON_LABELS[i]}</div>
+        `;
+        container.appendChild(wrap);
+    });
+}
+updateIcons();
+
+// ══════════════════════════════════════════════════════
+// Effect 13 — Inset Border
+// ══════════════════════════════════════════════════════
+function updateInset() {
+    const top    = document.getElementById('inset-top').checked;
+    const right  = document.getElementById('inset-right').checked;
+    const bottom = document.getElementById('inset-bottom').checked;
+    const left   = document.getElementById('inset-left').checked;
+    const color  = document.getElementById('inset-color').value;
+    const {r,g,b} = hexToRgb(color);
+    const c = `rgba(${r},${g},${b},0.5)`;
+
+    const shadows = [];
+    if (top)    shadows.push(`inset 0 1px 0 ${c}`);
+    if (bottom) shadows.push(`inset 0 -1px 0 ${c}`);
+    if (left)   shadows.push(`inset 1px 0 0 ${c}`);
+    if (right)  shadows.push(`inset -1px 0 0 ${c}`);
+
+    const card = document.getElementById('inset-card');
+    if (card) card.style.boxShadow = shadows.length ? shadows.join(',') : 'none';
+}
+updateInset();
+
+// ══════════════════════════════════════════════════════
+// Effect 14 — Grid Overlay
+// ══════════════════════════════════════════════════════
+function updateGrid() {
+    const size    = document.getElementById('grid-size').value;
+    const opacity = document.getElementById('grid-opacity').value;
+    const overlay = document.getElementById('grid-overlay');
+    if (!overlay) return;
+    const c = `rgba(255,255,255,${opacity/100})`;
+    overlay.style.backgroundImage = `
+        linear-gradient(${c} 1px, transparent 1px),
+        linear-gradient(90deg, ${c} 1px, transparent 1px)
+    `;
+    overlay.style.backgroundSize = `${size}px ${size}px`;
+}
+updateGrid();
+
+// ══════════════════════════════════════════════════════
+// Effect 15 — Custom Scrollbar
+// ══════════════════════════════════════════════════════
+function updateScrollbar() {
+    const color = document.getElementById('scrollbar-color').value;
+    const demo  = document.getElementById('scrollbar-demo');
+    if (!demo) return;
+
+    // Inject a scoped style for the demo element
+    const styleId = 'scrollbar-demo-style';
+    let style = document.getElementById(styleId);
+    if (!style) {
+        style = document.createElement('style');
+        style.id = styleId;
+        document.head.appendChild(style);
+    }
+    style.textContent = `
+        #scrollbar-demo::-webkit-scrollbar { width: 6px; }
+        #scrollbar-demo::-webkit-scrollbar-track { background: transparent; }
+        #scrollbar-demo::-webkit-scrollbar-thumb { background: ${color}; border-radius: 3px; }
+        #scrollbar-demo::-webkit-scrollbar-thumb:hover { background: ${color}cc; }
+    `;
+}
+updateScrollbar();
+
+// ══════════════════════════════════════════════════════
+// Sidebar active state on scroll
+// ══════════════════════════════════════════════════════
+(function initScrollSpy() {
+    const sections = document.querySelectorAll('.effect-section[id]');
+    const items    = document.querySelectorAll('.sidebar__item');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id;
+                items.forEach(item => {
+                    const match = item.getAttribute('onclick')?.includes(id);
+                    item.classList.toggle('active', !!match);
+                });
+            }
+        });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+    sections.forEach(s => observer.observe(s));
+})();
+</script>
+</body>
+</html>

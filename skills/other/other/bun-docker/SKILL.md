@@ -1,7 +1,9 @@
 ---
-name: Bun Docker
+name: bun-docker
 description: Use for Docker with Bun, Dockerfiles, oven/bun image, containerization, and deployments.
-version: 1.0.0
+metadata:
+  version: "1.0.0"
+license: MIT
 ---
 
 # Bun Docker
@@ -302,6 +304,16 @@ COPY package.json ./
 USER bun
 CMD ["bun", "run", "dist/index.js"]
 ```
+
+## Secure Installation
+
+When installing packages in Docker builds, follow supply chain security best practices:
+
+- **Block post-install scripts** — Bun disables them by default; allow specific packages via `trustedDependencies`
+- **Pin dependency versions** — Use exact versions in `package.json` for reproducible builds
+- **Audit before installing** — Run `socket package score npm <pkg>` to check packages before they reach your image
+
+Load the `dependency-upgrade` skill for full security configuration including Socket CLI integration, cooldown setup, lockfile validation, and CI enforcement.
 
 ## Security Best Practices
 

@@ -1,6 +1,7 @@
 ---
 name: api-authentication
 description: Secure API authentication with JWT, OAuth 2.0, API keys. Use for authentication systems, third-party integrations, service-to-service communication, or encountering token management, security headers, auth flow errors.
+license: MIT
 ---
 
 # API Authentication

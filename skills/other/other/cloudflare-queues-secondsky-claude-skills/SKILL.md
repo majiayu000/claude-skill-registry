@@ -1,10 +1,6 @@
 ---
 name: cloudflare-queues
-description: This skill should be used when the user asks to "set up Cloudflare Queues", "create a message queue", "implement queue consumer", "process background jobs", "configure queue retry logic", "publish messages to queue", "implement dead letter queue", or encountering "queue timeout", "message retry", "throughput exceeded", "queue backlog" errors.
-
-  Keywords: cloudflare queues, queues workers, message queue, queue bindings, async processing,
-  background jobs, queue consumer, queue producer, batch processing, dead letter queue, dlq,
-  message retry, queue ack, consumer concurrency, queue backlog, wrangler queues
+description: "This skill should be used when the user asks to \"set up Cloudflare Queues\", \"create a message queue\", \"implement queue consumer\", \"process background jobs\", \"configure queue retry logic\", \"publish messages to queue\", \"implement dead letter queue\", or encountering \"queue timeout\", \"message retry\", \"throughput exceeded\", \"queue backlog\" errors."
 license: MIT
 metadata:
   version: "3.0.0"
@@ -16,8 +12,24 @@ metadata:
   references_included: 11
   agents_included: 2
   commands_included: 3
+  keywords:
+    - cloudflare queues
+    - queues workers
+    - message queue
+    - queue bindings
+    - async processing
+    - background jobs
+    - queue consumer
+    - queue producer
+    - batch processing
+    - dead letter queue
+    - dlq
+    - message retry
+    - queue ack
+    - consumer concurrency
+    - queue backlog
+    - wrangler queues
 ---
-
 # Cloudflare Queues
 
 **Status**: Production Ready ✅ | **Last Verified**: 2025-12-27

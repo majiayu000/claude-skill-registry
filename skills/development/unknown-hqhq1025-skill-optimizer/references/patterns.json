@@ -1,0 +1,48 @@
+{
+  "codex-coproxy-recovery": {
+    "pattern": "\\b(coproxy|127\\.0\\.0\\.1:8537|stream disconnected|image_generation|unsupported_value|Codex app|codex 的链接)\\b",
+    "direction": "personal",
+    "why": "Local Codex/Coproxy recovery has specific logs, ports, and verification steps."
+  },
+  "source-reading-site-builder": {
+    "pattern": "\\b(how-codex-works|how-claude-code-works|how-opencode-works|源码导读|Docsify|source reading)\\b",
+    "direction": "personal-to-public",
+    "why": "Repeated source-reading site creation has a reusable research, outline, docs, and render-validation workflow."
+  },
+  "paper-reading-archive": {
+    "pattern": "\\b(arxiv|论文|paper-reading|读这篇文章|接着读文章|HF paper|Hugging Face paper)\\b",
+    "direction": "personal",
+    "why": "Paper reading repeatedly needs identity confirmation, local archive folders, Chinese notes, and follow-up tracking."
+  },
+  "project-promotion-distribution": {
+    "pattern": "\\b(linux\\.do|宣传|推广|trending|分发|渠道|hashtag|推荐策略|GitHub trending)\\b",
+    "direction": "personal-to-public",
+    "why": "Project promotion combines repo evidence, channel fit, public copy, and distribution checks."
+  },
+  "github-ci-release": {
+    "pattern": "\\b(CI|GitHub Actions|workflow|release|tag|0\\.\\d+|npm|build|checks)\\b|版本",
+    "direction": "personal",
+    "why": "Release repair has repeated CI inspection, versioning, changelog, and verification steps.",
+    "case_sensitive": true
+  },
+  "remote-service-exposure": {
+    "pattern": "\\b(ssh|远端|remote|tunnel|端口|公网|内网|LAN|VPN)\\b",
+    "direction": "personal",
+    "why": "Remote service work needs reachability distinctions and host/port verification."
+  },
+  "wechat-wxcli-real-data": {
+    "pattern": "\\b(WeChat|wx cli)\\b|微信(?!/HN)|AgentHub 群聊|数据库密钥|小号|聊天记录",
+    "direction": "personal",
+    "why": "WeChat local-data workflows need privacy handling, account/container selection, and real-data validation."
+  },
+  "frontend-regression-verification": {
+    "pattern": "\\b(sidebar|Design Card|tweaks|评论模式|screenshot|Playwright|browser|UI|缓存|卡)\\b",
+    "direction": "personal-to-public",
+    "why": "Frontend regression work repeatedly needs screenshot/log reading and browser verification."
+  },
+  "skill-lifecycle-management": {
+    "pattern": "\\b(SKILL\\.md|skills optimizer|skill|skills|安装一下这个|筛选一下|plugin|MCP)\\b",
+    "direction": "public",
+    "why": "Skill install, audit, generation, personalization, and publication are the repo's core lifecycle."
+  }
+}

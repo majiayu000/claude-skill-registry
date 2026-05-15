@@ -1,0 +1,16 @@
+{
+  "_comment": "将此文件复制到项目 .claude/settings.json。PostToolUse hook 在每次写入/编辑代码文件后自动运行 ESLint。",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"\nimport json, sys, subprocess, os\ndef find_project_root(filepath):\n    d = os.path.dirname(os.path.abspath(filepath))\n    while d != '/' and not os.path.exists(os.path.join(d, 'package.json')):\n        d = os.path.dirname(d)\n    return d if os.path.exists(os.path.join(d, 'package.json')) else os.path.dirname(os.path.abspath(filepath))\ndata = json.load(sys.stdin)\nfp = data.get('tool_input', {}).get('file_path', '')\nif fp and os.path.exists(fp) and fp.endswith(('.vue', '.ts', '.tsx', '.js', '.jsx')):\n    result = subprocess.run(\n        ['npx', 'eslint', '--fix', fp],\n        cwd=find_project_root(fp),\n        capture_output=True\n    )\n    if result.returncode != 0:\n        print('ESLint:', result.stdout.decode() + result.stderr.decode())\n\""
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 ---
 name: rank-tracker
-description: 'Track keyword rankings and SERP feature changes in traditional search and AI responses over time. 排名追踪/SERP监控'
-version: "9.9.5"
+description: 'Use when the user asks to "track rankings"; monitors keyword/SERP changes from provided exports or connected tools, including AI response checks. 排名追踪/SERP监控'
+version: "9.9.9"
 license: Apache-2.0
 compatibility: "Claude Code, skills.sh, ClawHub, Vercel Labs, Cursor, Windsurf, Codex CLI, Amp, Gemini CLI, Kimi Code, Qwen Code, CodeBuddy"
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -9,7 +9,7 @@ when_to_use: "Use when tracking keyword rankings, monitoring position changes, c
 argument-hint: "<domain> [keyword list]"
 metadata:
   author: aaron-he-zhu
-  version: "9.9.5"
+  version: "9.9.9"
   geo-relevance: "medium"
   tags:
     - seo
@@ -78,7 +78,7 @@ Analyze ranking changes for [domain] over the past [time period]
 
 - **Reads**: current metrics, baselines, alert thresholds, and reporting context from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing monitoring deliverable and reusable summary.
-- **Promotes**: significant changes, confirmed anomalies, and follow-up actions to `memory/open-loops.md` and `memory/decisions.md`.
+- **Promotes**: significant changes, confirmed anomalies, follow-up actions, and pending decisions to `memory/open-loops.md`.
 - **Primary next skill**: [alert-manager](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/alert-manager/SKILL.md) when recurring monitoring should become automated.
 
 ### Handoff Summary

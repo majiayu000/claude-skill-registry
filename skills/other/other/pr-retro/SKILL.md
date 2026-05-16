@@ -1,24 +1,33 @@
 ---
 name: pr-retro
-description: 'Learn from PR outcomes.'
-practices: [dora-metrics, sre, lean-startup]
+description: Learn from PR outcomes.
+practices:
+- dora-metrics
+- sre
+- lean-startup
+hexagonal_role: supporting
+consumes: []
+produces:
+- .agents/research/*.md
+context_rel: []
 skill_api_version: 1
 context:
   window: fork
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: topic
 license: MIT
 compatibility: Requires git, gh CLI
 metadata:
   author: AI Platform Team
-  version: "1.0.0"
+  version: 1.0.0
   tier: contribute
   internal: false
 allowed-tools: Read, Write, Bash, Grep, Glob
-output_contract: ".agents/learnings/YYYY-MM-DD-pr-*.md"
+output_contract: .agents/learnings/YYYY-MM-DD-pr-*.md
 ---
 # PR Retro Skill
 

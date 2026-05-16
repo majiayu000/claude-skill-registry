@@ -1,21 +1,31 @@
 ---
 name: grafana-platform-dashboard
-description: 'Validate OpenShift Grafana dashboards.'
-practices: [sre, distributed-tracing, dora-metrics]
+description: Validate OpenShift Grafana dashboards.
+practices:
+- sre
+- distributed-tracing
+- dora-metrics
+hexagonal_role: driven-adapter
+consumes: []
+produces:
+- dashboard-validation-report
+context_rel: []
 skill_api_version: 1
 context:
   window: fork
   intent:
     mode: questions
   sections:
-    exclude: [HISTORY, TASK]
+    exclude:
+    - HISTORY
+    - TASK
   intel_scope: none
 metadata:
   tier: execution
   dependencies:
-    - research
-    - brainstorm
-output_contract: "Grafana dashboard JSON"
+  - research
+  - brainstorm
+output_contract: Grafana dashboard JSON
 ---
 # Grafana Platform Dashboard
 

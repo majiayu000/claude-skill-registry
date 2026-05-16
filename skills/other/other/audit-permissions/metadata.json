@@ -6,7 +6,7 @@
   "category": "other",
   "source": "github.com/malob/nix-config",
   "dir_name": "audit-permissions",
-  "downloaded_at": "2026-05-15T03:57:08.100482Z",
+  "downloaded_at": "2026-05-16T03:20:57.539790Z",
   "author": "malob",
   "source_url": "https://github.com/malob/nix-config/blob/master/configs/claude/plugins/cc-maintenance/skills/audit-permissions/SKILL.md",
   "license": "NOASSERTION",

@@ -1,6 +1,6 @@
 ---
 name: don-leidraad
-description: "NeRDS software development guidelines for Dutch government: architecture, CI/CD, security, privacy, accessibility."
+description: "NeRDS richtlijnen voor Nederlandse overheidssoftware: architectuur, kwaliteit, beveiliging, privacy, toegankelijkheid, open-tenzij, vendor lock-in."
 metadata:
   source: developer.overheid.nl
   synced-from: https://github.com/developer-overheid-nl/don-site

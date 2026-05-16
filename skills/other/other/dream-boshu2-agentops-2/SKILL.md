@@ -1,7 +1,15 @@
 ---
 name: dream
-description: 'Run overnight compounding sessions.'
-practices: [lean-startup, wiki-knowledge-surface, sre]
+description: Run overnight compounding sessions.
+practices:
+- lean-startup
+- wiki-knowledge-surface
+- sre
+hexagonal_role: supporting
+consumes: []
+produces:
+- .agents/research/*.md
+context_rel: []
 skill_api_version: 1
 user-invocable: true
 context:
@@ -9,12 +17,15 @@ context:
   intent:
     mode: task
   sections:
-    exclude: [TASK]
+    exclude:
+    - TASK
   intel_scope: topic
 metadata:
   tier: session
   stability: experimental
-output_contract: "Dream report artifacts at .agents/overnight/*/summary.{json,md}, per-iteration cycle history at .agents/overnight/*/<runID>/iterations/iter-<N>.json (resumed runs rehydrate from disk), and optional scheduler assistance under .agentops/generated/dream/"
+output_contract: Dream report artifacts at .agents/overnight/*/summary.{json,md},
+  per-iteration cycle history at .agents/overnight/*/<runID>/iterations/iter-<N>.json
+  (resumed runs rehydrate from disk), and optional scheduler assistance under .agentops/generated/dream/
 ---
 # Dream - Private Overnight Operator Mode
 

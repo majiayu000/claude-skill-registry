@@ -415,5 +415,5 @@ After the refactoring is complete, recommend the next step based on the outcome:
 
 Tell the user:
 
-- **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.
+- If the recommendation above includes `/optimus:commit` (first two bullets), the closing tip per `$CLAUDE_PLUGIN_ROOT/references/skill-handoff.md` "Closing tip wording" — use **Variant B** with `<continuation-skill(s)>` = `/optimus:commit` and `<non-continuation-examples>` = `/optimus:unit-test`, etc. Otherwise (third bullet — no issues / fixes skipped), use **Variant C** (default).
 - **Tip (normal mode only):** Single-pass analysis can miss issues due to LLM attention limits. Run `/optimus:refactor deep` to iterate automatically — it applies, tests, and repeats until clean (max 8 passes by default, configurable up to 10). Requires a test command in `.claude/CLAUDE.md`.

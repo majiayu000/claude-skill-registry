@@ -78,16 +78,21 @@ perfectly fine when needed for clarity.
 {% if entry.heading is not defined %}
 ```
 
-Twig 3.21.x (Craft 5) does not have the nullsafe operator (`?.`). That requires
-Twig 3.23+. Use `??` and ternaries instead:
+Craft 5.10 ships Twig 3.24, which supports the nullsafe operator (`?.`). Use it for
+deep traversal through chains that may have null links — it propagates `null` cleanly
+without the verbose `is defined and is not null` dance:
 
 ```twig
-{# Can't do this yet #}
-{{ entry?.author?.fullName }}
+{# Reach for ?. when any link in the chain may be null #}
+{{ entry?.author?.fullName ?? 'Anonymous' }}
 
-{# Do this instead #}
-{{ entry.author.fullName ?? '' }}
+{# ?? alone is enough when only the leaf is in question #}
+{{ entry.title ?? '' }}
 ```
+
+`??` stays the right tool for simple "value or fallback" cases; `?.` is for chains
+where intermediate links may be missing. Don't reach for `?.` on a single property
+access — it adds noise without adding safety.
 
 ## Whitespace Control
 
@@ -202,6 +207,9 @@ For simple elements without complex inner content:
 {{ tag('span', { class: 'sr-only', text: '(opens in new window)' }) }}
 {{ tag('img', { src: image.url, alt: image.title, loading: 'lazy' }) }}
 {{ tag('i', { class: ['fa-solid', icon], aria: { hidden: 'true' } }) }}
+
+{# Craft 5.10+: pass a string as the second arg as a text-only shortcut #}
+{{ tag('span', 'Read more') }}
 ```
 
 - `text:` key = HTML-encoded content.
@@ -253,6 +261,37 @@ For adding content to an element string:
 
 Combine with `|attr` for classes and aria attributes. Use `|append` for
 accessible labels inside the SVG.
+
+### `heading()` / `h()` / `h1()`…`h6()` — Auto-incrementing Headings (Craft 5.10+)
+
+Tracks the current heading level so nested components don't have to thread it
+manually. Useful in composable layouts where a component might be embedded at
+different depths.
+
+```twig
+{# Increments the current heading level and renders #}
+{{ heading('Page title', { class: 'text-3xl' }) }}
+{{ heading('Section', { class: 'text-2xl' }) }}     {# h2 #}
+{{ heading('Subsection', { class: 'text-xl' }) }}    {# h3 #}
+
+{# Force a specific level when context demands it #}
+{{ h2('Always h2', { class: 'text-xl' }) }}
+{{ h1('Reset to h1') }}
+```
+
+`h()` is the short alias for `heading()`. Use these in layouts/builders where
+the depth of a section isn't known at the component level. For component-local
+headings whose level is determined by a prop, pass `level: 2` and render the
+tag directly — auto-incrementing only helps when the depth is dynamic.
+
+### Filter Additions (Craft 5.10+)
+
+```twig
+{{ price|number(locale: 'de-DE') }}                   {# locale arg #}
+{{ entry.postDate|datetime('long', withTimeZone: true) }}
+{{ deadline|time('short', withTimeZone: true) }}
+{{ maybeNull|timestamp }}                              {# returns "now" for null/empty #}
+```
 
 ## `collect()` Conventions
 
@@ -312,6 +351,7 @@ is fine for production.
 7. **Macros as components** — wrong scoping, no extends/block support.
 8. **Hardcoded colors in class strings** — `bg-yellow-600` → `bg-brand-accent`.
 9. **String concatenation for classes** — `'flex ' ~ extraClass` → use `collect({})` with named keys.
+10. **`is empty` / `|default` on Craft Models (5.10+)** — any `yii\base\Model` (entries, settings, custom models) is now treated as non-empty regardless of its property values. Means `{{ user|default('Guest') }}` always renders the user object; `{% if entry is empty %}` always false. Check the specific property you care about: `{% if entry.title is empty %}`.
 10. **`options.x` pattern** — old macro convention. Use direct variable names.
 11. **Blocks inside conditionals** — `{% if %}{% block foo %}{% endblock %}{% endif %}` is invalid Twig. Blocks are compile-time structures and cannot be conditionally defined. Move the conditional inside the block: `{% block foo %}{% if condition %}...{% endif %}{% endblock %}`.
 12. **Hardcoded `/admin` CP URL** — `cpTrigger` is configurable via `CRAFT_CP_TRIGGER` env var or `cpTrigger` in general.php. Many projects use `cp` instead of `admin`. Use `cpUrl()` function or check `.env` — never hardcode `/admin/`.

@@ -1,6 +1,6 @@
 ---
 name: don-apis
-description: "Dutch government API design rules and OpenAPI standards: REST APIs, webhooks, event-driven architecture for government projects."
+description: "API ontwerpen voor Nederlandse overheid: REST, OpenAPI, ADR (API Design Rules), webhooks, event-driven, OAS, API-gateway, NL GOV API."
 metadata:
   source: developer.overheid.nl
   synced-from: https://github.com/developer-overheid-nl/don-site

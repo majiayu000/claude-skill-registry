@@ -88,3 +88,49 @@ START: What is the user's primary need?
 ### Explanation Signals
 **Positive**: "Why", "Background", "Architecture", "Design decision", "Trade-offs", "Consider", "Because"
 **Red flags**: "1. Create...", "2. Run...", "Step-by-step", "Do this:"
+
+## JTBD-First Resolution (When in doubt, ask the JTBD)
+
+Provenance: Ale 2026-05-02. "La JTBD ci dice quale need stiamo soddisfando."
+
+When the four-types decision tree is ambiguous, OR when a stylistic decision inside a chosen type has plausible alternatives (ordering, fold-vs-keep, scratch-vs-real-data, prose-vs-table, etc.), DO NOT pick by aesthetic preference. **Return to the document's JTBD and let the answer fall out.**
+
+Each Diataxis type maps to a canonical JTBD:
+
+| Type | Canonical JTBD | Implied constraints |
+|---|---|---|
+| **Tutorial** | "Build my mental model of X by doing it once, end-to-end, **without risking my real project state**." | Reproducible, safe, self-contained, cause-effect visible |
+| **How-to** | "**Fix this specific situation right now**; don't teach me fundamentals." | Problem-statement first, decision tree, no preamble, link forward to Tutorial for newcomers |
+| **Reference** | "Look up a **specific answer** (flag, exit code, schema field, error message)." | ctrl-F friendly, dense, alphabetical/systematic, no narrative, separate H2 per lookup category |
+| **Explanation** | "**Understand the design rationale** so I can extend or critique it." | Discursive, links to evidence (probes, RCAs, ADRs), no how-to instructions, no command examples beyond the minimum needed for context |
+
+### Application: resolving a stylistic dispute
+
+Worked example, Tutorial Q: scratch directory vs use the project's seeded data?
+- JTBD: "Build mental model end-to-end **without risking my real project state**."
+- Constraint surfaced: "without risking" → seeded data DOES risk contamination → scratch wins.
+- Constraint surfaced: "end-to-end" → cause-effect visible → seeded data hides cause-effect under pre-existing entries → scratch wins.
+
+Worked example, Reference Q: fold three short sections into one "Notes"?
+- JTBD: "Look up a specific answer."
+- Constraint surfaced: "specific answer" → ctrl-F friendly → 3 distinct H2 entries are 3 distinct landing points → folding hurts the JTBD.
+- Verdict: keep separate.
+
+Worked example, README "Learn More" Q: alphabetical or semantic grouping?
+- JTBD on a README is "I'm new; show me docs in the order I should read them" — pedagogical browsing, NOT lookup.
+- Constraint surfaced: "in the order I should read them" → semantic grouping (install adjacent, authoring adjacent, troubleshooting last) → wins.
+- Alphabetical serves a DIFFERENT JTBD ("I know the doc name") which has another surface (file system / search).
+
+### Decision protocol
+
+When facing a stylistic ambiguity inside a chosen type:
+1. Restate the document's JTBD in one sentence (use the canonical JTBD as the starting point, refine if the doc is more specific).
+2. List the constraints implied by that JTBD (be concrete: "reproducible", "ctrl-F friendly", "links to evidence").
+3. Compare each candidate option against the constraint list.
+4. Pick the option satisfying the most constraints. If tied, pick the option that fails the FEWEST constraints (loss-aversion).
+
+This procedure replaces aesthetic debate with a falsifiable check.
+
+### Anti-pattern: collapse via JTBD-blending
+
+Some authors blend two JTBDs in one document ("a Tutorial that's also a Reference"). This is the same collapse pattern the four-types-only rule rejects, surfaced via the JTBD lens. Detection: if the document has TWO canonical JTBDs in tension (e.g. "build mental model" AND "look up specific answer"), flag for splitting.

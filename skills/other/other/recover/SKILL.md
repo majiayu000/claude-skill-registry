@@ -1,7 +1,15 @@
 ---
 name: recover
-description: 'Recover session context.'
-practices: [sre, legacy-code-seams, pragmatic-programmer]
+description: Recover session context.
+practices:
+- sre
+- legacy-code-seams
+- pragmatic-programmer
+hexagonal_role: driving-adapter
+consumes: []
+produces:
+- .agents/rpi/*.md
+context_rel: []
 skill_api_version: 1
 context:
   window: inherit
@@ -11,7 +19,7 @@ context:
 metadata:
   tier: session
   dependencies: []
-output_contract: "stdout: recovered context summary"
+output_contract: 'stdout: recovered context summary'
 ---
 # /recover — Context Recovery After Compaction
 

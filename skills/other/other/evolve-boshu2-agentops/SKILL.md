@@ -605,10 +605,10 @@ UNPUSHED=$(git log origin/main..HEAD --oneline 2>/dev/null | wc -l)
 ```
 4. **Release-context teardown (MANDATORY when branch is release-shaped):**
 
-   When the current branch matches `release/*`, `v*-prep`, `v*-evolve-run`, or `v\d+\.\d+*`, the teardown report MUST NOT recommend `/release` as the next step. Instead, emit the explicit pre-release checklist below — the operator must run these AND confirm green before tagging:
+   When the current branch matches `release/*`, `v*-prep`, `v*-evolve-run`, or `v\d+\.\d+*`, the teardown report MUST NOT recommend `$release` as the next step. Instead, emit the explicit pre-release checklist below — the operator must run these AND confirm green before tagging:
 
    ```
-   ## Pre-release checklist — REQUIRED before /release
+   ## Pre-release checklist — REQUIRED before $release
 
    Per-cycle --fast pre-push and ao goals measure ≠ release readiness.
    Operator MUST run and confirm green:
@@ -623,10 +623,10 @@ UNPUSHED=$(git log origin/main..HEAD --oneline 2>/dev/null | wc -l)
      [ ] 3. Release-readiness gate:
             bash scripts/ci-local-release.sh
 
-     [ ] 4. (Recommended) Smoke /evolve --quick --max-cycles=1 --dry-run if
+     [ ] 4. (Recommended) Smoke $evolve --quick --max-cycles=1 --dry-run if
             BC port wire-ups changed.
 
-   Only after [1]–[3] pass: /release <version>
+   Only after [1]–[3] pass: $release <version>
    ```
 
    The handoff artifact (e.g., `.agents/runs/<release>/READY-TO-TAG.md`) MUST contain this checklist verbatim, unchecked. "Ready to tag" means the boxes are checked, not that the loop ran cleanly.

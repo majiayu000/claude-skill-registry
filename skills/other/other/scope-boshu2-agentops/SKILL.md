@@ -1,19 +1,33 @@
 ---
 name: scope
-description: 'Hard-block edits outside declared frozen directories via PreToolUse hook.'
-practices: [ddd-bounded-context, design-by-contract, mythical-man-month]
+description: Hard-block edits outside declared frozen directories via PreToolUse hook.
+practices:
+- ddd-bounded-context
+- design-by-contract
+- mythical-man-month
+hexagonal_role: driven-adapter
+consumes: []
+produces:
+- filesystem-gate
+context_rel:
+- kind: supplier-to
+  with: domain
 skill_api_version: 1
 context:
   window: isolated
   intent:
     mode: none
   sections:
-    exclude: [HISTORY, INTEL, TASK]
+    exclude:
+    - HISTORY
+    - INTEL
+    - TASK
   intel_scope: none
 metadata:
   tier: meta
   dependencies: []
-output_contract: "stdout: scope status / lock state; stderr: blocked-edit reason from hook"
+output_contract: 'stdout: scope status / lock state; stderr: blocked-edit reason from
+  hook'
 ---
 # /scope — Edit Scope Guard
 

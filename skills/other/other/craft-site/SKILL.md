@@ -127,7 +127,7 @@ Detailed configuration, Twig API, and pitfalls for Craft plugins. Located in `re
 | `references/plugins/blitz.md` | Blitz (putyourlightson) | Refresh modes, Twig dynamic content, driver architecture (storage/purger/deployer), Nginx rewrite, Cloudflare integration |
 | `references/plugins/formie.md` | Formie (verbb) | Form rendering (one-line/granular), theme config for Tailwind, submission querying, hooks, integrations |
 | `references/plugins/image-optimize.md` | ImageOptimize (nystudio107) | OptimizedImages field, `imgTag()`/`pictureTag()` builders, loading strategies, transform methods, console commands |
-| `references/plugins/ckeditor.md` | CKEditor (craftcms) | Toolbar config, nested entries with chunk rendering, HTML Purifier, custom styles, Redactor migration |
+| `references/plugins/ckeditor.md` | CKEditor (craftcms) | Field settings (toolbar, headings, image mode), nested entries with chunk rendering and value helpers, image mode (img vs entries), link configuration, GraphQL Mode, ES-module custom plugins, HTML Purifier, Redactor migration |
 | `references/plugins/sprig.md` | Sprig (putyourlightson) | Reactive Twig components (htmx), live search, load more, pagination, filtering, form submissions without JS |
 | `references/plugins/colour-swatches.md` | Colour Swatches (craftpulse) | Palette config, multi-colour swatches, Tailwind class mapping, Twig model API |
 | `references/plugins/password-policy.md` | Password Policy (craftpulse) | Validation rules, HIBP check, retention/expiry, console commands, recommended settings |

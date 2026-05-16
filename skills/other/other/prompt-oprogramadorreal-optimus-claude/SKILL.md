@@ -182,7 +182,11 @@ Recommend the next step based on context:
 - If the user might need another prompt → "Need a prompt for another tool or task? Just describe what you need." If there are pending code changes, also suggest `/optimus:commit`.
 - Default → offer to craft another prompt or refine the current one. If the project lacks setup, suggest `/optimus:init`.
 
-Tell the user: **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.
+Tell the user the closing tip per `$CLAUDE_PLUGIN_ROOT/references/skill-handoff.md` "Closing tip wording":
+
+- If only `/optimus:commit` is recommended (bullet 3 — external tool with related code changes) → use **Variant A** with `<continuation-skill(s)>` = `/optimus:commit` and `<non-continuation-examples>` = `/optimus:code-review`, `/optimus:unit-test`, etc.
+- If `/optimus:commit` is recommended alongside a non-continuation skill (bullets 2 and 4 — regular-mode Claude Code with `/optimus:tdd`, or another prompt + commit) → use **Variant B** with `<continuation-skill(s)>` = `/optimus:commit` and `<non-continuation-examples>` = `/optimus:tdd`, `/optimus:init`, another prompt, etc.
+- Otherwise (plan-mode prompt, no pending code changes) → use **Variant C** (default).
 
 ---
 

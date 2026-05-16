@@ -1,0 +1,58 @@
+{
+  "name": "@metcalfsolutions/satori",
+  "version": "5.1.0",
+  "description": "Clinically informed wisdom companion for navigating the inner life — emotions, meaning, grief, purpose, relationship, identity. Draws on eight wisdom traditions and modern clinical psychology to create conversations that produce real insight and real movement.",
+  "keywords": [
+    "wisdom",
+    "introspection",
+    "mental-health",
+    "coaching",
+    "stoicism",
+    "buddhism",
+    "taoism",
+    "ifs",
+    "dbt",
+    "cft",
+    "psychology",
+    "self-reflection",
+    "inner-work",
+    "claude-skill",
+    "claude-code",
+    "companion",
+    "skillmd",
+    "shadow-work",
+    "grief",
+    "jungian",
+    "ikigai",
+    "dream-analysis",
+    "onboarding",
+    "dark-night",
+    "narrative-identity",
+    "motivational-interviewing"
+  ],
+  "homepage": "https://github.com/MetcalfSolutions/Satori",
+  "bugs": {
+    "url": "https://github.com/MetcalfSolutions/Satori/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetcalfSolutions/Satori.git"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Matthew Metcalf",
+    "url": "https://github.com/MetcalfSolutions"
+  },
+  "files": [
+    "SKILL.md",
+    "references/",
+    "plugin.json",
+    "marketplace.json",
+    ".claude-plugin/",
+    "SatoriSkill-v5.zip",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

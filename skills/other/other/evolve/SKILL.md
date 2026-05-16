@@ -1,7 +1,14 @@
 ---
 name: evolve
-description: 'Run autonomous improvement loops.'
-practices: [lean-startup, dora-metrics, agile-manifesto]
+description: Run autonomous improvement loops.
+practices:
+- lean-startup
+- dora-metrics
+- agile-manifesto
+hexagonal_role: supporting
+consumes: []
+produces: []
+context_rel: []
 skill_api_version: 1
 user-invocable: true
 context:
@@ -9,22 +16,23 @@ context:
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: full
 metadata:
   tier: execution
   dependencies:
-    - rpi         # required - executes each improvement cycle
-    - post-mortem # required - auto-runs at teardown to harvest learnings
-    - compile     # optional - knowledge warmup when --compile is passed
+  - rpi
+  - post-mortem
+  - compile
   triggers:
-    - evolve
-    - improve everything
-    - autonomous improvement
-    - run until done
-    - postmortem and continue
-    - analyze repo and keep going
-output_contract: "code changes, GOALS.md fitness deltas"
+  - evolve
+  - improve everything
+  - autonomous improvement
+  - run until done
+  - postmortem and continue
+  - analyze repo and keep going
+output_contract: code changes, GOALS.md fitness deltas
 ---
 # /evolve — Goal-Driven Compounding Loop
 

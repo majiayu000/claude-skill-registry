@@ -9,13 +9,17 @@ argument-hint: '[story-id] - Optional: --test-framework=[cucumber|specflow|pytes
 
 This skill provides the acceptance designer's methodology for creating acceptance tests. The orchestrator controls the overall flow (agent dispatch, review gate, handoff) -- this skill focuses on HOW to create good acceptance tests.
 
+## ADR-025 (2026-05-07) — DISTILL is canonical AT author
+
+DISTILL produces ALL acceptance tests as scaffolded RED (skip/pending markers). DELIVER's 3-phase cycle (RED / GREEN / COMMIT, per ADR-025) does NOT re-author ATs in RED — it only unskips the scaffolds and writes PBT unit tests. Wave separation: DISTILL = "what should the system do" (ATs), DELIVER = "how" (PBT unit + impl). The pre-DELIVER fail-for-right-reason gate (described in this skill) becomes the RED phase entry/exit gate in DELIVER per ADR-025 D2.
+
 ## Output Tiers (per D2)
 
-Provenance: feature `lean-wave-documentation` — D2 (schema-typed sections), D10 (one-line expansion descriptions). The DISTILL wave emits a single `feature-delta.md` whose headings are typed `[REF]` (always emitted) or `[WHY]/[HOW]` (lazy expansions). Tier-1 is the always-on baseline; Tier-2 is the lazily-rendered expansion catalog. The `.feature` file remains the SSOT for scenarios; the wave-delta sections are pointers + structured summaries.
+Provenance: feature `lean-wave-documentation` — D2 (schema-typed sections), D10 (one-line expansion descriptions). Tier-1 [REF] sections (always emitted) + Tier-2 EXPANSION CATALOG items (lazy, on-demand) are the two output bands. The `.feature` file remains the SSOT for scenarios; the wave-delta sections are pointers + structured summaries. Full contract: `nWave/skills/nw-density-resolution-contract/SKILL.md`.
 
 ### Tier-1 [REF] — always emitted
 
-Tier-1 sections constitute the lean-default baseline. Every DISTILL run emits at minimum these sections under `## Wave: DISTILL / [REF] <Section>` headings:
+Under `## Wave: DISTILL / [REF] <Section>` headings:
 
 - Scenario list with tags — table of scenario titles + tags (`@walking_skeleton`, `@US-N`, `@real-io`, `@in-memory`, `@error`, `@property`)
 - WS strategy — A/B/C/D selection per Mandate 5 with one-line justification
@@ -27,7 +31,7 @@ Tier-1 sections constitute the lean-default baseline. Every DISTILL run emits at
 
 ### Tier-2 EXPANSION CATALOG — lazy, on-demand (per D10)
 
-Tier-2 items are NOT emitted by default. They are rendered only when explicitly requested via `--expand <id>` (DDD-2) or via the wave-end interactive prompt when `expansion_prompt = "ask"`. Each item has a one-line description (per D10) so the menu fits in a single render. Each emitted Tier-2 section is headed `## Wave: DISTILL / [WHY] <Section>` or `## Wave: DISTILL / [HOW] <Section>`.
+Rendered under `## Wave: DISTILL / [WHY|HOW] <Section>` only when requested via `--expand <id>` (DDD-2), the wave-end menu (`expansion_prompt = "ask"`), `mode = "full"` auto-expansion, or an ad-hoc user request mid-session.
 
 | Expansion ID | Tier label | One-line description |
 |---|---|---|
@@ -39,76 +43,19 @@ Tier-2 items are NOT emitted by default. They are rendered only when explicitly 
 | `scaffold-authoring-recipes` | [HOW] | Per-language scaffold recipes (Python, TS, Go, Rust, Java) with marker conventions |
 | `pbt-strategy-notes` | [WHY] | Property-based testing strategies for invariants surfaced by the feature |
 | `expansion-catalog-rationale` | [WHY] | Why this set of expansions, why these defaults, why D10 enforces one-line descriptions |
+| `domain-language-fact-to-step-table` | [HOW] | Soft gate: agent proposes fact→step-name pairs for user review before committing step-method names to code |
+| `policy-bootstrap-template` | [HOW] | `docs/architecture/atdd-infrastructure-policy.md` bootstrap snippet emitted on first DISTILL in a project |
+| `tier-b-state-machine-template` | [HOW] | State-machine PBT skeleton for Tier B in-memory journey testing (Mandate 10) |
 
 ## Density resolution (per D12)
 
-Provenance: D12 (rigor cascade), DDD-5 (density resolver shared utility). Before emitting any Tier-1 section, resolve the active documentation density:
-
-1. **Read** `~/.nwave/global-config.json`. Treat missing/malformed config as empty dict (fall back to defaults).
-2. **Call** `resolve_density(global_config)` from `scripts/shared/density_config.py`. The function returns a `Density` value object with fields `mode` (`"lean"` | `"full"`), `expansion_prompt` (`"ask"` | `"always-skip"` | `"always-expand"` | `"smart"`), and `provenance` (the cascade branch that produced this result).
-3. **Branch on `density.mode`**:
-   - `lean` → emit ONLY Tier-1 `[REF]` sections under `## Wave: DISTILL / [REF] <Section>` headings. Do NOT auto-render Tier-2 items.
-   - `full` → emit Tier-1 `[REF]` sections PLUS all Tier-2 expansion items rendered under their `[WHY]` / `[HOW]` headings. This is auto-expansion (no menu).
-4. **At wave end**, branch on `density.expansion_prompt`:
-   - `"ask"` → present the expansion menu (Tier-2 catalog above with one-line descriptions per D10) and append user-selected items as `## Wave: DISTILL / [WHY|HOW] <Section>` headings.
-   - `"always-skip"` → no menu, no extra sections (idempotent re-runs, CI mode).
-   - `"always-expand"` → equivalent to `mode = "full"` for this run; auto-render every Tier-2 item.
-   - `"smart"` → out of scope for v1 (per OQ-3); treat as `"ask"` until heuristic is empirically tuned.
-
-The resolver itself encodes the D12 cascade: explicit `documentation.density` override > `rigor.profile` mapping (`lean`→`lean`, `standard`→`lean`+`ask`, `thorough`→`full`, `exhaustive`→`full`+all-expansions, `custom`→`lean`+`ask`) > hard default `lean`+`ask`. This skill MUST NOT replicate the cascade locally — call `resolve_density(global_config)` and trust its output.
-
-**Section heading prefix convention (per D2)**: every emitted section starts with `## Wave: DISTILL / [REF] <Section>` for Tier-1; `## Wave: DISTILL / [WHY] <Section>` or `## Wave: DISTILL / [HOW] <Section>` for Tier-2. Validator `scripts/validation/validate_feature_delta.py` enforces the regex `^## Wave: \w+ / \[(REF|WHY|HOW)\] .+$` on every wave heading.
-
-### Ad-hoc override — user request mid-session
-
-Even when `density.mode = "lean"` and `density.expansion_prompt = "always-skip"`, the user may ask DURING the wave session for specific expansions:
-
-- "expand jtbd" / "expand jtbd-narrative" / "more on jtbd"
-- "add alternatives considered"
-- "show migration playbook"
-- "tell me why" (interpretive — append the WHY rationale section relevant to the most recent decision)
-- "more on <X>" (where `<X>` is one of the expansion catalog items for this wave)
-
-When the user makes such a request:
-
-1. Append the corresponding `[WHY]` or `[HOW]` section to `feature-delta.md` under the current wave's heading.
-2. Emit a `DocumentationDensityEvent` with `choice="expand"` and `expansion_id=<the requested item>` to `JsonlAuditLogWriter`.
-3. Do NOT modify `~/.nwave/global-config.json`. The override is ONE-SHOT for this wave only.
-
-If the user's request matches NO item in this wave's Expansion Catalog, respond with the catalog list (one-line description per item per D10) and ask for clarification — do NOT improvise an expansion outside the catalog.
+Call `resolve_density(global_config)` from `scripts/shared/density_config.py` after reading `~/.nwave/global-config.json` (missing/malformed = empty dict). Returns `mode` (`"lean"` | `"full"`) + `expansion_prompt` (`"ask"` | `"always-skip"` | `"always-expand"` | `"smart"`) per the D12 cascade (resolver-internal, DDD-5 — do NOT replicate locally). Branch on `density.mode` for what to emit; branch on `density.expansion_prompt` at wave end for menu behaviour. Full cascade detail, branch semantics, ad-hoc override workflow: `nWave/skills/nw-density-resolution-contract/SKILL.md`.
 
 ## Telemetry (per D4 + DDD-6)
 
-Provenance: D4 (telemetry schema instrumented day-one), D6 (first-install pedagogical prompt creates audit signal), DDD-6 (telemetry event class lives in DES domain, writer reused). Every expansion choice — whether the user expanded an item or skipped the menu — emits a structured event to the existing `JsonlAuditLogWriter` driven adapter.
+Every expansion choice emits a `DocumentationDensityEvent` (dataclass at `src/des/domain/telemetry/documentation_density_event.py`) via `event.to_audit_event()` → `JsonlAuditLogWriter().log_event(...)`. Schema fields per D4: `feature_id`, `wave`, `expansion_id`, `choice`, `timestamp`. For this wave the schema declares `"wave": "DISTILL"`. Use helper `scripts/shared/telemetry.py:write_density_event(...)` — do NOT write JSONL directly.
 
-**Event type**: `DocumentationDensityEvent` (dataclass at `src/des/domain/telemetry/documentation_density_event.py`).
-
-**Schema fields** (per D4):
-
-```
-{
-  "feature_id": "<feature-id>",
-  "wave": "DISTILL",
-  "expansion_id": "<id-from-catalog-or-'*'-for-skip-all>",
-  "choice": "skip" | "expand",
-  "timestamp": "<ISO-8601 datetime>"
-}
-```
-
-**Emission pattern**:
-
-1. Construct a `DocumentationDensityEvent(feature_id=..., wave="DISTILL", expansion_id=..., choice=..., timestamp=...)`.
-2. Call `event.to_audit_event()` to convert to the open `AuditEvent` shape (`event_type="DOCUMENTATION_DENSITY"` and the schema fields nested under `data`).
-3. Dispatch via `JsonlAuditLogWriter().log_event(audit_event)`.
-
-The wave-skill harness invokes the helper `scripts/shared/telemetry.py:write_density_event(...)` which performs all three steps. This skill MUST NOT bypass the helper or write JSONL directly — every density telemetry event flows through the shared helper to keep the audit-log schema consistent.
-
-**When to emit**:
-- One event per user choice in the expansion menu when `expansion_prompt = "ask"` (`choice = "expand"` for selected items, `choice = "skip"` with `expansion_id = "*"` if the user skips the entire menu).
-- One synthetic `choice = "skip"` event with `expansion_id = "*"` when `expansion_prompt = "always-skip"` (records the skipped menu opportunity).
-- One `choice = "expand"` event per Tier-2 item rendered when `mode = "full"` or `expansion_prompt = "always-expand"`.
-
-This telemetry feeds the propagation success metric: when DELIVER consumes a lean DISTILL feature-delta and produces no `--expand` for fixture-design or edge-case enumeration, the `[REF]` baseline plus the `.feature` file is sufficient for the crafter.
+Wave-specific signal: DELIVER consuming a lean DISTILL feature-delta — downstream `--expand` for fixture-design or edge-case enumeration indicates the `[REF]` baseline plus the `.feature` file was insufficient for the crafter. Full emission rules: `nWave/skills/nw-density-resolution-contract/SKILL.md`.
 
 ## Feature-Delta Schema (US-01, US-02)
 
@@ -166,6 +113,315 @@ Without the driving port, a crafter can write correct code that is never wired i
 **Features**: "When user {action} via {driving_port}, {observable_outcome}"
 **Bug fixes**: "When {trigger}, {modified_code_path} produces {correct_outcome} instead of {current_broken_behavior}"
 
+## Translating Gherkin to Property-Based Tests (state-delta + Universe)
+
+**Layer constraint** (per `nw-test-design-mandates` Mandate 9): this recipe applies ONLY to layers 1-2 (unit, in-memory acceptance with in-memory doubles). For subprocess / FS acceptance and integration tests (layers 3+), use example-only with `assert_state_delta` for the universe guard (Mandate 8) — sad paths stay enumerated, never PBT-generated (Mandate 11).
+
+Per the Paradigm Mandate (PBT + state-delta is the default for unit + in-memory acceptance), DISTILL outputs `Property:` framings, not classic `Scenario:` examples, whenever the spec is quantifiable AND the test runs at layer 1-2. Single-example `Scenario:` is FALLBACK — use when the property cannot be expressed (one-off regression repro) OR when the scenario runs at layer 3+ (real adapter, subprocess, integration, WS).
+
+### Recipe
+
+1. **Take the `Scenario:`**: identify pre-condition, action, post-condition.
+2. **Identify the Universe** (layer-specific — see `nw-tdd-methodology` Layered test discipline matrix):
+   - Acceptance: use-case observable outcomes at driving port (events emitted, state on driven-port double, error class)
+   - Walking Skeleton: user-visible end-to-end output (stdout, exit code, FS side-effects)
+3. **Quantify the precondition**: from "a feature task exists" → `forall task in tasks where task.type in {feature, fix}` via Hypothesis `@given(strategy)`.
+4. **Express the invariant**: instead of "the row's DELIVER cell shows `[in-progress] phase: GREEN`", state "for every task entered into DELIVER GREEN phase, the row's DELIVER cell renders status=in-progress with phase name visible".
+5. **Frame as `Property:`** in the `.feature` file:
+   ```gherkin
+   @property @driving_port @us-XX
+   Property: Operator sees in-progress phase for every task entered into a wave
+     Given a workflow definition with named phases
+     When for every task that emits PhaseEntered with phase=P, wave=W via the driving port
+     Then the operator sees a row whose W cell renders status=in-progress with phase=P
+     And the cell shape is invariant across {feature, fix, spike} task types
+   ```
+6. **Build the step-defs** with `@given` Hypothesis strategies + `assert_state_delta(before, after, universe, expected)` — universe entries are port-exposed names, never internal fields.
+
+### Example (good vs bad Universe)
+
+```python
+# GOOD — port-exposed observable Universe
+universe = {
+    "events.PhaseEntered.emitted_count",
+    "board.rows[task_id].cells[wave].status",
+    "board.rows[task_id].cells[wave].phase",
+}
+
+# BAD — internal-field Universe (refactor breaks)
+universe = {
+    "BoardProjection._rows_cells_dict",
+    "BoardProjection._rows_workflow_columns",
+}
+```
+
+The bad Universe couples the test to private mutation details. Renaming `_rows_cells_dict` to `_cells_by_task` reds the test for an implementation rename — a refactoring-hostile signal.
+
+### Walking Skeleton vs general acceptance
+
+- 1-2 `@walking_skeleton @wiring_e2e` scenarios per slice, via subprocess + real I/O, prove wiring once.
+- The rest of `Property:` scenarios run via driving-port direct invocation with in-memory doubles for driven ports (~10ms each). Fast feedback for the use-case logic.
+
+### State-machine PBT trigger (Hebert ch.11)
+
+State machine properties are for when the **model itself** is a state machine, not the system. If you can describe the SUT's behaviour by a state machine model with command/postcondition pairs, use stateful PBT. If not, use regular `FORALL` with property-based assertions.
+
+This sharpens the earlier heuristic ("users perceive distinct states"): the trigger is about the *model shape* you can write, not the user's perception. A circuit-breaker policy is a state-machine model (ok / tripped / blocked + transitions); a sort function is not, even if its internal state has phases.
+
+### Negative testing workflow (Hebert ch.6)
+
+Hebert ch.6 — to surface under-specification, deliberately RELAX assumptions in the test (e.g., remove a precondition, widen the input domain). If the property still holds, you've over-specified. If it fails on inputs you'd expect to be valid, the spec is incomplete. Apply when an existing property never fails — the property may be vacuously true.
+
+Workflow:
+1. Start with a happy-path property suite (positive tests).
+2. Pick one assumption the suite relies on (e.g. "prices are numeric", "items list is non-empty").
+3. Write a new property that relaxes that assumption.
+4. Run. A crash signals (a) a real bug, (b) an under-specified contract that should fail deliberately with a clear error, or (c) a place the spec needs tightening.
+5. Repeat per assumption.
+
+The negative-testing pattern is the property-level instrument for the "inputs validated at boundaries" mandate from the production-grade quality bar.
+
+## Architecture of Reference (ports & adapters — project-level defaults)
+
+Three classes of ports, each with a default test treatment. This table is PROJECT-LEVEL, decided once per project (typically during DESIGN of the first feature, or at framework adoption time). It is NOT renegotiated per feature. The agent applies these defaults; the per-feature decision is the MECHANISM (see Project Infrastructure Policy below), not the treatment.
+
+| Port type | Examples | Default in test |
+|---|---|---|
+| **Driving** (entry point) | HTTP API, CLI, in-process call, hook | Real adapter (test host, CLI runner, app via DI container) |
+| **Driven internal** (shared state) | Repository, read model, application cache | Real adapter via the mechanism declared in the project Infrastructure Policy |
+| **Driven external / non-deterministic** | Clock, email, SMS, push, payment, LLM, third-party API | Fake/stub with output capture (so a `Then` can observe the side effect) |
+
+This table replaces the earlier per-feature Walking Skeleton Strategy A/B/C/D choice. The decision is structural — port CLASS implies port TREATMENT — and the per-project Infrastructure Policy specializes the mechanism for each treatment.
+
+If a port cannot be classified by the agent, ask the user with a soft prompt — do not improvise the classification.
+
+## Project Infrastructure Policy
+
+The Architecture of Reference fixes the **port class → test treatment** defaults. The Project Infrastructure Policy specializes those defaults with the **concrete mechanism** used in THIS codebase (Testcontainers vs dedicated env vs in-memory; which fake class). The decision is made **once per project, not per feature**.
+
+### File location and structure
+
+Lives at `docs/architecture/atdd-infrastructure-policy.md` (project-local). Three tables, one per port class, columns: `Port | Mechanism | Note`.
+
+```markdown
+# ATDD Infrastructure Policy
+
+## Driving
+| Port | Mechanism | Note |
+|---|---|---|
+| HTTP API | WebApplicationFactory<Program> | |
+| CLI | subprocess from tmp_path | |
+
+## Driven internal (real)
+| Port | Mechanism | Note |
+|---|---|---|
+| IUserRepository (MongoDB) | Testcontainers.MongoDb, fresh db per test class | |
+
+## Driven external / non-deterministic (fake)
+| Port | Fake | Note |
+|---|---|---|
+| IClock | FakeClock | manual advance |
+| IEmailSender | FakeEmailSender | in-memory capture |
+```
+
+The `Note` column is optional — use only when the mechanism needs a one-line clarification.
+
+### Apply-if-exists / write-if-absent
+
+1. **File exists** (default mode `--policy=inherit`): read the policy and apply recorded decisions. No port-by-port negotiation for ports already in the table.
+2. **Port in scope is missing from the policy**: ask the user with a soft prompt (one row per missing port: `which mechanism for {port}?`), then **append the row to the policy** before generating scenarios. The policy grows by accretion.
+3. **File is absent**: create an empty skeleton with the three section headers (use the `policy-bootstrap-template` expansion below), then treat every port in scope as missing (case 2).
+
+The file is edited in place. No per-row versioning — git history is the audit trail.
+
+### `--policy=fresh` flag
+
+When the user passes `--policy=fresh`:
+- Ignore the existing file for this run.
+- Treat every port in scope as missing (soft prompt per port).
+- On completion, rewrite the file from scratch with the newly agreed decisions.
+
+Use `fresh` for major refactors (stack swap, test strategy overhaul). In all other cases, `inherit` is the default.
+
+### Relationship to the Architecture of Reference
+
+The Architecture of Reference answers: "what kind of treatment does this port class get?" (real vs fake).
+The Project Policy answers: "and which concrete implementation does this project use for that treatment?" (Testcontainers vs dedicated env, which fake class).
+
+The policy CANNOT override the port class defaults: a driven-internal port cannot become a fake through the policy (that requires an explicit waiver documented in `distill/wave-decisions.md`). The policy only records the **mechanism** for each default treatment.
+
+## Wave-Decision Reconciliation HARD GATE (pre-scenario)
+
+This is the ONLY hard gate before scenario writing. Execute it BEFORE any other DISTILL work:
+
+1. Read all `wave-decisions.md` from prior waves: `docs/feature/{feature-id}/discuss/wave-decisions.md`, `docs/feature/{feature-id}/design/wave-decisions.md`, `docs/feature/{feature-id}/devops/wave-decisions.md`.
+2. For each DISCUSS decision, check whether DESIGN or DEVOPS contradicts. Examples: DISCUSS "email notifications" but DESIGN "in-app only" = CONTRADICTION; DISCUSS "REST API" but DESIGN "gRPC" = CONTRADICTION; DISCUSS "single-tenant" but DEVOPS "multi-tenant" = CONTRADICTION.
+3. If ANY contradiction → return `{CLARIFICATION_NEEDED: true, questions: [{file, contradicting-decisions, ask-which-stands}]}` and BLOCK.
+4. If zero contradictions → log "Reconciliation passed — 0 contradictions" and proceed.
+
+Do NOT silently pick one side of a contradiction. Do NOT write scenarios against ambiguous specifications. The cost of blocking is minutes; the cost of implementing the wrong behavior is hours.
+
+## Graceful Degradation Matrix (warn vs block)
+
+| Missing artifact | Action | Reason |
+|---|---|---|
+| `docs/feature/{id}/devops/` directory | **WARN**, use project default infra (from Project Infrastructure Policy or sensible defaults) | tests can proceed without env spec |
+| `docs/feature/{id}/discuss/` directory | **WARN**, derive ACs from DESIGN, skip story-to-scenario traceability | story traceability lost, scenarios still coherent |
+| `docs/feature/{id}/design/` directory | **BLOCK** — ask user to identify driving ports before writing any scenario | driving ports unknown, hexagonal boundary unverifiable |
+
+Missing artifacts trigger warnings, not failures — EXCEPT when the missing artifact makes a design mandate unverifiable (DESIGN for hexagonal boundary). In that case, BLOCK.
+
+## Two-Tier Acceptance Composition (Mandate 10 expanded for DISTILL)
+
+Per `nw-test-design-mandates` Mandate 10, acceptance tests come in two tiers. DISTILL decides which tiers apply per feature.
+
+**Default — Tier A only**: most features need only Tier A (Gojko-style, production composition root, 1-2 scenarios per journey).
+
+**Add Tier B when both conditions hold**:
+- Feature has a journey of ≥3 chained scenarios (Pillar 2 active — the `Given` of N reuses N-1's `Given + When`), AND
+- Input space is domain-rich (emails, dates, payloads, free-text, IDs from a large set).
+
+**Skip Tier B when**:
+- Feature is config-shaped (single-shot installer config, schema validation, one-off CLI), OR
+- Journey has 1-2 scenarios (Tier A example covers the space), OR
+- The only observable is "did it crash" (no state mutation to model).
+
+### File layout when both tiers are emitted
+
+```
+tests/{test-type-path}/{feature-id}/acceptance/
+  {feature}.feature                       # Tier A — Gherkin scenarios (production DI)
+  steps/
+    conftest.py
+    steps_{feature}.py                    # Tier A step-methods (production composition root)
+  tier_b/
+    test_{feature}_state_machine.py       # Tier B — RuleBasedStateMachine
+    in_memory_composition.py              # InMemoryComposition (same interfaces, in-memory doubles)
+```
+
+### Shared vocabulary contract
+
+Both tiers invoke the same step-method names (`Given_<precondition>`, `When_<action>`, `Then_<outcome>`). Tier A wires them through the production composition root; Tier B wires them through `InMemoryComposition`. The step-method NAMES are the contract — DRY across tiers.
+
+When DISTILL emits Tier B, it MUST verify each `@rule`-decorated method invokes a step-method that already exists in the Tier A `steps_{feature}.py`. New step-method names introduced only in Tier B are a smell — they hint the journey was modeled differently for in-memory exploration than for production wiring.
+
+## Wave: DISTILL / [HOW] Expansion Templates (lazy)
+
+These templates are inline so the skill ships with the bootstrap snippets. They are emitted into the wave's `feature-delta.md` only when rendered as Tier-2 expansions (per the Density Resolution + Expansion Catalog above).
+
+### Expansion `policy-bootstrap-template`
+
+Emitted on first DISTILL in a project (file absent at `docs/architecture/atdd-infrastructure-policy.md`):
+
+```markdown
+# ATDD Infrastructure Policy
+
+Per `nw-distill` § Project Infrastructure Policy. One file per project. Apply-if-exists; write-if-absent; rewrite with `--policy=fresh`. Git history is the audit trail.
+
+## Driving
+| Port | Mechanism | Note |
+|---|---|---|
+
+## Driven internal (real)
+| Port | Mechanism | Note |
+|---|---|---|
+
+## Driven external / non-deterministic (fake)
+| Port | Fake | Note |
+|---|---|---|
+```
+
+### Expansion `tier-b-state-machine-template` (Python pilot)
+
+Reference shape for `tests/{feature-id}/acceptance/tier_b/test_{feature}_state_machine.py`. Other host languages add their own template lazily.
+
+```python
+# tests/<path>/tier_b/test_<feature>_state_machine.py
+import hypothesis.strategies as st
+from hypothesis.stateful import RuleBasedStateMachine, rule, precondition, invariant, initialize
+
+from nwave_ai.state_delta import assert_state_delta, set_to, unchanged, appended_with
+
+# Import shared step-method vocabulary (same as Tier A .feature steps)
+from tests.<path>.acceptance.steps.steps_<feature> import (
+    Given_<precondition>,
+    When_<action>,
+    Then_<outcome>,
+    # ...
+)
+
+# In-memory composition root (Tier B difference from Tier A's production DI)
+from tests.<path>.acceptance.tier_b.in_memory_composition import InMemoryComposition
+
+
+class <Feature>Journey(RuleBasedStateMachine):
+    @initialize()
+    def setup(self):
+        self.composition = InMemoryComposition()
+        Given_<precondition>(self.composition)
+        # ... initial state flags as instance attributes for @precondition use
+
+    @rule(<input_strategies>)
+    def <action>(self, ...):
+        before = self.composition.capture_universe()
+        When_<action>(self.composition, ...)  # SAME step-method as Tier A
+        after = self.composition.capture_universe()
+        assert_state_delta(
+            before=before,
+            after=after,
+            universe={
+                "<port_exposed_name_1>",
+                "<port_exposed_name_2>",
+            },
+            expected={
+                "<port_exposed_name_1>": set_to(<value>),
+                "<port_exposed_name_2>": unchanged(),
+            },
+        )
+
+    @invariant()
+    def <invariant_name>(self):
+        # universe-bound cross-rule invariant
+        Then_<outcome>(self.composition)
+
+
+Test<Feature>Journey = <Feature>Journey.TestCase
+```
+
+`InMemoryComposition.capture_universe()` returns a dict whose keys are the port-exposed observable names declared in the `universe` set. Tier A `steps_*.py` and Tier B `@rule` methods agree on these names — they are the shared contract.
+
+### Expansion `domain-language-fact-to-step-table`
+
+Soft-gate table proposed to the user BEFORE step-methods are generated. One row per Given/When/Then surface used in the planned scenarios. User approval is a quick exchange, not a formal blocking gate — but renaming an established step-method is expensive, so the agent surfaces the names early.
+
+| Fact / observation | Step name (snake_case for Python; PascalCase per host language) |
+|---|---|
+| no user is registered | `Given_no_user_is_registered` |
+| user signs up with a valid email | `When_the_user_signs_up_with_a_valid_email` |
+| user receives magic link | `Then_the_user_should_have_received_a_magic_link` |
+| order is rejected | `Then_the_order_is_rejected` |
+
+The table is emitted into `feature-delta.md` under `## Wave: DISTILL / [HOW] Domain language` when the user requests this expansion (or when `density.mode = "full"`).
+
+## Pre-DELIVER fail-for-the-right-reason gate
+
+Before handing acceptance scenarios to DELIVER, run them once and verify each scenario fails for the **right reason** — the implementation is missing — not for setup error, fixture bug, import error, or test infrastructure problem.
+
+### Procedure
+
+1. Run the suite: `pytest tests/{feature}/acceptance/`. Capture failure output per scenario.
+2. For each FAIL, classify the failure mode:
+   - `MISSING_FUNCTIONALITY`: the assertion fires because behaviour is unimplemented (✅ correct RED)
+   - `IMPORT_ERROR` / `FIXTURE_BROKEN` / `SETUP_FAILURE`: the test never reaches the assertion (❌ wrong RED — test bug)
+   - `WRONG_ASSERTION` / `OBSERVABLE_NOT_AT_PORT`: assertion couples to internal struct (❌ wrong shape — fix Universe)
+3. If any scenario is in category 2 or 3 → BLOCK handoff to DELIVER. Fix the test before crafter starts.
+
+### Why this gate matters
+
+A scenario that fails for the wrong reason gives a false signal at GREEN: the crafter "fixes" the import error and the test goes green, but the feature was never tested. We have observed this class on 2026-05-06 (`feedback_fixture_only_acceptance_hides_wiring_2026_05_06.md` + `feedback_layered_test_discipline_universe_per_layer_2026_05_06.md`): a fixture-shape acceptance scenario passes against a wired-but-broken bridge because it never exercises the seam.
+
+The gate output is a one-line classification per failing scenario, written to `docs/feature/{feature-id}/distill/red-classification.md`. DELIVER reads this file at PREPARE phase to confirm RED is genuine.
+
 ## Prior Wave Reading
 
 Before writing any scenario, read SSOT and feature delta artifacts.
@@ -222,53 +478,25 @@ When DISTILL work reveals gaps or contradictions in prior waves:
 2. **Flag Untestable Criteria** — If acceptance criteria from DISCUSS are untestable as written, note the specific criteria and explain why. Gate: all untestable criteria flagged.
 3. **Resolve Before Writing** — Resolve contradictions with user before writing tests against ambiguous or contradictory requirements. Gate: user resolution received.
 
-## Walking Skeleton Strategy Decision (INTERACTIVE)
+## Walking Skeleton Strategy (RETIRED — see Architecture of Reference + Project Infrastructure Policy)
 
-Before writing walking skeleton scenarios, determine the WS adapter strategy. Auto-detect from the feature's component types, then confirm with the user.
+**Retired**: the 4-way per-feature choice (Strategy A Full InMemory / B Real local + fake costly / C Real local / D Configurable) is REPLACED by two structural decisions made elsewhere:
 
-**Decision Tree (auto-detect then user confirms):**
+1. **Architecture of Reference** (see section above) decides — once per project — what KIND of treatment each port class gets (real adapter for driving and driven-internal; fake for driven-external/non-deterministic).
+2. **Project Infrastructure Policy** (see section above) decides — once per project — the CONCRETE MECHANISM for each port (Testcontainers vs in-memory vs Fake<X>).
 
-```
-Feature is pure domain (no driven ports with I/O)?
-  -> Strategy A (Full InMemory) -- WS uses InMemory doubles only
+Per-feature, DISTILL no longer negotiates strategies. It reads the policy (`--policy=inherit`, default), appends missing rows by asking the user, or rewrites from scratch (`--policy=fresh`).
 
-Feature has only local resources (filesystem, git, in-process subprocess)?
-  -> Strategy C (Real local) -- WS uses real adapters for all local resources
+What survives from the old section:
 
-Feature has costly external dependencies (paid APIs, LLM calls, rate-limited services)?
-  -> Strategy B (Real local + fake costly) -- real for local, fake for expensive
+- **The walking-skeleton SCENARIO**: still required. One scenario per feature, tagged `@walking_skeleton @driving_port`, that closes the end-to-end loop through the production composition root. Litmus test: a non-technical stakeholder confirms "yes, that is what users need." This is the demo proof — independent of which mechanism each port uses.
+- **Tagging convention** (unchanged):
+  - `@real-io` — scenario uses real adapters (driving + driven-internal per Architecture of Reference)
+  - `@in-memory` — scenario uses in-memory doubles (Tier B state-machine PBT, or in-memory acceptance per Mandate 10)
+  - `@requires_external` — scenario needs an external system not in the project policy; skip if absent
+  - Walking-skeleton scenarios MUST carry `@walking_skeleton @driving_port` and use the production composition root.
 
-Team needs different behavior in CI vs local development?
-  -> Strategy D (Configurable) -- env var switches InMemory <-> Real
-```
-
-**Resource Classification:**
-
-| Resource Type | WS Behavior | Adapter Integration Test |
-|--------------|-------------|------------------------|
-| Filesystem | real (tmp_path) | real (tmp_path) -- ALWAYS |
-| Git repo | real (tmp_path + git init) | real -- ALWAYS |
-| Local subprocess (pytest, ruff) | real | real -- ALWAYS |
-| Costly subprocess (claude -p, LLM) | fake (mock) | contract smoke (@requires_external) |
-| Paid external API | fake server | contract test with recorded fixtures |
-| Database | real (SQLite/testcontainers) | real -- ALWAYS |
-| Container services | per user preference | real if available |
-
-**Container option:** Ask the user if they want containerized environments for WS and integration tests:
-- No container (real adapters on host)
-- Docker Compose (local services)
-- Testcontainers (programmatic, lifecycle managed by test)
-
-1. **Auto-Detect Strategy** — Classify feature components against the decision tree. Gate: strategy candidate identified.
-2. **Confirm with User** — Present the auto-detected strategy and ask user to confirm or override. Gate: strategy confirmed.
-3. **Record Decision** — Write the confirmed strategy in `distill/wave-decisions.md` as a numbered decision (e.g., DWD-XX: Walking Skeleton Strategy). Gate: decision recorded.
-4. **Apply Strategy to Scenarios** — Tag WS scenarios per the confirmed strategy: Strategy A uses `@in-memory`, Strategy B/D uses `@real-io` for local and `@in-memory` for costly externals, Strategy C uses `@real-io` for ALL resources. Gate: scenarios tagged correctly.
-
-**Tagging convention:**
-- `@real-io` -- scenario uses real adapters
-- `@in-memory` -- scenario uses InMemory doubles
-- `@requires_external` -- scenario needs external system (skip if absent)
-- Walking skeleton under B/C/D: MUST have `@walking_skeleton @real-io`
+**Migration note**: existing features with a `wave-decisions.md` entry naming Strategy A/B/C/D continue to validate — the strategy named there is treated as historical record. NEW features express the same intent via the Architecture of Reference defaults + the project policy entry per port.
 
 ## Register Outcomes (per DISCUSS#D-5 grain)
 
@@ -495,6 +723,50 @@ AFTER all DISTILL Tier-1 [REF] sections are appended to `feature-delta.md` and a
 **Cost**: 4 Haiku reviewers in parallel ≈ $0.05-0.20 per feature. Trades small cost for late-feedback-blast-radius reduction (full chain visible).
 
 **Per-wave review trigger override**: even with this final gate, a wave-skill may have triggered its own per-wave review (DoR ambiguity, contested ADR, novel deployment target, etc.). Per-wave reviewer outputs are PR-ephemeral, not committed; they inform the wave's primary agent in real time but don't substitute for this final gate.
+
+## Polyglot Adapter Matrix
+
+Contract layer (3 Pillars + Mandates 8-11) is language-agnostic. Implementation
+bindings per language are documented in the matrix below. Python ships ready;
+other languages are bootstrap-on-demand templates (Epic 3+).
+
+| Lang | PBT lib | xunit equiv | Skip marker | Step composition idiom |
+|---|---|---|---|---|
+| Python | hypothesis | pytest | `pytest.mark.skip(reason="pending")` | pytest-bdd `.feature` + `steps_*.py` |
+| TypeScript | fast-check | Vitest/Jest | `it.skip(...)` | `*.scenarios.ts` + `*.specifications.ts` |
+| C# | FsCheck | xUnit | `[Fact(Skip="pending")]` | partial class `*Scenarios.cs` + `*Specifications.cs` |
+| Java | jqwik | JUnit | `@Disabled("pending")` | companion test class |
+| Kotlin | kotest-property | Kotest | `@Disabled` | extension functions split |
+| Rust | proptest | std `#[test]` | `#[ignore]` | `<feature>_scenarios.rs` + `<feature>_specifications.rs` (same module) |
+| Go | rapid o gopter | testing | `t.Skip("pending")` | `*_scenarios_test.go` + `*_specifications_test.go` |
+
+**State-delta port** per language lives at the project-local path
+`tests/common/state_delta.<ext>` (apply-if-absent on first DISTILL in the
+project). Python port is canonical at `nwave_ai/state_delta/`. Other-language
+ports are templated bootstraps from the per-lang Tier-2 expansion catalogs.
+
+**Universe assertion contract** is identical across languages: every
+state-mutating test at layers 1-3 calls `assert_state_delta(before, after,
+universe, expected)` (Python signature; idiomatic translations preserve the
+same four parameters). Universe declares observable port-exposed names;
+expected maps each declared key to a predicate. Anything in universe not in
+expected MUST remain unchanged — fail-closed.
+
+**Per-lang predicate library** mirrors the Python set: `set_to`, `unchanged`,
+`appended_with`, `containing`, `normalized_to`, `idempotent_after`,
+`legacy_healed`, `prepended_with`. Each language port implements all eight
+with the same semantic contract.
+
+### Polyglot bootstrap (apply-if-absent)
+
+On first DISTILL invocation in a project, the agent:
+1. Detects target language via the canonical project marker file (Phase 0 of nw-acceptance-designer).
+2. Looks up the matrix row.
+3. Checks for `tests/common/state_delta.<ext>` in the project.
+4. If absent: applies the per-lang Tier-2 expansion template (lazy load) and commits.
+5. If present: inherits (no re-bootstrap).
+
+The template applies once per project. Subsequent DISTILL runs inherit the existing port.
 
 ## Outputs
 

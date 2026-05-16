@@ -1,26 +1,45 @@
 ---
 name: vibe
-description: 'Validate code readiness.'
+description: Validate code readiness.
+practices:
+- ai-assisted-dev
+- llm-eval-harness
+- code-complete
+- pragmatic-programmer
+hexagonal_role: domain
+consumes:
+- standards
+produces:
+- result.json
+- verdict.json
+context_rel:
+- kind: shared-kernel
+  with: standards
 skill_api_version: 1
 metadata:
   tier: judgment
   dependencies:
-    - council    # multi-model judgment
-    - complexity # complexity analysis
-    - bug-hunt   # proactive code audit
-    - standards  # loaded for language-specific context
+  - council
+  - complexity
+  - bug-hunt
+  - standards
 context:
   window: fork
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: full
 output_contract: skills/council/schemas/verdict.json
 ---
 # Vibe Skill
 
 > **Purpose:** Is this code ready to ship?
+
+## Loop position
+
+Per-slice quality gate within move **6 (close the bead by proving acceptance)** of the [operating loop](../../docs/architecture/operating-loop.md). Consumes a slice's changes; produces PASS/WARN/FAIL on complexity, architecture, security, intent fit. Vibe answers "is this slice ready to be counted against the [slice-validation roll-up](../../docs/templates/slice-validation.md)?" — it is not a substitute for the slice's first failing test (the test proves behavior; vibe judges the code that gets there).
 
 Three steps:
 1. **Complexity analysis** — Find hotspots (radon, gocyclo)
@@ -127,65 +146,7 @@ After all phases complete, write the structured report to `.agents/council/YYYY-
 
 ### Step 2: Run Complexity Analysis
 
-**Filter by language present in the change set first.** Run only the
-analyzers whose language actually appears in the diff. A docs/shell/BATS-only
-epic must NOT trigger `gocyclo` against the entire `cli/` tree (it has hung
-in past runs); a Python-free epic must NOT trigger `radon`.
-
-```bash
-# Detect which languages are present in the diff (or in <path> for full audits).
-# Use `git diff --name-only <base>...HEAD` for a PR; fall back to listing
-# files under <path> when no diff base is available.
-mkdir -p .agents/council
-HAS_GO=false; HAS_PY=false
-DIFF_FILES="$(git diff --name-only "${BASE:-HEAD~1}"...HEAD 2>/dev/null || find <path> -type f)"
-echo "$DIFF_FILES" | grep -q '\.go$'  && HAS_GO=true
-echo "$DIFF_FILES" | grep -q '\.py$'  && HAS_PY=true
-echo "$(date -Iseconds) preflight: HAS_GO=$HAS_GO HAS_PY=$HAS_PY" >> .agents/council/preflight.log
-```
-
-**For Python (only when `HAS_PY=true`):**
-```bash
-if [ "$HAS_PY" = "true" ]; then
-  echo "$(date -Iseconds) preflight: checking radon" >> .agents/council/preflight.log
-  if ! which radon >> .agents/council/preflight.log 2>&1; then
-    echo "⚠️ COMPLEXITY SKIPPED: radon not installed (pip install radon)"
-  else
-    radon cc <path> -a -s 2>/dev/null | head -30
-    radon mi <path> -s 2>/dev/null | head -30
-  fi
-else
-  echo "ℹ️ COMPLEXITY SKIPPED: no .py files in diff"
-fi
-```
-
-**For Go (only when `HAS_GO=true`):**
-```bash
-if [ "$HAS_GO" = "true" ]; then
-  echo "$(date -Iseconds) preflight: checking gocyclo" >> .agents/council/preflight.log
-  if ! which gocyclo >> .agents/council/preflight.log 2>&1; then
-    echo "⚠️ COMPLEXITY SKIPPED: gocyclo not installed (go install github.com/fzipp/gocyclo/cmd/gocyclo@latest)"
-  else
-    gocyclo -over 10 <path> 2>/dev/null | head -30
-  fi
-else
-  echo "ℹ️ COMPLEXITY SKIPPED: no .go files in diff"
-fi
-```
-
-**For other languages:** Skip complexity with explicit note: "⚠️ COMPLEXITY SKIPPED: No analyzer for <language>"
-
-**Interpret results:**
-
-| Score | Rating | Action |
-|-------|--------|--------|
-| A (1-5) | Simple | Good |
-| B (6-10) | Moderate | OK |
-| C (11-20) | Complex | Flag for council |
-| D (21-30) | Very complex | Recommend refactor |
-| F (31+) | Untestable | Must refactor |
-
-**Include complexity findings in council context.**
+Read [references/complexity-analysis.md](references/complexity-analysis.md) when you need the language-detection preflight, per-language analyzer commands (radon/gocyclo), and the score interpretation table. Filter by language present in the diff before running any analyzer.
 
 ### Step 2.3: Load Domain-Specific Checklists
 
@@ -255,90 +216,7 @@ Run proactive bug-hunt audit on target files.
 
 ### Step 2g: Test Pyramid Inventory (MANDATORY)
 
-Assess test coverage against the test pyramid standard (the test pyramid standard (loaded via `/standards`)).
-
-Read `skills/vibe/references/test-pyramid-weighting.md` for test pyramid weighting — L3+ tests found all production bugs, weight them 5x.
-
-**Test Pyramid Weighting:** Weight test coverage by level: L0–L1 at 1x, L2 at 3x, L3+ at 5x. Unit-only coverage is a WARN signal, not a PASS. See `references/test-pyramid-weighting.md`.
-
-**Run even in `--quick` mode** — this is cheap (file existence checks) and high-signal.
-
-1. **Identify changed modules** from git diff or target scope
-2. **For each changed module, check coverage pyramid (L0–L3):**
-   - L0: Does a contract/spec enforcement test cover this module?
-   - L1: Does a unit test file exist for this module?
-   - L2: If module crosses boundaries, does an integration test exist?
-3. **For boundary-touching code, check bug-finding pyramid (BF1–BF5):**
-   - BF4 (Chaos): Do external call sites have failure injection tests?
-   - BF1 (Property): Do data transformations have property tests?
-   - BF2 (Golden): Do output generators have golden file tests?
-4. **Compute weighted pyramid score** for changed code paths:
-
-   **Formula:**
-   ```
-   weighted_score = (L0_count x 1 + L1_count x 1 + L2_count x 3 + L3_count x 5 + L4_count x 5) / max_possible
-   ```
-   Where `max_possible = total_test_count x 5` (the score if every test were L3+).
-
-   Count tests at each level for changed code paths:
-   - L0: Build/compile checks (weight 1)
-   - L1: Unit tests (weight 1)
-   - L2: Integration tests (weight 3)
-   - L3: E2E/system tests (weight 5)
-   - L4: Smoke/fresh-context tests (weight 5)
-
-   **Interpretation:**
-   - `weighted_score >= 0.6` — strong pyramid, L2+ tests present
-   - `0.3 <= weighted_score < 0.6` — acceptable, but recommend more integration tests
-   - `weighted_score < 0.3` AND all tests are L0-L1 only — **WARN: unit-only test coverage** (feeds into vibe verdict as a WARN signal, not a separate gate)
-
-   **Satisfaction exposure:** The `weighted_score` is also exposed as `satisfaction_score` (with source `"test-pyramid-weighted"`) in the test_pyramid output block AND promoted to the top-level verdict JSON as `satisfaction_score` (verdict schema field, `skills/council/schemas/verdict.json`: number 0.0-1.0, "Probabilistic satisfaction score (0.0 = unsatisfied, 1.0 = fully satisfied). Optional — absent means not computed."). Downstream consumers (e.g., `/validation` STEP 1.8 holdout evaluation) can use `satisfaction_score` as a normalized quality signal.
-
-   **Include in council packet and vibe report output:**
-   ```
-   ## Test Pyramid Score
-   | Level | Count | Weight | Contribution |
-   |-------|-------|--------|--------------|
-   | L0    | 2     | 1x     | 2            |
-   | L1    | 8     | 1x     | 8            |
-   | L2    | 0     | 3x     | 0            |
-   | L3    | 0     | 5x     | 0            |
-   | L4    | 0     | 5x     | 0            |
-   | **Total** | **10** | | **10 / 50 = 0.20** |
-   WARN: weighted_score 0.20 < 0.3 and all tests are L0-L1 only
-   ```
-
-5. **Build coverage table** and include in council packet as `context.test_pyramid`:
-
-```json
-"test_pyramid": {
-  "coverage": {
-    "L0": {"status": "pass", "files": ["test_spec_enforcement.py"]},
-    "L1": {"status": "pass", "files": ["test_module.py"]},
-    "L2": {"status": "gap", "reason": "crosses subsystem boundary, no integration test"}
-  },
-  "bug_finding": {
-    "BF4_chaos": {"status": "gap", "reason": "external API calls without failure injection"},
-    "BF1_property": {"status": "na", "reason": "no data transformations in scope"}
-  },
-  "weighted_score": 0.20,
-  "satisfaction_score": 0.20,
-  "satisfaction_source": "test-pyramid-weighted",
-  "score_breakdown": {"L0": 2, "L1": 8, "L2": 0, "L3": 0, "L4": 0},
-  "max_possible": 50,
-  "warn_unit_only": true,
-  "verdict": "WARN: weighted_score 0.20 < 0.3, all tests L0-L1 only"
-}
-```
-
-**Verdict rules:**
-- `weighted_score < 0.3` AND all tests L0-L1 only — **WARN: unit-only coverage** (include in council findings)
-- Missing L1 on feature code — **WARN** (include in council findings)
-- Missing L0 on spec-changing code — **WARN**
-- Missing BF4 on boundary code — **WARN** (advisory, not blocking)
-- All levels covered with `weighted_score >= 0.6` — no mention needed
-
-When coverage gaps are found, run `/test <module>` to generate test candidates for uncovered code.
+Read [references/test-pyramid-inventory.md](references/test-pyramid-inventory.md) when you need the full inventory procedure: per-module L0–L3 coverage checks, BF1–BF5 boundary checks, the `weighted_score` formula, satisfaction-score exposure, the council-packet `test_pyramid` JSON shape, and verdict rules. Runs in both `--quick` and full modes — file existence checks are cheap. Weight L0–L1 at 1x, L2 at 3x, L3+ at 5x; `weighted_score < 0.3` with L0–L1 only is a WARN.
 
 ### Step 4: Run Council Validation
 
@@ -404,46 +282,9 @@ Tell the user:
 3. Key concerns
 4. Location of vibe report
 
-### Step 9: Record Ratchet Progress
+### Step 9: Record Ratchet Progress & Step 9.5: Feed Findings to Flywheel
 
-After council verdict:
-1. If verdict is PASS or WARN:
-   - Run: `ao ratchet record vibe --output "<report-path>" 2>/dev/null || true`
-   - Suggest: "Run /post-mortem to capture learnings and complete the cycle."
-2. If verdict is FAIL:
-   - Do NOT record ratchet progress.
-   - Extract ALL findings from the council report for structured retry context (group by category if >20):
-     ```
-     Read the council report. For each finding, format as:
-     FINDING: <description> | FIX: <fix or recommendation> | REF: <ref or location>
-
-     Fallback for v1 findings (no fix/why/ref fields):
-       fix = finding.fix || finding.recommendation || "No fix specified"
-       ref = finding.ref || finding.location || "No reference"
-     ```
-   - Tell user to fix issues and re-run /vibe, including the formatted findings as actionable guidance.
-
-### Step 9.5: Feed Findings to Flywheel
-
-**If verdict is WARN or FAIL**, persist reusable findings to `.agents/findings/registry.jsonl` and optionally mirror the broader narrative to a learning file.
-
-Registry write rules:
-
-- persist only reusable issues that should change future review or implementation behavior
-- require `dedup_key`, provenance, `pattern`, `detection_question`, `checklist_item`, `applicable_when`, and `confidence`
-- `applicable_when` must use the controlled vocabulary from the finding-registry contract
-- append or merge by `dedup_key`
-- use the contract's temp-file-plus-rename atomic write rule
-
-If a broader prose summary still helps, also write the existing anti-pattern learning file to `.agents/learnings/YYYY-MM-DD-vibe-<target>.md`. Skip both if verdict is PASS.
-
-After the registry update, if `hooks/finding-compiler.sh` exists, run:
-
-```bash
-bash hooks/finding-compiler.sh --quiet 2>/dev/null || true
-```
-
-This keeps the same-session post-mortem path synchronized with the latest reusable findings. `session-end-maintenance.sh` remains the idempotent backstop.
+Read [references/post-verdict-actions.md](references/post-verdict-actions.md) when you need the PASS/WARN/FAIL ratchet recording rules, the failure-retry finding extraction format, and the `.agents/findings/registry.jsonl` write contract (dedup_key, applicable_when vocabulary, atomic-rename rule) plus the `hooks/finding-compiler.sh` follow-up.
 
 ### Step 10: Test Bead Cleanup
 
@@ -552,7 +393,10 @@ The hook is non-blocking (always exits 0) and outputs warnings via JSON. See [re
 
 ## Reference Documents
 
+- [references/complexity-analysis.md](references/complexity-analysis.md)
 - [references/deep-checks.md](references/deep-checks.md)
+- [references/post-verdict-actions.md](references/post-verdict-actions.md)
+- [references/test-pyramid-inventory.md](references/test-pyramid-inventory.md)
 - [references/verification-report.md](references/verification-report.md)
 - [references/write-time-quality.md](references/write-time-quality.md)
 - [references/deep-audit-protocol.md](references/deep-audit-protocol.md)

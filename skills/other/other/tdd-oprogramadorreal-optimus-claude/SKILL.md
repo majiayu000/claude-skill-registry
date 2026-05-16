@@ -370,7 +370,7 @@ If there are commits on the branch:
 
 1. **Push** the feature branch: `git push -u origin <branch-name>`
 
-2. **Detect the hosting platform** — read `$CLAUDE_PLUGIN_ROOT/skills/pr/references/platform-detection.md` and use the **origin URL check** and **CI file fallback** from the **Platform Detection Algorithm**. Skip multi-remote disambiguation — if ambiguous or unknown, skip PR/MR creation, report the push and suggest running `/optimus:pr` to create one
+2. **Detect the hosting platform** — read `$CLAUDE_PLUGIN_ROOT/skills/pr/references/platform-detection.md` and use the **origin URL check** and **CI file fallback** from the **Platform Detection Algorithm**. Skip multi-remote disambiguation — if ambiguous or unknown, skip PR/MR creation, report the push and suggest running `/optimus:pr` **in this same conversation** to create one (staying here lets `/optimus:pr` capture the implementation context into the PR description)
 
 3. **Create a PR/MR** using the Conventional PR format:
 
@@ -379,14 +379,22 @@ If there are commits on the branch:
    Write the body to a temp file in the current working directory: `TMPFILE=$(mktemp ./pr-body-XXXXXX.md)`. Clean up after the creation attempt: `rm -f "$TMPFILE"`. (Use a relative path, not `/tmp` — on Windows, Git Bash's `/tmp` mount is unresolvable by the native `gh.exe`/`glab.exe`, which would silently submit an empty body.)
 
    **GitHub** (requires `gh` CLI):
-   - Verify `gh` is available: `gh --version`. If not, skip and tell the user to run `/optimus:pr` to create the PR (it can install the CLI)
+   - Verify `gh` is available: `gh --version`. If not, skip and tell the user to run `/optimus:pr` **in this same conversation** to create the PR (it can install the CLI, and staying here lets it capture the implementation context into the PR description)
    - `gh pr create --title "<conventional title>" --body-file "$TMPFILE" --base <original-branch>`
 
    **GitLab** (requires `glab` CLI):
-   - Verify `glab` is available: `glab --version`. If not, skip and tell the user to run `/optimus:pr` to create the MR (it can install the CLI)
+   - Verify `glab` is available: `glab --version`. If not, skip and tell the user to run `/optimus:pr` **in this same conversation** to create the MR (it can install the CLI, and staying here lets it capture the implementation context into the MR description)
    - `glab mr create --title "<conventional title>" --description "$(cat "$TMPFILE")" --target-branch <original-branch>`
 
    Follow the Conventional PR template, incorporating TDD-specific data: include how many behaviors were implemented via TDD in the **Summary**, use `git diff --stat <original-branch>..HEAD` for **Changes**, and list each behavior as a verification item in the **Test plan** with coverage delta if available (e.g., "Coverage: [X]% → [Y]% (+[Z]%)").
+
+   **Populate the `## Intent` section** from the TDD cycle data. The TDD conversation has rich, structured intent information that maps cleanly onto the four sub-prompts — use it instead of leaving the section to be inferred. Map the fields as follows:
+   - **Problem** — from the task / design source. If a design doc was auto-detected (`docs/design/<task>.md` with a "Refined plan" section) or a JIRA task file (`docs/jira/<ISSUE-KEY>.md`), quote or summarize its problem statement / context section. If no design doc exists, summarize the brief that initiated this TDD session in 1–2 sentences (what the user asked to build).
+   - **Scope** — the behaviors that were actually implemented in this TDD run (each Red-Green-Refactor cycle's behavior name). One bullet per behavior. Pull from the behaviors list maintained during the session.
+   - **Non-goals** — behaviors that were intentionally deferred. Sources: behaviors listed in the design doc but not in the implemented set; explicit "Out of scope" sections in the design doc; any "we decided against X" discussions from the TDD session.
+   - **Key decisions** — design choices made during the TDD run. Sources: the design doc's "Refined plan" section (architecture decisions, pattern choices, trade-offs accepted); refactor-step decisions where a non-obvious shape was chosen over an alternative.
+
+   **Omit any sub-prompt that has no clear answer** (do not stub with placeholder text). If no design doc or task file exists AND the TDD session has no captured decisions / non-goals, omit the `## Intent` section entirely rather than fabricating one — `/optimus:code-review` is stricter about contradictions in a stated intent than about a missing intent section. See `$CLAUDE_PLUGIN_ROOT/skills/pr/references/pr-template.md` for the section format.
 
 4. **Report** to the user:
 
@@ -395,7 +403,7 @@ If there are commits on the branch:
 - Branch: `<branch-name>` (from `<original-branch>`)
 - Commits: [N]
 - Pushed: ✓
-- PR/MR: [URL] (or "Run `/optimus:pr` to create — CLI not available")
+- PR/MR: [URL] (or "Run `/optimus:pr` in this conversation to create — CLI not available")
 ```
 
 If behaviors remain unfinished, note them and suggest re-running `/optimus:tdd` to continue.
@@ -406,4 +414,4 @@ If a worktree was used (Step 3), read `$CLAUDE_PLUGIN_ROOT/skills/tdd/references
 
 Recommend running `/optimus:code-review` to review the PR/MR before merging.
 
-Tell the user: **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.
+Tell the user the closing tip per `$CLAUDE_PLUGIN_ROOT/references/skill-handoff.md` "Closing tip wording" — use **Variant C** (default — `/optimus:code-review` is non-continuation).

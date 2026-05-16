@@ -1,6 +1,6 @@
 ---
 name: don-open-source
-description: "Open source standards for Dutch government: licensing, publiccode.yml, Standard for Public Code, CONTRIBUTING.md."
+description: "Open source bij Nederlandse overheid: licentie kiezen, LICENSE-bestand, EUPL, MIT, publiccode.yml, Standard for Public Code, CONTRIBUTING.md, nieuwe repo."
 metadata:
   source: developer.overheid.nl
   synced-from: https://github.com/developer-overheid-nl/don-site

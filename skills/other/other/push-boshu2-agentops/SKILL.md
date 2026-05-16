@@ -1,7 +1,16 @@
 ---
 name: push
-description: 'Validate, commit, and push.'
-practices: [continuous-delivery, gitops, dora-metrics]
+description: Validate, commit, and push.
+practices:
+- continuous-delivery
+- gitops
+- dora-metrics
+hexagonal_role: driving-adapter
+consumes:
+- git-changes
+produces:
+- git-changes
+context_rel: []
 skill_api_version: 1
 user-invocable: true
 context:
@@ -9,17 +18,20 @@ context:
   intent:
     mode: none
   sections:
-    exclude: [HISTORY, INTEL, TASK]
+    exclude:
+    - HISTORY
+    - INTEL
+    - TASK
   intel_scope: none
 metadata:
   tier: execution
   dependencies: []
   triggers:
-    - push
-    - ship it
-    - commit and push
-    - push changes
-output_contract: "git commit + push"
+  - push
+  - ship it
+  - commit and push
+  - push changes
+output_contract: git commit + push
 ---
 # Push Skill
 

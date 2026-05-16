@@ -1,6 +1,6 @@
 ---
 name: don-data
-description: "Dutch government data standards: data exchange, data quality, government data formats and compliance."
+description: "Data delen en uitwisselen bij Nederlandse overheid: open data, datakwaliteit, data bij de bron, DCAT-AP, basisregistraties, data governance."
 metadata:
   source: developer.overheid.nl
   synced-from: https://github.com/developer-overheid-nl/don-site

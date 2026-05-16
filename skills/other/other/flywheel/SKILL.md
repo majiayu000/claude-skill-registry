@@ -1,7 +1,17 @@
 ---
 name: flywheel
-description: 'Check knowledge flywheel health.'
-practices: [wiki-knowledge-surface, lean-startup, dora-metrics]
+description: Check knowledge flywheel health.
+practices:
+- wiki-knowledge-surface
+- lean-startup
+- dora-metrics
+hexagonal_role: domain
+consumes: []
+produces:
+- .agents/learnings/*.md
+context_rel:
+- kind: shared-kernel
+  with: standards
 skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash
 model: haiku
@@ -10,13 +20,14 @@ context:
   intent:
     mode: task
   sections:
-    exclude: [TASK]
+    exclude:
+    - TASK
   intel_scope: full
 metadata:
   tier: background
   dependencies: []
   internal: true
-output_contract: "stdout: flywheel health report (JSON when --json)"
+output_contract: 'stdout: flywheel health report (JSON when --json)'
 ---
 # Flywheel Skill
 Monitor the knowledge flywheel health.
@@ -28,8 +39,7 @@ Sessions → Transcripts → Forge → Pool → Promote → Knowledge
                     Future sessions find it
 ```
 
-**Velocity** = Rate of knowledge flowing through
-**Friction** = Bottlenecks slowing the flywheel
+**Velocity** = rate of knowledge flowing through. **Friction** = bottlenecks slowing the flywheel.
 
 ## Execution Steps
 Given `/flywheel`:
@@ -74,30 +84,15 @@ if command -v ao &>/dev/null; then
 else
   # ao-free fallback: compute approximate metrics from files
   echo "Cache health (ao-free fallback):"
-
-  # Learnings modified in last 30 days (active pool)
-  ACTIVE_30D=$(find .agents/learnings/ -name "*.md" -mtime -30 2>/dev/null | wc -l | tr -d ' ')
-  echo "Active learnings (30d): $ACTIVE_30D"
-
-  # Forge candidates awaiting promotion
-  FORGE_PENDING=$(ls .agents/forge/*.md 2>/dev/null | wc -l | tr -d ' ')
-  echo "Forge candidates pending: $FORGE_PENDING"
-
-  # Citation tracking (if citations.jsonl exists)
+  echo "Active learnings (30d): $(find .agents/learnings/ -name '*.md' -mtime -30 2>/dev/null | wc -l | tr -d ' ')"
+  echo "Forge candidates pending: $(ls .agents/forge/*.md 2>/dev/null | wc -l | tr -d ' ')"
   if [ -f .agents/ao/citations.jsonl ]; then
-    CITATION_COUNT=$(wc -l < .agents/ao/citations.jsonl | tr -d ' ')
-    UNIQUE_CITED=$(grep -o '"artifact_path":"[^"]*"' .agents/ao/citations.jsonl 2>/dev/null | sort -u | wc -l | tr -d ' ')
-    echo "Total citations: $CITATION_COUNT"
-    echo "Unique learnings cited: $UNIQUE_CITED"
+    echo "Total citations: $(wc -l < .agents/ao/citations.jsonl | tr -d ' ')"
+    echo "Unique learnings cited: $(grep -o '"artifact_path":"[^"]*"' .agents/ao/citations.jsonl 2>/dev/null | sort -u | wc -l | tr -d ' ')"
   else
     echo "No citation data (citations.jsonl not found)"
   fi
-
-  # Session outcomes (if outcomes.jsonl exists)
-  if [ -f .agents/ao/outcomes.jsonl ]; then
-    OUTCOME_COUNT=$(wc -l < .agents/ao/outcomes.jsonl | tr -d ' ')
-    echo "Session outcomes recorded: $OUTCOME_COUNT"
-  fi
+  [ -f .agents/ao/outcomes.jsonl ] && echo "Session outcomes recorded: $(wc -l < .agents/ao/outcomes.jsonl | tr -d ' ')"
 fi
 ```
 
@@ -130,20 +125,12 @@ if command -v ao &>/dev/null; then
   fi
 else
   echo "ao CLI not available — using file-based metrics"
-
-  # Pool inventory
   echo "Pool depths:"
   for pool in learnings patterns forge knowledge research retros; do
-    COUNT=$(ls .agents/${pool}/*.md 2>/dev/null | wc -l | tr -d ' ')
-    echo "  $pool: $COUNT"
+    echo "  $pool: $(ls .agents/${pool}/*.md 2>/dev/null | wc -l | tr -d ' ')"
   done
-
-  # Global patterns
-  GLOBAL_COUNT=$(ls ~/.claude/patterns/*.md 2>/dev/null | wc -l | tr -d ' ')
-  echo "  global patterns: $GLOBAL_COUNT"
-
-  # Check for promotion-ready learnings (see references/promotion-tiers.md)
-  echo "See: skills/flywheel/references/promotion-tiers.md for tier definitions"
+  echo "  global patterns: $(ls ~/.claude/patterns/*.md 2>/dev/null | wc -l | tr -d ' ')"
+  echo "See references/promotion-tiers.md for tier definitions"
 fi
 ```
 

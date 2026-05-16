@@ -1,20 +1,32 @@
 ---
 name: bug-hunt
-description: 'Investigate bugs and root causes.'
-practices: [refactoring, property-based-testing, code-complete]
+description: Investigate bugs and root causes.
+practices:
+- refactoring
+- property-based-testing
+- code-complete
+hexagonal_role: domain
+consumes:
+- beads
+- standards
+produces: []
+context_rel:
+- kind: shared-kernel
+  with: standards
 skill_api_version: 1
 context:
   window: fork
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: topic
 metadata:
   tier: execution
   dependencies:
-    - beads  # optional - for issue tracking
-output_contract: "diagnosis report, optional fix commits"
+  - beads
+output_contract: diagnosis report, optional fix commits
 ---
 # Bug Hunt Skill
 

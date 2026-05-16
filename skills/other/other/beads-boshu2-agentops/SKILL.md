@@ -1,20 +1,33 @@
 ---
 name: beads
-description: 'Track issues with bd/br, triage with bv, and convert plans to beads.'
-practices: [agile-manifesto, pragmatic-programmer]
+description: Track issues with bd/br, triage with bv, and convert plans to beads.
+practices:
+- agile-manifesto
+- pragmatic-programmer
+hexagonal_role: driven-adapter
+consumes:
+- bd-issue
+produces:
+- bd-issue
+context_rel:
+- kind: supplier-to
+  with: crank
+- kind: supplier-to
+  with: ratchet
 skill_api_version: 1
 context:
   window: fork
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: topic
 metadata:
   tier: library
   dependencies: []
   internal: true
-output_contract: "beads (via bd/br/bv CLI)"
+output_contract: beads (via bd/br/bv CLI)
 ---
 # Beads - Persistent Task Memory for AI Agents
 

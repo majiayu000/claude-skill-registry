@@ -1,6 +1,18 @@
 ---
 name: bootstrap
-description: 'Initialize AgentOps project files.'
+description: Initialize AgentOps project files.
+practices:
+- containers
+- hermetic-builds
+- code-complete
+hexagonal_role: driving-adapter
+consumes:
+- goals
+- product
+- readme
+- shared
+produces: []
+context_rel: []
 skill_api_version: 1
 user-invocable: true
 context:
@@ -11,11 +23,11 @@ context:
 metadata:
   tier: session
   dependencies:
-    - goals
-    - product
-    - readme
-    - shared
-output_contract: ".agents/ directory structure, GOALS.md, PRODUCT.md"
+  - goals
+  - product
+  - readme
+  - shared
+output_contract: .agents/ directory structure, GOALS.md, PRODUCT.md
 ---
 # /bootstrap
 

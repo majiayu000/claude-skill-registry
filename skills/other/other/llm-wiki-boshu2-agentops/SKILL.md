@@ -1,22 +1,31 @@
 ---
 name: llm-wiki
-description: 'Build external-knowledge wikis.'
-practices: [wiki-knowledge-surface, ddd-bounded-context, prompt-as-spec]
+description: Build external-knowledge wikis.
+practices:
+- wiki-knowledge-surface
+- ddd-bounded-context
+- prompt-as-spec
+hexagonal_role: supporting
+consumes: []
+produces:
+- documentation
+context_rel: []
 skill_api_version: 1
 metadata:
   tier: knowledge
   status: proposal
   dependencies:
-    - compile       # existing AgentOps internal-artifact compiler (structurally similar)
-    - research      # can consume wiki pages as source material for research artifacts
-    - forge         # can promote wiki-page concepts into .agents/findings/ when they crystallize
-    - inject        # can learn to pull wiki pages into session context
+  - compile
+  - research
+  - forge
+  - inject
 context:
   window: fork
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: full
 ---
 # LLM Wiki Skill (proposal)

@@ -1,7 +1,15 @@
 ---
 name: using-agentops
-description: 'Explain AgentOps workflows.'
-practices: [wiki-knowledge-surface, pragmatic-programmer, agile-manifesto]
+description: Explain AgentOps workflows.
+practices:
+- wiki-knowledge-surface
+- pragmatic-programmer
+- agile-manifesto
+hexagonal_role: generic
+consumes: []
+produces:
+- documentation
+context_rel: []
 skill_api_version: 1
 user-invocable: false
 context:
@@ -9,13 +17,16 @@ context:
   intent:
     mode: none
   sections:
-    exclude: [HISTORY, INTEL, TASK]
+    exclude:
+    - HISTORY
+    - INTEL
+    - TASK
   intel_scope: none
 metadata:
   tier: meta
   dependencies: []
   internal: true
-output_contract: "stdout: operating guide"
+output_contract: 'stdout: operating guide'
 ---
 # AgentOps Operating Model
 
@@ -214,32 +225,10 @@ bd vc status          # Inspect Dolt state if needed (JSONL auto-sync is automat
 
 ## Examples
 
-### Startup Context Loading
+**Startup context loading.** Hook-capable runtimes run `session-start.sh` at session start (`manual` mode auto-loads MEMORY.md and points to `ao search`/`ao lookup`; `lean` mode injects prior learnings on a reduced token budget). Codex v0.115.0+ fires hooks automatically; pre-v0.115.0 runs `ao codex start` / `ao codex stop` explicitly. Either way the agent gets the RPI workflow, prior context, and a citation path.
 
-**Hook-capable runtimes**
-1. `session-start.sh` (or equivalent) can run at session start.
-2. In `manual` mode, MEMORY.md is auto-loaded and the hook points to on-demand retrieval (`ao search`, `ao lookup`).
-3. In `lean` mode, the hook extracts pending knowledge and injects prior learnings with a reduced token budget.
-4. This skill can be injected automatically into session context.
+**Workflow reference during planning.** When a user asks how to approach a feature, the agent uses this skill's RPI section to recommend Research → Plan → Implement → Validate — `/research` for exploration, `/plan` for decomposition, `/pre-mortem` for failure simulation — instead of an ad-hoc approach.
 
-**Codex (v0.115.0+: native hooks, older: hookless fallback)**
-1. v0.115.0+: hooks fire automatically — same behavior as hook-capable runtimes above.
-2. Pre-v0.115.0: run `ao codex start` explicitly, use `ao lookup` for citations, end with `ao codex stop`.
-
-**Result:** The agent gets the RPI workflow, prior context, and a citation path in all modes.
-
-### Workflow Reference During Planning
-
-**User says:** "How should I approach this feature?"
-
-**What happens:**
-1. Agent references this skill's RPI workflow section
-2. Agent recommends Research → Plan → Implement → Validate phases
-3. Agent suggests `/research` for codebase exploration, `/plan` for decomposition
-4. Agent explains `/pre-mortem` for failure simulation before implementation
-5. User follows recommended workflow with agent guidance
-
-**Result:** Agent provides structured workflow guidance based on this meta-skill, avoiding ad-hoc approaches.
 ## Troubleshooting
 
 | Problem | Cause | Solution |

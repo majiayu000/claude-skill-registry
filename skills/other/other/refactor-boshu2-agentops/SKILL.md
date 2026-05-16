@@ -1,22 +1,31 @@
 ---
 name: refactor
-description: 'Execute safe refactors.'
-practices: [refactoring, legacy-code-seams, design-patterns]
+description: Execute safe refactors.
+practices:
+- refactoring
+- legacy-code-seams
+- design-patterns
+hexagonal_role: supporting
+consumes: []
+produces:
+- git-changes
+context_rel: []
 skill_api_version: 1
 context:
   window: fork
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: topic
 metadata:
   tier: execution
   dependencies:
-    - standards   # loads language-specific conventions
-    - complexity  # identifies high-complexity targets
-    - beads       # optional - for issue tracking
-output_contract: "code changes with regression verification"
+  - standards
+  - complexity
+  - beads
+output_contract: code changes with regression verification
 ---
 # Refactor Skill
 

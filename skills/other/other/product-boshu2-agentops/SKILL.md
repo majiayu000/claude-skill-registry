@@ -1,19 +1,30 @@
 ---
 name: product
-description: 'Create or refine PRODUCT.md.'
-practices: [lean-startup, mythical-man-month, ddd-bounded-context]
+description: Create or refine PRODUCT.md.
+practices:
+- lean-startup
+- mythical-man-month
+- ddd-bounded-context
+hexagonal_role: domain
+consumes: []
+produces:
+- result.json
+context_rel:
+- kind: shared-kernel
+  with: standards
 skill_api_version: 1
 context:
   window: fork
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: full
 metadata:
   tier: product
   dependencies: []
-output_contract: "PRODUCT.md"
+output_contract: PRODUCT.md
 ---
 # /product — Interactive PRODUCT.md Generation
 

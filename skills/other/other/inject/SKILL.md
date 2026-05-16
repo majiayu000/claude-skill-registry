@@ -1,7 +1,13 @@
 ---
 name: inject
-description: 'Load relevant .agents context.'
-practices: [wiki-knowledge-surface, pragmatic-programmer]
+description: Load relevant .agents context.
+practices:
+- wiki-knowledge-surface
+- pragmatic-programmer
+hexagonal_role: driving-adapter
+consumes: []
+produces: []
+context_rel: []
 skill_api_version: 1
 user-invocable: false
 context:
@@ -9,19 +15,22 @@ context:
   intent:
     mode: none
   sections:
-    exclude: [TASK]
+    exclude:
+    - TASK
   intel_scope: full
 metadata:
   tier: background
   dependencies: []
   internal: true
-output_contract: "stdout: injected knowledge summary"
+output_contract: 'stdout: injected knowledge summary'
 ---
 > **DEPRECATED (removal target: v3.0.0)** — Use `ao lookup --query "topic"` for on-demand learnings retrieval, or see `.agents/AGENTS.md` for knowledge navigation. This skill and the `ao inject` CLI command still work but are no longer called from hooks or other skills.
 
 # Inject Skill
 
 **On-demand knowledge retrieval. Not run automatically at startup (since ag-8km).**
+
+It is read-only: it only reads knowledge for injection and never writes to `.agents/`.
 
 Inject relevant prior knowledge into the current session.
 

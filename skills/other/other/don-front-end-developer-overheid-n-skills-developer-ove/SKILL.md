@@ -1,6 +1,6 @@
 ---
 name: don-front-end
-description: "Dutch government web standards: NL Design System, WCAG accessibility, government UI patterns."
+description: "Frontend voor Nederlandse overheid: NL Design System (NLDS), WCAG toegankelijkheid, digitoegankelijk, axe, screenreader, formulieren, kaartcomponenten."
 metadata:
   source: developer.overheid.nl
   synced-from: https://github.com/developer-overheid-nl/don-site

@@ -1,24 +1,32 @@
 ---
 name: oss-docs
-description: 'Scaffold or audit OSS docs.'
-practices: [code-complete, pragmatic-programmer]
+description: Scaffold or audit OSS docs.
+practices:
+- code-complete
+- pragmatic-programmer
+hexagonal_role: generic
+consumes: []
+produces:
+- documentation
+context_rel: []
 skill_api_version: 1
 context:
   window: fork
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: topic
 license: MIT
 compatibility: Requires git
 metadata:
   author: Gas Town
-  version: "1.0.0"
+  version: 1.0.0
   tier: contribute
   internal: false
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
-output_contract: "CONTRIBUTING.md, CHANGELOG.md, AGENTS.md"
+output_contract: CONTRIBUTING.md, CHANGELOG.md, AGENTS.md
 ---
 # OSS Documentation Skill
 

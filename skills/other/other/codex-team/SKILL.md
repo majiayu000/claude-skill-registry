@@ -1,11 +1,19 @@
 ---
 name: codex-team
-description: 'Coordinate multiple Codex agents.'
+description: Coordinate multiple Codex agents.
+practices:
+- team-topologies
+- ai-assisted-dev
+hexagonal_role: supporting
+consumes: []
+produces:
+- .agents/swarm/results/*.json
+context_rel: []
 skill_api_version: 1
 context: fork
 metadata:
   tier: cross-vendor
-output_contract: ".agents/swarm/results/*.json"
+output_contract: .agents/swarm/results/*.json
 ---
 # Codex Team
 
@@ -100,6 +108,8 @@ For code review and analysis tasks, prefer `-s read-only` over `--full-auto`.
 ### Step 1: Define Tasks
 
 Break work into focused tasks. Each task = one Codex agent (unless merged).
+
+For multi-agent work that needs interchangeable workers, file reservations, session mail, repeated passes, or tmux-backed coordination, read [references/fungible-agent-coordination.md](references/fungible-agent-coordination.md) before dispatching.
 
 ### Step 2: Analyze File Targets (REQUIRED)
 
@@ -356,5 +366,6 @@ Skill(skill="swarm")
 
 ## Reference Documents
 
+- [references/fungible-agent-coordination.md](references/fungible-agent-coordination.md)
 - [references/claude-code-latest-features.md](references/claude-code-latest-features.md)
 - [../shared/references/claude-code-latest-features.md](../shared/references/claude-code-latest-features.md)

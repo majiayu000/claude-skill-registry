@@ -1,9 +1,13 @@
 ---
 name: story-short-analyze
-version: 1.0.0
+version: 2.1.0
 description: |
-  短篇网文拆文。拆解爆款短篇小说的叙事结构、情绪曲线、反转技巧、钩子设计。
+  短篇网文拆文。深度拆解爆款短篇小说的故事核、结构、情感线、反转设计、写作手法、共鸣层次。
+  支持两种模式：
+  - 标准拆解：故事核+结构分析+情感线+反转分析+人物分析+综合评估
+  - 精细拆解：在标准基础上增加情节节点提取、写作手法详解、节奏分析、共鸣分析
   触发方式：/story-short-analyze、/短篇拆文、「帮我拆这个短篇」「分析这篇故事」
+  精细模式触发：「精细拆解」「完整拆解」「深度拆解」或用户要求写作手法/节奏分析
 metadata:
   openclaw:
     source: https://github.com/worldwonderer/oh-story-claudecode
@@ -13,13 +17,21 @@ metadata:
 
 你是短篇小说结构分析师。
 
-**核心信念：短篇的本质是情绪炸弹。拆文就是拆弹——看它用什么引信、什么火药、什么时间引爆。**
+**核心：短篇靠共鸣和爆点驱动。拆文就是看它用什么故事核、怎么铺垫、在哪里引爆。**
 
 ---
 
 ## Phase 1：确认拆解对象 + 题材路由
 
-问用户：**「你要拆哪篇？（标题+平台/来源）想重点看什么？（整体结构/反转设计/情绪曲线/开头技巧）」**
+问用户：**「你要拆哪篇？（标题+平台/来源）想重点看什么？（故事核/结构/情感线/反转设计/写作手法/共鸣层次）」**
+
+### 路由决策
+
+```
+用户要求「精细拆解/完整拆解/深度拆解」或要求手法/节奏分析？
+  ├─ 是 → 精细模式（Phase 2-6 全部执行）
+  └─ 否 → 标准模式（Phase 2-6，跳过情节节点详细清单和写作手法深度分析，直接输出简化版）
+```
 
 ### 题材路由
 
@@ -43,22 +55,36 @@ metadata:
 
 输出到 `拆文库/{书名}/`（项目根目录下）。用户指定了其他路径时按用户指定路径输出。
 
+标准输出文件：
+- `拆文报告.md` — 完整拆文报告
+- `情节节点.md` — 情节节点清单（精细模式）
+- `写作手法.md` — 写作手法分析（精细模式）
+
 ---
 
 ## Phase 2-6：拆文流程
 
-按 output-templates.md 中的模板输出：
+### 5 阶段管道
 
-- **Phase 2**：全篇结构拆解。按 [output-templates.md Phase 2](references/output-templates.md) 输出结构划分和基本信息。
-- **Phase 2.5**：人设速写。按 [Phase 2.5](references/output-templates.md) 分析主角 + 至少 2 个配角的核心矛盾、性格弧线、功能定位。
-- **Phase 3**：情绪曲线分析。按 [Phase 3](references/output-templates.md) 输出情绪节点和曲线特征，**每个节点同时标注该段的钩子类型**。
-- **Phase 4**：反转设计分析。按 [Phase 4](references/output-templates.md) 输出反转类型、机制、时机。**包含前置反转检查**：是否有在故事时间线之前就已存在的谎言/误判。
-- **Phase 5**：开头与结尾分析。按 [Phase 5](references/output-templates.md) 拆解首尾。
-- **Phase 6**：输出拆文报告。按 [Phase 6](references/output-templates.md) 模板输出完整报告。
+| 阶段 | 名称 | 输入 | 输出 | 完成标志 |
+|------|------|------|------|----------|
+| 2 | 结构+情节节点 | 全文 | 故事核 + 故事梗概 + 功能分段（4-6段，必须含开端/发展/高潮/结局）+ 情节节点清单（精细模式）。节点密度 15-60 个（按字数动态调节）。 | 结构划分 ≥4 段 + 故事核已提取 |
+| 3 | 情感线+爆点 | 故事核+结构划分+情节节点数据 | 情感曲线（≥5节点）+ 爆点分析（6维度）+ 期待感分析。 | 爆点分析 6 维度齐全 |
+| 4 | 反转+写作手法 | 节点+情感数据 | 前置反转检查 + 反转机制（铺垫≥2条）+ 写作手法（≥5项维度：POV/对话/时间/信息/其他）。 | 写作手法 ≥5 项 |
+| 5 | 人物+开头结尾 | 情节节点+全文 | 所有人物（分类+功能标签+功能评估）+ 开头分析（前50/100字）+ 结尾分析（收束检查）。 | 人物功能评估完成 |
+| 6 | 综合评估 | 全部数据 | 五维评分 + 爆点性 + 话题性 + 共鸣分析（≥3层）+ 可借鉴结构（≥3条）+ 节奏速报。 | 五维评分完成 + 爆点性/话题性已分析 + 共鸣≥3层 + 可借鉴≥3条 + 节奏速报已包含 |
 
-每个 Phase 完成前检查 [必填字段](references/output-templates.md)，缺少项需补充。
+> 管道执行顺序：2 → 3 → 4 → 5 → 6（严格串行，每阶段依赖前一阶段数据）。可选模块（同类对比、平台适配、详细节奏）可在 Phase 6 后执行。
 
-短篇结构速查见 [output-templates.md 结构库](references/output-templates.md)。
+详细模板见 [output-templates.md](references/output-templates.md)，方法论见 [material-decomposition.md](references/material-decomposition.md)。
+
+---
+
+## 质量门控概要
+
+各阶段完成后需通过质量检查。具体检查项见 [output-templates.md 质量门控必填字段](references/output-templates.md)。
+
+核心标准详见 [material-decomposition.md 质量标准](references/material-decomposition.md)。
 
 ---
 
@@ -77,9 +103,17 @@ metadata:
 
 ## 参考资料
 
+### 核心方法论（拆文时必须加载）
+
 | 文件 | 何时加载 |
 |------|----------|
-| [references/output-templates.md](references/output-templates.md) | 拆文时：输出模板+结构库+必填字段 |
+| [references/output-templates.md](references/output-templates.md) | 拆文时：输出模板+结构库+质量门控 |
+| [references/material-decomposition.md](references/material-decomposition.md) | 拆文方法论：情节节点提取+写作手法+情感线+节奏分析+共鸣分析+人物规则+质量标准 |
+
+### 扩展参考（按需加载）
+
+| 文件 | 何时加载 |
+|------|----------|
 | [references/deconstruction-examples.md](references/deconstruction-examples.md) | 学习拆文方法时（3个完整案例） |
 | [references/zhihu-style.md](references/zhihu-style.md) | 分析知乎盐言故事时 |
 | [references/genre-catalog.md](references/genre-catalog.md) | 拆解特定题材时，加载对应题材的「短篇视角」章节 |
@@ -92,6 +126,8 @@ metadata:
 | [references/quality-checklist.md](references/quality-checklist.md) | 评估质量时 |
 | [references/genre-core-mechanics.md](references/genre-core-mechanics.md) | 分析核心梗设计与循环机制时 |
 | [references/genre-readers.md](references/genre-readers.md) | 分析读者心理与期待管理时 |
+
+### 补充资料
 
 > **题材写作公式**：`references/genre-writing-formulas.md`（21大题材写作公式）
 > **通用写作技法**：`references/genre-writing-techniques.md`（情绪操控+感情线+震惊场景+喜剧机制）

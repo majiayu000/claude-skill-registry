@@ -1,25 +1,42 @@
 ---
 name: council
-description: 'Run multi-judge consensus.'
-practices: [llm-eval-harness, ai-assisted-dev, design-by-contract]
+description: Run multi-judge consensus.
+practices:
+- llm-eval-harness
+- ai-assisted-dev
+- design-by-contract
+hexagonal_role: domain
+consumes:
+- standards
+produces:
+- result.json
+- verdict.json
+context_rel:
+- kind: shared-kernel
+  with: standards
 skill_api_version: 1
 context:
   window: isolated
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: full
 metadata:
   tier: judgment
   dependencies:
-    - standards   # optional - loaded for code validation context
+  - standards
   replaces: judge
 output_contract: skills/council/schemas/verdict.json
 ---
 # /council — Multi-Model Consensus Council
 
 Spawn parallel judges with different perspectives, consolidate into consensus. Works for any task — validation, research, brainstorming.
+
+## Loop position
+
+Cross-cutting judgment gate available at any [operating loop](../../docs/architecture/operating-loop.md) move where multi-model consensus is required: typically pre-flight on the slice plan (between moves 3 and 4), per-slice on non-mechanical correctness (move 6), and on the bead acceptance roll-up. Council does not own a loop move — it provides verdicts that other moves consume. Use it at slice level when a single test cannot capture taste; use it at bead level when acceptance examples are passing but the consumer-facing behavior still needs adversarial review.
 
 ## Quick Start
 

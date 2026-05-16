@@ -72,6 +72,7 @@ Choose the edition before modeling — it determines whether you can scope conte
 Beyond the type, sections have settings that matter for content architecture:
 
 - **`maxAuthors`** (default 1) — allows multiple authors per entry (new in 5.0.0). Set higher for collaborative content.
+- **`minAuthors`** (default 0, new in 5.10) — minimum number of authors required to save an entry. Set `1` to enforce that every entry has at least one author. Validated on save; setting `minAuthors > maxAuthors` is rejected by Craft's section validator. Combine with `maxAuthors` to define an exact range (`min: 1, max: 3` = "1 to 3 authors required").
 - **`enableVersioning`** (default true) — version history for entries
 - **`defaultPlacement`** — `'beginning'` or `'end'` for new entries in structures
 - **`previewTargets`** — array of `{label, urlFormat}` objects defining where entries can be previewed. Default: primary entry page. Add custom targets for headless frontends, staging URLs, or PDF previews.

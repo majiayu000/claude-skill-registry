@@ -349,10 +349,12 @@ For each completed worker:
 2. FAIL -> log the failure, keep the issue open, and retry only if the issue is still within the retry budget.
 3. BLOCKED -> mark blocked with the reason and continue the wave.
 
-Update beads:
+Update beads with evidence:
 
 ```bash
-bd close "$issue_id" 2>/dev/null
+COMMIT_SHA=$(git rev-parse --short HEAD 2>/dev/null || echo "unknown")
+CHANGED_FILES=$(git diff --name-only HEAD~1 2>/dev/null | head -10 | tr '\n' ' ' | sed 's/ $//')
+bd close "$issue_id" --reason "commit:${COMMIT_SHA} files:[${CHANGED_FILES}]" 2>/dev/null
 bd update "$issue_id" --status blocked --append-notes "Wave $wave FAIL: $reason" 2>/dev/null
 ```
 
@@ -362,6 +364,13 @@ After all workers complete:
 1. Compute `git diff` for the wave.
 2. Run project-level tests appropriate to the wave.
 3. If tests fail, identify which worker's changes broke things and requeue only that work.
+4. **CI-Policy Parity Gate (conditional).** If the wave diff touches `.github/workflows/*.yml`, run `bash scripts/validate-ci-policy-parity.sh`; on non-zero exit treat the wave verdict as **FAIL** and surface the drift report. Trigger pattern (narrow — workflow YAML only):
+   ```bash
+   if git diff --name-only "$WAVE_START_SHA" HEAD -- | grep -qE '^\.github/workflows/.*\.ya?ml$'; then
+       bash scripts/validate-ci-policy-parity.sh || exit 1
+   fi
+   ```
+   See [references/wave-patterns.md](references/wave-patterns.md) "CI-Policy Parity Gate" for the worked example and the soc-lmww1 / commit `c587b361` motivation.
 
 ### Step 5.7: Wave Checkpoint
 
@@ -534,6 +543,7 @@ fi
 - [references/ralph-loop-contract.md](references/ralph-loop-contract.md) - Ralph Wiggum loop contract
 - [references/taskcreate-examples.md](references/taskcreate-examples.md) - task creation examples
 - [references/team-coordination.md](references/team-coordination.md) - worker coordination details
+- [references/worker-specs.md](references/worker-specs.md) - per-worker model/tool/prompt specs
 - [references/external-gate-protocol.md](references/external-gate-protocol.md) - external gate protocol for wave validation
 - [references/test-first-mode.md](references/test-first-mode.md) - test-first wave sequence
 - [references/troubleshooting.md](references/troubleshooting.md) - common issues and fixes

@@ -110,12 +110,12 @@ STEP 1.7.5 ── Release-Readiness Gates (MANDATORY when IS_RELEASE_CONTEXT=1)
               Release-context detection: branch name matches release/*,
               v*-prep, v*-evolve-run, or v\d+\.\d+*; OR --release-context
               flag; OR CLI/contracts/hooks/schemas/skills changes AND the
-              caller intends to recommend /release.
+              caller intends to recommend `$release`.
 
               When IS_RELEASE_CONTEXT=1, this step is MANDATORY — failure
               to run any of the gates below MUST emit a FAIL verdict with
               "release gates not run" reason. Validation MUST NOT recommend
-              /release until all three (a/b/c) pass.
+              `$release` until all three (a/b/c) pass.
 
               a) Full pre-push gate (NOT --fast):
                    bash scripts/pre-push-gate.sh
@@ -209,7 +209,7 @@ Track state inline: `epic_id`, `complexity`, `no_retro`, `no_forge`, `strict_sur
 
 **Validation has multiple blocking conditions.** Validation cannot fix code — it can only report and fail closeout when the lifecycle contract is not met.
 
-- **Blocking FAIL conditions:** `$vibe` FAIL, code-surface failure in STEP 1.5, `--strict-surfaces` failure on any closure surface, CVSS >= 9.0 dependency findings in STEP 1.7b unless `--allow-critical-deps`, **STEP 1.7.5 release-readiness gate failure when IS_RELEASE_CONTEXT=1** (full pre-push-gate, ci-local-release.sh, or CLI-reference-staleness), and post-mortem FAIL in STEP 2. For release-context runs, validation MUST NOT recommend `/release` in its report unless all STEP 1.7.5 gates passed.
+- **Blocking FAIL conditions:** `$vibe` FAIL, code-surface failure in STEP 1.5, `--strict-surfaces` failure on any closure surface, CVSS >= 9.0 dependency findings in STEP 1.7b unless `--allow-critical-deps`, **STEP 1.7.5 release-readiness gate failure when IS_RELEASE_CONTEXT=1** (full pre-push-gate, ci-local-release.sh, or CLI-reference-staleness), and post-mortem FAIL in STEP 2. For release-context runs, validation MUST NOT recommend `$release` in its report unless all STEP 1.7.5 gates passed.
 - **PASS/WARN:** Log verdicts, continue through the remaining steps.
 - **FAIL:** Extract findings from the latest evaluator output, write phase summary with FAIL status, output `<promise>FAIL</promise>` with findings attached. Suggest: `"Validation FAIL. Fix findings, then re-run $validation [epic-id]"`.
 

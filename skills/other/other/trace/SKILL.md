@@ -1,7 +1,15 @@
 ---
 name: trace
-description: 'Trace decisions through artifacts.'
-practices: [distributed-tracing, adr, ebpf-observability]
+description: Trace decisions through artifacts.
+practices:
+- distributed-tracing
+- adr
+- ebpf-observability
+hexagonal_role: supporting
+consumes: []
+produces:
+- result.json
+context_rel: []
 skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash
 context:
@@ -9,13 +17,14 @@ context:
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: full
 metadata:
   tier: knowledge
   dependencies:
-    - provenance # alternative - for artifact lineage
-output_contract: "stdout: decision provenance chain"
+  - provenance
+output_contract: 'stdout: decision provenance chain'
 ---
 # Trace Skill
 

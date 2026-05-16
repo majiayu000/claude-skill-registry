@@ -245,6 +245,6 @@ Run `/optimus:tdd` to implement the refined plan in `<design-doc-path>` test-fir
 ```
 ````
 
-**Prose deliverable:** if the design produces a written artifact rather than code, replace the execution prompt above with one that instructs Claude directly — e.g. `Execute the refined plan in <design-doc-path> to produce <deliverable-path>.` — and note that `/optimus:tdd` does **not** apply. After `<deliverable-path>` is produced, recommend `/optimus:commit` to commit the artifact.
+**Prose deliverable:** if the design produces a written artifact rather than code, replace the execution prompt above with one that instructs Claude directly — e.g. `Execute the refined plan in <design-doc-path> to produce <deliverable-path>.` — and note that `/optimus:tdd` does **not** apply. After `<deliverable-path>` is produced, recommend `/optimus:commit` to commit the artifact and tell the user the closing tip per `$CLAUDE_PLUGIN_ROOT/references/skill-handoff.md` "Closing tip wording" — use **Variant A** with `<continuation-skill(s)>` = `/optimus:commit` and `<non-continuation-examples>` = `/optimus:code-review`, `/optimus:unit-test`, etc.
 
 See `$CLAUDE_PLUGIN_ROOT/references/skill-handoff.md` for the full handoff convention and why plan mode is used review-only.

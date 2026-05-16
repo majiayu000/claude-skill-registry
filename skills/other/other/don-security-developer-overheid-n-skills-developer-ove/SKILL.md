@@ -1,6 +1,6 @@
 ---
 name: don-security
-description: "Dutch government auth and security standards: DigiD, eHerkenning, OAuth, OIDC, PKIoverheid, BIO, NIS2."
+description: "Authenticatie en beveiliging bij Nederlandse overheid: DigiD, eHerkenning, OAuth, OIDC, PKIoverheid, BIO, NIS2, security.txt, kwetsbaarheid melden."
 metadata:
   source: developer.overheid.nl
   synced-from: https://github.com/developer-overheid-nl/don-site

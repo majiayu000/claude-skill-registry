@@ -1,28 +1,44 @@
 ---
 name: plan
-description: 'Decompose goals into issue plans.'
-practices: [adr, agile-manifesto, pragmatic-programmer]
+description: Decompose goals into issue plans.
+practices:
+- adr
+- agile-manifesto
+- pragmatic-programmer
+hexagonal_role: domain
+consumes:
+- standards
+produces:
+- .agents/plans/*.md
+- execution-packet.json
+context_rel:
+- kind: shared-kernel
+  with: standards
 skill_api_version: 1
 metadata:
   tier: execution
   dependencies:
-    - research   # optional - checks for prior research
-    - beads      # optional - creates issues via bd CLI (fallback: plain markdown plan)
-    - pre-mortem # optional - suggested before crank
-    - crank      # optional - suggested for execution
-    - implement  # optional - suggested for single issue
+  - research
+  - beads
+  - pre-mortem
+  - crank
+  - implement
 context:
   window: fork
   intent:
     mode: task
   intel_scope: topic
-output_contract: ".agents/plans/YYYY-MM-DD-*.md, beads (via bd create)"
+output_contract: .agents/plans/YYYY-MM-DD-*.md, beads (via bd create)
 ---
 # Plan Skill
 
 > **Quick Ref:** Decompose goal into trackable issues with waves. Output: `.agents/plans/*.md` + bd issues.
 
 **YOU MUST EXECUTE THIS WORKFLOW. Do not just describe it.**
+
+## Loop position
+
+Moves **3 (vertical slice decomposition)** and **5 (wave validity check)** of the [operating loop](../../docs/architecture/operating-loop.md). Consumes the [BDD intent issue](../../docs/templates/intent-issue.md); produces a [slice validation plan](../../docs/templates/slice-validation.md) — one slice per Given/When/Then row with a first-failing-test target, write-scope, bounded context, and ownership. Slices group into a wave only when every row of the wave-validity check passes (distinct write scopes, no shared migration/contract/CLI surface, declared integration order, owner per slice, discard path per slice). Default to sequential when in doubt — parallel waves are an optimization, not a default.
 
 **CLI dependencies:** bd (issue creation). If bd is unavailable, write the plan to `.agents/plans/` as markdown with issue descriptions, and use TaskList for tracking instead. The plan document is always created regardless of bd availability.
 

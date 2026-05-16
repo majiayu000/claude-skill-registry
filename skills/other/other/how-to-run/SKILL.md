@@ -245,4 +245,4 @@ If no files were modified (skip or no-action path), skip verification and procee
 - If test instructions were thin or absent: recommend `/optimus:unit-test` to establish test coverage.
 - Otherwise: recommend `/optimus:tdd` for new feature work.
 
-Tell the user: **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.
+Tell the user the closing tip per `$CLAUDE_PLUGIN_ROOT/references/skill-handoff.md` "Closing tip wording" — if the recommendation above is `/optimus:commit`, use **Variant B** with `<continuation-skill(s)>` = `/optimus:commit` and `<non-continuation-examples>` = `/optimus:init`, `/optimus:unit-test`, `/optimus:tdd`, etc. Otherwise, use **Variant C** (default).

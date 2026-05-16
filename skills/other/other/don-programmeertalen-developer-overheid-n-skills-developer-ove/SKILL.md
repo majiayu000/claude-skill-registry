@@ -1,6 +1,6 @@
 ---
 name: don-programmeertalen
-description: "Programming language guidelines for Dutch government software: language choice, dev environments, best practices."
+description: "Programmeertaal kiezen voor Nederlandse overheidssoftware: Python, Java, Go, JavaScript, TypeScript, taalkeuze, dev environment, best practices."
 metadata:
   source: developer.overheid.nl
   synced-from: https://github.com/developer-overheid-nl/don-site

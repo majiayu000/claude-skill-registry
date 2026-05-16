@@ -1,20 +1,29 @@
 ---
 name: readme
-description: 'Draft or improve README docs.'
-practices: [code-complete, wiki-knowledge-surface, pragmatic-programmer]
+description: Draft or improve README docs.
+practices:
+- code-complete
+- wiki-knowledge-surface
+- pragmatic-programmer
+hexagonal_role: generic
+consumes: []
+produces:
+- documentation
+context_rel: []
 skill_api_version: 1
 context:
   window: fork
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: full
 metadata:
   tier: product
   dependencies:
-    - council   # validates the draft
-output_contract: "README.md"
+  - council
+output_contract: README.md
 ---
 # /readme — Gold-Standard README Generation
 

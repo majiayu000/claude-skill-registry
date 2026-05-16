@@ -1,20 +1,29 @@
 ---
 name: doc
-description: 'Generate and validate repo docs.'
-practices: [wiki-knowledge-surface, code-complete, pragmatic-programmer]
+description: Generate and validate repo docs.
+practices:
+- wiki-knowledge-surface
+- code-complete
+- pragmatic-programmer
+hexagonal_role: supporting
+consumes: []
+produces:
+- documentation
+context_rel: []
 skill_api_version: 1
 context:
   window: fork
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: topic
 metadata:
   tier: product
   dependencies:
-    - standards  # loads markdown standards
-output_contract: "documentation files"
+  - standards
+output_contract: documentation files
 ---
 # Doc Skill
 

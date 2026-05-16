@@ -1,7 +1,31 @@
 ---
 name: rpi
-description: 'Run discovery, crank, validation.'
-practices: [continuous-delivery, dora-metrics, agile-manifesto, pragmatic-programmer]
+description: Run discovery, crank, validation.
+practices:
+- bdd-gherkin
+- ddd-bounded-context
+- hexagonal-architecture
+- tdd
+- continuous-delivery
+- dora-metrics
+- agile-manifesto
+- pragmatic-programmer
+hexagonal_role: supporting
+consumes:
+- crank
+- discovery
+- domain
+- ratchet
+- validation
+produces:
+- .agents/rpi/*.md
+context_rel:
+- kind: customer-of
+  with: crank
+- kind: customer-of
+  with: discovery
+- kind: customer-of
+  with: validation
 skill_api_version: 1
 user-invocable: true
 context:
@@ -9,17 +33,19 @@ context:
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: full
 metadata:
   tier: meta
   dependencies:
-    - discovery   # phase 1 orchestrator
-    - crank       # phase 2 orchestrator
-    - validation  # phase 3 orchestrator
-    - ratchet     # checkpoint tracking
+  - domain
+  - discovery
+  - crank
+  - validation
+  - ratchet
   internal: false
-output_contract: ".agents/rpi/YYYY-MM-DD-*.md"
+output_contract: .agents/rpi/YYYY-MM-DD-*.md
 ---
 
 # /rpi - Full Lifecycle Orchestrator
@@ -31,6 +57,15 @@ output_contract: ".agents/rpi/YYYY-MM-DD-*.md"
 real blocked state exhausts retries. Read
 [references/autonomous-execution.md](references/autonomous-execution.md) when
 you need the full autonomy contract.
+
+## Loop position
+
+`/rpi` is the orchestrator across **every move** of the [operating loop](../../docs/architecture/operating-loop.md): BDD intent → vertical slices → conflict-free wave → bead acceptance → evidence + learning capture. It delegates each move to the skill that owns it (`/discovery`, `/plan`, `/crank`, `/validation`, `/forge`/`/retro`), and enforces three loop-level invariants:
+
+- **No move-skipping.** Strict delegation is on by default; phases never compress, and validation cannot be skipped. The lifecycle objective is preserved across the whole loop.
+- **The first failing test is the bead's contract.** With `--test-first` on (the default), `/crank` is invoked with the TDD-per-slice discipline; `--no-test-first` is an explicit opt-out, not a fast path.
+- **Acceptance examples close the bead, not activity.** Validation FAIL re-cranks on the same objective up to 3 attempts; DONE requires the acceptance roll-up in the [slice-validation template](../../docs/templates/slice-validation.md) to be fully green.
+- **Context density survives phase boundaries.** Apply the [Context Density Rule](../domain/references/context-density-rule.md) to every phase handoff and final report: keep intent, boundary, evidence, decision, constraint, and next action; omit or link anything else.
 
 ## Core Contract
 
@@ -105,7 +140,9 @@ Enter at the routed phase and run every phase after it.
    [references/report-template.md](references/report-template.md). With
    `--loop`, restart from discovery on FAIL while `cycle < max_cycles`. With
    `--spawn-next`, read `.agents/rpi/next-work.jsonl` and suggest the next
-   command without invoking it.
+   command without invoking it. Before emitting the report, apply the Context
+   Density Rule: every line should carry intent, boundary, evidence, decision,
+   constraint, or next action.
 
 ## Phase Data Contract
 
@@ -175,7 +212,7 @@ interactive, loop, and artifact-mode examples.
 
 - [references/autonomous-execution.md](references/autonomous-execution.md)
 - [references/complexity-scaling.md](references/complexity-scaling.md)
-- [references/context-windowing.md](references/context-windowing.md)
+- [references/context-windowing.md](references/context-windowing.md) — OPT-IN large-repo mode (`--large-repo`); NOT part of the default RPI path. Default discovery/research does not generate `.agents/rpi/context-shards/latest.json`.
 - [references/discovery-artifact-mode.md](references/discovery-artifact-mode.md)
 - [references/error-handling.md](references/error-handling.md)
 - [references/examples.md](references/examples.md)

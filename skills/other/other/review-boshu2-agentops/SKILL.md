@@ -1,20 +1,33 @@
 ---
 name: review
-description: 'Review diffs for risk, find mocks, scan for bugs, and audit codebases.'
-practices: [code-complete, refactoring, design-by-contract]
+description: Review diffs for risk, find mocks, scan for bugs, and audit codebases.
+practices:
+- code-complete
+- refactoring
+- design-by-contract
+hexagonal_role: driving-adapter
+consumes:
+- github-pr
+- validation
+produces:
+- result.json
+context_rel:
+- kind: customer-of
+  with: validation
 skill_api_version: 1
 context:
   window: fork
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: topic
 metadata:
   tier: judgment
   dependencies:
-    - standards  # loads language-specific conventions
-    - council    # optional - for multi-perspective review
+  - standards
+  - council
 output_contract: skills/council/schemas/verdict.json
 ---
 # Review Skill

@@ -6,8 +6,9 @@ Primary source is the archived skills tree, scanned recursively:
 - <archive-root>/**/SKILL.md
 
 Output files:
-- search-index.json - Minimal index (~1-2MB gzip)
-- categories/*.json - Category-based indexes
+- search-index.json - Compatibility pointer to search shard manifest
+- search-index-manifest.json + search-shards/*.json - Full search records
+- categories/index.json + categories/<category>/manifest.json - Category parts
 - featured.json - Top 100 skills by stars
 - stats.json - Explicit raw/indexed/deduplicated counters
 """
@@ -18,10 +19,13 @@ import gzip
 import hashlib
 import json
 import logging
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
+from index_artifacts import write_category_artifacts, write_search_artifacts
+from plugin_index import build_plugins_index, load_plugins_from_registry, load_plugins_from_source
 from utils import extract_description, get_repo_suffix, load_metadata
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')
@@ -46,8 +50,8 @@ CATEGORY_CODES = {
 # Known category directories (for scanning)
 KNOWN_CATEGORIES = set(CATEGORY_CODES.keys()) | {"data", "other"}
 
-# First-paint catalog index. Full search still uses search-index.json until
-# server-side search or sharded search details are introduced.
+# First-paint catalog index used by the static Pages app. Full search shards
+# remain available through search-index.json as a compatibility pointer.
 LITE_INDEX_LIMIT = 5000
 
 
@@ -486,18 +490,19 @@ def build_search_index(
     categories_dir = output_dir / "categories"
     categories_dir.mkdir(exist_ok=True)
 
-    # Write search index
-    search_index_path = output_dir / "search-index.json"
-    with open(search_index_path, 'w', encoding='utf-8') as f:
-        json.dump(search_index, f, ensure_ascii=False, separators=(',', ':'))
-
-    # Write gzipped version
-    search_index_gz_path = output_dir / "search-index.json.gz"
-    with gzip.open(search_index_gz_path, 'wt', encoding='utf-8') as f:
-        json.dump(search_index, f, ensure_ascii=False, separators=(',', ':'))
-
-    logger.info(f"  search-index.json: {search_index_path.stat().st_size / 1024 / 1024:.2f} MB")
-    logger.info(f"  search-index.json.gz: {search_index_gz_path.stat().st_size / 1024 / 1024:.2f} MB")
+    search_artifacts = write_search_artifacts(
+        search_index["s"],
+        output_dir,
+        version=search_index["v"],
+        updated_at=utc_now_isoformat(),
+    )
+    logger.info(
+        f"  search-index.json pointer: {search_artifacts.index_size_bytes / 1024 / 1024:.2f} MB"
+    )
+    logger.info(
+        f"  search shards: {search_artifacts.shard_count} "
+        f"(largest {search_artifacts.largest_shard_bytes / 1024 / 1024:.2f} MB)"
+    )
 
     # Write SkillHub Plus lite and scoring indexes.
     lite_index = {
@@ -564,38 +569,17 @@ def build_search_index(
     logger.info(f"  security-index.json: {security_index_path.stat().st_size / 1024 / 1024:.2f} MB")
     logger.info(f"  ranking-index.json: {ranking_index_path.stat().st_size / 1024 / 1024:.2f} MB")
 
-    # Write category indexes
-    category_index = {
-        "updated_at": utc_now_isoformat(),
-        "categories": []
-    }
-
-    for category, cat_skills in sorted(categories.items()):
-        cat_skills.sort(key=lambda x: x.get("stars", 0), reverse=True)
-
-        cat_data = {
-            "category": category,
-            "code": get_category_code(category),
-            "count": len(cat_skills),
-            "updated_at": utc_now_isoformat(),
-            "skills": cat_skills
-        }
-
-        cat_path = categories_dir / f"{category}.json"
-        with open(cat_path, 'w', encoding='utf-8') as f:
-            json.dump(cat_data, f, ensure_ascii=False, separators=(',', ':'))
-
-        category_index["categories"].append({
-            "name": category,
-            "code": get_category_code(category),
-            "count": len(cat_skills)
-        })
-
-        logger.info(f"  categories/{category}.json: {len(cat_skills)} skills")
-
-    # Write category index
-    with open(categories_dir / "index.json", 'w', encoding='utf-8') as f:
-        json.dump(category_index, f, ensure_ascii=False, indent=2)
+    category_artifacts = write_category_artifacts(
+        categories,
+        categories_dir,
+        updated_at=utc_now_isoformat(),
+        category_code=get_category_code,
+    )
+    for category in category_artifacts.categories:
+        logger.info(
+            f"  {category['manifest']}: {category['count']} skills in "
+            f"{category['part_count']} part(s)"
+        )
 
     # Write featured
     featured_data = {
@@ -609,6 +593,26 @@ def build_search_index(
     logger.info(f"  featured.json: {len(featured_skills)} skills")
 
     # Write stats
+    repo_counts: Counter[str] = Counter()
+    for record in search_index["s"]:
+        install = str(record.get("i") or "")
+        parts = install.split("/")
+        repo = f"{parts[0]}/{parts[1]}" if len(parts) >= 2 else install
+        if repo:
+            repo_counts[repo] += 1
+
+    category_counts = [
+        {
+            "name": category["name"],
+            "code": category["code"],
+            "count": category["count"],
+        }
+        for category in category_artifacts.categories
+    ]
+    official_skill_count = sum(
+        category["count"] for category in category_counts if category["code"] == "off"
+    )
+
     plugins_count_path = output_dir / "plugins.json"
     plugin_count = 0
     if plugins_count_path.exists():
@@ -627,9 +631,22 @@ def build_search_index(
         "registry_skill_count_dedup": registry_skill_count_dedup,
         "total_plugins": plugin_count,
         "categories": len(categories),
+        "category_counts": category_counts,
+        "unique_repo_count": len(repo_counts),
+        "official_skill_count": official_skill_count,
+        "top_repositories": [
+            {"repo": repo, "count": count}
+            for repo, count in repo_counts.most_common(10)
+        ],
         "featured_count": len(featured_skills),
-        "index_size_bytes": search_index_path.stat().st_size,
-        "index_size_gzip_bytes": search_index_gz_path.stat().st_size,
+        "index_size_bytes": search_artifacts.index_size_bytes,
+        "index_size_gzip_bytes": search_artifacts.index_size_gzip_bytes,
+        "search_shard_count": search_artifacts.shard_count,
+        "search_largest_shard_bytes": search_artifacts.largest_shard_bytes,
+        "search_largest_shard_gzip_bytes": search_artifacts.largest_shard_gzip_bytes,
+        "category_shard_count": category_artifacts.shard_count,
+        "category_largest_part_bytes": category_artifacts.largest_part_bytes,
+        "category_largest_part_gzip_bytes": category_artifacts.largest_part_gzip_bytes,
         "lite_index_count": len(all_lite_skills),
         "lite_index_included_count": len(lite_skills),
         "lite_index_size_bytes": search_index_lite_path.stat().st_size,
@@ -637,6 +654,16 @@ def build_search_index(
         "quality_index_size_bytes": quality_index_path.stat().st_size,
         "security_index_size_bytes": security_index_path.stat().st_size,
         "ranking_index_size_bytes": ranking_index_path.stat().st_size,
+        "largest_generated_file_bytes": max(
+            search_artifacts.largest_shard_bytes,
+            category_artifacts.largest_part_bytes,
+            search_index_lite_path.stat().st_size,
+            search_index_lite_gz_path.stat().st_size,
+            quality_index_path.stat().st_size,
+            security_index_path.stat().st_size,
+            ranking_index_path.stat().st_size,
+            (output_dir / "featured.json").stat().st_size,
+        ),
     }
     # Attach latest security scan summary if available
     security_report_path = output_dir / "security-report.json"
@@ -695,51 +722,6 @@ def load_from_registry(registry_path: Path) -> List[Dict]:
     return skills
 
 
-def load_plugins_from_registry(registry_path: Path) -> List[Dict]:
-    """Load plugins from registry.json."""
-    if not registry_path.exists():
-        return []
-    try:
-        with open(registry_path, 'r', encoding='utf-8') as f:
-            registry = json.load(f)
-        return registry.get('plugins', [])
-    except Exception:
-        return []
-
-
-def load_plugins_from_source(sources_dir: Path) -> List[Dict]:
-    """Load plugins from sources/plugins.json."""
-    plugins_path = sources_dir / "plugins.json"
-    if not plugins_path.exists():
-        return []
-    try:
-        with open(plugins_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        return data.get('plugins', [])
-    except Exception:
-        return []
-
-
-def build_plugins_index(
-    plugins: List[Dict],
-    output_dir: Path,
-) -> None:
-    """Write plugins.json to output directory."""
-    if not plugins:
-        return
-
-    output_dir.mkdir(parents=True, exist_ok=True)
-    plugins_data = {
-        "updated_at": utc_now_isoformat(),
-        "count": len(plugins),
-        "plugins": plugins,
-    }
-    with open(output_dir / "plugins.json", 'w', encoding='utf-8') as f:
-        json.dump(plugins_data, f, ensure_ascii=False, indent=2)
-
-    logger.info(f"  plugins.json: {len(plugins)} plugins")
-
-
 def main():
     parser = argparse.ArgumentParser(description='Build search index for skill registry')
     parser.add_argument('--skills-dir', '-s', default='skills', help='Skills directory')
@@ -795,7 +777,9 @@ def main():
         logger.info(f"Loaded {len(plugins)} plugins")
 
     # Build plugins index first (so stats can read it)
-    build_plugins_index(plugins, output_dir)
+    build_plugins_index(plugins, output_dir, updated_at=utc_now_isoformat())
+    if plugins:
+        logger.info(f"  plugins.json: {len(plugins)} plugins")
 
     build_search_index(
         skills,

@@ -62,6 +62,25 @@ then create file using `compound-docs/references/resolution-template.md`.
 When user says "that worked", "it's fixed", "problem solved",
 "the fix was" — suggest `/phx:compound`.
 
+### Supply-chain finding auto-feed (Phase 3)
+
+When `/phx:deps-audit` produces a BLOCK-severity finding that the
+user investigates and confirms is a real malicious pattern (not a
+false positive), suggest:
+
+> Caught a high-severity finding in `<pkg>@<version>`. Run
+> `/phx:compound` to capture this for future audits?
+
+If accepted, the resulting solution doc goes to
+`.claude/solutions/supply-chain/<pkg>-<cve_or_pattern>.md` and
+includes the exact rule-id + snippet + diff window that triggered
+the finding. This compounds the audit corpus: future runs of
+`/phx:deps-audit` grep `solutions/supply-chain/` for snippet
+matches and pre-elevate severity on known-bad patterns.
+
+**Always prompt; never auto-write.** Solution docs are durable and
+shape future trust calls — the user reviews before committing.
+
 ## Iron Laws
 
 1. **YAML frontmatter validates or STOP**

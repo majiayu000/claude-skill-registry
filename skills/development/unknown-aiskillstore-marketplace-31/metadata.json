@@ -1,0 +1,27 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/dansega1/raindrop-io/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-aiskillstore-marketplace-31",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "LICENSE",
+    "README.md",
+    "references/API-REFERENCE.md",
+    "references/SETUP.md",
+    "references/WORKFLOWS.md"
+  ],
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/dansega1/raindrop-io/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/dansega1/raindrop-io/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

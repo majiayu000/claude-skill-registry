@@ -486,7 +486,7 @@ The default `minimal_fix` prose is intentionally short — it suits the common c
 - The Phase 1 reviewer prompt is augmented with the deep-fix and algebra-sanity blocks; nothing in the original mandatory checklist or output format is removed.
 - `PROOF_AUDIT.json` `details` gains a sibling field `deep_fix_plans` (parallel to `details.issues`); see "Submission Artifact Emission" below.
 - The top-level `verdict`, `reason_code`, and `summary` are **unchanged in shape and decision rule**: deep-fix output is advisory tooling for the executor, not a verdict-altering signal.
-- Verifier gates and downstream skills (`paper-writing` Phase 6, `tools/verify_paper_audits.sh`) MUST treat absence of `deep_fix_plans` as the only valid default state and MUST NOT block on its presence or content.
+- Verifier gates and downstream skills (`paper-writing` Phase 6, `verify_paper_audits.sh`) MUST treat absence of `deep_fix_plans` as the only valid default state and MUST NOT block on its presence or content.
 
 ### When opt-in is appropriate
 - The executor intends to apply the fix in the same session and wants to skip a follow-up "give me a concrete patch" thread.
@@ -561,7 +561,7 @@ with paper-dir `paper/`; `<your-paper-dir>/PROOF_AUDIT.json` when invoked
 standalone), regardless of caller or whether the paper contains theorems.
 A paper with no `\begin{theorem}` / `\begin{lemma}` / `\begin{proof}` emits
 verdict `NOT_APPLICABLE`; silent skip is forbidden. `paper-writing`
-Phase 6 and `tools/verify_paper_audits.sh` both rely on this artifact
+Phase 6 and `verify_paper_audits.sh` both rely on this artifact
 existing at `<paper-dir>/PROOF_AUDIT.json`.
 
 The artifact conforms to the schema in `shared-references/assurance-contract.md`:
@@ -630,7 +630,7 @@ Field semantics:
 - When the flag is set and reviewer returns well-formed plans, `deep_fix_status` is `"ok"` and `deep_fix_plans` mirrors `details.issues` one-to-one (each plan referenced by `issue_id`); `algebra_sanity` is present only for issues invoking Schur / Young / Cauchy-Schwarz / Hölder / quadratic-form / operator-norm / power-counting steps.
 - When the flag is set but reviewer output is malformed or truncated, `deep_fix_status` is `"unavailable"` and `deep_fix_plans` is `[]`. Downstream consumers MUST treat `"unavailable"` identically to the field being absent: not blocking.
 - Downstream consumers MUST treat absence of either field as the only valid default state and MUST NOT raise on missing.
-- `deep_fix_plans` is advisory tooling for the executor; `tools/verify_paper_audits.sh` and `paper-writing` Phase 6 do not block on its content or shape.
+- `deep_fix_plans` is advisory tooling for the executor; `verify_paper_audits.sh` and `paper-writing` Phase 6 do not block on its content or shape.
 
 ### Optional: `details.restatement_drift` (only when `--restatement-check` is set)
 
@@ -668,7 +668,7 @@ Hash the **declared input set** actually reviewed — the theorem-bearing
 the reviewer's self-reported opened subset. The external verifier rehashes
 these entries; any mismatch flags `STALE`.
 
-**Path convention** (must match `tools/verify_paper_audits.sh`): keys are
+**Path convention** (must match `verify_paper_audits.sh`): keys are
 **paths relative to the paper directory** (no `paper/` prefix — the
 verifier resolves relative to the paper dir; prefixing produces
 `paper/paper/...` and false-fails as STALE). Use **absolute paths** for

@@ -1,20 +1,31 @@
 ---
 name: standards
-description: 'Provide repo coding standards.'
-practices: [code-complete, design-patterns, pragmatic-programmer]
+description: Provide repo coding standards.
+practices:
+- code-complete
+- design-patterns
+- pragmatic-programmer
+hexagonal_role: domain
+consumes: []
+produces:
+- stdout
+context_rel: []
 skill_api_version: 1
 context:
   window: isolated
   intent:
     mode: none
   sections:
-    exclude: [HISTORY, INTEL, TASK]
+    exclude:
+    - HISTORY
+    - INTEL
+    - TASK
   intel_scope: none
 metadata:
   tier: library
   dependencies: []
   internal: true
-output_contract: "stdout: standards reference (loaded JIT)"
+output_contract: 'stdout: standards reference (loaded JIT)'
 ---
 # Standards Skill
 
@@ -144,6 +155,7 @@ Skills that use standards:
 
 ## Reference Documents
 
+- [references/architecture-terms.md](references/architecture-terms.md)
 - [references/common-standards.md](references/common-standards.md)
 - [references/behavioral-discipline.md](references/behavioral-discipline.md)
 - [references/examples-troubleshooting-template.md](references/examples-troubleshooting-template.md)

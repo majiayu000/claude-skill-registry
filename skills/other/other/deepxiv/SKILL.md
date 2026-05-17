@@ -21,7 +21,10 @@ Use DeepXiv when you want to inspect papers incrementally instead of loading the
 
 ## Constants
 
-- **FETCH_SCRIPT** — `$ARIS_REPO/tools/deepxiv_fetch.py` from the ARIS repo recorded by the Codex install manifest. If unavailable, fall back to the raw `deepxiv` CLI.
+- **DEEPXIV_FETCHER** — canonical name `deepxiv_fetch.py`, resolved per
+  [`shared-references/integration-contract.md`](../shared-references/integration-contract.md) §2
+  (Codex-side chain: `$ARIS_REPO/tools/` → `tools/` → `~/.codex/skills/deepxiv/`).
+  Policy D1 — if unresolved (canonical chain exhausted), fall back to raw `deepxiv` CLI.
 - **MAX_RESULTS = 10** — Default number of search results.
 
 > Overrides (append to arguments):
@@ -63,29 +66,38 @@ If the input looks like an arXiv ID and no explicit mode is provided, default to
 
 ### Step 2: Locate the Adapter
 
-Locate the adapter. Prefer the Codex managed install manifest when present, then fall back to the same project/global copy-install lookup style as the Claude skill:
+Resolve `$DEEPXIV_FETCHER` via the canonical strict-safe Codex chain
+(see [`shared-references/integration-contract.md`](../shared-references/integration-contract.md) §2):
 
 ```bash
-ARIS_REPO="${ARIS_REPO:-$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills-codex.txt 2>/dev/null)}"
-SCRIPT=""
-[ -n "$ARIS_REPO" ] && [ -f "$ARIS_REPO/tools/deepxiv_fetch.py" ] && SCRIPT="$ARIS_REPO/tools/deepxiv_fetch.py"
-[ -z "$SCRIPT" ] && [ -f tools/deepxiv_fetch.py ] && SCRIPT="tools/deepxiv_fetch.py"
-[ -z "$SCRIPT" ] && [ -f ~/.codex/skills/deepxiv/deepxiv_fetch.py ] && SCRIPT="$HOME/.codex/skills/deepxiv/deepxiv_fetch.py"
-[ -n "$SCRIPT" ] && python3 "$SCRIPT" --help
+if [ -z "${ARIS_REPO:-}" ] && [ -f .aris/installed-skills-codex.txt ]; then
+    ARIS_REPO=$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills-codex.txt 2>/dev/null) || true
+fi
+DEEPXIV_FETCHER=""
+[ -n "${ARIS_REPO:-}" ] && [ -f "$ARIS_REPO/tools/deepxiv_fetch.py" ] && DEEPXIV_FETCHER="$ARIS_REPO/tools/deepxiv_fetch.py"
+[ -z "$DEEPXIV_FETCHER" ] && [ -f tools/deepxiv_fetch.py ] && DEEPXIV_FETCHER="tools/deepxiv_fetch.py"
+[ -z "$DEEPXIV_FETCHER" ] && [ -f ~/.codex/skills/deepxiv/deepxiv_fetch.py ] && DEEPXIV_FETCHER="$HOME/.codex/skills/deepxiv/deepxiv_fetch.py"
+
+# Smoke test (optional): resolved-but-non-functional adapter is not currently auto-demoted.
+if [ -n "$DEEPXIV_FETCHER" ]; then
+  echo "DeepXiv adapter resolved at: $DEEPXIV_FETCHER" >&2
+else
+  echo "DeepXiv adapter unresolved (canonical chain exhausted); raw deepxiv CLI fallback will be used." >&2
+fi
 ```
 
-If the adapter is unavailable, fall back to raw `deepxiv` commands.
+If the adapter is unresolved, fall back to raw `deepxiv` commands.
 
 ### Step 3: Execute the Minimal Command
 
 ```bash
-[ -n "$SCRIPT" ] && python3 "$SCRIPT" search "QUERY" --max MAX_RESULTS
-[ -n "$SCRIPT" ] && python3 "$SCRIPT" paper-brief ARXIV_ID
-[ -n "$SCRIPT" ] && python3 "$SCRIPT" paper-head ARXIV_ID
-[ -n "$SCRIPT" ] && python3 "$SCRIPT" paper-section ARXIV_ID "SECTION_NAME"
-[ -n "$SCRIPT" ] && python3 "$SCRIPT" trending --days 7 --max MAX_RESULTS
-[ -n "$SCRIPT" ] && python3 "$SCRIPT" wsearch "QUERY"
-[ -n "$SCRIPT" ] && python3 "$SCRIPT" sc "SEMANTIC_SCHOLAR_ID"
+[ -n "$DEEPXIV_FETCHER" ] && python3 "$DEEPXIV_FETCHER" search "QUERY" --max MAX_RESULTS
+[ -n "$DEEPXIV_FETCHER" ] && python3 "$DEEPXIV_FETCHER" paper-brief ARXIV_ID
+[ -n "$DEEPXIV_FETCHER" ] && python3 "$DEEPXIV_FETCHER" paper-head ARXIV_ID
+[ -n "$DEEPXIV_FETCHER" ] && python3 "$DEEPXIV_FETCHER" paper-section ARXIV_ID "SECTION_NAME"
+[ -n "$DEEPXIV_FETCHER" ] && python3 "$DEEPXIV_FETCHER" trending --days 7 --max MAX_RESULTS
+[ -n "$DEEPXIV_FETCHER" ] && python3 "$DEEPXIV_FETCHER" wsearch "QUERY"
+[ -n "$DEEPXIV_FETCHER" ] && python3 "$DEEPXIV_FETCHER" sc "SEMANTIC_SCHOLAR_ID"
 ```
 
 Fallbacks:

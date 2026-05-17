@@ -1,23 +1,34 @@
 ---
 name: pr-research
-description: 'Research an upstream repo.'
+description: Research an upstream repo.
+practices:
+- wiki-knowledge-surface
+- legacy-code-seams
+- pragmatic-programmer
+hexagonal_role: driven-adapter
+consumes:
+- external-api
+produces:
+- result.json
+context_rel: []
 skill_api_version: 1
 context:
   window: fork
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: topic
 license: MIT
 compatibility: Requires git, gh CLI
 metadata:
   author: AI Platform Team
-  version: "1.0.0"
+  version: 1.0.0
   tier: contribute
   internal: false
 allowed-tools: Read, Write, Bash, Grep, Glob
-output_contract: ".agents/research/YYYY-MM-DD-upstream-*.md"
+output_contract: .agents/research/YYYY-MM-DD-upstream-*.md
 ---
 # PR Research Skill
 

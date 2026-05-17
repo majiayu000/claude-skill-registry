@@ -1,6 +1,6 @@
 ---
 name: paper-writing
-description: "Workflow 3: Full paper writing pipeline. Orchestrates paper-plan → paper-figure → figure-spec/paper-illustration/mermaid-diagram → paper-write → paper-compile → auto-paper-improvement-loop to go from a narrative report to a polished PDF. At `— effort: max | beast` (or explicit `— assurance: submission`), Phase 6 gates the Final Report on `tools/verify_paper_audits.sh`; the PDF is labelled `submission-ready` only when the external verifier is green. Use when user says \"写论文全流程\", \"write paper pipeline\", \"从报告到PDF\", \"paper writing\", or wants the complete paper generation workflow."
+description: "Workflow 3: Full paper writing pipeline. Orchestrates paper-plan → paper-figure → figure-spec/paper-illustration/mermaid-diagram → paper-write → paper-compile → auto-paper-improvement-loop to go from a narrative report to a polished PDF. At `— effort: max | beast` (or explicit `— assurance: submission`), Phase 6 gates the Final Report on `verify_paper_audits.sh` (resolved per integration-contract §2); the PDF is labelled `submission-ready` only when the external verifier is green. Use when user says \"写论文全流程\", \"write paper pipeline\", \"从报告到PDF\", \"paper writing\", or wants the complete paper generation workflow."
 argument-hint: "[narrative-report-path-or-topic] [— style-ref: <source>]"
 allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob, Agent, Skill, mcp__codex__codex, mcp__codex__codex-reply
 ---
@@ -51,12 +51,25 @@ Lets the user steer **structural** style (section ordering, theorem density, sen
 When `— style-ref: <source>` is in `$ARGUMENTS`, run the helper FIRST, before Phase 1 (paper-plan):
 
 ```bash
-if [ ! -f tools/extract_paper_style.py ]; then
-  echo "error: tools/extract_paper_style.py not found — re-run 'bash tools/install_aris.sh' to refresh the '.aris/tools' symlink (added in #174), or copy the helper manually from the ARIS repo" >&2
-  exit 1
+# Resolve $STYLE_HELPER via the canonical strict-safe chain (see
+# shared-references/integration-contract.md §2). Policy A — gate:
+# unresolved helper means --style-ref cannot be satisfied, so abort.
+cd "$(git rev-parse --show-toplevel 2>/dev/null || pwd)" || exit 1
+if [ -z "${ARIS_REPO:-}" ] && [ -f .aris/installed-skills.txt ]; then
+    ARIS_REPO=$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills.txt 2>/dev/null) || true
 fi
-CACHE=$(python3 tools/extract_paper_style.py --source "<source>")
-case $? in
+STYLE_HELPER=".aris/tools/extract_paper_style.py"
+[ -f "$STYLE_HELPER" ] || STYLE_HELPER="tools/extract_paper_style.py"
+[ -f "$STYLE_HELPER" ] || { [ -n "${ARIS_REPO:-}" ] && STYLE_HELPER="$ARIS_REPO/tools/extract_paper_style.py"; }
+[ -f "$STYLE_HELPER" ] || {
+  echo "ERROR: extract_paper_style.py not resolved at .aris/tools/, tools/, or \$ARIS_REPO/tools/." >&2
+  echo "       Fix: rerun bash tools/install_aris.sh, export ARIS_REPO, or copy the helper to tools/." >&2
+  echo "       --style-ref cannot be satisfied; aborting." >&2
+  exit 1
+}
+STYLE_STATUS=0
+CACHE=$(python3 "$STYLE_HELPER" --source "<source>") || STYLE_STATUS=$?
+case "$STYLE_STATUS" in
   0) ;;                                       # share $CACHE/style_profile.md with downstream WRITER phases only
   2) echo "warning: style-ref skipped (missing optional dep)" >&2 ;;
   3) echo "error: --style-ref source failed; aborting pipeline" >&2 ; exit 1 ;;
@@ -108,7 +121,9 @@ echo "<resolved-level>" > paper/.aris/assurance.txt   # draft or submission
   paper-claim-audit, citation-audit) are treated as load-bearing gates. Each
   sub-audit must emit its JSON artifact (PASS / WARN / FAIL / NOT_APPLICABLE /
   BLOCKED / ERROR) — never silent-skip. Phase 6 runs
-  `tools/verify_paper_audits.sh`; a non-zero exit blocks the Final Report.
+  `verify_paper_audits.sh` (canonical name; resolved per
+  [`shared-references/integration-contract.md`](../shared-references/integration-contract.md) §2);
+  a non-zero exit blocks the Final Report.
 
 **Escape hatch:** a user wanting the old "beast = depth-only, no audit gate"
 can pass `— effort: beast, assurance: draft` explicitly. Legal but
@@ -119,7 +134,7 @@ discouraged for actual submissions. See
 
 ```
 📋 Assurance: <level> (derived from effort: <effort>)
-   <either "current behavior, no audit gate" OR "mandatory audits gated by tools/verify_paper_audits.sh">
+   <either "current behavior, no audit gate" OR "mandatory audits gated by verify_paper_audits.sh (resolved per integration-contract §2)">
 ```
 
 ### Phase 1: Paper Plan
@@ -219,8 +234,8 @@ If `— style-ref: <source>` was passed and the helper succeeded above, append `
 ```
 - Claude plans → Codex native image generation renders → Claude reviews (same multi-stage workflow as `gemini`, different renderer)
 - Best for: users who want a GPT-image-style renderer without needing `GEMINI_API_KEY`; uses your existing Codex / ChatGPT Plus/Pro quota
-- Output: `figures/ai_generated/figure_final.png` + `latex_include.tex` + `review_log.json` (emitted via `tools/paper_illustration_image2.py finalize`)
-- **Prerequisites** (beyond ARIS's standard Claude Code + Codex coexistence): the local Codex app-server must be signed in (`codex debug app-server send-message-v2 "ping"` succeeds), and the dedicated MCP bridge must be registered — see `mcp-servers/codex-image2/README.md` for the one-time `claude mcp add` command. Run `python3 tools/paper_illustration_image2.py preflight --workspace .` to confirm before relying on this path.
+- Output: `figures/ai_generated/figure_final.png` + `latex_include.tex` + `review_log.json` (emitted via the `/paper-illustration-image2` SKILL's `finalize` step, which delegates to the canonical `paper_illustration_image2.py` helper resolved per [integration-contract §2](../shared-references/integration-contract.md#2-canonical-helper--one-implementation-not-copy-pasted))
+- **Prerequisites** (beyond ARIS's standard Claude Code + Codex coexistence): the local Codex app-server must be signed in (`codex debug app-server send-message-v2 "ping"` succeeds), and the dedicated MCP bridge must be registered — see `mcp-servers/codex-image2/README.md` for the one-time `claude mcp add` command. Delegate the preflight to `/paper-illustration-image2` (which resolves the helper via the canonical chain), or invoke the helper directly via the shim at `tools/paper_illustration_image2.py preflight --workspace .` to confirm before relying on this path.
 - **Experimental**: this renderer shells through the Codex debug app-server, which Codex documents as an unstable surface. Prefer `figurespec` or `gemini` for production submission flows until `codex-image2` stabilizes.
 
 **When `illustration: false`** — skip entirely. All non-data figures must be created manually (draw.io, Figma, TikZ) and placed in `figures/` before Phase 3.
@@ -519,15 +534,18 @@ skipping audits while claiming to have run them.
    [ ] 1. /proof-checker        → paper/PROOF_AUDIT.json
    [ ] 2. /paper-claim-audit    → paper/PAPER_CLAIM_AUDIT.json
    [ ] 3. /citation-audit       → paper/CITATION_AUDIT.json
-   [ ] 4. bash <ARIS_REPO>/tools/verify_paper_audits.sh paper/ --assurance submission
+   [ ] 4. Resolve $AUDIT_VERIFIER per integration-contract.md §2 (Policy A),
+          then: bash "$AUDIT_VERIFIER" paper/ --assurance submission
    [ ] 5. Block Final Report iff verifier exit code != 0
 ```
 
-> `<ARIS_REPO>` placeholder — replace with the absolute path to your ARIS
-> clone (e.g. `~/Desktop/Auto-claude-code-research-in-sleep` or the path
-> returned by `dirname $(readlink ~/.claude/skills/paper-writing/SKILL.md)/../..`).
-> The path is stable across runs; store it in a shell variable if you
-> prefer (`export ARIS_REPO=~/…` and use `"$ARIS_REPO"` in the command).
+> The resolver in "Running the verifier" below tries
+> `.aris/tools/verify_paper_audits.sh` (created by `install_aris.sh`),
+> then `tools/verify_paper_audits.sh` (in-repo run), then
+> `$ARIS_REPO/tools/verify_paper_audits.sh` (env-var-set path). The
+> chain always tries layers 1 → 2 → 3 in order; setting
+> `export ARIS_REPO=~/…` only ensures layer 3 has a valid target if
+> layers 1 and 2 are absent.
 
 #### Invoking the three audits
 
@@ -552,8 +570,29 @@ Order:
 
 #### Running the verifier
 
+Resolve `$AUDIT_VERIFIER` via the canonical strict-safe chain (see
+[`shared-references/integration-contract.md`](../shared-references/integration-contract.md)
+§2, Policy A — gate). Under `assurance: submission` the verifier is
+load-bearing: if the helper is unresolved the SKILL aborts the Final
+Report rather than producing an unverified `submission-ready` claim.
+
 ```bash
-bash <ARIS_REPO>/tools/verify_paper_audits.sh paper/ --assurance submission
+# Resolve the audit verifier (Policy A — gate).
+cd "$(git rev-parse --show-toplevel 2>/dev/null || pwd)" || exit 1
+if [ -z "${ARIS_REPO:-}" ] && [ -f .aris/installed-skills.txt ]; then
+    ARIS_REPO=$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills.txt 2>/dev/null) || true
+fi
+AUDIT_VERIFIER=".aris/tools/verify_paper_audits.sh"
+[ -f "$AUDIT_VERIFIER" ] || AUDIT_VERIFIER="tools/verify_paper_audits.sh"
+[ -f "$AUDIT_VERIFIER" ] || { [ -n "${ARIS_REPO:-}" ] && AUDIT_VERIFIER="$ARIS_REPO/tools/verify_paper_audits.sh"; }
+[ -f "$AUDIT_VERIFIER" ] || {
+  echo "ERROR: verify_paper_audits.sh not resolved at .aris/tools/, tools/, or \$ARIS_REPO/tools/." >&2
+  echo "       assurance=submission requires the verifier; aborting Final Report." >&2
+  echo "       Fix: rerun bash tools/install_aris.sh, export ARIS_REPO, or copy the helper to tools/." >&2
+  exit 1
+}
+
+bash "$AUDIT_VERIFIER" paper/ --assurance submission
 ```
 
 - **Exit 0** — All mandatory audits present, JSON schema-valid, hashes fresh,

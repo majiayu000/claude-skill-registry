@@ -1,13 +1,25 @@
 ---
 name: retro
-description: 'Capture a session learning.'
+description: Capture a session learning.
+practices:
+- sre
+- lean-startup
+- dora-metrics
+hexagonal_role: domain
+consumes:
+- standards
+produces:
+- result.json
+context_rel:
+- kind: shared-kernel
+  with: standards
 skill_api_version: 1
 metadata:
   tier: knowledge
   dependencies: []
 context:
   window: fork
-output_contract: ".agents/learnings/YYYY-MM-DD-*.md"
+output_contract: .agents/learnings/YYYY-MM-DD-*.md
 ---
 
 # Retro Skill
@@ -15,6 +27,10 @@ output_contract: ".agents/learnings/YYYY-MM-DD-*.md"
 **YOU MUST EXECUTE THIS WORKFLOW. Do not just describe it.**
 
 Quick-capture a learning to the knowledge flywheel. For comprehensive retrospectives with backlog processing, activation, and retirement, use `/post-mortem`.
+
+## Loop position
+
+Lightest capture surface for move **7** of the [operating loop](../../docs/architecture/operating-loop.md). Single-observation quick-capture into `.agents/learnings/`. Use when an insight is too small to warrant a full `/post-mortem` and too potentially-useful to leave in the handoff. The [promotion ratchet](../../docs/architecture/operating-loop.md#the-promotion-ratchet) still applies after capture — a retro entry is a candidate learning, not yet a pattern or rule.
 
 ## Quick Mode
 

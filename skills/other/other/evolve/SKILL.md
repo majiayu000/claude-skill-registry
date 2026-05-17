@@ -203,7 +203,7 @@ CYCLE_START_SHA=$(git rev-parse HEAD)
 
 Before fitness or work selection, classify the cycle: `ao ci recent --limit 1 2>/dev/null | jq -r '.Conclusion // empty'`. The command routes through the typed BC2 `CIStatusPort` (`cli/cmd/ao/ci_status_adapter.go`, cycle 117 productionCIStatus) — no inline `gh` shell-outs in the evolve hot path (soc-y5vh.2). If the last push CI was `failure`, this cycle is **restorative-only** — Step 3 selection MUST take only work that reduces CI red (bug-type harvested items, gate-failure-fix beads, or generator output typed bug). No PG4 promotions, feature additions, or new shape work allowed until CI is green. The cycle-history.jsonl `gate` field of any FAIL cycle automatically triggers this mode for cycle N+1. See `references/convergence-mechanics.md`.
 
-**Convergence check:** read `.agents/evolve/session-convergence.json` if present. If ALL criteria are met (CI green streak ≥ 3, outstanding HIGH+MEDIUM next-work ≤ 1, fitness ≥ baseline), emit teardown and DO NOT re-arm wakeup.
+**Convergence check:** evaluate the STOP predicate through the typed BC3 `ConvergenceCheckPort` — `ao loop converged --green-streak <n> --unconsumed-high-medium <n> [--fitness-baseline]` (soc-y5vh.8). It emits `{converged, ci_green_streak, unconsumed_high_medium, fitness_baseline_captured, reasons}`; branch on `.converged` instead of hand-parsing `.agents/evolve/session-convergence.json`. If `converged` is true (default criteria: CI green streak ≥ 3, outstanding HIGH+MEDIUM next-work ≤ 1, fitness baseline captured), emit teardown and DO NOT re-arm wakeup.
 
 ### Step 2: Measure Fitness
 
@@ -425,6 +425,8 @@ Two paths: productive cycles get committed, idle cycles are local-only.
 **PRODUCTIVE cycles** (result is improved, regressed, or harvested): compute quality score (if `--quality`), log via `scripts/evolve-log-cycle.sh`, commit if real changes exist. See `references/quality-mode.md` for scoring.
 
 **IDLE cycles** (nothing found even after generator layers): log via `evolve-log-cycle.sh` with `--result "unchanged"`. No git add, no commit.
+
+**Record the XP/BDD/TDD trace.** When a cycle worked a product or goal-backed gap, pass `--trace-json` to `evolve-log-cycle.sh` (or `ao loop append`) so the cycle records the continuous-evolution kernel — goal hypothesis → selected gap → Gherkin scenario → first failing proof → red/green evidence → refactor note → validation evidence → ratchet action → goal reshape — and a reviewer can reconstruct the cycle without the transcript. A trivial one-shot cycle records a `trace.exemption_reason` instead of carrying false BDD/TDD ceremony. Trace completeness is advisory, never a gate. See `references/cycle-history.md` ("XP/BDD/TDD Evidence Trace").
 
 ### Step 7: Loop or Stop
 

@@ -35,15 +35,40 @@ Generate publication-quality **architecture diagrams**, **workflow pipelines**, 
 
 ## Tool Location
 
-Locate `figure_renderer.py` using the Codex managed install manifest first, then project/global copy-install fallbacks. Invoke via:
+Phase 3.1 (Arch C) move: the canonical implementation now lives at
+`skills/figure-spec/scripts/figure_renderer.py`. `tools/figure_renderer.py`
+is kept as a backwards-compatible `os.execv` shim so legacy layers
+continue to resolve. Codex-side install layouts that previously
+copied the canonical into `~/.codex/skills/figure-spec/figure_renderer.py`
+must now place it at `~/.codex/skills/figure-spec/scripts/figure_renderer.py`
+to match the new layout (re-run `install_aris_codex.sh` to pick up
+the new symlink target).
+
+Resolve `$FIGURE_RENDERER` via the Codex-side hybrid chain (layer 0
+preferred for self-contained owner SKILL; layers 1-4 are legacy
+shared-runtime compatibility):
 
 ```bash
-ARIS_REPO="${ARIS_REPO:-$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills-codex.txt 2>/dev/null)}"
+# Layer 0: self-contained at the new canonical location (Phase 3.1).
 FIGURE_RENDERER=""
-[ -n "$ARIS_REPO" ] && [ -f "$ARIS_REPO/tools/figure_renderer.py" ] && FIGURE_RENDERER="$ARIS_REPO/tools/figure_renderer.py"
+if [ -z "${ARIS_REPO:-}" ] && [ -f .aris/installed-skills-codex.txt ]; then
+    ARIS_REPO=$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills-codex.txt 2>/dev/null) || true
+fi
+[ -n "${ARIS_REPO:-}" ] && [ -f "$ARIS_REPO/skills/figure-spec/scripts/figure_renderer.py" ] && FIGURE_RENDERER="$ARIS_REPO/skills/figure-spec/scripts/figure_renderer.py"
+
+# Layers 1-3: legacy shared-runtime chain via shim at tools/figure_renderer.py.
+[ -z "$FIGURE_RENDERER" ] && [ -n "${ARIS_REPO:-}" ] && [ -f "$ARIS_REPO/tools/figure_renderer.py" ] && FIGURE_RENDERER="$ARIS_REPO/tools/figure_renderer.py"
 [ -z "$FIGURE_RENDERER" ] && [ -f tools/figure_renderer.py ] && FIGURE_RENDERER="tools/figure_renderer.py"
-[ -z "$FIGURE_RENDERER" ] && [ -f ~/.codex/skills/figure-spec/figure_renderer.py ] && FIGURE_RENDERER="$HOME/.codex/skills/figure-spec/figure_renderer.py"
-[ -n "$FIGURE_RENDERER" ] || { echo "ERROR: figure_renderer.py not found. Set ARIS_REPO, use install_aris_codex.sh managed install, or copy tools/figure_renderer.py next to this skill."; exit 1; }
+
+# Layer 4: Codex-side skill-local install (`install_aris_codex.sh` may place it here).
+[ -z "$FIGURE_RENDERER" ] && [ -f ~/.codex/skills/figure-spec/scripts/figure_renderer.py ] && FIGURE_RENDERER="$HOME/.codex/skills/figure-spec/scripts/figure_renderer.py"
+[ -z "$FIGURE_RENDERER" ] && [ -f ~/.codex/skills/figure-spec/figure_renderer.py ] && FIGURE_RENDERER="$HOME/.codex/skills/figure-spec/figure_renderer.py"  # pre-Phase-3.1 layout
+
+[ -n "$FIGURE_RENDERER" ] || {
+  echo "ERROR: figure_renderer.py not found at any of: \$ARIS_REPO/skills/figure-spec/scripts/, \$ARIS_REPO/tools/, tools/, ~/.codex/skills/figure-spec/scripts/, ~/.codex/skills/figure-spec/. Set ARIS_REPO, rerun install_aris_codex.sh, or copy the canonical \$ARIS_REPO/skills/figure-spec/scripts/figure_renderer.py next to this skill." >&2
+  exit 1
+}
+
 python3 "$FIGURE_RENDERER" render <spec.json> --output <out.svg>
 python3 "$FIGURE_RENDERER" validate <spec.json>
 python3 "$FIGURE_RENDERER" schema
@@ -224,4 +249,4 @@ Three-stage horizontal cascade with inputs feeding in from top, outputs exiting 
 
 ## Review Tracing
 
-After each reviewer agent call, save the trace following `shared-references/review-tracing.md`. Use `tools/save_trace.sh` or write files directly to `.aris/traces/<skill>/<date>_run<NN>/`. Respect the `--- trace:` parameter (default: `full`).
+After each reviewer agent call, save the trace following `shared-references/review-tracing.md` (Policy C — forensic; never silently skip). Use `save_trace.sh` (resolved per the chain in `shared-references/integration-contract.md` §2) or write files directly to `.aris/traces/<skill>/<date>_run<NN>/`. Respect the `--- trace:` parameter (default: `full`).

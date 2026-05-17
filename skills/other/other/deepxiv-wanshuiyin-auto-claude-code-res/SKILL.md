@@ -23,7 +23,11 @@ Use DeepXiv when you want to avoid loading full papers too early.
 
 ## Constants
 
-- **FETCH_SCRIPT** — `tools/deepxiv_fetch.py` relative to the current project. If unavailable, fall back to the raw `deepxiv` CLI.
+- **DEEPXIV_FETCHER** — canonical name `deepxiv_fetch.py`, resolved per
+  [`shared-references/integration-contract.md`](../shared-references/integration-contract.md) §2
+  (Policy D1 — primary + fallback cascade). If unresolved (canonical
+  chain exhausted), fall back to the raw `deepxiv` CLI (documented per
+  command below).
 - **MAX_RESULTS = 10** — Default number of results to return.
 
 > Overrides (append to arguments):
@@ -65,20 +69,38 @@ If the main argument looks like an arXiv ID and no explicit mode is given, defau
 
 ### Step 2: Locate the Adapter
 
-Prefer the ARIS adapter:
+Resolve `$DEEPXIV_FETCHER` via the canonical strict-safe chain (see
+[`shared-references/integration-contract.md`](../shared-references/integration-contract.md) §2).
+Policy D1 cascade: the resolved adapter is preferred; if unresolved
+(canonical chain exhausted), fall back to raw `deepxiv` CLI commands
+documented in Step 3.
 
 ```bash
-python3 tools/deepxiv_fetch.py --help
-```
+cd "$(git rev-parse --show-toplevel 2>/dev/null || pwd)" || exit 1
+if [ -z "${ARIS_REPO:-}" ] && [ -f .aris/installed-skills.txt ]; then
+    ARIS_REPO=$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills.txt 2>/dev/null) || true
+fi
+DEEPXIV_FETCHER=".aris/tools/deepxiv_fetch.py"
+[ -f "$DEEPXIV_FETCHER" ] || DEEPXIV_FETCHER="tools/deepxiv_fetch.py"
+[ -f "$DEEPXIV_FETCHER" ] || { [ -n "${ARIS_REPO:-}" ] && DEEPXIV_FETCHER="$ARIS_REPO/tools/deepxiv_fetch.py"; }
+[ -f "$DEEPXIV_FETCHER" ] || DEEPXIV_FETCHER=""
 
-If `tools/deepxiv_fetch.py` is not available, fall back to raw `deepxiv` commands.
+# Smoke test (optional — adapter resolution shown to user). The cascade
+# in Step 3 below branches purely on `[ -n "$DEEPXIV_FETCHER" ]`; a
+# resolved-but-non-functional adapter is not currently auto-demoted.
+if [ -n "$DEEPXIV_FETCHER" ]; then
+  echo "DeepXiv adapter resolved at: $DEEPXIV_FETCHER" >&2
+else
+  echo "DeepXiv adapter unresolved (canonical chain exhausted); raw deepxiv CLI fallback will be used." >&2
+fi
+```
 
 ### Step 3: Execute the Minimal Command
 
 **Search papers**
 
 ```bash
-python3 tools/deepxiv_fetch.py search "QUERY" --max MAX_RESULTS
+python3 "$DEEPXIV_FETCHER" search "QUERY" --max MAX_RESULTS
 ```
 
 Fallback:
@@ -90,7 +112,7 @@ deepxiv search "QUERY" --limit MAX_RESULTS --format json
 **Brief summary**
 
 ```bash
-python3 tools/deepxiv_fetch.py paper-brief ARXIV_ID
+python3 "$DEEPXIV_FETCHER" paper-brief ARXIV_ID
 ```
 
 Fallback:
@@ -102,7 +124,7 @@ deepxiv paper ARXIV_ID --brief --format json
 **Section map**
 
 ```bash
-python3 tools/deepxiv_fetch.py paper-head ARXIV_ID
+python3 "$DEEPXIV_FETCHER" paper-head ARXIV_ID
 ```
 
 Fallback:
@@ -114,7 +136,7 @@ deepxiv paper ARXIV_ID --head --format json
 **Specific section**
 
 ```bash
-python3 tools/deepxiv_fetch.py paper-section ARXIV_ID "SECTION_NAME"
+python3 "$DEEPXIV_FETCHER" paper-section ARXIV_ID "SECTION_NAME"
 ```
 
 Fallback:
@@ -126,7 +148,7 @@ deepxiv paper ARXIV_ID --section "SECTION_NAME" --format json
 **Trending**
 
 ```bash
-python3 tools/deepxiv_fetch.py trending --days 7 --max MAX_RESULTS
+python3 "$DEEPXIV_FETCHER" trending --days 7 --max MAX_RESULTS
 ```
 
 Fallback:
@@ -138,7 +160,7 @@ deepxiv trending --days 7 --limit MAX_RESULTS --output json
 **Web search**
 
 ```bash
-python3 tools/deepxiv_fetch.py wsearch "QUERY"
+python3 "$DEEPXIV_FETCHER" wsearch "QUERY"
 ```
 
 Fallback:
@@ -150,7 +172,7 @@ deepxiv wsearch "QUERY" --output json
 **Semantic Scholar metadata**
 
 ```bash
-python3 tools/deepxiv_fetch.py sc "SEMANTIC_SCHOLAR_ID"
+python3 "$DEEPXIV_FETCHER" sc "SEMANTIC_SCHOLAR_ID"
 ```
 
 Fallback:

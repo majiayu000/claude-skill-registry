@@ -1,0 +1,23 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "tuan3w/obsidian-vault-agent",
+  "path": "skills/paper-discover/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-tuan3w-obsidian-vault-agent-4",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "scripts/search_papers.py"
+  ],
+  "author": "tuan3w",
+  "source_url": "https://github.com/tuan3w/obsidian-vault-agent/blob/main/skills/paper-discover/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tuan3w/obsidian-vault-agent/blob/main/skills/paper-discover/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

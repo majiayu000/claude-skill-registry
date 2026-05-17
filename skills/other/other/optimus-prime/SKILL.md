@@ -28,9 +28,9 @@ Default to re-prime whenever meaningful existing config is found. Never overwrit
 6. **Offer CLAUDE.local.md** — personal preferences (role, sandbox URLs, preferred test data, workflow quirks), gitignored.
 7. **Clean up** — delete `.claude/starter-skills/` after processing. Keep protected skills. Confirm all deletions.
 8. **Verify** — references resolve, stack claims match evidence, config is project-specific not generic.
-9. **Offer skill optimization** — after everything is set up, offer two paths: description optimization only (fast) or full optimization with evals loop + self-improve (recommended — battle-tests skills before the user depends on them).
+9. **Offer skill optimization** — after everything is set up, offer optimization paths sized to how many new skills were created. ≤3 skills: recommend full optimization for all. >3 skills: recommend full optimization for user-designated core skills only + description optimization for the rest (avoids long execution time and token burn). Always emphasize that full optimization takes meaningful time and tokens. **Run sequentially — never in parallel; concurrent runs overload the user's machine.**
 
-Full step-by-step in [setup-project.md](./references/setup-project.md).
+Follow full step-by-step in [setup-project.md](./references/setup-project.md).
 
 ## Placement Decision Matrix
 
@@ -46,7 +46,7 @@ Every piece of knowledge must earn its place. Use this to decide where it belong
 
 ## Principles
 
-- **Fit the project, not a template.** Every skill, rule, and CLAUDE.md entry must exist because this specific project needs it. Generic boilerplate degrades context quality.
+- **Domain-scoped, project-fitted.** Skills target a capability, not the project itself — with this project's patterns baked in. Generic templates and project-named catch-alls both degrade context quality.
 - **Repo evidence is the source of truth.** Verify conventions from actual source files, configs, and docs. Do not assert what you haven't confirmed.
 - **Lean context, high signal.** Follow the context engineering philosophy — load only what's needed, when it's needed. CLAUDE.md carries always-on essentials. Skills load on demand. Rules auto-attach by path.
 - **Rules are optional and path-scoped.** Only create a rule when the rule test passes. Do **not** modify `_apply-all.md` — it is a universal boilerplate rule from prime, not project config.

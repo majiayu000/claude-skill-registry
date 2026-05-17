@@ -53,6 +53,8 @@ Map the user's situation to one of these categories:
 | **Post-fix** | "that worked", solved a hard bug | `/phx:compound` |
 | **Full cycle** | Large feature, new domain area | `/phx:full` |
 | **Project health** | "audit", "tech debt", "overall quality" | `/phx:audit`, `/phx:techdebt` |
+| **Dep update audit** | "audit deps", "supply chain", "post-`mix deps.update`", "review mix.lock PR" | `/phx:deps-audit` |
+| **Manual dep vetting** | "vet this package", "approve dep", "trust ledger", "after /phx:deps-audit findings" | `/phx:deps-vet` |
 | **Deployment** | "deploy", "release", "production" | `/phx:verify` then deploy skill |
 | **Permissions** | "too many prompts", "allow", "permission fatigue" | `/phx:permissions` |
 

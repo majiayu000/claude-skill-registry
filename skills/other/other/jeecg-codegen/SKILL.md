@@ -13,6 +13,20 @@ description: Use when user asks to generate JeecgBoot CRUD code, create a new mo
 > 使用 `jeecg-system` skill 的 `system_utils.py` 查询和管理主数据。
 > 详见 `../jeecg-system/SKILL.md`。
 
+### ⛔ 字典创建必须写入 Flyway SQL，禁止直接走 API 创建
+
+> **代码生成场景下，新建字典的"建"必须落到 Flyway SQL 文件，禁止调用 `find_or_create_dict()` / `create_dict()` 等 API 在远程服务器上直接创建。**
+>
+> **Why:** 代码生成产物（Entity、前端、Flyway SQL）会通过 git 提交并部署到测试/预发/生产环境。如果字典只通过 API 在当前开发环境创建，**部署到线上时线上数据库没有该字典**，前端下拉框会空白、列表 `_dictText` 翻译失效。Flyway SQL 跟着代码走，所有环境拉到代码后执行迁移都会自动建上，是唯一能保证环境一致性的方式。
+>
+> **How to apply:**
+> - 查询字典 → **走 API 或 MySQL**（`jeecg-system` skill 的 `query-dicts` / `query-dict`），用于"先查后建"中的"查"
+> - 创建字典 → **写入当次的 Flyway SQL 文件**（`sys_dict` INSERT + `sys_dict_item` 批量 INSERT），用于"先查后建"中的"建"
+> - **禁用**：`find_or_create_dict()`、`create_dict()` 等 system_utils 中的字典创建函数（在代码生成 skill 中不能调用）
+> - 同理适用于：分类字典 `sys_category` 节点新建 — 也必须写入 Flyway SQL，禁止走 `/sys/category/add` API
+>
+> **例外：** 角色、审批角色、用户绑定关系等"运行时主数据"，由于跨业务可复用，可走 API 创建（按 jeecg-system 原流程）。**字典与分类字典是"配置数据"，必须走 SQL。**
+
 ## ⛔ 接口禁止猜测规则
 
 > **严格禁止猜测任何 API 接口路径或参数。** AI 不得根据命名惯例、框架约定或已知路径拼凑接口地址后直接调用。
@@ -23,6 +37,68 @@ description: Use when user asks to generate JeecgBoot CRUD code, create a new mo
 > 3. 通过 `jeecg-system` skill 查询后确认的接口
 >
 > 违反此规则即使偶然成功也视为错误操作，因为猜测成功不代表行为合规。
+
+## ⛔ 写文件前的强制自检清单（高频翻车点）
+
+> **以下两条是 AI 凭"框架直觉"最常犯错的地方，文件写出去几乎必现 bug，调试成本极高。每次执行 Step 4 写后端/前端文件之前，必须逐条 self-check。**
+>
+> ### 翻车点 1：每个文件的路径必须与 SKILL/reference 描述完全一致
+>
+> **写每一个文件之前，必须先在 `codegen-reference.md` 顶部"文件清单"章节中找到对应文件的路径模板，逐字符比对后再写入。禁止凭"Spring Boot/JeecgBoot 框架直觉"猜测路径。**
+>
+> ### 翻车点 2：FormSchema 必含隐藏 id 字段
+>
+> **所有** FormSchema（主表 Modal 表单、一对一子表 Form、ERP 风格子表 Form、树表 Modal 表单）**首位**必须包含：
+>
+> ```typescript
+> { label: '', field: 'id', component: 'Input', show: false },
+> ```
+>
+> **为什么这是铁律：** `BasicForm` 的 `getFieldsValue()` 只返回 schema 中声明过的字段。即使 Modal 打开时通过 `setFieldsValue({ ...data.record })` 把 `id` 写入了表单状态，schema 没声明，提交时 `getFieldsValue()` 也会丢弃它。最终后端收到 `entity.id == null`，`getById(null)` 返回 null，Controller 返回 `Result.error("未找到对应数据")`。**编辑功能直接报错。**
+>
+> **位置统一规定：放在 FormSchema 数组首位**（不要纠结"最后还是最前"，统一首位）。
+>
+> 这两条规则不需要用户询问、不需要场景判断、不需要选项确认。**100% 强制，100% 一致。**
+
+## 生成模式
+
+> **进入交互流程之前,必须先与用户确认本次使用的生成模式。** 任何场景下都不要默默选择,必须显式告知用户当前模式;用户回复"确认"即采用默认。
+
+本 skill 提供两种生成模式:
+
+| 模式 | 状态 | 默认 | 说明 |
+|------|------|------|------|
+| **串行生成（Serial）** | Stable | ✅ 默认 | 主 Agent 顺序生成后端 → 前端 → SQL,全程单线执行,稳定可靠 |
+| **并行生成（Parallel）** | ⚠️ **Beta — 可能不稳定** | ❌ | 派发两个 SubAgent 并行生成前端 / 后端代码,主 Agent 负责契约冻结与跨端校验。详见同目录下 `parallel-generation-mode.md` |
+
+### 模式确认话术（必须执行）
+
+进入 Step 0 之前,主 Agent **必须**先输出类似以下消息,等用户回复后再继续:
+
+```
+本次代码生成将使用【串行生成模式】（默认,稳定）。
+如需使用【并行生成模式（Beta）】以缩短耗时,请明确告知。
+注意：并行模式当前为 Beta 版本,可能出现前后端字段命名漂移、API URL 不一致、
+字典编码错位、FormSchema 隐藏 id 字段遗漏等问题,不确定时建议使用默认串行模式。
+```
+
+### 模式选择规则
+
+- 用户未明确要求并行 → 一律走 **串行模式**,不要主动建议并行。
+- 用户明确要求并行（"并行"、"分头生成"、"前后端同时来"、"用 subagent 并行"等关键词） → 进入 **并行模式**,但必须先复述一遍 Beta 风险并等用户**再次确认**后才正式启动。
+- **增量字段修改场景（场景 C）** → 强制串行,即使用户要求并行也要拒绝并解释（SubAgent 双重压缩会丢失已有代码细节）。
+- 一对多 + ERP / vue3Native / 自定义增强等复杂场景 → 强烈建议串行,需向用户说明风险后由用户决定。
+
+### 并行模式启动条件（全部满足才进入）
+
+1. 用户明确选择了并行模式。
+2. 用户已被告知 Beta 风险并**再次确认**。
+3. 操作类型是"全量生成"（场景 A 或 B）,不是"增量修改"（场景 C）。
+4. 主数据复用前置条件已就绪（字典已查/已建,目标数据库已确认）。
+
+满足后,主 Agent **必须读取** `parallel-generation-mode.md` 并严格按其规范执行（契约冻结 → 派发 SubAgent → 跨端校验 → 输出清单）。任一环节失败 → 按该文档第 6 节"回退策略"切回串行从头来过。
+
+> **铁律不变：** 即使选择并行模式,本章上方的"⛔ 接口禁止猜测"、"⛔ 字典创建必须写入 Flyway SQL"、"⛔ 写文件前的强制自检清单（路径 + FormSchema id）"、以及"⛔ 铁律:Step 2 + Step 3 是不可跳过的硬性停止门" 全部仍然 100% 强制 —— 通过派发 prompt 传达给 SubAgent。
 
 ## 交互流程
 
@@ -189,18 +265,36 @@ description: Use when user asks to generate JeecgBoot CRUD code, create a new mo
 **全量生成流程：**
 1. **并行读取**对应子文件（见顶部"参考模板读取规则"），在同一轮 response 中发出全部 Read 调用
 2. **分轮并行写入**文件——无依赖的文件在同一轮 response 中批量发出 Write 调用，**禁止逐文件串行等待**：
+   - **第 1 轮前（强制）**：对每个待写后端文件，确认其路径与 `codegen-reference.md` 文件清单一致（譬如Mapper XML）
    - **第 1 轮**（并行）：Entity + Mapper + IService + ServiceImpl + Controller + Mapper.xml（后端 6 文件）
+   - **第 2 轮前（强制）**：①对每个待写前端文件，确认路径与 `codegen-reference.md` 文件清单一致；②确认所有 FormSchema（主表 + 子表 Form）首位都有 `{ field: 'id', show: false }`
    - **第 2 轮**（并行）：data.ts + api.ts + List.vue + Modal.vue + 子表 Vue 文件（前端全部）
-   - **第 3 轮前（强制）**：Read `references/ref-menu-sql.md` 获取菜单权限 SQL 模板，**禁止凭记忆生成 SQL**
+   - **第 3 轮前（强制）**：①确认 Flyway SQL 路径正确；②Read `references/ref-menu-sql.md` 获取菜单权限 SQL 模板，**禁止凭记忆生成 SQL**
    - **第 3 轮**（并行）：Flyway 建表 SQL + 菜单权限 SQL（严格按 ref-menu-sql.md 模板填充变量）
 
 **增量修改流程：**
 1. 并行读取所有需修改的文件
 2. 并行发出所有 Edit 调用（同一轮 response）
 3. 增量修改模板见 `references/ref-d-misc.md`
+4. 若增量是"加字段"且涉及主表 formSchema：再次确认首位仍保留 `{ field: 'id', show: false }`，不要被新加的字段挤掉
 
 ### Step 5: 输出清单
 列出所有生成/修改的文件路径 + 后续操作说明（执行SQL、重启后端等）。
+
+### Step 6: 询问是否生成移动端代码（仅全量生成时执行）
+
+> ⚠️ **增量修改（场景C）跳过此步骤。**
+
+文件清单输出完毕后，**必须**向用户询问：
+
+> "是否同时生成对应的移动端（UniApp3）CRUD 代码？（回复"是"/"y"/"需要"确认，其他内容跳过）"
+
+**用户确认后的执行方式：**
+
+1. 读取 `uniapp/SKILL.md`，按其中定义的交互流程执行移动端代码生成
+2. 本次已收集的实体信息（实体名、包路径、字段列表、API路径前缀等）**直接复用**，无需用户重复输入
+3. 仍需向用户询问 `uniapp/SKILL.md` Step 0 中移动端特有的配置项（UniApp3 项目根目录）
+4. 后端代码已在本次全量生成中完成，移动端 skill 只生成前端代码，无需重复生成后端
 
 ### 本地环境自动执行菜单 SQL 规则
 
@@ -242,7 +336,66 @@ mysql --no-defaults --default-character-set=utf8mb4 -h127.0.0.1 -P3306 -uroot -p
   -e "SELECT d.dict_code, d.dict_name, GROUP_CONCAT(i.item_text,'=',i.item_value ORDER BY i.sort_order SEPARATOR ', ') AS items FROM sys_dict d LEFT JOIN sys_dict_item i ON d.id=i.dict_id AND i.status=1 WHERE d.del_flag=0 GROUP BY d.dict_code,d.dict_name ORDER BY d.dict_code"
 ```
 
-如果无法连接数据库，回退方案：在项目 SQL 文件中搜索表定义（`grep -r "CREATE TABLE.*表名"` 在 docs/db/ 目录下）。
+### ⛔ 数据库不可达时的强制回退路径
+
+> **MySQL 连不上时（端口拒绝/账号错误/服务未启动），禁止直接降级到"跳过查询，全部新建"或"凭命名惯例猜测"。必须按以下优先级走 fallback：**
+>
+> 1. **优先：用 `jeecg-system` skill 的 HTTP API 查询。** `jeecg-system` 通过 JeecgBoot 后端 REST 接口工作，**不依赖数据库直连**，只要后端服务在跑（本地或远程）就能用。
+>    - 调用方式：`python <skill目录>/jeecg-system/scripts/system_creator.py --api-base <地址> --token <X-Access-Token> --action query-dicts`
+>    - 需要的两项信息：**后端 API 地址**（如 `http://localhost:8080/jeecg-boot`）+ **X-Access-Token**（用户从浏览器 F12 → Network → Request Headers 复制）
+>    - 必须主动向用户索取这两项，**不得跳过**
+> 2. **退而求其次：在项目 SQL 文件中搜索表定义**（`grep -r "CREATE TABLE.*表名"` 在 docs/db/ 目录下）。**仅适用于查 DDL**，不能用于字典/角色/用户等主数据查询。
+> 3. **最后才考虑跳过查询**：上述两条都不可行（用户明确拒绝提供 token、后端服务也不可达），且**用户书面确认后**，方可在 Flyway SQL 中新建所需字典。
+>
+> **违反此回退顺序即视为违规**，包括"MySQL 连不上 → 直接跳过字典查询 → 全部新建"这种降级方式。
+
+#### ⛔⛔ MySQL 连接失败 → 强制 STOP GATE（铁律，无例外）
+
+> **MySQL 命令报 `Can't connect`/`10061`/`Access denied`/`ERROR 2002`/`ERROR 1045` 等任何连接错误时，必须立即停止后续所有工作（包括但不限于：搜 SQL 文件、读 application-dev.yml、生成代码、派发 SubAgent、写 Flyway SQL），并向用户输出以下话术等待回复：**
+>
+> ```
+> ⚠️ MySQL 连接失败（{粘贴具体错误信息}）。按 SKILL.md "⛔ 数据库不可达时的强制回退路径"，
+> 在继续之前必须先用 jeecg-system HTTP API 查询。请提供：
+>   1. 后端 API 地址（例如 http://localhost:8080/jeecg-boot）
+>   2. X-Access-Token（浏览器 F12 → Network → Request Headers 复制）
+> 若两者都无法提供，请明确告知，我会再次确认是否接受"基于初始化 SQL 推断（可能与
+> 真实库不一致）"作为兜底方案。
+> ```
+>
+> **在收到用户对 API 地址 + token 的明确回复之前，禁止执行下方任一动作：**
+> - 在项目目录下 `grep` / `Grep` 搜索字典编码、角色编码、用户、部门
+> - 读取 `db/jeecgboot-mysql-*.sql` 等任何初始化 SQL 文件用于推断主数据存在状态
+> - 读取 `application-dev.yml` / `application-prod.yml` 寻找其他数据库连接
+> - 直接判定字典/角色不存在并准备新建
+> - 进入摘要展示（Step 3）
+> - 派发 SubAgent
+> - 生成 Flyway SQL
+
+#### ❌ 错误降级模式清单（识别后立刻停止）
+
+以下行为在 MySQL 连接失败时**全部视为违规**，即使表面"看起来合理"或"看起来能完成任务"：
+
+| 错误行为 | 为什么是错的 | 正确做法 |
+|---------|------------|---------|
+| 在 `db/jeecgboot-mysql-*.sql` 初始化文件中 grep 字典 / 角色 / 用户的存在状态 | 初始化文件只代表系统**初始**状态。业务团队已通过 Flyway 增量 SQL、运行时 API、生产库迁移添加了新数据，初始化文件与真实数据库早已脱节。靠它判断"字典是否存在"会产出与真实环境矛盾的代码 | 走 STOP GATE 索要 API + token |
+| 用初始化 SQL 中的 `admin` role ID（如 `f6817f48af4fb3af11b9e8bf182f618b`）直接写菜单授权 SQL | 用户生产库的 admin role ID 可能与初始化文件不同，菜单授权会打到错的 role 上或失败 | 走 STOP GATE 索要 API + token，然后用 jeecg-system 查 admin role |
+| 在 `flyway/sql/mysql/` 目录下 grep 字典编码看是否被引用过 | grep 命中只能说明"项目代码引用过这个字典"，不能证明"运行时数据库当前确实存在该字典" | 同上 |
+| 静默跳过字典查询，直接把所有字典都按"新建"写入本次 Flyway SQL | 与真实库已有的同名字典冲突，部署到非本地环境会主键/唯一约束报错 | 走 STOP GATE |
+| 看到 Flyway 目录里有 `V*_dict.sql` 等历史文件就推断字典已建 | 文件存在 ≠ 字典已 INSERT 成功 ≠ 当前未被删除 / 修改 | 走 STOP GATE |
+| 用项目其他 SQL 文件中出现的 dict_code（如 `valid_status`）就断言它"存在" | 仅 DDL 类信息允许从 SQL 文件回退查询；字典 / 角色 / 用户**任何主数据状态都不允许**靠 grep 推断 | 走 STOP GATE |
+
+**任何时候若发现自己即将执行上述清单中的动作，必须立刻停下，回到 STOP GATE 话术。**
+
+#### ✅ 用户拒绝提供 API + token 后的处理
+
+只有当用户**明确回复**"无法提供 token / 后端服务也不可用 / 接受基于初始化 SQL 推断的兜底方案"之后，才允许进入优先级 2 / 3。此时必须再次在摘要中显式标注：
+
+```
+⚠️ 本次字典 / 角色 / 菜单授权基于项目初始化 SQL 推断生成，与你的真实数据库状态可能不一致。
+   部署到非本地环境前，请手动核对 sys_dict / sys_role 是否已存在同名记录。
+```
+
+用户回复"确认"后才能继续派发 SubAgent / 生成 SQL。
 
 ## Flyway 版本号规则
 
@@ -270,6 +423,13 @@ date +%s%3N
 - ... 以此类推
 
 ## 字典智能匹配
+
+> ⛔ **MySQL 不可达时的强制回退：**
+> 本章节的 `mysql` 命令是默认方式，但 MySQL 连不上时**必须**按"数据库连接"章节的"⛔ 数据库不可达时的强制回退路径"执行：
+> 1. 先尝试 `jeecg-system` skill 的 `scripts/system_creator.py --action query-dicts`（需用户提供 API 地址 + token）
+> 2. 不能用"MySQL 连不上"作为跳过字典查询、直接新建字典的理由
+>
+> 详见 `## 数据库连接` 章节末尾的"⛔ 数据库不可达时的强制回退路径"。
 
 **用户选择"读取系统字典"后，执行以下查询获取全部可用字典：**
 
@@ -1231,7 +1391,10 @@ private String avatar;
 ```
 ```typescript
 // columns — 使用 renderImage 渲染缩略图
-{ title: '图片', align: 'center', dataIndex: 'avatar', customRender: render.renderImage }
+// ⚠️ 树表必须加空值守卫：加载占位行（nodeName:'loading...'）无 imageUrl 字段，
+//    text 为 undefined，直接传给 renderImage 会导致内部解构崩溃
+{ title: '图片', align: 'center', dataIndex: 'avatar', customRender: ({ text }) => text ? render.renderImage(text) : '' }
+// 普通单表也推荐加守卫，避免空数据行崩溃
 // formSchema
 { label: '图片', field: 'avatar', component: 'JImageUpload' }
 ```
@@ -1998,6 +2161,35 @@ return defHttp.post({ url: url, params });
 
 **此规则适用于所有表类型（单表、一对多各风格），只要 Modal 中手动调了 `$message.success`，API 就必须加 `{ successMessageMode: 'none' }`。**
 
+**规则17.3.1：ERP 风格 — 主子表 useListPage 必须加 `maxHeight`**
+ERP 风格的主表下方紧跟子表 Tab 区域，主表如果不限高，主表数据多时会把子表挤出视口；子表自身数据多时同样需要内部滚动避免页面整体过长。**主子表的 `useListPage({ tableProps })` 都必须加 `maxHeight`**（推荐 300）。
+
+```typescript
+// ✅ 主表 List.vue
+useListPage({
+  tableProps: {
+    title: '...', api: list, columns,
+    rowSelection: { type: 'radio' },
+    maxHeight: 300,                  // ← 主表限高
+    // ...
+  },
+});
+
+// ✅ 子表 List.vue
+useListPage({
+  tableProps: {
+    api: subList, columns: subColumns,
+    useSearchForm: false,
+    maxHeight: 300,                  // ← 子表限高
+    beforeFetch: (params) => Object.assign(params, queryParam),
+  },
+  exportConfig: { name: '...', url: '' },
+  importConfig: { url: () => '' },
+});
+```
+
+**仅 ERP 风格强制要求 `maxHeight`**；Tab-in-Modal (C9)、内嵌子表 (C12)、单表/树表均不需要。
+
 **规则17.4：ERP 风格 — 前端文件结构**
 ERP 风格与其他一对多风格的核心差异是子表有独立的列表页和 Modal，不使用 JVxeTable。
 
@@ -2013,8 +2205,8 @@ views/{viewDir}/
 ```
 
 **ERP 前端关键模式：**
-- **主表列表**：`rowSelection: { type: 'radio' }`，`provide('mainId', computed(() => ...))`，`@row-click` 选中行
-- **子表列表**：`inject<ComputedRef<string>>('mainId')`，`reactive searchInfo`，`watch(mainId)` 刷新，`getSubList` 空ID保护
+- **主表列表**：`rowSelection: { type: 'radio' }`，`maxHeight: 300`，`provide('mainId', computed(() => ...))`，`@row-click` 选中行
+- **子表列表**：`inject<ComputedRef<string>>('mainId')`，`maxHeight: 300`，`reactive searchInfo`，`watch(mainId)` 刷新，`getSubList` 空ID保护
 - **子表 Modal**：`inject('mainId')`，新增时 `values.foreignKey = unref(mainId)`
 - **data.ts**：子表用 `BasicColumn[]` + `FormSchema[]`（不是 JVxeColumn[]），FormSchema 包含隐藏的 `id` 和外键字段
 - **api.ts**：主表 save/edit 指向 `/addMain`+`/editMain`（调用 service.save/updateById），子表有完整独立 CRUD
@@ -2773,3 +2965,4 @@ JSelectDept、JTreeSelect(关联他表)、JImageUpload、JUpload
 生成代码前，**必须读取** 同目录下的 `codegen-reference.md` 获取完整代码模板骨架。
 - `codegen-reference.md`：后端 Java + 前端 Vue3 完整代码模板骨架，生成代码前必须读取
 - `references/ref-menu-sql.md`：菜单权限 SQL 模板（sys_permission + sys_role_permission），第 3 轮写入前必须读取
+- `parallel-generation-mode.md`：并行生成模式（Beta）的契约冻结清单、SubAgent 派发 prompt 模板、跨端校验流程、回退策略。**仅当用户在"生成模式"章节选择并行模式后才需要读取**

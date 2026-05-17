@@ -1,19 +1,28 @@
 ---
 name: heal-skill
-description: 'Repair skill hygiene.'
-practices: [refactoring, code-complete]
+description: Repair skill hygiene.
+practices:
+- refactoring
+- code-complete
+hexagonal_role: supporting
+consumes: []
+produces: []
+context_rel: []
 skill_api_version: 1
 context:
   window: isolated
   intent:
     mode: none
   sections:
-    exclude: [HISTORY, INTEL, TASK]
+    exclude:
+    - HISTORY
+    - INTEL
+    - TASK
   intel_scope: none
 metadata:
   tier: meta
   dependencies: []
-output_contract: "stdout: heal report, auto-fixed skill files"
+output_contract: 'stdout: heal report, auto-fixed skill files'
 ---
 # /heal-skill — Automated Skill Maintenance
 

@@ -76,7 +76,7 @@ description: Use when user asks to create/design a big screen (大屏), full-scr
 | 用户说 | 路径 |
 |-------|------|
 | "排行 / TOP N / 排名" | 组件首选 `JScrollRankingBoard`，动画版 `JDynamicBar` |
-| "KPI / 核心数字 / 大数字" | **≥3 个一组并排** → `JStatsSummary`（一个组件容纳 4-6 项 KPI，自带 label/value/unit/环比，是大屏顶部 KPI 行**首选**）；单个突出大数字 → `JCountTo`（翻牌动画）/ `JNumber`（静态）。⛔ 禁止 N 个 JNumber/JCountTo 横排凑 KPI 行 |
+| "KPI / 核心数字 / 大数字" | **≥3 个一组并排（二选一，按数据项数决定）**：① `JStatsSummary` — label/value/unit + 环比/同比对比 + 涨跌箭头，文档化驾驶舱风格，**需要展示同/环比对比、或项数不能整除 24（如 5/7/9-11 项）时首选**；② `JColorBlock` — 每项独立色块背景（每条数据自带 `backgroundColor`），可语义化配色（红/橙=警示、绿=正向、蓝/青=中性），**视觉冲击/状态可视化场景首选**——**🚨 强约束：源码 colorBlock.vue:122-124 用 Antd 24 栅格 `span = ceil(24/lineNum)` 渲染，数据项数必须 = `lineNum` 且能整除 24，KPI 行实用项数仅 {2, 3, 4, 6, 8}（4-6 最饱满）；5/7/9-11/13-23 项会折行错位（5 项变 4+1、7 项变 6+1）→ 改用 JStatsSummary**。单个突出大数字 → `JCountTo`（翻牌动画）/ `JNumber`（静态）。⛔ 禁止 N 个 JNumber/JCountTo 横排凑 KPI 行 |
 | "完成率 / 达标率" | `JGauge`（指针）/ `JLiquid`（液位）/ `JRingProgress`（环形），value 是 **0-100** 整数 |
 | "占比 / 比例 / 分布" | `JPie` / `JRing` / `JRose` |
 | "趋势 / 走势 / 时序" | `JLine` / `JSmoothLine` / `JArea` |
@@ -123,7 +123,7 @@ description: Use when user asks to create/design a big screen (大屏), full-scr
 
 | 维度 | 用途 | 候选组件（按"高频意图→组件"速查决定具体选哪个） |
 |------|------|------------------------------------------------|
-| **KPI 数字** | 顶部 KPI 行 ≥3 项 → **JStatsSummary**（首选，一个组件多指标）；单大数字 → JCountTo / JNumber；色块强调 → JColorBlock | — |
+| **KPI 数字** | 顶部 KPI 行 ≥3 项 → **`JStatsSummary`**（带环比/同比对比卡，任意项数）/ **`JColorBlock`**（每项独立色块、可语义化配色，**仅项数 ∈ {2,3,4,6,8} 才视觉饱满**——24 栅格约束，详见上方"高频意图"速查）二选一；单大数字 → `JCountTo` / `JNumber` | — |
 | **趋势** | 时间维度变化 | JLine / JArea / JSmoothLine / JStepLine |
 | **对比** | 多类目/多组对比 | JBar / JStackBar / JMultipleBar / JMixLineBar |
 | **占比** | 部分/整体 | JPie / JRing / JRose / JFunnel |
@@ -259,6 +259,9 @@ EOF
 │
 ├── 文件数据集（Excel/CSV）
 │     └── spec_builder 生成布局 → files_ops.py 绑定
+│           用户未提供文件路径时：自动从 chartData/mock 数据生成 CSV，用 --mock-data 传入
+│           示例: files_ops.py create-bind <api> <token> <page_id> --mock-data '<JSON数组>' --comp JBar --title "标题"
+│           禁止提示"请先上传文件"——有数据就能自动建文件
 │
 ├── 存储过程
 │     └── spec_builder 生成布局 → proc_ops.py 绑定
@@ -411,7 +414,7 @@ spec_builder 自动处理：chartData 序列化、透明 bg、dark 主题、ECha
 | `multi_chart_linkage.py` | **一次性建多图 + 联动**（省 80% 步骤） | 新建多图同时配联动 |
 | `link_ops.py` | 组件外链跳转 + **自定义 JS 拦截器**（jsConfig） | 点击跳外部链接 / 前置 JS 逻辑 |
 | `yapi_ops.py` | YApi mock 接口的创建 / 高级 mock 脚本（advmock） | 数据来源是 YApi |
-| `files_ops.py` | Excel/CSV 文件数据集 | 用户上传文件做数据源 |
+| `files_ops.py` | Excel/CSV 文件数据集；**用户无文件时自动从 `--mock-data` JSON 数组生成 CSV 上传** | 用户上传文件做数据源，或 AI 自动生成 mock 文件 |
 | `proc_ops.py` | 数据库存储过程作为数据集 | 数据来源是 SP |
 
 | 数据源类型 | 脚本 | 参考文档 |
@@ -419,7 +422,7 @@ spec_builder 自动处理：chartData 序列化、透明 bg、dark 主题、ECha
 | YApi mock 接口 | `yapi_ops.py`（`create-mock` / `create-mock-batch` / `set-advmock`） | `references/api-dataset-examples.md` |
 | YApi mock + 联动/钻取（按参数分支返参） | `yapi_ops.py create-mock --advmock-script/--advmock-file` 或 `set-advmock`；数据集用 `dataset_ops.py create-api --params` | `references/linkage-drill-guide.md` §API 数据集联动 |
 | SQL 数据集 | `dataset_ops.py` | `references/dataset-guide.md` |
-| 文件数据集（Excel/CSV） | `files_ops.py` | — |
+| 文件数据集（Excel/CSV）；用户无文件 → AI 自动生成 | `files_ops.py create-bind --mock-data '<JSON数组>'`（省略 `--files`） | — |
 | 存储过程 | `proc_ops.py` | — |
 | 自写 Java API | `dataset_ops.py create-api`（接口注册）；底层连接由 `datasource_ops.py` | `references/pitfalls.md` §自写API |
 | 绑定字段映射（单组件） | `dataset_ops.py bind`（类型 A `--mapping` / B.1 `--field-map` / B.7 `--header-keys`） | **`references/data-binding-mapping.md`** |
@@ -432,7 +435,7 @@ spec_builder 自动处理：chartData 序列化、透明 bg、dark 主题、ECha
 | 场景 | 脚本/文档 |
 |------|---------|
 | 弹窗 Modal | `references/popup-guide.md` |
-| 地图数据（查省份/上传 GeoJSON/添加地图组件） | `map_ops.py`（子命令：`list` / `check` / `upload` / `edit` / `delete` / `add-map`） + `references/map-static-data.md`（数据格式速查） |
+| 地图数据（查省份/上传 GeoJSON/添加地图组件） | `map_ops.py`（子命令：`list` / `check` / `upload` / `upload-batch` / `edit` / `delete` / `add-map`） + `references/map-static-data.md`（数据格式速查）。**钻取场景必走 `upload-batch --all-provinces`**：DataV 跨境下载是瓶颈，并发 12 比串行快 ~8 倍（实测 27 省 119s→15s） |
 | 字典数据（CRUD + 绑数据集字段） | `dict_ops.py`（子命令：`list` / `items` / `create` / `add-item` / `delete` / `bind`） |
 | 全 99 组件演示 | `gen_all_comps.py` |
 | 遇到奇怪问题 | `references/pitfalls.md` |
@@ -496,6 +499,7 @@ bi_utils.query_page(PAGE_ID); bi_utils.save_page(PAGE_ID)
 | **颜色字段统一用 16 进制** | 平台颜色选择器输入是 16 进制（`#RRGGBB` 或 `#RRGGBBAA`），写 `rgba()`/`hsla()` 会被识别为无效并 fallback 红色 `#FF0000`。透明用 `#FFFFFF00` |
 | **JText 在 spec_builder 里写文字 / 样式 — 全用 spec 顶级字段** | 平台前端 text.vue:164-168 从 `config.option.body.*` 取值，**但 spec_builder 的 `handle_JText` 自己组装 `option.body`**——只读 spec **顶级**的 `text`（或 `title`）/ `color` / `fontSize` / `fontWeight` / `align` / `letterSpacing` / `fontStyle` / `fontFamily` / `marginLeft` / `marginTop`。spec 写 `option.body.color`/`option.color`/`data:[{"value":"标题"}]`/`option.body.text` 这些**仿前端直觉的位置 handler 全不读** → 渲染默认色板 + 14px + 空字符串（标题"看不见"）。spec_builder 已加双层防呆：检测 spec.option / spec.option.body 内的已知字段 + spec.data[0].value / spec.option.body.text 自动迁移到顶级并打印警告（实测 2026-04-28），但**正解还是直接写顶级**。bi_utils 直调时用 `add_text(page_id, text=..., color=..., fontSize=..., ...)` helper 而不是 `add_component('JText', config={...})`。同类规则适用 JNumber/JCountTo 的样式字段。规则 #8 一致：先看 `defaults/<CompType>.json` 再写字段路径 |
 | **绑数据集禁止手写脚本绕过 `dataset_ops.bind` / `bind-batch`** | 实测 2026-04-27：JCommonTable 在 `dataType=2` 时**列定义完全来自 `config.option.columns`**（commonTable/hooks/useTableBiz.ts:336-358 — `let allCol = config?.option?.columns; let showCol = allCol.filter(izShow==='Y');` 缺失 → `columns=[]` → 表头/表体全空白）；同类需要"字段元信息回填"的还有 `fieldOption / paramOption / dataSetIzAgent / dataSetMethod / dataSetApi`。`dataset_ops.py _apply_binding`（dataset_ops.py:614-659）已封装：getAllChartData fallback 取字段 → 写 `option.columns` + `fieldOption` + 清空静态 chartData。手写脚本只改 `dataType/dataSetId/dataSetName/dataMapping` 看似全了实则缺 columns，**前端 UI 复制组件能显示是因为 `dataSetCompService` 在保存时回填，API 路径不会触发**。规则：≥1 个组件绑 API/SQL 数据集 → `dataset_ops.py bind` 单组件 / `bind-batch` 多组件，不要在临时 .py 里直接改 `cfg['dataType']=2` |
+| **"数据条数"字段是 `dataNum`，不是 `dataCount`** | UI 面板"数据条数(0:返回全部)"绑定 `formState.dataNum`（DataSource.vue:75）。**禁止写 `dataCount`**——写错不报错、输入框始终为空、多条数据全部返回，仪表盘指针/标题重叠。仪表盘类组件（JGauge/JAntvGauge/JColorGauge/JSemiGauge/JLiquid/JRingProgress/JRoundProgress/JProgress/JCustomProgress）接 API 数据集且 API 返回多条时，必须设 `cfg['dataNum'] = 1`（实测 2026-05-14） |
 | **JScrollList 表头/单元格字段名易按 Vue/React 习惯写错** | 实测：列名字段是 **`fieldMapping[*].name`**（不是 `label`，写错→表头列名空白）；表头/单元格字色字段是 **`fontColor`**（不是 `color`，写错→字色失效用默认白）；单元格字色不在 `option.row` 而在每列 `fieldMapping[*].textStyle.fontColor`（`option.row` 只配背景色 `backgroundColor / alternateBackgroundColor / height / marginBottom`，没有字色字段）；表头底色 `option.header.backgroundColor` 加 `88` 等 alpha 会半透明，与 bg4 深空背景混叠后表头几乎看不见 → **想要稳定表头观感请用不透明 `#RRGGBB`**。spec_builder.handle_JScrollList 已加防呆：检测 `label` 自动改写 `name`、`option.header.color` 自动改写 `fontColor` 并打印警告。真相源 `references/scroll-list-option-config.md` + `defaults/JScrollList_3.json`，规则 #8 一致：先看 defaults 再写字段名 |
 
 > 完整踩坑见 `references/pitfalls.md`。被 spec_builder 自动消除的（chartData 序列化、透明 bg、颜色、pie xAxis、compareState、ECharts 轴样式、命名色板、布局约束预警）不再单列。变体写法见上方"变体（variant）写法"。
@@ -578,6 +582,7 @@ python3 references/scripts/yapi_ops.py create-mock \
 > - **Python 解释器**：示例统一写 `python3`（Unix 通用）。Windows 用户改为 `py`（或本机已配的 Python 3 路径）。脚本要求 Python ≥ 3.10（用了 `dict | None` 等语法）
 > - **本地 API 走代理**：若本机 HTTP 代理拦截 `127.0.0.1`/`localhost` 导致 502，命令前加 `no_proxy="127.0.0.1,localhost"`（macOS/Linux）或 `set no_proxy=127.0.0.1,localhost &&`（Windows）
 > - **Windows 中文输出乱码**：所有命令前加 `set PYTHONIOENCODING=utf-8 &&`
+> - 🚨 **临时配置文件路径必须用 `tempfile.gettempdir()`，不要硬编码 `/tmp`**：所有传给脚本的 `--config / --batch-file / --spec / --sql-file` 等 JSON/SQL 临时文件，跨平台靠 `tempfile.gettempdir()`：Windows `%TEMP%` / Linux `/tmp` / **macOS `/var/folders/.../T`（不是 `/tmp`！）**。命名带表名+步骤前缀（`onl_<场景>_<步骤>.json`）便于排错；OS 自动清理，**禁止主动 `rm` / `os.path.exists()`**（自身就是 tool call 浪费）；乐观调用 + 仅当报 `FileNotFoundError` 时用相同内容重写重试，不换路径。示例：`config_path = os.path.join(tempfile.gettempdir(), 'onl_sales_dashboard_iter.json')`
 
 ---
 

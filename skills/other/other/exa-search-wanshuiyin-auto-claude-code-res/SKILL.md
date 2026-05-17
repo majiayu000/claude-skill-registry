@@ -24,7 +24,10 @@ Use Exa when you need results beyond academic databases, or when you want conten
 
 ## Constants
 
-- **FETCH_SCRIPT** — `tools/exa_search.py` relative to the current project.
+- **EXA_FETCHER** — canonical name `exa_search.py`, resolved per
+  [`shared-references/integration-contract.md`](../shared-references/integration-contract.md) §2
+  (Policy D1 — standalone `/exa-search` has no documented fallback,
+  so unresolved helper terminates with an explicit error).
 - **MAX_RESULTS = 10** — Default number of results to return.
 
 > Overrides (append to arguments):
@@ -73,26 +76,39 @@ Parse `$ARGUMENTS` for:
 
 ### Step 2: Locate Script
 
-```bash
-SCRIPT=$(find tools/ -name "exa_search.py" 2>/dev/null | head -1)
-```
+Resolve `$EXA_FETCHER` via the canonical strict-safe chain (see
+[`shared-references/integration-contract.md`](../shared-references/integration-contract.md) §2).
+Policy D1 cascade: there is no native inline fallback for Exa
+(retrieval requires the `exa-py` SDK + API key, which lives in the
+fetcher), so unresolved helper means the SKILL cannot produce its
+primary output — fail with explicit remediation.
 
-If not found, tell the user:
-```
-exa_search.py not found. Make sure tools/exa_search.py exists and exa-py is installed:
-pip install exa-py
+```bash
+cd "$(git rev-parse --show-toplevel 2>/dev/null || pwd)" || exit 1
+if [ -z "${ARIS_REPO:-}" ] && [ -f .aris/installed-skills.txt ]; then
+    ARIS_REPO=$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills.txt 2>/dev/null) || true
+fi
+EXA_FETCHER=".aris/tools/exa_search.py"
+[ -f "$EXA_FETCHER" ] || EXA_FETCHER="tools/exa_search.py"
+[ -f "$EXA_FETCHER" ] || { [ -n "${ARIS_REPO:-}" ] && EXA_FETCHER="$ARIS_REPO/tools/exa_search.py"; }
+[ -f "$EXA_FETCHER" ] || {
+  echo "ERROR: exa_search.py not resolved at .aris/tools/, tools/, or \$ARIS_REPO/tools/." >&2
+  echo "       Fix: rerun bash tools/install_aris.sh, export ARIS_REPO, or copy the helper to tools/." >&2
+  echo "       Also ensure 'exa-py' is installed: pip install exa-py" >&2
+  exit 1
+}
 ```
 
 ### Step 3: Execute Search
 
 **Standard search:**
 ```bash
-python3 "$SCRIPT" search "QUERY" --max 10 --content highlights
+python3 "$EXA_FETCHER" search "QUERY" --max 10 --content highlights
 ```
 
 **With filters:**
 ```bash
-python3 "$SCRIPT" search "QUERY" --max 10 \
+python3 "$EXA_FETCHER" search "QUERY" --max 10 \
   --category "research paper" \
   --start-date 2025-01-01 \
   --content text --max-chars 8000
@@ -100,12 +116,12 @@ python3 "$SCRIPT" search "QUERY" --max 10 \
 
 **Find similar pages:**
 ```bash
-python3 "$SCRIPT" find-similar "URL" --max 5 --content highlights
+python3 "$EXA_FETCHER" find-similar "URL" --max 5 --content highlights
 ```
 
 **Get content for known URLs:**
 ```bash
-python3 "$SCRIPT" get-contents "URL1" "URL2" --content text
+python3 "$EXA_FETCHER" get-contents "URL1" "URL2" --content text
 ```
 
 ### Step 4: Present Results

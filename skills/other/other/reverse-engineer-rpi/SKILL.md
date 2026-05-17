@@ -1,19 +1,28 @@
 ---
 name: reverse-engineer-rpi
-description: 'Reverse-engineer product specs.'
-practices: [legacy-code-seams, ddd-bounded-context, adr]
+description: Reverse-engineer product specs.
+practices:
+- legacy-code-seams
+- ddd-bounded-context
+- adr
+hexagonal_role: supporting
+consumes: []
+produces:
+- .agents/research/*.md
+context_rel: []
 skill_api_version: 1
 context:
   window: fork
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: topic
 metadata:
   tier: execution
   internal: false
-output_contract: "feature catalog, code map, specs"
+output_contract: feature catalog, code map, specs
 ---
 # /reverse-engineer-rpi
 

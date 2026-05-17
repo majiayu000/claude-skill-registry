@@ -77,6 +77,19 @@ def test_build_plugins_index_and_stats_use_plugin_keys(tmp_path):
 
     stats_data = json.loads((output_dir / "stats.json").read_text(encoding="utf-8"))
     lite_data = json.loads((output_dir / "search-index-lite.json").read_text(encoding="utf-8"))
+    search_pointer = json.loads((output_dir / "search-index.json").read_text(encoding="utf-8"))
+    search_manifest = json.loads(
+        (output_dir / "search-index-manifest.json").read_text(encoding="utf-8")
+    )
+    category_index = json.loads((output_dir / "categories" / "index.json").read_text(encoding="utf-8"))
+    category_pointer = json.loads(
+        (output_dir / "categories" / "development.json").read_text(encoding="utf-8")
+    )
+    category_manifest = json.loads(
+        (output_dir / "categories" / "development" / "manifest.json").read_text(
+            encoding="utf-8"
+        )
+    )
     quality_data = json.loads((output_dir / "quality-index.json").read_text(encoding="utf-8"))
     security_data = json.loads((output_dir / "security-index.json").read_text(encoding="utf-8"))
     ranking_data = json.loads((output_dir / "ranking-index.json").read_text(encoding="utf-8"))
@@ -95,6 +108,26 @@ def test_build_plugins_index_and_stats_use_plugin_keys(tmp_path):
     assert "total_collections" not in stats_data
     assert stats_data["lite_index_count"] == 1
     assert stats_data["lite_index_included_count"] == 1
+    assert stats_data["search_shard_count"] == 1
+    assert stats_data["category_shard_count"] == 1
+    assert stats_data["category_counts"] == [
+        {"name": "development", "code": "dev", "count": 1}
+    ]
+    assert stats_data["unique_repo_count"] == 1
+    assert stats_data["official_skill_count"] == 0
+    assert stats_data["top_repositories"] == [{"repo": "owner/repo", "count": 1}]
+    assert stats_data["largest_generated_file_bytes"] > 0
+    assert search_pointer["deprecated_full_payload"] is True
+    assert search_pointer["manifest"] == "search-index-manifest.json"
+    assert "s" not in search_pointer
+    assert search_manifest["shard_count"] == 1
+    assert sum(shard["count"] for shard in search_manifest["shards"]) == 1
+    assert category_index["categories"][0]["manifest"] == "categories/development/manifest.json"
+    assert category_pointer["deprecated_full_payload"] is True
+    assert category_pointer["manifest"] == "categories/development/manifest.json"
+    assert "skills" not in category_pointer
+    assert category_manifest["part_count"] == 1
+    assert sum(part["count"] for part in category_manifest["parts"]) == 1
     assert lite_data["dedupe_key"] == "install|branch"
     assert lite_data["total_count"] == 1
     assert lite_data["included_count"] == 1
@@ -143,6 +176,40 @@ def test_build_search_index_lite_dedupes_install_and_branch(tmp_path):
     assert lite_data["total_count"] == 1
     assert lite_data["included_count"] == 1
     assert lite_data["skills"][0]["name"] == "demo-strong"
+
+
+def test_build_search_index_removes_stale_category_and_search_parts(tmp_path):
+    output_dir = tmp_path / "docs"
+    stale_category_part = output_dir / "categories" / "other" / "part-999.json"
+    stale_search_part = output_dir / "search-shards" / "part-999.json"
+    stale_category_part.parent.mkdir(parents=True)
+    stale_search_part.parent.mkdir(parents=True)
+    stale_category_part.write_text("{}", encoding="utf-8")
+    stale_search_part.write_text("{}", encoding="utf-8")
+
+    build_search_index.build_search_index(
+        [
+            {
+                "name": "demo",
+                "description": "Demo skill with enough description for the index.",
+                "repo": "owner/repo",
+                "path": "skills/demo/SKILL.md",
+                "branch": "main",
+                "category": "development",
+                "tags": ["demo"],
+                "stars": 1,
+                "install": "owner/repo/skills/demo/SKILL.md",
+                "source": "test",
+            }
+        ],
+        output_dir,
+        source_name="test-skills",
+    )
+
+    assert not stale_category_part.exists()
+    assert not stale_search_part.exists()
+    assert (output_dir / "categories" / "development" / "part-000.json").exists()
+    assert (output_dir / "search-shards" / "part-000.json").exists()
 
 
 def test_build_search_index_lite_dedupe_uses_untruncated_description_length(tmp_path):

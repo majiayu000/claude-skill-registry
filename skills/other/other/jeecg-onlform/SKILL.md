@@ -52,7 +52,9 @@ references/
 ├── onlform-widget-types.md       # 控件速查表（fieldShowType 完整清单）
 ├── onlform-head-field-types.md   # head 级字段说明（tableType/themeTemplate 等）
 ├── onlform-full-widget-template.md # 26种控件配置速查（dictTable/dictField/fieldExtendJson）
-├── onlform-enhance.md      # JS/Java/SQL增强参考 + 自定义按钮
+├── onlform-enhance-js.md   # JS增强参考（onlChange/loaded/列表拦截/API，~310行）
+├── onlform-enhance-java.md # Java增强参考 + 实战案例（~140行）
+├── onlform-enhance-misc.md # SQL增强/自定义按钮/fieldHref/实战（~130行）
 ├── onlform-auth.md         # 权限配置（字段/按钮/数据权限 API）
 ├── onlform-data-crud.md    # 数据 CRUD API + 存储格式
 ├── onlform-jimureport.md   # 积木报表集成 8 步流程
@@ -102,21 +104,51 @@ Bash: curl -X POST ...                    ← 同上
 > - **含中文的复杂逻辑**：写入临时 `.py` 文件再执行，彻底避免 inline 中文
 > - **结果含中文的 print**：在 inline 脚本开头加 `import sys; sys.stdout.reconfigure(encoding='utf-8')`
 
-### 1. 优先用 skill 自带的 Python 脚本，不要自己另起 HTTP 封装
+### 1. 并行读取 reference 文件，不要串行
+
+需要多个 reference 文件时，在**同一条消息**中并发发出所有 Read 调用，不要一个读完再读下一个。
+
+```
+// ✅ 正确：一条消息同时 Read 多个文件（并发）
+Read(onlform-field-types.md) + Read(onlform-master-detail-checklist.md) + Read(onlform-enhance-js.md)
+
+// ❌ 错误：串行读取
+Read(field-types) → 等结果 → Read(checklist) → 等结果 → Read(enhance)
+```
+
+> **常用并发组合**：建表 → 同时读 `field-types.md` + `master-detail-checklist.md`；JS增强 → 同时读 `enhance.md`（若已在建表时读过则跳过）。
+
+### 2（原1）. 优先用 skill 自带的 Python 脚本，不要自己另起 HTTP 封装
 
 skill 已提供 `onlform_creator.py` / `onlform_jimureport.py` 等脚本，它们封装了鉴权、重试、head 解析、主子表关联等细节。需要一次性 HTTP 探测再用 `python -c`。
 
-### 2. 跳过非必要前置检查，直接跑脚本
+### 3（原2）. 跳过非必要前置检查，直接跑脚本
 
-- **表名查重**：仅在"用户暗示要复用已有表 / 表名看上去像已有资源"时才查。普通新建场景直接跑 `onlform_creator.py`——遇重名接口会返回明确错误，预查反而增加一次往返。
-- **字典存在性**：`sex`/`yn`/`sys_status` 等内置字典直接用，不必查。仅在字典编码明显是业务自定义且不确定是否创建过时才 `sys/dict/list` 查。
+- **表名查重**：仅在"用户暗示要复用已有表 / 表名看上去像已有资源"时才查。普通新建场景直接跑 `onlform_creator.py`——遇重名接口会返回明确错误，预查反而增加一次往返。`onlform_creator.py` 已内置自动加 `_1`/`_2` 后缀重试，主表冲突无需手动干预。
+- **字典存在性**：以下系统内置字典**直接使用，禁止发 API 查询**，值已固化：
+
+  | 字典编码 | 值 → 含义 | 控件类型 |
+  |---------|----------|---------|
+  | `yn` | `1`=是 / `0`=否 | list / radio / switch |
+  | `sex` | `1`=男 / `2`=女 | list / radio |
+  | `valid_status` | `1`=有效 / `0`=无效 | list / radio |
+  | `priority` | `L`=低 / `M`=中 / `H`=高 | list / radio |
+  | `bpm_status` | `1`=待提交 / `2`=审批中 / `3`=审批通过 / `4`=审批拒绝 | list |
+
+  仅在字典编码**明显是业务自定义**且不确定是否创建过时才发 `sys/dict/list` 查询。
+
+- **❌ 严禁拼造 `/sys/dict/queryDictItemsByCode/{code}` 这种 RESTful 风格的字典查询路径**：后端根本没有这个端点，会返回 `"路径不存在，请检查路径是否正确"`。
+  - 正确的「按 dictCode 直接拿字典项」接口是 `GET /sys/api/queryDictItemsByCode?code={dictCode}`（`code` 走 query 串，不是 path variable）。
+  - 但对上表中的内置字典，**仍然不要调用任何接口**——直接用固化值。
+  - 业务自定义字典优先走 `sys/dict/list?dictCode=xxx` + `sys/dictItem/list?dictId={id}` 两步法（见 `references/onlform-data-crud.md`）。
+
 - **link_table 引用表存在性**：这项仍然必须查（见 `references/onlform-field-types.md`），引用不存在的表会让创建成功但运行时报错，排查成本高。
 
-### 3. 并行多个 GET 检查时，一个 Python 调用里顺序打完，不要拆成多条 shell
+### 4（原3）. 并行多个 GET 检查时，一个 Python 调用里顺序打完，不要拆成多条 shell
 
 一次 tool call 拿到所有结果；拆成多条 shell 既有进程启动开销，在 Windows 下还会被后台化。
 ```python
-# 用 PowerShell tool 跑
+# 用 shell tool 跑（Windows: PowerShell，Linux/macOS: Bash）
 python -c "
 import urllib.request as u, json
 h = {'X-Access-Token':'<token>'}; base = 'http://host'
@@ -127,7 +159,7 @@ print('dup=', dup.get('result'), '; dict.total=', dct.get('result', {}).get('tot
 "
 ```
 
-### 4. API base 确认（避免"路径不存在"返工）
+### 5（原4）. API base 确认（避免"路径不存在"返工）
 
 JeecgBoot 后端的 context path 因部署而异：
 - 较老版本 / 标准部署：`http://host:port/jeecg-boot`
@@ -135,15 +167,219 @@ JeecgBoot 后端的 context path 因部署而异：
 
 **首次不确定时**：直接按用户给的原样用。如果 `onlform_creator.py` 返回 `"路径不存在，请检查路径是否正确"`，去掉 `/jeecg-boot` 重试一次（或反之）——这个错误是确定性的，不要改别的参数。
 
+**「路径不存在」也可能是接口路径本身写错了**（context path 没问题，但端点本身后端没有）。常见反例：
+- ❌ `/sys/dict/queryDictItemsByCode/{code}` —— 路径 + 风格全错，后端没有这个端点
+- ✅ 正确：`GET /sys/api/queryDictItemsByCode?code={code}`（注意是 `/sys/api`，参数走 query）
+
+排查顺序：先按 context path 加/去 `/jeecg-boot` 重试；仍然 404 时，回到 SKILL 文档/references 里复核接口路径——**不要凭印象拼 RESTful 风格的 URL**。
+
+### 6. 编辑前查字段顺序：直接用 `listByHeadId`，禁止其他接口
+
+> **历史教训**：曾因依次试错 `field/list`（返回跨表乱序垃圾）→ 读脚本源码 → `getByHead`（返回空）→ 才到 `listByHeadId`，浪费了 4 次往返，被用户吐槽"不应该 30s 就搞定吗"。
+
+**强制规则（新增/删除/修改字段前获取现有字段时必须遵守）：**
+
+- ✅ 唯一正确接口：`GET /online/cgform/field/listByHeadId?headId={headId}`
+- ❌ 禁止用 `field/list`——不带 `cgformHeadId` 过滤时会返回所有表的混合数据
+- ❌ 禁止用 `getByHead`——实测返回空 fields
+- ❌ 禁止为了查接口用法去读 `onlform_creator.py` 源码——直接用上面的接口即可
+
+**多表并行查询（一次 shell tool 调用，不要串行；Windows: PowerShell，Linux/macOS: Bash）：**
+```python
+for tbl, hid in [('t1','id1'), ('t2','id2')]:
+    req = u.Request(base + '/online/cgform/field/listByHeadId?headId=' + hid, headers=h)
+    fields = json.loads(u.urlopen(req, timeout=10).read()).get('result', [])
+    # 按 orderNum 排序后直接使用
+    fields.sort(key=lambda f: f.get('orderNum', 999))
+```
+
+### 7. 建表时必须加日期后缀，避免冲突重试链
+
+> **历史教训**：`dept_info` 冲突 → 改名 dept_info_1 → 子表再次冲突 → 再改名 → 额外更新 subTableStr，三步重试链浪费 ~50s。
+
+**强制规则：** 从用户描述推导业务表名后，立即拼上当日日期后缀再写入 config JSON，无需查重，直接创建。
+
+```
+# 格式：业务名_YYYYMMDD
+dept_info_20260509      ← 主表
+dept_archive_20260509   ← 一对一子表
+dept_employee_20260509  ← 一对多子表
+```
+
+- 日期后缀保证全局唯一，彻底跳过自动重试逻辑
+- 子表同步加后缀，保持命名一致性
+- 完成后在汇总中告知用户实际表名
+
+### 8. 所有临时 JSON 配置在一个 Python 脚本里批量写入
+
+> **历史教训**：3 个 JSON 文件拆成 3 次 Write tool call，每次有固定开销，合计浪费 ~12s。
+
+**强制规则：** 多个临时 JSON 配置必须在**同一个 Python 脚本**里批量写入，禁止逐个调用 Write tool。用 Python 的 `json.dump` 写文件——跨平台一致，无 BOM 风险。
+
+```python
+# 正确：在同一个 Python 脚本里批量写入多个 JSON（跨平台）
+import tempfile, json, os, subprocess
+
+tmp = tempfile.gettempdir()  # 自动适配 Windows %TEMP% / Linux /tmp / macOS /var/folders/.../T
+CREATOR = r'<skill目录>/scripts/onlform_creator.py'
+
+configs = {
+    'onl_main.json':  {"action": "create", "tables": [{"tableName": "...", ...}]},
+    'onl_sub1.json':  {"action": "create", "tables": [{"tableName": "...", ...}]},
+}
+paths = {}
+for fname, cfg in configs.items():
+    path = os.path.join(tmp, fname)
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(cfg, f, ensure_ascii=False)
+    paths[fname] = path
+
+# 依次调用 onlform_creator.py
+for path in paths.values():
+    subprocess.run(['python', CREATOR, '--api-base', BASE, '--token', TOKEN, '--config', path], check=True)
+```
+
+### 9. 字段编辑"查询 + 生成配置 + 执行"合并为 1 个 Python 脚本
+
+> **历史教训**：查 orderNum → Write tool 写 JSON → 再调用 creator，拆成 3 步 tool call 浪费 ~10s。
+
+**强制规则：** 编辑字段时，把 listByHeadId 查询、edit config 生成、写临时文件、调用 creator 全部写进**一个 Python 脚本**，在单次 shell tool call（Windows: PowerShell，Linux/macOS: Bash）里跑完。
+
+```python
+# 模板：查询 → 生成 config → 写文件 → 调用 creator（一个脚本搞定）
+import subprocess, json, os, tempfile
+import urllib.request as u
+
+# 1. 查询现有字段
+fields = query_fields(head_id)
+
+# 2. 在内存中构建 edit config（无需 Write tool）
+cfg = {"action": "edit", "tableName": tname, "addFields": [...], "modifyFields": [...]}
+path = os.path.join(tempfile.gettempdir(), f'onl_edit_{tname}.json')
+with open(path, 'w', encoding='utf-8') as f:
+    json.dump(cfg, f, ensure_ascii=False)
+
+# 3. 直接调用 creator
+subprocess.run(['python', '-X', 'utf8', CREATOR, '--api-base', BASE, '--token', TOKEN, '--config', path], check=True)
+```
+
+### 10. 多表编辑必须用 `tables: []` 并行 + 单表 add/modify 一次提交（节省 ~20s）
+
+> **历史教训**：曾分两轮编辑 3 张表 = 6 次串行 `subprocess.run(creator)`。每次 creator 启动 ~1s + addAll/syncDb HTTP 各 ~1s ≈ 共 18-25s。三个症状叠加：
+> 1. 同一张表的 `addFields`（新增）和 `modifyFields`（重排）拆成两轮调用 → HTTP/syncDb 翻倍
+> 2. 多张表的 edit 串行 spawn 子进程 → 表数 × Python 冷启动
+> 3. 每次都重新 import 模块 → Windows 上每次 ~800ms 启动开销
+
+**强制规则（多表/复合编辑必须遵守）：**
+
+1. **同一张表的所有变更合并为一次 editAll**：`addFields` + `modifyFields` + `deleteFields` 写在同一个 config，creator 内部一次提交即完成。
+
+   > ⚠️ **addFields 的 orderNum 不被后端采纳——新字段始终追加到末尾（实测）。**
+   > 同一次 editAll 里 `modifyFields` 只对已存在字段生效，对同批 `addFields` 新建的字段无效。
+   > **教训来源**：2026-05-09 给员工子表插入 `sex` 字段，指定 `orderNum=9` 并在 `modifyFields` 里后移 `id_card/phone`，结果 `sex` 仍追加到末尾（orderNum=11），需第二次单独 `modifyFields` 才修正。
+
+   **插入到中间位置的正确两步法：**
+   - **第一步**：`addFields` 创建字段（orderNum 随便填，后端忽略，字段追加到末尾）；`modifyFields` 里只后移已有字段
+   - **第二步**：单独再跑一次 `modifyFields`，把新建字段的 orderNum 设到目标位置
+
+   ```python
+   # 第一步：创建字段 + 后移已有字段（新字段 orderNum 会被忽略，先追加到末尾）
+   cfg1 = {"action":"edit","tableName":"t","addFields":[{"dbFieldName":"sex",...}],
+           "modifyFields":[{"dbFieldName":"id_card","orderNum":10},{"dbFieldName":"phone","orderNum":11}]}
+   # 第二步：修正新字段的 orderNum（必须在第一步完成后执行）
+   cfg2 = {"action":"edit","tableName":"t","modifyFields":[{"dbFieldName":"sex","orderNum":9}]}
+   ```
+
+2. **多表编辑用顶层 `tables: []`**：`onlform_creator.py` 的 `action: "edit"` 现在支持 `tables` 数组，会用线程池并发执行 N 张表的编辑。表数 ≥ 2 时**必须**用此格式，不要写 N 个单表 config 串行 spawn。
+
+```python
+# ✅ 正确：一次 creator 调用，N 张表并行
+cfg = {"action": "edit", "tables": [
+    {"tableName": "t1", "addFields": [...], "modifyFields": [...]},
+    {"tableName": "t2", "addFields": [...]},
+    {"tableName": "t3", "modifyFields": [...]}
+]}
+subprocess.run(['python', '-X', 'utf8', CREATOR, '--api-base', BASE, '--token', TOKEN, '--config', path], check=True)
+
+# ❌ 错误：串行 spawn 3 次 creator
+for cfg in [cfg1, cfg2, cfg3]:
+    subprocess.run([..., '--config', path], check=True)  # 每次 ~3-5s
+
+# ❌ 错误：同一张表 add 一轮、reorder 一轮
+subprocess.run([..., '--config', add_only_config])    # 第一轮：add
+subprocess.run([..., '--config', reorder_only_config]) # 第二轮：reorder（多余的 syncDb）
+```
+
+**收益**：3 张表的「add + reorder」从 6 次 creator 调用（~25s）降到 1 次（~5s）。
+
+### 11. 自定义字典用 batchAddDictWithItems 一次搞定
+
+> **历史教训**：早期用 `dict/add` + `dictItem/add` 逐条写入，遇到 `result=null` 时还会 TypeError 崩溃触发重跑。实际上 JeecgBoot 有批量接口，1 次 HTTP 完成所有字典+items，且内置"已存在跳过"逻辑。
+
+**接口**：`POST /sys/dict/batchAddDictWithItems`
+
+- 请求体：`{"dictList": [{...}, {...}]}`，每项含 `sysDictItemList`
+- 已存在的字典编码自动跳过（服务端 catch 唯一约束异常），不影响其他字典
+- 返回：`{"successCount": N, "failureCount": M, "failureList": [...]}`
+
+```python
+def ensure_dicts_batch(base, token, dicts):
+    """
+    dicts = [
+      {"dictName":"订单类型","dictCode":"order_type","description":"...","items":[("国内","1",1),...]},
+      ...
+    ]
+    """
+    payload = {"dictList": [
+        {
+            "dictName": d["dictName"],
+            "dictCode": d["dictCode"],
+            "description": d.get("description", ""),
+            "sysDictItemList": [
+                {"itemText": t, "itemValue": v, "sortOrder": o, "status": 1}
+                for t, v, o in d["items"]
+            ]
+        }
+        for d in dicts
+    ]}
+    H = {'X-Access-Token': token, 'Content-Type': 'application/json'}
+    body = json.dumps(payload, ensure_ascii=False).encode('utf-8')
+    req = urllib.request.Request(base + '/sys/dict/batchAddDictWithItems', data=body, headers=H, method='POST')
+    r = json.loads(urllib.request.urlopen(req, timeout=15).read().decode('utf-8'))
+      # ⚠️ 全部已存在时接口返回 success=false + code 500，需判断 failList 区分"真失败"和"已存在跳过"
+    result = r.get('result') or {}
+    fail_list = result.get('failList') or []
+    real_fails = [f for f in fail_list if '已经存在' not in f.get('errorMsg', '')]
+    if real_fails:
+        raise RuntimeError(f'字典创建失败: {real_fails}')
+    skip_count = len([f for f in fail_list if '已经存在' in f.get('errorMsg', '')])
+    print(f'  字典批量: 新建={result.get("successCount",0)}, 已存在跳过={skip_count}')
+    return r
+
+# 调用示例（N 个字典 1 次 HTTP）
+ensure_dicts_batch(BASE, TOKEN, [
+    {"dictName":"订单类型",  "dictCode":"order_type",    "description":"国内/国际",    "items":[("国内","1",1),("国际","2",2)]},
+    {"dictName":"运输方式",  "dictCode":"transport_mode", "description":"运输方式(全量)","items":[("陆运","land",1),("铁运","rail",2),("空运","air",3),("海运","sea",4)]},
+])
+```
+
+> ⚠️ **接口行为陷阱（实测）**：全部字典已存在时，接口返回 `success=false` + `code=500`，而不是静默跳过。
+> 判断方式：遍历 `result.failList`，`errorMsg` 含"字典编码已经存在"的视为正常跳过，其余才是真失败。
+
+**收益**：N 个字典 + M 个 items 从 `1+N×M` 次 HTTP → **1 次 HTTP**，无 result=null 防御问题。
+
 ### 5. 建表遇到「数据库表 [xxx] 已存在」时的处理
 
-错误 `数据库表[xxx]已存在,请从数据库导入表单` 表示：**物理 DB 表残留，但 Online 配置不存在**（通常是之前创建后被手动删了 Online 头）。应对策略：
+错误 `数据库表[xxx]已存在,请从数据库导入表单` 表示：**物理 DB 表残留，但 Online 配置不存在**（通常是之前创建后被手动删了 Online 头）。
 
-1. **首选：换表名**（如 `order_main` → `sale_order`）——最快，避免污染现有物理表和数据。
+> **`onlform_creator.py` 和 `onlform_pipeline.py` 已内置自动加后缀重试**，并自动更新关联子表的 `mainTable` 引用。主表冲突无需手动干预，脚本会自动完成。执行后在汇总输出中确认实际使用的表名即可。
+
+
+1. **首选：换表名**（在 config 中指定新名称）——最快，避免污染现有物理表。
 2. **次选：导入**：`GET /online/cgform/head/transTables/{tableName}` 把物理表导入为 Online 配置，再用 `action=edit` 调整字段。
 3. **慎用：删除物理表**（通过 DB 直连 DROP TABLE）——只在确认无数据且用户明确要求时做。
 
-> **主子表场景特别注意**：主表建失败后，子表如果已创建会成为"孤儿"（外键指向不存在的父表头）。此时必须先 `DELETE /online/cgform/head/delete?id={孤儿子表headId}` 删干净，再用新表名整体重建。不要在孤儿子表基础上继续操作。
+> **主子表场景特别注意**：主表建失败且脚本未自动重试时，子表如果已创建会成为"孤儿"。此时先 `DELETE /online/cgform/head/delete?id={孤儿子表headId}` 删干净，再整体重建。
 
 ## 主数据复用规则
 
@@ -225,8 +461,40 @@ with open(config_path, 'w', encoding='utf-8') as f:
 
 1. 用户提供表单 ID 或表名
 2. 查询表名获取 headId：`GET /online/cgform/head/list?tableName={表名}&pageNo=1&pageSize=1`
-3. 查询现有字段列表展示给用户
-4. 根据用户需求进行增/删/改字段
+3. **查询现有字段（必须用 `listByHeadId`，见效率规则第6条）**：
+   `GET /online/cgform/field/listByHeadId?headId={headId}`
+   返回结果按 `orderNum` 排序，确认需要插入的前后字段的 orderNum 值
+4. 根据用户需求进行增/删/改字段，直接写配置跑脚本
+
+> **多表编辑 / 增删改一次提交**（见效率规则第10条）：涉及多张表时用 `tables: []` 一次配置并行执行；同一张表的 `addFields` + `modifyFields` 必须放在同一个 config（一次 editAll 内全做完，避免 add 一轮、reorder 一轮的双往返）。
+
+**单表编辑 + 重排同时进行的 JSON 示例（一次完成）：**
+```json
+{
+  "action": "edit",
+  "tableName": "dept_employee",
+  "addFields": [
+    {"dbFieldName": "sex", "dbFieldTxt": "性别", "fieldShowType": "radio",
+     "dbType": "string", "dbLength": 2, "dictField": "sex", "orderNum": 9}
+  ],
+  "modifyFields": [
+    {"dbFieldName": "id_card", "orderNum": 10},
+    {"dbFieldName": "phone",   "orderNum": 11}
+  ]
+}
+```
+
+**多表并行编辑 JSON 示例（creator 自动用线程池并发）：**
+```json
+{
+  "action": "edit",
+  "tables": [
+    {"tableName": "dept_info",     "addFields": [...], "modifyFields": [...]},
+    {"tableName": "dept_archive",  "addFields": [...]},
+    {"tableName": "dept_employee", "addFields": [...], "modifyFields": [...]}
+  ]
+}
+```
 
 ### Step 2-4: 智能字段推导
 
@@ -345,7 +613,7 @@ python <skill目录>/scripts/onlform_enhance.py --api-base <URL> --token <TOKEN>
 - `save_sql` — 保存 SQL 增强
 - `query` — 查询所有增强配置
 
-> **JS/Java/SQL 增强完整参考参见：** `references/onlform-enhance.md`
+> **增强参考（按需读对应文件）：** JS增强 → `references/onlform-enhance-js.md`；Java增强 → `references/onlform-enhance-java.md`；SQL/按钮 → `references/onlform-enhance-misc.md`
 
 ### Step 10: 权限配置
 
@@ -401,7 +669,9 @@ python <skill目录>/scripts/onlform_data.py --api-base <URL> --token <TOKEN> --
 | 文档 | 何时读取 |
 |------|---------|
 | [onlform-field-types.md](references/onlform-field-types.md) | 需要确定控件类型(fieldShowType)、字典配置、校验规则、默认值表达式、扩展配置(fieldExtendJson)时——创建/编辑表单字段必读 |
-| [onlform-enhance.md](references/onlform-enhance.md) | 用户要求配置JS/Java/SQL增强、自定义按钮、表单联动、列表Hook时 |
+| [onlform-enhance-js.md](references/onlform-enhance-js.md) | JS增强：onlChange联动、loaded初始化、beforeSubmit校验、列表拦截、显隐禁用时 |
+| [onlform-enhance-java.md](references/onlform-enhance-java.md) | Java增强（spring/class/http）、导入增强时 |
+| [onlform-enhance-misc.md](references/onlform-enhance-misc.md) | SQL增强、自定义按钮、按钮表达式、fieldHref超链接时 |
 | [onlform-auth.md](references/onlform-auth.md) | 用户要求配置字段权限、按钮权限、数据权限、或给角色授权时 |
 | [onlform-data-crud.md](references/onlform-data-crud.md) | 需要插入/查询/更新/删除表单数据、导出CSV时——确认各控件的值格式必读 |
 | [onlform-jimureport.md](references/onlform-jimureport.md) | 用户要求关联积木报表或集成打印功能时 |

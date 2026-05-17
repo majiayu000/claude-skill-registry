@@ -1,12 +1,20 @@
 ---
 name: scenario
-description: 'Manage holdout scenarios.'
-practices: [property-based-testing, snapshot-testing, llm-eval-harness]
+description: Manage holdout scenarios.
+practices:
+- property-based-testing
+- snapshot-testing
+- llm-eval-harness
+hexagonal_role: supporting
+consumes: []
+produces:
+- result.json
+context_rel: []
 skill_api_version: 1
 metadata:
   tier: execution
   stability: experimental
-output_contract: "Scenario artifacts in .agents/holdout/*.json"
+output_contract: Scenario artifacts in .agents/holdout/*.json
 ---
 # Scenario Skill
 

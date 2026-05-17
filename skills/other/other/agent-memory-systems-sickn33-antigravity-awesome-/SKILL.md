@@ -569,7 +569,7 @@ context about what system is being configured is nearly useless.
 
 Recommended fix:
 
-## Contextual Chunking (Anthropic's approach)
+### Contextual Chunking (Anthropic's approach)
 # Add document context to each chunk before embedding
 # Reduces retrieval failures by 35%
 
@@ -1069,7 +1069,6 @@ Message: Ensure same embedding model for indexing and querying.
 Works well with: `autonomous-agents`, `multi-agent-orchestration`, `llm-architect`, `agent-tool-builder`
 
 ## When to Use
-
 - User mentions or implies: agent memory
 - User mentions or implies: long-term memory
 - User mentions or implies: memory systems
@@ -1082,3 +1081,8 @@ Works well with: `autonomous-agents`, `multi-agent-orchestration`, `llm-architec
 - User mentions or implies: langmem
 - User mentions or implies: memgpt
 - User mentions or implies: conversation history
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

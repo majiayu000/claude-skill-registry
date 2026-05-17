@@ -244,7 +244,7 @@ Same pattern as `/experiment-audit`:
 
 ## Review Tracing
 
-After each reviewer agent call, save the trace following `shared-references/review-tracing.md`. Use `tools/save_trace.sh` or write files directly to `.aris/traces/<skill>/<date>_run<NN>/`. Respect the `--- trace:` parameter (default: `full`).
+After each reviewer agent call, save the trace following `shared-references/review-tracing.md` (Policy C — forensic; never silently skip). Use `save_trace.sh` (resolved per the chain in `shared-references/integration-contract.md` §2) or write files directly to `.aris/traces/<skill>/<date>_run<NN>/`. Respect the `--- trace:` parameter (default: `full`).
 
 ## Submission Artifact Emission
 
@@ -252,7 +252,7 @@ This skill **always** writes `paper/PAPER_CLAIM_AUDIT.json`, regardless of
 caller or detector outcome. A detector-negative run (paper has no numeric
 claims) emits verdict `NOT_APPLICABLE`; a paper-with-numeric-claims-but-no-
 raw-results run emits `BLOCKED`. Silent skip is forbidden — `paper-writing`
-Phase 6 and `tools/verify_paper_audits.sh` both rely on this artifact
+Phase 6 and `verify_paper_audits.sh` both rely on this artifact
 existing at a predictable path.
 
 The artifact conforms to the schema in `shared-references/assurance-contract.md`:
@@ -290,7 +290,7 @@ passed only `main.tex` + a single result file, hash those two files and no
 others. The external verifier rehashes these entries; any mismatch flags
 `STALE`.
 
-**Path convention** (must match what `tools/verify_paper_audits.sh`
+**Path convention** (must match what `verify_paper_audits.sh`
 expects): keys are **paths relative to the paper directory** (the arg
 passed to the verifier) for in-paper files — so `main.tex`, not
 `paper/main.tex` — and **absolute paths** for out-of-paper files such as
@@ -320,7 +320,7 @@ thread preserves reviewer independence per
 ### Human-readable sibling
 
 `paper/PAPER_CLAIM_AUDIT.md` is written alongside the JSON for readers.
-The JSON is authoritative for `tools/verify_paper_audits.sh`; the Markdown
+The JSON is authoritative for `verify_paper_audits.sh`; the Markdown
 is for humans. The parent skill (`paper-writing` Phase 6) plus the verifier
 decide whether the verdict blocks finalization — this skill itself never
 blocks; it only emits.

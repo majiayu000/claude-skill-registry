@@ -125,13 +125,17 @@ If any precondition fails, show user which jobs are blocked and why.
 
 ### Step 3: Launch Scheduler
 
-Resolve the bundled helper directory (`$PROJECT_DIR` / `$RUN_TS` / `$LOCAL_RUN_DIR` already set in Step 1):
+Resolve the bundled helper directory (`$PROJECT_DIR` / `$RUN_TS` / `$LOCAL_RUN_DIR` already set in Step 1). Phase 3.3 (Arch C) moved the canonical scripts to `skills/experiment-queue/scripts/`; `tools/experiment_queue/` retains `os.execv` shims for legacy resolver layers:
 
 ```bash
-ARIS_REPO="${ARIS_REPO:-$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills-codex.txt 2>/dev/null)}"
-[ -n "$ARIS_REPO" ] || { echo "ERROR: ARIS_REPO not set. Use install_aris_codex.sh managed install or export ARIS_REPO=/path/to/ARIS."; exit 1; }
-QUEUE_TOOLS="$ARIS_REPO/tools/experiment_queue"
-[ -f "$QUEUE_TOOLS/queue_manager.py" ] || { echo "ERROR: queue_manager.py not found under $QUEUE_TOOLS"; exit 1; }
+if [ -z "${ARIS_REPO:-}" ] && [ -f .aris/installed-skills-codex.txt ]; then
+    ARIS_REPO=$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills-codex.txt 2>/dev/null) || true
+fi
+[ -n "${ARIS_REPO:-}" ] || { echo "ERROR: ARIS_REPO not set. Use install_aris_codex.sh managed install or export ARIS_REPO=/path/to/ARIS."; exit 1; }
+# Prefer the new canonical location; fall back to legacy tools/ shim path.
+QUEUE_TOOLS="$ARIS_REPO/skills/experiment-queue/scripts"
+[ -f "$QUEUE_TOOLS/queue_manager.py" ] || QUEUE_TOOLS="$ARIS_REPO/tools/experiment_queue"
+[ -f "$QUEUE_TOOLS/queue_manager.py" ] || { echo "ERROR: queue_manager.py not found at $ARIS_REPO/skills/experiment-queue/scripts/ or $ARIS_REPO/tools/experiment_queue/"; exit 1; }
 ```
 
 Compute remote paths (note: modern `scp` runs in SFTP mode and does NOT reliably expand `$HOME` in destination paths — use remote-relative for `scp`, `$HOME`-prefixed for `ssh` command strings):
@@ -360,8 +364,8 @@ Then user can check anytime or wait for summary report.
 - `/run-experiment` — single experiment deployment
 - `/monitor-experiment` — check progress (now reads from queue_state.json)
 - `/analyze-results` — post-hoc analysis
-- `tools/experiment_queue/queue_manager.py` (bundled) — the scheduler implementation
-- `tools/experiment_queue/build_manifest.py` (bundled) — build manifest from grid spec
+- `skills/experiment-queue/scripts/queue_manager.py` (canonical, Phase 3.3 move) — the scheduler implementation. Legacy entry at `tools/experiment_queue/queue_manager.py` is an `os.execv` shim.
+- `skills/experiment-queue/scripts/build_manifest.py` (canonical, Phase 3.3 move) — build manifest from grid spec. Legacy entry at `tools/experiment_queue/build_manifest.py` is an `os.execv` shim.
 
 ## Rationale / Source
 

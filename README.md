@@ -68,8 +68,10 @@ sk install anthropics/skills/skills/docx
 ### Option 3: Direct API
 
 ```bash
-# Lightweight search index (gzip-compressed)
+# Startup search index and bounded full-search shards
 curl https://majiayu000.github.io/claude-skill-registry-core/search-index.json
+curl https://majiayu000.github.io/claude-skill-registry-core/search-index-manifest.json
+curl https://majiayu000.github.io/claude-skill-registry-core/search-shards/part-000.json
 
 # Deduplicated catalog index with quality/security/install signals
 curl https://majiayu000.github.io/claude-skill-registry-core/search-index-lite.json
@@ -87,7 +89,12 @@ curl https://raw.githubusercontent.com/majiayu000/claude-skill-registry/main/reg
 # Compatibility registry pointer (merged publish artifact)
 curl https://raw.githubusercontent.com/majiayu000/claude-skill-registry/main/registry.json
 
-# Specific category
+# Category manifest and bounded parts
+curl https://majiayu000.github.io/claude-skill-registry-core/categories/index.json
+curl https://majiayu000.github.io/claude-skill-registry-core/categories/development/manifest.json
+curl https://majiayu000.github.io/claude-skill-registry-core/categories/development/part-000.json
+
+# Legacy category pointer
 curl https://majiayu000.github.io/claude-skill-registry-core/categories/development.json
 ```
 
@@ -150,9 +157,12 @@ claude-skill-registry-core/
 ├── registry.json           # Lightweight core registry metadata
 ├── docs/                   # GitHub Pages
 │   ├── index.html          # Web search UI
-│   ├── search-index.json   # Lightweight search index
+│   ├── search-index-lite.json
+│   ├── search-index.json   # Compatibility pointer to bounded shards
+│   ├── search-index-manifest.json
+│   ├── search-shards/      # Bounded full search index parts
 │   ├── featured.json       # Featured skills snapshot
-│   └── categories/         # Category indexes
+│   └── categories/         # Category manifests and bounded parts
 ├── sources/                # Data sources
 │   ├── anthropic.json
 │   ├── community.json
@@ -172,7 +182,10 @@ The merged `claude-skill-registry` publish artifact additionally contains
 
 ## Categories
 
-Category counts are published in the index (`categories/*.json`). Here are the standard codes:
+Category counts are published in `categories/index.json`; full category payloads
+are available through `categories/<category>/manifest.json` and bounded
+`part-*.json` files. The legacy `categories/<category>.json` URL is now a small
+compatibility pointer. Here are the standard codes:
 
 | Category | Code | Description |
 |----------|------|-------------|

@@ -1,19 +1,32 @@
 ---
 name: research
-description: 'Explore and write findings.'
-practices: [wiki-knowledge-surface, pragmatic-programmer, ddd-bounded-context]
+description: Explore and write findings.
+practices:
+- wiki-knowledge-surface
+- pragmatic-programmer
+- ddd-bounded-context
+hexagonal_role: driving-adapter
+consumes:
+- inject
+- repo-context
+produces:
+- .agents/research/*.md
+- result.json
+context_rel: []
 skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash, Write
 metadata:
   tier: execution
   dependencies:
-    - inject    # optional - injects prior context
+  - inject
 context:
   window: fork
   intent:
     mode: questions
   sections:
-    exclude: [HISTORY, TASK]
+    exclude:
+    - HISTORY
+    - TASK
   intel_scope: topic
 output_contract: skills/research/schemas/findings.json
 ---

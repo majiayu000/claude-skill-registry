@@ -1,0 +1,1691 @@
+<!doctype html>
+<html lang="en" data-ha-style="map-atlas">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sam Reyes — Saved Places</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #a03b00;
+  --primary-container: #c94c00;
+  --primary-fixed: #ffdbcd;
+  --primary-fixed-dim: #ffb597;
+  --on-primary: #ffffff;
+  --accent-glow: #E8400D;
+  --secondary: #d5baff;
+  --secondary-container: #7b40e0;
+  --tertiary: #4d44e3;
+  --accent-cyan: #00D4FF;
+  --bg: #fff8f6;
+  --surface: #fff8f6;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #fbf2ef;
+  --surface-container: #f5ece9;
+  --surface-container-high: #efe6e3;
+  --fg-1: #1e1b19;
+  --fg-2: #594138;
+  --fg-muted: #8d7166;
+  --border: rgba(0,0,0,0.06);
+  --border-strong: rgba(0,0,0,0.12);
+  --outline-variant: #e1bfb2;
+  --green: #10b981;
+  --blue: #3b82f6;
+  --yellow: #f59e0b;
+  --red: #ef4444;
+  --font-headline: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'SF Mono','Menlo',ui-monospace,monospace;
+  --space-xs: 4px; --space-sm: 8px; --space-md: 12px;
+  --space-lg: 16px; --space-xl: 20px; --space-2xl: 24px;
+  --space-3xl: 32px; --space-4xl: 48px; --space-5xl: 64px;
+  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px;
+  --radius-xl: 20px; --radius-2xl: 28px; --radius-pill: 9999px;
+  --shadow-sm: 0 1px 2px rgba(30,27,25,0.04);
+  --shadow-md: 0 4px 12px rgba(30,27,25,0.08);
+  --shadow-lg: 0 8px 24px rgba(30,27,25,0.12);
+  --shadow-accent: 0 8px 24px rgba(160,59,0,0.15);
+  --gradient-primary: linear-gradient(135deg,#a03b00 0%,#c94c00 100%);
+  --gradient-hero: linear-gradient(135deg,#a03b00 0%,#7b40e0 100%);
+  --map-land: #e8ddd5;
+  --map-water: #d4e8ef;
+  --map-border: #c4b4aa;
+  --pin-shadow: rgba(160,59,0,0.35);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #060B18;
+    --surface: #0B1426;
+    --surface-container-lowest: #101D35;
+    --surface-container-low: #101D35;
+    --surface-container: #162544;
+    --surface-container-high: #1c2d52;
+    --fg-1: #F8FAFC;
+    --fg-2: #CBD5E1;
+    --fg-muted: #64748B;
+    --border: rgba(255,255,255,0.08);
+    --border-strong: rgba(255,255,255,0.14);
+    --primary: #FF6B35;
+    --accent-glow: #00D4FF;
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
+    --map-land: #1a2540;
+    --map-water: #0a1628;
+    --map-border: #2a3a5a;
+    --pin-shadow: rgba(255,107,53,0.4);
+  }
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--fg-1);
+  font-family:var(--font-body);
+  font-size:15px;
+  line-height:1.55;
+  min-height:100vh;
+}
+
+/* ── MAP SHELL ── */
+.map-shell{
+  display:grid;
+  grid-template-rows:auto 1fr;
+  min-height:100vh;
+}
+
+/* ── HEADER ── */
+.atlas-header{
+  padding: var(--space-lg) var(--space-2xl);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--space-lg);
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:var(--shadow-sm);
+  flex-wrap:wrap;
+}
+.atlas-title{
+  font-family:var(--font-headline);
+  font-size:1.15rem;
+  font-weight:700;
+  letter-spacing:-0.01em;
+  color:var(--fg-1);
+  display:flex;
+  align-items:center;
+  gap:var(--space-sm);
+}
+.atlas-title-pin{
+  width:22px;height:22px;
+  background:var(--gradient-primary);
+  border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  flex-shrink:0;
+  box-shadow:var(--shadow-accent);
+}
+.atlas-header-right{
+  display:flex;
+  align-items:center;
+  gap:var(--space-md);
+  flex-wrap:wrap;
+}
+.search-box{
+  display:flex;
+  align-items:center;
+  gap:var(--space-sm);
+  background:var(--surface-container-low);
+  border:1px solid var(--border-strong);
+  border-radius:var(--radius-pill);
+  padding:var(--space-sm) var(--space-lg);
+  min-width:200px;
+}
+.search-box input{
+  border:none;
+  outline:none;
+  background:transparent;
+  font-family:var(--font-body);
+  font-size:0.875rem;
+  color:var(--fg-1);
+  width:100%;
+}
+.search-box input::placeholder{color:var(--fg-muted)}
+.search-icon{color:var(--fg-muted);font-size:0.875rem;flex-shrink:0}
+
+.view-toggle{
+  display:flex;
+  background:var(--surface-container);
+  border-radius:var(--radius-pill);
+  padding:3px;
+  gap:2px;
+}
+.view-btn{
+  border:none;
+  background:transparent;
+  color:var(--fg-muted);
+  font-family:var(--font-body);
+  font-size:0.8rem;
+  font-weight:500;
+  padding:var(--space-xs) var(--space-md);
+  border-radius:var(--radius-pill);
+  cursor:pointer;
+  transition:all 160ms ease;
+}
+.view-btn.active{
+  background:var(--surface-container-lowest);
+  color:var(--fg-1);
+  box-shadow:var(--shadow-sm);
+}
+
+/* ── MAIN LAYOUT ── */
+.atlas-body{
+  display:grid;
+  grid-template-columns:1fr 380px;
+  height:calc(100vh - 65px);
+  overflow:hidden;
+}
+@media(max-width:768px){
+  .atlas-body{
+    grid-template-columns:1fr;
+    grid-template-rows:50vh 1fr;
+    height:auto;
+    overflow:visible;
+  }
+}
+
+/* ── ATLAS STAGE ── */
+.atlas-stage{
+  position:relative;
+  background:var(--map-water);
+  overflow:hidden;
+  cursor:grab;
+}
+.atlas-stage:active{cursor:grabbing}
+#worldSvg{
+  width:100%;
+  height:100%;
+  display:block;
+  user-select:none;
+}
+.map-pin{
+  cursor:pointer;
+  transition:transform 200ms cubic-bezier(.34,1.56,.64,1), opacity 200ms ease;
+  transform-origin:50% 100%;
+}
+.map-pin.drop-in{
+  animation:pinDrop 320ms cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes pinDrop{
+  from{transform:translateY(-20px) scale(0.3);opacity:0}
+  to{transform:translateY(0) scale(1);opacity:1}
+}
+.map-pin:hover .pin-head{
+  filter:brightness(1.2);
+}
+.map-pin.selected .pin-head{
+  fill:var(--secondary-container)!important;
+}
+.map-pin.selected .pin-stem{
+  fill:var(--secondary-container)!important;
+}
+.pin-head{fill:var(--primary);transition:fill 200ms ease}
+.pin-stem{fill:var(--primary-container)}
+.pin-cluster{
+  cursor:pointer;
+  transition:transform 200ms ease;
+}
+.pin-cluster:hover{transform:scale(1.1)}
+
+/* Map tooltip */
+.map-tooltip{
+  position:absolute;
+  background:var(--surface-container-lowest);
+  border:1px solid var(--border-strong);
+  border-radius:var(--radius-md);
+  padding:var(--space-sm) var(--space-md);
+  box-shadow:var(--shadow-lg);
+  pointer-events:none;
+  font-size:0.8rem;
+  max-width:200px;
+  z-index:50;
+  display:none;
+}
+.map-tooltip strong{
+  font-family:var(--font-headline);
+  font-size:0.85rem;
+  color:var(--fg-1);
+  display:block;
+  margin-bottom:2px;
+}
+.map-tooltip span{color:var(--fg-muted);font-size:0.75rem}
+
+/* Zoom controls */
+.zoom-controls{
+  position:absolute;
+  bottom:var(--space-2xl);
+  right:var(--space-lg);
+  display:flex;
+  flex-direction:column;
+  gap:var(--space-xs);
+  z-index:20;
+}
+.zoom-btn{
+  width:36px;height:36px;
+  background:var(--surface-container-lowest);
+  border:1px solid var(--border-strong);
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;
+  color:var(--fg-2);
+  box-shadow:var(--shadow-md);
+  transition:all 120ms ease;
+}
+.zoom-btn:hover{background:var(--surface-container);color:var(--primary)}
+
+/* ── SIDE PANEL ── */
+.place-drawer{
+  background:var(--surface);
+  border-left:1px solid var(--border);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+@media(max-width:768px){
+  .place-drawer{
+    border-left:none;
+    border-top:1px solid var(--border);
+    height:50vh;
+  }
+}
+
+/* Stats strip inside drawer */
+.atlas-stats{
+  background:var(--surface-container-low);
+  border-bottom:1px solid var(--border);
+  padding:var(--space-lg) var(--space-xl);
+}
+.atlas-personal-note{
+  font-family:var(--font-body);
+  font-size:0.82rem;
+  font-weight:500;
+  color:var(--fg-2);
+  line-height:1.5;
+  margin-bottom:var(--space-md);
+  padding:var(--space-md) var(--space-lg);
+  background:var(--primary-fixed);
+  border-radius:var(--radius-md);
+  border-left:3px solid var(--primary);
+}
+@media(prefers-color-scheme:dark){
+  .atlas-personal-note{
+    background:rgba(160,59,0,0.15);
+    border-left-color:var(--primary);
+  }
+}
+.stats-row{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--space-sm);
+}
+.stat-pill{
+  text-align:center;
+  padding:var(--space-sm) var(--space-xs);
+}
+.stat-num{
+  font-family:var(--font-headline);
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--primary);
+  letter-spacing:-0.02em;
+  display:block;
+}
+.stat-label{
+  font-size:0.7rem;
+  font-weight:500;
+  color:var(--fg-muted);
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+}
+
+/* Category chips */
+.filter-strip{
+  padding:var(--space-md) var(--space-xl);
+  display:flex;
+  gap:var(--space-sm);
+  overflow-x:auto;
+  border-bottom:1px solid var(--border);
+  scrollbar-width:none;
+}
+.filter-strip::-webkit-scrollbar{display:none}
+.city-chip{
+  flex-shrink:0;
+  border:1px solid var(--border-strong);
+  background:var(--surface-container-low);
+  color:var(--fg-2);
+  font-size:0.75rem;
+  font-weight:500;
+  padding:var(--space-xs) var(--space-md);
+  border-radius:var(--radius-pill);
+  cursor:pointer;
+  transition:all 140ms ease;
+  white-space:nowrap;
+}
+.city-chip:hover{background:var(--surface-container);color:var(--fg-1)}
+.city-chip.active{
+  background:var(--primary);
+  color:var(--on-primary);
+  border-color:var(--primary);
+}
+.city-chip .chip-count{
+  opacity:0.7;
+  margin-left:3px;
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+}
+
+/* Waypoint browser */
+.waypoint-browser{
+  flex:1;
+  overflow-y:auto;
+  scrollbar-width:thin;
+  scrollbar-color:var(--outline-variant) transparent;
+}
+.waypoint-browser::-webkit-scrollbar{width:4px}
+.waypoint-browser::-webkit-scrollbar-thumb{background:var(--outline-variant);border-radius:2px}
+
+.place-item{
+  display:flex;
+  gap:var(--space-md);
+  align-items:flex-start;
+  padding:var(--space-md) var(--space-xl);
+  border-bottom:1px solid var(--border);
+  cursor:pointer;
+  transition:background 140ms ease;
+}
+.place-item:hover{background:var(--surface-container-low)}
+.place-item.active{background:var(--surface-container);border-left:3px solid var(--primary)}
+.place-item.hidden{display:none}
+.place-index{
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+  color:var(--fg-muted);
+  padding-top:3px;
+  min-width:20px;
+}
+.place-info{flex:1;min-width:0}
+.place-name{
+  font-family:var(--font-headline);
+  font-size:0.88rem;
+  font-weight:600;
+  color:var(--fg-1);
+  letter-spacing:-0.01em;
+  line-height:1.3;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.place-name mark{
+  background:var(--primary-fixed);
+  color:var(--primary);
+  border-radius:2px;
+  padding:0 2px;
+}
+.place-city{
+  font-size:0.75rem;
+  color:var(--fg-muted);
+  margin-top:1px;
+}
+.place-note{
+  font-size:0.75rem;
+  color:var(--fg-2);
+  margin-top:var(--space-xs);
+  font-style:italic;
+  line-height:1.4;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.place-maps-link{
+  color:var(--primary);
+  font-size:0.7rem;
+  text-decoration:none;
+  flex-shrink:0;
+  padding-top:3px;
+  opacity:0.75;
+  transition:opacity 120ms;
+}
+.place-maps-link:hover{opacity:1}
+
+/* ── DETAIL PANEL (slide-over on map) ── */
+.detail-panel{
+  position:absolute;
+  top:var(--space-lg);
+  left:var(--space-lg);
+  width:280px;
+  background:var(--surface-container-lowest);
+  border:1px solid var(--border-strong);
+  border-radius:var(--radius-xl);
+  box-shadow:var(--shadow-lg);
+  z-index:30;
+  padding:var(--space-xl);
+  transform:translateX(-120%) scale(0.96);
+  transition:transform 280ms cubic-bezier(.4,0,.2,1), opacity 280ms ease;
+  opacity:0;
+  pointer-events:none;
+}
+.detail-panel.open{
+  transform:translateX(0) scale(1);
+  opacity:1;
+  pointer-events:all;
+}
+.detail-close{
+  position:absolute;
+  top:var(--space-md);
+  right:var(--space-md);
+  background:var(--surface-container);
+  border:none;
+  border-radius:var(--radius-pill);
+  width:28px;height:28px;
+  cursor:pointer;
+  color:var(--fg-muted);
+  font-size:0.9rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:background 120ms;
+}
+.detail-close:hover{background:var(--surface-container-high);color:var(--fg-1)}
+.detail-pin-badge{
+  width:32px;height:32px;
+  background:var(--gradient-primary);
+  border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  margin-bottom:var(--space-lg);
+  box-shadow:var(--shadow-accent);
+}
+.detail-name{
+  font-family:var(--font-headline);
+  font-size:1rem;
+  font-weight:700;
+  color:var(--fg-1);
+  letter-spacing:-0.01em;
+  line-height:1.3;
+  margin-bottom:var(--space-xs);
+}
+.detail-city{
+  font-size:0.8rem;
+  color:var(--fg-muted);
+  margin-bottom:var(--space-md);
+  display:flex;
+  align-items:center;
+  gap:var(--space-xs);
+}
+.detail-note{
+  font-size:0.85rem;
+  color:var(--fg-2);
+  font-style:italic;
+  line-height:1.5;
+  background:var(--surface-container-low);
+  border-radius:var(--radius-md);
+  padding:var(--space-md);
+  margin-bottom:var(--space-lg);
+}
+.detail-comment{
+  font-size:0.78rem;
+  color:var(--fg-muted);
+  margin-bottom:var(--space-lg);
+}
+.detail-actions{
+  display:flex;
+  gap:var(--space-sm);
+  flex-wrap:wrap;
+}
+.btn-maps{
+  display:inline-flex;
+  align-items:center;
+  gap:var(--space-xs);
+  background:var(--gradient-primary);
+  color:var(--on-primary);
+  font-family:var(--font-body);
+  font-size:0.78rem;
+  font-weight:600;
+  padding:var(--space-sm) var(--space-lg);
+  border-radius:var(--radius-pill);
+  text-decoration:none;
+  box-shadow:var(--shadow-accent);
+  transition:filter 120ms;
+}
+.btn-maps:hover{filter:brightness(1.1)}
+.btn-copy{
+  display:inline-flex;
+  align-items:center;
+  gap:var(--space-xs);
+  background:var(--surface-container);
+  color:var(--fg-2);
+  font-family:var(--font-body);
+  font-size:0.78rem;
+  font-weight:500;
+  padding:var(--space-sm) var(--space-md);
+  border-radius:var(--radius-pill);
+  border:1px solid var(--border-strong);
+  cursor:pointer;
+  transition:all 120ms;
+}
+.btn-copy:hover{background:var(--surface-container-high);color:var(--fg-1)}
+
+/* ── LIST VIEW ── */
+.list-view{
+  display:none;
+  flex-direction:column;
+  height:calc(100vh - 65px);
+  overflow:hidden;
+}
+.list-view.active{display:flex}
+@media(max-width:768px){
+  .list-view{height:auto;overflow:visible}
+}
+.list-header{
+  padding:var(--space-xl) var(--space-3xl);
+  background:var(--surface-container-low);
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:var(--space-md);
+}
+.list-header h2{
+  font-family:var(--font-headline);
+  font-size:1rem;
+  font-weight:600;
+  color:var(--fg-1);
+}
+.list-count{
+  font-size:0.78rem;
+  color:var(--fg-muted);
+  font-family:var(--font-mono);
+}
+.list-table-wrap{
+  flex:1;
+  overflow-y:auto;
+  scrollbar-width:thin;
+  scrollbar-color:var(--outline-variant) transparent;
+}
+table.places-table{
+  width:100%;
+  border-collapse:collapse;
+}
+table.places-table th{
+  text-align:left;
+  font-family:var(--font-headline);
+  font-size:0.72rem;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.07em;
+  color:var(--fg-muted);
+  padding:var(--space-md) var(--space-xl);
+  background:var(--surface-container-low);
+  border-bottom:1px solid var(--border-strong);
+  cursor:pointer;
+  white-space:nowrap;
+  position:sticky;
+  top:0;
+  z-index:5;
+}
+table.places-table th:hover{color:var(--fg-1)}
+table.places-table th .sort-arrow{
+  display:inline-block;
+  margin-left:4px;
+  opacity:0.4;
+  transition:opacity 100ms;
+}
+table.places-table th.sorted .sort-arrow{opacity:1;color:var(--primary)}
+table.places-table td{
+  padding:var(--space-md) var(--space-xl);
+  border-bottom:1px solid var(--border);
+  font-size:0.83rem;
+  vertical-align:top;
+}
+table.places-table tr.row-hidden{display:none}
+table.places-table tr:hover td{background:var(--surface-container-low)}
+table.places-table tr.row-selected td{background:var(--surface-container)}
+.td-name{
+  font-family:var(--font-headline);
+  font-weight:600;
+  font-size:0.85rem;
+  color:var(--fg-1);
+  letter-spacing:-0.01em;
+  max-width:240px;
+}
+.td-name a{
+  color:inherit;
+  text-decoration:none;
+}
+.td-name a:hover{color:var(--primary)}
+.td-city{color:var(--fg-2);white-space:nowrap}
+.td-note{color:var(--fg-muted);font-style:italic;max-width:200px}
+mark{
+  background:var(--primary-fixed);
+  color:var(--primary-container);
+  border-radius:2px;
+  padding:0 2px;
+}
+
+/* ── NO RESULTS ── */
+.no-results{
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:var(--space-lg);
+  padding:var(--space-5xl) var(--space-2xl);
+  color:var(--fg-muted);
+  font-size:0.9rem;
+  text-align:center;
+}
+.no-results.visible{display:flex}
+
+/* ── RESPONSIVE ── */
+@media(max-width:480px){
+  .atlas-header{padding:var(--space-md) var(--space-lg)}
+  .search-box{min-width:140px}
+  .detail-panel{width:calc(100vw - 32px);left:var(--space-lg)}
+}
+
+/* ── MOTION ── */
+@media(prefers-reduced-motion:reduce){
+  .map-pin.drop-in{animation:none}
+  .detail-panel{transition:none}
+}
+
+/* ── MAP BG GRID ── */
+.map-grid-line{
+  stroke:rgba(100,120,160,0.07);
+  stroke-width:0.5;
+}
+
+/* ── SELECTED PIN PULSE ── */
+@keyframes pinPulse{
+  0%{r:8;opacity:0.5}
+  70%{r:14;opacity:0}
+  100%{r:14;opacity:0}
+}
+.pin-pulse{
+  animation:pinPulse 900ms ease-out infinite;
+  fill:var(--primary);
+  pointer-events:none;
+}
+</style>
+<!-- html-anything example style skin:start -->
+
+<style id="html-anything-example-style-skin">
+html[data-ha-style] {
+  --ha-style-accent: var(--primary, #a03b00);
+  --ha-style-accent-2: var(--secondary-container, #7b40e0);
+  --ha-style-badge-bg: rgba(255,255,255,.78);
+  --ha-style-badge-fg: var(--fg-1, #1e1b19);
+}
+html[data-ha-style] body {
+  position: relative;
+  background-attachment: fixed;
+}
+html[data-ha-style] body::before {
+  position: fixed;
+  z-index: 9999;
+  top: 12px;
+  right: 12px;
+  padding: 7px 10px;
+  border: 1px solid color-mix(in srgb, var(--ha-style-accent) 26%, transparent);
+  border-radius: 999px;
+  background: var(--ha-style-badge-bg);
+  color: var(--ha-style-badge-fg);
+  box-shadow: 0 6px 24px rgba(0,0,0,.10);
+  font: 700 10px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  backdrop-filter: blur(16px);
+}
+html[data-ha-style] .hero,
+html[data-ha-style] header.hero,
+html[data-ha-style] .top,
+html[data-ha-style] .header {
+  position: relative;
+}
+html[data-ha-style] .hero::before,
+html[data-ha-style] header.hero::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 6px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: var(--ha-style-accent);
+}
+
+html[data-ha-style="teaching"] {
+  --ha-style-accent: #0f766e;
+  --ha-style-accent-2: #f59e0b;
+  --primary: #0f766e;
+  --primary-container: #115e59;
+  --primary-fixed: #ccfbf1;
+  --secondary-container: #f59e0b;
+  --bg: #f6fbfb;
+  --surface: #f6fbfb;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #edf7f5;
+  --surface-container: #e5f1ee;
+  --surface-container-high: #d8e8e4;
+  --fg-1: #10201f;
+  --fg-2: #304c49;
+  --fg-muted: #647b78;
+  --border: rgba(15,118,110,.14);
+  --gradient-hero: linear-gradient(135deg, #0f766e 0%, #f59e0b 100%);
+  --gradient-text: linear-gradient(135deg, #0f766e 0%, #f59e0b 100%);
+}
+html[data-ha-style="teaching"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(rgba(15,118,110,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,118,110,.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+html[data-ha-style="teaching"] body::before { content: "teaching"; }
+
+html[data-ha-style="relationship"] {
+  --ha-style-accent: #be3455;
+  --ha-style-accent-2: #317b93;
+  --primary: #be3455;
+  --primary-container: #a52d4b;
+  --primary-fixed: #ffe1e8;
+  --secondary-container: #317b93;
+  --bg: #fff7f8;
+  --surface: #fff7f8;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #fff0f3;
+  --surface-container: #f8e7eb;
+  --surface-container-high: #efdde3;
+  --fg-1: #28181c;
+  --fg-2: #5f3e48;
+  --fg-muted: #8d6b75;
+  --border: rgba(190,52,85,.14);
+  --rose: #e25b74;
+  --blue: #4f95a8;
+  --gradient-hero: linear-gradient(135deg, #be3455 0%, #317b93 100%);
+  --gradient-text: linear-gradient(135deg, #be3455 0%, #317b93 100%);
+}
+html[data-ha-style="relationship"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(120deg, rgba(190,52,85,.08), transparent 36%),
+    linear-gradient(300deg, rgba(49,123,147,.08), transparent 40%);
+}
+html[data-ha-style="relationship"] body::before { content: "relationship"; }
+
+html[data-ha-style="timeline-story"] {
+  --ha-style-accent: #9a4b14;
+  --ha-style-accent-2: #2f6f73;
+  --primary: #9a4b14;
+  --primary-container: #7a3b10;
+  --primary-fixed: #ffe8cf;
+  --secondary-container: #2f6f73;
+  --bg: #fbf8f1;
+  --surface: #fbf8f1;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f4ecdf;
+  --surface-container: #eee3d3;
+  --surface-container-high: #e4d7c4;
+  --fg-1: #241b12;
+  --fg-2: #5c4b3d;
+  --fg-muted: #8a7968;
+  --border: rgba(154,75,20,.16);
+  --gradient-hero: linear-gradient(135deg, #9a4b14 0%, #2f6f73 100%);
+  --gradient-text: linear-gradient(135deg, #9a4b14 0%, #2f6f73 100%);
+}
+html[data-ha-style="timeline-story"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(90deg, transparent 0 calc(50% - 1px), rgba(154,75,20,.16) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)),
+    radial-gradient(circle at 50% 72px, rgba(154,75,20,.20) 0 4px, transparent 5px);
+  background-size: 100% 100%, 100% 96px;
+}
+html[data-ha-style="timeline-story"] body::before { content: "timeline story"; }
+html[data-ha-style="timeline-story"] .hero::before,
+html[data-ha-style="timeline-story"] header.hero::before {
+  width: 8px;
+  height: 72px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--ha-style-accent), var(--ha-style-accent-2));
+}
+
+html[data-ha-style="map-atlas"] {
+  --ha-style-accent: #17695a;
+  --ha-style-accent-2: #2f66a8;
+  --primary: #17695a;
+  --primary-container: #115346;
+  --primary-fixed: #daf5ec;
+  --secondary-container: #2f66a8;
+  --bg: #f4faf7;
+  --surface: #f4faf7;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eaf4ef;
+  --surface-container: #e0eee8;
+  --surface-container-high: #d4e6de;
+  --fg-1: #10221d;
+  --fg-2: #365149;
+  --fg-muted: #6e837b;
+  --border: rgba(23,105,90,.16);
+  --gradient-hero: linear-gradient(135deg, #17695a 0%, #2f66a8 100%);
+  --gradient-text: linear-gradient(135deg, #17695a 0%, #2f66a8 100%);
+}
+html[data-ha-style="map-atlas"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    repeating-linear-gradient(24deg, rgba(23,105,90,.09) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(116deg, rgba(47,102,168,.08) 0 1px, transparent 1px 42px);
+}
+html[data-ha-style="map-atlas"] body::before { content: "map atlas"; }
+html[data-ha-style="map-atlas"] .hero::before,
+html[data-ha-style="map-atlas"] header.hero::before {
+  width: 78px;
+  height: 78px;
+  border: 2px solid var(--ha-style-accent);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 55% 42%, var(--ha-style-accent) 0 4px, transparent 5px),
+    linear-gradient(45deg, transparent 47%, rgba(47,102,168,.55) 48% 52%, transparent 53%);
+}
+
+html[data-ha-style="network-map"] {
+  --ha-style-accent: #355f91;
+  --ha-style-accent-2: #a34d67;
+  --primary: #355f91;
+  --primary-container: #294b75;
+  --primary-fixed: #deebff;
+  --secondary-container: #a34d67;
+  --bg: #f7f8fb;
+  --surface: #f7f8fb;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eef1f7;
+  --surface-container: #e6ebf3;
+  --surface-container-high: #dbe2ee;
+  --fg-1: #151b24;
+  --fg-2: #3f4a5b;
+  --fg-muted: #737e8f;
+  --border: rgba(53,95,145,.16);
+  --gradient-hero: linear-gradient(135deg, #355f91 0%, #a34d67 100%);
+  --gradient-text: linear-gradient(135deg, #355f91 0%, #a34d67 100%);
+}
+html[data-ha-style="network-map"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(53,95,145,.22) 0 3px, transparent 4px),
+    radial-gradient(circle at 68% 34%, rgba(163,77,103,.18) 0 3px, transparent 4px),
+    linear-gradient(38deg, transparent 0 48%, rgba(53,95,145,.10) 49% 51%, transparent 52%);
+  background-size: 88px 88px, 118px 118px, 132px 132px;
+}
+html[data-ha-style="network-map"] body::before { content: "network map"; }
+html[data-ha-style="network-map"] .hero::before,
+html[data-ha-style="network-map"] header.hero::before {
+  width: 86px;
+  height: 46px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 18px 24px, var(--ha-style-accent) 0 7px, transparent 8px),
+    radial-gradient(circle at 44px 12px, var(--ha-style-accent-2) 0 6px, transparent 7px),
+    radial-gradient(circle at 70px 30px, var(--ha-style-accent) 0 7px, transparent 8px),
+    linear-gradient(22deg, transparent 0 31%, color-mix(in srgb, var(--ha-style-accent) 60%, transparent) 32% 36%, transparent 37%),
+    linear-gradient(160deg, transparent 0 43%, color-mix(in srgb, var(--ha-style-accent-2) 60%, transparent) 44% 48%, transparent 49%);
+}
+
+html[data-ha-style="dashboard"] {
+  --ha-style-accent: #0f5f6f;
+  --ha-style-accent-2: #8a5a16;
+  --primary: #0f5f6f;
+  --primary-container: #0b4c59;
+  --primary-fixed: #d8f2f5;
+  --secondary-container: #8a5a16;
+  --bg: #f5f7f9;
+  --surface: #f5f7f9;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eef2f5;
+  --surface-container: #e7edf1;
+  --surface-container-high: #dce5ea;
+  --fg-1: #111827;
+  --fg-2: #374151;
+  --fg-muted: #6b7280;
+  --border: rgba(15,95,111,.16);
+  --gradient-hero: linear-gradient(135deg, #0f5f6f 0%, #083344 100%);
+  --gradient-text: linear-gradient(135deg, #0f5f6f 0%, #083344 100%);
+}
+html[data-ha-style="dashboard"] body {
+  background-color: var(--bg) !important;
+  background-image: linear-gradient(90deg, rgba(15,95,111,.08) 0 1px, transparent 1px);
+  background-size: 18px 100%;
+}
+html[data-ha-style="dashboard"] body::before { content: "dashboard"; }
+html[data-ha-style="dashboard"] .hero::before,
+html[data-ha-style="dashboard"] header.hero::before {
+  width: 100%;
+  height: 3px;
+  margin-bottom: 14px;
+}
+
+html[data-ha-style="document"] {
+  --ha-style-accent: #8b3f1f;
+  --ha-style-accent-2: #2f6f73;
+  --primary: #8b3f1f;
+  --primary-container: #703319;
+  --primary-fixed: #ffe4d5;
+  --secondary-container: #2f6f73;
+  --bg: #fbfaf7;
+  --surface: #fbfaf7;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f2efe8;
+  --surface-container: #e9e4da;
+  --surface-container-high: #ded7c9;
+  --fg-1: #211d18;
+  --fg-2: #554d44;
+  --fg-muted: #82786c;
+  --border: rgba(139,63,31,.16);
+  --font-headline: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --gradient-hero: linear-gradient(135deg, #8b3f1f 0%, #2f6f73 100%);
+  --gradient-text: linear-gradient(135deg, #8b3f1f 0%, #2f6f73 100%);
+}
+html[data-ha-style="document"] body {
+  background-color: var(--bg) !important;
+  background-image: linear-gradient(90deg, rgba(139,63,31,.18) 0 4px, transparent 4px);
+  background-size: 100% 100%;
+}
+html[data-ha-style="document"] body::before { content: "document"; }
+html[data-ha-style="document"] .hero::before,
+html[data-ha-style="document"] header.hero::before {
+  width: 42px;
+  height: 42px;
+  border-radius: 0;
+  background: transparent;
+  border-top: 4px solid var(--ha-style-accent);
+  border-left: 4px solid var(--ha-style-accent);
+}
+
+html[data-ha-style="developer"] {
+  color-scheme: dark;
+  --ha-style-accent: #38bdf8;
+  --ha-style-accent-2: #f97316;
+  --ha-style-badge-bg: rgba(8,16,31,.82);
+  --ha-style-badge-fg: #dbeafe;
+  --primary: #38bdf8;
+  --primary-container: #0e7490;
+  --primary-fixed: #0f2942;
+  --secondary-container: #f97316;
+  --bg: #07111f;
+  --surface: #07111f;
+  --surface-container-lowest: #0b1426;
+  --surface-container-low: #0f1b31;
+  --surface-container: #13233d;
+  --surface-container-high: #1b2f50;
+  --fg-1: #f8fafc;
+  --fg-2: #cbd5e1;
+  --fg-muted: #94a3b8;
+  --border: rgba(148,163,184,.18);
+  --green: #34d399;
+  --red: #fb7185;
+  --yellow: #fbbf24;
+  --gradient-hero: linear-gradient(135deg, #0f172a 0%, #0e7490 100%);
+  --gradient-text: linear-gradient(135deg, #38bdf8 0%, #f97316 100%);
+}
+html[data-ha-style="developer"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(rgba(56,189,248,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,189,248,.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+html[data-ha-style="developer"] body::before { content: "developer"; }
+html[data-ha-style="developer"] pre,
+html[data-ha-style="developer"] code,
+html[data-ha-style="developer"] .mono {
+  color: inherit;
+}
+</style>
+<!-- html-anything example style skin:end -->
+</head>
+<body>
+<script>const DATA = {"places":[{"name":"Komugi Bakery, Akasaka, Tokyo","note":"the milk bread one — go early","mapsUrl":"https://www.google.com/maps/place/?q=35.6749,139.7363","comment":"","lat":35.6749,"lng":139.7363,"list":"input"},{"name":"Glitch Coffee, Kanda, Tokyo","note":"top of every list, blue hill blend","mapsUrl":"https://www.google.com/maps/place/?q=35.6916,139.7686","comment":"favorite of 2024","lat":35.6916,"lng":139.7686,"list":"input"},{"name":"Toyosu Fish Market, Tokyo","note":"tuna auction at 5am","mapsUrl":"https://www.google.com/maps/place/?q=35.6464,139.7826","comment":"","lat":35.6464,"lng":139.7826,"list":"input"},{"name":"Moss Garden, Saiho-ji, Kyoto","note":"reservation only, sutras first","mapsUrl":"https://www.google.com/maps/place/?q=35.0103,135.6812","comment":"Sam said it was magic","lat":35.0103,"lng":135.6812,"list":"input"},{"name":"Konnichi-pan Bakery, Kyoto","note":"perfect curry pan","mapsUrl":"https://www.google.com/maps/place/?q=35.0117,135.7681","comment":"","lat":35.0117,"lng":135.7681,"list":"input"},{"name":"Hosoo Gallery, Nishijin, Kyoto","note":"textile gallery in old loom workshop","mapsUrl":"https://www.google.com/maps/place/?q=35.0327,135.7532","comment":"","lat":35.0327,"lng":135.7532,"list":"input"},{"name":"Caffè al Bicerin, Turin","note":"four hundred years of bicerin","mapsUrl":"https://www.google.com/maps/place/?q=45.0747,7.6803","comment":"","lat":45.0747,"lng":7.6803,"list":"input"},{"name":"Trattoria Ai Cugnai, Venice","note":"little seafood place near Accademia","mapsUrl":"https://www.google.com/maps/place/?q=45.4314,12.3262","comment":"Giulia rec","lat":45.4314,"lng":12.3262,"list":"input"},{"name":"Pasticceria Marchesi, Milan","note":"Galleria — pistachio croissant","mapsUrl":"https://www.google.com/maps/place/?q=45.4666,9.1898","comment":"","lat":45.4666,"lng":9.1898,"list":"input"},{"name":"Tartine Manufactory, San Francisco","note":"fennel sausage focaccia","mapsUrl":"https://www.google.com/maps/place/?q=37.7611,-122.4115","comment":"","lat":37.7611,"lng":-122.4115,"list":"input"},{"name":"Devil's Teeth Baking Co, Outer Sunset, SF","note":"breakfast sandwich, surf after","mapsUrl":"https://www.google.com/maps/place/?q=37.7588,-122.5046","comment":"","lat":37.7588,"lng":-122.5046,"list":"input"},{"name":"Heath Ceramics, Sausalito","note":"factory tour second saturday","mapsUrl":"https://www.google.com/maps/place/?q=37.8581,-122.4787","comment":"","lat":37.8581,"lng":-122.4787,"list":"input"},{"name":"Sey Coffee, Bushwick, Brooklyn","note":"light roast cathedral","mapsUrl":"https://www.google.com/maps/place/?q=40.7090,-73.9276","comment":"","lat":40.709,"lng":-73.9276,"list":"input"},{"name":"Court Street Grocers, Carroll Gardens","note":"best italian sandwich in nyc","mapsUrl":"https://www.google.com/maps/place/?q=40.6831,-73.9978","comment":"","lat":40.6831,"lng":-73.9978,"list":"input"},{"name":"The Cloisters, Manhattan","note":"unicorn tapestries","mapsUrl":"https://www.google.com/maps/place/?q=40.8649,-73.9319","comment":"","lat":40.8649,"lng":-73.9319,"list":"input"},{"name":"Café de Flore, Paris","note":"6th, hot chocolate","mapsUrl":"https://www.google.com/maps/place/?q=48.8540,2.3328","comment":"","lat":48.854,"lng":2.3328,"list":"input"},{"name":"Du Pain et des Idées, Paris","note":"escargot pistachio, mondays only","mapsUrl":"https://www.google.com/maps/place/?q=48.8714,2.3611","comment":"Mira raved about this","lat":48.8714,"lng":2.3611,"list":"input"},{"name":"Atelier Brancusi, Paris","note":"Pompidou plaza, free, weird hours","mapsUrl":"https://www.google.com/maps/place/?q=48.8606,2.3522","comment":"","lat":48.8606,"lng":2.3522,"list":"input"},{"name":"Manteigaria, Chiado, Lisbon","note":"still warm pastel de nata","mapsUrl":"https://www.google.com/maps/place/?q=38.7104,-9.1432","comment":"","lat":38.7104,"lng":-9.1432,"list":"input"},{"name":"Miradouro da Senhora do Monte, Lisbon","note":"best sunset, get there 20m early","mapsUrl":"https://www.google.com/maps/place/?q=38.7194,-9.1347","comment":"","lat":38.7194,"lng":-9.1347,"list":"input"},{"name":"LX Factory, Alcântara, Lisbon","note":"old printing factory now bookstore + bars","mapsUrl":"https://www.google.com/maps/place/?q=38.7035,-9.1768","comment":"","lat":38.7035,"lng":-9.1768,"list":"input"},{"name":"Mercado Roma, Mexico City","note":"tacos al pastor third stall on the right","mapsUrl":"https://www.google.com/maps/place/?q=19.4154,-99.1697","comment":"","lat":19.4154,"lng":-99.1697,"list":"input"},{"name":"Casa Luis Barragán, Mexico City","note":"reserve weeks ahead","mapsUrl":"https://www.google.com/maps/place/?q=19.4117,-99.2073","comment":"architecture pilgrimage","lat":19.4117,"lng":-99.2073,"list":"input"},{"name":"Café Tortoise, Roma Norte, CDMX","note":"espresso + concha morning","mapsUrl":"https://www.google.com/maps/place/?q=19.4181,-99.1690","comment":"","lat":19.4181,"lng":-99.169,"list":"input"},{"name":"Fika Hagaparken, Stockholm","note":"summer cinnamon bun in the park","mapsUrl":"https://www.google.com/maps/place/?q=59.3580,18.0519","comment":"","lat":59.358,"lng":18.0519,"list":"input"},{"name":"Skansen Open-Air Museum, Stockholm","note":"midsommar dancing","mapsUrl":"https://www.google.com/maps/place/?q=59.3253,18.1031","comment":"","lat":59.3253,"lng":18.1031,"list":"input"},{"name":"Reykjavík Roasters, Reykjavik","note":"stop on the way to the airport","mapsUrl":"https://www.google.com/maps/place/?q=64.1466,-21.9322","comment":"","lat":64.1466,"lng":-21.9322,"list":"input"},{"name":"Cafe Loki, Reykjavik","note":"rye bread ice cream — wild","mapsUrl":"https://www.google.com/maps/place/?q=64.1419,-21.9407","comment":"","lat":64.1419,"lng":-21.9407,"list":"input"},{"name":"Marrakech Riad El Fenn, Marrakech","note":"staying here in spring","mapsUrl":"https://www.google.com/maps/place/?q=31.6275,-7.9908","comment":"booked for april","lat":31.6275,"lng":-7.9908,"list":"input"},{"name":"Le Jardin Secret, Marrakech","note":"quiet courtyard in the medina","mapsUrl":"https://www.google.com/maps/place/?q=31.6321,-7.9881","comment":"","lat":31.6321,"lng":-7.9881,"list":"input"},{"name":"Biblioteca Vasconcelos, Mexico City","note":"floating library, get a window seat","mapsUrl":"https://www.google.com/maps/place/?q=19.4497,-99.1517","comment":"","lat":19.4497,"lng":-99.1517,"list":"input"},{"name":"Museum of Old & New Art (Mona), Hobart","note":"ferry from Hobart waterfront","mapsUrl":"https://www.google.com/maps/place/?q=-42.7864,147.2629","comment":"2025 maybe?","lat":-42.7864,"lng":147.2629,"list":"input"},{"name":"Bondi Icebergs Pool, Sydney","note":"ocean pool, swim before 9am","mapsUrl":"https://www.google.com/maps/place/?q=-33.8941,151.2741","comment":"","lat":-33.8941,"lng":151.2741,"list":"input"},{"name":"Mr Wong, Sydney","note":"yum cha lunch, book ahead","mapsUrl":"https://www.google.com/maps/place/?q=-33.8665,151.2098","comment":"","lat":-33.8665,"lng":151.2098,"list":"input"}],"lists":[{"name":"input","count":34}],"cities":{"Tokyo":3,"Kyoto":3,"Turin":1,"Venice":1,"Milan":1,"San Francisco":1,"SF":1,"Sausalito":1,"Brooklyn":1,"Carroll Gardens":1,"Manhattan":1,"Paris":3,"Lisbon":3,"Mexico City":3,"CDMX":1,"Stockholm":2,"Reykjavik":2,"Marrakech":2,"Hobart":1,"Sydney":2},"countries":[]};</script>
+
+<div class="map-shell atlas-shell">
+  <!-- HEADER -->
+  <header class="atlas-header">
+    <div class="atlas-title">
+      <div class="atlas-title-pin"></div>
+      Sam Reyes — Saved Places
+    </div>
+    <div class="atlas-header-right">
+      <div class="search-box">
+        <span class="search-icon">⌕</span>
+        <input type="text" id="searchInput" placeholder="Search places…" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="view-toggle">
+        <button class="view-btn active" id="btnMap" onclick="switchView('map')">🗺 Map</button>
+        <button class="view-btn" id="btnList" onclick="switchView('list')">≡ List</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAP VIEW -->
+  <div id="mapView" style="display:flex;flex-direction:row;height:calc(100vh - 65px)">
+    <div class="atlas-body" style="width:100%;display:grid">
+      <!-- STAGE -->
+      <div class="atlas-stage spatial-stage" id="atlasStage">
+        <svg id="worldSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" preserveAspectRatio="xMidYMid meet"></svg>
+        <div class="map-tooltip" id="mapTooltip"></div>
+        <div class="zoom-controls">
+          <button class="zoom-btn" id="zoomIn" title="Zoom in">+</button>
+          <button class="zoom-btn" id="zoomOut" title="Zoom out">−</button>
+          <button class="zoom-btn" id="zoomReset" title="Reset" style="font-size:0.8rem">⊙</button>
+        </div>
+        <!-- Detail panel -->
+        <div class="detail-panel" id="detailPanel">
+          <button class="detail-close" id="detailClose">✕</button>
+          <div class="detail-pin-badge"></div>
+          <div class="detail-name" id="detailName"></div>
+          <div class="detail-city" id="detailCity">📍 <span></span></div>
+          <div class="detail-note" id="detailNote"></div>
+          <div class="detail-comment" id="detailComment"></div>
+          <div class="detail-actions">
+            <a class="btn-maps" id="detailMapsLink" href="#" target="_blank" rel="noopener">↗ Google Maps</a>
+            <button class="btn-copy" id="detailCopyBtn">⎘ Copy name</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- DRAWER -->
+      <div class="place-drawer" id="placeDrawer">
+        <div class="atlas-stats">
+          <div class="atlas-personal-note movement-note" id="personalNote">Loading your atlas…</div>
+          <div class="stats-row">
+            <div class="stat-pill">
+              <span class="stat-num" id="statTotal">—</span>
+              <span class="stat-label">Places</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-num" id="statCountries">—</span>
+              <span class="stat-label">Countries</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-num" id="statCities">—</span>
+              <span class="stat-label">Cities</span>
+            </div>
+          </div>
+        </div>
+        <div class="filter-strip period-scrubber period-filter" id="filterStrip"></div>
+        <div class="waypoint-browser" id="waypointBrowser"></div>
+        <div class="no-results" id="noResults">
+          <span style="font-size:2rem">🗺</span>
+          <span>No places match your search.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIST VIEW -->
+  <div class="list-view" id="listView">
+    <div class="list-header">
+      <h2>All Places</h2>
+      <span class="list-count" id="listCount">— places</span>
+    </div>
+    <div class="list-table-wrap">
+      <table class="places-table" id="placesTable">
+        <thead>
+          <tr>
+            <th onclick="sortTable('name')" data-col="name"># Name <span class="sort-arrow">↕</span></th>
+            <th onclick="sortTable('city')" data-col="city">City <span class="sort-arrow">↕</span></th>
+            <th>Note</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>/* html-anything: truncated generated script disabled so this checked-in example remains valid HTML.
+
+// ─── World Map Path Data (simplified Natural Earth) ───────────────────────────
+// Simplified world country polygons as SVG path strings, mapped to approximate bounds.
+// Uses Miller projection adapted to 960x500 viewBox.
+
+// Projection: Simple equirectangular-like mapping
+// lng -180..180 → x 0..960
+// lat -90..90 → y 500..0 (flipped)
+function project(lng, lat) {
+  const x = (lng + 180) * (960 / 360);
+  const y = (90 - lat) * (500 / 180);
+  return [x, y];
+}
+
+// Country bounding boxes for simplified rendering
+// [name, paths_array_of_[lng,lat]_rings]
+const WORLD_COUNTRIES = [
+  // North America
+  ["us",[[[-125,49],[-67,49],[-67,25],[-80,25],[-85,30],[-90,29],[-97,26],[-100,28],[-114,32],[-117,32],[-124,37],[-125,49]]]],
+  ["ca",[[[-141,70],[-52,70],[-52,47],[-70,45],[-75,45],[-80,43],[-83,46],[-88,48],[-95,49],[-100,49],[-115,49],[-120,49],[-125,49],[-130,54],[-135,58],[-140,60],[-141,70]]]],
+  ["mx",[[[-117,32],[-97,26],[-90,18],[-87,16],[-90,18],[-95,19],[-97,22],[-100,28],[-114,32],[-117,32]]]],
+  ["cu",[[[-85,22],[-75,20],[-74,20],[-78,22],[-85,23],[-85,22]]]],
+  // South America
+  ["br",[[[-73,-33],[-35,-5],[-35,5],[-50,0],[-53,-34],[-73,-33]]]],
+  ["ar",[[[-73,-55],[-53,-34],[-50,-34],[-53,-55],[-68,-55],[-73,-55]]]],
+  ["co",[[[-77,8],[-67,8],[-67,2],[-75,-0],[-78,2],[-77,8]]]],
+  ["pe",[[[-81,-2],[-70,-2],[-70,-18],[-75,-16],[-80,-8],[-81,-2]]]],
+  ["cl",[[[-70,-18],[-66,-18],[-66,-55],[-70,-55],[-70,-18]]]],
+  // Europe
+  ["gb",[[[-5,50],[-5,59],[2,59],[2,50],[-5,50]]]],
+  ["fr",[[[-5,43],[8,43],[8,51],[-5,51],[-5,43]]]],
+  ["de",[[[ 6,47],[15,47],[15,55],[ 6,55],[ 6,47]]]],
+  ["es",[[[-9,36],[ 4,36],[ 4,44],[-9,44],[-9,36]]]],
+  ["pt",[[[-9,37],[-6,37],[-6,42],[-9,42],[-9,37]]]],
+  ["it",[[[ 7,38],[16,38],[16,47],[ 7,47],[ 7,38]]]],
+  ["se",[[[11,56],[24,56],[24,69],[11,69],[11,56]]]],
+  ["no",[[[4,57],[31,57],[31,71],[4,71],[4,57]]]],
+  ["is",[[[-25,63],[-13,63],[-13,67],[-25,67],[-25,63]]]],
+  ["pl",[[[14,49],[24,49],[24,55],[14,55],[14,49]]]],
+  ["nl",[[[3,51],[7,51],[7,54],[3,54],[3,51]]]],
+  ["be",[[[2,49],[6,49],[6,51],[2,51],[2,49]]]],
+  ["ch",[[[5,46],[10,46],[10,48],[5,48],[5,46]]]],
+  ["at",[[[9,46],[18,46],[18,49],[9,49],[9,46]]]],
+  ["gr",[[[20,35],[27,35],[27,42],[20,42],[20,35]]]],
+  ["tr",[[[26,36],[45,36],[45,42],[26,42],[26,36]]]],
+  ["ua",[[[22,44],[40,44],[40,52],[22,52],[22,44]]]],
+  ["ru",[[[30,50],[180,50],[180,75],[30,75],[30,50]]]],
+  // Africa
+  ["ma",[[[-6,28],[2,28],[2,36],[-6,36],[-6,28]]]],
+  ["eg",[[[25,22],[37,22],[37,32],[25,32],[25,22]]]],
+  ["ng",[[[3,4],[15,4],[15,14],[3,14],[3,4]]]],
+  ["za",[[[16,-35],[33,-35],[33,-22],[16,-22],[16,-35]]]],
+  ["ke",[[[34,-4],[42,-4],[42,4],[34,4],[34,-4]]]],
+  ["et",[[[33,3],[48,3],[48,15],[33,15],[33,3]]]],
+  ["cd",[[[12,-13],[31,-13],[31,5],[12,5],[12,-13]]]],
+  ["tz",[[[29,-12],[40,-12],[40,-1],[29,-1],[29,-12]]]],
+  ["gh",[[[−3,5],[1,5],[1,11],[-3,11],[-3,5]]]],
+  // Middle East
+  ["sa",[[[36,16],[55,16],[55,32],[36,32],[36,16]]]],
+  ["ir",[[[44,25],[63,25],[63,40],[44,40],[44,25]]]],
+  ["iq",[[[38,29],[49,29],[49,38],[38,38],[38,29]]]],
+  ["il",[[[34,29],[36,29],[36,33],[34,33],[34,29]]]],
+  // Asia
+  ["cn",[[[73,18],[135,18],[135,54],[73,54],[73,18]]]],
+  ["jp",[[[130,31],[145,31],[145,45],[130,45],[130,31]]]],
+  ["in",[[[68,8],[97,8],[97,36],[68,36],[68,8]]]],
+  ["id",[[[95,-10],[141,-10],[141,6],[95,6],[95,-10]]]],
+  ["kz",[[[51,41],[87,41],[87,55],[51,55],[51,41]]]],
+  ["th",[[[97,5],[106,5],[106,20],[97,20],[97,5]]]],
+  ["vn",[[[102,8],[110,8],[110,23],[102,23],[102,8]]]],
+  ["kr",[[[126,34],[130,34],[130,39],[126,39],[126,34]]]],
+  ["ph",[[[117,5],[127,5],[127,20],[117,20],[117,5]]]],
+  ["my",[[[99,1],[119,1],[119,8],[99,8],[99,1]]]],
+  // Oceania
+  ["au",[[[113,-43],[154,-43],[154,-10],[113,-10],[113,-43]]]],
+  ["nz",[[[166,-47],[178,-47],[178,-34],[166,-34],[166,-47]]]],
+  // Central America / Caribbean
+  ["gt",[[[-92,14],[-89,14],[-89,18],[-92,18],[-92,14]]]],
+  ["cr",[[[-85,8],[-82,8],[-82,11],[-85,11],[-85,8]]]],
+  // Others
+  ["tz",[[[29,-12],[40,-12],[40,-1],[29,-1],[29,-12]]]],
+];
+
+// ─── Utilities ────────────────────────────────────────────────────────────────
+function getCityFromPlace(p) {
+  // Try to extract city from name
+  const name = p.name || '';
+  // check against known cities
+  const cities = ['Tokyo','Kyoto','Paris','Lisbon','Mexico City','Stockholm','Reykjavik','Marrakech','Sydney','Turin','New York','London','Barcelona','Rome','Berlin','Amsterdam','Copenhagen','Vienna','Prague','Budapest','Osaka','Seville','Dubrovnik','Istanbul','Athens','Santorini'];
+  for (const c of cities) {
+    if (name.includes(c)) return c;
+  }
+  // Try comma-separated
+  const parts = name.split(',').map(s => s.trim());
+  if (parts.length >= 2) return parts[parts.length - 2];
+  return parts[parts.length - 1] || 'Unknown';
+}
+
+function getCountryFromCoords(lat, lng) {
+  if (lat > 20 && lat < 50 && lng > 120 && lng < 150) return 'JP';
+  if (lat > 30 && lat < 50 && lng > 125 && lng < 145) return 'JP';
+  if (lat > 34 && lat < 46 && lng > 130 && lng < 146) return 'JP';
+  if (lat > 24 && lat < 50 && lng > 120 && lng < 150) return 'JP';
+  if (lat > 30 && lat < 46 && lng > 129 && lng < 148) return 'JP';
+  if (lat > 30 && lat < 47 && lng > 128 && lng < 150) return 'JP';
+  if (lat > 30 && lat < 46 && lng > 128 && lng < 148) return 'JP';
+  // Japan
+  if (lat >= 30 && lat <= 46 && lng >= 129 && lng <= 148) return 'JP';
+  // France
+  if (lat >= 42 && lat <= 51 && lng >= -5 && lng <= 10) return 'FR';
+  // Portugal
+  if (lat >= 36 && lat <= 42 && lng >= -10 && lng <= -6) return 'PT';
+  // Mexico
+  if (lat >= 14 && lat <= 33 && lng >= -118 && lng <= -86) return 'MX';
+  // Sweden
+  if (lat >= 55 && lat <= 70 && lng >= 10 && lng <= 25) return 'SE';
+  // Iceland
+  if (lat >= 63 && lat <= 67 && lng >= -26 && lng <= -13) return 'IS';
+  // Morocco
+  if (lat >= 27 && lat <= 36 && lng >= -14 && lng <= 0) return 'MA';
+  // Australia
+  if (lat >= -44 && lat <= -10 && lng >= 112 && lng <= 155) return 'AU';
+  // Italy
+  if (lat >= 36 && lat <= 47 && lng >= 6 && lng <= 18) return 'IT';
+  // Peru
+  if (lat >= -18 && lat <= -2 && lng >= -82 && lng <= -68) return 'PE';
+  // USA
+  if (lat >= 24 && lat <= 50 && lng >= -126 && lng <= -65) return 'US';
+  return '??';
+}
+
+// ─── App State ────────────────────────────────────────────────────────────────
+let places = [];
+let filteredPlaces = [];
+let selectedCity = null;
+let selectedPlace = null;
+let searchQuery = '';
+let currentView = 'map';
+let sortCol = null, sortDir = 1;
+
+// SVG transform state
+let svgTransform = { x: 0, y: 0, scale: 1 };
+let isDragging = false, dragStart = { x: 0, y: 0 }, transformStart = { x: 0, y: 0 };
+
+// ─── Init ─────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  // Normalize data
+  const raw = (DATA && DATA.places) ? DATA.places : [];
+  places = raw.map((p, i) => ({
+    ...p,
+    id: i,
+    city: getCityFromPlace(p),
+    country: getCountryFromCoords(p.lat, p.lng),
+  }));
+  filteredPlaces = [...places];
+
+  buildStats();
+  buildFilterChips();
+  buildMap();
+  buildWaypointBrowser();
+  buildTable();
+  setupSearch();
+  setupZoom();
+  setupDrag();
+  animatePinsIn();
+  setupDetailClose();
+});
+
+// ─── Stats ────────────────────────────────────────────────────────────────────
+function buildStats() {
+  const total = places.length;
+  const countries = [...new Set(places.map(p => p.country).filter(c => c !== '??'))].length;
+  const cities = [...new Set(places.map(p => p.city))].length;
+
+  document.getElementById('statTotal').textContent = total;
+  document.getElementById('statCountries').textContent = countries;
+  document.getElementById('statCities').textContent = cities;
+
+  // Personal note
+  const topCities = DATA.topCities || [];
+  const topCity = topCities[0];
+  let note = `You've saved ${total} place${total !== 1 ? 's' : ''} across ${cities} cities and ${countries} countries`;
+  if (topCity) note += ` — ${topCity.count} of them are in ${topCity.name}`;
+  note += '.';
+  document.getElementById('personalNote').textContent = note;
+}
+
+// ─── Filter Chips ─────────────────────────────────────────────────────────────
+function buildFilterChips() {
+  const strip = document.getElementById('filterStrip');
+  const cityCounts = {};
+  places.forEach(p => { cityCounts[p.city] = (cityCounts[p.city] || 0) + 1; });
+  const sorted = Object.entries(cityCounts).sort((a,b) => b[1]-a[1]);
+
+  const allChip = document.createElement('button');
+  allChip.className = 'city-chip active';
+  allChip.id = 'chip-all';
+  allChip.innerHTML = `All <span class="chip-count">${places.length}</span>`;
+  allChip.onclick = () => filterByCity(null);
+  strip.appendChild(allChip);
+
+  sorted.forEach(([city, count]) => {
+    const chip = document.createElement('button');
+    chip.className = 'city-chip';
+    chip.id = `chip-${city}`;
+    chip.innerHTML = `${city} <span class="chip-count">${count}</span>`;
+    chip.onclick = () => filterByCity(city);
+    strip.appendChild(chip);
+  });
+}
+
+function filterByCity(city) {
+  selectedCity = city;
+  document.querySelectorAll('.city-chip').forEach(c => c.classList.remove('active'));
+  const active = city ? document.getElementById(`chip-${city}`) : document.getElementById('chip-all');
+  if (active) active.classList.add('active');
+  applyFilters();
+}
+
+// ─── Filtering ────────────────────────────────────────────────────────────────
+function applyFilters() {
+  const q = searchQuery.toLowerCase();
+  filteredPlaces = places.filter(p => {
+    const cityMatch = !selectedCity || p.city === selectedCity;
+    const searchMatch = !q || p.name.toLowerCase().includes(q) || (p.note||'').toLowerCase().includes(q) || p.city.toLowerCase().includes(q);
+    return cityMatch && searchMatch;
+  });
+  updateWaypointBrowser();
+  updateMapPins();
+  updateTable();
+}
+
+// ─── World Map ────────────────────────────────────────────────────────────────
+function buildMap() {
+  const svg = document.getElementById('worldSvg');
+  
+  // Background
+  const bg = document.createElementNS('http://www.w3.org/2000/svg','rect');
+  bg.setAttribute('width','960');
+  bg.setAttribute('height','500');
+  bg.setAttribute('fill','var(--map-water)');
+  svg.appendChild(bg);
+
+  // Grid lines
+  const gridG = document.createElementNS('http://www.w3.org/2000/svg','g');
+  gridG.setAttribute('class','grid-layer');
+  for (let lng = -180; lng <= 180; lng += 30) {
+    const [x] = project(lng, 0);
+    const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+    line.setAttribute('x1', x); line.setAttribute('y1', 0);
+    line.setAttribute('x2', x); line.setAttribute('y2', 500);
+    line.setAttribute('class','map-grid-line');
+    gridG.appendChild(line);
+  }
+  for (let lat = -90; lat <= 90; lat += 30) {
+    const [,y] = project(0, lat);
+    const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+    line.setAttribute('x1', 0); line.setAttribute('y1', y);
+    line.setAttribute('x2', 960); line.setAttribute('y2', y);
+    line.setAttribute('class','map-grid-line');
+    gridG.appendChild(line);
+  }
+  svg.appendChild(gridG);
+
+  // Countries
+  const countryG = document.createElementNS('http://www.w3.org/2000/svg','g');
+  countryG.setAttribute('class','country-layer');
+  WORLD_COUNTRIES.forEach(([id, rings]) => {
+    rings.forEach(ring => {
+      const path = document.createElementNS('http://www.w3.org/2000/svg','polygon');
+      const pts = ring.map(([lng,lat]) => project(lng,lat).join(',')).join(' ');
+      path.setAttribute('points', pts);
+      path.setAttribute('fill','var(--map-land)');
+      path.setAttribute('stroke','var(--map-border)');
+      path.setAttribute('stroke-width','0.5');
+      path.setAttribute('data-country', id);
+      countryG.appendChild(path);
+    });
+  });
+  svg.appendChild(countryG);
+
+  // Pins layer
+  const pinG = document.createElementNS('http://www.w3.org/2000/svg','g');
+  pinG.setAttribute('class','pins-layer');
+  pinG.setAttribute('id','pinsLayer');
+  svg.appendChild(pinG);
+
+  // Pan group wrapper
+  const panG = document.createElementNS('http://www.w3.org/2000/svg','g');
+  panG.setAttribute('id','panGroup');
+  // Move all children into panG
+  while (svg.firstChild) panG.appendChild(svg.firstChild);
+  svg.appendChild(panG);
+
+  renderPins();
+}
+
+function renderPins() {
+  const panGroup = document.getElementById('panGroup');
+  let pinLayer = panGroup.querySelector('.pins-layer');
+  if (!pinLayer) {
+    // Re-get after restructure
+    pinLayer = document.getElementById('pinsLayer');
+  }
+  if (!pinLayer) return;
+  pinLayer.innerHTML = '';
+
+  // Group by close proximity (cluster within ~15px at scale 1)
+  const CLUSTER_DIST = 12;
+  const clusters = [];
+  places.forEach(p => {
+    const [px, py] = project(p.lng, p.lat);
+    let found = false;
+    for (const cl of clusters) {
+      const dx = cl.cx - px, dy = cl.cy - py;
+      if (Math.sqrt(dx*dx + dy*dy) < CLUSTER_DIST) {
+        cl.places.push(p);
+        cl.cx = cl.places.reduce((s,pp) => s + project(pp.lng, pp.lat)[0], 0) / cl.places.length;
+        cl.cy = cl.places.reduce((s,pp) => s + project(pp.lng, pp.lat)[1], 0) / cl.places.length;
+        found = true;
+        break;
+      }
+    }
+    if (!found) clusters.push({ cx: px, cy: py, places: [p] });
+  });
+
+  clusters.forEach((cl, ci) => {
+    if (cl.places.length === 1) {
+      renderSinglePin(pinLayer, cl.places[0], ci);
+    } else {
+      renderClusterPin(pinLayer, cl, ci);
+    }
+  });
+}
+
+function renderSinglePin(layer, p, delay) {
+  const [px, py] = project(p.lng, p.lat);
+  const g = document.createElementNS('http://www.w3.org/2000/svg','g');
+  g.setAttribute('class','map-pin');
+  g.setAttribute('data-id', p.id);
+  g.setAttribute('transform',`translate(${px},${py})`);
+  g.style.animationDelay = `${delay * 12}ms`;
+
+  // Pin shape: teardrop
+  const head = document.createElementNS('http://www.w3.org/2000/svg','circle');
+  head.setAttribute('cx','0'); head.setAttribute('cy','-10');
+  head.setAttribute('r','6');
+  head.setAttribute('class','pin-head');
+  
+  const stem = document.createElementNS('http://www.w3.org/2000/svg','polygon');
+  stem.setAttribute('points','-3,-8 3,-8 0,0');
+  stem.setAttribute('class','pin-stem');
+
+  const hitArea = document.createElementNS('http://www.w3.org/2000/svg','circle');
+  hitArea.setAttribute('cx','0'); hitArea.setAttribute('cy','-10');
+  hitArea.setAttribute('r','12');
+  hitArea.setAttribute('fill','transparent');
+
+  g.appendChild(stem);
+  g.appendChild(head);
+  g.appendChild(hitArea);
+
+  g.addEventListener('click', (e) => { e.stopPropagation(); selectPlace(p); });
+  g.addEventListener('mouseenter', (e) => showTooltip(e, p.name, p.note));
+  g.addEventListener('mouseleave', hideTooltip);
+
+  layer.appendChild(g);
+}
+
+function renderClusterPin(layer, cl, delay) {
+  const g = document.createElementNS('http://www.w3.org/2000/svg','g');
+  g.setAttribute('class','pin-cluster');
+  g.setAttribute('transform',`translate(${cl.cx},${cl.cy})`);
+
+  const circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
+  circle.setAttribute('cx','0'); circle.setAttribute('cy','0');
+  circle.setAttribute('r', Math.min(14, 8 + cl.places.length));
+  circle.setAttribute('fill','var(--primary)');
+  circle.setAttribute('stroke','var(--on-primary)');
+  circle.setAttribute('stroke-width','1.5');
+  circle.setAttribute('opacity','0.9');
+
+  const text = document.createElementNS('http://www.w3.org/2000/svg','text');
+  text.setAttribute('x','0'); text.setAttribute('y','4');
+  text.setAttribute('text-anchor','middle');
+  text.setAttribute('font-size','9');
+  text.setAttribute('font-family','var(--font-headline)');
+  text.setAttribute('font-weight','700');
+  text.setAttribute('fill','white');
+  text.textContent = cl.places.length;
+
+  g.appendChild(circle);
+  g.appendChild(text);
+
+  g.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (cl.places.length === 1) {
+      selectPlace(cl.places[0]);
+    } else {
+      // Filter to first place city
+      filterByCity(cl.places[0].city);
+    }
+  });
+  g.addEventListener('mouseenter', (e) => {
+    const names = cl.places.slice(0,3).map(p => p.name.split(',')[0]).join(', ');
+    showTooltip(e, `${cl.places.length} places`, names + (cl.places.length > 3 ? '…' : ''));
+  });
+  g.addEventListener('mouseleave', hideTooltip);
+
+  layer.appendChild(g);
+}
+
+function updateMapPins() {
+  const allPins = document.querySelectorAll('.map-pin');
+  allPins.forEach(pin => {
+    const id = parseInt(pin.getAttribute('data-id'));
+    const visible = filteredPlaces.some(p => p.id === id);
+    pin.style.opacity = visible ? '1' : '0.15';
+    pin.style.pointerEvents = visible ? 'all' : 'none';
+  });
+}
+
+function animatePinsIn() {
+  setTimeout(() => {
+    document.querySelectorAll('.map-pin').forEach(pin => {
+      pin.classList.add('drop-in');
+    });
+  }, 200);
+}
+
+// ─── Tooltip ──────────────────────────────────────────────────────────────────
+function showTooltip(evt, name, note) {
+  const tt = document.getElementById('mapTooltip');
+  const stage = document.getElementById('atlasStage');
+  const rect = stage.getBoundingClientRect();
+  const x = evt.clientX - rect.left + 12;
+  const y = evt.clientY - rect.top - 10;
+  tt.innerHTML = `<strong>${escapeHtml(name.split(',')[0])}</strong>${note ? '<span>' + escapeHtml(note) + '</span>' : ''}`;
+  tt.style.left = Math.min(x, rect.width - 220) + 'px';
+  tt.style.top = Math.max(y - 50, 8) + 'px';
+  tt.style.display = 'block';
+}
+function hideTooltip() {
+  document.getElementById('mapTooltip').style.display = 'none';
+}
+
+// ─── Select Place ─────────────────────────────────────────────────────────────
+function selectPlace(p) {
+  selectedPlace = p;
+  hideTooltip();
+
+  // Update pin highlight
+  document.querySelectorAll('.map-pin').forEach(el => el.classList.remove('selected'));
+  const pin = document.querySelector(`.map-pin[data-id="${p.id}"]`);
+  if (pin) pin.classList.add('selected');
+
+  // Update detail panel
+  document.getElementById('detailName').textContent = p.name.split(',')[0] || p.name;
+  document.getElementById('detailCity').querySelector('span').textContent = p.city;
+  const note = p.note || p.comment || '';
+  const detailNote = document.getElementById('detailNote');
+  if (note) { detailNote.textContent = `"${note}"`; detailNote.style.display = 'block'; }
+  else detailNote.style.display = 'none';
+  const detailComment = document.getElementById('detailComment');
+  if (p.comment && p.comment !== p.note) { detailComment.textContent = p.comment; detailComment.style.display = 'block'; }
+  else detailComment.style.display = 'none';
+  document.getElementById('detailMapsLink').href = p.mapsUrl || '#';
+  document.getElementById('detailPanel').classList.add('open');
+
+  // Copy btn
+  document.getElementById('detailCopyBtn').onclick = () => {
+    navigator.clipboard.writeText(p.name).then(() => {
+      const btn = document.getElementById('detailCopyBtn');
+      btn.textContent = '✓ Copied';
+      setTimeout(() => { btn.textContent = '⎘ Copy name'; }, 1800);
+    });
+  };
+
+  // Highlight in list
+  document.querySelectorAll('.place-item').forEach(el => el.classList.remove('active'));
+  const listItem = document.querySelector(`.place-item[data-id="${p.id}"]`);
+  if (listItem) {
+    listItem.classList.add('active');
+    listItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // Pan map to place
+  panToPlace(p);
+}
+
+function panToPlace(p) {
+  const svg = document.getElementById('worldSvg');
+  const rect = svg.getBoundingClientRect();
+  const [px, py] = project(p.lng, p.lat);
+  const targetX = rect.width / 2 - px * svgTransform.scale;
+  const targetY = rect.height / 2 - py * svgTransform.scale;
+  svgTransform.x = targetX;
+  svgTransform.y = targetY;
+  applyTransform(true);
+}
+
+function setupDetailClose() {
+  document.getElementById('detailClose').onclick = () => {
+    document.getElementById('detailPanel').classList.remove('open');
+    document.querySelectorAll('.map-pin').forEach(el => el.classList.remove('selected'));
+    selectedPlace = null;
+  };
+}
+
+// ─── Zoom & Pan ───────────────────────────────────────────────────────────────
+function setupZoom() {
+  document.getElementById('zoomIn').onclick = () => zoomBy(1.4);
+  document.getElementById('zoomOut').onclick = () => zoomBy(1/1.4);
+  document.getElementById('zoomReset').onclick = () => {
+    svgTransform = { x: 0, y: 0, scale: 1 };
+    applyTransform(true);
+  };
+
+  const stage = document.getElementById('atlasStage');
+  stage.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const factor = e.deltaY < 0 ? 1.12 : 1/1.12;
+    const rect = stage.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    const my = e.clientY - rect.top;
+    zoomAround(factor, mx, my);
+  }, { passive: false });
+
+  // Touch pinch
+  let lastDist = 0;
+  stage.addEventListener('touchstart', (e) => {
+    if (e.touches.length
+*/
+</script>
+</body>
+</html>

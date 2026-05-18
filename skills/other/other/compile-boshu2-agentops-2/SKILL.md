@@ -1,7 +1,13 @@
 ---
 name: compile
-description: 'Compile .agents knowledge wiki.'
-practices: [wiki-knowledge-surface, ddd-bounded-context]
+description: Compile .agents knowledge wiki.
+practices:
+- wiki-knowledge-surface
+- ddd-bounded-context
+hexagonal_role: supporting
+consumes: []
+produces: []
+context_rel: []
 skill_api_version: 1
 user-invocable: true
 context:
@@ -9,13 +15,15 @@ context:
   intent:
     mode: task
   sections:
-    exclude: [TASK]
+    exclude:
+    - TASK
   intel_scope: full
 metadata:
   tier: knowledge
   stability: stable
   dependencies: []
-output_contract: ".agents/compiled/*.md, .agents/compiled/index.md, .agents/compiled/log.md, .agents/compiled/lint-report.md"
+output_contract: .agents/compiled/*.md, .agents/compiled/index.md, .agents/compiled/log.md,
+  .agents/compiled/lint-report.md
 ---
 # Compile — Knowledge Compiler
 

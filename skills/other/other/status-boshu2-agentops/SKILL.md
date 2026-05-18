@@ -1,7 +1,14 @@
 ---
 name: status
-description: 'Show AgentOps work status.'
-practices: [dora-metrics, sre]
+description: Show AgentOps work status.
+practices:
+- dora-metrics
+- sre
+hexagonal_role: driving-adapter
+consumes: []
+produces:
+- stdout
+context_rel: []
 skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash
 model: haiku
@@ -13,7 +20,7 @@ context:
 metadata:
   tier: session
   dependencies: []
-output_contract: "stdout: dashboard"
+output_contract: 'stdout: dashboard'
 ---
 # /status — Workflow Dashboard
 

@@ -132,6 +132,7 @@ These are the skills every user needs first. Everything else is available when y
 | `/compile`, `/flywheel` | Active knowledge intelligence and flywheel health — Mine → Grow → Defrag cycle |
 | `/curate` | Canonical miner role for transcripts, `.agents/`, bd, git, skill diffs, and rare wiki entries |
 | `/llm-wiki` | External reading wiki proposal — raw sources to compiled wiki |
+| `/expert-council` | Alias for `/council --mode=debate` (kept 1 release) — adversarial named-persona duel |
 | `/harvest` | Cross-rig knowledge consolidation — sweep, dedup, promote to global hub |
 | `/knowledge-activation` | Operationalize a mature `.agents` corpus into beliefs, playbooks, briefings, and gap surfaces |
 | `/brainstorm` | Structured idea exploration before planning |

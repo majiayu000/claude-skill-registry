@@ -1,0 +1,47 @@
+order_id,date,region,product,units,unit_price,revenue,sales_rep
+ORD-1042,2026-01-04,West,Espresso Machine,12,499.00,5988.00,Mira Park
+ORD-1043,2026-01-04,West,Coffee Grinder,18,189.00,3402.00,Alex Chen
+ORD-1044,2026-01-04,East,Espresso Machine,7,499.00,3493.00,Sam Reyes
+ORD-1045,2026-01-05,West,Burr Grinder Pro,4,329.00,1316.00,Mira Park
+ORD-1046,2026-01-05,Central,Coffee Grinder,22,189.00,4158.00,Jordan Vu
+ORD-1047,2026-01-06,East,Espresso Machine,3,499.00,1497.00,Sam Reyes
+ORD-1048,2026-01-06,West,Pour-Over Kit,28,79.00,2212.00,Alex Chen
+ORD-1049,2026-01-07,South,Espresso Machine,5,499.00,2495.00,Devi Patel
+ORD-1050,2026-01-07,West,Burr Grinder Pro,9,329.00,2961.00,Mira Park
+ORD-1051,2026-01-08,Central,Pour-Over Kit,33,79.00,2607.00,Jordan Vu
+ORD-1052,2026-01-09,East,Coffee Grinder,11,189.00,2079.00,Sam Reyes
+ORD-1053,2026-01-09,West,Espresso Machine,15,499.00,7485.00,Alex Chen
+ORD-1054,2026-01-10,West,Burr Grinder Pro,6,329.00,1974.00,Mira Park
+ORD-1055,2026-01-10,South,Coffee Grinder,14,189.00,2646.00,Devi Patel
+ORD-1056,2026-01-11,East,Pour-Over Kit,40,79.00,3160.00,Sam Reyes
+ORD-1057,2026-01-12,West,Espresso Machine,8,499.00,3992.00,Mira Park
+ORD-1058,2026-01-13,Central,Espresso Machine,4,499.00,1996.00,Jordan Vu
+ORD-1059,2026-01-13,West,Coffee Grinder,25,189.00,4725.00,Alex Chen
+ORD-1060,2026-01-14,East,Burr Grinder Pro,7,329.00,2303.00,Sam Reyes
+ORD-1061,2026-01-14,South,Pour-Over Kit,20,79.00,1580.00,Devi Patel
+ORD-1062,2026-01-15,West,Espresso Machine,11,499.00,5489.00,Mira Park
+ORD-1063,2026-01-16,Central,Burr Grinder Pro,5,329.00,1645.00,Jordan Vu
+ORD-1064,2026-01-16,West,Coffee Grinder,19,189.00,3591.00,Alex Chen
+ORD-1065,2026-01-17,East,Espresso Machine,6,499.00,2994.00,Sam Reyes
+ORD-1066,2026-01-17,South,Pour-Over Kit,27,79.00,2133.00,Devi Patel
+ORD-1067,2026-01-18,West,Burr Grinder Pro,8,329.00,2632.00,Mira Park
+ORD-1068,2026-01-19,Central,Coffee Grinder,15,189.00,2835.00,Jordan Vu
+ORD-1069,2026-01-19,West,Espresso Machine,9,499.00,4491.00,Alex Chen
+ORD-1070,2026-01-20,East,Pour-Over Kit,32,79.00,2528.00,Sam Reyes
+ORD-1071,2026-01-21,West,Espresso Machine,13,499.00,6487.00,Mira Park
+ORD-1072,2026-01-21,South,Burr Grinder Pro,4,329.00,1316.00,Devi Patel
+ORD-1073,2026-01-22,Central,Pour-Over Kit,38,79.00,3002.00,Jordan Vu
+ORD-1074,2026-01-22,West,Coffee Grinder,22,189.00,4158.00,Alex Chen
+ORD-1075,2026-01-23,East,Espresso Machine,7,499.00,3493.00,Sam Reyes
+ORD-1076,2026-01-24,West,Burr Grinder Pro,10,329.00,3290.00,Mira Park
+ORD-1077,2026-01-24,South,Coffee Grinder,16,189.00,3024.00,Devi Patel
+ORD-1078,2026-01-25,East,Pour-Over Kit,29,79.00,2291.00,Sam Reyes
+ORD-1079,2026-01-26,West,Espresso Machine,14,499.00,6986.00,Alex Chen
+ORD-1080,2026-01-26,Central,Burr Grinder Pro,6,329.00,1974.00,Jordan Vu
+ORD-1081,2026-01-27,West,Coffee Grinder,21,189.00,3969.00,Mira Park
+ORD-1082,2026-01-28,East,Espresso Machine,5,499.00,2495.00,Sam Reyes
+ORD-1083,2026-01-28,South,Pour-Over Kit,24,79.00,1896.00,Devi Patel
+ORD-1084,2026-01-29,West,Burr Grinder Pro,11,329.00,3619.00,Mira Park
+ORD-1085,2026-01-30,Central,Coffee Grinder,17,189.00,3213.00,Jordan Vu
+ORD-1086,2026-01-30,West,Espresso Machine,12,499.00,5988.00,Alex Chen
+ORD-1087,2026-01-31,East,Pour-Over Kit,35,79.00,2765.00,Sam Reyes

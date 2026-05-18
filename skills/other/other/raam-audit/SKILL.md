@@ -27,25 +27,25 @@ official mobile accessibility framework implementing EN 301 549 v3.2.1 / WCAG 2.
 
 ```bash
 # List all topics
-!`${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh topics`
+!`${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh topics`
 
 # Look up a specific criterion
-bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh criterion <topic.criterion>
+bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh criterion <topic.criterion>
 
 # Full test methodology (iOS & Android steps)
-bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh methodology <topic.criterion>
+bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh methodology <topic.criterion>
 
 # All criteria at a given level
-bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh level AA
+bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh level AA
 
 # Search criteria by keyword
-bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh search "<keyword>"
+bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh search "<keyword>"
 
 # Glossary definitions
-bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh glossary "<term>"
+bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh glossary "<term>"
 ```
 
-Raw JSON files: `${CLAUDE_SKILL_DIR}/../references/raam/`
+Raw JSON files: `${CLAUDE_SKILL_DIR}/references/`
 
 ---
 
@@ -66,7 +66,7 @@ ALWAYS look up the methodology before rendering a verdict — methodologies cont
 **platform-specific steps** for both iOS and Android:
 
 ```bash
-bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh methodology <topic.criterion>
+bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh methodology <topic.criterion>
 ```
 
 ### Step 3: Report findings
@@ -309,10 +309,10 @@ Query individually when the app includes documentation, editing tools, support
 services, or real-time communication features:
 
 ```bash
-bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh topic 12  # Documentation & accessibility features
-bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh topic 13  # Editing tools
-bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh topic 14  # Support services
-bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh topic 15  # Real-time communication
+bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh topic 12  # Documentation & accessibility features
+bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh topic 13  # Editing tools
+bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh topic 14  # Support services
+bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh topic 15  # Real-time communication
 ```
 
 ---

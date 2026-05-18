@@ -1,11 +1,12 @@
 ---
 name: mode-selector
 description: >
-  Deterministic mode selection for session-start. Reads Phase A STATE.md
+  Use this skill when performing deterministic mode selection for session-start. Reads Phase A STATE.md
   recommendations + (future) learnings, sessions, backlog, bootstrap signals
   and returns {mode, rationale, confidence, alternatives}. Pure-function
   contract — no side effects, no STATE.md writes. Phase B scaffold (issue #276);
   full heuristic is follow-up sub-issues.
+model: haiku
 user-invocable: false
 tags: [phase-b, autopilot, mode-selection, scaffold]
 ---

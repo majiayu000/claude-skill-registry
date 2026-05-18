@@ -32,7 +32,7 @@ output_contract: skills/council/schemas/verdict.json
 ---
 # /council — Multi-Model Consensus Council
 
-Spawn parallel judges with different perspectives, consolidate into consensus. Works for any task — validation, research, brainstorming.
+Convene N independent reasoners over a shared briefing and return one synthesis. `--mode` selects the deliberation pattern — `brainstorm`, `debate`, or `verdict`. Everything else (`--focus`, `--depth`, `--runtime`, `--roster`) is an orthogonal knob.
 
 ## Loop position
 
@@ -41,67 +41,56 @@ Cross-cutting judgment gate available at any [operating loop](../../docs/archite
 ## Quick Start
 
 ```bash
-/council --quick validate recent                               # fast inline check
-/council validate this plan                                    # validation (2 agents)
-/council brainstorm caching approaches                         # brainstorm
-/council research kubernetes upgrade strategies                # research
-/council --preset=security-audit validate the auth system      # preset personas
-/council --deep --mixed --preset=leadership-quartet validate product thesis
-/council --deep --explorers=3 research upgrade automation      # deep + explorers
-/council --debate validate the auth system                     # adversarial 2-round review
-/council                                                       # infers from context
+/council validate this plan                                    # verdict mode (the default)
+/council --mode=brainstorm caching approaches                  # brainstorm mode
+/council --mode=debate should we adopt event sourcing?         # debate mode (named personas duel)
+/council --depth=quick validate recent                         # fast inline check
+/council --mode=brainstorm --focus=research k8s upgrade paths   # research = focused brainstorm
+/council --roster=security-audit validate the auth system      # preset persona roster
+/council --depth=deep --runtime=mixed --roster=leadership-quartet validate product thesis
+/council --adversarial validate the auth system                # verdict over 2 adversarial rounds
+/council                                                       # infers mode from context
 ```
 
 Council works independently — no RPI workflow, no ratchet chain, no `ao` CLI required.
 
-## Modes
+## Modes — the deliberation taxonomy
 
-| Mode | Agents | Execution Backend | Use Case |
-|------|--------|-------------------|----------|
-| `--quick` | 0 (inline) | Self | Fast single-agent check, no spawning |
-| default | 2 | Runtime-native (Codex sub-agents preferred; Claude teams fallback) | Independent judges (no perspective labels) |
-| `--deep` | 3 | Runtime-native | Thorough review |
-| `--mixed` | 2N (default N=3) | Runtime-native + Codex CLI | Cross-vendor consensus — same N perspectives applied to both vendors |
-| `--debate` | 2+ | Runtime-native | Adversarial refinement (2 rounds) |
+`--mode` selects one of exactly three deliberation patterns; `verdict` is the default. The taxonomy is frozen as an executable spec — [references/council-modes.feature](references/council-modes.feature).
 
-### Spawn Backend (MANDATORY)
+| `--mode` | Pattern | Synthesis |
+|----------|---------|-----------|
+| `brainstorm` | **diverge** — agents generate options independently before any cross-talk | ranked set of ideas, perspectives, risks (no PASS/WARN/FAIL) |
+| `debate` | **contend** — independent positions → adversarial 0–1000 cross-scoring → reveal round | ranked decision with recorded dissent |
+| `verdict` *(default)* | **converge** — agents judge the artifact against the bar independently | one PASS / WARN / FAIL with consolidated findings |
 
-Council requires a runtime that can **spawn parallel subagents** and (for `--debate`) **send messages between agents**. Use whatever multi-agent primitives your runtime provides. If no multi-agent capability is detected, fall back to `--quick` (inline single-agent).
+`verdict` runs when `--mode` is omitted. `validate` is a verdict alias; `research` folds into `brainstorm` (`--focus=research`). When `--mode` is omitted council infers it from natural language — trigger words in [references/task-type-rigor-gate.md](references/task-type-rigor-gate.md).
 
-**Required capabilities:**
-- **Spawn subagent** — create a parallel agent with a prompt (required for all modes except `--quick`)
-- **Agent messaging** — send a message to a specific agent (required for `--debate`)
+**Mode and focus are orthogonal.** `--mode` is the deliberation *pattern*; `--focus` is the *subject*. `--depth`, `--runtime`, and `--roster` are knobs, never modes. **Every mode runs the same lifecycle** — convene → brief → deliberate → synthesize → record — and `deliberate` always isolates each agent before any cross-talk. Full taxonomy, knob aliases (`--quick`/`--deep`/`--mixed`), and the lifecycle contract: [references/modes.md](references/modes.md).
 
-Skills describe WHAT to do, not WHICH tool to call. See `skills/shared/SKILL.md` for the capability contract.
+### Spawn backend (MANDATORY)
 
-**After detecting your backend, read the matching reference for concrete spawn/wait/message/cleanup examples:**
-- Shared Claude feature contract → `skills/shared/references/claude-code-latest-features.md`
-- Local mirrored contract for runtime-local reads → `references/claude-code-latest-features.md`
-- Claude Native Teams → `references/backend-claude-teams.md`
-- Codex Sub-Agents / CLI → `references/backend-codex-subagents.md`
-- Background Tasks → `references/backend-background-tasks.md`
-- Inline (`--quick`) → `references/backend-inline.md`
+Council requires a runtime that can **spawn parallel subagents** and (for `debate` and `--adversarial`) **send messages between agents**. If no multi-agent capability is detected, fall back to `--depth=quick` (inline single-agent). Skills describe WHAT to do, not WHICH tool — see `skills/shared/SKILL.md` for the capability contract. Backend-specific spawn/wait/message/cleanup examples:
 
-See also `references/cli-spawning.md` for council-specific spawning flow (phases, timeouts, output collection).
+- Claude Native Teams → `references/backend-claude-teams.md` · Codex Sub-Agents / CLI → `references/backend-codex-subagents.md`
+- Background Tasks → `references/backend-background-tasks.md` · Inline → `references/backend-inline.md`
+- Shared Claude feature contract → `skills/shared/references/claude-code-latest-features.md` (local mirror: `references/claude-code-latest-features.md`)
 
-## When to Use `--debate`
+See `references/cli-spawning.md` for the council-specific spawning flow (phases, timeouts, output collection).
 
-Use `--debate` for high-stakes or ambiguous reviews where judges are likely to disagree:
-- Security audits, architecture decisions, migration plans
-- Reviews where multiple valid perspectives exist
-- Cases where a missed finding has real consequences
+## Debate mode (`--mode=debate`)
 
-Skip `--debate` for routine validation where consensus is expected. Debate adds R2 latency (judges stay alive and process a second round via backend messaging).
+`--mode=debate` convenes 2–4 named domain-expert personas who duel: each writes an independent verdict in character, every persona adversarially cross-scores every rival 0–1000, then a **mandatory reveal round** forces concessions and surfaces blind spots. Synthesis is a score matrix → a ranked decision with dissent kept verbatim. `dueling-idea-wizards` maps to `--mode=debate --focus=ideas`; `/expert-council` routes here.
+
+Constraints: personas decide and the orchestrator only counts; the briefing goes on disk, never through argv; the reveal is never skipped. Per-phase persona-slate / duel / reveal / score-matrix templates: [references/dueling-route.md](references/dueling-route.md).
+
+## Adversarial round (`--adversarial`) — a verdict intensifier
+
+`--adversarial` is a **verdict-mode** flag, not the debate mode. It runs `verdict` over two rounds — R1 independent verdicts, R2 steel-manning revision via backend messaging — for high-stakes verdicts where judges are likely to disagree (security audits, architecture decisions, migration plans). Skip it for routine validation where consensus is expected. Full protocol: [references/adversarial-protocol.md](references/adversarial-protocol.md).
 
 **Incompatibilities:**
-- `--quick` and `--debate` cannot be combined. `--quick` runs inline with no spawning; `--debate` requires multi-agent rounds. If both are passed, exit with error: "Error: --quick and --debate are incompatible."
-- `--debate` is only supported with validate mode. Brainstorm and research do not produce PASS/WARN/FAIL verdicts. If combined, exit with error: "Error: --debate is only supported with validate mode."
-
-## Task Types
-
-Council infers task type from natural language. Trigger words: **validate** (validate, check, review, assess, critique, feedback, improve), **brainstorm** (brainstorm, explore, options, approaches), **research** (research, investigate, deep dive, analyze, examine, evaluate, compare).
-
-See [references/task-type-rigor-gate.md](references/task-type-rigor-gate.md) for the trigger-word table, the MANDATORY first-pass rigor gate for plan/spec validation, and the full `--quick` single-agent inline mode contract.
+- `--depth=quick` and `--adversarial` cannot be combined. If both are passed, exit with error: "Error: --quick and --adversarial are incompatible."
+- `--adversarial` only applies to verdict mode. Combined with `--mode=brainstorm` or `--mode=debate`, exit with error: "Error: --adversarial is only supported with verdict mode."
 
 ---
 
@@ -141,14 +130,6 @@ See [references/consensus-and-output.md](references/consensus-and-output.md) for
 
 ---
 
-## Debate Phase (`--debate`)
-
-> **Debate Protocol:** Use `Read` tool on `skills/council/references/debate-protocol.md` for full debate execution flow, R1-to-R2 verdict injection, timeout handling, and cost analysis.
-
-**Summary:** Two-round adversarial review. R1 produces independent verdicts. R2 sends other judges' verdicts via backend messaging (`send_input` or `SendMessage`) for steel-manning and revision. Only supported with validate mode.
-
----
-
 ## Agent Prompts
 
 > **Agent Prompts:** Use `Read` tool on `skills/council/references/agent-prompts.md` for judge prompts (default and perspective-based), consolidation prompt, and debate R2 message template.
@@ -181,7 +162,7 @@ Core consensus rules: All PASS -> PASS; Any FAIL -> FAIL; Mixed PASS/WARN -> WAR
 | `--technique=<name>` | Brainstorm technique (reverse, scamper, six-hats). See `references/brainstorm-techniques.md`. |
 | `--profile=<name>` | Model quality profile (balanced, budget, fast, inherit, quality, thorough). See `references/model-profiles.md`. |
 
-See [references/flags-reference.md](references/flags-reference.md) for the full flag and environment variable reference (`COUNCIL_TIMEOUT`, `COUNCIL_CODEX_MODEL`, `--deep`, `--mixed`, `--debate`, `--evidence`, `--commit-ready`, `--preset`, `--profile`, and all other flags).
+See [references/flags-reference.md](references/flags-reference.md) for the full flag and environment variable reference (`COUNCIL_TIMEOUT`, `COUNCIL_CODEX_MODEL`, `--deep`, `--mixed`, `--adversarial`, `--evidence`, `--commit-ready`, `--preset`, `--profile`, and all other flags).
 
 ---
 
@@ -216,10 +197,13 @@ See [references/multi-agent-architecture.md](references/multi-agent-architecture
 - `skills/post-mortem/SKILL.md` — Work wrap-up (uses `--preset=retrospective`, always 3 judges + retro)
 - `skills/swarm/SKILL.md` — Multi-agent orchestration
 - `skills/standards/SKILL.md` — Language-specific coding standards
-- `skills/research/SKILL.md` — Codebase exploration (complementary to council research mode)
+- `skills/research/SKILL.md` — Codebase exploration (complementary to `--mode=brainstorm --focus=research`)
 
 ## Reference Documents
 
+- [references/modes.md](references/modes.md)
+- [references/council-modes.feature](references/council-modes.feature)
+- [references/dueling-route.md](references/dueling-route.md)
 - [references/architecture-flow.md](references/architecture-flow.md)
 - [references/packet-format.md](references/packet-format.md)
 - [references/flags-reference.md](references/flags-reference.md)
@@ -241,7 +225,7 @@ See [references/multi-agent-architecture.md](references/multi-agent-architecture
 - [references/ralph-loop-contract.md](references/ralph-loop-contract.md)
 - [references/agent-prompts.md](references/agent-prompts.md)
 - [references/cli-spawning.md](references/cli-spawning.md)
-- [references/debate-protocol.md](references/debate-protocol.md)
+- [references/adversarial-protocol.md](references/adversarial-protocol.md)
 - [references/explorers.md](references/explorers.md)
 - [references/finding-extraction.md](references/finding-extraction.md)
 - [references/output-format.md](references/output-format.md)

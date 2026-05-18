@@ -682,7 +682,30 @@ Pass these parameters in the dispatch prompt:
 
 1. Write the final knowledge graph to `$PROJECT_ROOT/.understand-anything/knowledge-graph.json`.
 
-2. Write metadata to `$PROJECT_ROOT/.understand-anything/meta.json`:
+2. **Generate structural fingerprints baseline.** This creates the basis for future automatic incremental updates and **must succeed before `meta.json` is written** — otherwise auto-update sees a fresh commit hash with no fingerprints to compare against, classifies every file as STRUCTURAL, and escalates to `FULL_UPDATE` on every subsequent commit (issue #152).
+
+   Write the input file:
+   ```bash
+   cat > $PROJECT_ROOT/.understand-anything/intermediate/fingerprint-input.json <<EOF
+   {
+     "projectRoot": "$PROJECT_ROOT",
+     "sourceFilePaths": [<all source file paths from Phase 1, as JSON array>],
+     "gitCommitHash": "<current commit hash>"
+   }
+   EOF
+   ```
+
+   Then invoke the bundled script (located next to this SKILL.md):
+   ```bash
+   node <SKILL_DIR>/build-fingerprints.mjs \
+     $PROJECT_ROOT/.understand-anything/intermediate/fingerprint-input.json
+   ```
+
+   The script uses `TreeSitterPlugin + PluginRegistry` exactly like `extract-structure.mjs`, so the baseline matches the comparison logic used during auto-updates.
+
+   **If the script exits non-zero or stdout does not include `Fingerprints baseline:`, abort Phase 7 and report the error. Do NOT proceed to step 3 (writing `meta.json`).**
+
+3. Write metadata to `$PROJECT_ROOT/.understand-anything/meta.json` (only after step 2 succeeded):
    ```json
    {
      "lastAnalyzedAt": "<ISO 8601 timestamp>",
@@ -692,25 +715,13 @@ Pass these parameters in the dispatch prompt:
    }
    ```
 
-2.5. **Generate structural fingerprints** for all analyzed files and save to `$PROJECT_ROOT/.understand-anything/fingerprints.json`. This creates the baseline for future automatic incremental updates.
-
-   Write and execute a Node.js script that uses the core fingerprint module (tree-sitter-based, not regex):
-   ```javascript
-   import { buildFingerprintStore } from '@understand-anything/core';
-   import { saveFingerprints } from '@understand-anything/core';
-
-   const store = await buildFingerprintStore('<PROJECT_ROOT>', sourceFilePaths);
-   saveFingerprints('<PROJECT_ROOT>', store);
-   ```
-   Where `sourceFilePaths` is the list of all analyzed source file paths from Phase 1. This uses the same tree-sitter analysis pipeline as the main fingerprint engine, ensuring the baseline matches the comparison logic used during auto-updates.
-
-3. Clean up intermediate files:
+4. Clean up intermediate files:
    ```bash
    rm -rf $PROJECT_ROOT/.understand-anything/intermediate
    rm -rf $PROJECT_ROOT/.understand-anything/tmp
    ```
 
-4. Report a summary to the user containing:
+5. Report a summary to the user containing:
    - Project name and description
    - Files analyzed / total files (with breakdown by fileCategory: code, config, docs, infra, data, script, markup)
    - Nodes created (broken down by type: file, function, class, config, document, service, table, endpoint, pipeline, schema, resource)
@@ -720,7 +731,7 @@ Pass these parameters in the dispatch prompt:
    - Any warnings from the reviewer
    - Path to the output file: `$PROJECT_ROOT/.understand-anything/knowledge-graph.json`
 
-5. Only automatically launch the dashboard by invoking the `/understand-dashboard` skill if final graph validation passed after normalization/review fixes.
+6. Only automatically launch the dashboard by invoking the `/understand-dashboard` skill if final graph validation passed after normalization/review fixes.
    If final validation did not pass, report that the graph was saved with warnings and dashboard launch was skipped.
 
 ---

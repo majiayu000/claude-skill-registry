@@ -2,11 +2,12 @@
 name: session-start
 user-invocable: false
 tags: [orchestration, initialization, analysis, alignment]
+model: inherit
 model-preference: opus
 model-preference-codex: gpt-5.4
 model-preference-cursor: claude-opus-4-6
 description: >
-  Full session initialization for any project repo. Autonomously analyzes git state,
+  Use this skill when initializing a session for any project repo. Autonomously analyzes git state,
   VCS issues, SSOT files, branches, environment, and cross-repo status. Then presents
   structured findings with recommendations for user alignment before creating a wave plan.
   Triggered by /session [housekeeping|feature|deep] command.

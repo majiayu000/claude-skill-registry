@@ -58,6 +58,10 @@ real blocked state exhausts retries. Read
 [references/autonomous-execution.md](references/autonomous-execution.md) when
 you need the full autonomy contract.
 
+When an external executor fails but the code surface may still be valid, read
+[references/codex-executor.md](references/codex-executor.md) and recover through
+Codex direct checks before declaring a source-level regression.
+
 ## Loop position
 
 `/rpi` is the orchestrator across **every move** of the [operating loop](../../docs/architecture/operating-loop.md): BDD intent → vertical slices → conflict-free wave → bead acceptance → evidence + learning capture. It delegates each move to the skill that owns it (`/discovery`, `/plan`, `/crank`, `/validation`, `/forge`/`/retro`), and enforces three loop-level invariants:
@@ -220,12 +224,14 @@ interactive, loop, and artifact-mode examples.
 | `/crank` returns PARTIAL | Retry `/crank` on the same objective; do not narrow to a child slice |
 | Validation FAIL | Re-crank with findings, then re-validate, up to 3 total attempts |
 | Packet shape unclear | Read [references/phase-data-contracts.md](references/phase-data-contracts.md) |
+| External executor fails | Read [references/codex-executor.md](references/codex-executor.md), run direct Codex validation, and only create follow-up work for reproducible source failures |
 
 ## Reference Documents
 
 - [references/autonomous-execution.md](references/autonomous-execution.md)
 - [references/complexity-scaling.md](references/complexity-scaling.md)
 - [references/context-windowing.md](references/context-windowing.md) — OPT-IN large-repo mode (`--large-repo`); NOT part of the default RPI path. Default discovery/research does not generate `.agents/rpi/context-shards/latest.json`.
+- [references/codex-executor.md](references/codex-executor.md)
 - [references/discovery-artifact-mode.md](references/discovery-artifact-mode.md)
 - [references/error-handling.md](references/error-handling.md)
 - [references/examples.md](references/examples.md)

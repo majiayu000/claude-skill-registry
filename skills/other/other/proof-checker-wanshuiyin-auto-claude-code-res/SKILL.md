@@ -419,7 +419,7 @@ with paper-dir `paper/`; `<your-paper-dir>/PROOF_AUDIT.json` when invoked
 standalone), regardless of caller or whether the paper contains theorems.
 A paper with no `\begin{theorem}` / `\begin{lemma}` / `\begin{proof}` emits
 verdict `NOT_APPLICABLE`; silent skip is forbidden. `paper-writing`
-Phase 6 and `tools/verify_paper_audits.sh` both rely on this artifact
+Phase 6 and `verify_paper_audits.sh` both rely on this artifact
 existing at `<paper-dir>/PROOF_AUDIT.json`.
 
 The artifact conforms to the schema in `shared-references/assurance-contract.md`:
@@ -456,7 +456,7 @@ Hash the **declared input set** actually reviewed — the theorem-bearing
 the reviewer's self-reported opened subset. The external verifier rehashes
 these entries; any mismatch flags `STALE`.
 
-**Path convention** (must match `tools/verify_paper_audits.sh`): keys are
+**Path convention** (must match `verify_paper_audits.sh`): keys are
 **paths relative to the paper directory** (no `paper/` prefix — the
 verifier resolves relative to the paper dir; prefixing produces
 `paper/paper/...` and false-fails as STALE). Use **absolute paths** for

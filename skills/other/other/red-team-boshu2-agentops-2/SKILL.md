@@ -1,19 +1,28 @@
 ---
 name: red-team
-description: 'Probe docs and skills.'
-practices: [ai-assisted-dev, design-by-contract, sre]
+description: Probe docs and skills.
+practices:
+- ai-assisted-dev
+- design-by-contract
+- sre
+hexagonal_role: supporting
+consumes: []
+produces:
+- result.json
+context_rel: []
 skill_api_version: 1
 metadata:
   tier: judgment
   stability: experimental
   dependencies:
-    - council
+  - council
 context:
   window: fork
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: full
 output_contract: skills/council/schemas/verdict.json
 ---

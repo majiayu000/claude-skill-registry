@@ -30,27 +30,27 @@ JSON files. Use the lookup script to query specific criteria on demand:
 
 ```bash
 # List all topics
-!`${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh topics`
+!`${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh topics`
 
 # Look up a specific criterion
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh criterion 1.1
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh criterion 1.1
 
 # Look up test methodology
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh methodology 1.1.1
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh methodology 1.1.1
 
 # Search criteria by keyword
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh search "form"
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh search "form"
 
 # Check glossary definition
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh glossary "text alternative"
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh glossary "text alternative"
 ```
 
 The raw JSON reference files are located at:
-- `${CLAUDE_SKILL_DIR}/../references/raweb/criteres.json` — All 136+ criteria with tests and WCAG/EN 301 549 mappings
-- `${CLAUDE_SKILL_DIR}/../references/raweb/methodologies.json` — Step-by-step test procedures
-- `${CLAUDE_SKILL_DIR}/../references/raweb/glossaire.json` — Glossary of accessibility terms
-- `${CLAUDE_SKILL_DIR}/../references/raweb/themes.json` — Topic names
-- `${CLAUDE_SKILL_DIR}/../references/raweb/niveaux.json` — WCAG conformance levels per criterion
+- `${CLAUDE_SKILL_DIR}/references/criteres.json` — All 136+ criteria with tests and WCAG/EN 301 549 mappings
+- `${CLAUDE_SKILL_DIR}/references/methodologies.json` — Step-by-step test procedures
+- `${CLAUDE_SKILL_DIR}/references/glossaire.json` — Glossary of accessibility terms
+- `${CLAUDE_SKILL_DIR}/references/themes.json` — Topic names
+- `${CLAUDE_SKILL_DIR}/references/niveaux.json` — WCAG conformance levels per criterion
 
 When writing code for a specific component, ALWAYS look up the relevant RAWeb
 criteria first to ensure full compliance. For example, before writing a form,
@@ -303,7 +303,7 @@ button.addEventListener('keydown', (e) => {
 
 ### 11. Forms (Topic 11)
 
-**This is a critical topic. Always look up criteria with `bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh topic 11` when implementing forms.**
+**This is a critical topic. Always look up criteria with `bash ${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh topic 11` when implementing forms.**
 
 - Every form field MUST have a visible label (11.1) AND a programmatically associated label (11.1)
 - Label association: `<label for="id">`, `aria-labelledby`, `aria-label`, or `title` (11.1)
@@ -430,16 +430,16 @@ with keyboard interactions, required/optional ARIA attributes, and implementatio
 
 ```bash
 # Find the right pattern by keyword (e.g., "modal", "dropdown", "toggle")
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-component-lookup.sh find "<keyword>"
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-component-lookup.sh find "<keyword>"
 
 # Show full pattern details (keyboard, ARIA roles, attributes, notes)
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-component-lookup.sh show <slug>
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-component-lookup.sh show <slug>
 
 # List all 30 available patterns
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-component-lookup.sh list
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-component-lookup.sh list
 
 # Find patterns that use a specific ARIA role
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-component-lookup.sh roles "<role>"
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-component-lookup.sh roles "<role>"
 ```
 
 ### Workflow
@@ -453,7 +453,7 @@ bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-component-lookup.sh roles "<role>"
 ### Available patterns
 
 The individual pattern files are located at:
-`${CLAUDE_SKILL_DIR}/../references/raweb/components/<slug>.json`
+`${CLAUDE_SKILL_DIR}/references/components/<slug>.json`
 
 Each file contains:
 - `description` — What the component is
@@ -538,10 +538,10 @@ Before considering any code complete, verify:
 
 ## When in doubt
 
-1. **Look up the RAWeb criterion**: `bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh criterion <topic.criterion>`
-2. **Check the test methodology**: `bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh methodology <topic.criterion.test>`
-3. **Look up the ARIA pattern** for a component: `bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-component-lookup.sh find "<keyword>"` then `show <slug>`
-4. **Consult the glossary** for precise definitions: `bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh glossary "<term>"`
+1. **Look up the RAWeb criterion**: `bash ${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh criterion <topic.criterion>`
+2. **Check the test methodology**: `bash ${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh methodology <topic.criterion.test>`
+3. **Look up the ARIA pattern** for a component: `bash ${CLAUDE_SKILL_DIR}/scripts/raweb-component-lookup.sh find "<keyword>"` then `show <slug>`
+4. **Consult the glossary** for precise definitions: `bash ${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh glossary "<term>"`
 5. Default to the most accessible approach — when two implementations are possible, choose the one with better assistive technology support
 6. Prefer native HTML semantics over ARIA: a `<button>` is better than `<div role="button">`
 7. When building an interactive widget, ALWAYS load the APG pattern first — do not guess ARIA attributes from memory

@@ -33,6 +33,16 @@ metadata:
 
 ---
 
+## 核心方法
+
+除了上面的执行规则，构思和写作时遵循：
+
+- **从验证过的模式出发**：有对标书就先拆解，没有就从题材框架（genre-catalog.md）找对应的剧情模式
+- **用模块组装**：铺垫段、升级段、反转段各有成熟写法，不要重新发明。参考 genre-writing-formulas.md 对应题材
+- **只加载必需信息**：写每节前明确目标情绪和要用的技法，答不出就先回读参考
+
+---
+
 ## 写作流程
 
 ### Phase 1：确定情绪目标
@@ -98,7 +108,7 @@ metadata:
 
 #### 设计任务（框架确定后执行）
 
-详细步骤和模板见 `references/writing-workflow.md`。按顺序完成：
+详细步骤和模板见 `references/writing-workflow.md`。构思时从目标情绪反推剧情，不是从灵感正向构建。按顺序完成：
 
 1. 设计结构物件（1-2 个）→ 加载 `writing-craft.md`
 2. 设计反派（如有）→ 加载 `villain-and-reveal.md`
@@ -115,7 +125,25 @@ metadata:
 
 ### Phase 3：逐场景写作
 
+**项目文件结构**：
+
+```
+{短篇标题}/
+├── 小节大纲.md          ← Phase 2 产出
+├── 正文.md              ← Phase 3 产出
+├── 自检_{标题}.md       ← Phase 4 产出
+└── 拆文库/              ← 如有参考小说（story-short-analyze 产出）
+    └── {书名}/
+        ├── 拆文报告.md
+        ├── 情节节点.md
+        └── 写作手法.md
+```
+
 > 术语说明：Phase 3 按「段」划分叙事结构（开头段/铺垫段/升级段/反转段/结尾段），每段包含若干「小节」（数字编号的 beat）。「场景」指写作时的具体画面。
+
+**准备层**（每个场景写前执行 2 步，是核心方法的落地：确认情绪目标 → 召回技法模块）：
+- **步骤 1：记忆+召回**：① 本场景目标情绪词？② 借鉴哪个参考文件的哪个技法？③ 具体用在哪个段落？答不出 → 先回读参考再动笔。如有 `拆文库/` 结构化产出（角色/剧情/设定），检索与当前场景最相关的模块作为参考
+- **步骤 2：指令确认**：用一句话概括本场景写作意图（情绪+技法+适配段落），确认后开始写作
 
 **写作指令：按场景展开法逐场景写作，不是翻译大纲。每个场景让读者和主角一起经历。**
 
@@ -315,6 +343,7 @@ metadata:
 | [references/genre-catalog.md](references/genre-catalog.md) | 题材框架 |
 | [references/genre-core-mechanics.md](references/genre-core-mechanics.md) | 核心梗设计 |
 | [references/genre-readers.md](references/genre-readers.md) | 读者心理 |
+| [references/state-tracking.md](references/state-tracking.md) | 状态追踪协议（Phase 3 准备层参考） |
 
 ---
 

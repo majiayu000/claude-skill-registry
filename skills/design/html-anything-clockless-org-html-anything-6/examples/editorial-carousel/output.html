@@ -1,0 +1,943 @@
+<!doctype html>
+<html lang="en" data-ha-style="editorial-carousel">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Art of Brand Positioning</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Pinyon+Script&display=swap');
+
+:root {
+  --bg-color: #F2EFEB;
+  --bg-alt: #EBE7DD;
+  --ink: #131211;
+  --muted-ink: rgba(19,18,17,.68);
+  --serif: 'Playfair Display', serif;
+  --script: 'Pinyon Script', cursive;
+  --mono: 'Space Mono', monospace;
+  --slide-w: 480px;
+  --slide-h: 600px;
+  --padding: 2.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #d1cdc5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 4rem;
+  font-family: var(--mono);
+  color: var(--ink);
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 3rem;
+  padding: 2rem 4vw;
+  scroll-snap-type: x mandatory;
+}
+
+.slide {
+  width: var(--slide-w);
+  height: var(--slide-h);
+  background-color: var(--bg-color);
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: var(--padding);
+  box-shadow:
+    10px 20px 40px rgba(0,0,0,0.08),
+    1px 1px 0 rgba(255,255,255,0.5) inset;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: outline-color 160ms ease, transform 180ms ease;
+}
+
+.slide.has-match {
+  outline: 3px solid rgba(19,18,17,.42);
+  outline-offset: -8px;
+}
+
+.top-meta,
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  z-index: 10;
+  position: relative;
+}
+
+.bottom-nav {
+  align-items: flex-end;
+}
+
+.pill-badge {
+  border: 1px solid var(--ink);
+  border-radius: 50% / 100%;
+  padding: 0.4rem 1.2rem;
+  text-align: center;
+  font-size: 0.6rem;
+}
+
+.starburst {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+  display: inline-block;
+}
+
+.mix-title-container {
+  position: relative;
+  text-align: center;
+  z-index: 10;
+  margin: auto 0;
+}
+
+.t-serif {
+  font-family: var(--serif);
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  display: inline-block;
+}
+
+.t-script {
+  font-family: var(--script);
+  font-weight: 400;
+  line-height: 0.5;
+  display: inline-block;
+  transform: translateY(10%);
+}
+
+.manifesto-block {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  line-height: 1.4;
+  text-align: justify;
+  text-justify: inter-word;
+  column-count: 2;
+  column-gap: 1.5rem;
+  z-index: 10;
+  position: relative;
+  text-transform: lowercase;
+}
+
+.manifesto-block::first-letter {
+  text-transform: uppercase;
+}
+
+.bg-image {
+  position: absolute;
+  z-index: 1;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.2) brightness(0.9);
+  opacity: 0.8;
+}
+
+.art-print {
+  border: 1px solid rgba(19,18,17,.16);
+  background:
+    linear-gradient(135deg, rgba(19,18,17,.92), rgba(19,18,17,.12)),
+    radial-gradient(circle at 64% 38%, var(--bg-color) 0 8%, transparent 9%),
+    repeating-linear-gradient(90deg, rgba(242,239,235,.78) 0 1px, transparent 1px 14px),
+    linear-gradient(180deg, #3b3732, #a39b91);
+}
+
+#slide-1 .t-serif.size-l {
+  font-size: 3.8rem;
+}
+
+#slide-1 .t-script.size-xl {
+  font-size: 5.5rem;
+  margin: 0 -12px;
+  position: relative;
+  z-index: 2;
+}
+
+#slide-1 .img-1 {
+  top: 15%;
+  right: 5%;
+  width: 45%;
+  height: 20%;
+}
+
+#slide-1 .img-2 {
+  top: 40%;
+  left: 10%;
+  width: 60%;
+  height: 25%;
+  transform: rotate(-2deg);
+}
+
+#slide-2 .quote-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  z-index: 10;
+  position: relative;
+}
+
+#slide-2 .large-serif {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-style: italic;
+}
+
+#slide-2 .img-full {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  mask-image: linear-gradient(to top, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 50%, transparent 100%);
+  background:
+    linear-gradient(160deg, rgba(19,18,17,.88), rgba(19,18,17,.12) 55%, transparent),
+    radial-gradient(ellipse at 42% 58%, rgba(19,18,17,.65), transparent 42%),
+    repeating-linear-gradient(120deg, rgba(19,18,17,.22) 0 2px, transparent 2px 18px),
+    var(--bg-alt);
+}
+
+#slide-3 .step-number {
+  font-family: var(--serif);
+  font-size: 8rem;
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  color: var(--bg-alt);
+  text-shadow:
+    -1px -1px 0 var(--ink),
+    1px -1px 0 var(--ink),
+    -1px 1px 0 var(--ink),
+    1px 1px 0 var(--ink);
+  position: absolute;
+  top: 20%;
+  left: -5%;
+  z-index: 0;
+}
+
+#slide-3 .content-wrapper {
+  margin-top: auto;
+  margin-bottom: 2rem;
+  z-index: 10;
+  position: relative;
+}
+
+#slide-3 .step-title {
+  font-family: var(--serif);
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+#slide-4 {
+  background-color: var(--ink);
+  color: var(--bg-color);
+}
+
+#slide-4 .pill-badge {
+  border-color: var(--bg-color);
+}
+
+#slide-4 .starburst {
+  fill: var(--bg-color);
+}
+
+#slide-4 .massive-mix {
+  font-size: 4rem;
+  line-height: 0.85;
+  text-align: left;
+  margin-top: 3rem;
+  position: relative;
+  z-index: 10;
+}
+
+#slide-4 .massive-mix .t-script {
+  font-size: 6rem;
+  color: var(--bg-color);
+  display: block;
+  transform: none;
+  margin: -10px 0;
+}
+
+#slide-4 .img-center {
+  top: 30%;
+  right: 0;
+  width: 60%;
+  height: 40%;
+  filter: grayscale(100%) invert(1) contrast(1.5) opacity(0.4);
+  background:
+    repeating-linear-gradient(0deg, rgba(242,239,235,.3) 0 1px, transparent 1px 8px),
+    radial-gradient(circle at 40% 40%, rgba(242,239,235,.62), transparent 28%),
+    #1d1b19;
+}
+
+#slide-5 {
+  text-align: center;
+  align-items: center;
+}
+
+#slide-5 .profile-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1px solid var(--ink);
+  padding: 5px;
+  margin: auto;
+  position: relative;
+  z-index: 10;
+}
+
+.portrait-art {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  filter: grayscale(100%) contrast(1.2);
+  background:
+    radial-gradient(circle at 48% 34%, #d7d0c5 0 19%, transparent 20%),
+    radial-gradient(ellipse at 50% 74%, #2b2926 0 34%, transparent 35%),
+    linear-gradient(140deg, #f6f2eb, #5b564e);
+}
+
+#slide-5 .cta-text {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin: 2rem 0;
+  z-index: 10;
+  position: relative;
+}
+
+#slide-5 .cta-btn {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  background: var(--ink);
+  color: var(--bg-color);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  z-index: 10;
+  position: relative;
+  border: 0;
+}
+
+.utility-panel {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 60;
+  font-family: var(--mono);
+  color: var(--ink);
+}
+
+.utility-panel summary {
+  list-style: none;
+  cursor: pointer;
+  border: 1px solid rgba(19,18,17,.25);
+  border-radius: 50% / 100%;
+  background: rgba(242,239,235,.72);
+  backdrop-filter: blur(12px);
+  padding: .55rem 1.1rem;
+  font-size: .58rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 30px rgba(19,18,17,.12);
+}
+
+.utility-panel summary::-webkit-details-marker {
+  display: none;
+}
+
+.utility-body {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + .7rem);
+  width: min(330px, calc(100vw - 2rem));
+  background: rgba(242,239,235,.96);
+  border: 1px solid rgba(19,18,17,.18);
+  box-shadow: 10px 20px 40px rgba(0,0,0,.12);
+  padding: .9rem;
+  display: grid;
+  gap: .7rem;
+}
+
+.utility-body input {
+  width: 100%;
+  border: 1px solid rgba(19,18,17,.2);
+  background: var(--bg-color);
+  color: var(--ink);
+  padding: .65rem .75rem;
+  font-size: .65rem;
+}
+
+.utility-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .5rem;
+}
+
+.utility-actions button,
+.evidence-link {
+  border: 1px solid rgba(19,18,17,.25);
+  background: transparent;
+  padding: .55rem .7rem;
+  font-size: .58rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.evidence-link {
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  padding: 0 0 .12rem;
+  position: relative;
+  z-index: 12;
+}
+
+.evidence-drawer {
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  z-index: 80;
+  width: min(880px, calc(100vw - 2rem));
+  max-height: min(62vh, 520px);
+  overflow: auto;
+  background: rgba(242,239,235,.98);
+  color: var(--ink);
+  border: 1px solid rgba(19,18,17,.22);
+  box-shadow: 10px 20px 40px rgba(0,0,0,.18);
+  padding: 1.25rem;
+  transform: translate(-50%, calc(100% + 2rem));
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .22s ease, opacity .22s ease;
+}
+
+.evidence-drawer.is-open {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-size: .68rem;
+  letter-spacing: .06em;
+}
+
+.drawer-head button {
+  border: 1px solid rgba(19,18,17,.25);
+  background: transparent;
+  padding: .45rem .7rem;
+  font-size: .58rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  cursor: pointer;
+}
+
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: .75rem;
+}
+
+.source-excerpt {
+  border: 1px solid rgba(19,18,17,.14);
+  padding: .85rem;
+  background: rgba(235,231,221,.72);
+}
+
+.source-excerpt.is-focused {
+  border-color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--ink);
+}
+
+.source-excerpt strong {
+  display: block;
+  margin-bottom: .5rem;
+  text-transform: uppercase;
+  font-size: .58rem;
+  letter-spacing: .06em;
+}
+
+.source-excerpt p {
+  font-size: .68rem;
+  line-height: 1.45;
+}
+
+.toast {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 100;
+  background: var(--ink);
+  color: var(--bg-color);
+  border-radius: 50% / 100%;
+  padding: .55rem 1rem;
+  font-size: .58rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+.toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.svg-defs {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --slide-w: min(88vw, 390px);
+    --slide-h: calc(var(--slide-w) * 1.25);
+    --padding: 1.75rem;
+  }
+
+  body {
+    padding: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .carousel-track {
+    gap: 1.25rem;
+    padding: 1rem 0 5rem;
+  }
+
+  #slide-1 .t-serif.size-l {
+    font-size: 3rem;
+  }
+
+  #slide-1 .t-script.size-xl {
+    font-size: 4.3rem;
+  }
+
+  #slide-2 .large-serif {
+    font-size: 2rem;
+  }
+
+  #slide-4 .massive-mix {
+    font-size: 3rem;
+  }
+
+  #slide-4 .massive-mix .t-script {
+    font-size: 4.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .slide,
+  .evidence-drawer,
+  .toast {
+    transition: none;
+  }
+}
+</style>
+<script>
+const DATA = {
+  title: "The Art of Brand Positioning",
+  sourceFile: "input.md",
+  wordCount: 425,
+  summary: "A brand strategy essay compressed into a five-slide editorial carousel.",
+  slides: [
+    {
+      id: "slide-1",
+      page: "01 / 05",
+      kicker: "Strategy is design",
+      title: "The Art of Brand Positioning",
+      text: "Stop letting market trends dictate the feeling of value in your business. Positioning is an architectural decision."
+    },
+    {
+      id: "slide-2",
+      page: "02 / 05",
+      kicker: "The problem",
+      title: "Existing in the noise",
+      text: "Most brands participate in the category rather than defining it. When you blend in, you compete on price."
+    },
+    {
+      id: "slide-3",
+      page: "03 / 05",
+      kicker: "Core principles",
+      title: "Embrace Constraint",
+      text: "True positioning requires sacrifice. You cannot be everything to everyone."
+    },
+    {
+      id: "slide-4",
+      page: "04 / 05",
+      kicker: "The shift",
+      title: "Become the Standard",
+      text: "The strongest brands become the thing other companies are compared against."
+    },
+    {
+      id: "slide-5",
+      page: "05 / 05",
+      kicker: "End of volume",
+      title: "Design Your Legacy",
+      text: "Positioning is working when the category borrows your language."
+    }
+  ],
+  evidence: [
+    {
+      id: "e1",
+      slide: "slide-1",
+      label: "Opening",
+      text: "Strategy is not a prettier way to say marketing. It is the architecture of how a company chooses to be understood."
+    },
+    {
+      id: "e2",
+      slide: "slide-2",
+      label: "The Problem",
+      text: "Most brands are simply existing in the noise. They participate in the category rather than defining it."
+    },
+    {
+      id: "e3",
+      slide: "slide-3",
+      label: "Principle 01",
+      text: "True positioning requires sacrifice. You cannot be everything to everyone."
+    },
+    {
+      id: "e4",
+      slide: "slide-4",
+      label: "Principle 03",
+      text: "The strongest brands do not ask to be included in the comparison set. They become the thing other companies are compared against."
+    },
+    {
+      id: "e5",
+      slide: "slide-5",
+      label: "Closing",
+      text: "Positioning is an architectural decision. Competitors can occupy space in your category, but they cannot define the space only you are willing to claim."
+    }
+  ]
+};
+</script>
+</head>
+<body>
+<svg class="svg-defs" aria-hidden="true">
+  <g id="icon-starburst">
+    <path d="M16 0 L19 13 L32 16 L19 19 L16 32 L13 19 L0 16 L13 13 Z"></path>
+    <path d="M16 0 L19 13 L32 16 L19 19 L16 32 L13 19 L0 16 L13 13 Z" transform="rotate(45 16 16)"></path>
+  </g>
+</svg>
+
+<div class="carousel-track" id="carousel-track">
+  <article class="slide" id="slide-1" data-evidence="e1">
+    <div class="bg-image art-print img-1" aria-hidden="true"></div>
+    <div class="bg-image art-print img-2" aria-hidden="true"></div>
+
+    <div class="top-meta">
+      <span>STRATEGY IS DESIGN</span>
+      <div class="pill-badge">VOLUME 01</div>
+    </div>
+
+    <div class="mix-title-container">
+      <span class="t-serif size-l">THE</span> <span class="t-script size-xl">Art</span><br>
+      <span class="t-serif size-l">OF</span> <span class="t-script size-xl">Brand</span><br>
+      <span class="t-serif size-l" style="font-size: 3.2rem;">POSITIONING</span>
+    </div>
+
+    <div class="manifesto-block">
+      Stop letting market trends dictate or determine your positioning or the overall feeling of value in your business. Positioning really is an architectural decision. No one can dictate to you what your distinct market space looks like. Competitors can occupy space in your category, but your advantage is yours and only yours.
+    </div>
+
+    <div class="bottom-nav" style="margin-top: 1rem;">
+      <button class="evidence-link" type="button" data-open-evidence="e1">SOURCE NOTE</button>
+      <span>01 / 05</span>
+    </div>
+  </article>
+
+  <article class="slide" id="slide-2" data-evidence="e2">
+    <div class="top-meta">
+      <span>THE PROBLEM</span>
+      <svg class="starburst" viewBox="0 0 32 32"><use href="#icon-starburst"></use></svg>
+    </div>
+
+    <div class="quote-layout">
+      <div class="large-serif">
+        "Most brands are simply existing in the noise. They participate in the category rather than defining it."
+      </div>
+
+      <div class="manifesto-block" style="column-count: 1; padding-right: 2rem;">
+        when you blend in, you compete on price. when you define a distinct aesthetic and philosophical viewpoint, you compete on value. the architecture of your brand must be built on undeniable truths about your worldview, not arbitrary marketing tactics.
+      </div>
+    </div>
+
+    <div class="bg-image img-full" aria-hidden="true"></div>
+
+    <div class="bottom-nav">
+      <button class="evidence-link" type="button" data-open-evidence="e2">SHOW EVIDENCE</button>
+      <span>02 / 05</span>
+    </div>
+  </article>
+
+  <article class="slide" id="slide-3" data-evidence="e3">
+    <div class="top-meta">
+      <span>CORE PRINCIPLES</span>
+      <div class="pill-badge">METHOD</div>
+    </div>
+
+    <div class="step-number">01</div>
+
+    <div class="content-wrapper">
+      <h2 class="step-title">Embrace <br><span class="t-script" style="font-size: 3.5rem; text-transform:none;">Constraint</span></h2>
+
+      <div class="manifesto-block" style="column-count: 1;">
+        true positioning requires sacrifice. you cannot be everything to everyone. by actively choosing who you are not for, you deeply magnetize those you are meant to serve. define the stylistic bounds you refuse to cross. constraint breeds undeniable clarity.
+      </div>
+    </div>
+
+    <div class="bottom-nav">
+      <button class="evidence-link" type="button" data-open-evidence="e3">SHOW EVIDENCE</button>
+      <span>03 / 05</span>
+    </div>
+  </article>
+
+  <article class="slide" id="slide-4" data-evidence="e4">
+    <div class="top-meta">
+      <span>THE SHIFT</span>
+      <svg class="starburst" viewBox="0 0 32 32"><use href="#icon-starburst"></use></svg>
+    </div>
+
+    <div class="bg-image img-center" aria-hidden="true"></div>
+
+    <div class="massive-mix">
+      <span class="t-serif">BECOME</span>
+      <span class="t-script">the Standard</span>
+      <span class="t-serif">THEY COMPARE</span>
+      <span class="t-serif">AGAINST</span>
+    </div>
+
+    <div class="bottom-nav" style="margin-top: auto;">
+      <button class="evidence-link" type="button" data-open-evidence="e4">SHOW EVIDENCE</button>
+      <span>04 / 05</span>
+    </div>
+  </article>
+
+  <article class="slide" id="slide-5" data-evidence="e5">
+    <div class="top-meta" style="width: 100%;">
+      <span>END OF VOLUME</span>
+      <div class="pill-badge">FIN</div>
+    </div>
+
+    <div style="margin: auto 0; display: flex; flex-direction: column; align-items: center;">
+      <div class="profile-circle">
+        <div class="portrait-art" aria-hidden="true"></div>
+      </div>
+
+      <div class="cta-text">
+        DESIGN <br>
+        <span class="t-script" style="font-size: 4rem; text-transform:none; margin: -15px 0; display:block;">Your Legacy</span>
+      </div>
+
+      <button class="cta-btn" type="button" id="save-strategy">Save this strategy</button>
+    </div>
+
+    <div class="bottom-nav" style="width: 100%;">
+      <span>FOLLOW FOR MORE</span>
+      <span>05 / 05</span>
+    </div>
+  </article>
+</div>
+
+<details class="utility-panel">
+  <summary>TOOLS</summary>
+  <div class="utility-body">
+    <input id="search" type="search" placeholder="Search slides and evidence" autocomplete="off">
+    <div class="utility-actions">
+      <button type="button" id="prev-slide">Prev</button>
+      <button type="button" id="next-slide">Next</button>
+      <button type="button" id="copy-slide">Copy slide</button>
+      <button type="button" id="copy-summary">Copy summary</button>
+    </div>
+  </div>
+</details>
+
+<aside class="evidence-drawer" id="evidence-drawer" aria-hidden="true">
+  <div class="drawer-head">
+    <div>
+      <strong>Source Evidence</strong><br>
+      <span>local excerpts from input.md</span>
+    </div>
+    <button type="button" id="close-evidence">Close</button>
+  </div>
+  <div class="evidence-grid" id="evidence-grid"></div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
+
+<script>
+(() => {
+  const slides = Array.from(document.querySelectorAll(".slide"));
+  const search = document.getElementById("search");
+  const drawer = document.getElementById("evidence-drawer");
+  const evidenceGrid = document.getElementById("evidence-grid");
+  const toast = document.getElementById("toast");
+  let activeIndex = 0;
+
+  function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, char => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    })[char]);
+  }
+
+  function renderEvidence() {
+    evidenceGrid.innerHTML = DATA.evidence.map(item => `
+      <article class="source-excerpt" data-evidence-item="${item.id}">
+        <strong>${escapeHtml(item.label)}</strong>
+        <p>${escapeHtml(item.text)}</p>
+      </article>
+    `).join("");
+  }
+
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add("is-visible");
+    setTimeout(() => toast.classList.remove("is-visible"), 1200);
+  }
+
+  async function copyText(text, message) {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const area = document.createElement("textarea");
+      area.value = text;
+      document.body.append(area);
+      area.select();
+      document.execCommand("copy");
+      area.remove();
+    }
+    showToast(message || "Copied");
+  }
+
+  function updateActive() {
+    const center = window.scrollX + window.innerWidth / 2;
+    let closest = 0;
+    let closestDistance = Infinity;
+    slides.forEach((slide, index) => {
+      const rectCenter = slide.offsetLeft + slide.offsetWidth / 2;
+      const distance = Math.abs(rectCenter - center);
+      if (distance < closestDistance) {
+        closest = index;
+        closestDistance = distance;
+      }
+    });
+    activeIndex = closest;
+  }
+
+  function goTo(index) {
+    activeIndex = Math.max(0, Math.min(slides.length - 1, index));
+    slides[activeIndex].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+  }
+
+  function currentSlideText() {
+    const slide = DATA.slides[activeIndex] || DATA.slides[0];
+    return `${slide.kicker.toUpperCase()}\n${slide.title}\n\n${slide.text}\n${slide.page}`;
+  }
+
+  function summaryText() {
+    return [
+      DATA.title,
+      DATA.summary,
+      "",
+      ...DATA.slides.map(slide => `${slide.page} ${slide.title}: ${slide.text}`)
+    ].join("\n");
+  }
+
+  function openEvidence(id) {
+    drawer.classList.add("is-open");
+    drawer.setAttribute("aria-hidden", "false");
+    document.querySelectorAll(".source-excerpt").forEach(item => {
+      item.classList.toggle("is-focused", item.dataset.evidenceItem === id);
+    });
+  }
+
+  function closeEvidence() {
+    drawer.classList.remove("is-open");
+    drawer.setAttribute("aria-hidden", "true");
+  }
+
+  function runSearch() {
+    const query = search.value.trim().toLowerCase();
+    slides.forEach(slide => {
+      const evidence = DATA.evidence.find(item => item.id === slide.dataset.evidence);
+      const haystack = `${slide.textContent} ${evidence ? evidence.text : ""}`.toLowerCase();
+      slide.classList.toggle("has-match", Boolean(query && haystack.includes(query)));
+    });
+  }
+
+  renderEvidence();
+  updateActive();
+
+  window.addEventListener("scroll", updateActive, { passive: true });
+  search.addEventListener("input", runSearch);
+  document.getElementById("prev-slide").addEventListener("click", () => goTo(activeIndex - 1));
+  document.getElementById("next-slide").addEventListener("click", () => goTo(activeIndex + 1));
+  document.getElementById("copy-slide").addEventListener("click", () => copyText(currentSlideText(), "Slide copied"));
+  document.getElementById("copy-summary").addEventListener("click", () => copyText(summaryText(), "Summary copied"));
+  document.getElementById("save-strategy").addEventListener("click", () => copyText(summaryText(), "Strategy copied"));
+  document.getElementById("close-evidence").addEventListener("click", closeEvidence);
+
+  document.querySelectorAll("[data-open-evidence]").forEach(button => {
+    button.addEventListener("click", () => openEvidence(button.dataset.openEvidence));
+  });
+
+  window.addEventListener("keydown", event => {
+    if (event.target && ["INPUT", "TEXTAREA"].includes(event.target.tagName)) return;
+    if (event.key === "ArrowLeft") goTo(activeIndex - 1);
+    if (event.key === "ArrowRight") goTo(activeIndex + 1);
+    if (event.key === "Escape") closeEvidence();
+  });
+})();
+</script>
+</body>
+</html>

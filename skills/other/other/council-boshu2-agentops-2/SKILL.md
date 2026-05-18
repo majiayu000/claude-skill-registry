@@ -43,7 +43,7 @@ for index in "${!PERSPECTIVES[@]}"; do
   perspective="${PERSPECTIVES[$index]}"
   judge_number="$((index + 1))"
   prompt="$(build_packet_for_perspective "$PACKET" "$perspective")"
-  AGENTOPS_INTENT_ECHO_DISABLED=1 codex exec -s read-only -C "$(pwd)" \
+  codex exec -s read-only -C "$(pwd)" \
     --output-schema skills/council/schemas/verdict.json \
     -o ".agents/council/codex-${judge_number}.json" "$prompt"
 done

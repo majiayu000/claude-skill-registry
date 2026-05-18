@@ -49,7 +49,7 @@ if ! which codex > /dev/null 2>&1; then
 fi
 
 # Model availability test (uses the user's configured Codex default)
-if ! AGENTOPS_INTENT_ECHO_DISABLED=1 codex exec --full-auto -C "$(pwd)" "echo ok" > /dev/null 2>&1; then
+if ! codex exec --full-auto -C "$(pwd)" "echo ok" > /dev/null 2>&1; then
   echo "Default Codex model unavailable. Falling back to /swarm."
 fi
 ```
@@ -57,7 +57,7 @@ fi
 ## Canonical Command
 
 ```bash
-AGENTOPS_INTENT_ECHO_DISABLED=1 codex exec --full-auto -C "$(pwd)" -o <output-file> "<prompt>"
+codex exec --full-auto -C "$(pwd)" -o <output-file> "<prompt>"
 ```
 
 Uses the user's default Codex model. Add `-m "<model>"` before `-C` only when you intentionally want to pin a specific model.
@@ -73,7 +73,7 @@ Flag order: `--full-auto` -> `-C` -> `-o` -> prompt (insert `-m` before `-C` onl
 When tasks span multiple repos/directories, use `--add-dir` to grant access:
 
 ```bash
-AGENTOPS_INTENT_ECHO_DISABLED=1 codex exec --full-auto -C "$(pwd)" --add-dir /path/to/other/repo -o output.md "prompt"
+codex exec --full-auto -C "$(pwd)" --add-dir /path/to/other/repo -o output.md "prompt"
 ```
 
 The `--add-dir` flag is repeatable for multiple additional directories.
@@ -83,7 +83,7 @@ The `--add-dir` flag is repeatable for multiple additional directories.
 Add `--json` to stream JSONL events to stdout for real-time monitoring:
 
 ```bash
-AGENTOPS_INTENT_ECHO_DISABLED=1 codex exec --full-auto --json -C "$(pwd)" -o output.md "prompt" 2>/dev/null
+codex exec --full-auto --json -C "$(pwd)" -o output.md "prompt" 2>/dev/null
 ```
 
 Key events:
@@ -171,9 +171,9 @@ spawn_agent(message="Fix log rotation in pkg/log.go:rotateLogFile...")
 Codex CLI backend:
 
 ```
-Bash(command='AGENTOPS_INTENT_ECHO_DISABLED=1 codex exec --full-auto -C "$(pwd)" -o .agents/codex-team/auth-fix.md "Fix the null check in pkg/auth.go:validateToken around line 89..."', run_in_background=true)
-Bash(command='AGENTOPS_INTENT_ECHO_DISABLED=1 codex exec --full-auto -C "$(pwd)" -o .agents/codex-team/config-fix.md "Add timeout field to internal/config.go:Config struct..."', run_in_background=true)
-Bash(command='AGENTOPS_INTENT_ECHO_DISABLED=1 codex exec --full-auto -C "$(pwd)" -o .agents/codex-team/logging-fix.md "Fix log rotation in pkg/log.go:rotateLogFile..."', run_in_background=true)
+Bash(command='codex exec --full-auto -C "$(pwd)" -o .agents/codex-team/auth-fix.md "Fix the null check in pkg/auth.go:validateToken around line 89..."', run_in_background=true)
+Bash(command='codex exec --full-auto -C "$(pwd)" -o .agents/codex-team/config-fix.md "Add timeout field to internal/config.go:Config struct..."', run_in_background=true)
+Bash(command='codex exec --full-auto -C "$(pwd)" -o .agents/codex-team/logging-fix.md "Fix log rotation in pkg/log.go:rotateLogFile..."', run_in_background=true)
 ```
 
 **Strategy: Merge (same file)**
@@ -184,7 +184,7 @@ Combine all fixes into a single agent prompt:
 spawn_agent(message="Fix these 3 issues in cmd/zeus.go: (1) rename spec_path to spec_location in QUEST_REQUEST payload (2) remove beads field (3) fix dispatch counter increment location")
 
 # CLI equivalent:
-Bash(command='AGENTOPS_INTENT_ECHO_DISABLED=1 codex exec --full-auto -C "$(pwd)" -o .agents/codex-team/zeus-fixes.md \
+Bash(command='codex exec --full-auto -C "$(pwd)" -o .agents/codex-team/zeus-fixes.md \
   "Fix these 3 issues in cmd/zeus.go: \
    (1) Line 245: rename spec_path to spec_location in QUEST_REQUEST payload \
    (2) Line 250: remove the spurious beads field from the payload \
@@ -204,8 +204,8 @@ spawn_agent(message='Add timeout to internal/config.go...')
 wait(ids=["<id-1>", "<id-2>"], timeout_ms=120000)
 
 # Wave 1: non-overlapping tasks (CLI backend)
-Bash(command='AGENTOPS_INTENT_ECHO_DISABLED=1 codex exec ... -o .agents/codex-team/auth-fix.md "Fix null check in pkg/auth.go:89..."', run_in_background=true)
-Bash(command='AGENTOPS_INTENT_ECHO_DISABLED=1 codex exec ... -o .agents/codex-team/config-fix.md "Add timeout to internal/config.go..."', run_in_background=true)
+Bash(command='codex exec ... -o .agents/codex-team/auth-fix.md "Fix null check in pkg/auth.go:89..."', run_in_background=true)
+Bash(command='codex exec ... -o .agents/codex-team/config-fix.md "Add timeout to internal/config.go..."', run_in_background=true)
 
 # Wait for Wave 1
 TaskOutput(task_id="<id-1>", block=true, timeout=120000)
@@ -219,7 +219,7 @@ git diff pkg/auth.go
 spawn_agent(message='Add rate limiting to pkg/auth.go and pkg/middleware.go. Note: validateToken now has a null check at line 89. Build on current file state.')
 
 # Wave 2: CLI backend equivalent
-Bash(command='AGENTOPS_INTENT_ECHO_DISABLED=1 codex exec ... -o .agents/codex-team/rate-limit.md \
+Bash(command='codex exec ... -o .agents/codex-team/rate-limit.md \
   "Add rate limiting to pkg/auth.go and pkg/middleware.go. \
    Note: pkg/auth.go was recently modified — the validateToken function now has a null check at line 89. \
    Build on the current state of the file."', run_in_background=true)
@@ -299,7 +299,7 @@ Skill(skill="swarm")
 | Item | Value |
 |------|-------|
 | Model | User's configured Codex default (`-m "<model>"` to pin one) |
-| Command | `AGENTOPS_INTENT_ECHO_DISABLED=1 codex exec --full-auto -C "$(pwd)" -o <file> "prompt"` |
+| Command | `codex exec --full-auto -C "$(pwd)" -o <file> "prompt"` |
 | Output dir | `.agents/codex-team/` |
 | Max agents/wave | 6 recommended |
 | Timeout | 120s default |
@@ -359,7 +359,7 @@ Skill(skill="swarm")
 | Problem | Cause | Solution |
 |---------|-------|----------|
 | Codex CLI not found | `codex` not installed or not on PATH | Run `npm i -g @openai/codex` or use fallback `/swarm` |
-| Default Codex model unavailable | Account/config mismatch or unsupported default | Verify `AGENTOPS_INTENT_ECHO_DISABLED=1 codex exec --full-auto -C "$(pwd)" "echo ok"` works, or pin a supported model with `-m "<model>"` |
+| Default Codex model unavailable | Account/config mismatch or unsupported default | Verify `codex exec --full-auto -C "$(pwd)" "echo ok"` works, or pin a supported model with `-m "<model>"` |
 | Agents produce file conflicts | Multiple agents editing same file | Use file-target analysis and apply merge or multi-wave strategy |
 | Agent timeout with no output | Task too complex or vague prompt | Break into smaller tasks, add specific file:line instructions |
 | Output files empty or missing | `-o` path invalid or permission denied | Check `.agents/codex-team/` directory exists and is writable |

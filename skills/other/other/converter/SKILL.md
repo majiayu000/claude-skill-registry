@@ -1,19 +1,29 @@
 ---
 name: converter
-description: 'Convert AgentOps skill formats.'
-practices: [refactoring, design-patterns]
+description: Convert AgentOps skill formats.
+practices:
+- refactoring
+- design-patterns
+hexagonal_role: generic
+consumes: []
+produces:
+- converted-skill
+context_rel: []
 skill_api_version: 1
 context:
   window: isolated
   intent:
     mode: none
   sections:
-    exclude: [HISTORY, INTEL, TASK]
+    exclude:
+    - HISTORY
+    - INTEL
+    - TASK
   intel_scope: none
 metadata:
   tier: cross-vendor
   dependencies: []
-output_contract: "converted skill files for target platform"
+output_contract: converted skill files for target platform
 ---
 # /converter -- Cross-Platform Skill Converter
 

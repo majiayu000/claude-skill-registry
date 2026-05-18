@@ -28,25 +28,25 @@ Use the lookup script to query the full RAWeb 1.1 criteria database:
 
 ```bash
 # List all topics
-!`${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh topics`
+!`${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh topics`
 
 # Look up a specific criterion
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh criterion <topic.criterion>
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh criterion <topic.criterion>
 
 # Full test methodology for a specific test
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh methodology <topic.criterion.test>
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh methodology <topic.criterion.test>
 
 # All criteria at a given level
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh level AA
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh level AA
 
 # Search criteria by keyword
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh search "<keyword>"
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh search "<keyword>"
 
 # Glossary definitions
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh glossary "<term>"
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh glossary "<term>"
 ```
 
-Raw JSON files: `${CLAUDE_SKILL_DIR}/../references/raweb/`
+Raw JSON files: `${CLAUDE_SKILL_DIR}/references/`
 
 ### Component pattern references (WAI-ARIA APG)
 
@@ -55,19 +55,19 @@ verify their implementation against the correct WAI-ARIA pattern:
 
 ```bash
 # Find the expected pattern for a component
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-component-lookup.sh find "<keyword>"
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-component-lookup.sh find "<keyword>"
 
 # Show full expected keyboard + ARIA spec for a component
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-component-lookup.sh show <slug>
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-component-lookup.sh show <slug>
 
 # Check which patterns use a specific ARIA role
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-component-lookup.sh roles "<role>"
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-component-lookup.sh roles "<role>"
 
 # List all 30 available patterns
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-component-lookup.sh list
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-component-lookup.sh list
 ```
 
-Individual pattern files: `${CLAUDE_SKILL_DIR}/../references/raweb/components/<slug>.json`
+Individual pattern files: `${CLAUDE_SKILL_DIR}/references/components/<slug>.json`
 
 Each pattern file contains the expected `keyboard_interactions`, `aria.roles`,
 `aria.required_attributes`, and `aria.optional_attributes` as defined by the APG.
@@ -91,7 +91,7 @@ For each applicable theme, follow the official RAWeb test methodologies.
 ALWAYS look up the detailed methodology before marking a criterion as pass/fail:
 
 ```bash
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh methodology <topic.criterion.test>
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh methodology <topic.criterion.test>
 ```
 
 ### Step 3: Report findings
@@ -261,10 +261,10 @@ editing tools, support services, and real-time communication. Query them
 individually when relevant:
 
 ```bash
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh topic 14  # Documentation & accessibility features
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh topic 15  # Editing tools
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh topic 16  # Support services
-bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-lookup.sh topic 17  # Real-time communication
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh topic 14  # Documentation & accessibility features
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh topic 15  # Editing tools
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh topic 16  # Support services
+bash ${CLAUDE_SKILL_DIR}/scripts/raweb-lookup.sh topic 17  # Real-time communication
 ```
 
 ---
@@ -367,7 +367,7 @@ grep -rn 'color:.*red\|color:.*green\|text-red\|text-green\|text-danger\|text-su
 
 1. **Look up the exact criterion** before rendering a verdict — do not rely on memory
 2. **Apply the official test methodology** from `methodologies.json`
-3. **Check the expected ARIA pattern** for interactive components: `bash ${CLAUDE_SKILL_DIR}/../scripts/raweb-component-lookup.sh show <slug>` — verify keyboard interactions, required roles, and required attributes match the APG specification
+3. **Check the expected ARIA pattern** for interactive components: `bash ${CLAUDE_SKILL_DIR}/scripts/raweb-component-lookup.sh show <slug>` — verify keyboard interactions, required roles, and required attributes match the APG specification
 4. **Use precise RAWeb criterion numbers** (e.g., "RAWeb 11.1", not just "WCAG 1.3.1")
 5. **Include the WCAG mapping** for cross-reference (found in the criterion's `references`)
 6. **Provide actionable remediation** with code examples — when the fix involves an ARIA widget, include the correct pattern from the component reference

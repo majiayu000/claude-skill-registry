@@ -1,0 +1,31 @@
+{
+  "name": "getterdone",
+  "description": "AI agents hire human gig workers for real-world and specialized digital tasks via USD bounty with photo/text proof.",
+  "repo": "getterdoneinc/skill",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "tags": [
+    "agents",
+    "human-in-the-loop",
+    "gig-economy",
+    "real-world",
+    "bounty",
+    "mcp"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "getterdone-getterdoneinc-skill-7",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "LICENSE",
+    "README.md"
+  ],
+  "author": "getterdoneinc",
+  "source_url": "https://github.com/getterdoneinc/skill/blob/main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/getterdoneinc/skill/blob/main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

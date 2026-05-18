@@ -125,18 +125,31 @@ If any precondition fails, show user which jobs are blocked and why.
 
 ### Step 3: Launch Scheduler
 
-The scheduler implementation lives in `tools/experiment_queue/queue_manager.py`. Three preliminaries before launch.
+The canonical scheduler implementation lives in `skills/experiment-queue/scripts/queue_manager.py` (Phase 3.3 move, Arch C). `tools/experiment_queue/queue_manager.py` is now a Python `os.execv` shim retained for legacy resolver-chain compatibility. Three preliminaries before launch.
 
-**3a. Resolve the local helper directory.** The two helpers (`queue_manager.py`, `build_manifest.py`) sit under `tools/experiment_queue/` in the ARIS repo. Use this fallback chain so the skill works from any project layout:
+**3a. Resolve the local helper directory.** The two helpers (`queue_manager.py`, `build_manifest.py`) now sit under `skills/experiment-queue/scripts/` in the ARIS repo, with shims at `tools/experiment_queue/` for legacy resolver layers. Use this hybrid chain so the skill works from any project layout:
 
 ```bash
-QUEUE_TOOLS=".aris/tools/experiment_queue"
-[ -f "$QUEUE_TOOLS/queue_manager.py" ] || QUEUE_TOOLS="tools/experiment_queue"
-[ -f "$QUEUE_TOOLS/queue_manager.py" ] || QUEUE_TOOLS="${ARIS_REPO:-}/tools/experiment_queue"
-[ -f "$QUEUE_TOOLS/queue_manager.py" ] || { echo "ERROR: experiment_queue helpers not found; rerun install_aris.sh or set ARIS_REPO" >&2; exit 1; }
+# Layer 0: self-contained (CC 1.0+ exposes $CLAUDE_SKILL_DIR).
+QUEUE_TOOLS=""
+if [ -n "${CLAUDE_SKILL_DIR:-}" ] && [ -f "$CLAUDE_SKILL_DIR/scripts/queue_manager.py" ]; then
+  QUEUE_TOOLS="$CLAUDE_SKILL_DIR/scripts"
+fi
+# Layers 1-3: legacy chain via tools/experiment_queue/ shims.
+if [ -z "$QUEUE_TOOLS" ]; then
+  cd "$(git rev-parse --show-toplevel 2>/dev/null || pwd)" || exit 1
+  if [ -z "${ARIS_REPO:-}" ] && [ -f .aris/installed-skills.txt ]; then
+      ARIS_REPO=$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills.txt 2>/dev/null) || true
+  fi
+  QUEUE_TOOLS=".aris/tools/experiment_queue"
+  [ -f "$QUEUE_TOOLS/queue_manager.py" ] || QUEUE_TOOLS="tools/experiment_queue"
+  [ -f "$QUEUE_TOOLS/queue_manager.py" ] || { [ -n "${ARIS_REPO:-}" ] && QUEUE_TOOLS="$ARIS_REPO/tools/experiment_queue"; }
+  [ -f "$QUEUE_TOOLS/queue_manager.py" ] || QUEUE_TOOLS=""
+fi
+[ -z "$QUEUE_TOOLS" ] && { echo "ERROR: experiment_queue helpers not found (layer 0: \$CLAUDE_SKILL_DIR/scripts/; layers 1-3: .aris/tools/, tools/, \$ARIS_REPO/tools/). Rerun install_aris.sh, set ARIS_REPO, or copy the canonical scripts from \$ARIS_REPO/skills/experiment-queue/scripts/." >&2; exit 1; }
 ```
 
-The `.aris/tools` symlink is set up by `install_aris.sh` (#174). Older installs without that symlink fall through to `tools/experiment_queue` (works if invoked from inside the ARIS repo) or `$ARIS_REPO/tools/experiment_queue`.
+The `.aris/tools` symlink is set up by `install_aris.sh` (#174). Older installs without that symlink fall through to `tools/experiment_queue` (works if invoked from inside the ARIS repo) or `$ARIS_REPO/tools/experiment_queue`. After Phase 3.3, each of those legacy paths contains a Python `os.execv` shim that forwards to the canonical `skills/experiment-queue/scripts/` location, so existing users do not need to re-run anything.
 
 **3b. Compute remote paths.** Use both a remote-relative form (for `scp` destinations — modern `scp` runs in SFTP mode and does NOT reliably expand `$HOME` in destination paths) and a `$HOME`-prefixed form (for `ssh ... command` strings, where remote bash WILL expand `$HOME`):
 
@@ -364,8 +377,8 @@ Then user can check anytime or wait for summary report.
 - `/run-experiment` — single experiment deployment
 - `/monitor-experiment` — check progress (now reads from queue_state.json)
 - `/analyze-results` — post-hoc analysis
-- `tools/experiment_queue/queue_manager.py` (bundled) — the scheduler implementation; resolved at runtime via the fallback chain in Step 3a
-- `tools/experiment_queue/build_manifest.py` (bundled) — build manifest from grid spec; same resolution chain
+- `skills/experiment-queue/scripts/queue_manager.py` (canonical, Phase 3.3 move) — the scheduler implementation; resolved at runtime via the fallback chain in Step 3a. Legacy entry at `tools/experiment_queue/queue_manager.py` is an `os.execv` shim.
+- `skills/experiment-queue/scripts/build_manifest.py` (canonical, Phase 3.3 move) — build manifest from grid spec; same resolution chain. Legacy entry at `tools/experiment_queue/build_manifest.py` is an `os.execv` shim.
 
 ## Rationale / Source
 

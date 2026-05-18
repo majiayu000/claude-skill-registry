@@ -42,6 +42,29 @@ Moves **3 (vertical slice decomposition)** and **5 (wave validity check)** of th
 
 **CLI dependencies:** bd (issue creation). If bd is unavailable, write the plan to `.agents/plans/` as markdown with issue descriptions, and use TaskList for tracking instead. The plan document is always created regardless of bd availability.
 
+## Discovery Boundary
+
+Use the [Skill Ports and Adapters](../../docs/contracts/skill-ports-and-adapters.md)
+vocabulary for the boundary from Discovery into Plan:
+
+| Boundary piece | Plan contract |
+|---|---|
+| Inbound port | `plan_slices` from BDD intent, bead, research artifact, or execution packet |
+| Outbound ports | `persist_issue`, `verify_symbols`, `retrieve_context`, `seed_execution_packet` |
+| Driving adapter | `/plan` skill invocation |
+| Driven adapters | bd, `rg`, `.agents/findings`, `.agents/plans`, execution-packet writer |
+| Context packet | slice plan, file dependency matrix, acceptance criteria, test levels |
+| Guard adapter | stale-scope verification, symbol verification, wave-validity check |
+
+```gherkin
+Feature: Plan converts dense intent into executable slices
+  Scenario: Plan consumes Discovery output
+    Given Discovery provides density fields and artifact links
+    When Plan receives the `plan_slices` port request
+    Then each slice has acceptance criteria, write scope, test levels, and ownership
+    And no slice depends on raw Discovery chat context
+```
+
 ## Flags
 
 | Flag | Default | Description |
@@ -183,7 +206,7 @@ Read [references/wave-matrices.md](references/wave-matrices.md) for the full fil
 
 **Write to:** `.agents/plans/YYYY-MM-DD-<goal-slug>.md`
 
-Read [references/plan-document-template.md](references/plan-document-template.md) for the full canonical template (Context, Files to Modify, Boundaries, Baseline Audit, Implementation, Tests, Conformance Checks, Verification, Issues, Execution Order, Planning Rules Compliance, Post-Merge Cleanup, Next Steps) and the **Baseline Audit Gate** (BLOCK if missing, WARN if incomplete, `--skip-audit-gate` to opt out).
+Read [references/plan-document-template.md](references/plan-document-template.md) for the full canonical template (Context, Intent Issue, Files to Modify, Boundaries, Baseline Audit, Implementation, Tests, Slice Validation Plan, Conformance Checks, Verification, Issues, Execution Order, Planning Rules Compliance, Post-Merge Cleanup, Next Steps) and the **Baseline Audit Gate** (BLOCK if missing, WARN if incomplete, `--skip-audit-gate` to opt out). The **Intent Issue** section links the upstream [BDD intent issue](../../docs/templates/intent-issue.md) and carries its acceptance examples; the **Slice Validation Plan** section embeds the [slice-validation surface](../../docs/templates/slice-validation.md) (one slice per Given/When/Then with a first failing test, write scope, bounded context, owner), the wave-validity gate, and a roll-up acceptance table. Conformance Checks remains the machine-checkable layer — Gherkin is the behavior layer, not a replacement.
 
 ### Step 7: Create Tasks for In-Session Tracking
 

@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-05-17T04:21:59.014031Z",
-  "archive_skill_md_count_raw": 229005,
-  "archive_metadata_count_raw": 229005,
-  "indexed_skill_count_scan_shape": 229005,
-  "registry_skill_count_dedup": 155651,
+  "updated_at": "2026-05-18T04:34:29.573759Z",
+  "archive_skill_md_count_raw": 229106,
+  "archive_metadata_count_raw": 229106,
+  "indexed_skill_count_scan_shape": 229106,
+  "registry_skill_count_dedup": 155735,
   "total_plugins": 3,
   "categories": 77,
   "category_counts": [
@@ -95,7 +95,7 @@
     {
       "name": "data",
       "code": "dat",
-      "count": 46394
+      "count": 46395
     },
     {
       "name": "data-access",
@@ -105,7 +105,7 @@
     {
       "name": "design",
       "code": "des",
-      "count": 9530
+      "count": 9532
     },
     {
       "name": "design-principles",
@@ -115,7 +115,7 @@
     {
       "name": "development",
       "code": "dev",
-      "count": 20598
+      "count": 20689
     },
     {
       "name": "development-code",
@@ -130,7 +130,7 @@
     {
       "name": "devops",
       "code": "ops",
-      "count": 5325
+      "count": 5326
     },
     {
       "name": "docs",
@@ -220,12 +220,12 @@
     {
       "name": "marketing",
       "code": "mkt",
-      "count": 482
+      "count": 484
     },
     {
       "name": "messaging",
       "code": "oth",
-      "count": 29
+      "count": 30
     },
     {
       "name": "meta",
@@ -240,7 +240,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 131941
+      "count": 131936
     },
     {
       "name": "performance",
@@ -250,7 +250,7 @@
     {
       "name": "personal-development",
       "code": "oth",
-      "count": 40
+      "count": 41
     },
     {
       "name": "planning",
@@ -270,7 +270,7 @@
     {
       "name": "productivity",
       "code": "pro",
-      "count": 2139
+      "count": 2145
     },
     {
       "name": "programming-languages",
@@ -355,7 +355,7 @@
     {
       "name": "testing",
       "code": "tst",
-      "count": 6770
+      "count": 6771
     },
     {
       "name": "testing-methodologies",
@@ -393,7 +393,7 @@
       "count": 1
     }
   ],
-  "unique_repo_count": 9746,
+  "unique_repo_count": 9748,
   "official_skill_count": 0,
   "top_repositories": [
     {
@@ -406,7 +406,7 @@
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "count": 1534
+      "count": 1541
     },
     {
       "repo": "plurigrid/asi",
@@ -414,7 +414,7 @@
     },
     {
       "repo": "a5c-ai/babysitter",
-      "count": 1295
+      "count": 1310
     },
     {
       "repo": "boisenoise/skills-collections",
@@ -439,19 +439,19 @@
   ],
   "featured_count": 100,
   "index_size_bytes": 162,
-  "index_size_gzip_bytes": 174,
+  "index_size_gzip_bytes": 175,
   "search_shard_count": 7,
-  "search_largest_shard_bytes": 8388644,
-  "search_largest_shard_gzip_bytes": 2582736,
+  "search_largest_shard_bytes": 8388660,
+  "search_largest_shard_gzip_bytes": 2582849,
   "category_shard_count": 91,
-  "category_largest_part_bytes": 8388732,
-  "category_largest_part_gzip_bytes": 1761011,
-  "lite_index_count": 156216,
+  "category_largest_part_bytes": 8388720,
+  "category_largest_part_gzip_bytes": 1760703,
+  "lite_index_count": 156300,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3501765,
-  "lite_index_gzip_size_bytes": 675058,
-  "quality_index_size_bytes": 45076428,
-  "security_index_size_bytes": 31791125,
-  "ranking_index_size_bytes": 33854719,
-  "largest_generated_file_bytes": 45076428
+  "lite_index_gzip_size_bytes": 675057,
+  "quality_index_size_bytes": 45101145,
+  "security_index_size_bytes": 31808701,
+  "ranking_index_size_bytes": 33873387,
+  "largest_generated_file_bytes": 45101145
 }

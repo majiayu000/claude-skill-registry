@@ -1,0 +1,21 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "dembrandt/dembrandt-skills",
+  "path": "skills/loading-states-and-perceived-performance/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-dembrandt-dembrandt-skills-29",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "dembrandt",
+  "source_url": "https://github.com/dembrandt/dembrandt-skills/blob/main/skills/loading-states-and-perceived-performance/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dembrandt/dembrandt-skills/blob/main/skills/loading-states-and-perceived-performance/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

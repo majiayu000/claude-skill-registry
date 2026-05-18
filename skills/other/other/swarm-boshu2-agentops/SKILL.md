@@ -73,6 +73,9 @@ Mayor (this session)
 
 Read [references/execution-steps.md](references/execution-steps.md) when you need the full procedural detail (Steps 0–6): backend detection, gc dispatch, task typing + file manifests, context briefing, manifest auto-population, advisory bead clustering, wave identification, pre-spawn conflict check, test-file naming validation, multi-wave base-SHA refresh, and worker dispatch.
 
+Every TaskCreate **must** include `metadata.issue_type` plus a `metadata.files` array.
+Do not spawn workers with overlapping file manifests into the same shared-worktree wave.
+
 ## Example Flow
 
 ```

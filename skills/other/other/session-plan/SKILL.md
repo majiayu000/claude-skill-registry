@@ -2,6 +2,7 @@
 name: session-plan
 user-invocable: false
 tags: [orchestration, planning, waves, agents]
+model: opus
 model-preference: opus
 model-preference-codex: gpt-5.4
 model-preference-cursor: claude-opus-4-6
@@ -132,7 +133,15 @@ Before assigning tasks to waves, discover available agents for this session:
 4. **Match tasks to agents**: For each task from Step 1:
    - If `agent-mapping` config specifies a mapping for the task's domain → use that agent. For Docs-role tasks specifically, check `agent-mapping.docs` first; if set, use that agent name instead of the default below.
    - **Docs-role fast path (high-priority — runs before keyword matching):** If the task's role is classified as `Docs` (per Step 1.8) AND `docs-orchestrator.enabled: true` in Session Config → resolve `subagent_type: "docs-writer"`. The `docs-writer` project agent is discovered at `<state-dir>/agents/docs-writer.md` during the Priority 1 scan above. No colon prefix — it is a project agent, not a plugin agent. If `agent-mapping.docs` is set, use that name instead of `"docs-writer"`.
-   - Else, match task description against agent descriptions (keyword overlap: database/schema/migration → db agent, test/coverage/spec → test agent, UI/component/style/page → ui agent, security/auth/OWASP → security agent)
+   - Else, match task description against agent descriptions using the content-based routing table below. Match any keyword from the pattern column (case-insensitive) against the task title and description. Use the first matching row; rows are checked top to bottom.
+
+     | Keyword pattern | Resolved agent |
+     |---|---|
+     | `migration`, `schema`, `RLS`, `index`, `query`, `ORM`, `supabase`, `postgres`, `database`, `db` | `session-orchestrator:db-specialist` |
+     | `component`, `tsx`, `css`, `tailwind`, `page`, `layout`, `a11y`, `wcag`, `responsive`, `UI`, `frontend`, `style` | `session-orchestrator:ui-developer` |
+     | `security`, `auth`, `csrf`, `csp`, `injection`, `XSS`, `sanitize`, `OWASP`, `vulnerability`, `pen test` | `session-orchestrator:security-reviewer` |
+     | `test`, `coverage`, `vitest`, `jest`, `playwright`, `spec`, `fixture`, `assertion` | `session-orchestrator:test-writer` |
+     | (none of the above match) | `session-orchestrator:code-implementer` |
    - Else, use role-based default: Impl-Core/Impl-Polish → `code-implementer`, Quality → `test-writer`
    - Record the resolved `subagent_type` for each task
 

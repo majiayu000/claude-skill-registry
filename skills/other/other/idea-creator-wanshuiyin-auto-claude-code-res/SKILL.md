@@ -17,7 +17,7 @@ Given a broad research direction from the user, systematically generate, validat
 - **PILOT_TIMEOUT_HOURS = 3** — Hard timeout: kill pilots exceeding 3 hours. Collect partial results if available.
 - **MAX_PILOT_IDEAS = 3** — Pilot at most 3 ideas in parallel. Additional ideas are validated on paper only.
 - **MAX_TOTAL_GPU_HOURS = 8** — Total GPU budget for all pilots combined.
-- **REVIEWER_MODEL = `gpt-5.4`** — Model used via a secondary Codex agent for brainstorming and review. Must be an OpenAI model (e.g., `gpt-5.4`, `o3`, `gpt-4o`).
+- **REVIEWER_MODEL = `gpt-5.5`** — Model used via a secondary Codex agent for brainstorming and review. Must be an OpenAI model (e.g., `gpt-5.5`, `o3`, `gpt-4o`).
 - **REVIEWER_BACKEND = `codex`** — Default: Codex xhigh reviewer through `spawn_agent` / `send_input`. Use `--reviewer: oracle-pro` only when explicitly requested; if Oracle is unavailable, warn and fall back to Codex xhigh.
 - **OUTPUT_DIR = `idea-stage/`** — All idea-stage outputs go here. Create the directory if it doesn't exist.
 
@@ -29,13 +29,15 @@ Given a broad research direction from the user, systematically generate, validat
 
 Skip this phase entirely if `research-wiki/` does not exist.
 
-Resolve the wiki helper from the Codex install manifest when available:
+Resolve the wiki helper using the Codex-side canonical chain (see
+`../shared-references/wiki-helper-resolution.md`):
 
 ```bash
 ARIS_REPO="${ARIS_REPO:-$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills-codex.txt 2>/dev/null)}"
 WIKI_SCRIPT=""
 [ -n "$ARIS_REPO" ] && [ -f "$ARIS_REPO/tools/research_wiki.py" ] && WIKI_SCRIPT="$ARIS_REPO/tools/research_wiki.py"
 [ -z "$WIKI_SCRIPT" ] && [ -f tools/research_wiki.py ] && WIKI_SCRIPT="tools/research_wiki.py"
+[ -z "$WIKI_SCRIPT" ] && [ -f ~/.codex/skills/research-wiki/research_wiki.py ] && WIKI_SCRIPT="$HOME/.codex/skills/research-wiki/research_wiki.py"
 ```
 
 If `research-wiki/query_pack.md` exists and is less than 7 days old, read it as initial landscape context:

@@ -110,6 +110,12 @@ Dream owns the knowledge compounding layer; `/evolve` owns the code compounding 
 
 **FULLY AUTONOMOUS.** Read `references/autonomous-execution.md`. Every `/rpi` uses `--auto`. Do NOT ask the user anything. Each cycle = complete 3-phase `/rpi` run.
 
+For broad AgentOps 3.0 domain evolution across skills, CLI, hooks, docs, tests,
+beads, and knowledge, first read
+[references/domain-evolution-bootstrap.md](references/domain-evolution-bootstrap.md).
+It supplies the BDD/DDD/Hexagonal/TDD/XP control surface and the clean-room
+skill-factory guardrails.
+
 ### Step 0: Setup
 
 ```bash
@@ -533,6 +539,7 @@ See `references/cycle-history.md` for advanced troubleshooting.
 - [references/compounding.md](references/compounding.md) — Knowledge flywheel and work harvesting
 - [references/context-budget.md](references/context-budget.md) — `CONTEXT_BUDGET_EXHAUSTED` as a third stop reason and handoff protocol
 - [references/convergence-mechanics.md](references/convergence-mechanics.md) — Read-path mechanisms (prior-failure injection, healing-first classifier, hypothesis tracking, STOP criteria) that turn write-only ledgers into compounding behavior
+- [references/domain-evolution-bootstrap.md](references/domain-evolution-bootstrap.md) — BDD/DDD/Hexagonal/TDD/XP control surface for AgentOps 3.0 skill/domain evolution
 - [references/cycle-history.md](references/cycle-history.md) — JSONL format, recovery protocol, kill switch
 - [references/examples.md](references/examples.md) — Detailed usage examples
 - [references/fitness-scoring.md](references/fitness-scoring.md) — Baseline capture, regression detection, revert procedure

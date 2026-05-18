@@ -1,7 +1,14 @@
 ---
 name: harvest
-description: 'Promote .agents knowledge.'
-practices: [wiki-knowledge-surface, lean-startup]
+description: Promote .agents knowledge.
+practices:
+- wiki-knowledge-surface
+- lean-startup
+hexagonal_role: supporting
+consumes: []
+produces:
+- .agents/research/*.md
+context_rel: []
 skill_api_version: 1
 user-invocable: true
 context:
@@ -11,7 +18,7 @@ context:
 metadata:
   tier: knowledge
   dependencies: []
-output_contract: ".agents/learnings/*.md (consolidated)"
+output_contract: .agents/learnings/*.md (consolidated)
 ---
 # Harvest — Cross-Rig Knowledge Consolidation
 

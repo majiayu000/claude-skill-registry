@@ -11,7 +11,10 @@ Search topic or arXiv paper ID: $ARGUMENTS
 
 - **PAPER_DIR** - Local directory to save downloaded PDFs. Default: `papers/` in the current project directory.
 - **MAX_RESULTS = 10** - Default number of search results.
-- **FETCH_SCRIPT** - `$ARIS_REPO/tools/arxiv_fetch.py` from the ARIS repo recorded by the Codex install manifest. Fall back to inline Python if not found.
+- **ARXIV_FETCHER** — canonical name `arxiv_fetch.py`, resolved per
+  [`shared-references/integration-contract.md`](../shared-references/integration-contract.md) §2
+  (Codex-side chain: `$ARIS_REPO/tools/` → `tools/` → `~/.codex/skills/arxiv/`).
+  Policy D1 — if unresolved (canonical chain exhausted), fall back to inline Python.
 
 > Overrides (append to arguments):
 > - `/arxiv "attention mechanism" - max: 20` - return up to 20 results
@@ -35,34 +38,26 @@ If the argument matches an arXiv ID pattern (`YYMM.NNNNN` or `category/NNNNNNN`)
 
 ### Step 2: Search arXiv
 
-Locate the fetch script. Prefer the Codex managed install manifest when present, then fall back to the same project/global copy-install lookup style as the Claude skill:
+Resolve `$ARXIV_FETCHER` via the canonical strict-safe Codex chain
+(see [`shared-references/integration-contract.md`](../shared-references/integration-contract.md) §2):
 
 ```bash
-ARIS_REPO="${ARIS_REPO:-$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills-codex.txt 2>/dev/null)}"
-export ARIS_REPO
-SCRIPT=$(python3 -c "
-import pathlib
-import os
-candidates = [
-    pathlib.Path(os.environ['ARIS_REPO']) / 'tools' / 'arxiv_fetch.py'
-    if os.environ.get('ARIS_REPO') else None,
-    pathlib.Path('tools/arxiv_fetch.py'),
-    pathlib.Path.home() / '.codex' / 'skills' / 'arxiv' / 'arxiv_fetch.py',
-]
-for p in [c for c in candidates if c is not None]:
-    if p.exists():
-        print(p)
-        break
-" 2>/dev/null)
+if [ -z "${ARIS_REPO:-}" ] && [ -f .aris/installed-skills-codex.txt ]; then
+    ARIS_REPO=$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills-codex.txt 2>/dev/null) || true
+fi
+ARXIV_FETCHER=""
+[ -n "${ARIS_REPO:-}" ] && [ -f "$ARIS_REPO/tools/arxiv_fetch.py" ] && ARXIV_FETCHER="$ARIS_REPO/tools/arxiv_fetch.py"
+[ -z "$ARXIV_FETCHER" ] && [ -f tools/arxiv_fetch.py ] && ARXIV_FETCHER="tools/arxiv_fetch.py"
+[ -z "$ARXIV_FETCHER" ] && [ -f ~/.codex/skills/arxiv/arxiv_fetch.py ] && ARXIV_FETCHER="$HOME/.codex/skills/arxiv/arxiv_fetch.py"
 ```
 
-**If SCRIPT is found**, run:
+**If `$ARXIV_FETCHER` is non-empty**, run:
 
 ```bash
-python3 "$SCRIPT" search "QUERY" --max MAX_RESULTS
+python3 "$ARXIV_FETCHER" search "QUERY" --max MAX_RESULTS
 ```
 
-**If SCRIPT is not found**, fall back to inline Python:
+**If `$ARXIV_FETCHER` is empty** (Policy D1 cascade), fall back to inline Python:
 
 ```bash
 python3 - <<'PYEOF'
@@ -113,7 +108,7 @@ Present results as a table:
 When a single paper ID is requested (either directly or from Step 2):
 
 ```bash
-[ -n "$SCRIPT" ] && python3 "$SCRIPT" search "id:ARXIV_ID" --max 1
+[ -n "$ARXIV_FETCHER" ] && python3 "$ARXIV_FETCHER" search "id:ARXIV_ID" --max 1
 # or fallback:
 python3 -c "
 import urllib.request, xml.etree.ElementTree as ET
@@ -133,7 +128,7 @@ When download is requested, for each paper ID to download:
 
 ```bash
 # Using fetch script:
-[ -n "$SCRIPT" ] && python3 "$SCRIPT" download ARXIV_ID --dir PAPER_DIR
+[ -n "$ARXIV_FETCHER" ] && python3 "$ARXIV_FETCHER" download ARXIV_ID --dir PAPER_DIR
 
 # Fallback:
 mkdir -p PAPER_DIR && python3 -c "

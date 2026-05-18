@@ -31,25 +31,25 @@ JSON files. Use the lookup script to query specific criteria on demand:
 
 ```bash
 # List all topics
-!`${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh topics`
+!`${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh topics`
 
 # Look up a specific criterion
-bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh criterion 9.1
+bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh criterion 9.1
 
 # Look up test methodology
-bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh methodology 9.1
+bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh methodology 9.1
 
 # Search criteria by keyword
-bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh search "form"
+bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh search "form"
 
 # Check glossary definition
-bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh glossary "assistive technologies"
+bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh glossary "assistive technologies"
 ```
 
 The raw JSON reference files are located at:
-- `${CLAUDE_SKILL_DIR}/../references/raam/criteres.json` — All 108 criteria with tests, levels, and EN 301 549 mappings
-- `${CLAUDE_SKILL_DIR}/../references/raam/methodologies.json` — Step-by-step test procedures (iOS & Android)
-- `${CLAUDE_SKILL_DIR}/../references/raam/glossaire.json` — Glossary of mobile accessibility terms
+- `${CLAUDE_SKILL_DIR}/references/criteres.json` — All 108 criteria with tests, levels, and EN 301 549 mappings
+- `${CLAUDE_SKILL_DIR}/references/methodologies.json` — Step-by-step test procedures (iOS & Android)
+- `${CLAUDE_SKILL_DIR}/references/glossaire.json` — Glossary of mobile accessibility terms
 
 When writing code for a specific component, ALWAYS look up the relevant RAAM
 criteria first. For example, before writing a form, run `search "form"` and `topic 9`.
@@ -242,7 +242,7 @@ Column(modifier = Modifier.semantics {
 
 ### 5. Interactive Components (Topic 5)
 
-**This is critical for mobile. Always look up: `bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh topic 5`**
+**This is critical for mobile. Always look up: `bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh topic 5`**
 
 - Every interactive component MUST be keyboard/switch accessible (5.1)
 - Every interactive component MUST have a relevant accessible name (5.2)
@@ -422,7 +422,7 @@ Text(
 
 ### 9. Forms (Topic 9)
 
-**Critical topic for mobile apps. Always look up: `bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh topic 9`**
+**Critical topic for mobile apps. Always look up: `bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh topic 9`**
 
 - Every form field MUST have an accessible label (9.1)
 - Labels must be relevant (9.2)
@@ -611,10 +611,10 @@ These topics cover documentation, editing tools, support services, and real-time
 communication. Query them individually when relevant:
 
 ```bash
-bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh topic 12  # Documentation & accessibility features
-bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh topic 13  # Editing tools
-bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh topic 14  # Support services
-bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh topic 15  # Real-time communication
+bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh topic 12  # Documentation & accessibility features
+bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh topic 13  # Editing tools
+bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh topic 14  # Support services
+bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh topic 15  # Real-time communication
 ```
 
 Key rules for these topics:
@@ -666,8 +666,8 @@ Key rules for these topics:
 
 ## When in doubt
 
-1. Look up the specific RAAM criterion: `bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh criterion <topic.criterion>`
-2. Check the test methodology (includes iOS AND Android steps): `bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh methodology <topic.criterion>`
-3. Consult the glossary: `bash ${CLAUDE_SKILL_DIR}/../scripts/raam-lookup.sh glossary "<term>"`
+1. Look up the specific RAAM criterion: `bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh criterion <topic.criterion>`
+2. Check the test methodology (includes iOS AND Android steps): `bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh methodology <topic.criterion>`
+3. Consult the glossary: `bash ${CLAUDE_SKILL_DIR}/scripts/raam-lookup.sh glossary "<term>"`
 4. Use native platform components over custom ones — they have built-in accessibility
 5. Test with VoiceOver (iOS) and TalkBack (Android) mentally: would every element be announced correctly?

@@ -2,11 +2,12 @@
 name: session-end
 user-invocable: false
 tags: [orchestration, verification, commits, issues]
+model: inherit
 model-preference: sonnet
 model-preference-codex: gpt-5.4-mini
 model-preference-cursor: claude-sonnet-4-6
 description: >
-  Full session close-out: verifies all planned work against the agreed plan, creates issues
+  Use this skill when performing a full session close-out: verifies all planned work against the agreed plan, creates issues
   for gaps, runs quality gates, commits cleanly, mirrors to GitHub, and produces a session
   summary. Triggered by /close command.
 ---

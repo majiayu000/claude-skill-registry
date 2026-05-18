@@ -1,7 +1,15 @@
 ---
 name: shared
-description: 'Shared AgentOps skill contracts.'
-practices: [design-by-contract, pragmatic-programmer, twelve-factor-app]
+description: Shared AgentOps skill contracts.
+practices:
+- design-by-contract
+- pragmatic-programmer
+- twelve-factor-app
+hexagonal_role: domain
+consumes: []
+produces:
+- stdout
+context_rel: []
 skill_api_version: 1
 user-invocable: false
 context:
@@ -9,12 +17,15 @@ context:
   intent:
     mode: none
   sections:
-    exclude: [HISTORY, INTEL, TASK]
+    exclude:
+    - HISTORY
+    - INTEL
+    - TASK
   intel_scope: none
 metadata:
   tier: library
   internal: true
-output_contract: "reference documents (loaded JIT)"
+output_contract: reference documents (loaded JIT)
 ---
 # Shared References
 

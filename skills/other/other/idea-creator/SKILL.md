@@ -303,7 +303,7 @@ if research-wiki/ exists:
 - "Apply X to Y" is the lowest form of research idea. Push for deeper questions.
 - Include eliminated ideas in the report — they save future time by documenting dead ends.
 - **If the user's direction is too broad (e.g., "NLP", "computer vision", "reinforcement learning"), STOP and ask them to narrow it.** A good direction is 1-2 sentences specifying the problem, domain, and constraint — e.g., "factorized gap in discrete diffusion LMs" or "sample efficiency of offline RL with image observations". Without sufficient specificity, generated ideas will be too vague to run experiments on.
-- **Anti-hallucination for cited papers.** When the landscape survey or novelty justification cites specific papers, every cited paper must pass pre-search verification (`tools/verify_papers.py`, 3-layer arXiv / CrossRef / S2 fallback). Never fabricate arXiv IDs, DOIs, or titles from memory; mark unverifiable references as `[UNVERIFIED]` rather than dropping or guessing. Full protocol in [`shared-references/citation-discipline.md`](../shared-references/citation-discipline.md) § Pre-Search Verification Protocol.
+- **Anti-hallucination for cited papers.** When the landscape survey or novelty justification cites specific papers, every cited paper must pass pre-search verification (`verify_papers.py`, canonical name resolved per [`shared-references/integration-contract.md`](../shared-references/integration-contract.md) §2; 3-layer arXiv / CrossRef / S2 fallback inside the helper itself). Policy D1 (primary + degraded-output fallback): if the helper is unresolved **or** its invocation fails, mark candidates `[UNVERIFIED]` and continue rather than dropping or guessing. Never fabricate arXiv IDs, DOIs, or titles from memory. Full protocol in [`shared-references/citation-discipline.md`](../shared-references/citation-discipline.md) § Pre-Search Verification Protocol.
 
 ## Composing with Other Skills
 
@@ -319,4 +319,4 @@ implement                     → write code
 
 ## Review Tracing
 
-After each `mcp__codex__codex` or `mcp__codex__codex-reply` reviewer call, save the trace following `shared-references/review-tracing.md`. Use `tools/save_trace.sh` or write files directly to `.aris/traces/<skill>/<date>_run<NN>/`. Respect the `--- trace:` parameter (default: `full`).
+After each `mcp__codex__codex` or `mcp__codex__codex-reply` reviewer call, save the trace following `shared-references/review-tracing.md` (Policy C — forensic; never silently skip). Use `save_trace.sh` (resolved per the chain in `shared-references/integration-contract.md` §2) or write files directly to `.aris/traces/<skill>/<date>_run<NN>/`. Respect the `--- trace:` parameter (default: `full`).

@@ -13,6 +13,10 @@ real blocked state exhausts retries. Read
 [references/autonomous-execution.md](references/autonomous-execution.md) when
 you need the full autonomy contract.
 
+When an external executor fails but the code surface may still be valid, read
+[references/codex-executor.md](references/codex-executor.md) and recover through
+Codex direct checks before declaring a source-level regression.
+
 ## Codex Lifecycle Guard
 
 When this skill runs in Codex hookless mode (`CODEX_THREAD_ID` is set or
@@ -172,12 +176,14 @@ interactive, and loop examples.
 | `$crank` returns PARTIAL | Retry `$crank` on the same objective; do not narrow to a child slice |
 | Validation FAIL | Re-crank with findings, then re-validate, up to 3 total attempts |
 | Packet shape unclear | Read [references/phase-data-contracts.md](references/phase-data-contracts.md) |
+| External executor fails | Read [references/codex-executor.md](references/codex-executor.md), run direct Codex validation, and only create follow-up work for reproducible source failures |
 
 ## Reference Documents
 
 - [references/autonomous-execution.md](references/autonomous-execution.md)
 - [references/complexity-scaling.md](references/complexity-scaling.md)
 - [references/context-windowing.md](references/context-windowing.md)
+- [references/codex-executor.md](references/codex-executor.md)
 - [references/error-handling.md](references/error-handling.md)
 - [references/examples.md](references/examples.md)
 - [references/gate-retry-logic.md](references/gate-retry-logic.md)

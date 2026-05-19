@@ -1,6 +1,6 @@
 ---
 name: univer-cli
-description: "Use when solving spreadsheet workbook problems with the `univer` or `unv` CLI as a terminal-native spreadsheet engine: Excel-compatible `.xlsx` handoff, `.univer` or `.unv` packages, workbook inspection, range search, formulas, formatting, rich spreadsheet edits, live preview, versioning, shell-native `pipe out`/`pipe in` roundtrips, or bounded `run` scripts."
+description: "Use when solving spreadsheet workbook problems with the `univer` or `unv` CLI as a terminal-native spreadsheet engine: Excel-compatible `.xlsx` handoff, `.univer` or `.unv` packages, workbook inspection, range search, formulas, formatting, charts, rich spreadsheet edits, live preview and viewer review comments, versioning, shell-native `pipe out`/`pipe in` roundtrips, or bounded `run` scripts."
 ---
 
 # univer-cli
@@ -26,10 +26,11 @@ Use this skill when the task involves spreadsheet or workbook work, especially:
 - creating, importing, exporting, or handing off `.xlsx`, `.csv`, `.univer`, or `.unv` files
 - inspecting workbook shape, sheets, ranges, formulas, formatting, or visible cell state
 - locating content-defined rows, columns, headers, or cells before editing
-- making bounded edits to cells, formulas, formatting, layout, or sheet structure
+- making bounded edits to cells, formulas, formatting, charts, layout, or sheet structure
 - streaming rectangular workbook data through shell tools before reading it into context
 - writing generated matrix data back into a sheet-qualified range
 - previewing workbook state locally with `univer view`
+- reading submitted local viewer review comments with `univer view comments`
 - creating, restoring, resetting, pulling, or syncing local workbook changesets
 - proving that a workbook-visible mutation or export is correct enough to hand back
 
@@ -68,7 +69,9 @@ Direct package access can corrupt workbooks or teach the agent false state. If t
 | Stream rectangular data through shell tools | `univer pipe out` |
 | Write a known rectangular matrix back | `univer pipe in` |
 | Apply bounded workbook-local logic | `univer run --file` |
+| Create or maintain workbook charts | `univer run --file` with `univer help run charts` |
 | Preview readonly workbook state | `univer view --no-open --json` or `univer view` |
+| Read local viewer review feedback | `univer view comments "$WB" --json` |
 | Check local versioning state | `univer status` |
 | Create a local changeset from local mutations | `univer commit --message <message>` |
 | Discard uncommitted local mutations | `univer restore` |
@@ -215,8 +218,29 @@ univer inspect range "$WB" --range 'Sheet1!I1:J3'
 - remember numeric coordinate overloads are 0-based
 - use documented facade builders for conditional formatting instead of editing internal rule model shapes
 - use official enum references for conditional formatting color scales, data bars, and icon sets: `ConditionFormatIconSetTypeEnum` supplies `setIconSet().iconConfigs[].iconType`, and `ConditionFormatValueTypeEnum` supplies value config `type` values
+- use documented chart builders and worksheet chart APIs from `univer help run charts` instead of editing chart resource internals
 - wait for formula calculation with the documented formula wait API before reading same-run computed results
 - prefer `--file` for scripts beyond a short one-liner
+
+### Create Or Maintain Charts
+
+Use `univer run` for workbook-local charts and `univer view` for visual inspection. Command-line verification should read facade state such as `sheet.getCharts()`, `chart.getChartId()`, `chart.getRange()`, `chart.getSeriesData()`, and `chart.getCategoryData()`.
+
+```bash
+univer help run charts
+univer run "$WB" --file ./create-chart.js
+univer view "$WB" --no-open --json
+```
+
+In scripts, seed or choose a source range, configure `sheet.newChart()`, call `build()`, then insert it with `sheet.insertChart(chartInfo)`. Use `chart.updateRange()` or `sheet.removeChart(chart)` for maintenance.
+
+Special chart types have stricter source shapes:
+
+- Most charts use a category-plus-series table, for example `month, sales, cost`.
+- Relation charts require a node/type matrix: first column is node, second column is type/category, remaining columns are the numeric relation matrix. For `N` nodes, use `N` data rows and `N + 2` columns.
+- Sankey charts require a `source, target, value` edge list. The third column must be numeric; avoid reverse edges that create circular Sankey data.
+- Bubble charts need numeric `x`, `y`, and `size` columns.
+- Heatmap charts use the first column as y-axis labels, remaining headers as x-axis labels, and remaining cells as numeric heat values.
 
 ### Preview Locally
 
@@ -225,6 +249,15 @@ Use preview when visual confirmation helps. `--no-open --json` is useful for age
 ```bash
 univer view "$WB" --no-open --json
 ```
+
+When a human submits review feedback in the local viewer, read it without reopening the browser:
+
+```bash
+univer view comments "$WB" --json
+univer view comments --session "<session-id>" --all --json
+```
+
+By default, `view comments` returns actionable submitted comments that are not resolved. Use `--all` when you need pending, submitted, and resolved comments for audit context. These are local viewer review comments, not workbook-native cell notes or collaboration thread comments; the command is read-only and does not start a host, open a browser, create a session, or mutate the workbook.
 
 Use `univer help view` for port and browser-opening options.
 

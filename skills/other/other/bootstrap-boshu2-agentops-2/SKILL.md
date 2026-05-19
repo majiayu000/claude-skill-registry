@@ -45,7 +45,7 @@ That is it. One command. Every step below is idempotent — existing artifacts a
 
 ## External Tools
 
-- **ao** (optional) — AgentOps CLI. Required only for hook activation (Step 5). Bootstrap skips hooks gracefully when missing.
+- **ao** (optional) — AgentOps CLI. Required only for optional hook activation (Step 6). Bootstrap skips hooks gracefully when missing.
 - **bd** (optional, recommended) — beads CLI. Bootstrap probes for `bd` in Step 0.5 and, when missing, points the user at `scripts/install-bd.sh` with a copy-paste command. Bootstrap never installs `bd` on the user's behalf.
 
 ## Flags
@@ -188,15 +188,22 @@ If `ao` is unavailable: do not create a placeholder. Report "PROGRAM.md skipped 
 
 If `HAS_PROGRAM` is true and `--force` is not set: skip. Report "PROGRAM.md/AUTODEV.md exists -- skipped."
 
-### Step 6: Hook Activation
+### Step 6: Optional Hook Activation
 
-If `HAS_AO` is true AND `HAS_HOOKS` is false (or `--force` is set):
+Do not activate hooks by default. AgentOps 3.0's first-value path is hookless:
+`ao quick-start`, execution packets, explicit validation, and knowledge
+compounding work before runtime hooks are installed.
+
+If the user explicitly requested hook activation and `HAS_AO` is true AND
+`HAS_HOOKS` is false (or `--force` is set):
 
 ```bash
 ao init --hooks
 ```
 
-If `HAS_AO` is false: skip. Report "Hooks skipped -- ao CLI not installed. Run: brew tap boshu2/agentops https://github.com/boshu2/homebrew-agentops && brew install agentops"
+If `HAS_AO` is false: skip. Report "Optional hooks skipped -- ao CLI not installed. Run: brew tap boshu2/agentops https://github.com/boshu2/homebrew-agentops && brew install agentops"
+
+If hook activation was not explicitly requested: skip. Report "Hooks optional -- skipped. To opt in later, run `ao init --hooks` or `install-codex.sh --with-hooks`."
 
 If `HAS_HOOKS` is true and `--force` is not set: skip. Report "Hooks already configured -- skipped."
 
@@ -214,7 +221,7 @@ Bootstrap complete.
 | README.md     | created / skipped / failed |
 | PROGRAM.md    | created / skipped / failed |
 | .agents/      | created / skipped / failed |
-| Hooks         | activated / skipped / failed |
+| Hooks         | optional / activated / skipped / failed |
 | bd            | present / recommended (not installed) |
 
 Repo is now AgentOps-ready. Next: /rpi "your first goal"
@@ -226,13 +233,13 @@ Repo is now AgentOps-ready. Next: /rpi "your first goal"
 
 **User says:** `/bootstrap`
 
-**What happens:** Agent detects no AgentOps artifacts. Runs /goals init, /product, /readme, creates .agents/ structure, activates hooks. Reports all five artifacts created.
+**What happens:** Agent detects no AgentOps artifacts. Runs /goals init, /product, /readme, creates .agents/ structure, leaves hooks optional. Reports all five core artifacts created.
 
 ### Partial Repo (has GOALS.md and .agents/)
 
 **User says:** `/bootstrap`
 
-**What happens:** Agent detects existing artifacts. Skips GOALS.md and .agents/. Runs /product, /readme. Activates hooks if needed. Reports two created, three skipped.
+**What happens:** Agent detects existing artifacts. Skips GOALS.md and .agents/. Runs /product, /readme. Leaves hooks optional unless explicitly requested. Reports two created, three skipped.
 
 ### Dry Run
 

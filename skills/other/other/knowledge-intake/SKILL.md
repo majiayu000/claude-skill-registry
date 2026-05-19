@@ -688,7 +688,7 @@ entries:
   "https://example.com/article":
     content_hash: "xxh:abc123..."
     stored_at: "docs/knowledge-corpus/article.md"
-    importance_score: 82           # From evaluation framework
+    importance_score: 82           # From evaluation framework, in [0, 100]
     maturity: "growing"            # seedling, growing, evergreen
     routing_type: "both"           # local, meta, both
     last_updated: "2025-12-06T..."

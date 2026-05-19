@@ -717,3 +717,8 @@ Add to PEP 723 header:
 8. **Use hf_doc_fetch/hf_doc_search** for latest TRL documentation
 9. **Validate dataset format** before training with dataset inspector (see Dataset Validation section)
 10. **Choose appropriate hardware** for model size; use LoRA for models >7B
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

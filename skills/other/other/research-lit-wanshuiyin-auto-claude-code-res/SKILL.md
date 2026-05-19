@@ -63,9 +63,9 @@ Examples:
 | 2 | **Obsidian** (via MCP) | `obsidian` | Try calling any `mcp__obsidian-vault__*` tool — if unavailable, skip | Research notes, paper summaries, tagged references, wikilinks |
 | 3 | **Local PDFs** | `local` | `Glob: papers/**/*.pdf, literature/**/*.pdf` | Raw PDF content (first 3 pages) |
 | 4 | **Web search** | `web` | Always available (WebSearch) | arXiv, Semantic Scholar, Google Scholar |
-| 5 | **Semantic Scholar API** | `semantic-scholar` | ARIS `tools/semantic_scholar_fetch.py` helper | Published venue papers (IEEE, ACM, Springer) with structured metadata: citation counts, venue info, TLDR. **Only runs when explicitly requested** |
-| 6 | **DeepXiv CLI** | `deepxiv` | ARIS `tools/deepxiv_fetch.py` helper or installed `deepxiv` CLI | Progressive paper retrieval: search, brief, head, section, trending, web search. **Only runs when explicitly requested** |
-| 7 | **Exa Search** | `exa` | ARIS `tools/exa_search.py` helper or installed `exa-py` SDK | AI-powered broad web search with content extraction (highlights, text, summaries). Covers blogs, docs, news, companies, and research papers beyond arXiv/S2. **Only runs when explicitly requested** |
+| 5 | **Semantic Scholar API** | `semantic-scholar` | `$S2_FETCHER` resolves (canonical name `semantic_scholar_fetch.py`, per integration-contract §2 Codex chain) | Published venue papers (IEEE, ACM, Springer) with structured metadata: citation counts, venue info, TLDR. **Only runs when explicitly requested** |
+| 6 | **DeepXiv CLI** | `deepxiv` | `$DEEPXIV_FETCHER` resolves (canonical name `deepxiv_fetch.py`, per integration-contract §2) **and** `deepxiv` CLI present | Progressive paper retrieval: search, brief, head, section, trending, web search. **Only runs when explicitly requested** |
+| 7 | **Exa Search** | `exa` | `$EXA_FETCHER` resolves (canonical name `exa_search.py`, per integration-contract §2); fetcher handles `exa-py` SDK + API key internally | AI-powered broad web search with content extraction (highlights, text, summaries). Covers blogs, docs, news, companies, and research papers beyond arXiv/S2. **Only runs when explicitly requested** |
 
 > If the user explicitly requests Zotero or Obsidian and that source is not configured, stop and tell the user how to enable it. Only sources that were not requested may be skipped silently.
 
@@ -137,19 +137,31 @@ Before searching online, check if the user already has relevant papers locally:
 
 **arXiv API search** (always runs, no download by default):
 
-Locate the fetch script and search arXiv directly:
-```bash
-ARIS_REPO="${ARIS_REPO:-$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills-codex.txt 2>/dev/null)}"
-SCRIPT=""
-[ -n "$ARIS_REPO" ] && [ -f "$ARIS_REPO/tools/arxiv_fetch.py" ] && SCRIPT="$ARIS_REPO/tools/arxiv_fetch.py"
-[ -z "$SCRIPT" ] && SCRIPT=$(find tools/ -name "arxiv_fetch.py" 2>/dev/null | head -1)
-[ -z "$SCRIPT" ] && SCRIPT=$(find ~/.codex/skills/arxiv/ -name "arxiv_fetch.py" 2>/dev/null | head -1)
+Resolve `$ARXIV_FETCHER` via the canonical strict-safe Codex chain
+(see [`shared-references/integration-contract.md`](../shared-references/integration-contract.md) §2):
 
-# Search arXiv API for structured results (title, abstract, authors, categories)
-[ -n "$SCRIPT" ] && python3 "$SCRIPT" search "QUERY" --max 10
+```bash
+if [ -z "${ARIS_REPO:-}" ] && [ -f .aris/installed-skills-codex.txt ]; then
+    ARIS_REPO=$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills-codex.txt 2>/dev/null) || true
+fi
+ARXIV_FETCHER=""
+[ -n "${ARIS_REPO:-}" ] && [ -f "$ARIS_REPO/tools/arxiv_fetch.py" ] && ARXIV_FETCHER="$ARIS_REPO/tools/arxiv_fetch.py"
+[ -z "$ARXIV_FETCHER" ] && [ -f tools/arxiv_fetch.py ] && ARXIV_FETCHER="tools/arxiv_fetch.py"
+[ -z "$ARXIV_FETCHER" ] && [ -f ~/.codex/skills/arxiv/arxiv_fetch.py ] && ARXIV_FETCHER="$HOME/.codex/skills/arxiv/arxiv_fetch.py"
+
+if [ -n "$ARXIV_FETCHER" ]; then
+  # Search arXiv API for structured results (title, abstract, authors, categories).
+  if python3 "$ARXIV_FETCHER" search "QUERY" --max 10; then
+    echo "D2 contribution: arxiv (helper invocation exit 0)" >&2
+  else
+    echo "WARN: arxiv_fetch.py invocation failed; D2 aggregate continues with WebSearch results." >&2
+  fi
+else
+  echo "WARN: arxiv_fetch.py not resolved; falling back to WebSearch for arXiv hits." >&2
+fi
 ```
 
-If `arxiv_fetch.py` is not found, fall back to WebSearch for arXiv (same as before).
+If `$ARXIV_FETCHER` is empty (D2 graceful degradation), fall back to WebSearch for arXiv (same as before).
 
 The arXiv API returns structured metadata (title, abstract, full author list, categories, dates) — richer than WebSearch snippets. Merge these results with WebSearch findings and de-duplicate.
 
@@ -158,15 +170,23 @@ The arXiv API returns structured metadata (title, abstract, full author list, ca
 When the user explicitly requests `— sources: semantic-scholar` or `— sources: web, semantic-scholar`, search for published venue papers beyond arXiv:
 
 ```bash
-S2_SCRIPT=""
-[ -n "$ARIS_REPO" ] && [ -f "$ARIS_REPO/tools/semantic_scholar_fetch.py" ] && S2_SCRIPT="$ARIS_REPO/tools/semantic_scholar_fetch.py"
-[ -z "$S2_SCRIPT" ] && S2_SCRIPT=$(find tools/ -name "semantic_scholar_fetch.py" 2>/dev/null | head -1)
-[ -z "$S2_SCRIPT" ] && S2_SCRIPT=$(find ~/.codex/skills/semantic-scholar/ -name "semantic_scholar_fetch.py" 2>/dev/null | head -1)
+# Re-resolve $ARIS_REPO + $S2_FETCHER (SKILL bash blocks may run in separate shells).
+if [ -z "${ARIS_REPO:-}" ] && [ -f .aris/installed-skills-codex.txt ]; then
+    ARIS_REPO=$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills-codex.txt 2>/dev/null) || true
+fi
+S2_FETCHER=""
+[ -n "${ARIS_REPO:-}" ] && [ -f "$ARIS_REPO/tools/semantic_scholar_fetch.py" ] && S2_FETCHER="$ARIS_REPO/tools/semantic_scholar_fetch.py"
+[ -z "$S2_FETCHER" ] && [ -f tools/semantic_scholar_fetch.py ] && S2_FETCHER="tools/semantic_scholar_fetch.py"
+[ -z "$S2_FETCHER" ] && [ -f ~/.codex/skills/semantic-scholar/semantic_scholar_fetch.py ] && S2_FETCHER="$HOME/.codex/skills/semantic-scholar/semantic_scholar_fetch.py"
 
-if [ -n "$S2_SCRIPT" ]; then
-    python3 "$S2_SCRIPT" search "QUERY" --max 10 --fields title,authors,year,venue,citationCount,externalIds,tldr,url
+if [ -n "$S2_FETCHER" ]; then
+    if python3 "$S2_FETCHER" search "QUERY" --max 10 --fields title,authors,year,venue,citationCount,externalIds,tldr,url; then
+      echo "D2 contribution: semantic_scholar (helper invocation exit 0)" >&2
+    else
+      echo "WARN: semantic_scholar_fetch.py invocation failed; D2 aggregate continues." >&2
+    fi
 else
-    echo "Semantic Scholar unavailable: no semantic_scholar_fetch.py helper; skipping this optional source." >&2
+    echo "Semantic Scholar unavailable: $S2_FETCHER unresolved; skipping this optional source." >&2
 fi
 ```
 
@@ -182,22 +202,32 @@ De-duplication between arXiv and S2:
 When the user explicitly requests `— sources: deepxiv` (or includes `deepxiv` in a combined source list), use the DeepXiv adapter for progressive retrieval:
 
 ```bash
-DEEPXIV_SCRIPT=""
-[ -n "$ARIS_REPO" ] && [ -f "$ARIS_REPO/tools/deepxiv_fetch.py" ] && DEEPXIV_SCRIPT="$ARIS_REPO/tools/deepxiv_fetch.py"
-[ -z "$DEEPXIV_SCRIPT" ] && DEEPXIV_SCRIPT=$(find tools/ -name "deepxiv_fetch.py" 2>/dev/null | head -1)
-[ -z "$DEEPXIV_SCRIPT" ] && DEEPXIV_SCRIPT=$(find ~/.codex/skills/deepxiv/ -name "deepxiv_fetch.py" 2>/dev/null | head -1)
-if [ -n "$DEEPXIV_SCRIPT" ]; then
-    python3 "$DEEPXIV_SCRIPT" search "QUERY" --max 10
-    python3 "$DEEPXIV_SCRIPT" paper-brief ARXIV_ID
-    python3 "$DEEPXIV_SCRIPT" paper-head ARXIV_ID
-    python3 "$DEEPXIV_SCRIPT" paper-section ARXIV_ID "Experiments"
+# Re-resolve $ARIS_REPO + $DEEPXIV_FETCHER (SKILL bash blocks may run in separate shells).
+if [ -z "${ARIS_REPO:-}" ] && [ -f .aris/installed-skills-codex.txt ]; then
+    ARIS_REPO=$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills-codex.txt 2>/dev/null) || true
+fi
+DEEPXIV_FETCHER=""
+[ -n "${ARIS_REPO:-}" ] && [ -f "$ARIS_REPO/tools/deepxiv_fetch.py" ] && DEEPXIV_FETCHER="$ARIS_REPO/tools/deepxiv_fetch.py"
+[ -z "$DEEPXIV_FETCHER" ] && [ -f tools/deepxiv_fetch.py ] && DEEPXIV_FETCHER="tools/deepxiv_fetch.py"
+[ -z "$DEEPXIV_FETCHER" ] && [ -f ~/.codex/skills/deepxiv/deepxiv_fetch.py ] && DEEPXIV_FETCHER="$HOME/.codex/skills/deepxiv/deepxiv_fetch.py"
+
+if [ -n "$DEEPXIV_FETCHER" ]; then
+    if python3 "$DEEPXIV_FETCHER" search "QUERY" --max 10; then
+      echo "D2 contribution: deepxiv (helper invocation exit 0)" >&2
+      python3 "$DEEPXIV_FETCHER" paper-brief ARXIV_ID || echo "WARN: deepxiv paper-brief failed" >&2
+      python3 "$DEEPXIV_FETCHER" paper-head ARXIV_ID || echo "WARN: deepxiv paper-head failed" >&2
+      python3 "$DEEPXIV_FETCHER" paper-section ARXIV_ID "Experiments" || echo "WARN: deepxiv paper-section failed" >&2
+    else
+      echo "WARN: deepxiv_fetch.py search invocation failed; D2 aggregate continues." >&2
+    fi
 elif command -v deepxiv >/dev/null 2>&1; then
     deepxiv search "QUERY" --limit 10 --format json
     deepxiv paper ARXIV_ID --brief --format json
     deepxiv paper ARXIV_ID --head --format json
     deepxiv paper ARXIV_ID --section "Experiments" --format json
+    echo "D2 contribution: deepxiv (CLI fallback)" >&2
 else
-    echo "DeepXiv unavailable: no deepxiv_fetch.py adapter and no deepxiv CLI; skipping this optional source." >&2
+    echo "DeepXiv unavailable: $DEEPXIV_FETCHER unresolved and no deepxiv CLI; skipping this optional source." >&2
 fi
 ```
 
@@ -213,17 +243,33 @@ If `deepxiv_fetch.py` or the `deepxiv` CLI is unavailable, skip this source grac
 When the user explicitly requests `— sources: exa` (or includes `exa` in a combined source list), use the Exa tool for broad AI-powered web search with content extraction:
 
 ```bash
-EXA_SCRIPT=""
-[ -n "$ARIS_REPO" ] && [ -f "$ARIS_REPO/tools/exa_search.py" ] && EXA_SCRIPT="$ARIS_REPO/tools/exa_search.py"
-[ -z "$EXA_SCRIPT" ] && EXA_SCRIPT=$(find tools/ -name "exa_search.py" 2>/dev/null | head -1)
-[ -z "$EXA_SCRIPT" ] && EXA_SCRIPT=$(find ~/.codex/skills/exa-search/ -name "exa_search.py" 2>/dev/null | head -1)
+# Re-resolve $ARIS_REPO + $EXA_FETCHER (SKILL bash blocks may run in separate shells).
+if [ -z "${ARIS_REPO:-}" ] && [ -f .aris/installed-skills-codex.txt ]; then
+    ARIS_REPO=$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills-codex.txt 2>/dev/null) || true
+fi
+EXA_FETCHER=""
+[ -n "${ARIS_REPO:-}" ] && [ -f "$ARIS_REPO/tools/exa_search.py" ] && EXA_FETCHER="$ARIS_REPO/tools/exa_search.py"
+[ -z "$EXA_FETCHER" ] && [ -f tools/exa_search.py ] && EXA_FETCHER="tools/exa_search.py"
+[ -z "$EXA_FETCHER" ] && [ -f ~/.codex/skills/exa-search/exa_search.py ] && EXA_FETCHER="$HOME/.codex/skills/exa-search/exa_search.py"
 
-# Search for research papers with highlights
-[ -n "$EXA_SCRIPT" ] && python3 "$EXA_SCRIPT" search "QUERY" --max 10 --category "research paper" --content highlights
-
-# Search for broader web content (blogs, docs, news)
-[ -n "$EXA_SCRIPT" ] && python3 "$EXA_SCRIPT" search "QUERY" --max 10 --content highlights
-[ -n "$EXA_SCRIPT" ] || echo "Exa unavailable: no exa_search.py helper; skipping this optional source." >&2
+if [ -n "$EXA_FETCHER" ]; then
+  exa_contributed=false
+  # Search for research papers with highlights.
+  if python3 "$EXA_FETCHER" search "QUERY" --max 10 --category "research paper" --content highlights; then
+    exa_contributed=true
+  else
+    echo "WARN: exa_search.py research-paper invocation failed; D2 aggregate continues." >&2
+  fi
+  # Search for broader web content (blogs, docs, news).
+  if python3 "$EXA_FETCHER" search "QUERY" --max 10 --content highlights; then
+    exa_contributed=true
+  else
+    echo "WARN: exa_search.py broad-web invocation failed; D2 aggregate continues." >&2
+  fi
+  [ "$exa_contributed" = "true" ] && echo "D2 contribution: exa (at least one invocation exit 0)" >&2
+else
+  echo "Exa unavailable: \$EXA_FETCHER unresolved; skipping this optional source." >&2
+fi
 ```
 
 If `exa_search.py` or the `exa-py` SDK is unavailable, skip this source gracefully and continue with the remaining requested sources.
@@ -237,8 +283,17 @@ If `exa_search.py` or the `exa-py` SDK is unavailable, skip this source graceful
 
 After all sources are searched and papers are ranked by relevance:
 ```bash
-# Download top N most relevant arXiv papers
-[ -n "$SCRIPT" ] && python3 "$SCRIPT" download ARXIV_ID --dir papers/
+# Re-resolve $ARXIV_FETCHER (SKILL bash blocks may run in separate shells).
+if [ -z "${ARIS_REPO:-}" ] && [ -f .aris/installed-skills-codex.txt ]; then
+    ARIS_REPO=$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills-codex.txt 2>/dev/null) || true
+fi
+ARXIV_FETCHER=""
+[ -n "${ARIS_REPO:-}" ] && [ -f "$ARIS_REPO/tools/arxiv_fetch.py" ] && ARXIV_FETCHER="$ARIS_REPO/tools/arxiv_fetch.py"
+[ -z "$ARXIV_FETCHER" ] && [ -f tools/arxiv_fetch.py ] && ARXIV_FETCHER="tools/arxiv_fetch.py"
+[ -z "$ARXIV_FETCHER" ] && [ -f ~/.codex/skills/arxiv/arxiv_fetch.py ] && ARXIV_FETCHER="$HOME/.codex/skills/arxiv/arxiv_fetch.py"
+
+# Download top N most relevant arXiv papers; skip silently if helper unresolved.
+[ -n "$ARXIV_FETCHER" ] && python3 "$ARXIV_FETCHER" download ARXIV_ID --dir papers/
 ```
 - Only download papers ranked in the top ARXIV_MAX_DOWNLOAD by relevance
 - Skip papers already in the local library

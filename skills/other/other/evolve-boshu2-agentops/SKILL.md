@@ -72,6 +72,12 @@ Dream owns the knowledge compounding layer; `$evolve` owns the code compounding 
 
 **Each cycle is a COMPLETE $rpi run** — all 3 phases (discovery → implementation → validation). Never invoke a partial RPI. If a task is too large for one cycle, break it into smaller sub-tasks during discovery and let `$crank` handle the waves. Evolve's job is to keep the loop turning, not to micro-manage individual tasks.
 
+For broad AgentOps 3.0 domain evolution across skills, CLI, hooks, docs, tests,
+beads, and knowledge, first read
+[references/domain-evolution-bootstrap.md](references/domain-evolution-bootstrap.md).
+It supplies the BDD/DDD/Hexagonal/TDD/XP control surface and the clean-room
+skill-factory guardrails.
+
 **Break large work into sub-RPI cycles.** When work selection identifies a massive task (7+ issues, multi-subsystem scope), decompose it during `$rpi`'s discovery phase into an epic with waves. One evolve cycle = one `$rpi` run = one complete lifecycle. If the epic is too large for a single session, `$rpi`'s built-in retry and `--from=` resume handle continuation.
 
 ### Anti-Patterns (DO NOT)
@@ -262,8 +268,29 @@ Run at the TOP of every cycle:
 
 ```bash
 CYCLE_START_SHA=$(git rev-parse HEAD)
-[ -f ~/.config/evolve/KILL ] && echo "KILL: $(cat ~/.config/evolve/KILL)" && exit 0
-[ -f .agents/evolve/STOP ] && echo "STOP: $(cat .agents/evolve/STOP 2>/dev/null)" && exit 0
+# Stale-kill auto-expire (closes F5 from 2026-05-18 post-mortem).
+# A KILL/STOP file older than EVOLVE_KILL_TTL_DAYS (default 7) is treated as
+# stale and surfaced loudly; the loop proceeds. Re-touch to keep blocking.
+EVOLVE_KILL_TTL_DAYS="${EVOLVE_KILL_TTL_DAYS:-7}"
+check_stale_kill() {
+    local path="$1" ttl_days="$2"
+    [ -f "$path" ] || return 1
+    local mtime_epoch now_epoch age_days
+    mtime_epoch=$(stat -c %Y "$path" 2>/dev/null || stat -f %m "$path" 2>/dev/null)
+    now_epoch=$(date +%s)
+    age_days=$(( (now_epoch - mtime_epoch) / 86400 ))
+    if [ "$age_days" -gt "$ttl_days" ]; then
+        echo "WARN: ${path} is ${age_days} days old (> ${ttl_days}); STALE, proceeding." >&2
+        return 1
+    fi
+    return 0
+}
+if check_stale_kill ~/.config/evolve/KILL "$EVOLVE_KILL_TTL_DAYS"; then
+    echo "KILL: $(cat ~/.config/evolve/KILL)"; exit 0
+fi
+if check_stale_kill .agents/evolve/STOP "$EVOLVE_KILL_TTL_DAYS"; then
+    echo "STOP: $(cat .agents/evolve/STOP 2>/dev/null)"; exit 0
+fi
 ```
 
 ### Step 2: Measure Fitness
@@ -731,6 +758,7 @@ See `references/cycle-history.md` for advanced troubleshooting.
 - [references/artifacts.md](references/artifacts.md)
 - [references/compounding.md](references/compounding.md)
 - [references/convergence-mechanics.md](references/convergence-mechanics.md)
+- [references/domain-evolution-bootstrap.md](references/domain-evolution-bootstrap.md)
 - [references/cycle-history.md](references/cycle-history.md)
 - [references/examples.md](references/examples.md)
 - [references/goals-schema.md](references/goals-schema.md)

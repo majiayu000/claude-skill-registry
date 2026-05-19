@@ -1,11 +1,6 @@
 ---
 name: voice-extract
-description: Extract writing voice from user samples using SICO comparative
-  analysis. Compares user writing against Claude's default output to identify
-  distinctive voice features. Use when training the system on a new writing
-  voice, adding samples to an existing profile, or re-running extraction
-  for improved specificity.
-version: 1.9.3
+description: 'Extract writing voice from samples via SICO comparative analysis.'
 globs: "**/*.{md,txt}"
 alwaysApply: false
 category: writing-quality
@@ -21,9 +16,9 @@ model_hint: opus
 estimated_tokens: 3200
 progressive_loading: true
 modules:
-- sico-extraction
-- sample-intake
-- register-creation
+- modules/sico-extraction.md
+- modules/sample-intake.md
+- modules/register-creation.md
 dependencies:
 - scribe:style-learner
 - scribe:slop-detector

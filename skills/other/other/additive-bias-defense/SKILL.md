@@ -1,10 +1,6 @@
 ---
 name: additive-bias-defense
-description: >-
-  Cross-cutting contract that inverts burden of proof
-  for code additions. Use when reviewing proposed
-  additions or detecting LLM additive-bias patterns.
-version: 1.9.3
+description: 'Inverts burden of proof for code additions.'
 alwaysApply: false
 category: quality-contract
 tags:
@@ -16,7 +12,7 @@ tags:
 dependencies: []
 tools: []
 provides:
-  contract:
+  guidance:
   - additive-bias-scrutiny
   - burden-of-proof-verdict
 usage_patterns:
@@ -34,6 +30,14 @@ role: library
 > The burden of proof is on the addition.
 
 # Additive Bias Defense
+
+> **Note (#444):** Frontmatter declares ``provides.guidance``, not
+> ``provides.contract``. The scrutiny questions are consumed by
+> partner skills (``pensive:code-refinement``, ``conserve:unbloat``,
+> ``imbue:scope-guard``) that voluntarily embed them; no validator or
+> hook in leyline enforces them directly. If a future contributor
+> adds enforcement, restore the ``contract`` label and link the
+> validator path here.
 
 ## The Problem
 

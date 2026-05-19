@@ -1,11 +1,6 @@
 ---
 name: progressive-loading
-description: 'Context-aware progressive module loading with hub-and-spoke pattern
-  for token optimization.
-
-
-  progressive loading, lazy loading, hub-spoke, module selection.'
-version: 1.9.3
+description: 'Progressive module loading with hub-and-spoke pattern for token optimization. Lazy loading.'
 alwaysApply: false
 category: infrastructure
 tags:
@@ -39,6 +34,26 @@ modules:
 - modules/selection-strategies.md
 - modules/loading-patterns.md
 - modules/performance-budgeting.md
+- modules/advanced-patterns.md
+- modules/api-patterns.md
+- modules/api-review.md
+- modules/cargo-patterns.md
+- modules/document-analysis-patterns.md
+- modules/git-catchup-patterns.md
+- modules/git-patterns.md
+- modules/large-reference.md
+- modules/legacy-python.md
+- modules/linux-patterns.md
+- modules/log-analysis-patterns.md
+- modules/macos-patterns.md
+- modules/modern-python.md
+- modules/performance.md
+- modules/python-packaging.md
+- modules/python-patterns.md
+- modules/python-testing.md
+- modules/rust-review.md
+- modules/troubleshooting.md
+- modules/windows-patterns.md
 ---
 ## Table of Contents
 
@@ -160,9 +175,51 @@ See `modules/loading-patterns.md` for implementation patterns:
 
 ## Module References
 
+### Core (always available to the hub)
+
 - **Selection Strategies**: See `modules/selection-strategies.md` for choosing modules
 - **Loading Patterns**: See `modules/loading-patterns.md` for implementation techniques
 - **Performance Budgeting**: See `modules/performance-budgeting.md` for token budget model and optimization workflow
+- **Advanced Patterns**: See `modules/advanced-patterns.md` for nested hubs, multi-tier disclosure, and cross-skill module sharing
+- **Troubleshooting**: See `modules/troubleshooting.md` when modules fail to load, context detection misfires, or token budgets are exceeded
+
+### Context-Specific Pattern Modules
+
+These modules are loaded on demand by the hub based on
+detected artifacts and user intent. They are listed in
+frontmatter so the selector can match them, but the hub
+should only load the ones whose activation context fires.
+
+**Operating-system patterns** (load on detected platform):
+
+- `modules/linux-patterns.md` -- Linux-specific shell, paths, and process patterns
+- `modules/macos-patterns.md` -- macOS-specific tooling and platform quirks
+- `modules/windows-patterns.md` -- Windows shell, path, and PowerShell patterns
+
+**Language and runtime patterns** (load on detected ecosystem):
+
+- `modules/modern-python.md` -- Python 3.11+ idioms, typing, async
+- `modules/legacy-python.md` -- Python 2 / pre-3.8 compatibility patterns
+- `modules/python-packaging.md` -- pyproject.toml, uv, pip, hatch, poetry
+- `modules/python-patterns.md` -- General Python authoring patterns
+- `modules/python-testing.md` -- pytest, fixtures, parametrization, mocking
+- `modules/cargo-patterns.md` -- Rust Cargo workspace and dependency patterns
+- `modules/rust-review.md` -- Rust code-review patterns
+
+**Workflow patterns** (load on detected task):
+
+- `modules/api-patterns.md` -- API design and endpoint conventions
+- `modules/api-review.md` -- API surface review patterns
+- `modules/git-patterns.md` -- Git workflow and history patterns
+- `modules/git-catchup-patterns.md` -- Catching up on a branch or PR diff
+- `modules/document-analysis-patterns.md` -- Reading and analyzing documents
+- `modules/log-analysis-patterns.md` -- Parsing and reasoning over logs
+- `modules/performance.md` -- Performance investigation patterns
+
+**Reference material** (load only when explicitly cited):
+
+- `modules/large-reference.md` -- Large reference tables and lookups (load
+  last; tokens are non-trivial)
 
 ## Integration with Other Skills
 

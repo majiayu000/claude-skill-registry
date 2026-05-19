@@ -43,6 +43,18 @@ Read existing documentation first:
 
 If any of these files don't exist, proceed silently — don't flag their absence or suggest creating them upfront.
 
+**Optional pre-pass — export inventory injection (mapper-supported projects only):**
+
+Before dispatching the Explore subagent, call `extractSemanticSlices(filePath, { type: 'exports' })` from `scripts/lib/language-mappers/index.mjs` on known entry-point files (e.g., `index.ts`, `src/index.ts`, main export barrel). If the mapper returns a non-empty result, format the export list as structured context and inject it into the Explore subagent prompt. This gives the subagent an immediate map of the codebase's public surface without requiring it to grep manually.
+
+```
+## Export inventory (auto-generated)
+- src/lib/foo.ts: exports `createFoo`, `FooConfig`, `FooError`
+- src/lib/bar.ts: exports `processBar`
+```
+
+This pre-pass is OPTIONAL — only activate when the entry-point file is mapper-supported (TypeScript/JavaScript). For unsupported file types, `extractSemanticSlices` returns an empty array and the pre-pass is silently skipped. Never block Explore dispatch on a mapper failure.
+
 Then use the Agent tool with `subagent_type=Explore` to walk the codebase. Don't follow rigid heuristics — explore organically and note where you experience friction:
 
 - Where does understanding one concept require bouncing between many small modules?

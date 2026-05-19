@@ -1,0 +1,40 @@
+Identifier,Title,Description,Status,Priority,Assignee,Project,Cycle,Estimate,Labels,Created,Updated,Due Date
+PRC-101,Pricing V2 — pricing page IA brief,Define new card layout / order; align with Mira and Sarah on the comparison block.,In Progress,P1,Mira Chen,Pricing V2,Cycle 14,3,"frontend, design",2026-04-12,2026-04-30,2026-05-09
+PRC-102,Pricing V2 — backend tier flag plumbing,Wire LaunchDarkly tier flag through billing service; needs migration sequencing.,In Progress,P1,Devon Park,Pricing V2,Cycle 14,5,"backend, infra",2026-04-15,2026-04-29,2026-05-12
+PRC-103,Pricing V2 — comparison table copy,Copy pass on the 4-tier comparison table; legal review for "unlimited" claim.,In Review,P2,Sarah Kim,Pricing V2,Cycle 14,2,"copy, legal",2026-04-20,2026-05-04,
+PRC-104,Pricing V2 — analytics events for tier views,Add `pricing_tier_viewed` + `pricing_cta_clicked` events to all 4 cards.,Todo,P2,Jordan Tate,Pricing V2,Cycle 14,2,"frontend, analytics",2026-04-23,2026-04-23,
+PRC-105,Pricing V2 — annual / monthly toggle,Toggle UI between annual (20% discount) and monthly billing periods.,Todo,P2,Jordan Tate,Pricing V2,Cycle 14,3,"frontend",2026-04-23,2026-04-23,
+PRC-106,Pricing V2 — admin override for legacy customers,Grandfathered customers retain their existing tier; admin tool to flag accounts.,Backlog,P3,Devon Park,Pricing V2,,3,"backend, admin",2026-04-25,2026-04-25,
+ONB-201,Onboarding — first-run checklist UI,4-item checklist on first login; confetti on completion.,Done,P2,Mira Chen,Onboarding 2.0,Cycle 13,3,"frontend",2026-03-18,2026-04-22,
+ONB-202,Onboarding — invite teammates flow,Email-based invites; copy-link option; role selection.,Done,P2,Mira Chen,Onboarding 2.0,Cycle 13,5,"frontend, auth",2026-03-20,2026-04-19,
+ONB-203,Onboarding — sample data seeding,Seed 1 sample project + 5 demo cards on signup; one-click "remove sample data".,In Progress,P2,Jordan Tate,Onboarding 2.0,Cycle 14,3,"frontend, backend",2026-04-02,2026-04-28,2026-05-08
+ONB-204,Onboarding — empty-state copy refresh,Replace placeholder copy across 8 empty states; align with brand voice.,In Review,P3,Sarah Kim,Onboarding 2.0,Cycle 14,1,"copy",2026-04-12,2026-05-03,
+ONB-205,Onboarding — welcome email sequence,3-email sequence: welcome / first-action / week-1 tips. Plumbing through Customer.io.,Blocked,P2,Sarah Kim,Onboarding 2.0,Cycle 14,3,"backend, email",2026-04-08,2026-04-15,2026-05-01
+BUG-301,Search filter — selecting label clears search box,Selecting a label chip in search resets the text query — should compose.,In Progress,P1,Devon Park,Polish & Bugs,Cycle 14,1,"frontend, bug",2026-04-26,2026-05-02,
+BUG-302,Crash — pricing page on Safari 14,Pricing page throws "ResizeObserver" error on Safari 14; ~3% of users.,Todo,P1,Jordan Tate,Polish & Bugs,Cycle 14,2,"frontend, bug, safari",2026-04-29,2026-04-29,
+BUG-303,Onboarding — invite link expires too quickly,Invite link 24h TTL; users report expiry while waiting on teammate response.,Done,P2,Mira Chen,Polish & Bugs,Cycle 13,1,"backend, bug",2026-04-04,2026-04-18,
+BUG-304,Email — duplicate welcome email sent on second login,Welcome email sometimes resends if user logs out + back in within 1h.,Backlog,P3,Sarah Kim,Polish & Bugs,,2,"backend, email, bug",2026-04-10,2026-04-10,
+BUG-305,Date picker — overflow on iOS Safari,Date picker hits viewport edge on iPhone SE / 12 mini.,In Progress,P2,Jordan Tate,Polish & Bugs,Cycle 14,1,"frontend, bug, mobile",2026-04-27,2026-05-04,
+INF-401,Postgres — index on sessions.user_id,Sessions table has 2.4M rows; user_id lookup p99 = 380ms.,Done,P1,Alex Rivera,Infrastructure,Cycle 13,2,"backend, perf",2026-04-01,2026-04-14,
+INF-402,Cron — billing reconciliation drift,Daily reconciliation cron drifts by 3-7m vs intended 02:00 UTC; investigate.,In Progress,P2,Alex Rivera,Infrastructure,Cycle 14,3,"backend, ops",2026-04-21,2026-04-30,
+INF-403,Logging — drop debug logs from prod by default,Debug-level logs flooding Loki; cap at info+ unless explicit override.,Todo,P2,Devon Park,Infrastructure,Cycle 14,1,"backend, ops",2026-04-25,2026-04-25,
+INF-404,Backup — verify restore from latest snapshot,Verify weekly Postgres snapshot can restore to a fresh staging cluster.,Blocked,P1,Alex Rivera,Infrastructure,Cycle 14,2,"backend, ops",2026-04-12,2026-04-13,2026-04-30
+INF-405,Migration — add `tier_flag` column to accounts,Adds nullable `tier_flag` to accounts; drives Pricing V2 backend.,Done,P1,Devon Park,Infrastructure,Cycle 13,1,"backend, db",2026-03-30,2026-04-10,
+SEC-501,SOC2 — access review for production database,Quarterly access review; confirm only oncall list has prod DB read access.,Todo,P0,Alex Rivera,Security,Cycle 14,2,"security, compliance",2026-04-26,2026-04-26,2026-05-15
+SEC-502,SOC2 — vendor list refresh,Update vendor inventory; add Customer.io and LaunchDarkly.,In Review,P2,Sarah Kim,Security,Cycle 14,1,"compliance",2026-04-22,2026-05-05,
+SEC-503,Auth — rotate JWT signing key,Schedule rotation; staged with overlap window so existing tokens remain valid.,Todo,P1,Devon Park,Security,Cycle 14,2,"backend, auth",2026-04-25,2026-04-25,2026-05-12
+SEC-504,Auth — 2FA backup codes UX,Backup codes shown once on enrollment; allow regenerate from settings.,Backlog,P2,Mira Chen,Security,,2,"frontend, auth",2026-04-18,2026-04-18,
+GRO-601,Growth — referral program v0,Friend invite with both-sides credit; cap at 5 invites / user.,In Progress,P2,Sarah Kim,Growth Q2,Cycle 14,5,"frontend, backend",2026-04-08,2026-04-26,2026-05-15
+GRO-602,Growth — landing page A/B for hero copy,Test 3 hero copy variants; primary metric = signup clicks.,Done,P2,Sarah Kim,Growth Q2,Cycle 13,2,"copy, marketing",2026-03-22,2026-04-12,
+GRO-603,Growth — content piece on integrations,Long-form post on Slack + Notion + Linear integrations; engineering co-author.,Todo,P3,Mira Chen,Growth Q2,Cycle 14,2,"content",2026-04-21,2026-04-21,2026-05-08
+GRO-604,Growth — top-of-funnel attribution,Plumb UTM params end-to-end; ensure they survive signup → first action.,Backlog,P3,Devon Park,Growth Q2,,3,"backend, analytics",2026-04-15,2026-04-15,
+GRO-605,Growth — community-led referral cohort,Track referral cohort retention separately; measure 30 / 60 / 90 day.,Backlog,P3,Sarah Kim,Growth Q2,,2,"analytics, content",2026-04-15,2026-04-15,
+DEBT-701,Debt — replace lodash with native ES,Remove lodash dependency; ~38KB bundle savings.,Done,P3,Jordan Tate,Tech Debt,Cycle 13,2,"frontend, debt",2026-03-15,2026-04-02,
+DEBT-702,Debt — migrate API client to fetch + zod,Drop axios; standardize on fetch + zod-validated responses.,Backlog,P3,Devon Park,Tech Debt,,5,"frontend, backend, debt",2026-03-20,2026-03-20,
+DEBT-703,Debt — sunset deprecated /v1/sessions endpoint,Remove /v1/sessions; clients moved to /v2 last quarter. Confirm zero traffic for 7d.,In Progress,P3,Alex Rivera,Tech Debt,Cycle 14,2,"backend, debt",2026-03-08,2026-04-25,
+DEBT-704,Debt — extract email templates from app code,Email template inlined in app/email.ts; move to /templates with i18n.,Backlog,P3,Sarah Kim,Tech Debt,,3,"backend, debt",2026-03-10,2026-03-10,
+HIRE-801,Hire — VP Engineering search,Open req; sourcing through Talia + warm intros.,In Progress,P0,Sam Reyes,Hiring,Cycle 14,8,"hiring",2026-03-25,2026-05-04,2026-06-15
+HIRE-802,Hire — Senior fullstack #2,Senior fullstack with payments background.,Todo,P1,Sam Reyes,Hiring,Cycle 14,5,"hiring",2026-04-18,2026-04-18,
+HIRE-803,Hire — DevRel hire (deferred to Q3),Deferred until Series A closes; revisit June.,Cancelled,P3,Sam Reyes,Hiring,,3,"hiring",2026-03-12,2026-04-09,
+DOC-901,Docs — getting started rewrite,Replace 2024 getting-started page with 2026 flow; uses sample data seed.,Todo,P3,Mira Chen,Docs,Cycle 14,3,"content, docs",2026-04-22,2026-04-22,
+DOC-902,Docs — API reference versioning,API reference still shows /v1 examples; flip to /v2.,Backlog,P3,Devon Park,Docs,,2,"backend, docs",2026-03-22,2026-03-22,

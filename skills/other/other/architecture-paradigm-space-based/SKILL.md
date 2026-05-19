@@ -57,3 +57,16 @@ estimated_tokens: 800
   - **Mitigation**: The orchestration of a data grid requires mature automation. Invest in production-grade tooling and automation early in the process.
 - **Cost**:
   - **Mitigation**: In-memory grids can be resource-intensive. Implement aggressive monitoring of utilization and auto-scaling policies to manage costs effectively.
+
+## Concrete Components
+
+These vocabulary items name the concrete tools and abstractions
+that show up when the paradigm is implemented. They are not
+required dependencies and they are not part of the skill's
+``tools:`` frontmatter (which is reserved for Claude Code tool
+restrictions). Use this list to disambiguate during architecture
+discussions.
+
+- ``data-grid-platform`` -- Hazelcast, Apache Ignite, or similar; in-memory partitioned data store
+- ``replication-manager`` -- moves writes asynchronously to durable storage and across regions
+- ``load-tester`` -- drives the grid past its single-region ceiling to validate scale-out

@@ -1,6 +1,6 @@
 ---
 name: architecture-diagram
-description: "Generate Mermaid architecture diagrams from codebase structure. Use for onboarding, PR reviews."
+description: 'Generate Mermaid architecture diagrams from codebase structure.'
 ---
 
 # Architecture Diagram

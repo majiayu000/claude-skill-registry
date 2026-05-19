@@ -1,7 +1,6 @@
 ---
 name: safety-critical-patterns
-description: 'NASA Power of 10 rules adapted for writing robust, verifiable code with context-appropriate rigor'
-version: 1.9.0
+description: 'NASA Power of 10 rules adapted for verifiable code.'
 alwaysApply: false
 category: code-quality
 tags:
@@ -11,10 +10,7 @@ tags:
 - NASA
 - robustness
 - verification
-tools:
-- Read
-- Grep
-- Glob
+tools: []
 complexity: intermediate
 model_hint: standard
 estimated_tokens: 600

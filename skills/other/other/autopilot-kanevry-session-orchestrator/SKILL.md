@@ -324,8 +324,8 @@ Controls whether `autopilot --multi-story` creates a per-story git worktree befo
 - Session registry: `scripts/lib/session-registry.mjs`
 - Wave-executor return shape: `skills/wave-executor/SKILL.md § Return Shape Contract`
 - Sessions.jsonl writer: `skills/session-end/session-metrics-write.md`
-- Epic: [#271 v3.2 Autopilot — Autonomous Session Orchestration](https://gitlab.gotzendorfer.at/infrastructure/session-orchestrator/-/issues/271)
-- Issues: [#277 Phase C scaffold](https://gitlab.gotzendorfer.at/infrastructure/session-orchestrator/-/issues/277), [#295 Phase C-1 runtime](https://gitlab.gotzendorfer.at/infrastructure/session-orchestrator/-/issues/295), [#300 Phase C-1.b follow-up](https://gitlab.gotzendorfer.at/infrastructure/session-orchestrator/-/issues/300)
+- Epic: [#271 v3.2 Autopilot — Autonomous Session Orchestration](https://github.com/Kanevry/session-orchestrator/issues/271)
+- Issues: [#277 Phase C scaffold](https://github.com/Kanevry/session-orchestrator/issues/277), [#295 Phase C-1 runtime](https://github.com/Kanevry/session-orchestrator/issues/295), [#300 Phase C-1.b follow-up](https://github.com/Kanevry/session-orchestrator/issues/300)
 - Phase A PRD: `docs/prd/2026-04-24-state-md-recommendations-contract.md`
 - Phase B PRD: `docs/prd/2026-04-25-mode-selector.md`
 

@@ -1,17 +1,31 @@
 ---
 name: pre-mortem
-description: 'Stress-test plans before work.'
+description: Stress-test plans before work.
+practices:
+- adr
+- mythical-man-month
+- design-by-contract
+hexagonal_role: domain
+consumes:
+- standards
+produces:
+- result.json
+- verdict.json
+context_rel:
+- kind: shared-kernel
+  with: standards
 skill_api_version: 1
 metadata:
   tier: judgment
   dependencies:
-    - council  # multi-model judgment
+  - council
 context:
   window: fork
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: full
 output_contract: skills/council/schemas/verdict.json
 ---
@@ -20,6 +34,10 @@ output_contract: skills/council/schemas/verdict.json
 > **Purpose:** Is this plan/spec good enough to implement?
 
 > **Mandatory for 3+ issue epics.** Pre-mortem is enforced by hook when `/crank` is invoked on epics with 3+ child issues. 6/6 consecutive positive ROI. Bypass: `--skip-pre-mortem` flag or `AGENTOPS_SKIP_PRE_MORTEM_GATE=1`.
+
+## Loop position
+
+Pre-flight check between moves **3 (slice plan)** and **4 (TDD per slice)** of the [operating loop](../../docs/architecture/operating-loop.md). Consumes the [slice validation plan](../../docs/templates/slice-validation.md); produces a PASS/WARN/FAIL verdict on the plan AND on the wave-validity rows (distinct write scopes, no shared migration/contract/CLI surface, owner per slice, discard path per slice). A wave can only be claimed parallel if pre-mortem confirms every conflict-free row. FAIL on wave-validity → run slices sequential or send the plan back to `/plan` for re-slicing.
 
 Run `/council validate` on a plan or spec to get multi-model judgment before committing to implementation.
 

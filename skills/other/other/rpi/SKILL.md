@@ -69,6 +69,10 @@ Codex direct checks before declaring a source-level regression.
 - **No move-skipping.** Strict delegation is on by default; phases never compress, and validation cannot be skipped. The lifecycle objective is preserved across the whole loop.
 - **The first failing test is the bead's contract.** With `--test-first` on (the default), `/crank` is invoked with the TDD-per-slice discipline; `--no-test-first` is an explicit opt-out, not a fast path.
 - **Acceptance examples close the bead, not activity.** Validation FAIL re-cranks on the same objective up to 3 attempts; DONE requires the acceptance roll-up in the [slice-validation template](../../docs/templates/slice-validation.md) to be fully green.
+- **Ports stay visible.** Preserve the
+  [Intent-to-Loop Hexagon](../../docs/architecture/intent-to-loop-hexagon.md)
+  boundary as the objective crosses `shape_intent`, `persist_intent`,
+  `plan_slices`, `execute_wave`, `validate_acceptance`, and `record_evidence`.
 - **Context density survives phase boundaries.** Apply the [Context Density Rule](../domain/references/context-density-rule.md) to every phase handoff and final report: keep intent, boundary, evidence, decision, constraint, and next action; omit or link anything else.
 
 ## Core Contract
@@ -229,6 +233,7 @@ interactive, loop, and artifact-mode examples.
 ## Reference Documents
 
 - [references/autonomous-execution.md](references/autonomous-execution.md)
+- [references/installed-plugin-version-not-repo-head.md](references/installed-plugin-version-not-repo-head.md) — `/rpi` loads from `~/.claude/plugins/cache/`, not the repo working tree; verify which version is active before measuring
 - [references/complexity-scaling.md](references/complexity-scaling.md)
 - [references/context-windowing.md](references/context-windowing.md) — OPT-IN large-repo mode (`--large-repo`); NOT part of the default RPI path. Default discovery/research does not generate `.agents/rpi/context-shards/latest.json`.
 - [references/codex-executor.md](references/codex-executor.md)

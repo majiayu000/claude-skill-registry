@@ -1,8 +1,6 @@
 ---
 name: onboard
-description: >
-  Guided onboarding path through five stages: big picture,
-  core domain, interfaces, patterns, and hardening.
+description: 'Guided five-stage onboarding: big picture, domain, interfaces, patterns, hardening.'
 model_hint: standard
 ---
 

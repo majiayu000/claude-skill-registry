@@ -1,7 +1,6 @@
 ---
 name: plugin-review
 description: 'Review plugin quality with tiered checks and dependency-aware scoping. Use for PR validation and pre-release audits.'
-version: 1.9.0
 alwaysApply: false
 category: plugin-management
 tags:
@@ -17,7 +16,6 @@ dependencies:
 tools:
 - validate_plugin.py
 - skill_analyzer.py
-- generate_dependency_map.py
 progressive_loading: true
 model_hint: standard
 ---

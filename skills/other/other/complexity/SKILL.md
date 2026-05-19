@@ -1,21 +1,33 @@
 ---
 name: complexity
-description: 'Find focused refactor hotspots.'
-practices: [code-complete, refactoring]
+description: Find focused refactor hotspots.
+practices:
+- code-complete
+- refactoring
+hexagonal_role: domain
+consumes:
+- doc
+- standards
+produces:
+- stdout
+context_rel:
+- kind: shared-kernel
+  with: standards
 skill_api_version: 1
 context:
   window: fork
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: topic
 metadata:
   tier: execution
   dependencies:
-    - standards   # optional - loaded for code validation context
-    - doc         # optional - for documentation and non-code artifacts
-output_contract: "stdout: complexity metrics report"
+  - standards
+  - doc
+output_contract: 'stdout: complexity metrics report'
 ---
 # Complexity Skill
 

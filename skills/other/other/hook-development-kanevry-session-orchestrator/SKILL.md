@@ -163,8 +163,8 @@ Access in prompt hooks via `$TOOL_INPUT`, `$TOOL_RESULT`, `$USER_PROMPT`.
 // ✅ Portable — works everywhere the plugin installs
 { "command": "${CLAUDE_PLUGIN_ROOT}/hooks/guard.mjs" }
 
-// ❌ Broken — only works on Daisy's machine
-{ "command": "/Users/bernhardgoetzendorfer/Projects/.../guard.mjs" }
+// ❌ Broken — only works on the operator's machine
+{ "command": "~/Projects/.../guard.mjs" }
 ```
 
 ## Matchers

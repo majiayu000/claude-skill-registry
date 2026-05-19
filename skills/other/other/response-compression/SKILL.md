@@ -1,7 +1,6 @@
 ---
 name: response-compression
 description: Compress verbose responses by removing filler, hype, and unnecessary framing. Directness and termination guidelines.
-version: 1.9.3
 alwaysApply: true
 category: optimization
 tags:

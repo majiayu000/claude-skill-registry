@@ -1,6 +1,6 @@
 ---
 name: claude-tracker-suite
-description: "Manage Claude Code sessions — search by topic or ID, resume crashed sessions, spawn interactive or headless sessions, monitor live sessions, auto-summarize, and bootstrap new machine setups. Triggers on resume session, find session, list sessions, spawn session, session history, what was I working on."
+description: "Manage Claude Code sessions — search by topic or ID, browse recent sessions with full metadata (tags, summaries, titles, cost), resume in Ghostty tabs, spawn interactive or headless sessions, monitor live sessions, and bootstrap new setups. Triggers on resume session, find session, list sessions, recent sessions, spawn session, session history, what was I working on, open in ghostty."
 argument-hint: [query or --id <prefix>]
 allowed-tools: Bash(claude-tracker*), Bash(node ~/.claude/skills/claude-tracker-suite/scripts/*), Bash(~/.claude/skills/claude-tracker-suite/scripts/*.sh), Bash(python3 ~/.claude/scripts/*), Read, Grep, Glob, Edit, Write, Skill
 ---
@@ -27,6 +27,7 @@ Search, browse, monitor, and manage Claude Code session history across all proje
 | `checkpoint-session.js` | Create/query named bookmarks within sessions |
 | `quote-session.js` | Capture/search notable phrases with FTS5 |
 | `tag-session.js` | Manual session tagging with provenance |
+| `claude-tracker-recent` | Show last N sessions with full metadata (title, tags, summary, cost, model) |
 
 ## Standalone Scripts
 
@@ -44,6 +45,8 @@ Commands delegate to standalone Node.js scripts (avoids shell escaping issues wi
 | `scripts/checkpoint-session.js` | `/checkpoint`, `/checkpoint-list` | Create and query session checkpoints |
 | `scripts/quote-session.js` | `/quote`, `/quote-search` | Capture and search tagged phrases via FTS5 |
 | `scripts/tag-session.js` | `/tag` | Manual session tagging with provenance |
+| `scripts/recent-sessions.js` | `/claude-tracker-recent` | Last N sessions with title, tags, summary, model, cost |
+| `~/.claude/scripts/ghostty-resume.sh` | Direct invocation | Open session in a new Ghostty tab |
 
 All scripts use `~/.claude/lib/tracker-utils.js` for shared utilities (path decoding, session parsing, git remote detection) and `~/.claude/lib/tracker-db.js` for SQLite access (better-sqlite3, WAL mode).
 
@@ -131,6 +134,19 @@ claude-tracker-watch --verbose           # Foreground with debug output
 
 The daemon watches `~/.claude/projects/*/sessions-index.json` for changes. When new sessions appear, it caches summaries from Claude Code metadata and regenerates `active-projects.md`. See `references/daemon-setup.md` for launchd plist and lifecycle details.
 
+## Recent Sessions (Full Metadata)
+
+```bash
+claude-tracker-recent                          # Last 10 sessions with full metadata
+claude-tracker-recent --limit 20               # Last 20 sessions
+claude-tracker-recent --json                   # Machine-readable JSON output
+claude-tracker-recent --project myapp          # Filter by project
+claude-tracker-recent --model opus             # Filter by model
+claude-tracker-recent --since 7d               # Last 7 days only
+```
+
+Shows per session: title (custom or auto), summary, all tags (color-coded by type), project name, age, model, cost, turn count, git branch, session ID, and resume command. First result's resume command is auto-copied to clipboard.
+
 ## Session Listing
 
 ```bash
@@ -191,6 +207,17 @@ Open a session in a new cmux tab, optionally opening the project in an editor:
 
 cmux owns the terminal lifecycle. Editor flags (`--vscode`, `--cursor`) only open the project in the editor — the session always resumes in cmux. Falls back to printing the resume command if cmux is not running.
 
+## Resume in Ghostty Tab
+
+Open a session in a new Ghostty tab (auto-detects project directory from SQLite or JSONL):
+
+```bash
+~/.claude/scripts/ghostty-resume.sh <session-id>
+~/.claude/scripts/ghostty-resume.sh <session-id> --project ~/my-project
+```
+
+Uses the AppleScript clipboard-paste pattern for reliable command delivery. Launches Ghostty if not running. Search and recent-sessions output includes a `Ghostty:` line per result with the ready-to-run command.
+
 ## New Session / Spawn
 
 Start a new Claude Code session in a terminal tab or headless:
@@ -220,9 +247,11 @@ Headless and prompt-driven modes use `claude -p` (the Agent SDK CLI). Note: `-p`
 ## Workflow: Find and Resume
 
 1. `claude-tracker-search "topic"` — find matching sessions
-2. `claude --resume <session-id>` — resume in current terminal
-3. `open-sessions.js` — list top sessions, open selected in cmux tabs
-4. Or `claude-tracker-resume --tmux` — auto-resume all crashed sessions
+2. `claude-tracker-recent` — browse last 10 sessions with full metadata
+3. `claude --resume <session-id>` — resume in current terminal
+4. `~/.claude/scripts/ghostty-resume.sh <session-id>` — resume in a new Ghostty tab
+5. `open-sessions.js` — list top sessions, open selected in cmux tabs
+6. Or `claude-tracker-resume --tmux` — auto-resume all crashed sessions
 
 ## Workflow: Open Sessions in cmux
 
@@ -321,58 +350,12 @@ node ~/.claude/skills/claude-tracker-suite/scripts/quote-session.js list --limit
 
 Phrases are also auto-extracted by the `session-tags-infer.py` Stop hook during LLM inference.
 
-## Related: Git Tracking
+## Related Systems
 
-Git-aware session tracking via PreToolUse/PostToolUse hooks intercepts all git commands and tags sessions with repos they touch. Enables cross-directory session discovery.
-
-| File | Purpose |
-|------|---------|
-| `~/.claude/hooks/git-track.sh` | PreToolUse hook — logs git commands to JSONL |
-| `~/.claude/hooks/git-track-post.sh` | PostToolUse hook — captures commit hashes |
-| `~/.claude/hooks/git-track-rebuild.py` | Builds bidirectional index at SessionEnd |
-| `~/.claude/git-tracking.jsonl` | Append-only event log (hot path) |
-| `~/.claude/git-tracking-index.json` | Bidirectional session <-> repo index |
-
-Query functions in `tracker-utils.js`:
-- `loadGitTracking()` — load the index
-- `getSessionsForRepo(path)` — find sessions that touched a repo
-- `getReposForSession(sid)` — find repos a session touched
-- `getRecentCommits({hours, repoPath})` — recent commits across sessions
-- `getRecentGitEvents({hours})` — raw event timeline
-- `loadSpeculatorData()` — load speculator snapshot (Ghostty tab → session map)
-- `getSessionTTY(sessionId, speculatorData)` — look up Ghostty TTY for a session
-
-The `/session-report` command generates a Markdown dashboard combining session status with git activity.
-
-## Related: Speculator (Ghostty Tab Map)
-
-The speculator daemon (`~/.claude/scripts/speculator/`) maps Ghostty terminal tabs to running Claude Code sessions every 5 minutes. It integrates with the tracker suite via two functions in `tracker-utils.js`:
-
-| Function | Purpose |
-|----------|---------|
-| `loadSpeculatorData()` | Load latest speculator snapshot (returns null if stale >10min or missing) |
-| `getSessionTTY(sessionId, speculatorData)` | Look up which Ghostty TTY a session is running on |
-
-`list-sessions.js` uses these to add Ghostty tab counts to the header and purple TTY badges per session. The snapshot JSON at `~/.claude/scripts/speculator/data/ghostty-sessions.json` is also available for direct consumption by other tools.
-
-The Markdown view is synced to `~/.claude/agent_docs/ghostty-sessions.md` for on-demand reading by any Claude session.
-
-Check daemon health: `bash ~/.claude/scripts/speculator/status.sh`
-
-## Related: Soul Registry
-
-The soul registry (`~/.claude/hooks/soul-registry.py`) tracks **live** sessions with heartbeats, topics, and Slack channel bindings. It complements the tracker suite:
-
-| | Tracker Suite | Soul Registry |
-|--|---------------|---------------|
-| **Scope** | All sessions, all time | Active sessions only |
-| **Data source** | JSONL transcripts, sessions-index.json | `~/.claude/soul-sessions/registry.json` |
-| **Updates** | After session ends (summaries) | Real-time (heartbeat every turn) |
-| **Purpose** | Search, resume, project detection | Cross-session awareness, Slack binding |
-
-To view the live registry: `python3 ~/.claude/hooks/soul-registry.py list --md`
-
-To activate Claudicle identity in a session: `/ensoul` (opt-in per session). To bind a session to Slack: `/slack-sync #channel`.
+- **Git Tracking** — PreToolUse/PostToolUse hooks intercept git commands, tag sessions with repos they touch. Query via `tracker-utils.js` functions (`getSessionsForRepo`, `getReposForSession`, `getRecentCommits`). See `references/data-schemas.md` for hook files and index format.
+- **Speculator** — Daemon at `~/.claude/scripts/speculator/` maps Ghostty tabs to sessions every 5 minutes. `list-sessions.js` uses `loadSpeculatorData()` and `getSessionTTY()` for TTY badges. Health check: `bash ~/.claude/scripts/speculator/status.sh`
+- **Soul Registry** — Live session tracking with heartbeats and Slack bindings at `~/.claude/soul-sessions/registry.json`. View: `python3 ~/.claude/hooks/soul-registry.py list --md`. Activate: `/ensoul`. Bind to Slack: `/slack-sync #channel`.
+- **Session Report** — `/session-report` generates a Markdown dashboard combining session status with git activity.
 
 ## References
 

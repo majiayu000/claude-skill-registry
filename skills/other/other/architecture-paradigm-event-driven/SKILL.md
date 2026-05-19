@@ -1,7 +1,6 @@
 ---
 name: architecture-paradigm-event-driven
-description: 'Apply event-driven async messaging to decouple producers and consumers. Use for real-time processing.'
-version: 1.9.0
+description: 'Apply event-driven async messaging to decouple producers and consumers.'
 alwaysApply: false
 category: architectural-pattern
 tags:
@@ -12,10 +11,7 @@ tags:
 - scalability
 - resilience
 dependencies: []
-tools:
-- message-broker
-- event-stream-processor
-- distributed-tracing
+tools: []
 usage_patterns:
 - paradigm-implementation
 - real-time-processing
@@ -61,3 +57,16 @@ estimated_tokens: 800
   - **Mitigation**: Without strong observability, diagnosing failed or "stuck" consumers is extremely difficult. Enforce the use of distributed tracing and standardized alerting across all event-driven components.
 - **"Event Storming" Analysis Paralysis**:
   - **Mitigation**: While event storming workshops are valuable, they can become unproductive if not properly managed. Keep modeling sessions time-boxed and focused on high-value business contexts first.
+
+## Concrete Components
+
+These vocabulary items name the concrete tools and abstractions
+that show up when the paradigm is implemented. They are not
+required dependencies and they are not part of the skill's
+``tools:`` frontmatter (which is reserved for Claude Code tool
+restrictions). Use this list to disambiguate during architecture
+discussions.
+
+- ``message-broker`` -- Kafka, NATS, RabbitMQ; the durable channel between producers and consumers
+- ``event-stream-processor`` -- Flink, Faust, or similar; consumes streams and emits derived events
+- ``distributed-tracing`` -- OpenTelemetry-style correlation IDs across asynchronous hops

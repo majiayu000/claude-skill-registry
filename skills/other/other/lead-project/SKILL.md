@@ -162,6 +162,7 @@ Available actions (non-exhaustive):
 - `/bug-hunt` — proactive bug discovery
 - `/bug-fix` — diagnosis-first bug fixing
 - `/test-mutation` — mutation testing
+- `/release` — cut a versioned release; only invoke when the commander's intent explicitly authorizes publishing, and expect to halt at `/release`'s local→remote boundary confirmation regardless (publishing a release is always-andon territory per this skill's autonomy contract)
 - `/think-deliberate` — adversarial option selection when two or more choices are materially different and the trade-off is unclear
 - `/think-scrutinize` — stress-test a plan before executing it, when the plan is risky or novel
 - `/think-brainstorm` — divergent idea generation when no obvious action presents itself

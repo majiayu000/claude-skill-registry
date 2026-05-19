@@ -1,7 +1,6 @@
 ---
 name: palace-diagram
 description: 'Generate visual diagrams of palace structure, knowledge topology, and synapse connectivity.'
-version: 1.9.3
 alwaysApply: false
 category: visualization
 tags:

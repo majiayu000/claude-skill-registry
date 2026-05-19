@@ -262,27 +262,30 @@ For adding content to an element string:
 Combine with `|attr` for classes and aria attributes. Use `|append` for
 accessible labels inside the SVG.
 
-### `heading()` / `h()` / `h1()`…`h6()` — Auto-incrementing Headings (Craft 5.10+)
+### `heading()` / `h()` / `h1()`…`h6()` — Programmatic Headings (Craft 5.10+)
 
-Tracks the current heading level so nested components don't have to thread it
-manually. Useful in composable layouts where a component might be embedded at
-different depths.
+Build heading tags from a dynamic level without string-concatenation. Useful in
+components that receive a `level` prop and need to render the matching tag
+without doing `tag('h' ~ level, text)` manually.
 
 ```twig
-{# Increments the current heading level and renders #}
-{{ heading('Page title', { class: 'text-3xl' }) }}
-{{ heading('Section', { class: 'text-2xl' }) }}     {# h2 #}
-{{ heading('Subsection', { class: 'text-xl' }) }}    {# h3 #}
+{# heading(level, text-or-attributes) — level is an int 1-6 #}
+{{ heading(2, 'Section title') }}                     {# <h2>Section title</h2> #}
+{{ heading(3, { class: 'text-xl', text: 'Subsection' }) }}
 
-{# Force a specific level when context demands it #}
-{{ h2('Always h2', { class: 'text-xl' }) }}
-{{ h1('Reset to h1') }}
+{# h() is the short alias for heading() #}
+{{ h(2, 'Section title') }}
+
+{# Bound-level shortcuts — only attributes/text needed #}
+{{ h1('Page title') }}
+{{ h2('Section') }}
+{{ h6({ class: 'sr-only', text: 'Hidden heading' }) }}
 ```
 
-`h()` is the short alias for `heading()`. Use these in layouts/builders where
-the depth of a section isn't known at the component level. For component-local
-headings whose level is determined by a prop, pass `level: 2` and render the
-tag directly — auto-incrementing only helps when the depth is dynamic.
+These are stateless tag builders — there's no auto-incrementing or current-level
+tracking. Components that need to thread a level across nested contexts still
+pass it as a prop. `heading()` throws `InvalidArgumentException` when level is
+outside 1-6.
 
 ### Filter Additions (Craft 5.10+)
 

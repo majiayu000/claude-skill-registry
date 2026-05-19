@@ -1,7 +1,6 @@
 ---
 name: math-review
-description: 'Verify math-heavy code for correctness and numerical stability. Use when reviewing scientific or financial computation.'
-version: 1.9.3
+description: 'Verify math-heavy code for correctness and numerical stability.'
 alwaysApply: false
 category: specialized
 tags:

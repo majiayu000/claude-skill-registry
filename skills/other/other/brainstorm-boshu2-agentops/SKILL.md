@@ -1,7 +1,18 @@
 ---
 name: brainstorm
-description: 'Separate goals from implementation.'
-practices: [lean-startup, mythical-man-month]
+description: Separate goals from implementation.
+practices:
+- lean-startup
+- mythical-man-month
+hexagonal_role: domain
+consumes:
+- standards
+produces:
+- result.json
+- verdict.json
+context_rel:
+- kind: shared-kernel
+  with: standards
 skill_api_version: 1
 metadata:
   tier: execution
@@ -11,13 +22,20 @@ context:
   intent:
     mode: none
   sections:
-    exclude: [INTEL, HISTORY, TASK]
+    exclude:
+    - INTEL
+    - HISTORY
+    - TASK
   intel_scope: none
 output_contract: skills/research/schemas/findings.json
 ---
 # /brainstorm — Clarify Goals Before Planning
 
 > **Purpose:** Separate WHAT from HOW. Explore the problem space before committing to a solution.
+
+## Loop position
+
+Upstream of move **1 (shape intent as BDD)** of the [operating loop](../../docs/architecture/operating-loop.md). Consumes a free-text goal; produces Given/When/Then-shaped acceptance examples that `/discovery` can fold into a [BDD intent issue](../../docs/templates/intent-issue.md). The Capture step (phase 4 below) is not complete until at least one happy path and one critical edge are written as testable Gherkin — "it should work" is not a captured example.
 
 Four phases:
 1. **Assess clarity** — Is the goal specific enough?

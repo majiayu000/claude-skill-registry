@@ -1,7 +1,6 @@
 ---
 name: war-room
-description: "Convene a multi-LLM expert panel to pressure-test high-stakes decisions and build consensus through structured deliberation."
-version: 1.9.0
+description: 'Multi-LLM expert panel for high-stakes, hard-to-reverse decisions. Adversarial review.'
 alwaysApply: false
 # Custom metadata (not used by Claude for matching):
 model_preference: claude-opus-4
@@ -22,10 +21,8 @@ dependencies:
   - conjure:delegation-core
   - memory-palace:strategeion
   - leyline:git-platform
-tools:
-  - Bash
-  - Read
-  - Write
+tools: []
+role: entrypoint
 ---
 ## Overview
 

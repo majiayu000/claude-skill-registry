@@ -1,7 +1,6 @@
 ---
 name: style-learner
-description: Learn and extract writing style patterns from exemplar text for consistent
-version: 1.9.0
+description: 'Learn and extract writing style patterns from exemplar text for consistent.'
 globs: "**/*.md"
 alwaysApply: false
   application. Use when creating a style guide from existing content, ensuring consistency
@@ -17,34 +16,42 @@ tags:
 - exemplar
 - learning
 - consistency
-tools:
-- Read
-- Write
-- TodoWrite
+tools: []
 complexity: medium
 model_hint: standard
 estimated_tokens: 1800
 progressive_loading: true
 modules:
-- feature-extraction
-- exemplar-reference
-- style-application
+- modules/feature-extraction.md
+- modules/exemplar-reference.md
+- modules/style-application.md
 dependencies:
 - scribe:shared
 - scribe:slop-detector
 ---
 # Style Learning Skill
 
-Extract and codify writing style from exemplar text for consistent application.
+**A style profile is metrics plus exemplars. Either alone
+is too weak to reproduce a voice.**
+
+Extract style from exemplar text and codify it as a profile
+that downstream skills (`scribe:doc-generator`,
+`scribe:voice-generate`) can apply consistently.
 
 ## Approach: Feature Extraction + Exemplar Reference
 
-This skill combines two complementary methods:
+The skill combines two methods because each fails alone:
 
-1. **Feature Extraction**: Quantifiable style metrics (sentence length, vocabulary complexity, structural patterns)
-2. **Exemplar Reference**: Specific passages that demonstrate desired style
+1. **Feature Extraction**: quantifiable metrics (sentence
+   length distribution, vocabulary complexity, structural
+   patterns). Reproducible but soulless.
+2. **Exemplar Reference**: specific passages that
+   demonstrate the target style. Vivid but hard to apply
+   at scale.
 
-Together, these create a comprehensive style profile that can guide content generation and editing.
+Together they form a profile precise enough to score new
+text and rich enough to guide rewrites. Metrics catch what
+exemplars miss; exemplars carry what metrics flatten.
 
 ## Required TodoWrite Items
 

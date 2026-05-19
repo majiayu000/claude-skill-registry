@@ -8,6 +8,8 @@ model: opus
 
 Pre-flight checklist before cutting a release. Spawns a scanner agent for static analysis, runs execution-based checks (tests, build, doc freshness), then presents consolidated findings for human review. Runs all checks without interruption, then presents the full picture for decision-making.
 
+**Pairing with `/release`:** This skill is the advisory side of the release seam. The mutator side is [`/release`](../release/SKILL.md), which invokes `/review-release` as preflight before doing anything irreversible. If the intent is to cut the release, invoke `/release` directly — it runs this skill internally. Use `/review-release` standalone only when auditing readiness without committing to a cut.
+
 ## Philosophy
 
 **Surface issues, don't silently fix them.** A release is a commitment to users. Every issue deserves human review before shipping. The only auto-fixes offered are mechanical debug artifact removals.

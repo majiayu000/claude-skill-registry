@@ -1,7 +1,6 @@
 ---
 name: session-to-post
 description: 'Convert a Claude Code session into a shareable blog post or case study capturing decisions, process, and outcomes.'
-version: 1.9.0
 globs: "**/*.md"
 alwaysApply: false
 category: artifact-generation
@@ -12,21 +11,14 @@ tags:
 - case-study
 - storytelling
 - developer-experience
-tools:
-- Read
-- Write
-- Edit
-- Bash
-- Glob
-- Grep
-- TodoWrite
+tools: []
 complexity: medium
 model_hint: standard
 estimated_tokens: 2500
 progressive_loading: true
 modules:
-- session-extraction
-- narrative-structure
+- modules/session-extraction.md
+- modules/narrative-structure.md
 dependencies:
 - scribe:shared
 - scribe:slop-detector
@@ -38,7 +30,7 @@ Capture what happened in a Claude Code session and turn it into a
 blog post, case study, or social media thread that others can learn from.
 
 The skill extracts the real story from git history, file changes, and
-conversation context — then shapes it into a narrative that shows
+conversation context, then shapes it into a narrative that shows
 process, not just results.
 
 ## When To Use
@@ -74,8 +66,8 @@ Use them when the post needs more than prose.
 
 ### Recording Integration (scry)
 
-When the post describes something visual — a running app, a test suite,
-a build pipeline — capture it instead of describing it.
+When the post describes something visual (a running app, a test suite,
+a build pipeline) capture it instead of describing it.
 
 **Terminal recordings** (build output, test runs, CLI demos):
 ```
@@ -122,39 +114,39 @@ Load the `session-extraction` module for the full checklist.
 
 Gather raw material from what actually happened:
 
-1. **Git history** — commits since the session started:
+1. **Git history**: commits since the session started:
    ```bash
    git log --oneline --since="<session_start>" --stat
    ```
-2. **File inventory** — what was created and changed:
+2. **File inventory**: what was created and changed:
    ```bash
    git diff --stat <start_commit>..HEAD
    ```
-3. **Test results** — concrete evidence of what works:
+3. **Test results**: concrete evidence of what works:
    ```bash
    cargo test  # or the project's test command
    ```
-4. **Metrics** — scope and scale:
+4. **Metrics**: scope and scale:
    ```bash
    find . -name "*.rs" -not -path "*/target/*" | xargs wc -l
    ```
-5. **Conversation context** — the user's goals, constraints, and decisions
+5. **Conversation context**: the user's goals, constraints, and decisions
    made during the session
 
 ### Step 2: Identify the Story
 
 Every session post answers three questions:
 
-1. **What were we trying to do?** — the goal, not the task list
-2. **What did we actually do?** — the real path, including pivots
-3. **What came out of it?** — concrete, measurable results
+1. **What were we trying to do?**: the goal, not the task list
+2. **What did we actually do?**: the real path, including pivots
+3. **What came out of it?**: concrete, measurable results
 
 Look for:
-- **The hook** — what makes this interesting? A hard problem, a
+- **The hook**: what makes this interesting? A hard problem, a
   surprising approach, an impressive result
-- **Turning points** — where did the plan change? What broke?
+- **Turning points**: where did the plan change? What broke?
   What worked unexpectedly?
-- **The number** — one metric that captures the outcome
+- **The number**: one metric that captures the outcome
   (lines written, tests passing, performance gain, time saved)
 
 ### Step 3: Draft the Post
@@ -194,17 +186,17 @@ Honest remaining work. No false completeness.
 **Tone**:
 - Write like explaining to a colleague over coffee
 - Specifics over adjectives ("180 tests" not "comprehensive suite")
-- Show the mess — readers connect with pivots and debugging
+- Show the mess: readers connect with pivots and debugging
 - Credit the tools and techniques that made it work
 - Under 1500 words unless the content demands more
 
 ### Step 4: Quality Gate
 
-1. **Slop check** — `Skill(scribe:slop-detector)` on the draft
-2. **Proof-of-work** — `Skill(imbue:proof-of-work)` on all claims
-3. **Recording check** — does any section need a GIF?
-4. **Title test** — would you click this? Does it promise something specific?
-5. **Opening test** — does paragraph one say what the post is about?
+1. **Slop check**: `Skill(scribe:slop-detector)` on the draft
+2. **Proof-of-work**: `Skill(imbue:proof-of-work)` on all claims
+3. **Recording check**: does any section need a GIF?
+4. **Title test**: would you click this? Does it promise something specific?
+5. **Opening test**: does paragraph one say what the post is about?
 
 ### Step 5: Output
 
@@ -231,8 +223,8 @@ A session that ported a Quake 2 engine from C to Rust:
 > Goal: idiomatic Rust with wasm-bindgen, glow for WebGL2, and
 > matchbox for P2P multiplayer.
 >
-> **The work**: Seven parallel agents built subsystems — collision,
-> movement, filesystem, networking, renderer, server, client — while
+> **The work**: Seven parallel agents built subsystems (collision,
+> movement, filesystem, networking, renderer, server, client) while
 > the main session coordinated integration. A Makefile with
 > prerequisite checks automated the full build-to-browser pipeline
 > including game data download.
@@ -248,5 +240,5 @@ A session that ported a Quake 2 engine from C to Rust:
 > **What's next**: Textured rendering, collision debugging, sound,
 > menus, multiplayer.
 
-Every claim is checkable — line counts from `wc -l`, test counts
+Every claim is checkable: line counts from `wc -l`, test counts
 from `cargo test`, file counts from filesystem log output.

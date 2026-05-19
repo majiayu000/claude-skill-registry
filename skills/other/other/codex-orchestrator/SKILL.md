@@ -1,6 +1,6 @@
 ---
 name: codex-orchestrator
-description: "Spawn specialized OpenAI Codex CLI subagents for code review, debugging, architecture analysis, security audits, refactoring, and documentation via AGENTS.md persona injection (gpt-5.5, gpt-5.5-pro, gpt-5-mini). Triggers on 'delegate to Codex', 'Codex subagent', 'code review agent', 'security audit', 'refactor with Codex'."
+description: "Spawn specialized OpenAI Codex CLI subagents for code review, debugging, architecture analysis, security audits, refactoring, documentation, and autonomous /goal runs via AGENTS.md persona injection (gpt-5.5, gpt-5.5-pro, gpt-5-mini). Triggers on 'delegate to Codex', 'Codex subagent', 'code review agent', 'security audit', 'refactor with Codex', 'goal run', 'autonomous goal'."
 ---
 
 # Codex Orchestrator
@@ -60,6 +60,7 @@ To manually check/update:
 | `builder` | Greenfield implementation, new features | Creating new code from specs, incremental feature development |
 | `researcher` | Read-only Q&A, codebase analysis | Questions, analysis, comparisons (no file changes) |
 | `chat` | Open-ended conversation | General questions, brainstorming, discussion (read-only, ephemeral) |
+| `goal` | Goal specification for /goal runs | Drafting structured objectives for autonomous multi-hour Codex sessions |
 
 ## Quick Execution
 
@@ -165,6 +166,7 @@ python3 ~/.claude/skills/codex-orchestrator/scripts/codex-session.py info securi
 - **docs** for documentation
 - **refactor** for implementation improvements
 - **planner** for multi-hour implementation plans
+- **goal** for autonomous /goal objective specifications
 
 ## Chaining Patterns
 
@@ -246,6 +248,79 @@ python3 ~/.claude/skills/codex-orchestrator/scripts/codex-session.py info securi
 ~/.claude/skills/codex-orchestrator/scripts/codex-exec.sh builder "Implement the caching layer from architect's design"
 ```
 
+## Goal Runs
+
+The `/goal` command sets a persistent objective that Codex works toward autonomously for hours. Goals are TUI-only (not available in `codex exec` mode), so goal runs use a two-phase workflow.
+
+### Two-Phase Workflow
+
+**Phase 1 — Draft:** Generate a structured goal specification file using `codex exec` with the `goal` profile.
+
+**Phase 2 — Run:** Launch the interactive Codex TUI with `/goal` set from the spec file.
+
+### Usage
+
+```bash
+# Draft a goal specification
+~/.claude/skills/codex-orchestrator/scripts/codex-goal.sh draft "Add authentication with JWT to the API"
+
+# Draft with custom output path
+~/.claude/skills/codex-orchestrator/scripts/codex-goal.sh draft "Migrate to PostgreSQL" --output goals/pg-migration.md
+
+# List existing goals
+~/.claude/skills/codex-orchestrator/scripts/codex-goal.sh list
+
+# Launch Codex TUI with a goal
+~/.claude/skills/codex-orchestrator/scripts/codex-goal.sh run goals/goal-20260518-143000.md
+
+# Run with custom model
+~/.claude/skills/codex-orchestrator/scripts/codex-goal.sh run goals/goal-01.md --model gpt-5.5-pro
+```
+
+### Goal File Format
+
+Goal specifications follow a structured format with YAML frontmatter:
+
+```markdown
+---
+objective: "One-line summary"
+status: draft
+created: 2026-05-18
+project: /path/to/project
+---
+
+# Goal: <objective>
+
+## Objective / Stopping Condition / Context / Constraints / Validation / Checkpoints / Progress Log
+```
+
+Goals under 3,500 characters are inlined directly into the `/goal` command. Longer goals are referenced by file path.
+
+### Chaining: Planner → Goal → Run → Reviewer
+
+```bash
+# 1. Plan the feature
+~/.claude/skills/codex-orchestrator/scripts/codex-exec.sh planner "Create ExecPlan for caching layer"
+
+# 2. Draft a goal from the plan
+~/.claude/skills/codex-orchestrator/scripts/codex-goal.sh draft "Implement caching layer per ExecPlan"
+
+# 3. Launch autonomous goal run
+~/.claude/skills/codex-orchestrator/scripts/codex-goal.sh run goals/goal-20260518-143000.md
+
+# 4. Review what Codex built
+~/.claude/skills/codex-orchestrator/scripts/codex-exec.sh reviewer "Review the caching implementation"
+```
+
+### Caveats
+
+- `/goal` is TUI-only — the `run` subcommand launches an interactive Codex session (stdin is not redirected)
+- Requires `features.goals = true` in `~/.codex/config.toml` (or `--enable goals` flag, which the script passes automatically)
+- One goal per thread — must `/goal clear` before setting a different goal
+- 4,000 character limit on `/goal` content (the draft phase targets under 3,500 to leave overhead)
+
+See `references/goal-command.md` for the full `/goal` command reference.
+
 ## Script Options
 
 ### codex-exec.sh Options
@@ -274,7 +349,7 @@ Each profile has a default model and reasoning effort. User flags override these
 | Profile Type | Profiles | Model | Reasoning |
 |-------------|----------|-------|-----------|
 | **Coding** | builder, reviewer, debugger, refactor, syseng, security, docs | `gpt-5.5` | `high` |
-| **Planning** | planner, architect | `gpt-5.5` | `high` |
+| **Planning** | planner, architect, goal | `gpt-5.5` | `high` |
 | **Research** | researcher | `gpt-5.5` | `medium` |
 | **Chat** | chat | `gpt-5.4` | `medium` |
 
@@ -347,6 +422,7 @@ For detailed information:
 - `references/codex-cli.md` - Complete CLI command reference
 - `references/agents-md-format.md` - AGENTS.md syntax and best practices
 - `references/subagent-patterns.md` - Delegation patterns and examples
+- `references/goal-command.md` - /goal command reference and best practices
 
 ## Troubleshooting
 
@@ -370,7 +446,7 @@ export OPENAI_API_KEY=sk-...
 ```
 
 ### "Profile not found"
-Available profiles: reviewer, debugger, architect, security, refactor, docs, planner, syseng, builder, researcher, chat
+Available profiles: reviewer, debugger, architect, security, refactor, docs, planner, syseng, builder, researcher, chat, goal
 
 Check profile exists:
 ```bash

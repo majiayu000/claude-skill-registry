@@ -207,13 +207,14 @@ Agent starts task at assigned model
 
 **Claude.ai MCP Connectors (Claude Code 2.1.46+)**: Users with claude.ai connectors configured may have additional MCP tools auto-loaded, increasing the total tool description footprint. This makes it more likely that haiku agents will exceed the 10% tool search threshold. When escalation decisions involve MCP-heavy workflows, factor in claude.ai connector tool count via `/mcp`.
 
-**Effort Controls as Escalation Alternative (Opus 4.6 / Claude Code 2.1.32+)**: Opus 4.6 introduces adaptive thinking with effort levels (`low`, `medium`, `high`). The `max` level was removed in 2.1.72; `high` is now the ceiling. Symbols: ○ (low) ◐ (medium) ● (high). Use `/effort auto` to reset to default. Before escalating between models, consider whether adjusting effort on the current model would suffice:
+**Effort Controls as Escalation Alternative (Opus 4.6 / Claude Code 2.1.32+)**: Opus 4.6 introduces adaptive thinking with effort levels (`low`, `medium`, `high`). The `max` level was removed in 2.1.72 for Opus 4.6, and `high` became the ceiling on that model. Claude Code 2.1.111 reintroduced `max` and added `xhigh` (between `high` and `max`) for Opus 4.7 only; on other models `xhigh` falls back to `high`. Symbols: ○ (low) ◐ (medium) ● (high) ◉ (xhigh) ★ (max). Use `/effort` (interactive slider since 2.1.111) or `/effort auto` to reset. Before escalating between models, consider whether adjusting effort on the current model would suffice:
 
 | Instead of... | Consider... | When |
 |--------------|-------------|------|
 | Haiku → Sonnet | Stay on Haiku | Task is still deterministic, just needs more context |
 | Sonnet → Opus | Opus@medium | Moderate reasoning, not deep architectural analysis |
 | Opus@medium → "maybe try again" | Opus@high or "ultrathink" | Genuine complexity needing deeper reasoning |
+| Opus 4.7@high → escalate | Opus 4.7@xhigh or @max | Deep architectural analysis on Opus 4.7 specifically |
 
 **Default effort change (2.1.68+)**: Opus 4.6 now
 defaults to **medium effort** for Max and Team

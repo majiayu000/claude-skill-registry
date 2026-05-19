@@ -1,8 +1,7 @@
 ---
 name: bug-review
 role: library
-description: 'Bug hunting with evidence trails. Use when investigating reported defects or verifying that a fix resolves the root cause.'
-version: 1.9.3
+description: 'Bug hunting with evidence trails.'
 alwaysApply: false
 category: code-review
 tags:

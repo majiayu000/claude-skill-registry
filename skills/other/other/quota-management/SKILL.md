@@ -1,11 +1,6 @@
 ---
 name: quota-management
-description: 'Quota tracking, threshold monitoring, and graceful degradation for rate-limited
-  API services.
-
-
-  quota, rate limiting, usage limits, thresholds.'
-version: 1.9.3
+description: 'Quota tracking, threshold monitoring, graceful degradation for rate-limited APIs.'
 alwaysApply: false
 category: infrastructure
 tags:

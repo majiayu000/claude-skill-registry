@@ -1,18 +1,28 @@
 ---
-name: "openai-docs"
-description: 'Use official OpenAI docs for API/product questions needing current citations.'
+name: openai-docs
+description: Use official OpenAI docs.
+practices:
+- prompt-as-spec
+- ai-assisted-dev
+hexagonal_role: driven-adapter
+consumes:
+- external-api
+produces: []
+context_rel: []
 skill_api_version: 1
 context:
   window: fork
   intent:
     mode: questions
   sections:
-    exclude: [HISTORY, TASK]
+    exclude:
+    - HISTORY
+    - TASK
   intel_scope: none
 metadata:
   tier: cross-vendor
   internal: false
-output_contract: "stdout: documentation with citations"
+output_contract: 'stdout: documentation with citations'
 ---
 # OpenAI Docs
 

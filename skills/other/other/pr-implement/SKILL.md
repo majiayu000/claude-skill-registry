@@ -1,24 +1,36 @@
 ---
 name: pr-implement
-description: 'Implement a scoped OSS PR.'
-practices: [continuous-delivery, xp, pragmatic-programmer]
+description: Implement a scoped OSS PR.
+practices:
+- continuous-delivery
+- xp
+- pragmatic-programmer
+hexagonal_role: driving-adapter
+consumes:
+- crank
+produces:
+- git-changes
+context_rel:
+- kind: customer-of
+  with: crank
 skill_api_version: 1
 context:
   window: fork
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: topic
 license: MIT
 compatibility: Requires git, gh CLI
 metadata:
   author: AI Platform Team
-  version: "1.0.0"
+  version: 1.0.0
   tier: contribute
   internal: false
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob
-output_contract: "code changes on fork branch"
+output_contract: code changes on fork branch
 ---
 # PR Implement Skill
 

@@ -17,10 +17,13 @@ def _load_module():
 def test_taxonomy_loads_current_category_set():
     taxonomy = _load_module()
     loaded = taxonomy.load_taxonomy()
+    assert loaded.schema_version == 2
     assert loaded.default_category == "other"
     assert "development" in loaded.categories
     assert "other" in loaded.categories
     assert len(loaded.categories) >= 77
+    assert loaded.categories["docs"].status == "deprecated"
+    assert loaded.migration_target("docs") == "documents"
 
 
 def test_taxonomy_resolves_aliases_and_codes():
@@ -66,4 +69,44 @@ categories:
         encoding="utf-8",
     )
     with pytest.raises(ValueError, match="maps to both"):
+        taxonomy.load_taxonomy(taxonomy_file)
+
+
+def test_taxonomy_rejects_deprecated_category_without_target(tmp_path):
+    taxonomy = _load_module()
+    taxonomy_file = tmp_path / "categories.yaml"
+    taxonomy_file.write_text(
+        """
+schema_version: 2
+default_category: other
+categories:
+  - slug: other
+    code: oth
+  - slug: old
+    code: old
+    status: deprecated
+""",
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="must declare migrate_to"):
+        taxonomy.load_taxonomy(taxonomy_file)
+
+
+def test_taxonomy_rejects_unknown_parent(tmp_path):
+    taxonomy = _load_module()
+    taxonomy_file = tmp_path / "categories.yaml"
+    taxonomy_file.write_text(
+        """
+schema_version: 2
+default_category: other
+categories:
+  - slug: other
+    code: oth
+  - slug: child
+    code: child
+    parent: missing
+""",
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="unknown parent"):
         taxonomy.load_taxonomy(taxonomy_file)

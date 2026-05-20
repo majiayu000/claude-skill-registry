@@ -1,6 +1,5 @@
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -23,11 +22,13 @@ def test_publish_sync_runs_generated_size_guard_after_rebuild():
 
     rebuild_pos = sync_script.index("scripts/build_search_index.py")
     guard_pos = sync_script.index("scripts/check_generated_file_sizes.py")
+    category_guard_pos = sync_script.index("scripts/check_category_artifacts.py")
 
-    assert guard_pos > rebuild_pos
+    assert category_guard_pos > guard_pos > rebuild_pos
     assert "--include registry.json" in sync_script
     assert "--include registry-shards" in sync_script
     assert "--include docs" in sync_script
+    assert "--categories-dir" in sync_script
 
 
 def test_build_index_fails_closed_when_security_report_is_missing():
@@ -44,9 +45,10 @@ def test_build_index_runs_generated_size_guard_before_pages_upload():
     workflow = read_repo_file(".github/workflows/build-index.yml")
 
     guard_pos = workflow.index("scripts/check_generated_file_sizes.py")
+    category_guard_pos = workflow.index("scripts/check_category_artifacts.py")
     upload_pos = workflow.index("actions/upload-pages-artifact")
 
-    assert guard_pos < upload_pos
+    assert guard_pos < category_guard_pos < upload_pos
     assert "--include docs" in workflow
 
 
@@ -77,6 +79,8 @@ def test_python_tests_workflow_runs_full_suite_with_coverage_gate():
 
     assert "name: Python Test Health" in workflow
     assert "python -m pytest -q --cov-fail-under=50" in workflow
+    assert "scripts/check_taxonomy_governance.py" in workflow
     assert "--override-ini" not in workflow
     assert "scripts/**" in workflow
+    assert "taxonomy/**" in workflow
     assert "crawler/**" in workflow

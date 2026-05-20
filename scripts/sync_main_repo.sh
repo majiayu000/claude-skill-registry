@@ -71,6 +71,8 @@ if [[ "$rebuild" -eq 1 ]]; then
     --include registry.json \
     --include registry-shards \
     --include docs
+  python "$main_dir/scripts/check_category_artifacts.py" \
+    --categories-dir "$main_dir/docs/categories"
 fi
 
 echo "Generating third-party notices..."

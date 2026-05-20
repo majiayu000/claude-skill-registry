@@ -122,6 +122,205 @@ jobs:
           }
           EOF
 
+      - name: Validate canary artifact and write publish status
+        env:
+          CORE_REPO: ${{ steps.refs.outputs.core_repo }}
+          CORE_SHA: ${{ steps.refs.outputs.core_sha }}
+          DATA_REPO: ${{ steps.refs.outputs.data_repo }}
+          DATA_SHA: ${{ steps.refs.outputs.data_sha }}
+        run: |
+          python3 - <<'PY'
+          from __future__ import annotations
+
+          import hashlib
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+          from typing import Any
+
+          root = Path.cwd()
+          status_path = root / "provenance" / "publish-status.json"
+          expected = {
+              "core_repo": os.environ["CORE_REPO"],
+              "core_sha": os.environ["CORE_SHA"],
+              "data_repo": os.environ["DATA_REPO"],
+              "data_sha": os.environ["DATA_SHA"],
+          }
+          run_url = (
+              f"{os.environ.get('GITHUB_SERVER_URL', 'https://github.com')}/"
+              f"{os.environ.get('GITHUB_REPOSITORY', '')}/actions/runs/"
+              f"{os.environ.get('GITHUB_RUN_ID', '')}"
+          )
+          checks: list[dict[str, Any]] = []
+
+          def load_json(path: str) -> Any:
+              with (root / path).open("r", encoding="utf-8") as handle:
+                  return json.load(handle)
+
+          def sha256(path: Path) -> str:
+              digest = hashlib.sha256()
+              with path.open("rb") as handle:
+                  for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+                      digest.update(chunk)
+              return digest.hexdigest()
+
+          def check(name: str, fn) -> None:
+              try:
+                  detail = fn()
+              except Exception as exc:
+                  checks.append({"name": name, "status": "failed", "detail": str(exc)})
+                  return
+              checks.append({"name": name, "status": "passed", "detail": detail or "ok"})
+
+          def assert_pointer(path: str, manifest_path: str) -> str:
+              pointer = load_json(path)
+              if pointer.get("deprecated_full_payload") is not True:
+                  raise ValueError(f"{path} is not a deprecated full-payload pointer")
+              if pointer.get("manifest") != manifest_path:
+                  raise ValueError(f"{path} points to {pointer.get('manifest')!r}")
+              if "records" in pointer or "skills" in pointer or "s" in pointer:
+                  raise ValueError(f"{path} still contains a full payload")
+              return f"{path} -> {manifest_path}"
+
+          def assert_manifest(
+              path: str,
+              *,
+              count_key: str = "total_count",
+              artifact_base: str = ".",
+          ) -> str:
+              manifest = load_json(path)
+              shards = manifest.get("shards") or manifest.get("parts")
+              if not isinstance(shards, list) or not shards:
+                  raise ValueError(f"{path} has no shard/part entries")
+              total = manifest.get(count_key)
+              if total is None and count_key == "total_count":
+                  total = manifest.get("count")
+              entry_total = sum(int(entry.get("count", 0) or 0) for entry in shards)
+              if total is not None and entry_total != int(total):
+                  raise ValueError(f"{path} count mismatch: entries={entry_total}, total={total}")
+              for entry in shards[:3]:
+                  shard_path = root / artifact_base / str(entry["path"])
+                  if not shard_path.exists():
+                      raise ValueError(f"missing shard {entry['path']}")
+                  if int(entry.get("bytes", 0) or 0) != shard_path.stat().st_size:
+                      raise ValueError(f"byte mismatch for {entry['path']}")
+                  if entry.get("sha256") and entry["sha256"] != sha256(shard_path):
+                      raise ValueError(f"sha256 mismatch for {entry['path']}")
+              return f"{path}: {len(shards)} shards, {entry_total} records"
+
+          def validate_provenance() -> str:
+              provenance = load_json("provenance/merge-source.json")
+              for key, value in expected.items():
+                  if provenance.get(key) != value:
+                      raise ValueError(f"{key}={provenance.get(key)!r}, expected {value!r}")
+              return "pinned refs match workflow inputs"
+
+          def validate_stats() -> str:
+              stats = load_json("docs/stats.json")
+              largest = int(stats.get("largest_generated_file_bytes", 0) or 0)
+              if largest <= 0:
+                  raise ValueError("largest_generated_file_bytes is missing")
+              required = [
+                  "quality_shard_count",
+                  "security_shard_count",
+                  "ranking_shard_count",
+                  "search_shard_count",
+                  "category_shard_count",
+              ]
+              missing = [key for key in required if int(stats.get(key, 0) or 0) <= 0]
+              if missing:
+                  raise ValueError(f"missing positive shard counts: {', '.join(missing)}")
+              return f"largest_generated_file_bytes={largest}"
+
+          def validate_registry() -> str:
+              assert_pointer("registry.json", "registry-manifest.json")
+              return assert_manifest("registry-manifest.json")
+
+          check("provenance refs", validate_provenance)
+          check("registry pointer and manifest", validate_registry)
+          check(
+              "search pointer and manifest",
+              lambda: (
+                  assert_pointer("docs/search-index.json", "search-index-manifest.json")
+                  + "; "
+                  + assert_manifest("docs/search-index-manifest.json", artifact_base="docs")
+              ),
+          )
+          for name in ("quality", "security", "ranking"):
+              check(
+                  f"{name} signal pointer and manifest",
+                  lambda name=name: (
+                      assert_pointer(
+                          f"docs/{name}-index.json",
+                          f"{name}-index-manifest.json",
+                      )
+                      + "; "
+                      + assert_manifest(f"docs/{name}-index-manifest.json", artifact_base="docs")
+                  ),
+              )
+          check(
+              "category index and other manifest",
+              lambda: assert_manifest(
+                  "docs/categories/other/manifest.json",
+                  count_key="count",
+                  artifact_base="docs",
+              ),
+          )
+          check("stats shard summary", validate_stats)
+
+          failed = [item for item in checks if item["status"] != "passed"]
+          status = {
+              "schema_version": 1,
+              "status": "failed" if failed else "passed",
+              "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+              "core_repo": expected["core_repo"],
+              "core_sha": expected["core_sha"],
+              "data_repo": expected["data_repo"],
+              "data_sha": expected["data_sha"],
+              "github_run_id": os.environ.get("GITHUB_RUN_ID"),
+              "github_run_attempt": os.environ.get("GITHUB_RUN_ATTEMPT"),
+              "github_run_url": run_url,
+              "promotion_gate": {
+                  "mode": "pre-commit canary validation",
+                  "result": "blocked" if failed else "allowed",
+              },
+              "rollback_contract": {
+                  "strategy": "rerun this workflow with a previous known-good provenance tuple",
+                  "source_of_truth": "provenance/merge-source.json from the previous good main commit",
+                  "required_inputs": ["core_sha", "data_sha"],
+              },
+              "checks": checks,
+          }
+          status_path.parent.mkdir(parents=True, exist_ok=True)
+          status_path.write_text(json.dumps(status, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
+          if summary_path:
+              with open(summary_path, "a", encoding="utf-8") as summary:
+                  summary.write("## Publish canary validation\n\n")
+                  summary.write(f"- Status: `{status['status']}`\n")
+                  summary.write(f"- Core: `{status['core_sha']}`\n")
+                  summary.write(f"- Data: `{status['data_sha']}`\n")
+                  summary.write(f"- Promotion: `{status['promotion_gate']['result']}`\n")
+                  summary.write("\n| Check | Status | Detail |\n")
+                  summary.write("| --- | --- | --- |\n")
+                  for item in checks:
+                      detail = str(item["detail"]).replace("|", "\\|")
+                      summary.write(f"| {item['name']} | {item['status']} | {detail} |\n")
+          if failed:
+              print(json.dumps(status, ensure_ascii=False, indent=2))
+              raise SystemExit("Publish canary validation failed")
+          print(f"Publish canary validation passed; wrote {status_path}")
+          PY
+
+      - name: Upload publish status
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: publish-status
+          path: provenance/publish-status.json
+          if-no-files-found: ignore
+
       - name: Commit and push publish result
         env:
           CORE_SHA: ${{ steps.refs.outputs.core_sha }}

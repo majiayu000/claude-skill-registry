@@ -20,6 +20,19 @@ def load_module():
     return module
 
 
+def load_support_module():
+    scripts_dir = Path(__file__).resolve().parents[1] / "scripts"
+    if str(scripts_dir) not in sys.path:
+        sys.path.insert(0, str(scripts_dir))
+    module_path = scripts_dir / "sync_pipeline_support.py"
+    spec = importlib.util.spec_from_file_location("sync_pipeline_support_module", module_path)
+    assert spec is not None
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+    return module
+
+
 class FakeResponse:
     def __init__(self, status, *, text="", json_payload=None, body=b""):
         self.status = status
@@ -921,6 +934,13 @@ def test_filter_pending_skills_prefilters_no_repo_and_cooldown():
     reasons = [reason for _, reason in skipped_rows]
     assert "no_repo_prefilter" in reasons
     assert "cooldown_not_found" in reasons
+
+
+def test_sync_pipeline_category_sanitization_uses_taxonomy_aliases():
+    module = load_support_module()
+    assert module.sanitize_category("dev") == "development"
+    assert module.sanitize_category("Engineering") == "development"
+    assert module.skill_key({"name": "demo", "category": "dev"}) == "development:demo"
 
 
 def test_negative_cache_helpers_prune_and_cooldown():

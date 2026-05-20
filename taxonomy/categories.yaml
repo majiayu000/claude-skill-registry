@@ -1,0 +1,268 @@
+schema_version: 1
+default_category: other
+categories:
+  - slug: adb-meta-automation
+    code: adb-meta-automation
+    display_name: ADB Meta Automation
+  - slug: agent
+    code: agent
+    display_name: Agent
+  - slug: agent-coordination
+    code: agent-coordination
+    display_name: Agent Coordination
+  - slug: ai-llm
+    code: ai-llm
+    display_name: AI / LLM
+    keywords: [ai, llm, language-model, prompt, prompting]
+  - slug: ai-ml
+    code: ai-ml
+    display_name: AI / ML
+    aliases: [machine-learning]
+    keywords: [ai, ml, machine-learning, model, training]
+  - slug: analysis
+    code: analysis
+    display_name: Analysis
+    keywords: [analysis, analyze, insights]
+  - slug: analysis-methods
+    code: analysis-methods
+    display_name: Analysis Methods
+  - slug: api
+    code: api
+    display_name: API
+    keywords: [api, sdk, endpoint, openapi]
+  - slug: applied
+    code: applied
+    display_name: Applied
+  - slug: artifact-generation
+    code: artifact-generation
+    display_name: Artifact Generation
+  - slug: bash
+    code: bash
+    display_name: Bash
+    keywords: [bash, shell, script, cli]
+  - slug: business
+    code: business
+    display_name: Business
+    keywords: [business, operations, strategy]
+  - slug: business-monetization
+    code: business-monetization
+    display_name: Business Monetization
+  - slug: business-productivity
+    code: business-productivity
+    display_name: Business Productivity
+  - slug: c-level
+    code: c-level
+    display_name: C-Level
+  - slug: communication
+    code: communication
+    display_name: Communication
+    keywords: [communication, messaging, email, chat]
+  - slug: context-management
+    code: context-management
+    display_name: Context Management
+  - slug: core
+    code: core
+    display_name: Core
+  - slug: creative
+    code: creative
+    display_name: Creative
+    keywords: [creative, ideation, story, writing]
+  - slug: data
+    code: dat
+    display_name: Data
+    keywords: [data, analytics, sql, database, etl, pipeline, visualization]
+  - slug: data-access
+    code: data-access
+    display_name: Data Access
+  - slug: design
+    code: des
+    display_name: Design
+    keywords: [design, ui, ux, css, frontend, component, tailwind, figma, animation]
+  - slug: design-principles
+    code: design-principles
+    display_name: Design Principles
+  - slug: development
+    code: dev
+    display_name: Development
+    aliases: [dev, engineering, software-engineering, programming]
+    keywords: [dev, code, programming, framework, build, software, compile, debug, refactor]
+  - slug: development-code
+    code: development-code
+    display_name: Development Code
+  - slug: development-tools
+    code: development-tools
+    display_name: Development Tools
+  - slug: devops
+    code: ops
+    display_name: DevOps
+    keywords: [devops, ci, cd, docker, kubernetes, deploy, infra, infrastructure]
+  - slug: docs
+    code: docs
+    display_name: Docs
+  - slug: document-processing
+    code: document-processing
+    display_name: Document Processing
+  - slug: documents
+    code: doc
+    display_name: Documents
+    aliases: [documentation]
+    keywords: [doc, docs, pdf, word, excel, pptx, xlsx, docx, markdown, documentation]
+  - slug: domains
+    code: domains
+    display_name: Domains
+  - slug: examples
+    code: examples
+    display_name: Examples
+  - slug: extended
+    code: extended
+    display_name: Extended
+  - slug: forensics
+    code: forensics
+    display_name: Forensics
+  - slug: foundation
+    code: foundation
+    display_name: Foundation
+  - slug: framework
+    code: framework
+    display_name: Framework
+  - slug: gaming
+    code: gaming
+    display_name: Gaming
+  - slug: generation
+    code: generation
+    display_name: Generation
+  - slug: github-integration
+    code: github-integration
+    display_name: GitHub Integration
+  - slug: github-skills
+    code: github-skills
+    display_name: GitHub Skills
+  - slug: integration
+    code: integration
+    display_name: Integration
+  - slug: language
+    code: language
+    display_name: Language
+  - slug: local-ai-infrastructure
+    code: local-ai-infrastructure
+    display_name: Local AI Infrastructure
+  - slug: marketing
+    code: mkt
+    display_name: Marketing
+    keywords: [marketing, seo, content, social, campaign, brand]
+  - slug: messaging
+    code: messaging
+    display_name: Messaging
+    keywords: [messaging, message, email, chat, slack]
+  - slug: meta
+    code: meta
+    display_name: Meta
+  - slug: orchestration
+    code: orchestration
+    display_name: Orchestration
+    keywords: [orchestration, orchestrator, coordination, multi-agent]
+  - slug: official
+    code: off
+    display_name: Official
+  - slug: other
+    code: oth
+    display_name: Other
+  - slug: performance
+    code: performance
+    display_name: Performance
+    keywords: [performance, optimize, latency, speed, benchmark]
+  - slug: personal-development
+    code: personal-development
+    display_name: Personal Development
+  - slug: planning
+    code: planning
+    display_name: Planning
+    keywords: [planning, plan, roadmap]
+  - slug: platform
+    code: platform
+    display_name: Platform
+  - slug: product
+    code: prd
+    display_name: Product
+    keywords: [product, prd, roadmap, feature, backlog, user-research, metrics]
+  - slug: productivity
+    code: pro
+    display_name: Productivity
+    keywords: [productivity, automation, workflow, task, planning, memory]
+  - slug: programming-languages
+    code: programming-languages
+    display_name: Programming Languages
+  - slug: project
+    code: project
+    display_name: Project
+  - slug: quality
+    code: quality
+    display_name: Quality
+    keywords: [quality, lint, review, validate]
+  - slug: research-analysis
+    code: research-analysis
+    display_name: Research Analysis
+  - slug: security
+    code: sec
+    display_name: Security
+    keywords: [security, auth, crypto, vulnerability, audit, owasp, pentest, fuzzing]
+  - slug: security-compliance
+    code: security-compliance
+    display_name: Security Compliance
+  - slug: security-operations
+    code: security-operations
+    display_name: Security Operations
+  - slug: skills
+    code: skills
+    display_name: Skills
+  - slug: specialized
+    code: specialized
+    display_name: Specialized
+  - slug: specialized-testing
+    code: specialized-testing
+    display_name: Specialized Testing
+  - slug: story-analysis
+    code: story-analysis
+    display_name: Story Analysis
+  - slug: string
+    code: string
+    display_name: String
+  - slug: system
+    code: system
+    display_name: System
+  - slug: technical-integration
+    code: technical-integration
+    display_name: Technical Integration
+  - slug: template
+    code: template
+    display_name: Template
+  - slug: test
+    code: test
+    display_name: Test
+  - slug: testing
+    code: tst
+    display_name: Testing
+    keywords: [test, qa, tdd, jest, pytest, unittest, integration, e2e, playwright, cypress]
+  - slug: testing-methodologies
+    code: testing-methodologies
+    display_name: Testing Methodologies
+  - slug: travel
+    code: travel
+    display_name: Travel
+  - slug: utility
+    code: utility
+    display_name: Utility
+  - slug: war-room
+    code: war-room
+    display_name: War Room
+  - slug: wix-extensions
+    code: wix-extensions
+    display_name: Wix Extensions
+  - slug: workflow
+    code: workflow
+    display_name: Workflow
+    keywords: [workflow, process, automation, pipeline]
+  - slug: writing
+    code: writing
+    display_name: Writing
+    keywords: [writing, writer, copy, blog, article]

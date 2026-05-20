@@ -43,12 +43,8 @@
     },
     "category": {
       "type": "string",
-      "enum": [
-        "development", "testing", "data", "design",
-        "documents", "productivity", "devops", "security",
-        "marketing", "product", "communication", "creative"
-      ],
-      "description": "Primary category"
+      "pattern": "^[a-z0-9][a-z0-9-]{0,63}$",
+      "description": "Primary category slug; canonical values and aliases are defined in taxonomy/categories.yaml"
     },
     "model": {
       "type": "string",

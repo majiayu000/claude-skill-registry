@@ -37,6 +37,7 @@ from utils import (
     ensure_unique_dir,
     get_repo_suffix,
     iter_source_skills,
+    normalize_category,
     normalize_name,
     short_hash,
 )
@@ -313,7 +314,7 @@ async def download_skill(
     repo = repo.rstrip("/")
 
     # Get directory name (handles conflicts)
-    category_normalized = normalize_name(category) or "other"
+    category_normalized = normalize_category(category) or "other"
     dir_name = registry.get_dir_name(name, repo, category_normalized, stars)
 
     key = build_skill_key(repo, path, name=name, category=category_normalized)

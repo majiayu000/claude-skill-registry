@@ -330,7 +330,7 @@ def test_unknown_category_is_warning_not_error(vs, sources, capsys):
                     "name": "demo",
                     "repo": "owner/repo",
                     "description": "Long enough description here.",
-                    "category": "engineering",  # not in canonical set
+                    "category": "moonbase",
                 }
             ],
         },
@@ -339,6 +339,29 @@ def test_unknown_category_is_warning_not_error(vs, sources, capsys):
     out = capsys.readouterr().out
     assert rc == 0
     assert "W_CATEGORY_UNKNOWN" in out
+
+
+def test_alias_category_is_warning_not_error(vs, sources, capsys):
+    _write(
+        sources / "community.json",
+        {
+            "name": "Community",
+            "description": "x",
+            "skills": [
+                {
+                    "name": "demo",
+                    "repo": "owner/repo",
+                    "description": "Long enough description here.",
+                    "category": "engineering",
+                }
+            ],
+        },
+    )
+    rc = vs.main(["--sources-dir", str(sources)])
+    out = capsys.readouterr().out
+    assert rc == 0
+    assert "W_CATEGORY_ALIAS" in out
+    assert "development" in out
 
 
 def test_strict_promotes_warning_to_failure(vs, sources, capsys):
@@ -352,7 +375,7 @@ def test_strict_promotes_warning_to_failure(vs, sources, capsys):
                     "name": "demo",
                     "repo": "owner/repo",
                     "description": "Long enough description here.",
-                    "category": "engineering",
+                    "category": "moonbase",
                 }
             ],
         },

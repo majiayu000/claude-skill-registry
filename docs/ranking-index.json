@@ -1,1 +1,1 @@
-{"schema_version":1,"updated_at":"2026-05-20T08:11:52.851493Z","count":156462,"deprecated_full_payload":true,"manifest":"ranking-index-manifest.json","message":"Full ranking-index payload moved to ranking-shards/*.json"}
+{"schema_version":1,"updated_at":"2026-05-20T10:27:30.748726Z","count":156462,"deprecated_full_payload":true,"manifest":"ranking-index-manifest.json","message":"Full ranking-index payload moved to ranking-shards/*.json"}

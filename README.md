@@ -188,10 +188,19 @@ The merged `claude-skill-registry` publish artifact additionally contains
 
 ## Categories
 
+Canonical category slugs, aliases, short codes, and heuristic keywords live in
+`taxonomy/categories.yaml`. Pipeline scripts read that file instead of keeping
+their own category lists. To review category quality across the archive before
+moving anything, run `python scripts/audit_category_quality.py --skills-dir skills`.
+The default audit uses metadata and paths for a fast full-archive pass; add
+`--include-frontmatter` when checking frontmatter/category drift.
+The audit also reports non-standard nested skill paths such as
+`category/category/skill/SKILL.md`.
+
 Category counts are published in `categories/index.json`; full category payloads
 are available through `categories/<category>/manifest.json` and bounded
 `part-*.json` files. The legacy `categories/<category>.json` URL is now a small
-compatibility pointer. Here are the standard codes:
+compatibility pointer. Common category codes include:
 
 | Category | Code | Description |
 |----------|------|-------------|

@@ -4,23 +4,21 @@ Clone and Import Skills - No GitHub API needed!
 Clones awesome-claude-skills repos and imports SKILL.md files.
 """
 
-import os
 import json
-import shutil
-import subprocess
-import tempfile
-from pathlib import Path
-from datetime import datetime
 import logging
+import subprocess
+from datetime import datetime
+from pathlib import Path
 
 from utils import (
-    normalize_name,
-    ensure_unique_dir,
-    build_skill_key,
-    normalize_repo,
     build_legal_metadata,
+    build_skill_key,
+    ensure_unique_dir,
     extract_frontmatter,
     guess_category,
+    normalize_category,
+    normalize_name,
+    normalize_repo,
 )
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
@@ -140,7 +138,7 @@ def import_skill(skill_file: Path, skills_dir: Path, repo_slug: str, stats: dict
         return False
 
     # Determine category
-    category = normalize_name(metadata.get("category", ""))
+    category = normalize_category(metadata.get("category", ""))
     if not category or category == "unknown":
         category = guess_category(str(skill_file) + " " + content[:1000])
 

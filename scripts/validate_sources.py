@@ -26,26 +26,12 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable
 
-# -- Constants kept in sync with schema/skill.schema.json + README ---------
+from category_taxonomy import category_aliases, category_slug, known_categories
 
-VALID_CATEGORIES: frozenset[str] = frozenset(
-    {
-        "development",
-        "testing",
-        "data",
-        "design",
-        "documents",
-        "productivity",
-        "devops",
-        "security",
-        "marketing",
-        "product",
-        "communication",
-        "creative",
-        "official",
-        "other",
-    }
-)
+# -- Canonical category rules -------------------------------------------------
+
+VALID_CATEGORIES: frozenset[str] = known_categories()
+CATEGORY_ALIASES: dict[str, str] = category_aliases()
 
 REPO_PATTERN = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
 NAME_PATTERN = re.compile(r"^[a-z0-9][a-z0-9-]{0,63}$")
@@ -229,7 +215,19 @@ def validate_skill_entry(
         report.add(
             Issue(file, "error", "E_CATEGORY_TYPE", "category must be a string", location)
         )
-    elif category not in VALID_CATEGORIES:
+    elif category_slug(category) in CATEGORY_ALIASES:
+        target = CATEGORY_ALIASES[category_slug(category)]
+        report.add(
+            Issue(
+                file,
+                "warning",
+                "W_CATEGORY_ALIAS",
+                f"category '{category}' is an alias for canonical category "
+                f"'{target}'",
+                location,
+            )
+        )
+    elif category_slug(category) not in VALID_CATEGORIES:
         report.add(
             Issue(
                 file,

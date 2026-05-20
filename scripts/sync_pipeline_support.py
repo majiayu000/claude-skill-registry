@@ -22,8 +22,6 @@ Environment:
     GITHUB_TOKEN - GitHub personal access token for higher rate limits
 """
 
-import argparse
-import asyncio
 import hashlib
 import json
 import logging
@@ -31,10 +29,8 @@ import os
 import shutil
 import subprocess
 import sys
-import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path, PurePosixPath
-from urllib.parse import quote
 
 # Add parent to path for imports
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -42,24 +38,15 @@ ROOT_DIR = SCRIPT_DIR.parent
 sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(SCRIPT_DIR))
 
-from discover_by_topic import GitHubTopicDiscovery
-from security_blocklist import blocked_metadata_source, load_security_blocklist
+from security_blocklist import blocked_metadata_source
 from utils import (
-    build_legal_metadata,
     build_skill_key,
-    ensure_unique_dir,
-    iter_source_skills,
-    normalize_name,
+    normalize_category,
 )
-
-from crawler.skillsmp_sync import SkillsMPSync
 
 
 def sanitize_category(category: str) -> str:
-    category = (category or "other").strip()
-    if not category:
-        category = "other"
-    return category.replace("/", "-").replace("\\", "-").replace(":", "-")
+    return normalize_category(category or "other")
 
 
 def skill_key(skill: dict) -> str:
@@ -70,7 +57,7 @@ def skill_key(skill: dict) -> str:
     if repo:
         return repo
     name = skill.get("name") or ""
-    category = skill.get("category") or "other"
+    category = sanitize_category(skill.get("category") or "other")
     return f"{category}:{name}"
 
 logging.basicConfig(

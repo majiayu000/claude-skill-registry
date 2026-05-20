@@ -11,6 +11,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 import yaml
+from category_taxonomy import category_keywords, resolve_category
 
 logger = logging.getLogger(__name__)
 
@@ -221,11 +222,11 @@ def normalize_name(name: str) -> str:
 def normalize_category(category: str) -> str:
     """
     Normalize category name for directory creation.
-    Same as normalize_name but with 32 char limit.
+    Resolve declared aliases through the canonical taxonomy, then normalize.
     """
     if not category:
         return "other"
-    name = re.sub(r"[^a-z0-9]+", "-", category.lower())
+    name = resolve_category(category, allow_unknown=True)
     name = re.sub(r"-+", "-", name).strip("-")
     return name[:32] if name else "other"
 
@@ -373,82 +374,7 @@ def ensure_unique_dir(parent: Path, base_name: str, key: str = "", repo: str = "
 # ---------------------------------------------------------------------------
 
 # Category keywords used across multiple scripts for auto-detection.
-CATEGORY_KEYWORDS = {
-    "development": [
-        "dev",
-        "code",
-        "programming",
-        "api",
-        "sdk",
-        "framework",
-        "build",
-        "software",
-        "compile",
-        "debug",
-        "refactor",
-    ],
-    "testing": [
-        "test",
-        "qa",
-        "quality",
-        "tdd",
-        "jest",
-        "pytest",
-        "unittest",
-        "integration",
-        "e2e",
-        "playwright",
-        "cypress",
-    ],
-    "devops": ["devops", "ci", "cd", "docker", "kubernetes", "deploy", "infra", "infrastructure"],
-    "security": [
-        "security",
-        "auth",
-        "crypto",
-        "vulnerability",
-        "audit",
-        "owasp",
-        "pentest",
-        "fuzzing",
-    ],
-    "documents": [
-        "doc",
-        "pdf",
-        "word",
-        "excel",
-        "pptx",
-        "xlsx",
-        "docx",
-        "markdown",
-        "documentation",
-    ],
-    "data": [
-        "data",
-        "analytics",
-        "sql",
-        "database",
-        "etl",
-        "pipeline",
-        "ml",
-        "ai",
-        "machine-learning",
-        "visualization",
-    ],
-    "design": [
-        "design",
-        "ui",
-        "ux",
-        "css",
-        "frontend",
-        "component",
-        "tailwind",
-        "figma",
-        "animation",
-    ],
-    "productivity": ["productivity", "automation", "workflow", "task", "planning", "memory"],
-    "product": ["product", "prd", "roadmap", "feature", "backlog", "user-research", "metrics"],
-    "marketing": ["marketing", "seo", "content", "social", "campaign", "brand"],
-}
+CATEGORY_KEYWORDS = category_keywords()
 
 
 def extract_frontmatter(content: str) -> dict:

@@ -24,31 +24,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
+from category_taxonomy import get_category_code, resolve_category
 from index_artifacts import write_category_artifacts, write_search_artifacts, write_signal_artifacts
 from plugin_index import build_plugins_index, load_plugins_from_registry, load_plugins_from_source
 from utils import extract_description, get_repo_suffix, load_metadata
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 logger = logging.getLogger(__name__)
-
-# Category short codes
-CATEGORY_CODES = {
-    "development": "dev",
-    "devops": "ops",
-    "security": "sec",
-    "documents": "doc",
-    "design": "des",
-    "testing": "tst",
-    "product": "prd",
-    "marketing": "mkt",
-    "productivity": "pro",
-    "data": "dat",
-    "official": "off",
-    "other": "oth",
-}
-
-# Known category directories (for scanning)
-KNOWN_CATEGORIES = set(CATEGORY_CODES.keys()) | {"data", "other"}
 
 # First-paint catalog index used by the static Pages app. Full search shards
 # remain available through search-index.json as a compatibility pointer.
@@ -70,13 +52,6 @@ def truncate_text(text: Any, max_length: int) -> str:
     if len(text) <= max_length:
         return text
     return text[:max_length - 3] + "..."
-
-
-def get_category_code(category: str) -> str:
-    """Get short code for category."""
-    if not category:
-        return "oth"
-    return CATEGORY_CODES.get(category.lower(), "oth")
 
 
 def get_stable_id(install: str, branch: str) -> str:
@@ -213,8 +188,10 @@ def scan_skills_v2(skills_dir: Path) -> List[Dict]:
         if not description:
             description = f"Skill: {name}"
 
-        # Get category
-        category = metadata.get("category", category_name)
+        # Get category through the canonical taxonomy. Unknown categories are
+        # preserved as explicit slugs so they remain auditable instead of
+        # silently collapsing into "other".
+        category = resolve_category(metadata.get("category", category_name), allow_unknown=True)
 
         # Build install path
         repo = metadata.get("repo", "")
@@ -331,7 +308,7 @@ def build_search_index(
     for skill in skills:
         name = skill.get('name', '')
         description = skill.get('description', '')
-        category = skill.get('category', 'other')
+        category = resolve_category(skill.get('category', 'other'), allow_unknown=True)
         tags = skill.get('tags', [])
         stars = skill.get('stars', 0)
         repo = skill.get('repo', '')

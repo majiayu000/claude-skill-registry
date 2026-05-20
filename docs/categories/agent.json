@@ -1,1 +1,1 @@
-{"category":"agent","code":"oth","count":2,"updated_at":"2026-05-20T08:11:56.521502Z","deprecated_full_payload":true,"manifest":"categories/agent/manifest.json","message":"Category payload moved to category manifest parts"}
+{"category":"agent","code":"agent","count":2,"updated_at":"2026-05-20T10:27:35.198975Z","deprecated_full_payload":true,"manifest":"categories/agent/manifest.json","message":"Category payload moved to category manifest parts"}

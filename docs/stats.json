@@ -1,95 +1,95 @@
 {
-  "updated_at": "2026-05-20T08:12:09.895411Z",
+  "updated_at": "2026-05-20T10:27:51.455815Z",
   "archive_skill_md_count_raw": 229302,
   "archive_metadata_count_raw": 229302,
   "indexed_skill_count_scan_shape": 229302,
   "registry_skill_count_dedup": 155897,
   "total_plugins": 3,
-  "categories": 77,
+  "categories": 76,
   "category_counts": [
     {
       "name": "adb-meta-automation",
-      "code": "oth",
+      "code": "adb-meta-automation",
       "count": 2
     },
     {
       "name": "agent",
-      "code": "oth",
+      "code": "agent",
       "count": 2
     },
     {
       "name": "agent-coordination",
-      "code": "oth",
+      "code": "agent-coordination",
       "count": 2
     },
     {
       "name": "ai-llm",
-      "code": "oth",
+      "code": "ai-llm",
       "count": 2
     },
     {
       "name": "ai-ml",
-      "code": "oth",
+      "code": "ai-ml",
       "count": 2
     },
     {
       "name": "analysis",
-      "code": "oth",
+      "code": "analysis",
       "count": 3
     },
     {
       "name": "analysis-methods",
-      "code": "oth",
+      "code": "analysis-methods",
       "count": 2
     },
     {
       "name": "api",
-      "code": "oth",
+      "code": "api",
       "count": 2
     },
     {
       "name": "applied",
-      "code": "oth",
+      "code": "applied",
       "count": 5
     },
     {
       "name": "artifact-generation",
-      "code": "oth",
+      "code": "artifact-generation",
       "count": 2
     },
     {
       "name": "bash",
-      "code": "oth",
+      "code": "bash",
       "count": 2
     },
     {
       "name": "business",
-      "code": "oth",
+      "code": "business",
       "count": 1
     },
     {
       "name": "business-monetization",
-      "code": "oth",
+      "code": "business-monetization",
       "count": 1
     },
     {
       "name": "business-productivity",
-      "code": "oth",
+      "code": "business-productivity",
       "count": 2
     },
     {
       "name": "c-level",
-      "code": "oth",
+      "code": "c-level",
       "count": 4
     },
     {
       "name": "context-management",
-      "code": "oth",
+      "code": "context-management",
       "count": 1
     },
     {
       "name": "core",
-      "code": "oth",
+      "code": "core",
       "count": 6
     },
     {
@@ -99,7 +99,7 @@
     },
     {
       "name": "data-access",
-      "code": "oth",
+      "code": "data-access",
       "count": 1
     },
     {
@@ -109,22 +109,22 @@
     },
     {
       "name": "design-principles",
-      "code": "oth",
+      "code": "design-principles",
       "count": 1
     },
     {
       "name": "development",
       "code": "dev",
-      "count": 20856
+      "count": 20859
     },
     {
       "name": "development-code",
-      "code": "oth",
+      "code": "development-code",
       "count": 2
     },
     {
       "name": "development-tools",
-      "code": "oth",
+      "code": "development-tools",
       "count": 2
     },
     {
@@ -134,12 +134,12 @@
     },
     {
       "name": "docs",
-      "code": "oth",
+      "code": "docs",
       "count": 1
     },
     {
       "name": "document-processing",
-      "code": "oth",
+      "code": "document-processing",
       "count": 4
     },
     {
@@ -149,72 +149,67 @@
     },
     {
       "name": "domains",
-      "code": "oth",
+      "code": "domains",
       "count": 2
     },
     {
-      "name": "engineering",
-      "code": "oth",
-      "count": 3
-    },
-    {
       "name": "examples",
-      "code": "oth",
+      "code": "examples",
       "count": 1
     },
     {
       "name": "extended",
-      "code": "oth",
+      "code": "extended",
       "count": 4
     },
     {
       "name": "forensics",
-      "code": "oth",
+      "code": "forensics",
       "count": 2
     },
     {
       "name": "foundation",
-      "code": "oth",
+      "code": "foundation",
       "count": 5
     },
     {
       "name": "framework",
-      "code": "oth",
+      "code": "framework",
       "count": 2
     },
     {
       "name": "gaming",
-      "code": "oth",
+      "code": "gaming",
       "count": 1
     },
     {
       "name": "generation",
-      "code": "oth",
+      "code": "generation",
       "count": 2
     },
     {
       "name": "github-integration",
-      "code": "oth",
+      "code": "github-integration",
       "count": 1
     },
     {
       "name": "github-skills",
-      "code": "oth",
+      "code": "github-skills",
       "count": 1
     },
     {
       "name": "integration",
-      "code": "oth",
+      "code": "integration",
       "count": 2
     },
     {
       "name": "language",
-      "code": "oth",
+      "code": "language",
       "count": 2
     },
     {
       "name": "local-ai-infrastructure",
-      "code": "oth",
+      "code": "local-ai-infrastructure",
       "count": 2
     },
     {
@@ -224,17 +219,17 @@
     },
     {
       "name": "messaging",
-      "code": "oth",
+      "code": "messaging",
       "count": 32
     },
     {
       "name": "meta",
-      "code": "oth",
+      "code": "meta",
       "count": 2
     },
     {
       "name": "orchestration",
-      "code": "oth",
+      "code": "orchestration",
       "count": 6
     },
     {
@@ -244,22 +239,22 @@
     },
     {
       "name": "performance",
-      "code": "oth",
+      "code": "performance",
       "count": 2
     },
     {
       "name": "personal-development",
-      "code": "oth",
+      "code": "personal-development",
       "count": 43
     },
     {
       "name": "planning",
-      "code": "oth",
+      "code": "planning",
       "count": 2
     },
     {
       "name": "platform",
-      "code": "oth",
+      "code": "platform",
       "count": 1
     },
     {
@@ -274,22 +269,22 @@
     },
     {
       "name": "programming-languages",
-      "code": "oth",
+      "code": "programming-languages",
       "count": 2
     },
     {
       "name": "project",
-      "code": "oth",
+      "code": "project",
       "count": 1
     },
     {
       "name": "quality",
-      "code": "oth",
+      "code": "quality",
       "count": 4
     },
     {
       "name": "research-analysis",
-      "code": "oth",
+      "code": "research-analysis",
       "count": 2
     },
     {
@@ -299,57 +294,57 @@
     },
     {
       "name": "security-compliance",
-      "code": "oth",
+      "code": "security-compliance",
       "count": 2
     },
     {
       "name": "security-operations",
-      "code": "oth",
+      "code": "security-operations",
       "count": 1
     },
     {
       "name": "skills",
-      "code": "oth",
+      "code": "skills",
       "count": 2
     },
     {
       "name": "specialized",
-      "code": "oth",
+      "code": "specialized",
       "count": 2
     },
     {
       "name": "specialized-testing",
-      "code": "oth",
+      "code": "specialized-testing",
       "count": 2
     },
     {
       "name": "story-analysis",
-      "code": "oth",
+      "code": "story-analysis",
       "count": 1
     },
     {
       "name": "string",
-      "code": "oth",
+      "code": "string",
       "count": 1
     },
     {
       "name": "system",
-      "code": "oth",
+      "code": "system",
       "count": 7
     },
     {
       "name": "technical-integration",
-      "code": "oth",
+      "code": "technical-integration",
       "count": 2
     },
     {
       "name": "template",
-      "code": "oth",
+      "code": "template",
       "count": 1
     },
     {
       "name": "test",
-      "code": "oth",
+      "code": "test",
       "count": 2
     },
     {
@@ -359,37 +354,37 @@
     },
     {
       "name": "testing-methodologies",
-      "code": "oth",
+      "code": "testing-methodologies",
       "count": 4
     },
     {
       "name": "travel",
-      "code": "oth",
+      "code": "travel",
       "count": 1
     },
     {
       "name": "utility",
-      "code": "oth",
+      "code": "utility",
       "count": 4
     },
     {
       "name": "war-room",
-      "code": "oth",
+      "code": "war-room",
       "count": 2
     },
     {
       "name": "wix-extensions",
-      "code": "oth",
+      "code": "wix-extensions",
       "count": 1
     },
     {
       "name": "workflow",
-      "code": "oth",
+      "code": "workflow",
       "count": 6
     },
     {
       "name": "writing",
-      "code": "oth",
+      "code": "writing",
       "count": 1
     }
   ],
@@ -441,25 +436,25 @@
   "index_size_bytes": 162,
   "index_size_gzip_bytes": 173,
   "search_shard_count": 7,
-  "search_largest_shard_bytes": 8388679,
-  "search_largest_shard_gzip_bytes": 2582618,
-  "category_shard_count": 91,
+  "search_largest_shard_bytes": 8388629,
+  "search_largest_shard_gzip_bytes": 2582636,
+  "category_shard_count": 90,
   "category_largest_part_bytes": 8388748,
   "category_largest_part_gzip_bytes": 1760408,
   "lite_index_count": 156462,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3501765,
-  "lite_index_gzip_size_bytes": 675057,
+  "lite_index_gzip_size_bytes": 675052,
   "quality_index_size_bytes": 220,
   "quality_index_gzip_size_bytes": 213,
   "quality_shard_count": 6,
   "quality_largest_shard_bytes": 8388643,
-  "quality_largest_shard_gzip_bytes": 1761010,
+  "quality_largest_shard_gzip_bytes": 1761009,
   "security_index_size_bytes": 223,
   "security_index_gzip_size_bytes": 215,
   "security_shard_count": 4,
   "security_largest_shard_bytes": 8388678,
-  "security_largest_shard_gzip_bytes": 2396197,
+  "security_largest_shard_gzip_bytes": 2396193,
   "ranking_index_size_bytes": 220,
   "ranking_index_gzip_size_bytes": 213,
   "ranking_shard_count": 5,

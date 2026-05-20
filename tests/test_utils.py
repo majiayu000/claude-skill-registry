@@ -286,6 +286,11 @@ def test_normalize_category_empty(utils):
     assert utils.normalize_category(None) == "other"
 
 
+def test_normalize_category_resolves_declared_aliases(utils):
+    assert utils.normalize_category("Engineering") == "development"
+    assert utils.normalize_category("dev") == "development"
+
+
 # ---------------------------------------------------------------------------
 # Repo suffix and dir-name builder (AGENTS.md case-conflict policy)
 # ---------------------------------------------------------------------------

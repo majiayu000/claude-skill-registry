@@ -1,9 +1,0 @@
-{
-  "name": "gh-post-issue-update",
-  "repo": "HomericIntelligence/ProjectOdyssey",
-  "path": ".claude/skills/gh-post-issue-update/SKILL.md",
-  "category": "other",
-  "source": "github.com/HomericIntelligence/ProjectOdyssey",
-  "dir_name": "gh-post-issue-update",
-  "downloaded_at": "2026-02-22T05:09:20.108469Z"
-}

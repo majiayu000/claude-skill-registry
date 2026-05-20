@@ -1,9 +1,0 @@
-{
-  "name": "agent-quorum-manager",
-  "repo": "ruvnet/claude-flow",
-  "path": ".agents/skills/agent-quorum-manager/SKILL.md",
-  "category": "other",
-  "source": "github.com/ruvnet/claude-flow",
-  "dir_name": "agent-quorum-manager",
-  "downloaded_at": "2026-02-18T01:34:36.312873Z"
-}

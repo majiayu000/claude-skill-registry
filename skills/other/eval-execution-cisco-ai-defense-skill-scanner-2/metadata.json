@@ -1,0 +1,17 @@
+{
+  "name": "eval-execution",
+  "repo": "cisco-ai-defense/skill-scanner",
+  "path": "evals/skills/command-injection/eval-execution/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cisco-ai-defense/skill-scanner",
+  "dir_name": "eval-execution-cisco-ai-defense-skill-scanner-2",
+  "downloaded_at": "2026-03-22T07:28:46.067122Z",
+  "author": "cisco-ai-defense",
+  "source_url": "https://github.com/cisco-ai-defense/skill-scanner/blob/main/evals/skills/command-injection/eval-execution/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cisco-ai-defense/skill-scanner/blob/main/evals/skills/command-injection/eval-execution/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

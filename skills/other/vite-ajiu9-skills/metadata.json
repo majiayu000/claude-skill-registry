@@ -1,0 +1,16 @@
+{
+  "name": "vite",
+  "repo": "ajiu9/skills",
+  "path": "skills/vite/SKILL.md",
+  "category": "other",
+  "source": "github.com/ajiu9/skills",
+  "dir_name": "vite-ajiu9-skills",
+  "downloaded_at": "2026-02-15T06:13:08.306783Z",
+  "author": "ajiu9",
+  "source_url": "https://github.com/ajiu9/skills/blob/main/skills/vite/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ajiu9/skills/blob/main/skills/vite/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

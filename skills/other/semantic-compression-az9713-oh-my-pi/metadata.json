@@ -1,0 +1,16 @@
+{
+  "name": "semantic-compression",
+  "repo": "az9713/oh-my-pi",
+  "path": ".claude/skills/semantic-compression/SKILL.md",
+  "category": "other",
+  "source": "github.com/az9713/oh-my-pi",
+  "dir_name": "semantic-compression-az9713-oh-my-pi",
+  "downloaded_at": "2026-02-22T06:27:16.510285Z",
+  "author": "az9713",
+  "source_url": "https://github.com/az9713/oh-my-pi/blob/main/.claude/skills/semantic-compression/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/az9713/oh-my-pi/blob/main/.claude/skills/semantic-compression/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

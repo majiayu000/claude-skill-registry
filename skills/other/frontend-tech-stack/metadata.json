@@ -1,0 +1,16 @@
+{
+  "name": "frontend-tech-stack",
+  "repo": "allenlin90/eridu-services",
+  "path": ".agent/skills/frontend-tech-stack/SKILL.md",
+  "category": "other",
+  "source": "github.com/allenlin90/eridu-services",
+  "dir_name": "frontend-tech-stack",
+  "downloaded_at": "2026-02-22T06:14:27.177571Z",
+  "author": "allenlin90",
+  "source_url": "https://github.com/allenlin90/eridu-services/blob/main/.agent/skills/frontend-tech-stack/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/allenlin90/eridu-services/blob/main/.agent/skills/frontend-tech-stack/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

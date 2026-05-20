@@ -1,9 +1,0 @@
-{
-  "name": "agent-reviewer",
-  "repo": "ruvnet/claude-flow",
-  "path": ".agents/skills/agent-reviewer/SKILL.md",
-  "category": "other",
-  "source": "github.com/ruvnet/claude-flow",
-  "dir_name": "agent-reviewer",
-  "downloaded_at": "2026-02-24T01:32:04.688603Z"
-}

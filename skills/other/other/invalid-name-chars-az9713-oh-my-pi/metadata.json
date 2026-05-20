@@ -1,9 +1,0 @@
-{
-  "name": "invalid-name-chars",
-  "repo": "az9713/oh-my-pi",
-  "path": "packages/coding-agent/test/fixtures/skills/invalid-name-chars/SKILL.md",
-  "category": "other",
-  "source": "github.com/az9713/oh-my-pi",
-  "dir_name": "invalid-name-chars-az9713-oh-my-pi",
-  "downloaded_at": "2026-02-22T06:27:16.996892Z"
-}

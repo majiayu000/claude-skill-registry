@@ -1,0 +1,16 @@
+{
+  "name": "helm",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/helm/SKILL.md",
+  "category": "other",
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "helm-lobbi-docs-claude",
+  "downloaded_at": "2026-02-15T05:22:59.452499Z",
+  "author": "Lobbi-Docs",
+  "source_url": "https://github.com/Lobbi-Docs/claude/blob/main/.claude/skills/helm/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Golden Armada Team",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

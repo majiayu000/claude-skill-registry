@@ -1,0 +1,16 @@
+{
+  "name": "weather",
+  "repo": "az9713/openclaw",
+  "path": "skills/weather/SKILL.md",
+  "category": "other",
+  "source": "github.com/az9713/openclaw",
+  "dir_name": "weather-az9713-openclaw",
+  "downloaded_at": "2026-02-15T06:29:07.484232Z",
+  "author": "az9713",
+  "source_url": "https://github.com/az9713/openclaw/blob/main/skills/weather/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/az9713/openclaw/blob/main/skills/weather/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

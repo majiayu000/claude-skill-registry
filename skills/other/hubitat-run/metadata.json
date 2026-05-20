@@ -1,0 +1,16 @@
+{
+  "name": "hubitat-run",
+  "repo": "iamtrep/hubitat",
+  "path": ".claude/skills/hubitat-run/SKILL.md",
+  "category": "other",
+  "source": "github.com/iamtrep/hubitat",
+  "dir_name": "hubitat-run",
+  "downloaded_at": "2026-02-22T07:30:57.513201Z",
+  "author": "iamtrep",
+  "source_url": "https://github.com/iamtrep/hubitat/blob/main/.claude/skills/hubitat-run/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/iamtrep/hubitat/blob/main/.claude/skills/hubitat-run/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

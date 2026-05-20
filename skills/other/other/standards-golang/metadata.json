@@ -1,9 +1,0 @@
-{
-  "name": "standards-golang",
-  "repo": "maxritter/claude-pilot",
-  "path": "pilot/skills/standards-golang/SKILL.md",
-  "category": "other",
-  "source": "github.com/maxritter/claude-pilot",
-  "dir_name": "standards-golang",
-  "downloaded_at": "2026-02-12T01:32:14.953674Z"
-}

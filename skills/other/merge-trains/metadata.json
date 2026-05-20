@@ -1,0 +1,16 @@
+{
+  "name": "merge-trains",
+  "repo": "AztecProtocol/aztec-packages",
+  "path": ".claude/skills/merge-trains/SKILL.md",
+  "category": "other",
+  "source": "github.com/AztecProtocol/aztec-packages",
+  "dir_name": "merge-trains",
+  "downloaded_at": "2026-02-15T04:49:30.374174Z",
+  "author": "AztecProtocol",
+  "source_url": "https://github.com/AztecProtocol/aztec-packages/blob/main/.claude/skills/merge-trains/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AztecProtocol/aztec-packages/blob/main/.claude/skills/merge-trains/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

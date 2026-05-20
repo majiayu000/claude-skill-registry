@@ -1,0 +1,16 @@
+{
+  "name": "moai-platform-chrome-extension",
+  "repo": "jayleekr/hypeprooflab",
+  "path": ".claude/skills/moai-platform-chrome-extension/SKILL.md",
+  "category": "other",
+  "source": "github.com/jayleekr/hypeprooflab",
+  "dir_name": "moai-platform-chrome-extension-jayleekr-hypeprooflab",
+  "downloaded_at": "2026-02-15T07:40:21.405311Z",
+  "author": "jayleekr",
+  "source_url": "https://github.com/jayleekr/hypeprooflab/blob/main/.claude/skills/moai-platform-chrome-extension/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jayleekr/hypeprooflab/blob/main/.claude/skills/moai-platform-chrome-extension/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

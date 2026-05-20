@@ -1,0 +1,16 @@
+{
+  "name": "agent-skill-creator",
+  "repo": "illogical/InstructionLibrary",
+  "path": "skills/agent-skill-creator/SKILL.MD",
+  "category": "other",
+  "source": "github.com/illogical/InstructionLibrary",
+  "dir_name": "agent-skill-creator-illogical-instructionlibrary-2",
+  "downloaded_at": "2026-02-15T07:35:00.274410Z",
+  "author": "illogical",
+  "source_url": "https://github.com/illogical/InstructionLibrary/blob/main/skills/agent-skill-creator/SKILL.MD",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/illogical/InstructionLibrary/blob/main/skills/agent-skill-creator/SKILL.MD",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

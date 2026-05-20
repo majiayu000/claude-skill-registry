@@ -1,9 +1,0 @@
-{
-  "name": "agent-github-modes",
-  "repo": "ruvnet/claude-flow",
-  "path": ".agents/skills/agent-github-modes/SKILL.md",
-  "category": "other",
-  "source": "github.com/ruvnet/claude-flow",
-  "dir_name": "agent-github-modes",
-  "downloaded_at": "2026-02-22T01:33:40.594002Z"
-}

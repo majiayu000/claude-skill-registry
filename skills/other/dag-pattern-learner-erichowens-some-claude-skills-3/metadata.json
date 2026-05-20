@@ -1,0 +1,16 @@
+{
+  "name": "dag-pattern-learner",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/dag-pattern-learner/SKILL.md",
+  "category": "other",
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "dag-pattern-learner-erichowens-some-claude-skills-3",
+  "downloaded_at": "2026-02-15T07:07:49.651902Z",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/dag-pattern-learner/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

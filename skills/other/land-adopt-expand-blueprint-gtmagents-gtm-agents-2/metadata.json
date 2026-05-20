@@ -1,0 +1,16 @@
+{
+  "name": "land-adopt-expand-blueprint",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/b2b-saas/skills/land-adopt-expand-blueprint/SKILL.md",
+  "category": "other",
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "land-adopt-expand-blueprint-gtmagents-gtm-agents-2",
+  "downloaded_at": "2026-02-22T07:21:56.736752Z",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/b2b-saas/skills/land-adopt-expand-blueprint/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gtmagents/gtm-agents/blob/main/plugins/b2b-saas/skills/land-adopt-expand-blueprint/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

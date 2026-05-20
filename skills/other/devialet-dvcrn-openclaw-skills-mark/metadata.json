@@ -1,0 +1,17 @@
+{
+  "name": "devialet",
+  "repo": "dvcrn/openclaw-skills-marketplace",
+  "path": "plugins/jgm2025--devialet/skills/devialet/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/dvcrn/openclaw-skills-marketplace",
+  "dir_name": "devialet-dvcrn-openclaw-skills-mark",
+  "downloaded_at": "2026-03-22T07:51:14.525274Z",
+  "author": "dvcrn",
+  "source_url": "https://github.com/dvcrn/openclaw-skills-marketplace/blob/main/plugins/jgm2025--devialet/skills/devialet/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dvcrn/openclaw-skills-marketplace/blob/main/plugins/jgm2025--devialet/skills/devialet/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

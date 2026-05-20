@@ -1,0 +1,17 @@
+{
+  "name": "configure-jwt",
+  "repo": "Tassadar2499/NovaTune",
+  "path": ".qwen/skills/configure-jwt/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Tassadar2499/NovaTune",
+  "dir_name": "configure-jwt-tassadar2499-novatune-4",
+  "downloaded_at": "2026-03-22T06:20:56.356388Z",
+  "author": "Tassadar2499",
+  "source_url": "https://github.com/Tassadar2499/NovaTune/blob/main/.qwen/skills/configure-jwt/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tassadar2499/NovaTune/blob/main/.qwen/skills/configure-jwt/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

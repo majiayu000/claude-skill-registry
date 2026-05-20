@@ -1,0 +1,16 @@
+{
+  "name": "ssh",
+  "repo": "Dicklesworthstone/agent_flywheel_clawdbot_skills_and_integrations",
+  "path": "skills/ssh/SKILL.md",
+  "category": "other",
+  "source": "github.com/Dicklesworthstone/agent_flywheel_clawdbot_skills_and_integrations",
+  "dir_name": "ssh-dicklesworthstone-agent-flywheel-clawd",
+  "downloaded_at": "2026-02-15T05:01:53.034182Z",
+  "author": "Dicklesworthstone",
+  "source_url": "https://github.com/Dicklesworthstone/agent_flywheel_clawdbot_skills_and_integrations/blob/main/skills/ssh/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2026 Jeffrey Emanuel",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

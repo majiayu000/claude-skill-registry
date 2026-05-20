@@ -1,0 +1,17 @@
+{
+  "name": "weaviate-data-ingestion",
+  "repo": "saskinosie/weaviate-claude-skills",
+  "path": "weaviate-data-ingestion/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/saskinosie/weaviate-claude-skills",
+  "dir_name": "weaviate-data-ingestion-saskinosie-weaviate-claude-skil-3",
+  "downloaded_at": "2026-03-05T01:33:58.537084Z",
+  "author": "saskinosie",
+  "source_url": "https://github.com/saskinosie/weaviate-claude-skills/blob/main/weaviate-data-ingestion/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/saskinosie/weaviate-claude-skills/blob/main/weaviate-data-ingestion/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,9 +1,0 @@
-{
-  "name": "project-analyzer",
-  "repo": "SawanoLab/adaptive-claude-agents",
-  "path": "skills/project-analyzer/SKILL.md",
-  "category": "other",
-  "source": "github.com/SawanoLab/adaptive-claude-agents",
-  "dir_name": "project-analyzer",
-  "downloaded_at": "2026-02-22T05:41:00.164193Z"
-}

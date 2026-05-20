@@ -1,0 +1,16 @@
+{
+  "name": "deployment",
+  "repo": "jkomoros/community-patterns",
+  "path": ".claude/skills/deployment/SKILL.md",
+  "category": "other",
+  "source": "github.com/jkomoros/community-patterns",
+  "dir_name": "deployment-jkomoros-community-patterns",
+  "downloaded_at": "2026-02-15T07:44:28.093911Z",
+  "author": "jkomoros",
+  "source_url": "https://github.com/jkomoros/community-patterns/blob/main/.claude/skills/deployment/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jkomoros/community-patterns/blob/main/.claude/skills/deployment/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

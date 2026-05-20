@@ -1,0 +1,16 @@
+{
+  "name": "discovery",
+  "repo": "darkroomengineering/cc-settings",
+  "path": "skills/discovery/SKILL.md",
+  "category": "other",
+  "source": "github.com/darkroomengineering/cc-settings",
+  "dir_name": "discovery-darkroomengineering-cc-settings",
+  "downloaded_at": "2026-02-22T06:50:16.075600Z",
+  "author": "darkroomengineering",
+  "source_url": "https://github.com/darkroomengineering/cc-settings/blob/main/skills/discovery/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/darkroomengineering/cc-settings/blob/main/skills/discovery/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

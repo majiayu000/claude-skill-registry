@@ -1,0 +1,17 @@
+{
+  "name": "setup-workflow",
+  "repo": "changoo89/claude-pilot",
+  "path": ".claude/skills/setup-workflow/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/changoo89/claude-pilot",
+  "dir_name": "setup-workflow-changoo89-claude-pilot",
+  "downloaded_at": "2026-03-01T07:10:02.921639Z",
+  "author": "changoo89",
+  "source_url": "https://github.com/changoo89/claude-pilot/blob/main/.claude/skills/setup-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/changoo89/claude-pilot/blob/main/.claude/skills/setup-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

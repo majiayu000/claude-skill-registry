@@ -1,0 +1,16 @@
+{
+  "name": "bedrock-agentcore-deployment",
+  "repo": "adaptationio/Skrillz",
+  "path": "skills/bedrock-agentcore-deployment/SKILL.md",
+  "category": "other",
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "bedrock-agentcore-deployment-adaptationio-skrillz-3",
+  "downloaded_at": "2026-02-15T06:05:09.411312Z",
+  "author": "adaptationio",
+  "source_url": "https://github.com/adaptationio/Skrillz/blob/main/skills/bedrock-agentcore-deployment/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adaptationio/Skrillz/blob/main/skills/bedrock-agentcore-deployment/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

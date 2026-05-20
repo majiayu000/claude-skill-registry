@@ -1,0 +1,16 @@
+{
+  "name": "setup-env",
+  "repo": "eleva-labs/agentic-coding-templates",
+  "path": ".claude/skills/backend/setup-env/SKILL.md",
+  "category": "other",
+  "source": "github.com/eleva-labs/agentic-coding-templates",
+  "dir_name": "setup-env-eleva-labs-agentic-coding-templ",
+  "downloaded_at": "2026-02-22T07:03:44.168842Z",
+  "author": "eleva-labs",
+  "source_url": "https://github.com/eleva-labs/agentic-coding-templates/blob/main/.claude/skills/backend/setup-env/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/eleva-labs/agentic-coding-templates/blob/main/.claude/skills/backend/setup-env/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

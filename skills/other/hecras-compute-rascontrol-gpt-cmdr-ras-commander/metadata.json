@@ -1,0 +1,17 @@
+{
+  "name": "hecras-compute-rascontrol",
+  "repo": "gpt-cmdr/ras-commander",
+  "path": ".claude/skills/hecras_compute_rascontrol/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/gpt-cmdr/ras-commander",
+  "dir_name": "hecras-compute-rascontrol-gpt-cmdr-ras-commander",
+  "downloaded_at": "2026-03-01T07:56:17.058295Z",
+  "author": "gpt-cmdr",
+  "source_url": "https://github.com/gpt-cmdr/ras-commander/blob/main/.claude/skills/hecras_compute_rascontrol/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gpt-cmdr/ras-commander/blob/main/.claude/skills/hecras_compute_rascontrol/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

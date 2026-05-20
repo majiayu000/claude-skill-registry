@@ -1,9 +1,0 @@
-{
-  "name": "unstructured-pdf-generation",
-  "repo": "datasciencemonkey/claude-code-cli-bricks",
-  "path": ".claude/skills/unstructured-pdf-generation/SKILL.md",
-  "category": "other",
-  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
-  "dir_name": "unstructured-pdf-generation",
-  "downloaded_at": "2026-02-22T06:51:11.551338Z"
-}

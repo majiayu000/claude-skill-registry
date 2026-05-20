@@ -1,9 +1,0 @@
-{
-  "name": "iam-policy-creator",
-  "repo": "Dicklesworthstone/pi_agent_rust",
-  "path": "tests/ext_conformance/artifacts/plugins-community/skills/13-aws-skills/iam-policy-creator/SKILL.md",
-  "category": "other",
-  "source": "github.com/Dicklesworthstone/pi_agent_rust",
-  "dir_name": "iam-policy-creator-dicklesworthstone-pi-agent-rust",
-  "downloaded_at": "2026-02-22T04:57:47.731431Z"
-}

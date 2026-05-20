@@ -1,0 +1,16 @@
+{
+  "name": "hookdeck-event-gateway-webhooks",
+  "repo": "hookdeck/webhook-skills",
+  "path": "skills/hookdeck-event-gateway-webhooks/SKILL.md",
+  "category": "other",
+  "source": "github.com/hookdeck/webhook-skills",
+  "dir_name": "hookdeck-event-gateway-webhooks",
+  "downloaded_at": "2026-02-22T07:28:23.424873Z",
+  "author": "hookdeck",
+  "source_url": "https://github.com/hookdeck/webhook-skills/blob/main/skills/hookdeck-event-gateway-webhooks/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Hookdeck",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

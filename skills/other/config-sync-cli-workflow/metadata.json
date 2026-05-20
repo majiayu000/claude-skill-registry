@@ -1,0 +1,16 @@
+{
+  "name": "config-sync-cli-workflow",
+  "repo": "CsHeng/dot-claude",
+  "path": ".claude/skills/config-sync-cli-workflow/SKILL.md",
+  "category": "other",
+  "source": "github.com/CsHeng/dot-claude",
+  "dir_name": "config-sync-cli-workflow",
+  "downloaded_at": "2026-02-15T04:58:32.759435Z",
+  "author": "CsHeng",
+  "source_url": "https://github.com/CsHeng/dot-claude/blob/main/.claude/skills/config-sync-cli-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CsHeng/dot-claude/blob/main/.claude/skills/config-sync-cli-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

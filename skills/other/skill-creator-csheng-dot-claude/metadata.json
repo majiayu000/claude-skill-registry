@@ -1,0 +1,16 @@
+{
+  "name": "skill-creator",
+  "repo": "CsHeng/dot-claude",
+  "path": "skills/skill-creator/SKILL.md",
+  "category": "other",
+  "source": "github.com/CsHeng/dot-claude",
+  "dir_name": "skill-creator-csheng-dot-claude",
+  "downloaded_at": "2026-02-15T04:58:32.591657Z",
+  "author": "CsHeng",
+  "source_url": "https://github.com/CsHeng/dot-claude/blob/main/skills/skill-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CsHeng/dot-claude/blob/main/skills/skill-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

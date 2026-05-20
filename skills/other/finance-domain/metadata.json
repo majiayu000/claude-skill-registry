@@ -1,0 +1,16 @@
+{
+  "name": "finance-domain",
+  "repo": "TatTran22/vela",
+  "path": ".claude/skills/finance-domain/SKILL.md",
+  "category": "other",
+  "source": "github.com/TatTran22/vela",
+  "dir_name": "finance-domain",
+  "downloaded_at": "2026-02-22T05:48:21.146849Z",
+  "author": "TatTran22",
+  "source_url": "https://github.com/TatTran22/vela/blob/main/.claude/skills/finance-domain/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TatTran22/vela/blob/main/.claude/skills/finance-domain/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

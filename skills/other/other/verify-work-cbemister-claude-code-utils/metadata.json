@@ -1,9 +1,0 @@
-{
-  "name": "verify-work",
-  "repo": "cbemister/claude-code-utils",
-  "path": ".claude/skills/verify-work/SKILL.md",
-  "category": "other",
-  "source": "github.com/cbemister/claude-code-utils",
-  "dir_name": "verify-work-cbemister-claude-code-utils",
-  "downloaded_at": "2026-02-22T06:40:33.385714Z"
-}

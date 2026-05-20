@@ -1,0 +1,16 @@
+{
+  "name": "ai-runtime-toolkit",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/dwsy/ai-runtime-toolkit/EXTERNAL-TOOLS-SKILL.md",
+  "category": "other",
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "ai-runtime-toolkit",
+  "downloaded_at": "2026-02-11T01:24:42.985956Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/dwsy/ai-runtime-toolkit/EXTERNAL-TOOLS-SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/dwsy/ai-runtime-toolkit/EXTERNAL-TOOLS-SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

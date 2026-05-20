@@ -1,0 +1,16 @@
+{
+  "name": "retro-memory-enterprise",
+  "repo": "gniewkob/salonbw",
+  "path": ".claude/skills/retro-memory-enterprise/SKILL.md",
+  "category": "other",
+  "source": "github.com/gniewkob/salonbw",
+  "dir_name": "retro-memory-enterprise",
+  "downloaded_at": "2026-02-22T07:19:30.863616Z",
+  "author": "gniewkob",
+  "source_url": "https://github.com/gniewkob/salonbw/blob/main/.claude/skills/retro-memory-enterprise/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gniewkob/salonbw/blob/main/.claude/skills/retro-memory-enterprise/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "when-stuck",
+  "repo": "julien51/dotfiles",
+  "path": ".claude/skills/problem-solving/when-stuck/SKILL.md",
+  "category": "other",
+  "source": "github.com/julien51/dotfiles",
+  "dir_name": "when-stuck-julien51-dotfiles",
+  "downloaded_at": "2026-02-22T07:45:41.219453Z",
+  "author": "julien51",
+  "source_url": "https://github.com/julien51/dotfiles/blob/main/.claude/skills/problem-solving/when-stuck/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/julien51/dotfiles/blob/main/.claude/skills/problem-solving/when-stuck/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

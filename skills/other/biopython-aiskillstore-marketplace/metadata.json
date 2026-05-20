@@ -1,0 +1,16 @@
+{
+  "name": "biopython",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/k-dense-ai/biopython/SKILL.md",
+  "category": "other",
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "biopython-aiskillstore-marketplace",
+  "downloaded_at": "2026-02-15T06:12:17.715695Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/k-dense-ai/biopython/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/k-dense-ai/biopython/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

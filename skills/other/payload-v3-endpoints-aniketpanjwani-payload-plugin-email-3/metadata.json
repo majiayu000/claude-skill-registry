@@ -1,0 +1,17 @@
+{
+  "name": "payload-v3-endpoints",
+  "repo": "aniketpanjwani/payload-plugin-email-newsletter",
+  "path": ".claude/skills/payload-v3-endpoints/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aniketpanjwani/payload-plugin-email-newsletter",
+  "dir_name": "payload-v3-endpoints-aniketpanjwani-payload-plugin-email-3",
+  "downloaded_at": "2026-03-22T06:56:19.268266Z",
+  "author": "aniketpanjwani",
+  "source_url": "https://github.com/aniketpanjwani/payload-plugin-email-newsletter/blob/main/.claude/skills/payload-v3-endpoints/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aniketpanjwani/payload-plugin-email-newsletter/blob/main/.claude/skills/payload-v3-endpoints/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

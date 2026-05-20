@@ -1,0 +1,16 @@
+{
+  "name": "chameleon-adapt",
+  "repo": "AutumnsGrove/Lattice",
+  "path": ".claude/skills/chameleon-adapt/SKILL.md",
+  "category": "other",
+  "source": "github.com/AutumnsGrove/Lattice",
+  "dir_name": "chameleon-adapt-autumnsgrove-lattice",
+  "downloaded_at": "2026-02-22T04:45:13.783608Z",
+  "author": "AutumnsGrove",
+  "source_url": "https://github.com/AutumnsGrove/Lattice/blob/main/.claude/skills/chameleon-adapt/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AutumnsGrove/Lattice/blob/main/.claude/skills/chameleon-adapt/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

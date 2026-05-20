@@ -1,0 +1,16 @@
+{
+  "name": "data",
+  "repo": "andreibesleaga/GABBE",
+  "path": "agents/skills/data/db-migration.skill.md",
+  "category": "other",
+  "source": "github.com/andreibesleaga/GABBE",
+  "dir_name": "data-andreibesleaga-gabbe-2",
+  "downloaded_at": "2026-02-22T06:16:36.197965Z",
+  "author": "andreibesleaga",
+  "source_url": "https://github.com/andreibesleaga/GABBE/blob/main/agents/skills/data/db-migration.skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andreibesleaga/GABBE/blob/main/agents/skills/data/db-migration.skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

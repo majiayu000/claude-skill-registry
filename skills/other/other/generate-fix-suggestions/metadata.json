@@ -1,9 +1,0 @@
-{
-  "name": "generate-fix-suggestions",
-  "repo": "HomericIntelligence/ProjectOdyssey",
-  "path": ".claude/skills/generate-fix-suggestions/SKILL.md",
-  "category": "other",
-  "source": "github.com/HomericIntelligence/ProjectOdyssey",
-  "dir_name": "generate-fix-suggestions",
-  "downloaded_at": "2026-02-22T05:09:20.849810Z"
-}

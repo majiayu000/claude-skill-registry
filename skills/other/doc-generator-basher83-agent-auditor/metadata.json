@@ -1,0 +1,16 @@
+{
+  "name": "doc-generator",
+  "repo": "basher83/agent-auditor",
+  "path": ".claude/skills/doc-generator/SKILL.md",
+  "category": "other",
+  "source": "github.com/basher83/agent-auditor",
+  "dir_name": "doc-generator-basher83-agent-auditor",
+  "downloaded_at": "2026-02-22T06:29:19.056409Z",
+  "author": "basher83",
+  "source_url": "https://github.com/basher83/agent-auditor/blob/main/.claude/skills/doc-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/basher83/agent-auditor/blob/main/.claude/skills/doc-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "when-creating-presentations-use-pptx-generation",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/utilities/when-creating-presentations-use-pptx-generation/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "dir_name": "when-creating-presentations-use-pptx-generation-dnyoussef-ai-chrome-extension-2",
+  "downloaded_at": "2026-03-22T05:10:58.712258Z",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/utilities/when-creating-presentations-use-pptx-generation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/utilities/when-creating-presentations-use-pptx-generation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

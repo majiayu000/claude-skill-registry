@@ -1,0 +1,17 @@
+{
+  "name": "hipaa-guardian",
+  "repo": "1Mangesh1/hipaa-guardian",
+  "path": "skills/hipaa-guardian/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/1Mangesh1/hipaa-guardian",
+  "dir_name": "hipaa-guardian-1mangesh1-hipaa-guardian",
+  "downloaded_at": "2026-04-04T03:37:10.601499Z",
+  "author": "1Mangesh1",
+  "source_url": "https://github.com/1Mangesh1/hipaa-guardian/blob/main/skills/hipaa-guardian/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/1Mangesh1/hipaa-guardian/blob/main/skills/hipaa-guardian/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

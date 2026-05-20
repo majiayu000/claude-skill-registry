@@ -1,0 +1,17 @@
+{
+  "name": "codebase-layout",
+  "repo": "bearcove/pikru",
+  "path": ".claude/skills/codebase-layout/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/bearcove/pikru",
+  "dir_name": "codebase-layout-bearcove-pikru",
+  "downloaded_at": "2026-03-22T07:11:50.867908Z",
+  "author": "bearcove",
+  "source_url": "https://github.com/bearcove/pikru/blob/main/.claude/skills/codebase-layout/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bearcove/pikru/blob/main/.claude/skills/codebase-layout/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

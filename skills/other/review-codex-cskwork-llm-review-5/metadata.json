@@ -1,0 +1,17 @@
+{
+  "name": "review-codex",
+  "repo": "cskwork/llm-review",
+  "path": ".claude/skills/review-codex/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cskwork/llm-review",
+  "dir_name": "review-codex-cskwork-llm-review-5",
+  "downloaded_at": "2026-03-22T07:35:27.445369Z",
+  "author": "cskwork",
+  "source_url": "https://github.com/cskwork/llm-review/blob/main/.claude/skills/review-codex/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cskwork/llm-review/blob/main/.claude/skills/review-codex/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "debugger",
+  "repo": "alexanderop/MarkVim",
+  "path": ".claude/skills/debugger/skill.md",
+  "category": "other",
+  "source": "github.com/alexanderop/MarkVim",
+  "dir_name": "debugger-alexanderop-markvim",
+  "downloaded_at": "2026-02-22T06:12:16.701205Z",
+  "author": "alexanderop",
+  "source_url": "https://github.com/alexanderop/MarkVim/blob/main/.claude/skills/debugger/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexanderop/MarkVim/blob/main/.claude/skills/debugger/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

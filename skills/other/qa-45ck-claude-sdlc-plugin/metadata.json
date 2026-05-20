@@ -1,0 +1,16 @@
+{
+  "name": "qa",
+  "repo": "45ck/claude-sdlc-plugin",
+  "path": "skills/qa/SKILL.md",
+  "category": "other",
+  "source": "github.com/45ck/claude-sdlc-plugin",
+  "dir_name": "qa-45ck-claude-sdlc-plugin",
+  "downloaded_at": "2026-02-22T04:34:48.208743Z",
+  "author": "45ck",
+  "source_url": "https://github.com/45ck/claude-sdlc-plugin/blob/main/skills/qa/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/45ck/claude-sdlc-plugin/blob/main/skills/qa/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

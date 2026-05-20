@@ -1,0 +1,16 @@
+{
+  "name": "make-ci-green",
+  "repo": "brave-experiments/brave-core-bot",
+  "path": ".claude/skills/make-ci-green/SKILL.md",
+  "category": "other",
+  "source": "github.com/brave-experiments/brave-core-bot",
+  "dir_name": "make-ci-green",
+  "downloaded_at": "2026-02-22T06:35:30.609853Z",
+  "author": "brave-experiments",
+  "source_url": "https://github.com/brave-experiments/brave-core-bot/blob/main/.claude/skills/make-ci-green/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brave-experiments/brave-core-bot/blob/main/.claude/skills/make-ci-green/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

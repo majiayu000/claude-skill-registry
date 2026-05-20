@@ -1,0 +1,16 @@
+{
+  "name": "browser-verification",
+  "repo": "benjaminshoemaker/ai_coding_project_base",
+  "path": ".claude/skills/browser-verification/SKILL.md",
+  "category": "other",
+  "source": "github.com/benjaminshoemaker/ai_coding_project_base",
+  "dir_name": "browser-verification",
+  "downloaded_at": "2026-02-22T06:31:21.900856Z",
+  "author": "benjaminshoemaker",
+  "source_url": "https://github.com/benjaminshoemaker/ai_coding_project_base/blob/main/.claude/skills/browser-verification/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/benjaminshoemaker/ai_coding_project_base/blob/main/.claude/skills/browser-verification/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

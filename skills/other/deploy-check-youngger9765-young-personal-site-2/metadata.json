@@ -1,0 +1,17 @@
+{
+  "name": "deploy-check",
+  "repo": "Youngger9765/young-personal-site",
+  "path": ".claude/skills/deploy-check/skill.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Youngger9765/young-personal-site",
+  "dir_name": "deploy-check-youngger9765-young-personal-site-2",
+  "downloaded_at": "2026-03-22T06:34:19.259572Z",
+  "author": "Youngger9765",
+  "source_url": "https://github.com/Youngger9765/young-personal-site/blob/main/.claude/skills/deploy-check/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Youngger9765/young-personal-site/blob/main/.claude/skills/deploy-check/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "ml-experiment-lifecycle",
+  "repo": "jlaws/dotfiles",
+  "path": ".claude/skills/ai-ml/ml-experiment-lifecycle/SKILL.md",
+  "category": "other",
+  "source": "github.com/jlaws/dotfiles",
+  "dir_name": "ml-experiment-lifecycle",
+  "downloaded_at": "2026-02-15T07:44:36.086059Z",
+  "author": "jlaws",
+  "source_url": "https://github.com/jlaws/dotfiles/blob/main/.claude/skills/ai-ml/ml-experiment-lifecycle/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jlaws/dotfiles/blob/main/.claude/skills/ai-ml/ml-experiment-lifecycle/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

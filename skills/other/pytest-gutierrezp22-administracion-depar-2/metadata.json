@@ -1,0 +1,16 @@
+{
+  "name": "pytest",
+  "repo": "gutierrezp22/administracion-departamentos",
+  "path": ".agents/skills/pytest/SKILL.md",
+  "category": "other",
+  "source": "github.com/gutierrezp22/administracion-departamentos",
+  "dir_name": "pytest-gutierrezp22-administracion-depar-2",
+  "downloaded_at": "2026-02-22T07:23:05.758310Z",
+  "author": "gutierrezp22",
+  "source_url": "https://github.com/gutierrezp22/administracion-departamentos/blob/main/.agents/skills/pytest/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gutierrezp22/administracion-departamentos/blob/main/.agents/skills/pytest/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

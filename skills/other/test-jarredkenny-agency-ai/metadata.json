@@ -1,0 +1,16 @@
+{
+  "name": "test",
+  "repo": "jarredkenny/agency-ai",
+  "path": "roles/solo/skills/Test/SKILL.md",
+  "category": "other",
+  "source": "github.com/jarredkenny/agency-ai",
+  "dir_name": "test-jarredkenny-agency-ai",
+  "downloaded_at": "2026-02-22T07:36:30.159079Z",
+  "author": "jarredkenny",
+  "source_url": "https://github.com/jarredkenny/agency-ai/blob/main/roles/solo/skills/Test/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jarredkenny/agency-ai/blob/main/roles/solo/skills/Test/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

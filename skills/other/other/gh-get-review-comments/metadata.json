@@ -1,9 +1,0 @@
-{
-  "name": "gh-get-review-comments",
-  "repo": "HomericIntelligence/ProjectOdyssey",
-  "path": ".claude/skills/gh-get-review-comments/SKILL.md",
-  "category": "other",
-  "source": "github.com/HomericIntelligence/ProjectOdyssey",
-  "dir_name": "gh-get-review-comments",
-  "downloaded_at": "2026-02-22T05:09:22.129530Z"
-}

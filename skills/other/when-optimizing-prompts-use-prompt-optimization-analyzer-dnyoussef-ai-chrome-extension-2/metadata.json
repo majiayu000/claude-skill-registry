@@ -1,0 +1,17 @@
+{
+  "name": "when-optimizing-prompts-use-prompt-optimization-analyzer",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/meta-tools/when-optimizing-prompts-use-prompt-optimization-analyzer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "dir_name": "when-optimizing-prompts-use-prompt-optimization-analyzer-dnyoussef-ai-chrome-extension-2",
+  "downloaded_at": "2026-03-22T05:10:44.716727Z",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/meta-tools/when-optimizing-prompts-use-prompt-optimization-analyzer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/meta-tools/when-optimizing-prompts-use-prompt-optimization-analyzer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

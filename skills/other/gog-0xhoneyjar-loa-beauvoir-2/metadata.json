@@ -1,0 +1,17 @@
+{
+  "name": "gog",
+  "repo": "0xHoneyJar/loa-beauvoir",
+  "path": "skills/gog/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/0xHoneyJar/loa-beauvoir",
+  "dir_name": "gog-0xhoneyjar-loa-beauvoir-2",
+  "downloaded_at": "2026-03-22T04:39:34.020784Z",
+  "author": "0xHoneyJar",
+  "source_url": "https://github.com/0xHoneyJar/loa-beauvoir/blob/main/skills/gog/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/0xHoneyJar/loa-beauvoir/blob/main/skills/gog/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

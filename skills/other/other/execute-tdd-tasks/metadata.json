@@ -1,9 +1,0 @@
-{
-  "name": "execute-tdd-tasks",
-  "repo": "sequenzia/agent-alchemy",
-  "path": "claude/sdd-tools/skills/execute-tdd-tasks/SKILL.md",
-  "category": "other",
-  "source": "github.com/sequenzia/agent-alchemy",
-  "dir_name": "execute-tdd-tasks",
-  "downloaded_at": "2026-02-19T01:35:32.952950Z"
-}

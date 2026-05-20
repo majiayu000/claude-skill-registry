@@ -1,9 +1,0 @@
-{
-  "name": "gh-review-pr",
-  "repo": "HomericIntelligence/ProjectOdyssey",
-  "path": ".claude/skills/gh-review-pr/SKILL.md",
-  "category": "other",
-  "source": "github.com/HomericIntelligence/ProjectOdyssey",
-  "dir_name": "gh-review-pr",
-  "downloaded_at": "2026-02-22T05:09:19.357847Z"
-}

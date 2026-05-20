@@ -1,0 +1,16 @@
+{
+  "name": "supabase",
+  "repo": "NeverSight/skills_feed",
+  "path": "data/skills-md/vm0-ai/vm0-skills/supabase/SKILL.md",
+  "category": "other",
+  "source": "github.com/NeverSight/skills_feed",
+  "dir_name": "supabase-neversight-skills-feed",
+  "downloaded_at": "2026-02-22T05:27:34.754070Z",
+  "author": "NeverSight",
+  "source_url": "https://github.com/NeverSight/skills_feed/blob/main/data/skills-md/vm0-ai/vm0-skills/supabase/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NeverSight/skills_feed/blob/main/data/skills-md/vm0-ai/vm0-skills/supabase/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "bioinformatician",
+  "repo": "dangeles/claude",
+  "path": "claude-config/skills/bioinformatician/SKILL.md",
+  "category": "other",
+  "source": "github.com/dangeles/claude",
+  "dir_name": "bioinformatician-dangeles-claude",
+  "downloaded_at": "2026-02-15T06:53:00.223975Z",
+  "author": "dangeles",
+  "source_url": "https://github.com/dangeles/claude/blob/main/claude-config/skills/bioinformatician/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dangeles/claude/blob/main/claude-config/skills/bioinformatician/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

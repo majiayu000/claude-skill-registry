@@ -1,0 +1,16 @@
+{
+  "name": "prd-drafter",
+  "repo": "galz10/pickle-rick-extension",
+  "path": "skills/prd-drafter/SKILL.md",
+  "category": "other",
+  "source": "github.com/galz10/pickle-rick-extension",
+  "dir_name": "prd-drafter",
+  "downloaded_at": "2026-02-15T07:17:08.517295Z",
+  "author": "galz10",
+  "source_url": "https://github.com/galz10/pickle-rick-extension/blob/main/skills/prd-drafter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/galz10/pickle-rick-extension/blob/main/skills/prd-drafter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

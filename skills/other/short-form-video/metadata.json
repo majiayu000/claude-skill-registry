@@ -1,0 +1,16 @@
+{
+  "name": "short-form-video",
+  "repo": "cdeistopened/OpenEd-Vault",
+  "path": ".claude/skills/short-form-video/SKILL.md",
+  "category": "other",
+  "source": "github.com/cdeistopened/OpenEd-Vault",
+  "dir_name": "short-form-video",
+  "downloaded_at": "2026-02-15T06:42:32.995772Z",
+  "author": "cdeistopened",
+  "source_url": "https://github.com/cdeistopened/OpenEd-Vault/blob/main/.claude/skills/short-form-video/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cdeistopened/OpenEd-Vault/blob/main/.claude/skills/short-form-video/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

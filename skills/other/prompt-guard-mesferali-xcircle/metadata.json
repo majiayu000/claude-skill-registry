@@ -1,0 +1,16 @@
+{
+  "name": "prompt-guard",
+  "repo": "MesferAli/XCircle",
+  "path": ".claude/skills/prompt-guard/SKILL.md",
+  "category": "other",
+  "source": "github.com/MesferAli/XCircle",
+  "dir_name": "prompt-guard-mesferali-xcircle",
+  "downloaded_at": "2026-02-15T05:27:59.484611Z",
+  "author": "MesferAli",
+  "source_url": "https://github.com/MesferAli/XCircle/blob/main/.claude/skills/prompt-guard/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MesferAli/XCircle/blob/main/.claude/skills/prompt-guard/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

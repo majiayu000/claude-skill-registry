@@ -1,0 +1,16 @@
+{
+  "name": "transformation-workflow",
+  "repo": "hummbl-dev/hummbl-claude-skills",
+  "path": "transformation-workflow/SKILL.md",
+  "category": "other",
+  "source": "github.com/hummbl-dev/hummbl-claude-skills",
+  "dir_name": "transformation-workflow-hummbl-dev-hummbl-claude-skills",
+  "downloaded_at": "2026-02-22T07:29:56.967326Z",
+  "author": "hummbl-dev",
+  "source_url": "https://github.com/hummbl-dev/hummbl-claude-skills/blob/main/transformation-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hummbl-dev/hummbl-claude-skills/blob/main/transformation-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

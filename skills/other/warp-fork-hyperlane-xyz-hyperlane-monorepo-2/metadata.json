@@ -1,0 +1,16 @@
+{
+  "name": "warp-fork",
+  "repo": "hyperlane-xyz/hyperlane-monorepo",
+  "path": ".claude/skills/warp-fork/SKILL.md",
+  "category": "other",
+  "source": "github.com/hyperlane-xyz/hyperlane-monorepo",
+  "dir_name": "warp-fork-hyperlane-xyz-hyperlane-monorepo-2",
+  "downloaded_at": "2026-02-22T07:30:08.997726Z",
+  "author": "hyperlane-xyz",
+  "source_url": "https://github.com/hyperlane-xyz/hyperlane-monorepo/blob/main/.claude/skills/warp-fork/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright [yyyy] [name of copyright owner]",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

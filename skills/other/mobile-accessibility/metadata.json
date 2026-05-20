@@ -1,0 +1,16 @@
+{
+  "name": "mobile-accessibility",
+  "repo": "cbemister/claude-code-utils",
+  "path": ".claude/skills/mobile-accessibility/SKILL.md",
+  "category": "other",
+  "source": "github.com/cbemister/claude-code-utils",
+  "dir_name": "mobile-accessibility",
+  "downloaded_at": "2026-02-22T06:40:34.298572Z",
+  "author": "cbemister",
+  "source_url": "https://github.com/cbemister/claude-code-utils/blob/main/.claude/skills/mobile-accessibility/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbemister/claude-code-utils/blob/main/.claude/skills/mobile-accessibility/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

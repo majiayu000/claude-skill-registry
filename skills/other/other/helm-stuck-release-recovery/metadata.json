@@ -1,9 +1,0 @@
-{
-  "name": "helm-stuck-release-recovery",
-  "repo": "ViktorBarzin/infra",
-  "path": ".claude/skills/helm-stuck-release-recovery/SKILL.md",
-  "category": "other",
-  "source": "github.com/ViktorBarzin/infra",
-  "dir_name": "helm-stuck-release-recovery",
-  "downloaded_at": "2026-02-22T05:54:24.117802Z"
-}

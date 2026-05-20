@@ -1,0 +1,16 @@
+{
+  "name": "skyrim-papyrus",
+  "repo": "SpookyPirate/spookys-automod-toolkit",
+  "path": ".claude/skills/skyrim-papyrus/skill.md",
+  "category": "other",
+  "source": "github.com/SpookyPirate/spookys-automod-toolkit",
+  "dir_name": "skyrim-papyrus-spookypirate-spookys-automod-tool",
+  "downloaded_at": "2026-02-15T05:48:22.811745Z",
+  "author": "SpookyPirate",
+  "source_url": "https://github.com/SpookyPirate/spookys-automod-toolkit/blob/main/.claude/skills/skyrim-papyrus/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SpookyPirate/spookys-automod-toolkit/blob/main/.claude/skills/skyrim-papyrus/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "shadcn-component-discovery",
+  "repo": "mattbx/shadcn-skills",
+  "path": "skills/shadcn-component-discovery/SKILL.md",
+  "category": "other",
+  "source": "github.com/mattbx/shadcn-skills",
+  "dir_name": "shadcn-component-discovery-mattbx-shadcn-skills",
+  "downloaded_at": "2026-02-20T01:27:35.894058Z",
+  "author": "mattbx",
+  "source_url": "https://github.com/mattbx/shadcn-skills/blob/main/skills/shadcn-component-discovery/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattbx/shadcn-skills/blob/main/skills/shadcn-component-discovery/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

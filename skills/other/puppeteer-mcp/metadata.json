@@ -1,0 +1,16 @@
+{
+  "name": "puppeteer-mcp",
+  "repo": "Dokhacgiakhoa/antigravity-ide",
+  "path": ".agent/skills/puppeteer-mcp/SKILL.md",
+  "category": "other",
+  "source": "github.com/Dokhacgiakhoa/antigravity-ide",
+  "dir_name": "puppeteer-mcp",
+  "downloaded_at": "2026-02-22T04:58:47.593287Z",
+  "author": "Dokhacgiakhoa",
+  "source_url": "https://github.com/Dokhacgiakhoa/antigravity-ide/blob/main/.agent/skills/puppeteer-mcp/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Dokhacgiakhoa/antigravity-ide/blob/main/.agent/skills/puppeteer-mcp/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,9 +1,0 @@
-{
-  "name": "knowledge-manager",
-  "repo": "huifer/Claude-Code-KnowCraft",
-  "path": ".claude/skills/knowledge-manager/skill.md",
-  "category": "other",
-  "source": "github.com/huifer/Claude-Code-KnowCraft",
-  "dir_name": "knowledge-manager",
-  "downloaded_at": "2026-02-22T07:29:21.394742Z"
-}

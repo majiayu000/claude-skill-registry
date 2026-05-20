@@ -1,9 +1,0 @@
-{
-  "name": "deploy-qa",
-  "repo": "hmislk/hmis",
-  "path": ".claude/skills/deploy-qa/SKILL.md",
-  "category": "other",
-  "source": "github.com/hmislk/hmis",
-  "dir_name": "deploy-qa",
-  "downloaded_at": "2026-02-22T07:27:02.268761Z"
-}

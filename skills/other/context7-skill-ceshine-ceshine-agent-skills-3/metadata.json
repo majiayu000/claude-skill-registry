@@ -1,0 +1,16 @@
+{
+  "name": "context7-skill",
+  "repo": "ceshine/ceshine-agent-skills",
+  "path": "context7-skill/SKILL.md",
+  "category": "other",
+  "source": "github.com/ceshine/ceshine-agent-skills",
+  "dir_name": "context7-skill-ceshine-ceshine-agent-skills-3",
+  "downloaded_at": "2026-02-22T06:40:48.329766Z",
+  "author": "ceshine",
+  "source_url": "https://github.com/ceshine/ceshine-agent-skills/blob/main/context7-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ceshine/ceshine-agent-skills/blob/main/context7-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

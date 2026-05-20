@@ -1,9 +1,0 @@
-{
-  "name": "deployment-workflow",
-  "repo": "Deway-AI/gh-pr-linear-issue-linker",
-  "path": ".claude/skills/deployment-workflow/SKILL.md",
-  "category": "other",
-  "source": "github.com/Deway-AI/gh-pr-linear-issue-linker",
-  "dir_name": "deployment-workflow",
-  "downloaded_at": "2026-02-22T04:56:59.190230Z"
-}

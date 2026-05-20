@@ -1,0 +1,17 @@
+{
+  "name": "prompt-forge",
+  "repo": "JordanGunn/nunchuck",
+  "path": "skills/prompt/prompt-forge/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/JordanGunn/nunchuck",
+  "dir_name": "prompt-forge-jordangunn-nunchuck-3",
+  "downloaded_at": "2026-03-22T05:35:29.843808Z",
+  "author": "JordanGunn",
+  "source_url": "https://github.com/JordanGunn/nunchuck/blob/master/skills/prompt/prompt-forge/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JordanGunn/nunchuck/blob/master/skills/prompt/prompt-forge/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

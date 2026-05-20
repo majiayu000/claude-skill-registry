@@ -1,0 +1,16 @@
+{
+  "name": "golang-testing",
+  "repo": "haniakrim21/everything-claude-code",
+  "path": "skills/golang-testing/SKILL.md",
+  "category": "other",
+  "source": "github.com/haniakrim21/everything-claude-code",
+  "dir_name": "golang-testing-haniakrim21-everything-claude-co",
+  "downloaded_at": "2026-02-22T07:24:49.662975Z",
+  "author": "haniakrim21",
+  "source_url": "https://github.com/haniakrim21/everything-claude-code/blob/main/skills/golang-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/haniakrim21/everything-claude-code/blob/main/skills/golang-testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

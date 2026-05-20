@@ -1,9 +1,0 @@
-{
-  "name": "databricks-app-python",
-  "repo": "datasciencemonkey/claude-code-cli-bricks",
-  "path": ".claude/skills/databricks-app-python/SKILL.md",
-  "category": "other",
-  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
-  "dir_name": "databricks-app-python",
-  "downloaded_at": "2026-02-22T06:51:11.035752Z"
-}

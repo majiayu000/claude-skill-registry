@@ -1,0 +1,16 @@
+{
+  "name": "standards-queries",
+  "repo": "maxritter/claude-pilot",
+  "path": "pilot/skills/standards-queries/SKILL.md",
+  "category": "other",
+  "source": "github.com/maxritter/claude-pilot",
+  "dir_name": "standards-queries-maxritter-claude-pilot",
+  "downloaded_at": "2026-02-12T01:32:15.156757Z",
+  "author": "maxritter",
+  "source_url": "https://github.com/maxritter/claude-pilot/blob/main/pilot/skills/standards-queries/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/maxritter/claude-pilot/blob/main/pilot/skills/standards-queries/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

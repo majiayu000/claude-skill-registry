@@ -1,0 +1,16 @@
+{
+  "name": "code-documenter",
+  "repo": "hainamchung/agent-assistant",
+  "path": "skills/code-documenter/SKILL.md",
+  "category": "other",
+  "source": "github.com/hainamchung/agent-assistant",
+  "dir_name": "code-documenter-hainamchung-agent-assistant",
+  "downloaded_at": "2026-02-15T07:26:48.002653Z",
+  "author": "hainamchung",
+  "source_url": "https://github.com/hainamchung/agent-assistant/blob/main/skills/code-documenter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hainamchung/agent-assistant/blob/main/skills/code-documenter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "track-implementation-progress",
+  "repo": "HomericIntelligence/ProjectOdyssey",
+  "path": ".claude/skills/track-implementation-progress/SKILL.md",
+  "category": "other",
+  "source": "github.com/HomericIntelligence/ProjectOdyssey",
+  "dir_name": "track-implementation-progress-homericintelligence-projectodyssey-2",
+  "downloaded_at": "2026-02-22T05:09:24.240500Z",
+  "author": "HomericIntelligence",
+  "source_url": "https://github.com/HomericIntelligence/ProjectOdyssey/blob/main/.claude/skills/track-implementation-progress/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HomericIntelligence/ProjectOdyssey/blob/main/.claude/skills/track-implementation-progress/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "planning-with-files",
+  "repo": "0xjax/veld",
+  "path": ".claude/skills/planning-with-files/SKILL.md",
+  "category": "other",
+  "source": "github.com/0xjax/veld",
+  "dir_name": "planning-with-files-0xjax-veld",
+  "downloaded_at": "2026-02-22T04:33:43.863550Z",
+  "author": "0xjax",
+  "source_url": "https://github.com/0xjax/veld/blob/main/.claude/skills/planning-with-files/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/0xjax/veld/blob/main/.claude/skills/planning-with-files/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

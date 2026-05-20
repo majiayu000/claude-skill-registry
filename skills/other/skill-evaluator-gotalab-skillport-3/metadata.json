@@ -1,0 +1,16 @@
+{
+  "name": "skill-evaluator",
+  "repo": "gotalab/skillport",
+  "path": ".skills/experimental/skill-evaluator/SKILL.md",
+  "category": "other",
+  "source": "github.com/gotalab/skillport",
+  "dir_name": "skill-evaluator-gotalab-skillport-3",
+  "downloaded_at": "2026-02-22T07:20:34.070477Z",
+  "author": "gotalab",
+  "source_url": "https://github.com/gotalab/skillport/blob/main/.skills/experimental/skill-evaluator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gotalab/skillport/blob/main/.skills/experimental/skill-evaluator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "nextjs",
+  "repo": "Squirrelfishcityhall150/claude-code-kit",
+  "path": "cli/kits/nextjs/skills/nextjs/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Squirrelfishcityhall150/claude-code-kit",
+  "dir_name": "nextjs-squirrelfishcityhall-claude-code-kit",
+  "downloaded_at": "2026-03-27T01:21:34.105880Z",
+  "author": "Squirrelfishcityhall150",
+  "source_url": "https://github.com/Squirrelfishcityhall150/claude-code-kit/blob/main/cli/kits/nextjs/skills/nextjs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Squirrelfishcityhall150/claude-code-kit/blob/main/cli/kits/nextjs/skills/nextjs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "core",
+  "repo": "andreibesleaga/GABBE",
+  "path": "agents/skills/core/knowledge-connect.skill.md",
+  "category": "other",
+  "source": "github.com/andreibesleaga/GABBE",
+  "dir_name": "core-andreibesleaga-gabbe-3",
+  "downloaded_at": "2026-02-22T06:16:31.076858Z",
+  "author": "andreibesleaga",
+  "source_url": "https://github.com/andreibesleaga/GABBE/blob/main/agents/skills/core/knowledge-connect.skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andreibesleaga/GABBE/blob/main/agents/skills/core/knowledge-connect.skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

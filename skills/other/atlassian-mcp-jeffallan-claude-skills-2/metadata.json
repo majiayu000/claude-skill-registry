@@ -1,0 +1,17 @@
+{
+  "name": "atlassian-mcp",
+  "repo": "Jeffallan/claude-skills",
+  "path": "skills/atlassian-mcp/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Jeffallan/claude-skills",
+  "dir_name": "atlassian-mcp-jeffallan-claude-skills-2",
+  "downloaded_at": "2026-05-20T03:42:20.360969Z",
+  "author": "Jeffallan",
+  "source_url": "https://github.com/Jeffallan/claude-skills/blob/main/skills/atlassian-mcp/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Jeffallan/claude-skills/blob/main/skills/atlassian-mcp/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

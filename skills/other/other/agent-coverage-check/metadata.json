@@ -1,9 +1,0 @@
-{
-  "name": "agent-coverage-check",
-  "repo": "HomericIntelligence/ProjectOdyssey",
-  "path": ".claude/skills/agent-coverage-check/SKILL.md",
-  "category": "other",
-  "source": "github.com/HomericIntelligence/ProjectOdyssey",
-  "dir_name": "agent-coverage-check",
-  "downloaded_at": "2026-02-22T05:09:22.066165Z"
-}

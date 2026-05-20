@@ -1,0 +1,16 @@
+{
+  "name": "image-batch",
+  "repo": "guia-matthieu/clawfu-skills",
+  "path": "skills/automation/image-batch/SKILL.md",
+  "category": "other",
+  "source": "github.com/guia-matthieu/clawfu-skills",
+  "dir_name": "image-batch",
+  "downloaded_at": "2026-02-22T07:22:46.009994Z",
+  "author": "guia-matthieu",
+  "source_url": "https://github.com/guia-matthieu/clawfu-skills/blob/main/skills/automation/image-batch/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/guia-matthieu/clawfu-skills/blob/main/skills/automation/image-batch/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

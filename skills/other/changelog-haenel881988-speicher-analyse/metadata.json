@@ -1,0 +1,16 @@
+{
+  "name": "changelog",
+  "repo": "haenel881988/speicher-analyse",
+  "path": ".claude/skills/changelog/SKILL.md",
+  "category": "other",
+  "source": "github.com/haenel881988/speicher-analyse",
+  "dir_name": "changelog-haenel881988-speicher-analyse",
+  "downloaded_at": "2026-02-22T07:23:49.922849Z",
+  "author": "haenel881988",
+  "source_url": "https://github.com/haenel881988/speicher-analyse/blob/main/.claude/skills/changelog/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/haenel881988/speicher-analyse/blob/main/.claude/skills/changelog/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "ugc-brief",
+  "repo": "WalkerHi11/mediabuy-plugins",
+  "path": ".codex/skills/ugc-brief/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/WalkerHi11/mediabuy-plugins",
+  "dir_name": "ugc-brief-walkerhi11-mediabuy-plugins-2",
+  "downloaded_at": "2026-03-22T06:29:47.728289Z",
+  "author": "WalkerHi11",
+  "source_url": "https://github.com/WalkerHi11/mediabuy-plugins/blob/main/.codex/skills/ugc-brief/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/WalkerHi11/mediabuy-plugins/blob/main/.codex/skills/ugc-brief/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "step-functions",
+  "repo": "itsmostafa/aws-agent-skills",
+  "path": "skills/step-functions/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/itsmostafa/aws-agent-skills",
+  "dir_name": "step-functions-itsmostafa-aws-agent-skills-3",
+  "downloaded_at": "2026-05-20T03:58:48.106185Z",
+  "author": "itsmostafa",
+  "source_url": "https://github.com/itsmostafa/aws-agent-skills/blob/main/skills/step-functions/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/itsmostafa/aws-agent-skills/blob/main/skills/step-functions/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

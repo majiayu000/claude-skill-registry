@@ -1,0 +1,17 @@
+{
+  "name": "api-design",
+  "repo": "cacr92/WeReply",
+  "path": ".claude/skills/api-design/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cacr92/WeReply",
+  "dir_name": "api-design-cacr92-wereply-2",
+  "downloaded_at": "2026-03-22T07:22:38.318973Z",
+  "author": "cacr92",
+  "source_url": "https://github.com/cacr92/WeReply/blob/main/.claude/skills/api-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cacr92/WeReply/blob/main/.claude/skills/api-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

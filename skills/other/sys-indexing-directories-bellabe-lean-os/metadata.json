@@ -1,0 +1,16 @@
+{
+  "name": "sys-indexing-directories",
+  "repo": "BellaBe/lean-os",
+  "path": ".claude/skills/sys-indexing-directories/SKILL.md",
+  "category": "other",
+  "source": "github.com/BellaBe/lean-os",
+  "dir_name": "sys-indexing-directories-bellabe-lean-os",
+  "downloaded_at": "2026-02-22T04:47:28.228683Z",
+  "author": "BellaBe",
+  "source_url": "https://github.com/BellaBe/lean-os/blob/main/.claude/skills/sys-indexing-directories/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BellaBe/lean-os/blob/main/.claude/skills/sys-indexing-directories/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

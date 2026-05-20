@@ -1,9 +1,0 @@
-{
-  "name": "release",
-  "repo": "freepik-company/knowledge-agent",
-  "path": ".claude/skills/release/SKILL.md",
-  "category": "other",
-  "source": "github.com/freepik-company/knowledge-agent",
-  "dir_name": "release-freepik-company-knowledge-agent",
-  "downloaded_at": "2026-02-22T07:12:12.058183Z"
-}

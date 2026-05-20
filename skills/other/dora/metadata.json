@@ -1,0 +1,16 @@
+{
+  "name": "dora",
+  "repo": "butttons/dora",
+  "path": ".claude/skills/dora/SKILL.md",
+  "category": "other",
+  "source": "github.com/butttons/dora",
+  "dir_name": "dora",
+  "downloaded_at": "2026-02-15T06:39:30.361323Z",
+  "author": "butttons",
+  "source_url": "https://github.com/butttons/dora/blob/main/.claude/skills/dora/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/butttons/dora/blob/main/.claude/skills/dora/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,9 +1,0 @@
-{
-  "name": "github-copilot-pr-comments",
-  "repo": "chrisagrams/mscompress",
-  "path": ".claude/skills/github-copilot-pr-comments/SKILL.md",
-  "category": "other",
-  "source": "github.com/chrisagrams/mscompress",
-  "dir_name": "github-copilot-pr-comments",
-  "downloaded_at": "2026-02-22T06:42:00.243356Z"
-}

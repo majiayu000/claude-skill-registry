@@ -1,0 +1,17 @@
+{
+  "name": "create-issue",
+  "repo": "dotCMS/core",
+  "path": ".claude/skills/create-issue/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/dotCMS/core",
+  "dir_name": "create-issue-dotcms-core",
+  "downloaded_at": "2026-03-01T07:29:55.149007Z",
+  "author": "dotCMS",
+  "source_url": "https://github.com/dotCMS/core/blob/main/.claude/skills/create-issue/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dotCMS/core/blob/main/.claude/skills/create-issue/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

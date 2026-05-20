@@ -1,0 +1,17 @@
+{
+  "name": "dspy-signature-designer",
+  "repo": "OmidZamani/dspy-skills",
+  "path": "skills/dspy-signature-designer/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/OmidZamani/dspy-skills",
+  "dir_name": "dspy-signature-designer-omidzamani-dspy-skills-2",
+  "downloaded_at": "2026-03-22T05:59:27.580070Z",
+  "author": "OmidZamani",
+  "source_url": "https://github.com/OmidZamani/dspy-skills/blob/master/skills/dspy-signature-designer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OmidZamani/dspy-skills/blob/master/skills/dspy-signature-designer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

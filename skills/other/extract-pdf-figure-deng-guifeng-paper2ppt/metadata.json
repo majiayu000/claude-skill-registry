@@ -1,0 +1,16 @@
+{
+  "name": "extract-pdf-figure",
+  "repo": "Deng-GuiFeng/Paper2PPT",
+  "path": ".claude/skills/extract-pdf-figure/SKILL.md",
+  "category": "other",
+  "source": "github.com/Deng-GuiFeng/Paper2PPT",
+  "dir_name": "extract-pdf-figure-deng-guifeng-paper2ppt",
+  "downloaded_at": "2026-02-15T05:00:50.174429Z",
+  "author": "Deng-GuiFeng",
+  "source_url": "https://github.com/Deng-GuiFeng/Paper2PPT/blob/main/.claude/skills/extract-pdf-figure/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Deng-GuiFeng/Paper2PPT/blob/main/.claude/skills/extract-pdf-figure/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

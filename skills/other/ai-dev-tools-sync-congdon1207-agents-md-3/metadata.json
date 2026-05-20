@@ -1,0 +1,16 @@
+{
+  "name": "ai-dev-tools-sync",
+  "repo": "CongDon1207/AGENTS.md",
+  "path": ".claude/skills/ai-dev-tools-sync/SKILL.md",
+  "category": "other",
+  "source": "github.com/CongDon1207/AGENTS.md",
+  "dir_name": "ai-dev-tools-sync-congdon1207-agents-md-3",
+  "downloaded_at": "2026-02-22T04:53:29.416562Z",
+  "author": "CongDon1207",
+  "source_url": "https://github.com/CongDon1207/AGENTS.md/blob/main/.claude/skills/ai-dev-tools-sync/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CongDon1207/AGENTS.md/blob/main/.claude/skills/ai-dev-tools-sync/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

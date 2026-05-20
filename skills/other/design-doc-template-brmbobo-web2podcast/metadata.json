@@ -1,0 +1,17 @@
+{
+  "name": "design-doc-template",
+  "repo": "Brmbobo/Web2podcast",
+  "path": ".claude/agents/enterprise-frontend-design/agents/skills/17-technical-docs/design-doc-template/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/Brmbobo/Web2podcast",
+  "dir_name": "design-doc-template-brmbobo-web2podcast",
+  "downloaded_at": "2026-03-22T05:01:52.752039Z",
+  "author": "Brmbobo",
+  "source_url": "https://github.com/Brmbobo/Web2podcast/blob/master/.claude/agents/enterprise-frontend-design/agents/skills/17-technical-docs/design-doc-template/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Brmbobo/Web2podcast/blob/master/.claude/agents/enterprise-frontend-design/agents/skills/17-technical-docs/design-doc-template/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

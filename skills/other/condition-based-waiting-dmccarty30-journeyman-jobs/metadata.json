@@ -1,0 +1,16 @@
+{
+  "name": "condition-based-waiting",
+  "repo": "Dmccarty30/Journeyman-Jobs",
+  "path": ".claude/skills/condition-based-waiting/SKILL.md",
+  "category": "other",
+  "source": "github.com/Dmccarty30/Journeyman-Jobs",
+  "dir_name": "condition-based-waiting-dmccarty30-journeyman-jobs",
+  "downloaded_at": "2026-02-15T05:02:51.485761Z",
+  "author": "Dmccarty30",
+  "source_url": "https://github.com/Dmccarty30/Journeyman-Jobs/blob/main/.claude/skills/condition-based-waiting/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Dmccarty30/Journeyman-Jobs/blob/main/.claude/skills/condition-based-waiting/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

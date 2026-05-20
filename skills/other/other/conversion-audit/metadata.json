@@ -1,9 +1,0 @@
-{
-  "name": "conversion-audit",
-  "repo": "cbemister/claude-code-utils",
-  "path": ".claude/skills/conversion-audit/SKILL.md",
-  "category": "other",
-  "source": "github.com/cbemister/claude-code-utils",
-  "dir_name": "conversion-audit",
-  "downloaded_at": "2026-02-22T06:40:34.053677Z"
-}

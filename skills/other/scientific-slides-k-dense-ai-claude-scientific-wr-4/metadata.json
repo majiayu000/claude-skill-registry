@@ -1,0 +1,17 @@
+{
+  "name": "scientific-slides",
+  "repo": "K-Dense-AI/claude-scientific-writer",
+  "path": "scientific_writer/.claude/skills/scientific-slides/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/K-Dense-AI/claude-scientific-writer",
+  "dir_name": "scientific-slides-k-dense-ai-claude-scientific-wr-4",
+  "downloaded_at": "2026-03-22T05:36:58.287184Z",
+  "author": "K-Dense-AI",
+  "source_url": "https://github.com/K-Dense-AI/claude-scientific-writer/blob/main/scientific_writer/.claude/skills/scientific-slides/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/K-Dense-AI/claude-scientific-writer/blob/main/scientific_writer/.claude/skills/scientific-slides/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

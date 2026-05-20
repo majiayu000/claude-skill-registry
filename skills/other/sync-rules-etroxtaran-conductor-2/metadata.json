@@ -1,0 +1,17 @@
+{
+  "name": "sync-rules",
+  "repo": "EtroxTaran/conductor",
+  "path": ".claude/skills/sync-rules/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/EtroxTaran/conductor",
+  "dir_name": "sync-rules-etroxtaran-conductor-2",
+  "downloaded_at": "2026-03-01T05:15:34.467548Z",
+  "author": "EtroxTaran",
+  "source_url": "https://github.com/EtroxTaran/conductor/blob/main/.claude/skills/sync-rules/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EtroxTaran/conductor/blob/main/.claude/skills/sync-rules/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

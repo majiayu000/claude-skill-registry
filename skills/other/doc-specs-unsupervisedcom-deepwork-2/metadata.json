@@ -1,0 +1,16 @@
+{
+  "name": "doc-specs",
+  "repo": "Unsupervisedcom/deepwork",
+  "path": ".deepwork/doc_specs/claude_code_skill.md",
+  "category": "other",
+  "source": "github.com/Unsupervisedcom/deepwork",
+  "dir_name": "doc-specs-unsupervisedcom-deepwork-2",
+  "downloaded_at": "2026-02-22T05:52:39.499943Z",
+  "author": "Unsupervisedcom",
+  "source_url": "https://github.com/Unsupervisedcom/deepwork/blob/main/.deepwork/doc_specs/claude_code_skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Unsupervisedcom/deepwork/blob/main/.deepwork/doc_specs/claude_code_skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

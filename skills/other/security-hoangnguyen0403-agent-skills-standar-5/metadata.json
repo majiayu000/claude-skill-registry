@@ -1,0 +1,16 @@
+{
+  "name": "security",
+  "repo": "HoangNguyen0403/agent-skills-standard",
+  "path": "skills/android/security/SKILL.md",
+  "category": "other",
+  "source": "github.com/HoangNguyen0403/agent-skills-standard",
+  "dir_name": "security-hoangnguyen0403-agent-skills-standar-5",
+  "downloaded_at": "2026-02-15T05:13:26.088908Z",
+  "author": "HoangNguyen0403",
+  "source_url": "https://github.com/HoangNguyen0403/agent-skills-standard/blob/main/skills/android/security/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HoangNguyen0403/agent-skills-standard/blob/main/skills/android/security/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

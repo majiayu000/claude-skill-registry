@@ -1,0 +1,16 @@
+{
+  "name": "add-telegram",
+  "repo": "gavrielc/nanoclaw",
+  "path": ".claude/skills/add-telegram/SKILL.md",
+  "category": "other",
+  "source": "github.com/gavrielc/nanoclaw",
+  "dir_name": "add-telegram",
+  "downloaded_at": "2026-02-10T16:36:02.823566Z",
+  "author": "gavrielc",
+  "source_url": "https://github.com/gavrielc/nanoclaw/blob/main/.claude/skills/add-telegram/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gavrielc/nanoclaw/blob/main/.claude/skills/add-telegram/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

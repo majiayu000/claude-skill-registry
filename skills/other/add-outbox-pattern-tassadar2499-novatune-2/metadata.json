@@ -1,0 +1,17 @@
+{
+  "name": "add-outbox-pattern",
+  "repo": "Tassadar2499/NovaTune",
+  "path": ".qwen/skills/add-outbox-pattern/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Tassadar2499/NovaTune",
+  "dir_name": "add-outbox-pattern-tassadar2499-novatune-2",
+  "downloaded_at": "2026-03-22T06:21:03.312611Z",
+  "author": "Tassadar2499",
+  "source_url": "https://github.com/Tassadar2499/NovaTune/blob/main/.qwen/skills/add-outbox-pattern/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tassadar2499/NovaTune/blob/main/.qwen/skills/add-outbox-pattern/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

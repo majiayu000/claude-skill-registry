@@ -1,0 +1,16 @@
+{
+  "name": "seo-structure-architect",
+  "repo": "MICHAEL-BODO/LT-MISSION-CONTROL",
+  "path": ".agent/skills/seo-structure-architect/SKILL.md",
+  "category": "other",
+  "source": "github.com/MICHAEL-BODO/LT-MISSION-CONTROL",
+  "dir_name": "seo-structure-architect",
+  "downloaded_at": "2026-02-22T05:21:08.247723Z",
+  "author": "MICHAEL-BODO",
+  "source_url": "https://github.com/MICHAEL-BODO/LT-MISSION-CONTROL/blob/main/.agent/skills/seo-structure-architect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MICHAEL-BODO/LT-MISSION-CONTROL/blob/main/.agent/skills/seo-structure-architect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

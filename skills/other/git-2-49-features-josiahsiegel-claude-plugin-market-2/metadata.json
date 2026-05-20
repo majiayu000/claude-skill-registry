@@ -1,0 +1,16 @@
+{
+  "name": "git-2-49-features",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/git-master/skills/git-2-49-features/SKILL.md",
+  "category": "other",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "git-2-49-features-josiahsiegel-claude-plugin-market-2",
+  "downloaded_at": "2026-02-22T05:14:40.459063Z",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/git-master/skills/git-2-49-features/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

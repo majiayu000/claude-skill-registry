@@ -1,0 +1,17 @@
+{
+  "name": "skill",
+  "repo": "abra5umente/api-proxy",
+  "path": "skill/skill.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/abra5umente/api-proxy",
+  "dir_name": "skill-abra5umente-api-proxy",
+  "downloaded_at": "2026-03-22T06:39:27.899676Z",
+  "author": "abra5umente",
+  "source_url": "https://github.com/abra5umente/api-proxy/blob/main/skill/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/abra5umente/api-proxy/blob/main/skill/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "testing-go",
+  "repo": "holon-run/holon",
+  "path": "examples/skills/testing-go/SKILL.md",
+  "category": "other",
+  "source": "github.com/holon-run/holon",
+  "dir_name": "testing-go",
+  "downloaded_at": "2026-02-15T07:30:45.835899Z",
+  "author": "holon-run",
+  "source_url": "https://github.com/holon-run/holon/blob/main/examples/skills/testing-go/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/holon-run/holon/blob/main/examples/skills/testing-go/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

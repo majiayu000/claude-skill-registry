@@ -1,0 +1,17 @@
+{
+  "name": "create-workflow",
+  "repo": "VapiAI/skills",
+  "path": "create-workflow/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/VapiAI/skills",
+  "dir_name": "create-workflow-vapiai-skills",
+  "downloaded_at": "2026-03-22T06:26:59.898370Z",
+  "author": "VapiAI",
+  "source_url": "https://github.com/VapiAI/skills/blob/main/create-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/VapiAI/skills/blob/main/create-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

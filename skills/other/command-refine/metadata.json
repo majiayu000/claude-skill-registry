@@ -1,0 +1,16 @@
+{
+  "name": "command-refine",
+  "repo": "Git-Fg/meta-plugin-manager",
+  "path": ".claude/skills/command-refine/SKILL.md",
+  "category": "other",
+  "source": "github.com/Git-Fg/meta-plugin-manager",
+  "dir_name": "command-refine",
+  "downloaded_at": "2026-02-15T05:09:25.893213Z",
+  "author": "Git-Fg",
+  "source_url": "https://github.com/Git-Fg/meta-plugin-manager/blob/main/.claude/skills/command-refine/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Git-Fg/meta-plugin-manager/blob/main/.claude/skills/command-refine/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "orchard-core-theming",
+  "repo": "Lombiq/Orchard-Core-Agent-Skills",
+  "path": "skills/orchard-core-theming/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/Lombiq/Orchard-Core-Agent-Skills",
+  "dir_name": "orchard-core-theming-lombiq-orchard-core-agent-s",
+  "downloaded_at": "2026-03-22T05:43:52.522143Z",
+  "author": "Lombiq",
+  "source_url": "https://github.com/Lombiq/Orchard-Core-Agent-Skills/blob/master/skills/orchard-core-theming/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Lombiq/Orchard-Core-Agent-Skills/blob/master/skills/orchard-core-theming/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

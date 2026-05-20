@@ -1,0 +1,16 @@
+{
+  "name": "tanstack-appoperation-requests",
+  "repo": "hewr-srood/tanstack-appoperation-kit",
+  "path": ".cursor/skills/tanstack-appoperation-requests/SKILL.md",
+  "category": "other",
+  "source": "github.com/hewr-srood/tanstack-appoperation-kit",
+  "dir_name": "tanstack-appoperation-requests",
+  "downloaded_at": "2026-02-22T07:25:56.831895Z",
+  "author": "hewr-srood",
+  "source_url": "https://github.com/hewr-srood/tanstack-appoperation-kit/blob/main/.cursor/skills/tanstack-appoperation-requests/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hewr-srood/tanstack-appoperation-kit/blob/main/.cursor/skills/tanstack-appoperation-requests/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

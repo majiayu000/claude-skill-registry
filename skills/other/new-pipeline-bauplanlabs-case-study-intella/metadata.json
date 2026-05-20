@@ -1,0 +1,16 @@
+{
+  "name": "new-pipeline",
+  "repo": "BauplanLabs/case-study-intella",
+  "path": ".claude/skills/new-pipeline/SKILL.md",
+  "category": "other",
+  "source": "github.com/BauplanLabs/case-study-intella",
+  "dir_name": "new-pipeline-bauplanlabs-case-study-intella",
+  "downloaded_at": "2026-02-15T04:50:28.771036Z",
+  "author": "BauplanLabs",
+  "source_url": "https://github.com/BauplanLabs/case-study-intella/blob/main/.claude/skills/new-pipeline/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BauplanLabs/case-study-intella/blob/main/.claude/skills/new-pipeline/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

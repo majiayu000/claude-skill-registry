@@ -1,0 +1,16 @@
+{
+  "name": "backend-architect",
+  "repo": "SpencerGeee/SpenTrade",
+  "path": ".agent/skills/backend-architect/SKILL.md",
+  "category": "other",
+  "source": "github.com/SpencerGeee/SpenTrade",
+  "dir_name": "backend-architect-spencergeee-spentrade",
+  "downloaded_at": "2026-02-15T05:48:04.373257Z",
+  "author": "SpencerGeee",
+  "source_url": "https://github.com/SpencerGeee/SpenTrade/blob/main/.agent/skills/backend-architect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SpencerGeee/SpenTrade/blob/main/.agent/skills/backend-architect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

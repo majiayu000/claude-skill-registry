@@ -1,0 +1,16 @@
+{
+  "name": "audit-code",
+  "repo": "haenel881988/speicher-analyse",
+  "path": ".claude/skills/audit-code/SKILL.md",
+  "category": "other",
+  "source": "github.com/haenel881988/speicher-analyse",
+  "dir_name": "audit-code-haenel881988-speicher-analyse",
+  "downloaded_at": "2026-02-22T07:23:49.983485Z",
+  "author": "haenel881988",
+  "source_url": "https://github.com/haenel881988/speicher-analyse/blob/main/.claude/skills/audit-code/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/haenel881988/speicher-analyse/blob/main/.claude/skills/audit-code/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

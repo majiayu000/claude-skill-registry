@@ -1,9 +1,0 @@
-{
-  "name": "batch-pr-rebase",
-  "repo": "HomericIntelligence/ProjectOdyssey",
-  "path": "plugins/ci-cd/batch-pr-rebase/skills/batch-pr-rebase/SKILL.md",
-  "category": "other",
-  "source": "github.com/HomericIntelligence/ProjectOdyssey",
-  "dir_name": "batch-pr-rebase",
-  "downloaded_at": "2026-02-22T05:09:23.894821Z"
-}

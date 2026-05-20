@@ -1,9 +1,0 @@
-{
-  "name": "summarizer",
-  "repo": "ggozad/haiku.skills",
-  "path": "tests/fixtures/summarizer/SKILL.md",
-  "category": "other",
-  "source": "github.com/ggozad/haiku.skills",
-  "dir_name": "summarizer",
-  "downloaded_at": "2026-02-22T07:17:33.165474Z"
-}

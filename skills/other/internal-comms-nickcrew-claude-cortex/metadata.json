@@ -1,0 +1,16 @@
+{
+  "name": "internal-comms",
+  "repo": "NickCrew/claude-cortex",
+  "path": "skills/internal-comms/SKILL.md",
+  "category": "other",
+  "source": "github.com/NickCrew/claude-cortex",
+  "dir_name": "internal-comms-nickcrew-claude-cortex",
+  "downloaded_at": "2026-02-22T05:28:17.172552Z",
+  "author": "NickCrew",
+  "source_url": "https://github.com/NickCrew/claude-cortex/blob/main/skills/internal-comms/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nicholas Ferguson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

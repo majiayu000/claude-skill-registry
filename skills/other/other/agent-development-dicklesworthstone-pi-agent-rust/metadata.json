@@ -1,9 +1,0 @@
-{
-  "name": "agent-development",
-  "repo": "Dicklesworthstone/pi_agent_rust",
-  "path": "tests/ext_conformance/artifacts/plugins-official/plugin-dev/skills/agent-development/SKILL.md",
-  "category": "other",
-  "source": "github.com/Dicklesworthstone/pi_agent_rust",
-  "dir_name": "agent-development-dicklesworthstone-pi-agent-rust",
-  "downloaded_at": "2026-02-22T04:57:46.154986Z"
-}

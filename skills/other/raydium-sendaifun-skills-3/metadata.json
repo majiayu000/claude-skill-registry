@@ -1,0 +1,17 @@
+{
+  "name": "raydium",
+  "repo": "sendaifun/skills",
+  "path": "skills/raydium/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sendaifun/skills",
+  "dir_name": "raydium-sendaifun-skills-3",
+  "downloaded_at": "2026-03-20T01:33:27.559901Z",
+  "author": "sendaifun",
+  "source_url": "https://github.com/sendaifun/skills/blob/main/skills/raydium/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sendaifun/skills/blob/main/skills/raydium/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

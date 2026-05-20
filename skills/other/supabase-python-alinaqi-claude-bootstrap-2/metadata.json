@@ -1,0 +1,16 @@
+{
+  "name": "supabase-python",
+  "repo": "alinaqi/claude-bootstrap",
+  "path": "skills/supabase-python/SKILL.md",
+  "category": "other",
+  "source": "github.com/alinaqi/claude-bootstrap",
+  "dir_name": "supabase-python-alinaqi-claude-bootstrap-2",
+  "downloaded_at": "2026-02-15T06:17:18.773643Z",
+  "author": "alinaqi",
+  "source_url": "https://github.com/alinaqi/claude-bootstrap/blob/main/skills/supabase-python/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ali Naqi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

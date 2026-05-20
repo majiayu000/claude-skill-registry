@@ -1,9 +1,0 @@
-{
-  "name": "databricks-jobs",
-  "repo": "datasciencemonkey/claude-code-cli-bricks",
-  "path": ".claude/skills/databricks-jobs/SKILL.md",
-  "category": "other",
-  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
-  "dir_name": "databricks-jobs",
-  "downloaded_at": "2026-02-22T06:51:10.087974Z"
-}

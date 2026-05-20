@@ -1,0 +1,16 @@
+{
+  "name": "create-ops-spreadsheet",
+  "repo": "PeterCowling/base-shop",
+  "path": ".claude/skills/create-ops-spreadsheet/SKILL.md",
+  "category": "other",
+  "source": "github.com/PeterCowling/base-shop",
+  "dir_name": "create-ops-spreadsheet",
+  "downloaded_at": "2026-02-15T05:37:25.254834Z",
+  "author": "PeterCowling",
+  "source_url": "https://github.com/PeterCowling/base-shop/blob/main/.claude/skills/create-ops-spreadsheet/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PeterCowling/base-shop/blob/main/.claude/skills/create-ops-spreadsheet/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

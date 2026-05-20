@@ -1,0 +1,16 @@
+{
+  "name": "linear-method",
+  "repo": "horuz-ai/claude-plugins",
+  "path": "plugins/linear/skills/linear-method/SKILL.md",
+  "category": "other",
+  "source": "github.com/horuz-ai/claude-plugins",
+  "dir_name": "linear-method-horuz-ai-claude-plugins-3",
+  "downloaded_at": "2026-02-22T07:28:30.425090Z",
+  "author": "horuz-ai",
+  "source_url": "https://github.com/horuz-ai/claude-plugins/blob/main/plugins/linear/skills/linear-method/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/horuz-ai/claude-plugins/blob/main/plugins/linear/skills/linear-method/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

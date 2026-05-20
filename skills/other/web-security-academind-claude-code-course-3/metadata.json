@@ -1,0 +1,16 @@
+{
+  "name": "web-security",
+  "repo": "academind/claude-code-course",
+  "path": ".claude/skills/web-security/SKILL.md",
+  "category": "other",
+  "source": "github.com/academind/claude-code-course",
+  "dir_name": "web-security-academind-claude-code-course-3",
+  "downloaded_at": "2026-02-22T06:02:55.791790Z",
+  "author": "academind",
+  "source_url": "https://github.com/academind/claude-code-course/blob/main/.claude/skills/web-security/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/academind/claude-code-course/blob/main/.claude/skills/web-security/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

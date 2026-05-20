@@ -1,9 +1,0 @@
-{
-  "name": "discord-send-file",
-  "repo": "joungwoo-lee/claude-gateway-discord",
-  "path": ".claude/skills/discord-send-file/SKILL.md",
-  "category": "other",
-  "source": "github.com/joungwoo-lee/claude-gateway-discord",
-  "dir_name": "discord-send-file",
-  "downloaded_at": "2026-02-22T07:43:44.041043Z"
-}

@@ -1,0 +1,16 @@
+{
+  "name": "js-ts-business-crud-transforms",
+  "repo": "icyJoseph/agent-skills",
+  "path": "skills/js-ts-business-crud-transforms/SKILL.md",
+  "category": "other",
+  "source": "github.com/icyJoseph/agent-skills",
+  "dir_name": "js-ts-business-crud-transforms-icyjoseph-agent-skills",
+  "downloaded_at": "2026-02-22T07:31:03.115959Z",
+  "author": "icyJoseph",
+  "source_url": "https://github.com/icyJoseph/agent-skills/blob/main/skills/js-ts-business-crud-transforms/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/icyJoseph/agent-skills/blob/main/skills/js-ts-business-crud-transforms/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

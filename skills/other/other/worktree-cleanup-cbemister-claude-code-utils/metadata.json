@@ -1,9 +1,0 @@
-{
-  "name": "worktree-cleanup",
-  "repo": "cbemister/claude-code-utils",
-  "path": ".claude/skills/worktree-cleanup/SKILL.md",
-  "category": "other",
-  "source": "github.com/cbemister/claude-code-utils",
-  "dir_name": "worktree-cleanup-cbemister-claude-code-utils",
-  "downloaded_at": "2026-02-22T06:40:33.926470Z"
-}

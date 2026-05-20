@@ -1,0 +1,16 @@
+{
+  "name": "cloudflare-r2-bucket-management-and-access",
+  "repo": "AgentiveCity/SkillFactory",
+  "path": ".claude/skills/cloudflare-r2-bucket-management-and-access/SKILL.md",
+  "category": "other",
+  "source": "github.com/AgentiveCity/SkillFactory",
+  "dir_name": "cloudflare-r2-bucket-management-and-access-agentivecity-skillfactory-3",
+  "downloaded_at": "2026-02-22T04:39:02.554880Z",
+  "author": "AgentiveCity",
+  "source_url": "https://github.com/AgentiveCity/SkillFactory/blob/main/.claude/skills/cloudflare-r2-bucket-management-and-access/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AgentiveCity/SkillFactory/blob/main/.claude/skills/cloudflare-r2-bucket-management-and-access/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

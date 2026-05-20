@@ -1,9 +1,0 @@
-{
-  "name": "schema-analyzer",
-  "repo": "hoqo/claude-plugins",
-  "path": "plugins/mongodb/skills/schema-analyzer/SKILL.md",
-  "category": "other",
-  "source": "github.com/hoqo/claude-plugins",
-  "dir_name": "schema-analyzer",
-  "downloaded_at": "2026-02-22T07:28:27.175071Z"
-}

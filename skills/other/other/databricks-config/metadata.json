@@ -1,9 +1,0 @@
-{
-  "name": "databricks-config",
-  "repo": "datasciencemonkey/claude-code-cli-bricks",
-  "path": ".claude/skills/databricks-config/SKILL.md",
-  "category": "other",
-  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
-  "dir_name": "databricks-config",
-  "downloaded_at": "2026-02-22T06:51:10.593808Z"
-}

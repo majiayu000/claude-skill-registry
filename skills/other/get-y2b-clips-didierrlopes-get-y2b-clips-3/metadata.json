@@ -1,0 +1,17 @@
+{
+  "name": "get-y2b-clips",
+  "repo": "DidierRLopes/get-y2b-clips",
+  "path": ".claude/skills/get-y2b-clips/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/DidierRLopes/get-y2b-clips",
+  "dir_name": "get-y2b-clips-didierrlopes-get-y2b-clips-3",
+  "downloaded_at": "2026-03-25T01:10:50.869056Z",
+  "author": "DidierRLopes",
+  "source_url": "https://github.com/DidierRLopes/get-y2b-clips/blob/main/.claude/skills/get-y2b-clips/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DidierRLopes/get-y2b-clips/blob/main/.claude/skills/get-y2b-clips/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

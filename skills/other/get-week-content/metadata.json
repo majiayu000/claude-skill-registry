@@ -1,0 +1,16 @@
+{
+  "name": "get-week-content",
+  "repo": "BugRoger/2bd",
+  "path": ".claude/skills/_sub/fetch/get-week-content/SKILL.md",
+  "category": "other",
+  "source": "github.com/BugRoger/2bd",
+  "dir_name": "get-week-content",
+  "downloaded_at": "2026-02-15T04:53:47.059791Z",
+  "author": "BugRoger",
+  "source_url": "https://github.com/BugRoger/2bd/blob/main/.claude/skills/_sub/fetch/get-week-content/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BugRoger/2bd/blob/main/.claude/skills/_sub/fetch/get-week-content/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

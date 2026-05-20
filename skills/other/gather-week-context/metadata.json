@@ -1,0 +1,16 @@
+{
+  "name": "gather-week-context",
+  "repo": "BugRoger/2bd",
+  "path": ".claude/skills/_sub/synthesis/gather-week-context/SKILL.md",
+  "category": "other",
+  "source": "github.com/BugRoger/2bd",
+  "dir_name": "gather-week-context",
+  "downloaded_at": "2026-02-15T04:53:47.412014Z",
+  "author": "BugRoger",
+  "source_url": "https://github.com/BugRoger/2bd/blob/main/.claude/skills/_sub/synthesis/gather-week-context/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BugRoger/2bd/blob/main/.claude/skills/_sub/synthesis/gather-week-context/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

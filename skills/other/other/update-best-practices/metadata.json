@@ -1,9 +1,0 @@
-{
-  "name": "update-best-practices",
-  "repo": "brave-experiments/brave-core-bot",
-  "path": ".claude/skills/update-best-practices/SKILL.md",
-  "category": "other",
-  "source": "github.com/brave-experiments/brave-core-bot",
-  "dir_name": "update-best-practices",
-  "downloaded_at": "2026-02-22T06:35:31.226946Z"
-}

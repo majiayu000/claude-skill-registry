@@ -1,0 +1,16 @@
+{
+  "name": "xlsx",
+  "repo": "Fergana-Labs/claude_agent_desktop",
+  "path": "plugins/skills/xlsx/SKILL.md",
+  "category": "other",
+  "source": "github.com/Fergana-Labs/claude_agent_desktop",
+  "dir_name": "xlsx-fergana-labs-claude-agent-desktop",
+  "downloaded_at": "2026-02-22T05:02:59.191875Z",
+  "author": "Fergana-Labs",
+  "source_url": "https://github.com/Fergana-Labs/claude_agent_desktop/blob/main/plugins/skills/xlsx/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Fergana-Labs/claude_agent_desktop/blob/main/plugins/skills/xlsx/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

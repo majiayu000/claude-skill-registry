@@ -1,9 +1,0 @@
-{
-  "name": "verification-before-completion",
-  "repo": "datasciencemonkey/claude-code-cli-bricks",
-  "path": ".claude/skills/verification-before-completion/SKILL.md",
-  "category": "other",
-  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
-  "dir_name": "verification-before-completion-datasciencemonkey-claude-code-cli-bric",
-  "downloaded_at": "2026-02-22T06:51:11.699754Z"
-}

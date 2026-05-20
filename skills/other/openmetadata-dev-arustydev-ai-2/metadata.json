@@ -1,0 +1,17 @@
+{
+  "name": "openmetadata-dev",
+  "repo": "aRustyDev/ai",
+  "path": "context/skills/openmetadata-dev/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aRustyDev/ai",
+  "dir_name": "openmetadata-dev-arustydev-ai-2",
+  "downloaded_at": "2026-03-01T06:24:13.823602Z",
+  "author": "aRustyDev",
+  "source_url": "https://github.com/aRustyDev/ai/blob/main/context/skills/openmetadata-dev/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aRustyDev/ai/blob/main/context/skills/openmetadata-dev/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

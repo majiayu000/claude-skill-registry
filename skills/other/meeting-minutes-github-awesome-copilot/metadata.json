@@ -1,0 +1,17 @@
+{
+  "name": "meeting-minutes",
+  "repo": "github/awesome-copilot",
+  "path": "skills/meeting-minutes/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/github/awesome-copilot",
+  "dir_name": "meeting-minutes-github-awesome-copilot",
+  "downloaded_at": "2026-03-01T07:54:01.705017Z",
+  "author": "github",
+  "source_url": "https://github.com/github/awesome-copilot/blob/main/skills/meeting-minutes/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/github/awesome-copilot/blob/main/skills/meeting-minutes/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

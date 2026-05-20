@@ -1,0 +1,16 @@
+{
+  "name": "log-viewer",
+  "repo": "TobiasWooldridge/WaveCap-SDR",
+  "path": ".claude/skills/log-viewer/SKILL.md",
+  "category": "other",
+  "source": "github.com/TobiasWooldridge/WaveCap-SDR",
+  "dir_name": "log-viewer-tobiaswooldridge-wavecap-sdr-2",
+  "downloaded_at": "2026-02-22T05:51:16.722500Z",
+  "author": "TobiasWooldridge",
+  "source_url": "https://github.com/TobiasWooldridge/WaveCap-SDR/blob/main/.claude/skills/log-viewer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TobiasWooldridge/WaveCap-SDR/blob/main/.claude/skills/log-viewer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

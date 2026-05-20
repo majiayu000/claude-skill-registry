@@ -1,0 +1,16 @@
+{
+  "name": "gh-post-issue-update",
+  "repo": "HomericIntelligence/ProjectOdyssey",
+  "path": ".claude/skills/gh-post-issue-update/SKILL.md",
+  "category": "other",
+  "source": "github.com/HomericIntelligence/ProjectOdyssey",
+  "dir_name": "gh-post-issue-update-homericintelligence-projectodyssey-2",
+  "downloaded_at": "2026-02-22T05:09:20.108469Z",
+  "author": "HomericIntelligence",
+  "source_url": "https://github.com/HomericIntelligence/ProjectOdyssey/blob/main/.claude/skills/gh-post-issue-update/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HomericIntelligence/ProjectOdyssey/blob/main/.claude/skills/gh-post-issue-update/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

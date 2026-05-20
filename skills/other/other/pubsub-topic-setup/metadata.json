@@ -1,9 +1,0 @@
-{
-  "name": "pubsub-topic-setup",
-  "repo": "Dicklesworthstone/pi_agent_rust",
-  "path": "tests/ext_conformance/artifacts/plugins-community/skills/14-gcp-skills/pubsub-topic-setup/SKILL.md",
-  "category": "other",
-  "source": "github.com/Dicklesworthstone/pi_agent_rust",
-  "dir_name": "pubsub-topic-setup",
-  "downloaded_at": "2026-02-22T04:57:47.900070Z"
-}

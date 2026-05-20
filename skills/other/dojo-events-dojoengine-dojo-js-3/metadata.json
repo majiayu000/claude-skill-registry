@@ -1,0 +1,17 @@
+{
+  "name": "dojo-events",
+  "repo": "dojoengine/dojo.js",
+  "path": ".claude/skills/dojo-events/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/dojoengine/dojo.js",
+  "dir_name": "dojo-events-dojoengine-dojo-js-3",
+  "downloaded_at": "2026-03-22T07:47:51.848131Z",
+  "author": "dojoengine",
+  "source_url": "https://github.com/dojoengine/dojo.js/blob/main/.claude/skills/dojo-events/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dojoengine/dojo.js/blob/main/.claude/skills/dojo-events/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

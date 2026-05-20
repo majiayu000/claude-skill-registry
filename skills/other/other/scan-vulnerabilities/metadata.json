@@ -1,9 +1,0 @@
-{
-  "name": "scan-vulnerabilities",
-  "repo": "HomericIntelligence/ProjectOdyssey",
-  "path": ".claude/skills/tier-2/scan-vulnerabilities/SKILL.md",
-  "category": "other",
-  "source": "github.com/HomericIntelligence/ProjectOdyssey",
-  "dir_name": "scan-vulnerabilities",
-  "downloaded_at": "2026-02-22T05:09:23.533186Z"
-}

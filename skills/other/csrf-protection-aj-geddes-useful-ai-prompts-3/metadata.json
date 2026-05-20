@@ -1,0 +1,16 @@
+{
+  "name": "csrf-protection",
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/csrf-protection/SKILL.md",
+  "category": "other",
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "dir_name": "csrf-protection-aj-geddes-useful-ai-prompts-3",
+  "downloaded_at": "2026-02-15T06:12:29.120359Z",
+  "author": "aj-geddes",
+  "source_url": "https://github.com/aj-geddes/useful-ai-prompts/blob/main/skills/csrf-protection/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AJ Geddes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

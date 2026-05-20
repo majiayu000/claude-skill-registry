@@ -1,0 +1,16 @@
+{
+  "name": "knip",
+  "repo": "brianlovin/claude-config",
+  "path": "skills/knip/SKILL.md",
+  "category": "other",
+  "source": "github.com/brianlovin/claude-config",
+  "dir_name": "knip",
+  "downloaded_at": "2026-02-15T06:38:39.410943Z",
+  "author": "brianlovin",
+  "source_url": "https://github.com/brianlovin/claude-config/blob/main/skills/knip/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brianlovin/claude-config/blob/main/skills/knip/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "mcp-integration",
+  "repo": "NovaAI-innovation/Infinite-Agency",
+  "path": ".qwen/skills/mcp-integration/SKILL.md",
+  "category": "other",
+  "source": "github.com/NovaAI-innovation/Infinite-Agency",
+  "dir_name": "mcp-integration-novaai-innovation-infinite-agency",
+  "downloaded_at": "2026-02-15T05:32:22.407966Z",
+  "author": "NovaAI-innovation",
+  "source_url": "https://github.com/NovaAI-innovation/Infinite-Agency/blob/main/.qwen/skills/mcp-integration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NovaAI-innovation/Infinite-Agency/blob/main/.qwen/skills/mcp-integration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

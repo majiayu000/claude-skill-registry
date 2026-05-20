@@ -196,6 +196,9 @@ The default audit uses metadata and paths for a fast full-archive pass; add
 `--include-frontmatter` when checking frontmatter/category drift.
 The audit also reports non-standard nested skill paths such as
 `category/category/skill/SKILL.md`.
+For those layout issues, use
+`python scripts/normalize_skill_depth.py --skills-dir skills --json` to review
+the exact move plan before applying it.
 
 Category counts are published in `categories/index.json`; full category payloads
 are available through `categories/<category>/manifest.json` and bounded

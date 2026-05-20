@@ -1,0 +1,16 @@
+{
+  "name": "mlx",
+  "repo": "itsmostafa/llm-engineering-skills",
+  "path": "skills/mlx/SKILL.md",
+  "category": "other",
+  "source": "github.com/itsmostafa/llm-engineering-skills",
+  "dir_name": "mlx-itsmostafa-llm-engineering-skil-2",
+  "downloaded_at": "2026-02-22T07:34:14.295531Z",
+  "author": "itsmostafa",
+  "source_url": "https://github.com/itsmostafa/llm-engineering-skills/blob/main/skills/mlx/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Mostafa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

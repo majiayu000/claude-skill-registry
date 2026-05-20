@@ -1,0 +1,16 @@
+{
+  "name": "fix-parallel",
+  "repo": "duc01226/EasyPlatform",
+  "path": ".claude/skills/fix-parallel/SKILL.md",
+  "category": "other",
+  "source": "github.com/duc01226/EasyPlatform",
+  "dir_name": "fix-parallel",
+  "downloaded_at": "2026-02-22T06:58:43.108099Z",
+  "author": "duc01226",
+  "source_url": "https://github.com/duc01226/EasyPlatform/blob/main/.claude/skills/fix-parallel/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Dang Phuoc Duc",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

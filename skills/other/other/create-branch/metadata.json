@@ -1,9 +1,0 @@
-{
-  "name": "create-branch",
-  "repo": "jmfontaine/jmf-claude-plugins",
-  "path": "plugins/git/skills/create-branch/SKILL.md",
-  "category": "other",
-  "source": "github.com/jmfontaine/jmf-claude-plugins",
-  "dir_name": "create-branch",
-  "downloaded_at": "2026-02-22T07:41:34.115702Z"
-}

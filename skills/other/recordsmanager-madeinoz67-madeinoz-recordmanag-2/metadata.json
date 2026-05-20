@@ -1,0 +1,16 @@
+{
+  "name": "recordsmanager",
+  "repo": "madeinoz67/madeinoz-recordmanager-skill",
+  "path": "src/skills/RecordsManager/SKILL.md",
+  "category": "other",
+  "source": "github.com/madeinoz67/madeinoz-recordmanager-skill",
+  "dir_name": "recordsmanager-madeinoz67-madeinoz-recordmanag-2",
+  "downloaded_at": "2026-02-19T01:31:32.637213Z",
+  "author": "madeinoz67",
+  "source_url": "https://github.com/madeinoz67/madeinoz-recordmanager-skill/blob/main/src/skills/RecordsManager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/madeinoz67/madeinoz-recordmanager-skill/blob/main/src/skills/RecordsManager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

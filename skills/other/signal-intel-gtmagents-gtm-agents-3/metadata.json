@@ -1,0 +1,16 @@
+{
+  "name": "signal-intel",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/abm-orchestration/skills/signal-intel/SKILL.md",
+  "category": "other",
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "signal-intel-gtmagents-gtm-agents-3",
+  "downloaded_at": "2026-02-22T07:21:53.159734Z",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/abm-orchestration/skills/signal-intel/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gtmagents/gtm-agents/blob/main/plugins/abm-orchestration/skills/signal-intel/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

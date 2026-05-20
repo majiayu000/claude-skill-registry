@@ -1,0 +1,17 @@
+{
+  "name": "debugging-dbt-errors",
+  "repo": "AltimateAI/data-engineering-skills",
+  "path": "skills/dbt/debugging-dbt-errors/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/AltimateAI/data-engineering-skills",
+  "dir_name": "debugging-dbt-errors-altimateai-data-engineering-ski-2",
+  "downloaded_at": "2026-03-22T04:50:20.178971Z",
+  "author": "AltimateAI",
+  "source_url": "https://github.com/AltimateAI/data-engineering-skills/blob/main/skills/dbt/debugging-dbt-errors/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AltimateAI/data-engineering-skills/blob/main/skills/dbt/debugging-dbt-errors/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

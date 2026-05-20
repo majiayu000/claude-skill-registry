@@ -1,0 +1,16 @@
+{
+  "name": "public-docs",
+  "repo": "GitbookIO/public-docs",
+  "path": "skill.md",
+  "category": "other",
+  "source": "github.com/GitbookIO/public-docs",
+  "dir_name": "public-docs",
+  "downloaded_at": "2026-02-22T05:05:10.273648Z",
+  "author": "GitbookIO",
+  "source_url": "https://github.com/GitbookIO/public-docs/blob/main/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GitbookIO/public-docs/blob/main/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

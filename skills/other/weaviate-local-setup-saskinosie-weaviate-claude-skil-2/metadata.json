@@ -1,0 +1,17 @@
+{
+  "name": "weaviate-local-setup",
+  "repo": "saskinosie/weaviate-claude-skills",
+  "path": "weaviate-local-setup/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/saskinosie/weaviate-claude-skills",
+  "dir_name": "weaviate-local-setup-saskinosie-weaviate-claude-skil-2",
+  "downloaded_at": "2026-03-05T01:33:58.352741Z",
+  "author": "saskinosie",
+  "source_url": "https://github.com/saskinosie/weaviate-claude-skills/blob/main/weaviate-local-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/saskinosie/weaviate-claude-skills/blob/main/weaviate-local-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

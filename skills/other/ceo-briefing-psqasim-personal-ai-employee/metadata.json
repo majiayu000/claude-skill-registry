@@ -1,0 +1,17 @@
+{
+  "name": "ceo-briefing",
+  "repo": "Psqasim/personal-ai-employee",
+  "path": ".claude/skills/ceo-briefing/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Psqasim/personal-ai-employee",
+  "dir_name": "ceo-briefing-psqasim-personal-ai-employee",
+  "downloaded_at": "2026-03-22T06:07:24.038576Z",
+  "author": "Psqasim",
+  "source_url": "https://github.com/Psqasim/personal-ai-employee/blob/main/.claude/skills/ceo-briefing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Psqasim/personal-ai-employee/blob/main/.claude/skills/ceo-briefing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

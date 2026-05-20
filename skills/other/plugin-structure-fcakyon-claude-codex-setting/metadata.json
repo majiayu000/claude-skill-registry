@@ -1,0 +1,17 @@
+{
+  "name": "plugin-structure",
+  "repo": "fcakyon/claude-codex-settings",
+  "path": "plugins/plugin-dev/skills/plugin-structure/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/fcakyon/claude-codex-settings",
+  "dir_name": "plugin-structure-fcakyon-claude-codex-setting",
+  "downloaded_at": "2026-03-24T01:20:06.799694Z",
+  "author": "fcakyon",
+  "source_url": "https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/skills/plugin-structure/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/skills/plugin-structure/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

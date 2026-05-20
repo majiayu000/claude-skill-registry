@@ -1,0 +1,17 @@
+{
+  "name": "mcp-servers",
+  "repo": "maxritter/pilot-shell",
+  "path": "pilot/skills/mcp-servers/skill.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/maxritter/pilot-shell",
+  "dir_name": "mcp-servers-maxritter-pilot-shell",
+  "downloaded_at": "2026-03-19T01:34:03.301231Z",
+  "author": "maxritter",
+  "source_url": "https://github.com/maxritter/pilot-shell/blob/main/pilot/skills/mcp-servers/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/maxritter/pilot-shell/blob/main/pilot/skills/mcp-servers/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "privateinvestigator",
+  "repo": "danielmiessler/Personal_AI_Infrastructure",
+  "path": "Releases/v2.3/.claude/skills/PrivateInvestigator/SKILL.md",
+  "category": "other",
+  "source": "github.com/danielmiessler/Personal_AI_Infrastructure",
+  "dir_name": "privateinvestigator-danielmiessler-personal-ai-infrastr-4",
+  "downloaded_at": "2026-02-15T06:53:18.173102Z",
+  "author": "danielmiessler",
+  "source_url": "https://github.com/danielmiessler/Personal_AI_Infrastructure/blob/main/Releases/v2.3/.claude/skills/PrivateInvestigator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel Miessler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

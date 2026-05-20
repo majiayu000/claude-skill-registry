@@ -1,0 +1,16 @@
+{
+  "name": "capture-health-check",
+  "repo": "TobiasWooldridge/WaveCap-SDR",
+  "path": ".claude/skills/capture-health-check/skill.md",
+  "category": "other",
+  "source": "github.com/TobiasWooldridge/WaveCap-SDR",
+  "dir_name": "capture-health-check-tobiaswooldridge-wavecap-sdr-2",
+  "downloaded_at": "2026-02-22T05:51:16.950817Z",
+  "author": "TobiasWooldridge",
+  "source_url": "https://github.com/TobiasWooldridge/WaveCap-SDR/blob/main/.claude/skills/capture-health-check/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TobiasWooldridge/WaveCap-SDR/blob/main/.claude/skills/capture-health-check/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "copyright-docs",
+  "repo": "catlog22/Claude-Code-Workflow",
+  "path": ".claude/skills/copyright-docs/SKILL.md",
+  "category": "other",
+  "source": "github.com/catlog22/Claude-Code-Workflow",
+  "dir_name": "copyright-docs-catlog22-claude-code-workflow",
+  "downloaded_at": "2026-02-15T06:41:48.604716Z",
+  "author": "catlog22",
+  "source_url": "https://github.com/catlog22/Claude-Code-Workflow/blob/main/.claude/skills/copyright-docs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Claude Development Guidelines",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

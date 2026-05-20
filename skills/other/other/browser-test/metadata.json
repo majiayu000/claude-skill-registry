@@ -1,9 +1,0 @@
-{
-  "name": "browser-test",
-  "repo": "cbemister/claude-code-utils",
-  "path": ".claude/skills/browser-test/SKILL.md",
-  "category": "other",
-  "source": "github.com/cbemister/claude-code-utils",
-  "dir_name": "browser-test",
-  "downloaded_at": "2026-02-22T06:40:34.518648Z"
-}

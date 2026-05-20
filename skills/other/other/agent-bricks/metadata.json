@@ -1,9 +1,0 @@
-{
-  "name": "agent-bricks",
-  "repo": "datasciencemonkey/claude-code-cli-bricks",
-  "path": ".claude/skills/agent-bricks/SKILL.md",
-  "category": "other",
-  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
-  "dir_name": "agent-bricks",
-  "downloaded_at": "2026-02-22T06:51:09.639708Z"
-}

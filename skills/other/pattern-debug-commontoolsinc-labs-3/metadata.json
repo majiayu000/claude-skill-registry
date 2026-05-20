@@ -1,0 +1,16 @@
+{
+  "name": "pattern-debug",
+  "repo": "commontoolsinc/labs",
+  "path": ".claude/skills/pattern-debug/SKILL.md",
+  "category": "other",
+  "source": "github.com/commontoolsinc/labs",
+  "dir_name": "pattern-debug-commontoolsinc-labs-3",
+  "downloaded_at": "2026-02-15T06:47:48.247865Z",
+  "author": "commontoolsinc",
+  "source_url": "https://github.com/commontoolsinc/labs/blob/main/.claude/skills/pattern-debug/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/commontoolsinc/labs/blob/main/.claude/skills/pattern-debug/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

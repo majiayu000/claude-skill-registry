@@ -1,0 +1,16 @@
+{
+  "name": "prompt-engineer",
+  "repo": "AIDotNet/MoYuCode",
+  "path": "skills/community/prompt-engineer/SKILL.md",
+  "category": "other",
+  "source": "github.com/AIDotNet/MoYuCode",
+  "dir_name": "prompt-engineer-aidotnet-moyucode",
+  "downloaded_at": "2026-02-15T04:40:48.178284Z",
+  "author": "AIDotNet",
+  "source_url": "https://github.com/AIDotNet/MoYuCode/blob/main/skills/community/prompt-engineer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AIDotNet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

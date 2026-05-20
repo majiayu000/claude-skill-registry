@@ -1,9 +1,0 @@
-{
-  "name": "suggestion-engine",
-  "repo": "huifer/Claude-Code-KnowCraft",
-  "path": ".claude/skills/suggestion-engine/skill.md",
-  "category": "other",
-  "source": "github.com/huifer/Claude-Code-KnowCraft",
-  "dir_name": "suggestion-engine",
-  "downloaded_at": "2026-02-22T07:29:21.471182Z"
-}

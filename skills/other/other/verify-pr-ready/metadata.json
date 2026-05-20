@@ -1,9 +1,0 @@
-{
-  "name": "verify-pr-ready",
-  "repo": "HomericIntelligence/ProjectOdyssey",
-  "path": ".claude/skills/verify-pr-ready/SKILL.md",
-  "category": "other",
-  "source": "github.com/HomericIntelligence/ProjectOdyssey",
-  "dir_name": "verify-pr-ready",
-  "downloaded_at": "2026-02-22T05:09:19.416403Z"
-}

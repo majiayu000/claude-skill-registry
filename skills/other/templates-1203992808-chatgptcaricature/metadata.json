@@ -1,0 +1,16 @@
+{
+  "name": "templates",
+  "repo": "1203992808/ChatGPTCaricature",
+  "path": ".claude/skills/testing-handbook-generator/templates/tool-skill.md",
+  "category": "other",
+  "source": "github.com/1203992808/ChatGPTCaricature",
+  "dir_name": "templates-1203992808-chatgptcaricature",
+  "downloaded_at": "2026-02-15T04:38:37.836447Z",
+  "author": "1203992808",
+  "source_url": "https://github.com/1203992808/ChatGPTCaricature/blob/main/.claude/skills/testing-handbook-generator/templates/tool-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/1203992808/ChatGPTCaricature/blob/main/.claude/skills/testing-handbook-generator/templates/tool-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

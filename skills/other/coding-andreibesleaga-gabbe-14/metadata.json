@@ -1,0 +1,16 @@
+{
+  "name": "coding",
+  "repo": "andreibesleaga/GABBE",
+  "path": "agents/skills/coding/tool-construction.skill.md",
+  "category": "other",
+  "source": "github.com/andreibesleaga/GABBE",
+  "dir_name": "coding-andreibesleaga-gabbe-14",
+  "downloaded_at": "2026-02-22T06:16:34.725145Z",
+  "author": "andreibesleaga",
+  "source_url": "https://github.com/andreibesleaga/GABBE/blob/main/agents/skills/coding/tool-construction.skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andreibesleaga/GABBE/blob/main/agents/skills/coding/tool-construction.skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

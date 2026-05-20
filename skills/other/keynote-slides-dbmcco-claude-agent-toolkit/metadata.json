@@ -1,0 +1,17 @@
+{
+  "name": "keynote-slides",
+  "repo": "dbmcco/claude-agent-toolkit",
+  "path": "skills/keynote-slides/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/dbmcco/claude-agent-toolkit",
+  "dir_name": "keynote-slides-dbmcco-claude-agent-toolkit",
+  "downloaded_at": "2026-03-22T07:41:20.346036Z",
+  "author": "dbmcco",
+  "source_url": "https://github.com/dbmcco/claude-agent-toolkit/blob/main/skills/keynote-slides/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dbmcco/claude-agent-toolkit/blob/main/skills/keynote-slides/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

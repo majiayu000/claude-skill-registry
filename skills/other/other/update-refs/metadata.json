@@ -1,9 +1,0 @@
-{
-  "name": "update-refs",
-  "repo": "maxritter/claude-pilot",
-  "path": ".claude/skills/update-refs/SKILL.md",
-  "category": "other",
-  "source": "github.com/maxritter/claude-pilot",
-  "dir_name": "update-refs",
-  "downloaded_at": "2026-02-19T01:32:09.431003Z"
-}

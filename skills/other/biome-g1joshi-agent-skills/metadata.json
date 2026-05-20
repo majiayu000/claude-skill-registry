@@ -1,0 +1,17 @@
+{
+  "name": "biome",
+  "repo": "G1Joshi/Agent-Skills",
+  "path": "skills/tools/biome/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/G1Joshi/Agent-Skills",
+  "dir_name": "biome-g1joshi-agent-skills",
+  "downloaded_at": "2026-03-22T05:22:20.614732Z",
+  "author": "G1Joshi",
+  "source_url": "https://github.com/G1Joshi/Agent-Skills/blob/main/skills/tools/biome/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/G1Joshi/Agent-Skills/blob/main/skills/tools/biome/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

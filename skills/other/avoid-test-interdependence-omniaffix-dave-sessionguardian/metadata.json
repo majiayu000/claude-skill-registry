@@ -1,0 +1,16 @@
+{
+  "name": "avoid-test-interdependence",
+  "repo": "Omniaffix-Dave/SessionGuardian",
+  "path": ".github/skills/avoid-test-interdependence/SKILL.md",
+  "category": "other",
+  "source": "github.com/Omniaffix-Dave/SessionGuardian",
+  "dir_name": "avoid-test-interdependence-omniaffix-dave-sessionguardian",
+  "downloaded_at": "2026-02-22T05:29:36.671571Z",
+  "author": "Omniaffix-Dave",
+  "source_url": "https://github.com/Omniaffix-Dave/SessionGuardian/blob/main/.github/skills/avoid-test-interdependence/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Omniaffix-Dave/SessionGuardian/blob/main/.github/skills/avoid-test-interdependence/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

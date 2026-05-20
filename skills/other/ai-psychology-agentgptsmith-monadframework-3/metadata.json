@@ -1,0 +1,16 @@
+{
+  "name": "ai-psychology",
+  "repo": "agentgptsmith/MonadFramework",
+  "path": ".claude/skills/ai-psychology/SKILL.md",
+  "category": "other",
+  "source": "github.com/agentgptsmith/MonadFramework",
+  "dir_name": "ai-psychology-agentgptsmith-monadframework-3",
+  "downloaded_at": "2026-02-15T06:07:08.993538Z",
+  "author": "agentgptsmith",
+  "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/ai-psychology/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/ai-psychology/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

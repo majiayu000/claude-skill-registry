@@ -1,0 +1,16 @@
+{
+  "name": "review-and-judge",
+  "repo": "hamzashakoor119/Build-ToDo-App-Using-Claude-and-SpecKitPlus",
+  "path": ".claude/skills/review-and-judge/SKILL.md",
+  "category": "other",
+  "source": "github.com/hamzashakoor119/Build-ToDo-App-Using-Claude-and-SpecKitPlus",
+  "dir_name": "review-and-judge-hamzashakoor119-build-todo-app-using-2",
+  "downloaded_at": "2026-02-22T07:24:39.667735Z",
+  "author": "hamzashakoor119",
+  "source_url": "https://github.com/hamzashakoor119/Build-ToDo-App-Using-Claude-and-SpecKitPlus/blob/main/.claude/skills/review-and-judge/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hamzashakoor119/Build-ToDo-App-Using-Claude-and-SpecKitPlus/blob/main/.claude/skills/review-and-judge/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,9 +1,0 @@
-{
-  "name": "convert-to-docker",
-  "repo": "gavrielc/nanoclaw",
-  "path": ".claude/skills/convert-to-docker/SKILL.md",
-  "category": "other",
-  "source": "github.com/gavrielc/nanoclaw",
-  "dir_name": "convert-to-docker",
-  "downloaded_at": "2026-02-10T16:36:03.211245Z"
-}

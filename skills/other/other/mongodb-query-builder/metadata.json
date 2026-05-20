@@ -1,9 +1,0 @@
-{
-  "name": "mongodb-query-builder",
-  "repo": "hoqo/claude-plugins",
-  "path": "plugins/mongodb/skills/mongodb-query-builder/SKILL.md",
-  "category": "other",
-  "source": "github.com/hoqo/claude-plugins",
-  "dir_name": "mongodb-query-builder",
-  "downloaded_at": "2026-02-22T07:28:27.436336Z"
-}

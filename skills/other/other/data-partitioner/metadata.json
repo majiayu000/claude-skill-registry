@@ -1,9 +1,0 @@
-{
-  "name": "data-partitioner",
-  "repo": "Dicklesworthstone/pi_agent_rust",
-  "path": "tests/ext_conformance/artifacts/plugins-community/skills/11-data-pipelines/data-partitioner/SKILL.md",
-  "category": "other",
-  "source": "github.com/Dicklesworthstone/pi_agent_rust",
-  "dir_name": "data-partitioner",
-  "downloaded_at": "2026-02-22T04:57:50.523852Z"
-}

@@ -1,0 +1,16 @@
+{
+  "name": "copy-editing",
+  "repo": "Im5tu/claude",
+  "path": "skills/copy-editing/SKILL.md",
+  "category": "other",
+  "source": "github.com/Im5tu/claude",
+  "dir_name": "copy-editing-im5tu-claude",
+  "downloaded_at": "2026-02-15T05:14:26.575915Z",
+  "author": "Im5tu",
+  "source_url": "https://github.com/Im5tu/claude/blob/main/skills/copy-editing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Stuart Blackler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

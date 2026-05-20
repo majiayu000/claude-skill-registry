@@ -1,0 +1,16 @@
+{
+  "name": "pdf-processing",
+  "repo": "Krosebrook/source-of-truth-monorepo",
+  "path": "plugins/marketplaces/claude-code-templates/cli-tool/components/skills/document-processing/pdf-processing/SKILL.md",
+  "category": "other",
+  "source": "github.com/Krosebrook/source-of-truth-monorepo",
+  "dir_name": "pdf-processing-krosebrook-source-of-truth-mono-2",
+  "downloaded_at": "2026-02-22T05:18:00.624755Z",
+  "author": "Krosebrook",
+  "source_url": "https://github.com/Krosebrook/source-of-truth-monorepo/blob/main/plugins/marketplaces/claude-code-templates/cli-tool/components/skills/document-processing/pdf-processing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Krosebrook/source-of-truth-monorepo/blob/main/plugins/marketplaces/claude-code-templates/cli-tool/components/skills/document-processing/pdf-processing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

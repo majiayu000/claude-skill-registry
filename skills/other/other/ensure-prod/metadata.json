@@ -1,9 +1,0 @@
-{
-  "name": "ensure-prod",
-  "repo": "antialias/abaci-one",
-  "path": ".claude/skills/ensure-prod/SKILL.md",
-  "category": "other",
-  "source": "github.com/antialias/abaci-one",
-  "dir_name": "ensure-prod",
-  "downloaded_at": "2026-02-22T06:18:41.181302Z"
-}

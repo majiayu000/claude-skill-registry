@@ -1,0 +1,16 @@
+{
+  "name": "worker-benchmarks",
+  "repo": "ruvnet/claude-flow",
+  "path": ".agents/skills/worker-benchmarks/skill.md",
+  "category": "other",
+  "source": "github.com/ruvnet/claude-flow",
+  "dir_name": "worker-benchmarks-ruvnet-claude-flow-3",
+  "downloaded_at": "2026-02-24T01:32:03.559138Z",
+  "author": "ruvnet",
+  "source_url": "https://github.com/ruvnet/claude-flow/blob/main/.agents/skills/worker-benchmarks/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ruvnet/claude-flow/blob/main/.agents/skills/worker-benchmarks/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

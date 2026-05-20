@@ -1,0 +1,16 @@
+{
+  "name": "crm-hygiene",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/sales-pipeline/skills/crm-hygiene/SKILL.md",
+  "category": "other",
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "crm-hygiene-gtmagents-gtm-agents-2",
+  "downloaded_at": "2026-02-22T07:21:51.507876Z",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/sales-pipeline/skills/crm-hygiene/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gtmagents/gtm-agents/blob/main/plugins/sales-pipeline/skills/crm-hygiene/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

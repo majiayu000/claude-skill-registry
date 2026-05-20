@@ -1,9 +1,0 @@
-{
-  "name": "github-automation",
-  "repo": "ruvnet/claude-flow",
-  "path": ".agents/skills/github-automation/SKILL.md",
-  "category": "other",
-  "source": "github.com/ruvnet/claude-flow",
-  "dir_name": "github-automation",
-  "downloaded_at": "2026-02-22T01:33:52.170789Z"
-}

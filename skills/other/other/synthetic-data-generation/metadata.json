@@ -1,9 +1,0 @@
-{
-  "name": "synthetic-data-generation",
-  "repo": "datasciencemonkey/claude-code-cli-bricks",
-  "path": ".claude/skills/synthetic-data-generation/SKILL.md",
-  "category": "other",
-  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
-  "dir_name": "synthetic-data-generation",
-  "downloaded_at": "2026-02-22T06:51:11.240523Z"
-}

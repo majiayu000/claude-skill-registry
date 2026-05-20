@@ -1,0 +1,17 @@
+{
+  "name": "bioservices",
+  "repo": "K-Dense-AI/claude-scientific-skills",
+  "path": "scientific-skills/bioservices/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/K-Dense-AI/claude-scientific-skills",
+  "dir_name": "bioservices-k-dense-ai-claude-scientific-sk",
+  "downloaded_at": "2026-04-09T01:11:19.470522Z",
+  "author": "K-Dense-AI",
+  "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/scientific-skills/bioservices/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/scientific-skills/bioservices/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

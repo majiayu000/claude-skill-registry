@@ -1,0 +1,16 @@
+{
+  "name": "agentic-jumpstart-dependency-management",
+  "repo": "bearbinary/Jarvy",
+  "path": ".claude/skills/agentic-jumpstart-dependency-management/SKILL.md",
+  "category": "other",
+  "source": "github.com/bearbinary/Jarvy",
+  "dir_name": "agentic-jumpstart-dependency-management-bearbinary-jarvy-3",
+  "downloaded_at": "2026-02-22T06:30:16.041670Z",
+  "author": "bearbinary",
+  "source_url": "https://github.com/bearbinary/Jarvy/blob/main/.claude/skills/agentic-jumpstart-dependency-management/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Zac Clifton",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

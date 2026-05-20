@@ -1,0 +1,16 @@
+{
+  "name": "blogwatcher",
+  "repo": "EthanAlgoX/MarketBot",
+  "path": "skills/blogwatcher/SKILL.md",
+  "category": "other",
+  "source": "github.com/EthanAlgoX/MarketBot",
+  "dir_name": "blogwatcher-ethanalgox-marketbot",
+  "downloaded_at": "2026-02-22T05:01:03.833935Z",
+  "author": "EthanAlgoX",
+  "source_url": "https://github.com/EthanAlgoX/MarketBot/blob/main/skills/blogwatcher/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 marketbot contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

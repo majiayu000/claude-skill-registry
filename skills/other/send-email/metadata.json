@@ -1,0 +1,16 @@
+{
+  "name": "send-email",
+  "repo": "growupanand/ConvoForm",
+  "path": ".agents/skills/resend/send-email/SKILL.md",
+  "category": "other",
+  "source": "github.com/growupanand/ConvoForm",
+  "dir_name": "send-email",
+  "downloaded_at": "2026-02-15T07:24:31.201587Z",
+  "author": "growupanand",
+  "source_url": "https://github.com/growupanand/ConvoForm/blob/main/.agents/skills/resend/send-email/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/growupanand/ConvoForm/blob/main/.agents/skills/resend/send-email/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

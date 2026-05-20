@@ -1,0 +1,16 @@
+{
+  "name": "iac-security-scanner",
+  "repo": "hackIDLE/skills",
+  "path": "skills/iac-security-scanner/SKILL.md",
+  "category": "other",
+  "source": "github.com/hackIDLE/skills",
+  "dir_name": "iac-security-scanner-hackidle-skills",
+  "downloaded_at": "2026-02-22T07:23:40.611990Z",
+  "author": "hackIDLE",
+  "source_url": "https://github.com/hackIDLE/skills/blob/main/skills/iac-security-scanner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hackIDLE/skills/blob/main/skills/iac-security-scanner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

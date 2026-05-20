@@ -1,0 +1,17 @@
+{
+  "name": "base64-payload",
+  "repo": "cisco-ai-defense/skill-scanner",
+  "path": "evals/skills/obfuscation/base64-payload/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cisco-ai-defense/skill-scanner",
+  "dir_name": "base64-payload-cisco-ai-defense-skill-scanner-2",
+  "downloaded_at": "2026-03-22T07:28:45.043118Z",
+  "author": "cisco-ai-defense",
+  "source_url": "https://github.com/cisco-ai-defense/skill-scanner/blob/main/evals/skills/obfuscation/base64-payload/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cisco-ai-defense/skill-scanner/blob/main/evals/skills/obfuscation/base64-payload/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

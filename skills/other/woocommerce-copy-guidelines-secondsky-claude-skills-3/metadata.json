@@ -1,0 +1,17 @@
+{
+  "name": "woocommerce-copy-guidelines",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/woocommerce-copy-guidelines/skills/woocommerce-copy-guidelines/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "woocommerce-copy-guidelines-secondsky-claude-skills-3",
+  "downloaded_at": "2026-05-04T02:14:50.854943Z",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/woocommerce-copy-guidelines/skills/woocommerce-copy-guidelines/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/secondsky/claude-skills/blob/main/plugins/woocommerce-copy-guidelines/skills/woocommerce-copy-guidelines/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

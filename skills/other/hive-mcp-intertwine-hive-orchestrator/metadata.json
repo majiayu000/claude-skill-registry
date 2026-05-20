@@ -1,0 +1,16 @@
+{
+  "name": "hive-mcp",
+  "repo": "intertwine/hive-orchestrator",
+  "path": ".opencode/skill/hive-mcp/SKILL.md",
+  "category": "other",
+  "source": "github.com/intertwine/hive-orchestrator",
+  "dir_name": "hive-mcp-intertwine-hive-orchestrator",
+  "downloaded_at": "2026-02-15T07:35:22.515004Z",
+  "author": "intertwine",
+  "source_url": "https://github.com/intertwine/hive-orchestrator/blob/main/.opencode/skill/hive-mcp/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Intertwine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

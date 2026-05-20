@@ -1,0 +1,16 @@
+{
+  "name": "catalyst-tracker",
+  "repo": "EthanAlgoX/MarketBot",
+  "path": "skills/catalyst-tracker/SKILL.md",
+  "category": "other",
+  "source": "github.com/EthanAlgoX/MarketBot",
+  "dir_name": "catalyst-tracker-ethanalgox-marketbot",
+  "downloaded_at": "2026-02-22T05:01:04.915611Z",
+  "author": "EthanAlgoX",
+  "source_url": "https://github.com/EthanAlgoX/MarketBot/blob/main/skills/catalyst-tracker/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 marketbot contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,9 +1,0 @@
-{
-  "name": "release-manager",
-  "repo": "finos/morphir",
-  "path": ".claude/skills/release-manager/SKILL.md",
-  "category": "other",
-  "source": "github.com/finos/morphir",
-  "dir_name": "release-manager-finos-morphir",
-  "downloaded_at": "2026-02-22T07:10:02.337093Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "databricks-app-apx",
-  "repo": "datasciencemonkey/claude-code-cli-bricks",
-  "path": ".claude/skills/databricks-app-apx/SKILL.md",
-  "category": "other",
-  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
-  "dir_name": "databricks-app-apx",
-  "downloaded_at": "2026-02-22T06:51:10.664630Z"
-}

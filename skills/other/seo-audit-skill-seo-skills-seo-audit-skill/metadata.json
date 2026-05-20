@@ -1,0 +1,17 @@
+{
+  "name": "seo-audit-skill",
+  "repo": "seo-skills/seo-audit-skill",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/seo-skills/seo-audit-skill",
+  "dir_name": "seo-audit-skill-seo-skills-seo-audit-skill",
+  "downloaded_at": "2026-05-19T04:07:46.066667Z",
+  "author": "seo-skills",
+  "source_url": "https://github.com/seo-skills/seo-audit-skill/blob/main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seo-skills/seo-audit-skill/blob/main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

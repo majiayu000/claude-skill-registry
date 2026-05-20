@@ -1,0 +1,17 @@
+{
+  "name": "typescript-circular-dependency",
+  "repo": "Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "path": ".claude/skills/claudeception/examples/typescript-circular-dependency/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "dir_name": "typescript-circular-dependency-wania-kazmi-claude-code-autonomo-3",
+  "downloaded_at": "2026-03-22T06:30:01.425169Z",
+  "author": "Wania-Kazmi",
+  "source_url": "https://github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow/blob/main/.claude/skills/claudeception/examples/typescript-circular-dependency/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow/blob/main/.claude/skills/claudeception/examples/typescript-circular-dependency/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "mongodb-atlas",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/mongodb-atlas/SKILL.md",
+  "category": "other",
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "mongodb-atlas-lobbi-docs-claude-3",
+  "downloaded_at": "2026-02-15T05:23:06.393134Z",
+  "author": "Lobbi-Docs",
+  "source_url": "https://github.com/Lobbi-Docs/claude/blob/main/.claude/skills/mongodb-atlas/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Golden Armada Team",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "verify",
+  "repo": "Pjpj42/GridRacer",
+  "path": ".claude/skills/verify/SKILL.md",
+  "category": "other",
+  "source": "github.com/Pjpj42/GridRacer",
+  "dir_name": "verify-pjpj42-gridracer-2",
+  "downloaded_at": "2026-02-22T05:33:32.161532Z",
+  "author": "Pjpj42",
+  "source_url": "https://github.com/Pjpj42/GridRacer/blob/main/.claude/skills/verify/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Pjpj42/GridRacer/blob/main/.claude/skills/verify/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "thanos",
+  "repo": "Geralt1983/Thanos",
+  "path": "Skills/Thanos/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Geralt1983/Thanos",
+  "dir_name": "thanos-geralt1983-thanos",
+  "downloaded_at": "2026-03-22T05:24:18.252044Z",
+  "author": "Geralt1983",
+  "source_url": "https://github.com/Geralt1983/Thanos/blob/main/Skills/Thanos/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Geralt1983/Thanos/blob/main/Skills/Thanos/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

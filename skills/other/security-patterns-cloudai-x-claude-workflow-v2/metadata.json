@@ -1,0 +1,17 @@
+{
+  "name": "security-patterns",
+  "repo": "CloudAI-X/claude-workflow-v2",
+  "path": "skills/security-patterns/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/CloudAI-X/claude-workflow-v2",
+  "dir_name": "security-patterns-cloudai-x-claude-workflow-v2",
+  "downloaded_at": "2026-03-22T05:06:23.710903Z",
+  "author": "CloudAI-X",
+  "source_url": "https://github.com/CloudAI-X/claude-workflow-v2/blob/main/skills/security-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CloudAI-X/claude-workflow-v2/blob/main/skills/security-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

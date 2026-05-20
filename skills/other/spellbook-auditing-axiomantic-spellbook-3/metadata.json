@@ -1,0 +1,17 @@
+{
+  "name": "spellbook-auditing",
+  "repo": "axiomantic/spellbook",
+  "path": ".claude/skills/spellbook-auditing/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/axiomantic/spellbook",
+  "dir_name": "spellbook-auditing-axiomantic-spellbook-3",
+  "downloaded_at": "2026-03-01T06:53:13.519365Z",
+  "author": "axiomantic",
+  "source_url": "https://github.com/axiomantic/spellbook/blob/main/.claude/skills/spellbook-auditing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/axiomantic/spellbook/blob/main/.claude/skills/spellbook-auditing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "grafana-dashboards",
+  "repo": "fgarofalo56/Suppercharge_Microsoft_Fabric",
+  "path": ".github/skills/grafana-dashboards/SKILL.md",
+  "category": "other",
+  "source": "github.com/fgarofalo56/Suppercharge_Microsoft_Fabric",
+  "dir_name": "grafana-dashboards-fgarofalo56-suppercharge-microso",
+  "downloaded_at": "2026-02-15T07:11:57.996179Z",
+  "author": "fgarofalo56",
+  "source_url": "https://github.com/fgarofalo56/Suppercharge_Microsoft_Fabric/blob/main/.github/skills/grafana-dashboards/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Francisco Garcia",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

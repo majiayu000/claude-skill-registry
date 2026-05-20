@@ -1,9 +1,0 @@
-{
-  "name": "event-gateway",
-  "repo": "hookdeck/agent-skills",
-  "path": "skills/event-gateway/SKILL.md",
-  "category": "other",
-  "source": "github.com/hookdeck/agent-skills",
-  "dir_name": "event-gateway",
-  "downloaded_at": "2026-02-22T07:28:20.695538Z"
-}

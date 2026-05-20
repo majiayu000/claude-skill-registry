@@ -1,0 +1,17 @@
+{
+  "name": "og-image-creator",
+  "repo": "andhikapraa/curhatin-ai",
+  "path": ".claude/skills/og-image-creator/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/andhikapraa/curhatin-ai",
+  "dir_name": "og-image-creator-andhikapraa-curhatin-ai-2",
+  "downloaded_at": "2026-03-22T06:55:27.388170Z",
+  "author": "andhikapraa",
+  "source_url": "https://github.com/andhikapraa/curhatin-ai/blob/main/.claude/skills/og-image-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andhikapraa/curhatin-ai/blob/main/.claude/skills/og-image-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

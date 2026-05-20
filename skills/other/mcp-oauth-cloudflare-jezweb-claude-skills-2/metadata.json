@@ -1,0 +1,16 @@
+{
+  "name": "mcp-oauth-cloudflare",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/mcp-oauth-cloudflare/SKILL.md",
+  "category": "other",
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "mcp-oauth-cloudflare-jezweb-claude-skills-2",
+  "downloaded_at": "2026-02-18T01:28:16.733453Z",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/mcp-oauth-cloudflare/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

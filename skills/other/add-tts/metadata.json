@@ -1,0 +1,16 @@
+{
+  "name": "add-tts",
+  "repo": "antialias/abaci-one",
+  "path": ".claude/skills/add-tts/SKILL.md",
+  "category": "other",
+  "source": "github.com/antialias/abaci-one",
+  "dir_name": "add-tts",
+  "downloaded_at": "2026-02-22T06:18:41.042205Z",
+  "author": "antialias",
+  "source_url": "https://github.com/antialias/abaci-one/blob/main/.claude/skills/add-tts/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/antialias/abaci-one/blob/main/.claude/skills/add-tts/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

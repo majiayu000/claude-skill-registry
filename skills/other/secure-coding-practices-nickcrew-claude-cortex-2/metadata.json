@@ -1,0 +1,17 @@
+{
+  "name": "secure-coding-practices",
+  "repo": "NickCrew/claude-cortex",
+  "path": "skills/secure-coding-practices/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/NickCrew/claude-cortex",
+  "dir_name": "secure-coding-practices-nickcrew-claude-cortex-2",
+  "downloaded_at": "2026-03-22T05:56:32.401999Z",
+  "author": "NickCrew",
+  "source_url": "https://github.com/NickCrew/claude-cortex/blob/main/skills/secure-coding-practices/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NickCrew/claude-cortex/blob/main/skills/secure-coding-practices/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "har-to-vue",
+  "repo": "Dwsy/agent",
+  "path": "skills/har-to-vue/SKILL.md",
+  "category": "other",
+  "source": "github.com/Dwsy/agent",
+  "dir_name": "har-to-vue",
+  "downloaded_at": "2026-02-22T04:59:50.067778Z",
+  "author": "Dwsy",
+  "source_url": "https://github.com/Dwsy/agent/blob/main/skills/har-to-vue/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Dwsy/agent/blob/main/skills/har-to-vue/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

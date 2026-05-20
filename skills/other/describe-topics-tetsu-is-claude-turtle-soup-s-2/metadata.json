@@ -1,0 +1,16 @@
+{
+  "name": "describe-topics",
+  "repo": "Tetsu-is/claude-turtle-soup-skills",
+  "path": ".claude/skills/describe-topics/SKILL.md",
+  "category": "other",
+  "source": "github.com/Tetsu-is/claude-turtle-soup-skills",
+  "dir_name": "describe-topics-tetsu-is-claude-turtle-soup-s-2",
+  "downloaded_at": "2026-02-22T05:49:11.630472Z",
+  "author": "Tetsu-is",
+  "source_url": "https://github.com/Tetsu-is/claude-turtle-soup-skills/blob/main/.claude/skills/describe-topics/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tetsu-is/claude-turtle-soup-skills/blob/main/.claude/skills/describe-topics/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

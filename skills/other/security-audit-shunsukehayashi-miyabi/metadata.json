@@ -1,0 +1,16 @@
+{
+  "name": "security-audit",
+  "repo": "ShunsukeHayashi/Miyabi",
+  "path": "packages/mcp-bundle/claude-plugins/miyabi-full/skills/security-audit/SKILL.md",
+  "category": "other",
+  "source": "github.com/ShunsukeHayashi/Miyabi",
+  "dir_name": "security-audit-shunsukehayashi-miyabi",
+  "downloaded_at": "2026-02-15T05:46:54.515833Z",
+  "author": "ShunsukeHayashi",
+  "source_url": "https://github.com/ShunsukeHayashi/Miyabi/blob/main/packages/mcp-bundle/claude-plugins/miyabi-full/skills/security-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ShunsukeHayashi/Miyabi/blob/main/packages/mcp-bundle/claude-plugins/miyabi-full/skills/security-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

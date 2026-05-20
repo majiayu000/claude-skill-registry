@@ -1,9 +1,0 @@
-{
-  "name": "helm-chart-scaffolding",
-  "repo": "MICHAEL-BODO/LT-MISSION-CONTROL",
-  "path": ".agent/skills/helm-chart-scaffolding/SKILL.md",
-  "category": "other",
-  "source": "github.com/MICHAEL-BODO/LT-MISSION-CONTROL",
-  "dir_name": "helm-chart-scaffolding-michael-bodo-lt-mission-control",
-  "downloaded_at": "2026-02-22T05:21:13.143044Z"
-}

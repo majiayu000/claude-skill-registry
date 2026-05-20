@@ -1,0 +1,17 @@
+{
+  "name": "communicate-with-i",
+  "repo": "crystal-project-inc/personality-ai",
+  "path": "communicate-with-i/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/crystal-project-inc/personality-ai",
+  "dir_name": "communicate-with-i-crystal-project-inc-personality-ai",
+  "downloaded_at": "2026-03-01T07:19:27.403269Z",
+  "author": "crystal-project-inc",
+  "source_url": "https://github.com/crystal-project-inc/personality-ai/blob/main/communicate-with-i/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/crystal-project-inc/personality-ai/blob/main/communicate-with-i/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

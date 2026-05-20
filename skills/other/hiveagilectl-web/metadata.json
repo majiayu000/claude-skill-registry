@@ -1,0 +1,16 @@
+{
+  "name": "hiveagilectl-web",
+  "repo": "aitorroma/hiveagilectl-web",
+  "path": "skill.md",
+  "category": "other",
+  "source": "github.com/aitorroma/hiveagilectl-web",
+  "dir_name": "hiveagilectl-web",
+  "downloaded_at": "2026-02-15T06:12:23.057844Z",
+  "author": "aitorroma",
+  "source_url": "https://github.com/aitorroma/hiveagilectl-web/blob/main/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aitorroma/hiveagilectl-web/blob/main/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

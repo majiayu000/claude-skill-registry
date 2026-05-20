@@ -1,0 +1,16 @@
+{
+  "name": "smart-contract-analysis",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/security-research/skills/smart-contract-analysis/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "smart-contract-analysis",
+  "downloaded_at": "2026-02-18T01:16:56.859578Z",
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/plugins/babysitter/skills/babysit/process/specializations/security-research/skills/smart-contract-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 A5C AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

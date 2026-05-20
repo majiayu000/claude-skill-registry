@@ -1,0 +1,17 @@
+{
+  "name": "lint",
+  "repo": "ahtavarasmus/lightfriend-cloud",
+  "path": ".claude/skills/lint/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/ahtavarasmus/lightfriend-cloud",
+  "dir_name": "lint-ahtavarasmus-lightfriend-cloud-3",
+  "downloaded_at": "2026-03-22T06:44:44.493271Z",
+  "author": "ahtavarasmus",
+  "source_url": "https://github.com/ahtavarasmus/lightfriend-cloud/blob/master/.claude/skills/lint/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ahtavarasmus/lightfriend-cloud/blob/master/.claude/skills/lint/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

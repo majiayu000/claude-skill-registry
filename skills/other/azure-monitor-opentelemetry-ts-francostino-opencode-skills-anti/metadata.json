@@ -1,0 +1,17 @@
+{
+  "name": "azure-monitor-opentelemetry-ts",
+  "repo": "FrancoStino/opencode-skills-antigravity",
+  "path": "bundled-skills/azure-monitor-opentelemetry-ts/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/FrancoStino/opencode-skills-antigravity",
+  "dir_name": "azure-monitor-opentelemetry-ts-francostino-opencode-skills-anti",
+  "downloaded_at": "2026-03-22T05:21:25.743043Z",
+  "author": "FrancoStino",
+  "source_url": "https://github.com/FrancoStino/opencode-skills-antigravity/blob/main/bundled-skills/azure-monitor-opentelemetry-ts/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/FrancoStino/opencode-skills-antigravity/blob/main/bundled-skills/azure-monitor-opentelemetry-ts/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

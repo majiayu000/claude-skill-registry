@@ -1,9 +1,0 @@
-{
-  "name": "worker-benchmarks",
-  "repo": "ruvnet/claude-flow",
-  "path": ".agents/skills/worker-benchmarks/skill.md",
-  "category": "other",
-  "source": "github.com/ruvnet/claude-flow",
-  "dir_name": "worker-benchmarks-ruvnet-claude-flow",
-  "downloaded_at": "2026-02-24T01:32:03.559138Z"
-}

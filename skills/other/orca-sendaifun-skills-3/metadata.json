@@ -1,0 +1,17 @@
+{
+  "name": "orca",
+  "repo": "sendaifun/skills",
+  "path": "skills/orca/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sendaifun/skills",
+  "dir_name": "orca-sendaifun-skills-3",
+  "downloaded_at": "2026-03-20T01:33:27.242734Z",
+  "author": "sendaifun",
+  "source_url": "https://github.com/sendaifun/skills/blob/main/skills/orca/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sendaifun/skills/blob/main/skills/orca/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

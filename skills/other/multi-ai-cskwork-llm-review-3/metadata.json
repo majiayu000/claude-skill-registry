@@ -1,0 +1,17 @@
+{
+  "name": "multi-ai",
+  "repo": "cskwork/llm-review",
+  "path": "plugins/claude-codex/skills/multi-ai/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cskwork/llm-review",
+  "dir_name": "multi-ai-cskwork-llm-review-3",
+  "downloaded_at": "2026-03-22T07:35:26.963046Z",
+  "author": "cskwork",
+  "source_url": "https://github.com/cskwork/llm-review/blob/main/plugins/claude-codex/skills/multi-ai/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cskwork/llm-review/blob/main/plugins/claude-codex/skills/multi-ai/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

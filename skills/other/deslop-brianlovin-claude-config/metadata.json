@@ -1,0 +1,16 @@
+{
+  "name": "deslop",
+  "repo": "brianlovin/claude-config",
+  "path": "skills/deslop/SKILL.md",
+  "category": "other",
+  "source": "github.com/brianlovin/claude-config",
+  "dir_name": "deslop-brianlovin-claude-config",
+  "downloaded_at": "2026-02-15T06:38:39.659996Z",
+  "author": "brianlovin",
+  "source_url": "https://github.com/brianlovin/claude-config/blob/main/skills/deslop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brianlovin/claude-config/blob/main/skills/deslop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

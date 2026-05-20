@@ -1,9 +1,0 @@
-{
-  "name": "install",
-  "repo": "ivy/dotfiles",
-  "path": ".claude/skills/install/SKILL.md",
-  "category": "other",
-  "source": "github.com/ivy/dotfiles",
-  "dir_name": "install",
-  "downloaded_at": "2026-02-22T07:35:09.878244Z"
-}

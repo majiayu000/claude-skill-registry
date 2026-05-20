@@ -1,9 +1,0 @@
-{
-  "name": "recompile-workflows",
-  "repo": "github/gh-aw-firewall",
-  "path": ".claude/skills/recompile-workflows/SKILL.md",
-  "category": "other",
-  "source": "github.com/github/gh-aw-firewall",
-  "dir_name": "recompile-workflows",
-  "downloaded_at": "2026-02-22T07:18:23.577002Z"
-}

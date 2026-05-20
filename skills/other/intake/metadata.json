@@ -1,0 +1,16 @@
+{
+  "name": "intake",
+  "repo": "JordanGunn/skills",
+  "path": "skills/doctor/intake/SKILL.md",
+  "category": "other",
+  "source": "github.com/JordanGunn/skills",
+  "dir_name": "intake",
+  "downloaded_at": "2026-02-15T05:17:54.392900Z",
+  "author": "JordanGunn",
+  "source_url": "https://github.com/JordanGunn/skills/blob/main/skills/doctor/intake/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JordanGunn/skills/blob/main/skills/doctor/intake/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

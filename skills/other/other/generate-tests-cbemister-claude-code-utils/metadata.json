@@ -1,9 +1,0 @@
-{
-  "name": "generate-tests",
-  "repo": "cbemister/claude-code-utils",
-  "path": ".claude/skills/generate-tests/SKILL.md",
-  "category": "other",
-  "source": "github.com/cbemister/claude-code-utils",
-  "dir_name": "generate-tests-cbemister-claude-code-utils",
-  "downloaded_at": "2026-02-22T06:40:34.569671Z"
-}

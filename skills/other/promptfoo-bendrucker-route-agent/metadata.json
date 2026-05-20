@@ -1,0 +1,16 @@
+{
+  "name": "promptfoo",
+  "repo": "bendrucker/route-agent",
+  "path": ".claude/skills/promptfoo/SKILL.md",
+  "category": "other",
+  "source": "github.com/bendrucker/route-agent",
+  "dir_name": "promptfoo-bendrucker-route-agent",
+  "downloaded_at": "2026-02-22T06:31:13.787705Z",
+  "author": "bendrucker",
+  "source_url": "https://github.com/bendrucker/route-agent/blob/main/.claude/skills/promptfoo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bendrucker/route-agent/blob/main/.claude/skills/promptfoo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "next",
+  "repo": "flurdy/agent-skills",
+  "path": "skills/next/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/flurdy/agent-skills",
+  "dir_name": "next-flurdy-agent-skills-2",
+  "downloaded_at": "2026-03-01T07:44:39.395958Z",
+  "author": "flurdy",
+  "source_url": "https://github.com/flurdy/agent-skills/blob/main/skills/next/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/flurdy/agent-skills/blob/main/skills/next/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

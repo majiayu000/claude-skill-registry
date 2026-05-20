@@ -1,0 +1,16 @@
+{
+  "name": "serena-memory",
+  "repo": "Verridian-ai/life-os-Pulse-banner-generator",
+  "path": ".claude/skills/serena_memory/SKILL.md",
+  "category": "other",
+  "source": "github.com/Verridian-ai/life-os-Pulse-banner-generator",
+  "dir_name": "serena-memory-verridian-ai-life-os-pulse-banner-3",
+  "downloaded_at": "2026-02-22T05:53:30.130998Z",
+  "author": "Verridian-ai",
+  "source_url": "https://github.com/Verridian-ai/life-os-Pulse-banner-generator/blob/main/.claude/skills/serena_memory/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Verridian-ai/life-os-Pulse-banner-generator/blob/main/.claude/skills/serena_memory/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

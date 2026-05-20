@@ -1,9 +1,0 @@
-{
-  "name": "version-bumper",
-  "repo": "Dicklesworthstone/pi_agent_rust",
-  "path": "tests/ext_conformance/artifacts/plugins-community/skills/01-devops-basics/version-bumper/SKILL.md",
-  "category": "other",
-  "source": "github.com/Dicklesworthstone/pi_agent_rust",
-  "dir_name": "version-bumper",
-  "downloaded_at": "2026-02-22T04:57:46.888957Z"
-}

@@ -1,0 +1,16 @@
+{
+  "name": "claude-github-summary",
+  "repo": "gokhanarkan/claude-github-summary",
+  "path": "SKILL.md",
+  "category": "other",
+  "source": "github.com/gokhanarkan/claude-github-summary",
+  "dir_name": "claude-github-summary-gokhanarkan-claude-github-summar-2",
+  "downloaded_at": "2026-02-22T07:19:39.861735Z",
+  "author": "gokhanarkan",
+  "source_url": "https://github.com/gokhanarkan/claude-github-summary/blob/main/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Gökhan Arkan",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

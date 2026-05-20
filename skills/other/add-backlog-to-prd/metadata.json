@@ -1,0 +1,16 @@
+{
+  "name": "add-backlog-to-prd",
+  "repo": "brave-experiments/brave-core-bot",
+  "path": ".claude/skills/add-backlog-to-prd/SKILL.md",
+  "category": "other",
+  "source": "github.com/brave-experiments/brave-core-bot",
+  "dir_name": "add-backlog-to-prd",
+  "downloaded_at": "2026-02-22T06:35:30.864426Z",
+  "author": "brave-experiments",
+  "source_url": "https://github.com/brave-experiments/brave-core-bot/blob/main/.claude/skills/add-backlog-to-prd/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brave-experiments/brave-core-bot/blob/main/.claude/skills/add-backlog-to-prd/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

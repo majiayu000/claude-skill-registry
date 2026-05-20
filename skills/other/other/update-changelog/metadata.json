@@ -1,9 +1,0 @@
-{
-  "name": "update-changelog",
-  "repo": "Dicklesworthstone/pi_agent_rust",
-  "path": "tests/ext_conformance/artifacts/npm/mitsupi/skills/update-changelog/SKILL.md",
-  "category": "other",
-  "source": "github.com/Dicklesworthstone/pi_agent_rust",
-  "dir_name": "update-changelog",
-  "downloaded_at": "2026-02-22T04:57:45.241623Z"
-}

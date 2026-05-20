@@ -1,0 +1,16 @@
+{
+  "name": "pr-operations",
+  "repo": "dagster-io/erk",
+  "path": ".claude/skills/pr-operations/SKILL.md",
+  "category": "other",
+  "source": "github.com/dagster-io/erk",
+  "dir_name": "pr-operations-dagster-io-erk",
+  "downloaded_at": "2026-02-15T06:52:06.549615Z",
+  "author": "dagster-io",
+  "source_url": "https://github.com/dagster-io/erk/blob/main/.claude/skills/pr-operations/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dagster-io/erk/blob/main/.claude/skills/pr-operations/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

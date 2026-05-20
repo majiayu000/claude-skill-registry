@@ -1,0 +1,16 @@
+{
+  "name": "real-time-systems",
+  "repo": "jlaws/dotfiles",
+  "path": ".claude/skills/architecture/real-time-systems/SKILL.md",
+  "category": "other",
+  "source": "github.com/jlaws/dotfiles",
+  "dir_name": "real-time-systems",
+  "downloaded_at": "2026-02-15T07:44:37.342722Z",
+  "author": "jlaws",
+  "source_url": "https://github.com/jlaws/dotfiles/blob/main/.claude/skills/architecture/real-time-systems/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jlaws/dotfiles/blob/main/.claude/skills/architecture/real-time-systems/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

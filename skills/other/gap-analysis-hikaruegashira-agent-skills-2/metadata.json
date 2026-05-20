@@ -1,0 +1,16 @@
+{
+  "name": "gap-analysis",
+  "repo": "HikaruEgashira/agent-skills",
+  "path": "meta/skills/gap-analysis/SKILL.md",
+  "category": "other",
+  "source": "github.com/HikaruEgashira/agent-skills",
+  "dir_name": "gap-analysis-hikaruegashira-agent-skills-2",
+  "downloaded_at": "2026-02-22T05:09:12.440500Z",
+  "author": "HikaruEgashira",
+  "source_url": "https://github.com/HikaruEgashira/agent-skills/blob/main/meta/skills/gap-analysis/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HikaruEgashira/agent-skills/blob/main/meta/skills/gap-analysis/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

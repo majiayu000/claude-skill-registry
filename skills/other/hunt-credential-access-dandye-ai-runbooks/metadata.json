@@ -1,0 +1,17 @@
+{
+  "name": "hunt-credential-access",
+  "repo": "dandye/ai-runbooks",
+  "path": "skills/hunt-credential-access/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/dandye/ai-runbooks",
+  "dir_name": "hunt-credential-access-dandye-ai-runbooks",
+  "downloaded_at": "2026-03-22T07:38:29.779505Z",
+  "author": "dandye",
+  "source_url": "https://github.com/dandye/ai-runbooks/blob/main/skills/hunt-credential-access/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dandye/ai-runbooks/blob/main/skills/hunt-credential-access/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

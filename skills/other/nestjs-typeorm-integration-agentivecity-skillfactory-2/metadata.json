@@ -1,0 +1,16 @@
+{
+  "name": "nestjs-typeorm-integration",
+  "repo": "AgentiveCity/SkillFactory",
+  "path": ".claude/skills/nestjs-typeorm-integration/SKILL.md",
+  "category": "other",
+  "source": "github.com/AgentiveCity/SkillFactory",
+  "dir_name": "nestjs-typeorm-integration-agentivecity-skillfactory-2",
+  "downloaded_at": "2026-02-22T04:39:01.921815Z",
+  "author": "AgentiveCity",
+  "source_url": "https://github.com/AgentiveCity/SkillFactory/blob/main/.claude/skills/nestjs-typeorm-integration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AgentiveCity/SkillFactory/blob/main/.claude/skills/nestjs-typeorm-integration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

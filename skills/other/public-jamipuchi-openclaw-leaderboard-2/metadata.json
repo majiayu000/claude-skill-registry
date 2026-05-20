@@ -1,0 +1,16 @@
+{
+  "name": "public",
+  "repo": "jamipuchi/openclaw-leaderboard",
+  "path": ".agents/skills/openclaw-leaderboard/public/skill.md",
+  "category": "other",
+  "source": "github.com/jamipuchi/openclaw-leaderboard",
+  "dir_name": "public-jamipuchi-openclaw-leaderboard-2",
+  "downloaded_at": "2026-02-22T07:36:23.316762Z",
+  "author": "jamipuchi",
+  "source_url": "https://github.com/jamipuchi/openclaw-leaderboard/blob/main/.agents/skills/openclaw-leaderboard/public/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jamipuchi/openclaw-leaderboard/blob/main/.agents/skills/openclaw-leaderboard/public/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

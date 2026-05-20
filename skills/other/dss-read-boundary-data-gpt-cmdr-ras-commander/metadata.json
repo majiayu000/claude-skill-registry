@@ -1,0 +1,17 @@
+{
+  "name": "dss-read-boundary-data",
+  "repo": "gpt-cmdr/ras-commander",
+  "path": ".claude/skills/dss_read_boundary-data/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/gpt-cmdr/ras-commander",
+  "dir_name": "dss-read-boundary-data-gpt-cmdr-ras-commander",
+  "downloaded_at": "2026-03-01T07:56:16.949382Z",
+  "author": "gpt-cmdr",
+  "source_url": "https://github.com/gpt-cmdr/ras-commander/blob/main/.claude/skills/dss_read_boundary-data/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gpt-cmdr/ras-commander/blob/main/.claude/skills/dss_read_boundary-data/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

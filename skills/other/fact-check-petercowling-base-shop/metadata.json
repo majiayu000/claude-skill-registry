@@ -1,0 +1,16 @@
+{
+  "name": "fact-check",
+  "repo": "PeterCowling/base-shop",
+  "path": ".claude/skills/fact-check/SKILL.md",
+  "category": "other",
+  "source": "github.com/PeterCowling/base-shop",
+  "dir_name": "fact-check-petercowling-base-shop",
+  "downloaded_at": "2026-02-15T05:37:22.589423Z",
+  "author": "PeterCowling",
+  "source_url": "https://github.com/PeterCowling/base-shop/blob/main/.claude/skills/fact-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PeterCowling/base-shop/blob/main/.claude/skills/fact-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

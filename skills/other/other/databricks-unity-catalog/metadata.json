@@ -1,9 +1,0 @@
-{
-  "name": "databricks-unity-catalog",
-  "repo": "datasciencemonkey/claude-code-cli-bricks",
-  "path": ".claude/skills/databricks-unity-catalog/SKILL.md",
-  "category": "other",
-  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
-  "dir_name": "databricks-unity-catalog",
-  "downloaded_at": "2026-02-22T06:51:11.177505Z"
-}

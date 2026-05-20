@@ -1,0 +1,16 @@
+{
+  "name": "skills",
+  "repo": "Osama-Raza/todo-cli-phase-1",
+  "path": ".claude/skills/error-handling-skill.md",
+  "category": "other",
+  "source": "github.com/Osama-Raza/todo-cli-phase-1",
+  "dir_name": "skills-osama-raza-todo-cli-phase-1",
+  "downloaded_at": "2026-02-22T05:30:34.317073Z",
+  "author": "Osama-Raza",
+  "source_url": "https://github.com/Osama-Raza/todo-cli-phase-1/blob/main/.claude/skills/error-handling-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Osama-Raza/todo-cli-phase-1/blob/main/.claude/skills/error-handling-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

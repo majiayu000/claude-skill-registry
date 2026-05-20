@@ -1,0 +1,16 @@
+{
+  "name": "validate-mobile",
+  "repo": "Async-IO/pierre_mcp_server",
+  "path": ".claude/skills/validate-mobile/SKILL.md",
+  "category": "other",
+  "source": "github.com/Async-IO/pierre_mcp_server",
+  "dir_name": "validate-mobile",
+  "downloaded_at": "2026-02-15T04:46:17.199983Z",
+  "author": "Async-IO",
+  "source_url": "https://github.com/Async-IO/pierre_mcp_server/blob/main/.claude/skills/validate-mobile/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Async-IO/pierre_mcp_server/blob/main/.claude/skills/validate-mobile/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

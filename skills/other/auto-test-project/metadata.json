@@ -1,0 +1,16 @@
+{
+  "name": "auto-test-project",
+  "repo": "huangwb8/skills",
+  "path": "auto-test-project/SKILL.md",
+  "category": "other",
+  "source": "github.com/huangwb8/skills",
+  "dir_name": "auto-test-project",
+  "downloaded_at": "2026-02-22T07:29:19.093434Z",
+  "author": "huangwb8",
+  "source_url": "https://github.com/huangwb8/skills/blob/main/auto-test-project/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/huangwb8/skills/blob/main/auto-test-project/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

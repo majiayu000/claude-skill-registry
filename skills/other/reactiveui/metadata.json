@@ -1,0 +1,16 @@
+{
+  "name": "reactiveui",
+  "repo": "Tyler-R-Kendrick/agent-skills",
+  "path": "skills/dotnet/reactive/reactiveui/SKILL.md",
+  "category": "other",
+  "source": "github.com/Tyler-R-Kendrick/agent-skills",
+  "dir_name": "reactiveui",
+  "downloaded_at": "2026-02-22T05:52:22.888190Z",
+  "author": "Tyler-R-Kendrick",
+  "source_url": "https://github.com/Tyler-R-Kendrick/agent-skills/blob/main/skills/dotnet/reactive/reactiveui/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tyler-R-Kendrick/agent-skills/blob/main/skills/dotnet/reactive/reactiveui/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

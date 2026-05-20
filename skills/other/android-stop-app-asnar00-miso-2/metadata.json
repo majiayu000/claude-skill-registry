@@ -1,0 +1,17 @@
+{
+  "name": "android-stop-app",
+  "repo": "asnar00/miso",
+  "path": ".claude/skills/android-stop-app/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/asnar00/miso",
+  "dir_name": "android-stop-app-asnar00-miso-2",
+  "downloaded_at": "2026-03-22T07:04:02.788486Z",
+  "author": "asnar00",
+  "source_url": "https://github.com/asnar00/miso/blob/main/.claude/skills/android-stop-app/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/asnar00/miso/blob/main/.claude/skills/android-stop-app/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

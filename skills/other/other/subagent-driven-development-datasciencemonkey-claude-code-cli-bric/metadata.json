@@ -1,9 +1,0 @@
-{
-  "name": "subagent-driven-development",
-  "repo": "datasciencemonkey/claude-code-cli-bricks",
-  "path": ".claude/skills/subagent-driven-development/SKILL.md",
-  "category": "other",
-  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
-  "dir_name": "subagent-driven-development-datasciencemonkey-claude-code-cli-bric",
-  "downloaded_at": "2026-02-22T06:51:11.309240Z"
-}

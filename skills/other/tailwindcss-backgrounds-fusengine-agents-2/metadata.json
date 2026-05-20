@@ -1,0 +1,17 @@
+{
+  "name": "tailwindcss-backgrounds",
+  "repo": "fusengine/agents",
+  "path": "plugins/tailwindcss/skills/tailwindcss-backgrounds/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/fusengine/agents",
+  "dir_name": "tailwindcss-backgrounds-fusengine-agents-2",
+  "downloaded_at": "2026-03-01T07:47:56.856666Z",
+  "author": "fusengine",
+  "source_url": "https://github.com/fusengine/agents/blob/main/plugins/tailwindcss/skills/tailwindcss-backgrounds/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fusengine/agents/blob/main/plugins/tailwindcss/skills/tailwindcss-backgrounds/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

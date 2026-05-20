@@ -1,0 +1,16 @@
+{
+  "name": "update-refs",
+  "repo": "maxritter/claude-pilot",
+  "path": ".claude/skills/update-refs/SKILL.md",
+  "category": "other",
+  "source": "github.com/maxritter/claude-pilot",
+  "dir_name": "update-refs-maxritter-claude-pilot",
+  "downloaded_at": "2026-02-19T01:32:09.431003Z",
+  "author": "maxritter",
+  "source_url": "https://github.com/maxritter/claude-pilot/blob/main/.claude/skills/update-refs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/maxritter/claude-pilot/blob/main/.claude/skills/update-refs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

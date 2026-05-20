@@ -1,0 +1,16 @@
+{
+  "name": "best-practices",
+  "repo": "afmdev/portfolio",
+  "path": ".github/skills/best-practices/SKILL.md",
+  "category": "other",
+  "source": "github.com/afmdev/portfolio",
+  "dir_name": "best-practices-afmdev-portfolio-2",
+  "downloaded_at": "2026-02-15T06:06:55.659334Z",
+  "author": "afmdev",
+  "source_url": "https://github.com/afmdev/portfolio/blob/main/.github/skills/best-practices/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/afmdev/portfolio/blob/main/.github/skills/best-practices/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

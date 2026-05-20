@@ -1,0 +1,17 @@
+{
+  "name": "sales-dashboard",
+  "repo": "adrianwedd/lemonsqueezy-claude-skills",
+  "path": "skills/sales-dashboard/skill.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/adrianwedd/lemonsqueezy-claude-skills",
+  "dir_name": "sales-dashboard-adrianwedd-lemonsqueezy-claude--2",
+  "downloaded_at": "2026-03-22T06:41:30.963104Z",
+  "author": "adrianwedd",
+  "source_url": "https://github.com/adrianwedd/lemonsqueezy-claude-skills/blob/main/skills/sales-dashboard/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adrianwedd/lemonsqueezy-claude-skills/blob/main/skills/sales-dashboard/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

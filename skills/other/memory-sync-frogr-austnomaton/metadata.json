@@ -1,0 +1,16 @@
+{
+  "name": "memory-sync",
+  "repo": "frogr/austnomaton",
+  "path": "skills/memory-sync/skill.md",
+  "category": "other",
+  "source": "github.com/frogr/austnomaton",
+  "dir_name": "memory-sync-frogr-austnomaton",
+  "downloaded_at": "2026-02-22T07:12:23.448942Z",
+  "author": "frogr",
+  "source_url": "https://github.com/frogr/austnomaton/blob/main/skills/memory-sync/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/frogr/austnomaton/blob/main/skills/memory-sync/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

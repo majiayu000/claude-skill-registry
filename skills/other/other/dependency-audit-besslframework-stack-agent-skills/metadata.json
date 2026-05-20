@@ -1,9 +1,0 @@
-{
-  "name": "dependency-audit",
-  "repo": "besslframework-stack/agent-skills",
-  "path": "skills/dependency-audit/SKILL.md",
-  "category": "other",
-  "source": "github.com/besslframework-stack/agent-skills",
-  "dir_name": "dependency-audit-besslframework-stack-agent-skills",
-  "downloaded_at": "2026-02-22T06:31:36.007105Z"
-}

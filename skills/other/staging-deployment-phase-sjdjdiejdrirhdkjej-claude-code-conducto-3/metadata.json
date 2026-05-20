@@ -1,0 +1,17 @@
+{
+  "name": "staging-deployment-phase",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/staging-deployment-phase/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "dir_name": "staging-deployment-phase-sjdjdiejdrirhdkjej-claude-code-conducto-3",
+  "downloaded_at": "2026-03-01T06:06:57.371340Z",
+  "author": "Sjdjdiejdrirhdkjej",
+  "source_url": "https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/staging-deployment-phase/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/staging-deployment-phase/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

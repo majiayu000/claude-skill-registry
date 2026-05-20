@@ -1,0 +1,16 @@
+{
+  "name": "zod-v4-patterns",
+  "repo": "jchaselubitz/drill-app",
+  "path": ".claude/skills/zod-v4-patterns/SKILL.md",
+  "category": "other",
+  "source": "github.com/jchaselubitz/drill-app",
+  "dir_name": "zod-v4-patterns-jchaselubitz-drill-app-3",
+  "downloaded_at": "2026-02-22T07:38:18.666688Z",
+  "author": "jchaselubitz",
+  "source_url": "https://github.com/jchaselubitz/drill-app/blob/main/.claude/skills/zod-v4-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jchaselubitz/drill-app/blob/main/.claude/skills/zod-v4-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "documentation",
+  "repo": "TheBeardedBearSAS/claude-craft",
+  "path": "Dev/i18n/base/Common/skills/documentation/SKILL.md",
+  "category": "other",
+  "source": "github.com/TheBeardedBearSAS/claude-craft",
+  "dir_name": "documentation-thebeardedbearsas-claude-craft",
+  "downloaded_at": "2026-02-15T05:52:35.353609Z",
+  "author": "TheBeardedBearSAS",
+  "source_url": "https://github.com/TheBeardedBearSAS/claude-craft/blob/main/Dev/i18n/base/Common/skills/documentation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 TheBeardedCTO",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

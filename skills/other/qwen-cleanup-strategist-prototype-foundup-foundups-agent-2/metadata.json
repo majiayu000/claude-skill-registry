@@ -1,0 +1,16 @@
+{
+  "name": "qwen-cleanup-strategist-prototype",
+  "repo": "Foundup/Foundups-Agent",
+  "path": ".claude/skills/qwen_cleanup_strategist_prototype/SKILL.md",
+  "category": "other",
+  "source": "github.com/Foundup/Foundups-Agent",
+  "dir_name": "qwen-cleanup-strategist-prototype-foundup-foundups-agent-2",
+  "downloaded_at": "2026-02-15T05:08:00.140154Z",
+  "author": "Foundup",
+  "source_url": "https://github.com/Foundup/Foundups-Agent/blob/main/.claude/skills/qwen_cleanup_strategist_prototype/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Foundup/Foundups-Agent/blob/main/.claude/skills/qwen_cleanup_strategist_prototype/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "lucene-net",
+  "repo": "Tyler-R-Kendrick/agent-skills",
+  "path": "skills/dotnet/data/lucene-net/SKILL.md",
+  "category": "other",
+  "source": "github.com/Tyler-R-Kendrick/agent-skills",
+  "dir_name": "lucene-net",
+  "downloaded_at": "2026-02-22T05:52:23.246083Z",
+  "author": "Tyler-R-Kendrick",
+  "source_url": "https://github.com/Tyler-R-Kendrick/agent-skills/blob/main/skills/dotnet/data/lucene-net/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tyler-R-Kendrick/agent-skills/blob/main/skills/dotnet/data/lucene-net/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

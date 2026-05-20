@@ -1,0 +1,16 @@
+{
+  "name": "axe-accessibility",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/ux-ui-design/skills/axe-accessibility/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "axe-accessibility-a5c-ai-babysitter-2",
+  "downloaded_at": "2026-02-19T01:16:35.577897Z",
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/plugins/babysitter/skills/babysit/process/specializations/ux-ui-design/skills/axe-accessibility/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 A5C AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

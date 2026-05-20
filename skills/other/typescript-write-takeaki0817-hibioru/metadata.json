@@ -1,0 +1,16 @@
+{
+  "name": "typescript-write",
+  "repo": "Takeaki0817/hibioru",
+  "path": ".claude/skills/typescript-write/SKILL.md",
+  "category": "other",
+  "source": "github.com/Takeaki0817/hibioru",
+  "dir_name": "typescript-write-takeaki0817-hibioru",
+  "downloaded_at": "2026-02-22T05:48:13.493235Z",
+  "author": "Takeaki0817",
+  "source_url": "https://github.com/Takeaki0817/hibioru/blob/main/.claude/skills/typescript-write/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Takeaki0817/hibioru/blob/main/.claude/skills/typescript-write/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

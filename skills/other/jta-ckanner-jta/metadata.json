@@ -1,0 +1,16 @@
+{
+  "name": "jta",
+  "repo": "ckanner/jta",
+  "path": "skills/jta/SKILL.md",
+  "category": "other",
+  "source": "github.com/ckanner/jta",
+  "dir_name": "jta-ckanner-jta",
+  "downloaded_at": "2026-02-22T06:42:53.374968Z",
+  "author": "ckanner",
+  "source_url": "https://github.com/ckanner/jta/blob/main/skills/jta/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ckanner/jta/blob/main/skills/jta/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

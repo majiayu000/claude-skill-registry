@@ -1,0 +1,17 @@
+{
+  "name": "changelog-manager",
+  "repo": "Interstellar-code/claud-skills",
+  "path": ".claude/skills/changelog-manager/skill.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Interstellar-code/claud-skills",
+  "dir_name": "changelog-manager-interstellar-code-claud-skills-3",
+  "downloaded_at": "2026-03-01T05:26:49.618682Z",
+  "author": "Interstellar-code",
+  "source_url": "https://github.com/Interstellar-code/claud-skills/blob/main/.claude/skills/changelog-manager/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Interstellar-code/claud-skills/blob/main/.claude/skills/changelog-manager/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

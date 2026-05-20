@@ -1,9 +1,0 @@
-{
-  "name": "docs-sync",
-  "repo": "NQ-lovecpp/cpp_chatsystem",
-  "path": "ChatSystem-Backend/8.Agent_Server/examples/openai-agents-python-main/.agents/skills/docs-sync/SKILL.md",
-  "category": "other",
-  "source": "github.com/NQ-lovecpp/cpp_chatsystem",
-  "dir_name": "docs-sync-nq-lovecpp-cpp-chatsystem",
-  "downloaded_at": "2026-02-22T05:26:19.251138Z"
-}

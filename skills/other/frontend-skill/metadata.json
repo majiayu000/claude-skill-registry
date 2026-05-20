@@ -1,0 +1,16 @@
+{
+  "name": "frontend-skill",
+  "repo": "HammadNadeem21/hackathon-todo-application",
+  "path": ".claude/skills/frontend-skill/SKILL.md",
+  "category": "other",
+  "source": "github.com/HammadNadeem21/hackathon-todo-application",
+  "dir_name": "frontend-skill",
+  "downloaded_at": "2026-02-22T05:07:20.450439Z",
+  "author": "HammadNadeem21",
+  "source_url": "https://github.com/HammadNadeem21/hackathon-todo-application/blob/main/.claude/skills/frontend-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HammadNadeem21/hackathon-todo-application/blob/main/.claude/skills/frontend-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

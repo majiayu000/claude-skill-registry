@@ -1,0 +1,16 @@
+{
+  "name": "powershell-2025-changes",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/powershell-master/skills/powershell-2025-changes/SKILL.md",
+  "category": "other",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "powershell-2025-changes-josiahsiegel-claude-plugin-market-2",
+  "downloaded_at": "2026-02-22T05:14:38.243909Z",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/powershell-master/skills/powershell-2025-changes/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

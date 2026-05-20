@@ -1,0 +1,17 @@
+{
+  "name": "models",
+  "repo": "PrefectHQ/colin",
+  "path": "src/colin/blueprints/mcp-guide/models/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/PrefectHQ/colin",
+  "dir_name": "models-prefecthq-colin-3",
+  "downloaded_at": "2026-03-31T01:21:45.950545Z",
+  "author": "PrefectHQ",
+  "source_url": "https://github.com/PrefectHQ/colin/blob/main/src/colin/blueprints/mcp-guide/models/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PrefectHQ/colin/blob/main/src/colin/blueprints/mcp-guide/models/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

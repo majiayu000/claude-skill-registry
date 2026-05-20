@@ -1,9 +1,0 @@
-{
-  "name": "prd-clean",
-  "repo": "brave-experiments/brave-core-bot",
-  "path": ".claude/skills/prd-clean/SKILL.md",
-  "category": "other",
-  "source": "github.com/brave-experiments/brave-core-bot",
-  "dir_name": "prd-clean",
-  "downloaded_at": "2026-02-22T06:35:30.130360Z"
-}

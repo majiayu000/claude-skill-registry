@@ -1,0 +1,17 @@
+{
+  "name": "exa-ci-integration",
+  "repo": "HelixDevelopment/HelixAgent",
+  "path": "skills/plugins/saas-packs/exa-pack/exa-ci-integration/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/HelixDevelopment/HelixAgent",
+  "dir_name": "exa-ci-integration-helixdevelopment-helixagent-2",
+  "downloaded_at": "2026-03-22T05:27:53.423161Z",
+  "author": "HelixDevelopment",
+  "source_url": "https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/plugins/saas-packs/exa-pack/exa-ci-integration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/plugins/saas-packs/exa-pack/exa-ci-integration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

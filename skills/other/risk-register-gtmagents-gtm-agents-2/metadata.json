@@ -1,0 +1,16 @@
+{
+  "name": "risk-register",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/enterprise-sales/skills/risk-register/SKILL.md",
+  "category": "other",
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "risk-register-gtmagents-gtm-agents-2",
+  "downloaded_at": "2026-02-22T07:21:53.041171Z",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/enterprise-sales/skills/risk-register/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gtmagents/gtm-agents/blob/main/plugins/enterprise-sales/skills/risk-register/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

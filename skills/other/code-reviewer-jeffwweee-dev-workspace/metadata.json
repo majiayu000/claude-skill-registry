@@ -1,0 +1,16 @@
+{
+  "name": "code-reviewer",
+  "repo": "jeffwweee/dev-workspace",
+  "path": ".claude/skills/code-reviewer/SKILL.md",
+  "category": "other",
+  "source": "github.com/jeffwweee/dev-workspace",
+  "dir_name": "code-reviewer-jeffwweee-dev-workspace",
+  "downloaded_at": "2026-02-15T07:41:23.147625Z",
+  "author": "jeffwweee",
+  "source_url": "https://github.com/jeffwweee/dev-workspace/blob/main/.claude/skills/code-reviewer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jeffwweee/dev-workspace/blob/main/.claude/skills/code-reviewer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

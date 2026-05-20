@@ -1,0 +1,16 @@
+{
+  "name": "qwen-roadmap-auditor-prototype",
+  "repo": "Foundup/Foundups-Agent",
+  "path": ".claude/skills/qwen_roadmap_auditor_prototype/SKILL.md",
+  "category": "other",
+  "source": "github.com/Foundup/Foundups-Agent",
+  "dir_name": "qwen-roadmap-auditor-prototype-foundup-foundups-agent-3",
+  "downloaded_at": "2026-02-15T05:07:59.686965Z",
+  "author": "Foundup",
+  "source_url": "https://github.com/Foundup/Foundups-Agent/blob/main/.claude/skills/qwen_roadmap_auditor_prototype/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Foundup/Foundups-Agent/blob/main/.claude/skills/qwen_roadmap_auditor_prototype/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

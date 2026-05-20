@@ -1,9 +1,0 @@
-{
-  "name": "gitlab-ci-basics",
-  "repo": "Dicklesworthstone/pi_agent_rust",
-  "path": "tests/ext_conformance/artifacts/plugins-community/skills/01-devops-basics/gitlab-ci-basics/SKILL.md",
-  "category": "other",
-  "source": "github.com/Dicklesworthstone/pi_agent_rust",
-  "dir_name": "gitlab-ci-basics",
-  "downloaded_at": "2026-02-22T04:57:49.208765Z"
-}

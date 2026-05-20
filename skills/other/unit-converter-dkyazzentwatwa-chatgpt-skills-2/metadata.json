@@ -1,0 +1,17 @@
+{
+  "name": "unit-converter",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "unit-converter/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "dir_name": "unit-converter-dkyazzentwatwa-chatgpt-skills-2",
+  "downloaded_at": "2026-03-22T07:46:44.228130Z",
+  "author": "dkyazzentwatwa",
+  "source_url": "https://github.com/dkyazzentwatwa/chatgpt-skills/blob/main/unit-converter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dkyazzentwatwa/chatgpt-skills/blob/main/unit-converter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

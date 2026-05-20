@@ -1,0 +1,17 @@
+{
+  "name": "competitive-analysis",
+  "repo": "RefoundAI/lenny-skills",
+  "path": "skills/competitive-analysis/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/RefoundAI/lenny-skills",
+  "dir_name": "competitive-analysis-refoundai-lenny-skills-2",
+  "downloaded_at": "2026-03-01T05:58:53.755228Z",
+  "author": "RefoundAI",
+  "source_url": "https://github.com/RefoundAI/lenny-skills/blob/main/skills/competitive-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RefoundAI/lenny-skills/blob/main/skills/competitive-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

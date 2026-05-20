@@ -1,0 +1,17 @@
+{
+  "name": "claude-code",
+  "repo": "binjuhor/shadcn-lar",
+  "path": ".claude/skills/claude-code/skill.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/binjuhor/shadcn-lar",
+  "dir_name": "claude-code-binjuhor-shadcn-lar-2",
+  "downloaded_at": "2026-03-01T06:59:21.555055Z",
+  "author": "binjuhor",
+  "source_url": "https://github.com/binjuhor/shadcn-lar/blob/main/.claude/skills/claude-code/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/binjuhor/shadcn-lar/blob/main/.claude/skills/claude-code/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

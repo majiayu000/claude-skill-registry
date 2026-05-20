@@ -1,0 +1,16 @@
+{
+  "name": "typography-expert",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/typography-expert/SKILL.md",
+  "category": "other",
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "typography-expert-erichowens-some-claude-skills",
+  "downloaded_at": "2026-02-15T07:07:43.397255Z",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/typography-expert/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

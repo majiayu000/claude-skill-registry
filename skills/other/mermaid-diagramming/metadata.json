@@ -1,0 +1,16 @@
+{
+  "name": "mermaid-diagramming",
+  "repo": "bsamiee/Parametric_Portal",
+  "path": ".claude/skills/mermaid-diagramming/SKILL.md",
+  "category": "other",
+  "source": "github.com/bsamiee/Parametric_Portal",
+  "dir_name": "mermaid-diagramming",
+  "downloaded_at": "2026-02-15T06:39:23.167535Z",
+  "author": "bsamiee",
+  "source_url": "https://github.com/bsamiee/Parametric_Portal/blob/main/.claude/skills/mermaid-diagramming/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 bsamiee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "doublet",
+  "repo": "ddempsey/co2injection",
+  "path": ".claude/skills/doublet/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ddempsey/co2injection",
+  "dir_name": "doublet-ddempsey-co2injection-2",
+  "downloaded_at": "2026-03-01T07:24:38.311644Z",
+  "author": "ddempsey",
+  "source_url": "https://github.com/ddempsey/co2injection/blob/main/.claude/skills/doublet/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ddempsey/co2injection/blob/main/.claude/skills/doublet/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

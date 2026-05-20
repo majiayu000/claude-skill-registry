@@ -1,0 +1,16 @@
+{
+  "name": "flutter",
+  "repo": "alinaqi/claude-bootstrap",
+  "path": "skills/flutter/SKILL.md",
+  "category": "other",
+  "source": "github.com/alinaqi/claude-bootstrap",
+  "dir_name": "flutter-alinaqi-claude-bootstrap-3",
+  "downloaded_at": "2026-02-15T06:17:15.734012Z",
+  "author": "alinaqi",
+  "source_url": "https://github.com/alinaqi/claude-bootstrap/blob/main/skills/flutter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ali Naqi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

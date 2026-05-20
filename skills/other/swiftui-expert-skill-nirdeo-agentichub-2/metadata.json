@@ -1,0 +1,16 @@
+{
+  "name": "swiftui-expert-skill",
+  "repo": "Nirdeo/AgenticHub",
+  "path": ".agents/skills/swiftui-expert-skill/SKILL.md",
+  "category": "other",
+  "source": "github.com/Nirdeo/AgenticHub",
+  "dir_name": "swiftui-expert-skill-nirdeo-agentichub-2",
+  "downloaded_at": "2026-02-22T05:28:29.677351Z",
+  "author": "Nirdeo",
+  "source_url": "https://github.com/Nirdeo/AgenticHub/blob/main/.agents/skills/swiftui-expert-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Nirdeo/AgenticHub/blob/main/.agents/skills/swiftui-expert-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

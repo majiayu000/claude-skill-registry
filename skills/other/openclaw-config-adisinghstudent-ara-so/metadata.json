@@ -1,0 +1,17 @@
+{
+  "name": "openclaw-config",
+  "repo": "adisinghstudent/ara.so",
+  "path": "skills/openclaw-config/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/adisinghstudent/ara.so",
+  "dir_name": "openclaw-config-adisinghstudent-ara-so",
+  "downloaded_at": "2026-03-22T06:41:20.343694Z",
+  "author": "adisinghstudent",
+  "source_url": "https://github.com/adisinghstudent/ara.so/blob/main/skills/openclaw-config/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adisinghstudent/ara.so/blob/main/skills/openclaw-config/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

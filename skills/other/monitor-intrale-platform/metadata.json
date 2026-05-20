@@ -1,0 +1,16 @@
+{
+  "name": "monitor",
+  "repo": "intrale/platform",
+  "path": ".claude/skills/monitor/SKILL.md",
+  "category": "other",
+  "source": "github.com/intrale/platform",
+  "dir_name": "monitor-intrale-platform",
+  "downloaded_at": "2026-02-22T07:32:16.779530Z",
+  "author": "intrale",
+  "source_url": "https://github.com/intrale/platform/blob/main/.claude/skills/monitor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/intrale/platform/blob/main/.claude/skills/monitor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

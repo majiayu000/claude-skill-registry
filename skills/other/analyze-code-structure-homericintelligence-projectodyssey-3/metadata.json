@@ -1,0 +1,16 @@
+{
+  "name": "analyze-code-structure",
+  "repo": "HomericIntelligence/ProjectOdyssey",
+  "path": ".claude/skills/tier-2/analyze-code-structure/SKILL.md",
+  "category": "other",
+  "source": "github.com/HomericIntelligence/ProjectOdyssey",
+  "dir_name": "analyze-code-structure-homericintelligence-projectodyssey-3",
+  "downloaded_at": "2026-02-22T05:09:24.027413Z",
+  "author": "HomericIntelligence",
+  "source_url": "https://github.com/HomericIntelligence/ProjectOdyssey/blob/main/.claude/skills/tier-2/analyze-code-structure/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HomericIntelligence/ProjectOdyssey/blob/main/.claude/skills/tier-2/analyze-code-structure/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

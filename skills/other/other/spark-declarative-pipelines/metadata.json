@@ -1,9 +1,0 @@
-{
-  "name": "spark-declarative-pipelines",
-  "repo": "datasciencemonkey/claude-code-cli-bricks",
-  "path": ".claude/skills/spark-declarative-pipelines/SKILL.md",
-  "category": "other",
-  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
-  "dir_name": "spark-declarative-pipelines",
-  "downloaded_at": "2026-02-22T06:51:11.387698Z"
-}

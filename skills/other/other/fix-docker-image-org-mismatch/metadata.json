@@ -1,9 +1,0 @@
-{
-  "name": "fix-docker-image-org-mismatch",
-  "repo": "HomericIntelligence/ProjectOdyssey",
-  "path": "plugins/ci-cd/fix-docker-image-org-mismatch/skills/fix-docker-image-org-mismatch/SKILL.md",
-  "category": "other",
-  "source": "github.com/HomericIntelligence/ProjectOdyssey",
-  "dir_name": "fix-docker-image-org-mismatch",
-  "downloaded_at": "2026-02-22T05:09:23.243775Z"
-}

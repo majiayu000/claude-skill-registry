@@ -1,0 +1,16 @@
+{
+  "name": "codebase-mapper",
+  "repo": "Meme-Lords/granhackaria-run1",
+  "path": ".agents/skills/gsd/agents/codebase-mapper/SKILL.md",
+  "category": "other",
+  "source": "github.com/Meme-Lords/granhackaria-run1",
+  "dir_name": "codebase-mapper-meme-lords-granhackaria-run1",
+  "downloaded_at": "2026-02-15T05:27:23.900849Z",
+  "author": "Meme-Lords",
+  "source_url": "https://github.com/Meme-Lords/granhackaria-run1/blob/main/.agents/skills/gsd/agents/codebase-mapper/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Meme-Lords/granhackaria-run1/blob/main/.agents/skills/gsd/agents/codebase-mapper/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

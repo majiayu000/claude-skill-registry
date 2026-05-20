@@ -1,0 +1,17 @@
+{
+  "name": "security-integration-tests-md",
+  "repo": "alex-ilgayev/MCPSpy",
+  "path": ".claude/skills/security-integration-tests.md/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/alex-ilgayev/MCPSpy",
+  "dir_name": "security-integration-tests-md-alex-ilgayev-mcpspy-3",
+  "downloaded_at": "2026-03-22T06:48:55.321025Z",
+  "author": "alex-ilgayev",
+  "source_url": "https://github.com/alex-ilgayev/MCPSpy/blob/main/.claude/skills/security-integration-tests.md/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alex-ilgayev/MCPSpy/blob/main/.claude/skills/security-integration-tests.md/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

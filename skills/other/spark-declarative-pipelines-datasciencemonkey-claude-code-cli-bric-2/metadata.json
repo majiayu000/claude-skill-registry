@@ -1,0 +1,16 @@
+{
+  "name": "spark-declarative-pipelines",
+  "repo": "datasciencemonkey/claude-code-cli-bricks",
+  "path": ".claude/skills/spark-declarative-pipelines/SKILL.md",
+  "category": "other",
+  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
+  "dir_name": "spark-declarative-pipelines-datasciencemonkey-claude-code-cli-bric-2",
+  "downloaded_at": "2026-02-22T06:51:11.387698Z",
+  "author": "datasciencemonkey",
+  "source_url": "https://github.com/datasciencemonkey/claude-code-cli-bricks/blob/main/.claude/skills/spark-declarative-pipelines/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/datasciencemonkey/claude-code-cli-bricks/blob/main/.claude/skills/spark-declarative-pipelines/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

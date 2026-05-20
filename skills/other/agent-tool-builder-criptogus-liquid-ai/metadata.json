@@ -1,0 +1,16 @@
+{
+  "name": "agent-tool-builder",
+  "repo": "criptogus/liquid-ai",
+  "path": ".agent/skills/agent-tool-builder/SKILL.md",
+  "category": "other",
+  "source": "github.com/criptogus/liquid-ai",
+  "dir_name": "agent-tool-builder-criptogus-liquid-ai",
+  "downloaded_at": "2026-02-15T06:50:08.613001Z",
+  "author": "criptogus",
+  "source_url": "https://github.com/criptogus/liquid-ai/blob/main/.agent/skills/agent-tool-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/criptogus/liquid-ai/blob/main/.agent/skills/agent-tool-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

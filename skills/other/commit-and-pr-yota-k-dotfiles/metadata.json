@@ -1,0 +1,16 @@
+{
+  "name": "commit-and-pr",
+  "repo": "Yota-K/dotfiles",
+  "path": ".claude/skills/commit-and-pr/SKILL.md",
+  "category": "other",
+  "source": "github.com/Yota-K/dotfiles",
+  "dir_name": "commit-and-pr-yota-k-dotfiles",
+  "downloaded_at": "2026-02-22T05:58:50.153773Z",
+  "author": "Yota-K",
+  "source_url": "https://github.com/Yota-K/dotfiles/blob/main/.claude/skills/commit-and-pr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Yota-K/dotfiles/blob/main/.claude/skills/commit-and-pr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

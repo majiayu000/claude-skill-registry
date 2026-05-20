@@ -1,0 +1,16 @@
+{
+  "name": "testing",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/5t111111/testing/SKILL.md",
+  "category": "other",
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "testing-aiskillstore-marketplace",
+  "downloaded_at": "2026-02-10T06:10:43.025777Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/5t111111/testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/5t111111/testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

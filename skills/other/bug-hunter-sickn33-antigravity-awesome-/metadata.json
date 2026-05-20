@@ -1,0 +1,17 @@
+{
+  "name": "bug-hunter",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/bug-hunter/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "bug-hunter-sickn33-antigravity-awesome-",
+  "downloaded_at": "2026-05-20T04:09:03.552555Z",
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/bug-hunter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/bug-hunter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

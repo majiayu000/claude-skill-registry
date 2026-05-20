@@ -1,0 +1,16 @@
+{
+  "name": "find-skills",
+  "repo": "bytedance/deer-flow",
+  "path": "skills/public/find-skills/SKILL.md",
+  "category": "other",
+  "source": "github.com/bytedance/deer-flow",
+  "dir_name": "find-skills-bytedance-deer-flow",
+  "downloaded_at": "2026-02-15T06:39:37.015718Z",
+  "author": "bytedance",
+  "source_url": "https://github.com/bytedance/deer-flow/blob/main/skills/public/find-skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bytedance/deer-flow/blob/main/skills/public/find-skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

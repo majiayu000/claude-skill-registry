@@ -1,0 +1,16 @@
+{
+  "name": "skill-document-converter",
+  "repo": "benbrastmckie/ModelChecker",
+  "path": ".claude/skills/skill-document-converter/SKILL.md",
+  "category": "other",
+  "source": "github.com/benbrastmckie/ModelChecker",
+  "dir_name": "skill-document-converter",
+  "downloaded_at": "2026-02-22T06:31:10.990987Z",
+  "author": "benbrastmckie",
+  "source_url": "https://github.com/benbrastmckie/ModelChecker/blob/main/.claude/skills/skill-document-converter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/benbrastmckie/ModelChecker/blob/main/.claude/skills/skill-document-converter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

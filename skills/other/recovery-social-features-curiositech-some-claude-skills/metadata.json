@@ -1,0 +1,16 @@
+{
+  "name": "recovery-social-features",
+  "repo": "curiositech/some_claude_skills",
+  "path": ".claude/skills/recovery-social-features/SKILL.md",
+  "category": "other",
+  "source": "github.com/curiositech/some_claude_skills",
+  "dir_name": "recovery-social-features-curiositech-some-claude-skills",
+  "downloaded_at": "2026-02-22T06:48:15.200215Z",
+  "author": "curiositech",
+  "source_url": "https://github.com/curiositech/some_claude_skills/blob/main/.claude/skills/recovery-social-features/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/curiositech/some_claude_skills/blob/main/.claude/skills/recovery-social-features/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

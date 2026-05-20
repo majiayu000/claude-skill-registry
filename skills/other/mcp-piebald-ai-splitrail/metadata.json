@@ -1,0 +1,16 @@
+{
+  "name": "mcp",
+  "repo": "Piebald-AI/splitrail",
+  "path": ".claude/skills/mcp/SKILL.md",
+  "category": "other",
+  "source": "github.com/Piebald-AI/splitrail",
+  "dir_name": "mcp-piebald-ai-splitrail",
+  "downloaded_at": "2026-02-15T05:37:27.698771Z",
+  "author": "Piebald-AI",
+  "source_url": "https://github.com/Piebald-AI/splitrail/blob/main/.claude/skills/mcp/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Piebald-AI/splitrail/blob/main/.claude/skills/mcp/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

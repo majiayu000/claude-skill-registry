@@ -1,0 +1,16 @@
+{
+  "name": "integrations",
+  "repo": "Automattic/wordpress-activitypub",
+  "path": ".claude/skills/integrations/SKILL.md",
+  "category": "other",
+  "source": "github.com/Automattic/wordpress-activitypub",
+  "dir_name": "integrations-automattic-wordpress-activitypu-2",
+  "downloaded_at": "2026-02-15T04:48:15.726285Z",
+  "author": "Automattic",
+  "source_url": "https://github.com/Automattic/wordpress-activitypub/blob/main/.claude/skills/integrations/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2019 Matthias Pfefferle",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

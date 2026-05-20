@@ -1,0 +1,17 @@
+{
+  "name": "apollo-server",
+  "repo": "apollographql/skills",
+  "path": "skills/apollo-server/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/apollographql/skills",
+  "dir_name": "apollo-server-apollographql-skills-2",
+  "downloaded_at": "2026-03-22T06:59:37.260141Z",
+  "author": "apollographql",
+  "source_url": "https://github.com/apollographql/skills/blob/main/skills/apollo-server/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/apollographql/skills/blob/main/skills/apollo-server/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

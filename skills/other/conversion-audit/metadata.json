@@ -1,0 +1,16 @@
+{
+  "name": "conversion-audit",
+  "repo": "cbemister/claude-code-utils",
+  "path": ".claude/skills/conversion-audit/SKILL.md",
+  "category": "other",
+  "source": "github.com/cbemister/claude-code-utils",
+  "dir_name": "conversion-audit",
+  "downloaded_at": "2026-02-22T06:40:34.053677Z",
+  "author": "cbemister",
+  "source_url": "https://github.com/cbemister/claude-code-utils/blob/main/.claude/skills/conversion-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbemister/claude-code-utils/blob/main/.claude/skills/conversion-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

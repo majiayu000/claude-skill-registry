@@ -1,0 +1,17 @@
+{
+  "name": "substack-note",
+  "repo": "az9713/ai-co-writing-claude-skills",
+  "path": ".claude/skills/substack-note/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/az9713/ai-co-writing-claude-skills",
+  "dir_name": "substack-note-az9713-ai-co-writing-claude-2",
+  "downloaded_at": "2026-03-22T07:07:49.139398Z",
+  "author": "az9713",
+  "source_url": "https://github.com/az9713/ai-co-writing-claude-skills/blob/main/.claude/skills/substack-note/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/az9713/ai-co-writing-claude-skills/blob/main/.claude/skills/substack-note/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "setup-gemini-cli",
+  "repo": "google/mcp-security",
+  "path": "extensions/google-secops/skills/setup-gemini-cli/SKILL.md",
+  "category": "other",
+  "source": "github.com/google/mcp-security",
+  "dir_name": "setup-gemini-cli-google-mcp-security-3",
+  "downloaded_at": "2026-02-22T07:20:31.653059Z",
+  "author": "google",
+  "source_url": "https://github.com/google/mcp-security/blob/main/extensions/google-secops/skills/setup-gemini-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/google/mcp-security/blob/main/extensions/google-secops/skills/setup-gemini-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

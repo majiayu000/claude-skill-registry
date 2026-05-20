@@ -1,0 +1,17 @@
+{
+  "name": "investigation-logger",
+  "repo": "ComposioHQ/awesome-claude-plugins",
+  "path": "perf/skills/investigation-logger/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/ComposioHQ/awesome-claude-plugins",
+  "dir_name": "investigation-logger-composiohq-awesome-claude-plugi",
+  "downloaded_at": "2026-05-20T03:41:18.141901Z",
+  "author": "ComposioHQ",
+  "source_url": "https://github.com/ComposioHQ/awesome-claude-plugins/blob/master/perf/skills/investigation-logger/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ComposioHQ/awesome-claude-plugins/blob/master/perf/skills/investigation-logger/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

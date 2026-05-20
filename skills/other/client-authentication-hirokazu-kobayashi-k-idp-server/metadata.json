@@ -1,0 +1,16 @@
+{
+  "name": "client-authentication",
+  "repo": "hirokazu-kobayashi-koba-hiro/idp-server",
+  "path": ".claude/skills/client-authentication/skill.md",
+  "category": "other",
+  "source": "github.com/hirokazu-kobayashi-koba-hiro/idp-server",
+  "dir_name": "client-authentication-hirokazu-kobayashi-k-idp-server",
+  "downloaded_at": "2026-02-22T07:26:55.441594Z",
+  "author": "hirokazu-kobayashi-koba-hiro",
+  "source_url": "https://github.com/hirokazu-kobayashi-koba-hiro/idp-server/blob/main/.claude/skills/client-authentication/skill.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hirokazu-kobayashi-koba-hiro/idp-server/blob/main/.claude/skills/client-authentication/skill.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

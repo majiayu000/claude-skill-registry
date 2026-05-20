@@ -1,9 +1,0 @@
-{
-  "name": "check-milestones",
-  "repo": "brave-experiments/brave-core-bot",
-  "path": ".claude/skills/check-milestones/skill.md",
-  "category": "other",
-  "source": "github.com/brave-experiments/brave-core-bot",
-  "dir_name": "check-milestones",
-  "downloaded_at": "2026-02-22T06:35:29.354174Z"
-}

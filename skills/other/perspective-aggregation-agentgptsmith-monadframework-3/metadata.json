@@ -1,0 +1,16 @@
+{
+  "name": "perspective-aggregation",
+  "repo": "agentgptsmith/MonadFramework",
+  "path": ".claude/skills/perspective-aggregation/SKILL.md",
+  "category": "other",
+  "source": "github.com/agentgptsmith/MonadFramework",
+  "dir_name": "perspective-aggregation-agentgptsmith-monadframework-3",
+  "downloaded_at": "2026-02-15T06:07:14.888770Z",
+  "author": "agentgptsmith",
+  "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/perspective-aggregation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/perspective-aggregation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

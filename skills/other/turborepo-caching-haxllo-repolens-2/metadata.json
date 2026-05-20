@@ -1,0 +1,16 @@
+{
+  "name": "turborepo-caching",
+  "repo": "haxllo/repolens",
+  "path": ".gemini/skills/turborepo-caching/SKILL.md",
+  "category": "other",
+  "source": "github.com/haxllo/repolens",
+  "dir_name": "turborepo-caching-haxllo-repolens-2",
+  "downloaded_at": "2026-02-22T07:25:09.231761Z",
+  "author": "haxllo",
+  "source_url": "https://github.com/haxllo/repolens/blob/main/.gemini/skills/turborepo-caching/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/haxllo/repolens/blob/main/.gemini/skills/turborepo-caching/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

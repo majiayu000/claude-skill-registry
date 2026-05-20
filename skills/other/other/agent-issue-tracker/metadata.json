@@ -1,9 +1,0 @@
-{
-  "name": "agent-issue-tracker",
-  "repo": "ruvnet/claude-flow",
-  "path": ".agents/skills/agent-issue-tracker/SKILL.md",
-  "category": "other",
-  "source": "github.com/ruvnet/claude-flow",
-  "dir_name": "agent-issue-tracker",
-  "downloaded_at": "2026-02-23T01:33:38.314433Z"
-}

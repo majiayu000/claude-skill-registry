@@ -1,0 +1,16 @@
+{
+  "name": "n8n-code-python",
+  "repo": "Gingi892/automation-shamai",
+  "path": "skills/n8n-code-python/SKILL.md",
+  "category": "other",
+  "source": "github.com/Gingi892/automation-shamai",
+  "dir_name": "n8n-code-python-gingi892-automation-shamai",
+  "downloaded_at": "2026-02-15T05:09:21.282360Z",
+  "author": "Gingi892",
+  "source_url": "https://github.com/Gingi892/automation-shamai/blob/main/skills/n8n-code-python/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Gingi892/automation-shamai/blob/main/skills/n8n-code-python/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

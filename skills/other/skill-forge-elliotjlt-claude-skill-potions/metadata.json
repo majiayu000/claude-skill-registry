@@ -1,0 +1,16 @@
+{
+  "name": "skill-forge",
+  "repo": "ElliotJLT/Claude-Skill-Potions",
+  "path": "skills/skill-forge/SKILL.md",
+  "category": "other",
+  "source": "github.com/ElliotJLT/Claude-Skill-Potions",
+  "dir_name": "skill-forge-elliotjlt-claude-skill-potions",
+  "downloaded_at": "2026-02-15T05:05:01.610193Z",
+  "author": "ElliotJLT",
+  "source_url": "https://github.com/ElliotJLT/Claude-Skill-Potions/blob/main/skills/skill-forge/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ElliotJLT/Claude-Skill-Potions/blob/main/skills/skill-forge/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

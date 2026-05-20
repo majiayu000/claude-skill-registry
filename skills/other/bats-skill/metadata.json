@@ -1,0 +1,16 @@
+{
+  "name": "bats-skill",
+  "repo": "OleksandrKucherenko/e-bash",
+  "path": ".claude/skills/bats-skill/SKILL.md",
+  "category": "other",
+  "source": "github.com/OleksandrKucherenko/e-bash",
+  "dir_name": "bats-skill",
+  "downloaded_at": "2026-02-15T05:33:11.975919Z",
+  "author": "OleksandrKucherenko",
+  "source_url": "https://github.com/OleksandrKucherenko/e-bash/blob/main/.claude/skills/bats-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2017-current Oleksandr Kucherenko",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

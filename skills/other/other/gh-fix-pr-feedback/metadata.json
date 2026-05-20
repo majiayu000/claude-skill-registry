@@ -1,9 +1,0 @@
-{
-  "name": "gh-fix-pr-feedback",
-  "repo": "HomericIntelligence/ProjectOdyssey",
-  "path": ".claude/skills/gh-fix-pr-feedback/SKILL.md",
-  "category": "other",
-  "source": "github.com/HomericIntelligence/ProjectOdyssey",
-  "dir_name": "gh-fix-pr-feedback",
-  "downloaded_at": "2026-02-22T05:09:20.373908Z"
-}

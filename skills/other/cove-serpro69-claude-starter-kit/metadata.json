@@ -1,0 +1,17 @@
+{
+  "name": "cove",
+  "repo": "serpro69/claude-starter-kit",
+  "path": ".github/templates/claude/skills/cove/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/serpro69/claude-starter-kit",
+  "dir_name": "cove-serpro69-claude-starter-kit",
+  "downloaded_at": "2026-03-21T01:29:23.065225Z",
+  "author": "serpro69",
+  "source_url": "https://github.com/serpro69/claude-starter-kit/blob/master/.github/templates/claude/skills/cove/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/serpro69/claude-starter-kit/blob/master/.github/templates/claude/skills/cove/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

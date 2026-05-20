@@ -1,0 +1,17 @@
+{
+  "name": "knowledge-bank-lookup",
+  "repo": "sxhmilyoyo/sundayhao-plugins",
+  "path": "second-brain/skills/knowledge-bank-lookup/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sxhmilyoyo/sundayhao-plugins",
+  "dir_name": "knowledge-bank-lookup-sxhmilyoyo-sundayhao-plugins-3",
+  "downloaded_at": "2026-04-30T02:19:14.603550Z",
+  "author": "sxhmilyoyo",
+  "source_url": "https://github.com/sxhmilyoyo/sundayhao-plugins/blob/main/second-brain/skills/knowledge-bank-lookup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sxhmilyoyo/sundayhao-plugins/blob/main/second-brain/skills/knowledge-bank-lookup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

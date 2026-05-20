@@ -1,0 +1,16 @@
+{
+  "name": "meeting-insights-analyzer",
+  "repo": "Prorise-cool/prorise-claude-skills",
+  "path": ".claude/skills/meeting-insights-analyzer/SKILL.md",
+  "category": "other",
+  "source": "github.com/Prorise-cool/prorise-claude-skills",
+  "dir_name": "meeting-insights-analyzer-prorise-cool-prorise-claude-skill",
+  "downloaded_at": "2026-02-22T05:35:51.447176Z",
+  "author": "Prorise-cool",
+  "source_url": "https://github.com/Prorise-cool/prorise-claude-skills/blob/main/.claude/skills/meeting-insights-analyzer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Prorise-cool/prorise-claude-skills/blob/main/.claude/skills/meeting-insights-analyzer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

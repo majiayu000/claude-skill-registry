@@ -1,0 +1,16 @@
+{
+  "name": "plot-analysis",
+  "repo": "Automaat/research-machine",
+  "path": ".claude/skills/plot-analysis/SKILL.md",
+  "category": "other",
+  "source": "github.com/Automaat/research-machine",
+  "dir_name": "plot-analysis",
+  "downloaded_at": "2026-02-22T04:44:17.679557Z",
+  "author": "Automaat",
+  "source_url": "https://github.com/Automaat/research-machine/blob/main/.claude/skills/plot-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Automaat/research-machine/blob/main/.claude/skills/plot-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

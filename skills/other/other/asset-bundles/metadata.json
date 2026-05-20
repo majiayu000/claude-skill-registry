@@ -1,9 +1,0 @@
-{
-  "name": "asset-bundles",
-  "repo": "datasciencemonkey/claude-code-cli-bricks",
-  "path": ".claude/skills/asset-bundles/SKILL.md",
-  "category": "other",
-  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
-  "dir_name": "asset-bundles",
-  "downloaded_at": "2026-02-22T06:51:09.925844Z"
-}

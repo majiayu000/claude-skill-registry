@@ -1,0 +1,17 @@
+{
+  "name": "avoid-feature-creep",
+  "repo": "blocknavi/convex-batch-processor",
+  "path": ".claude/skills/avoid-feature-creep/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/blocknavi/convex-batch-processor",
+  "dir_name": "avoid-feature-creep-blocknavi-convex-batch-process-2",
+  "downloaded_at": "2026-03-22T07:16:42.064445Z",
+  "author": "blocknavi",
+  "source_url": "https://github.com/blocknavi/convex-batch-processor/blob/main/.claude/skills/avoid-feature-creep/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/blocknavi/convex-batch-processor/blob/main/.claude/skills/avoid-feature-creep/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

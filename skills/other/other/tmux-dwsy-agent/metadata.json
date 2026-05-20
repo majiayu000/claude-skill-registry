@@ -1,9 +1,0 @@
-{
-  "name": "tmux",
-  "repo": "Dwsy/agent",
-  "path": "skills/tmux/SKILL.md",
-  "category": "other",
-  "source": "github.com/Dwsy/agent",
-  "dir_name": "tmux-dwsy-agent",
-  "downloaded_at": "2026-02-22T04:59:49.590232Z"
-}

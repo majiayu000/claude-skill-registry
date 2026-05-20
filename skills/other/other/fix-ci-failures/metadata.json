@@ -1,9 +1,0 @@
-{
-  "name": "fix-ci-failures",
-  "repo": "HomericIntelligence/ProjectOdyssey",
-  "path": ".claude/skills/fix-ci-failures/SKILL.md",
-  "category": "other",
-  "source": "github.com/HomericIntelligence/ProjectOdyssey",
-  "dir_name": "fix-ci-failures",
-  "downloaded_at": "2026-02-22T05:09:21.604527Z"
-}

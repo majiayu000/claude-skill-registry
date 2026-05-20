@@ -24,7 +24,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from index_artifacts import write_category_artifacts, write_search_artifacts
+from index_artifacts import write_category_artifacts, write_search_artifacts, write_signal_artifacts
 from plugin_index import build_plugins_index, load_plugins_from_registry, load_plugins_from_source
 from utils import extract_description, get_repo_suffix, load_metadata
 
@@ -523,51 +523,58 @@ def build_search_index(
     with gzip.open(search_index_lite_gz_path, "wt", encoding="utf-8") as f:
         json.dump(lite_index, f, ensure_ascii=False, separators=(",", ":"))
 
-    quality_index_path = output_dir / "quality-index.json"
-    with open(quality_index_path, "w", encoding="utf-8") as f:
-        json.dump(
-            {
-                "updated_at": utc_now_isoformat(),
-                "count": len(quality_records_by_id),
-                "records": list(quality_records_by_id.values()),
-            },
-            f,
-            ensure_ascii=False,
-            separators=(",", ":"),
-        )
-
-    security_index_path = output_dir / "security-index.json"
-    with open(security_index_path, "w", encoding="utf-8") as f:
-        json.dump(
-            {
-                "updated_at": utc_now_isoformat(),
-                "count": len(security_records_by_id),
-                "records": list(security_records_by_id.values()),
-            },
-            f,
-            ensure_ascii=False,
-            separators=(",", ":"),
-        )
-
-    ranking_index_path = output_dir / "ranking-index.json"
-    with open(ranking_index_path, "w", encoding="utf-8") as f:
-        json.dump(
-            {
-                "updated_at": utc_now_isoformat(),
-                "count": len(ranking_records),
-                "records": ranking_records,
-            },
-            f,
-            ensure_ascii=False,
-            separators=(",", ":"),
-        )
+    quality_artifacts = write_signal_artifacts(
+        list(quality_records_by_id.values()),
+        output_dir,
+        artifact_name="quality-index",
+        shard_dir_name="quality-shards",
+        record_schema="quality-v1",
+        shard_strategy="bounded-sequential-scan-order",
+        updated_at=utc_now_isoformat(),
+    )
+    security_artifacts = write_signal_artifacts(
+        list(security_records_by_id.values()),
+        output_dir,
+        artifact_name="security-index",
+        shard_dir_name="security-shards",
+        record_schema="security-v1",
+        shard_strategy="bounded-sequential-scan-order",
+        updated_at=utc_now_isoformat(),
+    )
+    ranking_artifacts = write_signal_artifacts(
+        ranking_records,
+        output_dir,
+        artifact_name="ranking-index",
+        shard_dir_name="ranking-shards",
+        record_schema="ranking-v1",
+        shard_strategy="bounded-sequential-score-desc",
+        updated_at=utc_now_isoformat(),
+    )
 
     logger.info(
         f"  search-index-lite.json: {search_index_lite_path.stat().st_size / 1024 / 1024:.2f} MB"
     )
-    logger.info(f"  quality-index.json: {quality_index_path.stat().st_size / 1024 / 1024:.2f} MB")
-    logger.info(f"  security-index.json: {security_index_path.stat().st_size / 1024 / 1024:.2f} MB")
-    logger.info(f"  ranking-index.json: {ranking_index_path.stat().st_size / 1024 / 1024:.2f} MB")
+    logger.info(
+        f"  quality-index.json pointer: {quality_artifacts.index_size_bytes / 1024 / 1024:.2f} MB"
+    )
+    logger.info(
+        f"  quality shards: {quality_artifacts.shard_count} "
+        f"(largest {quality_artifacts.largest_shard_bytes / 1024 / 1024:.2f} MB)"
+    )
+    logger.info(
+        f"  security-index.json pointer: {security_artifacts.index_size_bytes / 1024 / 1024:.2f} MB"
+    )
+    logger.info(
+        f"  security shards: {security_artifacts.shard_count} "
+        f"(largest {security_artifacts.largest_shard_bytes / 1024 / 1024:.2f} MB)"
+    )
+    logger.info(
+        f"  ranking-index.json pointer: {ranking_artifacts.index_size_bytes / 1024 / 1024:.2f} MB"
+    )
+    logger.info(
+        f"  ranking shards: {ranking_artifacts.shard_count} "
+        f"(largest {ranking_artifacts.largest_shard_bytes / 1024 / 1024:.2f} MB)"
+    )
 
     category_artifacts = write_category_artifacts(
         categories,
@@ -651,17 +658,40 @@ def build_search_index(
         "lite_index_included_count": len(lite_skills),
         "lite_index_size_bytes": search_index_lite_path.stat().st_size,
         "lite_index_gzip_size_bytes": search_index_lite_gz_path.stat().st_size,
-        "quality_index_size_bytes": quality_index_path.stat().st_size,
-        "security_index_size_bytes": security_index_path.stat().st_size,
-        "ranking_index_size_bytes": ranking_index_path.stat().st_size,
+        "quality_index_size_bytes": quality_artifacts.index_size_bytes,
+        "quality_index_gzip_size_bytes": quality_artifacts.index_size_gzip_bytes,
+        "quality_shard_count": quality_artifacts.shard_count,
+        "quality_largest_shard_bytes": quality_artifacts.largest_shard_bytes,
+        "quality_largest_shard_gzip_bytes": quality_artifacts.largest_shard_gzip_bytes,
+        "security_index_size_bytes": security_artifacts.index_size_bytes,
+        "security_index_gzip_size_bytes": security_artifacts.index_size_gzip_bytes,
+        "security_shard_count": security_artifacts.shard_count,
+        "security_largest_shard_bytes": security_artifacts.largest_shard_bytes,
+        "security_largest_shard_gzip_bytes": security_artifacts.largest_shard_gzip_bytes,
+        "ranking_index_size_bytes": ranking_artifacts.index_size_bytes,
+        "ranking_index_gzip_size_bytes": ranking_artifacts.index_size_gzip_bytes,
+        "ranking_shard_count": ranking_artifacts.shard_count,
+        "ranking_largest_shard_bytes": ranking_artifacts.largest_shard_bytes,
+        "ranking_largest_shard_gzip_bytes": ranking_artifacts.largest_shard_gzip_bytes,
         "largest_generated_file_bytes": max(
             search_artifacts.largest_shard_bytes,
+            search_artifacts.largest_shard_gzip_bytes,
             category_artifacts.largest_part_bytes,
+            category_artifacts.largest_part_gzip_bytes,
             search_index_lite_path.stat().st_size,
             search_index_lite_gz_path.stat().st_size,
-            quality_index_path.stat().st_size,
-            security_index_path.stat().st_size,
-            ranking_index_path.stat().st_size,
+            quality_artifacts.index_size_bytes,
+            quality_artifacts.index_size_gzip_bytes,
+            quality_artifacts.largest_shard_bytes,
+            quality_artifacts.largest_shard_gzip_bytes,
+            security_artifacts.index_size_bytes,
+            security_artifacts.index_size_gzip_bytes,
+            security_artifacts.largest_shard_bytes,
+            security_artifacts.largest_shard_gzip_bytes,
+            ranking_artifacts.index_size_bytes,
+            ranking_artifacts.index_size_gzip_bytes,
+            ranking_artifacts.largest_shard_bytes,
+            ranking_artifacts.largest_shard_gzip_bytes,
             (output_dir / "featured.json").stat().st_size,
         ),
     }

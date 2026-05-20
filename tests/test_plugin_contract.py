@@ -90,9 +90,27 @@ def test_build_plugins_index_and_stats_use_plugin_keys(tmp_path):
             encoding="utf-8"
         )
     )
-    quality_data = json.loads((output_dir / "quality-index.json").read_text(encoding="utf-8"))
-    security_data = json.loads((output_dir / "security-index.json").read_text(encoding="utf-8"))
-    ranking_data = json.loads((output_dir / "ranking-index.json").read_text(encoding="utf-8"))
+    quality_pointer = json.loads((output_dir / "quality-index.json").read_text(encoding="utf-8"))
+    quality_manifest = json.loads(
+        (output_dir / "quality-index-manifest.json").read_text(encoding="utf-8")
+    )
+    quality_shard = json.loads(
+        (output_dir / quality_manifest["shards"][0]["path"]).read_text(encoding="utf-8")
+    )
+    security_pointer = json.loads((output_dir / "security-index.json").read_text(encoding="utf-8"))
+    security_manifest = json.loads(
+        (output_dir / "security-index-manifest.json").read_text(encoding="utf-8")
+    )
+    security_shard = json.loads(
+        (output_dir / security_manifest["shards"][0]["path"]).read_text(encoding="utf-8")
+    )
+    ranking_pointer = json.loads((output_dir / "ranking-index.json").read_text(encoding="utf-8"))
+    ranking_manifest = json.loads(
+        (output_dir / "ranking-index-manifest.json").read_text(encoding="utf-8")
+    )
+    ranking_shard = json.loads(
+        (output_dir / ranking_manifest["shards"][0]["path"]).read_text(encoding="utf-8")
+    )
 
     assert "plugins" in plugins_data
     assert "collections" not in plugins_data
@@ -110,6 +128,12 @@ def test_build_plugins_index_and_stats_use_plugin_keys(tmp_path):
     assert stats_data["lite_index_included_count"] == 1
     assert stats_data["search_shard_count"] == 1
     assert stats_data["category_shard_count"] == 1
+    assert stats_data["quality_shard_count"] == 1
+    assert stats_data["security_shard_count"] == 1
+    assert stats_data["ranking_shard_count"] == 1
+    assert stats_data["quality_largest_shard_bytes"] > 0
+    assert stats_data["security_largest_shard_bytes"] > 0
+    assert stats_data["ranking_largest_shard_bytes"] > 0
     assert stats_data["category_counts"] == [
         {"name": "development", "code": "dev", "count": 1}
     ]
@@ -134,10 +158,28 @@ def test_build_plugins_index_and_stats_use_plugin_keys(tmp_path):
     assert lite_data["skills"][0]["id"]
     assert lite_data["skills"][0]["quality_grade"] in {"S", "A", "B", "C", "unknown", "blocked"}
     assert lite_data["skills"][0]["security_status"] == "unknown"
-    assert quality_data["count"] == 1
-    assert security_data["count"] == 1
-    assert ranking_data["count"] == 1
-    assert ranking_data["records"][0]["recommended_score"] >= 0
+    assert quality_pointer["deprecated_full_payload"] is True
+    assert quality_pointer["manifest"] == "quality-index-manifest.json"
+    assert "records" not in quality_pointer
+    assert quality_manifest["record_schema"] == "quality-v1"
+    assert quality_manifest["shard_count"] == 1
+    assert sum(shard["count"] for shard in quality_manifest["shards"]) == 1
+    assert quality_shard["records"][0]["id"]
+    assert security_pointer["deprecated_full_payload"] is True
+    assert security_pointer["manifest"] == "security-index-manifest.json"
+    assert "records" not in security_pointer
+    assert security_manifest["record_schema"] == "security-v1"
+    assert security_manifest["shard_count"] == 1
+    assert sum(shard["count"] for shard in security_manifest["shards"]) == 1
+    assert security_shard["records"][0]["security_status"] == "unknown"
+    assert ranking_pointer["deprecated_full_payload"] is True
+    assert ranking_pointer["manifest"] == "ranking-index-manifest.json"
+    assert "records" not in ranking_pointer
+    assert ranking_manifest["record_schema"] == "ranking-v1"
+    assert ranking_manifest["shard_strategy"] == "bounded-sequential-score-desc"
+    assert ranking_manifest["shard_count"] == 1
+    assert sum(shard["count"] for shard in ranking_manifest["shards"]) == 1
+    assert ranking_shard["records"][0]["recommended_score"] >= 0
 
 
 def test_build_search_index_lite_dedupes_install_and_branch(tmp_path):

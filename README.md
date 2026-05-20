@@ -76,8 +76,14 @@ curl https://majiayu000.github.io/claude-skill-registry-core/search-shards/part-
 # Deduplicated catalog index with quality/security/install signals
 curl https://majiayu000.github.io/claude-skill-registry-core/search-index-lite.json
 curl https://majiayu000.github.io/claude-skill-registry-core/quality-index.json
+curl https://majiayu000.github.io/claude-skill-registry-core/quality-index-manifest.json
+curl https://majiayu000.github.io/claude-skill-registry-core/quality-shards/part-000.json
 curl https://majiayu000.github.io/claude-skill-registry-core/security-index.json
+curl https://majiayu000.github.io/claude-skill-registry-core/security-index-manifest.json
+curl https://majiayu000.github.io/claude-skill-registry-core/security-shards/part-000.json
 curl https://majiayu000.github.io/claude-skill-registry-core/ranking-index.json
+curl https://majiayu000.github.io/claude-skill-registry-core/ranking-index-manifest.json
+curl https://majiayu000.github.io/claude-skill-registry-core/ranking-shards/part-000.json
 
 # Lightweight registry summary (counts only)
 curl https://raw.githubusercontent.com/majiayu000/claude-skill-registry-core/main/registry_summary.json

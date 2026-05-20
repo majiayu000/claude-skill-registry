@@ -32,6 +32,15 @@ class CategoryArtifactStats:
     largest_part_gzip_bytes: int
 
 
+@dataclass(frozen=True)
+class SignalArtifactStats:
+    shard_count: int
+    largest_shard_bytes: int
+    largest_shard_gzip_bytes: int
+    index_size_bytes: int
+    index_size_gzip_bytes: int
+
+
 def compact_json_bytes(payload: object) -> bytes:
     return json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
 
@@ -154,6 +163,80 @@ def write_search_artifacts(
     safe_write_gzip_json(index_gz_path, pointer)
 
     return SearchArtifactStats(
+        shard_count=part_count,
+        largest_shard_bytes=manifest["largest_shard_bytes"],
+        largest_shard_gzip_bytes=manifest["largest_shard_gzip_bytes"],
+        index_size_bytes=index_path.stat().st_size,
+        index_size_gzip_bytes=index_gz_path.stat().st_size,
+    )
+
+
+def write_signal_artifacts(
+    records: list[dict],
+    output_dir: Path,
+    *,
+    artifact_name: str,
+    shard_dir_name: str,
+    record_schema: str,
+    shard_strategy: str,
+    updated_at: str,
+    target_part_bytes: int = DEFAULT_PART_TARGET_BYTES,
+) -> SignalArtifactStats:
+    output_dir.mkdir(parents=True, exist_ok=True)
+    shards_dir = output_dir / shard_dir_name
+    remove_generated_children(shards_dir)
+    shards_dir.mkdir(parents=True, exist_ok=True)
+
+    chunks = chunk_records(records, target_part_bytes)
+    part_count = len(chunks)
+    shard_entries: list[dict] = []
+
+    for idx, chunk in enumerate(chunks):
+        payload = {
+            "schema_version": 1,
+            "updated_at": updated_at,
+            "part": idx,
+            "part_count": part_count,
+            "count": len(chunk),
+            "records": chunk,
+        }
+        part_path = shards_dir / f"part-{idx:03d}.json"
+        gzip_path = shards_dir / f"part-{idx:03d}.json.gz"
+        safe_write_json(part_path, payload)
+        safe_write_gzip_json(gzip_path, payload)
+        shard_entries.append(build_part_entry(part_path, gzip_path, len(chunk), output_dir))
+
+    manifest_name = f"{artifact_name}-manifest.json"
+    manifest = {
+        "schema_version": 1,
+        "updated_at": updated_at,
+        "total_count": len(records),
+        "shard_strategy": shard_strategy,
+        "record_schema": record_schema,
+        "shard_count": part_count,
+        "largest_shard_bytes": max((entry["bytes"] for entry in shard_entries), default=0),
+        "largest_shard_gzip_bytes": max(
+            (entry["gzip_bytes"] for entry in shard_entries),
+            default=0,
+        ),
+        "shards": shard_entries,
+    }
+    safe_write_json(output_dir / manifest_name, manifest)
+
+    pointer = {
+        "schema_version": 1,
+        "updated_at": updated_at,
+        "count": len(records),
+        "deprecated_full_payload": True,
+        "manifest": manifest_name,
+        "message": f"Full {artifact_name} payload moved to {shard_dir_name}/*.json",
+    }
+    index_path = output_dir / f"{artifact_name}.json"
+    index_gz_path = output_dir / f"{artifact_name}.json.gz"
+    safe_write_json(index_path, pointer)
+    safe_write_gzip_json(index_gz_path, pointer)
+
+    return SignalArtifactStats(
         shard_count=part_count,
         largest_shard_bytes=manifest["largest_shard_bytes"],
         largest_shard_gzip_bytes=manifest["largest_shard_gzip_bytes"],

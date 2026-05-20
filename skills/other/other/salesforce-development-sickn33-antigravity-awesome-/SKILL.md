@@ -932,7 +932,6 @@ Message: DML after @wire without refreshApex. Data may be stale.
 - user needs advanced auth -> auth-specialist (SSO, SAML, custom portals)
 
 ## When to Use
-
 - User mentions or implies: salesforce
 - User mentions or implies: sfdc
 - User mentions or implies: apex
@@ -944,3 +943,8 @@ Message: DML after @wire without refreshApex. Data may be stale.
 - User mentions or implies: soql
 - User mentions or implies: governor limits
 - User mentions or implies: connected app
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

@@ -44,7 +44,8 @@ Use this skill when the task involves spreadsheet or workbook work, especially:
 6. Mutate through the CLI, not by editing package internals.
 7. Verify changed workbook-visible state with `inspect`, `pipe out`, or another public read.
 8. Export only after verification when the user needs a handoff file.
-9. Commit or sync only after verified changes when versioning is part of the workflow.
+9. After changes have been verified, if the user may need to inspect, audit, or review the final workbook, run `univer view "$WB" --no-open --json` to get a local preview link and include that link in your response.
+10. Commit or sync only after verified changes when versioning is part of the workflow.
 
 ## Hard Rules
 

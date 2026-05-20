@@ -1,0 +1,35 @@
+{
+  "name": "google-ads-scripts",
+  "description": "Write, debug, and ship AdsApp/AdsManagerApp scripts correctly, covering selectors, GAQL, mutate(), MCC parallel runs, and common errors.",
+  "repo": "dofollow-nl/google-ads-scripts-skills",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "tags": [
+    "google-ads",
+    "scripts",
+    "advertising",
+    "automation",
+    "adsapp",
+    "gaql"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "google-ads-scripts-dofollow-nl-google-ads-scripts-s-3",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "LICENSE",
+    "README.md",
+    "examples/exclude-age-demographic.js",
+    "templates/mcc-parallel.js",
+    "templates/mutate-with-search.js",
+    "templates/single-account.js"
+  ],
+  "author": "dofollow-nl",
+  "source_url": "https://github.com/dofollow-nl/google-ads-scripts-skills/blob/main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dofollow-nl/google-ads-scripts-skills/blob/main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

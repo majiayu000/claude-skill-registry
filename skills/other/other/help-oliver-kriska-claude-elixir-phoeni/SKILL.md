@@ -57,6 +57,7 @@ Map the user's situation to one of these categories:
 | **Manual dep vetting** | "vet this package", "approve dep", "trust ledger", "after /phx:deps-audit findings" | `/phx:deps-vet` |
 | **Deployment** | "deploy", "release", "production" | `/phx:verify` then deploy skill |
 | **Permissions** | "too many prompts", "allow", "permission fatigue" | `/phx:permissions` |
+| **Returning after time off** | "what did I miss", "back from vacation", "catch up", "what changed while I was out" | `/catchup` (companion plugin, separate install) |
 
 ### Step 3: Respond or Clarify
 

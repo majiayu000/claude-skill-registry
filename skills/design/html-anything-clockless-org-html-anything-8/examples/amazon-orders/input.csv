@@ -1,0 +1,179 @@
+Order Date,Order ID,Title,ASIN,Category,Quantity,Item Subtotal,Item Total,Shipping Address Name,Shipping Address State,Order Status,Carrier,Currency
+2023-01-02,222-SYNTH-7000087,Tiny Trees AAA Batteries 24-pack (synthetic example),B0SYNTH006,Electronics,1,9.99,10.84,Sam Reyes,NY,Delivered,AMZL_US,USD
+2023-01-05,222-SYNTH-7000072,Stoneground Toothpaste 4-pack (synthetic example),B0SYNTH005,Health & Personal Care,1,12.99,14.09,Sam Reyes,NY,Delivered,USPS,USD
+2023-01-13,222-SYNTH-7000025,"MorningHill Permanent Coffee Filter, #4 (synthetic example)",B0SYNTH002,Kitchen,1,9.49,10.30,Alex Reyes,MA,Delivered,UPS,USD
+2023-01-14,222-SYNTH-7000000,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,AMZL_US,USD
+2023-01-16,222-SYNTH-7000097,"BrightHome LED Bulbs, 4-pack soft white (synthetic example)",B0SYNTH007,Household,1,13.49,14.64,Sam Reyes,NY,Delivered,UPS,USD
+2023-01-20,222-SYNTH-7000054,"Daily Multivitamin, 90 capsules (synthetic example)",B0SYNTH004,Health & Personal Care,1,14.95,16.22,Sam Reyes,NY,Delivered,USPS,USD
+2023-01-25,222-SYNTH-7000038,"Pioneer Black Ink Cartridge, XL (synthetic example)",B0SYNTH003,Office,1,24.50,26.58,Sam Reyes,NY,Delivered,FEDEX,USD
+2023-02-27,222-SYNTH-7000156,Slow Lane Cookbook — hardcover (synthetic),B0SYNTH106,Books,1,27.50,29.84,Sam Reyes,NY,Delivered,USPS,USD
+2023-02-28,222-SYNTH-7000001,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,UPS,USD
+2023-03-18,222-SYNTH-7000073,Stoneground Toothpaste 4-pack (synthetic example),B0SYNTH005,Health & Personal Care,1,12.99,14.09,Sam Reyes,NY,Delivered,USPS,USD
+2023-03-25,222-SYNTH-7000039,"Pioneer Black Ink Cartridge, XL (synthetic example)",B0SYNTH003,Office,1,24.50,26.58,Sam Reyes,NY,Delivered,UPS,USD
+2023-03-25,222-SYNTH-7000055,"Daily Multivitamin, 90 capsules (synthetic example)",B0SYNTH004,Health & Personal Care,1,14.95,16.22,Alex Reyes,MA,Delivered,USPS,USD
+2023-04-10,222-SYNTH-7000026,"MorningHill Permanent Coffee Filter, #4 (synthetic example)",B0SYNTH002,Kitchen,1,9.49,10.30,Jordan Reyes,FL,Delivered,FEDEX,USD
+2023-04-18,222-SYNTH-7000002,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,USPS,USD
+2023-05-02,222-SYNTH-7000088,Tiny Trees AAA Batteries 24-pack (synthetic example),B0SYNTH006,Electronics,1,9.99,10.84,Sam Reyes,NY,Delivered,FEDEX,USD
+2023-05-16,222-SYNTH-7000056,"Daily Multivitamin, 90 capsules (synthetic example)",B0SYNTH004,Health & Personal Care,1,14.95,16.22,Sam Reyes,NY,Delivered,AMZL_US,USD
+2023-05-23,222-SYNTH-7000074,Stoneground Toothpaste 4-pack (synthetic example),B0SYNTH005,Health & Personal Care,1,12.99,14.09,Sam Reyes,NY,Delivered,UPS,USD
+2023-05-25,222-SYNTH-7000040,"Pioneer Black Ink Cartridge, XL (synthetic example)",B0SYNTH003,Office,1,24.50,26.58,Sam Reyes,NY,Delivered,USPS,USD
+2023-05-30,222-SYNTH-7000003,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,FEDEX,USD
+2023-06-25,222-SYNTH-7000027,"MorningHill Permanent Coffee Filter, #4 (synthetic example)",B0SYNTH002,Kitchen,1,9.49,10.30,Alex Reyes,MA,Delivered,USPS,USD
+2023-07-10,222-SYNTH-7000153,"Microfiber Cleaning Cloths, 24-pack (synthetic example)",B0SYNTH402,Household,1,14.99,16.26,Sam Reyes,NY,Delivered,AMZL_US,USD
+2023-07-12,222-SYNTH-7000135,"Magnetic Tile Set, 32 pieces (synthetic example)",B0SYNTH602,Toys,1,44.99,48.81,Alex Reyes,MA,Delivered,AMZL_US,USD
+2023-07-12,222-SYNTH-7000147,"Dish Soap, lemon, 2-pack (synthetic example)",B0SYNTH403,Household,2,21.98,23.85,Sam Reyes,NY,Delivered,USPS,USD
+2023-07-12,222-SYNTH-7000162,"Microfiber Cleaning Cloths, 24-pack (synthetic example)",B0SYNTH402,Household,1,14.99,16.26,Alex Reyes,MA,Delivered,USPS,USD
+2023-07-16,222-SYNTH-7000129,Slow Lane Cookbook — hardcover (synthetic),B0SYNTH106,Books,1,27.50,29.84,Alex Reyes,MA,Delivered,FEDEX,USD
+2023-07-18,222-SYNTH-7000004,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,UPS,USD
+2023-07-20,222-SYNTH-7000057,"Daily Multivitamin, 90 capsules (synthetic example)",B0SYNTH004,Health & Personal Care,1,14.95,16.22,Sam Reyes,NY,Delivered,AMZL_US,USD
+2023-07-28,222-SYNTH-7000098,"BrightHome LED Bulbs, 4-pack soft white (synthetic example)",B0SYNTH007,Household,1,13.49,14.64,Alex Reyes,MA,Delivered,UPS,USD
+2023-08-01,222-SYNTH-7000041,"Pioneer Black Ink Cartridge, XL (synthetic example)",B0SYNTH003,Office,1,24.50,26.58,Sam Reyes,NY,Delivered,FEDEX,USD
+2023-08-02,222-SYNTH-7000075,Stoneground Toothpaste 4-pack (synthetic example),B0SYNTH005,Health & Personal Care,1,12.99,14.09,Jordan Reyes,FL,Delivered,FEDEX,USD
+2023-08-23,222-SYNTH-7000142,"Trash Bags, 13-gal, 90 count (synthetic example)",B0SYNTH404,Household,1,21.99,23.86,Sam Reyes,NY,Delivered,FEDEX,USD
+2023-08-30,222-SYNTH-7000005,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,USPS,USD
+2023-09-04,222-SYNTH-7000089,Tiny Trees AAA Batteries 24-pack (synthetic example),B0SYNTH006,Electronics,1,9.99,10.84,Sam Reyes,NY,Delivered,AMZL_US,USD
+2023-09-13,222-SYNTH-7000058,"Daily Multivitamin, 90 capsules (synthetic example)",B0SYNTH004,Health & Personal Care,1,14.95,16.22,Alex Reyes,MA,Delivered,AMZL_US,USD
+2023-09-16,222-SYNTH-7000028,"MorningHill Permanent Coffee Filter, #4 (synthetic example)",B0SYNTH002,Kitchen,1,9.49,10.30,Jordan Reyes,FL,Delivered,USPS,USD
+2023-10-01,222-SYNTH-7000166,"Cast Iron Skillet, 12-inch (synthetic example)",B0SYNTH302,Kitchen,1,39.95,43.35,Sam Reyes,NY,Delivered,AMZL_US,USD
+2023-10-10,222-SYNTH-7000006,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,UPS,USD
+2023-10-13,222-SYNTH-7000042,"Pioneer Black Ink Cartridge, XL (synthetic example)",B0SYNTH003,Office,1,24.50,26.58,Sam Reyes,NY,Delivered,AMZL_US,USD
+2023-10-17,222-SYNTH-7000076,Stoneground Toothpaste 4-pack (synthetic example),B0SYNTH005,Health & Personal Care,1,12.99,14.09,Jordan Reyes,FL,Delivered,AMZL_US,USD
+2023-10-17,222-SYNTH-7000123,"Wooden Building Blocks, 100 pc (synthetic example)",B0SYNTH601,Toys,1,34.99,37.96,Alex Reyes,MA,Delivered,UPS,USD
+2023-10-23,222-SYNTH-7000124,Slow Lane Cookbook — hardcover (synthetic),B0SYNTH106,Books,1,27.50,29.84,Sam Reyes,NY,Delivered,USPS,USD
+2023-11-15,222-SYNTH-7000059,"Daily Multivitamin, 90 capsules (synthetic example)",B0SYNTH004,Health & Personal Care,1,14.95,16.22,Jordan Reyes,FL,Delivered,USPS,USD
+2023-11-19,222-SYNTH-7000007,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,USPS,USD
+2023-11-29,222-SYNTH-7000108,How Cities Think — paperback (synthetic example),B0SYNTH104,Books,2,39.90,43.29,Jordan Reyes,FL,Delivered,FEDEX,USD
+2023-11-29,222-SYNTH-7000175,"Espresso Machine, semi-automatic (synthetic example)",B0SYNTH301,Kitchen,1,549.00,595.67,Alex Reyes,MA,Cancelled,,USD
+2023-12-05,222-SYNTH-7000128,"Laundry Detergent, 96 loads (synthetic example)",B0SYNTH401,Household,1,19.99,21.69,Sam Reyes,NY,Delivered,FEDEX,USD
+2023-12-09,222-SYNTH-7000176,"Office Chair, ergonomic (synthetic example)",B0SYNTH703,Office,1,389.00,422.07,Sam Reyes,NY,Cancelled,,USD
+2023-12-10,222-SYNTH-7000130,Rivermouth: Stories — paperback (synthetic),B0SYNTH109,Books,1,15.50,16.82,Sam Reyes,NY,Delivered,UPS,USD
+2023-12-17,222-SYNTH-7000043,"Pioneer Black Ink Cartridge, XL (synthetic example)",B0SYNTH003,Office,1,24.50,26.58,Sam Reyes,NY,Delivered,FEDEX,USD
+2023-12-19,222-SYNTH-7000029,"MorningHill Permanent Coffee Filter, #4 (synthetic example)",B0SYNTH002,Kitchen,1,9.49,10.30,Sam Reyes,NY,Delivered,UPS,USD
+2023-12-19,222-SYNTH-7000131,"Glass Storage Containers, 10-piece (synthetic example)",B0SYNTH303,Kitchen,1,44.50,48.28,Jordan Reyes,FL,Refunded,UPS,USD
+2023-12-28,222-SYNTH-7000008,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,UPS,USD
+2023-12-28,222-SYNTH-7000134,27-inch QHD Monitor (synthetic example),B0SYNTH201,Electronics,1,299.99,325.49,Sam Reyes,NY,Delivered,USPS,USD
+2023-12-28,222-SYNTH-7000158,"Tomato Cages, 4-pack (synthetic example)",B0SYNTH802,Garden,1,29.99,32.54,Sam Reyes,NY,Delivered,UPS,USD
+2023-12-29,222-SYNTH-7000120,"Soaker Hose, 50 ft (synthetic example)",B0SYNTH803,Garden,1,24.49,26.57,Sam Reyes,NY,Delivered,UPS,USD
+2023-12-29,222-SYNTH-7000133,Wandering Stars: A Novel by Riverstone Press (synthetic),B0SYNTH101,Books,1,18.95,20.56,Jordan Reyes,FL,Delivered,AMZL_US,USD
+2024-01-08,222-SYNTH-7000113,"Wireless Mechanical Keyboard, 65% (synthetic example)",B0SYNTH203,Electronics,1,119.00,129.12,Sam Reyes,NY,Delivered,FEDEX,USD
+2024-01-10,222-SYNTH-7000077,Stoneground Toothpaste 4-pack (synthetic example),B0SYNTH005,Health & Personal Care,1,12.99,14.09,Sam Reyes,NY,Delivered,USPS,USD
+2024-01-15,222-SYNTH-7000155,Letters from the Reading Room — paperback (synthetic),B0SYNTH107,Books,1,16.99,18.43,Sam Reyes,NY,Delivered,AMZL_US,USD
+2024-01-16,222-SYNTH-7000060,"Daily Multivitamin, 90 capsules (synthetic example)",B0SYNTH004,Health & Personal Care,1,14.95,16.22,Alex Reyes,MA,Delivered,FEDEX,USD
+2024-01-22,222-SYNTH-7000090,Tiny Trees AAA Batteries 24-pack (synthetic example),B0SYNTH006,Electronics,1,9.99,10.84,Sam Reyes,NY,Delivered,UPS,USD
+2024-02-02,222-SYNTH-7000119,"Notebook Set, 3 ruled (synthetic example)",B0SYNTH704,Office,1,18.50,20.07,Sam Reyes,NY,Delivered,AMZL_US,USD
+2024-02-03,222-SYNTH-7000099,"BrightHome LED Bulbs, 4-pack soft white (synthetic example)",B0SYNTH007,Household,1,13.49,14.64,Sam Reyes,NY,Delivered,FEDEX,USD
+2024-02-08,222-SYNTH-7000009,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,AMZL_US,USD
+2024-02-23,222-SYNTH-7000044,"Pioneer Black Ink Cartridge, XL (synthetic example)",B0SYNTH003,Office,1,24.50,26.58,Sam Reyes,NY,Delivered,AMZL_US,USD
+2024-03-10,222-SYNTH-7000061,"Daily Multivitamin, 90 capsules (synthetic example)",B0SYNTH004,Health & Personal Care,1,14.95,16.22,Sam Reyes,NY,Delivered,UPS,USD
+2024-03-19,222-SYNTH-7000030,"MorningHill Permanent Coffee Filter, #4 (synthetic example)",B0SYNTH002,Kitchen,1,9.49,10.30,Alex Reyes,MA,Delivered,UPS,USD
+2024-03-22,222-SYNTH-7000157,"Foam Roller, 18-inch (synthetic example)",B0SYNTHA01,Health & Personal Care,2,49.98,54.23,Alex Reyes,MA,Delivered,AMZL_US,USD
+2024-03-26,222-SYNTH-7000010,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,FEDEX,USD
+2024-04-04,222-SYNTH-7000078,Stoneground Toothpaste 4-pack (synthetic example),B0SYNTH005,Health & Personal Care,1,12.99,14.09,Sam Reyes,NY,Delivered,UPS,USD
+2024-04-30,222-SYNTH-7000045,"Pioneer Black Ink Cartridge, XL (synthetic example)",B0SYNTH003,Office,1,24.50,26.58,Sam Reyes,NY,Delivered,AMZL_US,USD
+2024-05-05,222-SYNTH-7000150,Rivermouth: Stories — paperback (synthetic),B0SYNTH109,Books,1,15.50,16.82,Sam Reyes,NY,Delivered,AMZL_US,USD
+2024-05-08,222-SYNTH-7000091,Tiny Trees AAA Batteries 24-pack (synthetic example),B0SYNTH006,Electronics,1,9.99,10.84,Sam Reyes,NY,Delivered,USPS,USD
+2024-05-10,222-SYNTH-7000011,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,AMZL_US,USD
+2024-05-18,222-SYNTH-7000062,"Daily Multivitamin, 90 capsules (synthetic example)",B0SYNTH004,Health & Personal Care,1,14.95,16.22,Jordan Reyes,FL,Delivered,UPS,USD
+2024-05-20,222-SYNTH-7000154,The Whale Atlas — illustrated edition (synthetic),B0SYNTH108,Books,1,32.00,34.72,Sam Reyes,NY,Delivered,FEDEX,USD
+2024-05-21,222-SYNTH-7000148,Letters from the Reading Room — paperback (synthetic),B0SYNTH107,Books,1,16.99,18.43,Sam Reyes,NY,Delivered,USPS,USD
+2024-06-17,222-SYNTH-7000031,"MorningHill Permanent Coffee Filter, #4 (synthetic example)",B0SYNTH002,Kitchen,1,9.49,10.30,Jordan Reyes,FL,Delivered,FEDEX,USD
+2024-06-26,222-SYNTH-7000012,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,UPS,USD
+2024-06-26,222-SYNTH-7000079,Stoneground Toothpaste 4-pack (synthetic example),B0SYNTH005,Health & Personal Care,1,12.99,14.09,Alex Reyes,MA,Delivered,FEDEX,USD
+2024-06-28,222-SYNTH-7000046,"Pioneer Black Ink Cartridge, XL (synthetic example)",B0SYNTH003,Office,1,24.50,26.58,Sam Reyes,NY,Delivered,USPS,USD
+2024-06-29,222-SYNTH-7000104,Adjustable Laptop Stand (synthetic example),B0SYNTH701,Office,1,39.99,43.39,Sam Reyes,NY,Delivered,AMZL_US,USD
+2024-07-14,222-SYNTH-7000063,"Daily Multivitamin, 90 capsules (synthetic example)",B0SYNTH004,Health & Personal Care,1,14.95,16.22,Sam Reyes,NY,Delivered,USPS,USD
+2024-07-16,222-SYNTH-7000169,27-inch QHD Monitor (synthetic example),B0SYNTH201,Electronics,1,299.99,325.49,Jordan Reyes,FL,Delivered,FEDEX,USD
+2024-07-27,222-SYNTH-7000100,"BrightHome LED Bulbs, 4-pack soft white (synthetic example)",B0SYNTH007,Household,1,13.49,14.64,Sam Reyes,NY,Delivered,UPS,USD
+2024-08-02,222-SYNTH-7000013,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,FEDEX,USD
+2024-08-22,222-SYNTH-7000109,Rivermouth: Stories — paperback (synthetic),B0SYNTH109,Books,1,15.50,16.82,Alex Reyes,MA,Delivered,FEDEX,USD
+2024-08-23,222-SYNTH-7000144,"Cast Iron Skillet, 12-inch (synthetic example)",B0SYNTH302,Kitchen,1,39.95,43.35,Alex Reyes,MA,Delivered,UPS,USD
+2024-08-31,222-SYNTH-7000092,Tiny Trees AAA Batteries 24-pack (synthetic example),B0SYNTH006,Electronics,1,9.99,10.84,Alex Reyes,MA,Delivered,UPS,USD
+2024-09-02,222-SYNTH-7000064,"Daily Multivitamin, 90 capsules (synthetic example)",B0SYNTH004,Health & Personal Care,1,14.95,16.22,Alex Reyes,MA,Delivered,FEDEX,USD
+2024-09-03,222-SYNTH-7000032,"MorningHill Permanent Coffee Filter, #4 (synthetic example)",B0SYNTH002,Kitchen,1,9.49,10.30,Sam Reyes,NY,Delivered,FEDEX,USD
+2024-09-04,222-SYNTH-7000145,"Resistance Bands, 5-pack (synthetic example)",B0SYNTHA02,Health & Personal Care,1,18.99,20.60,Jordan Reyes,FL,Delivered,USPS,USD
+2024-09-08,222-SYNTH-7000014,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,UPS,USD
+2024-09-12,222-SYNTH-7000047,"Pioneer Black Ink Cartridge, XL (synthetic example)",B0SYNTH003,Office,1,24.50,26.58,Sam Reyes,NY,Delivered,USPS,USD
+2024-09-17,222-SYNTH-7000080,Stoneground Toothpaste 4-pack (synthetic example),B0SYNTH005,Health & Personal Care,1,12.99,14.09,Sam Reyes,NY,Delivered,UPS,USD
+2024-09-23,222-SYNTH-7000141,Stainless Steel Tea Kettle (synthetic example),B0SYNTH304,Kitchen,1,72.00,78.12,Sam Reyes,NY,Delivered,AMZL_US,USD
+2024-10-12,222-SYNTH-7000107,27-inch QHD Monitor (synthetic example),B0SYNTH201,Electronics,1,299.99,325.49,Sam Reyes,NY,Delivered,UPS,USD
+2024-10-20,222-SYNTH-7000122,Conical Burr Coffee Grinder (synthetic example),B0SYNTH305,Kitchen,1,139.00,150.82,Sam Reyes,NY,Delivered,AMZL_US,USD
+2024-10-26,222-SYNTH-7000015,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,FEDEX,USD
+2024-11-08,222-SYNTH-7000160,The Whale Atlas — illustrated edition (synthetic),B0SYNTH108,Books,1,32.00,34.72,Jordan Reyes,FL,Delivered,USPS,USD
+2024-11-09,222-SYNTH-7000139,"Office Chair, ergonomic (synthetic example)",B0SYNTH703,Office,1,389.00,422.07,Alex Reyes,MA,Delivered,UPS,USD
+2024-11-11,222-SYNTH-7000065,"Daily Multivitamin, 90 capsules (synthetic example)",B0SYNTH004,Health & Personal Care,1,14.95,16.22,Sam Reyes,NY,Delivered,FEDEX,USD
+2024-11-20,222-SYNTH-7000081,Stoneground Toothpaste 4-pack (synthetic example),B0SYNTH005,Health & Personal Care,1,12.99,14.09,Alex Reyes,MA,Delivered,USPS,USD
+2024-11-22,222-SYNTH-7000048,"Pioneer Black Ink Cartridge, XL (synthetic example)",B0SYNTH003,Office,1,24.50,26.58,Sam Reyes,NY,Delivered,FEDEX,USD
+2024-11-23,222-SYNTH-7000118,Wandering Stars: A Novel by Riverstone Press (synthetic),B0SYNTH101,Books,1,18.95,20.56,Sam Reyes,NY,Delivered,AMZL_US,USD
+2024-11-24,222-SYNTH-7000103,Standing Desk Mat (synthetic example),B0SYNTH702,Office,1,79.00,85.72,Alex Reyes,MA,Refunded,USPS,USD
+2024-11-24,222-SYNTH-7000151,"Reusable Water Bottle, 32oz (synthetic example)",B0SYNTHA03,Health & Personal Care,1,29.95,32.50,Jordan Reyes,FL,Delivered,FEDEX,USD
+2024-11-25,222-SYNTH-7000140,"Notebook Set, 3 ruled (synthetic example)",B0SYNTH704,Office,1,18.50,20.07,Jordan Reyes,FL,Delivered,FEDEX,USD
+2024-11-28,222-SYNTH-7000117,"Trash Bags, 13-gal, 90 count (synthetic example)",B0SYNTH404,Household,1,21.99,23.86,Sam Reyes,NY,Delivered,AMZL_US,USD
+2024-11-28,222-SYNTH-7000143,Wandering Stars: A Novel by Riverstone Press (synthetic),B0SYNTH101,Books,2,37.90,41.12,Sam Reyes,NY,Delivered,AMZL_US,USD
+2024-11-29,222-SYNTH-7000177,"Glass Storage Containers, 10-piece (synthetic example)",B0SYNTH303,Kitchen,1,44.50,48.28,Sam Reyes,NY,Late delivery exception,USPS,USD
+2024-12-05,222-SYNTH-7000033,"MorningHill Permanent Coffee Filter, #4 (synthetic example)",B0SYNTH002,Kitchen,1,9.49,10.30,Jordan Reyes,FL,Delivered,UPS,USD
+2024-12-06,222-SYNTH-7000173,Noise-Cancelling Headphones (synthetic example),B0SYNTH204,Electronics,1,248.00,269.08,Alex Reyes,MA,Refunded,AMZL_US,USD
+2024-12-09,222-SYNTH-7000170,How Cities Think — paperback (synthetic example),B0SYNTH104,Books,1,19.95,21.65,Sam Reyes,NY,Delivered,UPS,USD
+2024-12-09,222-SYNTH-7000172,A Short History of Light — hardcover (synthetic),B0SYNTH105,Books,1,24.00,26.04,Sam Reyes,NY,Delivered,FEDEX,USD
+2024-12-13,222-SYNTH-7000016,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,UPS,USD
+2024-12-13,222-SYNTH-7000112,"Reusable Water Bottle, 32oz (synthetic example)",B0SYNTHA03,Health & Personal Care,1,29.95,32.50,Jordan Reyes,FL,Delivered,UPS,USD
+2024-12-19,222-SYNTH-7000146,The Paper Garden — paperback (synthetic example),B0SYNTH102,Books,1,14.99,16.26,Alex Reyes,MA,Delivered,UPS,USD
+2024-12-21,222-SYNTH-7000171,"Foam Roller, 18-inch (synthetic example)",B0SYNTHA01,Health & Personal Care,1,24.99,27.11,Sam Reyes,NY,Delivered,UPS,USD
+2024-12-24,222-SYNTH-7000167,"Notebook Set, 3 ruled (synthetic example)",B0SYNTH704,Office,1,18.50,20.07,Alex Reyes,MA,Delivered,AMZL_US,USD
+2024-12-26,222-SYNTH-7000116,Rivermouth: Stories — paperback (synthetic),B0SYNTH109,Books,1,15.50,16.82,Sam Reyes,NY,Delivered,UPS,USD
+2024-12-27,222-SYNTH-7000125,"Office Chair, ergonomic (synthetic example)",B0SYNTH703,Office,1,389.00,422.07,Sam Reyes,NY,Delivered,USPS,USD
+2024-12-30,222-SYNTH-7000174,"Rain Jacket, lightweight (synthetic example)",B0SYNTH902,Apparel,1,89.00,96.57,Sam Reyes,NY,Refunded,USPS,USD
+2024-12-31,222-SYNTH-7000136,"Wool Beanie, charcoal (synthetic example)",B0SYNTH903,Apparel,1,22.00,23.87,Alex Reyes,MA,Delivered,UPS,USD
+2025-01-02,222-SYNTH-7000126,"Wooden Building Blocks, 100 pc (synthetic example)",B0SYNTH601,Toys,1,34.99,37.96,Alex Reyes,MA,Delivered,AMZL_US,USD
+2025-01-05,222-SYNTH-7000093,Tiny Trees AAA Batteries 24-pack (synthetic example),B0SYNTH006,Electronics,1,9.99,10.84,Sam Reyes,NY,Delivered,UPS,USD
+2025-01-06,222-SYNTH-7000137,"Soft-Sole Slippers, kids 7 (synthetic example)",B0SYNTH502,Baby,1,22.50,24.41,Alex Reyes,MA,Delivered,FEDEX,USD
+2025-01-16,222-SYNTH-7000066,"Daily Multivitamin, 90 capsules (synthetic example)",B0SYNTH004,Health & Personal Care,1,14.95,16.22,Sam Reyes,NY,Delivered,AMZL_US,USD
+2025-01-22,222-SYNTH-7000082,Stoneground Toothpaste 4-pack (synthetic example),B0SYNTH005,Health & Personal Care,1,12.99,14.09,Alex Reyes,MA,Delivered,FEDEX,USD
+2025-01-24,222-SYNTH-7000114,"USB-C Hub, 7 ports (synthetic example)",B0SYNTH202,Electronics,1,39.99,43.39,Sam Reyes,NY,Delivered,USPS,USD
+2025-01-25,222-SYNTH-7000017,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,USPS,USD
+2025-01-29,222-SYNTH-7000049,"Pioneer Black Ink Cartridge, XL (synthetic example)",B0SYNTH003,Office,1,24.50,26.58,Sam Reyes,NY,Delivered,FEDEX,USD
+2025-02-07,222-SYNTH-7000110,"Cast Iron Skillet, 12-inch (synthetic example)",B0SYNTH302,Kitchen,1,39.95,43.35,Sam Reyes,NY,Delivered,AMZL_US,USD
+2025-02-14,222-SYNTH-7000101,"BrightHome LED Bulbs, 4-pack soft white (synthetic example)",B0SYNTH007,Household,1,13.49,14.64,Sam Reyes,NY,Delivered,FEDEX,USD
+2025-02-24,222-SYNTH-7000034,"MorningHill Permanent Coffee Filter, #4 (synthetic example)",B0SYNTH002,Kitchen,1,9.49,10.30,Sam Reyes,NY,Delivered,AMZL_US,USD
+2025-02-24,222-SYNTH-7000152,"Notebook Set, 3 ruled (synthetic example)",B0SYNTH704,Office,1,18.50,20.07,Sam Reyes,NY,Delivered,UPS,USD
+2025-03-08,222-SYNTH-7000067,"Daily Multivitamin, 90 capsules (synthetic example)",B0SYNTH004,Health & Personal Care,1,14.95,16.22,Alex Reyes,MA,Delivered,UPS,USD
+2025-03-13,222-SYNTH-7000018,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,UPS,USD
+2025-03-26,222-SYNTH-7000083,Stoneground Toothpaste 4-pack (synthetic example),B0SYNTH005,Health & Personal Care,1,12.99,14.09,Jordan Reyes,FL,Delivered,AMZL_US,USD
+2025-04-16,222-SYNTH-7000050,"Pioneer Black Ink Cartridge, XL (synthetic example)",B0SYNTH003,Office,1,24.50,26.58,Sam Reyes,NY,Delivered,USPS,USD
+2025-04-18,222-SYNTH-7000019,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,UPS,USD
+2025-04-19,222-SYNTH-7000094,Tiny Trees AAA Batteries 24-pack (synthetic example),B0SYNTH006,Electronics,1,9.99,10.84,Sam Reyes,NY,Delivered,FEDEX,USD
+2025-05-01,222-SYNTH-7000164,Conical Burr Coffee Grinder (synthetic example),B0SYNTH305,Kitchen,1,139.00,150.82,Sam Reyes,NY,Delivered,FEDEX,USD
+2025-05-04,222-SYNTH-7000068,"Daily Multivitamin, 90 capsules (synthetic example)",B0SYNTH004,Health & Personal Care,1,14.95,16.22,Sam Reyes,NY,Delivered,USPS,USD
+2025-05-24,222-SYNTH-7000020,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,AMZL_US,USD
+2025-05-30,222-SYNTH-7000035,"MorningHill Permanent Coffee Filter, #4 (synthetic example)",B0SYNTH002,Kitchen,1,9.49,10.30,Sam Reyes,NY,Delivered,AMZL_US,USD
+2025-06-06,222-SYNTH-7000084,Stoneground Toothpaste 4-pack (synthetic example),B0SYNTH005,Health & Personal Care,1,12.99,14.09,Alex Reyes,MA,Delivered,USPS,USD
+2025-06-15,222-SYNTH-7000163,"Reusable Water Bottle, 32oz (synthetic example)",B0SYNTHA03,Health & Personal Care,1,29.95,32.50,Alex Reyes,MA,Delivered,UPS,USD
+2025-06-23,222-SYNTH-7000051,"Pioneer Black Ink Cartridge, XL (synthetic example)",B0SYNTH003,Office,1,24.50,26.58,Sam Reyes,NY,Delivered,USPS,USD
+2025-07-02,222-SYNTH-7000069,"Daily Multivitamin, 90 capsules (synthetic example)",B0SYNTH004,Health & Personal Care,1,14.95,16.22,Jordan Reyes,FL,Delivered,FEDEX,USD
+2025-07-03,222-SYNTH-7000021,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,UPS,USD
+2025-07-24,222-SYNTH-7000102,"BrightHome LED Bulbs, 4-pack soft white (synthetic example)",B0SYNTH007,Household,1,13.49,14.64,Sam Reyes,NY,Delivered,UPS,USD
+2025-08-18,222-SYNTH-7000022,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,USPS,USD
+2025-08-18,222-SYNTH-7000159,"Trash Bags, 13-gal, 90 count (synthetic example)",B0SYNTH404,Household,1,21.99,23.86,Sam Reyes,NY,Delivered,UPS,USD
+2025-08-21,222-SYNTH-7000095,Tiny Trees AAA Batteries 24-pack (synthetic example),B0SYNTH006,Electronics,1,9.99,10.84,Alex Reyes,MA,Delivered,FEDEX,USD
+2025-08-27,222-SYNTH-7000052,"Pioneer Black Ink Cartridge, XL (synthetic example)",B0SYNTH003,Office,1,24.50,26.58,Sam Reyes,NY,Delivered,USPS,USD
+2025-08-28,222-SYNTH-7000085,Stoneground Toothpaste 4-pack (synthetic example),B0SYNTH005,Health & Personal Care,1,12.99,14.09,Sam Reyes,NY,Delivered,UPS,USD
+2025-08-31,222-SYNTH-7000036,"MorningHill Permanent Coffee Filter, #4 (synthetic example)",B0SYNTH002,Kitchen,1,9.49,10.30,Sam Reyes,NY,Delivered,AMZL_US,USD
+2025-09-07,222-SYNTH-7000105,"Garden Trowel, stainless (synthetic example)",B0SYNTH801,Garden,1,17.99,19.52,Sam Reyes,NY,Delivered,AMZL_US,USD
+2025-09-10,222-SYNTH-7000070,"Daily Multivitamin, 90 capsules (synthetic example)",B0SYNTH004,Health & Personal Care,1,14.95,16.22,Sam Reyes,NY,Delivered,USPS,USD
+2025-09-15,222-SYNTH-7000127,Wandering Stars: A Novel by Riverstone Press (synthetic),B0SYNTH101,Books,2,37.90,41.12,Sam Reyes,NY,Delivered,UPS,USD
+2025-09-27,222-SYNTH-7000023,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,UPS,USD
+2025-10-01,222-SYNTH-7000132,"Laundry Detergent, 96 loads (synthetic example)",B0SYNTH401,Household,2,39.98,43.38,Sam Reyes,NY,Delivered,USPS,USD
+2025-10-18,222-SYNTH-7000111,"Soft-Sole Slippers, kids 7 (synthetic example)",B0SYNTH502,Baby,1,22.50,24.41,Alex Reyes,MA,Delivered,UPS,USD
+2025-10-25,222-SYNTH-7000115,Stainless Steel Tea Kettle (synthetic example),B0SYNTH304,Kitchen,1,72.00,78.12,Jordan Reyes,FL,Delivered,AMZL_US,USD
+2025-11-03,222-SYNTH-7000024,"FreshPaw Clumping Cat Litter, 35 lb (synthetic example)",B0SYNTH001,Pet Supplies,1,18.99,20.60,Sam Reyes,NY,Delivered,AMZL_US,USD
+2025-11-03,222-SYNTH-7000071,"Daily Multivitamin, 90 capsules (synthetic example)",B0SYNTH004,Health & Personal Care,1,14.95,16.22,Sam Reyes,NY,Delivered,AMZL_US,USD
+2025-11-07,222-SYNTH-7000053,"Pioneer Black Ink Cartridge, XL (synthetic example)",B0SYNTH003,Office,1,24.50,26.58,Sam Reyes,NY,Delivered,UPS,USD
+2025-11-21,222-SYNTH-7000165,"Espresso Machine, semi-automatic (synthetic example)",B0SYNTH301,Kitchen,1,549.00,595.67,Sam Reyes,NY,Delivered,USPS,USD
+2025-11-22,222-SYNTH-7000086,Stoneground Toothpaste 4-pack (synthetic example),B0SYNTH005,Health & Personal Care,1,12.99,14.09,Sam Reyes,NY,Delivered,UPS,USD
+2025-11-22,222-SYNTH-7000149,"Running Socks, merino, 6-pack (synthetic example)",B0SYNTH901,Apparel,1,34.00,36.89,Alex Reyes,MA,Delivered,FEDEX,USD
+2025-11-28,222-SYNTH-7000121,"Kids Rain Boots, size 9 (synthetic example)",B0SYNTH504,Baby,1,29.95,32.50,Alex Reyes,MA,Delivered,AMZL_US,USD
+2025-11-28,222-SYNTH-7000138,"Office Chair, ergonomic (synthetic example)",B0SYNTH703,Office,1,389.00,422.07,Sam Reyes,NY,Delivered,UPS,USD
+2025-11-28,222-SYNTH-7000161,Field Notes No. 7: Migration — paperback (synthetic),B0SYNTH103,Books,2,33.00,35.81,Alex Reyes,MA,Delivered,UPS,USD
+2025-12-06,222-SYNTH-7000037,"MorningHill Permanent Coffee Filter, #4 (synthetic example)",B0SYNTH002,Kitchen,1,9.49,10.30,Alex Reyes,MA,Delivered,FEDEX,USD
+2025-12-08,222-SYNTH-7000106,"Resistance Bands, 5-pack (synthetic example)",B0SYNTHA02,Health & Personal Care,1,18.99,20.60,Sam Reyes,NY,Delivered,UPS,USD
+2025-12-11,222-SYNTH-7000096,Tiny Trees AAA Batteries 24-pack (synthetic example),B0SYNTH006,Electronics,1,9.99,10.84,Jordan Reyes,FL,Delivered,USPS,USD
+2025-12-12,222-SYNTH-7000168,"Magnetic Tile Set, 32 pieces (synthetic example)",B0SYNTH602,Toys,1,44.99,48.81,Alex Reyes,MA,Delivered,UPS,USD

@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en" data-ha-style="kami-reading">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RFC-014: Pricing Page V2 — Decision Memo</title>
+<script>const DATA = {"markdown":"RFC\\-014: Pricing Page V2 — Decision Memo\n\n*Synthetic fixture for html\\-anything\\. All names, numbers, customer quotes, deal sizes, and internal projects in this memo are invented\\.*\n\n__Author__\n\nRiley Chen \\(synthetic, Product\\)\n\n__Reviewers__\n\nAsha Vora \\(Eng\\), Marcus Liang \\(GTM\\), Devon Park \\(Finance\\)\n\n__Status__\n\nDecided — implementation kickoff Q2 2026\n\n__Decision date__\n\n2026\\-04\\-12\n\n__Last updated__\n\n2026\\-04\\-22\n\n__Related__\n\nRFC\\-009 \\(free\\-tier kill\\), PROD\\-882 \\(pricing page redesign\\)\n\n# TL;DR\n\nWe are replacing the current 4\\-tier pricing page with a 2\\-tier model \\(Starter, Team\\) plus a contact\\-sales Enterprise track\\. The change is driven by three findings: \\(1\\) the Pro tier captured only 7% of new signups in Q1 but consumed 31% of pricing\\-page time\\-on\\-page, \\(2\\) support tickets tagged 'pricing confusion' rose 2\\.4x year\\-over\\-year, and \\(3\\) every winning competitor in our segment has consolidated to ≤ 3 published tiers\\. Expected impact: \\+18% activation rate on the pricing page, neutral net revenue in 2 quarters, \\+6% by Q4 2026\\.\n\n# 1\\. Context\n\nThe current pricing page \\(v1, shipped 2024\\) presents Free, Starter, Pro, and Team tiers\\. Free was killed in RFC\\-009 but the Pro tier remains — it was originally pitched as the 'power individual' segment between Starter and Team\\.\n\nThree things changed since 2024 that invalidate the original pitch:\n\nFirst, the prosumer segment we expected to fill Pro never showed up\\. Q1 2026 signups split 71% Starter, 7% Pro, 22% Team\\. Pro is a quiet middle that almost no one chooses on first contact\\.\n\nSecond, the support cost of the four\\-tier table is real\\. We logged 412 'pricing confusion' tickets in Q1 2026 versus 173 in Q1 2025\\. The most common confusion: customers picked Pro thinking it included multi\\-seat features \\(it does not\\) and downgraded within 30 days\\.\n\nThird, every competitor with positive growth in our segment ships ≤ 3 published tiers\\. The two that grew fastest \\(Linear, Vercel\\) ship 2 \\+ 'enterprise'\\. The cognitive load argument is now backed by a market signal\\.\n\n*“I picked Pro because it sounded important\\. Then I realised it gave me nothing my coworkers could actually use, and I downgraded the next day\\.” — synthetic customer interview, March 2026*\n\n# 2\\. Proposal\n\nReplace the four\\-tier table with two published tiers plus a contact\\-sales Enterprise option:\n\n## 2\\.1 Tiers\n\nStarter — single user, $19/mo\\. Existing Starter customers grandfathered\\.\n\nTeam — up to 25 seats, $39/seat/mo\\. Existing Team customers see no price change\\.\n\nEnterprise — contact sales\\. SSO, audit log, custom DPA, named support\\.\n\n## 2\\.2 What happens to Pro customers\n\nThere are 1,184 active Pro customers\\. They will be migrated as follows: solo Pro accounts → grandfathered Starter at current Pro price for 12 months, then offered Starter or Team upgrade with a 20% loyalty discount\\. Multi\\-seat Pro accounts \\(these exist accidentally; the tier was never supposed to allow more than one seat\\) → free upgrade to Team at Pro pricing for 6 months\\.\n\n## 2\\.3 Page design changes\n\nThree\\-column layout with the Team column visually emphasised \\(brand orange border, ‘Most popular’ tag\\)\\. Feature comparison table simplified from 47 rows to 19\\. FAQ section reduced from 23 questions to 8, with the four highest\\-traffic ones promoted above the fold\\.\n\n# 3\\. Alternatives Considered\n\n<b>3\\.1 Keep four tiers but rename Pro\\.<\/b> Cheaper to ship, but leaves the cognitive\\-load problem unresolved and the migration risk in place\\. Rejected because the data shows the problem is structural, not naming\\.\n\n<b>3\\.2 Single tier \\+ usage\\-based\\.<\/b> Considered seriously\\. Strong long\\-term direction; wrong short\\-term move because our billing infrastructure does not yet support metered components and we are not staffed to build it before Q4\\. Revisit in 2027\\.\n\n<b>3\\.3 Three published tiers \\(Starter, Team, Business\\)\\.<\/b> Closest to v1 minus Pro\\. Rejected because adding a Business tier reintroduces the 'middle confusion' pattern we are trying to remove\\. Two\\-plus\\-Enterprise is structurally cleaner\\.\n\n# 4\\. Risks & Mitigations\n\n<b>4\\.1 Pro customer churn\\.<\/b> The migration plan extends current pricing for 6–12 months, which we project converts 78% to Starter or Team and 22% to churn\\. Worst\\-case \\(50% churn\\) loses ~$680K ARR\\. Mitigation: dedicated CSM outreach to the top 100 Pro accounts\\.\n\n<b>4\\.2 Sales pipeline impact\\.<\/b> Removing the published Pro tier may reduce inbound qualification accuracy\\. Mitigation: run a qualification quiz on the pricing page \\(already prototyped in PROD\\-851\\) and route Pro\\-shaped leads directly to AEs\\.\n\n<b>4\\.3 Reputational risk\\.<\/b> Pricing changes draw attention\\. Mitigation: ship a public\\-blog post explaining the change before the page goes live, with a dedicated migration FAQ\\.\n\n# 5\\. Decisions\n\n__D\\-1__\n\nAdopt 2\\-tier\\-plus\\-Enterprise model\\. Approved 2026\\-04\\-12\\.\n\n__D\\-2__\n\nPro tier sunset in waves: solo accounts first, multi\\-seat second\\.\n\n__D\\-3__\n\nMigration window: 12 months for solo, 6 months for multi\\-seat\\.\n\n__D\\-4__\n\nLoyalty discount: 20% off list for migrating Pro customers, 12 months\\.\n\n__D\\-5__\n\nQ1 2027 review for usage\\-based tier feasibility \\(links to RFC\\-014A\\)\\.\n\n# 6\\. Action Items\n\n__Action__\n\n__Owner__\n\n__Due__\n\n__Status__\n\nUpdate pricing page comp table to 19 rows\n\nRiley Chen\n\n2026\\-05\\-15\n\nIn progress\n\nMigration email sequence \\+ drip\n\nMarcus Liang\n\n2026\\-05\\-22\n\nDrafted\n\nCSM outreach plan for top 100 Pro accounts\n\nDevon Park\n\n2026\\-05\\-08\n\nDone\n\nPricing\\-page qualification quiz wiring\n\nAsha Vora\n\n2026\\-06\\-02\n\nNot started\n\nPublic blog post \\+ migration FAQ\n\nRiley Chen\n\nPre\\-launch \\-7d\n\nOutline\n\nBilling infra spike for usage\\-based \\(RFC\\-014A\\)\n\nAsha Vora\n\n2026\\-09\\-30\n\nScoped\n\n# 7\\. Open Questions\n\nQ1\\. Should the loyalty discount apply for 12 or 18 months? Current proposal is 12; Marcus argues 18 to soften the change\\.\n\nQ2\\. Do we publish per\\-seat Team pricing or 'starting at $39/seat'? Finance prefers the latter; design prefers the former\\.\n\nQ3\\. Enterprise floor — is $24K/year the right minimum? Current AE feedback is the floor is too low and is attracting Team\\-shaped accounts that should self\\-serve\\.\n\nQ4\\. Migration FAQ tone — should the post acknowledge that the Pro tier was a strategic miss, or frame the change as a forward\\-looking simplification?\n\n# Appendix A — Data references\n\n*All numbers in this synthetic memo are invented and intended to mimic the shape of real internal pricing analyses, not the substance\\.*\n\nA\\.1 Q1 2026 signup mix: 71% Starter / 7% Pro / 22% Team \\(n = 14,732 signups, synthetic\\)\n\nA\\.2 Pricing\\-confusion ticket volume: 412 \\(Q1 2026\\) vs 173 \\(Q1 2025\\), \\+138% YoY\n\nA\\.3 Pro tier active customers: 1,184 — of which 1,061 solo, 123 multi\\-seat \\(synthetic\\)\n\nA\\.4 Projected ARR impact: \\-$210K \\(months 1–6\\), neutral by month 9, \\+6% baseline by Q4 2026\n\nA\\.5 Competitor pricing\\-tier counts \\(synthetic survey\\): Linear 2, Vercel 2\\+E, Notion 3, Asana 4, Monday 5\n\n","plainText":"RFC\\-014: Pricing Page V2 — Decision Memo Synthetic fixture for html\\-anything\\. All names, numbers, customer quotes, deal sizes, and internal projects in this memo are invented\\. Author Riley Chen \\(synthetic, Product\\) Reviewers Asha Vora \\(Eng\\), Marcus Liang \\(GTM\\), Devon Park \\(Finance\\) Status Decided — implementation kickoff Q2 2026 Decision date 2026\\-04\\-12 Last updated 2026\\-04\\-22 Related RFC\\-009 \\(free\\-tier kill\\), PROD\\-882 \\(pricing page redesign\\) TL;DR We are replacing the current 4\\-tier pricing page with a 2\\-tier model \\(Starter, Team\\) plus a contact\\-sales Enterprise track\\. The change is driven by three findings: \\(1\\) the Pro tier captured only 7% of new signups in Q1 but consumed 31% of pricing\\-page time\\-on\\-page, \\(2\\) support tickets tagged 'pricing confusion' rose 2\\.4x year\\-over\\-year, and \\(3\\) every winning competitor in our segment has consolidated to ≤ 3 published tiers\\. Expected impact: \\+18% activation rate on the pricing page, neutral net revenue in 2 quarters, \\+6% by Q4 2026\\. 1\\. Context The current pricing page \\(v1, shipped 2024\\) presents Free, Starter, Pro, and Team tiers\\. Free was killed in RFC\\-009 but the Pro tier remains — it was originally pitched as the 'power individual' segment between Starter and Team\\. Three things changed since 2024 that invalidate the original pitch: First, the prosumer segment we expected to fill Pro never showed up\\. Q1 2026 signups split 71% Starter, 7% Pro, 22% Team\\. Pro is a quiet middle that almost no one chooses on first contact\\. Second, the support cost of the four\\-tier table is real\\. We logged 412 'pricing confusion' tickets in Q1 2026 versus 173 in Q1 2025\\. The most common confusion: customers picked Pro thinking it included multi\\-seat features \\(it does not\\) and downgraded within 30 days\\. Third, every competitor with positive growth in our segment ships ≤ 3 published tiers\\. The two that grew fastest \\(Linear, Vercel\\) ship 2 \\+ 'enterprise'\\. The cognitive load argument is now backed by a market signal\\. “I picked Pro because it sounded important\\. Then I realised it gave me nothing my coworkers could actually use, and I downgraded the next day\\.” — synthetic customer interview, March 2026 2\\. Proposal Replace the four\\-tier table with two published tiers plus a contact\\-sales Enterprise option: 2\\.1 Tiers Starter — single user, $19/mo\\. Existing Starter customers grandfathered\\. Team — up to 25 seats, $39/seat/mo\\. Existing Team customers see no price change\\. Enterprise — contact sales\\. SSO, audit log, custom DPA, named support\\. 2\\.2 What happens to Pro customers There are 1,184 active Pro customers\\. They will be migrated as follows: solo Pro accounts → grandfathered Starter at current Pro price for 12 months, then offered Starter or Team upgrade with a 20% loyalty discount\\. Multi\\-seat Pro accounts \\(these exist accidentally; the tier was never supposed to allow more than one seat\\) → free upgrade to Team at Pro pricing for 6 months\\. 2\\.3 Page design changes Three\\-column layout with the Team column visually emphasised \\(brand orange border, ‘Most popular’ tag\\)\\. Feature comparison table simplified from 47 rows to 19\\. FAQ section reduced from 23 questions to 8, with the four highest\\-traffic ones promoted above the fold\\. 3\\. Alternatives Considered <b>3\\.1 Keep four tiers but rename Pro\\.<\/b> Cheaper to ship, but leaves the cognitive\\-load problem unresolved and the migration risk in place\\. Rejected because the data shows the problem is structural, not naming\\. <b>3\\.2 Single tier \\+ usage\\-based\\.<\/b> Considered seriously\\. Strong long\\-term direction; wrong short\\-term move because our billing infrastructure does not yet support metered components and we are not staffed to build it before Q4\\. Revisit in 2027\\. <b>3\\.3 Three published tiers \\(Starter, Team, Business\\)\\.<\/b> Closest to v1 minus Pro\\. Rejected because adding a Business tier reintroduces the 'middle confusion' pattern we are trying to remove\\. Two\\-plus\\-Enterprise is structurally cleaner\\. 4\\. Risks & Mitigations <b>4\\.1 Pro customer churn\\.<\/b> The migration plan extends current pricing for 6–12 months, which we project converts 78% to Starter or Team and 22% to churn\\. Worst\\-case \\(50% churn\\) loses $680K ARR\\. Mitigation: dedicated CSM outreach to the top 100 Pro accounts\\. <b>4\\.2 Sales pipeline impact\\.<\/b> Removing the published Pro tier may reduce inbound qualification accuracy\\. Mitigation: run a qualification quiz on the pricing page \\(already prototyped in PROD\\-851\\) and route Pro\\-shaped leads directly to AEs\\. <b>4\\.3 Reputational risk\\.<\/b> Pricing changes draw attention\\. Mitigation: ship a public\\-blog post explaining the change before the page goes live, with a dedicated migration FAQ\\. 5\\. Decisions D\\-1 Adopt 2\\-tier\\-plus\\-Enterprise model\\. Approved 2026\\-04\\-12\\. D\\-2 Pro tier sunset in waves: solo accounts first, multi\\-seat second\\. D\\-3 Migration window: 12 months for solo, 6 months for multi\\-seat\\. D\\-4 Loyalty discount: 20% off list for migrating Pro customers, 12 months\\. D\\-5 Q1 2027 review for usage\\-based tier feasibility \\(links to RFC\\-014A\\)\\. 6\\. Action Items Action Owner Due Status Update pricing page comp table to 19 rows Riley Chen 2026\\-05\\-15 In progress Migration email sequence \\+ drip Marcus Liang 2026\\-05\\-22 Drafted CSM outreach plan for top 100 Pro accounts Devon Park 2026\\-05\\-08 Done Pricing\\-page qualification quiz wiring Asha Vora 2026\\-06\\-02 Not started Public blog post \\+ migration FAQ Riley Chen Pre\\-launch \\-7d Outline Billing infra spike for usage\\-based \\(RFC\\-014A\\) Asha Vora 2026\\-09\\-30 Scoped 7\\. Open Questions Q1\\. Should the loyalty discount apply for 12 or 18 months? Current proposal is 12; Marcus argues 18 to soften the change\\. Q2\\. Do we publish per\\-seat Team pricing or 'starting at $39/seat'? Finance prefers the latter; design prefers the former\\. Q3\\. Enterprise floor — is $24K/year the right minimum? Current AE feedback is the floor is too low and is attracting Team\\-shaped accounts that should self\\-serve\\. Q4\\. Migration FAQ tone — should the post acknowledge that the Pro tier was a strategic miss, or frame the change as a forward\\-looking simplification? Appendix A — Data references All numbers in this synthetic memo are invented and intended to mimic the shape of real internal pricing analyses, not the substance\\. A\\.1 Q1 2026 signup mix: 71% Starter / 7% Pro / 22% Team \\(n = 14,732 signups, synthetic\\) A\\.2 Pricing\\-confusion ticket volume: 412 \\(Q1 2026\\) vs 173 \\(Q1 2025\\), \\+138% YoY A\\.3 Pro tier active customers: 1,184 — of which 1,061 solo, 123 multi\\-seat \\(synthetic\\) A\\.4 Projected ARR impact: \\-$210K \\(months 1–6\\), neutral by month 9, \\+6% baseline by Q4 2026 A\\.5 Competitor pricing\\-tier counts \\(synthetic survey\\): Linear 2, Vercel 2\\+E, Notion 3, Asana 4, Monday 5","headings":[{"level":1,"text":"TL;DR"},{"level":1,"text":"1. Context"},{"level":1,"text":"2. Proposal"},{"level":2,"text":"2.1 Tiers"},{"level":2,"text":"2.2 What happens to Pro customers"},{"level":2,"text":"2.3 Page design changes"},{"level":1,"text":"3. Alternatives Considered"},{"level":1,"text":"4. Risks & Mitigations"},{"level":1,"text":"5. Decisions"},{"level":1,"text":"6. Action Items"},{"level":1,"text":"7. Open Questions"},{"level":1,"text":"Appendix A — Data references"}],"sourceFile":"input.docx","sizeBytes":40519,"wordCount":1043,"lineCount":187,"headingCount":12,"readingMinutes":5};</script>
+<style>
+:root {
+  --parchment: #f5f4ed;
+  --ivory: #faf9f5;
+  --sand: #e8e6dc;
+  --border: #e8e6dc;
+  --border-soft: #e5e3d8;
+  --tag-bg: #E4ECF5;
+  --brand: #1B365D;
+  --near-black: #141413;
+  --dark-warm: #3d3d3a;
+  --charcoal: #4d4c48;
+  --olive: #504e49;
+  --stone: #6b6a64;
+  --serif: Charter, Georgia, Palatino, "Times New Roman", "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", serif;
+  --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: "SF Mono", Menlo, Consolas, "JetBrains Mono", monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; background: var(--parchment); }
+body {
+  min-height: 100vh;
+  background: var(--parchment);
+  color: var(--near-black);
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--brand); text-decoration: none; }
+.kami-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--border);
+  z-index: 20;
+}
+.kami-progress span { display: block; width: 0; height: 100%; background: var(--brand); }
+.kami-reader {
+  width: min(920px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 48px 0 80px;
+}
+.kami-cover {
+  min-height: 82vh;
+  padding: 44px 0 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+.cover-top,
+.section-eyebrow,
+.kami-card-label,
+.source-summary {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+.cover-center { max-width: 820px; }
+.cover-name {
+  margin-top: 32px;
+  font-size: clamp(48px, 7vw, 86px);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+}
+.cover-tagline {
+  max-width: 720px;
+  margin-top: 18px;
+  color: var(--olive);
+  font-size: clamp(20px, 2.5vw, 27px);
+  line-height: 1.45;
+}
+.cover-line {
+  width: 86px;
+  height: 3px;
+  margin-top: 28px;
+  background: var(--brand);
+}
+.cover-meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  color: var(--stone);
+  font-size: 13px;
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+}
+.cover-meta strong {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--dark-warm);
+  font-weight: 500;
+}
+.memo-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 28px 0 20px;
+}
+.kami-card {
+  background: var(--ivory);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 15px 16px;
+}
+.kami-card strong {
+  display: block;
+  margin-top: 7px;
+  color: var(--near-black);
+  font-size: 20px;
+  line-height: 1.15;
+  font-weight: 500;
+}
+.kami-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  padding: 20px 0 24px;
+  border-bottom: 1px solid var(--border);
+}
+.kami-toc a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  padding: 4px 0;
+  color: var(--olive);
+  font-size: 14px;
+  line-height: 1.2;
+}
+.kami-toc a span {
+  color: var(--brand);
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+.kami-toc a:hover { color: var(--brand); }
+.kami-page {
+  padding: 60px 0;
+  border-bottom: 1px solid var(--border);
+  scroll-margin-top: 24px;
+}
+.section-title {
+  max-width: 780px;
+  margin-top: 8px;
+  font-size: clamp(34px, 4vw, 48px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+}
+.section-lead {
+  max-width: 800px;
+  margin-top: 18px;
+  color: var(--dark-warm);
+  font-size: 20px;
+  line-height: 1.55;
+}
+.section-body {
+  max-width: 740px;
+  margin-top: 24px;
+}
+.section-body p {
+  margin-bottom: 13px;
+  color: var(--charcoal);
+  font-size: 17px;
+  line-height: 1.58;
+}
+.section-body h3 {
+  margin: 28px 0 10px;
+  color: var(--near-black);
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 500;
+}
+.section-body strong { color: var(--near-black); font-weight: 500; }
+.kami-tag,
+.section-body code {
+  display: inline-block;
+  background: var(--tag-bg);
+  color: var(--brand);
+  border-radius: 3px;
+  padding: 1px 6px;
+  font-family: var(--serif);
+  font-size: 0.9em;
+}
+.kami-note {
+  margin: 22px 0;
+  padding: 14px 16px;
+  border-left: 4px solid var(--brand);
+  background: var(--ivory);
+  color: var(--dark-warm);
+  font-size: 16px;
+  line-height: 1.5;
+}
+.kami-table-wrap {
+  margin: 20px 0 4px;
+  overflow-x: auto;
+  border-top: 1px solid var(--border);
+}
+.kami-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.kami-table th,
+.kami-table td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--border-soft);
+  text-align: left;
+  vertical-align: top;
+}
+.kami-table th {
+  color: var(--stone);
+  font-weight: 500;
+  font-size: 13px;
+}
+.kami-table td:first-child { color: var(--near-black); font-weight: 500; }
+.kami-source-drawer {
+  margin-top: 44px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.kami-source-drawer summary {
+  cursor: pointer;
+  padding: 18px 0;
+  color: var(--brand);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.kami-source-drawer pre {
+  max-height: 420px;
+  overflow: auto;
+  padding: 0 0 22px;
+  white-space: pre-wrap;
+  color: var(--olive);
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.footer-note {
+  margin-top: 28px;
+  color: var(--stone);
+  font-family: var(--sans);
+  font-size: 12px;
+  line-height: 1.45;
+}
+@media (max-width: 760px) {
+  .kami-reader { width: min(100% - 28px, 680px); padding-top: 28px; }
+  .kami-cover { min-height: 74vh; padding-top: 30px; }
+  .cover-meta, .memo-strip { grid-template-columns: 1fr 1fr; }
+  .section-title { font-size: 32px; }
+  .section-lead { font-size: 18px; }
+  .section-body p { font-size: 16px; }
+}
+@media (max-width: 480px) {
+  .cover-meta, .memo-strip { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; }
+}
+</style>
+</head>
+<body>
+<div class="kami-progress" aria-hidden="true"><span id="progressBar"></span></div>
+<main class="kami-reader">
+  <header class="kami-cover">
+    <div class="cover-top">DOCX MEMO · KAMI READING</div>
+    <div class="cover-center">
+      <h1 class="cover-name">RFC-014: Pricing Page V2 — Decision Memo</h1>
+      <p class="cover-tagline">A quiet browser document for reading a pricing-page decision memo. The source hierarchy stays intact; the page adds just enough structure to move through it.</p>
+      <div class="cover-line"></div>
+    </div>
+    <div class="cover-meta" aria-label="Document metadata">
+      <div><strong>Status</strong>Decided</div>
+      <div><strong>Decision date</strong>2026-04-12</div>
+      <div><strong>Length</strong><span id="wordMeta">1,043 words</span></div>
+      <div><strong>Source</strong><span id="sourceMeta">input.docx</span></div>
+    </div>
+  </header>
+
+  <div class="memo-strip" aria-label="Memo summary">
+    <div class="kami-card"><div class="kami-card-label">Model</div><strong>2 tiers + Enterprise</strong></div>
+    <div class="kami-card"><div class="kami-card-label">Expected activation</div><strong>+18%</strong></div>
+    <div class="kami-card"><div class="kami-card-label">Pro customers</div><strong>1,184</strong></div>
+    <div class="kami-card"><div class="kami-card-label">Review</div><strong>Q1 2027</strong></div>
+  </div>
+
+  <nav class="kami-toc" id="toc" aria-label="Document sections"></nav>
+  <div id="sections"></div>
+
+  <details class="kami-source-drawer">
+    <summary>Source appendix</summary>
+    <pre id="sourceText"></pre>
+  </details>
+  <p class="footer-note">Generated from a synthetic DOCX fixture. The page preserves the text for reading and keeps the raw source available for checking.</p>
+</main>
+<script>
+(() => {
+  const toc = document.getElementById('toc');
+  const sectionsHost = document.getElementById('sections');
+  const sourceText = document.getElementById('sourceText');
+  const progressBar = document.getElementById('progressBar');
+  const blocks = parseMarkdown(DATA.markdown || '');
+  const sections = groupSections(blocks);
+
+  document.getElementById('sourceMeta').textContent = DATA.sourceFile || DATA.meta?.sourceFile || 'input.docx';
+  document.getElementById('wordMeta').textContent = (DATA.wordCount || DATA.meta?.wordCount || 1043).toLocaleString() + ' words';
+  sourceText.textContent = normalize(DATA.plainText || '');
+
+  renderToc(sections);
+  renderSections(sections);
+  updateProgress();
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress);
+
+  function normalize(text) {
+    return String(text || '')
+      .replace(/\\([\\.*_+\-#()[\]{}!>])/g, '$1')
+      .replace(/<b>/g, '')
+      .replace(/<\/b>/g, '')
+      .trim();
+  }
+  function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+  }
+  function inlineFormat(text) {
+    const safe = escapeHtml(normalize(text));
+    return safe
+      .replace(/__([^_]+?)__/g, '<strong>$1</strong>')
+      .replace(/\*([^*]+?)\*/g, '<strong>$1</strong>')
+      .replace(/\b(RFC-\d+[A-Z]?|PROD-\d+|D-\d+)\b/g, '<span class="kami-tag">$1</span>');
+  }
+  function slugify(text, index) {
+    const base = normalize(text).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 44);
+    return (base || 'section') + '-' + index;
+  }
+  function parseMarkdown(md) {
+    return String(md || '').split(/\n\s*\n/).map(part => part.trim()).filter(Boolean).map(part => {
+      const clean = normalize(part);
+      if (/^RFC-014: Pricing Page V2/.test(clean)) return null;
+      const heading = clean.match(/^(#{1,3})\s+(.+)$/);
+      if (heading) return { type: 'heading', level: heading[1].length, text: heading[2] };
+      if (/^\*[^*]+\*$/.test(clean)) return { type: 'note', text: clean.replace(/^\*|\*$/g, '') };
+      return { type: 'paragraph', text: clean };
+    }).filter(Boolean);
+  }
+  function groupSections(items) {
+    const grouped = [];
+    let current = null;
+    let index = 0;
+    for (const item of items) {
+      if (item.type === 'heading' && item.level === 1) {
+        index += 1;
+        current = { id: slugify(item.text, index), title: item.text, blocks: [] };
+        grouped.push(current);
+      } else if (current) {
+        current.blocks.push(item);
+      }
+    }
+    return grouped;
+  }
+  function renderToc(items) {
+    toc.innerHTML = items.map((section, index) => '<a href="#' + section.id + '"><span>' + String(index + 1).padStart(2, '0') + '</span>' + escapeHtml(normalize(section.title).replace(/^\d+\.\s*/, '')) + '</a>').join('');
+  }
+  function renderSections(items) {
+    sectionsHost.innerHTML = items.map((section, index) => {
+      const firstParaIndex = section.blocks.findIndex(block => block.type === 'paragraph' || block.type === 'note');
+      const lead = firstParaIndex >= 0 ? section.blocks[firstParaIndex] : null;
+      const body = section.blocks.filter((_, blockIndex) => blockIndex !== firstParaIndex);
+      const eyebrow = normalize(section.title).replace(/^\d+\.\s*/, '').split(/\s+/)[0];
+      return '<section class="kami-page" id="' + section.id + '">' +
+        '<div class="section-eyebrow">' + String(index + 1).padStart(2, '0') + ' · ' + escapeHtml(eyebrow) + '</div>' +
+        '<h2 class="section-title">' + inlineFormat(section.title.replace(/^\d+\.\s*/, '')) + '</h2>' +
+        (lead ? '<p class="section-lead">' + inlineFormat(lead.text) + '</p>' : '') +
+        '<div class="section-body">' + renderBody(section, body) + '</div>' +
+        '</section>';
+    }).join('');
+  }
+  function renderBody(section, blocks) {
+    if (/Action Items/i.test(section.title)) return renderActionTable(blocks);
+    return blocks.map(block => {
+      if (block.type === 'heading') return '<h3>' + inlineFormat(block.text) + '</h3>';
+      if (block.type === 'note') return '<div class="kami-note">' + inlineFormat(block.text) + '</div>';
+      return '<p>' + inlineFormat(block.text) + '</p>';
+    }).join('');
+  }
+  function renderActionTable(blocks) {
+    const paragraphs = blocks.filter(block => block.type === 'paragraph').map(block => normalize(block.text)).filter(Boolean);
+    const rows = [];
+    for (let i = 4; i + 3 < paragraphs.length; i += 4) rows.push(paragraphs.slice(i, i + 4));
+    if (!rows.length) return blocks.map(block => '<p>' + inlineFormat(block.text) + '</p>').join('');
+    return '<div class="kami-table-wrap"><table class="kami-table"><thead><tr><th>Action</th><th>Owner</th><th>Due</th><th>Status</th></tr></thead><tbody>' +
+      rows.map(row => '<tr>' + row.map(cell => '<td>' + inlineFormat(cell) + '</td>').join('') + '</tr>').join('') +
+      '</tbody></table></div>';
+  }
+  function updateProgress() {
+    const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const pct = Math.max(0, Math.min(1, window.scrollY / max));
+    progressBar.style.width = Math.round(pct * 100) + '%';
+  }
+})();
+</script>
+</body>
+</html>

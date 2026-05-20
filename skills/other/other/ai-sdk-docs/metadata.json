@@ -6,7 +6,7 @@
   "category": "other",
   "source": "github.com/malob/nix-config",
   "dir_name": "ai-sdk-docs",
-  "downloaded_at": "2026-05-19T04:01:22.287023Z",
+  "downloaded_at": "2026-05-20T04:01:54.186948Z",
   "author": "malob",
   "source_url": "https://github.com/malob/nix-config/blob/master/configs/claude/plugins/ai-sdk/skills/ai-sdk-docs/SKILL.md",
   "license": "NOASSERTION",

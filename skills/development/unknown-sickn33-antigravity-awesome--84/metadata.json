@@ -1,0 +1,24 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/monte-carlo-validation-notebook/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-sickn33-antigravity-awesome--84",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "scripts/generate_notebook_url.py",
+    "scripts/resolve_dbt_schema.py"
+  ],
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/monte-carlo-validation-notebook/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/monte-carlo-validation-notebook/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

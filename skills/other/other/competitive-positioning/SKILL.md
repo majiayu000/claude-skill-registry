@@ -218,7 +218,7 @@ This avoids `Operation not permitted` errors that occur when writing to
 
 ### Step 4: Research & Enrich Competitors -> `landscape_enriched.json` -> `landscape.json` (Context A: LANDSCAPE_RESEARCH dispatch)
 
-**Dispatch the competitive-positioning sub-agent in Context A (LANDSCAPE_RESEARCH).** Do not do the landscape research yourself in the main thread — dispatch it via the `Task` tool so the research runs in an isolated context.
+**Dispatch the competitive-positioning sub-agent in Context A (LANDSCAPE_RESEARCH).** The sub-agent declares `WebSearch` in its tool allowlist (v0.4.7+) and performs the research itself — dispatch it via the `Task` tool so the research runs in an isolated context.
 
 **Dispatch prompt template:**
 
@@ -231,14 +231,18 @@ You are the competitive-positioning agent dispatched in Context A (LANDSCAPE_RES
 Read landscape_draft.json at <ANALYSIS_DIR>/landscape_draft.json and
 product_profile.json at <ANALYSIS_DIR>/product_profile.json.
 
-Phase A — Enrich existing competitors: For each competitor in landscape_draft.json, use
-available tools to find: pricing model, funding history, team size, target customers,
-strengths, weaknesses. Record evidence_source per field (researched or agent_estimate).
-Set research_depth per competitor — MUST be one of: full, partial, or founder_provided.
+Phase A — Enrich existing competitors: For each competitor in landscape_draft.json,
+use WebSearch to find pricing model, funding history, team size, target customers,
+strengths, weaknesses. Issue separate searches per competitor as needed. Record
+evidence_source per field: "researched" only when the value came from a WebSearch
+result; "agent_estimate" when you fell back to training-cutoff knowledge.
+Set research_depth per competitor — MUST be one of: full, partial, or
+founder_provided.
 
 Phase B — Gap detection: After enriching, check for missing competitor categories.
-If new competitors are found, add them to suggested_additions[] with merged: false.
-Do NOT add to competitors[] — only to suggested_additions[].
+Use WebSearch ("<product category> competitors", "<adjacent category> tools", etc.)
+to discover competitors absent from the draft. Add them to suggested_additions[]
+with merged: false. Do NOT add to competitors[] — only to suggested_additions[].
 
 Return JSON only — exactly the shape expected by validate_landscape.py:
 {
@@ -301,6 +305,11 @@ Each moat: status (strong/moderate/weak/absent/not_applicable), evidence (requir
 evidence_source (researched/agent_estimate/founder_override), trajectory
 (building/stable/eroding).
 
+For trajectory and any moat where landscape.json evidence is thin, use WebSearch
+to find recent (last 12 months) signals — funding rounds, M&A, hiring, executive
+changes, patent filings, product launches. Stamp evidence_source: "researched"
+only when the signal came from a WebSearch result.
+
 Return JSON only — exactly the shape expected by score_moats.py:
 {
   "moat_assessments": {
@@ -326,6 +335,13 @@ For each view in positioning.json, assign coordinates (0-100) for every competit
 and _startup on both axes. Every point needs x_evidence, y_evidence, and provenance.
 Assess differentiation claims: verifiable (boolean), evidence, challenge, verdict
 (holds/partially_holds/does_not_hold).
+
+The axes themselves drive the search queries — when an axis is "customer support
+depth" or "pricing transparency," issue WebSearch queries targeting that specific
+dimension per competitor. Stamp x_evidence_source / y_evidence_source as
+"researched" only when the coordinate came from a WebSearch result. For each
+differentiation_claim, use WebSearch to find supporting or contradicting evidence
+before assigning a verdict.
 
 Return JSON only — exactly the shape expected by score_positioning.py:
 {

@@ -1,0 +1,1029 @@
+<!doctype html>
+<html lang="en" data-ha-style="timeline-story">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Synthetic ChatGPT export — work-memory atlas</title>
+  <style>
+:root {
+  --primary:#a03b00; --primary-container:#c94c00; --on-primary:#fff;
+  --secondary:#7b40e0; --tertiary:#4d44e3; --accent-cyan:#00D4FF;
+  --bg:#fff8f6; --surface:#fff8f6; --surface-container-lowest:#fff;
+  --surface-container-low:#fbf2ef; --surface-container:#f5ece9; --surface-container-high:#efe6e3;
+  --fg-1:#1e1b19; --fg-2:#594138; --fg-muted:#8d7166;
+  --border:rgba(0,0,0,.06); --border-strong:rgba(0,0,0,.12);
+  --green:#10b981; --blue:#3b82f6; --yellow:#f59e0b; --red:#ef4444;
+  --user-tint:#3b82f6; --asst-tint:#a03b00; --sys-tint:#8d7166;
+  --font-headline:'Space Grotesk',ui-sans-serif,system-ui,sans-serif;
+  --font-body:'Plus Jakarta Sans',ui-sans-serif,system-ui,sans-serif;
+  --font-mono:'SF Mono','Menlo',ui-monospace,monospace;
+  --space-xs:4px; --space-sm:8px; --space-md:12px; --space-lg:16px;
+  --space-xl:20px; --space-2xl:24px; --space-3xl:32px; --space-4xl:48px; --space-5xl:64px;
+  --radius-sm:8px; --radius-md:12px; --radius-lg:16px; --radius-xl:20px; --radius-pill:9999px;
+  --shadow-sm:0 1px 2px rgba(30,27,25,.04); --shadow-md:0 4px 12px rgba(30,27,25,.08);
+  --shadow-accent:0 8px 24px rgba(160,59,0,.15);
+  --gradient-text:linear-gradient(135deg,#a03b00 0%,#7b40e0 100%);
+  --gradient-primary:linear-gradient(135deg,#a03b00 0%,#c94c00 100%);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:#060B18; --surface:#0B1426; --surface-container-lowest:#101D35;
+    --surface-container-low:#101D35; --surface-container:#162544; --surface-container-high:#1c2d52;
+    --fg-1:#F8FAFC; --fg-2:#CBD5E1; --fg-muted:#64748B;
+    --border:rgba(255,255,255,.08); --border-strong:rgba(255,255,255,.14);
+    --primary:#FF6B35; --user-tint:#60a5fa; --asst-tint:#FF6B35; --sys-tint:#94a3b8;
+    --shadow-md:0 4px 12px rgba(0,0,0,.4);
+  }
+}
+*,*::before,*::after{box-sizing:border-box;margin:0}
+html,body{background:var(--bg);color:var(--fg-1);font-family:var(--font-body);
+  font-size:15.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body{min-height:100vh}
+main{max-width:1240px;margin:0 auto;padding:var(--space-2xl) var(--space-xl) var(--space-5xl)}
+h1,h2,h3,h4{font-family:var(--font-headline);letter-spacing:-.01em;font-weight:600;color:var(--fg-1)}
+h1{font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(20px,2.4vw,24px);margin-bottom:var(--space-md)}
+h3{font-size:17px;margin-bottom:var(--space-sm)}
+h4{font-size:14px;margin-bottom:var(--space-sm);color:var(--fg-2)}
+.muted{color:var(--fg-muted)}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+button{font:inherit;cursor:pointer;border:none;background:transparent;color:inherit}
+input,select,textarea{font:inherit;color:var(--fg-1)}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+code,pre{font-family:var(--font-mono)}
+.hero{padding:var(--space-3xl) 0 var(--space-2xl);border-bottom:1px solid var(--border)}
+.hero .eyebrow{display:inline-flex;gap:var(--space-sm);align-items:center;
+  background:var(--surface-container);color:var(--primary);
+  padding:var(--space-xs) var(--space-md);border-radius:var(--radius-pill);
+  font-family:var(--font-mono);font-size:11.5px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.08em;margin-bottom:var(--space-lg)}
+.hero h1{background:var(--gradient-text);-webkit-background-clip:text;background-clip:text;color:transparent;max-width:24ch}
+.hero .editorial{margin-top:var(--space-lg);max-width:64ch;color:var(--fg-2);font-size:17px;line-height:1.55}
+.hero-actions{display:flex;gap:var(--space-md);margin-top:var(--space-xl);flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:var(--space-sm);padding:var(--space-sm) var(--space-lg);
+  border-radius:var(--radius-pill);font-weight:600;font-size:14px;border:1px solid var(--border-strong);
+  background:var(--surface-container-lowest);color:var(--fg-1);transition:all .15s ease}
+.btn:hover{background:var(--surface-container);box-shadow:var(--shadow-sm)}
+.btn.primary{background:var(--gradient-primary);color:var(--on-primary);border-color:transparent}
+.btn.primary:hover{box-shadow:var(--shadow-accent)}
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--space-lg);margin-top:var(--space-3xl)}
+.kpi{background:var(--surface-container-lowest);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:var(--space-lg) var(--space-xl);box-shadow:var(--shadow-sm)}
+.kpi .label{font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--fg-muted);font-weight:500}
+.kpi .value{font-family:var(--font-headline);font-size:28px;font-weight:600;margin-top:var(--space-xs);color:var(--fg-1)}
+.kpi .value.accent{color:var(--primary)}
+.kpi .sub{font-size:12.5px;color:var(--fg-muted);margin-top:2px;font-family:var(--font-mono)}
+.section{margin-top:var(--space-4xl)}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:var(--space-lg);gap:var(--space-md);flex-wrap:wrap}
+.section-head .meta{font-size:13px;color:var(--fg-muted);font-family:var(--font-mono)}
+.card{background:var(--surface-container-lowest);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:var(--space-xl);box-shadow:var(--shadow-sm)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl)}
+@media (max-width:780px){.grid-2{grid-template-columns:1fr}}
+.heur-chip{display:inline-flex;align-items:center;gap:6px;padding:3px var(--space-sm);
+  border-radius:var(--radius-pill);background:var(--surface-container);color:var(--secondary);
+  font-family:var(--font-mono);font-size:10.5px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.08em}
+.stack-bar{display:flex;height:14px;border-radius:var(--radius-pill);overflow:hidden;margin-top:var(--space-sm);background:var(--surface-container)}
+.stack-bar i{display:block;height:100%}
+.stack-legend{display:flex;flex-wrap:wrap;gap:var(--space-md);margin-top:var(--space-sm);font-size:12.5px;color:var(--fg-muted);font-family:var(--font-mono)}
+.stack-legend span{display:inline-flex;align-items:center;gap:6px}
+.stack-legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.kind-code{background:var(--blue)} .kind-writing{background:var(--secondary)} .kind-planning{background:var(--green)}
+.kind-research{background:var(--accent-cyan)} .kind-chat{background:var(--yellow)} .kind-other{background:var(--fg-muted)}
+.chips{display:flex;gap:var(--space-sm);flex-wrap:wrap;margin-bottom:var(--space-md)}
+.chip{display:inline-flex;align-items:center;gap:var(--space-sm);padding:6px var(--space-md);
+  border-radius:var(--radius-pill);background:var(--surface-container);border:1px solid var(--border);
+  font-size:12.5px;font-weight:500;cursor:pointer;transition:all .15s ease;user-select:none}
+.chip:hover{background:var(--surface-container-high)}
+.chip.active{background:var(--primary);color:var(--on-primary);border-color:transparent}
+.chip .count{font-family:var(--font-mono);font-size:11.5px;color:var(--fg-muted);font-weight:400}
+.chip.active .count{color:rgba(255,255,255,.8)}
+.timeline-svg{width:100%;height:130px;display:block;margin-top:var(--space-md)}
+.timeline-svg .bar{fill:var(--secondary);opacity:.65}
+.timeline-svg .bar:hover{opacity:.95}
+.timeline-svg text{font-family:var(--font-mono);font-size:11px;fill:var(--fg-muted)}
+.rhythm{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl);margin-top:var(--space-lg)}
+.rhythm-card h4{margin-bottom:var(--space-xs);font-size:13px;color:var(--fg-muted);font-weight:500}
+.rhythm-bars{display:flex;align-items:flex-end;gap:2px;height:40px}
+.rhythm-bars i{flex:1;background:var(--primary);border-radius:2px 2px 0 0;opacity:.6;min-height:2px}
+.rhythm-axis{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:10.5px;color:var(--fg-muted);margin-top:var(--space-xs)}
+@media (max-width:780px){.rhythm{grid-template-columns:1fr}}
+.heur-panel{display:flex;flex-direction:column;gap:var(--space-md)}
+.heur-card{padding:var(--space-md);border:1px solid var(--border);border-left:3px solid var(--secondary);
+  border-radius:var(--radius-md);background:var(--surface-container-lowest)}
+.heur-card.important{border-left-color:var(--primary)}
+.heur-card .meta-row{display:flex;justify-content:space-between;gap:var(--space-md);align-items:baseline;margin-bottom:var(--space-xs);font-size:12px;color:var(--fg-muted);font-family:var(--font-mono)}
+.heur-card .body{font-size:13.5px;line-height:1.5;color:var(--fg-2);white-space:pre-wrap;word-break:break-word}
+.heur-card .actions{display:flex;justify-content:space-between;align-items:center;margin-top:var(--space-sm);gap:var(--space-md)}
+.heur-card .copy-btn,.heur-card .jump-btn{padding:4px var(--space-sm);font-size:11.5px;border:1px solid var(--border);
+  border-radius:var(--radius-sm);background:var(--surface-container);color:var(--fg-1);font-family:var(--font-mono);cursor:pointer}
+.heur-card .copy-btn:hover,.heur-card .jump-btn:hover{background:var(--surface-container-high)}
+.empty{font-size:13px;color:var(--fg-muted);font-style:italic;padding:var(--space-md) 0}
+.callouts{display:grid;grid-template-columns:1fr;gap:var(--space-md)}
+.callout{padding:var(--space-md);border:1px solid var(--border);border-left:3px solid var(--yellow);
+  border-radius:var(--radius-md);background:var(--surface-container-lowest);cursor:pointer}
+.callout:hover{background:var(--surface-container-low)}
+.callout .ttl{font-weight:600;font-size:14px;color:var(--fg-1);margin-bottom:2px}
+.callout .meta{font-family:var(--font-mono);font-size:11.5px;color:var(--fg-muted);margin-bottom:var(--space-xs)}
+.callout .last{font-size:13px;color:var(--fg-2);font-style:italic}
+.callout .why{font-size:11.5px;color:var(--fg-muted);margin-top:var(--space-xs);font-style:italic}
+.drill-toolbar{display:flex;gap:var(--space-md);margin-bottom:var(--space-md);flex-wrap:wrap;align-items:center}
+.drill-search{flex:1 1 280px;min-width:220px;padding:var(--space-sm) var(--space-md);border:1px solid var(--border-strong);
+  border-radius:var(--radius-md);background:var(--surface-container-lowest);font-size:14px;font-family:var(--font-mono)}
+.drill-search:focus{outline:2px solid var(--primary);outline-offset:1px;border-color:var(--primary)}
+.drill-meta{font-size:12.5px;color:var(--fg-muted);font-family:var(--font-mono)}
+.convo-list{display:flex;flex-direction:column;gap:var(--space-md)}
+.convo{background:var(--surface-container-lowest);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:var(--space-lg) var(--space-xl);box-shadow:var(--shadow-sm)}
+.convo .head{display:flex;justify-content:space-between;gap:var(--space-md);align-items:baseline;flex-wrap:wrap}
+.convo .ttl{font-family:var(--font-headline);font-weight:600;font-size:17px;color:var(--fg-1)}
+.convo .when{font-family:var(--font-mono);font-size:12px;color:var(--fg-muted)}
+.convo .badges{display:flex;gap:var(--space-xs);flex-wrap:wrap;margin-top:var(--space-xs)}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:2px var(--space-sm);
+  border-radius:var(--radius-pill);background:var(--surface-container);font-family:var(--font-mono);font-size:11px;color:var(--fg-2)}
+.badge.kind{background:var(--surface-container-high);color:var(--fg-1)}
+.badge.code{background:rgba(59,130,246,.15);color:var(--blue)}
+.badge.unresolved{background:rgba(245,158,11,.15);color:var(--yellow)}
+.badge.model{background:var(--surface-container);color:var(--secondary)}
+.preview{margin-top:var(--space-md);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md)}
+@media (max-width:780px){.preview{grid-template-columns:1fr}}
+.preview .row{font-size:13px;line-height:1.5}
+.preview .role{font-family:var(--font-mono);font-size:11px;color:var(--fg-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px}
+.preview .text{color:var(--fg-2);overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+.convo .toolbar{display:flex;gap:var(--space-sm);margin-top:var(--space-md)}
+.convo .toolbar button{padding:4px var(--space-sm);font-size:11.5px;border:1px solid var(--border);
+  border-radius:var(--radius-sm);background:var(--surface-container);color:var(--fg-1);font-family:var(--font-mono);cursor:pointer}
+.convo .toolbar button:hover{background:var(--surface-container-high)}
+.thread{margin-top:var(--space-md);border-top:1px solid var(--border);padding-top:var(--space-md);display:none}
+.convo.open .thread{display:block}
+.day-bucket{margin-bottom:var(--space-md)}
+.day-bucket .day{font-family:var(--font-mono);font-size:11px;color:var(--fg-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:var(--space-xs)}
+.bubble{padding:var(--space-md) var(--space-lg);border-radius:var(--radius-md);margin-bottom:var(--space-sm);
+  background:var(--surface-container);font-size:14px;line-height:1.55;white-space:pre-wrap;word-break:break-word}
+.bubble.user{background:rgba(59,130,246,.08);border-left:3px solid var(--user-tint)}
+.bubble.assistant{background:rgba(160,59,0,.06);border-left:3px solid var(--asst-tint)}
+.bubble.system,.bubble.tool{background:var(--surface-container);border-left:3px solid var(--sys-tint);color:var(--fg-muted);font-size:12.5px}
+.bubble .role-line{font-family:var(--font-mono);font-size:11px;color:var(--fg-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:var(--space-xs);display:flex;justify-content:space-between;gap:var(--space-md)}
+.bubble pre,.bubble code{background:var(--surface-container-high);padding:2px 6px;border-radius:4px;font-size:13px}
+.bubble pre{padding:var(--space-md);overflow-x:auto;margin:var(--space-sm) 0}
+.bubble pre code{background:transparent;padding:0}
+.search-hit{background:rgba(245,158,11,.35);border-radius:2px;padding:0 2px}
+footer{margin-top:var(--space-5xl);padding-top:var(--space-2xl);border-top:1px solid var(--border);
+  font-size:12.5px;color:var(--fg-muted);font-family:var(--font-mono);font-style:italic;line-height:1.6;max-width:64ch}
+  </style>
+<!-- html-anything example style skin:start -->
+
+<style id="html-anything-example-style-skin">
+html[data-ha-style] {
+  --ha-style-accent: var(--primary, #a03b00);
+  --ha-style-accent-2: var(--secondary-container, #7b40e0);
+  --ha-style-badge-bg: rgba(255,255,255,.78);
+  --ha-style-badge-fg: var(--fg-1, #1e1b19);
+}
+html[data-ha-style] body {
+  position: relative;
+  background-attachment: fixed;
+}
+html[data-ha-style] body::before {
+  position: fixed;
+  z-index: 9999;
+  top: 12px;
+  right: 12px;
+  padding: 7px 10px;
+  border: 1px solid color-mix(in srgb, var(--ha-style-accent) 26%, transparent);
+  border-radius: 999px;
+  background: var(--ha-style-badge-bg);
+  color: var(--ha-style-badge-fg);
+  box-shadow: 0 6px 24px rgba(0,0,0,.10);
+  font: 700 10px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  backdrop-filter: blur(16px);
+}
+html[data-ha-style] .hero,
+html[data-ha-style] header.hero,
+html[data-ha-style] .top,
+html[data-ha-style] .header {
+  position: relative;
+}
+html[data-ha-style] .hero::before,
+html[data-ha-style] header.hero::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 6px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: var(--ha-style-accent);
+}
+
+html[data-ha-style="teaching"] {
+  --ha-style-accent: #0f766e;
+  --ha-style-accent-2: #f59e0b;
+  --primary: #0f766e;
+  --primary-container: #115e59;
+  --primary-fixed: #ccfbf1;
+  --secondary-container: #f59e0b;
+  --bg: #f6fbfb;
+  --surface: #f6fbfb;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #edf7f5;
+  --surface-container: #e5f1ee;
+  --surface-container-high: #d8e8e4;
+  --fg-1: #10201f;
+  --fg-2: #304c49;
+  --fg-muted: #647b78;
+  --border: rgba(15,118,110,.14);
+  --gradient-hero: linear-gradient(135deg, #0f766e 0%, #f59e0b 100%);
+  --gradient-text: linear-gradient(135deg, #0f766e 0%, #f59e0b 100%);
+}
+html[data-ha-style="teaching"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(rgba(15,118,110,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,118,110,.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+html[data-ha-style="teaching"] body::before { content: "teaching"; }
+
+html[data-ha-style="relationship"] {
+  --ha-style-accent: #be3455;
+  --ha-style-accent-2: #317b93;
+  --primary: #be3455;
+  --primary-container: #a52d4b;
+  --primary-fixed: #ffe1e8;
+  --secondary-container: #317b93;
+  --bg: #fff7f8;
+  --surface: #fff7f8;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #fff0f3;
+  --surface-container: #f8e7eb;
+  --surface-container-high: #efdde3;
+  --fg-1: #28181c;
+  --fg-2: #5f3e48;
+  --fg-muted: #8d6b75;
+  --border: rgba(190,52,85,.14);
+  --rose: #e25b74;
+  --blue: #4f95a8;
+  --gradient-hero: linear-gradient(135deg, #be3455 0%, #317b93 100%);
+  --gradient-text: linear-gradient(135deg, #be3455 0%, #317b93 100%);
+}
+html[data-ha-style="relationship"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(120deg, rgba(190,52,85,.08), transparent 36%),
+    linear-gradient(300deg, rgba(49,123,147,.08), transparent 40%);
+}
+html[data-ha-style="relationship"] body::before { content: "relationship"; }
+
+html[data-ha-style="timeline-story"] {
+  --ha-style-accent: #9a4b14;
+  --ha-style-accent-2: #2f6f73;
+  --primary: #9a4b14;
+  --primary-container: #7a3b10;
+  --primary-fixed: #ffe8cf;
+  --secondary-container: #2f6f73;
+  --bg: #fbf8f1;
+  --surface: #fbf8f1;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f4ecdf;
+  --surface-container: #eee3d3;
+  --surface-container-high: #e4d7c4;
+  --fg-1: #241b12;
+  --fg-2: #5c4b3d;
+  --fg-muted: #8a7968;
+  --border: rgba(154,75,20,.16);
+  --gradient-hero: linear-gradient(135deg, #9a4b14 0%, #2f6f73 100%);
+  --gradient-text: linear-gradient(135deg, #9a4b14 0%, #2f6f73 100%);
+}
+html[data-ha-style="timeline-story"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(90deg, transparent 0 calc(50% - 1px), rgba(154,75,20,.16) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)),
+    radial-gradient(circle at 50% 72px, rgba(154,75,20,.20) 0 4px, transparent 5px);
+  background-size: 100% 100%, 100% 96px;
+}
+html[data-ha-style="timeline-story"] body::before { content: "timeline story"; }
+html[data-ha-style="timeline-story"] .hero::before,
+html[data-ha-style="timeline-story"] header.hero::before {
+  width: 8px;
+  height: 72px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--ha-style-accent), var(--ha-style-accent-2));
+}
+
+html[data-ha-style="map-atlas"] {
+  --ha-style-accent: #17695a;
+  --ha-style-accent-2: #2f66a8;
+  --primary: #17695a;
+  --primary-container: #115346;
+  --primary-fixed: #daf5ec;
+  --secondary-container: #2f66a8;
+  --bg: #f4faf7;
+  --surface: #f4faf7;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eaf4ef;
+  --surface-container: #e0eee8;
+  --surface-container-high: #d4e6de;
+  --fg-1: #10221d;
+  --fg-2: #365149;
+  --fg-muted: #6e837b;
+  --border: rgba(23,105,90,.16);
+  --gradient-hero: linear-gradient(135deg, #17695a 0%, #2f66a8 100%);
+  --gradient-text: linear-gradient(135deg, #17695a 0%, #2f66a8 100%);
+}
+html[data-ha-style="map-atlas"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    repeating-linear-gradient(24deg, rgba(23,105,90,.09) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(116deg, rgba(47,102,168,.08) 0 1px, transparent 1px 42px);
+}
+html[data-ha-style="map-atlas"] body::before { content: "map atlas"; }
+html[data-ha-style="map-atlas"] .hero::before,
+html[data-ha-style="map-atlas"] header.hero::before {
+  width: 78px;
+  height: 78px;
+  border: 2px solid var(--ha-style-accent);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 55% 42%, var(--ha-style-accent) 0 4px, transparent 5px),
+    linear-gradient(45deg, transparent 47%, rgba(47,102,168,.55) 48% 52%, transparent 53%);
+}
+
+html[data-ha-style="network-map"] {
+  --ha-style-accent: #355f91;
+  --ha-style-accent-2: #a34d67;
+  --primary: #355f91;
+  --primary-container: #294b75;
+  --primary-fixed: #deebff;
+  --secondary-container: #a34d67;
+  --bg: #f7f8fb;
+  --surface: #f7f8fb;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eef1f7;
+  --surface-container: #e6ebf3;
+  --surface-container-high: #dbe2ee;
+  --fg-1: #151b24;
+  --fg-2: #3f4a5b;
+  --fg-muted: #737e8f;
+  --border: rgba(53,95,145,.16);
+  --gradient-hero: linear-gradient(135deg, #355f91 0%, #a34d67 100%);
+  --gradient-text: linear-gradient(135deg, #355f91 0%, #a34d67 100%);
+}
+html[data-ha-style="network-map"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(53,95,145,.22) 0 3px, transparent 4px),
+    radial-gradient(circle at 68% 34%, rgba(163,77,103,.18) 0 3px, transparent 4px),
+    linear-gradient(38deg, transparent 0 48%, rgba(53,95,145,.10) 49% 51%, transparent 52%);
+  background-size: 88px 88px, 118px 118px, 132px 132px;
+}
+html[data-ha-style="network-map"] body::before { content: "network map"; }
+html[data-ha-style="network-map"] .hero::before,
+html[data-ha-style="network-map"] header.hero::before {
+  width: 86px;
+  height: 46px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 18px 24px, var(--ha-style-accent) 0 7px, transparent 8px),
+    radial-gradient(circle at 44px 12px, var(--ha-style-accent-2) 0 6px, transparent 7px),
+    radial-gradient(circle at 70px 30px, var(--ha-style-accent) 0 7px, transparent 8px),
+    linear-gradient(22deg, transparent 0 31%, color-mix(in srgb, var(--ha-style-accent) 60%, transparent) 32% 36%, transparent 37%),
+    linear-gradient(160deg, transparent 0 43%, color-mix(in srgb, var(--ha-style-accent-2) 60%, transparent) 44% 48%, transparent 49%);
+}
+
+html[data-ha-style="dashboard"] {
+  --ha-style-accent: #0f5f6f;
+  --ha-style-accent-2: #8a5a16;
+  --primary: #0f5f6f;
+  --primary-container: #0b4c59;
+  --primary-fixed: #d8f2f5;
+  --secondary-container: #8a5a16;
+  --bg: #f5f7f9;
+  --surface: #f5f7f9;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eef2f5;
+  --surface-container: #e7edf1;
+  --surface-container-high: #dce5ea;
+  --fg-1: #111827;
+  --fg-2: #374151;
+  --fg-muted: #6b7280;
+  --border: rgba(15,95,111,.16);
+  --gradient-hero: linear-gradient(135deg, #0f5f6f 0%, #083344 100%);
+  --gradient-text: linear-gradient(135deg, #0f5f6f 0%, #083344 100%);
+}
+html[data-ha-style="dashboard"] body {
+  background-color: var(--bg) !important;
+  background-image: linear-gradient(90deg, rgba(15,95,111,.08) 0 1px, transparent 1px);
+  background-size: 18px 100%;
+}
+html[data-ha-style="dashboard"] body::before { content: "dashboard"; }
+html[data-ha-style="dashboard"] .hero::before,
+html[data-ha-style="dashboard"] header.hero::before {
+  width: 100%;
+  height: 3px;
+  margin-bottom: 14px;
+}
+
+html[data-ha-style="document"] {
+  --ha-style-accent: #8b3f1f;
+  --ha-style-accent-2: #2f6f73;
+  --primary: #8b3f1f;
+  --primary-container: #703319;
+  --primary-fixed: #ffe4d5;
+  --secondary-container: #2f6f73;
+  --bg: #fbfaf7;
+  --surface: #fbfaf7;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f2efe8;
+  --surface-container: #e9e4da;
+  --surface-container-high: #ded7c9;
+  --fg-1: #211d18;
+  --fg-2: #554d44;
+  --fg-muted: #82786c;
+  --border: rgba(139,63,31,.16);
+  --font-headline: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --gradient-hero: linear-gradient(135deg, #8b3f1f 0%, #2f6f73 100%);
+  --gradient-text: linear-gradient(135deg, #8b3f1f 0%, #2f6f73 100%);
+}
+html[data-ha-style="document"] body {
+  background-color: var(--bg) !important;
+  background-image: linear-gradient(90deg, rgba(139,63,31,.18) 0 4px, transparent 4px);
+  background-size: 100% 100%;
+}
+html[data-ha-style="document"] body::before { content: "document"; }
+html[data-ha-style="document"] .hero::before,
+html[data-ha-style="document"] header.hero::before {
+  width: 42px;
+  height: 42px;
+  border-radius: 0;
+  background: transparent;
+  border-top: 4px solid var(--ha-style-accent);
+  border-left: 4px solid var(--ha-style-accent);
+}
+
+html[data-ha-style="developer"] {
+  color-scheme: dark;
+  --ha-style-accent: #38bdf8;
+  --ha-style-accent-2: #f97316;
+  --ha-style-badge-bg: rgba(8,16,31,.82);
+  --ha-style-badge-fg: #dbeafe;
+  --primary: #38bdf8;
+  --primary-container: #0e7490;
+  --primary-fixed: #0f2942;
+  --secondary-container: #f97316;
+  --bg: #07111f;
+  --surface: #07111f;
+  --surface-container-lowest: #0b1426;
+  --surface-container-low: #0f1b31;
+  --surface-container: #13233d;
+  --surface-container-high: #1b2f50;
+  --fg-1: #f8fafc;
+  --fg-2: #cbd5e1;
+  --fg-muted: #94a3b8;
+  --border: rgba(148,163,184,.18);
+  --green: #34d399;
+  --red: #fb7185;
+  --yellow: #fbbf24;
+  --gradient-hero: linear-gradient(135deg, #0f172a 0%, #0e7490 100%);
+  --gradient-text: linear-gradient(135deg, #38bdf8 0%, #f97316 100%);
+}
+html[data-ha-style="developer"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(rgba(56,189,248,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,189,248,.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+html[data-ha-style="developer"] body::before { content: "developer"; }
+html[data-ha-style="developer"] pre,
+html[data-ha-style="developer"] code,
+html[data-ha-style="developer"] .mono {
+  color: inherit;
+}
+</style>
+<!-- html-anything example style skin:end -->
+</head>
+<body>
+<main>
+  <header class="hero">
+    <div class="eyebrow"><span>ChatGPT export</span><span>•</span><span>2026-02-04 → 2026-04-22</span></div>
+    <h1>Synthetic ChatGPT export — work-memory atlas</h1>
+    <p class="editorial">Three months of synthetic AI chat history. Code dominates: the longest threads are about contractor classification, auth-middleware refactoring, and a Postgres migration playbook. A handful of writing/planning conversations sit alongside, and three threads end with a user question that never got answered.</p>
+    <div class="hero-actions">
+      <button class="btn primary" data-action="copy-summary">Copy summary as Markdown</button>
+      <button class="btn" data-action="expand-all">Expand all conversations</button>
+      <button class="btn" data-action="collapse-all">Collapse all</button>
+    </div>
+    <div class="kpi-row" id="kpi-row"></div>
+  </header>
+
+  <section class="section" id="section-overview">
+    <div class="section-head"><h2>Overview</h2><span class="meta">kind & model breakdown</span></div>
+    <div class="grid-2">
+      <div class="card" id="kind-card">
+        <h3>What you used AI for</h3>
+        <div id="kind-stack"></div>
+        <div class="muted" style="font-size:12.5px;margin-top:var(--space-md)">
+          Conversation kinds are inferred from message keywords and code-block density —
+          <span class="heur-chip">Heuristic</span> not exact.
+        </div>
+      </div>
+      <div class="card" id="model-card">
+        <h3>Models you talked to</h3>
+        <div id="model-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="section-timeline">
+    <div class="section-head"><h2>Timeline</h2><span class="meta" id="timeline-meta"></span></div>
+    <div class="card">
+      <svg class="timeline-svg" id="timeline-svg" viewBox="0 0 1000 130" preserveAspectRatio="none"></svg>
+      <div class="rhythm">
+        <div class="rhythm-card">
+          <h4>Hour of day (UTC)</h4>
+          <div class="rhythm-bars" id="hour-bars"></div>
+          <div class="rhythm-axis"><span>0</span><span>6</span><span>12</span><span>18</span><span>23</span></div>
+        </div>
+        <div class="rhythm-card">
+          <h4>Day of week (UTC)</h4>
+          <div class="rhythm-bars" id="dow-bars"></div>
+          <div class="rhythm-axis"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="section-topics">
+    <div class="section-head"><h2>Topics</h2><span class="meta">click a chip to filter the index</span></div>
+    <div class="card">
+      <div class="chips" id="topic-chips"></div>
+      <div class="muted" style="font-size:12.5px;margin-top:var(--space-md)">
+        Topics come from a coarse keyword roll-up across titles + first user prompts —
+        <span class="heur-chip">Heuristic</span> not real topic modeling.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="section-heuristic">
+    <div class="section-head"><h2>Reusable prompts &amp; important answers</h2><span class="meta">heuristic — review before reusing</span></div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Reusable prompts <span class="heur-chip">Heuristic</span></h3>
+        <p class="muted" style="font-size:12.5px;margin-bottom:var(--space-md)">
+          User prompts that share keywords with prompts from other conversations
+          (heuristic — review before reusing).
+        </p>
+        <div class="heur-panel" id="reusable-panel"></div>
+      </div>
+      <div class="card">
+        <h3>Important answers <span class="heur-chip">Heuristic</span></h3>
+        <p class="muted" style="font-size:12.5px;margin-bottom:var(--space-md)">
+          The longest single assistant reply per conversation — usually the
+          chunks of advice or code worth revisiting.
+        </p>
+        <div class="heur-panel" id="important-panel"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="section-unresolved">
+    <div class="section-head"><h2>Unresolved threads</h2><span class="meta">heuristic — surface-pattern hints</span></div>
+    <div class="card">
+      <p class="muted" style="font-size:12.5px;margin-bottom:var(--space-md)">
+        Conversations where the last turn is a user message, or where the
+        assistant ended with an unusually short reply to a question
+        (<span class="heur-chip">Heuristic</span> — these are surface-pattern hypotheses, not verdicts).
+      </p>
+      <div class="callouts" id="unresolved-list"></div>
+    </div>
+  </section>
+
+  <section class="section" id="section-index">
+    <div class="section-head"><h2>Conversation index</h2><span class="meta" id="index-meta"></span></div>
+    <div class="drill-toolbar">
+      <input class="drill-search" id="search" placeholder="Search titles &amp; messages…" autocomplete="off" />
+      <span class="drill-meta" id="filter-summary"></span>
+    </div>
+    <div class="chips" id="kind-chips"></div>
+    <div class="convo-list" id="convo-list"></div>
+  </section>
+
+  <footer>
+    Generated locally — your AI chat export never left your machine.
+    The full conversation log is embedded in this HTML and rendered in your
+    browser. No network calls back to OpenAI / Anthropic at render or click
+    time. For sharing, prefer an anonymized export.
+  </footer>
+</main>
+
+<script>const DATA = {"kind":"ai-chat-export","format":"chatgpt-export","platform":"ChatGPT export","conversations":[{"id":"conv-000009","title":"Tax classification logic for 1099 contractors","createdEpoch":1770218040000,"createdIso":"2026-02-04","updatedEpoch":1770218880000,"updatedIso":"2026-02-04","messageCount":6,"userCount":3,"assistantCount":3,"systemCount":0,"toolCount":0,"wordCount":420,"assistantWordCount":363,"userWordCount":57,"codeBlockCount":2,"hasCode":true,"models":["gpt-4o"],"topic":"Tax classification logic for 1099 contractors","kind":"code","firstUserPrompt":"I'm building a payroll tool for a small agency. How should I model 1099 vs W-2 classification in the database? I want to make sure the logic is auditable later.","firstAssistantReply":"For a small payroll tool, model classification as a first-class field on the worker record, not derived from anything else. A reasonable schema:\n\n```sql\ncreate table workers (\n  id uuid primary key,\n  legal_name text not null,\n  classification text not null check (classification in ('w2','1099')),\n  classified_at times…","lastUserText":"Makes sense. Last thing: any gotchas with how Stripe Tax handles 1099-NEC reporting?","lastUserEpoch":1770218520000,"lastAssistantEpoch":1770218880000,"durationSec":840,"isUnresolved":false,"messages":[{"id":"m_0001","role":"user","text":"I'm building a payroll tool for a small agency. How should I model 1099 vs W-2 classification in the database? I want to make sure the logic is auditable later.","ts":"2026-02-04 15:15","tsEpoch":1770218100000,"wordCount":30,"charCount":160,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"For a small payroll tool, model classification as a first-class field on the worker record, not derived from anything else. A reasonable schema:\n\n```sql\ncreate table workers (\n  id uuid primary key,\n  legal_name text not null,\n  classification text not null check (classification in ('w2','1099')),\n  classified_at timestamptz not null default now(),\n  classified_by_user_id uuid references users(id),\n  classification_reason text\n);\n```\n\nThree reasons to keep it explicit:\n\n1. **Auditability** — the IRS standard is a multi-factor test (behavioral, financial, type of relationship). You don't want to re-derive that on every payroll run.\n2. **Reclassification is a known event** — track it. When you flip a worker from 1099 to W-2 (or vice versa), insert a new row in a `worker_classification_history` table with the prior classification, the new one, and an effective date.\n3. **Tax forms diverge** — 1099-NEC and W-2 generation paths look different from this field down. Branching at the data layer keeps the rest of the app cleaner.","ts":"2026-02-04 15:16","tsEpoch":1770218160000,"model":"gpt-4o","wordCount":157,"charCount":1036,"codeBlockCount":1,"hasCode":true},{"id":"m_0003","role":"user","text":"Got it. Should the history table use temporal columns or an append-only log shape?","ts":"2026-02-04 15:17","tsEpoch":1770218220000,"wordCount":14,"charCount":82,"codeBlockCount":0,"hasCode":false},{"id":"m_0004","role":"assistant","text":"Append-only log shape, with the current classification denormalized onto `workers` for fast lookups. Temporal columns (`valid_from`, `valid_to`) get awkward when you need to fix a misclassification retroactively without rewriting history.\n\n```sql\ncreate table worker_classification_history (\n  id uuid primary key,\n  worker_id uuid not null references workers(id),\n  prior_classification text,\n  new_classification text not null,\n  effective_date date not null,\n  recorded_at timestamptz not null default now(),\n  recorded_by_user_id uuid references users(id),\n  reason text\n);\n```\n\nWhen you need point-in-time classification, query the history with `effective_date <= :asof` ordered desc, take the first row. Slightly more SQL but fixable mistakes don't corrupt the audit trail.","ts":"2026-02-04 15:21","tsEpoch":1770218460000,"model":"gpt-4o","wordCount":98,"charCount":779,"codeBlockCount":1,"hasCode":true},{"id":"m_0005","role":"user","text":"Makes sense. Last thing: any gotchas with how Stripe Tax handles 1099-NEC reporting?","ts":"2026-02-04 15:22","tsEpoch":1770218520000,"wordCount":13,"charCount":84,"codeBlockCount":0,"hasCode":false},{"id":"m_0006","role":"assistant","text":"Two things worth pinning down before you wire it up:\n\n1. Stripe Tax does not file 1099-NEC for you — it surfaces totals you can hand to a filing service (Track1099, Tax1099, etc.). Plan to export annual totals per contractor to CSV.\n2. The filing threshold is $600/year per contractor as of the 2026 tax year. Track lifetime payments per worker so you don't accidentally miss a contractor who crossed the threshold across multiple short engagements.\n\nFor the actual filing, look at the Track1099 API — they accept a JSON manifest of payees + totals and handle the 1099-NEC submission to the IRS plus copies to the worker.","ts":"2026-02-04 15:28","tsEpoch":1770218880000,"model":"gpt-4o","wordCount":108,"charCount":621,"codeBlockCount":0,"hasCode":false}]},{"id":"conv-000017","title":"1099 contractor invoicing — should I prorate the threshold?","createdEpoch":1770637320000,"createdIso":"2026-02-09","updatedEpoch":1770637680000,"updatedIso":"2026-02-09","messageCount":5,"userCount":3,"assistantCount":2,"systemCount":0,"toolCount":0,"wordCount":185,"assistantWordCount":137,"userWordCount":48,"codeBlockCount":0,"hasCode":false,"models":["gpt-4o"],"topic":"1099 contractor invoicing — should I prorate the threshold?","kind":"other","firstUserPrompt":"Following up on the contractor classification thing. If a 1099 contractor crosses the $600 threshold mid-year, do I need to retroactively change anything about how I issued earlier invoices?","firstAssistantReply":"No retroactive change to invoices. The $600 threshold is for whether you need to *file* a 1099-NEC for that contractor at year-end, not for how you process payments. Keep issuing invoices the same way; just make sure your year-end report aggregates total paid per contractor and flags anyone who crossed $600 for filing.","lastUserText":"How do you actually trigger filing through Track1099 — is it API-driven?","lastUserEpoch":1770637680000,"lastAssistantEpoch":1770637620000,"durationSec":360,"isUnresolved":true,"unresolvedReason":"Last turn is a user message — no assistant reply on record.","messages":[{"id":"m_0001","role":"user","text":"Following up on the contractor classification thing. If a 1099 contractor crosses the $600 threshold mid-year, do I need to retroactively change anything about how I issued earlier invoices?","ts":"2026-02-09 11:43","tsEpoch":1770637380000,"wordCount":29,"charCount":190,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"No retroactive change to invoices. The $600 threshold is for whether you need to *file* a 1099-NEC for that contractor at year-end, not for how you process payments. Keep issuing invoices the same way; just make sure your year-end report aggregates total paid per contractor and flags anyone who crossed $600 for filing.","ts":"2026-02-09 11:44","tsEpoch":1770637440000,"model":"gpt-4o","wordCount":53,"charCount":320,"codeBlockCount":0,"hasCode":false},{"id":"m_0003","role":"user","text":"What about state filing — same threshold?","ts":"2026-02-09 11:45","tsEpoch":1770637500000,"wordCount":7,"charCount":41,"codeBlockCount":0,"hasCode":false},{"id":"m_0004","role":"assistant","text":"State thresholds vary. Some states (like Massachusetts) require 1099-NEC filings even below the federal $600 if total payments are over $0 to a state resident. California has its own DE 542 form for independent contractor reporting separate from 1099-NEC.\n\nIf you're going to operate in multiple states, the practical move is to pick a 1099 filing service (Track1099, Tax1099, Tax Bandits) that handles state filings as part of the federal package. They keep the threshold table updated; you don't want to rebuild that yourself.","ts":"2026-02-09 11:47","tsEpoch":1770637620000,"model":"gpt-4o","wordCount":84,"charCount":528,"codeBlockCount":0,"hasCode":false},{"id":"m_0005","role":"user","text":"How do you actually trigger filing through Track1099 — is it API-driven?","ts":"2026-02-09 11:48","tsEpoch":1770637680000,"wordCount":12,"charCount":72,"codeBlockCount":0,"hasCode":false}]},{"id":"conv-000026","title":"Refactoring auth middleware — drop session-token storage","createdEpoch":1770887280000,"createdIso":"2026-02-12","updatedEpoch":1770888000000,"updatedIso":"2026-02-12","messageCount":6,"userCount":3,"assistantCount":3,"systemCount":0,"toolCount":0,"wordCount":567,"assistantWordCount":442,"userWordCount":125,"codeBlockCount":4,"hasCode":true,"models":["gpt-4o"],"topic":"Refactoring auth middleware — drop session-token storage","kind":"code","firstUserPrompt":"I have an Express auth middleware that stores session tokens in a Postgres table and validates each request against it. Legal flagged this for compliance. They want stateless JWTs instead. Here's the current shape:\n\n```js\nasync function authMiddleware(req, res, next) {\n  const token = req.headers.authorization?.replace…","firstAssistantReply":"Replace it with a JWT verifier and drop the sessions table entirely. The compliance issue is the at-rest storage of session tokens; if you sign a short-lived JWT and keep nothing server-side, there's nothing to leak.\n\n```js\nimport jwt from 'jsonwebtoken';\n\nconst JWT_SECRET = process.env.JWT_SECRET; // 256-bit, in your…","lastUserText":"Can I use RS256 instead of HS256 so I can verify in other services without sharing the secret?","lastUserEpoch":1770887820000,"lastAssistantEpoch":1770888000000,"durationSec":720,"isUnresolved":false,"messages":[{"id":"m_0001","role":"user","text":"I have an Express auth middleware that stores session tokens in a Postgres table and validates each request against it. Legal flagged this for compliance. They want stateless JWTs instead. Here's the current shape:\n\n```js\nasync function authMiddleware(req, res, next) {\n  const token = req.headers.authorization?.replace('Bearer ', '');\n  if (!token) return res.status(401).end();\n  const session = await db.query('select * from sessions where token = $1 and expires_at > now()', [token]);\n  if (!session.rows.length) return res.status(401).end();\n  req.user = await db.query('select * from users where id = $1', [session.rows[0].user_id]);\n  next();\n}\n```\n\nHow should I rewrite this?","ts":"2026-02-12 09:09","tsEpoch":1770887340000,"wordCount":92,"charCount":684,"codeBlockCount":1,"hasCode":true},{"id":"m_0002","role":"assistant","text":"Replace it with a JWT verifier and drop the sessions table entirely. The compliance issue is the at-rest storage of session tokens; if you sign a short-lived JWT and keep nothing server-side, there's nothing to leak.\n\n```js\nimport jwt from 'jsonwebtoken';\n\nconst JWT_SECRET = process.env.JWT_SECRET; // 256-bit, in your secret manager\nconst JWT_ISSUER = 'your-app';\n\nasync function authMiddleware(req, res, next) {\n  const token = req.headers.authorization?.replace('Bearer ', '');\n  if (!token) return res.status(401).end();\n  try {\n    const decoded = jwt.verify(token, JWT_SECRET, {\n      issuer: JWT_ISSUER,\n      algorithms: ['HS256'],\n    });\n    req.user = { id: decoded.sub, email: decoded.email, roles: decoded.roles };\n    next();\n  } catch (err) {\n    return res.status(401).end();\n  }\n}\n```\n\nTwo things you'll need to handle separately:\n\n1. **Logout / revocation.** Stateless JWTs can't be revoked mid-flight. Either (a) keep tokens short (5–15 min) and use refresh tokens, or (b) maintain a small revocation list in Redis keyed by JWT ID. Option (a) is simpler unless you have hard \"log them out NOW\" requirements.\n2. **Refresh tokens.** These DO need server storage, but they're long-lived and only used to mint new access tokens — so the surface area is much smaller than full session storage.","ts":"2026-02-12 09:11","tsEpoch":1770887460000,"model":"gpt-4o","wordCount":189,"charCount":1308,"codeBlockCount":1,"hasCode":true},{"id":"m_0003","role":"user","text":"What if I want to support 'log out everywhere' — kill all my own sessions?","ts":"2026-02-12 09:12","tsEpoch":1770887520000,"wordCount":15,"charCount":74,"codeBlockCount":0,"hasCode":false},{"id":"m_0004","role":"assistant","text":"Track a per-user `token_version` integer in the users table, embed it in every JWT as a custom claim, and verify it on each request:\n\n```js\nconst decoded = jwt.verify(token, JWT_SECRET, { ... });\nconst user = await db.query('select token_version from users where id = $1', [decoded.sub]);\nif (user.rows[0].token_version !== decoded.token_version) {\n  return res.status(401).end();\n}\n```\n\nTo \"log out everywhere\", `update users set token_version = token_version + 1 where id = $1`. Every existing JWT for that user instantly fails verification on the next request. You're back to one DB lookup per request, but it's a single-row index hit on the users table — much cheaper than the sessions-table validation you had before, and no tokens at rest.","ts":"2026-02-12 09:16","tsEpoch":1770887760000,"model":"gpt-4o","wordCount":117,"charCount":745,"codeBlockCount":1,"hasCode":true},{"id":"m_0005","role":"user","text":"Can I use RS256 instead of HS256 so I can verify in other services without sharing the secret?","ts":"2026-02-12 09:17","tsEpoch":1770887820000,"wordCount":18,"charCount":94,"codeBlockCount":0,"hasCode":false},{"id":"m_0006","role":"assistant","text":"Yes — RS256 is the right call once you have more than one service. Generate an RSA key pair, sign with the private key in the auth service, hand out the public key (or a JWKS endpoint) to every other service.\n\n```js\n// Auth service — sign\nconst token = jwt.sign(payload, RSA_PRIVATE_KEY, {\n  algorithm: 'RS256',\n  issuer: 'your-app',\n  expiresIn: '15m',\n});\n\n// Any other service — verify\nconst decoded = jwt.verify(token, RSA_PUBLIC_KEY, {\n  algorithms: ['RS256'],\n  issuer: 'your-app',\n});\n```\n\nFor the JWKS endpoint, expose `/.well-known/jwks.json` from the auth service with the public key in JWK format. Other services fetch it on startup (or on demand with a small cache). This gives you key rotation later without redeploying every service — bump the `kid` in the JWT header, add the new key to JWKS, services pick it up.","ts":"2026-02-12 09:20","tsEpoch":1770888000000,"model":"gpt-4o","wordCount":136,"charCount":828,"codeBlockCount":1,"hasCode":true}]},{"id":"conv-000033","title":"JWT key rotation — what's the right cadence?","createdEpoch":1771518780000,"createdIso":"2026-02-19","updatedEpoch":1771519200000,"updatedIso":"2026-02-19","messageCount":4,"userCount":2,"assistantCount":2,"systemCount":0,"toolCount":0,"wordCount":297,"assistantWordCount":266,"userWordCount":31,"codeBlockCount":0,"hasCode":false,"models":["gpt-4o"],"topic":"JWT key rotation — what's the right cadence?","kind":"code","firstUserPrompt":"How often should I rotate the JWT signing keys for an internal app — small team, all internal use?","firstAssistantReply":"For a small internal app, **annually is fine** as a baseline, with an immediate rotation if you have any reason to suspect compromise (laptop loss, accidental key commit, departing employee with access).\n\nThe annual-baseline reasoning: the cost of rotation is the operational drag (refresh JWKS endpoint, verify all serv…","lastUserText":"What's the actual rotation procedure look like — concretely, step by step?","lastUserEpoch":1771518960000,"lastAssistantEpoch":1771519200000,"durationSec":420,"isUnresolved":false,"messages":[{"id":"m_0001","role":"user","text":"How often should I rotate the JWT signing keys for an internal app — small team, all internal use?","ts":"2026-02-19 16:34","tsEpoch":1771518840000,"wordCount":19,"charCount":98,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"For a small internal app, **annually is fine** as a baseline, with an immediate rotation if you have any reason to suspect compromise (laptop loss, accidental key commit, departing employee with access).\n\nThe annual-baseline reasoning: the cost of rotation is the operational drag (refresh JWKS endpoint, verify all services pick up the new key, retire the old key after the longest-lived JWT expires). The benefit grows slowly with time. For a small internal app, monthly rotation buys very little real security and adds real ops friction.\n\nThe thing that *does* matter for a small internal app: keep your JWT TTLs short (15 min access tokens, 7-day refresh) so a leaked active token has a small blast radius. That gets you 90% of what frequent key rotation would.","ts":"2026-02-19 16:35","tsEpoch":1771518900000,"model":"gpt-4o","wordCount":127,"charCount":765,"codeBlockCount":0,"hasCode":false},{"id":"m_0003","role":"user","text":"What's the actual rotation procedure look like — concretely, step by step?","ts":"2026-02-19 16:36","tsEpoch":1771518960000,"wordCount":12,"charCount":74,"codeBlockCount":0,"hasCode":false},{"id":"m_0004","role":"assistant","text":"Concrete sequence assuming RS256 + a JWKS endpoint:\n\n1. Generate a new RSA key pair locally (or in your secret manager).\n2. Add the new public key to your JWKS endpoint with a new `kid`. Old key stays in JWKS for now.\n3. Switch the auth service to sign new JWTs with the new private key. Already-issued JWTs (signed with the old key) keep verifying because the old public key is still in JWKS.\n4. Wait until all old JWTs have expired (= longest-lived refresh token TTL — usually 7 days for an internal app).\n5. Remove the old public key from JWKS. Securely destroy the old private key.\n\nTotal elapsed time: ~7 days. The only ops moment is steps 2 and 3 (which can happen in the same deploy). Steps 4–5 are a calendar reminder, not a deploy.","ts":"2026-02-19 16:40","tsEpoch":1771519200000,"model":"gpt-4o","wordCount":139,"charCount":740,"codeBlockCount":0,"hasCode":false}]},{"id":"conv-000040","title":"Pricing copy for the agency tier — make it less corporate","createdEpoch":1771791060000,"createdIso":"2026-02-22","updatedEpoch":1771791360000,"updatedIso":"2026-02-22","messageCount":4,"userCount":2,"assistantCount":2,"systemCount":0,"toolCount":0,"wordCount":260,"assistantWordCount":196,"userWordCount":64,"codeBlockCount":0,"hasCode":false,"models":["gpt-4o"],"topic":"Pricing copy for the agency tier — make it less corporate","kind":"writing","firstUserPrompt":"Here's the current pricing-page copy for our \"Agency\" tier. Can you make it sound less like enterprise software and more like it was written by a human?\n\n> Empower your agency with our enterprise-grade Agency tier. Unlock advanced collaboration features, dedicated account management, and SLA-backed uptime guarantees. S…","firstAssistantReply":"A version that sounds like a person wrote it:\n\n> **Agency**\\\n> For shops running client work on top of us. You get shared workspaces for your team, a way to keep each client's data separate, and a real human you can call when something breaks. Most agencies on this tier are 5–25 people.\n\nThree things I changed:\n\n- \"Ent…","lastUserText":"Love it. Can you do the same for the 'Solo' tier?","lastUserEpoch":1771791240000,"lastAssistantEpoch":1771791360000,"durationSec":300,"isUnresolved":false,"messages":[{"id":"m_0001","role":"user","text":"Here's the current pricing-page copy for our \"Agency\" tier. Can you make it sound less like enterprise software and more like it was written by a human?\n\n> Empower your agency with our enterprise-grade Agency tier. Unlock advanced collaboration features, dedicated account management, and SLA-backed uptime guarantees. Scale your client work with confidence.","ts":"2026-02-22 20:12","tsEpoch":1771791120000,"wordCount":53,"charCount":358,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"A version that sounds like a person wrote it:\n\n> **Agency**\\\n> For shops running client work on top of us. You get shared workspaces for your team, a way to keep each client's data separate, and a real human you can call when something breaks. Most agencies on this tier are 5–25 people.\n\nThree things I changed:\n\n- \"Enterprise-grade\" → cut. Nobody buys software because the vendor called itself enterprise-grade.\n- \"Empower / unlock / scale\" → cut. These are filler words; replace with what the tier actually does.\n- \"SLA-backed uptime guarantees\" → \"a real human you can call when something breaks.\" Same thing, said in a way that sounds like you mean it.\n\nIf your team count is wrong, swap that line — I picked 5–25 from your description but adjust as needed.","ts":"2026-02-22 20:13","tsEpoch":1771791180000,"model":"gpt-4o","wordCount":136,"charCount":762,"codeBlockCount":0,"hasCode":false},{"id":"m_0003","role":"user","text":"Love it. Can you do the same for the 'Solo' tier?","ts":"2026-02-22 20:14","tsEpoch":1771791240000,"wordCount":11,"charCount":49,"codeBlockCount":0,"hasCode":false},{"id":"m_0004","role":"assistant","text":"Sure — give me your current Solo copy and I'll do the same pass.\n\nIf you don't have one yet, here's a starting point in the same voice:\n\n> **Solo**\\\n> For one person doing the work. Everything you need, nothing you don't. The cheapest tier we ship — if it's not enough, the Pro tier is one click away.","ts":"2026-02-22 20:16","tsEpoch":1771791360000,"model":"gpt-4o","wordCount":60,"charCount":301,"codeBlockCount":0,"hasCode":false}]},{"id":"conv-000047","title":"Help me draft an apology to a customer about the outage","createdEpoch":1772441220000,"createdIso":"2026-03-02","updatedEpoch":1772441640000,"updatedIso":"2026-03-02","messageCount":4,"userCount":2,"assistantCount":2,"systemCount":0,"toolCount":0,"wordCount":400,"assistantWordCount":361,"userWordCount":39,"codeBlockCount":0,"hasCode":false,"models":["gpt-4o"],"topic":"Help me draft an apology to a customer about the outage","kind":"writing","firstUserPrompt":"Customer email coming up — they were down for 3 hours yesterday during a peak sales window. Help me draft an apology that owns it without sounding lawyered up.","firstAssistantReply":"Here's a draft. I went short on purpose — long apologies feel like cover.\n\n> Hi [name],\n>\n> Yesterday between 2:14 and 5:30 PM ET, the service was down for you. I know that landed in the middle of your peak sales window, and I'm sorry.\n>\n> Here's what happened: [one-sentence root cause — keep it concrete, e.g. \"a datab…","lastUserText":"Should I have someone from eng on the call too?","lastUserEpoch":1772441400000,"lastAssistantEpoch":1772441640000,"durationSec":420,"isUnresolved":false,"messages":[{"id":"m_0001","role":"user","text":"Customer email coming up — they were down for 3 hours yesterday during a peak sales window. Help me draft an apology that owns it without sounding lawyered up.","ts":"2026-03-02 08:48","tsEpoch":1772441280000,"wordCount":29,"charCount":159,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"Here's a draft. I went short on purpose — long apologies feel like cover.\n\n> Hi [name],\n>\n> Yesterday between 2:14 and 5:30 PM ET, the service was down for you. I know that landed in the middle of your peak sales window, and I'm sorry.\n>\n> Here's what happened: [one-sentence root cause — keep it concrete, e.g. \"a database migration we ran during a window we'd told you was safe took longer than expected and locked writes\"]. We've already changed the migration playbook so the same shape of failure can't happen again. I can walk you through the change if it would help.\n>\n> I want to credit your account for the affected window. We'll back that out automatically on next month's invoice — you don't need to do anything. If you'd rather take it as an account credit you can apply to a future month, just say the word.\n>\n> Happy to hop on a call this week if you want to talk through what we're doing differently.\n>\n> [Your name]\n\nTwo notes:\n\n- I left placeholders for the customer's name and the actual root cause. Fill those in directly — vague RCAs (\"a technical issue affected service\") are worse than no explanation.\n- The credit is offered as the default, not as a question. That signals you take it seriously.","ts":"2026-03-02 08:49","tsEpoch":1772441340000,"model":"gpt-4o","wordCount":228,"charCount":1217,"codeBlockCount":0,"hasCode":false},{"id":"m_0003","role":"user","text":"Should I have someone from eng on the call too?","ts":"2026-03-02 08:50","tsEpoch":1772441400000,"wordCount":10,"charCount":47,"codeBlockCount":0,"hasCode":false},{"id":"m_0004","role":"assistant","text":"Depends on the customer and the relationship. Three rules of thumb:\n\n- If they've never asked for technical detail before and the email seems to land fine, you don't need to bring eng. Adding a third party can make a small thing feel formal.\n- If they ask \"what specifically went wrong\" or \"show me your post-mortem\", bring eng. They want to evaluate whether the fix is real.\n- If they're a technical buyer (CTO, head of eng on the customer side), bring eng by default. Showing the actual person who fixed it builds more trust than a polished slide.\n\nIf you do bring eng, give them 5 minutes of the call max. The customer wants you to own the apology; eng is there to answer specific technical questions if they come up.","ts":"2026-03-02 08:54","tsEpoch":1772441640000,"model":"gpt-4o","wordCount":133,"charCount":720,"codeBlockCount":0,"hasCode":false}]},{"id":"conv-000052","title":"What's the difference between Postgres ROW EXCLUSIVE and EXCLUSIVE locks?","createdEpoch":1772634120000,"createdIso":"2026-03-04","updatedEpoch":1772634240000,"updatedIso":"2026-03-04","messageCount":2,"userCount":1,"assistantCount":1,"systemCount":0,"toolCount":0,"wordCount":208,"assistantWordCount":189,"userWordCount":19,"codeBlockCount":0,"hasCode":false,"models":["gpt-4-turbo"],"topic":"What's the difference between Postgres ROW EXCLUSIVE and EXCLUSIVE locks?","kind":"other","firstUserPrompt":"Quick one: what's the actual difference between ROW EXCLUSIVE and EXCLUSIVE table locks in Postgres? The docs are confusing.","firstAssistantReply":"Despite the name, **ROW EXCLUSIVE doesn't lock rows**. It's a *table-level* lock that says \"I might modify rows in this table.\" It conflicts with locks like SHARE, SHARE ROW EXCLUSIVE, EXCLUSIVE, and ACCESS EXCLUSIVE — but does NOT conflict with other ROW EXCLUSIVE locks. So multiple sessions doing INSERT / UPDATE / DE…","lastUserText":"Quick one: what's the actual difference between ROW EXCLUSIVE and EXCLUSIVE table locks in Postgres? The docs are confusing.","lastUserEpoch":1772634180000,"lastAssistantEpoch":1772634240000,"durationSec":120,"isUnresolved":false,"messages":[{"id":"m_0001","role":"user","text":"Quick one: what's the actual difference between ROW EXCLUSIVE and EXCLUSIVE table locks in Postgres? The docs are confusing.","ts":"2026-03-04 14:23","tsEpoch":1772634180000,"wordCount":19,"charCount":124,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"Despite the name, **ROW EXCLUSIVE doesn't lock rows**. It's a *table-level* lock that says \"I might modify rows in this table.\" It conflicts with locks like SHARE, SHARE ROW EXCLUSIVE, EXCLUSIVE, and ACCESS EXCLUSIVE — but does NOT conflict with other ROW EXCLUSIVE locks. So multiple sessions doing INSERT / UPDATE / DELETE on the same table all coexist fine; they each hold ROW EXCLUSIVE on the table while doing per-row work.\n\n**EXCLUSIVE** is much more restrictive. It conflicts with every lock mode except ACCESS SHARE. So while one transaction holds EXCLUSIVE on a table, no other transaction can read or write it (well, ACCESS SHARE — which SELECT takes — is allowed, so SELECT still works, but anything else blocks).\n\nThe naming is historical and confusing. The mental model that helps:\n\n- **ROW EXCLUSIVE** = \"I'm going to write rows here, in row-by-row fashion. Other writers can do the same.\" (Default lock for INSERT/UPDATE/DELETE.)\n- **EXCLUSIVE** = \"Don't let anyone else write while I'm doing this.\" (Used by REFRESH MATERIALIZED VIEW.)\n- **ACCESS EXCLUSIVE** = \"Don't even read while I'm doing this.\" (Used by ALTER TABLE, DROP, TRUNCATE.)","ts":"2026-03-04 14:24","tsEpoch":1772634240000,"model":"gpt-4-turbo","wordCount":189,"charCount":1155,"codeBlockCount":0,"hasCode":false}]},{"id":"conv-000059","title":"Migrate a 50M-row table to add a NOT NULL column safely","createdEpoch":1773051300000,"createdIso":"2026-03-09","updatedEpoch":1773051780000,"updatedIso":"2026-03-09","messageCount":4,"userCount":2,"assistantCount":2,"systemCount":0,"toolCount":0,"wordCount":371,"assistantWordCount":321,"userWordCount":50,"codeBlockCount":5,"hasCode":true,"models":["gpt-4o"],"topic":"Migrate a 50M-row table to add a NOT NULL column safely","kind":"code","firstUserPrompt":"I need to add a NOT NULL column with a default to a 50M-row Postgres table. Doing it in one ALTER TABLE locks the table for too long. What's the safe pattern?","firstAssistantReply":"Standard 4-step zero-downtime pattern:\n\n1. **Add the column nullable, with a default.** From PG 11+, this is metadata-only — it doesn't rewrite the table.\n   ```sql\n   alter table widgets add column status text default 'active';\n   ```\n2. **Backfill in batches.** New writes already pick up the default. Existing rows ha…","lastUserText":"What if I want the default to be a computed value (based on another column), not a literal?","lastUserEpoch":1773051480000,"lastAssistantEpoch":1773051780000,"durationSec":480,"isUnresolved":false,"messages":[{"id":"m_0001","role":"user","text":"I need to add a NOT NULL column with a default to a 50M-row Postgres table. Doing it in one ALTER TABLE locks the table for too long. What's the safe pattern?","ts":"2026-03-09 10:16","tsEpoch":1773051360000,"wordCount":32,"charCount":158,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"Standard 4-step zero-downtime pattern:\n\n1. **Add the column nullable, with a default.** From PG 11+, this is metadata-only — it doesn't rewrite the table.\n   ```sql\n   alter table widgets add column status text default 'active';\n   ```\n2. **Backfill in batches.** New writes already pick up the default. Existing rows have NULL, so backfill them in chunks so you don't lock the table:\n   ```sql\n   update widgets set status = 'active' where status is null and id between 0 and 100000;\n   ```\n3. **Add the NOT NULL constraint as NOT VALID first**, then validate it.\n   ```sql\n   alter table widgets add constraint widgets_status_not_null check (status is not null) not valid;\n   alter table widgets validate constraint widgets_status_not_null;\n   ```\n   \"NOT VALID\" means future inserts/updates respect it but existing rows aren't checked yet. The VALIDATE step then scans without an exclusive lock.\n4. **Replace the constraint with a real NOT NULL.** PG 12+ will use the existing CHECK constraint to validate the NOT NULL conversion in O(1):\n   ```sql\n   alter table widgets alter column status set not null;\n   alter table widgets drop constraint widgets_status_not_null;\n   ```\n\nTotal: zero exclusive locks longer than a millisecond, even on a 50M-row table.","ts":"2026-03-09 10:17","tsEpoch":1773051420000,"model":"gpt-4o","wordCount":190,"charCount":1260,"codeBlockCount":4,"hasCode":true},{"id":"m_0003","role":"user","text":"What if I want the default to be a computed value (based on another column), not a literal?","ts":"2026-03-09 10:18","tsEpoch":1773051480000,"wordCount":18,"charCount":91,"codeBlockCount":0,"hasCode":false},{"id":"m_0004","role":"assistant","text":"Same pattern, but step 1 omits the default and step 2 does the computation. Skip the column-level default because PG can't make it metadata-only when the value depends on another column:\n\n```sql\n-- 1. Add nullable, no default\nalter table widgets add column tier text;\n\n-- 2. Backfill with the computed value, in batches\nupdate widgets set tier = case\n  when revenue > 100000 then 'enterprise'\n  when revenue > 1000 then 'pro'\n  else 'free'\nend where tier is null and id between 0 and 100000;\n```\n\nFor new rows after the migration: either set `tier` explicitly in the INSERT, or add a BEFORE INSERT trigger that computes it. A trigger is usually cleaner since it keeps the logic in one place and you don't have to remember it in every callsite.","ts":"2026-03-09 10:23","tsEpoch":1773051780000,"model":"gpt-4o","wordCount":131,"charCount":743,"codeBlockCount":1,"hasCode":true}]},{"id":"conv-000065","title":"Brainstorm names for the new offline-mode feature","createdEpoch":1773601440000,"createdIso":"2026-03-15","updatedEpoch":1773601620000,"updatedIso":"2026-03-15","messageCount":3,"userCount":2,"assistantCount":1,"systemCount":0,"toolCount":0,"wordCount":170,"assistantWordCount":130,"userWordCount":40,"codeBlockCount":0,"hasCode":false,"models":["gpt-4o"],"topic":"Brainstorm names for the new offline-mode feature","kind":"writing","firstUserPrompt":"I'm shipping an offline mode for the app. Internal name was 'offline mode' but that feels boring. Brainstorm 8 options that are short, memorable, and don't sound like jargon.","firstAssistantReply":"Here are 8 options grouped by tone:\n\n**Plain & short** (the safe direction):\n1. **Offline** — sometimes the literal word IS the best name.\n2. **Local mode** — describes what it actually does (data lives locally).\n3. **Standalone** — emphasizes self-sufficiency.\n\n**Slightly more flavor**:\n4. **Detached** — slightly naut…","lastUserText":"I like Plane mode. Will it confuse people who don't fly?","lastUserEpoch":1773601620000,"lastAssistantEpoch":1773601560000,"durationSec":180,"isUnresolved":true,"unresolvedReason":"Last turn is a user message — no assistant reply on record.","messages":[{"id":"m_0001","role":"user","text":"I'm shipping an offline mode for the app. Internal name was 'offline mode' but that feels boring. Brainstorm 8 options that are short, memorable, and don't sound like jargon.","ts":"2026-03-15 19:05","tsEpoch":1773601500000,"wordCount":29,"charCount":174,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"Here are 8 options grouped by tone:\n\n**Plain & short** (the safe direction):\n1. **Offline** — sometimes the literal word IS the best name.\n2. **Local mode** — describes what it actually does (data lives locally).\n3. **Standalone** — emphasizes self-sufficiency.\n\n**Slightly more flavor**:\n4. **Detached** — slightly nautical / Git-y; works if your audience leans technical.\n5. **Solo mode** — friendly, suggests one-person use.\n6. **Quiet mode** — leans into the \"no network\" framing as a feature, not a limitation.\n\n**Going for memorable**:\n7. **Plane mode** — borrows the established phone term, immediately understood.\n8. **Lighthouse** — works alone, even when everyone else has gone home. Pretty.\n\nIf you want one pick: **Plane mode** if the audience is general consumer (everyone knows it). **Local mode** if technical (no ambiguity).","ts":"2026-03-15 19:06","tsEpoch":1773601560000,"model":"gpt-4o","wordCount":130,"charCount":840,"codeBlockCount":0,"hasCode":false},{"id":"m_0003","role":"user","text":"I like Plane mode. Will it confuse people who don't fly?","ts":"2026-03-15 19:07","tsEpoch":1773601620000,"wordCount":11,"charCount":56,"codeBlockCount":0,"hasCode":false}]},{"id":"conv-000070","title":"What's the actual cost of dropping 'enterprise' messaging?","createdEpoch":1774101060000,"createdIso":"2026-03-21","updatedEpoch":1774101240000,"updatedIso":"2026-03-21","messageCount":2,"userCount":1,"assistantCount":1,"systemCount":0,"toolCount":0,"wordCount":206,"assistantWordCount":181,"userWordCount":25,"codeBlockCount":0,"hasCode":false,"models":["gpt-4o"],"topic":"What's the actual cost of dropping 'enterprise' messaging?","kind":"writing","firstUserPrompt":"Quick gut-check. We've been positioning ourselves as 'enterprise-grade' on the marketing site. I want to drop that language. Will real enterprise buyers be put off?","firstAssistantReply":"Real enterprise buyers don't read your marketing copy to decide whether you're enterprise-grade. They read it to decide whether to take a meeting. Then they evaluate you on:\n\n- Whether you can answer their security review questionnaire\n- Whether you have a SOC 2 / ISO report\n- Whether they can talk to a reference custo…","lastUserText":"Quick gut-check. We've been positioning ourselves as 'enterprise-grade' on the marketing site. I want to drop that language. Will real enterprise buyers be put off?","lastUserEpoch":1774101120000,"lastAssistantEpoch":1774101240000,"durationSec":180,"isUnresolved":false,"messages":[{"id":"m_0001","role":"user","text":"Quick gut-check. We've been positioning ourselves as 'enterprise-grade' on the marketing site. I want to drop that language. Will real enterprise buyers be put off?","ts":"2026-03-21 13:52","tsEpoch":1774101120000,"wordCount":25,"charCount":164,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"Real enterprise buyers don't read your marketing copy to decide whether you're enterprise-grade. They read it to decide whether to take a meeting. Then they evaluate you on:\n\n- Whether you can answer their security review questionnaire\n- Whether you have a SOC 2 / ISO report\n- Whether they can talk to a reference customer of similar size\n- Whether your contract terms are negotiable\n- Whether someone will pick up the phone when something breaks\n\nYour website saying \"enterprise-grade\" affects approximately none of that. Dropping the word is more likely to *help* — startups that say \"enterprise-grade\" tend to underwhelm on the actual evaluation criteria, so the phrase has lost signal. Real enterprise buyers expect SOC 2, references, and uptime guarantees as table stakes; calling that out as \"enterprise-grade\" reads as overcompensating.\n\nWhat I'd put on the site instead: a one-page security overview with concrete bullets (SOC 2 report available under NDA, deployed in N regions, X% uptime over the last 12 months, customer logos at scale Y). That does the same job and reads as confident, not aspirational.","ts":"2026-03-21 13:54","tsEpoch":1774101240000,"model":"gpt-4o","wordCount":181,"charCount":1116,"codeBlockCount":0,"hasCode":false}]},{"id":"conv-000077","title":"Recipe brainstorm — what to make with miso paste and salmon?","createdEpoch":1774549800000,"createdIso":"2026-03-26","updatedEpoch":1774550040000,"updatedIso":"2026-03-26","messageCount":4,"userCount":2,"assistantCount":2,"systemCount":0,"toolCount":0,"wordCount":190,"assistantWordCount":168,"userWordCount":22,"codeBlockCount":0,"hasCode":false,"models":["gpt-4o"],"topic":"Recipe brainstorm — what to make with miso paste and salmon?","kind":"other","firstUserPrompt":"I have miso paste and a salmon fillet. What can I make in under 30 minutes?","firstAssistantReply":"Miso-glazed salmon, 25 minutes total:\n\n**You'll need**: 2 tbsp white miso, 1 tbsp mirin (or honey + a splash of rice vinegar), 1 tbsp soy sauce, 1 tsp sesame oil, optionally 1 tbsp sake.\n\n1. Whisk the miso, mirin, soy, and sesame together. Spread half on the salmon, both sides. Let it sit 10 min while the oven preheats…","lastUserText":"What if I don't have mirin?","lastUserEpoch":1774549980000,"lastAssistantEpoch":1774550040000,"durationSec":240,"isUnresolved":false,"messages":[{"id":"m_0001","role":"user","text":"I have miso paste and a salmon fillet. What can I make in under 30 minutes?","ts":"2026-03-26 18:31","tsEpoch":1774549860000,"wordCount":16,"charCount":75,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"Miso-glazed salmon, 25 minutes total:\n\n**You'll need**: 2 tbsp white miso, 1 tbsp mirin (or honey + a splash of rice vinegar), 1 tbsp soy sauce, 1 tsp sesame oil, optionally 1 tbsp sake.\n\n1. Whisk the miso, mirin, soy, and sesame together. Spread half on the salmon, both sides. Let it sit 10 min while the oven preheats to 400°F.\n2. Bake on parchment for 8–12 min depending on thickness — you want the center just opaque.\n3. Brush the rest of the glaze on for the last 2 min. Optionally finish under the broiler for 60 seconds for a caramelized top.\n\nServe with rice and a quick cucumber side (sliced cucumber + rice vinegar + a pinch of sugar + sesame seeds). Total active time: maybe 7 minutes.","ts":"2026-03-26 18:32","tsEpoch":1774549920000,"model":"gpt-4o","wordCount":130,"charCount":697,"codeBlockCount":0,"hasCode":false},{"id":"m_0003","role":"user","text":"What if I don't have mirin?","ts":"2026-03-26 18:33","tsEpoch":1774549980000,"wordCount":6,"charCount":27,"codeBlockCount":0,"hasCode":false},{"id":"m_0004","role":"assistant","text":"Honey + rice vinegar (2:1) is the closest substitute. Or sake + a tiny pinch of sugar. Or just leave it out — the miso carries enough sweetness on its own that it's still good, just less glossy.","ts":"2026-03-26 18:34","tsEpoch":1774550040000,"model":"gpt-4o","wordCount":38,"charCount":194,"codeBlockCount":0,"hasCode":false}]},{"id":"conv-000084","title":"How do I think about the cost of a free tier?","createdEpoch":1775168040000,"createdIso":"2026-04-02","updatedEpoch":1775168580000,"updatedIso":"2026-04-02","messageCount":4,"userCount":2,"assistantCount":2,"systemCount":0,"toolCount":0,"wordCount":456,"assistantWordCount":419,"userWordCount":37,"codeBlockCount":0,"hasCode":false,"models":["claude-sonnet-4-6"],"topic":"How do I think about the cost of a free tier?","kind":"other","firstUserPrompt":"I'm thinking about adding a free tier to the product. How do I figure out whether it'll actually pay for itself?","firstAssistantReply":"The right framing is \"what fraction of free users do I need to convert to paid for the free tier to be net positive on a 12-month basis?\"\n\nThree numbers you need:\n1. **Per-free-user infrastructure cost / month.** Compute, storage, bandwidth, support tickets — all the variable costs you'd not have if the user weren't th…","lastUserText":"What's a reasonable conversion rate to assume if I'm just modeling this for the first time?","lastUserEpoch":1775168280000,"lastAssistantEpoch":1775168580000,"durationSec":540,"isUnresolved":false,"messages":[{"id":"m_0001","role":"user","text":"I'm thinking about adding a free tier to the product. How do I figure out whether it'll actually pay for itself?","ts":"2026-04-02 22:15","tsEpoch":1775168100000,"wordCount":21,"charCount":112,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"The right framing is \"what fraction of free users do I need to convert to paid for the free tier to be net positive on a 12-month basis?\"\n\nThree numbers you need:\n1. **Per-free-user infrastructure cost / month.** Compute, storage, bandwidth, support tickets — all the variable costs you'd not have if the user weren't there.\n2. **LTV of a paid user.** Average monthly revenue × expected months retained, minus per-paid-user variable costs.\n3. **Conversion rate target.** This is the unknown — what fraction of free users need to convert for the math to work.\n\nThe arithmetic: required conversion rate = (per-free-user cost × months on free × 12) / (LTV × 12). For a typical SaaS where per-free cost is ~$0.50/mo and LTV is ~$1,200, you need roughly 0.5–1% conversion to break even. If your conversion rate is below that, the free tier is a marketing expense, not a self-sustaining channel.\n\nThe thing that often gets missed: **free users have a non-trivial support cost**. If you have a team of 3 supporting 100 paid customers, adding 5,000 free users without adding support headcount means everyone's support quality drops. The right answer might be a free tier WITHOUT human support (community forum only), so the per-free-user cost stays close to pure infrastructure.","ts":"2026-04-02 22:17","tsEpoch":1775168220000,"model":"claude-sonnet-4-6","wordCount":212,"charCount":1270,"codeBlockCount":0,"hasCode":false},{"id":"m_0003","role":"user","text":"What's a reasonable conversion rate to assume if I'm just modeling this for the first time?","ts":"2026-04-02 22:18","tsEpoch":1775168280000,"wordCount":16,"charCount":91,"codeBlockCount":0,"hasCode":false},{"id":"m_0004","role":"assistant","text":"For a B2B SaaS targeting small businesses, **2–5% is a typical range** for free → paid over the first 12 months. Consumer prosumer tools often see 1–3%. Pure consumer apps (where the alternative is ad-supported) can be much lower, 0.5% or less.\n\nIf you're new to this and want a single conservative number to model with, use **2%**. That's at the low end of B2B and gives you a margin of safety. If you target it and exceed it, the free tier is a winner. If you target it and miss by a wide margin, you'll know early and can rip it out.\n\nA few things that move the rate up:\n- Strong \"wall\" — you hit a hard limit that's painful to work around (storage cap, seat cap, feature gate on something users actually need).\n- In-product nudges — the upgrade prompt is contextual (\"you've used 80% of your free quota this week\"), not a banner ad.\n- Time-limited free trial of paid features inside the free tier — gets users used to the paid experience before asking them to pay.\n\nWhat moves it down: a free tier that's \"good enough forever\". If users can run a real business on the free tier, most won't upgrade.","ts":"2026-04-02 22:23","tsEpoch":1775168580000,"model":"claude-sonnet-4-6","wordCount":207,"charCount":1102,"codeBlockCount":0,"hasCode":false}]},{"id":"conv-000090","title":"Untitled","createdEpoch":1775632980000,"createdIso":"2026-04-08","updatedEpoch":1775633160000,"updatedIso":"2026-04-08","messageCount":3,"userCount":2,"assistantCount":1,"systemCount":0,"toolCount":0,"wordCount":169,"assistantWordCount":155,"userWordCount":14,"codeBlockCount":0,"hasCode":false,"models":["gpt-4o"],"topic":"french • fast • good","kind":"planning","firstUserPrompt":"what's a good way to learn french fast","firstAssistantReply":"\"Fast\" is doing a lot of work in that sentence — let me ask back: are you optimizing for **speaking confidently in 3 months** (different game than reading), **passing a placement test**, or **being functional on a trip in 6 weeks**? The answer changes pretty radically.\n\nGeneric best practices regardless of goal:\n\n1. **…","lastUserText":"speaking, for a trip in september","lastUserEpoch":1775633160000,"lastAssistantEpoch":1775633100000,"durationSec":180,"isUnresolved":true,"unresolvedReason":"Last turn is a user message — no assistant reply on record.","messages":[{"id":"m_0001","role":"user","text":"what's a good way to learn french fast","ts":"2026-04-08 07:24","tsEpoch":1775633040000,"wordCount":8,"charCount":38,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"\"Fast\" is doing a lot of work in that sentence — let me ask back: are you optimizing for **speaking confidently in 3 months** (different game than reading), **passing a placement test**, or **being functional on a trip in 6 weeks**? The answer changes pretty radically.\n\nGeneric best practices regardless of goal:\n\n1. **Daily contact, even 15 min**, beats weekly long sessions. Spaced repetition works; cramming doesn't.\n2. **Comprehensible input** — listen to material slightly above your level. Podcasts like *Coffee Break French* or *InnerFrench* hit this for early learners.\n3. **Speak from week one** — even badly. Italki / Preply tutors are cheap ($15–25/hour for non-native French speakers).\n4. **Pick a single spaced-repetition app and stick with it** — Anki if you want full control, Drops or Memrise if you want it pre-built. Don't bounce between three.\n\nIf you tell me which goal you're optimizing for I can sketch a more concrete 8-week plan.","ts":"2026-04-08 07:25","tsEpoch":1775633100000,"model":"gpt-4o","wordCount":155,"charCount":954,"codeBlockCount":0,"hasCode":false},{"id":"m_0003","role":"user","text":"speaking, for a trip in september","ts":"2026-04-08 07:26","tsEpoch":1775633160000,"wordCount":6,"charCount":33,"codeBlockCount":0,"hasCode":false}]},{"id":"conv-000097","title":"Why is my React component re-rendering on every keystroke?","createdEpoch":1776167940000,"createdIso":"2026-04-14","updatedEpoch":1776168300000,"updatedIso":"2026-04-14","messageCount":4,"userCount":2,"assistantCount":2,"systemCount":0,"toolCount":0,"wordCount":366,"assistantWordCount":289,"userWordCount":77,"codeBlockCount":5,"hasCode":true,"models":["gpt-4o"],"topic":"Why is my React component re-rendering on every keystroke?","kind":"code","firstUserPrompt":"My SearchInput component is re-rendering on every keystroke even when the prop hasn't changed. Wrapped it in React.memo, didn't help. Here's the parent:\n\n```jsx\nfunction SearchPage() {\n  const [query, setQuery] = useState('');\n  const filterFn = (item) => item.name.includes(query);\n  return (\n    <div>\n      <SearchInp…","firstAssistantReply":"Two related issues here, both of which break memoization:\n\n**1. `filterFn` is a new function on every render.** Even if you wrap `ResultsList` in `React.memo`, the prop comparison sees `prevProps.filter !== nextProps.filter` (different function instance), so it re-renders anyway.\n\nFix with `useCallback`:\n\n```jsx\nconst…","lastUserText":"Where would I implement useDebounce — is that built in?","lastUserEpoch":1776168120000,"lastAssistantEpoch":1776168300000,"durationSec":360,"isUnresolved":false,"messages":[{"id":"m_0001","role":"user","text":"My SearchInput component is re-rendering on every keystroke even when the prop hasn't changed. Wrapped it in React.memo, didn't help. Here's the parent:\n\n```jsx\nfunction SearchPage() {\n  const [query, setQuery] = useState('');\n  const filterFn = (item) => item.name.includes(query);\n  return (\n    <div>\n      <SearchInput onChange={setQuery} />\n      <ResultsList filter={filterFn} />\n    </div>\n  );\n}\n```\n\nThe issue is that ResultsList re-renders every keystroke too, which is slow. What am I missing?","ts":"2026-04-14 12:00","tsEpoch":1776168000000,"wordCount":67,"charCount":504,"codeBlockCount":1,"hasCode":true},{"id":"m_0002","role":"assistant","text":"Two related issues here, both of which break memoization:\n\n**1. `filterFn` is a new function on every render.** Even if you wrap `ResultsList` in `React.memo`, the prop comparison sees `prevProps.filter !== nextProps.filter` (different function instance), so it re-renders anyway.\n\nFix with `useCallback`:\n\n```jsx\nconst filterFn = useCallback((item) => item.name.includes(query), [query]);\n```\n\nBut notice — `filterFn` STILL changes on every keystroke because `query` is in the dependency array. That's not actually wrong (the filter function genuinely depends on query), but it means `ResultsList` will still re-render on every keystroke, which is what you wanted to avoid.\n\n**2. The real fix: lift the filtering logic out of the prop.**\n\n```jsx\nfunction SearchPage() {\n  const [query, setQuery] = useState('');\n  return (\n    <div>\n      <SearchInput onChange={setQuery} />\n      <ResultsList query={query} />\n    </div>\n  );\n}\n\nconst ResultsList = React.memo(function ResultsList({ query }) {\n  const filtered = useMemo(\n    () => allItems.filter(item => item.name.includes(query)),\n    [query]\n  );\n  return <ul>{filtered.map(it => <li key={it.id}>{it.name}</li>)}</ul>;\n});\n```\n\nNow `ResultsList` re-renders only when `query` (a string) changes — which is unavoidable, since the user is literally changing the search.\n\nIf you want to avoid re-rendering on every keystroke, **debounce the query** before passing it down:\n\n```jsx\nconst debouncedQuery = useDebounce(query, 200);\nreturn <ResultsList query={debouncedQuery} />;\n```\n\nNow `ResultsList` only re-renders 200ms after the user stops typing. The visible input stays responsive (driven by `query`), but the expensive list filtering uses `debouncedQuery`.","ts":"2026-04-14 12:01","tsEpoch":1776168060000,"model":"gpt-4o","wordCount":227,"charCount":1713,"codeBlockCount":3,"hasCode":true},{"id":"m_0003","role":"user","text":"Where would I implement useDebounce — is that built in?","ts":"2026-04-14 12:02","tsEpoch":1776168120000,"wordCount":10,"charCount":55,"codeBlockCount":0,"hasCode":false},{"id":"m_0004","role":"assistant","text":"Not built in — write it yourself, it's 10 lines:\n\n```jsx\nimport { useEffect, useState } from 'react';\n\nexport function useDebounce(value, delay = 200) {\n  const [debounced, setDebounced] = useState(value);\n  useEffect(() => {\n    const t = setTimeout(() => setDebounced(value), delay);\n    return () => clearTimeout(t);\n  }, [value, delay]);\n  return debounced;\n}\n```\n\nOr use `use-debounce` from npm if you'd rather not own it.","ts":"2026-04-14 12:05","tsEpoch":1776168300000,"model":"gpt-4o","wordCount":62,"charCount":427,"codeBlockCount":1,"hasCode":true}]},{"id":"conv-000104","title":"Q2 OKR draft — which framing lands better?","createdEpoch":1776872400000,"createdIso":"2026-04-22","updatedEpoch":1776872880000,"updatedIso":"2026-04-22","messageCount":4,"userCount":2,"assistantCount":2,"systemCount":0,"toolCount":0,"wordCount":435,"assistantWordCount":379,"userWordCount":56,"codeBlockCount":0,"hasCode":false,"models":["claude-sonnet-4-6"],"topic":"Q2 OKR draft — which framing lands better?","kind":"code","firstUserPrompt":"Drafting Q2 OKRs for the eng team. Two framings I'm torn between:\n\nA) **Outcome-led**: \"Reduce customer-reported bugs by 40% quarter-over-quarter.\"\nB) **Behavior-led**: \"Establish a weekly bug-bash ritual. Run 12 by end of quarter.\"\n\nWhich lands better with a team of 6 mid-to-senior engineers?","firstAssistantReply":"For a team of 6 mid-to-senior engineers, **A (outcome-led)** lands better — but the failure mode is real and worth naming.\n\nWhy outcome-led wins for senior engineers: they don't need you to tell them HOW to reduce bugs. Bug bashes are one tactic among many — they might also want to invest in better integration tests, f…","lastUserText":"What's a reasonable target if I have no baseline data on bug counts?","lastUserEpoch":1776872640000,"lastAssistantEpoch":1776872880000,"durationSec":480,"isUnresolved":false,"messages":[{"id":"m_0001","role":"user","text":"Drafting Q2 OKRs for the eng team. Two framings I'm torn between:\n\nA) **Outcome-led**: \"Reduce customer-reported bugs by 40% quarter-over-quarter.\"\nB) **Behavior-led**: \"Establish a weekly bug-bash ritual. Run 12 by end of quarter.\"\n\nWhich lands better with a team of 6 mid-to-senior engineers?","ts":"2026-04-22 15:41","tsEpoch":1776872460000,"wordCount":43,"charCount":294,"codeBlockCount":0,"hasCode":false},{"id":"m_0002","role":"assistant","text":"For a team of 6 mid-to-senior engineers, **A (outcome-led)** lands better — but the failure mode is real and worth naming.\n\nWhy outcome-led wins for senior engineers: they don't need you to tell them HOW to reduce bugs. Bug bashes are one tactic among many — they might also want to invest in better integration tests, fix CI flakiness, or rewrite the part of the codebase that generates 60% of the bugs. Locking the team into \"12 bug bashes\" closes off the better tactical choices they'd make on their own.\n\nWhy outcome-led can fail: \"reduce reported bugs by 40%\" can be hit by **changing how bugs get reported**, not by reducing actual bugs. If your team starts triaging more aggressively in support and closing things as \"won't fix\" or \"by design\", the metric goes down without the underlying quality going up. Goodhart's law — the metric becomes the target.\n\nWhat I'd do:\n\n1. Use A as the OKR.\n2. Add a guardrail metric on the side: \"while keeping support ticket count flat or growing.\" This blocks the gaming pattern.\n3. In the kickoff conversation, explicitly say: *I'm not telling you how to do this. I'd love to see what the team comes up with — bug bashes are one option, but they're not the only one.*\n\nThen you let the team take the agency that comes with being mid-to-senior.","ts":"2026-04-22 15:43","tsEpoch":1776872580000,"model":"claude-sonnet-4-6","wordCount":229,"charCount":1287,"codeBlockCount":0,"hasCode":false},{"id":"m_0003","role":"user","text":"What's a reasonable target if I have no baseline data on bug counts?","ts":"2026-04-22 15:44","tsEpoch":1776872640000,"wordCount":13,"charCount":68,"codeBlockCount":0,"hasCode":false},{"id":"m_0004","role":"assistant","text":"Don't pick a number for the first quarter — instead, pick a **measurement-and-baseline goal**:\n\n> \"Establish baseline metrics for customer-reported bugs (count, severity distribution, mean time to resolution). Publish a quarterly report by end of Q2.\"\n\nThen in Q3 you have data and can set a real reduction target. Picking 40% out of thin air invites a few outcomes, none good:\n\n- You hit 40% by accident (didn't actually do anything different) — the OKR rewards luck.\n- You miss it by a wide margin and the team feels punished for an arbitrary number.\n- You set the target at 40% and the team optimizes for the metric, not the actual goal (see the guardrail discussion above).\n\nThe \"establish baseline\" OKR sounds boring but it's the right move when you don't have data. It also gives you a credible number to aim for next quarter that's defensible to the team.","ts":"2026-04-22 15:48","tsEpoch":1776872880000,"model":"claude-sonnet-4-6","wordCount":150,"charCount":862,"codeBlockCount":0,"hasCode":false}]}],"weeklyHistogram":[{"weekOf":"2026-W06","count":1},{"weekOf":"2026-W07","count":2},{"weekOf":"2026-W08","count":2},{"weekOf":"2026-W10","count":2},{"weekOf":"2026-W11","count":2},{"weekOf":"2026-W12","count":1},{"weekOf":"2026-W13","count":1},{"weekOf":"2026-W14","count":1},{"weekOf":"2026-W15","count":1},{"weekOf":"2026-W16","count":1},{"weekOf":"2026-W17","count":1}],"monthlyHistogram":[{"month":"2026-02","count":5},{"month":"2026-03","count":6},{"month":"2026-04","count":4}],"hourCounts":[0,0,0,0,0,0,0,3,4,6,4,5,4,2,2,10,4,0,4,3,4,0,4,0],"dowCounts":[7,13,4,15,18,0,2],"topicClusters":[{"name":"classification","count":2,"conversationIds":["conv-000009","conv-000017"]},{"name":"contractor","count":2,"conversationIds":["conv-000009","conv-000017"]},{"name":"should","count":2,"conversationIds":["conv-000017","conv-000033"]},{"name":"tier","count":2,"conversationIds":["conv-000040","conv-000084"]},{"name":"draft","count":2,"conversationIds":["conv-000047","conv-000104"]},{"name":"about","count":2,"conversationIds":["conv-000047","conv-000084"]},{"name":"quick","count":2,"conversationIds":["conv-000052","conv-000070"]},{"name":"actual","count":2,"conversationIds":["conv-000052","conv-000070"]},{"name":"brainstorm","count":2,"conversationIds":["conv-000065","conv-000077"]},{"name":"cost","count":2,"conversationIds":["conv-000070","conv-000084"]}],"modelBreakdown":[{"model":"gpt-4o","count":12,"messageCount":23},{"model":"claude-sonnet-4-6","count":2,"messageCount":4},{"model":"gpt-4-turbo","count":1,"messageCount":1}],"kindBreakdown":[{"kind":"code","count":6},{"kind":"other","count":4},{"kind":"writing","count":4},{"kind":"planning","count":1}],"longestConversations":[{"id":"conv-000009","title":"Tax classification logic for 1099 contractors","messageCount":6,"wordCount":420},{"id":"conv-000026","title":"Refactoring auth middleware — drop session-token storage","messageCount":6,"wordCount":567},{"id":"conv-000017","title":"1099 contractor invoicing — should I prorate the threshold?","messageCount":5,"wordCount":185},{"id":"conv-000033","title":"JWT key rotation — what's the right cadence?","messageCount":4,"wordCount":297},{"id":"conv-000040","title":"Pricing copy for the agency tier — make it less corporate","messageCount":4,"wordCount":260},{"id":"conv-000047","title":"Help me draft an apology to a customer about the outage","messageCount":4,"wordCount":400},{"id":"conv-000059","title":"Migrate a 50M-row table to add a NOT NULL column safely","messageCount":4,"wordCount":371},{"id":"conv-000077","title":"Recipe brainstorm — what to make with miso paste and salmon?","messageCount":4,"wordCount":190}],"reusablePrompts":[{"id":"m_0001","conversationId":"conv-000059","text":"I need to add a NOT NULL column with a default to a 50M-row Postgres table. Doing it in one ALTER TABLE locks the table for too long. What's the safe pattern?","sharedKeywords":["column","default","m-row","postgre","table","alter"],"ts":"2026-03-09 10:16"},{"id":"m_0001","conversationId":"conv-000026","text":"I have an Express auth middleware that stores session tokens in a Postgres table and validates each request against it. Legal flagged this for compliance. They want stateless JWTs instead. Here's the current shape:\n\n```js\nasync function authMiddleware(req, res, next) {\n  const token = req.headers.authorization?.replace('Bearer ', '');\n  if (!token) return res.status(401).end();\n  const session = await db.query('select * from sessions where token = $1 and expires_at > now()', [token]);\n  if (!session.rows.length) return res.status(401).end();\n  req.user = await db.query('select * from users where id = $1', [session.rows[0].user_id]);\n  next();\n}\n```\n\nHow should I rewrite this?","sharedKeywords":["expres","middleware","store","session","token","postgre"],"ts":"2026-02-12 09:09"},{"id":"m_0001","conversationId":"conv-000052","text":"Quick one: what's the actual difference between ROW EXCLUSIVE and EXCLUSIVE table locks in Postgres? The docs are confusing.","sharedKeywords":["quick","actual","difference","between","exclusive","table"],"ts":"2026-03-04 14:23"},{"id":"m_0001","conversationId":"conv-000009","text":"I'm building a payroll tool for a small agency. How should I model 1099 vs W-2 classification in the database? I want to make sure the logic is auditable later.","sharedKeywords":["build","payroll","small","agency","should","model"],"ts":"2026-02-04 15:15"},{"id":"m_0003","conversationId":"conv-000009","text":"Got it. Should the history table use temporal columns or an append-only log shape?","sharedKeywords":["should","history","table","temporal","column","append-only"],"ts":"2026-02-04 15:17"},{"id":"m_0001","conversationId":"conv-000033","text":"How often should I rotate the JWT signing keys for an internal app — small team, all internal use?","sharedKeywords":["often","should","rotate","internal","small"],"ts":"2026-02-19 16:34"},{"id":"m_0001","conversationId":"conv-000040","text":"Here's the current pricing-page copy for our \"Agency\" tier. Can you make it sound less like enterprise software and more like it was written by a human?\n\n> Empower your agency with our enterprise-grade Agency tier. Unlock advanced collaboration features, dedicated account management, and SLA-backed uptime guarantees. Scale your client work with confidence.","sharedKeywords":["current","pricing-page","agency","sound","enterprise","software"],"ts":"2026-02-22 20:12"},{"id":"m_0001","conversationId":"conv-000070","text":"Quick gut-check. We've been positioning ourselves as 'enterprise-grade' on the marketing site. I want to drop that language. Will real enterprise buyers be put off?","sharedKeywords":["quick","gut-check","position","ourselve","enterprise-grade","market"],"ts":"2026-03-21 13:52"}],"importantAnswers":[{"id":"m_0002","conversationId":"conv-000097","preview":"Two related issues here, both of which break memoization:\n\n**1. `filterFn` is a new function on every render.** Even if you wrap `ResultsList` in `React.memo`, the prop comparison sees `prevProps.filter !== nextProps.filter` (different function instance), so it re-renders anyway.\n\nFix with `useCallback`:\n\n```jsx\nconst filterFn = useCallback((item) => item.na…","charCount":1713,"ts":"2026-04-14 12:01"},{"id":"m_0002","conversationId":"conv-000026","preview":"Replace it with a JWT verifier and drop the sessions table entirely. The compliance issue is the at-rest storage of session tokens; if you sign a short-lived JWT and keep nothing server-side, there's nothing to leak.\n\n```js\nimport jwt from 'jsonwebtoken';\n\nconst JWT_SECRET = process.env.JWT_SECRET; // 256-bit, in your secret manager\nconst JWT_ISSUER = 'your-…","charCount":1308,"ts":"2026-02-12 09:11"},{"id":"m_0002","conversationId":"conv-000104","preview":"For a team of 6 mid-to-senior engineers, **A (outcome-led)** lands better — but the failure mode is real and worth naming.\n\nWhy outcome-led wins for senior engineers: they don't need you to tell them HOW to reduce bugs. Bug bashes are one tactic among many — they might also want to invest in better integration tests, fix CI flakiness, or rewrite the part of…","charCount":1287,"ts":"2026-04-22 15:43"},{"id":"m_0002","conversationId":"conv-000084","preview":"The right framing is \"what fraction of free users do I need to convert to paid for the free tier to be net positive on a 12-month basis?\"\n\nThree numbers you need:\n1. **Per-free-user infrastructure cost / month.** Compute, storage, bandwidth, support tickets — all the variable costs you'd not have if the user weren't there.\n2. **LTV of a paid user.** Average…","charCount":1270,"ts":"2026-04-02 22:17"},{"id":"m_0002","conversationId":"conv-000059","preview":"Standard 4-step zero-downtime pattern:\n\n1. **Add the column nullable, with a default.** From PG 11+, this is metadata-only — it doesn't rewrite the table.\n   ```sql\n   alter table widgets add column status text default 'active';\n   ```\n2. **Backfill in batches.** New writes already pick up the default. Existing rows have NULL, so backfill them in chunks so y…","charCount":1260,"ts":"2026-03-09 10:17"},{"id":"m_0002","conversationId":"conv-000047","preview":"Here's a draft. I went short on purpose — long apologies feel like cover.\n\n> Hi [name],\n>\n> Yesterday between 2:14 and 5:30 PM ET, the service was down for you. I know that landed in the middle of your peak sales window, and I'm sorry.\n>\n> Here's what happened: [one-sentence root cause — keep it concrete, e.g. \"a database migration we ran during a window we'…","charCount":1217,"ts":"2026-03-02 08:49"},{"id":"m_0002","conversationId":"conv-000052","preview":"Despite the name, **ROW EXCLUSIVE doesn't lock rows**. It's a *table-level* lock that says \"I might modify rows in this table.\" It conflicts with locks like SHARE, SHARE ROW EXCLUSIVE, EXCLUSIVE, and ACCESS EXCLUSIVE — but does NOT conflict with other ROW EXCLUSIVE locks. So multiple sessions doing INSERT / UPDATE / DELETE on the same table all coexist fine;…","charCount":1155,"ts":"2026-03-04 14:24"},{"id":"m_0002","conversationId":"conv-000070","preview":"Real enterprise buyers don't read your marketing copy to decide whether you're enterprise-grade. They read it to decide whether to take a meeting. Then they evaluate you on:\n\n- Whether you can answer their security review questionnaire\n- Whether you have a SOC 2 / ISO report\n- Whether they can talk to a reference customer of similar size\n- Whether your contr…","charCount":1116,"ts":"2026-03-21 13:54"},{"id":"m_0002","conversationId":"conv-000009","preview":"For a small payroll tool, model classification as a first-class field on the worker record, not derived from anything else. A reasonable schema:\n\n```sql\ncreate table workers (\n  id uuid primary key,\n  legal_name text not null,\n  classification text not null check (classification in ('w2','1099')),\n  classified_at timestamptz not null default now(),\n  classif…","charCount":1036,"ts":"2026-02-04 15:16"},{"id":"m_0002","conversationId":"conv-000090","preview":"\"Fast\" is doing a lot of work in that sentence — let me ask back: are you optimizing for **speaking confidently in 3 months** (different game than reading), **passing a placement test**, or **being functional on a trip in 6 weeks**? The answer changes pretty radically.\n\nGeneric best practices regardless of goal:\n\n1. **Daily contact, even 15 min**, beats week…","charCount":954,"ts":"2026-04-08 07:25"},{"id":"m_0002","conversationId":"conv-000065","preview":"Here are 8 options grouped by tone:\n\n**Plain & short** (the safe direction):\n1. **Offline** — sometimes the literal word IS the best name.\n2. **Local mode** — describes what it actually does (data lives locally).\n3. **Standalone** — emphasizes self-sufficiency.\n\n**Slightly more flavor**:\n4. **Detached** — slightly nautical / Git-y; works if your audience lea…","charCount":840,"ts":"2026-03-15 19:06"},{"id":"m_0002","conversationId":"conv-000033","preview":"For a small internal app, **annually is fine** as a baseline, with an immediate rotation if you have any reason to suspect compromise (laptop loss, accidental key commit, departing employee with access).\n\nThe annual-baseline reasoning: the cost of rotation is the operational drag (refresh JWKS endpoint, verify all services pick up the new key, retire the old…","charCount":765,"ts":"2026-02-19 16:35"}],"unresolvedThreads":[{"id":"conv-000017","title":"1099 contractor invoicing — should I prorate the threshold?","lastUserText":"How do you actually trigger filing through Track1099 — is it API-driven?","lastTs":"2026-02-09","gapDays":89,"reason":"Last turn is a user message — no assistant reply on record."},{"id":"conv-000065","title":"Brainstorm names for the new offline-mode feature","lastUserText":"I like Plane mode. Will it confuse people who don't fly?","lastTs":"2026-03-15","gapDays":55,"reason":"Last turn is a user message — no assistant reply on record."},{"id":"conv-000090","title":"Untitled","lastUserText":"speaking, for a trip in september","lastTs":"2026-04-08","gapDays":32,"reason":"Last turn is a user message — no assistant reply on record."}],"totals":{"conversations":15,"messages":59,"userMessages":31,"assistantMessages":28,"codeBlocks":16,"activeDays":15,"withModel":28},"activeRange":"2026-02-04 → 2026-04-22","topModels":["gpt-4o","claude-sonnet-4-6","gpt-4-turbo"],"meta":{"sourceFile":"input.json","sizeBytes":96176,"format":"chatgpt-export","kind":"ai-chat-export","platform":"ChatGPT export","conversationCount":15,"messageCount":59,"userMessageCount":31,"assistantMessageCount":28,"codeBlockCount":16,"activeDays":15,"activeRange":"2026-02-04 → 2026-04-22","topModels":["gpt-4o","claude-sonnet-4-6","gpt-4-turbo"],"unresolvedCount":3}};</script>
+<script>
+(function () {
+  const $ = (s, r) => (r || document).querySelector(s)
+  const $$ = (s, r) => Array.from((r || document).querySelectorAll(s))
+
+  const conversations = DATA.conversations || []
+  const convoById = new Map(conversations.map(c => [c.id, c]))
+  const state = { topic: null, kind: null, search: "", openIds: new Set() }
+
+  const kpiRow = $("#kpi-row")
+  function kpi(label, value, sub, accent) {
+    const el = document.createElement("div")
+    el.className = "kpi"
+    el.innerHTML = '<div class="label">' + escapeHtml(label) + '</div>' +
+      '<div class="value' + (accent ? ' accent' : '') + '">' + escapeHtml(value) + '</div>' +
+      (sub ? '<div class="sub">' + escapeHtml(sub) + '</div>' : '')
+    return el
+  }
+  kpiRow.appendChild(kpi("Conversations", String(DATA.totals.conversations || 0)))
+  kpiRow.appendChild(kpi("Messages", String(DATA.totals.messages || 0), DATA.totals.userMessages + " from you, " + DATA.totals.assistantMessages + " from AI"))
+  kpiRow.appendChild(kpi("Active days", String(DATA.totals.activeDays || 0), DATA.activeRange))
+  kpiRow.appendChild(kpi("Code blocks", String(DATA.totals.codeBlocks || 0), null, true))
+
+  const kindStack = $("#kind-stack")
+  const kindEntries = (DATA.kindBreakdown || []).filter(k => k.count > 0)
+  const kindTotal = kindEntries.reduce((s, k) => s + k.count, 0) || 1
+  const stackBar = document.createElement("div")
+  stackBar.className = "stack-bar"
+  for (const k of kindEntries) {
+    const i = document.createElement("i")
+    i.className = "kind-" + k.kind
+    i.style.width = (100 * k.count / kindTotal).toFixed(2) + "%"
+    i.title = k.kind + " — " + k.count
+    stackBar.appendChild(i)
+  }
+  kindStack.appendChild(stackBar)
+  const legend = document.createElement("div")
+  legend.className = "stack-legend"
+  for (const k of kindEntries) {
+    const span = document.createElement("span")
+    span.innerHTML = '<i class="kind-' + k.kind + '"></i>' + escapeHtml(k.kind) + ' · ' + k.count
+    legend.appendChild(span)
+  }
+  kindStack.appendChild(legend)
+
+  const modelList = $("#model-list")
+  const modelEntries = (DATA.modelBreakdown || []).slice(0, 8)
+  if (!modelEntries.length) {
+    modelList.innerHTML = '<p class="empty">No model metadata in this export.</p>'
+  } else {
+    const totalMsgs = modelEntries.reduce((s, m) => s + m.messageCount, 0) || 1
+    for (const m of modelEntries) {
+      const row = document.createElement("div")
+      row.style.cssText = "display:grid;grid-template-columns:1fr auto auto;gap:var(--space-md);align-items:center;padding:var(--space-sm) 0;border-bottom:1px solid var(--border);font-size:13.5px"
+      row.innerHTML = '<span class="mono">' + escapeHtml(m.model) + '</span>' +
+        '<span style="width:80px;height:6px;background:var(--surface-container);border-radius:var(--radius-pill);overflow:hidden">' +
+          '<i style="display:block;height:100%;background:var(--gradient-primary);width:' + (100 * m.messageCount / totalMsgs).toFixed(1) + '%"></i>' +
+        '</span>' +
+        '<span class="mono muted">' + m.messageCount + ' msg</span>'
+      modelList.appendChild(row)
+    }
+  }
+
+  const tlSvg = $("#timeline-svg")
+  const tlMeta = $("#timeline-meta")
+  const buckets = (DATA.weeklyHistogram && DATA.weeklyHistogram.length >= 4)
+    ? DATA.weeklyHistogram : DATA.monthlyHistogram || []
+  if (!buckets.length) {
+    tlSvg.innerHTML = '<text x="500" y="65" text-anchor="middle">No dated conversations.</text>'
+    tlMeta.textContent = ""
+  } else {
+    const max = Math.max(1, ...buckets.map(b => b.count))
+    const w = 1000, h = 130, pad = 14
+    const bw = (w - pad * 2) / buckets.length
+    let svg = ""
+    for (let i = 0; i < buckets.length; i++) {
+      const b = buckets[i]
+      const bh = (b.count / max) * (h - 30)
+      const x = pad + i * bw
+      const y = h - bh - 14
+      svg += '<rect class="bar" x="' + (x + 1) + '" y="' + y + '" width="' + (bw - 2) + '" height="' + bh + '"><title>' + escapeHtml(b.weekOf || b.month) + ' — ' + b.count + '</title></rect>'
+    }
+    svg += '<text x="' + pad + '" y="' + (h - 2) + '" text-anchor="start">' + escapeHtml(buckets[0].weekOf || buckets[0].month) + '</text>'
+    svg += '<text x="' + (w - pad) + '" y="' + (h - 2) + '" text-anchor="end">' + escapeHtml(buckets[buckets.length - 1].weekOf || buckets[buckets.length - 1].month) + '</text>'
+    tlSvg.innerHTML = svg
+    tlMeta.textContent = buckets.length + ' ' + ('weekOf' in buckets[0] ? 'weeks' : 'months') + ' · peak ' + max
+  }
+
+  function renderRhythm(elId, counts, maxLabels) {
+    const el = $("#" + elId)
+    const max = Math.max(1, ...counts)
+    el.innerHTML = ""
+    for (let i = 0; i < counts.length; i++) {
+      const bar = document.createElement("i")
+      const pct = (counts[i] / max) * 100
+      bar.style.height = Math.max(2, pct) + "%"
+      bar.style.opacity = (0.35 + 0.65 * (counts[i] / max)).toFixed(2)
+      bar.title = (maxLabels ? maxLabels[i] : i) + " — " + counts[i]
+      el.appendChild(bar)
+    }
+  }
+  renderRhythm("hour-bars", DATA.hourCounts || new Array(24).fill(0))
+  const dowLabels = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+  renderRhythm("dow-bars", DATA.dowCounts || new Array(7).fill(0), dowLabels)
+
+  const topicChips = $("#topic-chips")
+  const topics = (DATA.topicClusters || []).slice(0, 12)
+  if (!topics.length) {
+    topicChips.innerHTML = '<p class="empty">No topic clusters surfaced from this sample.</p>'
+  } else {
+    const allChip = mkChip("All topics", "", topics.reduce((s, t) => s + t.count, 0), true)
+    allChip.dataset.topic = ""
+    topicChips.appendChild(allChip)
+    for (const t of topics) {
+      const c = mkChip(t.name, t.name, t.count)
+      c.dataset.topic = t.name
+      topicChips.appendChild(c)
+    }
+    topicChips.addEventListener("click", e => {
+      const chip = e.target.closest(".chip"); if (!chip) return
+      const v = chip.dataset.topic || ""
+      state.topic = v || null
+      $$(".chip", topicChips).forEach(c => c.classList.toggle("active", (c.dataset.topic || "") === v))
+      renderConvoList()
+    })
+  }
+
+  const reusablePanel = $("#reusable-panel")
+  const reusablePrompts = (DATA.reusablePrompts || []).slice(0, 8)
+  if (!reusablePrompts.length) {
+    reusablePanel.innerHTML = '<p class="empty">No prompts shared distinctive keywords across conversations — needs more data to surface a pattern.</p>'
+  } else {
+    for (const p of reusablePrompts) {
+      const card = document.createElement("div")
+      card.className = "heur-card"
+      const conv = convoById.get(p.conversationId)
+      card.innerHTML =
+        '<div class="meta-row"><span>' + escapeHtml(conv ? conv.title : p.conversationId) + '</span>' +
+          '<span>' + escapeHtml(p.ts || "") + '</span></div>' +
+        '<div class="body">' + escapeHtml(p.text) + '</div>' +
+        '<div class="meta-row" style="margin-top:var(--space-xs)">' +
+          '<span>shared: ' + (p.sharedKeywords || []).slice(0,5).map(escapeHtml).join(" • ") + '</span></div>' +
+        '<div class="actions"><button class="copy-btn" data-action="copy-prompt">copy prompt</button>' +
+          '<button class="jump-btn" data-jump="' + escapeAttr(p.conversationId) + '">jump to conversation</button></div>'
+      card.querySelector(".copy-btn").addEventListener("click", () => navigator.clipboard?.writeText(p.text))
+      card.querySelector(".jump-btn").addEventListener("click", () => jumpTo(p.conversationId))
+      reusablePanel.appendChild(card)
+    }
+  }
+
+  const importantPanel = $("#important-panel")
+  const importantAnswers = (DATA.importantAnswers || []).slice(0, 8)
+  if (!importantAnswers.length) {
+    importantPanel.innerHTML = '<p class="empty">No assistant reply long enough to surface as a candidate.</p>'
+  } else {
+    for (const a of importantAnswers) {
+      const card = document.createElement("div")
+      card.className = "heur-card important"
+      const conv = convoById.get(a.conversationId)
+      card.innerHTML =
+        '<div class="meta-row"><span>' + escapeHtml(conv ? conv.title : a.conversationId) + '</span>' +
+          '<span>' + a.charCount + ' chars · ' + escapeHtml(a.ts || "") + '</span></div>' +
+        '<div class="body">' + escapeHtml(a.preview) + '</div>' +
+        '<div class="actions"><span class="muted" style="font-size:11.5px">heuristic — review before reusing</span>' +
+          '<button class="jump-btn" data-jump="' + escapeAttr(a.conversationId) + '">jump to conversation</button></div>'
+      card.querySelector(".jump-btn").addEventListener("click", () => jumpTo(a.conversationId))
+      importantPanel.appendChild(card)
+    }
+  }
+
+  const unresolvedList = $("#unresolved-list")
+  const unresolved = (DATA.unresolvedThreads || []).slice(0, 12)
+  if (!unresolved.length) {
+    unresolvedList.innerHTML = '<p class="empty">No threads look unresolved — every conversation ends with an assistant reply.</p>'
+  } else {
+    for (const u of unresolved) {
+      const el = document.createElement("div")
+      el.className = "callout"
+      el.innerHTML =
+        '<div class="ttl">' + escapeHtml(u.title) + '</div>' +
+        '<div class="meta">' + escapeHtml(u.lastTs || "—") + (u.gapDays != null ? ' · ' + u.gapDays + 'd ago' : '') + '</div>' +
+        '<div class="last">' + escapeHtml(u.lastUserText) + '</div>' +
+        '<div class="why">' + escapeHtml(u.reason) + '</div>'
+      el.addEventListener("click", () => jumpTo(u.id))
+      unresolvedList.appendChild(el)
+    }
+  }
+
+  const kindChips = $("#kind-chips")
+  const allKinds = mkChip("All kinds", "", conversations.length, true)
+  allKinds.dataset.kind = ""
+  kindChips.appendChild(allKinds)
+  for (const k of (DATA.kindBreakdown || [])) {
+    const c = mkChip(k.kind, k.kind, k.count)
+    c.dataset.kind = k.kind
+    kindChips.appendChild(c)
+  }
+  kindChips.addEventListener("click", e => {
+    const chip = e.target.closest(".chip"); if (!chip) return
+    const v = chip.dataset.kind || ""
+    state.kind = v || null
+    $$(".chip", kindChips).forEach(c => c.classList.toggle("active", (c.dataset.kind || "") === v))
+    renderConvoList()
+  })
+
+  $("#search").addEventListener("input", e => {
+    state.search = e.target.value.trim().toLowerCase()
+    renderConvoList()
+  })
+
+  function matchesFilters(c) {
+    if (state.kind && c.kind !== state.kind) return false
+    if (state.topic) {
+      const t = (DATA.topicClusters || []).find(t => t.name === state.topic)
+      if (!t || !t.conversationIds.includes(c.id)) return false
+    }
+    if (state.search) {
+      const hay = (c.title + " " + c.firstUserPrompt + " " + c.firstAssistantReply + " " +
+        c.messages.map(m => m.text).join(" ")).toLowerCase()
+      if (!hay.includes(state.search)) return false
+    }
+    return true
+  }
+
+  const convoListEl = $("#convo-list")
+  const indexMeta = $("#index-meta")
+  const filterSummary = $("#filter-summary")
+
+  function renderConvoList() {
+    convoListEl.innerHTML = ""
+    let shown = 0
+    for (const c of conversations) {
+      if (!matchesFilters(c)) continue
+      shown++
+      convoListEl.appendChild(renderConvo(c))
+    }
+    indexMeta.textContent = shown + " / " + conversations.length + " shown"
+    const parts = []
+    if (state.kind) parts.push("kind=" + state.kind)
+    if (state.topic) parts.push("topic=" + state.topic)
+    if (state.search) parts.push('search="' + state.search + '"')
+    filterSummary.textContent = parts.length ? parts.join(" · ") : ""
+    if (!shown) {
+      const e = document.createElement("p")
+      e.className = "empty"
+      e.textContent = "No conversations match the current filters."
+      convoListEl.appendChild(e)
+    }
+  }
+
+  function renderConvo(c) {
+    const el = document.createElement("article")
+    el.className = "convo"
+    el.id = "convo-" + c.id
+    if (state.openIds.has(c.id)) el.classList.add("open")
+    const dateStr = c.createdIso || ""
+    const modelChips = (c.models || []).slice(0, 3).map(m => '<span class="badge model">' + escapeHtml(m) + '</span>').join("")
+    el.innerHTML =
+      '<div class="head">' +
+        '<div><div class="ttl">' + escapeHtml(c.title) + '</div>' +
+          '<div class="badges">' +
+            '<span class="badge kind">' + escapeHtml(c.kind) + '</span>' +
+            (c.hasCode ? '<span class="badge code">code</span>' : '') +
+            (c.isUnresolved ? '<span class="badge unresolved">unresolved</span>' : '') +
+            modelChips +
+            '<span class="badge">' + c.messageCount + ' msg · ' + c.wordCount + ' words</span>' +
+          '</div></div>' +
+        '<div class="when">' + escapeHtml(dateStr) + '</div>' +
+      '</div>' +
+      '<div class="preview">' +
+        '<div class="row"><div class="role">First user prompt</div><div class="text">' + highlight(c.firstUserPrompt) + '</div></div>' +
+        '<div class="row"><div class="role">First assistant reply</div><div class="text">' + highlight(c.firstAssistantReply) + '</div></div>' +
+      '</div>' +
+      '<div class="toolbar">' +
+        '<button data-action="toggle">' + (state.openIds.has(c.id) ? 'Hide' : 'Show all') + ' ' + c.messageCount + ' messages</button>' +
+        '<button data-action="copy-md">Copy as Markdown</button>' +
+      '</div>' +
+      '<div class="thread">' + (state.openIds.has(c.id) ? renderThread(c) : "") + '</div>'
+    el.querySelector('button[data-action="toggle"]').addEventListener("click", () => {
+      const open = state.openIds.has(c.id)
+      if (open) state.openIds.delete(c.id); else state.openIds.add(c.id)
+      const newEl = renderConvo(c)
+      el.replaceWith(newEl)
+    })
+    el.querySelector('button[data-action="copy-md"]').addEventListener("click", () => {
+      navigator.clipboard?.writeText(conversationToMarkdown(c))
+    })
+    return el
+  }
+
+  function renderThread(c) {
+    const byDay = new Map()
+    for (const m of c.messages) {
+      const day = m.ts ? m.ts.slice(0, 10) : "(undated)"
+      const arr = byDay.get(day) || []
+      arr.push(m)
+      byDay.set(day, arr)
+    }
+    let html = ""
+    for (const [day, msgs] of byDay.entries()) {
+      html += '<div class="day-bucket"><div class="day">' + escapeHtml(day) + '</div>'
+      for (const m of msgs) {
+        html += '<div class="bubble ' + escapeAttr(m.role) + '">' +
+          '<div class="role-line"><span>' + escapeHtml(m.role) + (m.model ? ' · ' + escapeHtml(m.model) : '') + '</span>' +
+            '<span>' + escapeHtml(m.ts || "") + '</span></div>' +
+          renderMessageBody(m.text) +
+        '</div>'
+      }
+      html += '</div>'
+    }
+    return html
+  }
+
+  function renderMessageBody(text) {
+    // Lightweight code-fence rendering. No syntax highlighting library.
+    const FENCE = String.fromCharCode(96, 96, 96)
+    const fenceRe = new RegExp("(" + FENCE + "[\\s\\S]*?" + FENCE + ")", "g")
+    const parts = String(text || "").split(fenceRe)
+    let out = ""
+    for (const p of parts) {
+      if (p.startsWith(FENCE) && p.endsWith(FENCE)) {
+        const inner = p.slice(3, -3).replace(/^[a-z0-9_-]+\n/i, "")
+        out += '<pre><code>' + escapeHtml(inner) + '</code></pre>'
+      } else {
+        out += highlight(p)
+      }
+    }
+    return out
+  }
+
+  function highlight(text) {
+    const s = escapeHtml(String(text || ""))
+    if (!state.search) return s
+    try {
+      const re = new RegExp("(" + escapeRegExp(state.search) + ")", "gi")
+      return s.replace(re, '<span class="search-hit">$1</span>')
+    } catch { return s }
+  }
+
+  function jumpTo(id) {
+    state.openIds.add(id)
+    renderConvoList()
+    const el = document.getElementById("convo-" + id)
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" })
+  }
+
+  $("button[data-action='copy-summary']").addEventListener("click", () => {
+    const md = summaryToMarkdown()
+    navigator.clipboard?.writeText(md)
+  })
+  $("button[data-action='expand-all']").addEventListener("click", () => {
+    for (const c of conversations) state.openIds.add(c.id)
+    renderConvoList()
+  })
+  $("button[data-action='collapse-all']").addEventListener("click", () => {
+    state.openIds.clear()
+    renderConvoList()
+  })
+
+  function summaryToMarkdown() {
+    const lines = []
+    lines.push("# " + (document.title || "AI chat export"))
+    lines.push("")
+    lines.push("- **Conversations**: " + DATA.totals.conversations)
+    lines.push("- **Messages**: " + DATA.totals.messages + " (" + DATA.totals.userMessages + " from you, " + DATA.totals.assistantMessages + " from AI)")
+    lines.push("- **Active range**: " + DATA.activeRange)
+    lines.push("- **Code blocks**: " + DATA.totals.codeBlocks)
+    if ((DATA.topModels || []).length) lines.push("- **Models**: " + DATA.topModels.join(", "))
+    lines.push("")
+    lines.push("## Topics")
+    for (const t of (DATA.topicClusters || []).slice(0, 8)) lines.push("- " + t.name + " (" + t.count + ")")
+    lines.push("")
+    lines.push("## Unresolved")
+    for (const u of (DATA.unresolvedThreads || []).slice(0, 8)) lines.push("- " + u.title + (u.lastTs ? " (" + u.lastTs + ")" : ""))
+    return lines.join("\n")
+  }
+
+  function conversationToMarkdown(c) {
+    const lines = []
+    lines.push("# " + c.title)
+    if (c.createdIso) lines.push("Date: " + c.createdIso)
+    lines.push("")
+    for (const m of c.messages) {
+      const role = m.role.charAt(0).toUpperCase() + m.role.slice(1)
+      lines.push(role + ":" + (m.model ? " (" + m.model + ")" : ""))
+      lines.push(m.text)
+      lines.push("")
+    }
+    return lines.join("\n")
+  }
+
+  function mkChip(label, value, count, active) {
+    const c = document.createElement("button")
+    c.className = "chip" + (active ? " active" : "")
+    c.innerHTML = escapeHtml(label) + ' <span class="count">' + count + '</span>'
+    return c
+  }
+  function escapeHtml(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])) }
+  function escapeAttr(s) { return escapeHtml(s) }
+  function escapeRegExp(s) { return s.replace(/[.*+?^$()|[\]\\{}]/g, "\\$&") }
+
+  renderConvoList()
+})()
+</script>
+</body>
+</html>

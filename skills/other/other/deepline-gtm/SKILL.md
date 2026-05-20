@@ -1,6 +1,6 @@
 ---
 name: deepline-gtm
-description: "Use this skill for GTM prospecting, enrichment, qualification, and outbound workflows, especially when users mention Deepline, CSV processing, lead/account/contact research, waterfall enrichment, email or LinkedIn lookup, personalization, scoring, or campaign activation. Route CSV-heavy and provider-driven requests through this skill, then rely on linked sub-docs and provider playbooks for execution details. Available providers: adyntel, ai_ark, apify, apollo, attio, bettercontact, bloomberry, builtwith, cloudflare, contactout, crustdata, crustdata-v2, customer_db, dataforseo, datagma, deepline_native, deeplineagent, discolike, dropleads, exa, findymail, firecrawl, forager, fullenrich, generic_http, heyreach, hubspot, hunter, icypeas, instantly, ipqs, leadmagic, lemlist, limadata, linkedin_ads_audiences, linkedin_scraper, lusha, openwebninja, parallel, peopledatalabs, predictleads, prospeo, rocketreach, salesforce, serper, slack, smartlead, snowflake, theirstack, trestle, upcell, wiza, zerobounce."
+description: "Use this skill for GTM prospecting, enrichment, qualification, and outbound workflows, especially when users mention Deepline, CSV processing, lead/account/contact research, waterfall enrichment, email or LinkedIn lookup, personalization, scoring, or campaign activation. Route CSV-heavy and provider-driven requests through this skill, then rely on linked sub-docs and provider playbooks for execution details. Providers: adyntel, ai_ark, apify, apollo, attio, bettercontact, bloomberry, builtwith, cloudflare, contactout, crustdata, crustdata-v2, customer_db, dataforseo, datagma, deepline_native, deeplineagent, discolike, dropleads, exa, findymail, firecrawl, forager, fullenrich, generic_http, google_ads_audiences, heyreach, hubspot, hunter, icypeas, instantly, ipqs, leadmagic, lemlist, limadata, linkedin_ads_audiences, linkedin_scraper, lusha, openwebninja, parallel, peopledatalabs, predictleads, prospeo, rocketreach, salesforce, serper, slack, smartlead, snowflake, theirstack, trestle, upcell, wiza, zerobounce."
 ---
 
 # GTM Meta Skill
@@ -288,6 +288,10 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
 - [generic_http playbook](provider-playbooks/generic_http.md)
   Summary: Use for public API calls when no dedicated provider exists. Avoid internal targets and prefer provider-specific tools when available.
   Last reviewed: 2026-04-08
+
+- [google_ads_audiences playbook](provider-playbooks/google_ads_audiences.md)
+  Summary: Use create/list/status/delete for list lifecycle, and sync_audience_members for append or replace uploads with consent metadata and request ID tracking.
+  Last reviewed: 2026-04-09
 
 - [heyreach playbook](provider-playbooks/heyreach.md)
   Summary: Campaigns must be pre-created in HeyReach UI; resolve campaign IDs first, then batch inserts and confirm stats after writes.

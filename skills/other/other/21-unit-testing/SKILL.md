@@ -835,6 +835,136 @@ result.Error.Should().Be(ExpectedError);
 
 ---
 
+## Coverage Discipline: State, Lifecycles, and Boundaries
+
+These four rules catch the class of bug where a handler silently ignores a value of a discriminator field that **another handler in the system is producing**. Testing the handler against every status value in isolation is not enough — you have to round-trip through the producer.
+
+### 1. Discriminator-field matrix is mandatory, not optional
+
+For every handler that branches on a status/kind/enum-as-string/flag field, the test suite **must** parametrize over every value declared in the canonical constants class (e.g. `OrderStatuses.All`). Adding a new value to that class is a coverage event: every consumer must declare its expected behavior for the new value, or the suite stops being a spec.
+
+```csharp
+[Theory]
+[InlineData("pending",   false)]
+[InlineData("shipped",   true)]
+[InlineData("delivered", true)]   // <-- often the missed row
+[InlineData("cancelled", false)]
+public async Task Handle_RespectsStatus(string status, bool shouldSend)
+{
+    await SeedAsync(NewOrder(status, jobs: [new OrderEmailJob { Sent = false }]));
+    var result = await _sut.Handle(new SendDueOrderEmailsCommand(), CancellationToken.None);
+    result.Sent.ShouldBe(shouldSend ? 1 : 0);
+}
+```
+
+**Anti-pattern:** writing one `Should_NotSend_When_NonShipped` fact and one `[InlineData]` per "not the happy path" value. The table format above forces every row to be a positive assertion of intended behavior; the negative form lets you forget rows.
+
+### 2. Producer + consumer in the SAME test
+
+When handler **A** writes a discriminator field and handler **B** reads it, at least one test must exercise **A then B sequentially through the actual store**. Do not mutate the field directly in the Arrange step — that bypasses the production code path that does the writing and hides the very bug we are trying to catch.
+
+```csharp
+[Fact]
+public async Task SendDueEmails_FiresOnDeliveredOrders_AfterPromoterRuns()
+{
+    // Arrange: a Shipped order with an unsent job
+    var order = NewOrder(OrderStatuses.Shipped, jobs: [new OrderEmailJob { Sent = false }]);
+    await SeedAsync(order);
+
+    // Act 1: the OTHER handler runs first and promotes Status to Delivered
+    var promoter = new PromoteShippedToDeliveredCommandHandler(_context);
+    await promoter.Handle(new PromoteShippedToDeliveredCommand(), CancellationToken.None);
+
+    // Act 2: now the handler under test runs
+    var result = await _sut.Handle(new SendDueOrderEmailsCommand(), CancellationToken.None);
+
+    // Assert: business-level question — should a Delivered order still flush its email queue?
+    // Answer this against the spec, not against the current Where(...) clause.
+    result.Sent.ShouldBe(1);
+}
+```
+
+**Why this is non-negotiable:** the most pernicious bugs in CRUD systems live in the implicit coupling between two handlers nobody wrote together. Direct mutation in the Arrange step (`order.Status = "delivered"`) passes that coupling silently. Round-tripping through the producer makes it real.
+
+**When to write this test:** any time you find another handler in the codebase that writes to the same field your `.Where(...)` reads from. Grep for assignments to the field; for each writing handler, add a producer+consumer test.
+
+### 3. Inject a clock; ban direct `DateTime.UtcNow` in handlers
+
+Direct `DateTime.UtcNow` (or `DateTime.Now`) calls in handlers, services, and validators are banned. Inject `TimeProvider` (.NET 8+); in tests use `Microsoft.Extensions.Time.Testing.FakeTimeProvider` so a single test can advance time across a state transition.
+
+```csharp
+public class SendDueOrderEmailsCommandHandler
+{
+    private readonly TimeProvider _clock;
+    // ctor injects TimeProvider
+
+    public async Task<...> Handle(...)
+    {
+        var utcNow = _clock.GetUtcNow().UtcDateTime;
+        // ...
+    }
+}
+
+// In tests:
+private readonly FakeTimeProvider _clock = new(startDateTime: new DateTimeOffset(2026, 5, 18, 12, 0, 0, TimeSpan.Zero));
+// Construct the SUT with _clock instead of TimeProvider.System.
+
+[Fact]
+public async Task Job_Fires_AfterWindowElapses()
+{
+    await SeedDueJobAt(_clock.GetUtcNow().UtcDateTime.AddMinutes(60));
+
+    _clock.Advance(TimeSpan.FromMinutes(59));
+    (await _sut.Handle(...)).Sent.ShouldBe(0);  // not yet
+
+    _clock.Advance(TimeSpan.FromMinutes(2));
+    (await _sut.Handle(...)).Sent.ShouldBe(1);  // crossed the threshold
+}
+```
+
+**Why mandatory:** time-driven state transitions are the second most common source of silent prod bugs after #1 above. They are simply untestable while production reads the system clock directly. Add the `TimeProvider` ctor parameter the first time you write a handler that reads "now" — retrofitting later is expensive.
+
+### 4. Threshold triplet tests
+
+Any behavior change at a threshold (event-end + offset, grace-window edge, registration cutoff, capacity limit, retry-after delay) requires **three** explicit tests: just before the threshold, exactly at it, just after.
+
+```csharp
+[Theory]
+[InlineData(59,  false)]   // just before
+[InlineData(60,  true)]    // exactly at
+[InlineData(61,  true)]    // just after
+public async Task Job_FiresOnceWindowReached(int minutesElapsed, bool shouldFire)
+{
+    await SeedDueJobAt(_clock.GetUtcNow().UtcDateTime.AddMinutes(60));
+    _clock.Advance(TimeSpan.FromMinutes(minutesElapsed));
+    (await _sut.Handle(...)).Sent.ShouldBe(shouldFire ? 1 : 0);
+}
+```
+
+Three lines of `[InlineData]` are cheaper than the off-by-one bug they prevent.
+
+### Rationalization Table — STOP if you catch yourself thinking any of these
+
+| Excuse | Reality |
+|--------|---------|
+| "The other statuses obviously don't apply, the filter is right" | If they "obviously" don't apply, the InlineData row is a 5-second assertion. Write it. |
+| "Status is only ever set during Create, so I'll seed `Status = X` directly" | Some other handler probably writes it later. Grep for `\.Status =` across the codebase before believing yourself. |
+| "The Promoter is a different test's concern" | The coupling between Promoter and Reader IS the bug class. One round-trip test makes the coupling explicit. |
+| "Using TimeProvider is overkill for this simple handler" | Every handler that reads `UtcNow` is one "future engineer mutates upstream state" away from being un-testable. Pay the cost up front. |
+| "Boundary tests are pedantic" | Off-by-one at thresholds is the #1 silent prod bug after status filtering. Three InlineData rows. |
+| "My theory only needs the values I'm asserting about" | The theory is a living spec. Missing rows = silent missing spec = future regression. |
+
+### Red Flags — STOP and re-test
+
+- A `.Where(x => x.Field == constant)` with no parametrized test covering every value of `Field`
+- A test that sets a discriminator field with `entity.Field = "X"` instead of running the handler that produces that value
+- A handler calling `DateTime.UtcNow` directly with no `TimeProvider` ctor parameter
+- A behavior threshold (offset, cutoff, limit) tested with one value instead of three
+
+If you spot any of these in a PR, request the missing tests before approving.
+
+---
+
 ## Anti-Patterns to Avoid
 
 ```csharp

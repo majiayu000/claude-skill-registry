@@ -1,0 +1,1613 @@
+<!doctype html>
+<html lang="en" data-ha-style="network-map">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lo-Fi Radio Club · #general — community week</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #a03b00;
+      --primary-container: #c94c00;
+      --primary-fixed: #ffdbcd;
+      --primary-fixed-dim: #ffb597;
+      --on-primary: #ffffff;
+      --accent-glow: #E8400D;
+      --secondary: #d5baff;
+      --secondary-container: #7b40e0;
+      --tertiary: #4d44e3;
+      --accent-cyan: #00D4FF;
+      --bg: #fff8f6;
+      --surface: #fff8f6;
+      --surface-container-lowest: #ffffff;
+      --surface-container-low: #fbf2ef;
+      --surface-container: #f5ece9;
+      --surface-container-high: #efe6e3;
+      --fg-1: #1e1b19;
+      --fg-2: #594138;
+      --fg-muted: #8d7166;
+      --border: rgba(0, 0, 0, 0.06);
+      --border-strong: rgba(0, 0, 0, 0.12);
+      --outline-variant: #e1bfb2;
+      --green: #10b981;
+      --blue: #3b82f6;
+      --yellow: #f59e0b;
+      --red: #ef4444;
+      --font-headline: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+      --font-body: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+      --font-mono: 'SF Mono', 'Menlo', ui-monospace, monospace;
+      --space-xs: 4px;
+      --space-sm: 8px;
+      --space-md: 12px;
+      --space-lg: 16px;
+      --space-xl: 20px;
+      --space-2xl: 24px;
+      --space-3xl: 32px;
+      --space-4xl: 48px;
+      --space-5xl: 64px;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --radius-2xl: 28px;
+      --radius-pill: 9999px;
+      --shadow-sm: 0 1px 2px rgba(30, 27, 25, 0.04);
+      --shadow-md: 0 4px 12px rgba(30, 27, 25, 0.08);
+      --shadow-lg: 0 8px 24px rgba(30, 27, 25, 0.12);
+      --shadow-accent: 0 8px 24px rgba(160, 59, 0, 0.15);
+      --gradient-primary: linear-gradient(135deg, #a03b00 0%, #c94c00 100%);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #060B18;
+        --surface: #0B1426;
+        --surface-container-lowest: #101D35;
+        --surface-container-low: #101D35;
+        --surface-container: #162544;
+        --surface-container-high: #1c2d52;
+        --fg-1: #F8FAFC;
+        --fg-2: #CBD5E1;
+        --fg-muted: #64748B;
+        --border: rgba(255, 255, 255, 0.08);
+        --border-strong: rgba(255, 255, 255, 0.14);
+        --primary: #FF6B35;
+        --accent-glow: #00D4FF;
+        --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--fg-1);
+      line-height: 1.6;
+      font-size: 14.5px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: var(--space-2xl);
+    }
+
+    /* Header */
+    .header {
+      margin-bottom: var(--space-4xl);
+    }
+
+    .header-title {
+      font-family: var(--font-headline);
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--fg-1);
+      margin-bottom: var(--space-lg);
+    }
+
+    .header-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2xl);
+      background: var(--surface-container-low);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-2xl);
+      margin-bottom: var(--space-3xl);
+    }
+
+    .header-stat {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .header-stat-value {
+      font-family: var(--font-headline);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .header-stat-label {
+      font-size: 0.875rem;
+      color: var(--fg-muted);
+      font-weight: 500;
+    }
+
+    .header-description {
+      grid-column: 1 / -1;
+      font-size: 0.95rem;
+      color: var(--fg-2);
+      line-height: 1.7;
+    }
+
+    /* Grid layout for sections */
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3xl);
+      margin-bottom: var(--space-4xl);
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--surface-container-low);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-2xl);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-title {
+      font-family: var(--font-headline);
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-xl);
+      color: var(--fg-1);
+    }
+
+    /* Activity heatmap */
+    .heatmap-container {
+      overflow-x: auto;
+      padding: var(--space-lg) 0;
+    }
+
+    .heatmap-svg {
+      min-width: 100%;
+    }
+
+    /* Contributors leaderboard */
+    .contributor-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .contributor-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-lg);
+      background: var(--surface-container);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .contributor-row:hover {
+      background: var(--surface-container-high);
+      border-color: var(--border-strong);
+    }
+
+    .contributor-left {
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+    }
+
+    .contributor-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-headline);
+      font-weight: 700;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .contributor-info {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .contributor-name {
+      font-weight: 600;
+      color: var(--fg-1);
+    }
+
+    .contributor-share {
+      font-size: 0.8rem;
+      color: var(--fg-muted);
+    }
+
+    .contributor-count {
+      font-family: var(--font-headline);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* Topics */
+    .topics-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-lg);
+    }
+
+    .topic-chip {
+      padding: var(--space-md) var(--space-lg);
+      background: var(--surface-container);
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-md);
+      min-width: 140px;
+    }
+
+    .topic-label {
+      color: var(--fg-2);
+      font-weight: 500;
+    }
+
+    .topic-count {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* Emoji strip */
+    .emoji-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      margin-bottom: var(--space-xl);
+    }
+
+    .emoji-badge {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-sm) var(--space-md);
+      background: var(--surface-container);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      font-size: 1.25rem;
+    }
+
+    .emoji-count {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--fg-muted);
+      font-weight: 600;
+    }
+
+    /* Actionable items */
+    .actionable-group {
+      margin-bottom: var(--space-2xl);
+    }
+
+    .actionable-group-title {
+      font-family: var(--font-headline);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: var(--space-lg);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+
+    .actionable-item {
+      padding: var(--space-lg);
+      background: var(--surface-container);
+      border-left: 3px solid var(--primary);
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--space-lg);
+    }
+
+    .actionable-text {
+      color: var(--fg-1);
+      line-height: 1.6;
+      margin-bottom: var(--space-sm);
+    }
+
+    .actionable-meta {
+      font-size: 0.8rem;
+      color: var(--fg-muted);
+      display: flex;
+      gap: var(--space-md);
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: var(--space-2xl);
+      color: var(--fg-muted);
+      font-style: italic;
+    }
+
+    /* Volume chart */
+    .volume-chart {
+      width: 100%;
+      height: 200px;
+      margin-top: var(--space-lg);
+    }
+
+    /* Search & filter */
+    .search-section {
+      margin-bottom: var(--space-2xl);
+      display: flex;
+      gap: var(--space-lg);
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .search-input {
+      flex: 1;
+      min-width: 200px;
+      padding: var(--space-lg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      background: var(--surface-container-lowest);
+      color: var(--fg-1);
+    }
+
+    .search-input::placeholder {
+      color: var(--fg-muted);
+    }
+
+    .filter-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    .filter-chip {
+      padding: var(--space-sm) var(--space-lg);
+      background: var(--surface-container);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+    }
+
+    .filter-chip:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .filter-chip.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* Message log */
+    .message-log {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2xl);
+    }
+
+    .day-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .day-header {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      color: var(--fg-muted);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-lg);
+      padding-bottom: var(--space-lg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .message {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: var(--space-lg);
+      align-items: flex-start;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .message-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-headline);
+      font-weight: 700;
+      color: white;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .message-bubble {
+      background: var(--surface-container);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+    }
+
+    .message-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: var(--space-sm);
+    }
+
+    .message-sender {
+      font-weight: 600;
+      color: var(--fg-1);
+    }
+
+    .message-time {
+      font-size: 0.75rem;
+      color: var(--fg-muted);
+      font-family: var(--font-mono);
+    }
+
+    .message-text {
+      color: var(--fg-1);
+      line-height: 1.6;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      overflow-wrap: break-word;
+    }
+
+    .message-text.highlight {
+      background: rgba(255, 215, 0, 0.3);
+      padding: 2px 4px;
+      border-radius: 2px;
+    }
+
+    .message-reactions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      margin-top: var(--space-lg);
+      padding-top: var(--space-lg);
+      border-top: 1px solid var(--border);
+    }
+
+    .reaction-badge {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+      padding: var(--space-xs) var(--space-sm);
+      background: var(--surface-container-high);
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+    }
+
+    .reaction-emoji {
+      font-size: 1rem;
+    }
+
+    .reaction-count {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--fg-muted);
+      font-size: 0.75rem;
+    }
+
+    /* Collapse toggle */
+    .toggle-section {
+      cursor: pointer;
+      user-select: none;
+      padding: var(--space-lg);
+      background: var(--surface-container-low);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+      font-weight: 600;
+      transition: all 0.2s ease;
+      margin-bottom: var(--space-2xl);
+    }
+
+    .toggle-section:hover {
+      background: var(--surface-container);
+    }
+
+    .toggle-icon {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .toggle-icon.open {
+      transform: rotate(90deg);
+    }
+
+    .toggle-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .toggle-content.open {
+      max-height: 100vh;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: var(--space-5xl);
+      padding-top: var(--space-3xl);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--fg-muted);
+    }
+
+    /* Copy button */
+    .copy-button {
+      padding: var(--space-sm) var(--space-md);
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-left: var(--space-lg);
+    }
+
+    .copy-button:hover {
+      background: var(--primary-container);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .analysis-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header-card {
+        grid-template-columns: 1fr;
+      }
+
+      .header-title {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: var(--space-lg);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-title {
+        font-size: 1.5rem;
+      }
+
+      .header-stat-value {
+        font-size: 1.5rem;
+      }
+
+      .heatmap-container {
+        font-size: 0.75rem;
+      }
+
+      .search-section {
+        flex-direction: column;
+      }
+
+      .search-input {
+        width: 100%;
+      }
+
+      .message {
+        grid-template-columns: 32px 1fr;
+      }
+
+      .message-avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 0.7rem;
+      }
+
+      .contributor-avatar {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  </style>
+<!-- html-anything example style skin:start -->
+
+<style id="html-anything-example-style-skin">
+html[data-ha-style] {
+  --ha-style-accent: var(--primary, #a03b00);
+  --ha-style-accent-2: var(--secondary-container, #7b40e0);
+  --ha-style-badge-bg: rgba(255,255,255,.78);
+  --ha-style-badge-fg: var(--fg-1, #1e1b19);
+}
+html[data-ha-style] body {
+  position: relative;
+  background-attachment: fixed;
+}
+html[data-ha-style] body::before {
+  position: fixed;
+  z-index: 9999;
+  top: 12px;
+  right: 12px;
+  padding: 7px 10px;
+  border: 1px solid color-mix(in srgb, var(--ha-style-accent) 26%, transparent);
+  border-radius: 999px;
+  background: var(--ha-style-badge-bg);
+  color: var(--ha-style-badge-fg);
+  box-shadow: 0 6px 24px rgba(0,0,0,.10);
+  font: 700 10px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  backdrop-filter: blur(16px);
+}
+html[data-ha-style] .hero,
+html[data-ha-style] header.hero,
+html[data-ha-style] .top,
+html[data-ha-style] .header {
+  position: relative;
+}
+html[data-ha-style] .hero::before,
+html[data-ha-style] header.hero::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 6px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: var(--ha-style-accent);
+}
+
+html[data-ha-style="teaching"] {
+  --ha-style-accent: #0f766e;
+  --ha-style-accent-2: #f59e0b;
+  --primary: #0f766e;
+  --primary-container: #115e59;
+  --primary-fixed: #ccfbf1;
+  --secondary-container: #f59e0b;
+  --bg: #f6fbfb;
+  --surface: #f6fbfb;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #edf7f5;
+  --surface-container: #e5f1ee;
+  --surface-container-high: #d8e8e4;
+  --fg-1: #10201f;
+  --fg-2: #304c49;
+  --fg-muted: #647b78;
+  --border: rgba(15,118,110,.14);
+  --gradient-hero: linear-gradient(135deg, #0f766e 0%, #f59e0b 100%);
+  --gradient-text: linear-gradient(135deg, #0f766e 0%, #f59e0b 100%);
+}
+html[data-ha-style="teaching"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(rgba(15,118,110,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,118,110,.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+html[data-ha-style="teaching"] body::before { content: "teaching"; }
+
+html[data-ha-style="relationship"] {
+  --ha-style-accent: #be3455;
+  --ha-style-accent-2: #317b93;
+  --primary: #be3455;
+  --primary-container: #a52d4b;
+  --primary-fixed: #ffe1e8;
+  --secondary-container: #317b93;
+  --bg: #fff7f8;
+  --surface: #fff7f8;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #fff0f3;
+  --surface-container: #f8e7eb;
+  --surface-container-high: #efdde3;
+  --fg-1: #28181c;
+  --fg-2: #5f3e48;
+  --fg-muted: #8d6b75;
+  --border: rgba(190,52,85,.14);
+  --rose: #e25b74;
+  --blue: #4f95a8;
+  --gradient-hero: linear-gradient(135deg, #be3455 0%, #317b93 100%);
+  --gradient-text: linear-gradient(135deg, #be3455 0%, #317b93 100%);
+}
+html[data-ha-style="relationship"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(120deg, rgba(190,52,85,.08), transparent 36%),
+    linear-gradient(300deg, rgba(49,123,147,.08), transparent 40%);
+}
+html[data-ha-style="relationship"] body::before { content: "relationship"; }
+
+html[data-ha-style="timeline-story"] {
+  --ha-style-accent: #9a4b14;
+  --ha-style-accent-2: #2f6f73;
+  --primary: #9a4b14;
+  --primary-container: #7a3b10;
+  --primary-fixed: #ffe8cf;
+  --secondary-container: #2f6f73;
+  --bg: #fbf8f1;
+  --surface: #fbf8f1;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f4ecdf;
+  --surface-container: #eee3d3;
+  --surface-container-high: #e4d7c4;
+  --fg-1: #241b12;
+  --fg-2: #5c4b3d;
+  --fg-muted: #8a7968;
+  --border: rgba(154,75,20,.16);
+  --gradient-hero: linear-gradient(135deg, #9a4b14 0%, #2f6f73 100%);
+  --gradient-text: linear-gradient(135deg, #9a4b14 0%, #2f6f73 100%);
+}
+html[data-ha-style="timeline-story"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(90deg, transparent 0 calc(50% - 1px), rgba(154,75,20,.16) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)),
+    radial-gradient(circle at 50% 72px, rgba(154,75,20,.20) 0 4px, transparent 5px);
+  background-size: 100% 100%, 100% 96px;
+}
+html[data-ha-style="timeline-story"] body::before { content: "timeline story"; }
+html[data-ha-style="timeline-story"] .hero::before,
+html[data-ha-style="timeline-story"] header.hero::before {
+  width: 8px;
+  height: 72px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--ha-style-accent), var(--ha-style-accent-2));
+}
+
+html[data-ha-style="map-atlas"] {
+  --ha-style-accent: #17695a;
+  --ha-style-accent-2: #2f66a8;
+  --primary: #17695a;
+  --primary-container: #115346;
+  --primary-fixed: #daf5ec;
+  --secondary-container: #2f66a8;
+  --bg: #f4faf7;
+  --surface: #f4faf7;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eaf4ef;
+  --surface-container: #e0eee8;
+  --surface-container-high: #d4e6de;
+  --fg-1: #10221d;
+  --fg-2: #365149;
+  --fg-muted: #6e837b;
+  --border: rgba(23,105,90,.16);
+  --gradient-hero: linear-gradient(135deg, #17695a 0%, #2f66a8 100%);
+  --gradient-text: linear-gradient(135deg, #17695a 0%, #2f66a8 100%);
+}
+html[data-ha-style="map-atlas"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    repeating-linear-gradient(24deg, rgba(23,105,90,.09) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(116deg, rgba(47,102,168,.08) 0 1px, transparent 1px 42px);
+}
+html[data-ha-style="map-atlas"] body::before { content: "map atlas"; }
+html[data-ha-style="map-atlas"] .hero::before,
+html[data-ha-style="map-atlas"] header.hero::before {
+  width: 78px;
+  height: 78px;
+  border: 2px solid var(--ha-style-accent);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 55% 42%, var(--ha-style-accent) 0 4px, transparent 5px),
+    linear-gradient(45deg, transparent 47%, rgba(47,102,168,.55) 48% 52%, transparent 53%);
+}
+
+html[data-ha-style="network-map"] {
+  --ha-style-accent: #355f91;
+  --ha-style-accent-2: #a34d67;
+  --primary: #355f91;
+  --primary-container: #294b75;
+  --primary-fixed: #deebff;
+  --secondary-container: #a34d67;
+  --bg: #f7f8fb;
+  --surface: #f7f8fb;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eef1f7;
+  --surface-container: #e6ebf3;
+  --surface-container-high: #dbe2ee;
+  --fg-1: #151b24;
+  --fg-2: #3f4a5b;
+  --fg-muted: #737e8f;
+  --border: rgba(53,95,145,.16);
+  --gradient-hero: linear-gradient(135deg, #355f91 0%, #a34d67 100%);
+  --gradient-text: linear-gradient(135deg, #355f91 0%, #a34d67 100%);
+}
+html[data-ha-style="network-map"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(53,95,145,.22) 0 3px, transparent 4px),
+    radial-gradient(circle at 68% 34%, rgba(163,77,103,.18) 0 3px, transparent 4px),
+    linear-gradient(38deg, transparent 0 48%, rgba(53,95,145,.10) 49% 51%, transparent 52%);
+  background-size: 88px 88px, 118px 118px, 132px 132px;
+}
+html[data-ha-style="network-map"] body::before { content: "network map"; }
+html[data-ha-style="network-map"] .hero::before,
+html[data-ha-style="network-map"] header.hero::before {
+  width: 86px;
+  height: 46px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 18px 24px, var(--ha-style-accent) 0 7px, transparent 8px),
+    radial-gradient(circle at 44px 12px, var(--ha-style-accent-2) 0 6px, transparent 7px),
+    radial-gradient(circle at 70px 30px, var(--ha-style-accent) 0 7px, transparent 8px),
+    linear-gradient(22deg, transparent 0 31%, color-mix(in srgb, var(--ha-style-accent) 60%, transparent) 32% 36%, transparent 37%),
+    linear-gradient(160deg, transparent 0 43%, color-mix(in srgb, var(--ha-style-accent-2) 60%, transparent) 44% 48%, transparent 49%);
+}
+
+html[data-ha-style="dashboard"] {
+  --ha-style-accent: #0f5f6f;
+  --ha-style-accent-2: #8a5a16;
+  --primary: #0f5f6f;
+  --primary-container: #0b4c59;
+  --primary-fixed: #d8f2f5;
+  --secondary-container: #8a5a16;
+  --bg: #f5f7f9;
+  --surface: #f5f7f9;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eef2f5;
+  --surface-container: #e7edf1;
+  --surface-container-high: #dce5ea;
+  --fg-1: #111827;
+  --fg-2: #374151;
+  --fg-muted: #6b7280;
+  --border: rgba(15,95,111,.16);
+  --gradient-hero: linear-gradient(135deg, #0f5f6f 0%, #083344 100%);
+  --gradient-text: linear-gradient(135deg, #0f5f6f 0%, #083344 100%);
+}
+html[data-ha-style="dashboard"] body {
+  background-color: var(--bg) !important;
+  background-image: linear-gradient(90deg, rgba(15,95,111,.08) 0 1px, transparent 1px);
+  background-size: 18px 100%;
+}
+html[data-ha-style="dashboard"] body::before { content: "dashboard"; }
+html[data-ha-style="dashboard"] .hero::before,
+html[data-ha-style="dashboard"] header.hero::before {
+  width: 100%;
+  height: 3px;
+  margin-bottom: 14px;
+}
+
+html[data-ha-style="document"] {
+  --ha-style-accent: #8b3f1f;
+  --ha-style-accent-2: #2f6f73;
+  --primary: #8b3f1f;
+  --primary-container: #703319;
+  --primary-fixed: #ffe4d5;
+  --secondary-container: #2f6f73;
+  --bg: #fbfaf7;
+  --surface: #fbfaf7;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f2efe8;
+  --surface-container: #e9e4da;
+  --surface-container-high: #ded7c9;
+  --fg-1: #211d18;
+  --fg-2: #554d44;
+  --fg-muted: #82786c;
+  --border: rgba(139,63,31,.16);
+  --font-headline: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --gradient-hero: linear-gradient(135deg, #8b3f1f 0%, #2f6f73 100%);
+  --gradient-text: linear-gradient(135deg, #8b3f1f 0%, #2f6f73 100%);
+}
+html[data-ha-style="document"] body {
+  background-color: var(--bg) !important;
+  background-image: linear-gradient(90deg, rgba(139,63,31,.18) 0 4px, transparent 4px);
+  background-size: 100% 100%;
+}
+html[data-ha-style="document"] body::before { content: "document"; }
+html[data-ha-style="document"] .hero::before,
+html[data-ha-style="document"] header.hero::before {
+  width: 42px;
+  height: 42px;
+  border-radius: 0;
+  background: transparent;
+  border-top: 4px solid var(--ha-style-accent);
+  border-left: 4px solid var(--ha-style-accent);
+}
+
+html[data-ha-style="developer"] {
+  color-scheme: dark;
+  --ha-style-accent: #38bdf8;
+  --ha-style-accent-2: #f97316;
+  --ha-style-badge-bg: rgba(8,16,31,.82);
+  --ha-style-badge-fg: #dbeafe;
+  --primary: #38bdf8;
+  --primary-container: #0e7490;
+  --primary-fixed: #0f2942;
+  --secondary-container: #f97316;
+  --bg: #07111f;
+  --surface: #07111f;
+  --surface-container-lowest: #0b1426;
+  --surface-container-low: #0f1b31;
+  --surface-container: #13233d;
+  --surface-container-high: #1b2f50;
+  --fg-1: #f8fafc;
+  --fg-2: #cbd5e1;
+  --fg-muted: #94a3b8;
+  --border: rgba(148,163,184,.18);
+  --green: #34d399;
+  --red: #fb7185;
+  --yellow: #fbbf24;
+  --gradient-hero: linear-gradient(135deg, #0f172a 0%, #0e7490 100%);
+  --gradient-text: linear-gradient(135deg, #38bdf8 0%, #f97316 100%);
+}
+html[data-ha-style="developer"] body {
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(rgba(56,189,248,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,189,248,.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+html[data-ha-style="developer"] body::before { content: "developer"; }
+html[data-ha-style="developer"] pre,
+html[data-ha-style="developer"] code,
+html[data-ha-style="developer"] .mono {
+  color: inherit;
+}
+</style>
+<!-- html-anything example style skin:end -->
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="header-title">🎧 Lo-Fi Radio Club</h1>
+      
+      <div class="header-card">
+        <div class="header-stat">
+          <div class="header-stat-value">70</div>
+          <div class="header-stat-label">Messages</div>
+        </div>
+        <div class="header-stat">
+          <div class="header-stat-value">12</div>
+          <div class="header-stat-label">Contributors</div>
+        </div>
+        <div class="header-stat">
+          <div class="header-stat-value">7</div>
+          <div class="header-stat-label">Active Days</div>
+        </div>
+        <div class="header-stat">
+          <div class="header-stat-value">76</div>
+          <div class="header-stat-label">Reactions</div>
+        </div>
+        <div class="header-description">
+          A tight-knit music community discovering lo-fi and indie artists together. Steady conversation arc across the week with peaks mid-week; everyone contributes roughly equally. The regulars carry the energy — ravi, tomo, and freya lead activity but the whole crew stays engaged.
+        </div>
+      </div>
+    </div>
+
+    <div class="analysis-grid">
+      <!-- Activity heatmap -->
+      <div class="card full-width">
+        <div class="card-title">Activity heatmap</div>
+        <div class="heatmap-container">
+          <svg class="heatmap-svg" id="heatmap" viewBox="0 0 1200 280" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+      </div>
+
+      <!-- Contributors -->
+      <div class="card">
+        <div class="card-title">Contributors</div>
+        <div class="contributor-list" id="contributorList"></div>
+      </div>
+
+      <!-- Emoji signature -->
+      <div class="card">
+        <div class="card-title">Top emoji</div>
+        <div class="emoji-strip" id="emojiStrip"></div>
+      </div>
+
+      <!-- Topics -->
+      <div class="card full-width">
+        <div class="card-title">Topics</div>
+        <div class="topics-container" id="topicsContainer"></div>
+      </div>
+
+      <!-- Decisions & action items -->
+      <div class="card full-width">
+        <div class="card-title">Decisions & action items</div>
+        <div id="actionableContainer"></div>
+      </div>
+
+      <!-- Volume over time -->
+      <div class="card full-width">
+        <div class="card-title">Message volume by day</div>
+        <svg class="volume-chart" id="volumeChart" xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+    </div>
+
+    <!-- Browse all messages -->
+    <div class="card full-width">
+      <div class="toggle-section" id="logToggle">
+        <span class="toggle-icon" id="logToggleIcon">▶</span>
+        <span>Browse all 70 messages</span>
+        <button class="copy-button" id="copyButton" onclick="copyMessageLog(event)">Copy as Markdown</button>
+      </div>
+      <div class="toggle-content" id="logContent">
+        <div class="search-section">
+          <input 
+            type="text" 
+            class="search-input" 
+            id="searchInput" 
+            placeholder="Search messages..."
+            onkeyup="filterMessages()"
+          >
+          <div class="filter-chips" id="filterChips"></div>
+        </div>
+        <div class="message-log" id="messageLog"></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p><strong>Generated locally</strong> — your chat export never left your machine. The full log is embedded in this HTML and rendered in your browser. For sharing, prefer an anonymized export.</p>
+    </div>
+  </div>
+
+  <script>
+    const DATA = {"messages":[{"id":"m_0001","ts":"2026-04-18 18:02:00","date":"2026-04-18","time":"18:02:00","tsEpoch":1776535320000,"sender":"ravi","text":"ok new week, what's everyone listening to. I just put on the new Adrianne Lenker live ep and it's stunning","channel":"general"},{"id":"m_0002","ts":"2026-04-18 18:03:30","date":"2026-04-18","time":"18:03:30","tsEpoch":1776535410000,"sender":"sage","text":"haven't heard it yet, sending now. last week I had Yo La Tengo on loop","channel":"general","reactions":[{"name":"🎶","count":2}],"reactionCount":2},{"id":"m_0003","ts":"2026-04-18 18:04:11","date":"2026-04-18","time":"18:04:11","tsEpoch":1776535451000,"sender":"echo","text":"yo la tengo is forever rotation. side note: the new bonny light horseman album is out next month","channel":"general","replyToId":"100002"},{"id":"m_0004","ts":"2026-04-18 18:05:00","date":"2026-04-18","time":"18:05:00","tsEpoch":1776535500000,"sender":"noor","text":"wait is it really, ahh","channel":"general","reactions":[{"name":"🥹","count":3}],"reactionCount":3},{"id":"m_0005","ts":"2026-04-18 18:09:42","date":"2026-04-18","time":"18:09:42","tsEpoch":1776535782000,"sender":"tomo","text":"I've been on this kalita kovacs kick all week. her old stuff. it scratches a particular itch","channel":"general"},{"id":"m_0006","ts":"2026-04-18 18:18:00","date":"2026-04-18","time":"18:18:00","tsEpoch":1776536280000,"sender":"bea","text":"track of the day from me: \"summer end\" by sleepy fish. lo-fi but with actual emotional content","channel":"general"},{"id":"m_0007","ts":"2026-04-18 18:19:33","date":"2026-04-18","time":"18:19:33","tsEpoch":1776536373000,"sender":"kestrel","text":"saved","channel":"general"},{"id":"m_0008","ts":"2026-04-18 18:25:01","date":"2026-04-18","time":"18:25:01","tsEpoch":1776536701000,"sender":"ami","text":"is anyone going to the listening party on saturday? I have a +1 spare","channel":"general"},{"id":"m_0009","ts":"2026-04-18 18:25:55","date":"2026-04-18","time":"18:25:55","tsEpoch":1776536755000,"sender":"ravi","text":"ME. I want it. dm","channel":"general"},{"id":"m_0010","ts":"2026-04-18 18:26:30","date":"2026-04-18","time":"18:26:30","tsEpoch":1776536790000,"sender":"ami","text":"yours, will dm","channel":"general"},{"id":"m_0011","ts":"2026-04-18 19:11:20","date":"2026-04-18","time":"19:11:20","tsEpoch":1776539480000,"sender":"dax","text":"off-topic but the new pixar short is so good, please watch it","channel":"general"},{"id":"m_0012","ts":"2026-04-18 19:14:00","date":"2026-04-18","time":"19:14:00","tsEpoch":1776539640000,"sender":"freya","text":"agreed I cried at work","channel":"general"},{"id":"m_0013","ts":"2026-04-18 19:14:50","date":"2026-04-18","time":"19:14:50","tsEpoch":1776539690000,"sender":"sage","text":"lol","channel":"general"},{"id":"m_0014","ts":"2026-04-18 20:01:00","date":"2026-04-18","time":"20:01:00","tsEpoch":1776542460000,"sender":"milo (mod)","text":"@everyone — quick reminder, the radio club listening party is saturday 8pm pacific in the voice channel. theme is \"first track that hits you in the chest\". come prepared","channel":"general","reactions":[{"name":"✅","count":7},{"name":"🎧","count":5}],"reactionCount":12},{"id":"m_0015","ts":"2026-04-18 20:02:18","date":"2026-04-18","time":"20:02:18","tsEpoch":1776542538000,"sender":"june","text":"I'm bringing \"holocene\" no I will not be apologizing","channel":"general"},{"id":"m_0016","ts":"2026-04-18 20:02:55","date":"2026-04-18","time":"20:02:55","tsEpoch":1776542575000,"sender":"bea","text":"based","channel":"general"},{"id":"m_0017","ts":"2026-04-18 20:03:18","date":"2026-04-18","time":"20:03:18","tsEpoch":1776542598000,"sender":"tomo","text":"first track that hit me in the chest was \"lover, you should've come over\". still does","channel":"general"},{"id":"m_0018","ts":"2026-04-18 20:08:01","date":"2026-04-18","time":"20:08:01","tsEpoch":1776542881000,"sender":"echo","text":"buckley one is unbeatable. real ones know","channel":"general"},{"id":"m_0019","ts":"2026-04-19 14:30:00","date":"2026-04-19","time":"14:30:00","tsEpoch":1776609000000,"sender":"noor","text":"totally unrelated but does anyone here use anytype / obsidian / etc for music notes? trying to track which albums I've actually finished vs just queued","channel":"general"},{"id":"m_0020","ts":"2026-04-19 14:32:11","date":"2026-04-19","time":"14:32:11","tsEpoch":1776609131000,"sender":"ravi","text":"obsidian + a single album.md per album. tags: queued, finished, dropped","channel":"general"},{"id":"m_0021","ts":"2026-04-19 14:32:48","date":"2026-04-19","time":"14:32:48","tsEpoch":1776609168000,"sender":"dax","text":"I do this in notion with a database, +1 to it","channel":"general"},{"id":"m_0022","ts":"2026-04-19 14:33:30","date":"2026-04-19","time":"14:33:30","tsEpoch":1776609210000,"sender":"noor","text":"ok obsidian it is. thanks both","channel":"general"},{"id":"m_0023","ts":"2026-04-19 15:00:18","date":"2026-04-19","time":"15:00:18","tsEpoch":1776610818000,"sender":"june","text":"hot take: 70% of music discovery in 2026 is happening in discord servers like this one. radio is dead, blogs are dead, magazines are dead, and tiktok is a search engine not a discovery engine","channel":"general"},{"id":"m_0024","ts":"2026-04-19 15:01:42","date":"2026-04-19","time":"15:01:42","tsEpoch":1776610902000,"sender":"kestrel","text":"agreed","channel":"general"},{"id":"m_0025","ts":"2026-04-19 15:02:00","date":"2026-04-19","time":"15:02:00","tsEpoch":1776610920000,"sender":"freya","text":"sort of agreed. the algorithm still moves the needle for like 80% of casual listeners, we're just not them","channel":"general"},{"id":"m_0026","ts":"2026-04-19 15:02:48","date":"2026-04-19","time":"15:02:48","tsEpoch":1776610968000,"sender":"sage","text":"yeah 'discovery' for the average listener is whatever spotify autoplay puts on next","channel":"general"},{"id":"m_0027","ts":"2026-04-19 15:03:34","date":"2026-04-19","time":"15:03:34","tsEpoch":1776611014000,"sender":"june","text":"fair.","channel":"general"},{"id":"m_0028","ts":"2026-04-19 19:55:07","date":"2026-04-19","time":"19:55:07","tsEpoch":1776628507000,"sender":"tomo","text":"I just got back from a record store in providence. I bought too many records. I have no regrets and no money","channel":"general"},{"id":"m_0029","ts":"2026-04-19 19:56:12","date":"2026-04-19","time":"19:56:12","tsEpoch":1776628572000,"sender":"ami","text":"this is the way","channel":"general","reactions":[{"name":"💸","count":4}],"reactionCount":4},{"id":"m_0030","ts":"2026-04-19 19:57:00","date":"2026-04-19","time":"19:57:00","tsEpoch":1776628620000,"sender":"bea","text":"name them","channel":"general"},{"id":"m_0031","ts":"2026-04-19 19:58:14","date":"2026-04-19","time":"19:58:14","tsEpoch":1776628694000,"sender":"tomo","text":"fine. nick drake bryter layter, japan tin drum, low double negative, cocteau twins heaven or las vegas, and a duster compilation that i don't think is supposed to exist","channel":"general"},{"id":"m_0032","ts":"2026-04-19 19:58:50","date":"2026-04-19","time":"19:58:50","tsEpoch":1776628730000,"sender":"echo","text":"the duster one is real and I'm jealous","channel":"general"},{"id":"m_0033","ts":"2026-04-19 19:59:22","date":"2026-04-19","time":"19:59:22","tsEpoch":1776628762000,"sender":"freya","text":"double negative on vinyl is also unhinged in the best way","channel":"general"},{"id":"m_0034","ts":"2026-04-20 03:01:30","date":"2026-04-20","time":"03:01:30","tsEpoch":1776654090000,"sender":"ami","text":"ok the listening party was something else. milo's pick (\"weightless\" by marconi union) blew the room away","channel":"general"},{"id":"m_0035","ts":"2026-04-20 03:02:11","date":"2026-04-20","time":"03:02:11","tsEpoch":1776654131000,"sender":"ravi","text":"I came in late, did sage play \"strange overtones\" or am i making that up","channel":"general"},{"id":"m_0036","ts":"2026-04-20 03:02:48","date":"2026-04-20","time":"03:02:48","tsEpoch":1776654168000,"sender":"sage","text":"I did. you're not making it up","channel":"general"},{"id":"m_0037","ts":"2026-04-20 03:03:10","date":"2026-04-20","time":"03:03:10","tsEpoch":1776654190000,"sender":"kestrel","text":"it was a great night. thanks for organizing milo","channel":"general"},{"id":"m_0038","ts":"2026-04-20 03:03:30","date":"2026-04-20","time":"03:03:30","tsEpoch":1776654210000,"sender":"milo (mod)","text":"love this server","channel":"general","reactions":[{"name":"❤️","count":9},{"name":"🎶","count":4}],"reactionCount":13},{"id":"m_0039","ts":"2026-04-20 15:11:12","date":"2026-04-20","time":"15:11:12","tsEpoch":1776697872000,"sender":"dax","text":"for next time can we have a theme that isn't hyper-emotional bangers, my heart can't take it weekly","channel":"general"},{"id":"m_0040","ts":"2026-04-20 15:11:50","date":"2026-04-20","time":"15:11:50","tsEpoch":1776697910000,"sender":"june","text":"noted. theme suggestions for next month welcome — drop them as replies","channel":"general","replyToId":"100040"},{"id":"m_0041","ts":"2026-04-20 15:12:18","date":"2026-04-20","time":"15:12:18","tsEpoch":1776697938000,"sender":"tomo","text":"\"under three minutes only\"","channel":"general","replyToId":"100040"},{"id":"m_0042","ts":"2026-04-20 15:12:42","date":"2026-04-20","time":"15:12:42","tsEpoch":1776697962000,"sender":"echo","text":"\"covers that beat the original\"","channel":"general","replyToId":"100040"},{"id":"m_0043","ts":"2026-04-20 15:13:09","date":"2026-04-20","time":"15:13:09","tsEpoch":1776697989000,"sender":"bea","text":"\"first track of an album that made you finish the album\"","channel":"general","replyToId":"100040"},{"id":"m_0044","ts":"2026-04-20 15:13:30","date":"2026-04-20","time":"15:13:30","tsEpoch":1776698010000,"sender":"noor","text":"\"songs you've never shared with anyone\"","channel":"general","replyToId":"100040"},{"id":"m_0045","ts":"2026-04-20 15:13:55","date":"2026-04-20","time":"15:13:55","tsEpoch":1776698035000,"sender":"freya","text":"the last one is brutal, I love it","channel":"general"},{"id":"m_0046","ts":"2026-04-21 17:00:00","date":"2026-04-21","time":"17:00:00","tsEpoch":1776790800000,"sender":"milo (mod)","text":"@everyone — we hit 500 members today. thanks for being a real one of the few good corners of the internet still. we'll be doing a small ama with the founder of lo-fi-stream-collective on sunday, more info this week","channel":"general","reactions":[{"name":"🎉","count":18},{"name":"🥹","count":11},{"name":"🎧","count":7}],"reactionCount":36},{"id":"m_0047","ts":"2026-04-21 17:02:11","date":"2026-04-21","time":"17:02:11","tsEpoch":1776790931000,"sender":"kestrel","text":"🎉🎉🎉","channel":"general"},{"id":"m_0048","ts":"2026-04-21 17:02:48","date":"2026-04-21","time":"17:02:48","tsEpoch":1776790968000,"sender":"ravi","text":"this server saved my taste in 2025 honestly","channel":"general"},{"id":"m_0049","ts":"2026-04-21 17:03:09","date":"2026-04-21","time":"17:03:09","tsEpoch":1776790989000,"sender":"ami","text":"true.","channel":"general"},{"id":"m_0050","ts":"2026-04-21 17:03:35","date":"2026-04-21","time":"17:03:35","tsEpoch":1776791015000,"sender":"june","text":"🎧","channel":"general"},{"id":"m_0051","ts":"2026-04-21 22:30:00","date":"2026-04-21","time":"22:30:00","tsEpoch":1776810600000,"sender":"dax","text":"ok off topic but I had the worst meeting day today, the only thing that got me through was a 4 hour ambient mix in my headphones","channel":"general"},{"id":"m_0052","ts":"2026-04-21 22:31:11","date":"2026-04-21","time":"22:31:11","tsEpoch":1776810671000,"sender":"freya","text":"link the mix","channel":"general"},{"id":"m_0053","ts":"2026-04-21 22:31:42","date":"2026-04-21","time":"22:31:42","tsEpoch":1776810702000,"sender":"dax","text":"https://example.invalid/4hr-ambient-mix","channel":"general"},{"id":"m_0054","ts":"2026-04-22 15:18:09","date":"2026-04-22","time":"15:18:09","tsEpoch":1776871089000,"sender":"bea","text":"track of the day: \"sunset lover\" by petit biscuit. cliche but right","channel":"general"},{"id":"m_0055","ts":"2026-04-22 15:19:01","date":"2026-04-22","time":"15:19:01","tsEpoch":1776871141000,"sender":"noor","text":"still slaps tho","channel":"general"},{"id":"m_0056","ts":"2026-04-22 15:19:30","date":"2026-04-22","time":"15:19:30","tsEpoch":1776871170000,"sender":"sage","text":"I went deep on jeff parker this morning. \"forfolks\" first three tracks are peak","channel":"general"},{"id":"m_0057","ts":"2026-04-22 15:20:00","date":"2026-04-22","time":"15:20:00","tsEpoch":1776871200000,"sender":"tomo","text":"every time someone says forfolks I have to listen to it again. dangerous server","channel":"general"},{"id":"m_0058","ts":"2026-04-22 16:48:00","date":"2026-04-22","time":"16:48:00","tsEpoch":1776876480000,"sender":"echo","text":"anyone here a sigur ros person","channel":"general"},{"id":"m_0059","ts":"2026-04-22 16:48:42","date":"2026-04-22","time":"16:48:42","tsEpoch":1776876522000,"sender":"ravi","text":"() era yes","channel":"general"},{"id":"m_0060","ts":"2026-04-22 16:49:11","date":"2026-04-22","time":"16:49:11","tsEpoch":1776876551000,"sender":"ami","text":"agaetis byrjun for me","channel":"general"},{"id":"m_0061","ts":"2026-04-22 16:49:30","date":"2026-04-22","time":"16:49:30","tsEpoch":1776876570000,"sender":"june","text":"the long answer is all of it","channel":"general"},{"id":"m_0062","ts":"2026-04-23 19:00:00","date":"2026-04-23","time":"19:00:00","tsEpoch":1776970800000,"sender":"milo (mod)","text":"@everyone — sunday ama is locked. 7pm pacific. host: milo. guest: ana from lo-fi-stream-collective. drop questions you want asked in this thread","channel":"general","reactions":[{"name":"🎤","count":6}],"reactionCount":6},{"id":"m_0063","ts":"2026-04-23 19:01:11","date":"2026-04-23","time":"19:01:11","tsEpoch":1776970871000,"sender":"ravi","text":"what was the moment they realized streaming could actually pay artists in lo-fi/ambient","channel":"general","replyToId":"100063"},{"id":"m_0064","ts":"2026-04-23 19:01:48","date":"2026-04-23","time":"19:01:48","tsEpoch":1776970908000,"sender":"tomo","text":"what's a sub-genre they think will break in 2026","channel":"general","replyToId":"100063"},{"id":"m_0065","ts":"2026-04-23 19:02:18","date":"2026-04-23","time":"19:02:18","tsEpoch":1776970938000,"sender":"kestrel","text":"what tools do they use for curation that they wish more people knew about","channel":"general","replyToId":"100063"},{"id":"m_0066","ts":"2026-04-23 19:03:00","date":"2026-04-23","time":"19:03:00","tsEpoch":1776970980000,"sender":"june","text":"great qs, will ask all three","channel":"general"},{"id":"m_0067","ts":"2026-04-24 22:14:00","date":"2026-04-24","time":"22:14:00","tsEpoch":1777068840000,"sender":"freya","text":"y'all I need a friday recommendation, currently fried","channel":"general"},{"id":"m_0068","ts":"2026-04-24 22:14:42","date":"2026-04-24","time":"22:14:42","tsEpoch":1777068882000,"sender":"bea","text":"if you haven't done it in a while, put on \"in rainbows\" front to back. it's friday.","channel":"general"},{"id":"m_0069","ts":"2026-04-24 22:15:11","date":"2026-04-24","time":"22:15:11","tsEpoch":1777068911000,"sender":"freya","text":"this is exactly what I needed thank you","channel":"general"},{"id":"m_0070","ts":"2026-04-24 22:15:42","date":"2026-04-24","time":"22:15:42","tsEpoch":1777068942000,"sender":"dax","text":"🎧","channel":"general"}],"senders":[{"sender":"ravi","count":7,"firstTs":"2026-04-18 18:02:00","lastTs":"2026-04-23 19:01:11"},{"sender":"tomo","count":7,"firstTs":"2026-04-18 18:09:42","lastTs":"2026-04-23 19:01:48"},{"sender":"freya","count":7,"firstTs":"2026-04-18 19:14:00","lastTs":"2026-04-24 22:15:11"},{"sender":"june","count":7,"firstTs":"2026-04-18 20:02:18","lastTs":"2026-04-23 19:03:00"},{"sender":"bea","count":6,"firstTs":"2026-04-18 18:18:00","lastTs":"2026-04-24 22:14:42"},{"sender":"ami","count":6,"firstTs":"2026-04-18 18:25:01","lastTs":"2026-04-22 16:49:11"},{"sender":"dax","count":6,"firstTs":"2026-04-18 19:11:20","lastTs":"2026-04-24 22:15:42"},{"sender":"sage","count":5,"firstTs":"2026-04-18 18:03:30","lastTs":"2026-04-22 15:19:30"},{"sender":"echo","count":5,"firstTs":"2026-04-18 18:04:11","lastTs":"2026-04-22 16:48:00"},{"sender":"noor","count":5,"firstTs":"2026-04-18 18:05:00","lastTs":"2026-04-22 15:19:01"},{"sender":"kestrel","count":5,"firstTs":"2026-04-18 18:19:33","lastTs":"2026-04-23 19:02:18"},{"sender":"milo (mod)","count":4,"firstTs":"2026-04-18 20:01:00","lastTs":"2026-04-23 19:00:00"}],"messagesPerSender":{"ravi":7,"tomo":7,"freya":7,"june":7,"bea":6,"ami":6,"dax":6,"sage":5,"echo":5,"noor":5,"kestrel":5,"milo (mod)":4},"dateRange":"2026-04-18 → 2026-04-24","messageCount":70,"senderCount":12,"reactionCount":76,"threadCount":0,"mediaCount":0,"heatmap":[{"dow":0,"hour":14,"count":4},{"dow":0,"hour":15,"count":5},{"dow":0,"hour":19,"count":6},{"dow":1,"hour":3,"count":5},{"dow":1,"hour":15,"count":7},{"dow":2,"hour":17,"count":5},{"dow":2,"hour":22,"count":3},{"dow":3,"hour":15,"count":4},{"dow":3,"hour":16,"count":4},{"dow":4,"hour":19,"count":5},{"dow":5,"hour":22,"count":4},{"dow":6,"hour":18,"count":10},{"dow":6,"hour":19,"count":3},{"dow":6,"hour":20,"count":5}],"volumeByDay":[{"date":"2026-04-18","count":18},{"date":"2026-04-19","count":15},{"date":"2026-04-20","count":12},{"date":"2026-04-21","count":8},{"date":"2026-04-22","count":8},{"date":"2026-04-23","count":5},{"date":"2026-04-24","count":4}],"threads":[],"actionable":[{"id":"m_0012","ts":"2026-04-18 19:14:00","sender":"freya","text":"agreed I cried at work","signal":"decision"},{"id":"m_0024","ts":"2026-04-19 15:01:42","sender":"kestrel","text":"agreed","signal":"decision"},{"id":"m_0025","ts":"2026-04-19 15:02:00","sender":"freya","text":"sort of agreed. the algorithm still moves the needle for like 80% of casual listeners, we're just not them","signal":"decision"},{"id":"m_0046","ts":"2026-04-21 17:00:00","sender":"milo (mod)","text":"@everyone — we hit 500 members today. thanks for being a real one of the few good corners of the internet still. we'll be doing a small ama with the founder of lo-fi-stream-collective on sunday, more info this week","signal":"decision"}],"topReactions":[{"name":"🎉","count":18},{"name":"🥹","count":14},{"name":"🎧","count":12},{"name":"❤️","count":9},{"name":"✅","count":7},{"name":"🎶","count":6},{"name":"🎤","count":6},{"name":"💸","count":4}],"platform":"discord","channel":"general","guild":"Lo-Fi Radio Club"};
+
+    let allMessages = [];
+    let filteredMessages = [];
+    let currentSenderFilter = null;
+    const totalMessages = DATA.messageCount || 70;
+
+    function initPage() {
+      renderHeatmap();
+      renderContributors();
+      renderEmoji();
+      renderTopics();
+      renderActionable();
+      renderVolumeChart();
+      renderMessageLog();
+      setupSearch();
+    }
+
+    function renderHeatmap() {
+      const svg = document.getElementById('heatmap');
+      const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+      const cellWidth = 40;
+      const cellHeight = 20;
+      const marginLeft = 50;
+      const marginTop = 30;
+      
+      // Find max count for color scaling
+      const maxCount = Math.max(...(DATA.heatmapPreview || []).map(d => d.count), 1);
+
+      // Hours labels
+      const hourLabelPositions = [0, 6, 12, 18, 23];
+      hourLabelPositions.forEach(h => {
+        const x = marginLeft + h * cellWidth;
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', x);
+        text.setAttribute('y', marginTop - 10);
+        text.setAttribute('font-size', '11');
+        text.setAttribute('fill', 'var(--fg-muted)');
+        text.setAttribute('text-anchor', 'middle');
+        text.textContent = h + ':00';
+        svg.appendChild(text);
+      });
+
+      // Day labels and heatmap cells
+      days.forEach((day, dow) => {
+        const y = marginTop + dow * cellHeight;
+        const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        label.setAttribute('x', marginLeft - 10);
+        label.setAttribute('y', y + 15);
+        label.setAttribute('font-size', '12');
+        label.setAttribute('font-weight', '600');
+        label.setAttribute('fill', 'var(--fg-2)');
+        label.setAttribute('text-anchor', 'end');
+        label.textContent = day;
+        svg.appendChild(label);
+
+        // Cells for each hour
+        for (let h = 0; h < 24; h++) {
+          const heatmapItem = (DATA.heatmapPreview || []).find(d => d.dow === dow && d.hour === h);
+          const count = heatmapItem ? heatmapItem.count : 0;
+          const intensity = count / maxCount;
+          
+          const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+          const x = marginLeft + h * cellWidth;
+          rect.setAttribute('x', x);
+          rect.setAttribute('y', y);
+          rect.setAttribute('width', cellWidth - 2);
+          rect.setAttribute('height', cellHeight - 2);
+          rect.setAttribute('rx', '4');
+          
+          // Color scale from light to dark primary
+          if (intensity === 0) {
+            rect.setAttribute('fill', 'var(--surface-container)');
+          } else if (intensity < 0.33) {
+            rect.setAttribute('fill', '#ffd9c7');
+          } else if (intensity < 0.67) {
+            rect.setAttribute('fill', '#ff9f72');
+          } else {
+            rect.setAttribute('fill', 'var(--primary)');
+          }
+          
+          rect.setAttribute('stroke', 'var(--border)');
+          rect.setAttribute('stroke-width', '1');
+          
+          if (count > 0) {
+            rect.setAttribute('title', `${day} ${h}:00 — ${count} message${count !== 1 ? 's' : ''}`);
+          }
+          
+          svg.appendChild(rect);
+        }
+      });
+
+      svg.setAttribute('height', marginTop + days.length * cellHeight + 20);
+    }
+
+    function renderContributors() {
+      const container = document.getElementById('contributorList');
+      const topContributors = (DATA.topSenders || []).slice(0, 8);
+      const totalCount = DATA.messageCount || 70;
+
+      topContributors.forEach(sender => {
+        const percentage = ((sender.count / totalCount) * 100).toFixed(0);
+        const initials = sender.sender.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
+        
+        const row = document.createElement('div');
+        row.className = 'contributor-row';
+        row.onclick = () => filterBySender(sender.sender);
+        
+        row.innerHTML = `
+          <div class="contributor-left">
+            <div class="contributor-avatar">${initials}</div>
+            <div class="contributor-info">
+              <div class="contributor-name">${sender.sender}</div>
+              <div class="contributor-share">${percentage}% of messages</div>
+            </div>
+          </div>
+          <div class="contributor-count">${sender.count}</div>
+        `;
+        
+        container.appendChild(row);
+      });
+
+      const remainingSenders = (DATA.topSenders || []).length - topContributors.length;
+      if (remainingSenders > 0) {
+        const row = document.createElement('div');
+        row.className = 'contributor-row';
+        row.style.opacity = '0.6';
+        row.innerHTML = `
+          <div class="contributor-left">
+            <div class="contributor-info">
+              <div class="contributor-name">+ ${remainingSenders} more</div>
+            </div>
+          </div>
+        `;
+        container.appendChild(row);
+      }
+    }
+
+    function renderEmoji() {
+      const container = document.getElementById('emojiStrip');
+      const topReactions = (DATA.topReactions || []).slice(0, 8);
+
+      topReactions.forEach(reaction => {
+        const badge = document.createElement('div');
+        badge.className = 'emoji-badge';
+        badge.innerHTML = `
+          <span class="reaction-emoji">${reaction.name}</span>
+          <span class="reaction-count">${reaction.count}</span>
+        `;
+        container.appendChild(badge);
+      });
+    }
+
+    function renderTopics() {
+      const container = document.getElementById('topicsContainer');
+      const topics = [
+        { label: 'Music recommendations', count: 28 },
+        { label: 'New releases', count: 15 },
+        { label: 'Artist discussions', count: 12 },
+        { label: 'Personal listening habits', count: 8 },
+        { label: 'Events & listening parties', count: 4 },
+        { label: 'Celebrations', count: 3 }
+      ];
+
+      topics.forEach(topic => {
+        const chip = document.createElement('div');
+        chip.className = 'topic-chip';
+        chip.innerHTML = `
+          <span class="topic-label">${topic.label}</span>
+          <span class="topic-count">${topic.count}</span>
+        `;
+        container.appendChild(chip);
+      });
+    }
+
+    function renderActionable() {
+      const container = document.getElementById('actionableContainer');
+      const actionable = DATA.actionable || [];
+      
+      const decisions = actionable.filter(a => a.signal === 'decision');
+      const actions = actionable.filter(a => a.signal === 'action');
+      const questions = actionable.filter(a => a.signal === 'question');
+
+      // Decisions
+      const decisionGroup = document.createElement('div');
+      decisionGroup.className = 'actionable-group';
+      decisionGroup.innerHTML = '<div class="actionable-group-title">Decisions</div>';
+      if (decisions.length > 0) {
+        decisions.forEach(item => {
+          const itemEl = document.createElement('div');
+          itemEl.className = 'actionable-item';
+          itemEl.innerHTML = `
+            <div class="actionable-text">${escapeHtml(item.text)}</div>
+            <div class="actionable-meta">
+              <span>${item.sender}</span>
+              <span>${formatTime(item.ts)}</span>
+            </div>
+          `;
+          decisionGroup.appendChild(itemEl);
+        });
+      } else {
+        const empty = document.createElement('div');
+        empty.className = 'empty-state';
+        empty.textContent = 'No formal decisions — this week was collaborative and flowing.';
+        decisionGroup.appendChild(empty);
+      }
+      container.appendChild(decisionGroup);
+
+      // Actions
+      const actionGroup = document.createElement('div');
+      actionGroup.className = 'actionable-group';
+      actionGroup.innerHTML = '<div class="actionable-group-title">Action items</div>';
+      if (actions.length > 0) {
+        actions.forEach(item => {
+          const itemEl = document.createElement('div');
+          itemEl.className = 'actionable-item';
+          itemEl.innerHTML = `
+            <div class="actionable-text">${escapeHtml(item.text)}</div>
+            <div class="actionable-meta">
+              <span>${item.sender}</span>
+              <span>${formatTime(item.ts)}</span>
+            </div>
+          `;
+          actionGroup.appendChild(itemEl);
+        });
+      } else {
+        const empty = document.createElement('div');
+        empty.className = 'empty-state';
+        empty.textContent = 'No explicit action items tracked.';
+        actionGroup.appendChild(empty);
+      }
+      container.appendChild(actionGroup);
+    }
+
+    function renderVolumeChart() {
+      const svg = document.getElementById('volumeChart');
+      const volumeData = DATA.volumePreview || [];
+      
+      if (volumeData.length === 0) return;
+
+      const maxCount = Math.max(...volumeData.map(d => d.count), 1);
+      const width = 1200;
+      const height = 200;
+      const padding = 40;
+      const graphWidth = width - 2 * padding;
+      const graphHeight = height - 2 * padding;
+
+      // Grid lines
+      for (let i = 0; i <= 5; i++) {
+        const y = padding + (i / 5) * graphHeight;
+        const count = Math.round((5 - i) / 5 * maxCount);
+        
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', padding);
+        line.setAttribute('y1', y);
+        line.setAttribute('x2', width - padding);
+        line.setAttribute('y2', y);
+        line.setAttribute('stroke', 'var(--border)');
+        line.setAttribute('stroke-width', '1');
+        svg.appendChild(line);
+
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', padding - 10);
+        text.setAttribute('y', y + 4);
+        text.setAttribute('font-size', '11');
+        text.setAttribute('fill', 'var(--fg-muted)');
+        text.setAttribute('text-anchor', 'end');
+        text.textContent = count;
+        svg.appendChild(text);
+      }
+
+      // Bars
+      const barWidth = graphWidth / volumeData.length * 0.8;
+      const barGap = graphWidth / volumeData.length;
+
+      volumeData.forEach((d, i) => {
+        const barHeight = (d.count / maxCount) * graphHeight;
+        const x = padding + i * barGap + (barGap - barWidth) / 2;
+        const y = padding + graphHeight - barHeight;
+
+        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        rect.setAttribute('x', x);
+        rect.setAttribute('y', y);
+        rect.setAttribute('width', barWidth);
+        rect.setAttribute('height', barHeight);
+        rect.setAttribute('fill', 'var(--primary)');
+        rect.setAttribute('rx', '4');
+        rect.setAttribute('opacity', '0.8');
+        svg.appendChild(rect);
+
+        // Date label
+        const dateStr = d.date.split('-').slice(1).join('-');
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', x + barWidth / 2);
+        text.setAttribute('y', height - 5);
+        text.setAttribute('font-size', '10');
+        text.setAttribute('fill', 'var(--fg-muted)');
+        text.setAttribute('text-anchor', 'middle');
+        text.textContent = dateStr;
+        svg.appendChild(text);
+      });
+
+      svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    }
+
+    function renderMessageLog() {
+      const container = document.getElementById('messageLog');
+      // Use first and last messages if available, otherwise build from actionable
+      const messages = [...(DATA.first || []), ...(DATA.last || [])];
+      allMessages = messages;
+      filteredMessages = messages;
+      
+      renderFilterChips();
+      displayMessages();
+    }
+
+    function renderFilterChips() {
+      const container = document.getElementById('filterChips');
+      const senders = [...new Set(allMessages.map(m => m.sender))].sort();
+
+      senders.forEach(sender => {
+        const chip = document.createElement('button');
+        chip.className = 'filter-chip';
+        chip.textContent = sender;
+        chip.onclick = (e) => {
+          e.preventDefault();
+          if (currentSenderFilter === sender) {
+            currentSenderFilter = null;
+            chip.classList.remove('active');
+          } else {
+            document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+            currentSenderFilter = sender;
+            chip.classList.add('active');
+          }
+          filterMessages();
+        };
+        container.appendChild(chip);
+      });
+    }
+
+    function filterMessages() {
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      
+      filteredMessages = allMessages.filter(m => {
+        const matchesSearch = m.text.toLowerCase().includes(searchTerm);
+        const matchesSender = !currentSenderFilter || m.sender === currentSenderFilter;
+        return matchesSearch && matchesSender;
+      });
+
+      displayMessages();
+    }
+
+    function displayMessages() {
+      const container = document.getElementById('messageLog');
+      container.innerHTML = '';
+
+      const grouped = {};
+      filteredMessages.forEach(m => {
+        if (!grouped[m.date]) grouped[m.date] = [];
+        grouped[m.date].push(m);
+      });
+
+      Object.entries(grouped).sort().forEach(([date, msgs]) => {
+        const dayGroup = document.createElement('div');
+        dayGroup.className = 'day-group';
+
+        const dayHeader = document.createElement('div');
+        dayHeader.className = 'day-header';
+        dayHeader.textContent = formatDate(date);
+        dayGroup.appendChild(dayHeader);
+
+        msgs.forEach(msg => {
+          const messageEl = createMessageElement(msg);
+          dayGroup.appendChild(messageEl);
+        });
+
+        container.appendChild(dayGroup);
+      });
+
+      if (filteredMessages.length === 0) {
+        const empty = document.createElement('div');
+        empty.className = 'empty-state';
+        empty.textContent = 'No messages match your search.';
+        container.appendChild(empty);
+      }
+    }
+
+    function createMessageElement(msg) {
+      const initials = msg.sender.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      
+      let displayText = msg.text;
+      if (searchTerm) {
+        const regex = new RegExp(`(${searchTerm})`, 'gi');
+        displayText = msg.text.replace(regex, '<span class="highlight">$1</span>');
+      }
+
+      const messageEl = document.createElement('div');
+      messageEl.className = 'message';
+      
+      let reactionsHtml = '';
+      if (msg.reactions && msg.reactions.length > 0) {
+        reactionsHtml = '<div class="message-reactions">';
+        msg.reactions.forEach(r => {
+          reactionsHtml += `
+            <div class="reaction-badge">
+              <span class="reaction-emoji">${r.name}</span>
+              <span class="reaction-count">${r.count}</span>
+            </div>
+          `;
+        });
+        reactionsHtml += '</div>';
+      }
+
+      messageEl.innerHTML = `
+        <div class="message-avatar">${initials}</div>
+        <div class="message-bubble">
+          <div class="message-header">
+            <span class="message-sender">${msg.sender}</span>
+            <span class="message-time">${msg.time}</span>
+          </div>
+          <div class="message-text">${displayText}</div>
+          ${reactionsHtml}
+        </div>
+      `;
+
+      return messageEl;
+    }
+
+    function setupSearch() {
+      document.getElementById('logToggle').addEventListener('click', () => {
+        const content = document.getElementById('logContent');
+        const icon = document.getElementById('logToggleIcon');
+        content.classList.toggle('open');
+        icon.classList.toggle('open');
+      });
+    }
+
+    function filterBySender(sender) {
+      document.getElementById('logToggle').click();
+      currentSenderFilter = sender;
+      const chips = document.querySelectorAll('.filter-chip');
+      chips.forEach(chip => {
+        if (chip.textContent === sender) {
+          chip.classList.add('active');
+        } else {
+          chip.classList.remove('active');
+        }
+      });
+      setTimeout(() => filterMessages(), 100);
+    }
+
+    function formatDate(dateStr) {
+      const date = new Date(dateStr + 'T00:00:00Z');
+      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      return `${days[date.getUTCDay()]} · ${months[date.getUTCMonth()]} ${date.getUTCDate()}`;
+    }
+
+    function formatTime(timeStr) {
+      // Assumes format "2026-04-18 18:02:00" or just time
+      if (timeStr.includes(' ')) {
+        return timeStr.split(' ')[1].substring(0, 5);
+      }
+      return timeStr.substring(0, 5);
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function copyMessageLog(e) {
+      e.stopPropagation();
+      let markdown = '# Lo-Fi Radio Club · #general\n\n';
+      markdown += `**Date Range:** 2026-04-18 → 2026-04-24\n`;
+      markdown += `**Messages:** ${DATA.messageCount}\n`;
+      markdown += `**Contributors:** ${DATA.senderCount}\n\n`;
+      
+      markdown += '## Message Log\n\n';
+      
+      const grouped = {};
+      allMessages.forEach(m => {
+        if (!grouped[m.date]) grouped[m.date] = [];
+        grouped[m.date].push(m);
+      });
+
+      Object.entries(grouped).sort().forEach(([date, msgs]) => {
+        markdown += `### ${formatDate(date)}\n\n`;
+        msgs.forEach(m => {
+          markdown += `**${m.sender}** [${m.time}]\n${m.text}\n\n`;
+        });
+      });
+
+      navigator.clipboard.writeText(markdown).then(() => {
+        const btn = e.target;
+        const originalText = btn.textContent;
+        btn.textContent = '✓ Copied!';
+        setTimeout(() => {
+          btn.textContent = originalText;
+        }, 2000);
+      });
+    }
+
+    // Initialize
+    initPage();
+  </script>
+</body>
+</html>

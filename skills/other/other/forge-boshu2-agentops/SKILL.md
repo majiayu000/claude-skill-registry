@@ -214,15 +214,9 @@ Tell the user:
 
 ## The Quality Pool
 
-Forged candidates enter at Tier 0:
-```
-Transcript → /forge → .agents/forge/ (Tier 0)
-                           ↓
-                   Human review or 2+ citations
-                   OR auto-promote (confidence >= 0.7, ao-free fallback)
-                           ↓
-                   .agents/learnings/ (Tier 1)
-```
+Forged candidates enter at Tier 0 (`.agents/forge/`), then promote to Tier 1
+(`.agents/learnings/`) via human review, 2+ citations, or auto-promote when
+confidence >= 0.7 (ao-free fallback).
 
 ## Key Rules
 
@@ -248,3 +242,4 @@ invocation walkthrough and manual transcript-mining walkthrough.
 ## Reference Documents
 
 - [references/uncaptured-lesson-patterns.md](references/uncaptured-lesson-patterns.md) — signal patterns and 26 known uncaptured lesson categories for transcript mining
+- [references/feedback-compiler-drafts.md](references/feedback-compiler-drafts.md) — auto-drafted learning workflow (F5.4 fail->pass ledger transitions, `cli/internal/feedbackcompiler`)

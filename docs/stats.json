@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-20T06:45:27.552867Z",
+  "updated_at": "2026-05-20T08:12:09.895411Z",
   "archive_skill_md_count_raw": 229302,
   "archive_metadata_count_raw": 229302,
   "indexed_skill_count_scan_shape": 229302,
@@ -456,7 +456,7 @@
   "quality_largest_shard_bytes": 8388643,
   "quality_largest_shard_gzip_bytes": 1761010,
   "security_index_size_bytes": 223,
-  "security_index_gzip_size_bytes": 214,
+  "security_index_gzip_size_bytes": 215,
   "security_shard_count": 4,
   "security_largest_shard_bytes": 8388678,
   "security_largest_shard_gzip_bytes": 2396197,

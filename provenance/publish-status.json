@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "generated_at": "2026-05-20T08:15:35Z",
+  "core_repo": "majiayu000/claude-skill-registry-core",
+  "core_sha": "4338410754db8023b6ac9c84c6fe4d1f935a2491",
+  "data_repo": "majiayu000/claude-skill-registry-data",
+  "data_sha": "0ca97f9b8fb766b7e55c70080201b40b9475c280",
+  "github_run_id": "26149596663",
+  "github_run_attempt": "1",
+  "github_run_url": "https://github.com/majiayu000/claude-skill-registry/actions/runs/26149596663",
+  "promotion_gate": {
+    "mode": "pre-commit canary validation",
+    "result": "allowed"
+  },
+  "rollback_contract": {
+    "strategy": "rerun this workflow with a previous known-good provenance tuple",
+    "source_of_truth": "provenance/merge-source.json from the previous good main commit",
+    "required_inputs": [
+      "core_sha",
+      "data_sha"
+    ]
+  },
+  "checks": [
+    {
+      "name": "provenance refs",
+      "status": "passed",
+      "detail": "pinned refs match workflow inputs"
+    },
+    {
+      "name": "registry pointer and manifest",
+      "status": "passed",
+      "detail": "registry-manifest.json: 256 shards, 155897 records"
+    },
+    {
+      "name": "search pointer and manifest",
+      "status": "passed",
+      "detail": "docs/search-index.json -> search-index-manifest.json; docs/search-index-manifest.json: 7 shards, 229302 records"
+    },
+    {
+      "name": "quality signal pointer and manifest",
+      "status": "passed",
+      "detail": "docs/quality-index.json -> quality-index-manifest.json; docs/quality-index-manifest.json: 6 shards, 156462 records"
+    },
+    {
+      "name": "security signal pointer and manifest",
+      "status": "passed",
+      "detail": "docs/security-index.json -> security-index-manifest.json; docs/security-index-manifest.json: 4 shards, 156462 records"
+    },
+    {
+      "name": "ranking signal pointer and manifest",
+      "status": "passed",
+      "detail": "docs/ranking-index.json -> ranking-index-manifest.json; docs/ranking-index-manifest.json: 5 shards, 156462 records"
+    },
+    {
+      "name": "category index and other manifest",
+      "status": "passed",
+      "detail": "docs/categories/other/manifest.json: 11 shards, 131935 records"
+    },
+    {
+      "name": "stats shard summary",
+      "status": "passed",
+      "detail": "largest_generated_file_bytes=8388748"
+    }
+  ]
+}

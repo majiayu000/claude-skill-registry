@@ -1,19 +1,19 @@
 {
   "version": 1,
-  "updated_at": "2026-05-20T04:14:27.936070Z",
-  "total_count": 1169,
+  "updated_at": "2026-05-21T04:23:08.447343Z",
+  "total_count": 1476,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
       "branch": "master",
       "relative_path": "skills/x-twitter-scraper/SKILL.md",
-      "updated_at": "2026-05-20T04:13:59.847127Z"
+      "updated_at": "2026-05-21T04:22:21.579930Z"
     },
     "miningstore/confluence-to-agent-knowledge-base": {
       "repo": "miningstore/confluence-to-agent-knowledge-base",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-20T04:14:04.820838Z"
+      "updated_at": "2026-05-21T04:22:38.932245Z"
     },
     "seangeng/holydocs-skills:holydocs": {
       "repo": "seangeng/holydocs-skills",
@@ -43,7 +43,7 @@
       "repo": "mguozhen/dingtalk-bridge",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-20T04:14:03.295647Z"
+      "updated_at": "2026-05-21T04:22:36.084151Z"
     },
     "conorluddy/ios-simulator-skill": {
       "repo": "conorluddy/ios-simulator-skill",
@@ -55,61 +55,61 @@
       "repo": "lackeyjb/playwright-skill",
       "branch": "main",
       "relative_path": "skills/playwright-skill/SKILL.md",
-      "updated_at": "2026-05-20T04:14:20.129297Z"
+      "updated_at": "2026-05-21T04:22:35.460211Z"
     },
     "ToniPerea/humanizar-texto-es": {
       "repo": "ToniPerea/humanizar-texto-es",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-20T04:14:03.011131Z"
+      "updated_at": "2026-05-21T04:22:35.578854Z"
     },
     "yusufkaraaslan/Skill_Seekers": {
       "repo": "yusufkaraaslan/Skill_Seekers",
       "branch": "main",
       "relative_path": "skills/skill-seekers/SKILL.md",
-      "updated_at": "2026-05-20T04:14:19.802931Z"
+      "updated_at": "2026-05-21T04:22:35.269749Z"
     },
     "Chris1220-cmd/deep-research-skill": {
       "repo": "Chris1220-cmd/deep-research-skill",
       "branch": "master",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-20T04:14:02.996683Z"
+      "updated_at": "2026-05-21T04:22:35.667446Z"
     },
     "Enreign/pagerunner-skill": {
       "repo": "Enreign/pagerunner-skill",
       "branch": "main",
       "relative_path": "skills/pagerunner-skill/SKILL.md",
-      "updated_at": "2026-05-20T04:14:21.279772Z"
+      "updated_at": "2026-05-21T04:22:37.120648Z"
     },
     "alonw0/web-asset-generator": {
       "repo": "alonw0/web-asset-generator",
       "branch": "main",
       "relative_path": "skills/web-asset-generator/SKILL.md",
-      "updated_at": "2026-05-20T04:14:20.958767Z"
+      "updated_at": "2026-05-21T04:22:36.914292Z"
     },
     "mguozhen/social-bot": {
       "repo": "mguozhen/social-bot",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-20T04:14:20.218990Z"
+      "updated_at": "2026-05-21T04:22:35.712689Z"
     },
     "b33kman/professional-business-writing-skill": {
       "repo": "b33kman/professional-business-writing-skill",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-20T04:14:20.252233Z"
+      "updated_at": "2026-05-21T04:22:35.650850Z"
     },
     "MetcalfSolutions/Satori": {
       "repo": "MetcalfSolutions/Satori",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-20T04:14:21.611304Z"
+      "updated_at": "2026-05-21T04:22:37.449799Z"
     },
     "varfolomejev/query-victorialogs": {
       "repo": "varfolomejev/query-victorialogs",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-20T04:14:21.202626Z"
+      "updated_at": "2026-05-21T04:22:36.584924Z"
     },
     "KKKKhazix/khazix-skills:hv-analysis": {
       "repo": "KKKKhazix/khazix-skills",
@@ -157,7 +157,7 @@
       "repo": "0xRy4n/hubspot-developer-skill",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-20T04:14:04.663615Z"
+      "updated_at": "2026-05-21T04:22:39.762796Z"
     },
     "KKKKhazix/khazix-skills:aihot": {
       "repo": "KKKKhazix/khazix-skills",
@@ -187,7 +187,7 @@
       "repo": "getterdoneinc/skill",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-20T04:14:03.044495Z"
+      "updated_at": "2026-05-21T04:22:35.694052Z"
     },
     "anthropics/skills:skills/skill-creator": {
       "repo": "anthropics/skills",
@@ -3277,7 +3277,7 @@
       "repo": "clockless-org/html-anything",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-20T04:14:19.235825Z"
+      "updated_at": "2026-05-21T04:23:02.386953Z"
     },
     "aiskillstore/marketplace:skills/easysoft/zentao-cli/SKILL.md": {
       "repo": "aiskillstore/marketplace",
@@ -5455,7 +5455,7 @@
       "repo": "dofollow-nl/google-ads-scripts-skills",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-05-20T04:14:03.627690Z"
+      "updated_at": "2026-05-21T04:22:36.544655Z"
     },
     "OthmanAdi/planning-with-files:skills/planning-with-files-zh/SKILL.md": {
       "repo": "OthmanAdi/planning-with-files",
@@ -7016,6 +7016,1848 @@
       "branch": "main",
       "relative_path": "skills/agentkit-seo-x-twitter/SKILL.md",
       "updated_at": "2026-05-20T04:14:02.343092Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:arbeitsrecht/skills/aufhebungsvertrag/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "arbeitsrecht/skills/aufhebungsvertrag/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.549138Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/portfolio-status/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/portfolio-status/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.556180Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:jurastudium/skills/gutachten-uebung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "jurastudium/skills/gutachten-uebung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.563216Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:jurastudium/skills/juristisches-schreiben/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "jurastudium/skills/juristisches-schreiben/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.570151Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:arbeitsrecht/skills/arbeitnehmer-status/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "arbeitsrecht/skills/arbeitnehmer-status/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.576538Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:kanzlei-cowork/skills/fristenbuch-fuehren/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "kanzlei-cowork/skills/fristenbuch-fuehren/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.581096Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/mandat-schliessen/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/mandat-schliessen/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.586734Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:arbeitsrecht/skills/kuendigungsschutzklage/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "arbeitsrecht/skills/kuendigungsschutzklage/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.598397Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:rechtsberatungsstelle/skills/status/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "rechtsberatungsstelle/skills/status/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.605934Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:vertragsrecht/skills/abmahnung-uwg/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "vertragsrecht/skills/abmahnung-uwg/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.613120Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:produktrecht/skills/impressum-pflicht/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "produktrecht/skills/impressum-pflicht/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.619646Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:vertragsrecht/skills/vertragspruefung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "vertragsrecht/skills/vertragspruefung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.629322Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/mandat-aktualisierung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/mandat-aktualisierung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.636852Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:verlagsredaktion/skills/verlagsredaktion/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "verlagsredaktion/skills/verlagsredaktion/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.644036Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:arbeitsrecht/skills/abmahnung-arbeitsrecht/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "arbeitsrecht/skills/abmahnung-arbeitsrecht/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.651823Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:arbeitsrecht/skills/betriebsrat-anhoerung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "arbeitsrecht/skills/betriebsrat-anhoerung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.660203Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:jurastudium/skills/karteikarten/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "jurastudium/skills/karteikarten/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.666424Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/gegenseite-status/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/gegenseite-status/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.673198Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:kanzlei-builder-hub/skills/skill-verwalter/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "kanzlei-builder-hub/skills/skill-verwalter/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.679141Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:jurastudium/skills/lernplan/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "jurastudium/skills/lernplan/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.687258Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:kanzlei-builder-hub/skills/deinstallieren/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "kanzlei-builder-hub/skills/deinstallieren/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.693613Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/streitwert/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/streitwert/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.699700Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:vertragsrecht/skills/aenderungs-historie/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "vertragsrecht/skills/aenderungs-historie/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.706965Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:vertragsrecht/skills/saas-msa-pruefung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "vertragsrecht/skills/saas-msa-pruefung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.714238Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:regulatorisches-recht/skills/inkasso-rdg/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "regulatorisches-recht/skills/inkasso-rdg/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.721143Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:nda-abgleich/skills/nda-abgleich/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "nda-abgleich/skills/nda-abgleich/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.732320Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:produktrecht/skills/produktrecht-anpassen/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "produktrecht/skills/produktrecht-anpassen/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.737492Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/schriftsatz-abschnitt/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/schriftsatz-abschnitt/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.742806Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/vorlageanordnung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/vorlageanordnung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.754041Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:kanzlei-cowork/skills/aktenbestand-pflege/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "kanzlei-cowork/skills/aktenbestand-pflege/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.758145Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/chronologie/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/chronologie/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.763125Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/verkehrsunfall/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/verkehrsunfall/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.769861Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:ki-governance/skills/richtlinien-monitor/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "ki-governance/skills/richtlinien-monitor/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.775899Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:vertragsrecht/skills/agb-pruefung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "vertragsrecht/skills/agb-pruefung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.782001Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:vertragsrecht/skills/eskalations-marker/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "vertragsrecht/skills/eskalations-marker/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.787055Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:jurastudium/skills/examens-prognose/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "jurastudium/skills/examens-prognose/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.792686Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/zeuge-vorbereitung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/zeuge-vorbereitung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.797751Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:vertragsrecht/skills/pruefungsvorschlaege/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "vertragsrecht/skills/pruefungsvorschlaege/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.804356Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:ki-governance/skills/richtlinien-vorlage/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "ki-governance/skills/richtlinien-vorlage/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.810352Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:kanzlei-cowork/skills/mahnwesen-honorar/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "kanzlei-cowork/skills/mahnwesen-honorar/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.814895Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:jurastudium/skills/lernsitzung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "jurastudium/skills/lernsitzung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.820245Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:jurastudium/skills/sokratisches-drillen/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "jurastudium/skills/sokratisches-drillen/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.831460Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:arbeitsrecht/skills/fehlzeit-erfassen/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "arbeitsrecht/skills/fehlzeit-erfassen/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.836351Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:arbeitsrecht/skills/einstellungspruefung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "arbeitsrecht/skills/einstellungspruefung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.843461Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/mahnbescheid/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/mahnbescheid/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.849624Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/beweissicherung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/beweissicherung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.855008Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:kanzlei-cowork/skills/versand-vor-check/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "kanzlei-cowork/skills/versand-vor-check/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.859436Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:mietrecht/skills/mietsenkungsverlangen/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "mietrecht/skills/mietsenkungsverlangen/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.867601Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:gesellschaftsrecht/skills/gmbh-gruendung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "gesellschaftsrecht/skills/gmbh-gruendung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.873927Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:produktrecht/skills/ist-das-ein-problem/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "produktrecht/skills/ist-das-ein-problem/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.880967Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:jurastudium/skills/jurastudium-anpassen/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "jurastudium/skills/jurastudium-anpassen/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.885542Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:kanzlei-cowork/skills/weihnachtskarten/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "kanzlei-cowork/skills/weihnachtskarten/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.889422Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:datenschutzrecht/skills/avv-pruefung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "datenschutzrecht/skills/avv-pruefung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.895553Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:tabellenreview-3d/skills/wuerfel-aufbauen/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "tabellenreview-3d/skills/wuerfel-aufbauen/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.899873Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/mahnschreiben-entwurf/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/mahnschreiben-entwurf/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.904618Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:arbeitsrecht/skills/kuendigungs-pruefung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "arbeitsrecht/skills/kuendigungs-pruefung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.912031Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:arbeitsrecht/skills/untersuchung-eroeffnen/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "arbeitsrecht/skills/untersuchung-eroeffnen/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.917983Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:kanzlei-cowork/skills/bea-versand-pruefen/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "kanzlei-cowork/skills/bea-versand-pruefen/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.922355Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:arbeitsrecht/skills/interne-untersuchung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "arbeitsrecht/skills/interne-untersuchung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.936740Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:ki-governance/skills/ki-anbieter-pruefung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "ki-governance/skills/ki-anbieter-pruefung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.943258Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/mandat-aufnahme/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/mandat-aufnahme/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.948162Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:regulatorisches-recht/skills/luecken/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "regulatorisches-recht/skills/luecken/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.952330Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:kanzlei-builder-hub/skills/deaktivieren/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "kanzlei-builder-hub/skills/deaktivieren/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.958567Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/vollstreckung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/vollstreckung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.965108Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/prozessrecht-anpassen/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/prozessrecht-anpassen/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.968429Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:mietrecht/skills/klageentwurf-amtsgericht/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "mietrecht/skills/klageentwurf-amtsgericht/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.972890Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:vertragsrecht/skills/nda-pruefung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "vertragsrecht/skills/nda-pruefung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.981178Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:datenschutzrecht/skills/mandantendaten-ki/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "datenschutzrecht/skills/mandantendaten-ki/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.988041Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:kanzlei-cowork/skills/posteingang-ausgang/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "kanzlei-cowork/skills/posteingang-ausgang/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.992244Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/mandat-briefing/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/mandat-briefing/SKILL.md",
+      "updated_at": "2026-05-21T04:22:18.996887Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:rechtsberatungsstelle/skills/fristen/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "rechtsberatungsstelle/skills/fristen/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.004310Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:jurastudium/skills/ag-vorbereitung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "jurastudium/skills/ag-vorbereitung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.009940Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:regulatorisches-recht/skills/ustva/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "regulatorisches-recht/skills/ustva/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.017038Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:betreuungsrecht/skills/betreuer-als-erbe/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "betreuungsrecht/skills/betreuer-als-erbe/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.024873Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:rechtsberatungsstelle/skills/einarbeitung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "rechtsberatungsstelle/skills/einarbeitung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.033348Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:vertragsrecht/skills/widerruf-fernabsatz/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "vertragsrecht/skills/widerruf-fernabsatz/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.039744Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:arbeitsrecht/skills/untersuchungs-memo/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "arbeitsrecht/skills/untersuchungs-memo/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.045886Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:arbeitsrecht/skills/untersuchung-abfrage/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "arbeitsrecht/skills/untersuchung-abfrage/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.051626Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:jurastudium/skills/fall-zusammenfassung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "jurastudium/skills/fall-zusammenfassung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.058565Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:arbeitsrecht/skills/expansion-auftakt/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "arbeitsrecht/skills/expansion-auftakt/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.064345Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:arbeitsrecht/skills/richtlinien-entwurf/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "arbeitsrecht/skills/richtlinien-entwurf/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.072894Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:ki-governance/skills/ki-inventar/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "ki-governance/skills/ki-inventar/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.082065Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:datenschutzrecht/skills/dsfa-erstellung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "datenschutzrecht/skills/dsfa-erstellung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.088321Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:rechtsberatungsstelle/skills/entwurf/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "rechtsberatungsstelle/skills/entwurf/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.096009Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:patentrecherche/skills/rueckfragen-mandant/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "patentrecherche/skills/rueckfragen-mandant/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.102693Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:patentrecherche/skills/neuheit-pruefen/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "patentrecherche/skills/neuheit-pruefen/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.109473Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:mietrecht/skills/mietspiegel-quellen/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "mietrecht/skills/mietspiegel-quellen/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.116970Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:arbeitsrecht/skills/arbeitsrecht-anpassen/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "arbeitsrecht/skills/arbeitsrecht-anpassen/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.121337Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:datenschutzrecht/skills/dsgvo-auskunft/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "datenschutzrecht/skills/dsgvo-auskunft/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.129556Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:produktrecht/skills/preisangaben/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "produktrecht/skills/preisangaben/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.136027Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:jurastudium/skills/gliederungs-baukasten/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "jurastudium/skills/gliederungs-baukasten/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.151198Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:arbeitsrecht/skills/fehlzeiten-register/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "arbeitsrecht/skills/fehlzeiten-register/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.156554Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:rechtsberatungsstelle/skills/memo/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "rechtsberatungsstelle/skills/memo/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.174002Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/mahnschreiben-aufnahme/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/mahnschreiben-aufnahme/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.247060Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:datenschutzrecht/skills/datenpanne-meldung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "datenschutzrecht/skills/datenpanne-meldung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.277910Z"
+    },
+    "Tibsfox/gsd-skill-creator:examples/skills/art/color-theory/SKILL.md": {
+      "repo": "Tibsfox/gsd-skill-creator",
+      "branch": "main",
+      "relative_path": "examples/skills/art/color-theory/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.286443Z"
+    },
+    "Tibsfox/gsd-skill-creator:examples/skills/gsd/gsd-trace/SKILL.md": {
+      "repo": "Tibsfox/gsd-skill-creator",
+      "branch": "main",
+      "relative_path": "examples/skills/gsd/gsd-trace/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.294488Z"
+    },
+    "Tibsfox/gsd-skill-creator:project-claude/skills/env-setup/SKILL.md": {
+      "repo": "Tibsfox/gsd-skill-creator",
+      "branch": "main",
+      "relative_path": "project-claude/skills/env-setup/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.299694Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:ki-governance/skills/anwendungsfall-triage/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "ki-governance/skills/anwendungsfall-triage/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.317022Z"
+    },
+    "Tibsfox/gsd-skill-creator:examples/skills/geography/geopolitics/SKILL.md": {
+      "repo": "Tibsfox/gsd-skill-creator",
+      "branch": "main",
+      "relative_path": "examples/skills/geography/geopolitics/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.335972Z"
+    },
+    "Tibsfox/gsd-skill-creator:examples/skills/philosophy/ethics/SKILL.md": {
+      "repo": "Tibsfox/gsd-skill-creator",
+      "branch": "main",
+      "relative_path": "examples/skills/philosophy/ethics/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.349436Z"
+    },
+    "Tibsfox/gsd-skill-creator:examples/skills/ops/incident-response/SKILL.md": {
+      "repo": "Tibsfox/gsd-skill-creator",
+      "branch": "main",
+      "relative_path": "examples/skills/ops/incident-response/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.359909Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:produktrecht/skills/launch-pruefung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "produktrecht/skills/launch-pruefung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.374617Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:prozessrecht/skills/anspruchstabelle/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "prozessrecht/skills/anspruchstabelle/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.389694Z"
+    },
+    "Tibsfox/gsd-skill-creator:examples/skills/history/oral-history/SKILL.md": {
+      "repo": "Tibsfox/gsd-skill-creator",
+      "branch": "main",
+      "relative_path": "examples/skills/history/oral-history/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.412995Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/sop-writer/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/sop-writer/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.422596Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/cicd-playbook/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/cicd-playbook/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.430561Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/qbr-deck/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/qbr-deck/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.436880Z"
+    },
+    "hypnguyen1209/offensive-claude:skills/threat-hunting/SKILL.md": {
+      "repo": "hypnguyen1209/offensive-claude",
+      "branch": "main",
+      "relative_path": "skills/threat-hunting/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.442844Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/okr-builder/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/okr-builder/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.447775Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/hiring-rubric/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/hiring-rubric/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.452522Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/account-plan/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/account-plan/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.456984Z"
+    },
+    "hypnguyen1209/offensive-claude:skills/initial-access/SKILL.md": {
+      "repo": "hypnguyen1209/offensive-claude",
+      "branch": "main",
+      "relative_path": "skills/initial-access/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.462490Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/meeting-notes/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/meeting-notes/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.469804Z"
+    },
+    "hypnguyen1209/offensive-claude:skills/advanced-redteam/SKILL.md": {
+      "repo": "hypnguyen1209/offensive-claude",
+      "branch": "main",
+      "relative_path": "skills/advanced-redteam/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.480549Z"
+    },
+    "hypnguyen1209/offensive-claude:skills/recon-osint/SKILL.md": {
+      "repo": "hypnguyen1209/offensive-claude",
+      "branch": "main",
+      "relative_path": "skills/recon-osint/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.486083Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/press-release/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/press-release/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.489981Z"
+    },
+    "hypnguyen1209/offensive-claude:skills/incident-response/SKILL.md": {
+      "repo": "hypnguyen1209/offensive-claude",
+      "branch": "main",
+      "relative_path": "skills/incident-response/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.495353Z"
+    },
+    "aiskillstore/marketplace:skills/agentsecops/pytm/SKILL.md": {
+      "repo": "aiskillstore/marketplace",
+      "branch": "main",
+      "relative_path": "skills/agentsecops/pytm/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.507747Z"
+    },
+    "hypnguyen1209/offensive-claude:skills/windows-mitigations/SKILL.md": {
+      "repo": "hypnguyen1209/offensive-claude",
+      "branch": "main",
+      "relative_path": "skills/windows-mitigations/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.514127Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/nda-analyser/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/nda-analyser/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.517758Z"
+    },
+    "hypnguyen1209/offensive-claude:skills/edr-evasion/SKILL.md": {
+      "repo": "hypnguyen1209/offensive-claude",
+      "branch": "main",
+      "relative_path": "skills/edr-evasion/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.524583Z"
+    },
+    "hypnguyen1209/offensive-claude:skills/active-directory-attack/SKILL.md": {
+      "repo": "hypnguyen1209/offensive-claude",
+      "branch": "main",
+      "relative_path": "skills/active-directory-attack/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.531085Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/sprint-brief/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/sprint-brief/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.534635Z"
+    },
+    "aiskillstore/marketplace:skills/leonxlnx/brandkit/SKILL.md": {
+      "repo": "aiskillstore/marketplace",
+      "branch": "main",
+      "relative_path": "skills/leonxlnx/brandkit/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.545577Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/legal-brief/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/legal-brief/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.549614Z"
+    },
+    "hypnguyen1209/offensive-claude:skills/crypto-analysis/SKILL.md": {
+      "repo": "hypnguyen1209/offensive-claude",
+      "branch": "main",
+      "relative_path": "skills/crypto-analysis/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.554821Z"
+    },
+    "hypnguyen1209/offensive-claude:skills/coding-mastery/SKILL.md": {
+      "repo": "hypnguyen1209/offensive-claude",
+      "branch": "main",
+      "relative_path": "skills/coding-mastery/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.560139Z"
+    },
+    "hypnguyen1209/offensive-claude:skills/keylogger-arch/SKILL.md": {
+      "repo": "hypnguyen1209/offensive-claude",
+      "branch": "main",
+      "relative_path": "skills/keylogger-arch/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.565845Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/go-to-market/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/go-to-market/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.570134Z"
+    },
+    "hypnguyen1209/offensive-claude:skills/privesc-windows/SKILL.md": {
+      "repo": "hypnguyen1209/offensive-claude",
+      "branch": "main",
+      "relative_path": "skills/privesc-windows/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.577825Z"
+    },
+    "hypnguyen1209/offensive-claude:skills/shellcode-dev/SKILL.md": {
+      "repo": "hypnguyen1209/offensive-claude",
+      "branch": "main",
+      "relative_path": "skills/shellcode-dev/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.584107Z"
+    },
+    "hypnguyen1209/offensive-claude:skills/malware-analysis/SKILL.md": {
+      "repo": "hypnguyen1209/offensive-claude",
+      "branch": "main",
+      "relative_path": "skills/malware-analysis/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.589633Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/claudekit/skills/checkpoint-management/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/claudekit/skills/checkpoint-management/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.599610Z"
+    },
+    "hypnguyen1209/offensive-claude:skills/mobile-pentest/SKILL.md": {
+      "repo": "hypnguyen1209/offensive-claude",
+      "branch": "main",
+      "relative_path": "skills/mobile-pentest/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.607335Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/unreal-lumen/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/unreal-lumen/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.610892Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/media-pitch/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/media-pitch/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.615220Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/retro-analysis/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/retro-analysis/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.619330Z"
+    },
+    "hypnguyen1209/offensive-claude:skills/windows-boundaries/SKILL.md": {
+      "repo": "hypnguyen1209/offensive-claude",
+      "branch": "main",
+      "relative_path": "skills/windows-boundaries/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.625600Z"
+    },
+    "hypnguyen1209/offensive-claude:skills/cloud-security/SKILL.md": {
+      "repo": "hypnguyen1209/offensive-claude",
+      "branch": "main",
+      "relative_path": "skills/cloud-security/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.631400Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/rfc-writer/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/rfc-writer/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.642163Z"
+    },
+    "a5c-ai/babysitter:library/specializations/web-development/skills/design-tokens/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/web-development/skills/design-tokens/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.645231Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/tech-radar/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/tech-radar/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.654022Z"
+    },
+    "a5c-ai/babysitter:library/specializations/security-research/skills/cve-cwe-db/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/security-research/skills/cve-cwe-db/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.657464Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/prd-template/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/prd-template/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.663073Z"
+    },
+    "a5c-ai/babysitter:library/specializations/web-development/skills/screen-reader/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/web-development/skills/screen-reader/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.666481Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/maestro/skills/specification-generation/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/maestro/skills/specification-generation/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.669769Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/godot-physics/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/godot-physics/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.672712Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/oncall-runbook/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/oncall-runbook/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.680252Z"
+    },
+    "a5c-ai/babysitter:library/specializations/ux-ui-design/skills/responsive-image/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/ux-ui-design/skills/responsive-image/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.684558Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:vertragsrecht/skills/nda-durchsetzer/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "vertragsrecht/skills/nda-durchsetzer/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.703971Z"
+    },
+    "a5c-ai/babysitter:library/specializations/mobile-development/skills/mobile-perf/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/mobile-development/skills/mobile-perf/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.710869Z"
+    },
+    "a5c-ai/babysitter:library/specializations/fpga-programming/skills/cdc-analysis/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/fpga-programming/skills/cdc-analysis/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.715244Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/lobby-system/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/lobby-system/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.718404Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/localization/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/localization/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.720916Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/unreal-nanite/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/unreal-nanite/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.724627Z"
+    },
+    "a5c-ai/babysitter:library/specializations/security-research/skills/fuzzing-ops/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/security-research/skills/fuzzing-ops/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.728261Z"
+    },
+    "a5c-ai/babysitter:library/specializations/ux-ui-design/skills/contrast-checker/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/ux-ui-design/skills/contrast-checker/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.732535Z"
+    },
+    "a5c-ai/babysitter:library/specializations/embedded-systems/skills/nordic-nrf/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/embedded-systems/skills/nordic-nrf/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.737399Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/spatial-audio/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/spatial-audio/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.740293Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/decal-systems/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/decal-systems/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.742728Z"
+    },
+    "a5c-ai/babysitter:library/specializations/ux-ui-design/skills/heatmap-analysis/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/ux-ui-design/skills/heatmap-analysis/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.747030Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/godot-csharp/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/godot-csharp/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.750694Z"
+    },
+    "a5c-ai/babysitter:library/specializations/devops-sre-platform/skills/gcp-cloud/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/devops-sre-platform/skills/gcp-cloud/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.754829Z"
+    },
+    "a5c-ai/babysitter:library/specializations/ux-ui-design/skills/browser-stack/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/ux-ui-design/skills/browser-stack/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.759265Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/email-campaign/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/email-campaign/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.763159Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/churn-analysis/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/churn-analysis/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.768640Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/pilot-shell/skills/worktree-isolation/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/pilot-shell/skills/worktree-isolation/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.773149Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/grant-proposal/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/grant-proposal/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.777384Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/client-server/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/client-server/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.779919Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/runbook-writer/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/runbook-writer/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.785279Z"
+    },
+    "a5c-ai/babysitter:library/specializations/gpu-programming/skills/cuda-debugging/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/gpu-programming/skills/cuda-debugging/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.796114Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/menu-systems/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/menu-systems/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.799140Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/gamemaker/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/gamemaker/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.802249Z"
+    },
+    "a5c-ai/babysitter:library/specializations/web-development/skills/storybook/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/web-development/skills/storybook/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.812219Z"
+    },
+    "hypnguyen1209/offensive-claude:skills/network-attack/SKILL.md": {
+      "repo": "hypnguyen1209/offensive-claude",
+      "branch": "main",
+      "relative_path": "skills/network-attack/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.817636Z"
+    },
+    "a5c-ai/babysitter:library/specializations/gpu-programming/skills/cublas-cudnn/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/gpu-programming/skills/cublas-cudnn/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.826135Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/superpowers/skills/systematic-debugging/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/superpowers/skills/systematic-debugging/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.829817Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/maestro/skills/requirements-interview/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/maestro/skills/requirements-interview/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.833016Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/claudekit/skills/research-orchestration/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/claudekit/skills/research-orchestration/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.836227Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/dashboard-brief/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/dashboard-brief/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.840575Z"
+    },
+    "a5c-ai/babysitter:library/specializations/embedded-systems/skills/arm-cortex-m/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/embedded-systems/skills/arm-cortex-m/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.844867Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/pilot-shell/skills/persistent-memory/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/pilot-shell/skills/persistent-memory/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.848784Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/onboarding-plan/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/onboarding-plan/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.858649Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/spec-kit/skills/cross-artifact-analysis/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/spec-kit/skills/cross-artifact-analysis/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.872562Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/investor-update/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/investor-update/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.877611Z"
+    },
+    "a5c-ai/babysitter:library/specializations/data-science-ml/skills/shap-explainer/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/data-science-ml/skills/shap-explainer/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.882322Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/api-docs-writer/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/api-docs-writer/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.887176Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/job-application/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/job-application/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.892603Z"
+    },
+    "a5c-ai/babysitter:library/methodologies/pilot-shell/skills/context-preservation/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/methodologies/pilot-shell/skills/context-preservation/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.896569Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/figma-design-qa/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/figma-design-qa/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.901569Z"
+    },
+    "a5c-ai/babysitter:library/specializations/game-development/skills/unity-physics/SKILL.md": {
+      "repo": "a5c-ai/babysitter",
+      "branch": "main",
+      "relative_path": "library/specializations/game-development/skills/unity-physics/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.905387Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/design-critique/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/design-critique/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.910950Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/proposal-writer/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/proposal-writer/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.914865Z"
+    },
+    "Klotzkette/claude-fuer-deutsches-recht:gesellschaftsrecht/skills/tabellenpruefung/SKILL.md": {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "branch": "main",
+      "relative_path": "gesellschaftsrecht/skills/tabellenpruefung/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.935732Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/ux-research-plan/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/ux-research-plan/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.961522Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/slo-error-budget/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/slo-error-budget/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.973442Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/sprint-planning/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/sprint-planning/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.979961Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/job-story-mapper/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/job-story-mapper/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.986020Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/pm-weekly-review/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/pm-weekly-review/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.993545Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/sales-battlecard/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/sales-battlecard/SKILL.md",
+      "updated_at": "2026-05-21T04:22:19.999625Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/assumption-mapper/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/assumption-mapper/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.003705Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/contract-review/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/contract-review/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.007308Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/roadmap-narrative/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/roadmap-narrative/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.011436Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/capacity-planning/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/capacity-planning/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.021447Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/load-testing-plan/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/load-testing-plan/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.031324Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/ai-product-canvas/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/ai-product-canvas/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.036721Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/content-calendar/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/content-calendar/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.040453Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/literature-review/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/literature-review/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.044380Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/performance-budget/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/performance-budget/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.052433Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/seo-content-brief/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/seo-content-brief/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.058991Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/pricing-strategy/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/pricing-strategy/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.064756Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/launch-readiness/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/launch-readiness/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.068659Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/pptx-slide-auditor/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/pptx-slide-auditor/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.073083Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/executive-update/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/executive-update/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.076657Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/rice-impact-matrix/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/rice-impact-matrix/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.080472Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/figma-design-brief/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/figma-design-brief/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.085984Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/vendor-evaluation/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/vendor-evaluation/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.089946Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/research-protocol/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/research-protocol/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.095238Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/executive-summary/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/executive-summary/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.099289Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/dependency-audit/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/dependency-audit/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.108446Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/feature-flag-guide/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/feature-flag-guide/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.118161Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/metrics-framework/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/metrics-framework/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.126723Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/figma-prototype-plan/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/figma-prototype-plan/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.130669Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/retention-analysis/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/retention-analysis/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.136579Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/clinical-case-summary/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/clinical-case-summary/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.146885Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/patient-communication/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/patient-communication/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.151738Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/ambiguity-resolver/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/ambiguity-resolver/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.156042Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/accessibility-audit/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/accessibility-audit/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.161337Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/service-catalog-entry/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/service-catalog-entry/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.170680Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/performance-review/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/performance-review/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.175277Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/code-review-checklist/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/code-review-checklist/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.179683Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/incident-postmortem/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/incident-postmortem/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.184813Z"
+    },
+    "parcadei/Continuous-Claude-v3:.claude/skills/agentica-spawn/SKILL.md": {
+      "repo": "parcadei/Continuous-Claude-v3",
+      "branch": "main",
+      "relative_path": ".claude/skills/agentica-spawn/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.187989Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/compliance-checklist/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/compliance-checklist/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.192393Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/figma-design-review/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/figma-design-review/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.195840Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/cs-health-scorecard/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/cs-health-scorecard/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.200904Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/infra-as-code-review/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/infra-as-code-review/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.209770Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/design-handoff-brief/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/design-handoff-brief/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.213675Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/figma-spacing-system/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/figma-spacing-system/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.217506Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/team-offsite-planner/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/team-offsite-planner/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.223031Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/figma-variant-matrix/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/figma-variant-matrix/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.226728Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/competitive-analysis/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/competitive-analysis/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.230899Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/teaching-lesson-plan/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/teaching-lesson-plan/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.235320Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/security-threat-model/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/security-threat-model/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.244455Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/competitor-teardown/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/competitor-teardown/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.248624Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/sql-query-explainer/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/sql-query-explainer/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.253206Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/figma-annotation-guide/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/figma-annotation-guide/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.256744Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/changelog-generator/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/changelog-generator/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.260883Z"
+    },
+    "Tibsfox/gsd-skill-creator:project-claude/skills/sling-dispatch/SKILL.md": {
+      "repo": "Tibsfox/gsd-skill-creator",
+      "branch": "main",
+      "relative_path": "project-claude/skills/sling-dispatch/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.274064Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/investor-pitch-deck/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/investor-pitch-deck/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.277809Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/go-to-market-planner/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/go-to-market-planner/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.282504Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/figma-component-audit/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/figma-component-audit/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.286181Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/chart-data-extractor/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/chart-data-extractor/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.290594Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/project-status-report/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/project-status-report/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.294602Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/board-deck-narrative/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/board-deck-narrative/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.300580Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/discovery-call-prep/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/discovery-call-prep/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.304735Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/docx-tracked-changes/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/docx-tracked-changes/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.309429Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/roadmap-presentation/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/roadmap-presentation/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.315428Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/pr-description-writer/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/pr-description-writer/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.319937Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/25.2-dotnet-sqlserver-best-practices/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/25.2-dotnet-sqlserver-best-practices/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.336526Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/experiment-designer/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/experiment-designer/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.340839Z"
+    },
+    "parcadei/Continuous-Claude-v3:.claude/skills/firecrawl-scrape/SKILL.md": {
+      "repo": "parcadei/Continuous-Claude-v3",
+      "branch": "main",
+      "relative_path": ".claude/skills/firecrawl-scrape/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.343681Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/stakeholder-update/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/stakeholder-update/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.349824Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/process-documentation/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/process-documentation/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.355577Z"
+    },
+    "redhat-community-ai-tools/claude-code-setup-evaluator:archive/clean-code-guide/SKILL.md": {
+      "repo": "redhat-community-ai-tools/claude-code-setup-evaluator",
+      "branch": "main",
+      "relative_path": "archive/clean-code-guide/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.358388Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/cs-escalation-brief/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/cs-escalation-brief/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.363808Z"
+    },
+    "mohitagw15856/pm-claude-skills:skills/rice-prioritisation/SKILL.md": {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "branch": "main",
+      "relative_path": "skills/rice-prioritisation/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.368110Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/09-dotnet-domain-events-generator/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/09-dotnet-domain-events-generator/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.381269Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/18-dotnet-audit-trail/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/18-dotnet-audit-trail/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.395709Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/17-dotnet-health-checks/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/17-dotnet-health-checks/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.401328Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/07.1-dotnet-legacy-api-controllers/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/07.1-dotnet-legacy-api-controllers/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.414337Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/06-dotnet-ef-core-configuration/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/06-dotnet-ef-core-configuration/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.426702Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/16.1-dotnet-email-service-sendgrid/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/16.1-dotnet-email-service-sendgrid/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.434140Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/02-dotnet-cqrs-command-generator/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/02-dotnet-cqrs-command-generator/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.445185Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/19-dotnet-dapper-query-builder/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/19-dotnet-dapper-query-builder/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.452526Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/11-dotnet-fluent-validation/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/11-dotnet-fluent-validation/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.465649Z"
+    },
+    "redhat-community-ai-tools/claude-code-setup-evaluator:archive/coding-standards/SKILL.md": {
+      "repo": "redhat-community-ai-tools/claude-code-setup-evaluator",
+      "branch": "main",
+      "relative_path": "archive/coding-standards/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.474537Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/07.2-dotnet-minimal-api-endpoints/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/07.2-dotnet-minimal-api-endpoints/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.487613Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/05-dotnet-repository-pattern/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/05-dotnet-repository-pattern/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.499908Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/23-dotnet-logging-configuration/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/23-dotnet-logging-configuration/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.512971Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/25.1-dotnet-postgresql-best-practices/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/25.1-dotnet-postgresql-best-practices/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.528587Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/21-dotnet-unit-testing/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/21-dotnet-unit-testing/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.546963Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/20-dotnet-specification-pattern/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/20-dotnet-specification-pattern/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.554960Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/24-dotnet-rate-limiting/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/24-dotnet-rate-limiting/SKILL.md",
+      "updated_at": "2026-05-21T04:22:20.570422Z"
+    },
+    "K-Dense-AI/scientific-agent-skills:scientific-skills/pufferlib/SKILL.md": {
+      "repo": "K-Dense-AI/scientific-agent-skills",
+      "branch": "main",
+      "relative_path": "scientific-skills/pufferlib/SKILL.md",
+      "updated_at": "2026-05-21T04:22:21.128168Z"
+    },
+    "athola/claude-night-market:plugins/imbue/skills/karpathy-principles/SKILL.md": {
+      "repo": "athola/claude-night-market",
+      "branch": "master",
+      "relative_path": "plugins/imbue/skills/karpathy-principles/SKILL.md",
+      "updated_at": "2026-05-21T04:22:21.153281Z"
+    },
+    "levnikolaevich/claude-code-skills:plugins/setup-environment/skills/ln-022-researchgraph/SKILL.md": {
+      "repo": "levnikolaevich/claude-code-skills",
+      "branch": "master",
+      "relative_path": "plugins/setup-environment/skills/ln-022-researchgraph/SKILL.md",
+      "updated_at": "2026-05-21T04:22:21.248352Z"
+    },
+    "levnikolaevich/claude-code-skills:plugins/optimization-suite/skills/ln-811-performance-profiler/SKILL.md": {
+      "repo": "levnikolaevich/claude-code-skills",
+      "branch": "master",
+      "relative_path": "plugins/optimization-suite/skills/ln-811-performance-profiler/SKILL.md",
+      "updated_at": "2026-05-21T04:22:22.296386Z"
+    },
+    "wanshuiyin/Auto-claude-code-research-in-sleep:skills/skills-codex/exa-search/SKILL.md": {
+      "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
+      "branch": "main",
+      "relative_path": "skills/skills-codex/exa-search/SKILL.md",
+      "updated_at": "2026-05-21T04:22:34.448119Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/14-dotnet-outbox-pattern/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/14-dotnet-outbox-pattern/SKILL.md",
+      "updated_at": "2026-05-21T04:22:35.142673Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/04-dotnet-domain-entity-generator/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/04-dotnet-domain-entity-generator/SKILL.md",
+      "updated_at": "2026-05-21T04:22:35.155741Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/08-dotnet-result-pattern/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/08-dotnet-result-pattern/SKILL.md",
+      "updated_at": "2026-05-21T04:22:35.168786Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/13-dotnet-permission-authorization/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/13-dotnet-permission-authorization/SKILL.md",
+      "updated_at": "2026-05-21T04:22:35.182878Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/azure-resource-manager-postgresql-dotnet/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/azure-resource-manager-postgresql-dotnet/SKILL.md",
+      "updated_at": "2026-05-21T04:22:35.192487Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/azure-servicebus-dotnet/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/azure-servicebus-dotnet/SKILL.md",
+      "updated_at": "2026-05-21T04:22:35.199971Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/android-jetpack-compose-expert/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/android-jetpack-compose-expert/SKILL.md",
+      "updated_at": "2026-05-21T04:22:35.204947Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/native-data-fetching/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/native-data-fetching/SKILL.md",
+      "updated_at": "2026-05-21T04:22:35.213459Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/10-dotnet-pipeline-behaviors/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/10-dotnet-pipeline-behaviors/SKILL.md",
+      "updated_at": "2026-05-21T04:22:35.227443Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/16.2-dotnet-email-service-aws-ses/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/16.2-dotnet-email-service-aws-ses/SKILL.md",
+      "updated_at": "2026-05-21T04:22:35.240375Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/03-dotnet-cqrs-query-generator/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/03-dotnet-cqrs-query-generator/SKILL.md",
+      "updated_at": "2026-05-21T04:22:35.253525Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/15-dotnet-quartz-background-jobs/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/15-dotnet-quartz-background-jobs/SKILL.md",
+      "updated_at": "2026-05-21T04:22:35.265763Z"
+    },
+    "sickn33/antigravity-awesome-skills:skills/seo-content-auditor/SKILL.md": {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "branch": "main",
+      "relative_path": "skills/seo-content-auditor/SKILL.md",
+      "updated_at": "2026-05-21T04:22:35.273671Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/26-dotnet-options-pattern/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/26-dotnet-options-pattern/SKILL.md",
+      "updated_at": "2026-05-21T04:22:35.287032Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/22-dotnet-integration-testing/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/22-dotnet-integration-testing/SKILL.md",
+      "updated_at": "2026-05-21T04:22:35.305645Z"
+    },
+    "ronnythedev/dotnet-clean-architecture-skills:skills/12-dotnet-jwt-authentication/SKILL.md": {
+      "repo": "ronnythedev/dotnet-clean-architecture-skills",
+      "branch": "main",
+      "relative_path": "skills/12-dotnet-jwt-authentication/SKILL.md",
+      "updated_at": "2026-05-21T04:22:35.327642Z"
+    },
+    "tdimino/claude-code-minoan:skills/integration-automation/stock-monitor/SKILL.md": {
+      "repo": "tdimino/claude-code-minoan",
+      "branch": "main",
+      "relative_path": "skills/integration-automation/stock-monitor/SKILL.md",
+      "updated_at": "2026-05-21T04:22:36.110459Z"
     }
   }
 }

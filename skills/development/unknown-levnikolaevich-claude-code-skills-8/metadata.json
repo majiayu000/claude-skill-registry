@@ -1,0 +1,23 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "plugins/setup-environment/skills/ln-022-researchgraph/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-levnikolaevich-claude-code-skills-8",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "references/researchgraph_mcp_usage.md"
+  ],
+  "author": "levnikolaevich",
+  "source_url": "https://github.com/levnikolaevich/claude-code-skills/blob/master/plugins/setup-environment/skills/ln-022-researchgraph/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/levnikolaevich/claude-code-skills/blob/master/plugins/setup-environment/skills/ln-022-researchgraph/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

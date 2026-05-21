@@ -1,0 +1,21 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "hypnguyen1209/offensive-claude",
+  "path": "skills/windows-mitigations/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-hypnguyen1209-offensive-claude-8",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "hypnguyen1209",
+  "source_url": "https://github.com/hypnguyen1209/offensive-claude/blob/main/skills/windows-mitigations/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hypnguyen1209/offensive-claude/blob/main/skills/windows-mitigations/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

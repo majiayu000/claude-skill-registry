@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-05-20T12:28:05.428177Z",
-  "archive_skill_md_count_raw": 229302,
-  "archive_metadata_count_raw": 229302,
-  "indexed_skill_count_scan_shape": 229302,
-  "registry_skill_count_dedup": 155897,
+  "updated_at": "2026-05-21T04:38:05.064675Z",
+  "archive_skill_md_count_raw": 229626,
+  "archive_metadata_count_raw": 229626,
+  "indexed_skill_count_scan_shape": 229626,
+  "registry_skill_count_dedup": 156204,
   "total_plugins": 3,
   "categories": 76,
   "category_counts": [
@@ -95,7 +95,7 @@
     {
       "name": "data",
       "code": "dat",
-      "count": 46397
+      "count": 46398
     },
     {
       "name": "data-access",
@@ -105,7 +105,7 @@
     {
       "name": "design",
       "code": "des",
-      "count": 9536
+      "count": 9538
     },
     {
       "name": "design-principles",
@@ -115,7 +115,7 @@
     {
       "name": "development",
       "code": "dev",
-      "count": 20859
+      "count": 21168
     },
     {
       "name": "development-code",
@@ -130,7 +130,7 @@
     {
       "name": "devops",
       "code": "ops",
-      "count": 5328
+      "count": 5329
     },
     {
       "name": "docs",
@@ -215,12 +215,12 @@
     {
       "name": "marketing",
       "code": "mkt",
-      "count": 488
+      "count": 490
     },
     {
       "name": "messaging",
       "code": "messaging",
-      "count": 32
+      "count": 33
     },
     {
       "name": "meta",
@@ -245,7 +245,7 @@
     {
       "name": "personal-development",
       "code": "personal-development",
-      "count": 43
+      "count": 44
     },
     {
       "name": "planning",
@@ -265,7 +265,7 @@
     {
       "name": "productivity",
       "code": "pro",
-      "count": 2157
+      "count": 2163
     },
     {
       "name": "programming-languages",
@@ -350,7 +350,7 @@
     {
       "name": "testing",
       "code": "tst",
-      "count": 6773
+      "count": 6774
     },
     {
       "name": "testing-methodologies",
@@ -388,7 +388,7 @@
       "count": 1
     }
   ],
-  "unique_repo_count": 9751,
+  "unique_repo_count": 9754,
   "official_skill_count": 0,
   "top_repositories": [
     {
@@ -401,7 +401,7 @@
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "count": 1559
+      "count": 1564
     },
     {
       "repo": "plurigrid/asi",
@@ -409,7 +409,7 @@
     },
     {
       "repo": "a5c-ai/babysitter",
-      "count": 1348
+      "count": 1386
     },
     {
       "repo": "boisenoise/skills-collections",
@@ -425,7 +425,7 @@
     },
     {
       "repo": "levnikolaevich/claude-code-skills",
-      "count": 980
+      "count": 982
     },
     {
       "repo": "gtmagents/gtm-agents",
@@ -434,21 +434,21 @@
   ],
   "featured_count": 100,
   "index_size_bytes": 162,
-  "index_size_gzip_bytes": 173,
+  "index_size_gzip_bytes": 174,
   "search_shard_count": 7,
-  "search_largest_shard_bytes": 8388648,
-  "search_largest_shard_gzip_bytes": 2582636,
+  "search_largest_shard_bytes": 8388686,
+  "search_largest_shard_gzip_bytes": 2583163,
   "category_shard_count": 90,
   "category_largest_part_bytes": 8388748,
-  "category_largest_part_gzip_bytes": 1760408,
-  "lite_index_count": 156462,
+  "category_largest_part_gzip_bytes": 1760249,
+  "lite_index_count": 156769,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3501765,
-  "lite_index_gzip_size_bytes": 675049,
+  "lite_index_gzip_size_bytes": 675050,
   "quality_index_size_bytes": 220,
-  "quality_index_gzip_size_bytes": 213,
+  "quality_index_gzip_size_bytes": 214,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388710,
+  "quality_largest_shard_bytes": 8388675,
   "quality_largest_shard_gzip_bytes": 1764796,
   "security_index_size_bytes": 223,
   "security_index_gzip_size_bytes": 215,
@@ -456,9 +456,9 @@
   "security_largest_shard_bytes": 8388667,
   "security_largest_shard_gzip_bytes": 2410357,
   "ranking_index_size_bytes": 220,
-  "ranking_index_gzip_size_bytes": 213,
+  "ranking_index_gzip_size_bytes": 214,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388709,
-  "ranking_largest_shard_gzip_bytes": 2262344,
+  "ranking_largest_shard_bytes": 8388698,
+  "ranking_largest_shard_gzip_bytes": 2262345,
   "largest_generated_file_bytes": 8388748
 }

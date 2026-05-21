@@ -205,6 +205,13 @@ For semantic reclassification, generate a review-only migration plan with
 `python scripts/plan_category_migration.py --skills-dir skills --output category-migration-plan.json`.
 The plan records action, confidence, source categories, target category, keyword
 signals, and reason for every proposed change; it does not move files.
+For a bounded second-pass model review, set `MIMO_API_KEY` and run
+`python scripts/review_category_plan_with_llm.py --plan category-migration-plan.json --output category-llm-review.json --checkpoint-jsonl category-llm-review.checkpoint.jsonl --resume`.
+The default endpoint is `https://token-plan-sgp.xiaomimimo.com/v1` with
+`mimo-v2.5-pro`, and the report remains review-only: it records model category,
+confidence, decision, parse status, and evidence without modifying the archive.
+The checkpoint file is append-only JSONL, so interrupted long reviews can resume
+without re-calling the model for completed candidates.
 
 Category counts are published in `categories/index.json`; full category payloads
 are available through `categories/<category>/manifest.json` and bounded

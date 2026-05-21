@@ -1,0 +1,69 @@
+# Example Company Knowledge Base Configuration
+# ==============================================
+# Copy this file to ckb-config.yaml in your working directory
+# and customize it for your company.
+
+company_name: "Your Company Name"
+company_description: >
+  Brief description of your company. This helps the LLM understand
+  context when compiling and answering questions about your knowledge base.
+
+confluence:
+  # Your Confluence Cloud URL
+  url: "https://yourcompany.atlassian.net"
+
+  # Email address associated with your Confluence account
+  email: "${CONFLUENCE_EMAIL}"
+
+  # Confluence API token (generate at https://id.atlassian.com/manage-profile/security/api-tokens)
+  api_token: "${CONFLUENCE_API_TOKEN}"
+
+  # Cloud ID (optional - will be auto-detected if not set)
+  # Find yours at: https://yourcompany.atlassian.net/_edge/tenant_info
+  cloud_id: null
+
+spaces:
+  # Space keys to include (empty list = include all)
+  # Find your space keys in the Confluence URL: /wiki/spaces/SPACE_KEY
+  include: []
+
+  # Space keys to explicitly exclude
+  exclude: []
+
+  # Whether to include archived spaces
+  include_archived: false
+
+  # Whether to include personal spaces
+  include_personal: false
+
+compile:
+  # Which Claude model to use for compilation
+  model: "claude-sonnet-4-20250514"
+  max_tokens: 4096
+
+  # Categories to organize content into (customize for your company)
+  categories:
+    - processes       # SOPs, workflows, procedures
+    - policies        # Company policies, guidelines
+    - teams           # Team info, roles, responsibilities
+    - projects        # Project documentation
+    - technical       # Technical docs, architecture, APIs
+    - meetings        # Meeting notes and minutes
+    - onboarding      # New employee materials
+    - general         # Catch-all
+
+  # Pages with less content than this are skipped
+  min_content_length: 50
+
+  # Extract cross-cutting concepts into dedicated articles
+  generate_concepts: true
+
+  # Generate backlinks between related pages
+  generate_backlinks: true
+
+raw_dir: "raw"
+wiki_dir: "wiki"
+output_dir: "output"
+
+# Anthropic API key (can also be set via ANTHROPIC_API_KEY env var)
+anthropic_api_key: "${ANTHROPIC_API_KEY}"

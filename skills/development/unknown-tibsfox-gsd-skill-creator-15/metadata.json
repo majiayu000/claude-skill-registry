@@ -1,0 +1,24 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "project-claude/skills/sling-dispatch/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-tibsfox-gsd-skill-creator-15",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "references/gastown-origin.md",
+    "references/pipeline-implementation.md"
+  ],
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/project-claude/skills/sling-dispatch/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/project-claude/skills/sling-dispatch/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

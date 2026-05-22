@@ -1,0 +1,17 @@
+{
+  "name": "ai-ml",
+  "repo": "Zidong-IA/BIBLIOTECA",
+  "path": "skills/skills/ai-ml/ai-ml/SKILL.md",
+  "github_branch": "master",
+  "category": "ai-ml",
+  "source": "github.com/Zidong-IA/BIBLIOTECA",
+  "dir_name": "ai-ml-zidong-ia-biblioteca",
+  "downloaded_at": "2026-03-22T06:36:15.634319Z",
+  "author": "Zidong-IA",
+  "source_url": "https://github.com/Zidong-IA/BIBLIOTECA/blob/master/skills/skills/ai-ml/ai-ml/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Zidong-IA/BIBLIOTECA/blob/master/skills/skills/ai-ml/ai-ml/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "agentic-rag-patterns",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/agentic-rag-patterns/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:15.679107Z",
+  "dir_name": "agentic-rag-patterns",
+  "category": "ai-llm",
+  "github_path": "skills/agentic-rag-patterns",
+  "github_branch": "main"
+}

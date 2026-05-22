@@ -1,0 +1,20 @@
+{
+  "name": "ansible",
+  "description": "",
+  "repo": "jpoutrin/product-forge",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jpoutrin/product-forge",
+  "github_path": "plugins/devops-data/skills/ansible",
+  "github_branch": "main",
+  "dir_name": "ansible-jpoutrin-product-forge",
+  "downloaded_at": "2026-02-05T01:44:46.821480Z",
+  "author": "jpoutrin",
+  "source_url": "https://github.com/jpoutrin/product-forge/blob/main/plugins/devops-data/skills/ansible/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 jpoutrin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

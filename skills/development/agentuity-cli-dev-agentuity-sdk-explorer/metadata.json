@@ -1,0 +1,18 @@
+{
+  "name": "agentuity-cli-dev",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-dev/SKILL.md",
+  "source": "github.com/agentuity/sdk-explorer",
+  "downloaded_at": "2026-01-22T03:37:16.348260Z",
+  "dir_name": "agentuity-cli-dev-agentuity-sdk-explorer",
+  "category": "development",
+  "github_path": ".agents/skills/agentuity-cli-dev",
+  "github_branch": "main",
+  "author": "agentuity",
+  "source_url": "https://github.com/agentuity/sdk-explorer/blob/main/.agents/skills/agentuity-cli-dev/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agentuity/sdk-explorer/blob/main/.agents/skills/agentuity-cli-dev/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

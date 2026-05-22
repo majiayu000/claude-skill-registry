@@ -1,0 +1,16 @@
+{
+  "name": "api-doc-generator",
+  "repo": "JackyST0/awesome-agent-skills",
+  "path": "examples/api-doc-generator/SKILL.md",
+  "source": "github.com/JackyST0/awesome-agent-skills",
+  "downloaded_at": "2026-01-29T06:29:47.462642Z",
+  "dir_name": "api-doc-generator-jackyst0-awesome-agent-skills",
+  "category": "documents",
+  "author": "JackyST0",
+  "source_url": "https://github.com/JackyST0/awesome-agent-skills/blob/main/examples/api-doc-generator/SKILL.md",
+  "license": "CC0-1.0",
+  "copyright": "Copyright and Related Rights in the Work and the meaning and intended legal",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

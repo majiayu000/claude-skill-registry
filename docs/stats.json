@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-22T08:12:57.188917Z",
+  "updated_at": "2026-05-22T09:38:02.523679Z",
   "archive_skill_md_count_raw": 234691,
   "archive_metadata_count_raw": 234691,
   "indexed_skill_count_scan_shape": 234691,
@@ -25,12 +25,12 @@
     {
       "name": "ai-llm",
       "code": "ai-llm",
-      "count": 24
+      "count": 160
     },
     {
       "name": "ai-ml",
       "code": "ai-ml",
-      "count": 33
+      "count": 121
     },
     {
       "name": "analysis",
@@ -95,7 +95,7 @@
     {
       "name": "data",
       "code": "dat",
-      "count": 46415
+      "count": 46537
     },
     {
       "name": "data-access",
@@ -105,7 +105,7 @@
     {
       "name": "design",
       "code": "des",
-      "count": 9666
+      "count": 9711
     },
     {
       "name": "design-principles",
@@ -115,7 +115,7 @@
     {
       "name": "development",
       "code": "dev",
-      "count": 21462
+      "count": 21665
     },
     {
       "name": "development-code",
@@ -130,7 +130,7 @@
     {
       "name": "devops",
       "code": "ops",
-      "count": 5384
+      "count": 5512
     },
     {
       "name": "docs",
@@ -145,7 +145,7 @@
     {
       "name": "documents",
       "code": "doc",
-      "count": 3298
+      "count": 3332
     },
     {
       "name": "domains",
@@ -200,7 +200,7 @@
     {
       "name": "integration",
       "code": "integration",
-      "count": 86
+      "count": 165
     },
     {
       "name": "language",
@@ -215,7 +215,7 @@
     {
       "name": "marketing",
       "code": "mkt",
-      "count": 557
+      "count": 593
     },
     {
       "name": "messaging",
@@ -235,7 +235,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 135996
+      "count": 134996
     },
     {
       "name": "performance",
@@ -280,7 +280,7 @@
     {
       "name": "quality",
       "code": "quality",
-      "count": 25
+      "count": 43
     },
     {
       "name": "research-analysis",
@@ -290,7 +290,7 @@
     {
       "name": "security",
       "code": "sec",
-      "count": 1339
+      "count": 1396
     },
     {
       "name": "security-compliance",
@@ -350,7 +350,7 @@
     {
       "name": "testing",
       "code": "tst",
-      "count": 6958
+      "count": 7012
     },
     {
       "name": "testing-methodologies",
@@ -388,7 +388,7 @@
       "count": 1
     }
   ],
-  "unique_repo_count": 9760,
+  "unique_repo_count": 9761,
   "official_skill_count": 0,
   "top_repositories": [
     {
@@ -436,11 +436,11 @@
   "index_size_bytes": 162,
   "index_size_gzip_bytes": 175,
   "search_shard_count": 7,
-  "search_largest_shard_bytes": 8388577,
-  "search_largest_shard_gzip_bytes": 2554507,
+  "search_largest_shard_bytes": 8388632,
+  "search_largest_shard_gzip_bytes": 2556276,
   "category_shard_count": 91,
-  "category_largest_part_bytes": 8388717,
-  "category_largest_part_gzip_bytes": 1760256,
+  "category_largest_part_bytes": 8388731,
+  "category_largest_part_gzip_bytes": 1760098,
   "lite_index_count": 156853,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3497682,
@@ -448,17 +448,17 @@
   "quality_index_size_bytes": 220,
   "quality_index_gzip_size_bytes": 213,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388674,
-  "quality_largest_shard_gzip_bytes": 1764273,
+  "quality_largest_shard_bytes": 8388649,
+  "quality_largest_shard_gzip_bytes": 1764918,
   "security_index_size_bytes": 223,
-  "security_index_gzip_size_bytes": 214,
+  "security_index_gzip_size_bytes": 215,
   "security_shard_count": 4,
-  "security_largest_shard_bytes": 8388716,
-  "security_largest_shard_gzip_bytes": 2409915,
+  "security_largest_shard_bytes": 8388665,
+  "security_largest_shard_gzip_bytes": 2410692,
   "ranking_index_size_bytes": 220,
   "ranking_index_gzip_size_bytes": 213,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388668,
-  "ranking_largest_shard_gzip_bytes": 2261805,
-  "largest_generated_file_bytes": 8388717
+  "ranking_largest_shard_bytes": 8388681,
+  "ranking_largest_shard_gzip_bytes": 2262091,
+  "largest_generated_file_bytes": 8388731
 }

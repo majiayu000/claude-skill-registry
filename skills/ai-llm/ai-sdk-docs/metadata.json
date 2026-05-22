@@ -1,0 +1,18 @@
+{
+  "name": "ai-sdk-docs",
+  "repo": "malob/nix-config",
+  "path": "configs/claude/plugins/ai-sdk/skills/ai-sdk-docs/SKILL.md",
+  "source": "github.com/malob/nix-config",
+  "downloaded_at": "2026-01-22T03:28:52.452802Z",
+  "dir_name": "ai-sdk-docs",
+  "category": "ai-llm",
+  "github_path": "configs/claude/plugins/ai-sdk/skills/ai-sdk-docs",
+  "github_branch": "main",
+  "author": "malob",
+  "source_url": "https://github.com/malob/nix-config/blob/main/configs/claude/plugins/ai-sdk/skills/ai-sdk-docs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2020 Malo Bourgon",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

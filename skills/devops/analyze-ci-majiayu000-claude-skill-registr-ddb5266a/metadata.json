@@ -1,0 +1,16 @@
+{
+  "name": "analyze-ci",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/analyze-ci/SKILL.md",
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "downloaded_at": "2026-02-02T04:36:17.994053Z",
+  "dir_name": "analyze-ci-majiayu000-claude-skill-registr-ddb5266a",
+  "category": "devops",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/analyze-ci/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

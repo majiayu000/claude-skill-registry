@@ -1,0 +1,18 @@
+{
+  "name": "analyzing-test-quality",
+  "repo": "C0ntr0lledCha0s/claude-code-plugin-automations",
+  "path": "testing-expert/skills/analyzing-test-quality/SKILL.md",
+  "source": "github.com/C0ntr0lledCha0s/claude-code-plugin-automations",
+  "downloaded_at": "2026-01-22T01:49:14.717982Z",
+  "dir_name": "analyzing-test-quality",
+  "category": "testing",
+  "github_path": "testing-expert/skills/analyzing-test-quality",
+  "github_branch": "main",
+  "author": "C0ntr0lledCha0s",
+  "source_url": "https://github.com/C0ntr0lledCha0s/claude-code-plugin-automations/blob/main/testing-expert/skills/analyzing-test-quality/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 C0ntr0lledCha0s",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

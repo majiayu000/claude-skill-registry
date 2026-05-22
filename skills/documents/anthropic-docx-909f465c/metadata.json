@@ -1,0 +1,9 @@
+{
+  "source": "https://github.com/anthropics/skills",
+  "path": "skills/docx/SKILL.md",
+  "branch": "main",
+  "fetched_at": "2026-01-08T03:09:27Z",
+  "name": "anthropic-docx",
+  "category": "documents",
+  "dir_name": "anthropic-docx-909f465c"
+}

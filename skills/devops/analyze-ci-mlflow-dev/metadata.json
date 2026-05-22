@@ -1,0 +1,13 @@
+{
+  "name": "analyze-ci",
+  "description": "A fork of the mlflow/mlflow repository for testing automation jobs",
+  "repo": "mlflow/dev",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".claude/skills/analyze-ci",
+  "github_branch": "master",
+  "dir_name": "analyze-ci-mlflow-dev",
+  "downloaded_at": "2026-02-05T01:45:39.225311Z"
+}

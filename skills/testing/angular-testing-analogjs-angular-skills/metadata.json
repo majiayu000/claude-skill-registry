@@ -1,0 +1,16 @@
+{
+  "name": "angular-testing",
+  "repo": "analogjs/angular-skills",
+  "path": "skills/angular-testing/SKILL.md",
+  "source": "github.com/analogjs/angular-skills",
+  "downloaded_at": "2026-01-29T03:03:27.615201Z",
+  "dir_name": "angular-testing-analogjs-angular-skills",
+  "category": "testing",
+  "author": "analogjs",
+  "source_url": "https://github.com/analogjs/angular-skills/blob/main/skills/angular-testing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Brandon Roberts",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

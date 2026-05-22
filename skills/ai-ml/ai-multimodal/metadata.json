@@ -1,0 +1,13 @@
+{
+  "name": "ai-multimodal",
+  "description": "",
+  "repo": "vumichien/bi-agent",
+  "category": "ai-ml",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vumichien/bi-agent",
+  "github_path": ".claude/skills/ai-multimodal",
+  "github_branch": "main",
+  "dir_name": "ai-multimodal",
+  "downloaded_at": "2026-02-05T01:44:53.824172Z"
+}

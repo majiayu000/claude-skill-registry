@@ -1,0 +1,16 @@
+{
+  "name": "ai-sdk-best-practices",
+  "repo": "rdfitted/Claude-Code-Setup",
+  "path": "skills/ai-sdk-best-practices/SKILL.md",
+  "source": "github.com/rdfitted/Claude-Code-Setup",
+  "downloaded_at": "2026-02-02T01:55:59.463980Z",
+  "dir_name": "ai-sdk-best-practices",
+  "category": "ai-llm",
+  "author": "rdfitted",
+  "source_url": "https://github.com/rdfitted/Claude-Code-Setup/blob/main/skills/ai-sdk-best-practices/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rdfitted/Claude-Code-Setup/blob/main/skills/ai-sdk-best-practices/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

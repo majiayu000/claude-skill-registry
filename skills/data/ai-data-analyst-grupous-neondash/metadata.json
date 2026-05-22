@@ -1,0 +1,18 @@
+{
+  "name": "ai-data-analyst",
+  "repo": "GrupoUS/neondash",
+  "path": ".agent/skills/ai-data-analyst/SKILL.md",
+  "source": "github.com/GrupoUS/neondash",
+  "downloaded_at": "2026-01-22T02:49:13.731598Z",
+  "dir_name": "ai-data-analyst-grupous-neondash",
+  "category": "data",
+  "github_path": ".claude/skills/ai-data-analyst",
+  "github_branch": "main",
+  "author": "GrupoUS",
+  "source_url": "https://github.com/GrupoUS/neondash/blob/main/.claude/skills/ai-data-analyst/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GrupoUS/neondash/blob/main/.claude/skills/ai-data-analyst/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

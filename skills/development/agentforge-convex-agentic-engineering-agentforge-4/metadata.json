@@ -1,0 +1,17 @@
+{
+  "name": "agentforge-convex",
+  "repo": "Agentic-Engineering-Agency/agentforge",
+  "path": ".agents/skills/agentforge-convex/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/Agentic-Engineering-Agency/agentforge",
+  "dir_name": "agentforge-convex-agentic-engineering-agentforge-4",
+  "downloaded_at": "2026-03-22T04:48:34.370956Z",
+  "author": "Agentic-Engineering-Agency",
+  "source_url": "https://github.com/Agentic-Engineering-Agency/agentforge/blob/main/.agents/skills/agentforge-convex/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Agentic-Engineering-Agency/agentforge/blob/main/.agents/skills/agentforge-convex/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

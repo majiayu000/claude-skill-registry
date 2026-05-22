@@ -1,0 +1,18 @@
+{
+  "name": "apache-nifi-registry",
+  "repo": "oriolrius/nifi-cluster",
+  "path": ".claude/skills/apache-nifi-registry/SKILL.md",
+  "source": "github.com/oriolrius/nifi-cluster",
+  "downloaded_at": "2026-01-22T01:39:50.077500Z",
+  "dir_name": "apache-nifi-registry-oriolrius-nifi-cluster",
+  "category": "data",
+  "github_path": ".claude/skills/apache-nifi-registry",
+  "github_branch": "main",
+  "author": "oriolrius",
+  "source_url": "https://github.com/oriolrius/nifi-cluster/blob/main/.claude/skills/apache-nifi-registry/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oriolrius/nifi-cluster/blob/main/.claude/skills/apache-nifi-registry/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

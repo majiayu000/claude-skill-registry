@@ -1,0 +1,18 @@
+{
+  "name": "ai-native-development",
+  "repo": "ArieGoldkin/ai-agent-hub",
+  "path": "skills/ai-native-development/SKILL.md",
+  "source": "github.com/ArieGoldkin/ai-agent-hub",
+  "downloaded_at": "2026-01-14T03:52:03.712104Z",
+  "dir_name": "ai-native-development",
+  "category": "ai-llm",
+  "github_path": "skills/ai-native-development",
+  "github_branch": "main",
+  "author": "ArieGoldkin",
+  "source_url": "https://github.com/ArieGoldkin/ai-agent-hub/blob/main/skills/ai-native-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Arie Goldkin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

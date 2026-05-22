@@ -1,0 +1,18 @@
+{
+  "name": "android-java",
+  "repo": "alinaqi/claude-bootstrap",
+  "path": "skills/android-java/SKILL.md",
+  "source": "github.com/alinaqi/claude-bootstrap",
+  "downloaded_at": "2026-01-22T03:20:50.378485Z",
+  "dir_name": "android-java",
+  "category": "development",
+  "github_path": "skills/android-java",
+  "github_branch": "main",
+  "author": "alinaqi",
+  "source_url": "https://github.com/alinaqi/claude-bootstrap/blob/main/skills/android-java/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ali Naqi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

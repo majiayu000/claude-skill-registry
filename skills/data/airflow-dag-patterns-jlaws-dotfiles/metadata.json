@@ -1,0 +1,16 @@
+{
+  "name": "airflow-dag-patterns",
+  "repo": "jlaws/dotfiles",
+  "path": ".claude/skills/data/airflow-dag-patterns/SKILL.md",
+  "category": "data",
+  "source": "github.com/jlaws/dotfiles",
+  "dir_name": "airflow-dag-patterns-jlaws-dotfiles",
+  "downloaded_at": "2026-02-15T07:44:33.475173Z",
+  "author": "jlaws",
+  "source_url": "https://github.com/jlaws/dotfiles/blob/main/.claude/skills/data/airflow-dag-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jlaws/dotfiles/blob/main/.claude/skills/data/airflow-dag-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

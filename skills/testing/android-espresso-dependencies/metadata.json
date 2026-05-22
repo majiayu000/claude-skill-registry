@@ -1,0 +1,18 @@
+{
+  "name": "android-espresso-dependencies",
+  "repo": "hitoshura25/claude-devtools",
+  "path": "skills/android-espresso-dependencies/SKILL.md",
+  "source": "github.com/hitoshura25/claude-devtools",
+  "downloaded_at": "2026-01-22T03:26:57.761761Z",
+  "dir_name": "android-espresso-dependencies",
+  "category": "testing",
+  "github_path": "skills/android-espresso-dependencies",
+  "github_branch": "main",
+  "author": "hitoshura25",
+  "source_url": "https://github.com/hitoshura25/claude-devtools/blob/main/skills/android-espresso-dependencies/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hitoshura25/claude-devtools/blob/main/skills/android-espresso-dependencies/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

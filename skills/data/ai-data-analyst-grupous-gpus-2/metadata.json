@@ -1,0 +1,16 @@
+{
+  "name": "ai-data-analyst",
+  "repo": "GrupoUS/gpus",
+  "path": ".claude/skills/ai-data-analyst/SKILL.md",
+  "category": "data",
+  "source": "github.com/GrupoUS/gpus",
+  "dir_name": "ai-data-analyst-grupous-gpus-2",
+  "downloaded_at": "2026-02-15T05:10:19.399896Z",
+  "author": "GrupoUS",
+  "source_url": "https://github.com/GrupoUS/gpus/blob/main/.claude/skills/ai-data-analyst/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GrupoUS/gpus/blob/main/.claude/skills/ai-data-analyst/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

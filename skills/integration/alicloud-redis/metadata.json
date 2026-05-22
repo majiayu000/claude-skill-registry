@@ -1,0 +1,17 @@
+{
+  "name": "alicloud-redis",
+  "repo": "agents-infrastructure/licell",
+  "path": ".claude/skills/alicloud-redis/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/agents-infrastructure/licell",
+  "dir_name": "alicloud-redis",
+  "downloaded_at": "2026-03-01T06:30:13.088896Z",
+  "author": "agents-infrastructure",
+  "source_url": "https://github.com/agents-infrastructure/licell/blob/main/.claude/skills/alicloud-redis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agents-infrastructure/licell/blob/main/.claude/skills/alicloud-redis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

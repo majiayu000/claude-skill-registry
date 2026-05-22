@@ -1,0 +1,17 @@
+{
+  "name": "best-practices-react",
+  "repo": "grahama1970/agent-skills",
+  "path": "skills/best-practices-react/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/grahama1970/agent-skills",
+  "dir_name": "best-practices-react",
+  "downloaded_at": "2026-03-01T07:57:08.169373Z",
+  "author": "grahama1970",
+  "source_url": "https://github.com/grahama1970/agent-skills/blob/main/skills/best-practices-react/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/grahama1970/agent-skills/blob/main/skills/best-practices-react/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

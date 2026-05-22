@@ -1,0 +1,13 @@
+{
+  "name": "azure-identity-py",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/azure-identity-py",
+  "github_branch": "main",
+  "dir_name": "azure-identity-py",
+  "downloaded_at": "2026-02-05T01:44:52.416759Z"
+}

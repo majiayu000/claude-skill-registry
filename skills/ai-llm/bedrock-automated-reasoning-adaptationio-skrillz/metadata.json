@@ -1,0 +1,16 @@
+{
+  "name": "bedrock-automated-reasoning",
+  "repo": "adaptationio/Skrillz",
+  "path": "skills/bedrock-automated-reasoning/SKILL.md",
+  "source": "github.com/adaptationio/Skrillz",
+  "downloaded_at": "2026-01-29T07:45:51.076288Z",
+  "dir_name": "bedrock-automated-reasoning-adaptationio-skrillz",
+  "category": "ai-llm",
+  "author": "adaptationio",
+  "source_url": "https://github.com/adaptationio/Skrillz/blob/main/skills/bedrock-automated-reasoning/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adaptationio/Skrillz/blob/main/skills/bedrock-automated-reasoning/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

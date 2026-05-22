@@ -1,0 +1,17 @@
+{
+  "name": "aws-secrets-rotation",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/security/aws-secrets-rotation/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "aws-secrets-rotation",
+  "downloaded_at": "2026-05-14T04:02:27.504994Z",
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/security/aws-secrets-rotation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/security/aws-secrets-rotation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

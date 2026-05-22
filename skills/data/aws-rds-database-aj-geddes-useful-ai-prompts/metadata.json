@@ -1,0 +1,18 @@
+{
+  "name": "aws-rds-database",
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/aws-rds-database/SKILL.md",
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "downloaded_at": "2026-01-22T01:10:24.719416Z",
+  "dir_name": "aws-rds-database-aj-geddes-useful-ai-prompts",
+  "category": "data",
+  "github_path": "skills/aws-rds-database",
+  "github_branch": "main",
+  "author": "aj-geddes",
+  "source_url": "https://github.com/aj-geddes/useful-ai-prompts/blob/main/skills/aws-rds-database/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AJ Geddes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "azure-eventhub-java",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/azure-eventhub-java",
+  "github_branch": "main",
+  "dir_name": "azure-eventhub-java",
+  "downloaded_at": "2026-02-05T01:44:52.436585Z"
+}

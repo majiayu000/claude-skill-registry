@@ -1,0 +1,20 @@
+{
+  "name": "bats-testing-patterns",
+  "description": "The most comprehensive Claude Code skills registry - 50,000+ skills indexed",
+  "repo": "majiayu000/claude-skill-registry",
+  "category": "testing",
+  "tags": [],
+  "stars": 48,
+  "source": "",
+  "github_path": "skills/bats-testing-patterns",
+  "github_branch": "main",
+  "dir_name": "bats-testing-patterns-majiayu000-claude-skill-registr",
+  "downloaded_at": "2026-02-05T05:44:36.193218Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/bats-testing-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

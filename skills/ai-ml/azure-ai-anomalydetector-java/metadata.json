@@ -1,0 +1,13 @@
+{
+  "name": "azure-ai-anomalydetector-java",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "ai-ml",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/azure-ai-anomalydetector-java",
+  "github_branch": "main",
+  "dir_name": "azure-ai-anomalydetector-java",
+  "downloaded_at": "2026-02-05T01:44:52.345019Z"
+}

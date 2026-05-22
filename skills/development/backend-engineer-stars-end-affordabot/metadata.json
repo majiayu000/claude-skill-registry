@@ -1,0 +1,20 @@
+{
+  "name": "backend-engineer",
+  "description": "",
+  "repo": "stars-end/affordabot",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/stars-end/affordabot",
+  "github_path": ".claude/skills/backend-engineer",
+  "github_branch": "master",
+  "dir_name": "backend-engineer-stars-end-affordabot",
+  "downloaded_at": "2026-02-05T01:44:55.693437Z",
+  "author": "stars-end",
+  "source_url": "https://github.com/stars-end/affordabot/blob/master/.claude/skills/backend-engineer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/stars-end/affordabot/blob/master/.claude/skills/backend-engineer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

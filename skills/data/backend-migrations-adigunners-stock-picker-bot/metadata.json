@@ -1,0 +1,17 @@
+{
+  "name": "backend-migrations",
+  "repo": "adigunners/stock_picker_bot",
+  "path": ".claude/skills/backend-migrations/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/adigunners/stock_picker_bot",
+  "dir_name": "backend-migrations-adigunners-stock-picker-bot",
+  "downloaded_at": "2026-03-22T06:40:58.496649Z",
+  "author": "adigunners",
+  "source_url": "https://github.com/adigunners/stock_picker_bot/blob/main/.claude/skills/backend-migrations/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adigunners/stock_picker_bot/blob/main/.claude/skills/backend-migrations/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

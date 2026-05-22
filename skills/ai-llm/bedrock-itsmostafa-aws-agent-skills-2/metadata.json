@@ -1,0 +1,17 @@
+{
+  "name": "bedrock",
+  "repo": "itsmostafa/aws-agent-skills",
+  "path": "skills/bedrock/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-llm",
+  "source": "github.com/itsmostafa/aws-agent-skills",
+  "dir_name": "bedrock-itsmostafa-aws-agent-skills-2",
+  "downloaded_at": "2026-05-20T03:58:47.699627Z",
+  "author": "itsmostafa",
+  "source_url": "https://github.com/itsmostafa/aws-agent-skills/blob/main/skills/bedrock/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/itsmostafa/aws-agent-skills/blob/main/skills/bedrock/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

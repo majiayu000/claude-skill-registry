@@ -1,0 +1,18 @@
+{
+  "name": "better-auth-protected-routes",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".cursor/skills/better-auth-protected-routes/SKILL.md",
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "downloaded_at": "2026-01-19T01:09:10.629813Z",
+  "dir_name": "better-auth-protected-routes",
+  "category": "security",
+  "github_path": ".agents/skills/better-auth-protected-routes",
+  "github_branch": "main",
+  "author": "andrelandgraf",
+  "source_url": "https://github.com/andrelandgraf/fullstackrecipes/blob/main/.agents/skills/better-auth-protected-routes/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andrelandgraf/fullstackrecipes/blob/main/.agents/skills/better-auth-protected-routes/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

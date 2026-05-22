@@ -1,0 +1,16 @@
+{
+  "name": "aws-skills",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/aws-skills/SKILL.md",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "downloaded_at": "2026-02-02T04:28:40.744673Z",
+  "dir_name": "aws-skills-sickn33-antigravity-awesome-",
+  "category": "devops",
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/aws-skills/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

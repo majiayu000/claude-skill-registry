@@ -1,0 +1,17 @@
+{
+  "name": "azure-servicebus-py",
+  "repo": "brunolimaff-jpg/NOVO-APP",
+  "path": ".agent/skills/azure-servicebus-py/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/brunolimaff-jpg/NOVO-APP",
+  "dir_name": "azure-servicebus-py-brunolimaff-jpg-novo-app",
+  "downloaded_at": "2026-03-22T07:20:35.596300Z",
+  "author": "brunolimaff-jpg",
+  "source_url": "https://github.com/brunolimaff-jpg/NOVO-APP/blob/main/.agent/skills/azure-servicebus-py/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brunolimaff-jpg/NOVO-APP/blob/main/.agent/skills/azure-servicebus-py/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

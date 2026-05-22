@@ -1,0 +1,16 @@
+{
+  "name": "best-practices-guidelines",
+  "repo": "oimiragieo/agent-studio",
+  "path": ".claude/skills/best-practices-guidelines/SKILL.md",
+  "source": "github.com/oimiragieo/agent-studio",
+  "downloaded_at": "2026-02-01T02:18:53.134435Z",
+  "dir_name": "best-practices-guidelines",
+  "category": "development",
+  "author": "oimiragieo",
+  "source_url": "https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/best-practices-guidelines/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/best-practices-guidelines/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

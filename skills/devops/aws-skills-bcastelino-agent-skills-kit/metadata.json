@@ -1,0 +1,17 @@
+{
+  "name": "aws-skills",
+  "repo": "bcastelino/agent-skills-kit",
+  "path": "skills/aws-skills/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/bcastelino/agent-skills-kit",
+  "dir_name": "aws-skills-bcastelino-agent-skills-kit",
+  "downloaded_at": "2026-03-22T07:11:06.039289Z",
+  "author": "bcastelino",
+  "source_url": "https://github.com/bcastelino/agent-skills-kit/blob/main/skills/aws-skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bcastelino/agent-skills-kit/blob/main/skills/aws-skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

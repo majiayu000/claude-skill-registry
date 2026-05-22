@@ -1,0 +1,17 @@
+{
+  "name": "better-auth-security-best-practices",
+  "repo": "Rykuno/SojuStack",
+  "path": ".agents/skills/better-auth-security-best-practices/SKILL.MD",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/Rykuno/SojuStack",
+  "dir_name": "better-auth-security-best-practices",
+  "downloaded_at": "2026-03-01T06:00:53.040089Z",
+  "author": "Rykuno",
+  "source_url": "https://github.com/Rykuno/SojuStack/blob/main/.agents/skills/better-auth-security-best-practices/SKILL.MD",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Rykuno/SojuStack/blob/main/.agents/skills/better-auth-security-best-practices/SKILL.MD",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

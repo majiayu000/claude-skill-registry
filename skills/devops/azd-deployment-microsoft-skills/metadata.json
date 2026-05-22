@@ -1,0 +1,13 @@
+{
+  "name": "azd-deployment",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/azd-deployment",
+  "github_branch": "main",
+  "dir_name": "azd-deployment-microsoft-skills",
+  "downloaded_at": "2026-02-05T01:44:52.330413Z"
+}

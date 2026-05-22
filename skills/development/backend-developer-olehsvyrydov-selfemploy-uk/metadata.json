@@ -1,0 +1,16 @@
+{
+  "name": "backend-developer",
+  "repo": "olehsvyrydov/selfemploy-uk",
+  "path": ".claude/skills/backend-developer/SKILL.md",
+  "source": "github.com/olehsvyrydov/selfemploy-uk",
+  "downloaded_at": "2026-01-29T06:48:59.397030Z",
+  "dir_name": "backend-developer-olehsvyrydov-selfemploy-uk",
+  "category": "development",
+  "author": "olehsvyrydov",
+  "source_url": "https://github.com/olehsvyrydov/selfemploy-uk/blob/main/.claude/skills/backend-developer/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/olehsvyrydov/selfemploy-uk/blob/main/.claude/skills/backend-developer/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

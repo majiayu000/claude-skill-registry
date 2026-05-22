@@ -1,0 +1,18 @@
+{
+  "name": "backend-expert-advisor",
+  "repo": "ljchg12-hue/dotfiles",
+  "path": "skills/backend-expert-advisor/SKILL.md",
+  "source": "github.com/ljchg12-hue/dotfiles",
+  "downloaded_at": "2026-01-14T01:32:10.960209Z",
+  "dir_name": "backend-expert-advisor",
+  "category": "development",
+  "github_path": "skills/backend-expert-advisor",
+  "github_branch": "main",
+  "author": "ljchg12-hue",
+  "source_url": "https://github.com/ljchg12-hue/dotfiles/blob/main/skills/backend-expert-advisor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ljchg12-hue/dotfiles/blob/main/skills/backend-expert-advisor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

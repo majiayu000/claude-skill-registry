@@ -1,0 +1,13 @@
+{
+  "name": "azure-security-keyvault-secrets-java",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/azure-security-keyvault-secrets-java",
+  "github_branch": "main",
+  "dir_name": "azure-security-keyvault-secrets-java",
+  "downloaded_at": "2026-02-05T01:44:52.461012Z"
+}

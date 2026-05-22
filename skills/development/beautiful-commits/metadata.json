@@ -1,0 +1,17 @@
+{
+  "name": "beautiful-commits",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "examples/skills/beautiful-commits/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "beautiful-commits",
+  "downloaded_at": "2026-04-14T01:29:48.400260Z",
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/beautiful-commits/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/beautiful-commits/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

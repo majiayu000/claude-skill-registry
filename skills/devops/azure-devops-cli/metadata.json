@@ -1,0 +1,16 @@
+{
+  "name": "azure-devops-cli",
+  "repo": "rysweet/azlin",
+  "path": ".claude/skills/azure-devops-cli/skill.md",
+  "source": "github.com/rysweet/azlin",
+  "downloaded_at": "2026-02-02T05:04:22.719372Z",
+  "dir_name": "azure-devops-cli",
+  "category": "devops",
+  "author": "rysweet",
+  "source_url": "https://github.com/rysweet/azlin/blob/main/.claude/skills/azure-devops-cli/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rysweet/azlin/blob/main/.claude/skills/azure-devops-cli/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

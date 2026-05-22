@@ -1,0 +1,13 @@
+{
+  "name": "azure-eventhub-dotnet",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/azure-eventhub-dotnet",
+  "github_branch": "main",
+  "dir_name": "azure-eventhub-dotnet",
+  "downloaded_at": "2026-02-05T01:44:52.492337Z"
+}

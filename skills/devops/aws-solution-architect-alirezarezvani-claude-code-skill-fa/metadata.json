@@ -1,0 +1,17 @@
+{
+  "name": "aws-solution-architect",
+  "repo": "alirezarezvani/claude-code-skill-factory",
+  "path": "generated-skills/aws-solution-architect/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/alirezarezvani/claude-code-skill-factory",
+  "dir_name": "aws-solution-architect-alirezarezvani-claude-code-skill-fa",
+  "downloaded_at": "2026-05-20T03:49:46.545018Z",
+  "author": "alirezarezvani",
+  "source_url": "https://github.com/alirezarezvani/claude-code-skill-factory/blob/main/generated-skills/aws-solution-architect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alirezarezvani/claude-code-skill-factory/blob/main/generated-skills/aws-solution-architect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

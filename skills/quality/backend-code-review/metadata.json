@@ -1,0 +1,18 @@
+{
+  "name": "backend-code-review",
+  "repo": "DauQuangThanh/hanoi-rainbow",
+  "path": "skills/backend-code-review/SKILL.md",
+  "source": "github.com/DauQuangThanh/hanoi-rainbow",
+  "downloaded_at": "2026-01-22T02:21:58.383729Z",
+  "dir_name": "backend-code-review",
+  "category": "quality",
+  "github_path": "skills/backend-code-review",
+  "github_branch": "main",
+  "author": "DauQuangThanh",
+  "source_url": "https://github.com/DauQuangThanh/hanoi-rainbow/blob/main/skills/backend-code-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dau Quang Thanh",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

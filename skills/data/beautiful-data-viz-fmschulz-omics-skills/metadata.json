@@ -1,0 +1,20 @@
+{
+  "name": "beautiful-data-viz",
+  "description": "",
+  "repo": "fmschulz/omics-skills",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fmschulz/omics-skills",
+  "github_path": "skills/beautiful-data-viz",
+  "github_branch": "main",
+  "dir_name": "beautiful-data-viz-fmschulz-omics-skills",
+  "downloaded_at": "2026-02-05T01:44:22.828161Z",
+  "author": "fmschulz",
+  "source_url": "https://github.com/fmschulz/omics-skills/blob/main/skills/beautiful-data-viz/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Frederik Schulz",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

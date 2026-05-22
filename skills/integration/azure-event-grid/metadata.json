@@ -1,0 +1,16 @@
+{
+  "name": "azure-event-grid",
+  "repo": "fgarofalo56/Suppercharge_Microsoft_Fabric",
+  "path": ".github/skills/azure-event-grid/SKILL.md",
+  "source": "github.com/fgarofalo56/Suppercharge_Microsoft_Fabric",
+  "downloaded_at": "2026-02-02T02:08:45.456467Z",
+  "dir_name": "azure-event-grid",
+  "category": "integration",
+  "author": "fgarofalo56",
+  "source_url": "https://github.com/fgarofalo56/Suppercharge_Microsoft_Fabric/blob/main/.github/skills/azure-event-grid/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Francisco Garcia",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

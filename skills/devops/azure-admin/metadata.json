@@ -1,0 +1,18 @@
+{
+  "name": "azure-admin",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/azure-admin/SKILL.md",
+  "source": "github.com/rysweet/AzureHayMaker",
+  "downloaded_at": "2026-01-22T03:18:48.581671Z",
+  "dir_name": "azure-admin",
+  "category": "devops",
+  "github_path": ".claude/skills/azure-admin",
+  "github_branch": "main",
+  "author": "rysweet",
+  "source_url": "https://github.com/rysweet/AzureHayMaker/blob/main/.claude/skills/azure-admin/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ryan Sweet / Microsoft",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

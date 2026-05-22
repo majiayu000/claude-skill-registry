@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-22T11:22:27.460501Z",
+  "updated_at": "2026-05-22T11:53:45.624589Z",
   "archive_skill_md_count_raw": 234691,
   "archive_metadata_count_raw": 234691,
   "indexed_skill_count_scan_shape": 234691,
@@ -25,12 +25,12 @@
     {
       "name": "ai-llm",
       "code": "ai-llm",
-      "count": 172
+      "count": 236
     },
     {
       "name": "ai-ml",
       "code": "ai-ml",
-      "count": 149
+      "count": 167
     },
     {
       "name": "analysis",
@@ -95,7 +95,7 @@
     {
       "name": "data",
       "code": "dat",
-      "count": 46547
+      "count": 46684
     },
     {
       "name": "data-access",
@@ -105,7 +105,7 @@
     {
       "name": "design",
       "code": "des",
-      "count": 9749
+      "count": 9772
     },
     {
       "name": "design-principles",
@@ -115,7 +115,7 @@
     {
       "name": "development",
       "code": "dev",
-      "count": 22005
+      "count": 22261
     },
     {
       "name": "development-code",
@@ -130,7 +130,7 @@
     {
       "name": "devops",
       "code": "ops",
-      "count": 5639
+      "count": 5817
     },
     {
       "name": "docs",
@@ -145,7 +145,7 @@
     {
       "name": "documents",
       "code": "doc",
-      "count": 3391
+      "count": 3396
     },
     {
       "name": "domains",
@@ -200,7 +200,7 @@
     {
       "name": "integration",
       "code": "integration",
-      "count": 241
+      "count": 300
     },
     {
       "name": "language",
@@ -215,7 +215,7 @@
     {
       "name": "marketing",
       "code": "mkt",
-      "count": 612
+      "count": 614
     },
     {
       "name": "messaging",
@@ -235,7 +235,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 133996
+      "count": 132996
     },
     {
       "name": "performance",
@@ -280,7 +280,7 @@
     {
       "name": "quality",
       "code": "quality",
-      "count": 67
+      "count": 87
     },
     {
       "name": "research-analysis",
@@ -290,7 +290,7 @@
     {
       "name": "security",
       "code": "sec",
-      "count": 1585
+      "count": 1749
     },
     {
       "name": "security-compliance",
@@ -350,7 +350,7 @@
     {
       "name": "testing",
       "code": "tst",
-      "count": 7090
+      "count": 7164
     },
     {
       "name": "testing-methodologies",
@@ -436,29 +436,29 @@
   "index_size_bytes": 162,
   "index_size_gzip_bytes": 175,
   "search_shard_count": 7,
-  "search_largest_shard_bytes": 8388640,
-  "search_largest_shard_gzip_bytes": 2557405,
+  "search_largest_shard_bytes": 8388686,
+  "search_largest_shard_gzip_bytes": 2559038,
   "category_shard_count": 90,
-  "category_largest_part_bytes": 8388742,
-  "category_largest_part_gzip_bytes": 1759925,
+  "category_largest_part_bytes": 8388718,
+  "category_largest_part_gzip_bytes": 1761071,
   "lite_index_count": 156853,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3497682,
-  "lite_index_gzip_size_bytes": 674950,
+  "lite_index_gzip_size_bytes": 674948,
   "quality_index_size_bytes": 220,
   "quality_index_gzip_size_bytes": 213,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388702,
-  "quality_largest_shard_gzip_bytes": 1764832,
+  "quality_largest_shard_bytes": 8388689,
+  "quality_largest_shard_gzip_bytes": 1765134,
   "security_index_size_bytes": 223,
-  "security_index_gzip_size_bytes": 214,
+  "security_index_gzip_size_bytes": 215,
   "security_shard_count": 4,
-  "security_largest_shard_bytes": 8388695,
-  "security_largest_shard_gzip_bytes": 2410628,
+  "security_largest_shard_bytes": 8388683,
+  "security_largest_shard_gzip_bytes": 2411237,
   "ranking_index_size_bytes": 220,
   "ranking_index_gzip_size_bytes": 213,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388656,
-  "ranking_largest_shard_gzip_bytes": 2262236,
-  "largest_generated_file_bytes": 8388742
+  "ranking_largest_shard_bytes": 8388720,
+  "ranking_largest_shard_gzip_bytes": 2262707,
+  "largest_generated_file_bytes": 8388720
 }

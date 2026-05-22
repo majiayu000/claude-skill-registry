@@ -1,0 +1,13 @@
+{
+  "name": "azure-eventgrid-dotnet",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/azure-eventgrid-dotnet",
+  "github_branch": "main",
+  "dir_name": "azure-eventgrid-dotnet",
+  "downloaded_at": "2026-02-05T01:44:52.457138Z"
+}

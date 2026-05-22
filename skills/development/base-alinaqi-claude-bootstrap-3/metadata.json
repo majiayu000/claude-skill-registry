@@ -1,0 +1,16 @@
+{
+  "name": "base",
+  "repo": "alinaqi/claude-bootstrap",
+  "path": "skills/base/SKILL.md",
+  "category": "development",
+  "source": "github.com/alinaqi/claude-bootstrap",
+  "dir_name": "base-alinaqi-claude-bootstrap-3",
+  "downloaded_at": "2026-02-15T06:17:15.355012Z",
+  "author": "alinaqi",
+  "source_url": "https://github.com/alinaqi/claude-bootstrap/blob/main/skills/base/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ali Naqi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

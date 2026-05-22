@@ -1,0 +1,13 @@
+{
+  "name": "bazel-build-optimization",
+  "description": "",
+  "repo": "ACGSpgp/ACGS",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ACGSpgp/ACGS",
+  "github_path": ".agent/workflows/developer-essentials/1.0.0/skills/bazel-build-optimization",
+  "github_branch": "main",
+  "dir_name": "bazel-build-optimization-acgspgp-acgs",
+  "downloaded_at": "2026-02-05T05:40:33.117467Z"
+}

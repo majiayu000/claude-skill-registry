@@ -1,0 +1,18 @@
+{
+  "name": "backend-endpoint",
+  "repo": "dkyazzentwatwa/SuperNavigator",
+  "path": "navigator-main/skills/backend-endpoint/SKILL.md",
+  "source": "github.com/dkyazzentwatwa/SuperNavigator",
+  "downloaded_at": "2026-01-22T03:25:12.788607Z",
+  "dir_name": "backend-endpoint",
+  "category": "development",
+  "github_path": "navigator-main/skills/backend-endpoint",
+  "github_branch": "main",
+  "author": "dkyazzentwatwa",
+  "source_url": "https://github.com/dkyazzentwatwa/SuperNavigator/blob/main/navigator-main/skills/backend-endpoint/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2026 SuperNavigator Contributors",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

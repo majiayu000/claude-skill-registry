@@ -1,0 +1,13 @@
+{
+  "name": "azure-ai-voicelive-java",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/azure-ai-voicelive-java",
+  "github_branch": "main",
+  "dir_name": "azure-ai-voicelive-java",
+  "downloaded_at": "2026-02-05T01:44:52.564116Z"
+}

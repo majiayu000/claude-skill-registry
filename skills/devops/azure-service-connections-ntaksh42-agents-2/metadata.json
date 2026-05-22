@@ -1,0 +1,16 @@
+{
+  "name": "azure-service-connections",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/azure-service-connections/SKILL.md",
+  "source": "github.com/ntaksh42/agents",
+  "downloaded_at": "2026-02-02T01:08:06.644263Z",
+  "dir_name": "azure-service-connections-ntaksh42-agents-2",
+  "category": "devops",
+  "author": "ntaksh42",
+  "source_url": "https://github.com/ntaksh42/agents/blob/main/.claude/skills/azure-service-connections/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ntaksh42/agents/blob/main/.claude/skills/azure-service-connections/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

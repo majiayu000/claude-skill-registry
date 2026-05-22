@@ -1,0 +1,13 @@
+{
+  "name": "azure-keyvault-certificates-rust",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/azure-keyvault-certificates-rust",
+  "github_branch": "main",
+  "dir_name": "azure-keyvault-certificates-rust",
+  "downloaded_at": "2026-02-05T01:44:52.592453Z"
+}

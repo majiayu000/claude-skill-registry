@@ -1,0 +1,13 @@
+{
+  "name": "best-practices",
+  "description": "",
+  "repo": "workleap/wl-agents-code-review-poc",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/workleap/wl-agents-code-review-poc",
+  "github_path": ".claude/skills/best-practices",
+  "github_branch": "main",
+  "dir_name": "best-practices",
+  "downloaded_at": "2026-02-05T05:07:59.645652Z"
+}

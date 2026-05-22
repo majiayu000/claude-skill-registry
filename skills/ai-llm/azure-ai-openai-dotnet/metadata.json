@@ -1,0 +1,13 @@
+{
+  "name": "azure-ai-openai-dotnet",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/azure-ai-openai-dotnet",
+  "github_branch": "main",
+  "dir_name": "azure-ai-openai-dotnet",
+  "downloaded_at": "2026-02-05T01:44:52.561271Z"
+}

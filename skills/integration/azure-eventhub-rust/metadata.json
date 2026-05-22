@@ -1,0 +1,13 @@
+{
+  "name": "azure-eventhub-rust",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/azure-eventhub-rust",
+  "github_branch": "main",
+  "dir_name": "azure-eventhub-rust",
+  "downloaded_at": "2026-02-05T01:44:52.593247Z"
+}

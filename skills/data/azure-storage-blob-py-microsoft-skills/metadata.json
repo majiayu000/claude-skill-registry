@@ -1,0 +1,13 @@
+{
+  "name": "azure-storage-blob-py",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/azure-storage-blob-py",
+  "github_branch": "main",
+  "dir_name": "azure-storage-blob-py-microsoft-skills",
+  "downloaded_at": "2026-02-05T01:44:52.435038Z"
+}

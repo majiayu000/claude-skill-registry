@@ -1,0 +1,17 @@
+{
+  "name": "brainstorming",
+  "repo": "CoralShades/acm-ai",
+  "path": ".codex/skills/brainstorming/SKILL.md",
+  "github_branch": "main",
+  "category": "planning",
+  "source": "github.com/CoralShades/acm-ai",
+  "dir_name": "brainstorming-coralshades-acm-ai",
+  "downloaded_at": "2026-03-22T05:09:45.581766Z",
+  "author": "CoralShades",
+  "source_url": "https://github.com/CoralShades/acm-ai/blob/main/.codex/skills/brainstorming/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CoralShades/acm-ai/blob/main/.codex/skills/brainstorming/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

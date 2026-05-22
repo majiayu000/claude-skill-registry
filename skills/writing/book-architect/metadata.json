@@ -1,0 +1,16 @@
+{
+  "name": "book-architect",
+  "repo": "robertguss/claude-code-toolkit",
+  "path": "skills/non-fiction-book-factory/book-architect/SKILL.md",
+  "source": "github.com/robertguss/claude-code-toolkit",
+  "downloaded_at": "2026-02-02T02:51:23.363347Z",
+  "dir_name": "book-architect",
+  "category": "writing",
+  "author": "robertguss",
+  "source_url": "https://github.com/robertguss/claude-code-toolkit/blob/main/skills/non-fiction-book-factory/book-architect/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Robert Guss",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

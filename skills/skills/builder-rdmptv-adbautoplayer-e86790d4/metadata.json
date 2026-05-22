@@ -1,0 +1,16 @@
+{
+  "name": "builder",
+  "repo": "rdmptv/AdbAutoPlayer",
+  "path": ".moai/backups/.moai.backup.1764591304/backups/.claude.backup.1764591304/commands/builder/generate-skill.md",
+  "source": "github.com/rdmptv/AdbAutoPlayer",
+  "downloaded_at": "2026-02-02T05:04:00.048400Z",
+  "dir_name": "builder-rdmptv-adbautoplayer-e86790d4",
+  "category": "skills",
+  "author": "rdmptv",
+  "source_url": "https://github.com/rdmptv/AdbAutoPlayer/blob/main/.moai/backups/.moai.backup.1764591304/backups/.claude.backup.1764591304/commands/builder/generate-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rdmptv/AdbAutoPlayer/blob/main/.moai/backups/.moai.backup.1764591304/backups/.claude.backup.1764591304/commands/builder/generate-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

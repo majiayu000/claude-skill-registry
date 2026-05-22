@@ -1,0 +1,17 @@
+{
+  "name": "bmad-create-epics-and-stories",
+  "repo": "bino1999/worl-sl-bmad",
+  "path": ".gemini/skills/bmad-create-epics-and-stories/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/bino1999/worl-sl-bmad",
+  "dir_name": "bmad-create-epics-and-stories-bino1999-worl-sl-bmad-2",
+  "downloaded_at": "2026-03-22T07:15:14.370541Z",
+  "author": "bino1999",
+  "source_url": "https://github.com/bino1999/worl-sl-bmad/blob/main/.gemini/skills/bmad-create-epics-and-stories/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bino1999/worl-sl-bmad/blob/main/.gemini/skills/bmad-create-epics-and-stories/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

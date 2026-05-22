@@ -1,0 +1,16 @@
+{
+  "name": "benchmark-advisor",
+  "repo": "wildcard/caro",
+  "path": ".claude/skills/benchmark-advisor/SKILL.md",
+  "source": "github.com/wildcard/caro",
+  "downloaded_at": "2026-01-29T06:00:30.894647Z",
+  "dir_name": "benchmark-advisor-wildcard-caro",
+  "category": "performance",
+  "author": "wildcard",
+  "source_url": "https://github.com/wildcard/caro/blob/main/.claude/skills/benchmark-advisor/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

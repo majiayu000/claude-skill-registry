@@ -1,0 +1,13 @@
+{
+  "name": "billing-automation",
+  "description": "",
+  "repo": "ACGSpgp/ACGS",
+  "category": "business-monetization",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ACGSpgp/ACGS",
+  "github_path": ".agent/workflows/payment-processing/1.2.1/skills/billing-automation",
+  "github_branch": "main",
+  "dir_name": "billing-automation-acgspgp-acgs",
+  "downloaded_at": "2026-02-05T05:40:33.041241Z"
+}

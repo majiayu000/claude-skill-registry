@@ -1,0 +1,18 @@
+{
+  "name": "book-market-research",
+  "repo": "robertguss/claude-code-toolkit",
+  "path": "skills/non-fiction-book-factory/book-market-research/SKILL.md",
+  "source": "github.com/robertguss/claude-code-toolkit",
+  "downloaded_at": "2026-01-22T02:47:24.479370Z",
+  "dir_name": "book-market-research",
+  "category": "research-analysis",
+  "github_path": "skills/non-fiction-book-factory/book-market-research",
+  "github_branch": "main",
+  "author": "robertguss",
+  "source_url": "https://github.com/robertguss/claude-code-toolkit/blob/main/skills/non-fiction-book-factory/book-market-research/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Robert Guss",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

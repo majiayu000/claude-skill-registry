@@ -1,0 +1,18 @@
+{
+  "name": "blog-creator",
+  "repo": "yuch4/dx-selecta",
+  "path": ".claude/skills/blog-creator/SKILL.md",
+  "source": "github.com/yuch4/dx-selecta",
+  "downloaded_at": "2026-01-22T03:45:49.838384Z",
+  "dir_name": "blog-creator",
+  "category": "writing",
+  "github_path": ".claude/skills/blog-creator",
+  "github_branch": "main",
+  "author": "yuch4",
+  "source_url": "https://github.com/yuch4/dx-selecta/blob/main/.claude/skills/blog-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yuch4/dx-selecta/blob/main/.claude/skills/blog-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

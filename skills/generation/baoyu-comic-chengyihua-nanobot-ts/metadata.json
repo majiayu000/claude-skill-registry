@@ -1,0 +1,16 @@
+{
+  "name": "baoyu-comic",
+  "repo": "chengyihua/nanobot-ts",
+  "path": "skills/baoyu-comic/SKILL.md",
+  "category": "generation",
+  "source": "github.com/chengyihua/nanobot-ts",
+  "dir_name": "baoyu-comic-chengyihua-nanobot-ts",
+  "downloaded_at": "2026-02-15T06:43:45.295999Z",
+  "author": "chengyihua",
+  "source_url": "https://github.com/chengyihua/nanobot-ts/blob/main/skills/baoyu-comic/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chengyihua/nanobot-ts/blob/main/skills/baoyu-comic/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

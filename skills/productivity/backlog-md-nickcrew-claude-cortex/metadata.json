@@ -1,0 +1,17 @@
+{
+  "name": "backlog-md",
+  "repo": "NickCrew/claude-cortex",
+  "path": "skills/backlog-md/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/NickCrew/claude-cortex",
+  "dir_name": "backlog-md-nickcrew-claude-cortex",
+  "downloaded_at": "2026-03-22T05:56:21.294452Z",
+  "author": "NickCrew",
+  "source_url": "https://github.com/NickCrew/claude-cortex/blob/main/skills/backlog-md/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NickCrew/claude-cortex/blob/main/skills/backlog-md/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

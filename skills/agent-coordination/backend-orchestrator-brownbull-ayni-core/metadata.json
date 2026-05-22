@@ -1,0 +1,16 @@
+{
+  "name": "backend-orchestrator",
+  "repo": "Brownbull/ayni_core",
+  "path": ".claude/skills/backend-orchestrator/SKILL.md",
+  "source": "github.com/Brownbull/ayni_core",
+  "downloaded_at": "2026-01-29T07:15:08.395447Z",
+  "dir_name": "backend-orchestrator-brownbull-ayni-core",
+  "category": "agent-coordination",
+  "author": "Brownbull",
+  "source_url": "https://github.com/Brownbull/ayni_core/blob/main/.claude/skills/backend-orchestrator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Brownbull/ayni_core/blob/main/.claude/skills/backend-orchestrator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

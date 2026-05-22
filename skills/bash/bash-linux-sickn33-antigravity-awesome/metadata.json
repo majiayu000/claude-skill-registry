@@ -1,0 +1,16 @@
+{
+  "name": "bash-linux",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/bash-linux/SKILL.md",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "downloaded_at": "2026-01-29T08:59:57.891258Z",
+  "dir_name": "bash-linux-sickn33-antigravity-awesome",
+  "category": "bash",
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/bash-linux/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

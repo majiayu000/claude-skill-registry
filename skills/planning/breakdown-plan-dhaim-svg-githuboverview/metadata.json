@@ -1,0 +1,17 @@
+{
+  "name": "breakdown-plan",
+  "repo": "dhaim-svg/GitHubOverview",
+  "path": ".agents/skills/breakdown-plan/SKILL.md",
+  "github_branch": "master",
+  "category": "planning",
+  "source": "github.com/dhaim-svg/GitHubOverview",
+  "dir_name": "breakdown-plan-dhaim-svg-githuboverview",
+  "downloaded_at": "2026-03-22T07:45:39.703100Z",
+  "author": "dhaim-svg",
+  "source_url": "https://github.com/dhaim-svg/GitHubOverview/blob/master/.agents/skills/breakdown-plan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dhaim-svg/GitHubOverview/blob/master/.agents/skills/breakdown-plan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

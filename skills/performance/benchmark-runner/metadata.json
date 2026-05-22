@@ -1,0 +1,13 @@
+{
+  "name": "benchmark-runner",
+  "description": "",
+  "repo": "nwiizo/ccswarm",
+  "category": "performance",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nwiizo/ccswarm",
+  "github_path": ".claude/skills/benchmark-runner",
+  "github_branch": "master",
+  "dir_name": "benchmark-runner",
+  "downloaded_at": "2026-02-05T01:44:16.417364Z"
+}

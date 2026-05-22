@@ -1,0 +1,16 @@
+{
+  "name": "banner-creator",
+  "repo": "ReScienceLab/opc-skills",
+  "path": "skills/banner-creator/SKILL.md",
+  "source": "github.com/ReScienceLab/opc-skills",
+  "downloaded_at": "2026-02-02T03:58:35.524976Z",
+  "dir_name": "banner-creator",
+  "category": "creative",
+  "author": "ReScienceLab",
+  "source_url": "https://github.com/ReScienceLab/opc-skills/blob/main/skills/banner-creator/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ReScienceLab/opc-skills/blob/main/skills/banner-creator/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

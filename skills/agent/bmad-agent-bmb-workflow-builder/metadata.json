@@ -1,0 +1,17 @@
+{
+  "name": "bmad-agent-bmb-workflow-builder",
+  "repo": "CoralShades/CurryDash-Central-Hub",
+  "path": ".agents/skills/bmad-agent-bmb-workflow-builder/SKILL.md",
+  "github_branch": "main",
+  "category": "agent",
+  "source": "github.com/CoralShades/CurryDash-Central-Hub",
+  "dir_name": "bmad-agent-bmb-workflow-builder",
+  "downloaded_at": "2026-03-22T05:09:37.353528Z",
+  "author": "CoralShades",
+  "source_url": "https://github.com/CoralShades/CurryDash-Central-Hub/blob/main/.agents/skills/bmad-agent-bmb-workflow-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CoralShades/CurryDash-Central-Hub/blob/main/.agents/skills/bmad-agent-bmb-workflow-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

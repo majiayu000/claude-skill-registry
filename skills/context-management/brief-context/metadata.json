@@ -1,0 +1,16 @@
+{
+  "name": "brief-context",
+  "repo": "brief-hq/brief-wiggum",
+  "path": ".claude/skills/brief-context/SKILL.md",
+  "source": "github.com/brief-hq/brief-wiggum",
+  "downloaded_at": "2026-01-29T04:42:14.471977Z",
+  "dir_name": "brief-context",
+  "category": "context-management",
+  "author": "brief-hq",
+  "source_url": "https://github.com/brief-hq/brief-wiggum/blob/main/.claude/skills/brief-context/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Mocksi, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "briefing",
+  "repo": "ajayjohn/tars-work-assistant",
+  "path": "skills/briefing/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/ajayjohn/tars-work-assistant",
+  "dir_name": "briefing-ajayjohn-tars-work-assistant",
+  "downloaded_at": "2026-03-01T06:34:44.555835Z",
+  "author": "ajayjohn",
+  "source_url": "https://github.com/ajayjohn/tars-work-assistant/blob/main/skills/briefing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ajayjohn/tars-work-assistant/blob/main/skills/briefing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

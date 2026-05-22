@@ -1,0 +1,17 @@
+{
+  "name": "antigravity-skill-orchestrator",
+  "repo": "FrancoStino/opencode-skills-antigravity",
+  "path": "bundled-skills/antigravity-skill-orchestrator/SKILL.md",
+  "github_branch": "main",
+  "category": "orchestration",
+  "source": "github.com/FrancoStino/opencode-skills-antigravity",
+  "dir_name": "antigravity-skill-orchestrator",
+  "downloaded_at": "2026-03-22T05:21:21.489943Z",
+  "author": "FrancoStino",
+  "source_url": "https://github.com/FrancoStino/opencode-skills-antigravity/blob/main/bundled-skills/antigravity-skill-orchestrator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/FrancoStino/opencode-skills-antigravity/blob/main/bundled-skills/antigravity-skill-orchestrator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

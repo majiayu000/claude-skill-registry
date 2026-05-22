@@ -1,0 +1,16 @@
+{
+  "name": "api-designer",
+  "repo": "hainamchung/agent-assistant",
+  "path": "skills/api-designer/SKILL.md",
+  "category": "api",
+  "source": "github.com/hainamchung/agent-assistant",
+  "dir_name": "api-designer-hainamchung-agent-assistant",
+  "downloaded_at": "2026-02-15T07:26:44.800630Z",
+  "author": "hainamchung",
+  "source_url": "https://github.com/hainamchung/agent-assistant/blob/main/skills/api-designer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hainamchung/agent-assistant/blob/main/skills/api-designer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

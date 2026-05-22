@@ -1,0 +1,17 @@
+{
+  "name": "api-and-interface-design",
+  "repo": "addyosmani/agent-skills",
+  "path": "skills/api-and-interface-design/SKILL.md",
+  "github_branch": "main",
+  "category": "api",
+  "source": "github.com/addyosmani/agent-skills",
+  "dir_name": "api-and-interface-design",
+  "downloaded_at": "2026-03-22T06:40:43.099222Z",
+  "author": "addyosmani",
+  "source_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/api-and-interface-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/addyosmani/agent-skills/blob/main/skills/api-and-interface-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

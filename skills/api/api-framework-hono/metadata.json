@@ -1,0 +1,17 @@
+{
+  "name": "api-framework-hono",
+  "repo": "agents-inc/skills",
+  "path": "src/skills/api-framework-hono/SKILL.md",
+  "github_branch": "main",
+  "category": "api",
+  "source": "github.com/agents-inc/skills",
+  "dir_name": "api-framework-hono",
+  "downloaded_at": "2026-03-22T06:42:39.426226Z",
+  "author": "agents-inc",
+  "source_url": "https://github.com/agents-inc/skills/blob/main/src/skills/api-framework-hono/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agents-inc/skills/blob/main/src/skills/api-framework-hono/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

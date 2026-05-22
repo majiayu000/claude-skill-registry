@@ -1,0 +1,16 @@
+{
+  "name": "api-design-mode",
+  "repo": "HouseGarofalo/claude-code-base",
+  "path": ".claude/skills/api-design-mode/SKILL.md",
+  "category": "api",
+  "source": "github.com/HouseGarofalo/claude-code-base",
+  "dir_name": "api-design-mode-housegarofalo-claude-code-base",
+  "downloaded_at": "2026-02-15T05:13:58.897309Z",
+  "author": "HouseGarofalo",
+  "source_url": "https://github.com/HouseGarofalo/claude-code-base/blob/main/.claude/skills/api-design-mode/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 HouseGarofalo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

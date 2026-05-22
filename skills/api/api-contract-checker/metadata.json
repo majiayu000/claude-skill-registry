@@ -1,0 +1,18 @@
+{
+  "name": "api-contract-checker",
+  "repo": "proflead/codex-skills-library",
+  "path": "skills/api/api-contract-checker/SKILL.md",
+  "source": "github.com/proflead/codex-skills-library",
+  "downloaded_at": "2026-01-22T02:40:42.639196Z",
+  "dir_name": "api-contract-checker",
+  "category": "api",
+  "github_path": "skills/api/api-contract-checker",
+  "github_branch": "main",
+  "author": "proflead",
+  "source_url": "https://github.com/proflead/codex-skills-library/blob/main/skills/api/api-contract-checker/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/proflead/codex-skills-library/blob/main/skills/api/api-contract-checker/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

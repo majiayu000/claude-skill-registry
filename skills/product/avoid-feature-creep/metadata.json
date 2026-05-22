@@ -1,0 +1,18 @@
+{
+  "name": "avoid-feature-creep",
+  "repo": "waynesutton/convexskills",
+  "path": "skills/avoid-feature-creep/SKILL.md",
+  "source": "github.com/waynesutton/convexskills",
+  "downloaded_at": "2026-01-22T02:21:08.427045Z",
+  "dir_name": "avoid-feature-creep",
+  "category": "product",
+  "github_path": "skills/avoid-feature-creep",
+  "github_branch": "main",
+  "author": "waynesutton",
+  "source_url": "https://github.com/waynesutton/convexskills/blob/main/skills/avoid-feature-creep/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2026 Convex, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

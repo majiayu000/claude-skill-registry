@@ -1,0 +1,18 @@
+{
+  "name": "article-creation",
+  "repo": "tqer39/blog",
+  "path": ".claude/skills/article-creation/SKILL.md",
+  "source": "github.com/tqer39/blog",
+  "downloaded_at": "2026-01-22T01:13:46.107082Z",
+  "dir_name": "article-creation",
+  "category": "writing",
+  "github_path": ".claude/skills/article-creation",
+  "github_branch": "main",
+  "author": "tqer39",
+  "source_url": "https://github.com/tqer39/blog/blob/main/.claude/skills/article-creation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Takeru O'oyama",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

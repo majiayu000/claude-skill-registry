@@ -1,0 +1,18 @@
+{
+  "name": "automotive-expert",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/domains/automotive-expert/SKILL.md",
+  "source": "github.com/personamanagmentlayer/pcl",
+  "downloaded_at": "2026-01-22T04:02:11.600286Z",
+  "dir_name": "automotive-expert",
+  "category": "domains",
+  "github_path": "stdlib/domains/automotive-expert",
+  "github_branch": "main",
+  "author": "personamanagmentlayer",
+  "source_url": "https://github.com/personamanagmentlayer/pcl/blob/main/stdlib/domains/automotive-expert/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/personamanagmentlayer/pcl/blob/main/stdlib/domains/automotive-expert/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

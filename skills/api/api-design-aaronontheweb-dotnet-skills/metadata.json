@@ -1,0 +1,16 @@
+{
+  "name": "api-design",
+  "repo": "Aaronontheweb/dotnet-skills",
+  "path": "skills/csharp/api-design/SKILL.md",
+  "source": "github.com/Aaronontheweb/dotnet-skills",
+  "downloaded_at": "2026-02-02T05:01:25.289916Z",
+  "dir_name": "api-design-aaronontheweb-dotnet-skills",
+  "category": "api",
+  "author": "Aaronontheweb",
+  "source_url": "https://github.com/Aaronontheweb/dotnet-skills/blob/main/skills/csharp/api-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Aaron Stannard <https://aaronstannard.com/>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

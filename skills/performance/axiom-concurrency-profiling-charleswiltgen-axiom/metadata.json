@@ -1,0 +1,18 @@
+{
+  "name": "axiom-concurrency-profiling",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-concurrency-profiling/SKILL.md",
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "downloaded_at": "2026-01-14T02:46:14.123201Z",
+  "dir_name": "axiom-concurrency-profiling-charleswiltgen-axiom",
+  "category": "performance",
+  "github_path": ".claude-plugin/plugins/axiom/skills/axiom-concurrency-profiling",
+  "github_branch": "main",
+  "author": "CharlesWiltgen",
+  "source_url": "https://github.com/CharlesWiltgen/Axiom/blob/main/.claude-plugin/plugins/axiom/skills/axiom-concurrency-profiling/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Charles Wiltgen",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "api-implementer",
+  "repo": "lexicalninja/my-little-scrum-team",
+  "path": "skills/api-implementer/SKILL.md",
+  "source": "github.com/lexicalninja/my-little-scrum-team",
+  "downloaded_at": "2026-01-17T03:36:51.117801Z",
+  "dir_name": "api-implementer",
+  "category": "api",
+  "github_path": "skills/api-implementer",
+  "github_branch": "main",
+  "author": "lexicalninja",
+  "source_url": "https://github.com/lexicalninja/my-little-scrum-team/blob/main/skills/api-implementer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 lexicalninja",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

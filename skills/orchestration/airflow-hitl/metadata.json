@@ -1,0 +1,17 @@
+{
+  "name": "airflow-hitl",
+  "repo": "astronomer/agents",
+  "path": "skills/airflow-hitl/SKILL.md",
+  "github_branch": "main",
+  "category": "orchestration",
+  "source": "github.com/astronomer/agents",
+  "dir_name": "airflow-hitl",
+  "downloaded_at": "2026-03-22T07:04:09.293921Z",
+  "author": "astronomer",
+  "source_url": "https://github.com/astronomer/agents/blob/main/skills/airflow-hitl/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/astronomer/agents/blob/main/skills/airflow-hitl/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

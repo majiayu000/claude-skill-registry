@@ -1,0 +1,16 @@
+{
+  "name": "api-client-development",
+  "repo": "SalesforceCommerceCloud/b2c-developer-tooling",
+  "path": ".claude/skills/api-client-development/SKILL.md",
+  "source": "github.com/SalesforceCommerceCloud/b2c-developer-tooling",
+  "downloaded_at": "2026-01-29T05:18:27.326007Z",
+  "dir_name": "api-client-development-salesforcecommercecl-b2c-developer-toolin",
+  "category": "api",
+  "author": "SalesforceCommerceCloud",
+  "source_url": "https://github.com/SalesforceCommerceCloud/b2c-developer-tooling/blob/main/.claude/skills/api-client-development/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright (c) 2024 Salesforce, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

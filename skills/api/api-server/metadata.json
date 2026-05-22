@@ -1,0 +1,13 @@
+{
+  "name": "api-server",
+  "description": "",
+  "repo": "fierzone/agent-skills-standard",
+  "category": "api",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fierzone/agent-skills-standard",
+  "github_path": "skills/golang/api-server",
+  "github_branch": "main",
+  "dir_name": "api-server",
+  "downloaded_at": "2026-02-05T01:45:03.430710Z"
+}

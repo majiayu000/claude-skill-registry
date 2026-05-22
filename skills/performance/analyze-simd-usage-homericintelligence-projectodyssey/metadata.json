@@ -1,0 +1,13 @@
+{
+  "name": "analyze-simd-usage",
+  "description": "",
+  "repo": "HomericIntelligence/ProjectOdyssey",
+  "category": "performance",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HomericIntelligence/ProjectOdyssey",
+  "github_path": ".claude/skills/analyze-simd-usage",
+  "github_branch": "main",
+  "dir_name": "analyze-simd-usage-homericintelligence-projectodyssey",
+  "downloaded_at": "2026-02-05T01:44:42.838353Z"
+}

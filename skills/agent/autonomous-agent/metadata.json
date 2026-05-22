@@ -1,0 +1,13 @@
+{
+  "name": "autonomous-agent",
+  "description": "",
+  "repo": "0xHoneyJar/loa-beauvoir",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/0xHoneyJar/loa-beauvoir",
+  "github_path": ".claude/skills/autonomous-agent",
+  "github_branch": "main",
+  "dir_name": "autonomous-agent",
+  "downloaded_at": "2026-02-05T05:04:21.861180Z"
+}

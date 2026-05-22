@@ -1,0 +1,16 @@
+{
+  "name": "aurora-cli",
+  "repo": "avvale/aurora-back",
+  "path": ".claude/skills/aurora-cli/SKILL.md",
+  "source": "github.com/avvale/aurora-back",
+  "downloaded_at": "2026-01-29T08:23:35.685501Z",
+  "dir_name": "aurora-cli-avvale-aurora-back",
+  "category": "development-tools",
+  "author": "avvale",
+  "source_url": "https://github.com/avvale/aurora-back/blob/main/.claude/skills/aurora-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/avvale/aurora-back/blob/main/.claude/skills/aurora-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

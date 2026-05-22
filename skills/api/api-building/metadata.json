@@ -1,0 +1,16 @@
+{
+  "name": "api-building",
+  "repo": "sylin-org/koan-framework",
+  "path": ".claude/skills/api-building/SKILL.md",
+  "source": "github.com/sylin-org/koan-framework",
+  "downloaded_at": "2026-02-02T02:05:23.420051Z",
+  "dir_name": "api-building",
+  "category": "api",
+  "author": "sylin-org",
+  "source_url": "https://github.com/sylin-org/koan-framework/blob/main/.claude/skills/api-building/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sylin-org/koan-framework/blob/main/.claude/skills/api-building/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

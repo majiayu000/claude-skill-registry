@@ -1,0 +1,18 @@
+{
+  "name": "ai-slop-detector",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/content-creator-workflow/.claude/skills/ai-slop-detector/SKILL.md",
+  "source": "github.com/nicepkg/ai-workflow",
+  "downloaded_at": "2026-01-22T03:29:21.327868Z",
+  "dir_name": "ai-slop-detector",
+  "category": "writing",
+  "github_path": "workflows/content-creator-workflow/.claude/skills/ai-slop-detector",
+  "github_branch": "main",
+  "author": "nicepkg",
+  "source_url": "https://github.com/nicepkg/ai-workflow/blob/main/workflows/content-creator-workflow/.claude/skills/ai-slop-detector/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 nicepkg",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

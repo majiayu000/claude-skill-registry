@@ -1,0 +1,18 @@
+{
+  "name": "ai-orchestration-feedback-loop",
+  "repo": "creator-hian/claude-code-plugins",
+  "path": "ai-orchestration-plugin/skills/ai-orchestration-feedback-loop/SKILL.md",
+  "source": "github.com/creator-hian/claude-code-plugins",
+  "downloaded_at": "2026-01-22T01:40:46.506446Z",
+  "dir_name": "ai-orchestration-feedback-loop",
+  "category": "agent-coordination",
+  "github_path": "ai-orchestration-plugin/skills/ai-orchestration-feedback-loop",
+  "github_branch": "main",
+  "author": "creator-hian",
+  "source_url": "https://github.com/creator-hian/claude-code-plugins/blob/main/ai-orchestration-plugin/skills/ai-orchestration-feedback-loop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/creator-hian/claude-code-plugins/blob/main/ai-orchestration-plugin/skills/ai-orchestration-feedback-loop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

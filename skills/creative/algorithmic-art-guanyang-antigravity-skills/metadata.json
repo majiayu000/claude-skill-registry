@@ -1,0 +1,20 @@
+{
+  "name": "algorithmic-art",
+  "description": "",
+  "repo": "guanyang/antigravity-skills",
+  "category": "creative",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/guanyang/antigravity-skills",
+  "github_path": "skills/algorithmic-art",
+  "github_branch": "main",
+  "dir_name": "algorithmic-art-guanyang-antigravity-skills",
+  "downloaded_at": "2026-02-05T01:44:19.589821Z",
+  "author": "guanyang",
+  "source_url": "https://github.com/guanyang/antigravity-skills/blob/main/skills/algorithmic-art/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 guanyang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

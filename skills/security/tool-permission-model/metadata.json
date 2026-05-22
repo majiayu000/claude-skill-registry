@@ -1,0 +1,18 @@
+{
+  "name": "tool-permission-model",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "54-agentops/tool-permission-model/SKILL.md",
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "downloaded_at": "2026-01-22T02:36:45.937480Z",
+  "dir_name": "tool-permission-model",
+  "category": "security",
+  "github_path": "54-agentops/tool-permission-model",
+  "github_branch": "main",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/cerebratechai-claude-skills/blob/main/54-agentops/tool-permission-model/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

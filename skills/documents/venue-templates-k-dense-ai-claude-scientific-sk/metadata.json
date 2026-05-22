@@ -1,0 +1,16 @@
+{
+  "name": "venue-templates",
+  "repo": "K-Dense-AI/claude-scientific-skills",
+  "path": "scientific-skills/venue-templates/SKILL.md",
+  "source": "github.com/K-Dense-AI/claude-scientific-skills",
+  "downloaded_at": "2026-01-29T05:52:05.567114Z",
+  "dir_name": "venue-templates-k-dense-ai-claude-scientific-sk",
+  "category": "documents",
+  "author": "K-Dense-AI",
+  "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/scientific-skills/venue-templates/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 K-Dense Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

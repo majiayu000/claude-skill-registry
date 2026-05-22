@@ -1,0 +1,16 @@
+{
+  "name": "logging-observability",
+  "repo": "dadbodgeoff/drift",
+  "path": "skills/logging-observability/SKILL.md",
+  "source": "github.com/dadbodgeoff/drift",
+  "downloaded_at": "2026-01-29T07:39:26.237403Z",
+  "dir_name": "logging-observability",
+  "category": "devops",
+  "author": "dadbodgeoff",
+  "source_url": "https://github.com/dadbodgeoff/drift/blob/main/skills/logging-observability/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dadbodgeoff/drift/blob/main/skills/logging-observability/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

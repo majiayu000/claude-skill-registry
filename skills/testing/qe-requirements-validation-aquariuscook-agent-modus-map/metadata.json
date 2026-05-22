@@ -1,0 +1,17 @@
+{
+  "name": "qe-requirements-validation",
+  "repo": "aquariuscook/Agent_Modus_Map",
+  "path": ".claude/skills/qe-requirements-validation/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/aquariuscook/Agent_Modus_Map",
+  "dir_name": "qe-requirements-validation-aquariuscook-agent-modus-map",
+  "downloaded_at": "2026-03-22T07:00:41.165957Z",
+  "author": "aquariuscook",
+  "source_url": "https://github.com/aquariuscook/Agent_Modus_Map/blob/main/.claude/skills/qe-requirements-validation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aquariuscook/Agent_Modus_Map/blob/main/.claude/skills/qe-requirements-validation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

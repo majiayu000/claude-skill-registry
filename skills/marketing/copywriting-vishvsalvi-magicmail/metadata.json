@@ -1,0 +1,17 @@
+{
+  "name": "copywriting",
+  "repo": "Vishvsalvi/magicmail",
+  "path": ".agents/skills/copywriting/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/Vishvsalvi/magicmail",
+  "dir_name": "copywriting-vishvsalvi-magicmail",
+  "downloaded_at": "2026-03-22T06:28:18.533618Z",
+  "author": "Vishvsalvi",
+  "source_url": "https://github.com/Vishvsalvi/magicmail/blob/main/.agents/skills/copywriting/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Vishvsalvi/magicmail/blob/main/.agents/skills/copywriting/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

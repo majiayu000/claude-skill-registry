@@ -1,0 +1,17 @@
+{
+  "name": "threejs-core-scene-graph",
+  "repo": "OpenAEC-Foundation/Three.js-Claude-Skill-Package",
+  "path": "skills/source/threejs-core/threejs-core-scene-graph/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/OpenAEC-Foundation/Three.js-Claude-Skill-Package",
+  "dir_name": "threejs-core-scene-graph",
+  "downloaded_at": "2026-03-22T06:00:25.509571Z",
+  "author": "OpenAEC-Foundation",
+  "source_url": "https://github.com/OpenAEC-Foundation/Three.js-Claude-Skill-Package/blob/master/skills/source/threejs-core/threejs-core-scene-graph/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OpenAEC-Foundation/Three.js-Claude-Skill-Package/blob/master/skills/source/threejs-core/threejs-core-scene-graph/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

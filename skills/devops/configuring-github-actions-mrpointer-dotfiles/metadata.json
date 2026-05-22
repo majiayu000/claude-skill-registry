@@ -1,0 +1,17 @@
+{
+  "name": "configuring-github-actions",
+  "repo": "MrPointer/dotfiles",
+  "path": ".claude/skills/configuring-github-actions/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/MrPointer/dotfiles",
+  "dir_name": "configuring-github-actions-mrpointer-dotfiles",
+  "downloaded_at": "2026-03-22T05:52:39.972691Z",
+  "author": "MrPointer",
+  "source_url": "https://github.com/MrPointer/dotfiles/blob/main/.claude/skills/configuring-github-actions/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MrPointer/dotfiles/blob/main/.claude/skills/configuring-github-actions/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

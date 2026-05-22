@@ -1,0 +1,17 @@
+{
+  "name": "code-scaffolding",
+  "repo": "VersoXBT/claude-recommended-skills",
+  "path": "code-scaffolding/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/VersoXBT/claude-recommended-skills",
+  "dir_name": "code-scaffolding",
+  "downloaded_at": "2026-03-22T06:27:56.353946Z",
+  "author": "VersoXBT",
+  "source_url": "https://github.com/VersoXBT/claude-recommended-skills/blob/main/code-scaffolding/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/VersoXBT/claude-recommended-skills/blob/main/code-scaffolding/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

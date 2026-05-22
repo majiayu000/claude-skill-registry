@@ -1,0 +1,18 @@
+{
+  "name": "clerk-core-workflow-b",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/clerk-pack/skills/clerk-core-workflow-b/SKILL.md",
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "downloaded_at": "2026-01-20T01:16:04.269183Z",
+  "dir_name": "clerk-core-workflow-b",
+  "category": "security",
+  "github_path": "plugins/saas-packs/clerk-pack/skills/clerk-core-workflow-b",
+  "github_branch": "main",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/clerk-pack/skills/clerk-core-workflow-b/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

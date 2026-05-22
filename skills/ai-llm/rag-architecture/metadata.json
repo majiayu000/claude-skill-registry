@@ -1,0 +1,18 @@
+{
+  "name": "rag-architecture",
+  "repo": "melodic-software/claude-code-plugins",
+  "path": "plugins/systems-design/skills/rag-architecture/SKILL.md",
+  "source": "github.com/melodic-software/claude-code-plugins",
+  "downloaded_at": "2026-01-22T01:58:56.684635Z",
+  "dir_name": "rag-architecture",
+  "category": "ai-llm",
+  "github_path": "plugins/systems-design/skills/rag-architecture",
+  "github_branch": "main",
+  "author": "melodic-software",
+  "source_url": "https://github.com/melodic-software/claude-code-plugins/blob/main/plugins/systems-design/skills/rag-architecture/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Melodic Software",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

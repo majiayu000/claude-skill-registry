@@ -1,0 +1,16 @@
+{
+  "name": "browser-screenshot",
+  "repo": "Igosuki/claude-skills",
+  "path": "browser-screenshot/SKILL.md",
+  "source": "github.com/Igosuki/claude-skills",
+  "downloaded_at": "2026-01-30T02:15:11.982257Z",
+  "dir_name": "browser-screenshot-igosuki-claude-skills-2",
+  "category": "testing",
+  "author": "Igosuki",
+  "source_url": "https://github.com/Igosuki/claude-skills/blob/main/browser-screenshot/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Igosuki/claude-skills/blob/main/browser-screenshot/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "email-notifications",
+  "repo": "eddiebe147/claude-settings",
+  "path": "skills/email-notifications/skill.md",
+  "source": "github.com/eddiebe147/claude-settings",
+  "downloaded_at": "2026-01-29T07:35:18.599083Z",
+  "dir_name": "email-notifications-eddiebe147-claude-settings",
+  "category": "integration",
+  "author": "eddiebe147",
+  "source_url": "https://github.com/eddiebe147/claude-settings/blob/main/skills/email-notifications/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/eddiebe147/claude-settings/blob/main/skills/email-notifications/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

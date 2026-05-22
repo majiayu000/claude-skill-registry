@@ -1,0 +1,16 @@
+{
+  "name": "css-layouts",
+  "repo": "wernerglinka/metalsmith-components",
+  "path": ".claude/skills/css-layouts/SKILL.md",
+  "source": "github.com/wernerglinka/metalsmith-components",
+  "downloaded_at": "2026-01-29T03:08:54.332919Z",
+  "dir_name": "css-layouts",
+  "category": "design",
+  "author": "wernerglinka",
+  "source_url": "https://github.com/wernerglinka/metalsmith-components/blob/main/.claude/skills/css-layouts/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Werner Glinka",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

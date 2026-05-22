@@ -1,0 +1,17 @@
+{
+  "name": "tailwind-patterns",
+  "repo": "darthlinuxer/Agentic-Skills",
+  "path": ".claude/skills/tailwind-patterns/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/darthlinuxer/Agentic-Skills",
+  "dir_name": "tailwind-patterns-darthlinuxer-agentic-skills-3",
+  "downloaded_at": "2026-03-01T07:22:53.090123Z",
+  "author": "darthlinuxer",
+  "source_url": "https://github.com/darthlinuxer/Agentic-Skills/blob/main/.claude/skills/tailwind-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/darthlinuxer/Agentic-Skills/blob/main/.claude/skills/tailwind-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

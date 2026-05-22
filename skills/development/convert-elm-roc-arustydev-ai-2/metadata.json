@@ -1,0 +1,17 @@
+{
+  "name": "convert-elm-roc",
+  "repo": "aRustyDev/ai",
+  "path": "context/skills/convert-elm-roc/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/aRustyDev/ai",
+  "dir_name": "convert-elm-roc-arustydev-ai-2",
+  "downloaded_at": "2026-03-01T06:24:12.093320Z",
+  "author": "aRustyDev",
+  "source_url": "https://github.com/aRustyDev/ai/blob/main/context/skills/convert-elm-roc/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aRustyDev/ai/blob/main/context/skills/convert-elm-roc/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

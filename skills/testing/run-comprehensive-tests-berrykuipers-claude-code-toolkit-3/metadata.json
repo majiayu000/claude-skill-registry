@@ -1,0 +1,17 @@
+{
+  "name": "run-comprehensive-tests",
+  "repo": "BerryKuipers/claude-code-toolkit",
+  "path": ".claude/skills/testing/run-comprehensive-tests/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/BerryKuipers/claude-code-toolkit",
+  "dir_name": "run-comprehensive-tests-berrykuipers-claude-code-toolkit-3",
+  "downloaded_at": "2026-03-22T04:59:47.309136Z",
+  "author": "BerryKuipers",
+  "source_url": "https://github.com/BerryKuipers/claude-code-toolkit/blob/main/.claude/skills/testing/run-comprehensive-tests/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BerryKuipers/claude-code-toolkit/blob/main/.claude/skills/testing/run-comprehensive-tests/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

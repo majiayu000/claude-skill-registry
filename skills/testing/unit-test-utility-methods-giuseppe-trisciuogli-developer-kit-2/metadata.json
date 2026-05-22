@@ -1,0 +1,17 @@
+{
+  "name": "unit-test-utility-methods",
+  "repo": "giuseppe-trisciuoglio/developer-kit",
+  "path": "plugins/developer-kit-java/skills/unit-test-utility-methods/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/giuseppe-trisciuoglio/developer-kit",
+  "dir_name": "unit-test-utility-methods-giuseppe-trisciuogli-developer-kit-2",
+  "downloaded_at": "2026-03-07T01:20:26.155120Z",
+  "author": "giuseppe-trisciuoglio",
+  "source_url": "https://github.com/giuseppe-trisciuoglio/developer-kit/blob/main/plugins/developer-kit-java/skills/unit-test-utility-methods/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/giuseppe-trisciuoglio/developer-kit/blob/main/plugins/developer-kit-java/skills/unit-test-utility-methods/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

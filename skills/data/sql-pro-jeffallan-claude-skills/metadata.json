@@ -1,0 +1,18 @@
+{
+  "name": "sql-pro",
+  "repo": "Jeffallan/claude-skills",
+  "path": "skills/sql-pro/SKILL.md",
+  "source": "github.com/Jeffallan/claude-skills",
+  "downloaded_at": "2026-01-22T02:05:05.779109Z",
+  "dir_name": "sql-pro-jeffallan-claude-skills",
+  "category": "data",
+  "github_path": "skills/sql-pro",
+  "github_branch": "main",
+  "author": "Jeffallan",
+  "source_url": "https://github.com/Jeffallan/claude-skills/blob/main/skills/sql-pro/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

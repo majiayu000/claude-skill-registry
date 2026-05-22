@@ -1,0 +1,17 @@
+{
+  "name": "frontend-feature-scaffold",
+  "repo": "aalmada/BookStore",
+  "path": ".claude/skills/frontend__feature_scaffold/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/aalmada/BookStore",
+  "dir_name": "frontend-feature-scaffold",
+  "downloaded_at": "2026-03-22T06:37:29.989842Z",
+  "author": "aalmada",
+  "source_url": "https://github.com/aalmada/BookStore/blob/main/.claude/skills/frontend__feature_scaffold/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aalmada/BookStore/blob/main/.claude/skills/frontend__feature_scaffold/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

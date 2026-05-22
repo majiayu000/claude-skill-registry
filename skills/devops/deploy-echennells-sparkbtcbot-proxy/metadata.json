@@ -1,0 +1,13 @@
+{
+  "name": "deploy",
+  "description": "",
+  "repo": "echennells/sparkbtcbot-proxy",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/echennells/sparkbtcbot-proxy",
+  "github_path": "skills/deploy",
+  "github_branch": "main",
+  "dir_name": "deploy-echennells-sparkbtcbot-proxy",
+  "downloaded_at": "2026-02-05T01:44:28.269098Z"
+}

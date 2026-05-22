@@ -1,0 +1,18 @@
+{
+  "name": "rust-pro",
+  "description": "Master Rust 1.75+ with modern async patterns, advanced type system features, and production-ready systems programming. Expert in the latest Rust ecosystem including Tokio, axum, and cutting-edge crate",
+  "repo": "rmyndharis/antigravity-skills",
+  "path": "skills/systems-programming-rust-project",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rmyndharis/antigravity-skills",
+  "dir_name": "rust-pro-rmyndharis-antigravity-skills-2",
+  "author": "rmyndharis",
+  "source_url": "https://github.com/rmyndharis/antigravity-skills/blob/main/skills/systems-programming-rust-project/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Yudhi Armyndharis",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

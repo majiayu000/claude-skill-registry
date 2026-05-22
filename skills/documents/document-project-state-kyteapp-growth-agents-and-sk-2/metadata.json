@@ -1,0 +1,16 @@
+{
+  "name": "document-project-state",
+  "repo": "KyteApp/growth-agents-and-skills",
+  "path": ".gemini/skills/document-project-state/SKILL.md",
+  "category": "documents",
+  "source": "github.com/KyteApp/growth-agents-and-skills",
+  "dir_name": "document-project-state-kyteapp-growth-agents-and-sk-2",
+  "downloaded_at": "2026-02-22T05:18:08.793576Z",
+  "author": "KyteApp",
+  "source_url": "https://github.com/KyteApp/growth-agents-and-skills/blob/main/.gemini/skills/document-project-state/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/KyteApp/growth-agents-and-skills/blob/main/.gemini/skills/document-project-state/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

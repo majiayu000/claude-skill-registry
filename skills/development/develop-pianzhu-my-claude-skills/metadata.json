@@ -1,0 +1,18 @@
+{
+  "name": "develop",
+  "repo": "pianzhu/my-claude-skills",
+  "path": "skills/HelloAgents/develop/SKILL.md",
+  "source": "github.com/pianzhu/my-claude-skills",
+  "downloaded_at": "2026-01-22T04:10:53.423551Z",
+  "dir_name": "develop-pianzhu-my-claude-skills",
+  "category": "development",
+  "github_path": "skills/HelloAgents/develop",
+  "github_branch": "main",
+  "author": "pianzhu",
+  "source_url": "https://github.com/pianzhu/my-claude-skills/blob/main/skills/HelloAgents/develop/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pianzhu/my-claude-skills/blob/main/skills/HelloAgents/develop/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "unsloth",
+  "repo": "MesferAli/XCircle",
+  "path": ".claude/skills/unsloth/SKILL.md",
+  "category": "ai-ml",
+  "source": "github.com/MesferAli/XCircle",
+  "dir_name": "unsloth-mesferali-xcircle",
+  "downloaded_at": "2026-02-15T05:28:00.665013Z",
+  "author": "MesferAli",
+  "source_url": "https://github.com/MesferAli/XCircle/blob/main/.claude/skills/unsloth/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MesferAli/XCircle/blob/main/.claude/skills/unsloth/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

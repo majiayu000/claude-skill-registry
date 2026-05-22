@@ -1,0 +1,17 @@
+{
+  "name": "commit",
+  "repo": "bcastelino/agent-skills-kit",
+  "path": "skills/commit/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/bcastelino/agent-skills-kit",
+  "dir_name": "commit-bcastelino-agent-skills-kit",
+  "downloaded_at": "2026-03-22T07:11:05.211668Z",
+  "author": "bcastelino",
+  "source_url": "https://github.com/bcastelino/agent-skills-kit/blob/main/skills/commit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bcastelino/agent-skills-kit/blob/main/skills/commit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

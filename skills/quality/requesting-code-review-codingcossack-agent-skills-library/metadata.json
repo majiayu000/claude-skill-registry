@@ -1,0 +1,17 @@
+{
+  "name": "requesting-code-review",
+  "repo": "CodingCossack/agent-skills-library",
+  "path": "skills/requesting-code-review/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/CodingCossack/agent-skills-library",
+  "dir_name": "requesting-code-review-codingcossack-agent-skills-library",
+  "downloaded_at": "2026-03-22T05:07:01.491595Z",
+  "author": "CodingCossack",
+  "source_url": "https://github.com/CodingCossack/agent-skills-library/blob/main/skills/requesting-code-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CodingCossack/agent-skills-library/blob/main/skills/requesting-code-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

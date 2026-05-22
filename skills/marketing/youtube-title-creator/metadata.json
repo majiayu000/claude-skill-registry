@@ -1,0 +1,16 @@
+{
+  "name": "youtube-title-creator",
+  "repo": "cdeistopened/skill-stack",
+  "path": ".claude/skills/youtube-title-creator/SKILL.md",
+  "source": "github.com/cdeistopened/skill-stack",
+  "downloaded_at": "2026-02-02T02:02:45.895643Z",
+  "dir_name": "youtube-title-creator",
+  "category": "marketing",
+  "author": "cdeistopened",
+  "source_url": "https://github.com/cdeistopened/skill-stack/blob/main/.claude/skills/youtube-title-creator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Wayne Sutton",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

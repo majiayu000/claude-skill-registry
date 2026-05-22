@@ -1,0 +1,20 @@
+{
+  "name": "convex-agents",
+  "description": "",
+  "repo": "cgRGM/rivercitymd",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cgRGM/rivercitymd",
+  "github_path": ".cursor/skills/convex-agents",
+  "github_branch": "master",
+  "dir_name": "convex-agents-cgrgm-rivercitymd",
+  "downloaded_at": "2026-02-05T01:45:02.118950Z",
+  "author": "cgRGM",
+  "source_url": "https://github.com/cgRGM/rivercitymd/blob/master/.cursor/skills/convex-agents/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgRGM/rivercitymd/blob/master/.cursor/skills/convex-agents/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

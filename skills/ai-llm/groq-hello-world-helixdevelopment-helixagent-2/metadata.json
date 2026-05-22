@@ -1,0 +1,17 @@
+{
+  "name": "groq-hello-world",
+  "repo": "HelixDevelopment/HelixAgent",
+  "path": "skills/plugins/saas-packs/groq-pack/groq-hello-world/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-llm",
+  "source": "github.com/HelixDevelopment/HelixAgent",
+  "dir_name": "groq-hello-world-helixdevelopment-helixagent-2",
+  "downloaded_at": "2026-03-22T05:27:51.359344Z",
+  "author": "HelixDevelopment",
+  "source_url": "https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/plugins/saas-packs/groq-pack/groq-hello-world/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/plugins/saas-packs/groq-pack/groq-hello-world/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

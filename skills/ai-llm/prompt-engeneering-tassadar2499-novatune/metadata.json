@@ -1,0 +1,17 @@
+{
+  "name": "prompt-engeneering",
+  "repo": "Tassadar2499/NovaTune",
+  "path": ".codex/skills/prompt-engeneering/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-llm",
+  "source": "github.com/Tassadar2499/NovaTune",
+  "dir_name": "prompt-engeneering-tassadar2499-novatune",
+  "downloaded_at": "2026-03-22T06:21:05.724047Z",
+  "author": "Tassadar2499",
+  "source_url": "https://github.com/Tassadar2499/NovaTune/blob/main/.codex/skills/prompt-engeneering/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tassadar2499/NovaTune/blob/main/.codex/skills/prompt-engeneering/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

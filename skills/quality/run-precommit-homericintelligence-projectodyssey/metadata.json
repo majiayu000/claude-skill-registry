@@ -1,0 +1,13 @@
+{
+  "name": "run-precommit",
+  "description": "",
+  "repo": "HomericIntelligence/ProjectOdyssey",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HomericIntelligence/ProjectOdyssey",
+  "github_path": ".claude/skills/run-precommit",
+  "github_branch": "main",
+  "dir_name": "run-precommit-homericintelligence-projectodyssey",
+  "downloaded_at": "2026-02-05T01:44:42.917135Z"
+}

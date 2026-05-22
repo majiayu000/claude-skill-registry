@@ -1,0 +1,16 @@
+{
+  "name": "broadcast-api",
+  "repo": "aniketpanjwani/payload-plugin-email-newsletter",
+  "path": ".claude/skills/broadcast-api/SKILL.md",
+  "source": "github.com/aniketpanjwani/payload-plugin-email-newsletter",
+  "downloaded_at": "2026-02-02T02:42:24.405250Z",
+  "dir_name": "broadcast-api",
+  "category": "integration",
+  "author": "aniketpanjwani",
+  "source_url": "https://github.com/aniketpanjwani/payload-plugin-email-newsletter/blob/main/.claude/skills/broadcast-api/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Aniket Panjwani",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

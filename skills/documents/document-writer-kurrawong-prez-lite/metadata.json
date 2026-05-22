@@ -1,0 +1,17 @@
+{
+  "name": "document-writer",
+  "repo": "Kurrawong/prez-lite",
+  "path": ".claude/skills/document-writer/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/Kurrawong/prez-lite",
+  "dir_name": "document-writer-kurrawong-prez-lite",
+  "downloaded_at": "2026-03-22T05:40:19.343378Z",
+  "author": "Kurrawong",
+  "source_url": "https://github.com/Kurrawong/prez-lite/blob/main/.claude/skills/document-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kurrawong/prez-lite/blob/main/.claude/skills/document-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

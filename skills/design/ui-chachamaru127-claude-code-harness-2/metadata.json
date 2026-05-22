@@ -1,0 +1,16 @@
+{
+  "name": "ui",
+  "repo": "Chachamaru127/claude-code-harness",
+  "path": "opencode/skills/ui/SKILL.md",
+  "source": "github.com/Chachamaru127/claude-code-harness",
+  "downloaded_at": "2026-01-29T06:12:18.011933Z",
+  "dir_name": "ui-chachamaru127-claude-code-harness-2",
+  "category": "design",
+  "author": "Chachamaru127",
+  "source_url": "https://github.com/Chachamaru127/claude-code-harness/blob/main/opencode/skills/ui/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2025 Manus AI & Chachamaru",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

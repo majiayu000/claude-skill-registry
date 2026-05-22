@@ -1,0 +1,16 @@
+{
+  "name": "bun-runtime",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/bun/skills/bun-runtime/SKILL.md",
+  "source": "github.com/secondsky/claude-skills",
+  "downloaded_at": "2026-01-29T07:59:26.937854Z",
+  "dir_name": "bun-runtime-secondsky-claude-skills",
+  "category": "development",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/bun/skills/bun-runtime/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "ffmpeg-cicd-runners",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/ffmpeg-master/skills/ffmpeg-cicd-runners/SKILL.md",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "downloaded_at": "2026-01-22T03:16:46.953580Z",
+  "dir_name": "ffmpeg-cicd-runners-josiahsiegel-claude-plugin-market-ddb75e68",
+  "category": "devops",
+  "github_path": "plugins/ffmpeg-master/skills/ffmpeg-cicd-runners",
+  "github_branch": "main",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/ffmpeg-master/skills/ffmpeg-cicd-runners/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

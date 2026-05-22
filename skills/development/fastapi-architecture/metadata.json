@@ -1,0 +1,17 @@
+{
+  "name": "fastapi-architecture",
+  "repo": "HasnainCodeHub/todo-evaluation",
+  "path": ".claude/skills/fastapi-architecture/skill.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/HasnainCodeHub/todo-evaluation",
+  "dir_name": "fastapi-architecture",
+  "downloaded_at": "2026-03-01T05:23:59.195634Z",
+  "author": "HasnainCodeHub",
+  "source_url": "https://github.com/HasnainCodeHub/todo-evaluation/blob/master/.claude/skills/fastapi-architecture/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HasnainCodeHub/todo-evaluation/blob/master/.claude/skills/fastapi-architecture/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

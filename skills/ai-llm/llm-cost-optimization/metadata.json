@@ -1,0 +1,18 @@
+{
+  "name": "llm-cost-optimization",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "42-cost-engineering/llm-cost-optimization/SKILL.md",
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "downloaded_at": "2026-01-20T02:40:50.321623Z",
+  "dir_name": "llm-cost-optimization",
+  "category": "ai-llm",
+  "github_path": "42-cost-engineering/llm-cost-optimization",
+  "github_branch": "main",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/cerebratechai-claude-skills/blob/main/42-cost-engineering/llm-cost-optimization/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "code-review-security",
+  "repo": "NikitaDmitrieff/auto-co-meta",
+  "path": ".claude/skills/code-review-security/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/NikitaDmitrieff/auto-co-meta",
+  "dir_name": "code-review-security-nikitadmitrieff-auto-co-meta",
+  "downloaded_at": "2026-03-22T05:56:42.585563Z",
+  "author": "NikitaDmitrieff",
+  "source_url": "https://github.com/NikitaDmitrieff/auto-co-meta/blob/main/.claude/skills/code-review-security/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NikitaDmitrieff/auto-co-meta/blob/main/.claude/skills/code-review-security/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

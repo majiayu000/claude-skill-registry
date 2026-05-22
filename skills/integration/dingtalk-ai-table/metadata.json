@@ -1,0 +1,17 @@
+{
+  "name": "dingtalk-ai-table",
+  "repo": "breath57/dingtalk-skills",
+  "path": ".agents/skills/dingtalk-ai-table/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/breath57/dingtalk-skills",
+  "dir_name": "dingtalk-ai-table",
+  "downloaded_at": "2026-03-22T07:19:34.865933Z",
+  "author": "breath57",
+  "source_url": "https://github.com/breath57/dingtalk-skills/blob/main/.agents/skills/dingtalk-ai-table/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/breath57/dingtalk-skills/blob/main/.agents/skills/dingtalk-ai-table/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

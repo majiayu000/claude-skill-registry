@@ -1,0 +1,18 @@
+{
+  "name": "codeql",
+  "repo": "trailofbits/skills",
+  "path": "plugins/testing-handbook-skills/skills/codeql/SKILL.md",
+  "source": "github.com/trailofbits/skills",
+  "downloaded_at": "2026-01-22T03:09:26.764725Z",
+  "dir_name": "codeql",
+  "category": "security",
+  "github_path": "plugins/static-analysis/skills/codeql",
+  "github_branch": "main",
+  "author": "trailofbits",
+  "source_url": "https://github.com/trailofbits/skills/blob/main/plugins/static-analysis/skills/codeql/SKILL.md",
+  "license": "CC-BY-SA-4.0",
+  "copyright": "copyright and certain other rights. Our licenses are",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "records",
+  "repo": "b33eep/claude-code-setup",
+  "path": "docs/records/031-java-developer-skill.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/b33eep/claude-code-setup",
+  "dir_name": "records-b33eep-claude-code-setup",
+  "downloaded_at": "2026-03-02T01:17:37.765288Z",
+  "author": "b33eep",
+  "source_url": "https://github.com/b33eep/claude-code-setup/blob/main/docs/records/031-java-developer-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/b33eep/claude-code-setup/blob/main/docs/records/031-java-developer-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

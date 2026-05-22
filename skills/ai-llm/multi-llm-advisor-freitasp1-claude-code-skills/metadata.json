@@ -1,0 +1,16 @@
+{
+  "name": "multi-llm-advisor",
+  "repo": "freitasp1/claude-code-skills",
+  "path": "skills/multi-llm-advisor/SKILL.md",
+  "source": "github.com/freitasp1/claude-code-skills",
+  "downloaded_at": "2026-01-29T07:04:27.390471Z",
+  "dir_name": "multi-llm-advisor-freitasp1-claude-code-skills",
+  "category": "ai-llm",
+  "author": "freitasp1",
+  "source_url": "https://github.com/freitasp1/claude-code-skills/blob/main/skills/multi-llm-advisor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Lara Knuth / Dresden AI Insights",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

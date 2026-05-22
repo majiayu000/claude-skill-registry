@@ -1,0 +1,17 @@
+{
+  "name": "spacy",
+  "repo": "G1Joshi/Agent-Skills",
+  "path": "skills/ai-ml/spacy/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-ml",
+  "source": "github.com/G1Joshi/Agent-Skills",
+  "dir_name": "spacy",
+  "downloaded_at": "2026-03-22T05:22:22.543566Z",
+  "author": "G1Joshi",
+  "source_url": "https://github.com/G1Joshi/Agent-Skills/blob/main/skills/ai-ml/spacy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/G1Joshi/Agent-Skills/blob/main/skills/ai-ml/spacy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

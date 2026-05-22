@@ -1,0 +1,16 @@
+{
+  "name": "webgl-expert",
+  "repo": "ronnycoding/.claude",
+  "path": "skills/webgl-expert/SKILL.md",
+  "source": "github.com/ronnycoding/.claude",
+  "downloaded_at": "2026-02-02T01:31:48.757398Z",
+  "dir_name": "webgl-expert-ronnycoding-claude",
+  "category": "development",
+  "author": "ronnycoding",
+  "source_url": "https://github.com/ronnycoding/.claude/blob/main/skills/webgl-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ronnycoding/.claude/blob/main/skills/webgl-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

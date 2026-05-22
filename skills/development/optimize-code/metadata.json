@@ -1,0 +1,17 @@
+{
+  "name": "optimize-code",
+  "repo": "dlt-hub/dlt",
+  "path": ".claude/skills/optimize-code/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/dlt-hub/dlt",
+  "dir_name": "optimize-code",
+  "downloaded_at": "2026-03-22T07:46:58.259261Z",
+  "author": "dlt-hub",
+  "source_url": "https://github.com/dlt-hub/dlt/blob/master/.claude/skills/optimize-code/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dlt-hub/dlt/blob/master/.claude/skills/optimize-code/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

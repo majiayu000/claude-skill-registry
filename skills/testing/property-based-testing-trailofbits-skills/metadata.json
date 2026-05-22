@@ -1,0 +1,16 @@
+{
+  "name": "property-based-testing",
+  "repo": "trailofbits/skills",
+  "path": "plugins/property-based-testing/skills/property-based-testing/SKILL.md",
+  "source": "github.com/trailofbits/skills",
+  "downloaded_at": "2026-02-02T04:34:09.914620Z",
+  "dir_name": "property-based-testing-trailofbits-skills",
+  "category": "testing",
+  "author": "trailofbits",
+  "source_url": "https://github.com/trailofbits/skills/blob/main/plugins/property-based-testing/skills/property-based-testing/SKILL.md",
+  "license": "CC-BY-SA-4.0",
+  "copyright": "copyright and certain other rights. Our licenses are",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

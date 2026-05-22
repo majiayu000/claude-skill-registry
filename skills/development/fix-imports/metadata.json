@@ -1,0 +1,16 @@
+{
+  "name": "fix-imports",
+  "repo": "manastalukdar/claude-devstudio",
+  "path": "skills/fix-imports/SKILL.md",
+  "source": "github.com/manastalukdar/claude-devstudio",
+  "downloaded_at": "2026-02-02T03:11:57.763598Z",
+  "dir_name": "fix-imports",
+  "category": "development",
+  "author": "manastalukdar",
+  "source_url": "https://github.com/manastalukdar/claude-devstudio/blob/main/skills/fix-imports/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brenner Cruvinel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

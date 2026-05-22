@@ -1,0 +1,17 @@
+{
+  "name": "spec-driven-qa-remediation",
+  "repo": "bankielewicz/DevForgeAI",
+  "path": ".claude/skills/spec-driven-qa-remediation/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/bankielewicz/DevForgeAI",
+  "dir_name": "spec-driven-qa-remediation",
+  "downloaded_at": "2026-03-22T07:09:59.783505Z",
+  "author": "bankielewicz",
+  "source_url": "https://github.com/bankielewicz/DevForgeAI/blob/main/.claude/skills/spec-driven-qa-remediation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bankielewicz/DevForgeAI/blob/main/.claude/skills/spec-driven-qa-remediation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

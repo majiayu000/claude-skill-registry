@@ -1,0 +1,16 @@
+{
+  "name": "otp",
+  "repo": "vinnie357/claude-skills",
+  "path": "elixir/skills/otp/SKILL.md",
+  "source": "github.com/vinnie357/claude-skills",
+  "downloaded_at": "2026-01-27T03:06:33.140336Z",
+  "dir_name": "otp",
+  "category": "development",
+  "author": "vinnie357",
+  "source_url": "https://github.com/vinnie357/claude-skills/blob/main/elixir/skills/otp/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Vinnie Mazza",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

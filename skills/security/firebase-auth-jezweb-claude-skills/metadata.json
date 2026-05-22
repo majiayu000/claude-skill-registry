@@ -1,0 +1,16 @@
+{
+  "name": "firebase-auth",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/firebase-auth/SKILL.md",
+  "source": "github.com/jezweb/claude-skills",
+  "downloaded_at": "2026-02-02T04:09:07.663900Z",
+  "dir_name": "firebase-auth-jezweb-claude-skills",
+  "category": "security",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/firebase-auth/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

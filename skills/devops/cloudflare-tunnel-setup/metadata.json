@@ -1,0 +1,16 @@
+{
+  "name": "cloudflare-tunnel-setup",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/cloudflare-tunnel-setup/SKILL.md",
+  "source": "github.com/dawiddutoit/custom-claude",
+  "downloaded_at": "2026-01-27T02:53:52.853363Z",
+  "dir_name": "cloudflare-tunnel-setup",
+  "category": "devops",
+  "author": "dawiddutoit",
+  "source_url": "https://github.com/dawiddutoit/custom-claude/blob/main/skills/cloudflare-tunnel-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dawiddutoit/custom-claude/blob/main/skills/cloudflare-tunnel-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

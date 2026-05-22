@@ -1,0 +1,16 @@
+{
+  "name": "document-quality-standards",
+  "repo": "belumume/claude-skills",
+  "path": "document-quality-standards/SKILL.md",
+  "source": "github.com/belumume/claude-skills",
+  "downloaded_at": "2026-01-29T07:50:41.820446Z",
+  "dir_name": "document-quality-standards-belumume-claude-skills-3",
+  "category": "documents",
+  "author": "belumume",
+  "source_url": "https://github.com/belumume/claude-skills/blob/main/document-quality-standards/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/belumume/claude-skills/blob/main/document-quality-standards/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

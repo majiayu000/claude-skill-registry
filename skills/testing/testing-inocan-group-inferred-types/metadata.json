@@ -1,0 +1,13 @@
+{
+  "name": "testing",
+  "description": "primitives for advanced inference in TS",
+  "repo": "inocan-group/inferred-types",
+  "category": "testing",
+  "tags": [],
+  "stars": 18,
+  "source": "",
+  "github_path": ".claude/skills/testing",
+  "github_branch": "main",
+  "dir_name": "testing-inocan-group-inferred-types",
+  "downloaded_at": "2026-02-05T01:45:28.219775Z"
+}

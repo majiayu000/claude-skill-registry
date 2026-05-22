@@ -1,0 +1,16 @@
+{
+  "name": "mcp-integration",
+  "repo": "HelixDevelopment/HelixAgent",
+  "path": "skills/claude-code/mcp-integration/SKILL.md",
+  "source": "github.com/HelixDevelopment/HelixAgent",
+  "downloaded_at": "2026-02-02T03:53:40.802571Z",
+  "dir_name": "mcp-integration-helixdevelopment-helixagent",
+  "category": "integration",
+  "author": "HelixDevelopment",
+  "source_url": "https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/claude-code/mcp-integration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Milos Vasic",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

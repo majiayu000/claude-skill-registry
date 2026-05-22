@@ -1,0 +1,16 @@
+{
+  "name": "dotnet-testing-advanced-aspnet-integration-testing",
+  "repo": "kevintsengtw/dotnet-testing-agent-skills",
+  "path": "skills/dotnet-testing-advanced-aspnet-integration-testing/SKILL.md",
+  "source": "github.com/kevintsengtw/dotnet-testing-agent-skills",
+  "downloaded_at": "2026-02-02T02:50:51.542967Z",
+  "dir_name": "dotnet-testing-advanced-aspnet-integration-testing",
+  "category": "testing",
+  "author": "kevintsengtw",
+  "source_url": "https://github.com/kevintsengtw/dotnet-testing-agent-skills/blob/main/skills/dotnet-testing-advanced-aspnet-integration-testing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Kevin Tseng",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "mithril-materialized",
+  "repo": "erikvullings/mithril-materialized",
+  "path": ".claude/skills/mithril-materialized/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/erikvullings/mithril-materialized",
+  "dir_name": "mithril-materialized",
+  "downloaded_at": "2026-03-22T07:58:14.907962Z",
+  "author": "erikvullings",
+  "source_url": "https://github.com/erikvullings/mithril-materialized/blob/master/.claude/skills/mithril-materialized/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/erikvullings/mithril-materialized/blob/master/.claude/skills/mithril-materialized/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

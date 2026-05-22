@@ -1,0 +1,18 @@
+{
+  "name": "doc-brd",
+  "repo": "vladm3105/aidoc-flow-framework",
+  "path": ".claude/skills/doc-brd/SKILL.md",
+  "source": "github.com/vladm3105/aidoc-flow-framework",
+  "downloaded_at": "2026-01-17T01:48:47.202045Z",
+  "dir_name": "doc-brd",
+  "category": "documents",
+  "github_path": ".claude/skills/doc-brd",
+  "github_branch": "main",
+  "author": "vladm3105",
+  "source_url": "https://github.com/vladm3105/aidoc-flow-framework/blob/main/.claude/skills/doc-brd/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vladm3105/aidoc-flow-framework/blob/main/.claude/skills/doc-brd/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

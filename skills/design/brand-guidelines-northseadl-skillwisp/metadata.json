@@ -1,0 +1,20 @@
+{
+  "name": "brand-guidelines",
+  "description": "",
+  "repo": "northseadl/skillwisp",
+  "category": "design",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/northseadl/skillwisp",
+  "github_path": "skills/@anthropic/brand-guidelines",
+  "github_branch": "main",
+  "dir_name": "brand-guidelines-northseadl-skillwisp",
+  "downloaded_at": "2026-02-05T01:44:58.713828Z",
+  "author": "northseadl",
+  "source_url": "https://github.com/northseadl/skillwisp/blob/main/skills/@anthropic/brand-guidelines/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 SkillWisp",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

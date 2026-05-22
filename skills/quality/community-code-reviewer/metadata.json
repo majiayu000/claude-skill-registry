@@ -1,0 +1,16 @@
+{
+  "name": "community-code-reviewer",
+  "repo": "Claude-Code-Community-Ireland/claude-code-resources",
+  "path": "plugins/vibeworks-library/skills/community-code-reviewer/SKILL.md",
+  "source": "github.com/Claude-Code-Community-Ireland/claude-code-resources",
+  "downloaded_at": "2026-02-02T03:47:33.630241Z",
+  "dir_name": "community-code-reviewer",
+  "category": "quality",
+  "author": "Claude-Code-Community-Ireland",
+  "source_url": "https://github.com/Claude-Code-Community-Ireland/claude-code-resources/blob/main/plugins/vibeworks-library/skills/community-code-reviewer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Code Community Ireland",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

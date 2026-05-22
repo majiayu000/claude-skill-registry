@@ -1,0 +1,16 @@
+{
+  "name": "v0-dev",
+  "repo": "omer-metin/skills-for-antigravity",
+  "path": "skills/v0-dev/SKILL.md",
+  "source": "github.com/omer-metin/skills-for-antigravity",
+  "downloaded_at": "2026-02-02T03:38:24.435661Z",
+  "dir_name": "v0-dev",
+  "category": "design",
+  "author": "omer-metin",
+  "source_url": "https://github.com/omer-metin/skills-for-antigravity/blob/main/skills/v0-dev/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/omer-metin/skills-for-antigravity/blob/main/skills/v0-dev/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

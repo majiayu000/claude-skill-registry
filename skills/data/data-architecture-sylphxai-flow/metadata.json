@@ -1,0 +1,18 @@
+{
+  "name": "data-architecture",
+  "repo": "SylphxAI/flow",
+  "path": ".claude/skills/data-architecture/SKILL.md",
+  "source": "github.com/SylphxAI/flow",
+  "downloaded_at": "2026-01-21T00:56:58.325920Z",
+  "dir_name": "data-architecture-sylphxai-flow",
+  "category": "data",
+  "github_path": ".claude/skills/data-architecture",
+  "github_branch": "main",
+  "author": "SylphxAI",
+  "source_url": "https://github.com/SylphxAI/flow/blob/main/.claude/skills/data-architecture/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SylphxAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

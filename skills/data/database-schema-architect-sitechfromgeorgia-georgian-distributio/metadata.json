@@ -1,0 +1,18 @@
+{
+  "name": "database-schema-architect",
+  "repo": "sitechfromgeorgia/georgian-distribution-system",
+  "path": ".claude/skills/database-schema-architect/SKILL.md",
+  "source": "github.com/sitechfromgeorgia/georgian-distribution-system",
+  "downloaded_at": "2026-01-22T01:42:06.318850Z",
+  "dir_name": "database-schema-architect-sitechfromgeorgia-georgian-distributio",
+  "category": "data",
+  "github_path": ".claude/skills/database-schema-architect",
+  "github_branch": "main",
+  "author": "sitechfromgeorgia",
+  "source_url": "https://github.com/sitechfromgeorgia/georgian-distribution-system/blob/main/.claude/skills/database-schema-architect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sitechfromgeorgia/georgian-distribution-system/blob/main/.claude/skills/database-schema-architect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

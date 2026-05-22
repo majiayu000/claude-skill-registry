@@ -1,0 +1,17 @@
+{
+  "name": "web-automation",
+  "repo": "HouseGarofalo/claude-code-base",
+  "path": ".claude/skills/web-automation/SKILL.md",
+  "github_branch": "master",
+  "category": "testing",
+  "source": "github.com/HouseGarofalo/claude-code-base",
+  "dir_name": "web-automation-housegarofalo-claude-code-base-2",
+  "downloaded_at": "2026-03-22T05:28:46.954231Z",
+  "author": "HouseGarofalo",
+  "source_url": "https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/web-automation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/web-automation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

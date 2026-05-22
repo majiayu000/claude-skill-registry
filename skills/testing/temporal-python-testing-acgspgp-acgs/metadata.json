@@ -1,0 +1,13 @@
+{
+  "name": "temporal-python-testing",
+  "description": "",
+  "repo": "ACGSpgp/ACGS",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ACGSpgp/ACGS",
+  "github_path": ".agent/workflows/backend-development/1.2.3/skills/temporal-python-testing",
+  "github_branch": "main",
+  "dir_name": "temporal-python-testing-acgspgp-acgs",
+  "downloaded_at": "2026-02-05T05:40:33.100317Z"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "llm-evaluation",
+  "description": "",
+  "repo": "ollieb89/vibe_coding",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ollieb89/vibe_coding",
+  "github_path": ".agent/rules/llm-application-dev/skills/llm-evaluation",
+  "github_branch": "main",
+  "dir_name": "llm-evaluation-ollieb89-vibe-coding",
+  "downloaded_at": "2026-02-05T01:44:17.931014Z"
+}

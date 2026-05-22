@@ -1,0 +1,16 @@
+{
+  "name": "nextjs-standard-setup",
+  "repo": "darellchua2/opencode-config-template",
+  "path": "skills/nextjs-standard-setup/SKILL.md",
+  "source": "github.com/darellchua2/opencode-config-template",
+  "downloaded_at": "2026-01-27T03:48:04.248882Z",
+  "dir_name": "nextjs-standard-setup",
+  "category": "development",
+  "author": "darellchua2",
+  "source_url": "https://github.com/darellchua2/opencode-config-template/blob/main/skills/nextjs-standard-setup/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2026 OpenCode Configuration Template Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

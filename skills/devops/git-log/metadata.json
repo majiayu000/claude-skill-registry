@@ -1,0 +1,16 @@
+{
+  "name": "git-log",
+  "repo": "dudusoar/VRP-Toolkit",
+  "path": ".claude/skills/git-log/SKILL.md",
+  "source": "github.com/dudusoar/VRP-Toolkit",
+  "downloaded_at": "2026-02-02T04:23:30.454197Z",
+  "dir_name": "git-log",
+  "category": "devops",
+  "author": "dudusoar",
+  "source_url": "https://github.com/dudusoar/VRP-Toolkit/blob/main/.claude/skills/git-log/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dudusoar/VRP-Toolkit/blob/main/.claude/skills/git-log/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "update-docs",
+  "repo": "benjaminshoemaker/ai_coding_project_base",
+  "path": ".claude/skills/update-docs/SKILL.md",
+  "category": "documents",
+  "source": "github.com/benjaminshoemaker/ai_coding_project_base",
+  "dir_name": "update-docs-benjaminshoemaker-ai-coding-project-ba",
+  "downloaded_at": "2026-02-22T06:31:20.702250Z",
+  "author": "benjaminshoemaker",
+  "source_url": "https://github.com/benjaminshoemaker/ai_coding_project_base/blob/main/.claude/skills/update-docs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/benjaminshoemaker/ai_coding_project_base/blob/main/.claude/skills/update-docs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

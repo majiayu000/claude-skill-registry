@@ -1,0 +1,11 @@
+{
+  "name": "msw-mocking",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/msw-mocking/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-20T01:38:57.966006Z",
+  "dir_name": "msw-mocking",
+  "category": "testing",
+  "github_path": "skills/msw-mocking",
+  "github_branch": "main"
+}

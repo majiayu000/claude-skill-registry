@@ -1,0 +1,16 @@
+{
+  "name": "pragmatic-programmer",
+  "repo": "grndlvl/software-patterns",
+  "path": ".claude/skills/pragmatic-programmer/SKILL.md",
+  "source": "github.com/grndlvl/software-patterns",
+  "downloaded_at": "2026-02-02T04:39:52.074852Z",
+  "dir_name": "pragmatic-programmer",
+  "category": "development",
+  "author": "grndlvl",
+  "source_url": "https://github.com/grndlvl/software-patterns/blob/main/.claude/skills/pragmatic-programmer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 grndlvl",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

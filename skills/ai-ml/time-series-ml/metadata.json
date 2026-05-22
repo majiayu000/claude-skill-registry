@@ -1,0 +1,16 @@
+{
+  "name": "time-series-ml",
+  "repo": "jlaws/dotfiles",
+  "path": ".claude/skills/ai-ml/time-series-ml/SKILL.md",
+  "category": "ai-ml",
+  "source": "github.com/jlaws/dotfiles",
+  "dir_name": "time-series-ml",
+  "downloaded_at": "2026-02-15T07:44:31.076913Z",
+  "author": "jlaws",
+  "source_url": "https://github.com/jlaws/dotfiles/blob/main/.claude/skills/ai-ml/time-series-ml/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jlaws/dotfiles/blob/main/.claude/skills/ai-ml/time-series-ml/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

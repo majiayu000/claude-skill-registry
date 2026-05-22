@@ -1,0 +1,20 @@
+{
+  "name": "dev-server",
+  "description": "",
+  "repo": "petekp/claude-code-setup",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/petekp/claude-code-setup",
+  "github_path": "skills/dev-server",
+  "github_branch": "main",
+  "dir_name": "dev-server",
+  "downloaded_at": "2026-02-05T01:45:09.722323Z",
+  "author": "petekp",
+  "source_url": "https://github.com/petekp/claude-code-setup/blob/main/skills/dev-server/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Pete Petrash",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

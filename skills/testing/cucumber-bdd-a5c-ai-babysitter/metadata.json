@@ -1,0 +1,16 @@
+{
+  "name": "cucumber-bdd",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/qa-testing-automation/skills/cucumber-bdd/SKILL.md",
+  "source": "github.com/a5c-ai/babysitter",
+  "downloaded_at": "2026-01-27T04:38:36.666488Z",
+  "dir_name": "cucumber-bdd-a5c-ai-babysitter",
+  "category": "testing",
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/plugins/babysitter/skills/babysit/process/specializations/qa-testing-automation/skills/cucumber-bdd/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 A5C AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

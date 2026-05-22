@@ -1,0 +1,16 @@
+{
+  "name": "git-workspace-review",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/sanctum/skills/git-workspace-review/SKILL.md",
+  "source": "github.com/athola/claude-night-market",
+  "downloaded_at": "2026-01-29T05:25:05.461514Z",
+  "dir_name": "git-workspace-review-athola-claude-night-market",
+  "category": "development",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/sanctum/skills/git-workspace-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "lint-code",
+  "description": "",
+  "repo": "HomericIntelligence/ProjectOdyssey",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HomericIntelligence/ProjectOdyssey",
+  "github_path": ".claude/skills/tier-1/lint-code",
+  "github_branch": "main",
+  "dir_name": "lint-code-homericintelligence-projectodyssey",
+  "downloaded_at": "2026-02-05T01:44:42.970831Z"
+}

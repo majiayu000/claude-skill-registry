@@ -1,0 +1,17 @@
+{
+  "name": "shadcn",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/shadcn/shadcn/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "shadcn-aiskillstore-marketplace",
+  "downloaded_at": "2026-03-19T01:20:45.640505Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/shadcn/shadcn/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/shadcn/shadcn/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

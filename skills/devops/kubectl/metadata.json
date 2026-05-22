@@ -1,0 +1,18 @@
+{
+  "name": "kubectl",
+  "repo": "oimiragieo/agent-studio",
+  "path": ".claude/skills/kubectl/SKILL.md",
+  "source": "github.com/oimiragieo/agent-studio",
+  "downloaded_at": "2026-01-14T03:17:02.606025Z",
+  "dir_name": "kubectl",
+  "category": "devops",
+  "github_path": ".claude/skills/kubectl",
+  "github_branch": "main",
+  "author": "oimiragieo",
+  "source_url": "https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/kubectl/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/kubectl/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

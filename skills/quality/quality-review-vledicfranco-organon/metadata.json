@@ -1,0 +1,16 @@
+{
+  "name": "quality-review",
+  "repo": "VledicFranco/organon",
+  "path": ".claude/skills/quality-review/SKILL.md",
+  "category": "quality",
+  "source": "github.com/VledicFranco/organon",
+  "dir_name": "quality-review-vledicfranco-organon",
+  "downloaded_at": "2026-02-22T05:54:36.396179Z",
+  "author": "VledicFranco",
+  "source_url": "https://github.com/VledicFranco/organon/blob/main/.claude/skills/quality-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/VledicFranco/organon/blob/main/.claude/skills/quality-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

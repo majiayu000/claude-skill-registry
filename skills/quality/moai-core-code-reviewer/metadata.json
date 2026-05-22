@@ -1,0 +1,11 @@
+{
+  "name": "moai-core-code-reviewer",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-core-code-reviewer/SKILL.md",
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "downloaded_at": "2026-01-22T02:28:12.525639Z",
+  "dir_name": "moai-core-code-reviewer",
+  "category": "quality",
+  "github_path": ".claude/skills/moai-core-code-reviewer",
+  "github_branch": "main"
+}

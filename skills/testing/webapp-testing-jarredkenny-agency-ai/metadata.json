@@ -1,0 +1,13 @@
+{
+  "name": "webapp-testing",
+  "description": "",
+  "repo": "jarredkenny/agency-ai",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jarredkenny/agency-ai",
+  "github_path": "roles/orchestrator/skills/webapp-testing",
+  "github_branch": "main",
+  "dir_name": "webapp-testing-jarredkenny-agency-ai",
+  "downloaded_at": "2026-02-05T01:45:07.722962Z"
+}

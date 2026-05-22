@@ -1,0 +1,16 @@
+{
+  "name": "windows-privilege-escalation",
+  "repo": "chrissargent48/weekly_report",
+  "path": ".claude/skills/external-skills/skills/windows-privilege-escalation/SKILL.md",
+  "source": "github.com/chrissargent48/weekly_report",
+  "downloaded_at": "2026-01-29T06:38:26.838956Z",
+  "dir_name": "windows-privilege-escalation-chrissargent48-weekly-report",
+  "category": "security",
+  "author": "chrissargent48",
+  "source_url": "https://github.com/chrissargent48/weekly_report/blob/main/.claude/skills/external-skills/skills/windows-privilege-escalation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chrissargent48/weekly_report/blob/main/.claude/skills/external-skills/skills/windows-privilege-escalation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

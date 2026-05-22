@@ -1,0 +1,16 @@
+{
+  "name": "dotnet10-pack-tool",
+  "repo": "rysweet/amplihack",
+  "path": ".claude/skills/dotnet10-pack-tool/SKILL.md",
+  "source": "github.com/rysweet/amplihack",
+  "downloaded_at": "2026-02-02T04:29:59.160598Z",
+  "dir_name": "dotnet10-pack-tool",
+  "category": "development",
+  "author": "rysweet",
+  "source_url": "https://github.com/rysweet/amplihack/blob/main/.claude/skills/dotnet10-pack-tool/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rysweet/amplihack/blob/main/.claude/skills/dotnet10-pack-tool/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

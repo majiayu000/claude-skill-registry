@@ -1,0 +1,16 @@
+{
+  "name": "laravel-expert",
+  "repo": "VictorSmaniotto/degestao",
+  "path": ".agent/skills/laravel-expert/SKILL.md",
+  "source": "github.com/VictorSmaniotto/degestao",
+  "downloaded_at": "2026-01-27T03:07:30.697939Z",
+  "dir_name": "laravel-expert",
+  "category": "development",
+  "author": "VictorSmaniotto",
+  "source_url": "https://github.com/VictorSmaniotto/degestao/blob/main/.agent/skills/laravel-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/VictorSmaniotto/degestao/blob/main/.agent/skills/laravel-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

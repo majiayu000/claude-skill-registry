@@ -1,0 +1,16 @@
+{
+  "name": "observability-setup",
+  "repo": "proflead/codex-skills-library",
+  "path": "skills/infra/observability-setup/SKILL.md",
+  "source": "github.com/proflead/codex-skills-library",
+  "downloaded_at": "2026-02-02T03:56:45.805221Z",
+  "dir_name": "observability-setup-proflead-codex-skills-library",
+  "category": "devops",
+  "author": "proflead",
+  "source_url": "https://github.com/proflead/codex-skills-library/blob/main/skills/infra/observability-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/proflead/codex-skills-library/blob/main/skills/infra/observability-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

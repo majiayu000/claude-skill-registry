@@ -1,0 +1,18 @@
+{
+  "name": "test-scaffolding",
+  "repo": "kanopi/cms-cultivator",
+  "path": "skills/test-scaffolding/SKILL.md",
+  "source": "github.com/kanopi/cms-cultivator",
+  "downloaded_at": "2026-01-14T01:23:38.939513Z",
+  "dir_name": "test-scaffolding",
+  "category": "testing",
+  "github_path": "skills/test-scaffolding",
+  "github_branch": "main",
+  "author": "kanopi",
+  "source_url": "https://github.com/kanopi/cms-cultivator/blob/main/skills/test-scaffolding/SKILL.md",
+  "license": "GPL-2.0",
+  "copyright": "Copyright (C) 1989, 1991 Free Software Foundation, Inc.,",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

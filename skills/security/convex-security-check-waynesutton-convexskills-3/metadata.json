@@ -1,0 +1,17 @@
+{
+  "name": "convex-security-check",
+  "repo": "waynesutton/convexskills",
+  "path": "skills/convex-security-check/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/waynesutton/convexskills",
+  "dir_name": "convex-security-check-waynesutton-convexskills-3",
+  "downloaded_at": "2026-05-20T04:11:31.804531Z",
+  "author": "waynesutton",
+  "source_url": "https://github.com/waynesutton/convexskills/blob/main/skills/convex-security-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/waynesutton/convexskills/blob/main/skills/convex-security-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

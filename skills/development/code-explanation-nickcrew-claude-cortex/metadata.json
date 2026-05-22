@@ -1,0 +1,16 @@
+{
+  "name": "code-explanation",
+  "repo": "NickCrew/claude-cortex",
+  "path": "skills/code-explanation/SKILL.md",
+  "source": "github.com/NickCrew/claude-cortex",
+  "downloaded_at": "2026-02-02T03:43:45.529055Z",
+  "dir_name": "code-explanation-nickcrew-claude-cortex",
+  "category": "development",
+  "author": "NickCrew",
+  "source_url": "https://github.com/NickCrew/claude-cortex/blob/main/skills/code-explanation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nicholas Ferguson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

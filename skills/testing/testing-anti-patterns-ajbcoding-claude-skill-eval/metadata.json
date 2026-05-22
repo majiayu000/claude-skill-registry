@@ -1,0 +1,16 @@
+{
+  "name": "testing-anti-patterns",
+  "repo": "AJBcoding/claude-skill-eval",
+  "path": ".claude/skills/superpowers/testing-anti-patterns/SKILL.md",
+  "source": "github.com/AJBcoding/claude-skill-eval",
+  "downloaded_at": "2026-01-29T08:59:20.374223Z",
+  "dir_name": "testing-anti-patterns-ajbcoding-claude-skill-eval",
+  "category": "testing",
+  "author": "AJBcoding",
+  "source_url": "https://github.com/AJBcoding/claude-skill-eval/blob/main/.claude/skills/superpowers/testing-anti-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AJBcoding/claude-skill-eval/blob/main/.claude/skills/superpowers/testing-anti-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

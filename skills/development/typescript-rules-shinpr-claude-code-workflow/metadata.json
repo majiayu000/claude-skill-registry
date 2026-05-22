@@ -1,0 +1,16 @@
+{
+  "name": "typescript-rules",
+  "repo": "shinpr/claude-code-workflows",
+  "path": "skills/typescript-rules/SKILL.md",
+  "source": "github.com/shinpr/claude-code-workflows",
+  "downloaded_at": "2026-01-29T08:56:49.546982Z",
+  "dir_name": "typescript-rules-shinpr-claude-code-workflow",
+  "category": "development",
+  "author": "shinpr",
+  "source_url": "https://github.com/shinpr/claude-code-workflows/blob/main/skills/typescript-rules/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Shinsuke Kagawa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

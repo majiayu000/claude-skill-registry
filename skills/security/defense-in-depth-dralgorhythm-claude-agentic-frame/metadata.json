@@ -1,0 +1,20 @@
+{
+  "name": "defense-in-depth",
+  "description": "",
+  "repo": "dralgorhythm/claude-agentic-framework",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dralgorhythm/claude-agentic-framework",
+  "github_path": ".claude/skills/architecture/defense-in-depth",
+  "github_branch": "main",
+  "dir_name": "defense-in-depth-dralgorhythm-claude-agentic-frame",
+  "downloaded_at": "2026-02-05T01:44:49.728209Z",
+  "author": "dralgorhythm",
+  "source_url": "https://github.com/dralgorhythm/claude-agentic-framework/blob/main/.claude/skills/architecture/defense-in-depth/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dralgorhythm/claude-agentic-framework/blob/main/.claude/skills/architecture/defense-in-depth/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

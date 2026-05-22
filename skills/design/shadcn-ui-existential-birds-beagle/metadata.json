@@ -1,0 +1,17 @@
+{
+  "name": "shadcn-ui",
+  "repo": "existential-birds/beagle",
+  "path": "plugins/beagle-react/skills/shadcn-ui/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/existential-birds/beagle",
+  "dir_name": "shadcn-ui-existential-birds-beagle",
+  "downloaded_at": "2026-03-01T07:40:18.169743Z",
+  "author": "existential-birds",
+  "source_url": "https://github.com/existential-birds/beagle/blob/main/plugins/beagle-react/skills/shadcn-ui/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/existential-birds/beagle/blob/main/plugins/beagle-react/skills/shadcn-ui/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

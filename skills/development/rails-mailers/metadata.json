@@ -1,0 +1,17 @@
+{
+  "name": "rails-mailers",
+  "repo": "Shoebtamboli/rails_claude_skills",
+  "path": "lib/generators/claude/skills_library/rails-mailers/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/Shoebtamboli/rails_claude_skills",
+  "dir_name": "rails-mailers",
+  "downloaded_at": "2026-03-22T06:15:07.390883Z",
+  "author": "Shoebtamboli",
+  "source_url": "https://github.com/Shoebtamboli/rails_claude_skills/blob/main/lib/generators/claude/skills_library/rails-mailers/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Shoebtamboli/rails_claude_skills/blob/main/lib/generators/claude/skills_library/rails-mailers/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

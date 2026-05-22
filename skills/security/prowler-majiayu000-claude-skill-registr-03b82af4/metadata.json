@@ -1,0 +1,16 @@
+{
+  "name": "prowler",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/prowler/SKILL.md",
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "downloaded_at": "2026-02-02T04:36:12.453990Z",
+  "dir_name": "prowler-majiayu000-claude-skill-registr-03b82af4",
+  "category": "security",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/prowler/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

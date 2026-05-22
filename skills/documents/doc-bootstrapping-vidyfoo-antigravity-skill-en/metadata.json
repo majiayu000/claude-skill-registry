@@ -1,0 +1,16 @@
+{
+  "name": "doc-bootstrapping",
+  "repo": "VidyFoo/antigravity-skill-engine",
+  "path": ".agent/skills/3-sys/doc-bootstrapping/SKILL.md",
+  "source": "github.com/VidyFoo/antigravity-skill-engine",
+  "downloaded_at": "2026-01-29T08:14:55.616919Z",
+  "dir_name": "doc-bootstrapping-vidyfoo-antigravity-skill-en",
+  "category": "documents",
+  "author": "VidyFoo",
+  "source_url": "https://github.com/VidyFoo/antigravity-skill-engine/blob/main/.agent/skills/3-sys/doc-bootstrapping/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity Lab",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

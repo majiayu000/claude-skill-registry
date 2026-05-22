@@ -1,0 +1,16 @@
+{
+  "name": "mui",
+  "repo": "softaworks/agent-toolkit",
+  "path": "skills/mui/SKILL.md",
+  "source": "github.com/softaworks/agent-toolkit",
+  "downloaded_at": "2026-02-02T04:46:26.662111Z",
+  "dir_name": "mui-softaworks-agent-toolkit",
+  "category": "design",
+  "author": "softaworks",
+  "source_url": "https://github.com/softaworks/agent-toolkit/blob/main/skills/mui/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Leonardo Flores",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

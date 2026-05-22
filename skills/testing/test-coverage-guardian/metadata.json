@@ -1,0 +1,18 @@
+{
+  "name": "test-coverage-guardian",
+  "repo": "sunholo-data/ailang",
+  "path": ".claude/skills/test-coverage-guardian/SKILL.md",
+  "source": "github.com/sunholo-data/ailang",
+  "downloaded_at": "2026-01-22T03:40:49.259238Z",
+  "dir_name": "test-coverage-guardian",
+  "category": "testing",
+  "github_path": ".claude/skills/test-coverage-guardian",
+  "github_branch": "main",
+  "author": "sunholo-data",
+  "source_url": "https://github.com/sunholo-data/ailang/blob/main/.claude/skills/test-coverage-guardian/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sunholo-data/ailang/blob/main/.claude/skills/test-coverage-guardian/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

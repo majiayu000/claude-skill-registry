@@ -1,0 +1,11 @@
+{
+  "name": "code-refactor-deprecations",
+  "repo": "kynoptic/markdownlint-trap",
+  "path": ".claude/skills/code-refactor-deprecations/SKILL.md",
+  "source": "github.com/kynoptic/markdownlint-trap",
+  "downloaded_at": "2026-01-22T03:26:47.055211Z",
+  "dir_name": "code-refactor-deprecations",
+  "category": "development",
+  "github_path": ".claude/skills/code-refactor-deprecations",
+  "github_branch": "main"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "structured-logs-rfc-34",
+  "repo": "bitsoex/bitso-java",
+  "path": ".claude/skills/structured-logs-rfc-34/SKILL.md",
+  "source": "github.com/bitsoex/bitso-java",
+  "downloaded_at": "2026-01-30T01:26:46.898509Z",
+  "dir_name": "structured-logs-rfc-34",
+  "category": "development",
+  "author": "bitsoex",
+  "source_url": "https://github.com/bitsoex/bitso-java/blob/main/.claude/skills/structured-logs-rfc-34/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2015 Bitso SAPI de CV",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

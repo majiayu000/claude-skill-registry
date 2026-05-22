@@ -1,0 +1,17 @@
+{
+  "name": "qe-iterative-loop",
+  "repo": "aquariuscook/Agent_Modus_Map",
+  "path": ".claude/skills/qe-iterative-loop/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/aquariuscook/Agent_Modus_Map",
+  "dir_name": "qe-iterative-loop-aquariuscook-agent-modus-map",
+  "downloaded_at": "2026-03-22T07:00:31.016448Z",
+  "author": "aquariuscook",
+  "source_url": "https://github.com/aquariuscook/Agent_Modus_Map/blob/main/.claude/skills/qe-iterative-loop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aquariuscook/Agent_Modus_Map/blob/main/.claude/skills/qe-iterative-loop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "test-workflow",
+  "repo": "ManuelKugelmann/BitBot",
+  "path": ".bitbot/internal/bitbot-config/.claude/skills/test-workflow/skill.md",
+  "github_branch": "master",
+  "category": "testing",
+  "source": "github.com/ManuelKugelmann/BitBot",
+  "dir_name": "test-workflow-manuelkugelmann-bitbot-4",
+  "downloaded_at": "2026-03-22T05:48:06.793882Z",
+  "author": "ManuelKugelmann",
+  "source_url": "https://github.com/ManuelKugelmann/BitBot/blob/master/.bitbot/internal/bitbot-config/.claude/skills/test-workflow/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ManuelKugelmann/BitBot/blob/master/.bitbot/internal/bitbot-config/.claude/skills/test-workflow/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

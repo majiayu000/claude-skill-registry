@@ -1,0 +1,17 @@
+{
+  "name": "verify-error-boundaries",
+  "repo": "BIGSHOL/ijw-Calander",
+  "path": ".claude/skills/verify-error-boundaries/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/BIGSHOL/ijw-Calander",
+  "dir_name": "verify-error-boundaries",
+  "downloaded_at": "2026-03-01T04:56:28.767214Z",
+  "author": "BIGSHOL",
+  "source_url": "https://github.com/BIGSHOL/ijw-Calander/blob/main/.claude/skills/verify-error-boundaries/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BIGSHOL/ijw-Calander/blob/main/.claude/skills/verify-error-boundaries/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "convert-roc-scala",
+  "repo": "aRustyDev/ai",
+  "path": "components/skills/convert-roc-scala/SKILL.md",
+  "source": "github.com/aRustyDev/ai",
+  "downloaded_at": "2026-01-22T02:35:34.843495Z",
+  "dir_name": "convert-roc-scala",
+  "category": "development",
+  "github_path": "components/skills/convert-roc-scala",
+  "github_branch": "main",
+  "author": "aRustyDev",
+  "source_url": "https://github.com/aRustyDev/ai/blob/main/components/skills/convert-roc-scala/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

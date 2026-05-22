@@ -1,0 +1,17 @@
+{
+  "name": "workflow-architect",
+  "repo": "flosrn/.claude",
+  "path": "skills/workflow-architect/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/flosrn/.claude",
+  "dir_name": "workflow-architect-flosrn-claude",
+  "downloaded_at": "2026-03-01T07:44:33.320526Z",
+  "author": "flosrn",
+  "source_url": "https://github.com/flosrn/.claude/blob/main/skills/workflow-architect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/flosrn/.claude/blob/main/skills/workflow-architect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "hetzner-deploy",
+  "repo": "fcakyon/claude-codex-settings",
+  "path": "plugins/hetzner-skills/skills/hetzner-deploy/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/fcakyon/claude-codex-settings",
+  "dir_name": "hetzner-deploy",
+  "downloaded_at": "2026-05-20T03:55:39.975122Z",
+  "author": "fcakyon",
+  "source_url": "https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/hetzner-skills/skills/hetzner-deploy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/hetzner-skills/skills/hetzner-deploy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

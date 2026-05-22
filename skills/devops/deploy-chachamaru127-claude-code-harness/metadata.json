@@ -1,0 +1,20 @@
+{
+  "name": "deploy",
+  "description": "",
+  "repo": "Chachamaru127/claude-code-harness",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Chachamaru127/claude-code-harness",
+  "github_path": "skills/deploy",
+  "github_branch": "main",
+  "dir_name": "deploy-chachamaru127-claude-code-harness",
+  "downloaded_at": "2026-02-05T01:44:28.348206Z",
+  "author": "Chachamaru127",
+  "source_url": "https://github.com/Chachamaru127/claude-code-harness/blob/main/skills/deploy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2025 Manus AI & Chachamaru",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

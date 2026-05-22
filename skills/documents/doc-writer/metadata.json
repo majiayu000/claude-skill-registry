@@ -1,0 +1,18 @@
+{
+  "name": "doc-writer",
+  "repo": "ks6088ts-labs/skills",
+  "path": "skills/doc-writer/SKILL.md",
+  "source": "github.com/ks6088ts-labs/skills",
+  "downloaded_at": "2026-01-22T03:55:18.720597Z",
+  "dir_name": "doc-writer",
+  "category": "documents",
+  "github_path": "skills/doc-writer",
+  "github_branch": "main",
+  "author": "ks6088ts-labs",
+  "source_url": "https://github.com/ks6088ts-labs/skills/blob/main/skills/doc-writer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ks6088ts - Labs",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

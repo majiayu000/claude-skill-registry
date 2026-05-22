@@ -1,0 +1,18 @@
+{
+  "name": "docker-workflow",
+  "repo": "AutumnsGrove/ClaudeSkills",
+  "path": "docker-workflow/SKILL.md",
+  "source": "github.com/AutumnsGrove/ClaudeSkills",
+  "downloaded_at": "2026-01-22T02:03:09.421723Z",
+  "dir_name": "docker-workflow",
+  "category": "devops",
+  "github_path": "docker-workflow",
+  "github_branch": "main",
+  "author": "AutumnsGrove",
+  "source_url": "https://github.com/AutumnsGrove/ClaudeSkills/blob/main/docker-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AutumnsGrove/ClaudeSkills/blob/main/docker-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

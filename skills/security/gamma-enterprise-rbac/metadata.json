@@ -1,0 +1,18 @@
+{
+  "name": "gamma-enterprise-rbac",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/gamma-pack/skills/gamma-enterprise-rbac/SKILL.md",
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "downloaded_at": "2026-01-17T04:00:11.410827Z",
+  "dir_name": "gamma-enterprise-rbac",
+  "category": "security",
+  "github_path": "plugins/saas-packs/gamma-pack/skills/gamma-enterprise-rbac",
+  "github_branch": "main",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/gamma-pack/skills/gamma-enterprise-rbac/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

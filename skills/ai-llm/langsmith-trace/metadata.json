@@ -1,0 +1,17 @@
+{
+  "name": "langsmith-trace",
+  "repo": "Harmeet10000/skills",
+  "path": "skills/ai-ml/langsmith-trace/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-llm",
+  "source": "github.com/Harmeet10000/skills",
+  "dir_name": "langsmith-trace",
+  "downloaded_at": "2026-03-22T05:27:08.726872Z",
+  "author": "Harmeet10000",
+  "source_url": "https://github.com/Harmeet10000/skills/blob/main/skills/ai-ml/langsmith-trace/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Harmeet10000/skills/blob/main/skills/ai-ml/langsmith-trace/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

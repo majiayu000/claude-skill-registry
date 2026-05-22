@@ -1,0 +1,16 @@
+{
+  "name": "clean-architecture-ios",
+  "repo": "Kaakati/rails-enterprise-dev",
+  "path": "plugins/reactree-ios-dev/skills/clean-architecture-ios/SKILL.md",
+  "source": "github.com/Kaakati/rails-enterprise-dev",
+  "downloaded_at": "2026-01-27T03:42:05.047850Z",
+  "dir_name": "clean-architecture-ios",
+  "category": "development",
+  "author": "Kaakati",
+  "source_url": "https://github.com/Kaakati/rails-enterprise-dev/blob/main/plugins/reactree-ios-dev/skills/clean-architecture-ios/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kaakati/rails-enterprise-dev/blob/main/plugins/reactree-ios-dev/skills/clean-architecture-ios/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "browser-control",
+  "repo": "joungwoo-lee/claude-gateway-discord",
+  "path": ".claude/skills/browser-control/SKILL.md",
+  "category": "testing",
+  "source": "github.com/joungwoo-lee/claude-gateway-discord",
+  "dir_name": "browser-control-joungwoo-lee-claude-gateway-disco",
+  "downloaded_at": "2026-02-22T07:43:43.890782Z",
+  "author": "joungwoo-lee",
+  "source_url": "https://github.com/joungwoo-lee/claude-gateway-discord/blob/main/.claude/skills/browser-control/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/joungwoo-lee/claude-gateway-discord/blob/main/.claude/skills/browser-control/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

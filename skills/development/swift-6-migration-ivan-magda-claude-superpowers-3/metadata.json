@@ -1,0 +1,17 @@
+{
+  "name": "swift-6-migration",
+  "repo": "ivan-magda/claude-superpowers",
+  "path": "plugins/swift/skills/swift-6-migration/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/ivan-magda/claude-superpowers",
+  "dir_name": "swift-6-migration-ivan-magda-claude-superpowers-3",
+  "downloaded_at": "2026-04-28T02:08:01.551453Z",
+  "author": "ivan-magda",
+  "source_url": "https://github.com/ivan-magda/claude-superpowers/blob/main/plugins/swift/skills/swift-6-migration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ivan-magda/claude-superpowers/blob/main/plugins/swift/skills/swift-6-migration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

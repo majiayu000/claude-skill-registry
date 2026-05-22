@@ -1,0 +1,18 @@
+{
+  "name": "e2e-panther-playwright",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/e2e-panther-playwright/SKILL.md",
+  "source": "github.com/MakFly/superpowers-symfony",
+  "downloaded_at": "2026-01-22T04:09:14.924641Z",
+  "dir_name": "e2e-panther-playwright",
+  "category": "testing",
+  "github_path": "skills/e2e-panther-playwright",
+  "github_branch": "main",
+  "author": "MakFly",
+  "source_url": "https://github.com/MakFly/superpowers-symfony/blob/main/skills/e2e-panther-playwright/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

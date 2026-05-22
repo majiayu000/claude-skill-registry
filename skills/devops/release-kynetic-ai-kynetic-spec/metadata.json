@@ -1,0 +1,13 @@
+{
+  "name": "release",
+  "description": "",
+  "repo": "kynetic-ai/kynetic-spec",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kynetic-ai/kynetic-spec",
+  "github_path": ".claude/skills/release",
+  "github_branch": "main",
+  "dir_name": "release-kynetic-ai-kynetic-spec",
+  "downloaded_at": "2026-02-05T05:32:51.112047Z"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "sora",
+  "description": "",
+  "repo": "platxa/platxa-skill-generator",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/platxa/platxa-skill-generator",
+  "github_path": "skills/sora",
+  "github_branch": "main",
+  "dir_name": "sora",
+  "downloaded_at": "2026-02-05T01:45:09.354875Z"
+}

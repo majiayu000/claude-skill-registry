@@ -1,0 +1,18 @@
+{
+  "name": "infrastructure-backup-restore",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/infrastructure-backup-restore/SKILL.md",
+  "source": "github.com/dawiddutoit/custom-claude",
+  "downloaded_at": "2026-01-22T03:15:44.475017Z",
+  "dir_name": "infrastructure-backup-restore",
+  "category": "devops",
+  "github_path": "skills/infrastructure-backup-restore",
+  "github_branch": "main",
+  "author": "dawiddutoit",
+  "source_url": "https://github.com/dawiddutoit/custom-claude/blob/main/skills/infrastructure-backup-restore/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dawiddutoit/custom-claude/blob/main/skills/infrastructure-backup-restore/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

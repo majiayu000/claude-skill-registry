@@ -1,0 +1,18 @@
+{
+  "name": "swift",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/apps-dev-team/skills/swift/SKILL.md",
+  "source": "github.com/yebot/rad-cc-plugins",
+  "downloaded_at": "2026-01-22T02:38:37.890645Z",
+  "dir_name": "swift-yebot-rad-cc-plugins",
+  "category": "development",
+  "github_path": "plugins/apps-dev-team/skills/swift",
+  "github_branch": "main",
+  "author": "yebot",
+  "source_url": "https://github.com/yebot/rad-cc-plugins/blob/main/plugins/apps-dev-team/skills/swift/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yebot/rad-cc-plugins/blob/main/plugins/apps-dev-team/skills/swift/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

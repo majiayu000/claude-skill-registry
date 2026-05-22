@@ -1,0 +1,16 @@
+{
+  "name": "lp-optimizer",
+  "repo": "kimny1143/claude-code-template",
+  "path": ".claude/skills/lp-optimizer/SKILL.md",
+  "source": "github.com/kimny1143/claude-code-template",
+  "downloaded_at": "2026-01-29T08:17:07.844797Z",
+  "dir_name": "lp-optimizer-kimny1143-claude-code-template",
+  "category": "marketing",
+  "author": "kimny1143",
+  "source_url": "https://github.com/kimny1143/claude-code-template/blob/main/.claude/skills/lp-optimizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kimny1143/claude-code-template/blob/main/.claude/skills/lp-optimizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

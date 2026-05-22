@@ -1,0 +1,13 @@
+{
+  "name": "generate-plot",
+  "description": "",
+  "repo": "llmsresearch/paperbanana",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/llmsresearch/paperbanana",
+  "github_path": ".claude/skills/generate-plot",
+  "github_branch": "main",
+  "dir_name": "generate-plot",
+  "downloaded_at": "2026-02-05T05:36:35.915072Z"
+}

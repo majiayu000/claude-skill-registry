@@ -1,0 +1,18 @@
+{
+  "name": "frontend-specialist",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/frontend-specialist/SKILL.md",
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "downloaded_at": "2026-01-22T02:59:35.133730Z",
+  "dir_name": "frontend-specialist",
+  "category": "development",
+  "github_path": ".claude/skills/frontend-specialist",
+  "github_branch": "main",
+  "author": "Prorise-cool",
+  "source_url": "https://github.com/Prorise-cool/Claude-Code-Multi-Agent/blob/main/.claude/skills/frontend-specialist/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Prorise-cool/Claude-Code-Multi-Agent/blob/main/.claude/skills/frontend-specialist/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

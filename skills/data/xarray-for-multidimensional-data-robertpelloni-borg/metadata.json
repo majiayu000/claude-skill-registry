@@ -1,0 +1,18 @@
+{
+  "name": "xarray-for-multidimensional-data",
+  "repo": "robertpelloni/borg",
+  "path": "agents/rse-agents/plugins/skills/xarray-for-multidimensional-data/SKILL.md",
+  "source": "github.com/robertpelloni/borg",
+  "downloaded_at": "2026-01-22T03:34:18.135075Z",
+  "dir_name": "xarray-for-multidimensional-data-robertpelloni-borg",
+  "category": "data",
+  "github_path": "agents/rse-agents/plugins/skills/xarray-for-multidimensional-data",
+  "github_branch": "main",
+  "author": "robertpelloni",
+  "source_url": "https://github.com/robertpelloni/borg/blob/main/agents/rse-agents/plugins/skills/xarray-for-multidimensional-data/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/robertpelloni/borg/blob/main/agents/rse-agents/plugins/skills/xarray-for-multidimensional-data/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

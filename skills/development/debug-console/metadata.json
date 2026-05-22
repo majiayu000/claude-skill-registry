@@ -1,0 +1,18 @@
+{
+  "name": "debug-console",
+  "repo": "rayzru/info-web",
+  "path": ".claude/skills/debug-console/SKILL.md",
+  "source": "github.com/rayzru/info-web",
+  "downloaded_at": "2026-01-22T01:22:15.954165Z",
+  "dir_name": "debug-console",
+  "category": "development",
+  "github_path": ".claude/skills/debug-console",
+  "github_branch": "main",
+  "author": "rayzru",
+  "source_url": "https://github.com/rayzru/info-web/blob/main/.claude/skills/debug-console/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rayzru/info-web/blob/main/.claude/skills/debug-console/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

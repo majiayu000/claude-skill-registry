@@ -1,0 +1,17 @@
+{
+  "name": "zod-validation",
+  "repo": "LimaTechnologies/admin-telegram-bot",
+  "path": ".claude/skills/zod-validation/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/LimaTechnologies/admin-telegram-bot",
+  "dir_name": "zod-validation-limatechnologies-admin-telegram-bot",
+  "downloaded_at": "2026-03-01T05:37:28.525214Z",
+  "author": "LimaTechnologies",
+  "source_url": "https://github.com/LimaTechnologies/admin-telegram-bot/blob/main/.claude/skills/zod-validation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LimaTechnologies/admin-telegram-bot/blob/main/.claude/skills/zod-validation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

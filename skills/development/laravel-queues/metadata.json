@@ -1,0 +1,16 @@
+{
+  "name": "laravel-queues",
+  "repo": "fusengine/agents",
+  "path": "plugins/laravel-expert/skills/laravel-queues/SKILL.md",
+  "source": "github.com/fusengine/agents",
+  "downloaded_at": "2026-02-02T01:10:33.131623Z",
+  "dir_name": "laravel-queues",
+  "category": "development",
+  "author": "fusengine",
+  "source_url": "https://github.com/fusengine/agents/blob/main/plugins/laravel-expert/skills/laravel-queues/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Fusengine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

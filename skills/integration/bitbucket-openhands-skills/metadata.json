@@ -1,0 +1,16 @@
+{
+  "name": "bitbucket",
+  "repo": "OpenHands/skills",
+  "path": "skills/bitbucket/SKILL.md",
+  "category": "integration",
+  "source": "github.com/OpenHands/skills",
+  "dir_name": "bitbucket-openhands-skills",
+  "downloaded_at": "2026-02-15T05:33:48.291658Z",
+  "author": "OpenHands",
+  "source_url": "https://github.com/OpenHands/skills/blob/main/skills/bitbucket/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OpenHands/skills/blob/main/skills/bitbucket/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

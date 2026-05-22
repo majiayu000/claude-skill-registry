@@ -1,0 +1,16 @@
+{
+  "name": "internationalization-i18n",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/internationalization-i18n/skills/internationalization-i18n/SKILL.md",
+  "source": "github.com/secondsky/claude-skills",
+  "downloaded_at": "2026-01-29T07:59:28.008064Z",
+  "dir_name": "internationalization-i18n-secondsky-claude-skills-2",
+  "category": "development",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/internationalization-i18n/skills/internationalization-i18n/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

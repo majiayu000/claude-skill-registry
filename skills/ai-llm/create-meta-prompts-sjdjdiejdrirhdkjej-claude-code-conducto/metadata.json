@@ -1,0 +1,20 @@
+{
+  "name": "create-meta-prompts",
+  "description": "",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "github_path": ".claude/skills/create-meta-prompts",
+  "github_branch": "main",
+  "dir_name": "create-meta-prompts-sjdjdiejdrirhdkjej-claude-code-conducto",
+  "downloaded_at": "2026-02-05T01:44:16.288382Z",
+  "author": "Sjdjdiejdrirhdkjej",
+  "source_url": "https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/create-meta-prompts/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/create-meta-prompts/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

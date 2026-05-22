@@ -1,0 +1,18 @@
+{
+  "name": "convex-development",
+  "repo": "seanchiuai/claude-web-template",
+  "path": ".claude/skills/convex-development/SKILL.md",
+  "source": "github.com/seanchiuai/claude-web-template",
+  "downloaded_at": "2026-01-22T01:45:19.485842Z",
+  "dir_name": "convex-development-seanchiuai-claude-web-template",
+  "category": "development",
+  "github_path": ".claude/skills/convex-development",
+  "github_branch": "main",
+  "author": "seanchiuai",
+  "source_url": "https://github.com/seanchiuai/claude-web-template/blob/main/.claude/skills/convex-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seanchiuai/claude-web-template/blob/main/.claude/skills/convex-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

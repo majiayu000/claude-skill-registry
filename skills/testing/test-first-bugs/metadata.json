@@ -1,0 +1,17 @@
+{
+  "name": "test-first-bugs",
+  "repo": "jamditis/claude-skills-journalism",
+  "path": "test-first-bugs/SKILL.md",
+  "github_branch": "master",
+  "category": "testing",
+  "source": "github.com/jamditis/claude-skills-journalism",
+  "dir_name": "test-first-bugs",
+  "downloaded_at": "2026-03-28T01:28:26.051924Z",
+  "author": "jamditis",
+  "source_url": "https://github.com/jamditis/claude-skills-journalism/blob/master/test-first-bugs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jamditis/claude-skills-journalism/blob/master/test-first-bugs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

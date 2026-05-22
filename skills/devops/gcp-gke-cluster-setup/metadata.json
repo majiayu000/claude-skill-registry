@@ -1,0 +1,18 @@
+{
+  "name": "gcp-gke-cluster-setup",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/gcp-gke-cluster-setup/SKILL.md",
+  "source": "github.com/dawiddutoit/custom-claude",
+  "downloaded_at": "2026-01-22T03:15:41.623718Z",
+  "dir_name": "gcp-gke-cluster-setup",
+  "category": "devops",
+  "github_path": "skills/gcp-gke-cluster-setup",
+  "github_branch": "main",
+  "author": "dawiddutoit",
+  "source_url": "https://github.com/dawiddutoit/custom-claude/blob/main/skills/gcp-gke-cluster-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dawiddutoit/custom-claude/blob/main/skills/gcp-gke-cluster-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

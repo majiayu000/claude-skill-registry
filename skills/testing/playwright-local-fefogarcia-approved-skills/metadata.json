@@ -1,0 +1,16 @@
+{
+  "name": "playwright-local",
+  "repo": "fefogarcia/approved-skills",
+  "path": "skills/playwright-local/SKILL.md",
+  "category": "testing",
+  "source": "github.com/fefogarcia/approved-skills",
+  "dir_name": "playwright-local-fefogarcia-approved-skills",
+  "downloaded_at": "2026-02-15T07:11:03.890497Z",
+  "author": "fefogarcia",
+  "source_url": "https://github.com/fefogarcia/approved-skills/blob/main/skills/playwright-local/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fefogarcia/approved-skills/blob/main/skills/playwright-local/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "code-review",
+  "description": "",
+  "repo": "specvital/infra",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/specvital/infra",
+  "github_path": ".claude/skills/code-review",
+  "github_branch": "main",
+  "dir_name": "code-review-specvital-infra",
+  "downloaded_at": "2026-02-05T01:44:17.808549Z"
+}

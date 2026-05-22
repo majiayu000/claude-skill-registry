@@ -1,0 +1,17 @@
+{
+  "name": "mermaid",
+  "repo": "ahgraber/skills",
+  "path": "skills/mermaid/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/ahgraber/skills",
+  "dir_name": "mermaid-ahgraber-skills",
+  "downloaded_at": "2026-03-01T06:32:05.777872Z",
+  "author": "ahgraber",
+  "source_url": "https://github.com/ahgraber/skills/blob/main/skills/mermaid/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ahgraber/skills/blob/main/skills/mermaid/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

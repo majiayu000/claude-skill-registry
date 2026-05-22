@@ -1,0 +1,17 @@
+{
+  "name": "production-readiness",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/production-readiness/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "dir_name": "production-readiness-dnyoussef-ai-chrome-extension-3",
+  "downloaded_at": "2026-03-22T05:10:55.096435Z",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/production-readiness/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/production-readiness/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

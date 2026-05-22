@@ -1,0 +1,17 @@
+{
+  "name": "shadcn",
+  "repo": "bjornslib/cobuilder-harness",
+  "path": ".claude/skills/mcp-skills/shadcn/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/bjornslib/cobuilder-harness",
+  "dir_name": "shadcn-bjornslib-cobuilder-harness",
+  "downloaded_at": "2026-03-22T07:15:41.048599Z",
+  "author": "bjornslib",
+  "source_url": "https://github.com/bjornslib/cobuilder-harness/blob/main/.claude/skills/mcp-skills/shadcn/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bjornslib/cobuilder-harness/blob/main/.claude/skills/mcp-skills/shadcn/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

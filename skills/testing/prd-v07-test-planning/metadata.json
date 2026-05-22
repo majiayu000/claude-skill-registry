@@ -1,0 +1,11 @@
+{
+  "name": "prd-v07-test-planning",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/prd-v07-test-planning/SKILL.md",
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "downloaded_at": "2026-01-22T02:02:08.121751Z",
+  "dir_name": "prd-v07-test-planning",
+  "category": "testing",
+  "github_path": ".claude/skills/prd-v07-test-planning",
+  "github_branch": "main"
+}

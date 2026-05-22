@@ -1,0 +1,16 @@
+{
+  "name": "system-design",
+  "repo": "Dwsy/agent",
+  "path": "skills/system-design/SKILL.md",
+  "category": "development",
+  "source": "github.com/Dwsy/agent",
+  "dir_name": "system-design-dwsy-agent",
+  "downloaded_at": "2026-02-22T04:59:50.658984Z",
+  "author": "Dwsy",
+  "source_url": "https://github.com/Dwsy/agent/blob/main/skills/system-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Dwsy/agent/blob/main/skills/system-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

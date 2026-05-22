@@ -1,0 +1,16 @@
+{
+  "name": "qa-audit-ui-ux",
+  "repo": "endlessblink/flow-state",
+  "path": ".claude/skills-archive/qa-testing-merge-20260110/qa-audit-ui-ux/skill.md",
+  "source": "github.com/endlessblink/flow-state",
+  "downloaded_at": "2026-02-02T04:41:23.350127Z",
+  "dir_name": "qa-audit-ui-ux",
+  "category": "design",
+  "author": "endlessblink",
+  "source_url": "https://github.com/endlessblink/flow-state/blob/main/.claude/skills-archive/qa-testing-merge-20260110/qa-audit-ui-ux/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/endlessblink/flow-state/blob/main/.claude/skills-archive/qa-testing-merge-20260110/qa-audit-ui-ux/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

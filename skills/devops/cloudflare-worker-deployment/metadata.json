@@ -1,0 +1,18 @@
+{
+  "name": "cloudflare-worker-deployment",
+  "repo": "AgentiveCity/SkillFactory",
+  "path": ".claude/skills/cloudflare-worker-deployment/SKILL.md",
+  "source": "github.com/AgentiveCity/SkillFactory",
+  "downloaded_at": "2026-01-22T01:56:37.904950Z",
+  "dir_name": "cloudflare-worker-deployment",
+  "category": "devops",
+  "github_path": ".claude/skills/cloudflare-worker-deployment",
+  "github_branch": "main",
+  "author": "AgentiveCity",
+  "source_url": "https://github.com/AgentiveCity/SkillFactory/blob/main/.claude/skills/cloudflare-worker-deployment/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AgentiveCity/SkillFactory/blob/main/.claude/skills/cloudflare-worker-deployment/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

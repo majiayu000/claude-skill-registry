@@ -1,0 +1,20 @@
+{
+  "name": "moai-cc-permission-mode",
+  "description": "The most comprehensive Claude Code skills registry - 50,000+ skills indexed",
+  "repo": "majiayu000/claude-skill-registry",
+  "category": "security",
+  "tags": [],
+  "stars": 48,
+  "source": "",
+  "github_path": "skills/moai-cc-permission-mode",
+  "github_branch": "main",
+  "dir_name": "moai-cc-permission-mode",
+  "downloaded_at": "2026-02-05T05:46:17.599111Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/moai-cc-permission-mode/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

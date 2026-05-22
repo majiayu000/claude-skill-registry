@@ -1,0 +1,16 @@
+{
+  "name": "review",
+  "repo": "paxtone-io/openkodo",
+  "path": "plugins/kodo/skills/review/SKILL.md",
+  "source": "github.com/paxtone-io/openkodo",
+  "downloaded_at": "2026-02-02T05:08:46.267891Z",
+  "dir_name": "review-paxtone-io-openkodo",
+  "category": "quality",
+  "author": "paxtone-io",
+  "source_url": "https://github.com/paxtone-io/openkodo/blob/main/plugins/kodo/skills/review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/paxtone-io/openkodo/blob/main/plugins/kodo/skills/review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

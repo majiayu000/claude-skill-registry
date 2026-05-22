@@ -1,0 +1,16 @@
+{
+  "name": "resource-tagging",
+  "repo": "ancoleman/ai-design-components",
+  "path": "skills/resource-tagging/SKILL.md",
+  "source": "github.com/ancoleman/ai-design-components",
+  "downloaded_at": "2026-02-02T01:11:46.534013Z",
+  "dir_name": "resource-tagging",
+  "category": "devops",
+  "author": "ancoleman",
+  "source_url": "https://github.com/ancoleman/ai-design-components/blob/main/skills/resource-tagging/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Anton Coleman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

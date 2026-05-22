@@ -1,0 +1,17 @@
+{
+  "name": "docker",
+  "repo": "M1L0J05/m1l0-j05_WebSite",
+  "path": ".claude/skills/docker/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/M1L0J05/m1l0-j05_WebSite",
+  "dir_name": "docker-m1l0j05-m1l0-j05-website",
+  "downloaded_at": "2026-03-22T05:45:18.712430Z",
+  "author": "M1L0J05",
+  "source_url": "https://github.com/M1L0J05/m1l0-j05_WebSite/blob/main/.claude/skills/docker/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/M1L0J05/m1l0-j05_WebSite/blob/main/.claude/skills/docker/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "changelog",
+  "repo": "zeroae/zae-limiter",
+  "path": ".claude/skills/changelog/SKILL.md",
+  "source": "github.com/zeroae/zae-limiter",
+  "downloaded_at": "2026-01-29T08:01:43.779983Z",
+  "dir_name": "changelog",
+  "category": "devops",
+  "author": "zeroae",
+  "source_url": "https://github.com/zeroae/zae-limiter/blob/main/.claude/skills/changelog/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Zero A.E., LLC",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

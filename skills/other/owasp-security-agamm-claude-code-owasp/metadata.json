@@ -1,9 +1,0 @@
-{
-  "name": "owasp-security",
-  "repo": "agamm/claude-code-owasp",
-  "path": ".claude/skills/owasp-security/SKILL.md",
-  "source": "github.com/agamm/claude-code-owasp",
-  "downloaded_at": "2026-02-02T04:29:04.371051Z",
-  "dir_name": "owasp-security-agamm-claude-code-owasp",
-  "category": "other"
-}

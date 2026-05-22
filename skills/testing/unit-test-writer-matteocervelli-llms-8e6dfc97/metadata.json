@@ -1,0 +1,16 @@
+{
+  "name": "unit-test-writer",
+  "repo": "matteocervelli/llms",
+  "path": ".claude/skills/unit-test-writer/SKILL.md",
+  "source": "github.com/matteocervelli/llms",
+  "downloaded_at": "2026-01-29T07:32:03.437870Z",
+  "dir_name": "unit-test-writer-matteocervelli-llms-8e6dfc97",
+  "category": "testing",
+  "author": "matteocervelli",
+  "source_url": "https://github.com/matteocervelli/llms/blob/main/.claude/skills/unit-test-writer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Matteo Cervelli",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

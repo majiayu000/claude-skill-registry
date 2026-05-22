@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-msw-testing",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-testing-skills/skills/umbraco-msw-testing/SKILL.md",
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "downloaded_at": "2026-01-20T01:19:14.333638Z",
+  "dir_name": "umbraco-msw-testing",
+  "category": "testing",
+  "github_path": "plugins/umbraco-testing-skills/skills/umbraco-msw-testing",
+  "github_branch": "main"
+}

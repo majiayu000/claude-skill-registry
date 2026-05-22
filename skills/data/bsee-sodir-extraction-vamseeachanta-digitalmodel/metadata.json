@@ -1,0 +1,16 @@
+{
+  "name": "bsee-sodir-extraction",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/data-analysis/bsee-sodir-extraction/SKILL.md",
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "downloaded_at": "2026-01-22T03:25:23.764794Z",
+  "dir_name": "bsee-sodir-extraction-vamseeachanta-digitalmodel",
+  "category": "data",
+  "author": "vamseeachanta",
+  "source_url": "https://github.com/vamseeachanta/digitalmodel/blob/main/.claude/skills/data-analysis/bsee-sodir-extraction/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Vamsee Achanta",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

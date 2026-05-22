@@ -1,0 +1,13 @@
+{
+  "name": "databricks-genie",
+  "description": "",
+  "repo": "datasciencemonkey/claude-code-cli-bricks",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
+  "github_path": ".claude/skills/databricks-genie",
+  "github_branch": "main",
+  "dir_name": "databricks-genie",
+  "downloaded_at": "2026-02-05T01:44:57.034450Z"
+}

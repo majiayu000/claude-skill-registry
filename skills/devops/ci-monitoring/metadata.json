@@ -1,0 +1,18 @@
+{
+  "name": "ci-monitoring",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/ci-monitoring/SKILL.md",
+  "source": "github.com/troykelly/codex-skills",
+  "downloaded_at": "2026-01-22T04:02:56.126414Z",
+  "dir_name": "ci-monitoring",
+  "category": "devops",
+  "github_path": "skills/ci-monitoring",
+  "github_branch": "main",
+  "author": "troykelly",
+  "source_url": "https://github.com/troykelly/codex-skills/blob/main/skills/ci-monitoring/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/troykelly/codex-skills/blob/main/skills/ci-monitoring/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

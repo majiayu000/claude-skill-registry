@@ -1,0 +1,18 @@
+{
+  "name": "cql-type-system",
+  "repo": "pmcfadin/cqlite",
+  "path": ".claude/skills/cql-type-system/SKILL.md",
+  "source": "github.com/pmcfadin/cqlite",
+  "downloaded_at": "2026-01-22T02:47:14.087453Z",
+  "dir_name": "cql-type-system-pmcfadin-cqlite",
+  "category": "data",
+  "github_path": ".claude/skills/cql-type-system",
+  "github_branch": "main",
+  "author": "pmcfadin",
+  "source_url": "https://github.com/pmcfadin/cqlite/blob/main/.claude/skills/cql-type-system/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pmcfadin/cqlite/blob/main/.claude/skills/cql-type-system/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

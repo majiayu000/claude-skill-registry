@@ -1,0 +1,16 @@
+{
+  "name": "webapp-testing",
+  "repo": "MarcelLeon/skills-zh",
+  "path": "skills/webapp-testing/SKILL.md",
+  "category": "testing",
+  "source": "github.com/MarcelLeon/skills-zh",
+  "dir_name": "webapp-testing-marcelleon-skills-zh",
+  "downloaded_at": "2026-02-15T05:26:54.841720Z",
+  "author": "MarcelLeon",
+  "source_url": "https://github.com/MarcelLeon/skills-zh/blob/main/skills/webapp-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MarcelLeon/skills-zh/blob/main/skills/webapp-testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

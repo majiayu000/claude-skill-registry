@@ -1,0 +1,18 @@
+{
+  "name": "playwright-browser-click",
+  "repo": "X-School-Academy/ai-dev-swarm",
+  "path": "dev-swarm/mcp-skills/playwright-browser-click/SKILL.md",
+  "source": "github.com/X-School-Academy/ai-dev-swarm",
+  "downloaded_at": "2026-01-14T02:33:43.535755Z",
+  "dir_name": "playwright-browser-click",
+  "category": "testing",
+  "github_path": "dev-swarm/mcp-skills/playwright-browser-click",
+  "github_branch": "main",
+  "author": "X-School-Academy",
+  "source_url": "https://github.com/X-School-Academy/ai-dev-swarm/blob/main/dev-swarm/mcp-skills/playwright-browser-click/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

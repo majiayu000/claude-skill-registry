@@ -1,0 +1,18 @@
+{
+  "name": "reviewing-readability",
+  "repo": "thkt/claude-config",
+  "path": "skills/reviewing-readability/SKILL.md",
+  "source": "github.com/thkt/claude-config",
+  "downloaded_at": "2026-01-22T00:53:37.139524Z",
+  "dir_name": "reviewing-readability",
+  "category": "quality",
+  "github_path": ".ja/skills/reviewing-readability",
+  "github_branch": "main",
+  "author": "thkt",
+  "source_url": "https://github.com/thkt/claude-config/blob/main/.ja/skills/reviewing-readability/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/thkt/claude-config/blob/main/.ja/skills/reviewing-readability/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

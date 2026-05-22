@@ -1,0 +1,18 @@
+{
+  "name": "eptr2-consumption-data",
+  "repo": "Tideseed/eptr2",
+  "path": ".claude/skills/eptr2-consumption-data/SKILL.md",
+  "source": "github.com/Tideseed/eptr2",
+  "downloaded_at": "2026-01-22T01:40:00.633766Z",
+  "dir_name": "eptr2-consumption-data-tideseed-eptr2",
+  "category": "data",
+  "github_path": ".claude/skills/eptr2-consumption-data",
+  "github_branch": "main",
+  "author": "Tideseed",
+  "source_url": "https://github.com/Tideseed/eptr2/blob/main/.claude/skills/eptr2-consumption-data/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tideseed/eptr2/blob/main/.claude/skills/eptr2-consumption-data/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "design-engineering",
+  "description": "",
+  "repo": "RefoundAI/lenny-skills",
+  "category": "design",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RefoundAI/lenny-skills",
+  "github_path": "skills/design-engineering",
+  "github_branch": "main",
+  "dir_name": "design-engineering-refoundai-lenny-skills",
+  "downloaded_at": "2026-02-05T05:43:12.258745Z",
+  "author": "RefoundAI",
+  "source_url": "https://github.com/RefoundAI/lenny-skills/blob/main/skills/design-engineering/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Refound AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

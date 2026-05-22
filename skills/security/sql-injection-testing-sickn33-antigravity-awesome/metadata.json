@@ -1,0 +1,17 @@
+{
+  "name": "sql-injection-testing",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/sql-injection-testing/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "sql-injection-testing-sickn33-antigravity-awesome",
+  "downloaded_at": "2026-04-12T14:43:22.974036Z",
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/sql-injection-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/sql-injection-testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

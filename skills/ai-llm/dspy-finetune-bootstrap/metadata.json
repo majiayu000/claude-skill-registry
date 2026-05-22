@@ -1,0 +1,16 @@
+{
+  "name": "dspy-finetune-bootstrap",
+  "repo": "OmidZamani/dspy-skills",
+  "path": "skills/dspy-finetune-bootstrap/SKILL.md",
+  "source": "github.com/OmidZamani/dspy-skills",
+  "downloaded_at": "2026-02-02T03:25:50.249094Z",
+  "dir_name": "dspy-finetune-bootstrap",
+  "category": "ai-llm",
+  "author": "OmidZamani",
+  "source_url": "https://github.com/OmidZamani/dspy-skills/blob/main/skills/dspy-finetune-bootstrap/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Omid Zamani",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

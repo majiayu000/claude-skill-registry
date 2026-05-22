@@ -1,0 +1,11 @@
+{
+  "name": "input-validation",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/input-validation/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:15.830856Z",
+  "dir_name": "input-validation-yonatangross-skillforge-claude-pl",
+  "category": "security",
+  "github_path": "skills/input-validation",
+  "github_branch": "main"
+}

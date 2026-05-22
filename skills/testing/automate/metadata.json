@@ -1,0 +1,20 @@
+{
+  "name": "automate",
+  "description": "",
+  "repo": "PabloLION/bmad-plugin",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/PabloLION/bmad-plugin",
+  "github_path": "plugins/bmad/skills/automate",
+  "github_branch": "main",
+  "dir_name": "automate",
+  "downloaded_at": "2026-02-05T01:44:26.477146Z",
+  "author": "PabloLION",
+  "source_url": "https://github.com/PabloLION/bmad-plugin/blob/main/plugins/bmad/skills/automate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2026 PabloLION",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "rebase",
+  "repo": "sasamuku/dotfiles",
+  "path": ".claude/skills/rebase/SKILL.md",
+  "source": "github.com/sasamuku/dotfiles",
+  "downloaded_at": "2026-01-29T08:44:13.712551Z",
+  "dir_name": "rebase-sasamuku-dotfiles-215b7577",
+  "category": "development",
+  "author": "sasamuku",
+  "source_url": "https://github.com/sasamuku/dotfiles/blob/main/.claude/skills/rebase/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sasamuku/dotfiles/blob/main/.claude/skills/rebase/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

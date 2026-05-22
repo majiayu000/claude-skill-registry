@@ -1,0 +1,17 @@
+{
+  "name": "design-review",
+  "repo": "caraseli02/MoldovaDirect",
+  "path": ".claude/skills/gstack/design-review/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/caraseli02/MoldovaDirect",
+  "dir_name": "design-review-caraseli02-moldovadirect",
+  "downloaded_at": "2026-03-22T07:23:51.463524Z",
+  "author": "caraseli02",
+  "source_url": "https://github.com/caraseli02/MoldovaDirect/blob/main/.claude/skills/gstack/design-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/caraseli02/MoldovaDirect/blob/main/.claude/skills/gstack/design-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "vector-db",
+  "repo": "alphaonedev/openclaw-graph",
+  "path": "skills/aimlops/vector-db/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-ml",
+  "source": "github.com/alphaonedev/openclaw-graph",
+  "dir_name": "vector-db-alphaonedev-openclaw-graph",
+  "downloaded_at": "2026-03-01T06:39:55.133708Z",
+  "author": "alphaonedev",
+  "source_url": "https://github.com/alphaonedev/openclaw-graph/blob/main/skills/aimlops/vector-db/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alphaonedev/openclaw-graph/blob/main/skills/aimlops/vector-db/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "tailwind-design-system",
+  "description": "",
+  "repo": "pythoninthegrasses/lunchjs",
+  "category": "design",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pythoninthegrasses/lunchjs",
+  "github_path": ".claude/skills/tailwind-design-system",
+  "github_branch": "main",
+  "dir_name": "tailwind-design-system-pythoninthegrasses-lunchjs",
+  "downloaded_at": "2026-02-05T01:44:53.958238Z",
+  "author": "pythoninthegrasses",
+  "source_url": "https://github.com/pythoninthegrasses/lunchjs/blob/main/.claude/skills/tailwind-design-system/SKILL.md",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pythoninthegrasses/lunchjs/blob/main/.claude/skills/tailwind-design-system/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

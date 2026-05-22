@@ -1,0 +1,20 @@
+{
+  "name": "frontend-implementation",
+  "description": "",
+  "repo": "mae616/ai-template",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mae616/ai-template",
+  "github_path": ".claude/skills/frontend-implementation",
+  "github_branch": "main",
+  "dir_name": "frontend-implementation-mae616-ai-template",
+  "downloaded_at": "2026-02-05T01:45:07.967134Z",
+  "author": "mae616",
+  "source_url": "https://github.com/mae616/ai-template/blob/main/.claude/skills/frontend-implementation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 AI Template Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

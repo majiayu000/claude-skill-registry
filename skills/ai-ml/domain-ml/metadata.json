@@ -1,0 +1,11 @@
+{
+  "name": "domain-ml",
+  "repo": "rustfs/rustfs",
+  "path": ".claude/skills/domain-ml/SKILL.md",
+  "source": "github.com/rustfs/rustfs",
+  "downloaded_at": "2026-01-22T03:42:44.780825Z",
+  "dir_name": "domain-ml",
+  "category": "ai-ml",
+  "github_path": ".claude/skills/domain-ml",
+  "github_branch": "main"
+}

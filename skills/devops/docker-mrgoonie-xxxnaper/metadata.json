@@ -1,0 +1,11 @@
+{
+  "name": "docker",
+  "repo": "mrgoonie/xxxnaper",
+  "path": ".claude/skills/docker/SKILL.md",
+  "source": "github.com/mrgoonie/xxxnaper",
+  "downloaded_at": "2026-01-22T04:10:29.185998Z",
+  "dir_name": "docker-mrgoonie-xxxnaper",
+  "category": "devops",
+  "github_path": ".claude/skills/docker",
+  "github_branch": "main"
+}

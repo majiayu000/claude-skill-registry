@@ -1,0 +1,20 @@
+{
+  "name": "snowflake-semanticview",
+  "description": "",
+  "repo": "beel-collab/presets.dev",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/beel-collab/presets.dev",
+  "github_path": "skills/snowflake-semanticview",
+  "github_branch": "main",
+  "dir_name": "snowflake-semanticview-beel-collab-presets-dev",
+  "downloaded_at": "2026-02-05T01:44:51.408417Z",
+  "author": "beel-collab",
+  "source_url": "https://github.com/beel-collab/presets.dev/blob/main/skills/snowflake-semanticview/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/beel-collab/presets.dev/blob/main/skills/snowflake-semanticview/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

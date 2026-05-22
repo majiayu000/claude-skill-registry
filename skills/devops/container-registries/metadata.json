@@ -1,0 +1,16 @@
+{
+  "name": "container-registries",
+  "repo": "BagelHole/DevOps-Security-Agent-Skills",
+  "path": "devops/containers/container-registries/SKILL.md",
+  "category": "devops",
+  "source": "github.com/BagelHole/DevOps-Security-Agent-Skills",
+  "dir_name": "container-registries",
+  "downloaded_at": "2026-02-22T04:46:17.647900Z",
+  "author": "BagelHole",
+  "source_url": "https://github.com/BagelHole/DevOps-Security-Agent-Skills/blob/main/devops/containers/container-registries/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BagelHole/DevOps-Security-Agent-Skills/blob/main/devops/containers/container-registries/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

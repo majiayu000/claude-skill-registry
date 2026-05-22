@@ -1,0 +1,18 @@
+{
+  "name": "model-steering",
+  "repo": "ndif-team/skills",
+  "path": "plugins/nnsight/skills/model-steering/SKILL.md",
+  "source": "github.com/ndif-team/skills",
+  "downloaded_at": "2026-01-19T02:46:14.474535Z",
+  "dir_name": "model-steering",
+  "category": "ai-llm",
+  "github_path": "plugins/nnsight/skills/model-steering",
+  "github_branch": "main",
+  "author": "ndif-team",
+  "source_url": "https://github.com/ndif-team/skills/blob/main/plugins/nnsight/skills/model-steering/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ndif-team/skills/blob/main/plugins/nnsight/skills/model-steering/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

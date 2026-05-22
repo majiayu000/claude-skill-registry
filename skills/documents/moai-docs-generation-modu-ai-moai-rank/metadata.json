@@ -1,0 +1,13 @@
+{
+  "name": "moai-docs-generation",
+  "description": "",
+  "repo": "modu-ai/moai-rank",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/modu-ai/moai-rank",
+  "github_path": ".claude/skills/moai-docs-generation",
+  "github_branch": "main",
+  "dir_name": "moai-docs-generation-modu-ai-moai-rank",
+  "downloaded_at": "2026-02-05T01:44:51.543551Z"
+}

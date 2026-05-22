@@ -1,0 +1,17 @@
+{
+  "name": "wp-migrate",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/bwbama85/wp-migrate/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "wp-migrate-aiskillstore-marketplace",
+  "downloaded_at": "2026-05-16T03:08:35.951148Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/bwbama85/wp-migrate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/bwbama85/wp-migrate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

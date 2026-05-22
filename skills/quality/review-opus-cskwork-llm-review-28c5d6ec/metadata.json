@@ -1,0 +1,9 @@
+{
+  "name": "review-opus",
+  "repo": "cskwork/llm-review",
+  "path": "plugins/claude-codex/skills/review-opus/SKILL.md",
+  "source": "github.com/cskwork/llm-review",
+  "downloaded_at": "2026-01-29T08:39:59.548735Z",
+  "dir_name": "review-opus-cskwork-llm-review-28c5d6ec",
+  "category": "quality"
+}

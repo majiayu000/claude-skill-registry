@@ -1,0 +1,16 @@
+{
+  "name": "tanstack-table",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/tanstack-table/SKILL.md",
+  "category": "development",
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "tanstack-table-jezweb-claude-skills",
+  "downloaded_at": "2026-02-18T01:28:15.171305Z",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/tanstack-table/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

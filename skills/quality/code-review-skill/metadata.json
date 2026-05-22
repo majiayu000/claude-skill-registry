@@ -1,0 +1,18 @@
+{
+  "name": "code-review-skill",
+  "repo": "yoshiwatanabe/yw-claude-marketplace-development",
+  "path": ".claude/skills/code-review-skill/SKILL.md",
+  "source": "github.com/yoshiwatanabe/yw-claude-marketplace-development",
+  "downloaded_at": "2026-01-17T04:04:42.649630Z",
+  "dir_name": "code-review-skill",
+  "category": "quality",
+  "github_path": ".claude/skills/code-review-skill",
+  "github_branch": "main",
+  "author": "yoshiwatanabe",
+  "source_url": "https://github.com/yoshiwatanabe/yw-claude-marketplace-development/blob/main/.claude/skills/code-review-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yoshiwatanabe/yw-claude-marketplace-development/blob/main/.claude/skills/code-review-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

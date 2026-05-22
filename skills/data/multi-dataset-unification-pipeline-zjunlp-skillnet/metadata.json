@@ -1,0 +1,20 @@
+{
+  "name": "multi-dataset-unification-pipeline",
+  "description": "",
+  "repo": "zjunlp/SkillNet",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zjunlp/SkillNet",
+  "github_path": "skills/benchmark_skills/toolathlon/multi-dataset-unification-pipeline",
+  "github_branch": "main",
+  "dir_name": "multi-dataset-unification-pipeline-zjunlp-skillnet",
+  "downloaded_at": "2026-02-05T01:44:59.004425Z",
+  "author": "zjunlp",
+  "source_url": "https://github.com/zjunlp/SkillNet/blob/main/skills/benchmark_skills/toolathlon/multi-dataset-unification-pipeline/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ZJUNLP",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

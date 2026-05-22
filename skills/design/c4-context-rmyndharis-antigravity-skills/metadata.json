@@ -1,0 +1,16 @@
+{
+  "name": "c4-context",
+  "repo": "rmyndharis/antigravity-skills",
+  "path": "skills/c4-context/SKILL.md",
+  "source": "github.com/rmyndharis/antigravity-skills",
+  "downloaded_at": "2026-01-29T07:48:44.413949Z",
+  "dir_name": "c4-context-rmyndharis-antigravity-skills",
+  "category": "design",
+  "author": "rmyndharis",
+  "source_url": "https://github.com/rmyndharis/antigravity-skills/blob/main/skills/c4-context/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Yudhi Armyndharis",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

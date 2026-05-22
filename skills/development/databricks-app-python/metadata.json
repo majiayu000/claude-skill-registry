@@ -1,0 +1,13 @@
+{
+  "name": "databricks-app-python",
+  "description": "",
+  "repo": "datasciencemonkey/claude-code-cli-bricks",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
+  "github_path": ".claude/skills/databricks-app-python",
+  "github_branch": "main",
+  "dir_name": "databricks-app-python",
+  "downloaded_at": "2026-02-05T01:44:57.048532Z"
+}

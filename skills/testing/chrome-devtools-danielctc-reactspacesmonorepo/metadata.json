@@ -1,0 +1,17 @@
+{
+  "name": "chrome-devtools",
+  "repo": "danielctc/ReactSpacesMonoRepo",
+  "path": ".claude/skills/chrome-devtools/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/danielctc/ReactSpacesMonoRepo",
+  "dir_name": "chrome-devtools-danielctc-reactspacesmonorepo",
+  "downloaded_at": "2026-03-01T07:21:47.008921Z",
+  "author": "danielctc",
+  "source_url": "https://github.com/danielctc/ReactSpacesMonoRepo/blob/main/.claude/skills/chrome-devtools/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/danielctc/ReactSpacesMonoRepo/blob/main/.claude/skills/chrome-devtools/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "refactor",
+  "repo": "huzaifa525/claude-code-optimizer",
+  "path": "templates/.claude/skills/refactor/SKILL.md",
+  "github_branch": "master",
+  "category": "quality",
+  "source": "github.com/huzaifa525/claude-code-optimizer",
+  "dir_name": "refactor-huzaifa525-claude-code-optimize",
+  "downloaded_at": "2026-05-04T02:05:17.211572Z",
+  "author": "huzaifa525",
+  "source_url": "https://github.com/huzaifa525/claude-code-optimizer/blob/master/templates/.claude/skills/refactor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/huzaifa525/claude-code-optimizer/blob/master/templates/.claude/skills/refactor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "visual-assets",
+  "repo": "dralgorhythm/claude-agentic-framework",
+  "path": ".claude/skills/design/visual-assets/SKILL.md",
+  "source": "github.com/dralgorhythm/claude-agentic-framework",
+  "downloaded_at": "2026-01-22T00:59:01.962977Z",
+  "dir_name": "visual-assets",
+  "category": "design",
+  "github_path": ".claude/skills/design/visual-assets",
+  "github_branch": "main",
+  "author": "dralgorhythm",
+  "source_url": "https://github.com/dralgorhythm/claude-agentic-framework/blob/main/.claude/skills/design/visual-assets/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dralgorhythm/claude-agentic-framework/blob/main/.claude/skills/design/visual-assets/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

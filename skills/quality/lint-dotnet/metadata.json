@@ -1,0 +1,17 @@
+{
+  "name": "lint-dotnet",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/ancplua/lint-dotnet/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "lint-dotnet",
+  "downloaded_at": "2026-05-15T03:44:37.641658Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/ancplua/lint-dotnet/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/ancplua/lint-dotnet/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

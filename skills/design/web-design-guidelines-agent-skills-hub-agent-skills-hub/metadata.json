@@ -1,0 +1,17 @@
+{
+  "name": "web-design-guidelines",
+  "repo": "agent-skills-hub/agent-skills-hub",
+  "path": "skills/web-design-guidelines/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/agent-skills-hub/agent-skills-hub",
+  "dir_name": "web-design-guidelines-agent-skills-hub-agent-skills-hub",
+  "downloaded_at": "2026-03-01T06:29:19.756722Z",
+  "author": "agent-skills-hub",
+  "source_url": "https://github.com/agent-skills-hub/agent-skills-hub/blob/main/skills/web-design-guidelines/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agent-skills-hub/agent-skills-hub/blob/main/skills/web-design-guidelines/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

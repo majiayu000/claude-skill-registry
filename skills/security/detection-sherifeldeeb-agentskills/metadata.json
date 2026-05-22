@@ -1,0 +1,16 @@
+{
+  "name": "detection",
+  "repo": "SherifEldeeb/agentskills",
+  "path": "skills/cybersecurity/detection/SKILL.md",
+  "source": "github.com/SherifEldeeb/agentskills",
+  "downloaded_at": "2026-01-29T07:57:10.681985Z",
+  "dir_name": "detection-sherifeldeeb-agentskills",
+  "category": "security",
+  "author": "SherifEldeeb",
+  "source_url": "https://github.com/SherifEldeeb/agentskills/blob/main/skills/cybersecurity/detection/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2024 Sherif Eldeeb",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

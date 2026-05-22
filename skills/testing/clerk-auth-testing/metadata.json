@@ -1,0 +1,17 @@
+{
+  "name": "clerk-auth-testing",
+  "repo": "PramodDutta/qaskills",
+  "path": "seed-skills/clerk-auth-testing/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/PramodDutta/qaskills",
+  "dir_name": "clerk-auth-testing",
+  "downloaded_at": "2026-03-22T06:05:55.521584Z",
+  "author": "PramodDutta",
+  "source_url": "https://github.com/PramodDutta/qaskills/blob/main/seed-skills/clerk-auth-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PramodDutta/qaskills/blob/main/seed-skills/clerk-auth-testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

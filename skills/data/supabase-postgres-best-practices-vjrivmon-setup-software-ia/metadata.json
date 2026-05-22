@@ -1,0 +1,16 @@
+{
+  "name": "supabase-postgres-best-practices",
+  "repo": "vjrivmon/Setup-Software-IA",
+  "path": ".agents/skills/supabase-postgres-best-practices/SKILL.md",
+  "source": "github.com/vjrivmon/Setup-Software-IA",
+  "downloaded_at": "2026-02-02T02:41:35.204276Z",
+  "dir_name": "supabase-postgres-best-practices-vjrivmon-setup-software-ia",
+  "category": "data",
+  "author": "vjrivmon",
+  "source_url": "https://github.com/vjrivmon/Setup-Software-IA/blob/main/.agents/skills/supabase-postgres-best-practices/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Vicente Rivas Monferrer",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "whip-debug",
+  "repo": "bang9/ai-tools",
+  "path": "whip/skills-codex/whip-debug/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/bang9/ai-tools",
+  "dir_name": "whip-debug-bang9-ai-tools",
+  "downloaded_at": "2026-03-22T07:09:52.423527Z",
+  "author": "bang9",
+  "source_url": "https://github.com/bang9/ai-tools/blob/main/whip/skills-codex/whip-debug/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bang9/ai-tools/blob/main/whip/skills-codex/whip-debug/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

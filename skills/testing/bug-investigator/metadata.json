@@ -1,0 +1,17 @@
+{
+  "name": "bug-investigator",
+  "repo": "sequenzia/agent-alchemy",
+  "path": "ported/20260304-102613/dev-tools/skills/bug-investigator/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/sequenzia/agent-alchemy",
+  "dir_name": "bug-investigator",
+  "downloaded_at": "2026-04-19T01:51:05.077549Z",
+  "author": "sequenzia",
+  "source_url": "https://github.com/sequenzia/agent-alchemy/blob/main/ported/20260304-102613/dev-tools/skills/bug-investigator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sequenzia/agent-alchemy/blob/main/ported/20260304-102613/dev-tools/skills/bug-investigator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

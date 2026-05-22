@@ -1,0 +1,13 @@
+{
+  "name": "e2e",
+  "description": "",
+  "repo": "kynetic-ai/kynetic-spec",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kynetic-ai/kynetic-spec",
+  "github_path": ".claude/skills/e2e",
+  "github_branch": "main",
+  "dir_name": "e2e-kynetic-ai-kynetic-spec",
+  "downloaded_at": "2026-02-05T05:32:51.105051Z"
+}

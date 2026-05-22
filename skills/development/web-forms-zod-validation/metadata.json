@@ -1,0 +1,17 @@
+{
+  "name": "web-forms-zod-validation",
+  "repo": "agents-inc/skills",
+  "path": "src/skills/web-forms-zod-validation/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/agents-inc/skills",
+  "dir_name": "web-forms-zod-validation",
+  "downloaded_at": "2026-03-01T06:30:04.762496Z",
+  "author": "agents-inc",
+  "source_url": "https://github.com/agents-inc/skills/blob/main/src/skills/web-forms-zod-validation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agents-inc/skills/blob/main/src/skills/web-forms-zod-validation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

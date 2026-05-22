@@ -1,0 +1,18 @@
+{
+  "name": "integrating-stripe-webhooks",
+  "repo": "pr-pm/prpm",
+  "path": ".claude/skills/integrating-stripe-webhooks/SKILL.md",
+  "source": "github.com/pr-pm/prpm",
+  "downloaded_at": "2026-01-22T04:04:41.434182Z",
+  "dir_name": "integrating-stripe-webhooks",
+  "category": "integration",
+  "github_path": ".claude/skills/integrating-stripe-webhooks",
+  "github_branch": "main",
+  "author": "pr-pm",
+  "source_url": "https://github.com/pr-pm/prpm/blob/main/.claude/skills/integrating-stripe-webhooks/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 PRPM (Prompt Package Manager)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

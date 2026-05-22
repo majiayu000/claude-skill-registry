@@ -1,0 +1,17 @@
+{
+  "name": "migrate-mstest-v3-to-v4",
+  "repo": "dotnet/skills",
+  "path": "plugins/dotnet-test/skills/migrate-mstest-v3-to-v4/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/dotnet/skills",
+  "dir_name": "migrate-mstest-v3-to-v4",
+  "downloaded_at": "2026-03-22T07:48:50.907002Z",
+  "author": "dotnet",
+  "source_url": "https://github.com/dotnet/skills/blob/main/plugins/dotnet-test/skills/migrate-mstest-v3-to-v4/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dotnet/skills/blob/main/plugins/dotnet-test/skills/migrate-mstest-v3-to-v4/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

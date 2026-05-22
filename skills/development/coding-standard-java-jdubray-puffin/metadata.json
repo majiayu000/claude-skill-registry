@@ -1,0 +1,16 @@
+{
+  "name": "coding-standard-java",
+  "repo": "jdubray/puffin",
+  "path": ".claude/skills/coding-standard-java/SKILL.md",
+  "source": "github.com/jdubray/puffin",
+  "downloaded_at": "2026-01-29T06:14:02.512448Z",
+  "dir_name": "coding-standard-java-jdubray-puffin",
+  "category": "development",
+  "author": "jdubray",
+  "source_url": "https://github.com/jdubray/puffin/blob/main/.claude/skills/coding-standard-java/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Jean-Jacques Dubray",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

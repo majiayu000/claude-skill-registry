@@ -1,0 +1,17 @@
+{
+  "name": "ship",
+  "repo": "duanegoodner/agentrelay",
+  "path": ".claude/skills/ship/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/duanegoodner/agentrelay",
+  "dir_name": "ship-duanegoodner-agentrelay",
+  "downloaded_at": "2026-03-22T07:50:00.035306Z",
+  "author": "duanegoodner",
+  "source_url": "https://github.com/duanegoodner/agentrelay/blob/main/.claude/skills/ship/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/duanegoodner/agentrelay/blob/main/.claude/skills/ship/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

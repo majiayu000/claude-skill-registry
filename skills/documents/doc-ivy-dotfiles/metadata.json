@@ -1,0 +1,16 @@
+{
+  "name": "doc",
+  "repo": "ivy/dotfiles",
+  "path": "home/dot_claude/skills/doc/SKILL.md.tmpl",
+  "category": "documents",
+  "source": "github.com/ivy/dotfiles",
+  "dir_name": "doc-ivy-dotfiles",
+  "downloaded_at": "2026-02-22T07:35:09.504277Z",
+  "author": "ivy",
+  "source_url": "https://github.com/ivy/dotfiles/blob/main/home/dot_claude/skills/doc/SKILL.md.tmpl/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ivy/dotfiles/blob/main/home/dot_claude/skills/doc/SKILL.md.tmpl/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

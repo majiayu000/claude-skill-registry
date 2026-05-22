@@ -1,0 +1,17 @@
+{
+  "name": "redesign-existing-projects",
+  "repo": "Natively-AI-assistant/natively-cluely-ai-assistant",
+  "path": ".agents/skills/redesign-existing-projects/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/Natively-AI-assistant/natively-cluely-ai-assistant",
+  "dir_name": "redesign-existing-projects",
+  "downloaded_at": "2026-05-04T01:51:56.645877Z",
+  "author": "Natively-AI-assistant",
+  "source_url": "https://github.com/Natively-AI-assistant/natively-cluely-ai-assistant/blob/main/.agents/skills/redesign-existing-projects/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Natively-AI-assistant/natively-cluely-ai-assistant/blob/main/.agents/skills/redesign-existing-projects/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "review-security",
+  "repo": "jayteealao/Aperture",
+  "path": ".claude/skills/review-security/SKILL.md",
+  "source": "github.com/jayteealao/Aperture",
+  "downloaded_at": "2026-01-29T06:26:43.865519Z",
+  "dir_name": "review-security-jayteealao-aperture",
+  "category": "security",
+  "author": "jayteealao",
+  "source_url": "https://github.com/jayteealao/Aperture/blob/main/.claude/skills/review-security/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jayteealao/Aperture/blob/main/.claude/skills/review-security/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

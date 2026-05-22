@@ -1,0 +1,18 @@
+{
+  "name": "security-hardening",
+  "repo": "colinmollenhour/dotfiles",
+  "path": ".claude/skills/security-hardening/SKILL.md",
+  "source": "github.com/colinmollenhour/dotfiles",
+  "downloaded_at": "2026-01-22T03:42:39.415325Z",
+  "dir_name": "security-hardening-colinmollenhour-dotfiles",
+  "category": "security",
+  "github_path": ".claude/skills/security-hardening",
+  "github_branch": "main",
+  "author": "colinmollenhour",
+  "source_url": "https://github.com/colinmollenhour/dotfiles/blob/main/.claude/skills/security-hardening/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/colinmollenhour/dotfiles/blob/main/.claude/skills/security-hardening/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

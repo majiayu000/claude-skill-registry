@@ -1,0 +1,13 @@
+{
+  "name": "mcp-setup",
+  "description": "",
+  "repo": "TerryTong-Git/Cohere",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TerryTong-Git/Cohere",
+  "github_path": ".claude/skills/mcp-setup",
+  "github_branch": "main",
+  "dir_name": "mcp-setup-terrytong-git-cohere",
+  "downloaded_at": "2026-02-05T01:44:51.628798Z"
+}

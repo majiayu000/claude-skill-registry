@@ -1,0 +1,17 @@
+{
+  "name": "incident-respond",
+  "repo": "Jocko-Fuel/cowork-plugins",
+  "path": "jf-security-ops/skills/incident-respond/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/Jocko-Fuel/cowork-plugins",
+  "dir_name": "incident-respond",
+  "downloaded_at": "2026-03-01T05:30:06.927487Z",
+  "author": "Jocko-Fuel",
+  "source_url": "https://github.com/Jocko-Fuel/cowork-plugins/blob/main/jf-security-ops/skills/incident-respond/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Jocko-Fuel/cowork-plugins/blob/main/jf-security-ops/skills/incident-respond/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

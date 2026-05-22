@@ -1,0 +1,16 @@
+{
+  "name": "test-review",
+  "repo": "acartag7/edictum",
+  "path": ".claude/skills/test-review/SKILL.md",
+  "category": "testing",
+  "source": "github.com/acartag7/edictum",
+  "dir_name": "test-review-acartag7-edictum",
+  "downloaded_at": "2026-02-22T06:02:58.826905Z",
+  "author": "acartag7",
+  "source_url": "https://github.com/acartag7/edictum/blob/main/.claude/skills/test-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/acartag7/edictum/blob/main/.claude/skills/test-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

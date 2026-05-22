@@ -1,0 +1,20 @@
+{
+  "name": "lead-research-assistant",
+  "description": "",
+  "repo": "maslennikov-ig/BuhBot",
+  "category": "marketing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maslennikov-ig/BuhBot",
+  "github_path": ".claude/skills/lead-research-assistant",
+  "github_branch": "main",
+  "dir_name": "lead-research-assistant",
+  "downloaded_at": "2026-02-05T05:10:23.672221Z",
+  "author": "maslennikov-ig",
+  "source_url": "https://github.com/maslennikov-ig/BuhBot/blob/main/.claude/skills/lead-research-assistant/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Igor Maslennikov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

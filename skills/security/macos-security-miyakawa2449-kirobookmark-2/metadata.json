@@ -1,0 +1,16 @@
+{
+  "name": "macos-security",
+  "repo": "miyakawa2449/KiroBookmark",
+  "path": ".claude/skills/macos-security/SKILL.md",
+  "source": "github.com/miyakawa2449/KiroBookmark",
+  "downloaded_at": "2026-02-02T01:09:37.536782Z",
+  "dir_name": "macos-security-miyakawa2449-kirobookmark-2",
+  "category": "security",
+  "author": "miyakawa2449",
+  "source_url": "https://github.com/miyakawa2449/KiroBookmark/blob/main/.claude/skills/macos-security/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 宮川 剛",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

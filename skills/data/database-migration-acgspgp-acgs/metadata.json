@@ -1,0 +1,13 @@
+{
+  "name": "database-migration",
+  "description": "",
+  "repo": "ACGSpgp/ACGS",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ACGSpgp/ACGS",
+  "github_path": ".agent/workflows/framework-migration/1.2.2/skills/database-migration",
+  "github_branch": "main",
+  "dir_name": "database-migration-acgspgp-acgs",
+  "downloaded_at": "2026-02-05T05:40:33.036673Z"
+}

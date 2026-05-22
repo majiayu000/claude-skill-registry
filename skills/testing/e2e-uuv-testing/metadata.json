@@ -1,0 +1,18 @@
+{
+  "name": "e2e-uuv-testing",
+  "repo": "oimiragieo/agent-studio",
+  "path": ".claude/skills/e2e-uuv-testing/SKILL.md",
+  "source": "github.com/oimiragieo/agent-studio",
+  "downloaded_at": "2026-01-14T03:17:03.940736Z",
+  "dir_name": "e2e-uuv-testing",
+  "category": "testing",
+  "github_path": ".claude/skills/e2e-uuv-testing",
+  "github_branch": "main",
+  "author": "oimiragieo",
+  "source_url": "https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/e2e-uuv-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/e2e-uuv-testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

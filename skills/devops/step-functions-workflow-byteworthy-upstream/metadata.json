@@ -1,0 +1,16 @@
+{
+  "name": "step-functions-workflow",
+  "repo": "byteworthy/Upstream",
+  "path": ".agents/skills/step-functions-workflow/SKILL.md",
+  "source": "github.com/byteworthy/Upstream",
+  "downloaded_at": "2026-01-29T07:14:11.546070Z",
+  "dir_name": "step-functions-workflow-byteworthy-upstream",
+  "category": "devops",
+  "author": "byteworthy",
+  "source_url": "https://github.com/byteworthy/Upstream/blob/main/.agents/skills/step-functions-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024-2026 ByteWorthy LLC. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

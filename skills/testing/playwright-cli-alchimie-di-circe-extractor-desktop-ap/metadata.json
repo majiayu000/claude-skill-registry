@@ -1,0 +1,17 @@
+{
+  "name": "playwright-cli",
+  "repo": "alchimie-di-circe/Extractor-desktop-app",
+  "path": "playwright/skills/playwright-cli/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/alchimie-di-circe/Extractor-desktop-app",
+  "dir_name": "playwright-cli-alchimie-di-circe-extractor-desktop-ap",
+  "downloaded_at": "2026-03-01T06:36:21.860940Z",
+  "author": "alchimie-di-circe",
+  "source_url": "https://github.com/alchimie-di-circe/Extractor-desktop-app/blob/main/playwright/skills/playwright-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alchimie-di-circe/Extractor-desktop-app/blob/main/playwright/skills/playwright-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

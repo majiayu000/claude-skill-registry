@@ -1,0 +1,20 @@
+{
+  "name": "data-analyst",
+  "description": "",
+  "repo": "mdpman2/Unified-Agent-Framework",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mdpman2/Unified-Agent-Framework",
+  "github_path": "skills/data-analyst",
+  "github_branch": "main",
+  "dir_name": "data-analyst-mdpman2-unified-agent-framew-2",
+  "downloaded_at": "2026-02-05T05:32:51.154598Z",
+  "author": "mdpman2",
+  "source_url": "https://github.com/mdpman2/Unified-Agent-Framework/blob/main/skills/data-analyst/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Unified Agent Framework Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

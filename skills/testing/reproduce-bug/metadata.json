@@ -1,0 +1,13 @@
+{
+  "name": "reproduce-bug",
+  "description": "",
+  "repo": "mattjefferson/agents",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattjefferson/agents",
+  "github_path": "skills/reproduce-bug",
+  "github_branch": "main",
+  "dir_name": "reproduce-bug",
+  "downloaded_at": "2026-02-05T05:43:57.400647Z"
+}

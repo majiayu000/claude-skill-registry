@@ -1,0 +1,17 @@
+{
+  "name": "skills",
+  "repo": "SkillDoAI/skilldo",
+  "path": "examples/skills/scikit-learn-SKILL.md",
+  "github_branch": "main",
+  "category": "ai-ml",
+  "source": "github.com/SkillDoAI/skilldo",
+  "dir_name": "skills-skilldoai-skilldo-15",
+  "downloaded_at": "2026-03-01T06:07:06.048381Z",
+  "author": "SkillDoAI",
+  "source_url": "https://github.com/SkillDoAI/skilldo/blob/main/examples/skills/scikit-learn-SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SkillDoAI/skilldo/blob/main/examples/skills/scikit-learn-SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

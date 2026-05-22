@@ -1,0 +1,17 @@
+{
+  "name": "nw-pbt-typescript",
+  "repo": "nWave-ai/nWave",
+  "path": "nWave/skills/nw-pbt-typescript/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/nWave-ai/nWave",
+  "dir_name": "nw-pbt-typescript",
+  "downloaded_at": "2026-04-28T02:13:16.894222Z",
+  "author": "nWave-ai",
+  "source_url": "https://github.com/nWave-ai/nWave/blob/main/nWave/skills/nw-pbt-typescript/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nWave-ai/nWave/blob/main/nWave/skills/nw-pbt-typescript/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

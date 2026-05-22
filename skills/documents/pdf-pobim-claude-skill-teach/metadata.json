@@ -1,0 +1,17 @@
+{
+  "name": "pdf",
+  "repo": "POBIM/Claude-Skill-Teach",
+  "path": ".claude/skills/pdf/skill.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/POBIM/Claude-Skill-Teach",
+  "dir_name": "pdf-pobim-claude-skill-teach",
+  "downloaded_at": "2026-03-01T05:53:18.913367Z",
+  "author": "POBIM",
+  "source_url": "https://github.com/POBIM/Claude-Skill-Teach/blob/main/.claude/skills/pdf/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/POBIM/Claude-Skill-Teach/blob/main/.claude/skills/pdf/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

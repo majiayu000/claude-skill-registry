@@ -1,0 +1,16 @@
+{
+  "name": "sc-implement",
+  "repo": "Tony363/SuperClaude",
+  "path": ".claude/skills/sc-implement/SKILL.md",
+  "category": "development",
+  "source": "github.com/Tony363/SuperClaude",
+  "dir_name": "sc-implement-tony363-superclaude-2",
+  "downloaded_at": "2026-02-22T05:51:25.673995Z",
+  "author": "Tony363",
+  "source_url": "https://github.com/Tony363/SuperClaude/blob/main/.claude/skills/sc-implement/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 SuperClaude Framework Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

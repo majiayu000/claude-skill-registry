@@ -1,0 +1,16 @@
+{
+  "name": "security-audit",
+  "repo": "eleva-labs/agentic-coding-templates",
+  "path": ".claude/skills/devops/security-audit/SKILL.md",
+  "source": "github.com/eleva-labs/agentic-coding-templates",
+  "downloaded_at": "2026-02-02T03:49:07.935850Z",
+  "dir_name": "security-audit-eleva-labs-agentic-coding-templ",
+  "category": "security",
+  "author": "eleva-labs",
+  "source_url": "https://github.com/eleva-labs/agentic-coding-templates/blob/main/.claude/skills/devops/security-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/eleva-labs/agentic-coding-templates/blob/main/.claude/skills/devops/security-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "outlook",
+  "repo": "danstrem2/clawdbot-skill-master-pack",
+  "path": "skills/outlook/SKILL.md",
+  "source": "github.com/danstrem2/clawdbot-skill-master-pack",
+  "downloaded_at": "2026-02-02T01:11:35.444510Z",
+  "dir_name": "outlook",
+  "category": "integration",
+  "author": "danstrem2",
+  "source_url": "https://github.com/danstrem2/clawdbot-skill-master-pack/blob/main/skills/outlook/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/danstrem2/clawdbot-skill-master-pack/blob/main/skills/outlook/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

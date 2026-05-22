@@ -1,0 +1,16 @@
+{
+  "name": "git-conventions",
+  "repo": "karstenheld3/OpenAI-BackendTools",
+  "path": ".windsurf/skills/git-conventions/SKILL.md",
+  "source": "github.com/karstenheld3/OpenAI-BackendTools",
+  "downloaded_at": "2026-01-29T07:36:59.515337Z",
+  "dir_name": "git-conventions-karstenheld3-openai-backendtools-12d3833c",
+  "category": "development",
+  "author": "karstenheld3",
+  "source_url": "https://github.com/karstenheld3/OpenAI-BackendTools/blob/main/.windsurf/skills/git-conventions/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Karsten Held",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

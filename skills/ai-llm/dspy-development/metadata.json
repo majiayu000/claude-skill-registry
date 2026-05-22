@@ -1,0 +1,17 @@
+{
+  "name": "dspy-development",
+  "repo": "bjornslib/cobuilder-harness",
+  "path": ".claude/skills/dspy-development/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-llm",
+  "source": "github.com/bjornslib/cobuilder-harness",
+  "dir_name": "dspy-development",
+  "downloaded_at": "2026-03-22T07:15:36.516871Z",
+  "author": "bjornslib",
+  "source_url": "https://github.com/bjornslib/cobuilder-harness/blob/main/.claude/skills/dspy-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bjornslib/cobuilder-harness/blob/main/.claude/skills/dspy-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

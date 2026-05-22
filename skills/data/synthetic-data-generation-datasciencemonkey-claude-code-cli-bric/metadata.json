@@ -1,0 +1,13 @@
+{
+  "name": "synthetic-data-generation",
+  "description": "",
+  "repo": "datasciencemonkey/claude-code-cli-bricks",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
+  "github_path": ".claude/skills/synthetic-data-generation",
+  "github_branch": "main",
+  "dir_name": "synthetic-data-generation-datasciencemonkey-claude-code-cli-bric",
+  "downloaded_at": "2026-02-05T01:44:57.049656Z"
+}

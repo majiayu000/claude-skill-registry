@@ -1,0 +1,18 @@
+{
+  "name": "using-technical-writer",
+  "repo": "tachyon-beep/skillpacks",
+  "path": "plugins/muna-technical-writer/skills/using-technical-writer/SKILL.md",
+  "source": "github.com/tachyon-beep/skillpacks",
+  "downloaded_at": "2026-01-22T03:50:05.688197Z",
+  "dir_name": "using-technical-writer",
+  "category": "documents",
+  "github_path": "plugins/muna-technical-writer/skills/using-technical-writer",
+  "github_branch": "main",
+  "author": "tachyon-beep",
+  "source_url": "https://github.com/tachyon-beep/skillpacks/blob/main/plugins/muna-technical-writer/skills/using-technical-writer/SKILL.md",
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tachyon-beep/skillpacks/blob/main/plugins/muna-technical-writer/skills/using-technical-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

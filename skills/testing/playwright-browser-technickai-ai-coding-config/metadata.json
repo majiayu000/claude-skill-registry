@@ -1,0 +1,16 @@
+{
+  "name": "playwright-browser",
+  "repo": "TechNickAI/ai-coding-config",
+  "path": "plugins/core/skills/playwright-browser/SKILL.md",
+  "source": "github.com/TechNickAI/ai-coding-config",
+  "downloaded_at": "2026-01-29T08:55:55.415151Z",
+  "dir_name": "playwright-browser-technickai-ai-coding-config",
+  "category": "testing",
+  "author": "TechNickAI",
+  "source_url": "https://github.com/TechNickAI/ai-coding-config/blob/main/plugins/core/skills/playwright-browser/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nick",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

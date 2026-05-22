@@ -1,0 +1,16 @@
+{
+  "name": "go-skills",
+  "repo": "llama-farm/llamafarm",
+  "path": ".claude/skills/go-skills/SKILL.md",
+  "source": "github.com/llama-farm/llamafarm",
+  "downloaded_at": "2026-01-29T08:32:45.765298Z",
+  "dir_name": "go-skills-llama-farm-llamafarm",
+  "category": "development",
+  "author": "llama-farm",
+  "source_url": "https://github.com/llama-farm/llamafarm/blob/main/.claude/skills/go-skills/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/llama-farm/llamafarm/blob/main/.claude/skills/go-skills/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

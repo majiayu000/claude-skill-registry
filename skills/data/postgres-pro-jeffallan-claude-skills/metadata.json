@@ -1,0 +1,18 @@
+{
+  "name": "postgres-pro",
+  "repo": "Jeffallan/claude-skills",
+  "path": "skills/postgres-pro/SKILL.md",
+  "source": "github.com/Jeffallan/claude-skills",
+  "downloaded_at": "2026-01-22T02:05:06.634873Z",
+  "dir_name": "postgres-pro-jeffallan-claude-skills",
+  "category": "data",
+  "github_path": "skills/postgres-pro",
+  "github_branch": "main",
+  "author": "Jeffallan",
+  "source_url": "https://github.com/Jeffallan/claude-skills/blob/main/skills/postgres-pro/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "code-quality",
+  "repo": "allenlin90/eridu-services",
+  "path": ".github/skills/code-quality/SKILL.md",
+  "category": "quality",
+  "source": "github.com/allenlin90/eridu-services",
+  "dir_name": "code-quality-allenlin90-eridu-services-3",
+  "downloaded_at": "2026-02-22T06:14:28.753860Z",
+  "author": "allenlin90",
+  "source_url": "https://github.com/allenlin90/eridu-services/blob/main/.github/skills/code-quality/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/allenlin90/eridu-services/blob/main/.github/skills/code-quality/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

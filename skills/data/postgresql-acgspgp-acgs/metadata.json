@@ -1,0 +1,13 @@
+{
+  "name": "postgresql",
+  "description": "",
+  "repo": "ACGSpgp/ACGS",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ACGSpgp/ACGS",
+  "github_path": ".agent/workflows/database-design/1.2.0/skills/postgresql",
+  "github_branch": "main",
+  "dir_name": "postgresql-acgspgp-acgs",
+  "downloaded_at": "2026-02-05T05:40:32.981621Z"
+}

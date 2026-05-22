@@ -1,0 +1,20 @@
+{
+  "name": "branch-naming-helper",
+  "description": "",
+  "repo": "byteworthy/Upstream",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/byteworthy/Upstream",
+  "github_path": ".agents/skills/branch-naming-helper",
+  "github_branch": "main",
+  "dir_name": "branch-naming-helper",
+  "downloaded_at": "2026-02-05T01:44:23.307630Z",
+  "author": "byteworthy",
+  "source_url": "https://github.com/byteworthy/Upstream/blob/main/.agents/skills/branch-naming-helper/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024-2026 ByteWorthy LLC. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

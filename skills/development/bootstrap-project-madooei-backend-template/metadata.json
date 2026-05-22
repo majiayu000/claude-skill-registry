@@ -1,0 +1,16 @@
+{
+  "name": "bootstrap-project",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/bootstrap-project/SKILL.md",
+  "source": "github.com/madooei/backend-template",
+  "downloaded_at": "2026-02-02T02:03:23.498625Z",
+  "dir_name": "bootstrap-project-madooei-backend-template",
+  "category": "development",
+  "author": "madooei",
+  "source_url": "https://github.com/madooei/backend-template/blob/main/.claude/skills/bootstrap-project/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/madooei/backend-template/blob/main/.claude/skills/bootstrap-project/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "rag-implementation",
+  "description": "AesopIDE with Antigravity-inspired UI\"",
+  "repo": "Dknight203/AesopIDE",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".agents/skills/rag-implementation",
+  "github_branch": "main",
+  "dir_name": "rag-implementation-dknight203-aesopide-23ec8efe",
+  "downloaded_at": "2026-02-05T01:45:45.576923Z",
+  "author": "Dknight203",
+  "source_url": "https://github.com/Dknight203/AesopIDE/blob/main/.agents/skills/rag-implementation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Dknight203/AesopIDE/blob/main/.agents/skills/rag-implementation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

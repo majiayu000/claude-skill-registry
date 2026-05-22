@@ -1,0 +1,13 @@
+{
+  "name": "hugging-face-model-trainer",
+  "description": "",
+  "repo": "platxa/platxa-skill-generator",
+  "category": "ai-ml",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/platxa/platxa-skill-generator",
+  "github_path": "skills/hugging-face-model-trainer",
+  "github_branch": "main",
+  "dir_name": "hugging-face-model-trainer",
+  "downloaded_at": "2026-02-05T01:45:09.486982Z"
+}

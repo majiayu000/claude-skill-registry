@@ -1,0 +1,16 @@
+{
+  "name": "distributed-locking-rfc-44",
+  "repo": "bitsoex/bitso-java",
+  "path": ".claude/skills/distributed-locking-rfc-44/SKILL.md",
+  "source": "github.com/bitsoex/bitso-java",
+  "downloaded_at": "2026-01-30T01:26:47.283823Z",
+  "dir_name": "distributed-locking-rfc-44",
+  "category": "development",
+  "author": "bitsoex",
+  "source_url": "https://github.com/bitsoex/bitso-java/blob/main/.claude/skills/distributed-locking-rfc-44/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2015 Bitso SAPI de CV",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "obsidian-hello-world",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/obsidian-pack/skills/obsidian-hello-world/SKILL.md",
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "downloaded_at": "2026-01-31T03:32:35.045459Z",
+  "dir_name": "obsidian-hello-world",
+  "category": "development",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/obsidian-pack/skills/obsidian-hello-world/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

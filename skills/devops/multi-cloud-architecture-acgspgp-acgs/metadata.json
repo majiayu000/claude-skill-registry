@@ -1,0 +1,13 @@
+{
+  "name": "multi-cloud-architecture",
+  "description": "",
+  "repo": "ACGSpgp/ACGS",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ACGSpgp/ACGS",
+  "github_path": ".agent/workflows/cloud-infrastructure/1.2.1/skills/multi-cloud-architecture",
+  "github_branch": "main",
+  "dir_name": "multi-cloud-architecture-acgspgp-acgs",
+  "downloaded_at": "2026-02-05T05:40:33.113372Z"
+}

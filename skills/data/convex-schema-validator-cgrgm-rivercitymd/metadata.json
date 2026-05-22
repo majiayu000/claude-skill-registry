@@ -1,0 +1,20 @@
+{
+  "name": "convex-schema-validator",
+  "description": "",
+  "repo": "cgRGM/rivercitymd",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cgRGM/rivercitymd",
+  "github_path": ".cursor/skills/convex-schema-validator",
+  "github_branch": "master",
+  "dir_name": "convex-schema-validator-cgrgm-rivercitymd",
+  "downloaded_at": "2026-02-05T01:45:03.900044Z",
+  "author": "cgRGM",
+  "source_url": "https://github.com/cgRGM/rivercitymd/blob/master/.cursor/skills/convex-schema-validator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgRGM/rivercitymd/blob/master/.cursor/skills/convex-schema-validator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

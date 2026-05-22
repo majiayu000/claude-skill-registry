@@ -1,0 +1,18 @@
+{
+  "name": "jira-resource-validator",
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave-jira/skills/jira-resource-validator/SKILL.md",
+  "source": "github.com/anton-abyzov/specweave",
+  "downloaded_at": "2026-01-14T03:26:54.019581Z",
+  "dir_name": "jira-resource-validator",
+  "category": "integration",
+  "github_path": "plugins/specweave-jira/skills/jira-resource-validator",
+  "github_branch": "main",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-jira/skills/jira-resource-validator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "data-pipeline-monitoring",
+  "repo": "terrylica/gapless-network-data",
+  "path": ".claude/skills/data-pipeline-monitoring/SKILL.md",
+  "source": "github.com/terrylica/gapless-network-data",
+  "downloaded_at": "2026-01-22T02:34:51.083614Z",
+  "dir_name": "data-pipeline-monitoring-terrylica-gapless-network-data",
+  "category": "data",
+  "github_path": ".claude/skills/data-pipeline-monitoring",
+  "github_branch": "main",
+  "author": "terrylica",
+  "source_url": "https://github.com/terrylica/gapless-network-data/blob/main/.claude/skills/data-pipeline-monitoring/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Eon Labs",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

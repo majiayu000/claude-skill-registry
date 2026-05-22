@@ -1,0 +1,16 @@
+{
+  "name": "test-driven-development",
+  "repo": "julien51/dotfiles",
+  "path": ".claude/skills/testing/test-driven-development/SKILL.md",
+  "category": "testing",
+  "source": "github.com/julien51/dotfiles",
+  "dir_name": "test-driven-development-julien51-dotfiles",
+  "downloaded_at": "2026-02-22T07:45:41.506709Z",
+  "author": "julien51",
+  "source_url": "https://github.com/julien51/dotfiles/blob/main/.claude/skills/testing/test-driven-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/julien51/dotfiles/blob/main/.claude/skills/testing/test-driven-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "payment-integration",
+  "repo": "hotriluan/alkana_kpi",
+  "path": ".opencode/skills/payment-integration/SKILL.md",
+  "category": "integration",
+  "source": "github.com/hotriluan/alkana_kpi",
+  "dir_name": "payment-integration-hotriluan-alkana-kpi-2",
+  "downloaded_at": "2026-02-22T07:29:06.395593Z",
+  "author": "hotriluan",
+  "source_url": "https://github.com/hotriluan/alkana_kpi/blob/main/.opencode/skills/payment-integration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hotriluan/alkana_kpi/blob/main/.opencode/skills/payment-integration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

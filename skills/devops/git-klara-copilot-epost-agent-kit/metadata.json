@@ -1,0 +1,17 @@
+{
+  "name": "git",
+  "repo": "Klara-copilot/epost_agent_kit",
+  "path": ".claude/skills/git/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/Klara-copilot/epost_agent_kit",
+  "dir_name": "git-klara-copilot-epost-agent-kit",
+  "downloaded_at": "2026-03-22T05:39:45.006070Z",
+  "author": "Klara-copilot",
+  "source_url": "https://github.com/Klara-copilot/epost_agent_kit/blob/main/.claude/skills/git/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klara-copilot/epost_agent_kit/blob/main/.claude/skills/git/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

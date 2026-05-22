@@ -1,9 +1,0 @@
-{
-  "name": "pre-commit-hooks",
-  "repo": "Smooth-Operation/household-expense-tracker",
-  "path": ".claude/skills/safety/pre-commit-hooks/SKILL.md",
-  "source": "github.com/Smooth-Operation/household-expense-tracker",
-  "downloaded_at": "2026-02-02T03:56:26.875333Z",
-  "dir_name": "pre-commit-hooks-smooth-operation-household-expense-tr-1fb354c6",
-  "category": "other"
-}

@@ -1,0 +1,9 @@
+{
+  "name": "manage-slack",
+  "repo": "Dispo-Genius/dispo-claude-config",
+  "path": ".claude/skills/manage-slack/SKILL.md",
+  "source": "github.com/Dispo-Genius/dispo-claude-config",
+  "downloaded_at": "2026-01-20T03:06:54.753222Z",
+  "dir_name": "manage-slack",
+  "category": "integration"
+}

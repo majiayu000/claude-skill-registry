@@ -1,0 +1,17 @@
+{
+  "name": "llm-judge",
+  "repo": "existential-birds/beagle",
+  "path": "plugins/beagle-analysis/skills/llm-judge/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-llm",
+  "source": "github.com/existential-birds/beagle",
+  "dir_name": "llm-judge",
+  "downloaded_at": "2026-03-01T07:40:19.621531Z",
+  "author": "existential-birds",
+  "source_url": "https://github.com/existential-birds/beagle/blob/main/plugins/beagle-analysis/skills/llm-judge/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/existential-birds/beagle/blob/main/plugins/beagle-analysis/skills/llm-judge/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

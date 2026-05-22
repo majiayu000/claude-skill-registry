@@ -1,0 +1,18 @@
+{
+  "name": "staging-deployment-phase",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/staging-deployment-phase/SKILL.md",
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "downloaded_at": "2026-01-22T00:54:54.086816Z",
+  "dir_name": "staging-deployment-phase-sjdjdiejdrirhdkjej-claude-code-conducto",
+  "category": "devops",
+  "github_path": ".claude/skills/staging-deployment-phase",
+  "github_branch": "main",
+  "author": "Sjdjdiejdrirhdkjej",
+  "source_url": "https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/staging-deployment-phase/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/staging-deployment-phase/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

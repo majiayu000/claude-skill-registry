@@ -1,0 +1,16 @@
+{
+  "name": "rust-clean-implementation",
+  "repo": "ewe-studios/agentic-coding-starter",
+  "path": "skills/rust-clean-implementation/skill.md",
+  "source": "github.com/ewe-studios/agentic-coding-starter",
+  "downloaded_at": "2026-02-02T01:43:39.385174Z",
+  "dir_name": "rust-clean-implementation",
+  "category": "development",
+  "author": "ewe-studios",
+  "source_url": "https://github.com/ewe-studios/agentic-coding-starter/blob/main/skills/rust-clean-implementation/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ewe-studios/agentic-coding-starter/blob/main/skills/rust-clean-implementation/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

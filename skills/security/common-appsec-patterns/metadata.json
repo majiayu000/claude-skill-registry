@@ -1,0 +1,18 @@
+{
+  "name": "common-appsec-patterns",
+  "repo": "transilienceai/communitytools",
+  "path": "pentest/.claude/skills/common-appsec-patterns/SKILL.md",
+  "source": "github.com/transilienceai/communitytools",
+  "downloaded_at": "2026-01-14T01:23:08.546880Z",
+  "dir_name": "common-appsec-patterns",
+  "category": "security",
+  "github_path": ".claude/skills/common-appsec-patterns",
+  "github_branch": "main",
+  "author": "transilienceai",
+  "source_url": "https://github.com/transilienceai/communitytools/blob/main/.claude/skills/common-appsec-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Transilience AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

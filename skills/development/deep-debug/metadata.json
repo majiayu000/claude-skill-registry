@@ -1,0 +1,16 @@
+{
+  "name": "deep-debug",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/deep-debug/SKILL.md",
+  "source": "github.com/jezweb/claude-skills",
+  "downloaded_at": "2026-02-02T04:09:10.404301Z",
+  "dir_name": "deep-debug",
+  "category": "development",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/deep-debug/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

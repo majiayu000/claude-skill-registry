@@ -1,0 +1,16 @@
+{
+  "name": "solid-principles",
+  "repo": "TheBeardedBearSAS/claude-craft",
+  "path": ".claude/skills/solid-principles/SKILL.md",
+  "source": "github.com/TheBeardedBearSAS/claude-craft",
+  "downloaded_at": "2026-01-29T06:33:18.129458Z",
+  "dir_name": "solid-principles-thebeardedbearsas-claude-craft",
+  "category": "development",
+  "author": "TheBeardedBearSAS",
+  "source_url": "https://github.com/TheBeardedBearSAS/claude-craft/blob/main/.claude/skills/solid-principles/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 TheBeardedCTO",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "registry-cleanup",
+  "repo": "DarkMonkDev/WitchCityRope",
+  "path": ".claude/skills/registry-cleanup/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/DarkMonkDev/WitchCityRope",
+  "dir_name": "registry-cleanup-darkmonkdev-witchcityrope-3",
+  "downloaded_at": "2026-03-01T05:08:59.813773Z",
+  "author": "DarkMonkDev",
+  "source_url": "https://github.com/DarkMonkDev/WitchCityRope/blob/main/.claude/skills/registry-cleanup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DarkMonkDev/WitchCityRope/blob/main/.claude/skills/registry-cleanup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

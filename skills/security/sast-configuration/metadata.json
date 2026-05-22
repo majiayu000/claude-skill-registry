@@ -1,0 +1,13 @@
+{
+  "name": "sast-configuration",
+  "description": "",
+  "repo": "ollieb89/vibe_coding",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ollieb89/vibe_coding",
+  "github_path": ".agent/security-scanning/skills/sast-configuration",
+  "github_branch": "main",
+  "dir_name": "sast-configuration",
+  "downloaded_at": "2026-02-05T01:44:17.800560Z"
+}

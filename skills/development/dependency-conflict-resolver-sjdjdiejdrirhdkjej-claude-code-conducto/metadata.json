@@ -1,0 +1,16 @@
+{
+  "name": "dependency-conflict-resolver",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/dependency-conflict-resolver/SKILL.md",
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "downloaded_at": "2026-02-01T01:24:05.077988Z",
+  "dir_name": "dependency-conflict-resolver-sjdjdiejdrirhdkjej-claude-code-conducto",
+  "category": "development",
+  "author": "Sjdjdiejdrirhdkjej",
+  "source_url": "https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/dependency-conflict-resolver/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/dependency-conflict-resolver/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

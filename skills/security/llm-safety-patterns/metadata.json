@@ -1,0 +1,11 @@
+{
+  "name": "llm-safety-patterns",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/llm-safety-patterns/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-20T01:39:01.666650Z",
+  "dir_name": "llm-safety-patterns",
+  "category": "security",
+  "github_path": "skills/llm-safety-patterns",
+  "github_branch": "main"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "referral-program",
+  "description": "",
+  "repo": "cgyudistira/code-agents",
+  "category": "marketing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cgyudistira/code-agents",
+  "github_path": "skills/referral-program",
+  "github_branch": "main",
+  "dir_name": "referral-program-cgyudistira-code-agents",
+  "downloaded_at": "2026-02-05T05:34:10.297373Z",
+  "author": "cgyudistira",
+  "source_url": "https://github.com/cgyudistira/code-agents/blob/main/skills/referral-program/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

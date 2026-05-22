@@ -1,0 +1,18 @@
+{
+  "name": "implement-retry-logic",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/implement-retry-logic/SKILL.md",
+  "source": "github.com/dawiddutoit/custom-claude",
+  "downloaded_at": "2026-01-22T03:15:41.691525Z",
+  "dir_name": "implement-retry-logic",
+  "category": "development",
+  "github_path": "skills/implement-retry-logic",
+  "github_branch": "main",
+  "author": "dawiddutoit",
+  "source_url": "https://github.com/dawiddutoit/custom-claude/blob/main/skills/implement-retry-logic/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dawiddutoit/custom-claude/blob/main/skills/implement-retry-logic/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

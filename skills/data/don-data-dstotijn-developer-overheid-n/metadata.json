@@ -1,0 +1,18 @@
+{
+  "name": "don-data",
+  "repo": "dstotijn/developer-overheid-nl-agent-skills",
+  "path": "skills/don-data/SKILL.md",
+  "source": "github.com/dstotijn/developer-overheid-nl-agent-skills",
+  "downloaded_at": "2026-01-22T03:50:55.313180Z",
+  "dir_name": "don-data-dstotijn-developer-overheid-n",
+  "category": "data",
+  "github_path": "skills/don-data",
+  "github_branch": "main",
+  "author": "dstotijn",
+  "source_url": "https://github.com/dstotijn/developer-overheid-nl-agent-skills/blob/main/skills/don-data/SKILL.md",
+  "license": "EUPL-1.2",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dstotijn/developer-overheid-nl-agent-skills/blob/main/skills/don-data/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

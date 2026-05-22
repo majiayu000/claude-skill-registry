@@ -1,0 +1,18 @@
+{
+  "name": "qa-tester",
+  "repo": "ajianaz/skills-collection",
+  "path": "skills/qa-tester/SKILL.md",
+  "source": "github.com/ajianaz/skills-collection",
+  "downloaded_at": "2026-01-22T03:22:36.854448Z",
+  "dir_name": "qa-tester-ajianaz-skills-collection",
+  "category": "testing",
+  "github_path": "skills/qa-tester",
+  "github_branch": "main",
+  "author": "ajianaz",
+  "source_url": "https://github.com/ajianaz/skills-collection/blob/main/skills/qa-tester/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024 Anaz S. Aji",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

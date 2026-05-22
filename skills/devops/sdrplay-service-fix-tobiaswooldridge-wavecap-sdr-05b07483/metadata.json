@@ -1,0 +1,16 @@
+{
+  "name": "sdrplay-service-fix",
+  "repo": "TobiasWooldridge/WaveCap-SDR",
+  "path": ".claude/skills/sdrplay-service-fix/skill.md",
+  "source": "github.com/TobiasWooldridge/WaveCap-SDR",
+  "downloaded_at": "2026-01-29T05:15:24.228990Z",
+  "dir_name": "sdrplay-service-fix-tobiaswooldridge-wavecap-sdr-05b07483",
+  "category": "devops",
+  "author": "TobiasWooldridge",
+  "source_url": "https://github.com/TobiasWooldridge/WaveCap-SDR/blob/main/.claude/skills/sdrplay-service-fix/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TobiasWooldridge/WaveCap-SDR/blob/main/.claude/skills/sdrplay-service-fix/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "kit",
+  "repo": "LJT-520/openClaw-backup",
+  "path": "skills/byungkyu/kit/SKILL.md",
+  "github_branch": "master",
+  "category": "integration",
+  "source": "github.com/LJT-520/openClaw-backup",
+  "dir_name": "kit-ljt-520-openclaw-backup",
+  "downloaded_at": "2026-03-22T05:41:01.673128Z",
+  "author": "LJT-520",
+  "source_url": "https://github.com/LJT-520/openClaw-backup/blob/master/skills/byungkyu/kit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LJT-520/openClaw-backup/blob/master/skills/byungkyu/kit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

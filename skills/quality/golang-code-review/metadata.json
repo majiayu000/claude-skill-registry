@@ -1,0 +1,17 @@
+{
+  "name": "golang-code-review",
+  "repo": "chaitin/MonkeyCodeOfficialPlugins",
+  "path": "skills/golang-code-review/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/chaitin/MonkeyCodeOfficialPlugins",
+  "dir_name": "golang-code-review",
+  "downloaded_at": "2026-03-01T07:09:54.836585Z",
+  "author": "chaitin",
+  "source_url": "https://github.com/chaitin/MonkeyCodeOfficialPlugins/blob/main/skills/golang-code-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chaitin/MonkeyCodeOfficialPlugins/blob/main/skills/golang-code-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

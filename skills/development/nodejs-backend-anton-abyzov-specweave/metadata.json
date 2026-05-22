@@ -1,0 +1,16 @@
+{
+  "name": "nodejs-backend",
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave-backend/skills/nodejs-backend/SKILL.md",
+  "category": "development",
+  "source": "github.com/anton-abyzov/specweave",
+  "dir_name": "nodejs-backend-anton-abyzov-specweave",
+  "downloaded_at": "2026-02-22T06:18:51.703797Z",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-backend/skills/nodejs-backend/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

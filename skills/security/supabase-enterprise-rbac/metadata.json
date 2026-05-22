@@ -1,0 +1,16 @@
+{
+  "name": "supabase-enterprise-rbac",
+  "repo": "byteworthy/Upstream",
+  "path": ".agents/skills/supabase-enterprise-rbac/SKILL.md",
+  "source": "github.com/byteworthy/Upstream",
+  "downloaded_at": "2026-01-31T03:32:47.133642Z",
+  "dir_name": "supabase-enterprise-rbac",
+  "category": "security",
+  "author": "byteworthy",
+  "source_url": "https://github.com/byteworthy/Upstream/blob/main/.agents/skills/supabase-enterprise-rbac/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024-2026 ByteWorthy LLC. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

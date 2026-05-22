@@ -1,0 +1,18 @@
+{
+  "name": "experiment-tracker",
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave-ml/skills/experiment-tracker/SKILL.md",
+  "source": "github.com/anton-abyzov/specweave",
+  "downloaded_at": "2026-01-14T03:26:47.076175Z",
+  "dir_name": "experiment-tracker",
+  "category": "ai-ml",
+  "github_path": "plugins/specweave-ml/skills/experiment-tracker",
+  "github_branch": "main",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-ml/skills/experiment-tracker/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

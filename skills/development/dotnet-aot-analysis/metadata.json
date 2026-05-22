@@ -1,0 +1,16 @@
+{
+  "name": "dotnet-aot-analysis",
+  "repo": "Im5tu/claude",
+  "path": "skills/dotnet-aot-analysis/SKILL.md",
+  "category": "development",
+  "source": "github.com/Im5tu/claude",
+  "dir_name": "dotnet-aot-analysis",
+  "downloaded_at": "2026-02-15T05:14:24.110076Z",
+  "author": "Im5tu",
+  "source_url": "https://github.com/Im5tu/claude/blob/main/skills/dotnet-aot-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Stuart Blackler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

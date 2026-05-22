@@ -1,0 +1,20 @@
+{
+  "name": "verify-content",
+  "description": "",
+  "repo": "rhpds/rhdp-skills-marketplace",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rhpds/rhdp-skills-marketplace",
+  "github_path": "showroom/skills/verify-content",
+  "github_branch": "main",
+  "dir_name": "verify-content",
+  "downloaded_at": "2026-02-05T01:44:13.199915Z",
+  "author": "rhpds",
+  "source_url": "https://github.com/rhpds/rhdp-skills-marketplace/blob/main/showroom/skills/verify-content/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rhpds/rhdp-skills-marketplace/blob/main/showroom/skills/verify-content/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

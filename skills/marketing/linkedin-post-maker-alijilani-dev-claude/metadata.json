@@ -1,0 +1,16 @@
+{
+  "name": "linkedin-post-maker",
+  "repo": "alijilani-dev/Claude",
+  "path": "skills/linkedin-post-generator/.claude/skills/linkedin-post-maker/SKILL.md",
+  "source": "github.com/alijilani-dev/Claude",
+  "downloaded_at": "2026-01-27T01:28:44.734254Z",
+  "dir_name": "linkedin-post-maker-alijilani-dev-claude",
+  "category": "marketing",
+  "author": "alijilani-dev",
+  "source_url": "https://github.com/alijilani-dev/Claude/blob/main/skills/linkedin-post-generator/.claude/skills/linkedin-post-maker/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alijilani-dev/Claude/blob/main/skills/linkedin-post-generator/.claude/skills/linkedin-post-maker/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

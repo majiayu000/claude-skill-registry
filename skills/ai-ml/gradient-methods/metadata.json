@@ -1,0 +1,18 @@
+{
+  "name": "gradient-methods",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/math/optimization/gradient-methods/SKILL.md",
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "downloaded_at": "2026-01-22T03:23:55.584545Z",
+  "dir_name": "gradient-methods",
+  "category": "ai-ml",
+  "github_path": ".claude/skills/math/optimization/gradient-methods",
+  "github_branch": "main",
+  "author": "parcadei",
+  "source_url": "https://github.com/parcadei/Continuous-Claude-v3/blob/main/.claude/skills/math/optimization/gradient-methods/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Cosimo Streppone",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

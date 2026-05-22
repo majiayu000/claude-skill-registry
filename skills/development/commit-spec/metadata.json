@@ -1,0 +1,16 @@
+{
+  "name": "commit-spec",
+  "repo": "Hoang604/get-thing-done",
+  "path": ".claude/skills/commit-spec/SKILL.md",
+  "source": "github.com/Hoang604/get-thing-done",
+  "downloaded_at": "2026-02-01T04:32:22.394597Z",
+  "dir_name": "commit-spec",
+  "category": "development",
+  "author": "Hoang604",
+  "source_url": "https://github.com/Hoang604/get-thing-done/blob/main/.claude/skills/commit-spec/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Hoang604/get-thing-done/blob/main/.claude/skills/commit-spec/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "stripe-integration",
+  "repo": "IFIR649/my-lumea-assets-app",
+  "path": ".claude/skills/stripe-integration/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/IFIR649/my-lumea-assets-app",
+  "dir_name": "stripe-integration-ifir649-my-lumea-assets-app-2",
+  "downloaded_at": "2026-03-22T05:29:22.068956Z",
+  "author": "IFIR649",
+  "source_url": "https://github.com/IFIR649/my-lumea-assets-app/blob/main/.claude/skills/stripe-integration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/IFIR649/my-lumea-assets-app/blob/main/.claude/skills/stripe-integration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

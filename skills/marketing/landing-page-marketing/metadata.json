@@ -1,0 +1,16 @@
+{
+  "name": "landing-page-marketing",
+  "repo": "vitorsilva/saberloop",
+  "path": ".claude/skills/landing-page-marketing/SKILL.md",
+  "source": "github.com/vitorsilva/saberloop",
+  "downloaded_at": "2026-02-02T02:40:25.753230Z",
+  "dir_name": "landing-page-marketing",
+  "category": "marketing",
+  "author": "vitorsilva",
+  "source_url": "https://github.com/vitorsilva/saberloop/blob/main/.claude/skills/landing-page-marketing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vitorsilva/saberloop/blob/main/.claude/skills/landing-page-marketing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

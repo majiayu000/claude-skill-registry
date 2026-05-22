@@ -1,0 +1,20 @@
+{
+  "name": "pdf-processing",
+  "description": "",
+  "repo": "taiyousan15/taisun_agent",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/taiyousan15/taisun_agent",
+  "github_path": ".claude/skills/pdf-processing",
+  "github_branch": "main",
+  "dir_name": "pdf-processing-taiyousan15-taisun-agent",
+  "downloaded_at": "2026-02-05T01:44:48.393186Z",
+  "author": "taiyousan15",
+  "source_url": "https://github.com/taiyousan15/taisun_agent/blob/main/.claude/skills/pdf-processing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 taiyousan15",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

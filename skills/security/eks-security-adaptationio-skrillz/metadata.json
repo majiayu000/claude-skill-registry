@@ -1,0 +1,16 @@
+{
+  "name": "eks-security",
+  "repo": "adaptationio/Skrillz",
+  "path": "skills/eks-security/SKILL.md",
+  "source": "github.com/adaptationio/Skrillz",
+  "downloaded_at": "2026-01-29T07:45:47.698121Z",
+  "dir_name": "eks-security-adaptationio-skrillz",
+  "category": "security",
+  "author": "adaptationio",
+  "source_url": "https://github.com/adaptationio/Skrillz/blob/main/skills/eks-security/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adaptationio/Skrillz/blob/main/skills/eks-security/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

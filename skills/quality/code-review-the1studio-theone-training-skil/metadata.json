@@ -1,0 +1,16 @@
+{
+  "name": "code-review",
+  "repo": "The1Studio/theone-training-skills",
+  "path": ".claude/skills/code-review/SKILL.md",
+  "category": "quality",
+  "source": "github.com/The1Studio/theone-training-skills",
+  "dir_name": "code-review-the1studio-theone-training-skil",
+  "downloaded_at": "2026-02-22T05:49:30.848749Z",
+  "author": "The1Studio",
+  "source_url": "https://github.com/The1Studio/theone-training-skills/blob/main/.claude/skills/code-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/The1Studio/theone-training-skills/blob/main/.claude/skills/code-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

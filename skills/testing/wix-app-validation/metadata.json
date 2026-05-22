@@ -1,0 +1,11 @@
+{
+  "name": "wix-app-validation",
+  "repo": "wix-incubator/wix-agentic-flows",
+  "path": "skills/wix-app-validation/SKILL.md",
+  "source": "github.com/wix-incubator/wix-agentic-flows",
+  "downloaded_at": "2026-01-20T01:16:50.082430Z",
+  "dir_name": "wix-app-validation",
+  "category": "testing",
+  "github_path": "skills/wix-app-validation",
+  "github_branch": "main"
+}

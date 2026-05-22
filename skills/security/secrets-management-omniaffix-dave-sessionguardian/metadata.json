@@ -1,0 +1,16 @@
+{
+  "name": "secrets-management",
+  "repo": "Omniaffix-Dave/SessionGuardian",
+  "path": ".github/skills/secrets-management/SKILL.md",
+  "category": "security",
+  "source": "github.com/Omniaffix-Dave/SessionGuardian",
+  "dir_name": "secrets-management-omniaffix-dave-sessionguardian",
+  "downloaded_at": "2026-02-22T05:29:30.898050Z",
+  "author": "Omniaffix-Dave",
+  "source_url": "https://github.com/Omniaffix-Dave/SessionGuardian/blob/main/.github/skills/secrets-management/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Omniaffix-Dave/SessionGuardian/blob/main/.github/skills/secrets-management/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

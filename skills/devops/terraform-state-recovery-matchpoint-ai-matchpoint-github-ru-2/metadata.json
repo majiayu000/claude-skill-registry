@@ -1,0 +1,16 @@
+{
+  "name": "terraform-state-recovery",
+  "repo": "Matchpoint-AI/matchpoint-github-runners-helm",
+  "path": ".claude/skills/terraform-state-recovery/SKILL.md",
+  "source": "github.com/Matchpoint-AI/matchpoint-github-runners-helm",
+  "downloaded_at": "2026-02-02T04:21:28.313380Z",
+  "dir_name": "terraform-state-recovery-matchpoint-ai-matchpoint-github-ru-2",
+  "category": "devops",
+  "author": "Matchpoint-AI",
+  "source_url": "https://github.com/Matchpoint-AI/matchpoint-github-runners-helm/blob/main/.claude/skills/terraform-state-recovery/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Matchpoint-AI/matchpoint-github-runners-helm/blob/main/.claude/skills/terraform-state-recovery/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

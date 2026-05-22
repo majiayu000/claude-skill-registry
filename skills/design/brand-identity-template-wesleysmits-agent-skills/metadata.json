@@ -1,0 +1,16 @@
+{
+  "name": "brand-identity-template",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/brand-identity-template/SKILL.md",
+  "source": "github.com/WesleySmits/agent-skills",
+  "downloaded_at": "2026-01-29T08:43:12.259329Z",
+  "dir_name": "brand-identity-template-wesleysmits-agent-skills",
+  "category": "design",
+  "author": "WesleySmits",
+  "source_url": "https://github.com/WesleySmits/agent-skills/blob/main/.agent/skills/brand-identity-template/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/WesleySmits/agent-skills/blob/main/.agent/skills/brand-identity-template/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

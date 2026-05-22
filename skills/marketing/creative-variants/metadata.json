@@ -1,0 +1,16 @@
+{
+  "name": "creative-variants",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/paid-media/skills/creative-variants/SKILL.md",
+  "source": "github.com/gtmagents/gtm-agents",
+  "downloaded_at": "2026-02-02T02:59:16.355201Z",
+  "dir_name": "creative-variants",
+  "category": "marketing",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/paid-media/skills/creative-variants/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gtmagents/gtm-agents/blob/main/plugins/paid-media/skills/creative-variants/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

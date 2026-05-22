@@ -1,0 +1,17 @@
+{
+  "name": "docx",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/k-dense-ai/docx/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "docx-aiskillstore-marketplace-2",
+  "downloaded_at": "2026-03-06T01:20:53.237350Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/k-dense-ai/docx/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/k-dense-ai/docx/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

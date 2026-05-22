@@ -1,0 +1,16 @@
+{
+  "name": "ci-cd-generator",
+  "repo": "AIDotNet/MoYuCode",
+  "path": "skills/community/ci-cd-generator/SKILL.md",
+  "source": "github.com/AIDotNet/MoYuCode",
+  "downloaded_at": "2026-02-02T03:22:28.438329Z",
+  "dir_name": "ci-cd-generator-aidotnet-moyucode",
+  "category": "devops",
+  "author": "AIDotNet",
+  "source_url": "https://github.com/AIDotNet/MoYuCode/blob/main/skills/community/ci-cd-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AIDotNet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

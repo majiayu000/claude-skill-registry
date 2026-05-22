@@ -1,0 +1,13 @@
+{
+  "name": "distributed-tracing",
+  "description": "",
+  "repo": "ollieb89/vibe_coding",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ollieb89/vibe_coding",
+  "github_path": ".agent/observability-monitoring/skills/distributed-tracing",
+  "github_branch": "main",
+  "dir_name": "distributed-tracing",
+  "downloaded_at": "2026-02-05T01:44:17.914329Z"
+}

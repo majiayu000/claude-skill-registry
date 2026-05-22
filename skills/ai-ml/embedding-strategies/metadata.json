@@ -1,0 +1,11 @@
+{
+  "name": "embedding-strategies",
+  "repo": "wshobson/agents",
+  "path": "plugins/llm-application-dev/skills/embedding-strategies/SKILL.md",
+  "source": "github.com/wshobson/agents",
+  "downloaded_at": "2026-01-22T03:51:07.257341Z",
+  "dir_name": "embedding-strategies",
+  "category": "ai-ml",
+  "github_path": "plugins/llm-application-dev/skills/embedding-strategies",
+  "github_branch": "main"
+}

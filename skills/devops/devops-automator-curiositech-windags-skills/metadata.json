@@ -1,0 +1,17 @@
+{
+  "name": "devops-automator",
+  "repo": "curiositech/windags-skills",
+  "path": "skills/devops-automator/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/curiositech/windags-skills",
+  "dir_name": "devops-automator-curiositech-windags-skills",
+  "downloaded_at": "2026-03-22T07:36:27.448504Z",
+  "author": "curiositech",
+  "source_url": "https://github.com/curiositech/windags-skills/blob/main/skills/devops-automator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/curiositech/windags-skills/blob/main/skills/devops-automator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

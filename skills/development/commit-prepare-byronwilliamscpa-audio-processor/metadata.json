@@ -1,0 +1,11 @@
+{
+  "name": "commit-prepare",
+  "repo": "ByronWilliamsCPA/audio-processor",
+  "path": ".claude/skills/commit-prepare/SKILL.md",
+  "source": "github.com/ByronWilliamsCPA/audio-processor",
+  "downloaded_at": "2026-01-22T04:05:40.143015Z",
+  "dir_name": "commit-prepare-byronwilliamscpa-audio-processor",
+  "category": "development",
+  "github_path": ".claude/skills/commit-prepare",
+  "github_branch": "main"
+}

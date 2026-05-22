@@ -1,0 +1,11 @@
+{
+  "name": "writing-quality-tests",
+  "repo": "ederheisler/agent-skills",
+  "path": "skills/writing-quality-tests/SKILL.md",
+  "source": "github.com/ederheisler/agent-skills",
+  "downloaded_at": "2026-01-22T02:36:35.861399Z",
+  "dir_name": "writing-quality-tests",
+  "category": "testing",
+  "github_path": ".claude/skills/writing-quality-tests",
+  "github_branch": "main"
+}

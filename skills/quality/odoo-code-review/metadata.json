@@ -1,0 +1,9 @@
+{
+  "name": "odoo-code-review",
+  "repo": "unclecatvn/agent-skills",
+  "path": "agents/odoo-code-review/SKILL.md",
+  "source": "github.com/unclecatvn/agent-skills",
+  "downloaded_at": "2026-02-02T02:16:13.326473Z",
+  "dir_name": "odoo-code-review",
+  "category": "quality"
+}

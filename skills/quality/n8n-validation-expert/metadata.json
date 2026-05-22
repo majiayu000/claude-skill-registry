@@ -1,0 +1,13 @@
+{
+  "name": "n8n-validation-expert",
+  "description": "",
+  "repo": "echoleesong/claude-skills-plugin",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/echoleesong/claude-skills-plugin",
+  "github_path": "skills/n8n-validation-expert",
+  "github_branch": "main",
+  "dir_name": "n8n-validation-expert",
+  "downloaded_at": "2026-02-05T01:44:12.899183Z"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "review-skill",
+  "repo": "nakane1chome/claude-skills",
+  "path": "skills/review-skill/SKILL.md",
+  "category": "quality",
+  "source": "github.com/nakane1chome/claude-skills",
+  "dir_name": "review-skill-nakane1chome-claude-skills",
+  "downloaded_at": "2026-02-18T01:33:22.516816Z",
+  "author": "nakane1chome",
+  "source_url": "https://github.com/nakane1chome/claude-skills/blob/main/skills/review-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nakane1chome/claude-skills/blob/main/skills/review-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

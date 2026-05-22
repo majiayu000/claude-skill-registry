@@ -1,0 +1,17 @@
+{
+  "name": "debug",
+  "repo": "qwibitai/nanoclaw",
+  "path": ".claude/skills/debug/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/qwibitai/nanoclaw",
+  "dir_name": "debug-qwibitai-nanoclaw",
+  "downloaded_at": "2026-05-04T02:13:19.846788Z",
+  "author": "qwibitai",
+  "source_url": "https://github.com/qwibitai/nanoclaw/blob/main/.claude/skills/debug/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/qwibitai/nanoclaw/blob/main/.claude/skills/debug/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

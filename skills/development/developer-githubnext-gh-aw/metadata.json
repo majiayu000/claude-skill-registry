@@ -1,0 +1,16 @@
+{
+  "name": "developer",
+  "repo": "githubnext/gh-aw",
+  "path": "skills/developer/SKILL.md",
+  "source": "github.com/githubnext/gh-aw",
+  "downloaded_at": "2026-02-02T03:48:22.479548Z",
+  "dir_name": "developer-githubnext-gh-aw",
+  "category": "development",
+  "author": "githubnext",
+  "source_url": "https://github.com/githubnext/gh-aw/blob/main/skills/developer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright GitHub, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,9 +1,0 @@
-{
-  "name": "review-for-prod",
-  "repo": "freepik-company/knowledge-agent",
-  "path": ".claude/skills/review-for-prod/SKILL.md",
-  "source": "github.com/freepik-company/knowledge-agent",
-  "downloaded_at": "2026-02-02T02:09:42.590292Z",
-  "dir_name": "review-for-prod",
-  "category": "other"
-}

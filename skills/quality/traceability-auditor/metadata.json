@@ -1,0 +1,18 @@
+{
+  "name": "traceability-auditor",
+  "repo": "nahisaho/CodeGraphMCPServer",
+  "path": ".claude/skills/traceability-auditor/SKILL.md",
+  "source": "github.com/nahisaho/CodeGraphMCPServer",
+  "downloaded_at": "2026-01-22T04:03:32.253134Z",
+  "dir_name": "traceability-auditor",
+  "category": "quality",
+  "github_path": ".claude/skills/traceability-auditor",
+  "github_branch": "main",
+  "author": "nahisaho",
+  "source_url": "https://github.com/nahisaho/CodeGraphMCPServer/blob/main/.claude/skills/traceability-auditor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 nahisaho",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

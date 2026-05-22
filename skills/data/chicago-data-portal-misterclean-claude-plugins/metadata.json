@@ -1,0 +1,18 @@
+{
+  "name": "chicago-data-portal",
+  "repo": "MisterClean/claude-plugins",
+  "path": "skills/chicago-data-portal/SKILL.md",
+  "source": "github.com/MisterClean/claude-plugins",
+  "downloaded_at": "2026-01-22T03:54:07.011606Z",
+  "dir_name": "chicago-data-portal-misterclean-claude-plugins",
+  "category": "data",
+  "github_path": "skills/chicago-data-portal",
+  "github_branch": "main",
+  "author": "MisterClean",
+  "source_url": "https://github.com/MisterClean/claude-plugins/blob/main/skills/chicago-data-portal/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Michael McLean",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

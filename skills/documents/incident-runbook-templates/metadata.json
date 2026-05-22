@@ -1,0 +1,11 @@
+{
+  "name": "incident-runbook-templates",
+  "repo": "wshobson/agents",
+  "path": "plugins/incident-response/skills/incident-runbook-templates/SKILL.md",
+  "source": "github.com/wshobson/agents",
+  "downloaded_at": "2026-01-22T03:51:09.252343Z",
+  "dir_name": "incident-runbook-templates",
+  "category": "documents",
+  "github_path": "plugins/incident-response/skills/incident-runbook-templates",
+  "github_branch": "main"
+}

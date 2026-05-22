@@ -1,0 +1,16 @@
+{
+  "name": "coverage-analyzer",
+  "repo": "Atyantik/python-modern-template",
+  "path": ".claude/skills/coverage-analyzer/SKILL.md",
+  "source": "github.com/Atyantik/python-modern-template",
+  "downloaded_at": "2026-01-29T08:24:23.472873Z",
+  "dir_name": "coverage-analyzer-atyantik-python-modern-templa-71b03be4",
+  "category": "testing",
+  "author": "Atyantik",
+  "source_url": "https://github.com/Atyantik/python-modern-template/blob/main/.claude/skills/coverage-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Atyantik Technologies Private Limited",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

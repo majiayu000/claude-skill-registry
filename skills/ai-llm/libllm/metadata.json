@@ -1,0 +1,9 @@
+{
+  "name": "libllm",
+  "repo": "copilot-ld/copilot-ld",
+  "path": "packages/libllm/SKILL.md",
+  "source": "github.com/copilot-ld/copilot-ld",
+  "downloaded_at": "2026-02-02T04:11:52.890784Z",
+  "dir_name": "libllm",
+  "category": "ai-llm"
+}

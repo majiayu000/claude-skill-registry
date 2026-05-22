@@ -1,0 +1,17 @@
+{
+  "name": "tailwind-v4-shadcn",
+  "repo": "VictrixTech/agent-factory-template",
+  "path": ".cursor/skills/tailwind-v4-shadcn/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/VictrixTech/agent-factory-template",
+  "dir_name": "tailwind-v4-shadcn-victrixtech-agent-factory-templa",
+  "downloaded_at": "2026-03-01T06:17:25.021971Z",
+  "author": "VictrixTech",
+  "source_url": "https://github.com/VictrixTech/agent-factory-template/blob/main/.cursor/skills/tailwind-v4-shadcn/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/VictrixTech/agent-factory-template/blob/main/.cursor/skills/tailwind-v4-shadcn/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

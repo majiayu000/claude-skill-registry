@@ -1,0 +1,20 @@
+{
+  "name": "dockerfile-best-practices",
+  "description": "",
+  "repo": "obeone/claude-skills",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/obeone/claude-skills",
+  "github_path": "skills/dockerfile-best-practices",
+  "github_branch": "main",
+  "dir_name": "dockerfile-best-practices-obeone-claude-skills-2",
+  "downloaded_at": "2026-02-05T01:45:00.083904Z",
+  "author": "obeone",
+  "source_url": "https://github.com/obeone/claude-skills/blob/main/skills/dockerfile-best-practices/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Grégoire Compagnon",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

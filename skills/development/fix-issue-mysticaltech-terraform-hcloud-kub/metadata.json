@@ -1,0 +1,13 @@
+{
+  "name": "fix-issue",
+  "description": "",
+  "repo": "mysticaltech/terraform-hcloud-kube-hetzner",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mysticaltech/terraform-hcloud-kube-hetzner",
+  "github_path": ".claude/skills/fix-issue",
+  "github_branch": "master",
+  "dir_name": "fix-issue-mysticaltech-terraform-hcloud-kub",
+  "downloaded_at": "2026-02-05T01:44:47.001271Z"
+}

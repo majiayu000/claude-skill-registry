@@ -1,0 +1,16 @@
+{
+  "name": "connect",
+  "repo": "Fancu1/dotfile",
+  "path": "skills/connect/SKILL.md",
+  "category": "integration",
+  "source": "github.com/Fancu1/dotfile",
+  "dir_name": "connect-fancu1-dotfile",
+  "downloaded_at": "2026-02-15T05:07:01.875727Z",
+  "author": "Fancu1",
+  "source_url": "https://github.com/Fancu1/dotfile/blob/main/skills/connect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Fancu1/dotfile/blob/main/skills/connect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

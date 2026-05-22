@@ -1,0 +1,16 @@
+{
+  "name": "metal-shader-expert",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/metal-shader-expert/SKILL.md",
+  "source": "github.com/erichowens/some_claude_skills",
+  "downloaded_at": "2026-02-01T02:39:00.725608Z",
+  "dir_name": "metal-shader-expert-erichowens-some-claude-skills",
+  "category": "development",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/metal-shader-expert/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

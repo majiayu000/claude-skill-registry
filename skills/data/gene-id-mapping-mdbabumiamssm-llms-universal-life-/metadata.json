@@ -1,0 +1,20 @@
+{
+  "name": "gene-id-mapping",
+  "description": "",
+  "repo": "mdbabumiamssm/LLMs-Universal-Life-Science-and-Clinical-Skills-",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mdbabumiamssm/LLMs-Universal-Life-Science-and-Clinical-Skills-",
+  "github_path": "Skills/Transcriptomics/expression-matrix/gene-id-mapping",
+  "github_branch": "main",
+  "dir_name": "gene-id-mapping-mdbabumiamssm-llms-universal-life-",
+  "downloaded_at": "2026-02-05T01:44:38.797842Z",
+  "author": "mdbabumiamssm",
+  "source_url": "https://github.com/mdbabumiamssm/LLMs-Universal-Life-Science-and-Clinical-Skills-/blob/main/Skills/Transcriptomics/expression-matrix/gene-id-mapping/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MD BABU MIA , PHD",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

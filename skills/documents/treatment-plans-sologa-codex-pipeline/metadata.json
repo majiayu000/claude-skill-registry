@@ -1,0 +1,13 @@
+{
+  "name": "treatment-plans",
+  "description": "研究 codex 使用 skill 生成 survey 這件事",
+  "repo": "Sologa/codex-pipeline",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".codex/skills/treatment-plans",
+  "github_branch": "main",
+  "dir_name": "treatment-plans-sologa-codex-pipeline",
+  "downloaded_at": "2026-02-05T01:45:45.442118Z"
+}

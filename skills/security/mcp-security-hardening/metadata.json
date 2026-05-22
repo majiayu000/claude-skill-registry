@@ -1,0 +1,11 @@
+{
+  "name": "mcp-security-hardening",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/mcp-security-hardening/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-20T01:38:59.086920Z",
+  "dir_name": "mcp-security-hardening",
+  "category": "security",
+  "github_path": "skills/mcp-security-hardening",
+  "github_branch": "main"
+}

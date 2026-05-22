@@ -1,0 +1,18 @@
+{
+  "name": "worktree-cli",
+  "repo": "krazyuniks/guitar-tone-shootout",
+  "path": ".claude/skills/worktree-cli/SKILL.md",
+  "source": "github.com/krazyuniks/guitar-tone-shootout",
+  "downloaded_at": "2026-01-14T01:00:44.232909Z",
+  "dir_name": "worktree-cli",
+  "category": "development",
+  "github_path": ".claude/skills/worktree-cli",
+  "github_branch": "main",
+  "author": "krazyuniks",
+  "source_url": "https://github.com/krazyuniks/guitar-tone-shootout/blob/main/.claude/skills/worktree-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/krazyuniks/guitar-tone-shootout/blob/main/.claude/skills/worktree-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

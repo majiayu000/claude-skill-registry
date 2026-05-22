@@ -1,0 +1,16 @@
+{
+  "name": "python3-add-feature",
+  "repo": "Jamie-BitFlight/claude_skills",
+  "path": "plugins/python3-development/skills/python3-add-feature/SKILL.md",
+  "source": "github.com/Jamie-BitFlight/claude_skills",
+  "downloaded_at": "2026-01-29T02:11:21.472093Z",
+  "dir_name": "python3-add-feature",
+  "category": "development",
+  "author": "Jamie-BitFlight",
+  "source_url": "https://github.com/Jamie-BitFlight/claude_skills/blob/main/plugins/python3-development/skills/python3-add-feature/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Jamie-BitFlight/claude_skills/blob/main/plugins/python3-development/skills/python3-add-feature/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

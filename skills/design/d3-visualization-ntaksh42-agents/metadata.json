@@ -1,0 +1,16 @@
+{
+  "name": "d3-visualization",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/d3-visualization/SKILL.md",
+  "source": "github.com/ntaksh42/agents",
+  "downloaded_at": "2026-01-29T07:42:39.438412Z",
+  "dir_name": "d3-visualization-ntaksh42-agents",
+  "category": "design",
+  "author": "ntaksh42",
+  "source_url": "https://github.com/ntaksh42/agents/blob/main/.claude/skills/d3-visualization/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ntaksh42/agents/blob/main/.claude/skills/d3-visualization/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

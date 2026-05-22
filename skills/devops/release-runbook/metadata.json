@@ -1,0 +1,16 @@
+{
+  "name": "release-runbook",
+  "repo": "nibzard/skills-marketplace",
+  "path": "skills/release-runbook/skills/release-runbook/SKILL.md",
+  "source": "github.com/nibzard/skills-marketplace",
+  "downloaded_at": "2026-02-02T02:51:11.873550Z",
+  "dir_name": "release-runbook",
+  "category": "devops",
+  "author": "nibzard",
+  "source_url": "https://github.com/nibzard/skills-marketplace/blob/main/skills/release-runbook/skills/release-runbook/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Skills Kit",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

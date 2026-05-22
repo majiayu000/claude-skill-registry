@@ -1,0 +1,17 @@
+{
+  "name": "review",
+  "repo": "Thank-you-Linus/Linus-Dashboard",
+  "path": ".claude/skills/review/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/Thank-you-Linus/Linus-Dashboard",
+  "dir_name": "review-thank-you-linus-linus-dashboard",
+  "downloaded_at": "2026-03-22T06:22:27.379201Z",
+  "author": "Thank-you-Linus",
+  "source_url": "https://github.com/Thank-you-Linus/Linus-Dashboard/blob/main/.claude/skills/review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Thank-you-Linus/Linus-Dashboard/blob/main/.claude/skills/review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

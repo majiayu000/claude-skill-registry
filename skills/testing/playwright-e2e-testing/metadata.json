@@ -1,0 +1,18 @@
+{
+  "name": "playwright-e2e-testing",
+  "repo": "ils15/copilot-global-config",
+  "path": "skills/playwright-e2e-testing/SKILL.md",
+  "source": "github.com/ils15/copilot-global-config",
+  "downloaded_at": "2026-01-17T01:38:50.643799Z",
+  "dir_name": "playwright-e2e-testing",
+  "category": "testing",
+  "github_path": "skills/playwright-e2e-testing",
+  "github_branch": "main",
+  "author": "ils15",
+  "source_url": "https://github.com/ils15/copilot-global-config/blob/main/skills/playwright-e2e-testing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

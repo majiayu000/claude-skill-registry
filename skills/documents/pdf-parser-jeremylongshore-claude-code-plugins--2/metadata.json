@@ -1,0 +1,16 @@
+{
+  "name": "pdf-parser",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "planned-skills/generated/19-business-automation/pdf-parser/SKILL.md",
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "downloaded_at": "2026-02-02T03:38:09.321708Z",
+  "dir_name": "pdf-parser-jeremylongshore-claude-code-plugins--2",
+  "category": "documents",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/planned-skills/generated/19-business-automation/pdf-parser/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

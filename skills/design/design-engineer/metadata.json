@@ -1,0 +1,18 @@
+{
+  "name": "design-engineer",
+  "repo": "trentferguson/homescreen-hero",
+  "path": ".claude/skills/design-engineer/SKILL.md",
+  "source": "github.com/trentferguson/homescreen-hero",
+  "downloaded_at": "2026-01-22T03:13:29.004953Z",
+  "dir_name": "design-engineer",
+  "category": "design",
+  "github_path": ".claude/skills/design-engineer",
+  "github_branch": "main",
+  "author": "trentferguson",
+  "source_url": "https://github.com/trentferguson/homescreen-hero/blob/main/.claude/skills/design-engineer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Trent Ferguson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

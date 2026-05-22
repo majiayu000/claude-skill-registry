@@ -1,0 +1,17 @@
+{
+  "name": "ui-ux-pro-max",
+  "repo": "AWS-Educate/template-nextjs-sanity-tailwind-amplify",
+  "path": ".agents/skills/ui-ux-pro-max/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/AWS-Educate/template-nextjs-sanity-tailwind-amplify",
+  "dir_name": "ui-ux-pro-max-aws-educate-template-nextjs-sani",
+  "downloaded_at": "2026-03-01T04:45:00.114794Z",
+  "author": "AWS-Educate",
+  "source_url": "https://github.com/AWS-Educate/template-nextjs-sanity-tailwind-amplify/blob/main/.agents/skills/ui-ux-pro-max/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AWS-Educate/template-nextjs-sanity-tailwind-amplify/blob/main/.agents/skills/ui-ux-pro-max/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

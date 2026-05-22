@@ -1,0 +1,17 @@
+{
+  "name": "openskills-e2e-test-runbook",
+  "repo": "Geeksfino/openskills",
+  "path": ".cursor/skills/openskills-e2e-test-runbook/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/Geeksfino/openskills",
+  "dir_name": "openskills-e2e-test-runbook",
+  "downloaded_at": "2026-03-22T05:23:30.410361Z",
+  "author": "Geeksfino",
+  "source_url": "https://github.com/Geeksfino/openskills/blob/main/.cursor/skills/openskills-e2e-test-runbook/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Geeksfino/openskills/blob/main/.cursor/skills/openskills-e2e-test-runbook/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

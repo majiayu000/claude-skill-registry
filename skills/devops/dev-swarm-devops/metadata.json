@@ -1,0 +1,16 @@
+{
+  "name": "dev-swarm-devops",
+  "repo": "X-School-Academy/ai-dev-swarm",
+  "path": "dev-swarm/skills/dev-swarm-devops/SKILL.md",
+  "source": "github.com/X-School-Academy/ai-dev-swarm",
+  "downloaded_at": "2026-01-14T02:33:41.029705Z",
+  "dir_name": "dev-swarm-devops",
+  "category": "devops",
+  "author": "X-School-Academy",
+  "source_url": "https://github.com/X-School-Academy/ai-dev-swarm/blob/main/dev-swarm/skills/dev-swarm-devops/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

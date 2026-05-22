@@ -1,0 +1,18 @@
+{
+  "name": "nanobanana-pro",
+  "repo": "taiyousan15/taisun_agent",
+  "path": ".claude/skills/nanobanana-pro/SKILL.md",
+  "source": "github.com/taiyousan15/taisun_agent",
+  "downloaded_at": "2026-01-22T01:17:52.247061Z",
+  "dir_name": "nanobanana-pro",
+  "category": "ai-ml",
+  "github_path": ".claude/skills/nanobanana-pro",
+  "github_branch": "main",
+  "author": "taiyousan15",
+  "source_url": "https://github.com/taiyousan15/taisun_agent/blob/main/.claude/skills/nanobanana-pro/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 taiyousan15",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

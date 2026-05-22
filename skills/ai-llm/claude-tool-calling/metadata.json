@@ -1,0 +1,16 @@
+{
+  "name": "claude-tool-calling",
+  "repo": "ewe-studios/agentic-coding-starter",
+  "path": "skills/claude-tool-calling/skill.md",
+  "source": "github.com/ewe-studios/agentic-coding-starter",
+  "downloaded_at": "2026-02-02T01:43:39.511397Z",
+  "dir_name": "claude-tool-calling",
+  "category": "ai-llm",
+  "author": "ewe-studios",
+  "source_url": "https://github.com/ewe-studios/agentic-coding-starter/blob/main/skills/claude-tool-calling/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ewe-studios/agentic-coding-starter/blob/main/skills/claude-tool-calling/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

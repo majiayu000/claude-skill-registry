@@ -1,0 +1,17 @@
+{
+  "name": "security-updates",
+  "repo": "beriberikix/zephyr-agent-skills",
+  "path": "skills/security-updates/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/beriberikix/zephyr-agent-skills",
+  "dir_name": "security-updates",
+  "downloaded_at": "2026-03-22T07:13:31.337521Z",
+  "author": "beriberikix",
+  "source_url": "https://github.com/beriberikix/zephyr-agent-skills/blob/main/skills/security-updates/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/beriberikix/zephyr-agent-skills/blob/main/skills/security-updates/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

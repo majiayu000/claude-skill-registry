@@ -1,0 +1,17 @@
+{
+  "name": "code-review",
+  "repo": "KarmaloopAI/Jiva",
+  "path": "examples/personas/code-reviewer/skills/code-review/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/KarmaloopAI/Jiva",
+  "dir_name": "code-review-karmaloopai-jiva",
+  "downloaded_at": "2026-03-22T05:37:45.404694Z",
+  "author": "KarmaloopAI",
+  "source_url": "https://github.com/KarmaloopAI/Jiva/blob/main/examples/personas/code-reviewer/skills/code-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/KarmaloopAI/Jiva/blob/main/examples/personas/code-reviewer/skills/code-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "verify-inference-example",
+  "repo": "kungfuai/CVlization",
+  "path": ".claude/skills/verify-inference-example/SKILL.md",
+  "source": "github.com/kungfuai/CVlization",
+  "downloaded_at": "2026-02-02T01:22:26.780586Z",
+  "dir_name": "verify-inference-example",
+  "category": "quality"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "verification-loop",
+  "repo": "mhylle/claude-skills-collection",
+  "path": "skills/verification-loop/SKILL.md",
+  "source": "github.com/mhylle/claude-skills-collection",
+  "downloaded_at": "2026-02-01T02:43:05.458294Z",
+  "dir_name": "verification-loop-mhylle-claude-skills-collec",
+  "category": "testing",
+  "author": "mhylle",
+  "source_url": "https://github.com/mhylle/claude-skills-collection/blob/main/skills/verification-loop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mhylle/claude-skills-collection/blob/main/skills/verification-loop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

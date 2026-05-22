@@ -1,0 +1,17 @@
+{
+  "name": "prpm-json-best-practices-skill",
+  "repo": "AgentWorkforce/trajectories",
+  "path": ".openskills/prpm-json-best-practices-skill/prpm-json-best-practices-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/AgentWorkforce/trajectories",
+  "dir_name": "prpm-json-best-practices-skill-agentworkforce-trajectories-2",
+  "downloaded_at": "2026-03-22T04:48:23.954587Z",
+  "author": "AgentWorkforce",
+  "source_url": "https://github.com/AgentWorkforce/trajectories/blob/main/.openskills/prpm-json-best-practices-skill/prpm-json-best-practices-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AgentWorkforce/trajectories/blob/main/.openskills/prpm-json-best-practices-skill/prpm-json-best-practices-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "swiftdata-migration-writer",
+  "repo": "willsigmon/sigstack-site",
+  "path": "claude/skills/swiftdata-migration-writer/SKILL.md",
+  "source": "github.com/willsigmon/sigstack-site",
+  "downloaded_at": "2026-01-17T02:00:44.487902Z",
+  "dir_name": "swiftdata-migration-writer-willsigmon-sigstack-site",
+  "category": "data",
+  "github_path": "claude/skills/swiftdata-migration-writer",
+  "github_branch": "main",
+  "author": "willsigmon",
+  "source_url": "https://github.com/willsigmon/sigstack-site/blob/main/claude/skills/swiftdata-migration-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/willsigmon/sigstack-site/blob/main/claude/skills/swiftdata-migration-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

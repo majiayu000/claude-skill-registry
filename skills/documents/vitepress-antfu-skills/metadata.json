@@ -1,0 +1,16 @@
+{
+  "name": "vitepress",
+  "repo": "antfu/skills",
+  "path": "skills/vitepress/SKILL.md",
+  "source": "github.com/antfu/skills",
+  "downloaded_at": "2026-01-29T06:41:25.169339Z",
+  "dir_name": "vitepress-antfu-skills",
+  "category": "documents",
+  "author": "antfu",
+  "source_url": "https://github.com/antfu/skills/blob/main/skills/vitepress/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-PRESENT Anthony Fu <https://github.com/antfu>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

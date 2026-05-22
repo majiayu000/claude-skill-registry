@@ -1,0 +1,9 @@
+{
+  "name": "qa-regression",
+  "repo": "hainamchung/agent-assistant",
+  "path": "skills/qa-regression/SKILL.md",
+  "source": "github.com/hainamchung/agent-assistant",
+  "downloaded_at": "2026-02-02T03:55:13.694003Z",
+  "dir_name": "qa-regression-hainamchung-agent-assistant",
+  "category": "testing"
+}

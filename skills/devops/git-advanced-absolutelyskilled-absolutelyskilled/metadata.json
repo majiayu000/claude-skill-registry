@@ -1,0 +1,17 @@
+{
+  "name": "git-advanced",
+  "repo": "AbsolutelySkilled/AbsolutelySkilled",
+  "path": "skills/git-advanced/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/AbsolutelySkilled/AbsolutelySkilled",
+  "dir_name": "git-advanced-absolutelyskilled-absolutelyskilled",
+  "downloaded_at": "2026-03-22T04:46:54.864483Z",
+  "author": "AbsolutelySkilled",
+  "source_url": "https://github.com/AbsolutelySkilled/AbsolutelySkilled/blob/main/skills/git-advanced/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AbsolutelySkilled/AbsolutelySkilled/blob/main/skills/git-advanced/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

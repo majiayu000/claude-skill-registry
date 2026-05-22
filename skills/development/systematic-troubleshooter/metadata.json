@@ -1,0 +1,20 @@
+{
+  "name": "systematic-troubleshooter",
+  "description": "",
+  "repo": "dangeles/claude",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dangeles/claude",
+  "github_path": "claude-config/skills/systematic-troubleshooter",
+  "github_branch": "main",
+  "dir_name": "systematic-troubleshooter",
+  "downloaded_at": "2026-02-05T01:45:07.966697Z",
+  "author": "dangeles",
+  "source_url": "https://github.com/dangeles/claude/blob/main/claude-config/skills/systematic-troubleshooter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dangeles/claude/blob/main/claude-config/skills/systematic-troubleshooter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

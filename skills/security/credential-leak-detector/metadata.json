@@ -1,0 +1,17 @@
+{
+  "name": "credential-leak-detector",
+  "repo": "JKHeadley/instar",
+  "path": "skills/credential-leak-detector/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/JKHeadley/instar",
+  "dir_name": "credential-leak-detector",
+  "downloaded_at": "2026-03-22T05:31:36.346427Z",
+  "author": "JKHeadley",
+  "source_url": "https://github.com/JKHeadley/instar/blob/main/skills/credential-leak-detector/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JKHeadley/instar/blob/main/skills/credential-leak-detector/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

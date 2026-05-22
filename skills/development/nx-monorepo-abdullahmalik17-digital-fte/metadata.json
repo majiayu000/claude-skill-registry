@@ -1,0 +1,16 @@
+{
+  "name": "nx-monorepo",
+  "repo": "AbdullahMalik17/Digital-FTE",
+  "path": ".claude/skills/nx-monorepo/SKILL.md",
+  "category": "development",
+  "source": "github.com/AbdullahMalik17/Digital-FTE",
+  "dir_name": "nx-monorepo-abdullahmalik17-digital-fte",
+  "downloaded_at": "2026-02-15T04:42:06.566038Z",
+  "author": "AbdullahMalik17",
+  "source_url": "https://github.com/AbdullahMalik17/Digital-FTE/blob/main/.claude/skills/nx-monorepo/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Muhammad Abdullah Athar",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "prompt-compile",
+  "repo": "JordanGunn/nunchuck",
+  "path": "skills/prompt/prompt-compile/SKILL.md",
+  "github_branch": "master",
+  "category": "ai-llm",
+  "source": "github.com/JordanGunn/nunchuck",
+  "dir_name": "prompt-compile-jordangunn-nunchuck-3",
+  "downloaded_at": "2026-03-22T05:35:30.371062Z",
+  "author": "JordanGunn",
+  "source_url": "https://github.com/JordanGunn/nunchuck/blob/master/skills/prompt/prompt-compile/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JordanGunn/nunchuck/blob/master/skills/prompt/prompt-compile/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

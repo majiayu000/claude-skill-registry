@@ -1,0 +1,16 @@
+{
+  "name": "gitops-workflow",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/gitops-workflow/SKILL.md",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "downloaded_at": "2026-01-29T09:00:00.084847Z",
+  "dir_name": "gitops-workflow-sickn33-antigravity-awesome",
+  "category": "devops",
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/gitops-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

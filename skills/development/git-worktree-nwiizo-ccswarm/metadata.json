@@ -1,0 +1,13 @@
+{
+  "name": "git-worktree",
+  "description": "",
+  "repo": "nwiizo/ccswarm",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nwiizo/ccswarm",
+  "github_path": ".claude/skills/git-worktree",
+  "github_branch": "master",
+  "dir_name": "git-worktree-nwiizo-ccswarm",
+  "downloaded_at": "2026-02-05T01:44:16.406676Z"
+}

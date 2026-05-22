@@ -1,0 +1,17 @@
+{
+  "name": "xcode-pbxproj-file-registration",
+  "repo": "shimo4228/claude-code-learned-skills",
+  "path": "skills/xcode-pbxproj-file-registration/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/shimo4228/claude-code-learned-skills",
+  "dir_name": "xcode-pbxproj-file-registration",
+  "downloaded_at": "2026-03-02T01:33:02.639340Z",
+  "author": "shimo4228",
+  "source_url": "https://github.com/shimo4228/claude-code-learned-skills/blob/main/skills/xcode-pbxproj-file-registration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shimo4228/claude-code-learned-skills/blob/main/skills/xcode-pbxproj-file-registration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

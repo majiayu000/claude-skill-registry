@@ -1,0 +1,11 @@
+{
+  "name": "doc-check",
+  "repo": "coder/coder",
+  "path": ".claude/skills/doc-check/SKILL.md",
+  "source": "github.com/coder/coder",
+  "downloaded_at": "2026-01-22T01:50:27.564079Z",
+  "dir_name": "doc-check-coder-coder",
+  "category": "documents",
+  "github_path": ".claude/skills/doc-check",
+  "github_branch": "main"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "phase-4-validator",
+  "repo": "DarkMonkDev/WitchCityRope",
+  "path": ".claude/skills/phase-4-validator/SKILL.md",
+  "source": "github.com/DarkMonkDev/WitchCityRope",
+  "downloaded_at": "2026-01-22T01:49:22.524925Z",
+  "dir_name": "phase-4-validator",
+  "category": "testing",
+  "github_path": ".claude/skills/phase-4-validator",
+  "github_branch": "main",
+  "author": "DarkMonkDev",
+  "source_url": "https://github.com/DarkMonkDev/WitchCityRope/blob/main/.claude/skills/phase-4-validator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DarkMonkDev/WitchCityRope/blob/main/.claude/skills/phase-4-validator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

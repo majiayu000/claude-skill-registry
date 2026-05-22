@@ -1,0 +1,18 @@
+{
+  "name": "data-ai",
+  "repo": "pluginagentmarketplace/custom-plugin-design-system",
+  "path": "developer-roadmap-plugin/skills/data-ai/SKILL.md",
+  "source": "github.com/pluginagentmarketplace/custom-plugin-design-system",
+  "downloaded_at": "2026-01-14T03:12:02.648827Z",
+  "dir_name": "data-ai",
+  "category": "ai-ml",
+  "github_path": "developer-roadmap-plugin/skills/data-ai",
+  "github_branch": "main",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-design-system/blob/main/developer-roadmap-plugin/skills/data-ai/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

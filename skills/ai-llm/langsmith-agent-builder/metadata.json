@@ -1,0 +1,18 @@
+{
+  "name": "langsmith-agent-builder",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/langsmith-agent-builder/SKILL.md",
+  "source": "github.com/enuno/claude-command-and-control",
+  "downloaded_at": "2026-01-22T02:47:02.743166Z",
+  "dir_name": "langsmith-agent-builder",
+  "category": "ai-llm",
+  "github_path": "skills-templates/langsmith-agent-builder",
+  "github_branch": "main",
+  "author": "enuno",
+  "source_url": "https://github.com/enuno/claude-command-and-control/blob/main/skills-templates/langsmith-agent-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/enuno/claude-command-and-control/blob/main/skills-templates/langsmith-agent-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "checkstyle",
+  "repo": "alexmond/jhelm",
+  "path": ".claude/skills/checkstyle/skill.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/alexmond/jhelm",
+  "dir_name": "checkstyle",
+  "downloaded_at": "2026-03-22T06:50:20.034186Z",
+  "author": "alexmond",
+  "source_url": "https://github.com/alexmond/jhelm/blob/main/.claude/skills/checkstyle/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexmond/jhelm/blob/main/.claude/skills/checkstyle/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

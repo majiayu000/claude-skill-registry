@@ -1,0 +1,20 @@
+{
+  "name": "codex-cli-bridge",
+  "description": "",
+  "repo": "krzemienski/claude-code-skills-factory",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": "generated-skills/codex-cli-bridge",
+  "github_branch": "master",
+  "dir_name": "codex-cli-bridge-krzemienski-claude-code-skills-f",
+  "downloaded_at": "2026-02-05T01:45:37.212634Z",
+  "author": "krzemienski",
+  "source_url": "https://github.com/krzemienski/claude-code-skills-factory/blob/master/generated-skills/codex-cli-bridge/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Reza Rezvani",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

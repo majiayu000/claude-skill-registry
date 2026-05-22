@@ -1,0 +1,17 @@
+{
+  "name": "code-review-asm-xtensa",
+  "repo": "FastLED/FastLED",
+  "path": ".claude/skills/code-review-asm-xtensa/SKILL.md",
+  "github_branch": "master",
+  "category": "quality",
+  "source": "github.com/FastLED/FastLED",
+  "dir_name": "code-review-asm-xtensa",
+  "downloaded_at": "2026-03-22T05:20:28.824040Z",
+  "author": "FastLED",
+  "source_url": "https://github.com/FastLED/FastLED/blob/master/.claude/skills/code-review-asm-xtensa/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/FastLED/FastLED/blob/master/.claude/skills/code-review-asm-xtensa/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

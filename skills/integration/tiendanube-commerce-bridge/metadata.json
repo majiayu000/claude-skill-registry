@@ -1,0 +1,16 @@
+{
+  "name": "TiendaNube_Commerce_Bridge",
+  "repo": "adriangmrraa/MultiAgents-Platform-ROI",
+  "path": ".agent/skills/TiendaNube_Commerce_Bridge/SKILL.md",
+  "source": "github.com/adriangmrraa/MultiAgents-Platform-ROI",
+  "downloaded_at": "2026-02-02T02:09:49.310542Z",
+  "dir_name": "tiendanube-commerce-bridge",
+  "category": "integration",
+  "author": "adriangmrraa",
+  "source_url": "https://github.com/adriangmrraa/MultiAgents-Platform-ROI/blob/main/.agent/skills/TiendaNube_Commerce_Bridge/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adriangmrraa/MultiAgents-Platform-ROI/blob/main/.agent/skills/TiendaNube_Commerce_Bridge/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

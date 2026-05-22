@@ -1,0 +1,20 @@
+{
+  "name": "tdd-workflow",
+  "description": "",
+  "repo": "cacr92/WeReply",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cacr92/WeReply",
+  "github_path": ".trae/skills/tdd-workflow",
+  "github_branch": "main",
+  "dir_name": "tdd-workflow-cacr92-wereply",
+  "downloaded_at": "2026-02-05T01:44:18.160073Z",
+  "author": "cacr92",
+  "source_url": "https://github.com/cacr92/WeReply/blob/main/.trae/skills/tdd-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 WeReply",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

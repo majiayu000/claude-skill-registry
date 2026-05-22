@@ -1,0 +1,9 @@
+{
+  "name": "redteam-plugin-development",
+  "repo": "promptfoo/promptfoo",
+  "path": ".claude/skills/redteam-plugin-development/skill.md",
+  "source": "github.com/promptfoo/promptfoo",
+  "downloaded_at": "2026-01-30T02:41:47.580846Z",
+  "dir_name": "redteam-plugin-development",
+  "category": "security"
+}

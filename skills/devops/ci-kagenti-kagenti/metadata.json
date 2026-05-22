@@ -1,0 +1,16 @@
+{
+  "name": "ci",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/ci/SKILL.md",
+  "category": "devops",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "ci-kagenti-kagenti",
+  "downloaded_at": "2026-02-15T07:49:42.491389Z",
+  "author": "kagenti",
+  "source_url": "https://github.com/kagenti/kagenti/blob/main/.claude/skills/ci/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kagenti/kagenti/blob/main/.claude/skills/ci/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "codespaces",
+  "repo": "HouseGarofalo/claude-code-base",
+  "path": ".claude/skills/codespaces/SKILL.md",
+  "category": "devops",
+  "source": "github.com/HouseGarofalo/claude-code-base",
+  "dir_name": "codespaces-housegarofalo-claude-code-base-2",
+  "downloaded_at": "2026-02-15T05:13:53.579970Z",
+  "author": "HouseGarofalo",
+  "source_url": "https://github.com/HouseGarofalo/claude-code-base/blob/main/.claude/skills/codespaces/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 HouseGarofalo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

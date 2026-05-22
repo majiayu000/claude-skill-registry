@@ -1,0 +1,16 @@
+{
+  "name": "middleware-protection",
+  "repo": "dadbodgeoff/drift",
+  "path": "skills/middleware-protection/SKILL.md",
+  "source": "github.com/dadbodgeoff/drift",
+  "downloaded_at": "2026-02-02T04:59:33.712773Z",
+  "dir_name": "middleware-protection",
+  "category": "development",
+  "author": "dadbodgeoff",
+  "source_url": "https://github.com/dadbodgeoff/drift/blob/main/skills/middleware-protection/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dadbodgeoff/drift/blob/main/skills/middleware-protection/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

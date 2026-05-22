@@ -1,0 +1,16 @@
+{
+  "name": "prompt-architect",
+  "repo": "freitasp1/claude-code-skills",
+  "path": "prompt-architect/SKILL.md",
+  "category": "ai-llm",
+  "source": "github.com/freitasp1/claude-code-skills",
+  "dir_name": "prompt-architect-freitasp1-claude-code-skills",
+  "downloaded_at": "2026-02-22T07:12:18.364944Z",
+  "author": "freitasp1",
+  "source_url": "https://github.com/freitasp1/claude-code-skills/blob/main/prompt-architect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Lara Knuth / Dresden AI Insights",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "ios-a11y",
+  "repo": "Klara-copilot/epost_agent_kit",
+  "path": "packages/a11y/skills/ios-a11y/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/Klara-copilot/epost_agent_kit",
+  "dir_name": "ios-a11y",
+  "downloaded_at": "2026-03-22T05:39:46.966219Z",
+  "author": "Klara-copilot",
+  "source_url": "https://github.com/Klara-copilot/epost_agent_kit/blob/main/packages/a11y/skills/ios-a11y/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klara-copilot/epost_agent_kit/blob/main/packages/a11y/skills/ios-a11y/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "deployment-engineer",
+  "repo": "Charon-Fan/agent-playbook",
+  "path": "skills/deployment-engineer/SKILL.md",
+  "source": "github.com/Charon-Fan/agent-playbook",
+  "downloaded_at": "2026-01-21T03:43:48.014391Z",
+  "dir_name": "deployment-engineer-charon-fan-agent-playbook",
+  "category": "devops",
+  "github_path": "skills/deployment-engineer",
+  "github_branch": "main",
+  "author": "Charon-Fan",
+  "source_url": "https://github.com/Charon-Fan/agent-playbook/blob/main/skills/deployment-engineer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Charon-Fan/agent-playbook/blob/main/skills/deployment-engineer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

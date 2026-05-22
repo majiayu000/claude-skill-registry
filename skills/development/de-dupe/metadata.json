@@ -1,0 +1,16 @@
+{
+  "name": "de-dupe",
+  "repo": "saadjs/agent-skills",
+  "path": "skills/de-dupe/SKILL.md",
+  "source": "github.com/saadjs/agent-skills",
+  "downloaded_at": "2026-02-02T04:31:51.684963Z",
+  "dir_name": "de-dupe",
+  "category": "development",
+  "author": "saadjs",
+  "source_url": "https://github.com/saadjs/agent-skills/blob/main/skills/de-dupe/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Saad Bash",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "copywriter",
+  "repo": "ReeseAstor/indie-kit",
+  "path": ".claude/skills/copywriter/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/ReeseAstor/indie-kit",
+  "dir_name": "copywriter-reeseastor-indie-kit",
+  "downloaded_at": "2026-03-01T05:58:45.392626Z",
+  "author": "ReeseAstor",
+  "source_url": "https://github.com/ReeseAstor/indie-kit/blob/main/.claude/skills/copywriter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ReeseAstor/indie-kit/blob/main/.claude/skills/copywriter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

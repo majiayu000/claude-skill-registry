@@ -1,0 +1,13 @@
+{
+  "name": "codex-cli-bridge",
+  "description": "Claude Agent, Tool, Workflow creation tool",
+  "repo": "thinmintdev/claude-cooker",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": "generated-skills/codex-cli-bridge",
+  "github_branch": "master",
+  "dir_name": "codex-cli-bridge-thinmintdev-claude-cooker",
+  "downloaded_at": "2026-02-05T01:45:37.187489Z"
+}

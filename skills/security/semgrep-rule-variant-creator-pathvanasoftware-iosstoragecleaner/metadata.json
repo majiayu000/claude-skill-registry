@@ -1,0 +1,16 @@
+{
+  "name": "semgrep-rule-variant-creator",
+  "repo": "pathvanasoftware/IOSStorageCleaner",
+  "path": ".claude/skills/trailofbits-semgrep-rule-variant-creator/skills/semgrep-rule-variant-creator/SKILL.md",
+  "source": "github.com/pathvanasoftware/IOSStorageCleaner",
+  "downloaded_at": "2026-01-29T09:01:13.735708Z",
+  "dir_name": "semgrep-rule-variant-creator-pathvanasoftware-iosstoragecleaner",
+  "category": "security",
+  "author": "pathvanasoftware",
+  "source_url": "https://github.com/pathvanasoftware/IOSStorageCleaner/blob/main/.claude/skills/trailofbits-semgrep-rule-variant-creator/skills/semgrep-rule-variant-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pathvanasoftware/IOSStorageCleaner/blob/main/.claude/skills/trailofbits-semgrep-rule-variant-creator/skills/semgrep-rule-variant-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "skill-rails-upgrade",
+  "repo": "IsKenKenYa/Open1PanelApp",
+  "path": ".trae/skills/skill-rails-upgrade/SKILL.md",
+  "category": "development",
+  "source": "github.com/IsKenKenYa/Open1PanelApp",
+  "dir_name": "skill-rails-upgrade",
+  "downloaded_at": "2026-02-22T05:10:26.342522Z",
+  "author": "IsKenKenYa",
+  "source_url": "https://github.com/IsKenKenYa/Open1PanelApp/blob/main/.trae/skills/skill-rails-upgrade/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/IsKenKenYa/Open1PanelApp/blob/main/.trae/skills/skill-rails-upgrade/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

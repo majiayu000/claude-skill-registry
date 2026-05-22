@@ -1,0 +1,18 @@
+{
+  "name": "server-actions",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/nextjs-expert/skills/server-actions/SKILL.md",
+  "source": "github.com/davepoon/buildwithclaude",
+  "downloaded_at": "2026-01-22T03:46:00.786232Z",
+  "dir_name": "server-actions-davepoon-buildwithclaude",
+  "category": "development",
+  "github_path": "plugins/nextjs-expert/skills/server-actions",
+  "github_branch": "main",
+  "author": "davepoon",
+  "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/nextjs-expert/skills/server-actions/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 davepoon",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

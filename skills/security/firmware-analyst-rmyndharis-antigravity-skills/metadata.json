@@ -1,0 +1,18 @@
+{
+  "name": "firmware-analyst",
+  "repo": "rmyndharis/antigravity-skills",
+  "path": "skills/firmware-analyst/SKILL.md",
+  "source": "github.com/rmyndharis/antigravity-skills",
+  "downloaded_at": "2026-01-22T01:43:08.804773Z",
+  "dir_name": "firmware-analyst-rmyndharis-antigravity-skills",
+  "category": "security",
+  "github_path": "skills/firmware-analyst",
+  "github_branch": "main",
+  "author": "rmyndharis",
+  "source_url": "https://github.com/rmyndharis/antigravity-skills/blob/main/skills/firmware-analyst/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Yudhi Armyndharis",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

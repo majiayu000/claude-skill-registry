@@ -1,0 +1,18 @@
+{
+  "name": "python-pptx",
+  "repo": "vamseeachanta/workspace-hub",
+  "path": ".claude/skills/office-docs/python-pptx/SKILL.md",
+  "source": "github.com/vamseeachanta/workspace-hub",
+  "downloaded_at": "2026-01-22T03:43:54.312062Z",
+  "dir_name": "python-pptx",
+  "category": "documents",
+  "github_path": ".claude/skills/office-docs/python-pptx",
+  "github_branch": "main",
+  "author": "vamseeachanta",
+  "source_url": "https://github.com/vamseeachanta/workspace-hub/blob/main/.claude/skills/office-docs/python-pptx/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vamseeachanta/workspace-hub/blob/main/.claude/skills/office-docs/python-pptx/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

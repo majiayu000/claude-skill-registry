@@ -1,0 +1,16 @@
+{
+  "name": "multi-tenant",
+  "repo": "juanre/llmemory",
+  "path": "skills/multi-tenant/SKILL.md",
+  "category": "development",
+  "source": "github.com/juanre/llmemory",
+  "dir_name": "multi-tenant-juanre-llmemory",
+  "downloaded_at": "2026-02-22T07:44:53.242947Z",
+  "author": "juanre",
+  "source_url": "https://github.com/juanre/llmemory/blob/main/skills/multi-tenant/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Juan Reyero",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

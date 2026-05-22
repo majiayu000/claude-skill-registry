@@ -1,0 +1,16 @@
+{
+  "name": "hono-api-scaffolder",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/hono-api-scaffolder/SKILL.md",
+  "category": "development",
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "hono-api-scaffolder",
+  "downloaded_at": "2026-02-22T07:39:30.801981Z",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/hono-api-scaffolder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

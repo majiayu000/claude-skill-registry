@@ -1,0 +1,16 @@
+{
+  "name": "brain",
+  "repo": "andreibesleaga/GABBE",
+  "path": "agents/skills/brain/learning-adaptation.skill.md",
+  "category": "ai-llm",
+  "source": "github.com/andreibesleaga/GABBE",
+  "dir_name": "brain-andreibesleaga-gabbe",
+  "downloaded_at": "2026-02-22T06:16:31.719464Z",
+  "author": "andreibesleaga",
+  "source_url": "https://github.com/andreibesleaga/GABBE/blob/main/agents/skills/brain/learning-adaptation.skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andreibesleaga/GABBE/blob/main/agents/skills/brain/learning-adaptation.skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

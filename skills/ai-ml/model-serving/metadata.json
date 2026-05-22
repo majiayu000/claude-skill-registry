@@ -1,0 +1,13 @@
+{
+  "name": "model-serving",
+  "description": "",
+  "repo": "datasciencemonkey/claude-code-cli-bricks",
+  "category": "ai-ml",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
+  "github_path": ".claude/skills/model-serving",
+  "github_branch": "main",
+  "dir_name": "model-serving",
+  "downloaded_at": "2026-02-05T01:44:57.038666Z"
+}

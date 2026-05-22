@@ -1,0 +1,16 @@
+{
+  "name": "zod-form-validation",
+  "repo": "kettleofketchup/DraftForge",
+  "path": ".claude/skills/zod-form-validation/SKILL.md",
+  "source": "github.com/kettleofketchup/DraftForge",
+  "downloaded_at": "2026-02-02T02:02:40.631994Z",
+  "dir_name": "zod-form-validation",
+  "category": "development",
+  "author": "kettleofketchup",
+  "source_url": "https://github.com/kettleofketchup/DraftForge/blob/main/.claude/skills/zod-form-validation/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

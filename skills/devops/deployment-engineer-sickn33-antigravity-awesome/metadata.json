@@ -1,0 +1,17 @@
+{
+  "name": "deployment-engineer",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/deployment-engineer/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "deployment-engineer-sickn33-antigravity-awesome",
+  "downloaded_at": "2026-05-16T03:28:15.455242Z",
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/deployment-engineer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/deployment-engineer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

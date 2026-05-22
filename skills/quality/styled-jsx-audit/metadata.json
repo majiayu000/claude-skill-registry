@@ -1,0 +1,17 @@
+{
+  "name": "styled-jsx-audit",
+  "repo": "andireuter/skills-webapp",
+  "path": "skills/styled-jsx-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/andireuter/skills-webapp",
+  "dir_name": "styled-jsx-audit",
+  "downloaded_at": "2026-03-01T06:41:52.878804Z",
+  "author": "andireuter",
+  "source_url": "https://github.com/andireuter/skills-webapp/blob/main/skills/styled-jsx-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andireuter/skills-webapp/blob/main/skills/styled-jsx-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

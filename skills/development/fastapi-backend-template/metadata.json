@@ -1,0 +1,18 @@
+{
+  "name": "fastapi-backend-template",
+  "repo": "rebyteai-template/rebyte-skills",
+  "path": "fastapi-backend-template/SKILL.md",
+  "source": "github.com/rebyteai-template/rebyte-skills",
+  "downloaded_at": "2026-01-22T01:19:07.060231Z",
+  "dir_name": "fastapi-backend-template",
+  "category": "development",
+  "github_path": "fastapi-backend-template",
+  "github_branch": "main",
+  "author": "rebyteai-template",
+  "source_url": "https://github.com/rebyteai-template/rebyte-skills/blob/main/fastapi-backend-template/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rebyteai-template/rebyte-skills/blob/main/fastapi-backend-template/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

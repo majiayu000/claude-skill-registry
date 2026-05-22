@@ -1,0 +1,18 @@
+{
+  "name": "huggingface-trainer",
+  "repo": "frankxai/ai-architect",
+  "path": "skills/huggingface-trainer/SKILL.md",
+  "source": "github.com/frankxai/ai-architect",
+  "downloaded_at": "2026-01-19T02:09:27.908031Z",
+  "dir_name": "huggingface-trainer",
+  "category": "ai-ml",
+  "github_path": "skills/huggingface-trainer",
+  "github_branch": "main",
+  "author": "frankxai",
+  "source_url": "https://github.com/frankxai/ai-architect/blob/main/skills/huggingface-trainer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/frankxai/ai-architect/blob/main/skills/huggingface-trainer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

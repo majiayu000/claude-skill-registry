@@ -1,0 +1,16 @@
+{
+  "name": "security-guard",
+  "repo": "TurnaboutHero/oh-my-antigravity",
+  "path": "skills/security-guard/SKILL.md",
+  "source": "github.com/TurnaboutHero/oh-my-antigravity",
+  "downloaded_at": "2026-02-02T03:39:59.686903Z",
+  "dir_name": "security-guard",
+  "category": "security",
+  "author": "TurnaboutHero",
+  "source_url": "https://github.com/TurnaboutHero/oh-my-antigravity/blob/main/skills/security-guard/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Oh My Antigravity",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

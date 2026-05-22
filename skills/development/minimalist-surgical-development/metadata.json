@@ -1,0 +1,13 @@
+{
+  "name": "minimalist-surgical-development",
+  "description": "Opinionated, repo-local configuration for GitHub Copilot (Chat + Agent mode): instruction hierarchy, reusable prompt files, custom agent profiles, and MCP server config.",
+  "repo": "kasuken/github-copilot-superpowers",
+  "category": "development",
+  "tags": [],
+  "stars": 3,
+  "source": "",
+  "github_path": ".github/skills/minimalist-surgical-development",
+  "github_branch": "main",
+  "dir_name": "minimalist-surgical-development",
+  "downloaded_at": "2026-02-05T01:45:31.383616Z"
+}

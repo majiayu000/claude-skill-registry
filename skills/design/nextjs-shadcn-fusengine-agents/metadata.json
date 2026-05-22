@@ -1,0 +1,16 @@
+{
+  "name": "nextjs-shadcn",
+  "repo": "fusengine/agents",
+  "path": "plugins/nextjs-expert/skills/nextjs-shadcn/SKILL.md",
+  "source": "github.com/fusengine/agents",
+  "downloaded_at": "2026-01-29T06:06:12.785800Z",
+  "dir_name": "nextjs-shadcn-fusengine-agents",
+  "category": "design",
+  "author": "fusengine",
+  "source_url": "https://github.com/fusengine/agents/blob/main/plugins/nextjs-expert/skills/nextjs-shadcn/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Fusengine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

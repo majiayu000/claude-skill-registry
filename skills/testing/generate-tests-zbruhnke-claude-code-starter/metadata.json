@@ -1,0 +1,16 @@
+{
+  "name": "generate-tests",
+  "repo": "zbruhnke/claude-code-starter",
+  "path": ".claude/skills/generate-tests/SKILL.md",
+  "source": "github.com/zbruhnke/claude-code-starter",
+  "downloaded_at": "2026-01-29T08:26:48.271788Z",
+  "dir_name": "generate-tests-zbruhnke-claude-code-starter",
+  "category": "testing",
+  "author": "zbruhnke",
+  "source_url": "https://github.com/zbruhnke/claude-code-starter/blob/main/.claude/skills/generate-tests/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Zach Bruhnke",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

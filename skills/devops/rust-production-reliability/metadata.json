@@ -1,0 +1,16 @@
+{
+  "name": "rust-production-reliability",
+  "repo": "matthewharwood/engmanager.xyz",
+  "path": ".claude/skills/rust-production-reliability/SKILL.md",
+  "source": "github.com/matthewharwood/engmanager.xyz",
+  "downloaded_at": "2026-02-02T03:11:13.279697Z",
+  "dir_name": "rust-production-reliability",
+  "category": "devops",
+  "author": "matthewharwood",
+  "source_url": "https://github.com/matthewharwood/engmanager.xyz/blob/main/.claude/skills/rust-production-reliability/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/matthewharwood/engmanager.xyz/blob/main/.claude/skills/rust-production-reliability/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

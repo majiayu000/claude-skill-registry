@@ -1,0 +1,11 @@
+{
+  "name": "prompt-engineering-suite",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/prompt-engineering-suite/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:12.795389Z",
+  "dir_name": "prompt-engineering-suite",
+  "category": "ai-llm",
+  "github_path": "skills/prompt-engineering-suite",
+  "github_branch": "main"
+}

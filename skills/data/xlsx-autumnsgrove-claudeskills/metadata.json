@@ -1,0 +1,17 @@
+{
+  "name": "xlsx",
+  "repo": "AutumnsGrove/ClaudeSkills",
+  "path": "xlsx/SKILL.md",
+  "github_branch": "master",
+  "category": "data",
+  "source": "github.com/AutumnsGrove/ClaudeSkills",
+  "dir_name": "xlsx-autumnsgrove-claudeskills",
+  "downloaded_at": "2026-03-22T04:55:26.870369Z",
+  "author": "AutumnsGrove",
+  "source_url": "https://github.com/AutumnsGrove/ClaudeSkills/blob/master/xlsx/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AutumnsGrove/ClaudeSkills/blob/master/xlsx/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

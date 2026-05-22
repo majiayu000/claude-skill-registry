@@ -1,0 +1,16 @@
+{
+  "name": "generate-release-notes",
+  "repo": "teambit/bit",
+  "path": ".claude/skills/generate-release-notes/SKILL.md",
+  "source": "github.com/teambit/bit",
+  "downloaded_at": "2026-01-28T01:27:51.819437Z",
+  "dir_name": "generate-release-notes",
+  "category": "documents",
+  "author": "teambit",
+  "source_url": "https://github.com/teambit/bit/blob/main/.claude/skills/generate-release-notes/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (C) 2017 Cocycles Ltd.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

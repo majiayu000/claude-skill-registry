@@ -1,0 +1,16 @@
+{
+  "name": "refactor-component",
+  "repo": "PeterCowling/base-shop",
+  "path": ".claude/skills/refactor-component/SKILL.md",
+  "category": "development",
+  "source": "github.com/PeterCowling/base-shop",
+  "dir_name": "refactor-component",
+  "downloaded_at": "2026-02-15T05:37:24.087249Z",
+  "author": "PeterCowling",
+  "source_url": "https://github.com/PeterCowling/base-shop/blob/main/.claude/skills/refactor-component/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PeterCowling/base-shop/blob/main/.claude/skills/refactor-component/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

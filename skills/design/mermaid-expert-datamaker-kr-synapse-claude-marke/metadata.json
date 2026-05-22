@@ -1,0 +1,16 @@
+{
+  "name": "mermaid-expert",
+  "repo": "datamaker-kr/synapse-claude-marketplace",
+  "path": "plugins/platform-dev-team-common/skills/mermaid-expert/SKILL.md",
+  "source": "github.com/datamaker-kr/synapse-claude-marketplace",
+  "downloaded_at": "2026-01-29T07:59:05.802295Z",
+  "dir_name": "mermaid-expert-datamaker-kr-synapse-claude-marke",
+  "category": "design",
+  "author": "datamaker-kr",
+  "source_url": "https://github.com/datamaker-kr/synapse-claude-marketplace/blob/main/plugins/platform-dev-team-common/skills/mermaid-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/datamaker-kr/synapse-claude-marketplace/blob/main/plugins/platform-dev-team-common/skills/mermaid-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

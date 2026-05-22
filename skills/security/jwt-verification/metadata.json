@@ -1,0 +1,17 @@
+{
+  "name": "jwt-verification",
+  "repo": "HasnainCodeHub/todo-evaluation",
+  "path": ".claude/skills/jwt-verification/skill.md",
+  "github_branch": "master",
+  "category": "security",
+  "source": "github.com/HasnainCodeHub/todo-evaluation",
+  "dir_name": "jwt-verification",
+  "downloaded_at": "2026-03-01T05:23:56.317622Z",
+  "author": "HasnainCodeHub",
+  "source_url": "https://github.com/HasnainCodeHub/todo-evaluation/blob/master/.claude/skills/jwt-verification/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HasnainCodeHub/todo-evaluation/blob/master/.claude/skills/jwt-verification/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

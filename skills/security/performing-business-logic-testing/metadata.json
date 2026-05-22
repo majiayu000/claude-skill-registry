@@ -1,0 +1,17 @@
+{
+  "name": "performing-business-logic-testing",
+  "repo": "defconxt/CIPHER",
+  "path": "skills/application-security/techniques/performing-business-logic-testing/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/defconxt/CIPHER",
+  "dir_name": "performing-business-logic-testing",
+  "downloaded_at": "2026-03-22T07:43:00.642270Z",
+  "author": "defconxt",
+  "source_url": "https://github.com/defconxt/CIPHER/blob/main/skills/application-security/techniques/performing-business-logic-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/defconxt/CIPHER/blob/main/skills/application-security/techniques/performing-business-logic-testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

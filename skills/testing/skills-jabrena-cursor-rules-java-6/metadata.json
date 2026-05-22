@@ -1,0 +1,17 @@
+{
+  "name": "skills",
+  "repo": "jabrena/cursor-rules-java",
+  "path": "skills-generator/src/main/resources/skills/131-skill.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/jabrena/cursor-rules-java",
+  "dir_name": "skills-jabrena-cursor-rules-java-6",
+  "downloaded_at": "2026-03-02T01:24:42.040653Z",
+  "author": "jabrena",
+  "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills-generator/src/main/resources/skills/131-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jabrena/cursor-rules-java/blob/main/skills-generator/src/main/resources/skills/131-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

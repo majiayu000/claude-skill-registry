@@ -1,0 +1,16 @@
+{
+  "name": "database-optimizer",
+  "repo": "Jeffallan/claude-skills",
+  "path": "skills/database-optimizer/SKILL.md",
+  "source": "github.com/Jeffallan/claude-skills",
+  "downloaded_at": "2026-02-02T04:44:43.685160Z",
+  "dir_name": "database-optimizer-jeffallan-claude-skills-256b852d",
+  "category": "data",
+  "author": "Jeffallan",
+  "source_url": "https://github.com/Jeffallan/claude-skills/blob/main/skills/database-optimizer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

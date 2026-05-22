@@ -1,0 +1,20 @@
+{
+  "name": "mcp-builder",
+  "description": "",
+  "repo": "basher83/lunar-claude",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/basher83/lunar-claude",
+  "github_path": "examples/skills/mcp-builder",
+  "github_branch": "main",
+  "dir_name": "mcp-builder-basher83-lunar-claude",
+  "downloaded_at": "2026-02-05T01:44:37.803395Z",
+  "author": "basher83",
+  "source_url": "https://github.com/basher83/lunar-claude/blob/main/examples/skills/mcp-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 basher83",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

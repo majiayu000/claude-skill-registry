@@ -1,0 +1,9 @@
+{
+  "name": "multi-pr-review",
+  "repo": "dyad-sh/dyad",
+  "path": ".claude/skills/multi-pr-review/SKILL.md",
+  "source": "github.com/dyad-sh/dyad",
+  "downloaded_at": "2026-01-28T02:22:20.578578Z",
+  "dir_name": "multi-pr-review",
+  "category": "quality"
+}

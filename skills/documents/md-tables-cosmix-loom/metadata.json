@@ -1,0 +1,18 @@
+{
+  "name": "md-tables",
+  "repo": "cosmix/loom",
+  "path": "skills/md-tables/SKILL.md",
+  "source": "github.com/cosmix/loom",
+  "downloaded_at": "2026-01-22T02:42:52.728923Z",
+  "dir_name": "md-tables-cosmix-loom",
+  "category": "documents",
+  "github_path": "skills/md-tables",
+  "github_branch": "main",
+  "author": "cosmix",
+  "source_url": "https://github.com/cosmix/loom/blob/main/skills/md-tables/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cosmix/loom/blob/main/skills/md-tables/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

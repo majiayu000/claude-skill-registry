@@ -1,0 +1,17 @@
+{
+  "name": "goframe-v2",
+  "repo": "gogf/skills",
+  "path": ".claude/skills/goframe-v2/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/gogf/skills",
+  "dir_name": "goframe-v2",
+  "downloaded_at": "2026-03-01T07:55:08.468979Z",
+  "author": "gogf",
+  "source_url": "https://github.com/gogf/skills/blob/main/.claude/skills/goframe-v2/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gogf/skills/blob/main/.claude/skills/goframe-v2/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

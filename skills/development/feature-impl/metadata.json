@@ -1,0 +1,18 @@
+{
+  "name": "feature-impl",
+  "repo": "tolluset/local-review",
+  "path": ".claude/skills/feature-impl/SKILL.md",
+  "source": "github.com/tolluset/local-review",
+  "downloaded_at": "2026-01-22T01:21:32.868737Z",
+  "dir_name": "feature-impl",
+  "category": "development",
+  "github_path": ".claude/skills/feature-impl",
+  "github_branch": "main",
+  "author": "tolluset",
+  "source_url": "https://github.com/tolluset/local-review/blob/main/.claude/skills/feature-impl/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tolluset/local-review/blob/main/.claude/skills/feature-impl/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

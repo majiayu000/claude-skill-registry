@@ -1,0 +1,18 @@
+{
+  "name": "content-marketing",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/content-marketing/SKILL.md",
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "downloaded_at": "2026-01-22T01:38:02.873223Z",
+  "dir_name": "content-marketing-dengineproblem-agents-monorepo",
+  "category": "marketing",
+  "github_path": ".claude/skills/content-marketing",
+  "github_branch": "main",
+  "author": "dengineproblem",
+  "source_url": "https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/content-marketing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/content-marketing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "writing-test-plans",
+  "repo": "jkappers/claude-code-software-delivery-plugin",
+  "path": ".claude/skills/writing-test-plans/SKILL.md",
+  "source": "github.com/jkappers/claude-code-software-delivery-plugin",
+  "downloaded_at": "2026-01-22T01:03:12.547579Z",
+  "dir_name": "writing-test-plans",
+  "category": "testing",
+  "github_path": ".claude/skills/writing-test-plans",
+  "github_branch": "main"
+}

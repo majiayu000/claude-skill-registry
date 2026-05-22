@@ -1,0 +1,20 @@
+{
+  "name": "websocket-realtime",
+  "description": "",
+  "repo": "omer-metin/skills-for-antigravity",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": "skills/websocket-realtime",
+  "github_branch": "main",
+  "dir_name": "websocket-realtime-omer-metin-skills-for-antigravi",
+  "downloaded_at": "2026-02-05T01:45:35.349459Z",
+  "author": "omer-metin",
+  "source_url": "https://github.com/omer-metin/skills-for-antigravity/blob/main/skills/websocket-realtime/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/omer-metin/skills-for-antigravity/blob/main/skills/websocket-realtime/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

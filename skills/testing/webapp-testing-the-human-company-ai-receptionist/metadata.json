@@ -1,0 +1,16 @@
+{
+  "name": "webapp-testing",
+  "repo": "The-Human-Company/ai-receptionist",
+  "path": ".claude/skills/webapp-testing/SKILL.md",
+  "category": "testing",
+  "source": "github.com/The-Human-Company/ai-receptionist",
+  "dir_name": "webapp-testing-the-human-company-ai-receptionist",
+  "downloaded_at": "2026-02-22T05:49:21.910694Z",
+  "author": "The-Human-Company",
+  "source_url": "https://github.com/The-Human-Company/ai-receptionist/blob/main/.claude/skills/webapp-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/The-Human-Company/ai-receptionist/blob/main/.claude/skills/webapp-testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

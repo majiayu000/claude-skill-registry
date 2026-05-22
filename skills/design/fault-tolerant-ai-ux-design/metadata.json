@@ -1,0 +1,16 @@
+{
+  "name": "fault-tolerant-ai-ux-design",
+  "repo": "samarv/Shanon",
+  "path": ".claude/skills/fault-tolerant-ai-ux-design/SKILL.md",
+  "source": "github.com/samarv/Shanon",
+  "downloaded_at": "2026-02-02T01:43:28.124623Z",
+  "dir_name": "fault-tolerant-ai-ux-design",
+  "category": "design",
+  "author": "samarv",
+  "source_url": "https://github.com/samarv/Shanon/blob/main/.claude/skills/fault-tolerant-ai-ux-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/samarv/Shanon/blob/main/.claude/skills/fault-tolerant-ai-ux-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

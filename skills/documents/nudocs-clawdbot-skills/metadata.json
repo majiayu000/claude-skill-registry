@@ -1,0 +1,18 @@
+{
+  "name": "nudocs",
+  "repo": "clawdbot/skills",
+  "path": "skills/jdrhyne/nudocs/SKILL.md",
+  "source": "github.com/clawdbot/skills",
+  "downloaded_at": "2026-01-22T02:30:26.128799Z",
+  "dir_name": "nudocs-clawdbot-skills",
+  "category": "documents",
+  "github_path": "skills/jdrhyne/nudocs",
+  "github_branch": "main",
+  "author": "clawdbot",
+  "source_url": "https://github.com/clawdbot/skills/blob/main/skills/jdrhyne/nudocs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

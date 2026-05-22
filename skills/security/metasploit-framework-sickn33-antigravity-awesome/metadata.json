@@ -1,0 +1,17 @@
+{
+  "name": "metasploit-framework",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/metasploit-framework/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "metasploit-framework-sickn33-antigravity-awesome",
+  "downloaded_at": "2026-03-23T01:38:39.136700Z",
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/metasploit-framework/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/metasploit-framework/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

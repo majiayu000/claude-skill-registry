@@ -1,0 +1,16 @@
+{
+  "name": "integrating-stripe",
+  "repo": "seanchiuai/claude-web-template",
+  "path": ".claude/skills/integrating-stripe/skill.md",
+  "source": "github.com/seanchiuai/claude-web-template",
+  "downloaded_at": "2026-02-02T04:59:25.079183Z",
+  "dir_name": "integrating-stripe-seanchiuai-claude-web-template",
+  "category": "integration",
+  "author": "seanchiuai",
+  "source_url": "https://github.com/seanchiuai/claude-web-template/blob/main/.claude/skills/integrating-stripe/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seanchiuai/claude-web-template/blob/main/.claude/skills/integrating-stripe/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

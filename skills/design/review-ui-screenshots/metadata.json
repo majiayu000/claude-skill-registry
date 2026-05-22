@@ -1,0 +1,16 @@
+{
+  "name": "review-ui-screenshots",
+  "repo": "benzwick/SlicerMouseMaster",
+  "path": ".claude/skills/review-ui-screenshots/SKILL.md",
+  "source": "github.com/benzwick/SlicerMouseMaster",
+  "downloaded_at": "2026-02-02T04:17:58.228193Z",
+  "dir_name": "review-ui-screenshots",
+  "category": "design",
+  "author": "benzwick",
+  "source_url": "https://github.com/benzwick/SlicerMouseMaster/blob/main/.claude/skills/review-ui-screenshots/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/benzwick/SlicerMouseMaster/blob/main/.claude/skills/review-ui-screenshots/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

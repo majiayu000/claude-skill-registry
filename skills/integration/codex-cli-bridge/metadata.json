@@ -1,0 +1,13 @@
+{
+  "name": "codex-cli-bridge",
+  "description": "Claude Code Skill Factory — A powerful open-source toolkit for building and deploying production-ready Claude Skills, Code Agents, custom Slash Commands, and LLM Prompts at scale. Easily generate stru",
+  "repo": "alirezarezvani/claude-code-skill-factory",
+  "category": "integration",
+  "tags": [],
+  "stars": 380,
+  "source": "",
+  "github_path": "generated-skills/codex-cli-bridge",
+  "github_branch": "main",
+  "dir_name": "codex-cli-bridge",
+  "downloaded_at": "2026-02-05T01:45:13.586747Z"
+}

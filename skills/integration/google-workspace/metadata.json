@@ -1,0 +1,13 @@
+{
+  "name": "google-workspace",
+  "description": "",
+  "repo": "tomcounsell/ai",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tomcounsell/ai",
+  "github_path": ".claude/skills/google-workspace",
+  "github_branch": "main",
+  "dir_name": "google-workspace",
+  "downloaded_at": "2026-02-05T01:44:59.196639Z"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "stitch-loop",
+  "repo": "TheMystic07/OpenWalc",
+  "path": "skills/stitch-loop/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/TheMystic07/OpenWalc",
+  "dir_name": "stitch-loop-themystic07-openwalc",
+  "downloaded_at": "2026-03-22T06:22:57.866249Z",
+  "author": "TheMystic07",
+  "source_url": "https://github.com/TheMystic07/OpenWalc/blob/main/skills/stitch-loop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TheMystic07/OpenWalc/blob/main/skills/stitch-loop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

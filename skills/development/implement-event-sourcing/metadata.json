@@ -1,0 +1,16 @@
+{
+  "name": "implement-event-sourcing",
+  "repo": "mariotoffia/gobridge",
+  "path": ".claude/skills/implement-event-sourcing/SKILL.md",
+  "source": "github.com/mariotoffia/gobridge",
+  "downloaded_at": "2026-02-02T02:30:06.273081Z",
+  "dir_name": "implement-event-sourcing",
+  "category": "development",
+  "author": "mariotoffia",
+  "source_url": "https://github.com/mariotoffia/gobridge/blob/main/.claude/skills/implement-event-sourcing/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mariotoffia/gobridge/blob/main/.claude/skills/implement-event-sourcing/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

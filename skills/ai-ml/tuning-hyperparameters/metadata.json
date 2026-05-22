@@ -1,0 +1,16 @@
+{
+  "name": "tuning-hyperparameters",
+  "repo": "byteworthy/Upstream",
+  "path": ".agents/skills/tuning-hyperparameters/SKILL.md",
+  "source": "github.com/byteworthy/Upstream",
+  "downloaded_at": "2026-01-28T02:38:48.525435Z",
+  "dir_name": "tuning-hyperparameters",
+  "category": "ai-ml",
+  "author": "byteworthy",
+  "source_url": "https://github.com/byteworthy/Upstream/blob/main/.agents/skills/tuning-hyperparameters/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024-2026 ByteWorthy LLC. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

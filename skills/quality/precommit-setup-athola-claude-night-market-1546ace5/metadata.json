@@ -1,0 +1,16 @@
+{
+  "name": "precommit-setup",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/attune/skills/precommit-setup/SKILL.md",
+  "source": "github.com/athola/claude-night-market",
+  "downloaded_at": "2026-01-29T05:25:00.916880Z",
+  "dir_name": "precommit-setup-athola-claude-night-market-1546ace5",
+  "category": "quality",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/attune/skills/precommit-setup/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

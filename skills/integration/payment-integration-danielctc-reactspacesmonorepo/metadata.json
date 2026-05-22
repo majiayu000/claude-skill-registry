@@ -1,0 +1,17 @@
+{
+  "name": "payment-integration",
+  "repo": "danielctc/ReactSpacesMonoRepo",
+  "path": ".claude/skills/payment-integration/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/danielctc/ReactSpacesMonoRepo",
+  "dir_name": "payment-integration-danielctc-reactspacesmonorepo",
+  "downloaded_at": "2026-03-01T07:21:52.231434Z",
+  "author": "danielctc",
+  "source_url": "https://github.com/danielctc/ReactSpacesMonoRepo/blob/main/.claude/skills/payment-integration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/danielctc/ReactSpacesMonoRepo/blob/main/.claude/skills/payment-integration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

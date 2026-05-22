@@ -1,0 +1,20 @@
+{
+  "name": "write-adr",
+  "description": "",
+  "repo": "CheekyCodexConjurer/aera-chart-engine",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".codex/skills/write_adr",
+  "github_branch": "main",
+  "dir_name": "write-adr",
+  "downloaded_at": "2026-02-05T01:45:44.086040Z",
+  "author": "CheekyCodexConjurer",
+  "source_url": "https://github.com/CheekyCodexConjurer/aera-chart-engine/blob/main/.codex/skills/write_adr/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CheekyCodexConjurer",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

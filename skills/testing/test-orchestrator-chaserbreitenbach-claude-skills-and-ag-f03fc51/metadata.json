@@ -1,0 +1,16 @@
+{
+  "name": "test-orchestrator",
+  "repo": "chaserbreitenbach/claude-skills-and-agents",
+  "path": "skills/testing/test-orchestrator/SKILL.md",
+  "source": "github.com/chaserbreitenbach/claude-skills-and-agents",
+  "downloaded_at": "2026-02-02T03:33:46.681025Z",
+  "dir_name": "test-orchestrator-chaserbreitenbach-claude-skills-and-ag-f03fc51",
+  "category": "testing",
+  "author": "chaserbreitenbach",
+  "source_url": "https://github.com/chaserbreitenbach/claude-skills-and-agents/blob/main/skills/testing/test-orchestrator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chaserbreitenbach/claude-skills-and-agents/blob/main/skills/testing/test-orchestrator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

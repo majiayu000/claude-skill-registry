@@ -1,0 +1,11 @@
+{
+  "name": "function-calling",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/function-calling/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-20T01:39:02.270209Z",
+  "dir_name": "function-calling",
+  "category": "ai-llm",
+  "github_path": "skills/function-calling",
+  "github_branch": "main"
+}

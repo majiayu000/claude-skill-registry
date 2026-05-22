@@ -1,0 +1,18 @@
+{
+  "name": "drizzle-orm",
+  "repo": "oriolrius/pki-manager-web",
+  "path": ".claude/skills/drizzle-orm/SKILL.md",
+  "source": "github.com/oriolrius/pki-manager-web",
+  "downloaded_at": "2026-01-22T03:52:19.134668Z",
+  "dir_name": "drizzle-orm-oriolrius-pki-manager-web",
+  "category": "development",
+  "github_path": ".claude/skills/drizzle-orm",
+  "github_branch": "main",
+  "author": "oriolrius",
+  "source_url": "https://github.com/oriolrius/pki-manager-web/blob/main/.claude/skills/drizzle-orm/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 PKI Manager Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

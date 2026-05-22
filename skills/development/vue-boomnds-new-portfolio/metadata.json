@@ -1,0 +1,20 @@
+{
+  "name": "vue",
+  "description": "",
+  "repo": "boomNDS/new_portfolio",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boomNDS/new_portfolio",
+  "github_path": ".agents/skills/vue",
+  "github_branch": "main",
+  "dir_name": "vue-boomnds-new-portfolio",
+  "downloaded_at": "2026-02-05T01:45:03.840973Z",
+  "author": "boomNDS",
+  "source_url": "https://github.com/boomNDS/new_portfolio/blob/main/.agents/skills/vue/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boomNDS/new_portfolio/blob/main/.agents/skills/vue/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

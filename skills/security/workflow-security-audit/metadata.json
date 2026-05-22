@@ -1,0 +1,16 @@
+{
+  "name": "workflow-security-audit",
+  "repo": "NickCrew/claude-cortex",
+  "path": "skills/workflow-security-audit/SKILL.md",
+  "source": "github.com/NickCrew/claude-cortex",
+  "downloaded_at": "2026-02-02T03:43:50.504713Z",
+  "dir_name": "workflow-security-audit",
+  "category": "security",
+  "author": "NickCrew",
+  "source_url": "https://github.com/NickCrew/claude-cortex/blob/main/skills/workflow-security-audit/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nicholas Ferguson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

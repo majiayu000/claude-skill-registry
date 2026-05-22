@@ -1,0 +1,18 @@
+{
+  "name": "fluff-detector",
+  "repo": "majesticlabs-dev/majestic-marketplace",
+  "path": ".claude/skills/fluff-detector/SKILL.md",
+  "source": "github.com/majesticlabs-dev/majestic-marketplace",
+  "downloaded_at": "2026-01-19T05:04:42.164841Z",
+  "dir_name": "fluff-detector",
+  "category": "ai-llm",
+  "github_path": ".claude/skills/fluff-detector",
+  "github_branch": "main",
+  "author": "majesticlabs-dev",
+  "source_url": "https://github.com/majesticlabs-dev/majestic-marketplace/blob/main/.claude/skills/fluff-detector/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Majestic Labs LLC",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

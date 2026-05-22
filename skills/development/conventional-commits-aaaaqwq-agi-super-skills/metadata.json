@@ -1,0 +1,16 @@
+{
+  "name": "conventional-commits",
+  "repo": "aAAaqwq/AGI-Super-Skills",
+  "path": "skills/git-project/conventional-commits/SKILL.md",
+  "category": "development",
+  "source": "github.com/aAAaqwq/AGI-Super-Skills",
+  "dir_name": "conventional-commits-aaaaqwq-agi-super-skills",
+  "downloaded_at": "2026-02-15T06:03:01.928497Z",
+  "author": "aAAaqwq",
+  "source_url": "https://github.com/aAAaqwq/AGI-Super-Skills/blob/main/skills/git-project/conventional-commits/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 AGI Super Team Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

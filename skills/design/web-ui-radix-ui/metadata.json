@@ -1,0 +1,17 @@
+{
+  "name": "web-ui-radix-ui",
+  "repo": "agents-inc/skills",
+  "path": "src/skills/web-ui-radix-ui/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/agents-inc/skills",
+  "dir_name": "web-ui-radix-ui",
+  "downloaded_at": "2026-03-22T06:42:35.005707Z",
+  "author": "agents-inc",
+  "source_url": "https://github.com/agents-inc/skills/blob/main/src/skills/web-ui-radix-ui/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agents-inc/skills/blob/main/src/skills/web-ui-radix-ui/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

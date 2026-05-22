@@ -1,0 +1,13 @@
+{
+  "name": "esm",
+  "description": "研究 codex 使用 skill 生成 survey 這件事",
+  "repo": "Sologa/codex-pipeline",
+  "category": "ai-ml",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".codex/skills/esm",
+  "github_branch": "main",
+  "dir_name": "esm-sologa-codex-pipeline",
+  "downloaded_at": "2026-02-05T01:45:44.105341Z"
+}

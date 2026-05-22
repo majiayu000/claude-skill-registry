@@ -1,0 +1,16 @@
+{
+  "name": "ux-friction-analyzer",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/ux-friction-analyzer/SKILL.md",
+  "source": "github.com/erichowens/some_claude_skills",
+  "downloaded_at": "2026-01-29T06:31:10.647235Z",
+  "dir_name": "ux-friction-analyzer-erichowens-some-claude-skills-040b531b",
+  "category": "design",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/ux-friction-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

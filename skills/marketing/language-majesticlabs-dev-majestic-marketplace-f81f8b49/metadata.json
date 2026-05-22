@@ -1,0 +1,18 @@
+{
+  "name": "language",
+  "repo": "majesticlabs-dev/majestic-marketplace",
+  "path": "plugins/majestic-marketing/skills/language/SKILL.md",
+  "source": "github.com/majesticlabs-dev/majestic-marketplace",
+  "downloaded_at": "2026-01-19T05:04:31.111714Z",
+  "dir_name": "language-majesticlabs-dev-majestic-marketplace-f81f8b49",
+  "category": "marketing",
+  "github_path": "plugins/majestic-marketing/skills/language",
+  "github_branch": "main",
+  "author": "majesticlabs-dev",
+  "source_url": "https://github.com/majesticlabs-dev/majestic-marketplace/blob/main/plugins/majestic-marketing/skills/language/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Majestic Labs LLC",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "tests",
+  "repo": "coder/mux",
+  "path": ".mux/skills/tests/SKILL.md",
+  "source": "github.com/coder/mux",
+  "downloaded_at": "2026-01-29T03:55:21.713655Z",
+  "dir_name": "tests",
+  "category": "testing",
+  "author": "coder",
+  "source_url": "https://github.com/coder/mux/blob/main/.mux/skills/tests/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

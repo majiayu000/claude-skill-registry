@@ -1,0 +1,13 @@
+{
+  "name": "mcp-builder",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/mcp-builder",
+  "github_branch": "main",
+  "dir_name": "mcp-builder-microsoft-skills",
+  "downloaded_at": "2026-02-05T01:44:52.331738Z"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "security-assessment",
+  "repo": "jmagly/ai-writing-guide",
+  "path": ".factory/skills/security-assessment/SKILL.md",
+  "source": "github.com/jmagly/ai-writing-guide",
+  "downloaded_at": "2026-01-22T03:04:49.154946Z",
+  "dir_name": "security-assessment-jmagly-ai-writing-guide",
+  "category": "security",
+  "github_path": "plugins/sdlc/skills/security-assessment",
+  "github_branch": "main",
+  "author": "jmagly",
+  "source_url": "https://github.com/jmagly/ai-writing-guide/blob/main/plugins/sdlc/skills/security-assessment/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Joe Magly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

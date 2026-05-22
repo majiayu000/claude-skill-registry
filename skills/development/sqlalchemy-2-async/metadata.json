@@ -1,0 +1,11 @@
+{
+  "name": "sqlalchemy-2-async",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/sqlalchemy-2-async/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:11.946191Z",
+  "dir_name": "sqlalchemy-2-async",
+  "category": "development",
+  "github_path": "skills/sqlalchemy-2-async",
+  "github_branch": "main"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "gmail-skill",
+  "repo": "jeffvincent/claude-config",
+  "path": "skills/gmail-skill/Skill.md",
+  "source": "github.com/jeffvincent/claude-config",
+  "downloaded_at": "2026-01-22T02:44:49.422617Z",
+  "dir_name": "gmail-skill",
+  "category": "integration",
+  "github_path": "skills/gmail-skill",
+  "github_branch": "main"
+}

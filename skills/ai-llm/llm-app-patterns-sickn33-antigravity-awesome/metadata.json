@@ -1,0 +1,17 @@
+{
+  "name": "llm-app-patterns",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/llm-app-patterns/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-llm",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "llm-app-patterns-sickn33-antigravity-awesome",
+  "downloaded_at": "2026-05-17T04:02:04.443211Z",
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/llm-app-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/llm-app-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

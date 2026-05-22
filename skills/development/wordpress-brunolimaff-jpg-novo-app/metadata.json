@@ -1,0 +1,17 @@
+{
+  "name": "wordpress",
+  "repo": "brunolimaff-jpg/NOVO-APP",
+  "path": ".agent/skills/wordpress/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/brunolimaff-jpg/NOVO-APP",
+  "dir_name": "wordpress-brunolimaff-jpg-novo-app",
+  "downloaded_at": "2026-03-22T07:20:41.392311Z",
+  "author": "brunolimaff-jpg",
+  "source_url": "https://github.com/brunolimaff-jpg/NOVO-APP/blob/main/.agent/skills/wordpress/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brunolimaff-jpg/NOVO-APP/blob/main/.agent/skills/wordpress/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

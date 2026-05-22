@@ -1,0 +1,16 @@
+{
+  "name": "code-reviewer",
+  "repo": "jk278/veld",
+  "path": ".claude/skills/code-reviewer/SKILL.md",
+  "category": "quality",
+  "source": "github.com/jk278/veld",
+  "dir_name": "code-reviewer-jk278-veld",
+  "downloaded_at": "2026-02-15T07:44:24.426494Z",
+  "author": "jk278",
+  "source_url": "https://github.com/jk278/veld/blob/main/.claude/skills/code-reviewer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jk278/veld/blob/main/.claude/skills/code-reviewer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

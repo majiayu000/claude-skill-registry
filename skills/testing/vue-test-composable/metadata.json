@@ -1,0 +1,16 @@
+{
+  "name": "vue-test-composable",
+  "repo": "alexanderop/MarkVim",
+  "path": ".claude/skills/vue-test-composable/skill.md",
+  "category": "testing",
+  "source": "github.com/alexanderop/MarkVim",
+  "dir_name": "vue-test-composable",
+  "downloaded_at": "2026-02-22T06:12:17.139616Z",
+  "author": "alexanderop",
+  "source_url": "https://github.com/alexanderop/MarkVim/blob/main/.claude/skills/vue-test-composable/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexanderop/MarkVim/blob/main/.claude/skills/vue-test-composable/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

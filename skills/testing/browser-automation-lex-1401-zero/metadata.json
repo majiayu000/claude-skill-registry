@@ -1,0 +1,17 @@
+{
+  "name": "browser-automation",
+  "repo": "Lex-1401/ZERO",
+  "path": "skills/browser-automation/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/Lex-1401/ZERO",
+  "dir_name": "browser-automation-lex-1401-zero",
+  "downloaded_at": "2026-03-01T05:36:36.500097Z",
+  "author": "Lex-1401",
+  "source_url": "https://github.com/Lex-1401/ZERO/blob/main/skills/browser-automation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Lex-1401/ZERO/blob/main/skills/browser-automation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "m03-mutability",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/m03-mutability/SKILL.md",
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "downloaded_at": "2026-01-22T03:56:40.835758Z",
+  "dir_name": "m03-mutability",
+  "category": "development",
+  "github_path": "skills/other/m03-mutability",
+  "github_branch": "main",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/other/m03-mutability/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

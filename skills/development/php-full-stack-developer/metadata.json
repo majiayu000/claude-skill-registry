@@ -1,0 +1,17 @@
+{
+  "name": "php-full-stack-developer",
+  "repo": "billyfranklim1/claude-skills",
+  "path": "plugins/php-full-stack-developer/skills/php-full-stack-developer/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/billyfranklim1/claude-skills",
+  "dir_name": "php-full-stack-developer",
+  "downloaded_at": "2026-03-22T07:15:01.927548Z",
+  "author": "billyfranklim1",
+  "source_url": "https://github.com/billyfranklim1/claude-skills/blob/main/plugins/php-full-stack-developer/skills/php-full-stack-developer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/billyfranklim1/claude-skills/blob/main/plugins/php-full-stack-developer/skills/php-full-stack-developer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

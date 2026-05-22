@@ -1,0 +1,20 @@
+{
+  "name": "jgi-lakehouse",
+  "description": "",
+  "repo": "fmschulz/omics-skills",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fmschulz/omics-skills",
+  "github_path": "skills/jgi-lakehouse",
+  "github_branch": "main",
+  "dir_name": "jgi-lakehouse-fmschulz-omics-skills",
+  "downloaded_at": "2026-02-05T01:44:22.833708Z",
+  "author": "fmschulz",
+  "source_url": "https://github.com/fmschulz/omics-skills/blob/main/skills/jgi-lakehouse/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Frederik Schulz",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

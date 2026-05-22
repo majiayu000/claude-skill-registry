@@ -1,0 +1,17 @@
+{
+  "name": "review-post-task",
+  "repo": "duc01226/easy-claude",
+  "path": ".claude/skills/review-post-task/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/duc01226/easy-claude",
+  "dir_name": "review-post-task-duc01226-easy-claude",
+  "downloaded_at": "2026-03-22T07:50:34.142585Z",
+  "author": "duc01226",
+  "source_url": "https://github.com/duc01226/easy-claude/blob/main/.claude/skills/review-post-task/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/duc01226/easy-claude/blob/main/.claude/skills/review-post-task/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

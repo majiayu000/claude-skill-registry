@@ -1,0 +1,16 @@
+{
+  "name": "skill-reviewing",
+  "repo": "randlee/synaptic-canvas",
+  "path": ".claude/skills/skill-reviewing/SKILL.md",
+  "source": "github.com/randlee/synaptic-canvas",
+  "downloaded_at": "2026-02-02T03:29:14.972229Z",
+  "dir_name": "skill-reviewing",
+  "category": "quality",
+  "author": "randlee",
+  "source_url": "https://github.com/randlee/synaptic-canvas/blob/main/.claude/skills/skill-reviewing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Rand Lee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

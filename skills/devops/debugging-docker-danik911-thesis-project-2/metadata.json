@@ -1,0 +1,16 @@
+{
+  "name": "debugging-docker",
+  "repo": "Danik911/thesis_project",
+  "path": ".claude/skills/debugging-docker/SKILL.md",
+  "source": "github.com/Danik911/thesis_project",
+  "downloaded_at": "2026-02-02T03:36:09.408352Z",
+  "dir_name": "debugging-docker-danik911-thesis-project-2",
+  "category": "devops",
+  "author": "Danik911",
+  "source_url": "https://github.com/Danik911/thesis_project/blob/main/.claude/skills/debugging-docker/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Danik911/thesis_project/blob/main/.claude/skills/debugging-docker/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

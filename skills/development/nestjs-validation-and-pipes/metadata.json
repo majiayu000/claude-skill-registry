@@ -1,0 +1,18 @@
+{
+  "name": "nestjs-validation-and-pipes\n",
+  "repo": "AgentiveCity/SkillFactory",
+  "path": ".claude/skills/nestjs-validation-and-pipes\n/SKILL.md",
+  "source": "github.com/AgentiveCity/SkillFactory",
+  "downloaded_at": "2026-01-22T01:56:37.820571Z",
+  "dir_name": "nestjs-validation-and-pipes",
+  "category": "development",
+  "github_path": ".claude/skills/nestjs-validation-and-pipes\n",
+  "github_branch": "main",
+  "author": "AgentiveCity",
+  "source_url": "https://github.com/AgentiveCity/SkillFactory/blob/main/.claude/skills/nestjs-validation-and-pipes/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AgentiveCity/SkillFactory/blob/main/.claude/skills/nestjs-validation-and-pipes/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

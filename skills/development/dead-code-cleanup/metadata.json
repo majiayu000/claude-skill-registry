@@ -1,0 +1,13 @@
+{
+  "name": "dead-code-cleanup",
+  "description": "",
+  "repo": "specvital/infra",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/specvital/infra",
+  "github_path": ".claude/skills/dead-code-cleanup",
+  "github_branch": "main",
+  "dir_name": "dead-code-cleanup",
+  "downloaded_at": "2026-02-05T01:44:17.801264Z"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "design-critique",
+  "repo": "vinzenz/jules-agentic-software-builder-for-claude",
+  "path": ".claude/skills/design-critique/SKILL.md",
+  "source": "github.com/vinzenz/jules-agentic-software-builder-for-claude",
+  "downloaded_at": "2026-02-02T02:02:14.200012Z",
+  "dir_name": "design-critique-vinzenz-jules-agentic-softwa-2",
+  "category": "design",
+  "author": "vinzenz",
+  "source_url": "https://github.com/vinzenz/jules-agentic-software-builder-for-claude/blob/main/.claude/skills/design-critique/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vinzenz/jules-agentic-software-builder-for-claude/blob/main/.claude/skills/design-critique/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "supabase-expert",
+  "repo": "JKKN-Institutions/Kenavo",
+  "path": ".claude/skills/supabase-expert/SKILL.md",
+  "source": "github.com/JKKN-Institutions/Kenavo",
+  "downloaded_at": "2026-01-29T08:59:28.004462Z",
+  "dir_name": "supabase-expert-jkkn-institutions-kenavo-1e0e15b1",
+  "category": "data",
+  "author": "JKKN-Institutions",
+  "source_url": "https://github.com/JKKN-Institutions/Kenavo/blob/main/.claude/skills/supabase-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JKKN-Institutions/Kenavo/blob/main/.claude/skills/supabase-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

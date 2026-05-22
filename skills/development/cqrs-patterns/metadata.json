@@ -1,0 +1,11 @@
+{
+  "name": "cqrs-patterns",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/cqrs-patterns/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-20T01:39:00.684431Z",
+  "dir_name": "cqrs-patterns",
+  "category": "development",
+  "github_path": "skills/cqrs-patterns",
+  "github_branch": "main"
+}

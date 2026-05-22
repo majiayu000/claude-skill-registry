@@ -1,0 +1,17 @@
+{
+  "name": "deploy-contracts",
+  "repo": "aptos-labs/aptos-agent-skills",
+  "path": "skills/move/deploy-contracts/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/aptos-labs/aptos-agent-skills",
+  "dir_name": "deploy-contracts",
+  "downloaded_at": "2026-03-22T07:00:26.130524Z",
+  "author": "aptos-labs",
+  "source_url": "https://github.com/aptos-labs/aptos-agent-skills/blob/main/skills/move/deploy-contracts/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aptos-labs/aptos-agent-skills/blob/main/skills/move/deploy-contracts/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

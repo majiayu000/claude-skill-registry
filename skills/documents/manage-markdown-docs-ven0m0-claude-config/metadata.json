@@ -1,0 +1,16 @@
+{
+  "name": "manage-markdown-docs",
+  "repo": "Ven0m0/claude-config",
+  "path": "claude/skills/manage-markdown-docs/SKILL.md",
+  "source": "github.com/Ven0m0/claude-config",
+  "downloaded_at": "2026-02-02T04:09:53.532148Z",
+  "dir_name": "manage-markdown-docs-ven0m0-claude-config",
+  "category": "documents",
+  "author": "Ven0m0",
+  "source_url": "https://github.com/Ven0m0/claude-config/blob/main/claude/skills/manage-markdown-docs/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

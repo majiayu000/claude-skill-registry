@@ -1,0 +1,16 @@
+{
+  "name": "build-macos-apps",
+  "repo": "saxjax/saxjaxTuner",
+  "path": ".github/skills/build-macos-apps/SKILL.md",
+  "source": "github.com/saxjax/saxjaxTuner",
+  "downloaded_at": "2026-02-02T04:34:25.196804Z",
+  "dir_name": "build-macos-apps-saxjax-saxjaxtuner",
+  "category": "development",
+  "author": "saxjax",
+  "source_url": "https://github.com/saxjax/saxjaxTuner/blob/main/.github/skills/build-macos-apps/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/saxjax/saxjaxTuner/blob/main/.github/skills/build-macos-apps/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "move-testing",
+  "repo": "raintree-technology/claude-starter",
+  "path": "templates/.claude/skills/aptos/move-testing/skill.md",
+  "source": "github.com/raintree-technology/claude-starter",
+  "downloaded_at": "2026-02-02T02:34:19.720468Z",
+  "dir_name": "move-testing",
+  "category": "testing",
+  "author": "raintree-technology",
+  "source_url": "https://github.com/raintree-technology/claude-starter/blob/main/templates/.claude/skills/aptos/move-testing/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Raintree Technology",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

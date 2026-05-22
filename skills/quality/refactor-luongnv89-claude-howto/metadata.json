@@ -1,0 +1,16 @@
+{
+  "name": "refactor",
+  "repo": "luongnv89/claude-howto",
+  "path": "03-skills/refactor/SKILL.md",
+  "source": "github.com/luongnv89/claude-howto",
+  "downloaded_at": "2026-01-29T08:52:54.226039Z",
+  "dir_name": "refactor-luongnv89-claude-howto",
+  "category": "quality",
+  "author": "luongnv89",
+  "source_url": "https://github.com/luongnv89/claude-howto/blob/main/03-skills/refactor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 luongnv89",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

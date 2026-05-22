@@ -1,0 +1,17 @@
+{
+  "name": "visual-audit",
+  "repo": "australia/mobtranslate.com",
+  "path": ".claude/skills/visual-audit/SKILL.md",
+  "github_branch": "master",
+  "category": "design",
+  "source": "github.com/australia/mobtranslate.com",
+  "dir_name": "visual-audit",
+  "downloaded_at": "2026-03-22T07:05:13.144093Z",
+  "author": "australia",
+  "source_url": "https://github.com/australia/mobtranslate.com/blob/master/.claude/skills/visual-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/australia/mobtranslate.com/blob/master/.claude/skills/visual-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

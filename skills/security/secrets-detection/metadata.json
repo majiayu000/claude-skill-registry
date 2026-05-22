@@ -1,0 +1,17 @@
+{
+  "name": "secrets-detection",
+  "repo": "caibingcheng/my-skills-collection",
+  "path": "skills/secrets-detection/SKILL.md",
+  "github_branch": "master",
+  "category": "security",
+  "source": "github.com/caibingcheng/my-skills-collection",
+  "dir_name": "secrets-detection",
+  "downloaded_at": "2026-03-22T07:22:46.773028Z",
+  "author": "caibingcheng",
+  "source_url": "https://github.com/caibingcheng/my-skills-collection/blob/master/skills/secrets-detection/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/caibingcheng/my-skills-collection/blob/master/skills/secrets-detection/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

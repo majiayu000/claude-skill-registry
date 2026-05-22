@@ -1,0 +1,16 @@
+{
+  "name": "git-operation",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/5t111111/git-operation/SKILL.md",
+  "category": "devops",
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "git-operation-aiskillstore-marketplace",
+  "downloaded_at": "2026-02-12T01:16:55.488136Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/5t111111/git-operation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/5t111111/git-operation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

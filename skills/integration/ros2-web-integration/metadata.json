@@ -1,0 +1,17 @@
+{
+  "name": "ros2-web-integration",
+  "repo": "arpitg1304/robotics-agent-skills",
+  "path": "skills/ros2-web-integration/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/arpitg1304/robotics-agent-skills",
+  "dir_name": "ros2-web-integration",
+  "downloaded_at": "2026-04-23T01:37:09.344195Z",
+  "author": "arpitg1304",
+  "source_url": "https://github.com/arpitg1304/robotics-agent-skills/blob/main/skills/ros2-web-integration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/arpitg1304/robotics-agent-skills/blob/main/skills/ros2-web-integration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

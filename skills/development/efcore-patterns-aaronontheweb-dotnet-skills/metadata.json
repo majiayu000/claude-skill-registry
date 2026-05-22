@@ -1,0 +1,17 @@
+{
+  "name": "efcore-patterns",
+  "repo": "Aaronontheweb/dotnet-skills",
+  "path": "skills/efcore-patterns/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/Aaronontheweb/dotnet-skills",
+  "dir_name": "efcore-patterns-aaronontheweb-dotnet-skills",
+  "downloaded_at": "2026-03-01T04:45:17.599158Z",
+  "author": "Aaronontheweb",
+  "source_url": "https://github.com/Aaronontheweb/dotnet-skills/blob/master/skills/efcore-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Aaronontheweb/dotnet-skills/blob/master/skills/efcore-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

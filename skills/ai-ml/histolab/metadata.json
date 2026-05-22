@@ -1,0 +1,20 @@
+{
+  "name": "histolab",
+  "description": "A set of ready to use scientific skills for Claude",
+  "repo": "K-Dense-AI/claude-scientific-skills",
+  "category": "ai-ml",
+  "tags": [],
+  "stars": 6989,
+  "source": "",
+  "github_path": "scientific-skills/histolab",
+  "github_branch": "main",
+  "dir_name": "histolab",
+  "downloaded_at": "2026-02-05T01:45:12.161853Z",
+  "author": "K-Dense-AI",
+  "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/scientific-skills/histolab/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 K-Dense Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

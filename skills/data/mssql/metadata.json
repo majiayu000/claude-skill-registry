@@ -1,0 +1,17 @@
+{
+  "name": "mssql",
+  "repo": "sanjay3290/ai-skills",
+  "path": "skills/mssql/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/sanjay3290/ai-skills",
+  "dir_name": "mssql",
+  "downloaded_at": "2026-05-20T04:07:59.844181Z",
+  "author": "sanjay3290",
+  "source_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/mssql/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sanjay3290/ai-skills/blob/main/skills/mssql/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "autofixture",
+  "repo": "Tyler-R-Kendrick/agent-skills",
+  "path": "skills/dotnet/testing/autofixture/SKILL.md",
+  "category": "testing",
+  "source": "github.com/Tyler-R-Kendrick/agent-skills",
+  "dir_name": "autofixture",
+  "downloaded_at": "2026-02-22T05:52:29.780734Z",
+  "author": "Tyler-R-Kendrick",
+  "source_url": "https://github.com/Tyler-R-Kendrick/agent-skills/blob/main/skills/dotnet/testing/autofixture/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tyler-R-Kendrick/agent-skills/blob/main/skills/dotnet/testing/autofixture/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "query-sqlite-db",
+  "description": "",
+  "repo": "mcsdodo/kniha-jazd",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mcsdodo/kniha-jazd",
+  "github_path": ".claude/skills/query-sqlite-db",
+  "github_branch": "main",
+  "dir_name": "query-sqlite-db",
+  "downloaded_at": "2026-02-05T05:13:03.132464Z",
+  "author": "mcsdodo",
+  "source_url": "https://github.com/mcsdodo/kniha-jazd/blob/main/.claude/skills/query-sqlite-db/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

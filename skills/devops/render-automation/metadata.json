@@ -1,0 +1,17 @@
+{
+  "name": "render-automation",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/all-skills/skills/render-automation/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "render-automation",
+  "downloaded_at": "2026-05-17T03:47:05.897241Z",
+  "author": "davepoon",
+  "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/all-skills/skills/render-automation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/davepoon/buildwithclaude/blob/main/plugins/all-skills/skills/render-automation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

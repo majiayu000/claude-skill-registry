@@ -1,0 +1,17 @@
+{
+  "name": "test-architecture",
+  "repo": "VersoXBT/claude-initial-setup",
+  "path": "skills/testing/test-architecture/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/VersoXBT/claude-initial-setup",
+  "dir_name": "test-architecture-versoxbt-claude-initial-setup",
+  "downloaded_at": "2026-04-04T03:45:49.168914Z",
+  "author": "VersoXBT",
+  "source_url": "https://github.com/VersoXBT/claude-initial-setup/blob/main/skills/testing/test-architecture/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/VersoXBT/claude-initial-setup/blob/main/skills/testing/test-architecture/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

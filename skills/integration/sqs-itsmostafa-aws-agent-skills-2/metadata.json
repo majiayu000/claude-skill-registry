@@ -1,0 +1,17 @@
+{
+  "name": "sqs",
+  "repo": "itsmostafa/aws-agent-skills",
+  "path": "skills/sqs/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/itsmostafa/aws-agent-skills",
+  "dir_name": "sqs-itsmostafa-aws-agent-skills-2",
+  "downloaded_at": "2026-05-20T03:58:47.339026Z",
+  "author": "itsmostafa",
+  "source_url": "https://github.com/itsmostafa/aws-agent-skills/blob/main/skills/sqs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/itsmostafa/aws-agent-skills/blob/main/skills/sqs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

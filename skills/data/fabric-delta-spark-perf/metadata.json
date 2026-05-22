@@ -1,0 +1,17 @@
+{
+  "name": "fabric-delta-spark-perf",
+  "repo": "PatrickGallucci/fabric-skills",
+  "path": "skills/fabric-delta-spark-perf/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/PatrickGallucci/fabric-skills",
+  "dir_name": "fabric-delta-spark-perf",
+  "downloaded_at": "2026-03-22T06:03:47.970157Z",
+  "author": "PatrickGallucci",
+  "source_url": "https://github.com/PatrickGallucci/fabric-skills/blob/main/skills/fabric-delta-spark-perf/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PatrickGallucci/fabric-skills/blob/main/skills/fabric-delta-spark-perf/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

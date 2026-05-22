@@ -1,0 +1,20 @@
+{
+  "name": "requesting-code-review",
+  "description": "",
+  "repo": "hydrosolutions/SAPPHIRE_Forecast_Tools",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hydrosolutions/SAPPHIRE_Forecast_Tools",
+  "github_path": ".claude/skills/requesting-code-review",
+  "github_branch": "main",
+  "dir_name": "requesting-code-review-hydrosolutions-sapphire-forecast-to",
+  "downloaded_at": "2026-02-05T01:44:52.212397Z",
+  "author": "hydrosolutions",
+  "source_url": "https://github.com/hydrosolutions/SAPPHIRE_Forecast_Tools/blob/main/.claude/skills/requesting-code-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 Beatrice Marti",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

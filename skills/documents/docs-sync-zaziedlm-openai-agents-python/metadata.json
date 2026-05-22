@@ -1,0 +1,20 @@
+{
+  "name": "docs-sync",
+  "description": "",
+  "repo": "zaziedlm/openai-agents-python",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".codex/skills/docs-sync",
+  "github_branch": "main",
+  "dir_name": "docs-sync-zaziedlm-openai-agents-python",
+  "downloaded_at": "2026-02-05T01:45:42.191848Z",
+  "author": "zaziedlm",
+  "source_url": "https://github.com/zaziedlm/openai-agents-python/blob/main/.codex/skills/docs-sync/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 OpenAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

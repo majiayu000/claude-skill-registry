@@ -1,0 +1,13 @@
+{
+  "name": "fuzz",
+  "description": "",
+  "repo": "aresbit/OpenMateCode",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aresbit/OpenMateCode",
+  "github_path": "skills/ocaml/fuzz",
+  "github_branch": "master",
+  "dir_name": "fuzz",
+  "downloaded_at": "2026-02-05T05:40:33.271430Z"
+}

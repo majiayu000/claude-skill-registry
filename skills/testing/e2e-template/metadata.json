@@ -1,0 +1,17 @@
+{
+  "name": "e2e-template",
+  "repo": "WaterplanAI/agentic-config",
+  "path": "plugins/ac-qa/skills/e2e-template/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/WaterplanAI/agentic-config",
+  "dir_name": "e2e-template",
+  "downloaded_at": "2026-03-22T06:30:07.501526Z",
+  "author": "WaterplanAI",
+  "source_url": "https://github.com/WaterplanAI/agentic-config/blob/main/plugins/ac-qa/skills/e2e-template/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/WaterplanAI/agentic-config/blob/main/plugins/ac-qa/skills/e2e-template/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "springboot-patterns",
+  "repo": "cliangdev/specflux",
+  "path": "src/templates/files/skills/springboot-patterns/SKILL.md",
+  "source": "github.com/cliangdev/specflux",
+  "downloaded_at": "2026-01-22T02:16:40.783868Z",
+  "dir_name": "springboot-patterns-cliangdev-specflux",
+  "category": "development",
+  "github_path": ".claude/skills/springboot-patterns",
+  "github_branch": "main",
+  "author": "cliangdev",
+  "source_url": "https://github.com/cliangdev/specflux/blob/main/.claude/skills/springboot-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cliangdev/specflux/blob/main/.claude/skills/springboot-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

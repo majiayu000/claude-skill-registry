@@ -1,0 +1,16 @@
+{
+  "name": "wed",
+  "repo": "moltbot/skills",
+  "path": "skills/orlyjamie/wed/SKILL.md",
+  "source": "github.com/moltbot/skills",
+  "downloaded_at": "2026-01-29T05:14:23.898346Z",
+  "dir_name": "wed-moltbot-skills",
+  "category": "security",
+  "author": "moltbot",
+  "source_url": "https://github.com/moltbot/skills/blob/main/skills/orlyjamie/wed/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

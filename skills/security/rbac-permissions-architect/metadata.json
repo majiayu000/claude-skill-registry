@@ -1,0 +1,16 @@
+{
+  "name": "rbac-permissions-architect",
+  "repo": "fercracix33/poli2-clean-architecture",
+  "path": ".claude/skills/rbac-permissions-architect/SKILL.md",
+  "source": "github.com/fercracix33/poli2-clean-architecture",
+  "downloaded_at": "2026-02-01T03:04:49.755912Z",
+  "dir_name": "rbac-permissions-architect",
+  "category": "security",
+  "author": "fercracix33",
+  "source_url": "https://github.com/fercracix33/poli2-clean-architecture/blob/main/.claude/skills/rbac-permissions-architect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fercracix33/poli2-clean-architecture/blob/main/.claude/skills/rbac-permissions-architect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

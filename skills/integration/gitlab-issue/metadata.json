@@ -1,0 +1,18 @@
+{
+  "name": "gitlab-issue",
+  "repo": "Dedalus-ERP-PAS/foundation-skills",
+  "path": "skills/gitlab-issue/SKILL.md",
+  "source": "github.com/Dedalus-ERP-PAS/foundation-skills",
+  "downloaded_at": "2026-01-22T02:54:25.758103Z",
+  "dir_name": "gitlab-issue",
+  "category": "integration",
+  "github_path": "skills/gitlab-issue",
+  "github_branch": "main",
+  "author": "Dedalus-ERP-PAS",
+  "source_url": "https://github.com/Dedalus-ERP-PAS/foundation-skills/blob/main/skills/gitlab-issue/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

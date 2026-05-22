@@ -1,0 +1,20 @@
+{
+  "name": "root-cause-tracing",
+  "description": "",
+  "repo": "AIA-11-HN-MIB/MIB-MockInterviewAIBot",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AIA-11-HN-MIB/MIB-MockInterviewAIBot",
+  "github_path": ".claude/skills/debugging/root-cause-tracing",
+  "github_branch": "main",
+  "dir_name": "root-cause-tracing-aia-11-hn-mib-mib-mockinterviewaib",
+  "downloaded_at": "2026-02-05T05:39:11.936329Z",
+  "author": "AIA-11-HN-MIB",
+  "source_url": "https://github.com/AIA-11-HN-MIB/MIB-MockInterviewAIBot/blob/main/.claude/skills/debugging/root-cause-tracing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AIA-11-HN-MIB/MIB-MockInterviewAIBot/blob/main/.claude/skills/debugging/root-cause-tracing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "git-master",
+  "repo": "changoo89/claude-pilot",
+  "path": ".claude/skills/git-master/SKILL.md",
+  "source": "github.com/changoo89/claude-pilot",
+  "downloaded_at": "2026-02-02T04:25:31.926511Z",
+  "dir_name": "git-master-changoo89-claude-pilot",
+  "category": "devops",
+  "author": "changoo89",
+  "source_url": "https://github.com/changoo89/claude-pilot/blob/main/.claude/skills/git-master/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 changoo89",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

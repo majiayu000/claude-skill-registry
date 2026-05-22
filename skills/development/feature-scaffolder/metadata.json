@@ -1,0 +1,17 @@
+{
+  "name": "feature-scaffolder",
+  "repo": "Nembie/claude-code-skills",
+  "path": "agents/feature-scaffolder/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/Nembie/claude-code-skills",
+  "dir_name": "feature-scaffolder",
+  "downloaded_at": "2026-03-22T05:53:39.835597Z",
+  "author": "Nembie",
+  "source_url": "https://github.com/Nembie/claude-code-skills/blob/main/agents/feature-scaffolder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Nembie/claude-code-skills/blob/main/agents/feature-scaffolder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

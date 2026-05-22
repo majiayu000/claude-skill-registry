@@ -1,0 +1,17 @@
+{
+  "name": "helm-chart-scaffolding",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/helm-chart-scaffolding/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "helm-chart-scaffolding-sickn33-antigravity-awesome",
+  "downloaded_at": "2026-04-23T01:55:15.246785Z",
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/helm-chart-scaffolding/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/helm-chart-scaffolding/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

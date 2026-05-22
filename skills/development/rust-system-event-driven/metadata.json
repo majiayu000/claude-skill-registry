@@ -1,0 +1,16 @@
+{
+  "name": "rust-system-event-driven",
+  "repo": "pproenca/dot-skills",
+  "path": "skills/.experimental/rust-system-event-driven/SKILL.md",
+  "source": "github.com/pproenca/dot-skills",
+  "downloaded_at": "2026-02-02T04:40:48.627400Z",
+  "dir_name": "rust-system-event-driven",
+  "category": "development",
+  "author": "pproenca",
+  "source_url": "https://github.com/pproenca/dot-skills/blob/main/skills/.experimental/rust-system-event-driven/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

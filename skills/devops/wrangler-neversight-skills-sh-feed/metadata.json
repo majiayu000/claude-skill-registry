@@ -1,0 +1,16 @@
+{
+  "name": "wrangler",
+  "repo": "NeverSight/skills.sh_feed",
+  "path": "data/skills-md/cloudflare/skills/wrangler/SKILL.md",
+  "source": "github.com/NeverSight/skills.sh_feed",
+  "downloaded_at": "2026-01-29T06:13:14.877376Z",
+  "dir_name": "wrangler-neversight-skills-sh-feed",
+  "category": "devops",
+  "author": "NeverSight",
+  "source_url": "https://github.com/NeverSight/skills.sh_feed/blob/main/data/skills-md/cloudflare/skills/wrangler/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NeverSight/skills.sh_feed/blob/main/data/skills-md/cloudflare/skills/wrangler/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

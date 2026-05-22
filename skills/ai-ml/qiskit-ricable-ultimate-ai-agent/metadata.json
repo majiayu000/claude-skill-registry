@@ -1,0 +1,16 @@
+{
+  "name": "qiskit",
+  "repo": "ricable/ultimate-ai-agent",
+  "path": "sources/ricable/claude-scientific-skills/scientific-skills/qiskit/SKILL.md",
+  "source": "github.com/ricable/ultimate-ai-agent",
+  "downloaded_at": "2026-02-02T04:13:02.991095Z",
+  "dir_name": "qiskit-ricable-ultimate-ai-agent",
+  "category": "ai-ml",
+  "author": "ricable",
+  "source_url": "https://github.com/ricable/ultimate-ai-agent/blob/main/sources/ricable/claude-scientific-skills/scientific-skills/qiskit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ricable/ultimate-ai-agent/blob/main/sources/ricable/claude-scientific-skills/scientific-skills/qiskit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

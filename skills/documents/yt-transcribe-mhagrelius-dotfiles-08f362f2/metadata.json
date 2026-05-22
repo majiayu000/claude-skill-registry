@@ -1,0 +1,16 @@
+{
+  "name": "yt-transcribe",
+  "repo": "mhagrelius/dotfiles",
+  "path": ".claude/skills/yt-transcribe/SKILL.md",
+  "source": "github.com/mhagrelius/dotfiles",
+  "downloaded_at": "2026-01-29T08:48:40.647081Z",
+  "dir_name": "yt-transcribe-mhagrelius-dotfiles-08f362f2",
+  "category": "documents",
+  "author": "mhagrelius",
+  "source_url": "https://github.com/mhagrelius/dotfiles/blob/main/.claude/skills/yt-transcribe/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mhagrelius/dotfiles/blob/main/.claude/skills/yt-transcribe/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

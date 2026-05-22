@@ -1,0 +1,18 @@
+{
+  "name": "smack-label-orchestrator",
+  "repo": "plurigrid/asi",
+  "path": "skills/smack-label-orchestrator/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-01-22T02:09:09.172245Z",
+  "dir_name": "smack-label-orchestrator",
+  "category": "security",
+  "github_path": "skills/smack-label-orchestrator",
+  "github_branch": "main",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/smack-label-orchestrator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

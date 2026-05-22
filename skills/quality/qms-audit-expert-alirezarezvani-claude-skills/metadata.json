@@ -1,0 +1,17 @@
+{
+  "name": "qms-audit-expert",
+  "repo": "alirezarezvani/claude-skills",
+  "path": "ra-qm-team/qms-audit-expert/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/alirezarezvani/claude-skills",
+  "dir_name": "qms-audit-expert-alirezarezvani-claude-skills",
+  "downloaded_at": "2026-04-10T01:28:55.928892Z",
+  "author": "alirezarezvani",
+  "source_url": "https://github.com/alirezarezvani/claude-skills/blob/main/ra-qm-team/qms-audit-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alirezarezvani/claude-skills/blob/main/ra-qm-team/qms-audit-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

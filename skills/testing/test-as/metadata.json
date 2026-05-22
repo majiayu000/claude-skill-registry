@@ -1,0 +1,17 @@
+{
+  "name": "test-as",
+  "repo": "coopermayne/mcp-galipo",
+  "path": ".claude/skills/test-as/skill.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/coopermayne/mcp-galipo",
+  "dir_name": "test-as",
+  "downloaded_at": "2026-03-22T07:33:54.254005Z",
+  "author": "coopermayne",
+  "source_url": "https://github.com/coopermayne/mcp-galipo/blob/main/.claude/skills/test-as/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/coopermayne/mcp-galipo/blob/main/.claude/skills/test-as/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

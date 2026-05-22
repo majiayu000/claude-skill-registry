@@ -1,0 +1,13 @@
+{
+  "name": "verification-before-completion",
+  "description": "",
+  "repo": "datasciencemonkey/claude-code-cli-bricks",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
+  "github_path": ".claude/skills/verification-before-completion",
+  "github_branch": "main",
+  "dir_name": "verification-before-completion-datasciencemonkey-claude-code-cli",
+  "downloaded_at": "2026-02-05T01:44:57.055436Z"
+}

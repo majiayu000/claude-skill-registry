@@ -1,0 +1,16 @@
+{
+  "name": "hubitat-install",
+  "repo": "iamtrep/hubitat",
+  "path": ".claude/skills/hubitat-install/skill.md",
+  "category": "integration",
+  "source": "github.com/iamtrep/hubitat",
+  "dir_name": "hubitat-install",
+  "downloaded_at": "2026-02-22T07:30:57.466404Z",
+  "author": "iamtrep",
+  "source_url": "https://github.com/iamtrep/hubitat/blob/main/.claude/skills/hubitat-install/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/iamtrep/hubitat/blob/main/.claude/skills/hubitat-install/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

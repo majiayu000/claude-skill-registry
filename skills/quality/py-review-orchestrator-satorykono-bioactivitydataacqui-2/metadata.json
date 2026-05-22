@@ -1,0 +1,17 @@
+{
+  "name": "py-review-orchestrator",
+  "repo": "SatoryKono/BioactivityDataAcquisition",
+  "path": "docs/skills/global/py-review-orchestrator/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/SatoryKono/BioactivityDataAcquisition",
+  "dir_name": "py-review-orchestrator-satorykono-bioactivitydataacqui-2",
+  "downloaded_at": "2026-03-01T06:03:53.542779Z",
+  "author": "SatoryKono",
+  "source_url": "https://github.com/SatoryKono/BioactivityDataAcquisition/blob/main/docs/skills/global/py-review-orchestrator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SatoryKono/BioactivityDataAcquisition/blob/main/docs/skills/global/py-review-orchestrator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "orchardcore-content-parts",
+  "repo": "CrestApps/CrestApps.AgentSkills",
+  "path": "src/CrestApps.AgentSkills/orchardcore/orchardcore-content-parts/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/CrestApps/CrestApps.AgentSkills",
+  "dir_name": "orchardcore-content-parts-crestapps-crestapps-agentskill",
+  "downloaded_at": "2026-03-22T05:10:28.088439Z",
+  "author": "CrestApps",
+  "source_url": "https://github.com/CrestApps/CrestApps.AgentSkills/blob/main/src/CrestApps.AgentSkills/orchardcore/orchardcore-content-parts/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CrestApps/CrestApps.AgentSkills/blob/main/src/CrestApps.AgentSkills/orchardcore/orchardcore-content-parts/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "software-patterns",
+  "repo": "grndlvl/software-patterns",
+  "path": ".claude/skills/software-patterns/SKILL.md",
+  "category": "development",
+  "source": "github.com/grndlvl/software-patterns",
+  "dir_name": "software-patterns",
+  "downloaded_at": "2026-02-15T07:24:27.685304Z",
+  "author": "grndlvl",
+  "source_url": "https://github.com/grndlvl/software-patterns/blob/main/.claude/skills/software-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 grndlvl",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

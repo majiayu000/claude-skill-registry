@@ -1,0 +1,16 @@
+{
+  "name": "typescript-rules",
+  "repo": "shinpr/ai-coding-project-boilerplate",
+  "path": ".claude/skills-ja/typescript-rules/SKILL.md",
+  "source": "github.com/shinpr/ai-coding-project-boilerplate",
+  "downloaded_at": "2026-02-02T02:42:05.935589Z",
+  "dir_name": "typescript-rules-shinpr-ai-coding-project-bo",
+  "category": "development",
+  "author": "shinpr",
+  "source_url": "https://github.com/shinpr/ai-coding-project-boilerplate/blob/main/.claude/skills-ja/typescript-rules/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Shinsuke Kagawa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

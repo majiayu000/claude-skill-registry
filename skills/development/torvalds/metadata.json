@@ -1,0 +1,16 @@
+{
+  "name": "torvalds",
+  "repo": "copyleftdev/blsmesh",
+  "path": ".claude/skills/torvalds/SKILL.md",
+  "source": "github.com/copyleftdev/blsmesh",
+  "downloaded_at": "2026-02-02T02:30:56.186126Z",
+  "dir_name": "torvalds",
+  "category": "development",
+  "author": "copyleftdev",
+  "source_url": "https://github.com/copyleftdev/blsmesh/blob/main/.claude/skills/torvalds/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/copyleftdev/blsmesh/blob/main/.claude/skills/torvalds/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

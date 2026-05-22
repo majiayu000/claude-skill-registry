@@ -1,0 +1,17 @@
+{
+  "name": "coding-assistant",
+  "repo": "athola/skrills",
+  "path": "assets/demo-skills/coding-assistant/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/athola/skrills",
+  "dir_name": "coding-assistant-athola-skrills-3",
+  "downloaded_at": "2026-03-22T07:04:56.001847Z",
+  "author": "athola",
+  "source_url": "https://github.com/athola/skrills/blob/master/assets/demo-skills/coding-assistant/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/athola/skrills/blob/master/assets/demo-skills/coding-assistant/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

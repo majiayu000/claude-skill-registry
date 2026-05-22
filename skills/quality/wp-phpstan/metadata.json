@@ -1,0 +1,13 @@
+{
+  "name": "wp-phpstan",
+  "description": "WordPress plugin for Animal Shelter",
+  "repo": "WPdoaction/animal-shelter",
+  "category": "quality",
+  "tags": [],
+  "stars": 8,
+  "source": "",
+  "github_path": ".codex/skills/wp-phpstan",
+  "github_branch": "master",
+  "dir_name": "wp-phpstan",
+  "downloaded_at": "2026-02-05T01:45:29.822308Z"
+}

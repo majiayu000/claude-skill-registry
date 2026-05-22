@@ -1,0 +1,16 @@
+{
+  "name": "peft",
+  "repo": "zechenzhangAGI/AI-research-SKILLs",
+  "path": "03-fine-tuning/peft/SKILL.md",
+  "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
+  "downloaded_at": "2026-01-29T08:55:10.712146Z",
+  "dir_name": "peft-zechenzhangagi-ai-research-skills-0887ca01",
+  "category": "ai-ml",
+  "author": "zechenzhangAGI",
+  "source_url": "https://github.com/zechenzhangAGI/AI-research-SKILLs/blob/main/03-fine-tuning/peft/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude AI Research Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "pptx",
+  "description": "Modern Electron-based desktop application providing a polished chat interface for CLI AI agents (Claude Code, OpenAI Codex). Supports both desktop and web modes.",
+  "repo": "zhu1090093659/CodeConductor",
+  "category": "documents",
+  "tags": [],
+  "stars": 45,
+  "source": "",
+  "github_path": "skills/pptx",
+  "github_branch": "main",
+  "dir_name": "pptx-zhu1090093659-codeconductor",
+  "downloaded_at": "2026-02-05T01:45:25.416101Z",
+  "author": "zhu1090093659",
+  "source_url": "https://github.com/zhu1090093659/CodeConductor/blob/main/skills/pptx/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 CodeConductor (CodeConductor.com)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

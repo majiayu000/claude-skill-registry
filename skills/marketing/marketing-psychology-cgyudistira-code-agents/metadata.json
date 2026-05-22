@@ -1,0 +1,20 @@
+{
+  "name": "marketing-psychology",
+  "description": "",
+  "repo": "cgyudistira/code-agents",
+  "category": "marketing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cgyudistira/code-agents",
+  "github_path": "skills/marketing-psychology",
+  "github_branch": "main",
+  "dir_name": "marketing-psychology-cgyudistira-code-agents",
+  "downloaded_at": "2026-02-05T05:34:10.338967Z",
+  "author": "cgyudistira",
+  "source_url": "https://github.com/cgyudistira/code-agents/blob/main/skills/marketing-psychology/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

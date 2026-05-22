@@ -1,0 +1,13 @@
+{
+  "name": "databases",
+  "description": "",
+  "repo": "vumichien/bi-agent",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vumichien/bi-agent",
+  "github_path": ".claude/skills/databases",
+  "github_branch": "main",
+  "dir_name": "databases-vumichien-bi-agent",
+  "downloaded_at": "2026-02-05T01:44:53.815889Z"
+}

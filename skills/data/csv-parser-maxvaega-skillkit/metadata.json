@@ -1,0 +1,18 @@
+{
+  "name": "csv-parser",
+  "repo": "maxvaega/skillkit",
+  "path": "examples/skills/example-plugin/skills/csv-parser/SKILL.md",
+  "source": "github.com/maxvaega/skillkit",
+  "downloaded_at": "2026-01-22T02:52:24.794763Z",
+  "dir_name": "csv-parser-maxvaega-skillkit",
+  "category": "data",
+  "github_path": "examples/skills/example-plugin/skills/csv-parser",
+  "github_branch": "main",
+  "author": "maxvaega",
+  "source_url": "https://github.com/maxvaega/skillkit/blob/main/examples/skills/example-plugin/skills/csv-parser/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Massimo Olivieri",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

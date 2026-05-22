@@ -1,0 +1,17 @@
+{
+  "name": "django-pro",
+  "repo": "SpencerGeee/SpenTrade",
+  "path": ".agent/skills/django-pro/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/SpencerGeee/SpenTrade",
+  "dir_name": "django-pro-spencergeee-spentrade",
+  "downloaded_at": "2026-03-01T06:08:13.493473Z",
+  "author": "SpencerGeee",
+  "source_url": "https://github.com/SpencerGeee/SpenTrade/blob/main/.agent/skills/django-pro/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SpencerGeee/SpenTrade/blob/main/.agent/skills/django-pro/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

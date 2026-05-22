@@ -1,0 +1,16 @@
+{
+  "name": "WebAssessment",
+  "repo": "danielmiessler/Personal_AI_Infrastructure",
+  "path": "Releases/v2.4/.claude/skills/WebAssessment/SKILL.md",
+  "source": "github.com/danielmiessler/Personal_AI_Infrastructure",
+  "downloaded_at": "2026-02-02T04:38:33.166833Z",
+  "dir_name": "webassessment-danielmiessler-personal-ai-infrastr",
+  "category": "security",
+  "author": "danielmiessler",
+  "source_url": "https://github.com/danielmiessler/Personal_AI_Infrastructure/blob/main/Releases/v2.4/.claude/skills/WebAssessment/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel Miessler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

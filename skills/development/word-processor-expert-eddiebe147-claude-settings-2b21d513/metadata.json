@@ -1,0 +1,16 @@
+{
+  "name": "word-processor-expert",
+  "repo": "eddiebe147/claude-settings",
+  "path": "skills/word-processor-expert/skill.md",
+  "source": "github.com/eddiebe147/claude-settings",
+  "downloaded_at": "2026-01-29T07:35:16.372124Z",
+  "dir_name": "word-processor-expert-eddiebe147-claude-settings-2b21d513",
+  "category": "development",
+  "author": "eddiebe147",
+  "source_url": "https://github.com/eddiebe147/claude-settings/blob/main/skills/word-processor-expert/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/eddiebe147/claude-settings/blob/main/skills/word-processor-expert/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

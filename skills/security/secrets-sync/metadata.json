@@ -1,0 +1,13 @@
+{
+  "name": "secrets-sync",
+  "description": "",
+  "repo": "Khamel83/oneshot",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Khamel83/oneshot",
+  "github_path": ".claude/skills/secrets-sync",
+  "github_branch": "master",
+  "dir_name": "secrets-sync",
+  "downloaded_at": "2026-02-05T01:44:38.041033Z"
+}

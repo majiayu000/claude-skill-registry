@@ -1,0 +1,13 @@
+{
+  "name": "tmux-testing",
+  "description": "",
+  "repo": "invowk/invowk",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/invowk/invowk",
+  "github_path": ".claude/skills/tmux-testing",
+  "github_branch": "main",
+  "dir_name": "tmux-testing",
+  "downloaded_at": "2026-02-05T05:39:11.961296Z"
+}

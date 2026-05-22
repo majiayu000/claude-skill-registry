@@ -1,9 +1,0 @@
-{
-  "name": "generate-migration",
-  "repo": "getsentry/sentry",
-  "path": ".claude/skills/generate-migration/SKILL.md",
-  "source": "github.com/getsentry/sentry",
-  "downloaded_at": "2026-01-22T01:25:26.270850Z",
-  "dir_name": "generate-migration",
-  "category": "other"
-}

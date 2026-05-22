@@ -1,0 +1,18 @@
+{
+  "name": "dotnet-10-csharp-14",
+  "repo": "mhagrelius/dotfiles",
+  "path": ".claude/skills/dotnet-10-csharp-14/SKILL.md",
+  "source": "github.com/mhagrelius/dotfiles",
+  "downloaded_at": "2026-01-22T01:10:33.107928Z",
+  "dir_name": "dotnet-10-csharp-14",
+  "category": "development",
+  "github_path": ".claude/skills/dotnet-10-csharp-14",
+  "github_branch": "main",
+  "author": "mhagrelius",
+  "source_url": "https://github.com/mhagrelius/dotfiles/blob/main/.claude/skills/dotnet-10-csharp-14/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mhagrelius/dotfiles/blob/main/.claude/skills/dotnet-10-csharp-14/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "debugging-patterns",
+  "repo": "LimaTechnologies/admin-telegram-bot",
+  "path": ".claude/skills/debugging-patterns/SKILL.md",
+  "source": "github.com/LimaTechnologies/admin-telegram-bot",
+  "downloaded_at": "2026-02-02T02:13:49.060598Z",
+  "dir_name": "debugging-patterns-limatechnologies-admin-telegram-bot",
+  "category": "development",
+  "author": "LimaTechnologies",
+  "source_url": "https://github.com/LimaTechnologies/admin-telegram-bot/blob/main/.claude/skills/debugging-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LimaTechnologies/admin-telegram-bot/blob/main/.claude/skills/debugging-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

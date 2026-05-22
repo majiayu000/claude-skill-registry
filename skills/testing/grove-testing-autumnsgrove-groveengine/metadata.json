@@ -1,0 +1,18 @@
+{
+  "name": "grove-testing",
+  "repo": "AutumnsGrove/GroveEngine",
+  "path": ".claude/skills/grove-testing/SKILL.md",
+  "source": "github.com/AutumnsGrove/GroveEngine",
+  "downloaded_at": "2026-01-22T01:45:00.041609Z",
+  "dir_name": "grove-testing-autumnsgrove-groveengine",
+  "category": "testing",
+  "github_path": ".claude/skills/grove-testing",
+  "github_branch": "main",
+  "author": "AutumnsGrove",
+  "source_url": "https://github.com/AutumnsGrove/GroveEngine/blob/main/.claude/skills/grove-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "scientific-torch-geometric",
+  "description": "Graph Neural Networks (PyG). Node/graph classification, link prediction, GCN, GAT, GraphSAGE, heterogeneous graphs, molecular property prediction, for geometric deep learning.",
+  "repo": "pathvanasoftware/IOSStorageCleaner",
+  "category": "ai-ml",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pathvanasoftware/IOSStorageCleaner",
+  "dir_name": "scientific-torch-geometric-pathvanasoftware-iosstoragecleaner-e4",
+  "author": "pathvanasoftware",
+  "source_url": "https://github.com/pathvanasoftware/IOSStorageCleaner",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pathvanasoftware/IOSStorageCleaner",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

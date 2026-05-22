@@ -1,0 +1,11 @@
+{
+  "name": "pgvector-search",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/pgvector-search/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:14.790188Z",
+  "dir_name": "pgvector-search",
+  "category": "data",
+  "github_path": "skills/pgvector-search",
+  "github_branch": "main"
+}

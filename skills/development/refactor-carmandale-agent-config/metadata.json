@@ -1,0 +1,16 @@
+{
+  "name": "refactor",
+  "repo": "carmandale/agent-config",
+  "path": "skills/cc3/refactor/SKILL.md",
+  "source": "github.com/carmandale/agent-config",
+  "downloaded_at": "2026-02-02T04:55:35.184167Z",
+  "dir_name": "refactor-carmandale-agent-config",
+  "category": "development",
+  "author": "carmandale",
+  "source_url": "https://github.com/carmandale/agent-config/blob/main/skills/cc3/refactor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/carmandale/agent-config/blob/main/skills/cc3/refactor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

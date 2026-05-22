@@ -1,0 +1,16 @@
+{
+  "name": "wordpress-seo",
+  "repo": "dglowacki/mega-agent-v2",
+  "path": ".claude/skills/wordpress-seo/SKILL.md",
+  "source": "github.com/dglowacki/mega-agent-v2",
+  "downloaded_at": "2026-01-29T06:01:26.920311Z",
+  "dir_name": "wordpress-seo-dglowacki-mega-agent-v2-57385e0c",
+  "category": "marketing",
+  "author": "dglowacki",
+  "source_url": "https://github.com/dglowacki/mega-agent-v2/blob/main/.claude/skills/wordpress-seo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dglowacki/mega-agent-v2/blob/main/.claude/skills/wordpress-seo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

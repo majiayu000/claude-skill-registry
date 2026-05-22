@@ -1,0 +1,17 @@
+{
+  "name": "ss-lint",
+  "repo": "bitjaru/styleseed",
+  "path": "engine/.claude/skills/ss-lint/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/bitjaru/styleseed",
+  "dir_name": "ss-lint",
+  "downloaded_at": "2026-05-20T03:51:32.556962Z",
+  "author": "bitjaru",
+  "source_url": "https://github.com/bitjaru/styleseed/blob/main/engine/.claude/skills/ss-lint/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bitjaru/styleseed/blob/main/engine/.claude/skills/ss-lint/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "home-assistant-integration-knowledge",
+  "description": "",
+  "repo": "L3DigitalNet/ha-light-controller",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/L3DigitalNet/ha-light-controller",
+  "github_path": ".claude/skills/Home Assistant Integration knowledge",
+  "github_branch": "main",
+  "dir_name": "home-assistant-integration-knowledge",
+  "downloaded_at": "2026-02-05T01:44:48.224980Z"
+}

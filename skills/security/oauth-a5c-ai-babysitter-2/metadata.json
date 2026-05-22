@@ -1,0 +1,17 @@
+{
+  "name": "oauth",
+  "repo": "a5c-ai/babysitter",
+  "path": "library/specializations/web-development/skills/oauth/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "oauth-a5c-ai-babysitter-2",
+  "downloaded_at": "2026-05-20T03:48:28.584433Z",
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/library/specializations/web-development/skills/oauth/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/a5c-ai/babysitter/blob/main/library/specializations/web-development/skills/oauth/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

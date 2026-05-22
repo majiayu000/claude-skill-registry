@@ -1,0 +1,16 @@
+{
+  "name": "doc-convert-pandoc",
+  "repo": "taiyousan15/taisun_agent",
+  "path": ".claude/skills/doc-convert-pandoc/SKILL.md",
+  "source": "github.com/taiyousan15/taisun_agent",
+  "downloaded_at": "2026-01-29T07:13:09.334625Z",
+  "dir_name": "doc-convert-pandoc-taiyousan15-taisun-agent",
+  "category": "documents",
+  "author": "taiyousan15",
+  "source_url": "https://github.com/taiyousan15/taisun_agent/blob/main/.claude/skills/doc-convert-pandoc/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 taiyousan15",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

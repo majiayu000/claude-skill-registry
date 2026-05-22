@@ -1,0 +1,18 @@
+{
+  "name": "sre-expert",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/devops/sre-expert/SKILL.md",
+  "source": "github.com/personamanagmentlayer/pcl",
+  "downloaded_at": "2026-01-22T04:02:13.673398Z",
+  "dir_name": "sre-expert",
+  "category": "devops",
+  "github_path": "stdlib/devops/sre-expert",
+  "github_branch": "main",
+  "author": "personamanagmentlayer",
+  "source_url": "https://github.com/personamanagmentlayer/pcl/blob/main/stdlib/devops/sre-expert/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/personamanagmentlayer/pcl/blob/main/stdlib/devops/sre-expert/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

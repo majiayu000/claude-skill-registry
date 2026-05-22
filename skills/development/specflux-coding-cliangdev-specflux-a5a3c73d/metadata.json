@@ -1,0 +1,16 @@
+{
+  "name": "specflux-coding",
+  "repo": "cliangdev/specflux",
+  "path": "src/plugin/skills/specflux-coding/SKILL.md",
+  "source": "github.com/cliangdev/specflux",
+  "downloaded_at": "2026-01-29T08:22:14.529472Z",
+  "dir_name": "specflux-coding-cliangdev-specflux-a5a3c73d",
+  "category": "development",
+  "author": "cliangdev",
+  "source_url": "https://github.com/cliangdev/specflux/blob/main/src/plugin/skills/specflux-coding/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cliangdev/specflux/blob/main/src/plugin/skills/specflux-coding/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

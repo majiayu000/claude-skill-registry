@@ -1,0 +1,17 @@
+{
+  "name": "capi-test-naming-verifier",
+  "repo": "eclipse-oniro-mirrors/arkui_ace_engine",
+  "path": ".claude/skills/capi-test-naming-verifier/SKILL.md",
+  "github_branch": "master",
+  "category": "testing",
+  "source": "github.com/eclipse-oniro-mirrors/arkui_ace_engine",
+  "dir_name": "capi-test-naming-verifier",
+  "downloaded_at": "2026-03-22T07:52:56.866529Z",
+  "author": "eclipse-oniro-mirrors",
+  "source_url": "https://github.com/eclipse-oniro-mirrors/arkui_ace_engine/blob/master/.claude/skills/capi-test-naming-verifier/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/eclipse-oniro-mirrors/arkui_ace_engine/blob/master/.claude/skills/capi-test-naming-verifier/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

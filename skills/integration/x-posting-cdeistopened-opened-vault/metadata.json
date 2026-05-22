@@ -1,0 +1,16 @@
+{
+  "name": "x-posting",
+  "repo": "cdeistopened/OpenEd-Vault",
+  "path": ".claude/skills/x-posting/SKILL.md",
+  "category": "integration",
+  "source": "github.com/cdeistopened/OpenEd-Vault",
+  "dir_name": "x-posting-cdeistopened-opened-vault",
+  "downloaded_at": "2026-02-15T06:42:30.943266Z",
+  "author": "cdeistopened",
+  "source_url": "https://github.com/cdeistopened/OpenEd-Vault/blob/main/.claude/skills/x-posting/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cdeistopened/OpenEd-Vault/blob/main/.claude/skills/x-posting/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

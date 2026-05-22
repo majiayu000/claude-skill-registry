@@ -1,0 +1,18 @@
+{
+  "name": "personalization-at-scale",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/marketing-pro-workflow/.claude/skills/personalization-at-scale/SKILL.md",
+  "source": "github.com/nicepkg/ai-workflow",
+  "downloaded_at": "2026-01-20T03:46:25.929497Z",
+  "dir_name": "personalization-at-scale",
+  "category": "marketing",
+  "github_path": "workflows/marketing-pro-workflow/.claude/skills/personalization-at-scale",
+  "github_branch": "main",
+  "author": "nicepkg",
+  "source_url": "https://github.com/nicepkg/ai-workflow/blob/main/workflows/marketing-pro-workflow/.claude/skills/personalization-at-scale/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 nicepkg",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

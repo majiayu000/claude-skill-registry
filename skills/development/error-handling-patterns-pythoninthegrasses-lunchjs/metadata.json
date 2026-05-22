@@ -1,0 +1,20 @@
+{
+  "name": "error-handling-patterns",
+  "description": "",
+  "repo": "pythoninthegrasses/lunchjs",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pythoninthegrasses/lunchjs",
+  "github_path": ".claude/skills/error-handling-patterns",
+  "github_branch": "main",
+  "dir_name": "error-handling-patterns-pythoninthegrasses-lunchjs",
+  "downloaded_at": "2026-02-05T01:44:53.963973Z",
+  "author": "pythoninthegrasses",
+  "source_url": "https://github.com/pythoninthegrasses/lunchjs/blob/main/.claude/skills/error-handling-patterns/SKILL.md",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pythoninthegrasses/lunchjs/blob/main/.claude/skills/error-handling-patterns/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

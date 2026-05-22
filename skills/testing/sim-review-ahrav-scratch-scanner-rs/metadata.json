@@ -1,0 +1,17 @@
+{
+  "name": "sim-review",
+  "repo": "ahrav/scratch-scanner-rs",
+  "path": ".claude/skills/sim-review/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/ahrav/scratch-scanner-rs",
+  "dir_name": "sim-review-ahrav-scratch-scanner-rs",
+  "downloaded_at": "2026-03-01T06:32:33.523220Z",
+  "author": "ahrav",
+  "source_url": "https://github.com/ahrav/scratch-scanner-rs/blob/main/.claude/skills/sim-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ahrav/scratch-scanner-rs/blob/main/.claude/skills/sim-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

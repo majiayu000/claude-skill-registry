@@ -1,0 +1,16 @@
+{
+  "name": "using-dynamic-architectures",
+  "repo": "tachyon-beep/skillpacks",
+  "path": "plugins/yzmir-dynamic-architectures/skills/using-dynamic-architectures/SKILL.md",
+  "source": "github.com/tachyon-beep/skillpacks",
+  "downloaded_at": "2026-01-29T08:16:13.113733Z",
+  "dir_name": "using-dynamic-architectures-tachyon-beep-skillpacks-f5bf7b20",
+  "category": "ai-ml",
+  "author": "tachyon-beep",
+  "source_url": "https://github.com/tachyon-beep/skillpacks/blob/main/plugins/yzmir-dynamic-architectures/skills/using-dynamic-architectures/SKILL.md",
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tachyon-beep/skillpacks/blob/main/plugins/yzmir-dynamic-architectures/skills/using-dynamic-architectures/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

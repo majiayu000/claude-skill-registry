@@ -1,0 +1,17 @@
+{
+  "name": "webhook-security",
+  "repo": "TerminalSkills/skills",
+  "path": "skills/webhook-security/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/TerminalSkills/skills",
+  "dir_name": "webhook-security-terminalskills-skills",
+  "downloaded_at": "2026-03-22T06:22:06.823764Z",
+  "author": "TerminalSkills",
+  "source_url": "https://github.com/TerminalSkills/skills/blob/main/skills/webhook-security/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TerminalSkills/skills/blob/main/skills/webhook-security/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

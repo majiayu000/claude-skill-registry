@@ -1,0 +1,18 @@
+{
+  "name": "doc-writing",
+  "repo": "VidyFoo/antigravity-skill-engine",
+  "path": ".agent/skills/4-tools/doc-writing/SKILL.md",
+  "source": "github.com/VidyFoo/antigravity-skill-engine",
+  "downloaded_at": "2026-01-22T03:47:04.712018Z",
+  "dir_name": "doc-writing",
+  "category": "documents",
+  "github_path": ".agent/skills/4-tools/doc-writing",
+  "github_branch": "main",
+  "author": "VidyFoo",
+  "source_url": "https://github.com/VidyFoo/antigravity-skill-engine/blob/main/.agent/skills/4-tools/doc-writing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity Lab",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

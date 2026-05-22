@@ -1,0 +1,13 @@
+{
+  "name": "changelog-generator",
+  "description": "",
+  "repo": "ACGSpgp/ACGS",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ACGSpgp/ACGS",
+  "github_path": "src/agents/skills/repo/changelog-generator",
+  "github_branch": "main",
+  "dir_name": "changelog-generator-acgspgp-acgs",
+  "downloaded_at": "2026-02-05T05:40:32.996380Z"
+}

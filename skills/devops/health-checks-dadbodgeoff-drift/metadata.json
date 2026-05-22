@@ -1,0 +1,16 @@
+{
+  "name": "health-checks",
+  "repo": "dadbodgeoff/drift",
+  "path": "skills/health-checks/SKILL.md",
+  "source": "github.com/dadbodgeoff/drift",
+  "downloaded_at": "2026-01-29T07:39:25.717716Z",
+  "dir_name": "health-checks-dadbodgeoff-drift",
+  "category": "devops",
+  "author": "dadbodgeoff",
+  "source_url": "https://github.com/dadbodgeoff/drift/blob/main/skills/health-checks/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dadbodgeoff/drift/blob/main/skills/health-checks/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

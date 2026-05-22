@@ -1,0 +1,17 @@
+{
+  "name": "coding-standards",
+  "repo": "forgivesam168/ai-dev-workflow",
+  "path": ".github/skills/coding-standards/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/forgivesam168/ai-dev-workflow",
+  "dir_name": "coding-standards-forgivesam168-ai-dev-workflow-2",
+  "downloaded_at": "2026-03-01T07:45:37.629702Z",
+  "author": "forgivesam168",
+  "source_url": "https://github.com/forgivesam168/ai-dev-workflow/blob/main/.github/skills/coding-standards/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/forgivesam168/ai-dev-workflow/blob/main/.github/skills/coding-standards/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

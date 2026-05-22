@@ -1,0 +1,20 @@
+{
+  "name": "page-cro",
+  "description": "",
+  "repo": "davila7/claude-code-templates",
+  "category": "marketing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davila7/claude-code-templates",
+  "github_path": "cli-tool/components/skills/business-marketing/page-cro",
+  "github_branch": "main",
+  "dir_name": "page-cro-davila7-claude-code-template",
+  "downloaded_at": "2026-02-05T05:43:12.415148Z",
+  "author": "davila7",
+  "source_url": "https://github.com/davila7/claude-code-templates/blob/main/cli-tool/components/skills/business-marketing/page-cro/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel (San) Ávila",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

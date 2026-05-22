@@ -1,0 +1,18 @@
+{
+  "name": "devops-cloud",
+  "repo": "travisjneuman/.claude",
+  "path": "skills/devops-cloud/SKILL.md",
+  "source": "github.com/travisjneuman/.claude",
+  "downloaded_at": "2026-01-22T04:01:27.678364Z",
+  "dir_name": "devops-cloud",
+  "category": "devops",
+  "github_path": "skills/devops-cloud",
+  "github_branch": "main",
+  "author": "travisjneuman",
+  "source_url": "https://github.com/travisjneuman/.claude/blob/main/skills/devops-cloud/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Travis Neuman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

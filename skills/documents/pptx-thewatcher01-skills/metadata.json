@@ -1,0 +1,17 @@
+{
+  "name": "pptx",
+  "repo": "TheWatcher01/skills",
+  "path": "skills/pptx/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/TheWatcher01/skills",
+  "dir_name": "pptx-thewatcher01-skills",
+  "downloaded_at": "2026-03-01T06:13:29.278352Z",
+  "author": "TheWatcher01",
+  "source_url": "https://github.com/TheWatcher01/skills/blob/main/skills/pptx/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TheWatcher01/skills/blob/main/skills/pptx/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

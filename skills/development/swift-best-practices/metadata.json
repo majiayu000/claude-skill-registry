@@ -1,0 +1,18 @@
+{
+  "name": "swift-best-practices",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/swift-best-practices/skills/swift-best-practices/SKILL.md",
+  "source": "github.com/secondsky/claude-skills",
+  "downloaded_at": "2026-01-22T02:51:10.013485Z",
+  "dir_name": "swift-best-practices",
+  "category": "development",
+  "github_path": "plugins/swift-best-practices/skills/swift-best-practices",
+  "github_branch": "main",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/swift-best-practices/skills/swift-best-practices/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

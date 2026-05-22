@@ -1,0 +1,18 @@
+{
+  "name": "nextjs-server-actions",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/nextjs-master/skills/nextjs-server-actions/SKILL.md",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "downloaded_at": "2026-01-22T03:16:47.583481Z",
+  "dir_name": "nextjs-server-actions",
+  "category": "development",
+  "github_path": "plugins/nextjs-master/skills/nextjs-server-actions",
+  "github_branch": "main",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/nextjs-master/skills/nextjs-server-actions/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

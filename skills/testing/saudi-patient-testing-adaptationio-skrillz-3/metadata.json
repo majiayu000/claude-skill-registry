@@ -1,0 +1,16 @@
+{
+  "name": "saudi-patient-testing",
+  "repo": "adaptationio/Skrillz",
+  "path": "skill-builder-package/examples/saudi-patient-testing/SKILL.md",
+  "category": "testing",
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "saudi-patient-testing-adaptationio-skrillz-3",
+  "downloaded_at": "2026-02-15T06:05:10.179425Z",
+  "author": "adaptationio",
+  "source_url": "https://github.com/adaptationio/Skrillz/blob/main/skill-builder-package/examples/saudi-patient-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adaptationio/Skrillz/blob/main/skill-builder-package/examples/saudi-patient-testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

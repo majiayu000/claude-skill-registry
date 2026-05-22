@@ -1,0 +1,17 @@
+{
+  "name": "woocommerce-backend-dev",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/woocommerce-backend-dev/skills/woocommerce-backend-dev/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "woocommerce-backend-dev-secondsky-claude-skills-3",
+  "downloaded_at": "2026-05-04T02:14:50.908272Z",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/woocommerce-backend-dev/skills/woocommerce-backend-dev/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/secondsky/claude-skills/blob/main/plugins/woocommerce-backend-dev/skills/woocommerce-backend-dev/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "debugging-techniques",
+  "repo": "ancoleman/ai-design-components",
+  "path": "skills/debugging-techniques/SKILL.md",
+  "source": "github.com/ancoleman/ai-design-components",
+  "downloaded_at": "2026-02-02T01:11:49.072894Z",
+  "dir_name": "debugging-techniques",
+  "category": "development",
+  "author": "ancoleman",
+  "source_url": "https://github.com/ancoleman/ai-design-components/blob/main/skills/debugging-techniques/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Anton Coleman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "langflow.backup-20251230-191240",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/ai-workflow/langflow.backup-20251230-191240/SKILL.md",
+  "source": "github.com/enuno/claude-command-and-control",
+  "downloaded_at": "2026-01-20T02:51:17.003127Z",
+  "dir_name": "langflow-backup-20251230-191240",
+  "category": "ai-llm",
+  "author": "enuno",
+  "source_url": "https://github.com/enuno/claude-command-and-control/blob/main/skills-templates/ai-workflow/langflow.backup-20251230-191240/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/enuno/claude-command-and-control/blob/main/skills-templates/ai-workflow/langflow.backup-20251230-191240/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

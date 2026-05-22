@@ -1,0 +1,13 @@
+{
+  "name": "condition-based-waiting",
+  "description": "Custom agents built for GH copilot",
+  "repo": "AlabamaMike/copilot-agents",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".codex/superpowers/skills/condition-based-waiting",
+  "github_branch": "main",
+  "dir_name": "condition-based-waiting-alabamamike-copilot-agents",
+  "downloaded_at": "2026-02-05T01:45:44.072008Z"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "when-reviewing-pull-request-orchestrate-comprehensive-code-revie",
+  "description": "Use when conducting comprehensive code review for pull requests across multiple quality dimensions.\nOrchestrates 12-15 specialized reviewer agents across 4 phases using star topology coordination.\nCov",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "dir_name": "when-reviewing-pull-request-orchestrate-comprehensive-code-revie-dnyoussef-ai-chrome-extension-2",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

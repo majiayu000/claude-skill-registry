@@ -1,9 +1,0 @@
-{
-  "name": "test",
-  "repo": "codacy-open-source-projects-scans/clickhouse",
-  "path": ".claude/skills/test/SKILL.md",
-  "source": "github.com/codacy-open-source-projects-scans/clickhouse",
-  "downloaded_at": "2026-02-02T04:57:16.619080Z",
-  "dir_name": "test-codacy-open-source-p-clickhouse",
-  "category": "other"
-}

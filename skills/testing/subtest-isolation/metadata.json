@@ -1,0 +1,18 @@
+{
+  "name": "subtest-isolation",
+  "repo": "bearcove/pikru",
+  "path": ".claude/skills/subtest-isolation/SKILL.md",
+  "source": "github.com/bearcove/pikru",
+  "downloaded_at": "2026-01-22T02:17:36.335609Z",
+  "dir_name": "subtest-isolation",
+  "category": "testing",
+  "github_path": ".claude/skills/subtest-isolation",
+  "github_branch": "main",
+  "author": "bearcove",
+  "source_url": "https://github.com/bearcove/pikru/blob/main/.claude/skills/subtest-isolation/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Amos Wenger",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

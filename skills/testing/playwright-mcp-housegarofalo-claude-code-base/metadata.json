@@ -1,0 +1,20 @@
+{
+  "name": "playwright-mcp",
+  "description": "",
+  "repo": "HouseGarofalo/claude-code-base",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HouseGarofalo/claude-code-base",
+  "github_path": ".claude/skills/playwright-mcp",
+  "github_branch": "master",
+  "dir_name": "playwright-mcp-housegarofalo-claude-code-base",
+  "downloaded_at": "2026-02-05T01:44:39.073392Z",
+  "author": "HouseGarofalo",
+  "source_url": "https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/playwright-mcp/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 HouseGarofalo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

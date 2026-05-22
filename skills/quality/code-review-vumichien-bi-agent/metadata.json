@@ -1,0 +1,13 @@
+{
+  "name": "code-review",
+  "description": "",
+  "repo": "vumichien/bi-agent",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vumichien/bi-agent",
+  "github_path": ".claude/skills/code-review",
+  "github_branch": "main",
+  "dir_name": "code-review-vumichien-bi-agent",
+  "downloaded_at": "2026-02-05T01:44:53.810411Z"
+}

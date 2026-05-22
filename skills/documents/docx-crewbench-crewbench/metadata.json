@@ -1,0 +1,13 @@
+{
+  "name": "docx",
+  "description": "",
+  "repo": "CrewBench/CrewBench",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CrewBench/CrewBench",
+  "github_path": "skills/docx",
+  "github_branch": "main",
+  "dir_name": "docx-crewbench-crewbench",
+  "downloaded_at": "2026-02-05T05:32:51.155142Z"
+}

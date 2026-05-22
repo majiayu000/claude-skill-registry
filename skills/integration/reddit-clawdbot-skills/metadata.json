@@ -1,0 +1,18 @@
+{
+  "name": "reddit",
+  "repo": "clawdbot/skills",
+  "path": "skills/theglove44/reddit/SKILL.md",
+  "source": "github.com/clawdbot/skills",
+  "downloaded_at": "2026-01-21T02:58:54.858323Z",
+  "dir_name": "reddit-clawdbot-skills",
+  "category": "integration",
+  "github_path": "skills/thesethrose/reddit-search",
+  "github_branch": "main",
+  "author": "clawdbot",
+  "source_url": "https://github.com/clawdbot/skills/blob/main/skills/thesethrose/reddit-search/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

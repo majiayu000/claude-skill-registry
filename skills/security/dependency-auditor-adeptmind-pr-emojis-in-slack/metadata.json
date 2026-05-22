@@ -1,0 +1,17 @@
+{
+  "name": "dependency-auditor",
+  "repo": "AdeptMind/pr-emojis-in-slack",
+  "path": ".claude/skills/dependency-auditor/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/AdeptMind/pr-emojis-in-slack",
+  "dir_name": "dependency-auditor-adeptmind-pr-emojis-in-slack",
+  "downloaded_at": "2026-03-22T04:47:30.757907Z",
+  "author": "AdeptMind",
+  "source_url": "https://github.com/AdeptMind/pr-emojis-in-slack/blob/main/.claude/skills/dependency-auditor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AdeptMind/pr-emojis-in-slack/blob/main/.claude/skills/dependency-auditor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

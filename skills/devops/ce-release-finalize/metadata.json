@@ -1,0 +1,17 @@
+{
+  "name": "ce-release-finalize",
+  "repo": "Moffran/calibrated_explanations",
+  "path": ".claude/skills/ce-release-finalize/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/Moffran/calibrated_explanations",
+  "dir_name": "ce-release-finalize",
+  "downloaded_at": "2026-03-22T05:51:37.437022Z",
+  "author": "Moffran",
+  "source_url": "https://github.com/Moffran/calibrated_explanations/blob/main/.claude/skills/ce-release-finalize/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Moffran/calibrated_explanations/blob/main/.claude/skills/ce-release-finalize/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

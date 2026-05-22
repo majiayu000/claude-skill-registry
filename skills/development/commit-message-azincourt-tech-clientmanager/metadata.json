@@ -1,0 +1,17 @@
+{
+  "name": "commit-message",
+  "repo": "Azincourt-tech/ClientManager",
+  "path": ".context/skills/commit-message/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/Azincourt-tech/ClientManager",
+  "dir_name": "commit-message-azincourt-tech-clientmanager",
+  "downloaded_at": "2026-03-22T04:56:26.461749Z",
+  "author": "Azincourt-tech",
+  "source_url": "https://github.com/Azincourt-tech/ClientManager/blob/master/.context/skills/commit-message/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Azincourt-tech/ClientManager/blob/master/.context/skills/commit-message/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

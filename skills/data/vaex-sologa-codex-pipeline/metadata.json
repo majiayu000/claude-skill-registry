@@ -1,0 +1,13 @@
+{
+  "name": "vaex",
+  "description": "研究 codex 使用 skill 生成 survey 這件事",
+  "repo": "Sologa/codex-pipeline",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".codex/skills/vaex",
+  "github_branch": "main",
+  "dir_name": "vaex-sologa-codex-pipeline",
+  "downloaded_at": "2026-02-05T01:45:42.300903Z"
+}

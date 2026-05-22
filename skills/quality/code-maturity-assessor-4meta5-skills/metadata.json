@@ -1,0 +1,20 @@
+{
+  "name": "code-maturity-assessor",
+  "description": "",
+  "repo": "4meta5/skills",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/4meta5/skills",
+  "github_path": "skills/code-maturity-assessor",
+  "github_branch": "main",
+  "dir_name": "code-maturity-assessor-4meta5-skills",
+  "downloaded_at": "2026-02-05T01:44:44.699003Z",
+  "author": "4meta5",
+  "source_url": "https://github.com/4meta5/skills/blob/main/skills/code-maturity-assessor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/4meta5/skills/blob/main/skills/code-maturity-assessor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

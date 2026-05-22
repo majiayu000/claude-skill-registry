@@ -1,0 +1,20 @@
+{
+  "name": "gog",
+  "description": "",
+  "repo": "charlie-818/CLAWD",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/charlie-818/CLAWD",
+  "github_path": "skills/gog",
+  "github_branch": "main",
+  "dir_name": "gog-charlie-818-clawd",
+  "downloaded_at": "2026-02-05T01:44:51.783483Z",
+  "author": "charlie-818",
+  "source_url": "https://github.com/charlie-818/CLAWD/blob/main/skills/gog/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Peter Steinberger",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

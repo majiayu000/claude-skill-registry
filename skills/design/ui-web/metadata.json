@@ -1,0 +1,18 @@
+{
+  "name": "ui-web",
+  "repo": "alinaqi/claude-bootstrap",
+  "path": "skills/ui-web/SKILL.md",
+  "source": "github.com/alinaqi/claude-bootstrap",
+  "downloaded_at": "2026-01-22T03:20:48.759933Z",
+  "dir_name": "ui-web",
+  "category": "design",
+  "github_path": "skills/ui-web",
+  "github_branch": "main",
+  "author": "alinaqi",
+  "source_url": "https://github.com/alinaqi/claude-bootstrap/blob/main/skills/ui-web/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ali Naqi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

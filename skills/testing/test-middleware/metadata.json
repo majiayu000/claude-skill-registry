@@ -1,0 +1,18 @@
+{
+  "name": "test-middleware",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/test-middleware/SKILL.md",
+  "source": "github.com/madooei/backend-template",
+  "downloaded_at": "2026-01-22T03:36:25.132331Z",
+  "dir_name": "test-middleware",
+  "category": "testing",
+  "github_path": ".claude/skills/test-middleware",
+  "github_branch": "main",
+  "author": "madooei",
+  "source_url": "https://github.com/madooei/backend-template/blob/main/.claude/skills/test-middleware/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/madooei/backend-template/blob/main/.claude/skills/test-middleware/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "commands",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/abstract/commands/test-skill.md",
+  "github_branch": "master",
+  "category": "testing",
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "commands-athola-claude-night-market-4",
+  "downloaded_at": "2026-03-02T01:17:20.303767Z",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/master/plugins/abstract/commands/test-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/athola/claude-night-market/blob/master/plugins/abstract/commands/test-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

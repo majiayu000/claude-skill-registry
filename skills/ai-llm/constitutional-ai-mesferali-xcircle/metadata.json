@@ -1,0 +1,16 @@
+{
+  "name": "constitutional-ai",
+  "repo": "MesferAli/XCircle",
+  "path": ".claude/skills/constitutional-ai/SKILL.md",
+  "category": "ai-llm",
+  "source": "github.com/MesferAli/XCircle",
+  "dir_name": "constitutional-ai-mesferali-xcircle",
+  "downloaded_at": "2026-02-15T05:28:02.099354Z",
+  "author": "MesferAli",
+  "source_url": "https://github.com/MesferAli/XCircle/blob/main/.claude/skills/constitutional-ai/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MesferAli/XCircle/blob/main/.claude/skills/constitutional-ai/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

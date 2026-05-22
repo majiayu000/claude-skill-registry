@@ -1,0 +1,17 @@
+{
+  "name": "tiledbvcf",
+  "repo": "K-Dense-AI/claude-scientific-skills",
+  "path": "scientific-skills/tiledbvcf/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/K-Dense-AI/claude-scientific-skills",
+  "dir_name": "tiledbvcf",
+  "downloaded_at": "2026-04-09T01:11:19.059357Z",
+  "author": "K-Dense-AI",
+  "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/scientific-skills/tiledbvcf/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/scientific-skills/tiledbvcf/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

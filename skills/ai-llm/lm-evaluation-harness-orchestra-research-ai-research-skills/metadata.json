@@ -1,0 +1,16 @@
+{
+  "name": "lm-evaluation-harness",
+  "repo": "Orchestra-Research/AI-research-SKILLs",
+  "path": "11-evaluation/lm-evaluation-harness/SKILL.md",
+  "source": "github.com/Orchestra-Research/AI-research-SKILLs",
+  "downloaded_at": "2026-02-02T03:05:33.915094Z",
+  "dir_name": "lm-evaluation-harness-orchestra-research-ai-research-skills",
+  "category": "ai-llm",
+  "author": "Orchestra-Research",
+  "source_url": "https://github.com/Orchestra-Research/AI-research-SKILLs/blob/main/11-evaluation/lm-evaluation-harness/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude AI Research Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

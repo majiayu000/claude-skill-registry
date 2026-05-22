@@ -1,0 +1,16 @@
+{
+  "name": "moai-alfred-dev-guide",
+  "repo": "AJBcoding/claude-skill-eval",
+  "path": "skills/moai-alfred-dev-guide/SKILL.md",
+  "source": "github.com/AJBcoding/claude-skill-eval",
+  "downloaded_at": "2026-01-29T08:59:19.117643Z",
+  "dir_name": "moai-alfred-dev-guide-ajbcoding-claude-skill-eval",
+  "category": "development",
+  "author": "AJBcoding",
+  "source_url": "https://github.com/AJBcoding/claude-skill-eval/blob/main/skills/moai-alfred-dev-guide/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AJBcoding/claude-skill-eval/blob/main/skills/moai-alfred-dev-guide/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

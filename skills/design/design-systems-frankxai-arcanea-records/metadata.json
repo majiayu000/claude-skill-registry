@@ -1,0 +1,17 @@
+{
+  "name": "design-systems",
+  "repo": "frankxai/arcanea-records",
+  "path": ".claude/skills/community/design-systems/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/frankxai/arcanea-records",
+  "dir_name": "design-systems-frankxai-arcanea-records",
+  "downloaded_at": "2026-03-01T07:47:00.699145Z",
+  "author": "frankxai",
+  "source_url": "https://github.com/frankxai/arcanea-records/blob/main/.claude/skills/community/design-systems/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/frankxai/arcanea-records/blob/main/.claude/skills/community/design-systems/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

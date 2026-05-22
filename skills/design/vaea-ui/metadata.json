@@ -1,0 +1,17 @@
+{
+  "name": "vaea-ui",
+  "repo": "CoralShades/acm-ai",
+  "path": ".claude/skills/vaea-ui/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/CoralShades/acm-ai",
+  "dir_name": "vaea-ui",
+  "downloaded_at": "2026-03-22T05:09:42.773490Z",
+  "author": "CoralShades",
+  "source_url": "https://github.com/CoralShades/acm-ai/blob/main/.claude/skills/vaea-ui/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CoralShades/acm-ai/blob/main/.claude/skills/vaea-ui/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

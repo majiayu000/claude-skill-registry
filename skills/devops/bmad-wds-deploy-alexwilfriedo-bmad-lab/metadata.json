@@ -1,0 +1,17 @@
+{
+  "name": "bmad-wds-deploy",
+  "repo": "Alexwilfriedo/bmad-lab",
+  "path": ".windsurf/skills/bmad-wds-deploy/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/Alexwilfriedo/bmad-lab",
+  "dir_name": "bmad-wds-deploy-alexwilfriedo-bmad-lab",
+  "downloaded_at": "2026-03-22T04:50:07.249425Z",
+  "author": "Alexwilfriedo",
+  "source_url": "https://github.com/Alexwilfriedo/bmad-lab/blob/main/.windsurf/skills/bmad-wds-deploy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Alexwilfriedo/bmad-lab/blob/main/.windsurf/skills/bmad-wds-deploy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

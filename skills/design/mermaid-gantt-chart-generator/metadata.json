@@ -1,0 +1,16 @@
+{
+  "name": "mermaid-gantt-chart-generator",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "skills/18-visual-content/mermaid-gantt-chart-generator/SKILL.md",
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "downloaded_at": "2026-02-01T01:40:16.777552Z",
+  "dir_name": "mermaid-gantt-chart-generator",
+  "category": "design",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/skills/18-visual-content/mermaid-gantt-chart-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "kaizen",
+  "description": "",
+  "repo": "byteworthy/Upstream",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/byteworthy/Upstream",
+  "github_path": ".agents/skills/kaizen",
+  "github_branch": "main",
+  "dir_name": "kaizen-byteworthy-upstream",
+  "downloaded_at": "2026-02-05T01:44:23.255379Z",
+  "author": "byteworthy",
+  "source_url": "https://github.com/byteworthy/Upstream/blob/main/.agents/skills/kaizen/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024-2026 ByteWorthy LLC. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

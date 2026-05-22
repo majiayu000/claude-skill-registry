@@ -1,0 +1,16 @@
+{
+  "name": "dspy-custom-module-design",
+  "repo": "OmidZamani/dspy-skills",
+  "path": "skills/dspy-custom-module-design/SKILL.md",
+  "source": "github.com/OmidZamani/dspy-skills",
+  "downloaded_at": "2026-02-02T03:25:52.970591Z",
+  "dir_name": "dspy-custom-module-design",
+  "category": "ai-llm",
+  "author": "OmidZamani",
+  "source_url": "https://github.com/OmidZamani/dspy-skills/blob/main/skills/dspy-custom-module-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Omid Zamani",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

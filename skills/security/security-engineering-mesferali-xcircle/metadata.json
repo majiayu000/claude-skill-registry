@@ -1,0 +1,16 @@
+{
+  "name": "security-engineering",
+  "repo": "MesferAli/XCircle",
+  "path": ".claude/skills/security-engineering/skill.md",
+  "category": "security",
+  "source": "github.com/MesferAli/XCircle",
+  "dir_name": "security-engineering-mesferali-xcircle",
+  "downloaded_at": "2026-02-15T05:27:58.919405Z",
+  "author": "MesferAli",
+  "source_url": "https://github.com/MesferAli/XCircle/blob/main/.claude/skills/security-engineering/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MesferAli/XCircle/blob/main/.claude/skills/security-engineering/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

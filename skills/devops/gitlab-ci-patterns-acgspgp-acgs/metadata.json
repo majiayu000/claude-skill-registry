@@ -1,0 +1,13 @@
+{
+  "name": "gitlab-ci-patterns",
+  "description": "",
+  "repo": "ACGSpgp/ACGS",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ACGSpgp/ACGS",
+  "github_path": ".agent/workflows/cicd-automation/1.2.1/skills/gitlab-ci-patterns",
+  "github_branch": "main",
+  "dir_name": "gitlab-ci-patterns-acgspgp-acgs",
+  "downloaded_at": "2026-02-05T05:40:32.991129Z"
+}

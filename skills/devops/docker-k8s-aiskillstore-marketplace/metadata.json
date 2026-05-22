@@ -1,0 +1,17 @@
+{
+  "name": "docker-k8s",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/azeem-2/docker-k8s/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "docker-k8s-aiskillstore-marketplace",
+  "downloaded_at": "2026-05-19T03:49:06.692907Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/azeem-2/docker-k8s/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/azeem-2/docker-k8s/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

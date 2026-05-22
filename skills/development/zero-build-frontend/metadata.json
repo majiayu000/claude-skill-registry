@@ -1,0 +1,17 @@
+{
+  "name": "zero-build-frontend",
+  "repo": "jamditis/claude-skills-journalism",
+  "path": "zero-build-frontend/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/jamditis/claude-skills-journalism",
+  "dir_name": "zero-build-frontend",
+  "downloaded_at": "2026-03-28T01:28:22.301133Z",
+  "author": "jamditis",
+  "source_url": "https://github.com/jamditis/claude-skills-journalism/blob/master/zero-build-frontend/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jamditis/claude-skills-journalism/blob/master/zero-build-frontend/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

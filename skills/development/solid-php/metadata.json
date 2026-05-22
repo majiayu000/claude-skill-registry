@@ -1,0 +1,16 @@
+{
+  "name": "solid-php",
+  "repo": "fusengine/agents",
+  "path": "plugins/laravel-expert/skills/solid-php/SKILL.md",
+  "source": "github.com/fusengine/agents",
+  "downloaded_at": "2026-02-02T01:10:27.748662Z",
+  "dir_name": "solid-php",
+  "category": "development",
+  "author": "fusengine",
+  "source_url": "https://github.com/fusengine/agents/blob/main/plugins/laravel-expert/skills/solid-php/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Fusengine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "trpc-api",
+  "repo": "fgarofalo56/Suppercharge_Microsoft_Fabric",
+  "path": ".github/skills/trpc-api/SKILL.md",
+  "source": "github.com/fgarofalo56/Suppercharge_Microsoft_Fabric",
+  "downloaded_at": "2026-01-29T07:13:20.127337Z",
+  "dir_name": "trpc-api",
+  "category": "development",
+  "author": "fgarofalo56",
+  "source_url": "https://github.com/fgarofalo56/Suppercharge_Microsoft_Fabric/blob/main/.github/skills/trpc-api/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Francisco Garcia",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

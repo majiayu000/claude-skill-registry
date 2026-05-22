@@ -1,0 +1,16 @@
+{
+  "name": "embedding-strategies",
+  "repo": "ccf/claude-code-ccf-marketplace",
+  "path": "plugins/llm-application-dev/skills/embedding-strategies/SKILL.md",
+  "source": "github.com/ccf/claude-code-ccf-marketplace",
+  "downloaded_at": "2026-02-02T05:11:54.215299Z",
+  "dir_name": "embedding-strategies-ccf-claude-code-ccf-mark",
+  "category": "ai-ml",
+  "author": "ccf",
+  "source_url": "https://github.com/ccf/claude-code-ccf-marketplace/blob/main/plugins/llm-application-dev/skills/embedding-strategies/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Seth Hobson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

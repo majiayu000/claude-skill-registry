@@ -1,0 +1,16 @@
+{
+  "name": "ml-engineer",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/ml-engineer/SKILL.md",
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "downloaded_at": "2026-02-02T04:36:24.611996Z",
+  "dir_name": "ml-engineer-majiayu000-claude-skill-registr",
+  "category": "ai-ml",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/ml-engineer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

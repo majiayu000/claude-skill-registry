@@ -1,0 +1,18 @@
+{
+  "name": "execute-tasks",
+  "repo": "Brownbull/taskflow",
+  "path": ".claude/skills/core/execute-tasks/skill.md",
+  "source": "github.com/Brownbull/taskflow",
+  "downloaded_at": "2026-01-22T03:49:10.117038Z",
+  "dir_name": "execute-tasks-brownbull-taskflow-3568e83e",
+  "category": "development",
+  "github_path": ".claude/skills/core/execute-tasks",
+  "github_branch": "main",
+  "author": "Brownbull",
+  "source_url": "https://github.com/Brownbull/taskflow/blob/main/.claude/skills/core/execute-tasks/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Brownbull/taskflow/blob/main/.claude/skills/core/execute-tasks/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "embedded-debug",
+  "repo": "FastLED/FastLED",
+  "path": ".claude/skills/embedded-debug/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/FastLED/FastLED",
+  "dir_name": "embedded-debug",
+  "downloaded_at": "2026-03-22T05:20:30.112439Z",
+  "author": "FastLED",
+  "source_url": "https://github.com/FastLED/FastLED/blob/master/.claude/skills/embedded-debug/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/FastLED/FastLED/blob/master/.claude/skills/embedded-debug/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

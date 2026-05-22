@@ -1,0 +1,17 @@
+{
+  "name": "ts-sdk-client",
+  "repo": "aptos-labs/aptos-agent-skills",
+  "path": "skills/sdk/typescript/ts-sdk-client/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/aptos-labs/aptos-agent-skills",
+  "dir_name": "ts-sdk-client",
+  "downloaded_at": "2026-03-22T07:00:25.119373Z",
+  "author": "aptos-labs",
+  "source_url": "https://github.com/aptos-labs/aptos-agent-skills/blob/main/skills/sdk/typescript/ts-sdk-client/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aptos-labs/aptos-agent-skills/blob/main/skills/sdk/typescript/ts-sdk-client/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

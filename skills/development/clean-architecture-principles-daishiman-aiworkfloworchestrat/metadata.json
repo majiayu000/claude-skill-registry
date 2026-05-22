@@ -1,0 +1,18 @@
+{
+  "name": "clean-architecture-principles",
+  "repo": "daishiman/AIWorkflowOrchestrator",
+  "path": "docs/99-claude/skills/clean-architecture-principles/SKILL.md",
+  "source": "github.com/daishiman/AIWorkflowOrchestrator",
+  "downloaded_at": "2026-01-22T01:26:17.933229Z",
+  "dir_name": "clean-architecture-principles-daishiman-aiworkfloworchestrat",
+  "category": "development",
+  "github_path": "docs/99-claude/skills/clean-architecture-principles",
+  "github_branch": "main",
+  "author": "daishiman",
+  "source_url": "https://github.com/daishiman/AIWorkflowOrchestrator/blob/main/docs/99-claude/skills/clean-architecture-principles/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/daishiman/AIWorkflowOrchestrator/blob/main/docs/99-claude/skills/clean-architecture-principles/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

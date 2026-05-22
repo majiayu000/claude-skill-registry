@@ -1,0 +1,13 @@
+{
+  "name": "code-quality-check",
+  "description": "",
+  "repo": "KyteApp/growth-agents-and-skills",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KyteApp/growth-agents-and-skills",
+  "github_path": ".github/skills/code-quality-check",
+  "github_branch": "main",
+  "dir_name": "code-quality-check",
+  "downloaded_at": "2026-02-05T01:44:29.720110Z"
+}

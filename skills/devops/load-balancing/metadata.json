@@ -1,0 +1,18 @@
+{
+  "name": "load-balancing",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "15-devops-infrastructure/load-balancing/SKILL.md",
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "downloaded_at": "2026-01-20T02:40:46.755466Z",
+  "dir_name": "load-balancing",
+  "category": "devops",
+  "github_path": "15-devops-infrastructure/load-balancing",
+  "github_branch": "main",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/cerebratechai-claude-skills/blob/main/15-devops-infrastructure/load-balancing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

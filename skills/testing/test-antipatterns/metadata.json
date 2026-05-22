@@ -1,0 +1,16 @@
+{
+  "name": "test-antipatterns",
+  "repo": "manastalukdar/claude-devstudio",
+  "path": "skills/test-antipatterns/SKILL.md",
+  "source": "github.com/manastalukdar/claude-devstudio",
+  "downloaded_at": "2026-02-02T03:11:59.158429Z",
+  "dir_name": "test-antipatterns",
+  "category": "testing",
+  "author": "manastalukdar",
+  "source_url": "https://github.com/manastalukdar/claude-devstudio/blob/main/skills/test-antipatterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brenner Cruvinel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

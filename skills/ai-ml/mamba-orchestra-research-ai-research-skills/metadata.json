@@ -1,0 +1,17 @@
+{
+  "name": "mamba",
+  "repo": "Orchestra-Research/AI-Research-SKILLs",
+  "path": "01-model-architecture/mamba/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-ml",
+  "source": "github.com/Orchestra-Research/AI-Research-SKILLs",
+  "dir_name": "mamba-orchestra-research-ai-research-skills",
+  "downloaded_at": "2026-05-20T03:45:25.740589Z",
+  "author": "Orchestra-Research",
+  "source_url": "https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/01-model-architecture/mamba/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/01-model-architecture/mamba/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

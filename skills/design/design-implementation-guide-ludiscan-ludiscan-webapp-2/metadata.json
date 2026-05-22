@@ -1,0 +1,16 @@
+{
+  "name": "design-implementation-guide",
+  "repo": "ludiscan/ludiscan-webapp",
+  "path": ".claude/skills/design-implementation-guide/SKILL.md",
+  "source": "github.com/ludiscan/ludiscan-webapp",
+  "downloaded_at": "2026-01-29T07:41:37.399722Z",
+  "dir_name": "design-implementation-guide-ludiscan-ludiscan-webapp-2",
+  "category": "design",
+  "author": "ludiscan",
+  "source_url": "https://github.com/ludiscan/ludiscan-webapp/blob/main/.claude/skills/design-implementation-guide/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 yuhi yamane",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

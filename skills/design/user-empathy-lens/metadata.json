@@ -1,0 +1,17 @@
+{
+  "name": "user-empathy-lens",
+  "repo": "JasonWarrenUK/claude-code-config",
+  "path": "skills/user-empathy-lens/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/JasonWarrenUK/claude-code-config",
+  "dir_name": "user-empathy-lens",
+  "downloaded_at": "2026-03-03T01:10:06.479317Z",
+  "author": "JasonWarrenUK",
+  "source_url": "https://github.com/JasonWarrenUK/claude-code-config/blob/main/skills/user-empathy-lens/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JasonWarrenUK/claude-code-config/blob/main/skills/user-empathy-lens/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "vcp-pre-commit-review",
+  "repo": "Z-M-Huang/vcp",
+  "path": "plugins/vcp/skills/vcp-pre-commit-review/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/Z-M-Huang/vcp",
+  "dir_name": "vcp-pre-commit-review",
+  "downloaded_at": "2026-03-22T06:35:22.842645Z",
+  "author": "Z-M-Huang",
+  "source_url": "https://github.com/Z-M-Huang/vcp/blob/main/plugins/vcp/skills/vcp-pre-commit-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Z-M-Huang/vcp/blob/main/plugins/vcp/skills/vcp-pre-commit-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

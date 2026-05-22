@@ -1,0 +1,17 @@
+{
+  "name": "gen-stage",
+  "repo": "agnaldo4j/kanban_vision_api_iex",
+  "path": ".claude/skills/gen-stage/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/agnaldo4j/kanban_vision_api_iex",
+  "dir_name": "gen-stage",
+  "downloaded_at": "2026-03-22T06:43:56.685760Z",
+  "author": "agnaldo4j",
+  "source_url": "https://github.com/agnaldo4j/kanban_vision_api_iex/blob/main/.claude/skills/gen-stage/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agnaldo4j/kanban_vision_api_iex/blob/main/.claude/skills/gen-stage/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

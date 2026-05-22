@@ -1,0 +1,17 @@
+{
+  "name": "dev-browser",
+  "repo": "wrsmith108/dev-browser-claude-skill",
+  "path": "skills/dev-browser/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/wrsmith108/dev-browser-claude-skill",
+  "dir_name": "dev-browser-wrsmith108-dev-browser-claude-s",
+  "downloaded_at": "2026-03-19T01:42:46.648985Z",
+  "author": "wrsmith108",
+  "source_url": "https://github.com/wrsmith108/dev-browser-claude-skill/blob/main/skills/dev-browser/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wrsmith108/dev-browser-claude-skill/blob/main/skills/dev-browser/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

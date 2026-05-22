@@ -1,0 +1,13 @@
+{
+  "name": "release-management",
+  "description": "My own Linux environment",
+  "repo": "oehm-smith/linux-env",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": "HOME/.claude/skills/crosscutting/configuration/release_management",
+  "github_branch": "master",
+  "dir_name": "release-management",
+  "downloaded_at": "2026-02-05T01:45:49.167965Z"
+}

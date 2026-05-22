@@ -1,0 +1,16 @@
+{
+  "name": "mood-board-builder",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/design-creative/skills/mood-board-builder/SKILL.md",
+  "source": "github.com/gtmagents/gtm-agents",
+  "downloaded_at": "2026-02-02T02:59:23.179488Z",
+  "dir_name": "mood-board-builder",
+  "category": "design",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/design-creative/skills/mood-board-builder/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gtmagents/gtm-agents/blob/main/plugins/design-creative/skills/mood-board-builder/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

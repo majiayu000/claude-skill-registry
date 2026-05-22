@@ -1,0 +1,16 @@
+{
+  "name": "feature-flag-system",
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/feature-flag-system/SKILL.md",
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "downloaded_at": "2026-02-02T02:03:47.185296Z",
+  "dir_name": "feature-flag-system",
+  "category": "devops",
+  "author": "aj-geddes",
+  "source_url": "https://github.com/aj-geddes/useful-ai-prompts/blob/main/skills/feature-flag-system/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AJ Geddes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

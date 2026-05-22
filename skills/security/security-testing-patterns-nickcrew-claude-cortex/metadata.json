@@ -1,0 +1,16 @@
+{
+  "name": "security-testing-patterns",
+  "repo": "NickCrew/claude-cortex",
+  "path": "skills/security-testing-patterns/SKILL.md",
+  "source": "github.com/NickCrew/claude-cortex",
+  "downloaded_at": "2026-02-02T03:43:51.312728Z",
+  "dir_name": "security-testing-patterns-nickcrew-claude-cortex",
+  "category": "security",
+  "author": "NickCrew",
+  "source_url": "https://github.com/NickCrew/claude-cortex/blob/main/skills/security-testing-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nicholas Ferguson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

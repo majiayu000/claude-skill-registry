@@ -1,0 +1,16 @@
+{
+  "name": "ts-strict-guardian",
+  "repo": "EtroxTaran/conductor",
+  "path": ".claude/skills/ts-strict-guardian/SKILL.md",
+  "source": "github.com/EtroxTaran/conductor",
+  "downloaded_at": "2026-02-02T02:12:16.976788Z",
+  "dir_name": "ts-strict-guardian",
+  "category": "development",
+  "author": "EtroxTaran",
+  "source_url": "https://github.com/EtroxTaran/conductor/blob/main/.claude/skills/ts-strict-guardian/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 EtroxTaran",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

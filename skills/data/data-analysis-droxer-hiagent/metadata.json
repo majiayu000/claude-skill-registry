@@ -1,0 +1,17 @@
+{
+  "name": "data-analysis",
+  "repo": "droxer/HiAgent",
+  "path": "backend/agent/skills/bundled/data-analysis/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/droxer/HiAgent",
+  "dir_name": "data-analysis-droxer-hiagent",
+  "downloaded_at": "2026-03-22T07:49:44.874527Z",
+  "author": "droxer",
+  "source_url": "https://github.com/droxer/HiAgent/blob/main/backend/agent/skills/bundled/data-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/droxer/HiAgent/blob/main/backend/agent/skills/bundled/data-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

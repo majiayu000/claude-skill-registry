@@ -1,0 +1,18 @@
+{
+  "name": "database-schema",
+  "repo": "alinaqi/claude-bootstrap",
+  "path": "skills/database-schema/SKILL.md",
+  "source": "github.com/alinaqi/claude-bootstrap",
+  "downloaded_at": "2026-01-22T03:20:51.482259Z",
+  "dir_name": "database-schema-alinaqi-claude-bootstrap",
+  "category": "data",
+  "github_path": "skills/database-schema",
+  "github_branch": "main",
+  "author": "alinaqi",
+  "source_url": "https://github.com/alinaqi/claude-bootstrap/blob/main/skills/database-schema/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ali Naqi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

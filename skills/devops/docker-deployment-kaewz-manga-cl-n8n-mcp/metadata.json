@@ -1,0 +1,13 @@
+{
+  "name": "docker-deployment",
+  "description": "",
+  "repo": "kaewz-manga/cl-n8n-mcp",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kaewz-manga/cl-n8n-mcp",
+  "github_path": ".claude/skills/docker-deployment",
+  "github_branch": "main",
+  "dir_name": "docker-deployment-kaewz-manga-cl-n8n-mcp",
+  "downloaded_at": "2026-02-05T01:44:44.587493Z"
+}

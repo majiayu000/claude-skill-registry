@@ -1,0 +1,11 @@
+{
+  "name": "database-versioning",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/database-versioning/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:10.885227Z",
+  "dir_name": "database-versioning",
+  "category": "data",
+  "github_path": "skills/database-versioning",
+  "github_branch": "main"
+}

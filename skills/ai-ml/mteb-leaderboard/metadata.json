@@ -1,0 +1,18 @@
+{
+  "name": "mteb-leaderboard",
+  "repo": "letta-ai/skills",
+  "path": "letta/benchmarks/trajectory-feedback/mteb-leaderboard/SKILL.md",
+  "source": "github.com/letta-ai/skills",
+  "downloaded_at": "2026-01-14T00:54:37.867871Z",
+  "dir_name": "mteb-leaderboard",
+  "category": "ai-ml",
+  "github_path": "letta/benchmarks/trajectory-only/mteb-leaderboard",
+  "github_branch": "main",
+  "author": "letta-ai",
+  "source_url": "https://github.com/letta-ai/skills/blob/main/letta/benchmarks/trajectory-only/mteb-leaderboard/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/letta-ai/skills/blob/main/letta/benchmarks/trajectory-only/mteb-leaderboard/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

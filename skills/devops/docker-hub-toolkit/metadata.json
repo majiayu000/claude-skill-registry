@@ -1,0 +1,16 @@
+{
+  "name": "docker-hub-toolkit",
+  "repo": "alijilani-dev/Claude",
+  "path": "skills/docker-hub-toolkit/SKILL.md",
+  "source": "github.com/alijilani-dev/Claude",
+  "downloaded_at": "2026-01-27T01:28:43.581678Z",
+  "dir_name": "docker-hub-toolkit",
+  "category": "devops",
+  "author": "alijilani-dev",
+  "source_url": "https://github.com/alijilani-dev/Claude/blob/main/skills/docker-hub-toolkit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alijilani-dev/Claude/blob/main/skills/docker-hub-toolkit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "deployment-pipeline-design",
+  "description": "",
+  "repo": "ACGSpgp/ACGS",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ACGSpgp/ACGS",
+  "github_path": ".agent/workflows/cicd-automation/1.2.1/skills/deployment-pipeline-design",
+  "github_branch": "main",
+  "dir_name": "deployment-pipeline-design-acgspgp-acgs",
+  "downloaded_at": "2026-02-05T05:40:33.068453Z"
+}

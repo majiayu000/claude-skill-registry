@@ -1,0 +1,17 @@
+{
+  "name": "maui-gestures",
+  "repo": "davidortinau/maui-skills",
+  "path": "plugins/maui-skills/skills/maui-gestures/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/davidortinau/maui-skills",
+  "dir_name": "maui-gestures",
+  "downloaded_at": "2026-03-01T07:23:50.665561Z",
+  "author": "davidortinau",
+  "source_url": "https://github.com/davidortinau/maui-skills/blob/main/plugins/maui-skills/skills/maui-gestures/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/davidortinau/maui-skills/blob/main/plugins/maui-skills/skills/maui-gestures/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

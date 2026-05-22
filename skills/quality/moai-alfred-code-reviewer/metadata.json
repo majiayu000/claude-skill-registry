@@ -1,0 +1,9 @@
+{
+  "name": "moai-alfred-code-reviewer",
+  "repo": "dolsoon/my-awesome-project",
+  "path": ".claude/skills/moai-alfred-code-reviewer/SKILL.md",
+  "source": "github.com/dolsoon/my-awesome-project",
+  "downloaded_at": "2026-02-02T04:00:42.266148Z",
+  "dir_name": "moai-alfred-code-reviewer",
+  "category": "quality"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "seo",
+  "repo": "adscorp100/mdhomecarebuild",
+  "path": ".claude/skills/seo/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/adscorp100/mdhomecarebuild",
+  "dir_name": "seo-adscorp100-mdhomecarebuild",
+  "downloaded_at": "2026-03-01T06:28:15.104608Z",
+  "author": "adscorp100",
+  "source_url": "https://github.com/adscorp100/mdhomecarebuild/blob/main/.claude/skills/seo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adscorp100/mdhomecarebuild/blob/main/.claude/skills/seo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

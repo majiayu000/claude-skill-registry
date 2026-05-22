@@ -1,0 +1,11 @@
+{
+  "name": "grpc-python",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/grpc-python/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:15.616166Z",
+  "dir_name": "grpc-python",
+  "category": "development",
+  "github_path": "skills/grpc-python",
+  "github_branch": "main"
+}

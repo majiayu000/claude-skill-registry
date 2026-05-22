@@ -1,0 +1,18 @@
+{
+  "name": "config-env-conventions",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "64-meta-standards/config-env-conventions/SKILL.md",
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "downloaded_at": "2026-01-20T02:40:46.864472Z",
+  "dir_name": "config-env-conventions",
+  "category": "devops",
+  "github_path": "64-meta-standards/config-env-conventions",
+  "github_branch": "main",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/cerebratechai-claude-skills/blob/main/64-meta-standards/config-env-conventions/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

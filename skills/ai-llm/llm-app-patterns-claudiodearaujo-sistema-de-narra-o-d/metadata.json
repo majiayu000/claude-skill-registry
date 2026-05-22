@@ -1,0 +1,16 @@
+{
+  "name": "llm-app-patterns",
+  "repo": "claudiodearaujo/Sistema-de-narra-o-de-livro",
+  "path": ".claude/skills/llm-app-patterns/SKILL.md",
+  "source": "github.com/claudiodearaujo/Sistema-de-narra-o-de-livro",
+  "downloaded_at": "2026-02-02T04:45:41.260015Z",
+  "dir_name": "llm-app-patterns-claudiodearaujo-sistema-de-narra-o-d",
+  "category": "ai-llm",
+  "author": "claudiodearaujo",
+  "source_url": "https://github.com/claudiodearaujo/Sistema-de-narra-o-de-livro/blob/main/.claude/skills/llm-app-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/claudiodearaujo/Sistema-de-narra-o-de-livro/blob/main/.claude/skills/llm-app-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

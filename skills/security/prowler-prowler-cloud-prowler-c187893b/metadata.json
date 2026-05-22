@@ -1,0 +1,16 @@
+{
+  "name": "prowler",
+  "repo": "prowler-cloud/prowler",
+  "path": "skills/prowler/SKILL.md",
+  "source": "github.com/prowler-cloud/prowler",
+  "downloaded_at": "2026-01-29T07:09:50.064472Z",
+  "dir_name": "prowler-prowler-cloud-prowler-c187893b",
+  "category": "security",
+  "author": "prowler-cloud",
+  "source_url": "https://github.com/prowler-cloud/prowler/blob/main/skills/prowler/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/prowler-cloud/prowler/blob/main/skills/prowler/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

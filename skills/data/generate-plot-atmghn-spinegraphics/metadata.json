@@ -1,0 +1,17 @@
+{
+  "name": "generate-plot",
+  "repo": "atmghn/SpineGraphics",
+  "path": ".claude/skills/generate-plot/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/atmghn/SpineGraphics",
+  "dir_name": "generate-plot-atmghn-spinegraphics",
+  "downloaded_at": "2026-03-22T07:05:05.576197Z",
+  "author": "atmghn",
+  "source_url": "https://github.com/atmghn/SpineGraphics/blob/main/.claude/skills/generate-plot/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/atmghn/SpineGraphics/blob/main/.claude/skills/generate-plot/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

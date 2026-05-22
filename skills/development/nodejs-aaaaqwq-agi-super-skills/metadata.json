@@ -1,0 +1,20 @@
+{
+  "name": "nodejs",
+  "description": "",
+  "repo": "aAAaqwq/AGI-Super-Skills",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aAAaqwq/AGI-Super-Skills",
+  "github_path": "backend-development/nodejs",
+  "github_branch": "master",
+  "dir_name": "nodejs-aaaaqwq-agi-super-skills",
+  "downloaded_at": "2026-02-05T01:45:00.233066Z",
+  "author": "aAAaqwq",
+  "source_url": "https://github.com/aAAaqwq/AGI-Super-Skills/blob/master/backend-development/nodejs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 AGI Super Team Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

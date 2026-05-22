@@ -1,0 +1,17 @@
+{
+  "name": "implement-task",
+  "repo": "corbanb/x4-mono",
+  "path": ".claude/skills/implement-task/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/corbanb/x4-mono",
+  "dir_name": "implement-task-corbanb-x4-mono",
+  "downloaded_at": "2026-03-01T07:17:16.835907Z",
+  "author": "corbanb",
+  "source_url": "https://github.com/corbanb/x4-mono/blob/main/.claude/skills/implement-task/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/corbanb/x4-mono/blob/main/.claude/skills/implement-task/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

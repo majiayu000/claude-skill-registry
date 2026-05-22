@@ -1,0 +1,18 @@
+{
+  "name": "identity-auth",
+  "repo": "FlexNetOS/ripple-env",
+  "path": ".claude/skills/identity-auth/SKILL.md",
+  "source": "github.com/FlexNetOS/ripple-env",
+  "downloaded_at": "2026-01-22T03:14:18.578115Z",
+  "dir_name": "identity-auth",
+  "category": "security",
+  "github_path": ".claude/skills/identity-auth",
+  "github_branch": "main",
+  "author": "FlexNetOS",
+  "source_url": "https://github.com/FlexNetOS/ripple-env/blob/main/.claude/skills/identity-auth/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Gustavo Widman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

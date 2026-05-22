@@ -1,0 +1,16 @@
+{
+  "name": "doc-workflow",
+  "repo": "TokenRollAI/cc-plugin",
+  "path": "skills/doc-workflow/SKILL.md",
+  "source": "github.com/TokenRollAI/cc-plugin",
+  "downloaded_at": "2026-02-02T05:02:16.296255Z",
+  "dir_name": "doc-workflow",
+  "category": "documents",
+  "author": "TokenRollAI",
+  "source_url": "https://github.com/TokenRollAI/cc-plugin/blob/main/skills/doc-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TokenRollAI/cc-plugin/blob/main/skills/doc-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

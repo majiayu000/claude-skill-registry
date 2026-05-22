@@ -1,0 +1,17 @@
+{
+  "name": "create-spring-boot-java-project",
+  "repo": "christophacham/agent-skills-library",
+  "path": "skills/backend-dev/create-spring-boot-java-project/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/christophacham/agent-skills-library",
+  "dir_name": "create-spring-boot-java-project",
+  "downloaded_at": "2026-03-22T07:28:00.129645Z",
+  "author": "christophacham",
+  "source_url": "https://github.com/christophacham/agent-skills-library/blob/main/skills/backend-dev/create-spring-boot-java-project/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/christophacham/agent-skills-library/blob/main/skills/backend-dev/create-spring-boot-java-project/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

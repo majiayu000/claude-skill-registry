@@ -1,0 +1,17 @@
+{
+  "name": "inference",
+  "repo": "FlexNetOS/ripple-env",
+  "path": ".claude/skills/inference/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-ml",
+  "source": "github.com/FlexNetOS/ripple-env",
+  "dir_name": "inference-flexnetos-ripple-env-3",
+  "downloaded_at": "2026-03-22T05:20:51.696195Z",
+  "author": "FlexNetOS",
+  "source_url": "https://github.com/FlexNetOS/ripple-env/blob/main/.claude/skills/inference/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/FlexNetOS/ripple-env/blob/main/.claude/skills/inference/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

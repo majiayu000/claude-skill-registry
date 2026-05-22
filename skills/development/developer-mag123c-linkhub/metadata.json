@@ -1,0 +1,18 @@
+{
+  "name": "developer",
+  "repo": "mag123c/linkhub",
+  "path": ".claude/skills/developer/SKILL.md",
+  "source": "github.com/mag123c/linkhub",
+  "downloaded_at": "2026-01-22T03:21:59.829878Z",
+  "dir_name": "developer-mag123c-linkhub",
+  "category": "development",
+  "github_path": ".claude/skills/developer",
+  "github_branch": "main",
+  "author": "mag123c",
+  "source_url": "https://github.com/mag123c/linkhub/blob/main/.claude/skills/developer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mag123c/linkhub/blob/main/.claude/skills/developer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

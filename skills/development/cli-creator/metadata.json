@@ -1,0 +1,16 @@
+{
+  "name": "cli-creator",
+  "repo": "evanfang0054/cc-system-creator-scripts",
+  "path": "skills/cli-creator/SKILL.md",
+  "source": "github.com/evanfang0054/cc-system-creator-scripts",
+  "downloaded_at": "2026-02-02T01:39:38.428456Z",
+  "dir_name": "cli-creator",
+  "category": "development",
+  "author": "evanfang0054",
+  "source_url": "https://github.com/evanfang0054/cc-system-creator-scripts/blob/main/skills/cli-creator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Evan Fang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "code-auditing",
+  "repo": "VidyFoo/antigravity-skill-engine",
+  "path": ".agent/skills/2-audit/code-auditing/SKILL.md",
+  "source": "github.com/VidyFoo/antigravity-skill-engine",
+  "downloaded_at": "2026-01-22T03:47:04.915550Z",
+  "dir_name": "code-auditing",
+  "category": "quality",
+  "github_path": ".agent/skills/2-audit/code-auditing",
+  "github_branch": "main",
+  "author": "VidyFoo",
+  "source_url": "https://github.com/VidyFoo/antigravity-skill-engine/blob/main/.agent/skills/2-audit/code-auditing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity Lab",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

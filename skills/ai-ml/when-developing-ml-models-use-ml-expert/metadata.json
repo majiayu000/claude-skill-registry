@@ -1,0 +1,16 @@
+{
+  "name": "when-developing-ml-models-use-ml-expert",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/machine-learning/when-developing-ml-models-use-ml-expert/SKILL.md",
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "downloaded_at": "2026-02-02T02:50:05.553942Z",
+  "dir_name": "when-developing-ml-models-use-ml-expert",
+  "category": "ai-ml",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/machine-learning/when-developing-ml-models-use-ml-expert/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

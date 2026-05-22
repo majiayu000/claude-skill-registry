@@ -1,0 +1,18 @@
+{
+  "name": "gmail",
+  "description": "Read and search Gmail emails. Check inbox, search messages, and view email threads.",
+  "repo": "tbroadley/dotfiles",
+  "path": "claude/skills/gmail",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tbroadley/dotfiles",
+  "dir_name": "gmail-tbroadley-dotfiles-2",
+  "author": "tbroadley",
+  "source_url": "https://github.com/tbroadley/dotfiles/blob/main/claude/skills/gmail/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tbroadley/dotfiles/blob/main/claude/skills/gmail/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

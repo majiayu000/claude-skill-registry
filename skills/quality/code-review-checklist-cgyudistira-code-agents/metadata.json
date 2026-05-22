@@ -1,0 +1,20 @@
+{
+  "name": "code-review-checklist",
+  "description": "",
+  "repo": "cgyudistira/code-agents",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cgyudistira/code-agents",
+  "github_path": "skills/code-review-checklist",
+  "github_branch": "main",
+  "dir_name": "code-review-checklist-cgyudistira-code-agents",
+  "downloaded_at": "2026-02-05T05:34:10.405366Z",
+  "author": "cgyudistira",
+  "source_url": "https://github.com/cgyudistira/code-agents/blob/main/skills/code-review-checklist/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

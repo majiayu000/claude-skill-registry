@@ -1,0 +1,16 @@
+{
+  "name": "quality-standards",
+  "repo": "Git-Fg/meta-plugin-manager",
+  "path": ".claude/skills/quality-standards/SKILL.md",
+  "source": "github.com/Git-Fg/meta-plugin-manager",
+  "downloaded_at": "2026-01-29T08:24:27.306068Z",
+  "dir_name": "quality-standards-git-fg-meta-plugin-manager",
+  "category": "quality",
+  "author": "Git-Fg",
+  "source_url": "https://github.com/Git-Fg/meta-plugin-manager/blob/main/.claude/skills/quality-standards/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Git-Fg/meta-plugin-manager/blob/main/.claude/skills/quality-standards/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

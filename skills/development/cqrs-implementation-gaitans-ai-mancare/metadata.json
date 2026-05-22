@@ -1,0 +1,16 @@
+{
+  "name": "cqrs-implementation",
+  "repo": "GaitanS/AI-Mancare",
+  "path": ".claude/skills/plugins/backend-development/skills/cqrs-implementation/SKILL.md",
+  "source": "github.com/GaitanS/AI-Mancare",
+  "downloaded_at": "2026-01-29T08:56:18.755918Z",
+  "dir_name": "cqrs-implementation-gaitans-ai-mancare",
+  "category": "development",
+  "author": "GaitanS",
+  "source_url": "https://github.com/GaitanS/AI-Mancare/blob/main/.claude/skills/plugins/backend-development/skills/cqrs-implementation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GaitanS/AI-Mancare/blob/main/.claude/skills/plugins/backend-development/skills/cqrs-implementation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

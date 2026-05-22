@@ -1,0 +1,16 @@
+{
+  "name": "visual-testing-advanced",
+  "repo": "proffesor-for-testing/sentinel-api-testing",
+  "path": ".claude/skills/visual-testing-advanced/SKILL.md",
+  "source": "github.com/proffesor-for-testing/sentinel-api-testing",
+  "downloaded_at": "2026-01-29T07:07:40.296231Z",
+  "dir_name": "visual-testing-advanced-proffesor-for-testin-sentinel-api-testing",
+  "category": "testing",
+  "author": "proffesor-for-testing",
+  "source_url": "https://github.com/proffesor-for-testing/sentinel-api-testing/blob/main/.claude/skills/visual-testing-advanced/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sentinel API Testing Platform",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

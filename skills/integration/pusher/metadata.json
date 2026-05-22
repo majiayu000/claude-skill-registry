@@ -1,0 +1,18 @@
+{
+  "name": "pusher",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/skills/pusher/SKILL.md",
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "downloaded_at": "2026-01-22T03:54:17.681873Z",
+  "dir_name": "pusher",
+  "category": "integration",
+  "github_path": "plugins/goodvibes/skills/webdev/skills/pusher",
+  "github_branch": "main",
+  "author": "mgd34msu",
+  "source_url": "https://github.com/mgd34msu/goodvibes-plugin/blob/main/plugins/goodvibes/skills/webdev/skills/pusher/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 GoodVibes Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

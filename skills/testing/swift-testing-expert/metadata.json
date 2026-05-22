@@ -1,0 +1,17 @@
+{
+  "name": "swift-testing-expert",
+  "repo": "AvdLee/Swift-Testing-Agent-Skill",
+  "path": "swift-testing-expert/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/AvdLee/Swift-Testing-Agent-Skill",
+  "dir_name": "swift-testing-expert",
+  "downloaded_at": "2026-03-22T04:56:04.665889Z",
+  "author": "AvdLee",
+  "source_url": "https://github.com/AvdLee/Swift-Testing-Agent-Skill/blob/main/swift-testing-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AvdLee/Swift-Testing-Agent-Skill/blob/main/swift-testing-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

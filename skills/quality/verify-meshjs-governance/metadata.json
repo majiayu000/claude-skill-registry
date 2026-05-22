@@ -1,0 +1,17 @@
+{
+  "name": "verify",
+  "repo": "MeshJS/governance",
+  "path": ".claude/skills/verify/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/MeshJS/governance",
+  "dir_name": "verify-meshjs-governance",
+  "downloaded_at": "2026-03-01T05:42:35.744372Z",
+  "author": "MeshJS",
+  "source_url": "https://github.com/MeshJS/governance/blob/main/.claude/skills/verify/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MeshJS/governance/blob/main/.claude/skills/verify/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

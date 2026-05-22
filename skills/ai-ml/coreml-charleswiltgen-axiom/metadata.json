@@ -1,0 +1,18 @@
+{
+  "name": "coreml",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-ios-ml/coreml/SKILL.md",
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "downloaded_at": "2026-01-17T03:32:51.493308Z",
+  "dir_name": "coreml-charleswiltgen-axiom",
+  "category": "ai-ml",
+  "github_path": ".claude-plugin/plugins/axiom/skills/axiom-ios-ml/coreml-diag",
+  "github_branch": "main",
+  "author": "CharlesWiltgen",
+  "source_url": "https://github.com/CharlesWiltgen/Axiom/blob/main/.claude-plugin/plugins/axiom/skills/axiom-ios-ml/coreml-diag/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Charles Wiltgen",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "coding-best-practices",
+  "repo": "rshankras/claude-code-apple-skills",
+  "path": "skills/macos/coding-best-practices/skill.md",
+  "source": "github.com/rshankras/claude-code-apple-skills",
+  "downloaded_at": "2026-01-14T02:22:10.325541Z",
+  "dir_name": "coding-best-practices-rshankras-claude-code-apple-sk",
+  "category": "development",
+  "github_path": "skills/macos/coding-best-practices",
+  "github_branch": "main",
+  "author": "rshankras",
+  "source_url": "https://github.com/rshankras/claude-code-apple-skills/blob/main/skills/macos/coding-best-practices/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ravishankar",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

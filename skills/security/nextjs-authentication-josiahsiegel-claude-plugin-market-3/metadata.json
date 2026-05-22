@@ -1,0 +1,16 @@
+{
+  "name": "nextjs-authentication",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/nextjs-master/skills/nextjs-authentication/SKILL.md",
+  "category": "security",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "nextjs-authentication-josiahsiegel-claude-plugin-market-3",
+  "downloaded_at": "2026-02-22T05:14:35.721613Z",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/nextjs-master/skills/nextjs-authentication/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

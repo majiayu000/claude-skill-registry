@@ -1,0 +1,17 @@
+{
+  "name": "code-review",
+  "repo": "danielctc/ReactSpacesMonoRepo",
+  "path": ".claude/skills/code-review/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/danielctc/ReactSpacesMonoRepo",
+  "dir_name": "code-review-danielctc-reactspacesmonorepo",
+  "downloaded_at": "2026-03-01T07:21:46.739521Z",
+  "author": "danielctc",
+  "source_url": "https://github.com/danielctc/ReactSpacesMonoRepo/blob/main/.claude/skills/code-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/danielctc/ReactSpacesMonoRepo/blob/main/.claude/skills/code-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

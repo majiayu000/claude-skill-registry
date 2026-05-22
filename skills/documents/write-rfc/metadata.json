@@ -1,0 +1,11 @@
+{
+  "name": "write-rfc",
+  "repo": "stacklok/toolhive-rfcs",
+  "path": ".claude/skills/write-rfc/SKILL.md",
+  "source": "github.com/stacklok/toolhive-rfcs",
+  "downloaded_at": "2026-01-22T03:40:27.905058Z",
+  "dir_name": "write-rfc",
+  "category": "documents",
+  "github_path": ".claude/skills/write-rfc",
+  "github_branch": "main"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "cloud-architect",
+  "repo": "nahisaho/CodeGraphMCPServer",
+  "path": ".claude/skills/cloud-architect/SKILL.md",
+  "source": "github.com/nahisaho/CodeGraphMCPServer",
+  "downloaded_at": "2026-02-02T04:59:06.503479Z",
+  "dir_name": "cloud-architect-nahisaho-codegraphmcpserver",
+  "category": "devops",
+  "author": "nahisaho",
+  "source_url": "https://github.com/nahisaho/CodeGraphMCPServer/blob/main/.claude/skills/cloud-architect/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 nahisaho",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

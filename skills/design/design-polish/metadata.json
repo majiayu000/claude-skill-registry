@@ -1,0 +1,17 @@
+{
+  "name": "design-polish",
+  "repo": "fiatkongen/saurun-marketplace",
+  "path": "plugins/saurun/skills/design-polish/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/fiatkongen/saurun-marketplace",
+  "dir_name": "design-polish",
+  "downloaded_at": "2026-03-01T07:43:37.416825Z",
+  "author": "fiatkongen",
+  "source_url": "https://github.com/fiatkongen/saurun-marketplace/blob/main/plugins/saurun/skills/design-polish/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fiatkongen/saurun-marketplace/blob/main/plugins/saurun/skills/design-polish/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

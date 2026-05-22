@@ -1,0 +1,20 @@
+{
+  "name": "keyword-mega-extractor",
+  "description": "",
+  "repo": "taiyousan15/taisun_agent",
+  "category": "marketing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/taiyousan15/taisun_agent",
+  "github_path": ".claude/skills/keyword-mega-extractor",
+  "github_branch": "main",
+  "dir_name": "keyword-mega-extractor",
+  "downloaded_at": "2026-02-05T01:44:48.380962Z",
+  "author": "taiyousan15",
+  "source_url": "https://github.com/taiyousan15/taisun_agent/blob/main/.claude/skills/keyword-mega-extractor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 taiyousan15",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

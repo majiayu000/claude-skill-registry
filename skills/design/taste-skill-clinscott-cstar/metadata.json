@@ -1,0 +1,17 @@
+{
+  "name": "taste-skill",
+  "repo": "Clinscott/CStar",
+  "path": "skills_db/taste-skill/SKILL.md",
+  "github_branch": "master",
+  "category": "design",
+  "source": "github.com/Clinscott/CStar",
+  "dir_name": "taste-skill-clinscott-cstar",
+  "downloaded_at": "2026-03-22T05:05:53.993339Z",
+  "author": "Clinscott",
+  "source_url": "https://github.com/Clinscott/CStar/blob/master/skills_db/taste-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Clinscott/CStar/blob/master/skills_db/taste-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

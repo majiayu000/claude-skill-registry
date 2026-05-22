@@ -1,0 +1,18 @@
+{
+  "name": "numpy-structured",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/numpy-structured/SKILL.md",
+  "source": "github.com/cuba6112/skillfactory",
+  "downloaded_at": "2026-01-22T01:16:56.522106Z",
+  "dir_name": "numpy-structured-cuba6112-skillfactory",
+  "category": "data",
+  "github_path": "skills/numpy-structured",
+  "github_branch": "main",
+  "author": "cuba6112",
+  "source_url": "https://github.com/cuba6112/skillfactory/blob/main/skills/numpy-structured/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cuba6112/skillfactory/blob/main/skills/numpy-structured/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "merge-main-cleanup",
+  "description": "",
+  "repo": "cacr92/WeReply",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cacr92/WeReply",
+  "github_path": ".trae/skills/merge-main-cleanup",
+  "github_branch": "main",
+  "dir_name": "merge-main-cleanup-cacr92-wereply",
+  "downloaded_at": "2026-02-05T01:44:19.468667Z",
+  "author": "cacr92",
+  "source_url": "https://github.com/cacr92/WeReply/blob/main/.trae/skills/merge-main-cleanup/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 WeReply",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

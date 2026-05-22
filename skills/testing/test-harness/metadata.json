@@ -1,0 +1,17 @@
+{
+  "name": "test-harness",
+  "repo": "AndersonsRepo/AI-Harness",
+  "path": ".claude/skills/test-harness/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/AndersonsRepo/AI-Harness",
+  "dir_name": "test-harness",
+  "downloaded_at": "2026-03-22T04:51:03.009797Z",
+  "author": "AndersonsRepo",
+  "source_url": "https://github.com/AndersonsRepo/AI-Harness/blob/main/.claude/skills/test-harness/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AndersonsRepo/AI-Harness/blob/main/.claude/skills/test-harness/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "building-ui-ux",
+  "repo": "tilework-tech/nori-cli",
+  "path": ".claude/skills/building-ui-ux/SKILL.md",
+  "source": "github.com/tilework-tech/nori-cli",
+  "downloaded_at": "2026-01-22T01:03:21.882643Z",
+  "dir_name": "building-ui-ux",
+  "category": "design",
+  "github_path": ".claude/skills/building-ui-ux",
+  "github_branch": "main",
+  "author": "tilework-tech",
+  "source_url": "https://github.com/tilework-tech/nori-cli/blob/main/.claude/skills/building-ui-ux/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 OpenAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

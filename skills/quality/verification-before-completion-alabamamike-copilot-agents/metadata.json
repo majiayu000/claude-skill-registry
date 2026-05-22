@@ -1,0 +1,13 @@
+{
+  "name": "verification-before-completion",
+  "description": "Custom agents built for GH copilot",
+  "repo": "AlabamaMike/copilot-agents",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".codex/superpowers/skills/verification-before-completion",
+  "github_branch": "main",
+  "dir_name": "verification-before-completion-alabamamike-copilot-agents",
+  "downloaded_at": "2026-02-05T01:45:44.079213Z"
+}

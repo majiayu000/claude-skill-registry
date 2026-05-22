@@ -1,0 +1,17 @@
+{
+  "name": "sqlmodel-design",
+  "repo": "HasnainCodeHub/todo-evaluation",
+  "path": ".claude/skills/sqlmodel-design/skill.md",
+  "github_branch": "master",
+  "category": "data",
+  "source": "github.com/HasnainCodeHub/todo-evaluation",
+  "dir_name": "sqlmodel-design",
+  "downloaded_at": "2026-03-01T05:24:00.645642Z",
+  "author": "HasnainCodeHub",
+  "source_url": "https://github.com/HasnainCodeHub/todo-evaluation/blob/master/.claude/skills/sqlmodel-design/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HasnainCodeHub/todo-evaluation/blob/master/.claude/skills/sqlmodel-design/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "skill-security-analyzer",
+  "description": "",
+  "repo": "Svenja-dev/claude-code-skills",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Svenja-dev/claude-code-skills",
+  "github_path": "skills/security-analyzer/skill-security-analyzer",
+  "github_branch": "main",
+  "dir_name": "skill-security-analyzer-svenja-dev-claude-code-skills",
+  "downloaded_at": "2026-02-05T01:44:51.719692Z"
+}

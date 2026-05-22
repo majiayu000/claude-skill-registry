@@ -1,0 +1,16 @@
+{
+  "name": "tailwind-design-system",
+  "repo": "OpenDCAI/leonai",
+  "path": ".claude/skills/tailwind-design-system/SKILL.md",
+  "category": "design",
+  "source": "github.com/OpenDCAI/leonai",
+  "dir_name": "tailwind-design-system-opendcai-leonai",
+  "downloaded_at": "2026-02-22T05:30:13.095794Z",
+  "author": "OpenDCAI",
+  "source_url": "https://github.com/OpenDCAI/leonai/blob/main/.claude/skills/tailwind-design-system/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OpenDCAI/leonai/blob/main/.claude/skills/tailwind-design-system/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

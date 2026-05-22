@@ -1,0 +1,16 @@
+{
+  "name": "framer-expert",
+  "repo": "frankxai/agentic-creator-os",
+  "path": ".claude/skills/framer-expert/SKILL.md",
+  "source": "github.com/frankxai/agentic-creator-os",
+  "downloaded_at": "2026-02-02T03:42:43.226087Z",
+  "dir_name": "framer-expert",
+  "category": "design",
+  "author": "frankxai",
+  "source_url": "https://github.com/frankxai/agentic-creator-os/blob/main/.claude/skills/framer-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/frankxai/agentic-creator-os/blob/main/.claude/skills/framer-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

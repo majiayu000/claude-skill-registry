@@ -1,0 +1,18 @@
+{
+  "name": "CreateCLI",
+  "repo": "blackpwnguin/Personal-AI",
+  "path": ".claude/skills/CreateCLI/SKILL.md",
+  "source": "github.com/blackpwnguin/Personal-AI",
+  "downloaded_at": "2026-01-22T02:27:17.047731Z",
+  "dir_name": "createcli-blackpwnguin-personal-ai",
+  "category": "development",
+  "github_path": ".claude/skills/CreateCLI",
+  "github_branch": "main",
+  "author": "blackpwnguin",
+  "source_url": "https://github.com/blackpwnguin/Personal-AI/blob/main/.claude/skills/CreateCLI/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel Miessler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

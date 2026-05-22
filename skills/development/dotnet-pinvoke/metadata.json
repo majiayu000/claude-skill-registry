@@ -1,0 +1,17 @@
+{
+  "name": "dotnet-pinvoke",
+  "repo": "dotnet/skills",
+  "path": "plugins/dotnet/skills/dotnet-pinvoke/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/dotnet/skills",
+  "dir_name": "dotnet-pinvoke",
+  "downloaded_at": "2026-03-22T07:48:43.733549Z",
+  "author": "dotnet",
+  "source_url": "https://github.com/dotnet/skills/blob/main/plugins/dotnet/skills/dotnet-pinvoke/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dotnet/skills/blob/main/plugins/dotnet/skills/dotnet-pinvoke/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

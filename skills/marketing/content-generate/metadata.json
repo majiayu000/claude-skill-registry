@@ -1,0 +1,18 @@
+{
+  "name": "content-generate",
+  "repo": "sunqb/ccsdk",
+  "path": ".claude/skills/content-generate/SKILL.md",
+  "source": "github.com/sunqb/ccsdk",
+  "downloaded_at": "2026-01-22T02:52:21.943239Z",
+  "dir_name": "content-generate",
+  "category": "marketing",
+  "github_path": ".claude/skills/content-generate",
+  "github_branch": "main",
+  "author": "sunqb",
+  "source_url": "https://github.com/sunqb/ccsdk/blob/main/.claude/skills/content-generate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sunqb/ccsdk/blob/main/.claude/skills/content-generate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

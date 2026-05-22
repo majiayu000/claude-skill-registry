@@ -1,0 +1,16 @@
+{
+  "name": "browser-use",
+  "repo": "RustyLindquist/EnhancedHR",
+  "path": ".claude/skills/browser-use/SKILL.md",
+  "source": "github.com/RustyLindquist/EnhancedHR",
+  "downloaded_at": "2026-02-02T04:31:13.649727Z",
+  "dir_name": "browser-use-rustylindquist-enhancedhr",
+  "category": "testing",
+  "author": "RustyLindquist",
+  "source_url": "https://github.com/RustyLindquist/EnhancedHR/blob/main/.claude/skills/browser-use/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RustyLindquist/EnhancedHR/blob/main/.claude/skills/browser-use/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "freshness-latency-slos",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "43-data-reliability/freshness-latency-slos/SKILL.md",
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "downloaded_at": "2026-01-17T03:41:50.429637Z",
+  "dir_name": "freshness-latency-slos-amnadtaowsoam-cerebratechai-claude",
+  "category": "data",
+  "github_path": "43-data-reliability/freshness-latency-slos",
+  "github_branch": "main",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/cerebratechai-claude-skills/blob/main/43-data-reliability/freshness-latency-slos/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "neon-postgres",
+  "repo": "claudiodearaujo/Sistema-de-narra-o-de-livro",
+  "path": ".agent/skills/neon-postgres/SKILL.md",
+  "source": "github.com/claudiodearaujo/Sistema-de-narra-o-de-livro",
+  "downloaded_at": "2026-02-02T04:45:45.814278Z",
+  "dir_name": "neon-postgres-claudiodearaujo-sistema-de-narra-o-d",
+  "category": "data",
+  "author": "claudiodearaujo",
+  "source_url": "https://github.com/claudiodearaujo/Sistema-de-narra-o-de-livro/blob/main/.agent/skills/neon-postgres/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/claudiodearaujo/Sistema-de-narra-o-de-livro/blob/main/.agent/skills/neon-postgres/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

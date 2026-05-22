@@ -1,0 +1,17 @@
+{
+  "name": "ci-cd-pipelines",
+  "repo": "JH9282026/manus",
+  "path": "ci-cd-pipelines/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/JH9282026/manus",
+  "dir_name": "ci-cd-pipelines-jh9282026-manus",
+  "downloaded_at": "2026-03-22T05:31:24.342605Z",
+  "author": "JH9282026",
+  "source_url": "https://github.com/JH9282026/manus/blob/main/ci-cd-pipelines/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JH9282026/manus/blob/main/ci-cd-pipelines/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "docker-deployment",
+  "repo": "cohen-liel/hivemind",
+  "path": ".claude/skills/docker-deployment/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/cohen-liel/hivemind",
+  "dir_name": "docker-deployment-cohen-liel-hivemind",
+  "downloaded_at": "2026-03-22T07:32:27.258089Z",
+  "author": "cohen-liel",
+  "source_url": "https://github.com/cohen-liel/hivemind/blob/main/.claude/skills/docker-deployment/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cohen-liel/hivemind/blob/main/.claude/skills/docker-deployment/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "quality-fixer",
+  "repo": "Atyantik/python-modern-template",
+  "path": "template/.claude/skills/quality-fixer/SKILL.md.jinja",
+  "source": "github.com/Atyantik/python-modern-template",
+  "downloaded_at": "2026-01-29T08:24:23.536979Z",
+  "dir_name": "quality-fixer-atyantik-python-modern-templa-88f957bf",
+  "category": "quality",
+  "author": "Atyantik",
+  "source_url": "https://github.com/Atyantik/python-modern-template/blob/main/template/.claude/skills/quality-fixer/SKILL.md.jinja/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Atyantik Technologies Private Limited",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

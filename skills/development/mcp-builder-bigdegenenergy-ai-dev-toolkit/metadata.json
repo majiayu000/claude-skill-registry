@@ -1,0 +1,16 @@
+{
+  "name": "mcp-builder",
+  "repo": "bigdegenenergy/ai-dev-toolkit",
+  "path": ".claude/skills/mcp-builder/SKILL.md",
+  "category": "development",
+  "source": "github.com/bigdegenenergy/ai-dev-toolkit",
+  "dir_name": "mcp-builder-bigdegenenergy-ai-dev-toolkit",
+  "downloaded_at": "2026-02-15T06:33:26.938269Z",
+  "author": "bigdegenenergy",
+  "source_url": "https://github.com/bigdegenenergy/ai-dev-toolkit/blob/main/.claude/skills/mcp-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bigdegenenergy/ai-dev-toolkit/blob/main/.claude/skills/mcp-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

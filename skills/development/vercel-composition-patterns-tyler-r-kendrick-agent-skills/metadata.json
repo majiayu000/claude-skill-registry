@@ -1,0 +1,16 @@
+{
+  "name": "vercel-composition-patterns",
+  "repo": "Tyler-R-Kendrick/agent-skills",
+  "path": ".agents/skills/vercel-composition-patterns/SKILL.md",
+  "category": "development",
+  "source": "github.com/Tyler-R-Kendrick/agent-skills",
+  "dir_name": "vercel-composition-patterns-tyler-r-kendrick-agent-skills",
+  "downloaded_at": "2026-02-22T05:52:24.899897Z",
+  "author": "Tyler-R-Kendrick",
+  "source_url": "https://github.com/Tyler-R-Kendrick/agent-skills/blob/main/.agents/skills/vercel-composition-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tyler-R-Kendrick/agent-skills/blob/main/.agents/skills/vercel-composition-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

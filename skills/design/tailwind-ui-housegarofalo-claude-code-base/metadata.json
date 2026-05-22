@@ -1,0 +1,20 @@
+{
+  "name": "tailwind-ui",
+  "description": "",
+  "repo": "HouseGarofalo/claude-code-base",
+  "category": "design",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HouseGarofalo/claude-code-base",
+  "github_path": ".claude/skills/tailwind-ui",
+  "github_branch": "master",
+  "dir_name": "tailwind-ui-housegarofalo-claude-code-base",
+  "downloaded_at": "2026-02-05T01:44:39.081088Z",
+  "author": "HouseGarofalo",
+  "source_url": "https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/tailwind-ui/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 HouseGarofalo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

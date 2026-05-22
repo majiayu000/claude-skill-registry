@@ -1,0 +1,17 @@
+{
+  "name": "convex-clerk-skill",
+  "repo": "PolarCoding85/convex-agent-skillz",
+  "path": ".claude/skills/convex-clerk-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/PolarCoding85/convex-agent-skillz",
+  "dir_name": "convex-clerk-skill",
+  "downloaded_at": "2026-03-22T06:05:04.980287Z",
+  "author": "PolarCoding85",
+  "source_url": "https://github.com/PolarCoding85/convex-agent-skillz/blob/main/.claude/skills/convex-clerk-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PolarCoding85/convex-agent-skillz/blob/main/.claude/skills/convex-clerk-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

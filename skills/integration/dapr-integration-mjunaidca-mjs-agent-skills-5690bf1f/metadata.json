@@ -1,0 +1,16 @@
+{
+  "name": "dapr-integration",
+  "repo": "mjunaidca/mjs-agent-skills",
+  "path": "docs/taskflow-vault/skills/engineering/dapr-integration/skill.md",
+  "source": "github.com/mjunaidca/mjs-agent-skills",
+  "downloaded_at": "2026-01-29T06:28:53.307459Z",
+  "dir_name": "dapr-integration-mjunaidca-mjs-agent-skills-5690bf1f",
+  "category": "integration",
+  "author": "mjunaidca",
+  "source_url": "https://github.com/mjunaidca/mjs-agent-skills/blob/main/docs/taskflow-vault/skills/engineering/dapr-integration/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mjunaidca/mjs-agent-skills/blob/main/docs/taskflow-vault/skills/engineering/dapr-integration/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

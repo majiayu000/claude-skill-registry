@@ -1,0 +1,13 @@
+{
+  "name": "rag-curator",
+  "description": "",
+  "repo": "arbgjr/sdlc_agentico",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/sdlc_agentico",
+  "github_path": ".claude/skills/rag-curator",
+  "github_branch": "main",
+  "dir_name": "rag-curator",
+  "downloaded_at": "2026-02-05T01:45:01.750645Z"
+}

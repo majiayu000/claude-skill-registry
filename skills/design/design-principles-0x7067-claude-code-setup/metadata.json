@@ -1,0 +1,16 @@
+{
+  "name": "design-principles",
+  "repo": "0x7067/claude-code-setup",
+  "path": ".claude/skills/design-principles/skill.md",
+  "category": "design",
+  "source": "github.com/0x7067/claude-code-setup",
+  "dir_name": "design-principles-0x7067-claude-code-setup",
+  "downloaded_at": "2026-02-22T04:32:46.608010Z",
+  "author": "0x7067",
+  "source_url": "https://github.com/0x7067/claude-code-setup/blob/main/.claude/skills/design-principles/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/0x7067/claude-code-setup/blob/main/.claude/skills/design-principles/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

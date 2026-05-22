@@ -1,0 +1,13 @@
+{
+  "name": "local-review",
+  "description": "",
+  "repo": "kynetic-ai/kynetic-spec",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kynetic-ai/kynetic-spec",
+  "github_path": ".claude/skills/local-review",
+  "github_branch": "main",
+  "dir_name": "local-review",
+  "downloaded_at": "2026-02-05T05:32:51.131435Z"
+}

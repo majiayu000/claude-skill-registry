@@ -1,0 +1,16 @@
+{
+  "name": "ios",
+  "repo": "fusengine/agents",
+  "path": "plugins/swift-apple-expert/skills/ios/SKILL.md",
+  "category": "development",
+  "source": "github.com/fusengine/agents",
+  "dir_name": "ios-fusengine-agents",
+  "downloaded_at": "2026-02-22T07:13:17.665754Z",
+  "author": "fusengine",
+  "source_url": "https://github.com/fusengine/agents/blob/main/plugins/swift-apple-expert/skills/ios/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Fusengine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

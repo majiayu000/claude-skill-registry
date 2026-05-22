@@ -1,0 +1,17 @@
+{
+  "name": "sim-run",
+  "repo": "ahrav/scratch-scanner-rs",
+  "path": ".claude/skills/sim-run/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/ahrav/scratch-scanner-rs",
+  "dir_name": "sim-run-ahrav-scratch-scanner-rs-2",
+  "downloaded_at": "2026-03-01T06:32:35.798651Z",
+  "author": "ahrav",
+  "source_url": "https://github.com/ahrav/scratch-scanner-rs/blob/main/.claude/skills/sim-run/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ahrav/scratch-scanner-rs/blob/main/.claude/skills/sim-run/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

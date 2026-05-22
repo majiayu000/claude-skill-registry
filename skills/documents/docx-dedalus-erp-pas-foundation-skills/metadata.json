@@ -1,0 +1,16 @@
+{
+  "name": "docx",
+  "repo": "Dedalus-ERP-PAS/foundation-skills",
+  "path": "skills/docx/SKILL.md",
+  "category": "documents",
+  "source": "github.com/Dedalus-ERP-PAS/foundation-skills",
+  "dir_name": "docx-dedalus-erp-pas-foundation-skills",
+  "downloaded_at": "2026-02-22T04:56:42.641756Z",
+  "author": "Dedalus-ERP-PAS",
+  "source_url": "https://github.com/Dedalus-ERP-PAS/foundation-skills/blob/main/skills/docx/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

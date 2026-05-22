@@ -1,0 +1,17 @@
+{
+  "name": "defense-in-depth",
+  "repo": "flosrn/.claude",
+  "path": "skills/debugging/defense-in-depth/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/flosrn/.claude",
+  "dir_name": "defense-in-depth-flosrn-claude",
+  "downloaded_at": "2026-03-01T07:44:35.786340Z",
+  "author": "flosrn",
+  "source_url": "https://github.com/flosrn/.claude/blob/main/skills/debugging/defense-in-depth/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/flosrn/.claude/blob/main/skills/debugging/defense-in-depth/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

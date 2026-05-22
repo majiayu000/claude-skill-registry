@@ -1,0 +1,20 @@
+{
+  "name": "step-mail",
+  "description": "",
+  "repo": "taiyousan15/taisun_agent",
+  "category": "marketing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/taiyousan15/taisun_agent",
+  "github_path": ".claude/skills/_archived/step-mail",
+  "github_branch": "main",
+  "dir_name": "step-mail-taiyousan15-taisun-agent-9c298bd4",
+  "downloaded_at": "2026-02-05T01:44:48.363778Z",
+  "author": "taiyousan15",
+  "source_url": "https://github.com/taiyousan15/taisun_agent/blob/main/.claude/skills/_archived/step-mail/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 taiyousan15",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

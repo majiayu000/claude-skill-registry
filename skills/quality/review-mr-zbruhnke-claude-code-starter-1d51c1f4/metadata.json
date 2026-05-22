@@ -1,0 +1,16 @@
+{
+  "name": "review-mr",
+  "repo": "zbruhnke/claude-code-starter",
+  "path": ".claude/skills/review-mr/SKILL.md",
+  "source": "github.com/zbruhnke/claude-code-starter",
+  "downloaded_at": "2026-01-29T08:26:47.570949Z",
+  "dir_name": "review-mr-zbruhnke-claude-code-starter-1d51c1f4",
+  "category": "quality",
+  "author": "zbruhnke",
+  "source_url": "https://github.com/zbruhnke/claude-code-starter/blob/main/.claude/skills/review-mr/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Zach Bruhnke",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

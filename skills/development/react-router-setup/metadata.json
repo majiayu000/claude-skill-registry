@@ -1,0 +1,18 @@
+{
+  "name": "react-router-setup",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/react-router-setup/SKILL.md",
+  "source": "github.com/orient-bot/orient",
+  "downloaded_at": "2026-01-22T03:58:46.016176Z",
+  "dir_name": "react-router-setup",
+  "category": "development",
+  "github_path": ".claude/skills/react-router-setup",
+  "github_branch": "main",
+  "author": "orient-bot",
+  "source_url": "https://github.com/orient-bot/orient/blob/main/.claude/skills/react-router-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/orient-bot/orient/blob/main/.claude/skills/react-router-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

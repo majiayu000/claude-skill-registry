@@ -1,0 +1,16 @@
+{
+  "name": "pytest-test-scaffolder",
+  "repo": "okgoogle13/careercopilot",
+  "path": ".claude/skills/pytest-test-scaffolder/SKILL.md",
+  "source": "github.com/okgoogle13/careercopilot",
+  "downloaded_at": "2026-01-29T05:30:13.881645Z",
+  "dir_name": "pytest-test-scaffolder-okgoogle13-careercopilot-4d4c238a",
+  "category": "testing",
+  "author": "okgoogle13",
+  "source_url": "https://github.com/okgoogle13/careercopilot/blob/main/.claude/skills/pytest-test-scaffolder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/okgoogle13/careercopilot/blob/main/.claude/skills/pytest-test-scaffolder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

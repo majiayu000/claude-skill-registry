@@ -1,0 +1,17 @@
+{
+  "name": "flutter-module-creator",
+  "repo": "AoEiuV020/video_concat",
+  "path": ".claude/skills/flutter-module-creator/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/AoEiuV020/video_concat",
+  "dir_name": "flutter-module-creator-aoeiuv020-video-concat",
+  "downloaded_at": "2026-03-22T04:52:14.005161Z",
+  "author": "AoEiuV020",
+  "source_url": "https://github.com/AoEiuV020/video_concat/blob/main/.claude/skills/flutter-module-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AoEiuV020/video_concat/blob/main/.claude/skills/flutter-module-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

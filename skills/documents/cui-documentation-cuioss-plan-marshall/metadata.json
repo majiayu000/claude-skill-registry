@@ -1,0 +1,16 @@
+{
+  "name": "cui-documentation",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-documents/skills/cui-documentation/SKILL.md",
+  "source": "github.com/cuioss/plan-marshall",
+  "downloaded_at": "2026-01-14T03:33:23.315902Z",
+  "dir_name": "cui-documentation-cuioss-plan-marshall",
+  "category": "documents",
+  "author": "cuioss",
+  "source_url": "https://github.com/cuioss/plan-marshall/blob/main/marketplace/bundles/pm-documents/skills/cui-documentation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 Oliver Wolff",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

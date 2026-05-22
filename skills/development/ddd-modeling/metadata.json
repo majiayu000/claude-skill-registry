@@ -1,0 +1,18 @@
+{
+  "name": "ddd-modeling",
+  "repo": "ryryo/dot-claude-dev",
+  "path": "docs/SAMPLE/dot-claude-dev/dotfiles/claude/skills/ddd-modeling/SKILL.md",
+  "source": "github.com/ryryo/dot-claude-dev",
+  "downloaded_at": "2026-01-22T03:36:28.862622Z",
+  "dir_name": "ddd-modeling",
+  "category": "development",
+  "github_path": "docs/SAMPLE/dot-claude-dev/dotfiles/claude/skills/ddd-modeling",
+  "github_branch": "main",
+  "author": "ryryo",
+  "source_url": "https://github.com/ryryo/dot-claude-dev/blob/main/docs/SAMPLE/dot-claude-dev/dotfiles/claude/skills/ddd-modeling/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ryryo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

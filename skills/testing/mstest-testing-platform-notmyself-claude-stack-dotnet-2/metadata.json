@@ -1,0 +1,16 @@
+{
+  "name": "mstest-testing-platform",
+  "repo": "NotMyself/claude-stack-dotnet",
+  "path": ".claude/skills/mstest-testing-platform/SKILL.md",
+  "source": "github.com/NotMyself/claude-stack-dotnet",
+  "downloaded_at": "2026-01-31T04:13:27.459641Z",
+  "dir_name": "mstest-testing-platform-notmyself-claude-stack-dotnet-2",
+  "category": "testing",
+  "author": "NotMyself",
+  "source_url": "https://github.com/NotMyself/claude-stack-dotnet/blob/main/.claude/skills/mstest-testing-platform/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Bobby Johnson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

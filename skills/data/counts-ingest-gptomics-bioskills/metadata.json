@@ -1,0 +1,18 @@
+{
+  "name": "counts-ingest",
+  "repo": "GPTomics/bioSkills",
+  "path": "expression-matrix/counts-ingest/SKILL.md",
+  "source": "github.com/GPTomics/bioSkills",
+  "downloaded_at": "2026-01-22T02:30:45.012677Z",
+  "dir_name": "counts-ingest-gptomics-bioskills",
+  "category": "data",
+  "github_path": "expression-matrix/counts-ingest",
+  "github_branch": "main",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/expression-matrix/counts-ingest/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

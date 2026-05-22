@@ -1,0 +1,13 @@
+{
+  "name": "gemini",
+  "description": "",
+  "repo": "alchimie-di-circe/Extractor-desktop-app",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alchimie-di-circe/Extractor-desktop-app",
+  "github_path": ".agents/skills/gemini",
+  "github_branch": "main",
+  "dir_name": "gemini-alchimie-di-circe-extractor-desktop-ap",
+  "downloaded_at": "2026-02-05T01:44:38.938365Z"
+}

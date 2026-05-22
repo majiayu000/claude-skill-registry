@@ -1,0 +1,9 @@
+{
+  "name": "write-system-docs",
+  "repo": "Dispo-Genius/dispo-claude-config",
+  "path": ".claude/skills/write-system-docs/SKILL.md",
+  "source": "github.com/Dispo-Genius/dispo-claude-config",
+  "downloaded_at": "2026-01-20T03:06:55.086303Z",
+  "dir_name": "write-system-docs",
+  "category": "documents"
+}

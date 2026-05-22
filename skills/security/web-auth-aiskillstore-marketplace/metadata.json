@@ -1,0 +1,17 @@
+{
+  "name": "web-auth",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/cjharmath/web-auth/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "web-auth-aiskillstore-marketplace",
+  "downloaded_at": "2026-05-15T03:44:36.984158Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/cjharmath/web-auth/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/cjharmath/web-auth/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "dependency-management-deps-audit",
+  "repo": "MudassarAbrar/SAGE__GEMINI_LIVE_AGENT_HACKATHON",
+  "path": "skills/dependency-management-deps-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/MudassarAbrar/SAGE__GEMINI_LIVE_AGENT_HACKATHON",
+  "dir_name": "dependency-management-deps-audit-mudassarabrar-sage-gemini-live-",
+  "downloaded_at": "2026-03-22T05:52:52.683470Z",
+  "author": "MudassarAbrar",
+  "source_url": "https://github.com/MudassarAbrar/SAGE__GEMINI_LIVE_AGENT_HACKATHON/blob/main/skills/dependency-management-deps-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MudassarAbrar/SAGE__GEMINI_LIVE_AGENT_HACKATHON/blob/main/skills/dependency-management-deps-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

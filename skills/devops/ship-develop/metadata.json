@@ -1,0 +1,17 @@
+{
+  "name": "ship-develop",
+  "repo": "Eulga/discord-heatmap-bot-trading-calendar",
+  "path": ".agents/skills/ship-develop/SKILL.md",
+  "github_branch": "master",
+  "category": "devops",
+  "source": "github.com/Eulga/discord-heatmap-bot-trading-calendar",
+  "dir_name": "ship-develop",
+  "downloaded_at": "2026-03-22T05:19:20.141778Z",
+  "author": "Eulga",
+  "source_url": "https://github.com/Eulga/discord-heatmap-bot-trading-calendar/blob/master/.agents/skills/ship-develop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Eulga/discord-heatmap-bot-trading-calendar/blob/master/.agents/skills/ship-develop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

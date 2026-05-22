@@ -1,0 +1,16 @@
+{
+  "name": "improve-prompt",
+  "repo": "Agentient/vibekit",
+  "path": "plugins/prompt-tools/skills/improve-prompt/SKILL.md",
+  "source": "github.com/Agentient/vibekit",
+  "downloaded_at": "2026-02-02T03:05:00.744851Z",
+  "dir_name": "improve-prompt",
+  "category": "ai-llm",
+  "author": "Agentient",
+  "source_url": "https://github.com/Agentient/vibekit/blob/main/plugins/prompt-tools/skills/improve-prompt/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Agentient/vibekit/blob/main/plugins/prompt-tools/skills/improve-prompt/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "pytest-generator",
+  "repo": "matteocervelli/llms",
+  "path": ".claude/skills/pytest-generator/SKILL.md",
+  "source": "github.com/matteocervelli/llms",
+  "downloaded_at": "2026-02-02T01:22:33.523487Z",
+  "dir_name": "pytest-generator-matteocervelli-llms-2",
+  "category": "testing",
+  "author": "matteocervelli",
+  "source_url": "https://github.com/matteocervelli/llms/blob/main/.claude/skills/pytest-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Matteo Cervelli",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

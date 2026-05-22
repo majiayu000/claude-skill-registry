@@ -1,0 +1,20 @@
+{
+  "name": "wechat-channel",
+  "description": "",
+  "repo": "aAAaqwq/AGI-Super-Skills",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aAAaqwq/AGI-Super-Skills",
+  "github_path": "wechat-channel",
+  "github_branch": "master",
+  "dir_name": "wechat-channel",
+  "downloaded_at": "2026-02-05T01:45:00.202092Z",
+  "author": "aAAaqwq",
+  "source_url": "https://github.com/aAAaqwq/AGI-Super-Skills/blob/master/wechat-channel/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 AGI Super Team Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

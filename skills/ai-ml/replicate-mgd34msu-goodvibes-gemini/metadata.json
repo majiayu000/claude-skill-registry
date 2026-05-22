@@ -1,0 +1,16 @@
+{
+  "name": "replicate",
+  "repo": "mgd34msu/goodvibes-gemini",
+  "path": "skills/replicate/SKILL.md",
+  "source": "github.com/mgd34msu/goodvibes-gemini",
+  "downloaded_at": "2026-01-29T06:23:06.808335Z",
+  "dir_name": "replicate-mgd34msu-goodvibes-gemini",
+  "category": "ai-ml",
+  "author": "mgd34msu",
+  "source_url": "https://github.com/mgd34msu/goodvibes-gemini/blob/main/skills/replicate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mgd34msu/goodvibes-gemini/blob/main/skills/replicate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

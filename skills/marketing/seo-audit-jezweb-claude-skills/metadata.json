@@ -1,0 +1,17 @@
+{
+  "name": "seo-audit",
+  "repo": "jezweb/claude-skills",
+  "path": "plugins/seo/skills/seo-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "seo-audit-jezweb-claude-skills",
+  "downloaded_at": "2026-03-04T01:24:51.276209Z",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/plugins/seo/skills/seo-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jezweb/claude-skills/blob/main/plugins/seo/skills/seo-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "e2e-test-reviewer",
+  "repo": "dididy/e2e-test-reviewer",
+  "path": "skills/e2e-test-reviewer/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/dididy/e2e-test-reviewer",
+  "dir_name": "e2e-test-reviewer",
+  "downloaded_at": "2026-03-01T07:27:01.733967Z",
+  "author": "dididy",
+  "source_url": "https://github.com/dididy/e2e-test-reviewer/blob/main/skills/e2e-test-reviewer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dididy/e2e-test-reviewer/blob/main/skills/e2e-test-reviewer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

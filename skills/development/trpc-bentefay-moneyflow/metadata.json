@@ -1,0 +1,16 @@
+{
+  "name": "trpc",
+  "repo": "bentefay/moneyflow",
+  "path": ".claude/skills/trpc/SKILL.md",
+  "source": "github.com/bentefay/moneyflow",
+  "downloaded_at": "2026-02-02T03:50:58.859221Z",
+  "dir_name": "trpc-bentefay-moneyflow",
+  "category": "development",
+  "author": "bentefay",
+  "source_url": "https://github.com/bentefay/moneyflow/blob/main/.claude/skills/trpc/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bentefay/moneyflow/blob/main/.claude/skills/trpc/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

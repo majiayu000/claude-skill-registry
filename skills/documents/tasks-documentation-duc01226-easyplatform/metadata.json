@@ -1,0 +1,16 @@
+{
+  "name": "tasks-documentation",
+  "repo": "duc01226/EasyPlatform",
+  "path": ".claude/skills/tasks-documentation/SKILL.md",
+  "source": "github.com/duc01226/EasyPlatform",
+  "downloaded_at": "2026-01-29T05:54:20.557479Z",
+  "dir_name": "tasks-documentation-duc01226-easyplatform",
+  "category": "documents",
+  "author": "duc01226",
+  "source_url": "https://github.com/duc01226/EasyPlatform/blob/main/.claude/skills/tasks-documentation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Dang Phuoc Duc",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

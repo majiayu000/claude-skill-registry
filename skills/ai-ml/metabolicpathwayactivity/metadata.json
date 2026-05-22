@@ -1,0 +1,18 @@
+{
+  "name": "metabolicpathwayactivity",
+  "repo": "pwwang/immunopipe",
+  "path": "skills/metabolicpathwayactivity/SKILL.md",
+  "source": "github.com/pwwang/immunopipe",
+  "downloaded_at": "2026-01-22T03:34:36.155093Z",
+  "dir_name": "metabolicpathwayactivity",
+  "category": "ai-ml",
+  "github_path": "skills/metabolicpathwayactivity",
+  "github_branch": "main",
+  "author": "pwwang",
+  "source_url": "https://github.com/pwwang/immunopipe/blob/main/skills/metabolicpathwayactivity/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

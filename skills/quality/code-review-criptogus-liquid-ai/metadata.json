@@ -1,0 +1,17 @@
+{
+  "name": "code-review",
+  "repo": "criptogus/liquid-ai",
+  "path": ".claude/skills/code-review/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/criptogus/liquid-ai",
+  "dir_name": "code-review-criptogus-liquid-ai",
+  "downloaded_at": "2026-03-01T07:18:34.155502Z",
+  "author": "criptogus",
+  "source_url": "https://github.com/criptogus/liquid-ai/blob/main/.claude/skills/code-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/criptogus/liquid-ai/blob/main/.claude/skills/code-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "building-mcp-server-on-cloudflare",
+  "repo": "cloudflare/skills",
+  "path": "skills/building-mcp-server-on-cloudflare/SKILL.md",
+  "source": "github.com/cloudflare/skills",
+  "downloaded_at": "2026-02-01T03:42:33.485715Z",
+  "dir_name": "building-mcp-server-on-cloudflare-cloudflare-skills",
+  "category": "development",
+  "author": "cloudflare",
+  "source_url": "https://github.com/cloudflare/skills/blob/main/skills/building-mcp-server-on-cloudflare/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cloudflare/skills/blob/main/skills/building-mcp-server-on-cloudflare/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

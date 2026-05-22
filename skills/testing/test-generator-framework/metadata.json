@@ -1,0 +1,16 @@
+{
+  "name": "test-generator-framework",
+  "repo": "darellchua2/opencode-config-template",
+  "path": "skills/test-generator-framework/SKILL.md",
+  "source": "github.com/darellchua2/opencode-config-template",
+  "downloaded_at": "2026-01-27T03:48:05.504032Z",
+  "dir_name": "test-generator-framework",
+  "category": "testing",
+  "author": "darellchua2",
+  "source_url": "https://github.com/darellchua2/opencode-config-template/blob/main/skills/test-generator-framework/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2026 OpenCode Configuration Template Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "optimize-clickhouse-queries",
+  "repo": "FrankChen021/datastoria",
+  "path": "resources/skills/optimize-clickhouse-queries/SKILL.md",
+  "github_branch": "master",
+  "category": "data",
+  "source": "github.com/FrankChen021/datastoria",
+  "dir_name": "optimize-clickhouse-queries",
+  "downloaded_at": "2026-03-22T05:21:47.471197Z",
+  "author": "FrankChen021",
+  "source_url": "https://github.com/FrankChen021/datastoria/blob/master/resources/skills/optimize-clickhouse-queries/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/FrankChen021/datastoria/blob/master/resources/skills/optimize-clickhouse-queries/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "policyengine-code-organization-skill",
+  "repo": "PolicyEngine/policyengine-claude",
+  "path": "skills/technical-patterns/policyengine-code-organization-skill/SKILL.md",
+  "source": "github.com/PolicyEngine/policyengine-claude",
+  "downloaded_at": "2026-01-29T07:06:36.659997Z",
+  "dir_name": "policyengine-code-organization-skill-policyengine-policyengine-c",
+  "category": "development",
+  "author": "PolicyEngine",
+  "source_url": "https://github.com/PolicyEngine/policyengine-claude/blob/main/skills/technical-patterns/policyengine-code-organization-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 PolicyEngine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

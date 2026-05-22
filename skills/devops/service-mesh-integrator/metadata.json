@@ -1,0 +1,16 @@
+{
+  "name": "service-mesh-integrator",
+  "repo": "Dexploarer/hyper-forge",
+  "path": ".claude/skills/service-mesh-integrator/SKILL.md",
+  "source": "github.com/Dexploarer/hyper-forge",
+  "downloaded_at": "2026-01-30T01:22:57.393651Z",
+  "dir_name": "service-mesh-integrator",
+  "category": "devops",
+  "author": "Dexploarer",
+  "source_url": "https://github.com/Dexploarer/hyper-forge/blob/main/.claude/skills/service-mesh-integrator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Dexploarer/hyper-forge/blob/main/.claude/skills/service-mesh-integrator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

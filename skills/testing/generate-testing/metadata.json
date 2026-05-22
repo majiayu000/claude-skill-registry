@@ -1,0 +1,18 @@
+{
+  "name": "generate-testing",
+  "repo": "sakamotchi/sql-query-build",
+  "path": ".claude/skills/generate-testing/SKILL.md",
+  "source": "github.com/sakamotchi/sql-query-build",
+  "downloaded_at": "2026-01-22T01:31:30.515002Z",
+  "dir_name": "generate-testing",
+  "category": "testing",
+  "github_path": ".claude/skills/generate-testing",
+  "github_branch": "main",
+  "author": "sakamotchi",
+  "source_url": "https://github.com/sakamotchi/sql-query-build/blob/main/.claude/skills/generate-testing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Yoshitaka Sakamoto",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

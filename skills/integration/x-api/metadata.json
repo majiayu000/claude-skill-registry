@@ -1,0 +1,16 @@
+{
+  "name": "x-api",
+  "repo": "danstrem2/clawdbot-skill-master-pack",
+  "path": "skills/x-api/SKILL.md",
+  "source": "github.com/danstrem2/clawdbot-skill-master-pack",
+  "downloaded_at": "2026-02-02T01:11:29.860699Z",
+  "dir_name": "x-api",
+  "category": "integration",
+  "author": "danstrem2",
+  "source_url": "https://github.com/danstrem2/clawdbot-skill-master-pack/blob/main/skills/x-api/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/danstrem2/clawdbot-skill-master-pack/blob/main/skills/x-api/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

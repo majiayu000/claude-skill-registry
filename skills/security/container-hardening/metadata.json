@@ -1,0 +1,17 @@
+{
+  "name": "container-hardening",
+  "repo": "BagelHole/DevOps-Security-Agent-Skills",
+  "path": "security/hardening/container-hardening/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/BagelHole/DevOps-Security-Agent-Skills",
+  "dir_name": "container-hardening",
+  "downloaded_at": "2026-03-22T04:57:26.024395Z",
+  "author": "BagelHole",
+  "source_url": "https://github.com/BagelHole/DevOps-Security-Agent-Skills/blob/main/security/hardening/container-hardening/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BagelHole/DevOps-Security-Agent-Skills/blob/main/security/hardening/container-hardening/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

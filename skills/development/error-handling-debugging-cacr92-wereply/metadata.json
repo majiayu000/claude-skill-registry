@@ -1,0 +1,20 @@
+{
+  "name": "error-handling-debugging",
+  "description": "",
+  "repo": "cacr92/WeReply",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cacr92/WeReply",
+  "github_path": ".cursor/skills/error-handling-debugging",
+  "github_branch": "main",
+  "dir_name": "error-handling-debugging-cacr92-wereply",
+  "downloaded_at": "2026-02-05T01:44:19.513745Z",
+  "author": "cacr92",
+  "source_url": "https://github.com/cacr92/WeReply/blob/main/.cursor/skills/error-handling-debugging/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 WeReply",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "commit-conventions",
+  "repo": "amattas/retail-demo",
+  "path": ".claude/skills/commit-conventions/SKILL.md",
+  "source": "github.com/amattas/retail-demo",
+  "downloaded_at": "2026-01-22T03:02:59.880976Z",
+  "dir_name": "commit-conventions-amattas-retail-demo",
+  "category": "development",
+  "github_path": ".claude/skills/commit-conventions",
+  "github_branch": "main",
+  "author": "amattas",
+  "source_url": "https://github.com/amattas/retail-demo/blob/main/.claude/skills/commit-conventions/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/amattas/retail-demo/blob/main/.claude/skills/commit-conventions/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

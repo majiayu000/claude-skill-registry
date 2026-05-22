@@ -1,0 +1,16 @@
+{
+  "name": "code-review-large",
+  "repo": "breaking-brake/cc-wf-studio",
+  "path": ".claude/skills/code-review-large/SKILL.md",
+  "source": "github.com/breaking-brake/cc-wf-studio",
+  "downloaded_at": "2026-02-02T01:26:05.820810Z",
+  "dir_name": "code-review-large",
+  "category": "quality",
+  "author": "breaking-brake",
+  "source_url": "https://github.com/breaking-brake/cc-wf-studio/blob/main/.claude/skills/code-review-large/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 breaking-brake",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

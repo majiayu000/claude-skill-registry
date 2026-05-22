@@ -1,0 +1,17 @@
+{
+  "name": "evo-quick-dev-new-preview",
+  "repo": "EvolutionAPI/EVO-METHOD",
+  "path": "src/bmm/workflows/evo-quick-flow/evo-quick-dev-new-preview/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/EvolutionAPI/EVO-METHOD",
+  "dir_name": "evo-quick-dev-new-preview-evolutionapi-evo-method",
+  "downloaded_at": "2026-03-22T05:19:55.847016Z",
+  "author": "EvolutionAPI",
+  "source_url": "https://github.com/EvolutionAPI/EVO-METHOD/blob/main/src/bmm/workflows/evo-quick-flow/evo-quick-dev-new-preview/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EvolutionAPI/EVO-METHOD/blob/main/src/bmm/workflows/evo-quick-flow/evo-quick-dev-new-preview/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

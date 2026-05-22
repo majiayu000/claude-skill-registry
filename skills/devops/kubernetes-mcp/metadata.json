@@ -1,0 +1,11 @@
+{
+  "name": "kubernetes-mcp",
+  "repo": "5dlabs/cto",
+  "path": "templates/skills/tools/kubernetes-mcp/SKILL.md",
+  "source": "github.com/5dlabs/cto",
+  "downloaded_at": "2026-01-22T03:27:08.321921Z",
+  "dir_name": "kubernetes-mcp",
+  "category": "devops",
+  "github_path": "templates/skills/tools/kubernetes-mcp",
+  "github_branch": "main"
+}

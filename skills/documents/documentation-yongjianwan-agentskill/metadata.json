@@ -1,0 +1,17 @@
+{
+  "name": "documentation",
+  "repo": "YongjianWan/--agentskill",
+  "path": "skill/engineering/skills/documentation/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/YongjianWan/--agentskill",
+  "dir_name": "documentation-yongjianwan-agentskill",
+  "downloaded_at": "2026-03-22T06:34:07.750587Z",
+  "author": "YongjianWan",
+  "source_url": "https://github.com/YongjianWan/--agentskill/blob/main/skill/engineering/skills/documentation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/YongjianWan/--agentskill/blob/main/skill/engineering/skills/documentation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

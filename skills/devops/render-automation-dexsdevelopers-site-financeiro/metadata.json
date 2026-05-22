@@ -1,0 +1,17 @@
+{
+  "name": "render-automation",
+  "repo": "DexsDevelopers/site-financeiro",
+  "path": "skills/render-automation/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/DexsDevelopers/site-financeiro",
+  "dir_name": "render-automation-dexsdevelopers-site-financeiro",
+  "downloaded_at": "2026-03-22T05:14:00.088649Z",
+  "author": "DexsDevelopers",
+  "source_url": "https://github.com/DexsDevelopers/site-financeiro/blob/main/skills/render-automation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DexsDevelopers/site-financeiro/blob/main/skills/render-automation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

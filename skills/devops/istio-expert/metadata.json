@@ -1,0 +1,18 @@
+{
+  "name": "istio-expert",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/devops/istio-expert/SKILL.md",
+  "source": "github.com/personamanagmentlayer/pcl",
+  "downloaded_at": "2026-01-22T04:02:10.802998Z",
+  "dir_name": "istio-expert",
+  "category": "devops",
+  "github_path": "stdlib/devops/istio-expert",
+  "github_branch": "main",
+  "author": "personamanagmentlayer",
+  "source_url": "https://github.com/personamanagmentlayer/pcl/blob/main/stdlib/devops/istio-expert/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/personamanagmentlayer/pcl/blob/main/stdlib/devops/istio-expert/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "mcp-builder",
+  "description": "",
+  "repo": "TerryTong-Git/Cohere",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TerryTong-Git/Cohere",
+  "github_path": ".claude/skills/mcp-builder",
+  "github_branch": "main",
+  "dir_name": "mcp-builder-terrytong-git-cohere",
+  "downloaded_at": "2026-02-05T01:44:51.630011Z"
+}

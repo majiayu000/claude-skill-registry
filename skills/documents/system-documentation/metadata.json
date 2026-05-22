@@ -1,0 +1,17 @@
+{
+  "name": "system-documentation",
+  "repo": "BluMintInc/eslint-custom-rules",
+  "path": ".claude/skills/system-documentation/SKILL.md",
+  "github_branch": "master",
+  "category": "documents",
+  "source": "github.com/BluMintInc/eslint-custom-rules",
+  "dir_name": "system-documentation",
+  "downloaded_at": "2026-03-01T04:58:50.379630Z",
+  "author": "BluMintInc",
+  "source_url": "https://github.com/BluMintInc/eslint-custom-rules/blob/master/.claude/skills/system-documentation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BluMintInc/eslint-custom-rules/blob/master/.claude/skills/system-documentation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

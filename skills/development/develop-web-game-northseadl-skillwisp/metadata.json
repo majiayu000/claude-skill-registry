@@ -1,0 +1,20 @@
+{
+  "name": "develop-web-game",
+  "description": "",
+  "repo": "northseadl/skillwisp",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/northseadl/skillwisp",
+  "github_path": "skills/@openai/develop-web-game",
+  "github_branch": "main",
+  "dir_name": "develop-web-game-northseadl-skillwisp",
+  "downloaded_at": "2026-02-05T01:44:58.835439Z",
+  "author": "northseadl",
+  "source_url": "https://github.com/northseadl/skillwisp/blob/main/skills/@openai/develop-web-game/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 SkillWisp",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

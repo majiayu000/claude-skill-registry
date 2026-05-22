@@ -1,0 +1,16 @@
+{
+  "name": "observability-setup",
+  "repo": "Sahib-Sawhney-WH/sahibs-claude-plugin-marketplace",
+  "path": "plugins/dapr/skills/observability-setup/SKILL.md",
+  "source": "github.com/Sahib-Sawhney-WH/sahibs-claude-plugin-marketplace",
+  "downloaded_at": "2026-01-29T08:58:28.390371Z",
+  "dir_name": "observability-setup-sahib-sawhney-wh-sahibs-claude-plugin",
+  "category": "devops",
+  "author": "Sahib-Sawhney-WH",
+  "source_url": "https://github.com/Sahib-Sawhney-WH/sahibs-claude-plugin-marketplace/blob/main/plugins/dapr/skills/observability-setup/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sahib",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

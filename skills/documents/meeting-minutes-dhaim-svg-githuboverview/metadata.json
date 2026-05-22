@@ -1,0 +1,17 @@
+{
+  "name": "meeting-minutes",
+  "repo": "dhaim-svg/GitHubOverview",
+  "path": ".claude/skills/meeting-minutes/SKILL.md",
+  "github_branch": "master",
+  "category": "documents",
+  "source": "github.com/dhaim-svg/GitHubOverview",
+  "dir_name": "meeting-minutes-dhaim-svg-githuboverview",
+  "downloaded_at": "2026-03-22T07:45:42.498691Z",
+  "author": "dhaim-svg",
+  "source_url": "https://github.com/dhaim-svg/GitHubOverview/blob/master/.claude/skills/meeting-minutes/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dhaim-svg/GitHubOverview/blob/master/.claude/skills/meeting-minutes/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

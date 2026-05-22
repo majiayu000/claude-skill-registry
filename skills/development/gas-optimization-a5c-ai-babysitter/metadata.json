@@ -1,0 +1,16 @@
+{
+  "name": "gas-optimization",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/cryptography-blockchain/skills/gas-optimization/SKILL.md",
+  "category": "development",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "gas-optimization-a5c-ai-babysitter",
+  "downloaded_at": "2026-02-16T01:16:25.854218Z",
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/plugins/babysitter/skills/babysit/process/specializations/cryptography-blockchain/skills/gas-optimization/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 A5C AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "smoke-tests",
+  "repo": "METR/inspect-action",
+  "path": ".claude/skills/smoke-tests/SKILL.md",
+  "source": "github.com/METR/inspect-action",
+  "downloaded_at": "2026-01-22T02:54:13.488875Z",
+  "dir_name": "smoke-tests",
+  "category": "testing",
+  "github_path": ".claude/skills/smoke-tests",
+  "github_branch": "main",
+  "author": "METR",
+  "source_url": "https://github.com/METR/inspect-action/blob/main/.claude/skills/smoke-tests/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 METR",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

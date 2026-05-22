@@ -1,0 +1,16 @@
+{
+  "name": "express-api-patterns",
+  "repo": "BPMSTC/websiteagent",
+  "path": ".claude/skills/express-api-patterns/SKILL.md",
+  "source": "github.com/BPMSTC/websiteagent",
+  "downloaded_at": "2026-01-29T05:28:03.243516Z",
+  "dir_name": "express-api-patterns-bpmstc-websiteagent",
+  "category": "development",
+  "author": "BPMSTC",
+  "source_url": "https://github.com/BPMSTC/websiteagent/blob/main/.claude/skills/express-api-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BPMSTC/websiteagent/blob/main/.claude/skills/express-api-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

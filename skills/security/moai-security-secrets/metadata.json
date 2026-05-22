@@ -1,0 +1,11 @@
+{
+  "name": "moai-security-secrets",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-security-secrets/SKILL.md",
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "downloaded_at": "2026-01-22T02:28:12.401495Z",
+  "dir_name": "moai-security-secrets",
+  "category": "security",
+  "github_path": ".claude/skills/moai-security-secrets",
+  "github_branch": "main"
+}

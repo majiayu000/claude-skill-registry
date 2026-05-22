@@ -1,0 +1,20 @@
+{
+  "name": "test-driven-development",
+  "description": "",
+  "repo": "guanyang/antigravity-skills",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/guanyang/antigravity-skills",
+  "github_path": "skills/test-driven-development",
+  "github_branch": "main",
+  "dir_name": "test-driven-development-guanyang-antigravity-skills",
+  "downloaded_at": "2026-02-05T01:44:19.626028Z",
+  "author": "guanyang",
+  "source_url": "https://github.com/guanyang/antigravity-skills/blob/main/skills/test-driven-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 guanyang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

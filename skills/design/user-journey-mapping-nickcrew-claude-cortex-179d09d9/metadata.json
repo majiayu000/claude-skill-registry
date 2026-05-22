@@ -1,0 +1,16 @@
+{
+  "name": "user-journey-mapping",
+  "repo": "NickCrew/claude-cortex",
+  "path": "plugins/ux-product/skills/user-journey-mapping/SKILL.md",
+  "source": "github.com/NickCrew/claude-cortex",
+  "downloaded_at": "2026-01-29T06:21:38.423484Z",
+  "dir_name": "user-journey-mapping-nickcrew-claude-cortex-179d09d9",
+  "category": "design",
+  "author": "NickCrew",
+  "source_url": "https://github.com/NickCrew/claude-cortex/blob/main/plugins/ux-product/skills/user-journey-mapping/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nicholas Ferguson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

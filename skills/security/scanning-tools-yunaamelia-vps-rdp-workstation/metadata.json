@@ -1,0 +1,20 @@
+{
+  "name": "scanning-tools",
+  "description": "",
+  "repo": "yunaamelia/vps-rdp-workstation",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yunaamelia/vps-rdp-workstation",
+  "github_path": ".agent/skills/scanning-tools",
+  "github_branch": "main",
+  "dir_name": "scanning-tools-yunaamelia-vps-rdp-workstation",
+  "downloaded_at": "2026-02-05T05:41:55.324985Z",
+  "author": "yunaamelia",
+  "source_url": "https://github.com/yunaamelia/vps-rdp-workstation/blob/main/.agent/skills/scanning-tools/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 VPS RDP Workstation Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

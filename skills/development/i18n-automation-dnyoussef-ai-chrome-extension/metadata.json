@@ -1,0 +1,16 @@
+{
+  "name": "i18n-automation",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/i18n-automation/SKILL.md",
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "downloaded_at": "2026-02-02T02:50:02.530249Z",
+  "dir_name": "i18n-automation-dnyoussef-ai-chrome-extension",
+  "category": "development",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/i18n-automation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

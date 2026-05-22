@@ -1,0 +1,13 @@
+{
+  "name": "python-packaging",
+  "description": "",
+  "repo": "ACGSpgp/ACGS",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ACGSpgp/ACGS",
+  "github_path": ".agent/workflows/python-development/1.2.1/skills/python-packaging",
+  "github_branch": "main",
+  "dir_name": "python-packaging-acgspgp-acgs",
+  "downloaded_at": "2026-02-05T05:40:33.069078Z"
+}

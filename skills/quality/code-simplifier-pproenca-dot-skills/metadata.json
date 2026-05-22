@@ -1,0 +1,16 @@
+{
+  "name": "code-simplifier",
+  "repo": "pproenca/dot-skills",
+  "path": "skills/.experimental/code-simplifier/SKILL.md",
+  "source": "github.com/pproenca/dot-skills",
+  "downloaded_at": "2026-01-29T07:56:20.373878Z",
+  "dir_name": "code-simplifier-pproenca-dot-skills",
+  "category": "quality",
+  "author": "pproenca",
+  "source_url": "https://github.com/pproenca/dot-skills/blob/main/skills/.experimental/code-simplifier/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

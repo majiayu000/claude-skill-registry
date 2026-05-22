@@ -1,0 +1,13 @@
+{
+  "name": "flowio",
+  "description": "研究 codex 使用 skill 生成 survey 這件事",
+  "repo": "Sologa/codex-pipeline",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".codex/skills/flowio",
+  "github_branch": "main",
+  "dir_name": "flowio-sologa-codex-pipeline",
+  "downloaded_at": "2026-02-05T01:45:42.214470Z"
+}

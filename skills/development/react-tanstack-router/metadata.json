@@ -1,0 +1,16 @@
+{
+  "name": "react-tanstack-router",
+  "repo": "fusengine/agents",
+  "path": "plugins/react-expert/skills/react-tanstack-router/SKILL.md",
+  "source": "github.com/fusengine/agents",
+  "downloaded_at": "2026-02-02T01:10:29.201779Z",
+  "dir_name": "react-tanstack-router",
+  "category": "development",
+  "author": "fusengine",
+  "source_url": "https://github.com/fusengine/agents/blob/main/plugins/react-expert/skills/react-tanstack-router/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Fusengine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

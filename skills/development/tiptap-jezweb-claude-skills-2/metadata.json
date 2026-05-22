@@ -1,0 +1,16 @@
+{
+  "name": "tiptap",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/tiptap/SKILL.md",
+  "category": "development",
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "tiptap-jezweb-claude-skills-2",
+  "downloaded_at": "2026-02-18T01:28:13.685637Z",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/tiptap/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "brand-strategy",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "skills/brand-strategy/SKILL.md",
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "downloaded_at": "2026-01-22T01:55:41.608279Z",
+  "dir_name": "brand-strategy",
+  "category": "marketing",
+  "github_path": "plugins/business-tools/brand-strategy-framework/skills/brand-strategy",
+  "github_branch": "main",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/business-tools/brand-strategy-framework/skills/brand-strategy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "review-spec",
+  "repo": "msalganik/torchtune_config_writer",
+  "path": ".claude/skills/review-spec/SKILL.md",
+  "source": "github.com/msalganik/torchtune_config_writer",
+  "downloaded_at": "2026-01-22T03:37:53.366846Z",
+  "dir_name": "review-spec",
+  "category": "quality",
+  "github_path": ".claude/skills/review-spec",
+  "github_branch": "main"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "fly-deploy",
+  "repo": "andy-austin/quipu",
+  "path": ".claude/skills/fly-deploy/SKILL.md",
+  "github_branch": "master",
+  "category": "devops",
+  "source": "github.com/andy-austin/quipu",
+  "dir_name": "fly-deploy-andy-austin-quipu",
+  "downloaded_at": "2026-03-22T06:56:04.854862Z",
+  "author": "andy-austin",
+  "source_url": "https://github.com/andy-austin/quipu/blob/master/.claude/skills/fly-deploy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andy-austin/quipu/blob/master/.claude/skills/fly-deploy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

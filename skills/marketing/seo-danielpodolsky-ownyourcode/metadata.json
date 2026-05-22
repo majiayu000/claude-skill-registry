@@ -1,0 +1,16 @@
+{
+  "name": "seo",
+  "repo": "DanielPodolsky/ownyourcode",
+  "path": ".claude/skills/fundamentals/seo/SKILL.md",
+  "source": "github.com/DanielPodolsky/ownyourcode",
+  "downloaded_at": "2026-01-29T07:31:49.699236Z",
+  "dir_name": "seo-danielpodolsky-ownyourcode",
+  "category": "marketing",
+  "author": "DanielPodolsky",
+  "source_url": "https://github.com/DanielPodolsky/ownyourcode/blob/main/.claude/skills/fundamentals/seo/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Daniel Podolsky",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

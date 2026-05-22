@@ -1,0 +1,18 @@
+{
+  "name": "runpod-deployment-skill",
+  "repo": "ScientiaCapital/skills",
+  "path": "active/runpod-deployment-skill/SKILL.md",
+  "source": "github.com/ScientiaCapital/skills",
+  "downloaded_at": "2026-01-19T03:08:05.540171Z",
+  "dir_name": "runpod-deployment-skill",
+  "category": "devops",
+  "github_path": "active/runpod-deployment-skill",
+  "github_branch": "main",
+  "author": "ScientiaCapital",
+  "source_url": "https://github.com/ScientiaCapital/skills/blob/main/active/runpod-deployment-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ScientiaCapital/skills/blob/main/active/runpod-deployment-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

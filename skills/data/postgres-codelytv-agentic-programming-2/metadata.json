@@ -1,0 +1,17 @@
+{
+  "name": "postgres",
+  "repo": "CodelyTV/agentic_programming-course",
+  "path": "05-mcps/3-mcp_vs_cli/4-multiple_cli/.agents/skills/postgres/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/CodelyTV/agentic_programming-course",
+  "dir_name": "postgres-codelytv-agentic-programming-2",
+  "downloaded_at": "2026-05-20T03:41:14.836952Z",
+  "author": "CodelyTV",
+  "source_url": "https://github.com/CodelyTV/agentic_programming-course/blob/main/05-mcps/3-mcp_vs_cli/4-multiple_cli/.agents/skills/postgres/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CodelyTV/agentic_programming-course/blob/main/05-mcps/3-mcp_vs_cli/4-multiple_cli/.agents/skills/postgres/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

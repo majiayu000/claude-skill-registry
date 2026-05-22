@@ -1,0 +1,20 @@
+{
+  "name": "semgrep-analyze",
+  "description": "",
+  "repo": "bdfinst/vsm-workshop",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bdfinst/vsm-workshop",
+  "github_path": ".claude/skills/semgrep-analyze",
+  "github_branch": "master",
+  "dir_name": "semgrep-analyze",
+  "downloaded_at": "2026-02-05T01:44:43.091946Z",
+  "author": "bdfinst",
+  "source_url": "https://github.com/bdfinst/vsm-workshop/blob/master/.claude/skills/semgrep-analyze/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bdfinst/vsm-workshop/blob/master/.claude/skills/semgrep-analyze/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

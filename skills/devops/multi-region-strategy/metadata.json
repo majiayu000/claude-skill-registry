@@ -1,0 +1,18 @@
+{
+  "name": "multi-region-strategy",
+  "repo": "proflead/codex-skills-library",
+  "path": "skills/infra/multi-region-strategy/SKILL.md",
+  "source": "github.com/proflead/codex-skills-library",
+  "downloaded_at": "2026-01-22T02:40:44.480639Z",
+  "dir_name": "multi-region-strategy",
+  "category": "devops",
+  "github_path": "skills/infra/multi-region-strategy",
+  "github_branch": "main",
+  "author": "proflead",
+  "source_url": "https://github.com/proflead/codex-skills-library/blob/main/skills/infra/multi-region-strategy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/proflead/codex-skills-library/blob/main/skills/infra/multi-region-strategy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "git-flow-release",
+  "repo": "iktakahiro/python-fastapi-ddd-skill",
+  "path": ".codex/skills/git-flow-release/SKILL.md",
+  "category": "development",
+  "source": "github.com/iktakahiro/python-fastapi-ddd-skill",
+  "dir_name": "git-flow-release-iktakahiro-python-fastapi-ddd-s",
+  "downloaded_at": "2026-02-22T07:31:27.989923Z",
+  "author": "iktakahiro",
+  "source_url": "https://github.com/iktakahiro/python-fastapi-ddd-skill/blob/main/.codex/skills/git-flow-release/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/iktakahiro/python-fastapi-ddd-skill/blob/main/.codex/skills/git-flow-release/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "wcag-compliance",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/wcag-compliance/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:13.885932Z",
+  "dir_name": "wcag-compliance",
+  "category": "design",
+  "github_path": "skills/wcag-compliance",
+  "github_branch": "main"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "code-review-checklist",
+  "repo": "dgkngk/super-kit",
+  "path": "skills/tech/code-review-checklist/SKILL.md",
+  "github_branch": "master",
+  "category": "quality",
+  "source": "github.com/dgkngk/super-kit",
+  "dir_name": "code-review-checklist-dgkngk-super-kit",
+  "downloaded_at": "2026-03-22T07:45:02.908692Z",
+  "author": "dgkngk",
+  "source_url": "https://github.com/dgkngk/super-kit/blob/master/skills/tech/code-review-checklist/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dgkngk/super-kit/blob/master/skills/tech/code-review-checklist/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

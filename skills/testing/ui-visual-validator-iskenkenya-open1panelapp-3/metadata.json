@@ -1,0 +1,16 @@
+{
+  "name": "ui-visual-validator",
+  "repo": "IsKenKenYa/Open1PanelApp",
+  "path": ".agents/skills/ui-visual-validator/SKILL.md",
+  "category": "testing",
+  "source": "github.com/IsKenKenYa/Open1PanelApp",
+  "dir_name": "ui-visual-validator-iskenkenya-open1panelapp-3",
+  "downloaded_at": "2026-02-22T05:10:32.702633Z",
+  "author": "IsKenKenYa",
+  "source_url": "https://github.com/IsKenKenYa/Open1PanelApp/blob/main/.agents/skills/ui-visual-validator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/IsKenKenYa/Open1PanelApp/blob/main/.agents/skills/ui-visual-validator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

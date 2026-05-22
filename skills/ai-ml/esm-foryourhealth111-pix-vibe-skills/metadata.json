@@ -1,0 +1,17 @@
+{
+  "name": "esm",
+  "repo": "foryourhealth111-pixel/Vibe-Skills",
+  "path": "bundled/skills/esm/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-ml",
+  "source": "github.com/foryourhealth111-pixel/Vibe-Skills",
+  "dir_name": "esm-foryourhealth111-pix-vibe-skills",
+  "downloaded_at": "2026-04-21T01:31:33.704336Z",
+  "author": "foryourhealth111-pixel",
+  "source_url": "https://github.com/foryourhealth111-pixel/Vibe-Skills/blob/main/bundled/skills/esm/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/foryourhealth111-pixel/Vibe-Skills/blob/main/bundled/skills/esm/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

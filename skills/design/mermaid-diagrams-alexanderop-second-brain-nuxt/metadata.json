@@ -1,0 +1,16 @@
+{
+  "name": "mermaid-diagrams",
+  "repo": "alexanderop/second-brain-nuxt",
+  "path": ".claude/skills/mermaid-diagrams/SKILL.md",
+  "source": "github.com/alexanderop/second-brain-nuxt",
+  "downloaded_at": "2026-02-02T05:13:06.950984Z",
+  "dir_name": "mermaid-diagrams-alexanderop-second-brain-nuxt",
+  "category": "design",
+  "author": "alexanderop",
+  "source_url": "https://github.com/alexanderop/second-brain-nuxt/blob/main/.claude/skills/mermaid-diagrams/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexanderop/second-brain-nuxt/blob/main/.claude/skills/mermaid-diagrams/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "commit-message",
+  "repo": "viteinfinite/sync-skills",
+  "path": "test/fixtures/fake-skills/.claude/skills/commit-message/SKILL.md",
+  "source": "github.com/viteinfinite/sync-skills",
+  "downloaded_at": "2026-01-29T05:41:33.633863Z",
+  "dir_name": "commit-message-viteinfinite-sync-skills",
+  "category": "development",
+  "author": "viteinfinite",
+  "source_url": "https://github.com/viteinfinite/sync-skills/blob/main/test/fixtures/fake-skills/.claude/skills/commit-message/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/viteinfinite/sync-skills/blob/main/test/fixtures/fake-skills/.claude/skills/commit-message/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

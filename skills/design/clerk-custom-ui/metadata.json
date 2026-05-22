@@ -1,0 +1,16 @@
+{
+  "name": "clerk-custom-ui",
+  "repo": "growupanand/ConvoForm",
+  "path": ".agents/skills/clerk-custom-ui/SKILL.md",
+  "category": "design",
+  "source": "github.com/growupanand/ConvoForm",
+  "dir_name": "clerk-custom-ui",
+  "downloaded_at": "2026-02-15T07:24:32.616633Z",
+  "author": "growupanand",
+  "source_url": "https://github.com/growupanand/ConvoForm/blob/main/.agents/skills/clerk-custom-ui/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/growupanand/ConvoForm/blob/main/.agents/skills/clerk-custom-ui/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

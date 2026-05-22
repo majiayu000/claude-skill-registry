@@ -1,0 +1,16 @@
+{
+  "name": "playwright",
+  "repo": "AIDotNet/MoYuCode",
+  "path": "skills/tools/playwright/SKILL.md",
+  "source": "github.com/AIDotNet/MoYuCode",
+  "downloaded_at": "2026-01-29T08:25:24.589194Z",
+  "dir_name": "playwright-aidotnet-moyucode",
+  "category": "testing",
+  "author": "AIDotNet",
+  "source_url": "https://github.com/AIDotNet/MoYuCode/blob/main/skills/tools/playwright/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AIDotNet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

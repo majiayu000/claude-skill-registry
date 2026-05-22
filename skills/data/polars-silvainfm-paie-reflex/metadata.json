@@ -1,0 +1,20 @@
+{
+  "name": "polars",
+  "description": "",
+  "repo": "silvainfm/paie_reflex",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/silvainfm/paie_reflex",
+  "github_path": ".claude/skills/polars",
+  "github_branch": "main",
+  "dir_name": "polars-silvainfm-paie-reflex",
+  "downloaded_at": "2026-02-05T05:10:23.788884Z",
+  "author": "silvainfm",
+  "source_url": "https://github.com/silvainfm/paie_reflex/blob/main/.claude/skills/polars/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/silvainfm/paie_reflex/blob/main/.claude/skills/polars/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

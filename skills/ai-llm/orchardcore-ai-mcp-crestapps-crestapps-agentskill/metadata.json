@@ -1,0 +1,17 @@
+{
+  "name": "orchardcore-ai-mcp",
+  "repo": "CrestApps/CrestApps.AgentSkills",
+  "path": "src/CrestApps.AgentSkills/orchardcore/orchardcore-ai-mcp/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-llm",
+  "source": "github.com/CrestApps/CrestApps.AgentSkills",
+  "dir_name": "orchardcore-ai-mcp-crestapps-crestapps-agentskill",
+  "downloaded_at": "2026-03-22T05:10:20.535281Z",
+  "author": "CrestApps",
+  "source_url": "https://github.com/CrestApps/CrestApps.AgentSkills/blob/main/src/CrestApps.AgentSkills/orchardcore/orchardcore-ai-mcp/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CrestApps/CrestApps.AgentSkills/blob/main/src/CrestApps.AgentSkills/orchardcore/orchardcore-ai-mcp/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

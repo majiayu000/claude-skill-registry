@@ -1,0 +1,20 @@
+{
+  "name": "spec-driven-dev",
+  "description": "Universal, language-agnostic development standards for software projects. Includes coding standards, git workflows, testing guidelines, documentation structure, and AI collaboration rules.",
+  "repo": "AsiaOstrich/universal-dev-standards",
+  "category": "development",
+  "tags": [],
+  "stars": 20,
+  "source": "",
+  "github_path": "skills/spec-driven-dev",
+  "github_branch": "main",
+  "dir_name": "spec-driven-dev-asiaostrich-universal-dev-standa",
+  "downloaded_at": "2026-02-05T05:47:28.908768Z",
+  "author": "AsiaOstrich",
+  "source_url": "https://github.com/AsiaOstrich/universal-dev-standards/blob/main/skills/spec-driven-dev/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Universal Development Standards Contributors",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

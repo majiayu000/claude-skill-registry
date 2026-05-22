@@ -1,0 +1,17 @@
+{
+  "name": "frontend-design",
+  "repo": "ar4mirez/samuel",
+  "path": ".claude/skills/frontend-design/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/ar4mirez/samuel",
+  "dir_name": "frontend-design-ar4mirez-samuel",
+  "downloaded_at": "2026-03-22T07:00:57.060700Z",
+  "author": "ar4mirez",
+  "source_url": "https://github.com/ar4mirez/samuel/blob/main/.claude/skills/frontend-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ar4mirez/samuel/blob/main/.claude/skills/frontend-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

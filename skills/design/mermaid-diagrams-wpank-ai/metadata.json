@@ -1,0 +1,17 @@
+{
+  "name": "mermaid-diagrams",
+  "repo": "wpank/ai",
+  "path": "skills/writing/mermaid-diagrams/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/wpank/ai",
+  "dir_name": "mermaid-diagrams-wpank-ai",
+  "downloaded_at": "2026-05-04T02:19:04.310901Z",
+  "author": "wpank",
+  "source_url": "https://github.com/wpank/ai/blob/main/skills/writing/mermaid-diagrams/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wpank/ai/blob/main/skills/writing/mermaid-diagrams/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

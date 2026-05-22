@@ -1,0 +1,11 @@
+{
+  "name": "cicd",
+  "repo": "tidemann/st44-home",
+  "path": ".claude/skills/cicd/SKILL.md",
+  "source": "github.com/tidemann/st44-home",
+  "downloaded_at": "2026-01-22T01:45:58.356360Z",
+  "dir_name": "cicd-tidemann-st44-home",
+  "category": "devops",
+  "github_path": ".claude/skills/cicd",
+  "github_branch": "main"
+}

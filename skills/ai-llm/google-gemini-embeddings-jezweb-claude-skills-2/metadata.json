@@ -1,0 +1,16 @@
+{
+  "name": "google-gemini-embeddings",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/google-gemini-embeddings/SKILL.md",
+  "category": "ai-llm",
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "google-gemini-embeddings-jezweb-claude-skills-2",
+  "downloaded_at": "2026-02-18T01:28:15.879067Z",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/google-gemini-embeddings/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

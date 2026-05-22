@@ -1,0 +1,17 @@
+{
+  "name": "oktk",
+  "repo": "Broedkrummen/openclaw-skills",
+  "path": "skills/oktk/SKILL.md",
+  "github_branch": "master",
+  "category": "ai-llm",
+  "source": "github.com/Broedkrummen/openclaw-skills",
+  "dir_name": "oktk",
+  "downloaded_at": "2026-03-22T05:02:14.388535Z",
+  "author": "Broedkrummen",
+  "source_url": "https://github.com/Broedkrummen/openclaw-skills/blob/master/skills/oktk/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Broedkrummen/openclaw-skills/blob/master/skills/oktk/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

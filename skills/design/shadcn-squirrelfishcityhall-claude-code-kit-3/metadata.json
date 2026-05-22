@@ -1,0 +1,17 @@
+{
+  "name": "shadcn",
+  "repo": "Squirrelfishcityhall150/claude-code-kit",
+  "path": "cli/kits/shadcn/skills/shadcn/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/Squirrelfishcityhall150/claude-code-kit",
+  "dir_name": "shadcn-squirrelfishcityhall-claude-code-kit-3",
+  "downloaded_at": "2026-03-27T01:21:33.604561Z",
+  "author": "Squirrelfishcityhall150",
+  "source_url": "https://github.com/Squirrelfishcityhall150/claude-code-kit/blob/main/cli/kits/shadcn/skills/shadcn/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Squirrelfishcityhall150/claude-code-kit/blob/main/cli/kits/shadcn/skills/shadcn/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

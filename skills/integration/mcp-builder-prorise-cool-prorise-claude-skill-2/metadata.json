@@ -1,0 +1,17 @@
+{
+  "name": "mcp-builder",
+  "repo": "Prorise-cool/prorise-claude-skills",
+  "path": ".claude/skills/ai-specialist/references/domains/mcp-builder/SKILL.md",
+  "github_branch": "master",
+  "category": "integration",
+  "source": "github.com/Prorise-cool/prorise-claude-skills",
+  "dir_name": "mcp-builder-prorise-cool-prorise-claude-skill-2",
+  "downloaded_at": "2026-03-22T06:06:51.091612Z",
+  "author": "Prorise-cool",
+  "source_url": "https://github.com/Prorise-cool/prorise-claude-skills/blob/master/.claude/skills/ai-specialist/references/domains/mcp-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Prorise-cool/prorise-claude-skills/blob/master/.claude/skills/ai-specialist/references/domains/mcp-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

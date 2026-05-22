@@ -1,0 +1,16 @@
+{
+  "name": "git-workflows",
+  "repo": "AutumnsGrove/GroveScout",
+  "path": ".claude/skills/git-workflows/SKILL.md",
+  "source": "github.com/AutumnsGrove/GroveScout",
+  "downloaded_at": "2026-01-29T08:31:58.947697Z",
+  "dir_name": "git-workflows-autumnsgrove-grovescout",
+  "category": "development",
+  "author": "AutumnsGrove",
+  "source_url": "https://github.com/AutumnsGrove/GroveScout/blob/main/.claude/skills/git-workflows/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AutumnsGrove/GroveScout/blob/main/.claude/skills/git-workflows/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

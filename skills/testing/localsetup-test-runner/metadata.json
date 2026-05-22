@@ -1,0 +1,17 @@
+{
+  "name": "localsetup-test-runner",
+  "repo": "cptnfren/localsetup",
+  "path": "_localsetup/skills/localsetup-test-runner/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/cptnfren/localsetup",
+  "dir_name": "localsetup-test-runner",
+  "downloaded_at": "2026-03-22T07:35:05.738220Z",
+  "author": "cptnfren",
+  "source_url": "https://github.com/cptnfren/localsetup/blob/main/_localsetup/skills/localsetup-test-runner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cptnfren/localsetup/blob/main/_localsetup/skills/localsetup-test-runner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

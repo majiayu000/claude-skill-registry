@@ -1,0 +1,16 @@
+{
+  "name": "mocking-stubbing",
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/mocking-stubbing/SKILL.md",
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "downloaded_at": "2026-02-02T02:03:40.628000Z",
+  "dir_name": "mocking-stubbing-aj-geddes-useful-ai-prompts-2",
+  "category": "testing",
+  "author": "aj-geddes",
+  "source_url": "https://github.com/aj-geddes/useful-ai-prompts/blob/main/skills/mocking-stubbing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AJ Geddes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

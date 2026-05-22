@@ -1,0 +1,16 @@
+{
+  "name": "when-automating-github-actions-use-workflow-automation",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/github-integration/when-automating-github-actions-use-workflow-automation/SKILL.md",
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "downloaded_at": "2026-02-02T02:50:03.113746Z",
+  "dir_name": "when-automating-github-actions-use-workflow-automation",
+  "category": "devops",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/github-integration/when-automating-github-actions-use-workflow-automation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

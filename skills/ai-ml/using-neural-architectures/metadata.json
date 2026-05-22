@@ -1,0 +1,18 @@
+{
+  "name": "using-neural-architectures",
+  "repo": "tachyon-beep/skillpacks",
+  "path": "plugins/yzmir-neural-architectures/skills/using-neural-architectures/SKILL.md",
+  "source": "github.com/tachyon-beep/skillpacks",
+  "downloaded_at": "2026-01-22T03:50:06.412720Z",
+  "dir_name": "using-neural-architectures",
+  "category": "ai-ml",
+  "github_path": "plugins/yzmir-neural-architectures/skills/using-neural-architectures",
+  "github_branch": "main",
+  "author": "tachyon-beep",
+  "source_url": "https://github.com/tachyon-beep/skillpacks/blob/main/plugins/yzmir-neural-architectures/skills/using-neural-architectures/SKILL.md",
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tachyon-beep/skillpacks/blob/main/plugins/yzmir-neural-architectures/skills/using-neural-architectures/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

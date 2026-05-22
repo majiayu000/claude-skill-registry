@@ -1,0 +1,13 @@
+{
+  "name": "turborepo",
+  "description": "",
+  "repo": "workleap/wl-agents-code-review-poc",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/workleap/wl-agents-code-review-poc",
+  "github_path": ".claude/skills/turborepo",
+  "github_branch": "main",
+  "dir_name": "turborepo-workleap-wl-agents-code-revie",
+  "downloaded_at": "2026-02-05T05:07:59.605018Z"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "design-html",
+  "description": "",
+  "repo": "mae616/ai-template",
+  "category": "design",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mae616/ai-template",
+  "github_path": ".claude/skills/design-html",
+  "github_branch": "main",
+  "dir_name": "design-html",
+  "downloaded_at": "2026-02-05T01:45:07.938864Z",
+  "author": "mae616",
+  "source_url": "https://github.com/mae616/ai-template/blob/main/.claude/skills/design-html/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 AI Template Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "jcl-migration-analyzer",
+  "repo": "DauQuangThanh/hanoi-rainbow",
+  "path": "skills/jcl-migration-analyzer/SKILL.md",
+  "source": "github.com/DauQuangThanh/hanoi-rainbow",
+  "downloaded_at": "2026-01-22T02:21:59.202894Z",
+  "dir_name": "jcl-migration-analyzer",
+  "category": "devops",
+  "github_path": "skills/jcl-migration-analyzer",
+  "github_branch": "main",
+  "author": "DauQuangThanh",
+  "source_url": "https://github.com/DauQuangThanh/hanoi-rainbow/blob/main/skills/jcl-migration-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dau Quang Thanh",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

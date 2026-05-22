@@ -1,0 +1,17 @@
+{
+  "name": "solid",
+  "repo": "Jimmy-Jung/claude_symbiote",
+  "path": ".claude/skills/solid/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/Jimmy-Jung/claude_symbiote",
+  "dir_name": "solid",
+  "downloaded_at": "2026-03-22T05:34:28.104866Z",
+  "author": "Jimmy-Jung",
+  "source_url": "https://github.com/Jimmy-Jung/claude_symbiote/blob/main/.claude/skills/solid/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Jimmy-Jung/claude_symbiote/blob/main/.claude/skills/solid/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

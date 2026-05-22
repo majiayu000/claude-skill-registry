@@ -1,0 +1,17 @@
+{
+  "name": "frontend-design-jp",
+  "repo": "LinkX-Japan/ai-souken-workflows",
+  "path": "claudecode/skills/frontend-design-jp/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/LinkX-Japan/ai-souken-workflows",
+  "dir_name": "frontend-design-jp",
+  "downloaded_at": "2026-03-22T05:43:13.953367Z",
+  "author": "LinkX-Japan",
+  "source_url": "https://github.com/LinkX-Japan/ai-souken-workflows/blob/main/claudecode/skills/frontend-design-jp/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LinkX-Japan/ai-souken-workflows/blob/main/claudecode/skills/frontend-design-jp/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "prompt-template-builder",
+  "description": "",
+  "repo": "monkey1sai/openai-cli",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/monkey1sai/openai-cli",
+  "github_path": ".claude/skills/prompt-template-builder",
+  "github_branch": "main",
+  "dir_name": "prompt-template-builder",
+  "downloaded_at": "2026-02-05T01:44:14.892137Z",
+  "author": "monkey1sai",
+  "source_url": "https://github.com/monkey1sai/openai-cli/blob/main/.claude/skills/prompt-template-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/monkey1sai/openai-cli/blob/main/.claude/skills/prompt-template-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

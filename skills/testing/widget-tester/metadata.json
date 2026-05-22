@@ -1,0 +1,18 @@
+{
+  "name": "widget-tester",
+  "repo": "Spectaculous-Code/raamattu-nyt",
+  "path": "Docs/claude-reports/widget-tester/SKILL.md",
+  "source": "github.com/Spectaculous-Code/raamattu-nyt",
+  "downloaded_at": "2026-01-22T03:20:45.851701Z",
+  "dir_name": "widget-tester",
+  "category": "testing",
+  "github_path": ".claude/skills/widget-tester",
+  "github_branch": "main",
+  "author": "Spectaculous-Code",
+  "source_url": "https://github.com/Spectaculous-Code/raamattu-nyt/blob/main/.claude/skills/widget-tester/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Spectaculous-Code/raamattu-nyt/blob/main/.claude/skills/widget-tester/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

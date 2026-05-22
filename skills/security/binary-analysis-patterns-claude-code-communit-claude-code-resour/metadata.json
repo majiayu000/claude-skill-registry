@@ -1,0 +1,17 @@
+{
+  "name": "binary-analysis-patterns",
+  "repo": "Claude-Code-Community-Ireland/claude-code-resources",
+  "path": "skills/general/binary-analysis-patterns/skill.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/Claude-Code-Community-Ireland/claude-code-resources",
+  "dir_name": "binary-analysis-patterns-claude-code-communit-claude-code-resour",
+  "downloaded_at": "2026-03-01T05:03:58.667268Z",
+  "author": "Claude-Code-Community-Ireland",
+  "source_url": "https://github.com/Claude-Code-Community-Ireland/claude-code-resources/blob/main/skills/general/binary-analysis-patterns/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Claude-Code-Community-Ireland/claude-code-resources/blob/main/skills/general/binary-analysis-patterns/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

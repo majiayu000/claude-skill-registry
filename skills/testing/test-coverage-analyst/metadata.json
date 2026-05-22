@@ -1,0 +1,18 @@
+{
+  "name": "test-coverage-analyst",
+  "repo": "MUmerRazzaq/fast-next-todo",
+  "path": ".claude/skills/test-coverage-analyst/SKILL.md",
+  "source": "github.com/MUmerRazzaq/fast-next-todo",
+  "downloaded_at": "2026-01-22T02:08:33.480031Z",
+  "dir_name": "test-coverage-analyst",
+  "category": "testing",
+  "github_path": ".claude/skills/test-coverage-analyst",
+  "github_branch": "main",
+  "author": "MUmerRazzaq",
+  "source_url": "https://github.com/MUmerRazzaq/fast-next-todo/blob/main/.claude/skills/test-coverage-analyst/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MUmerRazzaq/fast-next-todo/blob/main/.claude/skills/test-coverage-analyst/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

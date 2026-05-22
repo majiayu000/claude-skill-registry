@@ -1,0 +1,17 @@
+{
+  "name": "pattern-extractor",
+  "repo": "datorresb/vibecoding-starter",
+  "path": ".claude/skills/assimilation/pattern-extractor/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/datorresb/vibecoding-starter",
+  "dir_name": "pattern-extractor",
+  "downloaded_at": "2026-03-22T07:40:26.881279Z",
+  "author": "datorresb",
+  "source_url": "https://github.com/datorresb/vibecoding-starter/blob/main/.claude/skills/assimilation/pattern-extractor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/datorresb/vibecoding-starter/blob/main/.claude/skills/assimilation/pattern-extractor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

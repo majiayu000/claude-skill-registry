@@ -1,0 +1,16 @@
+{
+  "name": "cicd",
+  "repo": "ngxtm/devkit",
+  "path": "rules/flutter/cicd/SKILL.md",
+  "source": "github.com/ngxtm/devkit",
+  "downloaded_at": "2026-02-02T03:10:59.687273Z",
+  "dir_name": "cicd-ngxtm-devkit",
+  "category": "devops",
+  "author": "ngxtm",
+  "source_url": "https://github.com/ngxtm/devkit/blob/main/rules/flutter/cicd/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

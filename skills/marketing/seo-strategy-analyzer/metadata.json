@@ -1,0 +1,17 @@
+{
+  "name": "seo-strategy-analyzer",
+  "repo": "Yarmoluk/cognify-skills",
+  "path": ".github/skills/seo-strategy-analyzer/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/Yarmoluk/cognify-skills",
+  "dir_name": "seo-strategy-analyzer",
+  "downloaded_at": "2026-03-22T06:33:07.220698Z",
+  "author": "Yarmoluk",
+  "source_url": "https://github.com/Yarmoluk/cognify-skills/blob/main/.github/skills/seo-strategy-analyzer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Yarmoluk/cognify-skills/blob/main/.github/skills/seo-strategy-analyzer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

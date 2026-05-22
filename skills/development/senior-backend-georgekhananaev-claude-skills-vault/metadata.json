@@ -1,0 +1,17 @@
+{
+  "name": "senior-backend",
+  "repo": "georgekhananaev/claude-skills-vault",
+  "path": ".claude/skills/senior-backend/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/georgekhananaev/claude-skills-vault",
+  "dir_name": "senior-backend-georgekhananaev-claude-skills-vault",
+  "downloaded_at": "2026-03-01T07:52:07.524387Z",
+  "author": "georgekhananaev",
+  "source_url": "https://github.com/georgekhananaev/claude-skills-vault/blob/main/.claude/skills/senior-backend/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/georgekhananaev/claude-skills-vault/blob/main/.claude/skills/senior-backend/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "stitch-ui-design-spec-generator",
+  "repo": "gabelul/stitch-kit",
+  "path": "skills/stitch-ui-design-spec-generator/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/gabelul/stitch-kit",
+  "dir_name": "stitch-ui-design-spec-generator",
+  "downloaded_at": "2026-05-20T03:55:51.850479Z",
+  "author": "gabelul",
+  "source_url": "https://github.com/gabelul/stitch-kit/blob/main/skills/stitch-ui-design-spec-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gabelul/stitch-kit/blob/main/skills/stitch-ui-design-spec-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

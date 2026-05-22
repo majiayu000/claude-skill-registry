@@ -1,0 +1,20 @@
+{
+  "name": "launch-strategy",
+  "description": "",
+  "repo": "yunaamelia/vps-rdp-workstation",
+  "category": "marketing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yunaamelia/vps-rdp-workstation",
+  "github_path": ".agent/skills/launch-strategy",
+  "github_branch": "main",
+  "dir_name": "launch-strategy",
+  "downloaded_at": "2026-02-05T05:41:55.305708Z",
+  "author": "yunaamelia",
+  "source_url": "https://github.com/yunaamelia/vps-rdp-workstation/blob/main/.agent/skills/launch-strategy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 VPS RDP Workstation Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "code-refactoring-refactor-clean",
+  "repo": "bcastelino/agent-skills-kit",
+  "path": "skills/code-refactoring-refactor-clean/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/bcastelino/agent-skills-kit",
+  "dir_name": "code-refactoring-refactor-clean-bcastelino-agent-skills-kit",
+  "downloaded_at": "2026-03-22T07:11:10.328858Z",
+  "author": "bcastelino",
+  "source_url": "https://github.com/bcastelino/agent-skills-kit/blob/main/skills/code-refactoring-refactor-clean/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bcastelino/agent-skills-kit/blob/main/skills/code-refactoring-refactor-clean/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

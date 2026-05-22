@@ -1,0 +1,18 @@
+{
+  "name": "optimize-prompt-goal",
+  "repo": "doodledood/claude-code-plugins",
+  "path": "claude-plugins/prompt-engineering/skills/optimize-prompt-goal/SKILL.md",
+  "source": "github.com/doodledood/claude-code-plugins",
+  "downloaded_at": "2026-01-22T02:39:48.444520Z",
+  "dir_name": "optimize-prompt-goal",
+  "category": "ai-llm",
+  "github_path": "claude-plugins/prompt-engineering/skills/optimize-prompt-goal",
+  "github_branch": "main",
+  "author": "doodledood",
+  "source_url": "https://github.com/doodledood/claude-code-plugins/blob/main/claude-plugins/prompt-engineering/skills/optimize-prompt-goal/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/doodledood/claude-code-plugins/blob/main/claude-plugins/prompt-engineering/skills/optimize-prompt-goal/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

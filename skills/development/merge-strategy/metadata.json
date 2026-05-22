@@ -1,0 +1,16 @@
+{
+  "name": "merge-strategy",
+  "repo": "manastalukdar/claude-devstudio",
+  "path": "skills/merge-strategy/SKILL.md",
+  "source": "github.com/manastalukdar/claude-devstudio",
+  "downloaded_at": "2026-02-02T03:11:49.234642Z",
+  "dir_name": "merge-strategy",
+  "category": "development",
+  "author": "manastalukdar",
+  "source_url": "https://github.com/manastalukdar/claude-devstudio/blob/main/skills/merge-strategy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brenner Cruvinel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

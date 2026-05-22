@@ -1,0 +1,13 @@
+{
+  "name": "testing",
+  "description": "",
+  "repo": "saleor/storefront",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/saleor/storefront",
+  "github_path": ".claude/skills/testing",
+  "github_branch": "main",
+  "dir_name": "testing-saleor-storefront",
+  "downloaded_at": "2026-02-05T01:44:42.588577Z"
+}

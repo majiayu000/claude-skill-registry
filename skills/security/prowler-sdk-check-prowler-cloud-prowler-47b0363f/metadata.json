@@ -1,0 +1,16 @@
+{
+  "name": "prowler-sdk-check",
+  "repo": "prowler-cloud/prowler",
+  "path": "skills/prowler-sdk-check/SKILL.md",
+  "source": "github.com/prowler-cloud/prowler",
+  "downloaded_at": "2026-01-29T07:09:52.339313Z",
+  "dir_name": "prowler-sdk-check-prowler-cloud-prowler-47b0363f",
+  "category": "security",
+  "author": "prowler-cloud",
+  "source_url": "https://github.com/prowler-cloud/prowler/blob/main/skills/prowler-sdk-check/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/prowler-cloud/prowler/blob/main/skills/prowler-sdk-check/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

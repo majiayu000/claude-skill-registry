@@ -1,0 +1,17 @@
+{
+  "name": "remix-icon",
+  "repo": "einverne/dotfiles",
+  "path": "claude/skills/remix-icon/SKILL.md",
+  "github_branch": "master",
+  "category": "design",
+  "source": "github.com/einverne/dotfiles",
+  "dir_name": "remix-icon-einverne-dotfiles-2",
+  "downloaded_at": "2026-03-01T07:35:13.718905Z",
+  "author": "einverne",
+  "source_url": "https://github.com/einverne/dotfiles/blob/master/claude/skills/remix-icon/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/einverne/dotfiles/blob/master/claude/skills/remix-icon/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "human-docs-generator",
+  "repo": "Brownbull/ayni_core",
+  "path": ".claude/skills/human-docs-generator/SKILL.md",
+  "source": "github.com/Brownbull/ayni_core",
+  "downloaded_at": "2026-01-29T07:15:08.436951Z",
+  "dir_name": "human-docs-generator-brownbull-ayni-core",
+  "category": "documents",
+  "author": "Brownbull",
+  "source_url": "https://github.com/Brownbull/ayni_core/blob/main/.claude/skills/human-docs-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Brownbull/ayni_core/blob/main/.claude/skills/human-docs-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

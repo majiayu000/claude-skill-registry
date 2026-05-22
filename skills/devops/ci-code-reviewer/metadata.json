@@ -1,0 +1,17 @@
+{
+  "name": "ci-code-reviewer",
+  "repo": "KjellKod/metrics-and-insights",
+  "path": ".skills/ci-code-reviewer/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/KjellKod/metrics-and-insights",
+  "dir_name": "ci-code-reviewer",
+  "downloaded_at": "2026-03-01T05:35:13.193505Z",
+  "author": "KjellKod",
+  "source_url": "https://github.com/KjellKod/metrics-and-insights/blob/main/.skills/ci-code-reviewer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/KjellKod/metrics-and-insights/blob/main/.skills/ci-code-reviewer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

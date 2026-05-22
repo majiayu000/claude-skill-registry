@@ -1,0 +1,18 @@
+{
+  "name": "twitter-content-ai",
+  "description": "Generate Twitter content with Jessie persona - Codatta data cleaner intern. Creates GM posts, industry insights, casual content, and interactions with Milady culture style. Use when creating tweets, r",
+  "repo": "codatta/ai-content-studio",
+  "path": "skills/twitter-content-ai",
+  "category": "marketing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/codatta/ai-content-studio",
+  "dir_name": "twitter-content-ai-codatta-ai-content-studio-2",
+  "author": "codatta",
+  "source_url": "https://github.com/codatta/ai-content-studio/blob/main/skills/twitter-content-ai/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Jessie Bot Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

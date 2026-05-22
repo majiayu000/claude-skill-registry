@@ -1,0 +1,13 @@
+{
+  "name": "shopify",
+  "description": "",
+  "repo": "vumichien/bi-agent",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vumichien/bi-agent",
+  "github_path": ".claude/skills/shopify",
+  "github_branch": "main",
+  "dir_name": "shopify-vumichien-bi-agent",
+  "downloaded_at": "2026-02-05T01:44:53.813930Z"
+}

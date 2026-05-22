@@ -1,0 +1,18 @@
+{
+  "name": "flaky-fix",
+  "repo": "jmagly/ai-writing-guide",
+  "path": "agentic/code/addons/testing-quality/skills/flaky-fix/SKILL.md",
+  "source": "github.com/jmagly/ai-writing-guide",
+  "downloaded_at": "2026-01-22T03:04:51.210300Z",
+  "dir_name": "flaky-fix",
+  "category": "testing",
+  "github_path": "agentic/code/addons/testing-quality/skills/flaky-fix",
+  "github_branch": "main",
+  "author": "jmagly",
+  "source_url": "https://github.com/jmagly/ai-writing-guide/blob/main/agentic/code/addons/testing-quality/skills/flaky-fix/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Joe Magly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

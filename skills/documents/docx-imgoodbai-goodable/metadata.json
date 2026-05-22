@@ -1,0 +1,16 @@
+{
+  "name": "docx",
+  "repo": "ImGoodBai/goodable",
+  "path": "skills/docx/SKILL.md",
+  "category": "documents",
+  "source": "github.com/ImGoodBai/goodable",
+  "dir_name": "docx-imgoodbai-goodable",
+  "downloaded_at": "2026-02-15T05:14:29.465376Z",
+  "author": "ImGoodBai",
+  "source_url": "https://github.com/ImGoodBai/goodable/blob/main/skills/docx/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ImGoodBai/goodable/blob/main/skills/docx/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

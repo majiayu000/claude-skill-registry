@@ -1,0 +1,17 @@
+{
+  "name": "lint-and-validate",
+  "repo": "darthlinuxer/Agentic-Skills",
+  "path": ".claude/skills/lint-and-validate/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/darthlinuxer/Agentic-Skills",
+  "dir_name": "lint-and-validate-darthlinuxer-agentic-skills-2",
+  "downloaded_at": "2026-03-22T07:39:36.625739Z",
+  "author": "darthlinuxer",
+  "source_url": "https://github.com/darthlinuxer/Agentic-Skills/blob/main/.claude/skills/lint-and-validate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/darthlinuxer/Agentic-Skills/blob/main/.claude/skills/lint-and-validate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

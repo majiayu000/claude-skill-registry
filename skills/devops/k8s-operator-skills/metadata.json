@@ -1,0 +1,16 @@
+{
+  "name": "k8s-operator-skills",
+  "repo": "hawkli-1994/k8s-operator-skills",
+  "path": "skill.md",
+  "category": "devops",
+  "source": "github.com/hawkli-1994/k8s-operator-skills",
+  "dir_name": "k8s-operator-skills",
+  "downloaded_at": "2026-02-15T07:27:59.507945Z",
+  "author": "hawkli-1994",
+  "source_url": "https://github.com/hawkli-1994/k8s-operator-skills/blob/main/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hawkli-1994/k8s-operator-skills/blob/main/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

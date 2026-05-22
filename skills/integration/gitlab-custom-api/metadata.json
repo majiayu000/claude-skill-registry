@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-custom-api",
+  "repo": "Knuckles-Team/gitlab-api",
+  "path": "gitlab_api/skills/gitlab-custom-api/SKILL.md",
+  "source": "github.com/Knuckles-Team/gitlab-api",
+  "downloaded_at": "2026-01-22T00:53:32.058926Z",
+  "dir_name": "gitlab-custom-api",
+  "category": "integration",
+  "github_path": "gitlab_api/skills/gitlab-custom-api",
+  "github_branch": "main"
+}

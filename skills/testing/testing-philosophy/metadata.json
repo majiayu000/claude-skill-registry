@@ -1,0 +1,18 @@
+{
+  "name": "testing-philosophy",
+  "repo": "phrazzld/claude-config",
+  "path": "skills/testing-philosophy/SKILL.md",
+  "source": "github.com/phrazzld/claude-config",
+  "downloaded_at": "2026-01-14T03:03:35.994449Z",
+  "dir_name": "testing-philosophy",
+  "category": "testing",
+  "github_path": "skills/testing-philosophy",
+  "github_branch": "main",
+  "author": "phrazzld",
+  "source_url": "https://github.com/phrazzld/claude-config/blob/main/skills/testing-philosophy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/phrazzld/claude-config/blob/main/skills/testing-philosophy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

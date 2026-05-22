@@ -1,0 +1,16 @@
+{
+  "name": "effect-errors-retries",
+  "repo": "mepuka/crate",
+  "path": ".claude/skills/effect-errors-retries/SKILL.md",
+  "source": "github.com/mepuka/crate",
+  "downloaded_at": "2026-01-29T07:39:33.038383Z",
+  "dir_name": "effect-errors-retries-mepuka-crate",
+  "category": "development",
+  "author": "mepuka",
+  "source_url": "https://github.com/mepuka/crate/blob/main/.claude/skills/effect-errors-retries/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-present Mepuka Kessy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

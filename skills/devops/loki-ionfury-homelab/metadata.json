@@ -1,0 +1,16 @@
+{
+  "name": "loki",
+  "repo": "ionfury/homelab",
+  "path": ".claude/skills/loki/SKILL.md",
+  "category": "devops",
+  "source": "github.com/ionfury/homelab",
+  "dir_name": "loki-ionfury-homelab",
+  "downloaded_at": "2026-02-22T07:32:19.818978Z",
+  "author": "ionfury",
+  "source_url": "https://github.com/ionfury/homelab/blob/main/.claude/skills/loki/SKILL.md",
+  "license": "WTFPL",
+  "copyright": "Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

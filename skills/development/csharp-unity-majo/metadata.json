@@ -1,0 +1,20 @@
+{
+  "name": "csharp-unity-majo",
+  "description": "",
+  "repo": "markjoshwel/skills",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/markjoshwel/skills",
+  "github_path": "csharp-unity-majo",
+  "github_branch": "main",
+  "dir_name": "csharp-unity-majo",
+  "downloaded_at": "2026-02-05T01:44:42.995444Z",
+  "author": "markjoshwel",
+  "source_url": "https://github.com/markjoshwel/skills/blob/main/csharp-unity-majo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/markjoshwel/skills/blob/main/csharp-unity-majo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "kubernetes-deployment-patterns",
+  "repo": "NickCrew/claude-cortex",
+  "path": "skills/kubernetes-deployment-patterns/SKILL.md",
+  "source": "github.com/NickCrew/claude-cortex",
+  "downloaded_at": "2026-02-02T03:43:53.789807Z",
+  "dir_name": "kubernetes-deployment-patterns-nickcrew-claude-cortex",
+  "category": "devops",
+  "author": "NickCrew",
+  "source_url": "https://github.com/NickCrew/claude-cortex/blob/main/skills/kubernetes-deployment-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nicholas Ferguson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

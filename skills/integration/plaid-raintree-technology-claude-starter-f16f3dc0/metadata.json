@@ -1,0 +1,16 @@
+{
+  "name": "plaid",
+  "repo": "raintree-technology/claude-starter",
+  "path": "templates/.claude/skills/plaid/skill.md",
+  "source": "github.com/raintree-technology/claude-starter",
+  "downloaded_at": "2026-01-29T08:58:02.979164Z",
+  "dir_name": "plaid-raintree-technology-claude-starter-f16f3dc0",
+  "category": "integration",
+  "author": "raintree-technology",
+  "source_url": "https://github.com/raintree-technology/claude-starter/blob/main/templates/.claude/skills/plaid/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Raintree Technology",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

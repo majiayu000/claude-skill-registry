@@ -1,0 +1,11 @@
+{
+  "name": "device-testing",
+  "repo": "EvanBacon/apple-health",
+  "path": ".claude/skills/device-testing/SKILL.md",
+  "source": "github.com/EvanBacon/apple-health",
+  "downloaded_at": "2026-01-22T03:32:17.362723Z",
+  "dir_name": "device-testing-evanbacon-apple-health",
+  "category": "testing",
+  "github_path": ".claude/skills/device-testing",
+  "github_branch": "main"
+}

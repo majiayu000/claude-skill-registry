@@ -1,0 +1,13 @@
+{
+  "name": "receiving-code-review",
+  "description": "",
+  "repo": "datasciencemonkey/claude-code-cli-bricks",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
+  "github_path": ".claude/skills/receiving-code-review",
+  "github_branch": "main",
+  "dir_name": "receiving-code-review-datasciencemonkey-claude-code-cli-bric",
+  "downloaded_at": "2026-02-05T01:44:57.027720Z"
+}

@@ -1,9 +1,0 @@
-{
-  "name": "wheels-deployment",
-  "repo": "wheels-dev/wheels",
-  "path": "examples/tweet/.claude/skills/wheels-deployment/SKILL.md",
-  "source": "github.com/wheels-dev/wheels",
-  "downloaded_at": "2026-02-02T01:50:39.353743Z",
-  "dir_name": "wheels-deployment",
-  "category": "other"
-}

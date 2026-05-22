@@ -1,0 +1,16 @@
+{
+  "name": "op-secrets-creator",
+  "repo": "leefowlercu/agent-kit",
+  "path": "plugins/op-secrets-manager/skills/op-secrets-creator/SKILL.md",
+  "source": "github.com/leefowlercu/agent-kit",
+  "downloaded_at": "2026-01-29T05:34:22.560749Z",
+  "dir_name": "op-secrets-creator-leefowlercu-agent-kit",
+  "category": "security",
+  "author": "leefowlercu",
+  "source_url": "https://github.com/leefowlercu/agent-kit/blob/main/plugins/op-secrets-manager/skills/op-secrets-creator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

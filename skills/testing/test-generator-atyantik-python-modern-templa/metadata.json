@@ -1,0 +1,20 @@
+{
+  "name": "test-generator",
+  "description": "",
+  "repo": "Atyantik/python-modern-template",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Atyantik/python-modern-template",
+  "github_path": ".claude/skills/test-generator",
+  "github_branch": "main",
+  "dir_name": "test-generator-atyantik-python-modern-templa",
+  "downloaded_at": "2026-02-05T01:45:00.424760Z",
+  "author": "Atyantik",
+  "source_url": "https://github.com/Atyantik/python-modern-template/blob/main/.claude/skills/test-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Atyantik Technologies Private Limited",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

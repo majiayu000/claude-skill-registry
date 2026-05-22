@@ -1,0 +1,16 @@
+{
+  "name": "e2e-testing-patterns",
+  "repo": "jlaws/dotfiles",
+  "path": ".claude/skills/testing/e2e-testing-patterns/SKILL.md",
+  "category": "testing",
+  "source": "github.com/jlaws/dotfiles",
+  "dir_name": "e2e-testing-patterns-jlaws-dotfiles",
+  "downloaded_at": "2026-02-15T07:44:35.672662Z",
+  "author": "jlaws",
+  "source_url": "https://github.com/jlaws/dotfiles/blob/main/.claude/skills/testing/e2e-testing-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jlaws/dotfiles/blob/main/.claude/skills/testing/e2e-testing-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

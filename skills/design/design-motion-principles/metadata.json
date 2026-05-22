@@ -1,0 +1,20 @@
+{
+  "name": "design-motion-principles",
+  "description": "",
+  "repo": "petekp/claude-code-setup",
+  "category": "design",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/petekp/claude-code-setup",
+  "github_path": "skills/design-motion-principles",
+  "github_branch": "main",
+  "dir_name": "design-motion-principles",
+  "downloaded_at": "2026-02-05T01:45:10.652680Z",
+  "author": "petekp",
+  "source_url": "https://github.com/petekp/claude-code-setup/blob/main/skills/design-motion-principles/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Pete Petrash",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

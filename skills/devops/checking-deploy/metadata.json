@@ -1,0 +1,18 @@
+{
+  "name": "checking-deploy",
+  "repo": "alexei-led/claude-code-config",
+  "path": "skills/checking-deploy/SKILL.md",
+  "source": "github.com/alexei-led/claude-code-config",
+  "downloaded_at": "2026-01-17T03:18:00.161961Z",
+  "dir_name": "checking-deploy",
+  "category": "devops",
+  "github_path": "skills/checking-deploy",
+  "github_branch": "main",
+  "author": "alexei-led",
+  "source_url": "https://github.com/alexei-led/claude-code-config/blob/main/skills/checking-deploy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Alexei Ledenev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

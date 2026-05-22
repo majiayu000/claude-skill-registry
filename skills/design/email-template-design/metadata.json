@@ -1,0 +1,16 @@
+{
+  "name": "email-template-design",
+  "repo": "toilahuongg/Shopify-Agents-Kit",
+  "path": ".claude/skills/email-template-design/SKILL.md",
+  "source": "github.com/toilahuongg/Shopify-Agents-Kit",
+  "downloaded_at": "2026-02-02T04:24:59.464807Z",
+  "dir_name": "email-template-design",
+  "category": "design",
+  "author": "toilahuongg",
+  "source_url": "https://github.com/toilahuongg/Shopify-Agents-Kit/blob/main/.claude/skills/email-template-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/toilahuongg/Shopify-Agents-Kit/blob/main/.claude/skills/email-template-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "feature-documentation",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/feature-documentation/SKILL.md",
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "downloaded_at": "2026-01-29T07:43:45.433337Z",
+  "dir_name": "feature-documentation-dengineproblem-agents-monorepo",
+  "category": "documents",
+  "author": "dengineproblem",
+  "source_url": "https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/feature-documentation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/feature-documentation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "bootstrap",
+  "repo": "emirrtopaloglu/claude-code-virtuoso",
+  "path": ".claude/skills/bootstrap/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/emirrtopaloglu/claude-code-virtuoso",
+  "dir_name": "bootstrap-emirrtopaloglu-claude-code-virtuoso-2",
+  "downloaded_at": "2026-03-01T07:37:11.945376Z",
+  "author": "emirrtopaloglu",
+  "source_url": "https://github.com/emirrtopaloglu/claude-code-virtuoso/blob/main/.claude/skills/bootstrap/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/emirrtopaloglu/claude-code-virtuoso/blob/main/.claude/skills/bootstrap/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

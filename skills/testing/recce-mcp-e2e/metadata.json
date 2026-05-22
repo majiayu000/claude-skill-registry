@@ -1,0 +1,17 @@
+{
+  "name": "recce-mcp-e2e",
+  "repo": "DataRecce/recce",
+  "path": ".claude/skills/recce-mcp-e2e/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/DataRecce/recce",
+  "dir_name": "recce-mcp-e2e",
+  "downloaded_at": "2026-03-22T05:12:23.317375Z",
+  "author": "DataRecce",
+  "source_url": "https://github.com/DataRecce/recce/blob/main/.claude/skills/recce-mcp-e2e/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DataRecce/recce/blob/main/.claude/skills/recce-mcp-e2e/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "agentdb-optimization",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/agentdb-optimization/SKILL.md",
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "downloaded_at": "2026-01-29T08:55:59.677004Z",
+  "dir_name": "agentdb-optimization-dnyoussef-ai-chrome-extension",
+  "category": "performance",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/agentdb-optimization/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

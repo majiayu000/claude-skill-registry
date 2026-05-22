@@ -1,0 +1,20 @@
+{
+  "name": "agent-development",
+  "description": "",
+  "repo": "bagherhosseini/Claude_Code_skills",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bagherhosseini/Claude_Code_skills",
+  "github_path": "skills/plugin-dev/skills/agent-development",
+  "github_branch": "main",
+  "dir_name": "agent-development-bagherhosseini-claude-code-skills",
+  "downloaded_at": "2026-02-05T01:44:57.042353Z",
+  "author": "bagherhosseini",
+  "source_url": "https://github.com/bagherhosseini/Claude_Code_skills/blob/main/skills/plugin-dev/skills/agent-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bagherhosseini/Claude_Code_skills/blob/main/skills/plugin-dev/skills/agent-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "agent-authoring",
+  "repo": "philoserf/claude-code-setup",
+  "path": "skills/agent-authoring/SKILL.md",
+  "source": "github.com/philoserf/claude-code-setup",
+  "downloaded_at": "2026-01-27T03:54:46.238786Z",
+  "dir_name": "agent-authoring",
+  "category": "agent",
+  "author": "philoserf",
+  "source_url": "https://github.com/philoserf/claude-code-setup/blob/main/skills/agent-authoring/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Mark Ayers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

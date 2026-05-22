@@ -1,0 +1,18 @@
+{
+  "name": "academic-research",
+  "repo": "plurigrid/asi",
+  "path": "skills/academic-research/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-01-19T04:21:48.748976Z",
+  "dir_name": "academic-research",
+  "category": "research-analysis",
+  "github_path": "skills/academic-research",
+  "github_branch": "main",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/academic-research/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

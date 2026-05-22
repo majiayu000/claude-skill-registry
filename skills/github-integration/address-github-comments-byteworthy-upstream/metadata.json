@@ -1,0 +1,16 @@
+{
+  "name": "address-github-comments",
+  "repo": "byteworthy/Upstream",
+  "path": ".agents/skills/address-github-comments/SKILL.md",
+  "source": "github.com/byteworthy/Upstream",
+  "downloaded_at": "2026-01-29T07:14:11.606959Z",
+  "dir_name": "address-github-comments-byteworthy-upstream",
+  "category": "github-integration",
+  "author": "byteworthy",
+  "source_url": "https://github.com/byteworthy/Upstream/blob/main/.agents/skills/address-github-comments/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024-2026 ByteWorthy LLC. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

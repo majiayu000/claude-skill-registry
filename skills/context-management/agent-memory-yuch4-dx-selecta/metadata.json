@@ -1,0 +1,16 @@
+{
+  "name": "agent-memory",
+  "repo": "yuch4/dx-selecta",
+  "path": ".github/skills/agent-memory/SKILL.md",
+  "source": "github.com/yuch4/dx-selecta",
+  "downloaded_at": "2026-02-02T04:31:08.317749Z",
+  "dir_name": "agent-memory-yuch4-dx-selecta",
+  "category": "context-management",
+  "author": "yuch4",
+  "source_url": "https://github.com/yuch4/dx-selecta/blob/main/.github/skills/agent-memory/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yuch4/dx-selecta/blob/main/.github/skills/agent-memory/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

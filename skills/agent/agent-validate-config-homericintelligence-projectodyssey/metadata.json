@@ -1,0 +1,13 @@
+{
+  "name": "agent-validate-config",
+  "description": "",
+  "repo": "HomericIntelligence/ProjectOdyssey",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HomericIntelligence/ProjectOdyssey",
+  "github_path": ".claude/skills/agent-validate-config",
+  "github_branch": "main",
+  "dir_name": "agent-validate-config-homericintelligence-projectodyssey",
+  "downloaded_at": "2026-02-05T01:44:42.826835Z"
+}

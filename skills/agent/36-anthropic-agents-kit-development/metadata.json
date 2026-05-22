@@ -1,0 +1,16 @@
+{
+  "name": "36-anthropic-agents-kit-development",
+  "repo": "panaversity/agentfactory",
+  "path": "apps/learn-app/docs/05-Building-Custom-Agents/36-anthropic-agents-kit-development/00-build-your-claude-agent-skill.md",
+  "source": "github.com/panaversity/agentfactory",
+  "downloaded_at": "2026-02-02T04:49:43.000113Z",
+  "dir_name": "36-anthropic-agents-kit-development",
+  "category": "agent",
+  "author": "panaversity",
+  "source_url": "https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/05-Building-Custom-Agents/36-anthropic-agents-kit-development/00-build-your-claude-agent-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/05-Building-Custom-Agents/36-anthropic-agents-kit-development/00-build-your-claude-agent-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

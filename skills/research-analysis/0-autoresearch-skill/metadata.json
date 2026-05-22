@@ -1,0 +1,17 @@
+{
+  "name": "0-autoresearch-skill",
+  "repo": "Orchestra-Research/AI-Research-SKILLs",
+  "path": "0-autoresearch-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "research-analysis",
+  "source": "github.com/Orchestra-Research/AI-Research-SKILLs",
+  "dir_name": "0-autoresearch-skill",
+  "downloaded_at": "2026-05-20T03:45:24.913049Z",
+  "author": "Orchestra-Research",
+  "source_url": "https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/0-autoresearch-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/0-autoresearch-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "agentic-workflow-orchestra",
+  "repo": "PeterOla/agentic-workflow-orchestra",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "agent-coordination",
+  "source": "github.com/PeterOla/agentic-workflow-orchestra",
+  "dir_name": "agentic-workflow-orchestra",
+  "downloaded_at": "2026-03-22T06:04:54.906131Z",
+  "author": "PeterOla",
+  "source_url": "https://github.com/PeterOla/agentic-workflow-orchestra/blob/main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PeterOla/agentic-workflow-orchestra/blob/main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

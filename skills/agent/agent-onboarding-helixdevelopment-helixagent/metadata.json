@@ -1,0 +1,20 @@
+{
+  "name": "agent-onboarding",
+  "description": "LLMs Agent",
+  "repo": "HelixDevelopment/HelixAgent",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": "skills/gptme/agent-onboarding",
+  "github_branch": "main",
+  "dir_name": "agent-onboarding-helixdevelopment-helixagent",
+  "downloaded_at": "2026-02-05T01:45:47.307464Z",
+  "author": "HelixDevelopment",
+  "source_url": "https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/gptme/agent-onboarding/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Milos Vasic",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

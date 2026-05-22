@@ -1,0 +1,18 @@
+{
+  "name": "agent-performance",
+  "repo": "rysweet/azlin",
+  "path": ".claude/skills/agent-performance/SKILL.md",
+  "source": "github.com/rysweet/azlin",
+  "downloaded_at": "2026-01-22T01:54:27.819901Z",
+  "dir_name": "agent-performance",
+  "category": "performance",
+  "github_path": ".claude/skills/agent-performance",
+  "github_branch": "main",
+  "author": "rysweet",
+  "source_url": "https://github.com/rysweet/azlin/blob/main/.claude/skills/agent-performance/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rysweet/azlin/blob/main/.claude/skills/agent-performance/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

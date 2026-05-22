@@ -162,6 +162,34 @@ Apply mode:
 - updates `metadata.json` with the new `category` and `dir_name`;
 - never deletes or overwrites skills to resolve conflicts.
 
+## Residual Audit Contract
+
+`scripts/audit_category_residuals.py` explains what remains after an apply
+batch. It is report-only and must run before deciding whether another migration
+batch is safe.
+
+The residual report separates two views:
+
+- `same_policy_plan_summary`: recomputed by `apply_category_migration.py` with
+  the same flags, proving whether the selected policy still has apply-ready
+  moves or blocked duplicates.
+- current archive residuals: based on source paths that still exist in the
+  archive, so rows that point at old pre-migration paths are counted as source
+  missing instead of being treated as live `other` skills.
+
+The report records:
+
+- archive category counts and scoped archive counts;
+- source state counts (`exists`, `missing`, or non-standard path);
+- mutually exclusive primary reason counts;
+- overlapping blocker reason counts;
+- target category/status distributions and bounded representative examples.
+
+Residual reason buckets include low confidence, target category/status excluded
+by policy, target `other`, classification status/path failures, stable-key
+conflicts, source missing, current archive category filtered out, and movable
+candidates under the selected policy.
+
 ## Governance Gates
 
 Taxonomy gate:
@@ -188,8 +216,10 @@ Category artifact gate:
 3. Generate a review-only migration plan against the data archive.
 4. Review by action, confidence, and category pair.
 5. Apply only small, high-confidence batches in data PRs.
-6. Publish main from pinned core/data refs.
-7. Re-run audit and compare `other` share, category conflicts, and plan deltas.
+6. Run the residual audit with the same policy to prove what remains and why.
+7. Publish main from pinned core/data refs.
+8. Re-run audit and compare `other` share, category conflicts, residual
+   reasons, and plan deltas.
 
 ## Acceptance Criteria
 
@@ -199,5 +229,7 @@ Category artifact gate:
 - A migration plan can be generated without modifying the archive.
 - The plan reports deprecations, aliases, source conflicts, heuristic
   reclassifications, confidence bands, and category pair counts.
+- A residual audit can explain post-apply live leftovers separately from
+  already-moved classification rows.
 - Generated category artifacts are guarded so legacy category JSON files remain
   pointer-only.

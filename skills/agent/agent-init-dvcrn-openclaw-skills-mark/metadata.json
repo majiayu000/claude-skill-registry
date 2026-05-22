@@ -1,0 +1,17 @@
+{
+  "name": "agent-init",
+  "repo": "dvcrn/openclaw-skills-marketplace",
+  "path": "plugins/szsip239--whois/skills/agent-init/SKILL.md",
+  "github_branch": "main",
+  "category": "agent",
+  "source": "github.com/dvcrn/openclaw-skills-marketplace",
+  "dir_name": "agent-init-dvcrn-openclaw-skills-mark",
+  "downloaded_at": "2026-03-22T07:51:16.194640Z",
+  "author": "dvcrn",
+  "source_url": "https://github.com/dvcrn/openclaw-skills-marketplace/blob/main/plugins/szsip239--whois/skills/agent-init/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dvcrn/openclaw-skills-marketplace/blob/main/plugins/szsip239--whois/skills/agent-init/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "agent-development",
+  "repo": "fcakyon/claude-codex-settings",
+  "path": "plugins/plugin-dev/skills/agent-development/SKILL.md",
+  "github_branch": "main",
+  "category": "agent",
+  "source": "github.com/fcakyon/claude-codex-settings",
+  "dir_name": "agent-development-fcakyon-claude-codex-setting",
+  "downloaded_at": "2026-03-24T01:20:06.970636Z",
+  "author": "fcakyon",
+  "source_url": "https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/skills/agent-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/skills/agent-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

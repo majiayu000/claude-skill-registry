@@ -1,0 +1,16 @@
+{
+  "name": "35-google-adk-reliable-agents",
+  "repo": "panaversity/agentfactory",
+  "path": "apps/learn-app/docs/05-Building-Custom-Agents/35-google-adk-reliable-agents/00-build-your-google-adk-skill.md",
+  "source": "github.com/panaversity/agentfactory",
+  "downloaded_at": "2026-02-02T04:49:42.061369Z",
+  "dir_name": "35-google-adk-reliable-agents",
+  "category": "agent",
+  "author": "panaversity",
+  "source_url": "https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/05-Building-Custom-Agents/35-google-adk-reliable-agents/00-build-your-google-adk-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/05-Building-Custom-Agents/35-google-adk-reliable-agents/00-build-your-google-adk-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

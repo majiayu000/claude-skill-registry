@@ -1,0 +1,17 @@
+{
+  "name": "ac-autonomous-orchestrator",
+  "repo": "adaptationio/Skrillz",
+  "path": "skills/ac-autonomous-orchestrator/SKILL.md",
+  "github_branch": "main",
+  "category": "agent",
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "ac-autonomous-orchestrator",
+  "downloaded_at": "2026-03-22T06:40:27.144089Z",
+  "author": "adaptationio",
+  "source_url": "https://github.com/adaptationio/Skrillz/blob/main/skills/ac-autonomous-orchestrator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adaptationio/Skrillz/blob/main/skills/ac-autonomous-orchestrator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

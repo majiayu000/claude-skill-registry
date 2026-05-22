@@ -1,0 +1,13 @@
+{
+  "name": "agent-native-architecture",
+  "description": "Claude agent config",
+  "repo": "SiTaggart/claude-devbench",
+  "category": "agent",
+  "tags": [],
+  "stars": 1,
+  "source": "",
+  "github_path": "plugins/devbench/skills/agent-native-architecture",
+  "github_branch": "main",
+  "dir_name": "agent-native-architecture",
+  "downloaded_at": "2026-02-05T01:45:35.354534Z"
+}

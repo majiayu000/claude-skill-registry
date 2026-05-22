@@ -1,0 +1,13 @@
+{
+  "name": "agent-run-orchestrator",
+  "description": "",
+  "repo": "HomericIntelligence/ProjectOdyssey",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HomericIntelligence/ProjectOdyssey",
+  "github_path": ".claude/skills/agent-run-orchestrator",
+  "github_branch": "main",
+  "dir_name": "agent-run-orchestrator-homericintelligence-projectodyssey",
+  "downloaded_at": "2026-02-05T01:44:42.829237Z"
+}

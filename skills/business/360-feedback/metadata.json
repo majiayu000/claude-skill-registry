@@ -1,0 +1,16 @@
+{
+  "name": "360-feedback",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/domains/business/human-resources/skills/360-feedback/SKILL.md",
+  "category": "business",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "360-feedback",
+  "downloaded_at": "2026-02-14T01:12:43.768278Z",
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/plugins/babysitter/skills/babysit/process/specializations/domains/business/human-resources/skills/360-feedback/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 A5C AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "agent-reliability",
+  "repo": "JDerekLomas/codevibing",
+  "path": "skills/.claude/skills/agent-reliability/SKILL.md",
+  "github_branch": "main",
+  "category": "agent",
+  "source": "github.com/JDerekLomas/codevibing",
+  "dir_name": "agent-reliability",
+  "downloaded_at": "2026-03-22T05:30:57.963281Z",
+  "author": "JDerekLomas",
+  "source_url": "https://github.com/JDerekLomas/codevibing/blob/main/skills/.claude/skills/agent-reliability/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JDerekLomas/codevibing/blob/main/skills/.claude/skills/agent-reliability/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

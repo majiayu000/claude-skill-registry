@@ -1,0 +1,16 @@
+{
+  "name": "34-openai-agents-sdk",
+  "repo": "panaversity/agentfactory",
+  "path": "apps/learn-app/docs/05-Building-Custom-Agents/34-openai-agents-sdk/00-build-your-openai-agents-skill.md",
+  "source": "github.com/panaversity/agentfactory",
+  "downloaded_at": "2026-01-29T05:43:36.061632Z",
+  "dir_name": "34-openai-agents-sdk-panaversity-agentfactory-8f59f147",
+  "category": "agent",
+  "author": "panaversity",
+  "source_url": "https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/05-Building-Custom-Agents/34-openai-agents-sdk/00-build-your-openai-agents-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/05-Building-Custom-Agents/34-openai-agents-sdk/00-build-your-openai-agents-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "agent-memory-mcp",
+  "description": "",
+  "repo": "cgyudistira/code-agents",
+  "category": "context-management",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cgyudistira/code-agents",
+  "github_path": "skills/agent-memory-mcp",
+  "github_branch": "main",
+  "dir_name": "agent-memory-mcp-cgyudistira-code-agents",
+  "downloaded_at": "2026-02-05T05:34:10.340688Z",
+  "author": "cgyudistira",
+  "source_url": "https://github.com/cgyudistira/code-agents/blob/main/skills/agent-memory-mcp/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

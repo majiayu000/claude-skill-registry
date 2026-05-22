@@ -1,0 +1,16 @@
+{
+  "name": "agentuity-cli-cloud-sandbox-files",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-sandbox-files/SKILL.md",
+  "category": "platform",
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-sandbox-files-agentuity-sdk-explorer-3",
+  "downloaded_at": "2026-02-22T06:07:03.258186Z",
+  "author": "agentuity",
+  "source_url": "https://github.com/agentuity/sdk-explorer/blob/main/.agents/skills/agentuity-cli-cloud-sandbox-files/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agentuity/sdk-explorer/blob/main/.agents/skills/agentuity-cli-cloud-sandbox-files/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

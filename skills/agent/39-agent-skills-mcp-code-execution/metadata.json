@@ -1,0 +1,16 @@
+{
+  "name": "39-agent-skills-mcp-code-execution",
+  "repo": "panaversity/agentfactory",
+  "path": "apps/learn-app/docs/05-Building-Custom-Agents/39-agent-skills-mcp-code-execution/06-build-script-execution-skill.md",
+  "source": "github.com/panaversity/agentfactory",
+  "downloaded_at": "2026-02-02T04:49:42.857544Z",
+  "dir_name": "39-agent-skills-mcp-code-execution",
+  "category": "agent",
+  "author": "panaversity",
+  "source_url": "https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/05-Building-Custom-Agents/39-agent-skills-mcp-code-execution/06-build-script-execution-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/05-Building-Custom-Agents/39-agent-skills-mcp-code-execution/06-build-script-execution-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

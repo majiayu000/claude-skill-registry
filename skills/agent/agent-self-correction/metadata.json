@@ -1,0 +1,18 @@
+{
+  "name": "agent-self-correction",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "72-metacognitive-skill-architect/agent-self-correction/SKILL.md",
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "downloaded_at": "2026-01-22T02:36:55.857756Z",
+  "dir_name": "agent-self-correction",
+  "category": "agent",
+  "github_path": "72-metacognitive-skill-architect/agent-self-correction",
+  "github_branch": "main",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/cerebratechai-claude-skills/blob/main/72-metacognitive-skill-architect/agent-self-correction/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

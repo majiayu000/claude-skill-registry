@@ -1,0 +1,18 @@
+{
+  "name": "api-tester",
+  "repo": "CuriousLearner/devkit",
+  "path": "skills/api-tester/SKILL.md",
+  "source": "github.com/CuriousLearner/devkit",
+  "downloaded_at": "2026-01-20T03:39:37.882790Z",
+  "dir_name": "api-tester-curiouslearner-devkit",
+  "category": "testing",
+  "github_path": "skills/api-tester",
+  "github_branch": "main",
+  "author": "CuriousLearner",
+  "source_url": "https://github.com/CuriousLearner/devkit/blob/main/skills/api-tester/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sanyam Khurana",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "architecture-validation",
+  "repo": "d-o-hub/rust-self-learning-memory",
+  "path": ".opencode/skill/architecture-validation/SKILL.md",
+  "source": "github.com/d-o-hub/rust-self-learning-memory",
+  "downloaded_at": "2026-01-29T07:03:26.178413Z",
+  "dir_name": "architecture-validation-d-o-hub-rust-self-learning-m",
+  "category": "quality",
+  "author": "d-o-hub",
+  "source_url": "https://github.com/d-o-hub/rust-self-learning-memory/blob/main/.opencode/skill/architecture-validation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2019 Zachary Rice",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

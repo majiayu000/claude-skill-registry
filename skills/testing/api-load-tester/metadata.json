@@ -1,0 +1,17 @@
+{
+  "name": "api-load-tester",
+  "repo": "TerminalSkills/skills",
+  "path": "skills/api-load-tester/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/TerminalSkills/skills",
+  "dir_name": "api-load-tester",
+  "downloaded_at": "2026-03-22T06:22:05.544481Z",
+  "author": "TerminalSkills",
+  "source_url": "https://github.com/TerminalSkills/skills/blob/main/skills/api-load-tester/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TerminalSkills/skills/blob/main/skills/api-load-tester/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

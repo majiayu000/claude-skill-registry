@@ -1,0 +1,16 @@
+{
+  "name": "architecture",
+  "repo": "andreibesleaga/GABBE",
+  "path": "agents/skills/architecture/domain-model.skill.md",
+  "category": "development",
+  "source": "github.com/andreibesleaga/GABBE",
+  "dir_name": "architecture-andreibesleaga-gabbe-7",
+  "downloaded_at": "2026-02-22T06:16:32.274702Z",
+  "author": "andreibesleaga",
+  "source_url": "https://github.com/andreibesleaga/GABBE/blob/main/agents/skills/architecture/domain-model.skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andreibesleaga/GABBE/blob/main/agents/skills/architecture/domain-model.skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

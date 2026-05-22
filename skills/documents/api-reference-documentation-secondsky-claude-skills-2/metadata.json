@@ -1,0 +1,16 @@
+{
+  "name": "api-reference-documentation",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/api-reference-documentation/skills/api-reference-documentation/SKILL.md",
+  "source": "github.com/secondsky/claude-skills",
+  "downloaded_at": "2026-01-29T07:59:31.303598Z",
+  "dir_name": "api-reference-documentation-secondsky-claude-skills-2",
+  "category": "documents",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/api-reference-documentation/skills/api-reference-documentation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "automl-optimizer",
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave-ml/skills/automl-optimizer/SKILL.md",
+  "source": "github.com/anton-abyzov/specweave",
+  "downloaded_at": "2026-02-01T01:48:14.299728Z",
+  "dir_name": "automl-optimizer-anton-abyzov-specweave",
+  "category": "ai-ml",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-ml/skills/automl-optimizer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

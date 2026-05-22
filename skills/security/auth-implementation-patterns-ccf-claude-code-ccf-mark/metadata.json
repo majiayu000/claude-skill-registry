@@ -1,0 +1,16 @@
+{
+  "name": "auth-implementation-patterns",
+  "repo": "ccf/claude-code-ccf-marketplace",
+  "path": "plugins/developer-essentials/skills/auth-implementation-patterns/SKILL.md",
+  "source": "github.com/ccf/claude-code-ccf-marketplace",
+  "downloaded_at": "2026-02-02T05:11:57.602995Z",
+  "dir_name": "auth-implementation-patterns-ccf-claude-code-ccf-mark",
+  "category": "security",
+  "author": "ccf",
+  "source_url": "https://github.com/ccf/claude-code-ccf-marketplace/blob/main/plugins/developer-essentials/skills/auth-implementation-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Seth Hobson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

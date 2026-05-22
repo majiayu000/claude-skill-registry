@@ -1,0 +1,16 @@
+{
+  "name": "arch-security-review",
+  "repo": "duc01226/EasyPlatform",
+  "path": ".claude/skills/arch-security-review/SKILL.md",
+  "source": "github.com/duc01226/EasyPlatform",
+  "downloaded_at": "2026-01-31T04:18:28.357537Z",
+  "dir_name": "arch-security-review-duc01226-easyplatform",
+  "category": "security",
+  "author": "duc01226",
+  "source_url": "https://github.com/duc01226/EasyPlatform/blob/main/.claude/skills/arch-security-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Dang Phuoc Duc",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

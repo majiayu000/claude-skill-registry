@@ -1,0 +1,13 @@
+{
+  "name": "attack-tree-construction",
+  "description": "",
+  "repo": "ACGSpgp/ACGS",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ACGSpgp/ACGS",
+  "github_path": ".agent/workflows/security-scanning/1.2.2/skills/attack-tree-construction",
+  "github_branch": "main",
+  "dir_name": "attack-tree-construction-acgspgp-acgs",
+  "downloaded_at": "2026-02-05T05:40:33.069696Z"
+}

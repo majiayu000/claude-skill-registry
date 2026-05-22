@@ -1,0 +1,16 @@
+{
+  "name": "authentication-flow-rules",
+  "repo": "oimiragieo/agent-studio",
+  "path": ".claude/skills/authentication-flow-rules/SKILL.md",
+  "source": "github.com/oimiragieo/agent-studio",
+  "downloaded_at": "2026-02-01T02:18:53.085915Z",
+  "dir_name": "authentication-flow-rules",
+  "category": "security",
+  "author": "oimiragieo",
+  "source_url": "https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/authentication-flow-rules/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/authentication-flow-rules/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

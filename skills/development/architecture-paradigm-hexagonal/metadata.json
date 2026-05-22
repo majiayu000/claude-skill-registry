@@ -1,0 +1,18 @@
+{
+  "name": "architecture-paradigm-hexagonal",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/archetypes/skills/architecture-paradigm-hexagonal/SKILL.md",
+  "source": "github.com/athola/claude-night-market",
+  "downloaded_at": "2026-01-22T03:09:21.958175Z",
+  "dir_name": "architecture-paradigm-hexagonal",
+  "category": "development",
+  "github_path": "plugins/archetypes/skills/architecture-paradigm-hexagonal",
+  "github_branch": "main",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/archetypes/skills/architecture-paradigm-hexagonal/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "atomic-design-templates",
+  "repo": "TheBushidoCollective/han",
+  "path": "jutsu/jutsu-atomic-design/skills/atomic-design-templates/SKILL.md",
+  "source": "github.com/TheBushidoCollective/han",
+  "downloaded_at": "2026-01-29T04:12:57.348501Z",
+  "dir_name": "atomic-design-templates",
+  "category": "design",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han/blob/main/jutsu/jutsu-atomic-design/skills/atomic-design-templates/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

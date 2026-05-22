@@ -1,0 +1,16 @@
+{
+  "name": "aws-dev-aws-cdk-development",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/aws-dev-aws-cdk-development/SKILL.md",
+  "source": "github.com/boisenoise/skills-collections",
+  "downloaded_at": "2026-01-31T02:54:29.524670Z",
+  "dir_name": "aws-dev-aws-cdk-development",
+  "category": "devops",
+  "author": "boisenoise",
+  "source_url": "https://github.com/boisenoise/skills-collections/blob/main/skills/aws-dev-aws-cdk-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boisenoise/skills-collections/blob/main/skills/aws-dev-aws-cdk-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

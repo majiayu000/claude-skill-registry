@@ -1,0 +1,18 @@
+{
+  "name": "astro",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/meta-frameworks/astro/SKILL.md",
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "downloaded_at": "2026-01-22T03:54:23.193839Z",
+  "dir_name": "astro-mgd34msu-goodvibes-plugin",
+  "category": "development",
+  "github_path": "plugins/goodvibes/skills/webdev/meta-frameworks/astro",
+  "github_branch": "main",
+  "author": "mgd34msu",
+  "source_url": "https://github.com/mgd34msu/goodvibes-plugin/blob/main/plugins/goodvibes/skills/webdev/meta-frameworks/astro/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 GoodVibes Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

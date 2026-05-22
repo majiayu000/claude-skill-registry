@@ -1,0 +1,17 @@
+{
+  "name": "apify-ecommerce",
+  "repo": "DexsDevelopers/site-financeiro",
+  "path": "skills/apify-ecommerce/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/DexsDevelopers/site-financeiro",
+  "dir_name": "apify-ecommerce-dexsdevelopers-site-financeiro",
+  "downloaded_at": "2026-03-22T05:13:54.989217Z",
+  "author": "DexsDevelopers",
+  "source_url": "https://github.com/DexsDevelopers/site-financeiro/blob/main/skills/apify-ecommerce/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DexsDevelopers/site-financeiro/blob/main/skills/apify-ecommerce/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

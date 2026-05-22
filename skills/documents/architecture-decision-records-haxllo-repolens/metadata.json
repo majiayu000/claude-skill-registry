@@ -1,0 +1,16 @@
+{
+  "name": "architecture-decision-records",
+  "repo": "haxllo/repolens",
+  "path": ".gemini/skills/architecture-decision-records/SKILL.md",
+  "source": "github.com/haxllo/repolens",
+  "downloaded_at": "2026-01-29T07:37:09.078986Z",
+  "dir_name": "architecture-decision-records-haxllo-repolens",
+  "category": "documents",
+  "author": "haxllo",
+  "source_url": "https://github.com/haxllo/repolens/blob/main/.gemini/skills/architecture-decision-records/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/haxllo/repolens/blob/main/.gemini/skills/architecture-decision-records/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

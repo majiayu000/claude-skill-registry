@@ -1,0 +1,17 @@
+{
+  "name": "authz-bypass-hunter",
+  "repo": "MAF2414/kyco",
+  "path": ".claude/skills/authz-bypass-hunter/SKILL.md",
+  "github_branch": "master",
+  "category": "security",
+  "source": "github.com/MAF2414/kyco",
+  "dir_name": "authz-bypass-hunter-maf2414-kyco-3",
+  "downloaded_at": "2026-03-22T05:46:04.560721Z",
+  "author": "MAF2414",
+  "source_url": "https://github.com/MAF2414/kyco/blob/master/.claude/skills/authz-bypass-hunter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MAF2414/kyco/blob/master/.claude/skills/authz-bypass-hunter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

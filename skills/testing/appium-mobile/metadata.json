@@ -1,0 +1,16 @@
+{
+  "name": "appium-mobile",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/qa-testing-automation/skills/appium-mobile/SKILL.md",
+  "source": "github.com/a5c-ai/babysitter",
+  "downloaded_at": "2026-01-28T00:55:28.476215Z",
+  "dir_name": "appium-mobile",
+  "category": "testing",
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/plugins/babysitter/skills/babysit/process/specializations/qa-testing-automation/skills/appium-mobile/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 A5C AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

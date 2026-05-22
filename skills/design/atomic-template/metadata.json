@@ -1,0 +1,17 @@
+{
+  "name": "atomic-template",
+  "repo": "andireuter/skills-webapp",
+  "path": "skills/atomic-template/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/andireuter/skills-webapp",
+  "dir_name": "atomic-template",
+  "downloaded_at": "2026-03-01T06:41:51.756244Z",
+  "author": "andireuter",
+  "source_url": "https://github.com/andireuter/skills-webapp/blob/main/skills/atomic-template/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andireuter/skills-webapp/blob/main/skills/atomic-template/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "status": "passed",
-  "generated_at": "2026-05-22T09:42:20Z",
+  "generated_at": "2026-05-22T11:27:26Z",
   "core_repo": "majiayu000/claude-skill-registry-core",
   "core_sha": "138a4c1b5893a24591010c18d79a5f574f0b22a4",
   "data_repo": "majiayu000/claude-skill-registry-data",
-  "data_sha": "a39b735049fe60a72d4f96875fa7052201dffb6a",
-  "github_run_id": "26279727389",
+  "data_sha": "e25691164e07328039a5d4e7c0f8e247125e2344",
+  "github_run_id": "26284341132",
   "github_run_attempt": "1",
-  "github_run_url": "https://github.com/majiayu000/claude-skill-registry/actions/runs/26279727389",
+  "github_run_url": "https://github.com/majiayu000/claude-skill-registry/actions/runs/26284341132",
   "promotion_gate": {
     "mode": "pre-commit canary validation",
     "result": "allowed"
@@ -55,12 +55,12 @@
     {
       "name": "category index and other manifest",
       "status": "passed",
-      "detail": "docs/categories/other/manifest.json: 12 shards, 134996 records"
+      "detail": "docs/categories/other/manifest.json: 11 shards, 133996 records"
     },
     {
       "name": "stats shard summary",
       "status": "passed",
-      "detail": "largest_generated_file_bytes=8388731"
+      "detail": "largest_generated_file_bytes=8388742"
     }
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "name": "ast-grep",
+  "description": "",
+  "repo": "erwinkn/ai-config",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erwinkn/ai-config",
+  "github_path": ".claude/skills/ast-grep",
+  "github_branch": "main",
+  "dir_name": "ast-grep-erwinkn-ai-config",
+  "downloaded_at": "2026-02-05T01:44:29.542659Z",
+  "author": "erwinkn",
+  "source_url": "https://github.com/erwinkn/ai-config/blob/main/.claude/skills/ast-grep/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/erwinkn/ai-config/blob/main/.claude/skills/ast-grep/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

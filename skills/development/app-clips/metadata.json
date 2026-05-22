@@ -1,0 +1,17 @@
+{
+  "name": "app-clips",
+  "repo": "dpearson2699/swift-ios-skills",
+  "path": "skills/app-clips/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/dpearson2699/swift-ios-skills",
+  "dir_name": "app-clips",
+  "downloaded_at": "2026-03-22T07:48:54.246651Z",
+  "author": "dpearson2699",
+  "source_url": "https://github.com/dpearson2699/swift-ios-skills/blob/main/skills/app-clips/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dpearson2699/swift-ios-skills/blob/main/skills/app-clips/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

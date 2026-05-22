@@ -1,0 +1,16 @@
+{
+  "name": "app-store-deployment",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/app-store-deployment/skills/app-store-deployment/SKILL.md",
+  "source": "github.com/secondsky/claude-skills",
+  "downloaded_at": "2026-01-29T07:59:29.991243Z",
+  "dir_name": "app-store-deployment-secondsky-claude-skills",
+  "category": "devops",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/app-store-deployment/skills/app-store-deployment/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "applying-effective-go",
+  "repo": "MrPointer/dotfiles",
+  "path": "dot_claude/skills/applying-effective-go/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/MrPointer/dotfiles",
+  "dir_name": "applying-effective-go",
+  "downloaded_at": "2026-03-22T05:52:39.532400Z",
+  "author": "MrPointer",
+  "source_url": "https://github.com/MrPointer/dotfiles/blob/main/dot_claude/skills/applying-effective-go/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MrPointer/dotfiles/blob/main/dot_claude/skills/applying-effective-go/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "authentik-oidc-kubernetes",
+  "repo": "ViktorBarzin/infra",
+  "path": ".claude/skills/authentik-oidc-kubernetes/SKILL.md",
+  "github_branch": "master",
+  "category": "security",
+  "source": "github.com/ViktorBarzin/infra",
+  "dir_name": "authentik-oidc-kubernetes",
+  "downloaded_at": "2026-03-01T06:17:42.550007Z",
+  "author": "ViktorBarzin",
+  "source_url": "https://github.com/ViktorBarzin/infra/blob/master/.claude/skills/authentik-oidc-kubernetes/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ViktorBarzin/infra/blob/master/.claude/skills/authentik-oidc-kubernetes/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

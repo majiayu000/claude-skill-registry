@@ -144,6 +144,10 @@ def test_build_source_url_handles_repo_only_and_path(utils):
         utils.build_source_url(repo="owner/repo", path="skills/demo/SKILL.md")
         == "https://github.com/owner/repo/blob/main/skills/demo/SKILL.md"
     )
+    assert (
+        utils.build_source_url(repo="owner/repo", path="packs/core/skills/memory-protocol.md")
+        == "https://github.com/owner/repo/blob/main/packs/core/skills/memory-protocol.md"
+    )
 
 
 def test_build_source_url_passthrough_for_external_url(utils):
@@ -322,10 +326,25 @@ def test_build_skill_key_priority(utils):
     # Per implementation: repo+path > repo > category:name > "".
     assert utils.build_skill_key(repo="o/r", path="x/y") == "o/r:x/y"
     assert utils.build_skill_key(repo="o/r") == "o/r"
+    assert utils.build_skill_key(repo="o/r", path=".") == "o/r"
+    assert utils.build_skill_key(repo="o/r", path="SKILL.md") == "o/r"
+    assert utils.build_skill_key(repo="o/r", path="./SKILL.md") == "o/r"
     assert utils.build_skill_key(category="dev", name="foo") == "dev:foo"
     assert utils.build_skill_key() == ""
     # path alone is ignored once repo is missing — the category:name fallback wins.
     assert utils.build_skill_key(path="x/y", name="foo") == ":foo"
+
+
+def test_build_skill_key_coerces_non_string_repo_and_path(utils):
+    assert utils.build_skill_key(repo="o/r", path=123) == "o/r:123"
+    assert utils.build_skill_key(repo=123, path="x/y") == "123:x/y"
+    assert utils.build_skill_key(repo="o/r", path={"bad": "path"}) == "o/r:{'bad': 'path'}"
+
+
+def test_build_skill_key_treats_boolean_repo_and_path_as_missing(utils):
+    assert utils.build_skill_key(repo="o/r", path=False) == "o/r"
+    assert utils.build_skill_key(repo="o/r", path=True) == "o/r"
+    assert utils.build_skill_key(repo=False, path="x/y", category="dev", name="foo") == "dev:foo"
 
 
 def test_iter_source_skills_inherits_top_level_repo(utils):
@@ -496,6 +515,42 @@ def test_extract_description_truncates_at_max_length(utils):
     content = f"---\ndescription: {body}\n---\n"
     desc = utils.extract_description(content, max_length=100)
     assert len(desc) == 100
+
+
+def test_skill_semantic_fields_prefer_frontmatter(utils, tmp_path):
+    skill_dir = tmp_path / "skill-c"
+    skill_dir.mkdir()
+    content = (
+        "---\n"
+        "name: frontmatter-name\n"
+        "description: Docker Kubernetes CI CD deploy infrastructure workflow.\n"
+        "tags:\n"
+        "  - docker\n"
+        "  - kubernetes\n"
+        "---\n"
+    )
+    frontmatter = utils.extract_frontmatter(content)
+    metadata = {
+        "name": "metadata-name",
+        "description": "",
+        "tags": ["metadata-tag"],
+    }
+
+    fields = utils.skill_semantic_fields(
+        skill_dir,
+        metadata=metadata,
+        frontmatter=frontmatter,
+        rel=Path("other/skill-c/SKILL.md"),
+        content=content,
+    )
+
+    assert fields["name"] == "frontmatter-name"
+    assert fields["description"].startswith("Docker Kubernetes")
+    assert fields["tags"] == ["docker", "kubernetes"]
+    assert fields["sources"]["name"] == "frontmatter"
+    assert fields["sources"]["description"] == "frontmatter"
+    assert fields["sources"]["tags"] == "frontmatter:list"
+    assert "metadata-tag" not in fields["text"]
 
 
 def test_load_metadata_returns_dict_or_empty(utils, tmp_path):

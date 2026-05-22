@@ -1,0 +1,17 @@
+{
+  "name": "discuss-phase",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/gsd/skills/discuss-phase/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "discuss-phase",
+  "downloaded_at": "2026-05-22T03:58:54.186001Z",
+  "author": "davepoon",
+  "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/gsd/skills/discuss-phase/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/davepoon/buildwithclaude/blob/main/plugins/gsd/skills/discuss-phase/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

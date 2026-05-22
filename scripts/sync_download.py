@@ -66,12 +66,13 @@ async def download_skills(
     output_dir: Path,
     github_token: str = "",
     max_pending: int = 0,
-    manifest_path: Path | None = None,
+    manifest_path: Path | None = DEFAULT_MANIFEST_PATH,
     shard_count: int = 1,
     shard_index: int = 0,
     failure_report_path: Path | None = None,
     observations_output_path: Path | None = None,
     learning_priors_path: Path | None = None,
+    cleanup_ci_untracked: bool = True,
 ) -> dict:
     """Download skills using optimized downloader."""
     logger.info("=" * 60)
@@ -96,13 +97,18 @@ async def download_skills(
 
     skills = registry.get("skills", [])
     logger.info(f"Total skills in registry: {len(skills)}")
-    manifest_file = manifest_path or DEFAULT_MANIFEST_PATH
-    manifest_entries = load_acquisition_manifest(manifest_file)
-    logger.info(
-        "Acquisition manifest loaded: %s entries from %s",
-        len(manifest_entries),
-        manifest_file,
+    manifest_file = Path(manifest_path) if manifest_path is not None else None
+    manifest_entries = (
+        load_acquisition_manifest(manifest_file) if manifest_file is not None else {}
     )
+    if manifest_file is not None:
+        logger.info(
+            "Acquisition manifest loaded: %s entries from %s",
+            len(manifest_entries),
+            manifest_file,
+        )
+    else:
+        logger.info("Acquisition manifest disabled")
     security_blocklist = load_security_blocklist()
     logger.info("Security blocklist loaded: %s repos", len(security_blocklist))
     security_scanner = SecurityScanner()
@@ -111,7 +117,9 @@ async def download_skills(
         security_blocklist,
         remove_blocked=True,
     )
-    removed_ci_untracked_files = remove_ci_untracked_archive_files(output_dir)
+    removed_ci_untracked_files = (
+        remove_ci_untracked_archive_files(output_dir) if cleanup_ci_untracked else 0
+    )
 
     # Check existing (across all categories)
     exclude = {".git", ".github-skills", ".template", ".templates", ".attic"}
@@ -524,11 +532,14 @@ async def download_skills(
             return False
 
         manifest_key = build_manifest_key(repo, path, name, category)
-        manifest_entry = manifest_entries.get(manifest_key)
-        if manifest_entry:
-            stats["manifest_hits"] += 1
-        else:
-            stats["manifest_misses"] += 1
+        manifest_entry = (
+            manifest_entries.get(manifest_key) if manifest_file is not None else None
+        )
+        if manifest_file is not None:
+            if manifest_entry:
+                stats["manifest_hits"] += 1
+            else:
+                stats["manifest_misses"] += 1
 
         relative_candidates = build_relative_candidates(path, name, normalized_name)
         relative_candidates = build_relative_probe_order(relative_candidates, manifest_entry)
@@ -650,13 +661,14 @@ async def download_skills(
                                         )
                                         return False
                                     preferred_branch_by_repo[repo] = branch
-                                    manifest_entries[manifest_key] = {
-                                        "repo": repo,
-                                        "branch": branch,
-                                        "relative_path": relative_path,
-                                        "updated_at": datetime.utcnow().isoformat() + "Z",
-                                    }
-                                    manifest_state["dirty"] = True
+                                    if manifest_file is not None:
+                                        manifest_entries[manifest_key] = {
+                                            "repo": repo,
+                                            "branch": branch,
+                                            "relative_path": relative_path,
+                                            "updated_at": datetime.utcnow().isoformat() + "Z",
+                                        }
+                                        manifest_state["dirty"] = True
                                     stats["url_attempts"] += attempts
                                     if candidate_key in negative_cache:
                                         del negative_cache[candidate_key]
@@ -741,7 +753,7 @@ async def download_skills(
 
     # Final count
     final_count = sum(1 for _ in output_dir.rglob("SKILL.md"))
-    if manifest_state["dirty"] or not manifest_file.exists():
+    if manifest_file is not None and (manifest_state["dirty"] or not manifest_file.exists()):
         save_acquisition_manifest(manifest_file, manifest_entries)
         logger.info(
             "Acquisition manifest saved: %s entries to %s",

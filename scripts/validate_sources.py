@@ -27,6 +27,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 from category_taxonomy import category_aliases, category_slug, known_categories
+from utils import build_skill_key
 
 # -- Canonical category rules -------------------------------------------------
 
@@ -286,10 +287,15 @@ def validate_skill_entry(
             )
         )
 
-    # De-duplication key across all sources. Use repo+path because the same
-    # repo can host several skills under different paths.
+    # De-duplication key across all sources. Use the shared key builder so
+    # repo-root spellings such as "", ".", and "SKILL.md" collapse together.
     if isinstance(repo, str) and (path is None or isinstance(path, str)):
-        key = f"{repo.strip()}:{(path or '').strip().strip('/')}"
+        key = build_skill_key(
+            repo,
+            path or "",
+            name=entry.get("name", ""),
+            category=entry.get("category", ""),
+        )
         if key in report.seen_keys:
             report.add(
                 Issue(

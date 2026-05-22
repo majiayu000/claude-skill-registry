@@ -1,0 +1,16 @@
+{
+  "name": "adr-templates",
+  "repo": "AmnadTaowsoam/CerebraSkills",
+  "path": "59-architecture-decision/adr-templates/SKILL.md",
+  "source": "github.com/AmnadTaowsoam/CerebraSkills",
+  "downloaded_at": "2026-01-29T08:20:19.964973Z",
+  "dir_name": "adr-templates-amnadtaowsoam-cerebraskills",
+  "category": "development",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/CerebraSkills/blob/main/59-architecture-decision/adr-templates/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

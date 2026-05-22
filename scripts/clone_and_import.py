@@ -138,7 +138,8 @@ def import_skill(skill_file: Path, skills_dir: Path, repo_slug: str, stats: dict
         return False
 
     # Determine category
-    category = normalize_category(metadata.get("category", ""))
+    raw_category = metadata.get("category", "")
+    category = normalize_category(raw_category) if raw_category else ""
     if not category or category == "unknown":
         category = guess_category(str(skill_file) + " " + content[:1000])
 

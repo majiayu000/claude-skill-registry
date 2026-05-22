@@ -18,7 +18,7 @@ from category_taxonomy import (
     category_slug,
     resolve_category,
 )
-from utils import extract_frontmatter, load_metadata
+from utils import extract_frontmatter, load_metadata, skill_semantic_fields
 
 
 def iter_skill_dirs(skills_dir: Path):
@@ -135,18 +135,20 @@ def build_report(
                     "depth": len(rel.parts),
                 }
             )
-        content = ""
-        frontmatter: dict[str, Any] = {}
-        if include_frontmatter or content_chars > 0:
-            content = read_text_prefix(skill_dir / "SKILL.md", max_chars=max(content_chars, 8192))
-            frontmatter = extract_frontmatter(content)
+        content = read_text_prefix(skill_dir / "SKILL.md", max_chars=max(content_chars, 8192))
+        frontmatter = extract_frontmatter(content)
+        category_frontmatter = frontmatter if include_frontmatter or content_chars > 0 else {}
         metadata = load_metadata(skill_dir)
 
         dir_category = rel.parts[0] if rel.parts else "other"
         raw_sources = {
             "directory": dir_category,
             "metadata": metadata.get("category") if isinstance(metadata.get("category"), str) else "",
-            "frontmatter": frontmatter.get("category") if isinstance(frontmatter.get("category"), str) else "",
+            "frontmatter": (
+                category_frontmatter.get("category")
+                if isinstance(category_frontmatter.get("category"), str)
+                else ""
+            ),
         }
         declared_category = raw_sources["metadata"] or raw_sources["frontmatter"] or raw_sources["directory"]
         current_category = resolve_category(declared_category, allow_unknown=True)
@@ -163,11 +165,19 @@ def build_report(
             for source, value in raw_sources.items()
             if value
         }
+        semantics = skill_semantic_fields(
+            skill_dir,
+            metadata=metadata,
+            frontmatter=frontmatter,
+            rel=rel,
+            content=content,
+            content_chars=content_chars,
+        )
         if len(set(resolved_sources.values())) > 1:
             category_conflicts.append(
                 {
                     "path": str(rel),
-                    "name": metadata.get("name") or frontmatter.get("name") or skill_dir.name,
+                    "name": semantics["name"],
                     "resolved_sources": resolved_sources,
                     "raw_sources": {k: v for k, v in raw_sources.items() if v},
                 }
@@ -185,20 +195,7 @@ def build_report(
                     }
                 )
 
-        tags = metadata.get("tags") or frontmatter.get("tags") or []
-        if isinstance(tags, list):
-            tag_text = " ".join(str(tag) for tag in tags)
-        else:
-            tag_text = str(tags)
-        text = " ".join(
-            [
-                str(metadata.get("name") or frontmatter.get("name") or skill_dir.name),
-                str(metadata.get("description") or frontmatter.get("description") or ""),
-                tag_text,
-                str(rel),
-                content[:content_chars],
-            ]
-        )
+        text = str(semantics["text"])
         suggestion = best_suggestion(
             current_category,
             text,
@@ -210,7 +207,7 @@ def build_report(
             candidates.append(
                 {
                     "path": str(rel),
-                    "name": metadata.get("name") or frontmatter.get("name") or skill_dir.name,
+                    "name": semantics["name"],
                     "current_category": current_category,
                     **suggestion,
                 }
@@ -252,7 +249,8 @@ def build_report(
         "notes": [
             "Candidates are heuristic review targets, not automatic migrations.",
             "The audit scores every category, including non-other categories.",
-            "Default mode uses metadata and paths for speed; pass --include-frontmatter or --content-chars for deeper scans.",
+            "Semantic scoring reads SKILL.md frontmatter before metadata.json.",
+            "Pass --include-frontmatter to audit frontmatter category sources; pass --content-chars for deeper body scans.",
             "Layout issues catch nested paths such as category/category/skill/SKILL.md.",
         ],
     }

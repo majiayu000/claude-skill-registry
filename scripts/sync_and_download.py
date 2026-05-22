@@ -74,6 +74,7 @@ from sync_pipeline_support import (
     load_acquisition_manifest,
     not_found_cooldown_hours,
     prune_negative_cache,
+    remove_ci_untracked_archive_files,
     save_acquisition_manifest,
     select_shard_skills,
     should_recurse_bundled_dir,
@@ -165,6 +166,16 @@ def main():
         help="Exit non-zero when download-only mode records failures but no successful downloads",
     )
     parser.add_argument(
+        "--skip-ci-untracked-cleanup",
+        action="store_true",
+        help="Skip CI-only untracked archive cleanup before download",
+    )
+    parser.add_argument(
+        "--cleanup-ci-untracked-archive-files-only",
+        action="store_true",
+        help="Only remove CI-only untracked archive leftovers, then exit",
+    )
+    parser.add_argument(
         "--acquisition-manifest",
         default="sources/acquisition_manifest.json",
         help="Path to acquisition manifest JSON (relative to repo root unless absolute)",
@@ -238,6 +249,11 @@ def main():
     else:
         learning_priors = registry_dir / learning_priors_arg
 
+    if args.cleanup_ci_untracked_archive_files_only:
+        removed = remove_ci_untracked_archive_files(output_dir)
+        logger.info("CI-only untracked archive cleanup removed %s file(s)", removed)
+        return
+
     github_token = os.environ.get("GITHUB_TOKEN", "")
 
     start_time = time.time()
@@ -293,6 +309,7 @@ def main():
                 failure_report_path=failure_report,
                 observations_output_path=observations_output,
                 learning_priors_path=learning_priors,
+                cleanup_ci_untracked=not args.skip_ci_untracked_cleanup,
             )
         )
         if args.fail_on_empty_download and should_fail_on_empty_download(stats):

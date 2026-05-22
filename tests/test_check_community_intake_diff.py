@@ -222,3 +222,45 @@ def test_rejects_reformatting_before_final_existing_entry():
     assert validate_community_intake_text(base, head) == [
         "community intake PRs must not rewrite lines before the final existing catalog entry"
     ]
+
+
+def test_rejects_appended_top_level_metadata_fields():
+    base = render_catalog(
+        [
+            {
+                "name": "alpha",
+                "repo": "acme/alpha",
+                "path": "",
+                "description": "A",
+                "category": "development",
+                "tags": ["a"],
+                "stars": 0,
+            },
+        ]
+    )
+    head = render_catalog(
+        [
+            {
+                "name": "alpha",
+                "repo": "acme/alpha",
+                "path": "",
+                "description": "A",
+                "category": "development",
+                "tags": ["a"],
+                "stars": 0,
+            },
+            {
+                "name": "beta",
+                "repo": "acme/beta",
+                "path": "",
+                "description": "B",
+                "category": "development",
+                "tags": ["b"],
+                "stars": 0,
+            },
+        ]
+    ).replace('  ]\n}', '  ],\n  "owner": "acme"\n}')
+
+    assert validate_community_intake_text(base, head) == [
+        "top-level metadata fields other than `skills` must not change in community intake PRs"
+    ]

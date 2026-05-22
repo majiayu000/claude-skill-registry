@@ -1,0 +1,16 @@
+{
+  "name": "advanced-evaluation",
+  "repo": "illogical/InstructionLibrary",
+  "path": "skills/advanced-evaluation/SKILL.md",
+  "source": "github.com/illogical/InstructionLibrary",
+  "downloaded_at": "2026-02-02T04:14:59.782992Z",
+  "dir_name": "advanced-evaluation-illogical-instructionlibrary",
+  "category": "ai-llm",
+  "author": "illogical",
+  "source_url": "https://github.com/illogical/InstructionLibrary/blob/main/skills/advanced-evaluation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/illogical/InstructionLibrary/blob/main/skills/advanced-evaluation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

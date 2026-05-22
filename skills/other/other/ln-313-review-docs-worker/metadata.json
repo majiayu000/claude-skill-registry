@@ -1,0 +1,17 @@
+{
+  "name": "ln-313-review-docs-worker",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "plugins/agile-workflow/skills/ln-313-review-docs-worker/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-313-review-docs-worker",
+  "downloaded_at": "2026-05-22T04:06:02.800128Z",
+  "author": "levnikolaevich",
+  "source_url": "https://github.com/levnikolaevich/claude-code-skills/blob/master/plugins/agile-workflow/skills/ln-313-review-docs-worker/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/levnikolaevich/claude-code-skills/blob/master/plugins/agile-workflow/skills/ln-313-review-docs-worker/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

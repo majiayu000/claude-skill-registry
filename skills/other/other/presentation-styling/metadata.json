@@ -1,0 +1,17 @@
+{
+  "name": "presentation-styling",
+  "repo": "shanraisshan/claude-code-best-practice",
+  "path": ".claude/skills/presentation/presentation-styling/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/shanraisshan/claude-code-best-practice",
+  "dir_name": "presentation-styling",
+  "downloaded_at": "2026-05-22T04:13:36.686253Z",
+  "author": "shanraisshan",
+  "source_url": "https://github.com/shanraisshan/claude-code-best-practice/blob/main/.claude/skills/presentation/presentation-styling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shanraisshan/claude-code-best-practice/blob/main/.claude/skills/presentation/presentation-styling/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

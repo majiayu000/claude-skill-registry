@@ -1,0 +1,17 @@
+{
+  "name": "baoyu-format-markdown",
+  "repo": "JimLiu/baoyu-skills",
+  "path": "skills/baoyu-format-markdown/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/JimLiu/baoyu-skills",
+  "dir_name": "baoyu-format-markdown",
+  "downloaded_at": "2026-05-22T03:47:25.967539Z",
+  "author": "JimLiu",
+  "source_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-format-markdown/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-format-markdown/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

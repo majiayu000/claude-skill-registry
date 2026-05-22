@@ -1,0 +1,17 @@
+{
+  "name": "cre-underwriting",
+  "repo": "ahacker-1/cre-agent-skills",
+  "path": "claude-code-plugins/cre-underwriting/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ahacker-1/cre-agent-skills",
+  "dir_name": "cre-underwriting",
+  "downloaded_at": "2026-05-22T03:53:48.216251Z",
+  "author": "ahacker-1",
+  "source_url": "https://github.com/ahacker-1/cre-agent-skills/blob/main/claude-code-plugins/cre-underwriting/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ahacker-1/cre-agent-skills/blob/main/claude-code-plugins/cre-underwriting/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "convergence-monitoring",
+  "repo": "Kanevry/session-orchestrator",
+  "path": "skills/convergence-monitoring/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Kanevry/session-orchestrator",
+  "dir_name": "convergence-monitoring",
+  "downloaded_at": "2026-05-22T03:48:28.728885Z",
+  "author": "Kanevry",
+  "source_url": "https://github.com/Kanevry/session-orchestrator/blob/main/skills/convergence-monitoring/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kanevry/session-orchestrator/blob/main/skills/convergence-monitoring/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

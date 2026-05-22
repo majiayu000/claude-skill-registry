@@ -67,6 +67,11 @@ sk install anthropics/skills/skills/docx
 
 ### Option 3: Direct API
 
+The public JSON surface is versioned in
+[docs/artifact-api-contract.md](docs/artifact-api-contract.md). Use that
+contract when integrating with pointer files, manifests, shards, gzip variants,
+and deprecation markers.
+
 ```bash
 # Startup search index and bounded full-search shards
 curl https://majiayu000.github.io/claude-skill-registry-core/search-index.json
@@ -208,8 +213,13 @@ signals, and reason for every proposed change; it does not move files.
 For a bounded second-pass model review, set `MIMO_API_KEY` and run
 `python scripts/review_category_plan_with_llm.py --plan category-migration-plan.json --output category-llm-review.json --checkpoint-jsonl category-llm-review.checkpoint.jsonl --resume`.
 The default endpoint is `https://token-plan-sgp.xiaomimimo.com/v1` with
-`mimo-v2.5-pro`, and the report remains review-only: it records model category,
-confidence, decision, parse status, and evidence without modifying the archive.
+`mimo-v2.5-pro`. The default request uses `--thinking disabled` and
+`--max-completion-tokens 1024` so the model output budget is reserved for the
+required JSON; raise the token value for larger reviews, or pass
+`--thinking default` when using a non-MiMo endpoint that does not accept the
+provider-specific thinking field. The report remains review-only: it records
+model category, confidence, decision, parse status, token/thinking policy, and
+evidence without modifying the archive.
 The checkpoint file is append-only JSONL, so interrupted long reviews can resume
 without re-calling the model for completed candidates.
 

@@ -400,6 +400,39 @@ def test_load_from_registry_reconstructs_install_without_embedded_install_field(
     ]
 
 
+def test_load_from_registry_reads_manifest_shards(tmp_path):
+    registry_path = tmp_path / "registry.json"
+    manifest_path = tmp_path / "registry-manifest.json"
+    shards_dir = tmp_path / "registry-shards"
+    shards_dir.mkdir()
+    (shards_dir / "00.json").write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {"name": "alpha", "repo": "owner/repo", "path": "skills/alpha/SKILL.md"},
+                    {"name": "beta", "repo": "owner/repo", "path": "skills/beta/SKILL.md"},
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    manifest_path.write_text(
+        json.dumps({"shards": [{"path": "registry-shards/00.json", "count": 2}]}),
+        encoding="utf-8",
+    )
+    registry_path.write_text(
+        json.dumps({"deprecated_full_payload": True, "manifest": "registry-manifest.json"}),
+        encoding="utf-8",
+    )
+
+    skills = build_search_index.load_from_registry(registry_path)
+
+    assert [skill["install"] for skill in skills] == [
+        "owner/repo/skills/alpha/SKILL.md",
+        "owner/repo/skills/beta/SKILL.md",
+    ]
+
+
 def test_safe_write_registry_writes_compact_json(tmp_path):
     registry_path = tmp_path / "registry.json"
 

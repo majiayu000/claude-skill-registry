@@ -1,0 +1,13 @@
+{
+  "name": "1password-direnv-secrets",
+  "description": "",
+  "repo": "alchimie-di-circe/Extractor-desktop-app",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alchimie-di-circe/Extractor-desktop-app",
+  "github_path": ".factory/skills/1password-direnv-secrets",
+  "github_branch": "main",
+  "dir_name": "1password-direnv-secrets",
+  "downloaded_at": "2026-02-05T01:44:39.576502Z"
+}

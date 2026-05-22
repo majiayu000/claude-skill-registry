@@ -1,0 +1,18 @@
+{
+  "name": "adynato-web",
+  "repo": "adynato/skills",
+  "path": "skills/adynato-web/SKILL.md",
+  "source": "github.com/adynato/skills",
+  "downloaded_at": "2026-01-19T01:31:15.914944Z",
+  "dir_name": "adynato-web",
+  "category": "development",
+  "github_path": "skills/adynato-web",
+  "github_branch": "main",
+  "author": "adynato",
+  "source_url": "https://github.com/adynato/skills/blob/main/skills/adynato-web/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adynato/skills/blob/main/skills/adynato-web/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

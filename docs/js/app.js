@@ -68,6 +68,7 @@ const CATEGORY_COLORS = {
 // State
 let state = {
     index: null,
+    fullIndex: null,
     fuse: null,
     featured: [],
     plugins: [],
@@ -331,6 +332,18 @@ async function loadCategorySkills(categoryCode) {
         .map(normalizeSkillRecord);
     state.categoryCache[categoryCode] = skills;
     return skills;
+}
+
+async function loadFullSearchSkills() {
+    if (!state.index?.isLite) {
+        return state.index?.s || [];
+    }
+    if (state.fullIndex) {
+        return state.fullIndex.s;
+    }
+
+    state.fullIndex = await loadSearchIndexUrl(CONFIG.LEGACY_INDEX_URL);
+    return state.fullIndex.s;
 }
 
 async function getFilterBaseSkills() {

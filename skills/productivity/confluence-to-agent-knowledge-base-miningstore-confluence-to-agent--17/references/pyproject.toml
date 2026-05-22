@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "confluence-kb"
+version = "0.1.0"
+description = "Turn Confluence spaces into LLM-powered company knowledge bases"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+dependencies = [
+    "click>=8.1",
+    "atlassian-python-api>=3.41",
+    "anthropic>=0.40",
+    "pyyaml>=6.0",
+    "rich>=13.0",
+    "python-frontmatter>=1.0",
+    "markdownify>=0.11",
+    "beautifulsoup4>=4.12",
+    "tiktoken>=0.5",
+    "tqdm>=4.66",
+]
+
+[tool.setuptools.packages.find]
+include = ["confluence_kb*"]
+
+[project.scripts]
+ckb = "confluence_kb.cli:cli"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black>=23.0",
+    "ruff>=0.1",
+]

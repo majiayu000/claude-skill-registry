@@ -116,6 +116,8 @@ def test_review_report_records_agree_override_and_uncertain():
         "uncertain": 1,
     }
     assert report["policy"]["apply_mode"] == "review-only"
+    assert report["policy"]["max_completion_tokens"] == reviewer.DEFAULT_MAX_COMPLETION_TOKENS
+    assert report["policy"]["thinking"] == reviewer.DEFAULT_THINKING
     assert "MIMO_API_KEY" in report["notes"][1]
 
 
@@ -157,7 +159,34 @@ def test_openai_compatible_client_posts_chat_completion(monkeypatch):
     assert captured["headers"]["Authorization"] == "Bearer secret"
     assert captured["payload"]["model"] == "m"
     assert captured["payload"]["max_completion_tokens"] == 123
+    assert captured["payload"]["thinking"] == {"type": "disabled"}
     assert captured["payload"]["stream"] is False
+
+
+def test_openai_compatible_client_can_omit_thinking_for_non_mimo(monkeypatch):
+    reviewer = _load_module()
+    captured = {}
+
+    def fake_urlopen(request, timeout):
+        captured["payload"] = json.loads(request.data.decode("utf-8"))
+        return FakeResponse(
+            {
+                "choices": [
+                    {
+                        "message": {
+                            "content": '{"category":"data","confidence":0.8,"reason":"etl","evidence":[]}'
+                        }
+                    }
+                ]
+            }
+        )
+
+    monkeypatch.setattr(reviewer, "urlopen", fake_urlopen)
+    client = reviewer.OpenAICompatibleClient(api_key="secret", thinking="default")
+
+    client.complete([{"role": "user", "content": "hello"}])
+
+    assert "thinking" not in captured["payload"]
 
 
 def test_openai_compatible_client_reports_api_shape_errors(monkeypatch):
@@ -166,6 +195,15 @@ def test_openai_compatible_client_reports_api_shape_errors(monkeypatch):
     client = reviewer.OpenAICompatibleClient(api_key="secret")
 
     with pytest.raises(reviewer.LLMReviewError, match="did not include choices"):
+        client.complete([{"role": "user", "content": "hello"}])
+
+
+def test_openai_compatible_client_reports_non_object_payload(monkeypatch):
+    reviewer = _load_module()
+    monkeypatch.setattr(reviewer, "urlopen", lambda request, timeout: FakeResponse(["error"]))
+    client = reviewer.OpenAICompatibleClient(api_key="secret")
+
+    with pytest.raises(reviewer.LLMReviewError, match="JSON object"):
         client.complete([{"role": "user", "content": "hello"}])
 
 
@@ -377,6 +415,104 @@ def test_resume_ignores_malformed_checkpoint_rows(tmp_path):
     assert report["summary"]["skipped_checkpoint_count"] == 1
 
 
+def test_resume_ignores_checkpoint_rows_missing_required_fields(tmp_path):
+    reviewer = _load_module()
+    change = _change("other/a/SKILL.md", confidence="low", proposed_category="data")
+    review_key = reviewer.candidate_review_key(change)
+    checkpoint_path = tmp_path / "review.checkpoint.jsonl"
+    checkpoint_path.write_text(
+        json.dumps({"review_key": review_key}, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    client = FakeClient(
+        ['{"category":"data","confidence":0.9,"reason":"fresh","evidence":["csv"]}']
+    )
+
+    report = reviewer.build_review_report(
+        {"changes": [change]},
+        client=client,
+        model="m",
+        base_url="u",
+        api_key_env="KEY",
+        checkpoint_path=checkpoint_path,
+        resume=True,
+    )
+
+    assert len(client.messages) == 1
+    assert report["reviews"][0]["reason"] == "fresh"
+    assert report["summary"]["malformed_checkpoint_row_count"] == 1
+    assert report["summary"]["skipped_checkpoint_count"] == 0
+    assert report["summary"]["new_review_count"] == 1
+
+
+def test_resume_ignores_checkpoint_rows_with_boolean_confidence(tmp_path):
+    reviewer = _load_module()
+    change = _change("other/a/SKILL.md", confidence="low", proposed_category="data")
+    review_key = reviewer.candidate_review_key(change)
+    checkpoint_path = tmp_path / "review.checkpoint.jsonl"
+    checkpoint_path.write_text(
+        json.dumps(
+            {
+                "review_key": review_key,
+                "path": "other/a/SKILL.md",
+                "name": "a",
+                "action": "heuristic_reclassify",
+                "current_category": "other",
+                "heuristic_proposed_category": "data",
+                "llm_proposed_category": "data",
+                "llm_confidence": True,
+                "decision": "agree",
+                "parse_status": "ok",
+                "review_required": True,
+                "reason": "checkpointed",
+                "evidence": [],
+            },
+            ensure_ascii=False,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    client = FakeClient(
+        ['{"category":"data","confidence":0.9,"reason":"fresh","evidence":["csv"]}']
+    )
+
+    report = reviewer.build_review_report(
+        {"changes": [change]},
+        client=client,
+        model="m",
+        base_url="u",
+        api_key_env="KEY",
+        checkpoint_path=checkpoint_path,
+        resume=True,
+    )
+
+    assert len(client.messages) == 1
+    assert report["reviews"][0]["reason"] == "fresh"
+    assert report["summary"]["malformed_checkpoint_row_count"] == 1
+    assert report["summary"]["skipped_checkpoint_count"] == 0
+
+
+def test_main_rejects_checkpoint_path_aliasing_plan(tmp_path, monkeypatch):
+    reviewer = _load_module()
+    monkeypatch.setenv("KEY", "test-key")
+    plan_path = tmp_path / "plan.json"
+    plan_path.write_text(json.dumps({"changes": []}) + "\n", encoding="utf-8")
+
+    with pytest.raises(SystemExit, match="--plan and --checkpoint-jsonl must be different paths"):
+        reviewer.main(
+            [
+                "--plan",
+                str(plan_path),
+                "--checkpoint-jsonl",
+                str(plan_path),
+                "--api-key-env",
+                "KEY",
+                "--limit",
+                "0",
+            ]
+        )
+
+
 def test_review_report_marks_api_error_without_raising():
     reviewer = _load_module()
     client = FakeClient([reviewer.LLMReviewError("temporary outage")])
@@ -461,11 +597,7 @@ def test_main_writes_json_report(monkeypatch, tmp_path, capsys):
     checkpoint_path = tmp_path / "review.checkpoint.jsonl"
     plan_path.write_text(
         json.dumps(
-            {
-                "changes": [
-                    _change("other/a/SKILL.md", confidence="low", proposed_category="data")
-                ]
-            }
+            {"changes": [_change("other/a/SKILL.md", confidence="low", proposed_category="data")]}
         ),
         encoding="utf-8",
     )
@@ -473,10 +605,12 @@ def test_main_writes_json_report(monkeypatch, tmp_path, capsys):
     class FakeOpenAICompatibleClient:
         def __init__(self, **kwargs):
             self.kwargs = kwargs
+            created_clients.append(kwargs)
 
         def complete(self, messages):
             return '{"category":"data","confidence":0.9,"reason":"etl","evidence":["csv"]}'
 
+    created_clients = []
     monkeypatch.setenv("MIMO_API_KEY", "secret")
     monkeypatch.setattr(reviewer, "OpenAICompatibleClient", FakeOpenAICompatibleClient)
 
@@ -490,6 +624,10 @@ def test_main_writes_json_report(monkeypatch, tmp_path, capsys):
                 "--json",
                 "--limit",
                 "1",
+                "--max-completion-tokens",
+                "2048",
+                "--thinking",
+                "default",
                 "--checkpoint-jsonl",
                 str(checkpoint_path),
             ]
@@ -499,5 +637,9 @@ def test_main_writes_json_report(monkeypatch, tmp_path, capsys):
     stdout = capsys.readouterr().out
     output = json.loads(output_path.read_text(encoding="utf-8"))
     assert json.loads(stdout)["summary"]["reviewed_count"] == 1
+    assert created_clients[0]["max_completion_tokens"] == 2048
+    assert created_clients[0]["thinking"] == "default"
+    assert output["policy"]["max_completion_tokens"] == 2048
+    assert output["policy"]["thinking"] == "default"
     assert output["reviews"][0]["decision"] == "agree"
     assert checkpoint_path.exists()

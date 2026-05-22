@@ -1,0 +1,17 @@
+{
+  "name": "supabase-js",
+  "repo": "fcakyon/claude-codex-settings",
+  "path": "plugins/supabase-skills/skills/supabase-js/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/fcakyon/claude-codex-settings",
+  "dir_name": "supabase-js",
+  "downloaded_at": "2026-05-22T04:00:39.528315Z",
+  "author": "fcakyon",
+  "source_url": "https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/supabase-skills/skills/supabase-js/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/supabase-skills/skills/supabase-js/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

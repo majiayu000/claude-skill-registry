@@ -1,0 +1,20 @@
+{
+  "name": "adr-writer",
+  "description": "",
+  "repo": "monkey1sai/openai-cli",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/monkey1sai/openai-cli",
+  "github_path": ".claude/skills/adr-writer",
+  "github_branch": "main",
+  "dir_name": "adr-writer-monkey1sai-openai-cli",
+  "downloaded_at": "2026-02-05T01:44:14.685503Z",
+  "author": "monkey1sai",
+  "source_url": "https://github.com/monkey1sai/openai-cli/blob/main/.claude/skills/adr-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/monkey1sai/openai-cli/blob/main/.claude/skills/adr-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

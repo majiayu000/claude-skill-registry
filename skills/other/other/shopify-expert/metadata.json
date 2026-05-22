@@ -1,0 +1,17 @@
+{
+  "name": "shopify-expert",
+  "repo": "Jeffallan/claude-skills",
+  "path": "skills/shopify-expert/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Jeffallan/claude-skills",
+  "dir_name": "shopify-expert",
+  "downloaded_at": "2026-05-22T03:47:19.826511Z",
+  "author": "Jeffallan",
+  "source_url": "https://github.com/Jeffallan/claude-skills/blob/main/skills/shopify-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Jeffallan/claude-skills/blob/main/skills/shopify-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

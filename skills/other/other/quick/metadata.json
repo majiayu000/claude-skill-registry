@@ -1,0 +1,17 @@
+{
+  "name": "quick",
+  "repo": "oliver-kriska/claude-elixir-phoenix",
+  "path": "plugins/elixir-phoenix/skills/quick/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/oliver-kriska/claude-elixir-phoenix",
+  "dir_name": "quick",
+  "downloaded_at": "2026-05-22T04:09:59.623220Z",
+  "author": "oliver-kriska",
+  "source_url": "https://github.com/oliver-kriska/claude-elixir-phoenix/blob/main/plugins/elixir-phoenix/skills/quick/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oliver-kriska/claude-elixir-phoenix/blob/main/plugins/elixir-phoenix/skills/quick/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

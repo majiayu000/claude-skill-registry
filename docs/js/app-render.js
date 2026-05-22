@@ -12,19 +12,26 @@ function showFeatured() {
 }
 
 // Show leaderboard
-function showLeaderboard(categoryFilter = '') {
+async function showLeaderboard(categoryFilter = '') {
     elements.leaderboardSection.classList.remove('hidden');
+    elements.leaderboardList.innerHTML = '';
 
-    // Get all skills sorted by stars
-    let skills = [...state.index.s].filter(s => s.r > 0);
-
-    // Apply category filter
-    if (categoryFilter) {
-        skills = skills.filter(s => s.c === categoryFilter);
+    let skills;
+    try {
+        skills = categoryFilter
+            ? await loadCategorySkills(categoryFilter)
+            : await loadFullSearchSkills();
+    } catch (error) {
+        console.warn('Failed to load full leaderboard data; using startup index:', error);
+        skills = categoryFilter
+            ? state.index.s.filter(s => s.c === categoryFilter)
+            : state.index.s;
     }
 
     // Sort by stars descending
-    skills.sort((a, b) => (b.r || 0) - (a.r || 0));
+    skills = [...skills]
+        .filter(s => s.r > 0)
+        .sort((a, b) => (b.r || 0) - (a.r || 0));
 
     // Take top N
     const topSkills = skills.slice(0, CONFIG.LEADERBOARD_SIZE);

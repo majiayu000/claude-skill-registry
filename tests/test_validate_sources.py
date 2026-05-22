@@ -425,6 +425,37 @@ def test_duplicate_keys_across_files_warn(vs, sources, capsys):
     assert "W_DUPLICATE" in out
 
 
+def test_duplicate_root_path_spellings_warn(vs, sources, capsys):
+    _write(
+        sources / "community.json",
+        {
+            "name": "Community",
+            "description": "x",
+            "skills": [
+                {
+                    "name": "root-skill",
+                    "repo": "owner/root-skill",
+                    "path": "",
+                    "description": "Long enough description here.",
+                    "category": "productivity",
+                },
+                {
+                    "name": "root-skill",
+                    "repo": "owner/root-skill",
+                    "path": ".",
+                    "description": "Same root skill with dot path.",
+                    "category": "productivity",
+                },
+            ],
+        },
+    )
+
+    rc = vs.main(["--sources-dir", str(sources)])
+    out = capsys.readouterr().out
+    assert rc == 0
+    assert "W_DUPLICATE" in out
+
+
 def test_short_description_warns(vs, sources, capsys):
     _write(
         sources / "community.json",

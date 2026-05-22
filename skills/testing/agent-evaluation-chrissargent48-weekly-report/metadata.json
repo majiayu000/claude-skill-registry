@@ -1,0 +1,16 @@
+{
+  "name": "agent-evaluation",
+  "repo": "chrissargent48/weekly_report",
+  "path": ".claude/skills/external-skills/skills/agent-evaluation/SKILL.md",
+  "source": "github.com/chrissargent48/weekly_report",
+  "downloaded_at": "2026-01-29T06:38:28.231681Z",
+  "dir_name": "agent-evaluation-chrissargent48-weekly-report",
+  "category": "testing",
+  "author": "chrissargent48",
+  "source_url": "https://github.com/chrissargent48/weekly_report/blob/main/.claude/skills/external-skills/skills/agent-evaluation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chrissargent48/weekly_report/blob/main/.claude/skills/external-skills/skills/agent-evaluation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

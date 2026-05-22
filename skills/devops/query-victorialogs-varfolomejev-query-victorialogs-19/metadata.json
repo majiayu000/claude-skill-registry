@@ -15,6 +15,15 @@
   "stars": 0,
   "source": "Community Skills",
   "dir_name": "query-victorialogs-varfolomejev-query-victorialogs-19",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "LICENSE",
+    "README.md",
+    "references/http-api.md",
+    "references/logsql-reference.md",
+    "scripts/vl-hits.sh",
+    "scripts/vl-query.sh"
+  ],
   "author": "varfolomejev",
   "source_url": "https://github.com/varfolomejev/query-victorialogs/blob/main/SKILL.md",
   "license": "NOASSERTION",

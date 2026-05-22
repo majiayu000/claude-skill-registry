@@ -1,0 +1,18 @@
+{
+  "name": "account-onboarding",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/account-onboarding/SKILL.md",
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "downloaded_at": "2026-01-22T01:38:03.186748Z",
+  "dir_name": "account-onboarding",
+  "category": "marketing",
+  "github_path": ".claude/skills/account-onboarding",
+  "github_branch": "main",
+  "author": "dengineproblem",
+  "source_url": "https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/account-onboarding/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/account-onboarding/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "acc-create-builder",
+  "repo": "dykyi-roman/awesome-claude-code",
+  "path": ".claude/skills/acc-create-builder/SKILL.md",
+  "source": "github.com/dykyi-roman/awesome-claude-code",
+  "downloaded_at": "2026-02-02T05:12:20.288083Z",
+  "dir_name": "acc-create-builder",
+  "category": "development",
+  "author": "dykyi-roman",
+  "source_url": "https://github.com/dykyi-roman/awesome-claude-code/blob/main/.claude/skills/acc-create-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Dykyi Roman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

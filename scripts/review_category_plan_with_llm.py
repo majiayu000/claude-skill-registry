@@ -22,8 +22,25 @@ DEFAULT_BASE_URL = "https://token-plan-sgp.xiaomimimo.com/v1"
 DEFAULT_MODEL = "mimo-v2.5-pro"
 DEFAULT_API_KEY_ENV = "MIMO_API_KEY"
 DEFAULT_ACTIONS = ("heuristic_reclassify", "resolve_source_conflict")
+DEFAULT_MAX_COMPLETION_TOKENS = 1024
+DEFAULT_THINKING = "disabled"
 CONFIDENCE_PRIORITY = {"low": 0, "medium": 1, "high": 2}
 CHECKPOINT_SCHEMA_VERSION = 1
+CHECKPOINT_REQUIRED_REVIEW_FIELDS = (
+    "review_key",
+    "path",
+    "name",
+    "action",
+    "current_category",
+    "heuristic_proposed_category",
+    "llm_proposed_category",
+    "llm_confidence",
+    "decision",
+    "parse_status",
+    "review_required",
+    "reason",
+    "evidence",
+)
 
 
 class ChatClient(Protocol):
@@ -41,8 +58,9 @@ class OpenAICompatibleClient:
     base_url: str = DEFAULT_BASE_URL
     model: str = DEFAULT_MODEL
     timeout: int = 60
-    max_completion_tokens: int = 512
+    max_completion_tokens: int = DEFAULT_MAX_COMPLETION_TOKENS
     temperature: float = 0.0
+    thinking: str = DEFAULT_THINKING
 
     def complete(self, messages: list[dict[str, str]]) -> str:
         payload = {
@@ -52,6 +70,9 @@ class OpenAICompatibleClient:
             "temperature": self.temperature,
             "stream": False,
         }
+        normalized_thinking = self.thinking.strip().lower()
+        if normalized_thinking and normalized_thinking != "default":
+            payload["thinking"] = {"type": normalized_thinking}
         request = Request(
             f"{self.base_url.rstrip('/')}/chat/completions",
             data=json.dumps(payload).encode("utf-8"),
@@ -70,6 +91,8 @@ class OpenAICompatibleClient:
         except (OSError, URLError, json.JSONDecodeError) as exc:
             raise LLMReviewError(f"chat API request failed: {exc}") from exc
 
+        if not isinstance(response_payload, dict):
+            raise LLMReviewError("chat API response was not a JSON object")
         choices = response_payload.get("choices")
         if not isinstance(choices, list) or not choices:
             raise LLMReviewError("chat API response did not include choices")
@@ -273,7 +296,9 @@ def build_review_entry(
     return entry
 
 
-def build_error_entry(change: dict[str, Any], error: Exception, *, review_key: str) -> dict[str, Any]:
+def build_error_entry(
+    change: dict[str, Any], error: Exception, *, review_key: str
+) -> dict[str, Any]:
     return {
         "checkpoint_schema_version": CHECKPOINT_SCHEMA_VERSION,
         "review_key": review_key,
@@ -290,6 +315,35 @@ def build_error_entry(change: dict[str, Any], error: Exception, *, review_key: s
         "reason": str(error),
         "evidence": [],
     }
+
+
+def is_valid_checkpoint_review(payload: dict[str, Any]) -> bool:
+    if any(field not in payload for field in CHECKPOINT_REQUIRED_REVIEW_FIELDS):
+        return False
+    review_key = payload.get("review_key")
+    if not isinstance(review_key, str) or not review_key:
+        return False
+    for field in (
+        "path",
+        "name",
+        "action",
+        "current_category",
+        "heuristic_proposed_category",
+        "llm_proposed_category",
+        "decision",
+        "parse_status",
+        "reason",
+    ):
+        if not isinstance(payload.get(field), str):
+            return False
+    if not isinstance(payload.get("review_required"), bool):
+        return False
+    if not isinstance(payload.get("evidence"), list):
+        return False
+    confidence = payload.get("llm_confidence")
+    return confidence is None or (
+        not isinstance(confidence, bool) and isinstance(confidence, (int, float))
+    )
 
 
 def load_checkpoint_reviews(checkpoint_path: Path | None) -> tuple[dict[str, dict[str, Any]], int]:
@@ -309,10 +363,10 @@ def load_checkpoint_reviews(checkpoint_path: Path | None) -> tuple[dict[str, dic
         if not isinstance(payload, dict):
             malformed_row_count += 1
             continue
-        review_key = payload.get("review_key")
-        if not isinstance(review_key, str) or not review_key:
+        if not is_valid_checkpoint_review(payload):
             malformed_row_count += 1
             continue
+        review_key = payload["review_key"]
         reviews[review_key] = payload
     return reviews, malformed_row_count
 
@@ -341,6 +395,8 @@ def build_review_report(
     source_plan: str = "",
     checkpoint_path: Path | None = None,
     resume: bool = False,
+    max_completion_tokens: int = DEFAULT_MAX_COMPLETION_TOKENS,
+    thinking: str = DEFAULT_THINKING,
 ) -> dict[str, Any]:
     taxonomy = get_taxonomy()
     categories = active_category_payload(taxonomy)
@@ -405,6 +461,8 @@ def build_review_report(
             "priority": priority,
             "sleep_seconds": sleep_seconds,
             "override_confidence": override_confidence,
+            "max_completion_tokens": max_completion_tokens,
+            "thinking": thinking,
             "api_key_env": api_key_env,
             "checkpoint_jsonl": str(checkpoint_path) if checkpoint_path else "",
             "resume": resume,
@@ -465,8 +523,21 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--base-url", default=DEFAULT_BASE_URL)
     parser.add_argument("--api-key-env", default=DEFAULT_API_KEY_ENV)
     parser.add_argument("--timeout", type=int, default=60)
-    parser.add_argument("--max-completion-tokens", type=int, default=512)
+    parser.add_argument(
+        "--max-completion-tokens",
+        type=int,
+        default=DEFAULT_MAX_COMPLETION_TOKENS,
+    )
     parser.add_argument("--temperature", type=float, default=0.0)
+    parser.add_argument(
+        "--thinking",
+        choices=["disabled", "default"],
+        default=DEFAULT_THINKING,
+        help=(
+            "Set MiMo thinking mode. Use 'default' to omit the provider-specific "
+            "thinking field for non-MiMo endpoints."
+        ),
+    )
     parser.add_argument("--limit", type=int, default=25)
     parser.add_argument("--action", action="append")
     parser.add_argument("--confidence", action="append")
@@ -490,6 +561,8 @@ def main(argv: list[str] | None = None) -> int:
         raise SystemExit(f"Category migration plan not found: {args.plan}")
     if args.resume and not args.checkpoint_jsonl:
         raise SystemExit("--resume requires --checkpoint-jsonl")
+    if args.checkpoint_jsonl and args.plan.resolve() == args.checkpoint_jsonl.resolve():
+        raise SystemExit("--plan and --checkpoint-jsonl must be different paths")
     if (
         args.output
         and args.checkpoint_jsonl
@@ -508,6 +581,7 @@ def main(argv: list[str] | None = None) -> int:
         timeout=args.timeout,
         max_completion_tokens=args.max_completion_tokens,
         temperature=args.temperature,
+        thinking=args.thinking,
     )
     report = build_review_report(
         plan,
@@ -525,6 +599,8 @@ def main(argv: list[str] | None = None) -> int:
         source_plan=str(args.plan),
         checkpoint_path=args.checkpoint_jsonl,
         resume=args.resume,
+        max_completion_tokens=args.max_completion_tokens,
+        thinking=args.thinking,
     )
     payload = json.dumps(report, indent=2, ensure_ascii=False)
     if args.output:

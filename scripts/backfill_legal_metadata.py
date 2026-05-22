@@ -134,6 +134,27 @@ def fetch_repo_license(repo: str, token: str, timeout: int) -> dict[str, str]:
     }
 
 
+def should_refetch_cached_license(result: dict[str, str]) -> bool:
+    """Return True for durable cache entries that should be refreshed with GitHub fetch."""
+    error = str(result.get("error") or "")
+    return error == "not_fetched"
+
+
+def is_transient_license_result(result: dict[str, str]) -> bool:
+    """Return True for fetch failures that should not be persisted across runs."""
+    error = str(result.get("error") or "")
+    return error.startswith("fetch_error:") or error == "fetch_failed"
+
+
+def durable_license_cache(cache: dict[str, dict[str, str]]) -> dict[str, dict[str, str]]:
+    """Return cache entries safe to persist between backfill runs."""
+    return {
+        repo: result
+        for repo, result in cache.items()
+        if not is_transient_license_result(result)
+    }
+
+
 def load_or_fetch_license(
     repo: str,
     cache: dict[str, dict[str, str]],
@@ -143,8 +164,9 @@ def load_or_fetch_license(
     timeout: int,
     sleep_seconds: float,
 ) -> dict[str, str]:
-    if repo in cache:
-        return cache[repo]
+    cached = cache.get(repo)
+    if cached and not (fetch and should_refetch_cached_license(cached)):
+        return cached
     if not fetch:
         cache[repo] = {"license": "NOASSERTION", "copyright": "", "error": "not_fetched"}
         return cache[repo]
@@ -158,8 +180,18 @@ def load_or_fetch_license(
 
 def backfill_metadata(metadata: dict[str, Any], repo_license: dict[str, str]) -> dict[str, Any]:
     repo = normalize_repo(str(metadata.get("repo") or ""))
-    license_name = metadata.get("license") or repo_license.get("license") or "NOASSERTION"
-    copyright_text = metadata.get("copyright") or repo_license.get("copyright") or ""
+    current_license = metadata.get("license")
+    current_copyright = metadata.get("copyright")
+    license_name = (
+        current_license
+        if not is_missing(current_license)
+        else repo_license.get("license") or "NOASSERTION"
+    )
+    copyright_text = (
+        current_copyright
+        if not is_missing(current_copyright)
+        else repo_license.get("copyright") or ""
+    )
 
     legal = build_legal_metadata(
         repo=repo,
@@ -212,7 +244,7 @@ def main() -> int:
         return 1
 
     token = os.environ.get(args.token_env, "")
-    cache: dict[str, dict[str, str]] = load_json(cache_path, {})
+    cache: dict[str, dict[str, str]] = durable_license_cache(load_json(cache_path, {}))
     changed_files: list[str] = []
     skipped_repos: set[str] = set()
     stats = {
@@ -259,7 +291,7 @@ def main() -> int:
             sleep_seconds=args.sleep,
         )
         if not had_cache:
-            write_json(cache_path, cache)
+            write_json(cache_path, durable_license_cache(cache))
         updated = backfill_metadata(metadata, repo_license)
         if updated == metadata:
             stats["unchanged"] += 1
@@ -275,7 +307,7 @@ def main() -> int:
 
     stats["repos_seen"] = len(repos_seen)
     stats["repos_skipped_by_limit"] = len(skipped_repos)
-    write_json(cache_path, cache)
+    write_json(cache_path, durable_license_cache(cache))
 
     report = {
         **stats,

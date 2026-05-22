@@ -1,0 +1,17 @@
+{
+  "name": "dsgvo-auskunft",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "datenschutzrecht/skills/dsgvo-auskunft/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "dsgvo-auskunft",
+  "downloaded_at": "2026-05-22T03:48:38.086201Z",
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/datenschutzrecht/skills/dsgvo-auskunft/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/datenschutzrecht/skills/dsgvo-auskunft/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

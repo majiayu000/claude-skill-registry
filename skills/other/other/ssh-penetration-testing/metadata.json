@@ -1,0 +1,17 @@
+{
+  "name": "ssh-penetration-testing",
+  "repo": "zebbern/claude-code-guide",
+  "path": "skills/ssh-penetration-testing/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/zebbern/claude-code-guide",
+  "dir_name": "ssh-penetration-testing",
+  "downloaded_at": "2026-05-22T04:18:13.133129Z",
+  "author": "zebbern",
+  "source_url": "https://github.com/zebbern/claude-code-guide/blob/main/skills/ssh-penetration-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zebbern/claude-code-guide/blob/main/skills/ssh-penetration-testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
@@ -60,8 +61,8 @@ def infer_category(rel_parts: tuple[str, ...], meta: dict[str, Any]) -> str:
     return category or "other"
 
 
-def existing_category_state(skills_dir: Path) -> dict[str, dict[str, set[str]]]:
-    state: dict[str, dict[str, set[str]]] = defaultdict(lambda: {"names": set(), "keys": set()})
+def existing_category_state(skills_dir: Path) -> dict[str, dict[str, Any]]:
+    state: dict[str, dict[str, Any]] = defaultdict(lambda: {"names": set(), "key_to_name": {}})
     for category_dir in sorted(skills_dir.iterdir()):
         if not category_dir.is_dir() or category_dir.name.startswith("."):
             continue
@@ -76,23 +77,25 @@ def existing_category_state(skills_dir: Path) -> dict[str, dict[str, set[str]]]:
             key = build_skill_key(repo, path, name=name, category=category)
             state[category]["names"].add(skill_dir.name.lower())
             if key:
-                state[category]["keys"].add(key)
+                state[category]["key_to_name"].setdefault(key, skill_dir.name)
     return state
 
 
 def unique_dir_name(
     *,
-    category_state: dict[str, set[str]],
+    category_state: dict[str, Any],
     base_name: str,
     repo: str,
     key: str,
-) -> str:
+) -> tuple[str, bool]:
     base = normalize_name(base_name)
+    key_to_name = category_state["key_to_name"]
+    if key and key in key_to_name:
+        return key_to_name[key], True
+
     if base.lower() not in category_state["names"]:
         category_state["names"].add(base.lower())
-        if key:
-            category_state["keys"].add(key)
-        return base
+        return base, False
 
     suffix = get_repo_suffix(repo)
     if suffix and not base.endswith(f"-{suffix}"):
@@ -107,9 +110,7 @@ def unique_dir_name(
         counter += 1
 
     category_state["names"].add(candidate.lower())
-    if key:
-        category_state["keys"].add(key)
-    return candidate
+    return candidate, False
 
 
 def build_depth_plan(skills_dir: Path) -> dict[str, Any]:
@@ -125,7 +126,7 @@ def build_depth_plan(skills_dir: Path) -> dict[str, Any]:
         path = meta.get("github_path") or meta.get("path") or ""
         key = build_skill_key(repo, path, name=name, category=category)
         category_state = state[category]
-        target_name = unique_dir_name(
+        target_name, reuses_existing_key = unique_dir_name(
             category_state=category_state,
             base_name=name,
             repo=repo,
@@ -136,6 +137,7 @@ def build_depth_plan(skills_dir: Path) -> dict[str, Any]:
             {
                 "source_path": str(skill_dir.relative_to(skills_dir)),
                 "source_skill": str(rel),
+                "operation": "remove_duplicate" if reuses_existing_key else "move",
                 "target_path": str(target_rel),
                 "target_skill": str(target_rel / "SKILL.md"),
                 "category": category,
@@ -148,12 +150,22 @@ def build_depth_plan(skills_dir: Path) -> dict[str, Any]:
             }
         )
 
+    duplicate_count = sum(1 for move in moves if move["operation"] == "remove_duplicate")
     return {
         "skills_dir": str(skills_dir),
         "expected_layout": LAYOUT_EXPECTED,
         "move_count": len(moves),
+        "duplicate_count": duplicate_count,
         "moves": moves,
     }
+
+
+def skill_key_for_dir(skill_dir: Path, category: str) -> str:
+    meta = load_metadata(skill_dir)
+    name = normalize_name(meta.get("name") or skill_dir.name)
+    repo = normalize_repo(meta.get("repo", ""))
+    path = meta.get("github_path") or meta.get("path") or ""
+    return build_skill_key(repo, path, name=name, category=category)
 
 
 def apply_depth_plan(skills_dir: Path, plan: dict[str, Any]) -> None:
@@ -166,6 +178,13 @@ def apply_depth_plan(skills_dir: Path, plan: dict[str, Any]) -> None:
         target = skills_dir / move["target_path"]
         if not source.exists():
             raise FileNotFoundError(f"Planned source does not exist: {source}")
+        if move.get("operation") == "remove_duplicate":
+            if not target.exists():
+                raise FileNotFoundError(f"Duplicate target does not exist: {target}")
+            if skill_key_for_dir(target, str(move["category"])) != move.get("key"):
+                raise ValueError(f"Duplicate target key mismatch: {target}")
+            shutil.rmtree(source)
+            continue
         if target.exists():
             raise FileExistsError(f"Planned target already exists: {target}")
         target.parent.mkdir(parents=True, exist_ok=True)

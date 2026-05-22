@@ -1,0 +1,183 @@
+---
+name: weg-beschluss-anfechten
+description: Pruefraster fuer die Beschlussanfechtung in der Wohnungseigentuemergemeinschaft nach §§ 44 ff. WEG-Reform 2020. Beschlussklage Anfechtungsklage Nichtigkeitsklage Feststellungsklage. Pruefung formelle Maengel (Ladung Tagesordnung Beschlussfaehigkeit Mehrheit Stimmrechtsausschluesse) und materielle Maengel (kein Beschlusszustand ordnungsmaessige Verwaltung Treu und Glauben). Klagefrist ein Monat ab Beschluss § 45 WEG. Verwaltungsbeirats-Pruefung Verwaltervertrag Sondereigentum vs. Gemeinschaftseigentum Bauliche Veraenderung § 20 WEG Hausgeld § 16 Abs. 2 WEG.
+---
+
+# WEG-Beschluss anfechten
+
+## Zweck
+
+Bei einem unliebsamen WEG-Beschluss prüfen, ob Anfechtungs- oder Nichtigkeitsklage in Frage kommt. Die WEG-Reform 2020 hat das Verfahren neu strukturiert — alte Begriffe (Beschlussanfechtungsklage) sind nun "Beschlussklage".
+
+## Eingaben
+
+- Einladung mit Tagesordnung
+- Beschluss-Protokoll
+- Beschluss-Sammlung-Eintrag
+- Gemeinschaftsordnung Teilungserklärung
+- Verwaltervertrag
+- Vorherige Beschlüsse zum selben Thema
+
+## Schritt 1 — Welche Klageart?
+
+### Beschlussklage § 44 WEG
+
+- **Anfechtungsklage** gegen anfechtbaren Beschluss
+- **Nichtigkeitsklage** gegen nichtigen Beschluss
+- Klagebefugnis jeder Eigentümer
+- Beklagte: Gemeinschaft der Wohnungseigentümer § 9a WEG
+
+### Sonstige Klagen
+
+- **Feststellungsklage** zur Klärung von Sondereigentums-/Gemeinschaftseigentums-Abgrenzung
+- **Leistungsklage** auf Hausgeld
+- **Unterlassungsklage** gegen störenden Eigentümer § 14 WEG
+
+## Schritt 2 — Klagefrist § 45 WEG
+
+- **Ein Monat ab Beschlussfassung**
+- Frist absolut — keine Wiedereinsetzung außer bei nicht-Verschulden
+- **Begründung** bis zum Ablauf der Frist erforderlich (im Zweifel form-formuliert dann ausformulieren)
+
+## Schritt 3 — Formelle Anfechtungsgründe
+
+### Einberufung
+
+- **Frist § 24 Abs. 4 WEG** zwei Wochen vor Versammlung
+- **Form** schriftlich (Brief E-Mail mit Zustimmung)
+- **Inhalt** Tagesordnung Zeit Ort
+
+### Tagesordnung
+
+- Beschlussgegenstand klar bezeichnet
+- "Verschiedenes" als Sammelpunkt unzulässig für eigentliche Beschlüsse
+
+### Beschlussfähigkeit
+
+- **§ 25 Abs. 4 WEG** Beschlussfähig wenn mehr als die Hälfte der Miteigentumsanteile (Standard wenn nichts anderes in Gemeinschaftsordnung)
+- Bei Beschlussunfähigkeit nicht beschlussfähige Versammlung — Wiederholungsversammlung
+- **Vorgehensweise** der Versammlung dokumentieren
+
+### Mehrheitserfordernisse
+
+- **Einfache Mehrheit** Standard
+- **Doppelt qualifizierte Mehrheit** bei baulichen Veränderungen § 20 WEG (Mehrheit nach Köpfen und nach Miteigentumsanteilen)
+- **Allstimmig** bei Änderung der Gemeinschaftsordnung
+- **Stimmrecht** ein Eigentümer eine Stimme — abweichend in Gemeinschaftsordnung möglich
+
+### Stimmrechtsausschluss
+
+- § 25 Abs. 5 WEG bei Beschlüssen, die ihn selbst betreffen — Geschäft mit ihm, Rechtsstreit
+- Bei Verletzung Beschluss anfechtbar
+
+### Protokoll § 24 Abs. 6 WEG
+
+- Schriftlich
+- Verwalter Verfahrens-Beirat oder zwei Eigentümer Unterschrift
+
+## Schritt 4 — Materielle Anfechtungsgründe
+
+### Ordnungsmäßige Verwaltung § 19 WEG
+
+- Beschluss muss ordnungsmäßiger Verwaltung entsprechen
+- Wirtschaftlichkeit
+- Erhaltung Sache
+
+### Treu und Glauben § 242 BGB
+
+- Beschluss nicht treuwidrig
+- Keine Schikane
+
+### Inhaltskontrolle baulicher Veränderungen § 20 WEG
+
+- **Bauliche Veränderung** doppelt qualifizierte Mehrheit
+- **Modernisierung** mehrheitlich beschließbar wenn nicht grundlegend Eigentum verändert
+- **Erhaltung** mehrheitlich
+- **Veränderungen mit besonderem Beeinträchtigungs-Risiko** Einstimmigkeit
+
+### Hausgeld und Wirtschaftsplan § 28 WEG
+
+- Wirtschaftsplan jährlich
+- Abrechnung jährlich
+- Vorschüsse und Sonderumlagen
+
+## Schritt 5 — Nichtigkeitsgründe
+
+- **Verstoß gegen unverzichtbare Rechte** Stimmrechtsentzug ohne gesetzliche Grundlage
+- **Verstoß Gemeinschaftsordnung** unabänderlich
+- **Beschluss-Kompetenz fehlt** WEG kann nicht über Sondereigentum eines Einzelnen beschließen
+- **Eingriff in absolutes Recht** Eigentum eines Einzelnen
+- **§ 134 BGB** Gesetzesverstoß
+- **§ 138 BGB** Sittenwidrigkeit
+
+## Schritt 6 — Verwaltungsbeirat und Verwalter
+
+### Beirat
+
+- **§ 29 WEG** Beirat-Wahl Aufgabe Verwalter-Überwachung
+- Drei oder mehr Mitglieder
+
+### Verwalter
+
+- **Bestellung** § 26 WEG (Beschluss)
+- **Abberufung** § 26 Abs. 3 WEG nur bei wichtigem Grund
+- **Verwaltervertrag** zivilrechtliche Beziehung Gemeinschaft / Verwalter
+- **Vergütung** und Pflichten
+
+## Schritt 7 — Sondereigentum vs. Gemeinschaftseigentum
+
+### Sondereigentum § 5 WEG
+
+- Räume innerhalb des Gebäudes
+- Außenwand und Decken **gehören zur Gemeinschaftseigentum** typisch
+- Bei Streit Klärung durch Sachverständigen-Gutachten
+
+### Gemeinschaftseigentum § 5 Abs. 2 WEG
+
+- Bestandteile außerhalb Sondereigentum
+- Dach Fassade Treppenhaus Heizungsanlage
+- Gemeinschaftliche Nutzung
+
+## Schritt 8 — Hausgeld-Streit § 16 Abs. 2 WEG
+
+- Hausgeld nach Miteigentumsanteilen außer abweichend in Gemeinschaftsordnung
+- Klage auf Hausgeld durch Gemeinschaft (Selbstklage seit WEG-Reform 2020)
+- Verzug nach Mahnung Zinsen
+
+## Schritt 9 — Verfahren vor Gericht
+
+### Sachlich
+
+- AG bei Streitwert bis EUR 10000 (Streitwertgrenze 2024)
+- LG ab EUR 10000
+
+### Örtlich
+
+- **§ 43 WEG** ausschließlich bei AG der Belegenheit
+
+### Beklagter
+
+- **Gemeinschaft der Wohnungseigentümer** § 9a WEG
+- vertreten durch Verwalter
+
+## Schritt 10 — Streitwert
+
+- Anfechtungsklage: häufig nach wirtschaftlichem Interesse Beschluss
+- Sonderfälle § 49a GKG Anwendung
+
+## Ausgabe
+
+- `weg-beschluss-analyse.md` strukturiert
+- Klageschrift-Entwurf
+- Frist im Fristenbuch (ein Monat § 45 WEG)
+- Bei mehreren Beschlüssen: Tabelle Beschluss-für-Beschluss
+- Mandatsvereinbarung
+
+## Quellen
+
+- WEG §§ 5 9a 14 16 19 20 24 25 26 28 29 43 44 45
+- BGB §§ 134 138 242
+- GKG § 49a
+- BGH V. Zivilsenat
+- Bärmann WEG
+- Hügel/Elzer WEG

@@ -1,0 +1,18 @@
+{
+  "name": "agent-doc-writer",
+  "repo": "bearbinary/Jarvy",
+  "path": ".claude/skills/agent-doc-writer/SKILL.md",
+  "source": "github.com/bearbinary/Jarvy",
+  "downloaded_at": "2026-01-22T03:53:01.664365Z",
+  "dir_name": "agent-doc-writer",
+  "category": "documents",
+  "github_path": ".claude/skills/agent-doc-writer",
+  "github_branch": "main",
+  "author": "bearbinary",
+  "source_url": "https://github.com/bearbinary/Jarvy/blob/main/.claude/skills/agent-doc-writer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Zac Clifton",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

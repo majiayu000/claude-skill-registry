@@ -1,0 +1,16 @@
+{
+  "name": "add-language",
+  "repo": "madeinoz67/madeinoz-recordmanager-skill",
+  "path": ".claude/skills/add-language/SKILL.md",
+  "source": "github.com/madeinoz67/madeinoz-recordmanager-skill",
+  "downloaded_at": "2026-02-02T03:23:41.996491Z",
+  "dir_name": "add-language",
+  "category": "development",
+  "author": "madeinoz67",
+  "source_url": "https://github.com/madeinoz67/madeinoz-recordmanager-skill/blob/main/.claude/skills/add-language/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/madeinoz67/madeinoz-recordmanager-skill/blob/main/.claude/skills/add-language/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -75,6 +75,21 @@ def validate_community_intake_text(base_text: str, head_text: str) -> list[str]:
         if base_payload.get(key) != head_payload.get(key):
             errors.append(f"top-level `{key}` must not change in community intake PRs")
 
+    base_metadata = {
+        key: value
+        for key, value in base_payload.items()
+        if key not in {"name", "description", "skills"}
+    }
+    head_metadata = {
+        key: value
+        for key, value in head_payload.items()
+        if key not in {"name", "description", "skills"}
+    }
+    if base_metadata != head_metadata:
+        errors.append(
+            "top-level metadata fields other than `skills` must not change in community intake PRs"
+        )
+
     base_skills = base_payload["skills"]
     head_skills = head_payload["skills"]
 

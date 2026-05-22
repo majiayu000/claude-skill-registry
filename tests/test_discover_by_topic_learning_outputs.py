@@ -160,3 +160,102 @@ def test_download_skill_removes_security_scan_failure(tmp_path):
 
     assert downloaded is False
     assert not list(tmp_path.rglob("SKILL.md"))
+
+
+def test_download_skill_preserves_existing_archive_on_security_scan_failure(tmp_path):
+    module = load_module()
+    discovery = module.GitHubTopicDiscovery(request_delay=0.0)
+    discovery.session = FakeSession(
+        FakeResponse(
+            200,
+            (
+                "---\nname: unsafe-demo\n"
+                "description: Demo skill with unsafe shell execution.\n---\n"
+                "# Unsafe Demo\n"
+                "```python\n"
+                "import subprocess\n"
+                "subprocess.run('echo unsafe', shell=True)\n"
+                "```\n"
+            ),
+        )
+    )
+
+    existing_dir = tmp_path / "skills" / "other" / "unsafe-demo"
+    existing_dir.mkdir(parents=True)
+    existing_skill = (
+        "---\nname: unsafe-demo\n"
+        "description: Previously archived safe version.\n---\n"
+        "# Existing Demo\n"
+    )
+    existing_metadata = module.json.dumps(
+        {
+            "name": "unsafe-demo",
+            "repo": "acme/unsafe-demo",
+            "path": "skills/unsafe-demo/SKILL.md",
+            "category": "other",
+            "source": "github.com/acme/unsafe-demo",
+            "dir_name": "unsafe-demo",
+        },
+        indent=2,
+    )
+    (existing_dir / "SKILL.md").write_text(existing_skill, encoding="utf-8")
+    (existing_dir / "metadata.json").write_text(existing_metadata, encoding="utf-8")
+
+    downloaded = discovery.download_skill(
+        "acme/unsafe-demo",
+        "skills/unsafe-demo/SKILL.md",
+        tmp_path / "skills",
+    )
+
+    assert downloaded is False
+    assert (existing_dir / "SKILL.md").read_text(encoding="utf-8") == existing_skill
+    assert (existing_dir / "metadata.json").read_text(encoding="utf-8") == existing_metadata
+
+
+def test_download_skill_scans_existing_bundled_files_before_refresh(tmp_path):
+    module = load_module()
+    discovery = module.GitHubTopicDiscovery(request_delay=0.0)
+    discovery.session = FakeSession(
+        FakeResponse(
+            200,
+            (
+                "---\nname: bundled-demo\n"
+                "description: Safe refreshed skill content.\n---\n"
+                "# Refreshed Demo\n"
+            ),
+        )
+    )
+
+    existing_dir = tmp_path / "skills" / "other" / "bundled-demo"
+    existing_dir.mkdir(parents=True)
+    (existing_dir / "scripts").mkdir()
+    existing_skill = (
+        "---\nname: bundled-demo\n"
+        "description: Previously archived version.\n---\n"
+        "# Existing Demo\n"
+    )
+    existing_metadata = module.json.dumps(
+        {
+            "name": "bundled-demo",
+            "repo": "acme/bundled-demo",
+            "path": "skills/bundled-demo/SKILL.md",
+            "category": "other",
+            "source": "github.com/acme/bundled-demo",
+            "dir_name": "bundled-demo",
+        },
+        indent=2,
+    )
+    (existing_dir / "SKILL.md").write_text(existing_skill, encoding="utf-8")
+    (existing_dir / "metadata.json").write_text(existing_metadata, encoding="utf-8")
+    (existing_dir / "scripts" / "tool.py").write_text("eval('unsafe')\n", encoding="utf-8")
+
+    downloaded = discovery.download_skill(
+        "acme/bundled-demo",
+        "skills/bundled-demo/SKILL.md",
+        tmp_path / "skills",
+    )
+
+    assert downloaded is False
+    assert (existing_dir / "SKILL.md").read_text(encoding="utf-8") == existing_skill
+    assert (existing_dir / "metadata.json").read_text(encoding="utf-8") == existing_metadata
+    assert (existing_dir / "scripts" / "tool.py").exists()

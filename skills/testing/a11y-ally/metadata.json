@@ -1,0 +1,16 @@
+{
+  "name": "a11y-ally",
+  "repo": "proffesor-for-testing/agentic-qe",
+  "path": ".claude/skills/a11y-ally/SKILL.md",
+  "source": "github.com/proffesor-for-testing/agentic-qe",
+  "downloaded_at": "2026-02-02T05:07:43.768696Z",
+  "dir_name": "a11y-ally",
+  "category": "testing",
+  "author": "proffesor-for-testing",
+  "source_url": "https://github.com/proffesor-for-testing/agentic-qe/blob/main/.claude/skills/a11y-ally/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Agentic QE Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

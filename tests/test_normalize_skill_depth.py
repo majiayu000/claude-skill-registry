@@ -99,6 +99,46 @@ def test_apply_depth_plan_preserves_existing_target_with_suffix(tmp_path):
     assert not (skills_dir / "other" / "other" / "auth-audit").exists()
 
 
+def test_depth_plan_reuses_existing_target_for_same_skill_key(tmp_path):
+    module = _load_module()
+    skills_dir = tmp_path / "skills"
+    metadata = {
+        "name": "auth-audit",
+        "category": "security",
+        "repo": "acme/security-pack",
+        "path": "skills/auth-audit",
+    }
+    _write_skill(skills_dir, "security/auth-audit", metadata)
+    _write_skill(skills_dir, "other/other/auth-audit", metadata)
+
+    plan = module.build_depth_plan(skills_dir)
+
+    assert plan["move_count"] == 1
+    assert plan["duplicate_count"] == 1
+    assert plan["moves"][0]["operation"] == "remove_duplicate"
+    assert plan["moves"][0]["target_path"] == "security/auth-audit"
+
+
+def test_apply_depth_plan_removes_nested_duplicate_for_same_skill_key(tmp_path):
+    module = _load_module()
+    skills_dir = tmp_path / "skills"
+    metadata = {
+        "name": "auth-audit",
+        "category": "security",
+        "repo": "acme/security-pack",
+        "path": "skills/auth-audit",
+    }
+    existing = _write_skill(skills_dir, "security/auth-audit", metadata)
+    _write_skill(skills_dir, "other/other/auth-audit", metadata)
+
+    plan = module.build_depth_plan(skills_dir)
+    module.apply_depth_plan(skills_dir, plan)
+
+    assert (existing / "SKILL.md").exists()
+    assert not (skills_dir / "other" / "other" / "auth-audit").exists()
+    assert not (skills_dir / "security" / "auth-audit-acme-security-pack").exists()
+
+
 def test_apply_depth_plan_moves_child_before_parent(tmp_path):
     module = _load_module()
     skills_dir = tmp_path / "skills"

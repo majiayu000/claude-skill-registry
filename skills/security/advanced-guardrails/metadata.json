@@ -1,0 +1,11 @@
+{
+  "name": "advanced-guardrails",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/advanced-guardrails/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:12.224297Z",
+  "dir_name": "advanced-guardrails",
+  "category": "security",
+  "github_path": "skills/advanced-guardrails",
+  "github_branch": "main"
+}

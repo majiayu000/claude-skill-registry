@@ -1,0 +1,18 @@
+{
+  "name": "active-directory-attacks",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/active-directory-attacks/SKILL.md",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "downloaded_at": "2026-01-22T02:27:25.412029Z",
+  "dir_name": "active-directory-attacks",
+  "category": "security",
+  "github_path": "skills/active-directory-attacks",
+  "github_branch": "main",
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/active-directory-attacks/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

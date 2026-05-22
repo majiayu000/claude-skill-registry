@@ -1,0 +1,18 @@
+{
+  "name": "add-test",
+  "repo": "WhatIfWeDigDeeper/claude-template",
+  "path": ".claude/skills/add-test/SKILL.md",
+  "source": "github.com/WhatIfWeDigDeeper/claude-template",
+  "downloaded_at": "2026-01-22T02:11:45.047070Z",
+  "dir_name": "add-test",
+  "category": "testing",
+  "github_path": ".claude/skills/add-test",
+  "github_branch": "main",
+  "author": "WhatIfWeDigDeeper",
+  "source_url": "https://github.com/WhatIfWeDigDeeper/claude-template/blob/main/.claude/skills/add-test/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 What If We Dig Deeper",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

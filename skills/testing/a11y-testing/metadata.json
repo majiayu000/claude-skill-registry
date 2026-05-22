@@ -1,0 +1,11 @@
+{
+  "name": "a11y-testing",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/a11y-testing/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:12.508504Z",
+  "dir_name": "a11y-testing",
+  "category": "testing",
+  "github_path": "skills/a11y-testing",
+  "github_branch": "main"
+}

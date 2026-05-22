@@ -1,0 +1,17 @@
+{
+  "name": "mission-orchestrator",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/attune/skills/mission-orchestrator/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "mission-orchestrator",
+  "downloaded_at": "2026-05-22T03:55:36.114821Z",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/master/plugins/attune/skills/mission-orchestrator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/athola/claude-night-market/blob/master/plugins/attune/skills/mission-orchestrator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

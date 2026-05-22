@@ -19,6 +19,11 @@
   "stars": 0,
   "source": "Community Skills",
   "dir_name": "deep-research-chris1220-cmd-deep-research-skill-28",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "LICENSE",
+    "README.md"
+  ],
   "author": "Chris1220-cmd",
   "source_url": "https://github.com/Chris1220-cmd/deep-research-skill/blob/master/SKILL.md",
   "license": "NOASSERTION",

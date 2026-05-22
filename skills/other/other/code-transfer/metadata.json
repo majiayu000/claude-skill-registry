@@ -1,0 +1,17 @@
+{
+  "name": "code-transfer",
+  "repo": "mhattingpete/claude-skills-marketplace",
+  "path": "code-operations-plugin/skills/code-transfer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mhattingpete/claude-skills-marketplace",
+  "dir_name": "code-transfer",
+  "downloaded_at": "2026-05-22T04:07:04.714586Z",
+  "author": "mhattingpete",
+  "source_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/code-operations-plugin/skills/code-transfer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mhattingpete/claude-skills-marketplace/blob/main/code-operations-plugin/skills/code-transfer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,383 @@
+---
+name: paper-plan
+description: "Generate a structured paper outline from review conclusions and experiment results. Use when user says \"写大纲\", \"paper outline\", \"plan the paper\", \"论文规划\", or wants to create a paper plan before writing."
+argument-hint: "[topic-or-narrative-doc] [— style-ref: <source>]"
+allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob, Agent, WebSearch, WebFetch, mcp__codex__codex, mcp__codex__codex-reply
+---
+
+# Paper Plan: From Review Conclusions to Paper Outline
+
+Generate a structured, section-by-section paper outline from: **$ARGUMENTS**
+
+## Constants
+
+- **REVIEWER_MODEL = `gpt-5.5`** — Model used via Codex MCP for outline review. Must be an OpenAI model.
+- **TARGET_VENUE = `ICLR`** — Default venue. User can override (e.g., `/paper-plan "topic" — venue: NeurIPS`). Supported: `ICLR`, `NeurIPS`, `ICML`, `CVPR`, `ACL`, `AAAI`, `ACM`, `IEEE_JOURNAL` (IEEE Transactions / Letters), `IEEE_CONF` (IEEE conferences).
+- **MAX_PAGES** — Page limit. For ML conferences: main body to Conclusion end (excluding references, appendix). ICLR=9, NeurIPS=9, ICML=8. **For IEEE venues: references ARE included in page count.** IEEE journal Transactions ≈ 12-14 pages total, Letters ≈ 4-5 pages total; IEEE conference ≈ 5-8 pages total (including references).
+
+## Inputs
+
+The skill expects one or more of these in the project directory:
+
+1. **NARRATIVE_REPORT.md** or **STORY.md** — research narrative with claims and evidence
+2. **review-stage/AUTO_REVIEW.md** — auto-review loop conclusions *(fall back to `./AUTO_REVIEW.md` if not found)*
+3. **Experiment results** — JSON files in `figures/`, screen logs, tables
+4. **idea-stage/IDEA_REPORT.md** — from idea-discovery pipeline (if applicable) *(fall back to `./IDEA_REPORT.md` if not found)*
+5. **Compact files** (if available): `idea-stage/IDEA_CANDIDATES.md` *(fall back to `./IDEA_CANDIDATES.md` if not found)*, `findings.md`, `EXPERIMENT_LOG.md` — preferred over full files when present, saves context window
+
+If none exist, ask the user to describe the paper's contribution in 3-5 sentences.
+
+## Orchestra-Guided Writing Overlay
+
+Keep the existing `insleep` workflow and outputs, but use the shared references below to improve the quality of the story and outline.
+
+- Read `../shared-references/writing-principles.md` when framing the one-sentence contribution, Abstract, Introduction, Related Work, or hero figure.
+- Read `../shared-references/venue-checklists.md` before freezing the outline for a specific venue.
+- Only load these references when needed; do not paste their full contents into the working draft.
+
+## Optional: Style reference (`— style-ref: <source>`, opt-in)
+
+Lets the user steer the **structural** layout of the outline (section ordering, subsection density, theorem-environment density, figure budget, citation style) toward a reference paper. **Default OFF — when the user does not pass `— style-ref`, do nothing differently from before.**
+
+Only when `— style-ref: <source>` appears in `$ARGUMENTS`, run the helper FIRST, before drafting the outline:
+
+```bash
+# Resolve $STYLE_HELPER via the canonical strict-safe chain (see
+# shared-references/integration-contract.md §2). Policy A — gate:
+# unresolved helper means --style-ref cannot be satisfied, so abort.
+cd "$(git rev-parse --show-toplevel 2>/dev/null || pwd)" || exit 1
+if [ -z "${ARIS_REPO:-}" ] && [ -f .aris/installed-skills.txt ]; then
+    ARIS_REPO=$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills.txt 2>/dev/null) || true
+fi
+STYLE_HELPER=".aris/tools/extract_paper_style.py"
+[ -f "$STYLE_HELPER" ] || STYLE_HELPER="tools/extract_paper_style.py"
+[ -f "$STYLE_HELPER" ] || { [ -n "${ARIS_REPO:-}" ] && STYLE_HELPER="$ARIS_REPO/tools/extract_paper_style.py"; }
+[ -f "$STYLE_HELPER" ] || {
+  echo "ERROR: extract_paper_style.py not resolved at .aris/tools/, tools/, or \$ARIS_REPO/tools/." >&2
+  echo "       Fix: rerun bash tools/install_aris.sh, export ARIS_REPO, or copy the helper to tools/." >&2
+  echo "       --style-ref cannot be satisfied; aborting." >&2
+  exit 1
+}
+STYLE_STATUS=0
+CACHE=$(python3 "$STYLE_HELPER" --source "<source>") || STYLE_STATUS=$?
+case "$STYLE_STATUS" in
+  0) ;;                                       # use $CACHE/style_profile.md as structural guidance
+  2) echo "warning: style-ref skipped (missing optional dep)" >&2 ;;
+  3) echo "error: --style-ref source failed; aborting outline" >&2 ; exit 1 ;;
+  *) echo "error: helper failed unexpectedly; aborting outline" >&2 ; exit 1 ;;
+esac
+```
+
+Sources accepted: local TeX dir / file, local PDF, arXiv id (`2501.12345` or `arxiv:2501.12345`), http(s) URL. Overleaf URLs and project IDs are rejected — clone via `/overleaf-sync setup <id>` first and pass the local clone path.
+
+**Strict rules** (full contract in `tools/extract_paper_style.py` docstring):
+
+- Use `style_profile.md` as **structural** guidance only when proposing the outline's section list, subsection counts, theorem density, figure budget.
+- **Never copy prose, claims, examples, section names verbatim, or terminology** from anything reachable through the cache. The user's narrative is the only source of substance.
+- **Never pass `— style-ref` (or the cache contents) to reviewer / auditor sub-agents.** Cross-model review independence (`../shared-references/reviewer-independence.md`) requires reviewers see only the artifact and the user's prompt.
+
+### Gap Report (`GAP_REPORT.md`, auto-emitted when style-ref is on)
+
+When `— style-ref:` succeeded AND any of `figures/`, `results/`, `data/`, `tables/`, `sec/`, `NARRATIVE_REPORT.md`, `CLAIMS_FROM_RESULTS.md` exists in the project, **also** emit a gap report before drafting the outline. The gap report maps the exemplar's section topology + density requirements (from `style_profile.md`) against the user's actual assets, surfacing structural slots where the user has **no evidence to fill**. It is the contract by which `/paper-write` decides when to emit `<!-- DATA_NEEDED -->` markers instead of fabricating content.
+
+Procedure:
+
+1. Read `$CACHE/style_profile.md` for exemplar's section list + per-section feature counts (figures, theorems, tables, citations, sentences per section).
+2. Inventory user assets: `figures/*` filenames, `results/*` evidence files, `sec/*.tex` existing prose, `NARRATIVE_REPORT.md`, `CLAIMS_FROM_RESULTS.md` (if `/result-to-claim` ran), `references.bib` for citation density.
+3. For each section slot the exemplar implies (ablation table, scaling experiment, failure-case analysis, proof block, …), classify as `covered` / `partial` / `missing`.
+4. Emit `<output-dir>/GAP_REPORT.md`:
+
+```markdown
+# GAP_REPORT — exemplar vs user assets
+
+- **Exemplar source:** <source identifier (file path, arXiv ID, URL)>
+- **Generated:** <UTC ISO-8601>
+- **Style profile:** <relative path to style_profile.md>
+
+## Section topology gaps
+
+| Exemplar slot | Exemplar feature | User evidence | Status | Slot ID |
+|---|---|---|---|---|
+| §5 Experiments | ablation table (3 axes × 4 levels) | `results/` has no ablation file | missing | `GAP_S5_ABLATION` |
+| §5.3 Scaling | log-N scaling curve | `figures/scaling.pdf` not found | missing | `GAP_S5_SCALING` |
+| §6 Discussion | failure-case analysis | not present in `NARRATIVE_REPORT.md` | missing | `GAP_S6_FAILURE` |
+| §2 Related | citation density ≥ 60 | `references.bib` has 35 entries | partial | `GAP_S2_CITES` |
+
+## Coverage summary
+
+- covered: N
+- partial: M
+- missing: K
+
+## Used by
+
+- `/paper-write` reads this file and emits `<!-- DATA_NEEDED: <Slot ID> — <one-line description> -->` placeholders for `missing` slots instead of fabricating content.
+- `/paper-claim-audit` can use Slot IDs to flag claims that cite sections with `missing` evidence.
+```
+
+Slot ID format: `GAP_<SECTION>_<FEATURE>`, all-caps, stable across regenerations unless user assets change.
+
+**Rules** (hard):
+
+- **Do not** infer, fill, or hallucinate evidence to "close" gaps. Missing is missing.
+- **Do not** propose specific experiment commands to fill gaps — that is `/experiment-bridge`'s job. Gap Report just surfaces deficits.
+- **Do not** include exemplar prose / claim text / author names / quantitative figures from the exemplar.
+- If `style_profile.md` extraction failed or the user has no project assets, skip Gap Report (no error; just do not emit the file).
+- The gap report is **also subject to reviewer isolation** — never passed to reviewer / auditor sub-agents (same rule as `style_profile.md`).
+
+Original idea: @zhangpelf in [#217](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/issues/217).
+
+## Workflow
+
+### Step 1: Extract Claims and Evidence
+
+**First check for `CLAIMS_FROM_RESULTS.md`** — if it exists (generated by `/result-to-claim` at the end of Workflow 2), use it as the starting point for claims. This file contains validated claims already mapped to experiment evidence. Merge with any additional claims from the narrative documents below.
+
+If `CLAIMS_FROM_RESULTS.md` does not exist, extract claims from scratch:
+
+Read all available narrative documents and extract:
+
+1. **Core claims** (3-5 main contributions)
+2. **One-sentence contribution** (the single sentence that best states what the paper contributes)
+3. **Evidence** for each claim (which experiments, which metrics, which figures)
+4. **Known weaknesses** (from reviewer feedback)
+5. **Suggested framing** (from review conclusions)
+
+Build a **Claims-Evidence Matrix**:
+
+```markdown
+| Claim | Evidence | Status | Section |
+|-------|----------|--------|---------|
+| [claim 1] | [exp A, metric B] | Supported | §3.2 |
+| [claim 2] | [exp C] | Partially supported | §4.1 |
+```
+
+### Step 2: Determine Paper Type and Structure
+
+Based on TARGET_VENUE and paper content, classify and select structure.
+
+Before committing to a structure, apply the narrative principle from `../shared-references/writing-principles.md`:
+
+- The paper should tell one coherent technical story.
+- By the end of the Introduction, the outline should make the **What**, **Why**, and **So What** explicit.
+- Front-load the most important material: title, abstract, introduction, and hero figure. Reviewers often form a judgment before reading the full method.
+
+**IMPORTANT**: The section count is FLEXIBLE (5-8 sections). Choose what fits the content best. The templates below are starting points, not rigid constraints.
+
+**Empirical/Diagnostic paper:**
+```
+1. Introduction (1.5 pages)
+2. Related Work (1 page)
+3. Method / Setup (1.5 pages)
+4. Experiments (3 pages)
+5. Analysis / Discussion (1 page)
+6. Conclusion (0.5 pages)
+```
+
+**Theory + Experiments paper:**
+```
+1. Introduction (1.5 pages)
+2. Related Work (1 page)
+3. Preliminaries & Modeling (1.5 pages)
+4. Experiments (1.5 pages)
+5. Theory Part A (1.5 pages)
+6. Theory Part B (1.5 pages)
+7. Conclusion (0.5 pages)
+— Total: 9 pages
+```
+Theory papers often need 7 sections (splitting theory into estimation + optimization, or setup + analysis). The total page budget MUST sum to MAX_PAGES.
+
+Theory papers should:
+- Include **proof sketch** locations (not just theorem statements)
+- Plan a **comparison table** of prior theoretical bounds vs. this paper's bounds
+- Identify which proofs go in appendix vs. main body
+
+**Method paper:**
+```
+1. Introduction (1.5 pages)
+2. Related Work (1 page)
+3. Method (2 pages)
+4. Experiments (2.5 pages)
+5. Ablation / Analysis (1 page)
+6. Conclusion (0.5 pages)
+```
+
+### Step 3: Section-by-Section Planning
+
+For each section, specify:
+
+```markdown
+### §0 Abstract
+- **What we achieve**: [the paper's specific contribution, not field-level background]
+- **Why it matters / is hard**: [why this problem is important and non-trivial]
+- **How we do it**: [approach in one sentence]
+- **Evidence**: [what supports the claim]
+- **Most remarkable result**: [strongest quantitative or theoretical result]
+- **Estimated length**: 150-250 words
+- **Self-contained check**: can a reader understand this without the paper?
+
+### §1 Introduction
+- **Opening hook**: [1-2 sentences that motivate the problem]
+- **Gap / challenge**: [what's missing in prior work, and why prior work is insufficient]
+- **One-sentence contribution**: [the main takeaway of the paper]
+- **Approach overview**: [what we do differently]
+- **Key questions**: [the research questions this paper answers]
+- **Contributions**: [2-4 numbered bullets, specific and falsifiable, matching Claims-Evidence Matrix]
+- **Results preview**: [the strongest result or comparison to surface early]
+- **Hero figure**: [describe what Figure 1 should show — MUST include clear comparison if applicable]
+- **Estimated length**: 1.5 pages
+- **Key citations**: [3-5 papers to cite here]
+- **Front-loading check**: [would a skim reader know the main claim before reaching the method?]
+
+### §2 Related Work
+- **Subtopics**: [2-4 categories of related work]
+- **Positioning**: [how this paper differs from each category]
+- **Minimum length**: 1 full page (at least 3-4 paragraphs with substantive synthesis)
+- **Organization rule**: organize by methodological family / assumption / question, not paper-by-paper
+- **Must NOT be just a list** — synthesize, compare, and position
+
+### §3 Method / Setup / Preliminaries
+- **Notation**: [key symbols and their meanings]
+- **Problem formulation**: [formal setup]
+- **Method description**: [algorithm, model, or experimental design]
+- **Formal statements**: [theorems, propositions if applicable]
+- **Proof sketch locations**: [which key steps appear here vs. appendix]
+- **Estimated length**: 1.5-2 pages
+
+### §4 Experiments / Main Results
+- **Figures planned**:
+  - Fig 1: [description, type: bar/line/table/architecture, WHAT COMPARISON it shows]
+  - Fig 2: [description]
+  - Table 1: [what it shows, which methods/baselines compared]
+- **Data source**: [which JSON files / experiment results]
+
+### §5 Conclusion
+- **Restatement**: [contributions rephrased, not copy-pasted from intro]
+- **Limitations**: [honest assessment — reviewers value this]
+- **Future work**: [1-2 concrete directions]
+- **Estimated length**: 0.5 pages
+```
+
+### Step 4: Figure Plan
+
+List every figure and table:
+
+```markdown
+## Figure Plan
+
+| ID | Type | Description | Data Source | Priority |
+|----|------|-------------|-------------|----------|
+| Fig 1 | Hero/Architecture | System overview + comparison | manual | HIGH |
+| Fig 2 | Line plot | Training curves comparison | figures/exp_A.json | HIGH |
+| Fig 3 | Bar chart | Ablation results | figures/ablation.json | MEDIUM |
+| Table 1 | Comparison table | Main results vs. baselines | figures/main_results.json | HIGH |
+| Table 2 | Theory comparison | Prior bounds vs. ours | manual | HIGH (theory papers) |
+```
+
+**CRITICAL for Figure 1 / Hero Figure**: Describe in detail what the figure should contain, including:
+- Which methods are being compared
+- What the visual difference should demonstrate
+- Caption draft that clearly states the comparison
+- Why the figure helps a skim reader understand the paper before reading the full method
+
+### Step 5: Citation Scaffolding
+
+For each section, list required citations:
+
+```markdown
+## Citation Plan
+- §1 Intro: [paper1], [paper2], [paper3] (problem motivation)
+- §2 Related: [paper4]-[paper10] (categorized by subtopic)
+- §3 Method: [paper11] (baseline), [paper12] (technique we build on)
+```
+
+**Citation rules** (from claude-scholar + Imbad0202/academic-research-skills):
+1. NEVER generate BibTeX from memory — always verify via search or existing .bib files
+2. Every citation must be verified: correct authors, year, venue
+3. Flag any citation you're unsure about with `[VERIFY]`
+4. Prefer published versions over arXiv preprints when available
+
+### Step 6: Cross-Review with REVIEWER_MODEL
+
+Send the complete outline to GPT-5.4 xhigh for feedback:
+
+```
+mcp__codex__codex:
+  model: gpt-5.5
+  config: {"model_reasoning_effort": "xhigh"}
+  prompt: |
+    Review this paper outline for a [VENUE] submission.
+    [full outline including Claims-Evidence Matrix]
+
+    Score 1-10 on:
+    1. Logical flow — does the story build naturally?
+    2. Claim-evidence alignment — every claim backed?
+    3. Missing experiments or analysis
+    4. Positioning relative to prior work
+    5. Page budget feasibility (MAX_PAGES = main body to Conclusion end, excluding refs/appendix)
+    6. Front-matter strength — are the abstract, introduction, and hero figure plan strong enough for skim-reading reviewers?
+
+    For each weakness, suggest the MINIMUM fix.
+    Be specific and actionable — "add X" not "consider more experiments".
+```
+
+Apply feedback before finalizing.
+
+### Step 7: Output
+
+Save the final outline to `PAPER_PLAN.md` in the project root:
+
+```markdown
+# Paper Plan
+
+**Title**: [working title]
+**One-sentence contribution**: [single-sentence statement of the paper's core takeaway]
+**Venue**: [target venue]
+**Type**: [empirical/theory/method]
+**Date**: [today]
+**Page budget**: [MAX_PAGES] pages (main body to Conclusion end, excluding references & appendix)
+**Section count**: [N] (must match the number of section files that will be created)
+
+## Claims-Evidence Matrix
+[from Step 1]
+
+## Structure
+[from Step 2-3, section by section]
+
+## Figure Plan
+[from Step 4, with detailed hero figure description]
+
+## Citation Plan
+[from Step 5]
+
+## Reviewer Feedback
+[from Step 6, summarized]
+
+## Next Steps
+- [ ] /paper-figure to generate all figures
+- [ ] /paper-write to draft LaTeX
+- [ ] /paper-compile to build PDF
+```
+
+## Key Rules
+- **Large file handling**: If the Write tool fails due to file size, immediately retry using Bash (`cat << 'EOF' > file`) to write in chunks. Do NOT ask the user for permission — just do it silently.
+- **Do NOT generate author information** — leave author block as placeholder or anonymous
+- **Be honest about evidence gaps** — mark claims as "needs experiment" rather than overclaiming
+- **Page budget is hard** — if content exceeds MAX_PAGES, suggest what to move to appendix
+- **MAX_PAGES counting differs by venue** — ML conferences: main body to Conclusion end, references/appendix NOT counted. **IEEE venues: references ARE counted toward the page limit.**
+- **Venue-specific norms** — ML conferences (ICLR/NeurIPS/ICML) use `natbib` (`\citep`/`\citet`); **IEEE venues use `cite` package (`\cite{}`, numeric style)**
+- **Claims-Evidence Matrix is the backbone** — every claim must map to evidence, every experiment must support a claim
+- **Front-load the story** — the outline should make the contribution clear in the title, abstract, introduction, and hero figure before the reader reaches the full method
+- **Figures need detailed descriptions** — especially the hero figure, which must clearly specify comparisons and visual expectations
+- **Section count is flexible** — 5-8 sections depending on paper type. Don't force content into a rigid 5-section template.
+
+## Acknowledgements
+
+Outline methodology inspired by [Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills) (claim-evidence mapping), [claude-scholar](https://github.com/Galaxy-Dawn/claude-scholar) (citation verification), and [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) (claim verification protocol). The writing-framing overlay in this hybrid pack is adapted from Orchestra Research's paper-writing guidance.
+
+## Output Protocols
+
+> Follow these shared protocols for all output files:
+> - **[Output Versioning Protocol](../shared-references/output-versioning.md)** — write timestamped file first, then copy to fixed name
+> - **[Output Manifest Protocol](../shared-references/output-manifest.md)** — log every output to MANIFEST.md
+> - **[Output Language Protocol](../shared-references/output-language.md)** — respect the project's language setting

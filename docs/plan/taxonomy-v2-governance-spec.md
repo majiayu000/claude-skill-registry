@@ -131,6 +131,37 @@ ignored for resume and counted in `malformed_checkpoint_row_count`.
 High confidence does not mean auto-apply. It means the item is suitable for a
 small reviewed migration batch.
 
+## Apply Contract
+
+`scripts/apply_category_migration.py` converts reviewed classification results
+into a concrete directory move plan. It is separate from planning and LLM review
+so archive mutations stay explicit.
+
+Defaults:
+
+- Input is a classification JSONL with `path`, `current_category`,
+  `llm_category`, `confidence`, and `status`.
+- Minimum confidence is `0.9`.
+- Only active target categories are eligible unless `--target-status` expands
+  the allow-list.
+- `other` is not an eligible target unless `--allow-target-other` is passed.
+- Default mode is dry-run. Only `--apply` mutates the archive.
+- `--movable-only` can be used for execution batches that should skip blocked
+  duplicates and fill the requested `--limit` with apply-ready moves.
+
+The apply plan records:
+
+- `operation`: `move` or a blocked operation such as `blocked_existing_key`.
+- `source_skill`, `target_skill`, source/current/target categories.
+- `confidence`, stable metadata `key`, repo suffix context, and reason.
+
+Apply mode:
+
+- refuses plans containing blocked moves;
+- moves only standard `<category>/<skill>/SKILL.md` directories;
+- updates `metadata.json` with the new `category` and `dir_name`;
+- never deletes or overwrites skills to resolve conflicts.
+
 ## Governance Gates
 
 Taxonomy gate:

@@ -238,21 +238,8 @@ class SecurityScanner:
         # 9. Obfuscation-to-execution chains
         self._detect_obfuscation_exec(content, skill_path)
 
-        # Determine if safe (only fail on truly dangerous issues)
-        critical_types = {
-            'yaml_parse_error',
-            'schema_error',
-            'dangerous_pattern',
-            'file_too_large',
-            'hardcoded_credential',
-            'metadata_read_error',
-            'blocked_source',
-        }
-        has_critical = any(
-            i['severity'] == 'error' and i.get('type') in critical_types
-            for i in self.issues
-        )
-        return not has_critical, self.issues
+        has_error = any(i['severity'] == 'error' for i in self.issues)
+        return not has_error, self.issues
 
     def _extract_frontmatter(self, content: str) -> dict:
         """Extract YAML frontmatter from SKILL.md"""

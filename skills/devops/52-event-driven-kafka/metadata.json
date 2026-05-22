@@ -1,0 +1,16 @@
+{
+  "name": "52-event-driven-kafka",
+  "repo": "panaversity/agentfactory",
+  "path": "apps/learn-app/docs/07-AI-Cloud-Native-Development/52-event-driven-kafka/00-build-your-kafka-skill.md",
+  "source": "github.com/panaversity/agentfactory",
+  "downloaded_at": "2026-01-14T01:33:03.709072Z",
+  "dir_name": "52-event-driven-kafka",
+  "category": "devops",
+  "author": "panaversity",
+  "source_url": "https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/07-AI-Cloud-Native-Development/52-event-driven-kafka/00-build-your-kafka-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/07-AI-Cloud-Native-Development/52-event-driven-kafka/00-build-your-kafka-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

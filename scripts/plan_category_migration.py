@@ -13,7 +13,7 @@ from typing import Any
 
 from audit_category_quality import best_suggestion, read_text_prefix
 from category_taxonomy import category_slug, get_taxonomy
-from utils import extract_frontmatter, load_metadata, normalize_name
+from utils import extract_frontmatter, load_metadata, normalize_name, skill_semantic_fields
 
 CONFIDENCE_ORDER = {"high": 0, "medium": 1, "low": 2}
 
@@ -128,13 +128,11 @@ def build_plan(
         if len(rel.parts) == 3:
             standard_layout_skills += 1
 
-        content = ""
-        frontmatter: dict[str, Any] = {}
-        if include_frontmatter or content_chars > 0:
-            content = read_text_prefix(skill_dir / "SKILL.md", max_chars=max(content_chars, 8192))
-            frontmatter = extract_frontmatter(content)
+        content = read_text_prefix(skill_dir / "SKILL.md", max_chars=max(content_chars, 8192))
+        frontmatter = extract_frontmatter(content)
+        category_frontmatter = frontmatter if include_frontmatter or content_chars > 0 else {}
         metadata = load_metadata(skill_dir)
-        raw_sources = raw_category_sources(rel, metadata, frontmatter)
+        raw_sources = raw_category_sources(rel, metadata, category_frontmatter)
         resolved_sources = source_categories(raw_sources)
         declared_category = (
             raw_sources.get("metadata")
@@ -143,42 +141,18 @@ def build_plan(
             or "other"
         )
         current_category = taxonomy.resolve(declared_category, allow_unknown=True)
-        name = str(metadata.get("name") or frontmatter.get("name") or skill_dir.name)
-        tags = metadata.get("tags") or frontmatter.get("tags") or []
-        tag_text = " ".join(str(tag) for tag in tags) if isinstance(tags, list) else str(tags)
-        text = " ".join(
-            [
-                name,
-                str(metadata.get("description") or frontmatter.get("description") or ""),
-                tag_text,
-                str(rel),
-                content[:content_chars],
-            ]
+        semantics = skill_semantic_fields(
+            skill_dir,
+            metadata=metadata,
+            frontmatter=frontmatter,
+            rel=rel,
+            content=content,
+            content_chars=content_chars,
         )
+        name = str(semantics["name"])
+        text = str(semantics["text"])
 
         source_values = set(resolved_sources.values())
-        migration_target = taxonomy.migration_target(current_category)
-        if migration_target:
-            definition = taxonomy.categories[current_category]
-            changes.append(
-                build_change(
-                    action="taxonomy_deprecation",
-                    confidence="high",
-                    rel=rel,
-                    skill_dir=skill_dir,
-                    name=name,
-                    current_category=current_category,
-                    proposed_category=migration_target,
-                    raw_sources=raw_sources,
-                    resolved_sources=resolved_sources,
-                    reason=(
-                        f"taxonomy marks {current_category} as {definition.status} "
-                        f"with migrate_to={migration_target}"
-                    ),
-                )
-            )
-            continue
-
         alias_sources = [
             source
             for source, value in raw_sources.items()
@@ -214,6 +188,28 @@ def build_plan(
                     raw_sources=raw_sources,
                     resolved_sources=resolved_sources,
                     reason="directory, metadata, or frontmatter categories disagree",
+                )
+            )
+            continue
+
+        migration_target = taxonomy.migration_target(current_category)
+        if migration_target:
+            definition = taxonomy.categories[current_category]
+            changes.append(
+                build_change(
+                    action="taxonomy_deprecation",
+                    confidence="high",
+                    rel=rel,
+                    skill_dir=skill_dir,
+                    name=name,
+                    current_category=current_category,
+                    proposed_category=migration_target,
+                    raw_sources=raw_sources,
+                    resolved_sources=resolved_sources,
+                    reason=(
+                        f"taxonomy marks {current_category} as {definition.status} "
+                        f"with migrate_to={migration_target}"
+                    ),
                 )
             )
             continue
@@ -278,6 +274,7 @@ def build_plan(
             "high_delta": high_delta,
             "include_frontmatter": include_frontmatter,
             "content_chars": content_chars,
+            "semantic_source_order": ["SKILL.md frontmatter", "metadata.json", "SKILL.md body", "path"],
             "apply_mode": "review-only",
         },
         "summary": {

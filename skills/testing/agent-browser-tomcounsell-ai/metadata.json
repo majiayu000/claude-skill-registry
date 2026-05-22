@@ -1,0 +1,13 @@
+{
+  "name": "agent-browser",
+  "description": "",
+  "repo": "tomcounsell/ai",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tomcounsell/ai",
+  "github_path": ".claude/skills/agent-browser",
+  "github_branch": "main",
+  "dir_name": "agent-browser-tomcounsell-ai",
+  "downloaded_at": "2026-02-05T01:44:59.178034Z"
+}

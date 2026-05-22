@@ -99,3 +99,34 @@ def test_audit_reports_nonstandard_nested_layout(tmp_path):
     assert report["standard_layout_skill_count"] == 0
     assert report["layout_issue_count"] == 1
     assert report["layout_issues"][0]["path"] == "other/other/nested-skill/SKILL.md"
+
+
+def test_audit_uses_frontmatter_description_when_metadata_description_missing(tmp_path):
+    audit = _load_module()
+    skills_dir = tmp_path / "skills"
+    _write_skill(
+        skills_dir,
+        "other",
+        "frontmatter-devops",
+        {
+            "name": "frontmatter-devops",
+            "category": "other",
+        },
+        (
+            "---\n"
+            "name: frontmatter-devops\n"
+            "description: Docker Kubernetes CI CD deploy infrastructure workflow.\n"
+            "tags:\n"
+            "  - docker\n"
+            "  - kubernetes\n"
+            "---\n"
+        ),
+    )
+
+    report = audit.build_report(skills_dir, min_score=2, min_delta=2)
+    candidates = {
+        item["path"]: item
+        for item in report["candidate_reclassifications"]
+    }
+
+    assert candidates["other/frontmatter-devops/SKILL.md"]["suggested_category"] == "devops"

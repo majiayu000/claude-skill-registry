@@ -94,3 +94,59 @@ def test_plan_reports_alias_and_source_conflict(tmp_path):
     assert changes["engineering/builder/SKILL.md"]["proposed_category"] == "development"
     assert changes["development/conflicted/SKILL.md"]["action"] == "resolve_source_conflict"
     assert changes["development/conflicted/SKILL.md"]["review_required"] is True
+
+
+def test_plan_reports_source_conflict_before_deprecation(tmp_path):
+    planner = _load_module()
+    skills_dir = tmp_path / "skills"
+    _write_skill(
+        skills_dir,
+        "product",
+        "misfiled-docs",
+        {
+            "name": "misfiled-docs",
+            "category": "docs",
+            "description": "Product roadmap documentation helper.",
+        },
+    )
+
+    plan = planner.build_plan(skills_dir)
+    change = {item["path"]: item for item in plan["changes"]}[
+        "product/misfiled-docs/SKILL.md"
+    ]
+
+    assert change["action"] == "resolve_source_conflict"
+    assert change["current_category"] == "docs"
+    assert change["proposed_category"] == "docs"
+    assert change["review_required"] is True
+
+
+def test_plan_uses_frontmatter_description_when_metadata_description_missing(tmp_path):
+    planner = _load_module()
+    skills_dir = tmp_path / "skills"
+    _write_skill(
+        skills_dir,
+        "other",
+        "frontmatter-devops",
+        {
+            "name": "frontmatter-devops",
+            "category": "other",
+        },
+        (
+            "---\n"
+            "name: frontmatter-devops\n"
+            "description: Docker Kubernetes CI CD deploy infrastructure workflow.\n"
+            "tags:\n"
+            "  - docker\n"
+            "  - kubernetes\n"
+            "---\n"
+        ),
+    )
+
+    plan = planner.build_plan(skills_dir, min_score=2, min_delta=2)
+    change = {item["path"]: item for item in plan["changes"]}[
+        "other/frontmatter-devops/SKILL.md"
+    ]
+
+    assert change["action"] == "heuristic_reclassify"
+    assert change["proposed_category"] == "devops"

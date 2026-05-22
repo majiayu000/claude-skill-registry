@@ -1,0 +1,17 @@
+{
+  "name": "add-datasource",
+  "repo": "microsoft/power-platform-skills",
+  "path": "plugins/code-apps/skills/add-datasource/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/microsoft/power-platform-skills",
+  "dir_name": "add-datasource",
+  "downloaded_at": "2026-05-22T04:07:58.149162Z",
+  "author": "microsoft",
+  "source_url": "https://github.com/microsoft/power-platform-skills/blob/main/plugins/code-apps/skills/add-datasource/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/microsoft/power-platform-skills/blob/main/plugins/code-apps/skills/add-datasource/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

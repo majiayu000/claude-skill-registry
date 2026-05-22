@@ -61,13 +61,26 @@ def get_stable_id(install: str, branch: str) -> str:
     return base64.urlsafe_b64encode(digest).decode("ascii").rstrip("=").lower()
 
 
+def is_root_mounted_path(path: str) -> bool:
+    """Empty or '.' path means SKILL.md lives at the repo root."""
+    if path is None:
+        return True
+    stripped = str(path).strip()
+    return stripped == "" or stripped == "."
+
+
+def has_install_location(path: str) -> bool:
+    """True when path identifies a real install location (subdir or repo root)."""
+    return bool(path) or is_root_mounted_path(path)
+
+
 def infer_install_status(repo: str, path: str, install: str) -> str:
     """Classify whether the install path is clearly usable from registry metadata."""
     if not install:
         return "broken"
     if install.startswith("local/"):
         return "unknown"
-    if repo and path:
+    if repo and has_install_location(path):
         return "known_good"
     if repo:
         return "unknown"
@@ -120,10 +133,10 @@ def score_skill_quality(skill: Dict[str, Any], install_status: str, security_sta
     components = {
         "description": 20 if len(description) >= 80 else 12 if len(description) >= 30 else 4,
         "repo": 15 if repo and "/" in repo else 0,
-        "path": 15 if path else 0,
+        "path": 15 if has_install_location(path) else 0,
         "tags": 10 if len(tags) >= 3 else 6 if tags else 0,
         "install": 20 if install_status == "known_good" else 8 if install_status == "unknown" else 0,
-        "security": 10 if security_status == "passed" else 4 if security_status == "unknown" else 0,
+        "security": 10 if security_status == "passed" else 0,
         "popularity": 10 if stars >= 1000 else 6 if stars >= 100 else 3 if stars > 0 else 0,
     }
     score = sum(components.values())
@@ -150,6 +163,18 @@ def score_skill_quality(skill: Dict[str, Any], install_status: str, security_sta
         "quality_grade": grade,
         "score_inputs": components,
     }
+
+
+def score_skill_trust(repo: str, path: str, install_status: str, security_status: str, stars: int) -> int:
+    """Compute trust score without treating missing security evidence as clean."""
+    return min(
+        100,
+        (30 if repo and "/" in repo else 0)
+        + (25 if has_install_location(path) else 0)
+        + (20 if install_status == "known_good" else 8 if install_status == "unknown" else 0)
+        + (15 if security_status == "passed" else 0)
+        + (10 if stars > 0 else 0),
+    )
 
 
 def scan_skills_v2(skills_dir: Path) -> List[Dict]:
@@ -323,14 +348,7 @@ def build_search_index(
         quality = score_skill_quality(skill, install_status, security_status)
         quality_score = quality["quality_score"]
         quality_grade = quality["quality_grade"]
-        trust_score = min(
-            100,
-            (30 if repo and "/" in repo else 0)
-            + (25 if path else 0)
-            + (20 if install_status == "known_good" else 8 if install_status == "unknown" else 0)
-            + (15 if security_status != "failed" else 0)
-            + (10 if stars > 0 else 0),
-        )
+        trust_score = score_skill_trust(repo, path, install_status, security_status, stars)
 
         # Minimal record
         mini_record = {
@@ -706,13 +724,41 @@ def build_search_index(
     return stats
 
 
-def load_from_registry(registry_path: Path) -> List[Dict]:
-    """Load skills from registry.json (fallback mode)."""
-    with open(registry_path, 'r', encoding='utf-8') as f:
-        registry = json.load(f)
+def resolve_registry_artifact(base_dir: Path, artifact_ref: str) -> Path:
+    """Resolve a registry artifact path relative to a manifest or registry directory."""
+    artifact_path = Path(artifact_ref)
+    if artifact_path.is_absolute():
+        return artifact_path
+    return (base_dir / artifact_path).resolve()
 
-    skills = registry.get('skills', [])
 
+def load_registry_manifest_shards(registry_path: Path, registry: Dict) -> List[Dict]:
+    """Load full registry skills from a compatibility registry manifest pointer."""
+    manifest_ref = registry.get("manifest")
+    if not isinstance(manifest_ref, str) or not manifest_ref.strip():
+        return []
+
+    manifest_path = resolve_registry_artifact(registry_path.parent, manifest_ref)
+    with open(manifest_path, 'r', encoding='utf-8') as f:
+        manifest = json.load(f)
+
+    skills: List[Dict] = []
+    for shard in manifest.get("shards", []):
+        shard_ref = shard.get("path") if isinstance(shard, dict) else None
+        if not isinstance(shard_ref, str) or not shard_ref.strip():
+            raise ValueError(f"Invalid registry shard reference in {manifest_path}: {shard!r}")
+        shard_path = resolve_registry_artifact(manifest_path.parent, shard_ref)
+        with open(shard_path, 'r', encoding='utf-8') as f:
+            shard_payload = json.load(f)
+        shard_skills = shard_payload.get("skills")
+        if not isinstance(shard_skills, list):
+            raise ValueError(f"Registry shard is missing skills array: {shard_path}")
+        skills.extend(shard_skills)
+    return skills
+
+
+def add_registry_install_fields(skills: List[Dict]) -> List[Dict]:
+    """Populate install fields for registry fallback rows."""
     for skill in skills:
         repo = skill.get('repo', '')
         path = skill.get('path', '')
@@ -727,6 +773,18 @@ def load_from_registry(registry_path: Path) -> List[Dict]:
             skill['install'] = f"local/{name}"
 
     return skills
+
+
+def load_from_registry(registry_path: Path) -> List[Dict]:
+    """Load skills from registry.json or its manifest shards (fallback mode)."""
+    with open(registry_path, 'r', encoding='utf-8') as f:
+        registry = json.load(f)
+
+    skills = registry.get('skills')
+    if not isinstance(skills, list):
+        skills = load_registry_manifest_shards(registry_path, registry)
+
+    return add_registry_install_fields(skills)
 
 
 def main():

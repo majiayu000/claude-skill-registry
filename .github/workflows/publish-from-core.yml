@@ -248,25 +248,32 @@ jobs:
                   raise ValueError(
                       f"skills/metadata.json count={len(metadata_paths)}, expected {expected_metadata}"
                   )
-              rel_paths = [
-                  str(path.relative_to(root))
-                  for path in [*skill_paths, *metadata_paths]
-              ]
-              check_ignore = subprocess.run(
-                  ["git", "check-ignore", "--stdin"],
-                  input="\n".join(rel_paths) + "\n",
+              ignored_scan = subprocess.run(
+                  [
+                      "git",
+                      "ls-files",
+                      "--others",
+                      "--ignored",
+                      "--exclude-standard",
+                      "--",
+                      "skills",
+                  ],
                   text=True,
                   capture_output=True,
                   check=False,
               )
-              if check_ignore.returncode == 0:
-                  ignored = [line for line in check_ignore.stdout.splitlines() if line]
+              if ignored_scan.returncode != 0:
+                  raise ValueError(ignored_scan.stderr.strip() or "git ignored-file scan failed")
+              ignored = [
+                  line
+                  for line in ignored_scan.stdout.splitlines()
+                  if line.endswith("/SKILL.md") or line.endswith("/metadata.json")
+              ]
+              if ignored:
                   sample = ", ".join(ignored[:5])
                   raise ValueError(
                       f"{len(ignored)} mirrored skill files are ignored by git: {sample}"
                   )
-              if check_ignore.returncode != 1:
-                  raise ValueError(check_ignore.stderr.strip() or "git check-ignore failed")
               return (
                   f"{len(skill_paths)} SKILL.md and {len(metadata_paths)} metadata files "
                   "match stats and are not ignored"
